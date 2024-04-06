@@ -1,0 +1,27 @@
+[data-theme="default-theme-light"] {
+    --accent-color: #D24335;
+    --background-color: #eaeaec;
+    --font-color: #2f2e2c;
+}
+
+[data-theme="default-theme-dark"] {
+    --accent-color: #D24335;
+    --background-color: #12121a;
+    --font-color: #a3a29a;
+}
+
+[data-theme="pink-theme-light"] {
+    --background-color: rgb(253, 211, 218);
+}
+
+[data-theme="pink-theme-dark"] {
+    --background-color: rgb(138, 71, 82);
+}
+
+[data-theme="green-theme-light"] {
+    --background-color: rgb(116, 216, 116);
+}
+
+[data-theme="green-theme-dark"] {
+    --background-color: rgb(0, 56, 0);
+}

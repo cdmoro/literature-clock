@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'Special Elite', cursive;
+    color: var(--font-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--background-color);
+}
+
+.hidden {
+    display: none;
+}
+
+a, a:visited {
+    color: var(--font-color);
+}
+
+blockquote {
+    position: relative;
+    line-height: 1.1;
+    font-weight: 100;
+}
+
+blockquote p {
+    font-size: 4vw;
+    margin: 0;
+    padding-bottom: .5rem;
+}
+
+blockquote:before,
+blockquote:after {
+    position: absolute;
+    color: #4f4e4991;
+    font-size: 8rem;
+    width: 4rem;
+    height: 4rem;
+}
+
+blockquote:before {
+    content: '“';
+    left: -5rem;
+    top: -2rem;
+}
+
+blockquote:after {
+    content: '”';
+    right: -5rem;
+    bottom: 1rem;
+}
+
+blockquote .quote-time {
+    color: var(--accent-color);
+}
+
+cite {
+    font-size: 1.7vw;
+}
+
+#footnote {
+    font-size: 1.3vw;
+    padding-top: 1.5rem;
+}
+
+footer {
+    font-size: .85rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    line-height: 1.5;
+    padding: 1rem;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default-theme-dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/themes.css">
+    <title>&nbsp;</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+</head>
+
+<body class="zen-mode hidden">
+    <main>
+        <div id="clock">
+            <blockquote aria-label="${quote.time}">
+                <p>This is a <span class="quote-time">test</span>, come back soon.</p>
+                <cite>— Title, Author</cite>
+            </blockquote>
+        </div>
+        <div id="quote-time-bar"></div>
+    </main>
+
+    <footer>
+        <a id="exit-zen" title="Exit Zen mode">*</a>
+        <div id="menu">
+            <div>
+                <a id="add-quote" target='_blank'>Add quote</a> |
+                <a id="zen-mode" title="Remove everything that distracts you">Zen [OFF]</a> |
+                <a id="work-mode" title="Show only safe for work quotes">Work [OFF]</a>
+            </div>
+            <div>
+                <a id="project" href="https://github.com/cdmoro/literature-clock" target="_blank">Project</a> |
+                <span id="made-by">Made by</span> <a href="https://twitter.com/CarlosBonadeo" target="_blank">@CarlosBonadeo</a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js" type="module"></script>
+</body>
+
+</html>
