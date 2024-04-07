@@ -7,7 +7,7 @@
         "quote_raw": "Tenemos tiempo, le digo, recién a las seis de la mañana sale el tren para Buenos Aires.",
         "title": "Respiración artificial",
         "author": "Ricardo Piglia",
-        "sfw": true
+        "sfw": "sfw"
     },
     {
         "time": "06:00",
@@ -17,7 +17,7 @@
         "quote_raw": "Sólo dice: Está bien, señor, y nos repite que su turno termina a las seis de la mañana. Parecía no entender bien, le digo a Tardewski.",
         "title": "Respiración artificial",
         "author": "Ricardo Piglia",
-        "sfw": true
+        "sfw": "sfw"
     },
     {
         "time": "06:00",
@@ -27,6 +27,6 @@
         "quote_raw": "A las seis de la mañana salieron desnudos del dormitorio, vaciaron la alberca y la llenaron de champaña.",
         "title": "100 años de soledad",
         "author": "Gabriel García Márquez",
-        "sfw": false
+        "sfw": "nsfw"
     }
 ]

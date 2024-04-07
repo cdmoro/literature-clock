@@ -2,53 +2,30 @@
     --accent-color: #D24335;
     --background-color: #12121a;
     --font-color: #a3a29a;
+    --theme-font-family: 'Special Elite', cursive;
 }
+
+/* Colors */
 
 [data-theme="base-light"] {
     --accent-color: #D24335;
     --background-color: #eaeaec;
     --font-color: #2f2e2c;
 }
-
 [data-theme="base-dark"] {
     --accent-color: #D24335;
     --background-color: #12121a;
     --font-color: #a3a29a;
 }
 
-/* [data-theme="pink-light"] {
-    --accent-color: #132743;
-    --background-color: #ffcbcb;
-    --font-color: #2f2e2c;
-}
-
-[data-theme="pink-dark"] {
-    --accent-color: #407088;
-    --background-color: #ffb5b5;
-    --font-color: #a3a29a;
-} */
-
-/* [data-theme="green-light"] {
-    --accent-color: #58A399;
-    --background-color: #E2F4C5;
-    --font-color: #2f2e2c;
-}
-
-[data-theme="green-dark"] {
-    --accent-color: #496989;
-    --background-color: #191A19;
-    --font-color: #a3a29a;
-} */
-
 [data-theme="orange-light"] {
     --accent-color: #F39C12;
     --background-color: #FDF2E9;
     --font-color: #2f2e2c;
 }
-
 [data-theme="orange-dark"] {
     --accent-color: #F39C12;
-    --background-color: #12121a;
+    --background-color: #1a0e0c;
     --font-color: #a3a29a;
 }
 
@@ -57,10 +34,9 @@
     --background-color: #F5EEFD;
     --font-color: #2f2e2c;
 }
-
 [data-theme="purple-dark"] {
     --accent-color: #9B59B6;
-    --background-color: #12121a;
+    --background-color: #0f0f1a;
     --font-color: #a3a29a;
 }
 
@@ -69,10 +45,9 @@
     --background-color: #F0FFF4;
     --font-color: #2f2e2c;
 }
-
 [data-theme="green-dark"] {
     --accent-color: #2ECC71;
-    --background-color: #12121a;
+    --background-color: #0e0e1a;
     --font-color: #a3a29a;
 }
 
@@ -81,10 +56,9 @@
     --background-color: #F2F6FF;
     --font-color: #2f2e2c;
 }
-
 [data-theme="blue-dark"] {
     --accent-color: #2C97DF;
-    --background-color: #12121a;
+    --background-color: #0c0c1a;
     --font-color: #a3a29a;
 }
 
@@ -93,10 +67,9 @@
     --background-color: #F4F6F6;
     --font-color: #2f2e2c;
 }
-
 [data-theme="gray-dark"] {
     --accent-color: #95A5A6;
-    --background-color: #12121a;
+    --background-color: #1a1a1e;
     --font-color: #a3a29a;
 }
 
@@ -105,9 +78,65 @@
     --background-color: #FDF2F8;
     --font-color: #2f2e2c;
 }
-
 [data-theme="pink-dark"] {
     --accent-color: #FF6B81;
-    --background-color: #12121a;
+    --background-color: #1a0c0e;
+    --font-color: #a3a29a;
+}
+
+/* Themes */
+
+[data-theme*="retro"] blockquote:before,
+[data-theme*="retro"] blockquote:after,
+[data-theme*="elegant"] blockquote:before,
+[data-theme*="elegant"] blockquote:after,
+[data-theme*="festive"] blockquote:before,
+[data-theme*="festive"] blockquote:after,
+[data-theme*="bohemian"] blockquote:before,
+[data-theme*="bohemian"] blockquote:after {
+    content: unset;
+}
+
+[data-theme="retro-light"] {
+    --accent-color: #FFC300;
+    --background-color: #F8F8F8;
+    --font-color: #2f2e2c;
+}
+[data-theme="retro-dark"] {
+    --accent-color: #FFC300;
+    --background-color: #2c2c2c;
+    --font-color: #a3a29a;
+}
+
+[data-theme="elegant-light"] {
+    --accent-color: #6C5B7B;
+    --background-color: #F5F5F5;
+    --font-color: #2f2e2c;
+}
+[data-theme="elegant-dark"] {
+    --accent-color: #6C5B7B;
+    --background-color: #1a1a1a;
+    --font-color: #a3a29a;
+}
+
+[data-theme="festive-light"] {
+    --accent-color: #E74C3C;
+    --background-color: #FEF9E7;
+    --font-color: #2f2e2c;
+}
+[data-theme="festive-dark"] {
+    --accent-color: #E74C3C;
+    --background-color: #2c1a1a;
+    --font-color: #a3a29a;
+}
+
+[data-theme="bohemian-light"] {
+    --accent-color: #1ABC9C;
+    --background-color: #FEF9E7;
+    --font-color: #2f2e2c;
+}
+[data-theme="bohemian-dark"] {
+    --accent-color: #1ABC9C;
+    --background-color: #1a1a1a;
     --font-color: #a3a29a;
 }

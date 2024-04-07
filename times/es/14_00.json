@@ -7,7 +7,7 @@
         "quote_raw": "Un día jueves a las dos de la tarde, mi hermana me avisó que un individuo estaba a la puerta esperándome.",
         "title": "El juguete rabioso",
         "author": "Roberto Arlt",
-        "sfw": true
+        "sfw": "sfw"
     },
     {
         "time": "14:00",
@@ -17,7 +17,7 @@
         "quote_raw": "—¿Cuándo le vio a usted?\n—Aproximadamente hoy a las dos de la tarde.",
         "title": "El juguete rabioso",
         "author": "Roberto Arlt",
-        "sfw": true
+        "sfw": "sfw"
     },
     {
         "time": "14:00",
@@ -27,6 +27,6 @@
         "quote_raw": "y en todos aparecía Remedios transfigurada: Remedios en el aire soporífero de las dos de la tarde, Remedios en la callada respiración de las rosas",
         "title": "100 años de soledad",
         "author": "Gabriel García Márquez",
-        "sfw": true
+        "sfw": "sfw"
     }
 ]

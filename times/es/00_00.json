@@ -7,7 +7,7 @@
         "quote_raw": "—A vos y de vos la pido —replicó don Quijote—, porque ni yo soy de mármol ni vos de bronce, ni ahora son las diez del día, sino media noche",
         "title": "Don Quijote de la Mancha",
         "author": "Miguel de Cervantes",
-        "sfw": true
+        "sfw": "sfw"
     },
     {
         "time": "00:00",
@@ -17,7 +17,7 @@
         "quote_raw": "—Yo me reportaré —respondió Sancho—; pero ¿con qué paciencia podré llevar que quiera vuestra merced que de sola una vez que vi la casa de nuestra ama, la haya de saber siempre y hallarla a media noche, no hallándola vuestra merced, que la debe de haber visto millares de veces?",
         "title": "Don Quijote de la Mancha",
         "author": "Miguel de Cervantes",
-        "sfw": true
+        "sfw": "sfw"
     },
     {
         "time": "00:00",
@@ -27,7 +27,7 @@
         "quote_raw": "Media noche era por filo, poco más a menos, cuando don Quijote y Sancho dejaron el monte y entraron en el Toboso.",
         "title": "Don Quijote de la Mancha",
         "author": "Miguel de Cervantes",
-        "sfw": true
+        "sfw": "sfw"
     },
     {
         "time": "00:00",
@@ -37,7 +37,7 @@
         "quote_raw": "—¿Y se aburre mucho usted?\n—Regular. He organizado mi vida como la de un industrial. Todos los días me acuesto a las doce y me levanto a las nueve de la mañana.",
         "title": "Los siete locos",
         "author": "Roberto Arlt",
-        "sfw": true
+        "sfw": "sfw"
     },
     {
         "time": "00:00",
@@ -47,6 +47,6 @@
         "quote_raw": "Ella, tallada en el corazón de la noche\npor la inquietud de mis ojos alucinados:\nella, grabada en los maderos del bosque\npor los cuchillos de mis manos",
         "title": "El hondero entusiasta",
         "author": "Pablo Neruda",
-        "sfw": true
+        "sfw": "sfw"
     }
 ]

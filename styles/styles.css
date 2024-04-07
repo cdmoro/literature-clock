@@ -5,7 +5,7 @@ body {
 }
 
 body {
-    font-family: 'Special Elite', cursive;
+    font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     color: var(--font-color);
     display: flex;
     flex-direction: column;
@@ -20,7 +20,7 @@ body {
 }
 
 body.zen-mode #footnote,
-/* body.zen-mode #quote-time-bar, */
+body.zen-mode #quote-time-bar,
 body.zen-mode footer #menu {
     display: none;
 }
@@ -42,10 +42,11 @@ blockquote {
     position: relative;
     line-height: 1.1;
     font-weight: 100;
+    font-family: var(--theme-font-family);
 }
 
 blockquote p {
-    font-size: 4vw;
+    font-size: var(--quote-font-size, 4vw);
     margin: 0;
     padding-bottom: .5rem;
 }

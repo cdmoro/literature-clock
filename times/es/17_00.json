@@ -7,7 +7,7 @@
         "quote_raw": "A las cinco de la tarde, cuando llegaron a la estación final de la ciénaga, descendió del tren porque Fernanda lo hizo.",
         "title": "100 años de soledad",
         "author": "Gabriel García Márquez",
-        "sfw": true
+        "sfw": "sfw"
     },
     {
         "time": "17:00",
@@ -17,7 +17,7 @@
         "quote_raw": "A las cinco de la tarde.\nEran las cinco en punto de la tarde.\nUn niño trajo la blanca sábana\na las cinco de la tarde.",
         "title": "Llanto por Ignacio Sánchez Mejías",
         "author": "Federico García Lorca",
-        "sfw": true
+        "sfw": "sfw"
     },
     {
         "time": "17:00",
@@ -27,6 +27,6 @@
         "quote_raw": "Lo mismo se le podía haber ocurrido a mediodía en el almacén de Roque, o en el subte a las cinco de la tarde. O mucho antes, en Europa, alguna noche de vagancia por las zonas francas, los baldíos donde una lata vieja podía servir para tajear una garganta por poco que las dos pusieran buena voluntad.",
         "title": "Rayuela",
         "author": "Julio Cortázar",
-        "sfw": true
+        "sfw": "sfw"
     }
 ]

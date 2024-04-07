@@ -1,4 +1,4 @@
-import { getLocale, setLocale } from './locales.js';
+import { getLocale, setLocale, getStrings } from './locales.js';
 import { setTheme, setVariant } from './themes.js';
 import { initZenMode, isZenMode, setZenMode, exitZenMode } from './zenMode.js';
 import { initWorkMode, isWorkMode, setWorkMode } from './workMode.js';
@@ -24,7 +24,7 @@ async function getQuotes(fileName) {
         let quotes = await response.json();
 
         if (isWorkMode()) {
-            quotes = quotes.filter(q => q.sfw);
+            quotes = quotes.filter(q => q.sfw !== 'nsfw');
         }
 
         if (!quotes.length) {
@@ -38,9 +38,11 @@ async function getQuotes(fileName) {
 }
 
 function getQuote(quotes, time) {
+    const locale = getLocale();
+    const strings = getStrings(locale);
     const url = new URL('https://github.com/cdmoro/reloj-literario/issues/new');
-    url.searchParams.set('template', 'agregar-cita.yaml');
-    url.searchParams.set('title', `[${time}] Agregar cita`);
+    url.searchParams.set('template', `add-quote.${locale}.yaml`);
+    url.searchParams.set('title', `[${time}] ${strings.add_quote}`);
 
     const random_quote_index = Math.floor(Math.random() * quotes.length);
     const quote = Object.assign({}, quotes[random_quote_index]);
@@ -83,14 +85,15 @@ async function updateTime(testTime) {
 
         quotes = await getQuotes(time.replace(":", "_"));
         quote = getQuote(quotes, time);
+        const quoteText = testQuote || `${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}`
 
         html = /*html*/`
             <blockquote aria-label="${quote.time}" aria-description="${quote.quote_raw}">
-                <p>${testQuote || `${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}`}</p>
+                <p>${quoteText.replace(/\n/g, '<br>')}</p>
                 <cite>— ${quote.title}, ${quote.author}</cite>
             </blockquote>`;
 
-        clock.innerHTML = html.replace(/\n/g, "<br>");
+        clock.innerHTML = html;
         lastTime = time;
     }
 }
@@ -102,8 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setTheme();
     setLocale();
 
-    document.body.classList.toggle('zen-mode', isZenMode());
-
     document.getElementById('language-select').addEventListener('change', (e) => 
         setLocale(e.target.value)
     );
@@ -112,17 +113,18 @@ document.addEventListener('DOMContentLoaded', function() {
     );
     document.getElementById('variant-select').addEventListener('change', (e) =>
         setVariant(e.target.value)
-    )
-    document.getElementById('zen-mode-input').addEventListener('change', (e) =>
-        setZenMode(e.target.checked)
-    )
+    );
+    document.getElementById('zen-mode').addEventListener('click', (e) => {
+        e.preventDefault();
+        setZenMode(true);
+    });
     document.getElementById('work-mode-input').addEventListener('change', (e) =>
         setWorkMode(e.target.checked)
-    )
+    );
     document.getElementById('exit-zen').addEventListener('click', (e) => {
         e.preventDefault();
         exitZenMode();
-})
+    });
     
     document.body.classList.remove('hidden');
 

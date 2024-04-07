@@ -4,8 +4,8 @@
  */
 export function initWorkMode() {
     const urlParams = new URLSearchParams(window.location.search);
-    const workQueryParam = urlParams.get('work');
-    const workLocalStorage = localStorage.getItem("work");
+    const workQueryParam = urlParams.get('work') === 'true';
+    const workLocalStorage = localStorage.getItem("work") === 'true';
     const input = document.getElementById('work-mode-input');
     const workMode = workQueryParam || workLocalStorage || false;
 

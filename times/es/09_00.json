@@ -7,7 +7,7 @@
         "quote_raw": "Hasta aquel jueves indeseable, en que el médico menos notorio de los muchos que lo habían visto lo citó a las nueve de la mañana en el pabellón de neurología.",
         "title": "Doce cuentos peregrinos",
         "author": "Gabriel García Márquez",
-        "sfw": true
+        "sfw": "sfw"
     },
     {
         "time": "09:00",
@@ -17,6 +17,6 @@
         "quote_raw": "—¿Y se aburre mucho usted?\n—Regular. He organizado mi vida como la de un industrial. Todos los días me acuesto a las doce y me levanto a las nueve de la mañana.",
         "title": "Los siete locos",
         "author": "Roberto Arlt",
-        "sfw": true
+        "sfw": "sfw"
     }
 ]

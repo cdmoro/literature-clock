@@ -30,10 +30,7 @@
         <a id="exit-zen" href="#" title="Exit Zen mode">*</a>
         <div id="menu">
             <div>
-                <label id="zen-mode">
-                    <input id="zen-mode-input" type="checkbox">
-                    <span id="zen-mode-label">Work mode</span>
-                </label> |
+                <a id="zen-mode" href="#">Zen mode</a> |
                 <label id="work-mode">
                     <input id="work-mode-input" type="checkbox">
                     <span id="work-mode-label">Work mode</span>
@@ -51,6 +48,7 @@
                 <span>
                     <span id="theme">Theme</span>
                     <select id="theme-select">
+                        <optgroup id="colors" label="Colors">
                         <option value="base">Base</option>
                         <option value="pink">Pink</option>
                         <option value="green">Green</option>
@@ -58,6 +56,13 @@
                         <option value="purple">Purple</option>
                         <option value="blue">Blue</option>
                         <option value="gray">Gray</option>
+                        </optgroup>
+                        <optgroup id="themes" label="Themes">
+                        <option value="retro">Retro</option>
+                        <option value="elegant">Elegant</option>
+                        <option value="festive">Festive</option>
+                        <option value="bohemian">Bohemian</option>
+                        </optgroup>
                     </select>
                     <select id="variant-select">
                         <option value="system">System</option>

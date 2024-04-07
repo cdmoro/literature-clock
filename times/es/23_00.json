@@ -7,7 +7,7 @@
         "quote_raw": "Hecho esto, y llegadas las once horas de la noche, halló don Quijote una vihuela en su aposento",
         "title": "Don Quijote de la Mancha",
         "author": "Miguel de Cervantes",
-        "sfw": true
+        "sfw": "sfw"
     },
     {
         "time": "23:00",
@@ -17,6 +17,6 @@
         "quote_raw": "A las 11 de la noche abandonamos la caverna.",
         "title": "El juguete rabioso",
         "author": "Roberto Arlt",
-        "sfw": true
+        "sfw": "sfw"
     }
 ]

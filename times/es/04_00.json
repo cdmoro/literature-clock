@@ -7,7 +7,7 @@
         "quote_raw": "Yo tendré cuidado de socorreros si os viéredes en trabajo, y en todo haréis como se espera de vuestro entendimiento. Deste lugar, a 16 de agosto, a las cuatro de la mañana.\n\nVuestro amigo,\nEl Duque.",
         "title": "Don Quijote de la Mancha",
         "author": "Miguel de Cervantes",
-        "sfw": true
+        "sfw": "sfw"
     },
     {
         "time": "04:00",
@@ -17,6 +17,6 @@
         "quote_raw": "Belano dijo son las cuatro de la mañana. En ese momento supe con resignación que no iba a poder dormir.",
         "title": "Los detectives salvajes",
         "author": "Roberto Bolaño",
-        "sfw": true
+        "sfw": "sfw"
     }
 ]
