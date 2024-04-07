@@ -1,5 +1,7 @@
 import { getLocale, setLocale } from './locales.js';
 import { setTheme, setVariant } from './themes.js';
+import { initZenMode, isZenMode, setZenMode, exitZenMode } from './zenMode.js';
+import { initWorkMode, isWorkMode, setWorkMode } from './workMode.js';
 import { FALLBACK_QUOTES } from './utils.js';
 
 const clock = document.getElementById("clock");
@@ -8,8 +10,6 @@ const addQuoteLink = document.getElementById("add-quote");
 const urlParams = new URLSearchParams(window.location.search);
 const testTime = urlParams.get('time');
 const testQuote = urlParams.get('quote');
-const isZenMode = urlParams.has('zen');
-const isWorkMode = urlParams.has('work');
 let lastTime;
 
 async function getQuotes(fileName) {
@@ -23,7 +23,7 @@ async function getQuotes(fileName) {
 
         let quotes = await response.json();
 
-        if (isWorkMode) {
+        if (isWorkMode()) {
             quotes = quotes.filter(q => q.sfw);
         }
 
@@ -97,8 +97,12 @@ async function updateTime(testTime) {
 
 
 document.addEventListener('DOMContentLoaded', function() {
+    initZenMode();
+    initWorkMode();
     setTheme();
     setLocale();
+
+    document.body.classList.toggle('zen-mode', isZenMode());
 
     document.getElementById('language-select').addEventListener('change', (e) => 
         setLocale(e.target.value)
@@ -109,6 +113,16 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('variant-select').addEventListener('change', (e) =>
         setVariant(e.target.value)
     )
+    document.getElementById('zen-mode-input').addEventListener('change', (e) =>
+        setZenMode(e.target.checked)
+    )
+    document.getElementById('work-mode-input').addEventListener('change', (e) =>
+        setWorkMode(e.target.checked)
+    )
+    document.getElementById('exit-zen').addEventListener('click', (e) => {
+        e.preventDefault();
+        exitZenMode();
+})
     
     document.body.classList.remove('hidden');
 

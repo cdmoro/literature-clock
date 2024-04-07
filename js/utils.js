@@ -5,8 +5,8 @@ export const FALLBACK_QUOTES = {
             quote_first: "Error ",
             quote_last: ": quote not found.",
             quote_time_case: "",
-            title: "Internet",
-            author: "Explorer",
+            title: "Internet Explorer",
+            author: "1995-2022",
             sfw: true
         },
     ],
@@ -63,8 +63,8 @@ export const FALLBACK_QUOTES = {
             quote_first: "Erro ",
             quote_last: ": citação não encontrada.",
             quote_time_case: "",
-            title: "Internet",
-            author: "Explorer",
+            title: "Internet Explorer",
+            author: "1995-2022",
             sfw: true
         },
     ],
@@ -74,8 +74,8 @@ export const FALLBACK_QUOTES = {
             quote_first: "Erreur ",
             quote_last: ": citation non trouvée.",
             quote_time_case: "",
-            title: "Internet",
-            author: "Explorer",
+            title: "Internet Explorer",
+            author: "1995-2022",
             sfw: true
         },
     ],
@@ -85,8 +85,8 @@ export const FALLBACK_QUOTES = {
             quote_first: "Errore ",
             quote_last: ": citazione non trovata.",
             quote_time_case: "",
-            title: "Internet",
-            author: "Explorer",
+            title: "Internet Explorer",
+            author: "1995-2022",
             sfw: true
         },
     ],

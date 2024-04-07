@@ -9,6 +9,10 @@
     <title>&nbsp;</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body class="zen-mode hidden">
@@ -23,11 +27,17 @@
     </main>
 
     <footer>
-        <a id="exit-zen" title="Exit Zen mode">*</a>
+        <a id="exit-zen" href="#" title="Exit Zen mode">*</a>
         <div id="menu">
             <div>
-                <a id="zen-mode" title="Remove everything that distracts you">Zen [OFF]</a> |
-                <a id="work-mode" title="Show only safe for work quotes">Work [OFF]</a> |
+                <label id="zen-mode">
+                    <input id="zen-mode-input" type="checkbox">
+                    <span id="zen-mode-label">Work mode</span>
+                </label> |
+                <label id="work-mode">
+                    <input id="work-mode-input" type="checkbox">
+                    <span id="work-mode-label">Work mode</span>
+                </label> |
                 <span>
                     <span id="language">Language</span>
                     <select id="language-select">

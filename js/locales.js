@@ -155,8 +155,8 @@ export const LOCALES = {
 }
 
 const TEXT_CONTENT = {
-    'zen-mode': 'zen_mode',
-    'work-mode': 'work_mode',
+    'zen-mode-label': 'zen_mode',
+    'work-mode-label': 'work_mode',
     'add-quote': 'add_quote',
     'project': 'project',
     'made-by': 'made_by',
