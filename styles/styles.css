@@ -21,8 +21,23 @@ body {
     display: none;
 }
 
+body.zen-mode #footnote,
+/* body.zen-mode #quote-time-bar, */
+body.zen-mode footer #menu {
+    display: none;
+}
+
+body.zen-mode #exit-zen {
+    display: block;
+}
+
+#clock {
+    max-width: 80vw;
+    margin: 0 auto;
+}
+
 a, a:visited {
-    color: var(--font-color);
+    color: var(--accent-color);
 }
 
 blockquote {
@@ -71,9 +86,24 @@ select {
     color: var(--font-color);
 }
 
-#footnote {
-    font-size: 1.3vw;
-    padding-top: 1.5rem;
+#quote-time-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background-color: var(--font-color);
+    transition: width 1s linear;
+}
+
+#exit-zen {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0);
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: none;
 }
 
 footer {
@@ -85,4 +115,49 @@ footer {
     text-align: center;
     line-height: 1.5;
     padding: 1rem;
+}
+
+@media all and (max-width: 959px) and (min-width: 600px) {
+    cite {
+        font-size: 2.3vw;
+    }
+
+    #footnote {
+        font-size: 2vw;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #clock {
+        max-width: unset;
+    }
+
+    blockquote {
+        margin: 1rem;
+    }
+
+    blockquote:before,
+    blockquote:after {
+        content: unset;
+    }
+
+    blockquote p {
+        font-size: 1.9rem;
+    }
+
+    cite {
+        font-size: 1rem;
+    }
+
+    #footnote {
+        font-size: .9rem;
+    }
+
+    #exit-zen {
+        font-size: 1.3rem;
+    }
+
+    footer {
+        font-size: .8rem;
+    }
 }
