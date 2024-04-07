@@ -40,13 +40,13 @@ a, a:visited {
 
 blockquote {
     position: relative;
-    line-height: 1.1;
+    line-height: var(--quote-line-height, 1.1);
     font-weight: 100;
-    font-family: var(--theme-font-family);
+    font-family: var(--quote-font-family);
 }
 
 blockquote p {
-    font-size: var(--quote-font-size, 4vw);
+    font-size: var(--quote-font-size, 3.5vw);
     margin: 0;
     padding-bottom: .5rem;
 }

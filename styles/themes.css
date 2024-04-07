@@ -2,7 +2,7 @@
     --accent-color: #D24335;
     --background-color: #12121a;
     --font-color: #a3a29a;
-    --theme-font-family: 'Special Elite', cursive;
+    --quote-font-family: 'Special Elite', cursive;
 }
 
 /* Colors */
@@ -86,15 +86,13 @@
 
 /* Themes */
 
-[data-theme*="retro"] blockquote:before,
-[data-theme*="retro"] blockquote:after,
 [data-theme*="elegant"] blockquote:before,
 [data-theme*="elegant"] blockquote:after,
 [data-theme*="festive"] blockquote:before,
 [data-theme*="festive"] blockquote:after,
 [data-theme*="bohemian"] blockquote:before,
 [data-theme*="bohemian"] blockquote:after {
-    content: unset;
+    content: none;
 }
 
 [data-theme="retro-light"] {
@@ -106,6 +104,11 @@
     --accent-color: #FFC300;
     --background-color: #2c2c2c;
     --font-color: #a3a29a;
+}
+[data-theme*=retro] {
+    --quote-font-family: 'VT323';
+    --quote-font-size: 3.2vw;
+    --quote-line-height: 1;
 }
 
 [data-theme="elegant-light"] {

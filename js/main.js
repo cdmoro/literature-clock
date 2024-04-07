@@ -12,7 +12,21 @@ const testTime = urlParams.get('time');
 const testQuote = urlParams.get('quote');
 let lastTime;
 
-async function getQuotes(fileName) {
+async function updateQuote(time) {
+    const quotes = await getQuotes(time);
+    const quote = getQuote(quotes, time);
+    const quoteText = testQuote || `${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}`
+
+    clock.innerHTML = /*html*/`
+        <blockquote aria-label="${quote.time}" aria-description="${quote.quote_raw}">
+            <p>${quoteText.replace(/\n/g, '<br>')}</p>
+            <cite>— ${quote.title}, ${quote.author}</cite>
+        </blockquote>
+    `;
+} 
+
+async function getQuotes(time) {
+    const fileName = time.replace(":", "_");
     const locale = getLocale();
     try {
         const response = await fetch(`../times/${locale}/${fileName}.json`);
@@ -67,9 +81,6 @@ async function updateTime(testTime) {
     const hours = now.getHours();
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
-    let quotes = [];
-    let quote = {};
-    let html = '';
 
     const time = testTime || `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
 
@@ -83,17 +94,7 @@ async function updateTime(testTime) {
             document.title = `[${time}] Reloj Literario`;
         }
 
-        quotes = await getQuotes(time.replace(":", "_"));
-        quote = getQuote(quotes, time);
-        const quoteText = testQuote || `${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}`
-
-        html = /*html*/`
-            <blockquote aria-label="${quote.time}" aria-description="${quote.quote_raw}">
-                <p>${quoteText.replace(/\n/g, '<br>')}</p>
-                <cite>— ${quote.title}, ${quote.author}</cite>
-            </blockquote>`;
-
-        clock.innerHTML = html;
+        updateQuote(time);
         lastTime = time;
     }
 }
@@ -105,9 +106,16 @@ document.addEventListener('DOMContentLoaded', function() {
     setTheme();
     setLocale();
 
-    document.getElementById('language-select').addEventListener('change', (e) => 
+    document.getElementById('language-select').addEventListener('change', (e) => {
         setLocale(e.target.value)
-    );
+
+        const now = new Date();
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+    
+        const time = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+        updateQuote(time);
+    });
     document.getElementById('theme-select').addEventListener('change', (e) => 
         setTheme(e.target.value)
     );
