@@ -1,0 +1,32 @@
+[
+    {
+        "time": "10:00",
+        "quote_first": "Bien, llegaré a Concordia el 27, a las ",
+        "quote_last": "; viajo en tren. Tengo los números, las direcciones, etc., pero no creo que me hagan falta.",
+        "quote_time_case": "10 de la mañana",
+        "quote_raw": "Bien, llegaré a Concordia el 27, a las 10 de la mañana; viajo en tren. Tengo los números, las direcciones, etc., pero no creo que me hagan falta.",
+        "title": "Respiración artificial",
+        "author": "Ricardo Piglia",
+        "sfw": true
+    },
+    {
+        "time": "10:00",
+        "quote_first": "Es uno de esos cines que funcionan las 24 horas: eran las ",
+        "quote_last": " y me metí ahí para olvidarme un poco del frío.",
+        "quote_time_case": "diez de la mañana",
+        "quote_raw": "Es uno de esos cines que funcionan las 24 horas: eran las diez de la mañana y me metí ahí para olvidarme un poco del frío.",
+        "title": "Respiración artificial",
+        "author": "Ricardo Piglia",
+        "sfw": true
+    },
+    {
+        "time": "10:00",
+        "quote_first": "Se lo ha visto a las ",
+        "quote_last": " bajar del tren que llega de la capital. Se detuvo en las escalinatas de la estación, un poco desorientado; preguntó de qué lado quedaba el río.",
+        "quote_time_case": "diez de la mañana",
+        "quote_raw": "Se lo ha visto a las diez de la mañana bajar del tren que llega de la capital. Se detuvo en las escalinatas de la estación, un poco desorientado; preguntó de qué lado quedaba el río.",
+        "title": "Respiración artificial",
+        "author": "Ricardo Piglia",
+        "sfw": true
+    }
+]

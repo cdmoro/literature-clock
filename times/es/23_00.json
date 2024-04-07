@@ -1,0 +1,22 @@
+[
+    {
+        "time": "23:00",
+        "quote_first": "Hecho esto, y llegadas las ",
+        "quote_last": ", halló don Quijote una vihuela en su aposento",
+        "quote_time_case": "once horas de la noche",
+        "quote_raw": "Hecho esto, y llegadas las once horas de la noche, halló don Quijote una vihuela en su aposento",
+        "title": "Don Quijote de la Mancha",
+        "author": "Miguel de Cervantes",
+        "sfw": true
+    },
+    {
+        "time": "23:00",
+        "quote_first": "A las ",
+        "quote_last": " abandonamos la caverna.",
+        "quote_time_case": "11 de la noche",
+        "quote_raw": "A las 11 de la noche abandonamos la caverna.",
+        "title": "El juguete rabioso",
+        "author": "Roberto Arlt",
+        "sfw": true
+    }
+]

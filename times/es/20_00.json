@@ -1,0 +1,32 @@
+[
+    {
+        "time": "20:00",
+        "quote_first": "El tren se detuvo en Ramos Mejía. El reloj de la estación marcaba las ",
+        "quote_last": ". Erdosain bajó.",
+        "quote_time_case": "ocho de la noche",
+        "quote_raw": "El tren se detuvo en Ramos Mejía. El reloj de la estación marcaba las ocho de la noche. Erdosain bajó.",
+        "title": "Los siete locos",
+        "author": "Roberto Arlt",
+        "sfw": true
+    },
+    {
+        "time": "20:00",
+        "quote_first": "A las ",
+        "quote_last": " llegó a su casa.\n—El comedor estaba iluminado… Pero expliquémonos —dijo Erdosain—, mi esposa y yo habíamos sufrido tanta miseria, que el llamado comedor consistía en un cuarto vacío de muebles",
+        "quote_time_case": "ocho de la noche",
+        "quote_raw": "A las ocho de la noche llegó a su casa.\n—El comedor estaba iluminado… Pero expliquémonos —dijo Erdosain—, mi esposa y yo habíamos sufrido tanta miseria, que el llamado comedor consistía en un cuarto vacío de muebles",
+        "title": "Los siete locos",
+        "author": "Roberto Arlt",
+        "sfw": true
+    },
+    {
+        "time": "20:00",
+        "quote_first": "Hago una hora de ejercicio, me baño, leo los diarios, almuerzo, duermo una siesta, a las seis tomo el vermut y voy a lo del peluquero, a las ",
+        "quote_last": " ceno, después salgo al café",
+        "quote_time_case": "ocho",
+        "quote_raw": "Hago una hora de ejercicio, me baño, leo los diarios, almuerzo, duermo una siesta, a las seis tomo el vermut y voy a lo del peluquero, a las ocho ceno, después salgo al café",
+        "title": "Los siete locos",
+        "author": "Roberto Arlt",
+        "sfw": true
+    }
+]

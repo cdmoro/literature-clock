@@ -1,0 +1,32 @@
+[
+    {
+        "time": "15:04",
+        "quote_first": "He checked his watch: ",
+        "quote_last": " He banged on the door again, but still no one responded. Surely they would not deny him entry when he was only a couple of minutes late?",
+        "quote_time_case": "3:04 P.M.",
+        "quote_raw": "He checked his watch: 3:04 P.M. He banged on the door again, but still no one responded. Surely they would not deny him entry when he was only a couple of minutes late?",
+        "title": "Paths of Glory",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "time": "15:04",
+        "quote_first": "He saw the clock in the town-hall tower standing at ",
+        "quote_last": " on that hot and windless late-July afternoon.",
+        "quote_time_case": "four minutes past three",
+        "quote_raw": "He saw the clock in the town-hall tower standing at four minutes past three on that hot and windless late-July afternoon.",
+        "title": "The Tommyknockers",
+        "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "time": "15:04",
+        "quote_first": "Woken at ",
+        "quote_last": " by Michelangelo hammering away with his chisel.",
+        "quote_time_case": "1504",
+        "quote_raw": "Woken at 1504 by Michelangelo hammering away with his chisel.",
+        "title": "101 Reykjavik",
+        "author": "Hallgrímur Helgason",
+        "sfw": "unknown"
+    }
+]

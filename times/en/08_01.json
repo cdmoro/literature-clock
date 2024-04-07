@@ -1,0 +1,22 @@
+[
+    {
+        "time": "08:01",
+        "quote_first": "Eight-one, tick-tock, ",
+        "quote_last": " o'clock, off to school, off to work, run, run, eight-one!",
+        "quote_time_case": "eight-one",
+        "quote_raw": "Eight-one, tick-tock, eight-one o'clock, off to school, off to work, run, run, eight-one!",
+        "title": "There Will Come Soft Rains",
+        "author": "Ray Bradbury",
+        "sfw": "unknown"
+    },
+    {
+        "time": "08:01",
+        "quote_first": "",
+        "quote_last": "<br/>Dore Peretz’ chest still felt like it was on fire, a burning sensation that seemed to spread across the entire front of his torso; in fact, he felt like shit.",
+        "quote_time_case": "8:01 A.M.",
+        "quote_raw": "8:01 A.M.<br/>Dore Peretz’ chest still felt like it was on fire, a burning sensation that seemed to spread across the entire front of his torso; in fact, he felt like shit.",
+        "title": "Project Cyclops",
+        "author": "Thomas Hoover",
+        "sfw": "nsfw"
+    }
+]

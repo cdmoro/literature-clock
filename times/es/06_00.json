@@ -1,0 +1,32 @@
+[
+    {
+        "time": "06:00",
+        "quote_first": "Tenemos tiempo, le digo, recién a las ",
+        "quote_last": " sale el tren para Buenos Aires.",
+        "quote_time_case": "seis de la mañana",
+        "quote_raw": "Tenemos tiempo, le digo, recién a las seis de la mañana sale el tren para Buenos Aires.",
+        "title": "Respiración artificial",
+        "author": "Ricardo Piglia",
+        "sfw": true
+    },
+    {
+        "time": "06:00",
+        "quote_first": "Sólo dice: Está bien, señor, y nos repite que su turno termina a las ",
+        "quote_last": ". Parecía no entender bien, le digo a Tardewski.",
+        "quote_time_case": "seis de la mañana",
+        "quote_raw": "Sólo dice: Está bien, señor, y nos repite que su turno termina a las seis de la mañana. Parecía no entender bien, le digo a Tardewski.",
+        "title": "Respiración artificial",
+        "author": "Ricardo Piglia",
+        "sfw": true
+    },
+    {
+        "time": "06:00",
+        "quote_first": "A las ",
+        "quote_last": " salieron desnudos del dormitorio, vaciaron la alberca y la llenaron de champaña.",
+        "quote_time_case": "seis de la mañana",
+        "quote_raw": "A las seis de la mañana salieron desnudos del dormitorio, vaciaron la alberca y la llenaron de champaña.",
+        "title": "100 años de soledad",
+        "author": "Gabriel García Márquez",
+        "sfw": false
+    }
+]

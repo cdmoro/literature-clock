@@ -1,27 +1,113 @@
-[data-theme="default-theme-light"] {
-    --accent-color: #D24335;
-    --background-color: #eaeaec;
-    --font-color: #2f2e2c;
-}
-
-[data-theme="default-theme-dark"] {
+:root {
     --accent-color: #D24335;
     --background-color: #12121a;
     --font-color: #a3a29a;
 }
 
-[data-theme="pink-theme-light"] {
-    --background-color: rgb(253, 211, 218);
+[data-theme="base-light"] {
+    --accent-color: #D24335;
+    --background-color: #eaeaec;
+    --font-color: #2f2e2c;
 }
 
-[data-theme="pink-theme-dark"] {
-    --background-color: rgb(138, 71, 82);
+[data-theme="base-dark"] {
+    --accent-color: #D24335;
+    --background-color: #12121a;
+    --font-color: #a3a29a;
 }
 
-[data-theme="green-theme-light"] {
-    --background-color: rgb(116, 216, 116);
+/* [data-theme="pink-light"] {
+    --accent-color: #132743;
+    --background-color: #ffcbcb;
+    --font-color: #2f2e2c;
 }
 
-[data-theme="green-theme-dark"] {
-    --background-color: rgb(0, 56, 0);
+[data-theme="pink-dark"] {
+    --accent-color: #407088;
+    --background-color: #ffb5b5;
+    --font-color: #a3a29a;
+} */
+
+/* [data-theme="green-light"] {
+    --accent-color: #58A399;
+    --background-color: #E2F4C5;
+    --font-color: #2f2e2c;
+}
+
+[data-theme="green-dark"] {
+    --accent-color: #496989;
+    --background-color: #191A19;
+    --font-color: #a3a29a;
+} */
+
+[data-theme="orange-light"] {
+    --accent-color: #F39C12;
+    --background-color: #FDF2E9;
+    --font-color: #2f2e2c;
+}
+
+[data-theme="orange-dark"] {
+    --accent-color: #F39C12;
+    --background-color: #12121a;
+    --font-color: #a3a29a;
+}
+
+[data-theme="purple-light"] {
+    --accent-color: #9B59B6;
+    --background-color: #F5EEFD;
+    --font-color: #2f2e2c;
+}
+
+[data-theme="purple-dark"] {
+    --accent-color: #9B59B6;
+    --background-color: #12121a;
+    --font-color: #a3a29a;
+}
+
+[data-theme="green-light"] {
+    --accent-color: #2ECC71;
+    --background-color: #F0FFF4;
+    --font-color: #2f2e2c;
+}
+
+[data-theme="green-dark"] {
+    --accent-color: #2ECC71;
+    --background-color: #12121a;
+    --font-color: #a3a29a;
+}
+
+[data-theme="blue-light"] {
+    --accent-color: #2C97DF;
+    --background-color: #F2F6FF;
+    --font-color: #2f2e2c;
+}
+
+[data-theme="blue-dark"] {
+    --accent-color: #2C97DF;
+    --background-color: #12121a;
+    --font-color: #a3a29a;
+}
+
+[data-theme="gray-light"] {
+    --accent-color: #95A5A6;
+    --background-color: #F4F6F6;
+    --font-color: #2f2e2c;
+}
+
+[data-theme="gray-dark"] {
+    --accent-color: #95A5A6;
+    --background-color: #12121a;
+    --font-color: #a3a29a;
+}
+
+[data-theme="pink-light"] {
+    --accent-color: #FF6B81;
+    --background-color: #FDF2F8;
+    --font-color: #2f2e2c;
+}
+
+[data-theme="pink-dark"] {
+    --accent-color: #FF6B81;
+    --background-color: #12121a;
+    --font-color: #a3a29a;
 }

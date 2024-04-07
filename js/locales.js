@@ -4,15 +4,33 @@ export const LOCALES = {
         add_quote: 'Add quote',
         made_by: 'Made by',
         project: 'Project',
-        zen_mode_title: 'Remove everything that distracts you',
-        work_mode_title: 'Show only safe for work quotes',
         work_mode: 'Work',
         zen_mode: 'Zen',
-        exit_zen_title: 'Exit Zen mode',
         title: 'Title',
         author: 'Author',
         language: 'Language',
         theme: 'Theme',
+        // Title attr
+        zen_mode_title: 'Remove everything that distracts you',
+        work_mode_title: 'Show only safe for work quotes',
+        exit_zen_title: 'Exit Zen mode',
+        // Themes
+        system: 'System',
+        light: 'Light',
+        dark: 'Dark',
+        base: 'Base',
+        pink: 'Pink',
+        green: 'Green',
+        orange: 'Orange',
+        purple: 'Purple',
+        blue: 'Blue',
+        gray: 'Gray',
+        // Locales
+        english: 'English',
+        spanish: 'Spanish',
+        portuguese: 'Portuguese',
+        french: 'French',
+        italian: 'Italian',
     },
     es: {
         document_title: 'Reloj Literario',
@@ -28,6 +46,21 @@ export const LOCALES = {
         author: 'Autor',
         language: 'Lenguaje',
         theme: 'Tema',
+        system: 'Sistema',
+        light: 'Claro',
+        dark: 'Oscuro',
+        base: 'Base',
+        pink: 'Rosa',
+        green: 'Verde',
+        orange: 'Orange',
+        purple: 'Purple',
+        blue: 'Blue',
+        gray: 'Gray',
+        english: 'Inglés',
+        spanish: 'Español',
+        portuguese: 'Portugués',
+        french: 'Francés',
+        italian: 'Italiano',
     },
     pt: {
         document_title: 'Relógio de literatura',
@@ -43,6 +76,21 @@ export const LOCALES = {
         author: 'Autor',
         language: 'Idioma',
         theme: 'Tema',
+        system: 'System',
+        light: 'Light',
+        dark: 'Dark',
+        base: 'Default',
+        pink: 'Pink',
+        green: 'Green',
+        orange: 'Orange',
+        purple: 'Purple',
+        blue: 'Blue',
+        gray: 'Gray',
+        english: 'English',
+        spanish: 'Spanish',
+        portuguese: 'Portuguese',
+        french: 'French',
+        italian: 'Italian',
     },
     fr: {
         document_title: 'Horloge littéraire',
@@ -58,6 +106,21 @@ export const LOCALES = {
         author: 'Auteur',
         language: 'Langue',
         theme: 'Thème',
+        system: 'System',
+        light: 'Light',
+        dark: 'Dark',
+        base: 'Default',
+        pink: 'Pink',
+        green: 'Green',
+        orange: 'Orange',
+        purple: 'Purple',
+        blue: 'Blue',
+        gray: 'Gray',
+        english: 'English',
+        spanish: 'Spanish',
+        portuguese: 'Portuguese',
+        french: 'French',
+        italian: 'Italian',
     },
     it: {
         document_title: 'Orologio della letteratura',
@@ -73,6 +136,21 @@ export const LOCALES = {
         author: 'Autore',
         language: 'Lingua',
         theme: 'Tema',
+        system: 'System',
+        light: 'Light',
+        dark: 'Dark',
+        base: 'Default',
+        pink: 'Pink',
+        green: 'Green',
+        orange: 'Orange',
+        purple: 'Purple',
+        blue: 'Blue',
+        gray: 'Gray',
+        english: 'English',
+        spanish: 'Spanish',
+        portuguese: 'Portuguese',
+        french: 'French',
+        italian: 'Italian',
     }
 }
 
@@ -97,15 +175,17 @@ export function getLocale(newLocale) {
     const localeLocalStorage = localStorage.getItem("locale");
     const urlParams = new URLSearchParams(window.location.search);
     const localeQueryParam = urlParams.get('locale');
+    const localeSelect = document.getElementById('language-select');
 
-    locale = localeQueryParam || newLocale || localeLocalStorage;
 
-    if (!Object.keys(LOCALES).includes(locale)) {
+    locale = localeQueryParam || newLocale || localeLocalStorage || locale;
+
+    if (!Object.keys(LOCALES).includes(locale) || !locale.length) {
         locale = 'en';
     }
 
+    localeSelect.value = locale;
     localStorage.setItem('locale', locale);
-    document.getElementById("language-select").value = locale;
 
     return locale;
 }
@@ -133,4 +213,9 @@ export function setLocale(newLocale) {
             element.title = strings[key];
         }
     });
+
+    ['locale', 'theme', 'variant'].forEach(select => {
+        const options = document.querySelectorAll(`#${select}-select option`);
+        options.forEach(o => o.textContent = strings[o.value])
+    })
 }

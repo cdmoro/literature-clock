@@ -1,0 +1,52 @@
+[
+    {
+        "time": "23:45",
+        "quote_first": "It was a ",
+        "quote_last": " when the service was over. When he reached home, the bishop undressed and went to bed at once without even saying his prayers.",
+        "quote_time_case": "quarter to twelve",
+        "quote_raw": "It was a quarter to twelve when the service was over. When he reached home, the bishop undressed and went to bed at once without even saying his prayers.",
+        "title": "The Bishop",
+        "author": "Anton Pavlovich Chekhov",
+        "sfw": "sfw"
+    },
+    {
+        "time": "23:45",
+        "quote_first": "It was ",
+        "quote_last": ", when the dead—according to Celia—threw off their coffin lids like so many blankets. Stop that, Matt told himself.",
+        "quote_time_case": "fifteen minutes to midnight",
+        "quote_raw": "It was fifteen minutes to midnight, when the dead—according to Celia—threw off their coffin lids like so many blankets. Stop that, Matt told himself.",
+        "title": "The House of the Scorpion",
+        "author": "Nancy Farmer",
+        "sfw": "sfw"
+    },
+    {
+        "time": "23:45",
+        "quote_first": "Billy’s plan lasts until ",
+        "quote_last": ". He’s been watching some action movie in his underwear, and although the plot is simple—something about a guy seeking revenge on the men who killed his dog—Billy has lost the thread. He decides to call it a day.",
+        "quote_time_case": "quarter to midnight",
+        "quote_raw": "Billy’s plan lasts until quarter to midnight. He’s been watching some action movie in his underwear, and although the plot is simple—something about a guy seeking revenge on the men who killed his dog—Billy has lost the thread. He decides to call it a day.",
+        "title": "Billy Summers",
+        "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:45",
+        "quote_first": "The church clocks chimed ",
+        "quote_last": ", as two figures emerged on London Bridge. One, which advanced with a swift and rapid step, was that of a woman who looked eagerly about her as though in quest of some expected object; the other figure was that of a man...",
+        "quote_time_case": "three quarters past eleven",
+        "quote_raw": "The church clocks chimed three quarters past eleven, as two figures emerged on London Bridge. One, which advanced with a swift and rapid step, was that of a woman who looked eagerly about her as though in quest of some expected object; the other figure was that of a man...",
+        "title": "Oliver Twist",
+        "author": "Charles Dickens",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:45",
+        "quote_first": "We struck the tow-path at length, and that made us happy because prior to this we had not been sure whether we were walking towards the river or away from it, and when you are tired and want to go to bed, uncertainties like that worry you. We passed Shiplake as the clock was striking the ",
+        "quote_last": " and then George said thoughtfully: \"You don't happen to remember which of the islands it was, do you?\"",
+        "quote_time_case": "quarter to twelve",
+        "quote_raw": "We struck the tow-path at length, and that made us happy because prior to this we had not been sure whether we were walking towards the river or away from it, and when you are tired and want to go to bed, uncertainties like that worry you. We passed Shiplake as the clock was striking the quarter to twelve and then George said thoughtfully: \"You don't happen to remember which of the islands it was, do you?\"",
+        "title": "Three Men in a Boat",
+        "author": "Jerome K. Jerome",
+        "sfw": "unknown"
+    }
+]

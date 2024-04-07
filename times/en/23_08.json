@@ -1,0 +1,22 @@
+[
+    {
+        "time": "23:08",
+        "quote_first": "He glanced up so that he could see the time on the datastrip along the upper edge of his helmet: ",
+        "quote_last": ":23. Ten minutes. They walked unsteadily on.",
+        "quote_time_case": "11:08",
+        "quote_raw": "He glanced up so that he could see the time on the datastrip along the upper edge of his helmet: 11:08:23. Ten minutes. They walked unsteadily on.",
+        "title": "The Infinite Day",
+        "author": "Chris Walley",
+        "sfw": "sfw"
+    },
+    {
+        "time": "23:08",
+        "quote_first": "“This is my first pass,” Wilson said. “East to west, at ",
+        "quote_last": ". We’re looking from the left-wing camera which is running at ninety-six frames per second. As you can see, my altitude is falling rapidly.”",
+        "quote_time_case": "11:08",
+        "quote_raw": "“This is my first pass,” Wilson said. “East to west, at 11:08. We’re looking from the left-wing camera which is running at ninety-six frames per second. As you can see, my altitude is falling rapidly.”",
+        "title": "The Andromeda Strain",
+        "author": "Michael Crichton",
+        "sfw": "sfw"
+    }
+]

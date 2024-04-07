@@ -66,6 +66,11 @@ cite {
     font-size: 1.7vw;
 }
 
+select {
+    background-color: var(--background-color);
+    color: var(--font-color);
+}
+
 #footnote {
     font-size: 1.3vw;
     padding-top: 1.5rem;

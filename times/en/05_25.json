@@ -1,0 +1,22 @@
+[
+    {
+        "time": "05:25",
+        "quote_first": "At ",
+        "quote_last": " the doorbell rings, always an evil omen. I stagger to the intercom and push the button.",
+        "quote_time_case": "5:25 a.m.",
+        "quote_raw": "At 5:25 a.m. the doorbell rings, always an evil omen. I stagger to the intercom and push the button.",
+        "title": "The Time Traveler’s Wife",
+        "author": "Audrey Niffenegger",
+        "sfw": "unknown"
+    },
+    {
+        "time": "05:25",
+        "quote_first": "George's train home from New Street leaves at ",
+        "quote_last": ". On the return journey, there are rarely schoolboys.",
+        "quote_time_case": "5.25",
+        "quote_raw": "George's train home from New Street leaves at 5.25. On the return journey, there are rarely schoolboys.",
+        "title": "Arthur and George",
+        "author": "Julian Barnes",
+        "sfw": "unknown"
+    }
+]

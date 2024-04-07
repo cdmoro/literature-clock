@@ -1,4 +1,4 @@
-const FALLBACK_QUOTES = {
+export const FALLBACK_QUOTES = {
     en: [
         {
             time: "",
@@ -91,7 +91,3 @@ const FALLBACK_QUOTES = {
         },
     ],
 };
-
-export {
-    FALLBACK_QUOTES
-}
