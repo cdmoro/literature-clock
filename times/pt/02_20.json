@@ -1,0 +1,32 @@
+[
+    {
+        "time": "02:20",
+        "quote_first": "Ela virou-se abruptamente para a enfermeira e perguntou as horas. '",
+        "quote_last": "' 'Ah... Duas e vinte!' — repetiu Genevieve, como se houvesse algo urgente a ser feito.",
+        "quote_time_case": "Duas e vinte",
+        "quote_raw": "Ela virou-se abruptamente para a enfermeira e perguntou as horas. 'Duas e vinte' 'Ah... Duas e vinte!' — repetiu Genevieve, como se houvesse algo urgente a ser feito.",
+        "title": "Correio do Sul",
+        "author": "Antoine de Saint Exupery",
+        "sfw": "unknown"
+    },
+    {
+        "time": "02:20",
+        "quote_first": "Na noite de sua terceira caminhada, Lew dormiu em seu próprio apartamento. Quando seus olhos se abriram às ",
+        "quote_last": ", pelos ponteiros verdes do despertador, ele sabia que dessa vez estava realmente esperando por isso enquanto dormia.",
+        "quote_time_case": "duas e vinte",
+        "quote_raw": "Na noite de sua terceira caminhada, Lew dormiu em seu próprio apartamento. Quando seus olhos se abriram às duas e vinte, pelos ponteiros verdes do despertador, ele sabia que dessa vez estava realmente esperando por isso enquanto dormia.",
+        "title": "O povo da noite",
+        "author": "Jack Finney",
+        "sfw": "unknown"
+    },
+    {
+        "time": "02:20",
+        "quote_first": "Duas e vinte minutos, a caminho de San Diego, ouvindo uma música estranha e cacofana; sem linha melódica, sem conteúdo.",
+        "quote_last": "",
+        "quote_time_case": "Vinte minutos depois das duas",
+        "quote_raw": "Duas e vinte minutos, a caminho de San Diego, ouvindo uma música estranha e cacofana; sem linha melódica, sem conteúdo.",
+        "title": "Em algum lugar no tempo (retorno do tempo do lance)",
+        "author": "Richard Matheson",
+        "sfw": "unknown"
+    }
+]

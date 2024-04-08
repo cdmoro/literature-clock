@@ -1,0 +1,32 @@
+[
+    {
+        "time": "20:35",
+        "quote_first": "",
+        "quote_last": " Hah ! Trouvé un mode d'emploi sous Hello! Droite.",
+        "quote_time_case": "20h35",
+        "quote_raw": "20h35 Hah ! Trouvé un mode d'emploi sous Hello! Droite.",
+        "title": "Le journal de Bridget Jones",
+        "author": "Helen Fielding",
+        "sfw": "sfw"
+    },
+    {
+        "time": "20:35",
+        "quote_first": "Quitté Munich à ",
+        "quote_last": ". le 1er mai, arrivée à Vienne tôt le lendemain matin",
+        "quote_time_case": "20h35",
+        "quote_raw": "Quitté Munich à 20h35. le 1er mai, arrivée à Vienne tôt le lendemain matin",
+        "title": "Dracula",
+        "author": "Bram Stoker",
+        "sfw": "unknown"
+    },
+    {
+        "time": "20:35",
+        "quote_first": "Elle fit une pause réfléchie. Il était maintenant vivement intéressé, cela ne faisait aucun doute. Le meurtrier a forcément un intérêt au meurtre. Elle avait parié là-dessus et elle a réussi. Elle jeta un coup d’œil à l’horloge. Il était neuf heures moins vingt cinq.",
+        "quote_last": "",
+        "quote_time_case": "cinq heures moins vingt et neuf heures",
+        "quote_raw": "Elle fit une pause réfléchie. Il était maintenant vivement intéressé, cela ne faisait aucun doute. Le meurtrier a forcément un intérêt au meurtre. Elle avait parié là-dessus et elle a réussi. Elle jeta un coup d’œil à l’horloge. Il était neuf heures moins vingt cinq.",
+        "title": "Le mystère de Listerdale",
+        "author": "Agatha Christie",
+        "sfw": "unknown"
+    }
+]

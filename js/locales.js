@@ -1,7 +1,10 @@
+import { getTime } from "./utils.js";
+
 export const LOCALES = {
     en: {
         document_title: 'Literature clock',
         add_quote: 'Add quote',
+        report_error: 'Report error',
         made_by: 'Made by',
         project: 'Project',
         work_mode: 'Work',
@@ -42,6 +45,7 @@ export const LOCALES = {
     es: {
         document_title: 'Reloj Literario',
         add_quote: 'Agregar cita',
+        report_error: 'Reportar error',
         made_by: 'Hecho por',
         project: 'Proyecto',
         work_mode: 'Trabajo',
@@ -78,6 +82,7 @@ export const LOCALES = {
     pt: {
         document_title: 'Relógio da Literatura',
         add_quote: 'Adicionar citação',
+        report_error: 'Informar erro',
         made_by: 'Feito por',
         project: 'Projeto',
         work_mode: 'Trabalho',
@@ -114,6 +119,7 @@ export const LOCALES = {
     fr: {
         document_title: 'Horloge de la littérature',
         add_quote: 'Ajouter une citation',
+        report_error: 'Informer l\'erreur',
         made_by: 'Fait par',
         project: 'Projet',
         work_mode: 'Travail',
@@ -150,6 +156,7 @@ export const LOCALES = {
     it: {
         document_title: 'Orologio della letteratura',
         add_quote: 'Aggiungi citazione',
+        report_error: 'Informare l\'errore',
         made_by: 'Realizzato da',
         project: 'Progetto',
         work_mode: 'Lavoro',
@@ -190,6 +197,7 @@ const TEXT_CONTENT = {
     'zen-mode': 'zen_mode',
     'work-mode-label': 'work_mode',
     'add-quote': 'add_quote',
+    'report-error': 'report_error',
     'project': 'project',
     'made-by': 'made_by',
     'language': 'language',
@@ -245,6 +253,13 @@ export function setLocale(newLocale) {
             element.title = strings[key];
         }
     });
+
+    const url = new URL('https://github.com/cdmoro/literature-clock/issues/new');
+    url.searchParams.set('template', `report-error.yaml`);
+    url.searchParams.set('title', `[${getTime()}][${locale.toUpperCase()}] ${LOCALES.en.report_error}`);
+    url.searchParams.set('labels', 'bug');
+    const reportError = document.getElementById('report-error');
+    reportError.href = url.href;
 
     ['locale', 'theme', 'variant'].forEach(select => {
         const options = document.querySelectorAll(`#${select}-select option`);

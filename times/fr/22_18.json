@@ -1,0 +1,22 @@
+[
+    {
+        "time": "22:18",
+        "quote_first": "Ma montre est toujours un peu rapide, dis-je. \"À quelle heure arrivez-vous maintenant ?\"<br/>\"Dix heures huit.\"<br/>\"Dix heures dix-huit chez moi. Vous voyez.\"",
+        "quote_last": "",
+        "quote_time_case": "Dix dix-huit",
+        "quote_raw": "Ma montre est toujours un peu rapide, dis-je. \"À quelle heure arrivez-vous maintenant ?\"<br/>\"Dix heures huit.\"<br/>\"Dix heures dix-huit chez moi. Vous voyez.\"",
+        "title": "L'Américain tranquille",
+        "author": "Graham Greene",
+        "sfw": "unknown"
+    },
+    {
+        "time": "22:18",
+        "quote_first": "",
+        "quote_last": " Ah. Thelma et Louise sont là-dedans.",
+        "quote_time_case": "22h18",
+        "quote_raw": "22h18 Ah. Thelma et Louise sont là-dedans.",
+        "title": "Le journal de Bridget Jones",
+        "author": "Helen Fielding",
+        "sfw": "sfw"
+    }
+]

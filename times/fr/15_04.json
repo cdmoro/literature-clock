@@ -1,0 +1,32 @@
+[
+    {
+        "time": "15:04",
+        "quote_first": "Il consulta sa montre : ",
+        "quote_last": ". Il frappa de nouveau à la porte, mais personne ne répondit. Ils ne lui refuseraient sûrement pas l’entrée alors qu’il n’était en retard que de quelques minutes ?",
+        "quote_time_case": "15h04",
+        "quote_raw": "Il consulta sa montre : 15h04. Il frappa de nouveau à la porte, mais personne ne répondit. Ils ne lui refuseraient sûrement pas l’entrée alors qu’il n’était en retard que de quelques minutes ?",
+        "title": "Les chemins de la gloire",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "time": "15:04",
+        "quote_first": "Il vit l'horloge de la tour de l'hôtel de ville indiquer ",
+        "quote_last": " en cet après-midi chaud et sans vent de fin juillet.",
+        "quote_time_case": "trois heures quatre minutes",
+        "quote_raw": "Il vit l'horloge de la tour de l'hôtel de ville indiquer trois heures quatre minutes en cet après-midi chaud et sans vent de fin juillet.",
+        "title": "Les Tommyknockers",
+        "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "time": "15:04",
+        "quote_first": "Réveillé à 15 h 04 par Michel-Ange martelant avec son ciseau.",
+        "quote_last": "",
+        "quote_time_case": "1504",
+        "quote_raw": "Réveillé à 15 h 04 par Michel-Ange martelant avec son ciseau.",
+        "title": "101 Reykjavík",
+        "author": "Hallgrímur Helgason",
+        "sfw": "unknown"
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "time": "10:06",
+        "quote_first": "“Tudo bem, Matt, vamos supor que o ponto de risco máximo seja o próprio Capitólio, às 10h06, bem na escadaria – e então?”",
+        "quote_last": "",
+        "quote_time_case": "10:06",
+        "quote_raw": "“Tudo bem, Matt, vamos supor que o ponto de risco máximo seja o próprio Capitólio, às 10h06, bem na escadaria – e então?”",
+        "title": "Devemos contar ao presidente?",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "time": "10:06",
+        "quote_first": "Ela sai do carro na frente leste do Capitólio às [dez] seis minutos.",
+        "quote_last": "",
+        "quote_time_case": "seis minutos depois [dez]",
+        "quote_raw": "Ela sai do carro na frente leste do Capitólio às [dez] seis minutos.",
+        "title": "Devemos contar ao presidente?",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "time": "10:06",
+        "quote_first": "Você tem quinze minutos, ele disse. Então a conexão caiu. Quarta-feira, ",
+        "quote_last": ".",
+        "quote_time_case": "10h06",
+        "quote_raw": "Você tem quinze minutos, ele disse. Então a conexão caiu. Quarta-feira, 10h06.",
+        "title": "Perdido",
+        "author": "Lisa Gardner",
+        "sfw": "sfw"
+    }
+]

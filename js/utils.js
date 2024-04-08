@@ -91,3 +91,13 @@ export const FALLBACK_QUOTES = {
         },
     ],
 };
+
+export function getTime() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const testTime = urlParams.get('time');
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    
+    return testTime || `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+}

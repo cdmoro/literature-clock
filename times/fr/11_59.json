@@ -1,0 +1,32 @@
+[
+    {
+        "time": "11:59",
+        "quote_first": "Terry regarda le vieil homme avec inquiétude. « Vous n’avez signé aucun papier, n’est-ce pas, M. Langley ? Elle regarda sa montre. « Il est juste ",
+        "quote_last": ". J'ai encore le temps de choisir cette option. Voici votre chèque ! »",
+        "quote_time_case": "midi moins une minute",
+        "quote_raw": "Terry regarda le vieil homme avec inquiétude. « Vous n’avez signé aucun papier, n’est-ce pas, M. Langley ? Elle regarda sa montre. « Il est juste midi moins une minute. J'ai encore le temps de choisir cette option. Voici votre chèque ! »",
+        "title": "Sur l'île de l'aventure",
+        "author": "Bess Moyer",
+        "sfw": "sfw"
+    },
+    {
+        "time": "11:59",
+        "quote_first": "Il y a une grande horloge de grand-père là-bas, et comme les aiguilles approchaient de minuit, cela ne me dérange pas d'avouer que j'étais aussi nerveux qu'un chat.",
+        "quote_last": "",
+        "quote_time_case": "près de douze heures",
+        "quote_raw": "Il y a une grande horloge de grand-père là-bas, et comme les aiguilles approchaient de minuit, cela ne me dérange pas d'avouer que j'étais aussi nerveux qu'un chat.",
+        "title": "L'aventure de Johnnie Waverley : une histoire d'Hercule Poirot",
+        "author": "Agatha Christie",
+        "sfw": "unknown"
+    },
+    {
+        "time": "11:59",
+        "quote_first": "Le lendemain encore, ",
+        "quote_last": ", un décurion avec son commandement de dix cavaliers s'approcha de Nazareth par le sud, c'est-à-dire du côté de Jérusalem. L'endroit était alors un village dispersé, perché à flanc de colline, et si insignifiant que sa seule rue n'était guère plus qu'un chemin bien tracé par le va et vient des troupeaux.",
+        "quote_time_case": "vers midi",
+        "quote_raw": "Le lendemain encore, vers midi, un décurion avec son commandement de dix cavaliers s'approcha de Nazareth par le sud, c'est-à-dire du côté de Jérusalem. L'endroit était alors un village dispersé, perché à flanc de colline, et si insignifiant que sa seule rue n'était guère plus qu'un chemin bien tracé par le va et vient des troupeaux.",
+        "title": "Ben Hur",
+        "author": "Lew Wallace",
+        "sfw": "sfw"
+    }
+]

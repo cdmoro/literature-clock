@@ -106,6 +106,7 @@
 [data-theme*=retro] {
     --quote-font-family: 'VT323';
     --quote-line-height: 1;
+    --quote-font-size: 3vw;
 }
 
 [data-theme="elegant-light"] {

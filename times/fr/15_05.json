@@ -1,0 +1,32 @@
+[
+    {
+        "time": "15:05",
+        "quote_first": "Il y a cinq minutes, il était trois heures, a déclaré Murphy. \"Je ne peux pas en être certain, mais je suppose qu'il doit maintenant être environ trois heures cinq.\"<br/> J'ai croisé les bras. \"Je ne fais pas habituellement de surveillance.\"",
+        "quote_last": "",
+        "quote_time_case": "trois oh cinq",
+        "quote_raw": "Il y a cinq minutes, il était trois heures, a déclaré Murphy. \"Je ne peux pas en être certain, mais je suppose qu'il doit maintenant être environ trois heures cinq.\"<br/> J'ai croisé les bras. \"Je ne fais pas habituellement de surveillance.\"",
+        "title": "nuit blanche",
+        "author": "Jim Butcher",
+        "sfw": "sfw"
+    },
+    {
+        "time": "15:05",
+        "quote_first": "Pendant un instant, Ruth put voir les os des chauves-souris ressortir clairement, comme sur une radiographie.<br>Puis tout le vert devint noir.<br>Il était ",
+        "quote_last": ".",
+        "quote_time_case": "15h05",
+        "quote_raw": "Pendant un instant, Ruth put voir les os des chauves-souris ressortir clairement, comme sur une radiographie.<br>Puis tout le vert devint noir.<br>Il était 15h05.",
+        "title": "Les Tommyknockers",
+        "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "time": "15:05",
+        "quote_first": "Finalement, à ",
+        "quote_last": " minutes cet après-midi-là, Smith a admis la fausseté de l'histoire de Fort Scott.<br/>\"C'était seulement quelque chose que Dick avait dit à sa famille. Pour qu'il puisse passer la nuit dehors. Boire un peu.\"",
+        "quote_time_case": "trois heures cinq",
+        "quote_raw": "Finalement, à trois heures cinq minutes cet après-midi-là, Smith a admis la fausseté de l'histoire de Fort Scott.<br/>\"C'était seulement quelque chose que Dick avait dit à sa famille. Pour qu'il puisse passer la nuit dehors. Boire un peu.\"",
+        "title": "De sang-froid",
+        "author": "Truman Capote",
+        "sfw": "unknown"
+    }
+]

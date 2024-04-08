@@ -1,8 +1,8 @@
-import { getLocale, setLocale, getStrings } from './locales.js';
+import { getLocale, setLocale, getStrings, LOCALES } from './locales.js';
 import { setTheme, setVariant } from './themes.js';
 import { initZenMode, setZenMode } from './zenMode.js';
 import { initWorkMode, isWorkMode, toggleWorkMode } from './workMode.js';
-import { FALLBACK_QUOTES } from './utils.js';
+import { FALLBACK_QUOTES, getTime } from './utils.js';
 
 const clock = document.getElementById("clock");
 const quoteTimeBar = document.getElementById("quote-time-bar");
@@ -12,14 +12,6 @@ const testTime = urlParams.get('time');
 const testQuote = urlParams.get('quote');
 let lastTime;
 
-function getTime() {
-    const now = new Date();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    
-    return testTime || `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
-}
-
 async function updateQuote(time) {
     const quotes = await getQuotes(time);
     const quote = getQuote(quotes, time);
@@ -27,6 +19,7 @@ async function updateQuote(time) {
     const quoteRawEl = document.createElement('div');
     quoteRawEl.innerHTML = quote.quote_raw || quoteText;
 
+    clock.classList.toggle('quote-xl', quoteRawEl.innerHTML.length >= 300);
     clock.innerHTML = /*html*/`
         <blockquote id="quote" aria-label="${quote.time}" aria-description="${quoteRawEl.innerText}" data-sfw="${quote.sfw}">
             <p>${quoteText.replace(/\n/g, '<br>')}</p>
@@ -62,11 +55,10 @@ async function getQuotes(time) {
 }
 
 function getQuote(quotes, time) {
-    const locale = getLocale();
-    const strings = getStrings();
-    const url = new URL('https://github.com/cdmoro/reloj-literario/issues/new');
-    url.searchParams.set('template', `add-quote.${locale}.yaml`);
-    url.searchParams.set('title', `[${time}] ${strings.add_quote}`);
+    const url = new URL('https://github.com/cdmoro/literature-clock/issues/new');
+    url.searchParams.set('template', `add-quote.yaml`);
+    url.searchParams.set('labels', 'add-quote');
+    url.searchParams.set('title', `[${time}][${getLocale()}] ${LOCALES.en.add_quote}`);
 
     const random_quote_index = Math.floor(Math.random() * quotes.length);
     const quote = Object.assign({}, quotes[random_quote_index]);

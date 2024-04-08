@@ -31,6 +31,8 @@ for file_name in file_list:
         if not os.path.exists(lang_folder):
             os.makedirs(lang_folder)
 
+        print(f"Processing {file_name}...")
+
         # Group by the 'Time' column and create JSON files for each group
         for key, group in groupedByTime:
             # Convert the group DataFrame to a list of dictionaries
@@ -40,8 +42,8 @@ for file_name in file_list:
                 quote_parts = row['Quote'].split(str(row['Quote time']), 1)
 
                 if len(quote_parts) == 1:
-                    print(index, row['Quote time'])
-                    quote_parts = row['Quote'].split(row['Quote time'].capitalize(), 1)
+                    print(f"Split error: '{row['Quote time']}' not found in '{row['Quote']}'")
+                    quote_parts.append('');
 
                 quote_first = quote_parts[0]
                 quote_last = quote_parts[1]
@@ -88,7 +90,6 @@ for file_name in file_list:
             'top_time_quotes': top_time_quotes.to_dict()
         }
 
-        print(f"Processing {file_name}...")
         print(f"- {times_with_quote} files created in {os.path.join(output_path, language)}\n")
 
         # Create the JSON file name for statistics
