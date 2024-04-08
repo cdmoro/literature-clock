@@ -5,7 +5,7 @@ export const LOCALES = {
         made_by: 'Made by',
         project: 'Project',
         work_mode: 'Work',
-        zen_mode: 'Zen mode',
+        zen_mode: 'Zen [OFF]',
         title: 'Title',
         author: 'Author',
         // Title attr
@@ -45,7 +45,7 @@ export const LOCALES = {
         made_by: 'Hecho por',
         project: 'Proyecto',
         work_mode: 'Trabajo',
-        zen_mode: 'Modo zen',
+        zen_mode: 'Zen [OFF]',
         title: 'Título',
         author: 'Autor',
         language: 'Idioma',
@@ -81,7 +81,7 @@ export const LOCALES = {
         made_by: 'Feito por',
         project: 'Projeto',
         work_mode: 'Trabalho',
-        zen_mode: 'Modo zen',
+        zen_mode: 'Zen [OFF]',
         title: 'Título',
         author: 'Autor',
         language: 'Idioma',
@@ -117,7 +117,7 @@ export const LOCALES = {
         made_by: 'Fait par',
         project: 'Projet',
         work_mode: 'Travail',
-        zen_mode: 'Mode zen',
+        zen_mode: 'Zen [OFF]',
         title: 'Titre',
         author: 'Auteur',
         language: 'Langue',
@@ -153,7 +153,7 @@ export const LOCALES = {
         made_by: 'Realizzato da',
         project: 'Progetto',
         work_mode: 'Lavoro',
-        zen_mode: 'Modo zen',
+        zen_mode: 'Zen [OFF]',
         title: 'Titolo',
         author: 'Autore',
         addQuote: 'Aggiungere una citazione',
@@ -221,7 +221,8 @@ export function getLocale(newLocale) {
     return locale;
 }
 
-export function getStrings(locale) {
+export function getStrings() {
+    const locale = getLocale();
     return LOCALES[locale] ? LOCALES[locale] : LOCALES['en'];
 }
 

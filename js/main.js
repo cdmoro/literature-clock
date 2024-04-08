@@ -1,6 +1,6 @@
 import { getLocale, setLocale, getStrings } from './locales.js';
 import { setTheme, setVariant } from './themes.js';
-import { initZenMode, isZenMode, setZenMode, exitZenMode } from './zenMode.js';
+import { initZenMode, setZenMode } from './zenMode.js';
 import { initWorkMode, isWorkMode, setWorkMode } from './workMode.js';
 import { FALLBACK_QUOTES } from './utils.js';
 
@@ -12,13 +12,21 @@ const testTime = urlParams.get('time');
 const testQuote = urlParams.get('quote');
 let lastTime;
 
+function getTime() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    
+    return testTime || `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+}
+
 async function updateQuote(time) {
     const quotes = await getQuotes(time);
     const quote = getQuote(quotes, time);
     const quoteText = testQuote || `${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}`
 
     clock.innerHTML = /*html*/`
-        <blockquote aria-label="${quote.time}" aria-description="${quote.quote_raw}">
+        <blockquote id="quote" aria-label="${quote.time}" aria-description="${quote.quote_raw}" data-sfw="${quote.sfw}">
             <p>${quoteText.replace(/\n/g, '<br>')}</p>
             <cite>— ${quote.title}, ${quote.author}</cite>
         </blockquote>
@@ -53,7 +61,7 @@ async function getQuotes(time) {
 
 function getQuote(quotes, time) {
     const locale = getLocale();
-    const strings = getStrings(locale);
+    const strings = getStrings();
     const url = new URL('https://github.com/cdmoro/reloj-literario/issues/new');
     url.searchParams.set('template', `add-quote.${locale}.yaml`);
     url.searchParams.set('title', `[${time}] ${strings.add_quote}`);
@@ -77,12 +85,10 @@ function getQuote(quotes, time) {
 }
 
 async function updateTime(testTime) {
+    const time = getTime();
     const now = new Date();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
     const seconds = now.getSeconds();
-
-    const time = testTime || `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+    const strings = getStrings();
 
     if (!testTime && !testQuote) {
         quoteTimeBar.style.width = `${(seconds / 60) * 100}%`;
@@ -91,7 +97,7 @@ async function updateTime(testTime) {
 
     if (lastTime !== time) {
         if (!testQuote) {
-            document.title = `[${time}] Reloj Literario`;
+            document.title = `[${time}] ${strings.document_title}`;
         }
 
         updateQuote(time);
@@ -108,12 +114,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('language-select').addEventListener('change', (e) => {
         setLocale(e.target.value)
+        const time = getTime();
+        const strings = getStrings();
 
-        const now = new Date();
-        const hours = now.getHours();
-        const minutes = now.getMinutes();
-    
-        const time = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+        if (!testQuote) {
+            document.title = `[${time}] ${strings.document_title}`;
+        }
+
         updateQuote(time);
     });
     document.getElementById('theme-select').addEventListener('change', (e) => 
@@ -126,12 +133,20 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         setZenMode(true);
     });
-    document.getElementById('work-mode-input').addEventListener('change', (e) =>
+    document.getElementById('work-mode-input').addEventListener('change', (e) => {
         setWorkMode(e.target.checked)
-    );
+
+        const quote = document.getElementById('quote');
+        const isNSFW = quote.dataset.sfw === 'nsfw';
+
+        if (isNSFW) {
+            const time = getTime();
+            updateQuote(time);
+        }
+    });
     document.getElementById('exit-zen').addEventListener('click', (e) => {
         e.preventDefault();
-        exitZenMode();
+        setZenMode(false);
     });
     
     document.body.classList.remove('hidden');

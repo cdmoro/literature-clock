@@ -28,10 +28,3 @@ export function setZenMode(checked) {
 export function isZenMode() {
     return document.body.classList.contains('zen-mode');
 }
-
-/**
- * Exits Zen Mode by deactivating it.
- */
-export function exitZenMode() {
-    setZenMode(false);
-}
