@@ -15,20 +15,24 @@ function getTheme(newTheme) {
     return theme;
 }
 
-export function setTheme(newTheme) {
+export function setTheme(newTheme, updateVariant = true) {
     const themeSelect = document.getElementById('theme-select');
     const variantSelect = document.getElementById('variant-select');
     const urlParams = new URLSearchParams(window.location.search);
-    const themeQueryParam = urlParams.get('theme');
+    // const themeQueryParam = urlParams.get('theme');
     let theme = getTheme(newTheme);
 
-    if (!themeQueryParam && variantSelect.value === 'system') {
-        theme = theme.split("-")[0];
-        theme += `-${window?.matchMedia("(prefers-color-scheme: dark)") ? 'dark' : 'light'}`;
-    }
+    // if (!themeQueryParam && variantSelect.value === 'system') {
+    //     theme = theme.split("-")[0];
+    //     theme += `-${window?.matchMedia("(prefers-color-scheme: dark)") ? 'dark' : 'light'}`;
+    // }
 
     themeSelect.value = theme.split('-')[0];
-    variantSelect.value = theme.indexOf('-') >= 0 ? theme.split('-')[1] : 'system';
+
+    if (updateVariant) {
+        variantSelect.value = theme.indexOf('-') >= 0 ? theme.split('-')[1] : 'system';
+    }
+    
     localStorage.setItem('theme', theme);
     document.documentElement.setAttribute("data-theme", theme);
 }

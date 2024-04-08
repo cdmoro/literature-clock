@@ -125,12 +125,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
         updateQuote(time);
     });
+
     document.getElementById('theme-select').addEventListener('change', (e) => 
         setTheme(e.target.value)
     );
     document.getElementById('variant-select').addEventListener('change', (e) =>
         setVariant(e.target.value)
     );
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        const themeSelect = document.getElementById('theme-select');
+        const variantSelect = document.getElementById('variant-select');
+        
+        if (variantSelect.value === 'system') {
+            setTheme(`${themeSelect.value}-${e.matches ? 'dark' : 'light'}`, false);
+        }
+    });
+
     document.getElementById('zen-mode').addEventListener('click', (e) => {
         e.preventDefault();
         setZenMode(true);
