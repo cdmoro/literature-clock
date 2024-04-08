@@ -24,9 +24,11 @@ async function updateQuote(time) {
     const quotes = await getQuotes(time);
     const quote = getQuote(quotes, time);
     const quoteText = testQuote || `${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}`
+    const quoteRawEl = document.createElement('div');
+    quoteRawEl.innerHTML = quote.quote_raw;
 
     clock.innerHTML = /*html*/`
-        <blockquote id="quote" aria-label="${quote.time}" aria-description="${quote.quote_raw}" data-sfw="${quote.sfw}">
+        <blockquote id="quote" aria-label="${quote.time}" aria-description="${quoteRawEl.innerText}" data-sfw="${quote.sfw}">
             <p>${quoteText.replace(/\n/g, '<br>')}</p>
             <cite>— ${quote.title}, ${quote.author}</cite>
         </blockquote>
