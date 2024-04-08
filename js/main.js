@@ -25,7 +25,7 @@ async function updateQuote(time) {
     const quote = getQuote(quotes, time);
     const quoteText = testQuote || `${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}`
     const quoteRawEl = document.createElement('div');
-    quoteRawEl.innerHTML = quote.quote_raw;
+    quoteRawEl.innerHTML = quote.quote_raw || quoteText;
 
     clock.innerHTML = /*html*/`
         <blockquote id="quote" aria-label="${quote.time}" aria-description="${quoteRawEl.innerText}" data-sfw="${quote.sfw}">
@@ -115,12 +115,22 @@ document.addEventListener('DOMContentLoaded', function() {
     setLocale();
 
     document.getElementById('language-select').addEventListener('change', (e) => {
-        setLocale(e.target.value)
+        const newLocale = e.target.value;
+        setLocale(newLocale)
         const time = getTime();
         const strings = getStrings();
 
         if (!testQuote) {
             document.title = `[${time}] ${strings.document_title}`;
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+
+        if (urlParams.get('locale')) {
+            localStorage.setItem('locale', newLocale);
+            urlParams.delete("locale");
+            window.location.search = urlParams.toString();
+            return;
         }
 
         updateQuote(time);
@@ -133,11 +143,14 @@ document.addEventListener('DOMContentLoaded', function() {
         setVariant(e.target.value)
     );
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        const themeSelect = document.getElementById('theme-select');
-        const variantSelect = document.getElementById('variant-select');
+        const variantSelect = document.getElementById("variant-select");
         
         if (variantSelect.value === 'system') {
-            setTheme(`${themeSelect.value}-${e.matches ? 'dark' : 'light'}`, false);
+            const themeSelect = document.getElementById('theme-select');
+            const theme = `${themeSelect.value}-${e.matches ? 'dark' : 'light'}`;
+
+            localStorage.setItem('theme', theme);
+            document.documentElement.setAttribute("data-theme", theme);
         }
     });
 
