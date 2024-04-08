@@ -135,6 +135,10 @@ footer {
     padding: 1rem;
 }
 
+#theme-container {
+    display: inline-block;
+}
+
 @media all and (max-width: 959px) and (min-width: 600px) {
     cite {
         font-size: 2.3vw;
