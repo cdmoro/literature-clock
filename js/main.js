@@ -1,7 +1,7 @@
 import { getLocale, setLocale, getStrings } from './locales.js';
 import { setTheme, setVariant } from './themes.js';
 import { initZenMode, setZenMode } from './zenMode.js';
-import { initWorkMode, isWorkMode, setWorkMode } from './workMode.js';
+import { initWorkMode, isWorkMode, toggleWorkMode } from './workMode.js';
 import { FALLBACK_QUOTES } from './utils.js';
 
 const clock = document.getElementById("clock");
@@ -133,13 +133,14 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         setZenMode(true);
     });
-    document.getElementById('work-mode-input').addEventListener('change', (e) => {
-        setWorkMode(e.target.checked)
+    document.getElementById('work-mode').addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleWorkMode();
 
         const quote = document.getElementById('quote');
         const isNSFW = quote.dataset.sfw === 'nsfw';
 
-        if (isNSFW) {
+        if (isWorkMode() && isNSFW) {
             const time = getTime();
             updateQuote(time);
         }
