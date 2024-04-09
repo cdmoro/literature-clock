@@ -381,20 +381,20 @@
     },
     {
         "time": "00:00",
-        "quote_first": "Cartucce non consentite dopo le 00.00, per favorire il sonno.",
-        "quote_last": "",
-        "quote_time_case": "* 0000h.",
-        "quote_raw": "Cartucce non consentite dopo le 00.00, per favorire il sonno.",
+        "quote_first": "Cartucce non consentite dopo le ",
+        "quote_last": ", per favorire il sonno.",
+        "quote_time_case": "0000h.",
+        "quote_raw": "Cartucce non consentite dopo le 0000h., per favorire il sonno.",
         "title": "Scherzo infinito",
         "author": "David Foster Wallace",
         "sfw": "unknown"
     },
     {
         "time": "00:00",
-        "quote_first": "Gately riesce a sentire i clacson, le voci alzate e gli strilli delle inversioni a U giù in basso sulla Wash. Ciò indica che sono circa le 00.00, l'ora del cambio.",
-        "quote_last": "",
-        "quote_time_case": "* 0000h",
-        "quote_raw": "Gately riesce a sentire i clacson, le voci alzate e gli strilli delle inversioni a U giù in basso sulla Wash. Ciò indica che sono circa le 00.00, l'ora del cambio.",
+        "quote_first": "Gately riesce a sentire i clacson, le voci alzate e gli strilli delle inversioni a U giù in basso sulla Wash. Ciò indica che sono circa le ",
+        "quote_last": ", l'ora del cambio.",
+        "quote_time_case": "0000h.",
+        "quote_raw": "Gately riesce a sentire i clacson, le voci alzate e gli strilli delle inversioni a U giù in basso sulla Wash. Ciò indica che sono circa le 0000h., l'ora del cambio.",
         "title": "Scherzo infinito",
         "author": "David Foster Wallace",
         "sfw": "unknown"
