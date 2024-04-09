@@ -3,15 +3,37 @@
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Discover inspiring quotes from your favorite books with Literature Clock. Customize language, colors, and more for a unique experience">
+    <meta name="keywords" content="literature, quotes, books, clock, reading, wisdom">
+    <link rel="canonical" href="https://literatureclock.netlify.app">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Literature Clock - Online Literary Quotes Clock">
+    <meta property="og:description" content="Discover inspiring quotes from your favorite books with Literature Clock. Customize language, colors, and more for a unique experience">
+    <meta property="og:url" content="https://literatureclock.netlify.app">
+    <meta property="og:image" content="https://literatureclock.netlify.app/images/open_graph.jpeg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Literature Clock">
+
+    <!-- Twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Literature Clock - Online Literary Quotes Clock">
+    <meta name="twitter:description" content="Discover inspiring quotes from your favorite books with Literature Clock. Customize language, colors, and more for a unique experience">
+    <meta name="twitter:image" content="https://literatureclock.netlify.app/images/open_graph.jpeg">
+    <meta name="twitter:site" content="@CarlosBonadeo">
+
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/themes.css">
-    <title>&nbsp;</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+
+    <title>Literature Clock</title>
 </head>
 
 <body class="hidden">
@@ -32,13 +54,13 @@
                 <a id="zen-mode" href="#">Zen mode [OFF]</a> |
                 <a id="work-mode" href="#">Work mode</a> |
                 <span>
-                    <!-- <span id="language">Language</span> -->
-                    <select id="language-select">
+                    <select id="locale-select">
                         <option value="en">English</option>
                         <option value="es">Español</option>
                         <option value="pt">Portuguese</option>
                         <option value="fr">French</option>
                         <option value="it">Italiano</option>
+                        <option value="multi">Multilingual</option>
                     </select>
                 </span> |
                 <span id="theme-container">
@@ -71,7 +93,9 @@
                 <a id="add-quote" target='_blank'>Add quote</a> |
                 <a id="report-error" href="https://github.com/cdmoro/literature-clock/issues/new" target="_blank">Fix typo</a> |
                 <a id="project" href="https://github.com/cdmoro/literature-clock" target="_blank">Project</a> |
-                <span id="made-by">Made by</span> <a href="https://twitter.com/CarlosBonadeo" target="_blank">@CarlosBonadeo</a>
+                <span id="contact">
+                    <span id="made-by">Made by</span> <a href="https://twitter.com/CarlosBonadeo" target="_blank">@CarlosBonadeo</a>
+                </div>
             </div>
         </div>
     </footer>

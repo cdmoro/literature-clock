@@ -1,4 +1,4 @@
-import { getLocale, setLocale, getStrings, LOCALES } from './locales.js';
+import { getLocale, setLocale, getStrings, getRandomLocale, LOCALES } from './locales.js';
 import { setTheme, setVariant } from './themes.js';
 import { initZenMode, setZenMode } from './zenMode.js';
 import { initWorkMode, isWorkMode, toggleWorkMode } from './workMode.js';
@@ -29,8 +29,9 @@ async function updateQuote(time) {
 } 
 
 async function getQuotes(time) {
+    const localeSelect = document.getElementById('locale-select');
     const fileName = time.replace(":", "_");
-    const locale = getLocale();
+    const locale = localeSelect.value === 'multi' ? getRandomLocale() : getLocale();
     try {
         const response = await fetch(`../times/${locale}/${fileName}.json`);
 
@@ -82,7 +83,6 @@ async function updateTime(testTime) {
     const time = getTime();
     const now = new Date();
     const seconds = now.getSeconds();
-    const strings = getStrings();
 
     if (!testTime && !testQuote) {
         quoteTimeBar.style.width = `${(seconds / 60) * 100}%`;
@@ -90,6 +90,8 @@ async function updateTime(testTime) {
     }
 
     if (lastTime !== time) {
+        const strings = getStrings();
+
         if (!testQuote) {
             document.title = `[${time}] ${strings.document_title}`;
         }
@@ -106,11 +108,13 @@ document.addEventListener('DOMContentLoaded', function() {
     setTheme();
     setLocale();
 
-    document.getElementById('language-select').addEventListener('change', (e) => {
-        const newLocale = e.target.value;
-        setLocale(newLocale)
+    document.getElementById('locale-select').addEventListener('change', (e) => {
+        const isMultilingual = e.target.value === 'multi';
+        const newLocale = isMultilingual ? 'en' : e.target.value;
         const time = getTime();
-        const strings = getStrings();
+        const strings = getStrings(newLocale);
+
+        setLocale(newLocale)
 
         if (!testQuote) {
             document.title = `[${time}] ${strings.document_title}`;
@@ -125,7 +129,9 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        updateQuote(time);
+        if (!isMultilingual) {
+            updateQuote(time);
+        }
     });
 
     document.getElementById('theme-select').addEventListener('change', (e) => 

@@ -2,7 +2,7 @@ import { getTime } from "./utils.js";
 
 export const LOCALES = {
     en: {
-        document_title: 'Literature clock',
+        document_title: 'Literature Clock',
         add_quote: 'Add quote',
         report_error: 'Report error',
         made_by: 'Made by',
@@ -36,11 +36,12 @@ export const LOCALES = {
         dark: 'Dark',
         // Locales
         language: 'Language',
-        english: 'English',
-        spanish: 'Spanish',
-        portuguese: 'Portuguese',
-        french: 'French',
-        italian: 'Italian',
+        en: 'English',
+        es: 'Spanish',
+        pt: 'Portuguese',
+        fr: 'French',
+        it: 'Italian',
+        multi: 'Multilingual'
     },
     es: {
         document_title: 'Reloj Literario',
@@ -73,11 +74,12 @@ export const LOCALES = {
         system: 'Sistema',
         light: 'Claro',
         dark: 'Oscuro',
-        english: 'Inglés',
-        spanish: 'Español',
-        portuguese: 'Portugués',
-        french: 'Francés',
-        italian: 'Italiano',
+        en: 'Inglés',
+        es: 'Español',
+        pt: 'Portugués',
+        fr: 'Francés',
+        it: 'Italiano',
+        multi: 'Multilingüe'
     },
     pt: {
         document_title: 'Relógio da Literatura',
@@ -110,14 +112,15 @@ export const LOCALES = {
         system: 'Sistema',
         light: 'Claro',
         dark: 'Escuro',
-        english: 'Inglês',
-        spanish: 'Espanhol',
-        portuguese: 'Português',
-        french: 'Francês',
-        italian: 'Italiano',
+        en: 'Inglês',
+        es: 'Espanhol',
+        pt: 'Português',
+        fr: 'Francês',
+        it: 'Italiano',
+        multi: 'Multilíngue'
     },
     fr: {
-        document_title: 'Horloge de la littérature',
+        document_title: 'Horloge de la Littérature',
         add_quote: 'Ajouter une citation',
         report_error: 'Informer l\'erreur',
         made_by: 'Fait par',
@@ -147,14 +150,15 @@ export const LOCALES = {
         system: 'Système',
         light: 'Clair',
         dark: 'Sombre',
-        english: 'Anglais',
-        spanish: 'Espagnol',
-        portuguese: 'Portugais',
-        french: 'Français',
-        italian: 'Italien',
+        en: 'Anglais',
+        es: 'Espagnol',
+        pt: 'Portugais',
+        fr: 'Français',
+        it: 'Italien',
+        multi: 'Multilingue'
     },
     it: {
-        document_title: 'Orologio della letteratura',
+        document_title: 'Orologio della Letteratura',
         add_quote: 'Aggiungi citazione',
         report_error: 'Informare l\'errore',
         made_by: 'Realizzato da',
@@ -185,11 +189,12 @@ export const LOCALES = {
         system: 'Sistema',
         light: 'Chiaro',
         dark: 'Scuro',
-        english: 'Inglese',
-        spanish: 'Spagnolo',
-        portuguese: 'Portoghese',
-        french: 'Francese',
-        italian: 'Italiano',
+        en: 'Inglese',
+        es: 'Spagnolo',
+        pt: 'Portoghese',
+        fr: 'Francese',
+        it: 'Italiano',
+        multi: 'Multilingua'
     }        
 }
 
@@ -210,27 +215,39 @@ const TITLE_ATTR = {
     'exit-zen': 'exit_zen_title',
 }
 
+export function getRandomLocale() {
+    const locales = Object.keys(LOCALES);
+    return locales[Math.floor(Math.random() * locales.length)];
+}
+
 export function getLocale(newLocale) {
     let locale = navigator.language?.substring(0, 2);
     const localeLocalStorage = localStorage.getItem("locale");
     const urlParams = new URLSearchParams(window.location.search);
     const localeQueryParam = urlParams.get('locale');
-    const localeSelect = document.getElementById('language-select');
+    const localeSelect = document.getElementById('locale-select');
 
     locale = localeQueryParam || newLocale || localeLocalStorage || locale;
 
-    if (!Object.keys(LOCALES).includes(locale) || !locale.length) {
+    if ((!Object.keys(LOCALES).includes(locale) || !locale.length) && locale !== 'multi') {
         locale = 'en';
     }
 
-    localeSelect.value = locale;
-    localStorage.setItem('locale', locale);
+    if (localeSelect.value === 'multi') {
+        localStorage.setItem('locale', 'multi');
+    } else {
+        localeSelect.value = locale;
+        localStorage.setItem('locale', locale);
+    }
 
     return locale;
 }
 
-export function getStrings() {
-    const locale = getLocale();
+export function getStrings(locale) {
+    if (!locale) {
+        locale = getLocale();
+    }
+
     return LOCALES[locale] ? LOCALES[locale] : LOCALES['en'];
 }
 
@@ -263,7 +280,7 @@ export function setLocale(newLocale) {
 
     ['locale', 'theme', 'variant'].forEach(select => {
         const options = document.querySelectorAll(`#${select}-select option`);
-        options.forEach(o => o.textContent = strings[o.value])
+        options.forEach(op => op.textContent = strings[op.value])
     })
 
     document.querySelectorAll('select optgroup').forEach(el => el.label = strings[el.id]);
