@@ -16,8 +16,9 @@ def check_csv_files(directory):
                 rows = list(reader)
                 for row in rows[1:]:
                     if len(row) >= 3 and row[1] not in row[2]:
-                        row[1] = "* " + row[1]
                         errors += 1
+                        if not row[1].startswith('*'):
+                            row[1] = "* " + row[1]
                 with open(filepath, 'w', newline='') as csvfile:
                     writer = csv.writer(csvfile)
                     writer.writerows(rows)
