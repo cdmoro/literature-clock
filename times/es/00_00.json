@@ -1,52 +1,542 @@
 [
     {
         "time": "00:00",
-        "quote_first": "—A vos y de vos la pido —replicó don Quijote—, porque ni yo soy de mármol ni vos de bronce, ni ahora son las diez del día, sino ",
-        "quote_last": "",
-        "quote_time_case": "media noche",
-        "quote_raw": "—A vos y de vos la pido —replicó don Quijote—, porque ni yo soy de mármol ni vos de bronce, ni ahora son las diez del día, sino media noche",
-        "title": "Don Quijote de la Mancha",
-        "author": "Miguel de Cervantes",
+        "quote_first": "Mientras bebían en la fuente, los relojes de la iglesia empezaron a dar la ",
+        "quote_last": ". Missis dijo alegremente: “¡Oh, Pongo, es mañana! ¡Ahora estaremos con nuestros cachorros hoy!",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Mientras bebían en la fuente, los relojes de la iglesia empezaron a dar la medianoche. Missis dijo alegremente: “¡Oh, Pongo, es mañana! ¡Ahora estaremos con nuestros cachorros hoy!",
+        "title": "Los 101 Dálmatas",
+        "author": "Dodie Smith",
         "sfw": "sfw"
     },
     {
         "time": "00:00",
-        "quote_first": "—Yo me reportaré —respondió Sancho—; pero ¿con qué paciencia podré llevar que quiera vuestra merced que de sola una vez que vi la casa de nuestra ama, la haya de saber siempre y hallarla a ",
-        "quote_last": ", no hallándola vuestra merced, que la debe de haber visto millares de veces?",
-        "quote_time_case": "media noche",
-        "quote_raw": "—Yo me reportaré —respondió Sancho—; pero ¿con qué paciencia podré llevar que quiera vuestra merced que de sola una vez que vi la casa de nuestra ama, la haya de saber siempre y hallarla a media noche, no hallándola vuestra merced, que la debe de haber visto millares de veces?",
-        "title": "Don Quijote de la Mancha",
-        "author": "Miguel de Cervantes",
+        "quote_first": "A ",
+        "quote_last": " se abrieron de par en par las puertas y la chusma, en tropel, ocupó los locales que les habían sido asignados, de los que nada menos que un terremoto o un ejército con lanzas podrían haberlos desalojado. Dormitaron toda la noche en los bancos y allí desayunaron; y allí los encontró el final de los ejercicios, pacientes y hambrientos de visión como al principio.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "A medianoche se abrieron de par en par las puertas y la chusma, en tropel, ocupó los locales que les habían sido asignados, de los que nada menos que un terremoto o un ejército con lanzas podrían haberlos desalojado. Dormitaron toda la noche en los bancos y allí desayunaron; y allí los encontró el final de los ejercicios, pacientes y hambrientos de visión como al principio.",
+        "title": "Ben Hur",
+        "author": "Lew Wallace",
         "sfw": "sfw"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "“Pensé que estabas dormido”, dijo poco después. El nilo. ¡Pero confiésate sorprendido!",
+        "quote_last": "",
+        "quote_time_case": "* medianoche",
+        "quote_raw": "“Pensé que estabas dormido”, dijo poco después. El nilo. ¡Pero confiésate sorprendido!",
+        "title": "Ben Hur",
+        "author": "Lew Wallace",
+        "sfw": "sfw"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Ren dijo: \"Si vas al campo de fútbol a ",
+        "quote_last": " en Halloween y dices su nombre tres veces, se supone que aparecerá su fantasma\".",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Ren dijo: \"Si vas al campo de fútbol a medianoche en Halloween y dices su nombre tres veces, se supone que aparecerá su fantasma\".",
+        "title": "Río Cobre",
+        "author": "William Kent Krueger",
+        "sfw": "sfw"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Tú, Willi, amigo mío, dijo suavemente el pastor Fritz, \"tú que estás sentado en la oscuridad de la ",
+        "quote_last": " del mediodía, ¿es este Jesucristo un cuerno de salvación, una luz en tu oscuridad?\"",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Tú, Willi, amigo mío, dijo suavemente el pastor Fritz, \"tú que estás sentado en la oscuridad de la medianoche del mediodía, ¿es este Jesucristo un cuerno de salvación, una luz en tu oscuridad?\"",
+        "title": "Brillante valle del amor",
+        "author": "Edna Hong",
+        "sfw": "sfw"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Tomas un gato negro ---¿no es así?---que no tiene ni un pelo blanco (lo sabes), y le atas las cuatro patas, y luego lo llevas a ",
+        "quote_last": " a un cruce de caminos y grita en alta voz:",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Tomas un gato negro ---¿no es así?---que no tiene ni un pelo blanco (lo sabes), y le atas las cuatro patas, y luego lo llevas a medianoche a un cruce de caminos y grita en alta voz:",
+        "title": "El nombre de la rosa",
+        "author": "Umberto Eco",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Y yo era el león que no recuerdas que empujó la barca en la que yacías, un niño al borde de la muerte, para que llegara a la orilla donde un hombre estaba sentado, despierto a ",
+        "quote_last": ", para recibirte.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Y yo era el león que no recuerdas que empujó la barca en la que yacías, un niño al borde de la muerte, para que llegara a la orilla donde un hombre estaba sentado, despierto a medianoche, para recibirte.",
+        "title": "El caballo y su muchacho",
+        "author": "C.S. Lewis",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Si Jill hubiera estado más acostumbrada a las aventuras, podría haber dudado de la palabra del Búho, pero esto nunca se le ocurrió; y ante la excitante idea de escaparse a ",
+        "quote_last": ", olvidó su somnolencia.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Si Jill hubiera estado más acostumbrada a las aventuras, podría haber dudado de la palabra del Búho, pero esto nunca se le ocurrió; y ante la excitante idea de escaparse a medianoche, olvidó su somnolencia.",
+        "title": "La silla de plata",
+        "author": "C.S. Lewis",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "“Y casi exactamente a ",
+        "quote_last": ", la paciencia del Conde se vio recompensada. Porque, siguiendo las instrucciones que había escrito a Richard, todos los teléfonos del primer piso del Metropol empezaron a sonar.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "“Y casi exactamente a medianoche, la paciencia del Conde se vio recompensada. Porque, siguiendo las instrucciones que había escrito a Richard, todos los teléfonos del primer piso del Metropol empezaron a sonar.",
+        "title": "Un caballero en Moscú",
+        "author": "Amor Towles",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "\"¡Gana Sibby, maldita sea!\" dijo el señor Hubert. “¡Gana Sibby! ¿Por qué diablos estamos discutiendo hasta ",
+        "quote_last": "?",
+        "quote_time_case": "medianoche",
+        "quote_raw": "\"¡Gana Sibby, maldita sea!\" dijo el señor Hubert. “¡Gana Sibby! ¿Por qué diablos estamos discutiendo hasta medianoche?",
+        "title": "Baja Moisés",
+        "author": "William Faulkner",
+        "sfw": "nsfw"
     },
     {
         "time": "00:00",
         "quote_first": "",
-        "quote_last": " era por filo, poco más a menos, cuando don Quijote y Sancho dejaron el monte y entraron en el Toboso.",
-        "quote_time_case": "Media noche",
-        "quote_raw": "Media noche era por filo, poco más a menos, cuando don Quijote y Sancho dejaron el monte y entraron en el Toboso.",
-        "title": "Don Quijote de la Mancha",
-        "author": "Miguel de Cervantes",
-        "sfw": "sfw"
+        "quote_last": ", y había escarcha en los campos y parches de hielo negro en una carretera famosa por sus accidentes: había ramos de flores muertas atadas a postes de cercas y postes de telégrafo, y huecos en los setos, como una especie de cosecha perdida.",
+        "quote_time_case": "Medianoche",
+        "quote_raw": "Medianoche, y había escarcha en los campos y parches de hielo negro en una carretera famosa por sus accidentes: había ramos de flores muertas atadas a postes de cercas y postes de telégrafo, y huecos en los setos, como una especie de cosecha perdida.",
+        "title": "El cuerpo miente",
+        "author": "Jo Baker",
+        "sfw": "unknown"
     },
     {
         "time": "00:00",
-        "quote_first": "—¿Y se aburre mucho usted?\n—Regular. He organizado mi vida como la de un industrial. Todos los días me acuesto a las ",
-        "quote_last": " y me levanto a las nueve de la mañana.",
+        "quote_first": "La plaza St. Sulpice, tan tranquila y desierta, donde todas las noches, hacia ",
+        "quote_last": ", llegaba la mujer del paraguas roto y del velo loco. Todas las noches dormía allí en un banco bajo su paraguas roto, con las costillas colgando, su vestido volviéndose verde, sus dedos huesudos y el olor a descomposición rezumando de su cuerpo; y por la mañana me sentaba allí, dormía tranquilamente al sol y maldecía a las malditas palomas que recogían las migajas por todas partes.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "La plaza St. Sulpice, tan tranquila y desierta, donde todas las noches, hacia medianoche, llegaba la mujer del paraguas roto y del velo loco. Todas las noches dormía allí en un banco bajo su paraguas roto, con las costillas colgando, su vestido volviéndose verde, sus dedos huesudos y el olor a descomposición rezumando de su cuerpo; y por la mañana me sentaba allí, dormía tranquilamente al sol y maldecía a las malditas palomas que recogían las migajas por todas partes.",
+        "title": "trópico de Cáncer",
+        "author": "Henry Miller",
+        "sfw": "nsfw"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "La casa está vacía, pero Eugenio canta como si tuviera por público a todas las cabezas coronadas de Europa. La puerta del jardín está abierta y el olor a hojas mojadas penetra y la lluvia se mezcla con los 𝘢𝘯𝘨𝘰𝘪𝘴𝘴𝘦 y 𝘵𝘳𝘪𝘴𝘵𝘦𝘴𝘴𝘦. A ",
+        "quote_last": ", después de que los espectadores hayan saturado la sala de sudor y aliento fétido, vuelvo a dormir en un banco. La luz de salida, nadando en un halo de humo de tabaco, ilumina débilmente la esquina inferior de la cortina de amianto; Cierro los ojos todas las noches con un ojo artificial...",
+        "quote_time_case": "medianoche",
+        "quote_raw": "La casa está vacía, pero Eugenio canta como si tuviera por público a todas las cabezas coronadas de Europa. La puerta del jardín está abierta y el olor a hojas mojadas penetra y la lluvia se mezcla con los 𝘢𝘯𝘨𝘰𝘪𝘴𝘴𝘦 y 𝘵𝘳𝘪𝘴𝘵𝘦𝘴𝘴𝘦. A medianoche, después de que los espectadores hayan saturado la sala de sudor y aliento fétido, vuelvo a dormir en un banco. La luz de salida, nadando en un halo de humo de tabaco, ilumina débilmente la esquina inferior de la cortina de amianto; Cierro los ojos todas las noches con un ojo artificial...",
+        "title": "trópico de Cáncer",
+        "author": "Henry Miller",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Trevor vestía un disfraz de Andy Warhol: peluca rubia, gafas negras gruesas y camisa ajustada a rayas. Mi primera impresión de él fue que era de espíritu libre, inteligente y divertido. Eso resultó ser completamente inexacto. Salimos juntos de la fiesta y caminamos durante horas, nos mentimos sobre nuestras vidas felices, comimos pizza a ",
+        "quote_last": ", tomamos el ferry de Staten Island de ida y vuelta y vimos salir el sol.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Trevor vestía un disfraz de Andy Warhol: peluca rubia, gafas negras gruesas y camisa ajustada a rayas. Mi primera impresión de él fue que era de espíritu libre, inteligente y divertido. Eso resultó ser completamente inexacto. Salimos juntos de la fiesta y caminamos durante horas, nos mentimos sobre nuestras vidas felices, comimos pizza a medianoche, tomamos el ferry de Staten Island de ida y vuelta y vimos salir el sol.",
+        "title": "Mi año de descanso y relajación",
+        "author": "Ottessa Moshfegh",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "J. Llegó a mi cama a ",
+        "quote_last": " y, durante nuestro atletismo, allanaron mi puerta. ¡Horror ridículo! Gracias a Dios, J. la había cerrado con llave al entrar. El pomo de la puerta sonó y empezaron a llamar insistentemente. El miedo puede despejar la mente además de nublarla, y recordando mi 𝘋𝘰𝘯 𝘑𝘶𝘢𝘯, escondí a J. en un nido de colchas y sábanas en mi cama hundida y dejé la cortina entreabierta para mostrar que no tenía nada que ocultar.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "J. Llegó a mi cama a medianoche y, durante nuestro atletismo, allanaron mi puerta. ¡Horror ridículo! Gracias a Dios, J. la había cerrado con llave al entrar. El pomo de la puerta sonó y empezaron a llamar insistentemente. El miedo puede despejar la mente además de nublarla, y recordando mi 𝘋𝘰𝘯 𝘑𝘶𝘢𝘯, escondí a J. en un nido de colchas y sábanas en mi cama hundida y dejé la cortina entreabierta para mostrar que no tenía nada que ocultar.",
+        "title": "Atlas de nubes",
+        "author": "David Mitchell",
+        "sfw": "nsfw"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Fue una cosa de animales. Algo salvaje. Nada de ella pertenecía a su yo anterior en ese momento. Sobre todo su voz. Esto podría haber sido el agudo chillido de un halcón, el aullido desgarrador de un lobo, el grito áspero de un zorro rojo a ",
+        "quote_last": ". Podría haber sido cualquiera de ellos, pero no el grito de una colegiala de dieciséis años.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Fue una cosa de animales. Algo salvaje. Nada de ella pertenecía a su yo anterior en ese momento. Sobre todo su voz. Esto podría haber sido el agudo chillido de un halcón, el aullido desgarrador de un lobo, el grito áspero de un zorro rojo a medianoche. Podría haber sido cualquiera de ellos, pero no el grito de una colegiala de dieciséis años.",
+        "title": "La isla de los árboles perdidos",
+        "author": "Elif Shafak",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Oliver Dubois embistió una camioneta contra la puerta de su casa en una sudorosa ",
+        "quote_last": " de julio, al final de una fiesta masiva en la calle. <br>No era su camioneta y la calle estaba cerrada al tráfico, por lo que la aparición del vehículo de la oscuridad y el lento estruendo por Oak Drive dispersaron a vecinos e invitados en grupos confundidos en el césped iluminado por velas.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Oliver Dubois embistió una camioneta contra la puerta de su casa en una sudorosa medianoche de julio, al final de una fiesta masiva en la calle. <br>No era su camioneta y la calle estaba cerrada al tráfico, por lo que la aparición del vehículo de la oscuridad y el lento estruendo por Oak Drive dispersaron a vecinos e invitados en grupos confundidos en el césped iluminado por velas.",
+        "title": "Detrás de la mentira",
+        "author": "Emilya Naymark",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Miró la pantalla digital de su reloj.<br>00:00:00<br>",
+        "quote_last": ", como le había dicho el reloj.<br>Esperó a que llegara el siguiente segundo, pero no fue así.",
+        "quote_time_case": "Medianoche",
+        "quote_raw": "Miró la pantalla digital de su reloj.<br>00:00:00<br>Medianoche, como le había dicho el reloj.<br>Esperó a que llegara el siguiente segundo, pero no fue así.",
+        "title": "La biblioteca de medianoche",
+        "author": "Matt Haig",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Adiós, dulce compañero de juegos: ruega por nosotros;<br>¡Y buena suerte te conceda tu Demetrio!-<br>Cumple tu palabra, Lisandro: debemos privar nuestra vista<br>De la comida de los amantes hasta la ",
+        "quote_last": " de mañana.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Adiós, dulce compañero de juegos: ruega por nosotros;<br>¡Y buena suerte te conceda tu Demetrio!-<br>Cumple tu palabra, Lisandro: debemos privar nuestra vista<br>De la comida de los amantes hasta la medianoche de mañana.",
+        "title": "Sueño de una noche de verano",
+        "author": "William Shakespeare",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Aquí, ante mí, había una vasta extensión de espacio vacío: solo la puerta cerrada y yo, y solo las estrellas esparcidas por el cielo de ",
+        "quote_last": " para ver qué hacía a continuación. ¿Esas luces frías y distantes observaban con algún vestigio de los humanos que alguna vez fueron, esos especiales, elegidos y favorecidos que se habían acercado a lo divino?",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Aquí, ante mí, había una vasta extensión de espacio vacío: solo la puerta cerrada y yo, y solo las estrellas esparcidas por el cielo de medianoche para ver qué hacía a continuación. ¿Esas luces frías y distantes observaban con algún vestigio de los humanos que alguna vez fueron, esos especiales, elegidos y favorecidos que se habían acercado a lo divino?",
+        "title": "Ariana",
+        "author": "Jennifer Saint",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "¿El atractivo de la sangre y el éxtasis en los bosques de ",
+        "quote_last": " la había llevado a navegar sobre las brillantes aguas azules? Me preguntaba por qué estaba ella aquí ahora, en el viñedo.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "¿El atractivo de la sangre y el éxtasis en los bosques de medianoche la había llevado a navegar sobre las brillantes aguas azules? Me preguntaba por qué estaba ella aquí ahora, en el viñedo.",
+        "title": "Ariana",
+        "author": "Jennifer Saint",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Llamó a la policía y, cuando los hombres llegaron, comprensivos, a ",
+        "quote_last": ", prestó testimonio. Haberle dado hogar al lobo y socorro al perro rabioso.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Llamó a la policía y, cuando los hombres llegaron, comprensivos, a medianoche, prestó testimonio. Haberle dado hogar al lobo y socorro al perro rabioso.",
+        "title": "El poder",
+        "author": "Naomi Alderman",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Una Navidad, a ",
+        "quote_last": ", en el botón, en la antigua casa, la puerta de la sala se abre con estrépito, entra un hombre gordo con barba, los ojos enrojecidos por el frío y la nariz del color de una cereza.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Una Navidad, a medianoche, en el botón, en la antigua casa, la puerta de la sala se abre con estrépito, entra un hombre gordo con barba, los ojos enrojecidos por el frío y la nariz del color de una cereza.",
+        "title": "Uno volo sobre el nido del cuco",
+        "author": "Ken Kesey",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "A ",
+        "quote_last": ", las luces de la cocina de la cafetería pueden ser especialmente intensas. Sin el consuelo de la luz del día que entraba a través del vitral, todo en la habitación parecía sombrío y utilitario.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "A medianoche, las luces de la cocina de la cafetería pueden ser especialmente intensas. Sin el consuelo de la luz del día que entraba a través del vitral, todo en la habitación parecía sombrío y utilitario.",
+        "title": "Sopa De Granada",
+        "author": "Marsha Mehran",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "A veces no existe lugar más oscuro que nuestros propios pensamientos; la ",
+        "quote_last": " sin luna de la mente.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "A veces no existe lugar más oscuro que nuestros propios pensamientos; la medianoche sin luna de la mente.",
+        "title": "No temas a nada: una novela",
+        "author": "Dean Koontz",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "\"Empieza a ",
+        "quote_last": "\".",
+        "quote_time_case": "medianoche",
+        "quote_raw": "\"Empieza a medianoche\".",
+        "title": "En llamas",
+        "author": "Suzanne Collins",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "El alba pareció seguir a la ",
+        "quote_last": " con una prisa indecente.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "El alba pareció seguir a la medianoche con una prisa indecente.",
+        "title": "Harry Potter y las Reliquias de la Muerte",
+        "author": "J.K. Rowling",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "“Nunca olvidaré que le hizo volar la cometa de Henry ese día tan ventoso de la Pascua pasada, y desde su particular amabilidad el año pasado en septiembre al escribir esa nota, a las ",
+        "quote_last": " de la noche, con el propósito de asegurarme que no había ninguna escarlata. fiebre en Cobham, estoy convencido de que no podría existir un corazón más sensible ni un hombre mejor. Si alguien puede merecerlo, debe ser la señorita Taylor”.",
         "quote_time_case": "doce",
-        "quote_raw": "—¿Y se aburre mucho usted?\n—Regular. He organizado mi vida como la de un industrial. Todos los días me acuesto a las doce y me levanto a las nueve de la mañana.",
-        "title": "Los siete locos",
-        "author": "Roberto Arlt",
+        "quote_raw": "“Nunca olvidaré que le hizo volar la cometa de Henry ese día tan ventoso de la Pascua pasada, y desde su particular amabilidad el año pasado en septiembre al escribir esa nota, a las doce de la noche, con el propósito de asegurarme que no había ninguna escarlata. fiebre en Cobham, estoy convencido de que no podría existir un corazón más sensible ni un hombre mejor. Si alguien puede merecerlo, debe ser la señorita Taylor”.",
+        "title": "emma",
+        "author": "Jane Austen",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "La noche después de su viaje a Lawrenceville, una multitud salió a Nueva York en busca de aventuras y emprendió el regreso a Princeton alrededor de las ",
+        "quote_last": " en dos máquinas. Había sido una fiesta gay y estaban representadas diferentes etapas de sobriedad.",
+        "quote_time_case": "doce",
+        "quote_raw": "La noche después de su viaje a Lawrenceville, una multitud salió a Nueva York en busca de aventuras y emprendió el regreso a Princeton alrededor de las doce en dos máquinas. Había sido una fiesta gay y estaban representadas diferentes etapas de sobriedad.",
+        "title": "Este lado del paraiso",
+        "author": "F. Scott Fitzgerald",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Mientras la ",
+        "quote_last": " daba golpes de bronce en el aire oscuro, Dorian Gray, vestido con ropa normal y con una bufanda alrededor del cuello, salió sigilosamente de su casa.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Mientras la medianoche daba golpes de bronce en el aire oscuro, Dorian Gray, vestido con ropa normal y con una bufanda alrededor del cuello, salió sigilosamente de su casa.",
+        "title": "El retrato de Dorian Gray",
+        "author": "Oscar Wilde",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Pero espera a que te lo diga, dijo. \"También almorzamos a ",
+        "quote_last": " después de toda la alegría y cuando salimos era azul en punto la mañana siguiente a la noche anterior\".",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Pero espera a que te lo diga, dijo. \"También almorzamos a medianoche después de toda la alegría y cuando salimos era azul en punto la mañana siguiente a la noche anterior\".",
+        "title": "Ulises",
+        "author": "James Joyce",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Medianoche, dijiste. ¿Qué es la ",
+        "quote_last": " para los jóvenes? Y de repente un resplandor festivo se arrojó sobre cinco troncos de cedro, se veían parches de nieve, y una patrulla en nuestro camino lleno de baches se detuvo con un crujido. ¡Retoma, retoma!",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Medianoche, dijiste. ¿Qué es la medianoche para los jóvenes? Y de repente un resplandor festivo se arrojó sobre cinco troncos de cedro, se veían parches de nieve, y una patrulla en nuestro camino lleno de baches se detuvo con un crujido. ¡Retoma, retoma!",
+        "title": "Fuego pálido",
+        "author": "Vladimir Nabokov",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "El hecho de que un hombre que apenas podía ver a más de dos pies de distancia pudiera ser empleado como guardia de seguridad me sugirió que nuestro trabajo no era asegurar nada sino presentarnos a trabajar todas las noches, llenar el voluminoso libro de contabilidad con comentarios crípticos como \" Patrullamos el perímetro a las ",
+        "quote_last": " horas, \"Sin incidentes\", e íbamos a la oficina cada quince días para cobrar nuestro salario y escuchar a la locuaz Sra. Elgassier.",
+        "quote_time_case": "12.00",
+        "quote_raw": "El hecho de que un hombre que apenas podía ver a más de dos pies de distancia pudiera ser empleado como guardia de seguridad me sugirió que nuestro trabajo no era asegurar nada sino presentarnos a trabajar todas las noches, llenar el voluminoso libro de contabilidad con comentarios crípticos como \" Patrullamos el perímetro a las 12.00 horas, \"Sin incidentes\", e íbamos a la oficina cada quince días para cobrar nuestro salario y escuchar a la locuaz Sra. Elgassier.",
+        "title": "El cuento de un okupa",
+        "author": "Ike Oguine",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Es la ",
+        "quote_last": " del año, y es la del día, la de Lucy, que apenas siete horas ella misma se desenmascara; El sol se ha gastado y ahora sus petacas emiten chispas de luz, no rayos constantes;",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Es la medianoche del año, y es la del día, la de Lucy, que apenas siete horas ella misma se desenmascara; El sol se ha gastado y ahora sus petacas emiten chispas de luz, no rayos constantes;",
+        "title": "Un nocturno en el día de Santa Lucía",
+        "author": "John Donne",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "A ",
+        "quote_last": " su esposa y su hija todavía podrían estar ocupadas, preparando delicias navideñas en la cocina, arreglando la casa o tal vez preparando sus kimonos o arreglando flores. Oki se sentaba en la sala y escuchaba la radio. Mientras sonaban las campanas, recordaba el año que terminaba. Siempre le pareció una experiencia conmovedora.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "A medianoche su esposa y su hija todavía podrían estar ocupadas, preparando delicias navideñas en la cocina, arreglando la casa o tal vez preparando sus kimonos o arreglando flores. Oki se sentaba en la sala y escuchaba la radio. Mientras sonaban las campanas, recordaba el año que terminaba. Siempre le pareció una experiencia conmovedora.",
+        "title": "Belleza y tristeza",
+        "author": "Yasunari Kawabata",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Bernardo: Ya son las ",
+        "quote_last": "; Vete a la cama, Francisco.",
+        "quote_time_case": "doce",
+        "quote_raw": "Bernardo: Ya son las doce; Vete a la cama, Francisco.",
+        "title": "Aldea",
+        "author": "William Shakespeare",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Pero, lo más extraño aún: el Big Ben había vuelto a dar la ",
+        "quote_last": ". La hora exterior todavía correspondía a la registrada por el reloj dorado parado en el interior. El interior y el exterior coincidían exactamente, pero ambos estaban muy equivocados. Mmmm.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Pero, lo más extraño aún: el Big Ben había vuelto a dar la medianoche. La hora exterior todavía correspondía a la registrada por el reloj dorado parado en el interior. El interior y el exterior coincidían exactamente, pero ambos estaban muy equivocados. Mmmm.",
+        "title": "Noches en el circo",
+        "author": "Angela Carter",
         "sfw": "sfw"
     },
     {
         "time": "00:00",
-        "quote_first": "Ella, tallada ",
-        "quote_last": "\npor la inquietud de mis ojos alucinados:\nella, grabada en los maderos del bosque\npor los cuchillos de mis manos",
-        "quote_time_case": "en el corazón de la noche",
-        "quote_raw": "Ella, tallada en el corazón de la noche\npor la inquietud de mis ojos alucinados:\nella, grabada en los maderos del bosque\npor los cuchillos de mis manos",
-        "title": "El hondero entusiasta",
-        "author": "Pablo Neruda",
-        "sfw": "sfw"
+        "quote_first": "Pero al final entendí este idioma. Lo entendí, lo entendí, tal vez todo mal. Eso no es lo que importa. Me dijo que escribiera el informe. ¿Significa esto que ahora soy más libre de lo que era? No lo sé. Aprenderé. Luego regresé a la casa y escribí: Es ",
+        "quote_last": ". La lluvia golpea las ventanas. No era medianoche. No estaba lloviendo.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Pero al final entendí este idioma. Lo entendí, lo entendí, tal vez todo mal. Eso no es lo que importa. Me dijo que escribiera el informe. ¿Significa esto que ahora soy más libre de lo que era? No lo sé. Aprenderé. Luego regresé a la casa y escribí: Es medianoche. La lluvia golpea las ventanas. No era medianoche. No estaba lloviendo.",
+        "title": "Molloy",
+        "author": "Samuel Beckett",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "No se permiten cartuchos después de las 00.00h., para favorecer el sueño.",
+        "quote_last": "",
+        "quote_time_case": "* 0000 h.",
+        "quote_raw": "No se permiten cartuchos después de las 00.00h., para favorecer el sueño.",
+        "title": "Frivolidad infinita",
+        "author": "David Foster Wallace",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Gately puede oír las bocinas, las voces elevadas y los chirridos de giros en U muy abajo, en Wash. Eso indica que son alrededor de las 00:00 h., la hora de cambio.",
+        "quote_last": "",
+        "quote_time_case": "* 0000h",
+        "quote_raw": "Gately puede oír las bocinas, las voces elevadas y los chirridos de giros en U muy abajo, en Wash. Eso indica que son alrededor de las 00:00 h., la hora de cambio.",
+        "title": "Frivolidad infinita",
+        "author": "David Foster Wallace",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Hamlet: ¿Qué hora es ahora? Horacio: Creo que faltan ",
+        "quote_last": ". Marcelo: No, está golpeado.",
+        "quote_time_case": "doce",
+        "quote_raw": "Hamlet: ¿Qué hora es ahora? Horacio: Creo que faltan doce. Marcelo: No, está golpeado.",
+        "title": "Aldea",
+        "author": "William Shakespeare",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Está seguro de haber oído pasos: se acercan y luego se alejan. El rayo de luz debajo de su puerta se apaga. Es media noche; alguien ha cerrado el gas; el último sirviente se ha acostado y debe permanecer toda la noche en agonía sin que nadie le preste ayuda.",
+        "quote_last": "",
+        "quote_time_case": "* medianoche",
+        "quote_raw": "Está seguro de haber oído pasos: se acercan y luego se alejan. El rayo de luz debajo de su puerta se apaga. Es media noche; alguien ha cerrado el gas; el último sirviente se ha acostado y debe permanecer toda la noche en agonía sin que nadie le preste ayuda.",
+        "title": "El camino de Swann",
+        "author": "Marcel Proust",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Me conciben con las campanadas de ",
+        "quote_last": " en el reloj de la repisa de la chimenea de la habitación al otro lado del pasillo. El reloj perteneció a mi bisabuela (una mujer llamada Alice) y su cansado timbre me cuenta en el mundo.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Me conciben con las campanadas de medianoche en el reloj de la repisa de la chimenea de la habitación al otro lado del pasillo. El reloj perteneció a mi bisabuela (una mujer llamada Alice) y su cansado timbre me cuenta en el mundo.",
+        "title": "Detrás de escena en el museo",
+        "author": "Kate Atkinson",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Tomé su mano entre las mías y le pedí que se calmara; porque una sucesión de estremecimientos convulsionaba su cuerpo y seguía aguzando la mirada hacia el cristal. '¡No hay nadie aquí!' Insistí. —Fue USTED MISMA, señora Linton: lo supo hace algún tiempo. '¡Mí mismo!' -jadeó- ¡y el reloj da las ",
+        "quote_last": "! ¡Es verdad entonces! ¡Eso es terrible!'",
+        "quote_time_case": "doce",
+        "quote_raw": "Tomé su mano entre las mías y le pedí que se calmara; porque una sucesión de estremecimientos convulsionaba su cuerpo y seguía aguzando la mirada hacia el cristal. '¡No hay nadie aquí!' Insistí. —Fue USTED MISMA, señora Linton: lo supo hace algún tiempo. '¡Mí mismo!' -jadeó- ¡y el reloj da las doce! ¡Es verdad entonces! ¡Eso es terrible!'",
+        "title": "cumbres borrascosas",
+        "author": "Emily Brontë",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Nací en la ciudad de Bombay. . . De hecho, al filo de la ",
+        "quote_last": ". Las manecillas del reloj unieron sus palmas en un saludo respetuoso cuando llegué. Oh, explícalo, explícalo: en el preciso instante en que la India llegó a la independencia, salté al mundo.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Nací en la ciudad de Bombay. . . De hecho, al filo de la medianoche. Las manecillas del reloj unieron sus palmas en un saludo respetuoso cuando llegué. Oh, explícalo, explícalo: en el preciso instante en que la India llegó a la independencia, salté al mundo.",
+        "title": "Los niños de medianoche",
+        "author": "Salman Rushdie",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Es media noche. La lluvia golpea las ventanas. Estoy calmado. Todo está durmiendo. Sin embargo me levanto y voy a mi escritorio. No puedo dormir.",
+        "quote_last": "",
+        "quote_time_case": "* medianoche",
+        "quote_raw": "Es media noche. La lluvia golpea las ventanas. Estoy calmado. Todo está durmiendo. Sin embargo me levanto y voy a mi escritorio. No puedo dormir.",
+        "title": "Molloy",
+        "author": "Samuel Beckett",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "La ",
+        "quote_last": " había llegado sobre la atestada ciudad. El palacio, el sótano nocturno, la cárcel, el manicomio; las cámaras del nacimiento y la muerte, de la salud y la enfermedad; el rostro rígido del cadáver y el sueño tranquilo del niño: la medianoche estaba sobre todos ellos.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "La medianoche había llegado sobre la atestada ciudad. El palacio, el sótano nocturno, la cárcel, el manicomio; las cámaras del nacimiento y la muerte, de la salud y la enfermedad; el rostro rígido del cadáver y el sueño tranquilo del niño: la medianoche estaba sobre todos ellos.",
+        "title": "Oliver Twist",
+        "author": "Charles Dickens",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Érase una ",
+        "quote_last": " lúgubre,<br/>mientras reflexionaba débil y cansado,<br/>sobre muchos volúmenes pintorescos y curiosos de conocimientos olvidados,<br/>mientras asentía, casi durmiendo, de repente se escuchó un golpeteo,<br/> br/>Como si alguien golpeara suavemente, golpeara la puerta de mi habitación.<br/>\"Es un visitante\", murmuré, \"llamando a la puerta de mi habitación. Sólo esto y nada más\".",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Érase una medianoche lúgubre,<br/>mientras reflexionaba débil y cansado,<br/>sobre muchos volúmenes pintorescos y curiosos de conocimientos olvidados,<br/>mientras asentía, casi durmiendo, de repente se escuchó un golpeteo,<br/> br/>Como si alguien golpeara suavemente, golpeara la puerta de mi habitación.<br/>\"Es un visitante\", murmuré, \"llamando a la puerta de mi habitación. Sólo esto y nada más\".",
+        "title": "El Cuervo",
+        "author": "Edgar Allan Poe",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "El reloj da las ",
+        "quote_last": " ¡Oh, da, da! Ahora cuerpo, conviértete en aire, o Lucifer te llevará rápidamente al infierno. Oh alma, conviértete en pequeñas gotas de agua y cae al océano, para nunca ser encontrada. ¡Dios mío, Dios mío, no me mires tan ferozmente!",
+        "quote_time_case": "doce",
+        "quote_raw": "El reloj da las doce ¡Oh, da, da! Ahora cuerpo, conviértete en aire, o Lucifer te llevará rápidamente al infierno. Oh alma, conviértete en pequeñas gotas de agua y cae al océano, para nunca ser encontrada. ¡Dios mío, Dios mío, no me mires tan ferozmente!",
+        "title": "Dr. Fausto",
+        "author": "Christopher Marlowe",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "La primera noche, tan pronto como el cabo condujo a mi tío Toby escaleras arriba, que eran alrededor de las 10, la señora Wadman se arrojó en su sillón y cruzó la rodilla izquierda con la derecha, que formaba un lugar de descanso para su codo. , reclinó la mejilla sobre la palma de la mano e, inclinándose hacia adelante, reflexionó hasta ",
+        "quote_last": " sobre ambos lados de la cuestión.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "La primera noche, tan pronto como el cabo condujo a mi tío Toby escaleras arriba, que eran alrededor de las 10, la señora Wadman se arrojó en su sillón y cruzó la rodilla izquierda con la derecha, que formaba un lugar de descanso para su codo. , reclinó la mejilla sobre la palma de la mano e, inclinándose hacia adelante, reflexionó hasta medianoche sobre ambos lados de la cuestión.",
+        "title": "La vida y opiniones de Tristram Shandy, caballero",
+        "author": "Laurence Sterne",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Para comenzar mi vida con el comienzo de mi vida, hago constar que nací (según me han informado y creo) un viernes, a las ",
+        "quote_last": " de la noche. Se observó que el reloj empezó a sonar y yo comencé a llorar, simultáneamente.",
+        "quote_time_case": "doce",
+        "quote_raw": "Para comenzar mi vida con el comienzo de mi vida, hago constar que nací (según me han informado y creo) un viernes, a las doce de la noche. Se observó que el reloj empezó a sonar y yo comencé a llorar, simultáneamente.",
+        "title": "David Copperfield",
+        "author": "Charles Dickens",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Hemos oído las campanadas a ",
+        "quote_last": ".",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Hemos oído las campanadas a medianoche.",
+        "title": "Enrique IV",
+        "author": "William Shakespeare",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Seguramente ya era ",
+        "quote_last": ". Un pájaro solitario cantó y los árboles individuales se fundieron en una masa amenazadora y hostil. A Savonius le parecían encarnar esta sombría aventura que se le había impuesto contra su voluntad. En algún lugar de este bosque profundo yacía este hombre demente al que se suponía debía tratar de consolar y calmar.",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Seguramente ya era medianoche. Un pájaro solitario cantó y los árboles individuales se fundieron en una masa amenazadora y hostil. A Savonius le parecían encarnar esta sombría aventura que se le había impuesto contra su voluntad. En algún lugar de este bosque profundo yacía este hombre demente al que se suponía debía tratar de consolar y calmar.",
+        "title": "El martillo de Dios",
+        "author": "Bo Giertz",
+        "sfw": "unknown"
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Hubo la caminata de ",
+        "quote_last": " con los chicos hasta el final del paseo y la gran discusión sobre la elección del administrador de la casa. ¿Qué había sido de la responsabilidad y el servicio? ¿Y el amor fraternal?",
+        "quote_time_case": "medianoche",
+        "quote_raw": "Hubo la caminata de medianoche con los chicos hasta el final del paseo y la gran discusión sobre la elección del administrador de la casa. ¿Qué había sido de la responsabilidad y el servicio? ¿Y el amor fraternal?",
+        "title": "El martillo de Dios",
+        "author": "Bo Giertz",
+        "sfw": "unknown"
     }
 ]

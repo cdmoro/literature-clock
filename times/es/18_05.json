@@ -1,0 +1,22 @@
+[
+    {
+        "time": "18:05",
+        "quote_first": "",
+        "quote_last": " ¿Me pregunto dónde están todos? Supongo que todos han salido con sus novios o se han ido a casa con sus familias.",
+        "quote_time_case": "18:05",
+        "quote_raw": "18:05 ¿Me pregunto dónde están todos? Supongo que todos han salido con sus novios o se han ido a casa con sus familias.",
+        "title": "El diario de Bridget Jones",
+        "author": "Helen Fielding",
+        "sfw": "sfw"
+    },
+    {
+        "time": "18:05",
+        "quote_first": "Alrededor de ",
+        "quote_last": ", Piers llegó con un periódico vespertino y algunos libros.",
+        "quote_time_case": "las seis y cinco",
+        "quote_raw": "Alrededor de las seis y cinco, Piers llegó con un periódico vespertino y algunos libros.",
+        "title": "Un vaso de bendiciones",
+        "author": "Barbara Pym",
+        "sfw": "unknown"
+    }
+]

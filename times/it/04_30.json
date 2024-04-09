@@ -73,7 +73,7 @@
         "time": "04:30",
         "quote_first": "Hester Thrale arriva ondulando con una finta giacca di volpe alle 23.30 come al solito anche se deve alzarsi alle 04.30 per il turno della colazione alla Provident Nursing Home e qualche volta fa colazione con Gately, entrambi i volti annuiscono pericolosamente vicino ai loro Frosted Flakes.",
         "quote_last": "",
-        "quote_time_case": "0430",
+        "quote_time_case": "* 0430",
         "quote_raw": "Hester Thrale arriva ondulando con una finta giacca di volpe alle 23.30 come al solito anche se deve alzarsi alle 04.30 per il turno della colazione alla Provident Nursing Home e qualche volta fa colazione con Gately, entrambi i volti annuiscono pericolosamente vicino ai loro Frosted Flakes.",
         "title": "Scherzo infinito",
         "author": "David Foster Wallace",

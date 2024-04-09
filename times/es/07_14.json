@@ -1,0 +1,32 @@
+[
+    {
+        "time": "07:14",
+        "quote_first": "",
+        "quote_last": " GMT<br/>William lo vio en el momento en que entró en la terminal. Un blazer cruzado azul oscuro, camisa blanca y corbata a rayas. El comandante probablemente dormía en pijama cruzado.",
+        "quote_time_case": "07:14",
+        "quote_raw": "07:14 GMT<br/>William lo vio en el momento en que entró en la terminal. Un blazer cruzado azul oscuro, camisa blanca y corbata a rayas. El comandante probablemente dormía en pijama cruzado.",
+        "title": "Nada arriesgado",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "time": "07:14",
+        "quote_first": "Salto sobre Rocker para mirar Watch, dice ",
+        "quote_last": ". Puedo andar en patineta sobre Rocker sin agarrarme de ella, luego regreso a Quilt y en su lugar hago snowboard.",
+        "quote_time_case": "07:14",
+        "quote_raw": "Salto sobre Rocker para mirar Watch, dice 07:14. Puedo andar en patineta sobre Rocker sin agarrarme de ella, luego regreso a Quilt y en su lugar hago snowboard.",
+        "title": "Habitación",
+        "author": "Emma Donoghue",
+        "sfw": "unknown"
+    },
+    {
+        "time": "07:14",
+        "quote_first": "A las ",
+        "quote_last": " Harry supo que estaba vivo. Lo sabía porque el dolor se podía sentir en cada fibra nerviosa.",
+        "quote_time_case": "7.14",
+        "quote_raw": "A las 7.14 Harry supo que estaba vivo. Lo sabía porque el dolor se podía sentir en cada fibra nerviosa.",
+        "title": "El Redentor",
+        "author": "Jo Nesbo",
+        "sfw": "unknown"
+    }
+]

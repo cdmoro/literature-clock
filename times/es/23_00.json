@@ -1,22 +1,262 @@
 [
     {
         "time": "23:00",
-        "quote_first": "Hecho esto, y llegadas las ",
-        "quote_last": ", halló don Quijote una vihuela en su aposento",
-        "quote_time_case": "once horas de la noche",
-        "quote_raw": "Hecho esto, y llegadas las once horas de la noche, halló don Quijote una vihuela en su aposento",
-        "title": "Don Quijote de la Mancha",
-        "author": "Miguel de Cervantes",
+        "quote_first": "A las ",
+        "quote_last": " en punto, los perros le dieron un último beso en la mano a la señora Dearly y sacaron al señor Dearly a dar su última carrera. Perdita se unió a ellos para esto. Había pasado la noche con las niñeras, sintiendo que Pongo y Missis tal vez desearían estar a solas con sus mascotas.",
+        "quote_time_case": "once",
+        "quote_raw": "A las once en punto, los perros le dieron un último beso en la mano a la señora Dearly y sacaron al señor Dearly a dar su última carrera. Perdita se unió a ellos para esto. Había pasado la noche con las niñeras, sintiendo que Pongo y Missis tal vez desearían estar a solas con sus mascotas.",
+        "title": "Los 101 Dálmatas",
+        "author": "Dodie Smith",
         "sfw": "sfw"
     },
     {
         "time": "23:00",
-        "quote_first": "A las ",
-        "quote_last": " abandonamos la caverna.",
-        "quote_time_case": "11 de la noche",
-        "quote_raw": "A las 11 de la noche abandonamos la caverna.",
-        "title": "El juguete rabioso",
-        "author": "Roberto Arlt",
-        "sfw": "sfw"
+        "quote_first": "Los relojes de Shanghai se adelantaron una hora para que la ciudad pudiera \"salvar la luz del día\", pero la familia Bai dijo: \"Seguimos el reloj antiguo\". Las diez para ellos eran las ",
+        "quote_last": " para todos los demás. Su canto estaba detrás del ritmo; no podían seguir el ritmo del huqin [instrumento de cuerda chino] que producía sonidos de vida sombríos y desolados.",
+        "quote_time_case": "once",
+        "quote_raw": "Los relojes de Shanghai se adelantaron una hora para que la ciudad pudiera \"salvar la luz del día\", pero la familia Bai dijo: \"Seguimos el reloj antiguo\". Las diez para ellos eran las once para todos los demás. Su canto estaba detrás del ritmo; no podían seguir el ritmo del huqin [instrumento de cuerda chino] que producía sonidos de vida sombríos y desolados.",
+        "title": "Amor en una ciudad caída",
+        "author": "Eileen Chang",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "Tony y Zenia están tomando café, como lo han hecho casi cada tres días durante el último mes, desde que se conocieron. O no cada tres días, cada tres noches: ahora son las once, la hora habitual de acostarse de Tony, y aquí está ella, todavía despierta. Ni siquiera tiene sueño.",
+        "quote_last": "",
+        "quote_time_case": "* once en punto",
+        "quote_raw": "Tony y Zenia están tomando café, como lo han hecho casi cada tres días durante el último mes, desde que se conocieron. O no cada tres días, cada tres noches: ahora son las once, la hora habitual de acostarse de Tony, y aquí está ella, todavía despierta. Ni siquiera tiene sueño.",
+        "title": "La novia ladrona",
+        "author": "Margaret Atwood",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "Eran casi las once cuando llegamos a la etapa final de nuestras aventuras nocturnas. Habíamos dejado atrás la niebla húmeda de la gran ciudad y la noche era bastante buena. Un viento cálido soplaba desde el oeste y pesadas nubes se movían lentamente por el cielo, con media luna asomando de vez en cuando a través de las grietas.",
+        "quote_last": "",
+        "quote_time_case": "* once en punto",
+        "quote_raw": "Eran casi las once cuando llegamos a la etapa final de nuestras aventuras nocturnas. Habíamos dejado atrás la niebla húmeda de la gran ciudad y la noche era bastante buena. Un viento cálido soplaba desde el oeste y pesadas nubes se movían lentamente por el cielo, con media luna asomando de vez en cuando a través de las grietas.",
+        "title": "El signo del cuatro",
+        "author": "Sir Arthur Conan Doyle",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "Esto no tenía fin. Al principio hice todos los ruidos adecuados para demostrarle que la seguía, pero pronto me di por vencido. Puse un disco y cuando terminó, levanté la aguja y puse otro. Después de terminar todos los discos, volví a poner el primero. Afuera todavía llovía a cántaros. El tiempo pasó lentamente mientras su monólogo continuaba sin fin.<br>Sin embargo, no me preocupé por eso hasta un tiempo después. De repente me di cuenta de que eran las ",
+        "quote_last": ". y llevaba cuatro horas hablando sin parar.",
+        "quote_time_case": "once de la noche",
+        "quote_raw": "Esto no tenía fin. Al principio hice todos los ruidos adecuados para demostrarle que la seguía, pero pronto me di por vencido. Puse un disco y cuando terminó, levanté la aguja y puse otro. Después de terminar todos los discos, volví a poner el primero. Afuera todavía llovía a cántaros. El tiempo pasó lentamente mientras su monólogo continuaba sin fin.<br>Sin embargo, no me preocupé por eso hasta un tiempo después. De repente me di cuenta de que eran las once de la noche. y llevaba cuatro horas hablando sin parar.",
+        "title": "Sauce ciego, mujer dormida",
+        "author": "Haruki Murakami",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "A las once todo estaba arreglado; Iban a huir a Borneo. ¡Que se joda el marido! Ella nunca lo amó de todos modos. Nunca habría escrito la primera carta si el marido no fuera viejo y desapasionado.",
+        "quote_last": "",
+        "quote_time_case": "* once en punto",
+        "quote_raw": "A las once todo estaba arreglado; Iban a huir a Borneo. ¡Que se joda el marido! Ella nunca lo amó de todos modos. Nunca habría escrito la primera carta si el marido no fuera viejo y desapasionado.",
+        "title": "trópico de Cáncer",
+        "author": "Henry Miller",
+        "sfw": "nsfw"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "Me gustaba pensar que había elegido a la doctora Tuttle al azar, que había algo predestinado en nuestra relación, algo divino en cierto modo, pero en realidad, ella había sido la única psiquiatra que contestó el teléfono a las ",
+        "quote_last": " de un martes. .",
+        "quote_time_case": "once de la noche",
+        "quote_raw": "Me gustaba pensar que había elegido a la doctora Tuttle al azar, que había algo predestinado en nuestra relación, algo divino en cierto modo, pero en realidad, ella había sido la única psiquiatra que contestó el teléfono a las once de la noche de un martes. .",
+        "title": "Mi año de descanso y relajación",
+        "author": "Ottessa Moshfegh",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "Hacia las once se abrió la puerta. Me preparé para rechazar las disculpas e ir a la yugular. Entró una mujer que alguna vez fue majestuosa. Setenta años, ochenta, ochenta y cinco, ¿quién sabe cuándo tendrán esa edad? Un galgo desvencijado con una chaqueta siguió a su amante.",
+        "quote_last": "",
+        "quote_time_case": "* once en punto",
+        "quote_raw": "Hacia las once se abrió la puerta. Me preparé para rechazar las disculpas e ir a la yugular. Entró una mujer que alguna vez fue majestuosa. Setenta años, ochenta, ochenta y cinco, ¿quién sabe cuándo tendrán esa edad? Un galgo desvencijado con una chaqueta siguió a su amante.",
+        "title": "Atlas de nubes",
+        "author": "David Mitchell",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "Hubo un movimiento y una exclamación desde mi derecha, y mirando a través de la oscuridad vi a Whitney, pálida, demacrada y descuidada, mirándome.<br>“¡Dios mío! Es Watson”, dijo. Estaba en un estado de reacción lamentable, con todos los nervios en un gorjeo. “Digo, Watson, ¿qué hora es?”<br>“Casi las ",
+        "quote_last": "”.",
+        "quote_time_case": "once",
+        "quote_raw": "Hubo un movimiento y una exclamación desde mi derecha, y mirando a través de la oscuridad vi a Whitney, pálida, demacrada y descuidada, mirándome.<br>“¡Dios mío! Es Watson”, dijo. Estaba en un estado de reacción lamentable, con todos los nervios en un gorjeo. “Digo, Watson, ¿qué hora es?”<br>“Casi las once”.",
+        "title": "Las aventuras de Sherlock Holmes",
+        "author": "Sir Arthur Conan Doyle",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "Salió, pues, de su habitación y entró en la mía, donde permaneció sentada un rato, charlando sobre su próxima boda. A las once se levantó para dejarme, pero se detuvo en la puerta y miró hacia atrás. <br> Dime, Helen\", dijo, \"¿alguna vez has oído a alguien silbar en plena noche?\" <br >\"Nunca\", dije yo.\"",
+        "quote_last": "",
+        "quote_time_case": "* once en punto",
+        "quote_raw": "Salió, pues, de su habitación y entró en la mía, donde permaneció sentada un rato, charlando sobre su próxima boda. A las once se levantó para dejarme, pero se detuvo en la puerta y miró hacia atrás. <br> Dime, Helen\", dijo, \"¿alguna vez has oído a alguien silbar en plena noche?\" <br >\"Nunca\", dije yo.\"",
+        "title": "Las aventuras de Sherlock Holmes",
+        "author": "Sir Arthur Conan Doyle",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "Pasaron lentamente dos horas y luego, de repente, justo cuando daban las ",
+        "quote_last": ", una única luz brillante brilló justo frente a nosotros.",
+        "quote_time_case": "once",
+        "quote_raw": "Pasaron lentamente dos horas y luego, de repente, justo cuando daban las once, una única luz brillante brilló justo frente a nosotros.",
+        "title": "Las aventuras de Sherlock Holmes",
+        "author": "Sir Arthur Conan Doyle",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "Hace cinco meses, Ashley se presentó en el Airstream de Hud a las ",
+        "quote_last": " y dijo: “Rompí con él. Y creo que deberías saber que te amo”.",
+        "quote_time_case": "once de la noche",
+        "quote_raw": "Hace cinco meses, Ashley se presentó en el Airstream de Hud a las once de la noche y dijo: “Rompí con él. Y creo que deberías saber que te amo”.",
+        "title": "El levantamiento de Malibú",
+        "author": "Taylor Jenkins Reid",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "Alrededor de las ",
+        "quote_last": ", ella y Stan comen otro donut. Luego hacen una parada esperanzada en un contenedor de basura detrás de un puesto de sopa, pero no hay suerte, las cosas ya han sido recogidas.",
+        "quote_time_case": "once",
+        "quote_raw": "Alrededor de las once, ella y Stan comen otro donut. Luego hacen una parada esperanzada en un contenedor de basura detrás de un puesto de sopa, pero no hay suerte, las cosas ya han sido recogidas.",
+        "title": "El corazón es el último",
+        "author": "Margaret Atwood",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "Era Eli, el amigo de Bryan, el más alto de los dos. Jaidee le cogió la mano y se la estrechó. \"Hola\", dijo. <br> \"¿Adónde vas?\" dijo Eli. Con una polo rosa y pantalones cortos de color caqui, lucía brillante contra el amplio panel de la noche. Sus ojos estaban felices, alterados, sin duda, por el alcohol.<br>“Voy a regresar”, dijo.<br>Eli miró su reloj. “Son sólo las ",
+        "quote_last": "”.<br>“Solo estoy cansada”, dijo Jaidee. \"Día largo.\"",
+        "quote_time_case": "once",
+        "quote_raw": "Era Eli, el amigo de Bryan, el más alto de los dos. Jaidee le cogió la mano y se la estrechó. \"Hola\", dijo. <br> \"¿Adónde vas?\" dijo Eli. Con una polo rosa y pantalones cortos de color caqui, lucía brillante contra el amplio panel de la noche. Sus ojos estaban felices, alterados, sin duda, por el alcohol.<br>“Voy a regresar”, dijo.<br>Eli miró su reloj. “Son sólo las once”.<br>“Solo estoy cansada”, dijo Jaidee. \"Día largo.\"",
+        "title": "Indulto",
+        "author": "James Han Mattson",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "“Ese sacerdote tuyo es realmente divertido. ¿Sabías que a estos sacerdotes se les permite beber? ¡No hay mujeres, pero el alcohol está bien! Bahar entró agitando la orden del padre Mahoney. Sus ojos normalmente asustadizos eran brillantes y (¿se atrevía a esperar Marjan?) ¿felices?<br>“Aquí beben cerveza como agua. El sábado pasado vi a una familia entera, con niños pequeños, salir del bar de al lado. ¡A las ",
+        "quote_last": "!",
+        "quote_time_case": "once de la noche",
+        "quote_raw": "“Ese sacerdote tuyo es realmente divertido. ¿Sabías que a estos sacerdotes se les permite beber? ¡No hay mujeres, pero el alcohol está bien! Bahar entró agitando la orden del padre Mahoney. Sus ojos normalmente asustadizos eran brillantes y (¿se atrevía a esperar Marjan?) ¿felices?<br>“Aquí beben cerveza como agua. El sábado pasado vi a una familia entera, con niños pequeños, salir del bar de al lado. ¡A las once de la noche!",
+        "title": "Sopa De Granada",
+        "author": "Marsha Mehran",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "Pero pasó el tiempo, dos horas, y los pretendientes menos sutiles habían aprendido a centrar sus miradas pseudoapasionadas en otra parte, porque a las once encontraron a Isabelle y Amory sentados en el sofá del pequeño estudio contiguo a la sala de lectura de arriba. escaleras. Era consciente de que formaban una pareja atractiva y parecían pertenecer claramente a aquel aislamiento, mientras luces menores revoloteaban y parloteaban en el piso de abajo.",
+        "quote_last": "",
+        "quote_time_case": "* once en punto",
+        "quote_raw": "Pero pasó el tiempo, dos horas, y los pretendientes menos sutiles habían aprendido a centrar sus miradas pseudoapasionadas en otra parte, porque a las once encontraron a Isabelle y Amory sentados en el sofá del pequeño estudio contiguo a la sala de lectura de arriba. escaleras. Era consciente de que formaban una pareja atractiva y parecían pertenecer claramente a aquel aislamiento, mientras luces menores revoloteaban y parloteaban en el piso de abajo.",
+        "title": "Este lado del paraiso",
+        "author": "F. Scott Fitzgerald",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "\"Su detención tendrá lugar esta noche a las ",
+        "quote_last": ". <br>Reúnase con el señor Filch en el vestíbulo de entrada\".",
+        "quote_time_case": "once en punto",
+        "quote_raw": "\"Su detención tendrá lugar esta noche a las once en punto. <br>Reúnase con el señor Filch en el vestíbulo de entrada\".",
+        "title": "Harry Potter y la Piedra Filosofal",
+        "author": "J.K. Rowling",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "Estará aquí exactamente ",
+        "quote_last": ", señor.<br/>En la barra, parejas desnudas habían empezado a bailar.",
+        "quote_time_case": "a las once",
+        "quote_raw": "Estará aquí exactamente a las once, señor.<br/>En la barra, parejas desnudas habían empezado a bailar.",
+        "title": "La gente de Smiley",
+        "author": "John le Carré",
+        "sfw": "nsfw"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "A las once de la noche, después de conseguir una cama en uno de los hoteles y telegrafiar su dirección a su padre inmediatamente después de su llegada, salió a las calles de Sandbourne.",
+        "quote_last": "",
+        "quote_time_case": "* once en punto",
+        "quote_raw": "A las once de la noche, después de conseguir una cama en uno de los hoteles y telegrafiar su dirección a su padre inmediatamente después de su llegada, salió a las calles de Sandbourne.",
+        "title": "Tess de los d'Urberville",
+        "author": "Thomas Hardy",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "A las once llamé al timbre de Betteredge y le dije al señor Blake que por fin podía prepararse para ir a dormir.",
+        "quote_last": "",
+        "quote_time_case": "* once en punto",
+        "quote_raw": "A las once llamé al timbre de Betteredge y le dije al señor Blake que por fin podía prepararse para ir a dormir.",
+        "title": "La piedra lunar",
+        "author": "Wilkie Collins",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "Él dice: \"Han matado a Jan. Lávense\".<br/>\"¿La maleta?\" pregunto.<br/>\"Llévatelo otra vez. No queremos tener nada que ver con eso ahora. Toma el expreso de las once.\"<br/> \"Pero esto no termina aquí....\"<br />\"Lo hará. Ve a la vía seis. Enfrente de la estación de carga. Tienes tres minutos.\"<br/>\"Pero...\"<br/>\"Muévete o tendré que arrestarte\".",
+        "quote_last": "",
+        "quote_time_case": "* once en punto",
+        "quote_raw": "Él dice: \"Han matado a Jan. Lávense\".<br/>\"¿La maleta?\" pregunto.<br/>\"Llévatelo otra vez. No queremos tener nada que ver con eso ahora. Toma el expreso de las once.\"<br/> \"Pero esto no termina aquí....\"<br />\"Lo hará. Ve a la vía seis. Enfrente de la estación de carga. Tienes tres minutos.\"<br/>\"Pero...\"<br/>\"Muévete o tendré que arrestarte\".",
+        "title": "Si en una noche de invierno un viajero",
+        "author": "Italo Calvino",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "El reloj dio las ",
+        "quote_last": ". Miré a Adele, cuya cabeza estaba apoyada en mi hombro; sus ojos se estaban volviendo pesados, así que la tomé en mis brazos y la llevé a la cama. Era cerca de la una cuando los caballeros y damas buscaron sus aposentos.",
+        "quote_time_case": "once",
+        "quote_raw": "El reloj dio las once. Miré a Adele, cuya cabeza estaba apoyada en mi hombro; sus ojos se estaban volviendo pesados, así que la tomé en mis brazos y la llevé a la cama. Era cerca de la una cuando los caballeros y damas buscaron sus aposentos.",
+        "title": "Jane Eyre",
+        "author": "Charlotte Brontë",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "El tren llegó a Nueva York ",
+        "quote_last": " de esa noche.",
+        "quote_time_case": "a las once",
+        "quote_raw": "El tren llegó a Nueva York a las once de esa noche.",
+        "title": "Los reconocimientos",
+        "author": "William Gaddis",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "Ni siquiera se sentaron a comer hasta las 23.00 h.",
+        "quote_last": "",
+        "quote_time_case": "* 2300h",
+        "quote_raw": "Ni siquiera se sentaron a comer hasta las 23.00 h.",
+        "title": "Frivolidad infinita",
+        "author": "David Foster Wallace",
+        "sfw": "unknown"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "Dejé la narración de mi historia mientras aún caminábamos hacia la consulta del médico. Al fin, al llegar allí, lo encontramos todavía sentado en su despacho, aunque ya eran las once.",
+        "quote_last": "",
+        "quote_time_case": "* once en punto",
+        "quote_raw": "Dejé la narración de mi historia mientras aún caminábamos hacia la consulta del médico. Al fin, al llegar allí, lo encontramos todavía sentado en su despacho, aunque ya eran las once.",
+        "title": "El comedor de hachís",
+        "author": "Fitz Hugh Ludlow",
+        "sfw": "nsfw"
+    },
+    {
+        "time": "23:00",
+        "quote_first": "Cuando llegaron a lo alto de la Torre de Astronomía a las ",
+        "quote_last": ", se encontraron con una noche perfecta para observar las estrellas, sin nubes y tranquila.",
+        "quote_time_case": "once en punto",
+        "quote_raw": "Cuando llegaron a lo alto de la Torre de Astronomía a las once en punto, se encontraron con una noche perfecta para observar las estrellas, sin nubes y tranquila.",
+        "title": "Harry Potter y la Orden del Fénix",
+        "author": "J.K. Rowling",
+        "sfw": "unknown"
     }
 ]

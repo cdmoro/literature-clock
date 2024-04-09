@@ -1,0 +1,32 @@
+[
+    {
+        "time": "20:15",
+        "quote_first": "A las ",
+        "quote_last": " de la noche del domingo, Theresa había terminado la última tarea que había aplazado durante mucho tiempo y pensó que podía guardar con seguridad su libro de aritmética y decirle a su padre que estaba cansada y lista para irse a la cama.",
+        "quote_time_case": "8.15",
+        "quote_raw": "A las 8.15 de la noche del domingo, Theresa había terminado la última tarea que había aplazado durante mucho tiempo y pensó que podía guardar con seguridad su libro de aritmética y decirle a su padre que estaba cansada y lista para irse a la cama.",
+        "title": "Dispositivos y deseos",
+        "author": "P.D. James",
+        "sfw": "sfw"
+    },
+    {
+        "time": "20:15",
+        "quote_first": "",
+        "quote_last": " Humph. No se pueden localizar las instrucciones de funcionamiento.",
+        "quote_time_case": "20:15",
+        "quote_raw": "20:15 Humph. No se pueden localizar las instrucciones de funcionamiento.",
+        "title": "El diario de Bridget Jones",
+        "author": "Helen Fielding",
+        "sfw": "sfw"
+    },
+    {
+        "time": "20:15",
+        "quote_first": "",
+        "quote_last": " Ponte el pijama",
+        "quote_time_case": "20.15 h.",
+        "quote_raw": "20.15 h. Ponte el pijama",
+        "title": "El curioso incidente del perro a medianoche",
+        "author": "Mark Haddon",
+        "sfw": "sfw"
+    }
+]

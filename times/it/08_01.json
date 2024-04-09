@@ -3,7 +3,7 @@
         "time": "08:01",
         "quote_first": "Otto e uno, tic tac, otto e una, a scuola, al lavoro, corri, corri, otto e uno!",
         "quote_last": "",
-        "quote_time_case": "otto-uno",
+        "quote_time_case": "* otto-uno",
         "quote_raw": "Otto e uno, tic tac, otto e una, a scuola, al lavoro, corri, corri, otto e uno!",
         "title": "Arriveranno piogge morbide",
         "author": "Ray Bradbury",

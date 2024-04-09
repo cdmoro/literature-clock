@@ -1,12 +1,12 @@
 [
     {
         "time": "03:04",
-        "quote_first": "quiso, digo, que estando ya engolfados y siendo ya casi ",
-        "quote_last": ", yendo con la vela tendida de alto baja",
-        "quote_time_case": "pasadas tres horas de la noche",
-        "quote_raw": "quiso, digo, que estando ya engolfados y siendo ya casi pasadas tres horas de la noche, yendo con la vela tendida de alto baja",
-        "title": "Don Quijote de la Mancha",
-        "author": "Miguel de Cervantes",
-        "sfw": "sfw"
+        "quote_first": "Miró su reloj de primera línea sobre la mesita de noche y notó que se había detenido en las ",
+        "quote_last": ". Por lo tanto, ni siquiera se podía confiar en los despertadores.",
+        "quote_time_case": "3.04",
+        "quote_raw": "Miró su reloj de primera línea sobre la mesita de noche y notó que se había detenido en las 3.04. Por lo tanto, ni siquiera se podía confiar en los despertadores.",
+        "title": "El regreso del maestro del baile",
+        "author": "Henning Mankell",
+        "sfw": "unknown"
     }
 ]

@@ -1,0 +1,32 @@
+[
+    {
+        "time": "18:22",
+        "quote_first": "",
+        "quote_last": "<br/>\"El escuadrón de armas de fuego está en su lugar, señor\", dijo una voz solitaria por el intercomunicador, que sonó como el estallido de un trueno, después de un par de horas de silencio.",
+        "quote_time_case": "18:22 GMT",
+        "quote_raw": "18:22 GMT<br/>\"El escuadrón de armas de fuego está en su lugar, señor\", dijo una voz solitaria por el intercomunicador, que sonó como el estallido de un trueno, después de un par de horas de silencio.",
+        "title": "Nada arriesgado",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "time": "18:22",
+        "quote_first": "Eran las seis y veintidós, comandante. Se me ocurrió mirar el reloj. <br/> Mantuvo la puerta abierta de par en par. Parecía menos una invitación a marcharse que una orden.",
+        "quote_last": "",
+        "quote_time_case": "* seis veintidós",
+        "quote_raw": "Eran las seis y veintidós, comandante. Se me ocurrió mirar el reloj. <br/> Mantuvo la puerta abierta de par en par. Parecía menos una invitación a marcharse que una orden.",
+        "title": "La sala del asesinato",
+        "author": "P.D. James",
+        "sfw": "sfw"
+    },
+    {
+        "time": "18:22",
+        "quote_first": "El reloj se volcó cuando cayó hacia adelante. Eso nos dará la hora del crimen. ",
+        "quote_last": ".",
+        "quote_time_case": "Las seis y veintidós minutos",
+        "quote_raw": "El reloj se volcó cuando cayó hacia adelante. Eso nos dará la hora del crimen. Las seis y veintidós minutos.",
+        "title": "El asesinato en la vicaría",
+        "author": "Agatha Christie",
+        "sfw": "unknown"
+    }
+]

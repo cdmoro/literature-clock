@@ -123,7 +123,7 @@
         "time": "22:00",
         "quote_first": "« Un crime considérable est envisagé. J'ai toutes les raisons de croire que nous serons à temps pour y mettre un terme. Mais aujourd’hui, c’est samedi, ce qui complique un peu les choses. J'aurai besoin de votre aide ce soir.",
         "quote_last": "",
-        "quote_time_case": "dix",
+        "quote_time_case": "* dix",
         "quote_raw": "« Un crime considérable est envisagé. J'ai toutes les raisons de croire que nous serons à temps pour y mettre un terme. Mais aujourd’hui, c’est samedi, ce qui complique un peu les choses. J'aurai besoin de votre aide ce soir.",
         "title": "Les Aventures de Sherlock Holmes",
         "author": "Sir Arthur Conan Doyle",

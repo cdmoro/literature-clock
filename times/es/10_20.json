@@ -1,12 +1,42 @@
 [
     {
         "time": "10:20",
-        "quote_first": "Un lunes, a las ",
-        "quote_last": ", Amaranta estaba vistiendo a Aureliano José, cuando percibió un tropel remoto y un toque de corneta",
-        "quote_time_case": "diez y veinte de la mañana",
-        "quote_raw": "Un lunes, a las diez y veinte de la mañana, Amaranta estaba vistiendo a Aureliano José, cuando percibió un tropel remoto y un toque de corneta",
-        "title": "100 años de soledad",
-        "author": "Gabriel García Márquez",
+        "quote_first": "Llegaron a Brides of Bombay a las diez y veinte. Ésta nunca iba a ser una cita a la que Seb llegaría tarde. Vijay no hizo comentarios cuando Seb le pidió que estacionara fuera de la vista, pero su siguiente instrucción lo sorprendió.",
+        "quote_last": "",
+        "quote_time_case": "* diez y veinte minutos",
+        "quote_raw": "Llegaron a Brides of Bombay a las diez y veinte. Ésta nunca iba a ser una cita a la que Seb llegaría tarde. Vijay no hizo comentarios cuando Seb le pidió que estacionara fuera de la vista, pero su siguiente instrucción lo sorprendió.",
+        "title": "Llega la hora",
+        "author": "Jeffrey Archer",
         "sfw": "sfw"
+    },
+    {
+        "time": "10:20",
+        "quote_first": "A las ",
+        "quote_last": " se escuchó un suave golpe en la puerta y, como el hada madrina, reapareció el señor Harrison.<br/> “Espero que ambos hayan disfrutado de una buena noche de sueño”, aventuró. <br/>“No podría haber sido mejor”, dijo William, después de terminar su café.<br/> No hay muchas posibilidades de que eso suceda cuando estás casada con un hombre de las cavernas, quiso decirle Beth, pero se mantuvo firme. sus pensamientos para sí misma.",
+        "quote_time_case": "10:20",
+        "quote_raw": "A las 10:20 se escuchó un suave golpe en la puerta y, como el hada madrina, reapareció el señor Harrison.<br/> “Espero que ambos hayan disfrutado de una buena noche de sueño”, aventuró. <br/>“No podría haber sido mejor”, dijo William, después de terminar su café.<br/> No hay muchas posibilidades de que eso suceda cuando estás casada con un hombre de las cavernas, quiso decirle Beth, pero se mantuvo firme. sus pensamientos para sí misma.",
+        "title": "Oculto a la vista",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "time": "10:20",
+        "quote_first": "Un viento de mayo, hinchado como un trozo de fruta, con piel exterior áspera, pulpa viscosa, decenas de semillas. La carne se abrió en el aire, rociando semillas como suaves perdigones en la piel desnuda de mis brazos, dejando un leve rastro de dolor.<br>“¿Qué hora es?” me preguntó mi prima. Aproximadamente veinte centímetros más bajo que yo, tenía que mirar hacia arriba cuando hablaba.<br>Miré mi reloj. \"",
+        "quote_last": ".\"",
+        "quote_time_case": "Diez veinte",
+        "quote_raw": "Un viento de mayo, hinchado como un trozo de fruta, con piel exterior áspera, pulpa viscosa, decenas de semillas. La carne se abrió en el aire, rociando semillas como suaves perdigones en la piel desnuda de mis brazos, dejando un leve rastro de dolor.<br>“¿Qué hora es?” me preguntó mi prima. Aproximadamente veinte centímetros más bajo que yo, tenía que mirar hacia arriba cuando hablaba.<br>Miré mi reloj. \"Diez veinte.\"",
+        "title": "Sauce ciego, mujer dormida",
+        "author": "Haruki Murakami",
+        "sfw": "unknown"
+    },
+    {
+        "time": "10:20",
+        "quote_first": "Alrededor de las diez, los primeros pequeños copos de nieve cayeron y se posaron en el brazo de Jill. Diez minutos más tarde caían con bastante fuerza. Al cabo de veinte minutos el suelo estaba notablemente blanco.",
+        "quote_last": "",
+        "quote_time_case": "* En veinte minutos",
+        "quote_raw": "Alrededor de las diez, los primeros pequeños copos de nieve cayeron y se posaron en el brazo de Jill. Diez minutos más tarde caían con bastante fuerza. Al cabo de veinte minutos el suelo estaba notablemente blanco.",
+        "title": "La silla de plata",
+        "author": "C.S. Lewis",
+        "sfw": "unknown"
     }
 ]

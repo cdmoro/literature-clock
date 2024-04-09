@@ -1,0 +1,32 @@
+[
+    {
+        "time": "09:45",
+        "quote_first": "A ",
+        "quote_last": " de la mañana del 15 de agosto, Leandro cruzó la ciudad de Troya. Tenía el estómago apretado por la anticipación y, seamos realistas, amigos, un cosquilleo de miedo. Su piel se sentía fría.",
+        "quote_time_case": "las diez menos cuarto",
+        "quote_raw": "A las diez menos cuarto de la mañana del 15 de agosto, Leandro cruzó la ciudad de Troya. Tenía el estómago apretado por la anticipación y, seamos realistas, amigos, un cosquilleo de miedo. Su piel se sentía fría.",
+        "title": "Los Tommyknockers",
+        "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:45",
+        "quote_first": "Miró el reloj de la mesa de noche y vio que eran las diez menos cuarto. Había dormido otras dos horas. Por un momento se alarmó; tal vez, después de todo, había sufrido una conmoción cerebral o una fractura.",
+        "quote_last": "",
+        "quote_time_case": "* un cuarto para las diez",
+        "quote_raw": "Miró el reloj de la mesa de noche y vio que eran las diez menos cuarto. Había dormido otras dos horas. Por un momento se alarmó; tal vez, después de todo, había sufrido una conmoción cerebral o una fractura.",
+        "title": "Completamente oscuro, sin estrellas",
+        "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:45",
+        "quote_first": "9.15, 9.30, ",
+        "quote_last": ", 10! Bond sintió que la excitación crecía dentro de él como el pelaje de un gato.",
+        "quote_time_case": "9.45",
+        "quote_raw": "9.15, 9.30, 9.45, 10! Bond sintió que la excitación crecía dentro de él como el pelaje de un gato.",
+        "title": "En el servicio Secreto de su Majestad",
+        "author": "Ian Fleming",
+        "sfw": "unknown"
+    }
+]

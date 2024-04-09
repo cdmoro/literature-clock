@@ -1,12 +1,82 @@
 [
     {
         "time": "05:30",
-        "quote_first": "—Con lo cual —dijo Perico— le ocurre que una enana de la página veinte tiene dos metros cinco en la página cien. Me he percatado más de una vez. Hay escenas que empiezan a las seis de la tarde y acaban a las ",
-        "quote_last": ". Un asco.",
+        "quote_first": "“Cuando salieron del camino de entrada a las ",
+        "quote_last": ", Emmett estaba de buen humor. La noche anterior, con la ayuda del mapa de Billy, había trazado un itinerario. La ruta de Morgen a San Francisco era de poco más de mil quinientas millas.\"",
+        "quote_time_case": "cinco y media de la mañana",
+        "quote_raw": "“Cuando salieron del camino de entrada a las cinco y media de la mañana, Emmett estaba de buen humor. La noche anterior, con la ayuda del mapa de Billy, había trazado un itinerario. La ruta de Morgen a San Francisco era de poco más de mil quinientas millas.\"",
+        "title": "La autopista Lincoln",
+        "author": "Amor Towles",
+        "sfw": "unknown"
+    },
+    {
+        "time": "05:30",
+        "quote_first": "La levanta, la coloca en la cama y se acuesta a su lado. Él la besa de nuevo, tentativamente, prolongadamente. Luego pregunta qué hora es. Él mismo no tiene reloj. Lesje le dice que son las ",
+        "quote_last": ". Él se sienta. Lesje empieza a sentirse algo poco atractiva. ¿Tiene los dientes demasiado grandes, verdad?",
         "quote_time_case": "cinco y media",
-        "quote_raw": "—Con lo cual —dijo Perico— le ocurre que una enana de la página veinte tiene dos metros cinco en la página cien. Me he percatado más de una vez. Hay escenas que empiezan a las seis de la tarde y acaban a las cinco y media. Un asco.",
-        "title": "Rayuela",
-        "author": "Julio Cortázar",
-        "sfw": "sfw"
+        "quote_raw": "La levanta, la coloca en la cama y se acuesta a su lado. Él la besa de nuevo, tentativamente, prolongadamente. Luego pregunta qué hora es. Él mismo no tiene reloj. Lesje le dice que son las cinco y media. Él se sienta. Lesje empieza a sentirse algo poco atractiva. ¿Tiene los dientes demasiado grandes, verdad?",
+        "title": "La vida antes del hombre",
+        "author": "Margaret Atwood",
+        "sfw": "nsfw"
+    },
+    {
+        "time": "05:30",
+        "quote_first": "Eran las ",
+        "quote_last": " cuando Holmes regresó. Estaba alegre, ansioso y de excelente humor, estado de ánimo que en su caso alternaba con ataques de la más negra depresión.",
+        "quote_time_case": "cinco y media",
+        "quote_raw": "Eran las cinco y media cuando Holmes regresó. Estaba alegre, ansioso y de excelente humor, estado de ánimo que en su caso alternaba con ataques de la más negra depresión.",
+        "title": "El signo del cuatro",
+        "author": "Sir Arthur Conan Doyle",
+        "sfw": "unknown"
+    },
+    {
+        "time": "05:30",
+        "quote_first": "Si Thomas McGuire se hubiera detenido a admirar la fanfarria de las rayas azafrán, podría haberse perdido el principio del fin de su dominio sobre la tranquila ciudad costera. Pero, como solía ocurrir con los hombres de su temperamento, Thomas tenía poco tiempo para soñar despierto. El obstinado hombre de negocios había salido corriendo de su dura cama a las ",
+        "quote_last": " de la mañana, decidido como siempre a atender su creciente imperio de tres pubs, dos tiendas de licores y una posada en Main Mall.",
+        "quote_time_case": "cinco y media",
+        "quote_raw": "Si Thomas McGuire se hubiera detenido a admirar la fanfarria de las rayas azafrán, podría haberse perdido el principio del fin de su dominio sobre la tranquila ciudad costera. Pero, como solía ocurrir con los hombres de su temperamento, Thomas tenía poco tiempo para soñar despierto. El obstinado hombre de negocios había salido corriendo de su dura cama a las cinco y media de la mañana, decidido como siempre a atender su creciente imperio de tres pubs, dos tiendas de licores y una posada en Main Mall.",
+        "title": "Sopa De Granada",
+        "author": "Marsha Mehran",
+        "sfw": "unknown"
+    },
+    {
+        "time": "05:30",
+        "quote_first": "Cuando Braque y su hermano Randy eran niños, su mamá solía despertarlos a las ",
+        "quote_last": " para viajes familiares por carretera, para evitar el tráfico; hubo pestillos de seguridad en toda la casa hasta los once años; no había televisión y, desde luego, no había dulces, refrescos, alcohol ni tabaco; planchaba sábanas y blanqueaba ropa interior y limpiaba los baños al menos dos veces al día.",
+        "quote_time_case": "5:30 de la mañana",
+        "quote_raw": "Cuando Braque y su hermano Randy eran niños, su mamá solía despertarlos a las 5:30 de la mañana para viajes familiares por carretera, para evitar el tráfico; hubo pestillos de seguridad en toda la casa hasta los once años; no había televisión y, desde luego, no había dulces, refrescos, alcohol ni tabaco; planchaba sábanas y blanqueaba ropa interior y limpiaba los baños al menos dos veces al día.",
+        "title": "Cocinas del Gran Medio Oeste",
+        "author": "J. Ryan Stradal",
+        "sfw": "unknown"
+    },
+    {
+        "time": "05:30",
+        "quote_first": "Gedeón ha sido muy diferente a Gedeón. Como Walter Eastman está preocupado, no ha tenido tiempo, o mejor dicho, ganas, de notar un comportamiento aberrante. Por ejemplo, son las ",
+        "quote_last": " de una mañana de verano. Es evidente que han dormido en la estrecha cama de soltero del joven Chase, porque está arrugada de esa manera apenas alterada que nunca podrá falsificarse.",
+        "quote_time_case": "cinco y media",
+        "quote_raw": "Gedeón ha sido muy diferente a Gedeón. Como Walter Eastman está preocupado, no ha tenido tiempo, o mejor dicho, ganas, de notar un comportamiento aberrante. Por ejemplo, son las cinco y media de una mañana de verano. Es evidente que han dormido en la estrecha cama de soltero del joven Chase, porque está arrugada de esa manera apenas alterada que nunca podrá falsificarse.",
+        "title": "Una posesión insular",
+        "author": "Timothy Mo",
+        "sfw": "unknown"
+    },
+    {
+        "time": "05:30",
+        "quote_first": "Eran ya las ",
+        "quote_last": " y el sol estaba a punto de salir; pero encontré la cocina todavía a oscuras y en silencio. ... La quietud de la madrugada dormía por todas partes... los caballos de los carruajes pateaban de vez en cuando en sus establos cerrados: todo lo demás estaba en silencio.",
+        "quote_time_case": "cinco y media",
+        "quote_raw": "Eran ya las cinco y media y el sol estaba a punto de salir; pero encontré la cocina todavía a oscuras y en silencio. ... La quietud de la madrugada dormía por todas partes... los caballos de los carruajes pateaban de vez en cuando en sus establos cerrados: todo lo demás estaba en silencio.",
+        "title": "Jane Eyre",
+        "author": "Charlotte Brontë",
+        "sfw": "unknown"
+    },
+    {
+        "time": "05:30",
+        "quote_first": "El día que lo iban a matar, Santiago Nasar se levantó a las ",
+        "quote_last": " de la mañana para esperar el barco en el que venía el obispo.",
+        "quote_time_case": "cinco y media",
+        "quote_raw": "El día que lo iban a matar, Santiago Nasar se levantó a las cinco y media de la mañana para esperar el barco en el que venía el obispo.",
+        "title": "Crónica de una muerte anunciada",
+        "author": "Gabriel García Márquez",
+        "sfw": "unknown"
     }
 ]

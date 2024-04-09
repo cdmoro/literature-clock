@@ -1,0 +1,22 @@
+[
+    {
+        "time": "09:04",
+        "quote_first": "",
+        "quote_last": " yacía en la cama, mirando al techo.",
+        "quote_time_case": "9:04 am",
+        "quote_raw": "9:04 am yacía en la cama, mirando al techo.",
+        "title": "Una fracción del todo",
+        "author": "Steve Toltz",
+        "sfw": "sfw"
+    },
+    {
+        "time": "09:04",
+        "quote_first": "A la luz de una linterna de haz estrecho, Pierce consultó su reloj. Eran las ",
+        "quote_last": ". Eso les dio una hora para encontrar la llave antes de que Barlow les proporcionara su distracción para cubrir su fuga.",
+        "quote_time_case": "9:04",
+        "quote_raw": "A la luz de una linterna de haz estrecho, Pierce consultó su reloj. Eran las 9:04. Eso les dio una hora para encontrar la llave antes de que Barlow les proporcionara su distracción para cubrir su fuga.",
+        "title": "El gran robo del tren",
+        "author": "Michael Crichton",
+        "sfw": "sfw"
+    }
+]

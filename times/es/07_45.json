@@ -1,12 +1,72 @@
 [
     {
         "time": "07:45",
-        "quote_first": "Estaba haciendo mis ejercicios y preguntándome en dónde se habría metido porque ya eran las ",
-        "quote_last": " y aún no salía.",
-        "quote_time_case": "siete y cuarenta y cinco",
-        "quote_raw": "Estaba haciendo mis ejercicios y preguntándome en dónde se habría metido porque ya eran las siete y cuarenta y cinco y aún no salía.",
-        "title": "Los detectives salvajes",
-        "author": "Roberto Bolaño",
+        "quote_first": "En cuanto a Koch, pasó media hora abajo en la platería, antes de acercarse a la anciana y dejarlo exactamente a las ",
+        "quote_last": ". Ahora sólo considere…”",
+        "quote_time_case": "ocho menos cuarto",
+        "quote_raw": "En cuanto a Koch, pasó media hora abajo en la platería, antes de acercarse a la anciana y dejarlo exactamente a las ocho menos cuarto. Ahora sólo considere…”",
+        "title": "Crimen y castigo",
+        "author": "Fyodor Dostoyevsky",
         "sfw": "sfw"
+    },
+    {
+        "time": "07:45",
+        "quote_first": "Esta mañana saqué la lancha durante unos cuarenta minutos para probar el motor. Ha estado dando algunos problemas. Eso duró desde las ",
+        "quote_last": " hasta las ocho y veinte, bastante cerca.",
+        "quote_time_case": "siete cuarenta y cinco",
+        "quote_raw": "Esta mañana saqué la lancha durante unos cuarenta minutos para probar el motor. Ha estado dando algunos problemas. Eso duró desde las siete cuarenta y cinco hasta las ocho y veinte, bastante cerca.",
+        "title": "El faro",
+        "author": "P.D. James",
+        "sfw": "sfw"
+    },
+    {
+        "time": "07:45",
+        "quote_first": "Tony corrige los exámenes hasta las ",
+        "quote_last": ". La luz del sol inunda la habitación, dorada por las hojas amarillas del exterior; un avión sobrevuela; El camión de la basura se acerca por la calle, haciendo ruido como un tanque.",
+        "quote_time_case": "ocho menos cuarto",
+        "quote_raw": "Tony corrige los exámenes hasta las ocho menos cuarto. La luz del sol inunda la habitación, dorada por las hojas amarillas del exterior; un avión sobrevuela; El camión de la basura se acerca por la calle, haciendo ruido como un tanque.",
+        "title": "La novia ladrona",
+        "author": "Margaret Atwood",
+        "sfw": "unknown"
+    },
+    {
+        "time": "07:45",
+        "quote_first": "A las siete cuarenta y cinco, los chicos negros avanzan por la fila de Crónicos pegando catéteres a los que se mantienen quietos. Los catéteres son condones de segunda mano con los extremos cortados y unidos con bandas elásticas a tubos que bajan por las perneras de los pantalones hasta una bolsa de plástico marcada como DESECHABLE PARA NO SER REUTILIZADA, que mi trabajo es lavar al final de cada día.",
+        "quote_last": "",
+        "quote_time_case": "* Siete cuarenta y cinco",
+        "quote_raw": "A las siete cuarenta y cinco, los chicos negros avanzan por la fila de Crónicos pegando catéteres a los que se mantienen quietos. Los catéteres son condones de segunda mano con los extremos cortados y unidos con bandas elásticas a tubos que bajan por las perneras de los pantalones hasta una bolsa de plástico marcada como DESECHABLE PARA NO SER REUTILIZADA, que mi trabajo es lavar al final de cada día.",
+        "title": "Uno volo sobre el nido del cuco",
+        "author": "Ken Kesey",
+        "sfw": "nsfw"
+    },
+    {
+        "time": "07:45",
+        "quote_first": "Contrariamente a su costumbre de llegar tarde, ese día Pierre llegó a casa de los Berg, no a las diez, sino a las ocho menos quince.",
+        "quote_last": "",
+        "quote_time_case": "* quince minutos para las ocho",
+        "quote_raw": "Contrariamente a su costumbre de llegar tarde, ese día Pierre llegó a casa de los Berg, no a las diez, sino a las ocho menos quince.",
+        "title": "Guerra y paz",
+        "author": "Leo Tolstoy",
+        "sfw": "sfw"
+    },
+    {
+        "time": "07:45",
+        "quote_first": "El señor Green salió a trabajar a las ",
+        "quote_last": ", como hacía todas las mañanas. Bajó las escaleras de la entrada con su maletín de cuero sintético de aspecto vacío con ruidosos cierres plateados, abrió la puerta del coche y agachó la cabeza para subirse al asiento del conductor.",
+        "quote_time_case": "ocho menos cuarto",
+        "quote_raw": "El señor Green salió a trabajar a las ocho menos cuarto, como hacía todas las mañanas. Bajó las escaleras de la entrada con su maletín de cuero sintético de aspecto vacío con ruidosos cierres plateados, abrió la puerta del coche y agachó la cabeza para subirse al asiento del conductor.",
+        "title": "Un crimen en el barrio",
+        "author": "Suzanne Berne",
+        "sfw": "unknown"
+    },
+    {
+        "time": "07:45",
+        "quote_first": "Me enseñó que si tenía que reunirme con alguien para una cita, debía negarme a seguir la \"estúpida costumbre humana\" de elegir arbitrariamente una hora basada en intervalos de quince minutos. \"¡Nunca conozcas gente a las ",
+        "quote_last": " o 6:30, Jasper, pero elige horas como las 7:12 y las 8:03!\"",
+        "quote_time_case": "7:45",
+        "quote_raw": "Me enseñó que si tenía que reunirme con alguien para una cita, debía negarme a seguir la \"estúpida costumbre humana\" de elegir arbitrariamente una hora basada en intervalos de quince minutos. \"¡Nunca conozcas gente a las 7:45 o 6:30, Jasper, pero elige horas como las 7:12 y las 8:03!\"",
+        "title": "Una fracción del todo",
+        "author": "Steve Toltz",
+        "sfw": "unknown"
     }
 ]

@@ -1,0 +1,22 @@
+[
+    {
+        "time": "09:23",
+        "quote_first": "",
+        "quote_last": ". ¿Qué me impulsó a comprar este peine?",
+        "quote_time_case": "9.23",
+        "quote_raw": "9.23. ¿Qué me impulsó a comprar este peine?",
+        "title": "Ulises",
+        "author": "James Joyce",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:23",
+        "quote_first": "Hugo condujo su Bugatti a través de las puertas del astillero de Barrington por primera vez en más de dos años, a las ",
+        "quote_last": " de la mañana siguiente. Aparcó en el espacio del presidente antes de dirigirse a la antigua oficina de su padre.",
+        "quote_time_case": "9:23",
+        "quote_raw": "Hugo condujo su Bugatti a través de las puertas del astillero de Barrington por primera vez en más de dos años, a las 9:23 de la mañana siguiente. Aparcó en el espacio del presidente antes de dirigirse a la antigua oficina de su padre.",
+        "title": "Los pecados del padre",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    }
+]

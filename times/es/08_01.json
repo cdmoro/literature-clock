@@ -1,0 +1,22 @@
+[
+    {
+        "time": "08:01",
+        "quote_first": "Ocho y uno, tic-tac, ",
+        "quote_last": ", a la escuela, a trabajar, corre, corre, ¡ocho y uno!",
+        "quote_time_case": "ocho y uno",
+        "quote_raw": "Ocho y uno, tic-tac, ocho y uno, a la escuela, a trabajar, corre, corre, ¡ocho y uno!",
+        "title": "Llegará suaves lluvias",
+        "author": "Ray Bradbury",
+        "sfw": "unknown"
+    },
+    {
+        "time": "08:01",
+        "quote_first": "8:01 A.M.<br/>El pecho de Dore Peretz todavía se sentía como si estuviera ardiendo, una sensación de ardor que parecía extenderse por todo el frente de su torso; de hecho, se sentía como una mierda.",
+        "quote_last": "",
+        "quote_time_case": "* 8:01 a.m.",
+        "quote_raw": "8:01 A.M.<br/>El pecho de Dore Peretz todavía se sentía como si estuviera ardiendo, una sensación de ardor que parecía extenderse por todo el frente de su torso; de hecho, se sentía como una mierda.",
+        "title": "Proyecto cíclope",
+        "author": "Thomas Hoover",
+        "sfw": "nsfw"
+    }
+]

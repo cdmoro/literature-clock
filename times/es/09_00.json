@@ -1,22 +1,372 @@
 [
     {
         "time": "09:00",
-        "quote_first": "Hasta aquel jueves indeseable, en que el médico menos notorio de los muchos que lo habían visto lo citó a las ",
-        "quote_last": " en el pabellón de neurología.",
-        "quote_time_case": "nueve de la mañana",
-        "quote_raw": "Hasta aquel jueves indeseable, en que el médico menos notorio de los muchos que lo habían visto lo citó a las nueve de la mañana en el pabellón de neurología.",
-        "title": "Doce cuentos peregrinos",
-        "author": "Gabriel García Márquez",
+        "quote_first": "Ni ese día ni esa noche se encontró ningún rastro de Inge. Para algunos, la búsqueda duró toda la noche. Luego, alrededor de las ",
+        "quote_last": " de la mañana siguiente, las campanas del campanario de la Iglesia de Sión empezaron a tañer violentamente.",
+        "quote_time_case": "nueve",
+        "quote_raw": "Ni ese día ni esa noche se encontró ningún rastro de Inge. Para algunos, la búsqueda duró toda la noche. Luego, alrededor de las nueve de la mañana siguiente, las campanas del campanario de la Iglesia de Sión empezaron a tañer violentamente.",
+        "title": "Brillante valle del amor",
+        "author": "Edna Hong",
         "sfw": "sfw"
     },
     {
         "time": "09:00",
-        "quote_first": "—¿Y se aburre mucho usted?\n—Regular. He organizado mi vida como la de un industrial. Todos los días me acuesto a las doce y me levanto a las ",
+        "quote_first": "A las ",
+        "quote_last": ", el coche de la rectoría los llevó hacia el sur por la carretera, en dirección a Ravelunda. Fridfeldt se sintió más a gusto al norte de la aldea de la iglesia. Allí el resurgimiento había sido más evidente. Aquí en Vänneberga tuvo uno de sus últimos puestos de avanzada. Más allá estaba Sörbygden, donde la vida espiritual era de otro tipo. Allí se podía fumar y confesar al Salvador; allí se predicaba la doctrina de la depravación pecaminosa total y se decía que también se podía encontrar whisky entre los despiertos.",
+        "quote_time_case": "nueve",
+        "quote_raw": "A las nueve, el coche de la rectoría los llevó hacia el sur por la carretera, en dirección a Ravelunda. Fridfeldt se sintió más a gusto al norte de la aldea de la iglesia. Allí el resurgimiento había sido más evidente. Aquí en Vänneberga tuvo uno de sus últimos puestos de avanzada. Más allá estaba Sörbygden, donde la vida espiritual era de otro tipo. Allí se podía fumar y confesar al Salvador; allí se predicaba la doctrina de la depravación pecaminosa total y se decía que también se podía encontrar whisky entre los despiertos.",
+        "title": "El martillo de Dios",
+        "author": "Bo Giertz",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "A la mañana siguiente, a las ",
+        "quote_last": " en punto, el soldado de bigotes verdes se acercó a ellos y cuatro minutos después entraron todos en el Salón del Trono del Gran Oz.",
+        "quote_time_case": "nueve",
+        "quote_raw": "A la mañana siguiente, a las nueve en punto, el soldado de bigotes verdes se acercó a ellos y cuatro minutos después entraron todos en el Salón del Trono del Gran Oz.",
+        "title": "El mago de Oz",
+        "author": "L. Frank Baum",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "Pensó que había visto algo diferente en Peter, pero no había podido decir exactamente qué era. Cuando Anderson se despertó a la mañana siguiente (a las ",
+        "quote_last": " en punto, perfectamente normal), lo vio casi de inmediato.",
+        "quote_time_case": "nueve",
+        "quote_raw": "Pensó que había visto algo diferente en Peter, pero no había podido decir exactamente qué era. Cuando Anderson se despertó a la mañana siguiente (a las nueve en punto, perfectamente normal), lo vio casi de inmediato.",
+        "title": "Los Tommyknockers",
+        "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "La tormenta se mantuvo hasta las ",
+        "quote_last": " en punto, y para entonces Anderson estaba bastante seguro de que iban a tener una buena, lo que los habitantes de Haveni llamaron \"un verdadero Jeezer\".",
+        "quote_time_case": "nueve",
+        "quote_raw": "La tormenta se mantuvo hasta las nueve en punto, y para entonces Anderson estaba bastante seguro de que iban a tener una buena, lo que los habitantes de Haveni llamaron \"un verdadero Jeezer\".",
+        "title": "Los Tommyknockers",
+        "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "A las ",
+        "quote_last": " de la mañana siguiente ya estaba puntualmente abriendo la escuela; tranquilo, asentado, preparado para los constantes deberes del día.",
+        "quote_time_case": "nueve",
+        "quote_raw": "A las nueve de la mañana siguiente ya estaba puntualmente abriendo la escuela; tranquilo, asentado, preparado para los constantes deberes del día.",
+        "title": "Jane Eyre",
+        "author": "Charlotte Brontë",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "A las ",
+        "quote_last": " vino su secretaria y le leyó las citas del día. <br>Sin embargo, cuando lo hizo esta mañana, lo encontró todavía mirando su plato con una expresión extraña.",
+        "quote_time_case": "nueve",
+        "quote_raw": "A las nueve vino su secretaria y le leyó las citas del día. <br>Sin embargo, cuando lo hizo esta mañana, lo encontró todavía mirando su plato con una expresión extraña.",
+        "title": "Johnny y la bomba",
+        "author": "Terry Pratchett",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "Cuando me bajé del tren, me preguntaba ansiosamente hacia dónde debía dirigirme. Los clubes nocturnos eran un gran lugar para comprar coca, pero muy pocos estaban abiertos a las ",
         "quote_last": ".",
         "quote_time_case": "nueve de la mañana",
-        "quote_raw": "—¿Y se aburre mucho usted?\n—Regular. He organizado mi vida como la de un industrial. Todos los días me acuesto a las doce y me levanto a las nueve de la mañana.",
-        "title": "Los siete locos",
-        "author": "Roberto Arlt",
-        "sfw": "sfw"
+        "quote_raw": "Cuando me bajé del tren, me preguntaba ansiosamente hacia dónde debía dirigirme. Los clubes nocturnos eran un gran lugar para comprar coca, pero muy pocos estaban abiertos a las nueve de la mañana.",
+        "title": "Las vacaciones de Raquel",
+        "author": "Marian Keyes",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "Se despertó a las ",
+        "quote_last": ", trabajó un rato en su habitación y luego dijo que tenía sueño. Fue a la cocina, preparó un poco de café y se lo bebió. Pero el café no ayudó. <br/> “Creo que voy a tomar una siesta”, dijo. \"Escucho un zumbido en la parte posterior de mi cabeza\". Esas fueron sus últimas palabras. Se acurrucó en la cama, se durmió y nunca más despertó.",
+        "quote_time_case": "nueve",
+        "quote_raw": "Se despertó a las nueve, trabajó un rato en su habitación y luego dijo que tenía sueño. Fue a la cocina, preparó un poco de café y se lo bebió. Pero el café no ayudó. <br/> “Creo que voy a tomar una siesta”, dijo. \"Escucho un zumbido en la parte posterior de mi cabeza\". Esas fueron sus últimas palabras. Se acurrucó en la cama, se durmió y nunca más despertó.",
+        "title": "Sauce ciego, mujer dormida",
+        "author": "Haruki Murakami",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "Desde el Palacio del Louvre hasta la Étoile es como una pieza musical para piano. Hace cinco días que no toco la máquina de escribir ni miro un libro; Tampoco he tenido una sola idea en la cabeza excepto ir al American Express. Esta mañana estuve allí a las ",
+        "quote_last": " de la mañana, justo cuando se abrían las puertas, y de nuevo a la una.",
+        "quote_time_case": "nueve",
+        "quote_raw": "Desde el Palacio del Louvre hasta la Étoile es como una pieza musical para piano. Hace cinco días que no toco la máquina de escribir ni miro un libro; Tampoco he tenido una sola idea en la cabeza excepto ir al American Express. Esta mañana estuve allí a las nueve de la mañana, justo cuando se abrían las puertas, y de nuevo a la una.",
+        "title": "trópico de Cáncer",
+        "author": "Henry Miller",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "Sigue sonriendo todo el tiempo, sonriendo como una pequeña chinche rosada que se ha hartado. “Eran las ",
+        "quote_last": "”, dice una vez más, “cuando te llamé, ¿no?” Asiento con la cabeza con cansancio. Sí, eran las nueve. Ahora está seguro de que eran las nueve porque recuerda haber sacado el reloj.",
+        "quote_time_case": "nueve",
+        "quote_raw": "Sigue sonriendo todo el tiempo, sonriendo como una pequeña chinche rosada que se ha hartado. “Eran las nueve”, dice una vez más, “cuando te llamé, ¿no?” Asiento con la cabeza con cansancio. Sí, eran las nueve. Ahora está seguro de que eran las nueve porque recuerda haber sacado el reloj.",
+        "title": "trópico de Cáncer",
+        "author": "Henry Miller",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "A las ",
+        "quote_last": " volví a llamar. Él respondió.<br>“¿Qué quieres?” preguntó.<br>“Esperaba oírte decir que me extrañas”.<br>“Te extraño”, dijo. “¿Es eso todo?”<br>Colgué.",
+        "quote_time_case": "nueve",
+        "quote_raw": "A las nueve volví a llamar. Él respondió.<br>“¿Qué quieres?” preguntó.<br>“Esperaba oírte decir que me extrañas”.<br>“Te extraño”, dijo. “¿Es eso todo?”<br>Colgué.",
+        "title": "Mi año de descanso y relajación",
+        "author": "Ottessa Moshfegh",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "Se está desarrollando una rutina de trabajo. Ayrs y yo estamos en la sala de música todas las mañanas a las ",
+        "quote_last": " en punto, sus diversas dolencias y dolores se lo permiten. Me siento al piano, Ayrs en el diván, fumando sus viles cigarrillos turcos, y adoptamos uno de nuestros tres modi operandi. \"Revisiones\": me pide que repase el trabajo de la mañana anterior. Tarareo, canto o toco, según el instrumento, y Ayrs modifica la partitura.",
+        "quote_time_case": "nueve",
+        "quote_raw": "Se está desarrollando una rutina de trabajo. Ayrs y yo estamos en la sala de música todas las mañanas a las nueve en punto, sus diversas dolencias y dolores se lo permiten. Me siento al piano, Ayrs en el diván, fumando sus viles cigarrillos turcos, y adoptamos uno de nuestros tres modi operandi. \"Revisiones\": me pide que repase el trabajo de la mañana anterior. Tarareo, canto o toco, según el instrumento, y Ayrs modifica la partitura.",
+        "title": "Atlas de nubes",
+        "author": "David Mitchell",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "No llovió, como Holmes había predicho, y la mañana amaneció brillante y sin nubes. A las ",
+        "quote_last": " en punto, Lestrade nos llamó en el carruaje y partimos hacia Hatherley Farm y Boscombe Pool.",
+        "quote_time_case": "nueve",
+        "quote_raw": "No llovió, como Holmes había predicho, y la mañana amaneció brillante y sin nubes. A las nueve en punto, Lestrade nos llamó en el carruaje y partimos hacia Hatherley Farm y Boscombe Pool.",
+        "title": "Las aventuras de Sherlock Holmes",
+        "author": "Sir Arthur Conan Doyle",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "\"No lo pienses más, viejo amigo\". La expresión familiar no tenía más familiaridad que la mano que rozó mi hombro de manera tranquilizadora. Y no olvides que mañana por la mañana, a las ",
+        "quote_last": ", subiremos en el hidroavión.",
+        "quote_time_case": "nueve",
+        "quote_raw": "\"No lo pienses más, viejo amigo\". La expresión familiar no tenía más familiaridad que la mano que rozó mi hombro de manera tranquilizadora. Y no olvides que mañana por la mañana, a las nueve, subiremos en el hidroavión.",
+        "title": "El gran Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "Eran las ",
+        "quote_last": " cuando terminamos de desayunar y salimos al porche. La noche había marcado una marcada diferencia en el tiempo y había un sabor otoñal en el aire.",
+        "quote_time_case": "nueve",
+        "quote_raw": "Eran las nueve cuando terminamos de desayunar y salimos al porche. La noche había marcado una marcada diferencia en el tiempo y había un sabor otoñal en el aire.",
+        "title": "El gran Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "La Tierra fue creada el domingo 21 de octubre del año 4004 a.C., exactamente a las 9:00 a.m., porque a Dios le gustaba trabajar temprano en la mañana mientras se sentía fresco.",
+        "quote_last": "",
+        "quote_time_case": "* 09 A.M.",
+        "quote_raw": "La Tierra fue creada el domingo 21 de octubre del año 4004 a.C., exactamente a las 9:00 a.m., porque a Dios le gustaba trabajar temprano en la mañana mientras se sentía fresco.",
+        "title": "Buenos augurios",
+        "author": "Terry Pratchett and Neil Gaiman",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "Sólo a las ",
+        "quote_last": ", la cocina ya estaba llena de capacidad, con cada rincón y encimera ocupados por las creaciones gourmet de Marjan. Verduras marinadas (𝘵𝘰𝘳𝘴𝘩𝘪𝘴 de mango, berenjena y la variedad habitual de siete especias), empacadas hasta los bordes salados de botes transparentes de cinco galones, se encontraban en la isla de la cocina. Grandes tazones azules estaban llenos de ensaladas (lentejas angélica, tomate, pepino y menta, y pollo frito persa), 𝘥𝘰𝘭𝘮𝘦𝘩 y salsas (queso y nueces, yogur y pepino, baba ghanoush y hummus picante), que junto con el queso feta, Stilton y quesos cheddar, estaban cubiertos y apilados en el enorme frigorífico con puerta de cristal.",
+        "quote_time_case": "nueve de la mañana",
+        "quote_raw": "Sólo a las nueve de la mañana, la cocina ya estaba llena de capacidad, con cada rincón y encimera ocupados por las creaciones gourmet de Marjan. Verduras marinadas (𝘵𝘰𝘳𝘴𝘩𝘪𝘴 de mango, berenjena y la variedad habitual de siete especias), empacadas hasta los bordes salados de botes transparentes de cinco galones, se encontraban en la isla de la cocina. Grandes tazones azules estaban llenos de ensaladas (lentejas angélica, tomate, pepino y menta, y pollo frito persa), 𝘥𝘰𝘭𝘮𝘦𝘩 y salsas (queso y nueces, yogur y pepino, baba ghanoush y hummus picante), que junto con el queso feta, Stilton y quesos cheddar, estaban cubiertos y apilados en el enorme frigorífico con puerta de cristal.",
+        "title": "Sopa De Granada",
+        "author": "Marsha Mehran",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "Cuando estuvo completamente vestido, eran las ",
+        "quote_last": ". Faltaban seis horas para que expirara el ultimátum de Hitler.<br>Fue en busca de desayuno.",
+        "quote_time_case": "nueve",
+        "quote_raw": "Cuando estuvo completamente vestido, eran las nueve. Faltaban seis horas para que expirara el ultimátum de Hitler.<br>Fue en busca de desayuno.",
+        "title": "Munich",
+        "author": "Robert Harris",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "Sin embargo, a las ",
+        "quote_last": ", el príncipe, con su abrigo de terciopelo con cuello de marta y gorra, salió a dar su paseo habitual.",
+        "quote_time_case": "nueve",
+        "quote_raw": "Sin embargo, a las nueve, el príncipe, con su abrigo de terciopelo con cuello de marta y gorra, salió a dar su paseo habitual.",
+        "title": "Guerra y paz",
+        "author": "Leo Tolstoy",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "Eran las ",
+        "quote_last": " de la mañana. Abajo la niebla se extendía ininterrumpida como un mar, pero más arriba, en el pueblo de Schlappanitz, donde Napoleón estaba con sus mariscales a su alrededor, había bastante luz. Sobre él había un cielo azul claro, y el vasto orbe del sol temblaba como un enorme flotador carmesí hueco en la superficie de ese mar lechoso de niebla.",
+        "quote_time_case": "nueve",
+        "quote_raw": "Eran las nueve de la mañana. Abajo la niebla se extendía ininterrumpida como un mar, pero más arriba, en el pueblo de Schlappanitz, donde Napoleón estaba con sus mariscales a su alrededor, había bastante luz. Sobre él había un cielo azul claro, y el vasto orbe del sol temblaba como un enorme flotador carmesí hueco en la superficie de ese mar lechoso de niebla.",
+        "title": "Guerra y paz",
+        "author": "Leo Tolstoy",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "Cuando sonó el gong para el desayuno a las ",
+        "quote_last": ", encontró a todos despiertos y esperando la llamada.",
+        "quote_time_case": "nueve",
+        "quote_raw": "Cuando sonó el gong para el desayuno a las nueve, encontró a todos despiertos y esperando la llamada.",
+        "title": "Y entonces no había ninguno",
+        "author": "Agatha Christie",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "Nunca podía llegar hasta allí antes de las ",
+        "quote_last": ".",
+        "quote_time_case": "nueve",
+        "quote_raw": "Nunca podía llegar hasta allí antes de las nueve.",
+        "title": "Una confederación de tontos",
+        "author": "John Kennedy Toole",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "Mirar. Ignacio. Estoy exhausto. Llevo viajando desde ayer a las ",
+        "quote_last": " de la mañana.",
+        "quote_time_case": "nueve",
+        "quote_raw": "Mirar. Ignacio. Estoy exhausto. Llevo viajando desde ayer a las nueve de la mañana.",
+        "title": "Una confederación de tontos",
+        "author": "John Kennedy Toole",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "A la tercera mañana después de su llegada, justo cuando todos los relojes de la ciudad daban las ",
+        "quote_last": " individualmente y alrededor de novecientos noventa y nueve en conjunto, Sam estaba tomando el aire en George Yard, cuando un extraño vehículo recién pintado se puso en marcha. del cual saltó con gran agilidad, arrojándole las riendas a un hombre corpulento que estaba sentado a su lado, una especie de caballero extraño, que parecía hecho para el vehículo, y el vehículo para él.",
+        "quote_time_case": "nueve",
+        "quote_raw": "A la tercera mañana después de su llegada, justo cuando todos los relojes de la ciudad daban las nueve individualmente y alrededor de novecientos noventa y nueve en conjunto, Sam estaba tomando el aire en George Yard, cuando un extraño vehículo recién pintado se puso en marcha. del cual saltó con gran agilidad, arrojándole las riendas a un hombre corpulento que estaba sentado a su lado, una especie de caballero extraño, que parecía hecho para el vehículo, y el vehículo para él.",
+        "title": "Los papeles de Pickwick",
+        "author": "Charles Dickens",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "",
+        "quote_last": " Asamblea escolar",
+        "quote_time_case": "9.00 horas",
+        "quote_raw": "9.00 horas Asamblea escolar",
+        "title": "El curioso incidente del perro a medianoche",
+        "author": "Mark Haddon",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "Una mosca zumbó y el reloj de la pared empezó a dar las campanadas. Después de que los ",
+        "quote_last": " trazos dorados se desvanecieron, el capitán del distrito comenzó. \"¿Cómo está Herr Coronel Marek?\"<br/> \"Gracias, Papá, está bien.\"<br/> \"¿Aún tienes problemas en geometría?\"<br/> \"Gracias, Papá, un poco mejor.\"<br /> \"¿Leíste algún libro?\"<br/> \"Sí señor, papá\".",
+        "quote_time_case": "nueve",
+        "quote_raw": "Una mosca zumbó y el reloj de la pared empezó a dar las campanadas. Después de que los nueve trazos dorados se desvanecieron, el capitán del distrito comenzó. \"¿Cómo está Herr Coronel Marek?\"<br/> \"Gracias, Papá, está bien.\"<br/> \"¿Aún tienes problemas en geometría?\"<br/> \"Gracias, Papá, un poco mejor.\"<br /> \"¿Leíste algún libro?\"<br/> \"Sí señor, papá\".",
+        "title": "La Marcha Radetzky",
+        "author": "Joseph Roth",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "Como ya habían pasado las ",
+        "quote_last": ", lo absurdo del retraso me abrumó, y me acerqué enfadado al dueño y le dije que pensaba que debería contratar a otro cocinero, pesar los palos y marcharse.",
+        "quote_time_case": "nueve",
+        "quote_raw": "Como ya habían pasado las nueve, lo absurdo del retraso me abrumó, y me acerqué enfadado al dueño y le dije que pensaba que debería contratar a otro cocinero, pesar los palos y marcharse.",
+        "title": "Un solo guijarro",
+        "author": "John Hershey",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "A las ",
+        "quote_last": " en punto, una mañana de finales de julio, el magnífico coche de Gatsby subió por el camino rocoso hasta mi puerta y emitió un estallido de melodía con su bocina de tres notas.",
+        "quote_time_case": "nueve",
+        "quote_raw": "A las nueve en punto, una mañana de finales de julio, el magnífico coche de Gatsby subió por el camino rocoso hasta mi puerta y emitió un estallido de melodía con su bocina de tres notas.",
+        "title": "El gran Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "Estaba desayunando a las ",
+        "quote_last": " y por vigésima vez consultó su \"Bradshaw\" para ver a qué hora más temprana podría llegar el doctor Grantly desde Barchester.",
+        "quote_time_case": "nueve",
+        "quote_raw": "Estaba desayunando a las nueve y por vigésima vez consultó su \"Bradshaw\" para ver a qué hora más temprana podría llegar el doctor Grantly desde Barchester.",
+        "title": "El Guardian",
+        "author": "Anthony Trollope",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "No soportará los golpes. Ahora, si te mantuvieras en buenos términos con él, haría casi cualquier cosa que quisieras con el reloj. Supongamos, por ejemplo, que fueran las ",
+        "quote_last": " de la mañana, hora de empezar las clases: bastaría con susurrarle una pista al Tiempo y ¡el reloj giraría en un abrir y cerrar de ojos! ¡La una y media, hora de cenar!",
+        "quote_time_case": "nueve",
+        "quote_raw": "No soportará los golpes. Ahora, si te mantuvieras en buenos términos con él, haría casi cualquier cosa que quisieras con el reloj. Supongamos, por ejemplo, que fueran las nueve de la mañana, hora de empezar las clases: bastaría con susurrarle una pista al Tiempo y ¡el reloj giraría en un abrir y cerrar de ojos! ¡La una y media, hora de cenar!",
+        "title": "Las aventuras de Alicia en el País de las Maravillas",
+        "author": "Lewis Carroll",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "Alrededor de las ",
+        "quote_last": " crucé la frontera hacia Cornualles. Esto fue al menos tres horas antes de que comenzara a llover y las nubes todavía eran todas de un blanco brillante. De hecho, muchas de las vistas que me recibieron esta mañana se encuentran entre las más encantadoras que he encontrado hasta ahora. Fue una lástima, entonces, que durante gran parte del tiempo no pudiera prestarles la atención que merecían; porque, bien podría decirlo, estaba en un estado de cierta preocupación con la idea de que, salvo alguna complicación invisible, volvería a encontrarme con la señorita Kenton antes de que terminara el día.",
+        "quote_time_case": "nueve",
+        "quote_raw": "Alrededor de las nueve crucé la frontera hacia Cornualles. Esto fue al menos tres horas antes de que comenzara a llover y las nubes todavía eran todas de un blanco brillante. De hecho, muchas de las vistas que me recibieron esta mañana se encuentran entre las más encantadoras que he encontrado hasta ahora. Fue una lástima, entonces, que durante gran parte del tiempo no pudiera prestarles la atención que merecían; porque, bien podría decirlo, estaba en un estado de cierta preocupación con la idea de que, salvo alguna complicación invisible, volvería a encontrarme con la señorita Kenton antes de que terminara el día.",
+        "title": "Lo que falta del dia",
+        "author": "Kazuo Ishiguro",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "Al abrir la ventana, Aschenbach creyó oler el hedor pestilente de la laguna. Un repentino desaliento se apoderó de él. Consideró irse en ese mismo momento. Una vez, años antes, después de semanas de una hermosa primavera, lo había visitado este tipo de clima y afectó tanto su salud que se vio obligado a huir. ¿No estaba empezando la misma fiebre apática? ¿La presión en las sienes, los párpados pesados? Volver a cambiar de hotel sería una molestia, pero si el viento no cambiaba, no podría permanecer allí. Para estar seguro, no desempacó todo. ",
+        "quote_last": " fue a desayunar al buffet especialmente habilitado entre el vestíbulo y el comedor.",
+        "quote_time_case": "A las nueve",
+        "quote_raw": "Al abrir la ventana, Aschenbach creyó oler el hedor pestilente de la laguna. Un repentino desaliento se apoderó de él. Consideró irse en ese mismo momento. Una vez, años antes, después de semanas de una hermosa primavera, lo había visitado este tipo de clima y afectó tanto su salud que se vio obligado a huir. ¿No estaba empezando la misma fiebre apática? ¿La presión en las sienes, los párpados pesados? Volver a cambiar de hotel sería una molestia, pero si el viento no cambiaba, no podría permanecer allí. Para estar seguro, no desempacó todo. A las nueve fue a desayunar al buffet especialmente habilitado entre el vestíbulo y el comedor.",
+        "title": "Muerte en Venecia",
+        "author": "Thomas Mann",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "A veces lo que daría yo por tenernos otra vez sentados en un bar a las 9.00 contándonos mentiras, lejos de Dios.",
+        "quote_last": "",
+        "quote_time_case": "* 9.00 am",
+        "quote_raw": "A veces lo que daría yo por tenernos otra vez sentados en un bar a las 9.00 contándonos mentiras, lejos de Dios.",
+        "title": "El hijo de Jesús",
+        "author": "Denis Johnson",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "El reloj dio las ",
+        "quote_last": " cuando envié a la enfermera; Al cabo de media hora prometió volver.",
+        "quote_time_case": "nueve",
+        "quote_raw": "El reloj dio las nueve cuando envié a la enfermera; Al cabo de media hora prometió volver.",
+        "title": "Romeo y Julieta",
+        "author": "William Shakespeare",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "A donde Santa María Woolnoth marcaba las horas<br/>Con un sonido muerto al final de las ",
+        "quote_last": ".",
+        "quote_time_case": "nueve",
+        "quote_raw": "A donde Santa María Woolnoth marcaba las horas<br/>Con un sonido muerto al final de las nueve.",
+        "title": "La tierra de residuos",
+        "author": "T.S. Eliot",
+        "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "A las nueve, jóvenes residentes con coderas de cuero hablan con Acutes durante cincuenta minutos sobre lo que hacían cuando eran pequeños. La Gran Enfermera sospecha del aspecto rapado de estos residentes, y el hecho de que cincuenta minutos estén en la sala es un momento difícil para ella.",
+        "quote_last": "",
+        "quote_time_case": "* Nueve",
+        "quote_raw": "A las nueve, jóvenes residentes con coderas de cuero hablan con Acutes durante cincuenta minutos sobre lo que hacían cuando eran pequeños. La Gran Enfermera sospecha del aspecto rapado de estos residentes, y el hecho de que cincuenta minutos estén en la sala es un momento difícil para ella.",
+        "title": "Uno volo sobre el nido del cuco",
+        "author": "Ken Kesey",
+        "sfw": "unknown"
     }
 ]

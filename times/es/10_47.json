@@ -1,0 +1,32 @@
+[
+    {
+        "time": "10:47",
+        "quote_first": "10:47 a. m. Solo le enviaré un pequeño mensaje amistoso, nada coqueto, solo para restablecer las buenas relaciones.",
+        "quote_last": "",
+        "quote_time_case": "* 10:47 am",
+        "quote_raw": "10:47 a. m. Solo le enviaré un pequeño mensaje amistoso, nada coqueto, solo para restablecer las buenas relaciones.",
+        "title": "El diario de Bridget Jones",
+        "author": "Helen Fielding",
+        "sfw": "sfw"
+    },
+    {
+        "time": "10:47",
+        "quote_first": "Silba en la ducha. Son las ",
+        "quote_last": " y está listo para partir.",
+        "quote_time_case": "10.47",
+        "quote_raw": "Silba en la ducha. Son las 10.47 y está listo para partir.",
+        "title": "Trompeta",
+        "author": "Jackie Kay",
+        "sfw": "unknown"
+    },
+    {
+        "time": "10:47",
+        "quote_first": "Cojo mi teléfono y llamo a Sam. Su número sigue desconectado. Vuelvo a conectar el USB y hago un nuevo intento de revisar sus archivos. Mi café se enfría y me duele la espalda mientras miro la pantalla. No significa nada. Miré la hora. ",
+        "quote_last": "",
+        "quote_time_case": "10.47 horas",
+        "quote_raw": "Cojo mi teléfono y llamo a Sam. Su número sigue desconectado. Vuelvo a conectar el USB y hago un nuevo intento de revisar sus archivos. Mi café se enfría y me duele la espalda mientras miro la pantalla. No significa nada. Miré la hora. 10.47 horas",
+        "title": "El exmarido",
+        "author": "Karen Hamilton",
+        "sfw": "unknown"
+    }
+]

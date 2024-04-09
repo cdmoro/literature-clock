@@ -1,0 +1,42 @@
+[
+    {
+        "time": "07:03",
+        "quote_first": "",
+        "quote_last": " Regreso a la cama enfurruñado por el peso. Estado de cabeza malo. Dormir o levantarse igualmente fuera de discusión. Piensa en Daniel.",
+        "quote_time_case": "7:03 a.m.",
+        "quote_raw": "7:03 a.m. Regreso a la cama enfurruñado por el peso. Estado de cabeza malo. Dormir o levantarse igualmente fuera de discusión. Piensa en Daniel.",
+        "title": "El diario de Bridget Jones",
+        "author": "Helen Fielding",
+        "sfw": "sfw"
+    },
+    {
+        "time": "07:03",
+        "quote_first": "Hubo problemas con la pista. Nadie podría dar idea de cuándo se arreglaría. El tren que llegó a ",
+        "quote_last": " había sido el último en llegar. ¿Estaban todos los dioses del viaje conspirando para frustrarlo?",
+        "quote_time_case": "las siete y tres minutos",
+        "quote_raw": "Hubo problemas con la pista. Nadie podría dar idea de cuándo se arreglaría. El tren que llegó a las siete y tres minutos había sido el último en llegar. ¿Estaban todos los dioses del viaje conspirando para frustrarlo?",
+        "title": "La sala del asesinato",
+        "author": "P.D. James",
+        "sfw": "sfw"
+    },
+    {
+        "time": "07:03",
+        "quote_first": "Y hasta ahora había decretado que alguien debía empezar a lavarme y arreglarme exactamente tres minutos después de las 7 de la mañana.",
+        "quote_last": "",
+        "quote_time_case": "* tres minutos después de las 7 am",
+        "quote_raw": "Y hasta ahora había decretado que alguien debía empezar a lavarme y arreglarme exactamente tres minutos después de las 7 de la mañana.",
+        "title": "El día de los trífidos",
+        "author": "John Wyndham",
+        "sfw": "sfw"
+    },
+    {
+        "time": "07:03",
+        "quote_first": "07:03 El general Tanz se despertó como si lo hubiera despertado un despertador mental.",
+        "quote_last": "",
+        "quote_time_case": "* 7:03 am",
+        "quote_raw": "07:03 El general Tanz se despertó como si lo hubiera despertado un despertador mental.",
+        "title": "La noche de los generales",
+        "author": "Hans Hellmut Kirst",
+        "sfw": "sfw"
+    }
+]

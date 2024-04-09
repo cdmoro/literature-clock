@@ -3,7 +3,7 @@
         "time": "00:38",
         "quote_first": "Vous avez quitté le bâtiment principal de l'hôpital vers minuit. Vous avez parlé au portier à la porte principale à midi trente-huit. Où étiez-vous entre ces heures ?",
         "quote_last": "",
-        "quote_time_case": "midi trente-huit heures",
+        "quote_time_case": "* midi trente-huit heures",
         "quote_raw": "Vous avez quitté le bâtiment principal de l'hôpital vers minuit. Vous avez parlé au portier à la porte principale à midi trente-huit. Où étiez-vous entre ces heures ?",
         "title": "Linceul pour un rossignol",
         "author": "P.D. James",
