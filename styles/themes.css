@@ -126,13 +126,11 @@
 
 [data-theme="festive-light"] {
     --accent-color: 231, 76, 60;
-    --background: unset;
     --background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
     --font-color: #2f2e2c;
 }
 [data-theme="festive-dark"] {
     --accent-color: 231, 76, 60;
-    --background: unset;
     --background-image: linear-gradient(to top right, #011b1b, #43162c);
     --font-color: #a3a29a;
 }
