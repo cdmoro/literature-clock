@@ -17,6 +17,7 @@ print("Starting processing quotes...\n")
 # Iterate over each CSV file
 for file_name in file_list:
     if file_name.endswith('.csv'):
+        errors = 0;
         # Extract the language from the file name
         language = file_name.split('.')[1]
 
@@ -42,7 +43,7 @@ for file_name in file_list:
                 quote_parts = row['Quote'].split(str(row['Quote time']), 1)
 
                 if len(quote_parts) == 1:
-                    print(f"Split error: '{row['Quote time']}' not found in {row['Time']}")
+                    errors += 1
                     quote_parts.append('');
 
                 quote_first = quote_parts[0]
@@ -89,6 +90,9 @@ for file_name in file_list:
             'bottom_time_quotes': bottom_time_quotes.to_dict(),
             'top_time_quotes': top_time_quotes.to_dict()
         }
+
+        if errors > 0:
+            print(f"- {errors} quote with errors found")
 
         print(f"- {times_with_quote} files created in {os.path.join(output_path, language)}\n")
 
