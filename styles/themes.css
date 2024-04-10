@@ -104,7 +104,7 @@
     --font-color: #a3a29a;
 }
 [data-theme*=retro] {
-    --quote-font-family: 'VT323';
+    --quote-font-family: 'VT323', sans-serif;
     --quote-line-height: 1;
     --quote-font-size: 3vw;
 }
@@ -120,7 +120,7 @@
     --font-color: #a3a29a;
 }
 [data-theme*=elegant] {
-    --quote-font-family: 'Playfair Display';
+    --quote-font-family: 'Playfair Display', sans-serif;
     --quote-line-height: 1.5;
 }
 
@@ -135,7 +135,7 @@
     --font-color: #a3a29a;
 }
 [data-theme*=festive] {
-    --quote-font-family: 'Borel';
+    --quote-font-family: 'Borel', sans-serif;
     --quote-font-size: 3.2vw;
     --quote-line-height: 1.5;
 }
@@ -151,6 +151,6 @@
     --font-color: #a3a29a;
 }
 [data-theme*=bohemian] {
-    --quote-font-family: 'Atma';
+    --quote-font-family: 'Atma', sans-serif;
     --quote-line-height: 1.4;
 }

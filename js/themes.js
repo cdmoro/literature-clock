@@ -6,10 +6,15 @@ const THEME_FONTS = {
 };
 
 export function loadFont(fontName) {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = `https://fonts.googleapis.com/css2?family=${fontName.replace(/ /g, '+')}:wght@400&display=swap`;
-    document.head.appendChild(link);
+    const fontNameSanitised = fontName.replace(/ /g, '+');
+    const fontExists = Array.from(document.querySelectorAll('link[rel=stylesheet][href*=fonts]')).some(link => link.href.includes(fontNameSanitised))
+
+    if (!fontExists) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = `https://fonts.googleapis.com/css2?family=${fontNameSanitised}:wght@400&display=swap`;
+        document.head.appendChild(link);
+    }
 }
 
 function getTheme(newTheme) {
