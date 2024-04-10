@@ -37,7 +37,7 @@ body.zen-mode #exit-zen {
 }
 
 a, a:visited {
-    color: rgb(var(--accent-color));
+    color: var(--accent-color);
 }
 
 blockquote {
@@ -79,7 +79,7 @@ blockquote:after {
 }
 
 blockquote .quote-time {
-    color: rgb(var(--accent-color));
+    color: var(--accent-color);
 }
 
 cite {
@@ -106,9 +106,9 @@ select {
 }
 
 select:focus {
-    border-color: rgb(var(--accent-color));
+    border-color: var(--accent-color);
     outline: 0;
-    box-shadow: 0 0 0 .2rem rgba(var(--accent-color), 0.25);
+    box-shadow: 0 0 0 .2rem color-mix(in srgb, var(--accent-color), transparent 75%);
 }
 
 #quote-time-bar {

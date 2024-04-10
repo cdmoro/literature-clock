@@ -1,5 +1,5 @@
 :root {
-    --accent-color: 210, 67, 53;
+    --accent-color: #D24335;
     --background: #12121a;
     --font-color: #a3a29a;
     --quote-font-family: 'Special Elite', cursive;
@@ -8,62 +8,62 @@
 /* Colors */
 
 [data-theme="base-light"] {
-    --accent-color: 210, 67, 53;
+    --accent-color: #D24335;
     --background: #eaeaec;
     --font-color: #2f2e2c;
 }
 [data-theme="base-dark"] {
-    --accent-color: 210, 67, 53;
+    --accent-color: #D24335;
     --background: #12121a;
     --font-color: #a3a29a;
 }
 
 [data-theme="orange-light"] {
-    --accent-color: 243, 156, 18;
+    --accent-color: #F39C12;
     --background: #FDF2E9;
     --font-color: #2f2e2c;
 }
 [data-theme="orange-dark"] {
-    --accent-color: 243, 156, 18;
+    --accent-color: #F39C12;
     --background: #1a0e0c;
     --font-color: #a3a29a;
 }
 
 [data-theme="purple-light"] {
-    --accent-color: 155, 89, 182;
+    --accent-color: #9B59B6;
     --background: #F5EEFD;
     --font-color: #2f2e2c;
 }
 [data-theme="purple-dark"] {
-    --accent-color: 155, 89, 182;
+    --accent-color: #9B59B6;
     --background: #0f0f1a;
     --font-color: #a3a29a;
 }
 
 [data-theme="green-light"] {
-    --accent-color: 46, 204, 113;
+    --accent-color: #2ECC71;
     --background: #F0FFF4;
     --font-color: #2f2e2c;
 }
 [data-theme="green-dark"] {
-    --accent-color: 46, 204, 113;
+    --accent-color: #2ECC71;
     --background: #0e0e1a;
     --font-color: #a3a29a;
 }
 
 [data-theme="blue-light"] {
-    --accent-color: 44, 151, 223;
+    --accent-color: #2C97DF;
     --background: #F2F6FF;
     --font-color: #2f2e2c;
 }
 [data-theme="blue-dark"] {
-    --accent-color: 44, 151, 223;
+    --accent-color: #2C97DF;
     --background: #0c0c1a;
     --font-color: #a3a29a;
 }
 
 [data-theme="gray-light"] {
-    --accent-color: 149, 165, 166;
+    --accent-color: #95A5A6;
     --background: #F4F6F6;
     --font-color: #2f2e2c;
 }
@@ -74,12 +74,12 @@
 }
 
 [data-theme="pink-light"] {
-    --accent-color: 255, 107, 129;
+    --accent-color: #FF6B81;
     --background: #FDF2F8;
     --font-color: #2f2e2c;
 }
 [data-theme="pink-dark"] {
-    --accent-color: 255, 107, 129;
+    --accent-color: #FF6B81;
     --background: #1a0c0e;
     --font-color: #a3a29a;
 }
@@ -94,12 +94,12 @@
 }
 
 [data-theme="retro-light"] {
-    --accent-color: 255, 195, 0;
+    --accent-color: #FFC300;
     --background: #F8F8F8;
     --font-color: #2f2e2c;
 }
 [data-theme="retro-dark"] {
-    --accent-color: 255, 195, 0;
+    --accent-color: #FFC300;
     --background: #2c2c2c;
     --font-color: #a3a29a;
 }
@@ -110,12 +110,12 @@
 }
 
 [data-theme="elegant-light"] {
-    --accent-color: 108, 91, 123;
+    --accent-color: #6C5B7B;
     --background: #F5F5F5;
     --font-color: #2f2e2c;
 }
 [data-theme="elegant-dark"] {
-    --accent-color: 108, 91, 123;
+    --accent-color: #6C5B7B;
     --background: #1a1a1a;
     --font-color: #a3a29a;
 }
@@ -125,12 +125,12 @@
 }
 
 [data-theme="festive-light"] {
-    --accent-color: 231, 76, 60;
+    --accent-color: #E74C3C;
     --background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
     --font-color: #2f2e2c;
 }
 [data-theme="festive-dark"] {
-    --accent-color: 231, 76, 60;
+    --accent-color: #E74C3C;
     --background-image: linear-gradient(to top right, #011b1b, #43162c);
     --font-color: #a3a29a;
 }
@@ -141,12 +141,12 @@
 }
 
 [data-theme="bohemian-light"] {
-    --accent-color: 26, 188, 156;
+    --accent-color: #1ABC9C;
     --background: #FEF9E7;
     --font-color: #2f2e2c;
 }
 [data-theme="bohemian-dark"] {
-    --accent-color: 26, 188, 156;
+    --accent-color: #1ABC9C;
     --background: #1a1a1a;
     --font-color: #a3a29a;
 }
