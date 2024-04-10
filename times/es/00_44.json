@@ -1,10 +1,10 @@
 [
     {
         "time": "00:44",
-        "quote_first": "Eran las 00:44. cuando dobló la esquina de Brulee's hacia Stateline Road. Esperó el tren que se acercaba.",
-        "quote_last": "",
-        "quote_time_case": "* 12:44 a.m.",
-        "quote_raw": "Eran las 00:44. cuando dobló la esquina de Brulee's hacia Stateline Road. Esperó el tren que se acercaba.",
+        "quote_first": "Eran las ",
+        "quote_last": " cuando dobló la esquina de Brulee's hacia Stateline Road. Esperó el tren que se acercaba.",
+        "quote_time_case": "12:44 A.M.",
+        "quote_raw": "Eran las 12:44 A.M. cuando dobló la esquina de Brulee's hacia Stateline Road. Esperó el tren que se acercaba.",
         "title": "Brasas ardientes",
         "author": "Wayne Pearson",
         "sfw": "unknown"

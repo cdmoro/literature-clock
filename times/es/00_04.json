@@ -11,9 +11,9 @@
     },
     {
         "time": "00:04",
-        "quote_first": "Cuatro minutos después de la medianoche del 22 de enero, la armada del almirante Lowry, compuesta por más de 250 barcos, llegó a la zona de transporte frente a Anzio. El mar estaba en calma, la noche era negra.",
-        "quote_last": "",
-        "quote_time_case": "* cuatro minutos después de la medianoche",
+        "quote_first": "",
+        "quote_last": " del 22 de enero, la armada del almirante Lowry, compuesta por más de 250 barcos, llegó a la zona de transporte frente a Anzio. El mar estaba en calma, la noche era negra.",
+        "quote_time_case": "Cuatro minutos después de la medianoche",
         "quote_raw": "Cuatro minutos después de la medianoche del 22 de enero, la armada del almirante Lowry, compuesta por más de 250 barcos, llegó a la zona de transporte frente a Anzio. El mar estaba en calma, la noche era negra.",
         "title": "Anzio: epopeya de valentía",
         "author": "Fred Sheehan",

@@ -11,9 +11,9 @@
     },
     {
         "time": "00:01",
-        "quote_first": "Llevaba un reloj. No digital, en esta vida. Un reloj analógico elegante y esbelto, con números romanos. Era aproximadamente un minuto después de la medianoche. <br/>¿Cómo está pasando esto?",
-        "quote_last": "",
-        "quote_time_case": "* un minuto después de medianoche",
+        "quote_first": "Llevaba un reloj. No digital, en esta vida. Un reloj analógico elegante y esbelto, con números romanos. Era aproximadamente ",
+        "quote_last": ". <br/>¿Cómo está pasando esto?",
+        "quote_time_case": "un minuto después de la medianoche",
         "quote_raw": "Llevaba un reloj. No digital, en esta vida. Un reloj analógico elegante y esbelto, con números romanos. Era aproximadamente un minuto después de la medianoche. <br/>¿Cómo está pasando esto?",
         "title": "La biblioteca de medianoche",
         "author": "Matt Haig",

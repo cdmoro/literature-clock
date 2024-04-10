@@ -1,9 +1,9 @@
 [
     {
         "time": "00:03",
-        "quote_first": "La madrugada de esta mañana, 1 de enero de 2021, tres minutos después de la medianoche, fue asesinado en una pelea de pub en un suburbio de Buenos Aires el último ser humano que nació en la tierra, a la edad de veinticinco años, dos meses y doce días.",
-        "quote_last": "",
-        "quote_time_case": "* tres minutos después de medianoche",
+        "quote_first": "La madrugada de esta mañana, 1 de enero de 2021, ",
+        "quote_last": ", fue asesinado en una pelea de pub en un suburbio de Buenos Aires el último ser humano que nació en la tierra, a la edad de veinticinco años, dos meses y doce días.",
+        "quote_time_case": "tres minutos después de la medianoche",
         "quote_raw": "La madrugada de esta mañana, 1 de enero de 2021, tres minutos después de la medianoche, fue asesinado en una pelea de pub en un suburbio de Buenos Aires el último ser humano que nació en la tierra, a la edad de veinticinco años, dos meses y doce días.",
         "title": "Los hijos de los hombres",
         "author": "P.D. James",

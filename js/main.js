@@ -18,8 +18,10 @@ async function updateQuote(time) {
     const quoteText = testQuote || `${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}`
     const quoteRawEl = document.createElement('div');
     quoteRawEl.innerHTML = quote.quote_raw || quoteText;
+    const quoteLength = quoteRawEl.innerHTML.length;
 
-    clock.classList.toggle('quote-xl', quoteRawEl.innerHTML.length >= 300);
+    clock.classList.toggle('quote-xl', quoteLength >= 300 && quoteLength < 400);
+    clock.classList.toggle('quote-xxl', quoteLength >= 400);
     clock.innerHTML = /*html*/`
         <blockquote id="quote" aria-label="${quote.time}" aria-description="${quoteRawEl.innerText}" data-sfw="${quote.sfw}">
             <p>${quoteText.replace(/\n/g, '<br>')}</p>
