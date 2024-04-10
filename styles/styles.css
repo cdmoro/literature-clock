@@ -21,7 +21,6 @@ body {
     display: none;
 }
 
-body.zen-mode #footnote,
 body.zen-mode #quote-time-bar,
 body.zen-mode footer #menu {
     display: none;
@@ -142,7 +141,7 @@ footer {
     padding: 1rem;
 }
 
-#theme-container {
+#select-container {
     display: inline-block;
 }
 
@@ -153,10 +152,6 @@ footer {
 @media all and (max-width: 959px) and (min-width: 600px) {
     cite {
         font-size: 2.3vw;
-    }
-
-    #footnote {
-        font-size: 2vw;
     }
 }
 
@@ -187,15 +182,20 @@ footer {
         font-size: 1rem;
     }
 
-    #footnote {
-        font-size: .9rem;
-    }
-
     #exit-zen {
         font-size: 1.3rem;
     }
 
     footer {
-        font-size: .8rem;
+        font-size: .7rem;
+    }
+
+    select {
+        padding: .15rem 1.5rem .15rem .35rem;
+        background-position: right .4rem center;
+    }
+
+    #theme, #made-by {
+        display: none;
     }
 }
