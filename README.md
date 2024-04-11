@@ -12,6 +12,7 @@ Clock using time quotes from the literature, in multiple languages, themes and m
 - Progressbar: At the bottom of the page there is a progressbar, so you can now when a quote is about to change :D
 - Responsive: no matter how long is a quote, it always look good in desktop and mobile
 - All the properties could be overwritten or managed in the URL as query params, check it out! https://literatureclock.netlify.app/?zen=true&work=true&locale=multi&theme=festive-light
+- All the quote elements have aria-labels to improve the Accessibility
 
 ### Test features
 
