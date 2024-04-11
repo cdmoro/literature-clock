@@ -27,7 +27,7 @@ All translations were made from the original English file, which means that they
 
 In any case, if you want to help you can:
 
-- [Raise an issue adding a new quote](https://github.com/cdmoro/literature-clock/issues/new?template=add-quote.yml&labels=add-quote&title=%5B23%3A28%5D%5Ben%5D+Add+quote) or a new variant for a specific time
+- [Raise an issue to add a new quote](https://github.com/cdmoro/literature-clock/issues/new?template=add-quote.yml&labels=add-quote&title=%5B23%3A28%5D%5Ben%5D+Add+quote) or a new variant for a specific time
 - Raise an issue reporting a bug related with a quote (i.e. a typo)
 - Contact me and share me your thoughts about a quote or the project or anything you want to tell me :D
 
