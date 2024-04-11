@@ -40,6 +40,12 @@ At the moment, the clock has seven color themes and four special themes, we expe
 |---|---|
 | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/34b4bf28-22d1-41cc-ba99-0babab41a03c)  | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/364d0788-e829-4d7e-b51a-19711d0964c0)  |
 
+**Pink**
+| Light  | Dark  |
+|---|---|
+| ![image](https://github.com/cdmoro/literature-clock/assets/28156761/4786b773-312c-470a-91d8-e5d650efe42e) | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/793c1102-ca7e-4f89-9acd-7938910d1a81) |
+
+
 **Orange**
 | Light  | Dark  |
 |---|---|
