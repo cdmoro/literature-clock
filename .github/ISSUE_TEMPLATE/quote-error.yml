@@ -30,10 +30,16 @@ body:
     validations:
       required: true
   - type: textarea
+    id: quote
+    attributes:
+      label: Quote text
+      placeholder: The night before Albert Kessler arrived in Santa Teresa, at four in the morning, Sergio Gonzalez Rodriguez got a call from Azucena Esquivel Plata, reporter and PRI congresswoman.
+    validations:
+      required: true
+  - type: textarea
     id: error
     attributes:
       label: What is wrong with this quote?
-      placeholder: The night before Albert Kessler arrived in Santa Teresa, at four in the morning, Sergio Gonzalez Rodriguez got a call from Azucena Esquivel Plata, reporter and PRI congresswoman.
     validations:
       required: true
 
