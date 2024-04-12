@@ -94,7 +94,7 @@ async function getQuotes(time) {
 
 function getQuote(quotes, time) {
     const url = new URL('https://github.com/cdmoro/literature-clock/issues/new');
-    url.searchParams.set('template', `add-quote.yaml`);
+    url.searchParams.set('template', `add-quote.yml`);
     url.searchParams.set('labels', 'add-quote');
     url.searchParams.set('title', `[${time}][${getLocale()}] ${LOCALES.en.add_quote}`);
 
