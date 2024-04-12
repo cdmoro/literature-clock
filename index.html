@@ -52,11 +52,11 @@
         <div id="menu">
             <div>
                 <span>
-                    <a id="zen-mode" href="#">Zen mode [OFF]</a>
-                    <a id="work-mode" href="#">Work mode</a>
+                    <button id="zen-mode" tabindex="1">Zen mode</button>
+                    <button id="work-mode" tabindex="2">Work mode</button>
                 </span>
                 <span id="select-container">
-                    <select id="locale-select">
+                    <select id="locale-select" tabindex="3">
                         <option value="en">English</option>
                         <option value="es">Español</option>
                         <option value="pt">Portuguese</option>
@@ -64,7 +64,7 @@
                         <option value="it">Italiano</option>
                         <option value="multi">Multilingual</option>
                     </select>
-                    <select id="theme-select">
+                    <select id="theme-select" tabindex="4">
                         <optgroup id="colors" label="Colors">
                             <option value="base">Base</option>
                             <option value="pink">Pink</option>
@@ -81,7 +81,7 @@
                             <option value="bohemian">Bohemian</option>
                         </optgroup>
                     </select>
-                    <select id="variant-select">
+                    <select id="variant-select" tabindex="5">
                         <option value="system">System</option>
                         <option value="light">Light</option>
                         <option value="dark">Dark</option>

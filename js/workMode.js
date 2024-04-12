@@ -37,5 +37,6 @@ function updateWorkModeLabel(newState) {
     const strings = getStrings();
     const workModeEl = document.getElementById("work-mode");
 
-    workModeEl.textContent = `${strings.work_mode} [${newState ? 'ON' : 'OFF'}]`;
+    workModeEl.textContent = strings.work_mode;
+    workModeEl.classList.toggle('active', newState);
 }

@@ -26,15 +26,24 @@ async function updateQuote(time) {
     const quotes = await getQuotes(time);
     const quote = getQuote(quotes, time);
     const quoteText = testQuote || `${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}`
-    const quoteRawEl = document.createElement('div');
-    quoteRawEl.innerHTML = quote.quote_raw || quoteText;
-    const quoteLength = quoteRawEl.innerHTML.length;
-
+    
     const blockquote = document.createElement('blockquote');
     blockquote.id = 'quote';
+
+    const p = document.createElement('p');
+    p.innerHTML = quoteText.replace(/\n/g, '<br>');
+
+    const cite = document.createElement('cite');
+    cite.innerText = `— ${quote.title}, ${quote.author}`;
+
+    blockquote.appendChild(p);
+    blockquote.appendChild(cite);
+
     blockquote.setAttribute('aria-label', quote.time);
-    blockquote.setAttribute('aria-description', quoteRawEl.innerText);
+    blockquote.setAttribute('aria-description', quote.quote_raw.replace(/<br\/>|\n/g, ' '));
     blockquote.dataset.swf = quote.swf;
+
+    const quoteLength = p.textContent.length;
 
     let lengthClass = 'xxxl';
     for(let i = 0; i < sizes.length; i++) {
@@ -45,15 +54,6 @@ async function updateQuote(time) {
     }
 
     blockquote.classList.add(`quote-${lengthClass}`);
-
-    const p = document.createElement('p');
-    p.innerHTML = quoteText.replace(/\n/g, '<br>');
-
-    const cite = document.createElement('cite');
-    cite.innerText = `— ${quote.title}, ${quote.author}`;
-
-    blockquote.appendChild(p);
-    blockquote.appendChild(cite);
 
     clock.innerHTML = '';
     clock.appendChild(blockquote);
