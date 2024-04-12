@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import json
+import shutil
 
 # Number of minutes in a day
 minutes = 1440
@@ -11,6 +12,9 @@ output_path = 'times/'
 
 # List all files in the folder
 file_list = os.listdir(quotes_path)
+
+# Delete the old time files
+shutil.rmtree('times/')
 
 print("Starting processing quotes...\n")
 
@@ -66,7 +70,7 @@ for file_name in file_list:
             time_filename = os.path.join(output_path, language, f'{key.replace(":", "_")}.json')
 
             # Write the data to the JSON file
-            with open(time_filename, 'w') as json_file:
+            with open(time_filename, 'w', encoding="utf-8") as json_file:
                 json.dump(data, json_file, indent=4, ensure_ascii=False)
 
         # Number of hours with quotes
