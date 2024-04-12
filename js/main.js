@@ -57,12 +57,6 @@ async function updateQuote(time) {
 
     clock.innerHTML = '';
     clock.appendChild(blockquote);
-    // clock.innerHTML = /*html*/`
-    //     <blockquote id="quote" aria-label="${quote.time}" aria-description="${quoteRawEl.innerText}" data-sfw="${quote.sfw}">
-    //         <p>${quoteText.replace(/\n/g, '<br>')}</p>
-    //         <cite>— ${quote.title}, ${quote.author}</cite>
-    //     </blockquote>
-    // `;
 } 
 
 async function getQuotes(time) {
@@ -93,13 +87,25 @@ async function getQuotes(time) {
 }
 
 function getQuote(quotes, time) {
-    const url = new URL('https://github.com/cdmoro/literature-clock/issues/new');
-    url.searchParams.set('template', `add-quote.yml`);
-    url.searchParams.set('labels', 'add-quote');
-    url.searchParams.set('title', `[${time}][${getLocale()}] ${LOCALES.en.add_quote}`);
-
+    const locale = localStorage.getItem('locale') === 'multi' ? 'XX' : localStorage.getItem('locale').toLocaleUpperCase();
     const random_quote_index = Math.floor(Math.random() * quotes.length);
     const quote = Object.assign({}, quotes[random_quote_index]);
+
+    const addQuoteUrl = new URL('https://github.com/cdmoro/literature-clock/issues/new');
+    addQuoteUrl.searchParams.set('template', `add-quote.yml`);
+    addQuoteUrl.searchParams.set('labels', 'add-quote');
+    addQuoteUrl.searchParams.set('title', `[${time}][${locale}] ${LOCALES.en.add_quote}`);
+
+    const reportErrorUrl = new URL('https://github.com/cdmoro/literature-clock/issues/new');
+    reportErrorUrl.searchParams.set('template', `quote-error.yml`);
+    reportErrorUrl.searchParams.set('title', `[${time}][${locale}] ${LOCALES.en.report_error}`);
+    reportErrorUrl.searchParams.set('labels', 'bug');
+    reportErrorUrl.searchParams.set('time', time);
+    reportErrorUrl.searchParams.set('book', quote.title);
+    reportErrorUrl.searchParams.set('author', quote.author);
+    reportErrorUrl.searchParams.set('quote', document.querySelector('blockquote p').textContent);
+    const reportError = document.getElementById('report-error');
+    reportError.href = reportErrorUrl.href;
 
     if (!quote.quote_time_case) {
         quote.time = time;
@@ -107,11 +113,11 @@ function getQuote(quotes, time) {
     }
 
     if (testQuote) {
-        quote.title = "Libro";
-        quote.author = "Autor";
+        quote.title = LOCALES.en.title;
+        quote.author = LOCALES.en.author;
     }
 
-    addQuoteLink.href = url.href;
+    addQuoteLink.href = addQuoteUrl.href;
 
     return quote;
 }

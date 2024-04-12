@@ -198,7 +198,7 @@ export const LOCALES = {
     }        
 }
 
-const TEXT_CONTENT = {
+const LABELS = {
     'zen-mode': 'zen_mode',
     'work-mode-label': 'work_mode',
     'add-quote': 'add_quote',
@@ -255,9 +255,10 @@ export function setLocale(newLocale) {
     const locale = getLocale(newLocale);
     const strings = getStrings(locale);
 
+    document.documentElement.setAttribute('lang', locale);
     document.title = strings.document_title;
 
-    Object.entries(TEXT_CONTENT).forEach(([id, key]) => {
+    Object.entries(LABELS).forEach(([id, key]) => {
         const element = document.getElementById(id);
         if (element) {
             element.textContent = strings[key];
@@ -270,13 +271,6 @@ export function setLocale(newLocale) {
             element.title = strings[key];
         }
     });
-
-    const url = new URL('https://github.com/cdmoro/literature-clock/issues/new');
-    url.searchParams.set('template', `report-error.yaml`);
-    url.searchParams.set('title', `[${getTime()}][${locale.toUpperCase()}] ${LOCALES.en.report_error}`);
-    url.searchParams.set('labels', 'bug');
-    const reportError = document.getElementById('report-error');
-    reportError.href = url.href;
 
     ['locale', 'theme', 'variant'].forEach(select => {
         const options = document.querySelectorAll(`#${select}-select option`);
