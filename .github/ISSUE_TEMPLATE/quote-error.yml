@@ -1,0 +1,39 @@
+name: Bug
+description: Add a new quote or an additional quote for a specific time.
+title: "[XX:XX][XX]: Error in a quote"
+labels: 
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: "# Description of the error"
+  - type: input
+    id: time
+    attributes:
+      label: Time
+      description: Please update the title as well!
+      placeholder: "04:00"
+    validations:
+      required: true
+  - type: input
+    id: book
+    attributes:
+      label: Book
+      placeholder: "2666"
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Author
+      placeholder: Roberto Bolaño
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: What is wrong with this quote?
+      placeholder: The night before Albert Kessler arrived in Santa Teresa, at four in the morning, Sergio Gonzalez Rodriguez got a call from Azucena Esquivel Plata, reporter and PRI congresswoman.
+    validations:
+      required: true
+
