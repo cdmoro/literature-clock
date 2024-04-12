@@ -12,6 +12,16 @@ const testTime = urlParams.get('time');
 const testQuote = urlParams.get('quote');
 let lastTime;
 
+const QUOTE_SIZE = {
+    100: 'xs',
+    200: 's',
+    300: 'm',
+    400: 'l',
+    500: 'xl',
+    600: 'xxl'
+}
+const sizes = Object.keys(QUOTE_SIZE);
+
 async function updateQuote(time) {
     const quotes = await getQuotes(time);
     const quote = getQuote(quotes, time);
@@ -20,14 +30,39 @@ async function updateQuote(time) {
     quoteRawEl.innerHTML = quote.quote_raw || quoteText;
     const quoteLength = quoteRawEl.innerHTML.length;
 
-    clock.classList.toggle('quote-xl', quoteLength >= 300 && quoteLength < 400);
-    clock.classList.toggle('quote-xxl', quoteLength >= 400);
-    clock.innerHTML = /*html*/`
-        <blockquote id="quote" aria-label="${quote.time}" aria-description="${quoteRawEl.innerText}" data-sfw="${quote.sfw}">
-            <p>${quoteText.replace(/\n/g, '<br>')}</p>
-            <cite>— ${quote.title}, ${quote.author}</cite>
-        </blockquote>
-    `;
+    const blockquote = document.createElement('blockquote');
+    blockquote.id = 'quote';
+    blockquote.setAttribute('aria-label', quote.time);
+    blockquote.setAttribute('aria-description', quoteRawEl.innerText);
+    blockquote.dataset.swf = quote.swf;
+
+    let lengthClass = 'xxxl';
+    for(let i = 0; i < sizes.length; i++) {
+        if (quoteLength <= sizes[i]) {
+            lengthClass = QUOTE_SIZE[sizes[i]];
+            break;
+        }
+    }
+
+    blockquote.classList.add(`quote-${lengthClass}`);
+
+    const p = document.createElement('p');
+    p.innerHTML = quoteText.replace(/\n/g, '<br>');
+
+    const cite = document.createElement('cite');
+    cite.innerText = `— ${quote.title}, ${quote.author}`;
+
+    blockquote.appendChild(p);
+    blockquote.appendChild(cite);
+
+    clock.innerHTML = '';
+    clock.appendChild(blockquote);
+    // clock.innerHTML = /*html*/`
+    //     <blockquote id="quote" aria-label="${quote.time}" aria-description="${quoteRawEl.innerText}" data-sfw="${quote.sfw}">
+    //         <p>${quoteText.replace(/\n/g, '<br>')}</p>
+    //         <cite>— ${quote.title}, ${quote.author}</cite>
+    //     </blockquote>
+    // `;
 } 
 
 async function getQuotes(time) {
