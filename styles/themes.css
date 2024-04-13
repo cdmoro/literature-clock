@@ -86,10 +86,12 @@
 
 /* Themes */
 
-[data-theme*="festive"] blockquote:before,
-[data-theme*="festive"] blockquote:after,
-[data-theme*="bohemian"] blockquote:before,
-[data-theme*="bohemian"] blockquote:after {
+[data-theme*=festive] blockquote:before,
+[data-theme*=festive] blockquote:after,
+[data-theme*=bohemian] blockquote:before,
+[data-theme*=bohemian] blockquote:after,
+[data-theme*=handwriting] blockquote:before,
+[data-theme*=handwriting] blockquote:after {
     content: none;
 }
 
@@ -126,13 +128,14 @@
 
 [data-theme="festive-light"] {
     --accent-color: #E74C3C;
-    
-    --background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+    --background: #fad0c4;
+    --background-image: linear-gradient(to top right, var(--background) 0%, #ffd1ff 100%);
     --font-color: #2f2e2c;
 }
 [data-theme="festive-dark"] {
     --accent-color: #E74C3C;
-    --background-image: linear-gradient(to top right, #011b1b, #43162c);
+    --background: #011b1b;
+    --background-image: linear-gradient(to top right, var(--background) 0%, #43162c 100%);
     --font-color: #a3a29a;
 }
 [data-theme*=festive] {
@@ -160,11 +163,13 @@
 [data-theme="handwriting-light"] {
     --accent-color: #3987b4;
     --background: #FEF9E7;
+    --background-image: repeating-linear-gradient(var(--background) 0px, var(--background) 35px, rgba(109, 109, 109, 0.1) 36px);
     --font-color: #2f2e2c;
 }
 [data-theme="handwriting-dark"] {
     --accent-color: #3987b4;
     --background: #1a1a1a;
+    --background-image: repeating-linear-gradient(var(--background) 0px, var(--background) 35px, rgba(109, 109, 109, 0.1) 36px);
     --font-color: #a3a29a;
 }
 [data-theme*=handwriting] {
