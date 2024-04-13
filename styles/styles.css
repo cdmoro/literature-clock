@@ -23,7 +23,7 @@ body {
 
 body.zen-mode #quote-time-bar,
 body.zen-mode footer #menu {
-    display: none;
+    display: none !important;
 }
 
 body.zen-mode #exit-zen {
