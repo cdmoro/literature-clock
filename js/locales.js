@@ -72,7 +72,7 @@ export const LOCALES = {
         elegant: 'Elegante',
         festive: 'Festivo',
         bohemian: 'Bohemio',
-        handwriting: 'A mano',
+        handwriting: 'Manuscrita',
         system: 'Sistema',
         light: 'Claro',
         dark: 'Oscuro',
