@@ -1,18 +1,18 @@
 # Literature Clock
 
-Clock using time quotes from the literature, in multiple languages, themes and more!
+A clock that tells the time using quotes from literature. Support for multiple languages, themes, and more! Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) ([literature-clock](https://github.com/JohannesNE/literature-clock)) and [Jaap Meijers](http://www.eerlijkemedia.nl/) ([e-reader clock](https://www.instructables.com/id/Literary-Clock-Made-From-E-reader/)).
 
 ## Features
 
-- Zen mode: remove all the distraction (perfect for screensaver usage) ([link](https://literatureclock.netlify.app/?zen=true))
+- Zen mode: remove all the distractions (perfect for screensaver usage) ([link](https://literatureclock.netlify.app/?zen=true))
 - Work mode: only shows quotes that are safe for work ([link](https://literatureclock.netlify.app/?work=true))
 - Languages: supports English, Spanish, Portuguese, French and Italian
 - Multilanguage: each minute you'll see a quote in a different language, isn't that cool? ([link](https://literatureclock.netlify.app/?locale=multi))
 - Themes: the clock has color themes and `special themes` and each theme has light and dark variants
-- Progressbar: At the bottom of the page there is a `progressbar`, so you can now when a quote is about to change :D
-- Responsive: no matter how long is a quote, it always look good in desktop and mobile
+- Progress bar: At the bottom of the page there is a `progress bar`, so you can know when a quote is about to change :D
+- Responsive: no matter how long is a quote, it always looks good in desktop and mobile
 - All the quote elements have `aria-labels` to improve the Accessibility
-- The configurations is saved in the browser's local storage
+- The configurations are saved in the browser's local storage
 
 ## Parameteres
 
@@ -22,19 +22,20 @@ The clock can be controlled using URL parameters, these parameters will overwrit
 - `work`: activate Work mode
 - `locale`: set the locale
 - `theme`: set the theme
-<!-- - `variant`: set the variant (light, dark or system) -->
+<!-- - `variant`: set the variant (light, dark, or system) -->
 - `time`: get the quotes for a particular time ([link](https://literatureclock.netlify.app/?time=12:30))
-- `quote`: test a quote before submit it ([link](https://literatureclock.netlify.app/?quote=Hi%20mom!%20I%27m%20part%20of%20the%20Literature%20Clock!)). You don't need to escape the quote by adding the special characters, just write the quote and the browser will add them.
+- `quote`: test a quote before submitting it ([link](https://literatureclock.netlify.app/?quote=Hi%20mom!%20I%27m%20part%20of%20the%20Literature%20Clock!)). You don't need to escape the quote by adding the special characters, just write the quote and the browser will add them.
 
 ## Languages
 
-All translations were made from the original English file, which means that they have errors, sometimes the translation it's not accurate (I used Google Translate, yes, I know), sometimes the time is not highlighed properly, but it's fine, this is something that can be fixed easily, just one quote at a time. Plus, I marked all the *bad* quotes with an astherisk so at some point all of them will be fixed.
+All translations were made from the original CSV English file, sometimes the translation it's not accurate (I used Google Translate, yes, I know), and the time is not highlighted properly, but it's fine, this is something that can be fixed easily, just one quote at a time. Plus, I marked all the *bad* quotes with an asterisk so at some point all of them will be fixed.
 
 In any case, if you want to help you can:
 
 - [Raise an issue to add a new quote](https://github.com/cdmoro/literature-clock/issues/new?template=add-quote.yml&labels=add-quote&title=%5B23%3A28%5D%5Ben%5D+Add+quote) or a new variant for a specific time
-- Raise an issue reporting a bug related with a quote (i.e. a typo)
-- Contact me and share me your thoughts about a quote or the project or anything you want to tell me :D
+- Raise an issue reporting a bug related to a quote (i.e. a typo)
+- Contact me and share your thoughts about a quote, the project, or anything you want :D
+- Show me your love in the form of [coffees](https://buymeacoffee.com/cdmoro)
 
 ## Themes
 
@@ -68,11 +69,11 @@ At the moment, the clock has seven color themes and four special themes, we expe
 
 ## Development
 
-To run the clock the easiest way is to create an HTTP server and open `index.html`. If you are a VSCode user, you might want to use the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension.
+The easiest way to run the clock is to run an HTTP server and open `index.html`. If you are a VSCode user, you might want to use the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension.
 
 ## Quotes: CSV to JSON
 
-I use Python to generate the JSON files (one per time if the time has quotes) with the quotes. 
+I used Python to generate the JSON files (one per time if the time has quotes) with the quotes. The script goes through all the CSV files (one per locale) and puts the files in the appropriate folders. Also, the script generates an additional JSON file with statistics about the locale, such as the times with fewer quotes, the author with the most quotes, etc. 
 
 ## Contact
 
