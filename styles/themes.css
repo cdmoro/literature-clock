@@ -132,6 +132,7 @@
 [data-theme="festive-dark"] {
     --accent-color: #E74C3C;
     --background-image: linear-gradient(to top right, #011b1b, #43162c);
+    --background: #eaeaec;
     --font-color: #a3a29a;
 }
 [data-theme*=festive] {
