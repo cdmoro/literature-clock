@@ -255,7 +255,7 @@ export function setLocale(newLocale) {
     const locale = getLocale(newLocale);
     const strings = getStrings(locale);
 
-    document.documentElement.setAttribute('lang', locale);
+    document.documentElement.lang = locale === 'multi' ? 'en' : locale;
     document.title = strings.document_title;
 
     Object.entries(LABELS).forEach(([id, key]) => {
