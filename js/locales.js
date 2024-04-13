@@ -1,5 +1,3 @@
-import { getTime } from "./utils.js";
-
 export const LOCALES = {
     en: {
         document_title: 'Literature Clock',
@@ -32,7 +30,7 @@ export const LOCALES = {
         bohemian: 'Bohemian',
         handwriting: 'Handwriting',
         // Theme variants
-        system: 'System',
+        auto: 'Auto',
         light: 'Light',
         dark: 'Dark',
         // Locales
@@ -73,7 +71,7 @@ export const LOCALES = {
         festive: 'Festivo',
         bohemian: 'Bohemio',
         handwriting: 'Manuscrita',
-        system: 'Sistema',
+        auto: 'Auto',
         light: 'Claro',
         dark: 'Oscuro',
         en: 'Inglés',
@@ -112,7 +110,7 @@ export const LOCALES = {
         festive: 'Festivo',
         bohemian: 'Boêmio',
         handwriting: 'Manuscrita',
-        system: 'Sistema',
+        auto: 'Auto',
         light: 'Claro',
         dark: 'Escuro',
         en: 'Inglês',
@@ -151,7 +149,7 @@ export const LOCALES = {
         festive: 'Festif',
         bohemian: 'Bohémien',
         handwriting: 'Manuscrit',
-        system: 'Système',
+        auto: 'Auto',
         light: 'Clair',
         dark: 'Sombre',
         en: 'Anglais',
@@ -191,7 +189,7 @@ export const LOCALES = {
         festive: 'Festivo',
         bohemian: 'Bohemien',
         handwriting: 'Manoscritto',
-        system: 'Sistema',
+        auto: 'Auto',
         light: 'Chiaro',
         dark: 'Scuro',
         en: 'Inglese',

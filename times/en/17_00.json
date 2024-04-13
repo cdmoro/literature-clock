@@ -21,10 +21,10 @@
     },
     {
         "time": "17:00",
-        "quote_first": "“Shall I see you again before my departure?” asked Albert.<br/>“That will be according to the circumstances; when do you set off?”<br/>“Tomorrow evening, at ",
+        "quote_first": "“Shall I see you again before my departure?” asked Albert.<br>“That will be according to the circumstances; when do you set off?”<br>“Tomorrow evening, at ",
         "quote_last": ".”",
         "quote_time_case": "5 o’clock",
-        "quote_raw": "“Shall I see you again before my departure?” asked Albert.<br/>“That will be according to the circumstances; when do you set off?”<br/>“Tomorrow evening, at 5 o’clock.”",
+        "quote_raw": "“Shall I see you again before my departure?” asked Albert.<br>“That will be according to the circumstances; when do you set off?”<br>“Tomorrow evening, at 5 o’clock.”",
         "title": "The Count of Monte Cristo",
         "author": "Alexandre Dumas",
         "sfw": "unknown"
@@ -311,10 +311,10 @@
     },
     {
         "time": "17:00",
-        "quote_first": "I haven't been to church in over a year.<br/>\"Finally worried about your soul?\"<br/>\"Please,\" Cork said<br/>\"Of course we can talk. When?\"<br/>\"Tomorrow. Late afternoon maybe. Say ",
-        "quote_last": "?\"<br/>\"Make it six,\" the priest suggested. \"My office.\"<br/>\"I'll be there,\" Cork promised.",
+        "quote_first": "I haven't been to church in over a year.<br>\"Finally worried about your soul?\"<br>\"Please,\" Cork said<br>\"Of course we can talk. When?\"<br>\"Tomorrow. Late afternoon maybe. Say ",
+        "quote_last": "?\"<br>\"Make it six,\" the priest suggested. \"My office.\"<br>\"I'll be there,\" Cork promised.",
         "quote_time_case": "five o'clock",
-        "quote_raw": "I haven't been to church in over a year.<br/>\"Finally worried about your soul?\"<br/>\"Please,\" Cork said<br/>\"Of course we can talk. When?\"<br/>\"Tomorrow. Late afternoon maybe. Say five o'clock?\"<br/>\"Make it six,\" the priest suggested. \"My office.\"<br/>\"I'll be there,\" Cork promised.",
+        "quote_raw": "I haven't been to church in over a year.<br>\"Finally worried about your soul?\"<br>\"Please,\" Cork said<br>\"Of course we can talk. When?\"<br>\"Tomorrow. Late afternoon maybe. Say five o'clock?\"<br>\"Make it six,\" the priest suggested. \"My office.\"<br>\"I'll be there,\" Cork promised.",
         "title": "Iron Lake",
         "author": "William Kent Krueger",
         "sfw": "sfw"

@@ -222,9 +222,9 @@
     {
         "time": "04:00",
         "quote_first": "The Birds begun at ",
-        "quote_last": " <br /> Their period for Dawn",
+        "quote_last": " <br> Their period for Dawn",
         "quote_time_case": "Four o'clock",
-        "quote_raw": "The Birds begun at Four o'clock <br /> Their period for Dawn",
+        "quote_raw": "The Birds begun at Four o'clock <br> Their period for Dawn",
         "title": "The Birds Begun at Four o'clock",
         "author": "Emily Dickinson",
         "sfw": "unknown"

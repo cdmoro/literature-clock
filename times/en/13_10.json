@@ -32,9 +32,9 @@
     {
         "time": "13:10",
         "quote_first": "It was ",
-        "quote_last": ".”<br/>“You are sure of that?",
+        "quote_last": ".”<br>“You are sure of that?",
         "quote_time_case": "ten minutes past one",
-        "quote_raw": "It was ten minutes past one.”<br/>“You are sure of that?",
+        "quote_raw": "It was ten minutes past one.”<br>“You are sure of that?",
         "title": "Death on the Nile",
         "author": "Agatha Christie",
         "sfw": "unknown"

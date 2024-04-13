@@ -1,10 +1,10 @@
 [
     {
         "time": "18:00",
-        "quote_first": "I haven't been to church in over a year.<br/>\"Finally worried about your soul?\"<br/>\"Please,\" Cork said<br/>\"Of course we can talk. When?\"<br/>\"Tomorrow. Late afternoon maybe. Say five o'clock?\"<br/>\"Make it ",
-        "quote_last": ",\" the priest suggested. \"My office.\"<br/>\"I'll be there,\" Cork promised.",
+        "quote_first": "I haven't been to church in over a year.<br>\"Finally worried about your soul?\"<br>\"Please,\" Cork said<br>\"Of course we can talk. When?\"<br>\"Tomorrow. Late afternoon maybe. Say five o'clock?\"<br>\"Make it ",
+        "quote_last": ",\" the priest suggested. \"My office.\"<br>\"I'll be there,\" Cork promised.",
         "quote_time_case": "six",
-        "quote_raw": "I haven't been to church in over a year.<br/>\"Finally worried about your soul?\"<br/>\"Please,\" Cork said<br/>\"Of course we can talk. When?\"<br/>\"Tomorrow. Late afternoon maybe. Say five o'clock?\"<br/>\"Make it six,\" the priest suggested. \"My office.\"<br/>\"I'll be there,\" Cork promised.",
+        "quote_raw": "I haven't been to church in over a year.<br>\"Finally worried about your soul?\"<br>\"Please,\" Cork said<br>\"Of course we can talk. When?\"<br>\"Tomorrow. Late afternoon maybe. Say five o'clock?\"<br>\"Make it six,\" the priest suggested. \"My office.\"<br>\"I'll be there,\" Cork promised.",
         "title": "Iron Lake",
         "author": "William Kent Krueger",
         "sfw": "sfw"
@@ -241,20 +241,20 @@
     },
     {
         "time": "18:00",
-        "quote_first": "Did you go down to the farm while I was away?<br/>\"No,\" I said \"but I saw Ted.\"<br/>\"Did he have a message for me?\" she asked. \"He said today was no good as he was going to Norwich. But Friday at ",
-        "quote_last": ", same as usual.\"<br/>\"Are you sure he said six o'clock?\" she asked, puzzled.<br/>\"Quite sure.\"",
+        "quote_first": "Did you go down to the farm while I was away?<br>\"No,\" I said \"but I saw Ted.\"<br>\"Did he have a message for me?\" she asked. \"He said today was no good as he was going to Norwich. But Friday at ",
+        "quote_last": ", same as usual.\"<br>\"Are you sure he said six o'clock?\" she asked, puzzled.<br>\"Quite sure.\"",
         "quote_time_case": "six o'clock",
-        "quote_raw": "Did you go down to the farm while I was away?<br/>\"No,\" I said \"but I saw Ted.\"<br/>\"Did he have a message for me?\" she asked. \"He said today was no good as he was going to Norwich. But Friday at six o'clock, same as usual.\"<br/>\"Are you sure he said six o'clock?\" she asked, puzzled.<br/>\"Quite sure.\"",
+        "quote_raw": "Did you go down to the farm while I was away?<br>\"No,\" I said \"but I saw Ted.\"<br>\"Did he have a message for me?\" she asked. \"He said today was no good as he was going to Norwich. But Friday at six o'clock, same as usual.\"<br>\"Are you sure he said six o'clock?\" she asked, puzzled.<br>\"Quite sure.\"",
         "title": "The Go-Between",
         "author": "L.P. Hartley",
         "sfw": "unknown"
     },
     {
         "time": "18:00",
-        "quote_first": "King Richard: What is o'clock?<br/>Catesby: It is ",
-        "quote_last": ", full supper time.<br/>King Richard: I will not sup tonight. Give me some ink and paper.",
+        "quote_first": "King Richard: What is o'clock?<br>Catesby: It is ",
+        "quote_last": ", full supper time.<br>King Richard: I will not sup tonight. Give me some ink and paper.",
         "quote_time_case": "six o'clock",
-        "quote_raw": "King Richard: What is o'clock?<br/>Catesby: It is six o'clock, full supper time.<br/>King Richard: I will not sup tonight. Give me some ink and paper.",
+        "quote_raw": "King Richard: What is o'clock?<br>Catesby: It is six o'clock, full supper time.<br>King Richard: I will not sup tonight. Give me some ink and paper.",
         "title": "Richard III",
         "author": "William Shakespeare",
         "sfw": "unknown"

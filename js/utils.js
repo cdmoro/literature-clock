@@ -8,7 +8,7 @@ export const FALLBACK_QUOTES = {
             sfw: true
         },
         {
-            quote_first: "Captain's log:<br/>We are still looking for a quote for ",
+            quote_first: "Captain's log:<br>We are still looking for a quote for ",
             quote_last: ".",
             title: "Moby Dick",
             author: "Captain Ahab",
@@ -25,7 +25,7 @@ export const FALLBACK_QUOTES = {
             sfw: true
         },
         {
-            quote_first: "Bitácora del Capitán:<br/>Seguimos buscando una cita para las ",
+            quote_first: "Bitácora del Capitán:<br>Seguimos buscando una cita para las ",
             quote_last: ".",
             title: "Moby Dick",
             author: "Captain Ahab",
@@ -41,7 +41,7 @@ export const FALLBACK_QUOTES = {
             sfw: true
         },
         {
-            quote_first: "Registro do capitão:<br/>Ainda estamos procurando uma data para o ",
+            quote_first: "Registro do capitão:<br>Ainda estamos procurando uma data para o ",
             quote_last: ".",
             título: "Moby Dick",
             autor: "Capitão Ahab",
@@ -58,7 +58,7 @@ export const FALLBACK_QUOTES = {
             sfw: true
         },
         {
-            quote_first: "Journal du capitaine:<br/>Nous sommes toujours à la recherche d'una citation pour ",
+            quote_first: "Journal du capitaine:<br>Nous sommes toujours à la recherche d'una citation pour ",
             quote_last: ".",
             title: "Moby Dick",
             auteur: "Capitaine Achab",
@@ -76,7 +76,7 @@ export const FALLBACK_QUOTES = {
             sfw: true
         },
         {
-            quote_first: "Diario del capitano:<br/>Stiamo ancora cercando una data per il ",
+            quote_first: "Diario del capitano:<br>Stiamo ancora cercando una data per il ",
             quote_last: ".",
             title: "Moby Dick",
             autore: "Capitano Achab",
@@ -113,7 +113,7 @@ export function updateGHLinks(time, quote, LOCALES) {
     reportErrorUrl.searchParams.set('book', quote.title);
     reportErrorUrl.searchParams.set('author', quote.author);
     if (quote.quote_raw) {
-        reportErrorUrl.searchParams.set('quote', quote.quote_raw.replace(/<br\/>|\n/g, ' '));
+        reportErrorUrl.searchParams.set('quote', quote.quote_raw.replace(/<br>|\n/g, ' '));
     }
     const reportError = document.getElementById('report-error');
     reportError.href = reportErrorUrl.href;

@@ -232,9 +232,9 @@
     {
         "time": "08:00",
         "quote_first": "Non sto piangendo, disse Maria quando Carter chiamò dal deserto alle ",
-        "quote_last": " \"Sto perfettamente bene\".<br /> \"Non sembri perfettamente bene\"",
+        "quote_last": " \"Sto perfettamente bene\".<br> \"Non sembri perfettamente bene\"",
         "quote_time_case": "8 del mattino.",
-        "quote_raw": "Non sto piangendo, disse Maria quando Carter chiamò dal deserto alle 8 del mattino. \"Sto perfettamente bene\".<br /> \"Non sembri perfettamente bene\"",
+        "quote_raw": "Non sto piangendo, disse Maria quando Carter chiamò dal deserto alle 8 del mattino. \"Sto perfettamente bene\".<br> \"Non sembri perfettamente bene\"",
         "title": "Gioca come si presenta",
         "author": "Joan Didion",
         "sfw": "unknown"
@@ -331,10 +331,10 @@
     },
     {
         "time": "08:00",
-        "quote_first": "Allora qui veglierò la notte e aspetterò<br/>Per vedere splendere il mattino,<br/>Quando sentirà il rintocco delle ",
-        "quote_last": "<br/>E non il rintocco delle nove;",
+        "quote_first": "Allora qui veglierò la notte e aspetterò<br>Per vedere splendere il mattino,<br>Quando sentirà il rintocco delle ",
+        "quote_last": "<br>E non il rintocco delle nove;",
         "quote_time_case": "otto",
-        "quote_raw": "Allora qui veglierò la notte e aspetterò<br/>Per vedere splendere il mattino,<br/>Quando sentirà il rintocco delle otto<br/>E non il rintocco delle nove;",
+        "quote_raw": "Allora qui veglierò la notte e aspetterò<br>Per vedere splendere il mattino,<br>Quando sentirà il rintocco delle otto<br>E non il rintocco delle nove;",
         "title": "Un ragazzo dello Shropshire",
         "author": "A.E. Housman",
         "sfw": "unknown"

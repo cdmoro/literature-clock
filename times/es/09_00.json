@@ -82,9 +82,9 @@
     {
         "time": "09:00",
         "quote_first": "Se despertó a las ",
-        "quote_last": ", trabajó un rato en su habitación y luego dijo que tenía sueño. Fue a la cocina, preparó un poco de café y se lo bebió. Pero el café no ayudó. <br/> “Creo que voy a tomar una siesta”, dijo. \"Escucho un zumbido en la parte posterior de mi cabeza\". Esas fueron sus últimas palabras. Se acurrucó en la cama, se durmió y nunca más despertó.",
+        "quote_last": ", trabajó un rato en su habitación y luego dijo que tenía sueño. Fue a la cocina, preparó un poco de café y se lo bebió. Pero el café no ayudó. <br> “Creo que voy a tomar una siesta”, dijo. \"Escucho un zumbido en la parte posterior de mi cabeza\". Esas fueron sus últimas palabras. Se acurrucó en la cama, se durmió y nunca más despertó.",
         "quote_time_case": "nueve",
-        "quote_raw": "Se despertó a las nueve, trabajó un rato en su habitación y luego dijo que tenía sueño. Fue a la cocina, preparó un poco de café y se lo bebió. Pero el café no ayudó. <br/> “Creo que voy a tomar una siesta”, dijo. \"Escucho un zumbido en la parte posterior de mi cabeza\". Esas fueron sus últimas palabras. Se acurrucó en la cama, se durmió y nunca más despertó.",
+        "quote_raw": "Se despertó a las nueve, trabajó un rato en su habitación y luego dijo que tenía sueño. Fue a la cocina, preparó un poco de café y se lo bebió. Pero el café no ayudó. <br> “Creo que voy a tomar una siesta”, dijo. \"Escucho un zumbido en la parte posterior de mi cabeza\". Esas fueron sus últimas palabras. Se acurrucó en la cama, se durmió y nunca más despertó.",
         "title": "Sauce ciego, mujer dormida",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -262,9 +262,9 @@
     {
         "time": "09:00",
         "quote_first": "Una mosca zumbó y el reloj de la pared empezó a dar las campanadas. Después de que los ",
-        "quote_last": " trazos dorados se desvanecieron, el capitán del distrito comenzó. \"¿Cómo está Herr Coronel Marek?\"<br/> \"Gracias, Papá, está bien.\"<br/> \"¿Aún tienes problemas en geometría?\"<br/> \"Gracias, Papá, un poco mejor.\"<br /> \"¿Leíste algún libro?\"<br/> \"Sí señor, papá\".",
+        "quote_last": " trazos dorados se desvanecieron, el capitán del distrito comenzó. \"¿Cómo está Herr Coronel Marek?\"<br> \"Gracias, Papá, está bien.\"<br> \"¿Aún tienes problemas en geometría?\"<br> \"Gracias, Papá, un poco mejor.\"<br> \"¿Leíste algún libro?\"<br> \"Sí señor, papá\".",
         "quote_time_case": "nueve",
-        "quote_raw": "Una mosca zumbó y el reloj de la pared empezó a dar las campanadas. Después de que los nueve trazos dorados se desvanecieron, el capitán del distrito comenzó. \"¿Cómo está Herr Coronel Marek?\"<br/> \"Gracias, Papá, está bien.\"<br/> \"¿Aún tienes problemas en geometría?\"<br/> \"Gracias, Papá, un poco mejor.\"<br /> \"¿Leíste algún libro?\"<br/> \"Sí señor, papá\".",
+        "quote_raw": "Una mosca zumbó y el reloj de la pared empezó a dar las campanadas. Después de que los nueve trazos dorados se desvanecieron, el capitán del distrito comenzó. \"¿Cómo está Herr Coronel Marek?\"<br> \"Gracias, Papá, está bien.\"<br> \"¿Aún tienes problemas en geometría?\"<br> \"Gracias, Papá, un poco mejor.\"<br> \"¿Leíste algún libro?\"<br> \"Sí señor, papá\".",
         "title": "La Marcha Radetzky",
         "author": "Joseph Roth",
         "sfw": "unknown"
@@ -351,10 +351,10 @@
     },
     {
         "time": "09:00",
-        "quote_first": "A donde Santa María Woolnoth marcaba las horas<br/>Con un sonido muerto al final de las ",
+        "quote_first": "A donde Santa María Woolnoth marcaba las horas<br>Con un sonido muerto al final de las ",
         "quote_last": ".",
         "quote_time_case": "nueve",
-        "quote_raw": "A donde Santa María Woolnoth marcaba las horas<br/>Con un sonido muerto al final de las nueve.",
+        "quote_raw": "A donde Santa María Woolnoth marcaba las horas<br>Con un sonido muerto al final de las nueve.",
         "title": "La tierra de residuos",
         "author": "T.S. Eliot",
         "sfw": "unknown"

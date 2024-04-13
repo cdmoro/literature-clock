@@ -232,9 +232,9 @@
     {
         "time": "08:00",
         "quote_first": "I'm not crying, Maria said when Carter called from the desert at ",
-        "quote_last": " \"I'm perfectly alright\".<br /> \"You don't sound perfectly alright\"",
+        "quote_last": " \"I'm perfectly alright\".<br> \"You don't sound perfectly alright\"",
         "quote_time_case": "8 a.m.",
-        "quote_raw": "I'm not crying, Maria said when Carter called from the desert at 8 a.m. \"I'm perfectly alright\".<br /> \"You don't sound perfectly alright\"",
+        "quote_raw": "I'm not crying, Maria said when Carter called from the desert at 8 a.m. \"I'm perfectly alright\".<br> \"You don't sound perfectly alright\"",
         "title": "Play It as It Lays",
         "author": "Joan Didion",
         "sfw": "unknown"
@@ -331,10 +331,10 @@
     },
     {
         "time": "08:00",
-        "quote_first": "So here I'll watch the night and wait<br/>To see the morning shine,<br/>When he will hear the stroke of ",
-        "quote_last": "<br/>And not the stroke of nine;",
+        "quote_first": "So here I'll watch the night and wait<br>To see the morning shine,<br>When he will hear the stroke of ",
+        "quote_last": "<br>And not the stroke of nine;",
         "quote_time_case": "eight",
-        "quote_raw": "So here I'll watch the night and wait<br/>To see the morning shine,<br/>When he will hear the stroke of eight<br/>And not the stroke of nine;",
+        "quote_raw": "So here I'll watch the night and wait<br>To see the morning shine,<br>When he will hear the stroke of eight<br>And not the stroke of nine;",
         "title": "A Shropshire Lad",
         "author": "A.E. Housman",
         "sfw": "unknown"

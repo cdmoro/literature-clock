@@ -21,10 +21,10 @@
     },
     {
         "time": "17:00",
-        "quote_first": "« Dois-je vous revoir avant mon départ ? demanda Albert.<br/>« Cela dépendra des circonstances ; quand partez-vous ? »<br/>« Demain soir, à 17 heures. »",
+        "quote_first": "« Dois-je vous revoir avant mon départ ? demanda Albert.<br>« Cela dépendra des circonstances ; quand partez-vous ? »<br>« Demain soir, à 17 heures. »",
         "quote_last": "",
         "quote_time_case": "* 5 heures",
-        "quote_raw": "« Dois-je vous revoir avant mon départ ? demanda Albert.<br/>« Cela dépendra des circonstances ; quand partez-vous ? »<br/>« Demain soir, à 17 heures. »",
+        "quote_raw": "« Dois-je vous revoir avant mon départ ? demanda Albert.<br>« Cela dépendra des circonstances ; quand partez-vous ? »<br>« Demain soir, à 17 heures. »",
         "title": "Le Comte de Monte-Cristo",
         "author": "Alexandre Dumas",
         "sfw": "unknown"
@@ -311,10 +311,10 @@
     },
     {
         "time": "17:00",
-        "quote_first": "Je ne suis pas allé à l'église depuis plus d'un an.<br/>\"Enfin, je m'inquiète pour ton âme ?\"<br/>\"S'il te plaît,\" dit Cork<br/>\"Bien sûr que nous pouvons parler. Quand ?\"<br />\"Demain. Fin d'après-midi peut-être. Dites ",
-        "quote_last": " ?\"<br/>\"Placez-en six\", suggéra le prêtre. \"Mon bureau.\"<br/>\"Je serai là\", a promis Cork.",
+        "quote_first": "Je ne suis pas allé à l'église depuis plus d'un an.<br>\"Enfin, je m'inquiète pour ton âme ?\"<br>\"S'il te plaît,\" dit Cork<br>\"Bien sûr que nous pouvons parler. Quand ?\"<br>\"Demain. Fin d'après-midi peut-être. Dites ",
+        "quote_last": " ?\"<br>\"Placez-en six\", suggéra le prêtre. \"Mon bureau.\"<br>\"Je serai là\", a promis Cork.",
         "quote_time_case": "cinq heures",
-        "quote_raw": "Je ne suis pas allé à l'église depuis plus d'un an.<br/>\"Enfin, je m'inquiète pour ton âme ?\"<br/>\"S'il te plaît,\" dit Cork<br/>\"Bien sûr que nous pouvons parler. Quand ?\"<br />\"Demain. Fin d'après-midi peut-être. Dites cinq heures ?\"<br/>\"Placez-en six\", suggéra le prêtre. \"Mon bureau.\"<br/>\"Je serai là\", a promis Cork.",
+        "quote_raw": "Je ne suis pas allé à l'église depuis plus d'un an.<br>\"Enfin, je m'inquiète pour ton âme ?\"<br>\"S'il te plaît,\" dit Cork<br>\"Bien sûr que nous pouvons parler. Quand ?\"<br>\"Demain. Fin d'après-midi peut-être. Dites cinq heures ?\"<br>\"Placez-en six\", suggéra le prêtre. \"Mon bureau.\"<br>\"Je serai là\", a promis Cork.",
         "title": "Lac de fer",
         "author": "William Kent Krueger",
         "sfw": "sfw"

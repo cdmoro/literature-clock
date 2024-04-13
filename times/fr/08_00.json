@@ -232,9 +232,9 @@
     {
         "time": "08:00",
         "quote_first": "Je ne pleure pas, a dit Maria lorsque Carter a appelé du désert à ",
-        "quote_last": ". \"Je vais parfaitement bien\".<br /> \"Tu n'as pas l'air parfaitement bien\"",
+        "quote_last": ". \"Je vais parfaitement bien\".<br> \"Tu n'as pas l'air parfaitement bien\"",
         "quote_time_case": "8 heures du matin",
-        "quote_raw": "Je ne pleure pas, a dit Maria lorsque Carter a appelé du désert à 8 heures du matin. \"Je vais parfaitement bien\".<br /> \"Tu n'as pas l'air parfaitement bien\"",
+        "quote_raw": "Je ne pleure pas, a dit Maria lorsque Carter a appelé du désert à 8 heures du matin. \"Je vais parfaitement bien\".<br> \"Tu n'as pas l'air parfaitement bien\"",
         "title": "Jouez-le tel qu'il est",
         "author": "Joan Didion",
         "sfw": "unknown"
@@ -331,10 +331,10 @@
     },
     {
         "time": "08:00",
-        "quote_first": "Alors voilà, je veillerai la nuit et j'attendrai<br/>Pour voir briller le matin,<br/>Quand il entendra le coup de ",
-        "quote_last": "<br/>Et non le coup de neuf ;",
+        "quote_first": "Alors voilà, je veillerai la nuit et j'attendrai<br>Pour voir briller le matin,<br>Quand il entendra le coup de ",
+        "quote_last": "<br>Et non le coup de neuf ;",
         "quote_time_case": "huit",
-        "quote_raw": "Alors voilà, je veillerai la nuit et j'attendrai<br/>Pour voir briller le matin,<br/>Quand il entendra le coup de huit<br/>Et non le coup de neuf ;",
+        "quote_raw": "Alors voilà, je veillerai la nuit et j'attendrai<br>Pour voir briller le matin,<br>Quand il entendra le coup de huit<br>Et non le coup de neuf ;",
         "title": "Un garçon du Shropshire",
         "author": "A.E. Housman",
         "sfw": "unknown"

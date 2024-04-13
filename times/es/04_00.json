@@ -221,10 +221,10 @@
     },
     {
         "time": "04:00",
-        "quote_first": "Los pájaros comenzaron a las cuatro <br /> Su período para el amanecer.",
+        "quote_first": "Los pájaros comenzaron a las cuatro <br> Su período para el amanecer.",
         "quote_last": "",
         "quote_time_case": "* Cuatro en punto",
-        "quote_raw": "Los pájaros comenzaron a las cuatro <br /> Su período para el amanecer.",
+        "quote_raw": "Los pájaros comenzaron a las cuatro <br> Su período para el amanecer.",
         "title": "Los pájaros comenzaron a las cuatro",
         "author": "Emily Dickinson",
         "sfw": "unknown"

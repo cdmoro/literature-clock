@@ -172,9 +172,9 @@
     {
         "time": "23:00",
         "quote_first": "Il sera là ",
-        "quote_last": " heures précises, monsieur.<br/>Au bar, des couples nus avaient commencé à danser.",
+        "quote_last": " heures précises, monsieur.<br>Au bar, des couples nus avaient commencé à danser.",
         "quote_time_case": "à onze",
-        "quote_raw": "Il sera là à onze heures précises, monsieur.<br/>Au bar, des couples nus avaient commencé à danser.",
+        "quote_raw": "Il sera là à onze heures précises, monsieur.<br>Au bar, des couples nus avaient commencé à danser.",
         "title": "Les gens de Smiley",
         "author": "John le Carré",
         "sfw": "nsfw"
@@ -201,10 +201,10 @@
     },
     {
         "time": "23:00",
-        "quote_first": "Il dit : \"Ils ont tué Jan. Dégagez.\"<br/>\"La valise ?\" Je demande.<br/>\"Reprenez-le. Nous ne voulons plus rien avoir à faire avec ça maintenant. Prenez l'express de ",
-        "quote_last": ".\"<br/> \"Mais ça ne s'arrête pas là....\"<br /\"Ça le sera. Allez sur la voie six. En face de la gare de fret. Vous avez trois minutes.\"<br/>\"Mais...\"<br/>\"Déplacez-vous, ou je devrai vous arrêter.\"",
+        "quote_first": "Il dit : \"Ils ont tué Jan. Dégagez.\"<br>\"La valise ?\" Je demande.<br>\"Reprenez-le. Nous ne voulons plus rien avoir à faire avec ça maintenant. Prenez l'express de ",
+        "quote_last": ".\"<br> \"Mais ça ne s'arrête pas là....\"<br /\"Ça le sera. Allez sur la voie six. En face de la gare de fret. Vous avez trois minutes.\"<br>\"Mais...\"<br>\"Déplacez-vous, ou je devrai vous arrêter.\"",
         "quote_time_case": "onze heures",
-        "quote_raw": "Il dit : \"Ils ont tué Jan. Dégagez.\"<br/>\"La valise ?\" Je demande.<br/>\"Reprenez-le. Nous ne voulons plus rien avoir à faire avec ça maintenant. Prenez l'express de onze heures.\"<br/> \"Mais ça ne s'arrête pas là....\"<br /\"Ça le sera. Allez sur la voie six. En face de la gare de fret. Vous avez trois minutes.\"<br/>\"Mais...\"<br/>\"Déplacez-vous, ou je devrai vous arrêter.\"",
+        "quote_raw": "Il dit : \"Ils ont tué Jan. Dégagez.\"<br>\"La valise ?\" Je demande.<br>\"Reprenez-le. Nous ne voulons plus rien avoir à faire avec ça maintenant. Prenez l'express de onze heures.\"<br> \"Mais ça ne s'arrête pas là....\"<br /\"Ça le sera. Allez sur la voie six. En face de la gare de fret. Vous avez trois minutes.\"<br>\"Mais...\"<br>\"Déplacez-vous, ou je devrai vous arrêter.\"",
         "title": "Si par une nuit d'hiver un voyageur",
         "author": "Italo Calvino",
         "sfw": "unknown"

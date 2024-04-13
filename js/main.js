@@ -42,7 +42,7 @@ async function updateQuote(time) {
     blockquote.dataset.swf = quote.swf;
 
     if (quote.quote_raw) {
-        blockquote.setAttribute('aria-description', quote.quote_raw.replace(/<br\/>|\n/g, ' '));
+        blockquote.setAttribute('aria-description', quote.quote_raw.replace(/<br>|\n/g, ' '));
     }
 
     const quoteLength = p.textContent.length;
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
         const variantSelect = document.getElementById("variant-select");
         
-        if (variantSelect.value === 'system') {
+        if (variantSelect.value === 'auto') {
             const themeSelect = document.getElementById('theme-select');
             const theme = `${themeSelect.value}-${e.matches ? 'dark' : 'light'}`;
 

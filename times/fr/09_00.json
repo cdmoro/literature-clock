@@ -82,9 +82,9 @@
     {
         "time": "09:00",
         "quote_first": "Il s’était réveillé à ",
-        "quote_last": " heures, avait travaillé un moment dans sa chambre, puis avait dit qu’il avait sommeil. Il alla à la cuisine, prépara du café et le but. Mais le café n’a pas aidé. <br/> « Je pense que je vais faire une sieste », dit-il. «J'entends un bourdonnement à l'arrière de ma tête.» Ce furent ses derniers mots. Il s'est recroquevillé dans son lit, s'est endormi et ne s'est plus jamais réveillé.",
+        "quote_last": " heures, avait travaillé un moment dans sa chambre, puis avait dit qu’il avait sommeil. Il alla à la cuisine, prépara du café et le but. Mais le café n’a pas aidé. <br> « Je pense que je vais faire une sieste », dit-il. «J'entends un bourdonnement à l'arrière de ma tête.» Ce furent ses derniers mots. Il s'est recroquevillé dans son lit, s'est endormi et ne s'est plus jamais réveillé.",
         "quote_time_case": "neuf",
-        "quote_raw": "Il s’était réveillé à neuf heures, avait travaillé un moment dans sa chambre, puis avait dit qu’il avait sommeil. Il alla à la cuisine, prépara du café et le but. Mais le café n’a pas aidé. <br/> « Je pense que je vais faire une sieste », dit-il. «J'entends un bourdonnement à l'arrière de ma tête.» Ce furent ses derniers mots. Il s'est recroquevillé dans son lit, s'est endormi et ne s'est plus jamais réveillé.",
+        "quote_raw": "Il s’était réveillé à neuf heures, avait travaillé un moment dans sa chambre, puis avait dit qu’il avait sommeil. Il alla à la cuisine, prépara du café et le but. Mais le café n’a pas aidé. <br> « Je pense que je vais faire une sieste », dit-il. «J'entends un bourdonnement à l'arrière de ma tête.» Ce furent ses derniers mots. Il s'est recroquevillé dans son lit, s'est endormi et ne s'est plus jamais réveillé.",
         "title": "Saule aveugle, femme endormie",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -262,9 +262,9 @@
     {
         "time": "09:00",
         "quote_first": "Une mouche bourdonna, l'horloge murale se mit à sonner. Après que les ",
-        "quote_last": " traits d'or se soient évanouis, le capitaine du district commença. \"Comment va Herr Colonel Marek ?\"<br/> \"Merci, Papá, il va bien.\"<br/> \"Encore faible en géométrie ?\"<br/> \"Merci, Papá, un peu mieux.\"<br /> \"Vous avez lu des livres ?\"<br/> \"Oui, monsieur, papa.\"",
+        "quote_last": " traits d'or se soient évanouis, le capitaine du district commença. \"Comment va Herr Colonel Marek ?\"<br> \"Merci, Papá, il va bien.\"<br> \"Encore faible en géométrie ?\"<br> \"Merci, Papá, un peu mieux.\"<br> \"Vous avez lu des livres ?\"<br> \"Oui, monsieur, papa.\"",
         "quote_time_case": "neuf",
-        "quote_raw": "Une mouche bourdonna, l'horloge murale se mit à sonner. Après que les neuf traits d'or se soient évanouis, le capitaine du district commença. \"Comment va Herr Colonel Marek ?\"<br/> \"Merci, Papá, il va bien.\"<br/> \"Encore faible en géométrie ?\"<br/> \"Merci, Papá, un peu mieux.\"<br /> \"Vous avez lu des livres ?\"<br/> \"Oui, monsieur, papa.\"",
+        "quote_raw": "Une mouche bourdonna, l'horloge murale se mit à sonner. Après que les neuf traits d'or se soient évanouis, le capitaine du district commença. \"Comment va Herr Colonel Marek ?\"<br> \"Merci, Papá, il va bien.\"<br> \"Encore faible en géométrie ?\"<br> \"Merci, Papá, un peu mieux.\"<br> \"Vous avez lu des livres ?\"<br> \"Oui, monsieur, papa.\"",
         "title": "La marche Radetzky",
         "author": "Joseph Roth",
         "sfw": "unknown"
@@ -351,10 +351,10 @@
     },
     {
         "time": "09:00",
-        "quote_first": "Là où Sainte Mary Woolnoth marquait les heures<br/>Avec un son mort au dernier coup de ",
+        "quote_first": "Là où Sainte Mary Woolnoth marquait les heures<br>Avec un son mort au dernier coup de ",
         "quote_last": " heures.",
         "quote_time_case": "neuf",
-        "quote_raw": "Là où Sainte Mary Woolnoth marquait les heures<br/>Avec un son mort au dernier coup de neuf heures.",
+        "quote_raw": "Là où Sainte Mary Woolnoth marquait les heures<br>Avec un son mort au dernier coup de neuf heures.",
         "title": "La terre des déchets",
         "author": "T.S. Eliot",
         "sfw": "unknown"

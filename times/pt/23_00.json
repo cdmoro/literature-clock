@@ -172,9 +172,9 @@
     {
         "time": "23:00",
         "quote_first": "Ele estará aqui exatamente ",
-        "quote_last": " horas, senhor.<br/>No bar, casais nus começaram a dançar.",
+        "quote_last": " horas, senhor.<br>No bar, casais nus começaram a dançar.",
         "quote_time_case": "às onze",
-        "quote_raw": "Ele estará aqui exatamente às onze horas, senhor.<br/>No bar, casais nus começaram a dançar.",
+        "quote_raw": "Ele estará aqui exatamente às onze horas, senhor.<br>No bar, casais nus começaram a dançar.",
         "title": "Gente do Smiley",
         "author": "John le Carré",
         "sfw": "nsfw"
@@ -201,10 +201,10 @@
     },
     {
         "time": "23:00",
-        "quote_first": "Ele diz: \"Eles mataram Jan. Vá embora.\"<br/>\"A mala?\" Eu pergunto.<br/>\"Tire isso de novo. Não queremos nada com isso agora. Pegue o expresso das ",
-        "quote_last": ".\"<br/> \"Mas não para aqui....\"<br />\"Vai. Vá para a pista seis. Em frente à estação de carga. Você tem três minutos.\"<br/>\"Mas...\"<br/>\"Saia-se, ou terei que prendê-lo.\"",
+        "quote_first": "Ele diz: \"Eles mataram Jan. Vá embora.\"<br>\"A mala?\" Eu pergunto.<br>\"Tire isso de novo. Não queremos nada com isso agora. Pegue o expresso das ",
+        "quote_last": ".\"<br> \"Mas não para aqui....\"<br>\"Vai. Vá para a pista seis. Em frente à estação de carga. Você tem três minutos.\"<br>\"Mas...\"<br>\"Saia-se, ou terei que prendê-lo.\"",
         "quote_time_case": "onze horas",
-        "quote_raw": "Ele diz: \"Eles mataram Jan. Vá embora.\"<br/>\"A mala?\" Eu pergunto.<br/>\"Tire isso de novo. Não queremos nada com isso agora. Pegue o expresso das onze horas.\"<br/> \"Mas não para aqui....\"<br />\"Vai. Vá para a pista seis. Em frente à estação de carga. Você tem três minutos.\"<br/>\"Mas...\"<br/>\"Saia-se, ou terei que prendê-lo.\"",
+        "quote_raw": "Ele diz: \"Eles mataram Jan. Vá embora.\"<br>\"A mala?\" Eu pergunto.<br>\"Tire isso de novo. Não queremos nada com isso agora. Pegue o expresso das onze horas.\"<br> \"Mas não para aqui....\"<br>\"Vai. Vá para a pista seis. Em frente à estação de carga. Você tem três minutos.\"<br>\"Mas...\"<br>\"Saia-se, ou terei que prendê-lo.\"",
         "title": "Se numa noite de inverno um viajante",
         "author": "Italo Calvino",
         "sfw": "unknown"

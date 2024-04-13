@@ -21,10 +21,10 @@
     },
     {
         "time": "17:00",
-        "quote_first": "“Devo vê-lo novamente antes da minha partida?” perguntou Albert.<br/>“Isso será de acordo com as circunstâncias; quando você parte?”<br/>“Amanhã à noite, às ",
+        "quote_first": "“Devo vê-lo novamente antes da minha partida?” perguntou Albert.<br>“Isso será de acordo com as circunstâncias; quando você parte?”<br>“Amanhã à noite, às ",
         "quote_last": ".”",
         "quote_time_case": "5 horas",
-        "quote_raw": "“Devo vê-lo novamente antes da minha partida?” perguntou Albert.<br/>“Isso será de acordo com as circunstâncias; quando você parte?”<br/>“Amanhã à noite, às 5 horas.”",
+        "quote_raw": "“Devo vê-lo novamente antes da minha partida?” perguntou Albert.<br>“Isso será de acordo com as circunstâncias; quando você parte?”<br>“Amanhã à noite, às 5 horas.”",
         "title": "O Conde de Monte Cristo",
         "author": "Alexandre Dumas",
         "sfw": "unknown"
@@ -311,10 +311,10 @@
     },
     {
         "time": "17:00",
-        "quote_first": "Faz mais de um ano que não vou à igreja.<br/>\"Finalmente preocupado com sua alma?\"<br/>\"Por favor\", disse Cork<br/>\"Claro que podemos conversar. Quando?\"<br />\"Amanhã. No final da tarde, talvez. Digamos ",
-        "quote_last": "?\"<br/>\"Sejam seis\", sugeriu o padre. \"Meu escritório.\"<br/>\"Estarei lá\", prometeu Cork.",
+        "quote_first": "Faz mais de um ano que não vou à igreja.<br>\"Finalmente preocupado com sua alma?\"<br>\"Por favor\", disse Cork<br>\"Claro que podemos conversar. Quando?\"<br>\"Amanhã. No final da tarde, talvez. Digamos ",
+        "quote_last": "?\"<br>\"Sejam seis\", sugeriu o padre. \"Meu escritório.\"<br>\"Estarei lá\", prometeu Cork.",
         "quote_time_case": "cinco horas",
-        "quote_raw": "Faz mais de um ano que não vou à igreja.<br/>\"Finalmente preocupado com sua alma?\"<br/>\"Por favor\", disse Cork<br/>\"Claro que podemos conversar. Quando?\"<br />\"Amanhã. No final da tarde, talvez. Digamos cinco horas?\"<br/>\"Sejam seis\", sugeriu o padre. \"Meu escritório.\"<br/>\"Estarei lá\", prometeu Cork.",
+        "quote_raw": "Faz mais de um ano que não vou à igreja.<br>\"Finalmente preocupado com sua alma?\"<br>\"Por favor\", disse Cork<br>\"Claro que podemos conversar. Quando?\"<br>\"Amanhã. No final da tarde, talvez. Digamos cinco horas?\"<br>\"Sejam seis\", sugeriu o padre. \"Meu escritório.\"<br>\"Estarei lá\", prometeu Cork.",
         "title": "Lago de Ferro",
         "author": "William Kent Krueger",
         "sfw": "sfw"

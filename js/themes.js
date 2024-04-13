@@ -29,7 +29,7 @@ function getTheme(newTheme) {
 
     let theme = themeQueryParam || newTheme || themeLocalStorage || defaultTheme;
 
-    if (theme.indexOf('-') < 0 && variant !== 'system') {
+    if (theme.indexOf('-') < 0 && variant !== 'auto') {
         theme += `-${variant}`;
     }
 
@@ -48,8 +48,8 @@ export function setTheme(newTheme) {
 
     themeSelect.value = theme.split('-')[0];
 
-    if (variantSelect.value !== 'system') {
-        variantSelect.value = theme.indexOf('-') >= 0 ? theme.split('-')[1] : 'system';
+    if (variantSelect.value !== 'auto') {
+        variantSelect.value = theme.indexOf('-') >= 0 ? theme.split('-')[1] : 'auto';
     }
 
     if (THEME_FONTS[themeSelect.value]) {
@@ -60,12 +60,12 @@ export function setTheme(newTheme) {
     document.documentElement.setAttribute("data-theme", theme);
 }
 
-export function setVariant(variant = 'system') {
+export function setVariant(variant = 'auto') {
     const themeSelect = document.getElementById('theme-select');
     const themePrefix = themeSelect.value;
     let theme = `${themePrefix}-${variant}`;
     
-    if(variant === 'system' && window.matchMedia) {
+    if(variant === 'auto' && window.matchMedia) {
         const preferDarkThemes = window.matchMedia('(prefers-color-scheme: dark)').matches;
         theme = `${themePrefix}-${preferDarkThemes ? 'dark' : 'light'}`;
     }

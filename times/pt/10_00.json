@@ -321,10 +321,10 @@
     },
     {
         "time": "10:00",
-        "quote_first": "Rei Ricardo: Bem, mas que horas são?<br/>Buckingham: Às ",
+        "quote_first": "Rei Ricardo: Bem, mas que horas são?<br>Buckingham: Às ",
         "quote_last": " badaladas.",
         "quote_time_case": "dez",
-        "quote_raw": "Rei Ricardo: Bem, mas que horas são?<br/>Buckingham: Às dez badaladas.",
+        "quote_raw": "Rei Ricardo: Bem, mas que horas são?<br>Buckingham: Às dez badaladas.",
         "title": "Ricardo III",
         "author": "William Shakespeare",
         "sfw": "unknown"
@@ -351,10 +351,10 @@
     },
     {
         "time": "10:00",
-        "quote_first": "O especialista suspirou. “Só um tolo como eu deixaria a porta aberta quando um motim pode ocorrer a qualquer momento, e só um tolo como eu diria sim para você”, disse ele. \"Que horas?\" <br/> Apenas sua cabeça estava saindo pela porta parcialmente aberta. O dinheiro da bênção da fábrica de sorvetes deve ter entorpecido seu desejo de trabalhar, pensei. <br/> \"",
-        "quote_last": ".\"<br/>\"Dez e meia.\" Sem outra palavra, ele fechou a porta.",
+        "quote_first": "O especialista suspirou. “Só um tolo como eu deixaria a porta aberta quando um motim pode ocorrer a qualquer momento, e só um tolo como eu diria sim para você”, disse ele. \"Que horas?\" <br> Apenas sua cabeça estava saindo pela porta parcialmente aberta. O dinheiro da bênção da fábrica de sorvetes deve ter entorpecido seu desejo de trabalhar, pensei. <br> \"",
+        "quote_last": ".\"<br>\"Dez e meia.\" Sem outra palavra, ele fechou a porta.",
         "quote_time_case": "Dez",
-        "quote_raw": "O especialista suspirou. “Só um tolo como eu deixaria a porta aberta quando um motim pode ocorrer a qualquer momento, e só um tolo como eu diria sim para você”, disse ele. \"Que horas?\" <br/> Apenas sua cabeça estava saindo pela porta parcialmente aberta. O dinheiro da bênção da fábrica de sorvetes deve ter entorpecido seu desejo de trabalhar, pensei. <br/> \"Dez.\"<br/>\"Dez e meia.\" Sem outra palavra, ele fechou a porta.",
+        "quote_raw": "O especialista suspirou. “Só um tolo como eu deixaria a porta aberta quando um motim pode ocorrer a qualquer momento, e só um tolo como eu diria sim para você”, disse ele. \"Que horas?\" <br> Apenas sua cabeça estava saindo pela porta parcialmente aberta. O dinheiro da bênção da fábrica de sorvetes deve ter entorpecido seu desejo de trabalhar, pensei. <br> \"Dez.\"<br>\"Dez e meia.\" Sem outra palavra, ele fechou a porta.",
         "title": "Um pai obediente",
         "author": "Akhil Sharma",
         "sfw": "unknown"

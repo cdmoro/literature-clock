@@ -1,10 +1,10 @@
 [
     {
         "time": "18:00",
-        "quote_first": "No he ido a la iglesia en más de un año.<br/>\"¿Finalmente estás preocupado por tu alma?\"<br/>\"Por favor\", dijo Cork<br/>\"Por supuesto que podemos hablar. ¿Cuándo?\"<br />\"Mañana. Quizás a última hora de la tarde. ¿Dices que son las cinco?\"<br/>\"Que sean las ",
-        "quote_last": "\", sugirió el sacerdote. \"Mi oficina.\"<br/>\"Allí estaré\", prometió Cork.",
+        "quote_first": "No he ido a la iglesia en más de un año.<br>\"¿Finalmente estás preocupado por tu alma?\"<br>\"Por favor\", dijo Cork<br>\"Por supuesto que podemos hablar. ¿Cuándo?\"<br>\"Mañana. Quizás a última hora de la tarde. ¿Dices que son las cinco?\"<br>\"Que sean las ",
+        "quote_last": "\", sugirió el sacerdote. \"Mi oficina.\"<br>\"Allí estaré\", prometió Cork.",
         "quote_time_case": "seis",
-        "quote_raw": "No he ido a la iglesia en más de un año.<br/>\"¿Finalmente estás preocupado por tu alma?\"<br/>\"Por favor\", dijo Cork<br/>\"Por supuesto que podemos hablar. ¿Cuándo?\"<br />\"Mañana. Quizás a última hora de la tarde. ¿Dices que son las cinco?\"<br/>\"Que sean las seis\", sugirió el sacerdote. \"Mi oficina.\"<br/>\"Allí estaré\", prometió Cork.",
+        "quote_raw": "No he ido a la iglesia en más de un año.<br>\"¿Finalmente estás preocupado por tu alma?\"<br>\"Por favor\", dijo Cork<br>\"Por supuesto que podemos hablar. ¿Cuándo?\"<br>\"Mañana. Quizás a última hora de la tarde. ¿Dices que son las cinco?\"<br>\"Que sean las seis\", sugirió el sacerdote. \"Mi oficina.\"<br>\"Allí estaré\", prometió Cork.",
         "title": "lago de hierro",
         "author": "William Kent Krueger",
         "sfw": "sfw"
@@ -241,20 +241,20 @@
     },
     {
         "time": "18:00",
-        "quote_first": "¿Fuiste a la granja mientras yo estaba fuera?<br/>\"No\", dije, \"pero vi a Ted\".<br/>\"¿Tenía un mensaje para mí?\" ella preguntó. \"Dijo que hoy no era bueno porque iba a Norwich. Pero el viernes a las ",
-        "quote_last": ", como de costumbre.\"<br/>\"¿Estás seguro de que dijo a las seis en punto?\" preguntó, desconcertada.<br/>\"Bastante seguro\".",
+        "quote_first": "¿Fuiste a la granja mientras yo estaba fuera?<br>\"No\", dije, \"pero vi a Ted\".<br>\"¿Tenía un mensaje para mí?\" ella preguntó. \"Dijo que hoy no era bueno porque iba a Norwich. Pero el viernes a las ",
+        "quote_last": ", como de costumbre.\"<br>\"¿Estás seguro de que dijo a las seis en punto?\" preguntó, desconcertada.<br>\"Bastante seguro\".",
         "quote_time_case": "seis en punto",
-        "quote_raw": "¿Fuiste a la granja mientras yo estaba fuera?<br/>\"No\", dije, \"pero vi a Ted\".<br/>\"¿Tenía un mensaje para mí?\" ella preguntó. \"Dijo que hoy no era bueno porque iba a Norwich. Pero el viernes a las seis en punto, como de costumbre.\"<br/>\"¿Estás seguro de que dijo a las seis en punto?\" preguntó, desconcertada.<br/>\"Bastante seguro\".",
+        "quote_raw": "¿Fuiste a la granja mientras yo estaba fuera?<br>\"No\", dije, \"pero vi a Ted\".<br>\"¿Tenía un mensaje para mí?\" ella preguntó. \"Dijo que hoy no era bueno porque iba a Norwich. Pero el viernes a las seis en punto, como de costumbre.\"<br>\"¿Estás seguro de que dijo a las seis en punto?\" preguntó, desconcertada.<br>\"Bastante seguro\".",
         "title": "El intermediario",
         "author": "L.P. Hartley",
         "sfw": "unknown"
     },
     {
         "time": "18:00",
-        "quote_first": "Rey Ricardo: ¿Qué son las horas?<br/>Catesby: Son las ",
-        "quote_last": ", hora de cenar.<br/>Rey Ricardo: No cenaré esta noche. Dame un poco de tinta y papel.",
+        "quote_first": "Rey Ricardo: ¿Qué son las horas?<br>Catesby: Son las ",
+        "quote_last": ", hora de cenar.<br>Rey Ricardo: No cenaré esta noche. Dame un poco de tinta y papel.",
         "quote_time_case": "seis en punto",
-        "quote_raw": "Rey Ricardo: ¿Qué son las horas?<br/>Catesby: Son las seis en punto, hora de cenar.<br/>Rey Ricardo: No cenaré esta noche. Dame un poco de tinta y papel.",
+        "quote_raw": "Rey Ricardo: ¿Qué son las horas?<br>Catesby: Son las seis en punto, hora de cenar.<br>Rey Ricardo: No cenaré esta noche. Dame un poco de tinta y papel.",
         "title": "Ricardo III",
         "author": "William Shakespeare",
         "sfw": "unknown"

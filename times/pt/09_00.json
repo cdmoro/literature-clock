@@ -82,9 +82,9 @@
     {
         "time": "09:00",
         "quote_first": "Ele acordou às ",
-        "quote_last": ", trabalhou um pouco no quarto e depois disse que estava com sono. Ele foi até a cozinha, fez um café e bebeu. Mas o café não ajudou. <br/> “Acho que vou tirar uma soneca”, disse ele. “Ouço um zumbido na parte de trás da minha cabeça.” Essas foram suas últimas palavras. Ele se enrolou na cama, adormeceu e nunca mais acordou.",
+        "quote_last": ", trabalhou um pouco no quarto e depois disse que estava com sono. Ele foi até a cozinha, fez um café e bebeu. Mas o café não ajudou. <br> “Acho que vou tirar uma soneca”, disse ele. “Ouço um zumbido na parte de trás da minha cabeça.” Essas foram suas últimas palavras. Ele se enrolou na cama, adormeceu e nunca mais acordou.",
         "quote_time_case": "nove",
-        "quote_raw": "Ele acordou às nove, trabalhou um pouco no quarto e depois disse que estava com sono. Ele foi até a cozinha, fez um café e bebeu. Mas o café não ajudou. <br/> “Acho que vou tirar uma soneca”, disse ele. “Ouço um zumbido na parte de trás da minha cabeça.” Essas foram suas últimas palavras. Ele se enrolou na cama, adormeceu e nunca mais acordou.",
+        "quote_raw": "Ele acordou às nove, trabalhou um pouco no quarto e depois disse que estava com sono. Ele foi até a cozinha, fez um café e bebeu. Mas o café não ajudou. <br> “Acho que vou tirar uma soneca”, disse ele. “Ouço um zumbido na parte de trás da minha cabeça.” Essas foram suas últimas palavras. Ele se enrolou na cama, adormeceu e nunca mais acordou.",
         "title": "Salgueiro Cego, Mulher Adormecida",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -262,9 +262,9 @@
     {
         "time": "09:00",
         "quote_first": "Uma mosca zumbiu e o relógio de parede começou a bater. Depois que os ",
-        "quote_last": " traços dourados desapareceram, o capitão do distrito começou. \"Como está Herr Coronel Marek?\"<br/> \"Obrigado, Papá, ele está bem.\"<br/> \"Ainda fraco em geometria?\"<br/> \"Obrigado, Papá, um pouco melhor.\"<br /> \"Ler algum livro?\"<br/> \"Sim senhor, Papá.\"",
+        "quote_last": " traços dourados desapareceram, o capitão do distrito começou. \"Como está Herr Coronel Marek?\"<br> \"Obrigado, Papá, ele está bem.\"<br> \"Ainda fraco em geometria?\"<br> \"Obrigado, Papá, um pouco melhor.\"<br> \"Ler algum livro?\"<br> \"Sim senhor, Papá.\"",
         "quote_time_case": "nove",
-        "quote_raw": "Uma mosca zumbiu e o relógio de parede começou a bater. Depois que os nove traços dourados desapareceram, o capitão do distrito começou. \"Como está Herr Coronel Marek?\"<br/> \"Obrigado, Papá, ele está bem.\"<br/> \"Ainda fraco em geometria?\"<br/> \"Obrigado, Papá, um pouco melhor.\"<br /> \"Ler algum livro?\"<br/> \"Sim senhor, Papá.\"",
+        "quote_raw": "Uma mosca zumbiu e o relógio de parede começou a bater. Depois que os nove traços dourados desapareceram, o capitão do distrito começou. \"Como está Herr Coronel Marek?\"<br> \"Obrigado, Papá, ele está bem.\"<br> \"Ainda fraco em geometria?\"<br> \"Obrigado, Papá, um pouco melhor.\"<br> \"Ler algum livro?\"<br> \"Sim senhor, Papá.\"",
         "title": "A Marcha Radetzky",
         "author": "Joseph Roth",
         "sfw": "unknown"
@@ -351,10 +351,10 @@
     },
     {
         "time": "09:00",
-        "quote_first": "Para onde Santa Maria Woolnoth marcava as horas<br/>Com um som morto na última badalada das ",
+        "quote_first": "Para onde Santa Maria Woolnoth marcava as horas<br>Com um som morto na última badalada das ",
         "quote_last": ".",
         "quote_time_case": "nove",
-        "quote_raw": "Para onde Santa Maria Woolnoth marcava as horas<br/>Com um som morto na última badalada das nove.",
+        "quote_raw": "Para onde Santa Maria Woolnoth marcava as horas<br>Com um som morto na última badalada das nove.",
         "title": "A terra do desperdício",
         "author": "T.S. Eliot",
         "sfw": "unknown"

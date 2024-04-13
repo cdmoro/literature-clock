@@ -231,10 +231,10 @@
     },
     {
         "time": "08:00",
-        "quote_first": "Não estou chorando, disse Maria quando Carter ligou do deserto às 8h. \"Estou perfeitamente bem\".<br /> \"Você não parece perfeitamente bem\"",
+        "quote_first": "Não estou chorando, disse Maria quando Carter ligou do deserto às 8h. \"Estou perfeitamente bem\".<br> \"Você não parece perfeitamente bem\"",
         "quote_last": "",
         "quote_time_case": "* 8 horas da manhã.",
-        "quote_raw": "Não estou chorando, disse Maria quando Carter ligou do deserto às 8h. \"Estou perfeitamente bem\".<br /> \"Você não parece perfeitamente bem\"",
+        "quote_raw": "Não estou chorando, disse Maria quando Carter ligou do deserto às 8h. \"Estou perfeitamente bem\".<br> \"Você não parece perfeitamente bem\"",
         "title": "Jogue como está",
         "author": "Joan Didion",
         "sfw": "unknown"
@@ -331,10 +331,10 @@
     },
     {
         "time": "08:00",
-        "quote_first": "Então aqui vou vigiar a noite e esperar<br/>Para ver a manhã brilhar,<br/>Quando ele ouvirá a badalada das ",
-        "quote_last": "<br/>E não a badalada das nove;",
+        "quote_first": "Então aqui vou vigiar a noite e esperar<br>Para ver a manhã brilhar,<br>Quando ele ouvirá a badalada das ",
+        "quote_last": "<br>E não a badalada das nove;",
         "quote_time_case": "oito",
-        "quote_raw": "Então aqui vou vigiar a noite e esperar<br/>Para ver a manhã brilhar,<br/>Quando ele ouvirá a badalada das oito<br/>E não a badalada das nove;",
+        "quote_raw": "Então aqui vou vigiar a noite e esperar<br>Para ver a manhã brilhar,<br>Quando ele ouvirá a badalada das oito<br>E não a badalada das nove;",
         "title": "Um rapaz de Shropshire",
         "author": "A.E. Housman",
         "sfw": "unknown"

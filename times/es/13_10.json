@@ -32,9 +32,9 @@
     {
         "time": "13:10",
         "quote_first": "Era ",
-        "quote_last": ".”<br/>“¿Estás seguro de eso?",
+        "quote_last": ".”<br>“¿Estás seguro de eso?",
         "quote_time_case": "la una y diez minutos",
-        "quote_raw": "Era la una y diez minutos.”<br/>“¿Estás seguro de eso?",
+        "quote_raw": "Era la una y diez minutos.”<br>“¿Estás seguro de eso?",
         "title": "Muerte en el Nilo",
         "author": "Agatha Christie",
         "sfw": "unknown"

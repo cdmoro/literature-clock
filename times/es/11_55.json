@@ -31,10 +31,10 @@
     },
     {
         "time": "11:55",
-        "quote_first": "¿A qué hora llegó al sitio? <br/> \"Eran las ",
+        "quote_first": "¿A qué hora llegó al sitio? <br> \"Eran las ",
         "quote_last": ". Lo recuerdo desde que miré mi reloj cuando llegamos allí. Montamos nuestras bicicletas hasta el final de la colina, lo más lejos que pudimos llegar, luego subimos el resto de la camino a pie.\"",
         "quote_time_case": "11:55",
-        "quote_raw": "¿A qué hora llegó al sitio? <br/> \"Eran las 11:55. Lo recuerdo desde que miré mi reloj cuando llegamos allí. Montamos nuestras bicicletas hasta el final de la colina, lo más lejos que pudimos llegar, luego subimos el resto de la camino a pie.\"",
+        "quote_raw": "¿A qué hora llegó al sitio? <br> \"Eran las 11:55. Lo recuerdo desde que miré mi reloj cuando llegamos allí. Montamos nuestras bicicletas hasta el final de la colina, lo más lejos que pudimos llegar, luego subimos el resto de la camino a pie.\"",
         "title": "Kafka en la orilla",
         "author": "Haruki Murakami",
         "sfw": "sfw"

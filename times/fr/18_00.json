@@ -1,10 +1,10 @@
 [
     {
         "time": "18:00",
-        "quote_first": "Je ne suis pas allé à l'église depuis plus d'un an.<br/>\"Enfin, je m'inquiète pour ton âme ?\"<br/>\"S'il te plaît,\" dit Cork<br/>\"Bien sûr que nous pouvons parler. Quand ?\"<br />\"Demain. Fin d'après-midi peut-être. Dites cinq heures ?\"<br/>\"Placez-en ",
-        "quote_last": "\", suggéra le prêtre. \"Mon bureau.\"<br/>\"Je serai là\", a promis Cork.",
+        "quote_first": "Je ne suis pas allé à l'église depuis plus d'un an.<br>\"Enfin, je m'inquiète pour ton âme ?\"<br>\"S'il te plaît,\" dit Cork<br>\"Bien sûr que nous pouvons parler. Quand ?\"<br>\"Demain. Fin d'après-midi peut-être. Dites cinq heures ?\"<br>\"Placez-en ",
+        "quote_last": "\", suggéra le prêtre. \"Mon bureau.\"<br>\"Je serai là\", a promis Cork.",
         "quote_time_case": "six",
-        "quote_raw": "Je ne suis pas allé à l'église depuis plus d'un an.<br/>\"Enfin, je m'inquiète pour ton âme ?\"<br/>\"S'il te plaît,\" dit Cork<br/>\"Bien sûr que nous pouvons parler. Quand ?\"<br />\"Demain. Fin d'après-midi peut-être. Dites cinq heures ?\"<br/>\"Placez-en six\", suggéra le prêtre. \"Mon bureau.\"<br/>\"Je serai là\", a promis Cork.",
+        "quote_raw": "Je ne suis pas allé à l'église depuis plus d'un an.<br>\"Enfin, je m'inquiète pour ton âme ?\"<br>\"S'il te plaît,\" dit Cork<br>\"Bien sûr que nous pouvons parler. Quand ?\"<br>\"Demain. Fin d'après-midi peut-être. Dites cinq heures ?\"<br>\"Placez-en six\", suggéra le prêtre. \"Mon bureau.\"<br>\"Je serai là\", a promis Cork.",
         "title": "Lac de fer",
         "author": "William Kent Krueger",
         "sfw": "sfw"
@@ -241,20 +241,20 @@
     },
     {
         "time": "18:00",
-        "quote_first": "Êtes-vous allé à la ferme pendant mon absence ?<br/>\"Non\", ai-je répondu, \"mais j'ai vu Ted.\"<br/>\"A-t-il un message pour moi ?\" elle a demandé. \"Il a dit qu'aujourd'hui ce n'était pas bon car il allait à Norwich. Mais vendredi à ",
-        "quote_last": ", comme d'habitude.\"<br/>\"Tu es sûr qu'il a dit six heures ?\" » demanda-t-elle, perplexe.<br/>\"Tout à fait sûr.\"",
+        "quote_first": "Êtes-vous allé à la ferme pendant mon absence ?<br>\"Non\", ai-je répondu, \"mais j'ai vu Ted.\"<br>\"A-t-il un message pour moi ?\" elle a demandé. \"Il a dit qu'aujourd'hui ce n'était pas bon car il allait à Norwich. Mais vendredi à ",
+        "quote_last": ", comme d'habitude.\"<br>\"Tu es sûr qu'il a dit six heures ?\" » demanda-t-elle, perplexe.<br>\"Tout à fait sûr.\"",
         "quote_time_case": "six heures",
-        "quote_raw": "Êtes-vous allé à la ferme pendant mon absence ?<br/>\"Non\", ai-je répondu, \"mais j'ai vu Ted.\"<br/>\"A-t-il un message pour moi ?\" elle a demandé. \"Il a dit qu'aujourd'hui ce n'était pas bon car il allait à Norwich. Mais vendredi à six heures, comme d'habitude.\"<br/>\"Tu es sûr qu'il a dit six heures ?\" » demanda-t-elle, perplexe.<br/>\"Tout à fait sûr.\"",
+        "quote_raw": "Êtes-vous allé à la ferme pendant mon absence ?<br>\"Non\", ai-je répondu, \"mais j'ai vu Ted.\"<br>\"A-t-il un message pour moi ?\" elle a demandé. \"Il a dit qu'aujourd'hui ce n'était pas bon car il allait à Norwich. Mais vendredi à six heures, comme d'habitude.\"<br>\"Tu es sûr qu'il a dit six heures ?\" » demanda-t-elle, perplexe.<br>\"Tout à fait sûr.\"",
         "title": "L'intermédiaire",
         "author": "L.P. Hartley",
         "sfw": "unknown"
     },
     {
         "time": "18:00",
-        "quote_first": "Roi Richard : Quelle heure est-il ?<br/>Catesby : Il est ",
-        "quote_last": ", l'heure du souper.<br/>Roi Richard : Je ne souperai pas ce soir. Donnez-moi de l'encre et du papier.",
+        "quote_first": "Roi Richard : Quelle heure est-il ?<br>Catesby : Il est ",
+        "quote_last": ", l'heure du souper.<br>Roi Richard : Je ne souperai pas ce soir. Donnez-moi de l'encre et du papier.",
         "quote_time_case": "six heures",
-        "quote_raw": "Roi Richard : Quelle heure est-il ?<br/>Catesby : Il est six heures, l'heure du souper.<br/>Roi Richard : Je ne souperai pas ce soir. Donnez-moi de l'encre et du papier.",
+        "quote_raw": "Roi Richard : Quelle heure est-il ?<br>Catesby : Il est six heures, l'heure du souper.<br>Roi Richard : Je ne souperai pas ce soir. Donnez-moi de l'encre et du papier.",
         "title": "Richard III",
         "author": "William Shakespeare",
         "sfw": "unknown"

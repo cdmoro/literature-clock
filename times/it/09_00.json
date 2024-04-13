@@ -82,9 +82,9 @@
     {
         "time": "09:00",
         "quote_first": "Si era svegliato alle ",
-        "quote_last": ", aveva lavorato per un po' nella sua stanza e poi aveva detto che aveva sonno. Andò in cucina, preparò un po' di caffè e lo bevve. Ma il caffè non ha aiutato. <br/> \"Penso che farò un pisolino\", ha detto. \"Sento un ronzio nella parte posteriore della testa.\" Quelle furono le sue ultime parole. Si rannicchiò nel letto, andò a dormire e non si svegliò mai più.",
+        "quote_last": ", aveva lavorato per un po' nella sua stanza e poi aveva detto che aveva sonno. Andò in cucina, preparò un po' di caffè e lo bevve. Ma il caffè non ha aiutato. <br> \"Penso che farò un pisolino\", ha detto. \"Sento un ronzio nella parte posteriore della testa.\" Quelle furono le sue ultime parole. Si rannicchiò nel letto, andò a dormire e non si svegliò mai più.",
         "quote_time_case": "nove",
-        "quote_raw": "Si era svegliato alle nove, aveva lavorato per un po' nella sua stanza e poi aveva detto che aveva sonno. Andò in cucina, preparò un po' di caffè e lo bevve. Ma il caffè non ha aiutato. <br/> \"Penso che farò un pisolino\", ha detto. \"Sento un ronzio nella parte posteriore della testa.\" Quelle furono le sue ultime parole. Si rannicchiò nel letto, andò a dormire e non si svegliò mai più.",
+        "quote_raw": "Si era svegliato alle nove, aveva lavorato per un po' nella sua stanza e poi aveva detto che aveva sonno. Andò in cucina, preparò un po' di caffè e lo bevve. Ma il caffè non ha aiutato. <br> \"Penso che farò un pisolino\", ha detto. \"Sento un ronzio nella parte posteriore della testa.\" Quelle furono le sue ultime parole. Si rannicchiò nel letto, andò a dormire e non si svegliò mai più.",
         "title": "Salice cieco, donna addormentata",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -262,9 +262,9 @@
     {
         "time": "09:00",
         "quote_first": "Una mosca ronzò, l'orologio a muro cominciò a suonare. Dopo che i ",
-        "quote_last": " colpi d'oro svanirono, il capitano del distretto iniziò. \"Come sta il signor colonnello Marek?\"<br/> \"Grazie, papà, sta bene.\"<br/> \"Ancora debole in geometria?\"<br/> \"Grazie, papà, un po' meglio.\"<br/> /> \"Leggi qualche libro?\"<br/> \"Sissignore, papà.\"",
+        "quote_last": " colpi d'oro svanirono, il capitano del distretto iniziò. \"Come sta il signor colonnello Marek?\"<br> \"Grazie, papà, sta bene.\"<br> \"Ancora debole in geometria?\"<br> \"Grazie, papà, un po' meglio.\"<br> /> \"Leggi qualche libro?\"<br> \"Sissignore, papà.\"",
         "quote_time_case": "nove",
-        "quote_raw": "Una mosca ronzò, l'orologio a muro cominciò a suonare. Dopo che i nove colpi d'oro svanirono, il capitano del distretto iniziò. \"Come sta il signor colonnello Marek?\"<br/> \"Grazie, papà, sta bene.\"<br/> \"Ancora debole in geometria?\"<br/> \"Grazie, papà, un po' meglio.\"<br/> /> \"Leggi qualche libro?\"<br/> \"Sissignore, papà.\"",
+        "quote_raw": "Una mosca ronzò, l'orologio a muro cominciò a suonare. Dopo che i nove colpi d'oro svanirono, il capitano del distretto iniziò. \"Come sta il signor colonnello Marek?\"<br> \"Grazie, papà, sta bene.\"<br> \"Ancora debole in geometria?\"<br> \"Grazie, papà, un po' meglio.\"<br> /> \"Leggi qualche libro?\"<br> \"Sissignore, papà.\"",
         "title": "La marcia di Radetzky",
         "author": "Joseph Roth",
         "sfw": "unknown"
@@ -351,10 +351,10 @@
     },
     {
         "time": "09:00",
-        "quote_first": "Dove Saint Mary Woolnoth segnava le ore<br/>Con un suono morto sull'ultimo rintocco delle ",
+        "quote_first": "Dove Saint Mary Woolnoth segnava le ore<br>Con un suono morto sull'ultimo rintocco delle ",
         "quote_last": ".",
         "quote_time_case": "nove",
-        "quote_raw": "Dove Saint Mary Woolnoth segnava le ore<br/>Con un suono morto sull'ultimo rintocco delle nove.",
+        "quote_raw": "Dove Saint Mary Woolnoth segnava le ore<br>Con un suono morto sull'ultimo rintocco delle nove.",
         "title": "La terra desolata",
         "author": "T.S. Eliot",
         "sfw": "unknown"

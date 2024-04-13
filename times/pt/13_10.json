@@ -31,10 +31,10 @@
     },
     {
         "time": "13:10",
-        "quote_first": "Já passava da uma hora e dez.”<br/>“Você tem certeza disso?",
+        "quote_first": "Já passava da uma hora e dez.”<br>“Você tem certeza disso?",
         "quote_last": "",
         "quote_time_case": "* dez minutos depois da uma",
-        "quote_raw": "Já passava da uma hora e dez.”<br/>“Você tem certeza disso?",
+        "quote_raw": "Já passava da uma hora e dez.”<br>“Você tem certeza disso?",
         "title": "Morte no Nilo",
         "author": "Agatha Christie",
         "sfw": "unknown"

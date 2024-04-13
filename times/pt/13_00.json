@@ -41,10 +41,10 @@
     },
     {
         "time": "13:00",
-        "quote_first": "Uma banheira foi trazida para derreter a neve e fazer argamassa. Eles ouviram alguém dizendo que já era meio-dia.<br/>“Com certeza será meio-dia”, anunciou Shukhov. “O sol já está no topo.”<br/>“Se estiver”, retrucou o capitão, “é ",
-        "quote_last": ", não meio-dia.”<br/>“Como você entende isso?” Shukhov perguntou surpreso. “Os velhos dizem que o sol está mais alto na hora do jantar.”<br/> “Talvez fosse na época deles!” o capitão retrucou. “Desde então, foi decretado que o sol atinge seu ponto mais alto à uma hora.”<br/>“Quem decretou isso?”<br/>“O governo soviético.”",
+        "quote_first": "Uma banheira foi trazida para derreter a neve e fazer argamassa. Eles ouviram alguém dizendo que já era meio-dia.<br>“Com certeza será meio-dia”, anunciou Shukhov. “O sol já está no topo.”<br>“Se estiver”, retrucou o capitão, “é ",
+        "quote_last": ", não meio-dia.”<br>“Como você entende isso?” Shukhov perguntou surpreso. “Os velhos dizem que o sol está mais alto na hora do jantar.”<br> “Talvez fosse na época deles!” o capitão retrucou. “Desde então, foi decretado que o sol atinge seu ponto mais alto à uma hora.”<br>“Quem decretou isso?”<br>“O governo soviético.”",
         "quote_time_case": "uma hora",
-        "quote_raw": "Uma banheira foi trazida para derreter a neve e fazer argamassa. Eles ouviram alguém dizendo que já era meio-dia.<br/>“Com certeza será meio-dia”, anunciou Shukhov. “O sol já está no topo.”<br/>“Se estiver”, retrucou o capitão, “é uma hora, não meio-dia.”<br/>“Como você entende isso?” Shukhov perguntou surpreso. “Os velhos dizem que o sol está mais alto na hora do jantar.”<br/> “Talvez fosse na época deles!” o capitão retrucou. “Desde então, foi decretado que o sol atinge seu ponto mais alto à uma hora.”<br/>“Quem decretou isso?”<br/>“O governo soviético.”",
+        "quote_raw": "Uma banheira foi trazida para derreter a neve e fazer argamassa. Eles ouviram alguém dizendo que já era meio-dia.<br>“Com certeza será meio-dia”, anunciou Shukhov. “O sol já está no topo.”<br>“Se estiver”, retrucou o capitão, “é uma hora, não meio-dia.”<br>“Como você entende isso?” Shukhov perguntou surpreso. “Os velhos dizem que o sol está mais alto na hora do jantar.”<br> “Talvez fosse na época deles!” o capitão retrucou. “Desde então, foi decretado que o sol atinge seu ponto mais alto à uma hora.”<br>“Quem decretou isso?”<br>“O governo soviético.”",
         "title": "Um dia na vida de Ivan Denosovich",
         "author": "Aleksandr Solzhenitsyn",
         "sfw": "unknown"
@@ -132,9 +132,9 @@
     {
         "time": "13:00",
         "quote_first": "Acho, disse ele, com ",
-        "quote_last": " sorriso triunfante, \"que posso esperar encontrar com segurança a pessoa que procuro na sala de jantar, bela senhora.\"<br/>\"Pode haver mais de uma.\"<br/> \"Quem quer que esteja lá, quando o relógio bater <time/>uma</time>, será seguido por um dos meus homens; destes, um, ou talvez dois, ou mesmo três, partirão para a França amanhã. Um destes será o `Scarlet Pimpernel'.\"",
+        "quote_last": " sorriso triunfante, \"que posso esperar encontrar com segurança a pessoa que procuro na sala de jantar, bela senhora.\"<br>\"Pode haver mais de uma.\"<br> \"Quem quer que esteja lá, quando o relógio bater <time/>uma</time>, será seguido por um dos meus homens; destes, um, ou talvez dois, ou mesmo três, partirão para a França amanhã. Um destes será o `Scarlet Pimpernel'.\"",
         "quote_time_case": "um",
-        "quote_raw": "Acho, disse ele, com um sorriso triunfante, \"que posso esperar encontrar com segurança a pessoa que procuro na sala de jantar, bela senhora.\"<br/>\"Pode haver mais de uma.\"<br/> \"Quem quer que esteja lá, quando o relógio bater <time/>uma</time>, será seguido por um dos meus homens; destes, um, ou talvez dois, ou mesmo três, partirão para a França amanhã. Um destes será o `Scarlet Pimpernel'.\"",
+        "quote_raw": "Acho, disse ele, com um sorriso triunfante, \"que posso esperar encontrar com segurança a pessoa que procuro na sala de jantar, bela senhora.\"<br>\"Pode haver mais de uma.\"<br> \"Quem quer que esteja lá, quando o relógio bater <time/>uma</time>, será seguido por um dos meus homens; destes, um, ou talvez dois, ou mesmo três, partirão para a França amanhã. Um destes será o `Scarlet Pimpernel'.\"",
         "title": "O Pimpinela Escarlate",
         "author": "Baroness Orczy",
         "sfw": "unknown"

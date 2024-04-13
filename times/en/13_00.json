@@ -41,10 +41,10 @@
     },
     {
         "time": "13:00",
-        "quote_first": "A tub was brought in to melt snow for mortar. They heard somebody saying it was twelve o’clock already.<br/>“It’s sure to be twelve,” Shukhov announced. “The sun’s over the top already.”<br/>“If it is,” the captain retorted, “it’s ",
-        "quote_last": ", not twelve.”<br/>“How do you make that out?” Shukhov asked in surprise. “The old folk say the sun is highest at dinnertime.”<br/> “Maybe it was in their day!” the captain snapped back. “Since then it’s been decreed that the sun is highest at one o’clock.”<br/>“Who decreed that?”<br/>“The Soviet government.”",
+        "quote_first": "A tub was brought in to melt snow for mortar. They heard somebody saying it was twelve o’clock already.<br>“It’s sure to be twelve,” Shukhov announced. “The sun’s over the top already.”<br>“If it is,” the captain retorted, “it’s ",
+        "quote_last": ", not twelve.”<br>“How do you make that out?” Shukhov asked in surprise. “The old folk say the sun is highest at dinnertime.”<br> “Maybe it was in their day!” the captain snapped back. “Since then it’s been decreed that the sun is highest at one o’clock.”<br>“Who decreed that?”<br>“The Soviet government.”",
         "quote_time_case": "one o’clock",
-        "quote_raw": "A tub was brought in to melt snow for mortar. They heard somebody saying it was twelve o’clock already.<br/>“It’s sure to be twelve,” Shukhov announced. “The sun’s over the top already.”<br/>“If it is,” the captain retorted, “it’s one o’clock, not twelve.”<br/>“How do you make that out?” Shukhov asked in surprise. “The old folk say the sun is highest at dinnertime.”<br/> “Maybe it was in their day!” the captain snapped back. “Since then it’s been decreed that the sun is highest at one o’clock.”<br/>“Who decreed that?”<br/>“The Soviet government.”",
+        "quote_raw": "A tub was brought in to melt snow for mortar. They heard somebody saying it was twelve o’clock already.<br>“It’s sure to be twelve,” Shukhov announced. “The sun’s over the top already.”<br>“If it is,” the captain retorted, “it’s one o’clock, not twelve.”<br>“How do you make that out?” Shukhov asked in surprise. “The old folk say the sun is highest at dinnertime.”<br> “Maybe it was in their day!” the captain snapped back. “Since then it’s been decreed that the sun is highest at one o’clock.”<br>“Who decreed that?”<br>“The Soviet government.”",
         "title": "One Day in the Life of Ivan Denosovich",
         "author": "Aleksandr Solzhenitsyn",
         "sfw": "unknown"
@@ -131,10 +131,10 @@
     },
     {
         "time": "13:00",
-        "quote_first": "I think, he said, with a triumphant smile, \"that I may safely expect to find the person I seek in the dining-room, fair lady.\"<br/>\"There may be more than ",
-        "quote_last": ".\"<br/>\"Whoever is there, as the clock strikes <time/>one</time>, will be shadowed by one of my men; of these, one, or perhaps two, or even three, will leave for France to-morrow. One of these will be the `Scarlet Pimpernel.'\"",
+        "quote_first": "I think, he said, with a triumphant smile, \"that I may safely expect to find the person I seek in the dining-room, fair lady.\"<br>\"There may be more than ",
+        "quote_last": ".\"<br>\"Whoever is there, as the clock strikes <time/>one</time>, will be shadowed by one of my men; of these, one, or perhaps two, or even three, will leave for France to-morrow. One of these will be the `Scarlet Pimpernel.'\"",
         "quote_time_case": "one",
-        "quote_raw": "I think, he said, with a triumphant smile, \"that I may safely expect to find the person I seek in the dining-room, fair lady.\"<br/>\"There may be more than one.\"<br/>\"Whoever is there, as the clock strikes <time/>one</time>, will be shadowed by one of my men; of these, one, or perhaps two, or even three, will leave for France to-morrow. One of these will be the `Scarlet Pimpernel.'\"",
+        "quote_raw": "I think, he said, with a triumphant smile, \"that I may safely expect to find the person I seek in the dining-room, fair lady.\"<br>\"There may be more than one.\"<br>\"Whoever is there, as the clock strikes <time/>one</time>, will be shadowed by one of my men; of these, one, or perhaps two, or even three, will leave for France to-morrow. One of these will be the `Scarlet Pimpernel.'\"",
         "title": "The Scarlet Pimpernel",
         "author": "Baroness Orczy",
         "sfw": "unknown"

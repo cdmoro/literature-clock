@@ -172,9 +172,9 @@
     {
         "time": "23:00",
         "quote_first": "Estará aquí exactamente ",
-        "quote_last": ", señor.<br/>En la barra, parejas desnudas habían empezado a bailar.",
+        "quote_last": ", señor.<br>En la barra, parejas desnudas habían empezado a bailar.",
         "quote_time_case": "a las once",
-        "quote_raw": "Estará aquí exactamente a las once, señor.<br/>En la barra, parejas desnudas habían empezado a bailar.",
+        "quote_raw": "Estará aquí exactamente a las once, señor.<br>En la barra, parejas desnudas habían empezado a bailar.",
         "title": "La gente de Smiley",
         "author": "John le Carré",
         "sfw": "nsfw"
@@ -201,10 +201,10 @@
     },
     {
         "time": "23:00",
-        "quote_first": "Él dice: \"Han matado a Jan. Lávense\".<br/>\"¿La maleta?\" pregunto.<br/>\"Llévatelo otra vez. No queremos tener nada que ver con eso ahora. Toma el expreso de las once.\"<br/> \"Pero esto no termina aquí....\"<br />\"Lo hará. Ve a la vía seis. Enfrente de la estación de carga. Tienes tres minutos.\"<br/>\"Pero...\"<br/>\"Muévete o tendré que arrestarte\".",
+        "quote_first": "Él dice: \"Han matado a Jan. Lávense\".<br>\"¿La maleta?\" pregunto.<br>\"Llévatelo otra vez. No queremos tener nada que ver con eso ahora. Toma el expreso de las once.\"<br> \"Pero esto no termina aquí....\"<br>\"Lo hará. Ve a la vía seis. Enfrente de la estación de carga. Tienes tres minutos.\"<br>\"Pero...\"<br>\"Muévete o tendré que arrestarte\".",
         "quote_last": "",
         "quote_time_case": "* once en punto",
-        "quote_raw": "Él dice: \"Han matado a Jan. Lávense\".<br/>\"¿La maleta?\" pregunto.<br/>\"Llévatelo otra vez. No queremos tener nada que ver con eso ahora. Toma el expreso de las once.\"<br/> \"Pero esto no termina aquí....\"<br />\"Lo hará. Ve a la vía seis. Enfrente de la estación de carga. Tienes tres minutos.\"<br/>\"Pero...\"<br/>\"Muévete o tendré que arrestarte\".",
+        "quote_raw": "Él dice: \"Han matado a Jan. Lávense\".<br>\"¿La maleta?\" pregunto.<br>\"Llévatelo otra vez. No queremos tener nada que ver con eso ahora. Toma el expreso de las once.\"<br> \"Pero esto no termina aquí....\"<br>\"Lo hará. Ve a la vía seis. Enfrente de la estación de carga. Tienes tres minutos.\"<br>\"Pero...\"<br>\"Muévete o tendré que arrestarte\".",
         "title": "Si en una noche de invierno un viajero",
         "author": "Italo Calvino",
         "sfw": "unknown"

@@ -22,7 +22,7 @@ The clock can be controlled using URL parameters, these parameters will overwrit
 - `work`: activate Work mode
 - `locale`: set the locale
 - `theme`: set the theme
-<!-- - `variant`: set the variant (light, dark, or system) -->
+<!-- - `variant`: set the variant (light, dark, or auto) -->
 - `time`: get the quotes for a particular time ([link](https://literatureclock.netlify.app/?time=12:30))
 - `quote`: test a quote before submitting it ([link](https://literatureclock.netlify.app/?quote=Hi%20mom!%20I%27m%20part%20of%20the%20Literature%20Clock!)). You don't need to escape the quote by adding the special characters, just write the quote and the browser will add them.
 

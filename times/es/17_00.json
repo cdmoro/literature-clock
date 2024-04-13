@@ -21,10 +21,10 @@
     },
     {
         "time": "17:00",
-        "quote_first": "“¿Te veré de nuevo antes de mi partida?” preguntó Albert.<br/>“Eso será según las circunstancias; ¿Cuándo sales?”<br/>“Mañana por la tarde, a las 5 en punto”.",
+        "quote_first": "“¿Te veré de nuevo antes de mi partida?” preguntó Albert.<br>“Eso será según las circunstancias; ¿Cuándo sales?”<br>“Mañana por la tarde, a las 5 en punto”.",
         "quote_last": "",
         "quote_time_case": "* 5:00",
-        "quote_raw": "“¿Te veré de nuevo antes de mi partida?” preguntó Albert.<br/>“Eso será según las circunstancias; ¿Cuándo sales?”<br/>“Mañana por la tarde, a las 5 en punto”.",
+        "quote_raw": "“¿Te veré de nuevo antes de mi partida?” preguntó Albert.<br>“Eso será según las circunstancias; ¿Cuándo sales?”<br>“Mañana por la tarde, a las 5 en punto”.",
         "title": "El conde de monte cristo",
         "author": "Alexandre Dumas",
         "sfw": "unknown"
@@ -311,10 +311,10 @@
     },
     {
         "time": "17:00",
-        "quote_first": "No he ido a la iglesia en más de un año.<br/>\"¿Finalmente estás preocupado por tu alma?\"<br/>\"Por favor\", dijo Cork<br/>\"Por supuesto que podemos hablar. ¿Cuándo?\"<br />\"Mañana. Quizás a última hora de la tarde. ¿Dices que son las cinco?\"<br/>\"Que sean las seis\", sugirió el sacerdote. \"Mi oficina.\"<br/>\"Allí estaré\", prometió Cork.",
+        "quote_first": "No he ido a la iglesia en más de un año.<br>\"¿Finalmente estás preocupado por tu alma?\"<br>\"Por favor\", dijo Cork<br>\"Por supuesto que podemos hablar. ¿Cuándo?\"<br>\"Mañana. Quizás a última hora de la tarde. ¿Dices que son las cinco?\"<br>\"Que sean las seis\", sugirió el sacerdote. \"Mi oficina.\"<br>\"Allí estaré\", prometió Cork.",
         "quote_last": "",
         "quote_time_case": "* cinco en punto",
-        "quote_raw": "No he ido a la iglesia en más de un año.<br/>\"¿Finalmente estás preocupado por tu alma?\"<br/>\"Por favor\", dijo Cork<br/>\"Por supuesto que podemos hablar. ¿Cuándo?\"<br />\"Mañana. Quizás a última hora de la tarde. ¿Dices que son las cinco?\"<br/>\"Que sean las seis\", sugirió el sacerdote. \"Mi oficina.\"<br/>\"Allí estaré\", prometió Cork.",
+        "quote_raw": "No he ido a la iglesia en más de un año.<br>\"¿Finalmente estás preocupado por tu alma?\"<br>\"Por favor\", dijo Cork<br>\"Por supuesto que podemos hablar. ¿Cuándo?\"<br>\"Mañana. Quizás a última hora de la tarde. ¿Dices que son las cinco?\"<br>\"Que sean las seis\", sugirió el sacerdote. \"Mi oficina.\"<br>\"Allí estaré\", prometió Cork.",
         "title": "lago de hierro",
         "author": "William Kent Krueger",
         "sfw": "sfw"
