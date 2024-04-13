@@ -8,18 +8,23 @@ Clock using time quotes from the literature, in multiple languages, themes and m
 - Work mode: only shows quotes that are safe for work ([link](https://literatureclock.netlify.app/?work=true))
 - Languages: supports English, Spanish, Portuguese, French and Italian
 - Multilanguage: each minute you'll see a quote in a different language, isn't that cool? ([link](https://literatureclock.netlify.app/?locale=multi))
-- Themes: the clock has color themes and special themes and each theme has light and dark variants
-- Progressbar: At the bottom of the page there is a progressbar, so you can now when a quote is about to change :D
+- Themes: the clock has color themes and `special themes` and each theme has light and dark variants
+- Progressbar: At the bottom of the page there is a `progressbar`, so you can now when a quote is about to change :D
 - Responsive: no matter how long is a quote, it always look good in desktop and mobile
-- All the properties could be overwritten or managed in the URL as query params, check it out! https://literatureclock.netlify.app/?zen=true&work=true&locale=multi&theme=festive-light
-- All the quote elements have aria-labels to improve the Accessibility
+- All the quote elements have `aria-labels` to improve the Accessibility
+- The configurations is saved in the browser's local storage
 
-### Test features
+## Parameteres
 
-This features allows to test the clock in different ways.
+The clock can be controlled using URL parameters, these parameters will overwrite the existing configuration
 
-- Time (`?time=23:06`): get the quotes for a particular time ([link](https://literatureclock.netlify.app/?time=12:30))
-- Quote (`?quote=My awesome quote`): test a quote before submit it ([link](https://literatureclock.netlify.app/?quote=Hi%20mom!%20I%27m%20part%20of%20the%20Literature%20Clock!)). You don't need to escape the quote by adding the special characters, just write the quote and the browser will add them.
+- `zen`: activate Zen mode
+- `work`: activate Work mode
+- `locale`: set the locale
+- `theme`: set the theme
+<!-- - `variant`: set the variant (light, dark or system) -->
+- `time`: get the quotes for a particular time ([link](https://literatureclock.netlify.app/?time=12:30))
+- `quote`: test a quote before submit it ([link](https://literatureclock.netlify.app/?quote=Hi%20mom!%20I%27m%20part%20of%20the%20Literature%20Clock!)). You don't need to escape the quote by adding the special characters, just write the quote and the browser will add them.
 
 ## Languages
 
@@ -60,6 +65,14 @@ At the moment, the clock has seven color themes and four special themes, we expe
 | Light  | Dark  |
 |---|---|
 | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/e31dfc33-bf30-4025-818b-285479d3af4b) | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/83197165-506b-4d0d-9974-92b066917c35)  |
+
+## Development
+
+To run the clock the easiest way is to create an HTTP server and open `index.html`. If you are a VSCode user, you might want to use the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension.
+
+## Quotes: CSV to JSON
+
+I use Python to generate the JSON files (one per time if the time has quotes) with the quotes. 
 
 ## Contact
 
