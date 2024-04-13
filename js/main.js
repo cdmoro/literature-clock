@@ -131,8 +131,12 @@ async function updateTime(testTime) {
     if (!testTime && !testQuote) {
         const percentage = (seconds / 60) * 100;
         quoteTimeBar.style.width = `${percentage.toFixed(2)}%`;
-        quoteTimeBar.style.transition = seconds === 0 || pauseTimeBar ? 'none' : 'width 1s linear';
         quoteTimeBar.style.display = pauseTimeBar ? 'none' : 'block';
+        if (seconds === 0 || pauseTimeBar) {
+            quoteTimeBar.style.transition = 'none';
+        } else {
+            quoteTImeBar.style.removeProperty('transition');
+        }
     }
 
     if (lastTime !== time) {
