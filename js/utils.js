@@ -1,94 +1,88 @@
 export const FALLBACK_QUOTES = {
     en: [
         {
-            time: "",
             quote_first: "Error ",
             quote_last: ": quote not found.",
-            quote_time_case: "",
             title: "Internet Explorer",
             author: "1995-2022",
             sfw: true
         },
+        {
+            quote_first: "Captain's log:<br/>We are still looking for a quote for ",
+            quote_last: ".",
+            title: "Moby Dick",
+            author: "Captain Ahab",
+            sfw: true
+        },
+
     ],
     es: [
         {
-            time: "",
-            quote_first: "Seguimos buscando una cita para las ",
-            quote_last: ".",
-            quote_time_case: "",
-            title: "El Quijote",
-            author: "Pierre Menard",
-            sfw: true
-        },
-        {
-            time: "",
             quote_first: "Error ",
-            quote_last: ": novela de Borges no encontrada.",
-            quote_time_case: "",
-            title: "The Anglo-American Cyclopaedia",
-            author: "Vol. XXVI",
+            quote_last: ": quote not found.",
+            title: "Internet Explorer",
+            author: "1995-2022",
             sfw: true
         },
         {
-            time: "",
-            quote_first: "",
-            quote_last: " ascensión derecha, 14 grados, declinación 22 minutos... no hay cita.",
-            quote_time_case: "",
-            title: "Seymour Skinner",
-            author: "Los Simpsons",
-            sfw: true
-        },
-        {
-            time: "",
-            quote_first: "Bitácora del Capitán:<br>",
-            quote_last: " hrs:  Atardecer pintoresco sobre el horizonte oeste. Se mantienen guardias en cubierta para vigilancia nocturna. Aún no hay novedades de la cita.",
-            quote_time_case: "",
+            quote_first: "Bitácora del Capitán:<br/>Seguimos buscando una cita para las ",
+            quote_last: ".",
             title: "Moby Dick",
-            author: "Capitán Ahab",
+            author: "Captain Ahab",
             sfw: true
         },
-        {
-            time: "",
-            quote_first: "Ladran, ",
-            quote_last: ", señal que no hay cita.",
-            quote_time_case: "",
-            title: "El Quijote",
-            author: "Pierre Menard",
-            sfw: true
-        }
     ],
     pt: [
         {
-            time: "",
             quote_first: "Erro ",
             quote_last: ": citação não encontrada.",
-            quote_time_case: "",
             title: "Internet Explorer",
             author: "1995-2022",
             sfw: true
         },
+        {
+            quote_first: "Registro do capitão:<br/>Ainda estamos procurando uma data para o ",
+            quote_last: ".",
+            título: "Moby Dick",
+            autor: "Capitão Ahab",
+            sfw: true
+        },
+
     ],
     fr: [
         {
-            time: "",
             quote_first: "Erreur ",
             quote_last: ": citation non trouvée.",
-            quote_time_case: "",
             title: "Internet Explorer",
             author: "1995-2022",
             sfw: true
         },
+        {
+            quote_first: "Journal du capitaine:<br/>Nous sommes toujours à la recherche d'una citation pour ",
+            quote_last: ".",
+            title: "Moby Dick",
+            auteur: "Capitaine Achab",
+            sfw: true
+        },
+
     ],
     it: [
         {
-            time: "",
             quote_first: "Errore ",
             quote_last: ": citazione non trovata.",
-            quote_time_case: "",
+            quote_time_case: ".",
             title: "Internet Explorer",
             author: "1995-2022",
             sfw: true
         },
+        {
+            quote_first: "Diario del capitano:<br/>Stiamo ancora cercando una data per il ",
+            quote_last: ".",
+            title: "Moby Dick",
+            autore: "Capitano Achab",
+            sfw: true
+        },
+
     ],
 };
 
@@ -98,6 +92,29 @@ export function getTime() {
     const now = new Date();
     const hours = now.getHours();
     const minutes = now.getMinutes();
-    
+
     return testTime || `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+}
+
+export function updateGHLinks(time, quote, LOCALES) {
+    const locale = document.documentElement.lang;
+    const addQuoteUrl = new URL('https://github.com/cdmoro/literature-clock/issues/new');
+    addQuoteUrl.searchParams.set('template', `add-quote.yml`);
+    addQuoteUrl.searchParams.set('labels', 'add-quote');
+    addQuoteUrl.searchParams.set('title', `[${time}][${locale.toUpperCase()}] ${LOCALES.en.add_quote}`);
+    const addQuoteLink = document.getElementById("add-quote");
+    addQuoteLink.href = addQuoteUrl.href;
+
+    const reportErrorUrl = new URL('https://github.com/cdmoro/literature-clock/issues/new');
+    reportErrorUrl.searchParams.set('template', `quote-error.yml`);
+    reportErrorUrl.searchParams.set('title', `[${time}][${locale.toUpperCase()}] ${LOCALES.en.report_error}`);
+    reportErrorUrl.searchParams.set('labels', 'bug');
+    reportErrorUrl.searchParams.set('time', time);
+    reportErrorUrl.searchParams.set('book', quote.title);
+    reportErrorUrl.searchParams.set('author', quote.author);
+    if (quote.quote_raw) {
+        reportErrorUrl.searchParams.set('quote', quote.quote_raw.replace(/<br\/>|\n/g, ' '));
+    }
+    const reportError = document.getElementById('report-error');
+    reportError.href = reportErrorUrl.href;
 }

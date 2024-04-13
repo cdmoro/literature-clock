@@ -52,16 +52,16 @@ blockquote p {
     padding-bottom: .5rem;
 }
 
-.quote-xl blockquote p {
+blockquote.quote-xl p {
     font-size: var(--quote-xl-font-size, 2.7vw);
 }
 
-.quote-xxl blockquote p {
+blockquote.quote-xxl p {
     font-size: var(--quote-xxl-font-size, 2vw);
 }
 
-blockquote:before,
-blockquote:after {
+blockquote[aria-label]:before,
+blockquote[aria-label]:after {
     position: absolute;
     color: #4f4e4991;
     font-size: 8rem;
@@ -69,13 +69,13 @@ blockquote:after {
     height: 4rem;
 }
 
-blockquote:before {
+blockquote[aria-label]:before {
     content: '“';
     left: -5rem;
     top: -2rem;
 }
 
-blockquote:after {
+blockquote[aria-label]:after {
     content: '”';
     right: -5rem;
     bottom: 1rem;
@@ -171,11 +171,6 @@ button:focus {
 }
 
 #exit-zen {
-    position: fixed;
-    left: 50%;
-    bottom: 0;
-    transform: translate(-50%, 0);
-    padding: 1rem;
     font-size: 1.5rem;
     text-decoration: none;
     display: none;
@@ -221,11 +216,11 @@ footer {
         font-size: 1.9rem;
     }
 
-    .quote-xl blockquote p {
+    blockquote.quote-xl  p {
         font-size: 1.7rem;
     }
 
-    .quote-xxl blockquote p {
+    blockquote.quote-xxl  p {
         font-size: 1.5rem;
     }
 

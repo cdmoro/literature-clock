@@ -2,11 +2,10 @@ import { getLocale, setLocale, getStrings, getRandomLocale, LOCALES } from './lo
 import { setTheme, setVariant } from './themes.js';
 import { initZenMode, setZenMode } from './zenMode.js';
 import { initWorkMode, isWorkMode, toggleWorkMode } from './workMode.js';
-import { FALLBACK_QUOTES, getTime } from './utils.js';
+import { FALLBACK_QUOTES, getTime, updateGHLinks } from './utils.js';
 
 const clock = document.getElementById("clock");
 const quoteTimeBar = document.getElementById("quote-time-bar");
-const addQuoteLink = document.getElementById("add-quote");
 const urlParams = new URLSearchParams(window.location.search);
 const testTime = urlParams.get('time');
 const testQuote = urlParams.get('quote');
@@ -58,6 +57,8 @@ async function updateQuote(time) {
 
     blockquote.classList.add(`quote-${lengthClass}`);
 
+    updateGHLinks(time, quote, LOCALES);
+
     clock.innerHTML = '';
     clock.appendChild(blockquote);
 } 
@@ -94,22 +95,6 @@ function getQuote(quotes, time) {
     const random_quote_index = Math.floor(Math.random() * quotes.length);
     const quote = Object.assign({}, quotes[random_quote_index]);
 
-    const addQuoteUrl = new URL('https://github.com/cdmoro/literature-clock/issues/new');
-    addQuoteUrl.searchParams.set('template', `add-quote.yml`);
-    addQuoteUrl.searchParams.set('labels', 'add-quote');
-    addQuoteUrl.searchParams.set('title', `[${time}][${locale.toUpperCase()}] ${LOCALES.en.add_quote}`);
-
-    const reportErrorUrl = new URL('https://github.com/cdmoro/literature-clock/issues/new');
-    reportErrorUrl.searchParams.set('template', `quote-error.yml`);
-    reportErrorUrl.searchParams.set('title', `[${time}][${locale.toUpperCase()}] ${LOCALES.en.report_error}`);
-    reportErrorUrl.searchParams.set('labels', 'bug');
-    reportErrorUrl.searchParams.set('time', time);
-    reportErrorUrl.searchParams.set('book', quote.title);
-    reportErrorUrl.searchParams.set('author', quote.author);
-    reportErrorUrl.searchParams.set('quote', document.querySelector('blockquote p').textContent);
-    const reportError = document.getElementById('report-error');
-    reportError.href = reportErrorUrl.href;
-
     if (!quote.quote_time_case) {
         quote.time = time;
         quote.quote_time_case = time;
@@ -119,8 +104,6 @@ function getQuote(quotes, time) {
         quote.title = LOCALES[locale].title;
         quote.author = LOCALES[locale].author;
     }
-
-    addQuoteLink.href = addQuoteUrl.href;
 
     return quote;
 }
