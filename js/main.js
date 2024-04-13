@@ -88,18 +88,18 @@ async function getQuotes(time) {
 }
 
 function getQuote(quotes, time) {
-    const locale = localStorage.getItem('locale') === 'multi' ? 'XX' : localStorage.getItem('locale').toLocaleUpperCase();
+    const locale = document.documentElement.lang;
     const random_quote_index = Math.floor(Math.random() * quotes.length);
     const quote = Object.assign({}, quotes[random_quote_index]);
 
     const addQuoteUrl = new URL('https://github.com/cdmoro/literature-clock/issues/new');
     addQuoteUrl.searchParams.set('template', `add-quote.yml`);
     addQuoteUrl.searchParams.set('labels', 'add-quote');
-    addQuoteUrl.searchParams.set('title', `[${time}][${locale}] ${LOCALES.en.add_quote}`);
+    addQuoteUrl.searchParams.set('title', `[${time}][${locale.toUpperCase()}] ${LOCALES.en.add_quote}`);
 
     const reportErrorUrl = new URL('https://github.com/cdmoro/literature-clock/issues/new');
     reportErrorUrl.searchParams.set('template', `quote-error.yml`);
-    reportErrorUrl.searchParams.set('title', `[${time}][${locale}] ${LOCALES.en.report_error}`);
+    reportErrorUrl.searchParams.set('title', `[${time}][${locale.toUpperCase()}] ${LOCALES.en.report_error}`);
     reportErrorUrl.searchParams.set('labels', 'bug');
     reportErrorUrl.searchParams.set('time', time);
     reportErrorUrl.searchParams.set('book', quote.title);
@@ -114,8 +114,8 @@ function getQuote(quotes, time) {
     }
 
     if (testQuote) {
-        quote.title = LOCALES.en.title;
-        quote.author = LOCALES.en.author;
+        quote.title = LOCALES[locale].title;
+        quote.author = LOCALES[locale].author;
     }
 
     addQuoteLink.href = addQuoteUrl.href;
@@ -129,7 +129,8 @@ async function updateTime(testTime) {
     const seconds = now.getSeconds();
 
     if (!testTime && !testQuote) {
-        quoteTimeBar.style.width = `${(seconds / 60) * 100}%`;
+        const percentage = (seconds / 60) * 100;
+        quoteTimeBar.style.width = `${percentage.toFixed(2)}%`;
         quoteTimeBar.style.transition = seconds === 0 || pauseTimeBar ? 'none' : 'width 1s linear';
         quoteTimeBar.style.display = pauseTimeBar ? 'none' : 'block';
     }
