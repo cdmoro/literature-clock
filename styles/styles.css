@@ -109,6 +109,24 @@ select {
     margin: .2rem 0;
 }
 
+select#theme-select {
+    border-start-end-radius: 0;
+    border-end-end-radius: 0;
+}
+
+select#variant-select {
+    border-start-start-radius: 0;
+    border-end-start-radius: 0;
+}
+
+.input-group {
+    display: inline-flex;
+}
+
+.input-group #variant-select {
+    margin-inline-start: -1px;
+}
+
 button {
     font-size: .7rem;
     padding: .25rem .5rem;
@@ -168,10 +186,6 @@ footer {
     text-align: center;
     line-height: 1.5;
     padding: 1rem;
-}
-
-#select-container {
-    display: inline-block;
 }
 
 #contact {

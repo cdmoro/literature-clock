@@ -11,6 +11,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const testTime = urlParams.get('time');
 const testQuote = urlParams.get('quote');
 let lastTime;
+let pauseTimeBar = false;
 
 const QUOTE_SIZE = {
     100: 'xs',
@@ -129,7 +130,8 @@ async function updateTime(testTime) {
 
     if (!testTime && !testQuote) {
         quoteTimeBar.style.width = `${(seconds / 60) * 100}%`;
-        quoteTimeBar.style.transition = seconds === 0 ? 'none' : 'width 1s linear';
+        quoteTimeBar.style.transition = seconds === 0 || pauseTimeBar ? 'none' : 'width 1s linear';
+        quoteTimeBar.style.display = pauseTimeBar ? 'none' : 'block';
     }
 
     if (lastTime !== time) {
@@ -214,6 +216,14 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('exit-zen').addEventListener('click', (e) => {
         e.preventDefault();
         setZenMode(false);
+    });
+
+    window.addEventListener('blur', function() {
+        pauseTimeBar = true;
+    });
+
+    window.addEventListener('focus', function() {
+        pauseTimeBar = false;
     });
     
     document.body.classList.remove('hidden');
