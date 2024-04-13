@@ -2,7 +2,7 @@ const THEME_FONTS = {
     retro: 'VT323',
     elegant: 'Playfair Display',
     festive: 'Borel',
-    bohemian: 'Atma',
+    bohemian: 'Comfortaa',
 };
 
 export function loadFont(fontName) {

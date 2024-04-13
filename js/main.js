@@ -218,13 +218,9 @@ document.addEventListener('DOMContentLoaded', function() {
         setZenMode(false);
     });
 
-    window.addEventListener('blur', function() {
-        pauseTimeBar = true;
-    });
+    window.addEventListener('blur', () => pauseTimeBar = true);
 
-    window.addEventListener('focus', function() {
-        pauseTimeBar = false;
-    });
+    window.addEventListener('focus', () => pauseTimeBar = false);
     
     document.body.classList.remove('hidden');
 
