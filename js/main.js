@@ -39,10 +39,12 @@ async function updateQuote(time) {
 
     blockquote.appendChild(p);
     blockquote.appendChild(cite);
-
     blockquote.setAttribute('aria-label', quote.time);
-    blockquote.setAttribute('aria-description', quote.quote_raw.replace(/<br\/>|\n/g, ' '));
     blockquote.dataset.swf = quote.swf;
+
+    if (quote.quote_raw) {
+        blockquote.setAttribute('aria-description', quote.quote_raw.replace(/<br\/>|\n/g, ' '));
+    }
 
     const quoteLength = p.textContent.length;
 
