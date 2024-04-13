@@ -35,14 +35,19 @@ function getTheme(newTheme) {
     return theme;
 }
 
-export function setTheme(newTheme, updateVariant = true) {
+export function setTheme(newTheme) {
     const themeSelect = document.getElementById('theme-select');
     const variantSelect = document.getElementById('variant-select');
     let theme = getTheme(newTheme);
 
+    if(theme.indexOf('-') === -1 && window.matchMedia) {
+        const preferDarkThemes = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        theme = `${theme}-${preferDarkThemes ? 'dark' : 'light'}`;
+    }
+
     themeSelect.value = theme.split('-')[0];
 
-    if (updateVariant) {
+    if (variantSelect.value !== 'system') {
         variantSelect.value = theme.indexOf('-') >= 0 ? theme.split('-')[1] : 'system';
     }
 
