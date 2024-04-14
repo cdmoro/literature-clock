@@ -96,9 +96,11 @@
 }
 [data-theme=retro-light] {
     --background: #F8F8F8;
+    --background-image: repeating-linear-gradient(var(--background) 38px, var(--background) 0px, rgba(109, 109, 109, 0.2) 41px);
 }
 [data-theme=retro-dark] {
     --background: #2c2c2c;
+    --background-image: repeating-linear-gradient(var(--background) 38px, var(--background) 0px, rgba(109, 109, 109, 0.4) 41px);
 }
 
 [data-theme*=elegant] {
@@ -147,9 +149,9 @@
 }
 [data-theme=handwriting-light] {
     --background: #FEF9E7;
-    --background-image: repeating-linear-gradient(var(--background) 0px, var(--background) 35px, rgba(109, 109, 109, 0.1) 36px);
+    --background-image: repeating-linear-gradient(var(--background) 0px, var(--background) 35px, rgba(109, 109, 109, 0.2) 36px);
 }
 [data-theme=handwriting-dark] {
     --background: #1a1a1a;
-    --background-image: repeating-linear-gradient(var(--background) 0px, var(--background) 35px, rgba(109, 109, 109, 0.1) 36px);
+    --background-image: repeating-linear-gradient(var(--background) 0px, var(--background) 35px, rgba(109, 109, 109, 0.2) 36px);
 }
