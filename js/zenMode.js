@@ -29,8 +29,8 @@ export function setZenMode(checked) {
     localStorage.setItem('zen', checked);
 
     const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('zen')) {
-        urlParams.delete("zen");
+    if (urlParams.has('zen')) {
+        urlParams.delete('zen');
         window.location.search = urlParams.toString();
     }
 }

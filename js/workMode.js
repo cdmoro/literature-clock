@@ -8,9 +8,17 @@ export function initWorkMode() {
     const urlParams = new URLSearchParams(window.location.search);
     const workQueryParam = urlParams.get('work') === 'true';
     const workLocalStorage = localStorage.getItem("work") === 'true';
-    const workMode = workQueryParam || workLocalStorage || false;
+    let workMode = false;
 
-    updateWorkModeLabel(workMode);
+    if (workLocalStorage) {
+        workMode = workLocalStorage;
+    }
+
+    if (urlParams.has('work')) {
+        workMode = workQueryParam;
+    }
+
+    updateWorkModeState(workMode);
     localStorage.setItem('work', workMode);
 }
 
@@ -21,8 +29,15 @@ export function initWorkMode() {
 export function toggleWorkMode() {
     const newState = !isWorkMode();
 
-    updateWorkModeLabel(newState);
     localStorage.setItem('work', newState);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('work')) {
+        urlParams.delete('work');
+        window.location.search = urlParams.toString();
+    }
+
+    updateWorkModeState(newState);
 }
 
 /**
@@ -33,10 +48,7 @@ export function isWorkMode() {
     return localStorage.getItem('work') === 'true';
 }
 
-function updateWorkModeLabel(newState) {
-    const strings = getStrings();
+function updateWorkModeState(newState) {
     const workModeEl = document.getElementById("work-mode");
-
-    workModeEl.textContent = strings.work_mode;
     workModeEl.classList.toggle('active', newState);
 }

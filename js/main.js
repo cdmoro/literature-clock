@@ -182,12 +182,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    document.getElementById('zen-mode').addEventListener('click', (e) => {
-        e.preventDefault();
-        setZenMode(true);
-    });
-    document.getElementById('work-mode').addEventListener('click', (e) => {
-        e.preventDefault();
+    document.getElementById('zen-mode').addEventListener('click', () => setZenMode(true));
+    document.getElementById('work-mode').addEventListener('click', () => {
         toggleWorkMode();
 
         const quote = document.getElementById('quote');

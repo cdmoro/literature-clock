@@ -211,7 +211,7 @@ export const LOCALES = {
 
 const LABELS = {
     'zen-mode': 'zen_mode',
-    'work-mode-label': 'work_mode',
+    'work-mode': 'work_mode',
     'add-quote': 'add_quote',
     'report-error': 'report_error',
     'project': 'project',
