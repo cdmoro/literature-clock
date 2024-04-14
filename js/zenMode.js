@@ -6,7 +6,15 @@ export function initZenMode() {
     const urlParams = new URLSearchParams(window.location.search);
     const zenQueryParam = urlParams.get('zen') === 'true';
     const zenLocalStorage = localStorage.getItem("zen") === 'true';
-    const zenMode = zenQueryParam || zenLocalStorage || false;
+    let zenMode = false;
+
+    if (zenLocalStorage) {
+        zenMode = zenLocalStorage;
+    }
+
+    if (urlParams.has('zen')) {
+        zenMode = zenQueryParam;
+    }
 
     document.body.classList.toggle('zen-mode', zenMode);
     localStorage.setItem('zen', zenMode);
@@ -19,6 +27,12 @@ export function initZenMode() {
 export function setZenMode(checked) {
     document.body.classList.toggle('zen-mode', checked);
     localStorage.setItem('zen', checked);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('zen')) {
+        urlParams.delete("zen");
+        window.location.search = urlParams.toString();
+    }
 }
 
 /**

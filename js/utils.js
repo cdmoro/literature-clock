@@ -1,5 +1,7 @@
+import { LOCALES } from "./locales.js";
+
 export const FALLBACK_QUOTES = {
-    en: [
+    'en-US': [
         {
             quote_first: "Error ",
             quote_last: ": quote not found.",
@@ -16,7 +18,7 @@ export const FALLBACK_QUOTES = {
         },
 
     ],
-    es: [
+    'es-ES': [
         {
             quote_first: "Error ",
             quote_last: ": quote not found.",
@@ -32,7 +34,7 @@ export const FALLBACK_QUOTES = {
             sfw: true
         },
     ],
-    pt: [
+    'pt-BR': [
         {
             quote_first: "Erro ",
             quote_last: ": citação não encontrada.",
@@ -49,7 +51,7 @@ export const FALLBACK_QUOTES = {
         },
 
     ],
-    fr: [
+    'fr-FR': [
         {
             quote_first: "Erreur ",
             quote_last: ": citation non trouvée.",
@@ -66,7 +68,7 @@ export const FALLBACK_QUOTES = {
         },
 
     ],
-    it: [
+    'it-IT': [
         {
             quote_first: "Errore ",
             quote_last: ": citazione non trovata.",
@@ -96,18 +98,17 @@ export function getTime() {
     return testTime || `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
 }
 
-export function updateGHLinks(time, quote, LOCALES) {
-    const locale = document.documentElement.lang;
+export function updateGHLinks(time, quote, locale) {
     const addQuoteUrl = new URL('https://github.com/cdmoro/literature-clock/issues/new');
     addQuoteUrl.searchParams.set('template', `add-quote.yml`);
     addQuoteUrl.searchParams.set('labels', 'add-quote');
-    addQuoteUrl.searchParams.set('title', `[${time}][${locale.toUpperCase()}] ${LOCALES.en.add_quote}`);
+    addQuoteUrl.searchParams.set('title', `[${time}][${locale}] ${LOCALES['en-US'].add_quote}`);
     const addQuoteLink = document.getElementById("add-quote");
     addQuoteLink.href = addQuoteUrl.href;
 
     const reportErrorUrl = new URL('https://github.com/cdmoro/literature-clock/issues/new');
     reportErrorUrl.searchParams.set('template', `quote-error.yml`);
-    reportErrorUrl.searchParams.set('title', `[${time}][${locale.toUpperCase()}] ${LOCALES.en.report_error}`);
+    reportErrorUrl.searchParams.set('title', `[${time}][${locale}] ${LOCALES['en-US'].report_error}`);
     reportErrorUrl.searchParams.set('labels', 'bug');
     reportErrorUrl.searchParams.set('time', time);
     reportErrorUrl.searchParams.set('book', quote.title);

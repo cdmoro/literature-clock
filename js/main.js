@@ -23,7 +23,9 @@ const QUOTE_SIZE = {
 const sizes = Object.keys(QUOTE_SIZE);
 
 async function updateQuote(time) {
-    const quotes = await getQuotes(time);
+    const localeSelect = document.getElementById('locale-select');
+    const locale = localeSelect.value === 'multi' ? getRandomLocale() : getLocale();
+    const quotes = await getQuotes(time, locale);
     const quote = getQuote(quotes, time);
     const quoteText = testQuote || `${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}`
     
@@ -57,16 +59,14 @@ async function updateQuote(time) {
 
     blockquote.classList.add(`quote-${lengthClass}`);
 
-    updateGHLinks(time, quote, LOCALES);
+    updateGHLinks(time, quote, locale);
 
     clock.innerHTML = '';
     clock.appendChild(blockquote);
 } 
 
-async function getQuotes(time) {
-    const localeSelect = document.getElementById('locale-select');
+async function getQuotes(time, locale) {
     const fileName = time.replace(":", "_");
-    const locale = localeSelect.value === 'multi' ? getRandomLocale() : getLocale();
     try {
         const response = await fetch(`../times/${locale}/${fileName}.json`);
 
@@ -91,7 +91,7 @@ async function getQuotes(time) {
 }
 
 function getQuote(quotes, time) {
-    const locale = document.documentElement.lang;
+    const locale = getLocale();
     const random_quote_index = Math.floor(Math.random() * quotes.length);
     const quote = Object.assign({}, quotes[random_quote_index]);
 
@@ -140,27 +140,26 @@ document.addEventListener('DOMContentLoaded', function() {
     setLocale();
 
     document.getElementById('locale-select').addEventListener('change', (e) => {
-        const isMultilingual = e.target.value === 'multi';
-        const newLocale = isMultilingual ? 'en' : e.target.value;
-        const time = getTime();
-        const strings = getStrings(newLocale);
-
-        setLocale(newLocale)
-
-        if (!testQuote) {
-            document.title = `[${time}] ${strings.document_title}`;
-        }
-
         const urlParams = new URLSearchParams(window.location.search);
-
         if (urlParams.get('locale')) {
-            localStorage.setItem('locale', newLocale);
+            localStorage.setItem('locale', e.target.value);
             urlParams.delete("locale");
             window.location.search = urlParams.toString();
             return;
         }
 
-        if (!isMultilingual) {
+        const isMulti = e.target.value === 'multi';
+        const newLocale = isMulti ? 'en-US' : e.target.value;
+        const time = getTime();
+        const strings = getStrings(newLocale);
+
+        setLocale(e.target.value);
+
+        if (!testQuote) {
+            document.title = `[${time}] ${strings.document_title}`;
+        }
+
+        if (!isMulti) {
             updateQuote(time);
         }
     });

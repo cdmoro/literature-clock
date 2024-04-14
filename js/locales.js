@@ -1,5 +1,13 @@
+const DOMINANT_LOCALES = {
+    en: 'en-US',
+    es: 'es-ES',
+    fr: 'fr-FR',
+    it: 'it-IT',
+    pt: 'pt-BR',
+}
+
 export const LOCALES = {
-    en: {
+    'en-US': {
         document_title: 'Literature Clock',
         add_quote: 'Add quote',
         report_error: 'Report error',
@@ -35,14 +43,14 @@ export const LOCALES = {
         dark: 'Dark',
         // Locales
         language: 'Language',
-        en: 'English',
-        es: 'Spanish',
-        pt: 'Portuguese',
-        fr: 'French',
-        it: 'Italian',
+        'en-US': 'English (US)',
+        'es-ES': 'Spanish (ES)',
+        'pt-BR': 'Portuguese (BR)',
+        'fr-FR': 'French',
+        'it-IT': 'Italian',
         multi: 'Multilingual'
     },
-    es: {
+    'es-ES': {
         document_title: 'Reloj Literario',
         add_quote: 'Agregar cita',
         report_error: 'Reportar error',
@@ -74,14 +82,14 @@ export const LOCALES = {
         auto: 'Auto',
         light: 'Claro',
         dark: 'Oscuro',
-        en: 'Inglés',
-        es: 'Español',
-        pt: 'Portugués',
-        fr: 'Francés',
-        it: 'Italiano',
+        'en-US': 'Inglés (US)',
+        'es-ES': 'Español (ES)',
+        'pt-BR': 'Portugués (BR)',
+        'fr-FR': 'Francés',
+        'it-IT': 'Italiano',
         multi: 'Multilingüe'
     },
-    pt: {
+    'pt-BR': {
         document_title: 'Relógio da Literatura',
         add_quote: 'Adicionar citação',
         report_error: 'Informar erro',
@@ -113,14 +121,14 @@ export const LOCALES = {
         auto: 'Auto',
         light: 'Claro',
         dark: 'Escuro',
-        en: 'Inglês',
-        es: 'Espanhol',
-        pt: 'Português',
-        fr: 'Francês',
-        it: 'Italiano',
+        'en-US': 'Inglês (US)',
+        'es-ES': 'Espanhol (ES)',
+        'pt-BR': 'Português (BR)',
+        'fr-FR': 'Francês',
+        'it-IT': 'Italiano',
         multi: 'Multilíngue'
     },
-    fr: {
+    'fr-FR': {
         document_title: 'Horloge de la Littérature',
         add_quote: 'Ajouter une citation',
         report_error: 'Informer l\'erreur',
@@ -152,14 +160,14 @@ export const LOCALES = {
         auto: 'Auto',
         light: 'Clair',
         dark: 'Sombre',
-        en: 'Anglais',
-        es: 'Espagnol',
-        pt: 'Portugais',
-        fr: 'Français',
-        it: 'Italien',
+        'en-US': 'Anglais (US)',
+        'es-ES': 'Espagnol (ES)',
+        'pt-BR': 'Portugais (BR)',
+        'fr-FR': 'Français',
+        'it-IT': 'Italien',
         multi: 'Multilingue'
     },
-    it: {
+    'it-IT': {
         document_title: 'Orologio della Letteratura',
         add_quote: 'Aggiungi citazione',
         report_error: 'Informare l\'errore',
@@ -192,11 +200,11 @@ export const LOCALES = {
         auto: 'Auto',
         light: 'Chiaro',
         dark: 'Scuro',
-        en: 'Inglese',
-        es: 'Spagnolo',
-        pt: 'Portoghese',
-        fr: 'Francese',
-        it: 'Italiano',
+        'en-US': 'Inglese (US)',
+        'es-ES': 'Spagnolo (ES)',
+        'pt-BR': 'Portoghese (BR)',
+        'fr-FR': 'Francese',
+        'it-IT': 'Italiano',
         multi: 'Multilingua'
     }        
 }
@@ -224,7 +232,7 @@ export function getRandomLocale() {
 }
 
 export function getLocale(newLocale) {
-    let locale = navigator.language?.substring(0, 2);
+    let locale = navigator.language;
     const localeLocalStorage = localStorage.getItem("locale");
     const urlParams = new URLSearchParams(window.location.search);
     const localeQueryParam = urlParams.get('locale');
@@ -232,16 +240,22 @@ export function getLocale(newLocale) {
 
     locale = localeQueryParam || newLocale || localeLocalStorage || locale;
 
-    if ((!Object.keys(LOCALES).includes(locale) || !locale.length) && locale !== 'multi') {
-        locale = 'en';
+    if (locale === 'multi') {
+        localStorage.setItem('locale', locale);
+        localeSelect.value = locale;
+        return 'es-US';
     }
 
-    if (localeSelect.value === 'multi') {
-        localStorage.setItem('locale', 'multi');
-    } else {
-        localeSelect.value = locale;
-        localStorage.setItem('locale', locale);
+    if (locale.length === 2) {
+        locale = DOMINANT_LOCALES[locale];
     }
+
+    if (!LOCALES[locale]) {
+        locale = 'en-US';
+    }
+
+    localeSelect.value = locale;
+    localStorage.setItem('locale', locale);
 
     return locale;
 }
@@ -251,14 +265,22 @@ export function getStrings(locale) {
         locale = getLocale();
     }
 
-    return LOCALES[locale] ? LOCALES[locale] : LOCALES['en'];
+    if (locale.length === 2) {
+        locale = DOMINANT_LOCALES[locale];
+    }
+
+    if (!LOCALES[locale]) {
+        return LOCALES['en-US'];
+    }
+
+    return LOCALES[locale];
 }
 
 export function setLocale(newLocale) {
     const locale = getLocale(newLocale);
     const strings = getStrings(locale);
 
-    document.documentElement.lang = locale === 'multi' ? 'en' : locale;
+    document.documentElement.lang = locale === 'multi' ? 'en' : locale.substring(0, 2);
     document.title = strings.document_title;
 
     Object.entries(LABELS).forEach(([id, key]) => {
