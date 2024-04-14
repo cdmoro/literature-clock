@@ -1,0 +1,110 @@
+import { LOCALES, getLocale, getRandomLocale } from "./locales.js";
+import { FALLBACK_QUOTES, getTime, updateGHLinks } from "./utils.js";
+import { isWorkMode } from "./work.js";
+
+const QUOTE_SIZE = {
+  100: "xs",
+  200: "s",
+  300: "m",
+  400: "l",
+  500: "xl",
+  600: "xxl",
+};
+const sizes = Object.keys(QUOTE_SIZE);
+
+async function getQuotes(time, locale) {
+  const fileName = time.replace(":", "_");
+  try {
+    const response = await fetch(`../times/${locale}/${fileName}.json`);
+
+    if (!response.ok) {
+      return FALLBACK_QUOTES[locale];
+    }
+
+    let quotes = await response.json();
+
+    if (isWorkMode()) {
+      quotes = quotes.filter((q) => q.sfw !== "nsfw");
+    }
+
+    if (!quotes.length) {
+      return FALLBACK_QUOTES[locale];
+    }
+
+    return quotes;
+  } catch (error) {
+    return FALLBACK_QUOTES[locale];
+  }
+}
+
+function getQuote(quotes, time) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const testQuote = urlParams.get("quote");
+  const locale = getLocale();
+  const random_quote_index = Math.floor(Math.random() * quotes.length);
+  const quote = Object.assign({}, quotes[random_quote_index]);
+
+  if (!quote.quote_time_case) {
+    quote.time = time;
+    quote.quote_time_case = time;
+  }
+
+  if (testQuote) {
+    quote.title = LOCALES[locale].title;
+    quote.author = LOCALES[locale].author;
+  }
+
+  return quote;
+}
+
+export async function updateQuote(time = getTime()) {
+  const clock = document.getElementById("clock");
+  const urlParams = new URLSearchParams(window.location.search);
+  const testQuote = urlParams.get("quote");
+  const localeSelect = document.getElementById("locale-select");
+  const locale =
+    localeSelect.value === "multi" ? getRandomLocale() : getLocale();
+  const quotes = await getQuotes(time, locale);
+  const quote = getQuote(quotes, time);
+  const quoteText =
+    testQuote ||
+    `${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}`;
+
+  const blockquote = document.createElement("blockquote");
+  blockquote.id = "quote";
+
+  const p = document.createElement("p");
+  p.innerHTML = quoteText.replace(/\n/g, "<br>");
+
+  const cite = document.createElement("cite");
+  cite.innerText = `— ${quote.title}, ${quote.author}`;
+
+  blockquote.appendChild(p);
+  blockquote.appendChild(cite);
+  blockquote.setAttribute("aria-label", quote.time);
+  blockquote.dataset.sfw = quote.sfw;
+
+  if (quote.quote_raw) {
+    blockquote.setAttribute(
+      "aria-description",
+      quote.quote_raw.replace(/<br>|\n/g, " ")
+    );
+  }
+
+  const quoteLength = p.textContent.length;
+
+  let lengthClass = "xxxl";
+  for (let i = 0; i < sizes.length; i++) {
+    if (quoteLength <= sizes[i]) {
+      lengthClass = QUOTE_SIZE[sizes[i]];
+      break;
+    }
+  }
+
+  blockquote.classList.add(`quote-${lengthClass}`);
+
+  updateGHLinks(time, quote, locale);
+
+  clock.innerHTML = "";
+  clock.appendChild(blockquote);
+}

@@ -21,12 +21,12 @@ body {
     display: none;
 }
 
-body.zen-mode #quote-time-bar,
-body.zen-mode footer #menu {
+body.zen #time-progress-bar,
+body.zen footer #menu {
     display: none !important;
 }
 
-body.zen-mode #exit-zen {
+body.zen #exit-zen {
     display: block;
 }
 
@@ -161,7 +161,7 @@ button:focus {
     box-shadow: 0 0 0 .2rem color-mix(in srgb, var(--accent-color), transparent 75%) !important;
 }
 
-#quote-time-bar {
+#time-progress-bar {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -171,9 +171,17 @@ button:focus {
 }
 
 #exit-zen {
+    font-family: var(--quote-font-family);
     font-size: 1.5rem;
-    text-decoration: none;
+    color: var(--accent-color);
     display: none;
+    border-color: transparent;
+    line-height: .5;
+    padding-top: 1rem;
+}
+
+#exit-zen:focus {
+    border-color: var(--font-color);
 }
 
 footer {
@@ -182,9 +190,10 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    text-align: center;
     line-height: 1.5;
     padding: 1rem;
+    display: flex;
+    justify-content: center;
 }
 
 #contact {
