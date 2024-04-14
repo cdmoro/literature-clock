@@ -204,7 +204,7 @@ footer {
 
     blockquote {
         margin: 1rem;
-        line-height: 1.3;
+        line-height: var(--quote-line-height, 1.3);
     }
 
     blockquote:before,
