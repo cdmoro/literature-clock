@@ -1,8 +1,4 @@
-import {
-  getBooleanSetting,
-  setBooleanSetting,
-  updateBooleanSettingButtonStatus,
-} from "./settings.js";
+import { getBooleanSetting, setBooleanSetting } from "./settings.js";
 
 /**
  * Initializes the zen mode based on URL parameters or local storage.

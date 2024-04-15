@@ -13,12 +13,12 @@ export function getBooleanSetting(name, defaultValue = false) {
   return value;
 }
 
-export function setBooleanSetting(name, value = false) {
+export function setBooleanSetting(name, value = false, deleteUrlParam = false) {
   document.body.classList.toggle(name, value);
   localStorage.setItem(name, value);
 
   const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.has(name)) {
+  if (deleteUrlParam && urlParams.has(name)) {
     urlParams.delete(name);
     window.location.search = urlParams.toString();
   }
@@ -27,7 +27,6 @@ export function setBooleanSetting(name, value = false) {
 export function toggleBooleanSetting(name) {
   const value = !(localStorage.getItem(name) === "true");
   setBooleanSetting(name, value);
-
   return value;
 }
 
@@ -36,7 +35,7 @@ export function updateBooleanSettingButtonStatus(name, value) {
   button.classList.toggle("active", value);
 }
 
-export function isBooleanSettingActive(name) {
+export function isBooleanSettingTrue(name) {
   return localStorage.getItem(name) === "true";
 }
 
@@ -55,11 +54,11 @@ export function getStringSetting(name, defaultValue) {
   return value;
 }
 
-export function setStringSetting(name, value, reload = true) {
+export function setStringSetting(name, value, deleteUrlParam = false) {
   localStorage.setItem(name, value);
 
   const urlParams = new URLSearchParams(window.location.search);
-  if (reload && urlParams.has(name)) {
+  if (deleteUrlParam && urlParams.has(name)) {
     urlParams.delete(name);
     window.location.search = urlParams.toString();
   }

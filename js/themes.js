@@ -38,12 +38,12 @@ export function initTheme(defaultValue = "base-dark") {
       "data-theme",
       `${theme}-${preferDarkThemes.matches ? "dark" : "light"}`
     );
-    setStringSetting("theme", `${theme}-auto`, false);
+    setStringSetting("theme", `${theme}-auto`);
   } else {
     const dataTheme = `${theme}-${variant}`;
     variantSelect.value = variant;
     document.documentElement.setAttribute("data-theme", dataTheme);
-    setStringSetting("theme", dataTheme, false);
+    setStringSetting("theme", dataTheme);
   }
 
   themeSelect.value = theme;
