@@ -2,6 +2,8 @@
 
 A clock that tells the time using quotes from literature. Support for multiple languages, themes, and more! Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) ([literature-clock](https://github.com/JohannesNE/literature-clock)) and [Jaap Meijers](http://www.eerlijkemedia.nl/) ([e-reader clock](https://www.instructables.com/id/Literary-Clock-Made-From-E-reader/)).
 
+![image](https://github.com/cdmoro/literature-clock/assets/28156761/34b4bf28-22d1-41cc-ba99-0babab41a03c) 
+
 ## Features
 
 - Zen mode: remove all the distractions (perfect for screensaver usage) ([link](https://literatureclock.netlify.app/?zen=true))
@@ -25,7 +27,6 @@ The clock can be controlled using URL parameters, these parameters will overwrit
 - `theme`: set the theme.
   - Color themes: `Base`, `Pink`, `Green`, `Orange`, `Purple`, `Blue`, and `Gray`
   - Special themes: `Retro`, `Elegant`, `Festive`, `Bohemian`, and `Handwriting`
-<!-- - `variant`: set the variant (light, dark, or auto) -->
 - `time`: get the quotes for a particular time ([link](https://literatureclock.netlify.app/?time=12:30))
 - `quote`: test a quote before submitting it ([link](https://literatureclock.netlify.app/?quote=Hi%20mom!%20I%27m%20part%20of%20the%20Literature%20Clock!)). You don't need to escape the quote by adding the special characters, just write the quote and the browser will add them.
 
@@ -47,7 +48,7 @@ At the moment, the clock has seven color themes and four special themes, we expe
 **Base**
 | Light  | Dark  |
 |---|---|
-| ![image](https://github.com/cdmoro/literature-clock/assets/28156761/34b4bf28-22d1-41cc-ba99-0babab41a03c)  | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/364d0788-e829-4d7e-b51a-19711d0964c0)  |
+| ![image](https://github.com/cdmoro/literature-clock/assets/28156761/364d0788-e829-4d7e-b51a-19711d0964c0)  | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/34b4bf28-22d1-41cc-ba99-0babab41a03c) |
 
 **Pink**
 | Light  | Dark  |
