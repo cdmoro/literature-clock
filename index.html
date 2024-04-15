@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="default-dark">
+<html lang="en" dir="ltr" data-theme="base-dark">
 
 <head>
     <meta charset="utf-8">
@@ -39,7 +39,7 @@
     <title>Literature Clock</title>
 </head>
 
-<body class="hidden">
+<body data-loading="true">
     <main>
         <div id="clock">
             <blockquote></blockquote>
@@ -52,8 +52,8 @@
         <div id="menu">
             <div>
                 <span>
-                    <button id="zen-mode" tabindex="1">Zen</button>
-                    <button id="work-mode" tabindex="2">Work</button>
+                    <button id="zen" tabindex="1">Zen</button>
+                    <button id="work" tabindex="2">Work</button>
                 </span>
                 <select id="locale-select" tabindex="3">
                     <option value="en-US">English (US)</option>

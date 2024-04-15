@@ -137,39 +137,3 @@ export function updateGHLinks(time, quote, locale) {
   const reportError = document.getElementById("report-error");
   reportError.href = reportErrorUrl.href;
 }
-
-export function initBooleanSetting(name, defaultValue = false) {
-  const urlParams = new URLSearchParams(window.location.search);
-  let value = defaultValue;
-
-  if (localStorage.getItem(name)) {
-    value = localStorage.getItem(name) === "true";
-  }
-
-  if (urlParams.has(name)) {
-    value = urlParams.get(name) === "true";
-  }
-
-  document.body.classList.toggle(name, value);
-  localStorage.setItem(name, value);
-
-  return value;
-}
-
-export function setBooleanSetting(name, newValue = false) {
-  document.body.classList.toggle(name, newValue);
-  localStorage.setItem(name, newValue);
-
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.has(name)) {
-    urlParams.delete(name);
-    window.location.search = urlParams.toString();
-  }
-}
-
-export function toggleBooleanSetting(name) {
-  const value = !(localStorage.getItem(name) === "true");
-  setBooleanSetting(name, value);
-
-  return value;
-}

@@ -1,5 +1,5 @@
 import { setLocale, getStrings } from "./locales.js";
-import { setTheme, setVariant } from "./themes.js";
+import { initTheme, setTheme, setVariant } from "./themes.js";
 import { initZenMode } from "./zen.js";
 import { initWorkMode } from "./work.js";
 import { getTime } from "./utils.js";
@@ -38,9 +38,11 @@ async function updateTime(testTime) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  initZenMode(true);
+  initZenMode(false);
   initWorkMode(false);
-  setTheme();
+  initTheme("base-dark");
+  // initLocale("en-US");
+  // setTheme();
   setLocale();
 
   document.getElementById("locale-select").addEventListener("change", (e) => {
@@ -68,34 +70,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  document
-    .getElementById("theme-select")
-    .addEventListener("change", (e) => setTheme(e.target.value));
-  document
-    .getElementById("variant-select")
-    .addEventListener("change", (e) => setVariant(e.target.value));
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", (e) => {
-      const variantSelect = document.getElementById("variant-select");
-
-      if (variantSelect.value === "auto") {
-        const themeSelect = document.getElementById("theme-select");
-        const theme = `${themeSelect.value}-${e.matches ? "dark" : "light"}`;
-
-        localStorage.setItem("theme", theme);
-        document.documentElement.setAttribute("data-theme", theme);
-      }
-    });
-
   window.addEventListener("blur", () => (pauseTimeBar = true));
   window.addEventListener("focus", () => (pauseTimeBar = false));
-
-  document.body.classList.remove("hidden");
 
   updateTime(testTime);
 
   if (!testTime && !testQuote) {
     setInterval(updateTime, 1000);
   }
+
+  document.body.removeAttribute("data-loading");
 });

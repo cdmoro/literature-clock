@@ -1,15 +1,22 @@
 import { updateQuote } from "./quotes.js";
-import { initBooleanSetting, toggleBooleanSetting } from "./utils.js";
+import {
+  getBooleanSetting,
+  isBooleanSettingActive,
+  setBooleanSetting,
+  toggleBooleanSetting,
+  updateBooleanSettingButtonStatus,
+} from "./settings.js";
 
 /**
  * Initializes the work mode based on URL parameters or local storage.
  * If no work mode is specified in URL parameters or local storage, default is set to false.
  */
 export function initWorkMode(defaultValue = false) {
-  const value = initBooleanSetting("work", defaultValue);
-  setWorkModeButtonClass(value);
+  const value = getBooleanSetting("work", defaultValue);
+  setBooleanSetting("work", value);
+  updateBooleanSettingButtonStatus("work", value);
 
-  document.getElementById("work-mode").addEventListener("click", () => {
+  document.getElementById("work").addEventListener("click", () => {
     const isWorkMode = toggleWorkMode();
     const quote = document.getElementById("quote");
 
@@ -25,7 +32,7 @@ export function initWorkMode(defaultValue = false) {
  */
 export function toggleWorkMode() {
   const value = toggleBooleanSetting("work");
-  setWorkModeButtonClass(value);
+  updateBooleanSettingButtonStatus("work", value);
   return value;
 }
 
@@ -34,10 +41,5 @@ export function toggleWorkMode() {
  * @returns {boolean} The current work mode, true if checked, false otherwise.
  */
 export function isWorkMode() {
-  return localStorage.getItem("work") === "true";
-}
-
-function setWorkModeButtonClass(value) {
-  const workModeButton = document.getElementById("work-mode");
-  workModeButton.classList.toggle("active", value);
+  return isBooleanSettingActive("work");
 }

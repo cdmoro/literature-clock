@@ -1,268 +1,283 @@
 html,
 body {
-    height: 100%;
-    margin: 0;
+  height: 100%;
+  margin: 0;
 }
 
 body {
-    font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-    color: var(--font-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background: var(--background);
-    background-image: var(--background-image);
-    background-blend-mode: var(--background-blend-mode);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: var(--font-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--background);
+  background-image: var(--background-image);
+  background-blend-mode: var(--background-blend-mode);
 }
 
-.hidden {
-    display: none;
+body[data-loading] {
+  display: none;
 }
 
 body.zen #time-progress-bar,
 body.zen footer #menu {
-    display: none !important;
+  display: none !important;
 }
 
 body.zen #exit-zen {
-    display: block;
+  display: block;
 }
 
 #clock {
-    max-width: 80vw;
-    margin: 0 auto;
+  max-width: 80vw;
+  margin: 0 auto;
 }
 
-a, a:visited {
-    color: var(--accent-color);
+a,
+a:visited {
+  color: var(--accent-color);
 }
 
 blockquote {
-    position: relative;
-    line-height: var(--quote-line-height, 1.1);
-    font-weight: 100;
-    font-family: var(--quote-font-family);
+  position: relative;
+  line-height: var(--quote-line-height, 1.1);
+  font-weight: 100;
+  font-family: var(--quote-font-family);
 }
 
 blockquote p {
-    font-size: var(--quote-font-size, 3.5vw);
-    margin: 0;
-    padding-bottom: .5rem;
+  font-size: var(--quote-font-size, 3.5vw);
+  margin: 0;
+  padding-bottom: 0.5rem;
 }
 
 blockquote.quote-xl p {
-    font-size: var(--quote-xl-font-size, 2.7vw);
+  font-size: var(--quote-xl-font-size, 2.7vw);
 }
 
 blockquote.quote-xxl p {
-    font-size: var(--quote-xxl-font-size, 2vw);
+  font-size: var(--quote-xxl-font-size, 2vw);
 }
 
 blockquote[aria-label]:before,
 blockquote[aria-label]:after {
-    position: absolute;
-    color: #4f4e4991;
-    font-size: 8rem;
-    width: 4rem;
-    height: 4rem;
+  position: absolute;
+  color: #4f4e4991;
+  font-size: 8rem;
+  width: 4rem;
+  height: 4rem;
 }
 
 blockquote[aria-label]:before {
-    content: '“';
-    left: -5rem;
-    top: -2rem;
+  content: "“";
+  left: -5rem;
+  top: -2rem;
 }
 
 blockquote[aria-label]:after {
-    content: '”';
-    right: -5rem;
-    bottom: 1rem;
+  content: "”";
+  right: -5rem;
+  bottom: 1rem;
 }
 
 blockquote .quote-time {
-    color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 cite {
-    font-size: 1.7vw;
+  font-size: 1.7vw;
 }
 
 select {
-    font-size: .85rem;
-    padding: .25rem 2rem .25rem .5rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: var(--font-color);
-    background-color: var(--background);
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%232f2e2c' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right .5rem center;
-    background-size: 16px 12px;
-    border: 1px solid var(--font-color);
-    border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: .2rem 0;
+  font-size: 0.85rem;
+  padding: 0.25rem 2rem 0.25rem 0.5rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--font-color);
+  background-color: var(--background);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%232f2e2c' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 16px 12px;
+  border: 1px solid var(--font-color);
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0.2rem 0;
 }
 
-[data-theme*=dark] select {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23a3a29a' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+[data-theme*="dark"] select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23a3a29a' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
 }
 
 select#theme-select {
-    border-start-end-radius: 0;
-    border-end-end-radius: 0;
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
 }
 
 select#variant-select {
-    border-start-start-radius: 0;
-    border-end-start-radius: 0;
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
 }
 
 .input-group {
-    display: inline-flex;
+  display: inline-flex;
 }
 
 .input-group #variant-select {
-    margin-inline-start: -1px;
+  margin-inline-start: -1px;
 }
 
 button {
-    font-size: .85rem;
-    padding: .25rem .5rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: var(--font-color);
-    background-color: var(--background);
-    border: 1px solid var(--font-color);
-    border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: .2rem 0;
-    cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.5rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--font-color);
+  background-color: var(--background);
+  border: 1px solid var(--font-color);
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0.2rem 0;
+  cursor: pointer;
 }
 
 button.active {
-    border-color: var(--accent-color);
-    background-color: var(--accent-color);
-    color: var(--background);
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  color: var(--background);
 }
 
 select:focus,
 button:focus {
-    border-color: var(--accent-color);
-    outline: 0;
-    box-shadow: 0 0 0 .2rem color-mix(in srgb, var(--accent-color), transparent 75%) !important;
+  border-color: var(--accent-color);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem
+    color-mix(in srgb, var(--accent-color), transparent 75%) !important;
+}
+
+button:focus.active {
+  background-color: var(--accent-color);
 }
 
 #time-progress-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    background-color: var(--font-color);
-    transition: width 1s linear;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background-color: var(--font-color);
+  transition: width 1s linear;
 }
 
 #exit-zen {
-    font-family: var(--quote-font-family);
-    font-size: 1.5rem;
-    color: var(--accent-color);
-    display: none;
-    border-color: transparent;
-    line-height: .5;
-    padding-top: 1rem;
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  display: none;
+  border-color: transparent;
+  background: transparent;
+  line-height: 0.5;
+  padding-top: 0.8rem;
 }
 
 #exit-zen:focus {
-    border-color: var(--font-color);
+  border-color: var(--font-color);
 }
 
 footer {
-    font-size: .85rem;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    line-height: 1.5;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
+  font-size: 0.85rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 1.5;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #contact {
-    display: inline-block;
+  display: inline-block;
 }
 
 @media all and (max-width: 959px) and (min-width: 600px) {
-    cite {
-        font-size: 2.3vw;
-    }
+  cite {
+    font-size: 2.3vw;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    #clock {
-        max-width: unset;
-    }
+  #clock {
+    max-width: unset;
+  }
 
-    blockquote {
-        margin: 1rem;
-        line-height: var(--quote-line-height, 1.3);
-    }
+  blockquote {
+    margin: 1rem;
+    line-height: var(--quote-line-height, 1.3);
+  }
 
-    blockquote:before,
-    blockquote:after {
-        content: unset;
-    }
+  blockquote:before,
+  blockquote:after {
+    content: unset;
+  }
 
-    blockquote p {
-        font-size: 1.9rem;
-    }
+  blockquote p {
+    font-size: 1.9rem;
+  }
 
-    blockquote.quote-xl  p {
-        font-size: 1.7rem;
-    }
+  blockquote.quote-xl p {
+    font-size: 1.7rem;
+  }
 
-    blockquote.quote-xxl  p {
-        font-size: 1.5rem;
-    }
+  blockquote.quote-xxl p {
+    font-size: 1.5rem;
+  }
 
-    #zen-mode,
-    #work-mode {
-        padding: .15rem .35rem;
-    }
+  #zen,
+  #work {
+    padding: 0.15rem 0.35rem;
+  }
 
-    cite {
-        font-size: 1rem;
-    }
+  cite {
+    font-size: 1rem;
+  }
 
-    #exit-zen {
-        font-size: 1.3rem;
-    }
+  #exit-zen {
+    font-size: 1.3rem;
+  }
 
-    footer {
-        font-size: .7rem;
-    }
+  footer {
+    font-size: 0.8rem;
+  }
 
-    footer select {
-        font-size: .7rem;
-        padding: .15rem 1.4rem .15rem .35rem;
-        background-position: right .4rem center;
-        background-size: 10px;
-        width: 4.5rem;
-    }
+  footer select {
+    font-size: 0.8rem;
+    padding: 0.15rem 1.4rem 0.15rem 0.35rem;
+    background-position: right 0.4rem center;
+    background-size: 10px;
+    width: 4.5rem;
+  }
 
-    footer button {
-        font-size: .7rem;
-    }
+  footer button {
+    font-size: 0.8rem;
+  }
 
-    #theme, #made-by {
-        display: none;
-    }
+  #theme,
+  #made-by {
+    display: none;
+  }
 }
