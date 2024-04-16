@@ -171,7 +171,7 @@ button:focus.active {
 
 #time-progress-bar {
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   height: 4px;
   background-color: var(--font-color);

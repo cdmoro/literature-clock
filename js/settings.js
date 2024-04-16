@@ -13,15 +13,9 @@ export function getBooleanSetting(name, defaultValue = false) {
   return value;
 }
 
-export function setBooleanSetting(name, value = false, deleteUrlParam = false) {
+export function setBooleanSetting(name, value = false) {
   document.body.classList.toggle(name, value);
   localStorage.setItem(name, value);
-
-  const urlParams = new URLSearchParams(window.location.search);
-  if (deleteUrlParam && urlParams.has(name)) {
-    urlParams.delete(name);
-    window.location.search = urlParams.toString();
-  }
 }
 
 export function toggleBooleanSetting(name) {
@@ -54,11 +48,14 @@ export function getStringSetting(name, defaultValue) {
   return value;
 }
 
-export function setStringSetting(name, value, deleteUrlParam = false) {
+export function setStringSetting(name, value) {
   localStorage.setItem(name, value);
+}
 
+export function deleteUrlParam(name) {
   const urlParams = new URLSearchParams(window.location.search);
-  if (deleteUrlParam && urlParams.has(name)) {
+  
+  if (urlParams.has(name)) {
     urlParams.delete(name);
     window.location.search = urlParams.toString();
   }
