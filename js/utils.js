@@ -1,5 +1,3 @@
-import { LOCALES } from "./locales.js";
-
 export const FALLBACK_QUOTES = {
   "en-US": [
     {
@@ -109,10 +107,7 @@ export function updateGHLinks(time, quote, locale) {
   );
   addQuoteUrl.searchParams.set("template", `add-quote.yml`);
   addQuoteUrl.searchParams.set("labels", "add-quote");
-  addQuoteUrl.searchParams.set(
-    "title",
-    `[${time}][${locale}] ${LOCALES["en-US"].add_quote}`
-  );
+  addQuoteUrl.searchParams.set("title", `[${time}][${locale}] Add quote`);
   const addQuoteLink = document.getElementById("add-quote");
   addQuoteLink.href = addQuoteUrl.href;
 
@@ -120,10 +115,7 @@ export function updateGHLinks(time, quote, locale) {
     "https://github.com/cdmoro/literature-clock/issues/new"
   );
   reportErrorUrl.searchParams.set("template", `quote-error.yml`);
-  reportErrorUrl.searchParams.set(
-    "title",
-    `[${time}][${locale}] ${LOCALES["en-US"].report_error}`
-  );
+  reportErrorUrl.searchParams.set("title", `[${time}][${locale}] Report error`);
   reportErrorUrl.searchParams.set("labels", "bug");
   reportErrorUrl.searchParams.set("time", time);
   reportErrorUrl.searchParams.set("book", quote.title);

@@ -1,4 +1,5 @@
-import { LOCALES, getLocale, getRandomLocale } from "./locales.js";
+import { getLocale, getRandomLocale } from "./locales.js";
+import TRANSLATIONS from "./translations.js";
 import { FALLBACK_QUOTES, getTime, updateGHLinks } from "./utils.js";
 import { isWorkMode } from "./work.js";
 
@@ -37,21 +38,20 @@ async function getQuotes(time, locale) {
   }
 }
 
-function getQuote(quotes, time) {
+async function getQuote(time, locale) {
+  const quotes = await getQuotes(time, locale);
   const urlParams = new URLSearchParams(window.location.search);
-  const testQuote = urlParams.get("quote");
-  const locale = getLocale();
-  const random_quote_index = Math.floor(Math.random() * quotes.length);
-  const quote = Object.assign({}, quotes[random_quote_index]);
+  const quoteIndex = Math.floor(Math.random() * quotes.length);
+  const quote = Object.assign({}, quotes[quoteIndex]);
 
   if (!quote.quote_time_case) {
     quote.time = time;
     quote.quote_time_case = time;
   }
 
-  if (testQuote) {
-    quote.title = LOCALES[locale].title;
-    quote.author = LOCALES[locale].author;
+  if (urlParams.get("quote")) {
+    quote.title = TRANSLATIONS[locale].title;
+    quote.author = TRANSLATIONS[locale].author;
   }
 
   return quote;
@@ -61,11 +61,11 @@ export async function updateQuote(time = getTime()) {
   const clock = document.getElementById("clock");
   const urlParams = new URLSearchParams(window.location.search);
   const testQuote = urlParams.get("quote");
-  const localeSelect = document.getElementById("locale-select");
   const locale =
-    localeSelect.value === "multi" ? getRandomLocale() : getLocale();
-  const quotes = await getQuotes(time, locale);
-  const quote = getQuote(quotes, time);
+    localStorage.getItem("locale") === "multi"
+      ? getRandomLocale()
+      : getLocale();
+  const quote = await getQuote(time, locale);
   const quoteText =
     testQuote ||
     `${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}`;

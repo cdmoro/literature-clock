@@ -1,108 +1,148 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="base-dark">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-        content="Discover inspiring quotes from your favorite books with Literature Clock. Customize language, colors, and more for a unique experience">
-    <meta name="keywords" content="literature, quotes, books, clock, reading, wisdom">
-    <link rel="canonical" href="https://literatureclock.netlify.app">
-    <meta name="robots" content="index, follow">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Discover inspiring quotes from your favorite books with Literature Clock. Customize language, colors, and more for a unique experience"
+    />
+    <meta
+      name="keywords"
+      content="literature, quotes, books, clock, reading, wisdom"
+    />
+    <link rel="canonical" href="https://literatureclock.netlify.app" />
+    <meta name="robots" content="index, follow" />
 
     <!-- Open Graph tags -->
-    <meta property="og:title" content="Literature Clock - Online Literary Quotes Clock">
-    <meta property="og:description"
-        content="Discover inspiring quotes from your favorite books with Literature Clock. Customize language, colors, and more for a unique experience">
-    <meta property="og:url" content="https://literatureclock.netlify.app">
-    <meta property="og:image" content="https://literatureclock.netlify.app/images/github-dark.png">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="Literature Clock">
+    <meta
+      property="og:title"
+      content="Literature Clock - Online Literary Quotes Clock"
+    />
+    <meta
+      property="og:description"
+      content="Discover inspiring quotes from your favorite books with Literature Clock. Customize language, colors, and more for a unique experience"
+    />
+    <meta property="og:url" content="https://literatureclock.netlify.app" />
+    <meta
+      property="og:image"
+      content="https://literatureclock.netlify.app/images/github-dark.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Literature Clock" />
 
     <!-- Twitter meta tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Literature Clock - Online Literary Quotes Clock">
-    <meta name="twitter:description"
-        content="Discover inspiring quotes from your favorite books with Literature Clock. Customize language, colors, and more for a unique experience">
-    <meta name="twitter:image" content="https://literatureclock.netlify.app/images/github-dark.png">
-    <meta name="twitter:site" content="@CarlosBonadeo">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Literature Clock - Online Literary Quotes Clock"
+    />
+    <meta
+      name="twitter:description"
+      content="Discover inspiring quotes from your favorite books with Literature Clock. Customize language, colors, and more for a unique experience"
+    />
+    <meta
+      name="twitter:image"
+      content="https://literatureclock.netlify.app/images/github-dark.png"
+    />
+    <meta name="twitter:site" content="@CarlosBonadeo" />
 
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/themes.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/themes.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Literature Clock</title>
-</head>
+  </head>
 
-<body data-loading="true">
+  <body data-loading="true">
     <main>
-        <div id="clock">
-            <blockquote></blockquote>
-        </div>
-        <div id="time-progress-bar"></div>
+      <div
+        id="time-progress-bar"
+        role="progressbar"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+      ></div>
+      <div id="clock">
+        <blockquote></blockquote>
+      </div>
     </main>
 
     <footer>
-        <button id="exit-zen" title="Exit Zen mode">*</button>
-        <div id="menu">
-            <div>
-                <span>
-                    <button id="zen" tabindex="1">Zen</button>
-                    <button id="work" tabindex="2">Work</button>
-                </span>
-                <select id="locale-select" tabindex="3">
-                    <option value="en-US">English (US)</option>
-                    <option value="es-ES">Español (ES)</option>
-                    <option value="pt-BR">Portuguese (BR)</option>
-                    <option value="fr-FR">French</option>
-                    <option value="it-IT">Italian</option>
-                    <option value="multi">Multilingual</option>
-                </select>
-                <span class="input-group">
-                    <select id="theme-select" tabindex="4">
-                        <optgroup id="colors" label="Colors">
-                            <option value="base">Base</option>
-                            <option value="pink">Pink</option>
-                            <option value="green">Green</option>
-                            <option value="orange">Orange</option>
-                            <option value="purple">Purple</option>
-                            <option value="blue">Blue</option>
-                            <option value="gray">Gray</option>
-                        </optgroup>
-                        <optgroup id="themes" label="Themes">
-                            <option value="retro">Retro</option>
-                            <option value="elegant">Elegant</option>
-                            <option value="festive">Festive</option>
-                            <option value="bohemian">Bohemian</option>
-                            <option value="handwriting">Handwriting</option>
-                        </optgroup>
-                    </select>
-                    <select id="variant-select" tabindex="5">
-                        <option value="auto">Auto</option>
-                        <option value="light">Light</option>
-                        <option value="dark">Dark</option>
-                    </select>
-                </span>
-            </div>
-            <div>
-                <a id="add-quote" target='_blank'>Add quote</a> |
-                <a id="report-error"
-                    href="https://github.com/cdmoro/literature-clock/issues/new?template=quote-error.yml&labels=bug"
-                    target="_blank">Fix typo</a> |
-                <a id="project" href="https://github.com/cdmoro/literature-clock" target="_blank">Project</a> |
-                <span id="contact">
-                    <span id="made-by">Made by</span> <a href="https://twitter.com/CarlosBonadeo"
-                        target="_blank">@CarlosBonadeo</a>
-            </div>
+      <button id="exit-zen" title="Exit Zen mode">*</button>
+      <div id="menu">
+        <div>
+          <span>
+            <button id="zen" tabindex="1">Zen</button>
+            <button id="work" tabindex="2">Work</button>
+          </span>
+          <select id="locale-select" tabindex="3">
+            <option value="en-US">English (US)</option>
+            <option value="es-ES">Español (ES)</option>
+            <option value="pt-BR">Portuguese (BR)</option>
+            <option value="fr-FR">French</option>
+            <option value="it-IT">Italian</option>
+            <option value="multi">Multilingual</option>
+          </select>
+          <span class="input-group">
+            <select id="theme-select" tabindex="4">
+              <optgroup id="colors" label="Colors">
+                <option value="base">Base</option>
+                <option value="pink">Pink</option>
+                <option value="green">Green</option>
+                <option value="orange">Orange</option>
+                <option value="purple">Purple</option>
+                <option value="blue">Blue</option>
+                <option value="gray">Gray</option>
+              </optgroup>
+              <optgroup id="themes" label="Themes">
+                <option value="retro">Retro</option>
+                <option value="elegant">Elegant</option>
+                <option value="festive">Festive</option>
+                <option value="bohemian">Bohemian</option>
+                <option value="handwriting">Handwriting</option>
+              </optgroup>
+            </select>
+            <select id="variant-select" tabindex="5">
+              <option value="auto">Auto</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </span>
         </div>
+        <div>
+          <a id="add-quote" target="_blank">Add quote</a> |
+          <a
+            id="report-error"
+            href="https://github.com/cdmoro/literature-clock/issues/new?template=quote-error.yml&labels=bug"
+            target="_blank"
+            >Fix typo</a
+          >
+          |
+          <a
+            id="project"
+            href="https://github.com/cdmoro/literature-clock"
+            target="_blank"
+            >Project</a
+          >
+          |
+          <span id="contact">
+            <span id="made-by">Made by</span>
+            <a href="https://twitter.com/CarlosBonadeo" target="_blank"
+              >@CarlosBonadeo</a
+            >
+          </span>
         </div>
+      </div>
     </footer>
     <script src="js/main.js" type="module"></script>
-</body>
-
+  </body>
 </html>
