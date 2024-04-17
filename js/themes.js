@@ -6,6 +6,7 @@ const THEME_FONTS = {
   festive: "Borel",
   bohemian: "Comfortaa",
   handwriting: "Gochi Hand",
+  anaglyph: "Anton",
 };
 
 function loadFontIfNotExists(theme) {
