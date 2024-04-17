@@ -1,5 +1,5 @@
 import {
-  deleteUrlParamAndRefresh,
+  deleteUrlParamIfExistsAndRefresh,
   initStringSetting,
   setStringSetting,
 } from "./settings.js";
@@ -72,7 +72,7 @@ function setTheme() {
   let variant = document.getElementById("variant-select").value;
 
   setStringSetting("theme", `${theme}-${variant}`);
-  deleteUrlParamAndRefresh("theme");
+  deleteUrlParamIfExistsAndRefresh("theme");
   loadFontIfNotExists(theme);
 
   if (variant === "system") {

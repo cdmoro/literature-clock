@@ -22,8 +22,6 @@ const LABELS = {
   "report-error": "report_error",
   project: "project",
   "made-by": "made_by",
-  language: "language",
-  theme: "theme",
 };
 
 const TITLE_ATTR = {
