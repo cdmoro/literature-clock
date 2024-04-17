@@ -1,4 +1,4 @@
-export function getBooleanSetting(name, defaultValue = false) {
+export function initBooleanSetting(name, defaultValue = false) {
   const urlParams = new URLSearchParams(window.location.search);
   let value = defaultValue;
 
@@ -33,7 +33,7 @@ export function isBooleanSettingTrue(name) {
   return localStorage.getItem(name) === "true";
 }
 
-export function getStringSetting(name, defaultValue) {
+export function initStringSetting(name, defaultValue) {
   const urlParams = new URLSearchParams(window.location.search);
   let value = defaultValue;
 
@@ -48,13 +48,17 @@ export function getStringSetting(name, defaultValue) {
   return value;
 }
 
+export function getStringSetting(name) {
+  return localStorage.getItem(name);
+}
+
 export function setStringSetting(name, value) {
   localStorage.setItem(name, value);
 }
 
-export function deleteUrlParamAndRefresh(name) {
+export function deleteUrlParamIfExistsAndRefresh(name) {
   const urlParams = new URLSearchParams(window.location.search);
-  
+
   if (urlParams.has(name)) {
     urlParams.delete(name);
     window.location.search = urlParams.toString();

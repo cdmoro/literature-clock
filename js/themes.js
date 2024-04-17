@@ -1,4 +1,8 @@
-import { deleteUrlParamAndRefresh, getStringSetting, setStringSetting } from "./settings.js";
+import {
+  deleteUrlParamAndRefresh,
+  initStringSetting,
+  setStringSetting,
+} from "./settings.js";
 
 const THEME_FONTS = {
   retro: "VT323",
@@ -28,7 +32,10 @@ function loadFontIfNotExists(theme) {
 }
 
 export function initTheme(defaultValue = "base-dark") {
-  let [theme, variant = "system"] = getStringSetting("theme", defaultValue).split("-");
+  let [theme, variant = "system"] = initStringSetting(
+    "theme",
+    defaultValue
+  ).split("-");
   const themeSelect = document.getElementById("theme-select");
   const variantSelect = document.getElementById("variant-select");
   const preferDarkThemes = window.matchMedia("(prefers-color-scheme: dark)");
@@ -69,9 +76,9 @@ function setTheme() {
   loadFontIfNotExists(theme);
 
   if (variant === "system") {
-    variant = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches ? "dark" : "light";
+    variant = window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
   }
 
   document.documentElement.setAttribute("data-theme", `${theme}-${variant}`);

@@ -1,5 +1,9 @@
 import { updateQuote } from "./quotes.js";
-import { deleteUrlParamAndRefresh, getStringSetting } from "./settings.js";
+import {
+  deleteUrlParamIfExistsAndRefresh,
+  initStringSetting,
+  setStringSetting,
+} from "./settings.js";
 import TRANSLATIONS from "./translations.js";
 import { getTime } from "./utils.js";
 
@@ -33,35 +37,6 @@ export function getRandomLocale() {
   return locales[Math.floor(Math.random() * locales.length)];
 }
 
-export function getLocale(newLocale) {
-  let locale = navigator.language;
-  const localeLocalStorage = localStorage.getItem("locale");
-  const urlParams = new URLSearchParams(window.location.search);
-  const localeQueryParam = urlParams.get("locale");
-  const localeSelect = document.getElementById("locale-select");
-
-  locale = localeQueryParam || newLocale || localeLocalStorage || locale;
-
-  if (locale === "random") {
-    localStorage.setItem("locale", locale);
-    localeSelect.value = locale;
-    return "es-US";
-  }
-
-  if (locale.length === 2) {
-    locale = DOMINANT_LOCALES[locale];
-  }
-
-  if (!TRANSLATIONS[locale]) {
-    locale = "en-US";
-  }
-
-  localeSelect.value = locale;
-  localStorage.setItem("locale", locale);
-
-  return locale;
-}
-
 export function getStrings(locale = navigator.language) {
   if (locale.length === 2) {
     locale = DOMINANT_LOCALES[locale];
@@ -75,22 +50,18 @@ export function getStrings(locale = navigator.language) {
 }
 
 export function initLocale(defaultValue = navigator.language) {
-  const locale = getStringSetting("locale", defaultValue);
+  const locale = initStringSetting("locale", defaultValue);
+  setStringSetting("locale", locale);
   translateStrings(locale);
 
   document.getElementById("locale-select").addEventListener("change", (e) => {
+    const isRandomLocale = e.target.value === "random";
+    translateStrings(isRandomLocale ? "en-US" : e.target.value);
+    setStringSetting("locale");
+    deleteUrlParamIfExistsAndRefresh("locale");
 
-
-    const isMulti = e.target.value === "random";
-    const locale = isMulti ? "en-US" : e.target.value;
-    const time = getTime();
-
-    setLocale(e.target.value);
-
-    deleteUrlParamAndRefresh("locale");
-
-    if (!isMulti) {
-      updateQuote(time);
+    if (!isRandomLocale) {
+      updateQuote();
     }
   });
 }
@@ -103,57 +74,19 @@ function translateStrings(locale = navigator.language) {
     locale === "random" ? "en" : locale.substring(0, 2);
   document.title = `[${time}] ${strings.document_title}`;
 
-  Object.entries(LABELS).forEach(([id, key]) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.textContent = strings[key];
-    }
-  });
+  Object.entries(LABELS).forEach(
+    ([id, key]) => (document.getElementById(id).textContent = strings[key])
+  );
 
-  Object.entries(TITLE_ATTR).forEach(([id, key]) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.title = strings[key];
-    }
-  });
+  Object.entries(TITLE_ATTR).forEach(
+    ([id, key]) => (document.getElementById(id).title = strings[key])
+  );
 
-  ["locale", "theme", "variant"].forEach((select) => {
-    const options = document.querySelectorAll(`#${select}-select option`);
-    options.forEach((op) => (op.textContent = strings[op.value]));
-  });
-
-  document
-    .querySelectorAll("select optgroup")
-    .forEach((el) => (el.label = strings[el.id]));
-}
-
-export function setLocale(newLocale) {
-  const time = getTime();
-  const locale = getLocale(newLocale);
-  const strings = getStrings(locale);
-
-  document.documentElement.lang =
-    locale === "random" ? "en" : locale.substring(0, 2);
-  document.title = `[${time}] ${strings.document_title}`;
-
-  Object.entries(LABELS).forEach(([id, key]) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.textContent = strings[key];
-    }
-  });
-
-  Object.entries(TITLE_ATTR).forEach(([id, key]) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.title = strings[key];
-    }
-  });
-
-  ["locale", "theme", "variant"].forEach((select) => {
-    const options = document.querySelectorAll(`#${select}-select option`);
-    options.forEach((op) => (op.textContent = strings[op.value]));
-  });
+  ["locale", "theme", "variant"].forEach((select) =>
+    document
+      .querySelectorAll(`#${select}-select option`)
+      .forEach((op) => (op.textContent = strings[op.value]))
+  );
 
   document
     .querySelectorAll("select optgroup")

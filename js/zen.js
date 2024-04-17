@@ -1,19 +1,19 @@
 import {
-  deleteUrlParamAndRefresh,
-  getBooleanSetting,
+  deleteUrlParamIfExistsAndRefresh,
+  initBooleanSetting,
   setBooleanSetting,
 } from "./settings.js";
 
 export function initZenMode(defaultValue = false) {
-  const value = getBooleanSetting("zen", defaultValue);
+  const value = initBooleanSetting("zen", defaultValue);
   setBooleanSetting("zen", value);
 
   document.getElementById("zen").addEventListener("click", () => {
     setBooleanSetting("zen", true);
-    deleteUrlParamAndRefresh("zen");
+    deleteUrlParamIfExistsAndRefresh("zen");
   });
   document.getElementById("exit-zen").addEventListener("click", () => {
     setBooleanSetting("zen", false);
-    deleteUrlParamAndRefresh("zen");
+    deleteUrlParamIfExistsAndRefresh("zen");
   });
 }

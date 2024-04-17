@@ -1,14 +1,14 @@
 import { updateQuote } from "./quotes.js";
 import {
-  deleteUrlParamAndRefresh,
-  getBooleanSetting,
+  deleteUrlParamIfExistsAndRefresh,
+  initBooleanSetting,
   setBooleanSetting,
   toggleBooleanSetting,
   updateBooleanSettingButtonStatus,
 } from "./settings.js";
 
 export function initWorkMode(defaultValue = false) {
-  const value = getBooleanSetting("work", defaultValue);
+  const value = initBooleanSetting("work", defaultValue);
   setBooleanSetting("work", value);
   updateBooleanSettingButtonStatus("work", value);
 
@@ -18,7 +18,7 @@ export function initWorkMode(defaultValue = false) {
 function toggleWorkMode() {
   const isWorkMode = toggleBooleanSetting("work");
 
-  deleteUrlParamAndRefresh("work");
+  deleteUrlParamIfExistsAndRefresh("work");
 
   updateBooleanSettingButtonStatus("work", isWorkMode);
   const sfw = document.getElementById("quote").dataset.sfw;

@@ -1,4 +1,4 @@
-import { getLocale, getRandomLocale } from "./locales.js";
+import { getRandomLocale } from "./locales.js";
 import { getStringSetting, isBooleanSettingTrue } from "./settings.js";
 import TRANSLATIONS from "./translations.js";
 import { FALLBACK_QUOTES, getTime, updateGHLinks } from "./utils.js";
@@ -61,11 +61,14 @@ export async function updateQuote(time = getTime()) {
   const clock = document.getElementById("clock");
   const urlParams = new URLSearchParams(window.location.search);
   const testQuote = urlParams.get("quote");
-  const locale =
-    getStringSetting("locale") === "random"
-      ? getRandomLocale()
-      : getLocale();
+  let locale = getStringSetting("locale");
+
+  if (getStringSetting("locale") === "random") {
+    locale = getRandomLocale();
+  }
+
   const quote = await getQuote(time, locale);
+  updateGHLinks(time, quote, locale);
   const quoteText =
     testQuote ||
     `${quote.quote_first}<span class="time">${quote.quote_time_case}</span>${quote.quote_last}`;
@@ -102,8 +105,6 @@ export async function updateQuote(time = getTime()) {
   }
 
   blockquote.classList.add(`quote-${lengthClass}`);
-
-  updateGHLinks(time, quote, locale);
 
   clock.innerHTML = "";
   clock.appendChild(blockquote);
