@@ -1,4 +1,4 @@
-import { getStringSetting, setStringSetting } from "./settings.js";
+import { deleteUrlParamAndRefresh, getStringSetting, setStringSetting } from "./settings.js";
 
 const THEME_FONTS = {
   retro: "VT323",
@@ -28,38 +28,30 @@ function loadFontIfNotExists(theme) {
 }
 
 export function initTheme(defaultValue = "base-dark") {
-  const [theme, variant] = getStringSetting("theme", defaultValue).split("-");
+  let [theme, variant = "system"] = getStringSetting("theme", defaultValue).split("-");
   const themeSelect = document.getElementById("theme-select");
   const variantSelect = document.getElementById("variant-select");
   const preferDarkThemes = window.matchMedia("(prefers-color-scheme: dark)");
 
-  if (!variant || variant === "system") {
-    variantSelect.value = "system";
-    document.documentElement.setAttribute(
-      "data-theme",
-      `${theme}-${preferDarkThemes.matches ? "dark" : "light"}`
-    );
-    setStringSetting("theme", `${theme}-system`);
-  } else {
-    const dataTheme = `${theme}-${variant}`;
-    variantSelect.value = variant;
-    document.documentElement.setAttribute("data-theme", dataTheme);
-    setStringSetting("theme", dataTheme);
-  }
-
-  themeSelect.value = theme;
+  setStringSetting("theme", `${theme}-${variant}`);
   loadFontIfNotExists(theme);
+  themeSelect.value = theme;
+  variantSelect.value = variant;
 
-  themeSelect.addEventListener("change", (e) => setTheme(e.target.value));
-  variantSelect.addEventListener("change", (e) => setVariant(e.target.value));
+  if (variant === "system") {
+    variant = preferDarkThemes.matches ? "dark" : "light";
+  }
+  document.documentElement.setAttribute("data-theme", `${theme}-${variant}`);
+
+  themeSelect.addEventListener("change", setTheme);
+  variantSelect.addEventListener("change", setTheme);
   preferDarkThemes.addEventListener("change", (e) => {
-    const variantSelect = document.getElementById("variant-select");
+    const variant = document.getElementById("variant-select").value;
 
-    if (variantSelect.value === "system") {
-      const themeSelect = document.getElementById("theme-select");
-      const theme = themeSelect.value;
+    if (variant === "system") {
+      const theme = document.getElementById("theme-select").value;
 
-      localStorage.setItem("theme", `${theme}-system`);
+      setStringSetting("theme", `${theme}-system`);
       document.documentElement.setAttribute(
         "data-theme",
         `${theme}-${e.matches ? "dark" : "light"}`
@@ -68,63 +60,19 @@ export function initTheme(defaultValue = "base-dark") {
   });
 }
 
-function getTheme(newTheme) {
-  let defaultTheme = "base-dark";
-  const themeLocalStorage = localStorage.getItem("theme");
-  const urlParams = new URLSearchParams(window.location.search);
-  const themeQueryParam = urlParams.get("theme");
-  // const themeSelect = document.getElementById('theme-select');
-  const variantSelect = document.getElementById("variant-select");
-  const variant = variantSelect.value;
+function setTheme() {
+  const theme = document.getElementById("theme-select").value;
+  let variant = document.getElementById("variant-select").value;
 
-  let theme = themeQueryParam || newTheme || themeLocalStorage || defaultTheme;
+  setStringSetting("theme", `${theme}-${variant}`);
+  deleteUrlParamAndRefresh("theme");
+  loadFontIfNotExists(theme);
 
-  if (theme.indexOf("-") < 0 && variant !== "system") {
-    theme += `-${variant}`;
-  }
-
-  return theme;
-}
-
-export function setTheme(newTheme) {
-  const themeSelect = document.getElementById("theme-select");
-  const variantSelect = document.getElementById("variant-select");
-  let theme = getTheme(newTheme);
-
-  if (theme.indexOf("-") === -1 && window.matchMedia) {
-    const preferDarkThemes = window.matchMedia(
+  if (variant === "system") {
+    variant = window.matchMedia(
       "(prefers-color-scheme: dark)"
-    ).matches;
-    theme = `${theme}-${preferDarkThemes ? "dark" : "light"}`;
+    ).matches ? "dark" : "light";
   }
 
-  themeSelect.value = theme.split("-")[0];
-
-  if (variantSelect.value !== "system") {
-    variantSelect.value =
-      theme.indexOf("-") >= 0 ? theme.split("-")[1] : "system";
-  }
-
-  loadFontIfNotExists(themeSelect.value);
-
-  localStorage.setItem("theme", theme);
-  document.documentElement.setAttribute("data-theme", theme);
-}
-
-export function setVariant(variant = "system") {
-  const themeSelect = document.getElementById("theme-select");
-  const themePrefix = themeSelect.value;
-  let theme = `${themePrefix}-${variant}`;
-
-  if (variant === "system" && window.matchMedia) {
-    const preferDarkThemes = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    theme = `${themePrefix}-${preferDarkThemes ? "dark" : "light"}`;
-    localStorage.setItem("theme", `${themePrefix}-system`);
-  } else {
-    localStorage.setItem("theme", theme);
-  }
-
-  document.documentElement.setAttribute("data-theme", theme);
+  document.documentElement.setAttribute("data-theme", `${theme}-${variant}`);
 }

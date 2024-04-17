@@ -1,7 +1,7 @@
 import { getLocale, getRandomLocale } from "./locales.js";
+import { getStringSetting, isBooleanSettingTrue } from "./settings.js";
 import TRANSLATIONS from "./translations.js";
 import { FALLBACK_QUOTES, getTime, updateGHLinks } from "./utils.js";
-import { isWorkMode } from "./work.js";
 
 const QUOTE_SIZE = {
   100: "xs",
@@ -24,7 +24,7 @@ async function getQuotes(time, locale) {
 
     let quotes = await response.json();
 
-    if (isWorkMode()) {
+    if (isBooleanSettingTrue("work")) {
       quotes = quotes.filter((q) => q.sfw !== "nsfw");
     }
 
@@ -62,7 +62,7 @@ export async function updateQuote(time = getTime()) {
   const urlParams = new URLSearchParams(window.location.search);
   const testQuote = urlParams.get("quote");
   const locale =
-    localStorage.getItem("locale") === "random"
+    getStringSetting("locale") === "random"
       ? getRandomLocale()
       : getLocale();
   const quote = await getQuote(time, locale);

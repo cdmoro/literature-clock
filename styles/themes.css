@@ -229,6 +229,10 @@
     --quote-line-height: 1.2;
 }
 
+[data-theme|="anaglyph"] blockquote {
+    word-spacing: .25rem;
+}
+
 [data-theme="anaglyph-light"] {
     --accent-color: #c53a35;
     --background: #eaeaec;

@@ -4,25 +4,31 @@ import { getTime } from "./utils.js";
 const urlParams = new URLSearchParams(window.location.search);
 const testTime = urlParams.get("time");
 const testQuote = urlParams.get("quote");
-const quoteTimeBar = document.getElementById("time-progress-bar");
+const isTest = !!(testTime || testQuote);
+const timeProgressBar = document.getElementById("time-progress-bar");
 let lastTime;
 
-async function updateTime(testTime) {
-  const time = getTime();
+function updateProgressBar() {
   const now = new Date();
   const seconds = now.getSeconds();
+  const percentage = ((seconds / 59) * 100).toFixed(2);
 
-  if (!testTime && !testQuote) {
-    const percentage = ((seconds / 59) * 100).toFixed(2);
-    quoteTimeBar.setAttribute("aria-valuenow", percentage);
-    quoteTimeBar.style.width = `${percentage}%`;
+  timeProgressBar.setAttribute("aria-valuenow", percentage);
+  timeProgressBar.style.width = `${percentage}%`;
 
-    if (seconds === 0) {
-      quoteTimeBar.style.transition = "none";
-      quoteTimeBar.style.width = 0;
+  if (seconds === 0) {
+    timeProgressBar.style.transition = "none";
+    timeProgressBar.style.width = 0;
 
-      setTimeout(() => (quoteTimeBar.style.transition = "width 1s linear"), 10);
-    }
+    setTimeout(() => (timeProgressBar.style.transition = "width 1s linear"), 10);
+  }
+}
+
+async function updateTime() {
+  const time = testTime || getTime();
+
+  if (!isTest) {
+    updateProgressBar();
   }
 
   if (lastTime !== time) {
@@ -33,9 +39,9 @@ async function updateTime(testTime) {
 }
 
 export function initClock() {
-  updateTime(testTime);
+  updateTime();
 
-  if (!testTime && !testQuote) {
+  if (!isTest) {
     setInterval(updateTime, 1000);
   }
 }
