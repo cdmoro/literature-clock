@@ -13,7 +13,7 @@
     --font-color: #a3a29a;
 }
 
-/* Colors */
+/* ==================COLORS================== */
 
 [data-theme="base-light"] {
     --accent-color: #d24335;
@@ -85,7 +85,7 @@
     --background: #1a0c0e;
 }
 
-/* Themes */
+/* ==================THEMES================== */
 
 [data-theme|="festive"] blockquote:before,
 [data-theme|="festive"] blockquote:after,
@@ -95,6 +95,8 @@
 [data-theme|="handwriting"] blockquote:after {
     content: none;
 }
+
+/* ==================RETRO================== */
 
 [data-theme|="retro"] {
     --quote-font-family: "VT323", sans-serif;
@@ -124,6 +126,8 @@
             rgba(109, 109, 109, 0.4) 41px);
 }
 
+/* ==================ELEGANT================== */
+
 [data-theme|="elegant"] {
     --quote-font-family: "Playfair Display", sans-serif;
     --quote-line-height: 1.5;
@@ -141,6 +145,8 @@
 [data-theme="elegant-dark"] {
     --background: #1a1a1a;
 }
+
+/* ==================FESTIVE================== */
 
 [data-theme|="festive"] {
     --quote-font-family: "Borel", sans-serif;
@@ -163,6 +169,8 @@
             #43162c 100%);
 }
 
+/* ==================BOHEMIAN================== */
+
 [data-theme|="bohemian"] {
     --quote-font-family: "Comfortaa", sans-serif;
     --quote-line-height: 1.2;
@@ -183,6 +191,8 @@
     --background: #1a1a1a;
 }
 
+/* ==================HANDWRITING================== */
+
 [data-theme|="handwriting"] {
     --quote-font-family: "Gochi Hand", sans-serif;
     --quote-line-height: 1.2;
@@ -197,14 +207,17 @@
     --background: #1a1a1a;
 }
 
+/* ==================ANAGLYPH================== */
+
 [data-theme|="anaglyph"] {
     --quote-font-family: "Anton", sans-serif;
     --quote-line-height: 1.2;
-    --accent-color: #3987b4;
 }
 
 [data-theme="anaglyph-light"] {
+    --accent-color: #c53a35;
     --background: #eaeaec;
+    --background-image: repeating-linear-gradient(var(--background) 38px, var(--background) 0px, rgba(109, 109, 109, 0.1) 41px);
     --font-color: #2f2e2c;
     --shadow: 5px 2px #e60c05, -5px -2px #4be4e2;
     --color-mix: color-mix(in srgb, var(--font-color), transparent 10%);
@@ -221,8 +234,15 @@
     background: var(--color-mix);
 }
 
+[data-theme|="anaglyph-light"] select:focus,
+[data-theme|="anaglyph-light"] button:focus {
+    box-shadow: 2px 2px #e60c05, -2px -2px #4be4e2 !important;
+}
+
 [data-theme="anaglyph-dark"] {
+    --accent-color: #3987b4;
     --background: #12121a;
+    --background-image: repeating-linear-gradient(var(--background) 38px, var(--background) 0px, rgba(109, 109, 109, 0.4) 41px);
     --font-color: #f0f0f0;
     --shadow: 5px 2px #f50d3f, -5px -2px #41ceee;
     --color-mix: color-mix(in srgb, var(--font-color), transparent 5%);
@@ -237,4 +257,9 @@
 [data-theme="anaglyph-dark"] #time-progress-bar {
     box-shadow: var(--shadow);
     background: var(--color-mix);
+}
+
+[data-theme|="anaglyph-dark"] select:focus,
+[data-theme|="anaglyph-dark"] button:focus {
+    box-shadow: 2px 2px #f50d3f, -2px -2px #41ceee !important;
 }
