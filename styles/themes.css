@@ -194,17 +194,31 @@
 /* ==================HANDWRITING================== */
 
 [data-theme|="handwriting"] {
-    --quote-font-family: "Gochi Hand", sans-serif;
-    --quote-line-height: 1.2;
-    --accent-color: #3987b4;
+    --quote-font-family: "Reenie Beanie", sans-serif;
+    --quote-line-height: 1;
+    --accent-color: #20668f;
+}
+
+[data-theme|="handwriting"] .quote-time {
+    padding: .2rem .4rem;
+    border-radius: .3rem;
+    transform: rotate(-3deg)
 }
 
 [data-theme="handwriting-light"] {
     --background: #fef9e7;
 }
 
+[data-theme="handwriting-light"] .quote-time {
+    background: #f5f514;
+}
+
 [data-theme="handwriting-dark"] {
     --background: #1a1a1a;
+}
+
+[data-theme="handwriting-dark"] .quote-time {
+    background: #FFFF00AA;
 }
 
 /* ==================ANAGLYPH================== */

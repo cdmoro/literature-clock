@@ -5,7 +5,7 @@ const THEME_FONTS = {
   elegant: "Playfair Display",
   festive: "Borel",
   bohemian: "Comfortaa",
-  handwriting: "Gochi Hand",
+  handwriting: "Reenie Beanie",
   anaglyph: "Anton",
 };
 
