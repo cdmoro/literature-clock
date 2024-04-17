@@ -199,17 +199,18 @@
     --accent-color: #20668f;
 }
 
-[data-theme|="handwriting"] .quote-time {
-    padding: .2rem .4rem;
+[data-theme|="handwriting"] .time {
+    padding: 0 .4rem;
     border-radius: .3rem;
-    transform: rotate(-3deg)
+    transform: rotate(-3deg);
+    display: inline-block;
 }
 
 [data-theme="handwriting-light"] {
     --background: #fef9e7;
 }
 
-[data-theme="handwriting-light"] .quote-time {
+[data-theme="handwriting-light"] .time {
     background: #f5f514;
 }
 
@@ -217,7 +218,7 @@
     --background: #1a1a1a;
 }
 
-[data-theme="handwriting-dark"] .quote-time {
+[data-theme="handwriting-dark"] .time {
     background: #FFFF00AA;
 }
 
@@ -237,7 +238,7 @@
     --color-mix: color-mix(in srgb, var(--font-color), transparent 10%);
 }
 
-[data-theme="anaglyph-light"] .quote-time,
+[data-theme="anaglyph-light"] .time,
 [data-theme="anaglyph-light"] #exit-zen {
     text-shadow: var(--shadow);
     color: var(--color-mix);
@@ -262,7 +263,7 @@
     --color-mix: color-mix(in srgb, var(--font-color), transparent 5%);
 }
 
-[data-theme="anaglyph-dark"] .quote-time,
+[data-theme="anaglyph-dark"] .time,
 [data-theme="anaglyph-dark"] #exit-zen {
     text-shadow: var(--shadow);
     color: var(--color-mix);

@@ -9,7 +9,7 @@ A clock that tells the time using quotes from literature. Support for multiple l
 - Zen mode: remove all the distractions (perfect for screensaver usage) ([link](https://literatureclock.netlify.app/?zen=true))
 - Work mode: only shows quotes that are safe for work ([link](https://literatureclock.netlify.app/?work=true))
 - Languages: supports English, Spanish, Portuguese, French and Italian
-- Multilanguage: each minute you'll see a quote in a different language, isn't that cool? ([link](https://literatureclock.netlify.app/?locale=multi))
+- Multilanguage: each minute you'll see a quote in a different language, isn't that cool? ([link](https://literatureclock.netlify.app/?locale=random))
 - Themes: the clock has color themes and `special themes` and each theme has light and dark variants
 - Progress bar: At the bottom of the page there is a `progress bar`, so you can know when a quote is about to change :D
 - Responsive: no matter how long is a quote, it always looks good in desktop and mobile
@@ -23,7 +23,7 @@ The clock can be controlled using URL parameters, these parameters will overwrit
 - `zen`: activate Zen mode
 - `work`: activate Work mode
 - `locale`: set the locale.
-  - Locales: `en_US`, `es_ES`, `pt_BR`, `fr_FR`, `it_IT`, and `multi`
+  - Locales: `en_US`, `es_ES`, `pt_BR`, `fr_FR`, `it_IT`, and `random`
 - `theme`: set the theme.
   - Color themes: `Base`, `Pink`, `Green`, `Orange`, `Purple`, `Blue`, and `Gray`
   - Special themes: `Retro`, `Elegant`, `Festive`, `Bohemian`, and `Handwriting`

@@ -62,13 +62,13 @@ export async function updateQuote(time = getTime()) {
   const urlParams = new URLSearchParams(window.location.search);
   const testQuote = urlParams.get("quote");
   const locale =
-    localStorage.getItem("locale") === "multi"
+    localStorage.getItem("locale") === "random"
       ? getRandomLocale()
       : getLocale();
   const quote = await getQuote(time, locale);
   const quoteText =
     testQuote ||
-    `${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}`;
+    `${quote.quote_first}<span class="time">${quote.quote_time_case}</span>${quote.quote_last}`;
 
   const blockquote = document.createElement("blockquote");
   blockquote.id = "quote";

@@ -31,7 +31,7 @@ export default {
     handwriting: "Handwriting",
     anaglyph: "Anaglyph",
     // Theme variants
-    auto: "Auto",
+    system: "System",
     light: "Light",
     dark: "Dark",
     // Locales
@@ -41,7 +41,7 @@ export default {
     "pt-BR": "Portuguese (BR)",
     "fr-FR": "French",
     "it-IT": "Italian",
-    multi: "Multilingual",
+    random: "Random",
   },
   "es-ES": {
     document_title: "Reloj Literario",
@@ -73,7 +73,7 @@ export default {
     bohemian: "Bohemio",
     handwriting: "Manuscrita",
     anaglyph: "Anaglifo",
-    auto: "Auto",
+    system: "Sistema",
     light: "Claro",
     dark: "Oscuro",
     "en-US": "Inglés (US)",
@@ -81,7 +81,7 @@ export default {
     "pt-BR": "Portugués (BR)",
     "fr-FR": "Francés",
     "it-IT": "Italiano",
-    multi: "Multilingüe",
+    random: "Aleatorio",
   },
   "pt-BR": {
     document_title: "Relógio da Literatura",
@@ -113,7 +113,7 @@ export default {
     bohemian: "Boêmio",
     handwriting: "Manuscrita",
     anaglyph: "Anaglifo",
-    auto: "Auto",
+    system: "Sistema",
     light: "Claro",
     dark: "Escuro",
     "en-US": "Inglês (US)",
@@ -121,7 +121,7 @@ export default {
     "pt-BR": "Português (BR)",
     "fr-FR": "Francês",
     "it-IT": "Italiano",
-    multi: "Multilíngue",
+    random: "Aleatório",
   },
   "fr-FR": {
     document_title: "Horloge de la Littérature",
@@ -154,7 +154,7 @@ export default {
     bohemian: "Bohémien",
     handwriting: "Manuscrit",
     anaglyph: "Anaglyphe",
-    auto: "Auto",
+    system: "Système",
     light: "Clair",
     dark: "Sombre",
     "en-US": "Anglais (US)",
@@ -162,7 +162,7 @@ export default {
     "pt-BR": "Portugais (BR)",
     "fr-FR": "Français",
     "it-IT": "Italien",
-    multi: "Multilingue",
+    random: "Aléatoire",
   },
   "it-IT": {
     document_title: "Orologio della Letteratura",
@@ -195,7 +195,7 @@ export default {
     bohemian: "Bohemien",
     handwriting: "Manoscritto",
     anaglyph: "Anaglifo",
-    auto: "Auto",
+    system: "Sistema",
     light: "Chiaro",
     dark: "Scuro",
     "en-US": "Inglese (US)",
@@ -203,6 +203,6 @@ export default {
     "pt-BR": "Portoghese (BR)",
     "fr-FR": "Francese",
     "it-IT": "Italiano",
-    multi: "Multilingua",
+    random: "Casuale",
   },
 };

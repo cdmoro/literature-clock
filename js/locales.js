@@ -1,5 +1,5 @@
 import { updateQuote } from "./quotes.js";
-import { getStringSetting } from "./settings.js";
+import { deleteUrlParamAndRefresh, getStringSetting } from "./settings.js";
 import TRANSLATIONS from "./translations.js";
 import { getTime } from "./utils.js";
 
@@ -42,7 +42,7 @@ export function getLocale(newLocale) {
 
   locale = localeQueryParam || newLocale || localeLocalStorage || locale;
 
-  if (locale === "multi") {
+  if (locale === "random") {
     localStorage.setItem("locale", locale);
     localeSelect.value = locale;
     return "es-US";
@@ -79,22 +79,15 @@ export function initLocale(defaultValue = navigator.language) {
   translateStrings(locale);
 
   document.getElementById("locale-select").addEventListener("change", (e) => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const testQuote = urlParams.get("quote");
 
-    if (urlParams.get("locale")) {
-      localStorage.setItem("locale", e.target.value);
-      urlParams.delete("locale");
-      window.location.search = urlParams.toString();
-      return;
-    }
 
-    const isMulti = e.target.value === "multi";
-    const newLocale = isMulti ? "en-US" : e.target.value;
+    const isMulti = e.target.value === "random";
+    const locale = isMulti ? "en-US" : e.target.value;
     const time = getTime();
-    const strings = getStrings(newLocale);
 
     setLocale(e.target.value);
+
+    deleteUrlParamAndRefresh("locale");
 
     if (!isMulti) {
       updateQuote(time);
@@ -107,7 +100,7 @@ function translateStrings(locale = navigator.language) {
   const strings = getStrings(locale);
 
   document.documentElement.lang =
-    locale === "multi" ? "en" : locale.substring(0, 2);
+    locale === "random" ? "en" : locale.substring(0, 2);
   document.title = `[${time}] ${strings.document_title}`;
 
   Object.entries(LABELS).forEach(([id, key]) => {
@@ -140,7 +133,7 @@ export function setLocale(newLocale) {
   const strings = getStrings(locale);
 
   document.documentElement.lang =
-    locale === "multi" ? "en" : locale.substring(0, 2);
+    locale === "random" ? "en" : locale.substring(0, 2);
   document.title = `[${time}] ${strings.document_title}`;
 
   Object.entries(LABELS).forEach(([id, key]) => {

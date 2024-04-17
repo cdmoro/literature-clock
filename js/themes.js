@@ -33,13 +33,13 @@ export function initTheme(defaultValue = "base-dark") {
   const variantSelect = document.getElementById("variant-select");
   const preferDarkThemes = window.matchMedia("(prefers-color-scheme: dark)");
 
-  if (!variant || variant === "auto") {
-    variantSelect.value = "auto";
+  if (!variant || variant === "system") {
+    variantSelect.value = "system";
     document.documentElement.setAttribute(
       "data-theme",
       `${theme}-${preferDarkThemes.matches ? "dark" : "light"}`
     );
-    setStringSetting("theme", `${theme}-auto`);
+    setStringSetting("theme", `${theme}-system`);
   } else {
     const dataTheme = `${theme}-${variant}`;
     variantSelect.value = variant;
@@ -55,11 +55,11 @@ export function initTheme(defaultValue = "base-dark") {
   preferDarkThemes.addEventListener("change", (e) => {
     const variantSelect = document.getElementById("variant-select");
 
-    if (variantSelect.value === "auto") {
+    if (variantSelect.value === "system") {
       const themeSelect = document.getElementById("theme-select");
       const theme = themeSelect.value;
 
-      localStorage.setItem("theme", `${theme}-auto`);
+      localStorage.setItem("theme", `${theme}-system`);
       document.documentElement.setAttribute(
         "data-theme",
         `${theme}-${e.matches ? "dark" : "light"}`
@@ -79,7 +79,7 @@ function getTheme(newTheme) {
 
   let theme = themeQueryParam || newTheme || themeLocalStorage || defaultTheme;
 
-  if (theme.indexOf("-") < 0 && variant !== "auto") {
+  if (theme.indexOf("-") < 0 && variant !== "system") {
     theme += `-${variant}`;
   }
 
@@ -100,9 +100,9 @@ export function setTheme(newTheme) {
 
   themeSelect.value = theme.split("-")[0];
 
-  if (variantSelect.value !== "auto") {
+  if (variantSelect.value !== "system") {
     variantSelect.value =
-      theme.indexOf("-") >= 0 ? theme.split("-")[1] : "auto";
+      theme.indexOf("-") >= 0 ? theme.split("-")[1] : "system";
   }
 
   loadFontIfNotExists(themeSelect.value);
@@ -111,17 +111,17 @@ export function setTheme(newTheme) {
   document.documentElement.setAttribute("data-theme", theme);
 }
 
-export function setVariant(variant = "auto") {
+export function setVariant(variant = "system") {
   const themeSelect = document.getElementById("theme-select");
   const themePrefix = themeSelect.value;
   let theme = `${themePrefix}-${variant}`;
 
-  if (variant === "auto" && window.matchMedia) {
+  if (variant === "system" && window.matchMedia) {
     const preferDarkThemes = window.matchMedia(
       "(prefers-color-scheme: dark)"
     ).matches;
     theme = `${themePrefix}-${preferDarkThemes ? "dark" : "light"}`;
-    localStorage.setItem("theme", `${themePrefix}-auto`);
+    localStorage.setItem("theme", `${themePrefix}-system`);
   } else {
     localStorage.setItem("theme", theme);
   }

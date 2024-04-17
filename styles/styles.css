@@ -84,8 +84,7 @@ blockquote[aria-label]:after {
   bottom: 1rem;
 }
 
-blockquote .quote-time {
-  display: inline-block;
+blockquote .time {
   color: var(--accent-color);
 }
 

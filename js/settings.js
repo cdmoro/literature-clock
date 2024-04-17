@@ -52,7 +52,7 @@ export function setStringSetting(name, value) {
   localStorage.setItem(name, value);
 }
 
-export function deleteUrlParam(name) {
+export function deleteUrlParamAndRefresh(name) {
   const urlParams = new URLSearchParams(window.location.search);
   
   if (urlParams.has(name)) {
