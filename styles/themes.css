@@ -1,88 +1,88 @@
 :root {
-    --accent-color: #d24335;
-    --background: #12121a;
-    --font-color: #a3a29a;
-    --quote-font-family: "Special Elite", cursive;
+  --accent-color: #d24335;
+  --background: #12121a;
+  --font-color: #a3a29a;
+  --quote-font-family: "Special Elite", cursive;
 }
 
 [data-theme$="light"] {
-    --font-color: #2f2e2c;
+  --font-color: #2f2e2c;
 }
 
 [data-theme$="dark"] {
-    --font-color: #a3a29a;
+  --font-color: #a3a29a;
 }
 
 /* ==================COLORS================== */
 
 [data-theme="base-light"] {
-    --accent-color: #d24335;
-    --background: #eaeaec;
+  --accent-color: #d24335;
+  --background: #eaeaec;
 }
 
 [data-theme="base-dark"] {
-    --accent-color: #d24335;
-    --background: #12121a;
+  --accent-color: #d24335;
+  --background: #12121a;
 }
 
 [data-theme="orange-light"] {
-    --accent-color: #f39c12;
-    --background: #fdf2e9;
+  --accent-color: #f39c12;
+  --background: #fdf2e9;
 }
 
 [data-theme="orange-dark"] {
-    --accent-color: #f39c12;
-    --background: #1a0e0c;
+  --accent-color: #f39c12;
+  --background: #1a0e0c;
 }
 
 [data-theme="purple-light"] {
-    --accent-color: #9b59b6;
-    --background: #f5eefd;
+  --accent-color: #9b59b6;
+  --background: #f5eefd;
 }
 
 [data-theme="purple-dark"] {
-    --accent-color: #9b59b6;
-    --background: #121222;
+  --accent-color: #9b59b6;
+  --background: #121222;
 }
 
 [data-theme="green-light"] {
-    --accent-color: #2ecc71;
-    --background: #f0fff4;
+  --accent-color: #2ecc71;
+  --background: #f0fff4;
 }
 
 [data-theme="green-dark"] {
-    --accent-color: #2ecc71;
-    --background: #0e0e1a;
+  --accent-color: #2ecc71;
+  --background: #0e0e1a;
 }
 
 [data-theme="blue-light"] {
-    --accent-color: #2c97df;
-    --background: #f2f6ff;
+  --accent-color: #2c97df;
+  --background: #f2f6ff;
 }
 
 [data-theme="blue-dark"] {
-    --accent-color: #2c97df;
-    --background: #0c0c1a;
+  --accent-color: #2c97df;
+  --background: #0c0c1a;
 }
 
 [data-theme="gray-light"] {
-    --accent-color: #9eaeaf;
-    --background: #f4f6f6;
+  --accent-color: #9eaeaf;
+  --background: #f4f6f6;
 }
 
 [data-theme="gray-dark"] {
-    --accent-color: #e1e7e7;
-    --background: #1a1a1e;
+  --accent-color: #e1e7e7;
+  --background: #1a1a1e;
 }
 
 [data-theme="pink-light"] {
-    --accent-color: #ff6b81;
-    --background: #fdf2f8;
+  --accent-color: #ff6b81;
+  --background: #fdf2f8;
 }
 
 [data-theme="pink-dark"] {
-    --accent-color: #ff6b81;
-    --background: #1a0c0e;
+  --accent-color: #ff6b81;
+  --background: #1a0c0e;
 }
 
 /* ==================THEMES================== */
@@ -93,192 +93,208 @@
 [data-theme|="bohemian"] blockquote:after,
 [data-theme|="handwriting"] blockquote:before,
 [data-theme|="handwriting"] blockquote:after {
-    content: none;
+  content: none;
 }
 
 /* ==================RETRO================== */
 
 [data-theme|="retro"] {
-    --quote-font-family: "VT323", sans-serif;
-    --quote-line-height: 1;
-    --quote-font-size: 3vw;
+  --quote-font-family: "VT323", sans-serif;
+  --quote-line-height: 1;
+  --quote-font-size: 3vw;
 }
 
 [data-theme|="retro"] #time-progress-bar {
-    height: 100vh;
-    opacity: 0.15;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0), var(--accent-color));
+  height: 100vh;
+  opacity: 0.15;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0), var(--accent-color));
 }
 
 [data-theme="retro-light"] {
-    --accent-color: #daa908;
-    --background: #f8f8f8;
-    --background-image: repeating-linear-gradient(var(--background) 38px,
-            var(--background) 0px,
-            rgba(109, 109, 109, 0.1) 41px);
+  --accent-color: #daa908;
+  --background: #f8f8f8;
+  --background-image: repeating-linear-gradient(
+    var(--background) 38px,
+    var(--background) 0px,
+    rgba(109, 109, 109, 0.1) 41px
+  );
 }
 
 [data-theme="retro-dark"] {
-    --accent-color: #f1ba08;
-    --background: #2c2c2c;
-    --background-image: repeating-linear-gradient(var(--background) 38px,
-            var(--background) 0px,
-            rgba(109, 109, 109, 0.4) 41px);
+  --accent-color: #f1ba08;
+  --background: #2c2c2c;
+  --background-image: repeating-linear-gradient(
+    var(--background) 38px,
+    var(--background) 0px,
+    rgba(109, 109, 109, 0.4) 41px
+  );
 }
 
 /* ==================ELEGANT================== */
 
 [data-theme|="elegant"] {
-    --quote-font-family: "Playfair Display", sans-serif;
-    --quote-line-height: 1.5;
-    --accent-color: #9d88ae;
+  --quote-font-family: "Playfair Display", sans-serif;
+  --quote-line-height: 1.5;
+  --accent-color: #9f5bd5;
 }
 
 [data-theme|="elegant"] #time-progress-bar {
-    background-color: var(--accent-color);
+  background-color: var(--accent-color);
 }
 
 [data-theme="elegant-light"] {
-    --background: #f5f5f5;
+  --background: #f5f5f5;
 }
 
 [data-theme="elegant-dark"] {
-    --background: #1a1a1a;
+  --background: #1a1a1a;
 }
 
 /* ==================FESTIVE================== */
 
 [data-theme|="festive"] {
-    --quote-font-family: "Borel", sans-serif;
-    --quote-font-size: 3vw;
-    --quote-line-height: 1.5;
-    --accent-color: #e74c3c;
+  --quote-font-family: "Borel", sans-serif;
+  --quote-font-size: 3vw;
+  --quote-line-height: 1.5;
+  --accent-color: #e74c3c;
 }
 
 [data-theme="festive-light"] {
-    --background: #fad0c4;
-    --background-image: linear-gradient(to top right,
-            var(--background) 0%,
-            #ffd1ff 100%);
+  --background: #fad0c4;
+  --background-image: linear-gradient(
+    to top right,
+    var(--background) 0%,
+    #ffd1ff 100%
+  );
 }
 
 [data-theme="festive-dark"] {
-    --background: #011b1b;
-    --background-image: linear-gradient(to top right,
-            var(--background) 0%,
-            #43162c 100%);
+  --background: #011b1b;
+  --background-image: linear-gradient(
+    to top right,
+    var(--background) 0%,
+    #43162c 100%
+  );
 }
 
 /* ==================BOHEMIAN================== */
 
 [data-theme|="bohemian"] {
-    --quote-font-family: "Comfortaa", sans-serif;
-    --quote-line-height: 1.2;
-    --accent-color: #1abc9c;
+  --quote-font-family: "Comfortaa", sans-serif;
+  --quote-line-height: 1.2;
+  --accent-color: #1abc9c;
 }
 
 [data-theme|="bohemian"] #time-progress-bar {
-    height: 100vh;
-    opacity: 0.04;
-    background-color: var(--accent-color);
+  height: 100vh;
+  opacity: 0.04;
+  background-color: var(--accent-color);
 }
 
 [data-theme="bohemian-light"] {
-    --background: #fef9e7;
+  --background: #fef9e7;
 }
 
 [data-theme="bohemian-dark"] {
-    --background: #1a1a1a;
+  --background: #1a1a1a;
 }
 
 /* ==================HANDWRITING================== */
 
 [data-theme|="handwriting"] {
-    --quote-font-family: "Reenie Beanie", sans-serif;
-    --quote-line-height: 1;
-    --accent-color: #20668f;
+  --quote-font-family: "Reenie Beanie", sans-serif;
+  --quote-line-height: 1;
+  --accent-color: #20668f;
 }
 
 [data-theme|="handwriting"] .time {
-    padding: 0 .4rem;
-    border-radius: .3rem;
-    transform: rotate(-3deg);
-    display: inline-block;
+  padding: 0 0.4rem;
+  border-radius: 0.3rem;
+  transform: rotate(-3deg);
+  display: inline-block;
 }
 
 [data-theme="handwriting-light"] {
-    --background: #fef9e7;
+  --background: #fef9e7;
 }
 
 [data-theme="handwriting-light"] .time {
-    background: #f5f514;
+  background: #f5f514;
 }
 
 [data-theme="handwriting-dark"] {
-    --background: #1a1a1a;
+  --background: #1a1a1a;
 }
 
 [data-theme="handwriting-dark"] .time {
-    background: #FFFF00AA;
+  background: #ffff00aa;
 }
 
 /* ==================ANAGLYPH================== */
 
 [data-theme|="anaglyph"] {
-    --quote-font-family: "Anton", sans-serif;
-    --quote-line-height: 1.2;
+  --quote-font-family: "Anton", sans-serif;
+  --quote-line-height: 1.2;
 }
 
 [data-theme|="anaglyph"] blockquote {
-    word-spacing: .25rem;
+  word-spacing: 0.25rem;
 }
 
 [data-theme="anaglyph-light"] {
-    --accent-color: #c53a35;
-    --background: #eaeaec;
-    --background-image: repeating-linear-gradient(var(--background) 38px, var(--background) 0px, rgba(109, 109, 109, 0.1) 41px);
-    --font-color: #2f2e2c;
-    --shadow: 5px 2px #e60c05, -5px -2px #4be4e2;
-    --color-mix: color-mix(in srgb, var(--font-color), transparent 10%);
+  --accent-color: #c53a35;
+  --background: #eaeaec;
+  --background-image: repeating-linear-gradient(
+    var(--background) 38px,
+    var(--background) 0px,
+    rgba(109, 109, 109, 0.1) 41px
+  );
+  --font-color: #2f2e2c;
+  --shadow: 5px 2px #e60c05, -5px -2px #4be4e2;
+  --color-mix: color-mix(in srgb, var(--font-color), transparent 10%);
 }
 
 [data-theme="anaglyph-light"] .time,
 [data-theme="anaglyph-light"] #exit-zen {
-    text-shadow: var(--shadow);
-    color: var(--color-mix);
+  text-shadow: var(--shadow);
+  color: var(--color-mix);
 }
 
 [data-theme="anaglyph-light"] #time-progress-bar {
-    box-shadow: var(--shadow);
-    background: var(--color-mix);
+  box-shadow: var(--shadow);
+  background: var(--color-mix);
 }
 
 [data-theme|="anaglyph-light"] select:focus,
 [data-theme|="anaglyph-light"] button:focus {
-    box-shadow: 2px 2px #e60c05, -2px -2px #4be4e2 !important;
+  box-shadow: 2px 2px #e60c05, -2px -2px #4be4e2 !important;
 }
 
 [data-theme="anaglyph-dark"] {
-    --accent-color: #3987b4;
-    --background: #12121a;
-    --background-image: repeating-linear-gradient(var(--background) 38px, var(--background) 0px, rgba(109, 109, 109, 0.4) 41px);
-    --font-color: #f0f0f0;
-    --shadow: 5px 2px #f50d3f, -5px -2px #41ceee;
-    --color-mix: color-mix(in srgb, var(--font-color), transparent 5%);
+  --accent-color: #3987b4;
+  --background: #12121a;
+  --background-image: repeating-linear-gradient(
+    var(--background) 38px,
+    var(--background) 0px,
+    rgba(109, 109, 109, 0.4) 41px
+  );
+  --font-color: #f0f0f0;
+  --shadow: 5px 2px #f50d3f, -5px -2px #41ceee;
+  --color-mix: color-mix(in srgb, var(--font-color), transparent 5%);
 }
 
 [data-theme="anaglyph-dark"] .time,
 [data-theme="anaglyph-dark"] #exit-zen {
-    text-shadow: var(--shadow);
-    color: var(--color-mix);
+  text-shadow: var(--shadow);
+  color: var(--color-mix);
 }
 
 [data-theme="anaglyph-dark"] #time-progress-bar {
-    box-shadow: var(--shadow);
-    background: var(--color-mix);
+  box-shadow: var(--shadow);
+  background: var(--color-mix);
 }
 
 [data-theme|="anaglyph-dark"] select:focus,
 [data-theme|="anaglyph-dark"] button:focus {
-    box-shadow: 2px 2px #f50d3f, -2px -2px #41ceee !important;
+  box-shadow: 2px 2px #f50d3f, -2px -2px #41ceee !important;
 }
