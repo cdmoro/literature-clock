@@ -10,10 +10,10 @@ export function initZenMode(defaultValue = false) {
 
   document.getElementById("zen").addEventListener("click", () => {
     setBooleanSetting("zen", true);
-    deleteUrlParamIfExistsAndRefresh("zen");
+    updateURL("zen", true);
   });
   document.getElementById("exit-zen").addEventListener("click", () => {
     setBooleanSetting("zen", false);
-    deleteUrlParamIfExistsAndRefresh("zen");
+    updateURL("zen", false);
   });
 }
