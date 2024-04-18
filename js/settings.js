@@ -56,19 +56,9 @@ export function setStringSetting(name, value) {
   localStorage.setItem(name, value);
 }
 
-// deprecated
-export function deleteUrlParamIfExistsAndRefresh(name) {
-  /*const urlParams = new URLSearchParams(window.location.search);
-
-  if (urlParams.has(name)) {
-    urlParams.delete(name);
-    window.location.search = urlParams.toString();
-  }*/
-}
-
 export function updateURL(name, value) {
   const urlParams = new URLSearchParams(window.location.search);
   urlParams.set(name, value);
 
-  history.replaceState({}, "", `?${urlParams.toString()}`)
+  history.replaceState({}, "", `?${urlParams.toString()}`);
 }
