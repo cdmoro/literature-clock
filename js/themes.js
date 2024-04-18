@@ -1,7 +1,7 @@
 import {
-  deleteUrlParamIfExistsAndRefresh,
   initStringSetting,
   setStringSetting,
+  updateURL,
 } from "./settings.js";
 
 const THEME_FONTS = {
