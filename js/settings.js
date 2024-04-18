@@ -66,7 +66,7 @@ export function deleteUrlParamIfExistsAndRefresh(name) {
   }*/
 }
 
-function updateURL(name, value) {
+export function updateURL(name, value) {
   const urlParams = new URLSearchParams(window.location.search);
   urlParams.set(name, value);
 
