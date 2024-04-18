@@ -1,10 +1,10 @@
 import { updateQuote } from "./quotes.js";
 import {
-  deleteUrlParamIfExistsAndRefresh,
   initBooleanSetting,
   setBooleanSetting,
   toggleBooleanSetting,
   updateBooleanSettingButtonStatus,
+  updateURL,
 } from "./settings.js";
 
 export function initWorkMode(defaultValue = false) {
