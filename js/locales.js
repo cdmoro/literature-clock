@@ -68,7 +68,7 @@ export function initLocale(defaultValue = navigator.language) {
     const locale = isRandomLocale ? "en-US" : e.target.value;
     translateStrings(locale);
     setStringSetting("locale", e.target.value);
-    deleteUrlParamIfExistsAndRefresh("locale");
+    updateURL("locale", e.target.value);
 
     if (!isRandomLocale) {
       updateQuote();
