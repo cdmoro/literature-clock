@@ -18,11 +18,10 @@ export function initWorkMode(defaultValue = false) {
 function toggleWorkMode() {
   const isWorkMode = toggleBooleanSetting("work");
 
-  deleteUrlParamIfExistsAndRefresh("work");
-
+  updateURL("work", isWorkMode);
   updateBooleanSettingButtonStatus("work", isWorkMode);
+  
   const sfw = document.getElementById("quote").dataset.sfw;
-
   if (isWorkMode && sfw === "nsfw") {
     updateQuote();
   }
