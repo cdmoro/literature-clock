@@ -58,7 +58,12 @@ export function setStringSetting(name, value) {
 
 export function updateURL(name, value) {
   const urlParams = new URLSearchParams(window.location.search);
-  urlParams.set(name, value);
+
+  if (value === false) {
+    urlParams.delete(name);
+  } else {
+    urlParams.set(name, value);
+  }
 
   history.replaceState({}, "", `?${urlParams.toString()}`);
 }
