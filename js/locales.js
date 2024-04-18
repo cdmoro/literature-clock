@@ -1,8 +1,8 @@
 import { updateQuote } from "./quotes.js";
 import {
-  deleteUrlParamIfExistsAndRefresh,
   initStringSetting,
   setStringSetting,
+  updateURL
 } from "./settings.js";
 import TRANSLATIONS from "./translations.js";
 import { getTime } from "./utils.js";
