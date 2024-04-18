@@ -15,6 +15,7 @@ A clock that tells the time using quotes from literature. Support for multiple l
 - Responsive: no matter how long is a quote, it always looks good in desktop and mobile
 - All the quote elements have `aria-labels` to improve the Accessibility
 - The configurations are saved in the browser's local storage
+- The configurations are updated in the URL withour reload the page (History API)
 
 ## Parameteres
 
