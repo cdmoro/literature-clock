@@ -71,9 +71,9 @@ function setTheme() {
   const theme = document.getElementById("theme-select").value;
   let variant = document.getElementById("variant-select").value;
 
-  setStringSetting("theme", `${theme}-${variant}`);
-  deleteUrlParamIfExistsAndRefresh("theme");
   loadFontIfNotExists(theme);
+  setStringSetting("theme", `${theme}-${variant}`);
+  updateURL("theme", `${theme}-${variant}`);
 
   if (variant === "system") {
     variant = window.matchMedia("(prefers-color-scheme: dark)").matches
