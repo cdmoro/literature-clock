@@ -96,7 +96,7 @@ for file_name in file_list:
         }
 
         if errors > 0:
-            print(f"- {errors} quote with errors found")
+            print(f"- {errors} quotes with errors found")
 
         print(f"- {times_with_quote} files created in {os.path.join(output_path, language)}\n")
 

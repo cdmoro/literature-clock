@@ -1,9 +1,9 @@
 [
     {
         "time": "23:59",
-        "quote_first": "Faltaba un minuto para la medianoche, Roquenton tomaba la mano de su esposa y le daba sus últimos consejos. Al filo de la medianoche, sintió la mano de su compañera derretirse dentro de la suya.",
-        "quote_last": "",
-        "quote_time_case": "* En un minuto para la medianoche",
+        "quote_first": "",
+        "quote_last": ", Roquenton tomaba la mano de su esposa y le daba sus últimos consejos. Al filo de la medianoche, sintió la mano de su compañera derretirse dentro de la suya.",
+        "quote_time_case": "Faltaba un minuto para la medianoche",
         "quote_raw": "Faltaba un minuto para la medianoche, Roquenton tomaba la mano de su esposa y le daba sus últimos consejos. Al filo de la medianoche, sintió la mano de su compañera derretirse dentro de la suya.",
         "title": "El hombre que atravesó las paredes",
         "author": "Marcel Aymé",
@@ -11,9 +11,9 @@
     },
     {
         "time": "23:59",
-        "quote_first": "Chigurgh se levantó, recogió la carcasa vacía de la alfombra, sopló en ella, se la guardó en el bolsillo y miró el reloj. Aún faltaba un minuto para el nuevo día.",
-        "quote_last": "",
-        "quote_time_case": "* El nuevo día aún estaba a un minuto de distancia.",
+        "quote_first": "Chigurgh se levantó, recogió la carcasa vacía de la alfombra, sopló en ella, se la guardó en el bolsillo y miró el reloj. ",
+        "quote_last": ".",
+        "quote_time_case": "Aún faltaba un minuto para el nuevo día",
         "quote_raw": "Chigurgh se levantó, recogió la carcasa vacía de la alfombra, sopló en ella, se la guardó en el bolsillo y miró el reloj. Aún faltaba un minuto para el nuevo día.",
         "title": "No es país para viejos",
         "author": "Cormac McCarthy",
