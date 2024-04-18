@@ -1,7 +1,7 @@
 import {
-  deleteUrlParamIfExistsAndRefresh,
   initBooleanSetting,
   setBooleanSetting,
+  updateURL,
 } from "./settings.js";
 
 export function initZenMode(defaultValue = false) {
