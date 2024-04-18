@@ -36,6 +36,8 @@ body.zen #exit-zen {
 #clock {
   max-width: 80vw;
   margin: 0 auto;
+  z-index: 2;
+  position: relative;
 }
 
 a,
@@ -54,6 +56,14 @@ blockquote p {
   font-size: var(--quote-font-size, 3.5vw);
   margin: 0;
   padding-bottom: 0.5rem;
+}
+
+blockquote.quote-m p {
+  font-size: var(--quote-m-font-size, 3.3vw);
+}
+
+blockquote.quote-l p {
+  font-size: var(--quote-l-font-size, 3vw);
 }
 
 blockquote.quote-xl p {
