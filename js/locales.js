@@ -35,27 +35,39 @@ export function getRandomLocale() {
   return locales[Math.floor(Math.random() * locales.length)];
 }
 
-export function getStrings(locale = navigator.language) {
+function resolveLocale(locale = navigator.language) {
+  if (locale === "random") {
+    return locale;
+  }
+
   if (locale.length === 2) {
     locale = DOMINANT_LOCALES[locale];
   }
 
   if (!TRANSLATIONS[locale]) {
-    return TRANSLATIONS["en-US"];
+    locale = DOMINANT_LOCALES[locale.substring(0, 2)];
   }
 
-  return TRANSLATIONS[locale];
+  if (!TRANSLATIONS[locale] || !locale) {
+    locale = "en-US";
+  }
+
+  return locale;
 }
 
 export function initLocale(defaultValue = navigator.language) {
-  const locale = initStringSetting("locale", defaultValue);
+  const locale = resolveLocale(initStringSetting("locale", defaultValue));
+  const localeSelect = document.getElementById("locale-select");
+
   setStringSetting("locale", locale);
   translateStrings(locale);
+  localeSelect.value = locale;
 
-  document.getElementById("locale-select").addEventListener("change", (e) => {
+  localeSelect.addEventListener("change", (e) => {
     const isRandomLocale = e.target.value === "random";
-    translateStrings(isRandomLocale ? "en-US" : e.target.value);
-    setStringSetting("locale");
+    const locale = isRandomLocale ? "en-US" : e.target.value;
+    translateStrings(locale);
+    setStringSetting("locale", e.target.value);
     deleteUrlParamIfExistsAndRefresh("locale");
 
     if (!isRandomLocale) {
@@ -66,7 +78,7 @@ export function initLocale(defaultValue = navigator.language) {
 
 function translateStrings(locale = navigator.language) {
   const time = getTime();
-  const strings = getStrings(locale);
+  const strings = TRANSLATIONS[resolveLocale(locale)] || TRANSLATIONS["en-US"];
 
   document.documentElement.lang =
     locale === "random" ? "en" : locale.substring(0, 2);
