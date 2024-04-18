@@ -16,7 +16,6 @@ export function initBooleanSetting(name, defaultValue = false) {
 export function setBooleanSetting(name, value = false) {
   document.body.classList.toggle(name, value);
   localStorage.setItem(name, value);
-  updateURL(name, value);
 }
 
 export function toggleBooleanSetting(name) {
@@ -55,7 +54,6 @@ export function getStringSetting(name) {
 
 export function setStringSetting(name, value) {
   localStorage.setItem(name, value);
-  updateURL(name, value);
 }
 
 // deprecated
