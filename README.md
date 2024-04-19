@@ -8,7 +8,7 @@ A clock that tells the time using quotes from literature. Support for multiple l
 
 - Zen mode: remove all the distractions (perfect for screensaver usage) ([link](https://literatureclock.netlify.app/?zen=true))
 - Work mode: only shows quotes that are safe for work ([link](https://literatureclock.netlify.app/?work=true))
-- Languages: supports English, Spanish, Portuguese, French and Italian
+- Languages: supports English, Spanish, Portuguese, French and Italian (by default, it will try to use the system language)
 - Multilanguage: each minute you'll see a quote in a different language, isn't that cool? ([link](https://literatureclock.netlify.app/?locale=random))
 - Themes: the clock has color themes and `special themes` and each theme has light and dark variants
 - Progress bar: At the bottom of the page there is a `progress bar`, so you can know when a quote is about to change :D
