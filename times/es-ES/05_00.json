@@ -218,5 +218,25 @@
         "title": "Feria de la vanidad",
         "author": "William Makepeace Thackeray",
         "sfw": "unknown"
+    },
+    {
+        "time": "05:00",
+        "quote_first": "El padre del senador había dejado una nota que decía: «Son las ",
+        "quote_last": ". No me he movido en todo el día de mi casa. Todas las noticias que tengo del muy mandria ahijado de los señores que le sirven de padrinos en este lance»",
+        "quote_time_case": "cinco de la mañana",
+        "quote_raw": "El padre del senador había dejado una nota que decía: «Son las cinco de la mañana. No me he movido en todo el día de mi casa. Todas las noticias que tengo del muy mandria ahijado de los señores que le sirven de padrinos en este lance»",
+        "title": "Respiración artificial",
+        "author": "Ricardo Piglia",
+        "sfw": "sfw"
+    },
+    {
+        "time": "05:00",
+        "quote_first": "Eran las ",
+        "quote_last": ". Entró a la estación del ferrocarril, miró en redor, y como tenía sueño se refugió en un rincón de la sala de espera.",
+        "quote_time_case": "cinco de la mañana",
+        "quote_raw": "Eran las cinco de la mañana. Entró a la estación del ferrocarril, miró en redor, y como tenía sueño se refugió en un rincón de la sala de espera.",
+        "title": "Los siete locos",
+        "author": "Roberto Arlt",
+        "sfw": "sfw"
     }
 ]

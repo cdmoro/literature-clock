@@ -388,5 +388,35 @@
         "title": "El comedor de hachís",
         "author": "Fitz Hugh Ludlow",
         "sfw": "nsfw"
+    },
+    {
+        "time": "12:00",
+        "quote_first": "—¿Cómo fuera de la ciudad? —respondió—. ¿Por ventura tiene vuesa merced los ojos en el colodrillo, que no ve que son éstas, las que aquí vienen, resplandecientes como el mismo sol a ",
+        "quote_last": "?",
+        "quote_time_case": "mediodía",
+        "quote_raw": "—¿Cómo fuera de la ciudad? —respondió—. ¿Por ventura tiene vuesa merced los ojos en el colodrillo, que no ve que son éstas, las que aquí vienen, resplandecientes como el mismo sol a mediodía?",
+        "title": "Don Quijote de la Mancha",
+        "author": "Miguel de Cervantes",
+        "sfw": "sfw"
+    },
+    {
+        "time": "12:00",
+        "quote_first": "Apeaos, y usad de vuestro compás de pies, de vuestros círculos y vuestros ángulos y ciencia; que yo espero de haceros ver estrellas a ",
+        "quote_last": " con mi destreza moderna y zafia",
+        "quote_time_case": "mediodía",
+        "quote_raw": "Apeaos, y usad de vuestro compás de pies, de vuestros círculos y vuestros ángulos y ciencia; que yo espero de haceros ver estrellas a mediodía con mi destreza moderna y zafia",
+        "title": "Don Quijote de la Mancha",
+        "author": "Miguel de Cervantes",
+        "sfw": "sfw"
+    },
+    {
+        "time": "12:00",
+        "quote_first": "Díjome que acaso, pasando por una calle de la ciudad a la hora de ",
+        "quote_last": ", una señora muy hermosa le llamó desde una ventana",
+        "quote_time_case": "medio día",
+        "quote_raw": "Díjome que acaso, pasando por una calle de la ciudad a la hora de medio día, una señora muy hermosa le llamó desde una ventana",
+        "title": "Don Quijote de la Mancha",
+        "author": "Miguel de Cervantes",
+        "sfw": "sfw"
     }
 ]

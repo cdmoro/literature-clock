@@ -368,5 +368,25 @@
         "title": "Uno volo sobre el nido del cuco",
         "author": "Ken Kesey",
         "sfw": "unknown"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "Hasta aquel jueves indeseable, en que el médico menos notorio de los muchos que lo habían visto lo citó a las ",
+        "quote_last": " en el pabellón de neurología.",
+        "quote_time_case": "nueve de la mañana",
+        "quote_raw": "Hasta aquel jueves indeseable, en que el médico menos notorio de los muchos que lo habían visto lo citó a las nueve de la mañana en el pabellón de neurología.",
+        "title": "Doce cuentos peregrinos",
+        "author": "Gabriel García Márquez",
+        "sfw": "sfw"
+    },
+    {
+        "time": "09:00",
+        "quote_first": "—¿Y se aburre mucho usted?<br>—Regular. He organizado mi vida como la de un industrial. Todos los días me acuesto a las doce y me levanto a las ",
+        "quote_last": ".",
+        "quote_time_case": "nueve de la mañana",
+        "quote_raw": "—¿Y se aburre mucho usted?<br>—Regular. He organizado mi vida como la de un industrial. Todos los días me acuesto a las doce y me levanto a las nueve de la mañana.",
+        "title": "Los siete locos",
+        "author": "Roberto Arlt",
+        "sfw": "sfw"
     }
 ]

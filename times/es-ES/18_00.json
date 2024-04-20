@@ -308,5 +308,25 @@
         "title": "La interpretación del asesinato",
         "author": "Jed Rubenfeld",
         "sfw": "unknown"
+    },
+    {
+        "time": "18:00",
+        "quote_first": "Hago una hora de ejercicio, me baño, leo los diarios, almuerzo, duermo una siesta, a las ",
+        "quote_last": " tomo el vermut y voy a lo del peluquero, a las ocho ceno, después salgo al café",
+        "quote_time_case": "seis",
+        "quote_raw": "Hago una hora de ejercicio, me baño, leo los diarios, almuerzo, duermo una siesta, a las seis tomo el vermut y voy a lo del peluquero, a las ocho ceno, después salgo al café",
+        "title": "Los siete locos",
+        "author": "Roberto Arlt",
+        "sfw": "sfw"
+    },
+    {
+        "time": "18:00",
+        "quote_first": "—Con lo cual —dijo Perico— le ocurre que una enana de la página veinte tiene dos metros cinco en la página cien. Me he percatado más de una vez. Hay escenas que empiezan a las ",
+        "quote_last": " y acaban a las cinco y media. Un asco.",
+        "quote_time_case": "seis de la tarde",
+        "quote_raw": "—Con lo cual —dijo Perico— le ocurre que una enana de la página veinte tiene dos metros cinco en la página cien. Me he percatado más de una vez. Hay escenas que empiezan a las seis de la tarde y acaban a las cinco y media. Un asco.",
+        "title": "Rayuela",
+        "author": "Julio Cortázar",
+        "sfw": "sfw"
     }
 ]

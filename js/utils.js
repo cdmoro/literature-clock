@@ -130,9 +130,9 @@ export function updateGHLinks(time, quote, locale) {
   reportError.href = reportErrorUrl.href;
 }
 
-export function setQuoteFontSize() {
+export function fitQuote() {
   const quote = document.querySelector("blockquote p");
-  let fontSize = 48;
+  let fontSize = 35;
 
   if (quote) {
     quote.style.fontSize = `${fontSize}px`;
@@ -142,7 +142,7 @@ export function setQuoteFontSize() {
       fontSize -= 1;
 
       if (fontSize < 0) {
-        quote.style.fontSize = `30px`;
+        quote.style.fontSize = `35px`;
         break;
       }
     }

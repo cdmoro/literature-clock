@@ -408,5 +408,15 @@
         "title": "Sentencia sorda",
         "author": "David Lodge",
         "sfw": "unknown"
+    },
+    {
+        "time": "15:00",
+        "quote_first": "recordaba «que el domingo pasado una negra vino a las ",
+        "quote_last": " y salió a las seis junto con Antonio».",
+        "quote_time_case": "tres de la tarde",
+        "quote_raw": "recordaba «que el domingo pasado una negra vino a las tres de la tarde y salió a las seis junto con Antonio».",
+        "title": "El juguete rabioso",
+        "author": "Roberto Arlt",
+        "sfw": "sfw"
     }
 ]

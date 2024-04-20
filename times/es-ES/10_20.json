@@ -38,5 +38,15 @@
         "title": "La silla de plata",
         "author": "C.S. Lewis",
         "sfw": "unknown"
+    },
+    {
+        "time": "10:20",
+        "quote_first": "Un lunes, a las ",
+        "quote_last": ", Amaranta estaba vistiendo a Aureliano José, cuando percibió un tropel remoto y un toque de corneta",
+        "quote_time_case": "diez y veinte de la mañana",
+        "quote_raw": "Un lunes, a las diez y veinte de la mañana, Amaranta estaba vistiendo a Aureliano José, cuando percibió un tropel remoto y un toque de corneta",
+        "title": "100 años de soledad",
+        "author": "Gabriel García Márquez",
+        "sfw": "sfw"
     }
 ]

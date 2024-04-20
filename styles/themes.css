@@ -92,7 +92,9 @@
 [data-theme|="bohemian"] blockquote:before,
 [data-theme|="bohemian"] blockquote:after,
 [data-theme|="handwriting"] blockquote:before,
-[data-theme|="handwriting"] blockquote:after {
+[data-theme|="handwriting"] blockquote:after,
+[data-theme|="whatsapp"] blockquote:before,
+[data-theme|="whatsapp"] blockquote:after {
   content: none;
 }
 
@@ -306,34 +308,22 @@
     inset 0px 5px 0px -3px #f1f1f111;
 }
 
-[data-theme|="whatsapp"] blockquote {
-  /* display: flex;
-  flex-direction: column;
-  gap: 1rem; */
-}
-
 [data-theme|="whatsapp"] .time {
   font-weight: bold;
-}
-
-[data-theme|="whatsapp"] blockquote:before,
-[data-theme|="whatsapp"] blockquote:after {
-  display: none;
 }
 
 [data-theme|="whatsapp"] blockquote p {
   border-radius: 0.75rem;
   box-shadow: var(--box-shadow);
   max-width: 80%;
-  padding: 0.75rem;
+  padding: 0.75rem 1.2rem;
   position: relative;
   margin-inline-start: 1rem;
 }
 
 [data-theme|="whatsapp"] cite {
   border-radius: 0.75rem;
-  padding: 0.75rem;
-  position: relative;
+  padding: 0.75rem 1rem;
   box-shadow: var(--box-shadow);
   font-style: normal;
   max-width: 50%;
@@ -341,29 +331,6 @@
   margin-top: 1rem;
   margin-inline-start: auto;
   display: block;
-}
-
-[data-theme|="whatsapp"] blockquote p:after,
-[data-theme|="whatsapp"] cite:after {
-  /* position: absolute;
-  content: "";
-  width: 0;
-  height: 0;
-  border-style: solid; */
-}
-
-[data-theme|="whatsapp"] blockquote p:after {
-  /* border-width: 0px 18px 20px 0;
-  bottom: -7px;
-  left: -6px;
-  transform: rotate(-58deg); */
-}
-
-[data-theme|="whatsapp"] cite:after {
-  /* border-width: 0px 0 18px 20px;
-  bottom: -5px;
-  right: -4px;
-  transform: rotate(58deg); */
 }
 
 [data-theme|="whatsapp"] #time-progress-bar {
@@ -387,11 +354,11 @@
 }
 
 [data-theme="whatsapp-light"] blockquote p:after {
-  /* border-color: transparent #fff transparent transparent; */
+  border-color: transparent #fff transparent transparent;
 }
 
 [data-theme="whatsapp-light"] cite:after {
-  /* border-color: transparent transparent transparent #e1ffc7; */
+  border-color: transparent transparent transparent #e1ffc7;
 }
 
 [data-theme="whatsapp-dark"] {
@@ -412,12 +379,4 @@
 [data-theme="whatsapp-dark"] cite {
   background-color: #245247;
   color: #f1f1f1;
-}
-
-[data-theme="whatsapp-dark"] blockquote p:after {
-  /* border-color: transparent #3d3c3f transparent transparent; */
-}
-
-[data-theme="whatsapp-dark"] cite:after {
-  /* border-color: transparent transparent transparent #245247; */
 }

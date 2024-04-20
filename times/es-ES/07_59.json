@@ -28,5 +28,15 @@
         "title": "22/11/63",
         "author": "Stephen King",
         "sfw": "unknown"
+    },
+    {
+        "time": "07:59",
+        "quote_first": "Una mañana, yo acababa de llegar a la casa y ",
+        "quote_last": ", me encontré a don Octavio levantado, esperándome en la cocina.",
+        "quote_time_case": "aún no eran las ocho",
+        "quote_raw": "Una mañana, yo acababa de llegar a la casa y aún no eran las ocho, me encontré a don Octavio levantado, esperándome en la cocina.",
+        "title": "Los detectives salvajes",
+        "author": "Roberto Bolaño",
+        "sfw": "sfw"
     }
 ]

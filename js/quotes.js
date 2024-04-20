@@ -1,12 +1,7 @@
 import { getRandomLocale } from "./locales.js";
 import { getStringSetting, isBooleanSettingTrue } from "./settings.js";
 import TRANSLATIONS from "./translations.js";
-import {
-  FALLBACK_QUOTES,
-  setQuoteFontSize,
-  getTime,
-  updateGHLinks,
-} from "./utils.js";
+import { FALLBACK_QUOTES, fitQuote, getTime, updateGHLinks } from "./utils.js";
 
 const QUOTE_SIZE = {
   100: "xs",
@@ -99,20 +94,8 @@ export async function updateQuote(time = getTime()) {
     );
   }
 
-  // const quoteLength = p.textContent.length;
-
-  // let lengthClass = "xxxl";
-  // for (let i = 0; i < sizes.length; i++) {
-  //   if (quoteLength <= sizes[i]) {
-  //     lengthClass = QUOTE_SIZE[sizes[i]];
-  //     break;
-  //   }
-  // }
-
-  // blockquote.classList.add(`quote-${lengthClass}`);
-
   clock.innerHTML = "";
   clock.appendChild(blockquote);
 
-  setQuoteFontSize();
+  fitQuote();
 }

@@ -238,5 +238,45 @@
         "title": "El gran Gatsby",
         "author": "F. Scott Fitzgerald",
         "sfw": "unknown"
+    },
+    {
+        "time": "19:00",
+        "quote_first": "—El jueves es mi día libre —dijo Homero.<br>—Perfecto —dijo el presidente—. El jueves a las ",
+        "quote_last": " estoy en su casa. Será un placer.",
+        "quote_time_case": "siete de la noche",
+        "quote_raw": "—El jueves es mi día libre —dijo Homero.<br>—Perfecto —dijo el presidente—. El jueves a las siete de la noche estoy en su casa. Será un placer.",
+        "title": "Doce cuentos peregrinos",
+        "author": "Gabriel García Márquez",
+        "sfw": "sfw"
+    },
+    {
+        "time": "19:00",
+        "quote_first": "A las ",
+        "quote_last": ", todavía vestida de reina, lo recibió en la cama.",
+        "quote_time_case": "siete de la noche",
+        "quote_raw": "A las siete de la noche, todavía vestida de reina, lo recibió en la cama.",
+        "title": "100 años de soledad",
+        "author": "Gabriel García Márquez",
+        "sfw": "nsfw"
+    },
+    {
+        "time": "19:00",
+        "quote_first": "Aureliano Triste salía de la casa de su madre, a las ",
+        "quote_last": ", cuando un disparo de fusil surgido de la oscuridad le perforó la frente.",
+        "quote_time_case": "siete de la noche",
+        "quote_raw": "Aureliano Triste salía de la casa de su madre, a las siete de la noche, cuando un disparo de fusil surgido de la oscuridad le perforó la frente.",
+        "title": "100 años de soledad",
+        "author": "Gabriel García Márquez",
+        "sfw": "nsfw"
+    },
+    {
+        "time": "19:00",
+        "quote_first": "Lo único que intrigó a Úrsula después de casi dos meses de castigo, fue que Meme no se bañara en la mañana, como lo hacían todos, sino a las ",
+        "quote_last": ".",
+        "quote_time_case": "siete de la noche",
+        "quote_raw": "Lo único que intrigó a Úrsula después de casi dos meses de castigo, fue que Meme no se bañara en la mañana, como lo hacían todos, sino a las siete de la noche.",
+        "title": "100 años de soledad",
+        "author": "Gabriel García Márquez",
+        "sfw": "sfw"
     }
 ]

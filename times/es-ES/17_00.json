@@ -318,5 +318,35 @@
         "title": "lago de hierro",
         "author": "William Kent Krueger",
         "sfw": "sfw"
+    },
+    {
+        "time": "17:00",
+        "quote_first": "A las ",
+        "quote_last": ", cuando llegaron a la estación final de la ciénaga, descendió del tren porque Fernanda lo hizo.",
+        "quote_time_case": "cinco de la tarde",
+        "quote_raw": "A las cinco de la tarde, cuando llegaron a la estación final de la ciénaga, descendió del tren porque Fernanda lo hizo.",
+        "title": "100 años de soledad",
+        "author": "Gabriel García Márquez",
+        "sfw": "sfw"
+    },
+    {
+        "time": "17:00",
+        "quote_first": "A las cinco de la tarde.<br>Eran las ",
+        "quote_last": ".<br>Un niño trajo la blanca sábana<br>a las cinco de la tarde.",
+        "quote_time_case": "cinco en punto de la tarde",
+        "quote_raw": "A las cinco de la tarde.<br>Eran las cinco en punto de la tarde.<br>Un niño trajo la blanca sábana<br>a las cinco de la tarde.",
+        "title": "Llanto por Ignacio Sánchez Mejías",
+        "author": "Federico García Lorca",
+        "sfw": "sfw"
+    },
+    {
+        "time": "17:00",
+        "quote_first": "Lo mismo se le podía haber ocurrido a mediodía en el almacén de Roque, o en el subte a las ",
+        "quote_last": ". O mucho antes, en Europa, alguna noche de vagancia por las zonas francas, los baldíos donde una lata vieja podía servir para tajear una garganta por poco que las dos pusieran buena voluntad.",
+        "quote_time_case": "cinco de la tarde",
+        "quote_raw": "Lo mismo se le podía haber ocurrido a mediodía en el almacén de Roque, o en el subte a las cinco de la tarde. O mucho antes, en Europa, alguna noche de vagancia por las zonas francas, los baldíos donde una lata vieja podía servir para tajear una garganta por poco que las dos pusieran buena voluntad.",
+        "title": "Rayuela",
+        "author": "Julio Cortázar",
+        "sfw": "sfw"
     }
 ]

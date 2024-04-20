@@ -8,5 +8,15 @@
         "title": "El regreso del maestro del baile",
         "author": "Henning Mankell",
         "sfw": "unknown"
+    },
+    {
+        "time": "03:04",
+        "quote_first": "quiso, digo, que estando ya engolfados y siendo ya casi ",
+        "quote_last": ", yendo con la vela tendida de alto baja",
+        "quote_time_case": "pasadas tres horas de la noche",
+        "quote_raw": "quiso, digo, que estando ya engolfados y siendo ya casi pasadas tres horas de la noche, yendo con la vela tendida de alto baja",
+        "title": "Don Quijote de la Mancha",
+        "author": "Miguel de Cervantes",
+        "sfw": "sfw"
     }
 ]

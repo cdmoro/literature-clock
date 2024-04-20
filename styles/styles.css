@@ -53,10 +53,11 @@ blockquote {
 }
 
 blockquote p {
+  font-size: var(--quote-font-size, 3.5vw);
   margin: 0;
   padding-bottom: 0.5rem;
-  max-height: 65vh;
-  overflow-y: hidden;
+  max-height: 60vh;
+  overflow: hidden;
 }
 
 blockquote[aria-label]:before,
@@ -231,6 +232,10 @@ footer {
   blockquote:before,
   blockquote:after {
     content: unset;
+  }
+
+  blockquote p {
+    max-height: 50vh;
   }
 
   #zen,

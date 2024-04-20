@@ -3,7 +3,7 @@ import { initTheme } from "./themes.js";
 import { initZenMode } from "./zen.js";
 import { initWorkMode } from "./work.js";
 import { initClock } from "./clock.js";
-import { setQuoteFontSize } from "./utils.js";
+import { fitQuote } from "./utils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initZenMode(false);
@@ -12,6 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initLocale(navigator.language);
   initClock();
 
-  window.addEventListener("resize", setQuoteFontSize);
+  window.addEventListener("resize", fitQuote);
   document.body.removeAttribute("data-loading");
 });
