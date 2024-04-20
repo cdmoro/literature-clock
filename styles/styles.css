@@ -57,7 +57,6 @@ blockquote p {
   margin: 0;
   padding-bottom: 0.5rem;
   max-height: 60vh;
-  overflow: hidden;
 }
 
 blockquote[aria-label]:before,
@@ -215,7 +214,7 @@ footer {
 
 @media all and (max-width: 959px) and (min-width: 600px) {
   cite {
-    font-size: 2.3vw;
+    font-size: 2vw;
   }
 }
 

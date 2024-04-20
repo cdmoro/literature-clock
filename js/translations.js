@@ -23,6 +23,7 @@ export default {
     purple: "Purple",
     blue: "Blue",
     gray: "Gray",
+    color: "Random colors",
 
     themes: "Themes",
     retro: "Retro",
@@ -70,6 +71,7 @@ export default {
     purple: "Morado",
     blue: "Azul",
     gray: "Gris",
+    color: "Colores aleatorios",
 
     themes: "Temas",
     retro: "Retro",
@@ -117,6 +119,7 @@ export default {
     blue: "Azul",
     gray: "Cinza",
     retro: "Retrô",
+    color: "Cores aleatórias",
 
     themes: "Temas",
     elegant: "Elegante",
@@ -163,6 +166,7 @@ export default {
     purple: "Violet",
     blue: "Bleu",
     gray: "Gris",
+    color: "Couleurs aléatoires",
 
     themes: "Thèmes",
     retro: "Rétro",
@@ -210,6 +214,7 @@ export default {
     purple: "Viola",
     blue: "Blu",
     gray: "Grigio",
+    color: "Colori casuali",
 
     themes: "Temi",
     retro: "Retro",

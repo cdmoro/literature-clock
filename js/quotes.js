@@ -1,17 +1,8 @@
 import { getRandomLocale } from "./locales.js";
 import { getStringSetting, isBooleanSettingTrue } from "./settings.js";
+import { setTheme } from "./themes.js";
 import TRANSLATIONS from "./translations.js";
 import { FALLBACK_QUOTES, fitQuote, getTime, updateGHLinks } from "./utils.js";
-
-const QUOTE_SIZE = {
-  100: "xs",
-  200: "s",
-  300: "m",
-  400: "l",
-  500: "xl",
-  600: "xxl",
-};
-const sizes = Object.keys(QUOTE_SIZE);
 
 async function getQuotes(time, locale) {
   const fileName = time.replace(":", "_");
@@ -65,6 +56,10 @@ export async function updateQuote(time = getTime()) {
 
   if (getStringSetting("locale") === "random") {
     locale = getRandomLocale();
+  }
+
+  if (getStringSetting("theme").includes("color")) {
+    setTheme();
   }
 
   const quote = await getQuote(time, locale);

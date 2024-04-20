@@ -66,12 +66,12 @@
 }
 
 [data-theme="gray-light"] {
-  --accent-color: #9eaeaf;
+  --accent-color: #808686;
   --background: #f4f6f6;
 }
 
 [data-theme="gray-dark"] {
-  --accent-color: #e1e7e7;
+  --accent-color: #f1f1f1;
   --background: #1a1a1e;
 }
 

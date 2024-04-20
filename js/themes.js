@@ -29,6 +29,14 @@ function loadFontIfNotExists(theme) {
   }
 }
 
+function getRandomThemeColor() {
+  const colors = Array.from(document.querySelectorAll("#colors option")).map(
+    (op) => op.value
+  );
+
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
 export function initTheme(defaultValue = "base-dark") {
   let [theme, variant = "system"] = initStringSetting(
     "theme",
@@ -43,6 +51,9 @@ export function initTheme(defaultValue = "base-dark") {
   themeSelect.value = theme;
   variantSelect.value = variant;
 
+  if (theme === "color") {
+    theme = getRandomThemeColor();
+  }
   if (variant === "system") {
     variant = preferDarkThemes.matches ? "dark" : "light";
   }
@@ -65,14 +76,17 @@ export function initTheme(defaultValue = "base-dark") {
   });
 }
 
-function setTheme() {
-  const theme = document.getElementById("theme-select").value;
+export function setTheme(e) {
+  let theme = document.getElementById("theme-select").value;
   let variant = document.getElementById("variant-select").value;
 
   loadFontIfNotExists(theme);
   setStringSetting("theme", `${theme}-${variant}`);
   updateURL("theme", `${theme}-${variant}`);
 
+  if (theme === "color") {
+    theme = getRandomThemeColor();
+  }
   if (variant === "system") {
     variant = window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
