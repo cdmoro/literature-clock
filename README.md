@@ -72,6 +72,11 @@ At the moment, the clock has seven color themes and four special themes, we expe
 |---|---|
 | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/e31dfc33-bf30-4025-818b-285479d3af4b) | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/83197165-506b-4d0d-9974-92b066917c35)  |
 
+**Whatsapp**
+| Light  | Dark  |
+|---|---|
+|![image](https://github.com/cdmoro/literature-clock/assets/28156761/623582f0-c8ba-4b1c-87bb-29e816c22d94)|![image](https://github.com/cdmoro/literature-clock/assets/28156761/974ff186-e275-4f25-8d20-3bfd1ba6b94b)|
+
 ## Development
 
 The easiest way to run the clock is to run an HTTP server and open `index.html`. If you are a VSCode user, you might want to use the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension.
