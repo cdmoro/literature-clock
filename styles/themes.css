@@ -305,11 +305,7 @@
   --quote-font-family: "Roboto", sans-serif;
   --quote-line-height: 1.1;
   --quote-font-size: 2.5vw;
-}
-
-[data-theme|="whatsapp"] body {
-  background: #eaeaec;
-  background-image: url("../images/whatsapp-bg.jpg");
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 [data-theme|="whatsapp"] blockquote {
@@ -320,7 +316,6 @@
 
 [data-theme|="whatsapp"] .time {
   font-weight: bold;
-  font-style: italic;
 }
 
 [data-theme|="whatsapp"] blockquote:before,
@@ -330,21 +325,22 @@
 
 [data-theme|="whatsapp"] blockquote p {
   border-radius: 0.75rem;
-  border-start-start-radius: 0;
-  padding: 1rem 2rem;
+  padding: 0.75rem;
   max-width: 80%;
   position: relative;
-  box-shadow: 0 2px 2px #00000033;
+  box-shadow: var(--box-shadow);
+  margin-inline-start: 1rem;
 }
 
 [data-theme|="whatsapp"] cite {
   align-self: flex-end;
   border-radius: 0.75rem;
-  border-start-end-radius: 0;
-  padding: 1rem 2rem;
+  padding: 0.75rem;
   position: relative;
-  box-shadow: 0 2px 2px #00000033;
+  box-shadow: var(--box-shadow);
   font-style: normal;
+  max-width: 80%;
+  margin-inline-end: 1rem;
 }
 
 [data-theme|="whatsapp"] blockquote p:after,
@@ -357,20 +353,27 @@
 }
 
 [data-theme|="whatsapp"] blockquote p:after {
-  border-width: 0px 20px 20px 0;
-  top: 0;
-  left: -20px;
+  border-width: 0px 18px 20px 0;
+  bottom: -7px;
+  left: -6px;
+  transform: rotate(-58deg);
 }
 
 [data-theme|="whatsapp"] cite:after {
-  border-width: 0px 0 20px 20px;
-  top: 0;
-  right: -20px;
+  border-width: 0px 0 18px 20px;
+  bottom: -5px;
+  right: -4px;
+  transform: rotate(58deg);
+}
+
+[data-theme|="whatsapp"] #time-progress-bar {
+  background: var(--accent-color);
 }
 
 [data-theme="whatsapp-light"] {
   --accent-color: #245247;
   --background: #eaeaec;
+  --background-image: url("../images/whatsapp-bg-light.jpg");
 }
 
 [data-theme="whatsapp-light"] blockquote p {
@@ -393,10 +396,8 @@
 
 [data-theme="whatsapp-dark"] {
   --accent-color: #a9eb91;
-}
-
-[data-theme="whatsapp-dark"] body {
-  background-blend-mode: exclusion;
+  --background: #12121a;
+  --background-image: url("../images/whatsapp-bg-dark.jpg");
 }
 
 [data-theme="whatsapp-dark"] blockquote p {
