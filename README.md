@@ -8,11 +8,12 @@ A clock that tells the time using quotes from literature. Support for multiple l
 
 - Zen mode: remove all the distractions (perfect for screensaver usage) ([link](https://literatureclock.netlify.app/?zen=true))
 - Work mode: only shows quotes that are safe for work ([link](https://literatureclock.netlify.app/?work=true))
-- Languages: supports English, Spanish, Portuguese, French and Italian (by default, it will try to use the system language)
-- Multilanguage: each minute you'll see a quote in a different language, isn't that cool? ([link](https://literatureclock.netlify.app/?locale=random))
-- Themes: the clock has color themes and `special themes` and each theme has light and dark variants
+- Languages: supports English, Spanish, Portuguese, French, and Italian (by default, it will try to use the system language)
+- Random language: each minute you'll see a quote in a different language, isn't that cool? ([link](https://literatureclock.netlify.app/?locale=random))
+- Themes: the clock has `color themes` and `special themes` and each theme has light and dark variants
+- Random color theme: each minute you'll see a different color theme, isn't that even cooler? ([link](https://literatureclock.netlify.app/?theme=color-system))
 - Progress bar: At the bottom of the page there is a `progress bar`, so you can know when a quote is about to change :D
-- Responsive: no matter how long is a quote, it always looks good in desktop and mobile
+- Responsive: no matter how long is a quote, it will always look good on desktop and mobile
 - All the quote elements have `aria-labels` to improve the Accessibility
 - The settings are saved in the browser's local storage and they are updated in the URL without refreshing the page (History API)
 
@@ -75,7 +76,7 @@ At the moment, the clock has seven color themes and four special themes, we expe
 **Whatsapp**
 | Light  | Dark  |
 |---|---|
-|![image](https://github.com/cdmoro/literature-clock/assets/28156761/623582f0-c8ba-4b1c-87bb-29e816c22d94)|![image](https://github.com/cdmoro/literature-clock/assets/28156761/974ff186-e275-4f25-8d20-3bfd1ba6b94b)|
+|![image](https://github.com/cdmoro/literature-clock/assets/28156761/5a25990e-2d5e-4352-976e-86672a6ecde9)|![image](https://github.com/cdmoro/literature-clock/assets/28156761/f1511376-f58f-4878-8ea9-6a931428d223)|
 
 ## Development
 
