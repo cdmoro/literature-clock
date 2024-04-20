@@ -132,7 +132,7 @@ export function updateGHLinks(time, quote, locale) {
 
 export function fitQuote() {
   const quote = document.querySelector("blockquote p");
-  let fontSize = 35;
+  let fontSize = 60;
 
   if (quote) {
     quote.style.fontSize = `${fontSize}px`;
@@ -142,8 +142,8 @@ export function fitQuote() {
       quote.style.fontSize = `${fontSize}px`;
       fontSize -= 1;
 
-      if (fontSize < 0) {
-        quote.style.fontSize = `35px`;
+      if (fontSize < 15) {
+        quote.style.fontSize = `15px`;
         break;
       }
     }
