@@ -26,7 +26,7 @@ The clock can be controlled using URL parameters, these parameters will overwrit
   - Locales: `en_US`, `es_ES`, `pt_BR`, `fr_FR`, `it_IT`, and `random`
 - `theme`: set the theme.
   - Color themes: `Base`, `Pink`, `Green`, `Orange`, `Purple`, `Blue`, and `Gray`
-  - Special themes: `Retro`, `Elegant`, `Festive`, `Bohemian`, and `Handwriting`
+  - Special themes: `Retro`, `Elegant`, `Festive`, `Bohemian`, `Handwriting`, and `Whatsapp`
 - `time`: get the quotes for a particular time ([link](https://literatureclock.netlify.app/?time=12:30))
 - `quote`: test a quote before submitting it ([link](https://literatureclock.netlify.app/?quote=Hi%20mom!%20I%27m%20part%20of%20the%20Literature%20Clock!)). You don't need to escape the quote by adding the special characters, just write the quote and the browser will add them.
 
@@ -71,6 +71,11 @@ At the moment, the clock has seven color themes and four special themes, we expe
 | Light  | Dark  |
 |---|---|
 | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/e31dfc33-bf30-4025-818b-285479d3af4b) | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/83197165-506b-4d0d-9974-92b066917c35)  |
+
+**Whatsapp**
+| Light  | Dark  |
+|---|---|
+|![image](https://github.com/cdmoro/literature-clock/assets/28156761/623582f0-c8ba-4b1c-87bb-29e816c22d94)|![image](https://github.com/cdmoro/literature-clock/assets/28156761/974ff186-e275-4f25-8d20-3bfd1ba6b94b)|
 
 ## Development
 
