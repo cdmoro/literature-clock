@@ -346,13 +346,13 @@
 }
 
 [data-theme|="whatsapp"] blockquote p:after {
-  border-width: 0px 20px 20px 0;
+  border-width: 0px 15px 15px 0;
   top: 0px;
   left: -15px;
 }
 
 [data-theme|="whatsapp"] cite:after {
-  border-width: 0px 0 20px 20px;
+  border-width: 0px 0 15px 15px;
   top: 0px;
   right: -15px;
 }
