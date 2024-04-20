@@ -314,6 +314,7 @@
 
 [data-theme|="whatsapp"] blockquote p {
   border-radius: 0.75rem;
+  border-start-start-radius: 0;
   box-shadow: var(--box-shadow);
   max-width: 80%;
   padding: 0.75rem 1.2rem;
@@ -323,6 +324,7 @@
 
 [data-theme|="whatsapp"] cite {
   border-radius: 0.75rem;
+  border-start-end-radius: 0;
   padding: 0.75rem 1rem;
   box-shadow: var(--box-shadow);
   font-style: normal;
@@ -331,6 +333,28 @@
   margin-top: 1rem;
   margin-inline-start: auto;
   display: block;
+  position: relative;
+}
+
+[data-theme|="whatsapp"] blockquote p:after,
+[data-theme|="whatsapp"] cite:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+[data-theme|="whatsapp"] blockquote p:after {
+  border-width: 0px 20px 20px 0;
+  top: 0px;
+  left: -15px;
+}
+
+[data-theme|="whatsapp"] cite:after {
+  border-width: 0px 0 20px 20px;
+  top: 0px;
+  right: -15px;
 }
 
 [data-theme|="whatsapp"] #time-progress-bar {
@@ -379,4 +403,12 @@
 [data-theme="whatsapp-dark"] cite {
   background-color: #245247;
   color: #f1f1f1;
+}
+
+[data-theme="whatsapp-dark"] blockquote p:after {
+  border-color: transparent #3d3c3f transparent transparent;
+}
+
+[data-theme="whatsapp-dark"] cite:after {
+  border-color: transparent transparent transparent #245247;
 }
