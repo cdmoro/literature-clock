@@ -101,7 +101,6 @@
 [data-theme|="retro"] {
   --quote-font-family: "VT323", sans-serif;
   --quote-line-height: 1;
-  --quote-font-size: 3vw;
 }
 
 [data-theme|="retro"] #time-progress-bar {
@@ -154,7 +153,6 @@
 
 [data-theme|="festive"] {
   --quote-font-family: "Borel", sans-serif;
-  --quote-font-size: 3vw;
   --quote-line-height: 1.5;
   --accent-color: #e74c3c;
 }
@@ -304,7 +302,6 @@
 [data-theme|="whatsapp"] {
   --quote-font-family: "Roboto", sans-serif;
   --quote-line-height: 1.1;
-  --quote-font-size: 2.5vw;
   --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24),
     inset 0px 5px 0px -3px #f1f1f111;
 }
@@ -331,6 +328,7 @@
   position: relative;
   box-shadow: var(--box-shadow);
   margin-inline-start: 1rem;
+  min-height: 20vh;
 }
 
 [data-theme|="whatsapp"] cite {
@@ -346,7 +344,7 @@
 
 [data-theme|="whatsapp"] blockquote p:after,
 [data-theme|="whatsapp"] cite:after {
-  position: absolute;
+  /* position: absolute; */
   content: "";
   width: 0;
   height: 0;

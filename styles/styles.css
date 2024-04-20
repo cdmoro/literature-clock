@@ -53,25 +53,10 @@ blockquote {
 }
 
 blockquote p {
-  font-size: var(--quote-font-size, 3.5vw);
   margin: 0;
   padding-bottom: 0.5rem;
-}
-
-blockquote.quote-m p {
-  font-size: var(--quote-m-font-size, 3.3vw);
-}
-
-blockquote.quote-l p {
-  font-size: var(--quote-l-font-size, 3vw);
-}
-
-blockquote.quote-xl p {
-  font-size: var(--quote-xl-font-size, 2.7vw);
-}
-
-blockquote.quote-xxl p {
-  font-size: var(--quote-xxl-font-size, 2vw);
+  max-height: 65vh;
+  overflow-y: hidden;
 }
 
 blockquote[aria-label]:before,
@@ -246,18 +231,6 @@ footer {
   blockquote:before,
   blockquote:after {
     content: unset;
-  }
-
-  blockquote p {
-    font-size: 1.9rem;
-  }
-
-  blockquote.quote-xl p {
-    font-size: 1.7rem;
-  }
-
-  blockquote.quote-xxl p {
-    font-size: 1.5rem;
   }
 
   #zen,

@@ -129,3 +129,22 @@ export function updateGHLinks(time, quote, locale) {
   const reportError = document.getElementById("report-error");
   reportError.href = reportErrorUrl.href;
 }
+
+export function setQuoteFontSize() {
+  const quote = document.querySelector("blockquote p");
+  let fontSize = 48;
+
+  if (quote) {
+    quote.style.fontSize = `${fontSize}px`;
+
+    while (quote.scrollHeight > quote.clientHeight) {
+      quote.style.fontSize = `${fontSize}px`;
+      fontSize -= 1;
+
+      if (fontSize < 0) {
+        quote.style.fontSize = `30px`;
+        break;
+      }
+    }
+  }
+}

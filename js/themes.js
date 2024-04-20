@@ -1,4 +1,5 @@
 import { initStringSetting, setStringSetting, updateURL } from "./settings.js";
+import { setQuoteFontSize } from "./utils.js";
 
 const THEME_FONTS = {
   retro: "VT323",
@@ -79,4 +80,6 @@ function setTheme() {
   }
 
   document.documentElement.setAttribute("data-theme", `${theme}-${variant}`);
+
+  setInterval(setQuoteFontSize, 10);
 }
