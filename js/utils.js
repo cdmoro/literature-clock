@@ -136,8 +136,9 @@ export function fitQuote() {
 
   if (quote) {
     quote.style.fontSize = `${fontSize}px`;
+    const secureClientHeight = quote.clientHeight - 10;
 
-    while (quote.scrollHeight > quote.clientHeight) {
+    while (quote.scrollHeight > secureClientHeight) {
       quote.style.fontSize = `${fontSize}px`;
       fontSize -= 1;
 
