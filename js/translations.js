@@ -9,14 +9,13 @@ export default {
     zen_mode: "Zen",
     title: "Title",
     author: "Author",
-    // Title attr
+
     zen_mode_title: "Remove everything that distracts you",
     work_mode_title: "Show only safe for work quotes",
     exit_zen_title: "Exit Zen mode",
-    // Themes
+
     theme: "Theme",
     colors: "Colors",
-    themes: "Themes",
     base: "Base",
     pink: "Pink",
     green: "Green",
@@ -24,17 +23,20 @@ export default {
     purple: "Purple",
     blue: "Blue",
     gray: "Gray",
+
+    themes: "Themes",
     retro: "Retro",
     elegant: "Elegant",
     festive: "Festive",
     bohemian: "Bohemian",
     handwriting: "Handwriting",
     anaglyph: "Anaglyph",
-    // Theme variants
+    whatsapp: "Whatsapp",
+
     system: "System",
     light: "Light",
     dark: "Dark",
-    // Locales
+
     language: "Language",
     "en-US": "English (US)",
     "es-ES": "Spanish (ES)",
@@ -55,11 +57,12 @@ export default {
     author: "Autor",
     language: "Idioma",
     theme: "Tema",
+
     zen_mode_title: "Elimina todo lo que te distrae",
     work_mode_title: "Mostrar solo citas seguras para el trabajo",
     exit_zen_title: "Salir del modo Zen",
+
     colors: "Colores",
-    themes: "Temas",
     base: "Base",
     pink: "Rosa",
     green: "Verde",
@@ -67,15 +70,20 @@ export default {
     purple: "Morado",
     blue: "Azul",
     gray: "Gris",
+
+    themes: "Temas",
     retro: "Retro",
     elegant: "Elegante",
     festive: "Festivo",
     bohemian: "Bohemio",
     handwriting: "Manuscrita",
     anaglyph: "Anaglifo",
+    whatsapp: "Whatsapp",
+
     system: "Sistema",
     light: "Claro",
     dark: "Oscuro",
+
     "en-US": "Inglés (US)",
     "es-ES": "Español (ES)",
     "pt-BR": "Portugués (BR)",
@@ -95,11 +103,12 @@ export default {
     author: "Autor",
     language: "Idioma",
     theme: "Tema",
+
     zen_mode_title: "Remova tudo o que te distrai",
     work_mode_title: "Mostrar apenas citações seguras para o trabalho",
     exit_zen_title: "Sair do modo Zen",
+
     colors: "Cores",
-    themes: "Temas",
     base: "Base",
     pink: "Rosa",
     green: "Verde",
@@ -108,14 +117,19 @@ export default {
     blue: "Azul",
     gray: "Cinza",
     retro: "Retrô",
+
+    themes: "Temas",
     elegant: "Elegante",
     festive: "Festivo",
     bohemian: "Boêmio",
     handwriting: "Manuscrita",
     anaglyph: "Anaglifo",
+    whatsapp: "Whatsapp",
+
     system: "Sistema",
     light: "Claro",
     dark: "Escuro",
+
     "en-US": "Inglês (US)",
     "es-ES": "Espanhol (ES)",
     "pt-BR": "Português (BR)",
@@ -135,12 +149,13 @@ export default {
     author: "Auteur",
     language: "Langue",
     theme: "Thème",
+
     zen_mode_title: "Supprimez tout ce qui vous distrait",
     work_mode_title:
       "Afficher uniquement des citations appropriées pour le travail",
     exit_zen_title: "Quitter le mode Zen",
+
     colors: "Couleurs",
-    themes: "Thèmes",
     base: "Base",
     pink: "Rose",
     green: "Vert",
@@ -148,15 +163,20 @@ export default {
     purple: "Violet",
     blue: "Bleu",
     gray: "Gris",
+
+    themes: "Thèmes",
     retro: "Rétro",
     elegant: "Élégant",
     festive: "Festif",
     bohemian: "Bohémien",
     handwriting: "Manuscrit",
     anaglyph: "Anaglyphe",
+    whatsapp: "Whatsapp",
+
     system: "Système",
     light: "Clair",
     dark: "Sombre",
+
     "en-US": "Anglais (US)",
     "es-ES": "Espagnol (ES)",
     "pt-BR": "Portugais (BR)",
@@ -177,11 +197,12 @@ export default {
     addQuote: "Aggiungere una citazione",
     language: "Lingua",
     theme: "Tema",
+
     zen_mode_title: "Rimuovi tutto ciò che ti distrae",
     work_mode_title: "Mostra solo citazioni appropriate per il lavoro",
     exit_zen_title: "Esci dalla modalità Zen",
+
     colors: "Colori",
-    themes: "Temi",
     base: "Base",
     pink: "Rosa",
     green: "Verde",
@@ -189,15 +210,20 @@ export default {
     purple: "Viola",
     blue: "Blu",
     gray: "Grigio",
+
+    themes: "Temi",
     retro: "Retro",
     elegant: "Elegante",
     festive: "Festivo",
     bohemian: "Bohemien",
     handwriting: "Manoscritto",
     anaglyph: "Anaglifo",
+    whatsapp: "Whatsapp",
+
     system: "Sistema",
     light: "Chiaro",
     dark: "Scuro",
+
     "en-US": "Inglese (US)",
     "es-ES": "Spagnolo (ES)",
     "pt-BR": "Portoghese (BR)",

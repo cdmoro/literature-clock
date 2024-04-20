@@ -298,3 +298,125 @@
 [data-theme|="anaglyph-dark"] button:focus {
   box-shadow: 2px 2px #f50d3f, -2px -2px #41ceee !important;
 }
+
+/* ==================WHATSAPP================== */
+
+[data-theme|="whatsapp"] {
+  --quote-font-family: "Roboto", sans-serif;
+  --quote-line-height: 1.1;
+  --quote-font-size: 2.5vw;
+}
+
+[data-theme|="whatsapp"] body {
+  background: #eaeaec;
+  background-image: url("../images/whatsapp-bg.jpg");
+}
+
+[data-theme|="whatsapp"] blockquote {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+[data-theme|="whatsapp"] .time {
+  font-weight: bold;
+  font-style: italic;
+}
+
+[data-theme|="whatsapp"] blockquote:before,
+[data-theme|="whatsapp"] blockquote:after {
+  display: none;
+}
+
+[data-theme|="whatsapp"] blockquote p {
+  border-radius: 0.75rem;
+  border-start-start-radius: 0;
+  padding: 1rem 2rem;
+  max-width: 80%;
+  position: relative;
+  box-shadow: 0 2px 2px #00000033;
+}
+
+[data-theme|="whatsapp"] cite {
+  align-self: flex-end;
+  border-radius: 0.75rem;
+  border-start-end-radius: 0;
+  padding: 1rem 2rem;
+  position: relative;
+  box-shadow: 0 2px 2px #00000033;
+  font-style: normal;
+}
+
+[data-theme|="whatsapp"] blockquote p:after,
+[data-theme|="whatsapp"] cite:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+[data-theme|="whatsapp"] blockquote p:after {
+  border-width: 0px 20px 20px 0;
+  top: 0;
+  left: -20px;
+}
+
+[data-theme|="whatsapp"] cite:after {
+  border-width: 0px 0 20px 20px;
+  top: 0;
+  right: -20px;
+}
+
+[data-theme="whatsapp-light"] {
+  --accent-color: #245247;
+  --background: #eaeaec;
+}
+
+[data-theme="whatsapp-light"] blockquote p {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+[data-theme="whatsapp-light"] cite {
+  background-color: #e1ffc7;
+  color: #333333;
+}
+
+[data-theme="whatsapp-light"] blockquote p:after {
+  border-color: transparent #fff transparent transparent;
+}
+
+[data-theme="whatsapp-light"] cite:after {
+  border-color: transparent transparent transparent #e1ffc7;
+}
+
+[data-theme="whatsapp-dark"] {
+  --accent-color: #a9eb91;
+}
+
+[data-theme="whatsapp-dark"] body {
+  background-blend-mode: exclusion;
+}
+
+[data-theme="whatsapp-dark"] blockquote p {
+  background-color: #3d3c3f;
+  color: #f1f1f1;
+}
+
+[data-theme="whatsapp-dark"] .time {
+  color: #f1f1f1;
+}
+
+[data-theme="whatsapp-dark"] cite {
+  background-color: #245247;
+  color: #f1f1f1;
+}
+
+[data-theme="whatsapp-dark"] blockquote p:after {
+  border-color: transparent #3d3c3f transparent transparent;
+}
+
+[data-theme="whatsapp-dark"] cite:after {
+  border-color: transparent transparent transparent #245247;
+}

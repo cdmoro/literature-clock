@@ -1,8 +1,4 @@
-import {
-  initStringSetting,
-  setStringSetting,
-  updateURL,
-} from "./settings.js";
+import { initStringSetting, setStringSetting, updateURL } from "./settings.js";
 
 const THEME_FONTS = {
   retro: "VT323",
@@ -11,6 +7,7 @@ const THEME_FONTS = {
   bohemian: "Comfortaa",
   handwriting: "Reenie Beanie",
   anaglyph: "Anton",
+  whatsapp: "Roboto",
 };
 
 function loadFontIfNotExists(theme) {
