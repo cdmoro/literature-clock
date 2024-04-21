@@ -55,7 +55,7 @@ blockquote {
 blockquote p {
   font-size: var(--quote-font-size, 3.5vw);
   margin: 0;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
   max-height: 60vh;
 }
 
@@ -85,7 +85,11 @@ blockquote .time {
 }
 
 cite {
-  font-size: 1.7vw;
+  font-size: 1.8vw;
+}
+
+cite:before {
+  content: "— ";
 }
 
 select {

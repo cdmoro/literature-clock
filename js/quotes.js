@@ -75,7 +75,7 @@ export async function updateQuote(time = getTime()) {
   p.innerHTML = quoteText.replace(/\n/g, "<br>");
 
   const cite = document.createElement("cite");
-  cite.innerText = `— ${quote.title}, ${quote.author}`;
+  cite.innerHTML = `<span id="title">${quote.title}</span>, <span id="author">${quote.author}</span>`;
 
   blockquote.appendChild(p);
   blockquote.appendChild(cite);

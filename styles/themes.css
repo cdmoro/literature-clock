@@ -319,15 +319,16 @@
   border-start-start-radius: 0;
   box-shadow: var(--box-shadow);
   max-width: 80%;
-  padding: 0.75rem 1.2rem;
+  padding: 0.5rem 0.75rem;
   position: relative;
   margin-inline-start: 1rem;
+  max-height: 40vh;
 }
 
 [data-theme|="whatsapp"] cite {
   border-radius: 0.75rem;
   border-start-end-radius: 0;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0.75rem;
   box-shadow: var(--box-shadow);
   font-style: normal;
   max-width: 50%;
@@ -336,6 +337,10 @@
   margin-inline-start: auto;
   display: block;
   position: relative;
+}
+
+[data-theme|="whatsapp"] cite:before {
+  content: none;
 }
 
 [data-theme|="whatsapp"] blockquote p:after,
@@ -398,10 +403,6 @@
   color: #f1f1f1;
 }
 
-[data-theme="whatsapp-dark"] .time {
-  color: #f1f1f1;
-}
-
 [data-theme="whatsapp-dark"] cite {
   background-color: #245247;
   color: #f1f1f1;
@@ -419,16 +420,13 @@
 
 [data-theme|="terminal"] {
   --quote-font-family: "B612 Mono", sans-serif;
+  --quote-line-height: 1.3;
 }
 
 [data-theme|="terminal"] body,
 [data-theme|="terminal"] select,
 [data-theme|="terminal"] button {
   font-family: var(--quote-font-family);
-}
-
-[data-theme|="terminal"] select {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23a3a29a' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
 }
 
 [data-theme|="terminal"] body:before {
@@ -478,8 +476,16 @@
     rgba(204, 0, 64, 0.3) -2.62088px 0px 1px, 0px 0px 3px;
 }
 
+[data-theme|="terminal"] blockquote p {
+  max-height: 50vh;
+}
+
 [data-theme|="terminal"] cite {
   font-style: normal;
+}
+
+[data-theme|="terminal"] cite:before {
+  content: "> ";
 }
 
 [data-theme|="terminal"] cite:after {
@@ -495,26 +501,26 @@
   transform: translateY(1px);
 }
 
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
 [data-theme|="terminal"] #time-progress-bar {
   background: var(--accent-color);
 }
 
 [data-theme="terminal-light"] {
-  --font-color: #c4b755;
-  --background: #261b00;
-  --accent-color: rgb(255, 187, 0);
+  --font-color: #373518;
+  --background: #fff6ae;
+  --accent-color: rgb(172, 127, 2);
 }
 
 [data-theme="terminal-dark"] {
   --font-color: rgb(135, 224, 135);
   --background: rgb(2, 22, 0);
   --accent-color: rgb(27, 236, 27);
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 @keyframes flicker {
