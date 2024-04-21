@@ -171,7 +171,13 @@ button:focus.active {
   left: 0;
   height: 4px;
   background-color: var(--font-color);
-  transition: width 1s linear;
+  transition: width 1s linear, opacity 1s;
+  opacity: 1;
+}
+
+body.blur #time-progress-bar {
+  transition: opacity 1s;
+  opacity: 0;
 }
 
 #exit-zen {

@@ -13,5 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
   initClock();
 
   window.addEventListener("resize", fitQuote);
+  document.addEventListener("visibilitychange", () =>
+    document.body.classList.toggle(
+      "blur",
+      document.visibilityState === "hidden"
+    )
+  );
   document.body.removeAttribute("data-loading");
 });
