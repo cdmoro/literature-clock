@@ -38,6 +38,7 @@ async function getQuote(time, locale) {
   if (!quote.quote_time_case) {
     quote.time = time;
     quote.quote_time_case = time;
+    quote.fallback = true;
   }
 
   if (urlParams.get("quote")) {
@@ -64,6 +65,7 @@ export async function updateQuote(time = getTime()) {
 
   const quote = await getQuote(time, locale);
   updateGHLinks(time, quote, locale);
+  const quoteRaw = `${quote.quote_first}${quote.quote_time_case}${quote.quote_last}`;
   const quoteText =
     testQuote ||
     `${quote.quote_first}<span class="time">${quote.quote_time_case}</span>${quote.quote_last}`;
@@ -72,7 +74,7 @@ export async function updateQuote(time = getTime()) {
   blockquote.id = "quote";
 
   const p = document.createElement("p");
-  p.innerHTML = quoteText.replace(/\n/g, "<br>");
+  p.innerHTML = quoteText;
 
   const cite = document.createElement("cite");
   cite.innerHTML = `<span id="title">${quote.title}</span>, <span id="author">${quote.author}</span>`;
@@ -80,14 +82,11 @@ export async function updateQuote(time = getTime()) {
   blockquote.appendChild(p);
   blockquote.appendChild(cite);
   blockquote.setAttribute("aria-label", quote.time);
+  blockquote.setAttribute("aria-description", quoteRaw.replace(/<br>/g, " "));
   blockquote.dataset.locale = locale;
   blockquote.dataset.sfw = quote.sfw;
-
-  if (quote.quote_raw) {
-    blockquote.setAttribute(
-      "aria-description",
-      quote.quote_raw.replace(/<br>|\n/g, " ")
-    );
+  if (quote.fallback) {
+    blockquote.dataset.fallback = true;
   }
 
   clock.innerHTML = "";

@@ -16,13 +16,16 @@ export function initWorkMode(defaultValue = false) {
 }
 
 function toggleWorkMode() {
+  const quote = document.getElementById("quote");
   const isWorkMode = toggleBooleanSetting("work");
 
   updateURL("work", isWorkMode);
   updateBooleanSettingButtonStatus("work", isWorkMode);
-  
-  const sfw = document.getElementById("quote").dataset.sfw;
-  if (isWorkMode && sfw === "nsfw") {
+
+  if (
+    (isWorkMode && quote.dataset.sfw === "nsfw") ||
+    (!isWorkMode && quote.dataset.fallback === "true")
+  ) {
     updateQuote();
   }
 }

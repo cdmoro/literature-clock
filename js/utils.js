@@ -102,12 +102,15 @@ export function getTime() {
 }
 
 export function updateGHLinks(time, quote, locale) {
+  const quoteRaw = `${quote.quote_first}${quote.quote_time_case}${quote.quote_last}`;
+
   const addQuoteUrl = new URL(
     "https://github.com/cdmoro/literature-clock/issues/new"
   );
   addQuoteUrl.searchParams.set("template", `add-quote.yml`);
   addQuoteUrl.searchParams.set("labels", "add-quote");
   addQuoteUrl.searchParams.set("title", `[${time}][${locale}] Add quote`);
+
   const addQuoteLink = document.getElementById("add-quote");
   addQuoteLink.href = addQuoteUrl.href;
 
@@ -120,12 +123,8 @@ export function updateGHLinks(time, quote, locale) {
   reportErrorUrl.searchParams.set("time", time);
   reportErrorUrl.searchParams.set("book", quote.title);
   reportErrorUrl.searchParams.set("author", quote.author);
-  if (quote.quote_raw) {
-    reportErrorUrl.searchParams.set(
-      "quote",
-      quote.quote_raw.replace(/<br>|\n/g, " ")
-    );
-  }
+  reportErrorUrl.searchParams.set("quote", quoteRaw.replace(/<br>/g, " "));
+
   const reportError = document.getElementById("report-error");
   reportError.href = reportErrorUrl.href;
 }
