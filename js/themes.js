@@ -9,7 +9,7 @@ const THEME_FONTS = {
   handwriting: "Reenie Beanie",
   anaglyph: "Anton",
   whatsapp: "Roboto",
-  terminal: "PT Mono",
+  terminal: "B612 Mono",
 };
 
 function loadFontIfNotExists(theme) {

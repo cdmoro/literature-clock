@@ -418,7 +418,7 @@
 /* ==================TERMINAL================== */
 
 [data-theme|="terminal"] {
-  --quote-font-family: "PT Mono", sans-serif;
+  --quote-font-family: "B612 Mono", sans-serif;
 }
 
 [data-theme|="terminal"] body,
@@ -478,20 +478,42 @@
     rgba(204, 0, 64, 0.3) -2.62088px 0px 1px, 0px 0px 3px;
 }
 
-[data-theme|="terminal"] footer {
-  z-index: 4;
+[data-theme|="terminal"] cite {
+  font-style: normal;
+}
+
+[data-theme|="terminal"] cite:after {
+  content: " ";
+  width: 0.5rem;
+  height: 1rem;
+  display: inline-block;
+  margin-inline-start: 0.5rem;
+  background: var(--font-color);
+  box-shadow: rgba(0, 24, 204, 0.5) 2.62088px 0px 1px,
+    rgba(204, 0, 64, 0.3) -2.62088px 0px 1px, 0px 0px 3px;
+  animation: blink 1s step-start 0s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+[data-theme|="terminal"] #time-progress-bar {
+  background: var(--accent-color);
 }
 
 [data-theme="terminal-light"] {
-  --font-color: #a3a29a;
-  --background: #4b3501;
-  --accent-color: rgb(216, 185, 100);
+  --font-color: #c8b72e;
+  --background: #261b00;
+  --accent-color: rgb(255, 187, 0);
 }
 
 [data-theme="terminal-dark"] {
-  --font-color: #a3a29a;
+  --font-color: rgb(135, 224, 135);
   --background: rgb(2, 22, 0);
-  --accent-color: rgb(135, 224, 135);
+  --accent-color: rgb(27, 236, 27);
 }
 
 @keyframes flicker {
