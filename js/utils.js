@@ -142,8 +142,8 @@ export function fitQuote() {
       quote.style.fontSize = `${fontSize}px`;
       fontSize -= 1;
 
-      if (fontSize < 15) {
-        quote.style.fontSize = `15px`;
+      if (fontSize < 10) {
+        quote.style.fontSize = `10px`;
         break;
       }
     }
