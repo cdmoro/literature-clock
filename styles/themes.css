@@ -492,6 +492,7 @@
   box-shadow: rgba(0, 24, 204, 0.5) 2.62088px 0px 1px,
     rgba(204, 0, 64, 0.3) -2.62088px 0px 1px, 0px 0px 3px;
   animation: blink 1s step-start 0s infinite;
+  transform: translateY(1px);
 }
 
 @keyframes blink {
