@@ -30,9 +30,13 @@ function loadFontIfNotExists(theme) {
 }
 
 function getRandomThemeColor() {
-  const colors = Array.from(document.querySelectorAll("#colors option")).map(
+  let colors = Array.from(document.querySelectorAll("#colors option")).map(
     (op) => op.value
   );
+  const [themePrefix] = document.documentElement.dataset.theme.split("-");
+
+  colors.pop();
+  colors = colors.filter((color) => color !== themePrefix);
 
   return colors[Math.floor(Math.random() * colors.length)];
 }
@@ -57,7 +61,7 @@ export function initTheme(defaultValue = "base-dark") {
   if (variant === "system") {
     variant = preferDarkThemes.matches ? "dark" : "light";
   }
-  document.documentElement.setAttribute("data-theme", `${theme}-${variant}`);
+  document.documentElement.dataset.theme = `${theme}-${variant}`;
 
   themeSelect.addEventListener("change", setTheme);
   variantSelect.addEventListener("change", setTheme);
@@ -68,10 +72,9 @@ export function initTheme(defaultValue = "base-dark") {
       const theme = document.getElementById("theme-select").value;
 
       setStringSetting("theme", `${theme}-system`);
-      document.documentElement.setAttribute(
-        "data-theme",
-        `${theme}-${e.matches ? "dark" : "light"}`
-      );
+      document.documentElement.dataset.theme = `${theme}-${
+        e.matches ? "dark" : "light"
+      }`;
     }
   });
 }
@@ -93,6 +96,6 @@ export function setTheme(e) {
       : "light";
   }
 
-  document.documentElement.setAttribute("data-theme", `${theme}-${variant}`);
+  document.documentElement.dataset.theme = `${theme}-${variant}`;
   setInterval(fitQuote, 10);
 }

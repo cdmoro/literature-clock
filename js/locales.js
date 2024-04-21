@@ -1,9 +1,5 @@
 import { updateQuote } from "./quotes.js";
-import {
-  initStringSetting,
-  setStringSetting,
-  updateURL
-} from "./settings.js";
+import { initStringSetting, setStringSetting, updateURL } from "./settings.js";
 import TRANSLATIONS from "./translations.js";
 import { getTime } from "./utils.js";
 
@@ -31,7 +27,14 @@ const TITLE_ATTR = {
 };
 
 export function getRandomLocale() {
-  const locales = Object.keys(TRANSLATIONS);
+  let locales = Object.keys(TRANSLATIONS);
+
+  const blockquote = document.getElementById("quote");
+
+  if (blockquote && blockquote.dataset.locale) {
+    locales = locales.filter((locale) => locale !== blockquote.dataset.locale);
+  }
+
   return locales[Math.floor(Math.random() * locales.length)];
 }
 

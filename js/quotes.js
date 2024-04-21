@@ -80,6 +80,7 @@ export async function updateQuote(time = getTime()) {
   blockquote.appendChild(p);
   blockquote.appendChild(cite);
   blockquote.setAttribute("aria-label", quote.time);
+  blockquote.dataset.locale = locale;
   blockquote.dataset.sfw = quote.sfw;
 
   if (quote.quote_raw) {
