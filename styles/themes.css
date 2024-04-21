@@ -94,7 +94,9 @@
 [data-theme|="handwriting"] blockquote:before,
 [data-theme|="handwriting"] blockquote:after,
 [data-theme|="whatsapp"] blockquote:before,
-[data-theme|="whatsapp"] blockquote:after {
+[data-theme|="whatsapp"] blockquote:after,
+[data-theme|="terminal"] blockquote:before,
+[data-theme|="terminal"] blockquote:after {
   content: none;
 }
 
@@ -411,4 +413,149 @@
 
 [data-theme="whatsapp-dark"] cite:after {
   border-color: transparent transparent transparent #245247;
+}
+
+/* ==================TERMINAL================== */
+
+[data-theme|="terminal"] {
+  --quote-font-family: "PT Mono", sans-serif;
+}
+
+[data-theme|="terminal"] body,
+[data-theme|="terminal"] select,
+[data-theme|="terminal"] button {
+  font-family: var(--quote-font-family);
+}
+
+[data-theme|="terminal"] select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23a3a29a' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+[data-theme|="terminal"] body:before {
+  content: " ";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.9) inset;
+  background-size: 100% 2px, 3px 100%;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: linear-gradient(
+      rgba(13, 14, 14, 0) 50%,
+      rgba(0, 0, 0, 0.25) 50%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(204, 0, 0, 0.06),
+      rgba(51, 204, 0, 0.02),
+      rgba(0, 0, 204, 0.06)
+    );
+  z-index: 3;
+  pointer-events: none;
+}
+
+[data-theme|="terminal"] body:after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.1);
+  background-color: rgba(18, 16, 16, 0.1);
+  background-image: none;
+  opacity: 0;
+  z-index: 3;
+  pointer-events: none;
+  animation: flicker 0.5s infinite;
+}
+
+[data-theme|="terminal"] blockquote {
+  font-weight: bold;
+  text-shadow: rgba(0, 24, 204, 0.5) 2.62088px 0px 1px,
+    rgba(204, 0, 64, 0.3) -2.62088px 0px 1px, 0px 0px 3px;
+}
+
+[data-theme|="terminal"] footer {
+  z-index: 4;
+}
+
+[data-theme="terminal-light"] {
+  --font-color: #a3a29a;
+  --background: #4b3501;
+  --accent-color: rgb(216, 185, 100);
+}
+
+[data-theme="terminal-dark"] {
+  --font-color: #a3a29a;
+  --background: rgb(2, 22, 0);
+  --accent-color: rgb(135, 224, 135);
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.27861;
+  }
+  5% {
+    opacity: 0.34769;
+  }
+  10% {
+    opacity: 0.23604;
+  }
+  15% {
+    opacity: 0.90626;
+  }
+  20% {
+    opacity: 0.18128;
+  }
+  25% {
+    opacity: 0.83891;
+  }
+  30% {
+    opacity: 0.65583;
+  }
+  35% {
+    opacity: 0.67807;
+  }
+  40% {
+    opacity: 0.26559;
+  }
+  45% {
+    opacity: 0.84693;
+  }
+  50% {
+    opacity: 0.96019;
+  }
+  55% {
+    opacity: 0.08594;
+  }
+  60% {
+    opacity: 0.20313;
+  }
+  65% {
+    opacity: 0.71988;
+  }
+  70% {
+    opacity: 0.53455;
+  }
+  75% {
+    opacity: 0.37288;
+  }
+  80% {
+    opacity: 0.71428;
+  }
+  85% {
+    opacity: 0.70419;
+  }
+  90% {
+    opacity: 0.7003;
+  }
+  95% {
+    opacity: 0.36108;
+  }
+  100% {
+    opacity: 0.24387;
+  }
 }

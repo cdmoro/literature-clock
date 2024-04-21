@@ -33,6 +33,7 @@ export default {
     handwriting: "Handwriting",
     anaglyph: "Anaglyph",
     whatsapp: "Whatsapp",
+    terminal: "Terminal",
 
     system: "System",
     light: "Light",
@@ -81,6 +82,7 @@ export default {
     handwriting: "Manuscrita",
     anaglyph: "Anaglifo",
     whatsapp: "Whatsapp",
+    terminal: "Terminal",
 
     system: "Sistema",
     light: "Claro",
@@ -128,6 +130,7 @@ export default {
     handwriting: "Manuscrita",
     anaglyph: "Anaglifo",
     whatsapp: "Whatsapp",
+    terminal: "Terminal",
 
     system: "Sistema",
     light: "Claro",
@@ -176,6 +179,7 @@ export default {
     handwriting: "Manuscrit",
     anaglyph: "Anaglyphe",
     whatsapp: "Whatsapp",
+    terminal: "Terminal",
 
     system: "Système",
     light: "Clair",
@@ -224,6 +228,7 @@ export default {
     handwriting: "Manoscritto",
     anaglyph: "Anaglifo",
     whatsapp: "Whatsapp",
+    terminal: "Terminale",
 
     system: "Sistema",
     light: "Chiaro",
