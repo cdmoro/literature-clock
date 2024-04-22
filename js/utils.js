@@ -89,6 +89,7 @@ export const FALLBACK_QUOTES = {
 const INITIAL_THEME_FONT_SIZE = {
   handwriting: 80,
   whatsapp: 45,
+  retro: 70,
 };
 
 export function getTime() {
