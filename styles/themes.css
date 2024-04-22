@@ -340,7 +340,7 @@
 }
 
 [data-theme|="whatsapp"] cite:before {
-  content: none;
+  content: "📖🤓🖋️ ";
 }
 
 [data-theme|="whatsapp"] blockquote p:after,
