@@ -496,10 +496,10 @@
 
 [data-theme|="terminal"] cite:after {
   content: " ";
-  width: 0.5rem;
-  height: 1rem;
+  width: 1.25rem;
+  height: .5rem;
   display: inline-block;
-  margin-inline-start: 0.5rem;
+  margin-inline-start: 1rem;
   background: var(--font-color);
   box-shadow: rgba(0, 24, 204, 0.5) 2.62088px 0px 1px,
     rgba(204, 0, 64, 0.3) -2.62088px 0px 1px, 0px 0px 3px;
