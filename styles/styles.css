@@ -86,10 +86,15 @@ blockquote .time {
 
 cite {
   font-size: 1.8vw;
+  font-style: normal;
 }
 
 cite:before {
   content: "— ";
+}
+
+cite #title {
+  font-style: italic;
 }
 
 select {
