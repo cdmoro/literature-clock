@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initTheme("base-dark");
   initLocale(navigator.language);
   initClock();
-  setInterval(fitQuote, 10);
+  setTimeout(fitQuote, 10);
 
   window.addEventListener("resize", fitQuote);
   document.addEventListener("visibilitychange", () =>
