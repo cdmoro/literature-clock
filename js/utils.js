@@ -86,6 +86,10 @@ export const FALLBACK_QUOTES = {
   ],
 };
 
+const START_FONT_SIZE = {
+  handwriting: 80,
+};
+
 export function getTime() {
   const urlParams = new URLSearchParams(window.location.search);
   const testTime = urlParams.get("time");
@@ -130,8 +134,9 @@ export function updateGHLinks(time, quote, locale) {
 }
 
 export function fitQuote() {
+  const [theme] = document.documentElement.dataset.theme.split("-");
   const quote = document.querySelector("blockquote p");
-  let fontSize = 60;
+  let fontSize = START_FONT_SIZE[theme] || 60;
 
   if (quote) {
     quote.style.fontSize = `${fontSize}px`;
