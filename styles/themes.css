@@ -472,8 +472,9 @@
 
 [data-theme|="terminal"] blockquote {
   font-weight: bold;
-  text-shadow: rgba(0, 24, 204, 0.5) 2.62088px 0px 1px,
-    rgba(204, 0, 64, 0.3) -2.62088px 0px 1px, 0px 0px 3px;
+  text-shadow: rgba(0, 24, 204, 0.5) 2px 0px 1px,
+    rgba(204, 0, 64, 0.3) -2px 0px 1px, 0px 0px 3px,
+    color-mix(in srgb, var(--accent-color), transparent 70%) 0px 0px 15px;
 }
 
 [data-theme|="terminal"] blockquote p {
