@@ -506,9 +506,23 @@
 }
 
 [data-theme="terminal-light"] {
-  --font-color: #373518;
+  --font-color: #4d4806;
   --background: #fff6ae;
   --accent-color: rgb(172, 127, 2);
+}
+
+[data-theme="terminal-light"] body:after {
+  background-color: rgba(18, 16, 16, 0.025);
+}
+
+[data-theme="terminal-light"] cite {
+  text-shadow: rgba(0, 24, 204, 0.5) 1.5px 0px 1px,
+    rgba(204, 0, 64, 0.3) -1.5px 0px 1px;
+}
+
+[data-theme="terminal-light"] cite:after {
+  box-shadow: rgba(0, 24, 204, 0.5) 1.5px 0px 1px,
+    rgba(204, 0, 64, 0.3) -1.5px 0px 1px;
 }
 
 [data-theme="terminal-dark"] {
