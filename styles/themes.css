@@ -326,21 +326,21 @@
   max-width: 80%;
   padding: 0.75rem 1rem;
   position: relative;
-  margin-inline-start: 1rem;
+  margin-inline: 1rem 2rem;
   max-height: 40vh;
 }
 
-[data-theme|="whatsapp"] cite {
+[data-theme|="whatsapp"] blockquote cite {
   border-radius: 0.75rem;
   border-start-end-radius: 0;
   padding: 0.75rem 1rem;
   box-shadow: var(--box-shadow);
   font-style: normal;
-  margin-inline-end: 1rem;
-  margin-top: 1rem;
-  margin-inline-start: auto;
+  margin-inline: 2rem 1rem;
+  margin-top: 1.5rem;
   display: block;
   position: relative;
+  align-self: end;
 }
 
 [data-theme|="whatsapp"] cite:before {
