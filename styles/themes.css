@@ -323,10 +323,10 @@
   border-radius: 0.75rem;
   border-start-start-radius: 0;
   box-shadow: var(--box-shadow);
-  max-width: 80%;
+  max-width: 70%;
   padding: 0.75rem 1rem;
   position: relative;
-  margin-inline: 1rem 2rem;
+  margin-inline-start: 1rem;
   max-height: 40vh;
 }
 
@@ -336,11 +336,12 @@
   padding: 0.75rem 1rem;
   box-shadow: var(--box-shadow);
   font-style: normal;
-  margin-inline: 2rem 1rem;
+  margin-inline-end: 1rem;
   margin-top: 1.5rem;
   display: block;
   position: relative;
   align-self: end;
+  max-width: 70%;
 }
 
 [data-theme|="whatsapp"] cite:before {
