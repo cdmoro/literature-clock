@@ -86,8 +86,9 @@ export const FALLBACK_QUOTES = {
   ],
 };
 
-const START_FONT_SIZE = {
+const INITIAL_THEME_FONT_SIZE = {
   handwriting: 80,
+  whatsapp: 50,
 };
 
 export function getTime() {
@@ -137,7 +138,7 @@ export function fitQuote() {
   const [theme] = document.documentElement.dataset.theme.split("-");
   const quote = document.querySelector("blockquote p");
   const cite = document.querySelector("blockquote cite");
-  let fontSize = START_FONT_SIZE[theme] || 60;
+  let fontSize = INITIAL_THEME_FONT_SIZE[theme] || 60;
 
   if (quote) {
     quote.style.fontSize = `${fontSize}px`;
