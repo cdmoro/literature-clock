@@ -136,6 +136,7 @@ export function updateGHLinks(time, quote, locale) {
 export function fitQuote() {
   const [theme] = document.documentElement.dataset.theme.split("-");
   const quote = document.querySelector("blockquote p");
+  const cite = document.querySelector("blockquote cite");
   let fontSize = START_FONT_SIZE[theme] || 60;
 
   if (quote) {
@@ -144,6 +145,7 @@ export function fitQuote() {
 
     while (quote.scrollHeight > secureClientHeight) {
       quote.style.fontSize = `${fontSize}px`;
+      cite.style.fontSize = `${fontSize * 0.575833333333}px`
       fontSize -= 1;
 
       if (fontSize < 10) {
