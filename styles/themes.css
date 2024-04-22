@@ -310,6 +310,11 @@
     inset 0px 5px 0px -3px #f1f1f111;
 }
 
+[data-theme|="whatsapp"] blockquote {
+  display: flex;
+  flex-direction: column;
+}
+
 [data-theme|="whatsapp"] .time {
   font-weight: bold;
 }
@@ -319,7 +324,7 @@
   border-start-start-radius: 0;
   box-shadow: var(--box-shadow);
   max-width: 80%;
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem 1rem;
   position: relative;
   margin-inline-start: 1rem;
   max-height: 40vh;
@@ -328,7 +333,7 @@
 [data-theme|="whatsapp"] cite {
   border-radius: 0.75rem;
   border-start-end-radius: 0;
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem 1rem;
   box-shadow: var(--box-shadow);
   font-style: normal;
   max-width: 50%;
