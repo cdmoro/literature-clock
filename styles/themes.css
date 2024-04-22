@@ -517,12 +517,12 @@
 
 [data-theme="terminal-light"] cite {
   text-shadow: rgba(0, 24, 204, 0.5) 1.5px 0px 1px,
-    rgba(204, 0, 64, 0.3) -1.5px 0px 1px;
+    rgba(204, 0, 64, 0.3) -1.5px 0px 1px, 0px 0px 3px;
 }
 
 [data-theme="terminal-light"] cite:after {
   box-shadow: rgba(0, 24, 204, 0.5) 1.5px 0px 1px,
-    rgba(204, 0, 64, 0.3) -1.5px 0px 1px;
+    rgba(204, 0, 64, 0.3) -1.5px 0px 1px, 0px 0px 3px;
 }
 
 [data-theme="terminal-dark"] {
