@@ -495,24 +495,24 @@
 }
 
 [data-theme|="terminal"] cite:after {
-  content: " ";
-  width: 1.25rem;
-  height: .5rem;
+  content: "_";
   display: inline-block;
   margin-inline-start: 1rem;
-  background: var(--font-color);
-  box-shadow: rgba(0, 24, 204, 0.5) 2.62088px 0px 1px,
-    rgba(204, 0, 64, 0.3) -2.62088px 0px 1px, 0px 0px 3px;
   animation: blink 1s step-start 0s infinite;
-  transform: translateY(1px);
+  transform: translateY(-1px);
 }
 
 [data-theme|="terminal"] #time-progress-bar {
   background: var(--accent-color);
+  height: 7px;
+  box-shadow: rgba(0, 24, 204, 0.5) 2px 0px 1px,
+    rgba(204, 0, 64, 0.3) -2px 0px 1px, 0px 0px 3px,
+    color-mix(in srgb, var(--accent-color), transparent 70%) 0px 0px 15px;
+  transition: none !important;
 }
 
 [data-theme="terminal-light"] {
-  --font-color: #4d4806;
+  --font-color: #181702;
   --background: #fff6ae;
   --accent-color: rgb(172, 127, 2);
 }
@@ -523,11 +523,6 @@
 
 [data-theme="terminal-light"] cite {
   text-shadow: rgba(0, 24, 204, 0.5) 1.5px 0px 1px,
-    rgba(204, 0, 64, 0.3) -1.5px 0px 1px, 0px 0px 3px;
-}
-
-[data-theme="terminal-light"] cite:after {
-  box-shadow: rgba(0, 24, 204, 0.5) 1.5px 0px 1px,
     rgba(204, 0, 64, 0.3) -1.5px 0px 1px, 0px 0px 3px;
 }
 
