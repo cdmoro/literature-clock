@@ -139,7 +139,7 @@ export function fitQuote() {
   const [theme] = document.documentElement.dataset.theme.split("-");
   const quote = document.querySelector("blockquote p");
   const cite = document.querySelector("blockquote cite");
-  let fontSize = INITIAL_THEME_FONT_SIZE[theme] || 60;
+  let fontSize = INITIAL_THEME_FONT_SIZE[theme] || 45;
 
   if (quote) {
     quote.style.fontSize = `${fontSize}px`;
@@ -147,7 +147,7 @@ export function fitQuote() {
 
     while (quote.scrollHeight > secureClientHeight) {
       quote.style.fontSize = `${fontSize}px`;
-      cite.style.fontSize = `${fontSize * 0.575833333333}px`
+      cite.style.fontSize = `${fontSize * 0.65}px`;
       fontSize -= 1;
 
       if (fontSize < 10) {

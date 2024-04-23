@@ -98,5 +98,5 @@ export function setTheme(e) {
   }
 
   document.documentElement.dataset.theme = `${theme}-${variant}`;
-  setTimeout(fitQuote, 10);
+  fitQuote();
 }
