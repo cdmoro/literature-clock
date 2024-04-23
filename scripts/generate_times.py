@@ -59,7 +59,7 @@ for file_name in file_list:
                     'quote_first': quote_first,
                     'quote_last': quote_last,
                     'quote_time_case': row['Quote time'],
-                    'quote_raw': row['Quote'],
+                    # 'quote_raw': row['Quote'],
                     'title': row['Title'],
                     'author': row['Author'],
                     'sfw': row['SFW']
