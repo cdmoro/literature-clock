@@ -143,9 +143,9 @@ export function fitQuote() {
 
   if (quote) {
     quote.style.fontSize = `${fontSize}px`;
-    const secureClientHeight = quote.clientHeight - 10;
+    const safeClientHeight = quote.clientHeight - 10;
 
-    while (quote.scrollHeight > secureClientHeight) {
+    while (quote.scrollHeight > safeClientHeight) {
       quote.style.fontSize = `${fontSize}px`;
       cite.style.fontSize = `${fontSize < 19 ? 12 : fontSize * 0.65}px`;
       fontSize -= 1;
