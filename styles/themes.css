@@ -497,7 +497,6 @@
 [data-theme|="terminal"] cite:after {
   content: "_";
   display: inline-block;
-  margin-inline-start: 1rem;
   animation: blink 1s step-start 0s infinite;
   transform: translateY(-1px);
 }
