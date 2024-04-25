@@ -87,7 +87,7 @@ export const FALLBACK_QUOTES = {
 };
 
 const INITIAL_THEME_FONT_SIZE = {
-  handwriting: 80,
+  handwriting: 90,
   whatsapp: 45,
   retro: 70,
 };
@@ -139,7 +139,7 @@ export function fitQuote() {
   const [theme] = document.documentElement.dataset.theme.split("-");
   const quote = document.querySelector("blockquote p");
   const cite = document.querySelector("blockquote cite");
-  let fontSize = INITIAL_THEME_FONT_SIZE[theme] || 60;
+  let fontSize = INITIAL_THEME_FONT_SIZE[theme] || 75;
 
   if (quote) {
     quote.style.fontSize = `${fontSize}px`;
