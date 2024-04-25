@@ -310,6 +310,10 @@
     inset 0px 5px 0px -3px #f1f1f111;
 }
 
+[data-theme|="whatsapp"] body {
+  background-size: calc(25vw + 500px);
+}
+
 [data-theme|="whatsapp"] blockquote {
   display: flex;
   flex-direction: column;
