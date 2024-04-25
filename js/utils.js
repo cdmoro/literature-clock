@@ -147,11 +147,11 @@ export function fitQuote() {
 
     while (quote.scrollHeight > safeClientHeight) {
       quote.style.fontSize = `${fontSize}px`;
-      cite.style.fontSize = `${fontSize < 19 ? 12 : fontSize * 0.65}px`;
+      cite.style.fontSize = `${fontSize < 19 ? 10 : fontSize * 0.7}px`;
       fontSize -= 1;
 
-      if (fontSize < 15) {
-        quote.style.fontSize = `15px`;
+      if (fontSize < 10) {
+        quote.style.fontSize = `10px`;
         break;
       }
     }

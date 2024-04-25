@@ -93,5 +93,5 @@ export async function updateQuote(time = getTime()) {
   clock.appendChild(blockquote);
 
   const fitQuoteInterval = setInterval(fitQuote, 1);
-  setTimeout(() => clearInterval(fitQuoteInterval), 200);
+  setTimeout(() => clearInterval(fitQuoteInterval), 500);
 }

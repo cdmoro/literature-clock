@@ -87,7 +87,9 @@ export function initTheme(defaultValue = "base-dark") {
   });
 }
 
-export function setTheme(e) {
+export function setTheme() {
+  const p = document.querySelector("blockquote p");
+  p.style.visibility = "hidden";
   let theme = document.getElementById("theme-select").value;
   let variant = document.getElementById("variant-select").value;
 
@@ -106,5 +108,7 @@ export function setTheme(e) {
 
   document.documentElement.dataset.theme = `${theme}-${variant}`;
   const fitQuoteInterval = setInterval(fitQuote, 1);
-  setTimeout(() => clearInterval(fitQuoteInterval), 200);
+  setTimeout(() => clearInterval(fitQuoteInterval), 500);
+
+  setTimeout(() => (p.style.visibility = "visible"), 50);
 }
