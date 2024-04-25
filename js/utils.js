@@ -139,7 +139,7 @@ export function fitQuote() {
   const [theme] = document.documentElement.dataset.theme.split("-");
   const quote = document.querySelector("blockquote p");
   const cite = document.querySelector("blockquote cite");
-  let fontSize = INITIAL_THEME_FONT_SIZE[theme] || 45;
+  let fontSize = INITIAL_THEME_FONT_SIZE[theme] || 60;
 
   if (quote) {
     quote.style.fontSize = `${fontSize}px`;
