@@ -141,6 +141,11 @@
   --accent-color: #9f5bd5;
 }
 
+[data-theme|="elegant"] cite {
+  display: block;
+  text-align: right;
+}
+
 [data-theme|="elegant"] #time-progress-bar {
   background-color: var(--accent-color);
 }
