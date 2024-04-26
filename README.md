@@ -76,7 +76,13 @@ At the moment, the clock has seven color themes and four special themes, we expe
 **Whatsapp**
 | Light  | Dark  |
 |---|---|
-|![image](https://github.com/cdmoro/literature-clock/assets/28156761/5a25990e-2d5e-4352-976e-86672a6ecde9)|![image](https://github.com/cdmoro/literature-clock/assets/28156761/f1511376-f58f-4878-8ea9-6a931428d223)|
+|![image](https://github.com/cdmoro/literature-clock/assets/28156761/2aff30ff-3867-4f03-874a-55f708fb4345)|![image](https://github.com/cdmoro/literature-clock/assets/28156761/1b622436-4ce5-4fef-a668-3d5b6318ec88)|
+
+**Terminal**
+| Light  | Dark  |
+|---|---|
+|![image](https://github.com/cdmoro/literature-clock/assets/28156761/6e74dacd-5a9a-46b1-b707-34df7b9a8e37)|![image](https://github.com/cdmoro/literature-clock/assets/28156761/3cc114fd-f0fe-4277-99d1-7f258f047a12)|
+
 
 ## Development
 
