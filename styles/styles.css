@@ -184,11 +184,6 @@ button:focus.active {
   opacity: 1;
 }
 
-body.blur #time-progress-bar {
-  transition: opacity 1s;
-  opacity: 0;
-}
-
 #exit-zen {
   font-size: 1.5rem;
   color: var(--accent-color);

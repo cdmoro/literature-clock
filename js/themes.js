@@ -64,12 +64,6 @@ export function initTheme(defaultValue = "base-dark") {
   }
   document.documentElement.dataset.theme = `${theme}-${variant}`;
 
-  document.addEventListener("visibilitychange", () =>
-    document.body.classList.toggle(
-      "blur",
-      document.visibilityState === "hidden"
-    )
-  );
   window.addEventListener("resize", fitQuote);
   themeSelect.addEventListener("change", setTheme);
   variantSelect.addEventListener("change", setTheme);

@@ -72,10 +72,7 @@ export function initLocale(defaultValue = navigator.language) {
     translateStrings(locale);
     setStringSetting("locale", e.target.value);
     updateURL("locale", e.target.value);
-
-    if (!isRandomLocale) {
-      updateQuote();
-    }
+    updateQuote();
   });
 }
 

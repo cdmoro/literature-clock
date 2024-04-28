@@ -90,6 +90,8 @@ for file_name in file_list:
             'times_without_quotes': minutes - times_with_quote,
             'total': minutes,
             'progress': round((times_with_quote * 100) / minutes, 2),
+            'authors': groupedByTime['Author'].nunique().sum(),
+            'books': groupedByTime['Title'].nunique().sum(),
             'top_author_quotes': top_author_quotes.to_dict(),
             'bottom_time_quotes': bottom_time_quotes.to_dict(),
             'top_time_quotes': top_time_quotes.to_dict()

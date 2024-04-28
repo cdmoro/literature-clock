@@ -146,6 +146,10 @@
   text-align: right;
 }
 
+[data-theme|="elegant"] cite:before {
+  content: none;
+}
+
 [data-theme|="elegant"] #time-progress-bar {
   background-color: var(--accent-color);
 }
@@ -354,7 +358,7 @@
 }
 
 [data-theme|="whatsapp"] cite:before {
-  content: "📖🤓🖋️ ";
+  content: "📖 ";
 }
 
 [data-theme|="whatsapp"] blockquote p:after,
@@ -444,7 +448,7 @@
 }
 
 [data-theme|="terminal"] body:before {
-  content: " ";
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
@@ -468,7 +472,7 @@
 }
 
 [data-theme|="terminal"] body:after {
-  content: " ";
+  content: "";
   display: block;
   position: fixed;
   top: 0;
