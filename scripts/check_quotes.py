@@ -11,7 +11,7 @@ def check_csv_files(directory):
 
             print(f"Processing {file_name}...")
 
-            with open(filepath, 'r', newline='') as csvfile:
+            with open(filepath, 'r', newline='', encoding="cp437") as csvfile:
                 reader = csv.reader(csvfile)
                 rows = list(reader)
                 for row in rows[1:]:
@@ -19,7 +19,7 @@ def check_csv_files(directory):
                         errors += 1
                         if not row[1].startswith('*'):
                             row[1] = "* " + row[1]
-                with open(filepath, 'w', newline='') as csvfile:
+                with open(filepath, 'w', newline='', encoding="cp437") as csvfile:
                     writer = csv.writer(csvfile)
                     writer.writerows(rows)
 
