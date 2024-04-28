@@ -57,7 +57,7 @@
 
 [data-theme="blue-light"] {
   --accent-color: #2c97df;
-  --background: #f2f6ff;
+  --background: #d2e0ff;
 }
 
 [data-theme="blue-dark"] {
@@ -651,9 +651,8 @@
 }
 
 [data-theme="frame-light"] {
-  --background: #8df9ff;
-  --font-color: #2d2d2d;
-  --accent-color: #00979d;
+  --background: #cefcff;
+  --accent-color: #00b9c4;
 }
 
 [data-theme="frame-light"] blockquote {
@@ -661,11 +660,17 @@
 }
 
 [data-theme="frame-dark"] {
-  --background: #2f999f;
-  --font-color: #fafafa;
-  --accent-color: #00393c;
+  --background: #001c1e;
+  --font-color: #f7f7f7;
+  --accent-color: #00c4ce;
 }
 
 [data-theme="frame-dark"] blockquote {
   border-color: #fff3;
+}
+
+@media only screen and (max-width: 600px) {
+  [data-theme|="frame"] blockquote {
+    padding: 1.5rem 2rem;
+  }
 }
