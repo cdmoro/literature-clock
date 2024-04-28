@@ -615,3 +615,57 @@
     opacity: 0.24387;
   }
 }
+
+/* ==================FRAME================== */
+
+[data-theme|="frame"] {
+  --quote-font-family: "Playfair Display", sans-serif;
+  --quote-line-height: 1.2;
+}
+
+[data-theme|="frame"] blockquote:before,
+[data-theme|="frame"] blockquote:after {
+  content: none;
+}
+
+[data-theme|="frame"] blockquote {
+  border-width: 3px;
+  border-style: solid;
+  border-end-end-radius: 5vw;
+  border-start-start-radius: 5vw;
+  padding: 2.5rem 3rem;
+  text-align: center;
+}
+
+[data-theme|="frame"] p {
+  max-height: 40vh;
+  margin-bottom: 1.2rem;
+}
+
+[data-theme|="frame"] cite:before {
+  content: none;
+}
+
+[data-theme|="frame"] cite #author {
+  display: block;
+}
+
+[data-theme="frame-light"] {
+  --background: #8df9ff;
+  --font-color: #2d2d2d;
+  --accent-color: #00979d;
+}
+
+[data-theme="frame-light"] blockquote {
+  border-color: #0003;
+}
+
+[data-theme="frame-dark"] {
+  --background: #2f999f;
+  --font-color: #fafafa;
+  --accent-color: #00393c;
+}
+
+[data-theme="frame-dark"] blockquote {
+  border-color: #fff3;
+}

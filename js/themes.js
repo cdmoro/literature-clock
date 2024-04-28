@@ -10,6 +10,7 @@ const THEME_FONTS = {
   anaglyph: "Anton",
   whatsapp: "Roboto",
   terminal: "B612 Mono",
+  frame: "Playfair Display",
 };
 
 function loadFontIfNotExists(theme) {

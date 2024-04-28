@@ -90,6 +90,7 @@ const INITIAL_THEME_FONT_SIZE = {
   handwriting: 90,
   whatsapp: 45,
   retro: 70,
+  frame: 35,
 };
 
 export function getTime() {
