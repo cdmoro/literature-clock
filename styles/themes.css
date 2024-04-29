@@ -633,13 +633,19 @@
   border-style: solid;
   border-end-end-radius: 5vw;
   border-start-start-radius: 5vw;
-  padding: 2.5rem 3rem;
+  padding: 4.5rem 3rem 2.5rem;
   text-align: center;
 }
 
 [data-theme|="frame"] p {
   max-height: 40vh;
   margin-bottom: 1.2rem;
+}
+
+[data-theme|="frame"] p:before {
+  content: "“";
+  display: block;
+  transform: scale(5);
 }
 
 [data-theme|="frame"] cite:before {
@@ -671,6 +677,6 @@
 
 @media only screen and (max-width: 600px) {
   [data-theme|="frame"] blockquote {
-    padding: 1.5rem 2rem;
+    padding: 3.5rem 2rem 1.5rem;
   }
 }
