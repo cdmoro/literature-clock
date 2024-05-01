@@ -635,6 +635,7 @@
   border-start-start-radius: 5vw;
   padding: 4.5rem 3rem 2.5rem;
   text-align: center;
+  text-wrap: balance;
 }
 
 [data-theme|="frame"] p {
