@@ -37,12 +37,12 @@
 
 [data-theme="purple-light"] {
   --accent-color: #9b59b6;
-  --background: #f5eefd;
+  --background: #ead7ff;
 }
 
 [data-theme="purple-dark"] {
   --accent-color: #9b59b6;
-  --background: #121222;
+  --background: #20072a;
 }
 
 [data-theme="green-light"] {
@@ -62,7 +62,7 @@
 
 [data-theme="blue-dark"] {
   --accent-color: #2c97df;
-  --background: #0c0c1a;
+  --background: #0c0c24;
 }
 
 [data-theme="gray-light"] {
@@ -77,7 +77,7 @@
 
 [data-theme="pink-light"] {
   --accent-color: #ff6b81;
-  --background: #fdf2f8;
+  --background: #ffdff1;
 }
 
 [data-theme="pink-dark"] {
