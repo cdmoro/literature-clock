@@ -186,7 +186,7 @@ button:focus.active {
 }
 
 #exit-zen {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: var(--accent-color);
   display: none;
   border-color: transparent;
@@ -258,7 +258,7 @@ footer {
   }
 
   #exit-zen {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
   }
 
   footer {
