@@ -34,12 +34,12 @@ body.zen #exit-zen {
 }
 
 body.screensaver blockquote {
-  transition-duration: 15s;
   transition-timing-function: linear;
 }
 
 body:not(.screensaver) blockquote {
   transform: none !important;
+  transition-duration: 1s !important;
 }
 
 #clock {

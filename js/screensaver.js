@@ -6,11 +6,13 @@ import {
   updateURL,
 } from "./settings.js";
 
-const INTERVAL = 15000;
+const INTERVAL = 5000;
+const TRANSITION_DURATION = `${INTERVAL / 1000}s`;
 let screensaverInterval;
 
 function screensaver() {
   const quote = document.getElementById("quote");
+  quote.style.transitionDuration = TRANSITION_DURATION;
 
   const getRandomNumber = (min, max) => Math.random() * (max - min) + min;
   const scale = getRandomNumber(0.7, 1.2);
@@ -33,16 +35,14 @@ export function initScreensaver(defaultValue = false) {
   setBooleanSetting("screensaver", value);
   updateBooleanSettingButtonStatus("screensaver", value);
 
-  if (value) {
-    screensaver();
-    screensaverInterval = setInterval(screensaver, INTERVAL);
-  } else {
-    clearInterval(screensaverInterval);
-  }
-
   document
     .getElementById("screensaver")
     .addEventListener("click", toggleScreensaverMode);
+}
+
+export function startScreensaver() {
+  screensaver();
+  screensaverInterval = setInterval(screensaver, INTERVAL);
 }
 
 function toggleScreensaverMode() {
@@ -52,8 +52,7 @@ function toggleScreensaverMode() {
   updateBooleanSettingButtonStatus("screensaver", isScreensaverMode);
 
   if (isScreensaverMode) {
-    screensaver();
-    screensaverInterval = setInterval(screensaver, INTERVAL);
+    startScreensaver();
   } else {
     clearInterval(screensaverInterval);
   }
