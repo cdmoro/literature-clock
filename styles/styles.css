@@ -33,6 +33,15 @@ body.zen #exit-zen {
   display: block;
 }
 
+body.screensaver blockquote {
+  transition-duration: 15s;
+  transition-timing-function: linear;
+}
+
+body:not(.screensaver) blockquote {
+  transform: none !important;
+}
+
 #clock {
   max-width: 80vw;
   margin: 0 auto;
@@ -50,6 +59,7 @@ blockquote {
   line-height: var(--quote-line-height, 1.1);
   font-weight: 100;
   font-family: var(--quote-font-family);
+  transition: transform 1s ease;
 }
 
 blockquote p {
@@ -247,11 +257,6 @@ footer {
     max-height: 50vh;
   }
 
-  #zen,
-  #work {
-    padding: 0.15rem 0.35rem;
-  }
-
   cite {
     font-size: 1rem;
   }
@@ -274,6 +279,7 @@ footer {
 
   footer button {
     font-size: 0.8rem;
+    padding: 0.15rem 0.35rem;
   }
 
   #theme,

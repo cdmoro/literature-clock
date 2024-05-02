@@ -70,8 +70,11 @@ export async function updateQuote(time = getTime()) {
     testQuote ||
     `${quote.quote_first}<span class="time">${quote.quote_time_case}</span>${quote.quote_last}`;
 
-  const blockquote = document.createElement("blockquote");
-  blockquote.id = "quote";
+  // const blockquote = document.createElement("blockquote");
+  // blockquote.id = "quote";
+
+  const blockquote = document.getElementById("quote");
+  blockquote.innerHTML = "";
 
   const p = document.createElement("p");
   p.innerHTML = quoteText;
