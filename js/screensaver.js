@@ -6,7 +6,7 @@ import {
   updateURL,
 } from "./settings.js";
 
-const INTERVAL = 5000;
+const INTERVAL = 10000;
 const TRANSITION_DURATION = `${INTERVAL / 1000}s`;
 let screensaverInterval;
 
