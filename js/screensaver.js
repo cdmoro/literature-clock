@@ -15,7 +15,7 @@ function screensaver() {
   quote.style.transitionDuration = TRANSITION_DURATION;
 
   const getRandomNumber = (min, max) => Math.random() * (max - min) + min;
-  const scale = getRandomNumber(0.7, 1.2);
+  const scale = getRandomNumber(0.6, 1);
   const windowHeight = window.innerHeight - 110 - 30;
   const windowWidth = window.innerWidth - 30;
   const quoteHeight = quote.offsetHeight * scale;
@@ -57,6 +57,5 @@ function toggleScreensaverMode() {
     startScreensaver();
   } else {
     clearInterval(screensaverInterval);
-    screensaverInterval = undefined;
   }
 }
