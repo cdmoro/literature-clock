@@ -1,4 +1,5 @@
-import { initStringSetting, setStringSetting, updateURL } from "./settings.js";
+import { startScreensaver } from "./screensaver.js";
+import { initStringSetting, isBooleanSettingTrue, setStringSetting, updateURL } from "./settings.js";
 import { fitQuote } from "./utils.js";
 
 const THEME_FONTS = {
@@ -107,8 +108,14 @@ export function setTheme() {
 
   document.documentElement.dataset.theme = `${theme}-${variant}`;
   const fitQuoteInterval = setInterval(fitQuote, 1);
-  setTimeout(() => clearInterval(fitQuoteInterval), 500);
+  setTimeout(() => {
+    clearInterval(fitQuoteInterval);
 
+    if (isBooleanSettingTrue("screensaver")) {
+      startScreensaver();
+    }
+  }, 500);
+  
   if (p) {
     setTimeout(() => (p.style.visibility = "visible"), 50);
   }

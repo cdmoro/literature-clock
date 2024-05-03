@@ -41,6 +41,8 @@ export function initScreensaver(defaultValue = false) {
 }
 
 export function startScreensaver() {
+  clearInterval(screensaverInterval);
+
   screensaver();
   screensaverInterval = setInterval(screensaver, INTERVAL);
 }
@@ -55,5 +57,6 @@ function toggleScreensaverMode() {
     startScreensaver();
   } else {
     clearInterval(screensaverInterval);
+    screensaverInterval = undefined;
   }
 }

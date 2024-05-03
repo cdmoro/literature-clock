@@ -166,6 +166,10 @@ button {
   cursor: pointer;
 }
 
+button svg {
+  transform: translateY(2px);
+}
+
 button.active {
   border-color: var(--accent-color);
   background-color: var(--accent-color);
@@ -279,7 +283,11 @@ footer {
 
   footer button {
     font-size: 0.8rem;
-    padding: 0.15rem 0.35rem;
+    padding: 0.1rem 0.35rem;
+  }
+
+  footer button span {
+    display: none;
   }
 
   #theme,
