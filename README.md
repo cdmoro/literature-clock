@@ -8,26 +8,28 @@ A clock that tells the time using quotes from literature. Support for multiple l
 
 - Zen mode: remove all the distractions (perfect for screensaver usage) ([link](https://literatureclock.netlify.app/?zen=true))
 - Work mode: only shows quotes that are safe for work ([link](https://literatureclock.netlify.app/?work=true))
+- Screensaver mode: make the quotes dance around the screen! ([link](https://literatureclock.netlify.app/?screensaver=true))
 - Languages: supports English, Spanish, Portuguese, French, and Italian (by default, it will try to use the system language)
-- Random language: each minute you'll see a quote in a different language, isn't that cool? ([link](https://literatureclock.netlify.app/?locale=random))
-- Themes: the clock has `color themes` and `special themes` and each theme has light and dark variants
-- Random color theme: each minute you'll see a different color theme, isn't that even cooler? ([link](https://literatureclock.netlify.app/?theme=color-system))
-- Progress bar: At the bottom of the page there is a `progress bar`, so you can know when a quote is about to change :D
-- Responsive: no matter how long is a quote, it will always look good on desktop and mobile
-- All the quote elements have `aria-labels` to improve the Accessibility
-- The settings are saved in the browser's local storage and they are updated in the URL without refreshing the page (History API)
+  - Random language: see a quote in a different language each minute, isn't that cool? ([link](https://literatureclock.netlify.app/?locale=random))
+- Themes: the clock has `color themes` and `special themes` and each theme has light and dark variants, of course
+  - Random color theme: see a different color theme each minute, isn't that even cooler? ([link](https://literatureclock.netlify.app/?theme=color-system))
+- Progress bar: at the bottom of the page there is a `progress bar`, so you can know when a quote is about to change
+- Responsive: no matter how long is a quote, it will always look good on desktop and mobile 😎
+- Accessibility: All the quote elements have `aria-labels`
+- All the settings are saved in the browser's local storage and they are updated in the URL without refreshing the page, thanks to History API
 
-## Parameteres
+## Settings
 
 The clock can be controlled using URL parameters, these parameters will overwrite the existing configuration
 
 - `zen`: activate Zen mode
 - `work`: activate Work mode
+- `screensaver`: activate Screensaver mode
 - `locale`: set the locale.
   - Locales: `en_US`, `es_ES`, `pt_BR`, `fr_FR`, `it_IT`, and `random`
 - `theme`: set the theme.
-  - Color themes: `Base`, `Pink`, `Green`, `Orange`, `Purple`, `Blue`, and `Gray`
-  - Special themes: `Retro`, `Elegant`, `Festive`, `Bohemian`, `Handwriting`, `Whatsapp`, and `Terminal`
+  - Color themes: `Base`, `Pink`, `Green`, `Orange`, `Purple`, `Blue`, `Gray`, and `random`
+  - Special themes: `Retro`, `Elegant`, `Festive`, `Bohemian`, `Handwriting`, `Whatsapp`, `Terminal`, and `Frame`
 - `time`: get the quotes for a particular time ([link](https://literatureclock.netlify.app/?time=12:30))
 - `quote`: test a quote before submitting it ([link](https://literatureclock.netlify.app/?quote=Hi%20mom!%20I%27m%20part%20of%20the%20Literature%20Clock!)). You don't need to escape the quote by adding the special characters, just write the quote and the browser will add them.
 
