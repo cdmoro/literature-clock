@@ -628,7 +628,7 @@
   content: none;
 }
 
-[data-theme|="frame"] blockquote {
+[data-theme|="frame"] blockquote[aria-label] {
   border-width: 3px;
   border-style: solid;
   border-end-end-radius: 5vw;
