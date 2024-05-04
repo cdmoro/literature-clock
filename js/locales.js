@@ -12,8 +12,9 @@ const DOMINANT_LOCALES = {
 };
 
 const LABELS = {
-  zen: "zen_mode",
-  work: "work_mode",
+  "zen-label": "zen_mode",
+  "work-label": "work_mode",
+  "screensaver-label": "screensaver_mode",
   "add-quote": "add_quote",
   "report-error": "report_error",
   project: "project",

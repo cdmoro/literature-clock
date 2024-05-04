@@ -1,4 +1,5 @@
-import { initStringSetting, setStringSetting, updateURL } from "./settings.js";
+import { startScreensaver } from "./screensaver.js";
+import { initStringSetting, isBooleanSettingTrue, setStringSetting, updateURL } from "./settings.js";
 import { fitQuote } from "./utils.js";
 
 const THEME_FONTS = {
@@ -82,7 +83,7 @@ export function initTheme(defaultValue = "base-dark") {
   });
 }
 
-export function setTheme() {
+export function setTheme(doUpdateURL = true) {
   const p = document.querySelector("blockquote p");
 
   if (p) {
@@ -94,7 +95,9 @@ export function setTheme() {
 
   loadFontIfNotExists(theme);
   setStringSetting("theme", `${theme}-${variant}`);
-  updateURL("theme", `${theme}-${variant}`);
+  if (doUpdateURL) {
+    updateURL("theme", `${theme}-${variant}`);
+  }
 
   if (theme === "color") {
     theme = getRandomThemeColor();
@@ -107,8 +110,14 @@ export function setTheme() {
 
   document.documentElement.dataset.theme = `${theme}-${variant}`;
   const fitQuoteInterval = setInterval(fitQuote, 1);
-  setTimeout(() => clearInterval(fitQuoteInterval), 500);
+  setTimeout(() => {
+    clearInterval(fitQuoteInterval);
 
+    if (isBooleanSettingTrue("screensaver")) {
+      startScreensaver();
+    }
+  }, 500);
+  
   if (p) {
     setTimeout(() => (p.style.visibility = "visible"), 50);
   }

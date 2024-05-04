@@ -1,4 +1,5 @@
 import { getRandomLocale } from "./locales.js";
+import { startScreensaver } from "./screensaver.js";
 import { getStringSetting, isBooleanSettingTrue } from "./settings.js";
 import { setTheme } from "./themes.js";
 import TRANSLATIONS from "./translations.js";
@@ -50,7 +51,6 @@ async function getQuote(time, locale) {
 }
 
 export async function updateQuote(time = getTime()) {
-  const clock = document.getElementById("clock");
   const urlParams = new URLSearchParams(window.location.search);
   const testQuote = urlParams.get("quote");
   let locale = getStringSetting("locale");
@@ -60,7 +60,7 @@ export async function updateQuote(time = getTime()) {
   }
 
   if (getStringSetting("theme").includes("color")) {
-    setTheme();
+    setTheme(false);
   }
 
   const quote = await getQuote(time, locale);
@@ -70,8 +70,8 @@ export async function updateQuote(time = getTime()) {
     testQuote ||
     `${quote.quote_first}<span class="time">${quote.quote_time_case}</span>${quote.quote_last}`;
 
-  const blockquote = document.createElement("blockquote");
-  blockquote.id = "quote";
+  const blockquote = document.getElementById("quote");
+  blockquote.innerHTML = "";
 
   const p = document.createElement("p");
   p.innerHTML = quoteText;
@@ -87,11 +87,16 @@ export async function updateQuote(time = getTime()) {
   blockquote.dataset.sfw = quote.sfw;
   if (quote.fallback) {
     blockquote.dataset.fallback = true;
+  } else {
+    blockquote.removeAttribute("data-fallback");
   }
 
-  clock.innerHTML = "";
-  clock.appendChild(blockquote);
-
   const fitQuoteInterval = setInterval(fitQuote, 1);
-  setTimeout(() => clearInterval(fitQuoteInterval), 500);
+  setTimeout(() => {
+    clearInterval(fitQuoteInterval);
+
+    if (isBooleanSettingTrue("screensaver")) {
+      startScreensaver();
+    }
+  }, 500);
 }
