@@ -41,9 +41,10 @@ In any case, if you want to help you can:
 
 - [Raise an issue to add a new quote](https://github.com/cdmoro/literature-clock/issues/new?template=add-quote.yml&labels=add-quote&title=%5B23%3A28%5D%5Ben%5D+Add+quote) or a new variant for a specific time
 - Raise an issue reporting a bug related to a quote (i.e. a typo)
-- Create a fork of the project and fix the quotes (in the CSV files) marked with an asterisk, if you don't know how to create a fork, you can always download the CSV (it's a text file), update locally and then send it to me
+- Create a fork of the project and fix the quotes (in the CSV files) marked with an asterisk, if you don't know how to create a fork, you can always download the CSV file (it's just a text file), update it locally and then send it back to me
 - Contact me and share your thoughts about a quote, the project, or anything you want :D
-- Show me your love in the form of [coffees](https://buymeacoffee.com/cdmoro)
+- Show me your love in the form of [coffees](https://buymeacoffee.com/cdmoro), [cafecitos](http://cafecito.app/cdmoro)
+- Be my [Patreon](https://patreon.com/cdmoro)
 
 ## Themes
 
