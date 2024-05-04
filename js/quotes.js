@@ -60,7 +60,7 @@ export async function updateQuote(time = getTime()) {
   }
 
   if (getStringSetting("theme").includes("color")) {
-    setTheme();
+    setTheme(false);
   }
 
   const quote = await getQuote(time, locale);

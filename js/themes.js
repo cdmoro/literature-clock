@@ -83,7 +83,7 @@ export function initTheme(defaultValue = "base-dark") {
   });
 }
 
-export function setTheme() {
+export function setTheme(doUpdateURL = true) {
   const p = document.querySelector("blockquote p");
 
   if (p) {
@@ -95,7 +95,9 @@ export function setTheme() {
 
   loadFontIfNotExists(theme);
   setStringSetting("theme", `${theme}-${variant}`);
-  updateURL("theme", `${theme}-${variant}`);
+  if (doUpdateURL) {
+    updateURL("theme", `${theme}-${variant}`);
+  }
 
   if (theme === "color") {
     theme = getRandomThemeColor();
