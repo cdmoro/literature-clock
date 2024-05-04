@@ -1,18 +1,20 @@
 [
     {
+        "id": "003341",
         "time": "22:18",
+        "quote_time_case": "* Dix dix-huit",
         "quote_first": "Ma montre est toujours un peu rapide, dis-je. \"À quelle heure arrivez-vous maintenant ?\"<br>\"Dix heures huit.\"<br>\"Dix heures dix-huit chez moi. Vous voyez.\"",
         "quote_last": "",
-        "quote_time_case": "* Dix dix-huit",
         "title": "L'Américain tranquille",
         "author": "Graham Greene",
         "sfw": "unknown"
     },
     {
+        "id": "003342",
         "time": "22:18",
+        "quote_time_case": "22h18",
         "quote_first": "",
         "quote_last": " Ah. Thelma et Louise sont là-dedans.",
-        "quote_time_case": "22h18",
         "title": "Le journal de Bridget Jones",
         "author": "Helen Fielding",
         "sfw": "sfw"

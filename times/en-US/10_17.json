@@ -1,27 +1,30 @@
 [
     {
+        "id": "001549",
         "time": "10:17",
+        "quote_time_case": "seventeen minutes past ten",
         "quote_first": "Pacey hummed to himself as he walked slowly toward Abel's office for their daily ten o'clock meeting. It was ",
         "quote_last": ".",
-        "quote_time_case": "seventeen minutes past ten",
         "title": "Kane & Abel",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "001550",
         "time": "10:17",
+        "quote_time_case": "10.17 am",
         "quote_first": "She looked at the corner of the screen. It was only ",
         "quote_last": ". She’d been at her desk for forty-seven minutes exactly.",
-        "quote_time_case": "10.17 am",
         "title": "New York Valentine",
         "author": "Carmen Reid",
         "sfw": "unknown"
     },
     {
+        "id": "001551",
         "time": "10:17",
+        "quote_time_case": "seventeen minutes past ten",
         "quote_first": "By the bye, said the first, \"I was able this morning to telegraph the very words of the order to my cousin at ",
         "quote_last": ".\"<br>\"And I sent it to the Daily Telegraph at thirteen minutes past ten.\"<br>\"Bravo, Mr. Blount!\"<br>\"Very good, M. Jolivet.\"",
-        "quote_time_case": "seventeen minutes past ten",
         "title": "Michel Strogoff",
         "author": "Jules Verne",
         "sfw": "unknown"

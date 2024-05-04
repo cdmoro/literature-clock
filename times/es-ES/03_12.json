@@ -1,18 +1,20 @@
 [
     {
+        "id": "000469",
         "time": "03:12",
+        "quote_time_case": "* Las tres y doce minutos",
         "quote_first": "Una mesa con revistas de pesca y un cenicero, algunos libros en un estante, una vela en una botella, sillas, una repisa de chimenea con un reloj detenido a las tres y doce.",
         "quote_last": "",
-        "quote_time_case": "* Las tres y doce minutos",
         "title": "En compañía de otros",
         "author": "Jan Karon",
         "sfw": "sfw"
     },
     {
+        "id": "000470",
         "time": "03:12",
+        "quote_time_case": "3:12 a.m.",
         "quote_first": "Eran las ",
         "quote_last": " y Charlie estaba llamando. <br>Ella respondió: \"¿Sigues sentado afuera de ese hotel?\" <br>\"Sí. Esto es una tontería. Voy a atrapar a este tipo, y no me importa lo que esté haciendo\".",
-        "quote_time_case": "3:12 a.m.",
         "title": "Sombras del Vaticano",
         "author": "Ray Keating",
         "sfw": "nsfw"

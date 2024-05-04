@@ -1,18 +1,20 @@
 [
     {
+        "id": "000730",
         "time": "05:34",
+        "quote_time_case": "Cinque e trentaquattro",
         "quote_first": "Ho chiesto \"A che ora sorge il sole?\"<br>Un secondo di silenzio mentre Bush avvilito assorbiva il suo rimprovero, e poi un'altra voce ha risposto: \"",
         "quote_last": ", signore.\"",
-        "quote_time_case": "Cinque e trentaquattro",
         "title": "Il Commodoro",
         "author": "C.S. Forester",
         "sfw": "unknown"
     },
     {
+        "id": "000731",
         "time": "05:34",
+        "quote_time_case": "quattro minuti dopo",
         "quote_first": "Alle cinque e mezza. Ero qui circa ",
         "quote_last": ". A giudicare dall'aspetto del sangue e dall'inizio di rigidità in un lato del viso, immaginai che fosse morto da circa cinque ore.",
-        "quote_time_case": "quattro minuti dopo",
         "title": "Morte negli ordini sacri",
         "author": "P.D. James",
         "sfw": "nsfw"

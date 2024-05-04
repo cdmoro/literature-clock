@@ -1,18 +1,20 @@
 [
     {
+        "id": "001901",
         "time": "12:21",
+        "quote_time_case": "12:21 GMT",
         "quote_first": "",
         "quote_last": "<br>\"Hai domande?\" chiese Jackie una volta giunta alla fine del briefing.<br>Una mano si alzò. \"Quale delle due squadre ha più probabilità di essere necessaria?\"",
-        "quote_time_case": "12:21 GMT",
         "title": "Niente di azzardato",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "001902",
         "time": "12:21",
+        "quote_time_case": "Dodici e ventuno",
         "quote_first": "Jake pensa a qualcosa. PER FAVORE! ",
         "quote_last": ".",
-        "quote_time_case": "Dodici e ventuno",
         "title": "22/11/63",
         "author": "Stephen King",
         "sfw": "unknown"

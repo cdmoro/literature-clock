@@ -1,18 +1,20 @@
 [
     {
+        "id": "000242",
         "time": "01:43",
+        "quote_time_case": "1:43",
         "quote_first": "All’",
         "quote_last": " gli applausi si sono fatti più forti quando i conservatori hanno catturato Basildon, che sulla carta di Emma suggeriva una maggioranza conservatrice di circa 30.",
-        "quote_time_case": "1:43",
         "title": "Questo era un uomo",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "000243",
         "time": "01:43",
+        "quote_time_case": "01:43",
         "quote_first": "Sono stati cronometrati alle ",
         "quote_last": " della mattina dell'attacco a Kenny Stock.",
-        "quote_time_case": "01:43",
         "title": "Trofei",
         "author": "David Evans",
         "sfw": "sfw"

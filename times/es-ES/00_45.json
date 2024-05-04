@@ -1,27 +1,30 @@
 [
     {
+        "id": "000135",
         "time": "00:45",
+        "quote_time_case": "* cuarto de uno",
         "quote_first": "Lo que me despertó fue el ruido de una contraventana en algún lugar debajo. Cogí mi reloj de la mesa de noche y vi que era la una y cuarto. No pensé que iba a poder dormir más hasta que cesaran los golpes, así que me vestí, salí por la puerta y luego regresé al armario a buscar mi impermeable. Cuando bajé las escaleras, hice una pausa. Desde el gran dormitorio, al final del pasillo del salón, podía oír a la señora S aserrar madera con movimientos largos y ruidosos. Ningún golpe contra las contraventanas iba a interrumpir su descanso.",
         "quote_last": "",
-        "quote_time_case": "* cuarto de uno",
         "title": "Joylandia",
         "author": "Stephen King",
         "sfw": "unknown"
     },
     {
+        "id": "000136",
         "time": "00:45",
+        "quote_time_case": "12.45",
         "quote_first": "A las ",
         "quote_last": ", durante una pausa, el señor Yoshogi me dijo que debido a la guerra había ahora en Inglaterra muchas más mujeres que hombres.",
-        "quote_time_case": "12.45",
         "title": "Pig and Pepper: una comedia juvenil",
         "author": "David Footman",
         "sfw": "unknown"
     },
     {
+        "id": "000137",
         "time": "00:45",
+        "quote_time_case": "tercer cuarto después de medianoche",
         "quote_first": "Al pensarlo, se puso de pie de un salto y descolgó del gancho el abrigo en el que había dejado la carta de la señorita Viner. El reloj marcaba el ",
         "quote_last": ", y sabía que no importaría si bajaba al buzón de correos ahora o temprano a la mañana siguiente; pero quiso aclarar su conciencia y, habiendo encontrado la carta, se dirigió a la puerta.",
-        "quote_time_case": "tercer cuarto después de medianoche",
         "title": "El arrecife",
         "author": "Edith Wharton",
         "sfw": "unknown"

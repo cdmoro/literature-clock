@@ -1,18 +1,20 @@
 [
     {
+        "id": "001541",
         "time": "10:13",
+        "quote_time_case": "* Le dieci e tredici minuti",
         "quote_first": "A proposito, disse il primo, \"stamattina ho potuto telegrafare le stesse parole dell'ordine a mio cugino alle dieci e diciassette minuti.\"<br>\"E l'ho inviato al Daily Telegraph alle dieci e tredici .\"<br>\"Bravo, signor Blount!\"<br>\"Molto bene, signor Jolivet.\"",
         "quote_last": "",
-        "quote_time_case": "* Le dieci e tredici minuti",
         "title": "Michele Strogoff",
         "author": "Jules Verne",
         "sfw": "unknown"
     },
     {
+        "id": "001542",
         "time": "10:13",
+        "quote_time_case": "dieci e tredici",
         "quote_first": "Sono le ",
         "quote_last": ", annunciò Clancy. \"Tra due minuti...\"<br>\"Post time\", dissi.",
-        "quote_time_case": "dieci e tredici",
         "title": "I velocisti dell'inno",
         "author": "Ray Bradbury",
         "sfw": "unknown"

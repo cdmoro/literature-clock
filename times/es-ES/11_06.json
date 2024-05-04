@@ -1,18 +1,20 @@
 [
     {
+        "id": "001725",
         "time": "11:06",
+        "quote_time_case": "11:06",
         "quote_first": "",
         "quote_last": " Y... oh. El planchado. ¿Qué voy a hacer al respecto?",
-        "quote_time_case": "11:06",
         "title": "La diosa no doméstica",
         "author": "Sophie Kinsella",
         "sfw": "unknown"
     },
     {
+        "id": "001726",
         "time": "11:06",
+        "quote_time_case": "* 11.06 am",
         "quote_first": "A pesar de la remodelación del BookWorld, algunos libros permanecieron tentadoramente fuera de su alcance [...] Era muy posible que no supieran que existía un BookWorld, y aun así pensaban que eran reales. Una idea fantástica, si tenemos en cuenta que hasta las 11.06 horas del 12 de abril de 1948, todos los demás habían pensado lo mismo.",
         "quote_last": "",
-        "quote_time_case": "* 11.06 am",
         "title": "Falta uno de nuestros jueves",
         "author": "Jasper Fforde",
         "sfw": "unknown"

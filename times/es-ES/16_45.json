@@ -1,27 +1,30 @@
 [
     {
+        "id": "002559",
         "time": "16:45",
+        "quote_time_case": "* Las cuatro cuarenta y cinco de la tarde.",
         "quote_first": "“¿Cuándo dijiste que regresarías a Ámsterdam?”<br>“Sabes exactamente cuándo, porque te lo dije: mañana por la mañana”.<br>“¿Puedes regresar antes?”<br>“Podría. Hay un vuelo de KLM a las cuatro cuarenta y cinco de la tarde. Hoy eso me permitiría llegar a Ámsterdam poco antes de las seis.",
         "quote_last": "",
-        "quote_time_case": "* Las cuatro cuarenta y cinco de la tarde.",
         "title": "Los sin nombre",
         "author": "John Connolly",
         "sfw": "unknown"
     },
     {
+        "id": "002560",
         "time": "16:45",
+        "quote_time_case": "cuatro cuarenta y cinco",
         "quote_first": "A las ",
         "quote_last": ", la señorita Haddon fue a tomar el té con el director, quien le explicó por qué deseaba que todos los alumnos aprendieran el mismo dúo. Era parte de su nuevo sistema de coordinación.",
-        "quote_time_case": "cuatro cuarenta y cinco",
         "title": "Coordinación",
         "author": "E.M. Forster",
         "sfw": "unknown"
     },
     {
+        "id": "002561",
         "time": "16:45",
+        "quote_time_case": "quince minutos antes de las cinco",
         "quote_first": "Al día siguiente, Bill se tomó sólo diez minutos del descanso de veinte minutos asignado para la tarde y se fue ",
         "quote_last": ". Estacionó el auto en el estacionamiento justo cuando Arlene bajaba del autobús.",
-        "quote_time_case": "quince minutos antes de las cinco",
         "title": "Desde donde estoy llamando",
         "author": "Raymond Carver",
         "sfw": "unknown"

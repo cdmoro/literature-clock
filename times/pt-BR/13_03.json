@@ -1,9 +1,10 @@
 [
     {
+        "id": "002002",
         "time": "13:03",
+        "quote_time_case": "13h03",
         "quote_first": "Segunda-feira, ",
         "quote_last": ".<br>\"Michael, estou muito feliz que você tenha vindo.\" Kenji Nogami sorriu e pegou seu litro de cerveja cor de âmbar. Sua alfaiataria era Savile Row, via Bond Street, seu sotaque era Cambridge, sua formação era bem escondida. Num negócio onde as aparências contavam muito, ele tinha todos os toques cuidadosos que separavam os jogadores dos pretendentes - bochechas elegantes devido ao treino diário em seu clube, olhos penetrantes e sempre alertas, cabelos grisalhos nas têmporas.",
-        "quote_time_case": "13h03",
         "title": "Projeto Dédalo",
         "author": "Thomas Hoover",
         "sfw": "sfw"

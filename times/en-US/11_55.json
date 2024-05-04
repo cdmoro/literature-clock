@@ -1,36 +1,40 @@
 [
     {
+        "id": "001804",
         "time": "11:55",
+        "quote_time_case": "five minutes to twelve",
         "quote_first": "The prisoners would be allowed out of their cells to watch the World Cup match between England and Argentina. At ",
         "quote_last": ", the doors were unlocked and the prisoners flooded out of their cells, all heading in one direction.",
-        "quote_time_case": "five minutes to twelve",
         "title": "A Prisoner of Birth",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "001805",
         "time": "11:55",
+        "quote_time_case": "five minutes to twelve",
         "quote_first": "He was tearing off on his bicycle to one of the jobs about ",
         "quote_last": " to see if he could catch anyone leaving off for dinner before the proper time.",
-        "quote_time_case": "five minutes to twelve",
         "title": "The Ragged Trousered Philanthropists",
         "author": "Robert Tressell",
         "sfw": "unknown"
     },
     {
+        "id": "001806",
         "time": "11:55",
+        "quote_time_case": "11:55 a.m.",
         "quote_first": "It was ",
         "quote_last": " on April 30.",
-        "quote_time_case": "11:55 a.m.",
         "title": "All the President's Men",
         "author": "Bernstein & Woodward",
         "sfw": "unknown"
     },
     {
+        "id": "001807",
         "time": "11:55",
+        "quote_time_case": "11:55",
         "quote_first": "What time did you arrive at the site? <br>\"It was ",
         "quote_last": ". I remember since I happened to glance at my watch when we got there. We rode our bicycles to the bottom of the hill, as far as we could go, then climbed the rest of the way on foot.\"",
-        "quote_time_case": "11:55",
         "title": "Kafka on the Shore",
         "author": "Haruki Murakami",
         "sfw": "sfw"

@@ -1,18 +1,20 @@
 [
     {
+        "id": "000593",
         "time": "04:23",
+        "quote_time_case": "4:23",
         "quote_first": "",
         "quote_last": ", Monday morning, Iceland Square. A number of people in the vicinity of Bjornsongatan are awakened by loud screams.",
-        "quote_time_case": "4:23",
         "title": "Let the Right One In",
         "author": "John Ajvide Lindqvist",
         "sfw": "unknown"
     },
     {
+        "id": "000594",
         "time": "04:23",
+        "quote_time_case": "04:23",
         "quote_first": "Her chip pulsed the time. ",
         "quote_last": ":04. It had been a long day.",
-        "quote_time_case": "04:23",
         "title": "Neuromancer",
         "author": "William Gibson",
         "sfw": "unknown"

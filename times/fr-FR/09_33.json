@@ -1,18 +1,20 @@
 [
     {
+        "id": "001380",
         "time": "09:33",
+        "quote_time_case": "9h33",
         "quote_first": "Harry se retrouva devant l'ambassade à ",
         "quote_last": ".",
-        "quote_time_case": "9h33",
         "title": "Secret le mieux gardé",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "001381",
         "time": "09:33",
+        "quote_time_case": "* neuf heures trente-trois minutes",
         "quote_first": "Ensuite, il se souvint que le lendemain de Noël serait le vingt-septième jour de la lune, et que par conséquent la haute mer serait à trois heures vingt et une minutes, le demi-reflux à sept heures et quart, la basse mer à trente heures. neuf heures trois et demi-inondation à midi trente-neuf minutes.",
         "quote_last": "",
-        "quote_time_case": "* neuf heures trente-trois minutes",
         "title": "Les travailleurs de la mer",
         "author": "Victor Hugo",
         "sfw": "unknown"

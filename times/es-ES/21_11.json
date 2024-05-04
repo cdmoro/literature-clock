@@ -1,18 +1,20 @@
 [
     {
+        "id": "003242",
         "time": "21:11",
+        "quote_time_case": "9:11",
         "quote_first": "Estas nuevas cerraduras cedieron fácilmente a las atenciones de Agar. A las ",
         "quote_last": " abrieron la puerta de rejas y entraron en la bodega propiamente dicha. Inmediatamente comenzaron la búsqueda de la llave.",
-        "quote_time_case": "9:11",
         "title": "El gran robo del tren",
         "author": "Micheal Crichton",
         "sfw": "sfw"
     },
     {
+        "id": "003243",
         "time": "21:11",
+        "quote_time_case": "9.11",
         "quote_first": "Cada pocos segundos la casa cambiaba de carácter, a veces amenazadora y siniestra, y de nuevo la inocente morada de ciudadanos respetuosos de la ley a punto de ser atacados por mi ejército privado. El reloj luminoso decía ",
         "quote_last": ".",
-        "quote_time_case": "9.11",
         "title": "El archivo Ipcress",
         "author": "Len Deighton",
         "sfw": "unknown"

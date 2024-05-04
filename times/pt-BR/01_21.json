@@ -1,9 +1,10 @@
 [
     {
+        "id": "000211",
         "time": "01:21",
+        "quote_time_case": "1h21",
         "quote_first": "Sexta-feira, ",
         "quote_last": ".<br>\"Seu nome é Vance?\" A voz russa, com seu inglês incerto, era a última coisa que ele esperava.<br>\"Quem é você?\"<br>\"Para este veículo, sou o Diretor do Sistema de Propulsão\", ele respondeu formalmente, e com orgulho, puxando seu jaleco branco. \"Eu preciso conversar com você. Por favor.\"",
-        "quote_time_case": "1h21",
         "title": "Projeto Dédalo",
         "author": "Thomas Hoover",
         "sfw": "sfw"

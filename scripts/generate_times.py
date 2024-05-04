@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import json
 import shutil
+import sys
 
 # Number of minutes in a day
 minutes = 1440
@@ -9,20 +10,24 @@ minutes = 1440
 # Define the folder where CSV files are located
 quotes_path = 'quotes/'
 output_path = 'times/'
-
+ext = '.csv'
 statistics = {}
 
 # List all files in the folder
 file_list = os.listdir(quotes_path)
 
 # Delete the old time files
-shutil.rmtree('times/')
+if os.path.exists(output_path):
+    shutil.rmtree(output_path)
+
+if len(sys.argv) == 2: 
+    ext = sys.argv[1] + ext
 
 print("Starting processing quotes...\n")
 
 # Iterate over each CSV file
 for file_name in file_list:
-    if file_name.endswith('.csv'):
+    if file_name.endswith(ext):
         errors = 0;
         # Extract the locale from the file name
         locale = file_name.split('.')[1]
@@ -57,11 +62,11 @@ for file_name in file_list:
 
                 # Construct the data dictionary
                 entry = {
+                    'id': f'{(index + 2):06}',
                     'time': row['Time'],
+                    'quote_time_case': row['Quote time'],
                     'quote_first': quote_first,
                     'quote_last': quote_last,
-                    'quote_time_case': row['Quote time'],
-                    # 'quote_raw': row['Quote'],
                     'title': row['Title'],
                     'author': row['Author'],
                     'sfw': row['SFW']
@@ -87,7 +92,7 @@ for file_name in file_list:
         # Statistics for the top 5 authors with the most quotes
         top_author_quotes = df.groupby('Author').size().nlargest(5)
         
-        statistics[locale] = {
+        statistics = {
             'times_with_quotes': times_with_quote,
             'times_without_quotes': minutes - times_with_quote,
             'total': minutes,
@@ -104,10 +109,10 @@ for file_name in file_list:
 
         print(f"- {times_with_quote} files created in {os.path.join(output_path, locale)}\n")
 
-    # Create the JSON file name for statistics
-    statistics_filename = os.path.join(output_path, 'statistics.json')
-    
-    with open(statistics_filename, 'w') as json_file:
-        json.dump(statistics, json_file, indent=4, default=int, ensure_ascii=False)
+        # Create the JSON file name for statistics
+        statistics_filename = os.path.join(output_path, locale, '.statistics.json')
+        
+        with open(statistics_filename, 'w') as json_file:
+            json.dump(statistics, json_file, indent=4, default=int, ensure_ascii=False)
 
 print("Processing finished.")

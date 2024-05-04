@@ -1,18 +1,20 @@
 [
     {
+        "id": "000649",
         "time": "04:59",
+        "quote_time_case": "* un minuto alle cinque",
         "quote_first": "Il capitano e i suoi tre ufficiali sbucarono dalla nebbia mattutina alle cinque meno un minuto. Tutti e quattro erano vestiti esattamente con gli stessi vestiti che avevano indossato la sera prima, facendo sì che Percy si chiedesse se provenissero direttamente dal Fisherman's Arms.",
         "quote_last": "",
-        "quote_time_case": "* un minuto alle cinque",
         "title": "Il diplomatico poco diplomatico",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "000650",
         "time": "04:59",
+        "quote_time_case": "* 0459",
         "quote_first": "L'intero posto puzza di morte, qualunque cosa tu faccia. Gately arriva al rifugio alle 04.59.9h e spegne la testa come se avesse un interruttore di controllo.",
         "quote_last": "",
-        "quote_time_case": "* 0459",
         "title": "Scherzo infinito",
         "author": "David Foster Wallace",
         "sfw": "nsfw"

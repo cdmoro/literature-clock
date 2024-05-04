@@ -1,36 +1,40 @@
 [
     {
+        "id": "001210",
         "time": "08:40",
+        "quote_time_case": "8:40",
         "quote_first": "Dejó el Sherry-Netherland poco después de las ",
         "quote_last": ", y cuando llegó a Lexington, estaba casi listo para enfrentar la ira del director.",
-        "quote_time_case": "8:40",
         "title": "Llega la hora",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "001211",
         "time": "08:40",
+        "quote_time_case": "8:40 a.m.",
         "quote_first": "A las ",
         "quote_last": " La sacaron en camilla rumbo al Mayo General Hospital, llena de ampollas y quemada en una cama de bronceado convertida en cámara de tortura.",
-        "quote_time_case": "8:40 a.m.",
         "title": "Sopa De Granada",
         "author": "Marsha Mehran",
         "sfw": "unknown"
     },
     {
+        "id": "001212",
         "time": "08:40",
+        "quote_time_case": "8.40",
         "quote_first": "En ese momento el reloj marcaba las ",
         "quote_last": ". \"Cinco minutos más\", dijo Andrew Stuart. Los cinco amigos se miraron. Se puede suponer que los latidos de su corazón se aceleraban ligeramente, ya que, incluso para los jugadores audaces, la apuesta era grande.",
-        "quote_time_case": "8.40",
         "title": "Al rededor del mundo en ochenta días",
         "author": "Jules Verne",
         "sfw": "unknown"
     },
     {
+        "id": "001213",
         "time": "08:40",
+        "quote_time_case": "* veinte minutos para las nueve",
         "quote_first": "Fue cuando me paré frente a ella, evitando su mirada, que tomé nota de los objetos circundantes en detalle, y vi que su reloj se había detenido a las nueve menos veinte, y que un reloj en la habitación se había detenido a las nueve menos veinte. .",
         "quote_last": "",
-        "quote_time_case": "* veinte minutos para las nueve",
         "title": "Grandes expectativas",
         "author": "Charles Dickens",
         "sfw": "unknown"

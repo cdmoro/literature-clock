@@ -1,27 +1,30 @@
 [
     {
+        "id": "001615",
         "time": "10:50",
+        "quote_time_case": "10:50",
         "quote_first": "L'Rt. On. il Lord Barrington dei Docklands di Bristol doveva arrivare alla Cattedrale di St. Paul alle ",
         "quote_last": " della mattina del 10 aprile 1992.",
-        "quote_time_case": "10:50",
         "title": "Questo era un uomo",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "001616",
         "time": "10:50",
+        "quote_time_case": "10:50",
         "quote_first": "",
         "quote_last": " Lezione d'arte con la signora Peters",
-        "quote_time_case": "10:50",
         "title": "Il curioso incidente del cane nella notte",
         "author": "Mark Haddon",
         "sfw": "sfw"
     },
     {
+        "id": "001617",
         "time": "10:50",
+        "quote_time_case": "* dalle dieci alle undici",
         "quote_first": "Mentre tornava all'ufficio di volo, gli aviatori stavano formando una fila per attendere l'arrivo del furgone NAAFI con tè mattutino e dolci. Lambert guardò l'orologio; erano le undici meno dieci.",
         "quote_last": "",
-        "quote_time_case": "* dalle dieci alle undici",
         "title": "Bombardiere",
         "author": "Len Deighton",
         "sfw": "unknown"

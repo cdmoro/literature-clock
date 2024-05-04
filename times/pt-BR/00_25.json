@@ -1,27 +1,30 @@
 [
     {
+        "id": "000099",
         "time": "00:25",
+        "quote_time_case": "* 12:25",
         "quote_first": "Depois de um momento, a realidade se reafirmou e ela percebeu que não estava tendo alucinações, mas sim sonhando. O relógio na mesa marcava 12h55. Eles começaram a sessão de dez minutos às 12h25, então obviamente ela tinha vinte minutos para prestar contas.",
         "quote_last": "",
-        "quote_time_case": "* 12:25",
         "title": "O Enclave",
         "author": "Karen Hancock",
         "sfw": "sfw"
     },
     {
+        "id": "000100",
         "time": "00:25",
+        "quote_time_case": "* vinte e cinco minutos depois da meia-noite",
         "quote_first": "Charlotte lembrou-se de ter ouvido Gregoire descer novamente, quase imediatamente depois de entrar em seu quarto, e antes mesmo que os criados tivessem trancado as portas da casa para passar a noite. Ele certamente havia corrido para se juntar a Therese em algum matagal, de onde eles devem ter corrido para a estação de Vieux-Bourg, onde o último trem para Paris saiu à meia-noite e cinco minutos depois. E foi realmente isso que aconteceu.",
         "quote_last": "",
-        "quote_time_case": "* vinte e cinco minutos depois da meia-noite",
         "title": "Frutificação",
         "author": "Emile Zola",
         "sfw": "unknown"
     },
     {
+        "id": "000101",
         "time": "00:25",
+        "quote_time_case": "Meia-noite e vinte e cinco",
         "quote_first": "Quer dizer, olhe a hora! ",
         "quote_last": "! Foi um triunfo, foi mesmo!",
-        "quote_time_case": "Meia-noite e vinte e cinco",
         "title": "A esposa do soldado",
         "author": "Joanna Trollope",
         "sfw": "unknown"

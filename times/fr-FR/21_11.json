@@ -1,18 +1,20 @@
 [
     {
+        "id": "003191",
         "time": "21:11",
+        "quote_time_case": "* 9h11",
         "quote_first": "Ces nouvelles serrures cédèrent facilement aux attentions d'Agar. À 9 h 11, ils ont ouvert la porte grillagée et sont entrés dans la cave à vin proprement dite. Ils se mirent immédiatement à la recherche de la clé.",
         "quote_last": "",
-        "quote_time_case": "* 9h11",
         "title": "Le grand vol de train",
         "author": "Micheal Crichton",
         "sfw": "sfw"
     },
     {
+        "id": "003192",
         "time": "21:11",
+        "quote_time_case": "9.11",
         "quote_first": "Toutes les quelques secondes, la maison changeait de caractère, tantôt menaçante et sinistre, tantôt demeure innocente de citoyens respectueux de la loi sur le point d'être attaqués par mon armée privée. La montre lumineuse indiquait ",
         "quote_last": ".",
-        "quote_time_case": "9.11",
         "title": "Le dossier Ipcress",
         "author": "Len Deighton",
         "sfw": "unknown"

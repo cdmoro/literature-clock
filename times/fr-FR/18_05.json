@@ -1,18 +1,20 @@
 [
     {
+        "id": "002730",
         "time": "18:05",
+        "quote_time_case": "18h05",
         "quote_first": "",
         "quote_last": " Je me demande où tout le monde est ? Je suppose qu'ils sont tous sortis avec leur petit ami ou qu'ils sont rentrés chez eux dans leur famille.",
-        "quote_time_case": "18h05",
         "title": "Le journal de Bridget Jones",
         "author": "Helen Fielding",
         "sfw": "sfw"
     },
     {
+        "id": "002731",
         "time": "18:05",
+        "quote_time_case": "six heures cinq",
         "quote_first": "Vers ",
         "quote_last": ", Piers arriva avec un journal du soir et quelques livres.",
-        "quote_time_case": "six heures cinq",
         "title": "Un verre de bénédictions",
         "author": "Barbara Pym",
         "sfw": "unknown"

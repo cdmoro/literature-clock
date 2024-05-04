@@ -1,36 +1,40 @@
 [
     {
+        "id": "000156",
         "time": "00:59",
+        "quote_time_case": "* un minuto a uno",
         "quote_first": "Sólo el pitido de un coche retrasado perturbaba ligeramente el silencio.<br>Miré mi reloj de pulsera. Esto indicaba la una menos minuto. Cuando levanté los ojos, un reloj impaciente en algún lugar confirmó su historia.<br>Con un bostezo conjuré al terrier para que se durmiera y alcancé el interruptor.<br>Mientras lo hacía, él gruñó de nuevo.",
         "quote_last": "",
-        "quote_time_case": "* un minuto a uno",
         "title": "Berry y compañía.",
         "author": "Dornford Yates",
         "sfw": "sfw"
     },
     {
+        "id": "000157",
         "time": "00:59",
+        "quote_time_case": "Alrededor de la una",
         "quote_first": "¿Qué hora es en este momento? dijo.<br>\"",
         "quote_last": ".\"<br>\"¿Por la mañana?\"<br>La amiga de Herera la miró de reojo. \"No, hay un eclipse total de sol\".",
-        "quote_time_case": "Alrededor de la una",
         "title": "Libertad",
         "author": "Jonathan Frantzen",
         "sfw": "unknown"
     },
     {
+        "id": "000158",
         "time": "00:59",
+        "quote_time_case": "casi la una",
         "quote_first": "Era ",
         "quote_last": " cuando Sherlock Holmes regresó de su excursión. Tenía en la mano una hoja de papel azul, garabateada con notas y cifras.",
-        "quote_time_case": "casi la una",
         "title": "Las aventuras de Sherlock Holmes",
         "author": "Sir Arthur Conan Doyle",
         "sfw": "unknown"
     },
     {
+        "id": "000159",
         "time": "00:59",
+        "quote_time_case": "casi la una",
         "quote_first": "La miré atentamente mientras ella me hacía esa singular pregunta. Era entonces ",
         "quote_last": ". Lo único que pude distinguir claramente a la luz de la luna fue un rostro juvenil y descolorido, flaco y de aspecto afilado en las mejillas y la barbilla; ojos grandes, graves, melancólicamente atentos; labios nerviosos e inseguros; y cabello claro de un tono amarillo parduzco pálido.",
-        "quote_time_case": "casi la una",
         "title": "La mujer de blanco",
         "author": "Wilkie Collins",
         "sfw": "unknown"

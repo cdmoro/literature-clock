@@ -1,18 +1,20 @@
 [
     {
+        "id": "000081",
         "time": "00:11",
+        "quote_time_case": "12:11",
         "quote_first": "Debía abandonar la recepción tan pronto como pudiera y regresar a su habitación para cambiarse de ropa. A las ",
         "quote_last": " habría otro apagón, durante el cual tomaría la escalera exterior hasta la planta baja y esperaría en la salida una furgoneta de catering de Broadmoor.",
-        "quote_time_case": "12:11",
         "title": "El enclave",
         "author": "Karen Hancock",
         "sfw": "sfw"
     },
     {
+        "id": "000082",
         "time": "00:11",
+        "quote_time_case": "once y media de la noche",
         "quote_first": "Las primeras bombas incendiarias que alcanzaron el hospital St Thomas habían salpicado Riddell House a las ",
         "quote_last": ", desde donde unas horas antes el arzobispo de Canterbury había pronunciado \"un discurso inspirador\".",
-        "quote_time_case": "once y media de la noche",
         "title": "La noche más larga",
         "author": "Gavin Mortimer",
         "sfw": "unknown"

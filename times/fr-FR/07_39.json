@@ -1,18 +1,20 @@
 [
     {
+        "id": "001001",
         "time": "07:39",
+        "quote_time_case": "* 7h39",
         "quote_first": "À 7 h 39, l'avion a roulé sur la piste pour se préparer au décollage. Lorsqu'il s'est arrêté, Dexter a demandé à l'agent de bord ce qui les retenait.",
         "quote_last": "",
-        "quote_time_case": "* 7h39",
         "title": "Honneur parmi les voleurs",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "001002",
         "time": "07:39",
+        "quote_time_case": "* 7.39",
         "quote_first": "Maintenant, à la gare, vous souvenez-vous d'avoir parlé à M. Joseph Markew ?<br>\"Oui, en effet. J'étais debout sur le quai en attendant mon train habituel - le 7h39 - lorsqu'il m'a abordé.\"",
         "quote_last": "",
-        "quote_time_case": "* 7.39",
         "title": "Arthur et Georges",
         "author": "Julian Barnes",
         "sfw": "unknown"

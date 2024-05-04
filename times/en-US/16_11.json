@@ -1,18 +1,20 @@
 [
     {
+        "id": "002447",
         "time": "16:11",
+        "quote_time_case": "4:11 P.M.",
         "quote_first": "",
         "quote_last": " Thurs. A Huey helicopter flies east overhead as the last of the U.S. Marines make ready to leave the beach; a buzzard dangles in the thermals closer over the town.",
-        "quote_time_case": "4:11 P.M.",
         "title": "Seek",
         "author": "Denis Johnson",
         "sfw": "unknown"
     },
     {
+        "id": "002448",
         "time": "16:11",
+        "quote_time_case": "eleven minutes past four",
         "quote_first": "At ",
         "quote_last": ", the first bus left the car park, drove up the ramp, and out onto the high street.",
-        "quote_time_case": "eleven minutes past four",
         "title": "Nothing Ventured",
         "author": "Jeffrey Archer",
         "sfw": "sfw"

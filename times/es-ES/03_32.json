@@ -1,9 +1,10 @@
 [
     {
+        "id": "000504",
         "time": "03:32",
+        "quote_time_case": "03:32",
         "quote_first": "Finalmente se encontró un cilindro de soporte criogénico vacío afuera de su automóvil abandonado a las ",
         "quote_last": " de esta mañana cerca del pueblo de Hazelbrook, treinta y seis millas al norte de aquí.",
-        "quote_time_case": "03:32",
         "title": "Los hijos de Scarlatti",
         "author": "John McNally",
         "sfw": "sfw"

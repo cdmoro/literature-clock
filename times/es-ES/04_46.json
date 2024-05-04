@@ -1,9 +1,10 @@
 [
     {
+        "id": "000638",
         "time": "04:46",
+        "quote_time_case": "cuatro cuarenta y seis",
         "quote_first": "El teléfono volvió a sonar a las ",
         "quote_last": ".<br>\"Hola\", dije.<br>\"Hola\", llegó una voz de mujer. \"Perdón por lo sucedido antes. Hay una perturbación en el campo sonoro. A veces el sonido desaparece.\"<br>\"¿El sonido desaparece?\"<br>\"Sí\", dijo. \"El campo de sonido está disminuyendo. ¿Puedes oírme?\"",
-        "quote_time_case": "cuatro cuarenta y seis",
         "title": "El país de las maravillas y el fin del mundo",
         "author": "Haruki Murakami",
         "sfw": "unknown"

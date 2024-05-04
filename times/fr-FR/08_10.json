@@ -1,36 +1,40 @@
 [
     {
+        "id": "001106",
         "time": "08:10",
+        "quote_time_case": "8h10",
         "quote_first": "Elle a dit : \"Hé, tête endormie, il est temps de se lever. Un Navy SEAL a préparé le petit-déjeuner, et je ne pense pas que tu sois censé être en retard.\"<br>\"Oui, oui. Quelle heure est-il ?\"<br>Elle jeta un coup d'œil à l'horloge numérique sur sa table de nuit. \"",
         "quote_last": ".\"",
-        "quote_time_case": "8h10",
         "title": "Cœurs de Lion",
         "author": "Ray Keating",
         "sfw": "sfw"
     },
     {
+        "id": "001107",
         "time": "08:10",
+        "quote_time_case": "* 8h10.",
         "quote_first": "Sloane, avec son épaule perforée, se trouvait dans un autre salon. Il était à moitié délirant et n'arrêtait pas d'appeler pour un cours de chimie à 20h10.",
         "quote_last": "",
-        "quote_time_case": "* 8h10.",
         "title": "Ce côté du paradis",
         "author": "F. Scott Fitzgerald",
         "sfw": "unknown"
     },
     {
+        "id": "001108",
         "time": "08:10",
+        "quote_time_case": "8h10",
         "quote_first": "",
         "quote_last": " Lire un livre ou regarder une vidéo",
-        "quote_time_case": "8h10",
         "title": "Le curieux incident du chien pendant la nuit",
         "author": "Mark Haddon",
         "sfw": "sfw"
     },
     {
+        "id": "001109",
         "time": "08:10",
+        "quote_time_case": "8h10",
         "quote_first": "Les cellules comptent jusqu'à 400 000. Réveil à ",
         "quote_last": ". Dormir 7h15. (Il semble que j'ai perdu ma montre sans m'en rendre compte, j'ai dû me rendre en ville pour en acheter une autre.)",
-        "quote_time_case": "8h10",
         "title": "Les voix du temps",
         "author": "J.G. Ballard",
         "sfw": "unknown"

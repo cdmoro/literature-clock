@@ -1,18 +1,20 @@
 [
     {
+        "id": "001380",
         "time": "09:33",
+        "quote_time_case": "9:33",
         "quote_first": "Harry si ritrovò fuori dall'ambasciata alle ",
         "quote_last": ".",
-        "quote_time_case": "9:33",
         "title": "Il segreto meglio custodito",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "001381",
         "time": "09:33",
+        "quote_time_case": "* Le nove e trentatré minuti",
         "quote_first": "Poi si ricordò che l'indomani di Natale sarebbe stato il ventisettesimo giorno della luna, e che di conseguenza l'alta marea sarebbe stata alle tre e ventuno minuti, la mezza marea alle sette e un quarto, la bassa marea alle trentacinque. Le nove e tre minuti e la mezza piena alle dodici e trentanove.",
         "quote_last": "",
-        "quote_time_case": "* Le nove e trentatré minuti",
         "title": "I lavoratori del mare",
         "author": "Victor Hugo",
         "sfw": "unknown"

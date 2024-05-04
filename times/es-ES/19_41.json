@@ -1,18 +1,20 @@
 [
     {
+        "id": "003000",
         "time": "19:41",
+        "quote_time_case": "* 19:41",
         "quote_first": "LA HORA DE ENCENDIDO ERA LAS 7:41 P.M. el 25 de septiembre. Krantz no apareció en las afueras de Wentworth hasta poco después de las ocho.",
         "quote_last": "",
-        "quote_time_case": "* 19:41",
         "title": "Falsa impresión",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "003001",
         "time": "19:41",
+        "quote_time_case": "7:41",
         "quote_first": "¿Espera hacer un arresto? ¿Qué impide que esta mujer abandone el país?<br>\"Hasta ahora no tengo miedo de nada.\" Y como sabían que no había tren hasta las ",
         "quote_last": " de la tarde, todos salieron corriendo al aeropuerto de Pisa.",
-        "quote_time_case": "7:41",
         "title": "Muerte de un holandés",
         "author": "Magdalen Nabb",
         "sfw": "sfw"

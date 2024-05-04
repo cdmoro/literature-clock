@@ -1,18 +1,20 @@
 [
     {
+        "id": "002843",
         "time": "18:40",
+        "quote_time_case": "seis cuarenta",
         "quote_first": "Eran las ",
         "quote_last": " del mismo martes cuando George Chandler-Powell terminó su lista de pacientes privados en el Hospital St. Angela. Al quitarse la bata de operaciones, se sintió paradójicamente agotado e inquieto.",
-        "quote_time_case": "seis cuarenta",
         "title": "El paciente privado",
         "author": "P.D. James",
         "sfw": "sfw"
     },
     {
+        "id": "002844",
         "time": "18:40",
+        "quote_time_case": "* veinte minutos para las siete",
         "quote_first": "Al tener que cambiar de autobús, conseguí mucho tiempo; de hecho, demasiado; porque llegamos a las siete menos veinte y Francing, según dijo el criado, acababa de subir a vestirse.",
         "quote_last": "",
-        "quote_time_case": "* veinte minutos para las siete",
         "title": "Diario de un don nadie",
         "author": "George and Weedon Grossmith",
         "sfw": "unknown"

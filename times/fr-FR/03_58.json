@@ -1,18 +1,20 @@
 [
     {
+        "id": "000531",
         "time": "03:58",
+        "quote_time_case": "quatre heures moins deux",
         "quote_first": "La vieille maison était déserte, le garage en ruine était cadenassé et on pouvait à peine distinguer - en regardant à travers une fente dans le soleil bouillonnant de la fenêtre - le cadran d'une horloge sur le mur opposé. L'horloge s'était arrêtée à ",
         "quote_last": " du matin, ou qui sait, c'était peut-être encore plus tôt, hier dans l'après-midi, quelques heures après que Kaiser eut quitté Kamaria pour Bartica.",
-        "quote_time_case": "quatre heures moins deux",
         "title": "Cœur du pays",
         "author": "Wilson Harris",
         "sfw": "unknown"
     },
     {
+        "id": "000532",
         "time": "03:58",
+        "quote_time_case": "* 3:58",
         "quote_first": "L'horloge au sommet du club-house indique 3h58.",
         "quote_last": "",
-        "quote_time_case": "* 3:58",
         "title": "Monde souterrain",
         "author": "Don DeLillo",
         "sfw": "unknown"

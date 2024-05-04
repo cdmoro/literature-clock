@@ -1,18 +1,20 @@
 [
     {
+        "id": "000213",
         "time": "01:23",
+        "quote_time_case": "1h23",
         "quote_first": "Croydon Central foi declarada à ",
         "quote_last": ", com uma vantagem de 1,8% para os conservadores.",
-        "quote_time_case": "1h23",
         "title": "Este era um homem",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "000214",
         "time": "01:23",
+        "quote_time_case": "* vinte e três minutos depois da uma",
         "quote_first": "O relógio marcava uma e vinte e três minutos. De repente ele ficou cheio de agitação, mas esperançoso. Ela tinha vindo! Quem poderia dizer o que ela diria? Ela poderia oferecer a explicação mais natural para sua chegada tardia.",
         "quote_last": "",
-        "quote_time_case": "* vinte e três minutos depois da uma",
         "title": "Um conto de mamãe",
         "author": "Anatole France",
         "sfw": "unknown"

@@ -1,18 +1,20 @@
 [
     {
+        "id": "001902",
         "time": "12:06",
+        "quote_time_case": "* cerca del mediodía",
         "quote_first": "Unos pocos minutos de luz alrededor del mediodía es todo lo que necesitas para descubrir el error y poner el reloj en hora, siempre que te molestes en subir y hacer la observación.",
         "quote_last": "",
-        "quote_time_case": "* cerca del mediodía",
         "title": "Odalisca: El Ciclo Barroco #3",
         "author": "Neal Stephenson",
         "sfw": "unknown"
     },
     {
+        "id": "001903",
         "time": "12:06",
+        "quote_time_case": "12:06 p.m.",
         "quote_first": "Pero puedo decirles esto: la localización Z en Rotfield Mall se confirmó ayer a las ",
         "quote_last": " Ubicación: Hamburguesa intermedia. Sujeto: Varón adolescente, cabello castaño claro, ojos azules.",
-        "quote_time_case": "12:06 p.m.",
         "title": "Día de campo zombie",
         "author": "Nadia Higgins",
         "sfw": "sfw"

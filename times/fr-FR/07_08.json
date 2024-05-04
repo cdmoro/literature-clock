@@ -1,18 +1,20 @@
 [
     {
+        "id": "000934",
         "time": "07:08",
+        "quote_time_case": "7h08",
         "quote_first": "",
         "quote_last": "<br>\"Équipe 2 CQ\", dit la voix de Hans sur le talkie-walkie. Lui et Marcel se trouvaient dans le conduit de ventilation situé au-dessus du Commandement, qui avait été décrit de manière très détaillée dans les plans.",
-        "quote_time_case": "7h08",
         "title": "Projet Cyclope",
         "author": "Thomas Hoover",
         "sfw": "sfw"
     },
     {
+        "id": "000935",
         "time": "07:08",
+        "quote_time_case": "* entre huit et neuf minutes après sept heures",
         "quote_first": "Reacher n'avait pas de montre, mais il pensa que lorsqu'il aperçut Gregory, il devait être sept heures huit à neuf minutes.",
         "quote_last": "",
-        "quote_time_case": "* entre huit et neuf minutes après sept heures",
         "title": "À la dure",
         "author": "Lee Child",
         "sfw": "unknown"

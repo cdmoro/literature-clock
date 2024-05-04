@@ -1,27 +1,30 @@
 [
     {
+        "id": "002622",
         "time": "17:20",
+        "quote_time_case": "five-twenty",
         "quote_first": "I'm going to park here and walk in. I don't want to drive into a zoo. He glanced at his watch. \"It's only ",
         "quote_last": ". Kidnapper's call is supposed to come at six. We've got time.\"",
-        "quote_time_case": "five-twenty",
         "title": "Purgatory Ridge",
         "author": "William Kent Krueger",
         "sfw": "sfw"
     },
     {
+        "id": "002623",
         "time": "17:20",
+        "quote_time_case": "five-twenty",
         "quote_first": "If she can keep her speed to seventy until she leaves the turnpike at midtown, and if she catches most of the traffic lights, she estimates she can be at her building by ",
         "quote_last": ".",
-        "quote_time_case": "five-twenty",
         "title": "If It Bleeds",
         "author": "Stephen King",
         "sfw": "unknown"
     },
     {
+        "id": "002624",
         "time": "17:20",
+        "quote_time_case": "1720",
         "quote_first": "The Meeting was listed as starting at 1730, and it was only around ",
         "quote_last": ", and Hal thought the voices might signify some sort of pre-Meeting orientation for people who've come for the first time, sort of tentatively, just to scout the whole enterprise out, so he doesn't knock.",
-        "quote_time_case": "1720",
         "title": "Infinite Jest",
         "author": "David Foster Wallace",
         "sfw": "unknown"

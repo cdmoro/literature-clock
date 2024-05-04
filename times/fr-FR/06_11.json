@@ -1,18 +1,20 @@
 [
     {
+        "id": "000808",
         "time": "06:11",
+        "quote_time_case": "6h11",
         "quote_first": "\"La Guardia\", a déclaré Dexter, puis il a remercié l'agent d'être resté éveillé la moitié de la nuit. Scott regarda entre les deux sièges avant alors que l'horloge numérique passait de ",
         "quote_last": " à 6h12.",
-        "quote_time_case": "6h11",
         "title": "Honneur parmi les voleurs",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "000809",
         "time": "06:11",
+        "quote_time_case": "* 6h11",
         "quote_first": "J'ai regardé l'horloge : 6 h 11. Brittany était absent depuis cinq heures. Le temps avançait à toute allure.",
         "quote_last": "",
-        "quote_time_case": "* 6h11",
         "title": "Le bon voisin",
         "author": "Cathryn Grant",
         "sfw": "unknown"

@@ -1,18 +1,20 @@
 [
     {
+        "id": "000574",
         "time": "04:10",
+        "quote_time_case": "Four-ten",
         "quote_first": "I don't like this waiting, he said.<br>She smiled. \"You'd make a terrible PI.\"<br>\"What time is it?\"<br>\"",
         "quote_last": ". Fifteen minutes later than the last time you asked.\"",
-        "quote_time_case": "Four-ten",
         "title": "Copper River",
         "author": "William Kent Krueger",
         "sfw": "sfw"
     },
     {
+        "id": "000575",
         "time": "04:10",
+        "quote_time_case": "four-ten",
         "quote_first": "The change came at ",
         "quote_last": ". Lying on the sand, the woman in the black suit saw it coming and relaxed.",
-        "quote_time_case": "four-ten",
         "title": "The Women",
         "author": "Ray Bradbury",
         "sfw": "unknown"

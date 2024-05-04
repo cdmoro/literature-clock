@@ -1,18 +1,20 @@
 [
     {
+        "id": "002040",
         "time": "13:27",
+        "quote_time_case": "* 13.27",
         "quote_first": "À 13 h 27, ce même vendredi 20 juin, soixante-douze heures avant sa disparition, Adria Daedalus Sorra, homme de la ville, disc-jockey et étudiant en philosophie, montait les escaliers avec son skateboard.",
         "quote_last": "",
-        "quote_time_case": "* 13.27",
         "title": "Les papiers du serpent",
         "author": "Jessica Cornwell",
         "sfw": "sfw"
     },
     {
+        "id": "002041",
         "time": "13:27",
+        "quote_time_case": "13h27",
         "quote_first": "",
         "quote_last": "<br>\"Ne tirez pas\", crie Isaac Mannheim en voyant l'homme mal rasé et pieds nus rouler à côté de lui, un Uzi tirant des rafales de balles.",
-        "quote_time_case": "13h27",
         "title": "Projet Cyclope",
         "author": "Thomas Hoover",
         "sfw": "nsfw"

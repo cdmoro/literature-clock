@@ -1,18 +1,20 @@
 [
     {
+        "id": "000076",
         "time": "00:11",
+        "quote_time_case": "* 12h11",
         "quote_first": "Elle devait quitter la réception dès qu'elle le pouvait et retourner dans sa chambre pour se changer. À 00 h 11, il y aurait une autre panne de courant, pendant laquelle elle emprunterait l'escalier extérieur jusqu'au rez-de-chaussée et attendrait à la sortie une camionnette de restauration de Broadmoor.",
         "quote_last": "",
-        "quote_time_case": "* 12h11",
         "title": "L'Enclave",
         "author": "Karen Hancock",
         "sfw": "sfw"
     },
     {
+        "id": "000077",
         "time": "00:11",
+        "quote_time_case": "minuit onze minutes",
         "quote_first": "Les premiers incendiaires à frapper l'hôpital St Thomas avaient éclaboussé Riddell House à ",
         "quote_last": ", d'où quelques heures plus tôt l'archevêque de Cantorbéry avait prononcé « un discours inspirant ».",
-        "quote_time_case": "minuit onze minutes",
         "title": "La nuit la plus longue",
         "author": "Gavin Mortimer",
         "sfw": "unknown"

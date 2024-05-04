@@ -1,18 +1,20 @@
 [
     {
+        "id": "001566",
         "time": "10:13",
+        "quote_time_case": "las diez y trece minutos",
         "quote_first": "Por cierto, dijo el primero, \"Esta mañana pude telegrafiar las mismas palabras de la orden a mi primo a las diez y diecisiete minutos.\"<br>\"Y lo envié al Daily Telegraph a ",
         "quote_last": ". .\"<br>\"¡Bravo, señor Blount!\"<br>\"Muy bien, señor Jolivet.\"",
-        "quote_time_case": "las diez y trece minutos",
         "title": "Michel Strogoff",
         "author": "Jules Verne",
         "sfw": "unknown"
     },
     {
+        "id": "001567",
         "time": "10:13",
+        "quote_time_case": "* diez-trece",
         "quote_first": "Son las diez y trece, anunció Clancy. \"En dos minutos más-\"<br>\"Hora de publicar\", dije.",
         "quote_last": "",
-        "quote_time_case": "* diez-trece",
         "title": "Los velocistas del himno",
         "author": "Ray Bradbury",
         "sfw": "unknown"

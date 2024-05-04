@@ -1,36 +1,40 @@
 [
     {
+        "id": "003407",
         "time": "22:25",
+        "quote_time_case": "veinticinco minutos después",
         "quote_first": "La señora Bultitaft siempre pone la leche caliente a las diez. Aproximadamente ",
         "quote_last": " vimos a Sally llevando su taza a su habitación.",
-        "quote_time_case": "veinticinco minutos después",
         "title": "Cubrirle la cara",
         "author": "P.D. James",
         "sfw": "sfw"
     },
     {
+        "id": "003408",
         "time": "22:25",
+        "quote_time_case": "10:25",
         "quote_first": "Dalgliesh reflexionó que Etienne difícilmente podría haber ideado un elemento disuasorio más eficaz para los visitantes y por un momento se preguntó si debía caminar la media milla en lugar de arriesgarse a ser suspendido. Al mirar su reloj, vio que eran las ",
         "quote_last": ". Llegaría exactamente a tiempo.",
-        "quote_time_case": "10:25",
         "title": "El pecado original",
         "author": "P.D. James",
         "sfw": "sfw"
     },
     {
+        "id": "003409",
         "time": "22:25",
+        "quote_time_case": "diez y veinticinco de la noche.",
         "quote_first": "“La última llamada telefónica se produjo a las ",
         "quote_last": " esa noche cuando estaba escuchando Concert by the Sea de Erroll Garner y bebiendo la voz de Seagram. Es útil, ¿no es así llevar un diario como este?",
-        "quote_time_case": "diez y veinticinco de la noche.",
         "title": "Sauce ciego, mujer dormida",
         "author": "Haruki Murakami",
         "sfw": "unknown"
     },
     {
+        "id": "003410",
         "time": "22:25",
+        "quote_time_case": "22:25",
         "quote_first": "",
         "quote_last": " Ya tengo un casete nuevo. Bien. Vaya a \"Grabación\".",
-        "quote_time_case": "22:25",
         "title": "El diario de Bridget Jones",
         "author": "Helen Fielding",
         "sfw": "sfw"

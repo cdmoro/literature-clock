@@ -92,6 +92,8 @@ const INITIAL_THEME_FONT_SIZE = {
   retro: 70,
   frame: 35,
 };
+const GITHUT_NEW_ISSUE_URL =
+  "https://github.com/cdmoro/literature-clock/issues/new";
 
 export function getTime() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -111,22 +113,25 @@ export function getTime() {
 export function updateGHLinks(time, quote, locale) {
   const quoteRaw = `${quote.quote_first}${quote.quote_time_case}${quote.quote_last}`;
 
-  const addQuoteUrl = new URL(
-    "https://github.com/cdmoro/literature-clock/issues/new"
-  );
+  const addQuoteUrl = new URL(GITHUT_NEW_ISSUE_URL);
   addQuoteUrl.searchParams.set("template", `add-quote.yml`);
-  addQuoteUrl.searchParams.set("labels", "add-quote");
+  addQuoteUrl.searchParams.set("assignees", "cdmoro");
   addQuoteUrl.searchParams.set("title", `[${time}][${locale}] Add quote`);
+  addQuoteUrl.searchParams.set("labels", `add-quote,${locale}`);
+  addQuoteUrl.searchParams.set("locale", locale);
 
   const addQuoteLink = document.getElementById("add-quote");
   addQuoteLink.href = addQuoteUrl.href;
 
-  const reportErrorUrl = new URL(
-    "https://github.com/cdmoro/literature-clock/issues/new"
-  );
+  const reportErrorUrl = new URL(GITHUT_NEW_ISSUE_URL);
   reportErrorUrl.searchParams.set("template", `quote-error.yml`);
-  reportErrorUrl.searchParams.set("title", `[${time}][${locale}] Report error`);
-  reportErrorUrl.searchParams.set("labels", "bug");
+  reportErrorUrl.searchParams.set("assignees", "cdmoro");
+  reportErrorUrl.searchParams.set(
+    "title",
+    `[${time}][${locale}]${quote.id ? `[${quote.id}]` : ""} Report error`
+  );
+  reportErrorUrl.searchParams.set("labels", `bug,${locale}`);
+  reportErrorUrl.searchParams.set("locale", locale);
   reportErrorUrl.searchParams.set("time", time);
   reportErrorUrl.searchParams.set("book", quote.title);
   reportErrorUrl.searchParams.set("author", quote.author);

@@ -1,18 +1,20 @@
 [
     {
+        "id": "000584",
         "time": "04:10",
+        "quote_time_case": "* cuatro diez",
         "quote_first": "No me gusta esta espera, dijo.<br>Ella sonrió. \"Serías un terrible investigador privado.\"<br>\"¿Qué hora es?\"<br>\"Cuatro-diez. Quince minutos más tarde que la última vez que preguntaste\".",
         "quote_last": "",
-        "quote_time_case": "* cuatro diez",
         "title": "Río Cobre",
         "author": "William Kent Krueger",
         "sfw": "sfw"
     },
     {
+        "id": "000585",
         "time": "04:10",
+        "quote_time_case": "* cuatro-diez",
         "quote_first": "El cambio se produjo a las cuatro y diez. Tumbada en la arena, la mujer del traje negro lo vio venir y se relajó.",
         "quote_last": "",
-        "quote_time_case": "* cuatro-diez",
         "title": "Las mujeres",
         "author": "Ray Bradbury",
         "sfw": "unknown"

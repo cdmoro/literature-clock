@@ -1,18 +1,20 @@
 [
     {
+        "id": "000326",
         "time": "02:17",
+        "quote_time_case": "* dos diecisiete",
         "quote_first": "Las dos y diecisiete, se maravilló. Fue el momento más extraño que había visto en toda su vida. <br>\"Pido disculpas porque la habitación esté tan desordenada\", dijo Lalitha. <br>\"Me gusta. Me encanta cómo eres. ¿Tienes hambre? Tengo un poco de hambre\". <br>\"No, Walter.\" Ella sonrió. \"No tengo hambre. Pero puedo traerte algo\". <br>\"Estaba pensando en un vaso de leche de soja. Bebida de soja\".",
         "quote_last": "",
-        "quote_time_case": "* dos diecisiete",
         "title": "Libertad",
         "author": "Jonathan Franzen",
         "sfw": "unknown"
     },
     {
+        "id": "000327",
         "time": "02:17",
+        "quote_time_case": "2.17",
         "quote_first": "Uno de los \"helicópteros\" se detuvo, dio media vuelta y regresó hacia mí. La llamarada chisporroteó y se apagó, y ahora el resplandor del foco me cegó. Me quedé muy quieto. Eran las ",
         "quote_last": ". Contra el ruido de las espadas, un sonido resonante más profundo atravesó el frío aire negro.",
-        "quote_time_case": "2.17",
         "title": "El archivo Ipcress",
         "author": "Len Deighton",
         "sfw": "unknown"

@@ -1,36 +1,40 @@
 [
     {
+        "id": "003415",
         "time": "22:55",
+        "quote_time_case": "dieci e cinquantacinque",
         "quote_first": "Tutto quello che riuscì a dirmi fu che era andata a dormire poco dopo aver ascoltato il Quartetto d'archi Dvorak alle ",
         "quote_last": " - avevano letti gemelli - e non si era mossa finché suo marito non l'aveva svegliata con la notizia dell'omicidio.",
-        "quote_time_case": "dieci e cinquantacinque",
         "title": "L'assassinio di Babbo Natale",
         "author": "P.D. James",
         "sfw": "unknown"
     },
     {
+        "id": "003416",
         "time": "22:55",
+        "quote_time_case": "10:55",
         "quote_first": "Alle ",
         "quote_last": " sarebbero entrati nel Farholme Gate, emergendo appena dieci minuti e mezzo dopo al Bannermere Gate. Quaranta anni luce di distanza.",
-        "quote_time_case": "10:55",
         "title": "L'Ombra e la Notte",
         "author": "Chris Walley",
         "sfw": "unknown"
     },
     {
+        "id": "003417",
         "time": "22:55",
+        "quote_time_case": "Le undici, quasi cinque minuti!",
         "quote_first": "Sono le undici! ",
         "quote_last": "<br>\"Ma quale undici?\"<br>\"Le undici che decidono la vita o la morte!... Me lo ha detto poco prima è andato... È terribile... È completamente matto: si è strappato la maschera e i suoi occhi gialli hanno emesso fiamme!...\"",
-        "quote_time_case": "Le undici, quasi cinque minuti!",
         "title": "Il fantasma dell'opera",
         "author": "Gaston Leroux",
         "sfw": "unknown"
     },
     {
+        "id": "003418",
         "time": "22:55",
+        "quote_time_case": "* cinque minuti alle undici",
         "quote_first": "Il giudice Wargrave ha dichiarato:<br>“Sono le undici meno cinque. Penso che dovremmo invitare la signorina Brent a unirsi al nostro conclave.",
         "quote_last": "",
-        "quote_time_case": "* cinque minuti alle undici",
         "title": "E poi non c'era nessuno",
         "author": "Agatha Christie",
         "sfw": "unknown"

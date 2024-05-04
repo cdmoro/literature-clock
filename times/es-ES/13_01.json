@@ -1,36 +1,40 @@
 [
     {
+        "id": "002027",
         "time": "13:01",
+        "quote_time_case": "la una y un minuto",
         "quote_first": "Escuchó un grito lejano y confuso. ¿Harse y el policía? Pero no importó. Lo único que importaba era llegar al Punto Nexus a ",
         "quote_last": ".",
-        "quote_time_case": "la una y un minuto",
         "title": "Kit de supervivencia",
         "author": "Frederik Pohl",
         "sfw": "sfw"
     },
     {
+        "id": "002028",
         "time": "13:01",
+        "quote_time_case": "* sobre uno",
         "quote_first": "Hay cinco brazas ahí fuera, dijo. Será arrastrado de esa manera cuando la marea suba alrededor de la una. Hoy son nueve días.",
         "quote_last": "",
-        "quote_time_case": "* sobre uno",
         "title": "Ulises",
         "author": "James Joyce",
         "sfw": "unknown"
     },
     {
+        "id": "002029",
         "time": "13:01",
+        "quote_time_case": "* alrededor de la una",
         "quote_first": "Alrededor de la una llegó el capataz y les dijo que no tenía trabajo para ellos.",
         "quote_last": "",
-        "quote_time_case": "* alrededor de la una",
         "title": "La hija de un clérigo",
         "author": "George Orwell",
         "sfw": "unknown"
     },
     {
+        "id": "002030",
         "time": "13:01",
+        "quote_time_case": "* un poco después de la una",
         "quote_first": "Era poco más de la una cuando llegué allí, hora de almorzar, así que lo comí. La comida era horrible. Pero iría a la cuenta de gastos y, después de comer, saqué mi libreta y la dejé. Almuerzo $1,50. Taxi $1.00.",
         "quote_last": "",
-        "quote_time_case": "* un poco después de la una",
         "title": "El gran reloj",
         "author": "Kenneth Fearing",
         "sfw": "unknown"

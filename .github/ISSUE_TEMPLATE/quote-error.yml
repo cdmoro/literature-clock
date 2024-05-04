@@ -1,12 +1,19 @@
 name: Bug
 description: Add a new quote or an additional quote for a specific time.
-title: "[XX:XX][XX]: Error in a quote"
-labels: 
+title: "[XX:XX][XX] Error in a quote"
+labels:
   - bug
 body:
   - type: markdown
     attributes:
       value: "# Description of the error"
+  - type: input
+    id: locale
+    attributes:
+      label: Locale
+      placeholder: "en-US"
+    validations:
+      required: true
   - type: input
     id: time
     attributes:
@@ -21,14 +28,14 @@ body:
       label: Book
       placeholder: "2666"
     validations:
-      required: true
+      required: false
   - type: input
     id: author
     attributes:
       label: Author
       placeholder: Roberto Bolaño
     validations:
-      required: true
+      required: false
   - type: textarea
     id: quote
     attributes:
@@ -42,4 +49,3 @@ body:
       label: What is wrong with this quote?
     validations:
       required: true
-

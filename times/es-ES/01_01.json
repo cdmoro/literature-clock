@@ -1,18 +1,20 @@
 [
     {
+        "id": "000176",
         "time": "01:01",
+        "quote_time_case": "Alrededor de la una",
         "quote_first": "¿Qué hora es en este momento? dijo.<br>\"",
         "quote_last": ".\"<br>\"¿Por la mañana?\"<br>La amiga de Herera la miró de reojo. \"No, hay un eclipse total de sol\".",
-        "quote_time_case": "Alrededor de la una",
         "title": "Libertad",
         "author": "Jonathan Frantzen",
         "sfw": "unknown"
     },
     {
+        "id": "000177",
         "time": "01:01",
+        "quote_time_case": "* un minuto después de la una",
         "quote_first": "Así fue como, a la una y minuto, cuando un portero con un respeto sobrenatural se aseguró desapasionadamente de que no se le pediría nada más hasta la mañana y se encerró fuera de su presencia, la muchacha se desplomó en el borde de una cama de carácter tan sibarita que merecía ampliamente la designación de lujo, y, sonrojada y temblando de emoción (ahora que se atrevía una vez más a ser ella misma) y con toda la incredulidad apropiada a las circunstancias, miró fijamente a la joven que le devolvía la mirada sin comprender. desde un largo espejo enmarcado en la puerta.",
         "quote_last": "",
-        "quote_time_case": "* un minuto después de la una",
         "title": "Nadie",
         "author": "Louis Joseph Vance",
         "sfw": "sfw"

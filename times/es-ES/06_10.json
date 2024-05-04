@@ -1,18 +1,20 @@
 [
     {
+        "id": "000823",
         "time": "06:10",
+        "quote_time_case": "6:10",
         "quote_first": "El presidente se levantó a las 7:20 y encendió su primer cigarrillo. No recordaba exactamente cuándo había despertado. A las ",
         "quote_last": " había llamado a Tony, que ya estaba levantado esperando su llamada.",
-        "quote_time_case": "6:10",
         "title": "¿Se lo contamos al presidente?",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "000824",
         "time": "06:10",
+        "quote_time_case": "seis y diez",
         "quote_first": "El autobús salió de la estación a las ",
         "quote_last": " y ella se sentó orgullosa, como un viajero acostumbrado, separada de su padre, John Henry y Berenice. Pero al cabo de un rato la invadió una duda seria que ni siquiera las respuestas del conductor del autobús pudieron satisfacer.",
-        "quote_time_case": "seis y diez",
         "title": "El miembro de la boda",
         "author": "Carson McCullers",
         "sfw": "unknown"

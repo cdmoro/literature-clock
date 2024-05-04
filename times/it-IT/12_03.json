@@ -1,18 +1,20 @@
 [
     {
+        "id": "001865",
         "time": "12:03",
+        "quote_time_case": "tre minuti dopo mezzogiorno",
         "quote_first": "Erano ormai ",
         "quote_last": ". Le persiane erano state abbassate in precedenza, dando l'impressione di disconnettere il tempo e di escludere la cupa penombra della tarda mattinata.",
-        "quote_time_case": "tre minuti dopo mezzogiorno",
         "title": "La stanza degli omicidi",
         "author": "P.D. James",
         "sfw": "sfw"
     },
     {
+        "id": "001866",
         "time": "12:03",
+        "quote_time_case": "12.03",
         "quote_first": "Alle ",
         "quote_last": " il sole ha già timbrato il suo biglietto. Affondando, macchia i ciottoli e gli stucchi della piazza in un palpito di luce color violino che dovresti essere una pietra per non trovare commovente.",
-        "quote_time_case": "12.03",
         "title": "Il sindacato dei poliziotti yiddish",
         "author": "Michael Chabon",
         "sfw": "unknown"

@@ -1,27 +1,30 @@
 [
     {
+        "id": "001712",
         "time": "11:01",
+        "quote_time_case": "las once y un minuto",
         "quote_first": "Las manecillas del reloj siguieron avanzando. Un minuto antes de las once todo estaba en paz y orden. A las once los maestros partieron para el breve intervalo habitual. ¡A ",
         "quote_last": " todo era guerra y tumulto!",
-        "quote_time_case": "las once y un minuto",
         "title": "Jack de ambos bandos: la historia de una guerra escolar",
         "author": "Florence Coombe",
         "sfw": "sfw"
     },
     {
+        "id": "001713",
         "time": "11:01",
+        "quote_time_case": "* apenas pasadas las once",
         "quote_first": "O'Neil se levanta y toma la bandeja. Ha terminado el té, pero las magdalenas todavía están aquí, en una cesta de mimbre cubierta con una servilleta azul. El reloj encima de la estufa dice que son poco más de las once y que los invitados llegarán a la casa ahora.",
         "quote_last": "",
-        "quote_time_case": "* apenas pasadas las once",
         "title": "María y O'Neil",
         "author": "Justin Cronin",
         "sfw": "unknown"
     },
     {
+        "id": "001714",
         "time": "11:01",
+        "quote_time_case": "* apenas pasadas las once",
         "quote_first": "Eran poco más de las once. La quietud de la gran sala, sólo rota por el canto que flotaba desde abajo, la hizo bostezar. Los bronces, los álbumes y los cuadros de las paredes, que representaban un barco en el mar, vacas en un prado y vistas del Rin, estaban tan absolutamente rancios que sus ojos simplemente se deslizaban sobre ellos sin observarlos.",
         "quote_last": "",
-        "quote_time_case": "* apenas pasadas las once",
         "title": "La fiesta y otras historias",
         "author": "Anton Pavlovich Chekhov",
         "sfw": "sfw"

@@ -1,9 +1,10 @@
 [
     {
+        "id": "002161",
         "time": "14:09",
+        "quote_time_case": "14:09",
         "quote_first": "El señor Tyne, dijo Butler, \"salió del vestíbulo de la Torre Norte a las ",
         "quote_last": " por el metro en los ascensores y llegó al torneo de ajedrez en el nivel sesenta a las 14:10\".",
-        "quote_time_case": "14:09",
         "title": "Nigromante",
         "author": "Gordon R. Dickson",
         "sfw": "sfw"

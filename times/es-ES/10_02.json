@@ -1,18 +1,20 @@
 [
     {
+        "id": "001533",
         "time": "10:02",
+        "quote_time_case": "10:02",
         "quote_first": "A las ",
         "quote_last": ", sus ojos se posaron por una fracción de segundo en cada persona que entraba.",
-        "quote_time_case": "10:02",
         "title": "Los pecados del padre",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "001534",
         "time": "10:02",
+        "quote_time_case": "* dos minutos después de las diez",
         "quote_first": "Eran las diez y dos minutos; no estaba satisfecha con su ropa, su rostro, su apartamento. Volvió a calentar el café y se sentó en la silla junto a la ventana. No puedo hacer nada más ahora, pensó, no tiene sentido intentar mejorar nada en el último minuto.",
         "quote_last": "",
-        "quote_time_case": "* dos minutos después de las diez",
         "title": "El amante del demonio",
         "author": "Shirley Jackson",
         "sfw": "unknown"

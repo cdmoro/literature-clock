@@ -1,18 +1,20 @@
 [
     {
+        "id": "000601",
         "time": "04:22",
+        "quote_time_case": "4:22",
         "quote_first": "El presidente marcó siete dígitos y pidió hablar con el oficial de turno. Miró su reloj mientras esperaba que lo pasaran. Eran las ",
         "quote_last": ".",
-        "quote_time_case": "4:22",
         "title": "Honor entre ladrones",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "000602",
         "time": "04:22",
+        "quote_time_case": "4.22",
         "quote_first": "Me lastimó hasta el punto de querer decirle algo. Mi reloj marcaba ahora las ",
         "quote_last": ". Se había detenido. Fue destrozado.",
-        "quote_time_case": "4.22",
         "title": "El archivo Ipcress",
         "author": "Len Deighton",
         "sfw": "unknown"

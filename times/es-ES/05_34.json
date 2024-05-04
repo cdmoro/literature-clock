@@ -1,18 +1,20 @@
 [
     {
+        "id": "000743",
         "time": "05:34",
+        "quote_time_case": "* Cinco y treinta y cuatro",
         "quote_first": "Pregunté: \"¿A qué hora sale el sol?\". Un segundo de silencio mientras el cabizbajo Bush absorbía su reprimenda, y luego otra voz respondió: \"Las cinco y media, señor\".",
         "quote_last": "",
-        "quote_time_case": "* Cinco y treinta y cuatro",
         "title": "el comodoro",
         "author": "C.S. Forester",
         "sfw": "unknown"
     },
     {
+        "id": "000744",
         "time": "05:34",
+        "quote_time_case": "cuatro minutos después",
         "quote_first": "A las cinco y treinta. Estuve aquí unos ",
         "quote_last": ". A juzgar por el aspecto de la sangre y el comienzo de rigor en un costado de la cara, supuse que llevaba muerto unas cinco horas.",
-        "quote_time_case": "cuatro minutos después",
         "title": "Muerte en las Sagradas Órdenes",
         "author": "P.D. James",
         "sfw": "nsfw"

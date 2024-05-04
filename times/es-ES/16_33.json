@@ -1,18 +1,20 @@
 [
     {
+        "id": "002534",
         "time": "16:33",
+        "quote_time_case": "16.33",
         "quote_first": "A las ",
         "quote_last": " llegó a la biblioteca un hombre bajo y calvo que fumaba un cigarro. Se acercó a un enorme armario que contenía miles de tarjetas ordenadas alfabéticamente y abrió un cajón. Tenía las puntas de los dedos vendadas.",
-        "quote_time_case": "16.33",
         "title": "Serie Mundial de La Habana",
         "author": "José Latour",
         "sfw": "unknown"
     },
     {
+        "id": "002535",
         "time": "16:33",
+        "quote_time_case": "4:33",
         "quote_first": "A las ",
         "quote_last": ", el segundo autobús maniobró hacia la vía principal, donde fueron retenidos por viajeros tempranos que regresaban a casa desde el trabajo, mientras se dirigían al trabajo.",
-        "quote_time_case": "4:33",
         "title": "Nada arriesgado",
         "author": "Jeffrey Archer",
         "sfw": "sfw"

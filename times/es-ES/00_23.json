@@ -1,9 +1,10 @@
 [
     {
+        "id": "000102",
         "time": "00:23",
+        "quote_time_case": "* veintitrés minutos después de la medianoche",
         "quote_first": "Oskar pesó el reloj de pulsera que tenía en la mano y luego entregó al pequeño Pinchcoal la pieza bastante fina, con su esfera luminosa que marcaba las doce y veintitrés minutos. Miró inquisitivamente a su jefe. Störtebeker asintió con la cabeza. Y Oskar dijo, mientras ajustaba bien su tambor para el viaje a casa: \"Jesús guiará el camino. ¡Sígueme!\".",
         "quote_last": "",
-        "quote_time_case": "* veintitrés minutos después de la medianoche",
         "title": "El tambor de hojalata",
         "author": "Günter Grass",
         "sfw": "sfw"

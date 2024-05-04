@@ -1,9 +1,10 @@
 [
     {
+        "id": "000101",
         "time": "00:22",
+        "quote_time_case": "* 00:22",
         "quote_first": "Nadie había sido uno de los agentes más importantes de Mycroft Ward y durante sesenta segundos cada día, entre las 12:21 am y las 12:22 am, su computadora portátil podía conectarse directamente con la gigantesca base de datos en línea de sí mismo que era la mente de Mycroft Ward.",
         "quote_last": "",
-        "quote_time_case": "* 00:22",
         "title": "Los textos crudos del tiburón",
         "author": "Steven Hall",
         "sfw": "unknown"

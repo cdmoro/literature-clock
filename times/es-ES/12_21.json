@@ -1,18 +1,20 @@
 [
     {
+        "id": "001931",
         "time": "12:21",
+        "quote_time_case": "12:21 GMT",
         "quote_first": "",
         "quote_last": "<br>\"¿Alguna pregunta?\" preguntó Jackie cuando llegó al final de su sesión informativa.<br>Una mano se levantó. \"¿Cuál de los dos equipos es más necesario?\"",
-        "quote_time_case": "12:21 GMT",
         "title": "Nada arriesgado",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "001932",
         "time": "12:21",
+        "quote_time_case": "* doce veintiuno",
         "quote_first": "Jake piensa en algo. ¡POR FAVOR! Las doce y veintiuno.",
         "quote_last": "",
-        "quote_time_case": "* doce veintiuno",
         "title": "22/11/63",
         "author": "Stephen King",
         "sfw": "unknown"

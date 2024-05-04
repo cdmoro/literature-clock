@@ -1,27 +1,30 @@
 [
     {
+        "id": "000337",
         "time": "02:27",
+        "quote_time_case": "2:27",
         "quote_first": "The request was granted, but not until another form had been completed and signed. Dexter Hutchins put a collect call through to the Director of the CIA at ",
         "quote_last": " that morning.",
-        "quote_time_case": "2:27",
         "title": "Honor Among Thieves",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "000338",
         "time": "02:27",
+        "quote_time_case": "twenty-seven minutes past two",
         "quote_first": "The hands of all the four thousand electric clocks in all the Bloomsbury Centre's four thousand rooms marked ",
         "quote_last": ".",
-        "quote_time_case": "twenty-seven minutes past two",
         "title": "Brave New World",
         "author": "Aldous Leonard Huxley",
         "sfw": "unknown"
     },
     {
+        "id": "000339",
         "time": "02:27",
+        "quote_time_case": "2.27 am",
         "quote_first": "The moon didn’t shine again until ",
         "quote_last": ". It was enough to show Wallander that he was positioned some distance below the tree.",
-        "quote_time_case": "2.27 am",
         "title": "One Step Behind",
         "author": "Henning Mankell",
         "sfw": "unknown"

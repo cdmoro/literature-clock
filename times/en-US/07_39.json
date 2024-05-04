@@ -1,18 +1,20 @@
 [
     {
+        "id": "001001",
         "time": "07:39",
+        "quote_time_case": "7:39",
         "quote_first": "At ",
         "quote_last": " the aircraft taxied onto the runway to prepare for takeoff. When it stopped, Dexter asked the flight attendant what was holding them up.",
-        "quote_time_case": "7:39",
         "title": "Honor Among Thieves",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "001002",
         "time": "07:39",
+        "quote_time_case": "7.39",
         "quote_first": "Now, at the station, do you recall speaking to Mr. Joseph Markew?<br>\"Yes, indeed. I was standing on the platform waiting for my usual train - the ",
         "quote_last": " - when he accosted me.\"",
-        "quote_time_case": "7.39",
         "title": "Arthur and George",
         "author": "Julian Barnes",
         "sfw": "unknown"

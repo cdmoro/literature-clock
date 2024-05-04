@@ -1,18 +1,20 @@
 [
     {
+        "id": "001344",
         "time": "09:13",
+        "quote_time_case": "9:13 am",
         "quote_first": "",
         "quote_last": " yacía en la cama, mirando a la pared.",
-        "quote_time_case": "9:13 am",
         "title": "Una fracción del todo",
         "author": "Steve Toltz",
         "sfw": "sfw"
     },
     {
+        "id": "001345",
         "time": "09:13",
+        "quote_time_case": "9:13 a.m.",
         "quote_first": "Se colocó el teléfono en el cuello y hojeó apresuradamente sus mensajes rosas. Dr. Provetto, a las ",
         "quote_last": "",
-        "quote_time_case": "9:13 a.m.",
         "title": "Identidad equivocada",
         "author": "Lisa Scottoline",
         "sfw": "unknown"

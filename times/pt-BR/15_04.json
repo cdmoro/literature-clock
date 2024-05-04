@@ -1,27 +1,30 @@
 [
     {
+        "id": "002276",
         "time": "15:04",
+        "quote_time_case": "15h04",
         "quote_first": "Ele consultou o relógio: ",
         "quote_last": ". Ele bateu na porta novamente, mas ainda assim ninguém respondeu. Certamente eles não lhe negariam a entrada quando ele estivesse apenas alguns minutos atrasado?",
-        "quote_time_case": "15h04",
         "title": "Caminhos da Glória",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "002277",
         "time": "15:04",
+        "quote_time_case": "* quatro minutos depois das três",
         "quote_first": "Ele viu o relógio da torre da prefeitura marcando três e quatro minutos naquela tarde quente e sem vento de fim de julho.",
         "quote_last": "",
-        "quote_time_case": "* quatro minutos depois das três",
         "title": "Os Tommyknockers",
         "author": "Stephen King",
         "sfw": "unknown"
     },
     {
+        "id": "002278",
         "time": "15:04",
+        "quote_time_case": "1504",
         "quote_first": "Acordado em ",
         "quote_last": " por Michelangelo martelando com seu cinzel.",
-        "quote_time_case": "1504",
         "title": "101 Reiquiavique",
         "author": "Hallgrímur Helgason",
         "sfw": "unknown"

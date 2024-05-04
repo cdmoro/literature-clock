@@ -1,18 +1,20 @@
 [
     {
+        "id": "002587",
         "time": "17:01",
+        "quote_time_case": "cinq heures une minute",
         "quote_first": "À ",
         "quote_last": ", Beth a quitté le musée, a hélé un taxi et, après avoir donné son adresse au chauffeur, s'est assise à l'arrière, entourée de cartons et a versé une larme sans vergogne.",
-        "quote_time_case": "cinq heures une minute",
         "title": "Prochain dans la ligne",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "002588",
         "time": "17:01",
+        "quote_time_case": "* Une minute après cinq",
         "quote_first": "Cinq heures et une minute. Les invités assis ont été informés que la cérémonie commencerait sous peu. Il fallait encore un peu de patience.",
         "quote_last": "",
-        "quote_time_case": "* Une minute après cinq",
         "title": "Trouble & Triumph : un roman de puissance et de beauté",
         "author": "Tip \"T.I.\" Harris with David Ritz",
         "sfw": "unknown"

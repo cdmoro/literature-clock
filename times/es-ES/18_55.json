@@ -1,18 +1,20 @@
 [
     {
+        "id": "002869",
         "time": "18:55",
+        "quote_time_case": "* cinco a siete",
         "quote_first": "... No tenías ninguna razón para pensar que los tiempos eran importantes. De hecho, qué sospechoso sería si hubiera sido completamente exacto.<br>\"¿No lo he sido?\"<br>\"No del todo. Eran las siete menos cinco cuando hablaste con Wilkins.\"<br>\" Otros diez minutos.\"",
         "quote_last": "",
-        "quote_time_case": "* cinco a siete",
         "title": "El americano tranquilo",
         "author": "Graham Greene",
         "sfw": "unknown"
     },
     {
+        "id": "002870",
         "time": "18:55",
+        "quote_time_case": "6:55",
         "quote_first": "La obra debía comenzar a las siete en punto y terminar antes del atardecer. Eran las ",
         "quote_last": ". Más allá de los apartamentos podíamos oír cómo se llenaba el campo de hockey. el ruido sordo se hizo cada vez más fuerte: voces, pasos, crujidos de las gradas, portazos de los coches en el aparcamiento.",
-        "quote_time_case": "6:55",
         "title": "Middlesex",
         "author": "Jeffrey Eugenides",
         "sfw": "unknown"

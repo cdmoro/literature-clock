@@ -1,18 +1,20 @@
 [
     {
+        "id": "000082",
         "time": "00:15",
+        "quote_time_case": "dodici e un quarto",
         "quote_first": "Alle ",
         "quote_last": " scese dal furgone. Infilò la pistola sotto la cintura dei pantaloni e attraversò la strada silenziosa e deserta fino a casa Hudston.",
-        "quote_time_case": "dodici e un quarto",
         "title": "Osservatori",
         "author": "Dean Koontz",
         "sfw": "unknown"
     },
     {
+        "id": "000083",
         "time": "00:15",
+        "quote_time_case": "* dodici e un quarto",
         "quote_first": "La festa si sciolse dopo cena verso mezzanotte e un quarto. Ol'ga Mihalovna, salutando gli ospiti, si fermò sulla porta e disse:<br>\"Dovreste davvero portarvi uno scialle! Fa un po' freddo. Voglia Dio, non prendete freddo!\"",
         "quote_last": "",
-        "quote_time_case": "* dodici e un quarto",
         "title": "La festa e altre storie",
         "author": "Anton Pavlovich Chekhov",
         "sfw": "sfw"

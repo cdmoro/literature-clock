@@ -1,18 +1,20 @@
 [
     {
+        "id": "001739",
         "time": "11:26",
+        "quote_time_case": "11h26",
         "quote_first": "Um par de sapatos marrons apareceu embaixo da bolsa de urina. \"Contei onze sinos.\"<br>\"O horário atual é ",
         "quote_last": ".\"<br>\"Que dia?\"<br>\"Seu ferimento ocorreu ontem.\"",
-        "quote_time_case": "11h26",
         "title": "O nó do vento",
         "author": "John Galligan",
         "sfw": "sfw"
     },
     {
+        "id": "001740",
         "time": "11:26",
+        "quote_time_case": "11h26",
         "quote_first": "Às ",
         "quote_last": ", 0xAA289 sofreu uma falha de hardware não conectada em um dos nós em que estava sendo executado.",
-        "quote_time_case": "11h26",
         "title": "A exceção de Turing",
         "author": "William Hertling",
         "sfw": "sfw"

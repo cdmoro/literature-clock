@@ -1,18 +1,20 @@
 [
     {
+        "id": "000067",
         "time": "00:05",
+        "quote_time_case": "* dopo mezzanotte",
         "quote_first": "Era mezzanotte passata quando Easton ritornò a casa. Ruth riconobbe i suoi passi prima che raggiungesse la casa, e il suo cuore sembrò smettere di battere quando sentì il clangore del cancello, che si chiudeva dopo che lui era passato.",
         "quote_last": "",
-        "quote_time_case": "* dopo mezzanotte",
         "title": "I filantropi dai pantaloni stracciati",
         "author": "Robert Tressell",
         "sfw": "unknown"
     },
     {
+        "id": "000068",
         "time": "00:05",
+        "quote_time_case": "0005h.",
         "quote_first": "La E.M. Security, normalmente così scrupolosa con i suoi maledetti camion alle ",
         "quote_last": ", non si trova da nessuna parte, dando peso a un altro cliché. Se chiedessi a Gately cosa si sentisse in questo momento, non ne avrebbe idea.",
-        "quote_time_case": "0005h.",
         "title": "Scherzo infinito",
         "author": "David Foster Wallace",
         "sfw": "nsfw"

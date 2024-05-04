@@ -1,18 +1,20 @@
 [
     {
+        "id": "001313",
         "time": "09:10",
+        "quote_time_case": "9:10 am",
         "quote_first": "",
         "quote_last": " lay in bed, staring at wall.",
-        "quote_time_case": "9:10 am",
         "title": "A Fraction of the Whole",
         "author": "Steve Toltz",
         "sfw": "sfw"
     },
     {
+        "id": "001314",
         "time": "09:10",
+        "quote_time_case": "9:10 a.m.",
         "quote_first": "",
         "quote_last": " Suddenly realize hair is drying in a weird shape. Search for hairbrush. Locate in handbag.",
-        "quote_time_case": "9:10 a.m.",
         "title": "Bridget Jones's Diary",
         "author": "Helen Fielding",
         "sfw": "sfw"

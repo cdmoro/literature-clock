@@ -1,27 +1,30 @@
 [
     {
+        "id": "001615",
         "time": "10:50",
+        "quote_time_case": "10h50",
         "quote_first": "Le Rt. L'hon. le Lord Barrington of Bristol Docklands devait arriver à la cathédrale Saint-Paul à ",
         "quote_last": " le matin du 10 avril 1992.",
-        "quote_time_case": "10h50",
         "title": "C'était un homme",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
+        "id": "001616",
         "time": "10:50",
+        "quote_time_case": "10h50",
         "quote_first": "",
         "quote_last": " Cours d'art avec Mme Peters",
-        "quote_time_case": "10h50",
         "title": "Le curieux incident du chien pendant la nuit",
         "author": "Mark Haddon",
         "sfw": "sfw"
     },
     {
+        "id": "001617",
         "time": "10:50",
+        "quote_time_case": "* de dix à onze",
         "quote_first": "Alors qu'il retournait au bureau de pilotage, les aviateurs formaient une file pour attendre l'arrivée de la camionnette NAAFI avec du thé et des gâteaux le matin. Lambert regarda sa montre ; il était onze heures moins dix.",
         "quote_last": "",
-        "quote_time_case": "* de dix à onze",
         "title": "Bombardier",
         "author": "Len Deighton",
         "sfw": "unknown"

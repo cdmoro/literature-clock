@@ -1,18 +1,20 @@
 [
     {
+        "id": "000114",
         "time": "00:35",
+        "quote_time_case": "thirty-five minutes past midnight",
         "quote_first": "Mrs. Gentrie looked at the clock. It was ",
         "quote_last": ".",
-        "quote_time_case": "thirty-five minutes past midnight",
         "title": "The Case of the Empty Tin",
         "author": "Erle Stanley Gardner",
         "sfw": "unknown"
     },
     {
+        "id": "000115",
         "time": "00:35",
+        "quote_time_case": "thirty-five minutes past midnight",
         "quote_first": "The clock read ",
         "quote_last": ". I was dazed from the deepness of the sleep. Who could be calling me at this hour?",
-        "quote_time_case": "thirty-five minutes past midnight",
         "title": "A Cat on the Cutting Edge",
         "author": "Lydia Adamson",
         "sfw": "unknown"

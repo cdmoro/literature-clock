@@ -1,18 +1,20 @@
 [
     {
+        "id": "002152",
         "time": "14:02",
+        "quote_time_case": "dos y dos minutos",
         "quote_first": "Al sonar fatal del reloj toda la asamblea se precipitó de sus lugares como si se hubiera producido un incendio. Cuando le pregunté a un colega qué significaba todo esto, el viejo notario, que había escuchado mi pregunta, respondió: '¡El deber principal de un empleado del gobierno es la puntualidad, señor!' A las ",
         "quote_last": " no quedaba ni un alma en una de las habitaciones.",
-        "quote_time_case": "dos y dos minutos",
         "title": "La habitación roja",
         "author": "August Strindberg",
         "sfw": "sfw"
     },
     {
+        "id": "002153",
         "time": "14:02",
+        "quote_time_case": "14.02",
         "quote_first": "No estoy muerto. ¿Cómo ocurrió eso? Él estaba en lo correcto. Eran las ",
         "quote_last": " y veintiséis segundos. El destino no se había cumplido. Todos nos miramos confundidos.",
-        "quote_time_case": "14.02",
         "title": "La mujer que murió mucho",
         "author": "Jasper Fforde",
         "sfw": "unknown"

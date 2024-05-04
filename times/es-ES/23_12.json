@@ -1,18 +1,20 @@
 [
     {
+        "id": "003530",
         "time": "23:12",
+        "quote_time_case": "once y doce de la noche.",
         "quote_first": "Luego me enviaron un mensaje de texto a las ",
         "quote_last": " decir que no habían encontrado nada y que se iban a casa a pasar la noche.",
-        "quote_time_case": "once y doce de la noche.",
         "title": "Cruz mortal",
         "author": "James Patterson",
         "sfw": "unknown"
     },
     {
+        "id": "003531",
         "time": "23:12",
+        "quote_time_case": "23:12",
         "quote_first": "Hubo una identificación confirmatoria realizada por el oficial encubierto 6475 a las ",
         "quote_last": " horas en la esquina de 147th y Amsterdam.",
-        "quote_time_case": "23:12",
         "title": "Una singularidad desnuda",
         "author": "Sergio De La Pava",
         "sfw": "unknown"

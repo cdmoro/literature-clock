@@ -1,27 +1,30 @@
 [
     {
+        "id": "001337",
         "time": "09:11",
+        "quote_time_case": "9:11",
         "quote_first": "Estas nuevas cerraduras cedieron fácilmente a las atenciones de Agar. A las ",
         "quote_last": " abrieron la puerta de rejas y entraron en la bodega propiamente dicha. Inmediatamente comenzaron la búsqueda de la llave.",
-        "quote_time_case": "9:11",
         "title": "El gran robo del tren",
         "author": "Micheal Crichton",
         "sfw": "sfw"
     },
     {
+        "id": "001338",
         "time": "09:11",
+        "quote_time_case": "9:11",
         "quote_first": "“¿Qué tren puedo tomar?”<br>“Hay uno alrededor de las ",
         "quote_last": " si realmente debes ir”.",
-        "quote_time_case": "9:11",
         "title": "Este lado del paraiso",
         "author": "F. Scott Fitzgerald",
         "sfw": "unknown"
     },
     {
+        "id": "001339",
         "time": "09:11",
+        "quote_time_case": "9:11 am",
         "quote_first": "",
         "quote_last": " yacía en la cama, mirando a la pared.",
-        "quote_time_case": "9:11 am",
         "title": "Una fracción del todo",
         "author": "Steve Toltz",
         "sfw": "sfw"

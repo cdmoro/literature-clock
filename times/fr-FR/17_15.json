@@ -1,36 +1,40 @@
 [
     {
+        "id": "002612",
         "time": "17:15",
+        "quote_time_case": "cinq heures et quart",
         "quote_first": "Il n’était que ",
         "quote_last": ", mais la soirée était aussi sombre que minuit. Et quand il atteignit le bord du porche, la pluie commença à tomber.",
-        "quote_time_case": "cinq heures et quart",
         "title": "Un goût pour la mort",
         "author": "P.D. James",
         "sfw": "sfw"
     },
     {
+        "id": "002613",
         "time": "17:15",
+        "quote_time_case": "* 17h15",
         "quote_first": "Il était environ 17 h 15 lorsque Grant remarqua un nouveau visage entrant dans la pièce. C'était un prêtre à peu près de l'âge de Grant. L'homme de corpulence moyenne avait l'air un peu échevelé.",
         "quote_last": "",
-        "quote_time_case": "* 17h15",
         "title": "Moine Guerrier",
         "author": "Ray Keating",
         "sfw": "sfw"
     },
     {
+        "id": "002614",
         "time": "17:15",
+        "quote_time_case": "17h15",
         "quote_first": "",
         "quote_last": "<br>Oui, le Corner Tap de Jack Cermak était le huitième cercle de l'enfer. Dans un quartier en pleine gentrification comme Logan Square, installer un bar aseptisé et trop cher pour ressembler à un lieu de plongée bon marché dans une petite ville était tout simplement malade.",
-        "quote_time_case": "17h15",
         "title": "Cuisines du Grand Midwest",
         "author": "J. Ryan Stradal",
         "sfw": "unknown"
     },
     {
+        "id": "002615",
         "time": "17:15",
+        "quote_time_case": "17h15",
         "quote_first": "Lorsqu'August Bach émergea de la froideur sombre du bunker climatisé du contrôle divisionnaire des chasseurs, il était ",
         "quote_last": " CET. La journée avait mûri pour devenir un de ces doux après-midi d'été où l'air est chaud et doux comme du caramel mou.",
-        "quote_time_case": "17h15",
         "title": "Bombardier",
         "author": "Len Deighton",
         "sfw": "unknown"

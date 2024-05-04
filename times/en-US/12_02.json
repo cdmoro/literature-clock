@@ -1,18 +1,20 @@
 [
     {
+        "id": "001863",
         "time": "12:02",
+        "quote_time_case": "two minutes past twelve",
         "quote_first": "At ",
         "quote_last": " the door opens and two men come into the lobby. One is tall with black hair combed in a 50’s pompadour. The other is short and bespectacled. Both are wearing suits.",
-        "quote_time_case": "two minutes past twelve",
         "title": "Billy Summers",
         "author": "Stephen King",
         "sfw": "unknown"
     },
     {
+        "id": "001864",
         "time": "12:02",
+        "quote_time_case": "twelve o'clock two minutes and a quarter",
         "quote_first": "It had struck ",
         "quote_last": ". The Baron's footman hastily seized a large goblet, and gasped with terror as he filled it with hot, spiced wine.<br>\"Tis past the hour, 'tis past,\" he groaned in anguish, \"and surely I shall now get the red hot poker the Baron hath so often promised me, oh! Woe is me! Would that I had prepared the Baron's lunch before!\"",
-        "quote_time_case": "twelve o'clock two minutes and a quarter",
         "title": "Crundle Castle",
         "author": "Lewis Carroll",
         "sfw": "unknown"

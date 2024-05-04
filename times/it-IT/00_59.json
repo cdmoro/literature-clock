@@ -1,36 +1,40 @@
 [
     {
+        "id": "000151",
         "time": "00:59",
+        "quote_time_case": "* un minuto all'una",
         "quote_first": "Solo il clacson di un'auto in ritardo disturbò leggermente il silenzio.<br>Guardai l'orologio da polso. Questo ha mostrato un minuto a uno. Mentre alzavo gli occhi, un orologio impaziente da qualche parte ha confermato la sua storia.<br>Con uno sbadiglio ho evocato il terrier di addormentarsi e ho raggiunto l'interruttore.<br>Mentre lo facevo, ha ringhiato di nuovo.",
         "quote_last": "",
-        "quote_time_case": "* un minuto all'una",
         "title": "Berry e Co.",
         "author": "Dornford Yates",
         "sfw": "sfw"
     },
     {
+        "id": "000152",
         "time": "00:59",
+        "quote_time_case": "Verso l'una",
         "quote_first": "Che ore sono adesso? disse.<br>\"",
         "quote_last": ".\"<br>\"Domattina?\"<br>L'amica di Herera la guardò maliziosamente. \"No, c'è un'eclissi totale di sole.\"",
-        "quote_time_case": "Verso l'una",
         "title": "Libertà",
         "author": "Jonathan Frantzen",
         "sfw": "unknown"
     },
     {
+        "id": "000153",
         "time": "00:59",
+        "quote_time_case": "quasi l'una",
         "quote_first": "Era ",
         "quote_last": " quando Sherlock Holmes tornò dalla sua escursione. Teneva in mano un foglio di carta blu, scarabocchiato di note e cifre.",
-        "quote_time_case": "quasi l'una",
         "title": "Le avventure di Sherlock Holmes",
         "author": "Sir Arthur Conan Doyle",
         "sfw": "unknown"
     },
     {
+        "id": "000154",
         "time": "00:59",
+        "quote_time_case": "quasi l'una",
         "quote_first": "La guardai attentamente, mentre mi faceva quella singolare domanda. Era ormai ",
         "quote_last": ". Tutto ciò che potevo distinguere distintamente alla luce della luna era un viso incolore, giovanile, magro e affilato intorno alle guance e al mento; occhi grandi, gravi, malinconicamente attenti; labbra nervose e incerte; e capelli chiari di una tonalità giallo-brunastra pallida.",
-        "quote_time_case": "quasi l'una",
         "title": "La donna in bianco",
         "author": "Wilkie Collins",
         "sfw": "unknown"

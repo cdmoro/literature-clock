@@ -1,18 +1,20 @@
 [
     {
+        "id": "001913",
         "time": "12:27",
+        "quote_time_case": "27",
         "quote_first": "12.25 pm. 26. ",
         "quote_last": ". Every time Billy saved a shot he looked heartbroken.",
-        "quote_time_case": "27",
         "title": "A Kestrel for a Knave",
         "author": "Barry Hines",
         "sfw": "unknown"
     },
     {
+        "id": "001914",
         "time": "12:27",
+        "quote_time_case": "twelve twenty-seven",
         "quote_first": "For three decades, time had been frozen at ",
         "quote_last": ". The story was that the hands had stopped at the exact moment Corcoran O'Connor's father died. It might have been true.",
-        "quote_time_case": "twelve twenty-seven",
         "title": "Boundary Waters",
         "author": "William Kent Krueger",
         "sfw": "sfw"

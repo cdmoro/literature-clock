@@ -1,9 +1,10 @@
 [
     {
+        "id": "002964",
         "time": "19:26",
-        "quote_first": "Newman señaló el hotel. Bajo los aleros, fragmentos de hielo de treinta centímetros de largo se proyectaban hacia abajo. Una empalizada de carámbanos. Invertido. La estación era poco más que una choza de una sola planta, un edificio aislado sin nadie alrededor. El reloj del salpicadero marcaba 19,26 horas.",
-        "quote_last": "",
-        "quote_time_case": "* 19.26 horas",
+        "quote_time_case": "19.26 horas",
+        "quote_first": "Newman señaló el hotel. Bajo los aleros, fragmentos de hielo de treinta centímetros de largo se proyectaban hacia abajo. Una empalizada de carámbanos. Invertido. La estación era poco más que una choza de una sola planta, un edificio aislado sin nadie alrededor. El reloj del salpicadero marcaba ",
+        "quote_last": ".",
         "title": "Terminal",
         "author": "Colin Forbes",
         "sfw": "sfw"

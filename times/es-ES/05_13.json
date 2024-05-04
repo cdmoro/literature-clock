@@ -1,18 +1,20 @@
 [
     {
+        "id": "000704",
         "time": "05:13",
+        "quote_time_case": "cinco y trece",
         "quote_first": "Wu dijo: \"Apagaste a las ",
         "quote_last": " de la mañana y, cuando volviste a encenderlo, lo hiciste con energía auxiliar\".",
-        "quote_time_case": "cinco y trece",
         "title": "Parque jurásico",
         "author": "Michael Crichton",
         "sfw": "unknown"
     },
     {
+        "id": "000705",
         "time": "05:13",
+        "quote_time_case": "5:13 am",
         "quote_first": "Tumbada de costado en la cama, miré el despertador hasta que se convirtió en una mancha, su tono rojo brillaba como un cartel de bienvenida que me hacía señas hacia las profundidades de las cavidades de color carmesí del infierno. ",
         "quote_last": ". Describir este lunes como un lunes azul era quedarse corto.",
-        "quote_time_case": "5:13 am",
         "title": "ritmo rápido",
         "author": "Nakia D Johnson",
         "sfw": "unknown"

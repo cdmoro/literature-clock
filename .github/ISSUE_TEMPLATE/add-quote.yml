@@ -1,12 +1,19 @@
 name: Add quote
 description: Add a new quote or an additional quote for a specific time.
-title: "[XX:XX]: Add quote"
-labels: 
+title: "[XX:XX] Add quote"
+labels:
   - add-quote
 body:
   - type: markdown
     attributes:
       value: "# Add quote"
+  - type: input
+    id: locale
+    attributes:
+      label: Locale
+      placeholder: "en-US"
+    validations:
+      required: true
   - type: input
     id: time
     attributes:

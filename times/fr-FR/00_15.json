@@ -1,18 +1,20 @@
 [
     {
+        "id": "000082",
         "time": "00:15",
+        "quote_time_case": "* douze quinze",
         "quote_first": "A midi quinze, il descendit du fourgon. Il glissa le pistolet sous la ceinture de son pantalon et traversa la rue silencieuse et déserte jusqu'à la maison Hudston.",
         "quote_last": "",
-        "quote_time_case": "* douze quinze",
         "title": "Observateurs",
         "author": "Dean Koontz",
         "sfw": "unknown"
     },
     {
+        "id": "000083",
         "time": "00:15",
+        "quote_time_case": "midi et quart",
         "quote_first": "La fête se termina après le dîner, vers ",
         "quote_last": ". En voyant partir les visiteurs, Olga Mihalovna se tenait à la porte et dit :<br>\"Vous devriez vraiment prendre un châle ! Il fait un peu frais. S'il vous plaît, mon Dieu, vous n'attrapez pas froid !\"",
-        "quote_time_case": "midi et quart",
         "title": "La fête et autres histoires",
         "author": "Anton Pavlovich Chekhov",
         "sfw": "sfw"

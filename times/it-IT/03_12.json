@@ -1,18 +1,20 @@
 [
     {
+        "id": "000461",
         "time": "03:12",
+        "quote_time_case": "* Le tre e dodici minuti",
         "quote_first": "Un tavolo con riviste di pesca e un posacenere, alcuni libri su uno scaffale, una candela in una bottiglia, sedie, una mensola del camino con l'orologio fermo alle tre e dodici minuti.",
         "quote_last": "",
-        "quote_time_case": "* Le tre e dodici minuti",
         "title": "In compagnia degli altri",
         "author": "Jan Karon",
         "sfw": "sfw"
     },
     {
+        "id": "000462",
         "time": "03:12",
+        "quote_time_case": "3:12",
         "quote_first": "Erano le ",
         "quote_last": " e Charlie stava chiamando. <br>Lei rispose: \"Sei ancora seduto fuori da quell'albergo?\" <br>\"Sì. Questa è una stronzata. Vado a prendere questo ragazzo e non mi interessa cosa sta facendo.\"",
-        "quote_time_case": "3:12",
         "title": "Ombre del Vaticano",
         "author": "Ray Keating",
         "sfw": "nsfw"

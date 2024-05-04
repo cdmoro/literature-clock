@@ -1,18 +1,20 @@
 [
     {
+        "id": "002928",
         "time": "19:12",
+        "quote_time_case": "las siete y doce minutos",
         "quote_first": "A ",
         "quote_last": ", en la cocina, Kimberly se estaba poniendo ansiosa.",
-        "quote_time_case": "las siete y doce minutos",
         "title": "El paciente privado",
         "author": "P.D. James",
         "sfw": "sfw"
     },
     {
+        "id": "002929",
         "time": "19:12",
+        "quote_time_case": "7:12",
         "quote_first": "Me enseñó que si tenía que reunirme con alguien para una cita, debía negarme a seguir la \"estúpida costumbre humana\" de elegir arbitrariamente una hora basada en intervalos de quince minutos. \"¡Nunca conozcas gente a las 7:45 o 6:30, Jasper, pero elige horas como las ",
         "quote_last": " y las 8:03!\"",
-        "quote_time_case": "7:12",
         "title": "Una fracción del todo",
         "author": "Steve Toltz",
         "sfw": "unknown"

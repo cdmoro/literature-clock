@@ -1,18 +1,20 @@
 [
     {
+        "id": "001333",
         "time": "09:09",
+        "quote_time_case": "9:09 am",
         "quote_first": "",
         "quote_last": " yacía en la cama, mirando a la pared.",
-        "quote_time_case": "9:09 am",
         "title": "Una fracción del todo",
         "author": "Steve Toltz",
         "sfw": "sfw"
     },
     {
+        "id": "001334",
         "time": "09:09",
+        "quote_time_case": "nueve y nueve de la mañana",
         "quote_first": "“Quizás debería atar ese cabo suelto en caso de que la operación salga mal. Sólo serán unos minutos y estoy seguro de que habrá luz suficiente para la operación, ya que, según mi Pulsar, son sólo las ",
         "quote_last": ". ¡Ja!\"",
-        "quote_time_case": "nueve y nueve de la mañana",
         "title": "Tipo de superviviente",
         "author": "Stephen King",
         "sfw": "unknown"

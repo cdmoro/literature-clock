@@ -1,27 +1,30 @@
 [
     {
+        "id": "002030",
         "time": "13:20",
+        "quote_time_case": "twenty past one",
         "quote_first": "Gerard and I took the launch to Greenwich and had a pub lunch at the Trafalgar Tavern, but we didn't leave here until ",
         "quote_last": ".",
-        "quote_time_case": "twenty past one",
         "title": "Original Sin",
         "author": "P.D. James",
         "sfw": "sfw"
     },
     {
+        "id": "002031",
         "time": "13:20",
+        "quote_time_case": "1320 hours",
         "quote_first": "Kamarov, signal to Purga: Diving at—,\" he checked his watch, \"—",
         "quote_last": ". Exercise OCTOBER FROST begins as scheduled. You are released to other assigned duties. We will return as scheduled.\" <br>Kamarov worked the trigger on the blinker light to transmit the message. The Purga responded at once, and Ramius read the flashing signal unaided: \"IF THE WHALES DON'T EAT YOU. GOOD LUCK TO RED OCTOBER!\"",
-        "quote_time_case": "1320 hours",
         "title": "The Hunt for Red October",
         "author": "Tom Clancy",
         "sfw": "unknown"
     },
     {
+        "id": "002032",
         "time": "13:20",
+        "quote_time_case": "twenty minutes past one",
         "quote_first": "The time is coming for action. Today this Vampire is limit to the powers of man, and till sunset he may not change. It will take him time to arrive here, see it is ",
         "quote_last": ", and there are yet some times before he can hither come, be he never so quick.",
-        "quote_time_case": "twenty minutes past one",
         "title": "Dracula",
         "author": "Bram Stoker",
         "sfw": "unknown"

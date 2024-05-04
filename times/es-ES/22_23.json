@@ -1,9 +1,10 @@
 [
     {
+        "id": "003404",
         "time": "22:23",
+        "quote_time_case": "22:23",
         "quote_first": "La máscara lo miró de reojo desde un estuche oscuro. Se apresuró a llegar a la siguiente estación, donde hizo girar una llave en una caja. La caja registraba la hora: ",
         "quote_last": ".",
-        "quote_time_case": "22:23",
         "title": "Reliquia",
         "author": "Douglas Preston and Lincoln Child",
         "sfw": "sfw"

@@ -1,27 +1,30 @@
 [
     {
+        "id": "000106",
         "time": "00:30",
+        "quote_time_case": "* Midi heures et demie",
         "quote_first": "Il était midi et demi ; Le visage de Turquie commença à briller, à renverser son encrier et à devenir généralement tapageur ; Nippers s'apaisa dans la quiétude et la courtoisie ; Ginger Nut a croqué sa pomme de midi ; et Bartleby restait debout à sa fenêtre dans une de ses plus profondes rêveries de mur mort.",
         "quote_last": "",
-        "quote_time_case": "* Midi heures et demie",
         "title": "Bartleby, le Scrivener",
         "author": "Herman Melville",
         "sfw": "unknown"
     },
     {
+        "id": "000107",
         "time": "00:30",
+        "quote_time_case": "minuit et demi",
         "quote_first": "\"Je t'aime plus que tu ne peux l'imaginer.\"<br>\"Je t'aime aussi.\" Je souris et ses lèvres s'attardent sur ma joue. Tandis qu'il traverse le couloir, je note l'heure : ",
         "quote_last": ".",
-        "quote_time_case": "minuit et demi",
         "title": "Maison de bain",
         "author": "P.J. Vernon",
         "sfw": "unknown"
     },
     {
+        "id": "000108",
         "time": "00:30",
+        "quote_time_case": "* douze heures et demi",
         "quote_first": "Il était midi et demi lorsque je retournai à l'Albany en dernier recours désespéré. La scène de mon désastre était à peu près telle que je l’avais laissée. Les comptoirs de baccara jonchaient encore la table, avec les verres vides et les cendriers chargés. Une fenêtre avait été ouverte pour laisser sortir la fumée et laissait entrer le brouillard.",
         "quote_last": "",
-        "quote_time_case": "* douze heures et demi",
         "title": "Le crackman amateur",
         "author": "E.W. Hornung",
         "sfw": "unknown"

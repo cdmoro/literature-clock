@@ -1,18 +1,20 @@
 [
     {
+        "id": "000117",
         "time": "00:37",
+        "quote_time_case": "minuit trente-sept minutes",
         "quote_first": "Un coup d'œil au cadran lumineux de sa montre indiquait ",
         "quote_last": ".",
-        "quote_time_case": "minuit trente-sept minutes",
         "title": "Pas un homme marié",
         "author": "Dixie Browning",
         "sfw": "unknown"
     },
     {
+        "id": "000118",
         "time": "00:37",
+        "quote_time_case": "00h37",
         "quote_first": "Stephen regarda son horloge de chevet. ",
         "quote_last": ".<br>Il est allé dans la cuisine et a pris un Coca Vanille dans le réfrigérateur. Dans le salon, il ouvrit le meuble DVD et parcourut des yeux les centaines de titres.",
-        "quote_time_case": "00h37",
         "title": "Moine Guerrier",
         "author": "Ray Keating",
         "sfw": "sfw"

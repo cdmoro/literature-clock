@@ -1,9 +1,10 @@
 [
     {
+        "id": "001612",
         "time": "10:34",
+        "quote_time_case": "10:34 a.m.",
         "quote_first": "A las ",
         "quote_last": " en 198.088, se apagaron las luces en Labrador y se encendieron los generadores de respaldo, pero la línea solar de Labrador permaneció apagada.",
-        "quote_time_case": "10:34 a.m.",
         "title": "Aurora",
         "author": "Kim Stanley Robinson",
         "sfw": "sfw"

@@ -1,27 +1,30 @@
 [
     {
+        "id": "000119",
         "time": "00:38",
+        "quote_time_case": "twelve thirty-eight a.m.",
         "quote_first": "You left the main hospital building at about midnight. You spoke to the porter at the main gate at ",
         "quote_last": " Where were you between those times?",
-        "quote_time_case": "twelve thirty-eight a.m.",
         "title": "Shroud for a Nightingale",
         "author": "P.D. James",
         "sfw": "sfw"
     },
     {
+        "id": "000120",
         "time": "00:38",
+        "quote_time_case": "thirty-eight minutes past midnight",
         "quote_first": "Somewhere he'd lost three days; for he'd entered the burning veil Thursday, ",
         "quote_last": ". Yes. But keep cool. There's more at stake than three lost days. There must be; otherwise why the police?",
-        "quote_time_case": "thirty-eight minutes past midnight",
         "title": "Redemolished",
         "author": "Alfred Bester",
         "sfw": "unknown"
     },
     {
+        "id": "000121",
         "time": "00:38",
+        "quote_time_case": "12:38 a.m.",
         "quote_first": "Justin turned on the light and groggily looked at the Sony clock radio which said it was ",
         "quote_last": " The screams in his dream had been painfully, frighteningly real, but he could not remember where the screams had come from.",
-        "quote_time_case": "12:38 a.m.",
         "title": "Crow's Nest",
         "author": "G.V. Miller",
         "sfw": "unknown"

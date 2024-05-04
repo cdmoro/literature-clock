@@ -1,18 +1,20 @@
 [
     {
+        "id": "002118",
         "time": "14:02",
+        "quote_time_case": "two minutes past two",
         "quote_first": "At the fatal stroke of the clock the whole assembly rushed from their places as if a fire had broken out. When I asked a colleague what it all meant, the old notary, who had heard my question, replied: 'The primary duty of a Government employe is punctuality, sir!' At ",
         "quote_last": " not a soul was left in one of the rooms.",
-        "quote_time_case": "two minutes past two",
         "title": "The Red Room",
         "author": "August Strindberg",
         "sfw": "sfw"
     },
     {
+        "id": "002119",
         "time": "14:02",
+        "quote_time_case": "14.02",
         "quote_first": "I'm not dead. How did that happen? He was right. It was ",
         "quote_last": " and twenty-six seconds. Destiny had not been fulfilled. We all looked at each other, confused.",
-        "quote_time_case": "14.02",
         "title": "The Woman Who Died a Lot",
         "author": "Jasper Fforde",
         "sfw": "unknown"
