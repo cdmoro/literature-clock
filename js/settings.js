@@ -65,5 +65,6 @@ export function updateURL(name, value) {
     urlParams.set(name, value);
   }
 
-  history.replaceState({}, "", `?${urlParams.toString()}`);
+  const url = urlParams.size ? `?${urlParams.toString()}` : "/";
+  history.replaceState({}, "", url);
 }
