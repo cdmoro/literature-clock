@@ -78,7 +78,7 @@
     </main>
 
     <footer>
-      <button id="exit-zen" title="Exit Zen mode">
+      <button id="exit-zen" title="Exit Zen mode" data-title="exit_zen_title">
         <svg
           width="24"
           height="24"
@@ -110,7 +110,7 @@
                   transform="translate(-48.643 .302)"
                 />
               </svg>
-              <span id="zen-label">Zen</span>
+              <span id="zen-label" data-text="zen_mode">Zen</span>
             </button>
             <button id="work" tabindex="2">
               <svg
@@ -126,7 +126,7 @@
                   transform="translate(-27.505 10.195)"
                 />
               </svg>
-              <span id="work-label">Work</span>
+              <span id="work-label" data-text="work_mode">Work</span>
             </button>
             <button id="screensaver" tabindex="3">
               <svg
@@ -142,71 +142,86 @@
                   transform="translate(-9.891 1.736)"
                 />
               </svg>
-              <span id="screensaver-label">Screensaver</span>
+              <span id="screensaver-label" data-text="screensaver_mode"
+                >Screensaver</span
+              >
             </button>
           </span>
           <select id="locale-select" tabindex="4">
-            <option value="en-US">English (US)</option>
-            <option value="es-ES">Español (ES)</option>
-            <option value="pt-BR">Portuguese (BR)</option>
-            <option value="fr-FR">French</option>
-            <option value="it-IT">Italian</option>
-            <option value="random">Random</option>
+            <option value="en-US" data-text="en-US">English (US)</option>
+            <option value="es-ES" data-text="es-ES">Español (ES)</option>
+            <option value="pt-BR" data-text="pt-BR">Portuguese (BR)</option>
+            <option value="fr-FR" data-text="fr-FR">French</option>
+            <option value="it-IT" data-text="it-IT">Italian</option>
+            <option value="random" data-text="random">Random</option>
           </select>
           <span>
             <span class="input-group">
               <select id="theme-select" tabindex="5">
-                <optgroup id="colors" label="Colors">
-                  <option value="base">Base</option>
-                  <option value="pink">Pink</option>
-                  <option value="green">Green</option>
-                  <option value="orange">Orange</option>
-                  <option value="purple">Purple</option>
-                  <option value="blue">Blue</option>
-                  <option value="gray">Gray</option>
-                  <option value="color">Random</option>
+                <optgroup id="colors" label="Colors" data-label="colors">
+                  <option value="base" data-text="base">Base</option>
+                  <option value="pink" data-text="pink">Pink</option>
+                  <option value="green" data-text="green">Green</option>
+                  <option value="orange" data-text="orange">Orange</option>
+                  <option value="purple" data-text="purple">Purple</option>
+                  <option value="blue" data-text="blue">Blue</option>
+                  <option value="gray" data-text="gray">Gray</option>
+                  <option value="color" data-text="color">Random</option>
                 </optgroup>
-                <optgroup id="themes" label="Themes">
-                  <option value="retro">Retro</option>
-                  <option value="elegant">Elegant</option>
-                  <option value="festive">Festive</option>
-                  <option value="bohemian">Bohemian</option>
-                  <option value="handwriting">Handwriting</option>
-                  <option value="anaglyph">Anaglyph</option>
-                  <option value="whatsapp">Whatsapp</option>
-                  <option value="terminal">Terminal</option>
-                  <option value="frame">Frame</option>
+                <optgroup id="themes" label="Themes" data-label="themes">
+                  <option value="retro" data-text="retro">Retro</option>
+                  <option value="elegant" data-text="elegant">Elegant</option>
+                  <option value="festive" data-text="festive">Festive</option>
+                  <option value="bohemian" data-text="bohemian">
+                    Bohemian
+                  </option>
+                  <option value="handwriting" data-text="handwriting">
+                    Handwriting
+                  </option>
+                  <option value="anaglyph" data-text="anaglyph">
+                    Anaglyph
+                  </option>
+                  <option value="whatsapp" data-text="whatsapp">
+                    Whatsapp
+                  </option>
+                  <option value="terminal" data-text="terminal">
+                    Terminal
+                  </option>
+                  <option value="frame" data-text="frame">Frame</option>
                 </optgroup>
               </select>
               <select id="variant-select" tabindex="6">
-                <option value="system">System</option>
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
+                <option value="system" data-text="system">System</option>
+                <option value="light" data-text="light">Light</option>
+                <option value="dark" data-text="dark">Dark</option>
               </select>
             </span>
             <select id="font-select" tabindex="7">
-              <option value="default">Default font</option>
+              <option value="default" data-text="themeFont">Theme font</option>
             </select>
           </span>
         </div>
         <div>
-          <a id="add-quote" target="_blank">Add quote</a> |
+          <a id="add-quote" target="_blank" data-text="add_quote">Add quote</a>
+          |
           <a
             id="report-error"
             href="https://github.com/cdmoro/literature-clock/issues/new?template=quote-error.yml&labels=bug"
             target="_blank"
-            >Fix typo</a
+            data-text="report_error"
+            >Report error</a
           >
           |
           <a
             id="project"
             href="https://github.com/cdmoro/literature-clock"
             target="_blank"
+            data-text="project"
             >Project</a
           >
           |
           <span id="contact">
-            <span id="made-by">Made by</span>
+            <span id="made-by" data-text="made_by">Made by</span>
             <a href="https://twitter.com/CarlosBonadeo" target="_blank"
               >@CarlosBonadeo</a
             >

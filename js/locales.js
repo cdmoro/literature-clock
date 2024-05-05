@@ -11,22 +11,6 @@ const DOMINANT_LOCALES = {
   pt: "pt-BR",
 };
 
-const LABELS = {
-  "zen-label": "zen_mode",
-  "work-label": "work_mode",
-  "screensaver-label": "screensaver_mode",
-  "add-quote": "add_quote",
-  "report-error": "report_error",
-  project: "project",
-  "made-by": "made_by",
-};
-
-const TITLE_ATTR = {
-  zen: "zen_mode_title",
-  work: "work_mode_title",
-  "exit-zen": "exit_zen_title",
-};
-
 export function getRandomLocale() {
   let locales = Object.keys(TRANSLATIONS);
 
@@ -85,24 +69,15 @@ function translateStrings(locale = navigator.language) {
     locale === "random" ? "en" : locale.substring(0, 2);
   document.title = `[${time}] ${strings.document_title}`;
 
-  Object.entries(LABELS).forEach(
-    ([id, key]) => (document.getElementById(id).textContent = strings[key])
-  );
-
-  Object.entries(TITLE_ATTR).forEach(
-    ([id, key]) => (document.getElementById(id).title = strings[key])
-  );
-
-  ["locale", "theme", "variant"].forEach((select) =>
-    document
-      .querySelectorAll(`#${select}-select option`)
-      .forEach((op) => (op.textContent = strings[op.value]))
-  );
+  document
+    .querySelectorAll("[data-text]")
+    .forEach((el) => (el.textContent = strings[el.dataset.text]));
 
   document
-    .querySelectorAll("select optgroup")
-    .forEach((el) => (el.label = strings[el.id]));
+    .querySelectorAll("[data-label]")
+    .forEach((el) => (el.label = strings[el.dataset.label]));
 
-  document.querySelector("#font-select option:first-child").label =
-    strings.themeFont;
+  document
+    .querySelectorAll("[data-title]")
+    .forEach((el) => (el.title = strings[el.dataset.title]));
 }

@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initScreensaver(false);
   initTheme("base-dark");
   initLocale(navigator.language);
-  initFont();
+  initFont("default");
   initClock();
 
   document.body.removeAttribute("data-loading");
