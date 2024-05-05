@@ -12,10 +12,10 @@ Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) (
 
 - Zen mode: remove all the distractions (perfect for screensaver usage) ([link](https://literatureclock.netlify.app/?zen=true))
 - Work mode: only shows quotes that are safe for work ([link](https://literatureclock.netlify.app/?work=true))
-- Screensaver mode: make the quotes dance around the screen! ([link](https://literatureclock.netlify.app/?screensaver=true))
+- [Screensaver mode](#screensaver): make the quotes dance around the screen! ([link](https://literatureclock.netlify.app/?screensaver=true))
 - Languages: supports English, Spanish, Portuguese, French, and Italian (by default, it will try to use the system language)
   - Random language: see a quote in a different language each minute, isn't that cool? ([link](https://literatureclock.netlify.app/?locale=random))
-- Themes: the clock has `color themes` and `special themes` and each theme has light and dark variants, of course
+- [Themes](#themes): the clock has `color themes` and `special themes` and each theme has light and dark variants, of course
   - Random color theme: see a different color theme each minute, isn't that even cooler? ([link](https://literatureclock.netlify.app/?theme=color-system))
 - Progress bar: at the bottom of the page there is a `progress bar`, so you can know when a quote is about to change
 - Responsive: no matter how long is a quote, it will always look good on desktop and mobile 😎
@@ -49,6 +49,13 @@ In any case, if you want to help you can:
 - Contact me and share your thoughts about a quote, the project, or anything you want :D
 - Show me your love in the form of [coffees](https://buymeacoffee.com/cdmoro), [cafecitos](http://cafecito.app/cdmoro)
 - Be my [Patreon](https://patreon.com/cdmoro)
+
+## Screensaver
+
+If you want to use this clock as a screensaver there are several ways to address this, although, it depends on the OS. I'm currently using the Mac OS solution and it worked like a charm. You can find more information here:
+- Mac OS: Mac OS X Screen Saver powered by a Web View (https://github.com/liquidx/webviewscreensaver)
+- Windows: Set Webpage as Screensaver in Windows 10 (https://www.youtube.com/watch?v=UovZwUlwwEs)
+- Linux: Live Webpage as a Desktop Wallpaper on KDE Desktop (https://www.youtube.com/watch?v=_v1sJhBu25o)
 
 ## Themes
 
@@ -93,11 +100,15 @@ At the moment, the clock has seven color themes and four special themes, we expe
 
 ## Development
 
-The easiest way to run the clock is to run an HTTP server and open `index.html`. If you are a VSCode user, you might want to use the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension.
+### Web
 
-## Quotes: CSV to JSON
+The easiest way to run the clock is to run an HTTP server and open `index.html` and voila!. If you are a VSCode user, you might want to use the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension.
 
-I used Python to generate the JSON files (one per time if the time has quotes) with the quotes. The script goes through all the CSV files (one per locale) and puts the files in the appropriate folders. Also, the script generates an additional JSON file with statistics about the locale, such as the times with fewer quotes, the author with the most quotes, etc. 
+### Quotes: CSV to JSON
+
+I used Python to generate the JSON files (one per time if the time has quotes) with the quotes. The script goes through all the CSV files (one per locale) and puts the files in the appropriate folders. Also, the script generates an additional JSON file with statistics per locale, such as the times with fewer quotes, the author with the most quotes, etc.
+
+To generate the times, simply run python `.\scripts\generate_times.py` in the root folder. By default, the script will generate all the JSON files, if you want to generate the JSON files for a particular locale you can add it as a parameter, i.e. `.\scripts\generate_times.py en-US` and that's it.  
 
 ## Contact
 
