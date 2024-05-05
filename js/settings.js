@@ -68,3 +68,11 @@ export function updateURL(name, value) {
   const url = urlParams.size ? `?${urlParams.toString()}` : "/";
   history.replaceState({}, "", url);
 }
+
+export function removeURLParam(name) {
+  const urlParams = new URLSearchParams(window.location.search);
+  urlParams.delete(name);
+
+  const url = urlParams.size ? `?${urlParams.toString()}` : "/";
+  history.replaceState({}, "", url);
+}

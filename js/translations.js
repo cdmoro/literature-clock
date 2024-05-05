@@ -48,6 +48,8 @@ export default {
     "fr-FR": "French",
     "it-IT": "Italian",
     random: "Random language",
+
+    themeFont: "Theme font",
   },
   "es-ES": {
     document_title: "Reloj Literario",
@@ -98,6 +100,8 @@ export default {
     "fr-FR": "Francés",
     "it-IT": "Italiano",
     random: "Lenguaje aleatorio",
+
+    themeFont: "Fuente del tema",
   },
   "pt-BR": {
     document_title: "Relógio da Literatura",
@@ -148,6 +152,8 @@ export default {
     "fr-FR": "Francês",
     "it-IT": "Italiano",
     random: "Idioma aleatório",
+
+    themeFont: "Fonte do tema",
   },
   "fr-FR": {
     document_title: "Horloge de la Littérature",
@@ -199,6 +205,8 @@ export default {
     "fr-FR": "Français",
     "it-IT": "Italien",
     random: "Langue aléatoire",
+
+    themeFont: "Police du thème",
   },
   "it-IT": {
     document_title: "Orologio della Letteratura",
@@ -250,5 +258,7 @@ export default {
     "fr-FR": "Francese",
     "it-IT": "Italiano",
     random: "Lingua casuale",
+
+    themeFont: "Font del tema ",
   },
 };

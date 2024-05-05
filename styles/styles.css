@@ -58,7 +58,7 @@ blockquote {
   position: relative;
   line-height: var(--quote-line-height, 1.1);
   font-weight: 100;
-  font-family: var(--quote-font-family);
+  font-family: var(--override-quote-font-family, var(--quote-font-family));
   transition: transform 1s ease;
 }
 
@@ -172,7 +172,7 @@ button svg {
 }
 
 button span {
-  margin-inline-start: .2rem;
+  margin-inline-start: 0.2rem;
 }
 
 button.active {
@@ -229,6 +229,11 @@ button:focus.active {
   padding: 0.7rem;
   margin-bottom: 1rem;
   max-height: none;
+  opacity: 0.8;
+}
+
+#exit-zen:hover {
+  opacity: 1;
 }
 
 #exit-zen svg {
@@ -262,7 +267,7 @@ footer {
 
 #settings {
   display: flex;
-  gap: 5px;
+  gap: 4px;
   flex-wrap: wrap;
   justify-content: center;
 }

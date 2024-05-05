@@ -4,6 +4,7 @@ import { initZenMode } from "./zen.js";
 import { initWorkMode } from "./work.js";
 import { initClock } from "./clock.js";
 import { initScreensaver } from "./screensaver.js";
+import { initFont } from "./fonts.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initZenMode(false);
@@ -11,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initScreensaver(false);
   initTheme("base-dark");
   initLocale(navigator.language);
+  initFont();
   initClock();
 
   document.body.removeAttribute("data-loading");

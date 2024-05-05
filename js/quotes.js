@@ -1,5 +1,4 @@
 import { getRandomLocale } from "./locales.js";
-import { startScreensaver } from "./screensaver.js";
 import { getStringSetting, isBooleanSettingTrue } from "./settings.js";
 import { setTheme } from "./themes.js";
 import TRANSLATIONS from "./translations.js";
@@ -97,12 +96,5 @@ export async function updateQuote(time = getTime()) {
     blockquote.removeAttribute("data-fallback");
   }
 
-  const fitQuoteInterval = setInterval(fitQuote, 1);
-  setTimeout(() => {
-    clearInterval(fitQuoteInterval);
-
-    if (isBooleanSettingTrue("screensaver")) {
-      startScreensaver();
-    }
-  }, 500);
+  fitQuote();
 }

@@ -1,12 +1,12 @@
 # Literature Clock
 
-A clock that tells the time using quotes from literature. Support for multiple languages, themes, and more! 
+A clock that tells the time using quotes from literature. Support for multiple languages, themes, and more!
 
 https://literatureclock.netlify.app/
 
 Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) ([literature-clock](https://github.com/JohannesNE/literature-clock)) and [Jaap Meijers](http://www.eerlijkemedia.nl/) ([e-reader clock](https://www.instructables.com/id/Literary-Clock-Made-From-E-reader/)).
 
-![image](https://github.com/cdmoro/literature-clock/assets/28156761/34b4bf28-22d1-41cc-ba99-0babab41a03c) 
+![image](https://github.com/cdmoro/literature-clock/assets/28156761/34b4bf28-22d1-41cc-ba99-0babab41a03c)
 
 ## Features
 
@@ -17,6 +17,7 @@ Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) (
   - Random language: see a quote in a different language each minute, isn't that cool? ([link](https://literatureclock.netlify.app/?locale=random))
 - [Themes](#themes): the clock has `color themes` and `special themes` and each theme has light and dark variants, of course
   - Random color theme: see a different color theme each minute, isn't that even cooler? ([link](https://literatureclock.netlify.app/?theme=color-system))
+- Font personalization: if you don't like the default font of a theme, that's perfectly fine, we won't judge you, you can change it for another one!
 - Progress bar: at the bottom of the page there is a `progress bar`, so you can know when a quote is about to change
 - Responsive: no matter how long is a quote, it will always look good on desktop and mobile 😎
 - Accessibility: All the quote elements have `aria-labels`
@@ -39,7 +40,7 @@ The clock can be controlled using URL parameters, these parameters will overwrit
 
 ## Languages
 
-All translations were made from the original CSV English file, sometimes the translation it's not accurate (I used Google Translate, yes, I know), and the time is not highlighted properly, but it's fine, this is something that can be fixed easily, just one quote at a time. Plus, I marked all the *bad* quotes with an asterisk so at some point all of them will be fixed.
+All translations were made from the original CSV English file, sometimes the translation it's not accurate (I used Google Translate, yes, I know), and the time is not highlighted properly, but it's fine, this is something that can be fixed easily, just one quote at a time. Plus, I marked all the _bad_ quotes with an asterisk so at some point all of them will be fixed.
 
 In any case, if you want to help you can:
 
@@ -53,6 +54,7 @@ In any case, if you want to help you can:
 ## Screensaver
 
 If you want to use this clock as a screensaver there are several ways to address this, although, it depends on the OS. I'm currently using the Mac OS solution and it worked like a charm. You can find more information here:
+
 - Mac OS: Mac OS X Screen Saver powered by a Web View (https://github.com/liquidx/webviewscreensaver)
 - Windows: Set Webpage as Screensaver in Windows 10 (https://www.youtube.com/watch?v=UovZwUlwwEs)
 - Linux: Live Webpage as a Desktop Wallpaper on KDE Desktop (https://www.youtube.com/watch?v=_v1sJhBu25o)
@@ -62,41 +64,39 @@ If you want to use this clock as a screensaver there are several ways to address
 At the moment, the clock has seven color themes and four special themes, we expect to update or add more themes in the future! Here you can find some examples:
 
 **Base**
-| Light  | Dark  |
+| Light | Dark |
 |---|---|
-| ![image](https://github.com/cdmoro/literature-clock/assets/28156761/364d0788-e829-4d7e-b51a-19711d0964c0)  | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/34b4bf28-22d1-41cc-ba99-0babab41a03c) |
+| ![image](https://github.com/cdmoro/literature-clock/assets/28156761/364d0788-e829-4d7e-b51a-19711d0964c0) | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/34b4bf28-22d1-41cc-ba99-0babab41a03c) |
 
 **Pink**
-| Light  | Dark  |
+| Light | Dark |
 |---|---|
 | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/4786b773-312c-470a-91d8-e5d650efe42e) | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/793c1102-ca7e-4f89-9acd-7938910d1a81) |
 
-
 **Orange**
-| Light  | Dark  |
+| Light | Dark |
 |---|---|
-| ![image](https://github.com/cdmoro/literature-clock/assets/28156761/35e43ff5-263a-433e-9c44-0f0d33f0d643)  | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/f9ed4700-fda0-4650-ac6e-c0ad8e3ac9a2)  |
+| ![image](https://github.com/cdmoro/literature-clock/assets/28156761/35e43ff5-263a-433e-9c44-0f0d33f0d643) | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/f9ed4700-fda0-4650-ac6e-c0ad8e3ac9a2) |
 
 **Elegant**
-| Light  | Dark  |
+| Light | Dark |
 |---|---|
-| ![image](https://github.com/cdmoro/literature-clock/assets/28156761/4a2f97ce-2c0d-4f8e-88dd-1dc8c1e83caa) | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/f74dfc56-e0e6-445f-a2fe-c01cdcedf7f5)  |
+| ![image](https://github.com/cdmoro/literature-clock/assets/28156761/4a2f97ce-2c0d-4f8e-88dd-1dc8c1e83caa) | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/f74dfc56-e0e6-445f-a2fe-c01cdcedf7f5) |
 
 **Festive**
-| Light  | Dark  |
+| Light | Dark |
 |---|---|
-| ![image](https://github.com/cdmoro/literature-clock/assets/28156761/e31dfc33-bf30-4025-818b-285479d3af4b) | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/83197165-506b-4d0d-9974-92b066917c35)  |
+| ![image](https://github.com/cdmoro/literature-clock/assets/28156761/e31dfc33-bf30-4025-818b-285479d3af4b) | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/83197165-506b-4d0d-9974-92b066917c35) |
 
 **Whatsapp**
-| Light  | Dark  |
+| Light | Dark |
 |---|---|
 |![image](https://github.com/cdmoro/literature-clock/assets/28156761/2aff30ff-3867-4f03-874a-55f708fb4345)|![image](https://github.com/cdmoro/literature-clock/assets/28156761/1b622436-4ce5-4fef-a668-3d5b6318ec88)|
 
 **Terminal**
-| Light  | Dark  |
+| Light | Dark |
 |---|---|
 |![image](https://github.com/cdmoro/literature-clock/assets/28156761/6e74dacd-5a9a-46b1-b707-34df7b9a8e37)|![image](https://github.com/cdmoro/literature-clock/assets/28156761/3cc114fd-f0fe-4277-99d1-7f258f047a12)|
-
 
 ## Development
 
@@ -108,7 +108,7 @@ The easiest way to run the clock is to run an HTTP server and open `index.html` 
 
 I used Python to generate the JSON files (one per time if the time has quotes) with the quotes. The script goes through all the CSV files (one per locale) and puts the files in the appropriate folders. Also, the script generates an additional JSON file with statistics per locale, such as the times with fewer quotes, the author with the most quotes, etc.
 
-To generate the times, simply run python `.\scripts\generate_times.py` in the root folder. By default, the script will generate all the JSON files, if you want to generate the JSON files for a particular locale you can add it as a parameter, i.e. `.\scripts\generate_times.py en-US` and that's it.  
+To generate the times, simply run python `.\scripts\generate_times.py` in the root folder. By default, the script will generate all the JSON files, if you want to generate the JSON files for a particular locale you can add it as a parameter, i.e. `.\scripts\generate_times.py en-US` and that's it.
 
 ## Contact
 

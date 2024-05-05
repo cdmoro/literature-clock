@@ -102,4 +102,7 @@ function translateStrings(locale = navigator.language) {
   document
     .querySelectorAll("select optgroup")
     .forEach((el) => (el.label = strings[el.id]));
+
+  document.querySelector("#font-select option:first-child").label =
+    strings.themeFont;
 }

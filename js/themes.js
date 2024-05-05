@@ -1,6 +1,5 @@
-import { startScreensaver } from "./screensaver.js";
-import { initStringSetting, isBooleanSettingTrue, setStringSetting, updateURL } from "./settings.js";
-import { fitQuote } from "./utils.js";
+import { initStringSetting, setStringSetting, updateURL } from "./settings.js";
+import { doFitQuote, fitQuote, loadFontIfNotExists } from "./utils.js";
 
 const THEME_FONTS = {
   retro: "VT323",
@@ -13,24 +12,6 @@ const THEME_FONTS = {
   terminal: "B612 Mono",
   frame: "Playfair Display",
 };
-
-function loadFontIfNotExists(theme) {
-  if (THEME_FONTS[theme]) {
-    const fontNameSanitized = THEME_FONTS[theme].replace(/ /g, "+");
-    const fontExists = Array.from(
-      document.querySelectorAll("link[rel=stylesheet][href*=fonts]")
-    ).some((link) => link.href.includes(fontNameSanitized));
-
-    if (fontExists) {
-      return;
-    }
-
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = `https://fonts.googleapis.com/css2?family=${fontNameSanitized}:wght@400&display=swap`;
-    document.head.appendChild(link);
-  }
-}
 
 function getRandomThemeColor() {
   let colors = Array.from(document.querySelectorAll("#colors option")).map(
@@ -54,7 +35,9 @@ export function initTheme(defaultValue = "base-dark") {
   const preferDarkThemes = window.matchMedia("(prefers-color-scheme: dark)");
 
   setStringSetting("theme", `${theme}-${variant}`);
-  loadFontIfNotExists(theme);
+  if (THEME_FONTS[theme]) {
+    loadFontIfNotExists(THEME_FONTS[theme]);
+  }
   themeSelect.value = theme;
   variantSelect.value = variant;
 
@@ -66,7 +49,7 @@ export function initTheme(defaultValue = "base-dark") {
   }
   document.documentElement.dataset.theme = `${theme}-${variant}`;
 
-  window.addEventListener("resize", fitQuote);
+  window.addEventListener("resize", doFitQuote);
   themeSelect.addEventListener("change", setTheme);
   variantSelect.addEventListener("change", setTheme);
   preferDarkThemes.addEventListener("change", (e) => {
@@ -89,11 +72,13 @@ export function setTheme(doUpdateURL = true) {
   if (p) {
     p.style.visibility = "hidden";
   }
-  
+
   let theme = document.getElementById("theme-select").value;
   let variant = document.getElementById("variant-select").value;
 
-  loadFontIfNotExists(theme);
+  if (THEME_FONTS[theme]) {
+    loadFontIfNotExists(THEME_FONTS[theme]);
+  }
   setStringSetting("theme", `${theme}-${variant}`);
   if (doUpdateURL) {
     updateURL("theme", `${theme}-${variant}`);
@@ -109,15 +94,8 @@ export function setTheme(doUpdateURL = true) {
   }
 
   document.documentElement.dataset.theme = `${theme}-${variant}`;
-  const fitQuoteInterval = setInterval(fitQuote, 1);
-  setTimeout(() => {
-    clearInterval(fitQuoteInterval);
+  fitQuote();
 
-    if (isBooleanSettingTrue("screensaver")) {
-      startScreensaver();
-    }
-  }, 500);
-  
   if (p) {
     setTimeout(() => (p.style.visibility = "visible"), 50);
   }

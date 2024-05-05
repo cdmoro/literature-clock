@@ -1,3 +1,6 @@
+import { startScreensaver } from "./screensaver.js";
+import { isBooleanSettingTrue } from "./settings.js";
+
 export const FALLBACK_QUOTES = {
   "en-US": [
     {
@@ -141,7 +144,7 @@ export function updateGHLinks(time, quote, locale) {
   reportError.href = reportErrorUrl.href;
 }
 
-export function fitQuote() {
+export function doFitQuote() {
   const [theme] = document.documentElement.dataset.theme.split("-");
   const quote = document.querySelector("blockquote p");
   const cite = document.querySelector("blockquote cite");
@@ -162,4 +165,31 @@ export function fitQuote() {
       }
     }
   }
+}
+
+export function fitQuote() {
+  const interval = setInterval(doFitQuote, 1);
+  setTimeout(() => {
+    clearInterval(interval);
+
+    if (isBooleanSettingTrue("screensaver")) {
+      startScreensaver();
+    }
+  }, 500);
+}
+
+export function loadFontIfNotExists(font) {
+  const fontNameSanitized = font.replace(/ /g, "+");
+  const fontExists = Array.from(
+    document.querySelectorAll("link[rel=stylesheet][href*=fonts]")
+  ).some((link) => link.href.includes(fontNameSanitized));
+
+  if (fontExists) {
+    return;
+  }
+
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = `https://fonts.googleapis.com/css2?family=${fontNameSanitized}:wght@400&display=swap`;
+  document.head.appendChild(link);
 }
