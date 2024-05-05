@@ -33,7 +33,13 @@ async function getQuotes(time, locale) {
 async function getQuote(time, locale) {
   const quotes = await getQuotes(time, locale);
   const urlParams = new URLSearchParams(window.location.search);
-  const quoteIndex = Math.floor(Math.random() * quotes.length);
+
+  let quoteIndex = Math.floor(Math.random() * quotes.length);
+  const urlParamsIndex = urlParams.get("index");
+  if (urlParamsIndex && quotes[urlParamsIndex]) {
+    quoteIndex = urlParamsIndex;
+  }
+
   const quote = Object.assign({}, quotes[quoteIndex]);
 
   if (!quote.quote_time_case) {
