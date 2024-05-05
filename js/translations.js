@@ -36,6 +36,7 @@ export default {
     whatsapp: "Whatsapp",
     terminal: "Terminal",
     frame: "Frame",
+    subtle: "Subtle",
 
     system: "System",
     light: "Light",

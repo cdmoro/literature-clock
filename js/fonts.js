@@ -4,19 +4,10 @@ import {
   setStringSetting,
   updateURL,
 } from "./settings.js";
+import { THEME_FONTS } from "./themes.js";
 import { fitQuote, loadFontIfNotExists } from "./utils.js";
 
-const FONTS = [
-  "Special Elite",
-  "VT323",
-  "Playfair Display",
-  "Borel",
-  "Comfortaa",
-  "Reenie Beanie",
-  "Anton",
-  "Roboto",
-  "B612 Mono",
-];
+const FONTS = ["Special Elite", ...new Set(Object.values(THEME_FONTS))];
 const CSS_FONT_VARIABLE = "--override-quote-font-family";
 
 export function initFont(defaultValue = "default") {

@@ -1,7 +1,7 @@
 import { initStringSetting, setStringSetting, updateURL } from "./settings.js";
 import { doFitQuote, fitQuote, loadFontIfNotExists } from "./utils.js";
 
-const THEME_FONTS = {
+export const THEME_FONTS = {
   retro: "VT323",
   elegant: "Playfair Display",
   festive: "Borel",
@@ -11,6 +11,7 @@ const THEME_FONTS = {
   whatsapp: "Roboto",
   terminal: "B612 Mono",
   frame: "Playfair Display",
+  subtle: "Unna",
 };
 
 function getRandomThemeColor() {
