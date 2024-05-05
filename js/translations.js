@@ -47,7 +47,7 @@ export default {
     "pt-BR": "Portuguese (BR)",
     "fr-FR": "French",
     "it-IT": "Italian",
-    random: "Random",
+    random: "Random language",
   },
   "es-ES": {
     document_title: "Reloj Literario",
@@ -97,7 +97,7 @@ export default {
     "pt-BR": "Portugués (BR)",
     "fr-FR": "Francés",
     "it-IT": "Italiano",
-    random: "Aleatorio",
+    random: "Lenguaje aleatorio",
   },
   "pt-BR": {
     document_title: "Relógio da Literatura",
@@ -147,7 +147,7 @@ export default {
     "pt-BR": "Português (BR)",
     "fr-FR": "Francês",
     "it-IT": "Italiano",
-    random: "Aleatório",
+    random: "Idioma aleatório",
   },
   "fr-FR": {
     document_title: "Horloge de la Littérature",
@@ -198,7 +198,7 @@ export default {
     "pt-BR": "Portugais (BR)",
     "fr-FR": "Français",
     "it-IT": "Italien",
-    random: "Aléatoire",
+    random: "Langue aléatoire",
   },
   "it-IT": {
     document_title: "Orologio della Letteratura",
@@ -249,6 +249,6 @@ export default {
     "pt-BR": "Portoghese (BR)",
     "fr-FR": "Francese",
     "it-IT": "Italiano",
-    random: "Casuale",
+    random: "Lingua casuale",
   },
 };
