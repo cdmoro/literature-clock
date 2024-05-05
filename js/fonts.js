@@ -19,7 +19,7 @@ const FONTS = [
 ];
 const CSS_FONT_VARIABLE = "--override-quote-font-family";
 
-export function initFont(defaultValue = "Default") {
+export function initFont(defaultValue = "default") {
   const font = initStringSetting("font", defaultValue);
   const fontSelect = document.getElementById("font-select");
 
