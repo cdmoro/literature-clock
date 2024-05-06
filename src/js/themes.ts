@@ -47,8 +47,8 @@ export function initTheme(defaultValue = "base-dark") {
   document.documentElement.dataset.theme = `${theme}-${variant}`;
 
   window.addEventListener("resize", doFitQuote);
-  themeSelect?.addEventListener("change", () => setTheme);
-  variantSelect?.addEventListener("change", () => setTheme);
+  themeSelect?.addEventListener("change", () => setTheme());
+  variantSelect?.addEventListener("change", () => setTheme());
   preferDarkThemes.addEventListener("change", (e) => {
     const variant =
       document.querySelector<HTMLSelectElement>("#variant-select")?.value;

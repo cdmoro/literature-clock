@@ -23,7 +23,7 @@ const CSS_FONT_VARIABLE = "--override-quote-font-family";
 
 export function initFont(defaultValue = "default") {
   const font = initStringSetting("font", defaultValue);
-  const fontSelect = document.querySelector<HTMLSelectElement>("font-select");
+  const fontSelect = document.querySelector<HTMLSelectElement>("#font-select");
 
   FONTS.forEach((font) => {
     const option = document.createElement("option");
@@ -48,7 +48,7 @@ export function initFont(defaultValue = "default") {
 }
 
 function setFont() {
-  const fontSelect = document.querySelector<HTMLSelectElement>("font-select");
+  const fontSelect = document.querySelector<HTMLSelectElement>("#font-select");
   const font = fontSelect?.value;
   const root = document.querySelector<HTMLElement>(":root");
 

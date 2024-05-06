@@ -47,7 +47,7 @@ function resolveLocale(locale = navigator.language): Locale | "random" {
 export function initLocale(defaultValue = navigator.language) {
   const locale = resolveLocale(initStringSetting("locale", defaultValue));
   const localeSelect =
-    document.querySelector<HTMLSelectElement>("locale-select");
+    document.querySelector<HTMLSelectElement>("#locale-select");
 
   setStringSetting("locale", locale);
   translateStrings(locale);
