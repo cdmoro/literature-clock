@@ -1,101 +1,101 @@
-import { startScreensaver } from "./screensaver.js";
-import { isBooleanSettingTrue } from "./settings.js";
+import { startScreensaver } from "./screensaver";
+import { isBooleanSettingTrue } from "./settings";
+import { Locale, Quote } from "./types";
 
-export const FALLBACK_QUOTES = {
+const fallbackQuote = (quote: Partial<Quote>): Quote =>
+  ({
+    ...quote,
+    id: "",
+    time: "",
+    quote_time_case: "",
+    sfw: "sfw",
+  } as Quote);
+
+export const FALLBACK_QUOTES: Record<Locale, Quote[]> = {
   "en-US": [
-    {
+    fallbackQuote({
       quote_first: "Error ",
       quote_last: ": quote not found.",
       title: "Internet Explorer",
       author: "1995-2022",
-      sfw: true,
-    },
-    {
+    }),
+    fallbackQuote({
       quote_first: "Captain's log:<br>We are still looking for a quote for ",
       quote_last: ".",
       title: "Moby Dick",
       author: "Captain Ahab",
-      sfw: true,
-    },
+    }),
   ],
   "es-ES": [
-    {
+    fallbackQuote({
       quote_first: "Error ",
       quote_last: ": quote not found.",
       title: "Internet Explorer",
       author: "1995-2022",
-      sfw: true,
-    },
-    {
+    }),
+    fallbackQuote({
       quote_first:
         "Bitácora del Capitán:<br>Seguimos buscando una cita para las ",
       quote_last: ".",
       title: "Moby Dick",
       author: "Captain Ahab",
-      sfw: true,
-    },
+    }),
   ],
   "pt-BR": [
-    {
+    fallbackQuote({
       quote_first: "Erro ",
       quote_last: ": citação não encontrada.",
       title: "Internet Explorer",
       author: "1995-2022",
-      sfw: true,
-    },
-    {
+    }),
+    fallbackQuote({
       quote_first:
         "Registro do capitão:<br>Ainda estamos procurando uma data para o ",
       quote_last: ".",
       title: "Moby Dick",
       author: "Capitão Ahab",
-      sfw: true,
-    },
+    }),
   ],
   "fr-FR": [
-    {
+    fallbackQuote({
       quote_first: "Erreur ",
       quote_last: ": citation non trouvée.",
       title: "Internet Explorer",
       author: "1995-2022",
-      sfw: true,
-    },
-    {
+    }),
+    fallbackQuote({
       quote_first:
         "Journal du capitaine:<br>Nous sommes toujours à la recherche d'una citation pour ",
       quote_last: ".",
       title: "Moby Dick",
       author: "Capitaine Achab",
-      sfw: true,
-    },
+    }),
   ],
   "it-IT": [
-    {
+    fallbackQuote({
       quote_first: "Errore ",
       quote_last: ": citazione non trovata.",
       title: "Internet Explorer",
       author: "1995-2022",
-      sfw: true,
-    },
-    {
+    }),
+    fallbackQuote({
       quote_first:
         "Diario del capitano:<br>Stiamo ancora cercando una data per il ",
       quote_last: ".",
       title: "Moby Dick",
       author: "Capitano Achab",
-      sfw: true,
-    },
+    }),
   ],
 };
 
-const INITIAL_THEME_FONT_SIZE = {
+const INITIAL_THEME_FONT_SIZE: Record<string, number> = {
   handwriting: 90,
   whatsapp: 45,
   retro: 70,
   frame: 35,
   subtle: 45,
 };
-const GITHUT_NEW_ISSUE_URL =
+const GITHUB_NEW_ISSUE_URL =
   "https://github.com/cdmoro/literature-clock/issues/new";
 
 export function getTime() {
@@ -113,20 +113,24 @@ export function getTime() {
   );
 }
 
-export function updateGHLinks(time, quote, locale) {
+export function updateGHLinks(time: string, quote: Quote, locale: Locale) {
   const quoteRaw = `${quote.quote_first}${quote.quote_time_case}${quote.quote_last}`;
 
-  const addQuoteUrl = new URL(GITHUT_NEW_ISSUE_URL);
+  const addQuoteUrl = new URL(GITHUB_NEW_ISSUE_URL);
   addQuoteUrl.searchParams.set("template", `add-quote.yml`);
   addQuoteUrl.searchParams.set("assignees", "cdmoro");
   addQuoteUrl.searchParams.set("title", `[${time}][${locale}] Add quote`);
   addQuoteUrl.searchParams.set("labels", `add-quote,${locale}`);
   addQuoteUrl.searchParams.set("locale", locale);
 
-  const addQuoteLink = document.getElementById("add-quote");
-  addQuoteLink.href = addQuoteUrl.href;
+  const addQuoteLink = document.getElementById(
+    "add-quote"
+  ) as HTMLAnchorElement;
+  if (addQuoteLink) {
+    addQuoteLink.href = addQuoteUrl.href;
+  }
 
-  const reportErrorUrl = new URL(GITHUT_NEW_ISSUE_URL);
+  const reportErrorUrl = new URL(GITHUB_NEW_ISSUE_URL);
   reportErrorUrl.searchParams.set("template", `quote-error.yml`);
   reportErrorUrl.searchParams.set("assignees", "cdmoro");
   reportErrorUrl.searchParams.set(
@@ -140,15 +144,19 @@ export function updateGHLinks(time, quote, locale) {
   reportErrorUrl.searchParams.set("author", quote.author);
   reportErrorUrl.searchParams.set("quote", quoteRaw.replace(/<br>/g, " "));
 
-  const reportError = document.getElementById("report-error");
-  reportError.href = reportErrorUrl.href;
+  const reportError = document.getElementById(
+    "report-error"
+  ) as HTMLAnchorElement;
+  if (reportError) {
+    reportError.href = reportErrorUrl.href;
+  }
 }
 
 export function doFitQuote() {
-  const [theme] = document.documentElement.dataset.theme.split("-");
-  const quote = document.querySelector("blockquote p");
-  const cite = document.querySelector("blockquote cite");
-  let fontSize = INITIAL_THEME_FONT_SIZE[theme] || 75;
+  const [theme] = (document.documentElement.dataset.theme || "").split("-");
+  const quote = document.querySelector<HTMLElement>("blockquote p");
+  const cite = document.querySelector<HTMLElement>("blockquote cite");
+  let fontSize: number = INITIAL_THEME_FONT_SIZE[theme] || 75;
 
   if (quote) {
     quote.style.fontSize = `${fontSize}px`;
@@ -156,7 +164,9 @@ export function doFitQuote() {
 
     while (quote.scrollHeight > safeClientHeight) {
       quote.style.fontSize = `${fontSize}px`;
-      cite.style.fontSize = `${fontSize < 19 ? 10 : fontSize * 0.7}px`;
+      if (cite) {
+        cite.style.fontSize = `${fontSize < 19 ? 10 : fontSize * 0.7}px`;
+      }
       fontSize -= 1;
 
       if (fontSize < 10) {
@@ -178,10 +188,12 @@ export function fitQuote() {
   }, 500);
 }
 
-export function loadFontIfNotExists(font) {
+export function loadFontIfNotExists(font: string) {
   const fontNameSanitized = font.replace(/ /g, "+");
   const fontExists = Array.from(
-    document.querySelectorAll("link[rel=stylesheet][href*=fonts]")
+    document.querySelectorAll<HTMLAnchorElement>(
+      "link[rel=stylesheet][href*=fonts]"
+    )
   ).some((link) => link.href.includes(fontNameSanitized));
 
   if (fontExists) {

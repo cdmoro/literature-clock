@@ -266,4 +266,4 @@ export default {
 
     themeFont: "Font del tema ",
   },
-};
+} as const;

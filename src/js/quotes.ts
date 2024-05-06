@@ -1,10 +1,11 @@
-import { getRandomLocale } from "./locales.js";
-import { getStringSetting, isBooleanSettingTrue } from "./settings.js";
-import { setTheme } from "./themes.js";
-import TRANSLATIONS from "./translations.js";
-import { FALLBACK_QUOTES, fitQuote, getTime, updateGHLinks } from "./utils.js";
+import { getRandomLocale } from "./locales";
+import { getStringSetting, isBooleanSettingTrue } from "./settings";
+import { setTheme } from "./themes";
+import TRANSLATIONS from "./translations";
+import { Locale, Quote } from "./types";
+import { FALLBACK_QUOTES, fitQuote, getTime, updateGHLinks } from "./utils";
 
-async function getQuotes(time, locale) {
+async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
   const fileName = time.replace(":", "_");
   try {
     const response = await fetch(`../times/${locale}/${fileName}.json`);
@@ -13,7 +14,7 @@ async function getQuotes(time, locale) {
       return FALLBACK_QUOTES[locale];
     }
 
-    let quotes = await response.json();
+    let quotes = (await response.json()) as Quote[];
 
     if (isBooleanSettingTrue("work")) {
       quotes = quotes.filter((q) => q.sfw !== "nsfw");
@@ -29,14 +30,17 @@ async function getQuotes(time, locale) {
   }
 }
 
-async function getQuote(time, locale) {
+async function getQuote(time: string, locale: Locale): Promise<Quote> {
   const quotes = await getQuotes(time, locale);
   const urlParams = new URLSearchParams(window.location.search);
 
   let quoteIndex = Math.floor(Math.random() * quotes.length);
-  const urlParamsIndex = urlParams.get("index");
-  if (urlParamsIndex && quotes[urlParamsIndex]) {
-    quoteIndex = urlParamsIndex;
+
+  if (urlParams.get("index")) {
+    const urlParamsIndex = parseInt(urlParams.get("index")!);
+    if (urlParamsIndex && quotes[urlParamsIndex]) {
+      quoteIndex = urlParamsIndex;
+    }
   }
 
   const quote = Object.assign({}, quotes[quoteIndex]);
@@ -58,13 +62,17 @@ async function getQuote(time, locale) {
 export async function updateQuote(time = getTime()) {
   const urlParams = new URLSearchParams(window.location.search);
   const testQuote = urlParams.get("quote");
-  let locale = getStringSetting("locale");
+  let locale = getStringSetting("locale") as Locale;
+
+  if (!locale) {
+    return;
+  }
 
   if (getStringSetting("locale") === "random") {
     locale = getRandomLocale();
   }
 
-  if (getStringSetting("theme").includes("color")) {
+  if (getStringSetting("theme")?.includes("color")) {
     setTheme(false);
   }
 
@@ -76,25 +84,28 @@ export async function updateQuote(time = getTime()) {
     `${quote.quote_first}<span class="time">${quote.quote_time_case}</span>${quote.quote_last}`;
 
   const blockquote = document.getElementById("quote");
-  blockquote.innerHTML = "";
 
-  const p = document.createElement("p");
-  p.innerHTML = quoteText;
+  if (blockquote) {
+    blockquote.innerHTML = "";
 
-  const cite = document.createElement("cite");
-  cite.innerHTML = `<span id="title">${quote.title}</span>, <span id="author">${quote.author}</span>`;
+    const p = document.createElement("p");
+    p.innerHTML = quoteText;
 
-  blockquote.appendChild(p);
-  blockquote.appendChild(cite);
-  blockquote.setAttribute("aria-label", quote.time);
-  blockquote.setAttribute("aria-description", quoteRaw.replace(/<br>/g, " "));
-  blockquote.dataset.locale = locale;
-  blockquote.dataset.sfw = quote.sfw;
-  if (quote.fallback) {
-    blockquote.dataset.fallback = true;
-  } else {
-    blockquote.removeAttribute("data-fallback");
+    const cite = document.createElement("cite");
+    cite.innerHTML = `<span id="title">${quote.title}</span>, <span id="author">${quote.author}</span>`;
+
+    blockquote.appendChild(p);
+    blockquote.appendChild(cite);
+    blockquote.setAttribute("aria-label", quote.time);
+    blockquote.setAttribute("aria-description", quoteRaw.replace(/<br>/g, " "));
+    blockquote.dataset.locale = locale;
+    blockquote.dataset.sfw = quote.sfw;
+    if (quote.fallback) {
+      blockquote.dataset.fallback = "true";
+    } else {
+      blockquote.removeAttribute("data-fallback");
+    }
+
+    fitQuote();
   }
-
-  fitQuote();
 }

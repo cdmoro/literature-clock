@@ -1,18 +1,18 @@
-import { updateQuote } from "./quotes.js";
+import { updateQuote } from "./quotes";
 import {
   initBooleanSetting,
   setBooleanSetting,
   toggleBooleanSetting,
   updateBooleanSettingButtonStatus,
   updateURL,
-} from "./settings.js";
+} from "./settings";
 
 export function initWorkMode(defaultValue = false) {
   const value = initBooleanSetting("work", defaultValue);
   setBooleanSetting("work", value);
   updateBooleanSettingButtonStatus("work", value);
 
-  document.getElementById("work").addEventListener("click", toggleWorkMode);
+  document.getElementById("work")?.addEventListener("click", toggleWorkMode);
 }
 
 function toggleWorkMode() {
@@ -23,8 +23,8 @@ function toggleWorkMode() {
   updateBooleanSettingButtonStatus("work", isWorkMode);
 
   if (
-    (isWorkMode && quote.dataset.sfw === "nsfw") ||
-    (!isWorkMode && quote.dataset.fallback === "true")
+    (isWorkMode && quote?.dataset.sfw === "nsfw") ||
+    (!isWorkMode && quote?.dataset.fallback === "true")
   ) {
     updateQuote();
   }
