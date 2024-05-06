@@ -9,7 +9,7 @@
     "test:coverage": "jest --coverage",
     "watch": "tsc -w",
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc & vite build",
     "preview": "vite preview"
   },
   "repository": {
