@@ -90,6 +90,7 @@ export default {
     whatsapp: "Whatsapp",
     terminal: "Terminal",
     frame: "Marco",
+    subtle: "Sutil",
 
     system: "Sistema",
     light: "Claro",
@@ -142,6 +143,7 @@ export default {
     whatsapp: "Whatsapp",
     terminal: "Terminal",
     frame: "Moldura",
+    subtle: "Sutil",
 
     system: "Sistema",
     light: "Claro",
@@ -184,7 +186,6 @@ export default {
     blue: "Bleu",
     gray: "Gris",
     color: "Couleurs aléatoires",
-    frame: "Bordure",
 
     themes: "Thèmes",
     retro: "Rétro",
@@ -195,6 +196,8 @@ export default {
     anaglyph: "Anaglyphe",
     whatsapp: "Whatsapp",
     terminal: "Terminal",
+    frame: "Bordure",
+    subtle: "Subtil",
 
     system: "Système",
     light: "Clair",
@@ -248,6 +251,7 @@ export default {
     whatsapp: "Whatsapp",
     terminal: "Terminale",
     frame: "Cornice",
+    subtle: "Sottile",
 
     system: "Sistema",
     light: "Chiaro",
