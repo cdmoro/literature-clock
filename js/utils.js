@@ -73,7 +73,6 @@ export const FALLBACK_QUOTES = {
     {
       quote_first: "Errore ",
       quote_last: ": citazione non trovata.",
-      quote_time_case: ".",
       title: "Internet Explorer",
       author: "1995-2022",
       sfw: true,
