@@ -1,18 +1,6 @@
+import { THEME_FONTS, resetFont } from "./fonts.js";
 import { initStringSetting, setStringSetting, updateURL } from "./settings.js";
 import { doFitQuote, fitQuote, loadFontIfNotExists } from "./utils.js";
-
-export const THEME_FONTS = {
-  retro: "VT323",
-  elegant: "Playfair Display",
-  festive: "Borel",
-  bohemian: "Comfortaa",
-  handwriting: "Reenie Beanie",
-  anaglyph: "Anton",
-  whatsapp: "Roboto",
-  terminal: "B612 Mono",
-  frame: "Playfair Display",
-  subtle: "Unna",
-};
 
 function getRandomThemeColor() {
   let colors = Array.from(document.querySelectorAll("#colors option")).map(
@@ -79,6 +67,7 @@ export function setTheme(doUpdateURL = true) {
 
   if (THEME_FONTS[theme]) {
     loadFontIfNotExists(THEME_FONTS[theme]);
+    resetFont();
   }
   setStringSetting("theme", `${theme}-${variant}`);
   if (doUpdateURL) {

@@ -4,9 +4,20 @@ import {
   setStringSetting,
   updateURL,
 } from "./settings.js";
-import { THEME_FONTS } from "./themes.js";
 import { fitQuote, loadFontIfNotExists } from "./utils.js";
 
+export const THEME_FONTS = {
+  retro: "VT323",
+  elegant: "Playfair Display",
+  festive: "Borel",
+  bohemian: "Comfortaa",
+  handwriting: "Reenie Beanie",
+  anaglyph: "Anton",
+  whatsapp: "Roboto",
+  terminal: "B612 Mono",
+  frame: "Playfair Display",
+  subtle: "Unna",
+};
 const FONTS = ["Special Elite", ...new Set(Object.values(THEME_FONTS))];
 const CSS_FONT_VARIABLE = "--override-quote-font-family";
 
@@ -51,4 +62,14 @@ function setFont() {
   }
 
   fitQuote();
+}
+
+export function resetFont() {
+  const root = document.querySelector(":root");
+  const fontSelect = document.getElementById("font-select");
+
+  root.style.removeProperty(CSS_FONT_VARIABLE);
+  fontSelect.value = "default";
+  setStringSetting("font", "default");
+  removeURLParam("font");
 }
