@@ -2,13 +2,13 @@ import { startScreensaver } from "./screensaver";
 import { isBooleanSettingTrue } from "./settings";
 import { Locale, Quote } from "./types";
 
-const fallbackQuote = (quote: Partial<Quote>): Quote =>
+export const fallbackQuote = (quote: Partial<Quote>): Quote =>
   ({
-    ...quote,
     id: "",
     time: "",
     quote_time_case: "",
     sfw: "sfw",
+    ...quote,
   } as Quote);
 
 export const FALLBACK_QUOTES: Record<Locale, Quote[]> = {

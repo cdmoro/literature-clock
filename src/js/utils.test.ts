@@ -1,11 +1,47 @@
 import { expect, test, describe } from "vitest";
-import { getTime } from "./utils";
+import { fallbackQuote } from "./utils";
 
 describe("utils", () => {
-  describe("getTime", () => {
-    test("should return the time in the expected format", () => {
-      const time = getTime();
-      expect(time).match(/2/);
+  describe("fallbackQuote", () => {
+    test("should return a complete Quote object", () => {
+      const quote = fallbackQuote({
+        quote_first: "Error ",
+        quote_last: ": quote not found.",
+        title: "Internet Explorer",
+        author: "1995-2022",
+      });
+
+      expect(quote).toEqual({
+        quote_first: "Error ",
+        quote_last: ": quote not found.",
+        title: "Internet Explorer",
+        author: "1995-2022",
+        id: "",
+        time: "",
+        quote_time_case: "",
+        sfw: "sfw",
+      });
+    });
+
+    test("should overwrite default fields", () => {
+      const quote = fallbackQuote({
+        quote_first: "Error ",
+        quote_last: ": quote not found.",
+        title: "Internet Explorer",
+        author: "1995-2022",
+        sfw: "nsfw",
+      });
+
+      expect(quote).toEqual({
+        quote_first: "Error ",
+        quote_last: ": quote not found.",
+        title: "Internet Explorer",
+        author: "1995-2022",
+        id: "",
+        time: "",
+        quote_time_case: "",
+        sfw: "nsfw",
+      });
     });
   });
 });
