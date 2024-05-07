@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --open",
-    "build": "tsc & vite build  --emptyOutDir false",
+    "build": "tsc & vite build --emptyOutDir false",
     "preview": "vite preview",
     "test": "vitest"
   },
