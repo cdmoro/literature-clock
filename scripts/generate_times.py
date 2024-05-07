@@ -9,7 +9,7 @@ minutes = 1440
 
 # Define the folder where CSV files are located
 quotes_path = 'quotes/'
-output_path = 'public/times/'
+output_path = 'dist/times/'
 ext = '.csv'
 statistics = {}
 
