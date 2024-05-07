@@ -28,7 +28,7 @@ export function getRandomLocale(): Locale {
   return locales[Math.floor(Math.random() * locales.length)];
 }
 
-function resolveLocale(locale = navigator.language): Locale | "random" {
+export function resolveLocale(locale = navigator.language): Locale | "random" {
   if (locale === "random") {
     return locale;
   }
