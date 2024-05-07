@@ -38,7 +38,7 @@ async function getQuote(time: string, locale: Locale): Promise<Quote> {
 
   if (urlParams.get("index")) {
     const urlParamsIndex = parseInt(urlParams.get("index")!);
-    if (urlParamsIndex && quotes[urlParamsIndex]) {
+    if (!isNaN(urlParamsIndex) && quotes[urlParamsIndex]) {
       quoteIndex = urlParamsIndex;
     }
   }
