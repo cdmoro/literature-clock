@@ -1,4 +1,8 @@
-import { initBooleanSetting, setBooleanSetting, updateURL } from "./settings";
+import {
+  initBooleanSetting,
+  setBooleanSetting,
+  updateURL,
+} from "../utils/settings";
 
 export function initZenMode(defaultValue: boolean = false) {
   const value = initBooleanSetting("zen", defaultValue);

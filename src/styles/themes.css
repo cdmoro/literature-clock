@@ -390,7 +390,7 @@
 [data-theme="whatsapp-light"] {
   --accent-color: #245247;
   --background: #eaeaec;
-  --background-image: url("../images/whatsapp-bg-light.jpg");
+  --background-image: url("/assets/whatsapp-bg-light.jpg");
 }
 
 [data-theme="whatsapp-light"] blockquote p {
@@ -414,7 +414,7 @@
 [data-theme="whatsapp-dark"] {
   --accent-color: #a9eb91;
   --background: #12121a;
-  --background-image: url("../images/whatsapp-bg-dark.jpg");
+  --background-image: url("/assets/whatsapp-bg-dark.jpg");
 }
 
 [data-theme="whatsapp-dark"] blockquote p {

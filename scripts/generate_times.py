@@ -16,12 +16,12 @@ statistics = {}
 # List all files in the folder
 file_list = os.listdir(quotes_path)
 
+if len(sys.argv) == 2: 
+    ext = sys.argv[1] + ext
+
 # Delete the old time files
 if os.path.exists(output_path):
     shutil.rmtree(output_path)
-
-if len(sys.argv) == 2: 
-    ext = sys.argv[1] + ext
 
 print("Starting processing quotes...\n")
 

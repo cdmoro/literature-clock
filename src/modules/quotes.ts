@@ -1,9 +1,10 @@
 import { getRandomLocale } from "./locales";
-import { getStringSetting, isBooleanSettingTrue } from "./settings";
+import { getStringSetting, isBooleanSettingTrue } from "../utils/settings";
 import { setTheme } from "./themes";
-import TRANSLATIONS from "./translations";
-import { Locale, Quote } from "./types";
-import { FALLBACK_QUOTES, fitQuote, getTime, updateGHLinks } from "./utils";
+import TRANSLATIONS from "../strings/translations.json";
+import { Locale, Quote } from "../types";
+import { fitQuote, getTime, updateGHLinks } from "../utils/utils";
+import FALLBACK_QUOTES from "../strings/fallbackQuotes.json";
 
 async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
   const fileName = time.replace(":", "_");

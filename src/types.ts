@@ -1,8 +1,8 @@
-import TRANSLATIONS from "./translations";
+import TRANSLATIONS from "./strings/translations.json";
 
 export type Locale = keyof typeof TRANSLATIONS;
 
-type SafeForWork = "sfw" | "nsfw" | "unknown";
+// type SafeForWork = "sfw" | "nsfw" | "unknown";
 
 export interface Quote {
   id: string;
@@ -12,6 +12,6 @@ export interface Quote {
   quote_last: string;
   title: string;
   author: string;
-  sfw: SafeForWork;
+  sfw: string;
   fallback?: boolean;
 }

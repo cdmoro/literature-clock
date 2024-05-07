@@ -4,7 +4,7 @@ import {
   toggleBooleanSetting,
   updateBooleanSettingButtonStatus,
   updateURL,
-} from "./settings";
+} from "../utils/settings";
 
 const INTERVAL = 10000;
 const TRANSITION_DURATION = `${INTERVAL / 1000}s`;

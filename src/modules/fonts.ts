@@ -3,8 +3,8 @@ import {
   removeURLParam,
   setStringSetting,
   updateURL,
-} from "./settings";
-import { fitQuote, loadFontIfNotExists } from "./utils";
+} from "../utils/settings";
+import { fitQuote, loadFontIfNotExists } from "../utils/utils";
 
 export const THEME_FONTS: Record<string, string> = {
   retro: "VT323",

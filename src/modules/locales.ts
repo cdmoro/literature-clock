@@ -1,8 +1,12 @@
 import { updateQuote } from "./quotes";
-import { initStringSetting, setStringSetting, updateURL } from "./settings";
-import TRANSLATIONS from "./translations";
-import { Locale } from "./types";
-import { getTime } from "./utils";
+import {
+  initStringSetting,
+  setStringSetting,
+  updateURL,
+} from "../utils/settings";
+import TRANSLATIONS from "../strings/translations.json";
+import { Locale } from "../types";
+import { getTime } from "../utils/utils";
 
 const DOMINANT_LOCALES: Record<string, Locale> = {
   en: "en-US",

@@ -2,7 +2,6 @@
   "name": "literature-clock",
   "version": "1.0.0",
   "description": "A clock that tells the time using quotes from literature. Support for multiple languages, themes, and more!",
-  "main": "index.ts",
   "type": "module",
   "scripts": {
     "dev": "vite --open",

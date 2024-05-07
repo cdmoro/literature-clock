@@ -5,7 +5,7 @@ import {
   toggleBooleanSetting,
   updateBooleanSettingButtonStatus,
   updateURL,
-} from "./settings";
+} from "../utils/settings";
 
 export function initWorkMode(defaultValue = false) {
   const value = initBooleanSetting("work", defaultValue);

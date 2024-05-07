@@ -1,6 +1,10 @@
 import { THEME_FONTS, resetFont } from "./fonts";
-import { initStringSetting, setStringSetting, updateURL } from "./settings";
-import { doFitQuote, fitQuote, loadFontIfNotExists } from "./utils";
+import {
+  initStringSetting,
+  setStringSetting,
+  updateURL,
+} from "../utils/settings";
+import { doFitQuote, fitQuote, loadFontIfNotExists } from "../utils/utils";
 
 function getRandomThemeColor() {
   let colors = Array.from(

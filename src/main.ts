@@ -1,10 +1,10 @@
-import { initLocale } from "./js/locales";
-import { initTheme } from "./js/themes";
-import { initZenMode } from "./js/zen";
-import { initWorkMode } from "./js/work";
-import { initClock } from "./js/clock";
-import { initScreensaver } from "./js/screensaver";
-import { initFont } from "./js/fonts";
+import { initLocale } from "./modules/locales";
+import { initTheme } from "./modules/themes";
+import { initZenMode } from "./modules/zen";
+import { initWorkMode } from "./modules/work";
+import { initClock } from "./modules/clock";
+import { initScreensaver } from "./modules/screensaver";
+import { initFont } from "./modules/fonts";
 
 document.addEventListener("DOMContentLoaded", () => {
   initZenMode(false);

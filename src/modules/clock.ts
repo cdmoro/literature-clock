@@ -1,5 +1,5 @@
 import { updateQuote } from "./quotes";
-import { getTime } from "./utils";
+import { getTime } from "../utils/utils";
 
 const urlParams = new URLSearchParams(window.location.search);
 const testTime = urlParams.get("time");
