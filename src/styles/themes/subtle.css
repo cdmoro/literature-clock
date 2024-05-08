@@ -1,0 +1,75 @@
+[data-theme|="subtle"] {
+  --quote-font-family: "Unna", sans-serif;
+  --quote-line-height: 1.2;
+}
+
+[data-theme|="subtle"] blockquote[aria-label]:before,
+[data-theme|="subtle"] blockquote[aria-label]:after {
+  content: "";
+  height: 2px;
+  width: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--font-color);
+}
+
+[data-theme|="subtle"] blockquote[aria-label]:after {
+  bottom: -2rem;
+}
+
+[data-theme|="subtle"] blockquote[aria-label] {
+  text-align: center;
+  text-wrap: balance;
+  position: relative;
+}
+
+[data-theme|="subtle"] p {
+  max-height: 40vh;
+}
+
+[data-theme|="subtle"] cite:before {
+  content: none;
+}
+
+[data-theme|="subtle"] cite #author {
+  display: block;
+}
+
+[data-theme|="subtle"] cite {
+  font-variant: small-caps;
+  transform: scale(0.9);
+  display: inline-block;
+}
+
+[data-theme="subtle-light"] p {
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgb(255, 156, 17) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="subtle-light"] .time {
+  -webkit-text-fill-color: #333;
+}
+
+[data-theme="subtle-dark"] p {
+  background: linear-gradient(
+    90deg,
+    rgb(238, 3, 117) 0%,
+    rgba(221, 38, 44, 1) 20%,
+    rgba(255, 91, 61, 1) 40%,
+    rgba(255, 105, 121, 1) 60%,
+    rgba(168, 137, 139, 1) 80%,
+    rgb(125, 199, 218) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="subtle-dark"] .time {
+  -webkit-text-fill-color: #eee;
+}

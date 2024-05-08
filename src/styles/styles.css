@@ -5,18 +5,18 @@ body {
 }
 
 body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-    "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  align-items: center;
+  background: var(--background);
+  background-blend-mode: var(--background-blend-mode);
+  background-image: var(--background-image);
   color: var(--font-color);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   justify-content: center;
   overflow: hidden;
-  background: var(--background);
-  background-image: var(--background-image);
-  background-blend-mode: var(--background-blend-mode);
   transition: background 0.5s;
 }
 
@@ -43,10 +43,10 @@ body:not(.screensaver) blockquote {
 }
 
 #clock {
-  max-width: 80vw;
   margin: 0 auto;
-  z-index: 2;
+  max-width: 80vw;
   position: relative;
+  z-index: 2;
 }
 
 a,
@@ -55,27 +55,27 @@ a:visited {
 }
 
 blockquote {
-  position: relative;
-  line-height: var(--quote-line-height, 1.1);
-  font-weight: 100;
   font-family: var(--override-quote-font-family, var(--quote-font-family));
+  font-weight: 100;
+  line-height: var(--quote-line-height, 1.1);
+  position: relative;
   transition: transform 1s ease;
 }
 
 blockquote p {
   font-size: 3.5vw;
   margin: 0;
-  padding-bottom: 1rem;
   max-height: 60vh;
+  padding-bottom: 1rem;
 }
 
 blockquote[aria-label]:before,
 blockquote[aria-label]:after {
-  position: absolute;
   color: #4f4e4991;
   font-size: 8rem;
-  width: 4rem;
   height: 4rem;
+  position: absolute;
+  width: 4rem;
 }
 
 blockquote[aria-label]:before {
@@ -85,9 +85,9 @@ blockquote[aria-label]:before {
 }
 
 blockquote[aria-label]:after {
+  bottom: 1rem;
   content: "”";
   right: -5rem;
-  bottom: 1rem;
 }
 
 blockquote .time {
@@ -108,23 +108,23 @@ cite #title {
 }
 
 select {
-  font-size: 0.85rem;
-  padding: 0.25rem 2rem 0.25rem 0.5rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: var(--font-color);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
   background-color: var(--background);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%232f2e2c' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
   background-position: right 0.5rem center;
+  background-repeat: no-repeat;
   background-size: 16px 12px;
   border: 1px solid var(--font-color);
   border-radius: 0.25rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  color: var(--font-color);
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.5;
   max-height: 30px;
+  padding: 0.25rem 2rem 0.25rem 0.5rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 [data-theme*="dark"] select {
@@ -132,13 +132,13 @@ select {
 }
 
 select#theme-select {
-  border-start-end-radius: 0;
   border-end-end-radius: 0;
+  border-start-end-radius: 0;
 }
 
 select#variant-select {
-  border-start-start-radius: 0;
   border-end-start-radius: 0;
+  border-start-start-radius: 0;
 }
 
 .input-group {
@@ -150,20 +150,20 @@ select#variant-select {
 }
 
 button {
-  font-size: 0.85rem;
-  padding: 0.25rem 0.5rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: var(--font-color);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
   background-color: var(--background);
   border: 1px solid var(--font-color);
   border-radius: 0.25rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  color: var(--font-color);
   cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.5;
   max-height: 30px;
+  padding: 0.25rem 0.5rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   white-space: nowrap;
 }
 
@@ -176,17 +176,17 @@ button span {
 }
 
 button.active {
-  border-color: var(--accent-color);
   background-color: var(--accent-color);
+  border-color: var(--accent-color);
   color: var(--background);
 }
 
 select:focus,
 button:focus {
   border-color: var(--accent-color);
-  outline: 0;
   box-shadow: 0 0 0 0.2rem
     color-mix(in srgb, var(--accent-color), transparent 75%) !important;
+  outline: 0;
 }
 
 button:focus.active {
@@ -194,18 +194,18 @@ button:focus.active {
 }
 
 #time-progress-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  height: 4px;
   background-color: var(--font-color);
-  transition: width 1s linear, opacity 1s;
+  bottom: 0;
+  height: 4px;
+  left: 0;
   opacity: 1;
+  position: fixed;
+  transition: width 1s linear, opacity 1s;
 }
 
 #zen {
-  border-start-end-radius: 0;
   border-end-end-radius: 0;
+  border-start-end-radius: 0;
 }
 
 #work {
@@ -214,22 +214,22 @@ button:focus.active {
 }
 
 #screensaver {
-  margin-left: -1px;
-  border-start-start-radius: 0;
   border-end-start-radius: 0;
+  border-start-start-radius: 0;
+  margin-left: -1px;
 }
 
 #exit-zen {
-  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
   color: var(--accent-color);
   display: none;
-  border-color: transparent;
-  background: transparent;
+  font-size: 2rem;
   line-height: 0.5;
-  padding: 0.7rem;
   margin-bottom: 1rem;
   max-height: none;
   opacity: 0.8;
+  padding: 0.7rem;
 }
 
 #exit-zen:hover {
@@ -245,30 +245,30 @@ button:focus.active {
 }
 
 footer {
-  font-size: 0.85rem;
-  position: fixed;
   bottom: 0;
+  display: flex;
+  font-size: 0.85rem;
+  justify-content: center;
   left: 0;
-  right: 0;
   line-height: 1.5;
   padding: 1rem;
-  display: flex;
-  justify-content: center;
+  position: fixed;
+  right: 0;
   z-index: 2;
 }
 
 #menu {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
   gap: 5px;
+  text-align: center;
 }
 
 #settings {
   display: flex;
-  gap: 4px;
   flex-wrap: wrap;
+  gap: 4px;
   justify-content: center;
 }
 
@@ -288,8 +288,8 @@ footer {
   }
 
   blockquote {
-    margin: 1rem;
     line-height: var(--quote-line-height, 1.3);
+    margin: 1rem;
   }
 
   blockquote[aria-label]:before,
@@ -314,10 +314,10 @@ footer {
   }
 
   footer select {
-    font-size: 0.8rem;
-    padding: 0.15rem 1.4rem 0.15rem 0.35rem;
     background-position: right 0.4rem center;
     background-size: 10px;
+    font-size: 0.8rem;
+    padding: 0.15rem 1.4rem 0.15rem 0.35rem;
     width: 4.5rem;
   }
 

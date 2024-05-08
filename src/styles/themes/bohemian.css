@@ -1,0 +1,24 @@
+[data-theme|="bohemian"] {
+  --quote-font-family: "Comfortaa", sans-serif;
+  --quote-line-height: 1.2;
+  --accent-color: #1abc9c;
+}
+
+[data-theme|="bohemian"] blockquote:before,
+[data-theme|="bohemian"] blockquote:after {
+  content: none;
+}
+
+[data-theme|="bohemian"] #time-progress-bar {
+  height: 100vh;
+  opacity: 0.1;
+  background-color: var(--accent-color);
+}
+
+[data-theme="bohemian-light"] {
+  --background: #fef9e7;
+}
+
+[data-theme="bohemian-dark"] {
+  --background: #1a1a1a;
+}
