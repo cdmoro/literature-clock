@@ -10,6 +10,7 @@ minutes = 1440
 # Define the folder where CSV files are located
 quotes_path = 'quotes/'
 output_path = 'public/times/'
+output_path_params = output_path
 ext = '.csv'
 statistics = {}
 
@@ -18,10 +19,11 @@ file_list = os.listdir(quotes_path)
 
 if len(sys.argv) == 2: 
     ext = sys.argv[1] + ext
+    output_path_params += sys.argv[1]
 
 # Delete the old time files
-if os.path.exists(output_path):
-    shutil.rmtree(output_path)
+if os.path.exists(output_path_params):
+    shutil.rmtree(output_path_params)
 
 print("Starting processing quotes...\n")
 
