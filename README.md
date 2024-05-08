@@ -103,13 +103,13 @@ At the moment, the clock has seven color themes and four special themes, we expe
 
 ### Web
 
-The easiest way to run the clock is to run an HTTP server and open `index.html` and voila!. If you are a VSCode user, you might want to use the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension.
+To run the project you need to have Node and NPM installed on your system. Then, clone the project, install the dependencies, execute `npm run dev` and voila! The clock will be automatically opened in your favorite browser.
 
-### Quotes: CSV to JSON
+### Generating quotes
 
 I used Python to generate the JSON files (one per time if the time has quotes) with the quotes. The script goes through all the CSV files (one per locale) and puts the files in the appropriate folders. Also, the script generates an additional JSON file with statistics per locale, such as the times with fewer quotes, the author with the most quotes, etc.
 
-To generate the times, simply run python `.\scripts\generate_times.py` in the root folder. By default, the script will generate all the JSON files, if you want to generate the JSON files for a particular locale you can add it as a parameter, i.e. `.\scripts\generate_times.py en-US` and that's it.
+To generate the times, simply run `python .\scripts\generate_times.py` in the root folder. By default, the script will generate all the JSON files, if you want to generate the JSON files for a particular locale you can add it as a parameter, i.e. `.\scripts\generate_times.py en-US`.
 
 ## Contact
 

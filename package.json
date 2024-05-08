@@ -1,0 +1,29 @@
+{
+  "name": "literature-clock",
+  "version": "1.0.0",
+  "description": "A clock that tells the time using quotes from literature. Support for multiple languages, themes, and more!",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --open",
+    "build": "tsc & vite build",
+    "preview": "vite preview",
+    "test": "vitest --environment=jsdom"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdmoro/literature-clock.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cdmoro/literature-clock/issues"
+  },
+  "homepage": "https://github.com/cdmoro/literature-clock#readme",
+  "devDependencies": {
+    "jsdom": "^24.0.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11",
+    "vitest": "^1.6.0"
+  }
+}

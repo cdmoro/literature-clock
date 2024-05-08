@@ -1,0 +1,16 @@
+:root {
+  --accent-color: #d24335;
+  --background: #12121a;
+  --font-color: #a3a29a;
+  --quote-font-family: "Special Elite", cursive;
+}
+
+[data-theme$="light"] {
+  --font-color: #2f2e2c;
+  --background: #eaeaec;
+}
+
+[data-theme$="dark"] {
+  --font-color: #a3a29a;
+  --background: #12121a;
+}

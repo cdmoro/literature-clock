@@ -1,0 +1,26 @@
+[data-theme|="elegant"] {
+  --quote-font-family: "Playfair Display", sans-serif;
+  --quote-line-height: 1.5;
+  --accent-color: #9f5bd5;
+}
+
+[data-theme|="elegant"] cite {
+  display: block;
+  text-align: right;
+}
+
+[data-theme|="elegant"] cite:before {
+  content: none;
+}
+
+[data-theme|="elegant"] #time-progress-bar {
+  background-color: var(--accent-color);
+}
+
+[data-theme="elegant-light"] {
+  --background: #f5f5f5;
+}
+
+[data-theme="elegant-dark"] {
+  --background: #1a1a1a;
+}

@@ -1,12 +1,18 @@
-import { THEME_FONTS, resetFont } from "./fonts.js";
-import { initStringSetting, setStringSetting, updateURL } from "./settings.js";
-import { doFitQuote, fitQuote, loadFontIfNotExists } from "./utils.js";
+import { THEME_FONTS, resetFont } from "./fonts";
+import {
+  initStringSetting,
+  setStringSetting,
+  updateURL,
+} from "../utils/settings";
+import { doFitQuote, fitQuote, loadFontIfNotExists } from "../utils/utils";
 
 function getRandomThemeColor() {
-  let colors = Array.from(document.querySelectorAll("#colors option")).map(
-    (op) => op.value
+  let colors = Array.from(
+    document.querySelectorAll<HTMLOptionElement>("#colors option")
+  ).map((op) => op.value);
+  const [themePrefix] = (document.documentElement.dataset.theme || "").split(
+    "-"
   );
-  const [themePrefix] = document.documentElement.dataset.theme.split("-");
 
   colors.pop();
   colors = colors.filter((color) => color !== themePrefix);
@@ -19,16 +25,22 @@ export function initTheme(defaultValue = "base-dark") {
     "theme",
     defaultValue
   ).split("-");
-  const themeSelect = document.getElementById("theme-select");
-  const variantSelect = document.getElementById("variant-select");
+  const themeSelect =
+    document.querySelector<HTMLSelectElement>("#theme-select");
+  const variantSelect =
+    document.querySelector<HTMLSelectElement>("#variant-select");
   const preferDarkThemes = window.matchMedia("(prefers-color-scheme: dark)");
 
   setStringSetting("theme", `${theme}-${variant}`);
-  if (THEME_FONTS[theme]) {
+  if (theme && THEME_FONTS[theme]) {
     loadFontIfNotExists(THEME_FONTS[theme]);
   }
-  themeSelect.value = theme;
-  variantSelect.value = variant;
+  if (themeSelect) {
+    themeSelect.value = theme;
+  }
+  if (variantSelect) {
+    variantSelect.value = variant;
+  }
 
   if (theme === "color") {
     theme = getRandomThemeColor();
@@ -39,13 +51,15 @@ export function initTheme(defaultValue = "base-dark") {
   document.documentElement.dataset.theme = `${theme}-${variant}`;
 
   window.addEventListener("resize", doFitQuote);
-  themeSelect.addEventListener("change", setTheme);
-  variantSelect.addEventListener("change", setTheme);
+  themeSelect?.addEventListener("change", () => setTheme());
+  variantSelect?.addEventListener("change", () => setTheme());
   preferDarkThemes.addEventListener("change", (e) => {
-    const variant = document.getElementById("variant-select").value;
+    const variant =
+      document.querySelector<HTMLSelectElement>("#variant-select")?.value;
 
     if (variant === "system") {
-      const theme = document.getElementById("theme-select").value;
+      const theme =
+        document.querySelector<HTMLSelectElement>("#theme-select")?.value;
 
       setStringSetting("theme", `${theme}-system`);
       document.documentElement.dataset.theme = `${theme}-${
@@ -56,16 +70,17 @@ export function initTheme(defaultValue = "base-dark") {
 }
 
 export function setTheme(doUpdateURL = true) {
-  const p = document.querySelector("blockquote p");
+  const p = document.querySelector<HTMLParagraphElement>("blockquote p");
 
   if (p) {
     p.style.visibility = "hidden";
   }
 
-  let theme = document.getElementById("theme-select").value;
-  let variant = document.getElementById("variant-select").value;
+  let theme = document.querySelector<HTMLSelectElement>("#theme-select")?.value;
+  let variant =
+    document.querySelector<HTMLSelectElement>("#variant-select")?.value;
 
-  if (THEME_FONTS[theme]) {
+  if (theme && THEME_FONTS[theme]) {
     loadFontIfNotExists(THEME_FONTS[theme]);
     resetFont();
   }

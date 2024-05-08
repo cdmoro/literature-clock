@@ -1,0 +1,69 @@
+[data-theme="base-light"] {
+  --accent-color: #d24335;
+  --background: #eaeaec;
+}
+
+[data-theme="base-dark"] {
+  --accent-color: #d24335;
+  --background: #12121a;
+}
+
+[data-theme="orange-light"] {
+  --accent-color: #f39c12;
+  --background: #fdf2e9;
+}
+
+[data-theme="orange-dark"] {
+  --accent-color: #f39c12;
+  --background: #1a0e0c;
+}
+
+[data-theme="purple-light"] {
+  --accent-color: #9b59b6;
+  --background: #ead7ff;
+}
+
+[data-theme="purple-dark"] {
+  --accent-color: #9b59b6;
+  --background: #20072a;
+}
+
+[data-theme="green-light"] {
+  --accent-color: #2ecc71;
+  --background: #f0fff4;
+}
+
+[data-theme="green-dark"] {
+  --accent-color: #2ecc71;
+  --background: #0e190e;
+}
+
+[data-theme="blue-light"] {
+  --accent-color: #2c97df;
+  --background: #d2e0ff;
+}
+
+[data-theme="blue-dark"] {
+  --accent-color: #2c97df;
+  --background: #0c0c24;
+}
+
+[data-theme="gray-light"] {
+  --accent-color: #808686;
+  --background: #f4f6f6;
+}
+
+[data-theme="gray-dark"] {
+  --accent-color: #f1f1f1;
+  --background: #1a1a1e;
+}
+
+[data-theme="pink-light"] {
+  --accent-color: #ff6b81;
+  --background: #ffdff1;
+}
+
+[data-theme="pink-dark"] {
+  --accent-color: #ff6b81;
+  --background: #1a0c0e;
+}
