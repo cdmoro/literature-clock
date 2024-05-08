@@ -10,7 +10,7 @@
   width: 90px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--font-color);
+  background-color: var(--accent-color);
 }
 
 [data-theme|="subtle"] blockquote[aria-label]:after {
@@ -24,7 +24,7 @@
 }
 
 [data-theme|="subtle"] p {
-  max-height: 40vh;
+  max-height: 45vh;
 }
 
 [data-theme|="subtle"] cite:before {
@@ -37,27 +37,39 @@
 
 [data-theme|="subtle"] cite {
   font-variant: small-caps;
-  transform: scale(0.9);
   display: inline-block;
+  color: var(--accent-color);
 }
 
-[data-theme="subtle-light"] p {
-  background: linear-gradient(
+[data-theme|="subtle"] .time {
+  -webkit-text-fill-color: var(--accent-color);
+}
+
+[data-theme|="subtle"] p {
+  background: var(--linear-gradient);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme|="subtle"] #time-progress-bar {
+  background: var(--linear-gradient);
+}
+
+[data-theme="subtle-light"] {
+  --background: #f1f1f1;
+  --accent-color: #333333;
+  --linear-gradient: linear-gradient(
     90deg,
     rgba(131, 58, 180, 1) 0%,
     rgba(253, 29, 29, 1) 50%,
     rgb(255, 156, 17) 100%
   );
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
-[data-theme="subtle-light"] .time {
-  -webkit-text-fill-color: #333;
-}
-
-[data-theme="subtle-dark"] p {
-  background: linear-gradient(
+[data-theme="subtle-dark"] {
+  --background: #060606;
+  --accent-color: #eeeeee;
+  --linear-gradient: linear-gradient(
     90deg,
     rgb(238, 3, 117) 0%,
     rgba(221, 38, 44, 1) 20%,
@@ -66,10 +78,4 @@
     rgba(168, 137, 139, 1) 80%,
     rgb(125, 199, 218) 100%
   );
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-[data-theme="subtle-dark"] .time {
-  -webkit-text-fill-color: #eee;
 }
