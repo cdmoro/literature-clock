@@ -10,6 +10,7 @@ import { exitZenMode } from "./zen";
 const INTERVAL = 10000;
 const TRANSITION_DURATION = `${INTERVAL / 1000}s`;
 let screensaverInterval: NodeJS.Timeout;
+let mouseTimeout: NodeJS.Timeout;
 
 function screensaver() {
   const quote = document.getElementById("quote");
@@ -37,6 +38,7 @@ function screensaver() {
 export function initScreensaver(defaultValue = false) {
   const value = initBooleanSetting("screensaver", defaultValue);
   const zenMode = document.querySelector<HTMLButtonElement>("#zen");
+  const footer = document.querySelector<HTMLElement>("footer");
 
   setBooleanSetting("screensaver", value);
   updateBooleanSettingButtonStatus("screensaver", value);
@@ -46,9 +48,23 @@ export function initScreensaver(defaultValue = false) {
     zenMode.disabled = true;
   }
 
+  if (value) {
+    footer?.classList.add("hidden");
+  }
+
   document
     .getElementById("screensaver")
     ?.addEventListener("click", toggleScreensaverMode);
+}
+
+function onMouseMove() {
+  const footer = document.querySelector<HTMLElement>("footer");
+  footer?.classList.remove("hidden");
+
+  clearTimeout(mouseTimeout);
+  mouseTimeout = setTimeout(() => {
+    footer?.classList.add("hidden");
+  }, 1500);
 }
 
 export function startScreensaver() {
@@ -56,19 +72,25 @@ export function startScreensaver() {
 
   screensaver();
   screensaverInterval = setInterval(screensaver, INTERVAL);
+
+  document.addEventListener("mousemove", onMouseMove);
 }
 
 function toggleScreensaverMode() {
   const isScreensaverMode = toggleBooleanSetting("screensaver");
   const zenMode = document.querySelector<HTMLButtonElement>("#zen");
+  const footer = document.querySelector<HTMLElement>("footer");
 
   updateURL("screensaver", isScreensaverMode);
   updateBooleanSettingButtonStatus("screensaver", isScreensaverMode);
 
   if (isScreensaverMode) {
+    footer?.classList.add("hidden");
     startScreensaver();
   } else {
     clearInterval(screensaverInterval);
+    footer?.classList.remove("hidden");
+    document.removeEventListener("mousemove", onMouseMove);
   }
 
   if (zenMode) {
