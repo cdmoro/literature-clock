@@ -10,7 +10,15 @@
   --background: #eaeaec;
 }
 
+[data-theme$="light"] body.screensaver {
+  box-shadow: 0px 0px 150px rgba(0, 0, 0, 0.5) inset;
+}
+
 [data-theme$="dark"] {
   --font-color: #a3a29a;
   --background: #12121a;
+}
+
+[data-theme$="dark"] body.screensaver {
+  box-shadow: 0px 0px 150px rgba(0, 0, 0, 0.9) inset;
 }
