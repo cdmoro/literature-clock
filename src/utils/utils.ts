@@ -1,14 +1,8 @@
 import { startScreensaver } from "../modules/screensaver";
 import { isBooleanSettingTrue } from "./settings";
 import { Locale, Quote } from "../types";
+import { INITIAL_THEME_FONT_SIZE } from "../modules/fonts";
 
-const INITIAL_THEME_FONT_SIZE: Record<string, number> = {
-  handwriting: 90,
-  whatsapp: 45,
-  retro: 70,
-  frame: 35,
-  subtle: 65,
-};
 const GITHUB_NEW_ISSUE_URL =
   "https://github.com/cdmoro/literature-clock/issues/new";
 
@@ -70,7 +64,7 @@ export function doFitQuote() {
   const [theme] = (document.documentElement.dataset.theme || "").split("-");
   const quote = document.querySelector<HTMLElement>("blockquote p");
   const cite = document.querySelector<HTMLElement>("blockquote cite");
-  let fontSize: number = INITIAL_THEME_FONT_SIZE[theme] || 75;
+  let fontSize: number = INITIAL_THEME_FONT_SIZE[theme as keyof typeof INITIAL_THEME_FONT_SIZE] || 75;
 
   if (quote) {
     quote.style.fontSize = `${fontSize}px`;

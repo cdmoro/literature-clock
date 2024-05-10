@@ -31,6 +31,10 @@
   content: none;
 }
 
+[data-theme|="subtle"] cite #title {
+  font-style: normal;
+}
+
 [data-theme|="subtle"] cite #author {
   display: block;
 }
@@ -38,7 +42,7 @@
 [data-theme|="subtle"] cite {
   font-variant: small-caps;
   display: inline-block;
-  color: var(--accent-color);
+  color: color-mix(in srgb, var(--accent-color), transparent 5%);
 }
 
 [data-theme|="subtle"] .time {

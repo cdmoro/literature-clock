@@ -24,12 +24,12 @@ body[data-loading] {
   display: none;
 }
 
-body.zen #time-progress-bar,
-body.zen footer #menu {
+body.zen:not(.screensaver) #time-progress-bar,
+body.zen:not(.screensaver) footer #menu {
   display: none !important;
 }
 
-body.zen #exit-zen {
+body.zen:not(.screensaver) #exit-zen {
   display: block;
 }
 
@@ -40,6 +40,15 @@ body.screensaver blockquote {
 body:not(.screensaver) blockquote {
   transform: none !important;
   transition-duration: 1s !important;
+}
+
+body.screensaver footer {
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+body.screensaver footer:hover {
+  opacity: 1;
 }
 
 #clock {

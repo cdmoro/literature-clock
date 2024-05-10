@@ -18,6 +18,15 @@ export const THEME_FONTS: Record<string, string> = {
   frame: "Playfair Display",
   subtle: "Unna",
 };
+
+export const INITIAL_THEME_FONT_SIZE = {
+  handwriting: 90,
+  whatsapp: 45,
+  retro: 70,
+  frame: 35,
+  subtle: 60,
+} as const;
+
 const FONTS = ["Special Elite", ...new Set(Object.values(THEME_FONTS))];
 const CSS_FONT_VARIABLE = "--override-quote-font-family";
 
