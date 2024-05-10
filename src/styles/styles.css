@@ -222,13 +222,13 @@ button:disabled {
 }
 
 #work {
-  border-radius: 0;
+  border-end-start-radius: 0;
+  border-start-start-radius: 0;
   margin-left: -1px;
 }
 
 #screensaver {
-  border-end-start-radius: 0;
-  border-start-start-radius: 0;
+  border-radius: 0;
   margin-left: -1px;
 }
 
@@ -239,10 +239,9 @@ button:disabled {
   display: none;
   font-size: 2rem;
   line-height: 0.5;
-  margin-bottom: 1rem;
   max-height: none;
-  opacity: 0.8;
-  padding: 0.7rem;
+  opacity: 0.4;
+  padding: 0.4rem;
 }
 
 #exit-zen:hover {
@@ -254,6 +253,7 @@ button:disabled {
 }
 
 #exit-zen:focus {
+  opacity: 1;
   border-color: var(--font-color);
 }
 
