@@ -5,6 +5,7 @@ import {
   updateBooleanSettingButtonStatus,
   updateURL,
 } from "../utils/settings";
+import { exitZenMode } from "./zen";
 
 const INTERVAL = 10000;
 const TRANSITION_DURATION = `${INTERVAL / 1000}s`;
@@ -18,7 +19,7 @@ function screensaver() {
     const getRandomNumber = (min: number, max: number) =>
       Math.random() * (max - min) + min;
     const scale = getRandomNumber(0.6, 1);
-    const windowHeight = window.innerHeight - 110 - 30;
+    const windowHeight = window.innerHeight - 30;
     const windowWidth = window.innerWidth - 30;
     const quoteHeight = quote?.offsetHeight * scale;
     const quoteWidth = quote?.offsetWidth * scale;
@@ -35,8 +36,15 @@ function screensaver() {
 
 export function initScreensaver(defaultValue = false) {
   const value = initBooleanSetting("screensaver", defaultValue);
+  const zenMode = document.querySelector<HTMLButtonElement>("#zen");
+
   setBooleanSetting("screensaver", value);
   updateBooleanSettingButtonStatus("screensaver", value);
+
+  if (zenMode && value) {
+    exitZenMode();
+    zenMode.disabled = true;
+  }
 
   document
     .getElementById("screensaver")
@@ -52,6 +60,7 @@ export function startScreensaver() {
 
 function toggleScreensaverMode() {
   const isScreensaverMode = toggleBooleanSetting("screensaver");
+  const zenMode = document.querySelector<HTMLButtonElement>("#zen");
 
   updateURL("screensaver", isScreensaverMode);
   updateBooleanSettingButtonStatus("screensaver", isScreensaverMode);
@@ -60,5 +69,9 @@ function toggleScreensaverMode() {
     startScreensaver();
   } else {
     clearInterval(screensaverInterval);
+  }
+
+  if (zenMode) {
+    zenMode.disabled = isScreensaverMode;
   }
 }

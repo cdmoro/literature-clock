@@ -13,14 +13,16 @@ export function initZenMode(defaultValue: boolean = false) {
 
   document.getElementById("zen")?.addEventListener("click", () => {
     const isZenMode = toggleBooleanSetting("zen");
-    
+
     setBooleanSetting("zen", isZenMode);
     updateURL("zen", isZenMode);
     updateBooleanSettingButtonStatus("zen", isZenMode);
   });
-  document.getElementById("exit-zen")?.addEventListener("click", () => {
-    setBooleanSetting("zen", false);
-    updateURL("zen", false);
-    updateBooleanSettingButtonStatus("zen", false);
-  });
+  document.getElementById("exit-zen")?.addEventListener("click", exitZenMode);
+}
+
+export function exitZenMode() {
+  setBooleanSetting("zen", false);
+  updateURL("zen", false);
+  updateBooleanSettingButtonStatus("zen", false);
 }

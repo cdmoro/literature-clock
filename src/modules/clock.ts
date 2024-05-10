@@ -1,5 +1,5 @@
 import { updateQuote } from "./quotes";
-import { getTime } from "../utils/utils";
+import { getTime, updateFavicon } from "../utils/utils";
 
 const urlParams = new URLSearchParams(window.location.search);
 const testTime = urlParams.get("time");
@@ -31,6 +31,10 @@ function updateProgressBar() {
 
 async function updateTime() {
   const time = testTime || getTime();
+
+  if (time.includes(":00") || time.includes(":30")) {
+    updateFavicon(time);
+  }
 
   if (!isTest) {
     updateProgressBar();

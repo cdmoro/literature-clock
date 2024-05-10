@@ -44,7 +44,7 @@ body:not(.screensaver) blockquote {
 
 body.screensaver footer {
   opacity: 0;
-  transition: opacity .5s;
+  transition: opacity 0.5s;
 }
 
 body.screensaver footer:hover {
@@ -200,6 +200,10 @@ button:focus {
 
 button:focus.active {
   background-color: var(--accent-color);
+}
+
+button:disabled {
+  opacity: 0.7;
 }
 
 #time-progress-bar {

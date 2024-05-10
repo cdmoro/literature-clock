@@ -64,7 +64,9 @@ export function doFitQuote() {
   const [theme] = (document.documentElement.dataset.theme || "").split("-");
   const quote = document.querySelector<HTMLElement>("blockquote p");
   const cite = document.querySelector<HTMLElement>("blockquote cite");
-  let fontSize: number = INITIAL_THEME_FONT_SIZE[theme as keyof typeof INITIAL_THEME_FONT_SIZE] || 75;
+  let fontSize: number =
+    INITIAL_THEME_FONT_SIZE[theme as keyof typeof INITIAL_THEME_FONT_SIZE] ||
+    75;
 
   if (quote) {
     quote.style.fontSize = `${fontSize}px`;
@@ -112,4 +114,26 @@ export function loadFontIfNotExists(font: string) {
   link.rel = "stylesheet";
   link.href = `https://fonts.googleapis.com/css2?family=${fontNameSanitized}:wght@400&display=swap`;
   document.head.appendChild(link);
+}
+
+export function getFaviconFileName(time: string) {
+  let [hours, minutes] = time.split(":").map(Number);
+
+  if (hours >= 12) {
+    hours -= 12;
+  }
+
+  return `${hours.toString().padStart(2, "0")}_${
+    minutes >= 0 && minutes < 30 ? "00" : "30"
+  }`;
+}
+
+export function updateFavicon(time: string = getTime()) {
+  var link = document.querySelector<HTMLLinkElement>("link[rel~='icon']");
+  if (!link) {
+    link = document.createElement("link");
+    link.rel = "icon";
+    document.head.appendChild(link);
+  }
+  link.href = `/favicon/${getFaviconFileName(time)}.ico`;
 }
