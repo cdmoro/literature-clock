@@ -7,7 +7,6 @@ const INITIAL_THEME_FONT_SIZE: Record<string, number> = {
   whatsapp: 45,
   retro: 70,
   frame: 35,
-  subtle: 45,
 };
 const GITHUB_NEW_ISSUE_URL =
   "https://github.com/cdmoro/literature-clock/issues/new";
