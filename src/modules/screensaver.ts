@@ -37,15 +37,13 @@ function screensaver() {
 
 export function initScreensaver(defaultValue = false) {
   const value = initBooleanSetting("screensaver", defaultValue);
-  const zenMode = document.querySelector<HTMLButtonElement>("#zen");
   const footer = document.querySelector<HTMLElement>("footer");
 
   setBooleanSetting("screensaver", value);
   updateBooleanSettingButtonStatus("screensaver", value);
 
-  if (zenMode && value) {
+  if (value) {
     exitZenMode();
-    zenMode.disabled = true;
   }
 
   if (value) {
@@ -78,7 +76,6 @@ export function startScreensaver() {
 
 function toggleScreensaverMode() {
   const isScreensaverMode = toggleBooleanSetting("screensaver");
-  const zenMode = document.querySelector<HTMLButtonElement>("#zen");
   const footer = document.querySelector<HTMLElement>("footer");
 
   updateURL("screensaver", isScreensaverMode);
@@ -87,13 +84,21 @@ function toggleScreensaverMode() {
   if (isScreensaverMode) {
     footer?.classList.add("hidden");
     startScreensaver();
+    exitZenMode();
   } else {
-    clearInterval(screensaverInterval);
-    footer?.classList.remove("hidden");
-    document.removeEventListener("mousemove", onMouseMove);
+    exitScreensaverMode();
   }
+}
 
-  if (zenMode) {
-    zenMode.disabled = isScreensaverMode;
-  }
+export function exitScreensaverMode() {
+  const footer = document.querySelector<HTMLElement>("footer");
+
+  document.removeEventListener("mousemove", onMouseMove);
+  clearInterval(screensaverInterval);
+
+  setBooleanSetting("screensaver", false);
+  updateURL("screensaver", false);
+  updateBooleanSettingButtonStatus("screensaver", false);
+
+  footer?.classList.remove("hidden");
 }

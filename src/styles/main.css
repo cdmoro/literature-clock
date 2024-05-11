@@ -1,0 +1,350 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  align-items: center;
+  background: var(--background);
+  background-blend-mode: var(--background-blend-mode);
+  background-image: var(--background-image);
+  color: var(--font-color);
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  justify-content: center;
+  overflow: hidden;
+  transition: background 0.5s, box-shadow 0.5s;
+}
+
+body[data-loading] {
+  display: none;
+}
+
+body.zen:not(.screensaver) #time-progress-bar,
+body.zen:not(.screensaver) footer #menu {
+  display: none !important;
+}
+
+body.zen:not(.screensaver) #exit-zen {
+  display: block;
+}
+
+body.screensaver blockquote {
+  transition-timing-function: linear;
+}
+
+body:not(.screensaver) blockquote {
+  transform: none !important;
+  transition-duration: 1s !important;
+}
+
+body.screensaver footer {
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+
+body.screensaver footer.hidden {
+  opacity: 0;
+}
+
+#clock {
+  margin: 0 auto;
+  max-width: 80vw;
+  position: relative;
+  z-index: 2;
+}
+
+a,
+a:visited {
+  color: var(--accent-color);
+}
+
+blockquote {
+  font-family: var(--override-quote-font-family, var(--quote-font-family));
+  font-weight: 100;
+  line-height: var(--quote-line-height, 1.1);
+  position: relative;
+  transition: transform 1s ease;
+}
+
+blockquote p {
+  font-size: 3.5vw;
+  margin: 0;
+  max-height: 60vh;
+  padding-bottom: 1rem;
+}
+
+blockquote[aria-label]:before,
+blockquote[aria-label]:after {
+  color: #4f4e4991;
+  font-size: 8rem;
+  height: 4rem;
+  position: absolute;
+  width: 4rem;
+}
+
+blockquote[aria-label]:before {
+  content: "“";
+  left: -5rem;
+  top: -2rem;
+}
+
+blockquote[aria-label]:after {
+  bottom: 1rem;
+  content: "”";
+  right: -5rem;
+}
+
+blockquote .time {
+  color: var(--accent-color);
+}
+
+cite {
+  font-size: 1.8vw;
+  font-style: normal;
+}
+
+cite:before {
+  content: "— ";
+}
+
+cite #title {
+  font-style: italic;
+}
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--background);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%232f2e2c' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 16px 12px;
+  border: 1px solid var(--font-color);
+  border-radius: 0.25rem;
+  color: var(--font-color);
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.5;
+  max-height: 30px;
+  padding: 0.25rem 2rem 0.25rem 0.5rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+[data-theme*="dark"] select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23a3a29a' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+select#theme-select {
+  border-end-end-radius: 0;
+  border-start-end-radius: 0;
+}
+
+select#variant-select {
+  border-end-start-radius: 0;
+  border-start-start-radius: 0;
+}
+
+.input-group {
+  display: inline-flex;
+}
+
+.input-group #variant-select {
+  margin-inline-start: -1px;
+}
+
+button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--background);
+  border: 1px solid var(--font-color);
+  border-radius: 0.25rem;
+  color: var(--font-color);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.5;
+  max-height: 30px;
+  padding: 0.25rem 0.5rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  white-space: nowrap;
+}
+
+button svg {
+  transform: translateY(2px);
+}
+
+button span {
+  margin-inline-start: 0.2rem;
+}
+
+button.active {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--background);
+}
+
+select:focus,
+button:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.2rem
+    color-mix(in srgb, var(--accent-color), transparent 75%) !important;
+  outline: 0;
+}
+
+button:focus.active {
+  background-color: var(--accent-color);
+}
+
+button:disabled {
+  opacity: 0.7;
+}
+
+#time-progress-bar {
+  background-color: var(--font-color);
+  bottom: 0;
+  height: 4px;
+  left: 0;
+  opacity: 1;
+  position: fixed;
+  transition: width 1s linear, opacity 1s;
+}
+
+#zen {
+  border-end-end-radius: 0;
+  border-start-end-radius: 0;
+}
+
+#work {
+  border-end-start-radius: 0;
+  border-start-start-radius: 0;
+  margin-left: -1px;
+}
+
+#screensaver {
+  border-radius: 0;
+  margin-left: -1px;
+}
+
+#exit-zen {
+  background: transparent;
+  border-color: transparent;
+  color: var(--accent-color);
+  display: none;
+  font-size: 2rem;
+  line-height: 0.5;
+  max-height: none;
+  opacity: 0.4;
+  padding: 0.4rem;
+}
+
+#exit-zen:hover {
+  opacity: 1;
+}
+
+#exit-zen svg {
+  transform: none;
+}
+
+#exit-zen:focus {
+  opacity: 1;
+  border-color: var(--font-color);
+}
+
+footer {
+  bottom: 0;
+  display: flex;
+  font-size: 0.85rem;
+  justify-content: center;
+  left: 0;
+  line-height: 1.5;
+  padding: 1rem;
+  position: fixed;
+  right: 0;
+  z-index: 2;
+}
+
+#menu {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+}
+
+#settings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+}
+
+#contact {
+  display: inline-block;
+}
+
+@media all and (max-width: 959px) and (min-width: 600px) {
+  cite {
+    font-size: 2vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #clock {
+    max-width: unset;
+  }
+
+  blockquote {
+    line-height: var(--quote-line-height, 1.3);
+    margin: 1rem;
+  }
+
+  blockquote[aria-label]:before,
+  blockquote[aria-label]:after {
+    content: unset;
+  }
+
+  blockquote p {
+    max-height: 50vh;
+  }
+
+  cite {
+    font-size: 1rem;
+  }
+
+  #exit-zen {
+    font-size: 1.7rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+
+  footer select {
+    background-position: right 0.4rem center;
+    background-size: 10px;
+    font-size: 0.8rem;
+    padding: 0.15rem 1.4rem 0.15rem 0.35rem;
+    width: 4.5rem;
+  }
+
+  footer button {
+    font-size: 0.8rem;
+    padding: 0.1rem 0.35rem;
+  }
+
+  footer button span {
+    display: none;
+  }
+
+  #theme,
+  #made-by {
+    display: none;
+  }
+}

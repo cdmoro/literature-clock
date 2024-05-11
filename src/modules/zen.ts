@@ -5,6 +5,7 @@ import {
   updateBooleanSettingButtonStatus,
   updateURL,
 } from "../utils/settings";
+import { exitScreensaverMode } from "./screensaver";
 
 export function initZenMode(defaultValue: boolean = false) {
   const value = initBooleanSetting("zen", defaultValue);
@@ -17,6 +18,10 @@ export function initZenMode(defaultValue: boolean = false) {
     setBooleanSetting("zen", isZenMode);
     updateURL("zen", isZenMode);
     updateBooleanSettingButtonStatus("zen", isZenMode);
+
+    if (isZenMode) {
+      exitScreensaverMode();
+    }
   });
   document.getElementById("exit-zen")?.addEventListener("click", exitZenMode);
 }
