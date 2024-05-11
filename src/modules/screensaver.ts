@@ -62,7 +62,7 @@ function onMouseMove() {
   clearTimeout(mouseTimeout);
   mouseTimeout = setTimeout(() => {
     footer?.classList.add("hidden");
-  }, 1500);
+  }, 1000);
 }
 
 export function startScreensaver() {
