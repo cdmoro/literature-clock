@@ -5,7 +5,7 @@ import { initWorkMode } from "./modules/work";
 import { initClock } from "./modules/clock";
 import { initScreensaver } from "./modules/screensaver";
 import { initFont } from "./modules/fonts";
-import { getTime, updateFavicon } from "./utils/utils";
+import { updateFavicon } from "./utils/utils";
 
 document.addEventListener("DOMContentLoaded", () => {
   updateFavicon();
