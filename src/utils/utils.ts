@@ -21,6 +21,38 @@ export function getTime() {
   );
 }
 
+export function getDayProgress() {
+  const now = new Date();
+  const seconds =
+    now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+  const progress = (seconds * 100) / 86400;
+
+  return parseFloat(progress.toFixed(2));
+}
+
+export function getDayParameters() {
+  const progress = getDayProgress();
+  const render = progress >= 25 && progress < 75 ? "sun" : "moon";
+  const factor = progress < 50 ? 1 : -1;
+  let stage;
+
+  if (progress < 25) {
+    stage = "dawn";
+  } else if (progress >= 25 && progress < 50) {
+    stage = "sunrise";
+  } else if (progress >= 50 && progress < 75) {
+    stage = "sunset";
+  } else if (progress >= 75) {
+    stage = "dusk";
+  }
+
+  return {
+    render,
+    stage,
+    factor,
+  };
+}
+
 export function updateGHLinks(time: string, quote: Quote, locale: Locale) {
   const quoteRaw = `${quote.quote_first}${quote.quote_time_case}${quote.quote_last}`;
 
