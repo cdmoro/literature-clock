@@ -32,24 +32,23 @@ export function getDayProgress() {
 
 export function getDayParameters() {
   const progress = getDayProgress();
-  const render = progress >= 25 && progress < 75 ? "sun" : "moon";
+  const actor = progress >= 25 && progress < 75 ? "sun" : "moon";
   const factor = progress < 50 ? 1 : -1;
-  let stage;
+  let scene = "dawn";
 
-  if (progress < 25) {
-    stage = "dawn";
-  } else if (progress >= 25 && progress < 50) {
-    stage = "sunrise";
+  if (progress >= 25 && progress < 50) {
+    scene = "sunrise";
   } else if (progress >= 50 && progress < 75) {
-    stage = "sunset";
+    scene = "sunset";
   } else if (progress >= 75) {
-    stage = "dusk";
+    scene = "dusk";
   }
 
   return {
-    render,
-    stage,
+    actor,
+    scene,
     factor,
+    progress,
   };
 }
 
@@ -84,9 +83,8 @@ export function updateGHLinks(time: string, quote: Quote, locale: Locale) {
   reportErrorUrl.searchParams.set("author", quote.author);
   reportErrorUrl.searchParams.set("quote", quoteRaw.replace(/<br>/g, " "));
 
-  const reportError = document.getElementById(
-    "report-error"
-  ) as HTMLAnchorElement;
+  const reportError =
+    document.querySelector<HTMLAnchorElement>("#report-error");
   if (reportError) {
     reportError.href = reportErrorUrl.href;
   }
