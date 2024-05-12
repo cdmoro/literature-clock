@@ -58,13 +58,13 @@ export function startScreensaver() {
 
 function toggleScreensaverMode() {
   const isScreensaverMode = toggleBooleanSetting("screensaver");
-  const footer = document.querySelector<HTMLElement>("footer");
+  const menu = document.querySelector<HTMLElement>("footer");
 
   updateURL("screensaver", isScreensaverMode);
   updateBooleanSettingButtonStatus("screensaver", isScreensaverMode);
 
   if (isScreensaverMode) {
-    footer?.classList.add("hidden");
+    menu?.classList.add("hidden");
     startScreensaver();
     exitZenMode();
   } else {
