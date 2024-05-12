@@ -42,15 +42,6 @@ body:not(.screensaver) blockquote {
   transition-duration: 1s !important;
 }
 
-body.screensaver footer {
-  transition: opacity 0.5s;
-  opacity: 1;
-}
-
-body.screensaver footer.hidden {
-  opacity: 0;
-}
-
 #clock {
   margin: 0 auto;
   max-width: 80vw;
@@ -104,6 +95,10 @@ blockquote .time {
 }
 
 cite {
+  font-family: var(
+    --override-quote-font-family,
+    var(--cite-font-family, var(--quote-font-family))
+  );
   font-size: 1.8vw;
   font-style: normal;
 }
@@ -114,6 +109,10 @@ cite:before {
 
 cite #title {
   font-style: italic;
+}
+
+cite #title:after {
+  content: ", ";
 }
 
 select {
@@ -276,6 +275,12 @@ footer {
   flex-direction: column;
   gap: 5px;
   text-align: center;
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+
+#menu.hidden {
+  opacity: 0;
 }
 
 #settings {

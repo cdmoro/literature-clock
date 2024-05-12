@@ -30,13 +30,13 @@ The clock can be controlled using URL parameters, these parameters will overwrit
 - `zen`: activate Zen mode
 - `work`: activate Work mode
 - `screensaver`: activate Screensaver mode
-- `locale`: set the locale.
+- `locale`: set the locale
   - Locales: `en_US`, `es_ES`, `pt_BR`, `fr_FR`, `it_IT`, and `random`
-- `theme`: set the theme.
+- `theme`: set the theme
   - Color themes: `Base`, `Pink`, `Green`, `Orange`, `Purple`, `Blue`, `Gray`, and `random`
-  - Special themes: `Retro`, `Elegant`, `Festive`, `Bohemian`, `Handwriting`, `Whatsapp`, `Terminal`, `Frame`, and `Subtle`
+  - Special themes: `Retro`, `Elegant`, `Festive`, `Bohemian`, `Handwriting`, `Whatsapp`, `Terminal`, `Frame`, `Subtle`, and `Poster`
 - `time`: get the quotes for a particular time ([link](https://literatureclock.netlify.app/?time=12:30))
-- `quote`: test a quote before submitting it ([link](https://literatureclock.netlify.app/?quote=Hi%20mom!%20I%27m%20part%20of%20the%20Literature%20Clock!)). You don't need to escape the quote by adding the special characters, just write the quote and the browser will add them.
+- `quote`: test a quote before submitting it ([link](https://literatureclock.netlify.app/?quote=Hi%20mom!%20I%27m%20part%20of%20the%20Literature%20Clock!)). You don't need to escape the quote by adding the special characters, just write the quote and the browser will add them
 - `index`: get a specific quote from the array of quotes instead of a random one (for testing purposes)
 
 ## Languages
