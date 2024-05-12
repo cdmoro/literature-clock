@@ -6,17 +6,18 @@ import {
 } from "../utils/settings";
 import { fitQuote, loadFontIfNotExists } from "../utils/utils";
 
-export const THEME_FONTS: Record<string, string> = {
-  retro: "VT323",
-  elegant: "Playfair Display",
-  festive: "Borel",
-  bohemian: "Comfortaa",
-  handwriting: "Reenie Beanie",
-  anaglyph: "Anton",
-  whatsapp: "Roboto",
-  terminal: "B612 Mono",
-  frame: "Playfair Display",
-  subtle: "Unna",
+export const THEME_FONTS: Record<string, string[]> = {
+  retro: ["VT323"],
+  elegant: ["Playfair Display"],
+  festive: ["Borel"],
+  bohemian: ["Comfortaa"],
+  handwriting: ["Reenie Beanie"],
+  anaglyph: ["Anton"],
+  whatsapp: ["Roboto"],
+  terminal: ["B612 Mono"],
+  frame: ["Playfair Display"],
+  subtle: ["Unna"],
+  poster: ["Averia Serif Libre", "Allura"],
 };
 
 export const INITIAL_THEME_FONT_SIZE = {
@@ -25,9 +26,10 @@ export const INITIAL_THEME_FONT_SIZE = {
   retro: 70,
   frame: 35,
   subtle: 60,
+  poster: 35,
 } as const;
 
-const FONTS = ["Special Elite", ...new Set(Object.values(THEME_FONTS))];
+const FONTS = ["Special Elite", ...new Set(Object.values(THEME_FONTS))].flat();
 const CSS_FONT_VARIABLE = "--override-quote-font-family";
 
 export function initFont(defaultValue = "default") {

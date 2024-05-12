@@ -33,7 +33,9 @@ export function initTheme(defaultValue = "base-dark") {
 
   setStringSetting("theme", `${theme}-${variant}`);
   if (theme && THEME_FONTS[theme]) {
-    loadFontIfNotExists(THEME_FONTS[theme]);
+    THEME_FONTS[theme].forEach((font) => {
+      loadFontIfNotExists(font);
+    });
   }
   if (themeSelect) {
     themeSelect.value = theme;
@@ -81,7 +83,9 @@ export function setTheme(doUpdateURL = true) {
     document.querySelector<HTMLSelectElement>("#variant-select")?.value;
 
   if (theme && THEME_FONTS[theme]) {
-    loadFontIfNotExists(THEME_FONTS[theme]);
+    THEME_FONTS[theme].forEach((font) => {
+      loadFontIfNotExists(font);
+    });
     resetFont();
   }
   setStringSetting("theme", `${theme}-${variant}`);

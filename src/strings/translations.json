@@ -37,6 +37,7 @@
     "terminal": "Terminal",
     "frame": "Frame",
     "subtle": "Subtle",
+    "poster": "Poster",
 
     "system": "System",
     "light": "Light",
@@ -91,6 +92,7 @@
     "terminal": "Terminal",
     "frame": "Marco",
     "subtle": "Sutil",
+    "poster": "Poster",
 
     "system": "Sistema",
     "light": "Claro",
@@ -144,6 +146,7 @@
     "terminal": "Terminal",
     "frame": "Moldura",
     "subtle": "Sutil",
+    "poster": "Pôster",
 
     "system": "Sistema",
     "light": "Claro",
@@ -197,6 +200,7 @@
     "terminal": "Terminal",
     "frame": "Bordure",
     "subtle": "Subtil",
+    "poster": "Affiche",
 
     "system": "Système",
     "light": "Clair",
@@ -251,6 +255,7 @@
     "terminal": "Terminale",
     "frame": "Cornice",
     "subtle": "Sottile",
+    "poster": "Poster",
 
     "system": "Sistema",
     "light": "Chiaro",

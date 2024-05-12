@@ -1,0 +1,67 @@
+[data-theme|="poster"] {
+  --quote-font-family: "Averia Serif Libre", sans-serif;
+  --cite-font-family: "Allura", sans-serif;
+  --quote-line-height: 1.5;
+}
+
+[data-theme|="poster"] #clock {
+  max-width: 60vw;
+}
+
+[data-theme|="poster"] blockquote:before,
+[data-theme|="poster"] blockquote:after {
+  content: none;
+}
+
+[data-theme|="poster"] blockquote[aria-label] {
+  border-width: 1rem;
+  border-style: solid;
+  padding: 3.5rem;
+  overflow: hidden;
+}
+
+[data-theme|="poster"] blockquote p {
+  max-height: 37vh;
+}
+
+[data-theme|="poster"] cite {
+  display: block;
+  border-top: var(--font-color) solid 2px;
+  margin-top: 1rem;
+  padding-top: 2rem;
+}
+
+[data-theme|="poster"] cite:before {
+  content: none;
+}
+
+[data-theme|="poster"] #title {
+  display: none;
+}
+
+[data-theme|="poster"] #author {
+  display: inline-block;
+  transform: scale(1.5);
+  transform-origin: left;
+}
+
+[data-theme="poster-light"] blockquote {
+  border-color: #111111;
+  box-shadow: 5px 5px 10px #333333 inset, 10px 10px 25px #333;
+}
+
+[data-theme="poster-dark"] blockquote {
+  border-color: #bfa783;
+  box-shadow: 5px 5px 15px #000000 inset, 10px 10px 25px #000000;
+}
+
+@media only screen and (max-width: 600px) {
+  [data-theme|="poster"] #clock {
+    max-width: initial;
+  }
+
+  [data-theme|="poster"] blockquote[aria-label] {
+    padding: 2.5rem 2rem;
+    border-width: 0.75rem;
+  }
+}

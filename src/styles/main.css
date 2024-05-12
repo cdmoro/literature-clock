@@ -104,6 +104,10 @@ blockquote .time {
 }
 
 cite {
+  font-family: var(
+    --override-quote-font-family,
+    var(--cite-font-family, var(--quote-font-family))
+  );
   font-size: 1.8vw;
   font-style: normal;
 }
@@ -114,6 +118,10 @@ cite:before {
 
 cite #title {
   font-style: italic;
+}
+
+cite #title:after {
+  content: ", ";
 }
 
 select {
