@@ -42,15 +42,6 @@ body:not(.screensaver) blockquote {
   transition-duration: 1s !important;
 }
 
-body.screensaver footer {
-  transition: opacity 0.5s;
-  opacity: 1;
-}
-
-body.screensaver footer.hidden {
-  opacity: 0;
-}
-
 #clock {
   margin: 0 auto;
   max-width: 80vw;
@@ -284,6 +275,12 @@ footer {
   flex-direction: column;
   gap: 5px;
   text-align: center;
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+
+#menu.hidden {
+  opacity: 0;
 }
 
 #settings {

@@ -5,7 +5,7 @@ import { initWorkMode } from "./modules/work";
 import { initClock } from "./modules/clock";
 import { initScreensaver } from "./modules/screensaver";
 import { initFont } from "./modules/fonts";
-import { updateFavicon } from "./utils/utils";
+import { onMouseMove, updateFavicon } from "./utils/utils";
 
 document.addEventListener("DOMContentLoaded", () => {
   updateFavicon();
@@ -17,5 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initFont("default");
   initClock();
 
+  document.addEventListener("mousemove", onMouseMove);
   document.body.removeAttribute("data-loading");
 });

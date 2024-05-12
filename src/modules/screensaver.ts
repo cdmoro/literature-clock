@@ -10,7 +10,6 @@ import { exitZenMode } from "./zen";
 const INTERVAL = 10000;
 const TRANSITION_DURATION = `${INTERVAL / 1000}s`;
 let screensaverInterval: NodeJS.Timeout;
-let mouseTimeout: NodeJS.Timeout;
 
 function screensaver() {
   const quote = document.getElementById("quote");
@@ -37,7 +36,6 @@ function screensaver() {
 
 export function initScreensaver(defaultValue = false) {
   const value = initBooleanSetting("screensaver", defaultValue);
-  const footer = document.querySelector<HTMLElement>("footer");
 
   setBooleanSetting("screensaver", value);
   updateBooleanSettingButtonStatus("screensaver", value);
@@ -46,23 +44,9 @@ export function initScreensaver(defaultValue = false) {
     exitZenMode();
   }
 
-  if (value) {
-    footer?.classList.add("hidden");
-  }
-
   document
     .getElementById("screensaver")
     ?.addEventListener("click", toggleScreensaverMode);
-}
-
-function onMouseMove() {
-  const footer = document.querySelector<HTMLElement>("footer");
-  footer?.classList.remove("hidden");
-
-  clearTimeout(mouseTimeout);
-  mouseTimeout = setTimeout(() => {
-    footer?.classList.add("hidden");
-  }, 3000);
 }
 
 export function startScreensaver() {
@@ -70,8 +54,6 @@ export function startScreensaver() {
 
   screensaver();
   screensaverInterval = setInterval(screensaver, INTERVAL);
-
-  document.addEventListener("mousemove", onMouseMove);
 }
 
 function toggleScreensaverMode() {
@@ -91,14 +73,9 @@ function toggleScreensaverMode() {
 }
 
 export function exitScreensaverMode() {
-  const footer = document.querySelector<HTMLElement>("footer");
-
-  document.removeEventListener("mousemove", onMouseMove);
   clearInterval(screensaverInterval);
 
   setBooleanSetting("screensaver", false);
   updateURL("screensaver", false);
   updateBooleanSettingButtonStatus("screensaver", false);
-
-  footer?.classList.remove("hidden");
 }

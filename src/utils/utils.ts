@@ -5,6 +5,7 @@ import { INITIAL_THEME_FONT_SIZE } from "../modules/fonts";
 
 const GITHUB_NEW_ISSUE_URL =
   "https://github.com/cdmoro/literature-clock/issues/new";
+let mouseTimeout: NodeJS.Timeout;
 
 export function getTime() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -136,4 +137,14 @@ export function updateFavicon(time: string = getTime()) {
     document.head.appendChild(link);
   }
   link.href = `/favicon/${getFaviconFileName(time)}.ico`;
+}
+
+export function onMouseMove() {
+  const menu = document.querySelector<HTMLElement>("#menu");
+  menu?.classList.remove("hidden");
+
+  clearTimeout(mouseTimeout);
+  mouseTimeout = setTimeout(() => {
+    menu?.classList.add("hidden");
+  }, 3000);
 }
