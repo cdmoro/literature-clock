@@ -33,7 +33,6 @@ export function getDayProgress() {
 export function getDayParameters() {
   const progress = getDayProgress();
   const actor = progress >= 25 && progress < 75 ? "sun" : "moon";
-  const factor = progress < 50 ? 1 : -1;
   let scene = "dawn";
 
   if (progress >= 25 && progress < 50) {
@@ -44,10 +43,20 @@ export function getDayParameters() {
     scene = "dusk";
   }
 
+  const opacity = parseFloat(
+    (progress <= 50 ? progress / 50 : 1 - (progress / 50 - 1)).toFixed(2)
+  );
+
+  // const root = document.querySelector<HTMLElement>(":root");
+  // root?.style.setProperty("--dynamic-opacity", opacity.toString());
+  // root?.setAttribute("data-actor", actor);
+  // root?.setAttribute("data-progress", progress.toString());
+  // root?.setAttribute("data-scene", scene);
+
   return {
     actor,
     scene,
-    factor,
+    opacity,
     progress,
   };
 }
