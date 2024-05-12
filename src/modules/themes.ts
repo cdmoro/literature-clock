@@ -5,6 +5,7 @@ import {
   updateURL,
 } from "../utils/settings";
 import { doFitQuote, fitQuote, loadFontIfNotExists } from "../utils/utils";
+import { setDayParameters } from "./dynamic";
 
 function getRandomThemeColor() {
   let colors = Array.from(
@@ -100,6 +101,10 @@ export function setTheme(doUpdateURL = true) {
     variant = window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light";
+  }
+
+  if (theme === "dynamic") {
+    setDayParameters();
   }
 
   document.documentElement.dataset.theme = `${theme}-${variant}`;

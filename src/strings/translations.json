@@ -38,6 +38,7 @@
     "frame": "Frame",
     "subtle": "Subtle",
     "poster": "Poster",
+    "dynamic": "Dynamic",
 
     "system": "System",
     "light": "Light",
@@ -93,6 +94,7 @@
     "frame": "Marco",
     "subtle": "Sutil",
     "poster": "Poster",
+    "dynamic": "Dinámico",
 
     "system": "Sistema",
     "light": "Claro",
@@ -147,6 +149,7 @@
     "frame": "Moldura",
     "subtle": "Sutil",
     "poster": "Pôster",
+    "dynamic": "Dinâmico",
 
     "system": "Sistema",
     "light": "Claro",
@@ -201,6 +204,7 @@
     "frame": "Bordure",
     "subtle": "Subtil",
     "poster": "Affiche",
+    "dynamic": "Dynamique",
 
     "system": "Système",
     "light": "Clair",
@@ -256,6 +260,7 @@
     "frame": "Cornice",
     "subtle": "Sottile",
     "poster": "Poster",
+    "dynamic": "Dinamico",
 
     "system": "Sistema",
     "light": "Chiaro",

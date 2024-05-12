@@ -22,46 +22,6 @@ export function getTime() {
   );
 }
 
-export function getDayProgress() {
-  const now = new Date();
-  const seconds =
-    now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
-  const progress = (seconds * 100) / 86400;
-
-  return parseFloat(progress.toFixed(2));
-}
-
-export function getDayParameters() {
-  const progress = getDayProgress();
-  const actor = progress >= 25 && progress < 75 ? "sun" : "moon";
-  let scene = "dawn";
-
-  if (progress >= 25 && progress < 50) {
-    scene = "sunrise";
-  } else if (progress >= 50 && progress < 75) {
-    scene = "sunset";
-  } else if (progress >= 75) {
-    scene = "dusk";
-  }
-
-  const opacity = parseFloat(
-    (progress <= 50 ? progress / 50 : 1 - (progress / 50 - 1)).toFixed(2)
-  );
-
-  // const root = document.querySelector<HTMLElement>(":root");
-  // root?.style.setProperty("--dynamic-opacity", opacity.toString());
-  // root?.setAttribute("data-actor", actor);
-  // root?.setAttribute("data-progress", progress.toString());
-  // root?.setAttribute("data-scene", scene);
-
-  return {
-    actor,
-    scene,
-    opacity,
-    progress,
-  };
-}
-
 export function updateGHLinks(time: string, quote: Quote, locale: Locale) {
   const quoteRaw = `${quote.quote_first}${quote.quote_time_case}${quote.quote_last}`;
 
