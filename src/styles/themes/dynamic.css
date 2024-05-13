@@ -23,6 +23,7 @@
   box-shadow: 0 0 51px 18px rgb(238, 241, 21), 0 0 71px 58px rgb(241, 114, 21);
   filter: blur(2px);
   top: calc(100% - var(--day-progress) * 1%);
+  opacity: 0.5;
 }
 
 [data-theme|="dynamic"] blockquote:before,
@@ -30,8 +31,18 @@
   content: none;
 }
 
+[data-theme|="dynamic"][data-scene="sunrise"] {
+  --background-image: linear-gradient(
+    to top,
+    rgb(241, 114, 21),
+    rgb(246, 248, 98) 10%,
+    #9dc6ff 60%
+  );
+  --quote-font-family: "Sunshiney", cursive;
+  --font-color: #333;
+}
+
 [data-theme|="dynamic"][data-scene="sunrise"] blockquote {
-  backdrop-filter: blur(10px);
   padding: 1rem 2rem;
   border-radius: 0.25rem;
 }
@@ -46,12 +57,6 @@
     rgba(28, 27, 43, 1) 86%
   );
   --accent-color: rgba(28, 27, 43, 1);
-}
-
-[data-theme|="dynamic"][data-scene="sunrise"] {
-  --background-image: linear-gradient(to top, rgb(246, 248, 98), #9dc6ff);
-  --quote-font-family: "Unna, sans-serif";
-  --font-color: #333;
 }
 
 [data-theme|="dynamic"][data-scene="night"] {
