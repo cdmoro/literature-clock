@@ -40,8 +40,9 @@ export function setDayParameters() {
   const { opacity, actor, progress, scene, actorLeft } = getDayParameters();
 
   const root = document.querySelector<HTMLElement>(":root");
-  root?.style.setProperty("--dynamic-opacity", opacity.toString());
+  root?.style.setProperty("--day-opacity", opacity.toString());
   root?.style.setProperty("--actor-left", actorLeft.toString());
+  root?.style.setProperty("--day-progress", progress.toString());
   root?.setAttribute("data-actor", actor);
   root?.setAttribute("data-progress", progress.toString());
   root?.setAttribute("data-scene", scene);

@@ -18,6 +18,24 @@
   background-color: rgb(189, 189, 189);
 }
 
+[data-theme|="dynamic"][data-scene="sunrise"][data-actor="sun"] body:before {
+  background-color: rgb(242, 242, 184);
+  box-shadow: 0 0 51px 18px rgb(238, 241, 21), 0 0 71px 58px rgb(241, 114, 21);
+  filter: blur(2px);
+  top: calc(100% - var(--day-progress) * 1%);
+}
+
+[data-theme|="dynamic"] blockquote:before,
+[data-theme|="dynamic"] blockquote:after {
+  content: none;
+}
+
+[data-theme|="dynamic"][data-scene="sunrise"] blockquote {
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+}
+
 [data-theme|="dynamic"][data-scene="sunset"] {
   --background-image: linear-gradient(
     0deg,
@@ -31,7 +49,9 @@
 }
 
 [data-theme|="dynamic"][data-scene="sunrise"] {
-  --background-image: linear-gradient(to right, #e0eafc, #cfdef3);
+  --background-image: linear-gradient(to top, rgb(246, 248, 98), #9dc6ff);
+  --quote-font-family: "Unna, sans-serif";
+  --font-color: #333;
 }
 
 [data-theme|="dynamic"][data-scene="night"] {
