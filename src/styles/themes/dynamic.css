@@ -2,7 +2,7 @@
   position: relative;
 }
 
-[data-theme|="dynamic"] body:before {
+[data-theme|="dynamic"] .actor {
   content: "";
   width: 10vw;
   height: 10vw;
@@ -14,11 +14,17 @@
   top: 100px;
 }
 
-[data-theme|="dynamic"][data-actor="moon"] body:before {
-  background-color: rgb(189, 189, 189);
+[data-theme|="dynamic"][data-scene="dusk"] .actor {
+  background-color: #000000;
+  box-shadow: 0 0 0 0 rgb(189, 189, 189) inset;
 }
 
-[data-theme|="dynamic"][data-scene="sunrise"][data-actor="sun"] body:before {
+[data-theme|="dynamic"][data-scene="night"] .actor {
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 0 rgb(189, 189, 189) inset, 0 0 40px 0px #FFF;
+}
+
+[data-theme|="dynamic"][data-scene="sunrise"] .actor {
   background-color: rgb(242, 242, 184);
   box-shadow: 0 0 51px 18px rgb(238, 241, 21), 0 0 71px 58px rgb(241, 114, 21);
   filter: blur(2px);
@@ -32,12 +38,7 @@
 }
 
 [data-theme|="dynamic"][data-scene="sunrise"] {
-  --background-image: linear-gradient(
-    to top,
-    rgb(241, 114, 21),
-    rgb(246, 248, 98) 10%,
-    #9dc6ff 60%
-  );
+  --background-image: linear-gradient(to top, rgb(230, 174, 41), rgb(246, 248, 98) 18.49%, #9dc6ff 57.98%);
   --quote-font-family: "Sunshiney", cursive;
   --font-color: #333;
 }
@@ -59,7 +60,34 @@
   --accent-color: rgba(28, 27, 43, 1);
 }
 
+[data-theme|="dynamic"][data-scene="dusk"] {
+  --background-image: linear-gradient(to top, rgba(173, 53, 25, 1), rgba(250, 131, 73, 1) 4.2%, rgba(170, 125, 131, 1) 10.5%, rgba(50, 47, 76, 1) 26.89%, rgb(7, 7, 21) 40.34%);
+  /* --accent-color: rgb(17, 0, 255); */
+  --quote-font-family: "Tilt Neon", serif;
+  --font-color: #fafafa;
+}
+
+[data-theme|="dynamic"][data-scene="dusk"] .time {
+  text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #f09,
+      0 0 80px #f09,
+      0 0 90px #f09,
+      0 0 100px #f09,
+      0 0 150px #f09;
+  color: #FFFFFF;
+}
+
 [data-theme|="dynamic"][data-scene="night"] {
-  --accent-color: rgb(189, 189, 189);
-  --background-image: linear-gradient(to bottom, #000120, #000000);
+  --accent-color: #FFF;
+  --bg-opacity: 1;
+  --background-image: linear-gradient(to bottom, rgba(0, 1, 32, var(--bg-opacity)), rgba(0, 0, 0, var(--bg-opacity))), linear-gradient(
+    to top,
+    rgb(241, 114, 21),
+    rgb(246, 248, 98) 10%,
+    #9dc6ff 60%
+  );
+  --quote-font-family: "Jacquard 12", serif;
 }

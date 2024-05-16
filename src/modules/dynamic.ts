@@ -1,3 +1,6 @@
+const MOON_PHASES = ["new", "waxing-crescent", "first-quarter", "waxing-gibbous", "full-moon", "waning gibbous", "third-quarter", "waning crescent"];
+const moonPhase = MOON_PHASES[Math.floor(Math.random() * MOON_PHASES.length)];
+
 export function getDayProgress() {
   const now = new Date();
   const seconds =
@@ -9,7 +12,6 @@ export function getDayProgress() {
 
 export function getDayParameters() {
   const progress = getDayProgress();
-  const actor = progress < 25 ? "moon" : "sun";
   let scene = "night";
 
   if (progress >= 25 && progress < 50) {
@@ -24,11 +26,12 @@ export function getDayParameters() {
     (progress <= 50 ? progress / 50 : 1 - (progress / 50 - 1)).toFixed(2)
   );
 
-  const actorLeft =
-    progress <= 25 ? (progress * 100) / 25 : ((progress - 25) * 100) / 75;
+  // const actorLeft =
+    // progress <= 25 ? (progress * 100) / 25 : ((progress - 25) * 100) / 75;
+  const actorLeft = progress >= 25 && progress <=75 ? ((progress - 25) * 100) / 50 : progress > 75 ? ((progress-75) * 50) / 25 : ((progress + 25) * 100) / 50 ;
+  
 
   return {
-    actor,
     scene,
     opacity,
     progress,
@@ -37,13 +40,19 @@ export function getDayParameters() {
 }
 
 export function setDayParameters() {
-  const { opacity, actor, progress, scene, actorLeft } = getDayParameters();
+  const { opacity, progress, scene, actorLeft } = getDayParameters();
+
+  if (!document.querySelector(".actor")) {
+    const actor = document.createElement("div");
+    actor.classList.add("actor");
+    document.querySelector("main")?.appendChild(actor);
+  }
 
   const root = document.querySelector<HTMLElement>(":root");
   root?.style.setProperty("--day-opacity", opacity.toString());
   root?.style.setProperty("--actor-left", actorLeft.toString());
   root?.style.setProperty("--day-progress", progress.toString());
-  root?.setAttribute("data-actor", actor);
+  root?.style.setProperty("--moon-phase", moonPhase);
   root?.setAttribute("data-progress", progress.toString());
   root?.setAttribute("data-scene", scene);
 }
