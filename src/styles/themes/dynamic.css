@@ -19,11 +19,6 @@
   box-shadow: 0 0 0 0 rgb(189, 189, 189) inset;
 }
 
-[data-theme|="dynamic"][data-scene="night"] .actor {
-  background-color: #FFFFFF;
-  box-shadow: 0 0 0 0 rgb(189, 189, 189) inset, 0 0 40px 0px #FFF;
-}
-
 [data-theme|="dynamic"][data-scene="sunrise"] .actor {
   background-color: rgb(242, 242, 184);
   box-shadow: 0 0 51px 18px rgb(238, 241, 21), 0 0 71px 58px rgb(241, 114, 21);
@@ -38,7 +33,12 @@
 }
 
 [data-theme|="dynamic"][data-scene="sunrise"] {
-  --background-image: linear-gradient(to top, rgb(230, 174, 41), rgb(246, 248, 98) 18.49%, #9dc6ff 57.98%);
+  --background-image: linear-gradient(
+    to top,
+    rgb(230, 174, 41),
+    rgb(246, 248, 98) 18.49%,
+    #9dc6ff 57.98%
+  );
   --quote-font-family: "Sunshiney", cursive;
   --font-color: #333;
 }
@@ -61,33 +61,100 @@
 }
 
 [data-theme|="dynamic"][data-scene="dusk"] {
-  --background-image: linear-gradient(to top, rgba(173, 53, 25, 1), rgba(250, 131, 73, 1) 4.2%, rgba(170, 125, 131, 1) 10.5%, rgba(50, 47, 76, 1) 26.89%, rgb(7, 7, 21) 40.34%);
+  --background-image: linear-gradient(
+    to top,
+    rgba(173, 53, 25, 1),
+    rgba(250, 131, 73, 1) 4.2%,
+    rgba(170, 125, 131, 1) 10.5%,
+    rgba(50, 47, 76, 1) 26.89%,
+    rgb(7, 7, 21) 40.34%
+  );
   /* --accent-color: rgb(17, 0, 255); */
-  --quote-font-family: "Tilt Neon", serif;
+  --quote-font-family: "Megrim", serif;
   --font-color: #fafafa;
 }
 
 [data-theme|="dynamic"][data-scene="dusk"] .time {
-  text-shadow:
-      0 0 4px #fff,
-      0 0 11px #fff,
-      0 0 19px #fff,
-      0 0 40px #f09,
-      0 0 80px #f09,
-      0 0 90px #f09,
-      0 0 100px #f09,
-      0 0 150px #f09;
-  color: #FFFFFF;
+  text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #f09,
+    0 0 80px #f09, 0 0 90px #f09, 0 0 100px #f09, 0 0 150px #f09;
+  color: #ffffff;
 }
 
 [data-theme|="dynamic"][data-scene="night"] {
-  --accent-color: #FFF;
+  --accent-color: #fff;
   --bg-opacity: 1;
-  --background-image: linear-gradient(to bottom, rgba(0, 1, 32, var(--bg-opacity)), rgba(0, 0, 0, var(--bg-opacity))), linear-gradient(
-    to top,
-    rgb(241, 114, 21),
-    rgb(246, 248, 98) 10%,
-    #9dc6ff 60%
-  );
+  --background-image: linear-gradient(
+      to bottom,
+      rgba(0, 1, 32, var(--bg-opacity)),
+      rgba(0, 0, 0, var(--bg-opacity))
+    ),
+    linear-gradient(
+      to top,
+      rgb(241, 114, 21),
+      rgb(246, 248, 98) 10%,
+      #9dc6ff 60%
+    );
   --quote-font-family: "Jacquard 12", serif;
+}
+
+[data-theme|="dynamic"][data-scene="night"] .actor {
+  --glow-box-shadow: 0 0 40px 0px #fff;
+  background-color: #f0f0f0;
+  box-shadow: var(--glow-box-shadow);
+  overflow: hidden;
+}
+
+[data-theme|="dynamic"][data-scene="night"] .actor:before {
+  content: "";
+  height: 2.5vw;
+  width: 2.5vw;
+  display: inline-block;
+  background-color: #c5cdd4;
+  border-radius: 50%;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  box-shadow: 2vw 2vw 0 -0.3vw #c5cdd4, -0.7vw 2.9vw 0 -0.5vw #c5cdd4;
+}
+
+[data-theme|="dynamic"][data-scene="night"] .actor.new {
+  background: #262626;
+}
+
+[data-theme|="dynamic"][data-scene="night"] .actor.waxing-crescent:after,
+[data-theme|="dynamic"][data-scene="night"] .actor.first-quarter:after,
+[data-theme|="dynamic"][data-scene="night"] .actor.waning-crescent:after,
+[data-theme|="dynamic"][data-scene="night"] .actor.third-quarter:after {
+  height: 11vw;
+  content: "";
+  width: 10vw;
+  background: rgba(0, 0, 0, 0.8);
+  display: inline-block;
+  filter: blur(1px);
+}
+
+[data-theme|="dynamic"][data-scene="night"] .actor.waxing-crescent:after {
+  transform: translateX(-25%) translateY(-5px);
+  border-radius: 50%;
+}
+
+[data-theme|="dynamic"][data-scene="night"] .actor.first-quarter:after {
+  transform: translateX(-50%) translateY(-3px);
+}
+
+[data-theme|="dynamic"][data-scene="night"] .actor.waning-crescent:after {
+  transform: translateX(25%) translateY(-5px);
+  border-radius: 50%;
+}
+
+[data-theme|="dynamic"][data-scene="night"] .actor.waning-gibbous {
+  box-shadow: var(--glow-box-shadow), -38px 0 1px -15px rgba(0, 0, 0, 0.8) inset;
+}
+
+[data-theme|="dynamic"][data-scene="night"] .actor.waxing-gibbous {
+  box-shadow: var(--glow-box-shadow), 38px 0 1px -15px rgba(0, 0, 0, 0.8) inset;
+}
+
+[data-theme|="dynamic"][data-scene="night"] .actor.third-quarter:after {
+  transform: translateX(50%) translateY(-3px);
 }

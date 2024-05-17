@@ -1,5 +1,17 @@
-const MOON_PHASES = ["new", "waxing-crescent", "first-quarter", "waxing-gibbous", "full-moon", "waning gibbous", "third-quarter", "waning crescent"];
+const MOON_PHASES = [
+  "new",
+  "waxing-crescent",
+  "first-quarter",
+  "waxing-gibbous",
+  "full-moon",
+  "waning-gibbous",
+  "third-quarter",
+  "waning-crescent",
+];
 const moonPhase = MOON_PHASES[Math.floor(Math.random() * MOON_PHASES.length)];
+const urlParams = new URLSearchParams(window.location.search);
+const testScene = urlParams.get("scene");
+const testProgress = urlParams.get("progress");
 
 export function getDayProgress() {
   const now = new Date();
@@ -7,7 +19,7 @@ export function getDayProgress() {
     now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
   const progress = (seconds * 100) / 86400;
 
-  return parseFloat(progress.toFixed(2));
+  return parseFloat(testProgress || progress.toFixed(2));
 }
 
 export function getDayParameters() {
@@ -27,12 +39,16 @@ export function getDayParameters() {
   );
 
   // const actorLeft =
-    // progress <= 25 ? (progress * 100) / 25 : ((progress - 25) * 100) / 75;
-  const actorLeft = progress >= 25 && progress <=75 ? ((progress - 25) * 100) / 50 : progress > 75 ? ((progress-75) * 50) / 25 : ((progress + 25) * 100) / 50 ;
-  
+  // progress <= 25 ? (progress * 100) / 25 : ((progress - 25) * 100) / 75;
+  const actorLeft =
+    progress >= 25 && progress <= 75
+      ? ((progress - 25) * 100) / 50
+      : progress > 75
+      ? ((progress - 75) * 50) / 25
+      : ((progress + 25) * 100) / 50;
 
   return {
-    scene,
+    scene: testScene || scene,
     opacity,
     progress,
     actorLeft,
@@ -45,6 +61,7 @@ export function setDayParameters() {
   if (!document.querySelector(".actor")) {
     const actor = document.createElement("div");
     actor.classList.add("actor");
+    actor.classList.toggle(moonPhase, scene === "night");
     document.querySelector("main")?.appendChild(actor);
   }
 
@@ -52,7 +69,6 @@ export function setDayParameters() {
   root?.style.setProperty("--day-opacity", opacity.toString());
   root?.style.setProperty("--actor-left", actorLeft.toString());
   root?.style.setProperty("--day-progress", progress.toString());
-  root?.style.setProperty("--moon-phase", moonPhase);
   root?.setAttribute("data-progress", progress.toString());
   root?.setAttribute("data-scene", scene);
 }

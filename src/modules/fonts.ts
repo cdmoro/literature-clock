@@ -18,7 +18,7 @@ export const THEME_FONTS: Record<string, string[]> = {
   frame: ["Playfair Display"],
   subtle: ["Unna"],
   poster: ["Averia Serif Libre", "Allura"],
-  dynamic: ["Sunshiney", "Yeseva One", "Rye", "Tilt Neon", "Jacquard 12"],
+  dynamic: ["Sunshiney", "Yeseva One", "Rye", "Megrim", "Jacquard 12"],
 };
 
 export const INITIAL_THEME_FONT_SIZE = {
