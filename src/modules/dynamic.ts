@@ -24,14 +24,18 @@ export function getDayProgress() {
 
 export function getDayParameters() {
   const progress = getDayProgress();
+  // 9pm to 5am
   let scene = "night";
 
-  if (progress >= 25 && progress < 50) {
-    scene = "sunrise";
-  } else if (progress >= 50 && progress < 75) {
-    scene = "sunset";
-  } else if (progress >= 75) {
-    scene = "dusk";
+  // 5am to 12pm
+  if (progress >= 20.83 && progress <= 50) {
+    scene = "morning";
+  } // 12pm to 5pm
+  else if (progress > 50 && progress <= 70.83) {
+    scene = "afternoon";
+  } // 5pm to 9pm
+  else if (progress > 70.83 && progress <= 87.5) {
+    scene = "evening";
   }
 
   const opacity = parseFloat(
@@ -51,16 +55,16 @@ export function getDayParameters() {
     scene: testScene || scene,
     opacity,
     progress,
-    actorLeft,
+    actorLeft: parseFloat(actorLeft.toFixed(2)),
   };
 }
 
 export function setDayParameters() {
   const { opacity, progress, scene, actorLeft } = getDayParameters();
 
-  if (!document.querySelector(".actor")) {
+  if (!document.querySelector(".sun.moon")) {
     const actor = document.createElement("div");
-    actor.classList.add("actor");
+    actor.classList.add("sun", "moon");
     actor.classList.toggle(moonPhase, scene === "night");
     document.querySelector("main")?.appendChild(actor);
   }

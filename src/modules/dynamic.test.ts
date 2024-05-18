@@ -38,24 +38,24 @@ describe("getDayProgress", () => {
 describe("getDayParameters", () => {
   const dayParameterResponse = (
     scene: string,
-    actor: string,
+    actorLeft: number,
     opacity: number,
     progress: number
-  ) => ({ scene, actor, opacity, progress });
+  ) => ({ scene, actorLeft, opacity, progress });
 
   const PARAMETERS = {
-    "0": dayParameterResponse("dawn", "moon", 0, 0),
-    "16.67": dayParameterResponse("dawn", "moon", 0.33, 16.67),
-    "25": dayParameterResponse("sunrise", "sun", 0.5, 25),
-    "32.78": dayParameterResponse("sunrise", "sun", 0.66, 32.78),
-    "33.33": dayParameterResponse("sunrise", "sun", 0.67, 33.33),
-    "37.5": dayParameterResponse("sunrise", "sun", 0.75, 37.5),
-    "45.83": dayParameterResponse("sunrise", "sun", 0.92, 45.83),
-    "50": dayParameterResponse("sunset", "sun", 1, 50),
-    "60.83": dayParameterResponse("sunset", "sun", 0.78, 60.83),
-    "75": dayParameterResponse("dusk", "moon", 0.5, 75),
-    "79.17": dayParameterResponse("dusk", "moon", 0.42, 79.17),
-    "100": dayParameterResponse("dusk", "moon", 0, 100),
+    "0": dayParameterResponse("night", 50, 0, 0),
+    "16.67": dayParameterResponse("night", 83.34, 0.33, 16.67),
+    "25": dayParameterResponse("morning", 0, 0.5, 25),
+    "32.78": dayParameterResponse("morning", 15.56, 0.66, 32.78),
+    "33.33": dayParameterResponse("morning", 16.66, 0.67, 33.33),
+    "37.5": dayParameterResponse("morning", 25, 0.75, 37.5),
+    "45.83": dayParameterResponse("morning", 41.66, 0.92, 45.83),
+    "50": dayParameterResponse("morning", 50, 1, 50),
+    "60.83": dayParameterResponse("afternoon", 71.66, 0.78, 60.83),
+    "75": dayParameterResponse("evening", 100, 0.5, 75),
+    "79.17": dayParameterResponse("evening", 8.34, 0.42, 79.17),
+    "100": dayParameterResponse("night", 50, 0, 100),
   };
 
   Object.entries(PROGRESS).forEach(([progress, date]) => {
