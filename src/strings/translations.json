@@ -38,6 +38,7 @@
     "frame": "Frame",
     "subtle": "Subtle",
     "poster": "Poster",
+    "dynamic": "Dynamic",
 
     "system": "System",
     "light": "Light",
@@ -51,7 +52,7 @@
     "it-IT": "Italian",
     "random": "Random language",
 
-    "themeFont": "Theme font"
+    "default_font": "Default font"
   },
   "es-ES": {
     "document_title": "Reloj Literario",
@@ -93,6 +94,7 @@
     "frame": "Marco",
     "subtle": "Sutil",
     "poster": "Poster",
+    "dynamic": "Dinámico",
 
     "system": "Sistema",
     "light": "Claro",
@@ -105,7 +107,7 @@
     "it-IT": "Italiano",
     "random": "Lenguaje aleatorio",
 
-    "themeFont": "Fuente del tema"
+    "default_font": "Fuente por defecto"
   },
   "pt-BR": {
     "document_title": "Relógio da Literatura",
@@ -147,6 +149,7 @@
     "frame": "Moldura",
     "subtle": "Sutil",
     "poster": "Pôster",
+    "dynamic": "Dinâmico",
 
     "system": "Sistema",
     "light": "Claro",
@@ -159,7 +162,7 @@
     "it-IT": "Italiano",
     "random": "Idioma aleatório",
 
-    "themeFont": "Fonte do tema"
+    "default_font": "Fonte padrão"
   },
   "fr-FR": {
     "document_title": "Horloge de la Littérature",
@@ -201,6 +204,7 @@
     "frame": "Bordure",
     "subtle": "Subtil",
     "poster": "Affiche",
+    "dynamic": "Dynamique",
 
     "system": "Système",
     "light": "Clair",
@@ -213,7 +217,7 @@
     "it-IT": "Italien",
     "random": "Langue aléatoire",
 
-    "themeFont": "Police du thème"
+    "default_font": "Police par défaut"
   },
   "it-IT": {
     "document_title": "Orologio della Letteratura",
@@ -256,6 +260,7 @@
     "frame": "Cornice",
     "subtle": "Sottile",
     "poster": "Poster",
+    "dynamic": "Dinamico",
 
     "system": "Sistema",
     "light": "Chiaro",
@@ -268,6 +273,6 @@
     "it-IT": "Italiano",
     "random": "Lingua casuale",
 
-    "themeFont": "Font del tema "
+    "default_font": "Font predefinito "
   }
 }

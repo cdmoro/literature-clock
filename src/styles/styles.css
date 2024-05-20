@@ -1,9 +1,10 @@
 @import url(main.css);
 
 @import url(themes/base.css);
-@import url(themes/colors.css);
 @import url(themes/anaglyph.css);
 @import url(themes/bohemian.css);
+@import url(themes/colors.css);
+@import url(themes/dynamic.css);
 @import url(themes/elegant.css);
 @import url(themes/festive.css);
 @import url(themes/frame.css);

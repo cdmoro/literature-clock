@@ -1,5 +1,7 @@
 import { updateQuote } from "./quotes";
 import { getTime, updateFavicon } from "../utils/utils";
+import { getStringSetting } from "../utils/settings";
+import { setDayParameters } from "./dynamic";
 
 const urlParams = new URLSearchParams(window.location.search);
 const testTime = urlParams.get("time");
@@ -32,15 +34,19 @@ function updateProgressBar() {
 async function updateTime() {
   const time = testTime || getTime();
 
-  if (time.includes(":00") || time.includes(":30")) {
-    updateFavicon(time);
-  }
-
   if (!isTest) {
     updateProgressBar();
   }
 
   if (lastTime !== time) {
+    if (time.includes(":00") || time.includes(":30")) {
+      updateFavicon(time);
+    }
+
+    if (getStringSetting("theme")?.startsWith("dynamic")) {
+      setDayParameters();
+    }
+
     document.title = document.title.replace(/[0-9]{2}:[0-9]{2}/, time);
     updateQuote(time);
     lastTime = time;

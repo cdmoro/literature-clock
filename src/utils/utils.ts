@@ -53,9 +53,8 @@ export function updateGHLinks(time: string, quote: Quote, locale: Locale) {
   reportErrorUrl.searchParams.set("author", quote.author);
   reportErrorUrl.searchParams.set("quote", quoteRaw.replace(/<br>/g, " "));
 
-  const reportError = document.getElementById(
-    "report-error"
-  ) as HTMLAnchorElement;
+  const reportError =
+    document.querySelector<HTMLAnchorElement>("#report-error");
   if (reportError) {
     reportError.href = reportErrorUrl.href;
   }
