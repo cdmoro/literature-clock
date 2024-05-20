@@ -19,12 +19,13 @@ export const THEME_FONTS: Record<string, string[]> = {
   subtle: ["Unna"],
   poster: ["Averia Serif Libre", "Allura"],
   dynamic: [
-    "Sunshiney",
+    "Caveat",
     "Yeseva One",
     "Rye",
     "Megrim",
     "Jacquard 12",
     "Sacramento",
+    "Indie Flower",
   ],
 };
 
