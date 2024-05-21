@@ -16,18 +16,13 @@
   transform: translateX(-50%) translateY(-50%);
 }
 
-[data-theme|="dynamic"][data-scene="evening"] .sphere {
-  background-color: #000000;
-  box-shadow: 0 0 0 0 rgb(189, 189, 189) inset;
-}
-
 [data-theme|="dynamic"] blockquote:before,
 [data-theme|="dynamic"] blockquote:after {
   content: none;
 }
 
 [data-theme|="dynamic"][data-scene="morning"] {
-  --background: transparent;
+  --background: #fff;
   --font-color: #000;
   --background-image: linear-gradient(
     to top,
