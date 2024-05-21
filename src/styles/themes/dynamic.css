@@ -374,17 +374,22 @@
   box-shadow: 2vw 2vw 0 -0.3vw #c5cdd4, -0.7vw 2.9vw 0 -0.5vw #c5cdd4;
 }
 
-[data-theme|="dynamic"][data-scene="night"] .sphere.new {
+[data-theme|="dynamic"][data-scene="night"] .sphere[data-lunar-phase="New"] {
   background: #262626;
 }
-[data-theme|="dynamic"][data-scene="night"] .sphere.new:before {
+[data-theme|="dynamic"][data-scene="night"]
+  .sphere[data-lunar-phase="New"]:before {
   opacity: 0.02;
 }
 
-[data-theme|="dynamic"][data-scene="night"] .sphere.waxing-crescent:after,
-[data-theme|="dynamic"][data-scene="night"] .sphere.first-quarter:after,
-[data-theme|="dynamic"][data-scene="night"] .sphere.waning-crescent:after,
-[data-theme|="dynamic"][data-scene="night"] .sphere.third-quarter:after {
+[data-theme|="dynamic"][data-scene="night"]
+  .sphere[data-lunar-phase="Waxing Crescent"]:after,
+[data-theme|="dynamic"][data-scene="night"]
+  .sphere[data-lunar-phase="First Quarter"]:after,
+[data-theme|="dynamic"][data-scene="night"]
+  .sphere[data-lunar-phase="Waning Crescent"]:after,
+[data-theme|="dynamic"][data-scene="night"]
+  .sphere[data-lunar-phase="Last Quarter"]:after {
   height: 11vw;
   content: "";
   width: 10vw;
@@ -395,30 +400,36 @@
   min-width: 50px;
 }
 
-[data-theme|="dynamic"][data-scene="night"] .sphere.waxing-crescent:after {
+[data-theme|="dynamic"][data-scene="night"]
+  .sphere[data-lunar-phase="Waxing Crescent"]:after {
   transform: translateX(-25%) translateY(-5px);
   border-radius: 50%;
 }
 
-[data-theme|="dynamic"][data-scene="night"] .sphere.first-quarter:after {
+[data-theme|="dynamic"][data-scene="night"]
+  .sphere[data-lunar-phase="First Quarter"]:after {
   transform: translateX(-50%) translateY(-3px);
 }
 
-[data-theme|="dynamic"][data-scene="night"] .sphere.waning-crescent:after {
+[data-theme|="dynamic"][data-scene="night"]
+  .sphere[data-lunar-phase="Waning Crescent"]:after {
   transform: translateX(25%) translateY(-5px);
   border-radius: 50%;
 }
 
-[data-theme|="dynamic"][data-scene="night"] .sphere.waning-gibbous {
+[data-theme|="dynamic"][data-scene="night"]
+  .sphere[data-lunar-phase="Waning Gibbous"] {
   box-shadow: var(--glow-box-shadow),
     -3.5vw 0 1px -1.5vw rgba(0, 0, 0, 0.85) inset;
 }
 
-[data-theme|="dynamic"][data-scene="night"] .sphere.waxing-gibbous {
+[data-theme|="dynamic"][data-scene="night"]
+  .sphere[data-lunar-phase="Waxing Gibbous"] {
   box-shadow: var(--glow-box-shadow), 38px 0 1px -15px rgba(0, 0, 0, 0.85) inset;
 }
 
-[data-theme|="dynamic"][data-scene="night"] .sphere.third-quarter:after {
+[data-theme|="dynamic"][data-scene="night"]
+  .sphere[data-lunar-phase="Last Quarter"]:after {
   transform: translateX(50%) translateY(-3px);
 }
 

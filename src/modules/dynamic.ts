@@ -1,14 +1,6 @@
-const MOON_PHASES = [
-  "new",
-  "waxing-crescent",
-  "first-quarter",
-  "waxing-gibbous",
-  "full",
-  "waning-gibbous",
-  "third-quarter",
-  "waning-crescent",
-];
-const moonPhase = MOON_PHASES[Math.floor(Math.random() * MOON_PHASES.length)];
+import { Moon } from "lunarphase-js";
+
+const lunarPhase = Moon.lunarPhase();
 const urlParams = new URLSearchParams(window.location.search);
 const testScene = urlParams.get("scene");
 const testProgress = urlParams.get("progress");
@@ -69,10 +61,10 @@ export function setDayParameters() {
   const { progress, scene, segment, period } = getDayParameters();
 
   if (!document.querySelector(".sphere")) {
-    const actor = document.createElement("div");
-    actor.classList.add("sphere");
-    actor.classList.toggle(moonPhase, scene === "night");
-    document.querySelector("main")?.appendChild(actor);
+    const sphere = document.createElement("div");
+    sphere.classList.add("sphere");
+    sphere.setAttribute("data-lunar-phase", lunarPhase);
+    document.querySelector("main")?.appendChild(sphere);
   }
 
   const root = document.querySelector<HTMLElement>(":root");
