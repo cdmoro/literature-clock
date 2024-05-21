@@ -24,19 +24,35 @@ export function getDayProgress() {
 
 export function getDayParameters() {
   const progress = getDayProgress();
-  // 9pm to 5am
+  /**
+   * Scenes
+   * @example
+   * 09pm-05am: night
+   * 05am-12pm: morning
+   * 12pm-05pm: afternoon
+   * 05pm-09pm: evening
+   */
   let scene = "night";
-  // 5am to 12pm
   if (progress >= 20.83 && progress <= 50) {
     scene = "morning";
-  } // 12pm to 5pm
-  else if (progress > 50 && progress <= 70.83) {
+  } else if (progress > 50 && progress <= 70.83) {
     scene = "afternoon";
-  } // 5pm to 9pm
-  else if (progress > 70.83 && progress <= 87.5) {
+  } else if (progress > 70.83 && progress <= 87.5) {
     scene = "evening";
   }
 
+  /**
+   * Segments of the day
+   * @example
+   * 00am-03am: 1
+   * 03am-06am: 2
+   * 06am-09am: 3
+   * 09am-12pm: 4
+   * 12pm-15pm: 5
+   * 15pm-18pm: 6
+   * 18pm-21pm: 7
+   * 21pm-00am: 8
+   */
   const segment = Math.round((progress * 8) / 100);
 
   const period = progress < 50 ? "am" : "pm";
