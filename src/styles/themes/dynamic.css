@@ -12,7 +12,6 @@
   border-radius: 50%;
   position: absolute;
   left: calc(var(--day-progress) * 1%);
-  transition: left 60s, top 60s;
   transform: translateX(-50%) translateY(-50%);
 }
 
