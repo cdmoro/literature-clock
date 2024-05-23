@@ -22,9 +22,9 @@
     {
         "id": "000272",
         "time": "02:00",
-        "quote_time_case": "* 02 a.m.",
-        "quote_first": "Luego, ayer por la mañana, su madre llevó a una estudiante, Amy Chan, a la estación de Twin Falls. Amy afirmó que había visto a Leena tropezando borracha por la acera del Puente del Diablo alrededor de las 2:00 a.m. del sábado 15 de noviembre.",
-        "quote_last": "",
+        "quote_time_case": "2:00 a.m.",
+        "quote_first": "Luego, ayer por la mañana, su madre llevó a una estudiante, Amy Chan, a la estación de Twin Falls. Amy afirmó que había visto a Leena tropezando borracha por la acera del Puente del Diablo alrededor de las ",
+        "quote_last": " del sábado 15 de noviembre.",
         "title": "Debajo del Puente del Diablo",
         "author": "Loreth Anne White",
         "sfw": "unknown"
@@ -152,9 +152,9 @@
     {
         "id": "000285",
         "time": "02:00",
-        "quote_time_case": "* 02 a.m.",
-        "quote_first": "A las 2:00 a. m., la noche llegó a su punto máximo y el trío decidió regresar a la casa de Cleo y Frank. Zoe estaba sentada con Audrey en la gran escalera de incendios aprendiendo a liar el porro perfecto cuando Cleo salió, con los brazos cargados de paletas heladas de colores.",
-        "quote_last": "",
+        "quote_time_case": "2:00 a.m.",
+        "quote_first": "A las ",
+        "quote_last": ", la noche llegó a su punto máximo y el trío decidió regresar a la casa de Cleo y Frank. Zoe estaba sentada con Audrey en la gran escalera de incendios aprendiendo a liar el porro perfecto cuando Cleo salió, con los brazos cargados de paletas heladas de colores.",
         "title": "Cleopatra y Frankenstein",
         "author": "Coco Mellors",
         "sfw": "nsfw"
@@ -212,9 +212,9 @@
     {
         "id": "000291",
         "time": "02:00",
-        "quote_time_case": "* 2 a.m.",
-        "quote_first": "Sube al avión a las 2 de la madrugada, entre bultos, gallinas y gitanos, siéntate frente a un par de adivinos regordetes que gimen y (muy discretamente) vomitan hasta Tbilisi.",
-        "quote_last": "",
+        "quote_time_case": "2 A.M.",
+        "quote_first": "Sube al avión a las ",
+        "quote_last": ", entre bultos, gallinas y gitanos, siéntate frente a un par de adivinos regordetes que gimen y (muy discretamente) vomitan hasta Tbilisi.",
         "title": "Bech: un libro",
         "author": "J. Updike",
         "sfw": "unknown"

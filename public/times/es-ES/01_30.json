@@ -42,9 +42,9 @@
     {
         "id": "000231",
         "time": "01:30",
-        "quote_time_case": "* 1:30 A.M.",
-        "quote_first": "Alrededor de la 1:30 a.m. La puerta se abrió y pensé que era Karla, pero era Bug, diciendo que Karla y Laura habían salido a una despedida de soltero después de que se les acabó la pintura.",
-        "quote_last": "",
+        "quote_time_case": "1:30 a.m.",
+        "quote_first": "Alrededor de la ",
+        "quote_last": " La puerta se abrió y pensé que era Karla, pero era Bug, diciendo que Karla y Laura habían salido a una despedida de soltero después de que se les acabó la pintura.",
         "title": "Microsiervos",
         "author": "Douglas Coupland",
         "sfw": "unknown"
@@ -62,9 +62,9 @@
     {
         "id": "000233",
         "time": "01:30",
-        "quote_time_case": "* 1:30 a.m.",
-        "quote_first": "El radio despertador sonaba la una y media de la madrugada. Un mal karaoke retumbaba a través de las paredes. Estaba completamente despierto, encamisado por mis sábanas sudorosas. Un dolor de cabeza clavó sus pulgares en mis sienes. Mis entrañas latían con interferencias gamma: corrí al baño dando tumbos.",
-        "quote_last": "",
+        "quote_time_case": "1:30 a.m.",
+        "quote_first": "El radio despertador sonaba la ",
+        "quote_last": " Un mal karaoke retumbaba a través de las paredes. Estaba completamente despierto, encamisado por mis sábanas sudorosas. Un dolor de cabeza clavó sus pulgares en mis sienes. Mis entrañas latían con interferencias gamma: corrí al baño dando tumbos.",
         "title": "Escrito por fantasmas",
         "author": "David Mitchell",
         "sfw": "unknown"
