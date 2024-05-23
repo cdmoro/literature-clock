@@ -2,9 +2,9 @@
     {
         "id": "000330",
         "time": "02:20",
-        "quote_time_case": "* Dos veinte",
-        "quote_first": "Se volvió bruscamente hacia la enfermera y le preguntó la hora. 'Las dos y veinte' 'Ah... ¡Las dos y veinte!' —repitió Genevieve, como si hubiera algo urgente que hacer.",
-        "quote_last": "",
+        "quote_time_case": "dos y veinte",
+        "quote_first": "Se volvió bruscamente hacia la enfermera y le preguntó la hora. 'Las ",
+        "quote_last": "' 'Ah... ¡Las dos y veinte!' —repitió Genevieve, como si hubiera algo urgente que hacer.",
         "title": "Correo del Sur",
         "author": "Antoine de Saint Exupery",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "000331",
         "time": "02:20",
-        "quote_time_case": "* dos veinte",
-        "quote_first": "La noche de su tercer paseo, Lew durmió en su propio apartamento. Cuando sus ojos se abrieron a las dos y veinte, por las manecillas verdes de su alarma, supo que esta vez en realidad lo había estado esperando mientras dormía.",
-        "quote_last": "",
+        "quote_time_case": "dos y veinte",
+        "quote_first": "La noche de su tercer paseo, Lew durmió en su propio apartamento. Cuando sus ojos se abrieron a las ",
+        "quote_last": ", por las manecillas verdes de su alarma, supo que esta vez en realidad lo había estado esperando mientras dormía.",
         "title": "La gente de la noche",
         "author": "Jack Finney",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "000332",
         "time": "02:20",
-        "quote_time_case": "* Veinte minutos después de las dos",
-        "quote_first": "Las dos y veinte minutos, de camino a San Diego, escuchando una música extraña y cacófana; sin línea melódica, sin contenido.",
-        "quote_last": "",
+        "quote_time_case": "dos y veinte",
+        "quote_first": "Las ",
+        "quote_last": " minutos, de camino a San Diego, escuchando una música extraña y cacófana; sin línea melódica, sin contenido.",
         "title": "En algún lugar del tiempo (retorno en el momento de la oferta)",
         "author": "Richard Matheson",
         "sfw": "unknown"
