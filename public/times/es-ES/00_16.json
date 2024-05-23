@@ -2,9 +2,9 @@
     {
         "id": "000089",
         "time": "00:16",
-        "quote_time_case": "* doce y diciséis",
-        "quote_first": "A las doce y dieciséis minutos, el bloque 4 fue atacado y el techo se prendió fuego.",
-        "quote_last": "",
+        "quote_time_case": "doce y dieciséis",
+        "quote_first": "A las ",
+        "quote_last": " minutos, el bloque 4 fue atacado y el techo se prendió fuego.",
         "title": "La noche más larga",
         "author": "Gavin Mortimer",
         "sfw": "unknown"

@@ -22,9 +22,9 @@
     {
         "id": "000004",
         "time": "00:00",
-        "quote_time_case": "* medianoche",
-        "quote_first": "“Pensé que estabas dormido”, dijo poco después. El nilo. ¡Pero confiésate sorprendido!",
-        "quote_last": "",
+        "quote_time_case": "medianoche",
+        "quote_first": "“Creí que dormías”, dijo al poco rato.<br>“El sueño es para los viejos y los niños, y yo salí para ver a mis amigas, las estrellas del sur, las que ahora sostienen las cortinas de ",
+        "quote_last": " sobre el Nilo. Pero confiésate sorprendido”.",
         "title": "Ben Hur",
         "author": "Lew Wallace",
         "sfw": "sfw"
@@ -382,9 +382,9 @@
     {
         "id": "000040",
         "time": "00:00",
-        "quote_time_case": "* 0000 h.",
-        "quote_first": "No se permiten cartuchos después de las 00.00h., para favorecer el sueño.",
-        "quote_last": "",
+        "quote_time_case": "0000h.",
+        "quote_first": "No se permiten cartuchos después de las ",
+        "quote_last": ", para favorecer el sueño.",
         "title": "Frivolidad infinita",
         "author": "David Foster Wallace",
         "sfw": "unknown"
@@ -392,9 +392,9 @@
     {
         "id": "000041",
         "time": "00:00",
-        "quote_time_case": "* 0000h",
-        "quote_first": "Gately puede oír las bocinas, las voces elevadas y los chirridos de giros en U muy abajo, en Wash. Eso indica que son alrededor de las 00:00 h., la hora de cambio.",
-        "quote_last": "",
+        "quote_time_case": "0000h.",
+        "quote_first": "Gately puede oír las bocinas, las voces elevadas y los chirridos de giros en U muy abajo, en Wash. Eso indica que son alrededor de las ",
+        "quote_last": ", la hora de cambio.",
         "title": "Frivolidad infinita",
         "author": "David Foster Wallace",
         "sfw": "unknown"
@@ -412,9 +412,9 @@
     {
         "id": "000043",
         "time": "00:00",
-        "quote_time_case": "* medianoche",
-        "quote_first": "Está seguro de haber oído pasos: se acercan y luego se alejan. El rayo de luz debajo de su puerta se apaga. Es media noche; alguien ha cerrado el gas; el último sirviente se ha acostado y debe permanecer toda la noche en agonía sin que nadie le preste ayuda.",
-        "quote_last": "",
+        "quote_time_case": "medianoche",
+        "quote_first": "Está seguro de haber oído pasos: se acercan y luego se alejan. El rayo de luz debajo de su puerta se apaga. Es ",
+        "quote_last": "; alguien ha cerrado el gas; el último sirviente se ha acostado y debe permanecer toda la noche en agonía sin que nadie le preste ayuda.",
         "title": "El camino de Swann",
         "author": "Marcel Proust",
         "sfw": "unknown"
@@ -452,9 +452,9 @@
     {
         "id": "000047",
         "time": "00:00",
-        "quote_time_case": "* medianoche",
-        "quote_first": "Es media noche. La lluvia golpea las ventanas. Estoy calmado. Todo está durmiendo. Sin embargo me levanto y voy a mi escritorio. No puedo dormir.",
-        "quote_last": "",
+        "quote_time_case": "medianoche",
+        "quote_first": "Es ",
+        "quote_last": ". La lluvia golpea las ventanas. Estoy calmado. Todo está durmiendo. Sin embargo me levanto y voy a mi escritorio. No puedo dormir.",
         "title": "Molloy",
         "author": "Samuel Beckett",
         "sfw": "unknown"
