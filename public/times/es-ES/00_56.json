@@ -2,9 +2,9 @@
     {
         "id": "000150",
         "time": "00:56",
-        "quote_time_case": "* Las doce y cincuenta y seis de la mañana.",
-        "quote_first": "A las doce y cincuenta y seis de la mañana, Jo O'Connor finalmente abandonó la idea de dormir. Durante horas había estado despierta preocupándose por Louis, Stormy y Sarah Two Knives. Y sobre Cork.",
-        "quote_last": "",
+        "quote_time_case": "doce y cincuenta y seis",
+        "quote_first": "A las ",
+        "quote_last": " de la mañana, Jo O'Connor finalmente abandonó la idea de dormir. Durante horas había estado despierta preocupándose por Louis, Stormy y Sarah Two Knives. Y sobre Cork.",
         "title": "Aguas fronterizas",
         "author": "William Kent Krueger",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000151",
         "time": "00:56",
-        "quote_time_case": "* 12:56 a.m.",
-        "quote_first": "Eran las 00:56. cuando Gerald condujo hasta el césped y detuvo la limusina justo al lado del cementerio.",
-        "quote_last": "",
+        "quote_time_case": "00:56",
+        "quote_first": "Eran las ",
+        "quote_last": ". cuando Gerald condujo hasta el césped y detuvo la limusina justo al lado del cementerio.",
         "title": "Extremadamente ruidoso e increíblemente cerca",
         "author": "Jonathan Safran Foer",
         "sfw": "unknown"
