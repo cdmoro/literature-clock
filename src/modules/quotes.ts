@@ -64,12 +64,7 @@ async function getQuote(time: string, locale: Locale): Promise<Quote> {
 export async function updateQuote(time = getTime()) {
   const urlParams = new URLSearchParams(window.location.search);
   const testQuote = urlParams.get("quote");
-  const isFade = isBooleanSettingTrue("fade");
   let locale = getStringSetting("locale") as Locale;
-
-  if (isFade) {
-    fadeOutQuote();
-  }
 
   if (!locale) {
     return;
@@ -113,7 +108,7 @@ export async function updateQuote(time = getTime()) {
       blockquote.removeAttribute("data-fallback");
     }
 
-    if (isFade) {
+    if (isBooleanSettingTrue("fade")) {
       fadeInQuote();
     }
 

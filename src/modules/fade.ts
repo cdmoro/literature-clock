@@ -22,10 +22,14 @@ function toggleFadeMode() {
 }
 
 export function fadeOutQuote() {
-    const blockquote = document.getElementById("quote");
+    const now = new Date();
 
-    blockquote?.classList.remove("fade-in");
-    blockquote?.classList.add("fade-out");
+    if (now.getSeconds() === 59) {
+        const blockquote = document.getElementById("quote");
+
+        blockquote?.classList.remove("fade-in");
+        blockquote?.classList.add("fade-out");
+    }
 }
 
 export function fadeInQuote() {
