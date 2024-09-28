@@ -5,7 +5,7 @@ import TRANSLATIONS from "../strings/translations.json";
 import { Locale, Quote } from "../types";
 import { fitQuote, getTime, updateGHLinks } from "../utils/utils";
 import FALLBACK_QUOTES from "../strings/fallbackQuotes.json";
-import { fadeInQuote } from "./fade";
+import { fadeInQuote, fadeOutQuote } from "./fade";
 
 async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
   const fileName = time.replace(":", "_");
@@ -64,7 +64,12 @@ async function getQuote(time: string, locale: Locale): Promise<Quote> {
 export async function updateQuote(time = getTime()) {
   const urlParams = new URLSearchParams(window.location.search);
   const testQuote = urlParams.get("quote");
+  const isFade = isBooleanSettingTrue("fade");
   let locale = getStringSetting("locale") as Locale;
+
+  if (isFade) {
+    fadeOutQuote();
+  }
 
   if (!locale) {
     return;
@@ -108,7 +113,7 @@ export async function updateQuote(time = getTime()) {
       blockquote.removeAttribute("data-fallback");
     }
 
-    if (isBooleanSettingTrue("fade")) {
+    if (isFade) {
       fadeInQuote();
     }
 

@@ -22,15 +22,10 @@ function toggleFadeMode() {
 }
 
 export function fadeOutQuote() {
-  const now = new Date();
-  const seconds = now.getSeconds();
-
-  if (seconds == 59) {
     const blockquote = document.getElementById("quote");
 
     blockquote?.classList.remove("fade-in");
     blockquote?.classList.add("fade-out");
-  }
 }
 
 export function fadeInQuote() {

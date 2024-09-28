@@ -39,10 +39,6 @@ async function updateTime() {
     updateProgressBar();
   }
 
-  if (isBooleanSettingTrue("fade")) {
-    fadeOutQuote();
-  }
-
   if (lastTime !== time) {
     if (time.includes(":00") || time.includes(":30")) {
       updateFavicon(time);
