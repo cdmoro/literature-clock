@@ -1,7 +1,8 @@
 import { updateQuote } from "./quotes";
 import { getTime, updateFavicon } from "../utils/utils";
-import { getStringSetting } from "../utils/settings";
+import { getStringSetting, isBooleanSettingTrue } from "../utils/settings";
 import { setDayParameters } from "./dynamic";
+import { fadeOutQuote } from "./fade";
 
 const urlParams = new URLSearchParams(window.location.search);
 const testTime = urlParams.get("time");
@@ -36,6 +37,10 @@ async function updateTime() {
 
   if (!isTest) {
     updateProgressBar();
+  }
+
+  if (isBooleanSettingTrue("fade")) {
+    fadeOutQuote();
   }
 
   if (lastTime !== time) {
