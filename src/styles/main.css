@@ -220,7 +220,6 @@ button:disabled {
   left: 0;
   opacity: 1;
   position: fixed;
-  transition: width 1s linear, opacity 1s;
 }
 
 #zen {
