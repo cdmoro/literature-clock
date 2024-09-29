@@ -62,6 +62,7 @@
 
   <body data-loading="true">
     <main>
+      <div id="time-clock"></div>
       <div id="clock">
         <blockquote id="quote"></blockquote>
       </div>
@@ -144,8 +145,23 @@
               </svg>
               <span id="work-label" data-text="work_mode">Work</span>
             </button>
+            <button id="showtime" tabindex="4">
+              <svg
+                width="15"
+                height="15"
+                fill="currentColor"
+                viewBox="0 0 6.35 6.35"
+                xml:space="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M 1.3245703 0 C 0.59761982 0 -1.2533172e-16 0.59761982 0 1.3245703 L 0 5.0254297 C 0 5.7523803 0.59761981 6.35 1.3245703 6.35 L 5.0254297 6.35 C 5.7523803 6.35 6.35 5.7523803 6.35 5.0254297 L 6.35 1.3245703 C 6.35 0.59761981 5.7523803 -1.2533172e-16 5.0254297 0 L 1.3245703 0 z M 1.3245703 0.82434245 L 1.6304948 0.82434245 C 1.6294823 0.83922607 1.6288411 0.85384821 1.6288411 0.86899089 L 1.6288411 1.1104232 C 1.6288411 1.4783099 1.9323735 1.774362 2.3093164 1.774362 L 4.0406836 1.774362 C 4.4176265 1.774362 4.7211589 1.4783099 4.7211589 1.1104232 L 4.7211589 0.86899089 C 4.7211589 0.85384821 4.7205177 0.83922607 4.7195052 0.82434245 L 5.0254297 0.82434245 C 5.3100372 0.82434245 5.5256576 1.0399629 5.5256576 1.3245703 L 5.5256576 5.0254297 C 5.5256576 5.3100371 5.3100371 5.5256576 5.0254297 5.5256576 L 1.3245703 5.5256576 C 1.0399629 5.5256576 0.82434245 5.3100372 0.82434245 5.0254297 L 0.82434245 1.3245703 C 0.82434245 1.0399629 1.0399629 0.82434245 1.3245703 0.82434245 z M 1.5817122 2.9062826 L 1.5817122 3.5760091 L 4.626901 3.5760091 L 4.626901 2.9062826 L 1.5817122 2.9062826 z M 1.5817122 3.9646159 L 1.5817122 4.4706315 L 3.3180404 4.4706315 L 3.3180404 3.9646159 L 1.5817122 3.9646159 z "
+                />
+              </svg>
+              <span id="time-label" data-text="time_mode">Time</span>
+            </button>
           </span>
-          <select id="locale-select" tabindex="4">
+          <select id="locale-select" tabindex="5">
             <option value="en-US" data-text="en-US">English (US)</option>
             <option value="es-ES" data-text="es-ES">Español (ES)</option>
             <option value="pt-BR" data-text="pt-BR">Portuguese (BR)</option>
@@ -155,7 +171,7 @@
           </select>
           <span>
             <span class="input-group">
-              <select id="theme-select" tabindex="5">
+              <select id="theme-select" tabindex="6">
                 <optgroup id="colors" label="Colors" data-label="colors">
                   <option value="base" data-text="base">Base</option>
                   <option value="pink" data-text="pink">Pink</option>
@@ -191,13 +207,13 @@
                   <option value="dynamic" data-text="dynamic">Dynamic</option>
                 </optgroup>
               </select>
-              <select id="variant-select" tabindex="6">
+              <select id="variant-select" tabindex="7">
                 <option value="system" data-text="system">System</option>
                 <option value="light" data-text="light">Light</option>
                 <option value="dark" data-text="dark">Dark</option>
               </select>
             </span>
-            <select id="font-select" tabindex="7">
+            <select id="font-select" tabindex="8">
               <option value="default" data-text="default_font">
                 Theme font
               </option>
