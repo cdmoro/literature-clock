@@ -5,6 +5,7 @@ import TRANSLATIONS from "../strings/translations.json";
 import { Locale, Quote } from "../types";
 import { fitQuote, getTime, updateGHLinks } from "../utils/utils";
 import FALLBACK_QUOTES from "../strings/fallbackQuotes.json";
+import { fadeInQuote, fadeOutQuote } from "./fade";
 
 function prefetchNextQuotes(locale: string) {
   const now = new Date();
@@ -120,6 +121,10 @@ export async function updateQuote(time = getTime()) {
       blockquote.dataset.fallback = "true";
     } else {
       blockquote.removeAttribute("data-fallback");
+    }
+
+    if (isBooleanSettingTrue("fade")) {
+      fadeInQuote();
     }
 
     fitQuote();

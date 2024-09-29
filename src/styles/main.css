@@ -63,7 +63,15 @@ blockquote {
   font-weight: 100;
   line-height: var(--quote-line-height, 1.1);
   position: relative;
-  transition: transform 1s ease;
+  transition: transform 1s ease, opacity 1s ease-in-out;
+}
+
+blockquote.fade-in {
+  opacity: 1;
+}
+
+blockquote.fade-out {
+  opacity: 0;
 }
 
 blockquote p {
@@ -228,7 +236,6 @@ button:disabled {
   left: 0;
   opacity: 1;
   position: fixed;
-  transition: width 1s linear, opacity 1s;
 }
 
 #zen {
@@ -237,6 +244,11 @@ button:disabled {
 }
 
 #work {
+  border-radius: 0;
+  margin-left: -1px;
+}
+
+#fade {
   border-radius: 0;
   margin-left: -1px;
 }

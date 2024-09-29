@@ -2,6 +2,7 @@ import { updateQuote } from "./quotes";
 import { getTime, updateFavicon } from "../utils/utils";
 import { getStringSetting, isBooleanSettingTrue } from "../utils/settings";
 import { setDayParameters } from "./dynamic";
+import { fadeOutQuote } from "./fade";
 
 const urlParams = new URLSearchParams(window.location.search);
 const testTime = urlParams.get("time");
@@ -11,31 +12,21 @@ const timeProgressBar = document.getElementById("time-progress-bar");
 let lastTime: string;
 
 function updateProgressBar() {
-  const now = new Date();
-  const seconds = now.getSeconds();
-  const percentage = ((seconds / 59) * 100).toFixed(2);
+  const now = new Date(); 
+  const time = parseFloat(`${now.getSeconds()}.${now.getMilliseconds().toString().padStart(3, "0")}`);
+  const percentage = ((time / 60) * 100).toFixed(4);
 
   if (timeProgressBar) {
     timeProgressBar.setAttribute("aria-valuenow", percentage);
     timeProgressBar.style.width = `${percentage}%`;
-
-    if (seconds === 0) {
-      timeProgressBar.style.transition = "none";
-      timeProgressBar.style.width = "0";
-
-      setTimeout(
-        () => (timeProgressBar.style.transition = "width 1s linear"),
-        10
-      );
-    }
   }
 }
 
 async function updateTime() {
   const time = testTime || getTime();
 
-  if (!isTest) {
-    updateProgressBar();
+  if (isBooleanSettingTrue("fade")) {
+    fadeOutQuote();
   }
 
   if (lastTime !== time) {
@@ -64,5 +55,6 @@ export function initClock() {
 
   if (!isTest) {
     setInterval(updateTime, 1000);
+    setInterval(updateProgressBar, 10);
   }
 }
