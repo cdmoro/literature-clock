@@ -39,6 +39,12 @@ async function updateTime() {
     }
 
     document.title = document.title.replace(/[0-9]{2}:[0-9]{2}/, time);
+    
+    const timeEl = document.getElementById("time-clock");
+    if (timeEl) {
+      timeEl.innerHTML = time;
+    }
+    
     updateQuote(time);
     lastTime = time;
   }

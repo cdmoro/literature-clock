@@ -7,6 +7,7 @@ import { initScreensaver } from "./modules/screensaver";
 import { initFont } from "./modules/fonts";
 import { onMouseMove, updateFavicon } from "./utils/utils";
 import { initFadeMode } from "./modules/fade";
+import { initTimeMode } from "./modules/time";
 
 document.addEventListener("DOMContentLoaded", () => {
   updateFavicon();
@@ -14,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initWorkMode(false);
   initFadeMode(false);
   initScreensaver(false);
+  initTimeMode(false);
   initTheme("base-dark");
   initLocale(navigator.language);
   initFont("default");
