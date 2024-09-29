@@ -5,7 +5,7 @@ import TRANSLATIONS from "../strings/translations.json";
 import { Locale, Quote } from "../types";
 import { fitQuote, getTime, updateGHLinks } from "../utils/utils";
 import FALLBACK_QUOTES from "../strings/fallbackQuotes.json";
-import { fadeInQuote, fadeOutQuote } from "./fade";
+import { fadeInQuote } from "./fade";
 
 function prefetchNextQuotes(locale: string) {
   const now = new Date();

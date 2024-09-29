@@ -25,6 +25,7 @@ body[data-loading] {
 }
 
 body.zen:not(.screensaver) #time-progress-bar,
+body.zen:not(.screensaver) #time-clock,
 body.zen:not(.screensaver) footer #menu {
   display: none !important;
 }
