@@ -1,6 +1,6 @@
 import { updateQuote } from "./quotes";
 import { getTime, updateFavicon } from "../utils/utils";
-import { getStringSetting } from "../utils/settings";
+import { getStringSetting, isBooleanSettingTrue } from "../utils/settings";
 import { setDayParameters } from "./dynamic";
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -48,6 +48,12 @@ async function updateTime() {
     }
 
     document.title = document.title.replace(/[0-9]{2}:[0-9]{2}/, time);
+    
+    const timeEl = document.getElementById("time-clock");
+    if (timeEl) {
+      timeEl.innerHTML = time;
+    }
+    
     updateQuote(time);
     lastTime = time;
   }

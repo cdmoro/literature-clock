@@ -33,6 +33,10 @@ body.zen:not(.screensaver) #exit-zen {
   display: block;
 }
 
+body:not(.showtime) #time-clock {
+  display: none;
+}
+
 body.screensaver blockquote {
   transition-timing-function: linear;
 }
@@ -205,6 +209,18 @@ button:disabled {
   opacity: 0.7;
 }
 
+#time-clock {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	text-align: center;
+	padding: .5rem 0;
+	font-size: .85rem;
+	color: var(--accent-color);
+	font-weight: bold;
+	left: 0;
+}
+
 #time-progress-bar {
   background-color: var(--font-color);
   bottom: 0;
@@ -221,6 +237,11 @@ button:disabled {
 }
 
 #work {
+  border-radius: 0;
+  margin-left: -1px;
+}
+
+#showtime {
   border-end-start-radius: 0;
   border-start-start-radius: 0;
   margin-left: -1px;

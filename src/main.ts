@@ -6,12 +6,14 @@ import { initClock } from "./modules/clock";
 import { initScreensaver } from "./modules/screensaver";
 import { initFont } from "./modules/fonts";
 import { onMouseMove, updateFavicon } from "./utils/utils";
+import { initTimeMode } from "./modules/time";
 
 document.addEventListener("DOMContentLoaded", () => {
   updateFavicon();
   initZenMode(false);
   initWorkMode(false);
   initScreensaver(false);
+  initTimeMode(false);
   initTheme("base-dark");
   initLocale(navigator.language);
   initFont("default");
