@@ -5,6 +5,25 @@ import TRANSLATIONS from "../strings/translations.json";
 import { Locale, Quote } from "../types";
 import { fitQuote, getTime, updateGHLinks } from "../utils/utils";
 import FALLBACK_QUOTES from "../strings/fallbackQuotes.json";
+<<<<<<< Updated upstream
+=======
+import { fadeInQuote } from "./fade";
+
+function prefetchNextQuotes(locale: string) {
+  const now = new Date();
+  now.setMinutes(now.getMinutes() + 1);
+
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const nextFileName = `${hours.toString().padStart(2, "0")}_${minutes
+    .toString()
+    .padStart(2, "0")}`;
+
+  fetch(`../times/${locale}/${nextFileName}.json`, {
+    cache: 'force-cache',
+  });
+}
+>>>>>>> Stashed changes
 
 async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
   const fileName = time.replace(":", "_");
@@ -109,4 +128,6 @@ export async function updateQuote(time = getTime()) {
 
     fitQuote();
   }
+
+  prefetchNextQuotes(locale);
 }
