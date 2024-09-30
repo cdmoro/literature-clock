@@ -1,4 +1,5 @@
 import {
+  getStringSetting,
   initStringSetting,
   removeURLParam,
   setStringSetting,
@@ -33,17 +34,30 @@ export const INITIAL_THEME_FONT_SIZE = {
 const FONTS = ["Special Elite", ...new Set(Object.values(THEME_FONTS))].flat();
 const CSS_FONT_VARIABLE = "--override-quote-font-family";
 
+function createOption(value: string) {
+  const option = document.createElement("option");
+  option.value = value;
+  option.textContent = value;
+
+  return option;
+}
+
 export function initFont(defaultValue = "default") {
   const font = initStringSetting("font", defaultValue);
   const fontSelect = document.querySelector<HTMLSelectElement>("#font-select");
 
-  FONTS.forEach((font) => {
-    const option = document.createElement("option");
-    option.value = font;
-    option.textContent = font;
-
-    fontSelect?.appendChild(option);
+  FONTS.forEach((fontName) => {
+    fontSelect?.appendChild(createOption(fontName));
   });
+
+  if (font !== "default" && !FONTS.includes(font)) {
+    setStringSetting("custom-font", font);
+  }
+
+  const customFont = getStringSetting("custom-font");
+  if (customFont) {
+    fontSelect?.appendChild(createOption(customFont));
+  }
 
   setStringSetting("font", font);
   if (fontSelect) {

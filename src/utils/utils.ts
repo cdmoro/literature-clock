@@ -1,7 +1,7 @@
 import { startScreensaver } from "../modules/screensaver";
 import { isBooleanSettingTrue } from "./settings";
 import { Locale, Quote } from "../types";
-import { INITIAL_THEME_FONT_SIZE } from "../modules/fonts";
+import { INITIAL_THEME_FONT_SIZE } from "../modules/font";
 
 const GITHUB_NEW_ISSUE_URL =
   "https://github.com/cdmoro/literature-clock/issues/new";

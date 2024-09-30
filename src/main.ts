@@ -4,7 +4,7 @@ import { initZenMode } from "./modules/zen";
 import { initWorkMode } from "./modules/work";
 import { initClock } from "./modules/clock";
 import { initScreensaver } from "./modules/screensaver";
-import { initFont } from "./modules/fonts";
+import { initFont } from "./modules/font";
 import { onMouseMove, updateFavicon } from "./utils/utils";
 import { initFadeMode } from "./modules/fade";
 import { initTimeMode } from "./modules/time";

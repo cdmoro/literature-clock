@@ -1,4 +1,4 @@
-import { THEME_FONTS, resetFont } from "./fonts";
+import { THEME_FONTS, resetFont } from "./font";
 import {
   initStringSetting,
   setStringSetting,
