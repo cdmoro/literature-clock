@@ -12,9 +12,9 @@
     {
         "id": "001718",
         "time": "11:03",
-        "quote_time_case": "* 11.03 a.m.",
-        "quote_first": "El cuarto día, a las 11.03 horas, lo llamó el director del Yidische Zaitung; El doctor Yarmolinsky no respondió. Lo encontraron en su habitación, con el rostro ya un poco oscuro, casi desnudo bajo una gran capa anacrónica.",
-        "quote_last": "",
+        "quote_time_case": "11.03",
+        "quote_first": "El cuarto día, a las ",
+        "quote_last": " horas, lo llamó el director del Yidische Zaitung; El doctor Yarmolinsky no respondió. Lo encontraron en su habitación, con el rostro ya un poco oscuro, casi desnudo bajo una gran capa anacrónica.",
         "title": "La muerte y la brújula",
         "author": "Jorge Luis Borges",
         "sfw": "nsfw"

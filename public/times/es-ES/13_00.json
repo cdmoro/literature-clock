@@ -172,9 +172,9 @@
     {
         "id": "002019",
         "time": "13:00",
-        "quote_time_case": "* 1 en punto",
-        "quote_first": "Después de los controles de la una, Gretta siempre sale a fumar.",
-        "quote_last": "",
+        "quote_time_case": "la una",
+        "quote_first": "Después de los controles de ",
+        "quote_last": ", Gretta siempre sale a fumar.",
         "title": "Chica, interrumpida",
         "author": "Susanna Kaysen",
         "sfw": "unknown"
@@ -182,9 +182,9 @@
     {
         "id": "002020",
         "time": "13:00",
-        "quote_time_case": "* 13:00",
-        "quote_first": "Gottfried Rembke llegó exactamente a las 13.00 horas. En el momento en que entró al restaurante y le entregó su abrigo al camarero, supieron que era él. El cuerpo sólido y fornido, la cabeza reluciente, la expresión abierta, el apretón de manos vigoroso: todo en él irradiaba tranquilidad y entusiasmo.",
-        "quote_last": "",
+        "quote_time_case": "13.00",
+        "quote_first": "Gottfried Rembke llegó exactamente a las ",
+        "quote_last": " horas. En el momento en que entró al restaurante y le entregó su abrigo al camarero, supieron que era él. El cuerpo sólido y fornido, la cabeza reluciente, la expresión abierta, el apretón de manos vigoroso: todo en él irradiaba tranquilidad y entusiasmo.",
         "title": "Plataforma",
         "author": "Michel Houellebecq",
         "sfw": "unknown"

@@ -32,9 +32,9 @@
     {
         "id": "001490",
         "time": "10:00",
-        "quote_time_case": "* 10 a.m.",
-        "quote_first": "Si salta, piensa, caerá en picado, un lento barrido por el espacio vacío, una forma horrible de morir. Siente, momentáneamente, el calor del impacto, la humedad fantasmal de su cráneo colapsando. La ilusión de ingravidez cede. El ascensor se cierra con un ruido metálico.<br>Son poco más de las diez de la mañana de un sábado.",
-        "quote_last": "",
+        "quote_time_case": "diez de la mañana",
+        "quote_first": "Si salta, piensa, caerá en picado, un lento barrido por el espacio vacío, una forma horrible de morir. Siente, momentáneamente, el calor del impacto, la humedad fantasmal de su cráneo colapsando. La ilusión de ingravidez cede. El ascensor se cierra con un ruido metálico.<br>Son poco más de las ",
+        "quote_last": " de un sábado.",
         "title": "Vida real",
         "author": "Brandon Taylor",
         "sfw": "nsfw"
@@ -85,16 +85,16 @@
         "quote_time_case": "diez",
         "quote_first": "Billy está listo para partir temprano a la mañana siguiente, pero Bucky le pide que espere hasta las ",
         "quote_last": " porque tiene un recado que hacer. Mientras lo hace, Billy visita la casa de verano por última vez. Quita la imagen de los animales del seto de la pared y la lleva hasta el final del camino. Mira hacia el desfiladero durante uno o dos minutos, hacia el lugar donde una vez estuvo el hotel supuestamente encantado.",
-        "title": "Billy veranos",
+        "title": "Billy Summers",
         "author": "Stephen King",
         "sfw": "unknown"
     },
     {
         "id": "001496",
         "time": "10:00",
-        "quote_time_case": "* 10:00",
-        "quote_first": "Ese primer día fue un manicomio, de acuerdo. Corrí el Carolina Spin con Lane hasta las 10 en punto, luego solo durante los siguientes noventa minutos mientras él corría por el parque apagando incendios el día de la inauguración.",
-        "quote_last": "",
+        "quote_time_case": "10 en punto",
+        "quote_first": "Ese primer día fue un manicomio, de acuerdo. Corrí el Carolina Spin con Lane hasta las ",
+        "quote_last": ", luego solo durante los siguientes noventa minutos mientras él corría por el parque apagando incendios el día de la inauguración.",
         "title": "Joyland",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -282,9 +282,9 @@
     {
         "id": "001515",
         "time": "10:00",
-        "quote_time_case": "* 10 am",
-        "quote_first": "Según los registros militares, ningún bombardero estadounidense ni ningún otro tipo de avión sobrevolaba esa región en ese momento, es decir, alrededor de las 10 de la mañana del 7 de noviembre de 1944.",
-        "quote_last": "",
+        "quote_time_case": "10 de la mañana",
+        "quote_first": "Según los registros militares, ningún bombardero estadounidense ni ningún otro tipo de avión sobrevolaba esa región en ese momento, es decir, alrededor de las ",
+        "quote_last": " del 7 de noviembre de 1944.",
         "title": "Kafka en la orilla",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -332,8 +332,8 @@
     {
         "id": "001520",
         "time": "10:00",
-        "quote_time_case": "* 10:00",
-        "quote_first": "Lunes 30 de marzo de 1668 Levántate temprano, y así a la oficina, allí para hacer negocios hasta las 10 en punto",
+        "quote_time_case": "10 en punto",
+        "quote_first": "Lunes 30 de marzo de 1668 Levántate temprano, y así a la oficina, allí para hacer negocios hasta las ",
         "quote_last": "",
         "title": "El diario de Samuel Pepys",
         "author": "Samuel Pepys",
@@ -342,9 +342,9 @@
     {
         "id": "001521",
         "time": "10:00",
-        "quote_time_case": "* 10:00",
-        "quote_first": "El 25 de julio a las 8:30 horas la perra Novaya muere al dar a luz. A las 10 en punto la bajan a su fresca tumba, a las 7:30 de esa misma tarde vemos nuestros primeros témpanos y los saludamos deseando ser los últimos.",
-        "quote_last": "",
+        "quote_time_case": "10 en punto",
+        "quote_first": "El 25 de julio a las 8:30 horas la perra Novaya muere al dar a luz. A las ",
+        "quote_last": " la bajan a su fresca tumba, a las 7:30 de esa misma tarde vemos nuestros primeros témpanos y los saludamos deseando ser los últimos.",
         "title": "Los terrores del hielo y la oscuridad",
         "author": "Christoph Ransmayr",
         "sfw": "nsfw"

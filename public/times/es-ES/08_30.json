@@ -72,9 +72,9 @@
     {
         "id": "001183",
         "time": "08:30",
-        "quote_time_case": "* 08:30 AM.",
-        "quote_first": "A las 8:30 a.m. Filomina entró en Ale House blanca, redonda y jadeando por los ciento cuarenta y seis kilos de más que llevaba en su pequeño cuerpo.",
-        "quote_last": "",
+        "quote_time_case": "8:30 a.m.",
+        "quote_first": "A las ",
+        "quote_last": " Filomina entró en Ale House blanca, redonda y jadeando por los ciento cuarenta y seis kilos de más que llevaba en su pequeño cuerpo.",
         "title": "Sopa De Granada",
         "author": "Marsha Mehran",
         "sfw": "unknown"
@@ -112,9 +112,9 @@
     {
         "id": "001187",
         "time": "08:30",
-        "quote_time_case": "* 08:30 am.",
-        "quote_first": "El 25 de julio a las 8:30 horas la perra Novaya muere al dar a luz. A las 10 en punto la bajan a su fresca tumba, a las 7:30 de esa misma tarde vemos nuestros primeros témpanos y los saludamos deseando ser los últimos.",
-        "quote_last": "",
+        "quote_time_case": "8:30",
+        "quote_first": "El 25 de julio a las ",
+        "quote_last": " horas la perra Novaya muere al dar a luz. A las 10 en punto la bajan a su fresca tumba, a las 7:30 de esa misma tarde vemos nuestros primeros témpanos y los saludamos deseando ser los últimos.",
         "title": "Los terrores del hielo y la oscuridad",
         "author": "Christoph Ransmayr",
         "sfw": "nsfw"

@@ -12,9 +12,9 @@
     {
         "id": "001813",
         "time": "11:45",
-        "quote_time_case": "* 11:45 a.m.",
-        "quote_first": "11:45 AM - 05/06/2014<br>Han surgido más detalles en la investigación sobre los asesinatos en Val-de-Grâce la madrugada del miércoles.",
-        "quote_last": "",
+        "quote_time_case": "11:45 AM",
+        "quote_first": "",
+        "quote_last": " - 05/06/2014<br>Han surgido más detalles en la investigación sobre los asesinatos en Val-de-Grâce la madrugada del miércoles.",
         "title": "Las Catacumbas",
         "author": "Jeremy Bates",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "001816",
         "time": "11:45",
-        "quote_time_case": "* 11.45 horas",
-        "quote_first": "Llegué a St. Gatien procedente de Niza el martes 14 de agosto. El jueves 16, a las 11.45, fui detenido por un agente de policía y un inspector vestido de civil y conducido a la comisaría.",
-        "quote_last": "",
+        "quote_time_case": "11.45",
+        "quote_first": "Llegué a St. Gatien procedente de Niza el martes 14 de agosto. El jueves 16, a las ",
+        "quote_last": ", fui detenido por un agente de policía y un inspector vestido de civil y conducido a la comisaría.",
         "title": "Epitafio de un espía",
         "author": "Eric Ambler",
         "sfw": "unknown"

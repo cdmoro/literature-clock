@@ -42,9 +42,9 @@
     {
         "id": "001676",
         "time": "11:00",
-        "quote_time_case": "* 11 a.m.",
-        "quote_first": "Baba Diop pasó las últimas treinta y seis horas de su vida en Fleury-Mérogis. A las 11 de la mañana del segundo día, lo apuñalaron en la garganta con un peine afilado mientras lo conducían escoltado a la oficina del gobernador.",
-        "quote_last": "",
+        "quote_time_case": "11 de la mañana",
+        "quote_first": "Baba Diop pasó las últimas treinta y seis horas de su vida en Fleury-Mérogis. A las ",
+        "quote_last": " del segundo día, lo apuñalaron en la garganta con un peine afilado mientras lo conducían escoltado a la oficina del gobernador.",
         "title": "Los sin nombre",
         "author": "John Connolly",
         "sfw": "unknown"
@@ -252,9 +252,9 @@
     {
         "id": "001697",
         "time": "11:00",
-        "quote_time_case": "* 11 en punto A.M.",
-        "quote_first": "“Armstrong debe haber entrado al mar en algún momento durante la noche del 10 al 11, y explicaré por qué. Encontramos el lugar donde fue arrastrado el cuerpo: había quedado atrapado entre dos rocas y sobre ellas había trozos de tela, pelos, etc. Debió haber sido depositado allí durante la marea alta del día 11, es decir, alrededor de las 11 de la mañana. Después de eso, la tormenta amainó y las marcas de marea máxima posteriores son considerablemente más bajas”.",
-        "quote_last": "",
+        "quote_time_case": "11 de la mañana",
+        "quote_first": "“Armstrong debe haber entrado al mar en algún momento durante la noche del 10 al 11, y explicaré por qué. Encontramos el lugar donde fue arrastrado el cuerpo: había quedado atrapado entre dos rocas y sobre ellas había trozos de tela, pelos, etc. Debió haber sido depositado allí durante la marea alta del día 11, es decir, alrededor de las ",
+        "quote_last": ". Después de eso, la tormenta amainó y las marcas de marea máxima posteriores son considerablemente más bajas”.",
         "title": "Y entonces no había ninguno",
         "author": "Agatha Christie",
         "sfw": "unknown"

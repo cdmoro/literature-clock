@@ -12,9 +12,9 @@
     {
         "id": "001791",
         "time": "11:35",
-        "quote_time_case": "* 11.35 horas",
-        "quote_first": "El avión del primer ministro se detuvo a las 11.35 en el aeropuerto de Oberweisenfeld. Los motores chirriaron y se apagaron. Dentro de la cabina, después de tres horas de vuelo el silencio era un ruido en sí mismo.",
-        "quote_last": "",
+        "quote_time_case": "11.35",
+        "quote_first": "El avión del primer ministro se detuvo a las ",
+        "quote_last": " en el aeropuerto de Oberweisenfeld. Los motores chirriaron y se apagaron. Dentro de la cabina, después de tres horas de vuelo el silencio era un ruido en sí mismo.",
         "title": "Munich",
         "author": "Robert Harris",
         "sfw": "unknown"

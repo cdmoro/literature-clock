@@ -12,9 +12,9 @@
     {
         "id": "001720",
         "time": "11:04",
-        "quote_time_case": "* 11.04",
-        "quote_first": "En consecuencia, nos complace anunciar que, dado que ya se han utilizado las excusas sobrantes, el DeepDrop de las 11:04 a Sydney está listo para abordar en la Puerta Seis.",
-        "quote_last": "",
+        "quote_time_case": "11:04",
+        "quote_first": "En consecuencia, nos complace anunciar que, dado que ya se han utilizado las excusas sobrantes, el DeepDrop de las ",
+        "quote_last": " a Sydney está listo para abordar en la Puerta Seis.",
         "title": "Perdido en un buen libro",
         "author": "Jasper Fforde",
         "sfw": "sfw"

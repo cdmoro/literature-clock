@@ -42,9 +42,9 @@
     {
         "id": "001605",
         "time": "10:30",
-        "quote_time_case": "* 10.30 horas",
-        "quote_first": "10.30 h Descanso",
-        "quote_last": "",
+        "quote_time_case": "10.30 h",
+        "quote_first": "",
+        "quote_last": " Descanso",
         "title": "El curioso incidente del perro a medianoche",
         "author": "Mark Haddon",
         "sfw": "sfw"

@@ -2,9 +2,9 @@
     {
         "id": "001972",
         "time": "12:45",
-        "quote_time_case": "* 12:45 p.m.",
-        "quote_first": "El viernes a las 12:45 p. m., David llegó al Ateneo, un enorme edificio blanco en la esquina de Pall Mall, dominado por una estatua del duque de York.",
-        "quote_last": "",
+        "quote_time_case": "12:45 p.m.",
+        "quote_first": "El viernes a las ",
+        "quote_last": ", David llegó al Ateneo, un enorme edificio blanco en la esquina de Pall Mall, dominado por una estatua del duque de York.",
         "title": "Ni un centavo más, ni un centavo menos",
         "author": "Jeffrey Archer",
         "sfw": "sfw"

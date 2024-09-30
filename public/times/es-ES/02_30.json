@@ -42,9 +42,9 @@
     {
         "id": "000352",
         "time": "02:30",
-        "quote_time_case": "* 0230",
-        "quote_first": "Inc., traté de sacarla alrededor de las 02:30, y se escuchó este jodido... sonido.",
-        "quote_last": "",
+        "quote_time_case": "02:30",
+        "quote_first": "Inc., traté de sacarla alrededor de las ",
+        "quote_last": ", y se escuchó este jodido... sonido.",
         "title": "Frivolidad infinita",
         "author": "David Foster Wallace",
         "sfw": "nsfw"

@@ -72,9 +72,9 @@
     {
         "id": "001076",
         "time": "08:00",
-        "quote_time_case": "* 08 A.M.",
-        "quote_first": "Se sentó frente a las consolas y bebió otra taza de café. A su alrededor, la sala de control estaba sembrada de platos de papel y sándwiches a medio comer. Arnold estaba exhausto. Eran las 8:00 a.m. en sábado.",
-        "quote_last": "",
+        "quote_time_case": "8:00 a.m.",
+        "quote_first": "Se sentó frente a las consolas y bebió otra taza de café. A su alrededor, la sala de control estaba sembrada de platos de papel y sándwiches a medio comer. Arnold estaba exhausto. Eran las ",
+        "quote_last": " en sábado.",
         "title": "Parque jurásico",
         "author": "Michael Crichton",
         "sfw": "unknown"

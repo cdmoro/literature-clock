@@ -22,9 +22,9 @@
     {
         "id": "002001",
         "time": "12:59",
-        "quote_time_case": "* 12.59 h.",
-        "quote_first": "Y yo había estado mirando mi reloj desde que el tren partió a las 12.59.",
-        "quote_last": "",
+        "quote_time_case": "12.59",
+        "quote_first": "Y yo había estado mirando mi reloj desde que el tren partió a las ",
+        "quote_last": ".",
         "title": "El curioso incidente del perro a medianoche",
         "author": "Mark Haddon",
         "sfw": "sfw"

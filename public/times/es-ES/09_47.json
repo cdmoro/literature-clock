@@ -22,9 +22,9 @@
     {
         "id": "001437",
         "time": "09:47",
-        "quote_time_case": "* 09:47",
-        "quote_first": "El momento de la entrada y salida del Lord Canciller de la Torre Norte del Palacio de Westminster habría impresionado a un sargento mayor de regimiento. A las 9:47 llamaron a la puerta y su secretario, David Bartolomé, entró en la habitación.",
-        "quote_last": "",
+        "quote_time_case": "9:47",
+        "quote_first": "El momento de la entrada y salida del Lord Canciller de la Torre Norte del Palacio de Westminster habría impresionado a un sargento mayor de regimiento. A las ",
+        "quote_last": " llamaron a la puerta y su secretario, David Bartolomé, entró en la habitación.",
         "title": "El secreto mejor guardado",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -62,9 +62,9 @@
     {
         "id": "001441",
         "time": "09:47",
-        "quote_time_case": "* 09:47",
-        "quote_first": "9:47 a. m. O fui a Las Vegas y me casé.",
-        "quote_last": "",
+        "quote_time_case": "9:47 a.m.",
+        "quote_first": "",
+        "quote_last": " O fui a Las Vegas y me casé.",
         "title": "El diario de Bridget Jones",
         "author": "Helen Fielding",
         "sfw": "sfw"

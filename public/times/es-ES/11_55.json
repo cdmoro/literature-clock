@@ -22,9 +22,9 @@
     {
         "id": "001832",
         "time": "11:55",
-        "quote_time_case": "* 11:55 a.m.",
-        "quote_first": "Eran las 11:55 de la mañana del 30 de abril.",
-        "quote_last": "",
+        "quote_time_case": "11:55",
+        "quote_first": "Eran las ",
+        "quote_last": " de la mañana del 30 de abril.",
         "title": "Todos los hombres del presidente",
         "author": "Bernstein & Woodward",
         "sfw": "unknown"

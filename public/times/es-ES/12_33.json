@@ -12,9 +12,9 @@
     {
         "id": "001956",
         "time": "12:33",
-        "quote_time_case": "* 12.33",
-        "quote_first": "Son las 12:33 y podría hacerlo, la estación está justo al final de esa calle lateral.",
-        "quote_last": "",
+        "quote_time_case": "12:33",
+        "quote_first": "Son las ",
+        "quote_last": " y podría hacerlo, la estación está justo al final de esa calle lateral.",
         "title": "Cinco pistas falsas",
         "author": "Dorothy L. Sayers",
         "sfw": "unknown"

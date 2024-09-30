@@ -12,9 +12,9 @@
     {
         "id": "001998",
         "time": "12:58",
-        "quote_time_case": "* 12.58 p. m.",
-        "quote_first": "El reloj en mi muñeca marcaba las 12.58 horas. Tendría tiempo de ir a la morgue.",
-        "quote_last": "",
+        "quote_time_case": "12.58",
+        "quote_first": "El reloj en mi muñeca marcaba las ",
+        "quote_last": " horas. Tendría tiempo de ir a la morgue.",
         "title": "Mordeduras Mágicas",
         "author": "Ilona Andrews",
         "sfw": "unknown"

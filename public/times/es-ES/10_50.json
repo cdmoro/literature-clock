@@ -12,9 +12,9 @@
     {
         "id": "001642",
         "time": "10:50",
-        "quote_time_case": "* 10.50 horas",
-        "quote_first": "10.50 a. m. Clase de arte con la Sra. Peters",
-        "quote_last": "",
+        "quote_time_case": "10.50 a.m.",
+        "quote_first": "",
+        "quote_last": " Clase de arte con la Sra. Peters",
         "title": "El curioso incidente del perro a medianoche",
         "author": "Mark Haddon",
         "sfw": "sfw"

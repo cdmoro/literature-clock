@@ -12,9 +12,9 @@
     {
         "id": "001774",
         "time": "11:30",
-        "quote_time_case": "* 11:30 AM.",
-        "quote_first": "A las 11:30 a. m., Charlie salió corriendo por la puerta principal de la escuela, saltó y superó los seis escalones de concreto. Recorrió el camino lo más rápido que pudo, sus Red-Ball Jets golpeando el pavimento hasta llegar a la calle.",
-        "quote_last": "",
+        "quote_time_case": "11:30 a.m.",
+        "quote_first": "A las ",
+        "quote_last": ", Charlie salió corriendo por la puerta principal de la escuela, saltó y superó los seis escalones de concreto. Recorrió el camino lo más rápido que pudo, sus Red-Ball Jets golpeando el pavimento hasta llegar a la calle.",
         "title": "manantiales azules",
         "author": "Peter Rennebohm",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "001775",
         "time": "11:30",
-        "quote_time_case": "* 11:30 am.",
-        "quote_first": "Era martes -mi medio día- y a las 11:30 entró una llamada. Una eversión del útero en una vaca. Este es el trabajo duro en la práctica del campo y sentí el escalofrío habitual.",
-        "quote_last": "",
+        "quote_time_case": "11:30",
+        "quote_first": "Era martes -mi medio día- y a las ",
+        "quote_last": " entró una llamada. Una eversión del útero en una vaca. Este es el trabajo duro en la práctica del campo y sentí el escalofrío habitual.",
         "title": "Todas las criaturas grandes y pequeñas",
         "author": "James Herriot",
         "sfw": "unknown"
@@ -32,10 +32,10 @@
     {
         "id": "001776",
         "time": "11:30",
-        "quote_time_case": "* 1130",
-        "quote_first": "Cinco minutos después, otro camión se detiene detrás del primero. En el costado de este hay un niño de dibujos animados sonriente devorando una hamburguesa doble con queso. A las once y media, mientras la gente hace cola para comer hamburguesas, patatas fritas, tacos y enchiladas, aparece un carrito de perritos calientes.",
-        "quote_last": "",
-        "title": "Billy veranos",
+        "quote_time_case": "once y media",
+        "quote_first": "Cinco minutos después, otro camión se detiene detrás del primero. En el costado de este hay un niño de dibujos animados sonriente devorando una hamburguesa doble con queso. A las ",
+        "quote_last": ", mientras la gente hace cola para comer hamburguesas, patatas fritas, tacos y enchiladas, aparece un carrito de perritos calientes.",
+        "title": "Billy Summers",
         "author": "Stephen King",
         "sfw": "unknown"
     },
@@ -62,9 +62,9 @@
     {
         "id": "001779",
         "time": "11:30",
-        "quote_time_case": "* 1130",
-        "quote_first": "“Lo extraordinario es”, le dijo a Livia a las once y media, “pareces ser la única solicitante. O al menos, el único que apareció”.",
-        "quote_last": "",
+        "quote_time_case": "once y media",
+        "quote_first": "“Lo extraordinario es”, le dijo a Livia a las ",
+        "quote_last": ", “pareces ser la única solicitante. O al menos, el único que apareció”.",
         "title": "El oficial de bodas",
         "author": "Anthony Capella",
         "sfw": "unknown"

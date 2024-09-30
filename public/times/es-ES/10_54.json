@@ -32,9 +32,9 @@
     {
         "id": "001655",
         "time": "10:54",
-        "quote_time_case": "* 10:54 a.m.",
-        "quote_first": "Le digo que pagó 6.495 en el banco Bennington's de High Street a las 10:54 de la mañana de hoy, insistió Frost. \"Y le digo que no\", escupió el hombre.",
-        "quote_last": "",
+        "quote_time_case": "10:54",
+        "quote_first": "Le digo que pagó 6.495 en el banco Bennington's de High Street a las ",
+        "quote_last": " de la mañana de hoy, insistió Frost. \"Y le digo que no\", escupió el hombre.",
         "title": "Escarcha dura",
         "author": "R.D. Wingfield",
         "sfw": "sfw"
