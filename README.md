@@ -15,11 +15,12 @@ Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) (
 - [Screensaver mode](#screensaver): make the quotes dance around the screen! ([link](https://literatureclock.netlify.app/?screensaver=true))
 - Languages: supports English, Spanish, Portuguese, French, and Italian (by default, it will try to use the system language)
   - Random language: see a quote in a different language each minute, isn't that cool? ([link](https://literatureclock.netlify.app/?locale=random))
-- [Themes](#themes): the clock has `color themes` and `special themes` and each theme has light and dark variants, of course
-  - Random color theme: see a different color theme each minute, isn't that even cooler? ([link](https://literatureclock.netlify.app/?theme=color-system))
-- Font personalization: if you don't like the default font of a theme, that's perfectly fine, we won't judge you, you can change it for another one!
+- [Themes](#themes): the clock has `colour themes` and `special themes` and each theme has light and dark variants, of course
+  - Random colour theme: see a different colour theme each minute, isn't that even cooler? ([link](https://literatureclock.netlify.app/?theme=color-system))
+- Fade effect
+- Font personalization: if you don't like the default font of a theme, that's perfectly fine, we won't judge you, and you can change it for another one!
 - Progress bar: at the bottom of the page there is a `progress bar`, so you can know when a quote is about to change
-- Responsive: no matter how long is a quote, it will always look good on desktop and mobile 😎
+- Responsive: no matter how long a quote is, it will always look good on desktop and mobile 😎
 - Accessibility: All the quote elements have `aria-labels`
 - All the settings are saved in the browser's local storage and they are updated in the URL without refreshing the page, thanks to History API
 
@@ -32,13 +33,28 @@ The clock can be controlled using URL parameters, these parameters will overwrit
 - `screensaver`: activate Screensaver mode
 - `locale`: set the locale
 - `theme`: set the theme
+- `font`: set a custom font from Google Fonts (it will be available on the font selector input!)
+- `fade`: enable/disable fade effect
+- `showtime`: enable/disable the clock on top of the screen
 - `time`: get the quotes for a particular time ([link](https://literatureclock.netlify.app/?time=12:30))
 - `quote`: test a quote before submitting it ([link](https://literatureclock.netlify.app/?quote=Hi%20mom!%20I%27m%20part%20of%20the%20Literature%20Clock!)). You don't need to escape the quote by adding the special characters, just write the quote and the browser will add them
 - `index`: get a specific quote from the array of quotes instead of a random one (for testing purposes)
 
 ## Languages
 
-All translations were made from the original CSV English file, sometimes the translation it's not accurate (I used Google Translate, yes, I know), and the time is not highlighted properly, but it's fine, this is something that can be fixed easily, just one quote at a time. Plus, I marked all the _bad_ quotes with an asterisk so at some point all of them will be fixed.
+There is support for the following languages (by default, it will try to use the system language):
+
+-English
+-Spanish
+-Portuguese
+-French
+-Italian
+
+Want to implement a new language? Sure thing, ping me and let's talk about it!
+
+### About the translations
+
+All translations were made from the original CSV English file, sometimes the translations are not accurate (I used Google Translate, yes, I know), and the time is not highlighted properly, but it's fine, this is something that can be fixed easily, just one quote at a time. Plus, I marked all the _bad_ quotes with an asterisk so at some point all of them will be fixed :)
 
 In any case, if you want to help you can:
 
@@ -59,7 +75,7 @@ If you want to use this clock as a screensaver there are several ways to address
 
 ## Themes
 
-At the moment, the clock has seven color themes and four special themes, we expect to update or add more themes in the future! Here you can find some examples:
+At the moment, the clock has seven colour themes and four special themes, we expect to update or add more themes in the future! Here you can find some examples:
 
 **Base**
 | Light | Dark |
