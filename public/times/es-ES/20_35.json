@@ -12,9 +12,9 @@
     {
         "id": "003145",
         "time": "20:35",
-        "quote_time_case": "* 20.35 h.",
-        "quote_first": "Salió de Múnich a las 20.35 horas. el 1 de mayo, llegando a Viena a primera hora de la mañana siguiente.",
-        "quote_last": "",
+        "quote_time_case": "8.35 p.m.",
+        "quote_first": "Salió de Múnich a las ",
+        "quote_last": " el 1 de mayo, llegando a Viena a primera hora de la mañana siguiente.",
         "title": "Drácula",
         "author": "Bram Stoker",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "003146",
         "time": "20:35",
-        "quote_time_case": "* cinco y veinte menos nueve",
-        "quote_first": "Hizo una pausa reflexiva. Ahora estaba profundamente interesado, no había duda de ello. El asesino seguramente tendrá interés en asesinar. Ella había apostado por eso y lo había logrado. Ella echó un vistazo al reloj. Eran las nueve menos cinco y veinticinco.",
-        "quote_last": "",
+        "quote_time_case": "nueve menos veinticinco",
+        "quote_first": "Hizo una pausa reflexiva. Ahora estaba profundamente interesado, no había duda de ello. El asesino seguramente tendrá interés en asesinar. Ella había apostado por eso y lo había logrado. Ella echó un vistazo al reloj. Eran las ",
+        "quote_last": ".",
         "title": "El misterio de Listerdale",
         "author": "Agatha Christie",
         "sfw": "unknown"

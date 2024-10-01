@@ -12,9 +12,9 @@
     {
         "id": "003182",
         "time": "20:52",
-        "quote_time_case": "* ocho minutos para las nueve",
-        "quote_first": "La camarera me trajo el café. Lo llevé hasta el otro extremo del mostrador y lo bebí lentamente. Eran las nueve menos ocho minutos. La gente hacía cola en la puerta de carga, lo que significaba que se esperaba un autobús.",
-        "quote_last": "",
+        "quote_time_case": "nueve menos ocho",
+        "quote_first": "La camarera me trajo el café. Lo llevé hasta el otro extremo del mostrador y lo bebí lentamente. Eran las ",
+        "quote_last": " minutos. La gente hacía cola en la puerta de carga, lo que significaba que se esperaba un autobús.",
         "title": "El otro lado del dólar",
         "author": "Ross MacDonald",
         "sfw": "sfw"

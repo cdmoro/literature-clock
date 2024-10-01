@@ -12,9 +12,9 @@
     {
         "id": "003193",
         "time": "20:59",
-        "quote_time_case": "* un minuto para las nueve",
-        "quote_first": "Normalmente un asistente le habría puesto [la televisión] a las nueve menos un minuto. Se sentó a observar a una mujer nigeriana dando una charla sobre confección, seguida por el hombre del pronóstico del tiempo que le dio a Eduardo la reveladora información de que la temperatura seguiría siendo alta durante el próximo mes.",
-        "quote_last": "",
+        "quote_time_case": "nueve menos un minuto",
+        "quote_first": "Normalmente un asistente le habría puesto [la televisión] a las ",
+        "quote_last": ". Se sentó a observar a una mujer nigeriana dando una charla sobre confección, seguida por el hombre del pronóstico del tiempo que le dio a Eduardo la reveladora información de que la temperatura seguiría siendo alta durante el próximo mes.",
         "title": "El golpe",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "003194",
         "time": "20:59",
-        "quote_time_case": "* 20:59",
-        "quote_first": "Bueno, qué experiencia culinaria tan increíble, dijo Eva a las 8:59 p.m., cuando el auto de Prager estacionó frente a su apartamento.",
-        "quote_last": "",
+        "quote_time_case": "8:59 p.m.",
+        "quote_first": "Bueno, qué experiencia culinaria tan increíble, dijo Eva a las ",
+        "quote_last": ", cuando el auto de Prager estacionó frente a su apartamento.",
         "title": "Cocinas del Gran Medio Oeste",
         "author": "J. Ryan Stradal",
         "sfw": "unknown"

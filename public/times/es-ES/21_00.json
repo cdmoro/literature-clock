@@ -32,9 +32,9 @@
     {
         "id": "003198",
         "time": "21:00",
-        "quote_time_case": "* 21:00.",
-        "quote_first": "Eran casi las nueve de la noche. La luna llena estaba borrosa por la niebla a la deriva, y sus sombras embotadas los condujeron a través de un campo abierto, hacia los bosques oscuros más allá.",
-        "quote_last": "",
+        "quote_time_case": "casi las nueve de la noche",
+        "quote_first": "Eran ",
+        "quote_last": ". La luna llena estaba borrosa por la niebla a la deriva, y sus sombras embotadas los condujeron a través de un campo abierto, hacia los bosques oscuros más allá.",
         "title": "Parque jurásico",
         "author": "Michael Crichton",
         "sfw": "unknown"
@@ -72,9 +72,9 @@
     {
         "id": "003202",
         "time": "21:00",
-        "quote_time_case": "* nueve de la noche.",
-        "quote_first": "De todos modos, todo esto ocurrió una noche ventosa a principios de octubre. En realidad, hacía un poco de vapor para la época del año. Un enjambre de mosquitos zumbaba por la noche y recuerdo que quemé un par de espirales repelentes de mosquitos para mantenerlos alejados. El viento era ruidoso. La puerta de la piscina estaba rota y el viento hizo que la puerta se abriera y cerrara de golpe. Pensé en arreglarlo, pero estaba demasiado oscuro afuera, así que siguió sonando toda la noche.<br>Mis nueve p.m. La ronda transcurrió bien, los veinte elementos de mi lista casi se marcaron.",
-        "quote_last": "",
+        "quote_time_case": "nueve p.m.",
+        "quote_first": "De todos modos, todo esto ocurrió una noche ventosa a principios de octubre. En realidad, hacía un poco de vapor para la época del año. Un enjambre de mosquitos zumbaba por la noche y recuerdo que quemé un par de espirales repelentes de mosquitos para mantenerlos alejados. El viento era ruidoso. La puerta de la piscina estaba rota y el viento hizo que la puerta se abriera y cerrara de golpe. Pensé en arreglarlo, pero estaba demasiado oscuro afuera, así que siguió sonando toda la noche.<br>Mi ronda de las ",
+        "quote_last": " transcurrió bien, los veinte elementos de mi lista casi se marcaron.",
         "title": "Sauce ciego, mujer dormida",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -162,9 +162,9 @@
     {
         "id": "003211",
         "time": "21:00",
-        "quote_time_case": "* 2100",
-        "quote_first": "A las 21.00 de la noche hace frío.",
-        "quote_last": "",
+        "quote_time_case": "21.00",
+        "quote_first": "A las ",
+        "quote_last": " de la noche hace frío.",
         "title": "Frivolidad infinita",
         "author": "David Foster Wallace",
         "sfw": "unknown"

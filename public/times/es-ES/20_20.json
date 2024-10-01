@@ -22,9 +22,9 @@
     {
         "id": "003111",
         "time": "20:20",
-        "quote_time_case": "* Ocho y veinte",
-        "quote_first": "A las ocho y veinte salen las cartas y los rompecabezas. . . .",
-        "quote_last": "",
+        "quote_time_case": "ocho y veinte",
+        "quote_first": "A las ",
+        "quote_last": " salen las cartas y los rompecabezas. . . .",
         "title": "Uno volo sobre el nido del cuco",
         "author": "Ken Kesey",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "003113",
         "time": "20:20",
-        "quote_time_case": "* 20.20",
-        "quote_first": "A las 20:20 todos los barcos habían completado la lubricación. Sin embargo, habían tenido grandes dificultades para mantener la posición en medio de ese gran viento; pero estaban infinitamente más seguros que en mar abierto",
-        "quote_last": "",
+        "quote_time_case": "20:20",
+        "quote_first": "A las ",
+        "quote_last": " todos los barcos habían completado la lubricación. Sin embargo, habían tenido grandes dificultades para mantener la posición en medio de ese gran viento; pero estaban infinitamente más seguros que en mar abierto",
         "title": "H.M.S. Ulises",
         "author": "Alistair MacLean",
         "sfw": "unknown"
@@ -52,9 +52,9 @@
     {
         "id": "003114",
         "time": "20:20",
-        "quote_time_case": "* Las ocho y veinte minutos",
-        "quote_first": "Sabiendo que la cena era sólo para nosotros seis, nunca soñamos que sería un asunto de gala. No tenía apetito. Eran las ocho y veinte cuando nos sentamos a cenar.",
-        "quote_last": "",
+        "quote_time_case": "las ocho y veinte",
+        "quote_first": "Sabiendo que la cena era sólo para nosotros seis, nunca soñamos que sería un asunto de gala. No tenía apetito. Eran ",
+        "quote_last": " cuando nos sentamos a cenar.",
         "title": "Diario de un don nadie",
         "author": "George and Weedon Grossmith",
         "sfw": "unknown"

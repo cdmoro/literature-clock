@@ -12,9 +12,9 @@
     {
         "id": "003108",
         "time": "20:19",
-        "quote_time_case": "* Las ocho y diecinueve minutos",
-        "quote_first": "Todo estaba en silencio. Eran las ocho y diecinueve minutos.",
-        "quote_last": "",
+        "quote_time_case": "las ocho y diecinueve minutos",
+        "quote_first": "Todo estaba en silencio. Eran ",
+        "quote_last": ".",
         "title": "El club de los ladrones",
         "author": "Henry Augustus Hering",
         "sfw": "sfw"

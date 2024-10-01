@@ -12,9 +12,9 @@
     {
         "id": "003095",
         "time": "20:10",
-        "quote_time_case": "* 8:10 p.m.",
-        "quote_first": "8:10 P.M.<br>Incluso en una noche normal, La Verdad era intolerable. El suelo estaba cubierto de aserrín, música que solo podía describirse como metal metálico sonaba en el sistema de sonido, las luces navideñas parpadeaban fuera de sincronización a un ritmo que provocaba dolor de cabeza y las paredes estaban cubiertas con carteles de madera falsos y hogareños que decían mierda. como:<br>NUNCA ERES<br>2 VIEJO<br>2 BEBIDA<br>2 MUCHOS<br>6 PAQUETES",
-        "quote_last": "",
+        "quote_time_case": "8:10 P.M.",
+        "quote_first": "",
+        "quote_last": "<br>Incluso en una noche normal, La Verdad era intolerable. El suelo estaba cubierto de aserrín, música que solo podía describirse como metal metálico sonaba en el sistema de sonido, las luces navideñas parpadeaban fuera de sincronización a un ritmo que provocaba dolor de cabeza y las paredes estaban cubiertas con carteles de madera falsos y hogareños que decían mierda. como:<br>NUNCA ERES<br>2 VIEJO<br>2 BEBIDA<br>2 MUCHOS<br>6 PAQUETES",
         "title": "Cocinas del Gran Medio Oeste",
         "author": "J. Ryan Stradal",
         "sfw": "nsfw"
@@ -22,9 +22,9 @@
     {
         "id": "003096",
         "time": "20:10",
-        "quote_time_case": "* 2010 h.",
-        "quote_first": "A las 20.10 h. El 1 de abril Y.D.A.U., el agregado médico todavía está observando el cartucho de entretenimiento sin etiqueta.",
-        "quote_last": "",
+        "quote_time_case": "20.10 h.",
+        "quote_first": "A las ",
+        "quote_last": " El 1 de abril Y.D.A.U., el agregado médico todavía está observando el cartucho de entretenimiento sin etiqueta.",
         "title": "Frivolidad infinita",
         "author": "David Foster Wallace",
         "sfw": "unknown"

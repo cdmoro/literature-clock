@@ -2,9 +2,9 @@
     {
         "id": "003130",
         "time": "20:30",
-        "quote_time_case": "* 8:30 PM.",
-        "quote_first": "Los perros se dieron por vencidos y comenzaron a deambular a las 8:30 p.m. Para entonces, John ya estaba entumecido. Hacía veinte grados y no estaba seguro de cuánto tiempo más podría permanecer encima del camión expuesto al viento y al frío.",
-        "quote_last": "",
+        "quote_time_case": "8:30 p.m.",
+        "quote_first": "Los perros se dieron por vencidos y comenzaron a deambular a las ",
+        "quote_last": " Para entonces, John ya estaba entumecido. Hacía veinte grados y no estaba seguro de cuánto tiempo más podría permanecer encima del camión expuesto al viento y al frío.",
         "title": "Cala francesa",
         "author": "Peter Rennebohm",
         "sfw": "unknown"
@@ -62,9 +62,9 @@
     {
         "id": "003136",
         "time": "20:30",
-        "quote_time_case": "* Ocho y media",
-        "quote_first": "A las ocho y media se abre la puerta de la sala y entran dos técnicos, oliendo a vino de uva; Los técnicos siempre se mueven al paso rápido o al trote porque siempre están tan inclinados hacia adelante que tienen que moverse rápido para mantenerse de pie.",
-        "quote_last": "",
+        "quote_time_case": "ocho y media",
+        "quote_first": "A las ",
+        "quote_last": " se abre la puerta de la sala y entran dos técnicos, oliendo a vino de uva; Los técnicos siempre se mueven al paso rápido o al trote porque siempre están tan inclinados hacia adelante que tienen que moverse rápido para mantenerse de pie.",
         "title": "Uno volo sobre el nido del cuco",
         "author": "Ken Kesey",
         "sfw": "unknown"
@@ -82,9 +82,9 @@
     {
         "id": "003138",
         "time": "20:30",
-        "quote_time_case": "* Ocho y media",
-        "quote_first": "Alix tomó un trozo de costura y comenzó a coser. Gerald leyó algunas páginas de su libro. Luego miró el reloj y tiró el libro. \"Las ocho y media. Es hora de bajar al sótano y empezar a trabajar\".",
-        "quote_last": "",
+        "quote_time_case": "ocho y media",
+        "quote_first": "Alix tomó un trozo de costura y comenzó a coser. Gerald leyó algunas páginas de su libro. Luego miró el reloj y tiró el libro. \"Las ",
+        "quote_last": ". Es hora de bajar al sótano y empezar a trabajar\".",
         "title": "El misterio de Listerdale",
         "author": "Agatha Christie",
         "sfw": "unknown"
@@ -92,9 +92,9 @@
     {
         "id": "003139",
         "time": "20:30",
-        "quote_time_case": "* Ocho y media",
-        "quote_first": "Las bicicletas pasan de dos en dos y de tres en tres; esta noche hay un baile en el granero de Billy Brennan, y está el código de misterios a medias y el lenguaje del deleite de guiños y codos. Son las ocho y media y no hay un solo lugar en una milla de camino, ninguna sombra proyectada que pueda revelar a un hombre o una mujer,",
-        "quote_last": "",
+        "quote_time_case": "ocho y media",
+        "quote_first": "Las bicicletas pasan de dos en dos y de tres en tres; esta noche hay un baile en el granero de Billy Brennan, y está el código de misterios a medias y el lenguaje del deleite de guiños y codos. Son las ",
+        "quote_last": " y no hay un solo lugar en una milla de camino, ninguna sombra proyectada que pueda revelar a un hombre o una mujer,",
         "title": "Inniskeen Road: tarde de julio",
         "author": "Patrick Kavanagh",
         "sfw": "unknown"

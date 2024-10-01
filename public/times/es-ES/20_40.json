@@ -12,9 +12,9 @@
     {
         "id": "003153",
         "time": "20:40",
-        "quote_time_case": "* veinte minutos para las nueve",
-        "quote_first": "El día diecisiete. Así fue. Estaban sentados a las nueve menos veinte. Es una pequeña debilidad por mi parte anotar la hora a la que el cliente está realmente sentado.",
-        "quote_last": "",
+        "quote_time_case": "nueve menos veinte",
+        "quote_first": "El día diecisiete. Así fue. Estaban sentados a las ",
+        "quote_last": ". Es una pequeña debilidad por mi parte anotar la hora a la que el cliente está realmente sentado.",
         "title": "Un gusto por la muerte",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -32,9 +32,9 @@
     {
         "id": "003155",
         "time": "20:40",
-        "quote_time_case": "* veinte minutos para las nueve",
-        "quote_first": "Fue cuando me paré frente a ella, evitando su mirada, que tomé nota de los objetos circundantes en detalle, y vi que su reloj se había detenido a las nueve menos veinte, y que un reloj en la habitación se había detenido a las nueve menos veinte. .",
-        "quote_last": "",
+        "quote_time_case": "nueve menos veinte",
+        "quote_first": "Fue cuando me paré frente a ella, evitando su mirada, que tomé nota de los objetos circundantes en detalle, y vi que su reloj se había detenido a las ",
+        "quote_last": ", y que un reloj en la habitación se había detenido a las nueve menos veinte.",
         "title": "Grandes expectativas",
         "author": "Charles Dickens",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "003156",
         "time": "20:40",
-        "quote_time_case": "* veinte minutos para las nueve",
-        "quote_first": "La carta llegó a las nueve menos veinte.",
-        "quote_last": "",
+        "quote_time_case": "nueve menos veinte",
+        "quote_first": "La carta llegó a las ",
+        "quote_last": ".",
         "title": "El asesinato de Roger Ackroyd",
         "author": "Agatha Christie",
         "sfw": "unknown"
