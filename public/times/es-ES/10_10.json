@@ -2,9 +2,9 @@
     {
         "id": "001553",
         "time": "10:10",
-        "quote_time_case": "* diez y diez minutos",
-        "quote_first": "A las diez y diez de la mañana siguiente, William recibió otra llamada de su ahora agitado corredor. Al sonar la campana de apertura se habían colocado en el mercado acciones de Interstate por valor de otro millón de dólares.",
-        "quote_last": "",
+        "quote_time_case": "diez y diez de la mañana",
+        "quote_first": "A las ",
+        "quote_last": " siguiente, William recibió otra llamada de su ahora agitado corredor. Al sonar la campana de apertura se habían colocado en el mercado acciones de Interstate por valor de otro millón de dólares.",
         "title": "Kane y Abel",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
