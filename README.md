@@ -18,7 +18,7 @@ Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) (
 - [Themes](#themes): the clock has `colour themes` and `special themes` and each theme has light and dark variants, of course
   - Random colour theme: see a different colour theme each minute, isn't that even cooler? ([link](https://literatureclock.netlify.app/?theme=color-system))
 - Fade effect
-- Font personalization: if you don't like the default font of a theme, that's perfectly fine, we won't judge you, and you can change it for another one!
+- Font personalization: if you don't like the default font of a theme, that's perfectly fine, we won't judge you, and you can change it for another one (from Google Fonts - check Settings section)!
 - Progress bar: at the bottom of the page there is a `progress bar`, so you can know when a quote is about to change
 - Responsive: no matter how long a quote is, it will always look good on desktop and mobile 😎
 - Accessibility: All the quote elements have `aria-labels`
@@ -28,17 +28,20 @@ Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) (
 
 The clock can be controlled using URL parameters, these parameters will overwrite the existing configuration
 
-- `zen`: activate Zen mode
-- `work`: activate Work mode
-- `screensaver`: activate Screensaver mode
+- `zen`: enable/disable Zen mode
+- `work`: enable/disable Work mode
+- `screensaver`: enable/disable Screensaver mode
 - `locale`: set the locale
 - `theme`: set the theme
 - `font`: set a custom font from Google Fonts (it will be available on the font selector input!)
 - `fade`: enable/disable fade effect
 - `showtime`: enable/disable the clock on top of the screen
+
+Test settings
+  
 - `time`: get the quotes for a particular time ([link](https://literatureclock.netlify.app/?time=12:30))
-- `quote`: test a quote before submitting it ([link](https://literatureclock.netlify.app/?quote=Hi%20mom!%20I%27m%20part%20of%20the%20Literature%20Clock!)). You don't need to escape the quote by adding the special characters, just write the quote and the browser will add them
-- `index`: get a specific quote from the array of quotes instead of a random one (for testing purposes)
+- `quote`: test a quote before submitting it ([link](https://literatureclock.netlify.app/?quote=Hi%20mom!%20I%27m%20part%20of%20the%20Literature%20Clock!)) (it is no necessary to escape the quote by adding the special characters, just write the quote and the browser will add them)
+- `index`: get a specific quote from the array of quotes instead of a random one
 
 ## Languages
 
