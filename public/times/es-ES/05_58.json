@@ -12,21 +12,21 @@
     {
         "id": "000788",
         "time": "05:58",
-        "quote_time_case": "5.58 a.m.",
-        "quote_first": "Annika Giannini se despertó sobresaltada. Vio que eran las ",
-        "quote_last": "",
-        "title": "La chica que pateó el avispero",
-        "author": "Stieg Larsson",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000789",
-        "time": "05:58",
         "quote_time_case": "* justo antes de las seis",
         "quote_first": "Grant entró en su oficina en la iglesia luterana de St. Mary poco antes de las seis de la mañana siguiente. Su llegada inusualmente temprana – saltándose sus ejercicios habituales de la mañana – fue impulsada por el deseo de revisar el ensayo que había escrito años antes y comenzar el proceso de actualizarlo, como se le había pedido.",
         "quote_last": "",
         "title": "Bajo la cúpula dorada",
         "author": "Ray Keating",
         "sfw": "sfw"
+    },
+    {
+        "id": "000789",
+        "time": "05:58",
+        "quote_time_case": "5.58 a.m.",
+        "quote_first": "Annika Giannini se despertó sobresaltada. Vio que eran las ",
+        "quote_last": "",
+        "title": "La chica que pateó el avispero",
+        "author": "Stieg Larsson",
+        "sfw": "unknown"
     }
 ]

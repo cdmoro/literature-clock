@@ -2,31 +2,31 @@
     {
         "id": "003195",
         "time": "21:00",
-        "quote_time_case": "nueve",
-        "quote_first": "Aquellos que tenían que acostarse con tanta puntualidad, para quienes las luces se apagaban a las ",
-        "quote_last": ", podían quedarse en la granja Obermeier hasta que aparecieran las luciérnagas y las estrellas, hasta que se encendieran las linternas chinas y pudieran caminar de nuevo por la calle. granja con su jovial anfitrión y anfitriona con estas hermosas luces de colores que se balancean.",
-        "title": "Brillante valle del amor",
-        "author": "Edna Hong",
+        "quote_time_case": "21.00",
+        "quote_first": "A las ",
+        "quote_last": " de la noche hace frío.",
+        "title": "Frivolidad infinita",
+        "author": "David Foster Wallace",
         "sfw": "unknown"
     },
     {
         "id": "003196",
         "time": "21:00",
-        "quote_time_case": "nueve",
-        "quote_first": "La tormenta se mantuvo hasta las ",
-        "quote_last": " en punto, y para entonces Anderson estaba bastante seguro de que iban a tener una buena, lo que los habitantes de Haveni llamaron \"un verdadero Jeezer\".",
-        "title": "Los Tommyknockers",
-        "author": "Stephen King",
-        "sfw": "unknown"
+        "quote_time_case": "21.00 h.",
+        "quote_first": "",
+        "quote_last": " Ver televisión o un vídeo.",
+        "title": "El curioso incidente del perro a medianoche",
+        "author": "Mark Haddon",
+        "sfw": "sfw"
     },
     {
         "id": "003197",
         "time": "21:00",
-        "quote_time_case": "nueve",
-        "quote_first": "El reloj dio las ",
-        "quote_last": " cuando envié a la enfermera.<br>En media hora ella prometió regresar.",
-        "title": "Romeo y Julieta",
-        "author": "William Shakespeare",
+        "quote_time_case": "a las nueve",
+        "quote_first": "Esa noche ",
+        "quote_last": " el Presidente se dirigió a la nación.",
+        "title": "Todos los hombres del presidente",
+        "author": "Bernstein & Woodward",
         "sfw": "unknown"
     },
     {
@@ -43,6 +43,36 @@
         "id": "003199",
         "time": "21:00",
         "quote_time_case": "nueve",
+        "quote_first": "Aquellos que tenían que acostarse con tanta puntualidad, para quienes las luces se apagaban a las ",
+        "quote_last": ", podían quedarse en la granja Obermeier hasta que aparecieran las luciérnagas y las estrellas, hasta que se encendieran las linternas chinas y pudieran caminar de nuevo por la calle. granja con su jovial anfitrión y anfitriona con estas hermosas luces de colores que se balancean.",
+        "title": "Brillante valle del amor",
+        "author": "Edna Hong",
+        "sfw": "unknown"
+    },
+    {
+        "id": "003200",
+        "time": "21:00",
+        "quote_time_case": "nueve",
+        "quote_first": "La tormenta se mantuvo hasta las ",
+        "quote_last": " en punto, y para entonces Anderson estaba bastante seguro de que iban a tener una buena, lo que los habitantes de Haveni llamaron \"un verdadero Jeezer\".",
+        "title": "Los Tommyknockers",
+        "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "id": "003201",
+        "time": "21:00",
+        "quote_time_case": "nueve",
+        "quote_first": "El reloj dio las ",
+        "quote_last": " cuando envié a la enfermera.<br>En media hora ella prometió regresar.",
+        "title": "Romeo y Julieta",
+        "author": "William Shakespeare",
+        "sfw": "unknown"
+    },
+    {
+        "id": "003202",
+        "time": "21:00",
+        "quote_time_case": "nueve",
         "quote_first": "A las ",
         "quote_last": " de la noche del sábado, Lakeside Avenue, la calle principal, estaba atestada de unos cuatro mil turistas bebiendo cerveza, la mitad de ellos en motocicletas.",
         "title": "Ángeles del Infierno",
@@ -50,17 +80,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003200",
-        "time": "21:00",
-        "quote_time_case": "nueve de la noche",
-        "quote_first": "Eran las ",
-        "quote_last": ", en Blackbury High Street.<br>En el escaparate de la tienda de electricidad, nueve televisores mostraban la misma imagen. Nueve televisores proyectaban sus pantallas parpadeantes en el aire vacío.",
-        "title": "Johnny y la bomba",
-        "author": "Terry Pratchett",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003201",
+        "id": "003203",
         "time": "21:00",
         "quote_time_case": "nueve",
         "quote_first": "Se alejó de la ventana, con los brazos erizados de piel de gallina. Había comprado un sándwich en la tienda Red Apple y había planeado comérselo mientras empezaba el libro de bolsillo de John Sandford que también había comprado en Red Apple, pero después de algunos bocados volvió a envolver el sándwich y lo puso en el alféizar de la ventana. , donde permanecería frío. Podría comer el resto más tarde, aunque no creía que se quedara despierto mucho después de las ",
@@ -70,17 +90,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003202",
-        "time": "21:00",
-        "quote_time_case": "nueve p.m.",
-        "quote_first": "De todos modos, todo esto ocurrió una noche ventosa a principios de octubre. En realidad, hacía un poco de vapor para la época del año. Un enjambre de mosquitos zumbaba por la noche y recuerdo que quemé un par de espirales repelentes de mosquitos para mantenerlos alejados. El viento era ruidoso. La puerta de la piscina estaba rota y el viento hizo que la puerta se abriera y cerrara de golpe. Pensé en arreglarlo, pero estaba demasiado oscuro afuera, así que siguió sonando toda la noche.<br>Mi ronda de las ",
-        "quote_last": " transcurrió bien, los veinte elementos de mi lista casi se marcaron.",
-        "title": "Sauce ciego, mujer dormida",
-        "author": "Haruki Murakami",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003203",
+        "id": "003204",
         "time": "21:00",
         "quote_time_case": "nueve",
         "quote_first": "Sigue sonriendo todo el tiempo, sonriendo como una pequeña chinche rosada que se ha hartado. “Eran las ",
@@ -90,7 +100,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003204",
+        "id": "003205",
         "time": "21:00",
         "quote_time_case": "nueve",
         "quote_first": "A las ",
@@ -100,7 +110,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003205",
+        "id": "003206",
         "time": "21:00",
         "quote_time_case": "nueve",
         "quote_first": "Un día alguien dejó una colección de libros en la acera de la calle Setenta y siete Este, los llevé a casa y los leí todos de principio a fin. Una historia de conducción en estado de ebriedad en Estados Unidos. Un libro de cocina indio. 𝘞𝘢𝘳 𝘢𝘯𝘥 𝘗𝘦𝘢𝘤𝘦. 𝘔𝘢𝘰 𝘐𝘐. 𝘐𝘵𝘢𝘭𝘪𝘢𝘯 𝘧𝘰𝘳 𝘋𝘶𝘮𝘮𝘪𝘦𝘴. Un libro de Mad Libs que completé yo mismo usando las palabras más simples que se me ocurrieron. Pasé los días así durante cuatro o cinco semanas. No compré un celular. Me deshice del colchón viejo. Todas las noches, a las ",
@@ -110,7 +120,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003206",
+        "id": "003207",
         "time": "21:00",
         "quote_time_case": "nueve",
         "quote_first": "Hacia las ",
@@ -120,7 +130,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003207",
+        "id": "003208",
         "time": "21:00",
         "quote_time_case": "nueve",
         "quote_first": "Ella le devolvió la mirada, sorprendida y confundida. Luego desafiante. De repente cerró el portátil y lo metió en su bolso. Sacó un bolígrafo y garabateó una dirección en una servilleta. \"Si cambias de opinión\", dijo rígidamente, poniéndose de pie, \"estaré en este lugar entre las ocho y las ",
@@ -130,7 +140,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003208",
+        "id": "003209",
         "time": "21:00",
         "quote_time_case": "nueve",
         "quote_first": "Sin embargo, a las ",
@@ -140,7 +150,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003209",
+        "id": "003210",
         "time": "21:00",
         "quote_time_case": "nueve",
         "quote_first": "A las ",
@@ -150,27 +160,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003210",
-        "time": "21:00",
-        "quote_time_case": "21.00 h.",
-        "quote_first": "",
-        "quote_last": " Ver televisión o un vídeo.",
-        "title": "El curioso incidente del perro a medianoche",
-        "author": "Mark Haddon",
-        "sfw": "sfw"
-    },
-    {
         "id": "003211",
-        "time": "21:00",
-        "quote_time_case": "21.00",
-        "quote_first": "A las ",
-        "quote_last": " de la noche hace frío.",
-        "title": "Frivolidad infinita",
-        "author": "David Foster Wallace",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003212",
         "time": "21:00",
         "quote_time_case": "nueve",
         "quote_first": "Llegué a casa después de trabajar en Burger Boy esta noche alrededor de las ",
@@ -180,7 +170,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003213",
+        "id": "003212",
         "time": "21:00",
         "quote_time_case": "nueve",
         "quote_first": "Eran las ",
@@ -190,7 +180,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003214",
+        "id": "003213",
         "time": "21:00",
         "quote_time_case": "nueve",
         "quote_first": "La víspera del trigésimo primer cumpleaños de K. (eran alrededor de las ",
@@ -200,7 +190,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003215",
+        "id": "003214",
         "time": "21:00",
         "quote_time_case": "nueve",
         "quote_first": "Al dar las ",
@@ -210,7 +200,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003216",
+        "id": "003215",
         "time": "21:00",
         "quote_time_case": "nueve",
         "quote_first": "Aquella misma noche, poco después de las ",
@@ -220,7 +210,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003217",
+        "id": "003216",
         "time": "21:00",
         "quote_time_case": "nueve",
         "quote_first": "De pie en la desolación de cromo y azulejos de la cafetería Polar-Shtern a las ",
@@ -230,17 +220,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003218",
-        "time": "21:00",
-        "quote_time_case": "a las nueve",
-        "quote_first": "Esa noche ",
-        "quote_last": " el Presidente se dirigió a la nación.",
-        "title": "Todos los hombres del presidente",
-        "author": "Bernstein & Woodward",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003219",
+        "id": "003217",
         "time": "21:00",
         "quote_time_case": "nueve",
         "quote_first": "Luego se puso una chaqueta gris y salió del piso para dirigirse a la Praca da Alegria. Ya eran las ",
@@ -250,7 +230,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003220",
+        "id": "003218",
         "time": "21:00",
         "quote_time_case": "nueve",
         "quote_first": "Esta vez, ponerse su mejor sombrero a las ",
@@ -260,7 +240,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003221",
+        "id": "003219",
         "time": "21:00",
         "quote_time_case": "nueve",
         "quote_first": "A las ",
@@ -268,5 +248,25 @@
         "title": "El comedor de hachís",
         "author": "Fitz Hugh Ludlow",
         "sfw": "nsfw"
+    },
+    {
+        "id": "003220",
+        "time": "21:00",
+        "quote_time_case": "nueve de la noche",
+        "quote_first": "Eran las ",
+        "quote_last": ", en Blackbury High Street.<br>En el escaparate de la tienda de electricidad, nueve televisores mostraban la misma imagen. Nueve televisores proyectaban sus pantallas parpadeantes en el aire vacío.",
+        "title": "Johnny y la bomba",
+        "author": "Terry Pratchett",
+        "sfw": "unknown"
+    },
+    {
+        "id": "003221",
+        "time": "21:00",
+        "quote_time_case": "nueve p.m.",
+        "quote_first": "De todos modos, todo esto ocurrió una noche ventosa a principios de octubre. En realidad, hacía un poco de vapor para la época del año. Un enjambre de mosquitos zumbaba por la noche y recuerdo que quemé un par de espirales repelentes de mosquitos para mantenerlos alejados. El viento era ruidoso. La puerta de la piscina estaba rota y el viento hizo que la puerta se abriera y cerrara de golpe. Pensé en arreglarlo, pero estaba demasiado oscuro afuera, así que siguió sonando toda la noche.<br>Mi ronda de las ",
+        "quote_last": " transcurrió bien, los veinte elementos de mi lista casi se marcaron.",
+        "title": "Sauce ciego, mujer dormida",
+        "author": "Haruki Murakami",
+        "sfw": "unknown"
     }
 ]

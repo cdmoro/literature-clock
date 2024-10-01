@@ -2,21 +2,21 @@
     {
         "id": "003539",
         "time": "23:16",
-        "quote_time_case": "11:16",
-        "quote_first": "Finalmente, a las ",
-        "quote_last": ", apareció y ocupó su lugar reservado en la mesa de baccarat. Stephen dejó de sorber su jugo de tomate y Jean-Pierre se acercó y esperó pacientemente junto a la mesa a que uno de los hombres sentados a la izquierda o a la derecha de Harvey se fuera.",
-        "title": "Ni un centavo más, ni un centavo menos",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "003540",
-        "time": "23:16",
         "quote_time_case": "* 23.16 h.",
         "quote_first": "Pero no pude salir de casa inmediatamente porque él me vería, así que tendría que esperar hasta que se durmiera.<br>Eran las 23:16.<br>Intenté doblar 2 nuevamente, pero no pude. No pasé de 2(15), que era 32.768. Entonces gemí para hacer que el tiempo pasara más rápido y no pensar.",
         "quote_last": "",
         "title": "El curioso incidente del perro a medianoche",
         "author": "Mark Haddon",
+        "sfw": "sfw"
+    },
+    {
+        "id": "003540",
+        "time": "23:16",
+        "quote_time_case": "11:16",
+        "quote_first": "Finalmente, a las ",
+        "quote_last": ", apareció y ocupó su lugar reservado en la mesa de baccarat. Stephen dejó de sorber su jugo de tomate y Jean-Pierre se acercó y esperó pacientemente junto a la mesa a que uno de los hombres sentados a la izquierda o a la derecha de Harvey se fuera.",
+        "title": "Ni un centavo más, ni un centavo menos",
+        "author": "Jeffrey Archer",
         "sfw": "sfw"
     }
 ]

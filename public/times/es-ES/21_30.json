@@ -2,6 +2,26 @@
     {
         "id": "003276",
         "time": "21:30",
+        "quote_time_case": "21:30",
+        "quote_first": "Son las ",
+        "quote_last": ". ya. Debo ir al centro para mi cita con Pavel. Pavel es mi psiquiatra. Atiende pacientes por la noche. Es un judío checo, un superviviente de Terezin y Auswitz. Lo veo una vez por semana.",
+        "title": "Maus",
+        "author": "Art Spiegelman",
+        "sfw": "unknown"
+    },
+    {
+        "id": "003277",
+        "time": "21:30",
+        "quote_time_case": "21.30 h.",
+        "quote_first": "",
+        "quote_last": " Acostarse",
+        "title": "El curioso incidente del perro a medianoche",
+        "author": "Mark Haddon",
+        "sfw": "sfw"
+    },
+    {
+        "id": "003278",
+        "time": "21:30",
         "quote_time_case": "nueve y media",
         "quote_first": "Tenemos tres años del pasado para discutir. Basta esto hasta las ",
         "quote_last": ", cuando iniciamos la notable aventura de la casa vacía.",
@@ -10,7 +30,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003277",
+        "id": "003279",
         "time": "21:30",
         "quote_time_case": "nueve y media",
         "quote_first": "Grant abrió los ojos. Una brillante luz azul entraba al edificio a través de los barrotes de la puerta. Luz de cuarzo: ¡la luz volvió! Aturdido, miró su reloj. Eran apenas las ",
@@ -20,17 +40,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003278",
-        "time": "21:30",
-        "quote_time_case": "nueve y media de la noche",
-        "quote_first": "Los hombres llegan a las ",
-        "quote_last": ". Se suponía que Roxy había ido con sus primas esa noche; Lo habían arreglado durante semanas, pero ella le había dicho a su madre que no le había comprado las medias adecuadas en Primark, por lo que su madre dijo: \"No irás, te quedarás\".",
-        "title": "El poder",
-        "author": "Naomi Alderman",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003279",
+        "id": "003280",
         "time": "21:30",
         "quote_time_case": "nueve y media",
         "quote_first": "Luego, justo antes de las ",
@@ -40,7 +50,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003280",
+        "id": "003281",
         "time": "21:30",
         "quote_time_case": "nueve y media",
         "quote_first": "A las ",
@@ -48,16 +58,6 @@
         "title": "Y entonces no había ninguno",
         "author": "Agatha Christie",
         "sfw": "unknown"
-    },
-    {
-        "id": "003281",
-        "time": "21:30",
-        "quote_time_case": "21.30 h.",
-        "quote_first": "",
-        "quote_last": " Acostarse",
-        "title": "El curioso incidente del perro a medianoche",
-        "author": "Mark Haddon",
-        "sfw": "sfw"
     },
     {
         "id": "003282",
@@ -72,21 +72,21 @@
     {
         "id": "003283",
         "time": "21:30",
-        "quote_time_case": "* 9:30 pm.",
-        "quote_first": "Son las 21:30. ya. Debo ir al centro para mi cita con Pavel. Pavel es mi psiquiatra. Atiende pacientes por la noche. Es un judío checo, un superviviente de Terezin y Auswitz. Lo veo una vez por semana.",
-        "quote_last": "",
-        "title": "Maus",
-        "author": "Art Spiegelman",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003284",
-        "time": "21:30",
         "quote_time_case": "nueve y media",
         "quote_first": "La luz de la cocina del señor Green se apagó a las ",
         "quote_last": ", seguida por la luz de su dormitorio a las diez, como siempre. Su casa fue la primera de la calle en quedar a oscuras.",
         "title": "Un crimen en el barrio",
         "author": "Suzanne Berne",
+        "sfw": "unknown"
+    },
+    {
+        "id": "003284",
+        "time": "21:30",
+        "quote_time_case": "nueve y media de la noche",
+        "quote_first": "Los hombres llegan a las ",
+        "quote_last": ". Se suponía que Roxy había ido con sus primas esa noche; Lo habían arreglado durante semanas, pero ella le había dicho a su madre que no le había comprado las medias adecuadas en Primark, por lo que su madre dijo: \"No irás, te quedarás\".",
+        "title": "El poder",
+        "author": "Naomi Alderman",
         "sfw": "unknown"
     }
 ]

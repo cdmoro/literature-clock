@@ -2,6 +2,16 @@
     {
         "id": "001218",
         "time": "08:43",
+        "quote_time_case": "8.43 a.m.",
+        "quote_first": "",
+        "quote_last": " Pasar por la tienda de pescado tropical.",
+        "title": "El curioso incidente del perro a medianoche",
+        "author": "Mark Haddon",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001219",
+        "time": "08:43",
         "quote_time_case": "8:43",
         "quote_first": "\"De cualquier manera, no se le debe permitir regresar a la Casa Blanca\". Se cortó la comunicación. Cavalli sabía que su padre tenía razón en ambos aspectos. Cavalli volvió a consultar su reloj: ",
         "quote_last": ".",
@@ -10,7 +20,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001219",
+        "id": "001220",
         "time": "08:43",
         "quote_time_case": "ocho cuarenta y tres",
         "quote_first": "¿Entiendes que esta grabadora está encendida?<br>\"Ajá\"<br>\"Y es miércoles 15 de mayo a las ",
@@ -18,15 +28,5 @@
         "title": "Tiempo de matar",
         "author": "John Grisham",
         "sfw": "unknown"
-    },
-    {
-        "id": "001220",
-        "time": "08:43",
-        "quote_time_case": "8.43 a.m.",
-        "quote_first": "",
-        "quote_last": " Pasar por la tienda de pescado tropical.",
-        "title": "El curioso incidente del perro a medianoche",
-        "author": "Mark Haddon",
-        "sfw": "sfw"
     }
 ]

@@ -2,12 +2,12 @@
     {
         "id": "002873",
         "time": "18:58",
-        "quote_time_case": "6:58 p.m.",
-        "quote_first": "Exactamente dónde había visto las dos figuras, el momento en que continuaron subiendo la montaña y el hecho de que no parecían tener dificultades cuando desaparecieron en la niebla. Cuando terminó, miró su reloj: ",
+        "quote_time_case": "* dos minutos antes de las siete",
+        "quote_first": "Hoy era martes quince de agosto; El sol había salido a las cinco y once de la mañana y se pondría a las siete menos dos de la tarde.",
         "quote_last": "",
-        "title": "Caminos de gloria",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
+        "title": "La roca caliente",
+        "author": "Donald E Westlake",
+        "sfw": "unknown"
     },
     {
         "id": "002874",
@@ -22,21 +22,21 @@
     {
         "id": "002875",
         "time": "18:58",
+        "quote_time_case": "6:58 p.m.",
+        "quote_first": "Exactamente dónde había visto las dos figuras, el momento en que continuaron subiendo la montaña y el hecho de que no parecían tener dificultades cuando desaparecieron en la niebla. Cuando terminó, miró su reloj: ",
+        "quote_last": "",
+        "title": "Caminos de gloria",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002876",
+        "time": "18:58",
         "quote_time_case": "dos minutos para las siete",
         "quote_first": "Camine rápido, dice Perry, \"faltan ",
         "quote_last": " y tengo que estar en casa a las...\"<br>\"Oh, cállate\", le digo. \"Tenía una cita como jefe de ejecución en una investigación a las siete, y no estoy molesto por no conservarlo\".",
         "title": "Caminos del destino",
         "author": "O. Henry",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002876",
-        "time": "18:58",
-        "quote_time_case": "* dos minutos antes de las siete",
-        "quote_first": "Hoy era martes quince de agosto; El sol había salido a las cinco y once de la mañana y se pondría a las siete menos dos de la tarde.",
-        "quote_last": "",
-        "title": "La roca caliente",
-        "author": "Donald E Westlake",
         "sfw": "unknown"
     }
 ]

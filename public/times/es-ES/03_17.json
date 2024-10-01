@@ -12,16 +12,6 @@
     {
         "id": "000478",
         "time": "03:17",
-        "quote_time_case": "3:17 a.m.",
-        "quote_first": "La marca de tiempo dice ",
-        "quote_last": " Un gran bloque de texto. No es una buena señal de lo que vendrá.",
-        "title": "Casa de baño",
-        "author": "P.J. Vernon",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000479",
-        "time": "03:17",
         "quote_time_case": "* Las tres y diecisiete minutos de la mañana",
         "quote_first": "Eran las tres y diecisiete minutos de la madrugada. Mila, con gabardina y botas, se sentó en el borde de la cama. Malik Solanka gimió. El desastre siempre llegaba cuando tus defensas estaban en su punto más bajo: tomándote por sorpresa, como el amor.",
         "quote_last": "",
@@ -30,7 +20,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000480",
+        "id": "000479",
         "time": "03:17",
         "quote_time_case": "3:17",
         "quote_first": "Los dos nos sentamos allí, escuchando; Boris más atentamente que yo. \"¿Quién es ese con él entonces?\" Yo dije. \"Alguna puta\". Escuchó durante un momento, con el ceño fruncido y el perfil definido a la luz de la luna, y luego se volvió a tumbar. \"Dos de ellos.\" Me di la vuelta y revisé mi iPod. Eran las ",
@@ -38,6 +28,16 @@
         "title": "El jilguero",
         "author": "Donna Tartt",
         "sfw": "nsfw"
+    },
+    {
+        "id": "000480",
+        "time": "03:17",
+        "quote_time_case": "3:17 a.m.",
+        "quote_first": "La marca de tiempo dice ",
+        "quote_last": " Un gran bloque de texto. No es una buena señal de lo que vendrá.",
+        "title": "Casa de baño",
+        "author": "P.J. Vernon",
+        "sfw": "unknown"
     },
     {
         "id": "000481",

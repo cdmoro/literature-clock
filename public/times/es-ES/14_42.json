@@ -2,16 +2,6 @@
     {
         "id": "002224",
         "time": "14:42",
-        "quote_time_case": "dos cuarenta y dos",
-        "quote_first": "Eran las ",
-        "quote_last": ". Clarissa ha pedido que la llamen a las dos cuarenta y cinco, pero unos minutos no importan. Llamó a la puerta, al principio en voz baja y luego con más fuerza. No hubo respuesta.",
-        "title": "El cráneo debajo de la piel",
-        "author": "P.D. James",
-        "sfw": "sfw"
-    },
-    {
-        "id": "002225",
-        "time": "14:42",
         "quote_time_case": "14:42",
         "quote_first": "A las ",
         "quote_last": " exactamente vi una correa de plasma descender del cielo y detenerse fuera del apartamento como si contuviera un sensorium que estuviera realizando su propia vigilancia.",
@@ -20,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "002226",
+        "id": "002225",
         "time": "14:42",
         "quote_time_case": "14:42",
         "quote_first": "",
@@ -28,5 +18,15 @@
         "title": "Proyecto cíclope",
         "author": "Thomas Hoover",
         "sfw": "nsfw"
+    },
+    {
+        "id": "002226",
+        "time": "14:42",
+        "quote_time_case": "dos cuarenta y dos",
+        "quote_first": "Eran las ",
+        "quote_last": ". Clarissa ha pedido que la llamen a las dos cuarenta y cinco, pero unos minutos no importan. Llamó a la puerta, al principio en voz baja y luego con más fuerza. No hubo respuesta.",
+        "title": "El cráneo debajo de la piel",
+        "author": "P.D. James",
+        "sfw": "sfw"
     }
 ]

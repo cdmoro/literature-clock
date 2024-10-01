@@ -2,6 +2,16 @@
     {
         "id": "000865",
         "time": "06:32",
+        "quote_time_case": "* veintiocho minutos para las siete",
+        "quote_first": "Los familiares números de radio en mi muñeca izquierda confirmaron la torre del reloj. Eran las siete menos veintiocho minutos. Parecía estar llenando un pijama de color granate llamativo que ciertamente no era mío. Mi vis-a-vis llevaba un pequeño número amarillo.",
+        "quote_last": "",
+        "title": "Demasiado parecido al relámpago",
+        "author": "Dana Chambers",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000866",
+        "time": "06:32",
         "quote_time_case": "6:32 a.m.",
         "quote_first": "",
         "quote_last": "<br>Marcos se había despertado, pero no estaba despierto. Su cabeza estaba nadando en pensamientos incoherentes. La primera visión que pasó por su mente fue Elizabeth; él sonrió.",
@@ -10,7 +20,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "000866",
+        "id": "000867",
         "time": "06:32",
         "quote_time_case": "6:32 a.m.",
         "quote_first": "Ya llevaba siete minutos aparcado allí; sólo podía permitirse unos cuantos más antes de que alguien sospechara.<br>\"Vamos... vamos\", estaba murmurando. \"Terminemos con esto de una vez.\"<br>Miró su reloj: ",
@@ -20,23 +30,13 @@
         "sfw": "sfw"
     },
     {
-        "id": "000867",
+        "id": "000868",
         "time": "06:32",
         "quote_time_case": "6:32 a.m.",
         "quote_first": "AEROPUERTO DE BURBANK<br>",
         "quote_last": "<br>El tráfico de la hora pico avanzaba lentamente bajo la pálida luz de la mañana. Casey giró su espejo retrovisor y se inclinó para revisar su maquillaje.",
         "title": "Estructura de avión",
         "author": "Michael Crichton",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000868",
-        "time": "06:32",
-        "quote_time_case": "* veintiocho minutos para las siete",
-        "quote_first": "Los familiares números de radio en mi muñeca izquierda confirmaron la torre del reloj. Eran las siete menos veintiocho minutos. Parecía estar llenando un pijama de color granate llamativo que ciertamente no era mío. Mi vis-a-vis llevaba un pequeño número amarillo.",
-        "quote_last": "",
-        "title": "Demasiado parecido al relámpago",
-        "author": "Dana Chambers",
         "sfw": "unknown"
     }
 ]

@@ -2,12 +2,12 @@
     {
         "id": "003575",
         "time": "23:35",
-        "quote_time_case": "* once y treinta y cinco",
-        "quote_first": "Estuvo detrás del coche en moto durante algunos kilómetros y lo vio acercarse para aparcar junto a las piedras. Eran alrededor de las once y media del viernes. En el vehículo sólo iba una persona y el conductor apagó las luces al aparcar.",
+        "quote_time_case": "* 23:35",
+        "quote_first": "Barbie llamó a la policía y enviaron un automóvil desde la estación de Haverstock Hill a las 11:35 p.m. Llegó a la casa de los Berenson en poco menos de tres minutos.",
         "quote_last": "",
-        "title": "El paciente privado",
-        "author": "P.D. James",
-        "sfw": "sfw"
+        "title": "El paciente silencioso",
+        "author": "Alex Michaelides",
+        "sfw": "unknown"
     },
     {
         "id": "003576",
@@ -22,11 +22,11 @@
     {
         "id": "003577",
         "time": "23:35",
-        "quote_time_case": "* 23:35",
-        "quote_first": "Barbie llamó a la policía y enviaron un automóvil desde la estación de Haverstock Hill a las 11:35 p.m. Llegó a la casa de los Berenson en poco menos de tres minutos.",
+        "quote_time_case": "* once y treinta y cinco",
+        "quote_first": "Estuvo detrás del coche en moto durante algunos kilómetros y lo vio acercarse para aparcar junto a las piedras. Eran alrededor de las once y media del viernes. En el vehículo sólo iba una persona y el conductor apagó las luces al aparcar.",
         "quote_last": "",
-        "title": "El paciente silencioso",
-        "author": "Alex Michaelides",
-        "sfw": "unknown"
+        "title": "El paciente privado",
+        "author": "P.D. James",
+        "sfw": "sfw"
     }
 ]

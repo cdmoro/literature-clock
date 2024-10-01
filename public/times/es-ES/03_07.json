@@ -2,21 +2,21 @@
     {
         "id": "000460",
         "time": "03:07",
-        "quote_time_case": "3:07",
-        "quote_first": "Miró su reloj: ",
-        "quote_last": ". ¿Seguramente no podría ser Fiona? Se levantó de la cama, se puso la bata y, de mala gana, se dirigió hacia la puerta.",
-        "title": "Caras, ganas",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "000461",
-        "time": "03:07",
         "quote_time_case": "3.07 a.m.",
         "quote_first": "Wayne se conectó tarde: ",
         "quote_last": ", el programa tardío. Estacionó. Dejó caer su lata de leche. Bostezó, se estiró. Se rascó.",
         "title": "Los fríos seis mil",
         "author": "James Ellroy",
         "sfw": "unknown"
+    },
+    {
+        "id": "000461",
+        "time": "03:07",
+        "quote_time_case": "3:07",
+        "quote_first": "Miró su reloj: ",
+        "quote_last": ". ¿Seguramente no podría ser Fiona? Se levantó de la cama, se puso la bata y, de mala gana, se dirigió hacia la puerta.",
+        "title": "Caras, ganas",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     }
 ]

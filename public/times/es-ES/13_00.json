@@ -2,21 +2,21 @@
     {
         "id": "002002",
         "time": "13:00",
-        "quote_time_case": "la una en punto",
-        "quote_first": "“Ven”, dijo el Mago. “Puede que para Aslan todos los horarios sean pronto, pero en mi casa todos los horarios de hambre son ",
-        "quote_last": "”.",
-        "title": "La travesía del viajero del alba",
-        "author": "C.S. Lewis",
+        "quote_time_case": "13.00",
+        "quote_first": "Gottfried Rembke llegó exactamente a las ",
+        "quote_last": " horas. En el momento en que entró al restaurante y le entregó su abrigo al camarero, supieron que era él. El cuerpo sólido y fornido, la cabeza reluciente, la expresión abierta, el apretón de manos vigoroso: todo en él irradiaba tranquilidad y entusiasmo.",
+        "title": "Plataforma",
+        "author": "Michel Houellebecq",
         "sfw": "unknown"
     },
     {
         "id": "002003",
         "time": "13:00",
-        "quote_time_case": "la una en punto",
-        "quote_first": "¡Adivina qué! dijo Klaus mientras ponía sopa de lentejas en la boca de Gunther durante la comida del mediodía en Gaza. \"Tengo el honor de ser el primer hombre en Gaza en encontrarse con los médicos forenses. A ",
-        "quote_last": " en Hebrón\".",
-        "title": "Brillante valle del amor",
-        "author": "Edna Hong",
+        "quote_time_case": "* de acuerdo",
+        "quote_first": "Pasaron muchas lunas. ¿El babuino voló alguna vez? ¿Llegó alguna vez al sol? ¡Acabo de enterarme hoy de que va por buen camino! Pasará por Acton a la una.",
+        "quote_last": "",
+        "title": "Viejo babuino tonto",
+        "author": "Spike Milligan",
         "sfw": "unknown"
     },
     {
@@ -82,16 +82,6 @@
     {
         "id": "002010",
         "time": "13:00",
-        "quote_time_case": "la una de la tarde",
-        "quote_first": "Un reloj de carruaje plateado en la casa de Judith Rey en Ewingsville suena a ",
-        "quote_last": ". La esposa de un financiero habla con Bill Smoke. \"Esta casa nunca deja de sacar a relucir el demonio de la codicia que hay en mí\", confiesa la mujer enjoyada de cincuenta y tantos años, \"es una copia de Frank Lloyd Wright. Creo que el original está en las afueras de Salem\".",
-        "title": "Atlas de nubes",
-        "author": "David Mitchell",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002011",
-        "time": "13:00",
         "quote_time_case": "* la una en punto",
         "quote_first": "\"Oh, sí que soy un pensador\", dice McMurphy, y se alejan juntos por el pasillo. Cuando regresan, lo que parecen días después, ambos están sonriendo, hablando y felices por algo. El médico se limpia las lágrimas de las gafas y parece que realmente se ha estado riendo, y McMurphy está de regreso tan ruidoso y lleno de bravuconería como siempre. Está así durante todo el almuerzo, y a la una es el primero en sentarse en su asiento para la reunión, con los ojos azules e irritables desde su lugar en la esquina.",
         "quote_last": "",
@@ -100,7 +90,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002012",
+        "id": "002011",
         "time": "13:00",
         "quote_time_case": "* la una en punto",
         "quote_first": "Tenía una llamada de larga distancia desde Portland y estaba en el vestíbulo de telefonía con uno de los chicos negros, esperando que el grupo volviera a llamar. Cuando llegó la una y nos pusimos a mover cosas, a preparar la sala de estar, el chico menos negro le preguntó si quería que bajara a buscar a McMurphy y Washington para la reunión, pero ella dijo que no, que estaba bien. , que se quede; además, a algunos de los hombres aquí presentes les gustaría tener la oportunidad de hablar sobre nuestro señor Randle Patrick McMurphy en ausencia de su presencia dominante.",
@@ -110,7 +100,7 @@
         "sfw": "nsfw"
     },
     {
-        "id": "002013",
+        "id": "002012",
         "time": "13:00",
         "quote_time_case": "* la una en punto",
         "quote_first": "“No puedo hacerlo, Findle; ¡Estoy con alguien más! ¡Llámame mañana hacia la una!",
@@ -120,27 +110,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002014",
-        "time": "13:00",
-        "quote_time_case": "* uno",
-        "quote_first": "Cuanto más pensaba en ello, más desconcertado estaba. No entendía ese asunto del revólver. Alguien en la casa tenía ese revólver. Abajo, un reloj dio la una.",
-        "quote_last": "",
-        "title": "Y entonces no había ninguno",
-        "author": "Agatha Christie",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002015",
-        "time": "13:00",
-        "quote_time_case": "uno",
-        "quote_first": "Creo, dijo con una sonrisa triunfante, \"que puedo esperar con seguridad encontrar en el comedor a la persona que busco, bella señora.\"<br>\"Puede que haya más de una.\"<br>\"Quien esté allí, cuando el reloj dé la una, será seguido por ",
-        "quote_last": " de mis hombres; de ellos, uno, o tal vez dos, o incluso tres, partirán mañana hacia Francia. Uno de ellos será la `Pimpernel Escarlata'”.",
-        "title": "La pimpinela escarlata",
-        "author": "Baroness Orczy",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002016",
+        "id": "002013",
         "time": "13:00",
         "quote_time_case": "* La una en punto",
         "quote_first": "¡A la una, orinar! Hola, inserta nombre aquí!",
@@ -150,7 +120,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002017",
+        "id": "002014",
         "time": "13:00",
         "quote_time_case": "* la una en punto",
         "quote_first": "La zarina Catalina informó haber entrado en Galatz hoy a la una.",
@@ -160,57 +130,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002018",
-        "time": "13:00",
-        "quote_time_case": "13.00 h.",
-        "quote_first": "",
-        "quote_last": " primera clase de la tarde",
-        "title": "El curioso incidente del perro a medianoche",
-        "author": "Mark Haddon",
-        "sfw": "sfw"
-    },
-    {
-        "id": "002019",
-        "time": "13:00",
-        "quote_time_case": "la una",
-        "quote_first": "Después de los controles de ",
-        "quote_last": ", Gretta siempre sale a fumar.",
-        "title": "Chica, interrumpida",
-        "author": "Susanna Kaysen",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002020",
-        "time": "13:00",
-        "quote_time_case": "13.00",
-        "quote_first": "Gottfried Rembke llegó exactamente a las ",
-        "quote_last": " horas. En el momento en que entró al restaurante y le entregó su abrigo al camarero, supieron que era él. El cuerpo sólido y fornido, la cabeza reluciente, la expresión abierta, el apretón de manos vigoroso: todo en él irradiaba tranquilidad y entusiasmo.",
-        "title": "Plataforma",
-        "author": "Michel Houellebecq",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002021",
-        "time": "13:00",
-        "quote_time_case": "la una en punto",
-        "quote_first": "Llegué temprano a casa de Schmidt, sintiéndome terriblemente nervioso. A ",
-        "quote_last": ": Toni. Estaba mirando el menú que conocía bien: ¿Schmorbraten? ¿Chuleta de ternera? - cuando él se cernió sobre ella. Lo había visto entrar. Ella me miró, a través de él. \"Traidor.\" Jamie, flotando, pareciendo muy grande, pronunció su apodo, un diminutivo alemán elegido por ella.",
-        "title": "Rompecabezas",
-        "author": "Sybille Bedford",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002022",
-        "time": "13:00",
-        "quote_time_case": "trece",
-        "quote_first": "Era un día brillante y frío de abril y los relojes daban las ",
-        "quote_last": ".",
-        "title": "1984",
-        "author": "George Orwell",
-        "sfw": "sfw"
-    },
-    {
-        "id": "002023",
+        "id": "002015",
         "time": "13:00",
         "quote_time_case": "* la una en punto",
         "quote_first": "Era la una. Compré algunas manzanas y un pequeño pastel de cerdo y crucé el puente hasta el otro lado de la orilla del río en dirección a Orford Ness.",
@@ -220,17 +140,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002024",
-        "time": "13:00",
-        "quote_time_case": "* de acuerdo",
-        "quote_first": "Pasaron muchas lunas. ¿El babuino voló alguna vez? ¿Llegó alguna vez al sol? ¡Acabo de enterarme hoy de que va por buen camino! Pasará por Acton a la una.",
-        "quote_last": "",
-        "title": "Viejo babuino tonto",
-        "author": "Spike Milligan",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002025",
+        "id": "002016",
         "time": "13:00",
         "quote_time_case": "* la una en punto",
         "quote_first": "Ese día era la una cuando John y Roger cruzaron remando y subieron a la granja de Dixon a buscar leche y una nueva provisión de huevos y mantequilla.",
@@ -240,13 +150,103 @@
         "sfw": "unknown"
     },
     {
-        "id": "002026",
+        "id": "002017",
         "time": "13:00",
         "quote_time_case": "* la una en punto",
         "quote_first": "Se limpian las mesas del suelo de la sala de estar y a la una el médico sale de su despacho al final del pasillo, saluda con un gesto de cabeza a la enfermera al pasar junto a la ventana donde está mirando, se sienta en su silla justo al lado de la izquierda de la puerta.",
         "quote_last": "",
         "title": "uno volo sobre el nido del cuco",
         "author": "Ken Kesey",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002018",
+        "time": "13:00",
+        "quote_time_case": "* uno",
+        "quote_first": "Cuanto más pensaba en ello, más desconcertado estaba. No entendía ese asunto del revólver. Alguien en la casa tenía ese revólver. Abajo, un reloj dio la una.",
+        "quote_last": "",
+        "title": "Y entonces no había ninguno",
+        "author": "Agatha Christie",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002019",
+        "time": "13:00",
+        "quote_time_case": "13.00 h.",
+        "quote_first": "",
+        "quote_last": " primera clase de la tarde",
+        "title": "El curioso incidente del perro a medianoche",
+        "author": "Mark Haddon",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002020",
+        "time": "13:00",
+        "quote_time_case": "la una",
+        "quote_first": "Después de los controles de ",
+        "quote_last": ", Gretta siempre sale a fumar.",
+        "title": "Chica, interrumpida",
+        "author": "Susanna Kaysen",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002021",
+        "time": "13:00",
+        "quote_time_case": "la una de la tarde",
+        "quote_first": "Un reloj de carruaje plateado en la casa de Judith Rey en Ewingsville suena a ",
+        "quote_last": ". La esposa de un financiero habla con Bill Smoke. \"Esta casa nunca deja de sacar a relucir el demonio de la codicia que hay en mí\", confiesa la mujer enjoyada de cincuenta y tantos años, \"es una copia de Frank Lloyd Wright. Creo que el original está en las afueras de Salem\".",
+        "title": "Atlas de nubes",
+        "author": "David Mitchell",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002022",
+        "time": "13:00",
+        "quote_time_case": "la una en punto",
+        "quote_first": "“Ven”, dijo el Mago. “Puede que para Aslan todos los horarios sean pronto, pero en mi casa todos los horarios de hambre son ",
+        "quote_last": "”.",
+        "title": "La travesía del viajero del alba",
+        "author": "C.S. Lewis",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002023",
+        "time": "13:00",
+        "quote_time_case": "la una en punto",
+        "quote_first": "¡Adivina qué! dijo Klaus mientras ponía sopa de lentejas en la boca de Gunther durante la comida del mediodía en Gaza. \"Tengo el honor de ser el primer hombre en Gaza en encontrarse con los médicos forenses. A ",
+        "quote_last": " en Hebrón\".",
+        "title": "Brillante valle del amor",
+        "author": "Edna Hong",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002024",
+        "time": "13:00",
+        "quote_time_case": "la una en punto",
+        "quote_first": "Llegué temprano a casa de Schmidt, sintiéndome terriblemente nervioso. A ",
+        "quote_last": ": Toni. Estaba mirando el menú que conocía bien: ¿Schmorbraten? ¿Chuleta de ternera? - cuando él se cernió sobre ella. Lo había visto entrar. Ella me miró, a través de él. \"Traidor.\" Jamie, flotando, pareciendo muy grande, pronunció su apodo, un diminutivo alemán elegido por ella.",
+        "title": "Rompecabezas",
+        "author": "Sybille Bedford",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002025",
+        "time": "13:00",
+        "quote_time_case": "trece",
+        "quote_first": "Era un día brillante y frío de abril y los relojes daban las ",
+        "quote_last": ".",
+        "title": "1984",
+        "author": "George Orwell",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002026",
+        "time": "13:00",
+        "quote_time_case": "uno",
+        "quote_first": "Creo, dijo con una sonrisa triunfante, \"que puedo esperar con seguridad encontrar en el comedor a la persona que busco, bella señora.\"<br>\"Puede que haya más de una.\"<br>\"Quien esté allí, cuando el reloj dé la una, será seguido por ",
+        "quote_last": " de mis hombres; de ellos, uno, o tal vez dos, o incluso tres, partirán mañana hacia Francia. Uno de ellos será la `Pimpernel Escarlata'”.",
+        "title": "La pimpinela escarlata",
+        "author": "Baroness Orczy",
         "sfw": "unknown"
     }
 ]

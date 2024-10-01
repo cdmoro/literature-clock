@@ -2,6 +2,16 @@
     {
         "id": "002806",
         "time": "18:25",
+        "quote_time_case": "* 6.25",
+        "quote_first": "En este momento, mientras escribía, recibí un telegrama de Jonathan diciendo que sale a las 6:25 esta noche desde Launceston y estará aquí a las 10:18, así que no tendré miedo esta noche.",
+        "quote_last": "",
+        "title": "Drácula",
+        "author": "Bram Stoker",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002807",
+        "time": "18:25",
         "quote_time_case": "* seis veinticinco",
         "quote_first": "Sin preámbulos, Dalgliesh dijo: —La señora Tallulah Clutton, ama de llaves del Museo Dupayne, le ha reconocido esta tarde como el automovilista que la arrojó de su bicicleta alrededor de las seis y veinticinco del viernes primero de noviembre. Esa noche dos En el museo fueron asesinadas dos personas: el doctor Neville Dupayne y la señorita Celia Mellock.",
         "quote_last": "",
@@ -10,7 +20,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "002807",
+        "id": "002808",
         "time": "18:25",
         "quote_time_case": "6:25",
         "quote_first": "A las ",
@@ -20,23 +30,13 @@
         "sfw": "sfw"
     },
     {
-        "id": "002808",
+        "id": "002809",
         "time": "18:25",
         "quote_time_case": "las seis y veinticinco",
         "quote_first": "A ",
         "quote_last": " voy al baño y me lavo, luego, mientras la anciana está ocupada en la cocina ayudando a Chris a lavar los platos, tomo mi abrigo y bajo las escaleras.",
         "title": "Una especie de amor",
         "author": "Stan Barstow",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002809",
-        "time": "18:25",
-        "quote_time_case": "* 6.25",
-        "quote_first": "En este momento, mientras escribía, recibí un telegrama de Jonathan diciendo que sale a las 6:25 esta noche desde Launceston y estará aquí a las 10:18, así que no tendré miedo esta noche.",
-        "quote_last": "",
-        "title": "Drácula",
-        "author": "Bram Stoker",
         "sfw": "unknown"
     }
 ]

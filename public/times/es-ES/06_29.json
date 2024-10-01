@@ -2,21 +2,21 @@
     {
         "id": "000851",
         "time": "06:29",
-        "quote_time_case": "6:29",
-        "quote_first": "Durante los siguientes quince minutos cargó las cajas de vino y cerveza escaleras arriba, deteniéndose constantemente para mirar su reloj, y a las ",
-        "quote_last": " abrió la puerta trasera para encontrar al cabo alemán saltando arriba y abajo y golpeándose los costados en un esfuerzo. para mantener el calor.",
-        "title": "Los pecados del padre",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "000852",
-        "time": "06:29",
         "quote_time_case": "* un minuto antes de las seis y media",
         "quote_first": "Me senté. Había una alfombra encima de mí. Lo tiré y puse los pies en el suelo. Le fruncí el ceño a un reloj. El reloj marcaba las seis y media un minuto.",
         "quote_last": "",
         "title": "El gran sueño",
         "author": "Raymond Chandler",
         "sfw": "unknown"
+    },
+    {
+        "id": "000852",
+        "time": "06:29",
+        "quote_time_case": "6:29",
+        "quote_first": "Durante los siguientes quince minutos cargó las cajas de vino y cerveza escaleras arriba, deteniéndose constantemente para mirar su reloj, y a las ",
+        "quote_last": " abrió la puerta trasera para encontrar al cabo alemán saltando arriba y abajo y golpeándose los costados en un esfuerzo. para mantener el calor.",
+        "title": "Los pecados del padre",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     }
 ]

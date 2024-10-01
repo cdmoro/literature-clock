@@ -2,6 +2,16 @@
     {
         "id": "001991",
         "time": "12:55",
+        "quote_time_case": "Cinco a uno",
+        "quote_first": "El inspector miró el reloj. ",
+        "quote_last": ". Una mañana ocupada.",
+        "title": "Un hombre yacía muerto",
+        "author": "Ngaio Marsh",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001992",
+        "time": "12:55",
         "quote_time_case": "una menos cinco",
         "quote_first": "En casa, el reloj de la cocina hacía ruido. Desempacó el globo terráqueo y miró la hora. La casa se sentía tan silenciosa y vacía sin Benny. El reloj marcaba la ",
         "quote_last": ". Tenía una hora antes de que llegara el equipo técnico. Llevó la bola de nieve a la sala de estar. Lo pondría al lado de su computadora como talismán para mantenerla tranquila y concentrada.",
@@ -10,23 +20,13 @@
         "sfw": "unknown"
     },
     {
-        "id": "001992",
+        "id": "001993",
         "time": "12:55",
         "quote_time_case": "una menos cinco",
         "quote_first": "A la ",
         "quote_last": ", el presentador del espectáculo salió de una carpa con calefacción entre un gran aplauso de la multitud. Estaba vestida con un abrigo fucsia, con un jersey de cuello alto negro, una falda hasta la rodilla, medias negras y botas hasta la rodilla.",
         "title": "La primera llamada telefónica del cielo",
         "author": "Mitch Albom",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001993",
-        "time": "12:55",
-        "quote_time_case": "Cinco a uno",
-        "quote_first": "El inspector miró el reloj. ",
-        "quote_last": ". Una mañana ocupada.",
-        "title": "Un hombre yacía muerto",
-        "author": "Ngaio Marsh",
         "sfw": "unknown"
     },
     {

@@ -2,21 +2,21 @@
     {
         "id": "002359",
         "time": "15:27",
-        "quote_time_case": "* Las tres y veintisiete de la tarde.",
-        "quote_first": "A las tres y veintisiete de la tarde, el preciso momento en que Albert nació en 1907, el anciano, rodeado de sus cinco hijos, once nietos y diecinueve bisnietos, hundió un cuchillo con mango de plata en un pastel de tres niveles.",
-        "quote_last": "",
-        "title": "Telegrama del cumpleaños de la reina",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "002360",
-        "time": "15:27",
         "quote_time_case": "* 15.27 h.",
         "quote_first": "Y llamó al reverendo Peters y él llegó a la escuela a las 15.27. y él dijo: \"Entonces, joven, ¿estamos listos para partir?\"",
         "quote_last": "",
         "title": "El curioso incidente del perro durante la noche",
         "author": "Mark Haddon",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002360",
+        "time": "15:27",
+        "quote_time_case": "* Las tres y veintisiete de la tarde.",
+        "quote_first": "A las tres y veintisiete de la tarde, el preciso momento en que Albert nació en 1907, el anciano, rodeado de sus cinco hijos, once nietos y diecinueve bisnietos, hundió un cuchillo con mango de plata en un pastel de tres niveles.",
+        "quote_last": "",
+        "title": "Telegrama del cumpleaños de la reina",
+        "author": "Jeffrey Archer",
         "sfw": "sfw"
     }
 ]

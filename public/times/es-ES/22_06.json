@@ -2,12 +2,12 @@
     {
         "id": "003370",
         "time": "22:06",
-        "quote_time_case": "ya eran más de las diez",
-        "quote_first": "Por supuesto, tenían buenas razones para estar inquietos en una noche así. Y entonces ",
-        "quote_last": " y todavía no había señales de Gabriel y su esposa. Además, tenían un miedo terrible de que Freddy Malins acabara jodido.",
-        "title": "Los muertos",
-        "author": "James Joyce",
-        "sfw": "unknown"
+        "quote_time_case": "22:06 CET",
+        "quote_first": "",
+        "quote_last": "<br>William se acomodó en su litera poco después de las diez, pero no durmió. Algunos de los marineros jugaban a las cartas, mientras que otros contaban historias improbables de tesoros que habían recuperado del fondo del océano.",
+        "title": "Nada arriesgado",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     },
     {
         "id": "003371",
@@ -22,11 +22,11 @@
     {
         "id": "003372",
         "time": "22:06",
-        "quote_time_case": "22:06 CET",
-        "quote_first": "",
-        "quote_last": "<br>William se acomodó en su litera poco después de las diez, pero no durmió. Algunos de los marineros jugaban a las cartas, mientras que otros contaban historias improbables de tesoros que habían recuperado del fondo del océano.",
-        "title": "Nada arriesgado",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
+        "quote_time_case": "ya eran más de las diez",
+        "quote_first": "Por supuesto, tenían buenas razones para estar inquietos en una noche así. Y entonces ",
+        "quote_last": " y todavía no había señales de Gabriel y su esposa. Además, tenían un miedo terrible de que Freddy Malins acabara jodido.",
+        "title": "Los muertos",
+        "author": "James Joyce",
+        "sfw": "unknown"
     }
 ]

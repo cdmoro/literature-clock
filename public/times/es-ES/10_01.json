@@ -2,12 +2,12 @@
     {
         "id": "001528",
         "time": "10:01",
-        "quote_time_case": "10:01",
-        "quote_first": "“Bien, adelante”, dijo secamente el director. “Infórmame tan pronto como estén listos, pero deja la sesión informativa final para el último momento posible y, Matt, no quiero helicópteros hasta las ",
-        "quote_last": ". No quiero que haya posibilidad de fuga de ningún tipo; es nuestra única esperanza de atrapar al asesino”.",
-        "title": "¿Se lo contamos al presidente?",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
+        "quote_time_case": "* alrededor de las diez",
+        "quote_first": "Hacia las diez de la mañana, el sol arrojó una brillante barra cargada de polvo a través de una de las ventanillas laterales, y dentro y fuera del rayo entraron y salieron moscas como estrellas fugaces.",
+        "quote_last": "",
+        "title": "De ratones y hombres",
+        "author": "John Steinbeck",
+        "sfw": "unknown"
     },
     {
         "id": "001529",
@@ -22,6 +22,16 @@
     {
         "id": "001530",
         "time": "10:01",
+        "quote_time_case": "10:01",
+        "quote_first": "“Bien, adelante”, dijo secamente el director. “Infórmame tan pronto como estén listos, pero deja la sesión informativa final para el último momento posible y, Matt, no quiero helicópteros hasta las ",
+        "quote_last": ". No quiero que haya posibilidad de fuga de ningún tipo; es nuestra única esperanza de atrapar al asesino”.",
+        "title": "¿Se lo contamos al presidente?",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001531",
+        "time": "10:01",
         "quote_time_case": "10:01 a.m.",
         "quote_first": "",
         "quote_last": "<br>Maldita devastación cataclísmica, más o menos.",
@@ -30,7 +40,7 @@
         "sfw": "nsfw"
     },
     {
-        "id": "001531",
+        "id": "001532",
         "time": "10:01",
         "quote_time_case": "10:01 a.m.",
         "quote_first": "",
@@ -38,15 +48,5 @@
         "title": "Proyecto cíclope",
         "author": "Thomas Hoover",
         "sfw": "sfw"
-    },
-    {
-        "id": "001532",
-        "time": "10:01",
-        "quote_time_case": "* alrededor de las diez",
-        "quote_first": "Hacia las diez de la mañana, el sol arrojó una brillante barra cargada de polvo a través de una de las ventanillas laterales, y dentro y fuera del rayo entraron y salieron moscas como estrellas fugaces.",
-        "quote_last": "",
-        "title": "De ratones y hombres",
-        "author": "John Steinbeck",
-        "sfw": "unknown"
     }
 ]

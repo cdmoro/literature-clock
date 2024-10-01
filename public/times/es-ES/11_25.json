@@ -2,6 +2,16 @@
     {
         "id": "001762",
         "time": "11:25",
+        "quote_time_case": "11.25",
+        "quote_first": "Cuando, alrededor de las ",
+        "quote_last": " horas, finalmente sacaron a Katharina Blum de su apartamento para interrogarla, se decidió no esposarla en absoluto.",
+        "title": "El honor perdido de Katharina Blum",
+        "author": "Heinrich Böll",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001763",
+        "time": "11:25",
         "quote_time_case": "* once veinticinco",
         "quote_first": "El BEA Viscount aterrizó en el aeropuerto de Ginebra esa mañana a las once y veinticinco, hora local, unos minutos más tarde de lo previsto. La azafata aconsejó a los pasajeros adelantar sus relojes una hora a la hora de Europa Central.",
         "quote_last": "",
@@ -10,23 +20,13 @@
         "sfw": "sfw"
     },
     {
-        "id": "001763",
+        "id": "001764",
         "time": "11:25",
         "quote_time_case": "* once y veinticinco minutos",
         "quote_first": "A las 10.15, Arlena salió de su reunión, uno o dos minutos después, Patrick Redfern bajó y expresó sorpresa, enfado, etc. La tarea de Christine fue bastante fácil. Manteniendo su propio reloj oculto, le preguntó a Linda a las once y veinticinco qué hora era. Linda miró su reloj y respondió que eran las doce menos cuarto.",
         "quote_last": "",
         "title": "Maldad bajo el sol",
         "author": "Agatha Christie",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001764",
-        "time": "11:25",
-        "quote_time_case": "11.25",
-        "quote_first": "Cuando, alrededor de las ",
-        "quote_last": " horas, finalmente sacaron a Katharina Blum de su apartamento para interrogarla, se decidió no esposarla en absoluto.",
-        "title": "El honor perdido de Katharina Blum",
-        "author": "Heinrich Böll",
         "sfw": "unknown"
     }
 ]

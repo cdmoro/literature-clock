@@ -2,22 +2,22 @@
     {
         "id": "003079",
         "time": "20:03",
-        "quote_time_case": "Las ocho y tres minutos",
-        "quote_first": "Si bien. Obviamente está muerta y es muy reciente. En las últimas dos horas, si me presionas. Pero ustedes mismos debieron haber llegado a esa conclusión o no la habrían matado. ¿Cuándo dijiste que la encontraste? ",
-        "quote_last": ".",
-        "title": "Muerte de un perito",
-        "author": "P.D. James",
-        "sfw": "sfw"
-    },
-    {
-        "id": "003080",
-        "time": "20:03",
         "quote_time_case": "8:03",
         "quote_first": "Me enseñó que si tenía que reunirme con alguien para una cita, debía negarme a seguir la \"estúpida costumbre humana\" de elegir arbitrariamente una hora basada en intervalos de quince minutos. \"¡Nunca conozcas gente a las 7:45 o 6:30, Jasper, pero elige horas como las 7:12 y las ",
         "quote_last": "!\"",
         "title": "Una fracción del todo",
         "author": "Steve Toltz",
         "sfw": "unknown"
+    },
+    {
+        "id": "003080",
+        "time": "20:03",
+        "quote_time_case": "Las ocho y tres minutos",
+        "quote_first": "Si bien. Obviamente está muerta y es muy reciente. En las últimas dos horas, si me presionas. Pero ustedes mismos debieron haber llegado a esa conclusión o no la habrían matado. ¿Cuándo dijiste que la encontraste? ",
+        "quote_last": ".",
+        "title": "Muerte de un perito",
+        "author": "P.D. James",
+        "sfw": "sfw"
     },
     {
         "id": "003081",

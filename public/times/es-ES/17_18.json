@@ -2,21 +2,21 @@
     {
         "id": "002659",
         "time": "17:18",
-        "quote_time_case": "las cinco y dieciocho minutos",
-        "quote_first": "Lupin se levantó, sin romper su desdeñoso silencio, y tomó la hoja de papel. Recordé poco después que, en ese momento, miré el reloj. Eran ",
-        "quote_last": ".",
-        "title": "Las confesiones de Arsène Lupin",
-        "author": "Maurice LeBlanc",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002660",
-        "time": "17:18",
         "quote_time_case": "* 17:18",
         "quote_first": "Jueves, 17.18 horas<br>Yuri Andreevich estaba furioso. Después de su cara a cara con Tanzan Mino, supo que lo habían jodido. Metiendo un par de \"pilotos\" de Mino Industries en la cabina. Era simplemente el viejo truco del GRU: vigilancia bajo el engañoso disfraz de \"apoyo\". Lo había visto todo antes.",
         "quote_last": "",
         "title": "Proyecto Dédalo",
         "author": "Thomas Hoover",
         "sfw": "nsfw"
+    },
+    {
+        "id": "002660",
+        "time": "17:18",
+        "quote_time_case": "las cinco y dieciocho minutos",
+        "quote_first": "Lupin se levantó, sin romper su desdeñoso silencio, y tomó la hoja de papel. Recordé poco después que, en ese momento, miré el reloj. Eran ",
+        "quote_last": ".",
+        "title": "Las confesiones de Arsène Lupin",
+        "author": "Maurice LeBlanc",
+        "sfw": "unknown"
     }
 ]

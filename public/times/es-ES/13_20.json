@@ -2,22 +2,22 @@
     {
         "id": "002060",
         "time": "13:20",
-        "quote_time_case": "* Veinte pasadas de la una",
-        "quote_first": "Gerard y yo tomamos la lancha hacia Greenwich y almorzamos en un pub en Trafalgar Tavern, pero no salimos de aquí hasta la una y veinte.",
-        "quote_last": "",
-        "title": "El pecado original",
-        "author": "P.D. James",
-        "sfw": "sfw"
-    },
-    {
-        "id": "002061",
-        "time": "13:20",
         "quote_time_case": "13.20",
         "quote_first": "Kamarov, señal a Purga: Buceo a las... -miró su reloj- a las ",
         "quote_last": " horas. El ejercicio OCTOBER FROST comienza según lo previsto. Queda liberado para realizar otras tareas asignadas. Regresaremos según lo previsto.\"<br>Kamarov presionó el gatillo de la luz intermitente para transmitir el mensaje. La Purga respondió de inmediato, y Ramius leyó la señal parpadeante sin ayuda: \"SI LAS BALLENAS NO TE COMEN. ¡MUCHA SUERTE PARA EL OCTUBRE ROJO!\"",
         "title": "La caza del Octubre Rojo",
         "author": "Tom Clancy",
         "sfw": "unknown"
+    },
+    {
+        "id": "002061",
+        "time": "13:20",
+        "quote_time_case": "* Veinte pasadas de la una",
+        "quote_first": "Gerard y yo tomamos la lancha hacia Greenwich y almorzamos en un pub en Trafalgar Tavern, pero no salimos de aquí hasta la una y veinte.",
+        "quote_last": "",
+        "title": "El pecado original",
+        "author": "P.D. James",
+        "sfw": "sfw"
     },
     {
         "id": "002062",

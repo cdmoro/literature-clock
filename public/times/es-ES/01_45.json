@@ -12,21 +12,21 @@
     {
         "id": "000251",
         "time": "01:45",
-        "quote_time_case": "dos menos cuarto",
-        "quote_first": "Cuando eran diez o las ",
-        "quote_last": " entraba el diácono; Era un joven larguirucho de veintidós años, con el pelo largo, sin barba y con un bigote apenas perceptible. Al entrar en el salón, se santiguó ante el icono, sonrió y tendió la mano a Von Koren.<br>\"Buenos días\", dijo fríamente el zoólogo. \"¿Dónde has estado?\"",
-        "title": "El duelo",
-        "author": "Anton Pavlovich Chekhov",
-        "sfw": "sfw"
-    },
-    {
-        "id": "000252",
-        "time": "01:45",
         "quote_time_case": "1:45 a.m.",
         "quote_first": "Kaplan parecía aún más infernal que de costumbre. La piel de la parte superior de sus mejillas y alrededor de sus ojos estaba ampollada por la congelación. Su cojera indicaba que probablemente también se había congelado algunos dedos de los pies. La última comunicación suya la noche anterior había sido a la ",
         "quote_last": ", cuando llamó por radio para informar al departamento que finalmente se rendiría.",
         "title": "Cuerpo del delito",
         "author": "William Kent Krueger",
         "sfw": "nsfw"
+    },
+    {
+        "id": "000252",
+        "time": "01:45",
+        "quote_time_case": "dos menos cuarto",
+        "quote_first": "Cuando eran diez o las ",
+        "quote_last": " entraba el diácono; Era un joven larguirucho de veintidós años, con el pelo largo, sin barba y con un bigote apenas perceptible. Al entrar en el salón, se santiguó ante el icono, sonrió y tendió la mano a Von Koren.<br>\"Buenos días\", dijo fríamente el zoólogo. \"¿Dónde has estado?\"",
+        "title": "El duelo",
+        "author": "Anton Pavlovich Chekhov",
+        "sfw": "sfw"
     }
 ]

@@ -2,21 +2,21 @@
     {
         "id": "001046",
         "time": "07:51",
-        "quote_time_case": "7:51",
-        "quote_first": "El avión giró hacia la pista de despegue a las ",
-        "quote_last": ", sus reactores aceleraron antes de avanzar lentamente y luego ganar velocidad. Las ruedas dejaron el suelo a las 7:53.",
-        "title": "Honor entre ladrones",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001047",
-        "time": "07:51",
         "quote_time_case": "* nueve minutos para las ocho",
         "quote_first": "Vimes sacó la grosella cuando una col al rojo vivo golpeó el camino detrás de él. \"¡Buen día!\" le dijo alegremente al diablillo sorprendido. \"¿Cuál es la hora, por favor?\"<br>\"Er... ocho menos nueve, inserte el nombre aquí\", dijo el diablillo.",
         "quote_last": "",
         "title": "¡Ruido sordo!",
         "author": "Terry Pratchett",
         "sfw": "unknown"
+    },
+    {
+        "id": "001047",
+        "time": "07:51",
+        "quote_time_case": "7:51",
+        "quote_first": "El avión giró hacia la pista de despegue a las ",
+        "quote_last": ", sus reactores aceleraron antes de avanzar lentamente y luego ganar velocidad. Las ruedas dejaron el suelo a las 7:53.",
+        "title": "Honor entre ladrones",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     }
 ]

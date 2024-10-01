@@ -2,10 +2,10 @@
     {
         "id": "001479",
         "time": "09:59",
-        "quote_time_case": "un minuto para las diez",
-        "quote_first": "El coronel Scott-Hopkins llamó a la puerta del número 44 de Eaton Square cuando faltaba ",
-        "quote_last": ". Unos momentos más tarde, la puerta principal fue abierta por un hombre gigante que eclipsaba al oficial al mando del SAS.",
-        "title": "Tener cuidado con lo que deseas",
+        "quote_time_case": "* momentos antes de que el reloj diera las diez",
+        "quote_first": "Harry tomó su lugar en un escritorio en la primera fila, y momentos antes de que el reloj marcara las diez, varios maestros con largas togas negras y birretes entraron y colocaron los exámenes en los escritorios frente a cada candidato.",
+        "quote_last": "",
+        "title": "Sólo el tiempo dirá",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
@@ -32,26 +32,6 @@
     {
         "id": "001482",
         "time": "09:59",
-        "quote_time_case": "un minuto para las diez",
-        "quote_first": "Fletcher miró a su alrededor cuando Don Culver, el jefe de policía, y el detective Petrowski tomaron asiento en la primera fila, directamente detrás de la mesa del fiscal del estado. Cuando faltaba ",
-        "quote_last": ", sólo quedaban trece asientos desocupados.",
-        "title": "hijos de la fortuna",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001483",
-        "time": "09:59",
-        "quote_time_case": "* momentos antes de que el reloj diera las diez",
-        "quote_first": "Harry tomó su lugar en un escritorio en la primera fila, y momentos antes de que el reloj marcara las diez, varios maestros con largas togas negras y birretes entraron y colocaron los exámenes en los escritorios frente a cada candidato.",
-        "quote_last": "",
-        "title": "Sólo el tiempo dirá",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001484",
-        "time": "09:59",
         "quote_time_case": "* un minuto para las diez",
         "quote_first": "A las diez menos un minuto sonó el timbre de la puerta de entrada y Karl abrió.",
         "quote_last": "",
@@ -60,13 +40,33 @@
         "sfw": "sfw"
     },
     {
-        "id": "001485",
+        "id": "001483",
         "time": "09:59",
         "quote_time_case": "9:59",
         "quote_first": "Debería haberlo sabido, dijo Maddy. Era típico que la iglesia estuviera casi vacía a las 9:50 y llena a las ",
         "quote_last": ".",
         "title": "manchado de sangre",
         "author": "Gayl Siegel",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001484",
+        "time": "09:59",
+        "quote_time_case": "un minuto para las diez",
+        "quote_first": "El coronel Scott-Hopkins llamó a la puerta del número 44 de Eaton Square cuando faltaba ",
+        "quote_last": ". Unos momentos más tarde, la puerta principal fue abierta por un hombre gigante que eclipsaba al oficial al mando del SAS.",
+        "title": "Tener cuidado con lo que deseas",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001485",
+        "time": "09:59",
+        "quote_time_case": "un minuto para las diez",
+        "quote_first": "Fletcher miró a su alrededor cuando Don Culver, el jefe de policía, y el detective Petrowski tomaron asiento en la primera fila, directamente detrás de la mesa del fiscal del estado. Cuando faltaba ",
+        "quote_last": ", sólo quedaban trece asientos desocupados.",
+        "title": "hijos de la fortuna",
+        "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {

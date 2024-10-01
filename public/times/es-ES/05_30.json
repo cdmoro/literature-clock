@@ -2,11 +2,11 @@
     {
         "id": "000731",
         "time": "05:30",
-        "quote_time_case": "cinco y media de la mañana",
-        "quote_first": "“Cuando salieron del camino de entrada a las ",
-        "quote_last": ", Emmett estaba de buen humor. La noche anterior, con la ayuda del mapa de Billy, había trazado un itinerario. La ruta de Morgen a San Francisco era de poco más de mil quinientas millas.\"",
-        "title": "La autopista Lincoln",
-        "author": "Amor Towles",
+        "quote_time_case": "5:30 de la mañana",
+        "quote_first": "Cuando Braque y su hermano Randy eran niños, su mamá solía despertarlos a las ",
+        "quote_last": " para viajes familiares por carretera, para evitar el tráfico; hubo pestillos de seguridad en toda la casa hasta los once años; no había televisión y, desde luego, no había dulces, refrescos, alcohol ni tabaco; planchaba sábanas y blanqueaba ropa interior y limpiaba los baños al menos dos veces al día.",
+        "title": "Cocinas del Gran Medio Oeste",
+        "author": "J. Ryan Stradal",
         "sfw": "unknown"
     },
     {
@@ -42,16 +42,6 @@
     {
         "id": "000735",
         "time": "05:30",
-        "quote_time_case": "5:30 de la mañana",
-        "quote_first": "Cuando Braque y su hermano Randy eran niños, su mamá solía despertarlos a las ",
-        "quote_last": " para viajes familiares por carretera, para evitar el tráfico; hubo pestillos de seguridad en toda la casa hasta los once años; no había televisión y, desde luego, no había dulces, refrescos, alcohol ni tabaco; planchaba sábanas y blanqueaba ropa interior y limpiaba los baños al menos dos veces al día.",
-        "title": "Cocinas del Gran Medio Oeste",
-        "author": "J. Ryan Stradal",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000736",
-        "time": "05:30",
         "quote_time_case": "cinco y media",
         "quote_first": "Gedeón ha sido muy diferente a Gedeón. Como Walter Eastman está preocupado, no ha tenido tiempo, o mejor dicho, ganas, de notar un comportamiento aberrante. Por ejemplo, son las ",
         "quote_last": " de una mañana de verano. Es evidente que han dormido en la estrecha cama de soltero del joven Chase, porque está arrugada de esa manera apenas alterada que nunca podrá falsificarse.",
@@ -60,7 +50,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000737",
+        "id": "000736",
         "time": "05:30",
         "quote_time_case": "cinco y media",
         "quote_first": "Eran ya las ",
@@ -70,7 +60,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000738",
+        "id": "000737",
         "time": "05:30",
         "quote_time_case": "cinco y media",
         "quote_first": "El día que lo iban a matar, Santiago Nasar se levantó a las ",
@@ -80,7 +70,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000739",
+        "id": "000738",
         "time": "05:30",
         "quote_time_case": "cinco y media",
         "quote_first": "—Con lo cual —dijo Perico— le ocurre que una enana de la página veinte tiene dos metros cinco en la página cien. Me he percatado más de una vez. Hay escenas que empiezan a las seis de la tarde y acaban a las ",
@@ -88,5 +78,15 @@
         "title": "Rayuela",
         "author": "Julio Cortázar",
         "sfw": "sfw"
+    },
+    {
+        "id": "000739",
+        "time": "05:30",
+        "quote_time_case": "cinco y media de la mañana",
+        "quote_first": "“Cuando salieron del camino de entrada a las ",
+        "quote_last": ", Emmett estaba de buen humor. La noche anterior, con la ayuda del mapa de Billy, había trazado un itinerario. La ruta de Morgen a San Francisco era de poco más de mil quinientas millas.\"",
+        "title": "La autopista Lincoln",
+        "author": "Amor Towles",
+        "sfw": "unknown"
     }
 ]

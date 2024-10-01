@@ -2,21 +2,21 @@
     {
         "id": "001717",
         "time": "11:03",
-        "quote_time_case": "once cero tres",
-        "quote_first": "¿Qué te hace pensar que es real?<br>\"Sólo una corazonada, en realidad. Parecía real. A veces puedes hablar de las personas\"-sonrió-\"incluso si eres una avispa vieja y aburrida.\"<br>\"Creo que es una trampa.\"<br>\"¿Por qué?\"<br>\"Simplemente lo creo. ¿Por qué alguien del gobierno querría ayudarte?\"<br>\"Buena pregunta. Supongo que sí\". Lo descubriré.\"<br>Ella volvió a la cocina.\"¿A qué hora te reunirás con él?\" ella gritó.<br>\"Once cero tres\", dijo. \"Eso me hizo pensar que hablaba en serio. Los tipos militares y de inteligencia establecen horarios precisos para las citas para eliminar la confusión y la ambigüedad. No hay nada ambiguo en las ",
-        "quote_last": "\".",
-        "title": "Hombrecitos verdes",
-        "author": "Christopher Buckley",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001718",
-        "time": "11:03",
         "quote_time_case": "11.03",
         "quote_first": "El cuarto día, a las ",
         "quote_last": " horas, lo llamó el director del Yidische Zaitung; El doctor Yarmolinsky no respondió. Lo encontraron en su habitación, con el rostro ya un poco oscuro, casi desnudo bajo una gran capa anacrónica.",
         "title": "La muerte y la brújula",
         "author": "Jorge Luis Borges",
         "sfw": "nsfw"
+    },
+    {
+        "id": "001718",
+        "time": "11:03",
+        "quote_time_case": "once cero tres",
+        "quote_first": "¿Qué te hace pensar que es real?<br>\"Sólo una corazonada, en realidad. Parecía real. A veces puedes hablar de las personas\"-sonrió-\"incluso si eres una avispa vieja y aburrida.\"<br>\"Creo que es una trampa.\"<br>\"¿Por qué?\"<br>\"Simplemente lo creo. ¿Por qué alguien del gobierno querría ayudarte?\"<br>\"Buena pregunta. Supongo que sí\". Lo descubriré.\"<br>Ella volvió a la cocina.\"¿A qué hora te reunirás con él?\" ella gritó.<br>\"Once cero tres\", dijo. \"Eso me hizo pensar que hablaba en serio. Los tipos militares y de inteligencia establecen horarios precisos para las citas para eliminar la confusión y la ambigüedad. No hay nada ambiguo en las ",
+        "quote_last": "\".",
+        "title": "Hombrecitos verdes",
+        "author": "Christopher Buckley",
+        "sfw": "unknown"
     }
 ]

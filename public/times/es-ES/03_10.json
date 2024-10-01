@@ -2,21 +2,21 @@
     {
         "id": "000464",
         "time": "03:10",
-        "quote_time_case": "tres y diez",
-        "quote_first": "Adam se lamió los dedos y se los frotó sobre los ojos mientras intentaba acostumbrarse a la oscuridad. Miró el pequeño dial luminoso de su despertador: las ",
-        "quote_last": ".",
-        "title": "Una cuestión de honor",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "000465",
-        "time": "03:10",
         "quote_time_case": "3:10",
         "quote_first": "Eran las ",
         "quote_last": " de la mañana cuando el pastor Grant finalmente regresó a la casa parroquial.",
         "title": "Monje guerrero",
         "author": "Ray Keating",
+        "sfw": "sfw"
+    },
+    {
+        "id": "000465",
+        "time": "03:10",
+        "quote_time_case": "tres y diez",
+        "quote_first": "Adam se lamió los dedos y se los frotó sobre los ojos mientras intentaba acostumbrarse a la oscuridad. Miró el pequeño dial luminoso de su despertador: las ",
+        "quote_last": ".",
+        "title": "Una cuestión de honor",
+        "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {

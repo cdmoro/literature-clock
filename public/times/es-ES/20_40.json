@@ -2,12 +2,12 @@
     {
         "id": "003152",
         "time": "20:40",
-        "quote_time_case": "ocho cuarenta",
-        "quote_first": "En realidad, llegué temprano. No quería llamar la atención vagando por el pasillo, así que maté cinco minutos caminando por el Strand. Estaba fuera de la puerta a las ocho y diez. Esperé hasta las ",
-        "quote_last": ". Venecia nunca llegó.",
-        "title": "Una cierta justicia",
-        "author": "P.D. James",
-        "sfw": "sfw"
+        "quote_time_case": "8.40",
+        "quote_first": "¿Está sola, señorita?<br>Era una pregunta estúpida y la molestó. Hubo muchas respuestas cruzadas que podría haber soltado, pero se las tragó y simplemente dijo: \"Sí\".<br>\"Esperando el turno de las ",
+        "quote_last": ", ¿verdad?\"<br>\"¿Hay algún otro?\"<br>\"Bueno, no. No a esta hora de la noche\".",
+        "title": "El cuervo mecánico",
+        "author": "Catherine Fisher",
+        "sfw": "unknown"
     },
     {
         "id": "003153",
@@ -22,16 +22,6 @@
     {
         "id": "003154",
         "time": "20:40",
-        "quote_time_case": "8.40",
-        "quote_first": "¿Está sola, señorita?<br>Era una pregunta estúpida y la molestó. Hubo muchas respuestas cruzadas que podría haber soltado, pero se las tragó y simplemente dijo: \"Sí\".<br>\"Esperando el turno de las ",
-        "quote_last": ", ¿verdad?\"<br>\"¿Hay algún otro?\"<br>\"Bueno, no. No a esta hora de la noche\".",
-        "title": "El cuervo mecánico",
-        "author": "Catherine Fisher",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003155",
-        "time": "20:40",
         "quote_time_case": "nueve menos veinte",
         "quote_first": "Fue cuando me paré frente a ella, evitando su mirada, que tomé nota de los objetos circundantes en detalle, y vi que su reloj se había detenido a las ",
         "quote_last": ", y que un reloj en la habitación se había detenido a las nueve menos veinte.",
@@ -40,7 +30,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003156",
+        "id": "003155",
         "time": "20:40",
         "quote_time_case": "nueve menos veinte",
         "quote_first": "La carta llegó a las ",
@@ -48,5 +38,15 @@
         "title": "El asesinato de Roger Ackroyd",
         "author": "Agatha Christie",
         "sfw": "unknown"
+    },
+    {
+        "id": "003156",
+        "time": "20:40",
+        "quote_time_case": "ocho cuarenta",
+        "quote_first": "En realidad, llegué temprano. No quería llamar la atención vagando por el pasillo, así que maté cinco minutos caminando por el Strand. Estaba fuera de la puerta a las ocho y diez. Esperé hasta las ",
+        "quote_last": ". Venecia nunca llegó.",
+        "title": "Una cierta justicia",
+        "author": "P.D. James",
+        "sfw": "sfw"
     }
 ]

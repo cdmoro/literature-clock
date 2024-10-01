@@ -2,21 +2,21 @@
     {
         "id": "003401",
         "time": "22:21",
-        "quote_time_case": "22:21",
-        "quote_first": "",
-        "quote_last": " Presiona frenéticamente todos los botones. El casete sale y vuelve a entrar.",
-        "title": "El diario de Bridget Jones",
-        "author": "Helen Fielding",
-        "sfw": "sfw"
-    },
-    {
-        "id": "003402",
-        "time": "22:21",
         "quote_time_case": "* 2221h",
         "quote_first": "Un sábado c. A las 22.21 h., Lenz encontró un pájaro en miniatura que se había caído de algún nido y estaba sentado, calvo y con el cuello como un lápiz, en el césped de la Unidad 3, aleteando inútilmente.",
         "quote_last": "",
         "title": "Frivolidad infinita",
         "author": "David Foster Wallace",
         "sfw": "unknown"
+    },
+    {
+        "id": "003402",
+        "time": "22:21",
+        "quote_time_case": "22:21",
+        "quote_first": "",
+        "quote_last": " Presiona frenéticamente todos los botones. El casete sale y vuelve a entrar.",
+        "title": "El diario de Bridget Jones",
+        "author": "Helen Fielding",
+        "sfw": "sfw"
     }
 ]

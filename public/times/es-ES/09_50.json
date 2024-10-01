@@ -2,12 +2,12 @@
     {
         "id": "001449",
         "time": "09:50",
-        "quote_time_case": "* Las nueve y cincuenta de la mañana.",
-        "quote_first": "El coronel y sus dos colegas entraron en la sala medio llena a las nueve y cincuenta de la mañana. y, según las instrucciones, ocuparon los asientos inmediatamente detrás de su adversario.",
+        "quote_time_case": "* diez a diez",
+        "quote_first": "Llega a Radiance a las diez menos diez, temprano por una vez, entra con su llave y se pone la bata malva y aguamarina que Shanita diseñó para ellos para que los clientes sepan que ellos mismos no son clientes.",
         "quote_last": "",
-        "title": "Mientras el cuervo vuela",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
+        "title": "La novia ladrona",
+        "author": "Margaret Atwood",
+        "sfw": "unknown"
     },
     {
         "id": "001450",
@@ -22,32 +22,32 @@
     {
         "id": "001451",
         "time": "09:50",
-        "quote_time_case": "9:50",
-        "quote_first": "Debería haberlo sabido, dijo Maddy. Era típico que la iglesia estuviera casi vacía a las ",
-        "quote_last": " y llena a las 9:59.",
-        "title": "manchado de sangre",
-        "author": "Gayl Siegel",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001452",
-        "time": "09:50",
-        "quote_time_case": "* diez a diez",
-        "quote_first": "Llega a Radiance a las diez menos diez, temprano por una vez, entra con su llave y se pone la bata malva y aguamarina que Shanita diseñó para ellos para que los clientes sepan que ellos mismos no son clientes.",
-        "quote_last": "",
-        "title": "La novia ladrona",
-        "author": "Margaret Atwood",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001453",
-        "time": "09:50",
         "quote_time_case": "* Diez minutos para las diez",
         "quote_first": "Philip Lombard dijo:<br>“¿Qué hora es ahora?”<br>“Las diez menos diez, señor”.<br>Las cejas de Lombard se alzaron. Él asintió lentamente para sí mismo.",
         "quote_last": "",
         "title": "Y entonces no había ninguno",
         "author": "Agatha Christie",
         "sfw": "unknown"
+    },
+    {
+        "id": "001452",
+        "time": "09:50",
+        "quote_time_case": "* Las nueve y cincuenta de la mañana.",
+        "quote_first": "El coronel y sus dos colegas entraron en la sala medio llena a las nueve y cincuenta de la mañana. y, según las instrucciones, ocuparon los asientos inmediatamente detrás de su adversario.",
+        "quote_last": "",
+        "title": "Mientras el cuervo vuela",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001453",
+        "time": "09:50",
+        "quote_time_case": "9:50",
+        "quote_first": "Debería haberlo sabido, dijo Maddy. Era típico que la iglesia estuviera casi vacía a las ",
+        "quote_last": " y llena a las 9:59.",
+        "title": "manchado de sangre",
+        "author": "Gayl Siegel",
+        "sfw": "sfw"
     },
     {
         "id": "001454",

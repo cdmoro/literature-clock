@@ -2,26 +2,6 @@
     {
         "id": "001982",
         "time": "12:50",
-        "quote_time_case": "12:50",
-        "quote_first": "Miró su reloj: las ",
-        "quote_last": ". Todavía tuvieron tiempo más que suficiente para llegar a la cima y regresar a su pequeña tienda antes de que desaparecieran los últimos rayos de sol.",
-        "title": "Caminos de gloria",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001983",
-        "time": "12:50",
-        "quote_time_case": "12:50",
-        "quote_first": "\"Hoy salen dos vuelos desde Bombay, ambos de Air India\". Ella miró su libreta. \"Uno cada cuarenta minutos, a las ",
-        "quote_last": ", por lo que no podrías llegar al aeropuerto a tiempo, y uno...\"",
-        "title": "Llega la hora",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001984",
-        "time": "12:50",
         "quote_time_case": "* Diez minutos para la una",
         "quote_first": "La una menos diez la niebla se disuelve por completo y los chicos negros le dicen a Acutes que despeje el suelo para la reunión. Todas las mesas son llevadas de la sala de día a la sala de baños al otro lado del pasillo; abandonan el piso, dice McMurphy, como si quisiéramos invitarnos a bailar un poco.",
         "quote_last": "",
@@ -30,7 +10,7 @@
         "sfw": "nsfw"
     },
     {
-        "id": "001985",
+        "id": "001983",
         "time": "12:50",
         "quote_time_case": "* diez minutos para la una",
         "quote_first": "Entonces enviaron a Bert a lo alto de la casa para mirar un reloj de iglesia que era visible desde allí, y cuando bajó informó que era la una menos diez.",
@@ -38,5 +18,25 @@
         "title": "Los filántropos de pantalones andrajosos",
         "author": "Robert Tressell",
         "sfw": "unknown"
+    },
+    {
+        "id": "001984",
+        "time": "12:50",
+        "quote_time_case": "12:50",
+        "quote_first": "Miró su reloj: las ",
+        "quote_last": ". Todavía tuvieron tiempo más que suficiente para llegar a la cima y regresar a su pequeña tienda antes de que desaparecieran los últimos rayos de sol.",
+        "title": "Caminos de gloria",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001985",
+        "time": "12:50",
+        "quote_time_case": "12:50",
+        "quote_first": "\"Hoy salen dos vuelos desde Bombay, ambos de Air India\". Ella miró su libreta. \"Uno cada cuarenta minutos, a las ",
+        "quote_last": ", por lo que no podrías llegar al aeropuerto a tiempo, y uno...\"",
+        "title": "Llega la hora",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     }
 ]

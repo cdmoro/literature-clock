@@ -2,25 +2,15 @@
     {
         "id": "001972",
         "time": "12:45",
-        "quote_time_case": "12:45 p.m.",
-        "quote_first": "El viernes a las ",
-        "quote_last": ", David llegó al Ateneo, un enorme edificio blanco en la esquina de Pall Mall, dominado por una estatua del duque de York.",
-        "title": "Ni un centavo más, ni un centavo menos",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001973",
-        "time": "12:45",
-        "quote_time_case": "la una menos cuarto",
-        "quote_first": "Ese domingo fue un día de verano de ensueño en Maine: claro, brillante y cálido. A ",
-        "quote_last": ", Ruth McCausland, vestida con un bonito vestido azul de verano, salió de su casa por última vez.",
-        "title": "Los Tommyknockers",
-        "author": "Stephen King",
+        "quote_time_case": "* un cuarto",
+        "quote_first": "Debido a que estaba lloviendo, y porque estaba deprimida y de mal humor, y porque Robbie no había llegado a la una menos cuarto, Elizabeth se regaló un Martini mientras esperaba, sentada incómodamente en una silla estrecha en el restaurante, mirando a otros nada impresionantes. la gente entra y sale.",
+        "quote_last": "",
+        "title": "La lotería o la aventura de James Harris",
+        "author": "Shirley Jackson",
         "sfw": "unknown"
     },
     {
-        "id": "001974",
+        "id": "001973",
         "time": "12:45",
         "quote_time_case": "12:45",
         "quote_first": "El chico entregó un despacho. El profesor volvió a cerrar la puerta y, después de mirar en la dirección, la abrió y leyó en voz alta. \"Cuidado con D. Acaba de llegar, a las ",
@@ -30,13 +20,23 @@
         "sfw": "unknown"
     },
     {
+        "id": "001974",
+        "time": "12:45",
+        "quote_time_case": "12:45 p.m.",
+        "quote_first": "El viernes a las ",
+        "quote_last": ", David llegó al Ateneo, un enorme edificio blanco en la esquina de Pall Mall, dominado por una estatua del duque de York.",
+        "title": "Ni un centavo más, ni un centavo menos",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
         "id": "001975",
         "time": "12:45",
-        "quote_time_case": "* un cuarto",
-        "quote_first": "Debido a que estaba lloviendo, y porque estaba deprimida y de mal humor, y porque Robbie no había llegado a la una menos cuarto, Elizabeth se regaló un Martini mientras esperaba, sentada incómodamente en una silla estrecha en el restaurante, mirando a otros nada impresionantes. la gente entra y sale.",
-        "quote_last": "",
-        "title": "La lotería o la aventura de James Harris",
-        "author": "Shirley Jackson",
+        "quote_time_case": "la una menos cuarto",
+        "quote_first": "Ese domingo fue un día de verano de ensueño en Maine: claro, brillante y cálido. A ",
+        "quote_last": ", Ruth McCausland, vestida con un bonito vestido azul de verano, salió de su casa por última vez.",
+        "title": "Los Tommyknockers",
+        "author": "Stephen King",
         "sfw": "unknown"
     }
 ]

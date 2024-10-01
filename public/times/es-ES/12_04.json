@@ -2,6 +2,16 @@
     {
         "id": "001897",
         "time": "12:04",
+        "quote_time_case": "12.04",
+        "quote_first": "Aunque para entonces eran las ",
+        "quote_last": " del reloj del escritorio de Tina, siempre me conmovía cuando, después de una mañana de repetición, las secretarias continuaban respondiendo con buenos días durante aproximadamente una hora hasta la tarde, del mismo modo que la gente suele fechar las cosas con el el año anterior hasta bien entrado febrero; A veces se daban cuenta de su error y decían: \"Este no es mi día\" o \"¿Dónde está mi cabeza?\". rutina de escape; pero en cierto modo tenían razón, ya que el verdadero tono de las tardes no se apodera de las oficinas hasta cerca de las dos.",
+        "title": "El entresuelo",
+        "author": "Nicholson Baker",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001898",
+        "time": "12:04",
         "quote_time_case": "12:04",
         "quote_first": "Cuando son las ",
         "quote_last": " puede ser el almuerzo, así que abro una lata de frijoles horneados, tengo cuidado. Me pregunto si mamá se despertaría si me cortara la mano y gritara ayuda.",
@@ -10,7 +20,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001898",
+        "id": "001899",
         "time": "12:04",
         "quote_time_case": "12:04 p.m.",
         "quote_first": "Me despierto al día siguiente presa del pánico. Salgo corriendo de la cama y entro a la cocina donde miro el reloj del microondas: ",
@@ -20,23 +30,13 @@
         "sfw": "unknown"
     },
     {
-        "id": "001899",
+        "id": "001900",
         "time": "12:04",
         "quote_time_case": "las doce y cuatro minutos",
         "quote_first": "A ",
         "quote_last": ", Frank Macintosh y Paulie Logan entran al vestíbulo vestidos con sus trajes. Hay apretones de manos por todas partes. El copete de Frank parece haber tenido un cambio de aceite.",
         "title": "Billy Summers",
         "author": "Stephen King",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001900",
-        "time": "12:04",
-        "quote_time_case": "12.04",
-        "quote_first": "Aunque para entonces eran las ",
-        "quote_last": " del reloj del escritorio de Tina, siempre me conmovía cuando, después de una mañana de repetición, las secretarias continuaban respondiendo con buenos días durante aproximadamente una hora hasta la tarde, del mismo modo que la gente suele fechar las cosas con el el año anterior hasta bien entrado febrero; A veces se daban cuenta de su error y decían: \"Este no es mi día\" o \"¿Dónde está mi cabeza?\". rutina de escape; pero en cierto modo tenían razón, ya que el verdadero tono de las tardes no se apodera de las oficinas hasta cerca de las dos.",
-        "title": "El entresuelo",
-        "author": "Nicholson Baker",
         "sfw": "unknown"
     }
 ]

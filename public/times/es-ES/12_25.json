@@ -2,12 +2,12 @@
     {
         "id": "001937",
         "time": "12:25",
-        "quote_time_case": "12:25",
-        "quote_first": "Después de un momento, la realidad se reafirmó y se dio cuenta de que no había estado alucinando, sino soñando. El reloj del escritorio marcaba las 12:55. Habían comenzado su sesión de diez minutos a las ",
-        "quote_last": ", así que obviamente ella tenía veinte minutos para contar.",
-        "title": "El enclave",
-        "author": "Karen Hancock",
-        "sfw": "sfw"
+        "quote_time_case": "12.25",
+        "quote_first": "Chicos, haganlo ahora. La hora de Dios es las ",
+        "quote_last": ".",
+        "title": "Ulises",
+        "author": "James Joyce",
+        "sfw": "unknown"
     },
     {
         "id": "001938",
@@ -22,21 +22,21 @@
     {
         "id": "001939",
         "time": "12:25",
-        "quote_time_case": "12.25",
-        "quote_first": "Chicos, haganlo ahora. La hora de Dios es las ",
-        "quote_last": ".",
-        "title": "Ulises",
-        "author": "James Joyce",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001940",
-        "time": "12:25",
         "quote_time_case": "12.25 h.",
         "quote_first": "",
         "quote_last": " 26. 27. Cada vez que Billy salvaba un tiro parecía desconsolado.",
         "title": "Un cernícalo por bribón",
         "author": "Barry Hines",
         "sfw": "unknown"
+    },
+    {
+        "id": "001940",
+        "time": "12:25",
+        "quote_time_case": "12:25",
+        "quote_first": "Después de un momento, la realidad se reafirmó y se dio cuenta de que no había estado alucinando, sino soñando. El reloj del escritorio marcaba las 12:55. Habían comenzado su sesión de diez minutos a las ",
+        "quote_last": ", así que obviamente ella tenía veinte minutos para contar.",
+        "title": "El enclave",
+        "author": "Karen Hancock",
+        "sfw": "sfw"
     }
 ]

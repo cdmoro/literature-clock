@@ -2,12 +2,12 @@
     {
         "id": "000396",
         "time": "02:59",
-        "quote_time_case": "2:59 a.m.",
-        "quote_first": "Se levantó de la cama a las ",
-        "quote_last": ", completamente descansado, completamente alerta, caminó hacia el gran baúl en el medio de la cabina y levantó la tapa.",
-        "title": "Tener cuidado con lo que deseas",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
+        "quote_time_case": "2.59",
+        "quote_first": "Recordé haber llegado a esta habitación a las ",
+        "quote_last": " una noche. Recordé al sargento que me insultó: en su mayoría monosílabos anglosajones de cuatro letras con un extraño comunista \"añadido para la sintaxis\".",
+        "title": "El archivo Ipcress",
+        "author": "Len Deighton",
+        "sfw": "unknown"
     },
     {
         "id": "000397",
@@ -22,11 +22,11 @@
     {
         "id": "000398",
         "time": "02:59",
-        "quote_time_case": "2.59",
-        "quote_first": "Recordé haber llegado a esta habitación a las ",
-        "quote_last": " una noche. Recordé al sargento que me insultó: en su mayoría monosílabos anglosajones de cuatro letras con un extraño comunista \"añadido para la sintaxis\".",
-        "title": "El archivo Ipcress",
-        "author": "Len Deighton",
-        "sfw": "unknown"
+        "quote_time_case": "2:59 a.m.",
+        "quote_first": "Se levantó de la cama a las ",
+        "quote_last": ", completamente descansado, completamente alerta, caminó hacia el gran baúl en el medio de la cabina y levantó la tapa.",
+        "title": "Tener cuidado con lo que deseas",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     }
 ]

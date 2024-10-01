@@ -12,21 +12,21 @@
     {
         "id": "001200",
         "time": "08:35",
-        "quote_time_case": "* Las ocho y treinta y cinco minutos",
-        "quote_first": "Según el gran reloj del edificio central eran las ocho y treinta y cinco minutos cuando Mathieu cruzó el patio hacia el despacho que ocupaba como diseñador jefe. Durante ocho años trabajó en la fábrica donde, después de un brillante y especial estudio, se inició como ayudante de dibujante cuando tenía diecinueve años, recibiendo entonces un salario de cien francos al mes.",
-        "quote_last": "",
-        "title": "Fertilidad",
-        "author": "Emile Zola",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001201",
-        "time": "08:35",
         "quote_time_case": "8.35",
         "quote_first": "VIEJA ABUELITA GUMMY: (EMPUJA UNA DAGA HACIA LA MANO DE STEPHEN) Quítalo, acushla. A las ",
         "quote_last": " estarás en el cielo e Irlanda será libre. (ELLA ORA) ¡Oh buen Dios, tómalo!",
         "title": "Ulises",
         "author": "James Joyce",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001201",
+        "time": "08:35",
+        "quote_time_case": "* Las ocho y treinta y cinco minutos",
+        "quote_first": "Según el gran reloj del edificio central eran las ocho y treinta y cinco minutos cuando Mathieu cruzó el patio hacia el despacho que ocupaba como diseñador jefe. Durante ocho años trabajó en la fábrica donde, después de un brillante y especial estudio, se inició como ayudante de dibujante cuando tenía diecinueve años, recibiendo entonces un salario de cien francos al mes.",
+        "quote_last": "",
+        "title": "Fertilidad",
+        "author": "Emile Zola",
         "sfw": "unknown"
     }
 ]

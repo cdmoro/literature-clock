@@ -2,21 +2,21 @@
     {
         "id": "002185",
         "time": "14:23",
-        "quote_time_case": "Las dos y veintitrés minutos",
-        "quote_first": "",
-        "quote_last": ", anunció.<br>\"¡Nunca!\" -exclamó Crosthwaite con incredulidad. \"Seguramente no he...\"<br>\"Sí, lo has hecho\", interrumpió Devereux con una risa. \"¡Siete horas y tres cuartos de sueño profundo! Lamento haberte molestado\".",
-        "title": "La lucha por Constantinopla",
-        "author": "Percy F. Westerman",
-        "sfw": "sfw"
-    },
-    {
-        "id": "002186",
-        "time": "14:23",
         "quote_time_case": "dos y veintitrés",
         "quote_first": "\"Es simplemente una simple niebla cotidiana\", dijo. “Pero ciertamente es una maravilla. ¿Qué hora es? ¿Quién tiene reloj?”<br>“Las ",
         "quote_last": "”, respondió Evan. \"Tendré que darme prisa o no llegaré a tiempo para la práctica de fútbol\".",
         "title": "Kingsford, Barrio",
         "author": "Ralph Henry Barbour",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002186",
+        "time": "14:23",
+        "quote_time_case": "Las dos y veintitrés minutos",
+        "quote_first": "",
+        "quote_last": ", anunció.<br>\"¡Nunca!\" -exclamó Crosthwaite con incredulidad. \"Seguramente no he...\"<br>\"Sí, lo has hecho\", interrumpió Devereux con una risa. \"¡Siete horas y tres cuartos de sueño profundo! Lamento haberte molestado\".",
+        "title": "La lucha por Constantinopla",
+        "author": "Percy F. Westerman",
         "sfw": "sfw"
     }
 ]

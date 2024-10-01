@@ -2,11 +2,11 @@
     {
         "id": "001431",
         "time": "09:45",
-        "quote_time_case": "las diez menos cuarto",
-        "quote_first": "A ",
-        "quote_last": " de la mañana del 15 de agosto, Leandro cruzó la ciudad de Troya. Tenía el estómago apretado por la anticipación y, seamos realistas, amigos, un cosquilleo de miedo. Su piel se sentía fría.",
-        "title": "Los Tommyknockers",
-        "author": "Stephen King",
+        "quote_time_case": "9.45",
+        "quote_first": "9.15, 9.30, ",
+        "quote_last": ", 10! Bond sintió que la excitación crecía dentro de él como el pelaje de un gato.",
+        "title": "En el servicio Secreto de su Majestad",
+        "author": "Ian Fleming",
         "sfw": "unknown"
     },
     {
@@ -22,11 +22,11 @@
     {
         "id": "001433",
         "time": "09:45",
-        "quote_time_case": "9.45",
-        "quote_first": "9.15, 9.30, ",
-        "quote_last": ", 10! Bond sintió que la excitación crecía dentro de él como el pelaje de un gato.",
-        "title": "En el servicio Secreto de su Majestad",
-        "author": "Ian Fleming",
+        "quote_time_case": "las diez menos cuarto",
+        "quote_first": "A ",
+        "quote_last": " de la mañana del 15 de agosto, Leandro cruzó la ciudad de Troya. Tenía el estómago apretado por la anticipación y, seamos realistas, amigos, un cosquilleo de miedo. Su piel se sentía fría.",
+        "title": "Los Tommyknockers",
+        "author": "Stephen King",
         "sfw": "unknown"
     }
 ]

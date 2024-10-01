@@ -2,16 +2,6 @@
     {
         "id": "002050",
         "time": "13:15",
-        "quote_time_case": "13:15",
-        "quote_first": "A las ",
-        "quote_last": " Fletcher miró a la recepcionista, quien pareció disculparse y le ofreció un segundo café.",
-        "title": "hijos de la fortuna",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "002051",
-        "time": "13:15",
         "quote_time_case": "* Ciento quince",
         "quote_first": "Me levanté lentamente y caminé por el pasillo.<br>“Soy 𝘴𝘭𝘦𝘦𝘱𝘪𝘯𝘨”, siseé a través de la puerta. Entrecerré los ojos por la mirilla: Reva parece desaliñada y trastornada.<br>“¿Puedo pasar?” ella preguntó. “Realmente necesito hablar.”<br>“¿Puedo llamarte más tarde? ¿Qué hora es?”<br>“La una y cuarto. Intenté llamar”, dijo. “Aquí el portero te envió el correo. Necesito hablar. Es en serio.\"",
         "quote_last": "",
@@ -20,17 +10,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002052",
-        "time": "13:15",
-        "quote_time_case": "Una hora y cuarto",
-        "quote_first": "El señor ha dormido bien esta mañana, dijo sonriendo.<br>\"¿Qué hora es, Víctor?\" preguntó Dorian Gray, somnoliento.<br>\"",
-        "quote_last": ", señor.\"",
-        "title": "El retrato de Dorian Gray",
-        "author": "Oscar Wilde",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002053",
+        "id": "002051",
         "time": "13:15",
         "quote_time_case": "* Ciento quince",
         "quote_first": "¿Dónde están las damas y los caballeros? preguntó Aleyn.<br>\"Señor, en el jardín\", dijo Bunce.<br>\"¿A qué hora es el almuerzo?\"<br>\"La una y cuarto\".",
@@ -40,13 +20,33 @@
         "sfw": "unknown"
     },
     {
-        "id": "002054",
+        "id": "002052",
         "time": "13:15",
         "quote_time_case": "* Una y cuarto",
         "quote_first": "El reloj llamó la atención de la señorita LaFosse. \"¡Cielos!\" ella jadeó. \"Mira la hora. La una y cuarto. Debes estar muerto de hambre\". Se volvió impetuosamente hacia la señorita Pettigrew.",
         "quote_last": "",
         "title": "La señorita Pettigrew vive por un día",
         "author": "Winifred Watson",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002053",
+        "time": "13:15",
+        "quote_time_case": "13:15",
+        "quote_first": "A las ",
+        "quote_last": " Fletcher miró a la recepcionista, quien pareció disculparse y le ofreció un segundo café.",
+        "title": "hijos de la fortuna",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002054",
+        "time": "13:15",
+        "quote_time_case": "Una hora y cuarto",
+        "quote_first": "El señor ha dormido bien esta mañana, dijo sonriendo.<br>\"¿Qué hora es, Víctor?\" preguntó Dorian Gray, somnoliento.<br>\"",
+        "quote_last": ", señor.\"",
+        "title": "El retrato de Dorian Gray",
+        "author": "Oscar Wilde",
         "sfw": "unknown"
     }
 ]

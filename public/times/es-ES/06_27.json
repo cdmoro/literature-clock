@@ -2,25 +2,15 @@
     {
         "id": "000846",
         "time": "06:27",
-        "quote_time_case": "6:27 a.m.",
-        "quote_first": "",
-        "quote_last": "<br>Finalmente, Mark no pudo soportarlo más y a las 6:30 a.m. se levantó, se duchó y se puso una camisa limpia y un traje limpio.",
-        "title": "¿Se lo contamos al presidente?",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
+        "quote_time_case": "06.27",
+        "quote_first": "Temprano en la mañana, a finales de siglo, Cricklewood Broadway. A las ",
+        "quote_last": " horas del 1 de enero de 1975, Alfred Archibald Jones estaba vestido de pana y sentado en un Cavalier Musketeer Estate lleno de humo, boca abajo sobre el volante, esperando que el juicio no fuera demasiado pesado para él.",
+        "title": "Dientes blancos",
+        "author": "Zadie Smith",
+        "sfw": "unknown"
     },
     {
         "id": "000847",
-        "time": "06:27",
-        "quote_time_case": "6:27",
-        "quote_first": "Eran las ",
-        "quote_last": ". En el piso de Frances Peverell sonó el teléfono. Tan pronto como James pronunció su nombre, supo que algo andaba mal.",
-        "title": "El pecado original",
-        "author": "P.D. James",
-        "sfw": "sfw"
-    },
-    {
-        "id": "000848",
         "time": "06:27",
         "quote_time_case": "06:27",
         "quote_first": "",
@@ -30,13 +20,23 @@
         "sfw": "unknown"
     },
     {
+        "id": "000848",
+        "time": "06:27",
+        "quote_time_case": "6:27",
+        "quote_first": "Eran las ",
+        "quote_last": ". En el piso de Frances Peverell sonó el teléfono. Tan pronto como James pronunció su nombre, supo que algo andaba mal.",
+        "title": "El pecado original",
+        "author": "P.D. James",
+        "sfw": "sfw"
+    },
+    {
         "id": "000849",
         "time": "06:27",
-        "quote_time_case": "06.27",
-        "quote_first": "Temprano en la mañana, a finales de siglo, Cricklewood Broadway. A las ",
-        "quote_last": " horas del 1 de enero de 1975, Alfred Archibald Jones estaba vestido de pana y sentado en un Cavalier Musketeer Estate lleno de humo, boca abajo sobre el volante, esperando que el juicio no fuera demasiado pesado para él.",
-        "title": "Dientes blancos",
-        "author": "Zadie Smith",
-        "sfw": "unknown"
+        "quote_time_case": "6:27 a.m.",
+        "quote_first": "",
+        "quote_last": "<br>Finalmente, Mark no pudo soportarlo más y a las 6:30 a.m. se levantó, se duchó y se puso una camisa limpia y un traje limpio.",
+        "title": "¿Se lo contamos al presidente?",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     }
 ]

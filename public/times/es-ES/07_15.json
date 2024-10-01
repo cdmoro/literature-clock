@@ -2,6 +2,16 @@
     {
         "id": "000968",
         "time": "07:15",
+        "quote_time_case": "7.15",
+        "quote_first": "Gough volvió a llamar a la puerta del dormitorio del señor y la señora Kent. Esta vez estaba abierta: Mary Kent se había levantado de la cama y se había puesto la bata, después de consultar el reloj de su marido: eran las ",
+        "quote_last": ". Siguió una conversación confusa, en la que cada mujer pareció asumir que Saville estaba con la otra.",
+        "title": "Las sospechas del señor Whicher",
+        "author": "Kate Summerscale",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000969",
+        "time": "07:15",
         "quote_time_case": "* las siete y quince minutos",
         "quote_first": "La balsa se dirigió constantemente hacia el norte. \"Debe haber una corriente\". La corriente los llevaba hacia el norte, hacia el hotel. Miró su reloj y se asombró al ver que eran las siete y cuarto. Sólo habían pasado quince minutos desde la última vez que miró el reloj. Parecían dos horas.",
         "quote_last": "",
@@ -10,23 +20,13 @@
         "sfw": "unknown"
     },
     {
-        "id": "000969",
+        "id": "000970",
         "time": "07:15",
         "quote_time_case": "7:15",
         "quote_first": "A las ",
         "quote_last": " de la mañana del 25 de enero, comenzamos a volar hacia el noroeste bajo el pilotaje de McTighe con diez hombres, siete perros, un trineo, combustible y suministro de alimentos, y otros artículos, incluido el equipo inalámbrico del avión.",
         "title": "En las montañas de la locura",
         "author": "H.P. Lovecraft",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000970",
-        "time": "07:15",
-        "quote_time_case": "7.15",
-        "quote_first": "Gough volvió a llamar a la puerta del dormitorio del señor y la señora Kent. Esta vez estaba abierta: Mary Kent se había levantado de la cama y se había puesto la bata, después de consultar el reloj de su marido: eran las ",
-        "quote_last": ". Siguió una conversación confusa, en la que cada mujer pareció asumir que Saville estaba con la otra.",
-        "title": "Las sospechas del señor Whicher",
-        "author": "Kate Summerscale",
         "sfw": "unknown"
     },
     {

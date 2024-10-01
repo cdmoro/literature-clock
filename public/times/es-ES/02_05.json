@@ -2,22 +2,22 @@
     {
         "id": "000301",
         "time": "02:05",
-        "quote_time_case": "2:05 a.m.",
-        "quote_first": "",
-        "quote_last": ", Flushing, Queens<br>Su teléfono celular, en modo vibración, descansaba sobre la mesa de noche junto a la cama.",
-        "title": "Monje guerrero",
-        "author": "Ray Keating",
-        "sfw": "sfw"
-    },
-    {
-        "id": "000302",
-        "time": "02:05",
         "quote_time_case": "2.05",
         "quote_first": "A las ",
         "quote_last": " las medias burbujeantes se cayeron.",
         "title": "Campos de Londres",
         "author": "Martin Amis",
         "sfw": "unknown"
+    },
+    {
+        "id": "000302",
+        "time": "02:05",
+        "quote_time_case": "2:05 a.m.",
+        "quote_first": "",
+        "quote_last": ", Flushing, Queens<br>Su teléfono celular, en modo vibración, descansaba sobre la mesa de noche junto a la cama.",
+        "title": "Monje guerrero",
+        "author": "Ray Keating",
+        "sfw": "sfw"
     },
     {
         "id": "000303",

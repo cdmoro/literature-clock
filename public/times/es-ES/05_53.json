@@ -12,21 +12,21 @@
     {
         "id": "000778",
         "time": "05:53",
-        "quote_time_case": "cinco cincuenta y tres",
-        "quote_first": "A las ",
-        "quote_last": ", mientras un sol rojo sangre se asomaba en el horizonte, se disparó una pistola Verey y Charlie miró hacia atrás y vio el cielo iluminado detrás de él.",
-        "title": "Mientras el cuervo vuela",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "000779",
-        "time": "05:53",
         "quote_time_case": "* siete minutos para las seis",
         "quote_first": "El registro de la puerta mostraba que había cerrado la sesión a las seis menos siete de esa mañana, un poco antes de lo habitual. Como eran empleados concienzudos, el puerto espacial llamó inmediatamente a la policía y envió a alguien a ver a Gemma Tivon.",
         "quote_last": "",
         "title": "Dragón Caído",
         "author": "Peter F. Hamilton",
+        "sfw": "sfw"
+    },
+    {
+        "id": "000779",
+        "time": "05:53",
+        "quote_time_case": "cinco cincuenta y tres",
+        "quote_first": "A las ",
+        "quote_last": ", mientras un sol rojo sangre se asomaba en el horizonte, se disparó una pistola Verey y Charlie miró hacia atrás y vio el cielo iluminado detrás de él.",
+        "title": "Mientras el cuervo vuela",
+        "author": "Jeffrey Archer",
         "sfw": "sfw"
     }
 ]

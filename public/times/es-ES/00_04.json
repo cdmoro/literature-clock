@@ -2,21 +2,21 @@
     {
         "id": "000070",
         "time": "00:04",
-        "quote_time_case": "las doce y cuatro minutos",
-        "quote_first": "A ",
-        "quote_last": ", Frank Macintosh y Paulie Logan entran al vestíbulo vestidos con sus trajes. Hay apretones de manos por todas partes. El copete de Frank parece haber tenido un cambio de aceite.",
-        "title": "Billy Summers",
-        "author": "Stephen King",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000071",
-        "time": "00:04",
         "quote_time_case": "Cuatro minutos después de la medianoche",
         "quote_first": "",
         "quote_last": " del 22 de enero, la armada del almirante Lowry, compuesta por más de 250 barcos, llegó a la zona de transporte frente a Anzio. El mar estaba en calma, la noche era negra.",
         "title": "Anzio: epopeya de valentía",
         "author": "Fred Sheehan",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000071",
+        "time": "00:04",
+        "quote_time_case": "las doce y cuatro minutos",
+        "quote_first": "A ",
+        "quote_last": ", Frank Macintosh y Paulie Logan entran al vestíbulo vestidos con sus trajes. Hay apretones de manos por todas partes. El copete de Frank parece haber tenido un cambio de aceite.",
+        "title": "Billy Summers",
+        "author": "Stephen King",
         "sfw": "unknown"
     }
 ]

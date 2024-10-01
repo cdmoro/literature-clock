@@ -12,21 +12,21 @@
     {
         "id": "001326",
         "time": "09:07",
-        "quote_time_case": "Pasaron siete minutos",
-        "quote_first": "¿No había dicho el padre Presteign que el correo llegaba a las nueve o poco después? \"Poco después\" podría significar cualquier cosa. Podrían estar esperando media hora. Nueve y cinco. ",
-        "quote_last": ". Y luego vino.",
-        "title": "Una cierta justicia",
-        "author": "P.D. James",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001327",
-        "time": "09:07",
         "quote_time_case": "9:07",
         "quote_first": "El séptimo día las persianas de una ventana de la planta baja quedaron subidas por la mañana. Luke vio una luz encenderse y apagarse a las ",
         "quote_last": ", dos horas después de que la Familia Deportiva se hubiera ido.",
         "title": "Entre los escondidos",
         "author": "Margaret Peterson Haddix",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001327",
+        "time": "09:07",
+        "quote_time_case": "9:07",
+        "quote_first": "Era una mañana resplandeciente, las ",
+        "quote_last": " según el reloj, cuando la señora Flett subió a bordo del Imperial Limited en la estación Tyndall, segura de que su vida estaba arruinada, pero logrando, gracias a un esfuerzo de voluntad, mantenerse erguida y fingir una actitud positiva. aire de preocupación y vivacidad.",
+        "title": "Los diarios de piedra",
+        "author": "Carol Shields",
         "sfw": "unknown"
     },
     {
@@ -42,11 +42,11 @@
     {
         "id": "001329",
         "time": "09:07",
-        "quote_time_case": "9:07",
-        "quote_first": "Era una mañana resplandeciente, las ",
-        "quote_last": " según el reloj, cuando la señora Flett subió a bordo del Imperial Limited en la estación Tyndall, segura de que su vida estaba arruinada, pero logrando, gracias a un esfuerzo de voluntad, mantenerse erguida y fingir una actitud positiva. aire de preocupación y vivacidad.",
-        "title": "Los diarios de piedra",
-        "author": "Carol Shields",
-        "sfw": "unknown"
+        "quote_time_case": "Pasaron siete minutos",
+        "quote_first": "¿No había dicho el padre Presteign que el correo llegaba a las nueve o poco después? \"Poco después\" podría significar cualquier cosa. Podrían estar esperando media hora. Nueve y cinco. ",
+        "quote_last": ". Y luego vino.",
+        "title": "Una cierta justicia",
+        "author": "P.D. James",
+        "sfw": "sfw"
     }
 ]

@@ -2,21 +2,21 @@
     {
         "id": "002475",
         "time": "16:08",
-        "quote_time_case": "las cuatro y ocho minutos",
-        "quote_first": "A ",
-        "quote_last": ", el jurado volvió a ocupar sus lugares y esta vez Alex notó que sus expresiones habían cambiado de la inexpresividad al desconcierto. El juez Sackville no tuvo más remedio que enviarlos a casa para pasar una segunda noche.",
-        "title": "Un prisionero de nacimiento",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "002476",
-        "time": "16:08",
         "quote_time_case": "* ocho minutos después de las cuatro",
         "quote_first": "Eran las cuatro y ocho minutos. Todavía no tengo un plan. Tal vez los chicos del Nova, tal vez tenían un plan.",
         "quote_last": "",
         "title": "El impermeable del mono",
         "author": "Robert Crais",
         "sfw": "unknown"
+    },
+    {
+        "id": "002476",
+        "time": "16:08",
+        "quote_time_case": "las cuatro y ocho minutos",
+        "quote_first": "A ",
+        "quote_last": ", el jurado volvió a ocupar sus lugares y esta vez Alex notó que sus expresiones habían cambiado de la inexpresividad al desconcierto. El juez Sackville no tuvo más remedio que enviarlos a casa para pasar una segunda noche.",
+        "title": "Un prisionero de nacimiento",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     }
 ]

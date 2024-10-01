@@ -2,21 +2,21 @@
     {
         "id": "000987",
         "time": "07:25",
-        "quote_time_case": "7:25 a.m.",
-        "quote_first": "Después de recibir varias llamadas telefónicas durante el desayuno, todavía no había tenido la oportunidad de considerar los argumentos a favor y en contra de la propuesta de Lord Samuels antes de que su conductor se detuviera frente a la puerta principal a las ",
-        "quote_last": "",
-        "title": "Este era un hombre",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "000988",
-        "time": "07:25",
         "quote_time_case": "* las siete y veinticinco minutos",
         "quote_first": "A las siete y veinticinco: Ker Karraje, el ingeniero Serko y el capitán Spade avanzan hasta el extremo del punto, donde barren el horizonte noroeste con sus telescopios.",
         "quote_last": "",
         "title": "Frente a la bandera",
         "author": "Jules Verne",
+        "sfw": "sfw"
+    },
+    {
+        "id": "000988",
+        "time": "07:25",
+        "quote_time_case": "7.25 a.m.",
+        "quote_first": "",
+        "quote_last": " Limpiar los dientes y lavar la cara.",
+        "title": "El curioso incidente del perro a medianoche",
+        "author": "Mark Haddon",
         "sfw": "sfw"
     },
     {
@@ -32,11 +32,11 @@
     {
         "id": "000990",
         "time": "07:25",
-        "quote_time_case": "7.25 a.m.",
-        "quote_first": "",
-        "quote_last": " Limpiar los dientes y lavar la cara.",
-        "title": "El curioso incidente del perro a medianoche",
-        "author": "Mark Haddon",
+        "quote_time_case": "7:25 a.m.",
+        "quote_first": "Después de recibir varias llamadas telefónicas durante el desayuno, todavía no había tenido la oportunidad de considerar los argumentos a favor y en contra de la propuesta de Lord Samuels antes de que su conductor se detuviera frente a la puerta principal a las ",
+        "quote_last": "",
+        "title": "Este era un hombre",
+        "author": "Jeffrey Archer",
         "sfw": "sfw"
     }
 ]

@@ -2,6 +2,16 @@
     {
         "id": "001562",
         "time": "10:12",
+        "quote_time_case": "* diez doce",
+        "quote_first": "“Sacaré la bandeja del café”, sugiero humildemente. Mientras lo recojo miro de nuevo mi reloj. Diez doce. Me pregunto si han comenzado la reunión.",
+        "quote_last": "",
+        "title": "La diosa no doméstica",
+        "author": "Sophie Kinsella",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001563",
+        "time": "10:12",
         "quote_time_case": "10:12",
         "quote_first": "Esto desapareció y el reloj marcó las ",
         "quote_last": ". La Presidenta ensayó por última vez la primera frase de su discurso. Había repasado el borrador final con Edward esa mañana y estaba satisfecha con él.",
@@ -10,7 +20,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001563",
+        "id": "001564",
         "time": "10:12",
         "quote_time_case": "10:12",
         "quote_first": "George miró su reloj: ",
@@ -18,16 +28,6 @@
         "title": "Caminos de gloria",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
-    },
-    {
-        "id": "001564",
-        "time": "10:12",
-        "quote_time_case": "* diez doce",
-        "quote_first": "“Sacaré la bandeja del café”, sugiero humildemente. Mientras lo recojo miro de nuevo mi reloj. Diez doce. Me pregunto si han comenzado la reunión.",
-        "quote_last": "",
-        "title": "La diosa no doméstica",
-        "author": "Sophie Kinsella",
-        "sfw": "unknown"
     },
     {
         "id": "001565",

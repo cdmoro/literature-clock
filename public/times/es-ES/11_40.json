@@ -2,12 +2,12 @@
     {
         "id": "001801",
         "time": "11:40",
-        "quote_time_case": "11:40",
-        "quote_first": "Había un grupo de unas veinte personas esperando el tren de las ",
-        "quote_last": ", y la asesina y su hija caminaron unos cincuenta metros más abajo en el andén y se quedaron solas, sin hablar.",
-        "title": "sangre inocente",
-        "author": "P.D. James",
-        "sfw": "sfw"
+        "quote_time_case": "* veinte minutos antes del mediodía",
+        "quote_first": "Durante las sesiones en Ito leía el Sutra del loto en las mañanas de juego, y ahora parecía estar ordenándose mediante la meditación silenciosa. Luego, rápidamente, se escuchó un golpe de piedra a bordo. Faltaban veinte minutos para el mediodía.",
+        "quote_last": "",
+        "title": "El maestro del go",
+        "author": "Yusunari Kawabata",
+        "sfw": "unknown"
     },
     {
         "id": "001802",
@@ -22,11 +22,11 @@
     {
         "id": "001803",
         "time": "11:40",
-        "quote_time_case": "* veinte minutos antes del mediodía",
-        "quote_first": "Durante las sesiones en Ito leía el Sutra del loto en las mañanas de juego, y ahora parecía estar ordenándose mediante la meditación silenciosa. Luego, rápidamente, se escuchó un golpe de piedra a bordo. Faltaban veinte minutos para el mediodía.",
-        "quote_last": "",
-        "title": "El maestro del go",
-        "author": "Yusunari Kawabata",
-        "sfw": "unknown"
+        "quote_time_case": "11:40",
+        "quote_first": "Había un grupo de unas veinte personas esperando el tren de las ",
+        "quote_last": ", y la asesina y su hija caminaron unos cincuenta metros más abajo en el andén y se quedaron solas, sin hablar.",
+        "title": "sangre inocente",
+        "author": "P.D. James",
+        "sfw": "sfw"
     }
 ]

@@ -2,21 +2,21 @@
     {
         "id": "000519",
         "time": "03:44",
-        "quote_time_case": "3:44",
-        "quote_first": "Cuando abrí los ojos, un amanecer color ostra se asomaba por las ventanas. Las manecillas de mi despertador de latón marcaban las ",
-        "quote_last": ".",
-        "title": "La dulzura en el fondo del pastel",
-        "author": "Alan Bradley",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000520",
-        "time": "03:44",
         "quote_time_case": "3.44",
         "quote_first": "Estaba oscuro. Después de encender la luz y ir al baño, miró el reloj: eran las ",
         "quote_last": ". Se desnudó, sacó al gato por la puerta y volvió a la cama doble.",
         "title": "Hígado: Leberknödel",
         "author": "Will Self",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000520",
+        "time": "03:44",
+        "quote_time_case": "3:44",
+        "quote_first": "Cuando abrí los ojos, un amanecer color ostra se asomaba por las ventanas. Las manecillas de mi despertador de latón marcaban las ",
+        "quote_last": ".",
+        "title": "La dulzura en el fondo del pastel",
+        "author": "Alan Bradley",
         "sfw": "unknown"
     }
 ]

@@ -12,21 +12,21 @@
     {
         "id": "003102",
         "time": "20:15",
-        "quote_time_case": "20:15",
-        "quote_first": "",
-        "quote_last": " Humph. No se pueden localizar las instrucciones de funcionamiento.",
-        "title": "El diario de Bridget Jones",
-        "author": "Helen Fielding",
-        "sfw": "sfw"
-    },
-    {
-        "id": "003103",
-        "time": "20:15",
         "quote_time_case": "20.15 h.",
         "quote_first": "",
         "quote_last": " Ponte el pijama",
         "title": "El curioso incidente del perro a medianoche",
         "author": "Mark Haddon",
+        "sfw": "sfw"
+    },
+    {
+        "id": "003103",
+        "time": "20:15",
+        "quote_time_case": "20:15",
+        "quote_first": "",
+        "quote_last": " Humph. No se pueden localizar las instrucciones de funcionamiento.",
+        "title": "El diario de Bridget Jones",
+        "author": "Helen Fielding",
         "sfw": "sfw"
     }
 ]

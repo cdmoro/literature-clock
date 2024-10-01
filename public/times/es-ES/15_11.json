@@ -2,21 +2,21 @@
     {
         "id": "002327",
         "time": "15:11",
-        "quote_time_case": "* las tres y once minutos",
-        "quote_first": "Cuando Virginia entró en el salón de té a las tres y once, Giles se quedó sin aliento. Nadie hubiera creído posible que esta elegante mujer tuviera más de sesenta años.",
-        "quote_last": "",
-        "title": "Este era un hombre",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "002328",
-        "time": "15:11",
         "quote_time_case": "* Las tres y once de la tarde.",
         "quote_first": "Ritmo cardíaco uno treinta y dos, uno treinta y uno, uno treinta y bajando. Iba caminando hacia el sur por Park Avenue bajo la lluvia. Ya eran las tres y once de la tarde.",
         "quote_last": "",
         "title": "El factor Scarpetta",
         "author": "Patricia Cornwell",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002328",
+        "time": "15:11",
+        "quote_time_case": "* las tres y once minutos",
+        "quote_first": "Cuando Virginia entró en el salón de té a las tres y once, Giles se quedó sin aliento. Nadie hubiera creído posible que esta elegante mujer tuviera más de sesenta años.",
+        "quote_last": "",
+        "title": "Este era un hombre",
+        "author": "Jeffrey Archer",
         "sfw": "sfw"
     }
 ]

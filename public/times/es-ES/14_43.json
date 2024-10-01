@@ -12,15 +12,25 @@
     {
         "id": "002228",
         "time": "14:43",
-        "quote_time_case": "dos cuarenta y tres",
-        "quote_first": "¡Bien! Sigamos con esto. Sabe lo que queremos, un relato completo de dónde estaba, qué estaba haciendo y a quién vio entre la una, cuando terminó el almuerzo, y las ",
-        "quote_last": ", cuando la señorita Gray encontró el cuerpo.",
-        "title": "El cráneo debajo de la piel",
-        "author": "P.D. James",
-        "sfw": "sfw"
+        "quote_time_case": "14.43",
+        "quote_first": "Jacobson murió a las ",
+        "quote_last": " del día siguiente después de cortarse las venas con una hoja de afeitar en el segundo cubículo desde la izquierda del baño de hombres del tercer piso.",
+        "title": "Ahora: cero",
+        "author": "J.G. Ballard",
+        "sfw": "nsfw"
     },
     {
         "id": "002229",
+        "time": "14:43",
+        "quote_time_case": "* diecisiete minutos para las tres",
+        "quote_first": "Luego empezó a respirar más libremente; “la niña”, como siempre la apodó mentalmente, no podía entrar ahora al recinto sin que él la viera. Miró su reloj por tercera vez: las tres menos diecisiete. Casi a la hora que había planeado. Debería llegar pronto si hubiera salido de casa de la señorita Lloyd poco después de las dos.",
+        "quote_last": "",
+        "title": "Espinas plateadas",
+        "author": "Mary Louisa Molesworth",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002230",
         "time": "14:43",
         "quote_time_case": "2:43 p.m.",
         "quote_first": "",
@@ -30,23 +40,13 @@
         "sfw": "nsfw"
     },
     {
-        "id": "002230",
-        "time": "14:43",
-        "quote_time_case": "14.43",
-        "quote_first": "Jacobson murió a las ",
-        "quote_last": " del día siguiente después de cortarse las venas con una hoja de afeitar en el segundo cubículo desde la izquierda del baño de hombres del tercer piso.",
-        "title": "Ahora: cero",
-        "author": "J.G. Ballard",
-        "sfw": "nsfw"
-    },
-    {
         "id": "002231",
         "time": "14:43",
-        "quote_time_case": "* diecisiete minutos para las tres",
-        "quote_first": "Luego empezó a respirar más libremente; “la niña”, como siempre la apodó mentalmente, no podía entrar ahora al recinto sin que él la viera. Miró su reloj por tercera vez: las tres menos diecisiete. Casi a la hora que había planeado. Debería llegar pronto si hubiera salido de casa de la señorita Lloyd poco después de las dos.",
-        "quote_last": "",
-        "title": "Espinas plateadas",
-        "author": "Mary Louisa Molesworth",
+        "quote_time_case": "dos cuarenta y tres",
+        "quote_first": "¡Bien! Sigamos con esto. Sabe lo que queremos, un relato completo de dónde estaba, qué estaba haciendo y a quién vio entre la una, cuando terminó el almuerzo, y las ",
+        "quote_last": ", cuando la señorita Gray encontró el cuerpo.",
+        "title": "El cráneo debajo de la piel",
+        "author": "P.D. James",
         "sfw": "sfw"
     }
 ]

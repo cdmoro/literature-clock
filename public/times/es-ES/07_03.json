@@ -2,26 +2,6 @@
     {
         "id": "000941",
         "time": "07:03",
-        "quote_time_case": "7:03 a.m.",
-        "quote_first": "",
-        "quote_last": " Regreso a la cama enfurruñado por el peso. Estado de cabeza malo. Dormir o levantarse igualmente fuera de discusión. Piensa en Daniel.",
-        "title": "El diario de Bridget Jones",
-        "author": "Helen Fielding",
-        "sfw": "sfw"
-    },
-    {
-        "id": "000942",
-        "time": "07:03",
-        "quote_time_case": "las siete y tres minutos",
-        "quote_first": "Hubo problemas con la pista. Nadie podría dar idea de cuándo se arreglaría. El tren que llegó a ",
-        "quote_last": " había sido el último en llegar. ¿Estaban todos los dioses del viaje conspirando para frustrarlo?",
-        "title": "La sala del asesinato",
-        "author": "P.D. James",
-        "sfw": "sfw"
-    },
-    {
-        "id": "000943",
-        "time": "07:03",
         "quote_time_case": "* tres minutos después de las 7 am",
         "quote_first": "Y hasta ahora había decretado que alguien debía empezar a lavarme y arreglarme exactamente tres minutos después de las 7 de la mañana.",
         "quote_last": "",
@@ -30,13 +10,33 @@
         "sfw": "sfw"
     },
     {
-        "id": "000944",
+        "id": "000942",
         "time": "07:03",
         "quote_time_case": "7:03",
         "quote_first": "0",
         "quote_last": " El general Tanz se despertó como si lo hubiera despertado un despertador mental.",
         "title": "La noche de los generales",
         "author": "Hans Hellmut Kirst",
+        "sfw": "sfw"
+    },
+    {
+        "id": "000943",
+        "time": "07:03",
+        "quote_time_case": "7:03 a.m.",
+        "quote_first": "",
+        "quote_last": " Regreso a la cama enfurruñado por el peso. Estado de cabeza malo. Dormir o levantarse igualmente fuera de discusión. Piensa en Daniel.",
+        "title": "El diario de Bridget Jones",
+        "author": "Helen Fielding",
+        "sfw": "sfw"
+    },
+    {
+        "id": "000944",
+        "time": "07:03",
+        "quote_time_case": "las siete y tres minutos",
+        "quote_first": "Hubo problemas con la pista. Nadie podría dar idea de cuándo se arreglaría. El tren que llegó a ",
+        "quote_last": " había sido el último en llegar. ¿Estaban todos los dioses del viaje conspirando para frustrarlo?",
+        "title": "La sala del asesinato",
+        "author": "P.D. James",
         "sfw": "sfw"
     }
 ]

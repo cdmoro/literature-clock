@@ -2,16 +2,6 @@
     {
         "id": "000135",
         "time": "00:45",
-        "quote_time_case": "una menos cuarto",
-        "quote_first": "Me despertó el ruido de una persiana. Recogí el reloj de la mesilla y vi que era la ",
-        "quote_last": ". No creí que pudiera dormir hasta que cesaran los golpes, así que me vestí, salí por la puerta y volví al armario a por mi chándal. Cuando llegué abajo, me detuve. Desde el dormitorio grande, al final del pasillo, oía a la señora S. serrar madera con golpes largos y ruidosos. Ninguna contraventana iba a interrumpir su descanso.",
-        "title": "Joyland",
-        "author": "Stephen King",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000136",
-        "time": "00:45",
         "quote_time_case": "12.45",
         "quote_first": "A las ",
         "quote_last": ", durante una pausa, el señor Yoshogi me dijo que debido a la guerra había ahora en Inglaterra muchas más mujeres que hombres.",
@@ -20,13 +10,23 @@
         "sfw": "unknown"
     },
     {
-        "id": "000137",
+        "id": "000136",
         "time": "00:45",
         "quote_time_case": "tercer cuarto después de medianoche",
         "quote_first": "Al pensarlo, se puso de pie de un salto y descolgó del gancho el abrigo en el que había dejado la carta de la señorita Viner. El reloj marcaba el ",
         "quote_last": ", y sabía que no importaría si bajaba al buzón de correos ahora o temprano a la mañana siguiente; pero quiso aclarar su conciencia y, habiendo encontrado la carta, se dirigió a la puerta.",
         "title": "El arrecife",
         "author": "Edith Wharton",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000137",
+        "time": "00:45",
+        "quote_time_case": "una menos cuarto",
+        "quote_first": "Me despertó el ruido de una persiana. Recogí el reloj de la mesilla y vi que era la ",
+        "quote_last": ". No creí que pudiera dormir hasta que cesaran los golpes, así que me vestí, salí por la puerta y volví al armario a por mi chándal. Cuando llegué abajo, me detuve. Desde el dormitorio grande, al final del pasillo, oía a la señora S. serrar madera con golpes largos y ruidosos. Ninguna contraventana iba a interrumpir su descanso.",
+        "title": "Joyland",
+        "author": "Stephen King",
         "sfw": "unknown"
     }
 ]

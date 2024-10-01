@@ -12,21 +12,21 @@
     {
         "id": "001665",
         "time": "10:56",
-        "quote_time_case": "cuatro minutos para las once",
-        "quote_first": "Aquí está tu reloj, Katy, dijo. \"Lo he arreglado para que golpee bien. Sólo que debes tener cuidado de no golpear el adhesivo cuando pones en marcha el péndulo.\"<br>\"¿De verdad?\" dijo Katy. \"¡Vaya, Dorry, eres un genio! Te lo agradezco mucho.\"<br>\"Faltan ",
-        "quote_last": "\", continuó Dorry.",
-        "title": "Lo que hizo Katy",
-        "author": "Susan Coolidge",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001666",
-        "time": "10:56",
         "quote_time_case": "10:56",
         "quote_first": "BOOTH WATSON SABÍA que sería una cuestión de sincronización cuidadosa si esperaba lograrlo. Tendría que estar atento al reloj para asegurarse de que eran las ",
         "quote_last": " antes de hacer su movimiento.",
         "title": "Próximo en la fila",
         "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001666",
+        "time": "10:56",
+        "quote_time_case": "cuatro minutos para las once",
+        "quote_first": "Aquí está tu reloj, Katy, dijo. \"Lo he arreglado para que golpee bien. Sólo que debes tener cuidado de no golpear el adhesivo cuando pones en marcha el péndulo.\"<br>\"¿De verdad?\" dijo Katy. \"¡Vaya, Dorry, eres un genio! Te lo agradezco mucho.\"<br>\"Faltan ",
+        "quote_last": "\", continuó Dorry.",
+        "title": "Lo que hizo Katy",
+        "author": "Susan Coolidge",
         "sfw": "sfw"
     }
 ]

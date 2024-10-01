@@ -2,12 +2,12 @@
     {
         "id": "000376",
         "time": "02:45",
-        "quote_time_case": "tres menos cuarto",
-        "quote_first": "Cuando despertó ya era de noche y la luna brillaba en la habitación. Miró su reloj: eran las ",
-        "quote_last": ". El sueño lo había abandonado; se sentó en la cama y pensó en el funeral de la vieja condesa.",
-        "title": "reina de Espadas",
-        "author": "Alexsander S. Pushkin",
-        "sfw": "sfw"
+        "quote_time_case": "02.45h.",
+        "quote_first": "",
+        "quote_last": ", Casa Ennet, las horas que realmente hacen madrugar.",
+        "title": "Frivolidad infinita",
+        "author": "David Foster Wallace",
+        "sfw": "unknown"
     },
     {
         "id": "000377",
@@ -22,11 +22,11 @@
     {
         "id": "000378",
         "time": "02:45",
-        "quote_time_case": "02.45h.",
-        "quote_first": "",
-        "quote_last": ", Casa Ennet, las horas que realmente hacen madrugar.",
-        "title": "Frivolidad infinita",
-        "author": "David Foster Wallace",
-        "sfw": "unknown"
+        "quote_time_case": "tres menos cuarto",
+        "quote_first": "Cuando despertó ya era de noche y la luna brillaba en la habitación. Miró su reloj: eran las ",
+        "quote_last": ". El sueño lo había abandonado; se sentó en la cama y pensó en el funeral de la vieja condesa.",
+        "title": "reina de Espadas",
+        "author": "Alexsander S. Pushkin",
+        "sfw": "sfw"
     }
 ]

@@ -12,6 +12,16 @@
     {
         "id": "002503",
         "time": "16:20",
+        "quote_time_case": "* Las cuatro y veinte minutos",
+        "quote_first": "A las cuatro y veinte - o, para decirlo de otra manera, más brusca, una hora y veinte minutos después de lo que parecía ser una esperanza razonable - la novia soltera, con la cabeza gacha y un padre colocado a cada lado de ella, fue ayudada a salir. del edificio.",
+        "quote_last": "",
+        "title": "Eleve alto la viga del techo, carpinteros",
+        "author": "J.D. Salinger",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002504",
+        "time": "16:20",
         "quote_time_case": "16.20 h.",
         "quote_first": "",
         "quote_last": " Ver televisión o un vídeo.",
@@ -20,7 +30,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "002504",
+        "id": "002505",
         "time": "16:20",
         "quote_time_case": "cuatro y veinte",
         "quote_first": "De ahí que gritara la hora, que eran las ",
@@ -28,15 +38,5 @@
         "title": "El oráculo del perro",
         "author": "G.K. Chesterton",
         "sfw": "sfw"
-    },
-    {
-        "id": "002505",
-        "time": "16:20",
-        "quote_time_case": "* Las cuatro y veinte minutos",
-        "quote_first": "A las cuatro y veinte - o, para decirlo de otra manera, más brusca, una hora y veinte minutos después de lo que parecía ser una esperanza razonable - la novia soltera, con la cabeza gacha y un padre colocado a cada lado de ella, fue ayudada a salir. del edificio.",
-        "quote_last": "",
-        "title": "Eleve alto la viga del techo, carpinteros",
-        "author": "J.D. Salinger",
-        "sfw": "unknown"
     }
 ]

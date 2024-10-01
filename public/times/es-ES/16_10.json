@@ -12,12 +12,12 @@
     {
         "id": "002480",
         "time": "16:10",
-        "quote_time_case": "cuatro y diez",
-        "quote_first": "Este sábado había dejado los saludos al padre Martín, pero a las ",
-        "quote_last": " pensó que sería cortés presentarse.",
-        "title": "Muerte en las Sagradas Órdenes",
-        "author": "P.D. James",
-        "sfw": "sfw"
+        "quote_time_case": "* cuatro-diez",
+        "quote_first": "El cambio se produjo a las cuatro y diez. Tumbada en la arena, la mujer del traje negro lo vio venir y se relajó.",
+        "quote_last": "",
+        "title": "Las mujeres",
+        "author": "Ray Bradbury",
+        "sfw": "unknown"
     },
     {
         "id": "002481",
@@ -33,20 +33,20 @@
         "id": "002482",
         "time": "16:10",
         "quote_time_case": "cuatro y diez",
+        "quote_first": "Este sábado había dejado los saludos al padre Martín, pero a las ",
+        "quote_last": " pensó que sería cortés presentarse.",
+        "title": "Muerte en las Sagradas Órdenes",
+        "author": "P.D. James",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002483",
+        "time": "16:10",
+        "quote_time_case": "cuatro y diez",
         "quote_first": "Ella mira el reloj. Ella está en la cocina. Queda un minuto. Ella espera. Son las ",
         "quote_last": ". Ella toma el eclair. Ella lame la crema. Se mira a sí misma. Es jodidamente estúpido. Pero. Muerde el chocolate y la masa que se ha ablandado con la crema. Jack aún no ha llegado a casa. Leannes está en el trabajo. Paula se irá ella misma dentro de un rato. Lleva un año sin beber. Exactamente un año. Ella mira el reloj. Un año y un minuto.",
         "title": "Paula Spencer",
         "author": "Roddy Doyle",
         "sfw": "nsfw"
-    },
-    {
-        "id": "002483",
-        "time": "16:10",
-        "quote_time_case": "* cuatro-diez",
-        "quote_first": "El cambio se produjo a las cuatro y diez. Tumbada en la arena, la mujer del traje negro lo vio venir y se relajó.",
-        "quote_last": "",
-        "title": "Las mujeres",
-        "author": "Ray Bradbury",
-        "sfw": "unknown"
     }
 ]

@@ -2,6 +2,16 @@
     {
         "id": "002699",
         "time": "17:40",
+        "quote_time_case": "* cinco cuarenta",
+        "quote_first": "Son las cinco y cuarenta. La fiesta es a las seis. Alrededor de las diez y media, el undécimo piso debería estar despejado. Arnold es un socio muy popular; Nadie se perderá su discurso de despedida si puede evitarlo. Además, en las fiestas de Carter Spink, los discursos siempre se realizan temprano, para que la gente pueda volver a trabajar si es necesario. Y mientras todos escuchan, me deslizaré hasta la oficina de Arnold. Deberia de funcionar. Tiene que funcionar. Mientras contemplo mi extraño reflejo, siento que una resolución sombría se endurece dentro de mí. No va a salirse con la suya cuando todos piensen que es un viejo osito de peluche alegre e inofensivo. No se saldrá con la suya.",
+        "quote_last": "",
+        "title": "La diosa no doméstica",
+        "author": "Sophie Kinsella",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002700",
+        "time": "17:40",
         "quote_time_case": "5:40",
         "quote_first": "Como nadie tenía “ningún otro asunto” que abordar, cerré la reunión a las ",
         "quote_last": " y le sugerí a Jeremy que nos acompañara a cenar con Rosemary y conmigo. Quería verlos juntos.",
@@ -10,23 +20,13 @@
         "sfw": "sfw"
     },
     {
-        "id": "002700",
+        "id": "002701",
         "time": "17:40",
         "quote_time_case": "5:40",
         "quote_first": "¿Qué? Dije: \"¿Ya son las 5:30?\"<br>\"Er, ",
         "quote_last": "\". Cielos, se morirán de hambre. Pero eso es algo bueno. Déjalos.",
         "title": "Amo los dólares",
         "author": "Zhu Wen",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002701",
-        "time": "17:40",
-        "quote_time_case": "* cinco cuarenta",
-        "quote_first": "Son las cinco y cuarenta. La fiesta es a las seis. Alrededor de las diez y media, el undécimo piso debería estar despejado. Arnold es un socio muy popular; Nadie se perderá su discurso de despedida si puede evitarlo. Además, en las fiestas de Carter Spink, los discursos siempre se realizan temprano, para que la gente pueda volver a trabajar si es necesario. Y mientras todos escuchan, me deslizaré hasta la oficina de Arnold. Deberia de funcionar. Tiene que funcionar. Mientras contemplo mi extraño reflejo, siento que una resolución sombría se endurece dentro de mí. No va a salirse con la suya cuando todos piensen que es un viejo osito de peluche alegre e inofensivo. No se saldrá con la suya.",
-        "quote_last": "",
-        "title": "La diosa no doméstica",
-        "author": "Sophie Kinsella",
         "sfw": "unknown"
     }
 ]

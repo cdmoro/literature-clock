@@ -12,16 +12,6 @@
     {
         "id": "001593",
         "time": "10:25",
-        "quote_time_case": "10:25 a.m.",
-        "quote_first": "Cuando cuatro equipos del FBI armados y blindados rodearon el almacén a las ",
-        "quote_last": ", la única persona desaparecida fue Ned Jennings.",
-        "title": "Un advenimiento para la libertad religiosa",
-        "author": "Ray Keating",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001594",
-        "time": "10:25",
         "quote_time_case": "10:25",
         "quote_first": "",
         "quote_last": ": Llamada telefónica de Lüding, muy alterada, instándome a volver inmediatamente y ponerme en contacto con Alois, que estaba igualmente alterado.",
@@ -30,7 +20,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001595",
+        "id": "001594",
         "time": "10:25",
         "quote_time_case": "10:25",
         "quote_first": "Una comida es suficiente ahora, complementada con una inyección de glucosa. El sueño sigue siendo \"negro\", completamente no reparador. Anoche tomé una de 16 mm. Película de las tres primeras horas, la proyectamos esta mañana en el laboratorio. La primera película de verdadero terror. Parecía un cadáver medio animado. Desperté a las ",
@@ -38,5 +28,15 @@
         "title": "Las voces del tiempo",
         "author": "J.G. Ballard",
         "sfw": "unknown"
+    },
+    {
+        "id": "001595",
+        "time": "10:25",
+        "quote_time_case": "10:25 a.m.",
+        "quote_first": "Cuando cuatro equipos del FBI armados y blindados rodearon el almacén a las ",
+        "quote_last": ", la única persona desaparecida fue Ned Jennings.",
+        "title": "Un advenimiento para la libertad religiosa",
+        "author": "Ray Keating",
+        "sfw": "sfw"
     }
 ]

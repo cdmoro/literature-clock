@@ -2,66 +2,6 @@
     {
         "id": "001176",
         "time": "08:30",
-        "quote_time_case": "ocho y media de la mañana",
-        "quote_first": "Gard permaneció inclinado sobre el corte en la tierra durante algún tiempo, iluminando las negras profundidades con la gran luz. Ya eran las ",
-        "quote_last": " y ya quería tomar una copa.",
-        "title": "Los Tommyknockers",
-        "author": "Stephen King",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001177",
-        "time": "08:30",
-        "quote_time_case": "ocho y media",
-        "quote_first": "A las ",
-        "quote_last": " irrumpió Millicent Hammitt, sin llamar previamente, para despedirse.",
-        "title": "La Torre Negra",
-        "author": "P.D. James",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001178",
-        "time": "08:30",
-        "quote_time_case": "ocho y media",
-        "quote_first": "Normalmente, a Sir John lo despertaban todas las mañanas a las ",
-        "quote_last": " de la mañana un mayordomo que le llevaba el desayuno, otro mayordomo que le llevaba la ropa, un tercer mayordomo cuyo trabajo era alimentar a Adolf y Stalin si era necesario, y un cuarto mayordomo que básicamente estaba un repuesto.",
-        "title": "Johnny y la bomba",
-        "author": "Terry Pratchett",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001179",
-        "time": "08:30",
-        "quote_time_case": "ocho y media",
-        "quote_first": "Afuera, el viento seguía arreciando. De vez en cuando emitía un grito espeluznante alrededor del alero que le hacía levantar la vista de su libro. Hacia las ",
-        "quote_last": " empezó a nevar. Era pesado y húmedo, cubriendo rápidamente su ventana y bloqueando su vista de las montañas. En cierto modo, eso fue peor. La nieve también había bloqueado las ventanas del Overlook.",
-        "title": "Doctor Dormir",
-        "author": "Stephen King",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001180",
-        "time": "08:30",
-        "quote_time_case": "ocho y media",
-        "quote_first": "Habíamos hecho los preparativos para el almuerzo del día anterior, y cuando entré con mi viejo coche en la entrada del gran edificio victoriano verde a las ",
-        "quote_last": " de la mañana del martes, Annie y Mike estaban listos para partir. Milo también.",
-        "title": "Joyland",
-        "author": "Stephen King",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001181",
-        "time": "08:30",
-        "quote_time_case": "ocho y media",
-        "quote_first": "A las ",
-        "quote_last": ", llamé y dije: “He estado pensando en que podría hacerme una operación de senos, simplemente quítamelos. ¿Qué opinas? ¿Podría lograr el look de pecho plano?",
-        "title": "Mi año de descanso y relajación",
-        "author": "Ottessa Moshfegh",
-        "sfw": "nsfw"
-    },
-    {
-        "id": "001182",
-        "time": "08:30",
         "quote_time_case": "* Ocho y media",
         "quote_first": "A las ocho y media se abre la puerta de la sala y entran dos técnicos, oliendo a vino de uva; Los técnicos siempre se mueven al paso rápido o al trote porque siempre están tan inclinados hacia adelante que tienen que moverse rápido para mantenerse de pie.",
         "quote_last": "",
@@ -70,37 +10,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001183",
-        "time": "08:30",
-        "quote_time_case": "8:30 a.m.",
-        "quote_first": "A las ",
-        "quote_last": " Filomina entró en Ale House blanca, redonda y jadeando por los ciento cuarenta y seis kilos de más que llevaba en su pequeño cuerpo.",
-        "title": "Sopa De Granada",
-        "author": "Marsha Mehran",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001184",
-        "time": "08:30",
-        "quote_time_case": "ocho y media",
-        "quote_first": "\"¡Qué absurdo!\" -pensó Vronsky y miró el reloj. Ya eran las ",
-        "quote_last": ".",
-        "title": "Ana Karénina",
-        "author": "Leo Tolstoy",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001185",
-        "time": "08:30",
-        "quote_time_case": "ocho y media",
-        "quote_first": "A las ",
-        "quote_last": ", el señor Dursley cogió su maletín, le dio un beso en la mejilla a la señora Dursley y trató de despedirse de Dudley con un beso, pero falló, porque Dudley ahora estaba haciendo un berrinche y tirando su cereal a las paredes.",
-        "title": "Harry Potter y la Piedra Filosofal",
-        "author": "J.K. Rowling",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001186",
+        "id": "001177",
         "time": "08:30",
         "quote_time_case": "8:30",
         "quote_first": "Son alrededor de las ",
@@ -110,7 +20,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001187",
+        "id": "001178",
         "time": "08:30",
         "quote_time_case": "8:30",
         "quote_first": "El 25 de julio a las ",
@@ -120,7 +30,87 @@
         "sfw": "nsfw"
     },
     {
-        "id": "001188",
+        "id": "001179",
+        "time": "08:30",
+        "quote_time_case": "8:30 a.m.",
+        "quote_first": "A las ",
+        "quote_last": " Filomina entró en Ale House blanca, redonda y jadeando por los ciento cuarenta y seis kilos de más que llevaba en su pequeño cuerpo.",
+        "title": "Sopa De Granada",
+        "author": "Marsha Mehran",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001180",
+        "time": "08:30",
+        "quote_time_case": "ocho y media",
+        "quote_first": "A las ",
+        "quote_last": " irrumpió Millicent Hammitt, sin llamar previamente, para despedirse.",
+        "title": "La Torre Negra",
+        "author": "P.D. James",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001181",
+        "time": "08:30",
+        "quote_time_case": "ocho y media",
+        "quote_first": "Normalmente, a Sir John lo despertaban todas las mañanas a las ",
+        "quote_last": " de la mañana un mayordomo que le llevaba el desayuno, otro mayordomo que le llevaba la ropa, un tercer mayordomo cuyo trabajo era alimentar a Adolf y Stalin si era necesario, y un cuarto mayordomo que básicamente estaba un repuesto.",
+        "title": "Johnny y la bomba",
+        "author": "Terry Pratchett",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001182",
+        "time": "08:30",
+        "quote_time_case": "ocho y media",
+        "quote_first": "Afuera, el viento seguía arreciando. De vez en cuando emitía un grito espeluznante alrededor del alero que le hacía levantar la vista de su libro. Hacia las ",
+        "quote_last": " empezó a nevar. Era pesado y húmedo, cubriendo rápidamente su ventana y bloqueando su vista de las montañas. En cierto modo, eso fue peor. La nieve también había bloqueado las ventanas del Overlook.",
+        "title": "Doctor Dormir",
+        "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001183",
+        "time": "08:30",
+        "quote_time_case": "ocho y media",
+        "quote_first": "Habíamos hecho los preparativos para el almuerzo del día anterior, y cuando entré con mi viejo coche en la entrada del gran edificio victoriano verde a las ",
+        "quote_last": " de la mañana del martes, Annie y Mike estaban listos para partir. Milo también.",
+        "title": "Joyland",
+        "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001184",
+        "time": "08:30",
+        "quote_time_case": "ocho y media",
+        "quote_first": "A las ",
+        "quote_last": ", llamé y dije: “He estado pensando en que podría hacerme una operación de senos, simplemente quítamelos. ¿Qué opinas? ¿Podría lograr el look de pecho plano?",
+        "title": "Mi año de descanso y relajación",
+        "author": "Ottessa Moshfegh",
+        "sfw": "nsfw"
+    },
+    {
+        "id": "001185",
+        "time": "08:30",
+        "quote_time_case": "ocho y media",
+        "quote_first": "\"¡Qué absurdo!\" -pensó Vronsky y miró el reloj. Ya eran las ",
+        "quote_last": ".",
+        "title": "Ana Karénina",
+        "author": "Leo Tolstoy",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001186",
+        "time": "08:30",
+        "quote_time_case": "ocho y media",
+        "quote_first": "A las ",
+        "quote_last": ", el señor Dursley cogió su maletín, le dio un beso en la mejilla a la señora Dursley y trató de despedirse de Dudley con un beso, pero falló, porque Dudley ahora estaba haciendo un berrinche y tirando su cereal a las paredes.",
+        "title": "Harry Potter y la Piedra Filosofal",
+        "author": "J.K. Rowling",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001187",
         "time": "08:30",
         "quote_time_case": "ocho y media",
         "quote_first": "La conferencia iba a dar mañana y ya eran casi las ",
@@ -130,7 +120,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001189",
+        "id": "001188",
         "time": "08:30",
         "quote_time_case": "ocho y media",
         "quote_first": "Cuando despertó, a las ",
@@ -140,13 +130,23 @@
         "sfw": "unknown"
     },
     {
-        "id": "001190",
+        "id": "001189",
         "time": "08:30",
         "quote_time_case": "ocho y media",
         "quote_first": "Puedo ver en mi reloj, sin quitar la mano de la empuñadura izquierda de la bicicleta, que son las ",
         "quote_last": " de la mañana.",
         "title": "Zen y el arte del mantenimiento de motocicletas",
         "author": "Robert M. Pirsig",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001190",
+        "time": "08:30",
+        "quote_time_case": "ocho y media de la mañana",
+        "quote_first": "Gard permaneció inclinado sobre el corte en la tierra durante algún tiempo, iluminando las negras profundidades con la gran luz. Ya eran las ",
+        "quote_last": " y ya quería tomar una copa.",
+        "title": "Los Tommyknockers",
+        "author": "Stephen King",
         "sfw": "unknown"
     }
 ]

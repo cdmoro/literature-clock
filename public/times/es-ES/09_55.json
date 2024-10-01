@@ -22,12 +22,12 @@
     {
         "id": "001468",
         "time": "09:55",
-        "quote_time_case": "* cinco minutos para las diez exactamente",
-        "quote_first": "El martes 17 de octubre, exactamente a las diez menos cinco, el padre Martín salió de la pequeña torre que ocupaba en el sur de la casa, bajó las escaleras de caracol y recorrió el pasillo hasta el estudio del padre Sebastián.",
+        "quote_time_case": "* cinco a diez",
+        "quote_first": "A las diez menos cinco estoy listo en el pasillo. La casa de la madre de Nathaniel está cerca pero aparentemente es difícil de encontrar, así que el plan es encontrarnos aquí y él me acompañará. Miro mi reflejo en el espejo del pasillo y hago una mueca. La raya decolorante en mi cabello es tan obvia como siempre. ¿Realmente voy a salir en público así?",
         "quote_last": "",
-        "title": "Muerte en las Sagradas Órdenes",
-        "author": "P.D. James",
-        "sfw": "sfw"
+        "title": "La diosa no doméstica",
+        "author": "Sophie Kinsella",
+        "sfw": "unknown"
     },
     {
         "id": "001469",
@@ -42,21 +42,21 @@
     {
         "id": "001470",
         "time": "09:55",
-        "quote_time_case": "* cinco a diez",
-        "quote_first": "A las diez menos cinco estoy listo en el pasillo. La casa de la madre de Nathaniel está cerca pero aparentemente es difícil de encontrar, así que el plan es encontrarnos aquí y él me acompañará. Miro mi reflejo en el espejo del pasillo y hago una mueca. La raya decolorante en mi cabello es tan obvia como siempre. ¿Realmente voy a salir en público así?",
-        "quote_last": "",
-        "title": "La diosa no doméstica",
-        "author": "Sophie Kinsella",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001471",
-        "time": "09:55",
         "quote_time_case": "* cinco minutos para las diez",
         "quote_first": "Buenos días, Lucien, buenos días, dijo Alberto; \"Su puntualidad realmente me alarma. ¿Qué digo? ¡Puntualidad! Usted, a quien esperaba el último, llega a las diez menos cinco, cuando la hora fijada era las y media. ¿Ha dimitido el ministerio?\"",
         "quote_last": "",
         "title": "El conde de monte cristo",
         "author": "Alexandre Dumas",
         "sfw": "unknown"
+    },
+    {
+        "id": "001471",
+        "time": "09:55",
+        "quote_time_case": "* cinco minutos para las diez exactamente",
+        "quote_first": "El martes 17 de octubre, exactamente a las diez menos cinco, el padre Martín salió de la pequeña torre que ocupaba en el sur de la casa, bajó las escaleras de caracol y recorrió el pasillo hasta el estudio del padre Sebastián.",
+        "quote_last": "",
+        "title": "Muerte en las Sagradas Órdenes",
+        "author": "P.D. James",
+        "sfw": "sfw"
     }
 ]

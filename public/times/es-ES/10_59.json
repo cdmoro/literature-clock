@@ -2,21 +2,21 @@
     {
         "id": "001670",
         "time": "10:59",
-        "quote_time_case": "10:59",
-        "quote_first": "A las ",
-        "quote_last": " el mayordomo abrió la puerta principal y la multitud comenzó a aplaudir.<br>La presidenta y su marido saludaron a los ojos sonrientes y sólo por experiencia e instinto profesional sintieron que cincuenta personas no estaban mirando hacia ellos.",
-        "title": "¿Se lo contamos al presidente?",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001671",
-        "time": "10:59",
         "quote_time_case": "* un minuto antes de las once",
         "quote_first": "Acababa de regresar de las únicas compras que tenía que hacer ese día, y aún faltaban un minuto para las once.",
         "quote_last": "",
         "title": "Esa horrible fuerza",
         "author": "C.S. Lewis",
         "sfw": "unknown"
+    },
+    {
+        "id": "001671",
+        "time": "10:59",
+        "quote_time_case": "10:59",
+        "quote_first": "A las ",
+        "quote_last": " el mayordomo abrió la puerta principal y la multitud comenzó a aplaudir.<br>La presidenta y su marido saludaron a los ojos sonrientes y sólo por experiencia e instinto profesional sintieron que cincuenta personas no estaban mirando hacia ellos.",
+        "title": "¿Se lo contamos al presidente?",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     }
 ]

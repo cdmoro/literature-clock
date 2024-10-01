@@ -2,12 +2,12 @@
     {
         "id": "001641",
         "time": "10:50",
-        "quote_time_case": "10:50",
-        "quote_first": "El Rt. Honorable. Lord Barrington de Bristol Docklands debía llegar a la catedral de St. Paul a las ",
-        "quote_last": " de la mañana del 10 de abril de 1992.",
-        "title": "Este era un hombre",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
+        "quote_time_case": "* diez para las once",
+        "quote_first": "Mientras caminaba de regreso a la oficina de vuelo, los aviadores formaban una fila para esperar la llegada de la camioneta NAAFI con té y pasteles por la mañana. Lambert miró su reloj; Eran las once menos diez.",
+        "quote_last": "",
+        "title": "Bombardeo",
+        "author": "Len Deighton",
+        "sfw": "unknown"
     },
     {
         "id": "001642",
@@ -22,11 +22,11 @@
     {
         "id": "001643",
         "time": "10:50",
-        "quote_time_case": "* diez para las once",
-        "quote_first": "Mientras caminaba de regreso a la oficina de vuelo, los aviadores formaban una fila para esperar la llegada de la camioneta NAAFI con té y pasteles por la mañana. Lambert miró su reloj; Eran las once menos diez.",
-        "quote_last": "",
-        "title": "Bombardeo",
-        "author": "Len Deighton",
-        "sfw": "unknown"
+        "quote_time_case": "10:50",
+        "quote_first": "El Rt. Honorable. Lord Barrington de Bristol Docklands debía llegar a la catedral de St. Paul a las ",
+        "quote_last": " de la mañana del 10 de abril de 1992.",
+        "title": "Este era un hombre",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     }
 ]

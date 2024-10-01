@@ -2,6 +2,16 @@
     {
         "id": "002913",
         "time": "19:05",
+        "quote_time_case": "7:05 p.m.",
+        "quote_first": "Puntual como siempre, monseñor Kevin Sullivan estaba en el vestíbulo iluminado con lámparas de araña del Hilton a las ",
+        "quote_last": ", cuando Jon y Shannon salieron del ascensor. Esta vez, elegantemente vestido con ropa gris clerical, el hijo de Irlanda, de cabello oscuro y rostro rubicundo, besó con gracia la mano de Shannon y luego apretó la de Jon.",
+        "title": "El Códice de Constantino",
+        "author": "Paul L. Maier",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002914",
+        "time": "19:05",
         "quote_time_case": "* cinco minutos después de las siete",
         "quote_first": "Aparqué en un aparcamiento de alquiler en las afueras de O'Hare alrededor de las siete y cinco minutos. Salí del auto con mi bastón y mi caña en la mano. Sólo había una vieja luz encendida en el lote, pero la luna había salido enorme y brillante, y no tuve problemas para ver venir a Micheal.",
         "quote_last": "",
@@ -10,23 +20,13 @@
         "sfw": "sfw"
     },
     {
-        "id": "002914",
+        "id": "002915",
         "time": "19:05",
         "quote_time_case": "las siete y cinco",
         "quote_first": "Eran ",
         "quote_last": ", un poco más tarde de su hora habitual, cuando Hubert regresó al apartamento que suponía debía llamar hogar, pero en el que todavía se sentía tan incómodo como un huésped que empieza a sospechar que ha sobrepasado su acogida.",
         "title": "Una cierta justicia",
         "author": "P.D. James",
-        "sfw": "sfw"
-    },
-    {
-        "id": "002915",
-        "time": "19:05",
-        "quote_time_case": "* 19:05",
-        "quote_first": "Puntual como siempre, monseñor Kevin Sullivan estaba en el vestíbulo iluminado con lámparas de araña del Hilton a las 7:05 p. m., cuando Jon y Shannon salieron del ascensor. Esta vez, elegantemente vestido con ropa gris clerical, el hijo de Irlanda, de cabello oscuro y rostro rubicundo, besó con gracia la mano de Shannon y luego apretó la de Jon.",
-        "quote_last": "",
-        "title": "El Códice de Constantino",
-        "author": "Paul L. Maier",
         "sfw": "sfw"
     }
 ]

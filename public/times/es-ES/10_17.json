@@ -2,22 +2,22 @@
     {
         "id": "001574",
         "time": "10:17",
-        "quote_time_case": "diez y diecisiete minutos",
-        "quote_first": "Pacey tarareaba para sí mientras caminaba lentamente hacia la oficina de Abel para su reunión diaria de las diez. Eran las ",
-        "quote_last": ".",
-        "title": "Kane y Abel",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001575",
-        "time": "10:17",
         "quote_time_case": "10.17",
         "quote_first": "Miró la esquina de la pantalla. Eran sólo las ",
         "quote_last": " horas. Había estado en su escritorio exactamente cuarenta y siete minutos.",
         "title": "San Valentín de Nueva York",
         "author": "Carmen Reid",
         "sfw": "unknown"
+    },
+    {
+        "id": "001575",
+        "time": "10:17",
+        "quote_time_case": "diez y diecisiete minutos",
+        "quote_first": "Pacey tarareaba para sí mientras caminaba lentamente hacia la oficina de Abel para su reunión diaria de las diez. Eran las ",
+        "quote_last": ".",
+        "title": "Kane y Abel",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     },
     {
         "id": "001576",

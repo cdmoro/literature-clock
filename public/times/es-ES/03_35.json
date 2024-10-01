@@ -2,21 +2,21 @@
     {
         "id": "000507",
         "time": "03:35",
-        "quote_time_case": "3:35",
-        "quote_first": "Tres y media, ",
-        "quote_last": ", 3:40. De repente hubo una fuerte sacudida que casi lo hizo caer del asiento. Fue seguido por un fuerte chirrido de ruedas mientras el tren desaceleraba rápidamente y finalmente se detenía.",
-        "title": "Tener cuidado con lo que deseas",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "000508",
-        "time": "03:35",
         "quote_time_case": "3.35",
         "quote_first": "En la oscuridad apenas podía ver las manecillas del despertador: las ",
         "quote_last": ". Se acomodó la almohada y cerró los ojos.",
         "title": "Los perros de Riga",
         "author": "Henning Mankell",
         "sfw": "unknown"
+    },
+    {
+        "id": "000508",
+        "time": "03:35",
+        "quote_time_case": "3:35",
+        "quote_first": "Tres y media, ",
+        "quote_last": ", 3:40. De repente hubo una fuerte sacudida que casi lo hizo caer del asiento. Fue seguido por un fuerte chirrido de ruedas mientras el tren desaceleraba rápidamente y finalmente se detenía.",
+        "title": "Tener cuidado con lo que deseas",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     }
 ]

@@ -2,6 +2,16 @@
     {
         "id": "000998",
         "time": "07:30",
+        "quote_time_case": "* Siete y media",
+        "quote_first": "Las siete y media de vuelta a la sala de estar. La Gran Enfermera mira a través de su vaso especial, siempre pulido hasta el punto de que no se nota que está ahí, y asiente con la cabeza ante lo que ve, levanta la mano y arranca una hoja de su calendario un día más cerca de la meta.",
+        "quote_last": "",
+        "title": "Uno volo sobre el nido del cuco",
+        "author": "Ken Kesey",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000999",
+        "time": "07:30",
         "quote_time_case": "siete y media",
         "quote_first": "Alrededor de las ",
         "quote_last": " me desperté y abrí la ventana en un hermoso día soleado. El reloj había dado las ocho y me disponía a salir a encadenar a los perros cuando de repente oí un ruido repentino de enaguas en la escalera, detrás de mí.",
@@ -10,7 +20,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000999",
+        "id": "001000",
         "time": "07:30",
         "quote_time_case": "siete y media",
         "quote_first": "A las ",
@@ -20,23 +30,13 @@
         "sfw": "unknown"
     },
     {
-        "id": "001000",
+        "id": "001001",
         "time": "07:30",
         "quote_time_case": "siete y media",
         "quote_first": "A las ",
         "quote_last": " de la mañana siguiente, después de menos de tres horas de sueño interrumpido y plagado de pesadillas, Tess encendió el ordenador de su oficina. Pero no para escribir. Escribir era lo más alejado de su mente.",
         "title": "Completamente oscuro, sin estrellas",
         "author": "Stephen King",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001001",
-        "time": "07:30",
-        "quote_time_case": "* Siete y media",
-        "quote_first": "Las siete y media de vuelta a la sala de estar. La Gran Enfermera mira a través de su vaso especial, siempre pulido hasta el punto de que no se nota que está ahí, y asiente con la cabeza ante lo que ve, levanta la mano y arranca una hoja de su calendario un día más cerca de la meta.",
-        "quote_last": "",
-        "title": "Uno volo sobre el nido del cuco",
-        "author": "Ken Kesey",
         "sfw": "unknown"
     },
     {

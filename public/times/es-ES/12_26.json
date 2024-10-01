@@ -2,21 +2,21 @@
     {
         "id": "001941",
         "time": "12:26",
-        "quote_time_case": "12:26 p.m.",
-        "quote_first": "",
-        "quote_last": "<br>“Yo, Florentyna Kane, juro solemnemente…”<br>“Yo, Florentyna Kane, juro solemnemente…”",
-        "title": "¿Se lo contamos al presidente?",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001942",
-        "time": "12:26",
         "quote_time_case": "26",
         "quote_first": "12.25 h. ",
         "quote_last": ". 27. Cada vez que Billy salvaba un tiro parecía desconsolado.",
         "title": "Un cernícalo por bribón",
         "author": "Barry Hines",
         "sfw": "unknown"
+    },
+    {
+        "id": "001942",
+        "time": "12:26",
+        "quote_time_case": "12:26 p.m.",
+        "quote_first": "",
+        "quote_last": "<br>“Yo, Florentyna Kane, juro solemnemente…”<br>“Yo, Florentyna Kane, juro solemnemente…”",
+        "title": "¿Se lo contamos al presidente?",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     }
 ]

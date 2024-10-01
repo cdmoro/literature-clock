@@ -2,6 +2,16 @@
     {
         "id": "000745",
         "time": "05:35",
+        "quote_time_case": "* veinticinco antes de las seis",
+        "quote_first": "Miré el reloj entrecerrando los ojos. —Dice que las seis menos veinticinco —dije y me alejé de él.",
+        "quote_last": "",
+        "title": "El hombre de los dados",
+        "author": "Luke Rhinehart",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000746",
+        "time": "05:35",
         "quote_time_case": "5:35",
         "quote_first": "El senador se despertó a las ",
         "quote_last": " con un sudor frío, aunque en realidad no había dormido más de unos pocos minutos seguidos. Había sido una noche terrible, con truenos, relámpagos y sirenas.",
@@ -10,7 +20,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "000746",
+        "id": "000747",
         "time": "05:35",
         "quote_time_case": "5:35",
         "quote_first": "Se sorprendió al ver que eran las ",
@@ -20,23 +30,13 @@
         "sfw": "sfw"
     },
     {
-        "id": "000747",
+        "id": "000748",
         "time": "05:35",
         "quote_time_case": "5:35",
         "quote_first": "",
         "quote_last": " - Todos los teléfonos suenan ahora, el turno de turno se ha disparado - ahora los demás se están despertando.",
         "title": "Miedo y asco: en la campaña del 72",
         "author": "Hunter S Thompson",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000748",
-        "time": "05:35",
-        "quote_time_case": "* veinticinco antes de las seis",
-        "quote_first": "Miré el reloj entrecerrando los ojos. —Dice que las seis menos veinticinco —dije y me alejé de él.",
-        "quote_last": "",
-        "title": "El hombre de los dados",
-        "author": "Luke Rhinehart",
         "sfw": "unknown"
     },
     {

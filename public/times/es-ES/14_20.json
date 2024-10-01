@@ -12,6 +12,16 @@
     {
         "id": "002179",
         "time": "14:20",
+        "quote_time_case": "dos y veinte",
+        "quote_first": "Las ",
+        "quote_last": " minutos, de camino a San Diego, escuchando una música extraña y cacófana; sin línea melódica, sin contenido.",
+        "title": "En algún lugar del tiempo (retorno en el momento de la oferta)",
+        "author": "Richard Matheson",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002180",
+        "time": "14:20",
         "quote_time_case": "Las dos y veinte",
         "quote_first": "",
         "quote_last": ". ¿Quieres volver al hotel por un rato?<br>\"Está bien\".<br>Salieron de los jardines y bajaron por la rue de Vaugirard. Estas vacaciones, a diferencia de aquellas de hace mucho tiempo, no terminarían con ella durmiendo en casa. Dentro de dos noches estaré en lo alto sobre el Océano Atlántico y el sábado caminaré por el Otro Lugar. Me voy a Estados Unidos. Estoy empezando mi vida de nuevo.",
@@ -20,7 +30,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002180",
+        "id": "002181",
         "time": "14:20",
         "quote_time_case": "las dos y veinte",
         "quote_first": "Miró su reloj y eran ",
@@ -30,23 +40,13 @@
         "sfw": "unknown"
     },
     {
-        "id": "002181",
+        "id": "002182",
         "time": "14:20",
         "quote_time_case": "las dos y veinte",
         "quote_first": "El joyero cuestionó el reloj encontrado en Weir, afirmando que le había dado cuerda y engastado a Edwin Drood, a ",
         "quote_last": " de esa misma tarde; y había corrido, antes de ser arrojado al agua; y el joyero consideró positivamente que nunca había sido rebobinado.",
         "title": "El misterio de Edwin Drood",
         "author": "Charles Dickens",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002182",
-        "time": "14:20",
-        "quote_time_case": "dos y veinte",
-        "quote_first": "Las ",
-        "quote_last": " minutos, de camino a San Diego, escuchando una música extraña y cacófana; sin línea melódica, sin contenido.",
-        "title": "En algún lugar del tiempo (retorno en el momento de la oferta)",
-        "author": "Richard Matheson",
         "sfw": "unknown"
     }
 ]

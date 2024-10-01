@@ -2,21 +2,21 @@
     {
         "id": "000379",
         "time": "02:46",
-        "quote_time_case": "2:46 a.m.",
-        "quote_first": "NUNCA SABEMOS, AL PRIMERO, si nos dirigimos hacia una olla o hacia una mancha. A las ",
-        "quote_last": " Anoche se encendieron las luces del piso de arriba. Las campanas también sonaron, pero no puedo decir que alguna vez las escuché. En diez segundos, me vestí y salí por la puerta de mi habitación en la estación.",
-        "title": "El guardián de mi hermana",
-        "author": "Jodi Picoult",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000380",
-        "time": "02:46",
         "quote_time_case": "2.46 am",
         "quote_first": "",
         "quote_last": ". La cadena de transmisión zumbó y el objetivo de papel se deslizó por el campo oscurecido, entrando y saliendo de rayos de luz incandescente amarilla. En el puesto de tiro, una figura esperaba en las sombras. Cuando el objetivo pasó la marca de ocho metros, el hombre abrió fuego: ocho tiros, rápidos y sin vacilar.",
         "title": "Patriotas",
         "author": "Steve Sohmer",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000380",
+        "time": "02:46",
+        "quote_time_case": "2:46 a.m.",
+        "quote_first": "NUNCA SABEMOS, AL PRIMERO, si nos dirigimos hacia una olla o hacia una mancha. A las ",
+        "quote_last": " Anoche se encendieron las luces del piso de arriba. Las campanas también sonaron, pero no puedo decir que alguna vez las escuché. En diez segundos, me vestí y salí por la puerta de mi habitación en la estación.",
+        "title": "El guardián de mi hermana",
+        "author": "Jodi Picoult",
         "sfw": "unknown"
     },
     {

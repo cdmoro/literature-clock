@@ -2,6 +2,16 @@
     {
         "id": "001753",
         "time": "11:20",
+        "quote_time_case": "11.20",
+        "quote_first": "Sweeney señaló el reloj que había encima de la barra, sostenido por las enormes e indiferentes mandíbulas de una cabeza de cocodrilo disecada. Eran las ",
+        "quote_last": ".",
+        "title": "dioses americanos",
+        "author": "Neil Gaiman",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001754",
+        "time": "11:20",
         "quote_time_case": "* once veinte",
         "quote_first": "A las once y veinte, Adam decidió que ya no podía correr el riesgo de que lo vieran en la carretera. Miró hacia el barranco y se dio cuenta de que ahora no le quedaba otra alternativa que caminar.",
         "quote_last": "",
@@ -10,7 +20,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001754",
+        "id": "001755",
         "time": "11:20",
         "quote_time_case": "11.20 horas",
         "quote_first": "El viernes 17 de septiembre a las ",
@@ -20,23 +30,13 @@
         "sfw": "unknown"
     },
     {
-        "id": "001755",
+        "id": "001756",
         "time": "11:20",
         "quote_time_case": "11:20",
         "quote_first": "NOTAS DEL OFICIAL Alerta de interrupción registrada a las ",
         "quote_last": " desde el salón de billar de los Stones (identificación del local 33CBD-Long181). El oficial y Aito /379 respondieron. Al llegar encontró al sujeto gritando amenazas y actuando de manera agresiva. Un escaneo del registro de identificación SIM del sujeto reveló que el sujeto tiene antecedentes recientes que incluyen interrupciones públicas previas y antecedentes juveniles.",
         "title": "Moxylandia",
         "author": "Lauren Beukes",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001756",
-        "time": "11:20",
-        "quote_time_case": "11.20",
-        "quote_first": "Sweeney señaló el reloj que había encima de la barra, sostenido por las enormes e indiferentes mandíbulas de una cabeza de cocodrilo disecada. Eran las ",
-        "quote_last": ".",
-        "title": "dioses americanos",
-        "author": "Neil Gaiman",
         "sfw": "unknown"
     }
 ]

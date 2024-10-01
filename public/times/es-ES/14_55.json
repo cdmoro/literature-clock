@@ -2,25 +2,15 @@
     {
         "id": "002252",
         "time": "14:55",
-        "quote_time_case": "dos y cincuenta y cinco",
+        "quote_time_case": "2:55",
         "quote_first": "A las ",
-        "quote_last": ", diez hombres y dos mujeres, todos vestidos con lo que a Daphne le parecieron largas batas negras con pañuelos morados colgando del cuello, cruzaron el escenario formando un suave cocodrilo antes de ocupar los lugares asignados.",
-        "title": "Mientras el cuervo vuela",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
+        "quote_last": " de esa tarde, aparcó frente a la escuela de su hija y esperó a que salieran los estudiantes. Ella no había dormido nada. Le dolían los ojos y sentía un calor confuso en la cabeza.",
+        "title": "mata a tu hermano",
+        "author": "Jack Heath",
+        "sfw": "unknown"
     },
     {
         "id": "002253",
-        "time": "14:55",
-        "quote_time_case": "tres menos cinco",
-        "quote_first": "A las ",
-        "quote_last": ", Paolo y su padrino entraron en la capilla y caminaron lentamente por el pasillo. Gian Lorenzo sabía que había sido un futbolista muy conocido, pero aún no recordaba su nombre.",
-        "title": "El gato de los nueve cuentos",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "002254",
         "time": "14:55",
         "quote_time_case": "De cinco a tres",
         "quote_first": "El superior, el muy reverendo John Conmee S.J. Volvió a poner su reloj en su bolsillo interior mientras bajaba las escaleras del presbiterio. ",
@@ -30,13 +20,23 @@
         "sfw": "unknown"
     },
     {
+        "id": "002254",
+        "time": "14:55",
+        "quote_time_case": "dos y cincuenta y cinco",
+        "quote_first": "A las ",
+        "quote_last": ", diez hombres y dos mujeres, todos vestidos con lo que a Daphne le parecieron largas batas negras con pañuelos morados colgando del cuello, cruzaron el escenario formando un suave cocodrilo antes de ocupar los lugares asignados.",
+        "title": "Mientras el cuervo vuela",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
         "id": "002255",
         "time": "14:55",
-        "quote_time_case": "2:55",
+        "quote_time_case": "tres menos cinco",
         "quote_first": "A las ",
-        "quote_last": " de esa tarde, aparcó frente a la escuela de su hija y esperó a que salieran los estudiantes. Ella no había dormido nada. Le dolían los ojos y sentía un calor confuso en la cabeza.",
-        "title": "mata a tu hermano",
-        "author": "Jack Heath",
-        "sfw": "unknown"
+        "quote_last": ", Paolo y su padrino entraron en la capilla y caminaron lentamente por el pasillo. Gian Lorenzo sabía que había sido un futbolista muy conocido, pero aún no recordaba su nombre.",
+        "title": "El gato de los nueve cuentos",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     }
 ]

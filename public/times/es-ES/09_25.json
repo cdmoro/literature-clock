@@ -2,26 +2,6 @@
     {
         "id": "001375",
         "time": "09:25",
-        "quote_time_case": "9:25",
-        "quote_first": "Con eso en mente, Emma salió de Manor House a las ",
-        "quote_last": " de esa mañana y atravesó las puertas del astillero de Barrington exactamente a las diez menos ocho minutos.",
-        "title": "Los pecados del padre",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001376",
-        "time": "09:25",
-        "quote_time_case": "9:25",
-        "quote_first": "El tren de las ",
-        "quote_last": " que salía de Liverpool Street estaba casi vacío. Todavía era bastante temprano para que Philippa viajara contra la corriente de viajeros.",
-        "title": "sangre inocente",
-        "author": "P.D. James",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001377",
-        "time": "09:25",
         "quote_time_case": "* nueve veinticinco",
         "quote_first": "El teléfono de su escritorio sonó, sobresaltándolo. Eran las nueve y veinticinco. No se había dado cuenta de que había estado sentado como si estuviera en una fuga.",
         "quote_last": "",
@@ -30,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001378",
+        "id": "001376",
         "time": "09:25",
         "quote_time_case": "* nueve veinticinco",
         "quote_first": "Un hombre al que debía cruzar la calle a las nueve en punto; a las nueve y veinticinco quería follárselo hasta que llorara. Mis piernas temblaron con eso. Mi voz salió flotando de mi boca cuando la abrí para hablar. La pared de cristal de la sala de reuniones era enorme y de repente demasiado transparente.",
@@ -38,5 +18,25 @@
         "title": "El vals olvidado",
         "author": "Anne Enright",
         "sfw": "nsfw"
+    },
+    {
+        "id": "001377",
+        "time": "09:25",
+        "quote_time_case": "9:25",
+        "quote_first": "Con eso en mente, Emma salió de Manor House a las ",
+        "quote_last": " de esa mañana y atravesó las puertas del astillero de Barrington exactamente a las diez menos ocho minutos.",
+        "title": "Los pecados del padre",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001378",
+        "time": "09:25",
+        "quote_time_case": "9:25",
+        "quote_first": "El tren de las ",
+        "quote_last": " que salía de Liverpool Street estaba casi vacío. Todavía era bastante temprano para que Philippa viajara contra la corriente de viajeros.",
+        "title": "sangre inocente",
+        "author": "P.D. James",
+        "sfw": "sfw"
     }
 ]

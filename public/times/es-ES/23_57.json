@@ -2,16 +2,6 @@
     {
         "id": "003626",
         "time": "23:57",
-        "quote_time_case": "tres minutos para la medianoche",
-        "quote_first": "Decía que faltaban ",
-        "quote_last": ". No me pareció tan tarde en el estado de ánimo en el que me encontraba. Me puse la bata, cogí mi linterna de bolsillo y fui a la habitación de Sally.",
-        "title": "Cubrirle la cara",
-        "author": "P.D. James",
-        "sfw": "sfw"
-    },
-    {
-        "id": "003627",
-        "time": "23:57",
         "quote_time_case": "* once cincuenta y siete",
         "quote_first": "Las once y cincuenta y siete, dijo. Wells asintió. Según el calendario de la anciana tengo tres minutos más.",
         "quote_last": "",
@@ -20,13 +10,23 @@
         "sfw": "unknown"
     },
     {
-        "id": "003628",
+        "id": "003627",
         "time": "23:57",
         "quote_time_case": "poco antes de la media noche",
         "quote_first": "Lazara lo clavó en su sitio con un silencio de muerte. Pero logró sobreponerse, ",
         "quote_last": ", y lo despidió con un beso formal.",
         "title": "Doce cuentos peregrinos",
         "author": "Gabriel García Márquez",
+        "sfw": "sfw"
+    },
+    {
+        "id": "003628",
+        "time": "23:57",
+        "quote_time_case": "tres minutos para la medianoche",
+        "quote_first": "Decía que faltaban ",
+        "quote_last": ". No me pareció tan tarde en el estado de ánimo en el que me encontraba. Me puse la bata, cogí mi linterna de bolsillo y fui a la habitación de Sally.",
+        "title": "Cubrirle la cara",
+        "author": "P.D. James",
         "sfw": "sfw"
     }
 ]

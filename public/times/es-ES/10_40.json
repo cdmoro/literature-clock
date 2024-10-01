@@ -2,12 +2,12 @@
     {
         "id": "001620",
         "time": "10:40",
-        "quote_time_case": "Las diez y cuarenta de la mañana",
-        "quote_first": "",
-        "quote_last": " no es un momento adecuado para empezar a beber, así que te sugiero que lo lleves contigo. Supongo que no te quedarás mucho tiempo.",
-        "title": "El paciente privado",
-        "author": "P.D. James",
-        "sfw": "sfw"
+        "quote_time_case": "* son las once menos veinte",
+        "quote_first": "Cuando han pasado quince minutos y el falso camión DPW no ha regresado, Billy decide que se han mudado a otra parte de la ciudad, tal vez para ver la casa en Evergreen Street, o han regresado a McMansion para esperar nuevas órdenes. de Nick. Cierra la cortina, ocultando la vista, y mira su reloj. Son las once menos veinte. Cómo pasa el tiempo cuando te diviertes, piensa.",
+        "quote_last": "",
+        "title": "Billy Summers",
+        "author": "Stephen King",
+        "sfw": "unknown"
     },
     {
         "id": "001621",
@@ -22,21 +22,21 @@
     {
         "id": "001622",
         "time": "10:40",
-        "quote_time_case": "* son las once menos veinte",
-        "quote_first": "Cuando han pasado quince minutos y el falso camión DPW no ha regresado, Billy decide que se han mudado a otra parte de la ciudad, tal vez para ver la casa en Evergreen Street, o han regresado a McMansion para esperar nuevas órdenes. de Nick. Cierra la cortina, ocultando la vista, y mira su reloj. Son las once menos veinte. Cómo pasa el tiempo cuando te diviertes, piensa.",
-        "quote_last": "",
-        "title": "Billy Summers",
-        "author": "Stephen King",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001623",
-        "time": "10:40",
         "quote_time_case": "10:40",
         "quote_first": "",
         "quote_last": ": Llamada de Katharina preguntándome si realmente había dicho lo que decía la noticia.",
         "title": "El honor perdido de Katharina Blum",
         "author": "Heinrich Böll",
         "sfw": "unknown"
+    },
+    {
+        "id": "001623",
+        "time": "10:40",
+        "quote_time_case": "Las diez y cuarenta de la mañana",
+        "quote_first": "",
+        "quote_last": " no es un momento adecuado para empezar a beber, así que te sugiero que lo lleves contigo. Supongo que no te quedarás mucho tiempo.",
+        "title": "El paciente privado",
+        "author": "P.D. James",
+        "sfw": "sfw"
     }
 ]

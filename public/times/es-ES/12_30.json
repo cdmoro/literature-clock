@@ -12,16 +12,6 @@
     {
         "id": "001948",
         "time": "12:30",
-        "quote_time_case": "doce y media",
-        "quote_first": "Nunca lo creerás pero (en España) llegan dos horas tarde a cualquier comida - dos horas Fanny - (¿podemos almorzar hoy a las ",
-        "quote_last": "?)",
-        "title": "Amor en un clima frío",
-        "author": "Nancy Mitford",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001949",
-        "time": "12:30",
         "quote_time_case": "12.30 h.",
         "quote_first": "",
         "quote_last": " Almuerzo",
@@ -30,23 +20,33 @@
         "sfw": "sfw"
     },
     {
-        "id": "001950",
-        "time": "12:30",
-        "quote_time_case": "doce y media",
-        "quote_first": "A las ",
-        "quote_last": ", cuando la ansiosa atención de Catalina por el tiempo había terminado y ya no podía atribuir ningún mérito a su modificación, el cielo empezó a aclararse voluntariamente. Un rayo de sol la tomó por sorpresa; miró a su alrededor; Las nubes se estaban abriendo, y ella al instante regresó a la ventana para vigilar y alentar la feliz aparición. Diez minutos más aseguraron que se lograría una tarde brillante y justificaron la opinión de la señora Allen, quien \"siempre había pensado que todo se aclararía\".",
-        "title": "Abadía de Northanger",
-        "author": "Jane Austen",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001951",
+        "id": "001949",
         "time": "12:30",
         "quote_time_case": "12.30 pm",
         "quote_first": "Martes, ",
         "quote_last": "... Baker, California... Ahora en la Ballantine Ale, zombie borracho y nervioso. Reconozco este sentimiento: tres o cuatro días de alcohol, drogas, sol, falta de sueño y reservas de adrenalina agotadas: una especie de subidón vertiginoso y tembloroso que significa que se acerca el colapso. ¿Pero cuando? ¿Cuanto tiempo más?",
         "title": "Miedo y asco en las vegas",
         "author": "Hunter S. Thompson",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001950",
+        "time": "12:30",
+        "quote_time_case": "doce y media",
+        "quote_first": "Nunca lo creerás pero (en España) llegan dos horas tarde a cualquier comida - dos horas Fanny - (¿podemos almorzar hoy a las ",
+        "quote_last": "?)",
+        "title": "Amor en un clima frío",
+        "author": "Nancy Mitford",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001951",
+        "time": "12:30",
+        "quote_time_case": "doce y media",
+        "quote_first": "A las ",
+        "quote_last": ", cuando la ansiosa atención de Catalina por el tiempo había terminado y ya no podía atribuir ningún mérito a su modificación, el cielo empezó a aclararse voluntariamente. Un rayo de sol la tomó por sorpresa; miró a su alrededor; Las nubes se estaban abriendo, y ella al instante regresó a la ventana para vigilar y alentar la feliz aparición. Diez minutos más aseguraron que se lograría una tarde brillante y justificaron la opinión de la señora Allen, quien \"siempre había pensado que todo se aclararía\".",
+        "title": "Abadía de Northanger",
+        "author": "Jane Austen",
         "sfw": "unknown"
     }
 ]

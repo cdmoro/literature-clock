@@ -2,6 +2,16 @@
     {
         "id": "001203",
         "time": "08:37",
+        "quote_time_case": "* Ocho treinta y siete",
+        "quote_first": "Ocho y treinta y siete de la mañana, Patrice Lane, Biohazard: El perro está limpio. El Buen Samaritano era una mujer con algún tipo de acento. ¿Por qué no me has llamado?",
+        "quote_last": "",
+        "title": "Sangrados mágicos",
+        "author": "Ilona Andrews",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001204",
+        "time": "08:37",
         "quote_time_case": "8:37",
         "quote_first": "Pierce se puso de pie y sacó el reloj del chaleco, un objeto de oro incongruentemente limpio al final de una cadena negra como el hollín. La abrió de golpe: eran las ",
         "quote_last": ".",
@@ -10,7 +20,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001204",
+        "id": "001205",
         "time": "08:37",
         "quote_time_case": "8:37 a.m.",
         "quote_first": "Viernes ",
@@ -18,15 +28,5 @@
         "title": "Proyecto Dédalo",
         "author": "Thomas Hoover",
         "sfw": "sfw"
-    },
-    {
-        "id": "001205",
-        "time": "08:37",
-        "quote_time_case": "* Ocho treinta y siete",
-        "quote_first": "Ocho y treinta y siete de la mañana, Patrice Lane, Biohazard: El perro está limpio. El Buen Samaritano era una mujer con algún tipo de acento. ¿Por qué no me has llamado?",
-        "quote_last": "",
-        "title": "Sangrados mágicos",
-        "author": "Ilona Andrews",
-        "sfw": "unknown"
     }
 ]

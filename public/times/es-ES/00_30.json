@@ -2,6 +2,16 @@
     {
         "id": "000111",
         "time": "00:30",
+        "quote_time_case": "doce y media",
+        "quote_first": "Eran las ",
+        "quote_last": " cuando regresé al Albany como último recurso desesperado. El escenario de mi desastre estaba prácticamente tal como lo había dejado. Los mostradores de bacará todavía cubrían la mesa, con los vasos vacíos y los ceniceros cargados. Se había abierto una ventana para dejar salir el humo y en su lugar dejaba entrar la niebla.",
+        "title": "El cracker aficionado",
+        "author": "E.W. Hornung",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000112",
+        "time": "00:30",
         "quote_time_case": "las doce y media",
         "quote_first": "Llegaron ",
         "quote_last": "; A Turquía le empezó a brillar la cara, a volcar su tintero y a ponerse alborotador en general; Nippers se sumió en la tranquilidad y la cortesía; Ginger Nut masticó su manzana del mediodía; y Bartleby permaneció de pie junto a su ventana en una de sus más profundas ensoñaciones sobre muros muertos.",
@@ -10,23 +20,13 @@
         "sfw": "unknown"
     },
     {
-        "id": "000112",
+        "id": "000113",
         "time": "00:30",
         "quote_time_case": "media noche",
         "quote_first": "“Te amo más de lo que puedas imaginar”.<br>“Yo también te amo”. Sonrío y sus labios permanecen en mi mejilla. Mientras camina por el pasillo, observo la hora: ",
         "quote_last": " y media.",
         "title": "Casa de baño",
         "author": "P.J. Vernon",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000113",
-        "time": "00:30",
-        "quote_time_case": "doce y media",
-        "quote_first": "Eran las ",
-        "quote_last": " cuando regresé al Albany como último recurso desesperado. El escenario de mi desastre estaba prácticamente tal como lo había dejado. Los mostradores de bacará todavía cubrían la mesa, con los vasos vacíos y los ceniceros cargados. Se había abierto una ventana para dejar salir el humo y en su lugar dejaba entrar la niebla.",
-        "title": "El cracker aficionado",
-        "author": "E.W. Hornung",
         "sfw": "unknown"
     }
 ]

@@ -2,6 +2,16 @@
     {
         "id": "002636",
         "time": "17:06",
+        "quote_time_case": "alrededor de las 5 p.m.",
+        "quote_first": "La lluvia cesó ",
+        "quote_last": " y algunas de esas personas que estaban fuera expresaron una leve sorpresa cuando el arco iris no se desvaneció.",
+        "title": "Mortalidad (El arcoíris)",
+        "author": "Nicholas Royle",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002637",
+        "time": "17:06",
         "quote_time_case": "cinco y seis",
         "quote_first": "En su libro de contabilidad se fijó posteriormente el momento histórico del parto en las ",
         "quote_last": ", lo cual era mentira pero le daba fuerza.",
@@ -10,23 +20,13 @@
         "sfw": "sfw"
     },
     {
-        "id": "002637",
+        "id": "002638",
         "time": "17:06",
         "quote_time_case": "poco después de las cinco de la tarde",
         "quote_first": "Hallorann llegó ",
         "quote_last": ", al volante de su ahora antiguo (pero perfectamente mantenido y deslumbrantemente pulido) Cadillac rojo. Wendy había estado parada junto a la ventana, esperando y observando como antes había esperado y vigilado a su marido, con la esperanza de que Jack entrara de buen humor. Y sobrio.",
         "title": "Doctor Dormir",
         "author": "Stephen King",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002638",
-        "time": "17:06",
-        "quote_time_case": "alrededor de las 5 p.m.",
-        "quote_first": "La lluvia cesó ",
-        "quote_last": " y algunas de esas personas que estaban fuera expresaron una leve sorpresa cuando el arco iris no se desvaneció.",
-        "title": "Mortalidad (El arcoíris)",
-        "author": "Nicholas Royle",
         "sfw": "unknown"
     }
 ]

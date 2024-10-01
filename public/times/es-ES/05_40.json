@@ -12,21 +12,21 @@
     {
         "id": "000755",
         "time": "05:40",
-        "quote_time_case": "Veinte a seis",
-        "quote_first": "Robert Townsend se despertó antes de que sonara la alarma y se quedó escuchando en la oscuridad. Algo había perturbado su sueño: un ruido afuera. Una grieta lejana pero distinta. Miró las manecillas del reloj de la mesita de noche. ",
-        "quote_last": ". Grieta. Grieta. Grieta. Allí estaba otra vez. ¿Qué diablos podría ser?",
-        "title": "corazón dentado",
-        "author": "Peter Bunzl",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000756",
-        "time": "05:40",
         "quote_time_case": "Las seis menos veinte",
         "quote_first": "",
         "quote_last": ". 'Los muchachos de Rob ya estaban en la plataforma, con las carretillas listas. Lo único que se atrevía a llegar tarde por aquí era el tren. Los hijos de Rob eran en realidad Bill Bing, de treinta años, chupando una Woodbine, y Arthur, de sesenta, medio muerto.",
         "title": "Los peculiares recuerdos de Thomas Penman",
         "author": "Bruce Robinson",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000756",
+        "time": "05:40",
+        "quote_time_case": "Veinte a seis",
+        "quote_first": "Robert Townsend se despertó antes de que sonara la alarma y se quedó escuchando en la oscuridad. Algo había perturbado su sueño: un ruido afuera. Una grieta lejana pero distinta. Miró las manecillas del reloj de la mesita de noche. ",
+        "quote_last": ". Grieta. Grieta. Grieta. Allí estaba otra vez. ¿Qué diablos podría ser?",
+        "title": "corazón dentado",
+        "author": "Peter Bunzl",
         "sfw": "unknown"
     }
 ]

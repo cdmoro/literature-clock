@@ -2,21 +2,21 @@
     {
         "id": "003125",
         "time": "20:27",
-        "quote_time_case": "las ocho y veintisiete minutos",
-        "quote_first": "A ",
-        "quote_last": " la señora Lofthouse estaba sentada al piano de Aurora, en las primeras agonías de un preludio en seis bemoles; un preludio que exigía usos tan extraordinarios de la mano izquierda sobre la derecha y de la derecha sobre la izquierda, y tal ejercicio de los pulgares en todas las posiciones.",
-        "title": "aurora floyd",
-        "author": "Mary Elizabeth Braddon",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003126",
-        "time": "20:27",
         "quote_time_case": "8:27 p.m.",
         "quote_first": "Su hermana era tan leal como el día. No había manera de que hubiera abandonado el lugar donde se suponía que se encontrarían, no con las sirenas sonando. Y así fue como estaba atrapada allí cuando otro sonido sobrenatural desgarró las cabezas de la multitud a las ",
         "quote_last": "",
         "title": "La pequeña biblioteca en tiempos de guerra",
         "author": "Kate Thompson",
+        "sfw": "unknown"
+    },
+    {
+        "id": "003126",
+        "time": "20:27",
+        "quote_time_case": "las ocho y veintisiete minutos",
+        "quote_first": "A ",
+        "quote_last": " la señora Lofthouse estaba sentada al piano de Aurora, en las primeras agonías de un preludio en seis bemoles; un preludio que exigía usos tan extraordinarios de la mano izquierda sobre la derecha y de la derecha sobre la izquierda, y tal ejercicio de los pulgares en todas las posiciones.",
+        "title": "aurora floyd",
+        "author": "Mary Elizabeth Braddon",
         "sfw": "unknown"
     }
 ]

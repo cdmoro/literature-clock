@@ -2,21 +2,21 @@
     {
         "id": "001577",
         "time": "10:18",
-        "quote_time_case": "10:18 a.m.",
-        "quote_first": "Miércoles, ",
-        "quote_last": "<br>Kenji Nogami estaba sentado erguido en su amplio escritorio de roble, esperando que sonara el teléfono. ¿Cómo lo jugaría Michael? Es cierto que era inteligente mantener todo cerca del cofre, pero aun así. Se habría sentido mejor si Michael Vance, Jr., le hubiera brindado un poco más de confianza.",
-        "title": "Proyecto Dédalo",
-        "author": "Thomas Hoover",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001578",
-        "time": "10:18",
         "quote_time_case": "10:18",
         "quote_first": "Sé que eran las ",
         "quote_last": " cuando llegué a casa porque miro mucho el reloj.",
         "title": "Extremadamente ruidoso e increíblemente cerca",
         "author": "Jonathan Safran Foer",
         "sfw": "unknown"
+    },
+    {
+        "id": "001578",
+        "time": "10:18",
+        "quote_time_case": "10:18 a.m.",
+        "quote_first": "Miércoles, ",
+        "quote_last": "<br>Kenji Nogami estaba sentado erguido en su amplio escritorio de roble, esperando que sonara el teléfono. ¿Cómo lo jugaría Michael? Es cierto que era inteligente mantener todo cerca del cofre, pero aun así. Se habría sentido mejor si Michael Vance, Jr., le hubiera brindado un poco más de confianza.",
+        "title": "Proyecto Dédalo",
+        "author": "Thomas Hoover",
+        "sfw": "sfw"
     }
 ]

@@ -2,21 +2,21 @@
     {
         "id": "000317",
         "time": "02:12",
-        "quote_time_case": "dos y doce",
-        "quote_first": "Werner sabe que a las ",
-        "quote_last": " de la mañana el francés volverá a emitir y Werner tendrá que apagar el transceptor o fingir que sólo oye estática.",
-        "title": "Toda la luz que no podemos ver",
-        "author": "Anthony Doerr",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000318",
-        "time": "02:12",
         "quote_time_case": "2.12 am",
         "quote_first": "Luego se apagaron las luces en toda la ciudad. Sucedió a las ",
         "quote_last": " según los registros de la central eléctrica, pero el diario de Blake no da ninguna indicación de la hora. La entrada es simplemente: \"Luces apagadas, que Dios me ayude\".",
         "title": "El cazador de la oscuridad",
         "author": "H.P. Lovecraft",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000318",
+        "time": "02:12",
+        "quote_time_case": "dos y doce",
+        "quote_first": "Werner sabe que a las ",
+        "quote_last": " de la mañana el francés volverá a emitir y Werner tendrá que apagar el transceptor o fingir que sólo oye estática.",
+        "title": "Toda la luz que no podemos ver",
+        "author": "Anthony Doerr",
         "sfw": "unknown"
     }
 ]

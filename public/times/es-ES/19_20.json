@@ -2,12 +2,12 @@
     {
         "id": "002945",
         "time": "19:20",
-        "quote_time_case": "siete y veinte de la tarde.",
-        "quote_first": "Se habían entregado dos millones de dólares en la casa de Lindstrom en Grace Cove a las ",
-        "quote_last": " Venía en grandes fajos de billetes de cien dólares, empaquetados en dos grandes cajas metálicas y acompañado por Lucky Knudsen y tres policías estatales adicionales.",
-        "title": "Cresta del Purgatorio",
-        "author": "William Kent Krueger",
-        "sfw": "sfw"
+        "quote_time_case": "* 19:20",
+        "quote_first": "Me encantaría, pero si me pusiera en posición horizontal, se acabaría todo. Tengo que permanecer despierta para recibir la llamada de Sean. Grant miró el reloj, que le indicó que eran las 7:20 p.m. \"En realidad llega un poco tarde\".",
+        "quote_last": "",
+        "title": "¿La raíz de todo mal?",
+        "author": "Ray Keating",
+        "sfw": "unknown"
     },
     {
         "id": "002946",
@@ -32,16 +32,6 @@
     {
         "id": "002948",
         "time": "19:20",
-        "quote_time_case": "* 19:20",
-        "quote_first": "Me encantaría, pero si me pusiera en posición horizontal, se acabaría todo. Tengo que permanecer despierta para recibir la llamada de Sean. Grant miró el reloj, que le indicó que eran las 7:20 p.m. \"En realidad llega un poco tarde\".",
-        "quote_last": "",
-        "title": "¿La raíz de todo mal?",
-        "author": "Ray Keating",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002949",
-        "time": "19:20",
         "quote_time_case": "* siete veinte",
         "quote_first": "Winston encendió el fuego y puso a hervir una cacerola con agua. Traía un sobre lleno de Victory Coffee y unas pastillas de sacarina. Las manecillas del reloj marcaban las siete y veinte: en realidad eran las mil novecientas veinte.",
         "quote_last": "",
@@ -50,7 +40,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002950",
+        "id": "002949",
         "time": "19:20",
         "quote_time_case": "* siete veinte",
         "quote_first": "El reloj marcaba las siete y veinte, pero no sentí hambre. Uno pensaría que tal vez hubiera querido comer algo después del día que tuve, pero me estremecí ante la sola idea de comer. Me faltaba sueño, me cortaron el estómago y mi apartamento fue destruido. No había lugar para el apetito.",
@@ -60,7 +50,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002951",
+        "id": "002950",
         "time": "19:20",
         "quote_time_case": "7:20",
         "quote_first": "La pausa, finalmente concluimos, era para permitir que las otras personas importantes se pusieran al día, los que habían llegado a las 7:10 esperando a los que habían llegado a las ",
@@ -68,5 +58,15 @@
         "title": "La ley de Parkinson o la búsqueda del progreso",
         "author": "C. Northcote Parkinson",
         "sfw": "unknown"
+    },
+    {
+        "id": "002951",
+        "time": "19:20",
+        "quote_time_case": "siete y veinte de la tarde.",
+        "quote_first": "Se habían entregado dos millones de dólares en la casa de Lindstrom en Grace Cove a las ",
+        "quote_last": " Venía en grandes fajos de billetes de cien dólares, empaquetados en dos grandes cajas metálicas y acompañado por Lucky Knudsen y tres policías estatales adicionales.",
+        "title": "Cresta del Purgatorio",
+        "author": "William Kent Krueger",
+        "sfw": "sfw"
     }
 ]

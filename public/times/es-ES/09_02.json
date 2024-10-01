@@ -2,16 +2,6 @@
     {
         "id": "001309",
         "time": "09:02",
-        "quote_time_case": "nueve y dos minutos",
-        "quote_first": "Eran las ",
-        "quote_last": ". Hanley hizo un gesto al director de vivienda. \"Continúe\", dijo. El concejal se acercó a la puerta de la casa y llamó con fuerza.",
-        "title": "Sin regresos",
-        "author": "Frederick Forsyth",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001310",
-        "time": "09:02",
         "quote_time_case": "* unos minutos después de las nueve",
         "quote_first": "Estábamos rodando por una autopista, en algún lugar, pero la lluvia nublaba la vista del horizonte de modo que no podía orientarme hacia dónde estábamos. Los números luminosos del reloj del salpicadero indicaban que eran sólo unos minutos más de las nueve.",
         "quote_last": "",
@@ -20,13 +10,23 @@
         "sfw": "sfw"
     },
     {
-        "id": "001311",
+        "id": "001310",
         "time": "09:02",
         "quote_time_case": "9:02 am",
         "quote_first": "",
         "quote_last": " yacía en la cama, mirando al techo.",
         "title": "Una fracción del todo",
         "author": "Steve Toltz",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001311",
+        "time": "09:02",
+        "quote_time_case": "nueve y dos minutos",
+        "quote_first": "Eran las ",
+        "quote_last": ". Hanley hizo un gesto al director de vivienda. \"Continúe\", dijo. El concejal se acercó a la puerta de la casa y llamó con fuerza.",
+        "title": "Sin regresos",
+        "author": "Frederick Forsyth",
         "sfw": "sfw"
     }
 ]

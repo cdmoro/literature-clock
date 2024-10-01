@@ -22,21 +22,21 @@
     {
         "id": "002962",
         "time": "19:25",
-        "quote_time_case": "7:25",
-        "quote_first": "Lo intentó una vez más a las ",
-        "quote_last": " y nada había cambiado. Corrió y corrió, once, doce, trece veces.<br>Arrojó su guitarra en el auto de su padre y condujo hacia el sur, hacia Prescott. La cinta Construido para derramar todavía estaba en la platina, y él simplemente la dejó continuar; bien podría ser la maldita banda sonora de todo.",
-        "title": "Cocinas del Gran Medio Oeste",
-        "author": "J. Ryan Stradal",
-        "sfw": "nsfw"
-    },
-    {
-        "id": "002963",
-        "time": "19:25",
         "quote_time_case": "* veinticinco después de las siete",
         "quote_first": "Cogió su sombrero y su abrigo y Clarice lo saludó y él saludó y miró el reloj y eran casi las siete y veinticinco.",
         "quote_last": "",
         "title": "La tarde es a las siete",
         "author": "James Thurber",
         "sfw": "unknown"
+    },
+    {
+        "id": "002963",
+        "time": "19:25",
+        "quote_time_case": "7:25",
+        "quote_first": "Lo intentó una vez más a las ",
+        "quote_last": " y nada había cambiado. Corrió y corrió, once, doce, trece veces.<br>Arrojó su guitarra en el auto de su padre y condujo hacia el sur, hacia Prescott. La cinta Construido para derramar todavía estaba en la platina, y él simplemente la dejó continuar; bien podría ser la maldita banda sonora de todo.",
+        "title": "Cocinas del Gran Medio Oeste",
+        "author": "J. Ryan Stradal",
+        "sfw": "nsfw"
     }
 ]
