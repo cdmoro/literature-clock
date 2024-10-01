@@ -2,9 +2,9 @@
     {
         "id": "000304",
         "time": "02:06",
-        "quote_time_case": "* las dos y seis minutos",
-        "quote_first": "Miró su reloj: las dos y seis. Cerró la puerta del dormitorio y bajó lentamente las escaleras. Abrió la puerta principal y vio su auto estacionado junto a la acera.",
-        "quote_last": "",
+        "quote_time_case": "las dos y seis",
+        "quote_first": "Miró su reloj: ",
+        "quote_last": ". Cerró la puerta del dormitorio y bajó lentamente las escaleras. Abrió la puerta principal y vio su auto estacionado junto a la acera.",
         "title": "Un prisionero de nacimiento",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "000306",
         "time": "02:06",
-        "quote_time_case": "* Sobre dos. Solo pasa.",
-        "quote_first": "¿En mitad de la noche? preguntó Alec bruscamente. \"¿Puedes ser más definitivo?\"<br>\"Como las dos. Recién pasadas\". Daisy notó que él no expresó ninguna preocupación por su seguridad.",
-        "quote_last": "",
+        "quote_time_case": "Como las dos. Recién pasadas",
+        "quote_first": "¿En mitad de la noche? preguntó Alec bruscamente. \"¿Puedes ser más definitivo?\"<br>\"",
+        "quote_last": "\". Daisy notó que él no expresó ninguna preocupación por su seguridad.",
         "title": "Muerto en el agua",
         "author": "Carola Dunn",
         "sfw": "unknown"
