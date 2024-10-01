@@ -2,9 +2,9 @@
     {
         "id": "001242",
         "time": "08:52",
-        "quote_time_case": "* 8.52 am",
-        "quote_first": "Mensaje uno. Martes, 8.52 horas. ¿Hay alguien ahí? ¿Hola?",
-        "quote_last": "",
+        "quote_time_case": "8.52",
+        "quote_first": "Mensaje uno. Martes, ",
+        "quote_last": " horas. ¿Hay alguien ahí? ¿Hola?",
         "title": "Extremadamente ruidoso e increíblemente cerca",
         "author": "Jonathan Safran Foer",
         "sfw": "unknown"

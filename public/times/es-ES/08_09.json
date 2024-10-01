@@ -2,9 +2,9 @@
     {
         "id": "001124",
         "time": "08:09",
-        "quote_time_case": "* 8.09",
-        "quote_first": "Miró a su hijo. ‘¿Has estado reservando con todos esos nombres, de la manera que te enseñé?’<br>‘Claro que sí, papá. Sr. Parnell, 7,47; Sr. Parker, 8,09; Sr. Tudor-Jones, 8,11; Señor Alexander, 8.23.’",
-        "quote_last": "",
+        "quote_time_case": "8.09",
+        "quote_first": "Miró a su hijo. ‘¿Has estado reservando con todos esos nombres, de la manera que te enseñé?’<br>‘Claro que sí, papá. Sr. Parnell, 7.47; Sr. Parker, ",
+        "quote_last": "; Sr. Tudor-Jones, 8.11; Señor Alexander, 8.23.’",
         "title": "La hierba es siempre mas verde",
         "author": "Jeffrey Archer",
         "sfw": "sfw"

@@ -12,9 +12,9 @@
     {
         "id": "000341",
         "time": "02:25",
-        "quote_time_case": "* 2.25 am",
-        "quote_first": "Ya ves que es la hora: las 2.25. Te levantas de la cama.",
-        "quote_last": "",
+        "quote_time_case": "2.25",
+        "quote_first": "Ya ves que es la hora: las ",
+        "quote_last": ". Te levantas de la cama.",
         "title": "Mil novecientos ochenta y tres: El cuarteto de los jinetes rojos, libro cuatro",
         "author": "David Peace",
         "sfw": "unknown"

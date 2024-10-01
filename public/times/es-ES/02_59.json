@@ -2,9 +2,9 @@
     {
         "id": "000396",
         "time": "02:59",
-        "quote_time_case": "* 2:59 am",
-        "quote_first": "Se levantó de la cama a las 2:59 a. m., completamente descansado, completamente alerta, caminó hacia el gran baúl en el medio de la cabina y levantó la tapa.",
-        "quote_last": "",
+        "quote_time_case": "2:59 a.m.",
+        "quote_first": "Se levantó de la cama a las ",
+        "quote_last": ", completamente descansado, completamente alerta, caminó hacia el gran baúl en el medio de la cabina y levantó la tapa.",
         "title": "Tener cuidado con lo que deseas",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000397",
         "time": "02:59",
-        "quote_time_case": "* 2:59 a.m.",
-        "quote_first": "Ojalá se fuera antes, dijo Sophie, \"pero Lyon tendrá que bastar\".<br>¿Más pronto? Langdon miró el reloj: 2:59 de la madrugada. El tren partía al cabo de siete minutos y ni siquiera tenían billetes todavía.",
-        "quote_last": "",
+        "quote_time_case": "2:59",
+        "quote_first": "Ojalá se fuera antes, dijo Sophie, \"pero Lyon tendrá que bastar\".<br>¿Más pronto? Langdon miró el reloj: ",
+        "quote_last": " de la madrugada. El tren partía al cabo de siete minutos y ni siquiera tenían billetes todavía.",
         "title": "El codigo Da Vinci",
         "author": "Dan Brown",
         "sfw": "unknown"

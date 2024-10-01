@@ -22,9 +22,9 @@
     {
         "id": "000323",
         "time": "02:15",
-        "quote_time_case": "* 2.15 am",
-        "quote_first": "A las 2.15 horas un policía observó el lugar en la oscuridad, pero con el coche del extraño todavía en la acera.",
-        "quote_last": "",
+        "quote_time_case": "2.15",
+        "quote_first": "A las ",
+        "quote_last": " horas un policía observó el lugar en la oscuridad, pero con el coche del extraño todavía en la acera.",
         "title": "La sombra fuera del tiempo",
         "author": "H.P. Lovecraft",
         "sfw": "unknown"

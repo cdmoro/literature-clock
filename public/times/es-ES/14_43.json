@@ -22,9 +22,9 @@
     {
         "id": "002229",
         "time": "14:43",
-        "quote_time_case": "* 14:43",
-        "quote_first": "2:43 p.m.<br>Vance observó cómo la sala de control se congelaba mientras el cuerpo caía al suelo, y sintió que sus dedos se apretaban involuntariamente en un puño. Los bastardos ya estaban matando rehenes. Definitivamente eran terroristas, sacados del libro de texto. Mata a uno y asusta a mil. Excepto que es posible que no se detengan con uno. Previó un día largo. Y noche.",
-        "quote_last": "",
+        "quote_time_case": "2:43 p.m.",
+        "quote_first": "",
+        "quote_last": "<br>Vance observó cómo la sala de control se congelaba mientras el cuerpo caía al suelo, y sintió que sus dedos se apretaban involuntariamente en un puño. Los bastardos ya estaban matando rehenes. Definitivamente eran terroristas, sacados del libro de texto. Mata a uno y asusta a mil. Excepto que es posible que no se detengan con uno. Previó un día largo. Y noche.",
         "title": "Proyecto cíclope",
         "author": "Thomas Hoover",
         "sfw": "nsfw"
@@ -32,9 +32,9 @@
     {
         "id": "002230",
         "time": "14:43",
-        "quote_time_case": "* 14:43",
-        "quote_first": "Jacobson murió a las 14.43 del día siguiente después de cortarse las venas con una hoja de afeitar en el segundo cubículo desde la izquierda del baño de hombres del tercer piso.",
-        "quote_last": "",
+        "quote_time_case": "14.43",
+        "quote_first": "Jacobson murió a las ",
+        "quote_last": " del día siguiente después de cortarse las venas con una hoja de afeitar en el segundo cubículo desde la izquierda del baño de hombres del tercer piso.",
         "title": "Ahora: cero",
         "author": "J.G. Ballard",
         "sfw": "nsfw"

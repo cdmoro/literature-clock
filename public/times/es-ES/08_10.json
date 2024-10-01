@@ -22,9 +22,9 @@
     {
         "id": "001128",
         "time": "08:10",
-        "quote_time_case": "* 8.10 horas",
-        "quote_first": "8.10 a.m. Leer libro o ver vídeo",
-        "quote_last": "",
+        "quote_time_case": "8.10 a.m.",
+        "quote_first": "",
+        "quote_last": " Leer libro o ver vídeo",
         "title": "El curioso incidente del perro a medianoche",
         "author": "Mark Haddon",
         "sfw": "sfw"

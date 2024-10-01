@@ -22,9 +22,9 @@
     {
         "id": "001144",
         "time": "08:17",
-        "quote_time_case": "* 8:17 a.m.",
-        "quote_first": "Lil: Buenos días, abrazo. Revisa el buzón<br>Yo: Son literalmente las 8:17 a. m.<br>Lil: Es temprano, lo sé. Te dejé algo cuando salí a caminar. Te sugiero que lo consigas ahora.",
-        "quote_last": "",
+        "quote_time_case": "8:17 a.m.",
+        "quote_first": "Lil: Buenos días, abrazo. Revisa el buzón<br>Yo: Son literalmente las ",
+        "quote_last": "<br>Lil: Es temprano, lo sé. Te dejé algo cuando salí a caminar. Te sugiero que lo consigas ahora.",
         "title": "Parpadea y nos lo perderemos",
         "author": "Ginny Kochis",
         "sfw": "sfw"
@@ -32,9 +32,9 @@
     {
         "id": "001145",
         "time": "08:17",
-        "quote_time_case": "* 8.17 horas",
-        "quote_first": "Terminado el desayuno, mi tío sacó del bolsillo una pequeña libreta destinada a observaciones científicas. Consultó sus instrumentos y registró:<br>“Lunes 1 de julio.<br>“Cronómetro, 8.17 a.m.; barómetro, 297 pulgadas; termómetro, 6° (43° F.). Dirección, E.S.E.”<br>Esta última observación se aplicó a la galería oscura y fue indicada por la brújula.",
-        "quote_last": "",
+        "quote_time_case": "8.17 a.m.",
+        "quote_first": "Terminado el desayuno, mi tío sacó del bolsillo una pequeña libreta destinada a observaciones científicas. Consultó sus instrumentos y registró:<br>“Lunes 1 de julio.<br>“Cronómetro, ",
+        "quote_last": "; barómetro, 297 pulgadas; termómetro, 6° (43° F.). Dirección, E.S.E.”<br>Esta última observación se aplicó a la galería oscura y fue indicada por la brújula.",
         "title": "Un viaje al centro de la tierra",
         "author": "Jules Verne",
         "sfw": "unknown"

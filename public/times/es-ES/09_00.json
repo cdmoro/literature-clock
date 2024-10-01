@@ -332,9 +332,9 @@
     {
         "id": "001299",
         "time": "09:00",
-        "quote_time_case": "* 9.00 am",
-        "quote_first": "A veces lo que daría yo por tenernos otra vez sentados en un bar a las 9.00 contándonos mentiras, lejos de Dios.",
-        "quote_last": "",
+        "quote_time_case": "9.00",
+        "quote_first": "A veces lo que daría yo por tenernos otra vez sentados en un bar a las ",
+        "quote_last": " contándonos mentiras, lejos de Dios.",
         "title": "El hijo de Jesús",
         "author": "Denis Johnson",
         "sfw": "unknown"

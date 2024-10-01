@@ -232,9 +232,9 @@
     {
         "id": "001092",
         "time": "08:00",
-        "quote_time_case": "* 8 a. m.",
-        "quote_first": "No estoy llorando, dijo María cuando Carter llamó desde el desierto a las 8 a.m. \"Estoy perfectamente bien\".<br>\"No suenas perfectamente bien\".",
-        "quote_last": "",
+        "quote_time_case": "8 a.m.",
+        "quote_first": "No estoy llorando, dijo María cuando Carter llamó desde el desierto a las ",
+        "quote_last": " \"Estoy perfectamente bien\".<br>\"No suenas perfectamente bien\".",
         "title": "Juega como está",
         "author": "Joan Didion",
         "sfw": "unknown"
@@ -242,9 +242,9 @@
     {
         "id": "001093",
         "time": "08:00",
-        "quote_time_case": "* 8.00 a.m.",
-        "quote_first": "8.00 a. m. Ponte la ropa del colegio.",
-        "quote_last": "",
+        "quote_time_case": "8.00 a.m.",
+        "quote_first": "",
+        "quote_last": " Ponte la ropa del colegio.",
         "title": "El curioso incidente del perro a medianoche",
         "author": "Mark Haddon",
         "sfw": "sfw"
@@ -252,9 +252,9 @@
     {
         "id": "001094",
         "time": "08:00",
-        "quote_time_case": "* 8 en punto",
-        "quote_first": "A las 8 de la mañana del jueves Arthur no se sentía muy bien.",
-        "quote_last": "",
+        "quote_time_case": "8 de la mañana",
+        "quote_first": "A las ",
+        "quote_last": " del jueves Arthur no se sentía muy bien.",
         "title": "La guía del autostopista a la galaxia",
         "author": "Douglas Adams",
         "sfw": "unknown"
@@ -262,9 +262,9 @@
     {
         "id": "001095",
         "time": "08:00",
-        "quote_time_case": "* A las ocho en punto",
-        "quote_first": "A las ocho, un rayo de luz vino a despertarnos. Las mil facetas de la lava sobre la pared rocosa la recogieron a su paso, dispersándose como una lluvia de chispas.",
-        "quote_last": "",
+        "quote_time_case": "A las ocho",
+        "quote_first": "",
+        "quote_last": ", un rayo de luz vino a despertarnos. Las mil facetas de la lava sobre la pared rocosa la recogieron a su paso, dispersándose como una lluvia de chispas.",
         "title": "Viaje al centro de la Tierra",
         "author": "Jules Verne",
         "sfw": "unknown"
@@ -272,9 +272,9 @@
     {
         "id": "001096",
         "time": "08:00",
-        "quote_time_case": "* ocho en punto",
-        "quote_first": "Pero por ahora todavía eran las ocho, y mientras caminaba por la avenida bajo ese brillante cielo azul, era feliz, amigos míos, tan feliz como cualquier hombre que jamás haya vivido.",
-        "quote_last": "",
+        "quote_time_case": "las ocho",
+        "quote_first": "Pero por ahora todavía eran ",
+        "quote_last": ", y mientras caminaba por la avenida bajo ese brillante cielo azul, era feliz, amigos míos, tan feliz como cualquier hombre que jamás haya vivido.",
         "title": "Locuras de Brooklyn",
         "author": "Paul Auster",
         "sfw": "unknown"
@@ -312,9 +312,9 @@
     {
         "id": "001100",
         "time": "08:00",
-        "quote_time_case": "* ocho en punto",
-        "quote_first": "El señor Pumblechook y yo desayunamos a las ocho en el salón detrás de la tienda, mientras el tendero tomaba su taza de té y su trozo de pan con mantequilla en un saco de guisantes en la entrada.",
-        "quote_last": "",
+        "quote_time_case": "a las ocho",
+        "quote_first": "El señor Pumblechook y yo desayunamos ",
+        "quote_last": " en el salón detrás de la tienda, mientras el tendero tomaba su taza de té y su trozo de pan con mantequilla en un saco de guisantes en la entrada.",
         "title": "Grandes expectativas",
         "author": "Charles Dickens",
         "sfw": "unknown"
@@ -342,9 +342,9 @@
     {
         "id": "001103",
         "time": "08:00",
-        "quote_time_case": "* ocho en punto",
-        "quote_first": "Alguien debió estar mintiendo sobre Joseph K. porque, sin haber hecho nada malo, fue arrestado una hermosa mañana. La cocinera de su casera, que siempre le llevaba el desayuno a las ocho, no apareció en esta ocasión.",
-        "quote_last": "",
+        "quote_time_case": "las ocho",
+        "quote_first": "Alguien debió estar mintiendo sobre Joseph K. porque, sin haber hecho nada malo, fue arrestado una hermosa mañana. La cocinera de su casera, que siempre le llevaba el desayuno a ",
+        "quote_last": ", no apareció en esta ocasión.",
         "title": "La prueba",
         "author": "Franz Kafka",
         "sfw": "unknown"
@@ -352,9 +352,9 @@
     {
         "id": "001104",
         "time": "08:00",
-        "quote_time_case": "* oh ocho oh oh horas",
-        "quote_first": "A la mañana siguiente me desperté a las ocho oh oh, hermanos míos, y como todavía me sentía jodido, cansado, descolorido y golpeado, y como mis glazzies estaban pegados con pegamento para dormir, un verdadero horror, pensé que no iría a la escuela.",
-        "quote_last": "",
+        "quote_time_case": "las ocho",
+        "quote_first": "A la mañana siguiente me desperté a ",
+        "quote_last": " oh oh, hermanos míos, y como todavía me sentía jodido, cansado, descolorido y golpeado, y como mis glazzies estaban pegados con pegamento para dormir, un verdadero horror, pensé que no iría a la escuela.",
         "title": "Una Naranja Mecánica",
         "author": "Anthony Burgess",
         "sfw": "unknown"
@@ -362,9 +362,9 @@
     {
         "id": "001105",
         "time": "08:00",
-        "quote_time_case": "* ocho en punto",
-        "quote_first": "Tres días después de la pelea, el príncipe Stepan Arkadyevich Oblonsky (Stiva, como lo llamaban en el mundo elegante) se despertó a la hora habitual, es decir, a las ocho de la mañana, no en el dormitorio de su esposa, sino en el sofá tapizado de cuero de su estudio.",
-        "quote_last": "",
+        "quote_time_case": "las ocho de la mañana",
+        "quote_first": "Tres días después de la pelea, el príncipe Stepan Arkadyevich Oblonsky (Stiva, como lo llamaban en el mundo elegante) se despertó a la hora habitual, es decir, a ",
+        "quote_last": ", no en el dormitorio de su esposa, sino en el sofá tapizado de cuero de su estudio.",
         "title": "Ana Karénina",
         "author": "Leo Tolstoy",
         "sfw": "unknown"
@@ -372,9 +372,9 @@
     {
         "id": "001106",
         "time": "08:00",
-        "quote_time_case": "* exactamente ocho",
-        "quote_first": "Era una hermosa mañana de verano. Las manecillas del reloj holandés del vestíbulo marcaban las nueve y trece minutos; los del reloj de oro del salón marcaban las diez y once; los del reloj del carruaje en la estantería marcaban las seis menos catorce minutos. En otras palabras, eran exactamente las ocho; Y la señora Hignett reconoció el hecho moviendo la cabeza sobre la almohada, abriendo los ojos y sentándose en la cama. Ella siempre se despertaba a las ocho en punto.",
-        "quote_last": "",
+        "quote_time_case": "las ocho",
+        "quote_first": "Era una hermosa mañana de verano. Las manecillas del reloj holandés del vestíbulo marcaban las nueve y trece minutos; los del reloj de oro del salón marcaban las diez y once; los del reloj del carruaje en la estantería marcaban las seis menos catorce minutos. En otras palabras, eran exactamente ",
+        "quote_last": "; Y la señora Hignett reconoció el hecho moviendo la cabeza sobre la almohada, abriendo los ojos y sentándose en la cama. Ella siempre se despertaba a las ocho en punto.",
         "title": "Tres hombres y una criada",
         "author": "P.G. Wodehouse",
         "sfw": "unknown"

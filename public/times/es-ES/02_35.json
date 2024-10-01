@@ -22,9 +22,9 @@
     {
         "id": "000360",
         "time": "02:35",
-        "quote_time_case": "* 2:35 de la mañana",
-        "quote_first": "La pantalla iluminada no ofrecía información sobre la persona que llamaba, pero sí revelaba que eran las 2:35 de la madrugada.",
-        "quote_last": "",
+        "quote_time_case": "2:35 de la madrugada",
+        "quote_first": "La pantalla iluminada no ofrecía información sobre la persona que llamaba, pero sí revelaba que eran las ",
+        "quote_last": ".",
         "title": "Arenas movedizas",
         "author": "Ray Keating",
         "sfw": "sfw"
@@ -32,9 +32,9 @@
     {
         "id": "000361",
         "time": "02:35",
-        "quote_time_case": "* 2:35 am",
-        "quote_first": "Diario de Rorschach: Salió de la casa de Jacob a las 2:35 a. m. No sabe nada sobre ningún intento de desacreditar al Dr. Manhattan. Simplemente ha sido utilizado.",
-        "quote_last": "",
+        "quote_time_case": "2:35 a.m.",
+        "quote_first": "Diario de Rorschach: Salió de la casa de Jacob a las ",
+        "quote_last": " No sabe nada sobre ningún intento de desacreditar al Dr. Manhattan. Simplemente ha sido utilizado.",
         "title": "vigilantes",
         "author": "Alan Moore and Dave Gibbons",
         "sfw": "unknown"

@@ -22,9 +22,9 @@
     {
         "id": "000345",
         "time": "02:27",
-        "quote_time_case": "* 2.27 am",
-        "quote_first": "La luna no volvió a brillar hasta las 2.27 de la madrugada. Esto fue suficiente para que Wallander se diera cuenta de que se encontraba a cierta distancia debajo del árbol.",
-        "quote_last": "",
+        "quote_time_case": "2.27",
+        "quote_first": "La luna no volvió a brillar hasta las ",
+        "quote_last": " de la madrugada. Esto fue suficiente para que Wallander se diera cuenta de que se encontraba a cierta distancia debajo del árbol.",
         "title": "Un paso atras",
         "author": "Henning Mankell",
         "sfw": "unknown"

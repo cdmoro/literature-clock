@@ -262,9 +262,9 @@
     {
         "id": "002145",
         "time": "14:00",
-        "quote_time_case": "* 2.00",
-        "quote_first": "Cuando Lisbeth Salander se despertó eran las dos de la tarde del sábado y un médico la estaba tocando.",
-        "quote_last": "",
+        "quote_time_case": "dos de la tarde",
+        "quote_first": "Cuando Lisbeth Salander se despertó eran las ",
+        "quote_last": " del sábado y un médico la estaba tocando.",
         "title": "La chica que pateó el avispero",
         "author": "Stieg Larsson",
         "sfw": "unknown"

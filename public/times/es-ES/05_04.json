@@ -12,9 +12,9 @@
     {
         "id": "000691",
         "time": "05:04",
-        "quote_time_case": "* 5.04 a.m.",
-        "quote_first": "Son las 5.04 de la mañana en el deficiente radio despertador. ¿Por qué la gente siempre dice que el día empieza ahora? Realmente comienza en medio de la noche, una fracción de segundo después de la medianoche.",
-        "quote_last": "",
+        "quote_time_case": "5.04",
+        "quote_first": "Son las ",
+        "quote_last": " de la mañana en el deficiente radio despertador. ¿Por qué la gente siempre dice que el día empieza ahora? Realmente comienza en medio de la noche, una fracción de segundo después de la medianoche.",
         "title": "Lo accidental",
         "author": "Ali Smith",
         "sfw": "unknown"

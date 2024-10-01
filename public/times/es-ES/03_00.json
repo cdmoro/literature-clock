@@ -282,9 +282,9 @@
     {
         "id": "000427",
         "time": "03:00",
-        "quote_time_case": "* 3:00 am",
-        "quote_first": "Tampoco ayudó que hubiera estado despierta la mitad de la noche con Josie, quien se había despertado de una pesadilla sobre una boa constrictor y se negaba a volver a dormir. Alex no sabía quiénes eran los otros candidatos para este puesto, pero apostaría a que no eran madres solteras que habían tenido que pinchar las rejillas de ventilación del radiador con una vara de medir a las 3:00 a. m. para demostrar que no había cualquier serpiente escondida en los túneles oscuros.",
-        "quote_last": "",
+        "quote_time_case": "3:00 a.m.",
+        "quote_first": "Tampoco ayudó que hubiera estado despierta la mitad de la noche con Josie, quien se había despertado de una pesadilla sobre una boa constrictor y se negaba a volver a dormir. Alex no sabía quiénes eran los otros candidatos para este puesto, pero apostaría a que no eran madres solteras que habían tenido que pinchar las rejillas de ventilación del radiador con una vara de medir a las ",
+        "quote_last": " para demostrar que no había cualquier serpiente escondida en los túneles oscuros.",
         "title": "diecinueve minutos",
         "author": "Jodi Picoult",
         "sfw": "unknown"
@@ -472,8 +472,8 @@
     {
         "id": "000446",
         "time": "03:00",
-        "quote_time_case": "* 3:00 am",
-        "quote_first": "Cuando Sophie se despertó, eran las 3:00 a.m.",
+        "quote_time_case": "3:00 a.m.",
+        "quote_first": "Cuando Sophie se despertó, eran las ",
         "quote_last": "",
         "title": "Personajes desesperados",
         "author": "Paula Fox",

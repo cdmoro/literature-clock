@@ -22,9 +22,9 @@
     {
         "id": "002245",
         "time": "14:50",
-        "quote_time_case": "* diez a tres",
-        "quote_first": "¿El reloj de la iglesia marca las tres menos diez? ¿Y todavía queda miel para el té?",
-        "quote_last": "",
+        "quote_time_case": "tres menos diez",
+        "quote_first": "¿El reloj de la iglesia marca las ",
+        "quote_last": "? ¿Y todavía queda miel para el té?",
         "title": "La antigua vicaría, Grantchester",
         "author": "Rupert Brooke",
         "sfw": "unknown"

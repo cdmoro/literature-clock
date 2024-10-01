@@ -92,9 +92,9 @@
     {
         "id": "000802",
         "time": "06:00",
-        "quote_time_case": "* 6:00 am.",
-        "quote_first": "Lars observó desde la ventana de su sala cómo la familia, que debió haber salido de Iowa alrededor de las 6:00 a. m. para llegar aquí tan temprano, caminaba penosamente a través de la nieve hacia el vestíbulo de su edificio.",
-        "quote_last": "",
+        "quote_time_case": "6:00 a.m.",
+        "quote_first": "Lars observó desde la ventana de su sala cómo la familia, que debió haber salido de Iowa alrededor de las ",
+        "quote_last": " para llegar aquí tan temprano, caminaba penosamente a través de la nieve hacia el vestíbulo de su edificio.",
         "title": "Cocinas del Gran Medio Oeste",
         "author": "J. Ryan Stradal",
         "sfw": "unknown"

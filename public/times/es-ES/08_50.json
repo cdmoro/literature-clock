@@ -12,9 +12,9 @@
     {
         "id": "001235",
         "time": "08:50",
-        "quote_time_case": "* 8:50 a.m.",
-        "quote_first": "Sabía que era fundamental para la visita del Papa. Cuando llegó a las 8:50 a. m. del martes por la mañana, la secretaria de Carolan se lo entregó. El obispo le pidió que cerrara la puerta al salir de su oficina.",
-        "quote_last": "",
+        "quote_time_case": "8:50 a.m.",
+        "quote_first": "Sabía que era fundamental para la visita del Papa. Cuando llegó a las ",
+        "quote_last": " del martes por la mañana, la secretaria de Carolan se lo entregó. El obispo le pidió que cerrara la puerta al salir de su oficina.",
         "title": "Monje guerrero",
         "author": "Ray Keating",
         "sfw": "sfw"
@@ -44,7 +44,7 @@
         "time": "08:50",
         "quote_time_case": "8:50",
         "quote_first": "Eran las ",
-        "quote_last": " de la mañana y Bernie y yo estábamos solos en una calle lateral de Astoria, no lejos de una tienda de sándwiches que vendía un sub de sopressatta llamado \"The Bypass\". Solía ​​​​comer ese sándwich semanalmente, acompañarlo con refresco de espresso, fumar un cigarrillo y salir a correr. Ahora estaba demasiado cerca de la broma para pedir el sándwich, y el preescolar de mi hijo estaba en medio de un cisma doctrinal.",
+        "quote_last": " de la mañana y Bernie y yo estábamos solos en una calle lateral de Astoria, no lejos de una tienda de sándwiches que vendía un sub de sopressatta llamado \"The Bypass\". Solía comer ese sándwich semanalmente, acompañarlo con refresco de espresso, fumar un cigarrillo y salir a correr. Ahora estaba demasiado cerca de la broma para pedir el sándwich, y el preescolar de mi hijo estaba en medio de un cisma doctrinal.",
         "title": "La pregunta",
         "author": "Sam Lipsyte",
         "sfw": "unknown"

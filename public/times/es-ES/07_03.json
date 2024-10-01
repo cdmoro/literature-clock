@@ -32,9 +32,9 @@
     {
         "id": "000944",
         "time": "07:03",
-        "quote_time_case": "* 7:03 am",
-        "quote_first": "07:03 El general Tanz se despertó como si lo hubiera despertado un despertador mental.",
-        "quote_last": "",
+        "quote_time_case": "7:03",
+        "quote_first": "0",
+        "quote_last": " El general Tanz se despertó como si lo hubiera despertado un despertador mental.",
         "title": "La noche de los generales",
         "author": "Hans Hellmut Kirst",
         "sfw": "sfw"

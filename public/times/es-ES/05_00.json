@@ -2,9 +2,9 @@
     {
         "id": "000661",
         "time": "05:00",
-        "quote_time_case": "* 5:00",
-        "quote_first": "A las cinco en punto, como cada mañana, horas antes de que surgiera un solo movimiento en las habitaciones de arriba, Dora se levantó de la cama y caminó por el pasillo hasta la cocina, donde puso a hervir una tetera y dejó caer una bolsa. de Earl Grey en una taza.",
-        "quote_last": "",
+        "quote_time_case": "cinco en punto",
+        "quote_first": "A las ",
+        "quote_last": ", como cada mañana, horas antes de que surgiera un solo movimiento en las habitaciones de arriba, Dora se levantó de la cama y caminó por el pasillo hasta la cocina, donde puso a hervir una tetera y dejó caer una bolsa. de Earl Grey en una taza.",
         "title": "Cuando el verano era nuestro",
         "author": "Roxanne Veletzos",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "000663",
         "time": "05:00",
-        "quote_time_case": "* 5:00 DE LA MAÑANA.",
-        "quote_first": "Una suave luz amarilla entraba por las ventanillas laterales. Era de mañana: ¡había dormido toda la noche! Miró rápidamente su reloj: las cinco de la mañana. Aún faltaban casi seis horas para que fuera necesario retirar el barco.",
-        "quote_last": "",
+        "quote_time_case": "cinco de la mañana",
+        "quote_first": "Una suave luz amarilla entraba por las ventanillas laterales. Era de mañana: ¡había dormido toda la noche! Miró rápidamente su reloj: las ",
+        "quote_last": ". Aún faltaban casi seis horas para que fuera necesario retirar el barco.",
         "title": "Parque jurásico",
         "author": "Michael Crichton",
         "sfw": "unknown"

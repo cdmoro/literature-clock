@@ -12,9 +12,9 @@
     {
         "id": "000370",
         "time": "02:40",
-        "quote_time_case": "* 2:40 am",
-        "quote_first": "La señorita Conover dijo a los investigadores que a las 2:40 a. m., el oficial Martin Willis entró al restaurante y pidió café y donas.",
-        "quote_last": "",
+        "quote_time_case": "2:40 a.m.",
+        "quote_first": "La señorita Conover dijo a los investigadores que a las ",
+        "quote_last": ", el oficial Martin Willis entró al restaurante y pidió café y donas.",
         "title": "La cepa de Andrómeda",
         "author": "Michael Crichton",
         "sfw": "unknown"

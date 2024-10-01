@@ -12,9 +12,9 @@
     {
         "id": "000478",
         "time": "03:17",
-        "quote_time_case": "* 3:17 am",
-        "quote_first": "La marca de tiempo dice 3:17 a. m. Un gran bloque de texto. No es una buena señal de lo que vendrá.",
-        "quote_last": "",
+        "quote_time_case": "3:17 a.m.",
+        "quote_first": "La marca de tiempo dice ",
+        "quote_last": " Un gran bloque de texto. No es una buena señal de lo que vendrá.",
         "title": "Casa de baño",
         "author": "P.J. Vernon",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "000481",
         "time": "03:17",
-        "quote_time_case": "* 3.17 a.m.",
-        "quote_first": "Se volvió hacia los monitores nuevamente y pasó las pantallas, cada una capaz de mostrar ocho montajes de cámara diferentes, dándole a Kurt 192 naturalezas muertas diferentes de Green Oaks a las 3:17 a. m. de esta noche de marzo.",
-        "quote_last": "",
+        "quote_time_case": "3:17 a.m.",
+        "quote_first": "Se volvió hacia los monitores nuevamente y pasó las pantallas, cada una capaz de mostrar ocho montajes de cámara diferentes, dándole a Kurt 192 naturalezas muertas diferentes de Green Oaks a las ",
+        "quote_last": " de esta noche de marzo.",
         "title": "lo que se perdió",
         "author": "Catherine O'Flynn",
         "sfw": "unknown"

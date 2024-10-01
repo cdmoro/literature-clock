@@ -52,9 +52,9 @@
     {
         "id": "001353",
         "time": "09:15",
-        "quote_time_case": "* 9.15 horas",
-        "quote_first": "9.15 a. m. Primera clase de la mañana",
-        "quote_last": "",
+        "quote_time_case": "9.15 a.m.",
+        "quote_first": "",
+        "quote_last": " Primera clase de la mañana",
         "title": "El curioso incidente del perro a medianoche",
         "author": "Mark Haddon",
         "sfw": "sfw"

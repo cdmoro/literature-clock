@@ -22,9 +22,9 @@
     {
         "id": "001220",
         "time": "08:43",
-        "quote_time_case": "* 8.43 a.m.",
-        "quote_first": "8.43 a. m. Pasar por la tienda de pescado tropical.",
-        "quote_last": "",
+        "quote_time_case": "8.43 a.m.",
+        "quote_first": "",
+        "quote_last": " Pasar por la tienda de pescado tropical.",
         "title": "El curioso incidente del perro a medianoche",
         "author": "Mark Haddon",
         "sfw": "sfw"
