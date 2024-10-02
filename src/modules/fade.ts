@@ -19,6 +19,11 @@ function toggleFadeMode() {
 
   updateURL("fade", isFadeMode);
   updateBooleanSettingButtonStatus("fade", isFadeMode);
+
+  if (!isFadeMode) {
+    const blockquote = document.getElementById("quote");
+    blockquote?.classList.remove("fade-in", "fade-out");
+  }
 }
 
 export function fadeOutQuote() {
