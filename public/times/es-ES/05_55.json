@@ -12,9 +12,9 @@
     {
         "id": "000782",
         "time": "05:55",
-        "quote_time_case": "* cinco a seis",
-        "quote_first": "Billy no conduce hasta el estacionamiento. El aparcamiento está terminado. A las seis menos cinco estaciona en Main Street, a pocas cuadras de la Torre Gerard. Hay muchos espacios en las aceras a esta hora y la acera está desierta.",
-        "quote_last": "",
+        "quote_time_case": "seis menos cinco",
+        "quote_first": "Billy no conduce hasta el estacionamiento. El aparcamiento está terminado. A las ",
+        "quote_last": " estaciona en Main Street, a pocas cuadras de la Torre Gerard. Hay muchos espacios en las aceras a esta hora y la acera está desierta.",
         "title": "Billy Summers",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "000783",
         "time": "05:55",
-        "quote_time_case": "* cinco minutos para las seis",
-        "quote_first": "Uno, dos, tres, cuatro, cinco, seis… Le dio cuerda a cada reloj, tres vueltas cada uno, poniendo la potencia suficiente en los resortes para que funcionaran a tiempo para la inspección del señor Westcott. Hablando de eso… eran las seis menos cinco. Cinco minutos antes llegaría el señor Westcott para inspeccionar sus relojes. Helena tragó. Podía oír pasos atronadores en la habitación de abajo y alguna que otra exclamación de Stanley.",
-        "quote_last": "",
+        "quote_time_case": "seis menos cinco",
+        "quote_first": "Uno, dos, tres, cuatro, cinco, seis… Le dio cuerda a cada reloj, tres vueltas cada uno, poniendo la potencia suficiente en los resortes para que funcionaran a tiempo para la inspección del señor Westcott. Hablando de eso… eran las ",
+        "quote_last": ". Cinco minutos antes llegaría el señor Westcott para inspeccionar sus relojes. Helena tragó. Podía oír pasos atronadores en la habitación de abajo y alguna que otra exclamación de Stanley.",
         "title": "La Casa de los Cien Relojes",
         "author": "A.M. Howell",
         "sfw": "unknown"

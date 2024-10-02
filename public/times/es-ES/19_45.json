@@ -12,9 +12,9 @@
     {
         "id": "003011",
         "time": "19:45",
-        "quote_time_case": "* 19:45",
-        "quote_first": "Me lo imagino. Murió durante la noche, o Grace Willson lo vio con vida por última vez a las 7:45 p.m. cuando escuchó su confesión. Supongo que murió de aburrimiento.",
-        "quote_last": "",
+        "quote_time_case": "7:45 p.m.",
+        "quote_first": "Me lo imagino. Murió durante la noche, o Grace Willson lo vio con vida por última vez a las ",
+        "quote_last": " cuando escuchó su confesión. Supongo que murió de aburrimiento.",
         "title": "La Torre Negra",
         "author": "P.D. James",
         "sfw": "sfw"

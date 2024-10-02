@@ -2,9 +2,9 @@
     {
         "id": "003230",
         "time": "21:04",
-        "quote_time_case": "* 21:04",
-        "quote_first": "9:04 p.m.<br>\"¿Qué te parece una ETA de 02:00 horas?\" Dimitri Spiros estaba utilizando una radio no asegurada, pero no tenía otra opción. \"Eso nos dará unas veintinueve horas. Tiempo suficiente para tener todo junto\".",
-        "quote_last": "",
+        "quote_time_case": "9:04 p.m.",
+        "quote_first": "",
+        "quote_last": "<br>\"¿Qué te parece una ETA de 02:00 horas?\" Dimitri Spiros estaba utilizando una radio no asegurada, pero no tenía otra opción. \"Eso nos dará unas veintinueve horas. Tiempo suficiente para tener todo junto\".",
         "title": "Proyecto cíclope",
         "author": "Thomas Hoover",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "003231",
         "time": "21:04",
-        "quote_time_case": "* 21:04",
-        "quote_first": "A las 21.04 horas, los trilobites nadan en escena, seguidos más o menos inmediatamente por las bien formadas criaturas de Burgess Shale.",
-        "quote_last": "",
+        "quote_time_case": "21.04 horas",
+        "quote_first": "A las ",
+        "quote_last": ", los trilobites nadan en escena, seguidos más o menos inmediatamente por las bien formadas criaturas de Burgess Shale.",
         "title": "Una breve historia de casi todo",
         "author": "Bill Bryson",
         "sfw": "sfw"

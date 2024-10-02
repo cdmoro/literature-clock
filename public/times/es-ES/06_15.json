@@ -12,9 +12,9 @@
     {
         "id": "000831",
         "time": "06:15",
-        "quote_time_case": "* Las seis y cuarto",
-        "quote_first": "Mi padre esperaba que el agua de afeitar estuviera lista a las seis y cuarto. Con sólo siete minutos de retraso, Dorothy subió la lata al piso de arriba y llamó a la puerta de su padre.",
-        "quote_last": "",
+        "quote_time_case": "seis y cuarto",
+        "quote_first": "Mi padre esperaba que el agua de afeitar estuviera lista a las ",
+        "quote_last": ". Con sólo siete minutos de retraso, Dorothy subió la lata al piso de arriba y llamó a la puerta de su padre.",
         "title": "La hija de un clérigo",
         "author": "George Orwell",
         "sfw": "unknown"
