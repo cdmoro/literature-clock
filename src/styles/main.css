@@ -256,6 +256,11 @@ button:disabled {
 }
 
 #showtime {
+  border-radius: 0;
+  margin-left: -1px;
+}
+
+#copy {
   border-end-start-radius: 0;
   border-start-start-radius: 0;
   margin-left: -1px;
@@ -289,6 +294,18 @@ button:disabled {
 #exit-zen:focus {
   opacity: 1;
   border-color: var(--font-color);
+}
+
+#copy-label-copied {
+  display: none;
+}
+
+body.quote-copied #copy-label-copied {
+  display: inline;
+}
+
+body.quote-copied #copy-label {
+  display: none;
 }
 
 footer {

@@ -8,6 +8,7 @@ import { initFont } from "./modules/font";
 import { onMouseMove, updateFavicon } from "./utils/utils";
 import { initFadeMode } from "./modules/fade";
 import { initTimeMode } from "./modules/time";
+import { initCopy } from "./modules/copy";
 
 document.addEventListener("DOMContentLoaded", () => {
   updateFavicon();
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initLocale(navigator.language);
   initFont("default");
   initClock();
+  initCopy();
 
   document.addEventListener("mousemove", onMouseMove);
   document.body.removeAttribute("data-loading");

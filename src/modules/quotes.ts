@@ -114,7 +114,7 @@ export async function updateQuote(time = getTime()) {
     blockquote.appendChild(p);
     blockquote.appendChild(cite);
     blockquote.setAttribute("aria-label", quote.time);
-    blockquote.setAttribute("aria-description", quoteRaw.replace(/<br>/g, " "));
+    blockquote.setAttribute("aria-description", `${quoteRaw.replace(/<br>/g, " ")} (${quote.title}, ${quote.author})`);
     blockquote.dataset.locale = locale;
     blockquote.dataset.sfw = quote.sfw;
     if (quote.fallback) {
