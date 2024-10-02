@@ -50,11 +50,11 @@
     "dark": "Dark",
 
     "language": "Language",
-    "en-US": "English (US)",
-    "es-ES": "Spanish (ES)",
-    "pt-BR": "Portuguese (BR)",
-    "fr-FR": "French",
-    "it-IT": "Italian",
+    "en-US": "English (en-US)",
+    "es-ES": "Spanish (es-ES)",
+    "pt-BR": "Portuguese (pt-BR)",
+    "fr-FR": "French (fr-FR)",
+    "it-IT": "Italian (it-IT)",
     "random": "Random language",
 
     "default_font": "Default font"
@@ -110,11 +110,11 @@
     "light": "Claro",
     "dark": "Oscuro",
 
-    "en-US": "Inglés (US)",
-    "es-ES": "Español (ES)",
-    "pt-BR": "Portugués (BR)",
-    "fr-FR": "Francés",
-    "it-IT": "Italiano",
+    "en-US": "Inglés (en-US)",
+    "es-ES": "Español (es-ES)",
+    "pt-BR": "Portugués (pt-BR)",
+    "fr-FR": "Francés (fr-FR)",
+    "it-IT": "Italiano (it-IT)",
     "random": "Lenguaje aleatorio",
 
     "default_font": "Fuente por defecto"
@@ -170,11 +170,11 @@
     "light": "Claro",
     "dark": "Escuro",
 
-    "en-US": "Inglês (US)",
-    "es-ES": "Espanhol (ES)",
-    "pt-BR": "Português (BR)",
-    "fr-FR": "Francês",
-    "it-IT": "Italiano",
+    "en-US": "Inglês (en-US)",
+    "es-ES": "Espanhol (es-ES)",
+    "pt-BR": "Português (pt-BR)",
+    "fr-FR": "Francês (fr-FR)",
+    "it-IT": "Italiano (it-IT)",
     "random": "Idioma aleatório",
 
     "default_font": "Fonte padrão"
@@ -230,11 +230,11 @@
     "light": "Clair",
     "dark": "Sombre",
 
-    "en-US": "Anglais (US)",
-    "es-ES": "Espagnol (ES)",
-    "pt-BR": "Portugais (BR)",
-    "fr-FR": "Français",
-    "it-IT": "Italien",
+    "en-US": "Anglais (en-US)",
+    "es-ES": "Espagnol (es-ES)",
+    "pt-BR": "Portugais (pt-BR)",
+    "fr-FR": "Français (fr-FR)",
+    "it-IT": "Italien (it-IT)",
     "random": "Langue aléatoire",
 
     "default_font": "Police par défaut"
@@ -291,11 +291,11 @@
     "light": "Chiaro",
     "dark": "Scuro",
 
-    "en-US": "Inglese (US)",
-    "es-ES": "Spagnolo (ES)",
-    "pt-BR": "Portoghese (BR)",
-    "fr-FR": "Francese",
-    "it-IT": "Italiano",
+    "en-US": "Inglese (en-US)",
+    "es-ES": "Spagnolo (es-ES)",
+    "pt-BR": "Portoghese (pt-BR)",
+    "fr-FR": "Francese (fr-FR)",
+    "it-IT": "Italiano (it-IT)",
     "random": "Lingua casuale",
 
     "default_font": "Font predefinito "
