@@ -2,9 +2,9 @@
     {
         "id": "001261",
         "time": "08:59",
-        "quote_time_case": "* un minuto para las nueve",
-        "quote_first": "Bingham se rió. “Entonces estaré junto al teléfono a las nueve menos un minuto el lunes”, consultó su diario, “el diecisiete de agosto”.",
-        "quote_last": "",
+        "quote_time_case": "nueve menos un minuto",
+        "quote_first": "Bingham se rió. “Entonces estaré junto al teléfono a las ",
+        "quote_last": " el lunes”, consultó su diario, “el diecisiete de agosto”.",
         "title": "Tener cuidado con lo que deseas",
         "author": "Jeffrey Archer",
         "sfw": "sfw"

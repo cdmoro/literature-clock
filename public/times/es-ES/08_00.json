@@ -2,9 +2,9 @@
     {
         "id": "001069",
         "time": "08:00",
-        "quote_time_case": "* a las ocho de la mañana",
-        "quote_first": "Eran sólo las ocho de la mañana, demasiado temprano para que los tipos perezosos de la junta directiva se presentaran para realizar sus tareas municipales. Aún así, la madrugada no impidió que Thomas pateara las puertas azules del ayuntamiento con pura rabia antes de retirarse a su Land Rover para esperar la llegada del concejal Padraig Carey.",
-        "quote_last": "",
+        "quote_time_case": "ocho de la mañana",
+        "quote_first": "Eran sólo las ",
+        "quote_last": ", demasiado temprano para que los tipos perezosos de la junta directiva se presentaran para realizar sus tareas municipales. Aún así, la madrugada no impidió que Thomas pateara las puertas azules del ayuntamiento con pura rabia antes de retirarse a su Land Rover para esperar la llegada del concejal Padraig Carey.",
         "title": "Sopa De Granada",
         "author": "Marsha Mehran",
         "sfw": "unknown"
@@ -92,9 +92,9 @@
     {
         "id": "001078",
         "time": "08:00",
-        "quote_time_case": "* ocho en punto de la mañana",
-        "quote_first": "Sin ninguna expectativa de placer, pero con la mayor curiosidad, Elizabeth abrió la carta y, para su sorpresa cada vez mayor, vio un sobre que contenía dos hojas de papel de carta, escritas de principio a fin y con letra muy cercana. El sobre también estaba lleno. Siguiendo su camino por el sendero, lo inició. Estaba fechada en Rosings, a las ocho de la mañana, y decía lo siguiente:",
-        "quote_last": "",
+        "quote_time_case": "las ocho de la mañana",
+        "quote_first": "Sin ninguna expectativa de placer, pero con la mayor curiosidad, Elizabeth abrió la carta y, para su sorpresa cada vez mayor, vio un sobre que contenía dos hojas de papel de carta, escritas de principio a fin y con letra muy cercana. El sobre también estaba lleno. Siguiendo su camino por el sendero, lo inició. Estaba fechada en Rosings, a ",
+        "quote_last": ", y decía lo siguiente:",
         "title": "Orgullo y prejuicio",
         "author": "Jane Austen",
         "sfw": "unknown"

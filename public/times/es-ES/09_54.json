@@ -2,9 +2,9 @@
     {
         "id": "001463",
         "time": "09:54",
-        "quote_time_case": "* seis minutos para las diez",
-        "quote_first": "El coche aparcó delante de Barrington House a las diez menos seis. Cuando salió del ascensor del quinto piso y caminó por el pasillo hasta el despacho del presidente, eran las diez menos dos minutos.",
-        "quote_last": "",
+        "quote_time_case": "diez menos seis",
+        "quote_first": "El coche aparcó delante de Barrington House a las ",
+        "quote_last": ". Cuando salió del ascensor del quinto piso y caminó por el pasillo hasta el despacho del presidente, eran las diez menos dos minutos.",
         "title": "Los pecados del padre",
         "author": "Jeffrey Archer",
         "sfw": "sfw"

@@ -2,9 +2,9 @@
     {
         "id": "001043",
         "time": "07:50",
-        "quote_time_case": "* diez minutos para las ocho",
-        "quote_first": "El inspector Hogan llamó al timbre de la puerta principal a las ocho menos diez. Momentos después la abrió alguien que estaba bien afeitado, vestido elegantemente y claramente esperándolo.",
-        "quote_last": "",
+        "quote_time_case": "ocho menos diez",
+        "quote_first": "El inspector Hogan llamó al timbre de la puerta principal a las ",
+        "quote_last": ". Momentos después la abrió alguien que estaba bien afeitado, vestido elegantemente y claramente esperándolo.",
         "title": "Próximo en la fila",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "001044",
         "time": "07:50",
-        "quote_time_case": "* diez minutos para las ocho",
-        "quote_first": "Ella y Dakers no se habían dicho nada de interés mientras trabajaban y habían salido de la biblioteca al mismo tiempo y fueron a desayunar juntos. Eso había sido alrededor de las ocho menos diez.",
-        "quote_last": "",
+        "quote_time_case": "ocho menos diez",
+        "quote_first": "Ella y Dakers no se habían dicho nada de interés mientras trabajaban y habían salido de la biblioteca al mismo tiempo y fueron a desayunar juntos. Eso había sido alrededor de las ",
+        "quote_last": ".",
         "title": "Sudario para un ruiseñor",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "001045",
         "time": "07:50",
-        "quote_time_case": "* diez minutos para las ocho",
-        "quote_first": "Aproximadamente a las ocho menos diez, Jim había arreglado la parte del trabajo que había estado haciendo (la ventana), por lo que decidió no empezar con la puerta o el zócalo hasta después del desayuno.",
-        "quote_last": "",
+        "quote_time_case": "ocho menos diez",
+        "quote_first": "Aproximadamente a las ",
+        "quote_last": ", Jim había arreglado la parte del trabajo que había estado haciendo (la ventana), por lo que decidió no empezar con la puerta o el zócalo hasta después del desayuno.",
         "title": "Los filántropos de pantalones andrajosos",
         "author": "Robert Tressell",
         "sfw": "unknown"

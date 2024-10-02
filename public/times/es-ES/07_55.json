@@ -12,7 +12,7 @@
     {
         "id": "001053",
         "time": "07:55",
-        "quote_time_case": "* cinco minutos antes de las ocho",
+        "quote_time_case": "* ocho menos cinco",
         "quote_first": "Quizás ahora no sea el mejor momento para que la vea, Sr. Dresden.<br>Miré el reloj de la pared. Faltaban cinco minutos para las ocho. \"Ella me quería temprano\". Me hice a un lado para rodearlo.",
         "quote_last": "",
         "title": "Luna tonta",
@@ -22,9 +22,9 @@
     {
         "id": "001054",
         "time": "07:55",
-        "quote_time_case": "* cinco minutos para las ocho",
-        "quote_first": "A las ocho menos cinco, el primer ministro salió del despacho de Wilson, seguido por Halifax y Cadogan. Wilson fue el último en aparecer. Parecía irritado. Legat supuso que debía haber tenido otra discusión con Cadogan.",
-        "quote_last": "",
+        "quote_time_case": "ocho menos cinco",
+        "quote_first": "A las ",
+        "quote_last": ", el primer ministro salió del despacho de Wilson, seguido por Halifax y Cadogan. Wilson fue el último en aparecer. Parecía irritado. Legat supuso que debía haber tenido otra discusión con Cadogan.",
         "title": "Munich",
         "author": "Robert Harris",
         "sfw": "unknown"

@@ -2,7 +2,7 @@
     {
         "id": "001487",
         "time": "10:00",
-        "quote_time_case": "* Diez",
+        "quote_time_case": "* las diez",
         "quote_first": "Los relojes de Shanghai se adelantaron una hora para que la ciudad pudiera \"salvar la luz del día\", pero la familia Bai dijo: \"Seguimos el reloj antiguo\". Las diez para ellos eran las once para todos los demás. Su canto estaba detrás del ritmo; no podían seguir el ritmo del huqin [instrumento de cuerda chino] que producía sonidos de vida sombríos y desolados.",
         "quote_last": "",
         "title": "Amor en una ciudad caída",
@@ -12,9 +12,9 @@
     {
         "id": "001488",
         "time": "10:00",
-        "quote_time_case": "* Diez",
-        "quote_first": "A las diez llega el correo. A veces recibes el sobre roto.",
-        "quote_last": "",
+        "quote_time_case": "las diez",
+        "quote_first": "A ",
+        "quote_last": " llega el correo. A veces recibes el sobre roto.",
         "title": "Uno volo sobre el nido del cuco",
         "author": "Ken Kesey",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "001489",
         "time": "10:00",
-        "quote_time_case": "* hace una hora ya que eran las nueve",
-        "quote_first": "Hace apenas una hora que eran las nueve, y dentro de una hora más serán las once.",
-        "quote_last": "",
+        "quote_time_case": "Hace apenas una hora que eran las nueve",
+        "quote_first": "",
+        "quote_last": ", y dentro de una hora más serán las once.",
         "title": "A su gusto",
         "author": "William Shakespeare",
         "sfw": "unknown"

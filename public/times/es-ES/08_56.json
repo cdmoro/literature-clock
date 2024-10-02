@@ -2,9 +2,9 @@
     {
         "id": "001254",
         "time": "08:56",
-        "quote_time_case": "* casi las nueve en punto",
-        "quote_first": "Eran casi las nueve y el sol cada minuto ardía más.",
-        "quote_last": "",
+        "quote_time_case": "casi las nueve",
+        "quote_first": "Eran ",
+        "quote_last": " y el sol cada minuto ardía más.",
         "title": "Días birmanos",
         "author": "George Orwell",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "001255",
         "time": "08:56",
-        "quote_time_case": "* casi las nueve en punto",
-        "quote_first": "Fue la señora Poppets quien me despertó a la mañana siguiente. Ella dijo: “¿Sabe que son casi las nueve, señor?”<br>“¿Nueve qué?” Lloré, sobresaltándome.<br>“A las nueve”, respondió ella, a través del ojo de la cerradura. \"Pensé que se estaban quedando dormidos\".",
-        "quote_last": "",
+        "quote_time_case": "casi las nueve",
+        "quote_first": "Fue la señora Poppets quien me despertó a la mañana siguiente. Ella dijo: “¿Sabe que son ",
+        "quote_last": ", señor?”<br>“¿Nueve qué?” Lloré, sobresaltándome.<br>“A las nueve”, respondió ella, a través del ojo de la cerradura. \"Pensé que se estaban quedando dormidos\".",
         "title": "Tres hombres en un bote",
         "author": "Jerome K. Jerome",
         "sfw": "sfw"

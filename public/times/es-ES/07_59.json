@@ -12,9 +12,9 @@
     {
         "id": "001066",
         "time": "07:59",
-        "quote_time_case": "* un minuto para las ocho",
-        "quote_first": "A las ocho menos un minuto emprendió a buen paso el sendero que los llevaría a la base de la montaña.",
-        "quote_last": "",
+        "quote_time_case": "ocho menos un minuto",
+        "quote_first": "A las ",
+        "quote_last": " emprendió a buen paso el sendero que los llevaría a la base de la montaña.",
         "title": "Caminos de gloria",
         "author": "Jeffrey Archer",
         "sfw": "sfw"

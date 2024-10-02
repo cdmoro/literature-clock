@@ -2,9 +2,9 @@
     {
         "id": "001474",
         "time": "09:57",
-        "quote_time_case": "* tres minutos para las diez",
-        "quote_first": "Ese jueves por la mañana, a las diez menos tres minutos, todos los miembros de la junta estaban sentados en sus lugares alrededor de la mesa. La reunión comenzó tranquilamente, con disculpas por la ausencia, seguida de la aceptación del acta de la última reunión.",
-        "quote_last": "",
+        "quote_time_case": "diez menos tres",
+        "quote_first": "Ese jueves por la mañana, a las ",
+        "quote_last": " minutos, todos los miembros de la junta estaban sentados en sus lugares alrededor de la mesa. La reunión comenzó tranquilamente, con disculpas por la ausencia, seguida de la aceptación del acta de la última reunión.",
         "title": "Mientras el cuervo vuela",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
