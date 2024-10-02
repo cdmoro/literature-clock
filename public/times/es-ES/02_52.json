@@ -2,9 +2,9 @@
     {
         "id": "000387",
         "time": "02:52",
-        "quote_time_case": "* ocho minutos para las tres de la mañana",
-        "quote_first": "Fue un impulso, nacido de la soledad. Eran las tres menos ocho de la madrugada del domingo.",
-        "quote_last": "",
+        "quote_time_case": "tres menos ocho",
+        "quote_first": "Fue un impulso, nacido de la soledad. Eran las ",
+        "quote_last": " de la madrugada del domingo.",
         "title": "Una canción por la mañana",
         "author": "Gerald Seymour",
         "sfw": "sfw"

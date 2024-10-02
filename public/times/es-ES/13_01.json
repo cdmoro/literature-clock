@@ -2,9 +2,9 @@
     {
         "id": "002027",
         "time": "13:01",
-        "quote_time_case": "* alrededor de la una",
-        "quote_first": "Alrededor de la una llegó el capataz y les dijo que no tenía trabajo para ellos.",
-        "quote_last": "",
+        "quote_time_case": "Alrededor de la una",
+        "quote_first": "",
+        "quote_last": " llegó el capataz y les dijo que no tenía trabajo para ellos.",
         "title": "La hija de un clérigo",
         "author": "George Orwell",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "002028",
         "time": "13:01",
-        "quote_time_case": "* sobre uno",
-        "quote_first": "Hay cinco brazas ahí fuera, dijo. Será arrastrado de esa manera cuando la marea suba alrededor de la una. Hoy son nueve días.",
-        "quote_last": "",
+        "quote_time_case": "alrededor de la una",
+        "quote_first": "Hay cinco brazas ahí fuera, dijo. Será arrastrado de esa manera cuando la marea suba ",
+        "quote_last": ". Hoy son nueve días.",
         "title": "Ulises",
         "author": "James Joyce",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "002029",
         "time": "13:01",
-        "quote_time_case": "* un poco después de la una",
-        "quote_first": "Era poco más de la una cuando llegué allí, hora de almorzar, así que lo comí. La comida era horrible. Pero iría a la cuenta de gastos y, después de comer, saqué mi libreta y la dejé. Almuerzo $1,50. Taxi $1.00.",
-        "quote_last": "",
+        "quote_time_case": "poco más de la una",
+        "quote_first": "Era ",
+        "quote_last": " cuando llegué allí, hora de almorzar, así que lo comí. La comida era horrible. Pero iría a la cuenta de gastos y, después de comer, saqué mi libreta y la dejé. Almuerzo $1,50. Taxi $1.00.",
         "title": "El gran reloj",
         "author": "Kenneth Fearing",
         "sfw": "unknown"
