@@ -1,62 +1,62 @@
 [
     {
-        "id": "000497",
+        "id": "000489",
         "time": "03:30",
-        "quote_time_case": "tres y media de la mañana",
-        "quote_first": "A las ",
-        "quote_last": ". perdió una ilusión: los oficiales enviados a realizar un reconocimiento le informaron que el enemigo no hacía ningún movimiento.",
-        "title": "Los Miserables",
-        "author": "Victor Hugo",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000498",
-        "time": "03:30",
-        "quote_time_case": "tres y media",
-        "quote_first": "Vamos a dormir, digo. Mira qué hora es. El radio despertador está justo al lado de la cama. Cualquiera puede verlo: las ",
+        "quote_time_case": "Las tres y media",
+        "quote_first": "Estaba demasiado profundamente dormido para oír el ruido que hacía el picaporte de su puerta. Lo que lo despertó fueron los golpecitos. Al principio fue suave, más como un arañazo de uñas sobre madera, y cuando abrió los ojos supuso que era uno de los niños que intentaba meterse en su cama después de una pesadilla. Pero entonces vio la habitación desconocida y recordó dónde estaba. Entrecerró los ojos ante las manecillas luminosas del despertador del hotel. ",
         "quote_last": ".",
-        "title": "Quien estaba usando esta cama",
-        "author": "Raymond Carver",
+        "title": "Munich",
+        "author": "Robert Harris",
         "sfw": "unknown"
     },
     {
-        "id": "000499",
-        "time": "03:30",
-        "quote_time_case": "tres y media",
-        "quote_first": "Ahora mira. No voy a llamar al Dr. McGrath a las ",
-        "quote_last": " de la mañana para preguntarle si está bien que mi hijo coma gusanos. Eso es plano.",
-        "title": "Cómo comer gusanos fritos",
-        "author": "Thomas Rockwell",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000500",
+        "id": "000490",
         "time": "03:30",
         "quote_time_case": "tres y media",
         "quote_first": "A las ",
-        "quote_last": ", un solo pájaro en un cielo silencioso propuso sólo un solo término de cautelosa melodía.",
+        "quote_last": ", un solo pájaro en un cielo silencioso propuso un solo término de cautelosa melodía.",
         "title": "A las tres y media, un solo pájaro",
         "author": "Emily Dickinson",
         "sfw": "unknown"
     },
     {
-        "id": "000501",
+        "id": "000491",
         "time": "03:30",
-        "quote_time_case": "3:30 a.m.",
-        "quote_first": "Son las ",
-        "quote_last": " en la casa finalmente tranquila de la señora Ralph cuando Garp decide limpiar la cocina, para matar el tiempo hasta el amanecer. Familiarizado con las tareas de un ama de casa, Garp llena el fregadero y comienza a lavar los platos.",
+        "quote_time_case": "las tres y media de la madrugada",
+        "quote_first": "A las ",
+        "quote_last": " perdió una ilusión: los oficiales enviados a realizar un reconocimiento le informaron que el enemigo no hacía ningún movimiento.",
+        "title": "Los Miserables",
+        "author": "Victor Hugo",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000492",
+        "time": "03:30",
+        "quote_time_case": "3:30 A.M.",
+        "quote_first": "Son ",
+        "quote_last": " en la casa finalmente tranquila de la Sra. Ralph cuando Garp decide limpiar la cocina, para matar el tiempo hasta el amanecer. Familiarizado con las tareas de un ama de casa, Garp llena el fregadero y comienza a lavar los platos.",
         "title": "El mundo según Garp",
         "author": "John Irving",
         "sfw": "unknown"
     },
     {
-        "id": "000502",
+        "id": "000493",
         "time": "03:30",
-        "quote_time_case": "Tres y media",
-        "quote_first": "Estaba demasiado profundamente dormido para oír el ruido que hacía el picaporte de su puerta. Lo que lo despertó fueron los golpecitos. Al principio fue suave, más como un arañazo de uñas sobre madera, y cuando abrió los ojos supuso que era uno de los niños que intentaba meterse en su cama después de una pesadilla. Pero entonces vio la habitación desconocida y recordó dónde estaba. Entrecerró los ojos ante las manecillas luminosas del despertador del hotel. ",
-        "quote_last": ".",
-        "title": "Munich",
-        "author": "Robert Harris",
+        "quote_time_case": "tres y media",
+        "quote_first": "Vamos a dormir, digo. Mira qué hora es.\" El radio reloj está justo al lado de la cama. Cualquiera puede verlo y dice ",
+        "quote_last": ".\"",
+        "title": "Quien estaba usando esta cama",
+        "author": "Raymond Carver",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000494",
+        "time": "03:30",
+        "quote_time_case": "tres y media",
+        "quote_first": "Ahora, mira. No voy a llamar al Dr. McGrath a las ",
+        "quote_last": " de la mañana para preguntarle si está bien que mi hijo coma gusanos. Eso es plano.",
+        "title": "Cómo comer gusanos fritos",
+        "author": "Thomas Rockwell",
         "sfw": "unknown"
     }
 ]

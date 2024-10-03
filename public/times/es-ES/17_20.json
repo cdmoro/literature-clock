@@ -1,32 +1,32 @@
 [
     {
-        "id": "002663",
+        "id": "002622",
         "time": "17:20",
-        "quote_time_case": "* 1720",
-        "quote_first": "La Reunión estaba prevista para las 17.30, y fue sólo alrededor de las 17.20, y Hal pensó que las voces podrían significar algún tipo de orientación previa a la Reunión para las personas que habían venido por primera vez, más o menos tentativamente, sólo para explorar todo el lugar. empresa, para que no llame a la puerta.",
-        "quote_last": "",
-        "title": "Frivolidad infinita",
-        "author": "David Foster Wallace",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002664",
-        "time": "17:20",
-        "quote_time_case": "las cinco y veinte",
-        "quote_first": "Voy a estacionar aquí y entraré. No quiero conducir hasta un zoológico. Echó un vistazo a su reloj. \"Son sólo ",
+        "quote_time_case": "cinco y veinte",
+        "quote_first": "Voy a estacionar aquí y entraré. No quiero conducir hasta un zoológico. Miró su reloj. \"Son sólo ",
         "quote_last": ". Se supone que la llamada del secuestrador llegará a las seis. Tenemos tiempo\".",
         "title": "Cresta del Purgatorio",
         "author": "William Kent Krueger",
         "sfw": "sfw"
     },
     {
-        "id": "002665",
+        "id": "002623",
         "time": "17:20",
-        "quote_time_case": "las cinco y veinte",
-        "quote_first": "Si puede mantener la velocidad a setenta hasta que salga de la autopista de peaje en el centro de la ciudad, y si toma la mayoría de los semáforos, estima que podrá estar en su edificio a ",
+        "quote_time_case": "cinco y veinte",
+        "quote_first": "Si puede mantener su velocidad a setenta hasta que salga de la autopista de peaje en el centro de la ciudad, y si alcanza la mayoría de los semáforos, estima que puede estar en su edificio a las ",
         "quote_last": ".",
-        "title": "La sangre manda",
+        "title": "si sangra",
         "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002624",
+        "time": "17:20",
+        "quote_time_case": "1720",
+        "quote_first": "La Reunión estaba listada para comenzar a las 17.30, y solo era alrededor de ",
+        "quote_last": ", y Hal pensó que las voces podrían significar algún tipo de orientación previa a la Reunión para las personas que habían venido. por primera vez, algo así como tentativamente, sólo para explorar toda la empresa, para no llamar a la puerta.",
+        "title": "Broma infinita",
+        "author": "David Foster Wallace",
         "sfw": "unknown"
     }
 ]

@@ -1,20 +1,20 @@
 [
     {
-        "id": "002780",
+        "id": "002737",
         "time": "18:10",
         "quote_time_case": "6.10",
-        "quote_first": "—Me gustaría ver su lista de pasajeros para el vuelo de ayer por la tarde a las ",
-        "quote_last": " con destino a Bruselas.",
-        "title": "Sobre mi cadaver",
+        "quote_first": "\"Me gustaría ver su lista de pasajeros para el vuelo ",
+        "quote_last": " de ayer por la tarde hacia Bruselas\".",
+        "title": "Sobre mi cadáver",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "002781",
+        "id": "002738",
         "time": "18:10",
-        "quote_time_case": "* seis diez",
-        "quote_first": "Déjame ver ahora. Tomaste una copa en el Continental a las seis y diez.<br>\"Sí.\"<br>\"¿Y a las seis cuarenta y cinco estabas hablando con otro periodista en la puerta del Majestic?\"<br>\"Sí , Wilkins. Ya te dije todo esto, Vigot, antes. Esa noche.",
-        "quote_last": "",
+        "quote_time_case": "seis diez",
+        "quote_first": "Déjame ver ahora. Tomaste una copa en el Continental a las ",
+        "quote_last": ".<br>\"Sí.\"<br>\"Y a las seis cuarenta y cinco estabas hablando con otro periodista en el ¿La puerta del Majestic? \"Sí, Wilkins, te dije todo esto, Vigot, esa noche\".",
         "title": "El americano tranquilo",
         "author": "Graham Greene",
         "sfw": "unknown"

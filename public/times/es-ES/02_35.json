@@ -1,52 +1,52 @@
 [
     {
-        "id": "000358",
-        "time": "02:35",
-        "quote_time_case": "2.35",
-        "quote_first": "De lo ocurrido a las ",
-        "quote_last": " tenemos el testimonio del sacerdote, una persona joven, inteligente y culta; del patrullero William J. Monohan de la Estación Central, un oficial de la más alta confiabilidad que se había detenido en esa parte de su ronda para inspeccionar a la multitud.",
-        "title": "El cazador de la oscuridad",
-        "author": "H.P. Lovecraft",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000359",
+        "id": "000352",
         "time": "02:35",
         "quote_time_case": "2:35",
         "quote_first": "Matson y el presidente habían regresado del apartamento de Mark a las ",
-        "quote_last": " de la mañana, con su tarea terminada. Matson se había quedado dormido treinta minutos más. El maldito hotel había olvidado su despertador; hoy en día no se puede confiar en nadie.",
+        "quote_last": " esa mañana, con su tarea completada. Matson se había quedado dormido treinta minutos más. El maldito hotel había olvidado su despertador; hoy en día no se puede confiar en nadie.",
         "title": "¿Se lo contamos al presidente?",
         "author": "Jeffrey Archer",
         "sfw": "nsfw"
     },
     {
-        "id": "000360",
+        "id": "000353",
         "time": "02:35",
-        "quote_time_case": "2:35 a.m.",
-        "quote_first": "Diario de Rorschach: Salió de la casa de Jacob a las ",
-        "quote_last": " No sabe nada sobre ningún intento de desacreditar al Dr. Manhattan. Simplemente ha sido utilizado.",
-        "title": "vigilantes",
-        "author": "Alan Moore and Dave Gibbons",
-        "sfw": "unknown"
+        "quote_time_case": "dos-treinta-cinco",
+        "quote_first": "Bajé las escaleras con cuidado para evitar los escalones que sabía que le gritarían mi presencia a mi padre, que había empezado a dormir en el sofá de la sala de estar. En la cocina vi a la luz de la luna que las manecillas del reloj de pared marcaban ",
+        "quote_last": ".",
+        "title": "Gracia ordinaria",
+        "author": "William Kent Krueger",
+        "sfw": "sfw"
     },
     {
-        "id": "000361",
+        "id": "000354",
         "time": "02:35",
-        "quote_time_case": "2:35 de la madrugada",
-        "quote_first": "La pantalla iluminada no ofrecía información sobre la persona que llamaba, pero sí revelaba que eran las ",
+        "quote_time_case": "2:35 de la mañana",
+        "quote_first": "La pantalla iluminada no ofrecía información sobre la persona que llamaba, pero sí revelaba que eran ",
         "quote_last": ".",
         "title": "Arenas movedizas",
         "author": "Ray Keating",
         "sfw": "sfw"
     },
     {
-        "id": "000362",
+        "id": "000355",
         "time": "02:35",
-        "quote_time_case": "dos y treinta y cinco",
-        "quote_first": "Bajé las escaleras con cuidado para evitar los escalones que sabía que le gritarían mi presencia a mi padre, que había empezado a dormir en el sofá de la sala de estar. En la cocina vi, a la luz de la luna, que las manecillas del reloj de pared marcaban las ",
-        "quote_last": ".",
-        "title": "Gracia ordinaria",
-        "author": "William Kent Krueger",
-        "sfw": "sfw"
+        "quote_time_case": "2:35 a.m.",
+        "quote_first": "Diario de Rorschach: Salió de la casa de Jacob ",
+        "quote_last": " No sabe nada sobre ningún intento de desacreditar al Dr. Manhattan. Simplemente ha sido utilizado.",
+        "title": "vigilantes",
+        "author": "Alan Moore and Dave Gibbons",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000356",
+        "time": "02:35",
+        "quote_time_case": "2.35",
+        "quote_first": "De lo sucedido en ",
+        "quote_last": " tenemos el testimonio del sacerdote, una persona joven, inteligente y culta; del patrullero William J. Monohan de la Estación Central, un oficial de la más alta confiabilidad que se había detenido en esa parte de su ronda para inspeccionar a la multitud.",
+        "title": "El cazador de la oscuridad",
+        "author": "H.P. Lovecraft",
+        "sfw": "unknown"
     }
 ]

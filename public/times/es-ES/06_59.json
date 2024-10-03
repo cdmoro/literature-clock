@@ -1,16 +1,6 @@
 [
     {
-        "id": "000912",
-        "time": "06:59",
-        "quote_time_case": "siete menos un minuto",
-        "quote_first": "A las ",
-        "quote_last": ", el teniente coronel Robertson subió al escenario y todos los demás en la sala rápidamente guardaron silencio y se pusieron firmes. Se detuvo en el centro del escenario e hizo señas a los hombres para que bajaran.",
-        "title": "Los pecados del padre",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "000913",
+        "id": "000895",
         "time": "06:59",
         "quote_time_case": "6:59",
         "quote_first": "Ella apenas levanta la vista; toca a la puerta de la oficina del Director; ninguna respuesta; entre según las instrucciones. Sin director: ",
@@ -20,11 +10,21 @@
         "sfw": "sfw"
     },
     {
-        "id": "000914",
+        "id": "000896",
         "time": "06:59",
-        "quote_time_case": "6:59",
+        "quote_time_case": "un minuto para las siete",
+        "quote_first": "A ",
+        "quote_last": ", el teniente coronel Robertson subió al escenario y todos los demás en la sala rápidamente guardaron silencio y se pusieron firmes. Se detuvo en el centro del escenario e hizo señas a los hombres para que bajaran.",
+        "title": "Los pecados del padre",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "000897",
+        "time": "06:59",
+        "quote_time_case": "6.59 a.m.",
         "quote_first": "Eran las ",
-        "quote_last": " de la mañana del Jueves Santo cuando Blomkvist y Berger entraron en las oficinas de \"Millennium\".",
+        "quote_last": " del Jueves Santo cuando Mikael Blomkvist y Berger entraron en las oficinas de \"Millennium\".",
         "title": "La niña que jugaba con fuego",
         "author": "Stieg Larsson",
         "sfw": "unknown"

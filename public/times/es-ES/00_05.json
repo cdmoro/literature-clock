@@ -1,22 +1,22 @@
 [
     {
-        "id": "000072",
+        "id": "000067",
         "time": "00:05",
-        "quote_time_case": "0005h.",
-        "quote_first": "E.M. Security, normalmente tan escrupulosa con sus jodidos camiones a las ",
-        "quote_last": ", no está por ningún lado, dando peso a otro cliché más. Si le preguntaras a Gately qué estaba sintiendo en este momento, no tendría idea.",
-        "title": "Frivolidad infinita",
-        "author": "David Foster Wallace",
-        "sfw": "nsfw"
-    },
-    {
-        "id": "000073",
-        "time": "00:05",
-        "quote_time_case": "Eran más de las doce",
-        "quote_first": "",
+        "quote_time_case": "más de las doce",
+        "quote_first": "Eran ",
         "quote_last": " cuando Easton llegó a casa. Ruth reconoció sus pasos antes de que llegara a la casa, y su corazón pareció dejar de latir cuando escuchó el ruido metálico de la puerta que se cerraba después de que él hubiera pasado.",
         "title": "Los filántropos de pantalones andrajosos",
         "author": "Robert Tressell",
         "sfw": "unknown"
+    },
+    {
+        "id": "000068",
+        "time": "00:05",
+        "quote_time_case": "0005h.",
+        "quote_first": "E.M. Security, normalmente tan escrupulosa con sus jodidos camiones en ",
+        "quote_last": ", no está por ningún lado, dando peso a otro cliché más. Si le preguntaras a Gately qué estaba sintiendo en este momento, no tendría idea.",
+        "title": "Broma infinita",
+        "author": "David Foster Wallace",
+        "sfw": "nsfw"
     }
 ]

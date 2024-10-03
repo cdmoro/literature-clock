@@ -1,62 +1,62 @@
 [
     {
-        "id": "003313",
+        "id": "003262",
         "time": "21:50",
         "quote_time_case": "9:50 p.m.",
-        "quote_first": "Abrió la puerta de su cabaña y, una vez dentro, se desplomó sobre la cama, trabajo hecho. Consultó su reloj: ",
+        "quote_first": "Abrió la puerta de su cabaña y, una vez dentro, se desplomó sobre la cama, trabajo hecho. Miró su reloj: ",
         "quote_last": " La espera iba a ser larga.",
-        "title": "Tener cuidado con lo que deseas",
+        "title": "Ten cuidado con lo que deseas",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "003314",
+        "id": "003263",
         "time": "21:50",
-        "quote_time_case": "* diez a diez",
-        "quote_first": "Llega a Radiance a las diez menos diez, temprano por una vez, entra con su llave y se pone la bata malva y aguamarina que Shanita diseñó para ellos para que los clientes sepan que ellos mismos no son clientes.",
-        "quote_last": "",
-        "title": "La novia ladrona",
-        "author": "Margaret Atwood",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003315",
-        "time": "21:50",
-        "quote_time_case": "* Diez minutos para las diez",
-        "quote_first": "Philip Lombard dijo:<br>“¿Qué hora es ahora?”<br>“Las diez menos diez, señor”.<br>Las cejas de Lombard se alzaron. Él asintió lentamente para sí mismo.",
-        "quote_last": "",
-        "title": "Y entonces no había ninguno",
-        "author": "Agatha Christie",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003316",
-        "time": "21:50",
-        "quote_time_case": "* diez minutos para las diez",
-        "quote_first": "Salí a la carretera y vi por la esfera iluminada de un reloj que eran las diez menos diez. Frente a mí había un gran edificio que mostraba el nombre mágico.",
-        "quote_last": "",
-        "title": "dublineses",
-        "author": "James Joyce",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003317",
-        "time": "21:50",
-        "quote_time_case": "* nueve cincuenta",
-        "quote_first": "No, su reloj marcaba las nueve y cincuenta. Estarían cruzando el matorral. Abrió la puerta y salió a la oscuridad. No había estrellas y la base baja de las nubes había ocultado incluso la luna.",
-        "quote_last": "",
+        "quote_time_case": "nueve y cincuenta",
+        "quote_first": "No, su reloj marcaba ",
+        "quote_last": ". Estarían cruzando el matorral. Abrió la puerta y salió a la oscuridad. No había estrellas y la base baja de las nubes había ocultado incluso la luna.",
         "title": "El faro",
         "author": "P.D. James",
         "sfw": "sfw"
     },
     {
-        "id": "003318",
+        "id": "003264",
         "time": "21:50",
-        "quote_time_case": "* Nueve cincuenta",
-        "quote_first": "A las nueve y media los vecinos se marchan y la maquinaria vuelve a funcionar con suavidad. La enfermera vigila la sala de día desde su vitrina; la escena que tiene ante ella vuelve a adquirir esa claridad azul acero, ese movimiento limpio y ordenado de una comedia de dibujos animados.",
-        "quote_last": "",
-        "title": "Uno volo sobre el nido del cuco",
+        "quote_time_case": "diez a diez",
+        "quote_first": "Llega a Radiance a las ",
+        "quote_last": ", temprano por una vez, entra con su llave y se pone la bata malva y aguamarina que Shanita diseñó para ellos. los clientes sabrán que ellos mismos no son clientes.",
+        "title": "La novia ladrona",
+        "author": "Margaret Atwood",
+        "sfw": "unknown"
+    },
+    {
+        "id": "003265",
+        "time": "21:50",
+        "quote_time_case": "Nueve cincuenta",
+        "quote_first": "",
+        "quote_last": " los residentes se van y la maquinaria vuelve a funcionar suavemente. La enfermera vigila la sala de día desde su vitrina; la escena que tiene ante ella vuelve a adquirir esa claridad azul acero, ese movimiento limpio y ordenado de una comedia de dibujos animados.",
+        "title": "Alguien voló sobre el nido del cuco",
         "author": "Ken Kesey",
+        "sfw": "unknown"
+    },
+    {
+        "id": "003266",
+        "time": "21:50",
+        "quote_time_case": "Diez minutos menos",
+        "quote_first": "Philip Lombard dijo:<br>“¿Qué hora es ahora?”<br>“",
+        "quote_last": ", señor.”<br>Las cejas de Lombard se alzaron. Él asintió lentamente para sí mismo.",
+        "title": "Y luego no hubo ninguno",
+        "author": "Agatha Christie",
+        "sfw": "unknown"
+    },
+    {
+        "id": "003267",
+        "time": "21:50",
+        "quote_time_case": "diez menos diez",
+        "quote_first": "Salí a la carretera y vi por la esfera iluminada de un reloj que eran ",
+        "quote_last": ". Frente a mí había un gran edificio que mostraba el nombre mágico.",
+        "title": "dublineses",
+        "author": "James Joyce",
         "sfw": "unknown"
     }
 ]

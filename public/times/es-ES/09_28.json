@@ -1,16 +1,6 @@
 [
     {
-        "id": "001383",
-        "time": "09:28",
-        "quote_time_case": "* Las nueve y veintiocho minutos",
-        "quote_first": "Este reloj ¿verdad? -le preguntó al mayordomo en el vestíbulo.<br>\"Sí, señor\". El reloj marcaba las nueve y veintiocho minutos. \"Aquí los relojes tienen que estar en hora, señor\", añadió con orgullo y humor respetuoso el mayordomo, en las escaleras.",
-        "quote_last": "",
-        "title": "Señor Raingo",
-        "author": "Arnold Bennett",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001384",
+        "id": "001361",
         "time": "09:28",
         "quote_time_case": "9:28",
         "quote_first": "La llamada se había realizado a las ",
@@ -18,5 +8,15 @@
         "title": "Muerte en las Sagradas Órdenes",
         "author": "P.D. James",
         "sfw": "sfw"
+    },
+    {
+        "id": "001362",
+        "time": "09:28",
+        "quote_time_case": "las nueve y veintiocho minutos",
+        "quote_first": "Este reloj ¿verdad? -le preguntó al mayordomo en el pasillo. <br>\"Sí, señor\". El reloj marcaba ",
+        "quote_last": ". \"Aquí los relojes tienen que estar en hora, señor\", añadió con orgullo y humor respetuoso el mayordomo, en las escaleras.",
+        "title": "Señor Raingo",
+        "author": "Arnold Bennett",
+        "sfw": "unknown"
     }
 ]

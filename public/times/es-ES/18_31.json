@@ -1,42 +1,42 @@
 [
     {
-        "id": "002825",
+        "id": "002782",
         "time": "18:31",
-        "quote_time_case": "* ENTRE LAS SEIS Y LAS SIETE",
-        "quote_first": "Entre las seis y las siete de una tarde de julio, una multitud de visitantes de verano, en su mayoría padres de familia, cargados con paquetes, carteras y sombrereras de señoras, avanzaba desde la pequeña estación de Helkovo, en el dirección de las villas de verano.",
-        "quote_last": "",
-        "title": "La fiesta y otras historias",
-        "author": "Anton Pavlovich Chekhov",
+        "quote_time_case": "seis y treinta y uno",
+        "quote_first": "Dije que sería mejor registrar la casa para asegurarnos de si estaba allí o no, y el señor Hurst dijo que vendría conmigo; Así que todos recorrimos la casa y miramos en todas las habitaciones, pero no había ni rastro del señor Bellingham en ninguna de ellas.  Entonces el señor Hurst se puso muy nervioso y molesto, y cuando acababa de tomar un poco de cena salió corriendo a tomar el tren ",
+        "quote_last": " hasta la ciudad.",
+        "title": "El ojo de Osiris",
+        "author": "R. Austin Freeman",
         "sfw": "sfw"
     },
     {
-        "id": "002826",
+        "id": "002783",
         "time": "18:31",
-        "quote_time_case": "* Las seis y treinta y un minutos, p.m.",
-        "quote_first": "“Las acciones”, relata el capitán Berry, “comenzaron al atardecer, que fue a las seis y treinta y un minutos de la tarde, con un ardor y un vigor que es imposible de describir.",
-        "quote_last": "",
+        "quote_time_case": "las seis y treinta y un minutos de la tarde",
+        "quote_first": "“Las acciones”, relata el capitán Berry, “comenzaron al atardecer, que fue a las ",
+        "quote_last": ", con un ardor y un vigor que es imposible describir.",
         "title": "La historia de Nelson",
         "author": "Harold F.B. Wheeler",
         "sfw": "sfw"
     },
     {
-        "id": "002827",
+        "id": "002784",
         "time": "18:31",
-        "quote_time_case": "* poco después de las seis y media",
-        "quote_first": "Me habían retrasado en un caso y eran poco más de las seis y media cuando me encontré de nuevo en Baker Street.",
-        "quote_last": "",
+        "quote_time_case": "ENTRE las seis y las siete",
+        "quote_first": "",
+        "quote_last": " en una tarde de julio, una multitud de veraneantes, en su mayoría padres de familia, cargados con paquetes, carteras y sombreros de señora... cajas, iba desde la pequeña estación de Helkovo en dirección a las villas de verano.",
+        "title": "La fiesta y otras historias",
+        "author": "Anton Pavlovich Chekhov",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002785",
+        "time": "18:31",
+        "quote_time_case": "un poco después de las seis y media",
+        "quote_first": "Me había retrasado en un caso y eran ",
+        "quote_last": " cuando me encontré en Baker Street una vez más.",
         "title": "La aventura del carbunco azul",
         "author": "Sir Arthur Conan Doyle",
         "sfw": "unknown"
-    },
-    {
-        "id": "002828",
-        "time": "18:31",
-        "quote_time_case": "* seis treinta y uno",
-        "quote_first": "Dije que sería mejor registrar la casa para asegurarnos de si estaba allí o no, y el señor Hurst dijo que vendría conmigo; Así que todos recorrimos la casa y miramos en todas las habitaciones, pero no había ni rastro del señor Bellingham en ninguna de ellas. Entonces el señor Hurst se puso muy nervioso y molesto, y cuando acababa de tomar un poco de cena salió corriendo para tomar el tren de las seis y treinta y uno hasta la ciudad.",
-        "quote_last": "",
-        "title": "El ojo de Osiris",
-        "author": "R. Austin Freeman",
-        "sfw": "sfw"
     }
 ]

@@ -1,42 +1,42 @@
 [
     {
-        "id": "002347",
-        "time": "15:20",
-        "quote_time_case": "* Las tres y veinte minutos",
-        "quote_first": "A las tres y veinte minutos del lunes 26 de enero de 1948, en Tokio, y estoy bebiendo y estoy bebiendo y estoy bebiendo y estoy bebiendo y estoy bebiendo y estoy bebiendo y estoy bebiendo y estoy bebiendo y estoy Bebiendo.",
-        "quote_last": "",
-        "title": "Ciudad ocupada",
-        "author": "David Peace",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002348",
-        "time": "15:20",
-        "quote_time_case": "* tres veinte",
-        "quote_first": "Cuando sonó el teléfono a las tres y veinte estaba tumbado en el tatami, empezando por el techo. Un charco de luz solar invernal se había formado en el lugar donde yacía. Como una mosca muerta, yací allí, vacío, bajo un foco de diciembre de 1971.",
-        "quote_last": "",
-        "title": "Sauce ciego, mujer dormida",
-        "author": "Haruki Murakami",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002349",
+        "id": "002311",
         "time": "15:20",
         "quote_time_case": "3:20",
-        "quote_first": "James se tapó las orejas con el sombrero, miró hacia otro lado y pasó el tiempo charlando con Sam O'Flaherty sobre las ",
-        "quote_last": ", los King George VI y Queen Elizabeth Stakes.",
+        "quote_first": "James se tapó las orejas con el trilby, miró hacia otro lado y pasó el tiempo charlando con Sam O'Flaherty sobre el ",
+        "quote_last": ", el rey Jorge VI y la reina Isabel. Apuestas.",
         "title": "Ni un centavo más, ni un centavo menos",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "002350",
+        "id": "002312",
         "time": "15:20",
         "quote_time_case": "3:20",
-        "quote_first": "Miró su reloj. Sólo las ",
-        "quote_last": ", pero era lo suficientemente cerca para el trabajo del gobierno. Claudette Albertson lo sorprendió. \"No, es el Sr. Hayes, aquí abajo en el primer piso con nosotros.\"<br>\"¿Estás seguro?\" Dan había jugado una partida de damas con Charlie Hayes esa misma tarde y, para ser un hombre con leucemia mielógena aguda, parecía tan animado como un grillo.",
+        "quote_first": "Miró su reloj. Sólo ",
+        "quote_last": ", pero eso estaba lo suficientemente cerca para el trabajo del gobierno. Claudette Albertson lo sorprendió. “No, es el Sr. Hayes, aquí abajo, en el primer piso, con nosotros”.<br>“¿Estás seguro?” Dan había jugado una partida de damas con Charlie Hayes esa misma tarde y, para ser un hombre con leucemia mielógena aguda, parecía tan animado como un grillo.",
         "title": "Doctor Dormir",
         "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002313",
+        "time": "15:20",
+        "quote_time_case": "tres y veinte",
+        "quote_first": "Cuando el teléfono sonó a las ",
+        "quote_last": " estaba tirado en el tatami, comenzando por el techo. Un charco de luz solar invernal se había formado en el lugar donde yacía. Como una mosca muerta, yací allí, vacío, bajo un foco de diciembre de 1971.",
+        "title": "Sauce ciego, mujer dormida",
+        "author": "Haruki Murakami",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002314",
+        "time": "15:20",
+        "quote_time_case": "las tres y veinte minutos",
+        "quote_first": "A las ",
+        "quote_last": " del lunes 26 de enero de 1948, en Tokio, y estoy bebiendo y estoy bebiendo y estoy bebiendo y estoy bebiendo y estoy bebiendo y Estoy bebiendo y estoy bebiendo y estoy bebiendo y estoy bebiendo.",
+        "title": "Ciudad ocupada",
+        "author": "David Peace",
         "sfw": "unknown"
     }
 ]

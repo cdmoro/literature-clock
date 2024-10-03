@@ -1,22 +1,22 @@
 [
     {
-        "id": "002685",
+        "id": "002644",
         "time": "17:31",
-        "quote_time_case": "5:31 p.m.",
+        "quote_time_case": "17:31",
+        "quote_first": "Discutieron sobre la transmisión: ¿cuál de sus amigos, se preguntaron, fue el responsable de ello? Pero en ",
+        "quote_last": " Pick volvió a llamar",
+        "title": "Agua Pesada",
+        "author": "Martin Amis",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002645",
+        "time": "17:31",
+        "quote_time_case": "5:31 P.M.",
         "quote_first": "Martes ",
-        "quote_last": "<br>\"Es lo mejor que puedo hacer, Michael\". La voz de Nogami era de disculpa. \"Nadie sabe que tengo este lugar, ni siquiera mi esposa.\"<br>\"Conferencias de negocios por la tarde.\"<br>\"Entiendes lo que quiero decir.\" Él sonrió y subió los escalones de arenisca.",
+        "quote_last": "<br>\"Es lo mejor que puedo hacer, Michael\". La voz de Nogami era de disculpa. \"Nadie sabe que tengo este lugar, ni siquiera mi esposa.\"<br>\"Conferencias de negocios por la tarde.\"<br>\"Entiendes lo que quiero decir\". Él sonrió y subió los escalones de arenisca.",
         "title": "Proyecto Dédalo",
         "author": "Thomas Hoover",
         "sfw": "nsfw"
-    },
-    {
-        "id": "002686",
-        "time": "17:31",
-        "quote_time_case": "17:31",
-        "quote_first": "Discutieron sobre la transmisión: ¿cuál de sus amigos, se preguntaron, fue el responsable de ello? Pero a las ",
-        "quote_last": " Pick volvió a llamar.",
-        "title": "Agua pesada",
-        "author": "Martin Amis",
-        "sfw": "sfw"
     }
 ]

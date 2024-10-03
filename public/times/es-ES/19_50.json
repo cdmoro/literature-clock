@@ -1,32 +1,32 @@
 [
     {
-        "id": "003023",
+        "id": "002975",
         "time": "19:50",
-        "quote_time_case": "* diez a ocho",
-        "quote_first": "A las ocho menos diez, bajó las escaleras para asegurarse de que la signora Buffi no estuviera dando vueltas en el pasillo y de que su puerta no estuviera abierta, y para asegurarse de que realmente no había nadie en el auto de Freddie.",
-        "quote_last": "",
-        "title": "El talentoso Sr. Ripley",
-        "author": "Patricia Highsmith",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003024",
-        "time": "19:50",
-        "quote_time_case": "* diez minutos para las ocho",
-        "quote_first": "Todo estaba arreglado para ellos. Una auténtica limusina llegó a las ocho menos diez y los llevó al teatro. Apareció bajo la marquesina en el momento exacto, después de las grandes estrellas, el director, el autor, el gobernador, el alcalde y algunas estrellas menos importantes.",
-        "quote_last": "",
+        "quote_time_case": "las ocho menos diez",
+        "quote_first": "Todo estaba arreglado para ellos. Una limusina real llegó a ",
+        "quote_last": " y los llevó al teatro. Apareció bajo la marquesina en el momento exacto, después de las grandes estrellas, el director, el autor, el gobernador, el alcalde y algunas estrellas menos importantes.",
         "title": "Un encuentro tardío con el enemigo",
         "author": "Flannery O'Connor",
         "sfw": "unknown"
     },
     {
-        "id": "003025",
+        "id": "002976",
         "time": "19:50",
-        "quote_time_case": "* diez minutos para las ocho",
-        "quote_first": "Las manecillas del reloj en medio de la pared señalaban las ocho menos diez. El café cerraba a las ocho.",
-        "quote_last": "",
+        "quote_time_case": "diez minutos menos las ocho",
+        "quote_first": "Las manecillas del reloj en el medio de la pared señalaban ",
+        "quote_last": ". El café cerraba a las ocho.",
         "title": "Antes de que el café se enfríe: Cuentos del café",
         "author": "Toshikazu Kawaguchi",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002977",
+        "time": "19:50",
+        "quote_time_case": "diez menos ocho",
+        "quote_first": "A las ",
+        "quote_last": ", bajó las escaleras para asegurarse de que la signora Buffi no estuviera dando vueltas en el pasillo y de que su puerta no estuviera abierta, y para asegurarse de que realmente No había nadie en el auto de Freddie.",
+        "title": "El talentoso Sr. Ripley",
+        "author": "Patricia Highsmith",
         "sfw": "unknown"
     }
 ]

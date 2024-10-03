@@ -1,32 +1,32 @@
 [
     {
-        "id": "002695",
-        "time": "17:38",
-        "quote_time_case": "17.38 horas.",
-        "quote_first": "Se queda mirando el teléfono y piensa: Suena. Llama ahora. Pero permanece inerte. ",
-        "quote_last": " Bunny ya habrá terminado su turno de limpieza.",
-        "title": "Tierra del cuco de la nube",
-        "author": "Anthony Doerr",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002696",
-        "time": "17:38",
-        "quote_time_case": "17.38 horas.",
-        "quote_first": "Eran las ",
-        "quote_last": " cuando el avión del Primer Ministro finalmente atravesó las nubes y apareció sobre el aeródromo de Heston. Cuando el suelo apareció a la vista, Legat pudo ver el tráfico a lo largo de Great West Road. Los vehículos estuvieron detenidos durante más de una milla en cualquier dirección. Había estado lloviendo mucho.",
-        "title": "Munich",
-        "author": "Robert Harris",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002697",
+        "id": "002654",
         "time": "17:38",
         "quote_time_case": "17:38",
         "quote_first": "Y entonces veo algo que reconozco. Algunos pequeños dígitos verdes, brillando en la oscuridad. Es el despertador de Ben. De algún modo estoy de vuelta aquí, en el apartamento. Parpadeo los números. ",
         "quote_last": ". Pero eso no puede ser correcto. Esa es la tarde.",
         "title": "El apartamento de París",
         "author": "Lucy Foley",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002655",
+        "time": "17:38",
+        "quote_time_case": "5.38 p.m.",
+        "quote_first": "Se queda mirando el teléfono y piensa: Suena. Llama ahora. Pero permanece inerte. ",
+        "quote_last": " Bunny ya habrá terminado con su turno de limpieza.",
+        "title": "Tierra del cuco de la nube",
+        "author": "Anthony Doerr",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002656",
+        "time": "17:38",
+        "quote_time_case": "5.38 p.m.",
+        "quote_first": "Eran ",
+        "quote_last": " cuando el avión del Primer Ministro finalmente atravesó las nubes y apareció sobre el aeródromo de Heston. Cuando el suelo apareció a la vista, Legat pudo ver el tráfico a lo largo de Great West Road. Los vehículos estuvieron detenidos durante más de una milla en cualquier dirección. Había estado lloviendo mucho.",
+        "title": "Munich",
+        "author": "Robert Harris",
         "sfw": "unknown"
     }
 ]

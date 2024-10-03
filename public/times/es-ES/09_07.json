@@ -1,36 +1,36 @@
 [
     {
-        "id": "001325",
+        "id": "001303",
         "time": "09:07",
         "quote_time_case": "9:07",
-        "quote_first": "Durante el viaje, Septimus leía el periódico y fumaba dos cigarrillos, llegando a Cannon Street a las ",
+        "quote_first": "Durante el viaje, Septimus leía su periódico y fumaba dos cigarrillos, llegando a Cannon Street a las ",
         "quote_last": ".",
         "title": "Rutina rota",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001326",
+        "id": "001304",
+        "time": "09:07",
+        "quote_time_case": "Pasado siete minutos",
+        "quote_first": "¿No había dicho el padre Presteign que el correo llegaba a las nueve o poco después? \"Poco después\" podría significar cualquier cosa. Podrían estar esperando media hora. Las nueve y cinco. ",
+        "quote_last": ". Y luego vino.",
+        "title": "Una cierta justicia",
+        "author": "P.D. James",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001305",
         "time": "09:07",
         "quote_time_case": "9:07",
         "quote_first": "El séptimo día las persianas de una ventana de la planta baja quedaron subidas por la mañana. Luke vio una luz encenderse y apagarse a las ",
-        "quote_last": ", dos horas después de que la Familia Deportiva se hubiera ido.",
+        "quote_last": ", dos horas completas después de que la Familia Deportiva se hubiera ido.",
         "title": "Entre los escondidos",
         "author": "Margaret Peterson Haddix",
         "sfw": "unknown"
     },
     {
-        "id": "001327",
-        "time": "09:07",
-        "quote_time_case": "9:07",
-        "quote_first": "Era una mañana resplandeciente, las ",
-        "quote_last": " según el reloj, cuando la señora Flett subió a bordo del Imperial Limited en la estación Tyndall, segura de que su vida estaba arruinada, pero logrando, gracias a un esfuerzo de voluntad, mantenerse erguida y fingir una actitud positiva. aire de preocupación y vivacidad.",
-        "title": "Los diarios de piedra",
-        "author": "Carol Shields",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001328",
+        "id": "001306",
         "time": "09:07",
         "quote_time_case": "9:07 am",
         "quote_first": "",
@@ -40,13 +40,13 @@
         "sfw": "sfw"
     },
     {
-        "id": "001329",
+        "id": "001307",
         "time": "09:07",
-        "quote_time_case": "Pasaron siete minutos",
-        "quote_first": "¿No había dicho el padre Presteign que el correo llegaba a las nueve o poco después? \"Poco después\" podría significar cualquier cosa. Podrían estar esperando media hora. Nueve y cinco. ",
-        "quote_last": ". Y luego vino.",
-        "title": "Una cierta justicia",
-        "author": "P.D. James",
-        "sfw": "sfw"
+        "quote_time_case": "9:07",
+        "quote_first": "Era una mañana resplandeciente, ",
+        "quote_last": " según el reloj cuando la señora Flett subió a bordo del Imperial Limited en la estación Tyndall, segura de que su vida estaba arruinada, pero logrando, mediante un esfuerzo de voluntad, para mantenerse erguida y fingir un aire de preocupación y vivacidad.",
+        "title": "Los diarios de piedra",
+        "author": "Carol Shields",
+        "sfw": "unknown"
     }
 ]

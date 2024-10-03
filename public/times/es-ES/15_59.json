@@ -1,52 +1,52 @@
 [
     {
-        "id": "002415",
+        "id": "002379",
         "time": "15:59",
-        "quote_time_case": "* casi 4",
-        "quote_first": "Miró su reloj: eran casi las cuatro. Ayudó a Delphine a levantarse y la condujo por un pasillo hasta una puerta trasera que daba al jardín del hospital.",
-        "quote_last": "",
-        "title": "La tarde azul",
-        "author": "William Boyd",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002416",
-        "time": "15:59",
-        "quote_time_case": "* cerca de cuatro",
-        "quote_first": "Eran cerca de las cuatro cuando se abrió la puerta y entró en la habitación un mozo de cuadra con aspecto de borracho, mal arreglado, patillas, cara inflamada y ropa de mala reputación. Acostumbrado como estaba a los asombrosos poderes de mi amigo en el uso de disfraces, tuve que mirar tres veces antes de estar seguro de que efectivamente era él.",
-        "quote_last": "",
-        "title": "Las aventuras de Sherlock Holmes",
-        "author": "Sir Arthur Conan Doyle",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002417",
-        "time": "15:59",
-        "quote_time_case": "* un minuto para las cuatro",
-        "quote_first": "Estaba cruzando la puerta del seto Gilson a las cuatro menos un minuto.<br>Pero había llegado a Queen Anne Hill a las tres. Durante una hora había caminado por el camino de la cima, mirando los vapores que había debajo, apretando alternativamente sus manos con deseo por Claire, y finalmente, tímidamente, decidió que no iría a su casa, que no la volvería a ver nunca más.",
-        "quote_last": "",
+        "quote_time_case": "un minuto menos las cuatro",
+        "quote_first": "Estaba cruzando la puerta del seto Gilson a las ",
+        "quote_last": ".<br>Pero había llegado a Queen Anne Hill a las tres. Durante una hora había caminado por el camino de la cima, mirando los vapores que había debajo, apretando alternativamente sus manos con deseo por Claire, y finalmente, tímidamente, decidió que no iría a su casa, que nunca la volvería a ver.",
         "title": "Aire libre",
         "author": "Sinclair Lewis",
         "sfw": "sfw"
     },
     {
-        "id": "002418",
+        "id": "002380",
+        "time": "15:59",
+        "quote_time_case": "un minuto para las cuatro",
+        "quote_first": "Como faltaba ",
+        "quote_last": " cuando Hedworth Westerling, ahora jefe de personal tanto de nombre como de poder, se apeó del automóvil gris que giró en Galland Drive, el El chófer se pensó lo suficientemente bien como para olvidar la aglomeración de suministros y ambulancias que habían retrasado el coche de Su Excelencia durante al menos noventa segundos en la calle principal de la ciudad.",
+        "title": "El último disparo",
+        "author": "Frederick Palmer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002381",
+        "time": "15:59",
+        "quote_time_case": "cerca de las cuatro",
+        "quote_first": "Eran ",
+        "quote_last": " cuando se abrió la puerta y entró en la habitación un mozo de cuadra con aspecto de borracho, mal arreglado, patillas, cara inflamada y ropa de mala reputación. . Acostumbrado como estaba a los asombrosos poderes de mi amigo en el uso de disfraces, tuve que mirar tres veces antes de estar seguro de que efectivamente era él.",
+        "title": "Las aventuras de Sherlock Holmes",
+        "author": "Sir Arthur Conan Doyle",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002382",
         "time": "15:59",
         "quote_time_case": "Hacia las cuatro",
         "quote_first": "",
-        "quote_last": " la situación del ejército inglés era grave. El Príncipe de Orange estaba al mando del centro, Hill del ala derecha y Picton del ala izquierda. El Príncipe de Orange, desesperado e intrépido, gritó a los belgas holandeses: \"¡Nassau! ¡Brunswick! ¡No retrocedáis nunca!\".",
+        "quote_last": " el estado del ejército inglés era grave. El Príncipe de Orange estaba al mando del centro, Hill del ala derecha y Picton del ala izquierda. El Príncipe de Orange, desesperado e intrépido, gritó a los belgas holandeses: \"¡Nassau! ¡Brunswick! ¡No retrocedáis nunca!\".",
         "title": "Los Miserables",
         "author": "Victor Hugo",
         "sfw": "unknown"
     },
     {
-        "id": "002419",
+        "id": "002383",
         "time": "15:59",
-        "quote_time_case": "un minuto para las cuatro",
-        "quote_first": "Como faltaban ",
-        "quote_last": " cuando Hedworth Westerling, ahora jefe de personal de nombre y poder, se apeó del automóvil gris que giró en Galland Drive, el chófer se pensó lo suficientemente bien como para olvidarse de la aglomeración de suministros y ambulancias. que había retrasado al menos noventa segundos el coche de Su Excelencia en la calle principal de la localidad.",
-        "title": "El último disparo",
-        "author": "Frederick Palmer",
-        "sfw": "sfw"
+        "quote_time_case": "casi las 4",
+        "quote_first": "Miró su reloj: eran ",
+        "quote_last": ". Ayudó a Delphine a levantarse y la condujo por un pasillo hasta una puerta trasera que daba al jardín del hospital.",
+        "title": "La tarde azul",
+        "author": "William Boyd",
+        "sfw": "unknown"
     }
 ]

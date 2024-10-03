@@ -1,26 +1,16 @@
 [
     {
-        "id": "003307",
-        "time": "21:47",
-        "quote_time_case": "* trece minutos para las diez",
-        "quote_first": "Para Hunter, que estaba entrenado para anotar los tiempos exactamente, la emergencia final comenzó a las diez menos trece minutos.",
-        "quote_last": "",
-        "title": "Elegía a un revolucionario",
-        "author": "C.J. Driver",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003308",
+        "id": "003256",
         "time": "21:47",
         "quote_time_case": "9:47",
-        "quote_first": "“Ella está muerta”, confirmó. “Debe haber sido muy repentino y con un mínimo de dolor”. Miró su reloj; Eran las ",
+        "quote_first": "“Ella está muerta”, confirmó. “Debe haber sido muy repentino y con un mínimo de dolor”. Miró su reloj; la hora era ",
         "quote_last": ". Cubrió a su paciente con una manta y llamó a una ambulancia.",
-        "title": "Viejo amor",
+        "title": "viejo amor",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "003309",
+        "id": "003257",
         "time": "21:47",
         "quote_time_case": "nueve cuarenta y siete",
         "quote_first": "Bien. . . ",
@@ -28,5 +18,15 @@
         "title": "Ritos de sangre",
         "author": "Jim Butcher",
         "sfw": "sfw"
+    },
+    {
+        "id": "003258",
+        "time": "21:47",
+        "quote_time_case": "diez menos trece minutos",
+        "quote_first": "Para Hunter, que estaba entrenado para anotar los tiempos exactamente, la emergencia final comenzó a las ",
+        "quote_last": ".",
+        "title": "Elegía a un revolucionario",
+        "author": "C.J. Driver",
+        "sfw": "unknown"
     }
 ]

@@ -1,41 +1,41 @@
 [
     {
-        "id": "000764",
+        "id": "000751",
         "time": "05:45",
         "quote_time_case": "seis menos cuarto",
         "quote_first": "“Pero ya es hora de acostarse: ya son las ",
-        "quote_last": "”.<br>Y efectivamente, ya empezaba a amanecer: los jóvenes vaciaron sus copas y luego se despidieron.",
-        "title": "la reina de Espadas",
+        "quote_last": ".”<br>Y efectivamente ya empezaba a amanecer: los jóvenes vaciaron sus vasos y luego se despidieron.",
+        "title": "La reina de espadas",
         "author": "Alexsander Pushkin",
         "sfw": "sfw"
     },
     {
-        "id": "000765",
+        "id": "000752",
         "time": "05:45",
-        "quote_time_case": "seis menos cuarto",
-        "quote_first": "“Las ",
+        "quote_time_case": "las seis menos cuarto",
+        "quote_first": "“Un ",
         "quote_last": "”, respondió la partera.<br>“¿Y si realmente me estoy muriendo?” -pensó Olga Mijálovna, mirando la cabeza de su marido y los cristales que golpeaban la lluvia.",
-        "title": "La fiesta",
+        "title": "el partido",
         "author": "Anton Pavlovich Chekhov",
         "sfw": "sfw"
     },
     {
-        "id": "000766",
+        "id": "000753",
         "time": "05:45",
         "quote_time_case": "5:45",
         "quote_first": "A las ",
-        "quote_last": " de la mañana siguiente, el general estaba parado afuera de la tienda de George con su uniforme de gala y un maletín de cuero negro.",
+        "quote_last": " de la mañana siguiente, el general estaba parado afuera de la tienda de George con uniforme de gala y llevando un maletín de cuero negro.",
         "title": "Caminos de gloria",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "000767",
+        "id": "000754",
         "time": "05:45",
         "quote_time_case": "5:45",
-        "quote_first": "A las ",
-        "quote_last": ", un transformador de energía en un poste al lado del depósito de camiones abandonado de Tracker Brothers explotó en un destello de luz violeta, esparciendo trozos retorcidos de metal sobre el techo de tejas.",
-        "title": "It (Eso)",
+        "quote_first": "En ",
+        "quote_last": " un transformador de potencia en un poste al lado del depósito de camiones abandonado de Tracker Brothers explotó en un destello de luz púrpura, esparciendo trozos retorcidos de metal sobre el techo de tejas. .",
+        "title": "ÉL",
         "author": "Stephen King",
         "sfw": "unknown"
     }

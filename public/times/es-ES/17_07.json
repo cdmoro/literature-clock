@@ -1,22 +1,22 @@
 [
     {
-        "id": "002639",
+        "id": "002598",
         "time": "17:07",
-        "quote_time_case": "* Aproximadamente cinco",
-        "quote_first": "Hacia las cinco, el Abad, un joven terrier de Manchester, empezó a gorjear. Se paró sobre el cuerpo de su dueña, Flora, con las patas delanteras en el alféizar del balcón, miró a través de las persianas de mimbre verde y tembló. Podía ver al granjero en el campo y a Edward dormido en el balcón de al lado.",
-        "quote_last": "",
-        "title": "La gente con los perros",
-        "author": "Christina Stead",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002640",
-        "time": "17:07",
-        "quote_time_case": "cinco y siete minutos",
-        "quote_first": "Mientras miraba su enorme esfera y el péndulo que se movía de un lado a otro con regularidad y lentitud en el espacio, como si su balanceo significara dividir la eternidad, vi sus agujas apuntando a las ",
+        "quote_time_case": "las cinco y siete minutos",
+        "quote_first": "Mientras miraba su enorme esfera, y el péndulo que se movía de un lado a otro regular y lentamente en el Espacio, como si su balanceo significara dividir la eternidad, vi sus agujas apuntando a ",
         "quote_last": ".",
         "title": "Cuentos de pesadillas",
         "author": "H.P. Blavatsky",
         "sfw": "sfw"
+    },
+    {
+        "id": "002599",
+        "time": "17:07",
+        "quote_time_case": "Alrededor de las cinco",
+        "quote_first": "",
+        "quote_last": ", el Abad, un joven Manchester terrier, comenzó a gorjear. Se paró sobre el cuerpo de su dueña, Flora, con las patas delanteras en el alféizar del balcón, miró a través de las persianas de mimbre verde y tembló. Podía ver al granjero en el campo y a Edward dormido en el balcón de al lado.",
+        "title": "La gente con los perros",
+        "author": "Christina Stead",
+        "sfw": "unknown"
     }
 ]

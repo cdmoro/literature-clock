@@ -1,16 +1,6 @@
 [
     {
-        "id": "000515",
-        "time": "03:42",
-        "quote_time_case": "3:42",
-        "quote_first": "Llegaremos a Yellow Sky a las ",
-        "quote_last": ", dijo, mirándola tiernamente a los ojos.<br>\"Oh, ¿verdad?\" dijo, como si no se hubiera dado cuenta. Mostrar sorpresa ante la declaración de su marido era parte de su amabilidad de esposa.",
-        "title": "La novia llega al cielo amarillo",
-        "author": "Stephen Crane",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000516",
+        "id": "000507",
         "time": "03:42",
         "quote_time_case": "3:42 a.m.",
         "quote_first": "El teléfono sonó a las ",
@@ -20,13 +10,23 @@
         "sfw": "sfw"
     },
     {
-        "id": "000517",
+        "id": "000508",
         "time": "03:42",
         "quote_time_case": "3:42 a.m.",
-        "quote_first": "Veamos qué arrojan esas órdenes de registro. Hasta ahora Pelley ha admitido que estuvo en la hoguera. El laboratorio dice que las huellas de sus botas coinciden con las marcas en el cuerpo de Leena. Pelley no puede explicar el tiempo transcurrido entre la última vez que lo vieron saliendo de la hoguera con el brazo alrededor de Leena y el momento en que llegó a casa a las ",
-        "quote_last": " en un estado de ebriedad grave, según su esposa, Lacey.",
+        "quote_first": "Veamos qué arrojan esas órdenes de registro. Hasta ahora Pelley ha admitido que estuvo en la hoguera. El laboratorio dice que las huellas de sus botas coinciden con las marcas en el cuerpo de Leena. Pelley no puede explicar el tiempo transcurrido entre la última vez que lo vieron saliendo de la hoguera con su brazo alrededor de Leena y el momento en que llegó a casa a las ",
+        "quote_last": " en un estado de ebriedad grave. según su esposa, Lacey.",
         "title": "Debajo del Puente del Diablo",
         "author": "Loreth Anne White",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000509",
+        "time": "03:42",
+        "quote_time_case": "3:42",
+        "quote_first": "Llegaremos a Yellow Sky a las ",
+        "quote_last": ", dijo, mirándola tiernamente a los ojos.<br>\"Oh, ¿verdad?\" dijo, como si no se hubiera dado cuenta. Mostrar sorpresa ante la declaración de su marido era parte de su amabilidad de esposa.",
+        "title": "La novia llega al cielo amarillo",
+        "author": "Stephen Crane",
         "sfw": "unknown"
     }
 ]

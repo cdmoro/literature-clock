@@ -1,32 +1,32 @@
 [
     {
-        "id": "001431",
+        "id": "001409",
         "time": "09:45",
-        "quote_time_case": "9.45",
-        "quote_first": "9.15, 9.30, ",
-        "quote_last": ", 10! Bond sintió que la excitación crecía dentro de él como el pelaje de un gato.",
-        "title": "En el servicio Secreto de su Majestad",
-        "author": "Ian Fleming",
+        "quote_time_case": "las diez menos cuarto",
+        "quote_first": "A las ",
+        "quote_last": " de la mañana del 15 de agosto, Leandro cruzó hacia el pueblo de Troya. Tenía el estómago apretado por la anticipación y, seamos realistas, amigos, un cosquilleo de miedo. Su piel se sentía fría.",
+        "title": "Los Tommyknockers",
+        "author": "Stephen King",
         "sfw": "unknown"
     },
     {
-        "id": "001432",
+        "id": "001410",
         "time": "09:45",
-        "quote_time_case": "* un cuarto para las diez",
-        "quote_first": "Miró el reloj de la mesa de noche y vio que eran las diez menos cuarto. Había dormido otras dos horas. Por un momento se alarmó; tal vez, después de todo, había sufrido una conmoción cerebral o una fractura.",
-        "quote_last": "",
+        "quote_time_case": "las diez menos cuarto",
+        "quote_first": "Miró el reloj en la mesa de noche y vio que eran ",
+        "quote_last": ". Había dormido otras dos horas. Por un momento se alarmó; tal vez, después de todo, había sufrido una conmoción cerebral o una fractura.",
         "title": "Completamente oscuro, sin estrellas",
         "author": "Stephen King",
         "sfw": "unknown"
     },
     {
-        "id": "001433",
+        "id": "001411",
         "time": "09:45",
-        "quote_time_case": "las diez menos cuarto",
-        "quote_first": "A ",
-        "quote_last": " de la mañana del 15 de agosto, Leandro cruzó la ciudad de Troya. Tenía el estómago apretado por la anticipación y, seamos realistas, amigos, un cosquilleo de miedo. Su piel se sentía fría.",
-        "title": "Los Tommyknockers",
-        "author": "Stephen King",
+        "quote_time_case": "9.45",
+        "quote_first": "9.15, 9.30, ",
+        "quote_last": ", 10! Bond sintió que la excitación crecía dentro de él como el pelaje de un gato.",
+        "title": "Al servicio secreto de Su Majestad",
+        "author": "Ian Fleming",
         "sfw": "unknown"
     }
 ]

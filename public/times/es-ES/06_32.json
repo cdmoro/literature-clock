@@ -1,42 +1,42 @@
 [
     {
-        "id": "000865",
+        "id": "000848",
         "time": "06:32",
-        "quote_time_case": "siete menos veintiocho",
-        "quote_first": "Los familiares números de radio en mi muñeca izquierda confirmaron la torre del reloj. Eran las ",
-        "quote_last": " minutos. Parecía estar llenando un pijama de color granate llamativo que ciertamente no era mío. Mi vis-a-vis llevaba un pequeño número amarillo.",
-        "title": "Demasiado parecido al relámpago",
-        "author": "Dana Chambers",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000866",
-        "time": "06:32",
-        "quote_time_case": "6:32 a.m.",
+        "quote_time_case": "6:32 A.M.",
         "quote_first": "",
-        "quote_last": "<br>Marcos se había despertado, pero no estaba despierto. Su cabeza estaba nadando en pensamientos incoherentes. La primera visión que pasó por su mente fue Elizabeth; él sonrió.",
+        "quote_last": "<br>Marcos se había despertado, pero no estaba despierto. Su cabeza nadaba con pensamientos incoherentes. La primera visión que pasó por su mente fue Elizabeth; él sonrió.",
         "title": "¿Se lo contamos al presidente?",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "000867",
+        "id": "000849",
         "time": "06:32",
         "quote_time_case": "6:32 a.m.",
-        "quote_first": "Ya llevaba siete minutos aparcado allí; sólo podía permitirse unos cuantos más antes de que alguien sospechara.<br>\"Vamos... vamos\", estaba murmurando. \"Terminemos con esto de una vez.\"<br>Miró su reloj: ",
+        "quote_first": "Ya llevaba siete minutos aparcado allí; sólo podía permitirse unos cuantos más antes de que alguien empezara a sospechar.<br>\"Vamos... vamos\", estaba murmurando. \"Terminemos con esto de una vez.\"<br>Miró su reloj: ",
         "quote_last": "",
         "title": "La ambición",
         "author": "Lee Strobel",
         "sfw": "sfw"
     },
     {
-        "id": "000868",
+        "id": "000850",
         "time": "06:32",
-        "quote_time_case": "6:32 a.m.",
+        "quote_time_case": "6:32 A.M.",
         "quote_first": "AEROPUERTO DE BURBANK<br>",
         "quote_last": "<br>El tráfico de la hora pico avanzaba lentamente bajo la pálida luz de la mañana. Casey giró su espejo retrovisor y se inclinó para revisar su maquillaje.",
         "title": "Estructura de avión",
         "author": "Michael Crichton",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000851",
+        "time": "06:32",
+        "quote_time_case": "veintiocho minutos para las siete",
+        "quote_first": "Los familiares números de radio en mi muñeca izquierda confirmaron la torre del reloj. Eran ",
+        "quote_last": ". Parecía estar llenando un pijama de color granate llamativo que ciertamente no era mío. Mi vis-a-vis llevaba un pequeño número amarillo.",
+        "title": "Demasiado parecido al relámpago",
+        "author": "Dana Chambers",
         "sfw": "unknown"
     }
 ]

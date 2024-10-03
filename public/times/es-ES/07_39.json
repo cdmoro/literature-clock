@@ -1,22 +1,22 @@
 [
     {
-        "id": "001019",
-        "time": "07:39",
-        "quote_time_case": "7.39",
-        "quote_first": "Ahora bien, en la estación, ¿recuerda haber hablado con el señor Joseph Markew?<br>\"Sí, efectivamente. Estaba en el andén esperando mi tren habitual, el de las ",
-        "quote_last": ", cuando me abordó\".",
-        "title": "arturo y george",
-        "author": "Julian Barnes",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001020",
+        "id": "001001",
         "time": "07:39",
         "quote_time_case": "7:39",
         "quote_first": "A las ",
-        "quote_last": " la aeronave entró en pista para prepararse para el despegue. Cuando se detuvo, Dexter le preguntó a la azafata qué los estaba deteniendo.",
+        "quote_last": " la aeronave rodó hacia la pista para preparar el despegue. Cuando se detuvo, Dexter le preguntó a la azafata qué los estaba deteniendo.",
         "title": "Honor entre ladrones",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
+    },
+    {
+        "id": "001002",
+        "time": "07:39",
+        "quote_time_case": "7.39",
+        "quote_first": "Ahora, en la estación, ¿recuerda haber hablado con el Sr. Joseph Markew?<br>\"Sí, efectivamente. Estaba parado en el andén esperando mi tren habitual: el ",
+        "quote_last": "- cuando me abordó.\"",
+        "title": "arturo y george",
+        "author": "Julian Barnes",
+        "sfw": "unknown"
     }
 ]

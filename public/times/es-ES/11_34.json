@@ -1,22 +1,22 @@
 [
     {
-        "id": "001788",
-        "time": "11:34",
-        "quote_time_case": "11.34",
-        "quote_first": "Nochebuena de 1995. ",
-        "quote_last": " horas. La primera vez, Almasa lo dice lenta y suavemente, como si realmente buscara una respuesta: \"¿Me estás hablando a mí?\". Se mira en el pequeño y sucio espejo del baño de un tren.",
-        "title": "Cómo obtener buenos resultados y ser justo",
-        "author": "Adnan Mahmutovic",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001789",
+        "id": "001762",
         "time": "11:34",
         "quote_time_case": "11:34 a.m.",
         "quote_first": "El detective privado se reunió con él a las ",
-        "quote_last": ", sólo unos minutos después de que el expreso de Paddington llegara a la estación de Temple Meads. Mitchell se sentó en la silla frente a su único cliente, aunque hacía varios meses que no recibía ninguna remuneración.",
+        "quote_last": ", sólo unos minutos después de que el expreso de Paddington hubiera llegado a la estación de Temple Meads. Mitchell se sentó en la silla frente a su único cliente, aunque hacía varios meses que no recibía ninguna remuneración.",
         "title": "Los pecados del padre",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
+    },
+    {
+        "id": "001763",
+        "time": "11:34",
+        "quote_time_case": "11.34 am",
+        "quote_first": "Nochebuena de 1995. ",
+        "quote_last": ". La primera vez, Almasa lo dice lenta y suavemente, como si realmente buscara una respuesta: \"¿Me estás hablando a mí?\". Se mira en el pequeño y sucio espejo del baño de un tren.",
+        "title": "Cómo obtener buenos resultados y ser justo",
+        "author": "Adnan Mahmutovic",
+        "sfw": "unknown"
     }
 ]

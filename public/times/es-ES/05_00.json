@@ -1,80 +1,180 @@
 [
     {
-        "id": "000661",
+        "id": "000651",
+        "time": "05:00",
+        "quote_time_case": "5 en punto",
+        "quote_first": "Precisamente a las ",
+        "quote_last": ", como todas las mañanas, horas antes de que surgiera un solo movimiento en las habitaciones de arriba, Dora se arrastró fuera de su cama y caminó por el pasillo. Fue a la cocina, donde puso a hervir una tetera y dejó caer una bolsa de Earl Grey en una taza.",
+        "title": "Cuando el verano era nuestro",
+        "author": "Roxanne Veletzos",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000652",
         "time": "05:00",
         "quote_time_case": "cinco de la mañana",
-        "quote_first": "Poco después de las ",
+        "quote_first": "“Acabo de tomar todas las pastillas que había en el mueble del baño”, dice. “Sesenta y dos aspirinas con codeína, veinticuatro Valium. Pensé que tal vez te gustaría despedirte”.<br>“Eso fue estúpido, Martha”, dice Nate. “¿De verdad lo hiciste?”<br>“Espera y verás”, dice, riendo. \"Espera hasta ",
+        "quote_last": " cuando puedas inspeccionar el cuerpo\".",
+        "title": "La vida antes del hombre",
+        "author": "Margaret Atwood",
+        "sfw": "nsfw"
+    },
+    {
+        "id": "000653",
+        "time": "05:00",
+        "quote_time_case": "5:00 A.M.",
+        "quote_first": "Una suave luz amarilla entraba por las ventanillas laterales. Era de mañana: ¡había dormido toda la noche! Miró rápidamente su reloj: ",
+        "quote_last": " Aún faltaban casi seis horas para que fuera necesario retirar el barco.",
+        "title": "Parque Jurásico",
+        "author": "Michael Crichton",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000654",
+        "time": "05:00",
+        "quote_time_case": "cinco",
+        "quote_first": "Muldoon frunció el ceño. “¿Las cercas electrificadas estaban apagadas?”<br>“Sí”.<br>“¿Todas? ¿Desde ",
+        "quote_last": " esta mañana? ¿Durante las últimas cinco horas?”<br>“Sí”.",
+        "title": "Parque Jurásico",
+        "author": "Michael Crichton",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000655",
+        "time": "05:00",
+        "quote_time_case": "cinco en punto",
+        "quote_first": "EL MARTILLO GOLPEÓ la diana en la barandilla fuera del cuartel general del campamento a las ",
+        "quote_last": " como siempre. Es hora de levantarse. El ruido entrecortado fue amortiguado por el hielo de dos dedos de espesor en las ventanas y pronto se apagó. Demasiado frío para que el guardián siguiera martillando.",
+        "title": "Un día en la vida de Ivan Denosovich",
+        "author": "Aleksandr Solzhenitsyn",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000656",
+        "time": "05:00",
+        "quote_time_case": "las cinco de la mañana",
+        "quote_first": "Según León… pasado mañana. El ataque está programado para pasado mañana alrededor de ",
+        "quote_last": ". Su rostro todavía estaba en sombras.",
+        "title": "Un sendero a través del tiempo",
+        "author": "Jodi Taylor",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000657",
+        "time": "05:00",
+        "quote_time_case": "cinco",
+        "quote_first": "Sixsmith,<br>Sentado en mi escritorio en bata. La campana de la iglesia suena ",
+        "quote_last": ". Otro amanecer sediento. Mi vela se ha consumido. Una noche agotadora al revés.",
+        "title": "Atlas de nubes",
+        "author": "David Mitchell",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000658",
+        "time": "05:00",
+        "quote_time_case": "Las cinco en punto",
+        "quote_first": "",
+        "quote_last": " apenas habían dado la mañana del diecinueve de enero, cuando Bessie trajo una vela a mi armario y me encontró ya levantado y casi vestido.",
+        "title": "Jane Eyre",
+        "author": "Charlotte Brontë",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000659",
+        "time": "05:00",
+        "quote_time_case": "cinco",
+        "quote_first": "Estaban despiertos desde las ",
+        "quote_last": " de esa mañana, como recordará el lector; pero ¡bah! El domingo no existe el cansancio, dijo Favorito; el domingo el cansancio no sirve.",
+        "title": "Los Miserables",
+        "author": "Victor Hugo",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000660",
+        "time": "05:00",
+        "quote_time_case": "cinco ",
+        "quote_first": "Mi abuelo Arthur una vez me llevó a pescar. Yo tenía siete años.<br>Supongo que debía haber ido a pescar con frecuencia, aunque nunca recuerdo que trajera ningún pescado, ni tampoco ningún otro viaje de pesca.<br>Me despertó a las ",
+        "quote_last": ", antes de que saliera el sol.",
+        "title": "La tragedia cómica o comedia trágica de Mr. Punch",
+        "author": "Neil Gaiman",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000661",
+        "time": "05:00",
+        "quote_time_case": "cinco",
+        "quote_first": "Jueves por la mañana. El día de. Billy se levanta a las ",
+        "quote_last": ". Come tostadas con un vaso de agua para acompañarlas. Nada de café. Sin cafeína de ningún tipo hasta terminar el trabajo. Cuando se pone el 700 al hombro y mira a través del visor Leupold, quiere tener las manos perfectamente firmes.",
+        "title": "Billy veranos",
+        "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000662",
+        "time": "05:00",
+        "quote_time_case": "las cinco de la mañana",
+        "quote_first": "Ni siquiera un bostezo. No tenía ni remotamente sueño. Me di cuenta de que mi sentido del equilibrio estaba perdido: casi me caigo cuando intenté levantarme, pero lo superé y ordené por un rato, deslizando las videocasetes en sus estuches y colocándolas nuevamente en el estante. Pensé que alguna actividad podría cansarme. Tomé Zyprexa y un poco más de Ativan. Me comí un puñado de melatonina, masticándola como una vaca rumiando. Nada funcionaba.<br>Así que llamé a Trevor.<br>“Son ",
+        "quote_last": "”, dijo. Parecía irritado y confuso, pero había respondido.",
+        "title": "Mi año de descanso y relajación",
+        "author": "Ottessa Moshfegh",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000663",
+        "time": "05:00",
+        "quote_time_case": "cinco de la mañana",
+        "quote_first": "Sixsmith,<br>Me pegué un tiro en el paladar a las ",
+        "quote_last": " esta mañana con la Luger de V.A. ¡Pero te vi, querido, querido amigo! ¡Cuánto me conmueve que te importe tanto! Al acecho del campanario, ayer, al atardecer. Por pura casualidad, no me viste primero.",
+        "title": "Atlas de nubes",
+        "author": "David Mitchell",
+        "sfw": "nsfw"
+    },
+    {
+        "id": "000664",
+        "time": "05:00",
+        "quote_time_case": "cinco de la mañana",
+        "quote_first": "Hice los cálculos de Danièle mentalmente. “Si empezamos a las diez, caminamos cuatro horas, descansamos una, caminamos otras dos, son siete horas en total. Eso nos llevará a ",
+        "quote_last": ". Hace siete horas, no será mediodía hasta que resurjamos”.",
+        "title": "Las Catacumbas",
+        "author": "Jeremy Bates",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000665",
+        "time": "05:00",
+        "quote_time_case": "cinco",
+        "quote_first": "La puerta trasera sin llave se abrió lentamente para revelar a Fiona Athey, con una mirada de disculpa en su rostro. Sostenía una pila de folletos debajo de su brazo izquierdo. “Espero no haberte despertado ahora. Entonces volveré en otro momento. Lo siento.\" Se giró para irse.<br>“No, quédate”, respondió Marjan. “He estado despierto desde ",
+        "quote_last": ". Hacer una nueva tanda de pan. ¿Por qué no vienes a tomar una taza de té?",
+        "title": "Sopa De Granada",
+        "author": "Marsha Mehran",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000666",
+        "time": "05:00",
+        "quote_time_case": "5 a.m.",
+        "quote_first": "Poco después de ",
         "quote_last": " notó que los bordes del cielo comenzaban a tornarse de un color gris ostra. Poco a poco emergieron las oscuras crestas de las colinas boscosas de pinos, dentadas como dientes de sierra contra la luz que se extendía, mientras en los valles la niebla blanca parecía tan sólida como un glaciar.",
         "title": "Munich",
         "author": "Robert Harris",
         "sfw": "unknown"
     },
     {
-        "id": "000662",
+        "id": "000667",
         "time": "05:00",
-        "quote_time_case": "5 de la mañana",
+        "quote_time_case": "5 a.m. ",
         "quote_first": "Fue en el municipio de Dunwich, en una granja grande y apenas habitada situada en la ladera de una colina a 4 millas del pueblo y a una milla y media de cualquier otra vivienda, donde nació Wilbur Whately a las ",
-        "quote_last": " del domingo 2 de febrero de 1913. Se recordó la fecha porque era la Candelaria, que la gente de Dunwich celebra curiosamente con otro nombre.",
+        "quote_last": " el domingo 2 de febrero de 1913. La fecha se recordó porque era la Candelaria, que la gente de Dunwich curiosamente observa con otro nombre.",
         "title": "El horror de Dunwich",
         "author": "H.P. Lovecraft",
         "sfw": "unknown"
     },
     {
-        "id": "000663",
-        "time": "05:00",
-        "quote_time_case": "las cinco",
-        "quote_first": "“Acabo de tomar todas las pastillas que había en el mueble del baño”, dice. “Sesenta y dos aspirinas con codeína, veinticuatro Valium. Pensé que tal vez te gustaría despedirte”.<br>“Eso fue estúpido, Martha”, dice Nate. “¿De verdad lo hiciste?”<br>“Espera y verás”, dice, riendo. \"Espera hasta ",
-        "quote_last": " de la mañana para inspeccionar el cuerpo\".",
-        "title": "La vida antes del hombre",
-        "author": "Margaret Atwood",
-        "sfw": "nsfw"
-    },
-    {
-        "id": "000664",
-        "time": "05:00",
-        "quote_time_case": "las cinco",
-        "quote_first": "Ni siquiera un bostezo. No tenía ni remotamente sueño. Me di cuenta de que mi sentido del equilibrio estaba perdido: casi me caigo cuando intenté levantarme, pero lo superé y ordené por un rato, deslizando las videocasetes en sus estuches y colocándolas nuevamente en el estante. Pensé que alguna actividad podría cansarme. Tomé Zyprexa y un poco más de Ativan. Me comí un puñado de melatonina, masticándola como una vaca rumiando. Nada funcionaba.<br>Así que llamé a Trevor.<br>“Son ",
-        "quote_last": " de la mañana”, dijo. Parecía irritado y confuso, pero había respondido.",
-        "title": "Mi año de descanso y relajación",
-        "author": "Ottessa Moshfegh",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000665",
-        "time": "05:00",
-        "quote_time_case": "las cinco",
-        "quote_first": "Hice los cálculos de Danièle mentalmente. “Si empezamos a las diez, caminamos cuatro horas, descansamos una, caminamos otras dos, son siete horas en total. Eso nos llevará a ",
-        "quote_last": " de la mañana. Hace siete horas, no será mediodía hasta que resurjamos”.",
-        "title": "Las Catacumbas",
-        "author": "Jeremy Bates",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000666",
-        "time": "05:00",
-        "quote_time_case": "las cinco",
-        "quote_first": "Apenas habían dado ",
-        "quote_last": " de la mañana del diecinueve de enero, cuando Bessie trajo una vela a mi armario y me encontró ya levantado y casi vestido.",
-        "title": "Jane Eyre",
-        "author": "Charlotte Brontë",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000667",
-        "time": "05:00",
-        "quote_time_case": "las cinco",
-        "quote_first": "Estaban despiertos desde ",
-        "quote_last": " de la mañana, como recordará el lector; pero ¡bah! El domingo no existe el cansancio, dijo Favorito; el domingo el cansancio no sirve.",
-        "title": "Los Miserables",
-        "author": "Victor Hugo",
-        "sfw": "unknown"
-    },
-    {
         "id": "000668",
         "time": "05:00",
-        "quote_time_case": "las cinco",
-        "quote_first": "Poco después de ",
-        "quote_last": " de esta fría mañana de septiembre, ¿el carro del pescadero, que contiene a Kirsten y Emilia y todas las posesiones que han podido reunir en el tiempo que se les ha concedido, es expulsado por las puertas de Rosenborg?",
+        "quote_time_case": "cinco en punto",
+        "quote_first": "Justo después de las ",
+        "quote_last": " en esta fría mañana de septiembre, el carro de la pescadería, que contenía a Kirsten y Emilia y todas las posesiones que habían podido reunir en el tiempo que se les había concedido. , es expulsado de las puertas de Rosenborg?",
         "title": "Música y silencio",
         "author": "Rose Tremain",
         "sfw": "unknown"
@@ -82,29 +182,29 @@
     {
         "id": "000669",
         "time": "05:00",
-        "quote_time_case": "las cinco",
-        "quote_first": "El día transcurrió lento, hasta ",
+        "quote_time_case": "Cinco",
+        "quote_first": "Los ojos fríos del duque quedaron deslumbrados por el brillo de mil joyas que centelleaban sobre la mesa. Sus oídos se llenaron de repiques cuando los relojes empezaron a sonar. \"¡Uno!\" dijo Hark. \"¡Dos!\" gritó Zorn de Zorna. \"¡Tres!\" La voz del Duque casi susurró. \"¡Cuatro!\" -suspiró Saralinda-. \"",
+        "quote_last": "!\" —gritó el Golux y señaló la mesa. \"La tarea está hecha, los términos se han cumplido\", afirmó.",
+        "title": "Los 13 Relojes",
+        "author": "James Thurber",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000670",
+        "time": "05:00",
+        "quote_time_case": "cinco en punto",
+        "quote_first": "El día llegó lento, hasta las ",
         "quote_last": ". Luego surgió ante las colinas. Como rubíes obstaculizados o la luz. Un mosquete repentino se derrama",
         "title": "El día llegó lento, hasta las cinco en punto",
         "author": "Emily Dickinson",
         "sfw": "unknown"
     },
     {
-        "id": "000670",
-        "time": "05:00",
-        "quote_time_case": "las cinco",
-        "quote_first": "¿Qué es lo que hace que los jóvenes \"salgan del armario\" sino la noble ambición del matrimonio? ¿Qué les impulsa a acudir en tropel a los balnearios? ¿Qué los mantiene bailando hasta ",
-        "quote_last": " de la mañana durante toda una temporada mortal?",
-        "title": "Feria de la vanidad",
-        "author": "William Makepeace Thackeray",
-        "sfw": "unknown"
-    },
-    {
         "id": "000671",
         "time": "05:00",
-        "quote_time_case": "5 de la mañana.",
-        "quote_first": "Hay cosas peores que haber hecho tonterías en público. Hay cosas peores que estas traiciones en miniatura, cometidas, soportadas o sospechadas; Hay cosas peores que no poder dormir por pensar en ellas. Son las ",
-        "quote_last": " Todas las cosas peores llegan acechando y se quedan heladas alrededor de la cama con un aspecto cada vez peor.",
+        "quote_time_case": "5 a.m.",
+        "quote_first": "Hay cosas peores que haber hecho tonterías en público. Hay cosas peores que estas traiciones en miniatura, cometidas, soportadas o sospechadas; Hay cosas peores que no poder dormir por pensar en ellas. Son ",
+        "quote_last": " Todas las cosas peores entran acechando y se quedan heladas alrededor de la cama, viéndose cada vez peor y peor.",
         "title": "Cosas",
         "author": "Fleur Adcock",
         "sfw": "unknown"
@@ -112,131 +212,11 @@
     {
         "id": "000672",
         "time": "05:00",
-        "quote_time_case": "cinco",
-        "quote_first": "Muldoon frunció el ceño. “¿Las vallas electrificadas estaban apagadas?”<br>“Sí.”<br>“¿Todos ellos? ¿Desde las ",
-        "quote_last": " de la mañana? ¿Durante las últimas cinco horas?”<br>“Sí”.",
-        "title": "Parque jurásico",
-        "author": "Michael Crichton",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000673",
-        "time": "05:00",
-        "quote_time_case": "cinco",
-        "quote_first": "Sixsmith,<br>Sentado en mi escritorio en bata. La campana de la iglesia da las ",
-        "quote_last": ". Otro amanecer sediento. Mi vela se ha consumido. Una noche agotadora al revés.",
-        "title": "Atlas de nubes",
-        "author": "David Mitchell",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000674",
-        "time": "05:00",
-        "quote_time_case": "cinco",
-        "quote_first": "Mi abuelo Arthur una vez me llevó a pescar. Yo tenía siete años.<br>Supongo que debió haber ido a pescar con frecuencia, aunque nunca recuerdo que trajera ningún pescado, ni tampoco ningún otro viaje de pesca.<br>Me despertó a las ",
-        "quote_last": ", antes de que saliera el sol.",
-        "title": "La tragedia cómica o comedia trágica de Mr. Punch",
-        "author": "Neil Gaiman",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000675",
-        "time": "05:00",
-        "quote_time_case": "cinco",
-        "quote_first": "Jueves por la mañana. El día de. Billy se levanta a las ",
-        "quote_last": ". Come tostadas con un vaso de agua para acompañarlas. Nada de café. Sin cafeína de ningún tipo hasta terminar el trabajo. Cuando se pone el 700 al hombro y mira a través del visor Leupold, quiere tener las manos perfectamente firmes.",
-        "title": "Billy Summers",
-        "author": "Stephen King",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000676",
-        "time": "05:00",
-        "quote_time_case": "cinco",
-        "quote_first": "La puerta trasera sin llave se abrió lentamente para revelar a Fiona Athey, con una expresión de disculpa en su rostro. Sostenía una pila de folletos debajo de su brazo izquierdo. “Espero no haberte despertado ahora. Entonces volveré en otro momento. Lo siento.\" Se giró para irse.<br>“No, quédate”, respondió Marjan. “He estado levantado desde las ",
-        "quote_last": ". Hacer una nueva tanda de pan. ¿Por qué no vienes a tomar una taza de té?",
-        "title": "Sopa De Granada",
-        "author": "Marsha Mehran",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000677",
-        "time": "05:00",
-        "quote_time_case": "Cinco",
-        "quote_first": "Los ojos fríos del duque quedaron deslumbrados por el brillo de mil joyas que centelleaban sobre la mesa. Sus oídos se llenaron de repiques cuando los relojes empezaron a sonar. \"¡Uno!\" dijo Hark. \"¡Dos!\" gritó Zorn de Zorna. \"¡Tres!\" La voz del Duque casi susurró. \"¡Cuatro!\" -suspiró Saralinda-. \"¡",
-        "quote_last": "!\" —gritó el Golux y señaló la mesa. \"La tarea está hecha, los términos se han cumplido\", afirmó.",
-        "title": "Los 13 Relojes",
-        "author": "James Thurber",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000678",
-        "time": "05:00",
-        "quote_time_case": "cinco de la mañana",
-        "quote_first": "Una suave luz amarilla entraba por las ventanillas laterales. Era de mañana: ¡había dormido toda la noche! Miró rápidamente su reloj: las ",
-        "quote_last": ". Aún faltaban casi seis horas para que fuera necesario retirar el barco.",
-        "title": "Parque jurásico",
-        "author": "Michael Crichton",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000679",
-        "time": "05:00",
-        "quote_time_case": "cinco de la mañana",
-        "quote_first": "Según León… pasado mañana. El ataque está previsto para pasado mañana, alrededor de las ",
-        "quote_last": ". Su rostro todavía estaba en sombras.",
-        "title": "Un sendero a través del tiempo",
-        "author": "Jodi Taylor",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000680",
-        "time": "05:00",
-        "quote_time_case": "cinco de la mañana",
-        "quote_first": "Sixsmith,<br>Me pegué un tiro en el paladar a las ",
-        "quote_last": ". esta mañana con Luger de V.A. ¡Pero te vi, querido, querido amigo! ¡Cuánto me conmueve que te importe tanto! Al acecho del campanario, ayer, al atardecer. Por pura casualidad, no me viste primero.",
-        "title": "Atlas de nubes",
-        "author": "David Mitchell",
-        "sfw": "nsfw"
-    },
-    {
-        "id": "000681",
-        "time": "05:00",
-        "quote_time_case": "cinco de la mañana",
-        "quote_first": "El padre del senador había dejado una nota que decía: «Son las ",
-        "quote_last": ". No me he movido en todo el día de mi casa. Todas las noticias que tengo del muy mandria ahijado de los señores que le sirven de padrinos en este lance»",
-        "title": "Respiración artificial",
-        "author": "Ricardo Piglia",
-        "sfw": "sfw"
-    },
-    {
-        "id": "000682",
-        "time": "05:00",
-        "quote_time_case": "cinco de la mañana",
-        "quote_first": "Eran las ",
-        "quote_last": ". Entró a la estación del ferrocarril, miró en redor, y como tenía sueño se refugió en un rincón de la sala de espera.",
-        "title": "Los siete locos",
-        "author": "Roberto Arlt",
-        "sfw": "sfw"
-    },
-    {
-        "id": "000683",
-        "time": "05:00",
         "quote_time_case": "cinco en punto",
-        "quote_first": "A las ",
-        "quote_last": ", como cada mañana, horas antes de que surgiera un solo movimiento en las habitaciones de arriba, Dora se levantó de la cama y caminó por el pasillo hasta la cocina, donde puso a hervir una tetera y dejó caer una bolsa. de Earl Grey en una taza.",
-        "title": "Cuando el verano era nuestro",
-        "author": "Roxanne Veletzos",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000684",
-        "time": "05:00",
-        "quote_time_case": "cinco en punto",
-        "quote_first": "El martillo golpeó la diana en la barandilla frente al cuartel general del campamento a las ",
-        "quote_last": ", como siempre. Hora de levantarse. El ruido entrecortado fue amortiguado por el hielo de dos dedos de espesor en las ventanas y pronto se apagó. Demasiado frío para que el guardián siguiera martillando.",
-        "title": "Un día en la vida de Ivan Denosovich",
-        "author": "Aleksandr Solzhenitsyn",
+        "quote_first": "¿Qué es lo que hace que los jóvenes \"salgan del armario\" sino la noble ambición del matrimonio? ¿Qué los envía en tropel a los balnearios? ¿Qué los mantiene bailando hasta las ",
+        "quote_last": " de la mañana durante toda una temporada mortal?",
+        "title": "Feria de la vanidad",
+        "author": "William Makepeace Thackeray",
         "sfw": "unknown"
     }
 ]

@@ -1,22 +1,22 @@
 [
     {
-        "id": "003244",
-        "time": "21:12",
-        "quote_time_case": "21.12",
-        "quote_first": "El crimen nos lo informó (con una presteza casi indecente, Rog) a las ",
-        "quote_last": ", Susan Trott, de Black Grouse Cottage, que había estado, cito: \"buscando erizos cuando me horroricé al darme cuenta de que la puerta del buzón se había caído\". y estaba tirado allí, en el suelo\".",
-        "title": "Robo de buzones de correos de Burley Cross",
-        "author": "Nicola Barker",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003245",
+        "id": "003193",
         "time": "21:12",
         "quote_time_case": "9:12 p.m.",
         "quote_first": "Esa noche había una gran luna llena, el cielo estaba claro como el cristal, y a las ",
-        "quote_last": " un viejo cohete ruso volvió a entrar en la atmósfera terrestre y explotó formando cometas con colas largas y ardientes que surcaron el cielo.",
+        "quote_last": " un viejo cohete ruso volvió a entrar en la atmósfera terrestre y explotó formando cometas con largas llamas. , colas ardientes que cruzaban el cielo.",
         "title": "Debajo del Puente del Diablo",
         "author": "Loreth Anne White",
+        "sfw": "unknown"
+    },
+    {
+        "id": "003194",
+        "time": "21:12",
+        "quote_time_case": "21.12",
+        "quote_first": "El crimen nos fue reportado (con una presteza casi indecente, Rog) en ",
+        "quote_last": ", por Susan Trott - de Black Grouse Cottage - quien había estado, cito: \"mirando hacia afuera\". para erizos cuando me horroricé al ver que la puerta del buzón se había caído y estaba allí, en el suelo\".",
+        "title": "Robo de buzón de correos de Burley Cross",
+        "author": "Nicola Barker",
         "sfw": "unknown"
     }
 ]

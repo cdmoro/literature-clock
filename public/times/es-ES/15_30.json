@@ -1,28 +1,68 @@
 [
     {
-        "id": "002365",
+        "id": "002329",
         "time": "15:30",
-        "quote_time_case": "* 3:30",
-        "quote_first": "Al principio, el cambio de escenario parecía estar funcionando. Logró digerir el sándwich de rosbif y la ensalada de espárragos que pidió para el almuerzo. A las 15.30 se encontró con la novia de un amigo en el salón de té del hotel, donde le envió a su estómago un trozo de tarta de cerezas y café solo, que también se quedó.",
-        "quote_last": "",
-        "title": "Sauce ciego, mujer dormida",
-        "author": "Haruki Murakami",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002366",
-        "time": "15:30",
-        "quote_time_case": "* tres treinta",
-        "quote_first": "“Votarán a favor”, dijo Eliza, con la voz llena de certeza.<br>“Sí. Técnicamente, la Congregación podría rechazar una recomendación del Consejo de Altos Mayordomos, pero en realidad es poco probable. De hecho, ya he reservado tiempo en el estudio para las tres y media para grabar un mensaje para los mundos. Lo he estado preparando aquí”.",
-        "quote_last": "",
+        "quote_time_case": "tres-treinta",
+        "quote_first": "“Votarán a favor”, dijo Eliza, con la voz llena de certeza.<br>“Sí. Técnicamente, la Congregación podría rechazar una recomendación del Consejo de Altos Mayordomos, pero en realidad es poco probable. De hecho, ya he reservado tiempo de estudio para ",
+        "quote_last": " para grabar un mensaje para los mundos. Lo he estado preparando aquí”.",
         "title": "Los cimientos oscuros",
         "author": "Chris Walley",
         "sfw": "sfw"
     },
     {
-        "id": "002367",
+        "id": "002330",
         "time": "15:30",
-        "quote_time_case": "15.30 h.",
+        "quote_time_case": "Las tres y media",
+        "quote_first": "“",
+        "quote_last": ". Hora del té”, dijo Mary Poppins, y dio la vuelta al cochecito y volvió a cerrar la boca con fuerza, como si fuera una trampilla. No dijo ni una palabra más durante todo el camino a casa.",
+        "title": "María Poppins",
+        "author": "P.L. Travers",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002331",
+        "time": "15:30",
+        "quote_time_case": "3:30",
+        "quote_first": "Al principio, el cambio de escenario parecía estar funcionando. Logró digerir el sándwich de rosbif y la ensalada de espárragos que pidió para el almuerzo. A las ",
+        "quote_last": " se encontró con la novia de un amigo en el salón de té del hotel, donde le envió a su estómago un trozo de tarta de cerezas y café solo, que también se quedó.",
+        "title": "Sauce ciego, mujer dormida",
+        "author": "Haruki Murakami",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002332",
+        "time": "15:30",
+        "quote_time_case": "las tres y media",
+        "quote_first": "No había el más mínimo rastro de escritura en ninguno de ellos, ni siquiera el cumpleaños de la tía Mabel, o el dentista, ",
+        "quote_last": ".",
+        "title": "Harry Potter y la cámara secreta",
+        "author": "J.K. Rowling",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002333",
+        "time": "15:30",
+        "quote_time_case": "las tres y media",
+        "quote_first": "Encontraron dos bicicletas desbloqueadas en Holder Court y salieron alrededor de las ",
+        "quote_last": " por Lawrenceville Road.",
+        "title": "Este lado del paraíso",
+        "author": "F. Scott Fitzgerald",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002334",
+        "time": "15:30",
+        "quote_time_case": "tres y media",
+        "quote_first": "Antes de encender el despertador, lo pongo para que suene, no a las nueve de la mañana siguiente, sino a las ",
+        "quote_last": " de la tarde siguiente. . Lo que significa las tres y media de esta tarde. Y eso, dijo, mirando su reloj de pulsera, \"¡es dentro de exactamente siete minutos!\".",
+        "title": "las brujas",
+        "author": "Roald Dahl",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002335",
+        "time": "15:30",
+        "quote_time_case": "15.30",
         "quote_first": "",
         "quote_last": " Coger el autobús escolar a casa",
         "title": "El curioso incidente del perro a medianoche",
@@ -30,51 +70,11 @@
         "sfw": "sfw"
     },
     {
-        "id": "002368",
-        "time": "15:30",
-        "quote_time_case": "las tres y media",
-        "quote_first": "Antes de encender el despertador, lo pongo para que suene, no a las nueve de la mañana siguiente, sino a ",
-        "quote_last": " de la tarde siguiente. Lo que significa las tres y media de esta tarde. Y eso, dijo, mirando su reloj de pulsera, \"¡es dentro de exactamente siete minutos!\".",
-        "title": "Las brujas",
-        "author": "Roald Dahl",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002369",
-        "time": "15:30",
-        "quote_time_case": "Tres y media",
-        "quote_first": "\"",
-        "quote_last": ". Hora del té”, dijo Mary Poppins, y dio la vuelta al cochecito y volvió a cerrar la boca con fuerza, como si fuera una trampilla. No dijo ni una palabra más durante todo el camino a casa.",
-        "title": "Mary Poppins",
-        "author": "P.L. Travers",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002370",
+        "id": "002336",
         "time": "15:30",
         "quote_time_case": "tres y media",
-        "quote_first": "No había el más mínimo rastro de escritura en ninguno de ellos, ni siquiera el cumpleaños de la tía Mabel, o el dentista, las ",
-        "quote_last": ".",
-        "title": "Harry Potter y la cámara de los secretos",
-        "author": "J.K. Rowling",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002371",
-        "time": "15:30",
-        "quote_time_case": "tres y media",
-        "quote_first": "Encontraron dos bicicletas desbloqueadas en Holder Court y salieron alrededor de las ",
-        "quote_last": " por Lawrenceville Road.",
-        "title": "Este lado del paraiso",
-        "author": "F. Scott Fitzgerald",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002372",
-        "time": "15:30",
-        "quote_time_case": "tres y media",
-        "quote_first": "Debí haber terminado de hacer las maletas con tiempo de sobra, porque cuando llamaron a mi puerta, a las ",
-        "quote_last": " en punto, llevaba un buen rato sentado en mi silla esperando. Le abrí la puerta a un joven chino, de no veinte años, vestido con una bata y el sombrero en la mano.",
+        "quote_first": "Debí haber terminado de hacer las maletas con tiempo de sobra, porque cuando llamaron a mi puerta a las ",
+        "quote_last": " precisamente, estaba sentado en mi silla esperando una buena comida. mientras. Le abrí la puerta a un joven chino, de no veinte años, vestido con una bata y el sombrero en la mano.",
         "title": "Cuando éramos huérfanos",
         "author": "Kazuo Ishiguro",
         "sfw": "unknown"

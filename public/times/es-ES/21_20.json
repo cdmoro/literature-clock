@@ -1,52 +1,52 @@
 [
     {
-        "id": "003256",
+        "id": "003205",
         "time": "21:20",
         "quote_time_case": "9.20",
         "quote_first": "A las ",
-        "quote_last": " apagó el aparato y, durante unos minutos, permaneció inmóvil con la bandeja todavía en el regazo. Pensó que debía parecerse a uno de esos cuadros modernos, El hombre de la bandeja, una figura rígida inmovilizada en un entorno ordinario convertido en extraordinario, incluso siniestro.",
+        "quote_last": " apagó el aparato y, durante unos minutos, permaneció inmóvil con la bandeja todavía en su regazo. Pensó que debía parecerse a uno de esos cuadros modernos, El hombre de la bandeja, una figura rígida inmovilizada en un entorno ordinario convertido en extraordinario, incluso siniestro.",
         "title": "Dispositivos y deseos",
         "author": "P.D. James",
         "sfw": "sfw"
     },
     {
-        "id": "003257",
+        "id": "003206",
         "time": "21:20",
-        "quote_time_case": "* Las nueve y veinte minutos",
-        "quote_first": "Todo el grupo había cenado bien. Estaban satisfechos consigo mismos y con la vida. Las manecillas del reloj marcaban las nueve y veinte. Hubo un silencio... un cómodo y pleno silencio.",
-        "quote_last": "",
-        "title": "Y entonces no había ninguno",
+        "quote_time_case": "Nueve y veinte",
+        "quote_first": "Grant sabía que los animales a menudo realizaban esos rituales de apareamiento durante horas seguidas. Pasaron sin comer, no prestaron atención a nada más. . . .  Miró su reloj. ",
+        "quote_last": ".",
+        "title": "Parque Jurásico",
+        "author": "Michael Crichton",
+        "sfw": "unknown"
+    },
+    {
+        "id": "003207",
+        "time": "21:20",
+        "quote_time_case": "nueve y veinte minutos",
+        "quote_first": "Todo el grupo había cenado bien. Estaban satisfechos consigo mismos y con la vida. Las manecillas del reloj señalaban ",
+        "quote_last": ". Hubo un silencio... un cómodo y pleno silencio.",
+        "title": "Y luego no hubo ninguno",
         "author": "Agatha Christie",
         "sfw": "unknown"
     },
     {
-        "id": "003258",
+        "id": "003208",
         "time": "21:20",
-        "quote_time_case": "* Las nueve y veinte minutos",
-        "quote_first": "A las nueve y veinte, el duque de Dunstable, que había cenado en una bandeja en su habitación, todavía estaba allí, esperando su café y su licor.",
-        "quote_last": "",
-        "title": "Tío Fred en la primavera",
-        "author": "P.G. Wodehouse",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003259",
-        "time": "21:20",
-        "quote_time_case": "21.20 h.",
+        "quote_time_case": "21.20",
         "quote_first": "",
-        "quote_last": " Toma jugo y un refrigerio.",
+        "quote_last": " Tomar jugo y un refrigerio",
         "title": "El curioso incidente del perro a medianoche",
         "author": "Mark Haddon",
         "sfw": "unknown"
     },
     {
-        "id": "003260",
+        "id": "003209",
         "time": "21:20",
-        "quote_time_case": "Nueve veinte",
-        "quote_first": "Grant sabía que los animales a menudo realizaban esos rituales de apareamiento durante horas seguidas. Pasaron sin comer, no prestaron atención a nada más. . . . Echó un vistazo a su reloj. ",
-        "quote_last": ".",
-        "title": "Parque jurásico",
-        "author": "Michael Crichton",
+        "quote_time_case": "nueve y veinte minutos",
+        "quote_first": "A las ",
+        "quote_last": ", el duque de Dunstable, que había cenado en una bandeja en su habitación, todavía estaba allí, esperando su café y su licor.",
+        "title": "Tío Fred en la primavera",
+        "author": "P.G. Wodehouse",
         "sfw": "unknown"
     }
 ]

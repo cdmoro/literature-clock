@@ -1,32 +1,32 @@
 [
     {
-        "id": "000572",
+        "id": "000562",
         "time": "04:01",
-        "quote_time_case": "Apenas pasadas las cuatro de la madrugada",
+        "quote_time_case": "las cuatro y un minuto",
+        "quote_first": "En un momento ya tenía la oficina y el escritorio del editor nocturno, le dije quién era y comencé a dictar. “A ",
+        "quote_last": " a nuestra hora (vea qué hora es la hora de París para eso y póngala) un acorazado francés fue hundido por el hombre que debe detenerse. toda guerra. Probablemente nadie a bordo escapó”. Esto último fue una suposición basada en la experiencia del pasado.",
+        "title": "El hombre que puso fin a la guerra",
+        "author": "Hollis Godfrey",
+        "sfw": "sfw"
+    },
+    {
+        "id": "000563",
+        "time": "04:01",
+        "quote_time_case": "Apenas pasadas las cuatro de la mañana",
         "quote_first": "Charlie miró el reloj. ",
-        "quote_last": " en casa. Domingo. Ella estaría despierta. Probablemente leyendo mientras tomamos una taza de café antes de salir a correr antes de la iglesia.",
-        "title": "Soldado activado",
+        "quote_last": " en casa. Domingo. Ella estaría despierta. Probablemente leyendo mientras tomamos una taza de café antes de salir a correr antes de ir a la iglesia.",
+        "title": "Continuar a pesar de todo",
         "author": "Vanessa Rasanen",
         "sfw": "unknown"
     },
     {
-        "id": "000573",
+        "id": "000564",
         "time": "04:01",
-        "quote_time_case": "Eran poco más de las 4 am",
-        "quote_first": "De repente, empezó a llorar. Acurrucado en el sofá, sollozaba ruidosamente. Michel miró su reloj; ",
+        "quote_time_case": "poco después de las 4 am",
+        "quote_first": "De repente, empezó a llorar. Acurrucado en el sofá, sollozaba ruidosamente. Michel miró su reloj; eran ",
         "quote_last": ". En la pantalla, un gato montés tenía un conejo en la boca.",
         "title": "atomizado",
         "author": "Michel Houellebecq",
         "sfw": "unknown"
-    },
-    {
-        "id": "000574",
-        "time": "04:01",
-        "quote_time_case": "cuatro y un minuto",
-        "quote_first": "En un momento ya tenía la oficina y el escritorio del editor nocturno, le dije quién era y comencé a dictar. “A las ",
-        "quote_last": " de nuestra hora (mira qué hora es la hora de París para eso e introdúcela) un acorazado francés fue hundido por el hombre que debe detener toda guerra. Probablemente nadie a bordo escapó”. Esto último fue una suposición basada en la experiencia del pasado.",
-        "title": "El hombre que puso fin a la guerra",
-        "author": "Hollis Godfrey",
-        "sfw": "sfw"
     }
 ]

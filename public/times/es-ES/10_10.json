@@ -1,46 +1,26 @@
 [
     {
-        "id": "001553",
+        "id": "001528",
         "time": "10:10",
-        "quote_time_case": "* diez minutos después de las 10",
-        "quote_first": "El sábado por la mañana era luminoso y soleado, y a las diez y diez Donald llegó a la entrada Embankment de la estación de metro Charing Cross, llevando una pequeña maleta llena de ropa adecuada para deportes y pasatiempos al aire libre.",
-        "quote_last": "",
-        "title": "Inglaterra, su Inglaterra",
-        "author": "A.G. Macdonell",
-        "sfw": "unknown"
+        "quote_time_case": "diez y diez minutos",
+        "quote_first": "A las ",
+        "quote_last": " de la mañana siguiente, William recibió otra llamada de su ahora agitado corredor. Al sonar la campana de apertura se habían colocado en el mercado acciones de Interstate por valor de otro millón de dólares.",
+        "title": "Kane y Abel",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     },
     {
-        "id": "001554",
-        "time": "10:10",
-        "quote_time_case": "* Diez minutos tarde",
-        "quote_first": "Alrededor de las diez, los primeros pequeños copos de nieve cayeron y se posaron en el brazo de Jill. Diez minutos más tarde caían con bastante fuerza. Al cabo de veinte minutos el suelo estaba notablemente blanco.",
-        "quote_last": "",
-        "title": "La silla de plata",
-        "author": "C.S. Lewis",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001555",
+        "id": "001529",
         "time": "10:10",
         "quote_time_case": "10:10",
         "quote_first": "A las ",
-        "quote_last": ", dos camilleros vestidos de blanco sacaron a un hombre alto y fornido en una silla por las puertas batientes y, al ver el auto estacionado en el espacio del decano, lo guiaron hacia allí. El conductor saltó del vehículo y rápidamente abrió la puerta trasera. Pobre hombre, pensó, con la cabeza toda cubierta de vendas y sólo le quedaba una pequeña grieta para los labios y las fosas nasales. Se preguntó si habrían sido quemaduras.",
+        "quote_last": ", dos camilleros vestidos de blanco llevaron a un hombre alto y fornido en una silla a través de las puertas batientes y, al ver el auto estacionado en el espacio del decano , lo guió hacia allí. El conductor saltó del vehículo y rápidamente abrió la puerta trasera. Pobre hombre, pensó, con la cabeza toda cubierta de vendas y sólo le quedaba una pequeña grieta para los labios y las fosas nasales. Se preguntó si habrían sido quemaduras.",
         "title": "Honor entre ladrones",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001556",
-        "time": "10:10",
-        "quote_time_case": "10:10",
-        "quote_first": "",
-        "quote_last": " Se dispara un tiro.",
-        "title": "El hombre hueco",
-        "author": "John Dickson Carr",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001557",
+        "id": "001530",
         "time": "10:10",
         "quote_time_case": "10:10 A.M.",
         "quote_first": "",
@@ -50,13 +30,33 @@
         "sfw": "nsfw"
     },
     {
-        "id": "001558",
+        "id": "001531",
         "time": "10:10",
-        "quote_time_case": "diez y diez de la mañana",
-        "quote_first": "A las ",
-        "quote_last": " siguiente, William recibió otra llamada de su ahora agitado corredor. Al sonar la campana de apertura se habían colocado en el mercado acciones de Interstate por valor de otro millón de dólares.",
-        "title": "Kane y Abel",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
+        "quote_time_case": "10:10",
+        "quote_first": "",
+        "quote_last": " Se dispara un tiro.",
+        "title": "El hombre hueco",
+        "author": "John Dickson Carr",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001532",
+        "time": "10:10",
+        "quote_time_case": "diez minutos y 10",
+        "quote_first": "El sábado por la mañana era luminoso y soleado, y a las ",
+        "quote_last": " Donald llegó a la entrada Embankment de la estación de metro Charing Cross, llevando una pequeña maleta llena de ropa adecuada para practicar deportes al aire libre. y pasatiempos.",
+        "title": "Inglaterra, su Inglaterra",
+        "author": "A.G. Macdonell",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001533",
+        "time": "10:10",
+        "quote_time_case": "Diez minutos después",
+        "quote_first": "Alrededor de las diez, los primeros pequeños copos de nieve cayeron y se posaron en el brazo de Jill. ",
+        "quote_last": " caían con bastante fuerza. Al cabo de veinte minutos el suelo estaba notablemente blanco.",
+        "title": "La silla plateada",
+        "author": "C.S. Lewis",
+        "sfw": "unknown"
     }
 ]

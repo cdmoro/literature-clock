@@ -1,32 +1,32 @@
 [
     {
-        "id": "000104",
+        "id": "000099",
         "time": "00:25",
         "quote_time_case": "12:25",
         "quote_first": "Después de un momento, la realidad se reafirmó y se dio cuenta de que no había estado alucinando, sino soñando. El reloj del escritorio marcaba las 12:55. Habían comenzado su sesión de diez minutos a las ",
-        "quote_last": ", así que obviamente ella tenía veinte minutos para contar.",
+        "quote_last": ", así que obviamente ella tenía veinte minutos para contabilizar.",
         "title": "El enclave",
         "author": "Karen Hancock",
         "sfw": "sfw"
     },
     {
-        "id": "000105",
+        "id": "000100",
         "time": "00:25",
-        "quote_time_case": "doce y veinticinco",
-        "quote_first": "Quiero decir, ¡mira la hora! ¡Las ",
-        "quote_last": "! ¡Fue un triunfo, realmente lo fue!",
-        "title": "La esposa del soldado",
-        "author": "Joanna Trollope",
+        "quote_time_case": "veinticinco minutos después de medianoche",
+        "quote_first": "Charlotte recordó que había oído a Gregoire bajar de nuevo las escaleras, casi inmediatamente después de entrar en su dormitorio, y antes incluso de que los sirvientes cerraran las puertas de la casa para pasar la noche. Seguramente se había apresurado a reunirse con Thérèse en algún bosquecillo, desde donde debieron de dirigirse a la estación de Vieux-Bourg, de donde partió el último tren a París a las ",
+        "quote_last": ". Y en efecto, esto fue lo que había ocurrido.",
+        "title": "Fecundidad",
+        "author": "Emile Zola",
         "sfw": "unknown"
     },
     {
-        "id": "000106",
+        "id": "000101",
         "time": "00:25",
-        "quote_time_case": "veinticinco minutos después de la medianoche",
-        "quote_first": "Charlotte recordó que había oído a Gregoire bajar de nuevo las escaleras, casi inmediatamente después de entrar en su dormitorio y antes de que los sirvientes hubieran cerrado las puertas de la casa para pasar la noche. Seguramente se había apresurado a reunirse con Thérèse en algún bosquecillo, desde donde debieron de dirigirse a la estación de Vieux-Bourg, de donde partía el último tren a París ",
-        "quote_last": ". Y en efecto, esto fue lo que había sucedido.",
-        "title": "Fertilidad",
-        "author": "Emile Zola",
+        "quote_time_case": "La medianoche y veinticinco",
+        "quote_first": "Quiero decir, ¡mira la hora! ",
+        "quote_last": "! ¡Fue un triunfo, realmente lo fue!",
+        "title": "La esposa del soldado",
+        "author": "Joanna Trollope",
         "sfw": "unknown"
     }
 ]

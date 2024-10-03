@@ -1,32 +1,32 @@
 [
     {
-        "id": "003230",
+        "id": "003179",
         "time": "21:04",
-        "quote_time_case": "9:04 p.m.",
+        "quote_time_case": "9:04",
+        "quote_first": "A la luz de una linterna de haz estrecho, Pierce consultó su reloj. Era ",
+        "quote_last": ". Eso les dio una hora para encontrar la llave antes de que Barlow les proporcionara su distracción para cubrir su fuga.",
+        "title": "El gran robo del tren",
+        "author": "Michael Crichton",
+        "sfw": "sfw"
+    },
+    {
+        "id": "003180",
+        "time": "21:04",
+        "quote_time_case": "9:04 P.M.",
         "quote_first": "",
-        "quote_last": "<br>\"¿Qué te parece una ETA de 02:00 horas?\" Dimitri Spiros estaba utilizando una radio no asegurada, pero no tenía otra opción. \"Eso nos dará unas veintinueve horas. Tiempo suficiente para tener todo junto\".",
+        "quote_last": "<br>\"¿Qué te parece una ETA de 0200 horas?\" Dimitri Spiros estaba utilizando una radio no asegurada, pero no tenía otra opción. \"Eso nos dará unas veintinueve horas. Tiempo suficiente para tener todo junto\".",
         "title": "Proyecto cíclope",
         "author": "Thomas Hoover",
         "sfw": "sfw"
     },
     {
-        "id": "003231",
+        "id": "003181",
         "time": "21:04",
-        "quote_time_case": "21.04 horas",
+        "quote_time_case": "9:04 pm",
         "quote_first": "A las ",
-        "quote_last": ", los trilobites nadan en escena, seguidos más o menos inmediatamente por las bien formadas criaturas de Burgess Shale.",
+        "quote_last": " los trilobites nadan en escena, seguidos más o menos inmediatamente por las bien formadas criaturas de Burgess Shale.",
         "title": "Una breve historia de casi todo",
         "author": "Bill Bryson",
-        "sfw": "sfw"
-    },
-    {
-        "id": "003232",
-        "time": "21:04",
-        "quote_time_case": "9:04",
-        "quote_first": "A la luz de una linterna de haz estrecho, Pierce consultó su reloj. Eran las ",
-        "quote_last": ". Eso les dio una hora para encontrar la llave antes de que Barlow les proporcionara su distracción para cubrir su fuga.",
-        "title": "El gran robo del tren",
-        "author": "Michael Crichton",
         "sfw": "sfw"
     }
 ]

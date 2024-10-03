@@ -1,31 +1,31 @@
 [
     {
-        "id": "000330",
+        "id": "000324",
         "time": "02:20",
-        "quote_time_case": "dos y veinte",
-        "quote_first": "Se volvió bruscamente hacia la enfermera y le preguntó la hora. 'Las ",
-        "quote_last": "' 'Ah... ¡Las dos y veinte!' —repitió Genevieve, como si hubiera algo urgente que hacer.",
+        "quote_time_case": "Dos-veinte",
+        "quote_first": "Se volvió bruscamente hacia la enfermera y le preguntó la hora. '",
+        "quote_last": "' 'Ah... ¡Dos-veinte!' —repitió Genevieve, como si hubiera algo urgente que hacer.",
         "title": "Correo del Sur",
         "author": "Antoine de Saint Exupery",
         "sfw": "unknown"
     },
     {
-        "id": "000331",
+        "id": "000325",
         "time": "02:20",
         "quote_time_case": "dos y veinte",
         "quote_first": "La noche de su tercer paseo, Lew durmió en su propio apartamento. Cuando sus ojos se abrieron a las ",
-        "quote_last": ", por las manecillas verdes de su alarma, supo que esta vez en realidad lo había estado esperando mientras dormía.",
+        "quote_last": ", por las manos verdes de su alarma, supo que esta vez en realidad lo había estado esperando mientras dormía.",
         "title": "La gente de la noche",
         "author": "Jack Finney",
         "sfw": "unknown"
     },
     {
-        "id": "000332",
+        "id": "000326",
         "time": "02:20",
-        "quote_time_case": "dos y veinte",
-        "quote_first": "Las ",
-        "quote_last": " minutos, de camino a San Diego, escuchando una música extraña y cacófana; sin línea melódica, sin contenido.",
-        "title": "En algún lugar del tiempo (retorno en el momento de la oferta)",
+        "quote_time_case": "Las dos y veinte minutos",
+        "quote_first": "",
+        "quote_last": ", de camino a San Diego, escuchando música extraña y cacófana; sin línea melódica, sin contenido.",
+        "title": "En algún lugar en el tiempo (regreso en el momento de la oferta)",
         "author": "Richard Matheson",
         "sfw": "unknown"
     }

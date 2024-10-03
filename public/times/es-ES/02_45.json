@@ -1,32 +1,32 @@
 [
     {
-        "id": "000376",
+        "id": "000370",
         "time": "02:45",
-        "quote_time_case": "02.45h.",
-        "quote_first": "",
-        "quote_last": ", Casa Ennet, las horas que realmente hacen madrugar.",
-        "title": "Frivolidad infinita",
-        "author": "David Foster Wallace",
-        "sfw": "unknown"
+        "quote_time_case": "las tres menos cuarto",
+        "quote_first": "Cuando despertó ya era de noche y la luna brillaba en la habitación. Miró su reloj: eran las ",
+        "quote_last": ". El sueño lo había abandonado; se sentó en la cama y pensó en el funeral de la vieja condesa.",
+        "title": "reina de espadas",
+        "author": "Alexsander S. Pushkin",
+        "sfw": "sfw"
     },
     {
-        "id": "000377",
+        "id": "000371",
         "time": "02:45",
-        "quote_time_case": "Cuarto para las tres",
-        "quote_first": "Miró su reloj. Él había estado sonriendo mientras la acariciaba para despertarla, y ahora estaba sonriendo. \"",
+        "quote_time_case": "Tres menos cuarto",
+        "quote_first": "Miró su reloj. Él había estado sonriendo mientras la acariciaba para despertarla, y ahora estaba sonriendo. “",
         "quote_last": ". Me senté en mi estúpida y vieja habitación de motel durante casi dos horas después de hablar, tratando de convencerme de que lo que estaba pensando no podía ser cierto. Sólo que no llegué a donde estoy evitando la verdad”.",
         "title": "Completamente oscuro, sin estrellas",
         "author": "Stephen King",
         "sfw": "unknown"
     },
     {
-        "id": "000378",
+        "id": "000372",
         "time": "02:45",
-        "quote_time_case": "tres menos cuarto",
-        "quote_first": "Cuando despertó ya era de noche y la luna brillaba en la habitación. Miró su reloj: eran las ",
-        "quote_last": ". El sueño lo había abandonado; se sentó en la cama y pensó en el funeral de la vieja condesa.",
-        "title": "reina de Espadas",
-        "author": "Alexsander S. Pushkin",
-        "sfw": "sfw"
+        "quote_time_case": "0245h",
+        "quote_first": "",
+        "quote_last": "., Ennet House, las horas que realmente hacen madrugar.",
+        "title": "Broma infinita",
+        "author": "David Foster Wallace",
+        "sfw": "unknown"
     }
 ]

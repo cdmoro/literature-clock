@@ -1,32 +1,32 @@
 [
     {
-        "id": "002219",
+        "id": "002184",
         "time": "14:40",
-        "quote_time_case": "* veinte minutos para las tres",
-        "quote_first": "Los miembros de Big Side marcaron a Michael y Alan como los dos tres cuartos más prometedores para Middle Side el próximo año, y cuando sonaba la campana a las tres menos veinte, los miembros de Big Side caminaban con Michael y Alan hacia el vestuario y animaban. con halagos y bromas cordiales.",
-        "quote_last": "",
-        "title": "Calle siniestra",
-        "author": "Compton Mackenzie",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002220",
-        "time": "14:40",
-        "quote_time_case": "dos cuarenta",
-        "quote_first": "\"Ya le he explicado al tipo que el único ",
-        "quote_last": " que conozco es el autobús que va entre Golders Green y Edgware, y si no sigo adelante, extrañaré a mi amado 14\", dijo Lawrence. , consultando su reloj.",
+        "quote_time_case": "dos-cuarenta",
+        "quote_first": "“Ya le expliqué al tipo que el único ",
+        "quote_last": " que conozco es el autobús que va entre Golders Green y Edgware, y si no consigo un Sigue adelante, extrañaré a mi amado 14”, dijo Lawrence, mirando su reloj.",
         "title": "Una cuestión de honor",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "002221",
+        "id": "002185",
         "time": "14:40",
-        "quote_time_case": "dos cuarenta",
-        "quote_first": "Si una chica se ve estupenda cuando te conoce, ¿a quién le importa si llega tarde? Nadie. \"Será mejor que nos demos prisa\", dije. \"El espectáculo comienza a las ",
-        "quote_last": "\".",
-        "title": "Guardián entre el centeno",
+        "quote_time_case": "dos-cuarenta",
+        "quote_first": "Si una chica se ve estupenda cuando te conoce, ¿a quién le importa si llega tarde? Nadie. \"Será mejor que nos demos prisa\", dije. “El espectáculo comienza a las ",
+        "quote_last": "”.",
+        "title": "El guardián entre el centeno",
         "author": "J.D. Salinger",
         "sfw": "nsfw"
+    },
+    {
+        "id": "002186",
+        "time": "14:40",
+        "quote_time_case": "veinte minutos para las tres",
+        "quote_first": "Los miembros de Big Side marcaron a Michael y Alan como los dos tres cuartos más prometedores para Middle Side el próximo año, y cuando sonó la campana a las ",
+        "quote_last": ", los miembros de Big Side caminaba con Michael y Alan hacia el vestuario y los animaba con halagos y bromas cordiales.",
+        "title": "Calle siniestra",
+        "author": "Compton Mackenzie",
+        "sfw": "unknown"
     }
 ]

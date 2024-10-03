@@ -1,22 +1,22 @@
 [
     {
-        "id": "002547",
-        "time": "16:39",
-        "quote_time_case": "* 16:39",
-        "quote_first": "Harlem disfruta de las tranquilas mañanas del sábado, aunque el ritmo se acelera nuevamente por la tarde, después de la iglesia. Mi reloj marcaba las 4:39 p.m. y me di cuenta de que no había comido en todo el día. Compré dos porciones de pizza de un vendedor ambulante en la 122 y Lenox Avenue y las acompañé con un Snapple de uva.",
-        "quote_last": "",
-        "title": "Azul rojo sangre",
-        "author": "Teddy Hayes",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002548",
+        "id": "002509",
         "time": "16:39",
         "quote_time_case": "4:39",
-        "quote_first": "Miró el reloj de su escritorio: las ",
+        "quote_first": "Miró el reloj de su escritorio: ",
         "quote_last": ". “Consígueme el puesto de control en Khalis”, le ordenó al joven teniente.",
         "title": "Honor entre ladrones",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
+    },
+    {
+        "id": "002510",
+        "time": "16:39",
+        "quote_time_case": "4:39 p.m.",
+        "quote_first": "Harlem disfruta de las tranquilas mañanas del sábado, aunque el ritmo se acelera nuevamente por la tarde, después de la iglesia. Mi reloj marcaba ",
+        "quote_last": ", y me di cuenta de que no había comido en todo el día. Compré dos porciones de pizza de un vendedor ambulante en la 122 y Lenox Avenue y las acompañé con un Snapple de uva.",
+        "title": "Azul rojo sangre",
+        "author": "Teddy Hayes",
+        "sfw": "unknown"
     }
 ]

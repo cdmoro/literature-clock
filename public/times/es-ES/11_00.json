@@ -1,356 +1,56 @@
 [
     {
-        "id": "001672",
+        "id": "001646",
         "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "La Policía de Población requiere su asistencia a una reunión a ",
+        "quote_time_case": "once en punto",
+        "quote_first": "La Policía de Población requiere su asistencia a una reunión a las ",
         "quote_last": " en la plaza del pueblo. Se le expedirá un nuevo documento de identidad. Ninguna otra tarjeta o documento será válido después de que se emitan estas tarjetas, dijo Luke apresuradamente.",
         "title": "entre los libres",
         "author": "Margaret Peterson Haddix",
         "sfw": "sfw"
     },
     {
-        "id": "001673",
-        "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "Se sentó frente al escritorio vacío, le sonrió de una manera que esperaba mostrara competencia e inteligencia, luego suspiró, se dejó caer hacia atrás y miró su reloj. La entrevista era para ",
-        "quote_last": ". Eran las 10:55.",
-        "title": "Los gramáticos: una novela",
-        "author": "Cathleen Schine",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001674",
-        "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "Descubrió a los sirvientes necesarios desayunando en la cama una mañana (todavía en el hotel) y dándole vacaciones a su doncella con la condición de que la niña \"empezara a divertirse buscando a la señorita Clack\". La encontré abanicándose plácidamente en bata a ",
-        "quote_last": ".",
-        "title": "La piedra lunar",
-        "author": "Wilkie Collins",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001675",
-        "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "Los Delacour llegaron a ",
-        "quote_last": " de la mañana siguiente. Harry, Ron, Hermione y Ginny se sentían bastante resentidos con la familia de Fleur en ese momento, y fue de mala gana que Ron subió las escaleras para ponerse calcetines a juego, y Harry intentó alisarse el cabello.",
-        "title": "Harry Potter y las Reliquias de la Muerte",
-        "author": "J.K. Rowling",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001676",
-        "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "Sucedió el miércoles por la mañana de mi segunda semana, cuando estaba en la biblioteca haciendo algunas fotocopias para el doctor Roland antes de mi clase de ",
-        "quote_last": ".",
-        "title": "La historia secreta",
-        "author": "Donna Tartt",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001677",
-        "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "El nombre de tu supuesto fantasma es Linda Gray y era de Florencia. Eso está en el camino de Carolina del Sur. Ella y su novio, si eso era lo que era; la policía no encontró rastro de él; pasó su última noche en la tierra en el Luna Inn, a media milla al sur de aquí, a lo largo de la playa. Entraron en Joyland alrededor de ",
-        "quote_last": " del día siguiente.",
-        "title": "Joyland",
-        "author": "Stephen King",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001678",
-        "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "A ",
-        "quote_last": " todo estaba arreglado; Iban a huir a Borneo. ¡Que se joda el marido! Ella nunca lo amó de todos modos. Nunca habría escrito la primera carta si el marido no fuera viejo y desapasionado.",
-        "title": "Trópico de Cáncer",
-        "author": "Henry Miller",
-        "sfw": "nsfw"
-    },
-    {
-        "id": "001679",
-        "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "Hacia ",
-        "quote_last": " se abrió la puerta. Me preparé para rechazar las disculpas e ir a la yugular. Entró una mujer que alguna vez fue majestuosa. Setenta años, ochenta, ochenta y cinco, ¿quién sabe cuándo tendrán esa edad? Un galgo desvencijado con una chaqueta siguió a su amante.",
-        "title": "Atlas de nubes",
-        "author": "David Mitchell",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001680",
-        "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "Alrededor de ",
-        "quote_last": ", el muñeco de nieve se retira nuevamente al bosque, fuera de la vista del mar, porque los rayos malignos rebotan en el agua y lo alcanzan incluso si está protegido del cielo, y luego se enrojece y se ampolla.",
-        "title": "Oryx y Crake",
-        "author": "Margaret Atwood",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001681",
-        "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "Nos casamos, ya sabes, en St. Clement's, porque el alojamiento de Wickham estaba en esa parroquia. Y se acordó que todos estaríamos allí a ",
-        "quote_last": ". Mi tío, mi tía y yo íbamos a ir juntos; y los demás nos recibirían en la iglesia.",
-        "title": "Orgullo y prejuicio",
-        "author": "Jane Austen",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001682",
-        "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "El día acordado llovía a cántaros. A ",
-        "quote_last": ", un hombre con impermeable, arrastrando una cortadora de césped, llamó a mi puerta y dijo que el señor Gatsby lo había enviado a cortar el césped.",
-        "title": "El gran Gatsby",
-        "author": "F. Scott Fitzgerald",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001683",
-        "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "A ",
-        "quote_last": ", el médico llega a la puerta de la sala de estar y llama a McMurphy para decirle que le gustaría que fuera a su consulta para una entrevista. “Entrevistaré a todos los nuevos ingresos el segundo día”.",
-        "title": "Uno volo sobre el nido del cuco",
-        "author": "Ken Kesey",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001684",
-        "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "“Recién tomo el tren desde el andén nueve y tres cuartos a ",
-        "quote_last": "”, leyó.",
-        "title": "Harry Potter y la Piedra Filosofal",
-        "author": "J.K. Rowling",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001685",
-        "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "\"¿Quién puede... qué puede...?\", preguntó la señora Dalloway (pensando que era escandaloso que la interrumpieran a ",
-        "quote_last": " de la mañana del día en que estaba dando una fiesta), al oír unos pasos en las escaleras.",
-        "title": "Sra. Dalloway",
-        "author": "Virginia Woolf",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001686",
-        "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "A ",
-        "quote_last": " de la mañana, grandes copos de nieve aparecieron desde un cielo incoloro e invadieron los campos, jardines y prados de Romerike como una armada venida del espacio exterior.",
-        "title": "El hombre de nieve",
-        "author": "Jo Nesbo",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001687",
-        "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "A ",
-        "quote_last": " sonó el teléfono y la figura seguía sin responder, como tampoco había respondido cuando el teléfono sonó a las siete menos veinticinco, y de nuevo durante diez minutos seguidos a partir de las siete menos cinco.",
-        "title": "La larga y oscura hora del té del alma",
-        "author": "Douglas Adams",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001688",
-        "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "El Big Ben le llamó la atención cuando salió a la calle. Eran ",
-        "quote_last": " y la hora no utilizada estaba fresca como si se la hubieran dado a los niños en la playa.",
-        "title": "Sra. Dalloway",
-        "author": "Virginia Woolf",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001689",
-        "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "Eran alrededor de ",
-        "quote_last": " de la mañana, a mediados de octubre, cuando el sol no brillaba y se veía una lluvia intensa y húmeda en la claridad de las colinas. Llevaba mi traje azul claro, camisa azul oscuro, corbata y pañuelo de exhibición, zapatos brogue negros y calcetines de lana negros con relojes azul oscuro. Estaba ordenada, limpia, afeitada y sobria, y no me importaba quién lo supiera. Yo era todo lo que debería ser un detective privado bien vestido. Estaba pidiendo cuatro millones de dólares.",
-        "title": "El gran sueño",
-        "author": "Raymond Chandler",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001690",
-        "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "A la mañana siguiente de los acontecimientos que acabamos de narrar, la señora Arlington estaba sentada desayunando en un pequeño y agradable salón de la espléndida mansión que el conde de Warrington había alquilado para ella en Dover Street, Piccadilly. Eran alrededor de ",
-        "quote_last": "; y la Hechicera estaba ataviada con un delicioso deshabillé. Con sus pequeños pies sobre una otomana cerca del guardabarros y su hermosa figura reclinada en un lujoso gran sillón, dividió su atención entre su chocolate y las columnas del Morning Herald.",
-        "title": "Los misterios de Londres",
-        "author": "G.W.M. Reynolds",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001691",
-        "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "Por muy tranquilo que sea, a ",
-        "quote_last": " de la mañana todos los días de la semana, excepto el domingo, me convierto en un maníaco delirante y vociferante: un lunático peligroso, jadeando con deseos locos de hacer, no sólo a mí mismo sino a otras personas, una travesura. , y poseído menos por alucinaciones que por rabia.",
-        "title": "Dos veces al día",
-        "author": "George Augustus Sala",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001692",
-        "time": "11:00",
-        "quote_time_case": "las once",
-        "quote_first": "Pasamos algunas horas tristes hasta ",
-        "quote_last": ", cuando debía comenzar el juicio. Como mi padre y el resto de la familia estaban obligados a comparecer como testigos, los acompañé al tribunal. Durante toda esta miserable burla de la justicia sufrí una tortura en vida.",
-        "title": "frankenstein",
-        "author": "Mary Shelley",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001693",
-        "time": "11:00",
-        "quote_time_case": "11 de la mañana",
-        "quote_first": "Baba Diop pasó las últimas treinta y seis horas de su vida en Fleury-Mérogis. A las ",
-        "quote_last": " del segundo día, lo apuñalaron en la garganta con un peine afilado mientras lo conducían escoltado a la oficina del gobernador.",
-        "title": "Los sin nombre",
-        "author": "John Connolly",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001694",
-        "time": "11:00",
-        "quote_time_case": "11 de la mañana",
-        "quote_first": "“Armstrong debe haber entrado al mar en algún momento durante la noche del 10 al 11, y explicaré por qué. Encontramos el lugar donde fue arrastrado el cuerpo: había quedado atrapado entre dos rocas y sobre ellas había trozos de tela, pelos, etc. Debió haber sido depositado allí durante la marea alta del día 11, es decir, alrededor de las ",
-        "quote_last": ". Después de eso, la tormenta amainó y las marcas de marea máxima posteriores son considerablemente más bajas”.",
-        "title": "Y entonces no había ninguno",
-        "author": "Agatha Christie",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001695",
-        "time": "11:00",
-        "quote_time_case": "11 en punto",
-        "quote_first": "Una máquina de vapor escarlata esperaba junto a un andén lleno de gente. Un cartel encima decía Hogwarts Express, ",
-        "quote_last": ".",
-        "title": "Harry Potter y la Piedra Filosofal",
-        "author": "J.K. Rowling",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001696",
-        "time": "11:00",
-        "quote_time_case": "11 en punto",
-        "quote_first": "A las ",
-        "quote_last": " he terminado el primer capítulo de Mr. Y. El sol de invierno se asoma mansamente a través de las finas cortinas y decido levantarme.",
-        "title": "El fin del Sr. Y",
-        "author": "Scarlett Thomas",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001697",
-        "time": "11:00",
-        "quote_time_case": "11:00",
-        "quote_first": "Sue sólo tenía un permiso de conducir, pero cogió las llaves del coche de su madre del tablero junto al frigorífico y corrió al garaje. El reloj de la cocina marcaba exactamente las ",
-        "quote_last": ".",
-        "title": "carrie",
-        "author": "Stephen King",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001698",
-        "time": "11:00",
-        "quote_time_case": "a las once",
-        "quote_first": "Tardó bastante y empecé a sentirme ahogado, agobiado por las telas gruesas y el silencio. Pensé: nunca volverá; y cuando lo hizo su figura pareció venir hacia mí desde muy lejos, como un sueño y menguada, regresando por un túnel. Me atrevo a decir que era champán ",
-        "quote_last": " de la mañana.",
-        "title": "El clima en las calles",
-        "author": "Rosamond Lehmann",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001699",
+        "id": "001647",
         "time": "11:00",
         "quote_time_case": "once",
-        "quote_first": "Los relojes de Shanghai se adelantaron una hora para que la ciudad pudiera \"salvar la luz del día\", pero la familia Bai dijo: \"Seguimos el reloj antiguo\". Las diez para ellos eran las ",
+        "quote_first": "Los relojes de Shanghai se adelantaron una hora para que la ciudad pudiera \"salvar la luz del día\", pero la familia Bai dijo: \"Seguimos el reloj antiguo\". Las diez para ellos eran ",
         "quote_last": " para todos los demás. Su canto estaba detrás del ritmo; no podían seguir el ritmo del huqin [instrumento de cuerda chino] que producía sonidos de vida sombríos y desolados.",
         "title": "Amor en una ciudad caída",
         "author": "Eileen Chang",
         "sfw": "unknown"
     },
     {
-        "id": "001700",
+        "id": "001648",
+        "time": "11:00",
+        "quote_time_case": "11 en punto",
+        "quote_first": "Una máquina de vapor escarlata esperaba junto a un andén lleno de gente. Un cartel encima decía Hogwarts Express, ",
+        "quote_last": ".",
+        "title": "Harry Potter y la piedra filosofal",
+        "author": "J.K. Rowling",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001649",
         "time": "11:00",
         "quote_time_case": "once",
-        "quote_first": "Renunció a las ",
+        "quote_first": "Ella renunció a las ",
         "quote_last": ". Joder. Dio la vuelta a la casa hasta el cobertizo, cogió la pala y la pala, se detuvo y añadió una palanca. Salió del cobertizo, regresó y sacó un destornillador y una llave ajustable de la caja de herramientas.",
         "title": "Los Tommyknockers",
         "author": "Stephen King",
         "sfw": "nsfw"
     },
     {
-        "id": "001701",
+        "id": "001650",
         "time": "11:00",
-        "quote_time_case": "once",
-        "quote_first": "Hubo un movimiento y una exclamación desde mi derecha, y mirando a través de la oscuridad vi a Whitney, pálida, demacrada y descuidada, mirándome.<br>“¡Dios mío! Es Watson”, dijo. Estaba en un estado de reacción lamentable, con todos los nervios en un gorjeo. “Digo, Watson, ¿qué hora es?”<br>“Casi las ",
-        "quote_last": "”.",
-        "title": "Las aventuras de Sherlock Holmes",
-        "author": "Sir Arthur Conan Doyle",
+        "quote_time_case": "11 a.m.",
+        "quote_first": "Baba Diop pasó las últimas treinta y seis horas de su vida en Fleury-Mérogis. A las ",
+        "quote_last": " p.m. del segundo día, lo apuñalaron en la garganta con un peine afilado mientras lo conducían escoltado a la oficina del gobernador.",
+        "title": "Los sin nombre",
+        "author": "John Connolly",
         "sfw": "unknown"
     },
     {
-        "id": "001702",
-        "time": "11:00",
-        "quote_time_case": "once",
-        "quote_first": "Alrededor de las ",
-        "quote_last": ", ella y Stan comen otro donut. Luego hacen una parada esperanzada en un contenedor de basura detrás de un puesto de sopa, pero no hay suerte, las cosas ya han sido recogidas.",
-        "title": "El corazón es el último",
-        "author": "Margaret Atwood",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001703",
-        "time": "11:00",
-        "quote_time_case": "once",
-        "quote_first": "Mientras miraban, el mundo entero quedó en completo silencio, y una bandada de gaviotas cruzó el cielo, primero una gaviota a la cabeza, luego otra, y en este silencio y paz extraordinarios, en esta palidez, en esta pureza, las campanas tocaron ",
-        "quote_last": " veces el sonido que se desvanecía. allá arriba entre las gaviotas.",
-        "title": "Sra. Dalloway",
-        "author": "Virginia Woolf",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001704",
-        "time": "11:00",
-        "quote_time_case": "once",
-        "quote_first": "Mi hermana está aterrorizada de que pueda escribirle y contarle todos los secretos familiares. ¿Por qué me siento rebelde, iconoclasta? Sólo estoy intentando hacer una clase de escritura, ¿qué hay de malo en eso? Sigo diciéndome que una vez en el auto estaré bien, puedo escuchar Radio Four Woman's Hour y eso me llevará hasta las ",
-        "quote_last": " cuando empiezan las clases.",
-        "title": "Los Santos",
-        "author": "Patsy Hickman",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001705",
-        "time": "11:00",
-        "quote_time_case": "once",
-        "quote_first": "Aunque tal vez... pero aquí el reloj de soporte zumbó y luego frenéticamente dio las ",
-        "quote_last": ", sus pesas girando hacia abajo a causa del repentino gasto de energía. Tuvo que sentarse un momento, cuando el eco se desvaneció, para recuperar sus pensamientos.",
-        "title": "El hijo del extraño",
-        "author": "Alan Hollinghurst",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001706",
-        "time": "11:00",
-        "quote_time_case": "once",
-        "quote_first": "Llegamos a Waterloo a las ",
-        "quote_last": " y preguntamos de dónde partían las once y cinco. Por supuesto, nadie lo sabía; Nadie en Waterloo sabe nunca de dónde va a salir un tren, ni hacia dónde se dirige un tren cuando arranca, ni nada al respecto.",
-        "title": "Tres hombres en un bote",
-        "author": "Jerome K. Jerome",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001707",
+        "id": "001651",
         "time": "11:00",
         "quote_time_case": "once de la mañana",
         "quote_first": "Un final entonces. 11 de noviembre de 1991, a las ",
@@ -360,43 +60,343 @@
         "sfw": "unknown"
     },
     {
-        "id": "001708",
+        "id": "001652",
         "time": "11:00",
-        "quote_time_case": "once de la mañana",
-        "quote_first": "Eran alrededor de las ",
-        "quote_last": ", a mediados de octubre, cuando el sol no brillaba y se veía una lluvia fuerte y húmeda en la claridad de las colinas. Llevaba mi traje azul claro, camisa azul oscuro, corbata y pañuelo de exhibición, zapatos brogue negros y calcetines de lana negros con relojes azul oscuro. Estaba ordenada, limpia, afeitada y sobria, y no me importaba quién lo supiera. Yo era todo lo que debería ser un detective privado bien vestido. Estaba pidiendo cuatro millones de dólares.",
+        "quote_time_case": "once en punto",
+        "quote_first": "Se sentó frente al escritorio vacío, le sonrió de una manera que esperaba mostrara competencia e inteligencia, luego suspiró, se dejó caer hacia atrás y miró su reloj. La entrevista fue para ",
+        "quote_last": ". Eran las 10:55.",
+        "title": "Los gramáticos: una novela",
+        "author": "Cathleen Schine",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001653",
+        "time": "11:00",
+        "quote_time_case": "las once de la mañana",
+        "quote_first": "Eran alrededor de ",
+        "quote_last": ", mediados de octubre, con el sol sin brillar y un aspecto de lluvia fuerte y húmeda en la claridad de las estribaciones. Llevaba mi traje azul claro, camisa azul oscuro, corbata y pañuelo de exhibición, zapatos brogue negros y calcetines de lana negros con relojes azul oscuro. Estaba ordenada, limpia, afeitada y sobria, y no me importaba quién lo supiera. Yo era todo lo que debería ser un detective privado bien vestido. Estaba pidiendo cuatro millones de dólares.",
         "title": "El gran sueño",
         "author": "Raymond Chandler",
         "sfw": "unknown"
     },
     {
-        "id": "001709",
+        "id": "001654",
         "time": "11:00",
-        "quote_time_case": "once de la mañana",
-        "quote_first": "“¿Me harías la cama?” —le preguntó el amigo que murió de un infarto a su esposa. Era diseñador de muebles. Eran las ",
+        "quote_time_case": "once",
+        "quote_first": "Descubrió a los sirvientes necesarios desayunando en la cama una mañana (todavía en el hotel) y dándole vacaciones a su d",
+        "quote_last": "lla con la condición de que la niña \"empezara a divertirse buscando a la señorita Clack\". La encontré abanicándose plácidamente en bata a las once.",
+        "title": "La piedra lunar",
+        "author": "Wilkie Collins",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001655",
+        "time": "11:00",
+        "quote_time_case": "11:00",
+        "quote_first": "Sue sólo tenía un permiso de conducir, pero cogió las llaves del coche de su madre del tablero junto al frigorífico y corrió al garaje. El reloj de la cocina marcaba exactamente ",
+        "quote_last": ".",
+        "title": "carrie",
+        "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001656",
+        "time": "11:00",
+        "quote_time_case": "las once",
+        "quote_first": "Los Delacour llegaron a la mañana siguiente a las ",
+        "quote_last": ". Harry, Ron, Hermione y Ginny se sentían bastante resentidos con la familia de Fleur en ese momento, y fue de mala gana que Ron subió las escaleras para ponerse calcetines a juego, y Harry intentó alisarse el cabello.",
+        "title": "Harry Potter y las Reliquias de la Muerte",
+        "author": "J.K. Rowling",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001657",
+        "time": "11:00",
+        "quote_time_case": "once en punto",
+        "quote_first": "Sucedió el miércoles por la mañana de mi segunda semana, cuando estaba en la biblioteca haciendo algunas fotocopias para el Dr. Roland antes de mi clase ",
+        "quote_last": ".",
+        "title": "La historia secreta",
+        "author": "Donna Tartt",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001658",
+        "time": "11:00",
+        "quote_time_case": "once en punto",
+        "quote_first": "El nombre de tu supuesto fantasma es Linda Gray y era de Florencia. Eso está en el camino de Carolina del Sur. Ella y su novio, si eso era lo que era; la policía no encontró rastro de él; pasó su última noche en la tierra en el Luna Inn, a media milla al sur de aquí, a lo largo de la playa. Entraron en Joyland alrededor de las ",
+        "quote_last": " del día siguiente.",
+        "title": "Joylandia",
+        "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001659",
+        "time": "11:00",
+        "quote_time_case": "las once de la mañana",
+        "quote_first": "“¿Me harías la cama?” —le preguntó el amigo que murió de un infarto a su esposa. Era diseñador de muebles. Eran ",
         "quote_last": ".",
         "title": "Sauce ciego, mujer dormida",
         "author": "Haruki Murakami",
         "sfw": "unknown"
     },
     {
-        "id": "001710",
+        "id": "001660",
         "time": "11:00",
-        "quote_time_case": "once de la mañana",
+        "quote_time_case": "once",
+        "quote_first": "A las ",
+        "quote_last": " ya estaba todo arreglado; Iban a huir a Borneo. ¡Que se joda el marido! Ella nunca lo amó de todos modos. Nunca habría escrito la primera carta si el marido no fuera viejo y desapasionado.",
+        "title": "Trópico de Cáncer",
+        "author": "Henry Miller",
+        "sfw": "nsfw"
+    },
+    {
+        "id": "001661",
+        "time": "11:00",
+        "quote_time_case": "once en punto",
+        "quote_first": "Alrededor de las ",
+        "quote_last": " la puerta se abrió. Me preparé para rechazar las disculpas e ir a la yugular. Entró una mujer que alguna vez fue majestuosa. Setenta años, ochenta, ochenta y cinco, ¿quién sabe cuándo tendrán esa edad? Un galgo desvencijado con una chaqueta siguió a su amante.",
+        "title": "Atlas de nubes",
+        "author": "David Mitchell",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001662",
+        "time": "11:00",
+        "quote_time_case": "once en punto",
+        "quote_first": "Aproximadamente a las ",
+        "quote_last": " el muñeco de nieve se retira nuevamente al bosque, fuera de la vista del mar por completo, porque los rayos malignos rebotan en el agua y lo alcanzan incluso si está protegido del cielo, y luego se enrojece y se ampolla.",
+        "title": "Oryx y Crake",
+        "author": "Margaret Atwood",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001663",
+        "time": "11:00",
+        "quote_time_case": "once en punto",
+        "quote_first": "Nos casamos, ya sabes, en St. Clement's, porque el alojamiento de Wickham estaba en esa parroquia. Y se acordó que todos estaríamos allí a las ",
+        "quote_last": ". Mi tío, mi tía y yo íbamos a ir juntos; y los demás nos recibirían en la iglesia.",
+        "title": "Orgullo y prejuicio",
+        "author": "Jane Austen",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001664",
+        "time": "11:00",
+        "quote_time_case": "once",
+        "quote_first": "Hubo un movimiento y una exclamación desde mi derecha, y mirando a través de la oscuridad vi a Whitney, pálida, demacrada y descuidada, mirándome.<br>“¡Dios mío! Es Watson”, dijo. Estaba en un estado de reacción lamentable, con todos los nervios en un gorjeo. \"Digo, Watson, ¿qué hora es?\"<br>\"Casi ",
+        "quote_last": "\".",
+        "title": "Las aventuras de Sherlock Holmes",
+        "author": "Sir Arthur Conan Doyle",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001665",
+        "time": "11:00",
+        "quote_time_case": "once en punto",
+        "quote_first": "El día acordado llovía a cántaros. A las ",
+        "quote_last": " un hombre con impermeable, arrastrando una cortadora de césped, llamó a mi puerta y dijo que el Sr. Gatsby lo había enviado a cortar mi césped. .",
+        "title": "El gran Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001666",
+        "time": "11:00",
+        "quote_time_case": "las once de la mañana",
         "quote_first": "A Pooh siempre le gustaba algo a las ",
-        "quote_last": " y se alegraba mucho de ver a Conejo sacar los platos y las tazas; y cuando Conejo dijo: “¿Miel o leche condensada con tu pan?” estaba tan emocionado que dijo: “Ambos”, y luego, para no parecer codicioso, añadió: “pero no te preocupes por el pan, por favor”.",
+        "quote_last": ", y se alegraba mucho de ver a Conejo sacando los platos y tazas; y cuando Conejo dijo: “¿Miel o leche condensada con tu pan?” estaba tan emocionado que dijo: “Ambos”, y luego, para no parecer codicioso, añadió: “pero no te preocupes por el pan, por favor”.",
         "title": "Winnie",
         "author": "A.A. Milne",
         "sfw": "unknown"
     },
     {
-        "id": "001711",
+        "id": "001667",
+        "time": "11:00",
+        "quote_time_case": "once",
+        "quote_first": "Alrededor de ",
+        "quote_last": " ella y Stan tienen otra dona. Luego hacen una parada esperanzada en un contenedor de basura detrás de un puesto de sopa, pero no hay suerte, las cosas ya han sido recogidas.",
+        "title": "El corazón es el último",
+        "author": "Margaret Atwood",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001668",
         "time": "11:00",
         "quote_time_case": "once en punto",
+        "quote_first": "A las ",
+        "quote_last": " el médico llega a la puerta de la sala de estar y llama a McMurphy para decirle que le gustaría que fuera a su consulta para una entrevista. “Entrevistaré a todos los nuevos ingresos el segundo día”.",
+        "title": "Alguien voló sobre el nido del cuco",
+        "author": "Ken Kesey",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001669",
+        "time": "11:00",
+        "quote_time_case": "las once",
         "quote_first": "“A las ",
-        "quote_last": " fui en taxi al Quai d'Orsay, entré y me senté con una docena de corresponsales, mientras el portavoz del Ministerio de Asuntos Exteriores, un joven diplomático de la Nouvelle Revue Française con gafas de concha, hablaba y Respondí preguntas durante media hora.\"",
-        "title": "El sol también se eleva",
+        "quote_last": " me dirigí en taxi al Quai d'Orsay, entré y me senté con una docena de corresponsales, mientras el portavoz del Ministerio de Asuntos Exteriores, \"Un joven diplomático de la Nouvelle Revue Française con gafas de concha habló y respondió preguntas durante media hora.\"",
+        "title": "El sol también sale",
         "author": "Ernest Hemingway",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001670",
+        "time": "11:00",
+        "quote_time_case": "once en punto",
+        "quote_first": "“Recién tomo el tren desde el andén nueve y tres cuartos a las ",
+        "quote_last": "”, leyó.",
+        "title": "Harry Potter y la piedra filosofal",
+        "author": "J.K. Rowling",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001671",
+        "time": "11:00",
+        "quote_time_case": "11 en punto",
+        "quote_first": "“Armstrong debe haber entrado al mar en algún momento durante la noche del 10 al 11, y explicaré por qué. Encontramos el lugar donde fue arrastrado el cuerpo: había quedado atrapado entre dos rocas y sobre ellas había trozos de tela, pelos, etc. Debe haber sido depositado allí en la marea alta el día 11, es decir alrededor de las ",
+        "quote_last": " Después de eso, la tormenta amainó y las mareas altas sucesivas son considerablemente más bajo”.",
+        "title": "Y luego no hubo ninguno",
+        "author": "Agatha Christie",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001672",
+        "time": "11:00",
+        "quote_time_case": "once en punto",
+        "quote_first": "¿Quién puede - qué puede -? preguntó la señora Dalloway (pensando que era escandaloso que la interrumpieran a las ",
+        "quote_last": " en la mañana del día en que estaba dando una fiesta) , escuchando un paso en las escaleras.",
+        "title": "Sra. Dalloway",
+        "author": "Virginia Woolf",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001673",
+        "time": "11:00",
+        "quote_time_case": "11 en punto",
+        "quote_first": "A las ",
+        "quote_last": " he terminado el primer capítulo de Mr. Y. El sol de invierno se asoma mansamente a través de las finas cortinas y decido levantarme.",
+        "title": "El fin del Sr. Y",
+        "author": "Scarlett Thomas",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001674",
+        "time": "11:00",
+        "quote_time_case": "a las once",
+        "quote_first": "Tardó bastante y empecé a sentirme ahogado, agobiado por las telas gruesas y el silencio. Pensé: nunca volverá; y cuando lo hizo su figura pareció venir hacia mí desde muy lejos, como un sueño y menguada, regresando por un túnel. Me atrevo a decir que era champán ",
+        "quote_last": " de la mañana.",
+        "title": "El clima en las calles",
+        "author": "Rosamond Lehmann",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001675",
+        "time": "11:00",
+        "quote_time_case": "once",
+        "quote_first": "Mientras miraban, el mundo entero quedó en completo silencio, y una bandada de gaviotas cruzó el cielo, primero una gaviota al frente, luego otra, y en este silencio y paz extraordinarios, en esta palidez, en esta pureza, sonaron las campanas ",
+        "quote_last": " veces el sonido se desvanece allá arriba entre las gaviotas.",
+        "title": "Sra. Dalloway",
+        "author": "Virginia Woolf",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001676",
+        "time": "11:00",
+        "quote_time_case": "las once",
+        "quote_first": "A las ",
+        "quote_last": " de la mañana, grandes copos aparecieron desde un cielo incoloro e invadieron los campos, jardines y céspedes de Romerike como una armada del espacio exterior.",
+        "title": "el muñeco de nieve",
+        "author": "Jo Nesbo",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001677",
+        "time": "11:00",
+        "quote_time_case": "once en punto",
+        "quote_first": "A las ",
+        "quote_last": " sonó el teléfono, y todavía la figura no respondió, como tampoco había respondido cuando el teléfono sonó a las siete menos veinticinco, y nuevamente durante diez minutos seguidos comenzando entre las cinco y las siete.",
+        "title": "La larga y oscura hora del té del alma",
+        "author": "Douglas Adams",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001678",
+        "time": "11:00",
+        "quote_time_case": "once en punto",
+        "quote_first": "El Big Ben le llamó la atención cuando salió a la calle. Eran ",
+        "quote_last": " y la hora no utilizada estaba fresca como entregada a los niños en una playa.",
+        "title": "Sra. Dalloway",
+        "author": "Virginia Woolf",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001679",
+        "time": "11:00",
+        "quote_time_case": "las once",
+        "quote_first": "Eran alrededor de las ",
+        "quote_last": " de la mañana, mediados de octubre, con el sol sin brillar y un aspecto de lluvia fuerte y húmeda en la claridad de las colinas. Llevaba mi traje azul claro, camisa azul oscuro, corbata y pañuelo de exhibición, zapatos brogue negros y calcetines de lana negros con relojes azul oscuro. Estaba ordenada, limpia, afeitada y sobria, y no me importaba quién lo supiera. Yo era todo lo que debería ser un detective privado bien vestido. Estaba pidiendo cuatro millones de dólares.",
+        "title": "El gran sueño",
+        "author": "Raymond Chandler",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001680",
+        "time": "11:00",
+        "quote_time_case": "once",
+        "quote_first": "Mi hermana está aterrorizada de que pueda escribirle y contarle todos los secretos familiares. ¿Por qué me siento rebelde, iconoclasta? Sólo estoy intentando hacer una clase de escritura, ¿qué hay de malo en eso? Sigo diciéndome que una vez en el auto estaré bien, puedo escuchar Radio Four Woman's Hour y eso me llevará hasta las ",
+        "quote_last": " en punto cuando empieza la clase. .",
+        "title": "los santos",
+        "author": "Patsy Hickman",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001681",
+        "time": "11:00",
+        "quote_time_case": "las once",
+        "quote_first": "A la mañana siguiente de los acontecimientos que acabamos de narrar, la señora Arlington estaba sentada desayunando en un pequeño y agradable salón de la espléndida mansión que el conde de Warrington había alquilado para ella en Dover Street, Piccadilly. Eran como las ",
+        "quote_last": "; y la Hechicera estaba ataviada con un delicioso deshabillé. Con sus pequeños pies sobre una otomana cerca del guardabarros y su hermosa figura reclinada en un lujoso gran sillón, dividió su atención entre su chocolate y las columnas del Morning Herald.",
+        "title": "Los misterios de Londres",
+        "author": "G.W.M. Reynolds",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001682",
+        "time": "11:00",
+        "quote_time_case": "Once en punto",
+        "quote_first": "Por tranquilo que soy, a las ",
+        "quote_last": " de la mañana, todos los días de la semana, excepto el domingo, me convierto en un maníaco delirante y despotricado, un lunático peligroso, jadeando con deseos locos de hacer una travesura, no sólo a mí mismo sino a otras personas, y poseído menos por alucinaciones que por rabia.",
+        "title": "Dos veces al día",
+        "author": "George Augustus Sala",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001683",
+        "time": "11:00",
+        "quote_time_case": "once",
+        "quote_first": "Aunque tal vez... pero aquí el reloj de soporte zumbó y luego golpeó frenéticamente ",
+        "quote_last": ", sus pesos girando hacia abajo con el repentino gasto de energía. Tuvo que sentarse un momento, cuando el eco se desvaneció, para recuperar sus pensamientos.",
+        "title": "El hijo del extraño",
+        "author": "Alan Hollinghurst",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001684",
+        "time": "11:00",
+        "quote_time_case": "once",
+        "quote_first": "Llegamos a Waterloo en ",
+        "quote_last": " y preguntamos de dónde partía el once-cinco. Por supuesto, nadie lo sabía; Nadie en Waterloo sabe nunca de dónde va a salir un tren, ni hacia dónde se dirige un tren cuando arranca, ni nada al respecto.",
+        "title": "Tres hombres en un barco",
+        "author": "Jerome K. Jerome",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001685",
+        "time": "11:00",
+        "quote_time_case": "once",
+        "quote_first": "Pasamos unas horas tristes hasta las ",
+        "quote_last": ", cuando debía comenzar el juicio. Como mi padre y el resto de la familia estaban obligados a comparecer como testigos, los acompañé al tribunal. Durante toda esta miserable burla de la justicia sufrí una tortura en vida.",
+        "title": "frankenstein",
+        "author": "Mary Shelley",
         "sfw": "unknown"
     }
 ]

@@ -1,32 +1,32 @@
 [
     {
-        "id": "001917",
+        "id": "001887",
         "time": "12:15",
-        "quote_time_case": "12.15",
-        "quote_first": "¿Qué debería pensar que sea liberador y refrescante? Estoy de humor cuando abro la ventana por la noche y miro las estrellas. Desafortunadamente son las ",
-        "quote_last": " en un día gris y aburrido, los aviones están activos.",
-        "title": "El diario de un escritor: extractos del diario de Virginia Woolf",
-        "author": "Virginia Woolf",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001918",
-        "time": "12:15",
-        "quote_time_case": "* Cuarto pasado",
-        "quote_first": "No podría haber cometido este crimen. Pauline Stacy cayó de este piso al suelo a las doce y cinco minutos. Cien personas subirán al estrado de los testigos y dirán que estuve en el balcón de mis habitaciones de arriba desde poco antes del mediodía hasta las cuatro y cuarto, el período habitual de mis oraciones públicas.",
-        "quote_last": "",
+        "quote_time_case": "y cuarto",
+        "quote_first": "No podría haber cometido este crimen. Pauline Stacy cayó de este piso al suelo a las doce y cinco minutos. Cien personas subirán al estrado de los testigos y dirán que estuve en el balcón de mis habitaciones de arriba desde poco antes de las doce hasta las ",
+        "quote_last": "- el período habitual de mis oraciones públicas.",
         "title": "El ojo de Apolo",
         "author": "G.K. Chesterton",
         "sfw": "unknown"
     },
     {
-        "id": "001919",
+        "id": "001888",
         "time": "12:15",
-        "quote_time_case": "doce y cuarto",
+        "quote_time_case": "las doce y cuarto",
         "quote_first": "Muy bien, querida, dijo. \"Tomé el tren de las 10.20 a Eastnor, que no es un mal tren, si alguna vez quieres ir allí. Llegué a las ",
-        "quote_last": " y fui directamente a la casa; nunca has visto la casa. ¿Por supuesto? Es bastante encantador... y le dije al mayordomo que quería ver al señor Ford por negocios. Había tomado la precaución de descubrir que no estaba allí. Está en Droitwich.",
+        "quote_last": ", y seguí recto. Fui a la casa (¿nunca has visto la casa, por supuesto? Es bastante encantadora) y le dije al mayordomo que quería ver al señor Ford por negocios. Había tomado la precaución de descubrir que no estaba allí. . Está en Droitwich.\"",
         "title": "La pequeña pepita",
         "author": "P.G. Wodehouse",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001889",
+        "time": "12:15",
+        "quote_time_case": "12.15",
+        "quote_first": "¿Qué debería pensar que sea liberador y refrescante? Estoy de humor cuando abro la ventana por la noche y miro las estrellas. Desafortunadamente son ",
+        "quote_last": " en un día gris y aburrido, los aviones están activos.",
+        "title": "El diario de un escritor: extractos del diario de Virginia Woolf",
+        "author": "Virginia Woolf",
         "sfw": "unknown"
     }
 ]

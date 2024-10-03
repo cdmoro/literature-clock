@@ -1,52 +1,52 @@
 [
     {
-        "id": "003615",
+        "id": "003560",
         "time": "23:53",
-        "quote_time_case": "* acercándose a la medianoche",
-        "quote_first": "Era casi medianoche y el Primer Ministro estaba sentado solo en su oficina, leyendo un largo memorando que se deslizaba por su cerebro sin dejar el más mínimo rastro de significado.",
-        "quote_last": "",
-        "title": "Harry Potter y el Príncipe Mestizo",
-        "author": "J.K. Rowling",
-        "sfw": "unknown"
+        "quote_time_case": "faltan siete minutos para la medianoche",
+        "quote_first": "“Ciertamente lo es, querida. Sólo estoy devolviendo los jarrones”. Miró de nuevo su reloj. \"Creo que descubrirás que son ",
+        "quote_last": ", así que he cumplido mi parte del trato\".",
+        "title": "Este era un hombre",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     },
     {
-        "id": "003616",
+        "id": "003561",
         "time": "23:53",
-        "quote_time_case": "* cerca de la medianoche",
-        "quote_first": "Era cerca de medianoche.<br>Torvik cogió la muñeca que había quedado en el sofá del estudio, después de haberle reparado primero el pie roto.",
-        "quote_last": "",
+        "quote_time_case": "cerca de medianoche",
+        "quote_first": "Era ",
+        "quote_last": ".<br>Torvik tomó la muñeca que había sido abandonada en el sofá del estudio, después de haber reparado primero su pie roto.",
         "title": "El martillo de Dios",
         "author": "Bo Giertz",
         "sfw": "unknown"
     },
     {
-        "id": "003617",
+        "id": "003562",
         "time": "23:53",
-        "quote_time_case": "* cerca de la medianoche",
-        "quote_first": "Era cerca de medianoche cuando salió de Palacio en un cesto de ropa llevado por dos porteadores, cubierta con sus propias batas y enaguas sucias que supuestamente llevaban a la lavandera.",
-        "quote_last": "",
+        "quote_time_case": "cerca de medianoche",
+        "quote_first": "Era ",
+        "quote_last": " cuando salió de Palacio en un cesto para ropa llevado por dos porteadores, cubierta con sus propias batas y enaguas sucias que supuestamente estaban siendo llevadas a la lavandera.",
         "title": "Por siempre ámbar",
         "author": "Kathleen Windsor",
         "sfw": "unknown"
     },
     {
-        "id": "003618",
+        "id": "003563",
         "time": "23:53",
-        "quote_time_case": "Se acerca la medianoche",
-        "quote_first": "",
-        "quote_last": ", y aunque el pico de actividad ha pasado, el metabolismo basal que mantiene la vida continúa intacto, produciendo el bajo continuo del gemido de la ciudad, un sonido monótono que ni sube ni baja pero que está preñado de aprensiones.",
-        "title": "Después del anochecer",
-        "author": "Haruki Murakami",
+        "quote_time_case": "cerca de medianoche",
+        "quote_first": "Era ",
+        "quote_last": " y el Primer Ministro estaba sentado solo en su oficina, leyendo un largo memorando que se deslizaba por su cerebro sin dejar el más mínimo rastro de significado.",
+        "title": "Harry Potter y el príncipe mestizo",
+        "author": "J.K. Rowling",
         "sfw": "unknown"
     },
     {
-        "id": "003619",
+        "id": "003564",
         "time": "23:53",
-        "quote_time_case": "siete minutos para la medianoche",
-        "quote_first": "“Ciertamente lo es, querida. Sólo estoy devolviendo los jarrones”. Miró de nuevo su reloj. \"Creo que descubrirás que faltan ",
-        "quote_last": ", así que he cumplido mi parte del trato\".",
-        "title": "Este era un hombre",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
+        "quote_time_case": "Se acerca la medianoche",
+        "quote_first": "",
+        "quote_last": ", y aunque ha pasado el pico de actividad, el metabolismo basal que mantiene la vida continúa intacto, produciendo el bajo continuo del gemido de la ciudad, un sonido monótono que ni sube o baja pero está preñado de presentimientos.",
+        "title": "Después del anochecer",
+        "author": "Haruki Murakami",
+        "sfw": "unknown"
     }
 ]

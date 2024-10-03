@@ -1,40 +1,40 @@
 [
     {
-        "id": "002857",
-        "time": "18:50",
-        "quote_time_case": "* 6:50 esa tarde",
-        "quote_first": "A las 6:50 de esa tarde, Lacey estaba en el atrio vestida con pantalones cortos, una camiseta azul y zapatos tenis resistentes, lista para una cálida tarde de caminata. Se quedó mirando la pequeña rana arbórea roja agazapada en una rama a la altura de los ojos mientras grupos de turistas y un flujo interminable de grupos más pequeños desfilaban a su alrededor, todos deambulando por las partes del zig que Swain había abierto al público para la jornada de puertas abiertas del fin de semana. .",
-        "quote_last": "",
-        "title": "El enclave",
-        "author": "Karen Hancock",
-        "sfw": "sfw"
-    },
-    {
-        "id": "002858",
-        "time": "18:50",
-        "quote_time_case": "* diez minutos para las siete",
-        "quote_first": "A las siete menos diez, Dulcie estaba lista. Se miró en el espejo arrugado. La reflexión fue satisfactoria. El vestido azul oscuro, ajustado y sin arrugas, el sombrero con su alegre pluma negra, los guantes ligeramente sucios, todos representaban la abnegación, incluso de la comida misma, le sentaban enormemente bien. Dulcie olvidó todo lo demás por un momento excepto que era hermosa y que la vida estaba a punto de levantar una esquina de su misterioso velo para que ella pudiera observar sus maravillas. Ningún caballero la había invitado a salir antes. Ahora ella iba a entrar por un breve momento en el brillo y el espectáculo exaltado.",
-        "quote_last": "",
-        "title": "Los cuatro millones",
-        "author": "O. Henry",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002859",
+        "id": "002814",
         "time": "18:50",
         "quote_time_case": "18:50",
-        "quote_first": "Finalmente una voz dijo: “Ni el señor Clifton ni su hija están en ese vuelo, señor Ghuman, y el mostrador de embarque ya cerró. ¿Quieres que compruebe el vuelo de las ",
+        "quote_first": "Finalmente una voz dijo: “Ni el señor Clifton ni su hija están en ese vuelo, señor Ghuman, y el mostrador de embarque ya cerró. ¿Quieres que revise el vuelo ",
         "quote_last": "?",
         "title": "Llega la hora",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "002860",
+        "id": "002815",
+        "time": "18:50",
+        "quote_time_case": "6:50 esa noche",
+        "quote_first": "A las ",
+        "quote_last": ", Lacey estaba en el atrio vestida con pantalones cortos, una camiseta azul y zapatos tenis resistentes, lista para una cálida tarde de caminata. Se quedó mirando la pequeña rana arbórea roja agazapada en una rama a la altura de los ojos mientras grupos de turistas y un flujo interminable de grupos más pequeños desfilaban a su alrededor, todos deambulando por las partes del zig que Swain había abierto al público para la jornada de puertas abiertas del fin de semana. .",
+        "title": "El enclave",
+        "author": "Karen Hancock",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002816",
+        "time": "18:50",
+        "quote_time_case": "diez minutos para las siete",
+        "quote_first": "A las ",
+        "quote_last": " Dulcie estaba lista. Se miró en el espejo arrugado. La reflexión fue satisfactoria. El vestido azul oscuro, ajustado y sin arrugas, el sombrero con su alegre pluma negra, los guantes ligeramente sucios, todos representaban la abnegación, incluso de la comida misma, le sentaban enormemente bien. Dulcie olvidó todo lo demás por un momento excepto que era hermosa y que la vida estaba a punto de levantar una esquina de su misterioso velo para que ella pudiera observar sus maravillas. Ningún caballero la había invitado a salir antes. Ahora ella iba a entrar por un breve momento en el brillo y el espectáculo exaltado.",
+        "title": "Los cuatro millones",
+        "author": "O. Henry",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002817",
         "time": "18:50",
         "quote_time_case": "diez minutos antes de las siete",
-        "quote_first": "Ya era hora de ir a ver a la Señora. Cuando llegamos a su casa, ",
-        "quote_last": ", Damaronde abrió la puerta.",
+        "quote_first": "Ya era hora de ir a ver a la Señora. Cuando llegamos a su casa a las ",
+        "quote_last": ", nos abrió la puerta Damaronde.",
         "title": "La vida del niño",
         "author": "Robert R. McCammon",
         "sfw": "unknown"

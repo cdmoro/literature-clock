@@ -1,16 +1,56 @@
 [
     {
-        "id": "001348",
+        "id": "001326",
         "time": "09:15",
-        "quote_time_case": "09:15",
-        "quote_first": "¡Excelente! Jones comentó. \"Nunca lo había visto hacer eso antes. Está bien. Está bien\". Jones sacó un puñado de lápices de su bolsillo trasero. \"Ahora, obtuve el contacto primero a las ",
-        "quote_last": " más o menos, y el rumbo era aproximadamente dos seis nueve\".",
+        "quote_time_case": "9:15",
+        "quote_first": "Eran sólo las ",
+        "quote_last": " de la mañana, pero ya se había disipado la niebla temprana y el cielo, casi sin nubes, se iluminaba hasta adquirir una blancura opaca con destellos de un suave azul claro.",
+        "title": "Pecado original",
+        "author": "P.D. James",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001327",
+        "time": "09:15",
+        "quote_time_case": "Las nueve y cuarto",
+        "quote_first": "La multitud que desayunaba en el Sunspot se está disipando. Pronto la encargada, que ya no tiene los ojos somnolientos, recogerá el cartel con las especialidades de desayuno y lo sustituirá por el de las especialidades de almuerzo.<br>",
+        "quote_last": " y el humo que se eleva sobre el juzgado parece estar disipándose. Billy empieza a preguntarse si ha habido algún problema.",
+        "title": "Billy veranos",
+        "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001328",
+        "time": "09:15",
+        "quote_time_case": "nueve y cuarto",
+        "quote_first": "Eran las ",
+        "quote_last": " cuando salí de casa y crucé el parque, y así a través de Oxford Street hasta Baker Street.",
+        "title": "Las aventuras de Sherlock Holmes",
+        "author": "Sir Arthur Conan Doyle",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001329",
+        "time": "09:15",
+        "quote_time_case": "0915",
+        "quote_first": "¡Excelente! Jones comentó. \"Nunca lo había visto hacer eso antes. Está bien. Está bien\". Jones sacó un puñado de lápices de su bolsillo trasero. \"Ahora, obtuve el contacto primero en ",
+        "quote_last": " más o menos, y el rumbo era aproximadamente dos-seis-nueve\".",
         "title": "La caza del Octubre Rojo",
         "author": "Tom Clancy",
         "sfw": "unknown"
     },
     {
-        "id": "001349",
+        "id": "001330",
+        "time": "09:15",
+        "quote_time_case": "9:15 am",
+        "quote_first": "",
+        "quote_last": " se dobló sobre la almohada, se sentó para mirar por la ventana.",
+        "title": "Una fracción del todo",
+        "author": "Steve Toltz",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001331",
         "time": "09:15",
         "quote_time_case": "9.15 a.m.",
         "quote_first": "",
@@ -20,50 +60,10 @@
         "sfw": "sfw"
     },
     {
-        "id": "001350",
+        "id": "001332",
         "time": "09:15",
-        "quote_time_case": "9:15",
-        "quote_first": "Eran sólo las ",
-        "quote_last": " de la mañana, pero la niebla temprana ya se había disipado y el cielo, casi sin nubes, se iluminaba hasta adquirir una blancura opaca con destellos de un suave azul claro.",
-        "title": "El pecado original",
-        "author": "P.D. James",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001351",
-        "time": "09:15",
-        "quote_time_case": "9:15 am",
-        "quote_first": "",
-        "quote_last": ", doblado sobre la almohada, sentado para mirar por la ventana.",
-        "title": "Una fracción del todo",
-        "author": "Steve Toltz",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001352",
-        "time": "09:15",
-        "quote_time_case": "Las nueve y cuarto",
-        "quote_first": "La multitud que desayunaba en el Sunspot se está disipando. Pronto la mujer a cargo, que ya no tiene los ojos somnolientos, recogerá el cartel con las especialidades de desayuno y lo sustituirá por el de las especialidades de almuerzo.<br>",
-        "quote_last": " y el humo que se eleva sobre el juzgado parece estar disipándose. Billy empieza a preguntarse si ha habido algún problema.",
-        "title": "Billy Summers",
-        "author": "Stephen King",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001353",
-        "time": "09:15",
-        "quote_time_case": "las nueve y cuarto",
-        "quote_first": "Eran ",
-        "quote_last": " cuando salí de casa y crucé el parque, pasando por Oxford Street hasta Baker Street.",
-        "title": "Las aventuras de Sherlock Holmes",
-        "author": "Sir Arthur Conan Doyle",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001354",
-        "time": "09:15",
-        "quote_time_case": "las nueve y cuarto",
-        "quote_first": "La señorita Pettigrew abrió la puerta de la agencia de empleo y entró cuando el reloj marcaba ",
+        "quote_time_case": "nueve y cuarto",
+        "quote_first": "La señorita Pettigrew abrió la puerta de la agencia de empleo y entró cuando el reloj marcaba las ",
         "quote_last": ".",
         "title": "La señorita Pettigrew vive por un día",
         "author": "Winifred Watson",

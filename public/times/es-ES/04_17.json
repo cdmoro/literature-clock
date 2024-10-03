@@ -1,16 +1,6 @@
 [
     {
-        "id": "000594",
-        "time": "04:17",
-        "quote_time_case": "4.17",
-        "quote_first": "Se despertó a las ",
-        "quote_last": " sudando. Había estado soñando con África otra vez, y luego el sueño continuó en los Estados Unidos cuando era joven. Pero Inbata había estado allí, observándolo.",
-        "title": "El vil",
-        "author": "Douglas Phinney",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000595",
+        "id": "000584",
         "time": "04:17",
         "quote_time_case": "4:17",
         "quote_first": "Big Al se estiró y comenzó a caminar lentamente alrededor del auto. Sabía que planeaban partir mucho antes del amanecer, que era a las 6:48 a.m. Miró su reloj: ",
@@ -20,13 +10,23 @@
         "sfw": "sfw"
     },
     {
-        "id": "000596",
+        "id": "000585",
         "time": "04:17",
-        "quote_time_case": "4:17",
-        "quote_first": "Sucumbí a mi curiosidad, me subí la manga izquierda de mi jersey y miré mi reloj de pulsera. Eran las ",
-        "quote_last": " de la mañana. Esto me sorprendió no porque ya casi amaneciera, sino porque no tenía idea de la hora.",
+        "quote_time_case": "4:17 a.m.",
+        "quote_first": "Sucumbí a mi curiosidad, me subí la manga izquierda de mi jersey y miré mi reloj de pulsera. Eran ",
+        "quote_last": " Esto me sorprendió no porque ya casi amaneciera, sino porque no tenía idea de la hora.",
         "title": "Las Catacumbas",
         "author": "Jeremy Bates",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000586",
+        "time": "04:17",
+        "quote_time_case": "4.17 am",
+        "quote_first": "Se despertó a las ",
+        "quote_last": " sudando. Había estado soñando con África otra vez, y luego el sueño continuó en los Estados Unidos cuando era joven. Pero Inbata había estado allí, observándolo.",
+        "title": "el vil",
+        "author": "Douglas Phinney",
         "sfw": "unknown"
     }
 ]

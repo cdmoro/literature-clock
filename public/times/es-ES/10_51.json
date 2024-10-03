@@ -1,32 +1,32 @@
 [
     {
-        "id": "001644",
-        "time": "10:51",
-        "quote_time_case": "10.51",
-        "quote_first": "—¿Algo más? —preguntó, echando otro vistazo al reloj: las ",
-        "quote_last": ". Todavía hay tiempo para matar.<br>“Hablé con mi oficial de libertad condicional el lunes”, dijo Faulkner, “y no mencionó ninguna liberación anticipada”.",
-        "title": "Próximo en la fila",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001645",
-        "time": "10:51",
-        "quote_time_case": "* nueve minutos para las once",
-        "quote_first": "A las once menos nueve del lunes, una joven rubia con lo que parecía un corte al rape salió del despacho de Susan, cogió su impermeable amarillo del perchero y salió de la sala de espera sin mirarme.",
-        "quote_last": "",
-        "title": "Alegría carmesí",
-        "author": "Robert Parker",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001646",
+        "id": "001618",
         "time": "10:51",
         "quote_time_case": "10:51",
-        "quote_first": "pero todavía confiaba en que podrían llegar a la cima cuando alcanzaran los 27,550 pies a las ",
+        "quote_first": "pero todavía confiaba en que podrían llegar a la cima cuando alcanzaran los 27,550 pies en ",
         "quote_last": ". Fue entonces cuando escuchó un grito que sonó como el de un animal herido. Sabía que no era Finch.",
         "title": "Caminos de gloria",
         "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001619",
+        "time": "10:51",
+        "quote_time_case": "10.51",
+        "quote_first": "“¿Algo más?” preguntó, echando otro vistazo al reloj: ",
+        "quote_last": ". Todavía hay tiempo para matar.<br>“Hablé con mi oficial de libertad condicional el lunes”, dijo Faulkner, “y no mencionó una liberación anticipada”.",
+        "title": "Siguiente en la fila",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001620",
+        "time": "10:51",
+        "quote_time_case": "nueve minutos para las once",
+        "quote_first": "A las ",
+        "quote_last": " del lunes, una joven rubia con lo que equivalía a un corte al rape salió de la oficina de Susan, cogió su impermeable amarillo del perchero y salió del sala de espera sin mirarme.",
+        "title": "Alegría carmesí",
+        "author": "Robert Parker",
         "sfw": "sfw"
     }
 ]

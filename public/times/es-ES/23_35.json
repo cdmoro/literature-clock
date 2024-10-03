@@ -1,32 +1,32 @@
 [
     {
-        "id": "003575",
+        "id": "003520",
         "time": "23:35",
-        "quote_time_case": "* 23:35",
-        "quote_first": "Barbie llamó a la policía y enviaron un automóvil desde la estación de Haverstock Hill a las 11:35 p.m. Llegó a la casa de los Berenson en poco menos de tres minutos.",
-        "quote_last": "",
-        "title": "El paciente silencioso",
-        "author": "Alex Michaelides",
-        "sfw": "unknown"
+        "quote_time_case": "once-treinta-cinco",
+        "quote_first": "Estuvo detrás del coche en moto durante algunos kilómetros y lo vio acercarse para aparcar junto a las piedras. Esto fue alrededor del ",
+        "quote_last": " el viernes. En el vehículo sólo iba una persona y el conductor apagó las luces al aparcar.",
+        "title": "El paciente privado",
+        "author": "P.D. James",
+        "sfw": "sfw"
     },
     {
-        "id": "003576",
+        "id": "003521",
         "time": "23:35",
-        "quote_time_case": "* once treinta y cinco",
-        "quote_first": "Luego, a las once y media, se abrió la puerta del fondo del vestíbulo y entraron un sargento de policía y tres agentes, seguidos por Bagot.",
-        "quote_last": "",
+        "quote_time_case": "once y treinta y cinco",
+        "quote_first": "Luego, a las ",
+        "quote_last": " se abrió la puerta del fondo del vestíbulo y entraron un sargento de policía y tres agentes, seguidos por Bagot.",
         "title": "¡Hamlet, venganza!",
         "author": "Michael Innes",
         "sfw": "unknown"
     },
     {
-        "id": "003577",
+        "id": "003522",
         "time": "23:35",
-        "quote_time_case": "* once y treinta y cinco",
-        "quote_first": "Estuvo detrás del coche en moto durante algunos kilómetros y lo vio acercarse para aparcar junto a las piedras. Eran alrededor de las once y media del viernes. En el vehículo sólo iba una persona y el conductor apagó las luces al aparcar.",
-        "quote_last": "",
-        "title": "El paciente privado",
-        "author": "P.D. James",
-        "sfw": "sfw"
+        "quote_time_case": "11:35 p.m.",
+        "quote_first": "Barbie llamó a la policía y un coche fue enviado desde la comisaría de Haverstock Hill a las ",
+        "quote_last": ". Llegó a la casa de los Berenson en poco menos de tres minutos.",
+        "title": "El paciente silencioso",
+        "author": "Alex Michaelides",
+        "sfw": "unknown"
     }
 ]

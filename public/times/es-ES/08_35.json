@@ -1,32 +1,32 @@
 [
     {
-        "id": "001199",
+        "id": "001179",
         "time": "08:35",
-        "quote_time_case": "8.35",
-        "quote_first": "La entrega se realizó mediante mensajería y el sello de la oficina marcaba las ",
-        "quote_last": " como hora límite. Abrí el sobre y saqué la brillante fotografía de 4¼ por 3¼ que era todo lo que había dentro.",
+        "quote_time_case": "8.35 a.m.",
+        "quote_first": "La entrega se había realizado mediante servicio de mensajería y el sello de la oficina mostraba ",
+        "quote_last": " como tiempo de espera. Abrí el sobre y saqué la brillante fotografía de 4¼ por 3¼ que era todo lo que había dentro.",
         "title": "El sueño de los insectos",
         "author": "Raymond Chandler",
         "sfw": "unknown"
     },
     {
-        "id": "001200",
+        "id": "001180",
         "time": "08:35",
-        "quote_time_case": "8.35",
+        "quote_time_case": "las ocho y treinta y cinco minutos",
+        "quote_first": "Eran ",
+        "quote_last": " según el gran reloj del edificio central cuando Mathieu cruzó el patio hacia la oficina que ocupaba como diseñador jefe. Durante ocho años trabajó en la fábrica donde, después de un brillante y especial estudio, se inició como ayudante de dibujante cuando tenía diecinueve años, recibiendo entonces un salario de cien francos mensuales.",
+        "title": "Fecundidad",
+        "author": "Emile Zola",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001181",
+        "time": "08:35",
+        "quote_time_case": "8.35 a.m.",
         "quote_first": "VIEJA ABUELITA GUMMY: (EMPUJA UNA DAGA HACIA LA MANO DE STEPHEN) Quítalo, acushla. A las ",
         "quote_last": " estarás en el cielo e Irlanda será libre. (ELLA ORA) ¡Oh buen Dios, tómalo!",
         "title": "Ulises",
         "author": "James Joyce",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001201",
-        "time": "08:35",
-        "quote_time_case": "* Las ocho y treinta y cinco minutos",
-        "quote_first": "Según el gran reloj del edificio central eran las ocho y treinta y cinco minutos cuando Mathieu cruzó el patio hacia el despacho que ocupaba como diseñador jefe. Durante ocho años trabajó en la fábrica donde, después de un brillante y especial estudio, se inició como ayudante de dibujante cuando tenía diecinueve años, recibiendo entonces un salario de cien francos al mes.",
-        "quote_last": "",
-        "title": "Fertilidad",
-        "author": "Emile Zola",
         "sfw": "unknown"
     }
 ]

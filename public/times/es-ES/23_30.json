@@ -1,48 +1,58 @@
 [
     {
-        "id": "003561",
+        "id": "003506",
         "time": "23:30",
-        "quote_time_case": "* 2330",
-        "quote_first": "Cargó el reproductor y encendió el visor, sus rodillas volvieron a chasquear mientras se agachaba para poner la señal en 23:30.",
-        "quote_last": "",
-        "title": "Frivolidad infinita",
-        "author": "David Foster Wallace",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003562",
-        "time": "23:30",
-        "quote_time_case": "once y media",
-        "quote_first": "Entró en su dormitorio poco después de las ",
+        "quote_time_case": "once-treinta",
+        "quote_first": "Entró en su habitación poco después de ",
         "quote_last": ". Se había quitado los zapatos embarrados abajo y estaba tratando de hacer silencio, pero escuchó el susurro de la ropa de cama en la oscuridad y supo que ella estaba despierta.",
-        "title": "La sangre manda",
+        "title": "si sangra",
         "author": "Stephen King",
         "sfw": "unknown"
     },
     {
-        "id": "003563",
+        "id": "003507",
         "time": "23:30",
-        "quote_time_case": "once y media",
-        "quote_first": "Y así fue como, alrededor de las ",
-        "quote_last": ", me encontré viajando hacia el Village en el autobús de la Quinta Avenida con la dirección de Hobart y Blackwell en el bolsillo, escrita en una página de uno de los cuadernos con monogramas que la señora Barbour guardaba en el teléfono.",
+        "quote_time_case": "las once y media",
+        "quote_first": "Y así fue que alrededor de ",
+        "quote_last": ", me encontré viajando hacia el Village en el autobús de la Quinta Avenida con la dirección de Hobart y Blackwell en mi bolsillo, escrita en una página de uno de los cuadernos con monogramas que la señora Barbour guardaba junto al teléfono.",
         "title": "El jilguero",
         "author": "Donna Tartt",
         "sfw": "unknown"
     },
     {
-        "id": "003564",
+        "id": "003508",
         "time": "23:30",
-        "quote_time_case": "once y media",
-        "quote_first": "Tomaría el autobús nocturno rumbo a Casablanca, el que salía de la playa a las ",
+        "quote_time_case": "las once y media de la noche",
+        "quote_first": "“Seré un hijo de puta si él no está aquí a las ",
+        "quote_last": ", tirando pedos en la oscuridad con un par de tijeras. y una bolsa de papel”.",
+        "title": "Alguien voló sobre el nido del cuco",
+        "author": "Ken Kesey",
+        "sfw": "nsfw"
+    },
+    {
+        "id": "003509",
+        "time": "23:30",
+        "quote_time_case": "2330",
+        "quote_first": "Cargó el reproductor y encendió el visor, sus rodillas volvieron a temblar mientras se agachaba para configurar la señal en ",
+        "quote_last": ".",
+        "title": "Broma infinita",
+        "author": "David Foster Wallace",
+        "sfw": "unknown"
+    },
+    {
+        "id": "003510",
+        "time": "23:30",
+        "quote_time_case": "las once y media",
+        "quote_first": "Tomaría el autobús nocturno hacia Casablanca, el que salía de la playa a las ",
         "quote_last": ".",
         "title": "Misa de medianoche y otras historias (La despedida)",
         "author": "Paul Bowles",
         "sfw": "unknown"
     },
     {
-        "id": "003565",
+        "id": "003511",
         "time": "23:30",
-        "quote_time_case": "once y media",
+        "quote_time_case": "las once y media",
         "quote_first": "El barco Picton debía partir a las ",
         "quote_last": ". Era una noche hermosa, templada, estrellada, sólo cuando bajaron del taxi y comenzaron a caminar por el Old Wharf que se adentraba en el puerto, un leve viento que soplaba del agua agitaba bajo el sombrero de Fenella, y ella levantó su mano para mantenerlo puesto.",
         "title": "El viaje",
@@ -50,23 +60,13 @@
         "sfw": "unknown"
     },
     {
-        "id": "003566",
+        "id": "003512",
         "time": "23:30",
-        "quote_time_case": "once y media",
-        "quote_first": "El reloj del barco en el bar marca las ",
+        "quote_time_case": "las once y media",
+        "quote_first": "El reloj del barco en el bar marca ",
         "quote_last": ". Las once y media es hora de abrir. Las manecillas del reloj llevan cincuenta años quietas en las once y media.",
         "title": "Bajo la madera de leche",
         "author": "Dylan Thomas",
         "sfw": "unknown"
-    },
-    {
-        "id": "003567",
-        "time": "23:30",
-        "quote_time_case": "once y media de la noche",
-        "quote_first": "\"Seré un hijo de puta si él no está aquí a las ",
-        "quote_last": ", tirando pedos en la oscuridad con un par de tijeras y una bolsa de papel\".",
-        "title": "Uno volo sobre el nido del cuco",
-        "author": "Ken Kesey",
-        "sfw": "nsfw"
     }
 ]

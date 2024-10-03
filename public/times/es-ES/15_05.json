@@ -1,32 +1,32 @@
 [
     {
-        "id": "002315",
+        "id": "002279",
         "time": "15:05",
-        "quote_time_case": "3:05 p.m.",
-        "quote_first": "Por un momento, Ruth pudo ver los huesos de los murciélagos resaltando claramente, como en una imagen de rayos X.<br>Entonces todo el verde se volvió negro.<br>Eran las ",
+        "quote_time_case": "tres-oh-cinco",
+        "quote_first": "Hace cinco minutos eran las tres, dijo Murphy. \"No puedo estar seguro, pero teorizo ​​que ahora debe ser alrededor de ",
+        "quote_last": ".\"<br>Me crucé de brazos. \"Normalmente no hago vigilancias.\"",
+        "title": "noche blanca",
+        "author": "Jim Butcher",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002280",
+        "time": "15:05",
+        "quote_time_case": "3:05 p.m. ",
+        "quote_first": "Por un momento, Ruth pudo ver los huesos de los murciélagos resaltando claramente, como en una imagen de rayos X.<br>Entonces todo el verde se volvió negro.<br>Eran ",
         "quote_last": "",
         "title": "Los Tommyknockers",
         "author": "Stephen King",
         "sfw": "unknown"
     },
     {
-        "id": "002316",
+        "id": "002281",
         "time": "15:05",
-        "quote_time_case": "* las tres y cinco minutos",
-        "quote_first": "Al final, a las tres y cinco de esa tarde, Smith admitió la falsedad de la historia de Fort Scott.<br>\"Eso fue sólo algo que Dick le dijo a su familia. Para poder pasar la noche fuera y beber un poco\".",
-        "quote_last": "",
-        "title": "En sangre fria",
+        "quote_time_case": "las tres y cinco minutos",
+        "quote_first": "Finalmente, a las ",
+        "quote_last": " de esa tarde, Smith admitió la falsedad del relato de Fort Scott.<br>\"Eso fue sólo algo que Dick le contó a su familia. Para poder Quédate fuera durante la noche. Bebe un poco\".",
+        "title": "A sangre fría",
         "author": "Truman Capote",
         "sfw": "unknown"
-    },
-    {
-        "id": "002317",
-        "time": "15:05",
-        "quote_time_case": "* tres cero cinco",
-        "quote_first": "Hace cinco minutos eran las tres, dijo Murphy. \"No puedo estar seguro, pero teorizo que ahora deben ser alrededor de las tres y cinco\".<br>Me crucé de brazos. \"Normalmente no hago vigilancias.\"",
-        "quote_last": "",
-        "title": "noche Blanca",
-        "author": "Jim Butcher",
-        "sfw": "sfw"
     }
 ]

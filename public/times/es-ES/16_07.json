@@ -1,22 +1,22 @@
 [
     {
-        "id": "002473",
+        "id": "002436",
         "time": "16:07",
-        "quote_time_case": "* siete minutos después de las cuatro",
-        "quote_first": "Pero lo soltó inmediatamente porque la escalera se le resbaló bajo los pies y por un instante quedó suspendido en el aire y luego se dio cuenta de que había muerto sin Comunión, sin tiempo de arrepentirse de nada ni de despedirse de nadie, a los siete minutos después. cuatro el domingo de Pentecostés.",
-        "quote_last": "",
-        "title": "Amor en tiempos de cólera",
-        "author": "Gabriel García Márquez",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002474",
-        "time": "16:07",
-        "quote_time_case": "las cuatro y siete minutos",
-        "quote_first": "A ",
-        "quote_last": " se rompió el silencio de la radio con las cinco palabras: “Ladrón detenido, repito Ladrón detenido”.",
+        "quote_time_case": "siete minutos y cuatro",
+        "quote_first": "A las ",
+        "quote_last": " el silencio de la radio se rompió con las cinco palabras: “Ladrón detenido, repito, ladrón detenido”.",
         "title": "Primero entre iguales",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
+    },
+    {
+        "id": "002437",
+        "time": "16:07",
+        "quote_time_case": "las cuatro y siete minutos",
+        "quote_first": "Pero lo soltó inmediatamente porque la escalera se le resbaló bajo los pies y por un instante quedó suspendido en el aire y luego se dio cuenta que había muerto sin Comunión, sin tiempo de arrepentirse de nada ni de despedirse de nadie, en ",
+        "quote_last": " el domingo de Pentecostés.",
+        "title": "El amor en los tiempos del cólera",
+        "author": "Gabriel García Márquez",
+        "sfw": "unknown"
     }
 ]

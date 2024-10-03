@@ -1,46 +1,16 @@
 [
     {
-        "id": "003596",
+        "id": "003541",
         "time": "23:45",
-        "quote_time_case": "* cuarto para la medianoche",
-        "quote_first": "El plan de Billy dura hasta la medianoche menos cuarto. Ha estado viendo una película de acción en ropa interior y, aunque la trama es simple (algo sobre un tipo que busca vengarse de los hombres que mataron a su perro), Billy ha perdido el hilo. Decide dar por terminado el día.",
-        "quote_last": "",
-        "title": "Billy Summers",
-        "author": "Stephen King",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003597",
-        "time": "23:45",
-        "quote_time_case": "* las once y tres cuartos",
-        "quote_first": "Los relojes de la iglesia dieron las once y cuarto y dos figuras emergieron en el Puente de Londres. Uno de ellos, que avanzaba con paso veloz y veloz, era el de una mujer que miraba ansiosamente a su alrededor como si buscara algún objeto esperado; la otra figura era la de un hombre...",
-        "quote_last": "",
-        "title": "Oliver Twist",
-        "author": "Charles Dickens",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003598",
-        "time": "23:45",
-        "quote_time_case": "* un cuarto para las doce",
-        "quote_first": "Eran las doce menos cuarto cuando terminó el servicio. Cuando llegó a casa, el obispo se desvistió y se acostó inmediatamente sin siquiera decir sus oraciones.",
-        "quote_last": "",
-        "title": "El obispo",
+        "quote_time_case": "las doce menos cuarto",
+        "quote_first": "Eran las ",
+        "quote_last": " cuando terminó el servicio. Cuando llegó a casa, el obispo se desvistió y se acostó inmediatamente sin siquiera decir sus oraciones.",
+        "title": "el obispo",
         "author": "Anton Pavlovich Chekhov",
         "sfw": "sfw"
     },
     {
-        "id": "003599",
-        "time": "23:45",
-        "quote_time_case": "* un cuarto para las doce",
-        "quote_first": "Llegamos por fin al camino de sirga, y eso nos alegró porque antes no estábamos seguros de si íbamos hacia el río o alejándonos de él, y cuando uno está cansado y quiere irse a la cama, incertidumbres como esa preocuparte. Pasamos junto a Shiplake cuando el reloj marcaba las doce menos cuarto y entonces George dijo pensativamente: \"No recordarás cuál de las islas era, ¿verdad?\"",
-        "quote_last": "",
-        "title": "Tres hombres en un bote",
-        "author": "Jerome K. Jerome",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003600",
+        "id": "003542",
         "time": "23:45",
         "quote_time_case": "quince minutos para la medianoche",
         "quote_first": "Faltaban ",
@@ -48,5 +18,35 @@
         "title": "La Casa del Escorpión",
         "author": "Nancy Farmer",
         "sfw": "sfw"
+    },
+    {
+        "id": "003543",
+        "time": "23:45",
+        "quote_time_case": "cuarto para la medianoche",
+        "quote_first": "El plan de Billy dura hasta el ",
+        "quote_last": ". Ha estado viendo una película de acción en ropa interior y, aunque la trama es simple (algo sobre un tipo que busca vengarse de los hombres que mataron a su perro), Billy ha perdido el hilo. Decide dar por terminado el día.",
+        "title": "Billy veranos",
+        "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "id": "003544",
+        "time": "23:45",
+        "quote_time_case": "las once y cuarto",
+        "quote_first": "Los relojes de la iglesia dieron las campanadas ",
+        "quote_last": ", cuando dos figuras emergieron en el Puente de Londres. Uno de ellos, que avanzaba con paso veloz y veloz, era el de una mujer que miraba ansiosamente a su alrededor como si buscara algún objeto esperado; la otra figura era la de un hombre...",
+        "title": "Oliver Giro",
+        "author": "Charles Dickens",
+        "sfw": "unknown"
+    },
+    {
+        "id": "003545",
+        "time": "23:45",
+        "quote_time_case": "las doce menos cuarto",
+        "quote_first": "Llegamos por fin al camino de sirga, y eso nos alegró porque antes no estábamos seguros de si íbamos hacia el río o alejándonos de él, y cuando uno está cansado y quiere irse a la cama, incertidumbres como esa preocuparte. Pasamos por Shiplake cuando el reloj marcaba las ",
+        "quote_last": " y entonces George dijo pensativamente: \"No recordarás cuál de las islas era, ¿verdad? \"",
+        "title": "Tres hombres en un barco",
+        "author": "Jerome K. Jerome",
+        "sfw": "unknown"
     }
 ]

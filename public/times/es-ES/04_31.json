@@ -1,22 +1,22 @@
 [
     {
-        "id": "000619",
+        "id": "000609",
         "time": "04:31",
-        "quote_time_case": "4:31",
-        "quote_first": "Un terremoto sacudió Los Ángeles a las ",
-        "quote_last": " de esta mañana y las imágenes comenzaron a llegar a través de CNN de inmediato.",
-        "title": "Microsiervos",
-        "author": "Douglas Coupland",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000620",
-        "time": "04:31",
-        "quote_time_case": "4:31 a.m.",
-        "quote_first": "Mientras la señorita Nichol caminaba por el pasillo, miró su reloj. Eran las ",
+        "quote_time_case": "4:31 A.M.",
+        "quote_first": "Mientras la señorita Nichol caminaba por el pasillo, miró su reloj. Eran ",
         "quote_last": " Bajó las escaleras hasta el quinto piso y se dirigió a la guardería.",
         "title": "hijos de la fortuna",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
+    },
+    {
+        "id": "000610",
+        "time": "04:31",
+        "quote_time_case": "4:31",
+        "quote_first": "Un terremoto sacudió Los Ángeles a las ",
+        "quote_last": " esta mañana y las imágenes comenzaron a llegar a través de CNN de inmediato.",
+        "title": "Microsiervos",
+        "author": "Douglas Coupland",
+        "sfw": "unknown"
     }
 ]

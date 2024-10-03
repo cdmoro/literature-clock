@@ -1,32 +1,32 @@
 [
     {
-        "id": "001744",
+        "id": "001718",
         "time": "11:15",
-        "quote_time_case": "* Once y cuarto",
-        "quote_first": "El chalet se encuentra aislado al final de un valle ciego. Más arriba sólo está el embalse y detrás el traicionero glaciar. A las once y cuarto, llega a la conclusión de que es imposible que Nick esté deambulando por ahí con este tiempo.",
-        "quote_last": "",
+        "quote_time_case": "las once y cuarto",
+        "quote_first": "En un tramo de acera frente a la Torre Gerard está escrito SÓLO ESTACIONAMIENTO AUTORIZADO. A las ",
+        "quote_last": " se detiene un camión con un gran sombrero al costado. Debajo del sombrero, JOSE'S COME. Y debajo de eso, TODOS VEN! La gente empieza a salir del edificio, avanzando hacia el camión como hormigas atraídas por el azúcar.",
+        "title": "Billy veranos",
+        "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001719",
+        "time": "11:15",
+        "quote_time_case": "las once y cuarto",
+        "quote_first": "El chalet se encuentra aislado al final de un valle ciego. Más arriba sólo está el embalse y detrás el traicionero glaciar. A las ",
+        "quote_last": ", concluye que es imposible que Nick esté deambulando por ahí, con este clima.",
         "title": "Eco",
         "author": "Thomas Olde Heuvelt",
         "sfw": "unknown"
     },
     {
-        "id": "001745",
+        "id": "001720",
         "time": "11:15",
         "quote_time_case": "11:15",
-        "quote_first": "¿Tienes un par de días libres? Acaban de recibir un telegrama desde el oeste de Inglaterra en relación con la tragedia de Boscombe Valley. Estaré feliz si vienes conmigo. Aire y paisaje perfectos. Salga de Paddington a las ",
+        "quote_first": "¿Tienes un par de días libres? Acaban de recibir un telegrama desde el oeste de Inglaterra en relación con la tragedia de Boscombe Valley. Estaré feliz si vienes conmigo. Aire y paisaje perfectos. Salga de Paddington por el ",
         "quote_last": ".",
         "title": "Las aventuras de Sherlock Holmes",
         "author": "Sir Arthur Conan Doyle",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001746",
-        "time": "11:15",
-        "quote_time_case": "once y cuarto",
-        "quote_first": "En un tramo de acera frente a la Torre Gerard está escrito SÓLO ESTACIONAMIENTO AUTORIZADO. A las ",
-        "quote_last": " se detiene un camión con un gran sombrero al costado. Debajo del sombrero, JOSE'S COME. Y debajo de eso, TODOS VEN! La gente empieza a salir del edificio, avanzando hacia el camión como hormigas atraídas por el azúcar.",
-        "title": "Billy Summers",
-        "author": "Stephen King",
         "sfw": "unknown"
     }
 ]

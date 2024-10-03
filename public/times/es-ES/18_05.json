@@ -1,8 +1,8 @@
 [
     {
-        "id": "002773",
+        "id": "002730",
         "time": "18:05",
-        "quote_time_case": "18:05",
+        "quote_time_case": "6:05 p.m.",
         "quote_first": "",
         "quote_last": " ¿Me pregunto dónde están todos? Supongo que todos han salido con sus novios o se han ido a casa con sus familias.",
         "title": "El diario de Bridget Jones",
@@ -10,11 +10,11 @@
         "sfw": "sfw"
     },
     {
-        "id": "002774",
+        "id": "002731",
         "time": "18:05",
         "quote_time_case": "las seis y cinco",
-        "quote_first": "Alrededor de ",
-        "quote_last": ", Piers llegó con un periódico vespertino y algunos libros.",
+        "quote_first": "Aproximadamente a las ",
+        "quote_last": " Piers entró con un periódico de la tarde y algunos libros.",
         "title": "Un vaso de bendiciones",
         "author": "Barbara Pym",
         "sfw": "unknown"

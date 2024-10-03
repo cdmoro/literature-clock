@@ -1,22 +1,22 @@
 [
     {
-        "id": "001461",
-        "time": "09:53",
-        "quote_time_case": "diez menos siete",
-        "quote_first": "La señorita Pettigrew fue a la parada del autobús a esperar el autobús. No podía pagar el pasaje, pero menos aún podía permitirse el lujo de perder una posible situación por llegar tarde. El autobús la dejó a unos cinco minutos a pie de Onslow Mansions, y a las ",
-        "quote_last": " exactamente estaba fuera de su destino.",
-        "title": "La señorita Pettigrew vive por un día",
-        "author": "Winifred Watson",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001462",
+        "id": "001439",
         "time": "09:53",
         "quote_time_case": "siete minutos para las diez",
-        "quote_first": "La gente no le hablaba de esa manera. Su padre era abogado. Faltaban ",
+        "quote_first": "La gente no le hablaba de esa manera. Su padre era abogado. Eran ",
         "quote_last": ".",
         "title": "carrie",
         "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001440",
+        "time": "09:53",
+        "quote_time_case": "siete minutos menos las diez",
+        "quote_first": "La señorita Pettigrew fue a la parada del autobús a esperar el autobús. No podía pagar el pasaje, pero menos aún podía permitirse el lujo de perder una posible situación por llegar tarde. El autobús la dejó a unos cinco minutos a pie de Onslow Mansions, y a las ",
+        "quote_last": " precisamente estaba fuera de su destino.",
+        "title": "La señorita Pettigrew vive por un día",
+        "author": "Winifred Watson",
         "sfw": "unknown"
     }
 ]

@@ -1,42 +1,32 @@
 [
     {
-        "id": "001065",
+        "id": "001046",
         "time": "07:59",
-        "quote_time_case": "7.59 de la mañana",
-        "quote_first": "Había pasado cincuenta y dos días en 1958, pero aquí eran las ",
-        "quote_last": ".",
-        "title": "22/11/63",
-        "author": "Stephen King",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001066",
-        "time": "07:59",
-        "quote_time_case": "ocho menos un minuto",
-        "quote_first": "A las ",
-        "quote_last": " emprendió a buen paso el sendero que los llevaría a la base de la montaña.",
+        "quote_time_case": "un minuto para las ocho",
+        "quote_first": "Al ",
+        "quote_last": " emprendió a paso rápido el camino que los llevaría a la base de la montaña.",
         "title": "Caminos de gloria",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001067",
+        "id": "001047",
         "time": "07:59",
-        "quote_time_case": "aún no eran las ocho",
-        "quote_first": "Una mañana, yo acababa de llegar a la casa y ",
-        "quote_last": ", me encontré a don Octavio levantado, esperándome en la cocina.",
-        "title": "Los detectives salvajes",
-        "author": "Roberto Bolaño",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001068",
-        "time": "07:59",
-        "quote_time_case": "las ocho, tal vez un minuto antes",
-        "quote_first": "Eran exactamente ",
+        "quote_time_case": "ocho en punto, tal vez un minuto antes",
+        "quote_first": "Fue justo a las ",
         "quote_last": ". Entré a la sala de demostración para ver si había dejado mi lata de esmalte allí. Y había una botella de leche en el carrito y bebí un poco. Sólo un poco fuera de la cima.",
         "title": "Sudario para un ruiseñor",
         "author": "P.D. James",
         "sfw": "sfw"
+    },
+    {
+        "id": "001048",
+        "time": "07:59",
+        "quote_time_case": "7.59",
+        "quote_first": "Había pasado cincuenta y dos días en 1958, pero aquí era ",
+        "quote_last": " por la mañana.",
+        "title": "22/11/63",
+        "author": "Stephen King",
+        "sfw": "unknown"
     }
 ]

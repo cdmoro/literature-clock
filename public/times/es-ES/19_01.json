@@ -1,22 +1,22 @@
 [
     {
-        "id": "002907",
-        "time": "19:01",
-        "quote_time_case": "* alrededor de las siete",
-        "quote_first": "Esperó hasta casi las ocho, porque hacia las siete siempre entraba y salía de casa más gente que a otras horas.",
-        "quote_last": "",
-        "title": "El talentoso Sr. Ripley",
-        "author": "Patricia Highsmith",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002908",
+        "id": "002860",
         "time": "19:01",
         "quote_time_case": "las siete y un minuto",
-        "quote_first": "Las puertas del cementerio se cerraban al atardecer; Esa noche se puso el sol a ",
-        "quote_last": " y la distancia hasta la ciudad es considerable.",
+        "quote_first": "Las puertas del cementerio se cerraban al atardecer; La puesta del sol tuvo lugar esa noche a las ",
+        "quote_last": ", y la distancia hasta el pueblo es considerable.",
         "title": "La bola de filigrana",
         "author": "Anna Katherine Green",
         "sfw": "sfw"
+    },
+    {
+        "id": "002861",
+        "time": "19:01",
+        "quote_time_case": "alrededor de las siete",
+        "quote_first": "Esperó hasta casi las ocho, porque ",
+        "quote_last": " siempre había más gente entrando y saliendo de la casa que en otros momentos.",
+        "title": "El talentoso Sr. Ripley",
+        "author": "Patricia Highsmith",
+        "sfw": "unknown"
     }
 ]

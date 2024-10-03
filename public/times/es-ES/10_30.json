@@ -1,26 +1,36 @@
 [
     {
-        "id": "001601",
+        "id": "001575",
         "time": "10:30",
-        "quote_time_case": "diez y media",
-        "quote_first": "A las ",
-        "quote_last": " llega el de Relaciones Públicas, seguido de un club de mujeres. Golpea con sus gordas manos la puerta de la sala de estar.<br>“Oh, hola chicos; labio rígido, labio rígido... miren a su alrededor, niñas; ¿No es limpio, tan brillante? Esta es la señorita Ratched. Elegí este barrio porque es el barrio 𝘩𝘦𝘳. Ella es, niñas, como una madre. No es que me refiero a la edad, pero ustedes, chicas, entienden...",
-        "title": "Uno volo sobre el nido del cuco",
+        "quote_time_case": "Diez y media",
+        "quote_first": "",
+        "quote_last": " entra el de Relaciones Públicas seguido de un club de mujeres. Da una palmada con sus gordas manos en la puerta de la sala de estar.<br>“Oh, hola chicos; labio rígido, labio rígido... miren a su alrededor, niñas; ¿No es limpio, tan brillante? Esta es la señorita Ratched. Elegí este barrio porque es el barrio 𝘩𝘦𝘳. Ella es, niñas, como una madre. No me refiero a la edad, pero ustedes, chicas, entienden...",
+        "title": "Alguien voló sobre el nido del cuco",
         "author": "Ken Kesey",
         "sfw": "unknown"
     },
     {
-        "id": "001602",
+        "id": "001576",
         "time": "10:30",
         "quote_time_case": "diez y media",
-        "quote_first": "Revisó a Anderson y vio que todavía dormía como una piedra. Gardener había decidido despertar a Bobbi a las ",
+        "quote_first": "Revisó a Anderson y vio que todavía dormía como una piedra. Gardener había decidido despertar a Bobbi antes del ",
         "quote_last": " si ella no se había despertado sola.",
         "title": "Los Tommyknockers",
         "author": "Stephen King",
         "sfw": "unknown"
     },
     {
-        "id": "001603",
+        "id": "001577",
+        "time": "10:30",
+        "quote_time_case": "exactamente las 10 y media ",
+        "quote_first": "“Que así sea”, respondió el conde; y extendiendo su mano hacia un calendario suspendido cerca de la chimenea, dijo, “hoy es 21 de febrero”, y sacando su reloj, añadió, “son ",
+        "quote_last": ". Ahora prométeme recordar esto y espérame el 21 de mayo a las 10 y media de la mañana”.",
+        "title": "El Conde de Montecristo",
+        "author": "Alexandre Dumas",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001578",
         "time": "10:30",
         "quote_time_case": "diez y media",
         "quote_first": "A las ",
@@ -30,37 +40,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001604",
-        "time": "10:30",
-        "quote_time_case": "diez y media",
-        "quote_first": "Según el reloj de la pared, apenas son las ",
-        "quote_last": ".",
-        "title": "Las horas",
-        "author": "Michael Cunningham",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001605",
-        "time": "10:30",
-        "quote_time_case": "diez y media",
-        "quote_first": "A las ",
-        "quote_last": " estoy aseado, afeitado y vestido con mis mejores galas de Pascua: un traje de dos piezas de sirsaca Palm Beach que tengo desde la universidad.",
-        "title": "El periodista deportivo",
-        "author": "Richard Ford",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001606",
-        "time": "10:30",
-        "quote_time_case": "diez y media",
-        "quote_first": "“Que así sea”, respondió el conde; y extendiendo su mano hacia un calendario suspendido cerca de la chimenea, dijo: “hoy es 21 de febrero”, y sacando su reloj, añadió: “son exactamente las ",
-        "quote_last": "”. Ahora prométeme recordar esto y espérame el 21 de mayo a las 10 y media de la mañana”.",
-        "title": "El conde de monte cristo",
-        "author": "Alexandre Dumas",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001607",
+        "id": "001579",
         "time": "10:30",
         "quote_time_case": "10.30 h",
         "quote_first": "",
@@ -68,5 +48,25 @@
         "title": "El curioso incidente del perro a medianoche",
         "author": "Mark Haddon",
         "sfw": "sfw"
+    },
+    {
+        "id": "001580",
+        "time": "10:30",
+        "quote_time_case": "diez y media",
+        "quote_first": "según el reloj de la pared, apenas son las ",
+        "quote_last": ".",
+        "title": "las horas",
+        "author": "Michael Cunningham",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001581",
+        "time": "10:30",
+        "quote_time_case": "diez-treinta",
+        "quote_first": "A las ",
+        "quote_last": " estoy limpio, afeitado y vestido con mi mejor ropa de Pascua: un traje de dos piezas de Palm Beach de sirsaca que tengo desde la universidad.",
+        "title": "El periodista deportivo",
+        "author": "Richard Ford",
+        "sfw": "unknown"
     }
 ]

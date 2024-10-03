@@ -1,22 +1,22 @@
 [
     {
-        "id": "001740",
+        "id": "001714",
         "time": "11:13",
-        "quote_time_case": "* alrededor de las once, once y quince",
-        "quote_first": "La primera vez que los vi fueron alrededor de las once, once y cuarto de un sábado por la mañana. Había recorrido aproximadamente dos tercios de mi ruta cuando giré hacia su cuadra y noté un sedán Ford del 56 detenido en el patio con una gran U abierta. -Transporte detrás.",
-        "quote_last": "",
-        "title": "Desde donde estoy llamando",
-        "author": "Raymond Carver",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001741",
-        "time": "11:13",
-        "quote_time_case": "* once trece",
-        "quote_first": "Su propio caso era más desesperado y requería un expediente desesperado: abordar el tren de las once y trece sin comprar un billete. Continuó hasta llegar al límite del distrito cervecero, donde se detuvo en un pequeño estanco para comprar tabaco para pipa y hacer preguntas.",
-        "quote_last": "",
+        "quote_time_case": "once-trece",
+        "quote_first": "Su propio caso era más desesperado y requería un expediente desesperado: abordar el tren ",
+        "quote_last": " sin comprar un boleto. Continuó hasta llegar al límite del distrito cervecero, donde se detuvo en un pequeño estanco para comprar tabaco para pipa y hacer preguntas.",
         "title": "La rama dorada",
         "author": "George Gibbs",
         "sfw": "sfw"
+    },
+    {
+        "id": "001715",
+        "time": "11:13",
+        "quote_time_case": "alrededor de las once, once y quince",
+        "quote_first": "La primera vez que los vi fue ",
+        "quote_last": ", un sábado por la mañana, ya había recorrido dos tercios de mi ruta cuando giré hacia su cuadra y noté una El sedán Ford del 56 se detuvo en el patio con un gran U-Haul abierto detrás.",
+        "title": "Desde donde estoy llamando",
+        "author": "Raymond Carver",
+        "sfw": "unknown"
     }
 ]

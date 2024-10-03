@@ -1,32 +1,32 @@
 [
     {
-        "id": "001824",
+        "id": "001798",
         "time": "11:52",
-        "quote_time_case": "* ocho minutos para las doce",
-        "quote_first": "Regresó a Delaney Street a las doce menos ocho y fingió curiosear por la librería. A las doce, Monty llamó a su vecino y, uno o dos segundos más tarde, apareció desde la parte trasera de la tienda con su chaqueta vaquera y se dirigió al Blind Beggar.",
-        "quote_last": "",
+        "quote_time_case": "ocho minutos menos de las doce",
+        "quote_first": "Regresó a Delaney Street a las ",
+        "quote_last": " y fingió explorar la librería. A las doce, Monty llamó a su vecino y, uno o dos segundos más tarde, apareció desde la parte trasera de la tienda con su chaqueta vaquera y se dirigió al Blind Beggar.",
         "title": "sangre inocente",
         "author": "P.D. James",
         "sfw": "sfw"
     },
     {
-        "id": "001825",
+        "id": "001799",
         "time": "11:52",
-        "quote_time_case": "* ocho minutos para las doce",
-        "quote_first": "En cualquier caso, entramos en la estación con muchos más, justo cuando el gran reloj marcaba las doce menos ocho minutos. \"¡Gracias a Dios! Hemos llegado a tiempo\", dijo el joven, \"y gracias también a ti, amigo mío, y a tu buen caballo\".",
-        "quote_last": "",
-        "title": "Belleza negra",
-        "author": "Anna Sewell",
+        "quote_time_case": "11:52 a.m.",
+        "quote_first": "Todos los días Patti Goss-Simpson trae cuatro palitos de pescado a la escuela y su lonchera Titan Deep Freeze y todos los días a las ",
+        "quote_last": ", porque están remodelando la cafetería, dice Patti. su terrible pescado se pega en el terrible microondas en la parte trasera de la habitación del Sr. Bates y presiona los terribles botones que emiten un pitido y el olor que se derrama le parece a Seymour como si lo estuvieran presionando de cara a un pantano.",
+        "title": "Tierra del cuco de la nube",
+        "author": "Anthony Doerr",
         "sfw": "unknown"
     },
     {
-        "id": "001826",
+        "id": "001800",
         "time": "11:52",
-        "quote_time_case": "11:52 a.m.",
-        "quote_first": "Todos los días, Patti Goss-Simpson trae cuatro palitos de pescado a la escuela y su lonchera Titan Deep Freeze y todos los días a las ",
-        "quote_last": ", debido a que están remodelando la cafetería, Patti pone sus terribles palitos de pescado en el terrible microondas en la parte trasera de la casa del Sr. Bates y presiona los terribles botones que emiten un pitido y el olor que se derrama le parece a Seymour como si lo estuvieran presionando de cara a un pantano.",
-        "title": "Tierra del cuco de la nube",
-        "author": "Anthony Doerr",
+        "quote_time_case": "ocho minutos menos las doce",
+        "quote_first": "En cualquier caso, entramos en la estación con muchos más, justo cuando el gran reloj marcaba ",
+        "quote_last": " en punto. \"¡Gracias a Dios! Hemos llegado a tiempo\", dijo el joven, \"y gracias también a ti, amigo mío, y a tu buen caballo\".",
+        "title": "belleza negra",
+        "author": "Anna Sewell",
         "sfw": "unknown"
     }
 ]
