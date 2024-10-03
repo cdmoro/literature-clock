@@ -2,9 +2,9 @@
     {
         "id": "001883",
         "time": "12:12",
-        "quote_time_case": "* 12:12",
-        "quote_first": "Você estava na Carlin Street aproximadamente às 12h12 quando Carietta White saiu da Primeira Igreja Congregacional naquela rua?",
-        "quote_last": "",
+        "quote_time_case": "12:12",
+        "quote_first": "Você estava na Carlin Street aproximadamente às <-<-<-<",
+        "quote_last": ">->->-> quando Carietta White saiu da Primeira Igreja Congregacional naquela rua?",
         "title": "Carrie",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -13,8 +13,8 @@
         "id": "001884",
         "time": "12:12",
         "quote_time_case": "12:12",
-        "quote_first": "Era o dia doze de dezembro, o décimo segundo mês. A tinha doze anos. O rádio-relógio elétrico ao lado da mesa de cabeceira marcava 12h01. A estava esperando que marcasse ",
-        "quote_last": ", ele esperava que houvesse alguma sensação de correção cósmica quando isso acontecesse.",
+        "quote_first": "Era o dia doze de dezembro, o décimo segundo mês. A tinha doze anos. O rádio-relógio elétrico ao lado da mesa de cabeceira marcava 12h01. A estava esperando que lesse <-<-<-<",
+        "quote_last": ">->->->, ele esperava que houvesse alguma sensação de correção cósmica quando isso acontecesse.",
         "title": "Garoto A",
         "author": "Jonathan Trigell",
         "sfw": "unknown"

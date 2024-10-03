@@ -3,8 +3,8 @@
         "id": "002521",
         "time": "16:45",
         "quote_time_case": "quattro e quarantacinque",
-        "quote_first": "“Quando hai detto che saresti tornato ad Amsterdam?”<br>“Sai esattamente quando, perché te l'ho detto: domani mattina.”<br>“Puoi tornare prima?”<br>“Potrei. C'è un volo KLM alle ",
-        "quote_last": " del pomeriggio. oggi questo mi porterebbe ad Amsterdam poco prima delle sei.",
+        "quote_first": "“Quando hai detto che saresti tornato ad Amsterdam?”<br>“Sai esattamente quando, perché te l'ho detto: domani mattina.”<br>“Puoi tornare prima?”<br>“Potrei. C'è un volo KLM alle <-<-<-<",
+        "quote_last": ">->->-> oggi che mi porterà ad Amsterdam poco prima delle sei.\"",
         "title": "I Senza Nome",
         "author": "John Connolly",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "002522",
         "time": "16:45",
-        "quote_time_case": "* quattro quaranta cinque",
-        "quote_first": "Alle quattro e quarantacinque la signorina Haddon andò a prendere il tè con il preside, il quale spiegò perché desiderava che tutti gli alunni imparassero lo stesso duetto. Faceva parte del suo nuovo sistema coordinativo.",
-        "quote_last": "",
+        "quote_time_case": "quattro-quarantacinque",
+        "quote_first": "Alle <-<-<-<",
+        "quote_last": ">->->-> la signorina Haddon andò a prendere il tè con il preside, che spiegò perché desiderava che tutti gli alunni imparassero lo stesso duetto. Faceva parte del suo nuovo sistema coordinativo.",
         "title": "Coordinazione",
         "author": "E.M. Forster",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "002523",
         "time": "16:45",
-        "quote_time_case": "* quindici minuti prima delle cinque",
-        "quote_first": "Il giorno successivo Bill si prese solo dieci minuti dei venti minuti di pausa previsti per il pomeriggio e se ne andò alle cinque meno un quarto. Parcheggiò l'auto nel parcheggio proprio mentre Arlene scendeva dall'autobus.",
-        "quote_last": "",
+        "quote_time_case": "quindici minuti prima delle cinque",
+        "quote_first": "Il giorno successivo Bill si prese solo dieci minuti dei venti minuti di pausa previsti per il pomeriggio e se ne andò alle <-<-<-<",
+        "quote_last": ">->->->. Parcheggiò l'auto nel parcheggio proprio mentre Arlene scendeva dall'autobus.",
         "title": "Da dove chiamo",
         "author": "Raymond Carver",
         "sfw": "unknown"

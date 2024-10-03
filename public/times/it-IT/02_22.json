@@ -2,9 +2,9 @@
     {
         "id": "000330",
         "time": "02:22",
-        "quote_time_case": "* Le due e ventidue minuti",
-        "quote_first": "Dopo altre due visite, il praticante più celebre disse a Popanilla che il suo disturbo era \"senza dubbio nervoso\"; che si era sovraeccitato parlando troppo; che in futuro dovrà contare cinque tra ogni parola che pronuncerà, non fare mai domande ed evitare la società; cioè, non fermarsi mai a una festa serale per nessuna considerazione più tardi delle due e ventidue minuti, e non lasciarsi mai indurre da alcuna persuasione a cenare fuori più di una volta nello stesso giorno.",
-        "quote_last": "",
+        "quote_time_case": "due e venti minuti",
+        "quote_first": "Dopo altre due visite, il praticante più celebre disse a Popanilla che il suo disturbo era \"senza dubbio nervoso\"; che si era sovraeccitato parlando troppo; che in futuro dovrà contare cinque tra ogni parola che pronuncerà, non fare mai domande ed evitare la società; vale a dire, non fermarsi mai a una festa serale per nessun motivo più tardi delle <-<-<-<",
+        "quote_last": ">->->->, e non lasciarsi mai indurre da alcuna persuasione a cenare fuori più di una volta al giorno lo stesso giorno.",
         "title": "Il viaggio del capitano Popanilla",
         "author": "Benjamin Disraeli",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000331",
         "time": "02:22",
-        "quote_time_case": "2:22",
-        "quote_first": "All'improvviso il suo stomaco brontolò. Era troppo tesa per mangiare molto dopo l'incidente, e ora la fame la tormenta sul serio.<br>Lei guardò di nuovo l'orologio.<br>",
-        "quote_last": " A.M.",
+        "quote_time_case": "2:22 A.M.",
+        "quote_first": "All'improvviso il suo stomaco brontolò. Era troppo tesa per mangiare molto dopo l'incidente, e ora la fame la tormenta sul serio.<br>Ha guardato di nuovo l'orologio.<br><-<-<-<",
+        "quote_last": ">->->->",
         "title": "Nome in codice: Principessa",
         "author": "Christina Skye",
         "sfw": "unknown"

@@ -3,8 +3,8 @@
         "id": "001300",
         "time": "09:06",
         "quote_time_case": "nove e sei minuti",
-        "quote_first": "Bisogna farlo, Madeleine; Devo riuscire a parlargli domattina prima delle dieci, perché verrà la mia sposa.<br>\"La Parisienne? Viene qui!\"<br>\"Sì, con suo padre, in treno che arriverà domani alle ",
-        "quote_last": ".\"",
+        "quote_first": "Bisogna farlo, Madeleine; Devo riuscire a parlargli domattina prima delle dieci, perché verrà la mia sposa.<br>\"La Parisienne? Viene qui!\"<br>\"Sì, con suo padre, col treno che arriva Domani alle <-<-<-<",
+        "quote_last": ">->->->.\"",
         "title": "La macchia d'inchiostro",
         "author": "René Bazin",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "001301",
         "time": "09:06",
-        "quote_time_case": "nove e sei minuti",
-        "quote_first": "Segretamente sono solo le ",
-        "quote_last": ". Ho impostato il mio enorme orologio (più grande in modo da poter vedere senza le lenti a contatto) avanti di nove minuti nella speranza che in qualche modo questo inganno mi faccia arrivare in tempo.",
+        "quote_time_case": "nove minuti e sei",
+        "quote_first": "Segretamente sono solo <-<-<-<",
+        "quote_last": ">->->->. Ho impostato il mio enorme orologio (più grande in modo da poter vedere senza le lenti a contatto) avanti di nove minuti nella speranza che in qualche modo questo inganno mi faccia arrivare in tempo.",
         "title": "Milkrun",
         "author": "Sarah Miynowski",
         "sfw": "sfw"
@@ -23,8 +23,8 @@
         "id": "001302",
         "time": "09:06",
         "quote_time_case": "9:06",
-        "quote_first": "",
-        "quote_last": " ero a letto, fissando il soffitto.",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-> giaceva sul letto, fissando il soffitto.",
         "title": "Una frazione del tutto",
         "author": "Steve Toltz",
         "sfw": "sfw"

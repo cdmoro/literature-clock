@@ -3,8 +3,8 @@
         "id": "003025",
         "time": "20:01",
         "quote_time_case": "otto e un minuto",
-        "quote_first": "La stazione Lenox è stata facilmente raggiunta in orario. Le lancette del grande orologio segnavano soltanto le ",
-        "quote_last": " quando Cyrus entrò. Nel luogo designato il messaggero gli venne incontro. Ciro riconobbe nell'uomo il facchino di uno dei treni della strada di cui erano ufficiali suo nonno e suo padre. Ebbene sì, era il portiere dell'auto speciale di Woodbridge!",
+        "quote_first": "La stazione Lenox è stata facilmente raggiunta in orario. Le lancette del grande orologio erano solo <-<-<-<",
+        "quote_last": ">->->-> quando Cyrus entrò. Nel luogo designato il messaggero gli venne incontro. Ciro riconobbe nell'uomo il facchino di uno dei treni della strada di cui erano ufficiali suo nonno e suo padre. Ebbene sì, era il portiere dell'auto speciale di Woodbridge!",
         "title": "Una Corte d'inchiesta",
         "author": "Grace S. Richmond",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "003026",
         "time": "20:01",
-        "quote_time_case": "* poco dopo le otto",
-        "quote_first": "Erano appena passate le otto, quindi tutti gli spettacoli riguardavano sciocchezze o omicidi.",
-        "quote_last": "",
+        "quote_time_case": "poco dopo le otto",
+        "quote_first": "Erano solo <-<-<-<",
+        "quote_last": ">->->->, quindi tutti gli spettacoli riguardavano sciocchezze o omicidi.",
         "title": "Mattatoio 5",
         "author": "Kurt Vonnegut",
         "sfw": "unknown"

@@ -3,8 +3,8 @@
         "id": "001099",
         "time": "08:05",
         "quote_time_case": "8h05",
-        "quote_first": "",
-        "quote_last": ": Preparar a mochila escolar",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-> Preparar mochila escolar",
         "title": "O curioso incidente do cachorro durante a noite",
         "author": "Mark Haddon",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "001100",
         "time": "08:05",
-        "quote_time_case": "* Cinco e oito",
-        "quote_first": "Bem, agora são oito e cinco, eu disse a Drake. \"É melhor você ir imediatamente e organizar uma festa relâmpago. Não há esperança de uma surtida esta noite no mar, mas é melhor estarmos no lado seguro.\"",
-        "quote_last": "",
+        "quote_time_case": "oito e cinco",
+        "quote_first": "Bem, são <-<-<-<",
+        "quote_last": ">->->-> agora, eu disse para Drake. \"É melhor você ir imediatamente e organizar uma festa relâmpago. Não há esperança de uma surtida esta noite no mar, mas é melhor estarmos no lado seguro.\"",
         "title": "Oito horas da Inglaterra",
         "author": "Anthony Quayle",
         "sfw": "unknown"

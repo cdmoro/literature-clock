@@ -2,9 +2,9 @@
     {
         "id": "000176",
         "time": "01:04",
-        "quote_time_case": "* quatro minutos depois da uma",
-        "quote_first": "O relógio elétrico nos telhados marcava uma e quatro minutos enquanto eles passavam ruidosamente. O que as pessoas ainda estavam acordadas era a maior parte delas dentro das janelas brilhantes dos restaurantes, e os grandes porteiros encostavam-se sonolentos nos umbrais das portas das suas hospedarias. No táxi, Ralston se perguntou o que o presidente diria se pudesse vê-lo naquele momento, perseguindo por toda a cidade uma jovem e seu acompanhante masculino.",
-        "quote_last": "",
+        "quote_time_case": "uma e quatro minutos",
+        "quote_first": "O relógio elétrico nos telhados marcava <-<-<-<",
+        "quote_last": ">->->-> enquanto eles passavam. O que as pessoas ainda estavam acordadas era a maior parte delas dentro das janelas brilhantes dos restaurantes, e os grandes porteiros encostavam-se sonolentos nos umbrais das portas das suas hospedarias. No táxi, Ralston se perguntou o que o presidente diria se pudesse vê-lo naquele momento, perseguindo por toda a cidade uma jovem e seu acompanhante masculino.",
         "title": "Mortmain",
         "author": "Arthur Cheney Train",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000177",
         "time": "01:04",
-        "quote_time_case": "* 1:04",
-        "quote_first": "Ela ligou duas vezes durante as vinte e quatro horas seguintes ao derrame do velho bastardo, quando ficou óbvio que ele iria acabar com tudo. O telefone não foi atendido em nenhum momento.<br>Ela ligou novamente depois que seu pai morreu - desta vez às 13h04 da manhã de 2 de agosto. Algum bêbado atendeu o telefone.",
-        "quote_last": "",
+        "quote_time_case": "1:04",
+        "quote_first": "Ela ligou duas vezes durante as vinte e quatro horas seguintes ao derrame do velho bastardo, quando ficou óbvio que ele iria acabar com tudo. O telefone não foi atendido nenhuma das vezes.<br>Ela ligou novamente depois que seu pai morreu - desta vez às <-<-<-<",
+        "quote_last": ">->->-> na manhã de 2 de agosto. Algum bêbado atendeu o telefone.",
         "title": "Os Tommyknockers",
         "author": "Stephen King",
         "sfw": "nsfw"

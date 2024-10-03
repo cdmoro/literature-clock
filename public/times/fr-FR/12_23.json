@@ -2,9 +2,9 @@
     {
         "id": "001904",
         "time": "12:23",
-        "quote_time_case": "12h23",
-        "quote_first": "Cela lui semblerait, réalisa-t-elle, tout à fait trop étrange de grimper dans le même lit avec un homme qu'elle n'avait pas vu depuis deux ans.<br>Elle remarqua l'heure sur le réveil numérique. ",
-        "quote_last": ".",
+        "quote_time_case": "12:23",
+        "quote_first": "Cela lui semblerait, réalisa-t-elle, tout à fait trop étrange de grimper dans le même lit avec un homme qu'elle n'avait pas vu depuis deux ans.<br>Elle remarqua l'heure sur le réveil numérique. <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "La bibliothèque de minuit",
         "author": "Matt Haig",
         "sfw": "unknown"
@@ -13,8 +13,8 @@
         "id": "001905",
         "time": "12:23",
         "quote_time_case": "12h23",
-        "quote_first": "A quelle heure le ",
-        "quote_last": " a-t-il eu lieu ? Des bus de la ligne S circulant en direction de la Porte de Champerret arrivent ce jour-là ?<br>\"A 12h38.\"<br>\"Y avait-il beaucoup de monde dans ledit bus S ?\"<br>\"Des sacs de ' em.\"<br>\"Avez-vous particulièrement remarqué l'un d'entre eux ?\"<br>\"Un individu qui avait un très long cou et une tresse autour de son chapeau.\"",
+        "quote_first": "A quelle heure le <-<-<-<",
+        "quote_last": ">->->-> bus de la ligne S circulant en direction de la Porte de Champerret est-il arrivé ce jour-là ?<br>\"A 12h38.\" <br>\"Y avait-il beaucoup de monde dans le bus S susmentionné ?\"<br>\"Des sacs.\"<br>\"Avez-vous particulièrement remarqué l'un d'entre eux ?\"<br>\"Un individu qui avait un très grand un long cou et une tresse autour de son chapeau.",
         "title": "Exercices de style",
         "author": "Raymon Queneau",
         "sfw": "unknown"

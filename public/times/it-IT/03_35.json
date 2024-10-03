@@ -3,8 +3,8 @@
         "id": "000499",
         "time": "03:35",
         "quote_time_case": "3:35",
-        "quote_first": "Tre e mezza, ",
-        "quote_last": ", 3:40. All'improvviso ci fu un violento sussulto che quasi lo fece cadere dalla sedia. Seguì un forte stridore di ruote mentre il treno rallentava rapidamente e alla fine si fermava.",
+        "quote_first": "Tre e mezza, <-<-<-<",
+        "quote_last": ">->->->, 3:40. All'improvviso ci fu un violento sussulto che quasi lo fece cadere dalla sedia. Seguì un forte stridore di ruote mentre il treno rallentava rapidamente e alla fine si fermava.",
         "title": "Fai attenzione a ciò che desideri",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000500",
         "time": "03:35",
-        "quote_time_case": "* 3:35",
-        "quote_first": "Riusciva appena a vedere le lancette della sveglia nel buio: 3,35. Si sistemò il cuscino e chiuse gli occhi.",
-        "quote_last": "",
+        "quote_time_case": "3.35",
+        "quote_first": "Riusciva appena a vedere le lancette della sveglia nell'oscurità: <-<-<-<",
+        "quote_last": ">->->-> Sistemò il cuscino e chiuse gli occhi.",
         "title": "I cani di Riga",
         "author": "Henning Mankell",
         "sfw": "unknown"

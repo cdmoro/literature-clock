@@ -3,8 +3,8 @@
         "id": "001303",
         "time": "09:07",
         "quote_time_case": "9:07",
-        "quote_first": "Durante il viaggio Septimus leggeva il giornale e fumava due sigarette, arrivando a Cannon Street alle ",
-        "quote_last": ".",
+        "quote_first": "Durante il viaggio Septimus leggeva il giornale e fumava due sigarette, arrivando a Cannon Street alle <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Routine interrotta",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "001304",
         "time": "09:07",
-        "quote_time_case": "Sono passati sette minuti",
-        "quote_first": "Padre Presteign non aveva detto che la posta sarebbe arrivata alle nove o poco dopo? \"Poco dopo\" potrebbe significare qualsiasi cosa. Potrebbero aspettare mezz'ora. Nove e cinque. ",
-        "quote_last": ". E poi è arrivato.",
+        "quote_time_case": "Sette minuti passati",
+        "quote_first": "Padre Presteign non aveva detto che la posta sarebbe arrivata alle nove o poco dopo? \"Poco dopo\" potrebbe significare qualsiasi cosa. Potrebbero aspettare mezz'ora. Le nove e cinque. <-<-<-<",
+        "quote_last": ">->->->. E poi è arrivato.",
         "title": "Una certa giustizia",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -23,8 +23,8 @@
         "id": "001305",
         "time": "09:07",
         "quote_time_case": "9:07",
-        "quote_first": "Il settimo giorno la mattina le persiane di una finestra al piano di sotto furono lasciate alzate. Luke vide una luce accendersi e spegnersi alle ",
-        "quote_last": ", due ore intere dopo che la Famiglia dello Sport se n'era andata.",
+        "quote_first": "Il settimo giorno la mattina le persiane di una finestra al piano di sotto furono lasciate alzate. Luke vide una luce accendersi e spegnersi alle <-<-<-<",
+        "quote_last": ">->->->, due ore intere dopo che la Famiglia degli Sportivi se n'era andata.",
         "title": "Tra i nascosti",
         "author": "Margaret Peterson Haddix",
         "sfw": "unknown"
@@ -33,8 +33,8 @@
         "id": "001306",
         "time": "09:07",
         "quote_time_case": "9:07",
-        "quote_first": "",
-        "quote_last": " ero a letto, fissando il soffitto.",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-> giaceva sul letto, fissando il soffitto.",
         "title": "Una frazione del tutto",
         "author": "Steve Toltz",
         "sfw": "sfw"
@@ -43,8 +43,8 @@
         "id": "001307",
         "time": "09:07",
         "quote_time_case": "9:07",
-        "quote_first": "Erano le ",
-        "quote_last": " di una mattina scintillante quando la signora Flett salì a bordo dell'Imperial Limited alla stazione di Tyndall, certa che la sua vita fosse rovinata, ma riuscendo, con uno sforzo di volontà, a mantenersi eretta e a mostrare un atteggiamento aria di preoccupazione e vivacità.",
+        "quote_first": "Era una mattina scintillante, <-<-<-<",
+        "quote_last": ">->->-> quando la signora Flett salì a bordo dell'Imperial Limited alla stazione di Tyndall, certa che la sua vita fosse rovinata, ma riuscendo, attraverso uno sforzo di volontà, mantenersi eretta e assumere un'aria preoccupata e vivace.",
         "title": "I diari di pietra",
         "author": "Carol Shields",
         "sfw": "unknown"

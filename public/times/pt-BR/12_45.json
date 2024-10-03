@@ -3,8 +3,8 @@
         "id": "001942",
         "time": "12:45",
         "quote_time_case": "12h45",
-        "quote_first": "Na sexta-feira, às ",
-        "quote_last": ", David chegou ao Ateneu, um enorme edifício branco na esquina do Pall Mall, com vista para uma estátua do duque de York.",
+        "quote_first": "Na sexta-feira, às <-<-<-<",
+        "quote_last": ">->->->, David chegou ao Ateneu, um enorme edifício branco na esquina da Pall Mall, com vista para uma estátua do Duque de York.",
         "title": "Nem um centavo a mais, nem um centavo a menos",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "001943",
         "time": "12:45",
-        "quote_time_case": "quinze para uma",
-        "quote_first": "Aquele domingo foi um dia de verão de livro ilustrado no Maine: claro, claro, quente. Às ",
-        "quote_last": ", Ruth McCausland, vestida com um lindo vestido azul de verão, saiu de casa pela última vez.",
+        "quote_time_case": "um quarto para uma",
+        "quote_first": "Aquele domingo foi um dia de verão de livro ilustrado no Maine: claro, claro, quente. Às <-<-<-<",
+        "quote_last": ">->->->, Ruth McCausland, vestida com um lindo vestido azul de verão, saiu de casa pela última vez.",
         "title": "Os Tommyknockers",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "001944",
         "time": "12:45",
-        "quote_time_case": "* 12:45",
-        "quote_first": "O menino entregou um despacho. O Professor fechou a porta novamente e, após olhar na direção, abriu-a e leu em voz alta. \"Cuidado com D. Ele acabou de chegar, 12h45, de Carfax às pressas e se apressou em direção ao Sul. Ele parece estar dando uma volta e pode querer ver você: Mina\"",
-        "quote_last": "",
+        "quote_time_case": "12:45",
+        "quote_first": "O menino entregou um despacho. O Professor fechou a porta novamente e, após olhar na direção, abriu-a e leu em voz alta. \"Cuidado com D. Ele acabou de chegar, <-<-<-<",
+        "quote_last": ">->->->, de Carfax às pressas e apressou-se em direção ao Sul. Ele parece estar dando a volta e pode querer até mais: Mina\"",
         "title": "Drácula",
         "author": "Bram Stoker",
         "sfw": "unknown"
@@ -32,9 +32,9 @@
     {
         "id": "001945",
         "time": "12:45",
-        "quote_time_case": "* um quarto para uma",
-        "quote_first": "Porque estava chovendo, e porque ela estava deprimida e indisposta, e porque Robbie não tinha chegado às quinze para uma, Elizabeth se deliciou com um Martini enquanto esperava, sentada desconfortavelmente em uma cadeira estreita no restaurante, observando outras pessoas inexpressivas. as pessoas entram e saem.",
-        "quote_last": "",
+        "quote_time_case": "um quarto para uma",
+        "quote_first": "Porque estava chovendo, e porque ela estava deprimida e indisposta, e porque Robbie não tinha aparecido <-<-<-<",
+        "quote_last": ">->->->, Elizabeth se deliciou com um Martini enquanto esperava , sentado desconfortavelmente em uma cadeira estreita no restaurante, observando outras pessoas inexpressivas entrando e saindo.",
         "title": "A loteria ou a aventura de James Harris",
         "author": "Shirley Jackson",
         "sfw": "unknown"

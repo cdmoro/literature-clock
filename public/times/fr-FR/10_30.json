@@ -2,9 +2,9 @@
     {
         "id": "001575",
         "time": "10:30",
-        "quote_time_case": "* 1030",
-        "quote_first": "Dix heures trente, le service des relations publiques arrive suivi d’un club de dames. Il frappe de ses grosses mains la porte de la salle de séjour.<br>« Oh, bonjour les gars ; lèvre raide, lèvre raide... regardez autour de vous, les filles ; n'est-ce pas propre, si lumineux ? C'est Mlle Ratched. J’ai choisi cette salle parce que c’est la salle 𝘩𝘦𝘳. Elle est, les filles, comme une mère. Je ne parle pas de l’âge, mais vous comprenez, les filles… »",
-        "quote_last": "",
+        "quote_time_case": "Dix heures trente",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-> les relations publiques arrivent avec un club de dames qui le suit. Il frappe de ses grosses mains à la porte de la salle de séjour.<br>« Oh, bonjour les gars ; lèvre raide, lèvre raide... regardez autour de vous, les filles ; n'est-ce pas propre, si lumineux ? C'est Mlle Ratched. J’ai choisi cette salle parce que c’est la salle 𝘩𝘦𝘳. Elle est, les filles, comme une mère. Je ne parle pas de l’âge, mais vous comprenez, les filles… »",
         "title": "Vol au dessus d'un nid de coucou",
         "author": "Ken Kesey",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "001576",
         "time": "10:30",
-        "quote_time_case": "* 1030",
-        "quote_first": "Il a vérifié Anderson et a vu qu'elle dormait toujours comme une pierre. Gardener avait décidé de réveiller Bobbi vers dix heures trente si elle ne s’était pas réveillée d’elle-même.",
-        "quote_last": "",
+        "quote_time_case": "dix heures trente",
+        "quote_first": "Il a vérifié Anderson et a vu qu'elle dormait toujours comme une pierre. Gardener avait décidé de réveiller Bobbi avant <-<-<-<",
+        "quote_last": ">->->-> si elle ne s'était pas réveillée d'elle-même.",
         "title": "Les Tommyknockers",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "001577",
         "time": "10:30",
-        "quote_time_case": "* exactement 10 heures et demie",
-        "quote_first": "– Ainsi soit-il, répondit le comte ; et, étendant la main vers un calendrier suspendu près de la cheminée, il dit : « Aujourd'hui, c'est le 21 février », et sortant sa montre, il ajouta : « Il est exactement dix heures et demie. Maintenant, promets-moi de m'en souvenir et attends-moi le 21 mai à 10 heures et demie du matin.",
-        "quote_last": "",
+        "quote_time_case": "10 heures et demie exactement. >",
+        "quote_first": "– Ainsi soit-il, répondit le comte ; et étendant la main vers un calendrier suspendu près de la cheminée, il dit : « Aujourd'hui, c'est le 21 février », et sortant sa montre, il ajouta : « il est <-<-<-<",
+        "quote_last": ">->->->. Maintenant, promets-moi de m'en souvenir et attends-moi le 21 mai à 10 heures et demie du matin.",
         "title": "Le Comte de Monte-Cristo",
         "author": "Alexandre Dumas",
         "sfw": "unknown"
@@ -32,9 +32,9 @@
     {
         "id": "001578",
         "time": "10:30",
-        "quote_time_case": "* 1030",
-        "quote_first": "À dix heures trente, Kendra se retrouva de nouveau sur le canapé, cette fois avec Christy. Elle se sentait mal à l'aise d'être assise à côté d'elle, surtout après le barrage de haine que ses collègues avaient lancé contre la blonde, mais Christy semblait à ce moment-là inhabituellement accessible, tout en sourires, en rires et en gestes fluides.",
-        "quote_last": "",
+        "quote_time_case": "dix trente",
+        "quote_first": "À <-<-<-<",
+        "quote_last": ">->->->, Kendra se retrouva de nouveau sur le canapé, cette fois avec Christy. Elle se sentait mal à l'aise d'être assise à côté d'elle, surtout après le barrage de haine que ses collègues avaient lancé contre la blonde, mais Christy semblait à ce moment-là inhabituellement accessible, tout en sourires, en rires et en gestes fluides.",
         "title": "Sursis",
         "author": "James Han Mattson",
         "sfw": "unknown"
@@ -43,8 +43,8 @@
         "id": "001579",
         "time": "10:30",
         "quote_time_case": "10h30",
-        "quote_first": "",
-        "quote_last": " Pause",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-> Pause",
         "title": "Le curieux incident du chien pendant la nuit",
         "author": "Mark Haddon",
         "sfw": "sfw"
@@ -52,9 +52,9 @@
     {
         "id": "001580",
         "time": "10:30",
-        "quote_time_case": "* 1030",
-        "quote_first": "d'après l'horloge accrochée au mur, il est à peine dix heures trente.",
-        "quote_last": "",
+        "quote_time_case": "dix trente",
+        "quote_first": "d'après l'horloge au mur, il est à peine <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Les heures",
         "author": "Michael Cunningham",
         "sfw": "unknown"
@@ -62,9 +62,9 @@
     {
         "id": "001581",
         "time": "10:30",
-        "quote_time_case": "* 1030",
-        "quote_first": "À dix heures trente, je suis nettoyé, rasé et habillé de mes plus beaux habits de Pâques : un deux pièces en seersucker Palm Beach que je porte depuis l'université.",
-        "quote_last": "",
+        "quote_time_case": "dix-trente",
+        "quote_first": "À <-<-<-<",
+        "quote_last": ">->->-> je suis nettoyée, rasée et habillée de mes plus beaux habits de Pâques : un deux pièces en seersucker Palm Beach que je porte depuis l'université.",
         "title": "Le rédacteur sportif",
         "author": "Richard Ford",
         "sfw": "unknown"

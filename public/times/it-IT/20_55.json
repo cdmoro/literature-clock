@@ -2,9 +2,9 @@
     {
         "id": "003134",
         "time": "20:55",
-        "quote_time_case": "* Cinque alle nove",
-        "quote_first": "Seduto sul letto nella stanza immacolata dalle pareti bianche dell'unità di isolamento sanitario, Merral D'Avanos guardò l'orologio a muro. Erano le nove meno cinque.",
-        "quote_last": "",
+        "quote_time_case": "nove meno cinque",
+        "quote_first": "Seduto sul suo letto nella stanza immacolata dalle pareti bianche dell'unità di isolamento sanitario, Merral D'Avanos guardò l'orologio a muro. Erano <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Le Fondamenta Oscure",
         "author": "Chris Walley",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "003135",
         "time": "20:55",
-        "quote_time_case": "* dalle cinque alle nove",
-        "quote_first": "Linus cominciò a camminare lentamente lungo il corridoio. La pioggia sferzava le finestre alla sua sinistra. Le luci sui candelabri alla sua destra tremolarono leggermente. I suoi mocassini scricchiolarono sul pavimento. Si tirò la cravatta. Quando raggiunse l'estremità opposta del corridoio erano passati quattro minuti. Secondo il suo orologio erano le nove meno cinque.",
-        "quote_last": "",
+        "quote_time_case": "nove meno cinque",
+        "quote_first": "Linus cominciò a camminare lentamente lungo il corridoio.  La pioggia sferzava le finestre alla sua sinistra.  Le luci sui candelabri alla sua destra tremolarono leggermente.  I suoi mocassini scricchiolarono sul pavimento.  Si tirò la cravatta.  Quando raggiunse l'estremità opposta del corridoio erano passati quattro minuti.  Secondo il suo orologio erano <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "La Casa nel Mare Ceruleo",
         "author": "TJ Klune",
         "sfw": "unknown"
@@ -23,8 +23,8 @@
         "id": "003136",
         "time": "20:55",
         "quote_time_case": "20:55",
-        "quote_first": "E il passato. L'orologio sul cruscotto segnava le ",
-        "quote_last": ". E l'ultimo frammento rosa di sole si stava alzando nel cielo notturno, cercando disperatamente di resistere ancora solo per un minuto.",
+        "quote_first": "E il passato. L'orologio sul cruscotto diceva <-<-<-<",
+        "quote_last": ">->->->. E l'ultimo frammento rosa di sole si stava alzando nel cielo notturno, cercando disperatamente di resistere ancora solo per un minuto.",
         "title": "Tali grandi altezze",
         "author": "Chris Cole",
         "sfw": "unknown"

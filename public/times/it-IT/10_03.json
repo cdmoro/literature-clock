@@ -2,9 +2,9 @@
     {
         "id": "001510",
         "time": "10:03",
-        "quote_time_case": "* tre minuti e [dieci]",
-        "quote_first": "Passa davanti al palazzo dell'FBI alle dieci e tre minuti, passa davanti al Monumento della Pace all'angolo nord-ovest del Campidoglio alle dieci e cinque.",
-        "quote_last": "",
+        "quote_time_case": "tre minuti dopo [dieci]",
+        "quote_first": "Passa davanti all'edificio dell'FBI a <-<-<-<",
+        "quote_last": ">->->->, passa davanti al Monumento della Pace all'angolo nord-ovest del Campidoglio a cinque minuti dopo.",
         "title": "Lo diciamo al presidente?",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -13,8 +13,8 @@
         "id": "001511",
         "time": "10:03",
         "quote_time_case": "10.03",
-        "quote_first": "Secondo il suo orologio sono le ",
-        "quote_last": ", e sta viaggiando attraverso gli altopiani scozzesi verso Inverness, stanco e un po' ansioso nel caso si addormentasse da adesso a quando il treno raggiungerà la stazione, e perda il momento di dire ad Alice , Drew e Aleesha: 'OK, questa è Inverness, spostiamola.'",
+        "quote_first": "Sono <-<-<-<",
+        "quote_last": ">->->-> secondo il suo orologio, e sta viaggiando attraverso gli altipiani scozzesi verso Inverness, stanco e un po' ansioso nel caso in cui si addormentasse da adesso a quando il treno raggiunge la stazione e perde il segnale per dire ad Alice, Drew e Aleesha: \"OK, questa è Inverness, spostiamola\".",
         "title": "\"Vanilla-Bright come Eminem\" da The Farenheit Twins",
         "author": "Michel Faber",
         "sfw": "unknown"
@@ -23,8 +23,8 @@
         "id": "001512",
         "time": "10:03",
         "quote_time_case": "10.03",
-        "quote_first": "La data era il 14 maggio e l'orologio sulla sua scrivania segnava le dieci e ventitré minuti, quindi digitò i numeri 10.23. Almeno, questo è quello che intendeva fare. Infatti ha digitato i numeri ",
-        "quote_last": ".",
+        "quote_first": "La data era il 14 maggio e l'orologio sulla sua scrivania segnava le dieci e ventitré minuti, quindi digitò i numeri 10.23. Almeno, questo è quello che intendeva fare. Infatti ha digitato i numeri <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Ctrl-Z",
         "author": "Andrew Norriss",
         "sfw": "unknown"

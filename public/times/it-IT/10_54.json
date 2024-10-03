@@ -2,9 +2,9 @@
     {
         "id": "001626",
         "time": "10:54",
-        "quote_time_case": "* sei minuti alle undici",
-        "quote_first": "Il brusio delle chiacchiere nervose cessò alle undici meno sei quando un uomo alto ed elegante in abito da mattina entrò nella stanza, si fermò ai piedi del gradino e si voltò verso il pubblico riunito.",
-        "quote_last": "",
+        "quote_time_case": "undici meno sei",
+        "quote_first": "Il brusio delle chiacchiere nervose cessò alle <-<-<-<",
+        "quote_last": ">->->-> quando un uomo alto ed elegante in vestaglia entrò nella stanza, si fermò ai piedi dello scalino e si voltò verso il raduno riunito.",
         "title": "Questo era un uomo",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -13,8 +13,8 @@
         "id": "001627",
         "time": "10:54",
         "quote_time_case": "10:54 GMT",
-        "quote_first": "",
-        "quote_last": "<br>\"Ufficio del comandante Hawksby.\"<br>\"Sono Bruce Lamont, Angela. Puoi mettermi in contatto con il capo?\"<br>\"È ancora in Italia, Bruce. Sono non lo aspetto di ritorno fino a lunedì.\"",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-><br>\"Ufficio del comandante Hawksby.\"<br>\"Sono Bruce Lamont, Angela. Puoi mettermi in contatto con il capo?\"<br> \"È ancora in Italia, Bruce. Non lo aspetto prima di lunedì.\"",
         "title": "Niente di azzardato",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -23,8 +23,8 @@
         "id": "001628",
         "time": "10:54",
         "quote_time_case": "10:54",
-        "quote_first": "Erano le ",
-        "quote_last": " La sua telefonata sarebbe arrivata tra un minuto. Erano a orari diversi ogni mattina e lei aveva una tabella laminata in plastica che le diceva a che ora aspettarsi la chiamata ogni giorno.",
+        "quote_first": "Erano <-<-<-<",
+        "quote_last": ">->->-> La sua telefonata sarebbe arrivata tra un minuto. Erano a orari diversi ogni mattina e lei aveva una tabella laminata di plastica che le diceva a che ora aspettarsi la chiamata ogni giorno.",
         "title": "Ultima chiamata",
         "author": "Warren Murphy and Richard Sapir",
         "sfw": "sfw"
@@ -33,8 +33,8 @@
         "id": "001629",
         "time": "10:54",
         "quote_time_case": "10:54",
-        "quote_first": "Ti sto dicendo che hai versato 6.495 alla Bennington's Bank in High Street alle ",
-        "quote_last": " di oggi, ha insistito Frost.<br>\"E ti dico che non l'ho fatto\", sputò l'uomo.",
+        "quote_first": "Ti sto dicendo che hai versato 6.495 alla Bennington's Bank in High Street alle <-<-<-<",
+        "quote_last": ">->->-> oggi, ha insistito Frost.<br>\"E ti sto dicendo Non ho sputato l'uomo.",
         "title": "Gelo intenso",
         "author": "R.D. Wingfield",
         "sfw": "sfw"

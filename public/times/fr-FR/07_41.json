@@ -2,9 +2,9 @@
     {
         "id": "001004",
         "time": "07:41",
-        "quote_time_case": "* dix-neuf minutes moins huit",
-        "quote_first": "Il s'est précipité en bas. La salle était vide ; huit heures moins dix-neuf ! Le train est parti à huit heures. Avait-il le temps de seller Boléro ?",
-        "quote_last": "",
+        "quote_time_case": "huit heures moins dix-neuf",
+        "quote_first": "Il s'est précipité en bas. La salle était vide ; <-<-<-<",
+        "quote_last": ">->->-> ! Le train est parti à huit heures. Avait-il le temps de seller Boléro ?",
         "title": "La fleur sombre",
         "author": "John Galsworthy",
         "sfw": "sfw"

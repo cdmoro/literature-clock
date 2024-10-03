@@ -2,9 +2,9 @@
     {
         "id": "001315",
         "time": "09:11",
-        "quote_time_case": "* 9:11",
-        "quote_first": "Essas novas fechaduras cederam facilmente às atenções de Agar. Às 9h11, eles abriram a porta gradeada e entraram na adega propriamente dita. Eles imediatamente começaram a busca pela chave.",
-        "quote_last": "",
+        "quote_time_case": "9:11",
+        "quote_first": "Essas novas fechaduras cederam facilmente às atenções de Agar. Às <-<-<-<",
+        "quote_last": ">->->-> eles abriram a porta gradeada e entraram na adega propriamente dita. Eles imediatamente começaram a busca pela chave.",
         "title": "O Grande Assalto ao Trem",
         "author": "Micheal Crichton",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "001316",
         "time": "09:11",
-        "quote_time_case": "* 9:11",
-        "quote_first": "“Que trem posso pegar?”<br>“Há um por volta das 21h11 se você realmente precisa ir.”",
-        "quote_last": "",
+        "quote_time_case": "9:11",
+        "quote_first": "“Que trem posso pegar?”<br>“Há um sobre <-<-<-<",
+        "quote_last": ">->->-> se você realmente precisa ir.”",
         "title": "Este lado do paraíso",
         "author": "F. Scott Fitzgerald",
         "sfw": "unknown"
@@ -23,8 +23,8 @@
         "id": "001317",
         "time": "09:11",
         "quote_time_case": "9h11",
-        "quote_first": "",
-        "quote_last": " estava deitado na cama, olhando para a parede.",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-> deitei na cama, olhando para a parede.",
         "title": "Uma fração do todo",
         "author": "Steve Toltz",
         "sfw": "sfw"

@@ -2,9 +2,9 @@
     {
         "id": "002647",
         "time": "17:33",
-        "quote_time_case": "* cinco trinta e três",
-        "quote_first": "Ele e Lady Ursula estavam de volta ao número sessenta e dois às cinco e trinta e três. Ele conseguia se lembrar da hora exatamente porque olhou o relógio do carro.",
-        "quote_last": "",
+        "quote_time_case": "cinco e trinta e três",
+        "quote_first": "Ele e Lady Ursula estavam de volta ao número sessenta e dois às <-<-<-<",
+        "quote_last": ">->->->. Ele conseguia se lembrar da hora exatamente porque olhou o relógio do carro.",
         "title": "Um gosto pela morte",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "002648",
         "time": "17:33",
-        "quote_time_case": "* cinco trinta e três",
-        "quote_first": "Eram cinco e trinta e três quando saímos. Já são seis horas? Seis e Meia? E Mark ainda está na jaula e estou com medo de dirigir muito rápido. . . e se não chegarmos a tempo?",
-        "quote_last": "",
+        "quote_time_case": "cinco e trinta e três",
+        "quote_first": "Eram <-<-<-<",
+        "quote_last": ">->->-> quando saímos. Já são seis horas? Seis e meia? E Mark ainda está na jaula e estou com medo de dirigir muito rápido. . . e se não chegarmos a tempo?",
         "title": "Entre os corajosos",
         "author": "Margaret Peterson Haddix",
         "sfw": "unknown"
@@ -23,8 +23,8 @@
         "id": "002649",
         "time": "17:33",
         "quote_time_case": "17h33",
-        "quote_first": "Às ",
-        "quote_last": " há uma explosão de duas notas profundas e ressonantes com uma terça maior de diferença. Em outro dia, ocorre a mesma explosão às 12h54. Em outro, exatamente às 8h.",
+        "quote_first": "Às <-<-<-<",
+        "quote_last": ">->->-> há uma explosão de duas notas profundas e ressonantes com uma terça maior de diferença. Em outro dia, ocorre a mesma explosão às 12h54. Em outro, exatamente às 8h.",
         "title": "Variedades de perturbação",
         "author": "Lydia Davis",
         "sfw": "unknown"

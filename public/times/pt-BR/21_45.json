@@ -2,9 +2,9 @@
     {
         "id": "003253",
         "time": "21:45",
-        "quote_time_case": "* um quarto antes das dez",
-        "quote_first": "Hattie certamente retornaria em breve. Ela não saía de um quarto por muito tempo enquanto Char o ocupava.<br>Minha dança terminou quando o relógio bateu um quarto para as dez.",
-        "quote_last": "",
+        "quote_time_case": "um quarto para as dez",
+        "quote_first": "Hattie certamente retornaria em breve. Ela não saía de um quarto por muito tempo enquanto Char o ocupava.<br>Minha dança terminou quando o relógio bateu <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Ella Encantada",
         "author": "Gail Carson Levine",
         "sfw": "unknown"
@@ -13,8 +13,8 @@
         "id": "003254",
         "time": "21:45",
         "quote_time_case": "21h45",
-        "quote_first": "Mas por alguma razão insondável – nascimento, morte, o fim do universo e todas as coisas disponíveis ao homem – o Cody Menhoff's estava fechado às ",
-        "quote_last": " de uma quinta-feira...",
+        "quote_first": "Mas por alguma razão insondável - nascimento, morte, o fim do universo e todas as coisas disponíveis ao homem - o Cody Menhoff's estava fechado às <-<-<-<",
+        "quote_last": ">->->-> de uma quinta-feira. .",
         "title": "Rocha Riven",
         "author": "T.C. Boyle",
         "sfw": "unknown"

@@ -2,9 +2,9 @@
     {
         "id": "002521",
         "time": "16:45",
-        "quote_time_case": "quatro e quarenta e cinco da tarde.",
-        "quote_first": "“Quando você disse que voltaria para Amsterdã?”<br>“Você sabe exatamente quando, porque eu te disse: amanhã de manhã.”<br>“Você pode voltar mais cedo?”<br>“Eu poderia. Há um voo da KLM às ",
-        "quote_last": " hoje isso me levaria a Amsterdã pouco antes das seis.”",
+        "quote_time_case": "quatro e quarenta e cinco da tarde",
+        "quote_first": "“Quando você disse que voltaria para Amsterdã?”<br>“Você sabe exatamente quando, porque eu te disse: amanhã de manhã.”<br>“Você pode voltar mais cedo?”<br>“Eu poderia. Há um voo da KLM às <-<-<-<",
+        "quote_last": ">->->-> hoje que me levaria a Amsterdã pouco antes das seis.”",
         "title": "Os sem nome",
         "author": "John Connolly",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "002522",
         "time": "16:45",
-        "quote_time_case": "quatro e quarenta e cinco",
-        "quote_first": "Às ",
-        "quote_last": ", a senhorita Haddon foi tomar chá com o diretor, que explicou por que desejava que todos os alunos aprendessem o mesmo dueto. Fazia parte de seu novo sistema coordenativo.",
+        "quote_time_case": "quatro-quarenta e cinco",
+        "quote_first": "Às <-<-<-<",
+        "quote_last": ">->->-> a Srta. Haddon foi tomar chá com a Diretora, que explicou por que desejava que todos os alunos aprendessem o mesmo dueto. Fazia parte de seu novo sistema coordenativo.",
         "title": "Coordenação",
         "author": "E.M. Forster",
         "sfw": "unknown"
@@ -23,8 +23,8 @@
         "id": "002523",
         "time": "16:45",
         "quote_time_case": "quinze minutos antes das cinco",
-        "quote_first": "No dia seguinte, Bill tirou apenas dez minutos do intervalo de vinte minutos previsto para a tarde e saiu ",
-        "quote_last": ". Estacionou o carro no estacionamento no momento em que Arlene descia do ônibus.",
+        "quote_first": "No dia seguinte, Bill tirou apenas dez minutos do intervalo de vinte minutos previsto para a tarde e saiu às <-<-<-<",
+        "quote_last": ">->->->. Estacionou o carro no estacionamento no momento em que Arlene descia do ônibus.",
         "title": "De onde estou ligando",
         "author": "Raymond Carver",
         "sfw": "unknown"

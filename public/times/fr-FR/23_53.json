@@ -2,9 +2,9 @@
     {
         "id": "003560",
         "time": "23:53",
-        "quote_time_case": "* minuit moins sept minutes",
-        "quote_first": "\"C'est certainement le cas, ma chérie. Je rends juste les vases. Elle regarda de nouveau sa montre. \"Je pense que vous constaterez qu'il est minuit moins sept, alors j'ai respecté ma part du marché.\"",
-        "quote_last": "",
+        "quote_time_case": "sept minutes avant minuit",
+        "quote_first": "\"C'est certainement le cas, ma chérie. Je rends juste les vases. Elle regarda de nouveau sa montre. \"Je pense que vous constaterez qu'il est <-<-<-<",
+        "quote_last": ">->->->, donc j'ai tenu ma part du marché.\"",
         "title": "C'était un homme",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "003561",
         "time": "23:53",
-        "quote_time_case": "* vers minuit",
-        "quote_first": "Il était près de minuit.<br>Torvik a pris la poupée qui était restée sur le canapé du bureau, après avoir réparé son pied cassé.",
-        "quote_last": "",
+        "quote_time_case": "près de minuit",
+        "quote_first": "Il était <-<-<-<",
+        "quote_last": ">->->->.<br>Torvik prit la poupée qui avait été laissée sur le canapé du bureau, après avoir d'abord réparé son pied cassé.",
         "title": "Le marteau de Dieu",
         "author": "Bo Giertz",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "003562",
         "time": "23:53",
-        "quote_time_case": "* vers minuit",
-        "quote_first": "Il était près de minuit lorsqu'elle quitta le palais dans un panier à linge porté par deux porteurs, recouvert de ses propres blouses et jupons souillés qui étaient censés être portés à la blanchisseuse.",
-        "quote_last": "",
+        "quote_time_case": "près de minuit",
+        "quote_first": "Il était <-<-<-<",
+        "quote_last": ">->->-> lorsqu'elle quitta le palais dans un panier à linge porté par deux porteurs, recouvert de ses propres blouses et jupons souillés qui étaient censés être portés à la blanchisseuse.",
         "title": "Ambre éternel",
         "author": "Kathleen Windsor",
         "sfw": "unknown"
@@ -32,9 +32,9 @@
     {
         "id": "003563",
         "time": "23:53",
-        "quote_time_case": "* presque minuit",
-        "quote_first": "Il était près de minuit et le Premier ministre était assis seul dans son bureau, lisant un long mémo qui lui traversait la tête sans laisser la moindre trace de sens.",
-        "quote_last": "",
+        "quote_time_case": "approche de minuit",
+        "quote_first": "Il était <-<-<-<",
+        "quote_last": ">->->-> et le Premier Ministre était assis seul dans son bureau, lisant un long mémo qui lui traversait la tête sans laisser la moindre trace de sens derrière lui.",
         "title": "Harry Potter et le prince de sang mêlé",
         "author": "J.K. Rowling",
         "sfw": "unknown"
@@ -43,8 +43,8 @@
         "id": "003564",
         "time": "23:53",
         "quote_time_case": "Minuit approche",
-        "quote_first": "",
-        "quote_last": " et, même si le pic d'activité est passé, le métabolisme basal qui maintient la vie continue sans diminuer, produisant le basso continuo du gémissement de la ville, un son monotone qui ne monte ni ne descend mais est chargé d'appréhension.",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->->, et bien que le pic d'activité soit passé, le métabolisme basal qui maintient la vie continue sans diminuer, produisant la basse continue du gémissement de la ville, un son monotone que ni l'un ni l'autre monte ou descend mais est enceinte de pressentiments.",
         "title": "La nuit tombée",
         "author": "Haruki Murakami",
         "sfw": "unknown"

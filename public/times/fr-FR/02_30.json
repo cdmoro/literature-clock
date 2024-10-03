@@ -2,9 +2,9 @@
     {
         "id": "000342",
         "time": "02:30",
-        "quote_time_case": "* deux heures et demie",
-        "quote_first": "\"Oh, papa,\" dis-je. Je pleure maintenant. « Il n’est pas mort. Au moins, il n’était pas à deux heures trente ce matin. Nous devons le déterrer. Nous devons le faire, car nous l’avons enterré vivant.",
-        "quote_last": "",
+        "quote_time_case": "deux heures trente",
+        "quote_first": "\"Oh, papa,\" dis-je. Je pleure maintenant. « Il n’est pas mort. Au moins, il n'était pas à <-<-<-<",
+        "quote_last": ">->->-> ce matin. Nous devons le déterrer. Nous devons le faire, car nous l’avons enterré vivant.",
         "title": "Si ça saigne",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -13,8 +13,8 @@
         "id": "000343",
         "time": "02:30",
         "quote_time_case": "deux heures et demie",
-        "quote_first": "Elle regarda sa montre : ",
-        "quote_last": ". Quelques minutes pour se calmer avant de partir.",
+        "quote_first": "Elle regarda sa montre : <-<-<-<",
+        "quote_last": ">->->->. Quelques minutes pour se calmer avant de partir.",
         "title": "La pièce verrouillée",
         "author": "Maj Sjöwall & Per Wahlöö",
         "sfw": "unknown"
@@ -23,8 +23,8 @@
         "id": "000344",
         "time": "02:30",
         "quote_time_case": "2h30",
-        "quote_first": "Je suis moi-même en mufti : gants blancs et tennis assorties. Mais je suis désolé de vous annoncer que Jo est toujours chez son Dr Dentons. Qu'est-ce que tu portes, Shirl ?<br>\"Ma vieille tenue de tambour majorette. Celle que je portais à la finale d'État. Écoutez, on ne peut pas attacher les téléphones comme ça.\"<br>\"Pourquoi pas ?\" dit Harry. \"Qui va appeler à ",
-        "quote_last": " du matin avec une meilleure idée ? Youpi, pour citer Lew, nous organisons une fête ! Qu'est-ce qu'on sert, Lew ?\"<br>\"De la bière, je suppose. Je n'en ai pas On a du vin, n'est-ce pas, Jo ?\"<br>\"Juste pour cuisiner.\"",
+        "quote_first": "Je suis moi-même en mufti : gants blancs et tennis assorties. Mais je suis désolé de vous annoncer que Jo est toujours chez son Dr Dentons. Que portez-vous, Shirl ?<br>\"Ma vieille tenue de majorette de tambour. Celle que je portais lors de la finale d'État. Écoutez, nous ne pouvons pas attacher les téléphones comme ça.\"<br>\"Pourquoi pas ?\" dit Harry. \"Qui va appeler à <-<-<-<",
+        "quote_last": ">->->-> avec une meilleure idée ? Youpi, pour citer Lew, nous organisons une fête ! Qu'est-ce qu'on sert, Lew ? \"<br>\"De la bière, je suppose. Nous n'avons pas de vin, n'est-ce pas, Jo ?\"<br>\"Juste pour cuisiner.\"",
         "title": "Les gens de la nuit",
         "author": "Jack Finney",
         "sfw": "unknown"
@@ -33,8 +33,8 @@
         "id": "000345",
         "time": "02:30",
         "quote_time_case": "deux heures et demie",
-        "quote_first": "Vers ",
-        "quote_last": ", elle fut réveillée par un grincement de pas dans l'escalier. Au début, elle avait eu peur.",
+        "quote_first": "Vers <-<-<-<",
+        "quote_last": ">->->-> elle avait été réveillée par un grincement de pas dans les escaliers. Au début, elle avait eu peur.",
         "title": "Le petit étranger",
         "author": "Sarah Waters",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "000346",
         "time": "02:30",
-        "quote_time_case": "* 0230",
-        "quote_first": "Inc., j'ai essayé de l'enlever vers 02h30, et il y avait ce putain de… bruit.",
-        "quote_last": "",
+        "quote_time_case": "0230",
+        "quote_first": "Inc., j'ai essayé de la convaincre à propos de <-<-<-<",
+        "quote_last": ">->->->, et il y avait ce putain de… son.",
         "title": "Blague infini",
         "author": "David Foster Wallace",
         "sfw": "nsfw"
@@ -53,8 +53,8 @@
         "id": "000347",
         "time": "02:30",
         "quote_time_case": "2h30",
-        "quote_first": "Il est ",
-        "quote_last": " du matin et je suis serré. Comme une tique, comme un seigneur, comme un triton. Je dois écrire cela avant que les souvenirs sublimes ne s'effacent et ne se brouillent.",
+        "quote_first": "Il est <-<-<-<",
+        "quote_last": ">->->-> et je suis serré. Comme une tique, comme un seigneur, comme un triton. Je dois écrire cela avant que les souvenirs sublimes ne s'effacent et ne se brouillent.",
         "title": "N'importe quel cœur humain",
         "author": "William Boyd",
         "sfw": "unknown"

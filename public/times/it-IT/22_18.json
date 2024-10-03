@@ -2,9 +2,9 @@
     {
         "id": "003341",
         "time": "22:18",
-        "quote_time_case": "* Dieci e diciotto",
-        "quote_first": "Il mio orologio va sempre un po' veloce, dissi. \"A che ora arrivi adesso?\"<br>\"Le otto e dieci.\"<br>\"Le dieci e diciotto, secondo me. Vedi.\"",
-        "quote_last": "",
+        "quote_time_case": "Le dieci e diciotto",
+        "quote_first": "Il mio orologio va sempre un po' veloce, dissi. \"A che ora arrivi adesso?\"<br>\"Le otto e dieci.\"<br>\"<-<-<-<",
+        "quote_last": ">->->-> secondo me. Vedi.\"",
         "title": "L'americano tranquillo",
         "author": "Graham Greene",
         "sfw": "unknown"
@@ -13,8 +13,8 @@
         "id": "003342",
         "time": "22:18",
         "quote_time_case": "22:18",
-        "quote_first": "",
-        "quote_last": " Ah. Thelma e Louise sono lì dentro.",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-> Ah. Thelma e Louise sono lì dentro.",
         "title": "Il diario di Bridget Jones",
         "author": "Helen Fielding",
         "sfw": "sfw"

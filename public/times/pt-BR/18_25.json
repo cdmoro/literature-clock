@@ -2,9 +2,9 @@
     {
         "id": "002763",
         "time": "18:25",
-        "quote_time_case": "* seis vinte e cinco",
-        "quote_first": "Sem preâmbulos, Dalgliesh disse: — A Sra. Tallulah Clutton, a governanta do Museu Dupayne, reconheceu você esta tarde como o motorista que a derrubou da bicicleta por volta das seis e vinte e cinco de sexta-feira, primeiro de novembro. pessoas foram assassinadas no museu, Dr. Neville Dupayne e Srta. Celia Mellock.",
-        "quote_last": "",
+        "quote_time_case": "seis e vinte e cinco",
+        "quote_first": "Sem preâmbulos, Dalgliesh disse: — A Sra. Tallulah Clutton, a governanta do Museu Dupayne, reconheceu você esta tarde como o motorista que a derrubou da bicicleta por volta das <-<-<-<",
+        "quote_last": ">->->-> na sexta-feira, primeiro de novembro. Naquela noite, duas pessoas foram assassinadas no museu, o Dr. Neville Dupayne e a senhorita Celia Mellock.",
         "title": "A Sala do Assassinato",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "002764",
         "time": "18:25",
-        "quote_time_case": "* 6:25",
-        "quote_first": "Às 18h25, Claudia trancou os arquivos em que estava trabalhando e subiu para lavar e pegar o casaco. A casa estava iluminada. Desde a morte de Gerard ela odiava trabalhar sozinha na escuridão.",
-        "quote_last": "",
+        "quote_time_case": "6:25",
+        "quote_first": "Às <-<-<-<",
+        "quote_last": ">->->-> Claudia trancou os arquivos em que estava trabalhando e subiu para lavar e pegar o casaco. A casa estava iluminada. Desde a morte de Gerard ela odiava trabalhar sozinha na escuridão.",
         "title": "Pecado original",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -23,8 +23,8 @@
         "id": "002765",
         "time": "18:25",
         "quote_time_case": "seis e vinte e cinco",
-        "quote_first": "Às ",
-        "quote_last": " vou ao banheiro e tomo banho, depois, enquanto a velha senhora está ocupada na cozinha ajudando Chris com a louça, pego meu casaco e desço as escadas.",
+        "quote_first": "Às <-<-<-<",
+        "quote_last": ">->->-> eu vou para o banheiro e tomo banho, então enquanto a velha senhora está ocupada na cozinha ajudando Chris com a louça eu pego meu casaco e desça as escadas.",
         "title": "Uma espécie de amor",
         "author": "Stan Barstow",
         "sfw": "unknown"
@@ -32,9 +32,9 @@
     {
         "id": "002766",
         "time": "18:25",
-        "quote_time_case": "* 6,25",
-        "quote_first": "Neste momento, enquanto escrevo, recebi um telegrama de Jonathan dizendo que ele partirá hoje às 18h25 de Launceston e estará aqui às 10h18, para que eu não tenha medo esta noite.",
-        "quote_last": "",
+        "quote_time_case": "6.25",
+        "quote_first": "Neste momento, enquanto escrevo, recebi um telegrama de Jonathan dizendo que ele sai hoje à noite às <-<-<-<",
+        "quote_last": ">->->-> de Launceston e estará aqui às 10h18, para que eu não tenha medo esta noite.",
         "title": "Drácula",
         "author": "Bram Stoker",
         "sfw": "unknown"

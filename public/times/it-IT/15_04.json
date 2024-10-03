@@ -3,8 +3,8 @@
         "id": "002276",
         "time": "15:04",
         "quote_time_case": "15:04",
-        "quote_first": "Controllò l'orologio: ",
-        "quote_last": ". Ha bussato di nuovo alla porta, ma ancora nessuno ha risposto. Sicuramente non gli avrebbero negato l'ingresso se fosse arrivato solo con un paio di minuti di ritardo?",
+        "quote_first": "Guardò l'orologio: <-<-<-<",
+        "quote_last": ">->->-> Bussò di nuovo alla porta, ma nessuno rispose. Sicuramente non gli avrebbero negato l'ingresso se fosse arrivato solo con un paio di minuti di ritardo?",
         "title": "Vie di gloria",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "002277",
         "time": "15:04",
-        "quote_time_case": "* Le tre e quattro minuti",
-        "quote_first": "Vide l'orologio della torre del municipio segnare le tre e quattro minuti in quel caldo e senza vento pomeriggio di fine luglio.",
-        "quote_last": "",
+        "quote_time_case": "le tre e quattro minuti",
+        "quote_first": "Vide l'orologio della torre del municipio segnare <-<-<-<",
+        "quote_last": ">->->-> in quel caldo e senza vento pomeriggio di fine luglio.",
         "title": "I Tommyknocker",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -23,8 +23,8 @@
         "id": "002278",
         "time": "15:04",
         "quote_time_case": "1504",
-        "quote_first": "Svegliato nel ",
-        "quote_last": " da Michelangelo martellando con il suo scalpello.",
+        "quote_first": "Svegliato a <-<-<-<",
+        "quote_last": ">->->-> da Michelangelo che martellava con lo scalpello.",
         "title": "101 Reykjavik",
         "author": "Hallgrímur Helgason",
         "sfw": "unknown"

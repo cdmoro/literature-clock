@@ -3,8 +3,8 @@
         "id": "002822",
         "time": "18:53",
         "quote_time_case": "sete minutos para as sete",
-        "quote_first": "“Como quiser. Este é o Salão da Liberdade. Não temos regras. Ele olhou para o relógio. “Aquele relógio em cima da lareira está quatro minutos adiantado. Faltam ",
-        "quote_last": " na hora certa. Jantaremos às sete e meia, mas você pode descer assim que quiser.",
+        "quote_first": "“Como quiser. Este é o Salão da Liberdade. Não temos regras. Ele olhou para o relógio. “Aquele relógio em cima da lareira está quatro minutos adiantado. Faltam <-<-<-<",
+        "quote_last": ">->->-> na hora certa. Jantaremos às sete e meia, mas você pode descer assim que quiser.",
         "title": "lã dourada",
         "author": "David Graham Phillips",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "002823",
         "time": "18:53",
-        "quote_time_case": "* alguns minutos depois das seis e cinquenta",
-        "quote_first": "Ele atravessou a pista até o avião que o esperava poucos minutos depois das seis e cinquenta. O avião que transportava o ícone pousaria em Washington em cerca de duas horas.",
-        "quote_last": "",
+        "quote_time_case": "alguns minutos depois das seis e cinquenta",
+        "quote_first": "Ele atravessou a pista até o avião que o esperava <-<-<-<",
+        "quote_last": ">->->->. O avião que transportava o ícone pousaria em Washington em cerca de duas horas.",
         "title": "Uma questão de honra",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "002824",
         "time": "18:53",
-        "quote_time_case": "* Cerca de sete horas",
-        "quote_first": "Por volta das sete horas da noite, ela morreu, e seu marido frenético fez uma cena terrível em seus esforços para matar West, a quem ele culpava veementemente por não ter salvado sua vida. Amigos o seguraram quando ele puxou um estilete, mas West partiu em meio a seus gritos desumanos, maldições e juramentos de vingança.",
-        "quote_last": "",
+        "quote_time_case": "Por volta das sete horas",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-> da noite ela morreu, e seu marido frenético fez uma cena horrível em seus esforços para matar West, a quem ele culpou veementemente por não salvá-la vida. Amigos o seguraram quando ele puxou um estilete, mas West partiu em meio a seus gritos desumanos, maldições e juramentos de vingança.",
         "title": "Herbert West - Reanimador",
         "author": "H.P. Lovecraft",
         "sfw": "unknown"

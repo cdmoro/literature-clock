@@ -3,8 +3,8 @@
         "id": "001872",
         "time": "12:06",
         "quote_time_case": "vers midi",
-        "quote_first": "Quelques minutes de lumière ",
-        "quote_last": " suffisent pour découvrir l'erreur et remettre l'horloge à l'heure – à condition de prendre la peine de monter et de faire l'observation.",
+        "quote_first": "Quelques minutes de lumière <-<-<-<",
+        "quote_last": ">->->-> suffisent pour découvrir l'erreur, et remettre l'horloge à l'heure – à condition de prendre la peine de monter et de faire l'observation.",
         "title": "Odalisque : Le cycle baroque #3",
         "author": "Neal Stephenson",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "001873",
         "time": "12:06",
-        "quote_time_case": "* 12h06",
-        "quote_first": "Mais je peux vous dire ceci : le repérage Z au centre commercial Rotfield a été confirmé hier à 12 h 06. Emplacement : Entre Burger. Sujet : Adolescent, cheveux châtain clair, yeux bleus.",
-        "quote_last": "",
+        "quote_time_case": "12h06",
+        "quote_first": "Mais je peux vous dire ceci : le repérage Z au centre commercial Rotfield a été confirmé hier à <-<-<-<",
+        "quote_last": ">->->-> Lieu : In-Between Burger. Sujet : Adolescent, cheveux châtain clair, yeux bleus.",
         "title": "Journée sur le terrain des zombies",
         "author": "Nadia Higgins",
         "sfw": "sfw"

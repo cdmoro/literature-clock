@@ -2,9 +2,9 @@
     {
         "id": "001686",
         "time": "11:01",
-        "quote_time_case": "* un minuto e undici",
-        "quote_first": "Le lancette dell'orologio avanzarono. Alle undici meno un minuto tutto era tranquillo e ordinato. Alle undici i maestri partirono per il consueto breve intervallo. Alle undici e un minuto tutto era guerra e tumulto!",
-        "quote_last": "",
+        "quote_time_case": "undici e un minuto",
+        "quote_first": "Le lancette dell'orologio avanzarono. Alle undici meno un minuto tutto era tranquillo e ordinato. Alle undici i maestri partirono per il consueto breve intervallo. Alle <-<-<-<",
+        "quote_last": ">->->-> tutto era guerra e tumulto!",
         "title": "Jack di entrambe le parti: la storia di una guerra scolastica",
         "author": "Florence Coombe",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "001687",
         "time": "11:01",
-        "quote_time_case": "sono appena passate le undici",
-        "quote_first": "O'Neil si alza e prende il vassoio. Ha finito il tè, ma i muffin sono ancora qui, in un cestino di vimini coperto da un tovagliolo blu. L'orologio sopra la stufa dice che ",
-        "quote_last": " e ormai gli ospiti arriveranno a casa.",
+        "quote_time_case": "appena passate le undici",
+        "quote_first": "O'Neil si alza e prende il vassoio. Ha finito il tè, ma i muffin sono ancora qui, in un cestino di vimini coperto da un tovagliolo blu. L'orologio sopra la stufa dice che sono <-<-<-<",
+        "quote_last": ">->->-> e gli ospiti stanno arrivando a casa.",
         "title": "Mary e O'Neil",
         "author": "Justin Cronin",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "001688",
         "time": "11:01",
-        "quote_time_case": "* sono appena passate le undici",
-        "quote_first": "Erano appena passate le undici. Il silenzio della grande stanza, rotto solo dal canto che saliva dal basso, la fece sbadigliare. I bronzi, gli album e i quadri alle pareti, che rappresentavano una nave in mare, mucche in un prato e vedute del Reno, erano così assolutamente stantii che i suoi occhi semplicemente scivolavano su di essi senza osservarli.",
-        "quote_last": "",
+        "quote_time_case": "appena passate le undici",
+        "quote_first": "Erano solo <-<-<-<",
+        "quote_last": ">->->->. Il silenzio della grande stanza, rotto solo dal canto che saliva dal basso, la fece sbadigliare. I bronzi, gli album e i quadri alle pareti, che rappresentavano una nave in mare, mucche in un prato e vedute del Reno, erano così assolutamente stantii che i suoi occhi semplicemente scivolavano su di essi senza osservarli.",
         "title": "La festa e altre storie",
         "author": "Anton Pavlovich Chekhov",
         "sfw": "sfw"

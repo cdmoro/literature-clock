@@ -2,9 +2,9 @@
     {
         "id": "002529",
         "time": "16:50",
-        "quote_time_case": "4,50",
-        "quote_first": "O trem parado na plataforma 3, a Voz disse a ela, \"é o ",
-        "quote_last": " para Brackhampton, Milchester, Waverton, Carvil Junction, Roxeter e estações para Chadmouth. Os passageiros de Brackhampton e Milchester viajam na parte traseira do trem. Os passageiros de Vanequay mudam em Roxeter.\" A voz desligou-se com um clique.",
+        "quote_time_case": "4.50",
+        "quote_first": "O trem parado na Plataforma 3, a Voz disse a ela, \"é o <-<-<-<",
+        "quote_last": ">->->-> para Brackhampton, Milchester, Waverton, Carvil Junction, Roxeter e estações para Chadmouth. Passageiros para Brackhampton e Milchester viaja na parte traseira do trem. Os passageiros para Vanequay mudam em Roxeter. A voz desligou-se com um clique.",
         "title": "4,50 de Paddington",
         "author": "Agatha Christie",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "002530",
         "time": "16:50",
-        "quote_time_case": "* dez minutos para as cinco",
-        "quote_first": "Todos haviam congelado ao mesmo tempo, numa noite de neve, sete anos antes, e depois disso eram sempre dez para as cinco no castelo.",
-        "quote_last": "",
+        "quote_time_case": "dez minutos para as cinco",
+        "quote_first": "Eles haviam congelado todos ao mesmo tempo, em uma noite de neve, sete anos antes, e depois disso eram sempre <-<-<-<",
+        "quote_last": ">->->-> no castelo.",
         "title": "Os 13 relógios",
         "author": "James Thurber",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "002531",
         "time": "16:50",
-        "quote_time_case": "* dez minutos para as cinco",
-        "quote_first": "Quando o relógio marcava dez para as cinco, ela começou a prestar atenção e, alguns momentos depois, pontualmente como sempre, ouviu os pneus no cascalho do lado de fora, a porta do carro batendo, os passos passando pela janela, a chave girando na porta. trancar. Ela deixou de lado a costura, levantou-se e avançou para beijá-lo quando ele entrou.",
-        "quote_last": "",
+        "quote_time_case": "dez minutos para as cinco",
+        "quote_first": "Quando o relógio marcou <-<-<-<",
+        "quote_last": ">->->->, ela começou a ouvir, e alguns momentos depois, pontualmente como sempre, ela ouviu os pneus no cascalho lá fora, e o carro porta batendo, passos passando pela janela, chave girando na fechadura. Ela deixou de lado a costura, levantou-se e avançou para beijá-lo quando ele entrou.",
         "title": "Cordeiro ao matadouro",
         "author": "Roald Dahl",
         "sfw": "unknown"
@@ -33,8 +33,8 @@
         "id": "002532",
         "time": "16:50",
         "quote_time_case": "Dez minutos para as cinco",
-        "quote_first": "",
-        "quote_last": ".<br>\"Tenho que levantar em um minuto e descascar aquelas ervilhas para o jantar.\"",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->->.<br>\"Tenho que levantar em um minuto e descascar aquelas ervilhas para o jantar.\"",
         "title": "Bordado",
         "author": "Ray Bradbury",
         "sfw": "unknown"

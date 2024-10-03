@@ -2,9 +2,9 @@
     {
         "id": "001202",
         "time": "08:45",
-        "quote_time_case": "* 8:45",
-        "quote_first": "DAVID CHEGOU ao escritório às 9h. na segunda-feira para descobrir que a porta da frente estava trancada. Ele não conseguia entender isso. As secretárias deveriam chegar às 8h45.",
-        "quote_last": "",
+        "quote_time_case": "8:45",
+        "quote_first": "DAVID CHEGOU ao escritório às 9h. na segunda-feira para descobrir que a porta da frente estava trancada. Ele não conseguia entender isso. As secretárias deveriam chegar às <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Nem um centavo a mais, nem um centavo a menos",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -13,8 +13,8 @@
         "id": "001203",
         "time": "08:45",
         "quote_time_case": "oito e quarenta e cinco",
-        "quote_first": "Os corpos foram descobertos às ",
-        "quote_last": " da manhã de quarta-feira, 18 de setembro, pela senhorita Emily Wharton, uma solteirona de sessenta e cinco anos da paróquia de St. Matthew's em Paddington, Londres, e Darren Wilkes, de dez anos, de nenhuma paróquia em particular, pelo que ele conhecia ou se importava.",
+        "quote_first": "Os corpos foram descobertos às <-<-<-<",
+        "quote_last": ">->->-> da manhã de quarta-feira, 18 de setembro, pela Srta. Emily Wharton, uma solteirona de 65 anos da paróquia de St. Matthew mora em Paddington, Londres, e Darren Wilkes, de dez anos, não pertence a nenhuma paróquia específica, pelo que ele sabia ou se importava.",
         "title": "Um gosto pela morte",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "001204",
         "time": "08:45",
-        "quote_time_case": "* quarto de nove",
-        "quote_first": "Quando Gardner acordou, uma luz brilhante incidia em seu rosto pela janela oeste. Suas costas doíam como um bastardo e, quando ele se levantou, seu pescoço emitiu um terrível rangido artrítico que o fez estremecer. Eram nove e quinze.",
-        "quote_last": "",
+        "quote_time_case": "um quarto para nove",
+        "quote_first": "Quando Gardner acordou, uma luz brilhante incidia em seu rosto pela janela oeste. Suas costas doíam como um bastardo e, quando ele se levantou, seu pescoço emitiu um terrível rangido artrítico que o fez estremecer. Era <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Os Tommyknockers",
         "author": "Stephen King",
         "sfw": "nsfw"
@@ -32,9 +32,9 @@
     {
         "id": "001205",
         "time": "08:45",
-        "quote_time_case": "* um quarto para as nove",
-        "quote_first": "Quando eram quinze para as nove e ainda ninguém havia aparecido, Gardener começou a se perguntar se talvez eles estivessem desistindo. Ele brincou com a ideia enquanto se sentava na cadeira de balanço de Bobbi na varanda, tocando o hematoma grande e inchado na lateral do rosto, onde Bozeman o havia golpeado.",
-        "quote_last": "",
+        "quote_time_case": "um quarto para as nove",
+        "quote_first": "Quando eram <-<-<-<",
+        "quote_last": ">->->-> e ninguém ainda havia aparecido, Gardener começou a se perguntar se talvez eles estivessem desistindo. Ele brincou com a ideia enquanto se sentava na cadeira de balanço de Bobbi na varanda, tocando o hematoma grande e inchado na lateral do rosto, onde Bozeman o havia golpeado.",
         "title": "Os Tommyknockers",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -43,8 +43,8 @@
         "id": "001206",
         "time": "08:45",
         "quote_time_case": "oito e quarenta e cinco",
-        "quote_first": "Às ",
-        "quote_last": ", liguei e disse: “Preciso de alguns conselhos financeiros. Na verdade, estou falando sério. Estou em apuros.",
+        "quote_first": "Às <-<-<-<",
+        "quote_last": ">->->->, liguei e disse: “Preciso de alguns conselhos financeiros. Na verdade, estou falando sério. Estou em apuros.",
         "title": "Meu ano de descanso e relaxamento",
         "author": "Ottessa Moshfegh",
         "sfw": "unknown"
@@ -52,9 +52,9 @@
     {
         "id": "001207",
         "time": "08:45",
-        "quote_time_case": "* 8:45",
-        "quote_first": "Ele pagou a garçonete e saiu do café. Eram 8h45. O sol pressionou o interior de uma fina camada de nuvens. Ele desabotoou o paletó enquanto corria pela Queensway. Sua mente, liberada, avançou.",
-        "quote_last": "",
+        "quote_time_case": "8:45",
+        "quote_first": "Ele pagou a garçonete e saiu do café. Foi <-<-<-<",
+        "quote_last": ">->->->. O sol pressionou o interior de uma fina camada de nuvens. Ele desabotoou o paletó enquanto corria pela Queensway. Sua mente, liberada, avançou.",
         "title": "Sonhos de Partir",
         "author": "Rupert Thomson",
         "sfw": "unknown"

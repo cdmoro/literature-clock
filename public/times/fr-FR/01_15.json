@@ -2,9 +2,9 @@
     {
         "id": "000196",
         "time": "01:15",
-        "quote_time_case": "* 1:15",
-        "quote_first": "Un peu faible, pensa Robin, mais c'était le mieux qu'il pouvait faire à 1h15 du matin.<br>\"Bien sûr, ce n'était pas une belle fille ?\" » dit Mary.<br>« Je crains que Jim et Fred puissent difficilement être décrits comme beaux, même par leurs épouses aimantes. »",
-        "quote_last": "",
+        "quote_time_case": "1:15",
+        "quote_first": "Un peu faible, pensa Robin, mais le mieux qu'il pouvait faire à <-<-<-<",
+        "quote_last": ">->->-> du matin.<br>\"Bien sûr, ce n'était pas une belle fille ?\" dit Mary.<br>\"J'ai bien peur que Jim et Fred puissent difficilement être décrits comme beaux, même par leurs épouses aimantes.\"",
         "title": "Pas un centime de plus, pas un centime de moins",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000197",
         "time": "01:15",
-        "quote_time_case": "* 1:15",
-        "quote_first": "Emma tomba dans un profond sommeil, pour être ramenée à ses sens par le son inconnu d'une sirène de police retentissant venant de la rue en contrebas. Elle comprenait désormais pourquoi les chambres des étages supérieurs étaient plus chères. Elle vérifia sa montre. Il était 13h15.",
-        "quote_last": "",
+        "quote_time_case": "1:15",
+        "quote_first": "Emma tomba dans un profond sommeil, pour être ramenée à ses sens par le son inconnu d'une sirène de police retentissant venant de la rue en contrebas. Elle comprenait désormais pourquoi les chambres des étages supérieurs étaient plus chères. Elle vérifia sa montre. Il était <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Les péchés du père",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -23,8 +23,8 @@
         "id": "000198",
         "time": "01:15",
         "quote_time_case": "une heure et quart",
-        "quote_first": "Je suis donc désolé, comme je l'ai dit, d'avoir jamais prêté attention aux traces. Ils commencèrent vers ",
-        "quote_last": " du matin, par une marche rythmée et cadencée autour de la table de la salle à manger.",
+        "quote_first": "Je suis donc désolé, comme je l'ai dit, d'avoir jamais prêté attention aux traces. Ils commencèrent vers <-<-<-<",
+        "quote_last": ">->->-> heures du matin, une marche rythmée et cadencée autour de la table de la salle à manger.",
         "title": "Ma vie et mes moments difficiles : \"La nuit où le fantôme est entré\"",
         "author": "James Thurber",
         "sfw": "unknown"
@@ -33,8 +33,8 @@
         "id": "000199",
         "time": "01:15",
         "quote_time_case": "1h15",
-        "quote_first": "Lily Chen préparait toujours une collation « du soir » pour que son mari la consomme à son retour à ",
-        "quote_last": " du matin.",
+        "quote_first": "Lily Chen préparait toujours une collation « du soir » pour que son mari la consomme à son retour à <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Aigre-doux",
         "author": "Timothy Mo",
         "sfw": "unknown"

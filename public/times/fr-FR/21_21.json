@@ -2,9 +2,9 @@
     {
         "id": "003210",
         "time": "21:21",
-        "quote_time_case": "* neuf heures vingt et une minutes",
-        "quote_first": "Ces témoins pouvaient se rappeler avec une précision surprenante chaque détail qui s'était produit entre huit heures dix-sept et neuf heures vingt et une dans la nuit du 23 septembre, plus d'un an auparavant ; mais où ils étaient et ce qu'ils avaient fait dix minutes plus tôt ou dix minutes plus tard, ou où ils se trouvaient à neuf heures du soir vendredi dernier, ils ne pouvaient même pas se rappeler.",
-        "quote_last": "",
+        "quote_time_case": "neuf heures vingt et une minutes",
+        "quote_first": "Ces témoins pouvaient se souvenir avec une précision surprenante de chaque détail qui s'était produit entre huit heures dix-sept et <-<-<-<",
+        "quote_last": ">->->-> dans la nuit du 23 septembre, plus d'un an auparavant ; mais où ils étaient et ce qu'ils avaient fait dix minutes plus tôt ou dix minutes plus tard, ou où ils se trouvaient à neuf heures du soir vendredi dernier, ils ne pouvaient même pas se rappeler.",
         "title": "Le Mucker",
         "author": "Edgar Rice Burroughs",
         "sfw": "sfw"

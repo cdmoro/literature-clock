@@ -2,9 +2,9 @@
     {
         "id": "000774",
         "time": "05:58",
-        "quote_time_case": "* 5,58",
-        "quote_first": "Estrondosos estrondos vieram do apartamento abaixo às 5h58 desta manhã, embora ela já estivesse observando o relógio muito antes disso.",
-        "quote_last": "",
+        "quote_time_case": "5.58",
+        "quote_first": "Estrondos estrondos vieram do apartamento abaixo às <-<-<-<",
+        "quote_last": ">->->-> desta manhã, embora ela já estivesse observando o relógio muito antes disso.",
         "title": "A mulher lá embaixo",
         "author": "Elisabeth Carpenter",
         "sfw": "unknown"
@@ -13,8 +13,8 @@
         "id": "000775",
         "time": "05:58",
         "quote_time_case": "5h58",
-        "quote_first": "Annika Giannini acordou assustada. Ela viu que eram ",
-        "quote_last": " da manhã.",
+        "quote_first": "Annika Giannini acordou assustada. Ela viu que eram <-<-<-<",
+        "quote_last": ">->->->",
         "title": "A menina que chutou o ninho de vespas",
         "author": "Stieg Larsson",
         "sfw": "unknown"
@@ -23,8 +23,8 @@
         "id": "000776",
         "time": "05:58",
         "quote_time_case": "pouco antes das seis",
-        "quote_first": "Grant entrou em seu escritório na Igreja Luterana de St. Mary ",
-        "quote_last": " da manhã seguinte. Sua chegada incomumente cedo – faltando aos exercícios matinais regulares – foi estimulada pelo desejo de pegar o ensaio que havia escrito anos antes e iniciar o processo de atualização, conforme solicitado.",
+        "quote_first": "Grant entrou em seu escritório na Igreja Luterana de Santa Maria <-<-<-<",
+        "quote_last": ">->->-> da manhã seguinte. Sua chegada incomumente cedo – faltando aos exercícios matinais regulares – foi estimulada pelo desejo de pegar o ensaio que havia escrito anos antes e iniciar o processo de atualização, conforme solicitado.",
         "title": "Sob a Cúpula Dourada",
         "author": "Ray Keating",
         "sfw": "sfw"

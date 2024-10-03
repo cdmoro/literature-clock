@@ -3,8 +3,8 @@
         "id": "003345",
         "time": "22:20",
         "quote_time_case": "22:20",
-        "quote_first": "L'orologio sul muro del bullpen dell'istituto ticchettava oltre le ",
-        "quote_last": ". Helen Pomeroy e il pastore Eric Meyer si guardarono dall'altra parte della scrivania. Avevano appena discusso degli eventi bizzarri accaduti quel giorno.",
+        "quote_first": "L'orologio sul muro del bullpen dell'istituto ticchettava oltre <-<-<-<",
+        "quote_last": ">->->->. Helen Pomeroy e il pastore Eric Meyer si guardarono dall'altra parte della scrivania. Avevano appena discusso degli eventi bizzarri accaduti quel giorno.",
         "title": "Cattedrale",
         "author": "Ray Keating",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "003346",
         "time": "22:20",
-        "quote_time_case": "Dieci Venti",
-        "quote_first": "Un vento di maggio, gonfio come un frutto, con la buccia ruvida, la polpa viscida, decine di semi. La carne si spaccò a mezz'aria, spruzzando semi come delicati pallottole sulla pelle nuda delle mie braccia, lasciando dietro di sé una debole traccia di dolore.<br>\"Che ore sono?\" mi ha chiesto mio cugino. Circa otto pollici più basso di me, doveva alzare lo sguardo quando parlava.<br>Ho guardato l'orologio. \"",
-        "quote_last": ".\"",
+        "quote_time_case": "Dieci e venti",
+        "quote_first": "Un vento di maggio, gonfio come un frutto, con la buccia ruvida, la polpa viscida, decine di semi. La carne si spaccò a mezz'aria, spruzzando semi come delicati pallini sulla pelle nuda delle mie braccia, lasciando dietro di sé una debole traccia di dolore.<br>\"Che ore sono?\" mi ha chiesto mio cugino. Circa otto pollici più basso di me, doveva alzare lo sguardo quando parlava.<br>Ho guardato l'orologio. “<-<-<-<",
+        "quote_last": ">->->->.”",
         "title": "Salice cieco, donna addormentata",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -23,8 +23,8 @@
         "id": "003347",
         "time": "22:20",
         "quote_time_case": "10:20",
-        "quote_first": "Alle ",
-        "quote_last": " è tornata con una borsa della spesa del supermercato. Nella borsa c'erano tre spazzole, una scatola di graffette e una confezione da sei di birra in lattina ben fresca. Allora ho bevuto un'altra birra.<br>\"Parlava di pecore,\" ho detto.<br>\"Non te l'avevo detto?\" lei disse.",
+        "quote_first": "Alle <-<-<-<",
+        "quote_last": ">->->-> è tornata con la borsa della spesa del supermercato. Nella borsa c'erano tre spazzole, una scatola di graffette e una confezione da sei di birra in lattina ben fresca. Allora ho bevuto un'altra birra.<br>\"Parlava di pecore,\" ho detto.<br>\"Non te l'avevo detto?\" ha detto.",
         "title": "Una caccia alla pecora selvaggia",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -32,9 +32,9 @@
     {
         "id": "003348",
         "time": "22:20",
-        "quote_time_case": "* Tra venti minuti",
-        "quote_first": "Verso le dieci i primi piccoli fiocchi di neve scesero lentamente e si posarono sul braccio di Jill. Dieci minuti dopo cadevano piuttosto fittamente. In venti minuti il ​​terreno era visibilmente bianco.",
-        "quote_last": "",
+        "quote_time_case": "In venti minuti",
+        "quote_first": "Verso le dieci i primi minuscoli fiocchi di neve scesero lentamente e si posarono sul braccio di Jill. Dieci minuti dopo cadevano piuttosto fittamente. <-<-<-<",
+        "quote_last": ">->->-> il terreno era visibilmente bianco.",
         "title": "La sedia d'argento",
         "author": "C.S. Lewis",
         "sfw": "unknown"

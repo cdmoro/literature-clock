@@ -2,9 +2,9 @@
     {
         "id": "002669",
         "time": "17:47",
-        "quote_time_case": "* treze minutos para as seis",
-        "quote_first": "Então presumo que o assunto esteja praticamente encerrado, disse o clérigo. \"E que você muito apropriadamente se submeta a voltar para sua própria casa. E agora, se me permite uma sugestão, é que tomemos chá. Livres de seu tanino, nada, creio eu, é mais refrescante e estimulante.\"<br>\"Há um trem de Lyndhurst às treze para as seis\", disse Widgery, desdobrando uma tabela de horários.",
-        "quote_last": "",
+        "quote_time_case": "treze minutos para as seis",
+        "quote_first": "Então presumo que o assunto esteja praticamente encerrado, disse o clérigo. \"E que você muito apropriadamente se submeta a voltar para sua própria casa. E agora, se me permite uma sugestão, é que tomemos chá. Livres de seu tanino, nada, creio eu, é mais refrescante e estimulante.\"<br >\"Há um trem de Lyndhurst às <-<-<-<",
+        "quote_last": ">->->->\", disse Widgery, desdobrando uma tabela de horários.",
         "title": "As rodas do acaso: um idílio para andar de bicicleta",
         "author": "H.G. Wells",
         "sfw": "sfw"

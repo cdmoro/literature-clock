@@ -3,8 +3,8 @@
         "id": "003101",
         "time": "20:40",
         "quote_time_case": "oito e quarenta",
-        "quote_first": "Na verdade, cheguei cedo. Eu não queria me tornar visível vagando pelo corredor, então matei cinco minutos caminhando ao longo da Strand. Eu estava fora do portão às oito e dez. Esperei até ",
-        "quote_last": ". Venetia nunca apareceu.",
+        "quote_first": "Na verdade, cheguei cedo. Eu não queria me tornar visível vagando pelo corredor, então matei cinco minutos caminhando ao longo da Strand. Eu estava fora do portão às oito e dez. Esperei até <-<-<-<",
+        "quote_last": ">->->->. Venetia nunca apareceu.",
         "title": "Uma Certa Justiça",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "003102",
         "time": "20:40",
-        "quote_time_case": "* vinte minutos para as nove",
-        "quote_first": "No décimo sétimo. Foi assim. Eles estavam sentados às vinte para as nove. É um pouco fraco da minha parte observar a hora em que o cliente está realmente sentado.",
-        "quote_last": "",
+        "quote_time_case": "vinte minutos para as nove",
+        "quote_first": "No décimo sétimo. Foi assim. Eles estavam sentados às <-<-<-<",
+        "quote_last": ">->->->. É um pouco fraco da minha parte observar a hora em que o cliente está realmente sentado.",
         "title": "Um gosto pela morte",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "003103",
         "time": "20:40",
-        "quote_time_case": "8h40",
-        "quote_first": "Você está sozinha, senhorita?<br>Foi uma pergunta estúpida e a irritou. Havia muitas respostas cruzadas que ela poderia ter respondido, mas ela as engoliu e apenas disse: \"Sim.\"<br>\"Esperando pelas ",
-        "quote_last": ", não é?\"<br>\"Há algum outro?\"<br>\"Bem, não. Não a esta hora da noite.\"",
+        "quote_time_case": "8.40",
+        "quote_first": "Você está sozinha, senhorita?<br>Foi uma pergunta estúpida e a irritou. Havia muitas respostas cruzadas que ela poderia ter respondido, mas ela as engoliu e apenas disse: \"Sim.\"<br>\"Esperando pelo <-<-<-<",
+        "quote_last": ">->->->, você está ?\"<br>\"Existe algum outro?\"<br>\"Bem, não a esta hora da noite.\"",
         "title": "O Corvo Mecânico",
         "author": "Catherine Fisher",
         "sfw": "unknown"
@@ -32,9 +32,9 @@
     {
         "id": "003104",
         "time": "20:40",
-        "quote_time_case": "* vinte minutos para as nove",
-        "quote_first": "Foi quando fiquei diante dela, evitando seus olhos, que observei detalhadamente os objetos ao redor e vi que seu relógio havia parado às vinte para as nove e que um relógio na sala havia parado às vinte para as nove. .",
-        "quote_last": "",
+        "quote_time_case": "vinte minutos para as nove",
+        "quote_first": "Foi quando fiquei diante dela, evitando seus olhos, que observei detalhadamente os objetos ao redor e vi que seu relógio havia parado em <-<-<-<",
+        "quote_last": ">->->->, e que um relógio na sala havia parado às vinte para as nove.",
         "title": "Grandes Expectativas",
         "author": "Charles Dickens",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "003105",
         "time": "20:40",
-        "quote_time_case": "* vinte minutos para as nove",
-        "quote_first": "A carta foi trazida às vinte para as nove.",
-        "quote_last": "",
+        "quote_time_case": "vinte minutos para as nove",
+        "quote_first": "A carta foi trazida às <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "O assassinato de Roger Ackroyd",
         "author": "Agatha Christie",
         "sfw": "unknown"

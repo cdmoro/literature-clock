@@ -3,8 +3,8 @@
         "id": "003093",
         "time": "20:35",
         "quote_time_case": "20:35",
-        "quote_first": "",
-        "quote_last": " Ah! Trovate le istruzioni per l'uso in Hello! Giusto.",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-> Ah! Trovate le istruzioni per l'uso in Hello! Giusto.",
         "title": "Il diario di Bridget Jones",
         "author": "Helen Fielding",
         "sfw": "sfw"
@@ -13,8 +13,8 @@
         "id": "003094",
         "time": "20:35",
         "quote_time_case": "20:35",
-        "quote_first": "Partenza da Monaco alle ",
-        "quote_last": ". il 1° maggio, con arrivo a Vienna la mattina successiva",
+        "quote_first": "Parti da Monaco il 1° maggio alle <-<-<-<",
+        "quote_last": ">->->-> e arriva a Vienna la mattina successiva presto",
         "title": "Dracula",
         "author": "Bram Stoker",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "003095",
         "time": "20:35",
-        "quote_time_case": "nove meno cinque e venti",
-        "quote_first": "Fece una pausa riflettente. Adesso era fortemente interessato, su questo non c'erano dubbi. È probabile che l'assassino abbia un interesse nell'omicidio. Ci aveva scommesso e ci era riuscita. Diede un'occhiata furtiva all'orologio. Erano le ",
-        "quote_last": ".",
+        "quote_time_case": "nove meno cinque",
+        "quote_first": "Fece una pausa riflettente. Adesso era fortemente interessato, su questo non c'erano dubbi. È probabile che l'assassino abbia un interesse nell'omicidio. Ci aveva scommesso e ci era riuscita. Diede un'occhiata furtiva all'orologio. Erano <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Il mistero di Listerdale",
         "author": "Agatha Christie",
         "sfw": "unknown"

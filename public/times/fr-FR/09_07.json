@@ -2,9 +2,9 @@
     {
         "id": "001303",
         "time": "09:07",
-        "quote_time_case": "9h07",
-        "quote_first": "Pendant le trajet, Septimus lisait son journal et fumait deux cigarettes et arrivait à Cannon Street à ",
-        "quote_last": ".",
+        "quote_time_case": "9:07",
+        "quote_first": "Pendant le voyage, Septimus lisait son journal et fumait deux cigarettes, arrivant à Cannon Street à <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Routine brisée",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -13,8 +13,8 @@
         "id": "001304",
         "time": "09:07",
         "quote_time_case": "Sept minutes passées",
-        "quote_first": "Le père Presteign n'avait-il pas dit que le courrier arrivait à neuf heures ou peu après ? \"Peu de temps après\" peut vouloir dire n'importe quoi. Ils pourraient attendre une demi-heure. Neuf heures cinq. ",
-        "quote_last": ". Et puis c'est arrivé.",
+        "quote_first": "Le père Presteign n'avait-il pas dit que le courrier arrivait à neuf heures ou peu après ? \"Peu de temps après\" peut vouloir dire n'importe quoi. Ils pourraient attendre une demi-heure. Neuf heures cinq. <-<-<-<",
+        "quote_last": ">->->->. Et puis c'est arrivé.",
         "title": "Une certaine justice",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "001305",
         "time": "09:07",
-        "quote_time_case": "* 9h07",
-        "quote_first": "Le septième jour, les stores d'une fenêtre du rez-de-chaussée étaient restés ouverts le matin. Luke a vu une lumière s'allumer et s'éteindre à 9 h 07, deux heures complètes après le départ de la famille sportive.",
-        "quote_last": "",
+        "quote_time_case": "9:07",
+        "quote_first": "Le septième jour, les stores d'une fenêtre du rez-de-chaussée étaient restés ouverts le matin. Luke a vu une lumière s'allumer et s'éteindre à <-<-<-<",
+        "quote_last": ">->->->, deux heures complètes après le départ de la famille sportive.",
         "title": "Parmi les cachés",
         "author": "Margaret Peterson Haddix",
         "sfw": "unknown"
@@ -33,8 +33,8 @@
         "id": "001306",
         "time": "09:07",
         "quote_time_case": "9h07",
-        "quote_first": "",
-        "quote_last": ", allongé dans mon lit, regardant le plafond.",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-> allongé dans le lit, regardant le plafond.",
         "title": "Une fraction du tout",
         "author": "Steve Toltz",
         "sfw": "sfw"
@@ -42,9 +42,9 @@
     {
         "id": "001307",
         "time": "09:07",
-        "quote_time_case": "* 9h07",
-        "quote_first": "C'était une matinée étincelante, à 9 h 07, lorsque Mme Flett monta à bord de l'Imperial Limited à la gare de Tyndall, certaine que sa vie était ruinée, mais parvenant, grâce à un effort de volonté, à se tenir droite et à affecter un air de préoccupation et de vivacité.",
-        "quote_last": "",
+        "quote_time_case": "9:07",
+        "quote_first": "C'était une matinée étincelante, <-<-<-<",
+        "quote_last": ">->->-> à l'heure quand Mme Flett monta à bord de l'Imperial Limited à la gare de Tyndall, certaine que sa vie était ruinée, mais gérant, par un effort de volonté, à se tenir droite et à affecter un air de préoccupation et de vivacité.",
         "title": "Les journaux de pierre",
         "author": "Carol Shields",
         "sfw": "unknown"

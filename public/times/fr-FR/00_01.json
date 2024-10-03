@@ -2,9 +2,9 @@
     {
         "id": "000056",
         "time": "00:01",
-        "quote_time_case": "minuit une minute",
-        "quote_first": "\"Peut-être. Mais il serait peut-être judicieux de les avertir que j’estimais qu’il était de mon devoir d’informer les autorités fiscales de votre présence à Bristol, alors ne soyez pas surpris si la police monte à bord de votre yacht à ",
-        "quote_last": " et le saisit.",
+        "quote_time_case": "minuit après minuit. ",
+        "quote_first": "\"Peut-être. Mais il serait peut-être judicieux de les avertir que j'estimais qu'il était de mon devoir d'informer les autorités fiscales de votre présence à Bristol. Ne soyez donc pas surpris si la police aborde votre yacht à <-<-<-<",
+        "quote_last": ">->->-> et saisissez-le.",
         "title": "C'était un homme",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000057",
         "time": "00:01",
-        "quote_time_case": "* une minute après minuit",
-        "quote_first": "Elle portait une montre. Pas numérique, dans cette vie. Un analogique élégant et élancé, avec des chiffres romains. Il était environ minuit une minute.<br>Comment cela se passe-t-il ?",
-        "quote_last": "",
+        "quote_time_case": "une minute après minuit",
+        "quote_first": "Elle portait une montre. Pas numérique, dans cette vie. Un analogique élégant et élancé, avec des chiffres romains. Il était environ <-<-<-<",
+        "quote_last": ">->->->.<br>Comment cela se passe-t-il ?",
         "title": "La bibliothèque de minuit",
         "author": "Matt Haig",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "000058",
         "time": "00:01",
-        "quote_time_case": "* minuit une minute",
-        "quote_first": "Alors que l'heure d'exécution fixée, minuit après minuit, était à quelques secondes seulement, j'ai frappé deux fois à la porte métallique. La serrure tourna et la porte s'ouvrit rapidement.",
-        "quote_last": "",
+        "quote_time_case": "minuit après une minute",
+        "quote_first": "Alors que l'heure d'exécution fixée était <-<-<-<",
+        "quote_last": ">->->-> à quelques secondes seulement, j'ai frappé deux fois à la porte métallique. La serrure tourna et la porte s'ouvrit rapidement.",
         "title": "Mort à minuit",
         "author": "Donald A. Cabana",
         "sfw": "unknown"
@@ -33,8 +33,8 @@
         "id": "000059",
         "time": "00:01",
         "quote_time_case": "Une minute après minuit",
-        "quote_first": "Et de tous côtés il y avait des horloges. Conrad les remarqua immédiatement, à chaque coin de rue, au-dessus de chaque arcade, aux trois quarts de la hauteur des bâtiments, couvrant tous les angles d'approche imaginables. La plupart d'entre eux étaient trop hauts du sol pour être atteints autrement qu'avec une échelle de pompier et gardaient toujours leurs mains. Tous se sont inscrits en même temps : 12h01. Conrad regarda sa montre-bracelet et remarqua qu'il n'était que 14 h 45.<br>\"Ils étaient conduits par un maître du quai\", lui dit Stacey. \"Quand cela s'est arrêté, ils ont tous cessé au même moment. ",
-        "quote_last": ", il y a trente-sept ans.\"",
+        "quote_first": "Et de tous côtés il y avait des horloges. Conrad les remarqua immédiatement, à chaque coin de rue, au-dessus de chaque arcade, aux trois quarts de la hauteur des bâtiments, couvrant tous les angles d'approche imaginables. La plupart d'entre eux étaient trop hauts du sol pour être atteints autrement qu'avec une échelle de pompier et gardaient toujours leurs mains. Tous se sont inscrits en même temps : 12h01. Conrad regarda sa montre-bracelet et remarqua qu'il n'était que 14 h 45.<br>\"Ils étaient conduits par un maître du quai\", lui dit Stacey. \"Quand cela s'est arrêté, ils ont tous cessé au même moment. <-<-<-<",
+        "quote_last": ">->->->, il y a trente-sept ans.\"",
         "title": "Chronopole",
         "author": "J.G. Ballard",
         "sfw": "unknown"

@@ -2,9 +2,9 @@
     {
         "id": "000103",
         "time": "00:27",
-        "quote_time_case": "* vinte e sete minutos depois da meia-noite",
-        "quote_first": "Blake desceu do ônibus atrás de uma mulher rechonchuda que carregava um bebê adormecido nos braços. O motorista do ônibus estava falando com um tom chamativo. Ele nem sequer se virou para olhar para a mulher e seu bebê. Blake a pegou quando ela tropeçou. Ela se virou e sorriu cansada para ele. Blake acenou com a cabeça para ela e olhou para o relógio do terminal. Passava então da meia-noite vinte e sete minutos.",
-        "quote_last": "",
+        "quote_time_case": "vinte e sete minutos depois da meia-noite",
+        "quote_first": "Blake desceu do ônibus atrás de uma mulher rechonchuda que carregava um bebê adormecido nos braços. O motorista do ônibus estava falando com um tom chamativo. Ele nem sequer se virou para olhar para a mulher e seu bebê. Blake a pegou quando ela tropeçou. Ela se virou e sorriu cansada para ele. Blake acenou com a cabeça para ela e olhou para o relógio do terminal. Passavam então <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Lamentar o Carrasco",
         "author": "Harry Whittington",
         "sfw": "unknown"

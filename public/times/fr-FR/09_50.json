@@ -2,9 +2,9 @@
     {
         "id": "001427",
         "time": "09:50",
-        "quote_time_case": "neuf heures cinquante du matin",
-        "quote_first": "Le colonel et ses deux collègues entrèrent dans la salle à moitié remplie à ",
-        "quote_last": ". et, comme indiqué, se sont rangés sur les sièges immédiatement derrière leur adversaire.",
+        "quote_time_case": "neuf heures cinquante",
+        "quote_first": "Le colonel et ses deux collègues entrèrent dans la salle à moitié remplie à <-<-<-<",
+        "quote_last": ">->->-> et, comme indiqué, s'installèrent immédiatement derrière leur adversaire.",
         "title": "À vol d'oiseau",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "001428",
         "time": "09:50",
-        "quote_time_case": "* dix minutes moins dix",
-        "quote_first": "Lamont quitta son appartement à Hammersmith à dix heures moins dix et, au lieu de tourner à droite et de se diriger vers la station de métro la plus proche, comme il le faisait tous les matins de la semaine depuis huit ans, il tourna à gauche.",
-        "quote_last": "",
+        "quote_time_case": "dix minutes moins dix",
+        "quote_first": "Lamont a quitté son appartement à Hammersmith à <-<-<-<",
+        "quote_last": ">->->->, et au lieu de tourner à droite et de se diriger vers la station de métro la plus proche, comme il l'avait fait tous les matins de la semaine auparavant huit ans, il a tourné à gauche.",
         "title": "Fermer les yeux",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "001429",
         "time": "09:50",
-        "quote_time_case": "9h50",
-        "quote_first": "J'aurais dû le savoir, dit Maddy. Il était courant que l'église soit presque vide à ",
-        "quote_last": " et pleine à 9h59.",
+        "quote_time_case": "9:50",
+        "quote_first": "J'aurais dû le savoir, dit Maddy. Il était typique que l'église soit presque vide à <-<-<-<",
+        "quote_last": ">->->-> et pleine à 9h59.",
         "title": "Taché de sang",
         "author": "Gayl Siegel",
         "sfw": "sfw"
@@ -32,9 +32,9 @@
     {
         "id": "001430",
         "time": "09:50",
-        "quote_time_case": "* dix à dix",
-        "quote_first": "Elle arrive à Radiance à dix heures moins dix, tôt pour une fois, et entre avec sa clé et enfile la blouse mauve et turquoise que Shanita a conçue pour eux afin que les clients sachent qu'ils ne sont pas eux-mêmes des clients.",
-        "quote_last": "",
+        "quote_time_case": "dix heures moins dix",
+        "quote_first": "Elle arrive à Radiance à <-<-<-<",
+        "quote_last": ">->->->, tôt pour une fois, et se laisse entrer avec sa clé et enfile la blouse mauve et turquoise que Shanita a conçue pour eux. les clients sauront qu’ils ne sont pas eux-mêmes des clients.",
         "title": "La mariée voleuse",
         "author": "Margaret Atwood",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "001431",
         "time": "09:50",
-        "quote_time_case": "* Dix minutes moins dix",
-        "quote_first": "Philip Lombard a dit :<br>« Quelle heure est-il maintenant ? »<br>« Dix heures moins dix, monsieur. »<br>Les sourcils de Lombard se sont levés. Il hocha lentement la tête.",
-        "quote_last": "",
+        "quote_time_case": "Dix heures moins dix",
+        "quote_first": "Philip Lombard a dit :<br>\"Quelle heure est-il maintenant ?\"<br>\"<-<-<-<",
+        "quote_last": ">->->->, monsieur.\"<br>Les sourcils de Lombard se sont levés. Il hocha lentement la tête.",
         "title": "Et puis il n'y en avait pas",
         "author": "Agatha Christie",
         "sfw": "unknown"
@@ -53,8 +53,8 @@
         "id": "001432",
         "time": "09:50",
         "quote_time_case": "9h50",
-        "quote_first": "",
-        "quote_last": ". Hum. Je pense qu'il ira inspecter le maquillage au cas où il entrerait.",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-> Hmmm. Je pense qu'il ira inspecter le maquillage au cas où il entrerait.",
         "title": "Le journal de Bridget Jones",
         "author": "Helen Fielding",
         "sfw": "sfw"
@@ -62,9 +62,9 @@
     {
         "id": "001433",
         "time": "09:50",
-        "quote_time_case": "Dix minutes moins dix.",
-        "quote_first": "",
-        "quote_last": " \"J'ai eu juste le temps de cacher le biberon (après que l'infirmière m'ait quitté) quand tu es entré dans ma chambre.\"",
+        "quote_time_case": "Dix heures moins dix.",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-> \"J'ai eu juste le temps de cacher le biberon (après que l'infirmière m'ait quitté) quand tu es entré dans ma chambre.\"",
         "title": "La loi et la dame",
         "author": "Wilkie Collins",
         "sfw": "unknown"

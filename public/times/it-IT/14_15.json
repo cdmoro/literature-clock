@@ -3,8 +3,8 @@
         "id": "002135",
         "time": "14:15",
         "quote_time_case": "14:15",
-        "quote_first": "",
-        "quote_last": "<br>Mark ha terminato il suo pranzo. Altri due uomini finirono i loro panini e si alzarono anche loro per andarsene. Mark tornò rapidamente al Senato, poiché voleva catturare Henry Lykham prima che iniziasse il dibattito in aula.",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-><br>Mark ha finito di pranzare. Altri due uomini finirono i loro panini e si alzarono anche loro per andarsene. Mark tornò rapidamente al Senato, poiché voleva catturare Henry Lykham prima che iniziasse il dibattito in aula.",
         "title": "Lo diciamo al presidente?",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -13,8 +13,8 @@
         "id": "002136",
         "time": "14:15",
         "quote_time_case": "14:15",
-        "quote_first": "",
-        "quote_last": " La storia sui giornali sui bambini di due anni che dovevano sostenere i test per entrare all'asilo mi ha fatto saltare fuori dalla pelle. Dovrei essere al tea party per il compleanno del figlioccio Harry.",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-> La storia sui giornali sui bambini di due anni che devono sostenere i test per entrare all'asilo mi ha fatto saltare fuori dalla pelle. Dovrei essere al tea party per il compleanno del figlioccio Harry.",
         "title": "Il diario di Bridget Jones",
         "author": "Helen Fielding",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "002137",
         "time": "14:15",
-        "quote_time_case": "14:15",
-        "quote_first": "Avevo un appuntamento con lei il giorno dopo alle ",
-        "quote_last": ". Nelle mie stanze, ma aveva meno successo, sembrava essere diventata meno giovanile, più donna da un giorno all'altro.",
+        "quote_time_case": "14.15",
+        "quote_first": "Avevo un appuntamento con lei il giorno dopo alle <-<-<-<",
+        "quote_last": ">->->-> nelle mie stanze, ma ha avuto meno successo, sembrava essere diventata meno giovanile, più donna da un giorno all'altro.",
         "title": "Lolita",
         "author": "Vladimir Nabokov",
         "sfw": "nsfw"
@@ -32,9 +32,9 @@
     {
         "id": "002138",
         "time": "14:15",
-        "quote_time_case": "14:15",
-        "quote_first": "",
-        "quote_last": " Seconda lezione pomeridiana",
+        "quote_time_case": "14.15",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-> Seconda lezione pomeridiana",
         "title": "Il curioso incidente del cane nella notte",
         "author": "Mark Haddon",
         "sfw": "sfw"

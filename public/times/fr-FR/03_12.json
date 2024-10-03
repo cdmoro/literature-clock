@@ -3,8 +3,8 @@
         "id": "000461",
         "time": "03:12",
         "quote_time_case": "trois heures douze",
-        "quote_first": "Une table avec des magazines de pêcheur et un cendrier, quelques livres sur une étagère, une bougie dans une bouteille, des chaises, une cheminée cadencé à ",
-        "quote_last": ".",
+        "quote_first": "Une table avec des magazines de pêcheur et un cendrier, quelques livres sur une étagère, une bougie dans une bouteille, des chaises, une cheminée cadencée à <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "En compagnie des autres",
         "author": "Jan Karon",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000462",
         "time": "03:12",
-        "quote_time_case": "* 03h12",
-        "quote_first": "Il était 3h12 du matin et Charlie appelait.<br>Elle a répondu : « Êtes-vous toujours assis devant cet hôtel ?<br>\"Ouais. C'est des conneries. Je vais chercher ce type, et je me fiche de ce qu'il est en train de faire.\"",
-        "quote_last": "",
+        "quote_time_case": "3h12",
+        "quote_first": "Il était <-<-<-<",
+        "quote_last": ">->->-> et Charlie appelait.<br>Elle a répondu : \"Es-tu toujours assise devant cet hôtel ?\"<br>\"Ouais. C'est C'est des conneries. Je vais chercher ce type, et je me fiche de ce qu'il est en train de faire.",
         "title": "Ombres du Vatican",
         "author": "Ray Keating",
         "sfw": "nsfw"

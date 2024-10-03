@@ -3,8 +3,8 @@
         "id": "001030",
         "time": "07:53",
         "quote_time_case": "7:53",
-        "quote_first": "L'aereo virò sulla pista di decollo alle 7:51, i suoi getti girarono prima di avanzare lentamente, quindi prese velocità. Le ruote hanno lasciato il terreno alle ",
-        "quote_last": ".",
+        "quote_first": "L'aereo virò sulla pista di decollo alle 7:51, i suoi getti girarono prima di avanzare lentamente, quindi prese velocità. Le ruote si staccarono da terra alle <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Onore tra i ladri",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "001031",
         "time": "07:53",
-        "quote_time_case": "* Dalle sette alle otto",
-        "quote_first": "Che ore sono?<br>\"Le otto meno le sette. Non ci vorrà molto.\"",
-        "quote_last": "",
+        "quote_time_case": "otto meno sette",
+        "quote_first": "Che ore sono?<br>\"<-<-<-<",
+        "quote_last": ">->->->. Non ci vorrà molto, ormai.\"",
         "title": "Mai tornare indietro",
         "author": "Robert Goddard",
         "sfw": "unknown"

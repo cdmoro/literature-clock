@@ -2,9 +2,9 @@
     {
         "id": "003183",
         "time": "21:06",
-        "quote_time_case": "* seis minutos depois das nove",
-        "quote_first": "A parisiense? Ela vem aqui!<br>\"Sim, com o pai dela, no trem que chega amanhã às nove e seis.\"",
-        "quote_last": "",
+        "quote_time_case": "nove e seis",
+        "quote_first": "A parisiense? Ela vem aqui!<br>\"Sim, com o pai dela, no trem que chega às <-<-<-<",
+        "quote_last": ">->->-> amanhã.\"",
         "title": "A mancha de tinta",
         "author": "René Bazin",
         "sfw": "sfw"

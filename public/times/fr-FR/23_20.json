@@ -2,9 +2,9 @@
     {
         "id": "003490",
         "time": "23:20",
-        "quote_time_case": "* 11h20",
-        "quote_first": "Il apparut ensuite que le même soir, à onze heures vingt, il fit une autre visite très bizarre et inattendue. La pluie persistait toujours. Trempé jusqu'aux os, il entra dans le petit appartement où vivaient les parents de sa fiancée, dans la Troisième rue de l'île Vassilievski.",
-        "quote_last": "",
+        "quote_time_case": "onze heures vingt",
+        "quote_first": "Il apparut ensuite que le même soir, à <-<-<-<",
+        "quote_last": ">->->->, il fit une autre visite très excentrique et inattendue. La pluie persistait toujours. Trempé jusqu'aux os, il entra dans le petit appartement où vivaient les parents de sa fiancée, dans la Troisième rue de l'île Vassilievski.",
         "title": "Crime et Châtiment",
         "author": "Fyodor Dostoyevsky",
         "sfw": "sfw"
@@ -13,8 +13,8 @@
         "id": "003491",
         "time": "23:20",
         "quote_time_case": "onze heures vingt",
-        "quote_first": "Depuis l’île Balboa, il s’est dirigé vers le sud jusqu’à Laguna Beach. À ",
-        "quote_last": ", il gara sa camionnette en face de la maison des Hudston.",
+        "quote_first": "Depuis l’île Balboa, il s’est dirigé vers le sud jusqu’à Laguna Beach. À <-<-<-<",
+        "quote_last": ">->->->, il a garé sa camionnette en face de la maison Hudston.",
         "title": "Observateurs",
         "author": "Dean Koontz",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "003492",
         "time": "23:20",
-        "quote_time_case": "* 11h20",
-        "quote_first": "Harvey regarda l'horloge qui indiquait onze heures vingt. \"Alors je dormirai ici jusqu'à trois heures et je prendrai le fret de quatre heures. En règle générale, ils nous laissent les hommes de la flotte voyager librement.\"",
-        "quote_last": "",
+        "quote_time_case": "onze heures vingt",
+        "quote_first": "Harvey regarda l'horloge qui indiquait <-<-<-<",
+        "quote_last": ">->->->. \"Alors je dormirai ici jusqu'à trois heures et je prendrai le fret de quatre heures. En règle générale, ils nous laissent les hommes de la flotte voyager librement.\"",
         "title": "Capitaines courageux",
         "author": "Rudyard Kipling",
         "sfw": "unknown"

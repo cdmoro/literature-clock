@@ -2,9 +2,9 @@
     {
         "id": "000823",
         "time": "06:24",
-        "quote_time_case": "* 06:24",
-        "quote_first": "Finalement, je retrouve le téléphone grâce au feu vert en haut. Notez que l'heure affichée indique 06h24 avant que je réponde. C'est maman.",
-        "quote_last": "",
+        "quote_time_case": "06:24",
+        "quote_first": "Finalement, je retrouve le téléphone grâce au feu vert en haut. Notez que l'affichage de l'heure indique <-<-<-<",
+        "quote_last": ">->->-> avant que je réponde. C'est maman.",
         "title": "Tout simplement le paradis",
         "author": "Serena Mackesy",
         "sfw": "sfw"

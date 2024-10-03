@@ -2,9 +2,9 @@
     {
         "id": "001510",
         "time": "10:03",
-        "quote_time_case": "* trois minutes [dix]",
-        "quote_first": "Elle passe devant le bâtiment du FBI à dix heures trois, elle passe devant le Monument de la Paix à l'angle nord-ouest du terrain du Capitole à cinq minutes.",
-        "quote_last": "",
+        "quote_time_case": "trois minutes [dix]",
+        "quote_first": "Elle passe devant le bâtiment du FBI à <-<-<-<",
+        "quote_last": ">->->->, elle passe devant le Monument de la Paix à l'angle nord-ouest du terrain du Capitole à cinq minutes.",
         "title": "Devons-nous le dire au président?",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "001511",
         "time": "10:03",
-        "quote_time_case": "* 10.03",
-        "quote_first": "Il est 10h03 d'après sa montre, et il traverse les Highlands écossais jusqu'à Inverness, fatigué et très légèrement anxieux au cas où il s'endormirait d'ici l'arrivée du train en gare et raterait le signal pour dire à Alice , Drew et Aleesha : \"OK, c'est Inverness, bougeons.\"",
-        "quote_last": "",
+        "quote_time_case": "10.03",
+        "quote_first": "Il est <-<-<-<",
+        "quote_last": ">->->-> d'après sa montre, et il traverse les Highlands écossais jusqu'à Inverness, fatigué et légèrement anxieux au cas où il s'endormirait d'ici là. le train atteint la gare et rate son signal pour dire à Alice, Drew et Aleesha : « OK, c'est Inverness, déplaçons-le. »",
         "title": "\"Vanilla-Bright comme Eminem\" des Jumeaux Farenheit",
         "author": "Michel Faber",
         "sfw": "unknown"
@@ -23,8 +23,8 @@
         "id": "001512",
         "time": "10:03",
         "quote_time_case": "10.03",
-        "quote_first": "La date était le 14 mai et l'horloge sur son bureau indiquait qu'il était dix heures vingt-trois, alors il tapa les chiffres 10.23. Du moins, c'est ce qu'il avait l'intention de faire. En fait, il a tapé les chiffres ",
-        "quote_last": ".",
+        "quote_first": "La date était le 14 mai et l'horloge sur son bureau indiquait qu'il était dix heures vingt-trois, alors il tapa les chiffres 10.23. Du moins, c'est ce qu'il avait l'intention de faire. En fait il a tapé les chiffres <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Ctrl-Z",
         "author": "Andrew Norriss",
         "sfw": "unknown"

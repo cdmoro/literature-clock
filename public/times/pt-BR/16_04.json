@@ -2,9 +2,9 @@
     {
         "id": "002431",
         "time": "16:04",
-        "quote_time_case": "* quatro minutos depois das quatro",
-        "quote_first": "Krantz não se mexeu durante as duas horas seguintes, ciente de que dois dos guardas estariam esperando impacientemente para acompanhá-la ao banheiro e receber o salário noturno. Mas o momento tinha que ser adequado para ela. Ela atenderia às necessidades deles às quatro e quatro, não antes, quando um receberia quarenta dólares, e ele garantiria que o outro recebesse um pacote de Benson & Hedges.",
-        "quote_last": "",
+        "quote_time_case": "quatro minutos depois das quatro",
+        "quote_first": "Krantz não se mexeu durante as duas horas seguintes, ciente de que dois dos guardas estariam esperando impacientemente para acompanhá-la ao banheiro e receber o salário noturno. Mas o momento tinha que ser adequado para ela. Ela atenderia às necessidades deles às <-<-<-<",
+        "quote_last": ">->->->, não antes, quando um receberia quarenta dólares, e ele se certificaria de que o outro recebesse um pacote de Benson &amp; Sebes.",
         "title": "Falsa impressão",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -13,8 +13,8 @@
         "id": "002432",
         "time": "16:04",
         "quote_time_case": "quatro e quatro",
-        "quote_first": "Às ",
-        "quote_last": " ele percebeu o farfalhar de um trem descendo as escadas e agora parecia um homem com o pescoço no cepo, esperando o machado.",
+        "quote_first": "Às <-<-<-<",
+        "quote_last": ">->->-> ele percebeu o farfalhar de um trem descendo as escadas e agora parecia um homem com o pescoço no cepo, esperando o machado.",
         "title": "O Senhor do Mar",
         "author": "M.P. Shiel",
         "sfw": "sfw"

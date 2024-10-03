@@ -3,8 +3,8 @@
         "id": "001701",
         "time": "11:07",
         "quote_time_case": "11:07",
-        "quote_first": "\"SÌ.\" Il tono fermo di Perena non ammetteva discussioni. “È esploso alle ",
-        "quote_last": ". Saresti entrato alle 11:02, quindi a quell'ora ti saresti trovato esattamente a metà strada tra le Porte.",
+        "quote_first": "\"SÌ.\" Il tono fermo di Perena non ammetteva discussioni. “È esploso alle <-<-<-<",
+        "quote_last": ">->->->. Saresti entrato alle 11:02, quindi a quell'ora ti saresti trovato esattamente a metà strada tra le Porte.",
         "title": "L'Ombra e la Notte",
         "author": "Chris Walley",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "001702",
         "time": "11:07",
-        "quote_time_case": "* Le undici e sette minuti",
-        "quote_first": "Alle undici e sette esatte secondo l'orologio della nave, l'Avventuriero emise un lungo strillo e, gettati gli ormeggi, uscì dal bacino e immerse il naso nelle acque ridenti della baia, si imbarcò finalmente in un viaggio destinato a per rivendicare pienamente il suo nuovo nome.",
-        "quote_last": "",
+        "quote_time_case": "undici e sette minuti",
+        "quote_first": "Esattamente alle <-<-<-<",
+        "quote_last": ">->->-> secondo l'orologio della nave, l'Avventuriero lanciò un lungo strillo e, levati gli ormeggi, uscì dal bacino e immerse il naso nella risata acque della baia, si imbarcò finalmente per un viaggio destinato a rivendicare pienamente il suo nuovo nome.",
         "title": "Il Club Avventura a galla",
         "author": "Ralph Henry Barbour",
         "sfw": "unknown"

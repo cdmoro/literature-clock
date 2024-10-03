@@ -2,9 +2,9 @@
     {
         "id": "001378",
         "time": "09:32",
-        "quote_time_case": "* 9h32",
-        "quote_first": "Ele disse que não podia dizer com certeza, é claro, mas que achava que sim. De qualquer forma, se ele não fosse o 11,5 para Kingston, ele disse que estava bastante confiante de que era o 9,32 para Virginia Water, ou o expresso das 10h para a Ilha de Wight, ou algum lugar nessa direção, e todos nós deveríamos saber quando chegaremos. cheguei lá.",
-        "quote_last": "",
+        "quote_time_case": "9,32",
+        "quote_first": "Ele disse que não podia dizer com certeza, é claro, mas que achava que sim. De qualquer forma, se ele não fosse o 11,5 para Kingston, ele disse que estava bastante confiante de que era o <-<-<-<",
+        "quote_last": ">->->-> para Virginia Water, ou o expresso das 10h para a Ilha de Wight , ou em algum lugar nessa direção, e todos deveríamos saber quando chegamos lá.",
         "title": "Três homens em um barco",
         "author": "Jerome K. Jerome",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "001379",
         "time": "09:32",
-        "quote_time_case": "nove e trinta e dois",
-        "quote_first": "Sandy mal chegou às ",
-        "quote_last": " e encontrou um lugar para não fumantes. Ela estava ansiosa por esta visita com Lisbeth. Fazia meses que não se viam, desde janeiro, quando Sandy voltou da Jamaica. E naquele dia Sandy estava com um vírus de herpes desenvolvido no lábio inferior.",
+        "quote_time_case": "nove-trinta e dois",
+        "quote_first": "Sandy mal chegou às <-<-<-<",
+        "quote_last": ">->->-> e encontrou um lugar para não fumantes. Ela estava ansiosa por esta visita com Lisbeth. Fazia meses que não se viam, desde janeiro, quando Sandy voltou da Jamaica. E naquele dia Sandy estava com um vírus de herpes desenvolvido no lábio inferior.",
         "title": "Esposa",
         "author": "Judy Blume",
         "sfw": "unknown"

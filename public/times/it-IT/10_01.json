@@ -2,9 +2,9 @@
     {
         "id": "001503",
         "time": "10:01",
-        "quote_time_case": "* 10:01",
-        "quote_first": "\"Va bene, vai avanti\", disse il direttore in modo deciso. «Fate rapporto a me non appena saranno pronti, ma lasciate il briefing finale all'ultimo momento possibile e, Matt, non voglio elicotteri fino alle 22:01. Non voglio che ci sia la possibilità che si verifichi una fuga di notizie di alcun tipo; è la nostra unica speranza di catturare l’assassino.”",
-        "quote_last": "",
+        "quote_time_case": "10:01",
+        "quote_first": "\"Va bene, vai avanti\", disse il direttore in modo deciso. “Rapporto a me non appena saranno pronti, ma lascia il briefing finale all'ultimo momento possibile e, Matt, non voglio elicotteri fino al <-<-<-<",
+        "quote_last": ">->->->. Non voglio che ci sia la possibilità che si verifichi una fuga di notizie di alcun tipo; è la nostra unica speranza di catturare l’assassino.”",
         "title": "Lo diciamo al presidente?",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -13,8 +13,8 @@
         "id": "001504",
         "time": "10:01",
         "quote_time_case": "dieci e un minuto",
-        "quote_first": "Entrò nel regno di vetro dell'avvocato alle ",
-        "quote_last": ", si sedette di fronte al suo cliente e sorrise, prima di posare la sua borsa Gladstone sul pavimento accanto alla sedia.",
+        "quote_first": "Entrò nel regno di vetro dell'avvocato alle <-<-<-<",
+        "quote_last": ">->->->, si sedette di fronte al suo cliente e sorrise, prima di posare la sua borsa Gladstone sul pavimento accanto alla sedia.",
         "title": "Il prossimo in linea",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -23,8 +23,8 @@
         "id": "001505",
         "time": "10:01",
         "quote_time_case": "10:01",
-        "quote_first": "",
-        "quote_last": "<br>Dannata devastazione catastrofica, più o meno.",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-><br>Dannata devastazione catastrofica, praticamente.",
         "title": "Cucine del Grande Midwest",
         "author": "J. Ryan Stradal",
         "sfw": "nsfw"
@@ -33,8 +33,8 @@
         "id": "001506",
         "time": "10:01",
         "quote_time_case": "10:01",
-        "quote_first": "",
-        "quote_last": "<br>Dr. Abdoul Kirwani, ambasciatore della Repubblica islamica del Pakistan negli Stati Uniti d'America, sedeva rigido di fronte alla piccola scrivania nello Studio Ovale. Quando la sera prima era arrivata la chiamata dal capo dello staff di Johan Hansen per richiedere un incontro, questi aveva inviato frettolosamente un telex protetto a Islamabad per chiedere se avesse bisogno di aggiornamenti.<br>Lo fece. Ed è stato un disastro.",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-><br>Dr. Abdoul Kirwani, ambasciatore della Repubblica islamica del Pakistan negli Stati Uniti d'America, sedeva rigido di fronte alla piccola scrivania nello Studio Ovale. Quando la sera prima era arrivata la chiamata dal capo dello staff di Johan Hansen per richiedere un incontro, questi aveva inviato frettolosamente un telex protetto a Islamabad per chiedere se avesse bisogno di aggiornamenti.<br>Lo ha fatto. Ed è stato un disastro.",
         "title": "Progetto Ciclope",
         "author": "Thomas Hoover",
         "sfw": "sfw"
@@ -42,9 +42,9 @@
     {
         "id": "001507",
         "time": "10:01",
-        "quote_time_case": "* verso le dieci",
-        "quote_first": "Verso le dieci del mattino il sole gettava una luminosa striscia carica di polvere attraverso una delle finestre laterali, e le mosche entravano e uscivano volando come stelle veloci.",
-        "quote_last": "",
+        "quote_time_case": "verso le dieci",
+        "quote_first": "Alle <-<-<-<",
+        "quote_last": ">->->-> del mattino il sole proiettava una chiara striscia carica di polvere attraverso una delle finestre laterali, e le mosche entravano e uscivano veloci come se si precipitassero stelle.\"",
         "title": "Di topi e uomini",
         "author": "John Steinbeck",
         "sfw": "unknown"

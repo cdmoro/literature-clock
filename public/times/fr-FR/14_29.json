@@ -3,8 +3,8 @@
         "id": "002162",
         "time": "14:29",
         "quote_time_case": "deux heures vingt-neuf minutes",
-        "quote_first": "Cependant, sa faculté d'éveil semble avoir été légèrement déréglée ce jour-là, et il ne s'est réveillé qu'à ",
-        "quote_last": " selon l'horloge de l'hôtel.",
+        "quote_first": "Cependant, sa faculté d'éveil semble avoir été légèrement hors d'usage ce jour-là, et il ne s'est réveillé que <-<-<-<",
+        "quote_last": ">->->-> à l'horloge de l'hôtel.",
         "title": "Le bateau-chat à quatre mâts",
         "author": "Charles Battell Loomis",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "002163",
         "time": "14:29",
-        "quote_time_case": "deux heures vingt-neuf minutes",
-        "quote_first": "Lundi, à ",
-        "quote_last": ", Lucy frappa à la porte de leur salon et dit : « S'il vous plaît, monsieur, il y a un homme en noir en bas avec un jeune homme.",
+        "quote_time_case": "deux heures vingt-neuf",
+        "quote_first": "À <-<-<-<",
+        "quote_last": ">->->-> lundi, Lucy a frappé à la porte de leur salon et a dit : « S'il vous plaît, monsieur, il y a un homme en noir en bas avec un jeune monsieur.\"",
         "title": "Bleu à l'artimon",
         "author": "Patrick O'Brian",
         "sfw": "sfw"

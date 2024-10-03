@@ -2,9 +2,9 @@
     {
         "id": "001303",
         "time": "09:07",
-        "quote_time_case": "* 9:07",
-        "quote_first": "Durante a viagem, Septimus lia seu jornal e fumava dois cigarros, chegando à Cannon Street às 9h07.",
-        "quote_last": "",
+        "quote_time_case": "9:07",
+        "quote_first": "Durante a viagem, Septimus lia seu jornal e fumava dois cigarros, chegando à Cannon Street às <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Rotina Quebrada",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "001304",
         "time": "09:07",
-        "quote_time_case": "* Sete minutos depois",
-        "quote_first": "O padre Presteign não dissera que o correio chegaria às nove ou pouco depois? \"Pouco depois\" pode significar qualquer coisa. Eles poderiam estar esperando por meia hora. Nove e cinco. Sete minutos se passaram. E então aconteceu.",
-        "quote_last": "",
+        "quote_time_case": "Sete minutos passados",
+        "quote_first": "O padre Presteign não dissera que o correio chegaria às nove ou pouco depois? \"Pouco depois\" pode significar qualquer coisa. Eles poderiam estar esperando por meia hora. Nove e cinco. <-<-<-<",
+        "quote_last": ">->->->. E então aconteceu.",
         "title": "Uma Certa Justiça",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "001305",
         "time": "09:07",
-        "quote_time_case": "* 9:07",
-        "quote_first": "No sétimo dia, as persianas de uma janela do térreo foram deixadas abertas pela manhã. Luke viu uma luz acender e apagar às 9h07, duas horas depois da partida da Família Esportiva.",
-        "quote_last": "",
+        "quote_time_case": "9:07",
+        "quote_first": "No sétimo dia, as persianas de uma janela do térreo foram deixadas abertas pela manhã. Luke viu uma luz acender e apagar às <-<-<-<",
+        "quote_last": ">->->->, duas horas inteiras depois que a Família Esportista saiu.",
         "title": "Entre os Ocultos",
         "author": "Margaret Peterson Haddix",
         "sfw": "unknown"
@@ -33,8 +33,8 @@
         "id": "001306",
         "time": "09:07",
         "quote_time_case": "9h07",
-        "quote_first": "",
-        "quote_last": " estava deitado na cama, olhando para o teto.",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-> deitei na cama, olhando para o teto.",
         "title": "Uma fração do todo",
         "author": "Steve Toltz",
         "sfw": "sfw"
@@ -42,9 +42,9 @@
     {
         "id": "001307",
         "time": "09:07",
-        "quote_time_case": "* 9:07",
-        "quote_first": "Era uma manhã brilhante, 9h07 no relógio, quando a Sra. Flett subiu a bordo do Imperial Limited na estação Tyndall, certa de que sua vida estava arruinada, mas conseguindo, através de um esforço de vontade, manter-se ereta e afetar um ar de preocupação e vivacidade.",
-        "quote_last": "",
+        "quote_time_case": "9:07",
+        "quote_first": "Era uma manhã brilhante, <-<-<-<",
+        "quote_last": ">->->-> quando a Sra. Flett subiu a bordo do Imperial Limited na estação de Tyndall, certa de que sua vida estava arruinada, mas conseguindo, através de um esforço de vontade, para manter-se ereta e assumir um ar de preocupação e vivacidade.",
         "title": "Os Diários de Pedra",
         "author": "Carol Shields",
         "sfw": "unknown"

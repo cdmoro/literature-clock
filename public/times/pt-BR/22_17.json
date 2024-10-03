@@ -2,9 +2,9 @@
     {
         "id": "003338",
         "time": "22:17",
-        "quote_time_case": "* dez dezessete",
-        "quote_first": "O médico entrou na sala de espera às dez e dezessete daquela noite.<br>Charity se levantou. Ela passou grande parte do dia com a cabeça baixa, orando em silêncio. Ela estava além das lágrimas, pelo menos por enquanto, e colocou um braço protetor em volta da filha, puxando Molly para perto de seu lado.",
-        "quote_last": "",
+        "quote_time_case": "dez e dezessete",
+        "quote_first": "O médico entrou na sala de espera às <-<-<-<",
+        "quote_last": ">->->-> daquela noite.<br>Charity se levantou. Ela passou grande parte do dia com a cabeça baixa, orando em silêncio. Ela estava além das lágrimas, pelo menos por enquanto, e colocou um braço protetor em volta da filha, puxando Molly para perto de seu lado.",
         "title": "Pequeno favor",
         "author": "Jim Butcher",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "003339",
         "time": "22:17",
-        "quote_time_case": "* dezassete minutos depois das dez",
-        "quote_first": "Já eram dez e dezessete minutos quando Phil fechou a porta e apagou a luz do patamar, mas eu sabia que não poderia sair imediatamente.",
-        "quote_last": "",
+        "quote_time_case": "dezessete minutos",
+        "quote_first": "Já eram <-<-<-<",
+        "quote_last": ">->->-> quando Phil fechou a porta e apagou a luz do patamar, mas eu sabia que não poderia sair imediatamente.",
         "title": "Eu nunca dei meu consentimento",
         "author": "Holly Archer",
         "sfw": "nsfw"
@@ -23,8 +23,8 @@
         "id": "003340",
         "time": "22:17",
         "quote_time_case": "22h17",
-        "quote_first": "",
-        "quote_last": " Casette não entra.",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-> A cassete não entra.",
         "title": "Diário de Bridget Jones",
         "author": "Helen Fielding",
         "sfw": "sfw"

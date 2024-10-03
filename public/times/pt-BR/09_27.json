@@ -2,9 +2,9 @@
     {
         "id": "001358",
         "time": "09:27",
-        "quote_time_case": "* 9:27",
-        "quote_first": "“Já faz algum tempo que você não faz compras em Paris”, ela disse a ele. “Isso é suficiente para um par de jeans e algumas camisetas.” Kratz entregou com relutância mais cinco mil francos.<br>Às 9h27 o telefone tocou.",
-        "quote_last": "",
+        "quote_time_case": "9:27",
+        "quote_first": "“Já faz algum tempo que você não faz compras em Paris”, ela disse a ele. “Isso é suficiente para um par de jeans e algumas camisetas.” Kratz entregou com relutância mais cinco mil francos.<br>Às <-<-<-<",
+        "quote_last": ">->->-> o telefone tocou.",
         "title": "Honra entre ladrões",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -13,8 +13,8 @@
         "id": "001359",
         "time": "09:27",
         "quote_time_case": "9h27",
-        "quote_first": "",
-        "quote_last": "<br>Vance recostou-se no cipreste e ouviu o assobio do vento fraco através dos afloramentos de granito. Ele havia se empoleirado em um dos penhascos escarpados, de onde podia ver praticamente tudo o que acontecia na superfície. Ao redor dele, formigas rastejavam, alheias ao calor do sol, que agora queimava as rochas cor de osso por todos os lados, enquanto lá embaixo as ondas lânguidas acenavam.",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-><br>Vance recostou-se no cipreste e ouviu o assobio do vento fraco através dos afloramentos de granito. Ele havia se empoleirado em um dos penhascos escarpados, de onde podia ver praticamente tudo o que acontecia na superfície. Ao seu redor, formigas rastejavam, alheias ao calor do sol, que agora queimava as rochas cor de osso por todos os lados, enquanto lá embaixo as ondas lânguidas acenavam.",
         "title": "Projeto Ciclope",
         "author": "Thomas Hoover",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "001360",
         "time": "09:27",
-        "quote_time_case": "* vinte e sete minutos depois das nove",
-        "quote_first": "Das nove e vinte até as nove e sete, das onze e vinte e cinco até as onze e oito, das três e dez até as três e dois, os heróis da escola se encontraram em uma grande familiaridade cujo atleta olímpico a risada impressionou o menino medroso que passou inquieto e arrepiou o idoso desleixado que parou precipitadamente para examinar os avisos em afirmação de um direito imerecido.",
-        "quote_last": "",
+        "quote_time_case": "nove e sete minutos",
+        "quote_first": "Das nove e vinte até <-<-<-<",
+        "quote_last": ">->->->, das onze e vinte e cinco até onze e vinte e oito minutos, das três e dez até dois minutos aos três, os heróis da escola se encontraram em uma grande familiaridade, cuja risada olímpica impressionou o menininho medroso que passava inquieto e arrepiou o desleixado aluno do último ano que se deteve precipitadamente para examinar os avisos em afirmação de um direito imerecido.",
         "title": "Rua Sinistra",
         "author": "Compton Mackenzie",
         "sfw": "unknown"

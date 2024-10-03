@@ -3,8 +3,8 @@
         "id": "003141",
         "time": "20:59",
         "quote_time_case": "um minuto antes das nove",
-        "quote_first": "No entanto, você não se afastará mais do que três quilômetros do quartel, se comportará de maneira condizente com um Fuzileiro Real e se apresentará à sala da guarda sóbrio como juiz ",
-        "quote_last": ".",
+        "quote_first": "No entanto, você não se afastará mais do que três quilômetros do quartel, se comportará de maneira condizente com um Fuzileiro Real e se apresentará à sala da guarda sóbrio como juiz às <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Enquanto o corvo voa",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "003142",
         "time": "20:59",
-        "quote_time_case": "* um minuto para as nove",
-        "quote_first": "Normalmente, um assistente teria ligado [a televisão] para ele às nove menos um minuto. Ele ficou sentado observando uma mulher nigeriana dar uma palestra sobre costura, seguida pelo meteorologista que forneceu a Eduardo a informação reveladora de que a temperatura continuaria alta no mês seguinte.",
-        "quote_last": "",
+        "quote_time_case": "um minuto para as nove",
+        "quote_first": "Normalmente, um assistente teria ligado [a televisão] para ele às <-<-<-<",
+        "quote_last": ">->->->. Ele ficou sentado observando uma mulher nigeriana dar uma palestra sobre costura, seguida pelo meteorologista que forneceu a Eduardo a informação reveladora de que a temperatura continuaria alta no mês seguinte.",
         "title": "O golpe",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -23,8 +23,8 @@
         "id": "003143",
         "time": "20:59",
         "quote_time_case": "20h59",
-        "quote_first": "Bem, que experiência culinária incrível, disse Eva às ",
-        "quote_last": ", quando o carro de Prager estacionou em frente ao seu apartamento.",
+        "quote_first": "Bem, que experiência culinária incrível, Eva disse às <-<-<-<",
+        "quote_last": ">->->->, quando o carro de Prager estacionou em frente ao seu apartamento.",
         "title": "Cozinhas do Grande Centro-Oeste",
         "author": "J. Ryan Stradal",
         "sfw": "unknown"

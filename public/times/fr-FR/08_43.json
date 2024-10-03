@@ -2,9 +2,9 @@
     {
         "id": "001198",
         "time": "08:43",
-        "quote_time_case": "8h43",
-        "quote_first": "« Quoi qu’il en soit, il ne doit pas être autorisé à retourner à la Maison Blanche. » La ligne est tombée en panne. Cavalli savait que son père avait raison sur les deux points. Cavalli consulta à nouveau sa montre : ",
-        "quote_last": ".",
+        "quote_time_case": "8:43",
+        "quote_first": "« Quoi qu’il en soit, il ne doit pas être autorisé à retourner à la Maison Blanche. » La ligne est tombée en panne. Cavalli savait que son père avait raison sur les deux points. Cavalli vérifia à nouveau sa montre : <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Honneur parmi les voleurs",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "001199",
         "time": "08:43",
-        "quote_time_case": "* huit quarante-trois",
-        "quote_first": "Vous comprenez que ce magnétophone est allumé ?<br>\"Euh huh\"<br>\"Et nous sommes le mercredi 15 mai, à huit heures quarante-trois du matin.\"<br>\"Si tu le dis\"",
-        "quote_last": "",
+        "quote_time_case": "huit heures quarante-trois",
+        "quote_first": "Vous comprenez que ce magnétophone est allumé ?<br>\"Euh huh\"<br>\"Et nous sommes le mercredi 15 mai, à <-<-<-<",
+        "quote_last": ">->->-> du matin. \"<br>\"Si tu le dis\"",
         "title": "Il est temps de tuer",
         "author": "John Grisham",
         "sfw": "unknown"
@@ -23,8 +23,8 @@
         "id": "001200",
         "time": "08:43",
         "quote_time_case": "8h43",
-        "quote_first": "",
-        "quote_last": " Passer devant la poissonnerie tropicale",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-> Passez devant la poissonnerie tropicale",
         "title": "Le curieux incident du chien pendant la nuit",
         "author": "Mark Haddon",
         "sfw": "sfw"

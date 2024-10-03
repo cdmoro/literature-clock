@@ -3,8 +3,8 @@
         "id": "000531",
         "time": "03:58",
         "quote_time_case": "dois minutos para as quatro",
-        "quote_first": "A casa antiga estava deserta, a garagem em ruínas trancada com cadeado, e era possível discernir - olhando através de uma fresta do sol borbulhante na janela - o mostrador de um relógio na parede oposta. O relógio havia parado ",
-        "quote_last": " da manhã, ou quem sabe, pode ter sido ainda mais cedo, ontem à tarde, algumas horas depois de Kaiser ter deixado Kamaria com destino a Bartica.",
+        "quote_first": "A casa antiga estava deserta, a garagem em ruínas trancada com cadeado, e era possível discernir - olhando através de uma fresta do sol borbulhante na janela - o mostrador de um relógio na parede oposta. O relógio havia parado às <-<-<-<",
+        "quote_last": ">->->-> de madrugada, ou quem sabe, pode ter sido ainda mais cedo, ontem à tarde, algumas horas depois Kaiser trocou Kamaria por Bartica.",
         "title": "Terra do coração",
         "author": "Wilson Harris",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "000532",
         "time": "03:58",
-        "quote_time_case": "* 3:58",
-        "quote_first": "O relógio no topo da sede do clube marca 3h58.",
-        "quote_last": "",
+        "quote_time_case": "3:58",
+        "quote_first": "O relógio no topo da sede do clube marca <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Submundo",
         "author": "Don DeLillo",
         "sfw": "unknown"

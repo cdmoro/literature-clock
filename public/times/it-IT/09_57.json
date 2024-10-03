@@ -2,9 +2,9 @@
     {
         "id": "001452",
         "time": "09:57",
-        "quote_time_case": "* tre minuti alle dieci",
-        "quote_first": "Quel giovedì mattina i membri del consiglio erano tutti seduti ai loro posti attorno al tavolo alle dieci meno tre. La riunione è iniziata in tono tranquillo, con le scuse per l'assenza, seguita dall'accettazione del verbale dell'ultima riunione.",
-        "quote_last": "",
+        "quote_time_case": "tre minuti alle dieci",
+        "quote_first": "Quel giovedì mattina i membri del consiglio erano tutti seduti ai loro posti attorno al tavolo alle <-<-<-<",
+        "quote_last": ">->->->. La riunione è iniziata in tono tranquillo, con le scuse per l'assenza, seguita dall'accettazione del verbale dell'ultima riunione.",
         "title": "Come vola il corvo",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -13,8 +13,8 @@
         "id": "001453",
         "time": "09:57",
         "quote_time_case": "9:57",
-        "quote_first": "Venerdì ",
-        "quote_last": "<br>\"Abbiamo una detonazione\", riferì il colonnello Arkadi nel microfono del suo casco. Il suo Foxhound bimotore era già su una ripida sponda di cinquanta gradi.<br>\"Vi copiamo\", rispose il generale Sokolov. \"Puoi confermare l'uccisione?\"",
+        "quote_first": "Venerdì <-<-<-<",
+        "quote_last": ">->->-><br>\"Abbiamo una detonazione,\" riferì il colonnello Arkadi nel microfono del suo casco. Il suo Foxhound bimotore era già su una ripida sponda di cinquanta gradi.<br>\"Ti copiamo\", rispose il generale Sokolov. \"Puoi confermare l'uccisione?\"",
         "title": "Progetto Dedalo",
         "author": "Thomas Hoover",
         "sfw": "unknown"

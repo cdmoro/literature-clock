@@ -2,9 +2,9 @@
     {
         "id": "003318",
         "time": "22:06",
-        "quote_time_case": "* dopo le dieci",
-        "quote_first": "Naturalmente avevano buone ragioni per essere pignoli in una serata del genere. E poi erano passate da tempo le dieci eppure non c'era traccia di Gabriel e di sua moglie. Inoltre avevano una paura tremenda che Freddy Malins si ritrovasse fregato.",
-        "quote_last": "",
+        "quote_time_case": "dopo le dieci",
+        "quote_first": "Naturalmente avevano buone ragioni per essere pignoli in una serata del genere. E poi è passato molto tempo <-<-<-<",
+        "quote_last": ">->->-> e tuttavia non c'era traccia di Gabriel e di sua moglie. Inoltre avevano una paura tremenda che Freddy Malins si ritrovasse fregato.",
         "title": "La morte",
         "author": "James Joyce",
         "sfw": "unknown"
@@ -13,8 +13,8 @@
         "id": "003319",
         "time": "22:06",
         "quote_time_case": "dieci e sei minuti",
-        "quote_first": "Fammi sapere non appena senti qualcosa.<br>Quoyle rabbrividì nella cucina fredda. L'orologio segnava le ",
-        "quote_last": ". Non poteva sentire il mare.",
+        "quote_first": "Fammi sapere non appena senti qualcosa.<br>Quoyle rabbrividì nel freddo della cucina. L'orologio diceva <-<-<-<",
+        "quote_last": ">->->->. Non poteva sentire il mare.",
         "title": "Le notizie sulla spedizione",
         "author": "Annie Proulx",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "003320",
         "time": "22:06",
-        "quote_time_case": "* 22:06 CET",
-        "quote_first": "22:06<br>William si è sistemato sulla sua cuccetta poco dopo le dieci, ma non ha dormito. Alcuni marinai giocavano a carte, mentre altri raccontavano storie improbabili di tesori che avevano recuperato dal fondo dell'oceano.",
-        "quote_last": "",
+        "quote_time_case": "22:06 CET",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-><br>William si sistemò sulla sua cuccetta poco dopo le dieci, ma non dormì. Alcuni marinai giocavano a carte, mentre altri raccontavano storie improbabili di tesori che avevano recuperato dal fondo dell'oceano.",
         "title": "Niente di azzardato",
         "author": "Jeffrey Archer",
         "sfw": "sfw"

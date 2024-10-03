@@ -3,8 +3,8 @@
         "id": "003547",
         "time": "23:47",
         "quote_time_case": "Treize minutes avant midi ou minuit",
-        "quote_first": "Parce que les deux malédictions qui ont frappé ici à Chicago sont arrivées à onze heures quarante-sept du matin, et presque la nuit dernière. Ajoutez deux heures aux décès en Californie pour tenir compte de la différence de fuseaux horaires. La malédiction a été envoyée en même temps. ",
-        "quote_last": ".",
+        "quote_first": "Parce que les deux malédictions qui ont frappé ici à Chicago sont arrivées à onze heures quarante-sept du matin, et presque la nuit dernière. Ajoutez deux heures aux décès en Californie pour tenir compte de la différence de fuseaux horaires. La malédiction a été envoyée en même temps. <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Rites de sang",
         "author": "Jim Butcher",
         "sfw": "nsfw"
@@ -12,9 +12,9 @@
     {
         "id": "003548",
         "time": "23:47",
-        "quote_time_case": "* treize minutes avant minuit",
-        "quote_first": "S'il avait jeté un coup d'œil à sa montre, il aurait vu qu'il était minuit moins treize. Et s'il s'était intéressé à ce qui se passait, il aurait entendu les voix et les braillements d'hommes terrifiés.",
-        "quote_last": "",
+        "quote_time_case": "minuit moins treize minutes",
+        "quote_first": "S'il avait jeté un coup d'œil à sa montre, il aurait vu qu'il était <-<-<-<",
+        "quote_last": ">->->->. Et s'il s'était intéressé à ce qui se passait, il aurait entendu les voix et les braillements d'hommes terrifiés.",
         "title": "Les soldats morts ne chantent pas",
         "author": "Rudolf Jašík",
         "sfw": "unknown"

@@ -3,8 +3,8 @@
         "id": "000187",
         "time": "01:10",
         "quote_time_case": "une heure dix",
-        "quote_first": "La porte arrière était déverrouillée, Monsieur, tandis que Caldwell et Miss Makepiece vérifiaient les lumières. C'était vers ",
-        "quote_last": ".",
+        "quote_first": "La porte arrière était déverrouillée, Monsieur, tandis que Caldwell et Miss Makepiece vérifiaient les lumières. C'était vers <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Le meurtre du Père Noël",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000188",
         "time": "01:10",
-        "quote_time_case": "* une heure dix",
-        "quote_first": "Il était une heure et dix minutes sous la montre de Bond lorsque, à la table haute, tout le schéma du jeu changea soudainement.",
-        "quote_last": "",
+        "quote_time_case": "une heure dix",
+        "quote_first": "Il était <-<-<-<",
+        "quote_last": ">->->-> sous la montre de Bond lorsque, à la table haute, tout le schéma de jeu a soudainement changé.",
         "title": "Casino Royale",
         "author": "Ian Fleming",
         "sfw": "unknown"
@@ -23,8 +23,8 @@
         "id": "000189",
         "time": "01:10",
         "quote_time_case": "1h10",
-        "quote_first": "Samedi 26 février - Richards est sorti à ",
-        "quote_last": " du matin et a trouvé que le temps s'éclaircissait un peu, nous avons donc démarré le plus tôt possible, soit 2h10 du matin.",
+        "quote_first": "Samedi 26 février - Richards est sorti <-<-<-<",
+        "quote_last": ">->->-> et a trouvé que le temps s'éclaircissait un peu, nous avons donc démarré le plus tôt possible, soit 2h10 du matin.",
         "title": "Sud : l'expédition Endurance",
         "author": "Ernest Shackleton",
         "sfw": "unknown"

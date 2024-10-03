@@ -2,9 +2,9 @@
     {
         "id": "000446",
         "time": "03:02",
-        "quote_time_case": "* dois minutos depois das três",
-        "quote_first": "Mas depois de meses de verificações e reavaliações, Joseph Ricardo, mestiço, nascido ilegitimamente num hospital de Buenos Aires às três e dois minutos, hora ocidental, em 19 de Outubro de 1995, foi oficialmente reconhecido.",
-        "quote_last": "",
+        "quote_time_case": "três e dois minutos",
+        "quote_first": "Mas depois de meses de verificações e reavaliações, Joseph Ricardo, mestiço, nascido ilegitimamente em um hospital de Buenos Aires às <-<-<-<",
+        "quote_last": ">->->-> horário do Oeste em 19 de outubro de 1995, havia oficialmente sido reconhecido.",
         "title": "Os Filhos dos Homens",
         "author": "P.D. James",
         "sfw": "sfw"

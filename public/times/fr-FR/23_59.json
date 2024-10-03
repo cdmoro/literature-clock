@@ -2,9 +2,9 @@
     {
         "id": "003575",
         "time": "23:59",
-        "quote_time_case": "* À minuit moins une minute",
-        "quote_first": "A minuit moins une minute, Roquenton tenait la main de sa femme et lui donnait quelques derniers conseils. Sur les coups de minuit, elle sentit la main de son compagnon fondre dans la sienne.",
-        "quote_last": "",
+        "quote_time_case": "A minuit moins une",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->->, Roquenton tenait la main de sa femme et lui donnait quelques derniers conseils. Sur les coups de minuit, elle sentit la main de son compagnon fondre dans la sienne.",
         "title": "L'homme qui traversait les murs",
         "author": "Marcel Aymé",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "003576",
         "time": "23:59",
-        "quote_time_case": "* le nouveau jour était encore dans une minute",
-        "quote_first": "Chigurgh se leva et ramassa le boîtier vide sur le tapis, souffla dedans, le mit dans sa poche et regarda sa montre. Le nouveau jour était encore dans une minute.",
-        "quote_last": "",
+        "quote_time_case": "le nouveau jour était encore dans une minute",
+        "quote_first": "Chigurgh se leva et ramassa le boîtier vide sur le tapis, souffla dedans, le mit dans sa poche et regarda sa montre. Le <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Il n'y a pas de pays pour les vieillards",
         "author": "Cormac McCarthy",
         "sfw": "sfw"

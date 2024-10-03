@@ -3,8 +3,8 @@
         "id": "000202",
         "time": "01:17",
         "quote_time_case": "une heure dix-sept minutes",
-        "quote_first": "\"Je ne sais pas ce que tu ressens, mais je suis épuisé\", dit Ted en verrouillant la porte de la cuisine.<br>Hazel regarda sa montre. Il était ",
-        "quote_last": ".",
+        "quote_first": "\"Je ne sais pas ce que tu ressens, mais je suis épuisé\", a déclaré Ted en verrouillant la porte de la cuisine.<br>Hazel a vérifié sa montre. Il était <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Cireur de chaussures",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000203",
         "time": "01:17",
-        "quote_time_case": "* 1h17 du matin",
-        "quote_first": "Vendredi 01h17<br>La pièce était froide. Juste froid. C'était la première chose qu'il avait remarqué quand ils l'avaient poussé à l'intérieur. C'était toujours le cas. Depuis neuf heures, il était assis sur un lit de camp soviétique recouvert de toile, frissonnant.",
-        "quote_last": "",
+        "quote_time_case": "1h17",
+        "quote_first": "Vendredi <-<-<-<",
+        "quote_last": ">->->-><br>La pièce était froide. Juste froid. C'était la première chose qu'il avait remarqué quand ils l'avaient poussé à l'intérieur. C'était toujours le cas. Depuis neuf heures, il était assis sur un lit de camp soviétique recouvert de toile, frissonnant.",
         "title": "Projet Dédale",
         "author": "Thomas Hoover",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "000204",
         "time": "01:17",
-        "quote_time_case": "* une heure dix-sept minutes",
-        "quote_first": "À ce moment (il était une heure du matin de dix-sept minutes), le lieutenant Bronsfield s'apprêtait à quitter le quart et à regagner sa cabine, lorsque son attention fut attirée par un sifflement lointain.",
-        "quote_last": "",
+        "quote_time_case": "une heure dix-sept minutes",
+        "quote_first": "A ce moment (il était <-<-<-<",
+        "quote_last": ">->->-> du matin) le lieutenant Bronsfield s'apprêtait à quitter le quart et à regagner sa cabine, lorsque son attention fut attirée par un lointain bruit de sifflement.",
         "title": "Un voyage autour de la Lune",
         "author": "Jules Verne",
         "sfw": "unknown"
@@ -32,9 +32,9 @@
     {
         "id": "000205",
         "time": "01:17",
-        "quote_time_case": "* 1:17",
-        "quote_first": "Les horloges se sont arrêtées à 1h17. Un long cisaillement de lumière puis une série de légères commotions cérébrales. Il se leva et se dirigea vers la fenêtre. Qu'est-ce que c'est? dit-elle. Il n'a pas répondu. Il est allé dans la salle de bain et a actionné l'interrupteur, mais l'électricité était déjà coupée. Une lueur rose terne dans la vitre. Il s'agenouilla et souleva le levier pour arrêter la baignoire, puis ouvrit les deux robinets aussi loin que possible.",
-        "quote_last": "",
+        "quote_time_case": "1:17",
+        "quote_first": "Les horloges se sont arrêtées à <-<-<-<",
+        "quote_last": ">->->->. Un long cisaillement de lumière puis une série de légères commotions cérébrales. Il se leva et se dirigea vers la fenêtre. Qu'est-ce que c'est? dit-elle. Il n'a pas répondu. Il est allé dans la salle de bain et a actionné l'interrupteur, mais l'électricité était déjà coupée. Une lueur rose terne dans la vitre. Il s'agenouilla et souleva le levier pour arrêter la baignoire, puis ouvrit les deux robinets aussi loin que possible.",
         "title": "La route",
         "author": "Cormac McCarthy",
         "sfw": "unknown"

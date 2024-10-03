@@ -2,9 +2,9 @@
     {
         "id": "000572",
         "time": "04:09",
-        "quote_time_case": "* 4:09",
-        "quote_first": "\"Le camion a roulé sans arrêt toute la nuit à un rythme régulier d'environ quarante milles à l'heure en direction de Bagdad, mais à 4 h 09 du matin, il a bifurqué dans le désert et nous avons cessé de surveiller ses mouvements, car ce camion en question a le chemin ne mène nulle part.",
-        "quote_last": "",
+        "quote_time_case": "4:09",
+        "quote_first": "« Le camion a roulé sans arrêt toute la nuit à un rythme soutenu d'environ quarante milles à l'heure en direction de Bagdad, mais à <-<-<-<",
+        "quote_last": ">->->-> ce matin, il a bifurqué vers Bagdad. le désert, et nous avons cessé de surveiller ses mouvements, car ce chemin particulier ne mène nulle part.",
         "title": "Honneur parmi les voleurs",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -13,8 +13,8 @@
         "id": "000573",
         "time": "04:09",
         "quote_time_case": "quatre heures neuf minutes",
-        "quote_first": "Il était ",
-        "quote_last": ". \"Il est assis au milieu d'un champ d'ultrasons et j'ai dix minutes de retard pour le faire sortir. Allez !\"",
+        "quote_first": "Il était <-<-<-<",
+        "quote_last": ">->->->. \"Il est assis au milieu d'un champ d'ultrasons et j'ai dix minutes de retard pour le faire sortir. Allez !\"",
         "title": "L'affaire finale : un homme de l'U.N.C.L.E.",
         "author": "David McDaniel",
         "sfw": "sfw"

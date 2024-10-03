@@ -2,9 +2,9 @@
     {
         "id": "003245",
         "time": "21:37",
-        "quote_time_case": "* 21:37 horas",
-        "quote_first": "A que horas isso aconteceu ontem à noite?<br>\"Recebemos a ligação do triplo nove às 21h37\", respondeu ele, verificando suas anotações.<br>\"O que a fez olhar? É um terraço, ela estava passando pela janela?\"",
-        "quote_last": "",
+        "quote_time_case": "21:37 horas",
+        "quote_first": "A que horas isso aconteceu ontem à noite?<br>\"Recebemos a ligação do triplo nove às <-<-<-<",
+        "quote_last": ">->->->\", ele respondeu, verificando suas anotações.<br>\" O que a fez olhar? É um terraço, ela estava passando pela janela?",
         "title": "Uma raça desviante",
         "author": "Stephen Coill",
         "sfw": "sfw"

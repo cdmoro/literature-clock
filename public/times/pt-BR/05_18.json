@@ -2,9 +2,9 @@
     {
         "id": "000700",
         "time": "05:18",
-        "quote_time_case": "* 5:18",
-        "quote_first": "WILLIAM PEGOU O TELEFONE, mas não acendeu a luz porque o relógio digital em sua mesinha de cabeceira passou de 5h17 para 5h18. Ele sabia que só poderia ser uma pessoa do outro lado da linha.",
-        "quote_last": "",
+        "quote_time_case": "5h18",
+        "quote_first": "WILLIAM PEGOU O TELEFONE, mas não acendeu a luz quando o relógio digital em sua mesinha de cabeceira passou de 5h17 para <-<-<-<",
+        "quote_last": ">->->->. Ele sabia que só poderia ser uma pessoa do outro lado da linha.",
         "title": "Próximo na fila",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -13,8 +13,8 @@
         "id": "000701",
         "time": "05:18",
         "quote_time_case": "5h18",
-        "quote_first": "A história está aí, e a foto de segurança que a acompanha é bastante contundente. Uma hora antes, a luz não teria sido boa o suficiente para mostrar o rosto do autor, mas a hora na parte inferior da foto é ",
-        "quote_last": ". O sol ainda não nasceu, mas está chegando, e o rosto do cara parado no beco está tão claro quanto você gostaria, se fosse promotor.",
+        "quote_first": "A história está aí, e a foto de segurança que a acompanha é bastante contundente. Uma hora antes, a luz não teria sido boa o suficiente para mostrar o rosto do autor, mas a hora na parte inferior da foto é <-<-<-<",
+        "quote_last": ">->->->. O sol ainda não nasceu, mas está chegando, e o rosto do cara parado no beco está tão claro quanto você gostaria, se fosse promotor.",
         "title": "Billy Verões",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -23,8 +23,8 @@
         "id": "000702",
         "time": "05:18",
         "quote_time_case": "5h18",
-        "quote_first": "A BORDO DO TPA 545<br>",
-        "quote_last": "<br>Emily Jansen suspirou de alívio. O longo vôo estava chegando ao fim. A luz do sol da manhã entrava pelas janelas do avião.",
+        "quote_first": "A BORDO DO TPA 545<br><-<-<-<",
+        "quote_last": ">->->-><br>Emily Jansen suspirou de alívio. O longo vôo estava chegando ao fim. A luz do sol da manhã entrava pelas janelas do avião.",
         "title": "Fuselagem",
         "author": "Michael Crichton",
         "sfw": "unknown"

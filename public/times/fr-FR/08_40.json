@@ -2,9 +2,9 @@
     {
         "id": "001190",
         "time": "08:40",
-        "quote_time_case": "* 8h40",
-        "quote_first": "Il quitta le Sherry-Netherland juste après 20h40, et au moment où il atteignit Lexington, il était sur le point d'affronter la colère du directeur.",
-        "quote_last": "",
+        "quote_time_case": "8:40",
+        "quote_first": "Il quitta le Sherry-Netherland juste après <-<-<-<",
+        "quote_last": ">->->->, et au moment où il atteignit Lexington, il était sur le point d'affronter la colère du directeur.",
         "title": "Vient l’heure",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -13,8 +13,8 @@
         "id": "001191",
         "time": "08:40",
         "quote_time_case": "8h40",
-        "quote_first": "À ",
-        "quote_last": ". elle a été transportée sur une civière en direction de l'hôpital général de Mayo, couverte d'ampoules et brûlée par un lit de bronzage transformé en chambre de torture.",
+        "quote_first": "À <-<-<-<",
+        "quote_last": ">->->-> elle a été transportée sur une civière en direction de l'hôpital général de Mayo, couverte d'ampoules et brûlée par un lit de bronzage transformé en chambre de torture.",
         "title": "Soupe à la Grenade",
         "author": "Marsha Mehran",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "001192",
         "time": "08:40",
-        "quote_time_case": "8h40",
-        "quote_first": "A ce moment, l'horloge indiquait ",
-        "quote_last": ". \"Cinq minutes de plus\", a déclaré Andrew Stuart. Les cinq amis se regardèrent. On peut supposer que leurs battements de cœur étaient légèrement accélérés, car, même pour les joueurs audacieux, l'enjeu était important.",
+        "quote_time_case": "8.40",
+        "quote_first": "A ce moment l'horloge indiquait <-<-<-<",
+        "quote_last": ">->->->. \"Cinq minutes de plus\", a déclaré Andrew Stuart. Les cinq amis se regardèrent. On peut supposer que leurs battements de cœur étaient légèrement accélérés, car, même pour les joueurs audacieux, l'enjeu était important.",
         "title": "Le tour du monde en quatre-vingts jours",
         "author": "Jules Verne",
         "sfw": "unknown"
@@ -32,9 +32,9 @@
     {
         "id": "001193",
         "time": "08:40",
-        "quote_time_case": "neuf heures moins vingt",
-        "quote_first": "C'est lorsque je me suis tenu devant elle, évitant son regard, que j'ai noté en détail les objets environnants et que j'ai vu que sa montre s'était arrêtée à ",
-        "quote_last": " et qu'une horloge dans la pièce s'était arrêtée à neuf heures moins vingt. .",
+        "quote_time_case": "neuf moins vingt minutes",
+        "quote_first": "C'est lorsque je me suis tenu devant elle, évitant son regard, que j'ai noté en détail les objets environnants et que j'ai vu que sa montre s'était arrêtée à <-<-<-<",
+        "quote_last": ">->->->, et qu'une horloge dans la pièce s'était arrêtée à neuf heures moins vingt.",
         "title": "De grandes attentes",
         "author": "Charles Dickens",
         "sfw": "unknown"

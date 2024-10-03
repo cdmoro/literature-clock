@@ -3,8 +3,8 @@
         "id": "001795",
         "time": "11:50",
         "quote_time_case": "dix minutes avant midi",
-        "quote_first": "A 11h38, elle quitta son bureau et se dirigea vers la porte latérale de l'auditorium, arrivant ",
-        "quote_last": ".",
+        "quote_first": "À 11h38, elle a quitté son bureau et s'est dirigée vers la porte latérale de l'auditorium, arrivant <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Le cercle",
         "author": "Dave Eggers",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "001796",
         "time": "11:50",
-        "quote_time_case": "* douze heures moins dix",
-        "quote_first": "L'homme qui les lui avait remis lui remit un billet de dix shillings et lui en promit un autre s'il était livré à midi moins dix minutes exactement.",
-        "quote_last": "",
+        "quote_time_case": "douze moins dix minutes",
+        "quote_first": "L'homme qui les lui avait remis lui remit un billet de dix shillings et lui en promit un autre s'il était livré exactement <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "L'aventure de Johnnie Waverley : une histoire d'Hercule Poirot",
         "author": "Agatha Christie",
         "sfw": "unknown"

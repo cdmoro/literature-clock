@@ -2,9 +2,9 @@
     {
         "id": "002826",
         "time": "18:55",
-        "quote_time_case": "* da cinque a sette",
-        "quote_first": "... Non avevi motivo di ritenere importanti i tempi. In effetti, quanto sarebbe sospetto se tu fossi stato completamente accurato.<br>\"Non è vero?\"<br>\"Non proprio. Erano le sette meno cinque quando hai parlato con Wilkins.\"<br>\" Altri dieci minuti.\"",
-        "quote_last": "",
+        "quote_time_case": "sette meno cinque",
+        "quote_first": "... Non avevi motivo di ritenere importanti i tempi. In effetti, sarebbe stato sospetto se fossi stato completamente preciso.<br>\"Non è vero?\"<br>\"Non proprio. Erano <-<-<-<",
+        "quote_last": ">->->-> che hai parlato con Wilkins.\"<br>\"Altri dieci minuti.\"",
         "title": "L'americano tranquillo",
         "author": "Graham Greene",
         "sfw": "unknown"
@@ -13,8 +13,8 @@
         "id": "002827",
         "time": "18:55",
         "quote_time_case": "6:55",
-        "quote_first": "Lo spettacolo doveva iniziare alle sette e finire prima del tramonto. Erano le ",
-        "quote_last": ". Al di là degli appartamenti potevamo sentire il campo da hockey riempirsi. il rombo basso divenne sempre più forte: voci, passi, lo scricchiolio delle gradinate, lo sbattere delle portiere delle auto nel parcheggio.",
+        "quote_first": "Lo spettacolo doveva iniziare alle sette e finire prima del tramonto. Erano <-<-<-<",
+        "quote_last": ">->->->. Al di là degli appartamenti potevamo sentire il campo da hockey riempirsi. il rombo basso divenne sempre più forte: voci, passi, lo scricchiolio delle gradinate, lo sbattere delle portiere delle auto nel parcheggio.",
         "title": "Middlesex",
         "author": "Jeffrey Eugenides",
         "sfw": "unknown"

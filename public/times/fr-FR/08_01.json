@@ -2,9 +2,9 @@
     {
         "id": "001088",
         "time": "08:01",
-        "quote_time_case": "* huit-un",
-        "quote_first": "Huit heures une, tic-tac, huit heures une, à l'école, au travail, cours, cours, huit heures une !",
-        "quote_last": "",
+        "quote_time_case": "huit-une",
+        "quote_first": "Huit heures une, tic-tac, <-<-<-<",
+        "quote_last": ">->->-> heures, à l'école, au travail, cours, cours, huit heures et une !",
         "title": "Il viendra de douces pluies",
         "author": "Ray Bradbury",
         "sfw": "unknown"
@@ -13,8 +13,8 @@
         "id": "001089",
         "time": "08:01",
         "quote_time_case": "8h01",
-        "quote_first": "",
-        "quote_last": "<br>La poitrine de Dore Peretz semblait toujours en feu, une sensation de brûlure qui semblait se propager sur tout le devant de son torse ; en fait, il se sentait comme une merde.",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->-><br>La poitrine de Dore Peretz avait toujours l'impression d'être en feu, une sensation de brûlure qui semblait se propager sur tout le devant de son torse ; en fait, il se sentait comme une merde.",
         "title": "Projet Cyclope",
         "author": "Thomas Hoover",
         "sfw": "nsfw"

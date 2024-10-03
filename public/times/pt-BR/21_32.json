@@ -2,9 +2,9 @@
     {
         "id": "003236",
         "time": "21:32",
-        "quote_time_case": "* 9:32",
-        "quote_first": "Tirei um pouco de suco da geladeira e sentei-me à mesa da cozinha com ele. Sobre a mesa havia um bilhete da minha namorada: ‘Saí para comer. Volto às 9h30. O relógio digital na mesa marcava 9h30. Observei passar para 9h31 e depois para 9h32.",
-        "quote_last": "",
+        "quote_time_case": "9:32",
+        "quote_first": "Tirei um pouco de suco da geladeira e sentei-me à mesa da cozinha com ele. Sobre a mesa havia um bilhete da minha namorada: ‘Saí para comer. Volto às 9h30. O relógio digital na mesa marcava 9h30. Eu assisti mudar para 9:31, depois para <-<-<-<",
+        "quote_last": ">->->->.",
         "title": "Uma perseguição de ovelhas selvagens",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "003237",
         "time": "21:32",
-        "quote_time_case": "* 9:32",
-        "quote_first": "A viagem de ônibus de Geraldine de volta ao sanatório, no município de Bensalem, sairia às 9h32. Por orgulho, apesar da viagem ter demorado mais de meia hora, ela recusou-se a ficar até de manhã.",
-        "quote_last": "",
+        "quote_time_case": "9:32",
+        "quote_first": "A viagem de ônibus de Geraldine de volta ao sanatório, no município de Bensalem, sairia às <-<-<-<",
+        "quote_last": ">->->->. Por orgulho, apesar da viagem ter demorado mais de meia hora, ela recusou-se a ficar até de manhã.",
         "title": "Vendido em uma segunda-feira",
         "author": "Kristina McMorris",
         "sfw": "sfw"

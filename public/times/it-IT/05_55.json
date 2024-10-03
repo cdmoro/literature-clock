@@ -2,9 +2,9 @@
     {
         "id": "000768",
         "time": "05:55",
-        "quote_time_case": "* cinque minuti alle sei",
-        "quote_first": "Uno, due, tre, quattro, cinque, sei... Caricò ciascun orologio a turno, tre giri ciascuno, dando alle molle la potenza sufficiente per farle ticchettare in tempo per l'ispezione del signor Westcott. A proposito…erano le sei meno cinque. Cinque minuti prima dell'arrivo del signor Westcott per controllare i suoi orologi. Helena deglutì. Poteva sentire dei passi rimbombanti nella stanza di sotto e l'occasionale esclamazione di Stanley.",
-        "quote_last": "",
+        "quote_time_case": "sei meno cinque",
+        "quote_first": "Uno, due, tre, quattro, cinque, sei... Caricò ciascun orologio a turno, tre giri ciascuno, dando alle molle la potenza sufficiente per farle ticchettare in tempo per l'ispezione del signor Westcott. A proposito…erano <-<-<-<",
+        "quote_last": ">->->->. Cinque minuti prima dell'arrivo del signor Westcott per controllare i suoi orologi. Helena deglutì. Poteva sentire dei passi rimbombanti nella stanza di sotto e l'occasionale esclamazione di Stanley.",
         "title": "La Casa dei Cento Orologi",
         "author": "A.M. Howell",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "000769",
         "time": "05:55",
-        "quote_time_case": "* cinque a sei",
-        "quote_first": "Billy non va al parcheggio. Il parcheggio è finito. Alle sei meno cinque parcheggia sulla Main Street, a pochi isolati dalla Gerard Tower. Ci sono molti posti lungo i marciapiedi a quest'ora e il marciapiede è deserto.",
-        "quote_last": "",
+        "quote_time_case": "sei meno cinque",
+        "quote_first": "Billy non va al parcheggio. Il parcheggio è finito. Alle <-<-<-<",
+        "quote_last": ">->->-> parcheggia sulla Main Street, a pochi isolati dalla Gerard Tower. Ci sono molti posti lungo i marciapiedi a quest'ora e il marciapiede è deserto.",
         "title": "Billy Summers",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "000770",
         "time": "05:55",
-        "quote_time_case": "* 5:55",
-        "quote_first": "Erano le 5.55 e pioveva forte quando pedalai fino al posteggio delle biciclette appena fuori dal piazzale della stazione e mi precipitai dentro. Corsi davanti alla bancarella dei libri, dove tutti i cartelli dello Yorkshire Post (un giornale del mattino) dicevano \"York Horror\", ma anche \"Terrific February Gales at Coast\".",
-        "quote_last": "",
+        "quote_time_case": "5.55",
+        "quote_first": "Erano <-<-<-<",
+        "quote_last": ">->->-> e pioveva forte quando ho pedalato fino al posteggio delle biciclette appena fuori dal piazzale della stazione e mi sono precipitato dentro. Corsi davanti alla bancarella dei libri, dove tutti i cartelli dello Yorkshire Post (un giornale del mattino) dicevano \"York Horror\", ma anche \"Terrific February Gales at Coast\".",
         "title": "Il facchino dei bagagli smarriti",
         "author": "Andrew Martin",
         "sfw": "unknown"

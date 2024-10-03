@@ -3,8 +3,8 @@
         "id": "003560",
         "time": "23:53",
         "quote_time_case": "sette minuti a mezzanotte",
-        "quote_first": "«Certamente lo è, tesoro mio. Sto solo restituendo i vasi.\" Guardò di nuovo l'orologio. \"Penso che scoprirai che mancano ",
-        "quote_last": ", quindi ho mantenuto la mia parte dell'accordo.\"",
+        "quote_first": "«Certamente lo è, tesoro mio. Sto solo restituendo i vasi.\" Guardò di nuovo l'orologio. \"Penso che scoprirai che mancano <-<-<-<",
+        "quote_last": ">->->->, quindi ho mantenuto la mia parte dell'accordo.\"",
         "title": "Questo era un uomo",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "003561",
         "time": "23:53",
-        "quote_time_case": "* verso mezzanotte",
-        "quote_first": "Era quasi mezzanotte.<br>Torvik prese la bambola che era stata lasciata sul divano nello studio, dopo averne prima riparato il piede rotto.",
-        "quote_last": "",
+        "quote_time_case": "quasi mezzanotte",
+        "quote_first": "Era <-<-<-<",
+        "quote_last": ">->->->.<br>Torvik prese la bambola che era stata lasciata sul divano nello studio, dopo averne prima aggiustato il piede rotto.",
         "title": "Il martello di Dio",
         "author": "Bo Giertz",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "003562",
         "time": "23:53",
-        "quote_time_case": "* verso mezzanotte",
-        "quote_first": "Era quasi mezzanotte quando lasciò il palazzo in una cesta per la biancheria portata da due facchini, coperta dai suoi grembiuli e sottovesti sporchi che presumibilmente venivano portati alla lavandaia.",
-        "quote_last": "",
+        "quote_time_case": "quasi mezzanotte",
+        "quote_first": "Era <-<-<-<",
+        "quote_last": ">->->-> quando lasciò il palazzo in una cesta portabiancheria portata da due facchini, coperta con i suoi grembiuli e sottovesti sporchi che presumibilmente venivano portati alla lavandaia.",
         "title": "Per sempre Ambra",
         "author": "Kathleen Windsor",
         "sfw": "unknown"
@@ -32,9 +32,9 @@
     {
         "id": "003563",
         "time": "23:53",
-        "quote_time_case": "* verso mezzanotte",
-        "quote_first": "Era quasi mezzanotte e il Primo Ministro era seduto da solo nel suo ufficio, leggendo un lungo promemoria che gli scivolava nel cervello senza lasciare la minima traccia di significato.",
-        "quote_last": "",
+        "quote_time_case": "quasi mezzanotte",
+        "quote_first": "Era <-<-<-<",
+        "quote_last": ">->->-> e il Primo Ministro era seduto da solo nel suo ufficio, leggendo un lungo promemoria che gli scivolava nel cervello senza lasciare la minima traccia di significato.",
         "title": "Harry Potter e il principe mezzo sangue",
         "author": "J.K. Rowling",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "003564",
         "time": "23:53",
-        "quote_time_case": "La mezzanotte si avvicina",
-        "quote_first": "",
-        "quote_last": " e, passato il culmine dell'attività, il metabolismo basale che sostiene la vita continua inalterato, producendo il basso continuo del lamento della città, un suono monotono che non sale né scende ma è gravido di presentimento.",
+        "quote_time_case": "Si avvicina la mezzanotte",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->->, e mentre il picco di attività è passato, il metabolismo basale che sostiene la vita continua inalterato, producendo il basso continuo del lamento della città, un suono monotono che né si alza o cade ma è gravido di presentimenti.",
         "title": "Dopo il buio",
         "author": "Haruki Murakami",
         "sfw": "unknown"

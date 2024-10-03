@@ -2,9 +2,9 @@
     {
         "id": "001022",
         "time": "07:49",
-        "quote_time_case": "* Onze minutes moins huit",
-        "quote_first": "Huit moins onze minutes.<br>\"Tu as toujours raison, il doit y avoir une horloge dans ta tête.\"",
-        "quote_last": "",
+        "quote_time_case": "Huit moins onze minutes",
+        "quote_first": "<-<-<-<",
+        "quote_last": ">->->->.<br>\"Tu as toujours raison ; il doit y avoir une horloge dans ta tête.\"",
         "title": "La fin du début",
         "author": "Ray Bradbury",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "001023",
         "time": "07:49",
-        "quote_time_case": "huit heures moins onze minutes",
-        "quote_first": "Quand avez-vous vu le Dr Wellesley la prochaine fois ?<br>\"À ",
-        "quote_last": ".\"<br>\"Où ?\"<br>\"Au bloc opératoire.\"<br>\"Il est revenu là-bas ? \"<br>\"Oui.\"<br>\"Comment fixez-vous cette heure précise - onze minutes moins huit ?\"<br>\"Parce qu'il s'était arrangé pour voir un patient à Meadow Gate à dix minutes moins huit. J'ai jeté un coup d'œil à l'horloge lorsqu'il est entré, j'ai vu quelle heure il était et je lui ai rappelé le rendez-vous.",
+        "quote_time_case": "huit heures moins onze",
+        "quote_first": "Quand avez-vous vu le Dr Wellesley la prochaine fois ?<br>\"À seulement <-<-<-<",
+        "quote_last": ">->->->.\"<br>\"Où ?\"<br>\"Au bloc opératoire. \"<br>\"Il est revenu là-bas ?\"<br>\"Oui.\"<br>\"Comment fixez-vous cette heure précise - onze minutes moins huit ?\"<br>\"Parce qu'il avait arrangé un rendez-vous avec un patient à Meadow Gate à huit heures moins dix, j'ai jeté un coup d'œil à l'horloge lorsqu'il est entré, j'ai vu quelle heure il était et je lui ai rappelé le rendez-vous.",
         "title": "Dans le salon du maire",
         "author": "J.S. Fletcher",
         "sfw": "unknown"
