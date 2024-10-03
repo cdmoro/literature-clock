@@ -109,12 +109,12 @@ blockquote .time {
 
 cite {
   font-family: var(
-    --override-quote-font-family,
-    var(--cite-font-family, var(--quote-font-family))
+    --cite-font-family,
+    var(--override-quote-font-family, var(--quote-font-family))
   );
   font-size: 1.8vw;
   font-style: normal;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 cite:before {
@@ -220,15 +220,15 @@ button:disabled {
 }
 
 #time-clock {
-	position: fixed;
-	top: 0;
-	width: 100%;
-	text-align: center;
-	padding: .5rem 0;
-	font-size: .85rem;
-	color: var(--accent-color);
-	font-weight: bold;
-	left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 0;
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  font-weight: bold;
+  left: 0;
 }
 
 #time-progress-bar {
