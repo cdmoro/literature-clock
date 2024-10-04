@@ -20,6 +20,7 @@ export const THEME_FONTS: Record<string, string[]> = {
   subtle: ["Unna"],
   poster: ["Averia Serif Libre", "Allura"],
   dynamic: ["Caveat", "Indie Flower", "Yeseva One", "Sacramento"],
+  photo: ["Abril Fatface"],
 };
 
 export const INITIAL_THEME_FONT_SIZE = {
