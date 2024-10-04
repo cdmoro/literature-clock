@@ -72,11 +72,12 @@ export function initLocale(defaultValue = navigator.language) {
       : (languageSelectValue as Locale);
     translateStrings(locale);
     setStringSetting("locale", languageSelectValue);
-    if (!isRandomLocale) {
-      setStringSetting("last-locale", languageSelectValue)
-    }
     updateURL("locale", languageSelectValue);
-    updateQuote();
+
+    if (!isRandomLocale) {
+      setStringSetting("last-locale", languageSelectValue);
+      updateQuote();
+    }
   });
 }
 
