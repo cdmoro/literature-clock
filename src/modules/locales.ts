@@ -1,5 +1,6 @@
 import { updateQuote } from "./quotes";
 import {
+  getStringSetting,
   initStringSetting,
   setStringSetting,
   updateURL,
@@ -54,19 +55,27 @@ export function initLocale(defaultValue = navigator.language) {
     document.querySelector<HTMLSelectElement>("#locale-select");
 
   setStringSetting("locale", locale);
+  if (locale !== "random") {
+    setStringSetting("last-locale", locale);
+  }
+
   translateStrings(locale);
   if (localeSelect) {
     localeSelect.value = locale;
   }
 
   localeSelect?.addEventListener("change", (e) => {
-    const isRandomLocale = (e.target as HTMLInputElement).value === "random";
+    const languageSelectValue = (e.target as HTMLInputElement).value;
+    const isRandomLocale = languageSelectValue === "random";
     const locale = isRandomLocale
-      ? "en-US"
-      : ((e.target as HTMLInputElement).value as Locale);
+      ? getStringSetting("last-locale") || "en-US"
+      : (languageSelectValue as Locale);
     translateStrings(locale);
-    setStringSetting("locale", (e.target as HTMLInputElement).value);
-    updateURL("locale", (e.target as HTMLInputElement).value);
+    setStringSetting("locale", languageSelectValue);
+    if (!isRandomLocale) {
+      setStringSetting("last-locale", languageSelectValue)
+    }
+    updateURL("locale", languageSelectValue);
     updateQuote();
   });
 }
@@ -74,11 +83,12 @@ export function initLocale(defaultValue = navigator.language) {
 function translateStrings(locale = navigator.language) {
   const time = getTime();
   const resolvedLocale = resolveLocale(locale);
+  const lastLocale = getStringSetting("last-locale") as keyof typeof TRANSLATIONS;
   const strings =
-    TRANSLATIONS[resolvedLocale === "random" ? "en-US" : resolvedLocale];
+    TRANSLATIONS[resolvedLocale === "random" ? lastLocale || "en-US" : resolvedLocale];
 
   document.documentElement.lang =
-    locale === "random" ? "en" : locale.substring(0, 2);
+    locale === "random" ? lastLocale?.substring(0, 2) || "en" : locale.substring(0, 2);
   document.title = `[${time}] ${strings.document_title}`;
 
   document
