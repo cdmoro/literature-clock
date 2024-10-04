@@ -138,7 +138,7 @@ select {
   background-position: right 0.5rem center;
   background-repeat: no-repeat;
   background-size: 16px 12px;
-  border: 1px solid var(--font-color);
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
   border-radius: 0.25rem;
   color: var(--font-color);
   font-size: 0.85rem;
@@ -180,7 +180,7 @@ select {
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
-  background-color: var(--font-color);
+  background-color: color-mix(in srgb, var(--font-color), transparent 20%);
   border: var(--font-color) solid 1px;
   color: var(--background);
 }
@@ -190,7 +190,7 @@ button {
   -webkit-appearance: none;
   appearance: none;
   background-color: var(--background);
-  border: 1px solid var(--font-color);
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
   border-radius: 0.25rem;
   color: var(--font-color);
   cursor: pointer;
