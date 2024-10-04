@@ -55,7 +55,9 @@ export function initTheme(defaultValue = "base-dark") {
 
   window.addEventListener("resize", doFitQuote);
   themeSelect?.addEventListener("change", () => setTheme());
-  variantSelect?.addEventListener("change", () => setTheme());
+  variantSelect?.addEventListener("change", () =>
+    setTheme({ isVariantChange: true })
+  );
   preferDarkThemes.addEventListener("change", (e) => {
     const variant =
       document.querySelector<HTMLSelectElement>("#variant-select")?.value;
@@ -72,7 +74,7 @@ export function initTheme(defaultValue = "base-dark") {
   });
 }
 
-export function setTheme(doUpdateURL = true) {
+export function setTheme({ isVariantChange = false } = {}) {
   const p = document.querySelector<HTMLParagraphElement>("blockquote p");
 
   if (p) {
@@ -90,13 +92,13 @@ export function setTheme(doUpdateURL = true) {
     resetFont();
   }
   setStringSetting("theme", `${theme}-${variant}`);
-  if (doUpdateURL) {
-    updateURL("theme", `${theme}-${variant}`);
-  }
 
   if (theme === "color") {
     theme = getRandomThemeColor();
+  } else {
+    updateURL("theme", `${theme}-${variant}`);
   }
+  
   if (variant === "system") {
     variant = window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
@@ -107,9 +109,11 @@ export function setTheme(doUpdateURL = true) {
     setDayParameters();
   }
 
-  if (theme === "photo") {
+  if (theme === "photo" && !isVariantChange) {
     setDynamicBackgroundPicture();
-  } else {
+  }
+
+  if (theme !== "photo") {
     removeBackgroundImage();
   }
 
@@ -122,9 +126,20 @@ export function setTheme(doUpdateURL = true) {
 }
 
 export function setDynamicBackgroundPicture() {
-  document.body.style.backgroundImage = `url(https://picsum.photos/${
-    window.innerWidth
-  }/${window.innerHeight}?blur=1&random=${Math.floor(Math.random() * 90)})`;
+  let innerHeight = window.innerHeight;
+  let innerWidth = window.innerWidth;
+
+  if (innerHeight > 5000) {
+    innerHeight = 5000;
+  }
+
+  if (innerWidth > 5000) {
+    innerWidth = 5000;
+  }
+
+  document.body.style.backgroundImage = `url(https://picsum.photos/${innerWidth}/${innerHeight}?blur=1&random=${Math.floor(
+    Math.random() * 90
+  )})`;
 }
 
 export function removeBackgroundImage() {

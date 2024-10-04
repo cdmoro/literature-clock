@@ -18,7 +18,7 @@ function prefetchNextQuotes(locale: string) {
     .padStart(2, "0")}`;
 
   fetch(`../times/${locale}/${nextFileName}.json`, {
-    cache: 'force-cache',
+    cache: "force-cache",
   });
 }
 
@@ -89,10 +89,6 @@ export async function updateQuote(time = getTime()) {
     locale = getRandomLocale();
   }
 
-  if (getStringSetting("theme")?.includes("color")) {
-    setTheme(false);
-  }
-
   const quote = await getQuote(time, locale);
   updateGHLinks(time, quote, locale);
   const quoteRaw = `${quote.quote_first}${quote.quote_time_case}${quote.quote_last}`;
@@ -114,7 +110,10 @@ export async function updateQuote(time = getTime()) {
     blockquote.appendChild(p);
     blockquote.appendChild(cite);
     blockquote.setAttribute("aria-label", quote.time);
-    blockquote.setAttribute("aria-description", `${quoteRaw.replace(/<br>/g, "\n")}\n${quote.title}, ${quote.author}`);
+    blockquote.setAttribute(
+      "aria-description",
+      `${quoteRaw.replace(/<br>/g, "\n")}\n${quote.title}, ${quote.author}`
+    );
     blockquote.dataset.locale = locale;
     blockquote.dataset.sfw = quote.sfw;
     if (quote.fallback) {
@@ -128,6 +127,10 @@ export async function updateQuote(time = getTime()) {
     }
 
     fitQuote();
+
+    if (getStringSetting("theme")?.includes("color")) {
+      setTheme();
+    }
   }
 
   prefetchNextQuotes(locale);
