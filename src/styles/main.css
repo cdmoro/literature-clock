@@ -172,6 +172,19 @@ select {
   border-start-end-radius: .25rem;
 }
 
+.input-group-text {
+  display: flex;
+  align-items: center;
+  padding: .2rem .6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  background-color: var(--font-color);
+  border: var(--font-color) solid 1px;
+  color: var(--background);
+}
+
 button {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -210,6 +223,7 @@ button:focus {
   box-shadow: 0 0 0 0.2rem
     color-mix(in srgb, var(--accent-color), transparent 75%) !important;
   outline: 0;
+  z-index: 1;
 }
 
 button:focus.active {
@@ -368,6 +382,10 @@ footer {
 
   footer button span {
     display: none;
+  }
+
+  .input-group-text {
+    padding: .2rem .5rem;
   }
 
   #theme,
