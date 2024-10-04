@@ -3,8 +3,8 @@
         "id": "000860",
         "time": "06:39",
         "quote_time_case": "0639",
-        "quote_first": "Il a tiré une autre torpille à <-<-<-<",
-        "quote_last": ">->->-> heures à une distance de 500 mètres. Encore une fois, il a raté sa cible, mais a explosé sept minutes plus tard. Les torpilles n'exploseraient qu'au contact d'un objet solide.",
+        "quote_first": "Il a tiré une autre torpille à ",
+        "quote_last": " heures à une distance de 500 mètres. Encore une fois, il a raté sa cible, mais a explosé sept minutes plus tard. Les torpilles n'exploseraient qu'au contact d'un objet solide.",
         "title": "Chercheur d'or",
         "author": "Keith Jessop and Neil Hanson",
         "sfw": "sfw"
@@ -13,8 +13,8 @@
         "id": "000861",
         "time": "06:39",
         "quote_time_case": "6h39",
-        "quote_first": "<-<-<-<",
-        "quote_last": ">->->-><br>\"Retiens ton feu ! Bon sang, retiens ton feu.\" Le chef des SEAL, le lieutenant Devon Robbins, pressait son oreillette, incrédule face à ce qu'il entendait.",
+        "quote_first": "",
+        "quote_last": "<br>\"Retiens ton feu ! Bon sang, retiens ton feu.\" Le chef des SEAL, le lieutenant Devon Robbins, pressait son oreillette, incrédule face à ce qu'il entendait.",
         "title": "Projet Cyclope",
         "author": "Thomas Hoover",
         "sfw": "nsfw"

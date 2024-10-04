@@ -3,8 +3,8 @@
         "id": "000213",
         "time": "01:23",
         "quote_time_case": "1h23",
-        "quote_first": "Croydon Central foi declarada às <-<-<-<",
-        "quote_last": ">->->->, com uma vantagem de 1,8% para os conservadores.",
+        "quote_first": "Croydon Central foi declarada às ",
+        "quote_last": ", com uma vantagem de 1,8% para os conservadores.",
         "title": "Este era um homem",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -13,8 +13,8 @@
         "id": "000214",
         "time": "01:23",
         "quote_time_case": "uma e vinte e três minutos",
-        "quote_first": "O relógio marcava <-<-<-<",
-        "quote_last": ">->->->. De repente ele ficou cheio de agitação, mas esperançoso. Ela tinha vindo! Quem poderia dizer o que ela diria? Ela poderia oferecer a explicação mais natural para sua chegada tardia.",
+        "quote_first": "O relógio marcava ",
+        "quote_last": ". De repente ele ficou cheio de agitação, mas esperançoso. Ela tinha vindo! Quem poderia dizer o que ela diria? Ela poderia oferecer a explicação mais natural para sua chegada tardia.",
         "title": "Um conto de mamãe",
         "author": "Anatole France",
         "sfw": "unknown"

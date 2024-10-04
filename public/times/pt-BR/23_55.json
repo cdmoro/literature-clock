@@ -3,8 +3,8 @@
         "id": "003566",
         "time": "23:55",
         "quote_time_case": "Onze cinquenta e cinco",
-        "quote_first": "A banda começou a tocar “Auld Lang Syne”.<br>“<-<-<-<",
-        "quote_last": ">->->->”, disse ela, olhando para o relógio de ouro em seu pingente. “Eu realmente gosto de ‘Auld Lang Syne’. E você?”",
+        "quote_first": "A banda começou a tocar “Auld Lang Syne”.<br>“",
+        "quote_last": "”, disse ela, olhando para o relógio de ouro em seu pingente. “Eu realmente gosto de ‘Auld Lang Syne’. E você?”",
         "title": "Salgueiro Cego, Mulher Adormecida",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -13,8 +13,8 @@
         "id": "003567",
         "time": "23:55",
         "quote_time_case": "cinco minutos para meia-noite",
-        "quote_first": "Quando Ness chega à Union Station, o relógio gigante nos diz que faltam <-<-<-<",
-        "quote_last": ">->->->. Isto é significativo, porque os humanos consideram a meia-noite um horário em que coisas ruins acontecem. Meia-noite são os idos de março das horas do dia! “Cinco minutos para a meia-noite” é, portanto, um excelente prenúncio. Afinal, é quase diretamente equivalente a “Cinco minutos para coisas muito ruins acontecerem”.",
+        "quote_first": "Quando Ness chega à Union Station, o relógio gigante nos diz que faltam ",
+        "quote_last": ". Isto é significativo, porque os humanos consideram a meia-noite um horário em que coisas ruins acontecem. Meia-noite são os idos de março das horas do dia! “Cinco minutos para a meia-noite” é, portanto, um excelente prenúncio. Afinal, é quase diretamente equivalente a “Cinco minutos para coisas muito ruins acontecerem”.",
         "title": "Defina meu coração para cinco: um romance",
         "author": "Simon Stephenson",
         "sfw": "unknown"
@@ -23,8 +23,8 @@
         "id": "003568",
         "time": "23:55",
         "quote_time_case": "cinco minutos para a meia-noite",
-        "quote_first": "Vou trancá-la. É- ele consultou seu relógio, \"<-<-<-<",
-        "quote_last": ">->->->. Srta. Granger, três voltas devem bastar. Boa sorte.\"",
+        "quote_first": "Vou trancá-la. É- ele consultou seu relógio, \"",
+        "quote_last": ". Srta. Granger, três voltas devem bastar. Boa sorte.\"",
         "title": "Harry Potter e o prisioneiro de azkaban",
         "author": "J.K. Rowling",
         "sfw": "unknown"
@@ -33,8 +33,8 @@
         "id": "003569",
         "time": "23:55",
         "quote_time_case": "cinco minutos para as doze",
-        "quote_first": "Faltavam <-<-<-<",
-        "quote_last": ">->->->, quando os sintomas premonitórios do funcionamento do láudano se manifestaram pela primeira vez para mim. Neste momento, nenhum olho inexperiente teria detectado qualquer mudança nele. Mas, à medida que os minutos da nova manhã passavam, o progresso rápido e sutil da influência começou a mostrar-se mais claramente. A sublime embriaguez do ópio brilhava em seus olhos; o orvalho de uma transpiração furtiva começou a brilhar em seu rosto. Mais cinco minutos depois, a conversa que ele ainda mantinha comigo perdeu a coerência.",
+        "quote_first": "Faltavam ",
+        "quote_last": ", quando os sintomas premonitórios do funcionamento do láudano se manifestaram pela primeira vez para mim. Neste momento, nenhum olho inexperiente teria detectado qualquer mudança nele. Mas, à medida que os minutos da nova manhã passavam, o progresso rápido e sutil da influência começou a mostrar-se mais claramente. A sublime embriaguez do ópio brilhava em seus olhos; o orvalho de uma transpiração furtiva começou a brilhar em seu rosto. Mais cinco minutos depois, a conversa que ele ainda mantinha comigo perdeu a coerência.",
         "title": "A Pedra da Lua",
         "author": "Wilkie Collins",
         "sfw": "nsfw"

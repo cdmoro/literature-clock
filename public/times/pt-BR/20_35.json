@@ -3,8 +3,8 @@
         "id": "003093",
         "time": "20:35",
         "quote_time_case": "20h35",
-        "quote_first": "<-<-<-<",
-        "quote_last": ">->->-> Hah! Instruções de operação encontradas em Olá! Certo.",
+        "quote_first": "",
+        "quote_last": " Hah! Instruções de operação encontradas em Olá! Certo.",
         "title": "Diário de Bridget Jones",
         "author": "Helen Fielding",
         "sfw": "sfw"
@@ -13,8 +13,8 @@
         "id": "003094",
         "time": "20:35",
         "quote_time_case": "20h35",
-        "quote_first": "Saiu de Munique às <-<-<-<",
-        "quote_last": ">->->-> no dia 1 de maio, chegando a Viena cedo na manhã seguinte",
+        "quote_first": "Saiu de Munique às ",
+        "quote_last": " no dia 1 de maio, chegando a Viena cedo na manhã seguinte",
         "title": "Drácula",
         "author": "Bram Stoker",
         "sfw": "unknown"
@@ -23,8 +23,8 @@
         "id": "003095",
         "time": "20:35",
         "quote_time_case": "cinco e vinte para as nove",
-        "quote_first": "Ela fez uma pausa reflexiva. Ele estava profundamente interessado agora, não havia dúvida disso. O assassino certamente terá interesse em assassinato. Ela apostou nisso e conseguiu. Ela deu uma olhada no relógio. Eram <-<-<-<",
-        "quote_last": ">->->->.",
+        "quote_first": "Ela fez uma pausa reflexiva. Ele estava profundamente interessado agora, não havia dúvida disso. O assassino certamente terá interesse em assassinato. Ela apostou nisso e conseguiu. Ela deu uma olhada no relógio. Eram ",
+        "quote_last": ".",
         "title": "O mistério de Listerdale",
         "author": "Agatha Christie",
         "sfw": "unknown"

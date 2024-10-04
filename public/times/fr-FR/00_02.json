@@ -3,8 +3,8 @@
         "id": "000060",
         "time": "00:02",
         "quote_time_case": "midi deux minutes",
-        "quote_first": "À <-<-<-<",
-        "quote_last": ">->->-> la porte s'ouvre et deux hommes entrent dans le hall. L’un est grand avec des cheveux noirs coiffés en pompadour des années 50. L'autre est petit et porte des lunettes. Tous deux portent des costumes.",
+        "quote_first": "À ",
+        "quote_last": " la porte s'ouvre et deux hommes entrent dans le hall. L’un est grand avec des cheveux noirs coiffés en pompadour des années 50. L'autre est petit et porte des lunettes. Tous deux portent des costumes.",
         "title": "Billy Étés",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -13,8 +13,8 @@
         "id": "000061",
         "time": "00:02",
         "quote_time_case": "Minuit deux minutes",
-        "quote_first": "<-<-<-<",
-        "quote_last": ">->->->. Avec moi en tête, les quatorze autres hommes des équipes jaune, blanche et rouge sont sortis de la clairière et se sont séparés vers des points le long du mur où ils traverseraient le terrain.",
+        "quote_first": "",
+        "quote_last": ". Avec moi en tête, les quatorze autres hommes des équipes jaune, blanche et rouge sont sortis de la clairière et se sont séparés vers des points le long du mur où ils traverseraient le terrain.",
         "title": "Nuit des Kraits",
         "author": "Shashi Warrier",
         "sfw": "unknown"
