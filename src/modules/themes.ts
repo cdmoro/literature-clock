@@ -107,10 +107,26 @@ export function setTheme(doUpdateURL = true) {
     setDayParameters();
   }
 
+  if (theme === "photo") {
+    setDynamicBackgroundPicture();
+  } else {
+    removeBackgroundImage();
+  }
+
   document.documentElement.dataset.theme = `${theme}-${variant}`;
   fitQuote();
 
   if (p) {
     setTimeout(() => (p.style.visibility = "visible"), 50);
   }
+}
+
+export function setDynamicBackgroundPicture() {
+  document.body.style.backgroundImage = `url(https://picsum.photos/${
+    window.innerWidth
+  }/${window.innerHeight}?blur=1&random=${Math.floor(Math.random() * 90)})`;
+}
+
+export function removeBackgroundImage() {
+  document.body.style.removeProperty("background-image");
 }
