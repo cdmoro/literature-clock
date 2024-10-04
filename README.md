@@ -57,7 +57,7 @@ Want to implement a new language? Sure thing, ping me and let's talk about it!
 
 ### About the translations
 
-All translations were made from the original CSV English file, sometimes the translations are not accurate (I used Google Translate, yes, I know), and the time is not highlighted properly, but it's fine, this is something that can be fixed easily, just one quote at a time. Plus, I marked all the _bad_ quotes with an asterisk so at some point all of them will be fixed :)
+All translations were made from the original CSV English file, sometimes the translations are not accurate (I used Google Translate, yes, I know), but it's fine, this is something that can be fixed easily, just one quote at a time. :)
 
 In any case, if you want to help you can:
 
