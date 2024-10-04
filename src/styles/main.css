@@ -172,6 +172,19 @@ select {
   border-start-end-radius: .25rem;
 }
 
+.input-group-text {
+  display: flex;
+  align-items: center;
+  padding: .2rem .6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  background-color: var(--font-color);
+  border: var(--font-color) solid 1px;
+  color: var(--background);
+}
+
 button {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -368,6 +381,10 @@ footer {
 
   footer button span {
     display: none;
+  }
+
+  .input-group-text {
+    padding: .2rem .5rem;
   }
 
   #theme,

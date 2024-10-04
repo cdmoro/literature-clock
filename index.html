@@ -199,16 +199,20 @@
               >
             </button>
           </span>
-          <select id="locale-select" tabindex="6">
-            <option value="en-US" data-text="en-US">English (US)</option>
-            <option value="es-ES" data-text="es-ES">Español (ES)</option>
-            <option value="pt-BR" data-text="pt-BR">Portuguese (BR)</option>
-            <option value="fr-FR" data-text="fr-FR">French</option>
-            <option value="it-IT" data-text="it-IT">Italian</option>
-            <option value="random" data-text="random">Random</option>
-          </select>
+          <span class="input-group">
+            <div class="input-group-text" data-text="language">Language</div>
+            <select id="locale-select" tabindex="6">
+              <option value="en-US" data-text="en-US">English (US)</option>
+              <option value="es-ES" data-text="es-ES">Español (ES)</option>
+              <option value="pt-BR" data-text="pt-BR">Portuguese (BR)</option>
+              <option value="fr-FR" data-text="fr-FR">French</option>
+              <option value="it-IT" data-text="it-IT">Italian</option>
+              <option value="random" data-text="random">Random</option>
+            </select>
+          </span>
           <span>
             <span class="input-group">
+              <div class="input-group-text" data-text="theme">Theme</div>
               <select id="theme-select" tabindex="7">
                 <optgroup id="colors" label="Colors" data-label="colors">
                   <option value="base" data-text="base">Base</option>
@@ -251,11 +255,14 @@
                 <option value="dark" data-text="dark">Dark</option>
               </select>
             </span>
-            <select id="font-select" tabindex="9">
-              <option value="default" data-text="default_font">
-                Theme font
-              </option>
-            </select>
+            <span class="input-group">
+              <div class="input-group-text" data-text="font">Font</div>
+              <select id="font-select" tabindex="9">
+                <option value="default" data-text="default_font">
+                  Theme font
+                </option>
+              </select>
+            </span>
           </span>
         </div>
         <div>
