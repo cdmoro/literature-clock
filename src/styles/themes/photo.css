@@ -4,6 +4,7 @@
 
 [data-theme|="photo"] body {
     background-blend-mode: overlay;
+    background-size: cover;
 }
 
 [data-theme|="photo"] blockquote:before,
