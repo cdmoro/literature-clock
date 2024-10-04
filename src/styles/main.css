@@ -223,6 +223,7 @@ button:focus {
   box-shadow: 0 0 0 0.2rem
     color-mix(in srgb, var(--accent-color), transparent 75%) !important;
   outline: 0;
+  z-index: 1;
 }
 
 button:focus.active {
