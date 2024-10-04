@@ -122,9 +122,9 @@
     {
         "id": "003294",
         "time": "22:00",
-        "quote_time_case": "* #N/A",
-        "quote_first": "« Un crime considérable est envisagé. J'ai toutes les raisons de croire que nous serons à temps pour y mettre un terme. Mais aujourd’hui, c’est samedi, ce qui complique un peu les choses. J'aurai besoin de votre aide ce soir. ->->->.",
-        "quote_last": "",
+        "quote_time_case": "dix heures",
+        "quote_first": "« Un crime considérable est en préparation. J'ai toutes les raisons de croire que nous serons à temps pour l'arrêter. Mais aujourd'hui, c'est samedi, cela complique un peu les choses. J'aurai besoin de votre aide ce soir. »<br>« À à quelle heure ? »<br>« Dix heures seront assez tôt. »<br>« Je serai à Baker Street à ",
+        "quote_last": ". »",
         "title": "Les Aventures de Sherlock Holmes",
         "author": "Sir Arthur Conan Doyle",
         "sfw": "unknown"

@@ -122,9 +122,9 @@
     {
         "id": "001984",
         "time": "13:00",
-        "quote_time_case": "one",
-        "quote_first": "Plus il y pensait, plus il était perplexe. Il ne comprenait pas cette histoire de revolver. Quelqu'un dans la maison avait ce revolver. En bas, une horloge sonna <-<-<-<",
-        "quote_last": ">->->->.",
+        "quote_time_case": "une heure",
+        "quote_first": "Plus il y pensait, plus il était perplexe. Il ne comprenait pas cette histoire de revolver. Quelqu'un dans la maison avait ce revolver. En bas, une horloge sonna ",
+        "quote_last": ".",
         "title": "Et puis il n'y en avait pas",
         "author": "Agatha Christie",
         "sfw": "unknown"
@@ -132,9 +132,9 @@
     {
         "id": "001985",
         "time": "13:00",
-        "quote_time_case": "* #N/A",
-        "quote_first": "Je crois, dit-il avec un sourire triomphant, que je peux espérer trouver en toute sécurité la personne que je cherche dans la salle à manger, belle dame. >->->->.\"<br>\"Quiconque sera là, quand l'horloge sonnera une heure, sera suivi par l'un de mes hommes, un, ou peut-être deux, ou même trois, partiront pour la France ; -demain. L'un d'eux sera le « Mouron écarlate ».",
-        "quote_last": "",
+        "quote_time_case": "l'horloge sonnera une",
+        "quote_first": "Je pense, dit-il avec un sourire triomphant, \"que je peux espérer trouver en toute sécurité la personne que je cherche dans la salle à manger, belle dame.\"<br>\"Il peut y en avoir plus d'une.\"< br>\"Quiconque sera là, lorsque ",
+        "quote_last": " heure, sera suivi par l'un de mes hommes ; parmi eux, un, ou peut-être deux, ou même trois, partiront demain pour la France. L’un d’eux sera le « Mouron écarlate ».",
         "title": "Le mouron écarlate",
         "author": "Baroness Orczy",
         "sfw": "unknown"
