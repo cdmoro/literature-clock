@@ -1,7 +1,13 @@
 import html2canvas from "html2canvas-pro";
+import { getTime } from "../utils/utils";
 
 export function initShare() {
   document.getElementById("share")?.addEventListener("click", shareQuote);
+}
+
+function getQuoteFileName() {
+  const time = getTime();
+  return `quote_${time.replace(":", "_")}.png`;
 }
 
 async function shareQuote() {
@@ -10,7 +16,8 @@ async function shareQuote() {
   if (quote) {
     const canvas = await html2canvas(document.body, {
       allowTaint: true,
-      useCORS: true
+      useCORS: true,
+      scale: 2,
     });
 
     // @ts-ignore
@@ -18,7 +25,7 @@ async function shareQuote() {
       canvas.toBlob((blob) => {
         if (blob) {
           const filesArray = [
-            new File([blob], "quote.png", {
+            new File([blob], getQuoteFileName(), {
               type: blob.type,
               lastModified: new Date().getTime(),
             }),
@@ -41,7 +48,7 @@ function download(url: string) {
 
   a.style.display = "none";
   a.setAttribute("href", url);
-  a.setAttribute("download", "quote.png");
+  a.setAttribute("download", getQuoteFileName());
   document.body.appendChild(a);
 
   a.click();
