@@ -10,6 +10,7 @@
   position: fixed;
   inset: 0;
   background: var(--background);
+  transition: opacity .5s;
 }
 
 [data-theme|="photo"] blockquote:before,
