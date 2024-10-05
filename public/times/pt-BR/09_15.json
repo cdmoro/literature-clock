@@ -2,9 +2,9 @@
     {
         "id": "001326",
         "time": "09:15",
-        "quote_time_case": "* 9:15",
-        "quote_first": "Eram apenas 9h15 da manhã, mas a neblina matinal já havia se dissipado e o céu, quase sem nuvens, estava clareando para uma brancura opaca com vislumbres de um azul claro e suave.",
-        "quote_last": "",
+        "quote_time_case": "9:15",
+        "quote_first": "Era apenas ",
+        "quote_last": " de manhã, mas uma névoa matinal já havia se dissipado e o céu, quase sem nuvens, estava clareando para uma brancura opaca com vislumbres de um azul claro e suave.",
         "title": "Pecado original",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -13,7 +13,7 @@
         "id": "001327",
         "time": "09:15",
         "quote_time_case": "Nove e quinze",
-        "quote_first": "A multidão do café da manhã no Sunspot está se dispersando. Em breve a responsável, sem mais olhos sonolentos, pegará a placa com os pratos especiais do café da manhã e a substituirá pela placa dos pratos especiais do almoço.<br>",
+        "quote_first": "A multidão do café da manhã no Sunspot está se dispersando. Em breve a responsável, sem mais sono, pegará a placa com os pratos especiais do café da manhã e a substituirá pela placa dos pratos especiais do almoço.<br>",
         "quote_last": " e a fumaça que sobe acima do tribunal parece estar diminuindo. Billy está começando a se perguntar se houve uma falha.",
         "title": "Billy Verões",
         "author": "Stephen King",
@@ -32,9 +32,9 @@
     {
         "id": "001329",
         "time": "09:15",
-        "quote_time_case": "* 0915",
-        "quote_first": "Ótimo! Jones comentou. \"Nunca vi isso fazer isso antes. Tudo bem. Ok.\" Jones tirou um punhado de lápis do bolso de trás. \"Agora, recebi o contato primeiro por volta das 09h15, e o rumo era cerca de dois seis e nove.\"",
-        "quote_last": "",
+        "quote_time_case": "0915",
+        "quote_first": "Ótimo! Jones comentou. \"Nunca vi isso fazer isso antes. Tudo bem. Ok.\" Jones tirou um punhado de lápis do bolso de trás. \"Agora, consegui o contato primeiro em ",
+        "quote_last": " mais ou menos, e o rumo era cerca de dois-seis-nove.\"",
         "title": "A caça ao Outubro Vermelho",
         "author": "Tom Clancy",
         "sfw": "unknown"

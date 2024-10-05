@@ -4,7 +4,7 @@
         "time": "04:01",
         "quote_time_case": "quatro e um minuto",
         "quote_first": "Em um momento eu estava no escritório e na mesa do editor noturno, disse a ele quem eu era e comecei a ditar. “Às ",
-        "quote_last": " no nosso horário (veja que horas são o horário de Paris para isso e insira-o) um navio de guerra francês foi afundado pelo homem que deve acabar com toda a guerra. Provavelmente ninguém a bordo escapou.” Esta última foi uma suposição baseada na experiência do passado.",
+        "quote_last": " no nosso horário (veja que horas é o horário de Paris para isso e insira-o) um navio de guerra francês foi afundado pelo homem que deve parar toda guerra. Provavelmente ninguém a bordo escapou.” Esta última foi uma suposição baseada na experiência do passado.",
         "title": "O homem que acabou com a guerra",
         "author": "Hollis Godfrey",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000563",
         "time": "04:01",
-        "quote_time_case": "* Pouco depois das quatro da manhã.",
-        "quote_first": "Charlie olhou para o relógio. Pouco depois das quatro da manhã em casa. Domingo. Ela estaria acordada. Provavelmente lendo enquanto tomamos uma xícara de café antes de correr antes da igreja.",
-        "quote_last": "",
+        "quote_time_case": "Quase quatro da manhã",
+        "quote_first": "Charlie olhou para o relógio. ",
+        "quote_last": " em casa. Domingo. Ela estaria acordada. Provavelmente lendo enquanto tomava uma xícara de café antes de correr antes da igreja.",
         "title": "Soldado ligado",
         "author": "Vanessa Rasanen",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "000564",
         "time": "04:01",
-        "quote_time_case": "* logo depois das 4 da manhã",
-        "quote_first": "De repente, ele começou a chorar. Enrolado no sofá, ele soluçou alto. Michel olhou para o relógio; era pouco depois das 4 da manhã. Na tela, um gato selvagem tinha um coelho na boca.",
-        "quote_last": "",
+        "quote_time_case": "pouco depois das 4 da manhã",
+        "quote_first": "De repente, ele começou a chorar. Enrolado no sofá, ele soluçou alto. Michel olhou para o relógio; era ",
+        "quote_last": ". Na tela, um gato selvagem tinha um coelho na boca.",
         "title": "Atomizado",
         "author": "Michel Houellebecq",
         "sfw": "unknown"

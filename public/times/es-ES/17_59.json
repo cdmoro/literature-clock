@@ -1,32 +1,32 @@
 [
     {
-        "id": "002730",
+        "id": "002689",
         "time": "17:59",
-        "quote_time_case": "casi las seis de la tarde",
+        "quote_time_case": "un minuto para las seis",
+        "quote_first": "A ",
+        "quote_last": ", el director condujo al invitado de honor al escenario. Observó cómo las cuatrocientas chicas se levantaban y lo aplaudían en lo que el director habría descrito como un estilo “femenino”.",
+        "title": "Honor entre ladrones",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002690",
+        "time": "17:59",
+        "quote_time_case": "casi las seis",
         "quote_first": "Eran ",
-        "quote_last": " y la absurda campana en el campanario de hojalata de dos metros de altura de la iglesia sonó ¡clac-clac, clanc-clac! mientras el viejo Mattu tiraba de la cuerda hacia dentro.",
+        "quote_last": " de la tarde, y la absurda campana en el campanario de hojalata de dos metros de altura de la iglesia sonó ¡clac-clac, clanc-clac! mientras el viejo Mattu tiraba de la cuerda hacia dentro.",
         "title": "Días birmanos",
         "author": "George Orwell",
         "sfw": "unknown"
     },
     {
-        "id": "002731",
+        "id": "002691",
         "time": "17:59",
         "quote_time_case": "casi las seis",
         "quote_first": "Cuando llegó eran ",
-        "quote_last": " y el sol se ponía pleno y cálido, y la luz roja entraba por la ventana y daba más color a las pálidas mejillas.",
+        "quote_last": ", y el sol se ponía pleno y cálido, y la luz roja entraba por la ventana y le daba más color a la pálida mejillas.",
         "title": "Drácula",
         "author": "Bram Stoker",
         "sfw": "unknown"
-    },
-    {
-        "id": "002732",
-        "time": "17:59",
-        "quote_time_case": "seis menos un minuto",
-        "quote_first": "A las ",
-        "quote_last": ", el director condujo al invitado de honor al escenario. Observó cómo las cuatrocientas chicas se levantaban y lo aplaudían en lo que el director habría descrito como un estilo “femenino”.",
-        "title": "Honor entre ladrones",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
     }
 ]

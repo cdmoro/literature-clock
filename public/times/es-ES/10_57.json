@@ -1,22 +1,22 @@
 [
     {
-        "id": "001667",
-        "time": "10:57",
-        "quote_time_case": "10.57",
-        "quote_first": "Paso la cinta repetidamente, mirando el indicador de tiempo en la esquina superior izquierda de la pantalla, donde las cifras que cubren parte de su frente muestran los minutos y segundos, de 10.53 a ",
-        "quote_last": ".",
-        "title": "Austerlitz",
-        "author": "W. G. Sebald",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001668",
+        "id": "001641",
         "time": "10:57",
         "quote_time_case": "10:57",
-        "quote_first": "A las 10:55, el canónigo acompañaría al Lord Canciller al interior de la catedral, y luego se dirigirían al frente de la nave donde debería aterrizar (palabra del canónigo) a las ",
+        "quote_first": "A las 10:55, el canónigo acompañaría al Lord Canciller al interior de la catedral, y luego procederían al frente de la nave donde debería aterrizar, palabra del canónigo, en ",
         "quote_last": ".",
         "title": "Este era un hombre",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
+    },
+    {
+        "id": "001642",
+        "time": "10:57",
+        "quote_time_case": "10.57",
+        "quote_first": "Paso la cinta repetidamente, mirando el indicador de tiempo en la esquina superior izquierda de la pantalla, donde las cifras que cubren parte de su frente muestran los minutos y segundos, desde 10.53 hasta ",
+        "quote_last": ".",
+        "title": "Austerlitz",
+        "author": "W. G. Sebald",
+        "sfw": "unknown"
     }
 ]

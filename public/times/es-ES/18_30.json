@@ -1,46 +1,36 @@
 [
     {
-        "id": "002816",
+        "id": "002773",
         "time": "18:30",
-        "quote_time_case": "* 6:30 pm.",
-        "quote_first": "Después de enviarla a casa, cenó solo en un restaurante cercano: caballa asada al estilo de Kioto con tofu, verduras en vinagre, sopa de miso y un plato de arroz blanco. Como de costumbre, se mantuvo alejado del alcohol. Eran las 6:30 p.m.",
+        "quote_time_case": "SEIS TREINTA",
+        "quote_first": "",
+        "quote_last": " BAJO la vigilancia de REACHER, el movimiento dentro del camión cambió. Navegaron de manera constante durante seis horas y cuatro minutos, tal vez a cincuenta y cinco o sesenta millas por hora, mientras el calor alcanzaba su punto máximo y disminuía. Se había sentado, acalorado, balanceándose y rebotando en la oscuridad con el volante entre él y Holly Johnson, marcando la distancia en un mapa dentro de su cabeza.",
+        "title": "Morir en el intento",
+        "author": "Lee Child",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002774",
+        "time": "18:30",
+        "quote_time_case": "6:30 p.m.",
+        "quote_first": "Después de enviarla a casa, cenó solo en un restaurante cercano: caballa asada al estilo de Kioto con tofu, verduras en vinagre, sopa de miso y un plato de arroz blanco. Como de costumbre, se mantuvo alejado del alcohol. Esto fue ",
         "quote_last": "",
         "title": "Sauce ciego, mujer dormida",
         "author": "Haruki Murakami",
         "sfw": "unknown"
     },
     {
-        "id": "002817",
-        "time": "18:30",
-        "quote_time_case": "* LAS SEIS TREINTA",
-        "quote_first": "Las seis y media según el reloj de REACHER, el movimiento dentro del camión cambió. Habían navegado durante seis horas y cuatro minutos a un ritmo constante, tal vez a cincuenta y cinco o sesenta millas por hora, mientras el calor aumentaba y disminuía. Se había sentado, acalorado, balanceándose y rebotando en la oscuridad con el volante entre él y Holly Johnson, marcando la distancia en un mapa dentro de su cabeza.",
-        "quote_last": "",
-        "title": "Muere intentando",
-        "author": "Lee Child",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002818",
-        "time": "18:30",
-        "quote_time_case": "18.30 h.",
-        "quote_first": "",
-        "quote_last": " Ver televisión o un vídeo.",
-        "title": "El curioso incidente del perro a medianoche",
-        "author": "Mark Haddon",
-        "sfw": "sfw"
-    },
-    {
-        "id": "002819",
+        "id": "002775",
         "time": "18:30",
         "quote_time_case": "6:30",
-        "quote_first": "“Encontrados en la esquina de Goodge Street, un ganso y un sombrero de fieltro negro. El Sr. Henry Baker puede obtener lo mismo presentando su solicitud a las ",
-        "quote_last": " esta tarde en el 221B de Baker Street”.",
+        "quote_first": "“Encontrados en la esquina de Goodge Street, un ganso y un sombrero de fieltro negro. El Sr. Henry Baker puede obtener lo mismo presentando su solicitud en ",
+        "quote_last": " esta tarde en 221B Baker Street”.",
         "title": "Las aventuras de Sherlock Holmes",
         "author": "Sir Arthur Conan Doyle",
         "sfw": "unknown"
     },
     {
-        "id": "002820",
+        "id": "002776",
         "time": "18:30",
         "quote_time_case": "seis y media",
         "quote_first": "A las ",
@@ -50,41 +40,51 @@
         "sfw": "unknown"
     },
     {
-        "id": "002821",
+        "id": "002777",
         "time": "18:30",
-        "quote_time_case": "seis y media",
-        "quote_first": "Mientras me daba la vuelta, apenada por separarme de él, un pensamiento surgió en mí y me volví. \"¿Quieres que te lleve un mensaje más?\"<br>\"Eso es muy bueno de tu parte\", dijo, \"pero ¿quieres hacerlo?\"<br>\"Sí, sólo por esta vez\". No haría ningún daño, pensé; y debería estar lejos cuando el mensaje surta efecto, y quería decir algo para demostrar que éramos amigos. \"Bueno\", dijo, una vez más al otro lado de la brecha, \"digamos que mañana no es bueno, voy a Norwich, pero el viernes a las ",
-        "quote_last": ", como siempre\".",
+        "quote_time_case": "18.30",
+        "quote_first": "",
+        "quote_last": " Ver la televisión o un vídeo",
+        "title": "El curioso incidente del perro a medianoche",
+        "author": "Mark Haddon",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002778",
+        "time": "18:30",
+        "quote_time_case": "las seis y media",
+        "quote_first": "Mientras me daba la vuelta, apenada por separarme de él, un pensamiento surgió en mí y me volví. \"¿Debo llevarte un mensaje más?\"<br>\"Eso es muy bueno de tu parte\", dijo, \"pero ¿quieres hacerlo?\"<br>\"Sí, sólo por esta vez\". No haría ningún daño, pensé; y debería estar lejos cuando el mensaje surta efecto, y quería decir algo para demostrar que éramos amigos. \"Bueno\", dijo, una vez más al otro lado de la brecha, \"digamos que mañana no es bueno, voy a Norwich, pero el viernes a las ",
+        "quote_last": ", igual que habitual.\"",
         "title": "El intermediario",
         "author": "L.P. Hartley",
         "sfw": "unknown"
     },
     {
-        "id": "002822",
+        "id": "002779",
         "time": "18:30",
         "quote_time_case": "seis y media",
-        "quote_first": "A las cinco en punto las dos damas se retiraron a vestirse y a las ",
-        "quote_last": " llamaron a Isabel a cenar.",
+        "quote_first": "A las cinco en punto las dos damas se retiraron a vestirse, ya las ",
+        "quote_last": " Elizabeth fue llamada a cenar.",
         "title": "Orgullo y prejuicio",
         "author": "Jane Austen",
         "sfw": "unknown"
     },
     {
-        "id": "002823",
+        "id": "002780",
         "time": "18:30",
         "quote_time_case": "seis y media",
-        "quote_first": "Son las ",
+        "quote_first": "Son ",
         "quote_last": ". Ahora la noche oscura y el ruido ensordecedor de los grillos vuelven a envolver el jardín y la terraza, alrededor de toda la casa.",
         "title": "Celos",
         "author": "Alain Robbe-Grillet",
         "sfw": "unknown"
     },
     {
-        "id": "002824",
+        "id": "002781",
         "time": "18:30",
-        "quote_time_case": "seis y media",
+        "quote_time_case": "las seis y media",
         "quote_first": "A un visitante casual le habría parecido que el señor Penicuik, propietario de la casa, había atravesado malos días; pero dos de los tres caballeros reunidos en el salón a las ",
-        "quote_last": " de una tarde invernal de finales de febrero no corrían peligro de caer en este error.",
+        "quote_last": " en una tarde invernal de finales de febrero no corrían peligro de caer en este error.",
         "title": "cotillón",
         "author": "Georgette Heyer",
         "sfw": "unknown"

@@ -1,21 +1,21 @@
 [
     {
-        "id": "002356",
+        "id": "002320",
         "time": "15:25",
         "quote_time_case": "15.25",
-        "quote_first": "Mmm, veamos. Es una valla de tres líneas, a, d, g...d-a-r-l...Entendido: 'Darling Hepzibah'<br>¿Hepzibah? ¿Qué clase de nombre es ese?<br>'Nos vemos en Reading el domingo a las ",
-        "quote_last": " en el tren Didcot-Reading.' Muy bien, idiotas.",
+        "quote_first": "Mmm, veamos. Es una valla de tres líneas, a, d, g...d-a-r-l...Entendido: 'Darling Hepzibah'<br>¿Hepzibah? ¿Qué clase de nombre es ese?<br>'Nos vemos el domingo de lectura ",
+        "quote_last": " tren Didcot-Reading.' Muy bien, idiotas.",
         "title": "C",
         "author": "Tom McCarthy",
         "sfw": "unknown"
     },
     {
-        "id": "002357",
+        "id": "002321",
         "time": "15:25",
-        "quote_time_case": "* tres veinticinco",
-        "quote_first": "La tarde siguiente, el señor Underhill terminó temprano en la oficina y tomó el tren de las tres, llegando a Green Town a las tres y veinticinco, con tiempo suficiente para tomar los fuertes rayos del sol otoñal.",
-        "quote_last": "",
-        "title": "El patio de la escuela",
+        "quote_time_case": "tres y veinticinco",
+        "quote_first": "La tarde siguiente, el Sr. Underhill terminó temprano en la oficina y tomó el tren de las tres, llegando a Green Town a las ",
+        "quote_last": ", con tiempo suficiente para bebe los enérgicos rayos del sol otoñal.",
+        "title": "El patio de recreo",
         "author": "Ray Bradbury",
         "sfw": "unknown"
     }

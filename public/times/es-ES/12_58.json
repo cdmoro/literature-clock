@@ -1,22 +1,22 @@
 [
     {
-        "id": "001997",
+        "id": "001967",
         "time": "12:58",
-        "quote_time_case": "12.58",
-        "quote_first": "El reloj en mi muñeca marcaba las ",
-        "quote_last": " horas. Tendría tiempo de ir a la morgue.",
-        "title": "Mordeduras Mágicas",
-        "author": "Ilona Andrews",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001998",
-        "time": "12:58",
-        "quote_time_case": "una menos dos minutos",
-        "quote_first": "A la ",
+        "quote_time_case": "la una menos dos",
+        "quote_first": "A las ",
         "quote_last": ", Charlie Duncan entró en el restaurante Palm Court con una camisa de cuello abierto y fumando un cigarrillo: una caricatura ambulante de H. M. Bateman.",
         "title": "Un prisionero de nacimiento",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
+    },
+    {
+        "id": "001968",
+        "time": "12:58",
+        "quote_time_case": "12.58 pm",
+        "quote_first": "El reloj en mi muñeca marcaba ",
+        "quote_last": ". Tendría tiempo de ir a la morgue.",
+        "title": "Mordeduras Mágicas",
+        "author": "Ilona Andrews",
+        "sfw": "unknown"
     }
 ]

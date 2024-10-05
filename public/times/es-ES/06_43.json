@@ -1,26 +1,26 @@
 [
     {
-        "id": "000882",
+        "id": "000865",
         "time": "06:43",
-        "quote_time_case": "6.43 am",
-        "quote_first": "A Londres a las ",
-        "quote_last": ". Jessica ha vuelto de sus vacaciones. Las cosas están mejorando, ella me llamó Chris, en lugar de Ministro, cuando hablamos por teléfono esta tarde.",
-        "title": "Una vista desde las estribaciones",
-        "author": "Chris Mullin",
-        "sfw": "unknown"
+        "quote_time_case": "6:43 a.m.",
+        "quote_first": "Quizás el insistente sonido metálico fuera sólo parte de su sueño. De mala gana se dio vuelta y parpadeó ante las pequeñas manecillas verdes fosforescentes del reloj de cabecera: ",
+        "quote_last": "",
+        "title": "Ten cuidado con lo que deseas",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     },
     {
-        "id": "000883",
+        "id": "000866",
         "time": "06:43",
         "quote_time_case": "6:43",
         "quote_first": "A las ",
-        "quote_last": " el conductor salió de la carretera y siguió las indicaciones hacia La Guardia. Nadie habló hasta que el coche se detuvo en la acera frente a la entrada de la terminal Marine Air.",
+        "quote_last": " el conductor se salió de la carretera y siguió las indicaciones hacia La Guardia. Nadie habló hasta que el coche se detuvo en la acera frente a la entrada de la terminal Marine Air.",
         "title": "Honor entre ladrones",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "000884",
+        "id": "000867",
         "time": "06:43",
         "quote_time_case": "6:43",
         "quote_first": "Después de echarse espuma en la cara, se afeitó demasiado rápido y se cortó la barba incipiente de la barbilla. Maldita sea, tres mellas; la loción para después del afeitado picó brutalmente: ",
@@ -30,13 +30,13 @@
         "sfw": "nsfw"
     },
     {
-        "id": "000885",
+        "id": "000868",
         "time": "06:43",
-        "quote_time_case": "6:43 a.m.",
-        "quote_first": "Quizás el insistente sonido metálico fuera sólo parte de su sueño. De mala gana se dio vuelta y parpadeó ante las pequeñas manecillas verdes fosforescentes del reloj de cabecera: ",
-        "quote_last": "",
-        "title": "Tener cuidado con lo que deseas",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
+        "quote_time_case": "6.43 am",
+        "quote_first": "A Londres por la ",
+        "quote_last": ". Jessica ha vuelto de sus vacaciones. Las cosas están mejorando, ella me llamó Chris, en lugar de Ministro, cuando hablamos por teléfono esta tarde.",
+        "title": "Una vista desde las estribaciones",
+        "author": "Chris Mullin",
+        "sfw": "unknown"
     }
 ]

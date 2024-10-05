@@ -1,32 +1,22 @@
 [
     {
-        "id": "003632",
+        "id": "003575",
         "time": "23:59",
-        "quote_time_case": "Aún faltaba un minuto para el nuevo día",
-        "quote_first": "Chigurgh se levantó, recogió la carcasa vacía de la alfombra, sopló en ella, se la guardó en el bolsillo y miró el reloj. ",
-        "quote_last": ".",
-        "title": "No es país para viejos",
-        "author": "Cormac McCarthy",
-        "sfw": "sfw"
-    },
-    {
-        "id": "003633",
-        "time": "23:59",
-        "quote_time_case": "Aún faltaba un minuto para el nuevo día",
-        "quote_first": "Chigurgh se levantó, recogió la carcasa vacía de la alfombra, sopló en ella, se la guardó en el bolsillo y miró el reloj. ",
-        "quote_last": ".",
-        "title": "No es país para viejos",
-        "author": "Cormac McCarthy",
-        "sfw": "sfw"
-    },
-    {
-        "id": "003634",
-        "time": "23:59",
-        "quote_time_case": "Faltaba un minuto para la medianoche",
+        "quote_time_case": "Falta un minuto para la medianoche",
         "quote_first": "",
         "quote_last": ", Roquenton tomaba la mano de su esposa y le daba sus últimos consejos. Al filo de la medianoche, sintió la mano de su compañera derretirse dentro de la suya.",
         "title": "El hombre que atravesó las paredes",
         "author": "Marcel Aymé",
+        "sfw": "sfw"
+    },
+    {
+        "id": "003576",
+        "time": "23:59",
+        "quote_time_case": "el nuevo día aún estaba a un minuto de distancia",
+        "quote_first": "Chigurgh se levantó, recogió la carcasa vacía de la alfombra, sopló en ella, se la guardó en el bolsillo y miró el reloj. El ",
+        "quote_last": ".",
+        "title": "No es país para viejos",
+        "author": "Cormac McCarthy",
         "sfw": "sfw"
     }
 ]

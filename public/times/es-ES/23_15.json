@@ -1,38 +1,28 @@
 [
     {
-        "id": "003534",
+        "id": "003479",
         "time": "23:15",
-        "quote_time_case": "* entre las once y quince y dieciséis minutos",
-        "quote_first": "Me invadió el impulso de mirar de nuevo. El minutero estaba a mitad de camino entre las once y quince y dieciséis. El reloj debió haberse detenido; Me lo acerqué a la oreja; no, todavía estaba en marcha.",
-        "quote_last": "",
-        "title": "El comedor de hachís",
-        "author": "Fitz Hugh Ludlow",
-        "sfw": "nsfw"
-    },
-    {
-        "id": "003535",
-        "time": "23:15",
-        "quote_time_case": "* Once y cuarto",
-        "quote_first": "El chalet se encuentra aislado al final de un valle ciego. Más arriba sólo está el embalse y detrás el traicionero glaciar. A las once y cuarto, llega a la conclusión de que es imposible que Nick esté deambulando por ahí con este tiempo.",
-        "quote_last": "",
+        "quote_time_case": "las once y cuarto",
+        "quote_first": "El chalet se encuentra aislado al final de un valle ciego. Más arriba sólo está el embalse y detrás el traicionero glaciar. A las ",
+        "quote_last": ", concluye que es imposible que Nick esté deambulando por ahí, con este clima.",
         "title": "Eco",
         "author": "Thomas Olde Heuvelt",
         "sfw": "unknown"
     },
     {
-        "id": "003536",
+        "id": "003480",
         "time": "23:15",
         "quote_time_case": "11:15",
-        "quote_first": "Una mañana estábamos sentados desayunando, mi esposa y yo, cuando la criada trajo un telegrama. Era de Sherlock Holmes y decía así:<br>¿Tienes un par de días libres? Acaban de recibir un telegrama desde el oeste de Inglaterra en relación con la tragedia de Boscombe Valley. Estaré feliz si vienes conmigo. Aire y paisaje perfectos. Salga de Paddington a las ",
+        "quote_first": "Una mañana estábamos sentados desayunando, mi esposa y yo, cuando la criada trajo un telegrama. Era de Sherlock Holmes y decía así:<br>¿Tienes un par de días libres? Acaban de recibir un telegrama desde el oeste de Inglaterra en relación con la tragedia de Boscombe Valley. Estaré feliz si vienes conmigo. Aire y paisaje perfectos. Salga de Paddington por el ",
         "quote_last": ".",
         "title": "Las aventuras de Sherlock Holmes",
         "author": "Sir Arthur Conan Doyle",
         "sfw": "unknown"
     },
     {
-        "id": "003537",
+        "id": "003481",
         "time": "23:15",
-        "quote_time_case": "23:15",
+        "quote_time_case": "11:15 p.m.",
         "quote_first": "",
         "quote_last": " Humph. Mamá acaba de llamar. \"Lo siento, cariño. No es Newsnight, mañana es Breakfast News. ¿Podrías programarlo para mañana a las siete en punto, BBC1?\"",
         "title": "El diario de Bridget Jones",
@@ -40,13 +30,23 @@
         "sfw": "sfw"
     },
     {
-        "id": "003538",
+        "id": "003482",
         "time": "23:15",
-        "quote_time_case": "once y cuarto",
+        "quote_time_case": "las once y cuarto",
         "quote_first": "Al llegar a casa a las ",
         "quote_last": ", encontramos un coche de alquiler que me esperaba desde hacía dos horas con una carta. Sarah dijo que no sabía qué hacer, ya que no habíamos dejado la dirección a la que habíamos ido.",
         "title": "Diario de un don nadie",
         "author": "George and Weedon Grossmith",
         "sfw": "unknown"
+    },
+    {
+        "id": "003483",
+        "time": "23:15",
+        "quote_time_case": "entre las once y quince y dieciséis minutos",
+        "quote_first": "Me invadió el impulso de mirar de nuevo. El minutero estaba a mitad de camino ",
+        "quote_last": ". El reloj debió haberse detenido; Me lo acerqué a la oreja; no, todavía estaba en marcha.",
+        "title": "El comedor de hachís",
+        "author": "Fitz Hugh Ludlow",
+        "sfw": "nsfw"
     }
 ]

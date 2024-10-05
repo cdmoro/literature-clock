@@ -1,26 +1,6 @@
 [
     {
-        "id": "000321",
-        "time": "02:15",
-        "quote_time_case": "2.15",
-        "quote_first": "A las ",
-        "quote_last": " horas un policía observó el lugar en la oscuridad, pero con el coche del extraño todavía en la acera.",
-        "title": "La sombra fuera del tiempo",
-        "author": "H.P. Lovecraft",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000322",
-        "time": "02:15",
-        "quote_time_case": "2:15",
-        "quote_first": "Era media noche cuando sonó el teléfono. Abrió los ojos y encontró que el reloj marcaba las ",
-        "quote_last": ". Al principio estaba demasiado aturdido para entender por qué podía estar sonando una campana cerca, pero sacudió la cabeza y, casi inconscientemente, cogió el auricular y se lo acercó a la oreja.",
-        "title": "Sauce ciego, mujer dormida",
-        "author": "Haruki Murakami",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000323",
+        "id": "000315",
         "time": "02:15",
         "quote_time_case": "2:15 a.m.",
         "quote_first": "Hojeó [los correos electrónicos], descartando mentalmente la gran mayoría como de baja prioridad, pero uno en particular despertó su curiosidad: era de Art Bullock, enviado a las ",
@@ -30,11 +10,31 @@
         "sfw": "sfw"
     },
     {
-        "id": "000324",
+        "id": "000316",
         "time": "02:15",
-        "quote_time_case": "dos y cuarto",
-        "quote_first": "Lo hizo. Cuando sonó la alarma a las ",
-        "quote_last": ", Lew la apagó, encendió la pequeña lámpara de noche y luego apoyó los pies en el suelo para sentarse en el borde de la cama, manteniendo los ojos abiertos.",
+        "quote_time_case": "2:15",
+        "quote_first": "Era media noche cuando sonó el teléfono. Abrió los ojos y encontró que el reloj marcaba ",
+        "quote_last": ". Al principio estaba demasiado atontado para comprender por qué podía estar sonando una campana cerca, pero sacudió la cabeza y, casi inconscientemente, cogió el auricular y se lo acercó a la oreja.",
+        "title": "Sauce ciego, mujer dormida",
+        "author": "Haruki Murakami",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000317",
+        "time": "02:15",
+        "quote_time_case": "2.15 am",
+        "quote_first": "A las ",
+        "quote_last": " un policía observó el lugar en la oscuridad, pero con el motor del extraño todavía en la acera.",
+        "title": "La sombra fuera del tiempo",
+        "author": "H.P. Lovecraft",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000318",
+        "time": "02:15",
+        "quote_time_case": "dos quince",
+        "quote_first": "Lo hizo. Cuando la alarma sonó a las ",
+        "quote_last": ", Lew la apagó, encendió la pequeña lámpara de noche y luego apoyó los pies en el suelo para sentarse en el borde de la cama. manteniendo los ojos abiertos.",
         "title": "La gente de la noche",
         "author": "Jack Finney",
         "sfw": "unknown"

@@ -1,16 +1,6 @@
 [
     {
-        "id": "003158",
-        "time": "20:42",
-        "quote_time_case": "8.42",
-        "quote_first": "La mano en este momento apuntaba a ",
-        "quote_last": ". Los jugadores tomaron sus cartas, pero sus ojos estaban constantemente puestos en el reloj. Se puede decir con seguridad que, por muy seguros que se sientan, nunca los minutos les habían parecido tan largos.",
-        "title": "Al rededor del mundo en ochenta días",
-        "author": "Jules Verne",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003159",
+        "id": "003107",
         "time": "20:42",
         "quote_time_case": "Ocho cuarenta y dos",
         "quote_first": "\"Sí, solo estaba pensando\". . .”<br>Shan echó un vistazo al reloj de pared de péndulo. ",
@@ -18,5 +8,15 @@
         "title": "El borde de la pérdida",
         "author": "Kristina McMorris",
         "sfw": "sfw"
+    },
+    {
+        "id": "003108",
+        "time": "20:42",
+        "quote_time_case": "8.42",
+        "quote_first": "La mano en este momento señalaba ",
+        "quote_last": ". Los jugadores tomaron sus cartas, pero sus ojos estaban constantemente puestos en el reloj. Se puede decir con seguridad que, por muy seguros que se sientan, nunca los minutos les habían parecido tan largos.",
+        "title": "La vuelta al mundo en ochenta días",
+        "author": "Jules Verne",
+        "sfw": "unknown"
     }
 ]

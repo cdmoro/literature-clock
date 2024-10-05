@@ -2,9 +2,9 @@
     {
         "id": "001318",
         "time": "09:12",
-        "quote_time_case": "* 9:12",
-        "quote_first": "Quando o Jefferson Memorial apareceu, Dexter consultou o relógio mais uma vez. Eram 9h12. “Tempo fácil”, observou ele. Menos de um minuto depois, eles foram pegos em um engarrafamento.",
-        "quote_last": "",
+        "quote_time_case": "9:12",
+        "quote_first": "Quando o Jefferson Memorial apareceu, Dexter consultou o relógio mais uma vez. Foi ",
+        "quote_last": ". “Tempo fácil”, observou ele. Menos de um minuto depois, eles foram pegos em um engarrafamento.",
         "title": "Honra entre ladrões",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "001320",
         "time": "09:12",
-        "quote_time_case": "* nove e doze minutos",
-        "quote_first": "A enorme porta de ferro só se abriu às nove e doze. Harry deu um pulo quando um guarda da prisão ficou de lado e permitiu que um homem alto e elegante com cabelos grisalhos entrasse.",
-        "quote_last": "",
+        "quote_time_case": "nove e doze",
+        "quote_first": "A enorme porta de ferro só se abriu ",
+        "quote_last": ". Harry deu um pulo quando um guarda da prisão ficou de lado e permitiu que um homem alto e elegante com cabelos grisalhos entrasse.",
         "title": "Os Pecados do Pai",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -34,7 +34,7 @@
         "time": "09:12",
         "quote_time_case": "9h12",
         "quote_first": "",
-        "quote_last": " estava deitado na cama, olhando para a parede.",
+        "quote_last": " deitei na cama, olhando para a parede.",
         "title": "Uma fração do todo",
         "author": "Steve Toltz",
         "sfw": "sfw"

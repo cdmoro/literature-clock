@@ -1,66 +1,66 @@
 [
     {
-        "id": "002518",
+        "id": "002481",
         "time": "16:30",
-        "quote_time_case": "* 4:30",
-        "quote_first": "A las cuatro y media Gunther regresó a la casa Berg con los brazos llenos de narcisos amarillos. Frau Julia volvió a ser Frau Julia y lo recibió a él y a los narcisos con los brazos abiertos.",
-        "quote_last": "",
-        "title": "Brillante valle del amor",
-        "author": "Edna Hong",
-        "sfw": "sfw"
-    },
-    {
-        "id": "002519",
-        "time": "16:30",
-        "quote_time_case": "* 4:30",
-        "quote_first": "A la policía local no le agradaría que avisaran a las cuatro y media de la tarde de Nochebuena y, si se trataba de algún tipo de engaño, prefería no participar activamente.",
-        "quote_last": "",
-        "title": "El asesinato del muérdago",
-        "author": "P.D. James",
-        "sfw": "sfw"
-    },
-    {
-        "id": "002520",
-        "time": "16:30",
-        "quote_time_case": "* Cuatro y media",
-        "quote_first": "Jonas rueda dolorosamente fuera de la hamaca, con la espalda dolorida, rígida e hinchada, y necesita desesperadamente un quiropráctico. Consulta su reloj. Las cuatro y media… ¿pero son las mañanas o las tardes?",
-        "quote_last": "",
-        "title": "Meg, aguas primordiales",
-        "author": "Steve Alten",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002521",
-        "time": "16:30",
-        "quote_time_case": "* las cuatro y media de la tarde.",
-        "quote_first": "A veces me pregunto qué pasó con la niña; el pensamiento suele venir a mi mente cuando estoy frente a un plato de espaguetis humeante. Después de colgar, ¿desapareció para siempre, absorbida por las cuatro y media de la tarde? ¿oscuridad? ¿Tuve parte de culpa?<br>Sin embargo, quiero que entiendas mi posición. En ese momento no quería involucrarme con nadie. Por eso seguí cocinando espaguetis, yo solo. En esa enorme olla, lo suficientemente grande como para albergar a un pastor alemán.",
-        "quote_last": "",
-        "title": "Sauce ciego, mujer dormida",
-        "author": "Haruki Murakami",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002522",
-        "time": "16:30",
-        "quote_time_case": "cuatro y media",
-        "quote_first": "Pero creo”, sacó su reloj, “que puedo pasar una hora contigo. Ya son las ",
-        "quote_last": ". Si tan sólo hubiera sido algo, un terrateniente, un padre, un oficial de caballería, un fotógrafo, un periodista... No soy nada, no soy ninguna especialidad, y a veces me aburro de verdad. Realmente pensé que me dirías algo nuevo”.",
+        "quote_time_case": "las cuatro y media",
+        "quote_first": "Pero creo”, sacó su reloj, “que puedo pasar una hora contigo. Son ",
+        "quote_last": " ahora. Si hubiera sido algo, un terrateniente, un padre, un oficial de caballería, un fotógrafo, un periodista... No soy nada, no soy ninguna especialidad, y a veces me aburro de verdad. Realmente pensé que me dirías algo nuevo”.",
         "title": "Crimen y castigo",
         "author": "Fyodor Dostoyevsky",
         "sfw": "sfw"
     },
     {
-        "id": "002523",
+        "id": "002482",
+        "time": "16:30",
+        "quote_time_case": "4:30",
+        "quote_first": "A las ",
+        "quote_last": " Gunther regresó a la casa Berg con los brazos llenos de narcisos amarillos. Frau Julia volvió a ser Frau Julia y lo recibió a él y a los narcisos con los brazos abiertos.",
+        "title": "Brillante valle del amor",
+        "author": "Edna Hong",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002483",
+        "time": "16:30",
+        "quote_time_case": "4:30",
+        "quote_first": "A la policía local no le gustaría que llamaran a las ",
+        "quote_last": " en Nochebuena, y si se trataba de algún tipo de engaño, prefería no ser un participante activo.",
+        "title": "El asesinato del muérdago",
+        "author": "P.D. James",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002484",
         "time": "16:30",
         "quote_time_case": "cuatro y media",
-        "quote_first": "“No entraré”, dice. “Te veré en las escaleras a las ",
+        "quote_first": "“No entraré”, dice. “Te veré en las escaleras a ",
         "quote_last": ". Podemos llevar a las chicas a casa de Murray a tomar un helado o algo así”.<br>Parece aliviado. “Correcto”, dice.<br>“Dile a los niños que se diviertan”.",
         "title": "La vida antes del hombre",
         "author": "Margaret Atwood",
         "sfw": "unknown"
     },
     {
-        "id": "002524",
+        "id": "002485",
+        "time": "16:30",
+        "quote_time_case": "Las cuatro y media",
+        "quote_first": "Jonas rueda dolorosamente fuera de la hamaca, con la espalda dolorida, rígida e hinchada, y necesita desesperadamente un quiropráctico. Consulta su reloj. ",
+        "quote_last": "…pero ¿es a.m. o p.m.?",
+        "title": "Meg, aguas primordiales",
+        "author": "Steve Alten",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002486",
+        "time": "16:30",
+        "quote_time_case": "las cuatro y media de la tarde",
+        "quote_first": "A veces me pregunto qué pasó con la niña; el pensamiento suele venir a mi mente cuando estoy frente a un plato de espaguetis humeante. Después de colgar, ¿desapareció para siempre, absorbida por las ",
+        "quote_last": " sombras? ¿Tuve parte de culpa?<br>Sin embargo, quiero que comprendas mi posición. En ese momento no quería involucrarme con nadie. Por eso seguí cocinando espaguetis, yo solo. En esa enorme olla, lo suficientemente grande como para albergar a un pastor alemán.",
+        "title": "Sauce ciego, mujer dormida",
+        "author": "Haruki Murakami",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002487",
         "time": "16:30",
         "quote_time_case": "cuatro y media",
         "quote_first": "A las ",
@@ -70,73 +70,63 @@
         "sfw": "unknown"
     },
     {
-        "id": "002525",
+        "id": "002488",
         "time": "16:30",
         "quote_time_case": "cuatro y media",
-        "quote_first": "Un camarero se despierta a las ",
-        "quote_last": " por la estimulación en el flujo de aire y luego se pone amarillo en nuestro dormitorio. Después de un minuto en la higiene y la vaporera, nos ponemos uniformes limpios antes de entrar al restaurante.",
+        "quote_first": "Un servidor se despierta a la hora ",
+        "quote_last": " por una estimulación en el flujo de aire y luego se pone amarillo en nuestro dormitorio. Después de un minuto en la higiene y la vaporera, nos ponemos uniformes limpios antes de entrar al restaurante.",
         "title": "Atlas de nubes",
         "author": "David Mitchell",
         "sfw": "unknown"
     },
     {
-        "id": "002526",
+        "id": "002489",
         "time": "16:30",
         "quote_time_case": "cuatro y media",
-        "quote_first": "Esta tarde todo encaja. Cuando el turno de turno entra en servicio, el reloj marca las ",
+        "quote_first": "Esta tarde todo encaja. Cuando el turno de turno entra en servicio, el reloj marca ",
         "quote_last": ", como debería.",
-        "title": "Uno volo sobre el nido del cuco",
+        "title": "Alguien voló sobre el nido del cuco",
         "author": "Ken Kesey",
         "sfw": "unknown"
     },
     {
-        "id": "002527",
+        "id": "002490",
         "time": "16:30",
-        "quote_time_case": "cuatro y media",
-        "quote_first": "Miré el reloj. Eran las ",
+        "quote_time_case": "las cuatro y media",
+        "quote_first": "Miré el reloj. Eran ",
         "quote_last": ". \"No tenía idea de qué hora era\", dijo Brett. “Yo digo, ¿puede sentarse un chico? No te enfades, cariño. Acabo de salir del conde. Él me trajo aquí”.",
-        "title": "El sol también se eleva",
+        "title": "El sol también sale",
         "author": "Ernest Hemingway",
         "sfw": "unknown"
     },
     {
-        "id": "002528",
+        "id": "002491",
         "time": "16:30",
         "quote_time_case": "cuatro y media",
         "quote_first": "A las ",
-        "quote_last": " de esa tarde de finales de enero, cuando entré al salón con Boo, mi perro, Hutch estaba en su sillón favorito, frunciendo el ceño ante el televisor, que había silenciado.",
-        "title": "Horas extrañas",
+        "quote_last": " esa tarde de finales de enero, cuando entré al salón con Boo, mi perro, Hutch estaba en su sillón favorito, frunciendo el ceño ante el televisor, que había apagado.",
+        "title": "Horas impares",
         "author": "Dean Koontz",
         "sfw": "unknown"
     },
     {
-        "id": "002529",
+        "id": "002492",
         "time": "16:30",
         "quote_time_case": "cuatro y media",
         "quote_first": "Salgo de la oficina a las ",
-        "quote_last": ", me dirijo a Xclusive donde hago ejercicio con pesas durante una hora, luego cruzo el parque en taxi hasta Gio's en la sala Pierre para un tratamiento facial, una manicura y, si el tiempo lo permite, una pedicura.",
-        "title": "American Psycho",
+        "quote_last": ", me dirijo a Xclusive donde hago ejercicio con pesas libres durante una hora, luego cruzo el parque en taxi hasta Gio's en Pierre Room para facial, manicura y, si el tiempo lo permite, pedicura.",
+        "title": "Psico americano",
         "author": "Bret Easton Ellis",
         "sfw": "unknown"
     },
     {
-        "id": "002530",
+        "id": "002493",
         "time": "16:30",
         "quote_time_case": "cuatro y media",
-        "quote_first": "Al principio me colgó y luego me preguntó si me esforzaba en comportarme como un \"punk suburbano de poca monta\" con las mujeres con las que me había acostado. Pero después de disculpas, insultos, risas y lágrimas, se vio a Romeo y Julieta juntos esa misma tarde, cogidos de la mano en la oscuridad, en una proyección de Amor y muerte a las ",
-        "quote_last": " en el Teatro Nacional de Cine. Finales felices, al menos por ahora.",
+        "quote_first": "Al principio me colgó y luego me preguntó si me esforzaba en comportarme como un \"punk suburbano de poca monta\" con las mujeres con las que me había acostado. Pero después de disculpas, insultos, risas y lágrimas, se vio a Romeo y Julieta juntos esa misma tarde, cogidos de la mano tímidamente en la oscuridad en una proyección ",
+        "quote_last": " de Amor y Muerte en el Teatro Nacional de Cine. Finales felices, al menos por ahora.",
         "title": "Ensayos de amor",
         "author": "Alain de Botton",
         "sfw": "unknown"
-    },
-    {
-        "id": "002531",
-        "time": "16:30",
-        "quote_time_case": "cuatro y media de la tarde",
-        "quote_first": "Eran las ",
-        "quote_last": ", cuando Amaranta Úrsula salió del baño. Aureliano la vio pasar frente a su cuarto, con una bata de pliegues tenues y una toalla enrollada en la cabeza como un turbante.",
-        "title": "100 años de soledad",
-        "author": "Gabriel García Márquez",
-        "sfw": "sfw"
     }
 ]

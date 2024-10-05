@@ -1,42 +1,42 @@
 [
     {
-        "id": "002502",
+        "id": "002465",
         "time": "16:20",
-        "quote_time_case": "* 16:20",
-        "quote_first": "“Por lo tanto, se realizaba un seguimiento rutinario cada cincuenta minutos. El último avistamiento reportado fue a las 4:20 p.m. Hora del centro de Menaya. Todavía se acercaba hacia el sol y estaba casi en el punto de mayor aproximación a Farholme (se estima que estaba a cien mil kilómetros de distancia), pero todavía se comportaba bien\".",
-        "quote_last": "",
+        "quote_time_case": "4:20 p.m.",
+        "quote_first": "“Por lo tanto, se realizaba un seguimiento rutinario cada cincuenta minutos. El último avistamiento reportado fue a las ",
+        "quote_last": " hora central de Menaya. Todavía se acercaba hacia el sol y estaba casi en el punto de mayor aproximación a Farholme (se estima que estaba a cien mil kilómetros de distancia), pero aún se comportaba bien\".",
         "title": "La sombra y la noche",
         "author": "Chris Walley",
         "sfw": "sfw"
     },
     {
-        "id": "002503",
+        "id": "002466",
         "time": "16:20",
-        "quote_time_case": "* Las cuatro y veinte minutos",
-        "quote_first": "A las cuatro y veinte - o, para decirlo de otra manera, más brusca, una hora y veinte minutos después de lo que parecía ser una esperanza razonable - la novia soltera, con la cabeza gacha y un padre colocado a cada lado de ella, fue ayudada a salir. del edificio.",
-        "quote_last": "",
-        "title": "Eleve alto la viga del techo, carpinteros",
-        "author": "J.D. Salinger",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002504",
-        "time": "16:20",
-        "quote_time_case": "16.20 h.",
+        "quote_time_case": "16.20",
         "quote_first": "",
-        "quote_last": " Ver televisión o un vídeo.",
+        "quote_last": " Ver la televisión o un vídeo",
         "title": "El curioso incidente del perro a medianoche",
         "author": "Mark Haddon",
         "sfw": "sfw"
     },
     {
-        "id": "002505",
+        "id": "002467",
         "time": "16:20",
-        "quote_time_case": "cuatro y veinte",
-        "quote_first": "De ahí que gritara la hora, que eran las ",
+        "quote_time_case": "las cuatro y veinte",
+        "quote_first": "De ahí sucedió que gritó la hora, que era ",
         "quote_last": ", con su gran voz a través del creciente crepúsculo; y de algún modo su volumen lo hacía parecer la proclamación de algo tremendo.",
         "title": "El oráculo del perro",
         "author": "G.K. Chesterton",
         "sfw": "sfw"
+    },
+    {
+        "id": "002468",
+        "time": "16:20",
+        "quote_time_case": "las cuatro y veinte",
+        "quote_first": "A las ",
+        "quote_last": "- o, para decirlo de otra manera, más contundente, una hora y veinte minutos después de lo que parecía ser una esperanza razonable - la novia soltera, su cabeza abajo, un padre colocado a cada lado de ella, fue ayudado a salir del edificio.",
+        "title": "Eleve alto la viga del techo, carpinteros",
+        "author": "J.D. Salinger",
+        "sfw": "unknown"
     }
 ]

@@ -2,9 +2,9 @@
     {
         "id": "000739",
         "time": "05:38",
-        "quote_time_case": "* 5:38",
-        "quote_first": "Buongiorno, Johnny, disse la nave. \"Sono le 5.38.\"<br>\"Cosa?\" disse Johnny. \"È sabato.\"<br>\"Te l'avevo detto che non gli sarebbe piaciuto\", ha detto Sol, presumibilmente a Kovac.<br>\"Non è certo una questione di simpatie o antipatie\", ha detto il computer. \"Ho delle informazioni che ritengo abbastanza importanti da trasmetterle il prima possibile, qualunque sia l'ora.\"",
-        "quote_last": "",
+        "quote_time_case": "5.38",
+        "quote_first": "Buongiorno, Johnny, disse la nave. \"Sono le ",
+        "quote_last": "\"<br>\"Cosa?\" disse Johnny. \"È sabato.\"<br>\"Te l'avevo detto che non gli sarebbe piaciuto,\" disse Sol, presumibilmente a Kovac.<br>\"Non è certo una questione di simpatie o antipatie,\" disse il computer. \"Ho delle informazioni che ritengo abbastanza importanti da trasmetterle il prima possibile, qualunque sia l'ora.\"",
         "title": "Johnny Mackintosh: Battaglia per la Terra",
         "author": "Keith Mansfield",
         "sfw": "unknown"

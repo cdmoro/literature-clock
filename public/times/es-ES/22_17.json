@@ -1,32 +1,32 @@
 [
     {
-        "id": "003390",
+        "id": "003338",
         "time": "22:17",
-        "quote_time_case": "* diez diecisiete",
-        "quote_first": "El médico entró en la sala de espera a las diez y diecisiete de esa noche.<br>Caridad se puso de pie. Había pasado gran parte del día con la cabeza gacha, orando en silencio. Estaba más allá de las lágrimas, al menos por el momento, y rodeó a su hija con un brazo protector, acercando a Molly a su costado.",
-        "quote_last": "",
+        "quote_time_case": "diez y diecisiete",
+        "quote_first": "El médico entró en la sala de espera a las ",
+        "quote_last": " esa noche.<br>Charity se puso de pie. Había pasado gran parte del día con la cabeza gacha, orando en silencio. Estaba más allá de las lágrimas, al menos por el momento, y rodeó a su hija con un brazo protector, acercando a Molly a su costado.",
         "title": "pequeño favor",
         "author": "Jim Butcher",
         "sfw": "sfw"
     },
     {
-        "id": "003391",
-        "time": "22:17",
-        "quote_time_case": "22:17",
-        "quote_first": "",
-        "quote_last": " Casette no quiere entrar.",
-        "title": "El diario de Bridget Jones",
-        "author": "Helen Fielding",
-        "sfw": "sfw"
-    },
-    {
-        "id": "003392",
+        "id": "003339",
         "time": "22:17",
         "quote_time_case": "diez y diecisiete minutos",
-        "quote_first": "Ya eran las ",
+        "quote_first": "Ya eran ",
         "quote_last": " cuando Phil cerró la puerta y apagó la luz del rellano, pero sabía que no podía irme de inmediato.",
         "title": "Nunca di mi consentimiento",
         "author": "Holly Archer",
         "sfw": "nsfw"
+    },
+    {
+        "id": "003340",
+        "time": "22:17",
+        "quote_time_case": "22:17",
+        "quote_first": "",
+        "quote_last": " Casette no entra.",
+        "title": "El diario de Bridget Jones",
+        "author": "Helen Fielding",
+        "sfw": "sfw"
     }
 ]

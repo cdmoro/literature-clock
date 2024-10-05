@@ -2,9 +2,9 @@
     {
         "id": "002954",
         "time": "19:42",
-        "quote_time_case": "* 7:42",
-        "quote_first": "Ele entrou no salão às 7h42 e ocupou seu lugar reservado, que escolheu após muita reflexão. Três carreiras na parte de trás do lado esquerdo. Ele até praticou levantar o remo o suficiente para que o leiloeiro o identificasse, sem que ninguém à sua frente tivesse a menor ideia de quem estava dando o lance.",
-        "quote_last": "",
+        "quote_time_case": "7:42",
+        "quote_first": "Ele entrou na sala de vendas às ",
+        "quote_last": " e ocupou seu assento reservado, que ele escolheu depois de pensar bastante. Três carreiras na parte de trás do lado esquerdo. Ele até praticou levantar o remo o suficiente para que o leiloeiro o identificasse sem que ninguém na frente dele tivesse a menor ideia de quem estava dando o lance.",
         "title": "Fechar os olhos",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "002955",
         "time": "19:42",
-        "quote_time_case": "* 7:42",
-        "quote_first": "Eram 7h42, pouco mais de uma hora desde que ele ligara para Frances. Ela já deveria ter chegado.",
-        "quote_last": "",
+        "quote_time_case": "7:42",
+        "quote_first": "Fazia ",
+        "quote_last": ", pouco mais de uma hora desde que ele ligou para Frances. Ela já deveria ter chegado.",
         "title": "Pecado original",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -22,8 +22,8 @@
     {
         "id": "002956",
         "time": "19:42",
-        "quote_time_case": "* 7:42",
-        "quote_first": "Então ele realmente não teve escolha a não ser fazer uma visita ocasional à sala de estar, onde os ponteiros do relógio de pêndulo agora indicavam, de forma bastante inequívoca, que eram 7h42.",
+        "quote_time_case": "7:42",
+        "quote_first": "Então ele realmente não teve escolha a não ser fazer uma visita ocasional à sala de estar, onde os ponteiros do relógio de pêndulo agora indicavam, de forma bastante inequívoca, que era ",
         "quote_last": "",
         "title": "A rodovia Lincoln",
         "author": "Amor Towles",
@@ -33,8 +33,8 @@
         "id": "002957",
         "time": "19:42",
         "quote_time_case": "sete e quarenta e dois minutos",
-        "quote_first": "“Eu estava na manga do ninja tecnológico há apenas algumas horas – ",
-        "quote_last": ", de acordo com a exibição do tempo no meu campo de visão superior esquerdo – mas não houve nenhum dos efeitos colaterais habituais de download.”",
+        "quote_first": "“Eu estava na manga do ninja tecnológico há apenas algumas horas—",
+        "quote_last": " de acordo com a exibição de tempo gravada em meu campo de visão superior esquerdo— mas não houve nenhum dos efeitos colaterais habituais de download.”",
         "title": "Carbono Alterado",
         "author": "Richard K. Morgan",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "002958",
         "time": "19:42",
-        "quote_time_case": "* Sete quarenta e dois",
-        "quote_first": "Olho meu relógio enquanto aceleramos ao longo da Strand. Sete e quarenta e dois. Estou começando a me sentir bastante animado. A rua lá fora ainda está iluminada e quente e os turistas caminham de camiseta e shorts, apontando para o Tribunal Superior. Deve ter sido um lindo dia de verão. Dentro do edifício Carter Spink com ar-condicionado, você não tem ideia de como está o clima no mundo real.",
-        "quote_last": "",
+        "quote_time_case": "Sete quarenta e dois",
+        "quote_first": "Olho meu relógio enquanto aceleramos ao longo da Strand. ",
+        "quote_last": ". Estou começando a me sentir bastante animado. A rua lá fora ainda está iluminada e quente e os turistas caminham de camiseta e shorts, apontando para o Tribunal Superior. Deve ter sido um lindo dia de verão. Dentro do edifício Carter Spink com ar-condicionado, você não tem ideia de como está o clima no mundo real.",
         "title": "A Deusa Não Doméstica",
         "author": "Sophie Kinsella",
         "sfw": "unknown"

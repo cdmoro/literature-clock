@@ -2,9 +2,9 @@
     {
         "id": "003529",
         "time": "23:40",
-        "quote_time_case": "* minuit moins vingt",
-        "quote_first": "Il était midi moins vingt minutes. C'est alors que j'ai entendu l'ascenseur. C'est en face de la suite de Sister - eh bien, j'imagine que vous l'avez vu. J'ai juste entendu le léger bruit des portes puis une sorte de ronronnement en descendant.",
-        "quote_last": "",
+        "quote_time_case": "douze moins vingt minutes",
+        "quote_first": "Il était environ ",
+        "quote_last": ". C'est alors que j'ai entendu l'ascenseur. C'est en face de la suite de Sister - eh bien, j'imagine que vous l'avez vu. J'ai juste entendu le léger bruit des portes puis une sorte de ronronnement en descendant.",
         "title": "Le patient privé",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "003530",
         "time": "23:40",
-        "quote_time_case": "* 20 minutes avant minuit",
-        "quote_first": "Grant remarqua l'heure. \"Il est minuit moins vingt. Qui veut m'aider à distribuer des verres et à verser du champagne ?\"",
-        "quote_last": "",
+        "quote_time_case": "minuit 20 minutes",
+        "quote_first": "Grant remarqua l'heure. \"Il est ",
+        "quote_last": ". Qui veut m'aider à distribuer des verres et à verser du champagne ?\"",
         "title": "Moine Guerrier",
         "author": "Ray Keating",
         "sfw": "sfw"
@@ -34,7 +34,7 @@
         "time": "23:40",
         "quote_time_case": "Vingt minutes avant minuit",
         "quote_first": "",
-        "quote_last": ", avant qu'Oliver ne mette fin aux festivités, elle a cédé à son impulsion et a envoyé un texto à son fils, lui rappelant leur couvre-feu convenu d'un commun accord.",
+        "quote_last": ", avant qu'Oliver ne mette fin aux festivités, elle céda à son impulsion et envoya un texto à son fils, lui rappelant leur couvre-feu convenu d'un commun accord.",
         "title": "Derrière le mensonge",
         "author": "Emilya Naymark",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "003533",
         "time": "23:40",
-        "quote_time_case": "* 11h40",
-        "quote_first": "Nous disposons tous de cartes et d'appareils de toutes sortes disponibles. Le professeur Van Helsing et moi devons prendre le train de 23 h 40 ce soir pour Veresti, où nous prendrons une voiture pour nous rendre au col de Borgo. Nous apportons beaucoup d'argent liquide, car nous devons acheter une voiture et des chevaux.",
-        "quote_last": "",
+        "quote_time_case": "11:40",
+        "quote_first": "Nous disposons tous de cartes et d'appareils de toutes sortes disponibles. Le professeur Van Helsing et moi devons prendre le train ",
+        "quote_last": " ce soir pour Veresti, où nous devons prendre une voiture pour nous rendre au col de Borgo. Nous apportons beaucoup d'argent liquide, car nous devons acheter une voiture et des chevaux.",
         "title": "Dracula",
         "author": "Bram Stoker",
         "sfw": "unknown"

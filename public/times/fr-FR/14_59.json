@@ -2,9 +2,9 @@
     {
         "id": "002227",
         "time": "14:59",
-        "quote_time_case": "* une minute à trois",
-        "quote_first": "À trois heures moins une minute, cinq cadres supérieurs entrèrent dans la pièce et Scott fut heureux de voir que Susan Anderson était parmi eux.",
-        "quote_last": "",
+        "quote_time_case": "trois heures moins une",
+        "quote_first": "À ",
+        "quote_last": ", cinq cadres supérieurs sont entrés dans la pièce et Scott était heureux de voir que Susan Anderson était parmi eux.",
         "title": "Honneur parmi les voleurs",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -14,7 +14,7 @@
         "time": "14:59",
         "quote_time_case": "Vers trois heures",
         "quote_first": "",
-        "quote_last": ", les quatre couples, effrayés de leur bonheur, dévalaient les montagnes russes, singulier édifice qui occupait alors les hauteurs de Beaujon, et dont la ligne ondulante était visible au-dessus des arbres des Champs-Élysées.",
+        "quote_last": " les quatre couples, effrayés de leur bonheur, dévalaient les montagnes russes, singulier édifice qui occupait alors les hauteurs de Beaujon, et dont la ligne ondulante était visible au-dessus des arbres des Champs Élysées.",
         "title": "Les misérables",
         "author": "Victor Hugo",
         "sfw": "unknown"
@@ -23,8 +23,8 @@
         "id": "002229",
         "time": "14:59",
         "quote_time_case": "14h59",
-        "quote_first": "Un télégraphe sans fil privé qui transmettrait par système de points et de tirets le résultat d'un handicap équin national (plat ou steeple) d'un ou plusieurs milles et stades remporté par un étranger avec une cote de 50 contre 1 à 15 h 8 min. à Ascot (heure de Greenwich), le message étant reçu et disponible pour les paris à Dublin à ",
-        "quote_last": ".",
+        "quote_first": "Un télégraphe sans fil privé qui transmettrait par système de points et de tirets le résultat d'un handicap équin national (plat ou steeple) d'un ou plusieurs milles et stades remporté par un étranger avec une cote de 50 contre 1 à 15 h 8 min. à Ascot (heure de Greenwich), le message étant reçu et disponible à des fins de paris à Dublin à ",
+        "quote_last": "",
         "title": "Ulysse",
         "author": "James Joyce",
         "sfw": "unknown"

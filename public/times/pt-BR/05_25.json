@@ -12,9 +12,9 @@
     {
         "id": "000713",
         "time": "05:25",
-        "quote_time_case": "* 5,25",
-        "quote_first": "O trem de George para casa vindo da New Street sai às 17h25. Na viagem de volta, raramente há estudantes.",
-        "quote_last": "",
+        "quote_time_case": "5.25",
+        "quote_first": "O trem de George para casa vindo da New Street sai às ",
+        "quote_last": ". Na viagem de volta, raramente há estudantes.",
         "title": "Artur e Jorge",
         "author": "Julian Barnes",
         "sfw": "unknown"

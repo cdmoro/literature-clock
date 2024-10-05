@@ -4,7 +4,7 @@
         "time": "10:40",
         "quote_time_case": "Dez e quarenta da manhã",
         "quote_first": "",
-        "quote_last": " não é um horário apropriado para começar a beber, então sugiro que você leve isso com você. Suponho que você não vai ficar muito tempo.",
+        "quote_last": " dificilmente é um momento apropriado para começar a beber, então sugiro que você leve com você. Suponho que você não vai ficar muito tempo.",
         "title": "O Paciente Privado",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "001595",
         "time": "10:40",
-        "quote_time_case": "* 10:40",
-        "quote_first": "Lá, às 10h40, os motores de plasma ligariam a todo vapor para iniciar a rápida aceleração em linha reta que lhes daria a velocidade de dez mil quilômetros por hora necessária para navegar rapidamente ao longo do túnel do Espaço Normal que liga o Portões.",
-        "quote_last": "",
+        "quote_time_case": "10:40",
+        "quote_first": "Lá, às ",
+        "quote_last": ", os motores de plasma ligariam a todo vapor para iniciar a rápida aceleração em linha reta que lhes daria os dez mil quilômetros-por- velocidade horária necessária para navegar rapidamente ao longo do túnel do Espaço Normal que liga os Portões.",
         "title": "A Sombra e a Noite",
         "author": "Chris Walley",
         "sfw": "sfw"
@@ -32,9 +32,9 @@
     {
         "id": "001597",
         "time": "10:40",
-        "quote_time_case": "* 10:40",
-        "quote_first": "10h40: Ligação de Katharina perguntando se eu realmente havia dito o que estava no noticiário.",
-        "quote_last": "",
+        "quote_time_case": "10:40",
+        "quote_first": "",
+        "quote_last": ": Ligação de Katharina perguntando se eu realmente tinha dito o que estava no noticiário.",
         "title": "A honra perdida de Katharina Blum",
         "author": "Heinrich Böll",
         "sfw": "unknown"

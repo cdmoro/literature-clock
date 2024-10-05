@@ -1,26 +1,16 @@
 [
     {
-        "id": "001559",
-        "time": "10:11",
-        "quote_time_case": "* diez y once minutos",
-        "quote_first": "Era una hermosa mañana de verano. Las manecillas del reloj holandés del vestíbulo marcaban las nueve y trece minutos; los del reloj de oro del salón marcaban las diez y once; los del reloj del carruaje en la estantería marcaban las seis menos catorce minutos.",
-        "quote_last": "",
-        "title": "Tres hombres y una criada",
-        "author": "P.G. Wodehouse",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001560",
+        "id": "001534",
         "time": "10:11",
         "quote_time_case": "10:11",
-        "quote_first": "“Bien”, dijo Florentyna Kane y miró su reloj. Eran las ",
+        "quote_first": "“Bien”, dijo Florentyna Kane y miró su reloj. Era ",
         "quote_last": ". Los dígitos cambiaron (y fueron reemplazados por el ritmo de los latidos de su corazón): 72; normal, pensó.",
         "title": "¿Se lo contamos al presidente?",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001561",
+        "id": "001535",
         "time": "10:11",
         "quote_time_case": "10:11",
         "quote_first": "",
@@ -28,5 +18,15 @@
         "title": "Los pecados del padre",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
+    },
+    {
+        "id": "001536",
+        "time": "10:11",
+        "quote_time_case": "las diez y once minutos",
+        "quote_first": "Era una hermosa mañana de verano. Las manecillas del reloj holandés del vestíbulo marcaban las nueve y trece minutos; los del reloj de oro del salón a las ",
+        "quote_last": "; los del reloj del carruaje en la estantería marcaban las seis menos catorce minutos.",
+        "title": "Tres hombres y una criada",
+        "author": "P.G. Wodehouse",
+        "sfw": "unknown"
     }
 ]

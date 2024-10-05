@@ -1,6 +1,16 @@
 [
     {
-        "id": "000379",
+        "id": "000373",
+        "time": "02:46",
+        "quote_time_case": "2:46 A.M.",
+        "quote_first": "NUNCA SABEMOS, AL PRIMERO, si nos dirigimos hacia una olla o hacia una mancha. Anoche ",
+        "quote_last": ", se encendieron las luces del piso de arriba. Las campanas también sonaron, pero no puedo decir que alguna vez las escuché. En diez segundos, me vestí y salí por la puerta de mi habitación en la estación.",
+        "title": "El guardián de mi hermana",
+        "author": "Jodi Picoult",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000374",
         "time": "02:46",
         "quote_time_case": "2.46 am",
         "quote_first": "",
@@ -10,17 +20,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000380",
-        "time": "02:46",
-        "quote_time_case": "2:46 a.m.",
-        "quote_first": "NUNCA SABEMOS, AL PRIMERO, si nos dirigimos hacia una olla o hacia una mancha. A las ",
-        "quote_last": " Anoche se encendieron las luces del piso de arriba. Las campanas también sonaron, pero no puedo decir que alguna vez las escuché. En diez segundos, me vestí y salí por la puerta de mi habitación en la estación.",
-        "title": "El guardián de mi hermana",
-        "author": "Jodi Picoult",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000381",
+        "id": "000375",
         "time": "02:46",
         "quote_time_case": "Dos cuarenta y seis",
         "quote_first": "Vicki se puso las gafas en la cara y miró el reloj. ",

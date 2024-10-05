@@ -1,22 +1,22 @@
 [
     {
-        "id": "000336",
+        "id": "000330",
         "time": "02:22",
-        "quote_time_case": "2:22 a.m.",
-        "quote_first": "De repente su estómago gruñó. Estaba demasiado nerviosa para comer mucho después del accidente y ahora el hambre la atormenta con fuerza.<br>Volvió a mirar el reloj.<br>",
+        "quote_time_case": "las dos y veintidós minutos",
+        "quote_first": "Después de dos visitas más, el practicante más célebre le dijo a Popanilla que su trastorno era \"incuestionablemente nervioso\"; que se había excitado demasiado al hablar demasiado; que en el futuro deberá contar cinco entre cada palabra que pronuncie, nunca hacer preguntas y evitar la sociedad; es decir, nunca permanezca en una fiesta nocturna por ningún motivo más tarde de ",
+        "quote_last": ", y nunca se deje inducir por ninguna persuasión a cenar fuera más de una vez en el mismo día. el mismo día.",
+        "title": "El viaje del Capitán Popanilla",
+        "author": "Benjamin Disraeli",
+        "sfw": "sfw"
+    },
+    {
+        "id": "000331",
+        "time": "02:22",
+        "quote_time_case": "2:22 A.M.",
+        "quote_first": "De repente su estómago gruñó. Había estado demasiado nerviosa para comer mucho después del accidente, y ahora el hambre la atormenta con fuerza.<br>Volvió a mirar el reloj.<br>",
         "quote_last": "",
         "title": "Nombre en clave: Princesa",
         "author": "Christina Skye",
         "sfw": "unknown"
-    },
-    {
-        "id": "000337",
-        "time": "02:22",
-        "quote_time_case": "las dos y veintidós minutos",
-        "quote_first": "Después de dos visitas más, el practicante más célebre le dijo a Popanilla que su trastorno era \"incuestionablemente nervioso\"; que se había excitado demasiado al hablar demasiado; que en el futuro deberá contar cinco entre cada palabra que pronuncie, nunca hacer preguntas y evitar la sociedad; es decir, nunca permanezca en una fiesta nocturna por ningún motivo más tarde de ",
-        "quote_last": ", y nunca se deje inducir por ninguna persuasión a cenar fuera más de una vez en el mismo día.",
-        "title": "El viaje del Capitán Popanilla",
-        "author": "Benjamin Disraeli",
-        "sfw": "sfw"
     }
 ]

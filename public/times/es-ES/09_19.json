@@ -1,20 +1,20 @@
 [
     {
-        "id": "001361",
+        "id": "001339",
         "time": "09:19",
-        "quote_time_case": "* Las nueve y diecinueve minutos de la mañana",
-        "quote_first": "Según esto, hay marea alta a tope y carga a las nueve y diecinueve minutos de la mañana: observé que la inundación venía desde el sur, aunque en Restoration Island pensé que venía desde el norte.",
-        "quote_last": "",
-        "title": "Motín a bordo",
+        "quote_time_case": "nueve y diecinueve minutos de la mañana",
+        "quote_first": "Según esto, hay marea alta a tope y carga a las ",
+        "quote_last": ": observé que la inundación venía desde el sur, aunque en Restoration Island, Pensé que venía del norte.",
+        "title": "Motín en la recompensa",
         "author": "Captain William Bligh",
         "sfw": "sfw"
     },
     {
-        "id": "001362",
+        "id": "001340",
         "time": "09:19",
         "quote_time_case": "9:19 am",
         "quote_first": "",
-        "quote_last": " sentado en la cama, mirando por la ventana.",
+        "quote_last": " se sentó en la cama, mirando por la ventana.",
         "title": "Una fracción del todo",
         "author": "Steve Toltz",
         "sfw": "sfw"

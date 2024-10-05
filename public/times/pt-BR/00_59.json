@@ -2,9 +2,9 @@
     {
         "id": "000151",
         "time": "00:59",
-        "quote_time_case": "* um minuto para uma",
-        "quote_first": "Apenas o barulho de um carro atrasado perturbava levemente o silêncio.<br>Olhei meu relógio de pulso. Isso mostrou um minuto para um. Quando levantei os olhos, um relógio impaciente em algum lugar confirmou sua história.<br>Com um bocejo, conjurei o terrier para dormir e peguei o interruptor.<br>Ao fazer isso, ele rosnou novamente.",
-        "quote_last": "",
+        "quote_time_case": "um minuto para um",
+        "quote_first": "Apenas o barulho de um carro atrasado perturbava levemente o silêncio.<br>Olhei meu relógio de pulso. Isso mostrou ",
+        "quote_last": ". Quando levantei os olhos, um relógio impaciente em algum lugar confirmou sua história.<br>Com um bocejo, conjurei o terrier para dormir e peguei o interruptor.<br>Ao fazer isso, ele rosnou novamente.",
         "title": "Berry e companhia.",
         "author": "Dornford Yates",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000152",
         "time": "00:59",
-        "quote_time_case": "* Cerca de uma hora",
-        "quote_first": "Que horas são? ela disse.<br>\"Por volta de uma hora.\"<br>\"De manhã?\"<br>A amiga de Herera olhou para ela. \"Não, há um eclipse total do sol.\"",
-        "quote_last": "",
+        "quote_time_case": "Por volta de uma hora",
+        "quote_first": "Que horas são agora? ela disse.<br>\"",
+        "quote_last": ".\"<br>\"De manhã?\"<br>O amigo de Herera olhou para ela. \"Não, há um eclipse total do sol.\"",
         "title": "Liberdade",
         "author": "Jonathan Frantzen",
         "sfw": "unknown"
@@ -24,7 +24,7 @@
         "time": "00:59",
         "quote_time_case": "quase uma hora",
         "quote_first": "Era ",
-        "quote_last": " quando Sherlock Holmes voltou de sua excursão. Ele segurava na mão uma folha de papel azul, rabiscada com anotações e números.",
+        "quote_last": " quando Sherlock Holmes retornou de sua excursão. Ele segurava na mão uma folha de papel azul, rabiscada com anotações e números.",
         "title": "As Aventuras de Sherlock Holmes",
         "author": "Sir Arthur Conan Doyle",
         "sfw": "unknown"
@@ -32,9 +32,9 @@
     {
         "id": "000154",
         "time": "00:59",
-        "quote_time_case": "* quase uma hora",
-        "quote_first": "Olhei atentamente para ela, enquanto ela me fazia aquela pergunta singular. Já era quase uma da tarde. Tudo o que pude distinguir distintamente à luz da lua foi um rosto jovem e incolor, magro e afilado nas bochechas e no queixo; olhos grandes, graves e melancolicamente atentos; lábios nervosos e incertos; e cabelos claros de tom amarelo acastanhado claro.",
-        "quote_last": "",
+        "quote_time_case": "quase uma hora",
+        "quote_first": "Olhei atentamente para ela, enquanto ela me fazia aquela pergunta singular. Era então ",
+        "quote_last": ". Tudo o que pude distinguir distintamente à luz da lua foi um rosto jovem e incolor, magro e afilado nas bochechas e no queixo; olhos grandes, graves e melancolicamente atentos; lábios nervosos e incertos; e cabelos claros de tom amarelo acastanhado claro.",
         "title": "A Mulher de Branco",
         "author": "Wilkie Collins",
         "sfw": "unknown"

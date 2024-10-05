@@ -2,9 +2,9 @@
     {
         "id": "000245",
         "time": "01:45",
-        "quote_time_case": "* 1:45",
-        "quote_first": "Finalement j'acceptai un verre de bordeaux. Cela semblait à la fois grossier et censuré de le laisser boire seul. L'horloge de la voiture sonna 1h45 avant qu'il ne se réveille et dit : \"Désolé, cousin. Plutôt ivre. Réjouis-toi de ton épaule. Au lit, pour dormir, peut-être pour rêver.\"",
-        "quote_last": "",
+        "quote_time_case": "1:45",
+        "quote_first": "Finalement j'acceptai un verre de bordeaux. Cela semblait à la fois grossier et censuré de le laisser boire seul. L'horloge de la voiture s'est bloquée ",
+        "quote_last": " avant qu'il se réveille et dit : \"Désolé, Cousin. Plutôt ivre. Réjouis-toi de ton épaule. Au lit, pour dormir, peut-être rêver.\"",
         "title": "Le meurtre du gui",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000246",
         "time": "01:45",
-        "quote_time_case": "* deux heures moins quinze",
-        "quote_first": "Quand il était deux heures moins dix ou quinze minutes, le diacre entrait ; c'était un jeune homme dégingandé de vingt-deux ans, aux cheveux longs, sans barbe et avec une moustache à peine perceptible. En entrant dans le salon, il se signa devant l'icône, sourit et tendit la main à Von Koren.<br>\"Bonjour\", dit froidement le zoologiste. \"Où étais-tu?\"",
-        "quote_last": "",
+        "quote_time_case": "deux heures moins quinze",
+        "quote_first": "Quand il était dix ou ",
+        "quote_last": " le diacre entrait ; c'était un jeune homme dégingandé de vingt-deux ans, aux cheveux longs, sans barbe et avec une moustache à peine perceptible. En entrant dans le salon, il se signa devant l'icône, sourit et tendit la main à Von Koren.<br>\"Bonjour\", dit froidement le zoologiste. \"Où étais-tu?\"",
         "title": "Le duel",
         "author": "Anton Pavlovich Chekhov",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "000247",
         "time": "01:45",
-        "quote_time_case": "* 1h45 du matin",
-        "quote_first": "Kaplan ressemblait encore plus à l'enfer que d'habitude. La peau sur le dessus de ses joues et autour de ses yeux était couverte de cloques à cause des engelures. Sa claudication indiquait qu'il avait probablement aussi gelé quelques orteils. La dernière communication de sa part la veille au soir avait eu lieu à 1 h 45 du matin, lorsqu'il a téléphoné par radio pour faire savoir au département qu'il abandonnait finalement.",
-        "quote_last": "",
+        "quote_time_case": "1h45 du matin",
+        "quote_first": "Kaplan ressemblait encore plus à l'enfer que d'habitude. La peau sur le dessus de ses joues et autour de ses yeux était couverte de cloques à cause des engelures. Sa claudication indiquait qu'il avait probablement aussi eu des gelures à certains orteils. La dernière communication de sa part la nuit précédente avait eu lieu à ",
+        "quote_last": ", lorsqu'il a téléphoné par radio pour faire savoir au département qu'il abandonnait finalement.",
         "title": "Corpus Delicti",
         "author": "William Kent Krueger",
         "sfw": "nsfw"

@@ -1,6 +1,6 @@
 [
     {
-        "id": "001943",
+        "id": "001913",
         "time": "12:27",
         "quote_time_case": "27",
         "quote_first": "12.25 h. 26. ",
@@ -10,11 +10,11 @@
         "sfw": "unknown"
     },
     {
-        "id": "001944",
+        "id": "001914",
         "time": "12:27",
-        "quote_time_case": "* doce veintisiete",
-        "quote_first": "Durante tres décadas, el tiempo había estado congelado en las doce y veintisiete. La historia era que las manos se habían detenido en el momento exacto en que murió el padre de Corcoran O'Connor. Podría haber sido cierto.",
-        "quote_last": "",
+        "quote_time_case": "doce veintisiete",
+        "quote_first": "Durante tres décadas, el tiempo había estado congelado en ",
+        "quote_last": ". La historia era que las manos se habían detenido en el momento exacto en que murió el padre de Corcoran O'Connor. Podría haber sido cierto.",
         "title": "Aguas fronterizas",
         "author": "William Kent Krueger",
         "sfw": "sfw"

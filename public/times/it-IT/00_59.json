@@ -2,9 +2,9 @@
     {
         "id": "000151",
         "time": "00:59",
-        "quote_time_case": "* un minuto all'una",
-        "quote_first": "Solo il clacson di un'auto in ritardo disturbò leggermente il silenzio.<br>Guardai l'orologio da polso. Questo ha mostrato un minuto a uno. Mentre alzavo gli occhi, un orologio impaziente da qualche parte ha confermato la sua storia.<br>Con uno sbadiglio ho evocato il terrier di addormentarsi e ho raggiunto l'interruttore.<br>Mentre lo facevo, ha ringhiato di nuovo.",
-        "quote_last": "",
+        "quote_time_case": "un minuto a uno",
+        "quote_first": "Solo il clacson di un'auto in ritardo disturbò leggermente il silenzio.<br>Guardai il mio orologio da polso. Questo mostrava ",
+        "quote_last": ". Mentre alzavo gli occhi, un orologio impaziente da qualche parte ha confermato la sua storia.<br>Con uno sbadiglio ho evocato il terrier affinché si addormentasse e ho raggiunto l'interruttore.<br>Mentre lo facevo, ha ringhiato di nuovo.",
         "title": "Berry e Co.",
         "author": "Dornford Yates",
         "sfw": "sfw"
@@ -33,7 +33,7 @@
         "id": "000154",
         "time": "00:59",
         "quote_time_case": "quasi l'una",
-        "quote_first": "La guardai attentamente, mentre mi faceva quella singolare domanda. Era ormai ",
+        "quote_first": "La guardai attentamente, mentre mi faceva quella singolare domanda. Era allora ",
         "quote_last": ". Tutto ciò che potevo distinguere distintamente alla luce della luna era un viso incolore, giovanile, magro e affilato intorno alle guance e al mento; occhi grandi, gravi, malinconicamente attenti; labbra nervose e incerte; e capelli chiari di una tonalità giallo-brunastra pallida.",
         "title": "La donna in bianco",
         "author": "Wilkie Collins",

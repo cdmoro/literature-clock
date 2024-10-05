@@ -1,36 +1,36 @@
 [
     {
-        "id": "001340",
-        "time": "09:12",
-        "quote_time_case": "* Las nueve y doce minutos",
-        "quote_first": "Entonces, un miércoles por la mañana, a las nueve y doce minutos EDT, las Pléyades colgaban suspendidas, en lo alto de la Cancillería de Empresas del Sistema Solar, Incorporada.",
-        "quote_last": "",
-        "title": "Los primos de la galaxia",
-        "author": "E.E. Smith",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001341",
-        "time": "09:12",
-        "quote_time_case": "* Las nueve y doce minutos",
-        "quote_first": "La enorme puerta de hierro no se abrió hasta las nueve y doce. Harry se levantó de un salto cuando un guardia de la prisión se hizo a un lado y permitió que entrara un hombre alto y elegante con cabello gris plateado.",
-        "quote_last": "",
-        "title": "Los pecados del padre",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001342",
+        "id": "001318",
         "time": "09:12",
         "quote_time_case": "9:12",
-        "quote_first": "Cuando apareció el Monumento a Jefferson, Dexter miró su reloj una vez más. Eran las ",
+        "quote_first": "Cuando apareció el Monumento a Jefferson, Dexter miró su reloj una vez más. Era ",
         "quote_last": ". “Fácilmente es tiempo”, comentó. Menos de un minuto después, se vieron atrapados en un atasco.",
         "title": "Honor entre ladrones",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001343",
+        "id": "001319",
+        "time": "09:12",
+        "quote_time_case": "nueve y doce minutos",
+        "quote_first": "Entonces, un miércoles por la mañana, a las ",
+        "quote_last": " EDT, las Pléyades colgaban suspendidas, en lo alto de la Cancillería de Empresas del Sistema Solar, Incorporada.",
+        "title": "Los primos de la galaxia",
+        "author": "E.E. Smith",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001320",
+        "time": "09:12",
+        "quote_time_case": "las nueve y doce minutos",
+        "quote_first": "La enorme puerta de hierro no se abrió hasta ",
+        "quote_last": ". Harry se levantó de un salto cuando un guardia de la prisión se hizo a un lado y permitió que entrara un hombre alto y elegante con cabello gris plateado.",
+        "title": "Los pecados del padre",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001321",
         "time": "09:12",
         "quote_time_case": "9:12 am",
         "quote_first": "",

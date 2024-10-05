@@ -1,30 +1,30 @@
 [
     {
-        "id": "000301",
+        "id": "000295",
         "time": "02:05",
-        "quote_time_case": "2.05",
-        "quote_first": "A las ",
-        "quote_last": " las medias burbujeantes se cayeron.",
-        "title": "Campos de Londres",
-        "author": "Martin Amis",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000302",
-        "time": "02:05",
-        "quote_time_case": "2:05 a.m.",
+        "quote_time_case": "2:05 A.M.",
         "quote_first": "",
-        "quote_last": ", Flushing, Queens<br>Su teléfono celular, en modo vibración, descansaba sobre la mesa de noche junto a la cama.",
+        "quote_last": ", Flushing, Queens<br>Su teléfono celular, en modo vibración, descansaba sobre la mesa de noche al lado de la cama.",
         "title": "Monje guerrero",
         "author": "Ray Keating",
         "sfw": "sfw"
     },
     {
-        "id": "000303",
+        "id": "000296",
+        "time": "02:05",
+        "quote_time_case": "2.05",
+        "quote_first": "Al ",
+        "quote_last": " las medias gaseosas se cayeron.",
+        "title": "Campos de Londres",
+        "author": "Martin Amis",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000297",
         "time": "02:05",
         "quote_time_case": "Las dos y cinco minutos",
         "quote_first": "Luego empezó a tocar el timbre. Al cabo de unos diez minutos apareció su ayuda de cámara, a medio vestir y con aspecto de estar muy somnoliento. \"Lamento haber tenido que despertarte, Francis\", dijo, interviniendo; \"pero había olvidado mi llave. ¿Qué hora es?\"<br>\"",
-        "quote_last": ", señor\", respondió el hombre, mirando el reloj y bostezando.<br>\"¿Las dos y cinco minutos? ¡Qué tarde tan horrible! Debes despertarme mañana a las nueve. Tengo trabajo que hacer.",
+        "quote_last": ", señor\", respondió el hombre, mirando el reloj. y bostezando.<br>\"¿Las dos y cinco minutos? ¡Qué tarde tan horrible! Debes despertarme mañana a las nueve. Tengo trabajo que hacer\".",
         "title": "El retrato de Dorian Gray",
         "author": "Oscar Wilde",
         "sfw": "unknown"

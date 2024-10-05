@@ -1,32 +1,32 @@
 [
     {
-        "id": "002511",
+        "id": "002474",
         "time": "16:25",
-        "quote_time_case": "* 16:25",
-        "quote_first": "“Aparecerás unos minutos después de las 4:20, Jean-Pierre, y luego tú, James, alrededor de las 4:25 p.m. Pero sigue exactamente la misma rutina, actúa como si la reunión hubiera tenido lugar, como estaba previsto inicialmente, en la Garden Party y todos hubiéramos caminado juntos hasta el Clarendon.",
-        "quote_last": "",
+        "quote_time_case": "4:25",
+        "quote_first": "Saltó en St. Paul's y, aunque caminaba lentamente, estaba parado afuera del banco de Kaufman en Cheapside por ",
+        "quote_last": ".",
+        "title": "Más poderoso que la espada",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002475",
+        "time": "16:25",
+        "quote_time_case": "4:25 p.m.",
+        "quote_first": "“Aparecerás unos minutos después de las 4:20, Jean-Pierre, y luego tú, James, alrededor de ",
+        "quote_last": " Pero sigue exactamente la misma rutina, actúa como si la reunión hubiera tenido lugar, como se planeó originalmente, en la Garden Party y todos hubiéramos caminado juntos hasta el Clarendon”.",
         "title": "Ni un centavo más, ni un centavo menos",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "002512",
+        "id": "002476",
         "time": "16:25",
-        "quote_time_case": "* 16:25",
-        "quote_first": "Gimo audiblemente. Son las 4:25 p.m. — Puedo escabullirme y decir que no vi el correo electrónico.",
-        "quote_last": "",
+        "quote_time_case": "4:25 p.m.",
+        "quote_first": "Gimo audiblemente. Son ",
+        "quote_last": ". Puedo escabullirme y decir que no vi el correo electrónico.",
         "title": "La chica que era",
         "author": "Jenneva Rose",
-        "sfw": "sfw"
-    },
-    {
-        "id": "002513",
-        "time": "16:25",
-        "quote_time_case": "4:25",
-        "quote_first": "Saltó en St. Paul's y, aunque caminaba lentamente, estaba parado afuera del banco Kaufman en Cheapside a las ",
-        "quote_last": ".",
-        "title": "Más poderoso que la espada",
-        "author": "Jeffrey Archer",
         "sfw": "sfw"
     }
 ]

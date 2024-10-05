@@ -1,10 +1,10 @@
 [
     {
-        "id": "002331",
+        "id": "002295",
         "time": "15:13",
-        "quote_time_case": "* Las tres y trece minutos",
-        "quote_first": "El ascensor se movió. Eran las tres y trece minutos. La campana emitió su ping. Dos hombres salieron del ascensor, Alan Norman y otro hombre. Tony Blair entró en la oficina.",
-        "quote_last": "",
+        "quote_time_case": "las tres y trece minutos",
+        "quote_first": "El ascensor se movió. Eran ",
+        "quote_last": ". La campana emitió su ping. Dos hombres salieron del ascensor, Alan Norman y otro hombre. Tony Blair entró en la oficina.",
         "title": "Asesino virtual",
         "author": "Simon Kearns",
         "sfw": "unknown"

@@ -2,7 +2,7 @@
     {
         "id": "001088",
         "time": "08:01",
-        "quote_time_case": "oito e um",
+        "quote_time_case": "oito-um",
         "quote_first": "Oito e um, tique-taque, ",
         "quote_last": " horas, fora para a escola, fora para o trabalho, corra, corra, oito e um!",
         "title": "Cairá uma chuva leve",
@@ -14,7 +14,7 @@
         "time": "08:01",
         "quote_time_case": "8h01",
         "quote_first": "",
-        "quote_last": ".<br>O peito de Dore Peretz ainda parecia estar em chamas, uma sensação de queimação que parecia se espalhar por toda a frente de seu torso; na verdade, ele se sentia uma merda.",
+        "quote_last": "<br>O peito de Dore Peretz ainda parecia estar em chamas, uma sensação de queimação que parecia se espalhar por toda a frente de seu torso; na verdade, ele se sentia uma merda.",
         "title": "Projeto Ciclope",
         "author": "Thomas Hoover",
         "sfw": "nsfw"

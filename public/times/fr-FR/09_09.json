@@ -4,7 +4,7 @@
         "time": "09:09",
         "quote_time_case": "9h09",
         "quote_first": "",
-        "quote_last": ", allongé dans mon lit, regardant le mur.",
+        "quote_last": " allongé dans le lit, regardant le mur.",
         "title": "Une fraction du tout",
         "author": "Steve Toltz",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "001312",
         "time": "09:09",
-        "quote_time_case": "* neuf heures neuf heures du matin",
-        "quote_first": "« Peut-être devrais-je régler ce problème au cas où l'opération se passerait mal. Cela ne prendra que quelques minutes et je suis sûr qu’il restera suffisamment de jour pour l’opération, car, d’après mon Pulsar, il n’est que neuf heures du matin. Ha!\"",
-        "quote_last": "",
+        "quote_time_case": "neuf heures neuf heures du matin",
+        "quote_first": "« Peut-être devrais-je régler ce problème au cas où l'opération se passerait mal. Cela ne prendra que quelques minutes, et je suis sûr qu'il restera suffisamment de jour pour l'opération, car, d'après mon Pulsar, il n'est que ",
+        "quote_last": ". Ha!\"",
         "title": "Type de survivant",
         "author": "Stephen King",
         "sfw": "unknown"

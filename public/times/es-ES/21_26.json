@@ -1,22 +1,22 @@
 [
     {
-        "id": "003269",
+        "id": "003218",
         "time": "21:26",
-        "quote_time_case": "21:26",
-        "quote_first": "Los terroristas, comenzó, \"cruzaron la frontera anoche a las ",
-        "quote_last": ". Se presentaron cuatro pasaportes al funcionario de inmigración para que los sellara. Tres eran de origen sueco y uno de Irak\".",
-        "title": "Honor entre ladrones",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "003270",
-        "time": "21:26",
-        "quote_time_case": "las nueve y veintiséis minutos",
+        "quote_time_case": "nueve y veintiséis minutos",
         "quote_first": "Eran ",
         "quote_last": ". Como había esperado, y como había sucedido todas las noches desde que Curry había instalado el cable privado en su residencia de Madison Avenue, el operador del extremo norte de la línea se desconectó.",
         "title": "Los recolectores de cables",
         "author": "Arthur Stringer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "003219",
+        "time": "21:26",
+        "quote_time_case": "21.26",
+        "quote_first": "Los terroristas, comenzó, \"cruzaron la frontera anoche ",
+        "quote_last": ". Se presentaron cuatro pasaportes al funcionario de inmigración para que los sellara. Tres eran de origen sueco y uno de origen Irak.\"",
+        "title": "Honor entre ladrones",
+        "author": "Jeffrey Archer",
         "sfw": "sfw"
     }
 ]

@@ -1,6 +1,6 @@
 [
     {
-        "id": "000644",
+        "id": "000634",
         "time": "04:51",
         "quote_time_case": "4:51 A.M.",
         "quote_first": "",
@@ -10,11 +10,11 @@
         "sfw": "nsfw"
     },
     {
-        "id": "000645",
+        "id": "000635",
         "time": "04:51",
-        "quote_time_case": "nueve minutos para las cinco de la mañana.",
-        "quote_first": "¿Más temprano? Faltan ",
-        "quote_last": " ¿Quién se levantaría tan temprano?<br>\"Oh, todos somos madrugadores\".",
+        "quote_time_case": "nueve minutos menos las cinco de la mañana",
+        "quote_first": "¿Más temprano? Son ",
+        "quote_last": "- ¿quién se levantaría tan temprano?<br>\"Oh, todos somos madrugadores\".",
         "title": "Regalos de los Reyes Magos",
         "author": "Jean Johnson",
         "sfw": "sfw"

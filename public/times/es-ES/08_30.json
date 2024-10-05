@@ -1,86 +1,56 @@
 [
     {
-        "id": "001176",
+        "id": "001156",
         "time": "08:30",
-        "quote_time_case": "* Ocho y media",
-        "quote_first": "A las ocho y media se abre la puerta de la sala y entran dos técnicos, oliendo a vino de uva; Los técnicos siempre se mueven al paso rápido o al trote porque siempre están tan inclinados hacia adelante que tienen que moverse rápido para mantenerse de pie.",
-        "quote_last": "",
-        "title": "Uno volo sobre el nido del cuco",
-        "author": "Ken Kesey",
+        "quote_time_case": "ocho y media de la mañana",
+        "quote_first": "Gard permaneció inclinado sobre el corte en la tierra durante algún tiempo, iluminando las negras profundidades con la gran luz. Aquí estaba, sólo ",
+        "quote_last": ", y ya quería tomar una copa.",
+        "title": "Los Tommyknockers",
+        "author": "Stephen King",
         "sfw": "unknown"
     },
     {
-        "id": "001177",
-        "time": "08:30",
-        "quote_time_case": "8:30",
-        "quote_first": "Son alrededor de las ",
-        "quote_last": ". El sol entra por las ventanas de la derecha. Cuando se levanta el telón, la familia acaba de terminar el desayuno.",
-        "title": "El largo viaje del día hacia la noche",
-        "author": "Eugene O'Neill",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001178",
-        "time": "08:30",
-        "quote_time_case": "8:30",
-        "quote_first": "El 25 de julio a las ",
-        "quote_last": " horas la perra Novaya muere al dar a luz. A las 10 en punto la bajan a su fresca tumba, a las 7:30 de esa misma tarde vemos nuestros primeros témpanos y los saludamos deseando ser los últimos.",
-        "title": "Los terrores del hielo y la oscuridad",
-        "author": "Christoph Ransmayr",
-        "sfw": "nsfw"
-    },
-    {
-        "id": "001179",
-        "time": "08:30",
-        "quote_time_case": "8:30 a.m.",
-        "quote_first": "A las ",
-        "quote_last": " Filomina entró en Ale House blanca, redonda y jadeando por los ciento cuarenta y seis kilos de más que llevaba en su pequeño cuerpo.",
-        "title": "Sopa De Granada",
-        "author": "Marsha Mehran",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001180",
+        "id": "001157",
         "time": "08:30",
         "quote_time_case": "ocho y media",
         "quote_first": "A las ",
-        "quote_last": " irrumpió Millicent Hammitt, sin llamar previamente, para despedirse.",
+        "quote_last": " Millicent Hammitt irrumpió sin llamar previamente a la puerta para despedirse.",
         "title": "La Torre Negra",
         "author": "P.D. James",
         "sfw": "unknown"
     },
     {
-        "id": "001181",
+        "id": "001158",
         "time": "08:30",
         "quote_time_case": "ocho y media",
-        "quote_first": "Normalmente, a Sir John lo despertaban todas las mañanas a las ",
-        "quote_last": " de la mañana un mayordomo que le llevaba el desayuno, otro mayordomo que le llevaba la ropa, un tercer mayordomo cuyo trabajo era alimentar a Adolf y Stalin si era necesario, y un cuarto mayordomo que básicamente estaba un repuesto.",
+        "quote_first": "Normalmente, a Sir John lo despertaba ",
+        "quote_last": " cada mañana un mayordomo que le llevaba el desayuno, otro mayordomo que le llevaba la ropa, un tercer mayordomo cuyo trabajo era alimentar a Adolf y Stalin si era necesario, y un cuarto mayordomo que era básicamente de repuesto.",
         "title": "Johnny y la bomba",
         "author": "Terry Pratchett",
         "sfw": "unknown"
     },
     {
-        "id": "001182",
+        "id": "001159",
         "time": "08:30",
         "quote_time_case": "ocho y media",
-        "quote_first": "Afuera, el viento seguía arreciando. De vez en cuando emitía un grito espeluznante alrededor del alero que le hacía levantar la vista de su libro. Hacia las ",
-        "quote_last": " empezó a nevar. Era pesado y húmedo, cubriendo rápidamente su ventana y bloqueando su vista de las montañas. En cierto modo, eso fue peor. La nieve también había bloqueado las ventanas del Overlook.",
+        "quote_first": "Afuera, el viento seguía arreciando. De vez en cuando emitía un grito espeluznante alrededor del alero que le hacía levantar la vista de su libro. Alrededor de ",
+        "quote_last": ", comenzó a nevar. Era pesado y húmedo, cubriendo rápidamente su ventana y bloqueando su vista de las montañas. En cierto modo, eso fue peor. La nieve también había bloqueado las ventanas del Overlook.",
         "title": "Doctor Dormir",
         "author": "Stephen King",
         "sfw": "unknown"
     },
     {
-        "id": "001183",
+        "id": "001160",
         "time": "08:30",
         "quote_time_case": "ocho y media",
-        "quote_first": "Habíamos hecho los preparativos para el almuerzo del día anterior, y cuando entré con mi viejo coche en la entrada del gran edificio victoriano verde a las ",
-        "quote_last": " de la mañana del martes, Annie y Mike estaban listos para partir. Milo también.",
-        "title": "Joyland",
+        "quote_first": "Habíamos hecho nuestros arreglos para el almuerzo del día anterior, y cuando entré con mi viejo auto en el camino de entrada del gran edificio victoriano verde a las ",
+        "quote_last": " el martes por la mañana, Annie y Mike estaba listo para partir. Milo también.",
+        "title": "Joylandia",
         "author": "Stephen King",
         "sfw": "unknown"
     },
     {
-        "id": "001184",
+        "id": "001161",
         "time": "08:30",
         "quote_time_case": "ocho y media",
         "quote_first": "A las ",
@@ -90,37 +60,77 @@
         "sfw": "nsfw"
     },
     {
-        "id": "001185",
+        "id": "001162",
         "time": "08:30",
-        "quote_time_case": "ocho y media",
-        "quote_first": "\"¡Qué absurdo!\" -pensó Vronsky y miró el reloj. Ya eran las ",
+        "quote_time_case": "Ocho y media",
+        "quote_first": "",
+        "quote_last": " la puerta de la sala se abre y dos técnicos entran trotando, oliendo a vino de uva; Los técnicos siempre se mueven al paso rápido o al trote porque siempre están tan inclinados hacia adelante que tienen que moverse rápido para mantenerse de pie.",
+        "title": "Alguien voló sobre el nido del cuco",
+        "author": "Ken Kesey",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001163",
+        "time": "08:30",
+        "quote_time_case": "8:30 A.M.",
+        "quote_first": "A las ",
+        "quote_last": " Filomina entró en Ale House blanca, redonda y jadeando por las ciento cuarenta y seis libras extra que llevaba en su pequeño cuerpo.",
+        "title": "Sopa De Granada",
+        "author": "Marsha Mehran",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001164",
+        "time": "08:30",
+        "quote_time_case": "las ocho y media",
+        "quote_first": "\"¡Qué tontería!\" -pensó Vronsky, y miró su reloj.<br>Ya eran ",
         "quote_last": ".",
         "title": "Ana Karénina",
         "author": "Leo Tolstoy",
         "sfw": "unknown"
     },
     {
-        "id": "001186",
+        "id": "001165",
         "time": "08:30",
         "quote_time_case": "ocho y media",
         "quote_first": "A las ",
-        "quote_last": ", el señor Dursley cogió su maletín, le dio un beso en la mejilla a la señora Dursley y trató de despedirse de Dudley con un beso, pero falló, porque Dudley ahora estaba haciendo un berrinche y tirando su cereal a las paredes.",
-        "title": "Harry Potter y la Piedra Filosofal",
+        "quote_last": ", el Sr. Dursley recogió su maletín, le dio un beso en la mejilla a la Sra. Dursley y trató de darle un beso de despedida a Dudley, pero falló, porque Dudley estaba ahora haciendo un berrinche y tirando su cereal a las paredes.",
+        "title": "Harry Potter y la piedra filosofal",
         "author": "J.K. Rowling",
         "sfw": "unknown"
     },
     {
-        "id": "001187",
+        "id": "001166",
+        "time": "08:30",
+        "quote_time_case": "8:30",
+        "quote_first": "Son alrededor de ",
+        "quote_last": ". El sol entra por las ventanas de la derecha. Cuando se levanta el telón, la familia acaba de terminar el desayuno.",
+        "title": "El largo viaje del día hacia la noche",
+        "author": "Eugene O'Neill",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001167",
+        "time": "08:30",
+        "quote_time_case": "8:30 a.m.",
+        "quote_first": "El 25 de julio, ",
+        "quote_last": " la perra Novaya muere al dar a luz. A las 10 en punto la bajan a su fresca tumba, a las 7:30 de esa misma tarde vemos nuestros primeros témpanos y los saludamos deseando ser los últimos.",
+        "title": "Los terrores del hielo y la oscuridad",
+        "author": "Christoph Ransmayr",
+        "sfw": "nsfw"
+    },
+    {
+        "id": "001168",
         "time": "08:30",
         "quote_time_case": "ocho y media",
-        "quote_first": "La conferencia iba a dar mañana y ya eran casi las ",
+        "quote_first": "La conferencia se daría mañana, y ya eran casi ",
         "quote_last": ".",
         "title": "Una confederación de tontos",
         "author": "John Kennedy Toole",
         "sfw": "unknown"
     },
     {
-        "id": "001188",
+        "id": "001169",
         "time": "08:30",
         "quote_time_case": "ocho y media",
         "quote_first": "Cuando despertó, a las ",
@@ -130,23 +140,13 @@
         "sfw": "unknown"
     },
     {
-        "id": "001189",
+        "id": "001170",
         "time": "08:30",
         "quote_time_case": "ocho y media",
         "quote_first": "Puedo ver en mi reloj, sin quitar la mano de la empuñadura izquierda de la bicicleta, que son las ",
         "quote_last": " de la mañana.",
         "title": "Zen y el arte del mantenimiento de motocicletas",
         "author": "Robert M. Pirsig",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001190",
-        "time": "08:30",
-        "quote_time_case": "ocho y media de la mañana",
-        "quote_first": "Gard permaneció inclinado sobre el corte en la tierra durante algún tiempo, iluminando las negras profundidades con la gran luz. Ya eran las ",
-        "quote_last": " y ya quería tomar una copa.",
-        "title": "Los Tommyknockers",
-        "author": "Stephen King",
         "sfw": "unknown"
     }
 ]

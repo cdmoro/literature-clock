@@ -2,9 +2,9 @@
     {
         "id": "001337",
         "time": "09:18",
-        "quote_time_case": "* Le nove e diciotto minuti",
-        "quote_first": "Ho pescato in questo \"buco\" qui per qualcosa come quarant'anni, di tanto in tanto, e ho scoperto che questi pesci luna fanno colazione esattamente alle nove e diciotto minuti.",
-        "quote_last": "",
+        "quote_time_case": "nove e diciotto minuti",
+        "quote_first": "Ho pescato in questo \"buco\" qui per qualcosa come quarant'anni, di tanto in tanto, e ho scoperto che questi pesci luna fanno colazione esattamente alle ",
+        "quote_last": ".",
         "title": "La finestra di Quill",
         "author": "George Barr McCutcheon",
         "sfw": "sfw"
@@ -14,7 +14,7 @@
         "time": "09:18",
         "quote_time_case": "9:18",
         "quote_first": "",
-        "quote_last": " ero seduto sul letto e guardavo fuori dalla finestra.",
+        "quote_last": " era seduto sul letto e guardava fuori dalla finestra.",
         "title": "Una frazione del tutto",
         "author": "Steve Toltz",
         "sfw": "sfw"

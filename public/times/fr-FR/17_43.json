@@ -12,9 +12,9 @@
     {
         "id": "002664",
         "time": "17:43",
-        "quote_time_case": "* 5:43",
-        "quote_first": "Il est 17h43. Le temps s'emballe, s'emballe.",
-        "quote_last": "",
+        "quote_time_case": "5:43",
+        "quote_first": "Il est ",
+        "quote_last": ". Le temps s'emballe, s'emballe.",
         "title": "Si ça saigne",
         "author": "Stephen King",
         "sfw": "unknown"

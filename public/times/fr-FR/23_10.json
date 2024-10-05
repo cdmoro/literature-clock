@@ -2,9 +2,9 @@
     {
         "id": "003469",
         "time": "23:10",
-        "quote_time_case": "* onze heure dix",
-        "quote_first": "C'est ainsi que j'ai passé la nuit de Noël, de onze heures dix environ jusqu'à presque deux heures du matin, à jouer aux cartes sans fin, à écouter Wagner et Beethoven, à entendre le crépitement et le sifflement des bûches en feu tandis que j'entretenais le feu, à regarder mon cousin. buvez régulièrement jusqu'à ce que la bouteille de whisky soit vide.",
-        "quote_last": "",
+        "quote_time_case": "onze heures dix",
+        "quote_first": "C'est ainsi que j'ai passé la nuit de Noël depuis environ ",
+        "quote_last": " jusqu'à presque deux heures du matin, jouant des jeux de cartes sans fin, écoutant Wagner et Beethoven, entendant les crépitements et sifflement de bûches en feu pendant que j'entretenais le feu, regardant mon cousin boire régulièrement jusqu'à ce que la bouteille de whisky soit vide.",
         "title": "Le meurtre du gui",
         "author": "P.D. James",
         "sfw": "unknown"
@@ -12,7 +12,7 @@
     {
         "id": "003470",
         "time": "23:10",
-        "quote_time_case": "Onze heure dix",
+        "quote_time_case": "Onze heures dix",
         "quote_first": "Elle recula dans l'allée, vérifia la circulation et se tourna vers l'autoroute à péage. ",
         "quote_last": ". Beaucoup de temps.<br>C'est ce qu'elle pensait alors.",
         "title": "Si ça saigne",
@@ -22,9 +22,9 @@
     {
         "id": "003471",
         "time": "23:10",
-        "quote_time_case": "* onze heure dix",
-        "quote_first": "Un autre jour de Noël touche à sa fin. Il est onze heures dix. Richard a décliné avec remerciement mon offre de lui préparer un lit ici dans mon bureau et est reparti pour Cambridge, afin que je puisse prendre quelques notes la veille d'aller me coucher moi-même.",
-        "quote_last": "",
+        "quote_time_case": "onze heures dix",
+        "quote_first": "Un autre jour de Noël touche à sa fin. Il est ",
+        "quote_last": ". Richard a décliné avec remerciement mon offre de lui préparer un lit ici dans mon bureau et est reparti pour Cambridge, afin que je puisse prendre quelques notes la veille d'aller me coucher moi-même.",
         "title": "Phrase pour sourds",
         "author": "David Lodge",
         "sfw": "unknown"
@@ -32,9 +32,9 @@
     {
         "id": "003472",
         "time": "23:10",
-        "quote_time_case": "onze heures dix",
+        "quote_time_case": "onze heures dix minutes",
         "quote_first": "Il n'avait pas la force de s'aider lui-même, et à ",
-        "quote_last": ", personne n'aurait pu l'aider, personne au monde.",
+        "quote_last": " personne n'aurait pu l'aider, personne au monde",
         "title": "Rendez-vous à Samarra",
         "author": "John O'Hara",
         "sfw": "unknown"

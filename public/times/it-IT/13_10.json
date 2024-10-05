@@ -3,7 +3,7 @@
         "id": "002012",
         "time": "13:10",
         "quote_time_case": "1:10",
-        "quote_first": "Trenta minuti dopo, Fletcher incrociò Harry nel corridoio mentre usciva, poiché Jimmy aveva insistito che, se volevano ancora visitare tutti gli uffici di contabilità, dovevano andarsene entro l'",
+        "quote_first": "Trenta minuti dopo, Fletcher incrociò Harry nel corridoio mentre usciva, poiché Jimmy aveva insistito che, se volevano ancora visitare tutti gli uffici di contabilità, allora dovevano andarsene entro ",
         "quote_last": ".",
         "title": "Figli della fortuna",
         "author": "Jeffrey Archer",
@@ -12,9 +12,9 @@
     {
         "id": "002013",
         "time": "13:10",
-        "quote_time_case": "* L'una e dieci minuti",
-        "quote_first": "Secondo l'orologio di Bond, era l'una e dieci quando, al tavolo alto, l'intero schema del gioco cambiò improvvisamente.",
-        "quote_last": "",
+        "quote_time_case": "l'una e dieci minuti",
+        "quote_first": "Era l'",
+        "quote_last": " secondo l'orologio di Bond quando, al tavolo alto, l'intero schema del gioco cambiò improvvisamente.",
         "title": "Casinò Royale",
         "author": "Ian Fleming",
         "sfw": "unknown"
@@ -23,7 +23,7 @@
         "id": "002014",
         "time": "13:10",
         "quote_time_case": "1:10",
-        "quote_first": "Dice qualcosa ma non lo sento perché sto guardando il South Haven Daily. Oggi è sabato 23 ottobre 1993. Il giorno del nostro matrimonio. L'orologio sopra il portasigarette segna l'",
+        "quote_first": "Dice qualcosa ma non lo sento perché sto guardando il South Haven Daily. Oggi è sabato 23 ottobre 1993. Il giorno del nostro matrimonio. L'orologio sopra il portasigarette dice ",
         "quote_last": ".<br>\"Devo scappare\", dico al vecchio, e lo faccio.",
         "title": "La moglie del viaggiatore nel tempo",
         "author": "Audrey Niffenegger",
@@ -32,9 +32,9 @@
     {
         "id": "002015",
         "time": "13:10",
-        "quote_time_case": "* L'una e dieci minuti",
-        "quote_first": "Era l'una e dieci.\"<br>\"Ne sei sicuro?",
-        "quote_last": "",
+        "quote_time_case": "l'una e dieci",
+        "quote_first": "Era ",
+        "quote_last": ".\"<br>\"Ne sei sicuro?",
         "title": "Morte sul Nilo",
         "author": "Agatha Christie",
         "sfw": "unknown"

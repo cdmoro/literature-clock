@@ -2,9 +2,9 @@
     {
         "id": "002271",
         "time": "15:01",
-        "quote_time_case": "* à propos de trois",
-        "quote_first": "Le soleil se couchait maintenant. Il était environ trois heures de l'après-midi lorsqu'Alisande avait commencé à me dire qui étaient les cowboys ; donc elle avait fait de très bons progrès – pour elle. Elle arriverait un jour ou l'autre, sans doute, mais elle n'était pas du genre à être pressée.",
-        "quote_last": "",
+        "quote_time_case": "environ trois",
+        "quote_first": "Le soleil se couchait maintenant. Il était ",
+        "quote_last": " de l'après-midi quand Alisande avait commencé à me dire qui étaient les cowboys ; donc elle avait fait de très bons progrès – pour elle. Elle arriverait un jour ou l'autre, sans doute, mais elle n'était pas du genre à être pressée.",
         "title": "Un Yankee du Connecticut à la cour du roi Arthur",
         "author": "Mark Twain",
         "sfw": "unknown"
@@ -13,8 +13,8 @@
         "id": "002272",
         "time": "15:01",
         "quote_time_case": "trois heures une minute",
-        "quote_first": "Il y aura vingt palettes pour trois heures demain, voyez-vous, dit une voix d'homme du bureau au bout du couloir, \"et si votre camion n'est pas là à ",
-        "quote_last": ", alors tout partira.\" au dépôt Fine Fare à Aylesford.",
+        "quote_first": "Il y en aura pour vingt palettes à trois heures demain, tu vois, dit une voix d'homme du bureau au bout du couloir, \"et si ton camion n'est pas là à ",
+        "quote_last": ", alors le lot ira au dépôt Fine Fare à Aylesford. »",
         "title": "Les horloges en os",
         "author": "David Mitchell",
         "sfw": "sfw"

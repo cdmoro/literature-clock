@@ -1,42 +1,42 @@
 [
     {
-        "id": "000449",
+        "id": "000442",
         "time": "03:01",
-        "quote_time_case": "alrededor de las tres de la madrugada",
-        "quote_first": "Ayer, ",
-        "quote_last": ", encontré a mi madre inconsciente en el suelo del baño. Soy un héroe, dicen, porque la salvé de una sobredosis de litio.<br>No soy un héroe. Todo esto es mi culpa.",
+        "quote_time_case": "3:01 a.m.",
+        "quote_first": "A las ",
+        "quote_last": ", Thaddeus Funston se despertó en sueños y despertó. Se sentó en la cama y miró alrededor de la sala oscura. La respiración tranquila y los ronquidos ocasionales de otros treinta pacientes dormidos llenaron la habitación. Funston se volvió hacia la ventana y contempló las colinas negras que protegían el abandonado edificio de artesanía.",
+        "title": "Una avellana es una nuez",
+        "author": "Rick Raphael",
+        "sfw": "sfw"
+    },
+    {
+        "id": "000443",
+        "time": "03:01",
+        "quote_time_case": "alrededor de las tres de la mañana",
+        "quote_first": "Ayer, a las ",
+        "quote_last": ", encontré a mi madre inconsciente en el suelo de su baño. Soy un héroe, dicen, porque la salvé de una sobredosis de litio.<br>No soy un héroe. Todo esto es culpa mía.",
         "title": "Parpadea y nos lo perderemos",
         "author": "Ginny Kochis",
         "sfw": "nsfw"
     },
     {
-        "id": "000450",
+        "id": "000444",
         "time": "03:01",
-        "quote_time_case": "alrededor de las tres",
-        "quote_first": "Eran ya ",
-        "quote_last": " de la madrugada y Francis Macomber, que había estado dormido un rato después de haber dejado de pensar en el león, se despertó y volvió a dormirse.",
+        "quote_time_case": "cerca de las tres",
+        "quote_first": "Ya eran ",
+        "quote_last": " de la mañana y Francis Macomber, que había estado dormido un rato después de haber dejado de pensar en el león, se despertó y luego se volvió a dormir.",
         "title": "La corta y feliz vida de Francis Macomber",
         "author": "Ernest Hemingway",
         "sfw": "unknown"
     },
     {
-        "id": "000451",
+        "id": "000445",
         "time": "03:01",
-        "quote_time_case": "Más de las tres",
-        "quote_first": "¡No voy a quedarme aquí tumbada, pensó, y dejar que mi vida se arruine! Y cuando escuchó: “¡Dios os dé buenos días, amos míos! ¡",
-        "quote_last": " y una hermosa mañana! Apartó las mantas y se levantó de la cama, girándose para sacudir a Nan.",
+        "quote_time_case": "Pasadas de las tres",
+        "quote_first": "¡No voy a quedarme aquí tumbada, pensó, y dejar que mi vida se arruine! Y cuando escuchó: “¡Dios os dé buenos días, amos míos! ",
+        "quote_last": " ¡y una hermosa mañana! Apartó las mantas y se levantó de la cama, volviéndose para sacudir a Nan.",
         "title": "Por siempre ámbar",
         "author": "Kathleen Windsor",
-        "sfw": "sfw"
-    },
-    {
-        "id": "000452",
-        "time": "03:01",
-        "quote_time_case": "3:01 a.m.",
-        "quote_first": "A las ",
-        "quote_last": ", Thaddeus Funston se despertó en sueños y se despertó. Se sentó en la cama y miró alrededor de la sala oscura. La respiración tranquila y los ronquidos ocasionales de otros treinta pacientes dormidos llenaron la habitación. Funston se volvió hacia la ventana y contempló las colinas negras que protegían el abandonado edificio de artesanía.",
-        "title": "Una avellana es una nuez",
-        "author": "Rick Raphael",
         "sfw": "sfw"
     }
 ]

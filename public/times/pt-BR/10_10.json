@@ -2,9 +2,9 @@
     {
         "id": "001528",
         "time": "10:10",
-        "quote_time_case": "* dez minutos depois das dez",
-        "quote_first": "Às dez e dez da manhã seguinte, William recebeu outra ligação de seu corretor, agora agitado. Mais um milhão de dólares em ações da Interestadual foram colocadas no mercado no sino de abertura.",
-        "quote_last": "",
+        "quote_time_case": "dez minutos e dez",
+        "quote_first": "Às ",
+        "quote_last": " da manhã seguinte, William recebeu outra ligação de seu corretor, agora agitado. Mais um milhão de dólares em ações da Interestadual foram colocadas no mercado no sino de abertura.",
         "title": "Kane e Abel",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "001529",
         "time": "10:10",
-        "quote_time_case": "* 10:10",
-        "quote_first": "Às 10h10, dois auxiliares de jaleco branco empurraram um homem alto e bem construído em uma cadeira pelas portas de vaivém e, vendo o carro estacionado na vaga do reitor, guiaram-no até lá. O motorista saltou e abriu rapidamente a porta traseira. Pobre homem, pensou ele, com a cabeça toda coberta de bandagens e restando apenas uma pequena rachadura nos lábios e narinas. Ele se perguntou se teriam sido queimaduras.",
-        "quote_last": "",
+        "quote_time_case": "10:10",
+        "quote_first": "Às ",
+        "quote_last": ", dois auxiliares de jaleco branco empurraram um homem alto e bem constituído em uma cadeira pelas portas de vaivém e, vendo o carro estacionado na vaga do reitor, guiou-o nessa direção. O motorista saltou e abriu rapidamente a porta traseira. Pobre homem, pensou ele, com a cabeça toda coberta de bandagens e restando apenas uma pequena rachadura nos lábios e narinas. Ele se perguntou se teriam sido queimaduras.",
         "title": "Honra entre ladrões",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -42,9 +42,9 @@
     {
         "id": "001532",
         "time": "10:10",
-        "quote_time_case": "* dez minutos depois das 10",
-        "quote_first": "A manhã de sábado estava clara e ensolarada, e às 10h10 Donald chegou à entrada Embankment da estação de metrô Charing Cross, carregando uma pequena mala cheia de roupas adequadas para esportes e passatempos ao ar livre.",
-        "quote_last": "",
+        "quote_time_case": "dez minutos depois das 10",
+        "quote_first": "A manhã de sábado estava clara e ensolarada, e às ",
+        "quote_last": " Donald chegou à entrada Embankment da estação de metrô Charing Cross, carregando uma pequena mala cheia de roupas adequadas para esportes ao ar livre e passatempos.",
         "title": "Inglaterra, a Inglaterra deles",
         "author": "A.G. Macdonell",
         "sfw": "unknown"

@@ -1,16 +1,26 @@
 [
     {
-        "id": "001410",
+        "id": "001388",
         "time": "09:36",
         "quote_time_case": "9:36",
-        "quote_first": "Eran las ",
-        "quote_last": " y el tráfico ya fluía sin problemas. Se acercó al oficial que coordinaba el rodaje para la oficina de cine y televisión de la ciudad.",
+        "quote_first": "Eran ",
+        "quote_last": " y el tráfico ahora fluía sin problemas. Se acercó al oficial que coordinaba el rodaje para la oficina de cine y televisión de la ciudad.",
         "title": "Honor entre ladrones",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001411",
+        "id": "001389",
+        "time": "09:36",
+        "quote_time_case": "9:36 A.M.",
+        "quote_first": "Danny miró el reloj de Nick: ",
+        "quote_last": " Bajó rápidamente las escaleras y se dirigió a la recepción, donde intentó una estratagema diferente.",
+        "title": "Un prisionero de nacimiento",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001390",
         "time": "09:36",
         "quote_time_case": "9:36",
         "quote_first": "Tomo un bolígrafo y una libreta junto al teléfono y empiezo a garabatear una lista para el día. Tengo una imagen de mí mismo moviéndome suavemente de una tarea a otra, con el cepillo en una mano y el plumero en la otra, poniendo orden en todo. Como Mary Poppins.<br>9:30-",
@@ -20,21 +30,11 @@
         "sfw": "sfw"
     },
     {
-        "id": "001412",
+        "id": "001391",
         "time": "09:36",
         "quote_time_case": "9:36 a.m.",
-        "quote_first": "Danny miró el reloj de Nick: ",
-        "quote_last": " Bajó rápidamente las escaleras y se dirigió a la recepción, donde intentó una estrategia diferente.",
-        "title": "Un prisionero de nacimiento",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001413",
-        "time": "09:36",
-        "quote_time_case": "9:36 am",
         "quote_first": "",
-        "quote_last": " Oh Dios, oh Dios. Quizás se enamoró en Nueva York y se quedó allí.",
+        "quote_last": " Oh Dios, Oh Dios. Quizás se enamoró en Nueva York y se quedó allí.",
         "title": "El diario de Bridget Jones",
         "author": "Helen Fielding",
         "sfw": "sfw"

@@ -1,22 +1,22 @@
 [
     {
-        "id": "000690",
+        "id": "000678",
         "time": "05:04",
-        "quote_time_case": "5.04",
-        "quote_first": "Son las ",
-        "quote_last": " de la mañana en el deficiente radio despertador. ¿Por qué la gente siempre dice que el día empieza ahora? Realmente comienza en medio de la noche, una fracción de segundo después de la medianoche.",
-        "title": "Lo accidental",
-        "author": "Ali Smith",
+        "quote_time_case": "las cinco y cuatro minutos",
+        "quote_first": "Oh sí. Sus relojes estaban ajustados a las cinco y un minuto, ",
+        "quote_last": " y las cinco y siete minutos. Ése era el número de combinación de una caja fuerte, 515457. La caja fuerte estaba escondida detrás de una reproducción de la Mona Lisa. Dentro de la caja fuerte, continuó Poirot con disgusto, \"se encontraban las joyas de la corona de la familia real rusa\".",
+        "title": "Los relojes",
+        "author": "Agatha Christie",
         "sfw": "unknown"
     },
     {
-        "id": "000691",
+        "id": "000679",
         "time": "05:04",
-        "quote_time_case": "cinco y cuatro minutos",
-        "quote_first": "Oh sí. Sus relojes estaban fijados a las cinco y un minuto, a las ",
-        "quote_last": " y a las cinco y siete minutos. Ése era el número de combinación de una caja fuerte, 515457. La caja fuerte estaba escondida detrás de una reproducción de la Mona Lisa. Dentro de la caja fuerte, continuó Poirot con disgusto, \"se encontraban las joyas de la corona de la familia real rusa\".",
-        "title": "Los relojes",
-        "author": "Agatha Christie",
+        "quote_time_case": "5.04 a.m.",
+        "quote_first": "",
+        "quote_last": " en el radio reloj de mala calidad. ¿Por qué la gente siempre dice que el día empieza ahora? Realmente comienza en medio de la noche, una fracción de segundo después de la medianoche.",
+        "title": "Lo accidental",
+        "author": "Ali Smith",
         "sfw": "unknown"
     }
 ]

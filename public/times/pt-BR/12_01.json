@@ -2,9 +2,9 @@
     {
         "id": "001860",
         "time": "12:01",
-        "quote_time_case": "* um minuto depois do meio-dia",
-        "quote_first": "“Senhora Presidente...” Florentyna teve que pensar rapidamente para evitar que alguém percebesse sua resposta instintiva às palavras. “Já passa do meio-dia um minuto.”",
-        "quote_last": "",
+        "quote_time_case": "um minuto do meio-dia",
+        "quote_first": "“Senhora Presidente...” Florentyna teve que pensar rapidamente para evitar que alguém percebesse sua resposta instintiva às palavras. “Já passa ",
+        "quote_last": ".”",
         "title": "Devemos contar ao presidente?",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -13,8 +13,8 @@
         "id": "001861",
         "time": "12:01",
         "quote_time_case": "meio-dia e um minuto",
-        "quote_first": "Ao ",
-        "quote_last": ", Percy ficou em posição de sentido, levantou lentamente a Union Jack no mastro da bandeira e pronunciou as palavras exatas exigidas pela Lei de Liquidação de Territórios de 1762: “Eu reivindico este território soberano em nome de Sua Majestade a Rainha Elizabeth II, para a quem juro minha lealdade.”",
+        "quote_first": "Às ",
+        "quote_last": ", Percy ficou em posição de sentido, levantou lentamente a Union Jack no mastro da bandeira e pronunciou as palavras exatas exigidas pela Lei de Liquidação de Territórios de 1762: “Eu afirmo este território soberano em nome de Sua Majestade a Rainha Elizabeth II, a quem juro minha lealdade.”",
         "title": "O Diplomata Não Diplomático",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "001862",
         "time": "12:01",
-        "quote_time_case": "* 12:01",
-        "quote_first": "Era o dia doze de dezembro, o décimo segundo mês. A tinha doze anos. O rádio-relógio elétrico ao lado da mesa de cabeceira marcava 12h01.",
-        "quote_last": "",
+        "quote_time_case": "12:01",
+        "quote_first": "Era o dia doze de dezembro, o décimo segundo mês. A tinha doze anos. O rádio/relógio elétrico em sua mesa de cabeceira dizia ",
+        "quote_last": ".",
         "title": "Garoto A",
         "author": "Jonathan Trigell",
         "sfw": "unknown"

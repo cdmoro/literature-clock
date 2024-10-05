@@ -2,9 +2,9 @@
     {
         "id": "003419",
         "time": "22:56",
-        "quote_time_case": "22:56",
-        "quote_first": "L'orologio segnava le ",
-        "quote_last": ". Ciò significava che ero stato fuori per venti minuti. Venti minuti di sonno. Solo un bel sonnellino. In quel periodo avevo soffocato una folla e avevo perso ottomila dollari.",
+        "quote_time_case": "22.56",
+        "quote_first": "L'orologio segnava ",
+        "quote_last": " Ciò significava che ero fuori casa da venti minuti. Venti minuti di sonno. Solo un bel sonnellino. In quel periodo avevo soffocato una folla e avevo perso ottomila dollari.",
         "title": "Addio, mia bella",
         "author": "Raymond Chandler",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "003420",
         "time": "22:56",
-        "quote_time_case": "* verso le undici",
-        "quote_first": "Erano circa le undici. Le stelle brillavano. Il vento soffiava dolcemente e portava dai campi il profumo delle foglie marce e della neve sciolta.",
-        "quote_last": "",
+        "quote_time_case": "circa le undici",
+        "quote_first": "Erano ",
+        "quote_last": ". Le stelle brillavano. Il vento soffiava dolcemente e portava dai campi il profumo delle foglie marce e della neve sciolta.",
         "title": "Il martello di Dio",
         "author": "Bo Giertz",
         "sfw": "unknown"

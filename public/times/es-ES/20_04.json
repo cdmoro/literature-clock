@@ -1,16 +1,6 @@
 [
     {
-        "id": "003082",
-        "time": "20:04",
-        "quote_time_case": "8.04",
-        "quote_first": "La tierra parece proyectar su oscuridad hacia el aire. La zona agrícola está sombría por la noche. Agradece que las luces de Lankaster se fusionen con sus tenues rayos. Se detiene en un restaurante cuyo reloj marca las ",
-        "quote_last": ".",
-        "title": "Carrera de conejo",
-        "author": "John Updike",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003083",
+        "id": "003031",
         "time": "20:04",
         "quote_time_case": "8:04",
         "quote_first": "Estacione en doble fila y espere que no haya ningún policía de tránsito cerca. Camine con indiferencia hacia la casa; apuesto a que todavía está en la bañera. Consultar reloj: ",
@@ -18,5 +8,15 @@
         "title": "¿Se lo contamos al presidente?",
         "author": "Jeffrey Archer",
         "sfw": "nsfw"
+    },
+    {
+        "id": "003032",
+        "time": "20:04",
+        "quote_time_case": "8.04",
+        "quote_first": "La tierra parece proyectar su oscuridad hacia el aire. La zona agrícola está sombría por la noche. Agradece que las luces de Lankaster se fusionen con sus tenues rayos. Se detiene en un restaurante cuyo reloj dice ",
+        "quote_last": ".",
+        "title": "Conejo, corre",
+        "author": "John Updike",
+        "sfw": "unknown"
     }
 ]

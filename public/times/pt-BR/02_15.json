@@ -4,7 +4,7 @@
         "time": "02:15",
         "quote_time_case": "2h15",
         "quote_first": "Ele folheou [os e-mails], descartando mentalmente a grande maioria como de baixa prioridade, mas um em particular despertou sua curiosidade: era de Art Bullock, enviado às ",
-        "quote_last": ". O assunto dizia: URGENTE PARA SEXTA-FEIRA DE MANHÃ.",
+        "quote_last": " O assunto dizia: URGENTE PARA SEXTA-FEIRA DE MANHÃ.",
         "title": "A ambição",
         "author": "Lee Strobel",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000316",
         "time": "02:15",
-        "quote_time_case": "* 2:15",
-        "quote_first": "Era meio da noite quando o telefone tocou. Ele abriu os olhos e encontrou o relógio marcando 2h15. A princípio, ele estava tonto demais para entender por que uma campainha poderia estar tocando ali perto, mas balançou a cabeça e, quase inconscientemente, pegou o fone e levou-o ao ouvido.",
-        "quote_last": "",
+        "quote_time_case": "2:15",
+        "quote_first": "Era meio da noite quando o telefone tocou. Ele abriu os olhos e encontrou o relógio marcando ",
+        "quote_last": ". A princípio, ele estava tonto demais para entender por que uma campainha poderia estar tocando ali perto, mas balançou a cabeça e, quase inconscientemente, pegou o fone e levou-o ao ouvido.",
         "title": "Salgueiro Cego, Mulher Adormecida",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -24,7 +24,7 @@
         "time": "02:15",
         "quote_time_case": "2h15",
         "quote_first": "Às ",
-        "quote_last": ", um policial observou o local no escuro, mas com o motor do estranho ainda parado.",
+        "quote_last": " um policial observou o local no escuro, mas com o motor do estranho ainda parado no meio-fio.",
         "title": "A sombra fora do tempo",
         "author": "H.P. Lovecraft",
         "sfw": "unknown"
@@ -33,8 +33,8 @@
         "id": "000318",
         "time": "02:15",
         "quote_time_case": "duas e quinze",
-        "quote_first": "Isso aconteceu. Quando o despertador tocou, às ",
-        "quote_last": ", Lew desligou-o, acendeu o pequeno abajur de cabeceira e colocou os pés no chão para sentar-se na beira da cama, mantendo os olhos abertos.",
+        "quote_first": "Isso aconteceu. Quando o alarme tocou às ",
+        "quote_last": ", Lew desligou-o, acendeu o pequeno abajur de cabeceira e colocou os pés no chão para se sentar na beira da cama, mantendo os olhos abertos.",
         "title": "O povo da noite",
         "author": "Jack Finney",
         "sfw": "unknown"

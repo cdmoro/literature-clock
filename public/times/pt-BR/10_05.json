@@ -3,7 +3,7 @@
         "id": "001514",
         "time": "10:05",
         "quote_time_case": "cinco minutos depois",
-        "quote_first": "Ela passa pelo prédio do FBI às [dez] três minutos, ela passa pelo Monumento da Paz no canto noroeste do Capitólio ",
+        "quote_first": "Ela passa pelo prédio do FBI às [dez] três minutos, ela passa pelo Monumento da Paz no canto noroeste do terreno do Capitólio às ",
         "quote_last": ".",
         "title": "Devemos contar ao presidente?",
         "author": "Jeffrey Archer",
@@ -12,9 +12,9 @@
     {
         "id": "001515",
         "time": "10:05",
-        "quote_time_case": "* 10:05",
-        "quote_first": "O CARA BATEU na porta de George, mas não houve resposta. Ele consultou o relógio: 10h05. George não poderia estar no salão tomando café da manhã, porque eles terminavam o serviço às nove horas de um domingo, e ele certamente não teria ido à Feira dos Frescos sem ele.",
-        "quote_last": "",
+        "quote_time_case": "10:05",
+        "quote_first": "O CARA BATEU NA PORTA DE George, mas não houve resposta. Ele consultou o relógio: ",
+        "quote_last": ". George não poderia estar no salão tomando café da manhã, porque eles terminavam o serviço às nove no domingo, e ele certamente não teria ido à Feira dos Frescos sem ele.",
         "title": "Caminhos da Glória",
         "author": "Jeffrey Archer",
         "sfw": "sfw"

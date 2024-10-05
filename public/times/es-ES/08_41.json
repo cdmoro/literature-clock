@@ -1,22 +1,22 @@
 [
     {
-        "id": "001214",
-        "time": "08:41",
-        "quote_time_case": "* Las ocho y cuarenta y un minutos",
-        "quote_first": "A las ocho y cuarenta y un minutos estamos a quinientos metros de la orilla del agua, y entre nuestro camino y el pie de la montaña divisamos los restos amontonados de una torre en ruinas.",
-        "quote_last": "",
-        "title": "Narrativa de un viaje alrededor del Mar Muerto y en las tierras bíblicas en 1850 y 1851",
-        "author": "Félicien de Saulcy",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001215",
+        "id": "001194",
         "time": "08:41",
         "quote_time_case": "08:41",
-        "quote_first": "Son las ",
+        "quote_first": "Son ",
         "quote_last": " y estoy en la cama practicando. Mamá llenó una bolsa de plástico con agua muy caliente y la ató bien para que no se derrame nada, la mete en otra bolsa y la ata también.",
         "title": "Habitación",
         "author": "Emma Donoghue",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001195",
+        "time": "08:41",
+        "quote_time_case": "las ocho y cuarenta y un minutos",
+        "quote_first": "A las ",
+        "quote_last": " estamos a quinientos metros de la orilla del agua, y entre nuestro camino y el pie de la montaña divisamos los restos amontonados de un torre en ruinas.",
+        "title": "Narrativa de un viaje alrededor del Mar Muerto y en las tierras bíblicas en 1850 y 1851",
+        "author": "Félicien de Saulcy",
         "sfw": "unknown"
     }
 ]

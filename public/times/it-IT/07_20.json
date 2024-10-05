@@ -4,7 +4,7 @@
         "time": "07:20",
         "quote_time_case": "sette e venti",
         "quote_first": "I due poliziotti arrivarono all'Hotel Monarche alle ",
-        "quote_last": " di quel giovedì mattina. Erano stanchi, scontenti e affamati. Da mezzanotte avevano visitato quarantatré alberghi nella zona ovest della città, ogni volta senza successo.",
+        "quote_last": " quel giovedì mattina. Erano stanchi, scontenti e affamati. Da mezzanotte avevano visitato quarantatré alberghi nella zona ovest della città, ogni volta senza successo.",
         "title": "Una questione d'onore",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000959",
         "time": "07:20",
-        "quote_time_case": "* 7:20",
-        "quote_first": "Il Presidente si alzò dal letto alle 7,20 e accese la sua prima sigaretta. Non riusciva a ricordare esattamente quando si era svegliato. Alle 6,10 aveva telefonato a Tony, che era già alzato e aspettava la sua chiamata.",
-        "quote_last": "",
+        "quote_time_case": "7:20",
+        "quote_first": "Il Presidente si è alzato dal letto alle ",
+        "quote_last": " e si è acceso la prima sigaretta. Non riusciva a ricordare esattamente quando si era svegliato. Alle 6,10 aveva telefonato a Tony, che era già alzato e aspettava la sua chiamata.",
         "title": "Lo diciamo al presidente?",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -32,9 +32,9 @@
     {
         "id": "000961",
         "time": "07:20",
-        "quote_time_case": "* 7:20",
-        "quote_first": "E questo era il mio orario quando vivevo a casa con papà e pensavo che la mamma fosse morta per un infarto (questo era l'orario di lunedì ed è anche approssimativo). Ore 7.20 Sveglia",
-        "quote_last": "",
+        "quote_time_case": "7.20",
+        "quote_first": "E questo era il mio orario quando vivevo a casa con papà e pensavo che la mamma fosse morta per un infarto (questo era l'orario di lunedì ed è anche approssimativo). ",
+        "quote_last": " Sveglia",
         "title": "Il curioso incidente del cane nella notte",
         "author": "Mark Haddon",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "000962",
         "time": "07:20",
-        "quote_time_case": "* sette venti",
-        "quote_first": "Lui che era stato un ragazzo molto ingenuo della vita non era più molto interessato alle avventure possibili e improbabili di ogni nuovo giorno. È fuggito dalla realtà finché non ha suonato la sveglia, alle sette e venti.",
-        "quote_last": "",
+        "quote_time_case": "sette-venti",
+        "quote_first": "Lui che era stato un ragazzo molto ingenuo della vita non era più molto interessato alle avventure possibili e improbabili di ogni nuovo giorno. È scappato dalla realtà finché non ha suonato la sveglia, alle ",
+        "quote_last": ".",
         "title": "Babbitt",
         "author": "Sinclair Lewis",
         "sfw": "unknown"

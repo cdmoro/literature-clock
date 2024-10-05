@@ -2,9 +2,9 @@
     {
         "id": "003454",
         "time": "23:02",
-        "quote_time_case": "* 11:02",
-        "quote_first": "\"Sim.\" O tom firme de Perena não admitia discussões. “Explodiu às 11h07. Você teria entrado às 11h02, então já estaria exatamente no meio do caminho entre os Portões.”",
-        "quote_last": "",
+        "quote_time_case": "11:02",
+        "quote_first": "\"Sim.\" O tom firme de Perena não admitia discussões. “Explodiu às 11h07. Você teria entrado às ",
+        "quote_last": ", então você estaria exatamente no meio do caminho entre os Portões.”",
         "title": "A Sombra e a Noite",
         "author": "Chris Walley",
         "sfw": "unknown"
@@ -13,8 +13,8 @@
         "id": "003455",
         "time": "23:02",
         "quote_time_case": "23h02",
-        "quote_first": "Encerrei a ligação. Procurei em Recentes para ter certeza de que TINHA ligado. O número dele estava lá, junto com a hora: ",
-        "quote_last": ". Desliguei meu telefone e coloquei-o na mesinha de cabeceira. Apaguei a lâmpada e adormeci quase imediatamente.",
+        "quote_first": "Encerrei a ligação. Procurei em Recentes para ter certeza de que TINHA ligado. O número dele estava lá, junto com o horário - ",
+        "quote_last": " Desliguei meu celular e coloquei na mesinha de cabeceira. Apaguei a lâmpada e adormeci quase imediatamente.",
         "title": "Se sangrar",
         "author": "Stephen King",
         "sfw": "unknown"

@@ -3,7 +3,7 @@
         "id": "001764",
         "time": "11:35",
         "quote_time_case": "onze heures trente-cinq",
-        "quote_first": "C’était exactement le genre de cas que j’espérais. Cependant, j'ai vérifié mon emploi du temps et j'ai fait semblant de mélanger quelques choses. Si vous acceptez immédiatement de prendre en charge une affaire, le client pourrait soupçonner une arrière-pensée.<br>\"Heureusement, je suis libre jusqu'à plus tard cet après-midi\", dis-je en jetant un coup d'œil à ma montre. Il était ",
+        "quote_first": "C’était exactement le genre de cas que j’espérais. Cependant, j'ai vérifié mon emploi du temps et j'ai fait semblant de mélanger quelques choses. Si vous acceptez instantanément de prendre en charge une affaire, le client pourrait soupçonner une arrière-pensée.<br>\"Heureusement, je suis libre jusqu'à plus tard dans l'après-midi\", dis-je en jetant un coup d'œil à ma montre. Il était ",
         "quote_last": ". « Si cela ne vous dérange pas, pourriez-vous m'emmener dans votre immeuble maintenant ? J’aimerais voir le dernier endroit où vous avez vu votre mari.",
         "title": "Saule aveugle, femme endormie",
         "author": "Haruki Murakami",
@@ -12,9 +12,9 @@
     {
         "id": "001765",
         "time": "11:35",
-        "quote_time_case": "* 11h35",
-        "quote_first": "L’avion du Premier ministre s’est immobilisé à 11 h 35 à l’aéroport d’Oberweisenfeld. Les moteurs se sont éteints en gémissant. A l'intérieur de la cabine, après trois heures de vol le silence était un bruit en soi.",
-        "quote_last": "",
+        "quote_time_case": "11h35",
+        "quote_first": "L’avion du Premier ministre s’est immobilisé à l’aéroport d’Oberweisenfeld à ",
+        "quote_last": " Les moteurs ont gémi et sont morts. A l'intérieur de la cabine, après trois heures de vol le silence était un bruit en soi.",
         "title": "Munich",
         "author": "Robert Harris",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "001766",
         "time": "11:35",
-        "quote_time_case": "* 11h35",
-        "quote_first": "A 11 h 35, le colonel est sorti ; il avait l'air brûlant et en colère alors qu'il se dirigeait vers l'ascenseur. Voilà un juge pendu, pensa Wormold.",
-        "quote_last": "",
+        "quote_time_case": "11h35",
+        "quote_first": "A ",
+        "quote_last": " le colonel est sorti ; il avait l'air brûlant et en colère alors qu'il se dirigeait vers l'ascenseur. Voilà un juge pendu, pensa Wormold.",
         "title": "Notre homme à La Havane",
         "author": "Graham Greene",
         "sfw": "unknown"

@@ -2,9 +2,9 @@
     {
         "id": "000651",
         "time": "05:00",
-        "quote_time_case": "* 5 in punto",
-        "quote_first": "Alle 5 precise, come ogni mattina, ore prima che dalle stanze del piano superiore emergesse un solo movimento, Dora si trascinò giù dal letto e si diresse lungo il corridoio fino alla cucina, dove accese un bollitore e lasciò cadere una borsa. di Earl Grey in una tazza.",
-        "quote_last": "",
+        "quote_time_case": "5",
+        "quote_first": "Esattamente alle ",
+        "quote_last": ", come ogni mattina, ore prima che un minimo movimento emergesse dalle stanze del piano superiore, Dora si trascinò giù dal letto e si avviò lungo il corridoio in cucina, dove accese il bollitore e mise una bustina di Earl Grey in una tazza.",
         "title": "Quando l'estate era nostra",
         "author": "Roxanne Veletzos",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "000653",
         "time": "05:00",
-        "quote_time_case": "* 5:00 DI MATTINA.",
-        "quote_first": "Dalle finestre laterali entrava una morbida luce gialla. Era mattina: aveva dormito tutta la notte! Guardò rapidamente l'orologio: le 5 del mattino. Mancavano ancora quasi sei ore prima che la barca dovesse essere richiamata.",
-        "quote_last": "",
+        "quote_time_case": "5:00",
+        "quote_first": "Dalle finestre laterali entrava una morbida luce gialla. Era mattina: aveva dormito tutta la notte! Guardò rapidamente l'orologio: ",
+        "quote_last": " Mancavano ancora quasi sei ore prima che la barca dovesse essere richiamata.",
         "title": "Jurassic Park",
         "author": "Michael Crichton",
         "sfw": "unknown"
@@ -33,8 +33,8 @@
         "id": "000654",
         "time": "05:00",
         "quote_time_case": "cinque",
-        "quote_first": "Muldoon si accigliò. \"Le recinzioni elettrificate erano staccate?\"<br>“Sì.”<br>“Tutti? Dalle ",
-        "quote_last": " di stamattina? Nelle ultime cinque ore?\"<br>\"Sì.\"",
+        "quote_first": "Muldoon si accigliò. “Le recinzioni elettrificate erano staccate?”<br>“Sì.”<br>“Tutte? Da ",
+        "quote_last": " stamattina? Nelle ultime cinque ore?\"<br>\"Sì.\"",
         "title": "Jurassic Park",
         "author": "Michael Crichton",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "000655",
         "time": "05:00",
-        "quote_time_case": "* sono le cinque",
-        "quote_first": "Il martello suonò la sveglia sul parapetto fuori dal quartier generale del campo alle cinque, come sempre. Tempo di alzarsi. Il rumore irregolare fu attutito dal ghiaccio spesso due dita sulle finestre e presto si spense. Troppo freddo perché la guardia continuasse a martellare.",
-        "quote_last": "",
+        "quote_time_case": "cinque in punto",
+        "quote_first": "IL MARTELLO HA BLOCCATO la sveglia sulla ringhiera fuori dal quartier generale del campo alle ",
+        "quote_last": " come sempre. È ora di alzarsi. Il rumore irregolare fu attutito dal ghiaccio spesso due dita sulle finestre e presto si spense. Troppo freddo perché la guardia continuasse a martellare.",
         "title": "Un giorno nella vita di Ivan Denosovich",
         "author": "Aleksandr Solzhenitsyn",
         "sfw": "unknown"
@@ -52,8 +52,8 @@
     {
         "id": "000656",
         "time": "05:00",
-        "quote_time_case": "le cinque del mattino",
-        "quote_first": "Secondo Leon... dopodomani. L'attacco è previsto per dopodomani verso ",
+        "quote_time_case": "cinque del mattino",
+        "quote_first": "Secondo Leon... dopodomani. L'attacco è previsto per dopodomani verso le ",
         "quote_last": ". Il suo volto era ancora nell'ombra.",
         "title": "Un percorso nel tempo",
         "author": "Jodi Taylor",
@@ -63,7 +63,7 @@
         "id": "000657",
         "time": "05:00",
         "quote_time_case": "cinque",
-        "quote_first": "Sixsmith,<br>Seduto alla mia scrivania in vestaglia. La campana della chiesa suona le ",
+        "quote_first": "Sixsmith,<br>Seduto alla mia scrivania in vestaglia. La campana della chiesa suona ",
         "quote_last": ". Un'altra alba assetata. La mia candela è bruciata. Una notte faticosa capovolta.",
         "title": "Atlante delle nuvole",
         "author": "David Mitchell",
@@ -72,9 +72,9 @@
     {
         "id": "000658",
         "time": "05:00",
-        "quote_time_case": "* Sono le cinque",
-        "quote_first": "Erano appena suonate le cinque del mattino del diciannove gennaio, quando Bessie portò una candela nel mio armadio e mi trovò già alzato e quasi vestito.",
-        "quote_last": "",
+        "quote_time_case": "Le cinque",
+        "quote_first": "",
+        "quote_last": " erano appena suonate la mattina del diciannove gennaio, quando Bessie portò una candela nel mio armadio e mi trovò già alzato e quasi vestito.",
         "title": "Jane Eyre",
         "author": "Charlotte Brontë",
         "sfw": "unknown"
@@ -82,9 +82,9 @@
     {
         "id": "000659",
         "time": "05:00",
-        "quote_time_case": "* sono le cinque",
-        "quote_first": "Quel mattino erano svegli dalle cinque, come il lettore ricorderà; ma bah! la domenica non esiste la fatica, diceva Favourite; la domenica la fatica non funziona.",
-        "quote_last": "",
+        "quote_time_case": "cinque",
+        "quote_first": "Erano svegli dalle ",
+        "quote_last": " di quella mattina, come il lettore ricorderà; ma bah! la domenica non esiste la fatica, diceva Favourite; la domenica la fatica non funziona.",
         "title": "I Miserabili",
         "author": "Victor Hugo",
         "sfw": "unknown"
@@ -113,7 +113,7 @@
         "id": "000662",
         "time": "05:00",
         "quote_time_case": "cinque del mattino",
-        "quote_first": "Neppure uno sbadiglio. Non avevo neanche lontanamente sonno. Potevo dire che il mio senso dell'equilibrio era sbilanciato: sono quasi caduto quando ho provato ad alzarmi, ma sono riuscito a farcela e ho riordinato per un po', facendo scivolare le videocassette nelle loro custodie e rimettendole sullo scaffale. Pensavo che qualche attività potesse stancarmi. Ho preso uno Zyprexa e dell'altro Ativan. Ho mangiato una manciata di melatonina, masticando come una mucca che rumina. Non funzionava niente.<br>Così ho chiamato Trevor.<br>\"Sono le ",
+        "quote_first": "Neppure uno sbadiglio. Non avevo neanche lontanamente sonno. Potevo dire che il mio senso dell'equilibrio era sbilanciato: sono quasi caduto quando ho provato ad alzarmi, ma sono riuscito a farcela e ho riordinato per un po', facendo scivolare le videocassette nelle loro custodie e rimettendole sullo scaffale. Pensavo che qualche attività potesse stancarmi. Ho preso uno Zyprexa e dell'altro Ativan. Ho mangiato una manciata di melatonina, masticando come una mucca che rumina. Non funzionava niente.<br>Così ho chiamato Trevor.<br>\"Sono ",
         "quote_last": "\", ha detto. Sembrava irritato e confuso, ma aveva risposto.",
         "title": "Il mio anno di riposo e relax",
         "author": "Ottessa Moshfegh",
@@ -123,8 +123,8 @@
         "id": "000663",
         "time": "05:00",
         "quote_time_case": "cinque del mattino",
-        "quote_first": "Sixsmith,<br>mi sono sparato al palato alle ",
-        "quote_last": ". questa mattina con Luger di V.A. Ma ti ho visto, mio ​​caro, caro amico! Quanto mi tocca che tu ti preoccupi così tanto! Sulla vedetta del campanile, ieri, al tramonto. Per puro caso, non mi hai visto prima.",
+        "quote_first": "Sixsmith,<br>mi sono sparato attraverso il palato alle ",
+        "quote_last": " stamattina con Luger di V.A. Ma ti ho visto, mio caro, caro amico! Quanto mi tocca che tu ti preoccupi così tanto! Sulla vedetta del campanile, ieri, al tramonto. Per puro caso, non mi hai visto prima.",
         "title": "Atlante delle nuvole",
         "author": "David Mitchell",
         "sfw": "nsfw"
@@ -143,7 +143,7 @@
         "id": "000665",
         "time": "05:00",
         "quote_time_case": "cinque",
-        "quote_first": "La porta sul retro, aperta, si aprì lentamente cigolando per rivelare Fiona Athey, con un'espressione di scusa sul viso, teneva una pila di volantini sotto il braccio sinistro. «Spero di non averti svegliato, adesso. Tornerò un'altra volta, allora. Scusa.\" Si voltò per andarsene.<br>\"No, resta\", rispose Marjan. «Sono sveglio dalle ",
+        "quote_first": "La porta sul retro, aperta, si aprì lentamente cigolando per rivelare Fiona Athey, con un'espressione di scusa sul viso, teneva una pila di volantini sotto il braccio sinistro. «Spero di non averti svegliato, adesso. Tornerò un'altra volta, allora. Scusa.\" Si voltò per andarsene.<br>\"No, resta\", rispose Marjan. “Sono sveglio da ",
         "quote_last": ". Preparare una nuova infornata di pane. Perché non vieni a prendere una tazza di tè?\"",
         "title": "Zuppa Di Melograno",
         "author": "Marsha Mehran",
@@ -164,7 +164,7 @@
         "time": "05:00",
         "quote_time_case": "5 del mattino",
         "quote_first": "Fu nel comune di Dunwich, in una grande fattoria scarsamente abitata addossata a una collina a 4 miglia dal villaggio e a un miglio e mezzo da qualsiasi altra abitazione, che Wilbur Whately nacque alle ",
-        "quote_last": " di domenica 2 febbraio 1913. La data fu ricordata perché era la Candelora, che la gente di Dunwich osserva curiosamente sotto un altro nome.",
+        "quote_last": " domenica 2 febbraio 1913. La data fu ricordata perché era la Candelora, che la gente di Dunwich osserva curiosamente sotto un altro nome.",
         "title": "L'orrore di Dunwich",
         "author": "H.P. Lovecraft",
         "sfw": "unknown"
@@ -172,9 +172,9 @@
     {
         "id": "000668",
         "time": "05:00",
-        "quote_time_case": "* sono le cinque",
-        "quote_first": "Poco dopo le cinque di questa fredda mattina di settembre, il carretto del pescivendolo, contenente Kirsten ed Emilia e tutti gli averi che sono riusciti a mettere insieme nel tempo concesso loro, viene portato fuori dai cancelli di Rosenborg?",
-        "quote_last": "",
+        "quote_time_case": "cinque in punto",
+        "quote_first": "Subito dopo le ",
+        "quote_last": " di questa fredda mattina di settembre, il carretto del pescivendolo, contenente Kirsten ed Emilia e tutti gli averi che sono riusciti a mettere insieme nel tempo concesso loro, viene scacciato dalle porte di Rosenborg?",
         "title": "Musica e silenzio",
         "author": "Rose Tremain",
         "sfw": "unknown"
@@ -192,9 +192,9 @@
     {
         "id": "000670",
         "time": "05:00",
-        "quote_time_case": "* sono le cinque",
-        "quote_first": "La giornata arrivò lenta, fino alle cinque. Poi balzò prima delle colline. Come i rubini impediti, o la luce. Un moschetto improvviso si rovescia",
-        "quote_last": "",
+        "quote_time_case": "cinque",
+        "quote_first": "La giornata arrivò lenta, fino alle ",
+        "quote_last": ". Poi balzò prima delle colline. Come i rubini impediti, o la luce. Un moschetto improvviso si rovescia",
         "title": "La giornata arrivò lentamente, fino alle cinque",
         "author": "Emily Dickinson",
         "sfw": "unknown"
@@ -204,7 +204,7 @@
         "time": "05:00",
         "quote_time_case": "5 del mattino",
         "quote_first": "Ci sono cose peggiori dell'essersi comportati stupidamente in pubblico. Ci sono cose peggiori di questi tradimenti in miniatura, commessi o subiti o sospettati; ci sono cose peggiori che non riuscire a dormire pensando a loro. Sono le ",
-        "quote_last": ". Tutte le cose peggiori arrivano in agguato e restano gelide sul letto con un aspetto sempre peggio, sempre peggio.",
+        "quote_last": " Tutte le cose peggiori arrivano furtivamente e restano gelide sul letto con un aspetto sempre peggiore, sempre peggiore.",
         "title": "Cose",
         "author": "Fleur Adcock",
         "sfw": "unknown"
@@ -212,9 +212,9 @@
     {
         "id": "000672",
         "time": "05:00",
-        "quote_time_case": "* sono le cinque",
-        "quote_first": "Che cosa spinge i giovani a \"uscire allo scoperto\", se non la nobile ambizione del matrimonio? Cosa li spinge ad affollarsi nelle località termali? Cosa li fa ballare fino alle cinque del mattino per tutta una stagione mortale?",
-        "quote_last": "",
+        "quote_time_case": "cinque",
+        "quote_first": "Che cosa spinge i giovani a \"uscire allo scoperto\", se non la nobile ambizione del matrimonio? Cosa li spinge ad affollarsi nelle località termali? Cosa li fa ballare fino alle ",
+        "quote_last": " del mattino per tutta una stagione mortale?",
         "title": "Fiera della Vanità",
         "author": "William Makepeace Thackeray",
         "sfw": "unknown"

@@ -2,9 +2,9 @@
     {
         "id": "002442",
         "time": "16:10",
-        "quote_time_case": "Quattro e dieci",
+        "quote_time_case": "Quattrodieci",
         "quote_first": "Non mi piace questa attesa, disse.<br>Lei sorrise. \"Saresti un pessimo investigatore privato.\"<br>\"Che ore sono?\"<br>\"",
-        "quote_last": ". Quindici minuti più tardi dell'ultima volta che me lo hai chiesto.\"",
+        "quote_last": ". Quindici minuti dopo l'ultima volta che hai chiesto.\"",
         "title": "Fiume di rame",
         "author": "William Kent Krueger",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "002443",
         "time": "16:10",
-        "quote_time_case": "* Le quattro e dieci",
-        "quote_first": "Questo sabato aveva lasciato i saluti a padre Martin, ma alle quattro e dieci pensò che sarebbe stato cortese farsi vedere.",
-        "quote_last": "",
+        "quote_time_case": "quattro e dieci",
+        "quote_first": "Questo sabato aveva lasciato i saluti a Padre Martin, ma alle ",
+        "quote_last": " ha pensato che sarebbe stato cortese comparire.",
         "title": "Morte negli ordini sacri",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -24,7 +24,7 @@
         "time": "16:10",
         "quote_time_case": "1610h.",
         "quote_first": "",
-        "quote_last": " Sala pesi E.T.A. Circuiti di stile libero. Il clangore e il clic di vari sistemi di resistenza.",
+        "quote_last": " E.T.A Sala pesi. Circuiti di stile libero. Il clangore e il clic di vari sistemi di resistenza.",
         "title": "Scherzo infinito",
         "author": "David Foster Wallace",
         "sfw": "unknown"
@@ -32,9 +32,9 @@
     {
         "id": "002445",
         "time": "16:10",
-        "quote_time_case": "* Le quattro e dieci",
-        "quote_first": "Guarda l'orologio. Lei è in cucina. Manca un minuto. Lei aspetta. Sono le quattro e dieci. Prende l'éclair. Ne lecca via la crema. Si guarda. È dannatamente stupido. Ma. Morde il cioccolato e la pasta ammorbidita dalla crema. Jack non è ancora a casa. Leannes è al lavoro. Paula se ne andrà tra poco. Ha smesso di bere per un anno. Esattamente un anno. Guarda l'orologio. Un anno e un minuto.",
-        "quote_last": "",
+        "quote_time_case": "quattro e dieci",
+        "quote_first": "Guarda l'orologio. Lei è in cucina. Manca un minuto. Lei aspetta. Sono ",
+        "quote_last": ". Prende l'éclair. Ne lecca via la crema. Si guarda. È dannatamente stupido. Ma. Morde il cioccolato e la pasta ammorbidita dalla crema. Jack non è ancora a casa. Leannes è al lavoro. Paula se ne andrà tra poco. Ha smesso di bere per un anno. Esattamente un anno. Guarda l'orologio. Un anno e un minuto.",
         "title": "Paola Spencer",
         "author": "Roddy Doyle",
         "sfw": "nsfw"
@@ -42,8 +42,8 @@
     {
         "id": "002446",
         "time": "16:10",
-        "quote_time_case": "quattro e dieci",
-        "quote_first": "Il cambiamento avvenne alle ",
+        "quote_time_case": "quattro-dieci",
+        "quote_first": "Il cambiamento è avvenuto alle ",
         "quote_last": ". Sdraiata sulla sabbia, la donna vestita di nero lo vide arrivare e si rilassò.",
         "title": "Le donne",
         "author": "Ray Bradbury",
