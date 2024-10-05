@@ -8,7 +8,10 @@ async function shareQuote() {
   const quote = document.getElementById("quote");
 
   if (quote) {
-    const canvas = await html2canvas(document.body);
+    const canvas = await html2canvas(document.body, {
+      allowTaint: true,
+      useCORS: true
+    });
 
     // @ts-ignore
     if (navigator.share) {
