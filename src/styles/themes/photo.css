@@ -1,9 +1,10 @@
 [data-theme|="photo"] {
-    --quote-font-family: "Abril Fatface", sans-serif;
+  --quote-font-family: "Abril Fatface", sans-serif;
 }
 
 [data-theme|="photo"] body {
-    background-blend-mode: overlay;
+  background-blend-mode: overlay;
+  background-size: cover;
 }
 
 [data-theme|="photo"] blockquote:before,
@@ -12,21 +13,21 @@
 }
 
 [data-theme="photo-light"] {
-    --background: #c8c5b8;
-    --font-color: #333333;
-    --accent-color: #e33725;
+  --background: #bbbbbb;
+  --font-color: #333333;
+  --accent-color: #e33725;
 }
 
 [data-theme="photo-light"] #quote {
-    text-shadow: 0px 0px 25px #EEE;
+  text-shadow: 0px 0px 25px #eeeeee;
 }
 
 [data-theme="photo-dark"] {
-    --background: #222222;
-    --font-color: #eeeeee;
-    --accent-color: #fd3622;
+  --background: #333333;
+  --font-color: #eeeeee;
+  --accent-color: #fd3622;
 }
 
 [data-theme="photo-dark"] #quote {
-    text-shadow: 0px 0px 25px #111;
+  text-shadow: 0px 0px 25px #111111;
 }
