@@ -343,7 +343,7 @@ body:not(.can-share) #share {
   inset: 0;
   background: #FFF;
   z-index: 10;
-  animation: flash 300ms forwards 1;
+  animation: flash 500ms forwards 1;
 }
 
 @keyframes flash {

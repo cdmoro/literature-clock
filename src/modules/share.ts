@@ -31,7 +31,7 @@ async function getCanvas() {
   
     setTimeout(() => {
       flashEl.remove();
-    }, 300);
+    }, 500);
 
     return canvas;
   }
