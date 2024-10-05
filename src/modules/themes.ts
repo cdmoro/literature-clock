@@ -92,11 +92,10 @@ export function setTheme({ isVariantChange = false } = {}) {
     resetFont();
   }
   setStringSetting("theme", `${theme}-${variant}`);
+  updateURL("theme", `${theme}-${variant}`);
 
   if (theme === "color") {
     theme = getRandomThemeColor();
-  } else {
-    updateURL("theme", `${theme}-${variant}`);
   }
   
   if (variant === "system") {
