@@ -46,6 +46,7 @@
   position: relative;
   align-self: end;
   max-width: 70%;
+  opacity: 1;
 }
 
 [data-theme|="whatsapp"] cite:before {
