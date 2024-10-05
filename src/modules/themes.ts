@@ -125,6 +125,10 @@ export function setTheme({ isVariantChange = false } = {}) {
 }
 
 export function setDynamicBackgroundPicture() {
+  const now = new Date();
+  const seed = `${now.getFullYear()}${
+    now.getMonth() + 1
+  }${now.getDay()}${now.getHours()}${now.getMinutes()}`;
   let innerHeight = window.innerHeight;
   let innerWidth = window.innerWidth;
 
@@ -136,9 +140,7 @@ export function setDynamicBackgroundPicture() {
     innerWidth = 5000;
   }
 
-  document.body.style.backgroundImage = `url(https://picsum.photos/${innerWidth}/${innerHeight}?blur=1&random=${Math.floor(
-    Math.random() * 90
-  )})`;
+  document.body.style.backgroundImage = `url(https://picsum.photos/seed/${seed}/${innerWidth}/${innerHeight}?blur=1)`;
 }
 
 export function removeBackgroundImage() {
