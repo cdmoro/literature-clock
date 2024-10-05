@@ -49,6 +49,11 @@
   opacity: 1;
 }
 
+[data-theme|="whatsapp"] .safe-screenshot blockquote p,
+[data-theme|="whatsapp"] .safe-screenshot blockquote cite {
+  box-shadow: none;
+}
+
 [data-theme|="whatsapp"] cite:before {
   content: "📖 ";
 }

@@ -12,19 +12,11 @@
 [data-theme="retro-light"] {
   --accent-color: #daa908;
   --background: #f8f8f8;
-  --background-image: repeating-linear-gradient(
-    var(--background) 38px,
-    var(--background) 0px,
-    rgba(109, 109, 109, 0.1) 41px
-  );
+  --background-image: url("/assets/scanlines-bg-light.jpg");
 }
 
 [data-theme="retro-dark"] {
   --accent-color: #f1ba08;
   --background: #2c2c2c;
-  --background-image: repeating-linear-gradient(
-    var(--background) 38px,
-    var(--background) 0px,
-    rgba(109, 109, 109, 0.4) 41px
-  );
+  --background-image: url("/assets/scanlines-bg-dark.jpg");
 }

@@ -10,11 +10,7 @@
 [data-theme="anaglyph-light"] {
   --accent-color: #c53a35;
   --background: #eaeaec;
-  --background-image: repeating-linear-gradient(
-    var(--background) 38px,
-    var(--background) 0px,
-    rgba(109, 109, 109, 0.1) 41px
-  );
+  --background-image: url("/assets/scanlines-bg-light.jpg");
   --font-color: #2f2e2c;
   --shadow: 5px 2px #e60c05, -5px -2px #4be4e2;
   --color-mix: color-mix(in srgb, var(--font-color), transparent 10%);
@@ -38,11 +34,7 @@
 [data-theme="anaglyph-dark"] {
   --accent-color: #3987b4;
   --background: #12121a;
-  --background-image: repeating-linear-gradient(
-    var(--background) 38px,
-    var(--background) 0px,
-    rgba(109, 109, 109, 0.4) 41px
-  );
+  --background-image: url("/assets/scanlines-bg-dark.jpg");
   --font-color: #f0f0f0;
   --shadow: 5px 2px #f50d3f, -5px -2px #41ceee;
   --color-mix: color-mix(in srgb, var(--font-color), transparent 5%);

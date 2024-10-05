@@ -330,6 +330,31 @@ footer {
   display: inline-block;
 }
 
+body.can-share #downlad {
+  display: none;
+}
+
+body:not(.can-share) #share {
+  display: none;
+}
+
+#flash {
+  position: fixed;
+  inset: 0;
+  background: #FFF;
+  z-index: 10;
+  animation: flash 300ms forwards 1;
+}
+
+@keyframes flash {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 @media all and (max-width: 959px) and (min-width: 600px) {
   cite {
     font-size: 2vw;

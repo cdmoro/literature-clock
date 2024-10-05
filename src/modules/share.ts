@@ -2,7 +2,9 @@ import html2canvas from "html2canvas-pro";
 import { getTime } from "../utils/utils";
 
 export function initShare() {
+  document.body.classList.toggle("can-share", !!navigator.share);
   document.getElementById("share")?.addEventListener("click", shareQuote);
+  document.getElementById("download")?.addEventListener("click", downloadQuote);
 }
 
 function getQuoteFileName() {
@@ -10,7 +12,7 @@ function getQuoteFileName() {
   return `quote_${time.replace(":", "_")}.png`;
 }
 
-async function shareQuote() {
+async function getCanvas() {
   const quote = document.getElementById("quote");
 
   if (quote) {
@@ -18,39 +20,56 @@ async function shareQuote() {
       allowTaint: true,
       useCORS: true,
       scale: 2,
+      onclone(_document, element) {
+        element.classList.add("safe-screenshot");
+      },
     });
 
-    // @ts-ignore
-    if (navigator.share) {
-      canvas.toBlob((blob) => {
-        if (blob) {
-          const filesArray = [
-            new File([blob], getQuoteFileName(), {
-              type: blob.type,
-              lastModified: new Date().getTime(),
-            }),
-          ];
-          const shareData = {
-            files: filesArray,
-          };
+    const flashEl = document.createElement("div");
+    flashEl.id = "flash";
+    document.body.appendChild(flashEl);
+  
+    setTimeout(() => {
+      flashEl.remove();
+    }, 300);
 
-          navigator.share(shareData);
-        }
-      });
-    } else {
-      download(canvas.toDataURL("image/png"));
-    }
+    return canvas;
   }
 }
 
-function download(url: string) {
-  const a = document.createElement("a");
+async function shareQuote() {
+  const canvas = await getCanvas();
 
-  a.style.display = "none";
-  a.setAttribute("href", url);
-  a.setAttribute("download", getQuoteFileName());
-  document.body.appendChild(a);
+  canvas?.toBlob((blob) => {
+    if (blob) {
+      const filesArray = [
+        new File([blob], getQuoteFileName(), {
+          type: blob.type,
+          lastModified: new Date().getTime(),
+        }),
+      ];
+      const shareData = {
+        files: filesArray,
+      };
 
-  a.click();
-  a.remove();
+      navigator.share(shareData);
+    }
+  });
+}
+
+async function downloadQuote() {
+  const canvas = await getCanvas();
+  const url = canvas?.toDataURL("image/png");
+
+  if (url) {
+    const a = document.createElement("a");
+
+    a.style.display = "none";
+    a.setAttribute("href", url);
+    a.setAttribute("download", getQuoteFileName());
+    document.body.appendChild(a);
+
+    a.click();
+    a.remove();
+  }
 }

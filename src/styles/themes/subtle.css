@@ -55,6 +55,13 @@
   -webkit-text-fill-color: transparent;
 }
 
+[data-theme|="subtle"] body.safe-screenshot p {
+  background: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: unset;
+  color: rgb(238, 3, 117);
+}
+
 [data-theme|="subtle"] #time-progress-bar {
   background: var(--linear-gradient);
 }
