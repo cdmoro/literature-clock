@@ -3,8 +3,13 @@
 }
 
 [data-theme|="photo"] body {
-  background-blend-mode: overlay;
   background-size: cover;
+}
+
+[data-theme|="photo"] #photo-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--background);
 }
 
 [data-theme|="photo"] blockquote:before,
@@ -13,9 +18,13 @@
 }
 
 [data-theme="photo-light"] {
-  --background: #bbbbbb;
+  --background: #FFFFFF;
   --font-color: #333333;
   --accent-color: #e33725;
+}
+
+[data-theme="photo-light"] #photo-overlay {
+  opacity: .5;
 }
 
 [data-theme="photo-light"] #quote {
@@ -23,9 +32,13 @@
 }
 
 [data-theme="photo-dark"] {
-  --background: #333333;
+  --background: #000000;
   --font-color: #eeeeee;
   --accent-color: #fd3622;
+}
+
+[data-theme="photo-dark"] #photo-overlay {
+  opacity: .7;
 }
 
 [data-theme="photo-dark"] #quote {
