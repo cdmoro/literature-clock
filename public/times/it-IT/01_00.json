@@ -2,9 +2,9 @@
     {
         "id": "000155",
         "time": "01:00",
-        "quote_time_case": "* l'una del mattino",
-        "quote_first": "Se vuoi uscire di casa senza essere visto, la metà del pomeriggio è in un certo senso un momento migliore per provarci rispetto alla metà della notte. È più probabile che porte e finestre siano aperte; e se vieni scoperto, puoi sempre far finta che non avevi intenzione di andare lontano e che non avevi programmi particolari. (È molto difficile far credere questo ai giganti o agli adulti se vieni trovato mentre ti arrampichi dalla finestra di una camera da letto all’una del mattino.)",
-        "quote_last": "",
+        "quote_time_case": "l'una del mattino",
+        "quote_first": "Se vuoi uscire di casa senza essere visto, la metà del pomeriggio è in un certo senso un momento migliore per provarci rispetto alla metà della notte. È più probabile che porte e finestre siano aperte; e se vieni scoperto, puoi sempre fingere che non avevi intenzione di andare lontano e che non avevi programmi particolari. (È molto difficile far credere questo ai giganti o agli adulti se vieni trovato mentre ti arrampichi dalla finestra di una camera da letto alle ",
+        "quote_last": ".)",
         "title": "La sedia d'argento",
         "author": "C.S. Lewis",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "000156",
         "time": "01:00",
-        "quote_time_case": "* l'una in punto",
-        "quote_first": "Ha spento all'una. Aveva scritto due pagine, e la sensazione che stesse tornando all'uomo nervoso e nevrotico che gli aveva quasi bruciato la casa tre anni prima stava diventando sempre più difficile da respingere.",
-        "quote_last": "",
+        "quote_time_case": "l'una",
+        "quote_first": "Ha spento alle ",
+        "quote_last": ". Aveva scritto due pagine, e la sensazione che stesse tornando all'uomo nervoso e nevrotico che gli aveva quasi bruciato la casa tre anni prima stava diventando sempre più difficile da respingere.",
         "title": "Se sanguina",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "000157",
         "time": "01:00",
-        "quote_time_case": "* 1 del mattino",
-        "quote_first": "Poco prima dell'una di notte, ha bussato alla porta sul retro e ha fatto entrare cinque uomini, due dei quali erano falegnami esperti.",
-        "quote_last": "",
+        "quote_time_case": "1 di notte",
+        "quote_first": "Poco prima ",
+        "quote_last": ", ha bussato alla porta sul retro e ha fatto entrare cinque uomini, due dei quali erano esperti falegnami.",
         "title": "I Senza Nome",
         "author": "John Connolly",
         "sfw": "unknown"
@@ -32,9 +32,9 @@
     {
         "id": "000158",
         "time": "01:00",
-        "quote_time_case": "* 1 del mattino",
-        "quote_first": "Vorrei gridare e urlare, ma urlerei contro un muro. Mi precipito in camera mia. Trenta minuti dopo, esce di casa con Gboyega.<br>Non torna prima dell'una di notte.<br>Non dormo fino all'una di notte.",
-        "quote_last": "",
+        "quote_time_case": "1:00",
+        "quote_first": "Vorrei gridare e urlare, ma urlerei contro un muro. Mi precipito in camera mia. Trenta minuti dopo, esce di casa con Gboyega.<br>Non torna fino a ",
+        "quote_last": "<br>Non dormo fino all'1:00 di notte.",
         "title": "Mia sorella, la serial killer",
         "author": "Oyinkan Braithwaite",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "000159",
         "time": "01:00",
-        "quote_time_case": "* l'una in punto",
-        "quote_first": "Era l'una quando lasciammo il numero 3 di Lauriston Gardens. Sherlock Holmes mi condusse al più vicino ufficio telegrafico, da dove inviò un lungo telegramma. Poi chiamò un taxi e ordinò all'autista di portarci all'indirizzo fornitoci da Lestrade",
-        "quote_last": "",
+        "quote_time_case": "l'una",
+        "quote_first": "Era ",
+        "quote_last": " quando lasciammo il numero 3 di Lauriston Gardens. Sherlock Holmes mi condusse al più vicino ufficio telegrafico, da dove inviò un lungo telegramma. Poi chiamò un taxi e ordinò all'autista di portarci all'indirizzo fornitoci da Lestrade",
         "title": "Uno studio in rosso",
         "author": "Sir Arthur Conan Doyle",
         "sfw": "unknown"
@@ -52,9 +52,9 @@
     {
         "id": "000160",
         "time": "01:00",
-        "quote_time_case": "* l'una in punto",
-        "quote_first": "\"Nessuno si è accorto che è sceso dalla corsa senza la sua accompagnatrice?\"<br>\"No. Era metà luglio, il culmine della stagione, e il posto era un manicomio brulicante. Trovarono il corpo solo all'una del mattino successivo, molto tempo dopo che il parco era stato chiuso e le luci di lavoro della Casa dell'orrore erano state accese. Per il turno di notte, sai.\"",
-        "quote_last": "",
+        "quote_time_case": "l'una",
+        "quote_first": "\"Nessuno si è accorto che è sceso dalla corsa senza la sua accompagnatrice?\"<br>\"No. Era metà luglio, il culmine della stagione, e il posto era un manicomio brulicante. Non trovarono il corpo fino all'",
+        "quote_last": " del mattino successivo, molto tempo dopo che il parco era stato chiuso e le luci di lavoro della Casa dell'orrore erano state accese. Per il turno di notte, sai.\"",
         "title": "Terra di gioia",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -62,9 +62,9 @@
     {
         "id": "000161",
         "time": "01:00",
-        "quote_time_case": "* l'una in punto",
-        "quote_first": "Era quasi l'una quando Sherlock Holmes tornò dalla sua escursione. Teneva in mano un foglio di carta blu, scarabocchiato di note e cifre.",
-        "quote_last": "",
+        "quote_time_case": "l'una",
+        "quote_first": "Era quasi ",
+        "quote_last": " quando Sherlock Holmes tornò dalla sua escursione. Teneva in mano un foglio di carta blu, scarabocchiato di note e cifre.",
         "title": "Le avventure di Sherlock Holmes",
         "author": "Sir Arthur Conan Doyle",
         "sfw": "unknown"
@@ -72,9 +72,9 @@
     {
         "id": "000162",
         "time": "01:00",
-        "quote_time_case": "* l'una in punto",
-        "quote_first": "«Non posso farlo, Findle; Sono con qualcun altro! Chiamami domani verso l'una!»",
-        "quote_last": "",
+        "quote_time_case": "l'una",
+        "quote_first": "«Non posso farlo, Findle; Sono con qualcun altro! Chiamami domani verso ",
+        "quote_last": "!”",
         "title": "Da questa parte del paradiso",
         "author": "F. Scott Fitzgerald",
         "sfw": "unknown"
@@ -82,9 +82,9 @@
     {
         "id": "000163",
         "time": "01:00",
-        "quote_time_case": "* l'una in punto",
-        "quote_first": "«Verso l'una si trasferirono da Maxim e due li trovarono da Devinière. Sloane aveva bevuto di seguito ed era in uno stato di instabile euforia, ma Amory era terribilmente sobrio; non avevano incontrato nessuno di quegli antichi e corrotti compratori di champagne che di solito assistevano alle loro feste a New York. \"",
-        "quote_last": "",
+        "quote_time_case": "l'una",
+        "quote_first": "«Verso l'",
+        "quote_last": " si sono trasferiti da Maxim e due li hanno trovati da Deviniere. Sloane aveva bevuto di seguito ed era in uno stato di instabile euforia, ma Amory era terribilmente sobrio; non avevano incontrato nessuno di quegli antichi e corrotti compratori di champagne che di solito assistevano alle loro feste a New York. \"",
         "title": "Da questa parte del paradiso",
         "author": "F. Scott Fitzgerald",
         "sfw": "unknown"
@@ -92,9 +92,9 @@
     {
         "id": "000164",
         "time": "01:00",
-        "quote_time_case": "* ne colpì uno",
-        "quote_first": "Più ci pensava, più era perplesso... Non capiva questa faccenda della rivoltella...<br>Qualcuno in casa aveva preso quella rivoltella...<br>Di sotto suonò l'una.",
-        "quote_last": "",
+        "quote_time_case": "ha colpito uno",
+        "quote_first": "Più ci pensava, più era perplesso... Non capiva questa faccenda delle rivoltelle...<br>Qualcuno in casa aveva preso quella rivoltella...<br>Di sotto un orologio ",
+        "quote_last": ".",
         "title": "E poi non c'era nessuno",
         "author": "Agatha Christie",
         "sfw": "unknown"
@@ -102,7 +102,7 @@
     {
         "id": "000165",
         "time": "01:00",
-        "quote_time_case": "1:00.",
+        "quote_time_case": "1.00.",
         "quote_first": "",
         "quote_last": " Sentivo che il silenzio circostante mi soffocava.",
         "title": "Sorella",
@@ -112,9 +112,9 @@
     {
         "id": "000166",
         "time": "01:00",
-        "quote_time_case": "* l'una in punto",
-        "quote_first": "Non sapeva cosa ci fosse alla fine dello scivolo. L'apertura era stretta (anche se abbastanza grande da contenere il canarino). Sognò che lo scivolo si apriva su enormi bidoni della spazzatura pieni di vecchi filtri di caffè, ravioli al pomodoro e genitali maciullati. Enormi vermi, grandi quanto un canarino, armati di terribili becchi, avrebbero attaccato il corpo. Strappargli i piedi, strappargli gli intestini, fargli scoppiare i bulbi oculari. Si svegliò tremando; era solo l'una. Ha ingoiato tre Xanax. Così finì la sua prima notte di libertà.",
-        "quote_last": "",
+        "quote_time_case": "l'una",
+        "quote_first": "Non sapeva cosa ci fosse alla fine dello scivolo. L'apertura era stretta (anche se abbastanza grande da contenere il canarino). Sognò che lo scivolo si apriva su enormi bidoni della spazzatura pieni di vecchi filtri di caffè, ravioli al pomodoro e genitali maciullati. Enormi vermi, grandi quanto un canarino, armati di terribili becchi, avrebbero attaccato il corpo. Strappargli i piedi, strappargli gli intestini, fargli scoppiare i bulbi oculari. Si svegliò tremando; era solo ",
+        "quote_last": ". Ha ingoiato tre Xanax. Così finì la sua prima notte di libertà.",
         "title": "Atomizzato",
         "author": "Michel Houellebecq",
         "sfw": "nsfw"
@@ -122,9 +122,9 @@
     {
         "id": "000167",
         "time": "01:00",
-        "quote_time_case": "* l'una del mattino",
-        "quote_first": "Sono l'unico sveglio in questa casa questa notte prima del giorno che cambierà tutte le nostre vite. Però è già quel giorno: le lancette luminose della mia sveglia (che non ho impostato) indicano che è appena passata l'una di notte.",
-        "quote_last": "",
+        "quote_time_case": "l'una del mattino",
+        "quote_first": "Sono l'unico sveglio in questa casa questa notte prima del giorno che cambierà tutte le nostre vite. Però è già quel giorno: le lancette luminose della mia sveglia (che non ho impostato) mostrano che è appena passata ",
+        "quote_last": ".",
         "title": "Domani",
         "author": "Graham Swift",
         "sfw": "unknown"
@@ -132,9 +132,9 @@
     {
         "id": "000168",
         "time": "01:00",
-        "quote_time_case": "* L'una del mattino",
-        "quote_first": "Era ormai il trenta maggio. L'una di notte del 30 maggio 1940. Una data piuttosto famosa in cui restare sveglio a fissare il soffitto. Già nei torrenti e negli estuari delle maree dell'Inghilterra le imbarcazioni da diporto e i piroscafi gettavano gli ormeggi per la gita di un giorno a Dunkerque. E, dall'altra parte, Ted aveva buone possibilità come chiunque altro.",
-        "quote_last": "",
+        "quote_time_case": "L'una di notte",
+        "quote_first": "Era ormai il trenta maggio. ",
+        "quote_last": " del 30 maggio 1940. Una data piuttosto famosa in cui restare svegli e fissare il soffitto. Già nei torrenti e negli estuari delle maree dell'Inghilterra le imbarcazioni da diporto e i piroscafi gettavano gli ormeggi per la gita di un giorno a Dunkerque. E, dall'altra parte, Ted aveva buone possibilità come chiunque altro.",
         "title": "Londra mi appartiene",
         "author": "Norman Collins",
         "sfw": "unknown"
@@ -142,8 +142,8 @@
     {
         "id": "000169",
         "time": "01:00",
-        "quote_time_case": "allora la campana batteva una",
-        "quote_first": "La notte scorsa, tra l'altro, quando quella stessa stella che è a occidente del polo aveva fatto il suo corso per illuminare quella parte del cielo dove ora arde, Marcello e io, ",
+        "quote_time_case": "Allora la campana batteva una",
+        "quote_first": "La scorsa notte, quando quella stessa stella che è a occidente del polo aveva fatto il suo corso per illuminare quella parte del cielo dove ora arde, Marcello e io, ",
         "quote_last": ".",
         "title": "Hamlet",
         "author": "William Shakespeare",
@@ -153,8 +153,8 @@
         "id": "000170",
         "time": "01:00",
         "quote_time_case": "l'una del mattino",
-        "quote_first": "La stazione era più affollata di quanto si fosse aspettato di trovarla: di cosa si trattava? guardò l'orologio: ",
-        "quote_last": ". In nome di Dio, cosa stava facendo alla stazione di King's Cross all'una di notte, senza sigaretta e senza una casa in cui potesse ragionevolmente aspettarsi di entrare senza essere ucciso a colpi di arma da fuoco da un uccello omicida?",
+        "quote_first": "La stazione era più affollata di quanto si fosse aspettato di trovarla: di cosa si trattava? guardò l'orologio - ",
+        "quote_last": ". In nome di Dio, cosa stava facendo alla stazione di King's Cross all'una di notte, senza sigaretta e senza una casa in cui poteva ragionevolmente aspettarsi di entrare senza essere ucciso a colpi di arma da fuoco da un uccello omicida?",
         "title": "La lunga e oscura ora del tè dell'anima",
         "author": "Douglas Adams",
         "sfw": "unknown"

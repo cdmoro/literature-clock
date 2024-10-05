@@ -1,32 +1,32 @@
 [
     {
-        "id": "000777",
+        "id": "000764",
         "time": "05:53",
-        "quote_time_case": "cinco y cincuenta y tres",
+        "quote_time_case": "cinco cincuenta y tres",
         "quote_first": "El día había sido elegido especialmente porque los meteorólogos les habían asegurado que el sol saldría a las ",
         "quote_last": " y no llovería. Los meteorólogos tendrían razón en cuanto al sol, pero como para demostrar su falibilidad, a las cuatro y once empezó una llovizna constante.",
-        "title": "Mientras el cuervo vuela",
+        "title": "En línea recta",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "000778",
-        "time": "05:53",
-        "quote_time_case": "seis menos siete",
-        "quote_first": "El registro de la puerta mostraba que había cerrado la sesión a las ",
-        "quote_last": " de esa mañana, un poco antes de lo habitual. Como eran empleados concienzudos, el puerto espacial llamó inmediatamente a la policía y envió a alguien a ver a Gemma Tivon.",
-        "title": "Dragón Caído",
-        "author": "Peter F. Hamilton",
-        "sfw": "sfw"
-    },
-    {
-        "id": "000779",
+        "id": "000765",
         "time": "05:53",
         "quote_time_case": "cinco cincuenta y tres",
         "quote_first": "A las ",
-        "quote_last": ", mientras un sol rojo sangre se asomaba en el horizonte, se disparó una pistola Verey y Charlie miró hacia atrás y vio el cielo iluminado detrás de él.",
-        "title": "Mientras el cuervo vuela",
+        "quote_last": ", mientras un sol rojo sangre se asomaba en el horizonte, se disparó una pistola Verey y Charlie miró hacia atrás para ver el cielo iluminado detrás de él.",
+        "title": "En línea recta",
         "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "000766",
+        "time": "05:53",
+        "quote_time_case": "siete minutos menos de las seis",
+        "quote_first": "El registro de la puerta mostraba que había cerrado sesión a las ",
+        "quote_last": " esa mañana, un poco antes de lo habitual. Como eran empleados concienzudos, el puerto espacial llamó inmediatamente a la policía y envió a alguien a ver a Gemma Tivon.",
+        "title": "Dragón Caído",
+        "author": "Peter F. Hamilton",
         "sfw": "sfw"
     }
 ]

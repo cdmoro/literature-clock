@@ -1,32 +1,32 @@
 [
     {
-        "id": "001719",
-        "time": "11:04",
-        "quote_time_case": "* pasadas las 11 en punto",
-        "quote_first": "Según le había dicho su marido, ella todavía estaba en la cama aunque eran más de las 11. Su rostro normalmente móvil estaba revestido de arcilla, rígido y amenazador como una máscara azteca.",
-        "quote_last": "",
-        "title": "Cucharón",
-        "author": "Evelyn Waugh",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001720",
+        "id": "001693",
         "time": "11:04",
         "quote_time_case": "11:04",
-        "quote_first": "El senador Harrison murió antes de llegar al hospital y un médico de la casa reparó la herida de Mark. Mark miró su reloj y se rió. Eran las ",
-        "quote_last": ": iba a vivir.",
+        "quote_first": "El senador Harrison murió antes de llegar al hospital y un médico de la casa reparó la herida de Mark. Mark miró su reloj y se rió. Era ",
+        "quote_last": "—él iba a vivir.",
         "title": "¿Se lo contamos al presidente?",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001721",
+        "id": "001694",
         "time": "11:04",
-        "quote_time_case": "11:04",
-        "quote_first": "En consecuencia, nos complace anunciar que, dado que ya se han utilizado las excusas sobrantes, el DeepDrop de las ",
-        "quote_last": " a Sydney está listo para abordar en la Puerta Seis.",
+        "quote_time_case": "11.04",
+        "quote_first": "En consecuencia, nos complace anunciar que, dado que ya se han utilizado las excusas sobrantes, el ",
+        "quote_last": " DeepDrop to Sydney está listo para abordar en la Puerta Seis.",
         "title": "Perdido en un buen libro",
         "author": "Jasper Fforde",
         "sfw": "sfw"
+    },
+    {
+        "id": "001695",
+        "time": "11:04",
+        "quote_time_case": "más de las 11",
+        "quote_first": "Según le había dicho su marido, ella todavía estaba en la cama aunque eran ",
+        "quote_last": ". Su rostro normalmente móvil estaba revestido de arcilla, rígido y amenazador como una máscara azteca.",
+        "title": "Cuchara",
+        "author": "Evelyn Waugh",
+        "sfw": "unknown"
     }
 ]

@@ -1,16 +1,6 @@
 [
     {
-        "id": "000304",
-        "time": "02:06",
-        "quote_time_case": "Como las dos. Recién pasadas",
-        "quote_first": "¿En mitad de la noche? preguntó Alec bruscamente. \"¿Puedes ser más definitivo?\"<br>\"",
-        "quote_last": "\". Daisy notó que él no expresó ninguna preocupación por su seguridad.",
-        "title": "Muerto en el agua",
-        "author": "Carola Dunn",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000305",
+        "id": "000298",
         "time": "02:06",
         "quote_time_case": "las dos y seis",
         "quote_first": "Miró su reloj: ",
@@ -20,13 +10,23 @@
         "sfw": "sfw"
     },
     {
-        "id": "000306",
+        "id": "000299",
         "time": "02:06",
         "quote_time_case": "las dos y seis minutos",
-        "quote_first": "Y eran ",
+        "quote_first": "Y la hora era ",
         "quote_last": ". ¿Y Jonás? Él y Harry probablemente llegarían unos cinco minutos tarde.",
         "title": "Berry y compañía.",
         "author": "Dornford Yates",
         "sfw": "sfw"
+    },
+    {
+        "id": "000300",
+        "time": "02:06",
+        "quote_time_case": "Alrededor de las dos. Recién pasadas.",
+        "quote_first": "¿En mitad de la noche? preguntó Alec bruscamente. \"¿Puedes ser más definitivo?\"<br>\"",
+        "quote_last": "\" Daisy notó que él no expresaba ninguna preocupación por su seguridad.",
+        "title": "Muerto en el agua",
+        "author": "Carola Dunn",
+        "sfw": "unknown"
     }
 ]

@@ -2,9 +2,9 @@
     {
         "id": "001741",
         "time": "11:27",
-        "quote_time_case": "* onze heures vingt-sept minutes",
-        "quote_first": "Tom tourna dans Savoy Place à onze heures vingt-sept, pour faire face à une flotte de limousines à l'arrêt dégorgeant leurs passagers devant l'hôtel.",
-        "quote_last": "",
+        "quote_time_case": "onze heures vingt-sept",
+        "quote_first": "Tom se tourna vers Savoy Place à ",
+        "quote_last": ", pour faire face à une flotte de limousines à l'arrêt déversant leurs passagers à l'extérieur de l'hôtel.",
         "title": "Fais attention à ce que tu souhaites",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,10 +12,10 @@
     {
         "id": "001742",
         "time": "11:27",
-        "quote_time_case": "* 11.27",
-        "quote_first": "Il s'agit d'une des plaques les plus récentes que l'arbre a numérisées : 11 h 27 du matin le 4 avril 1175.",
-        "quote_last": "",
-        "title": "Le deuxième café Internet, partie 2 : l'annihilateur en cascade",
+        "quote_time_case": "11.27",
+        "quote_first": "Il s'agit d'une des plaques les plus récentes que l'arbre a numérisées : ",
+        "quote_last": " le matin du 4 avril 1175.",
+        "title": "Le deuxième café Internet, partie 2 : l'annihilateur en cascade",
         "author": "Chris James",
         "sfw": "unknown"
     }

@@ -1,32 +1,32 @@
 [
     {
-        "id": "001890",
+        "id": "001860",
         "time": "12:01",
-        "quote_time_case": "* un minuto y doce",
-        "quote_first": "A las doce y un minuto, Percy se puso firme, levantó lentamente la Union Jack en el asta de la bandera y pronunció las palabras exactas requeridas por la Ley de Asentamiento de Territorios de 1762: “Reclamo este territorio soberano en nombre de Su Majestad la Reina Isabel II, para a quien juro lealtad”.",
-        "quote_last": "",
+        "quote_time_case": "un minuto después del mediodía",
+        "quote_first": "“Señora Presidenta…” Florentina tuvo que pensar rápidamente para que nadie notara su respuesta instintiva a esas palabras. \"Son ",
+        "quote_last": "\".",
+        "title": "¿Se lo contamos al presidente?",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001861",
+        "time": "12:01",
+        "quote_time_case": "las doce y un minuto",
+        "quote_first": "A las ",
+        "quote_last": ", Percy se puso firme, levantó lentamente la Union Jack en el asta de la bandera y pronunció las palabras exactas requeridas por la Ley de Asentamiento de Territorios de 1762: “Reclamo este territorio soberano en nombre de Su Majestad la Reina Isabel II, a quien juro mi lealtad”.",
         "title": "El diplomático poco diplomático",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001891",
+        "id": "001862",
         "time": "12:01",
         "quote_time_case": "12:01",
-        "quote_first": "Era el doce de diciembre, el duodécimo mes. A tenía doce años. El reloj/radio eléctrico junto a su mesita de noche marcaba las ",
+        "quote_first": "Era el doce de diciembre, el duodécimo mes. A tenía doce años. El reloj/radio eléctrico junto a su mesita de noche decía ",
         "quote_last": ".",
-        "title": "chico a",
+        "title": "Chico A",
         "author": "Jonathan Trigell",
         "sfw": "unknown"
-    },
-    {
-        "id": "001892",
-        "time": "12:01",
-        "quote_time_case": "un minuto después del mediodía",
-        "quote_first": "“Señora Presidenta…” Florentina tuvo que pensar rápidamente para que nadie notara su respuesta instintiva a esas palabras. \"Es ",
-        "quote_last": "\".",
-        "title": "¿Se lo contamos al presidente?",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
     }
 ]

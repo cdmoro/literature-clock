@@ -4,7 +4,7 @@
         "time": "23:33",
         "quote_time_case": "23h33",
         "quote_first": "",
-        "quote_last": "<br>A tempestade havia reduzido a visibilidade ao mínimo e a poça de água lá embaixo ainda não respondia.",
+        "quote_last": "<br>A tempestade havia reduzido o visual ao mínimo e a poça de água lá embaixo ainda não estava respondendo.",
         "title": "Projeto Ciclope",
         "author": "Thomas Hoover",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "003517",
         "time": "23:33",
-        "quote_time_case": "* vinte e sete minutos para meia-noite",
-        "quote_first": "Estamos na Colaba Causeway agora, só por um momento, para revelar que faltam vinte e sete minutos para a meia-noite, a polícia está à caça de um criminoso perigoso. Seu nome: Joseph D'Costa. O ordenança está ausente, está ausente há vários dias, do seu trabalho no Lar de Idosos, do seu quarto perto do matadouro e da vida de uma desesperada virginal Maria",
-        "quote_last": "",
+        "quote_time_case": "vinte e sete minutos para a meia-noite",
+        "quote_first": "Estamos na Colaba Causeway agora, só por um momento, para revelar que às ",
+        "quote_last": ", a polícia está caçando um criminoso perigoso. Seu nome: Joseph D'Costa. O ordenança está ausente, está ausente há vários dias, do seu trabalho no Lar de Idosos, do seu quarto perto do matadouro e da vida de uma desesperada virginal Maria",
         "title": "Filhos da meia-noite",
         "author": "Salman Rushdie",
         "sfw": "nsfw"

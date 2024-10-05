@@ -2,9 +2,9 @@
     {
         "id": "000082",
         "time": "00:15",
-        "quote_time_case": "* doze quinze",
-        "quote_first": "Às doze e quinze ele saiu da van. Ele enfiou a pistola sob o cós da calça e atravessou a rua silenciosa e deserta até a casa dos Hudston.",
-        "quote_last": "",
+        "quote_time_case": "doze e quinze",
+        "quote_first": "Às ",
+        "quote_last": " ele saiu da van. Ele enfiou a pistola sob o cós da calça e atravessou a rua silenciosa e deserta até a casa dos Hudston.",
         "title": "Observadores",
         "author": "Dean Koontz",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "000083",
         "time": "00:15",
-        "quote_time_case": "* meio dia e quinze",
-        "quote_first": "A festa terminou depois do jantar, por volta do meio-dia e quinze. Ao se despedir dos visitantes, Olga Mihalovna parou na porta e disse:<br>\"Você realmente deveria levar um xale! Está ficando um pouco frio. Por favor, Deus, você não pega resfriado!\"",
-        "quote_last": "",
+        "quote_time_case": "meio-dia e quinze",
+        "quote_first": "A festa terminou depois do jantar por volta de ",
+        "quote_last": ". Ao se despedir dos visitantes, Olga Mihalovna parou na porta e disse:<br>\"Você realmente deveria levar um xale! Está ficando um pouco frio. Por favor, Deus, você não pega resfriado!\"",
         "title": "A festa e outras histórias",
         "author": "Anton Pavlovich Chekhov",
         "sfw": "sfw"

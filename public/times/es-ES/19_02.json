@@ -1,22 +1,22 @@
 [
     {
-        "id": "002909",
+        "id": "002862",
         "time": "19:02",
-        "quote_time_case": "* alrededor de las siete",
-        "quote_first": "Eran como las siete de la noche,<br>y el viento soplaba con toda su fuerza,<br>y la lluvia caía a cántaros,<br>y las nubes oscuras parecían fruncir el ceño,",
-        "quote_last": "",
-        "title": "El desastre del puente Tay",
-        "author": "William McGonagall",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002910",
-        "time": "19:02",
-        "quote_time_case": "las siete y dos minutos",
-        "quote_first": "Cuando Teddy Carella entró en la sala de la brigada a ",
+        "quote_time_case": "dos minutos y siete",
+        "quote_first": "Cuando Teddy Carella entró en la sala de la brigada a las ",
         "quote_last": ", Peter Byrnes pensó que le daría un ataque al corazón.",
         "title": "Cuña del asesino",
         "author": "Ed McBain",
         "sfw": "sfw"
+    },
+    {
+        "id": "002863",
+        "time": "19:02",
+        "quote_time_case": "como las siete",
+        "quote_first": "Era ",
+        "quote_last": " de la noche,<br>Y sopló el viento con toda su fuerza,<br>Y vino a llover a cántaros,<br>Y las nubes oscuras parecían fruncir el ceño,",
+        "title": "El desastre del puente Tay",
+        "author": "William McGonagall",
+        "sfw": "unknown"
     }
 ]

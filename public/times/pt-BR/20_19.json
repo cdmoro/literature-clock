@@ -2,9 +2,9 @@
     {
         "id": "003056",
         "time": "20:19",
-        "quote_time_case": "* 8:19",
-        "quote_first": "Às 8h19, ela recebeu um segundo telefonema informando que o avião havia decolado de Amã com a “carga” a bordo.",
-        "quote_last": "",
+        "quote_time_case": "8:19",
+        "quote_first": "Às ",
+        "quote_last": " ela recebeu um segundo telefonema informando que o avião havia decolado de Amã com a “carga” a bordo.",
         "title": "Honra entre ladrões",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,7 +12,7 @@
     {
         "id": "003057",
         "time": "20:19",
-        "quote_time_case": "oito e dezenove minutos",
+        "quote_time_case": "oito minutos e dezenove",
         "quote_first": "Tudo estava quieto. Eram ",
         "quote_last": ".",
         "title": "O Clube dos Ladrões",

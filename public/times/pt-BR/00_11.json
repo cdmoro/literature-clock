@@ -2,9 +2,9 @@
     {
         "id": "000076",
         "time": "00:11",
-        "quote_time_case": "* 12:11",
-        "quote_first": "Ela deveria sair da recepção assim que pudesse e voltar ao quarto para trocar de roupa. Às 12h11 haveria outro blecaute, durante o qual ela pegaria a escada externa até o andar térreo e esperaria na saída por uma van de catering da Broadmoor.",
-        "quote_last": "",
+        "quote_time_case": "12:11",
+        "quote_first": "Ela deveria sair da recepção assim que pudesse e voltar ao quarto para trocar de roupa. Às ",
+        "quote_last": " haveria outro apagão, durante o qual ela pegaria a escada externa para o andar térreo e esperaria na saída por uma van de catering da Broadmoor.",
         "title": "O Enclave",
         "author": "Karen Hancock",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000077",
         "time": "00:11",
-        "quote_time_case": "* onze minutos depois da meia-noite",
-        "quote_first": "As primeiras bombas incendiárias a atingirem o Hospital St. Thomas atingiram Riddell House à meia-noite e onze minutos, de onde, algumas horas antes, o arcebispo de Canterbury proferira “um discurso inspirador”.",
-        "quote_last": "",
+        "quote_time_case": "onze minutos depois da meia-noite",
+        "quote_first": "Os primeiros projéteis incendiários a atingir o Hospital St Thomas atingiram Riddell House às ",
+        "quote_last": ", de onde, algumas horas antes, o Arcebispo de Canterbury havia proferido “um discurso inspirador”.",
         "title": "A noite mais longa",
         "author": "Gavin Mortimer",
         "sfw": "unknown"

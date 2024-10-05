@@ -1,32 +1,32 @@
 [
     {
-        "id": "003549",
+        "id": "003494",
         "time": "23:22",
-        "quote_time_case": "11.22",
-        "quote_first": "A las ",
-        "quote_last": " entregó su billete a un guardia que bostezaba y bajó un largo tramo de escaleras de madera hasta el aparcamiento. Una brisa levantaba y dejaba caer las hojas de un árbol, y pensó en la chica del cabello rubio. Su bicicleta estaba donde la había dejado.",
-        "title": "Sueños de irse",
-        "author": "Robert Thomson",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003550",
-        "time": "23:22",
-        "quote_time_case": "* 23:22",
-        "quote_first": "Vero sonrió. “Lo tomo como una aprobación. Entonces déjame resumir. En su trayectoria y velocidad actuales, Blade of Night pasará detrás de la luna entre las 11:13 y las 11:22 p.m. hora de Jerusalén en la noche del diecisiete de febrero. Faltan cuatro días para eso. Estará lo suficientemente cerca como para que la Luna cubra completamente el disco de la Tierra a las 11:18. Eso es vital”.",
-        "quote_last": "",
+        "quote_time_case": "11:22 p.m.",
+        "quote_first": "Vero sonrió. “Lo tomo como una aprobación. Entonces déjame resumir. En su trayectoria y velocidad actuales, Blade of Night pasará detrás de la luna entre las 11:13 y ",
+        "quote_last": " hora de Jerusalén en la noche del diecisiete de febrero. Faltan cuatro días para eso. Estará lo suficientemente cerca como para que la Luna cubra completamente el disco de la Tierra a las 11:18. Eso es vital”.",
         "title": "El día infinito",
         "author": "Chris Walley",
         "sfw": "unknown"
     },
     {
-        "id": "003551",
+        "id": "003495",
         "time": "23:22",
         "quote_time_case": "las once y veintidós minutos",
-        "quote_first": "Empezó a llover de nuevo, así que se sentó allí con las persianas abiertas, mirando las gotas sobre el cristal.<br>Eran ",
-        "quote_last": ".<br>Sólo sabía una cosa con absoluta certeza: ella No quería llegar mañana. Ella se levantó. Encontró un bolígrafo y un trozo de papel.<br>Era, decidió, un muy buen momento para morir.",
+        "quote_first": "Empezó a llover de nuevo, así que se sentó allí con las persianas abiertas, mirando las gotas en el cristal.<br>Ahora era ",
+        "quote_last": ".<br>Sólo sabía una cosa con absoluta certeza: no quería llegar al mañana. Ella se puso de pie. Encontró un bolígrafo y un trozo de papel.<br>Era, decidió, un muy buen momento para morir.",
         "title": "La biblioteca de medianoche",
         "author": "Matt Haig",
         "sfw": "nsfw"
+    },
+    {
+        "id": "003496",
+        "time": "23:22",
+        "quote_time_case": "11.22",
+        "quote_first": "A las ",
+        "quote_last": " le entregó su billete a un guardia que bostezaba y bajó un largo tramo de escalones de madera hasta el aparcamiento. Una brisa levantaba y dejaba caer las hojas de un árbol, y pensó en la chica del cabello rubio. Su bicicleta estaba donde la había dejado.",
+        "title": "Sueños de irse",
+        "author": "Robert Thomson",
+        "sfw": "unknown"
     }
 ]

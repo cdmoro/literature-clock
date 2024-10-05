@@ -1,32 +1,32 @@
 [
     {
-        "id": "001965",
+        "id": "001935",
         "time": "12:40",
-        "quote_time_case": "* veinte minutos para la una",
-        "quote_first": "Un pequeño reloj de oro en el pasillo exterior marcaba la una menos veinte. El coche debía llegar a la una y cuarto. Treinta y cinco minutos: ¡oh, escapar sólo por ese breve período!",
-        "quote_last": "",
-        "title": "Cuentos extremadamente entretenidos (La octava de los celos)",
-        "author": "Stacy Aumonier",
-        "sfw": "unknown"
+        "quote_time_case": "12:40 p.m.",
+        "quote_first": "Cuando se trataba de trabajar, Anne siempre llegaba a tiempo, y a las ",
+        "quote_last": " apareció desde el final de la calle Piccadilly.",
+        "title": "Ni un centavo más, ni un centavo menos",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     },
     {
-        "id": "001966",
+        "id": "001936",
         "time": "12:40",
         "quote_time_case": "12:40",
-        "quote_first": "“Recibí su nombre de la Agencia de Mujeres Calificadas junto con su recomendación. Entiendo que te conocen personalmente. Estaré encantado de pagarle el salario que solicita y espero que asuma sus funciones el 8 de agosto. El tren sale a las ",
-        "quote_last": " desde Paddington y lo recibirán en la estación de Oakbridge. Adjunto billetes de cinco libras para gastos.\"",
-        "title": "Y entonces no había ninguno",
+        "quote_first": "“Recibí su nombre de la Agencia de Mujeres Calificadas junto con su recomendación. Entiendo que te conocen personalmente. Estaré encantado de pagarle el salario que solicita y espero que asuma sus funciones el 8 de agosto. El tren es el ",
+        "quote_last": " desde Paddington y lo recibirán en la estación Oakbridge. Adjunto billetes de cinco libras para gastos.\"",
+        "title": "Y luego no hubo ninguno",
         "author": "Agatha Christie",
         "sfw": "unknown"
     },
     {
-        "id": "001967",
+        "id": "001937",
         "time": "12:40",
-        "quote_time_case": "12:40 p.m.",
-        "quote_first": "Cuando se trataba de trabajar, Anne siempre llegaba a tiempo y a las ",
-        "quote_last": " Ella apareció desde el final de la calle Piccadilly.",
-        "title": "Ni un centavo más, ni un centavo menos",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
+        "quote_time_case": "la una menos veinte",
+        "quote_first": "Un pequeño reloj de oro en el pasillo exterior indicaba ",
+        "quote_last": ". El coche debía llegar a la una y cuarto. Treinta y cinco minutos: ¡oh, escapar sólo por ese breve período!",
+        "title": "Cuentos extremadamente entretenidos (La octava de los celos)",
+        "author": "Stacy Aumonier",
+        "sfw": "unknown"
     }
 ]

@@ -1,52 +1,52 @@
 [
     {
-        "id": "001405",
+        "id": "001383",
         "time": "09:35",
-        "quote_time_case": "* nueve y treinta y cinco",
-        "quote_first": "Las nueve y media. Realmente debe haberse ido. El pájaro ya no se alimenta, sino que está sentado en la cúspide de un rizo de alambre de púas.",
-        "quote_last": "",
-        "title": "El recuerdo del amor",
-        "author": "Aminatta Forna",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001406",
-        "time": "09:35",
-        "quote_time_case": "* Veinticinco a diez",
-        "quote_first": "Tess miró su reloj y se sorprendió al ver que sólo eran las diez menos veinticinco. Parecía que había alimentado a Fritzy con raciones dobles y había abandonado la casa hacía cuatro años. Quizás cinco. Le pareció oír un motor acercándose, pero luego decidió que no.",
-        "quote_last": "",
-        "title": "Completamente oscuro, sin estrellas",
-        "author": "Stephen King",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001407",
-        "time": "09:35",
-        "quote_time_case": "* veinticinco minutos para las diez",
-        "quote_first": "A las diez menos veinticinco minutos estaba llamando a la puerta cerrada de la habitación de Blore. Este último la abrió con cautela. Tenía el pelo despeinado y sus ojos todavía estaban apagados por el sueño.",
-        "quote_last": "",
-        "title": "Y entonces no había ninguno",
-        "author": "Agatha Christie",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001408",
-        "time": "09:35",
-        "quote_time_case": "9:35 a.m.",
-        "quote_first": "Abrió el primer archivo y empezó a repasar las siete preguntas que había escrito tan claramente la noche anterior. Miró el reloj de la pared. Eran las ",
+        "quote_time_case": "9:35 A.M.",
+        "quote_first": "Abrió el primer archivo y empezó a repasar las siete preguntas que había escrito tan claramente la noche anterior. Miró el reloj de la pared. Eran ",
         "quote_last": "",
         "title": "Un prisionero de nacimiento",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001409",
+        "id": "001384",
         "time": "09:35",
         "quote_time_case": "9:35 a.m.",
-        "quote_first": "Procedió a enviar una copia por correo electrónico a Ron, así como a Zack. Luego finalmente miró el reloj en la esquina superior derecha de su computadora portátil. Decía las ",
-        "quote_last": "",
+        "quote_first": "Procedió a enviar una copia por correo electrónico a Ron, así como a Zack. Luego finalmente miró el reloj en la esquina superior derecha de su computadora portátil. Decía ",
+        "quote_last": ".",
         "title": "Bajo la cúpula dorada",
         "author": "Ray Keating",
         "sfw": "sfw"
+    },
+    {
+        "id": "001385",
+        "time": "09:35",
+        "quote_time_case": "veinticinco menos diez",
+        "quote_first": "Tess miró su reloj y se sorprendió al ver que solo eran ",
+        "quote_last": ". Parecía que había alimentado a Fritzy con raciones dobles y había abandonado la casa hacía cuatro años. Quizás cinco. Le pareció oír un motor acercándose, pero luego decidió que no.",
+        "title": "Completamente oscuro, sin estrellas",
+        "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001386",
+        "time": "09:35",
+        "quote_time_case": "Nueve-treinta-cinco",
+        "quote_first": "",
+        "quote_last": ". Realmente debe haberse ido. El pájaro ya no se alimenta, sino que está sentado en la cúspide de un rizo de alambre de púas.",
+        "title": "El recuerdo del amor",
+        "author": "Aminatta Forna",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001387",
+        "time": "09:35",
+        "quote_time_case": "diez menos veinticinco",
+        "quote_first": "A las ",
+        "quote_last": " estaba llamando a la puerta cerrada de la habitación de Blore.<br>Este último la abrió con cautela. Tenía el pelo despeinado y sus ojos todavía estaban apagados por el sueño.",
+        "title": "Y luego no hubo ninguno",
+        "author": "Agatha Christie",
+        "sfw": "unknown"
     }
 ]

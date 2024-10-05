@@ -1,11 +1,11 @@
 [
     {
-        "id": "002920",
+        "id": "002873",
         "time": "19:09",
-        "quote_time_case": "* siete y nueve minutos",
-        "quote_first": "Wallander tuvo suerte y consiguió coger un taxi justo delante. Cuando llegó a Rosengard eran las siete y nueve. Esperaba que Mona llegara tarde. Pero cuando leyó la nota en la puerta se dio cuenta de que ese no era el caso.",
-        "quote_last": "",
-        "title": "La pirámide",
+        "quote_time_case": "las siete y nueve minutos",
+        "quote_first": "Wallander tuvo suerte y consiguió coger un taxi justo delante. Cuando llegó a Rosengard eran ",
+        "quote_last": ". Esperaba que Mona llegara tarde. Pero cuando leyó la nota en la puerta se dio cuenta de que ese no era el caso.",
+        "title": "La Pirámide",
         "author": "Henning Mankell",
         "sfw": "sfw"
     }

@@ -23,8 +23,8 @@
         "id": "002640",
         "time": "17:30",
         "quote_time_case": "cinco e meia",
-        "quote_first": "Como alguém poderia dizer não para Erin Cook?<br>Bem, Deus disse não. Deus queimou a sorte de Tom Kennedy e queimou a dela no processo. Quando peguei o telefone às ",
-        "quote_last": " de uma linda tarde de outubro em Westchester, aquela garota havia se tornado uma mulher cuja voz, embaçada pelas lágrimas, parecia velha e cansada de morte.",
+        "quote_first": "Como alguém poderia dizer não a Erin Cook?<br>Bem, Deus disse não. Deus queimou a sorte de Tom Kennedy e queimou a dela no processo. Quando peguei o telefone às ",
+        "quote_last": " em uma linda tarde de outubro em Westchester, aquela garota havia se tornado uma mulher cuja voz, embaçada pelas lágrimas, parecia velha e cansada até a morte.",
         "title": "Joyland",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -32,9 +32,9 @@
     {
         "id": "002641",
         "time": "17:30",
-        "quote_time_case": "* 5:30",
-        "quote_first": "Finalmente, por volta das 17h30, a bobber vermelha e branca de Eva mergulhou na água e sua fina vara verde curvou-se com um peso revigorante. Era outro dos caras dourados e marrons, lindo e ofegante, segurado pelos lábios, salpicando o ar com urgência.",
-        "quote_last": "",
+        "quote_time_case": "5:30",
+        "quote_first": "Finalmente, por volta de ",
+        "quote_last": ", a bobber vermelha e branca de Eva mergulhou abaixo da água, e sua fina vara verde curvou-se com um peso revigorante. Era outro dos caras dourados e marrons, lindo e ofegante, segurado pelos lábios, salpicando o ar com urgência.",
         "title": "Cozinhas do Grande Centro-Oeste",
         "author": "J. Ryan Stradal",
         "sfw": "unknown"
@@ -43,8 +43,8 @@
         "id": "002642",
         "time": "17:30",
         "quote_time_case": "cinco e meia",
-        "quote_first": "Aproximou-se do cocheiro, que cochilava no vagão, à sombra, já alongada, de uma espessa tília; ele admirou as nuvens inconstantes de mosquitos circulando sobre os cavalos quentes e, acordando o cocheiro, pulou na carruagem e disse-lhe que fosse até a casa de Bryansky. Foi só depois de dirigir quase oito quilômetros que ele se recuperou o suficiente para olhar o relógio e perceber que eram ",
-        "quote_last": " e que estava atrasado.",
+        "quote_first": "Aproximou-se do cocheiro, que cochilava no vagão, à sombra, já alongada, de uma espessa tília; ele admirou as nuvens inconstantes de mosquitos circulando sobre os cavalos quentes e, acordando o cocheiro, pulou na carruagem e disse-lhe que fosse até a casa de Bryansky. Foi só depois de dirigir quase oito quilômetros que ele se recuperou o suficiente para olhar para o relógio e perceber que eram ",
+        "quote_last": " e que ele estava atrasado.",
         "title": "Ana Karenina",
         "author": "Leo Tolstoy",
         "sfw": "unknown"
@@ -52,9 +52,9 @@
     {
         "id": "002643",
         "time": "17:30",
-        "quote_time_case": "* 5:30",
-        "quote_first": "6 de outubro. — Para não ter que caminhar muito, saio por volta das quatro com a intenção de parar na \"Nouvelle France\", onde Nadja deve me encontrar às 17h30. Isso me dá tempo para passear pelas avenidas não muito longe da Ópera, tenho que pegar minha caneta na oficina onde ela está sendo consertada.",
-        "quote_last": "",
+        "quote_time_case": "5:30",
+        "quote_first": "6 de outubro.— Para não ter que caminhar muito, saio por volta das quatro com a intenção de parar na \"Nouvelle France\", onde Nadja deveria me encontrar às ",
+        "quote_last": ". Isso me dá tempo para passear pelas avenidas não muito longe da Ópera, tenho que pegar minha caneta na oficina onde ela está sendo consertada.",
         "title": "Nádia",
         "author": "André Breton",
         "sfw": "unknown"

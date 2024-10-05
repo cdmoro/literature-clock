@@ -1,42 +1,42 @@
 [
     {
-        "id": "000759",
+        "id": "000746",
         "time": "05:43",
-        "quote_time_case": "5.43",
-        "quote_first": "",
-        "quote_last": " - Mank habla por teléfono con 'Mary' en Washington; \"Ahora parece bastante claro que lideraremos el Estado... sin el 21\".",
-        "title": "Miedo y asco: en la campaña del 72",
-        "author": "Hunter S. Thompson",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000760",
-        "time": "05:43",
-        "quote_time_case": "05:43",
-        "quote_first": "",
-        "quote_last": " hora media de Greenwich<br>William se despertó cuando sonó el teléfono. Lo agarró, preguntándose quién podría estar llamándolo a esa hora de la mañana. Esperaba que fuera Beth.",
-        "title": "Nada arriesgado",
+        "quote_time_case": "cinco cuarenta y tres",
+        "quote_first": "El 16 de julio de 1921, Daphne se despertó a las ",
+        "quote_last": " sintiéndose agotada, pero cuando salió al sol en Lowndes Square, a la una cuarenta y cinco, estaba eufórica y Realmente estoy deseando que llegue la ocasión.",
+        "title": "En línea recta",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "000761",
+        "id": "000747",
+        "time": "05:43",
+        "quote_time_case": "05:43",
+        "quote_first": "",
+        "quote_last": " Hora media de Greenwich<br>William se despertó cuando sonó el teléfono. Lo agarró, preguntándose quién podría estar llamándolo a esa hora de la mañana. Esperaba que fuera Beth.",
+        "title": "Nada aventurado",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "000748",
         "time": "05:43",
         "quote_time_case": "5:43",
-        "quote_first": "Son las ",
+        "quote_first": "Es ",
         "quote_last": ". El tiempo corre, corre.",
         "title": "La sangre manda",
         "author": "Stephen King",
         "sfw": "unknown"
     },
     {
-        "id": "000762",
+        "id": "000749",
         "time": "05:43",
-        "quote_time_case": "cinco cuarenta y tres",
-        "quote_first": "El 16 de julio de 1921, Daphne se despertó a las ",
-        "quote_last": " sintiéndose agotada, pero cuando salió a la luz del sol en Lowndes Square a la una cuarenta y cinco estaba eufórica y realmente esperaba con ansias la ocasión.",
-        "title": "Mientras el cuervo vuela",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
+        "quote_time_case": "5.43",
+        "quote_first": "",
+        "quote_last": "- Mank habla por teléfono con 'Mary' en Washington; \"Ahora parece bastante claro que lideraremos el Estado... sin el 21.\"",
+        "title": "Miedo y asco: en la campaña del 72",
+        "author": "Hunter S. Thompson",
+        "sfw": "unknown"
     }
 ]

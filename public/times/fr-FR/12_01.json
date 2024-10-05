@@ -2,7 +2,7 @@
     {
         "id": "001860",
         "time": "12:01",
-        "quote_time_case": "midi une minute",
+        "quote_time_case": "midi après une minute",
         "quote_first": "\"Madame la Présidente...\" Florentyna dut réfléchir rapidement pour éviter que quiconque ne remarque sa réaction instinctive à ces mots. \"Il est ",
         "quote_last": ".\"",
         "title": "Devons-nous le dire au président?",
@@ -12,9 +12,9 @@
     {
         "id": "001861",
         "time": "12:01",
-        "quote_time_case": "midi une minute",
+        "quote_time_case": "douze heures une minute",
         "quote_first": "À ",
-        "quote_last": ", Percy se mit au garde-à-vous, leva lentement l'Union Jack sur le mât du drapeau et prononça les mots exacts requis par le Territories Settlement Act de 1762 : « Je revendique ce territoire souverain au nom de Sa Majesté la reine Elizabeth II, pour à qui je jure allégeance.",
+        "quote_last": ", Percy se mit au garde-à-vous, souleva lentement l'Union Jack jusqu'au mât du drapeau et prononça les mots exacts requis par le Territories Settlement Act de 1762 : \"Je prétends ce territoire souverain au nom de Sa Majesté la reine Elizabeth II, à qui je prête allégeance.",
         "title": "Le diplomate peu diplomatique",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -22,7 +22,7 @@
     {
         "id": "001862",
         "time": "12:01",
-        "quote_time_case": "12h01",
+        "quote_time_case": "12:01",
         "quote_first": "C'était le douze décembre, le douzième mois. A avait douze ans. Le réveil/radio électrique près de sa table de chevet indiquait ",
         "quote_last": ".",
         "title": "Garçon A",

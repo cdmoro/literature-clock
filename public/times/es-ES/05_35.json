@@ -1,51 +1,51 @@
 [
     {
-        "id": "000745",
-        "time": "05:35",
-        "quote_time_case": "seis menos veinticinco",
-        "quote_first": "Miré el reloj entrecerrando los ojos. —Dice que las ",
-        "quote_last": " —dije y me alejé de él.",
-        "title": "El hombre de los dados",
-        "author": "Luke Rhinehart",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000746",
+        "id": "000732",
         "time": "05:35",
         "quote_time_case": "5:35",
         "quote_first": "El senador se despertó a las ",
-        "quote_last": " con un sudor frío, aunque en realidad no había dormido más de unos pocos minutos seguidos. Había sido una noche terrible, con truenos, relámpagos y sirenas.",
+        "quote_last": " sudando frío, aunque en realidad no había dormido más de unos pocos minutos seguidos. Había sido una noche terrible, con truenos, relámpagos y sirenas.",
         "title": "¿Se lo contamos al presidente?",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "000747",
+        "id": "000733",
         "time": "05:35",
         "quote_time_case": "5:35",
-        "quote_first": "Se sorprendió al ver que eran las ",
+        "quote_first": "Se sorprendió al ver que era ",
         "quote_last": ". Así que debió haber dormido -o al menos dormido- durante más de seis horas. Estaba empezando a preguntarse si la tormenta realmente había agotado su fuerza cuando los gemidos comenzaron de nuevo y aumentaron a otro aullido in crescendo.",
         "title": "Muerte en las Sagradas Órdenes",
         "author": "P.D. James",
         "sfw": "sfw"
     },
     {
-        "id": "000748",
+        "id": "000734",
         "time": "05:35",
         "quote_time_case": "5:35",
         "quote_first": "",
-        "quote_last": " - Todos los teléfonos suenan ahora, el turno de turno se ha disparado - ahora los demás se están despertando.",
+        "quote_last": "- Ahora suenan todos los teléfonos, el turno de turno se ha disparado - ahora los demás se despiertan.",
         "title": "Miedo y asco: en la campaña del 72",
         "author": "Hunter S Thompson",
         "sfw": "unknown"
     },
     {
-        "id": "000749",
+        "id": "000735",
+        "time": "05:35",
+        "quote_time_case": "veinticinco antes de las seis",
+        "quote_first": "Miré el reloj entrecerrando los ojos. 'Dice ",
+        "quote_last": "', dije y me alejé de él.",
+        "title": "El hombre de los dados",
+        "author": "Luke Rhinehart",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000736",
         "time": "05:35",
         "quote_time_case": "5:35",
         "quote_first": "A las ",
-        "quote_last": ", recibió la noticia por radio de que Helmunth Hanover, del Aurora Sentinel, había recibido una llamada de un portavoz anónimo de la Brigada Civil de Minnesota amenazando con algún tipo de represalia si los indios pescaban.",
-        "title": "lago de hierro",
+        "quote_last": ", recibió la noticia por radio de que Helmunth Hanover del Aurora Sentinel había recibido una llamada de un portavoz anónimo de la Brigada Civil de Minnesota amenazando con algún tipo de represalia. si los indios pescaran.",
+        "title": "Lago de hierro",
         "author": "William Kent Krueger",
         "sfw": "sfw"
     }

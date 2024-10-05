@@ -2,9 +2,9 @@
     {
         "id": "000149",
         "time": "00:58",
-        "quote_time_case": "* presque à une heure du matin",
-        "quote_first": "C'était carrément impudique de sa part de venir leur rendre visite, surtout la nuit, presque vers une heure du matin, après tout ce qui s'était passé.",
-        "quote_last": "",
+        "quote_time_case": "presque une heure du matin",
+        "quote_first": "C'était carrément impudique de sa part de venir leur rendre visite, surtout la nuit, ",
+        "quote_last": ", après tout ce qui s'était passé.",
         "title": "L'idiot",
         "author": "Fyodor Dostoyevsky",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "000150",
         "time": "00:58",
-        "quote_time_case": "* 00h58 (heure de Paris)",
-        "quote_first": "00:58 CET<br>\"Tout est en place. Il ne nous reste plus qu'à faire....\"<br>William n'a pas bougé d'un muscle jusqu'à ce que la voix s'éteigne. Encore des mots, mais ils étaient dispersés dans le vent. Il souleva la bâche d'un pouce et ses yeux se posèrent sur un groupe de quatre hommes debout à quelques mètres seulement du canot de sauvetage.",
-        "quote_last": "",
+        "quote_time_case": "00:58 CET",
+        "quote_first": "",
+        "quote_last": "<br>\"Tout est en place. Il ne nous reste plus qu'à faire....\"<br>William n'a pas bougé d'un muscle jusqu'à ce que la voix s'est évanoui. Encore des mots, mais ils étaient dispersés dans le vent. Il souleva la bâche d'un pouce et ses yeux se posèrent sur un groupe de quatre hommes debout à quelques mètres seulement du canot de sauvetage.",
         "title": "Rien de risqué",
         "author": "Jeffrey Archer",
         "sfw": "sfw"

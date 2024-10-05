@@ -2,9 +2,9 @@
     {
         "id": "002222",
         "time": "14:57",
-        "quote_time_case": "* trois minutes moins trois",
-        "quote_first": "Il quitta la maison à trois heures moins trois, portant son manteau sur le bras. C'était une chaude journée du début de juin, et lorsqu'il franchit la porte, l'air de la rue lui frappa le visage comme le souffle d'une fournaise ouverte. Il chancela et faillit tomber.",
-        "quote_last": "",
+        "quote_time_case": "trois minutes moins trois",
+        "quote_first": "Il quitta la maison à ",
+        "quote_last": ", portant son manteau sur son bras. C'était une chaude journée du début de juin, et lorsqu'il franchit la porte, l'air de la rue lui frappa le visage comme le souffle d'une fournaise ouverte. Il chancela et faillit tomber.",
         "title": "Le Manxman",
         "author": "Sir Hall Caine",
         "sfw": "sfw"

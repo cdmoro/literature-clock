@@ -1,32 +1,32 @@
 [
     {
-        "id": "001790",
+        "id": "001764",
+        "time": "11:35",
+        "quote_time_case": "once treinta y cinco",
+        "quote_first": "Este era exactamente el tipo de caso que esperaba. Sin embargo, hice los movimientos necesarios para revisar mi agenda y fingí estar barajando algunas cosas. Si acepta inmediatamente aceptar un caso, el cliente podría sospechar de algún motivo oculto.<br>“Afortunadamente, estoy libre hasta más tarde esta tarde”, dije, echando un vistazo a mi reloj. Eran ",
+        "quote_last": ". “Si no te importa, ¿podrías llevarme a tu edificio ahora? Me gustaría ver el último lugar donde vio a su marido”.",
+        "title": "Sauce ciego, mujer dormida",
+        "author": "Haruki Murakami",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001765",
         "time": "11:35",
         "quote_time_case": "11.35",
-        "quote_first": "El avión del primer ministro se detuvo a las ",
-        "quote_last": " en el aeropuerto de Oberweisenfeld. Los motores chirriaron y se apagaron. Dentro de la cabina, después de tres horas de vuelo el silencio era un ruido en sí mismo.",
+        "quote_first": "El avión del Primer Ministro se detuvo en el aeropuerto de Oberweisenfeld a las ",
+        "quote_last": " Los motores chirriaron y se apagaron. Dentro de la cabina, después de tres horas de vuelo el silencio era un ruido en sí mismo.",
         "title": "Munich",
         "author": "Robert Harris",
         "sfw": "unknown"
     },
     {
-        "id": "001791",
+        "id": "001766",
         "time": "11:35",
         "quote_time_case": "11.35",
         "quote_first": "A las ",
-        "quote_last": " salió el coronel; Parecía acalorado y enojado mientras caminaba hacia el ascensor. Ahí va un juez ahorcado, pensó Wormold.",
+        "quote_last": " salió el Coronel; Parecía acalorado y enojado mientras caminaba hacia el ascensor. Ahí va un juez ahorcado, pensó Wormold.",
         "title": "Nuestro Hombre en La Habana",
         "author": "Graham Greene",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001792",
-        "time": "11:35",
-        "quote_time_case": "* once treinta y cinco",
-        "quote_first": "Este era exactamente el tipo de caso que esperaba. Sin embargo, hice los movimientos necesarios para revisar mi agenda y fingí estar barajando algunas cosas. Si acepta inmediatamente tomar un caso, el cliente podría sospechar algún motivo oculto.<br>“Afortunadamente estoy libre hasta esta tarde”, dije, echando un vistazo a mi reloj. Eran las once y treinta y cinco. “Si no te importa, ¿podrías llevarme a tu edificio ahora? Me gustaría ver el último lugar donde vio a su marido”.",
-        "quote_last": "",
-        "title": "Sauce ciego, mujer dormida",
-        "author": "Haruki Murakami",
         "sfw": "unknown"
     }
 ]

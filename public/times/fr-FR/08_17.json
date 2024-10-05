@@ -2,7 +2,7 @@
     {
         "id": "001122",
         "time": "08:17",
-        "quote_time_case": "8h17",
+        "quote_time_case": "8:17",
         "quote_first": "\"Alors allons-y\", a déclaré T. Hamilton McKenzie. Il vérifia sa montre. Il était ",
         "quote_last": ". Avec un peu de chance, il pourrait encore arriver à l'heure au rendez-vous.",
         "title": "Honneur parmi les voleurs",
@@ -12,9 +12,9 @@
     {
         "id": "001123",
         "time": "08:17",
-        "quote_time_case": "8h17",
-        "quote_first": "Il a pris le train de ",
-        "quote_last": " si apprécié par ceux qui font la navette entre Oxford et Londres chaque jour. Tous les gens au petit-déjeuner semblaient se connaître et Stephen se sentait comme un invité non invité à la fête de quelqu'un d'autre.",
+        "quote_time_case": "8:17",
+        "quote_first": "Il a pris le train ",
+        "quote_last": " tant apprécié par ceux qui font la navette entre Oxford et Londres chaque jour. Tous les gens au petit-déjeuner semblaient se connaître et Stephen se sentait comme un invité non invité à la fête de quelqu'un d'autre.",
         "title": "Pas un centime de plus, pas un centime de moins",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -23,8 +23,8 @@
         "id": "001124",
         "time": "08:17",
         "quote_time_case": "8h17",
-        "quote_first": "Lil : Bonjour, bisous. Vérifiez la boîte aux lettres<br>Moi : Il est littéralement ",
-        "quote_last": "<br>Lil : Il est tôt, je sais. Je t'ai laissé quelque chose quand je me promenais. Je vous suggère de l'obtenir maintenant.",
+        "quote_first": "Lil : Bonjour, bisous. Vérifiez la boîte aux lettres<br>Moi : Il est littéralement ",
+        "quote_last": "<br>Lil : Il est tôt, je sais. Je t'ai laissé quelque chose quand je me promenais. Je vous suggère de l'obtenir maintenant.",
         "title": "Clignez des yeux et cela nous manquera",
         "author": "Ginny Kochis",
         "sfw": "sfw"
@@ -42,9 +42,9 @@
     {
         "id": "001126",
         "time": "08:17",
-        "quote_time_case": "* huit dix-sept",
-        "quote_first": "Allez, je ne peux pas encore abandonner. Je vais juste m'asseoir ici un moment et profiter de la paix. Je me penche en arrière et regarde un petit oiseau moucheté picorer le sol à proximité pendant un moment. Puis je regarde à nouveau ma montre : huit heures dix-sept. Je ne peux pas faire ça.",
-        "quote_last": "",
+        "quote_time_case": "huit dix-sept",
+        "quote_first": "Allez, je ne peux pas encore abandonner. Je vais juste m'asseoir ici un moment et profiter de la paix. Je me penche en arrière et regarde un petit oiseau moucheté picorer le sol à proximité pendant un moment. Puis je regarde à nouveau ma montre : ",
+        "quote_last": ". Je ne peux pas faire ça.",
         "title": "La déesse non domestique",
         "author": "Sophie Kinsella",
         "sfw": "unknown"

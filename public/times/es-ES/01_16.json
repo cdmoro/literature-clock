@@ -1,22 +1,22 @@
 [
     {
-        "id": "000205",
+        "id": "000200",
         "time": "01:16",
-        "quote_time_case": "01.16",
-        "quote_first": "De 1 am a ",
-        "quote_last": " am avalado por otros dos revisores.",
-        "title": "Asesinato en el Orient Express",
-        "author": "Agatha Christie",
+        "quote_time_case": "la una y dieciséis",
+        "quote_first": "A las ",
+        "quote_last": ", entraron a la sala de entrevistas.",
+        "title": "Nada de oro puede quedarse",
+        "author": "Dana Stabenow",
         "sfw": "unknown"
     },
     {
-        "id": "000206",
+        "id": "000201",
         "time": "01:16",
-        "quote_time_case": "la una y dieciséis",
-        "quote_first": "A ",
-        "quote_last": " entraron en la sala de interrogatorios.",
-        "title": "Nada Dorado puede quedarse",
-        "author": "Dana Stabenow",
+        "quote_time_case": "1.16:00",
+        "quote_first": "De 01:00 a ",
+        "quote_last": " avalado por otros dos revisores.",
+        "title": "Asesinato en el Orient Express",
+        "author": "Agatha Christie",
         "sfw": "unknown"
     }
 ]

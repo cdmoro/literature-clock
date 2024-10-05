@@ -1,32 +1,32 @@
 [
     {
-        "id": "003185",
+        "id": "003134",
         "time": "20:55",
-        "quote_time_case": "8:55 p.m.",
-        "quote_first": "Y el pasado. El reloj del tablero marcaba las ",
-        "quote_last": " Y el último fragmento rosado del sol se elevaba hacia el cielo nocturno, tratando desesperadamente de aguantar sólo un minuto más.",
-        "title": "Tan grandes alturas",
-        "author": "Chris Cole",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003186",
-        "time": "20:55",
-        "quote_time_case": "nueve menos cinco",
-        "quote_first": "Sentado en su cama en la impecable habitación de paredes blancas de la unidad de aislamiento de enfermedades, Merral D'Avanos miró el reloj de la pared. Eran las ",
+        "quote_time_case": "cinco menos nueve",
+        "quote_first": "Sentado en su cama en la impecable habitación de paredes blancas de la unidad de aislamiento de enfermedades, Merral D'Avanos miró el reloj de la pared. Eran ",
         "quote_last": ".",
         "title": "Los cimientos oscuros",
         "author": "Chris Walley",
         "sfw": "unknown"
     },
     {
-        "id": "003187",
+        "id": "003135",
         "time": "20:55",
-        "quote_time_case": "nueve menos cinco",
-        "quote_first": "Linus comenzó a caminar lentamente por el pasillo. La lluvia azotaba las ventanas a su izquierda. Las luces de los apliques a su derecha parpadearon levemente. Sus mocasines chirriaron al caer al suelo. Se quitó la corbata. Cuando llegó al extremo opuesto del pasillo, habían pasado cuatro minutos. Según su reloj, eran las ",
+        "quote_time_case": "cinco menos nueve",
+        "quote_first": "Linus comenzó a caminar lentamente por el pasillo. La lluvia azotaba las ventanas a su izquierda. Las luces de los apliques a su derecha parpadearon levemente. Sus mocasines chirriaron al caer al suelo. Se quitó la corbata. Cuando llegó al extremo opuesto del pasillo, habían pasado cuatro minutos. Según su reloj, eran ",
         "quote_last": ".",
         "title": "La casa en el mar cerúleo",
         "author": "TJ Klune",
+        "sfw": "unknown"
+    },
+    {
+        "id": "003136",
+        "time": "20:55",
+        "quote_time_case": "8:55 pm",
+        "quote_first": "Y el pasado. El reloj en el tablero decía ",
+        "quote_last": ". Y el último fragmento rosado del sol se elevaba hacia el cielo nocturno, tratando desesperadamente de aguantar sólo un minuto más.",
+        "title": "Alturas tan grandes",
+        "author": "Chris Cole",
         "sfw": "unknown"
     }
 ]

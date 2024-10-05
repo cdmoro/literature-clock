@@ -2,9 +2,9 @@
     {
         "id": "003187",
         "time": "21:10",
-        "quote_time_case": "* 21:10",
-        "quote_first": "Harry percebeu que se quisesse voltar ao aeroporto a tempo de embarcar no voo das 21h10 para Heathrow, teria apenas vinte ou trinta minutos de sobra. Mas isso deveria ser mais que suficiente.",
-        "quote_last": "",
+        "quote_time_case": "21:10",
+        "quote_first": "Harry percebeu que se quisesse voltar ao aeroporto a tempo de embarcar no ",
+        "quote_last": " para Heathrow, teria apenas vinte ou trinta minutos de sobra. Mas isso deveria ser mais que suficiente.",
         "title": "Mais poderoso que a espada",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,8 +12,8 @@
     {
         "id": "003188",
         "time": "21:10",
-        "quote_time_case": "9h10",
-        "quote_first": "Ela gostava de nadar quase todas as noites logo depois do noticiário das nove; todos sabiam disso – pelo menos todos que a conheciam. E o noticiário de domingo foi às ",
+        "quote_time_case": "9.10",
+        "quote_first": "Ela gostava de nadar quase todas as noites logo depois do noticiário das nove; todos sabiam disso – pelo menos todos que a conheciam. E o noticiário do domingo foi às ",
         "quote_last": ".",
         "title": "Dispositivos e desejos",
         "author": "P.D. James",
@@ -34,7 +34,7 @@
         "time": "21:10",
         "quote_time_case": "21h10",
         "quote_first": "",
-        "quote_last": " \"Ao ligar o gravador, você deve ajustar o relógio e o calendário para uma gravação precisa controlada pelo TIMER (não se esqueça de usar as opções de ajuste rápido para alternar entre o horário de verão e o inverno). Menus do relógio chamados com número vermelho e digital 6 .\"",
+        "quote_last": " \"Ao ligar o gravador, você deve ajustar o relógio e o calendário para uma gravação precisa controlada pelo TIMER (não se esqueça de usar as opções de ajuste rápido para alternar entre horário de verão e inverno). Menus de relógio chamados em vermelho e número digital 6.\"",
         "title": "Diário de Bridget Jones",
         "author": "Helen Fielding",
         "sfw": "sfw"

@@ -4,7 +4,7 @@
         "time": "08:32",
         "quote_time_case": "huit heures trente-deux",
         "quote_first": "Il se réveilla de nouveau en sursaut lorsque le livre cartonné de La Dernière Chronique de Barset tomba au sol avec un bruit sourd. Cherchant sa montre, il constata avec consternation qu'il était ",
-        "quote_last": ", un début de journée tardif.",
+        "quote_last": ", un début tardif pour la journée.",
         "title": "Le phare",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "001173",
         "time": "08:32",
-        "quote_time_case": "* 8h32",
-        "quote_first": "Il est 8 h 32 le 24 décembre et Henry et moi sommes en route pour Meadowlark House pour Noël. C'est une belle journée claire, pas de neige ici à Chicago, mais six pouces au sol à South Haven.",
-        "quote_last": "",
+        "quote_time_case": "8h32",
+        "quote_first": "Il est ",
+        "quote_last": " le 24 décembre et Henry et moi sommes en route pour Meadowlark House pour Noël. C'est une belle journée claire, pas de neige ici à Chicago, mais six pouces au sol à South Haven.",
         "title": "La femme du voyageur temporel",
         "author": "Audrey Niffenegger",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "001174",
         "time": "08:32",
-        "quote_time_case": "* 0832",
-        "quote_first": "Est-ce que quelqu'un connaît l'heure un peu plus exactement, c'est ce que je me demande, Don, puisque Day ne la connaît pas.<br>Gately vérifie son appareil numérique bon marché, la tête toujours penchée sur le bras du canapé. \"J'ai 08h32:14, 15, 16, Randy.\"<br>\"''Merci beaucoup, D.G. mec.\"",
-        "quote_last": "",
+        "quote_time_case": "0832",
+        "quote_first": "Est-ce que quelqu'un connaît l'heure un peu plus exactement, c'est ce que je me demande, Don, puisque Day ne la connaît pas.<br>Gately vérifie son appareil numérique bon marché, la tête toujours penchée sur le bras du canapé. \"J'ai ",
+        "quote_last": ":14, 15, 16, Randy.\"<br>\"Merci beaucoup, D.G. mec.\"",
         "title": "Blague infini",
         "author": "David Foster Wallace",
         "sfw": "unknown"

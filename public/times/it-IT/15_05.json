@@ -2,8 +2,8 @@
     {
         "id": "002279",
         "time": "15:05",
-        "quote_time_case": "tre e cinque",
-        "quote_first": "Cinque minuti fa erano le tre, ha detto Murphy. \"Non ne sono sicuro, ma teorizzo che adesso debbano essere circa le ",
+        "quote_time_case": "tre-oh-cinque",
+        "quote_first": "Cinque minuti fa erano le tre, ha detto Murphy. \"Non ne sono sicuro, ma teorizzo che ora debba essere circa ",
         "quote_last": ".\"<br>Ho incrociato le braccia. \"Di solito non faccio appostamenti.\"",
         "title": "notte Bianca",
         "author": "Jim Butcher",
@@ -13,7 +13,7 @@
         "id": "002280",
         "time": "15:05",
         "quote_time_case": "15:05",
-        "quote_first": "Per un momento Ruth riuscì a vedere le ossa dei pipistrelli risaltare chiaramente, come in una radiografia.<br>Poi tutto il verde divenne nero.<br>Erano le ",
+        "quote_first": "Per un momento Ruth riuscì a vedere le ossa dei pipistrelli risaltare chiaramente, come in una radiografia.<br>Poi tutto il verde divenne nero.<br>Erano ",
         "quote_last": ".",
         "title": "I Tommyknocker",
         "author": "Stephen King",
@@ -22,9 +22,9 @@
     {
         "id": "002281",
         "time": "15:05",
-        "quote_time_case": "* Le tre e cinque minuti",
-        "quote_first": "Alla fine, alle tre e cinque di quel pomeriggio, Smith ammise la falsità della storia di Fort Scott.<br>\"Questo era solo qualcosa che Dick aveva detto alla sua famiglia. Così poteva restare fuori la notte. Bere un po'.\"",
-        "quote_last": "",
+        "quote_time_case": "tre e cinque minuti",
+        "quote_first": "Alla fine, alle ",
+        "quote_last": " di quel pomeriggio, Smith ammise la falsità del racconto di Fort Scott.<br>\"Questo era solo qualcosa che Dick disse alla sua famiglia. Così poteva resta fuori la notte e bevi un po'.\"",
         "title": "Nel sangue freddo",
         "author": "Truman Capote",
         "sfw": "unknown"

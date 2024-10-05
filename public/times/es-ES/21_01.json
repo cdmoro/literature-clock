@@ -1,52 +1,52 @@
 [
     {
-        "id": "003222",
+        "id": "003171",
         "time": "21:01",
-        "quote_time_case": "9:01 p.m.",
-        "quote_first": "Pensó que empezaría con una comida excepcionalmente americana: hamburguesas con queso, patatas fritas, ensalada de patatas y Coca-Cola. De postre le darían un pastel: manzana. Lo remataba con helado y observaba cómo ella se retorcía y chillaba. Cuando ella terminaba, él la levantaba de la silla, la llevaba al dormitorio y la besaba cada centímetro. Tendrían sexo toda la noche y esta vez él no pagaría. Miró su reloj: ",
+        "quote_time_case": "9:01 P.M.",
+        "quote_first": "Pensó que empezaría con una comida excepcionalmente americana: hamburguesas con queso, patatas fritas, ensalada de patatas y Coca-Cola. De postre le darían un pastel: manzana. Lo remataba con helado y observaba cómo ella se retorcía y chillaba. Cuando ella terminaba, él la levantaba de la silla, la llevaba al dormitorio y la besaba cada centímetro. Tendrían sexo toda la noche y esta vez él no pagaría.<br>Miró su reloj—",
         "quote_last": "",
         "title": "Indulto",
         "author": "James Han Mattson",
         "sfw": "nsfw"
     },
     {
-        "id": "003223",
+        "id": "003172",
         "time": "21:01",
-        "quote_time_case": "* después de las nueve",
-        "quote_first": "Eran más de las nueve. William había terminado sus deberes y su cena. Una vez que hubo dado las buenas noches a sus padres y a la señora Phillips, subió sigilosamente al ático con los dos insectos, su linterna y su lupa. Quería echar un vistazo más de cerca a la ficha.",
-        "quote_last": "",
+        "quote_time_case": "más de las nueve",
+        "quote_first": "Eran ",
+        "quote_last": ". William había terminado sus deberes y su cena. Una vez que hubo dado las buenas noches a sus padres y a la señora Phillips, subió sigilosamente al ático con los dos insectos, su linterna y su lupa. Quería echar un vistazo más de cerca a la ficha.",
         "title": "El castillo en el ático",
         "author": "Elizabeth Winthrop",
         "sfw": "sfw"
     },
     {
-        "id": "003224",
+        "id": "003173",
         "time": "21:01",
-        "quote_time_case": "alrededor de las nueve",
-        "quote_first": "La víspera del trigésimo primer cumpleaños de K. (eran ",
-        "quote_last": ", cuando reina la calma en las calles), dos señores llegaron a su apartamento.",
-        "title": "La prueba",
+        "quote_time_case": "sobre las nueve",
+        "quote_first": "La víspera del trigésimo primer cumpleaños de K., eran ",
+        "quote_last": ", cuando reinaba la calma en la calle, dos señores llegaron a su apartamento.",
+        "title": "El juicio",
         "author": "Franz Kafka",
         "sfw": "unknown"
     },
     {
-        "id": "003225",
-        "time": "21:01",
-        "quote_time_case": "alrededor de las nueve",
-        "quote_first": "Billy Weaver había viajado desde Londres en el lento tren de la tarde, con un trasbordo en Swindon en el camino, y cuando llegó a Bath eran ",
-        "quote_last": " de la noche y la luna salía de un cielo despejado. cielo estrellado sobre las casas frente a la entrada de la estación. Pero el aire era mortalmente frío y el viento era como una hoja de hielo plana en sus mejillas.",
-        "title": "La casera o la propietaria",
-        "author": "Roald Dahl",
-        "sfw": "unknown"
-    },
-    {
-        "id": "003226",
+        "id": "003174",
         "time": "21:01",
         "quote_time_case": "después de las nueve",
         "quote_first": "Los buenos Brants no permitían que los niños jugaran ",
-        "quote_last": " en las tardes de verano; fueron enviados a acostarse a esa hora; Eddie se quedó honorablemente, pero Georgie normalmente salía por la ventana hacia las diez y se divertía hasta medianoche.",
+        "quote_last": " en las noches de verano; fueron enviados a acostarse a esa hora; Eddie se quedó honorablemente, pero Georgie normalmente salía por la ventana hacia las diez y se divertía hasta medianoche.",
         "title": "Edward Mills y George Benton: un cuento",
         "author": "Mark Twain",
+        "sfw": "unknown"
+    },
+    {
+        "id": "003175",
+        "time": "21:01",
+        "quote_time_case": "alrededor de las nueve",
+        "quote_first": "Billy Weaver había viajado desde Londres en el lento tren de la tarde, con un transbordo en Swindon en el camino, y cuando llegó a Bath eran ",
+        "quote_last": " por la tarde y la luna aparecía en un cielo despejado y estrellado sobre las casas frente a la entrada de la estación. Pero el aire era mortalmente frío y el viento era como una hoja de hielo plana en sus mejillas.",
+        "title": "La casera",
+        "author": "Roald Dahl",
         "sfw": "unknown"
     }
 ]

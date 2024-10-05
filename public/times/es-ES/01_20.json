@@ -1,16 +1,6 @@
 [
     {
-        "id": "000213",
-        "time": "01:20",
-        "quote_time_case": "1.20 a.m.",
-        "quote_first": "Entonces era la ",
-        "quote_last": ", pero no había oído a mi padre subir a acostarse. Me pregunté si estaría dormido abajo o si estaría esperando entrar y matarme. Así que saqué mi navaja suiza y abrí la hoja de la sierra para poder defenderme.",
-        "title": "El curioso incidente del perro a medianoche",
-        "author": "Mark Haddon",
-        "sfw": "nsfw"
-    },
-    {
-        "id": "000214",
+        "id": "000208",
         "time": "01:20",
         "quote_time_case": "la una y veinte",
         "quote_first": "Me desperté y miré mi reloj en la mesa al lado de mi cama. Era ",
@@ -20,13 +10,23 @@
         "sfw": "unknown"
     },
     {
-        "id": "000215",
+        "id": "000209",
         "time": "01:20",
-        "quote_time_case": "veinte minutos de la una de la madrugada",
-        "quote_first": "¡Bien! dijo, pareciendo una profeta menor a punto de maldecir los pecados del pueblo. \"¿Puedo abusar de tu valioso tiempo el tiempo suficiente para preguntarte a qué, en nombre de todo lo sangriento, crees que estás jugando, joven Bertie? Ya han pasado ",
-        "quote_last": " y no has hecho nada.\"",
+        "quote_time_case": "la una y veinte minutos",
+        "quote_first": "¡Bien! dijo, pareciendo una profeta menor a punto de maldecir los pecados del pueblo. \"¿Puedo abusar de tu valioso tiempo el tiempo suficiente para preguntarte a qué, en nombre de todo lo sangriento, crees que estás jugando, joven Bertie? Son ahora unas ",
+        "quote_last": " en punto de la mañana, y ni una sola acción de tu parte.\"",
         "title": "Jeeves y el espíritu feudal",
         "author": "P.G. Wodehouse",
         "sfw": "unknown"
+    },
+    {
+        "id": "000210",
+        "time": "01:20",
+        "quote_time_case": "1.20 a.m.",
+        "quote_first": "Entonces eran ",
+        "quote_last": ", pero no había escuchado a mi padre subir a acostarse. Me pregunté si estaría dormido abajo o si estaría esperando entrar y matarme. Entonces saqué mi navaja suiza y abrí la hoja de la sierra para poder defenderme.",
+        "title": "El curioso incidente del perro a medianoche",
+        "author": "Mark Haddon",
+        "sfw": "nsfw"
     }
 ]

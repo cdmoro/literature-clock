@@ -1,22 +1,22 @@
 [
     {
-        "id": "002835",
+        "id": "002792",
         "time": "18:35",
-        "quote_time_case": "* 18.35 h.",
-        "quote_first": "Y entonces eran las 6.35 p.m. y oí a mi padre llegar a casa en su furgoneta y moví la cama contra la puerta para que no pudiera entrar y él entró en la casa y él y mi madre se gritaban el uno al otro.",
-        "quote_last": "",
-        "title": "El curioso incidente del perro a medianoche",
-        "author": "Mark Haddon",
-        "sfw": "sfw"
-    },
-    {
-        "id": "002836",
-        "time": "18:35",
-        "quote_time_case": "* 18:35",
-        "quote_first": "Deslizo la hora con los pulgares mojados: 6:35 p.m. Llegué temprano. Muy temprano. Consideraría esto algo bueno si alguna parte de mi plan pudiera llamarse así. Yo trago. Ninguno de mis planes es seguro.",
-        "quote_last": "",
+        "quote_time_case": "6:35 p.m.",
+        "quote_first": "Paso el tiempo con los pulgares mojados: ",
+        "quote_last": " Llegué temprano. Muy temprano. Consideraría esto algo bueno si alguna parte de mi plan pudiera llamarse así. Trago. Ninguno de mis planes es seguro.",
         "title": "Casa de baño",
         "author": "P.J. Vernon",
         "sfw": "unknown"
+    },
+    {
+        "id": "002793",
+        "time": "18:35",
+        "quote_time_case": "6.35 p.m.",
+        "quote_first": "Y entonces eran ",
+        "quote_last": " y escuché a mi padre llegar a casa en su camioneta y moví la cama contra la puerta para que no pudiera entrar y entró en la habitación. casa y él y mi madre se gritaban el uno al otro.",
+        "title": "El curioso incidente del perro a medianoche",
+        "author": "Mark Haddon",
+        "sfw": "sfw"
     }
 ]

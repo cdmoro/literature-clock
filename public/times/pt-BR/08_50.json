@@ -2,9 +2,9 @@
     {
         "id": "001214",
         "time": "08:50",
-        "quote_time_case": "* dez minutos para as nove",
-        "quote_first": "Às dez para as nove, a van do correio parou em frente ao Sprogg's Cottage, nos arredores de Chevisham, para entregar uma única carta.",
-        "quote_last": "",
+        "quote_time_case": "dez minutos para as nove",
+        "quote_first": "Às ",
+        "quote_last": " a van do correio parou em frente ao Sprogg's Cottage, nos arredores de Chevisham, para entregar uma única carta.",
         "title": "Morte de uma testemunha especialista",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -23,7 +23,7 @@
         "id": "001216",
         "time": "08:50",
         "quote_time_case": "dez minutos para as nove",
-        "quote_first": "Telefonou para o criado, vestiu-se às pressas e saiu para a escada, esquecendo completamente o sonho e preocupado apenas com o atraso. Ao dirigir até a entrada dos Karenins, olhou para o relógio e viu que faltavam ",
+        "quote_first": "Telefonou para o criado, vestiu-se às pressas e saiu para a escada, esquecendo completamente o sonho e preocupado apenas com o atraso. Ao dirigir até a entrada dos Karenins, ele olhou para o relógio e viu que faltavam ",
         "quote_last": ".",
         "title": "Ana Karenina",
         "author": "Leo Tolstoy",
@@ -32,9 +32,9 @@
     {
         "id": "001217",
         "time": "08:50",
-        "quote_time_case": "* dez para nove",
-        "quote_first": "Às dez para as nove os funcionários começaram a chegar. Depois de pendurarem os casacos e os chapéus, aproximaram-se da lareira e ficaram a aquecer-se. Se não houvesse fogo, eles ficariam lá do mesmo jeito",
-        "quote_last": "",
+        "quote_time_case": "dez para as nove",
+        "quote_first": "Às ",
+        "quote_last": " os funcionários começaram a chegar. Depois de pendurarem os casacos e os chapéus, aproximaram-se da lareira e ficaram a aquecer-se. Se não houvesse fogo, eles ficariam lá do mesmo jeito",
         "title": "O castanheiro",
         "author": "V.S. Pritchett",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "001218",
         "time": "08:50",
-        "quote_time_case": "* 8:50",
-        "quote_first": "Eram 8h50 da manhã e Bernie e eu estávamos sozinhos em uma rua lateral de Astoria, não muito longe de uma lanchonete que vendia um sanduíche de sopressatta chamado \"The Bypass\". Eu comia aquele sanduíche semanalmente, acompanhava com refrigerante expresso, fumava um cigarro, ia correr. Agora eu estava perto demais da piada para pedir o sanduíche, e a pré-escola do meu filho estava no meio de um cisma doutrinário.",
-        "quote_last": "",
+        "quote_time_case": "8:50",
+        "quote_first": "Era ",
+        "quote_last": " de manhã e Bernie e eu estávamos sozinhos em uma rua lateral de Astoria, não muito longe de uma lanchonete que vendia um sanduíche de sopressatta chamado \"The Bypass\" . Eu comia aquele sanduíche semanalmente, acompanhava com refrigerante expresso, fumava um cigarro, ia correr. Agora eu estava perto demais da piada para pedir o sanduíche, e a pré-escola do meu filho estava no meio de um cisma doutrinário.",
         "title": "A pergunta",
         "author": "Sam Lipsyte",
         "sfw": "unknown"
@@ -52,9 +52,9 @@
     {
         "id": "001219",
         "time": "08:50",
-        "quote_time_case": "* dez minutos para as nove",
-        "quote_first": "Pontualmente, às dez para as nove, um quarto de hora depois da missa matinal, o menino estava com seu uniforme dominical do lado de fora da porta da casa do pai.",
-        "quote_last": "",
+        "quote_time_case": "dez minutos para as nove",
+        "quote_first": "Pontualmente, às ",
+        "quote_last": ", um quarto de hora depois da missa matinal, o menino estava com seu uniforme de domingo do lado de fora da porta da casa de seu pai.",
         "title": "A Marcha Radetzky",
         "author": "Joseph Roth",
         "sfw": "unknown"

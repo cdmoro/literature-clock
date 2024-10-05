@@ -1,32 +1,32 @@
 [
     {
-        "id": "003101",
+        "id": "003050",
         "time": "20:15",
         "quote_time_case": "8.15",
-        "quote_first": "A las ",
-        "quote_last": " de la noche del domingo, Theresa había terminado la última tarea que había aplazado durante mucho tiempo y pensó que podía guardar con seguridad su libro de aritmética y decirle a su padre que estaba cansada y lista para irse a la cama.",
+        "quote_first": "Para el ",
+        "quote_last": " del domingo por la noche, Theresa había terminado la última tarea que había aplazado durante mucho tiempo y pensó que podía guardar con seguridad su libro de aritmética y decirle a su padre que estaba cansada y lista para cama.",
         "title": "Dispositivos y deseos",
         "author": "P.D. James",
         "sfw": "sfw"
     },
     {
-        "id": "003102",
+        "id": "003051",
         "time": "20:15",
-        "quote_time_case": "20.15 h.",
-        "quote_first": "",
-        "quote_last": " Ponte el pijama",
-        "title": "El curioso incidente del perro a medianoche",
-        "author": "Mark Haddon",
-        "sfw": "sfw"
-    },
-    {
-        "id": "003103",
-        "time": "20:15",
-        "quote_time_case": "20:15",
+        "quote_time_case": "8:15 p.m.",
         "quote_first": "",
         "quote_last": " Humph. No se pueden localizar las instrucciones de funcionamiento.",
         "title": "El diario de Bridget Jones",
         "author": "Helen Fielding",
+        "sfw": "sfw"
+    },
+    {
+        "id": "003052",
+        "time": "20:15",
+        "quote_time_case": "20.15",
+        "quote_first": "",
+        "quote_last": " Ponte el pijama",
+        "title": "El curioso incidente del perro a medianoche",
+        "author": "Mark Haddon",
         "sfw": "sfw"
     }
 ]

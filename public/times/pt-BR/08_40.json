@@ -2,9 +2,9 @@
     {
         "id": "001190",
         "time": "08:40",
-        "quote_time_case": "* 8:40",
-        "quote_first": "Ele deixou o Sherry-Netherland pouco depois das 8h40 e, quando chegou a Lexington, estava quase pronto para enfrentar a ira do diretor.",
-        "quote_last": "",
+        "quote_time_case": "8:40",
+        "quote_first": "Ele deixou o Sherry-Netherland logo depois de ",
+        "quote_last": " e, quando chegou a Lexington, estava quase pronto para enfrentar a ira do diretor.",
         "title": "Chega a hora",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -22,8 +22,8 @@
     {
         "id": "001192",
         "time": "08:40",
-        "quote_time_case": "8h40",
-        "quote_first": "Neste momento o relógio marcava ",
+        "quote_time_case": "8.40",
+        "quote_first": "Neste momento o relógio indicava ",
         "quote_last": ". “Mais cinco minutos”, disse Andrew Stuart. Os cinco amigos se entreolharam. Pode-se supor que os batimentos cardíacos deles estavam ligeiramente acelerados, pois, mesmo para jogadores ousados, a aposta era grande.",
         "title": "Volta ao mundo em Oitenta Dias",
         "author": "Jules Verne",
@@ -32,9 +32,9 @@
     {
         "id": "001193",
         "time": "08:40",
-        "quote_time_case": "* vinte minutos para as nove",
-        "quote_first": "Foi quando fiquei diante dela, evitando seus olhos, que observei detalhadamente os objetos ao redor e vi que seu relógio havia parado às vinte para as nove e que um relógio na sala havia parado às vinte para as nove. .",
-        "quote_last": "",
+        "quote_time_case": "vinte minutos para as nove",
+        "quote_first": "Foi quando fiquei diante dela, evitando seus olhos, que observei detalhadamente os objetos ao redor e vi que seu relógio havia parado em ",
+        "quote_last": ", e que um relógio na sala havia parado às vinte para as nove.",
         "title": "Grandes Expectativas",
         "author": "Charles Dickens",
         "sfw": "unknown"

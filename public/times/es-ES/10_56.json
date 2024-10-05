@@ -1,32 +1,32 @@
 [
     {
-        "id": "001664",
+        "id": "001638",
         "time": "10:56",
         "quote_time_case": "10:56",
-        "quote_first": "El segundero se movía implacablemente, implacablemente hacia las ",
+        "quote_first": "El segundero se movió implacablemente, implacablemente hacia ",
         "quote_last": ". Se ocupó del desayuno y del periódico de la mañana. El Post le informó que muchos edificios se habían incendiado durante la noche en una de las peores tormentas en la historia de Washington, y que Lubber Run en Virginia se había desbordado, causando graves daños a la propiedad.",
         "title": "¿Se lo contamos al presidente?",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001665",
+        "id": "001639",
         "time": "10:56",
-        "quote_time_case": "10:56",
-        "quote_first": "BOOTH WATSON SABÍA que sería una cuestión de sincronización cuidadosa si esperaba lograrlo. Tendría que estar atento al reloj para asegurarse de que eran las ",
-        "quote_last": " antes de hacer su movimiento.",
-        "title": "Próximo en la fila",
-        "author": "Jeffrey Archer",
+        "quote_time_case": "las once menos cuatro",
+        "quote_first": "Aquí está tu reloj, Katy, dijo. \"Lo he arreglado para que golpee bien. Sólo que debes tener cuidado de no golpear el adhesivo cuando enciendes el péndulo.\"<br>\"¿De verdad?\" dijo Katy. \"¡Vaya, Dorry, eres un genio! Te lo agradezco mucho.\"<br>\"Son ",
+        "quote_last": " ahora\", continuó Dorry.",
+        "title": "Lo que hizo Katy",
+        "author": "Susan Coolidge",
         "sfw": "sfw"
     },
     {
-        "id": "001666",
+        "id": "001640",
         "time": "10:56",
-        "quote_time_case": "cuatro minutos para las once",
-        "quote_first": "Aquí está tu reloj, Katy, dijo. \"Lo he arreglado para que golpee bien. Sólo que debes tener cuidado de no golpear el adhesivo cuando pones en marcha el péndulo.\"<br>\"¿De verdad?\" dijo Katy. \"¡Vaya, Dorry, eres un genio! Te lo agradezco mucho.\"<br>\"Faltan ",
-        "quote_last": "\", continuó Dorry.",
-        "title": "Lo que hizo Katy",
-        "author": "Susan Coolidge",
+        "quote_time_case": "10.56",
+        "quote_first": "BOOTH WATSON SABÍA que sería una cuestión de sincronización cuidadosa si esperaba lograrlo. Tendría que estar atento al reloj para asegurarse de que eran ",
+        "quote_last": " antes de hacer su movimiento.",
+        "title": "Siguiente en la fila",
+        "author": "Jeffrey Archer",
         "sfw": "sfw"
     }
 ]

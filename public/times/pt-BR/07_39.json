@@ -2,9 +2,9 @@
     {
         "id": "001001",
         "time": "07:39",
-        "quote_time_case": "* 7:39",
-        "quote_first": "Às 7h39 a aeronave taxiou na pista para se preparar para a decolagem. Quando parou, Dexter perguntou à comissária de bordo o que os estava impedindo.",
-        "quote_last": "",
+        "quote_time_case": "7:39",
+        "quote_first": "Às ",
+        "quote_last": " a aeronave taxiou na pista para se preparar para a decolagem. Quando parou, Dexter perguntou à comissária de bordo o que os estava impedindo.",
         "title": "Honra entre ladrões",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "001002",
         "time": "07:39",
-        "quote_time_case": "* 7,39",
-        "quote_first": "Agora, na estação, você se lembra de ter conversado com o Sr. Joseph Markew?<br>\"Sim, de fato. Eu estava na plataforma esperando meu trem habitual - o das 7h39 - quando ele me abordou.\"",
-        "quote_last": "",
+        "quote_time_case": "7.39",
+        "quote_first": "Agora, na estação, você se lembra de ter conversado com o Sr. Joseph Markew?<br>\"Sim, de fato. Eu estava na plataforma esperando meu trem habitual - o ",
+        "quote_last": " - quando ele me abordou.\"",
         "title": "Artur e Jorge",
         "author": "Julian Barnes",
         "sfw": "unknown"

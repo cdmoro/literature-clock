@@ -1,16 +1,6 @@
 [
     {
-        "id": "003123",
-        "time": "20:26",
-        "quote_time_case": "8:26 p.m.",
-        "quote_first": "",
-        "quote_last": "<br>\"Perímetro de la plataforma asegurado\", dijo Jamal Khan, el intenso hermano menor de Salim en farsi, con voz natural. Acababa de desperdiciar a un extraño; no es gran cosa.",
-        "title": "Proyecto cíclope",
-        "author": "Thomas Hoover",
-        "sfw": "nsfw"
-    },
-    {
-        "id": "003124",
+        "id": "003072",
         "time": "20:26",
         "quote_time_case": "las ocho y veintiséis minutos",
         "quote_first": "Eran ",
@@ -18,5 +8,15 @@
         "title": "La tentadora",
         "author": "William Le Quex",
         "sfw": "sfw"
+    },
+    {
+        "id": "003073",
+        "time": "20:26",
+        "quote_time_case": "8:26 P.M.",
+        "quote_first": "",
+        "quote_last": "<br>\"Perímetro de la plataforma seguro\", dijo Jamal Khan, el intenso hermano menor de Salim en farsi, con voz natural. Acababa de desperdiciar a un extraño; no es gran cosa.",
+        "title": "Proyecto cíclope",
+        "author": "Thomas Hoover",
+        "sfw": "nsfw"
     }
 ]

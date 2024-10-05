@@ -1,16 +1,6 @@
 [
     {
-        "id": "001568",
-        "time": "10:14",
-        "quote_time_case": "* diez catorce",
-        "quote_first": "Bueno. Diez catorce: La señora Narada informa que su gato ha sido atacado por un perro grande. Ahora mando a todos los chicos a buscar, pero no encuentran nada hasta las once. Entonces uno de ellos informa que un perro grande acaba de morder los neumáticos de su carrito de golf y se ha escapado.",
-        "quote_last": "",
-        "title": "Coyote Azul",
-        "author": "Christopher Moore",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001569",
+        "id": "001543",
         "time": "10:14",
         "quote_time_case": "10:14",
         "quote_first": "",
@@ -18,5 +8,15 @@
         "title": "Los pecados del padre",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
+    },
+    {
+        "id": "001544",
+        "time": "10:14",
+        "quote_time_case": "Diez catorce",
+        "quote_first": "Bueno. ",
+        "quote_last": ": La señora Narada informa que su gato ha sido atacado por un perro grande. Ahora mando a todos los chicos a buscar, pero no encuentran nada hasta las once. Entonces uno de ellos informa que un perro grande acaba de morder los neumáticos de su carrito de golf y se ha escapado.",
+        "title": "Coyote Azul",
+        "author": "Christopher Moore",
+        "sfw": "unknown"
     }
 ]

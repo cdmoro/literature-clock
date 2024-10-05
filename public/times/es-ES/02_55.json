@@ -1,32 +1,32 @@
 [
     {
-        "id": "000390",
+        "id": "000384",
         "time": "02:55",
-        "quote_time_case": "tres menos cinco",
-        "quote_first": "El reloj del tablero marcaba las ",
+        "quote_time_case": "cinco minutos para las tres",
+        "quote_first": "El reloj del tablero marcaba ",
         "quote_last": ", más tarde de lo que Theo había esperado. La carretera, estrecha y desierta, se abrió pálida ante ellos y luego se deslizó bajo las ruedas como una tira de lino roto y sucio.",
         "title": "Los hijos de los hombres",
         "author": "P.D. James",
         "sfw": "sfw"
     },
     {
-        "id": "000391",
-        "time": "02:55",
-        "quote_time_case": "2.55 h",
-        "quote_first": "Hora de salida: ",
-        "quote_last": ". Con las dos manos, Cec levantó su gorra de la silla.",
-        "title": "río abajo",
-        "author": "Iain Sinclair",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000392",
+        "id": "000385",
         "time": "02:55",
         "quote_time_case": "2:55 a.m.",
-        "quote_first": "Así es como terminará el mundo, Harry. Música de cóctel grabada con energía nuclear para seguir sonando durante siglos después de que toda la vida haya sido destruida. Selecciones de 'No, No, Nanette', a lo largo de la eternidad. ¿Eso es para las ",
+        "quote_first": "Así se acabará el mundo, Harry. Música de cóctel grabada con energía nuclear para seguir sonando durante siglos después de que toda la vida haya sido destruida. Selecciones de 'No, No, Nanette', a lo largo de la eternidad. ¿Qué haces para ",
         "quote_last": "?",
         "title": "La gente de la noche",
         "author": "Jack Finney",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000386",
+        "time": "02:55",
+        "quote_time_case": "2.55 am",
+        "quote_first": "Hora de irse: ",
+        "quote_last": ". Con las dos manos, Cec levantó su gorra de la silla.",
+        "title": "río abajo",
+        "author": "Iain Sinclair",
         "sfw": "unknown"
     }
 ]

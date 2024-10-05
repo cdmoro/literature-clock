@@ -2,9 +2,9 @@
     {
         "id": "001009",
         "time": "07:44",
-        "quote_time_case": "* sedici minuti alle otto",
-        "quote_first": "«Se si riferisce al sergente Jennings, signore, quando sono arrivato stamattina alle otto meno sedici, era con la barba lunga e vestito in modo errato, nonostante fosse ancora in servizio. Non l'ho sgridato. Ma non gli ho lasciato dubbi su ciò che provavo riguardo al suo atteggiamento e al suo aspetto mentre prestava servizio come agente di polizia.'",
-        "quote_last": "",
+        "quote_time_case": "otto meno sedici",
+        "quote_first": "«Se si riferisce al sergente Jennings, signore, quando sono arrivato stamattina alle ",
+        "quote_last": ", era con la barba lunga e vestito in modo errato, nonostante fosse ancora in servizio. Non l'ho sgridato. Ma non gli ho lasciato dubbi su ciò che provavo riguardo al suo atteggiamento e al suo aspetto mentre prestava servizio come agente di polizia.'",
         "title": "Il prossimo in linea",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -13,7 +13,7 @@
         "id": "001010",
         "time": "07:44",
         "quote_time_case": "sette e quarantaquattro",
-        "quote_first": "Lei dà voce ai suoi pensieri: \"Non è esattamente come sceglieresti di andare, vero? Preferiresti morire facendo volare un aquilone con i tuoi nipoti, o ad una grande festa o qualcosa del genere. Non alle ",
+        "quote_first": "Esprime i suoi pensieri: \"Non è esattamente come sceglieresti di andare, vero? Preferiresti morire facendo volare un aquilone con i tuoi nipoti, o ad una grande festa o qualcosa del genere. Non sul ",
         "quote_last": ".\"",
         "title": "Un momento, una mattina",
         "author": "Sarah Rayner",

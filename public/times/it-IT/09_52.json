@@ -3,7 +3,7 @@
         "id": "001437",
         "time": "09:52",
         "quote_time_case": "9:52",
-        "quote_first": "Ha preso l'autobus delle ",
+        "quote_first": "Ha preso il ",
         "quote_last": " per Victoria. Mi sono tenuto ben lontano da lei sul treno e l'ho presa in braccio mentre attraversava la barriera.",
         "title": "Invocare i morti",
         "author": "John le Carré",
@@ -12,9 +12,9 @@
     {
         "id": "001438",
         "time": "09:52",
-        "quote_time_case": "* otto minuti alle dieci",
-        "quote_first": "Con questo in mente, Emma lasciò la Manor House alle 9:25 di quella mattina e fu portata oltre i cancelli del cantiere navale di Barrington esattamente alle dieci meno otto.",
-        "quote_last": "",
+        "quote_time_case": "otto minuti alle dieci",
+        "quote_first": "Con questo in mente, Emma lasciò la Manor House alle 9:25 quella mattina e fu portata attraverso i cancelli del cantiere navale di Barrington esattamente ",
+        "quote_last": ".",
         "title": "I peccati del padre",
         "author": "Jeffrey Archer",
         "sfw": "sfw"

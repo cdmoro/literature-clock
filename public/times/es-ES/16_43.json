@@ -1,18 +1,18 @@
 [
     {
-        "id": "002555",
+        "id": "002517",
         "time": "16:43",
-        "quote_time_case": "* 16:43",
-        "quote_first": "Los agentes se acurrucaron a sotavento del Land Cruiser mientras Cork les informaba. Oren Esterville había llamado a la oficina del sheriff a las 4:43 p.m. para denunciar la desaparición de su esposa.",
-        "quote_last": "",
-        "title": "Cuerpo del delito",
-        "author": "William Kent Krueger",
+        "quote_time_case": "4:43",
+        "quote_first": "Susan había dado a luz a dos niños, Nat a las 4:37 y Peter a las ",
+        "quote_last": " esa tarde. Durante la siguiente hora, los padres se turnaron para abrazarlos, hasta que el Dr. Greenwood sugirió que tal vez se debería permitir que la madre y los bebés descansaran.",
+        "title": "Los hijos de la fortuna",
+        "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "002556",
+        "id": "002518",
         "time": "16:43",
-        "quote_time_case": "16:43",
+        "quote_time_case": "4:43 p.m.",
         "quote_first": "El único coche en el aparcamiento de grava del oeste es el Subaru de Marian la Bibliotecaria, cubierto de nieve. ",
         "quote_last": "",
         "title": "Tierra del cuco de la nube",
@@ -20,13 +20,13 @@
         "sfw": "unknown"
     },
     {
-        "id": "002557",
+        "id": "002519",
         "time": "16:43",
-        "quote_time_case": "4:43",
-        "quote_first": "Susan había dado a luz a dos niños, Nat a las 4:37 y Peter a las ",
-        "quote_last": " de esa tarde. Durante la siguiente hora, los padres se turnaron para abrazarlos, hasta que el Dr. Greenwood sugirió que tal vez se debería permitir que la madre y los bebés descansaran.",
-        "title": "hijos de la fortuna",
-        "author": "Jeffrey Archer",
+        "quote_time_case": "4:43 p.m.",
+        "quote_first": "Los agentes se acurrucaron a sotavento del Land Cruiser mientras Cork les informaba. Oren Esterville había llamado a la oficina del sheriff a las ",
+        "quote_last": " para denunciar la desaparición de su esposa.",
+        "title": "Cuerpo del Delito",
+        "author": "William Kent Krueger",
         "sfw": "sfw"
     }
 ]

@@ -1,62 +1,62 @@
 [
     {
-        "id": "002233",
+        "id": "002198",
         "time": "14:45",
-        "quote_time_case": "* cuarto para las tres",
-        "quote_first": "No bajó hasta las tres menos cuarto.",
-        "quote_last": "",
-        "title": "El diario de un don nadie",
-        "author": "George and Weedon Grossmith",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002234",
-        "time": "14:45",
-        "quote_time_case": "* cuarto para las tres",
-        "quote_first": "¿Qué hora es?<br>\"Búscalo tú mismo\", me dice la anciana. Miro y veo que el reloj no tiene manecillas.<br>\"No hay manecillas\", digo.<br>La anciana mira la esfera del reloj y me dice: \"Son las tres menos cuarto. \"",
-        "quote_last": "",
-        "title": "La mujer mayor",
-        "author": "Daniil Ivanovich Kharms",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002235",
-        "time": "14:45",
-        "quote_time_case": "14:45",
+        "quote_time_case": "2:45 p.m.",
         "quote_first": "David llegó a las ",
-        "quote_last": ". en el Hotel Copley en Huntingdon Avenue, la adrenalina corriendo por su cuerpo. Se repitió el lema de la Escuela de Negocios de Harvard mientras lo conducían a una pequeña sala privada: parece británico, piensa en yiddish.",
+        "quote_last": " al hotel Copley en Huntingdon Avenue, con la adrenalina corriendo por su cuerpo. Se repitió el lema de la Escuela de Negocios de Harvard mientras lo conducían a una pequeña sala privada: parece británico, piensa en yiddish.",
         "title": "Ni un centavo más, ni un centavo menos",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "002236",
+        "id": "002199",
         "time": "14:45",
-        "quote_time_case": "Cuarto para las tres",
-        "quote_first": "Miró su reloj. Él había estado sonriendo mientras la acariciaba para despertarla, y ahora estaba sonriendo. \"",
+        "quote_time_case": "Tres menos cuarto",
+        "quote_first": "Miró su reloj. Él había estado sonriendo mientras la acariciaba para despertarla, y ahora estaba sonriendo. “",
         "quote_last": ". Me senté en mi estúpida y vieja habitación de motel durante casi dos horas después de hablar, tratando de convencerme de que lo que estaba pensando no podía ser cierto. Sólo que no llegué a donde estoy evitando la verdad”.",
         "title": "Completamente oscuro, sin estrellas",
         "author": "Stephen King",
         "sfw": "unknown"
     },
     {
-        "id": "002237",
+        "id": "002200",
         "time": "14:45",
-        "quote_time_case": "dos cuarenta y cinco",
-        "quote_first": "Saca el otro, y díselo a los marines, y no me hagas reír, y vete a la mierda y todo eso, pero el hecho es que todavía eran sólo las ",
+        "quote_time_case": "tres menos cuarto de la tarde",
+        "quote_first": "La joven calderera llamó a la puerta trasera a las ",
+        "quote_last": ". Marjan la reconoció como uno de los muchos rostros pecosos que permanecían en las ventanas del café mucho después de que otros escolares curiosos hubieran dejado sus sucias huellas de manos.",
+        "title": "Sopa De Granada",
+        "author": "Marsha Mehran",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002201",
+        "time": "14:45",
+        "quote_time_case": "las tres menos cuarto",
+        "quote_first": "Nunca bajó hasta el ",
         "quote_last": ".",
+        "title": "El diario de un don nadie",
+        "author": "George and Weedon Grossmith",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002202",
+        "time": "14:45",
+        "quote_time_case": "dos y cuarenta y cinco",
+        "quote_first": "Saca el otro, y díselo a los marines, y no me hagas reír, y vete a la mierda, y todo eso, pero el hecho es que todavía eran sólo ",
+        "quote_last": "'.",
         "title": "La ventana embarazada",
         "author": "Martin Amis",
         "sfw": "nsfw"
     },
     {
-        "id": "002238",
+        "id": "002203",
         "time": "14:45",
-        "quote_time_case": "las tres menos cuarto de la tarde",
-        "quote_first": "La joven calderera llamó a la puerta trasera a ",
-        "quote_last": ". Marjan la reconoció como uno de los muchos rostros pecosos que permanecían en las ventanas del café mucho después de que otros escolares curiosos hubieran dejado sus sucias huellas de manos.",
-        "title": "Sopa De Granada",
-        "author": "Marsha Mehran",
+        "quote_time_case": "tres menos cuarto",
+        "quote_first": "¿Qué hora es?<br>\"Búscalo tú mismo\", me dice la anciana. Miro y veo que el reloj no tiene manecillas.<br>\"No hay manecillas\", digo.<br>La anciana mira la esfera del reloj y me dice: \"Es un ",
+        "quote_last": ".\"",
+        "title": "La anciana",
+        "author": "Daniil Ivanovich Kharms",
         "sfw": "unknown"
     }
 ]

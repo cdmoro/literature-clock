@@ -3,7 +3,7 @@
         "id": "002692",
         "time": "18:00",
         "quote_time_case": "sei",
-        "quote_first": "Non vado in chiesa da più di un anno.<br>\"Sei preoccupato per la tua anima?\"<br>\"Per favore,\" disse Cork<br>\"Certo che possiamo parlare. Quando?\"<br>\"Domani. Forse nel tardo pomeriggio. Diciamo alle cinque?\"<br>\"Facciamo alle ",
+        "quote_first": "Non vado in chiesa da più di un anno.<br>\"Sei finalmente preoccupato per la tua anima?\"<br>\"Per favore,\" disse Cork<br>\"Certo che possiamo parlare. Quando?\"<br>\"Domani . Nel tardo pomeriggio magari. Diciamo alle cinque?\"<br>\"Fate ",
         "quote_last": ",\" suggerì il prete. \"Il mio ufficio.\"<br>\"Sarò lì\", ha promesso Cork.",
         "title": "Lago di Ferro",
         "author": "William Kent Krueger",
@@ -12,9 +12,9 @@
     {
         "id": "002693",
         "time": "18:00",
-        "quote_time_case": "* Sei in punto",
-        "quote_first": "Un minuto avrebbe avuto importanza? No, probabilmente no, anche se il suo giovane figlio sembrava avere un orologio interno molto preciso. Forse anche due minuti andrebbero bene. Anche tre minuti. Potresti arrivare a cinque minuti, forse. Ma era proprio questo. Se potessi andare avanti per cinque minuti, poi andresti a dieci, poi a mezz’ora, a un paio d’ore… e non vedresti tuo figlio per tutta la sera. Quindi era così. Alle sei, puntuale. Ogni giorno. Leggi al giovane Sam. Niente scuse. Se lo era ripromesso. Niente scuse. Nessuna scusa. Una volta che hai avuto una buona scusa, hai aperto la porta a cattive scuse.",
-        "quote_last": "",
+        "quote_time_case": "Ore sei",
+        "quote_first": "Un minuto avrebbe avuto importanza? No, probabilmente no, anche se il suo giovane figlio sembrava avere un orologio interno molto preciso. Forse anche due minuti andrebbero bene. Anche tre minuti. Potresti arrivare a cinque minuti, forse. Ma era proprio questo. Se potessi andare avanti per cinque minuti, poi andresti a dieci, poi a mezz’ora, a un paio d’ore… e non vedresti tuo figlio per tutta la sera. Quindi era così. ",
+        "quote_last": ", prompt. Ogni giorno. Leggi al giovane Sam. Nessuna scusa. Se lo era ripromesso. Nessuna scusa. Nessuna scusa. Una volta che hai avuto una buona scusa, hai aperto la porta a cattive scuse.",
         "title": "Tonfo!",
         "author": "Terry Pratchett",
         "sfw": "unknown"
@@ -23,8 +23,8 @@
         "id": "002694",
         "time": "18:00",
         "quote_time_case": "sei",
-        "quote_first": "“Quando hai detto che saresti tornato ad Amsterdam?”<br>“Sai esattamente quando, perché te l'ho detto: domani mattina.”<br>“Puoi tornare prima?”<br>“Potrei. C'è un volo KLM alle quattro e quarantacinque del pomeriggio. oggi questo mi porterebbe ad Amsterdam poco prima delle ",
-        "quote_last": ".",
+        "quote_first": "“Quando hai detto che saresti tornato ad Amsterdam?”<br>“Sai esattamente quando, perché te l'ho detto: domani mattina.”<br>“Puoi tornare prima?”<br>“Potrei. C'è un volo KLM alle quattro e quarantacinque del pomeriggio. oggi questo mi porterebbe ad Amsterdam poco prima di ",
+        "quote_last": ".”",
         "title": "I Senza Nome",
         "author": "John Connolly",
         "sfw": "unknown"
@@ -32,9 +32,9 @@
     {
         "id": "002695",
         "time": "18:00",
-        "quote_time_case": "* sei del pomeriggio",
-        "quote_first": "Rick entrò nel vialetto, la sua vecchia Explorer ricoperta da una pellicola nebbiosa di sale bianco. La notte invernale era arrivata rapidamente e la città era immersa nell'oscurità alle sei di sera. Ha chiesto a Bill di prendere i suoi documenti e un po' d'erba.",
-        "quote_last": "",
+        "quote_time_case": "le sei di sera",
+        "quote_first": "Rick entrò nel vialetto, la sua vecchia Explorer ricoperta da una pellicola nebbiosa di sale bianco. La notte invernale era arrivata velocemente, la città immersa nell'oscurità alle ",
+        "quote_last": " Chiese a Bill di prendere i suoi documenti e un po' d'erba.",
         "title": "Ohio",
         "author": "Stephen Markley",
         "sfw": "nsfw"
@@ -42,9 +42,9 @@
     {
         "id": "002696",
         "time": "18:00",
-        "quote_time_case": "* sei in punto",
-        "quote_first": "Quando si avvicinarono le sei, Cryer si avvicinò alla porta aperta della sala CAD. Tom Penny, mordendosi il labbro, fissava ipnoticamente l'orologio a muro.",
-        "quote_last": "",
+        "quote_time_case": "ore sei",
+        "quote_first": "Mentre le ",
+        "quote_last": " si avvicinavano, Cryer si avvicinò alla porta aperta della sala CAD. Tom Penny, mordendosi il labbro, fissava ipnoticamente l'orologio a muro.",
         "title": "Il disegno di legge 3",
         "author": "John Burke",
         "sfw": "unknown"
@@ -52,9 +52,9 @@
     {
         "id": "002697",
         "time": "18:00",
-        "quote_time_case": "* sei in punto",
-        "quote_first": "“Sono solo le sei”, osservò con uno sbadiglio, e poi, in un attimo, fece una scoperta ancora più interessante.",
-        "quote_last": "",
+        "quote_time_case": "le sei",
+        "quote_first": "“Sono solo le ",
+        "quote_last": "”, osservò con uno sbadiglio, e poi, in un attimo, fece una scoperta ancora più interessante.",
         "title": "Il casello fantasma",
         "author": "Norton Juster",
         "sfw": "unknown"
@@ -62,9 +62,9 @@
     {
         "id": "002698",
         "time": "18:00",
-        "quote_time_case": "* sei in punto",
-        "quote_first": "Quand'è l'ora del tè? ho chiesto.<br>\"Oh, alle sei. In campagna fa le ore piccole. Faresti meglio a cambiarti il ​​vestito adesso: verrò con te e lo allaccerò. Ecco una candela.\"",
-        "quote_last": "",
+        "quote_time_case": "ore sei",
+        "quote_first": "Quand'è l'ora del tè? ho chiesto.<br>\"Oh, alle ",
+        "quote_last": ". In campagna fa le prime ore del mattino. Faresti meglio a cambiarti il vestito adesso: verrò con te e fissalo. Ecco una candela.\"",
         "title": "Jane Eyre",
         "author": "Charlotte Brontë",
         "sfw": "unknown"
@@ -72,9 +72,9 @@
     {
         "id": "002699",
         "time": "18:00",
-        "quote_time_case": "* sei del pomeriggio",
-        "quote_first": "\"E Nicola?\" chiese Meryl mentre mi restituiva il foglio. Ho dato un'occhiata all'elenco; c'era un posto rimasto, l'ultimo appuntamento della giornata alle 18:00.<br>“Lo porto lì. Qualcuno potrebbe farglielo sapere?\"<br>\"Lo farò\", ha detto Meryl.<br>Ho scritto il suo nome con un punto interrogativo.",
-        "quote_last": "",
+        "quote_time_case": "le sei di sera",
+        "quote_first": "\"E Nicola?\" chiese Meryl mentre mi restituiva il foglio. Ho dato un'occhiata all'elenco; c'era ancora un posto, l'ultimo appuntamento della giornata ",
+        "quote_last": "<br>“Lo porto lì. Qualcuno potrebbe farglielo sapere?\"<br>\"Lo farò\", ha detto Meryl.<br>Ho scritto il suo nome con un punto interrogativo.",
         "title": "Il corpo mente",
         "author": "Jo Baker",
         "sfw": "unknown"
@@ -83,8 +83,8 @@
         "id": "002700",
         "time": "18:00",
         "quote_time_case": "sei",
-        "quote_first": "Dan è rimasto sveglio fino alle ",
-        "quote_last": ". Poi si vestì e riprese il cammino verso la Mela Rossa. Questa volta non esitò, solo che invece di estrarre due bottiglie di Bird dal frigorifero, ne prese tre. Cosa dicevano? Andare Grande o andare a casa.",
+        "quote_first": "Dan è rimasto sveglio fino a ",
+        "quote_last": ". Poi si vestì e riprese il cammino verso la Mela Rossa. Questa volta non esitò, solo che invece di estrarre due bottiglie di Bird dal frigorifero, ne prese tre. Cosa dicevano? Vai alla grande o torna a casa.",
         "title": "Dottor Sonno",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -92,9 +92,9 @@
     {
         "id": "002701",
         "time": "18:00",
-        "quote_time_case": "* sei in punto",
-        "quote_first": "A volte il manager interpretava il ruolo di un cliente e lo metteva alla prova con domande. Poi è arrivato il pasto dei dipendenti: i camerieri di questo ristorante non avrebbero brontolato lo stomaco mentre prendevano le ordinazioni dei clienti!<br>Il ristorante ha aperto i battenti alle sei, ma gli ospiti tardavano ad arrivare a causa del diluvio e diverse prenotazioni sono state semplicemente cancellate.",
-        "quote_last": "",
+        "quote_time_case": "ore sei",
+        "quote_first": "A volte il manager interpretava il ruolo di un cliente e lo metteva alla prova con domande. Poi è arrivato il pasto dei dipendenti: i camerieri di questo ristorante non avrebbero brontolato lo stomaco mentre prendevano le ordinazioni dei clienti!<br>Il ristorante ha aperto i battenti alle ",
+        "quote_last": ", ma gli ospiti hanno tardato ad arrivare a causa della pioggia e molte prenotazioni sono state semplicemente cancellate.",
         "title": "Salice cieco, donna addormentata",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -102,8 +102,8 @@
     {
         "id": "002702",
         "time": "18:00",
-        "quote_time_case": "le sei di sera",
-        "quote_first": "Ma qual era il mio io originale? Non potevo più esserne sicuro. Non potevo fare a meno di sentire che era un altro me, un altro sé che somigliava fortemente al mio sé originale. Quindi adesso cosa dovevo fare? Avevo perso il senso dell'orientamento. Misi la mano in tasca e infilai in un telefono pubblico tutti gli spiccioli che trovai. Otto anelli. Nove. E lei rispose.<br>“Dormivo”, disse sbadigliando.<br>“Al",
+        "quote_time_case": "alle sei di sera",
+        "quote_first": "Ma qual era il mio io originale? Non potevo più esserne sicuro. Non potevo fare a meno di sentire che era un altro me, un altro sé che somigliava fortemente al mio sé originale. Quindi adesso cosa dovevo fare? Avevo perso il senso dell'orientamento. Misi la mano in tasca e infilai in un telefono pubblico tutti gli spiccioli che trovai. Otto anelli. Nove. E lei rispose.<br>“Stavo dormendo”, disse sbadigliando.<br>“Alle ",
         "quote_last": "?”",
         "title": "Salice cieco, donna addormentata",
         "author": "Haruki Murakami",
@@ -112,7 +112,7 @@
     {
         "id": "002703",
         "time": "18:00",
-        "quote_time_case": "Sei in punto",
+        "quote_time_case": "Le sei",
         "quote_first": "Ursula mi invita nell'armadio. \"Non sei invecchiato di un giorno, Timbo, e nemmeno 𝘵𝘩𝘪𝘴 amico serpente!\" Il suo cerbiatto peloso si sfrega contro il mio lampione e la naftalina delle dimensioni di Narniano. . . ma poi, come sempre, mi svegliai, con la mia appendice gonfia gradita come un'appendice gonfia e altrettanto utile. ",
         "quote_last": ". I sistemi di riscaldamento composti funzionano nello stile di John Cage. I geloni mi bruciarono le nocche dei piedi. Ho pensato ai Natali passati, a tanti altri passati che a quelli che ci aspettavano.",
         "title": "Atlante delle nuvole",
@@ -124,7 +124,7 @@
         "time": "18:00",
         "quote_time_case": "18:00",
         "quote_first": "Alle ",
-        "quote_last": " Corro a casa dal lavoro e cerco di rendermi attraente. La casa di questi tempi è un monolocale incredibilmente costoso a North Dearborn; Sbatto costantemente parti di me stesso su pareti, controsoffitti e mobili scomodi.",
+        "quote_last": " corro a casa dal lavoro e cerco di rendermi attraente. La casa di questi tempi è un monolocale incredibilmente costoso a North Dearborn; Sbatto costantemente parti di me stesso su pareti, controsoffitti e mobili scomodi.",
         "title": "La moglie del viaggiatore nel tempo",
         "author": "Audrey Niffenegger",
         "sfw": "unknown"
@@ -132,9 +132,9 @@
     {
         "id": "002705",
         "time": "18:00",
-        "quote_time_case": "* sei in punto",
-        "quote_first": "\"Buonasera, signor James Windibank\", disse Holmes. \"Credo che questa lettera dattiloscritta sia tua, in cui mi davi appuntamento per le sei?\"",
-        "quote_last": "",
+        "quote_time_case": "ore sei",
+        "quote_first": "\"Buonasera, signor James Windibank\", disse Holmes. \"Credo che questa lettera dattiloscritta sia tua, nella quale mi hai dato appuntamento per le ",
+        "quote_last": "?\"",
         "title": "Le avventure di Sherlock Holmes",
         "author": "Sir Arthur Conan Doyle",
         "sfw": "unknown"
@@ -142,9 +142,9 @@
     {
         "id": "002706",
         "time": "18:00",
-        "quote_time_case": "* sei in punto",
-        "quote_first": "Quelli che andavano più lontano di Chicago si riunivano nella vecchia e buia Union Station alle sei di una sera di dicembre, con alcuni amici di Chicago, già presi dall'allegria delle vacanze, per salutarli frettolosamente.",
-        "quote_last": "",
+        "quote_time_case": "sei",
+        "quote_first": "Coloro che andavano più lontano di Chicago si riunivano nella vecchia e buia Union Station alle ",
+        "quote_last": " di una sera di dicembre, con alcuni amici di Chicago, già presi dalla propria allegrie natalizie, per salutarli frettolosamente.",
         "title": "Il grande Gatsby",
         "author": "F. Scott Fitzgerald",
         "sfw": "unknown"
@@ -152,9 +152,9 @@
     {
         "id": "002707",
         "time": "18:00",
-        "quote_time_case": "* sei in punto",
-        "quote_first": "Sembrava sorpresa, e forse anche delusa. Disse: “Ascolta, non posso parlare a lungo, quindi per favore concentrati su quello che sto per dire. Voglio che tu prepari i vestiti necessari per una settimana e chiami il garage per portare subito te e i bambini dai tuoi genitori.\"<br>\"Ma sono le sei.\"<br>\"Saranno ancora aperti .\"<br>\"Perché dobbiamo andare così di fretta? Cos'è successo?\"<br>\"Niente. Niente ancora, comunque. Voglio solo sapere che sei in un posto sicuro.\"<br>\"Sembra piuttosto panico. Odio le persone che vanno nel panico.",
-        "quote_last": "",
+        "quote_time_case": "le sei",
+        "quote_first": "Sembrava sorpresa, e forse anche delusa. Disse: “Ascolta, non posso parlare a lungo, quindi per favore concentrati su quello che sto per dire. Voglio che tu prepari i vestiti necessari per una settimana e chiami il garage per portare subito te e i bambini dai tuoi genitori.\"<br>\"Ma sono ",
+        "quote_last": ".\"<br>\"Saranno ancora aperti.\"<br>\"Perché dobbiamo andare così di fretta? Cos'è successo?\"<br>\"Niente. Niente ancora, comunque. Voglio solo sapere che sei in un posto sicuro.\"<br>\"Sembra piuttosto panico. Odio le persone che vanno nel panico.",
         "title": "Monaco",
         "author": "Robert Harris",
         "sfw": "unknown"
@@ -162,9 +162,9 @@
     {
         "id": "002708",
         "time": "18:00",
-        "quote_time_case": "* sei in punto",
-        "quote_first": "Lucinda Quant racconta la storia della grande fuga di notizie al telegiornale delle sei. È semplice, credibile e, soprattutto, ha ampie tracce di documenti e riprese video. Racconta la storia di come è arrivata in possesso del suo tesoro di terra, anche se non fa nomi",
-        "quote_last": "",
+        "quote_time_case": "ore sei",
+        "quote_first": "Lucinda Quant racconta la storia della grande fuga di notizie al telegiornale ",
+        "quote_last": ". È semplice, credibile e, soprattutto, ha ampie tracce di documenti e riprese video. Racconta la storia di come è arrivata in possesso del suo tesoro di terra, anche se non fa nomi",
         "title": "Il cuore va per ultimo",
         "author": "Margaret Atwood",
         "sfw": "unknown"
@@ -172,9 +172,9 @@
     {
         "id": "002709",
         "time": "18:00",
-        "quote_time_case": "* sei in punto",
-        "quote_first": "Fuori, lungo la strada buia delle sei, vidi alberi senza foglie che colpivano il marciapiede come un fulmine di legno, il cemento spaccato nel punto in cui colpivano, il tutto in un anello recintato. Una fila di picchetti di ferro spuntava dal terreno lungo la parte anteriore di un cortile pieno di erbacce, e sul retro c'era una grande casa di legno con un portico, che sporgeva con forza una spalla traballante nel vento in modo da non essere mandata via rotolando via di un paio di blocchi come una scatola della spesa di cartone vuota.",
-        "quote_last": "",
+        "quote_time_case": "ore sei",
+        "quote_first": "Fuori, lungo la strada buia ",
+        "quote_last": ", vidi alberi spogli in piedi, che colpivano il marciapiede lì come un fulmine di legno, il cemento spaccato nel punto in cui colpivano, il tutto in un recinto- nell'anello. Una fila di picchetti di ferro spuntava dal terreno lungo la parte anteriore di un cortile pieno di erbacce, e sul retro c'era una grande casa di legno con un portico, che sporgeva con forza una spalla traballante nel vento in modo da non essere mandata via rotolando via un paio di blocchi come una scatola della spesa di cartone vuota.",
         "title": "Qualcuno volò sul nido del cuculo",
         "author": "Ken Kesey",
         "sfw": "unknown"
@@ -182,9 +182,9 @@
     {
         "id": "002710",
         "time": "18:00",
-        "quote_time_case": "* sei in punto",
-        "quote_first": "Nella maggior parte dei momenti della giornata, tranne durante la messa delle sei, Dervla poteva essere trovata a spiare fuori dalla finestra della sua camera da letto. Sostenendo il busto curvo con grandi cuscini, fissava con piccoli occhi grigio rabarbaro la strada umida sottostante, determinata a non perdere un minuto del dramma provinciale.",
-        "quote_last": "",
+        "quote_time_case": "delle sei",
+        "quote_first": "Nella maggior parte dei momenti della giornata, tranne durante la messa delle ",
+        "quote_last": ", si poteva trovare Dervla a spiare dalla finestra della sua camera da letto. Sostenendo il busto curvo con grandi cuscini, fissava con piccoli occhi grigio rabarbaro la strada umida sottostante, determinata a non perdere nemmeno un minuto del dramma provinciale.",
         "title": "Zuppa Di Melograno",
         "author": "Marsha Mehran",
         "sfw": "unknown"
@@ -192,9 +192,9 @@
     {
         "id": "002711",
         "time": "18:00",
-        "quote_time_case": "* sei in punto",
-        "quote_first": "\"Sei straordinario, non è vero?\" Amory stava diventando banale dal punto in cui si era appollaiato al centro del tavolo della sala da pranzo alle sei del pomeriggio.",
-        "quote_last": "",
+        "quote_time_case": "ore sei",
+        "quote_first": "\"Sei straordinario, non è vero?\" Amory stava diventando banale da dove si era appollaiato al centro del tavolo della sala da pranzo all'una ",
+        "quote_last": ".",
         "title": "Da questa parte del paradiso",
         "author": "F. Scott Fitzgerald",
         "sfw": "unknown"
@@ -202,9 +202,9 @@
     {
         "id": "002712",
         "time": "18:00",
-        "quote_time_case": "* Sei in punto",
-        "quote_first": "\"Le sei\" disse Amory, dando un'occhiata all'orologio da polso. \"Ti offrirò una cena fantastica sulla base dei Juvenalia delle tue edizioni raccolte.\"",
-        "quote_last": "",
+        "quote_time_case": "Le sei",
+        "quote_first": "\"",
+        "quote_last": "\", disse Amory, dando un'occhiata al suo orologio da polso. \"Ti offrirò una cena fantastica sulla base dei Juvenalia delle tue edizioni raccolte.\"",
         "title": "Da questa parte del paradiso",
         "author": "F. Scott Fitzgerald",
         "sfw": "unknown"
@@ -212,9 +212,9 @@
     {
         "id": "002713",
         "time": "18:00",
-        "quote_time_case": "* sei in punto",
-        "quote_first": "E da allora, continuò il Cappellaio in tono triste, \"non farà nulla di quello che gli chiedo! Adesso sono sempre le sei.\"",
-        "quote_last": "",
+        "quote_time_case": "ore sei",
+        "quote_first": "E da allora, continuò il Cappellaio in tono triste, \"non farà nulla di quello che gli chiedo! Sono sempre le ",
+        "quote_last": " adesso.\"",
         "title": "Le avventure di alice nel paese delle meraviglie",
         "author": "Lewis Carroll",
         "sfw": "sfw"
@@ -232,9 +232,9 @@
     {
         "id": "002715",
         "time": "18:00",
-        "quote_time_case": "* sei in punto",
-        "quote_first": "Sebbene fossero solo le sei, la notte era già buia. La nebbia, resa più fitta dalla vicinanza alla Senna, offuscava ogni dettaglio con i suoi veli sfilacciati, bucati a varie distanze dai bagliori rossastri delle lanterne e dalle strisce di luce che fuoriuscivano dalle finestre illuminate.",
-        "quote_last": "",
+        "quote_time_case": "le sei",
+        "quote_first": "Sebbene fossero solo le ",
+        "quote_last": ", la notte era già buia. La nebbia, resa più fitta dalla vicinanza alla Senna, offuscava ogni dettaglio con i suoi veli sfilacciati, bucati a varie distanze dai bagliori rossastri delle lanterne e dalle strisce di luce che fuoriuscivano dalle finestre illuminate.",
         "title": "Il Club des Hachichins",
         "author": "Théophile Gautier",
         "sfw": "unknown"
@@ -242,9 +242,9 @@
     {
         "id": "002716",
         "time": "18:00",
-        "quote_time_case": "* sei in punto",
-        "quote_first": "Sei andato alla fattoria mentre ero via?<br>\"No,\" ho detto, \"ma ho visto Ted.\"<br>\"Aveva un messaggio per me?\" lei chiese. \"Ha detto che oggi non andava bene perché sarebbe andato a Norwich. Ma venerdì alle sei, come al solito.\"<br>\"Sei sicuro che abbia detto alle sei?\" chiese perplessa.<br>\"Certamente.\"",
-        "quote_last": "",
+        "quote_time_case": "sei",
+        "quote_first": "Sei andato alla fattoria mentre ero via?<br>\"No,\" ho detto \"ma ho visto Ted.\"<br>\"Aveva un messaggio per me?\" chiese. \"Ha detto che oggi non andava bene perché sarebbe andato a Norwich. Ma venerdì alle ",
+        "quote_last": ", come al solito.\"<br>\"Sei sicuro che abbia detto alle sei?\" chiese perplessa.<br>\"Assolutamente sicuro.\"",
         "title": "L'intermediario",
         "author": "L.P. Hartley",
         "sfw": "unknown"
@@ -252,9 +252,9 @@
     {
         "id": "002717",
         "time": "18:00",
-        "quote_time_case": "* sei in punto",
-        "quote_first": "Re Riccardo: Che ore sono?<br>Catesby: Sono le sei, è l'ora di cena.<br>Re Riccardo: Stasera non cenerò. Dammi un po' di inchiostro e carta.",
-        "quote_last": "",
+        "quote_time_case": "le sei",
+        "quote_first": "Re Riccardo: Che ore sono?<br>Catesby: Sono ",
+        "quote_last": ", ora di cena completa.<br>Re Riccardo: Stasera non cenerò . Dammi un po' di inchiostro e carta.",
         "title": "Riccardo III",
         "author": "William Shakespeare",
         "sfw": "unknown"
@@ -262,9 +262,9 @@
     {
         "id": "002718",
         "time": "18:00",
-        "quote_time_case": "* sei in punto",
-        "quote_first": "Leon aspettò tutto il giorno l'arrivo delle sei; quando arrivò alla locanda, non vi trovò nessuno tranne il signor Binet, già seduto a tavola.",
-        "quote_last": "",
+        "quote_time_case": "ore sei",
+        "quote_first": "Leon aspettò tutto il giorno l'arrivo delle ",
+        "quote_last": "; quando arrivò alla locanda, non vi trovò nessuno tranne il signor Binet, già seduto a tavola.",
         "title": "Signora Bovary",
         "author": "Gustave Flaubert",
         "sfw": "unknown"
@@ -272,9 +272,9 @@
     {
         "id": "002719",
         "time": "18:00",
-        "quote_time_case": "* Sei in punto",
-        "quote_first": "Oh oh oh. Sono le sei e il padrone non è ancora tornato.",
-        "quote_last": "",
+        "quote_time_case": "Sono le sei",
+        "quote_first": "Oh oh oh. ",
+        "quote_last": " e il padrone non è ancora a casa.",
         "title": "La pelle dei nostri denti",
         "author": "Thornton Wilder",
         "sfw": "unknown"
@@ -282,9 +282,9 @@
     {
         "id": "002720",
         "time": "18:00",
-        "quote_time_case": "* sei in punto",
-        "quote_first": "Il giornale entrò serpeggiando attraverso la porta e all'improvviso in casa si sentì la sensazione delle sei",
-        "quote_last": "",
+        "quote_time_case": "ore sei",
+        "quote_first": "Il giornale entrò serpeggiando attraverso la porta e improvvisamente ci fu una sensazione di ",
+        "quote_last": " in casa",
         "title": "Il Prime della signorina Jean Brodie",
         "author": "Muriel Spark",
         "sfw": "unknown"
@@ -292,7 +292,7 @@
     {
         "id": "002721",
         "time": "18:00",
-        "quote_time_case": "Sei in punto",
+        "quote_time_case": "Le sei",
         "quote_first": "La sera d'inverno si calma Con odore di bistecche nei corridoi. ",
         "quote_last": ".",
         "title": "Preludi",
@@ -302,9 +302,9 @@
     {
         "id": "002722",
         "time": "18:00",
-        "quote_time_case": "sei",
-        "quote_first": "Quando le campane della Calvary Church suonarono le ",
-        "quote_last": ", vide il signor e la signora Biggs che scendevano di corsa la veranda, correndo verso i negozi prima che chiudessero.",
+        "quote_time_case": "six",
+        "quote_first": "Quando le campane della Calvary Church suonarono ",
+        "quote_last": ", vide il signor e la signora Biggs che si affrettavano giù per la scalinata principale, correndo verso i negozi prima che chiudessero.",
         "title": "L'interpretazione dell'omicidio",
         "author": "Jed Rubenfeld",
         "sfw": "unknown"

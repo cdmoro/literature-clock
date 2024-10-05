@@ -2,11 +2,10 @@
 
 A clock that tells the time using quotes from literature. Support for multiple languages, themes, and more!
 
-https://literatureclock.netlify.app/
-
 Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) ([literature-clock](https://github.com/JohannesNE/literature-clock)) and [Jaap Meijers](http://www.eerlijkemedia.nl/) ([e-reader clock](https://www.instructables.com/id/Literary-Clock-Made-From-E-reader/)).
 
-![image](https://github.com/cdmoro/literature-clock/assets/28156761/34b4bf28-22d1-41cc-ba99-0babab41a03c)
+![373910718-c9d2543f-b95c-41d1-bcdc-2c5f7631cd1f](https://github.com/user-attachments/assets/15fedb98-8d39-418a-86fa-a7fd9d0077d2)
+
 
 ## Features
 
@@ -57,7 +56,7 @@ Want to implement a new language? Sure thing, ping me and let's talk about it!
 
 ### About the translations
 
-All translations were made from the original CSV English file, sometimes the translations are not accurate (I used Google Translate, yes, I know), and the time is not highlighted properly, but it's fine, this is something that can be fixed easily, just one quote at a time. Plus, I marked all the _bad_ quotes with an asterisk so at some point all of them will be fixed :)
+All translations were made from the original CSV English file, sometimes the translations are not accurate (I used Google Translate, yes, I know), but it's fine, this is something that can be fixed easily, just one quote at a time. :)
 
 In any case, if you want to help you can:
 

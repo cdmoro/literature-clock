@@ -1,21 +1,21 @@
 [
     {
-        "id": "002080",
+        "id": "002050",
         "time": "13:32",
-        "quote_time_case": "* uno treinta y dos",
-        "quote_first": "Me senté de nuevo en el sofá y miré mi reloj. Era la una y treinta y dos. Cerré los ojos y me concentré en un punto de mi cabeza. Con la mente totalmente en blanco, me entregué a las arenas del tiempo y dejé que la corriente me llevara a donde quisiera.",
-        "quote_last": "",
+        "quote_time_case": "la una y treinta y dos",
+        "quote_first": "Me senté de nuevo en el sofá y miré mi reloj. Era ",
+        "quote_last": ". Cerré los ojos y me concentré en un punto de mi cabeza. Con la mente totalmente en blanco, me entregué a las arenas del tiempo y dejé que la corriente me llevara a donde quisiera.",
         "title": "Sauce ciego, mujer dormida",
         "author": "Haruki Murakami",
         "sfw": "unknown"
     },
     {
-        "id": "002081",
+        "id": "002051",
         "time": "13:32",
         "quote_time_case": "uno... treinta y dos",
-        "quote_first": "Al tercer golpe será el ",
-        "quote_last": "... veinte segundos. 'Bip... bip... bip.' Ford Prefect reprimió una risita de malvada satisfacción, se dio cuenta de que no tenía motivos para reprimirla y se rió a carcajadas, una risa malvada.",
-        "title": "Hasta luego y gracias por todos los pescados",
+        "quote_first": "Al tercer golpe será ",
+        "quote_last": "... y veinte segundos. 'Bip... bip... bip.' Ford Prefect reprimió una risita de malvada satisfacción, se dio cuenta de que no tenía motivos para reprimirla y se rió a carcajadas, una risa malvada.",
+        "title": "Hasta luego y gracias por todo el pescado",
         "author": "Douglas Adams",
         "sfw": "unknown"
     }

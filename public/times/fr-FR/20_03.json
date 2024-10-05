@@ -3,7 +3,7 @@
         "id": "003028",
         "time": "20:03",
         "quote_time_case": "Huit heures trois minutes",
-        "quote_first": "Oui bien. Visiblement, elle est morte et c'est très récent. Dans les deux dernières heures, si vous me pressez. Mais vous devez être parvenus à cette conclusion vous-mêmes, sinon vous ne l'auriez pas abattue. Quand as-tu dit que tu l'avais trouvée ? ",
+        "quote_first": "Oui, eh bien. Visiblement, elle est morte et c'est très récent. Dans les deux dernières heures, si vous me pressez. Mais vous devez être parvenus à cette conclusion vous-mêmes, sinon vous ne l'auriez pas abattue. Quand as-tu dit que tu l'avais trouvée ? ",
         "quote_last": ".",
         "title": "Décès d'un témoin expert",
         "author": "P.D. James",
@@ -12,7 +12,7 @@
     {
         "id": "003029",
         "time": "20:03",
-        "quote_time_case": "8h03",
+        "quote_time_case": "8:03",
         "quote_first": "Il m'a appris que si je devais rencontrer quelqu'un pour un rendez-vous, je devais refuser de suivre la « stupide habitude humaine » de choisir arbitrairement une heure basée sur des intervalles de quinze minutes. « Ne rencontrez jamais de gens à 7h45 ou 18h30, Jasper, mais choisissez des heures comme 7h12 et ",
         "quote_last": " !",
         "title": "Une fraction du tout",
@@ -22,9 +22,9 @@
     {
         "id": "003030",
         "time": "20:03",
-        "quote_time_case": "huit heures trois minutes",
+        "quote_time_case": "huit heures trois",
         "quote_first": "Je pourrais parler au médecin généraliste pour obtenir des somnifères. J'ai remarqué que ma montre s'était arrêtée à ",
-        "quote_last": " et je me suis demandé si c'était l'heure exacte à laquelle notre bébé était mort.",
+        "quote_last": ", et je me suis demandé si c'était l'heure exacte à laquelle notre bébé était mort.",
         "title": "Pierre papier ciseaux",
         "author": "Alice Feeny",
         "sfw": "unknown"

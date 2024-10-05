@@ -1,32 +1,32 @@
 [
     {
-        "id": "000250",
+        "id": "000245",
         "time": "01:45",
         "quote_time_case": "1:45",
-        "quote_first": "Al final acepté una copa de clarete. Le parecía a la vez grosero y censurador dejarle beber solo. El reloj del carruaje marcó la ",
-        "quote_last": " antes de que se despertara y dijera: \"Lo siento, prima. Estoy bastante borracho. Alégrate de tu hombro. A la cama, a dormir, tal vez a soñar\".",
+        "quote_first": "Al final acepté una copa de clarete. Le parecía a la vez grosero y censurador dejarle beber solo. El reloj del carruaje sonó ",
+        "quote_last": " antes de que se despertara y dijera: \"Lo siento, prima. Estoy bastante borracho. Alégrate de tu hombro. A la cama, a dormir, tal vez\". soñar.\"",
         "title": "El asesinato del muérdago",
         "author": "P.D. James",
         "sfw": "sfw"
     },
     {
-        "id": "000251",
+        "id": "000246",
         "time": "01:45",
-        "quote_time_case": "1:45 a.m.",
-        "quote_first": "Kaplan parecía aún más infernal que de costumbre. La piel de la parte superior de sus mejillas y alrededor de sus ojos estaba ampollada por la congelación. Su cojera indicaba que probablemente también se había congelado algunos dedos de los pies. La última comunicación suya la noche anterior había sido a la ",
-        "quote_last": ", cuando llamó por radio para informar al departamento que finalmente se rendiría.",
-        "title": "Cuerpo del delito",
-        "author": "William Kent Krueger",
-        "sfw": "nsfw"
-    },
-    {
-        "id": "000252",
-        "time": "01:45",
-        "quote_time_case": "dos menos cuarto",
-        "quote_first": "Cuando eran diez o las ",
-        "quote_last": " entraba el diácono; Era un joven larguirucho de veintidós años, con el pelo largo, sin barba y con un bigote apenas perceptible. Al entrar en el salón, se santiguó ante el icono, sonrió y tendió la mano a Von Koren.<br>\"Buenos días\", dijo fríamente el zoólogo. \"¿Dónde has estado?\"",
+        "quote_time_case": "las dos menos quince",
+        "quote_first": "Cuando eran las diez o ",
+        "quote_last": " entraba el diácono; Era un joven larguirucho de veintidós años, con el pelo largo, sin barba y con un bigote apenas perceptible. Al entrar en el salón, se santiguó ante el icono, sonrió y le tendió la mano a Von Koren.<br>\"Buenos días\", dijo fríamente el zoólogo. \"¿Dónde has estado?\"",
         "title": "El duelo",
         "author": "Anton Pavlovich Chekhov",
         "sfw": "sfw"
+    },
+    {
+        "id": "000247",
+        "time": "01:45",
+        "quote_time_case": "1:45 A.M.",
+        "quote_first": "Kaplan parecía aún más infernal que de costumbre. La piel de la parte superior de sus mejillas y alrededor de sus ojos estaba ampollada por la congelación. Su cojera indicaba que probablemente también se había congelado algunos dedos de los pies. La última comunicación suya la noche anterior había sido a las ",
+        "quote_last": ", cuando llamó por radio para informar al departamento que finalmente se estaba rindiendo.",
+        "title": "Cuerpo del Delito",
+        "author": "William Kent Krueger",
+        "sfw": "nsfw"
     }
 ]

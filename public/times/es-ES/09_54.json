@@ -1,32 +1,32 @@
 [
     {
-        "id": "001463",
-        "time": "09:54",
-        "quote_time_case": "diez menos seis",
-        "quote_first": "El coche aparcó delante de Barrington House a las ",
-        "quote_last": ". Cuando salió del ascensor del quinto piso y caminó por el pasillo hasta el despacho del presidente, eran las diez menos dos minutos.",
-        "title": "Los pecados del padre",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001464",
+        "id": "001441",
         "time": "09:54",
         "quote_time_case": "9:54",
-        "quote_first": "Danny caminó rápidamente de regreso al hotel, revisando cada intersección hasta que finalmente vio el nombre de Argyll Street grabado en letras grandes en una losa de piedra encima de él. Miró su reloj mientras giraba hacia la calle: las ",
+        "quote_first": "Danny caminó rápidamente de regreso al hotel, revisando cada intersección hasta que finalmente vio el nombre de Argyll Street grabado en letras grandes en una losa de piedra encima de él. Miró su reloj mientras giraba hacia la calle: ",
         "quote_last": ".",
         "title": "Un prisionero de nacimiento",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001465",
+        "id": "001442",
         "time": "09:54",
         "quote_time_case": "9:54",
         "quote_first": "",
-        "quote_last": " Esto es pura tortura. Nunca me habían dolido tanto los brazos en toda mi vida. Las mantas pesan una tonelada, las sábanas no se enderezan y no tengo idea de cómo arreglar las esquinas. ¿Cómo lo hacen las camareras?",
+        "quote_last": " Esto es pura tortura. Nunca me habían dolido tanto los brazos en toda mi vida. Las mantas pesan una tonelada, las sábanas no se enderezan y no tengo idea de cómo arreglar las esquinas. ¿Cómo lo hacen las camareras de piso?",
         "title": "La diosa no doméstica",
         "author": "Sophie Kinsella",
         "sfw": "unknown"
+    },
+    {
+        "id": "001443",
+        "time": "09:54",
+        "quote_time_case": "diez menos seis minutos",
+        "quote_first": "El coche estacionó afuera de Barrington House a las ",
+        "quote_last": ". Cuando salió del ascensor del quinto piso y caminó por el pasillo hasta el despacho del presidente, eran las diez menos dos minutos.",
+        "title": "Los pecados del padre",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     }
 ]

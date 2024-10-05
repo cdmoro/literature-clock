@@ -2,9 +2,9 @@
     {
         "id": "000183",
         "time": "01:08",
-        "quote_time_case": "* 1:08",
-        "quote_first": "Era l'1.08 ma lui aveva lasciato la palla contemporaneamente a me e doveva viaggiare ancora.",
-        "quote_last": "",
+        "quote_time_case": "1.08",
+        "quote_first": "Era ",
+        "quote_last": " ma lui aveva lasciato la palla contemporaneamente a me e doveva viaggiare ancora.",
         "title": "Il progetto Rosie",
         "author": "Graeme Simsion",
         "sfw": "unknown"
@@ -13,7 +13,7 @@
         "id": "000184",
         "time": "01:08",
         "quote_time_case": "01:08",
-        "quote_first": "La mia radiosveglia è accesa all'",
+        "quote_first": "La mia radiosveglia si accende ",
         "quote_last": " quando sento i passi sulle scale, la pausa, il timido bussare-bussare-bussare alla mia porta esterna.",
         "title": "Gli orologi d'osso",
         "author": "David Mitchell",

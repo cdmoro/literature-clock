@@ -1,22 +1,22 @@
 [
     {
-        "id": "001767",
+        "id": "001741",
+        "time": "11:27",
+        "quote_time_case": "veintisiete minutos y once",
+        "quote_first": "Tom giró hacia Savoy Place a las ",
+        "quote_last": ", para enfrentarse a una flota de limusinas paradas que descargaban a sus pasajeros fuera del hotel.",
+        "title": "Ten cuidado con lo que deseas",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001742",
         "time": "11:27",
         "quote_time_case": "11.27",
-        "quote_first": "Es de una de las placas más recientes que ha escaneado el árbol: ",
-        "quote_last": " de la mañana del 4 de abril de 1175.",
+        "quote_first": "Es de una de las placas más recientes que el árbol ha escaneado: ",
+        "quote_last": " en la mañana del 4 de abril de 1175.",
         "title": "El segundo cibercafé, parte 2: El aniquilador en cascada",
         "author": "Chris James",
         "sfw": "unknown"
-    },
-    {
-        "id": "001768",
-        "time": "11:27",
-        "quote_time_case": "las once y veintisiete minutos",
-        "quote_first": "Tom giró hacia Savoy Place a ",
-        "quote_last": " y se encontró con una flota de limusinas paradas que descargaban a sus pasajeros fuera del hotel.",
-        "title": "Tener cuidado con lo que deseas",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
     }
 ]

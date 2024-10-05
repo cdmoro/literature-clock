@@ -1,32 +1,32 @@
 [
     {
-        "id": "000192",
+        "id": "000187",
         "time": "01:10",
-        "quote_time_case": "1:10 a.m.",
-        "quote_first": "Sábado 26 de febrero: Richards salió a la ",
-        "quote_last": " y encontró que el cielo estaba un poco despejado, así que nos pusimos en marcha lo antes posible, que eran las 2:10 a.m.",
-        "title": "Sur: la expedición de resistencia",
-        "author": "Ernest Shackleton",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000193",
-        "time": "01:10",
-        "quote_time_case": "la una y diez minutos",
-        "quote_first": "Era ",
-        "quote_last": " según el reloj de Bond cuando, en la mesa principal, todo el patrón del juego cambió de repente.",
-        "title": "Casino Royale",
-        "author": "Ian Fleming",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000194",
-        "time": "01:10",
-        "quote_time_case": "una y diez",
-        "quote_first": "La puerta trasera estaba abierta, señor, mientras Caldwell y Miss Makepiece controlaban las luces. Eso fue alrededor de la ",
+        "quote_time_case": "la una y diez",
+        "quote_first": "La puerta trasera estaba abierta, señor, mientras Caldwell y Miss Makepiece controlaban las luces. Eso fue alrededor de ",
         "quote_last": ".",
         "title": "El asesinato de Papá Noel",
         "author": "P.D. James",
         "sfw": "sfw"
+    },
+    {
+        "id": "000188",
+        "time": "01:10",
+        "quote_time_case": "la una y diez minutos",
+        "quote_first": "Fue a la ",
+        "quote_last": " según el reloj de Bond cuando, en la mesa principal, todo el patrón del juego cambió repentinamente.",
+        "title": "Casino real",
+        "author": "Ian Fleming",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000189",
+        "time": "01:10",
+        "quote_time_case": "1.10 am",
+        "quote_first": "Sábado 26 de febrero: Richards salió ",
+        "quote_last": " y encontró que se despejaba un poco, así que nos pusimos en marcha lo antes posible, que eran las 2:10 a.m.",
+        "title": "Sur: la expedición de resistencia",
+        "author": "Ernest Shackleton",
+        "sfw": "unknown"
     }
 ]

@@ -2,9 +2,9 @@
     {
         "id": "000202",
         "time": "01:17",
-        "quote_time_case": "* L'una e diciassette minuti",
-        "quote_first": "\"Non so come ti senti, ma sono esausto\", disse Ted, chiudendo la porta della cucina.<br>Hazel guardò l'orologio. Era l'una e diciassette minuti.",
-        "quote_last": "",
+        "quote_time_case": "l'una e diciassette minuti",
+        "quote_first": "\"Non so come ti senti, ma sono esausto\", disse Ted, chiudendo la porta della cucina.<br>Hazel guardò l'orologio. Era ",
+        "quote_last": ".",
         "title": "Ragazzo lustrascarpe",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "000204",
         "time": "01:17",
-        "quote_time_case": "* L'una e diciassette minuti",
-        "quote_first": "In quel momento (era l'una e diciassette minuti del mattino) il tenente Bronsfield si preparava a lasciare il turno di guardia e tornare nella sua cabina, quando la sua attenzione fu attratta da un sibilo lontano.",
-        "quote_last": "",
+        "quote_time_case": "l'una e diciassette minuti",
+        "quote_first": "In quel momento (era l'",
+        "quote_last": " del mattino) il tenente Bronsfield si preparava a lasciare il turno di guardia e ritornare nella sua cabina, quando la sua attenzione fu attratta da un lontano rumore sibilante.",
         "title": "Un viaggio intorno alla Luna",
         "author": "Jules Verne",
         "sfw": "unknown"
@@ -33,8 +33,8 @@
         "id": "000205",
         "time": "01:17",
         "quote_time_case": "1:17",
-        "quote_first": "Gli orologi si sono fermati all'",
-        "quote_last": ". Un lungo squarcio di luce e poi una serie di basse scosse cerebrali. Si alzò e andò alla finestra. Che cos'è? lei disse. Non ha risposto. Andò in bagno e premette l'interruttore della luce ma la corrente era già andata via. Un opaco bagliore rosa nel vetro della finestra. Si inginocchiò e sollevò la leva per chiudere la vasca, quindi aprì entrambi i rubinetti al massimo.",
+        "quote_first": "Gli orologi si sono fermati a ",
+        "quote_last": ". Un lungo squarcio di luce e poi una serie di basse scosse cerebrali. Si alzò e andò alla finestra. Che cos'è? ha detto. Non ha risposto. Andò in bagno e premette l'interruttore della luce ma la corrente era già andata via. Un opaco bagliore rosa nel vetro della finestra. Si inginocchiò e sollevò la leva per chiudere la vasca, quindi aprì entrambi i rubinetti al massimo.",
         "title": "La strada",
         "author": "Cormac McCarthy",
         "sfw": "unknown"

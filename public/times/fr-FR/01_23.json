@@ -2,9 +2,9 @@
     {
         "id": "000213",
         "time": "01:23",
-        "quote_time_case": "* 01h23",
-        "quote_first": "Croydon Central a été déclaré à 1 h 23 du matin, avec un écart de 1,8 pour cent en faveur des conservateurs.",
-        "quote_last": "",
+        "quote_time_case": "1h23",
+        "quote_first": "Croydon Central a été déclaré à ",
+        "quote_last": ", avec un swing de 1,8 pour cent en faveur des conservateurs.",
         "title": "C'était un homme",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000214",
         "time": "01:23",
-        "quote_time_case": "* une heure vingt-trois minutes",
-        "quote_first": "L’horloge indiquait une heure et vingt-trois minutes. Il était soudain plein d'agitation, mais plein d'espoir. Elle était venue ! Qui pourrait dire ce qu'elle dirait ? Elle pourrait offrir l’explication la plus naturelle de son arrivée tardive.",
-        "quote_last": "",
+        "quote_time_case": "une heure vingt-trois minutes",
+        "quote_first": "L'horloge indiquait ",
+        "quote_last": ". Il était soudain plein d'agitation, mais plein d'espoir. Elle était venue ! Qui pourrait dire ce qu'elle dirait ? Elle pourrait offrir l’explication la plus naturelle de son arrivée tardive.",
         "title": "Le conte d'une maman",
         "author": "Anatole France",
         "sfw": "unknown"

@@ -3,7 +3,7 @@
         "id": "000187",
         "time": "01:10",
         "quote_time_case": "l'una e dieci",
-        "quote_first": "La porta sul retro era aperta, signore, mentre Caldwell e la signorina Makepiece controllavano le luci. Era circa ",
+        "quote_first": "La porta sul retro era aperta, signore, mentre Caldwell e la signorina Makepiece controllavano le luci. Era circa l'",
         "quote_last": ".",
         "title": "L'assassinio di Babbo Natale",
         "author": "P.D. James",
@@ -12,9 +12,9 @@
     {
         "id": "000188",
         "time": "01:10",
-        "quote_time_case": "* L'una e dieci minuti",
-        "quote_first": "Secondo l'orologio di Bond, era l'una e dieci quando, al tavolo alto, l'intero schema del gioco cambiò improvvisamente.",
-        "quote_last": "",
+        "quote_time_case": "l'una e dieci minuti",
+        "quote_first": "Era l'",
+        "quote_last": " secondo l'orologio di Bond quando, al tavolo alto, l'intero schema del gioco cambiò improvvisamente.",
         "title": "Casinò Royale",
         "author": "Ian Fleming",
         "sfw": "unknown"
@@ -23,8 +23,8 @@
         "id": "000189",
         "time": "01:10",
         "quote_time_case": "1:10",
-        "quote_first": "Sabato 26 febbraio - Richards è uscito all'",
-        "quote_last": " e ha trovato il cielo un po' schiarito, quindi siamo partiti il ​​prima possibile, ovvero alle 2:10.",
+        "quote_first": "Sabato 26 febbraio - Richards è uscito ",
+        "quote_last": " e ha trovato il cielo un po' schiarito, quindi siamo partiti il prima possibile, ovvero alle 2:10.",
         "title": "Sud: la spedizione Endurance",
         "author": "Ernest Shackleton",
         "sfw": "unknown"

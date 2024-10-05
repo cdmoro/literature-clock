@@ -3,7 +3,7 @@
         "id": "001361",
         "time": "09:28",
         "quote_time_case": "9:28",
-        "quote_first": "La chiamata era stata fatta alle ",
+        "quote_first": "La chiamata è stata effettuata alle ",
         "quote_last": ". Questa era un'altra prova, e importante. Ciò dimostrava ciò che avevano sospettato fin dall'inizio: che l'assassino si trovava a Sant'Anselmo.",
         "title": "Morte negli ordini sacri",
         "author": "P.D. James",
@@ -12,9 +12,9 @@
     {
         "id": "001362",
         "time": "09:28",
-        "quote_time_case": "* Le nove e ventotto minuti",
-        "quote_first": "Questo orologio, vero? chiese al maggiordomo nell'atrio.<br>\"Sì, signore.\" L'orologio segnava le nove e ventotto minuti. \"Qui gli orologi devono essere corretti, signore,\" aggiunse il maggiordomo con orgoglio e rispettoso umorismo, sulle scale.",
-        "quote_last": "",
+        "quote_time_case": "nove e ventotto minuti",
+        "quote_first": "Questo orologio, vero? chiese al maggiordomo nell'atrio.<br>\"Sì, signore.\" L'orologio segnava ",
+        "quote_last": ". \"Qui gli orologi devono essere corretti, signore,\" aggiunse il maggiordomo con orgoglio e rispettoso umorismo, sulle scale.",
         "title": "Signore Raingo",
         "author": "Arnold Bennett",
         "sfw": "unknown"

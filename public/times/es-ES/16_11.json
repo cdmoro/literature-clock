@@ -1,22 +1,22 @@
 [
     {
-        "id": "002484",
+        "id": "002447",
         "time": "16:11",
-        "quote_time_case": "* las cuatro y once minutos",
-        "quote_first": "A las cuatro y once, el primer autobús salió del aparcamiento, subió por la rampa y salió a la calle principal.",
-        "quote_last": "",
-        "title": "Nada arriesgado",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "002485",
-        "time": "16:11",
-        "quote_time_case": "16:11",
+        "quote_time_case": "4:11 P.M.",
         "quote_first": "",
         "quote_last": " Jueves. Un helicóptero Huey vuela hacia el este mientras los últimos marines estadounidenses se preparan para abandonar la playa; un buitre flota en las corrientes térmicas más cercanas a la ciudad.",
         "title": "Buscar",
         "author": "Denis Johnson",
         "sfw": "unknown"
+    },
+    {
+        "id": "002448",
+        "time": "16:11",
+        "quote_time_case": "las cuatro y once",
+        "quote_first": "A las ",
+        "quote_last": " el primer autobús salió del aparcamiento, subió por la rampa y salió a la calle principal.",
+        "title": "Nada aventurado",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     }
 ]

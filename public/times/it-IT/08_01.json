@@ -2,9 +2,9 @@
     {
         "id": "001088",
         "time": "08:01",
-        "quote_time_case": "* otto-uno",
-        "quote_first": "Otto e uno, tic tac, otto e una, a scuola, al lavoro, corri, corri, otto e uno!",
-        "quote_last": "",
+        "quote_time_case": "otto-uno",
+        "quote_first": "Otto e uno, tic tac, ",
+        "quote_last": ", a scuola, al lavoro, corri, corri, otto e uno!",
         "title": "Arriveranno piogge morbide",
         "author": "Ray Bradbury",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "001089",
         "time": "08:01",
-        "quote_time_case": "8:01",
+        "quote_time_case": "8:01 A.M.",
         "quote_first": "",
-        "quote_last": " AM<br>Il petto di Dore Peretz sembrava ancora in fiamme, una sensazione di bruciore che sembrava diffondersi su tutta la parte anteriore del suo busto; in effetti, si sentiva una merda.",
+        "quote_last": "<br>Il petto di Dore Peretz sembrava ancora in fiamme, una sensazione di bruciore che sembrava diffondersi su tutta la parte anteriore del suo busto; in effetti, si sentiva una merda.",
         "title": "Progetto Ciclope",
         "author": "Thomas Hoover",
         "sfw": "nsfw"

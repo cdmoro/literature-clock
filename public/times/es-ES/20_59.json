@@ -1,16 +1,16 @@
 [
     {
-        "id": "003192",
+        "id": "003141",
         "time": "20:59",
-        "quote_time_case": "8:59 p.m.",
-        "quote_first": "Bueno, qué experiencia culinaria tan increíble, dijo Eva a las ",
-        "quote_last": ", cuando el auto de Prager estacionó frente a su apartamento.",
-        "title": "Cocinas del Gran Medio Oeste",
-        "author": "J. Ryan Stradal",
-        "sfw": "unknown"
+        "quote_time_case": "un minuto antes de las nueve",
+        "quote_first": "Sin embargo, no irás más allá de dos millas del cuartel, te comportarás como corresponde a un Fusilero Real y te presentarás sobrio en la sala de guardia como juez a ",
+        "quote_last": ".",
+        "title": "En línea recta",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
     },
     {
-        "id": "003193",
+        "id": "003142",
         "time": "20:59",
         "quote_time_case": "nueve menos un minuto",
         "quote_first": "Normalmente un asistente le habría puesto [la televisión] a las ",
@@ -20,13 +20,13 @@
         "sfw": "sfw"
     },
     {
-        "id": "003194",
+        "id": "003143",
         "time": "20:59",
-        "quote_time_case": "un minuto antes de las nueve",
-        "quote_first": "Sin embargo, no se alejará más de dos millas del cuartel, se comportará como corresponde a un fusilero real y se presentará sobrio en la sala de guardia como juez ",
-        "quote_last": ".",
-        "title": "Mientras el cuervo vuela",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
+        "quote_time_case": "8:59 p.m.",
+        "quote_first": "Bueno, qué experiencia culinaria tan increíble, dijo Eva a las ",
+        "quote_last": ", cuando el auto de Prager estacionó frente a su apartamento.",
+        "title": "Cocinas del Gran Medio Oeste",
+        "author": "J. Ryan Stradal",
+        "sfw": "unknown"
     }
 ]

@@ -1,22 +1,22 @@
 [
     {
-        "id": "001117",
+        "id": "001097",
         "time": "08:04",
-        "quote_time_case": "8:04",
-        "quote_first": "Cada dependiente tenía su horario particular, que coincidía con un único par de recorridos de tranvía procedentes de la ciudad: A tenía que llegar a las 8, B a las ",
-        "quote_last": ", C a las 8:08 y así sucesivamente, y lo mismo para horarios de salida, de tal manera que dos colegas nunca tendrían la oportunidad de viajar en el mismo tranvía.",
-        "title": "La tabla periodica",
-        "author": "Primo Levi",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001118",
-        "time": "08:04",
-        "quote_time_case": "8:04 a.m.",
+        "quote_time_case": "8:04 A.M.",
         "quote_first": "",
-        "quote_last": "<br>El teléfono sonaba, pero Mark todavía estaba profundamente dormido. Continuó sonando.",
+        "quote_last": "<br>El teléfono estaba sonando, pero Mark todavía estaba profundamente dormido. Continuó sonando.",
         "title": "¿Se lo contamos al presidente?",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
+    },
+    {
+        "id": "001098",
+        "time": "08:04",
+        "quote_time_case": "8:04",
+        "quote_first": "Cada dependiente tenía su horario particular, que coincidía con un único par de recorridos de tranvía procedentes de la ciudad: A tenía que llegar a las 8, B a las ",
+        "quote_last": ", C a las 8:08 y así sucesivamente, y lo mismo para las horas de salida, de tal manera que nunca dos compañeros tendrían la oportunidad de viajar en el mismo tranvía.",
+        "title": "La tabla periódica",
+        "author": "Primo Levi",
+        "sfw": "unknown"
     }
 ]

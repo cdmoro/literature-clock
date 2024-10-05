@@ -2,9 +2,9 @@
     {
         "id": "000480",
         "time": "03:22",
-        "quote_time_case": "* 03:22",
-        "quote_first": "Senhoras e senhores, às 03h22 desta manhã, nosso conjunto de sensores GEODSS em Socorro, Novo México, detectou um objeto anômalo fora da órbita da lua.",
-        "quote_last": "",
+        "quote_time_case": "03:22",
+        "quote_first": "Senhoras e senhores, às ",
+        "quote_last": " desta manhã, nosso conjunto de sensores GEODSS em Socorro, Novo México, detectou um objeto anômalo fora da órbita da lua.",
         "title": "O presente",
         "author": "Dave Donovan",
         "sfw": "sfw"

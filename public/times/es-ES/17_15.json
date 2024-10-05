@@ -1,42 +1,42 @@
 [
     {
-        "id": "002653",
+        "id": "002612",
         "time": "17:15",
-        "quote_time_case": "* 17:15",
-        "quote_first": "5:15 p.m.<br>Sí, Corner Tap de Jack Cermak fue el octavo círculo del infierno. En un vecindario aburguesado como Logan Square, montar un bar desinfectado y caro para que pareciera un antro barato de un pueblo pequeño era simplemente enfermizo.",
-        "quote_last": "",
-        "title": "Cocinas del Gran Medio Oeste",
-        "author": "J. Ryan Stradal",
-        "sfw": "unknown"
+        "quote_time_case": "las cinco y cuarto",
+        "quote_first": "Eran sólo las ",
+        "quote_last": ", pero la tarde era tan oscura como la medianoche. Y cuando llegó al borde del porche empezó a llover.",
+        "title": "Un gusto por la muerte",
+        "author": "P.D. James",
+        "sfw": "sfw"
     },
     {
-        "id": "002654",
-        "time": "17:15",
-        "quote_time_case": "17:15 horas",
-        "quote_first": "Cuando August Bach salió del frío sombrío del búnker con aire acondicionado del Control Divisional de Cazas eran las ",
-        "quote_last": " CET. El día había madurado hasta convertirse en una de esas apacibles tardes de verano en las que el aire es cálido y dulce como un caramelo suave.",
-        "title": "Bombardeo",
-        "author": "Len Deighton",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002655",
+        "id": "002613",
         "time": "17:15",
         "quote_time_case": "5:15",
-        "quote_first": "Eran alrededor de las ",
-        "quote_last": " cuando Grant notó que una cara nueva entraba a la habitación. Era un sacerdote de aproximadamente la edad de Grant. El hombre de constitución mediana parecía un poco desaliñado.",
+        "quote_first": "Era aproximadamente ",
+        "quote_last": " cuando Grant notó una nueva cara entrando a la habitación. Era un sacerdote de aproximadamente la edad de Grant. El hombre de constitución mediana parecía un poco desaliñado.",
         "title": "Monje guerrero",
         "author": "Ray Keating",
         "sfw": "sfw"
     },
     {
-        "id": "002656",
+        "id": "002614",
         "time": "17:15",
-        "quote_time_case": "cinco y cuarto",
-        "quote_first": "Eran sólo las ",
-        "quote_last": ", pero la tarde estaba tan oscura como medianoche. Y cuando llegó al borde del porche empezó a llover.",
-        "title": "Un gusto por la muerte",
-        "author": "P.D. James",
-        "sfw": "sfw"
+        "quote_time_case": "5:15 P.M.",
+        "quote_first": "",
+        "quote_last": "<br>Sí, el Corner Tap de Jack Cermak fue el octavo círculo del infierno. En un vecindario aburguesado como Logan Square, montar un bar desinfectado y caro para que pareciera un antro barato de un pueblo pequeño era simplemente enfermizo.",
+        "title": "Cocinas del Gran Medio Oeste",
+        "author": "J. Ryan Stradal",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002615",
+        "time": "17:15",
+        "quote_time_case": "17:15 h",
+        "quote_first": "Cuando August Bach salió del frío lúgubre del búnker con aire acondicionado del Control Divisional de Cazas eran las ",
+        "quote_last": " CET. El día había madurado hasta convertirse en una de esas apacibles tardes de verano en las que el aire es cálido y dulce como un caramelo suave.",
+        "title": "Bombardeo",
+        "author": "Len Deighton",
+        "sfw": "unknown"
     }
 ]

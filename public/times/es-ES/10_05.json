@@ -1,26 +1,16 @@
 [
     {
-        "id": "001539",
+        "id": "001514",
         "time": "10:05",
-        "quote_time_case": "* cinco minutos pasados",
-        "quote_first": "Pasa el edificio del FBI a las diez y tres minutos, pasa el Monumento a la Paz en la esquina noroeste de los terrenos del Capitolio a las diez y cinco minutos.",
-        "quote_last": "",
+        "quote_time_case": "pasadas cinco minutos",
+        "quote_first": "Pasa el edificio del FBI a las [diez] y tres minutos, pasa el Monumento a la Paz en la esquina noroeste de los terrenos del Capitolio a las ",
+        "quote_last": ".",
         "title": "¿Se lo contamos al presidente?",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001540",
-        "time": "10:05",
-        "quote_time_case": "* cinco y diez",
-        "quote_first": "Ambos observamos cómo un par de cisnes navegan majestuosamente bajo el pequeño puente. Luego miro mi reloj. Ya son las diez y cinco. \"Deberíamos irnos\", digo con un pequeño sobresalto. Tu madre estará esperando”.<br>“No hay prisa”, me llama Nathaniel mientras me apresuro por el otro lado del puente. \"Tenemos todo el día\". Corre por el puente. \"Está bien. Puedes reducir la velocidad”. Intento seguir su ritmo relajado. Pero no estoy acostumbrado a este ritmo fácil. Estoy acostumbrado a caminar por aceras abarrotadas de gente, luchando para abrirme camino, empujando y dando codazos.",
-        "quote_last": "",
-        "title": "La diosa no doméstica",
-        "author": "Sophie Kinsella",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001541",
+        "id": "001515",
         "time": "10:05",
         "quote_time_case": "10:05",
         "quote_first": "EL HOMBRE Llamó a la puerta de George, pero no hubo respuesta. Miró su reloj: ",
@@ -28,5 +18,15 @@
         "title": "Caminos de gloria",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
+    },
+    {
+        "id": "001516",
+        "time": "10:05",
+        "quote_time_case": "diez y cinco",
+        "quote_first": "Ambos miramos cómo un par de cisnes navegan majestuosamente bajo el pequeño puente. Luego miro mi reloj. Ya son ",
+        "quote_last": ". \"Deberíamos irnos\", digo con un pequeño sobresalto. Tu madre estará esperando”.<br>“No hay prisa”, me llama Nathaniel mientras me apresuro por el otro lado del puente. \"Tenemos todo el día\". Corre por el puente. \"Está bien. Puedes reducir la velocidad”. Intento seguir su ritmo relajado. Pero no estoy acostumbrado a este ritmo fácil. Estoy acostumbrado a caminar por aceras abarrotadas, luchando para abrirme paso, empujando y dando codazos.",
+        "title": "La diosa no doméstica",
+        "author": "Sophie Kinsella",
+        "sfw": "unknown"
     }
 ]

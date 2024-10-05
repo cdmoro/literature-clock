@@ -2,9 +2,9 @@
     {
         "id": "000206",
         "time": "01:18",
-        "quote_time_case": "* Une heure et dix-huit minutes",
-        "quote_first": "C'était samedi soir, ou techniquement dimanche matin. Il était une heure et dix-huit minutes.",
-        "quote_last": "",
+        "quote_time_case": "une heure dix-huit minutes",
+        "quote_first": "C'était samedi soir, ou techniquement dimanche matin. Il était ",
+        "quote_last": ".",
         "title": "Pays d'été",
         "author": "Elin Hilderbrand",
         "sfw": "sfw"

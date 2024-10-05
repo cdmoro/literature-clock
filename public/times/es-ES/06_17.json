@@ -1,22 +1,22 @@
 [
     {
-        "id": "000833",
+        "id": "000816",
         "time": "06:17",
-        "quote_time_case": "* seis-diecisiete",
-        "quote_first": "Mareado, vamos. Se giró lentamente, haciendo que el animal se tumbara en la almohada. El reloj marcaba las seis y diecisiete. Un segundo gato, Miles, ronroneó satisfecho desde el parche de las sábanas donde las piernas de Resnick habían formado una profunda V.",
-        "quote_last": "",
-        "title": "Corazones solitarios",
-        "author": "John Harvey",
+        "quote_time_case": "6:17 a.m.",
+        "quote_first": "Me desperté con la lluvia golpeando la ventana. Oí a Josephine en la ducha, las tuberías resonando a través de las paredes. El radio reloj decía ",
+        "quote_last": " Fue entonces cuando vi nuestro helecho. Estaba justo donde Josephine la había colocado por primera vez, pero ahora estaba gloriosa y viva. Hojas nuevas y brillantes se derramaron sobre la maceta, las puntas frontales se extendieron y tocaron el teléfono.",
+        "title": "Aquí yace",
+        "author": "Olivia Claire Friedman",
         "sfw": "unknown"
     },
     {
-        "id": "000834",
+        "id": "000817",
         "time": "06:17",
-        "quote_time_case": "6:17 a.m.",
-        "quote_first": "Me desperté con la lluvia golpeando la ventana. Oí a Josephine en la ducha, las tuberías resonando a través de las paredes. El radio reloj marcaba las ",
-        "quote_last": " Fue entonces cuando vi nuestro helecho. Estaba justo donde Josephine la había colocado por primera vez, pero ahora estaba gloriosa y viva. Hojas nuevas y brillantes se derramaron sobre la maceta, las puntas frontales se extendieron y tocaron el teléfono.",
-        "title": "Aqui yace",
-        "author": "Olivia Claire Friedman",
+        "quote_time_case": "seis-diecisiete",
+        "quote_first": "Mareado, vamos. Se giró lentamente, haciendo que el animal se tumbara en la almohada. El reloj marcaba ",
+        "quote_last": ". Un segundo gato, Miles, ronroneaba satisfecho desde el parche de las sábanas donde las piernas de Resnick habían formado una profunda V.",
+        "title": "Corazones solitarios",
+        "author": "John Harvey",
         "sfw": "unknown"
     }
 ]

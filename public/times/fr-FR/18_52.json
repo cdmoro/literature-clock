@@ -3,8 +3,8 @@
         "id": "002819",
         "time": "18:52",
         "quote_time_case": "sept heures moins huit",
-        "quote_first": "En passant devant la commune, un rapide coup d'œil à l'horloge de l'Hôtel de Ville leur indiqua l'heure. Il n'était que ",
-        "quote_last": ".<br>« Vous aurez froid », dit Tom en remarquant que Willard n'avait pas de pardessus.<br>« Non, je ne le ferai pas ; pas très. Nous n’avons pas eu le temps de trouver quoi que ce soit. Willard baissa la voix. « À quel point est-il blessé, Tom ? »",
+        "quote_first": "En passant devant la commune, un rapide coup d'œil à l'horloge de l'Hôtel de Ville leur indiqua l'heure. Il était juste ",
+        "quote_last": ".<br>« Vous aurez froid », dit Tom, en remarquant que Willard n'avait pas de pardessus.<br>\" Non, je ne le ferai pas ; peu. Nous n’avons pas eu le temps de trouver quoi que ce soit. Willard baissa la voix. « À quel point est-il blessé, Tom ? »",
         "title": "L'entreprise de Benton",
         "author": "Ralph Henry Barbour",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "002820",
         "time": "18:52",
-        "quote_time_case": "* huit— sept heures moins les minutes",
-        "quote_first": "Nous avons raté le train ! Il est sept heures moins dix — huit —, dit Arthur d'une voix où se mêlaient le reproche et la terreur. Et il sauta du lit et commença avec une fureur hystérique à trier ses vêtements.",
-        "quote_last": "",
+        "quote_time_case": "huit— sept minutes",
+        "quote_first": "Nous avons raté le train ! Il est dix —",
+        "quote_last": ", dit Arthur d'une voix qui mêlait reproche et terreur. Et il sauta du lit et commença avec une fureur hystérique à trier ses vêtements.",
         "title": "Prendre le train",
         "author": "Arnold Bennett",
         "sfw": "sfw"
@@ -24,7 +24,7 @@
         "time": "18:52",
         "quote_time_case": "près de sept heures",
         "quote_first": "Il était ",
-        "quote_last": " lorsque j'arrivai chez M. et Mme Fleming, sur la 6e rue, où je louais une chambre. C'était fin septembre, et même s'il restait un peu de soleil, je ne voulais pas visiter la maison d'un homme mort alors que la nuit tombait.",
+        "quote_last": " lorsque je suis arrivé chez M. et Mme Fleming sur la 6ème rue, où je louais une chambre. C'était fin septembre, et même s'il restait un peu de soleil, je ne voulais pas visiter la maison d'un homme mort alors que la nuit tombait.",
         "title": "Tous les enfants de tante Hagar",
         "author": "Edward P. Jones",
         "sfw": "unknown"
