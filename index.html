@@ -1,209 +1,317 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="base-dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Discover inspiring quotes from your favorite books with Literature Clock. Customize language, colors, and more for a unique experience"
+    />
+    <meta
+      name="keywords"
+      content="literature, quotes, books, clock, reading, wisdom"
+    />
+    <link rel="canonical" href="https://literatureclock.netlify.app" />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="alternate"
+      href="https://literatureclock.netlify.app?locale=es-ES"
+      hreflang="es"
+    />
+    <link
+      rel="alternate"
+      href="https://literatureclock.netlify.app?locale=pt-BR"
+      hreflang="pt"
+    />
+    <link
+      rel="alternate"
+      href="https://literatureclock.netlify.app?locale=it-IT"
+      hreflang="it"
+    />
+    <link
+      rel="alternate"
+      href="https://literatureclock.netlify.app?locale=fr-FR"
+      hreflang="fr"
+    />
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-    content="Discover inspiring quotes from your favorite books with Literature Clock. Customize language, colors, and more for a unique experience" />
-  <meta name="keywords" content="literature, quotes, books, clock, reading, wisdom" />
-  <link rel="canonical" href="https://literatureclock.netlify.app" />
-  <meta name="robots" content="index, follow" />
-  <link rel="alternate" href="https://literatureclock.netlify.app?locale=es-ES" hreflang="es">
-  <link rel="alternate" href="https://literatureclock.netlify.app?locale=pt-BR" hreflang="pt">
-  <link rel="alternate" href="https://literatureclock.netlify.app?locale=it-IT" hreflang="it">
-  <link rel="alternate" href="https://literatureclock.netlify.app?locale=fr-FR" hreflang="fr">
+    <!-- Open Graph tags -->
+    <meta
+      property="og:title"
+      content="Literature Clock - Online Literary Quotes Clock"
+    />
+    <meta
+      property="og:description"
+      content="Discover inspiring quotes from your favorite books with Literature Clock. Customize language, colors, and more for a unique experience"
+    />
+    <meta property="og:url" content="https://literatureclock.netlify.app" />
+    <meta
+      property="og:image"
+      content="https://literatureclock.netlify.app/assets/github-dark.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Literature Clock" />
 
-  <!-- Open Graph tags -->
-  <meta property="og:title" content="Literature Clock - Online Literary Quotes Clock" />
-  <meta property="og:description"
-    content="Discover inspiring quotes from your favorite books with Literature Clock. Customize language, colors, and more for a unique experience" />
-  <meta property="og:url" content="https://literatureclock.netlify.app" />
-  <meta property="og:image" content="https://literatureclock.netlify.app/assets/github-dark.png" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:site_name" content="Literature Clock" />
+    <!-- Twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Literature Clock - Online Literary Quotes Clock"
+    />
+    <meta
+      name="twitter:description"
+      content="Discover inspiring quotes from your favorite books with Literature Clock. Customize language, colors, and more for a unique experience"
+    />
+    <meta
+      name="twitter:image"
+      content="https://literatureclock.netlify.app/images/github-dark.png"
+    />
+    <meta name="twitter:site" content="@CarlosBonadeo" />
 
-  <!-- Twitter meta tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Literature Clock - Online Literary Quotes Clock" />
-  <meta name="twitter:description"
-    content="Discover inspiring quotes from your favorite books with Literature Clock. Customize language, colors, and more for a unique experience" />
-  <meta name="twitter:image" content="https://literatureclock.netlify.app/images/github-dark.png" />
-  <meta name="twitter:site" content="@CarlosBonadeo" />
+    <link rel="stylesheet" href="src/styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="src/styles/styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet" />
+    <title>Literature Clock</title>
+  </head>
 
-  <title>Literature Clock</title>
-</head>
+  <body data-loading="true">
+    <main>
+      <div id="photo-overlay"></div>
+      <div id="time-clock"></div>
+      <div id="clock">
+        <blockquote id="quote"></blockquote>
+      </div>
 
-<body data-loading="true">
-  <main>
-    <div id="photo-overlay"></div>
-    <div id="time-clock"></div>
-    <div id="clock">
-      <blockquote id="quote"></blockquote>
-    </div>
+      <div
+        id="time-progress-bar"
+        role="progressbar"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+      ></div>
+    </main>
 
-    <div id="time-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
-  </main>
-
-  <footer>
-    <button id="exit-zen" title="Exit Zen mode" data-title="exit_zen_title">
-      <svg width="20" height="20" fill="currentColor" viewBox="0 0 6.35 6.35" xml:space="preserve"
-        xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M50.735 6.01c-1.037-.07-1.56-.266-1.786-.666-.185-.33-.116-1.027.145-1.473.29-.496.847-.705 1.866-.702l.62.001-.465-.165c-1.095-.388-1.443-.73-1.126-1.106.134-.16.574-.385.96-.494.288-.08.279-.106-.055-.151-.427-.058-.841-.402-.841-.698 0-.375.353-.533 1.505-.675.304-.037.782-.099 1.062-.136.28-.038.574-.057.653-.043.175.032.321.178.321.32 0 .343-.592.843-1.3 1.1l-.262.094.46.026c.528.03.937.138 1.41.37.345.17.718.48.825.688.158.306.01.787-.309 1.007-.243.167-.503.235-.919.238l-.338.003.325.141c.429.186.662.326.913.548.328.289.404.442.383.775-.023.35-.158.545-.491.708-.57.279-1.991.394-3.556.29z"
-          transform="translate(-48.643 .302)" />
-      </svg>
-    </button>
-    <div id="menu">
-      <div id="settings">
-        <span class="input-group">
-          <button id="zen">
-            <svg width="15" height="15" fill="currentColor" viewBox="0 0 6.35 6.35" xml:space="preserve"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M50.735 6.01c-1.037-.07-1.56-.266-1.786-.666-.185-.33-.116-1.027.145-1.473.29-.496.847-.705 1.866-.702l.62.001-.465-.165c-1.095-.388-1.443-.73-1.126-1.106.134-.16.574-.385.96-.494.288-.08.279-.106-.055-.151-.427-.058-.841-.402-.841-.698 0-.375.353-.533 1.505-.675.304-.037.782-.099 1.062-.136.28-.038.574-.057.653-.043.175.032.321.178.321.32 0 .343-.592.843-1.3 1.1l-.262.094.46.026c.528.03.937.138 1.41.37.345.17.718.48.825.688.158.306.01.787-.309 1.007-.243.167-.503.235-.919.238l-.338.003.325.141c.429.186.662.326.913.548.328.289.404.442.383.775-.023.35-.158.545-.491.708-.57.279-1.991.394-3.556.29z"
-                transform="translate(-48.643 .302)" />
-            </svg>
-            <span id="zen-label" data-text="zen_mode">Zen</span>
-          </button>
-          <button id="screensaver">
-            <svg width="15" height="15" fill="currentColor" viewBox="0 0 6.35 6.35" xml:space="preserve"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M11.827 4.29c0-.011.174-.221.388-.468l.389-.447-1.357-.009-1.356-.009V-1.43h6.35v4.787l-1.354.009-1.355.009.385.441c.211.243.385.453.386.467.002.014-.555.026-1.237.026s-1.24-.009-1.24-.02zm-.658-2.715c.328-.355.608-.645.621-.645.013 0 .228.244.477.543l.483.577c.017.02.391-.33.954-.892l.924-.924.476.763c.261.419.486.762.5.763.014.001.026-.571.026-1.272V-.785h-5.128V.73c0 1.007.012 1.51.035 1.502.019-.006.303-.301.632-.656zm1.34-.993a.42.42 0 0 1-.254-.416c0-.2.077-.326.253-.416.226-.115.471-.04.61.186.13.216.053.496-.179.638a.414.414 0 0 1-.43.008z"
-                transform="translate(-9.891 1.736)" />
-            </svg>
-            <span id="screensaver-label" data-text="screensaver_mode">Screensaver</span>
-          </button>
-          <button id="work" data-title="work_mode_title">
-            <svg width="15" height="15" fill="currentColor" viewBox="0 0 6.35 6.35" xml:space="preserve"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M27.784-4.321a.403.403 0 0 1-.244-.227c-.029-.063-.029-.072-.034-.884-.003-.452 0-.964.005-1.14l.009-.318H30.013v.63h1.34v-.63h2.502l-.007 1.159-.006 1.16-.03.054a.44.44 0 0 1-.185.177l-.061.03-2.864.003c-2.34.002-2.873 0-2.918-.014zm-.267-2.871v-1.133l.03-.067a.356.356 0 0 1 .17-.187l.07-.038h5.792l.072.04c.08.045.16.138.182.214.01.032.015.24.016.61v.56l-3.166.004c-1.741.002-3.166 0-3.166-.003zm1.773-1.935v-.32l.037-.071a.409.409 0 0 1 .238-.192c.069-.022.14-.024 1.118-.024.978 0 1.049.002 1.118.024a.409.409 0 0 1 .238.192l.036.071v.64H31.668v-.526h-1.97v.525h-.408z"
-                transform="translate(-27.505 10.195)" />
-            </svg>
-            <span id="work-label" data-text="work_mode">Work</span>
-          </button>
-          <button id="fade">
-            <svg width="15" height="15" fill="currentColor" viewBox="0 0 6.35 6.35" xml:space="preserve"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M 3.2060748,1.5e-8 A 0.51883897,0.51883897 0 0 0 2.6870544,0.51878862 0.51883897,0.51883897 0 0 0 3.2060748,1.0378092 0.51883897,0.51883897 0 0 0 3.7248662,0.51878862 0.51883897,0.51883897 0 0 0 3.2060748,1.5e-8 Z M 1.2893178,0.78595202 A 0.51883897,0.51883897 0 0 0 0.77052942,1.3049725 0.51883897,0.51883897 0 0 0 1.2893178,1.823761 0.51883897,0.51883897 0 0 0 1.8081082,1.3049725 0.51883897,0.51883897 0 0 0 1.2893178,0.78595202 Z m 3.7713643,0 A 0.51883897,0.51883897 0 0 0 4.5418918,1.3049725 0.51883897,0.51883897 0 0 0 5.0606821,1.823761 0.51883897,0.51883897 0 0 0 5.5794705,1.3049725 0.51883897,0.51883897 0 0 0 5.0606821,0.78595202 Z M 3.1905394,1.5099832 A 0.51883897,0.51883897 0 0 0 2.671748,2.0290038 0.51883897,0.51883897 0 0 0 3.1905394,2.5477923 0.51883897,0.51883897 0 0 0 3.7093269,2.0290038 0.51883897,0.51883897 0 0 0 3.1905394,1.5099832 Z M 0.57294082,2.6252512 A 0.51883897,0.51883897 0 0 0 0.05415045,3.1440397 0.51883897,0.51883897 0 0 0 0.57294082,3.6628284 0.51883897,0.51883897 0 0 0 1.0919612,3.1440397 0.51883897,0.51883897 0 0 0 0.57294082,2.6252512 Z m 5.20388828,0 A 0.51883897,0.51883897 0 0 0 5.2580388,3.1440397 0.51883897,0.51883897 0 0 0 5.7768291,3.6628284 0.51883897,0.51883897 0 0 0 6.2958495,3.1440397 0.51883897,0.51883897 0 0 0 5.7768291,2.6252512 Z M 2.0288874,2.6795186 A 0.51883897,0.51883897 0 0 0 1.5100999,3.1983073 0.51883897,0.51883897 0 0 0 2.0288874,3.7170956 0.51883897,0.51883897 0 0 0 2.5476749,3.1983073 0.51883897,0.51883897 0 0 0 2.0288874,2.6795186 Z m 2.2922251,0 A 0.51883897,0.51883897 0 0 0 3.8023251,3.1983073 0.51883897,0.51883897 0 0 0 4.3211125,3.7170956 0.51883897,0.51883897 0 0 0 4.8399,3.1983073 0.51883897,0.51883897 0 0 0 4.3211125,2.6795186 Z M 3.1905394,3.8022076 A 0.51883897,0.51883897 0 0 0 2.671748,4.3209962 0.51883897,0.51883897 0 0 0 3.1905394,4.8400167 0.51883897,0.51883897 0 0 0 3.7093269,4.3209962 0.51883897,0.51883897 0 0 0 3.1905394,3.8022076 Z M 1.2893178,4.5262391 A 0.51883897,0.51883897 0 0 0 0.77052942,5.0452593 0.51883897,0.51883897 0 0 0 1.2893178,5.564048 0.51883897,0.51883897 0 0 0 1.8081082,5.0452593 0.51883897,0.51883897 0 0 0 1.2893178,4.5262391 Z m 3.7713643,0 A 0.51883897,0.51883897 0 0 0 4.5418918,5.0452593 0.51883897,0.51883897 0 0 0 5.0606821,5.564048 0.51883897,0.51883897 0 0 0 5.5794705,5.0452593 0.51883897,0.51883897 0 0 0 5.0606821,4.5262391 Z M 3.2060748,5.3124227 A 0.51883897,0.51883897 0 0 0 2.6870544,5.8312114 0.51883897,0.51883897 0 0 0 3.2060748,6.35 0.51883897,0.51883897 0 0 0 3.7248662,5.8312114 0.51883897,0.51883897 0 0 0 3.2060748,5.3124227 Z" />
-            </svg>
-            <span id="fade-label" data-text="fade_mode">Fade</span>
-          </button>
-          <button id="showtime">
-            <svg width="15" height="15" fill="currentColor" viewBox="0 0 6.35 6.35" xml:space="preserve"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M 1.3245703 0 C 0.59761982 0 -1.2533172e-16 0.59761982 0 1.3245703 L 0 5.0254297 C 0 5.7523803 0.59761981 6.35 1.3245703 6.35 L 5.0254297 6.35 C 5.7523803 6.35 6.35 5.7523803 6.35 5.0254297 L 6.35 1.3245703 C 6.35 0.59761981 5.7523803 -1.2533172e-16 5.0254297 0 L 1.3245703 0 z M 1.3245703 0.82434245 L 1.6304948 0.82434245 C 1.6294823 0.83922607 1.6288411 0.85384821 1.6288411 0.86899089 L 1.6288411 1.1104232 C 1.6288411 1.4783099 1.9323735 1.774362 2.3093164 1.774362 L 4.0406836 1.774362 C 4.4176265 1.774362 4.7211589 1.4783099 4.7211589 1.1104232 L 4.7211589 0.86899089 C 4.7211589 0.85384821 4.7205177 0.83922607 4.7195052 0.82434245 L 5.0254297 0.82434245 C 5.3100372 0.82434245 5.5256576 1.0399629 5.5256576 1.3245703 L 5.5256576 5.0254297 C 5.5256576 5.3100371 5.3100371 5.5256576 5.0254297 5.5256576 L 1.3245703 5.5256576 C 1.0399629 5.5256576 0.82434245 5.3100372 0.82434245 5.0254297 L 0.82434245 1.3245703 C 0.82434245 1.0399629 1.0399629 0.82434245 1.3245703 0.82434245 z M 1.5817122 2.9062826 L 1.5817122 3.5760091 L 4.626901 3.5760091 L 4.626901 2.9062826 L 1.5817122 2.9062826 z M 1.5817122 3.9646159 L 1.5817122 4.4706315 L 3.3180404 4.4706315 L 3.3180404 3.9646159 L 1.5817122 3.9646159 z " />
-            </svg>
-            <span id="time-label" data-text="time_mode">Time</span>
-          </button>
-        </span>
-        <span class="input-group">
-          <button id="copy" title="Copy quote" data-title="copy_title">
-            <svg width="15" height="15" fill="currentColor" viewBox="0 0 6.35 6.35" xml:space="preserve"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M 1.8438151 0 C 1.5760339 0 1.3586938 0.19490797 1.2972852 0.44483073 L 2.3134505 0.44483073 L 2.3134505 0.44565755 L 5.2445378 0.44565755 C 5.3071326 0.44565755 5.3652539 0.49818115 5.3652539 0.58787109 L 5.3652539 4.8947917 C 5.3652539 4.9135797 5.3624464 4.9298174 5.3578125 4.9452279 L 5.3578125 5.4702604 C 5.6188263 5.4142812 5.8109115 5.170539 5.8109115 4.8947917 L 5.8109115 0.58787109 C 5.8109115 0.27337204 5.5617421 6.2665859e-17 5.2445378 0 L 1.8438151 0 z M 0.96903646 0.86733724 C 0.65183173 0.86733724 0.40266276 1.1407089 0.40266276 1.4552083 L 0.40266276 5.7621289 C 0.40266276 6.0766283 0.65183173 6.35 0.96903646 6.35 L 4.3689323 6.35 C 4.6861371 6.35 4.9336523 6.0766283 4.9336523 5.7621289 L 4.9336523 1.4552083 C 4.9336523 1.1407089 4.6861371 0.86733724 4.3689323 0.86733724 L 0.96903646 0.86733724 z M 0.96903646 1.3146484 L 4.3689323 1.3146484 C 4.4315272 1.3146484 4.4879948 1.3655184 4.4879948 1.4552083 L 4.4879948 5.7621289 C 4.4879948 5.8518188 4.4315268 5.9043424 4.3689323 5.9043424 L 0.96903646 5.9043424 C 0.90644162 5.9043424 0.84997396 5.851819 0.84997396 5.7621289 L 0.84997396 1.4552083 C 0.84997396 1.3655184 0.9064416 1.3146484 0.96903646 1.3146484 z M 1.4353646 2.54 L 1.4353646 2.9633333 L 3.9009505 2.9633333 L 3.9009505 2.54 L 1.4353646 2.54 z M 1.4353646 3.3866667 L 1.4353646 3.81 L 3.9009505 3.81 L 3.9009505 3.3866667 L 1.4353646 3.3866667 z M 1.4353646 4.2333333 L 1.4353646 4.6566667 L 3.9009505 4.6566667 L 3.9009505 4.2333333 L 1.4353646 4.2333333 z " />
-            </svg>
-            <span id="copy-label" data-text="copy_mode">Copy quote</span>
-            <span id="copy-label-copied" data-text="copy_mode_copied">Quoted copied!</span>
-          </button>
-        </span>
-        <span class="input-group">
-          <div class="input-group-text" data-text="language">Language</div>
-          <select id="locale-select">
-            <option value="en-US" data-text="en-US">English (US)</option>
-            <option value="es-ES" data-text="es-ES">Español (ES)</option>
-            <option value="pt-BR" data-text="pt-BR">Portuguese (BR)</option>
-            <option value="fr-FR" data-text="fr-FR">French</option>
-            <option value="it-IT" data-text="it-IT">Italian</option>
-            <option value="random" data-text="random">Random</option>
-          </select>
-        </span>
-        <span>
+    <footer>
+      <button id="exit-zen" title="Exit Zen mode" data-title="exit_zen_title">
+        <svg
+          width="20"
+          height="20"
+          fill="currentColor"
+          viewBox="0 0 6.35 6.35"
+          xml:space="preserve"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M50.735 6.01c-1.037-.07-1.56-.266-1.786-.666-.185-.33-.116-1.027.145-1.473.29-.496.847-.705 1.866-.702l.62.001-.465-.165c-1.095-.388-1.443-.73-1.126-1.106.134-.16.574-.385.96-.494.288-.08.279-.106-.055-.151-.427-.058-.841-.402-.841-.698 0-.375.353-.533 1.505-.675.304-.037.782-.099 1.062-.136.28-.038.574-.057.653-.043.175.032.321.178.321.32 0 .343-.592.843-1.3 1.1l-.262.094.46.026c.528.03.937.138 1.41.37.345.17.718.48.825.688.158.306.01.787-.309 1.007-.243.167-.503.235-.919.238l-.338.003.325.141c.429.186.662.326.913.548.328.289.404.442.383.775-.023.35-.158.545-.491.708-.57.279-1.991.394-3.556.29z"
+            transform="translate(-48.643 .302)"
+          />
+        </svg>
+      </button>
+      <div id="menu">
+        <div id="settings">
           <span class="input-group">
-            <div class="input-group-text" data-text="theme">Theme</div>
-            <select id="theme-select">
-              <optgroup id="colors" label="Colors" data-label="colors">
-                <option value="base" data-text="base">Base</option>
-                <option value="pink" data-text="pink">Pink</option>
-                <option value="green" data-text="green">Green</option>
-                <option value="orange" data-text="orange">Orange</option>
-                <option value="purple" data-text="purple">Purple</option>
-                <option value="blue" data-text="blue">Blue</option>
-                <option value="gray" data-text="gray">Gray</option>
-                <option value="color" data-text="color">Random</option>
-              </optgroup>
-              <optgroup id="themes" label="Themes" data-label="themes">
-                <option value="retro" data-text="retro">Retro</option>
-                <option value="elegant" data-text="elegant">Elegant</option>
-                <option value="festive" data-text="festive">Festive</option>
-                <option value="bohemian" data-text="bohemian">
-                  Bohemian
-                </option>
-                <option value="handwriting" data-text="handwriting">
-                  Handwriting
-                </option>
-                <option value="anaglyph" data-text="anaglyph">
-                  Anaglyph
-                </option>
-                <option value="whatsapp" data-text="whatsapp">
-                  Whatsapp
-                </option>
-                <option value="terminal" data-text="terminal">
-                  Terminal
-                </option>
-                <option value="frame" data-text="frame">Frame</option>
-                <option value="subtle" data-text="subtle">Subtle</option>
-                <option value="poster" data-text="poster">Poster</option>
-                <option value="dynamic" data-text="dynamic">Dynamic</option>
-                <option value="photo" data-text="photo">Photo</option>
-              </optgroup>
-            </select>
-            <select id="variant-select">
-              <option value="system" data-text="system">System</option>
-              <option value="light" data-text="light">Light</option>
-              <option value="dark" data-text="dark">Dark</option>
-            </select>
+            <button id="zen">
+              <svg
+                width="15"
+                height="15"
+                fill="currentColor"
+                viewBox="0 0 6.35 6.35"
+                xml:space="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M50.735 6.01c-1.037-.07-1.56-.266-1.786-.666-.185-.33-.116-1.027.145-1.473.29-.496.847-.705 1.866-.702l.62.001-.465-.165c-1.095-.388-1.443-.73-1.126-1.106.134-.16.574-.385.96-.494.288-.08.279-.106-.055-.151-.427-.058-.841-.402-.841-.698 0-.375.353-.533 1.505-.675.304-.037.782-.099 1.062-.136.28-.038.574-.057.653-.043.175.032.321.178.321.32 0 .343-.592.843-1.3 1.1l-.262.094.46.026c.528.03.937.138 1.41.37.345.17.718.48.825.688.158.306.01.787-.309 1.007-.243.167-.503.235-.919.238l-.338.003.325.141c.429.186.662.326.913.548.328.289.404.442.383.775-.023.35-.158.545-.491.708-.57.279-1.991.394-3.556.29z"
+                  transform="translate(-48.643 .302)"
+                />
+              </svg>
+              <span id="zen-label" data-text="zen_mode">Zen</span>
+            </button>
+            <button id="screensaver">
+              <svg
+                width="15"
+                height="15"
+                fill="currentColor"
+                viewBox="0 0 6.35 6.35"
+                xml:space="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.827 4.29c0-.011.174-.221.388-.468l.389-.447-1.357-.009-1.356-.009V-1.43h6.35v4.787l-1.354.009-1.355.009.385.441c.211.243.385.453.386.467.002.014-.555.026-1.237.026s-1.24-.009-1.24-.02zm-.658-2.715c.328-.355.608-.645.621-.645.013 0 .228.244.477.543l.483.577c.017.02.391-.33.954-.892l.924-.924.476.763c.261.419.486.762.5.763.014.001.026-.571.026-1.272V-.785h-5.128V.73c0 1.007.012 1.51.035 1.502.019-.006.303-.301.632-.656zm1.34-.993a.42.42 0 0 1-.254-.416c0-.2.077-.326.253-.416.226-.115.471-.04.61.186.13.216.053.496-.179.638a.414.414 0 0 1-.43.008z"
+                  transform="translate(-9.891 1.736)"
+                />
+              </svg>
+              <span id="screensaver-label" data-text="screensaver_mode"
+                >Screensaver</span
+              >
+            </button>
+            <button id="work" data-title="work_mode_title">
+              <svg
+                width="15"
+                height="15"
+                fill="currentColor"
+                viewBox="0 0 6.35 6.35"
+                xml:space="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M27.784-4.321a.403.403 0 0 1-.244-.227c-.029-.063-.029-.072-.034-.884-.003-.452 0-.964.005-1.14l.009-.318H30.013v.63h1.34v-.63h2.502l-.007 1.159-.006 1.16-.03.054a.44.44 0 0 1-.185.177l-.061.03-2.864.003c-2.34.002-2.873 0-2.918-.014zm-.267-2.871v-1.133l.03-.067a.356.356 0 0 1 .17-.187l.07-.038h5.792l.072.04c.08.045.16.138.182.214.01.032.015.24.016.61v.56l-3.166.004c-1.741.002-3.166 0-3.166-.003zm1.773-1.935v-.32l.037-.071a.409.409 0 0 1 .238-.192c.069-.022.14-.024 1.118-.024.978 0 1.049.002 1.118.024a.409.409 0 0 1 .238.192l.036.071v.64H31.668v-.526h-1.97v.525h-.408z"
+                  transform="translate(-27.505 10.195)"
+                />
+              </svg>
+              <span id="work-label" data-text="work_mode">Work</span>
+            </button>
+            <button id="fade">
+              <svg
+                width="15"
+                height="15"
+                fill="currentColor"
+                viewBox="0 0 6.35 6.35"
+                xml:space="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M 3.2060748,1.5e-8 A 0.51883897,0.51883897 0 0 0 2.6870544,0.51878862 0.51883897,0.51883897 0 0 0 3.2060748,1.0378092 0.51883897,0.51883897 0 0 0 3.7248662,0.51878862 0.51883897,0.51883897 0 0 0 3.2060748,1.5e-8 Z M 1.2893178,0.78595202 A 0.51883897,0.51883897 0 0 0 0.77052942,1.3049725 0.51883897,0.51883897 0 0 0 1.2893178,1.823761 0.51883897,0.51883897 0 0 0 1.8081082,1.3049725 0.51883897,0.51883897 0 0 0 1.2893178,0.78595202 Z m 3.7713643,0 A 0.51883897,0.51883897 0 0 0 4.5418918,1.3049725 0.51883897,0.51883897 0 0 0 5.0606821,1.823761 0.51883897,0.51883897 0 0 0 5.5794705,1.3049725 0.51883897,0.51883897 0 0 0 5.0606821,0.78595202 Z M 3.1905394,1.5099832 A 0.51883897,0.51883897 0 0 0 2.671748,2.0290038 0.51883897,0.51883897 0 0 0 3.1905394,2.5477923 0.51883897,0.51883897 0 0 0 3.7093269,2.0290038 0.51883897,0.51883897 0 0 0 3.1905394,1.5099832 Z M 0.57294082,2.6252512 A 0.51883897,0.51883897 0 0 0 0.05415045,3.1440397 0.51883897,0.51883897 0 0 0 0.57294082,3.6628284 0.51883897,0.51883897 0 0 0 1.0919612,3.1440397 0.51883897,0.51883897 0 0 0 0.57294082,2.6252512 Z m 5.20388828,0 A 0.51883897,0.51883897 0 0 0 5.2580388,3.1440397 0.51883897,0.51883897 0 0 0 5.7768291,3.6628284 0.51883897,0.51883897 0 0 0 6.2958495,3.1440397 0.51883897,0.51883897 0 0 0 5.7768291,2.6252512 Z M 2.0288874,2.6795186 A 0.51883897,0.51883897 0 0 0 1.5100999,3.1983073 0.51883897,0.51883897 0 0 0 2.0288874,3.7170956 0.51883897,0.51883897 0 0 0 2.5476749,3.1983073 0.51883897,0.51883897 0 0 0 2.0288874,2.6795186 Z m 2.2922251,0 A 0.51883897,0.51883897 0 0 0 3.8023251,3.1983073 0.51883897,0.51883897 0 0 0 4.3211125,3.7170956 0.51883897,0.51883897 0 0 0 4.8399,3.1983073 0.51883897,0.51883897 0 0 0 4.3211125,2.6795186 Z M 3.1905394,3.8022076 A 0.51883897,0.51883897 0 0 0 2.671748,4.3209962 0.51883897,0.51883897 0 0 0 3.1905394,4.8400167 0.51883897,0.51883897 0 0 0 3.7093269,4.3209962 0.51883897,0.51883897 0 0 0 3.1905394,3.8022076 Z M 1.2893178,4.5262391 A 0.51883897,0.51883897 0 0 0 0.77052942,5.0452593 0.51883897,0.51883897 0 0 0 1.2893178,5.564048 0.51883897,0.51883897 0 0 0 1.8081082,5.0452593 0.51883897,0.51883897 0 0 0 1.2893178,4.5262391 Z m 3.7713643,0 A 0.51883897,0.51883897 0 0 0 4.5418918,5.0452593 0.51883897,0.51883897 0 0 0 5.0606821,5.564048 0.51883897,0.51883897 0 0 0 5.5794705,5.0452593 0.51883897,0.51883897 0 0 0 5.0606821,4.5262391 Z M 3.2060748,5.3124227 A 0.51883897,0.51883897 0 0 0 2.6870544,5.8312114 0.51883897,0.51883897 0 0 0 3.2060748,6.35 0.51883897,0.51883897 0 0 0 3.7248662,5.8312114 0.51883897,0.51883897 0 0 0 3.2060748,5.3124227 Z"
+                />
+              </svg>
+              <span id="fade-label" data-text="fade_mode">Fade</span>
+            </button>
+            <button id="showtime">
+              <svg
+                width="15"
+                height="15"
+                fill="currentColor"
+                viewBox="0 0 6.35 6.35"
+                xml:space="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M 1.3245703 0 C 0.59761982 0 -1.2533172e-16 0.59761982 0 1.3245703 L 0 5.0254297 C 0 5.7523803 0.59761981 6.35 1.3245703 6.35 L 5.0254297 6.35 C 5.7523803 6.35 6.35 5.7523803 6.35 5.0254297 L 6.35 1.3245703 C 6.35 0.59761981 5.7523803 -1.2533172e-16 5.0254297 0 L 1.3245703 0 z M 1.3245703 0.82434245 L 1.6304948 0.82434245 C 1.6294823 0.83922607 1.6288411 0.85384821 1.6288411 0.86899089 L 1.6288411 1.1104232 C 1.6288411 1.4783099 1.9323735 1.774362 2.3093164 1.774362 L 4.0406836 1.774362 C 4.4176265 1.774362 4.7211589 1.4783099 4.7211589 1.1104232 L 4.7211589 0.86899089 C 4.7211589 0.85384821 4.7205177 0.83922607 4.7195052 0.82434245 L 5.0254297 0.82434245 C 5.3100372 0.82434245 5.5256576 1.0399629 5.5256576 1.3245703 L 5.5256576 5.0254297 C 5.5256576 5.3100371 5.3100371 5.5256576 5.0254297 5.5256576 L 1.3245703 5.5256576 C 1.0399629 5.5256576 0.82434245 5.3100372 0.82434245 5.0254297 L 0.82434245 1.3245703 C 0.82434245 1.0399629 1.0399629 0.82434245 1.3245703 0.82434245 z M 1.5817122 2.9062826 L 1.5817122 3.5760091 L 4.626901 3.5760091 L 4.626901 2.9062826 L 1.5817122 2.9062826 z M 1.5817122 3.9646159 L 1.5817122 4.4706315 L 3.3180404 4.4706315 L 3.3180404 3.9646159 L 1.5817122 3.9646159 z "
+                />
+              </svg>
+              <span id="time-label" data-text="time_mode">Time</span>
+            </button>
           </span>
           <span class="input-group">
-            <div class="input-group-text" data-text="font">Font</div>
-            <select id="font-select">
-              <option value="default" data-text="default_font">
-                Theme font
-              </option>
+            <button id="copy" title="Copy quote" data-title="copy_title">
+              <svg
+                width="15"
+                height="15"
+                fill="currentColor"
+                viewBox="0 0 6.35 6.35"
+                xml:space="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M 3.039401 0 C 2.5329673 0 2.1174935 0.41712745 2.1174935 0.9235612 L 2.1174935 3.310599 C 2.1174935 3.8170327 2.5329673 4.2325065 3.039401 4.2325065 L 5.4280924 4.2325065 C 5.9345261 4.2325065 6.35 3.8170327 6.35 3.310599 L 6.35 0.9235612 C 6.35 0.41712745 5.9345261 0 5.4280924 0 L 3.039401 0 z M 3.039401 0.56058594 L 5.4280924 0.56058594 C 5.6336297 0.56058594 5.7894141 0.71802388 5.7894141 0.9235612 L 5.7894141 3.310599 C 5.7894141 3.5161363 5.6336297 3.6719206 5.4280924 3.6719206 L 3.039401 3.6719206 C 2.8338637 3.6719206 2.6780794 3.5161363 2.6780794 3.310599 L 2.6780794 0.9235612 C 2.6780794 0.71802388 2.8338637 0.56058594 3.039401 0.56058594 z M 0.9235612 2.1174935 C 0.41712795 2.1174935 0 2.5329678 0 3.039401 L 0 5.4280924 C 0 5.9345256 0.41712795 6.35 0.9235612 6.35 L 3.310599 6.35 C 3.8170322 6.35 4.2325065 5.9345256 4.2325065 5.4280924 L 4.2325065 4.6930469 L 3.6719206 4.6930469 L 3.6719206 5.4280924 C 3.6719206 5.6336295 3.5161361 5.7894141 3.310599 5.7894141 L 0.9235612 5.7894141 C 0.71802408 5.7894141 0.56058594 5.6336295 0.56058594 5.4280924 L 0.56058594 3.039401 C 0.56058594 2.8338639 0.71802408 2.6780794 0.9235612 2.6780794 L 1.6561263 2.6780794 L 1.6561263 2.1174935 L 0.9235612 2.1174935 z "
+                />
+              </svg>
+              <span id="copy-label" data-text="copy_mode">Copy quote</span>
+              <span id="copy-label-copied" data-text="copy_mode_copied"
+                >Quoted copied!</span
+              >
+            </button>
+          </span>
+          <span class="input-group">
+            <div class="input-group-text" data-text="language">Language</div>
+            <select id="locale-select">
+              <option value="en-US" data-text="en-US">English (US)</option>
+              <option value="es-ES" data-text="es-ES">Español (ES)</option>
+              <option value="pt-BR" data-text="pt-BR">Portuguese (BR)</option>
+              <option value="fr-FR" data-text="fr-FR">French</option>
+              <option value="it-IT" data-text="it-IT">Italian</option>
+              <option value="random" data-text="random">Random</option>
             </select>
           </span>
-        </span>
+          <span>
+            <span class="input-group">
+              <div class="input-group-text" data-text="theme">Theme</div>
+              <select id="theme-select">
+                <optgroup id="colors" label="Colors" data-label="colors">
+                  <option value="base" data-text="base">Base</option>
+                  <option value="pink" data-text="pink">Pink</option>
+                  <option value="green" data-text="green">Green</option>
+                  <option value="orange" data-text="orange">Orange</option>
+                  <option value="purple" data-text="purple">Purple</option>
+                  <option value="blue" data-text="blue">Blue</option>
+                  <option value="gray" data-text="gray">Gray</option>
+                  <option value="color" data-text="color">Random</option>
+                </optgroup>
+                <optgroup id="themes" label="Themes" data-label="themes">
+                  <option value="retro" data-text="retro">Retro</option>
+                  <option value="elegant" data-text="elegant">Elegant</option>
+                  <option value="festive" data-text="festive">Festive</option>
+                  <option value="bohemian" data-text="bohemian">
+                    Bohemian
+                  </option>
+                  <option value="handwriting" data-text="handwriting">
+                    Handwriting
+                  </option>
+                  <option value="anaglyph" data-text="anaglyph">
+                    Anaglyph
+                  </option>
+                  <option value="whatsapp" data-text="whatsapp">
+                    Whatsapp
+                  </option>
+                  <option value="terminal" data-text="terminal">
+                    Terminal
+                  </option>
+                  <option value="frame" data-text="frame">Frame</option>
+                  <option value="subtle" data-text="subtle">Subtle</option>
+                  <option value="poster" data-text="poster">Poster</option>
+                  <option value="dynamic" data-text="dynamic">Dynamic</option>
+                  <option value="photo" data-text="photo">Photo</option>
+                </optgroup>
+              </select>
+              <select id="variant-select">
+                <option value="system" data-text="system">System</option>
+                <option value="light" data-text="light">Light</option>
+                <option value="dark" data-text="dark">Dark</option>
+              </select>
+            </span>
+            <span class="input-group">
+              <div class="input-group-text" data-text="font">Font</div>
+              <select id="font-select">
+                <option value="default" data-text="default_font">
+                  Theme font
+                </option>
+              </select>
+            </span>
+          </span>
+        </div>
+        <div>
+          <a id="add-quote" target="_blank" data-text="add_quote">Add quote</a>
+          |
+          <a
+            id="report-error"
+            href="https://github.com/cdmoro/literature-clock/issues/new?template=quote-error.yml&labels=bug"
+            target="_blank"
+            data-text="report_error"
+            >Report error</a
+          >
+          |
+          <a
+            id="project"
+            href="https://github.com/cdmoro/literature-clock"
+            target="_blank"
+            data-text="project"
+            >Project</a
+          >
+          |
+          <span id="contact">
+            <span id="made-by" data-text="made_by">Made by</span>
+            <a href="https://twitter.com/CarlosBonadeo" target="_blank"
+              >@CarlosBonadeo</a
+            >
+          </span>
+        </div>
       </div>
-      <div>
-        <a id="add-quote" target="_blank" data-text="add_quote">Add quote</a>
-        |
-        <a id="report-error"
-          href="https://github.com/cdmoro/literature-clock/issues/new?template=quote-error.yml&labels=bug"
-          target="_blank" data-text="report_error">Report error</a>
-        |
-        <a id="project" href="https://github.com/cdmoro/literature-clock" target="_blank"
-          data-text="project">Project</a>
-        |
-        <span id="contact">
-          <span id="made-by" data-text="made_by">Made by</span>
-          <a href="https://twitter.com/CarlosBonadeo" target="_blank">@CarlosBonadeo</a>
-        </span>
-      </div>
-    </div>
-  </footer>
-  <script src="/src/main.ts" type="module"></script>
-</body>
-
+    </footer>
+    <script src="/src/main.ts" type="module"></script>
+  </body>
 </html>
