@@ -77,9 +77,8 @@ blockquote.fade-out {
 
 blockquote p {
   font-size: 3.5vw;
-  margin: 0;
+  margin: 0 0 1rem;
   max-height: 60vh;
-  padding-bottom: 1rem;
 }
 
 blockquote[aria-label]:before,
