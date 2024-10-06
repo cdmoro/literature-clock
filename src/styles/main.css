@@ -330,14 +330,6 @@ footer {
   display: inline-block;
 }
 
-body.can-share #download {
-  display: none;
-}
-
-body:not(.can-share) #share {
-  display: none;
-}
-
 #flash {
   position: fixed;
   inset: 0;

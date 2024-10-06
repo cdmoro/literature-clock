@@ -2,9 +2,13 @@ import html2canvas from "html2canvas-pro";
 import { getTime } from "../utils/utils";
 
 export function initShare() {
-  document.body.classList.toggle("can-share", !!navigator.share);
-  document.getElementById("share")?.addEventListener("click", shareQuote);
-  document.getElementById("download")?.addEventListener("click", downloadQuote);
+  if (!!navigator.share) {
+    document.getElementById("download")?.remove();
+    document.getElementById("share")?.addEventListener("click", shareQuote);
+  } else {
+    document.getElementById("share")?.remove();
+    document.getElementById("download")?.addEventListener("click", downloadQuote);
+  }
 }
 
 function getQuoteFileName() {
