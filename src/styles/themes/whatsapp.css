@@ -49,8 +49,8 @@
   opacity: 1;
 }
 
-[data-theme|="whatsapp"] .safe-screenshot blockquote p,
-[data-theme|="whatsapp"] .safe-screenshot blockquote cite {
+[data-theme|="whatsapp"] .share-quote blockquote p,
+[data-theme|="whatsapp"] .share-quote blockquote cite {
   box-shadow: none;
 }
 

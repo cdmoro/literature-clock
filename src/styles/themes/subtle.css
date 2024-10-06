@@ -55,7 +55,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-[data-theme|="subtle"] body.safe-screenshot p {
+[data-theme|="subtle"] body.share-quote p {
   background: unset;
   background-clip: unset;
   -webkit-text-fill-color: unset;

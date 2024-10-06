@@ -11,11 +11,6 @@ export function initShare() {
   }
 }
 
-function getQuoteFileName() {
-  const time = getTime();
-  return `quote_${time.replace(":", "_")}.png`;
-}
-
 async function getCanvas() {
   const quote = document.getElementById("quote");
 
@@ -25,7 +20,7 @@ async function getCanvas() {
       useCORS: true,
       scale: 2,
       onclone(_document, element) {
-        element.classList.add("safe-screenshot");
+        element.classList.add("share-quote");
       },
     });
 
@@ -43,11 +38,12 @@ async function getCanvas() {
 
 async function shareQuote() {
   const canvas = await getCanvas();
+  const time = getTime();
 
   canvas?.toBlob((blob) => {
     if (blob) {
       const filesArray = [
-        new File([blob], getQuoteFileName(), {
+        new File([blob], `Quote ${time}`, {
           type: blob.type,
           lastModified: new Date().getTime(),
         }),
@@ -64,13 +60,14 @@ async function shareQuote() {
 async function downloadQuote() {
   const canvas = await getCanvas();
   const url = canvas?.toDataURL("image/png");
+  const time = getTime();
 
   if (url) {
     const a = document.createElement("a");
 
     a.style.display = "none";
     a.setAttribute("href", url);
-    a.setAttribute("download", getQuoteFileName());
+    a.setAttribute("download", `quote_${time.replace(":", "_")}.png`);
     document.body.appendChild(a);
 
     a.click();
