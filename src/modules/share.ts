@@ -39,6 +39,9 @@ async function getCanvas() {
 async function shareQuote() {
   const canvas = await getCanvas();
   const time = getTime();
+  const title = document.getElementById("#title");
+  const author = document.getElementById("#author");
+  const quote = document.querySelector("#quote p");
 
   canvas?.toBlob((blob) => {
     if (blob) {
@@ -48,11 +51,13 @@ async function shareQuote() {
           lastModified: new Date().getTime(),
         }),
       ];
-      const shareData = {
-        files: filesArray,
-      };
 
-      navigator.share(shareData);
+      navigator.share({
+        files: filesArray,
+        title: `Quote from ${title?.textContent} (${author?.textContent})`,
+        text: quote?.textContent || undefined,
+        url: "https://literatureclock.netlify.app/"
+      });
     }
   });
 }
