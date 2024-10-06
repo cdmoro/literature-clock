@@ -43,7 +43,7 @@ async function shareQuote() {
   canvas?.toBlob((blob) => {
     if (blob) {
       const filesArray = [
-        new File([blob], `Quote ${time}`, {
+        new File([blob], `Quote ${time}.png`, {
           type: blob.type,
           lastModified: new Date().getTime(),
         }),
