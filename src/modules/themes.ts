@@ -97,7 +97,7 @@ export function setTheme({ isVariantChange = false } = {}) {
   if (theme === "color") {
     theme = getRandomThemeColor();
   }
-  
+
   if (variant === "system") {
     variant = window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
@@ -125,6 +125,7 @@ export function setTheme({ isVariantChange = false } = {}) {
 }
 
 export function setDynamicBackgroundPicture() {
+  const photoOverlay = document.getElementById("photo-overlay");
   const now = new Date();
   const seed = `${now.getFullYear()}${
     now.getMonth() + 1
@@ -140,7 +141,14 @@ export function setDynamicBackgroundPicture() {
     innerWidth = 5000;
   }
 
-  document.body.style.backgroundImage = `url(https://picsum.photos/seed/${seed}/${innerWidth}/${innerHeight}?blur=1)`;
+  if (photoOverlay) {
+    photoOverlay.style.opacity = "1";
+
+    setTimeout(() => {
+      photoOverlay.style.removeProperty("opacity");
+      document.body.style.backgroundImage = `url(https://picsum.photos/seed/${seed}/${innerWidth}/${innerHeight}?blur=1)`;
+    }, 1000);
+  }
 }
 
 export function removeBackgroundImage() {
