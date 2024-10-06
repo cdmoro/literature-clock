@@ -18,10 +18,11 @@ Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) (
   - Random colour theme: see a different colour theme each minute, isn't that even cooler? ([link](https://literatureclock.netlify.app/?theme=color-system))
 - Fade effect
 - Font personalization: if you don't like the default font of a theme, that's perfectly fine, we won't judge you, and you can change it for another one (from Google Fonts - check Settings section)!
-- Progress bar: at the bottom of the page there is a `progress bar`, so you can know when a quote is about to change
+- Progress bar: why? because it is cute :)
 - Responsive: no matter how long a quote is, it will always look good on desktop and mobile 😎
 - Accessibility: All the quote elements have `aria-labels`
 - All the settings are saved in the browser's local storage and they are updated in the URL without refreshing the page, thanks to History API
+
 
 ## Settings
 
@@ -77,42 +78,7 @@ If you want to use this clock as a screensaver there are several ways to address
 
 ## Themes
 
-At the moment, the clock has seven colour themes and four special themes, we expect to update or add more themes in the future! Here you can find some examples:
-
-**Base**
-| Light | Dark |
-|---|---|
-| ![image](https://github.com/cdmoro/literature-clock/assets/28156761/364d0788-e829-4d7e-b51a-19711d0964c0) | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/34b4bf28-22d1-41cc-ba99-0babab41a03c) |
-
-**Pink**
-| Light | Dark |
-|---|---|
-| ![image](https://github.com/cdmoro/literature-clock/assets/28156761/4786b773-312c-470a-91d8-e5d650efe42e) | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/793c1102-ca7e-4f89-9acd-7938910d1a81) |
-
-**Orange**
-| Light | Dark |
-|---|---|
-| ![image](https://github.com/cdmoro/literature-clock/assets/28156761/35e43ff5-263a-433e-9c44-0f0d33f0d643) | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/f9ed4700-fda0-4650-ac6e-c0ad8e3ac9a2) |
-
-**Elegant**
-| Light | Dark |
-|---|---|
-| ![image](https://github.com/cdmoro/literature-clock/assets/28156761/4a2f97ce-2c0d-4f8e-88dd-1dc8c1e83caa) | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/f74dfc56-e0e6-445f-a2fe-c01cdcedf7f5) |
-
-**Festive**
-| Light | Dark |
-|---|---|
-| ![image](https://github.com/cdmoro/literature-clock/assets/28156761/e31dfc33-bf30-4025-818b-285479d3af4b) | ![image](https://github.com/cdmoro/literature-clock/assets/28156761/83197165-506b-4d0d-9974-92b066917c35) |
-
-**Whatsapp**
-| Light | Dark |
-|---|---|
-|![image](https://github.com/cdmoro/literature-clock/assets/28156761/2aff30ff-3867-4f03-874a-55f708fb4345)|![image](https://github.com/cdmoro/literature-clock/assets/28156761/1b622436-4ce5-4fef-a668-3d5b6318ec88)|
-
-**Terminal**
-| Light | Dark |
-|---|---|
-|![image](https://github.com/cdmoro/literature-clock/assets/28156761/6e74dacd-5a9a-46b1-b707-34df7b9a8e37)|![image](https://github.com/cdmoro/literature-clock/assets/28156761/3cc114fd-f0fe-4277-99d1-7f258f047a12)|
+![splash](https://github.com/user-attachments/assets/d882b15c-0947-45ed-8456-25f56fb6083c)
 
 ## Development
 
