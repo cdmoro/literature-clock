@@ -140,10 +140,13 @@ export function updateFavicon(time: string = getTime()) {
 
 export function onMouseMove() {
   const menu = document.querySelector<HTMLElement>("#menu");
+  const exitZenBtn = document.querySelector<HTMLElement>("#exit-zen");
   menu?.classList.remove("hidden");
+  exitZenBtn?.classList.remove("hidden");
 
   clearTimeout(mouseTimeout);
   mouseTimeout = setTimeout(() => {
     menu?.classList.add("hidden");
+    exitZenBtn?.classList.add("hidden");
   }, 3000);
 }
