@@ -214,6 +214,7 @@ button.active {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
   color: var(--background);
+  z-index: 1;
 }
 
 select:focus,
@@ -240,7 +241,7 @@ button:disabled {
   text-align: center;
   padding: 0.5rem 0;
   font-size: 0.85rem;
-  color: var(--accent-color);
+  color: var(--font-color);
   font-weight: bold;
   left: 0;
 }
@@ -360,13 +361,26 @@ body.share-quote #share-signature {
   }
 }
 
-@media all and (max-width: 959px) and (min-width: 600px) {
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	white-space: nowrap;
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	border: 0;
+}
+
+@media all and (max-width: 959px) and (min-width: 750px) {
   cite {
     font-size: 2vw;
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 750px) {
   #clock {
     max-width: unset;
   }
@@ -412,10 +426,6 @@ body.share-quote #share-signature {
   footer button {
     font-size: 0.8rem;
     padding: 0.1rem 0.35rem;
-  }
-
-  footer button span {
-    display: none;
   }
 
   .input-group-text {
