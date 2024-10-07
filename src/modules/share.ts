@@ -23,6 +23,7 @@ async function getCanvas() {
       scale: 2,
       onclone(_document, element) {
         element.classList.add("share-quote");
+        element.classList.remove("screensaver");
       },
     });
 
