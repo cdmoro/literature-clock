@@ -20,7 +20,7 @@
 }
 
 [data-theme="photo-light"] {
-  --background: #FFFFFF;
+  --background: #EEEEEE;
   --font-color: #111111;
   --accent-color: #e33725;
 }
@@ -30,12 +30,12 @@
 }
 
 [data-theme="photo-light"] #quote {
-  text-shadow: 0px 0px 25px #eeeeee;
+  text-shadow: 0px 0px 25px #FFFFFF;
 }
 
 [data-theme="photo-dark"] {
-  --background: #000000;
-  --font-color: #eeeeee;
+  --background: #111111;
+  --font-color: #EEEEEE;
   --accent-color: #fd3622;
 }
 
@@ -44,5 +44,5 @@
 }
 
 [data-theme="photo-dark"] #quote {
-  text-shadow: 0px 0px 25px #111111;
+  text-shadow: 0px 0px 25px #000000;
 }

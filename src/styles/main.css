@@ -266,10 +266,15 @@ button:disabled {
   max-height: none;
   opacity: 0.4;
   padding: 0.4rem;
+  transition: opacity 0.5s;
 }
 
 #exit-zen:hover {
   opacity: 1;
+}
+
+#exit-zen.hidden {
+  opacity: 0;
 }
 
 #exit-zen svg {
