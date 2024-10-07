@@ -40,8 +40,7 @@ async function getCanvas() {
 }
 
 async function shareQuote() {
-  try {
-    const canvas = await getCanvas();
+  const canvas = await getCanvas();
 
   canvas?.toBlob((blob) => {
     if (blob) {
@@ -66,14 +65,6 @@ async function shareQuote() {
         url.searchParams.append("theme", theme);
       }
 
-      if (!navigator.canShare({
-        files: filesArray,
-        text: `${strings.document_title} - `,
-        url: url.toString()
-      })) {
-        alert("can't share!");
-      }
-
       navigator.share({
         files: filesArray,
         text: `${strings.document_title} - `,
@@ -81,9 +72,6 @@ async function shareQuote() {
       });
     }
   });
-  } catch (error) {
-    alert(error);
-  }
 }
 
 async function downloadQuote() {
