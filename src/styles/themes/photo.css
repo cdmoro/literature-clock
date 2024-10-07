@@ -21,12 +21,12 @@
 
 [data-theme="photo-light"] {
   --background: #FFFFFF;
-  --font-color: #333333;
+  --font-color: #111111;
   --accent-color: #e33725;
 }
 
 [data-theme="photo-light"] #photo-overlay {
-  opacity: .5;
+  opacity: .4;
 }
 
 [data-theme="photo-light"] #quote {
@@ -40,7 +40,7 @@
 }
 
 [data-theme="photo-dark"] #photo-overlay {
-  opacity: .7;
+  opacity: .5;
 }
 
 [data-theme="photo-dark"] #quote {
