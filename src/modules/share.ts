@@ -40,7 +40,8 @@ async function getCanvas() {
 }
 
 async function shareQuote() {
-  const canvas = await getCanvas();
+  try {
+    const canvas = await getCanvas();
 
   canvas?.toBlob((blob) => {
     if (blob) {
@@ -72,6 +73,9 @@ async function shareQuote() {
       });
     }
   });
+  } catch (error) {
+    alert(error);
+  }
 }
 
 async function downloadQuote() {
