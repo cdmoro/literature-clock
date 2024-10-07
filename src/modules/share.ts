@@ -66,6 +66,8 @@ async function shareQuote() {
         url.searchParams.append("theme", theme);
       }
 
+      alert("before share");
+
       navigator.share({
         files: filesArray,
         text: `${strings.document_title} - `,
