@@ -180,7 +180,7 @@ select {
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
-  background-color: color-mix(in srgb, var(--font-color), transparent 20%);
+  background-color: var(--font-color);
   border: var(--font-color) solid 1px;
   color: var(--background);
 }
