@@ -241,7 +241,7 @@ button:disabled {
   text-align: center;
   padding: 0.5rem 0;
   font-size: 0.85rem;
-  color: var(--accent-color);
+  color: var(--font-color);
   font-weight: bold;
   left: 0;
 }
