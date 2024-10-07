@@ -1,7 +1,6 @@
-import { getRandomLocale } from "./locales";
+import { getRandomLocale, getStrings } from "./locales";
 import { getStringSetting, isBooleanSettingTrue } from "../utils/settings";
 import { setTheme } from "./themes";
-import TRANSLATIONS from "../strings/translations.json";
 import { Locale, Quote } from "../types";
 import { fitQuote, getTime, updateGHLinks } from "../utils/utils";
 import FALLBACK_QUOTES from "../strings/fallbackQuotes.json";
@@ -50,6 +49,7 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
 async function getQuote(time: string, locale: Locale): Promise<Quote> {
   const quotes = await getQuotes(time, locale);
   const urlParams = new URLSearchParams(window.location.search);
+  const strings = getStrings();
 
   let quoteIndex = Math.floor(Math.random() * quotes.length);
 
@@ -69,8 +69,8 @@ async function getQuote(time: string, locale: Locale): Promise<Quote> {
   }
 
   if (urlParams.get("quote")) {
-    quote.title = TRANSLATIONS[locale].title;
-    quote.author = TRANSLATIONS[locale].author;
+    quote.title = strings.title;
+    quote.author = strings.author;
   }
 
   return quote;

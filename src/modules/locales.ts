@@ -8,6 +8,7 @@ import {
 import TRANSLATIONS from "../strings/translations.json";
 import { Locale } from "../types";
 import { getTime } from "../utils/utils";
+import { Translations } from "../types";
 
 const DOMINANT_LOCALES: Record<string, Locale> = {
   en: "en-US",
@@ -81,12 +82,17 @@ export function initLocale(defaultValue = navigator.language) {
   });
 }
 
+export function getStrings(): Translations {
+  const resolvedLocale = resolveLocale(getStringSetting("locale") || undefined);
+  const lastLocale = getStringSetting("last-locale") as keyof typeof TRANSLATIONS;
+
+  return TRANSLATIONS[resolvedLocale === "random" ? lastLocale || "en-US" : resolvedLocale];
+}
+
 function translateStrings(locale = navigator.language) {
   const time = getTime();
-  const resolvedLocale = resolveLocale(locale);
   const lastLocale = getStringSetting("last-locale") as keyof typeof TRANSLATIONS;
-  const strings =
-    TRANSLATIONS[resolvedLocale === "random" ? lastLocale || "en-US" : resolvedLocale];
+  const strings = getStrings();
 
   document.documentElement.lang =
     locale === "random" ? lastLocale?.substring(0, 2) || "en" : locale.substring(0, 2);

@@ -1,5 +1,7 @@
 import html2canvas from "html2canvas-pro";
 import { getTime } from "../utils/utils";
+import { getStringSetting } from "../utils/settings";
+import { getStrings } from "./locales";
 
 export function initShare() {
   if (!!navigator.share) {
@@ -38,12 +40,11 @@ async function getCanvas() {
 
 async function shareQuote() {
   const canvas = await getCanvas();
-  const time = getTime();
-  const title = document.getElementById("#title");
-  const author = document.getElementById("#author");
 
   canvas?.toBlob((blob) => {
     if (blob) {
+      const time = getTime();
+      const strings = getStrings();
       const filesArray = [
         new File([blob], `Quote ${time}.png`, {
           type: blob.type,
@@ -51,10 +52,22 @@ async function shareQuote() {
         }),
       ];
 
+      const url = new URL("https://literatureclock.netlify.app/");
+      const locale = getStringSetting("locale");
+      const theme = getStringSetting("theme");
+
+      if (locale) {
+        url.searchParams.append("locale", locale);
+      }
+
+      if (theme) {
+        url.searchParams.append("theme", theme);
+      }
+
       navigator.share({
         files: filesArray,
-        text: `— ${title?.textContent}, ${author?.textContent}`,
-        url: "https://literatureclock.netlify.app/"
+        text: strings.document_title,
+        url: url.toString()
       });
     }
   });
