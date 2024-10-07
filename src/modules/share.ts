@@ -41,7 +41,6 @@ async function shareQuote() {
   const time = getTime();
   const title = document.getElementById("#title");
   const author = document.getElementById("#author");
-  const quote = document.querySelector("#quote p");
 
   canvas?.toBlob((blob) => {
     if (blob) {
@@ -54,8 +53,7 @@ async function shareQuote() {
 
       navigator.share({
         files: filesArray,
-        title: `Quote from ${title?.textContent} (${author?.textContent})`,
-        text: quote?.textContent || undefined,
+        text: `— ${title?.textContent}, ${author?.textContent}`,
         url: "https://literatureclock.netlify.app/"
       });
     }
