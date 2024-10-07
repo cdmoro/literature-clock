@@ -352,6 +352,10 @@ body.share-quote #share-signature {
   display: block;
 }
 
+body.share-quote blockquote .time {
+  color: var(--font-color);
+}
+
 @keyframes flash {
   from {
     opacity: 1;

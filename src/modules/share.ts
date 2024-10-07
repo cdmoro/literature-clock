@@ -67,7 +67,7 @@ async function shareQuote() {
 
       navigator.share({
         files: filesArray,
-        text: strings.document_title,
+        text: `${strings.document_title} - `,
         url: url.toString()
       });
     }
