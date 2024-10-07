@@ -66,7 +66,13 @@ async function shareQuote() {
         url.searchParams.append("theme", theme);
       }
 
-      alert("before share");
+      if (!navigator.canShare({
+        files: filesArray,
+        text: `${strings.document_title} - `,
+        url: url.toString()
+      })) {
+        alert("can't share!");
+      }
 
       navigator.share({
         files: filesArray,
