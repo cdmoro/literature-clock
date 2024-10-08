@@ -31,6 +31,7 @@
     "vitest": "^1.6.0"
   },
   "dependencies": {
+    "html2canvas-pro": "^1.5.8",
     "lunarphase-js": "^2.0.3"
   }
 }

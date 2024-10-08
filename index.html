@@ -83,7 +83,7 @@
   <body data-loading="true">
     <main>
       <div id="photo-overlay"></div>
-      <div id="time-clock"></div>
+      <div id="time-clock" data-html2canvas-ignore></div>
       <div id="clock">
         <blockquote id="quote"></blockquote>
       </div>
@@ -94,10 +94,16 @@
         aria-valuemin="0"
         aria-valuemax="100"
         aria-valuenow="0"
+        data-html2canvas-ignore
       ></div>
+
+      <div id="share-signature">
+        <div data-text="document_title">Literature Clock</div>
+        <div>literatureclock.netlify.app</div>
+      </div>
     </main>
 
-    <footer>
+    <footer data-html2canvas-ignore>
       <button id="exit-zen" title="Exit Zen mode" data-title="exit_zen_title">
         <svg
           width="20"
@@ -229,6 +235,36 @@
                 >Quoted copied!</span
               >
             </button>
+            <button id="share" data-title="share">
+              <svg
+                width="15"
+                height="15"
+                fill="currentColor"
+                viewBox="0 0 6.35 6.35"
+                xml:space="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m 5.1359275,-2e-7 a 1.0938045,1.0938045 0 0 0 -1.093736,1.0937368 1.0938045,1.0938045 0 0 0 0.00225,0.062144 L 1.8784452,2.3049823 A 1.0938045,1.0938045 0 0 0 1.2140679,2.0812635 1.0938045,1.0938045 0 0 0 0.12033115,3.1750001 1.0938045,1.0938045 0 0 0 1.2140679,4.2687369 1.0938045,1.0938045 0 0 0 1.8773153,4.0450181 l 2.167135,1.1502314 a 1.0938045,1.0938045 0 0 0 -0.00225,0.061014 1.0938045,1.0938045 0 0 0 1.093736,1.0937367 A 1.0938045,1.0938045 0 0 0 6.2296689,5.2562631 1.0938045,1.0938045 0 0 0 5.1359316,4.1625264 1.0938045,1.0938045 0 0 0 4.4738144,4.3862452 L 2.3066748,3.2360145 a 1.0938045,1.0938045 0 0 0 0.00225,-0.061015 1.0938045,1.0938045 0 0 0 -0.00225,-0.061014 L 4.4738103,1.9648844 A 1.0938045,1.0938045 0 0 0 5.1359275,2.1874734 1.0938045,1.0938045 0 0 0 6.2296648,1.0937366 1.0938045,1.0938045 0 0 0 5.1359275,-2e-7 Z"
+                />
+              </svg>
+              <span id="share-label" class="sr-only" data-text="share">Share</span>
+            </button>
+            <button id="download" data-title="download">
+              <svg
+                width="15"
+                height="15"
+                fill="currentColor"
+                viewBox="0 0 6.35 6.35"
+                xml:space="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M 3.1758268 0 A 0.38590801 0.38590801 0 0 0 2.7888737 0.38695312 L 2.7888737 3.4428906 L 1.8438151 2.5375195 A 0.38590801 0.38590801 0 0 0 1.5684831 2.4300326 A 0.38590801 0.38590801 0 0 0 1.2989388 2.5490951 A 0.38590801 0.38590801 0 0 0 1.3088607 3.0939714 L 2.9079362 4.626901 A 0.3859466 0.3859466 0 0 0 2.936875 4.6500521 A 0.38590801 0.38590801 0 0 0 2.964987 4.6715495 A 0.3859466 0.3859466 0 0 0 2.9658138 4.6723763 A 0.3859466 0.3859466 0 0 0 2.9798698 4.6798177 A 0.38590801 0.38590801 0 0 0 3.1005859 4.7269466 A 0.3859466 0.3859466 0 0 0 3.1014128 4.7269466 A 0.38590801 0.38590801 0 0 0 3.1758268 4.734388 A 0.38590801 0.38590801 0 0 0 3.3180404 4.706276 A 0.3859466 0.3859466 0 0 0 3.3188672 4.706276 A 0.38590801 0.38590801 0 0 0 3.3841862 4.6715495 A 0.38590801 0.38590801 0 0 0 3.441237 4.626901 L 3.4478516 4.6211133 A 0.38590801 0.38590801 0 0 0 3.4495052 4.6186328 L 5.0411393 3.0939714 A 0.38590801 0.38590801 0 0 0 5.0527148 2.5490951 A 0.38590801 0.38590801 0 0 0 4.5061849 2.5375195 L 3.5602995 3.4453711 L 3.5602995 0.38695312 A 0.38590801 0.38590801 0 0 0 3.1758268 0 z M 0.39439453 3.9629622 A 0.38590801 0.38590801 0 0 0 0.0074414062 4.3499154 L 0.0074414062 5.9647005 A 0.3859466 0.3859466 0 0 0 0.39439453 6.35 L 5.9547786 6.35 A 0.3859466 0.3859466 0 0 0 6.3417318 5.9647005 L 6.3417318 4.3499154 A 0.38590801 0.38590801 0 0 0 5.9547786 3.9629622 A 0.38590801 0.38590801 0 0 0 5.570306 4.3499154 L 5.570306 5.5777474 L 0.77969401 5.5777474 L 0.77969401 4.3499154 A 0.38590801 0.38590801 0 0 0 0.39439453 3.9629622 z "
+                />
+              </svg>
+              <span id="download-label" class="sr-only" data-text="download">Download</span>
+            </button>
           </span>
           <span class="input-group">
             <div class="input-group-text" data-title="language">
@@ -246,11 +282,11 @@
               </svg>
             </div>
             <select id="locale-select">
-              <option value="en-US" data-text="en-US">English (US)</option>
-              <option value="es-ES" data-text="es-ES">Español (ES)</option>
-              <option value="pt-BR" data-text="pt-BR">Portuguese (BR)</option>
-              <option value="fr-FR" data-text="fr-FR">French</option>
-              <option value="it-IT" data-text="it-IT">Italian</option>
+              <option value="en-US" data-text="en_US">English (US)</option>
+              <option value="es-ES" data-text="es_ES">Español (ES)</option>
+              <option value="pt-BR" data-text="pt_BR">Portuguese (BR)</option>
+              <option value="fr-FR" data-text="fr_FR">French</option>
+              <option value="it-IT" data-text="it_IT">Italian</option>
               <option value="random" data-text="random">Random</option>
             </select>
           </span>

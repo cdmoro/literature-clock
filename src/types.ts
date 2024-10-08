@@ -1,5 +1,7 @@
 import TRANSLATIONS from "./strings/translations.json";
 
+export type { Translations } from "./strings/types";
+
 export type Locale = keyof typeof TRANSLATIONS;
 
 // type SafeForWork = "sfw" | "nsfw" | "unknown";
