@@ -25,17 +25,17 @@
 }
 
 [data-theme="photo-light"] {
-  --background: #EEEEEE;
+  --background: #DDDDDD;
   --font-color: #2f2e2c;
   --accent-color: #e33725;
 }
 
 [data-theme="photo-light"] #photo-overlay {
-  opacity: .4;
+  opacity: .3;
 }
 
 [data-theme="photo-light"] #quote {
-  text-shadow: 0px 0px 25px #FFFFFF, 0px 0px 5px #FFFFFF;
+  text-shadow: 0px 0px 25px #FFFFFF;
   color: #111111;
 }
 
@@ -54,11 +54,11 @@
 }
 
 [data-theme="photo-dark"] #photo-overlay {
-  opacity: .5;
+  opacity: .4;
 }
 
 [data-theme="photo-dark"] #quote {
-  text-shadow: 0px 0px 25px #000000, 0px 0px 5px #000000;
+  text-shadow: 0px 0px 25px #000000;
   color: #EEEEEE;
 }
 
