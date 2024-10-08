@@ -17,7 +17,7 @@ Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) (
 - [Themes](#themes): the clock has `colour themes` and `special themes` and each theme has light and dark variants, of course
   - Random colour theme: see a different colour theme each minute, isn't that even cooler? ([link](https://literatureclock.netlify.app/?theme=color-system))
 - Fade effect
-- Font personalization: if you don't like the default font of a theme, that's perfectly fine, we won't judge you, and you can change it for another one (from Google Fonts - check Settings section)!
+- Font personalization: if you don't like the default font of a theme, that's perfectly fine, we won't judge you, so you can change it for another using the `font` param!
 - Progress bar: why? because it is cute :)
 - Responsive: no matter how long a quote is, it will always look good on desktop and mobile 😎
 - Accessibility: All the quote elements have `aria-labels`
@@ -47,11 +47,11 @@ Test settings
 
 There is support for the following languages (by default, it will try to use the system language):
 
--English
--Spanish
--Portuguese
--French
--Italian
+- English
+- Spanish
+- Portuguese
+- French
+- Italian
 
 Want to implement a new language? Sure thing, ping me and let's talk about it!
 
