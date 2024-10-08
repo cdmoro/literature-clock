@@ -6,7 +6,6 @@ Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) (
 
 ![373910718-c9d2543f-b95c-41d1-bcdc-2c5f7631cd1f](https://github.com/user-attachments/assets/15fedb98-8d39-418a-86fa-a7fd9d0077d2)
 
-
 ## Features
 
 - Zen mode: remove all the distractions ([link](https://literatureclock.netlify.app/?zen=true))
@@ -38,7 +37,7 @@ The clock can be controlled using URL parameters, these parameters will overwrit
 - `fade`: enable/disable fade effect
 - `showtime`: enable/disable the clock on top of the screen
 
-Test settings
+Developer settings
   
 - `time`: get the quotes for a particular time ([link](https://literatureclock.netlify.app/?time=12:30))
 - `quote`: test a quote before submitting it ([link](https://literatureclock.netlify.app/?quote=Hi%20mom!%20I%27m%20part%20of%20the%20Literature%20Clock!)) (it is no necessary to escape the quote by adding the special characters, just write the quote and the browser will add them)
@@ -56,9 +55,22 @@ There is support for the following languages (by default, it will try to use the
 
 Want to implement a new language? Sure thing, ping me and let's talk about it!
 
-### About the translations
+### About the quotes
+
+Translations
 
 All translations were made from the original CSV English file, sometimes the translations are not accurate (I used Google Translate, yes, I know), but it's fine, this is something that can be fixed easily, just one quote at a time. :)
+
+We are still looking for phrases for the next few minutes:
+
+- 06:07
+- 06:18
+- 08:21
+- 10:28
+- 11:46
+- 12:31
+- 13:36
+- 18:44
 
 In any case, if you want to help you can:
 
