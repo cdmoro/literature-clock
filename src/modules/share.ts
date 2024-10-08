@@ -48,7 +48,7 @@ async function shareQuote() {
       const strings = getStrings();
       const filesArray = [
         new File([blob], `Quote ${time}.png`, {
-          type: blob.type,
+          type: "image/png",
           lastModified: new Date().getTime(),
         }),
       ];
@@ -65,11 +65,15 @@ async function shareQuote() {
         url.searchParams.append("theme", theme);
       }
 
-      navigator.share({
+      const shareData = {
         files: filesArray,
         text: `${strings.document_title} - `,
         url: url.toString()
-      });
+      }
+
+      if (navigator.canShare && navigator.canShare(shareData)) {
+        navigator.share(shareData);
+      }
     }
   });
 }
