@@ -8,7 +8,10 @@
     "build": "tsc & vite build",
     "host": "vite --host",
     "preview": "vite preview",
-    "test": "vitest --environment=jsdom"
+    "test": "vitest --environment=jsdom",
+    "generate-times": "python ./scripts/generate_times.py",
+    "check-quotes": "python ./scripts/check_quotes.py"
+
   },
   "repository": {
     "type": "git",
