@@ -106,6 +106,10 @@ blockquote .time {
   color: var(--accent-color);
 }
 
+body.share-quote blockquote .time {
+  color: var(--font-color);
+}
+
 cite {
   font-family: var(
     --cite-font-family,
