@@ -175,7 +175,7 @@ select {
 .input-group-text {
   display: flex;
   align-items: center;
-  padding: .2rem .6rem;
+  padding: 0 .6rem;
   font-weight: 400;
   line-height: 1.5;
   text-align: center;
@@ -400,7 +400,7 @@ footer {
   }
 
   .input-group-text {
-    padding: .2rem .5rem;
+    padding: 0 .5rem;
   }
 
   #theme,
