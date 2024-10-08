@@ -178,12 +178,12 @@ select {
 .input-group-text {
   display: flex;
   align-items: center;
-  padding: 0.2rem 0.6rem;
+  padding: 0 .6rem;
   font-weight: 400;
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
-  background-color: color-mix(in srgb, var(--font-color), transparent 20%);
+  background-color: var(--font-color);
   border: var(--font-color) solid 1px;
   color: var(--background);
 }
@@ -442,7 +442,7 @@ body.share-quote blockquote .time {
   }
 
   .input-group-text {
-    padding: 0.2rem 0.5rem;
+    padding: 0 .5rem;
   }
 
   #theme,
