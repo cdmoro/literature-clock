@@ -9,7 +9,7 @@ Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) (
 
 ## Features
 
-- Zen mode: remove all the distractions (perfect for screensaver usage) ([link](https://literatureclock.netlify.app/?zen=true))
+- Zen mode: remove all the distractions ([link](https://literatureclock.netlify.app/?zen=true))
 - Work mode: only shows quotes that are safe for work ([link](https://literatureclock.netlify.app/?work=true))
 - [Screensaver mode](#screensaver): make the quotes dance around the screen! ([link](https://literatureclock.netlify.app/?screensaver=true))
 - Languages: supports English, Spanish, Portuguese, French, and Italian (by default, it will try to use the system language)
@@ -17,6 +17,7 @@ Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) (
 - [Themes](#themes): the clock has `colour themes` and `special themes` and each theme has light and dark variants, of course
   - Random colour theme: see a different colour theme each minute, isn't that even cooler? ([link](https://literatureclock.netlify.app/?theme=color-system))
 - Fade effect
+- Share your favourite quotes across your social media!
 - Font personalization: if you don't like the default font of a theme, that's perfectly fine, we won't judge you, so you can change it for another using the `font` param!
 - Progress bar: why? because it is cute :)
 - Responsive: no matter how long a quote is, it will always look good on desktop and mobile 😎
