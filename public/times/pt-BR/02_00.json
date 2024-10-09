@@ -4,7 +4,7 @@
         "time": "02:00",
         "quote_time_case": "duas da manhã",
         "quote_first": "Então, quando Dom, parecendo agitado e desesperado, bateu na porta de Tom às ",
-        "quote_last": " e disse que pagaria uma parte da dívida em troca de uma “tarefa”, Tom sabia que não tinha escolha. Além disso, isto não era realmente uma oferta; foi uma ordem.",
+        "quote_last": " e disse que pagaria uma parte da dívida em troca de uma \"tarefa\", Tom sabia que não tinha escolha. Além disso, isto não era realmente uma oferta; foi uma ordem.",
         "title": "A ambição",
         "author": "Lee Strobel",
         "sfw": "sfw"
@@ -14,7 +14,7 @@
         "time": "02:00",
         "quote_time_case": "duas horas",
         "quote_first": "“Naquela noite, acordei por volta das ",
-        "quote_last": " com o som de um trovão distante e percebi mais uma vez que o Sr. Harrigan estava morto.<br>Eu estava na minha cama e ele estava no chão.”",
+        "quote_last": " com o som de um trovão distante e percebi mais uma vez que o Sr. Harrigan estava morto.<br>Eu estava na minha cama. e ele estava no chão.”",
         "title": "Se sangrar",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "000267",
         "time": "02:00",
-        "quote_time_case": "* 2h00",
-        "quote_first": "Então, ontem de manhã, uma estudante - Amy Chan - foi levada à estação de Twin Falls por sua mãe. Amy afirmou ter visto Leena cambaleando bêbada ao longo da calçada da Ponte do Diabo por volta das 2h do sábado, 15 de novembro.",
-        "quote_last": "",
+        "quote_time_case": "2h00",
+        "quote_first": "Então, ontem de manhã, uma estudante - Amy Chan - foi levada à estação de Twin Falls por sua mãe. Amy afirmou ter visto Leena cambaleando bêbada ao longo da calçada da Ponte do Diabo por volta de ",
+        "quote_last": " no sábado, 15 de novembro.",
         "title": "Abaixo da Ponte do Diabo",
         "author": "Loreth Anne White",
         "sfw": "unknown"
@@ -32,9 +32,9 @@
     {
         "id": "000268",
         "time": "02:00",
-        "quote_time_case": "* Duas horas da manhã",
-        "quote_first": "“O relógio no centro da parede do café tocou para anunciar que eram duas horas da manhã. No meio da noite, tudo ficou em silêncio.”",
-        "quote_last": "",
+        "quote_time_case": "Duas horas da manhã",
+        "quote_first": "“O relógio no centro da parede do café tocou para anunciar que eram ",
+        "quote_last": ". No meio da noite, tudo ficou em silêncio.”",
         "title": "Antes que o café esfrie: contos do café",
         "author": "Toshikazu Kawaguchi",
         "sfw": "unknown"
@@ -52,8 +52,8 @@
     {
         "id": "000270",
         "time": "02:00",
-        "quote_time_case": "* 2 da manhã",
-        "quote_first": "Jéssica ouviu a agitação no grande salão e acendeu a luz ao lado de sua cama. O relógio não estava devidamente ajustado para a hora local, e ela teve que subtrair vinte e um minutos para determinar que eram cerca de duas da manhã.",
+        "quote_time_case": "2 da manhã",
+        "quote_first": "Jéssica ouviu a agitação no grande salão e acendeu a luz ao lado de sua cama. O relógio não havia sido ajustado corretamente para a hora local e ela teve que subtrair vinte e um minutos para determinar que eram cerca de ",
         "quote_last": "",
         "title": "Duna",
         "author": "Frank Herbert",
@@ -63,8 +63,8 @@
         "id": "000271",
         "time": "02:00",
         "quote_time_case": "duas da manhã",
-        "quote_first": "“Meu caro Sr. Sherlock Holmes:<br>“Houve um mau negócio durante a noite em 3, Lauriston Gardens, próximo à Brixton Road. Nosso homem da ronda viu ali uma luz por volta das ",
-        "quote_last": " e, como a casa estava vazia, suspeitou que algo estava errado.”",
+        "quote_first": "“Meu caro Sr. Sherlock Holmes:<br>“Houve um mau negócio durante a noite em 3, Lauriston Gardens, próximo à Brixton Road. Nosso homem na ronda viu uma luz lá por volta das ",
+        "quote_last": ", e como a casa estava vazia, suspeitou que algo estava errado.”",
         "title": "Um estudo em escarlate",
         "author": "Sir Arthur Conan Doyle",
         "sfw": "unknown"
@@ -73,8 +73,8 @@
         "id": "000272",
         "time": "02:00",
         "quote_time_case": "duas horas",
-        "quote_first": "Com as perucas cuidadas, ele coloca os cadernos em branco da Staples ao lado de seu lappie pessoal e inicia um tour virtual por casas e apartamentos para alugar. Ele descobre uma série de possibilidades, mas qualquer investigação prática terá que esperar até que ele receba seus produtos da Amazon.<br>São apenas ",
-        "quote_last": " quando ele termina sua busca virtual por uma casa, muito cedo para encerrar o dia. Na verdade, é hora de começar a escrever.",
+        "quote_first": "Com as perucas cuidadas, ele coloca os cadernos em branco da Staples ao lado de seu lappie pessoal e inicia um tour virtual pelas casas e apartamentos para alugar. Ele descobre uma série de possibilidades, mas qualquer investigação imediata terá que esperar até que ele receba seus produtos da Amazon.<br>São apenas ",
+        "quote_last": " quando ele terminar sua busca virtual por uma casa, é muito cedo para encerrar o dia. Na verdade, é hora de começar a escrever.",
         "title": "Billy Verões",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -103,7 +103,7 @@
         "id": "000275",
         "time": "02:00",
         "quote_time_case": "duas horas",
-        "quote_first": "“Vou experimentar o Infermiterol”, eu disse secamente.<br>“Bom. E coma uma refeição rica em laticínios todos os dias. Você sabia que as vacas podem optar por dormir em pé ou deitadas? Dada a opção, eu sei o que 𝘐’𝘥 escolher. Você já fez iogurte no fogão? Não responda isso. Guardaremos a aula de culinária para nossa próxima reunião. Agora escreva isso porque tenho a sensação de que você é psicótico demais para se lembrar: sábado, 20 de janeiro, às ",
+        "quote_first": "“Vou experimentar o Infermiterol”, eu disse secamente.<br>“Bom. E coma uma refeição rica em laticínios todos os dias. Você sabia que as vacas podem optar por dormir em pé ou deitadas? Dada a opção, eu sei o que 𝘐’𝘥 escolher. Você já fez iogurte no fogão? Não responda isso. Guardaremos a aula de culinária para nossa próxima reunião. Agora escreva isso porque tenho a sensação de que você é psicótico demais para se lembrar: sábado, vinte de janeiro, às ",
         "quote_last": ". E experimente o Infermiterol. Bye Bye.\"",
         "title": "Meu ano de descanso e relaxamento",
         "author": "Ottessa Moshfegh",
@@ -114,7 +114,7 @@
         "time": "02:00",
         "quote_time_case": "Duas horas",
         "quote_first": "Quando voltei para West Egg naquela noite, por um momento tive medo de que minha casa estivesse pegando fogo. ",
-        "quote_last": " e todo o canto da península estava resplandecente de luz, que caía de forma irreal sobre os arbustos e produzia reflexos finos e alongados nos fios da beira da estrada.",
+        "quote_last": " e todo o canto da península estava resplandecente de luz, que caía irreal sobre os arbustos e produzia reflexos finos e alongados nos fios da beira da estrada.",
         "title": "O Grande Gatsby",
         "author": "F. Scott Fitzgerald",
         "sfw": "unknown"
@@ -133,8 +133,8 @@
         "id": "000278",
         "time": "02:00",
         "quote_time_case": "duas da manhã",
-        "quote_first": "Ela sabia que ele devia ter sua própria história sobre ela, tudo, desde o protetor labial com sabor de canela que ela usava nos lábios no inverno até o cheiro do xampu quando ele acariciava sua nuca (aquele carinho não vinha com tanta frequência agora). , mas ainda assim acontecia) ao clique de seu computador às ",
-        "quote_last": ", naquelas duas ou três noites por mês em que o sono, por algum motivo, a abandonava.",
+        "quote_first": "Ela sabia que ele devia ter sua própria história sobre ela, tudo, desde o protetor labial com sabor de canela que ela usava nos lábios no inverno até o cheiro do xampu quando ele acariciava sua nuca (aquele carinho não vinha com tanta frequência agora, mas ainda assim acontecia) ao clique de seu computador às ",
+        "quote_last": " naquelas duas ou três noites por mês em que o sono, por algum motivo, a abandonava.",
         "title": "Totalmente escuro, sem estrelas",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -144,7 +144,7 @@
         "time": "02:00",
         "quote_time_case": "duas da manhã",
         "quote_first": "Ela desligou o computador e subiu para o segundo andar em um passo lento. O chuveiro aliviou suas costas e um pouco de Tylenol provavelmente aliviaria ainda mais por volta das ",
-        "quote_last": "; ela tinha certeza de que estaria acordada para descobrir.",
+        "quote_last": " mais ou menos; ela tinha certeza de que estaria acordada para descobrir.",
         "title": "Totalmente escuro, sem estrelas",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -152,9 +152,9 @@
     {
         "id": "000280",
         "time": "02:00",
-        "quote_time_case": "* 2h00",
-        "quote_first": "Às 2h a noite atingiu o pico e o trio decidiu voltar para a casa de Cleo e Frank. Zoe estava sentada com Audrey na grande escada de incêndio aprendendo a enrolar o baseado perfeito quando Cleo saiu, com os braços carregados de picolés coloridos.",
-        "quote_last": "",
+        "quote_time_case": "2h00",
+        "quote_first": "Às ",
+        "quote_last": " a noite atingiu o pico e o trio decidiu voltar para a casa de Cleo e Frank. Zoe estava sentada com Audrey na grande escada de incêndio aprendendo a enrolar o baseado perfeito quando Cleo saiu, com os braços carregados de picolés coloridos.",
         "title": "Cleópatra e Frankenstein",
         "author": "Coco Mellors",
         "sfw": "nsfw"
@@ -163,8 +163,8 @@
         "id": "000281",
         "time": "02:00",
         "quote_time_case": "Duas horas",
-        "quote_first": "\"Sábado à tarde?\" ela perguntou. Ele piscou para Billy e apertou a cabeça da garota na dobra do braço. \"Não. ",
-        "quote_last": " da noite de sábado. Deslize e bata na mesma janela em que você estava esta manhã. Vou convencer o ajudante noturno a deixar você entrar.",
+        "quote_first": "“Sábado à tarde?” ela perguntou. Ele piscou para Billy e apertou a cabeça da garota na dobra do braço. \"Não. ",
+        "quote_last": " Sábado à noite. Deslize e bata na mesma janela em que você estava esta manhã. Vou convencer o ajudante noturno a deixar você entrar.",
         "title": "Um voou sobre o ninho do cuco",
         "author": "Ken Kesey",
         "sfw": "unknown"
@@ -172,8 +172,8 @@
     {
         "id": "000282",
         "time": "02:00",
-        "quote_time_case": "duas da manhã.",
-        "quote_first": "“Esperei aqui a noite toda”, disse Shawn. “Conte-me tudo.”<br>“Shawn”, disse ela. “É tudo incrível. Por onde eu começo? . .”<br>Eles conversaram até as ",
+        "quote_time_case": "duas da manhã",
+        "quote_first": "“Esperei aqui a noite toda”, disse Shawn. “Conte-me tudo.”<br>“Shawn”, disse ela. “É tudo incrível. Por onde eu começo? . .”<br>Eles conversaram até ",
         "quote_last": "",
         "title": "Adiar",
         "author": "James Han Mattson",
@@ -183,8 +183,8 @@
         "id": "000283",
         "time": "02:00",
         "quote_time_case": "duas da manhã",
-        "quote_first": "Quase quatro meses depois do seu casamento com Hossein e três dias depois do importante massacre da Sexta-Feira Negra na Praça Jaleh, Bahar entrou sorrateiramente no apartamento das suas irmãs em Teerão às ",
-        "quote_last": ". Ela deslizou tão silenciosamente na cama de solteiro que uma vez dividira com a pequena Layla que Marjan só a notou ao amanhecer.",
+        "quote_first": "Quase quatro meses depois do seu casamento com Hossein e três dias depois do importante massacre da Sexta-feira Negra na Praça Jaleh, Bahar entrou sorrateiramente no apartamento das suas irmãs em Teerão às ",
+        "quote_last": ". Ela deslizou tão silenciosamente na cama de solteiro que uma vez dividira com a pequena Layla que Marjan não a notou até o amanhecer.",
         "title": "Sopa de romã",
         "author": "Marsha Mehran",
         "sfw": "unknown"
@@ -194,7 +194,7 @@
         "time": "02:00",
         "quote_time_case": "duas horas",
         "quote_first": "Às ",
-        "quote_last": ", na casa dos Weatherbys, Sally perguntou se ela e Amory haviam passado um “tempo” na sala. Isabelle se virou para ela em silêncio. Nos seus olhos estava a luz do idealista, do sonhador inviolável de sonhos joaninos.",
+        "quote_last": " de volta à casa dos Weatherbys, Sally perguntou se ela e Amory haviam passado um “momento” na sala. Isabelle se virou para ela em silêncio. Nos seus olhos estava a luz do idealista, do sonhador inviolável de sonhos joaninos.",
         "title": "Este lado do paraíso",
         "author": "F. Scott Fitzgerald",
         "sfw": "unknown"
@@ -203,8 +203,8 @@
         "id": "000285",
         "time": "02:00",
         "quote_time_case": "duas horas",
-        "quote_first": "Quando soaram as ",
-        "quote_last": " do sino da catedral, Jean Valjean acordou.",
+        "quote_first": "Quando ",
+        "quote_last": " tocou o sino da catedral, Jean Valjean acordou.",
         "title": "Os Miseráveis",
         "author": "Victor Hugo",
         "sfw": "sfw"
@@ -213,8 +213,8 @@
         "id": "000286",
         "time": "02:00",
         "quote_time_case": "2 da manhã",
-        "quote_first": "Pegue o avião às ",
-        "quote_last": ", em meio a trouxas, galinhas, ciganos, sente-se em frente a duas cartomantes rechonchudas que gemem e (muito discretamente) vomitam durante todo o caminho até Tbilissi.",
+        "quote_first": "Embarcar no avião às ",
+        "quote_last": ", entre trouxas, galinhas, ciganos, sentar-se em frente a uma dupla de cartomantes rechonchudos que gemem e (muito discretamente) vomitam durante todo o caminho até Tbilissi.",
         "title": "Bech: um livro",
         "author": "J. Updike",
         "sfw": "unknown"
@@ -224,7 +224,7 @@
         "time": "02:00",
         "quote_time_case": "dois",
         "quote_first": "Lady Macbeth: Fora, maldito lugar; fora, eu digo. Um, ",
-        "quote_last": "... ora, então é hora de não fazer isso. O inferno é obscuro. Que pena, meu senhor, que pena, um soldado e temeroso? O que devemos temer, quem sabe disso, quando ninguém pode responsabilizar nosso poder? No entanto, quem teria pensado que o velho tinha tanto sangue?",
+        "quote_last": ", - ora, então é hora de não fazer isso. O inferno é obscuro. Que pena, meu senhor, que pena, um soldado e temeroso? O que devemos temer, quem sabe disso, quando ninguém pode responsabilizar nosso poder? No entanto, quem teria pensado que o velho tinha tanto sangue?",
         "title": "Macbeth",
         "author": "William Shakespeare",
         "sfw": "nsfw"
@@ -232,8 +232,8 @@
     {
         "id": "000288",
         "time": "02:00",
-        "quote_time_case": "Bateu dois.",
-        "quote_first": "Em algum lugar, atrás de uma tela, um relógio começou a chiar, como se estivesse sendo oprimido por alguma coisa, como se alguém o estivesse estrangulando. Depois de um chiado anormalmente prolongado, seguiu-se um toque estridente, desagradável e, por assim dizer, inesperadamente rápido - como se alguém estivesse subitamente saltando para a frente. ",
+        "quote_time_case": "São duas horas.",
+        "quote_first": "Em algum lugar, atrás de uma tela, um relógio começou a chiar, como se estivesse sendo oprimido por alguma coisa, como se alguém o estivesse estrangulando. Depois de um chiado anormalmente prolongado, seguiu-se um toque estridente, desagradável e, por assim dizer, inesperadamente rápido - como se alguém estivesse subitamente saltando para frente. ",
         "quote_last": " Acordei, embora na verdade não estivesse dormindo, mas deitado, semiconsciente.",
         "title": "Notas do Subterrâneo",
         "author": "Fyodor Dostoyevsky",
@@ -244,7 +244,7 @@
         "time": "02:00",
         "quote_time_case": "duas horas",
         "quote_first": "Quando tudo ficou quieto e Fyodor Pavlovich foi para a cama por volta das ",
-        "quote_last": ", Ivan Fyodorovich também foi para a cama com a firme resolução de adormecer rapidamente, pois se sentia terrivelmente exausto.",
+        "quote_last": ", Ivan Fyodorovich também foi para a cama com a firme resolução de adormecer rapidamente, pois sentia terrivelmente exausto.",
         "title": "Os Irmãos Karamázov",
         "author": "Fyodor Dostoyevsky",
         "sfw": "unknown"

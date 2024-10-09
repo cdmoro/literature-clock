@@ -1,36 +1,16 @@
 [
     {
-        "id": "000477",
+        "id": "000469",
         "time": "03:17",
         "quote_time_case": "03.17",
-        "quote_first": "Hassan miró su reloj (",
-        "quote_last": ") confiando en que la única persona a bordo que aún estaba despierta sería el joven en el puente. Torre al cuatro del alfil. Sacó un caballo del tablero.",
-        "title": "Próximo en la fila",
+        "quote_first": "Hassan miró su reloj – ",
+        "quote_last": " – confiando en que la única persona a bordo que aún estaría despierta sería el joven en el puente. Torre al cuatro del alfil. Sacó un caballo del tablero.",
+        "title": "Siguiente en la fila",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "000478",
-        "time": "03:17",
-        "quote_time_case": "tres y diecisiete",
-        "quote_first": "Eran las ",
-        "quote_last": " minutos de la madrugada. Mila, con gabardina y botas, se sentó en el borde de la cama. Malik Solanka gimió. El desastre siempre llegaba cuando tus defensas estaban en su punto más bajo: tomándote por sorpresa, como el amor.",
-        "title": "Furia",
-        "author": "Salman Rushdie",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000479",
-        "time": "03:17",
-        "quote_time_case": "3:17",
-        "quote_first": "Los dos nos sentamos allí, escuchando; Boris más atentamente que yo. \"¿Quién es ese con él entonces?\" Yo dije. \"Alguna puta\". Escuchó durante un momento, con el ceño fruncido y el perfil definido a la luz de la luna, y luego se volvió a tumbar. \"Dos de ellos.\" Me di la vuelta y revisé mi iPod. Eran las ",
-        "quote_last": " de la mañana.",
-        "title": "El jilguero",
-        "author": "Donna Tartt",
-        "sfw": "nsfw"
-    },
-    {
-        "id": "000480",
+        "id": "000470",
         "time": "03:17",
         "quote_time_case": "3:17 a.m.",
         "quote_first": "La marca de tiempo dice ",
@@ -40,12 +20,32 @@
         "sfw": "unknown"
     },
     {
-        "id": "000481",
+        "id": "000471",
         "time": "03:17",
-        "quote_time_case": "3:17 a.m.",
+        "quote_time_case": "las tres y diecisiete minutos de la mañana",
+        "quote_first": "Eran ",
+        "quote_last": ". Mila, con gabardina y botas, se sentó en el borde de la cama. Malik Solanka gimió. El desastre siempre llegaba cuando tus defensas estaban en su punto más bajo: tomándote por sorpresa, como el amor.",
+        "title": "Furia",
+        "author": "Salman Rushdie",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000472",
+        "time": "03:17",
+        "quote_time_case": "3:17",
+        "quote_first": "Los dos nos sentamos allí, escuchando; Boris más atentamente que yo. \"¿Quién es ese con él entonces?\" Yo dije. \"Alguna puta\". Escuchó durante un momento, con el ceño fruncido y el perfil definido a la luz de la luna, y luego se volvió a tumbar. \"Dos de ellos\". Me di la vuelta y revisé mi iPod. Eran ",
+        "quote_last": " de la mañana.",
+        "title": "El jilguero",
+        "author": "Donna Tartt",
+        "sfw": "nsfw"
+    },
+    {
+        "id": "000473",
+        "time": "03:17",
+        "quote_time_case": "3.17 a.m.",
         "quote_first": "Se volvió hacia los monitores nuevamente y pasó las pantallas, cada una capaz de mostrar ocho montajes de cámara diferentes, dándole a Kurt 192 naturalezas muertas diferentes de Green Oaks a las ",
-        "quote_last": " de esta noche de marzo.",
-        "title": "lo que se perdió",
+        "quote_last": " este marzo. noche.",
+        "title": "Lo que se perdió",
         "author": "Catherine O'Flynn",
         "sfw": "unknown"
     }

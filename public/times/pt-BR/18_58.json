@@ -3,8 +3,8 @@
         "id": "002830",
         "time": "18:58",
         "quote_time_case": "18h58",
-        "quote_first": "Exatamente onde ele viu as duas figuras, o momento em que continuaram subindo a montanha e o fato de que pareciam não ter tido nenhuma dificuldade ao desaparecerem na névoa. Quando terminou, consultou o relógio: ",
-        "quote_last": ".",
+        "quote_first": "Exatamente onde ele viu as duas figuras, o momento em que continuaram subindo a montanha e o fato de que pareciam não ter tido nenhuma dificuldade ao desaparecerem na névoa. Quando terminou, ele consultou o relógio: ",
+        "quote_last": "",
         "title": "Caminhos da Glória",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "002831",
         "time": "18:58",
-        "quote_time_case": "* 6:58",
-        "quote_first": "Ela só apareceu novamente às 18h32. Ela estava vestida com roupas civis e seguiu em direção ao apartamento de Summers, parando no caminho para pegar um de seus ternos na lavanderia. Às 6h58 ela entrou em casa.",
-        "quote_last": "",
+        "quote_time_case": "6:58",
+        "quote_first": "Ela só apareceu novamente às 18h32. Ela estava vestida com roupas civis e seguiu em direção ao apartamento de Summers, parando no caminho para pegar um de seus ternos na lavanderia. Às ",
+        "quote_last": " ela entrou em casa.",
         "title": "Fechar os olhos",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -24,7 +24,7 @@
         "time": "18:58",
         "quote_time_case": "dois minutos para as sete",
         "quote_first": "Ande rápido, diz Perry, \"faltam ",
-        "quote_last": " e tenho que estar em casa às...\"<br>\"Ah, cale a boca\", digo eu. e não estou chateado por não mantê-lo.\"",
+        "quote_last": ", e tenho que estar em casa às—\"<br>\"Ah, cale a boca\", digo eu. \" Eu tinha um compromisso como executor-chefe em um inquérito às sete, e não estou chateado por não cumpri-lo.",
         "title": "Estradas do Destino",
         "author": "O. Henry",
         "sfw": "unknown"
@@ -33,10 +33,10 @@
         "id": "002833",
         "time": "18:58",
         "quote_time_case": "dois minutos antes das sete",
-        "quote_first": "Hoje era terça-feira, dia quinze de agosto; o sol havia nascido às cinco e onze da manhã e se poria ",
-        "quote_last": " da noite.",
+        "quote_first": "Hoje era terça-feira, dia quinze de agosto; o sol nasceu às cinco e onze desta manhã e se poria às ",
+        "quote_last": " desta noite.",
         "title": "A rocha quente",
-        "author": "Donald E Westlake",
+        "author": "Donald E. Westlake",
         "sfw": "unknown"
     }
 ]

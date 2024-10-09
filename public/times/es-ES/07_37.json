@@ -1,10 +1,10 @@
 [
     {
-        "id": "001017",
+        "id": "000999",
         "time": "07:37",
-        "quote_time_case": "* veintitrés minutos para las ocho",
-        "quote_first": "Mi teléfono sonó a las ocho menos veintitrés minutos, justo cuando ponía una taza de café en la mesa del desayuno.",
-        "quote_last": "",
+        "quote_time_case": "las ocho menos veintitrés",
+        "quote_first": "Mi teléfono sonó a las ",
+        "quote_last": ", justo cuando dejaba una taza de café sobre la mesa del desayuno.",
         "title": "Gente satélite",
         "author": "Has Olav Lahlum",
         "sfw": "sfw"

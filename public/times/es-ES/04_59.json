@@ -1,6 +1,6 @@
 [
     {
-        "id": "000659",
+        "id": "000649",
         "time": "04:59",
         "quote_time_case": "cinco menos un minuto",
         "quote_first": "El capitán y sus tres compañeros aparecieron entre la niebla de la mañana a las ",
@@ -10,12 +10,12 @@
         "sfw": "sfw"
     },
     {
-        "id": "000660",
+        "id": "000650",
         "time": "04:59",
-        "quote_time_case": "04:59",
+        "quote_time_case": "0459",
         "quote_first": "Todo el lugar huele a muerte sin importar lo que carajos hagas. Gately llega al refugio a las ",
-        "quote_last": " h y simplemente apaga la cabeza como si tuviera un interruptor de control.",
-        "title": "Frivolidad infinita",
+        "quote_last": ".9h y simplemente apaga su cabeza como si tuviera un interruptor de control.",
+        "title": "Broma infinita",
         "author": "David Foster Wallace",
         "sfw": "nsfw"
     }

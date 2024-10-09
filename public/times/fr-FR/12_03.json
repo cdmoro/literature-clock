@@ -2,9 +2,9 @@
     {
         "id": "001865",
         "time": "12:03",
-        "quote_time_case": "* trois minutes après midi",
-        "quote_first": "Il était maintenant midi et demi. Les stores avaient été baissés plus tôt, semblant déconnecter le temps ainsi que la pénombre maussade de la fin de matinée.",
-        "quote_last": "",
+        "quote_time_case": "trois minutes après midi",
+        "quote_first": "Il était maintenant ",
+        "quote_last": ". Les stores avaient été baissés plus tôt, semblant déconnecter le temps ainsi que la pénombre maussade de la fin de matinée.",
         "title": "La salle du meurtre",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "001866",
         "time": "12:03",
-        "quote_time_case": "* 12.03",
-        "quote_first": "A 12h03, le soleil a déjà pointé son ticket. En coulant, il tache les pavés et les stucs de la place d'un battement de lumière couleur violon qu'il faudrait être une pierre pour ne pas trouver poignant.",
-        "quote_last": "",
+        "quote_time_case": "12.03",
+        "quote_first": "Le ",
+        "quote_last": " le soleil a déjà fait son entrée. En coulant, il tache les pavés et les stucs de la place d'un battement de lumière couleur violon qu'il faudrait être une pierre pour ne pas trouver poignant.",
         "title": "Le syndicat des policiers yiddish",
         "author": "Michael Chabon",
         "sfw": "unknown"

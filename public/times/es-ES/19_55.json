@@ -1,42 +1,42 @@
 [
     {
-        "id": "003033",
+        "id": "002985",
         "time": "19:55",
-        "quote_time_case": "* cinco a ocho",
-        "quote_first": "Flora se envolvió en su abrigo y miró hacia la bóveda del cielo que se oscurecía. Luego miró su reloj. Eran las ocho menos cinco.",
-        "quote_last": "",
-        "title": "Granja de confort frío",
-        "author": "Stella Gibbons",
-        "sfw": "unknown"
+        "quote_time_case": "siete cincuenta y cinco",
+        "quote_first": "Eran ",
+        "quote_last": " y la inspectora detective Kate Miskin y el inspector detective Piers Tarrant estaban bebiendo juntos en un pub junto al río, entre Southwark Bridge y London Bridge.",
+        "title": "La sala del asesinato",
+        "author": "P.D. James",
+        "sfw": "sfw"
     },
     {
-        "id": "003034",
+        "id": "002986",
         "time": "19:55",
-        "quote_time_case": "* cinco minutos para las ocho",
-        "quote_first": "A las ocho menos cinco, el Primer Ministro salió del despacho de Wilson, seguido por Halifax y Cadogan. Wilson fue el último en aparecer. Parecía irritado. Legat supuso que debía haber tenido otra discusión con Cadogan.",
-        "quote_last": "",
+        "quote_time_case": "cinco minutos para las ocho",
+        "quote_first": "A las ",
+        "quote_last": ", el Primer Ministro salió de la oficina de Wilson, seguido por Halifax y Cadogan. Wilson fue el último en aparecer. Parecía irritado. Legat supuso que debía haber tenido otra discusión con Cadogan.",
         "title": "Munich",
         "author": "Robert Harris",
         "sfw": "unknown"
     },
     {
-        "id": "003035",
+        "id": "002987",
         "time": "19:55",
-        "quote_time_case": "* ocho, y faltan cinco para",
-        "quote_first": "La fiesta empieza a las ocho y son las cinco menos.<br>\"Todo lo que llegue hasta media hora tarde se considera puntual, Pruitt. ¿No sabes nada de etiqueta?\"<br>\"Muy poco, yo\". Tengo miedo\"<br>\"Bueno, cualquier cosa que llegue hasta media hora tarde se considera puntual, pero cualquier cosa antes de la hora acordada, incluso un solo minuto, es francamente mala.\"",
-        "quote_last": "",
-        "title": "Staggerford",
-        "author": "Jon Hassler",
+        "quote_time_case": "cinco menos ocho",
+        "quote_first": "Flora se envolvió en su abrigo y miró hacia la bóveda del cielo que se oscurecía. Luego miró su reloj. Eran ",
+        "quote_last": ".",
+        "title": "Granja de confort frío",
+        "author": "Stella Gibbons",
         "sfw": "unknown"
     },
     {
-        "id": "003036",
+        "id": "002988",
         "time": "19:55",
-        "quote_time_case": "* siete cincuenta y cinco",
-        "quote_first": "Eran las siete y cincuenta y cinco y la inspectora Kate Miskin y el inspector Piers Tarrant estaban bebiendo juntos en un pub junto al río, entre Southwark Bridge y London Bridge.",
-        "quote_last": "",
-        "title": "La sala del asesinato",
-        "author": "P.D. James",
-        "sfw": "sfw"
+        "quote_time_case": "ocho, y son las cinco menos",
+        "quote_first": "La fiesta comienza a las ",
+        "quote_last": ".<br>\"Cualquier cosa que llegue hasta media hora tarde se considera puntual, Pruitt. ¿No sabes nada sobre ¿etiqueta?\"<br>\"Muy poco, me temo\"<br>\"Bueno, cualquier cosa que llegue hasta media hora tarde se considera puntual, pero cualquier cosa antes de la hora acordada, incluso un solo minuto, se considera francamente gouchy.\"",
+        "title": "Staggerford",
+        "author": "Jon Hassler",
+        "sfw": "unknown"
     }
 ]

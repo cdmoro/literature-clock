@@ -2,9 +2,9 @@
     {
         "id": "000078",
         "time": "00:12",
-        "quote_time_case": "* 0 heures, 12 minutes",
-        "quote_first": "L’heure de l’horloge est 0 heure, 12 minutes, 0 seconde. Vingt-trois minutes plus tard, ils aperçoivent Vénus pour la première fois. Chacun repose avec son œil attaché au museau d'un réflecteur grégorien identique de deux pieds et demi fabriqué par M. Short, avec des buses assombrissantes par M. Bird.",
-        "quote_last": "",
+        "quote_time_case": "0 heures, 12 minutes",
+        "quote_first": "L’heure de l’horloge est ",
+        "quote_last": ", 0 seconde. Vingt-trois minutes plus tard, ils aperçoivent Vénus pour la première fois. Chacun repose avec son œil attaché au museau d'un réflecteur grégorien identique de deux pieds et demi fabriqué par M. Short, avec des buses assombrissantes par M. Bird.",
         "title": "Mason & Dixon",
         "author": "Thomas Pynchon",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "000079",
         "time": "00:12",
-        "quote_time_case": "* Minuit douze minutes",
-        "quote_first": "Il était minuit douze lorsque la mère et la fille aperçurent le premier éclair. Il frappa la grange principale avec une telle force que le sol trembla sous leurs pieds.",
-        "quote_last": "",
+        "quote_time_case": "minuit douze minutes",
+        "quote_first": "Il était ",
+        "quote_last": " lorsque la mère et la fille virent le premier coup de foudre. Il frappa la grange principale avec une telle force que le sol trembla sous leurs pieds.",
         "title": "Chaleur du Kentucky",
         "author": "Fern Michaels",
         "sfw": "unknown"

@@ -1,26 +1,16 @@
 [
     {
-        "id": "001562",
-        "time": "10:12",
-        "quote_time_case": "* diez doce",
-        "quote_first": "“Sacaré la bandeja del café”, sugiero humildemente. Mientras lo recojo miro de nuevo mi reloj. Diez doce. Me pregunto si han comenzado la reunión.",
-        "quote_last": "",
-        "title": "La diosa no doméstica",
-        "author": "Sophie Kinsella",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001563",
+        "id": "001537",
         "time": "10:12",
         "quote_time_case": "10:12",
-        "quote_first": "Esto desapareció y el reloj marcó las ",
-        "quote_last": ". La Presidenta ensayó por última vez la primera frase de su discurso. Había repasado el borrador final con Edward esa mañana y estaba satisfecha con él.",
+        "quote_first": "Esto desapareció y el reloj mostró ",
+        "quote_last": ". La Presidenta ensayó por última vez la primera línea de su discurso. Había repasado el borrador final con Edward esa mañana y estaba satisfecha con él.",
         "title": "¿Se lo contamos al presidente?",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001564",
+        "id": "001538",
         "time": "10:12",
         "quote_time_case": "10:12",
         "quote_first": "George miró su reloj: ",
@@ -30,11 +20,21 @@
         "sfw": "sfw"
     },
     {
-        "id": "001565",
+        "id": "001539",
+        "time": "10:12",
+        "quote_time_case": "Diez doce",
+        "quote_first": "“Sacaré la bandeja del café”, sugiero humildemente. Mientras lo recojo miro de nuevo mi reloj. ",
+        "quote_last": ". Me pregunto si han comenzado la reunión.",
+        "title": "La diosa no doméstica",
+        "author": "Sophie Kinsella",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001540",
         "time": "10:12",
         "quote_time_case": "10:12 a.m.",
-        "quote_first": "Se levantó una vez, temprano, para cerrar la puerta de su oficina, y luego estaba leyendo la última página, y eran exactamente las ",
-        "quote_last": ", y el sol que golpeaba las ventanas de su oficina era un sol diferente al que había siempre conocido.",
+        "quote_first": "Se levantó una vez, temprano, para cerrar la puerta de su oficina, y luego estaba leyendo la última página, y eran exactamente ",
+        "quote_last": ", y el sol pegaba. En las ventanas de su oficina había un sol diferente al que siempre había conocido.",
         "title": "Libertad",
         "author": "Jonathan Franzen",
         "sfw": "unknown"

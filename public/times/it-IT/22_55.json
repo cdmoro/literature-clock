@@ -4,7 +4,7 @@
         "time": "22:55",
         "quote_time_case": "dieci e cinquantacinque",
         "quote_first": "Tutto quello che riuscì a dirmi fu che era andata a dormire poco dopo aver ascoltato il Quartetto d'archi Dvorak alle ",
-        "quote_last": " - avevano letti gemelli - e non si era mossa finché suo marito non l'aveva svegliata con la notizia dell'omicidio.",
+        "quote_last": " - avevano letti gemelli - e non agitarsi finché suo marito non l'ha svegliata con la notizia dell'omicidio.",
         "title": "L'assassinio di Babbo Natale",
         "author": "P.D. James",
         "sfw": "unknown"
@@ -24,7 +24,7 @@
         "time": "22:55",
         "quote_time_case": "Le undici, quasi cinque minuti!",
         "quote_first": "Sono le undici! ",
-        "quote_last": "<br>\"Ma quale undici?\"<br>\"Le undici che decidono la vita o la morte!... Me lo ha detto poco prima è andato... È terribile... È completamente matto: si è strappato la maschera e i suoi occhi gialli hanno emesso fiamme!...\"",
+        "quote_last": "<br>\"Ma quale undici?\"<br>\"Le undici che decidono la vita o la morte!... Me lo ha detto poco prima di partire... È terribile... È completamente matto: si è strappato la maschera e i suoi occhi gialli hanno emesso fiamme!...\"",
         "title": "Il fantasma dell'opera",
         "author": "Gaston Leroux",
         "sfw": "unknown"
@@ -32,9 +32,9 @@
     {
         "id": "003418",
         "time": "22:55",
-        "quote_time_case": "* cinque minuti alle undici",
-        "quote_first": "Il giudice Wargrave ha dichiarato:<br>“Sono le undici meno cinque. Penso che dovremmo invitare la signorina Brent a unirsi al nostro conclave.",
-        "quote_last": "",
+        "quote_time_case": "undici meno cinque",
+        "quote_first": "Il signor giudice Wargrave ha detto:<br>“Adesso mancano ",
+        "quote_last": ". Penso che dovremmo invitare la signorina Brent a unirsi al nostro conclave.",
         "title": "E poi non c'era nessuno",
         "author": "Agatha Christie",
         "sfw": "unknown"

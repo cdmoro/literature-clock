@@ -2,9 +2,9 @@
     {
         "id": "000393",
         "time": "03:00",
-        "quote_time_case": "* 03H00.",
-        "quote_first": "À 3 heures du matin, un DeSoto Diplomat gris sillonnait Oliver Avenue. Le seul occupant cherchait tout signe de mouvement --- quoi que ce soit qui sortait de l'ordinaire.",
-        "quote_last": "",
+        "quote_time_case": "3h00",
+        "quote_first": "À ",
+        "quote_last": ", un diplomate DeSoto gris a parcouru Oliver Avenue. Le seul occupant cherchait tout signe de mouvement --- quoi que ce soit qui sortait de l'ordinaire.",
         "title": "Sources bleues",
         "author": "Peter Rennebohm",
         "sfw": "unknown"
@@ -13,8 +13,8 @@
         "id": "000394",
         "time": "03:00",
         "quote_time_case": "trois heures du matin",
-        "quote_first": "Le pire était que Henrick utilisait des exemples précis et impitoyablement concrets. S'il prêchait la miséricorde, il décrirait le sort des pauvres de telle manière que les gens pourraient imaginer l'un des nombreux fermiers du capitaine quittant sa maison à ",
-        "quote_last": " avec un sac de blé sur le dos, comment il travaillait dans les champs, comment il devait souvent se passer du repas de midi pour arriver enfin au moulin après treize heures de travail et, après avoir ramassé sa farine, rentrer chez lui à travers les bois, portant son lourd fardeau.",
+        "quote_first": "Le pire, c’est que Henrick utilisait des exemples précis et impitoyablement concrets. S'il prêchait sur la miséricorde, il décrirait le sort des pauvres de telle manière que les gens pourraient imaginer l'un des nombreux fermiers du capitaine quittant sa maison à ",
+        "quote_last": " avec un sac de blé sur le dos, comment il travaillait dans les champs, comment il devait souvent se passer du repas de midi pour arriver enfin au moulin après treize heures de travail et après avoir ramassé sa farine, rentre chez lui à travers les bois, portant sa lourde charge.",
         "title": "Le marteau de Dieu",
         "author": "Bo Giertz",
         "sfw": "unknown"
@@ -43,8 +43,8 @@
         "id": "000397",
         "time": "03:00",
         "quote_time_case": "3 heures du matin",
-        "quote_first": "Qui était cette femme ? Elle soupçonnerait, puis se tromperait. La présence obscure s'est moquée d'elle doucement dans l'obscurité sans sommeil de ",
-        "quote_last": ", puis s'est éloignée. Elle ne parvenait pas à cerner quoi que ce soit.",
+        "quote_first": "Qui était cette femme ? Elle soupçonnerait, puis se tromperait. La présence obscure se moqua doucement d'elle dans l'obscurité sans sommeil de ",
+        "quote_last": ", puis s'éloigna. Elle ne parvenait pas à cerner quoi que ce soit.",
         "title": "Matelas en pierre",
         "author": "Margaret Atwood",
         "sfw": "unknown"
@@ -54,7 +54,7 @@
         "time": "03:00",
         "quote_time_case": "trois heures du matin",
         "quote_first": "\"Que fais-tu?\" » a-t-il demandé.<br>« J'ai pensé que ce serait mieux si nous fermions les portes à clé », a déclaré Willa. \"Juste au cas où.\"<br>\"Il est ",
-        "quote_last": ".\"<br>\"Raison de plus pour cela.\"<br>Markovic la regarda bizarrement avant de retourner dans le salon.",
+        "quote_last": ".\"<br>\"Raison de plus pour cela.\"<br>Markovic la regarda bizarrement avant de retourner au salon.",
         "title": "Les Sans-Nom",
         "author": "John Connolly",
         "sfw": "unknown"
@@ -64,7 +64,7 @@
         "time": "03:00",
         "quote_time_case": "3 heures du matin",
         "quote_first": "L'équipe américaine s'était rendue à Vienne à bord d'un avion Gulfstream depuis un aéroport régional de l'est de la Pologne, où la CIA avait maintenu une base à des fins de restitutions depuis le début de la guerre contre le terrorisme. Ce n’était donc pas le premier jour de l’unité au bureau. Ils étaient déjà en train d'observer quand, à ",
-        "quote_last": ", deux voitures se positionnent en vue des portes principale et arrière de l'hôtel, la première des véhicules ayant dans un premier temps fait trois fois le tour du pâté de maisons.",
+        "quote_last": ", deux voitures se positionnent en vue des portes principales et arrière de l'hôtel, le premier des véhicules ayant dans un premier temps fait le tour de l'hôtel. bloquer trois fois.",
         "title": "Les Sans-Nom",
         "author": "John Connolly",
         "sfw": "unknown"
@@ -74,7 +74,7 @@
         "time": "03:00",
         "quote_time_case": "trois heures du matin",
         "quote_first": "Tony s'est endurci très tôt. C'est ainsi qu'elle l'appelle maintenant, tristement, dans sa cave, à ",
-        "quote_last": ", avec le désastre de l'armée de clous de girofle d'Otto le Rouge éparpillé sur la table de sable derrière elle et West dormant du sommeil des injustes à l'étage, et Zenia enragé sans contrôle. , quelque part dans la ville.",
+        "quote_last": ", avec le désastre de l'armée de girofle d'Otton le Rouge éparpillé sur la table de sable derrière elle. et West dormant du sommeil des injustes à l'étage, et Zenia enragé sans contrôle, quelque part là-bas dans la ville.",
         "title": "La mariée voleuse",
         "author": "Margaret Atwood",
         "sfw": "unknown"
@@ -83,8 +83,8 @@
         "id": "000401",
         "time": "03:00",
         "quote_time_case": "trois",
-        "quote_first": "Heure après heure s'écoulait, et Catherine, fatiguée, en avait entendu ",
-        "quote_last": " proclamées par toutes les horloges de la maison avant que la tempête ne se calme ou qu'elle ne s'endorme sans le savoir.",
+        "quote_first": "Heure après heure s'écoulait, et Catherine, fatiguée, avait entendu ",
+        "quote_last": " proclamé par toutes les horloges de la maison avant que la tempête ne s'apaise ou qu'elle ne s'endorme sans le savoir.",
         "title": "Abbaye de Northanger",
         "author": "Jane Austen",
         "sfw": "unknown"
@@ -93,8 +93,8 @@
         "id": "000402",
         "time": "03:00",
         "quote_time_case": "3 heures du matin",
-        "quote_first": "«Oncle Nouri!» dit-il quand il me voit bouger. \"Tu dors depuis si longtemps.\" L'horloge au mur indique ",
-        "quote_last": ".",
+        "quote_first": "«Oncle Nouri!» dit-il quand il me voit bouger. \"Tu dors depuis si longtemps.\" L'horloge sur le mur indique ",
+        "quote_last": "",
         "title": "L'apiculteur d'Alep",
         "author": "Christy Lefteri",
         "sfw": "unknown"
@@ -114,7 +114,7 @@
         "time": "03:00",
         "quote_time_case": "3 heures du matin",
         "quote_first": "Je me suis retrouvé à taper « tueur en série » dans le champ de recherche Google à ",
-        "quote_last": ".",
+        "quote_last": "",
         "title": "Ma sœur, la tueuse en série",
         "author": "Oyinkan Braithwaite",
         "sfw": "unknown"
@@ -124,7 +124,7 @@
         "time": "03:00",
         "quote_time_case": "trois heures",
         "quote_first": "Vers ",
-        "quote_last": ", les quatre couples, effrayés de leur bonheur, dévalaient les montagnes russes, singulier édifice qui occupait alors les hauteurs de Beaujon, et dont la ligne ondulante était visible au-dessus des arbres des Champs-Élysées.",
+        "quote_last": " les quatre couples, effrayés de leur bonheur, dévalaient les montagnes russes, singulier édifice qui occupait alors les hauteurs de Beaujon, et dont la ligne ondulante était visible au-dessus des arbres des Champs Élysées.",
         "title": "Les misérables",
         "author": "Victor Hugo",
         "sfw": "unknown"
@@ -152,9 +152,9 @@
     {
         "id": "000408",
         "time": "03:00",
-        "quote_time_case": "trois heures du matin",
-        "quote_first": "Comme si cela l’avait réveillé – peut-être que c’était le cas – Lane leva la tête et me regarda. J'ai essayé de me regarder; ses yeux étaient revenus au niveau de leurs orbites, mais pointaient désormais dans des directions opposées. Cette image terrible ne m'a jamais quitté l'esprit et me revient encore aux moments les plus étranges : passer par les péages des autoroutes, boire une tasse de café le matin avec les présentateurs de CNN qui annoncent de mauvaises nouvelles, se lever pour pisser à ",
-        "quote_last": ", ce que certains poète ou autre a surnommé à juste titre l'Heure du Loup.",
+        "quote_time_case": "trois AM",
+        "quote_first": "Comme si cela l’avait réveillé – peut-être que c’était le cas – Lane leva la tête et me regarda. J'ai essayé de me regarder; ses yeux étaient revenus au niveau de leurs orbites, mais pointaient désormais dans des directions opposées. Cette image terrible ne m'a jamais quitté l'esprit et me revient encore aux moments les plus étranges : traverser les péages des autoroutes, boire une tasse de café le matin avec les présentateurs de CNN qui annoncent de mauvaises nouvelles, se lever pour pisser sur ",
+        "quote_last": ", que tel ou tel poète a surnommé avec raison l'Heure du Loup.",
         "title": "Pays de la joie",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -163,8 +163,8 @@
         "id": "000409",
         "time": "03:00",
         "quote_time_case": "trois heures du matin",
-        "quote_first": "J'ai regardé à nouveau autour de la pièce. Comme toujours, la chambre était propre et ordonnée.<br>« Les gens pensent à toutes sortes de choses à ",
-        "quote_last": ". Nous faisons tous. C'est pourquoi nous devons chacun trouver notre propre façon de lutter contre cela. »<br>« Vous avez probablement raison », ai-je dit.",
+        "quote_first": "J'ai regardé à nouveau autour de la pièce. Comme toujours, la chambre était propre et ordonnée.<br>« Les gens pensent à toutes sortes de choses à ",
+        "quote_last": ". Nous le faisons tous. C'est pourquoi nous devons chacun trouver notre propre façon de lutter contre cela. »<br>« Vous avez probablement raison », ai-je dit.",
         "title": "Saule aveugle, femme endormie",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -174,7 +174,7 @@
         "time": "03:00",
         "quote_time_case": "trois heures du matin",
         "quote_first": "\"Même les animaux réfléchissent à ",
-        "quote_last": "\", dit-il, comme s'il se souvenait de quelque chose. « Êtes-vous déjà allé au zoo à trois heures du matin ? »<br>« Non », répondis-je vaguement. \"Non bien sûr que non.\"",
+        "quote_last": "\", dit-il, comme s'il se souvenait de quelque chose. « Êtes-vous déjà allé au zoo à trois heures du matin ? »<br>« Non », répondis-je vaguement. \"Non, bien sûr que non.\"",
         "title": "Saule aveugle, femme endormie",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -183,8 +183,8 @@
         "id": "000411",
         "time": "03:00",
         "quote_time_case": "trois",
-        "quote_first": "Toutes les portes étaient verrouillées, tout était à sa place. Rien d'extraordinaire. Je suis retourné dans la chambre du concierge, j'ai réglé mon réveil sur ",
-        "quote_last": " heures et je me suis profondément endormi.",
+        "quote_first": "Toutes les portes étaient verrouillées, tout était à sa place. Rien d'extraordinaire. Je suis retourné dans la chambre du concierge, j'ai réglé mon alarme sur ",
+        "quote_last": " et je me suis endormi profondément.",
         "title": "Saule aveugle, femme endormie",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -193,8 +193,8 @@
         "id": "000412",
         "time": "03:00",
         "quote_time_case": "trois",
-        "quote_first": "Mais quand l’alarme s’est déclenchée à ",
-        "quote_last": " heures, je me suis réveillé avec un sentiment bizarre. Je ne peux pas l’expliquer, mais je me sentais juste différent. Je n’avais pas envie de me lever, c’était comme si quelque chose supprimait ma volonté de sortir du lit. Je suis du genre à sauter du lit en général, donc je ne comprenais pas.",
+        "quote_first": "Cependant, lorsque l'alarme s'est déclenchée à ",
+        "quote_last": ", je me suis réveillé avec un sentiment bizarre. Je ne peux pas l’expliquer, mais je me sentais juste différent. Je n’avais pas envie de me lever, c’était comme si quelque chose supprimait ma volonté de sortir du lit. Je suis du genre à sauter du lit en général, donc je ne comprenais pas.",
         "title": "Saule aveugle, femme endormie",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -203,9 +203,9 @@
         "id": "000413",
         "time": "03:00",
         "quote_time_case": "3 heures du matin",
-        "quote_first": "Les préliminaires terminés, après avoir fait pipi et s'être mouché vigoureusement, il se dirige nonchalamment vers sa fille et lui fait un gros baiser claquant accompagné d'une tape affectueuse sur la croupe. Elle, la fille, je ne l’ai jamais vue autrement qu’immaculée, même à ",
+        "quote_first": "Les préliminaires terminés, après avoir fait pipi et s'être mouché vigoureusement, il se dirige nonchalamment vers sa fille et lui fait un gros baiser claquant accompagné d'une tape affectueuse sur la croupe. Elle, la fille, que je n'ai jamais vue autre chose qu'immaculée, même à ",
         "quote_last": ", après une soirée de travail. Elle a exactement l’air de sortir d’un bain turc.",
-        "title": "tropique du Cancer",
+        "title": "Tropique du Cancer",
         "author": "Henry Miller",
         "sfw": "nsfw"
     },
@@ -213,9 +213,9 @@
         "id": "000414",
         "time": "03:00",
         "quote_time_case": "trois heures du matin",
-        "quote_first": "Et maintenant, il est ",
-        "quote_last": " et nous avons ici quelques salopes qui font des sauts périlleux sur le sol nu. Fillmore se promène nu, un gobelet à la main, et sa panse est serrée, dure comme une fistule.",
-        "title": "tropique du Cancer",
+        "quote_first": "Et maintenant il est ",
+        "quote_last": " et nous avons ici quelques salopes qui font des culbutes sur le sol nu. Fillmore se promène nu, un gobelet à la main, et sa panse est serrée, dure comme une fistule.",
+        "title": "Tropique du Cancer",
         "author": "Henry Miller",
         "sfw": "nsfw"
     },
@@ -223,8 +223,8 @@
         "id": "000415",
         "time": "03:00",
         "quote_time_case": "Trois heures",
-        "quote_first": "Jarvis siffla entre ses dents. \"La loi aidera-t-elle un homme de ton âge à se remettre de multiples fractures de la colonne vertébrale, Timothy ?\"<br>Eddie : \"Les hommes de ton âge ne rebondissent pas. Ils éclaboussent. »<br>Je me suis battu de toutes mes forces, mais mon sphincter n'était plus le mien et une canonnade a tiré. J’aurais pu supporter l’amusement ou la condescendance, mais la pitié de mes bourreaux signifiait ma défaite abjecte. La chaîne des toilettes a été tirée.<br>« ",
-        "quote_last": " », Cavendish-Redux est descendu dans la casserole.",
+        "quote_first": "Jarvis siffla entre ses dents. \"La loi aidera-t-elle un homme de ton âge à se remettre de multiples fractures de la colonne vertébrale, Timothy ?\"<br>Eddie : \"Les hommes de ton âge ne rebondissent pas. Ils éclaboussent. »<br>Je me suis battu de toutes mes forces, mais mon sphincter n'était plus le mien et une canonnade a tiré. J’aurais pu supporter l’amusement ou la condescendance, mais la pitié de mes bourreaux signifiait ma défaite abjecte. La chaîne des toilettes a été tirée.<br>«",
+        "quote_last": "», Cavendish-Redux est descendu dans la casserole.",
         "title": "Atlas des nuages",
         "author": "David Mitchell",
         "sfw": "unknown"
@@ -234,7 +234,7 @@
         "time": "03:00",
         "quote_time_case": "trois heures du matin",
         "quote_first": "En effet, à ",
-        "quote_last": " dans le village de Bishopthorpe, il est facile de croire au mensonge de ses habitants : c'est un endroit où des gens bons et tranquilles peuvent vivre une vie belle et tranquille.",
+        "quote_last": " dans le village de Bishopthorpe, il est facile de croire au mensonge de ses habitants - selon lequel c'est un endroit pour le bien. et des gens calmes pour vivre une vie belle et tranquille.",
         "title": "Les Radley",
         "author": "Matt Haig",
         "sfw": "unknown"
@@ -253,8 +253,8 @@
         "id": "000418",
         "time": "03:00",
         "quote_time_case": "trois heures du matin",
-        "quote_first": "J'ai passé la nuit dernière à travailler sur un violoncelle grondant 𝘢𝘭𝘭𝘦𝘨𝘳𝘰 éclairé par des triolets explosifs. Silence ponctué de pièges à souris vertigineux. Rappelez-vous que l'horloge de l'église sonnait à ",
-        "quote_last": ". \"J'ai entendu un hibou\", dit Huckleberry Finn, \"de loin en loin, qui huait à propos de quelqu'un qui était mort, et un whippowill et un chien pleurant à propos de quelqu'un qui allait mourir.\"",
+        "quote_first": "J'ai passé la nuit dernière à travailler sur un violoncelle grondant 𝘢𝘭𝘭𝘦𝘨𝘳𝘰 éclairé par des triolets explosifs. Silence ponctué de pièges à souris vertigineux. Rappelez-vous le carillon de l'horloge de l'église ",
+        "quote_last": " \"J'ai entendu un hibou\", dit Huckleberry Finn, \"de loin en loin, qui huait à propos de quelqu'un qui était mort, et un whippowill et un chien qui pleurait à propos de quelqu'un qui allait mourir.",
         "title": "Atlas des nuages",
         "author": "David Mitchell",
         "sfw": "unknown"
@@ -263,8 +263,8 @@
         "id": "000419",
         "time": "03:00",
         "quote_time_case": "trois heures du matin",
-        "quote_first": "Il ne pouvait pas dormir cette nuit-là, une oppression dans sa poitrine comme si un serpent avait enroulé ses anneaux autour de lui. A ",
-        "quote_last": ", le téléphone près de son lit se mit à sonner. La voix d'Ada, presque méconnaissable, ses halètements entre les mots non moins désespérés que ses sanglots.",
+        "quote_first": "Il ne pouvait pas dormir cette nuit-là, une oppression dans sa poitrine comme si un serpent avait enroulé ses anneaux autour de lui. À ",
+        "quote_last": " le téléphone près de son lit a commencé à sonner. La voix d'Ada, presque méconnaissable, ses halètements entre les mots non moins désespérés que ses sanglots.",
         "title": "L'île aux arbres disparus",
         "author": "Elif Shafak",
         "sfw": "unknown"
@@ -274,7 +274,7 @@
         "time": "03:00",
         "quote_time_case": "trois heures du matin",
         "quote_first": "Alors qu'à ",
-        "quote_last": " elle était encore éveillée, son esprit évoquant toutes les raisons pour lesquelles elle échouait continuellement dans son rôle de parent, elle jeta sa couverture et se dirigea vers la cuisine. Le scotch qu'elle a versé est descendu chaud et est devenu brûlant, et elle a pris une autre gorgée avant de s'effondrer dans le lit et finalement de se déconnecter.",
+        "quote_last": " elle était encore éveillée, son esprit évoquant toutes les façons dont elle continuait à échouer dans son rôle de parent, elle jeta sa couverture et se dirigea vers la cuisine. Le scotch qu'elle a versé est descendu chaud et est devenu brûlant, et elle a pris une autre gorgée avant de s'effondrer dans le lit et finalement de se déconnecter.",
         "title": "Derrière le mensonge",
         "author": "Emilya Naymark",
         "sfw": "unknown"
@@ -282,9 +282,9 @@
     {
         "id": "000421",
         "time": "03:00",
-        "quote_time_case": "* 03h00.",
-        "quote_first": "Le fait qu’elle ait passé la moitié de la nuit avec Josie, qui s’était réveillée d’un cauchemar à propos d’un boa constrictor et refusait de se rendormir, n’aidait pas non plus. Alex ne savait pas qui étaient les autres candidats à ce poste, mais elle parierait que ce n'étaient pas des mères célibataires qui avaient dû piquer les bouches d'aération des radiateurs avec un mètre à 3 heures du matin pour prouver qu'il n'y en avait pas. tous les serpents se cachant dans les tunnels sombres.",
-        "quote_last": "",
+        "quote_time_case": "3h00 du matin",
+        "quote_first": "Cela n’a pas aidé non plus qu’elle ait passé la moitié de la nuit avec Josie, qui s’était réveillée d’un cauchemar<br>à propos d’un boa constrictor et avait refusé de se rendormir. Alex ne savait pas qui étaient les autres candidats pour ce poste, mais elle parierait qu'il ne s'agissait pas de mères célibataires qui avaient dû piquer les bouches d'aération des radiateurs avec un étalon à ",
+        "quote_last": " pour prouver qu'aucun serpent ne se cachait dans les tunnels sombres.",
         "title": "Dix-neuf minutes",
         "author": "Jodi Picoult",
         "sfw": "unknown"
@@ -293,7 +293,7 @@
         "id": "000422",
         "time": "03:00",
         "quote_time_case": "trois heures",
-        "quote_first": "Et maintenant, il était ",
+        "quote_first": "Et maintenant il était ",
         "quote_last": ". L'Antéchrist était sur Terre depuis quinze heures, et un ange et un démon avaient bu solidement pendant trois d'entre eux.",
         "title": "Bons présages",
         "author": "Terry Pratchett, Neil Gaiman",
@@ -304,7 +304,7 @@
         "time": "03:00",
         "quote_time_case": "trois",
         "quote_first": "Lorsque l'horloge sonna ",
-        "quote_last": " heures, Elizabeth sentit qu'elle devait partir et le dit à contrecœur.",
+        "quote_last": ", Elizabeth sentit qu'elle devait partir et le dit à contrecœur.",
         "title": "Orgueil et préjugés",
         "author": "Jane Austen",
         "sfw": "unknown"
@@ -314,7 +314,7 @@
         "time": "03:00",
         "quote_time_case": "trois heures",
         "quote_first": "Une fièvre du jeu a balayé la classe de deuxième année et ils se sont penchés sur les os jusqu'à ",
-        "quote_last": " du matin pendant de nombreuses nuits étouffantes.",
+        "quote_last": " bien des nuits étouffantes.",
         "title": "Ce côté du paradis",
         "author": "F. Scott Fitzgerald",
         "sfw": "unknown"
@@ -334,7 +334,7 @@
         "time": "03:00",
         "quote_time_case": "Trois heures du matin.",
         "quote_first": "",
-        "quote_last": " C'est notre récompense. Trois heures du matin. Il est minuit pour l’âme. La marée descend, l'âme reflue. Et un train arrive à une heure de désespoir. Pourquoi?",
+        "quote_last": " C'est notre récompense. Trois heures du matin. Minuit de l’âme. La marée descend, l'âme reflue. Et un train arrive à une heure de désespoir. Pourquoi?",
         "title": "Quelque chose mauvaise cette manière vient",
         "author": "Ray Bradbury",
         "sfw": "unknown"
@@ -343,7 +343,7 @@
         "id": "000427",
         "time": "03:00",
         "quote_time_case": "trois heures",
-        "quote_first": "D'après sa montre, il était un peu plus de ",
+        "quote_first": "D'après sa montre, il était peu après ",
         "quote_last": ", et d'après tout le reste, il faisait nuit.",
         "title": "Le long et sombre moment du thé de l'âme",
         "author": "Douglas Adams",
@@ -352,9 +352,9 @@
     {
         "id": "000428",
         "time": "03:00",
-        "quote_time_case": "* A trois heures du matin",
-        "quote_first": "À trois heures du matin, je marchais sur le sol et j'écoutais Katchaturian travailler dans une usine de tracteurs. Il l'a appelé un concerto pour violon. J'ai appelé ça une courroie de ventilateur lâche et au diable.",
-        "quote_last": "",
+        "quote_time_case": "À trois heures du matin",
+        "quote_first": "",
+        "quote_last": " Je marchais sur le sol et j'écoutais Katchaturian travailler dans une usine de tracteurs. Il l'a appelé un concerto pour violon. Je l'ai appelé une courroie de ventilateur lâche et au diable.",
         "title": "Le long au revoir",
         "author": "Raymond Chandler",
         "sfw": "nsfw"
@@ -364,7 +364,7 @@
         "time": "03:00",
         "quote_time_case": "trois heures du matin",
         "quote_first": "A ",
-        "quote_last": ", Eurydice doit y entrer. Après tout, pourquoi suis-je assis ici comme un télégraphiste dans un avant-poste perdu, sinon pour recevoir des messages de partout sur Eurydice perdue, qui n'a jamais été la mienne au départ, mais que je déplorais et recherchais continuellement, tant professionnellement qu'amateurement.",
+        "quote_last": " Eurydice doit y entrer. Après tout, pourquoi suis-je assis ici comme un télégraphiste dans un avant-poste perdu, sinon pour recevoir des messages de partout sur Eurydice perdue, qui n'a jamais été la mienne au départ, mais que je déplorais et recherchais continuellement, tant professionnellement qu'amateurement.",
         "title": "La fréquence Méduse",
         "author": "Russell Hoban",
         "sfw": "unknown"
@@ -374,7 +374,7 @@
         "time": "03:00",
         "quote_time_case": "trois heures du matin",
         "quote_first": "Mais à ",
-        "quote_last": ", un colis oublié a la même importance tragique qu'une condamnation à mort, et le remède ne fonctionne pas - et dans une nuit très sombre de l'âme, il est toujours trois heures du matin. matin, jour après jour.",
+        "quote_last": ", un colis oublié a la même importance tragique qu'une condamnation à mort, et le remède ne fonctionne pas -- et de manière réelle nuit noire de l'âme, il est toujours trois heures du matin, jour après jour.",
         "title": "La crise",
         "author": "F. Scott Fitzgerald",
         "sfw": "unknown"
@@ -384,7 +384,7 @@
         "time": "03:00",
         "quote_time_case": "trois heures",
         "quote_first": "Ce n’est que lorsqu’elle aura bu une tasse de thé, si faible qu’elle prend accidentellement une couleur dorée, qu’elle pourra commencer sa journée. Elle est insomniaque. Ses nuits sont écarquillées et excitées par l'inquiétude. Même à ",
-        "quote_last": " du matin, on l'entendait manger un biscuit Bain Marie dans la cuisine.",
+        "quote_last": " du matin, on pouvait l'entendre manger un biscuit Bain Marie dans la cuisine.",
         "title": "Raag de l'après-midi",
         "author": "Amit Chaudhuri",
         "sfw": "unknown"
@@ -393,8 +393,8 @@
         "id": "000432",
         "time": "03:00",
         "quote_time_case": "3 heures du matin",
-        "quote_first": "Je claque le téléphone mais il manque la base. À la place, j'appuie sur l'horloge, qui indique ",
-        "quote_last": ".",
+        "quote_first": "Je claque le téléphone mais il manque la base. J'appuie sur l'horloge à la place, qui clignote ",
+        "quote_last": "",
         "title": "Chansons de l'autre côté du mur",
         "author": "Dan Holloway",
         "sfw": "unknown"
@@ -404,7 +404,7 @@
         "time": "03:00",
         "quote_time_case": "à trois heures du matin",
         "quote_first": "Ce fut six jours tranquilles plus tard – les meilleurs jours du camp jusqu’à présent, une somptueuse lumière de juillet largement répandue partout, six jours de chef-d’œuvre en plein été en montagne, l’un reproduisant l’autre – que quelqu’un trébucha par saccades, comme si ses chevilles étaient enchaînées, jusqu’au Comanche. salle de bain de la cabine ",
-        "quote_last": ".",
+        "quote_last": "",
         "title": "Némésis",
         "author": "Philip Roth",
         "sfw": "unknown"
@@ -443,8 +443,8 @@
         "id": "000437",
         "time": "03:00",
         "quote_time_case": "0300",
-        "quote_first": "Schact s'éclaircit la bouche et déglutit puissamment. \"Tavis ne peut même pas refaire le carrelage dans les vestiaires sans convoquer une réunion communautaire ou nommer un comité. Le comité de regarnissage traîne depuis le mois de mai. Soudain, ils actionnent les interrupteurs secrets ",
-        "quote_last": " ? Ça ne sonne pas vrai, Jim.",
+        "quote_first": "Schact s'éclaircit la bouche et déglutit puissamment. \"Tavis ne peut même pas refaire le carrelage dans les vestiaires sans convoquer une réunion communautaire ou nommer un comité. Le comité de regarnissage traîne depuis le mois de mai. Soudain, ils actionnent des ",
+        "quote_last": " interrupteurs à lait secrets ? Ça ne sonne pas vrai, Jim.",
         "title": "Blague infini",
         "author": "David Foster Wallace",
         "sfw": "unknown"
@@ -463,8 +463,8 @@
         "id": "000439",
         "time": "03:00",
         "quote_time_case": "trois",
-        "quote_first": "Quelle heure est-il? » dit l'homme en regardant George de haut en bas avec une suspicion évidente, « eh bien, si vous écoutez, vous l'entendrez frapper.<br>George a écouté, et une horloge voisine a immédiatement obéi. \"Mais il n'est que ",
-        "quote_last": " heures !\" » dit George d'un ton blessé, quand ce fut fini.",
+        "quote_first": "Quelle heure est-il ? dit l'homme en regardant George de haut en bas avec une suspicion évidente, \"eh bien, si vous écoutez, vous l'entendrez sonner.\"<br>George écouta, et une horloge voisine obéit immédiatement. \"Mais c'est seulement parti ",
+        "quote_last": " !\" » dit George d'un ton blessé, quand ce fut fini.",
         "title": "Trois hommes dans un bateau",
         "author": "Jerome K. Jerome",
         "sfw": "unknown"
@@ -472,8 +472,8 @@
     {
         "id": "000440",
         "time": "03:00",
-        "quote_time_case": "* 03h00.",
-        "quote_first": "Quand Sophie se réveilla, il était 3 heures du matin.",
+        "quote_time_case": "3h00",
+        "quote_first": "Quand Sophie se réveilla, il était ",
         "quote_last": "",
         "title": "Personnages désespérés",
         "author": "Paula Fox",
@@ -484,7 +484,7 @@
         "time": "03:00",
         "quote_time_case": "trois heures",
         "quote_first": "Écoutez, Missy. Il est ",
-        "quote_last": " du matin et j’ai toutes mes facultés comme je n’en ai jamais eu dans ma vie. Je connais tous mes biens et où est dépensé l’argent. Et j’ai tout préparé pour changer d’avis et faire enfin ce que je veux. Entendez-vous, Missy ? J'ai mes facultés.",
+        "quote_last": " du matin et j'ai retrouvé toutes mes facultés comme je n'en ai jamais eu dans ma vie. Je connais tous mes biens et où est dépensé l’argent. Et j’ai tout préparé pour changer d’avis et faire enfin ce que je veux. Entendez-vous, Missy ? J'ai mes facultés.",
         "title": "Milieu de marche",
         "author": "George Eliot",
         "sfw": "unknown"

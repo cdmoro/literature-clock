@@ -3,6 +3,7 @@ import { getTime, updateFavicon } from "../utils/utils";
 import { getStringSetting, isBooleanSettingTrue } from "../utils/settings";
 import { setDayParameters } from "./dynamic";
 import { fadeOutQuote } from "./fade";
+import { removeBackgroundImage, setDynamicBackgroundPicture } from "./themes";
 
 const urlParams = new URLSearchParams(window.location.search);
 const testTime = urlParams.get("time");
@@ -36,6 +37,12 @@ async function updateTime() {
 
     if (getStringSetting("theme")?.startsWith("dynamic")) {
       setDayParameters();
+    }
+
+    if (getStringSetting("theme")?.startsWith("photo")) {
+      setDynamicBackgroundPicture();
+    } else {
+      removeBackgroundImage();
     }
 
     document.title = document.title.replace(/[0-9]{2}:[0-9]{2}/, time);

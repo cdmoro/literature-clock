@@ -13,7 +13,7 @@
   border-style: solid;
   border-end-end-radius: 5vw;
   border-start-start-radius: 5vw;
-  padding: 4.5rem 3rem 2.5rem;
+  padding: 0rem 3rem 2.5rem;
   text-align: center;
   text-wrap: balance;
 }
@@ -26,7 +26,8 @@
 [data-theme|="frame"] p:before {
   content: "“";
   display: block;
-  transform: scale(5);
+  height: 120px;
+  font-size: 10rem;
 }
 
 [data-theme|="frame"] cite:before {
@@ -57,7 +58,12 @@
 }
 
 @media only screen and (max-width: 600px) {
-  [data-theme|="frame"] blockquote {
-    padding: 3.5rem 2rem 1.5rem;
+  [data-theme|="frame"] blockquote[aria-label] {
+    padding: .5rem 2rem 1.5rem;
+  }
+
+  [data-theme|="frame"] p:before {
+    font-size: 6rem;
+    height: 80px;
   }
 }

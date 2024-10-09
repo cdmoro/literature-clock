@@ -55,7 +55,9 @@ export function initTheme(defaultValue = "base-dark") {
 
   window.addEventListener("resize", doFitQuote);
   themeSelect?.addEventListener("change", () => setTheme());
-  variantSelect?.addEventListener("change", () => setTheme());
+  variantSelect?.addEventListener("change", () =>
+    setTheme({ isVariantChange: true })
+  );
   preferDarkThemes.addEventListener("change", (e) => {
     const variant =
       document.querySelector<HTMLSelectElement>("#variant-select")?.value;
@@ -72,7 +74,7 @@ export function initTheme(defaultValue = "base-dark") {
   });
 }
 
-export function setTheme(doUpdateURL = true) {
+export function setTheme({ isVariantChange = false } = {}) {
   const p = document.querySelector<HTMLParagraphElement>("blockquote p");
 
   if (p) {
@@ -90,13 +92,12 @@ export function setTheme(doUpdateURL = true) {
     resetFont();
   }
   setStringSetting("theme", `${theme}-${variant}`);
-  if (doUpdateURL) {
-    updateURL("theme", `${theme}-${variant}`);
-  }
+  updateURL("theme", `${theme}-${variant}`);
 
   if (theme === "color") {
     theme = getRandomThemeColor();
   }
+
   if (variant === "system") {
     variant = window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
@@ -107,10 +108,49 @@ export function setTheme(doUpdateURL = true) {
     setDayParameters();
   }
 
+  if (theme === "photo" && !isVariantChange) {
+    setDynamicBackgroundPicture();
+  }
+
+  if (theme !== "photo") {
+    removeBackgroundImage();
+  }
+
   document.documentElement.dataset.theme = `${theme}-${variant}`;
   fitQuote();
 
   if (p) {
     setTimeout(() => (p.style.visibility = "visible"), 50);
   }
+}
+
+export function setDynamicBackgroundPicture() {
+  const photoOverlay = document.getElementById("photo-overlay");
+  const now = new Date();
+  const seed = `${now.getFullYear()}${
+    now.getMonth() + 1
+  }${now.getDay()}${now.getHours()}${now.getMinutes()}`;
+  let innerHeight = window.innerHeight;
+  let innerWidth = window.innerWidth;
+
+  if (innerHeight > 5000) {
+    innerHeight = 5000;
+  }
+
+  if (innerWidth > 5000) {
+    innerWidth = 5000;
+  }
+
+  if (photoOverlay) {
+    photoOverlay.style.opacity = "1";
+
+    setTimeout(() => {
+      photoOverlay.style.removeProperty("opacity");
+      document.body.style.backgroundImage = `url(https://picsum.photos/seed/${seed}/${innerWidth}/${innerHeight}?blur=1)`;
+    }, 1000);
+  }
+}
+
+export function removeBackgroundImage() {
+  document.body.style.removeProperty("background-image");
 }

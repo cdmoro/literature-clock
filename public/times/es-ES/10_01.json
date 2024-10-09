@@ -1,38 +1,28 @@
 [
     {
-        "id": "001528",
-        "time": "10:01",
-        "quote_time_case": "* alrededor de las diez",
-        "quote_first": "Hacia las diez de la mañana, el sol arrojó una brillante barra cargada de polvo a través de una de las ventanillas laterales, y dentro y fuera del rayo entraron y salieron moscas como estrellas fugaces.",
-        "quote_last": "",
-        "title": "De ratones y hombres",
-        "author": "John Steinbeck",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001529",
-        "time": "10:01",
-        "quote_time_case": "* un minuto y diez",
-        "quote_first": "Entró en el dominio de cristal del abogado a las diez y un minuto, se sentó frente a su cliente y sonrió, antes de dejar su bolso Gladstone en el suelo, junto a su silla.",
-        "quote_last": "",
-        "title": "Próximo en la fila",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001530",
+        "id": "001503",
         "time": "10:01",
         "quote_time_case": "10:01",
-        "quote_first": "“Bien, adelante”, dijo secamente el director. “Infórmame tan pronto como estén listos, pero deja la sesión informativa final para el último momento posible y, Matt, no quiero helicópteros hasta las ",
+        "quote_first": "“Bien, adelante”, dijo secamente el director. “Infórmame tan pronto como estén listos, pero deja la sesión informativa final para el último momento posible y, Matt, no quiero helicópteros hasta ",
         "quote_last": ". No quiero que haya posibilidad de fuga de ningún tipo; es nuestra única esperanza de atrapar al asesino”.",
         "title": "¿Se lo contamos al presidente?",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001531",
+        "id": "001504",
         "time": "10:01",
-        "quote_time_case": "10:01 a.m.",
+        "quote_time_case": "las diez y un minuto",
+        "quote_first": "Entró en el dominio de cristal del abogado a las ",
+        "quote_last": ", se sentó frente a su cliente y sonrió, antes de colocar su bolso Gladstone en el suelo junto a su silla.",
+        "title": "Siguiente en la fila",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001505",
+        "time": "10:01",
+        "quote_time_case": "10:01 A.M.",
         "quote_first": "",
         "quote_last": "<br>Maldita devastación cataclísmica, más o menos.",
         "title": "Cocinas del Gran Medio Oeste",
@@ -40,13 +30,23 @@
         "sfw": "nsfw"
     },
     {
-        "id": "001532",
+        "id": "001506",
         "time": "10:01",
-        "quote_time_case": "10:01 a.m.",
+        "quote_time_case": "10:01 A.M.",
         "quote_first": "",
-        "quote_last": "<br>Dr. Abdoul Kirwani, embajador de la República Islámica de Pakistán en los Estados Unidos de América, estaba sentado rígidamente frente al pequeño escritorio de la Oficina Oval. Cuando la noche anterior recibió la llamada solicitando una reunión del jefe de gabinete de Johan Hansen, éste envió apresuradamente un télex seguro a Islamabad para preguntar si necesitaba alguna actualización.<br>Así fue. Y fue un desastre.",
+        "quote_last": "<br>Dra. Abdoul Kirwani, embajador de la República Islámica de Pakistán en los Estados Unidos de América, estaba sentado rígidamente frente al pequeño escritorio de la Oficina Oval. Cuando la noche anterior recibió la llamada solicitando una reunión del jefe de gabinete de Johan Hansen, éste envió apresuradamente un télex seguro a Islamabad para preguntar si necesitaba alguna actualización.<br>Así fue. Y fue un desastre.",
         "title": "Proyecto cíclope",
         "author": "Thomas Hoover",
         "sfw": "sfw"
+    },
+    {
+        "id": "001507",
+        "time": "10:01",
+        "quote_time_case": "sobre las diez",
+        "quote_first": "A las ",
+        "quote_last": " de la mañana, el sol arrojó una brillante barra cargada de polvo a través de una de las ventanas laterales, y por el rayo entraron y salieron moscas que se precipitaban. estrellas.\"",
+        "title": "De ratones y hombres",
+        "author": "John Steinbeck",
+        "sfw": "unknown"
     }
 ]

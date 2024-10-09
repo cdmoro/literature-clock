@@ -1,42 +1,42 @@
 [
     {
-        "id": "001210",
-        "time": "08:40",
-        "quote_time_case": "8.40",
-        "quote_first": "En ese momento el reloj marcaba las ",
-        "quote_last": ". \"Cinco minutos más\", dijo Andrew Stuart. Los cinco amigos se miraron. Se puede suponer que los latidos de su corazón se aceleraban ligeramente, ya que, incluso para los jugadores audaces, la apuesta era grande.",
-        "title": "Al rededor del mundo en ochenta días",
-        "author": "Jules Verne",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001211",
-        "time": "08:40",
-        "quote_time_case": "* veinte minutos para las nueve",
-        "quote_first": "Fue cuando me paré frente a ella, evitando su mirada, que tomé nota de los objetos circundantes en detalle, y vi que su reloj se había detenido a las nueve menos veinte, y que un reloj en la habitación se había detenido a las nueve menos veinte. .",
-        "quote_last": "",
-        "title": "Grandes expectativas",
-        "author": "Charles Dickens",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001212",
+        "id": "001190",
         "time": "08:40",
         "quote_time_case": "8:40",
-        "quote_first": "Dejó el Sherry-Netherland poco después de las ",
+        "quote_first": "Dejó el Sherry-Netherland justo después de ",
         "quote_last": ", y cuando llegó a Lexington, estaba casi listo para enfrentar la ira del director.",
         "title": "Llega la hora",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001213",
+        "id": "001191",
         "time": "08:40",
         "quote_time_case": "8:40 a.m.",
         "quote_first": "A las ",
-        "quote_last": " La sacaron en camilla rumbo al Mayo General Hospital, llena de ampollas y quemada en una cama de bronceado convertida en cámara de tortura.",
+        "quote_last": " la sacaron en camilla rumbo al Mayo General Hospital, llena de ampollas y quemada en una cama de bronceado convertida en cámara de tortura.",
         "title": "Sopa De Granada",
         "author": "Marsha Mehran",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001192",
+        "time": "08:40",
+        "quote_time_case": "8.40",
+        "quote_first": "En ese momento el reloj marcaba ",
+        "quote_last": ". \"Cinco minutos más\", dijo Andrew Stuart. Los cinco amigos se miraron. Se puede suponer que los latidos de su corazón se aceleraban ligeramente, ya que, incluso para los jugadores audaces, la apuesta era grande.",
+        "title": "La vuelta al mundo en ochenta días",
+        "author": "Jules Verne",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001193",
+        "time": "08:40",
+        "quote_time_case": "las nueve menos veinte",
+        "quote_first": "Fue cuando me paré frente a ella, evitando su mirada, que tomé nota de los objetos circundantes en detalle, y vi que su reloj se había detenido en ",
+        "quote_last": ", y que un reloj de la habitación se había detenido a las nueve menos veinte.",
+        "title": "Grandes expectativas",
+        "author": "Charles Dickens",
         "sfw": "unknown"
     }
 ]

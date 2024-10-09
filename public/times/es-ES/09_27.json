@@ -1,32 +1,32 @@
 [
     {
-        "id": "001380",
-        "time": "09:27",
-        "quote_time_case": "* las nueve y veintisiete minutos",
-        "quote_first": "Desde las nueve y veinte hasta las nueve y veintisiete, desde las once y veinticinco hasta las once y veintiocho, desde las tres menos diez hasta las tres menos dos los héroes de la escuela se encontraron con gran familiaridad cuyo atleta olímpico La risa asombró al pequeño niño temeroso que pasó revoloteando inquieto y heló al mayor encorvado que se detuvo precipitadamente para examinar los avisos en afirmación de un derecho inmerecido.",
-        "quote_last": "",
-        "title": "Calle siniestra",
-        "author": "Compton Mackenzie",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001381",
+        "id": "001358",
         "time": "09:27",
         "quote_time_case": "9:27",
-        "quote_first": "“Debe haber pasado algún tiempo desde que fuiste de compras a París”, le había dicho. \"Eso es suficiente para un par de jeans y un par de camisetas\". Kratz, a regañadientes, entregó otros cinco mil francos.<br>A las ",
+        "quote_first": "\"Debe haber pasado algún tiempo desde que fuiste de compras a París\", le había dicho. \"Eso es suficiente para un par de jeans y un par de camisetas\". Kratz había entregado a regañadientes otros cinco mil francos.<br>A las ",
         "quote_last": " sonó el teléfono.",
         "title": "Honor entre ladrones",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001382",
+        "id": "001359",
         "time": "09:27",
-        "quote_time_case": "9:27 a.m.",
+        "quote_time_case": "9:27 A.M.",
         "quote_first": "",
         "quote_last": "<br>Vance se reclinó contra el ciprés y escuchó el silbido del ligero viento a través de los afloramientos de granito. Se había encaramado en uno de los escarpados acantilados, desde donde podía ver prácticamente todo lo que sucedía en la superficie. A su alrededor se arrastraban hormigas, ajenas al calor del sol, que ahora quemaba las rocas de color hueso por todos lados, mientras abajo las lánguidas olas lo llamaban.",
         "title": "Proyecto cíclope",
         "author": "Thomas Hoover",
         "sfw": "sfw"
+    },
+    {
+        "id": "001360",
+        "time": "09:27",
+        "quote_time_case": "nueve y veintisiete",
+        "quote_first": "Desde las nueve y veinte hasta ",
+        "quote_last": ", desde las once y veinticinco hasta las once y veintiocho, desde las tres y diez hasta los dos minutos A las tres, los héroes de la escuela se reunieron en una gran familiaridad cuya risa olímpica asombró al pequeño niño temeroso que pasó revoloteando inquieto y heló al estudiante de último año encorvado que se detuvo imprudentemente para examinar los avisos en afirmación de un derecho inmerecido.",
+        "title": "Calle siniestra",
+        "author": "Compton Mackenzie",
+        "sfw": "unknown"
     }
 ]

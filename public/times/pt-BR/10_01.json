@@ -2,9 +2,9 @@
     {
         "id": "001503",
         "time": "10:01",
-        "quote_time_case": "* 10:01",
-        "quote_first": "“Certo, vá em frente”, disse o Diretor secamente. “Apresente-se a mim assim que estiverem prontos, mas deixe o briefing final para o último momento possível e, Matt, não quero helicópteros antes das 10h01. Não quero que haja qualquer tipo de chance de vazamento; é a nossa única esperança de capturar o assassino.”",
-        "quote_last": "",
+        "quote_time_case": "10:01",
+        "quote_first": "“Certo, vá em frente”, disse o Diretor secamente. “Relate-me assim que estiverem prontos, mas deixe o briefing final para o último momento possível e, Matt, não quero helicópteros até ",
+        "quote_last": ". Não quero que haja qualquer tipo de chance de vazamento; é a nossa única esperança de capturar o assassino.”",
         "title": "Devemos contar ao presidente?",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -13,8 +13,8 @@
         "id": "001504",
         "time": "10:01",
         "quote_time_case": "dez e um minuto",
-        "quote_first": "Ele entrou na área de vidro do advogado às ",
-        "quote_last": ", sentou-se em frente ao cliente e sorriu, antes de colocar sua bolsa Gladstone no chão, ao lado de sua cadeira.",
+        "quote_first": "Ele entrou no domínio de vidro do advogado às ",
+        "quote_last": ", sentou-se em frente ao seu cliente e sorriu, antes de colocar sua bolsa Gladstone no chão ao lado de sua cadeira.",
         "title": "Próximo na fila",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -24,7 +24,7 @@
         "time": "10:01",
         "quote_time_case": "10h01",
         "quote_first": "",
-        "quote_last": ".<br>Maldita devastação cataclísmica, praticamente.",
+        "quote_last": "<br>Maldita devastação cataclísmica, praticamente.",
         "title": "Cozinhas do Grande Centro-Oeste",
         "author": "J. Ryan Stradal",
         "sfw": "nsfw"
@@ -42,9 +42,9 @@
     {
         "id": "001507",
         "time": "10:01",
-        "quote_time_case": "* por volta das dez horas",
-        "quote_first": "Por volta das dez horas da manhã, o sol lançou uma barra brilhante e carregada de poeira através de uma das janelas laterais, e moscas entravam e saíam do raio como estrelas velozes.",
-        "quote_last": "",
+        "quote_time_case": "por volta das dez horas",
+        "quote_first": "Às ",
+        "quote_last": " da manhã, o sol lançou uma barra brilhante e carregada de poeira através de uma das janelas laterais, e moscas entravam e saíam do feixe de luz como se estivessem correndo. estrelas.'",
         "title": "De ratos e homens",
         "author": "John Steinbeck",
         "sfw": "unknown"

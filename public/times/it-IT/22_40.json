@@ -2,9 +2,9 @@
     {
         "id": "003386",
         "time": "22:40",
-        "quote_time_case": "* 10:40",
-        "quote_first": "Si mise a letto alle 22:40, ma non riuscì a dormire per più di un'ora alla volta. Di tanto in tanto accendeva la televisione per guardare gli spaghetti western doppiati in libanese.",
-        "quote_last": "",
+        "quote_time_case": "10:40",
+        "quote_first": "Si mise a letto alle ",
+        "quote_last": ", ma non riuscì a dormire per più di un'ora di seguito. Di tanto in tanto accendeva la televisione per guardare gli spaghetti western doppiati in libanese.",
         "title": "Onore tra i ladri",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -14,7 +14,7 @@
         "time": "22:40",
         "quote_time_case": "10:40",
         "quote_first": "Lì, alle ",
-        "quote_last": ", i motori al plasma si sarebbero accesi a pieno regime per iniziare la rapida accelerazione in linea retta che avrebbe dato loro la velocità di diecimila chilometri orari necessaria per costeggiare rapidamente il tunnel dello Spazio Normale che collegava la Terra. Cancelli.",
+        "quote_last": ", i motori al plasma si sarebbero accesi a pieno regime per iniziare la rapida accelerazione in linea retta che avrebbe dato loro i diecimila chilometri all'anno. velocità oraria necessaria per procedere velocemente lungo il tunnel dello Spazio Normale che collega i Cancelli.",
         "title": "L'Ombra e la Notte",
         "author": "Chris Walley",
         "sfw": "sfw"
@@ -23,8 +23,8 @@
         "id": "003388",
         "time": "22:40",
         "quote_time_case": "dieci e quaranta di sera",
-        "quote_first": "\"Amico mio\", disse con un tono di voce compiaciuto che sapeva che lui non avrebbe potuto sbagliarsi. Non le importava, era contenta di sentirlo, anche se erano le ",
-        "quote_last": ". \"Dove stai chiamando?\" chiese, aspettandosi che dicesse Glasgow o Berlino.",
+        "quote_first": "\"Amico mio\", disse con un tono di voce compiaciuto che sapeva che lui non avrebbe potuto sbagliarsi. Non le importava, era contenta di sentirlo, anche se erano ",
+        "quote_last": ". \"Da dove chiami?\" chiese, aspettandosi che dicesse Glasgow o Berlino.",
         "title": "Tutto ebbe inizio a Montecarlo",
         "author": "Elizabeth Adler",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "003390",
         "time": "22:40",
-        "quote_time_case": "* venti alle undici",
-        "quote_first": "L'orologio della stazione gli segnava l'ora: le undici meno venti. Andò all'ufficio prenotazioni e chiese in tono educato all'impiegato quando sarebbe stato il prossimo treno per Parigi. \"Tra dodici minuti.\"",
-        "quote_last": "",
+        "quote_time_case": "undici meno venti",
+        "quote_first": "L'orologio della stazione gli segnava l'ora: ",
+        "quote_last": ". Andò all'ufficio prenotazioni e chiese in tono educato all'impiegato quando sarebbe stato il prossimo treno per Parigi. \"Tra dodici minuti.\"",
         "title": "L'uomo che guardava passare i treni",
         "author": "Georges Simenon",
         "sfw": "unknown"

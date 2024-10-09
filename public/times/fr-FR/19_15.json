@@ -2,9 +2,9 @@
     {
         "id": "002885",
         "time": "19:15",
-        "quote_time_case": "* sept heures et quart",
-        "quote_first": "« Votre Sainteté », appela-t-il.<br>« Eh bien ? »<br>« Les chevaux sont là ; c'est l'heure du service du soir. »<br>« Quelle heure est-il ? »<br>« Sept heures et quart. »",
-        "quote_last": "",
+        "quote_time_case": "A sept heures et quart",
+        "quote_first": "« Votre Sainteté », appela-t-il.<br>« Eh bien ? »<br>« Les chevaux sont là ; c'est l'heure du service du soir. »<br>« Quelle heure est-il ? »<br>« ",
+        "quote_last": " ».",
         "title": "L'évêque",
         "author": "Anton Pavlovich Chekhov",
         "sfw": "sfw"
@@ -15,7 +15,7 @@
         "quote_time_case": "sept heures quinze",
         "quote_first": "Le radeau dérivait régulièrement vers le nord. \"Il doit y avoir un courant.\" Le courant les entraînait vers le nord, vers l'hôtel. Il regarda sa montre et fut étonné de constater qu'il était ",
         "quote_last": ". Seulement quinze minutes s'étaient écoulées depuis qu'il avait regardé sa montre pour la dernière fois. Cela m'a semblé deux heures.",
-        "title": "parc jurassique",
+        "title": "Parc jurassique",
         "author": "Michael Crichton",
         "sfw": "unknown"
     },
@@ -23,8 +23,8 @@
         "id": "002887",
         "time": "19:15",
         "quote_time_case": "sept heures et quart du soir",
-        "quote_first": "C’est sur Anerley Road, une rue très fréquentée et sale, dans le sud de Londres, que l’homme m’a frappé. Nous étions le 19 septembre, il était environ ",
-        "quote_last": " et je descendais la pente depuis la gare jusqu'à notre appartement après avoir travaillé à la librairie. Il faisait beau le matin quand je suis parti travailler, mais maintenant il pleuvait et je n'étais pas habillé pour ça.",
+        "quote_first": "C’est sur Anerley Road, une rue très fréquentée et sale, dans le sud de Londres, que l’homme m’a frappé. C'était le 19 septembre, il était environ ",
+        "quote_last": " et je descendais à pied de la gare à notre appartement après avoir travaillé à la librairie. Il faisait beau le matin quand je suis parti travailler, mais maintenant il pleuvait et je n'étais pas habillé pour ça.",
         "title": "Le corps ment",
         "author": "Jo Baker",
         "sfw": "unknown"
@@ -42,7 +42,7 @@
     {
         "id": "002889",
         "time": "19:15",
-        "quote_time_case": "7h15",
+        "quote_time_case": "7:15",
         "quote_first": "Les cellules comptent jusqu'à 400 000. Réveil à 8h10. Dormir ",
         "quote_last": ". (Il semble que j'ai perdu ma montre sans m'en rendre compte, j'ai dû me rendre en ville pour en acheter une autre.)",
         "title": "Les voix du temps",
@@ -52,9 +52,9 @@
     {
         "id": "002890",
         "time": "19:15",
-        "quote_time_case": "* sept quinze",
-        "quote_first": "Nick avait lui-même un grand projet fou pour la soirée, mais pour l'instant il laissa Léo prendre les choses en main : ils allaient retourner à Notting Hill et assister à la projection de 19h15 de Scarface au Gate.",
-        "quote_last": "",
+        "quote_time_case": "sept heures quinze",
+        "quote_first": "Nick avait son propre plan pour la nuit, mais pour l'instant il laissa Léo prendre les choses en main : ils allaient retourner à Notting Hill et attraper le ",
+        "quote_last": " projection de Scarface à la porte.",
         "title": "La Ligne de Beauté",
         "author": "Alan Hollinghurst",
         "sfw": "unknown"
@@ -62,9 +62,9 @@
     {
         "id": "002891",
         "time": "19:15",
-        "quote_time_case": "* sept quinze",
-        "quote_first": "La fête devait commencer à sept heures. Les invitations indiquaient six heures trente car la famille savait que tout le monde arriverait un peu en retard, pour ne pas être le premier arrivé. .. À sept heures quinze, plus personne ne pouvait se faufiler dans la maison.",
-        "quote_last": "",
+        "quote_time_case": "sept-quinze",
+        "quote_first": "La fête devait commencer à sept heures. Les invitations indiquaient six heures trente car la famille savait que tout le monde arriverait un peu en retard, pour ne pas être le premier arrivé. . . À ",
+        "quote_last": " aucune âme ne pouvait se faufiler dans la maison.",
         "title": "La dame âgée",
         "author": "Jorge Luis Borges",
         "sfw": "unknown"

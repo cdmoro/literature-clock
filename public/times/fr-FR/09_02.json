@@ -12,9 +12,9 @@
     {
         "id": "001288",
         "time": "09:02",
-        "quote_time_case": "* quelques minutes après neuf heures",
-        "quote_first": "Nous roulions sur une autoroute, quelque part, mais la pluie obscurcissait la vue sur l'horizon et je ne pouvais pas m'orienter là où nous étions. Les chiffres lumineux de l’horloge du tableau de bord indiquaient qu’il n’était que neuf heures moins de quelques minutes.",
-        "quote_last": "",
+        "quote_time_case": "quelques minutes après neuf",
+        "quote_first": "Nous roulions sur une autoroute, quelque part, mais la pluie obscurcissait la vue sur l'horizon et je ne pouvais pas m'orienter là où nous étions. Les chiffres lumineux de l'horloge du tableau de bord indiquaient qu'il n'était que ",
+        "quote_last": ".",
         "title": "Fou Lune",
         "author": "Jim Butcher",
         "sfw": "sfw"
@@ -24,7 +24,7 @@
         "time": "09:02",
         "quote_time_case": "9h02",
         "quote_first": "",
-        "quote_last": ", allongé dans mon lit, regardant le plafond.",
+        "quote_last": " allongé dans le lit, regardant le plafond.",
         "title": "Une fraction du tout",
         "author": "Steve Toltz",
         "sfw": "sfw"

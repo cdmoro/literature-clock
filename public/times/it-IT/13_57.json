@@ -2,9 +2,9 @@
     {
         "id": "002083",
         "time": "13:57",
-        "quote_time_case": "* uno e cinquantasette",
-        "quote_first": "Poi ho aperto gli occhi e ho guardato l'orologio. Era l'una e cinquantasette. Venticinque minuti erano svaniti da qualche parte. Non male, mi sono detto. Un modo inutile per sprecare tempo. Non è affatto male.",
-        "quote_last": "",
+        "quote_time_case": "una e cinquantasette",
+        "quote_first": "Poi ho aperto gli occhi e ho guardato l'orologio. Erano ",
+        "quote_last": ". Venticinque minuti erano svaniti da qualche parte. Non male, mi sono detto. Un modo inutile per sprecare tempo. Non è affatto male.",
         "title": "Salice cieco, donna addormentata",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -12,8 +12,8 @@
     {
         "id": "002084",
         "time": "13:57",
-        "quote_time_case": "tre minuti alle due",
-        "quote_first": "Mancavano ",
+        "quote_time_case": "due meno tre minuti",
+        "quote_first": "Erano ",
         "quote_last": ". \"Spero che tu possa prenderlo, allora. Grazie. Lo apprezzo davvero.\"",
         "title": "Sciamano urbano",
         "author": "C.E. Murphy",

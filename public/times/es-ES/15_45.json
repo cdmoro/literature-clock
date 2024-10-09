@@ -1,52 +1,52 @@
 [
     {
-        "id": "002393",
+        "id": "002357",
         "time": "15:45",
-        "quote_time_case": "* 15:45",
-        "quote_first": "Aún así, con tantos acres de vehículos viejos, sus posibilidades parecían bastante buenas. Miró su reloj: 3:45 p.m.",
+        "quote_time_case": "3:45 P.M.",
+        "quote_first": "Aún así, con tantos acres de vehículos viejos, sus posibilidades parecían bastante buenas. Miró su reloj -",
         "quote_last": "",
         "title": "Cala francesa",
         "author": "Peter Rennebohm",
         "sfw": "unknown"
     },
     {
-        "id": "002394",
+        "id": "002358",
         "time": "15:45",
-        "quote_time_case": "* 15:45",
-        "quote_first": "Abrí mi cuaderno, lo hojeé casi hasta el final antes de encontrar una página en blanco y escribí 5 de octubre, 3:45 pm, Dunning a Longview Cem, pone flores en las tumbas de los padres (?). Lluvia.",
-        "quote_last": "",
-        "title": "22/11/63",
-        "author": "Stephen King",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002395",
-        "time": "15:45",
-        "quote_time_case": "15:45",
-        "quote_first": "Son las ",
-        "quote_last": ". Afuera está oscuro y oscuro mientras camino por el tranquilo pasillo del hospicio en busca de la habitación de Luke O'Leary. Lo encuentro: su tarjeta con su nombre está en el soporte afuera de la puerta y la puerta está entreabierta. No me atrevo. Asustado. Hay un pequeño flujo desde adentro. Una cortina cuelga parcialmente sobre la entrada. Aparto la cortina y entro silenciosamente.",
+        "quote_time_case": "3:45 p.m.",
+        "quote_first": "Son ",
+        "quote_last": " y afuera está oscuro mientras camino por el tranquilo pasillo del hospicio, buscando la habitación de Luke O'Leary. Lo encuentro: su tarjeta con su nombre está en el soporte afuera de la puerta y la puerta está entreabierta. Dudo. Asustado. Hay un pequeño flujo desde adentro. Una cortina cuelga parcialmente sobre la entrada. Aparto la cortina y entro silenciosamente.",
         "title": "Debajo del Puente del Diablo",
         "author": "Loreth Anne White",
         "sfw": "unknown"
     },
     {
-        "id": "002396",
+        "id": "002359",
         "time": "15:45",
-        "quote_time_case": "3:45",
-        "quote_first": "Una comida es suficiente ahora, complementada con una inyección de glucosa. El sueño sigue siendo \"negro\", completamente no reparador. Anoche tomé una de 16 mm. Película de las tres primeras horas, la proyectamos esta mañana en el laboratorio. La primera película de verdadero terror. Parecía un cadáver medio animado. Desperté a las 10:25. Para dormir ",
-        "quote_last": ".",
-        "title": "Las voces del tiempo",
-        "author": "J.G. Ballard",
+        "quote_time_case": "3:45 pm",
+        "quote_first": "Abrí mi cuaderno, lo hojeé casi hasta el final antes de encontrar una página en blanco y escribí 5 de octubre, ",
+        "quote_last": ", Dunning a Longview Cem, pone flores a los padres. ' (?) tumbas. Lluvia.",
+        "title": "22/11/63",
+        "author": "Stephen King",
         "sfw": "unknown"
     },
     {
-        "id": "002397",
+        "id": "002360",
         "time": "15:45",
         "quote_time_case": "tres cuarenta y cinco",
-        "quote_first": "“Bueno, ya son las ",
+        "quote_first": "“Bueno, ya son ",
         "quote_last": ". Nunca lo lograrás.”<br>“¿Está mal el respaldo?”<br>“Parece que más adelante habrá un accidente importante. Este no es un atasco cualquiera. Apenas nos hemos movido desde hace bastante tiempo”.",
         "title": "1T84, Libro Uno",
         "author": "Haruki Murakami",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002361",
+        "time": "15:45",
+        "quote_time_case": "3:45",
+        "quote_first": "Una comida es suficiente ahora, complementada con una inyección de glucosa. El sueño sigue siendo \"negro\", completamente no reparador. Anoche tomé una de 16 mm. Película de las tres primeras horas, la proyectamos esta mañana en el laboratorio. La primera película de verdadero terror. Parecía un cadáver medio animado. Desperté a las 10:25. A dormir ",
+        "quote_last": ".",
+        "title": "Las voces del tiempo",
+        "author": "J.G. Ballard",
         "sfw": "unknown"
     }
 ]

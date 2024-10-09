@@ -2,9 +2,9 @@
     {
         "id": "000196",
         "time": "01:15",
-        "quote_time_case": "* 1:15",
-        "quote_first": "Um pouco fraco, pensou Robin, mas o melhor que pôde fazer às 1h15 da manhã.<br>“Tem certeza de que não era uma garota linda?” disse Mary.<br>“Temo que Jim e Fred dificilmente poderiam ser descritos como bonitos, mesmo por suas amorosas esposas.”",
-        "quote_last": "",
+        "quote_time_case": "1:15",
+        "quote_first": "Um pouco fraco, pensou Robin, mas o melhor que pôde fazer às ",
+        "quote_last": " da manhã.<br>“Tem certeza de que não era uma garota bonita?” disse Mary.<br>“Temo que Jim e Fred dificilmente poderiam ser descritos como bonitos, mesmo por suas amorosas esposas.”",
         "title": "Nem um centavo a mais, nem um centavo a menos",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000197",
         "time": "01:15",
-        "quote_time_case": "* 1:15",
-        "quote_first": "Emma caiu em um sono profundo e foi trazida de volta à consciência pelo som desconhecido de uma sirene da polícia tocando na rua abaixo. Agora ela entendia por que os quartos dos andares superiores eram mais caros. Ela consultou o relógio. Era 13h15.",
-        "quote_last": "",
+        "quote_time_case": "1:15",
+        "quote_first": "Emma caiu em um sono profundo e foi trazida de volta à consciência pelo som desconhecido de uma sirene da polícia tocando na rua abaixo. Agora ela entendia por que os quartos dos andares superiores eram mais caros. Ela consultou o relógio. Foi ",
+        "quote_last": ".",
         "title": "Os Pecados do Pai",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "000198",
         "time": "01:15",
-        "quote_time_case": "uma e quinze",
-        "quote_first": "Lamento, portanto, como já disse, ter prestado atenção aos passos. Começaram por volta da ",
-        "quote_last": " da manhã, numa caminhada rítmica e rápida em torno da mesa da sala de jantar.",
+        "quote_time_case": "uma e um quarto",
+        "quote_first": "Lamento, portanto, como já disse, ter prestado atenção aos passos. Eles começaram por volta de ",
+        "quote_last": " da manhã, uma caminhada rítmica e rápida ao redor da mesa da sala de jantar.",
         "title": "Minha vida e tempos difíceis: \"A noite em que o fantasma entrou\"",
         "author": "James Thurber",
         "sfw": "unknown"
@@ -33,7 +33,7 @@
         "id": "000199",
         "time": "01:15",
         "quote_time_case": "1h15",
-        "quote_first": "Lily Chen sempre preparava um lanche “noturno” para o marido consumir na volta, à ",
+        "quote_first": "Lily Chen sempre preparava um lanche 'noturno' para o marido consumir quando voltasse, às ",
         "quote_last": ".",
         "title": "Agridoce",
         "author": "Timothy Mo",

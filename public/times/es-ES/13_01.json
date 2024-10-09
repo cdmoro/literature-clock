@@ -1,42 +1,42 @@
 [
     {
-        "id": "002027",
+        "id": "001997",
         "time": "13:01",
-        "quote_time_case": "Alrededor de la una",
-        "quote_first": "",
-        "quote_last": " llegó el capataz y les dijo que no tenía trabajo para ellos.",
-        "title": "La hija de un clérigo",
-        "author": "George Orwell",
-        "sfw": "unknown"
+        "quote_time_case": "la una y un minuto",
+        "quote_first": "Escuchó un grito lejano y confuso. ¿Harse y el policía? Pero no importó. Lo único que importaba era llegar al Punto Nexus a las ",
+        "quote_last": ".",
+        "title": "Kit de supervivencia",
+        "author": "Frederik Pohl",
+        "sfw": "sfw"
     },
     {
-        "id": "002028",
+        "id": "001998",
         "time": "13:01",
         "quote_time_case": "alrededor de la una",
-        "quote_first": "Hay cinco brazas ahí fuera, dijo. Será arrastrado de esa manera cuando la marea suba ",
+        "quote_first": "Hay cinco brazas ahí fuera, dijo. Será arrastrado de esa manera cuando suba la marea ",
         "quote_last": ". Hoy son nueve días.",
         "title": "Ulises",
         "author": "James Joyce",
         "sfw": "unknown"
     },
     {
-        "id": "002029",
+        "id": "001999",
         "time": "13:01",
-        "quote_time_case": "poco más de la una",
-        "quote_first": "Era ",
-        "quote_last": " cuando llegué allí, hora de almorzar, así que lo comí. La comida era horrible. Pero iría a la cuenta de gastos y, después de comer, saqué mi libreta y la dejé. Almuerzo $1,50. Taxi $1.00.",
-        "title": "El gran reloj",
-        "author": "Kenneth Fearing",
+        "quote_time_case": "alrededor de la una",
+        "quote_first": "A ",
+        "quote_last": " llegó el capataz y les dijo que no tenía trabajo para ellos.",
+        "title": "La hija de un clérigo",
+        "author": "George Orwell",
         "sfw": "unknown"
     },
     {
-        "id": "002030",
+        "id": "002000",
         "time": "13:01",
-        "quote_time_case": "la una y un minuto",
-        "quote_first": "Escuchó un grito lejano y confuso. ¿Harse y el policía? Pero no importó. Lo único que importaba era llegar al Punto Nexus a ",
-        "quote_last": ".",
-        "title": "Kit de supervivencia",
-        "author": "Frederik Pohl",
-        "sfw": "sfw"
+        "quote_time_case": "un poco después de la una",
+        "quote_first": "Era ",
+        "quote_last": " cuando llegué, hora de almorzar, así que lo comí. La comida era horrible. Pero iría a la cuenta de gastos y, después de comer, saqué mi libreta y la dejé. Almuerzo $1,50. Taxi $1.00.",
+        "title": "El gran reloj",
+        "author": "Kenneth Fearing",
+        "sfw": "unknown"
     }
 ]

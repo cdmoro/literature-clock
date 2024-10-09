@@ -1,22 +1,22 @@
 [
     {
-        "id": "003424",
-        "time": "22:31",
-        "quote_time_case": "22.31 horas.",
-        "quote_first": "Y más tarde, a las ",
-        "quote_last": " Salí al balcón para ver si podía ver alguna estrella, pero no había ninguna debido a todas las nubes y a lo que se llama contaminación lumínica, que es la luz de las farolas, los faros de los coches, los reflectores y las luces de los edificios que se reflejan en partículas diminutas en la atmósfera e interfieren con la luz de las estrellas. Así que volví a entrar.",
-        "title": "El curioso incidente del perro a medianoche",
-        "author": "Mark Haddon",
-        "sfw": "sfw"
-    },
-    {
-        "id": "003425",
+        "id": "003372",
         "time": "22:31",
         "quote_time_case": "22:31",
         "quote_first": "",
-        "quote_last": " DE ACUERDO. DE ACUERDO. Calma. El artículo sobre la leucemia por asbesto de Penny Husbands-Bosworth aún no está disponible.",
+        "quote_last": " Bien. DE ACUERDO. Calma. El artículo sobre la leucemia por asbesto de Penny Husbands-Bosworth aún no está disponible.",
         "title": "El diario de Bridget Jones",
         "author": "Helen Fielding",
+        "sfw": "sfw"
+    },
+    {
+        "id": "003373",
+        "time": "22:31",
+        "quote_time_case": "22.31",
+        "quote_first": "Y más tarde a las ",
+        "quote_last": " salí al balcón para ver si veía alguna estrella, pero no había ninguna por todas las nubes y lo que Se llama contaminación lumínica, que es la luz de las farolas, los faros de los automóviles, los reflectores y las luces de los edificios que se reflejan en pequeñas partículas de la atmósfera y se interponen en el camino de la luz de las estrellas. Así que volví a entrar.",
+        "title": "El curioso incidente del perro a medianoche",
+        "author": "Mark Haddon",
         "sfw": "sfw"
     }
 ]

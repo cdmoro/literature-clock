@@ -2,9 +2,9 @@
     {
         "id": "002737",
         "time": "18:10",
-        "quote_time_case": "* 6.10",
-        "quote_first": "— Gostaria de ver a lista de passageiros do voo de ontem à tarde, às 18h10, para Bruxelas.",
-        "quote_last": "",
+        "quote_time_case": "6.10",
+        "quote_first": "«Gostaria de ver a lista de passageiros do voo ",
+        "quote_last": " de ontem à tarde para Bruxelas.»",
         "title": "Sobre o meu cadáver",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "002738",
         "time": "18:10",
-        "quote_time_case": "* seis dez",
-        "quote_first": "Deixe-me ver agora. Você tomou uma bebida no Continental às seis e dez.<br>\"Sim.\"<br>\"E às seis e quarenta e cinco você estava conversando com outro jornalista na porta do Majestic?\"<br>\"Sim , Wilkins. Eu já te contei tudo isso, Vigot, antes. Naquela noite.",
-        "quote_last": "",
+        "quote_time_case": "seis e dez",
+        "quote_first": "Deixe-me ver agora. Você tomou uma bebida no Continental às ",
+        "quote_last": ".<br>\"Sim.\"<br>\"E às seis e quarenta e cinco você estava conversando com outro jornalista no porta do Majestic?\"<br>\"Sim, Wilkins, eu lhe contei tudo isso, Vigot, naquela noite.\"",
         "title": "O Americano Silencioso",
         "author": "Graham Greene",
         "sfw": "unknown"

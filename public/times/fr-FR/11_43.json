@@ -2,7 +2,7 @@
     {
         "id": "001783",
         "time": "11:43",
-        "quote_time_case": "Onze heures quarante-trois",
+        "quote_time_case": "Onze-quarante-trois",
         "quote_first": "",
         "quote_last": ". Dans quatre minutes, à peu près, Emma mourrait.",
         "title": "Rites de sang",
@@ -12,9 +12,9 @@
     {
         "id": "001784",
         "time": "11:43",
-        "quote_time_case": "* 11h43",
-        "quote_first": "Sans la couverture nuageuse, un observateur dans un avion volant à basse altitude aurait pu voir les trois en même temps, la Subaru et les deux Humvees, à 11 h 43 HNE, lorsque le président a terminé son discours en disant : \" Que Dieu vous bénisse, mes compatriotes américains, et que Dieu bénisse l'Amérique.\"",
-        "quote_last": "",
+        "quote_time_case": "11:43",
+        "quote_first": "Sans la couverture nuageuse, un observateur dans un avion volant à basse altitude aurait pu voir les trois en même temps, la Subaru et les deux Humvees, à ",
+        "quote_last": " EST, lorsque le président a terminé son discours en disant : « Que Dieu vous bénisse, mes compatriotes américains, et que Dieu bénisse l'Amérique. »",
         "title": "Attrape-rêves",
         "author": "Stephen King",
         "sfw": "sfw"

@@ -1,28 +1,28 @@
 [
     {
-        "id": "003407",
+        "id": "003355",
         "time": "22:25",
-        "quote_time_case": "10:25",
-        "quote_first": "Dalgliesh reflexionó que Etienne difícilmente podría haber ideado un elemento disuasorio más eficaz para los visitantes y por un momento se preguntó si debía caminar la media milla en lugar de arriesgarse a ser suspendido. Al mirar su reloj, vio que eran las ",
-        "quote_last": ". Llegaría exactamente a tiempo.",
-        "title": "El pecado original",
+        "quote_time_case": "veinticinco minutos después",
+        "quote_first": "La señora Bultitaft siempre pone la leche caliente a las diez. Aproximadamente ",
+        "quote_last": " vimos a Sally llevando su taza a su habitación.",
+        "title": "Cubrirle la cara",
         "author": "P.D. James",
         "sfw": "sfw"
     },
     {
-        "id": "003408",
+        "id": "003356",
         "time": "22:25",
-        "quote_time_case": "22:25",
-        "quote_first": "",
-        "quote_last": " Ya tengo un casete nuevo. Bien. Vaya a \"Grabación\".",
-        "title": "El diario de Bridget Jones",
-        "author": "Helen Fielding",
+        "quote_time_case": "10:25",
+        "quote_first": "Dalgliesh reflexionó que Etienne difícilmente podría haber ideado un elemento disuasorio más eficaz para los visitantes y por un momento se preguntó si debía caminar la media milla en lugar de arriesgarse a ser suspendido. Mirando su reloj, vio que era ",
+        "quote_last": ". Llegaría exactamente a tiempo.",
+        "title": "Pecado original",
+        "author": "P.D. James",
         "sfw": "sfw"
     },
     {
-        "id": "003409",
+        "id": "003357",
         "time": "22:25",
-        "quote_time_case": "diez y veinticinco de la noche.",
+        "quote_time_case": "diez y veinticinco p.m.",
         "quote_first": "“La última llamada telefónica se produjo a las ",
         "quote_last": " esa noche cuando estaba escuchando Concert by the Sea de Erroll Garner y bebiendo la voz de Seagram. Es útil, ¿no es así llevar un diario como este?",
         "title": "Sauce ciego, mujer dormida",
@@ -30,13 +30,13 @@
         "sfw": "unknown"
     },
     {
-        "id": "003410",
+        "id": "003358",
         "time": "22:25",
-        "quote_time_case": "veinticinco minutos después",
-        "quote_first": "La señora Bultitaft siempre pone la leche caliente a las diez. Aproximadamente ",
-        "quote_last": " vimos a Sally llevando su taza a su habitación.",
-        "title": "Cubrirle la cara",
-        "author": "P.D. James",
+        "quote_time_case": "10:25 p.m.",
+        "quote_first": "",
+        "quote_last": " Ya tengo un casete nuevo. Bien. Vaya a \"Grabación\".",
+        "title": "El diario de Bridget Jones",
+        "author": "Helen Fielding",
         "sfw": "sfw"
     }
 ]

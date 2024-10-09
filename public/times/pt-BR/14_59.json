@@ -3,7 +3,7 @@
         "id": "002227",
         "time": "14:59",
         "quote_time_case": "um minuto para as três",
-        "quote_first": "Faltando ",
+        "quote_first": "Às ",
         "quote_last": ", cinco funcionários seniores entraram na sala e Scott ficou satisfeito ao ver que Susan Anderson estava entre eles.",
         "title": "Honra entre ladrões",
         "author": "Jeffrey Archer",
@@ -12,9 +12,9 @@
     {
         "id": "002228",
         "time": "14:59",
-        "quote_time_case": "* Cerca de três horas",
-        "quote_first": "Por volta das três horas, os quatro casais, assustados com a sua felicidade, deslizavam pelas montanhas russas, um edifício singular que ocupava então as alturas de Beaujon e cuja linha ondulada era visível acima das árvores dos Campos Elísios.",
-        "quote_last": "",
+        "quote_time_case": "Por volta das três horas",
+        "quote_first": "",
+        "quote_last": " os quatro casais, assustados com a sua felicidade, deslizavam pelas montanhas russas, um edifício singular que então ocupava as alturas de Beaujon, e cuja linha ondulante era visível acima das árvores da Champs Élysées.",
         "title": "Os Miseráveis",
         "author": "Victor Hugo",
         "sfw": "unknown"
@@ -24,7 +24,7 @@
         "time": "14:59",
         "quote_time_case": "14h59",
         "quote_first": "Um telégrafo sem fio privado que transmitiria por sistema de ponto e traço o resultado de uma desvantagem equina nacional (plano ou com obstáculos) de uma ou mais milhas e estádios vencidos por um estranho com probabilidades de 50 para 1 às 15h e 20h. em Ascot (hora de Greenwich), sendo a mensagem recebida e disponível para efeitos de apostas em Dublin às ",
-        "quote_last": ".",
+        "quote_last": "",
         "title": "Ulisses",
         "author": "James Joyce",
         "sfw": "unknown"

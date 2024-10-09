@@ -1,38 +1,28 @@
 [
     {
-        "id": "001773",
-        "time": "11:30",
-        "quote_time_case": "11.30",
-        "quote_first": "Ahora son las ",
-        "quote_last": ". La puerta de esta sala está cerrada y permanecerá cerrada, salvo emergencias, hasta las 12.00 horas. Estoy autorizado a informarles que ahora estamos bajo órdenes de batalla.",
-        "title": "Cielo de singularidad",
-        "author": "Charles Stross",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001774",
-        "time": "11:30",
-        "quote_time_case": "11.30",
-        "quote_first": "Esta vez fue Kumiko. El reloj de la pared marcaba las ",
-        "quote_last": ".",
-        "title": "La crónica del pájaro de cuerda",
-        "author": "Haruki Murakami",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001775",
+        "id": "001747",
         "time": "11:30",
         "quote_time_case": "11:30",
-        "quote_first": "Sin embargo, las fuertes risas de los niños se convirtieron en gemidos cuando él fríamente les informó que ese día tendrían escuela toda la tarde en lugar del horario habitual de 8:00 a ",
+        "quote_first": "Sin embargo, las fuertes risas de los niños se convirtieron en gemidos cuando él fríamente les informó que tendrían escuela toda la tarde ese día en lugar de las habituales 8:00 a ",
         "quote_last": ".",
         "title": "Brillante valle del amor",
         "author": "Edna Hong",
         "sfw": "sfw"
     },
     {
-        "id": "001776",
+        "id": "001748",
         "time": "11:30",
-        "quote_time_case": "11:30",
+        "quote_time_case": "11:30 A.M.",
+        "quote_first": "A las ",
+        "quote_last": ", Charlie salió corriendo por la puerta principal de la escuela, saltó y superó los seis escalones de concreto. Recorrió el camino lo más rápido que pudo, sus Red-Ball Jets golpeando el pavimento hasta llegar a la calle.",
+        "title": "Manantiales azules",
+        "author": "Peter Rennebohm",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001749",
+        "time": "11:30",
+        "quote_time_case": "11:30 a.m.",
         "quote_first": "Era martes -mi medio día- y a las ",
         "quote_last": " entró una llamada. Una eversión del útero en una vaca. Este es el trabajo duro en la práctica del campo y sentí el escalofrío habitual.",
         "title": "Todas las criaturas grandes y pequeñas",
@@ -40,83 +30,93 @@
         "sfw": "unknown"
     },
     {
-        "id": "001777",
+        "id": "001750",
+        "time": "11:30",
+        "quote_time_case": "once-treinta",
+        "quote_first": "Cinco minutos después, otro camión se detiene detrás del primero. En el costado de este hay un niño de dibujos animados sonriente devorando una hamburguesa doble con queso. A las ",
+        "quote_last": ", mientras la gente hace fila para comer hamburguesas, papas fritas, tacos y enchiladas, aparece un carrito de perritos calientes.",
+        "title": "Billy Summers",
+        "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001751",
         "time": "11:30",
         "quote_time_case": "11:30",
-        "quote_first": "Me desperté presa del pánico, sin gritar, sólo un gemido desde lo más profundo de mi garganta. Me quedé dormido en la silla de plástico duro junto a la ventana. El reloj encima de la puerta marcaba las ",
+        "quote_first": "Me desperté presa del pánico, sin gritar, sólo un gemido desde lo más profundo de mi garganta. Me quedé dormido en la silla de plástico duro junto a la ventana. El reloj encima de la puerta marcaba ",
         "quote_last": " y la UCI estaba en silencio. El suministro de adrenalina aún no se había agotado, me puse de pie tambaleante.",
         "title": "Eco",
         "author": "Thomas Olde Heuvelt",
         "sfw": "unknown"
     },
     {
-        "id": "001778",
+        "id": "001752",
         "time": "11:30",
-        "quote_time_case": "11:30",
-        "quote_first": "Alrededor de las ",
-        "quote_last": " de esta mañana le pregunté si iba a arreglar algo para el Día de Acción de Gracias y me miró como si ni siquiera supiera de qué estaba hablando.",
-        "title": "No se atreva a leer esto, señora Dunphrey",
-        "author": "Margaret Peterson Haddix",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001779",
-        "time": "11:30",
-        "quote_time_case": "11:30 a.m.",
-        "quote_first": "A las ",
-        "quote_last": ", Charlie salió corriendo por la puerta principal de la escuela, saltó y superó los seis escalones de concreto. Recorrió el camino lo más rápido que pudo, sus Red-Ball Jets golpeando el pavimento hasta llegar a la calle.",
-        "title": "manantiales azules",
-        "author": "Peter Rennebohm",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001780",
-        "time": "11:30",
-        "quote_time_case": "once y media",
-        "quote_first": "Cinco minutos después, otro camión se detiene detrás del primero. En el costado de este hay un niño de dibujos animados sonriente devorando una hamburguesa doble con queso. A las ",
-        "quote_last": ", mientras la gente hace cola para comer hamburguesas, patatas fritas, tacos y enchiladas, aparece un carrito de perritos calientes.",
-        "title": "Billy Summers",
-        "author": "Stephen King",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001781",
-        "time": "11:30",
-        "quote_time_case": "once y media",
-        "quote_first": "Y así fue como, alrededor de las ",
-        "quote_last": ", me encontré viajando hacia el Village en el autobús de la Quinta Avenida con la dirección de Hobart y Blackwell en el bolsillo, escrita en una página de uno de los cuadernos con monogramas que la señora Barbour guardaba en el teléfono.",
+        "quote_time_case": "las once y media",
+        "quote_first": "Y así fue que alrededor de ",
+        "quote_last": ", me encontré viajando hacia el Village en el autobús de la Quinta Avenida con la dirección de Hobart y Blackwell en mi bolsillo, escrita en una página de uno de los cuadernos con monogramas que la señora Barbour guardaba junto al teléfono.",
         "title": "El jilguero",
         "author": "Donna Tartt",
         "sfw": "unknown"
     },
     {
-        "id": "001782",
+        "id": "001753",
         "time": "11:30",
-        "quote_time_case": "once y media",
-        "quote_first": "“Lo extraordinario es”, le dijo a Livia a las ",
+        "quote_time_case": "once-treinta",
+        "quote_first": "“Lo extraordinario es”, le dijo a Livia en ",
         "quote_last": ", “pareces ser la única solicitante. O al menos, el único que apareció”.",
         "title": "El oficial de bodas",
         "author": "Anthony Capella",
         "sfw": "unknown"
     },
     {
-        "id": "001783",
+        "id": "001754",
         "time": "11:30",
-        "quote_time_case": "once y media",
+        "quote_time_case": "11.30",
+        "quote_first": "Ahora son ",
+        "quote_last": ". La puerta de esta sala está cerrada y permanecerá cerrada, salvo emergencias, hasta las 12.00 horas. Estoy autorizado a informarles que ahora estamos bajo órdenes de batalla.",
+        "title": "Cielo de singularidad",
+        "author": "Charles Stross",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001755",
+        "time": "11:30",
+        "quote_time_case": "las once y media",
         "quote_first": "¡Oh, Frank! ¡Cometí un error! - Pensé que esa iglesia con el chapitel era de Todos los Santos, y estuve en la puerta a las ",
-        "quote_last": " menos un minuto como dijiste.",
+        "quote_last": " al minuto como dijiste.",
         "title": "Lejos de la multitud enloquecedora",
         "author": "Thomas Hardy",
         "sfw": "unknown"
     },
     {
-        "id": "001784",
+        "id": "001756",
         "time": "11:30",
-        "quote_time_case": "once y media",
-        "quote_first": "Gracias, dijo C.B. en voz baja; pero cuando colgó su rostro estaba sombrío. En unos minutos tendría que decirle a John que, aunque habían afrontado peligros tan espantosos durante la primera parte de la noche, después de todo, no habían logrado salvar a Christina. Beddows había abjurado de Satán poco después de las ",
+        "quote_time_case": "las once y media",
+        "quote_first": "Gracias, dijo C.B. en voz baja; pero cuando colgó su rostro estaba sombrío. En unos minutos tendría que decirle a John que, aunque habían afrontado peligros tan espantosos durante la primera parte de la noche, después de todo, no habían logrado salvar a Christina. Beddows había abjurado de Satanás poco después de ",
         "quote_last": ". Aproximadamente a los dieciocho minutos el canónigo se les había adelantado otra vez.",
-        "title": "Para el diablo una hija",
+        "title": "Al diablo una hija",
         "author": "Dennis Wheatley",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001757",
+        "time": "11:30",
+        "quote_time_case": "11.30",
+        "quote_first": "Esta vez fue Kumiko. El reloj de pared decía ",
+        "quote_last": ".",
+        "title": "La crónica del pájaro de cuerda",
+        "author": "Haruki Murakami",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001758",
+        "time": "11:30",
+        "quote_time_case": "11:30",
+        "quote_first": "Aproximadamente ",
+        "quote_last": " esta mañana le pregunté si iba a arreglar algo para el Día de Acción de Gracias y me miró como si ni siquiera supiera de qué estaba hablando.",
+        "title": "No se atreva a leer esto, señora Dunphrey",
+        "author": "Margaret Peterson Haddix",
         "sfw": "unknown"
     }
 ]

@@ -2,9 +2,9 @@
     {
         "id": "002192",
         "time": "14:43",
-        "quote_time_case": "* 14h43",
-        "quote_first": "Le 14 h 43 est arrivé à Tunbridge Wells à l'heure et William a été la première personne à descendre du train. Il rejoignit le petit groupe qui l'attendait.",
-        "quote_last": "",
+        "quote_time_case": "14.43",
+        "quote_first": "Le ",
+        "quote_last": " est arrivé à Tunbridge Wells à l'heure et William a été la première personne à descendre du train. Il rejoignit le petit groupe qui l'attendait.",
         "title": "Sur mon cadavre",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "002193",
         "time": "14:43",
-        "quote_time_case": "deux heures quarante-trois",
-        "quote_first": "Droite! Allons-y. Vous savez ce que nous voulons, un compte rendu complet de l'endroit où vous étiez, de ce que vous faisiez et des personnes que vous avez vues entre une heure, à la fin du déjeuner, et ",
-        "quote_last": ", lorsque Miss Grey a trouvé le corps.",
+        "quote_time_case": "deux-quarante-trois",
+        "quote_first": "Droite! Allons-y. Vous savez ce que nous voulons, un compte rendu complet de l'endroit où vous étiez, de ce que vous faisiez et des personnes que vous avez vues entre 13 heures, à la fin du déjeuner, et ",
+        "quote_last": " quand Miss Grey a trouvé le corps.",
         "title": "Le crâne sous la peau",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -32,19 +32,19 @@
     {
         "id": "002195",
         "time": "14:43",
-        "quote_time_case": "* 14h43",
-        "quote_first": "Jacobson est décédé à 14 h 43 le lendemain après s'être coupé les poignets avec une lame de rasoir dans la deuxième cabine en partant de la gauche dans les toilettes pour hommes au troisième étage.",
-        "quote_last": "",
-        "title": "Maintenant : zéro",
+        "quote_time_case": "14h43",
+        "quote_first": "Jacobson est décédé à ",
+        "quote_last": " le lendemain après s'être coupé les poignets avec une lame de rasoir dans la deuxième cabine en partant de la gauche dans les toilettes pour hommes au troisième étage.",
+        "title": "Maintenant : zéro",
         "author": "J.G. Ballard",
         "sfw": "nsfw"
     },
     {
         "id": "002196",
         "time": "14:43",
-        "quote_time_case": "* dix-sept minutes moins trois",
-        "quote_first": "Puis il commença à respirer plus librement ; « la jeune fille », comme il l'appelait toujours mentalement, ne pouvait plus entrer dans le parc sans qu'il la voie. Il regarda sa montre pour la troisième fois : trois heures moins dix-sept. À peu près l’heure qu’il avait prévue. Elle devrait être là bientôt si elle avait quitté Miss Lloyd’s un peu après deux heures.",
-        "quote_last": "",
+        "quote_time_case": "trois heures moins dix-sept",
+        "quote_first": "Puis il commença à respirer plus librement ; « la jeune fille », comme il l'appelait toujours mentalement, ne pouvait plus entrer dans le parc sans qu'il la voie. Il regarda sa montre pour la troisième fois—",
+        "quote_last": ". À peu près l’heure qu’il avait prévue. Elle devrait être là bientôt si elle avait quitté Miss Lloyd’s un peu après deux heures.",
         "title": "Épines d'argent",
         "author": "Mary Louisa Molesworth",
         "sfw": "sfw"

@@ -3,8 +3,8 @@
         "id": "002830",
         "time": "18:58",
         "quote_time_case": "18:58",
-        "quote_first": "Esattamente il punto in cui aveva visto le due figure, il momento in cui avevano continuato a salire sulla montagna e il fatto che non sembravano avere alcuna difficoltà mentre scomparivano nella nebbia. Quando ebbe finito, guardò l'orologio: ",
-        "quote_last": ".",
+        "quote_first": "Esattamente dove aveva visto le due figure, l'ora in cui avevano continuato a salire sulla montagna e il fatto che non sembravano avere alcuna difficoltà mentre sparivano nella nebbia. Quando ebbe finito, guardò l'orologio: ",
+        "quote_last": "",
         "title": "Vie di gloria",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "002832",
         "time": "18:58",
-        "quote_time_case": "due minuti alle sette",
-        "quote_first": "Cammina veloce, dice Perry, \"mancano ",
-        "quote_last": ", e devo essere a casa entro...\"<br>\"Oh, stai zitto,\" dico io. \"Avevo un appuntamento come capo esecutore in un'inchiesta alle sette, e non mi preoccupo di non mantenerlo.\"",
+        "quote_time_case": "sette meno due minuti",
+        "quote_first": "Cammina veloce, dice Perry, \"sono ",
+        "quote_last": ", e devo essere a casa per...\"<br>\"Oh, stai zitto\", dico io. Avevo un appuntamento come capo esecutore in un'inchiesta alle sette, e non mi preoccupo di non rispettarlo.\"",
         "title": "Le strade del destino",
         "author": "O. Henry",
         "sfw": "unknown"
@@ -32,11 +32,11 @@
     {
         "id": "002833",
         "time": "18:58",
-        "quote_time_case": "* due minuti prima delle sette",
-        "quote_first": "Oggi era martedì, quindici agosto; il sole era sorto alle cinque e undici quella mattina e sarebbe tramontato alle sette meno due quella sera.",
-        "quote_last": "",
+        "quote_time_case": "due minuti prima delle sette",
+        "quote_first": "Oggi era martedì, quindici agosto; il sole era sorto alle cinque e undici questa mattina e sarebbe tramontato alle ",
+        "quote_last": " questa sera.",
         "title": "La Roccia Calda",
-        "author": "Donald E Westlake",
+        "author": "Donald E. Westlake",
         "sfw": "unknown"
     }
 ]

@@ -1,16 +1,6 @@
 [
     {
-        "id": "002465",
-        "time": "16:03",
-        "quote_time_case": "16.03",
-        "quote_first": "Leyó la página con atención y luego dijo: \"",
-        "quote_last": ": el gato va al baño en el jardín delantero\".",
-        "title": "lo que se perdió",
-        "author": "Catherine O'Flynn",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002466",
+        "id": "002428",
         "time": "16:03",
         "quote_time_case": "unos minutos después de las cuatro",
         "quote_first": "Rose Rennick llegó ",
@@ -20,13 +10,23 @@
         "sfw": "sfw"
     },
     {
-        "id": "002467",
+        "id": "002429",
         "time": "16:03",
         "quote_time_case": "unos minutos después de las cuatro",
         "quote_first": "Cuando Odell regresó al hotel ",
-        "quote_last": ", lo primero que hizo fue pedir una jarra grande de ponche de frutas caliente antes de salir a la terraza para ocupar su puesto.",
+        "quote_last": ", lo primero que hizo fue pedir un frasco grande de ponche de frutas caliente antes de salir a la terraza para tomar su puesto.",
         "title": "Caminos de gloria",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
+    },
+    {
+        "id": "002430",
+        "time": "16:03",
+        "quote_time_case": "16.03",
+        "quote_first": "Leyó la página con atención y luego dijo: \"",
+        "quote_last": "- el gato va al baño en el jardín delantero\".",
+        "title": "Lo que se perdió",
+        "author": "Catherine O'Flynn",
+        "sfw": "unknown"
     }
 ]

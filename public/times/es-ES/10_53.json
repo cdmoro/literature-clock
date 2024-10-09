@@ -1,16 +1,6 @@
 [
     {
-        "id": "001648",
-        "time": "10:53",
-        "quote_time_case": "10.53 h",
-        "quote_first": "Comienza a registrar nuestras observaciones. \"",
-        "quote_last": "\", escribe, mientras nos agazapamos en lo alto de las escaleras, escuchando a su madre en el pasillo de abajo.",
-        "title": "espías",
-        "author": "Michael Frayn",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001649",
+        "id": "001622",
         "time": "10:53",
         "quote_time_case": "10:53",
         "quote_first": "A las ",
@@ -20,21 +10,31 @@
         "sfw": "sfw"
     },
     {
-        "id": "001650",
+        "id": "001623",
         "time": "10:53",
         "quote_time_case": "10:53",
-        "quote_first": "George quería decir que no, pero sabía que no podía. Miró su reloj (las ",
-        "quote_last": ") y asintió. \"Buena suerte\", dijo, \"pero debes regresar a más tardar al mediodía\".",
+        "quote_first": "George quería decir que no, pero sabía que no podía. Miró su reloj—",
+        "quote_last": "—y asintió. \"Buena suerte\", dijo, \"pero debes regresar a más tardar al mediodía\".",
         "title": "Caminos de gloria",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001651",
+        "id": "001624",
+        "time": "10:53",
+        "quote_time_case": "10.53 hrs",
+        "quote_first": "Comienza a hacer un registro de nuestras observaciones.\"",
+        "quote_last": "\", escribe, mientras nos agazapamos en lo alto de las escaleras, escuchando a su madre en el pasillo de abajo.",
+        "title": "Espías",
+        "author": "Michael Frayn",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001625",
         "time": "10:53",
         "quote_time_case": "10:53",
-        "quote_first": "Miro y vuelvo a mirar ese rostro que me parece a la vez extraño y familiar, dijo Austerlitz, paso la cinta varias veces, mirando el indicador de tiempo en la esquina superior izquierda de la pantalla, donde las figuras que cubren parte de su frente muestra los minutos y segundos, de ",
-        "quote_last": " a 10:57, mientras las centésimas de segundo pasan tan rápido que no es posible leerlas ni capturarlas.",
+        "quote_first": "Miro y vuelvo a mirar ese rostro, que me parece a la vez extraño y familiar, dijo Austerlitz, vuelvo a pasar la cinta repetidamente, mirando el indicador de tiempo en la esquina superior izquierda de la pantalla, donde las figuras que cubren parte de su frente muestra los minutos y segundos, desde ",
+        "quote_last": " hasta 10:57, mientras que las centésimas de segundo pasan tan rápido que no puedes leerlas ni capturarlas.",
         "title": "Austerlitz",
         "author": "W.G. Sebald",
         "sfw": "unknown"

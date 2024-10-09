@@ -1,26 +1,6 @@
 [
     {
-        "id": "001972",
-        "time": "12:45",
-        "quote_time_case": "* un cuarto",
-        "quote_first": "Debido a que estaba lloviendo, y porque estaba deprimida y de mal humor, y porque Robbie no había llegado a la una menos cuarto, Elizabeth se regaló un Martini mientras esperaba, sentada incómodamente en una silla estrecha en el restaurante, mirando a otros nada impresionantes. la gente entra y sale.",
-        "quote_last": "",
-        "title": "La lotería o la aventura de James Harris",
-        "author": "Shirley Jackson",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001973",
-        "time": "12:45",
-        "quote_time_case": "12:45",
-        "quote_first": "El chico entregó un despacho. El profesor volvió a cerrar la puerta y, después de mirar en la dirección, la abrió y leyó en voz alta. \"Cuidado con D. Acaba de llegar, a las ",
-        "quote_last": ", de Carfax apresuradamente y se dirige apresuradamente hacia el Sur. Parece que está dando la vuelta y puede que quiera verte: Mina\"",
-        "title": "Drácula",
-        "author": "Bram Stoker",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001974",
+        "id": "001942",
         "time": "12:45",
         "quote_time_case": "12:45 p.m.",
         "quote_first": "El viernes a las ",
@@ -30,13 +10,33 @@
         "sfw": "sfw"
     },
     {
-        "id": "001975",
+        "id": "001943",
         "time": "12:45",
         "quote_time_case": "la una menos cuarto",
-        "quote_first": "Ese domingo fue un día de verano de ensueño en Maine: claro, brillante y cálido. A ",
+        "quote_first": "Aquel domingo fue un día de verano de ensueño en Maine: claro, brillante y cálido. A las ",
         "quote_last": ", Ruth McCausland, vestida con un bonito vestido azul de verano, salió de su casa por última vez.",
         "title": "Los Tommyknockers",
         "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001944",
+        "time": "12:45",
+        "quote_time_case": "12:45",
+        "quote_first": "El chico entregó un despacho. El profesor volvió a cerrar la puerta y, después de mirar en la dirección, la abrió y leyó en voz alta. \"Cuidado con D. Él acaba de llegar, ",
+        "quote_last": ", de Carfax apresuradamente y se apresuró hacia el Sur. Parece estar dando la vuelta y puede que quiera Nos vemos: Mina\"",
+        "title": "Drácula",
+        "author": "Bram Stoker",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001945",
+        "time": "12:45",
+        "quote_time_case": "la una menos cuarto",
+        "quote_first": "Debido a que estaba lloviendo, y porque estaba deprimida y de mal humor, y porque Robbie no había venido antes del ",
+        "quote_last": ", Elizabeth se regaló un Martini mientras esperaba, sentado incómodo en una silla estrecha del restaurante, observando entrar y salir a otras personas poco impresionantes.",
+        "title": "La lotería o la aventura de James Harris",
+        "author": "Shirley Jackson",
         "sfw": "unknown"
     }
 ]

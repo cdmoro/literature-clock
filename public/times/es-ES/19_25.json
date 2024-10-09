@@ -1,42 +1,42 @@
 [
     {
-        "id": "002960",
+        "id": "002913",
         "time": "19:25",
-        "quote_time_case": "* 19:25",
-        "quote_first": "Cuando el obispo condujo a los tres hombres al escenario a las 7:25 p.m., fue el único momento esa noche en que todos en el salón aplaudieron. Giles tomó asiento y miró al público abarrotado. Calculó que más de mil personas del público habían acudido a presenciar las justas.",
-        "quote_last": "",
+        "quote_time_case": "7:25 p.m.",
+        "quote_first": "Cuando el obispo condujo a los tres hombres al escenario a las ",
+        "quote_last": ", fue el único momento esa noche en que todos en la sala aplaudieron. Giles tomó asiento y miró al público abarrotado. Calculó que más de mil personas del público habían acudido a presenciar las justas.",
         "title": "El secreto mejor guardado",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "002961",
+        "id": "002914",
         "time": "19:25",
-        "quote_time_case": "* siete veinti cinco",
-        "quote_first": "No, señor, sólo el ama de llaves. Ha estado en Nueva Inglaterra visitando a su hija. Siempre va allí en otoño. Debía regresar al Heathrow en el vuelo 214 de BA, que llegaría a las siete y veinticinco.",
-        "quote_last": "",
+        "quote_time_case": "siete y veinticinco",
+        "quote_first": "No, señor, sólo el ama de llaves. Ha estado en Nueva Inglaterra visitando a su hija. Siempre va allí en otoño. Debía regresar a Heathrow en el vuelo 214 de BA con llegada a las ",
+        "quote_last": ".",
         "title": "Un gusto por la muerte",
         "author": "P.D. James",
         "sfw": "sfw"
     },
     {
-        "id": "002962",
-        "time": "19:25",
-        "quote_time_case": "* veinticinco después de las siete",
-        "quote_first": "Cogió su sombrero y su abrigo y Clarice lo saludó y él saludó y miró el reloj y eran casi las siete y veinticinco.",
-        "quote_last": "",
-        "title": "La tarde es a las siete",
-        "author": "James Thurber",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002963",
+        "id": "002915",
         "time": "19:25",
         "quote_time_case": "7:25",
-        "quote_first": "Lo intentó una vez más a las ",
-        "quote_last": " y nada había cambiado. Corrió y corrió, once, doce, trece veces.<br>Arrojó su guitarra en el auto de su padre y condujo hacia el sur, hacia Prescott. La cinta Construido para derramar todavía estaba en la platina, y él simplemente la dejó continuar; bien podría ser la maldita banda sonora de todo.",
+        "quote_first": "Lo intentó una vez más en ",
+        "quote_last": ", y nada había cambiado. Funcionó y corrió, once, doce, trece veces. <br>Arrojó su guitarra en el auto de su padre y condujo hacia el sur, hacia Prescott. La cinta Construido para derramar todavía estaba en la platina, y él simplemente la dejó continuar; bien podría ser la maldita banda sonora de todo.",
         "title": "Cocinas del Gran Medio Oeste",
         "author": "J. Ryan Stradal",
         "sfw": "nsfw"
+    },
+    {
+        "id": "002916",
+        "time": "19:25",
+        "quote_time_case": "las siete y veinticinco",
+        "quote_first": "Recogió su sombrero y su abrigo y Clarice lo saludó y él lo saludó y miró el reloj y eran casi ",
+        "quote_last": ".",
+        "title": "La tarde es a las siete",
+        "author": "James Thurber",
+        "sfw": "unknown"
     }
 ]

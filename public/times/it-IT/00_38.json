@@ -2,9 +2,9 @@
     {
         "id": "000119",
         "time": "00:38",
-        "quote_time_case": "* mezzanotte e trentotto",
-        "quote_first": "Hai lasciato l'edificio principale dell'ospedale verso mezzanotte. Hai parlato con il portiere del cancello principale alle dodici e trentotto del mattino. Dove ti trovavi in ​​quegli orari?",
-        "quote_last": "",
+        "quote_time_case": "dodici e trentotto",
+        "quote_first": "Hai lasciato l'edificio principale dell'ospedale verso mezzanotte. Hai parlato con il portiere del cancello principale alle ",
+        "quote_last": " Dove ti trovavi in quegli orari?",
         "title": "Sindone per un usignolo",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -13,7 +13,7 @@
         "id": "000120",
         "time": "00:38",
         "quote_time_case": "mezzanotte e trentotto minuti",
-        "quote_first": "Da qualche parte aveva perso tre giorni; perché era entrato nel velo ardente giovedì, ",
+        "quote_first": "Da qualche parte aveva perso tre giorni; poiché era entrato nel velo ardente giovedì, ",
         "quote_last": ". SÌ. Ma mantieni la calma. In gioco c'è qualcosa di più di tre giorni persi. Ci deve essere; altrimenti perché la polizia?",
         "title": "Ristrutturato",
         "author": "Alfred Bester",
@@ -23,8 +23,8 @@
         "id": "000121",
         "time": "00:38",
         "quote_time_case": "00:38",
-        "quote_first": "Justin accese la luce e guardò stordito la radiosveglia della Sony che diceva che erano le ",
-        "quote_last": ". Le urla nel suo sogno erano state dolorosamente, spaventosamente reali, ma non riusciva a ricordare da dove provenissero.",
+        "quote_first": "Justin accese la luce e guardò stordito la radiosveglia della Sony che diceva che era ",
+        "quote_last": " Le urla nel suo sogno erano state dolorosamente, spaventosamente reali, ma poteva non ricordavo da dove provenissero le urla.",
         "title": "Nido di corvo",
         "author": "G.V. Miller",
         "sfw": "unknown"

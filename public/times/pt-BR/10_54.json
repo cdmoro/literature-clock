@@ -2,9 +2,9 @@
     {
         "id": "001626",
         "time": "10:54",
-        "quote_time_case": "* seis minutos para as onze",
-        "quote_first": "O burburinho da conversa nervosa cessou às seis para as onze, quando um homem alto e elegante, em traje de gala, entrou na sala, parou ao pé da escada e virou-se para encarar a multidão reunida.",
-        "quote_last": "",
+        "quote_time_case": "seis minutos para as onze",
+        "quote_first": "O burburinho da conversa nervosa cessou às ",
+        "quote_last": " quando um homem alto e elegante, em traje de banho, entrou na sala, parou ao pé da escada e virou-se para encarar a reunião reunida.",
         "title": "Este era um homem",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -14,7 +14,7 @@
         "time": "10:54",
         "quote_time_case": "10:54 GMT",
         "quote_first": "",
-        "quote_last": "<br>\"Escritório do Comandante Hawksby.\"<br>\"É Bruce Lamont, Angela. Você pode me passar para o chefe?\"<br>\"Ele ainda está na Itália, Bruce. Eu estou não o espero de volta até segunda-feira.\"",
+        "quote_last": "<br>\"Escritório do Comandante Hawksby.\"<br>\"É Bruce Lamont, Angela. Você pode me passar para o chefe?\"<br> \"Ele ainda está na Itália, Bruce. Não espero que ele volte antes de segunda-feira.\"",
         "title": "Nada arriscado",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -24,7 +24,7 @@
         "time": "10:54",
         "quote_time_case": "10h54",
         "quote_first": "Eram ",
-        "quote_last": ". Seu telefonema chegaria em um minuto. Eles aconteciam em horários diferentes todas as manhãs e ela tinha um gráfico de plástico laminado que lhe dizia a que horas esperar a ligação em cada dia.",
+        "quote_last": " Seu telefonema chegaria em um minuto. Eles aconteciam em horários diferentes todas as manhãs e ela tinha um gráfico de plástico laminado que lhe dizia a que horas esperar a ligação em cada dia.",
         "title": "Última chamada",
         "author": "Warren Murphy and Richard Sapir",
         "sfw": "sfw"
@@ -33,8 +33,8 @@
         "id": "001629",
         "time": "10:54",
         "quote_time_case": "10h54",
-        "quote_first": "Estou lhe dizendo que você pagou 6.495 no Bennington's Bank, na High Street, às ",
-        "quote_last": " de hoje, insistiu Frost.<br>\"E estou lhe dizendo que não\", cuspiu o homem.",
+        "quote_first": "Estou lhe dizendo que você pagou 6.495 no Bennington's Bank na High Street às ",
+        "quote_last": " hoje, insistiu Frost.<br>\"E estou lhe dizendo Eu não cuspi o homem.",
         "title": "Geada forte",
         "author": "R.D. Wingfield",
         "sfw": "sfw"

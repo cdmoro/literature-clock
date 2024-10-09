@@ -2,9 +2,9 @@
     {
         "id": "001005",
         "time": "07:42",
-        "quote_time_case": "* 7:42",
-        "quote_first": "Então ele realmente não teve escolha a não ser fazer uma visita ocasional à sala de estar, onde os ponteiros do relógio de pêndulo indicavam agora, de forma bastante inequívoca, que eram 7h42.",
-        "quote_last": "",
+        "quote_time_case": "7:42",
+        "quote_first": "Então ele realmente não teve escolha a não ser fazer uma visita ocasional à sala de estar, onde os ponteiros do relógio de pêndulo agora indicavam, de forma bastante inequívoca, que era ",
+        "quote_last": ".",
         "title": "A rodovia Lincoln",
         "author": "Amor Towles",
         "sfw": "unknown"
@@ -13,8 +13,8 @@
         "id": "001006",
         "time": "07:42",
         "quote_time_case": "sete e quarenta e dois minutos",
-        "quote_first": "Eu estava na manga do ninja tecnológico há apenas algumas horas – ",
-        "quote_last": ", de acordo com o mostrador de tempo gravado em meu campo de visão superior esquerdo – mas não houve nenhum dos efeitos colaterais habituais de download.",
+        "quote_first": "Eu estava na manga do ninja tecnológico há apenas algumas horas — ",
+        "quote_last": " de acordo com o mostrador de tempo gravado em meu campo de visão superior esquerdo — mas não houve nenhum dos efeitos colaterais usuais de download.",
         "title": "Carbono Alterado",
         "author": "Richard K. Morgan",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "001007",
         "time": "07:42",
-        "quote_time_case": "* Sete quarenta e dois",
-        "quote_first": "Sete e quarenta e dois da manhã, Sr. Gasparian: eu o amaldiçoo. Amaldiçoo seus braços para que murchem, morram e caiam do seu corpo.",
-        "quote_last": "",
+        "quote_time_case": "Sete e quarenta e dois",
+        "quote_first": "",
+        "quote_last": " da manhã, Sr. Gasparian: Eu o amaldiçoo. Amaldiçoo seus braços para que murchem, morram e caiam do seu corpo.",
         "title": "Sangramentos Mágicos",
         "author": "Ilona Andrews",
         "sfw": "unknown"

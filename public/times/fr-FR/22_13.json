@@ -2,9 +2,9 @@
     {
         "id": "003333",
         "time": "22:13",
-        "quote_time_case": "* dix-treize",
-        "quote_first": "Il est dix heures trente, annonça Clancy. \"Dans deux minutes encore…\"<br>\"Heure de publication\", dis-je.",
-        "quote_last": "",
+        "quote_time_case": "dix-treize",
+        "quote_first": "Il est ",
+        "quote_last": ", annonça Clancy. \"Dans deux minutes encore…\"<br>\"Heure de publication\", dis-je.",
         "title": "Les sprinters de l’hymne",
         "author": "Ray Bradbury",
         "sfw": "unknown"

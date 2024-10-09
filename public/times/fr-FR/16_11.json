@@ -12,9 +12,9 @@
     {
         "id": "002448",
         "time": "16:11",
-        "quote_time_case": "* quatre heures onze minutes",
-        "quote_first": "À quatre heures et onze minutes, le premier bus quitta le parking, monta la rampe et sortit dans la rue principale.",
-        "quote_last": "",
+        "quote_time_case": "quatre heures onze minutes",
+        "quote_first": "À ",
+        "quote_last": ", le premier bus a quitté le parking, a monté la rampe et est sorti dans la rue principale.",
         "title": "Rien de risqué",
         "author": "Jeffrey Archer",
         "sfw": "sfw"

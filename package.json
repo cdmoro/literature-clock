@@ -6,8 +6,11 @@
   "scripts": {
     "dev": "vite --open",
     "build": "tsc & vite build",
+    "host": "vite --host",
     "preview": "vite preview",
-    "test": "vitest --environment=jsdom"
+    "test": "vitest --environment=jsdom",
+    "generate-times": "python ./scripts/generate_times.py",
+    "check-quotes": "python ./scripts/check_quotes.py"
   },
   "repository": {
     "type": "git",
@@ -27,6 +30,7 @@
     "vitest": "^1.6.0"
   },
   "dependencies": {
+    "html2canvas-pro": "^1.5.8",
     "lunarphase-js": "^2.0.3"
   }
 }

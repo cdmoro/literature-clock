@@ -2,9 +2,9 @@
     {
         "id": "001541",
         "time": "10:13",
-        "quote_time_case": "* dez e treze minutos",
-        "quote_first": "A propósito, disse o primeiro, \"Consegui esta manhã telegrafar as próprias palavras da ordem para meu primo às dez e dezessete.\"<br>\"E enviei para o Daily Telegraph às dez e treze. .\"<br>\"Bravo, Sr. Blount!\"<br>\"Muito bem, M. Jolivet.\"",
-        "quote_last": "",
+        "quote_time_case": "dez e treze",
+        "quote_first": "A propósito, disse o primeiro, \"Consegui esta manhã telegrafar as próprias palavras da ordem para meu primo às dez e dezessete minutos.\"<br>\"E enviei para o Daily Telegraph às ",
+        "quote_last": ".\"<br>\"Bravo, Sr. Blount!\"<br>\"Muito bem, M. Jolivet.\"",
         "title": "Michel Strogoff",
         "author": "Jules Verne",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "001542",
         "time": "10:13",
-        "quote_time_case": "dez e treze",
+        "quote_time_case": "dez-treze",
         "quote_first": "São ",
-        "quote_last": " anunciou Clancy. \"Em mais dois minutos-\"<br>\"Hora da postagem\", eu disse.",
+        "quote_last": ", anunciou Clancy. \"Em mais dois minutos-\"<br>\"Hora da postagem\", eu disse.",
         "title": "Os velocistas do hino",
         "author": "Ray Bradbury",
         "sfw": "unknown"

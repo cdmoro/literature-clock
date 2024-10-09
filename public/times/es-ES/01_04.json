@@ -1,22 +1,22 @@
 [
     {
-        "id": "000181",
+        "id": "000176",
+        "time": "01:04",
+        "quote_time_case": "la una y cuatro minutos",
+        "quote_first": "El reloj eléctrico en los techos marcaba ",
+        "quote_last": " mientras pasaban. Lo que todavía estaba despierto era la mayoría de ellos dentro de los brillantes escaparates de los restaurantes, y los grandes porteadores estaban apoyados, somnolientos, en las jambas de las puertas de sus hostales. En el taxi, Ralston se preguntó qué diría el presidente si pudiera verlo entonces, persiguiendo por toda la ciudad a una joven y su acompañante masculino.",
+        "title": "Mortmain",
+        "author": "Arthur Cheney Train",
+        "sfw": "sfw"
+    },
+    {
+        "id": "000177",
         "time": "01:04",
         "quote_time_case": "1:04",
-        "quote_first": "Había llamado dos veces durante las veinticuatro horas posteriores al derrame cerebral del viejo bastardo, cuando se hizo evidente que iba a apagarlo. El teléfono no fue contestado en ninguna de las dos ocasiones. Llamó de nuevo después de la muerte de su padre, esta vez a la ",
-        "quote_last": " de la mañana del 2 de agosto. Algún borracho había contestado el teléfono.",
+        "quote_first": "Había llamado dos veces durante las veinticuatro horas posteriores al derrame cerebral del viejo bastardo, cuando se hizo evidente que iba a apagarlo. El teléfono no fue respondido en ninguna de las dos ocasiones.<br>Volvió a llamar después de la muerte de su padre, esta vez a las ",
+        "quote_last": " la mañana del 2 de agosto. Un borracho había contestado el teléfono.",
         "title": "Los Tommyknockers",
         "author": "Stephen King",
         "sfw": "nsfw"
-    },
-    {
-        "id": "000182",
-        "time": "01:04",
-        "quote_time_case": "la una y cuatro",
-        "quote_first": "El reloj eléctrico situado en los tejados marcaba ",
-        "quote_last": " cuando pasaban. Lo que todavía estaba despierto era la mayoría de ellos dentro de los brillantes escaparates de los restaurantes, y los grandes porteadores se apoyaban adormilados en los postes de las puertas de sus hostales. En el taxi, Ralston se preguntó qué diría el presidente si pudiera verlo entonces, persiguiendo por toda la ciudad a una joven y su acompañante masculino.",
-        "title": "mortmain",
-        "author": "Arthur Cheney Train",
-        "sfw": "sfw"
     }
 ]

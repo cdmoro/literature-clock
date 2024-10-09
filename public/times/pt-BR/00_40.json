@@ -2,9 +2,9 @@
     {
         "id": "000123",
         "time": "00:40",
-        "quote_time_case": "* doze e quarenta",
-        "quote_first": "Ele olhou ao redor da carruagem em que estava sentado. Ela estava cheia de gente da noite, garçons, enfermeiras, frequentadores de festas, bêbados – até mesmo um guarda de trânsito. O trem finalmente parou em sua estação às 12h40.",
-        "quote_last": "",
+        "quote_time_case": "doze-quarenta",
+        "quote_first": "Ele olhou ao redor da carruagem em que estava sentado. Ela estava cheia de gente da noite, garçons, enfermeiras, frequentadores de festas, bêbados – até mesmo um guarda de trânsito. O trem finalmente parou em sua estação às ",
+        "quote_last": ".",
         "title": "Uma questão de honra",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000124",
         "time": "00:40",
-        "quote_time_case": "* doze e quarenta",
-        "quote_first": "Na opinião do patologista forense que viu o corpo às 12h40, a Sra. O'Keefe morrera pouco depois de voltar para casa.",
-        "quote_last": "",
+        "quote_time_case": "meio-dia e quarenta",
+        "quote_first": "Na opinião do patologista forense que viu o corpo às ",
+        "quote_last": ", a Sra. O'Keefe morreu logo após seu retorno para casa.",
         "title": "Uma Certa Justiça",
         "author": "P.D. James",
         "sfw": "sfw"

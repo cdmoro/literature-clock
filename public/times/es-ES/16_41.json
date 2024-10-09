@@ -1,21 +1,21 @@
 [
     {
-        "id": "002551",
+        "id": "002513",
         "time": "16:41",
-        "quote_time_case": "* diecinueve minutos para las cinco",
-        "quote_first": "Había abierto la puerta a las cinco menos diecinueve minutos, pensando que tenía cierto control sobre su mundo. Ahora sabía que era mentira. Todo lo que alguna vez pensó que sabía estaba al revés; todo había cambiado.",
-        "quote_last": "",
-        "title": "En quién confías",
+        "quote_time_case": "diecinueve minutos menos las cinco",
+        "quote_first": "Había abierto la puerta a las ",
+        "quote_last": ", pensando que tenía cierto control sobre su mundo. Ahora sabía que era mentira. Todo lo que alguna vez pensó que sabía estaba al revés; todo había cambiado.",
+        "title": "¿En quién confías?",
         "author": "Melissa James",
         "sfw": "sfw"
     },
     {
-        "id": "002552",
+        "id": "002514",
         "time": "16:41",
-        "quote_time_case": "* justo después de las 4:40",
-        "quote_first": "Eran poco más de las 4:40 de la tarde del miércoles. Al fondo de la sala de redacción estaba la oficina de Graham, varios escalones más arriba del área del bullpen que iba desde la puerta principal hasta la oficina. Graham estaba en su escritorio tratando de redactar un editorial en su computadora, pero lo distrajo la cobertura televisiva del funeral de la presidenta Elizabeth Sanderski.",
-        "quote_last": "",
-        "title": "corazones de leon",
+        "quote_time_case": "poco después de las 4:40",
+        "quote_first": "Eran ",
+        "quote_last": " del miércoles por la tarde. Al fondo de la sala de redacción estaba la oficina de Graham, varios escalones más arriba del área del bullpen que iba desde la puerta principal hasta la oficina. Graham estaba en su escritorio tratando de redactar un editorial en su computadora, pero lo distrajo la cobertura televisiva del funeral de la presidenta Elizabeth Sanderski.",
+        "title": "Corazones de león",
         "author": "Ray Keating",
         "sfw": "sfw"
     }

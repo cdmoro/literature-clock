@@ -1,16 +1,6 @@
 [
     {
-        "id": "002320",
-        "time": "15:08",
-        "quote_time_case": "3 h 8 m p.m.",
-        "quote_first": "Un telégrafo inalámbrico privado que transmitiría mediante un sistema de puntos y rayas el resultado de una desventaja equina nacional (en carrera plana o con obstáculos) de 1 o más millas y furlongs ganada por un forastero con una probabilidad de 50 a 1 a las ",
-        "quote_last": " en Ascot (hora de Greenwich), siendo recibido el mensaje y disponible para apuestas en Dublín a las 14.59 horas.",
-        "title": "Ulises",
-        "author": "James Joyce",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002321",
+        "id": "002284",
         "time": "15:08",
         "quote_time_case": "las tres y ocho minutos",
         "quote_first": "La niebla se estaba disipando ahora y apenas podía distinguir la Grange misma: una sombra oscura y sustancial marcada por manchas de luces que entraban por las ventanas. Su reloj marcaba que eran ",
@@ -18,5 +8,15 @@
         "title": "La Torre Negra",
         "author": "P.D. James",
         "sfw": "sfw"
+    },
+    {
+        "id": "002285",
+        "time": "15:08",
+        "quote_time_case": "3 hr 8 m p.m.",
+        "quote_first": "Un telégrafo inalámbrico privado que transmitiría mediante un sistema de puntos y rayas el resultado de una desventaja equina nacional (plana o con obstáculos) de 1 o más millas y furlongs ganada por un forastero con una probabilidad de 50 a 1 en ",
+        "quote_last": " en Ascot (hora de Greenwich), el mensaje se recibió y estuvo disponible para fines de apuestas en Dublín a las 2:59 p.m.",
+        "title": "Ulises",
+        "author": "James Joyce",
+        "sfw": "unknown"
     }
 ]

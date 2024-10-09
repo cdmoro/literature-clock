@@ -4,7 +4,7 @@
         "time": "05:45",
         "quote_time_case": "sei meno un quarto",
         "quote_first": "“Ma è ora di andare a letto: sono già le ",
-        "quote_last": ".”<br>E infatti cominciava già ad albeggiare: i giovani vuotarono i bicchieri e poi si salutarono.",
+        "quote_last": ".”<br>E infatti già cominciava ad albeggiare: i giovani vuotarono le loro bicchieri e poi si salutarono.",
         "title": "La regina di picche",
         "author": "Alexsander Pushkin",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000752",
         "time": "05:45",
-        "quote_time_case": "sei meno un quarto",
+        "quote_time_case": "alle sei meno un quarto",
         "quote_first": "\"Le ",
-        "quote_last": "\", rispose la levatrice.<br>\"E se stessi morendo davvero?\" - pensò Olga Michalovna, guardando la testa del marito e i vetri su cui batteva la pioggia.",
+        "quote_last": "\", rispose la levatrice.<br>\"E se stessi morendo davvero?\" - pensò Ol'ga Michalovna, guardando la testa del marito e i vetri delle finestre su cui batteva la pioggia.",
         "title": "La festa",
         "author": "Anton Pavlovich Chekhov",
         "sfw": "sfw"
@@ -24,7 +24,7 @@
         "time": "05:45",
         "quote_time_case": "5:45",
         "quote_first": "Alle ",
-        "quote_last": " del mattino seguente, il generale era fuori dalla tenda di George in alta uniforme, portando una valigetta di pelle nera.",
+        "quote_last": " del mattino seguente, il generale era fuori dalla tenda di George in alta uniforme e con una valigetta di pelle nera.",
         "title": "Vie di gloria",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -34,8 +34,8 @@
         "time": "05:45",
         "quote_time_case": "5:45",
         "quote_first": "Alle ",
-        "quote_last": " un trasformatore di corrente su un palo accanto al deposito di camion abbandonato dei fratelli Tracker è esploso in un lampo di luce viola, spruzzando pezzi contorti di metallo sul tetto di scandole.",
-        "title": "ESSO",
+        "quote_last": " un trasformatore di corrente su un palo accanto al deposito di camion abbandonato dei fratelli Tracker esplose in un lampo di luce viola, spruzzando pezzi contorti di metallo sul tetto di scandole.",
+        "title": "It",
         "author": "Stephen King",
         "sfw": "unknown"
     }

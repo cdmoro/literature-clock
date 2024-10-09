@@ -4,7 +4,7 @@
         "time": "13:15",
         "quote_time_case": "13h15",
         "quote_first": "À ",
-        "quote_last": ". Fletcher leva les yeux vers le réceptionniste, qui eut l'air désolé et lui proposa un deuxième café.",
+        "quote_last": " Fletcher leva les yeux vers le réceptionniste, qui avait l'air désolé et lui proposa un deuxième café.",
         "title": "Fils de fortune",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "002021",
         "time": "13:15",
-        "quote_time_case": "* Un quinze",
-        "quote_first": "Je me suis levé lentement et j'ai parcouru le couloir.<br>«Je suis 𝘴𝘭𝘦𝘦𝘱𝘪𝘯𝘨», ai-je sifflé à travers la porte. J'ai regardé par le judas : Reva a l'air débraillée et dérangée.<br>\"Puis-je entrer ?\" elle a demandé. \"J'ai vraiment besoin de parler.\"<br>\"Puis-je t'appeler plus tard ? Quelle heure est-il ? »<br>« Une heure quinze. J'ai essayé d'appeler\", a-t-elle déclaré. « Tiens, le portier a envoyé ton courrier. J'ai besoin de parler. C'est sérieux.\"",
-        "quote_last": "",
+        "quote_time_case": "Une heure quinze",
+        "quote_first": "Je me suis levé lentement et j'ai parcouru le couloir.<br>«Je suis 𝘴𝘭𝘦𝘦𝘱𝘪𝘯𝘨», ai-je sifflé à travers la porte. J'ai regardé par le judas : Reva a l'air débraillée et dérangée.<br>\"Puis-je entrer ?\" elle a demandé. \"J'ai vraiment besoin de parler.\"<br>\"Puis-je t'appeler plus tard ? Quelle heure est-il ? »<br>« ",
+        "quote_last": ". J'ai essayé d'appeler\", a-t-elle déclaré. « Tiens, le portier a envoyé ton courrier. J'ai besoin de parler. C'est sérieux.\"",
         "title": "Mon année de repos et de détente",
         "author": "Ottessa Moshfegh",
         "sfw": "unknown"
@@ -33,7 +33,7 @@
         "id": "002023",
         "time": "13:15",
         "quote_time_case": "Une heure quinze",
-        "quote_first": "Où sont mesdames et messieurs ? » demanda Aleyn.<br>\"Monsieur, dans le jardin\", dit Bunce.<br>\"À quelle heure est le déjeuner ?\"<br>\"",
+        "quote_first": "Où sont mesdames et messieurs ? » demanda Aleyn.<br>« Monsieur, dans le jardin », dit Bunce.<br>« À quelle heure est le déjeuner ? »<br>\"",
         "quote_last": ".\"",
         "title": "Un homme gisait mort",
         "author": "Ngaio Marsh",
@@ -42,9 +42,9 @@
     {
         "id": "002024",
         "time": "13:15",
-        "quote_time_case": "Une heure et quart",
-        "quote_first": "L'horloge a attiré l'attention de Miss LaFosse. \"Bonté divine!\" Elle haleta. \"Regardez l'heure. ",
-        "quote_last": ". Vous devez mourir de faim.\" Elle se tourna impétueusement vers Miss Pettigrew.",
+        "quote_time_case": "1 heure et quart",
+        "quote_first": "L'horloge a attiré l'attention de Miss LaFosse. \"Mon Dieu!\" elle haleta. \"Regardez l'heure. ",
+        "quote_last": ". Vous devez être affamé.\" Elle se tourna impétueusement vers Miss Pettigrew.",
         "title": "Miss Pettigrew vit un jour",
         "author": "Winifred Watson",
         "sfw": "unknown"

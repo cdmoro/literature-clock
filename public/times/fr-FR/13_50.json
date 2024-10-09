@@ -22,9 +22,9 @@
     {
         "id": "002074",
         "time": "13:50",
-        "quote_time_case": "* une heure cinquante",
-        "quote_first": "Le meilleur train de la journée était le train à 150 en provenance de Paddington qui atteignait Polgarwith juste après sept heures.",
-        "quote_last": "",
+        "quote_time_case": "one-cinquante",
+        "quote_first": "Le meilleur train de la journée était le ",
+        "quote_last": " en provenance de Paddington qui atteignait Polgarwith juste après sept heures.",
         "title": "Le mystère des Cornouailles",
         "author": "Agatha Christie",
         "sfw": "unknown"

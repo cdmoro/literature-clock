@@ -1,32 +1,32 @@
 [
     {
-        "id": "001845",
+        "id": "001818",
         "time": "11:59",
-        "quote_time_case": "* cerca de las doce",
-        "quote_first": "Allí hay un gran reloj de pie, y cuando las manecillas se acercaban a las doce no me importa confesar que estaba más nervioso que un gato.",
-        "quote_last": "",
+        "quote_time_case": "un minuto antes de las doce",
+        "quote_first": "Terry miró al anciano con ansiedad. \"No ha firmado ningún papel, ¿verdad, señor Langley?\" Miró su reloj. “Son sólo ",
+        "quote_last": ". Todavía estoy a tiempo de aprovechar esa opción. ¡Aquí está tu cheque!",
+        "title": "En la isla de la aventura",
+        "author": "Bess Moyer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001819",
+        "time": "11:59",
+        "quote_time_case": "cerca de las doce",
+        "quote_first": "Hay un gran reloj de pie allí, y cuando las manecillas marcaron ",
+        "quote_last": " no me importa confesar que estaba tan nervioso como un gato.",
         "title": "La aventura de Johnnie Waverley: una historia de Hércules Poirot",
         "author": "Agatha Christie",
         "sfw": "unknown"
     },
     {
-        "id": "001846",
+        "id": "001820",
         "time": "11:59",
-        "quote_time_case": "* cerca del mediodía",
-        "quote_first": "Al día siguiente, alrededor del mediodía, un decurión con diez jinetes se acercó a Nazaret desde el sur, es decir, desde Jerusalén. El lugar era entonces un pueblo disperso, encaramado en la ladera de una colina, y tan insignificante que su única calle era poco más que un camino muy transitado por el ir y venir de rebaños y manadas.",
-        "quote_last": "",
+        "quote_time_case": "alrededor del mediodía",
+        "quote_first": "Al día siguiente, ",
+        "quote_last": ", un decurión con su mando de diez jinetes se acercó a Nazaret desde el sur, es decir, desde la dirección de Jerusalén. El lugar era entonces un pueblo disperso, encaramado en la ladera de una colina, y tan insignificante que su única calle era poco más que un camino muy transitado por el ir y venir de rebaños y manadas.",
         "title": "Ben Hur",
         "author": "Lew Wallace",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001847",
-        "time": "11:59",
-        "quote_time_case": "* un minuto antes de las doce",
-        "quote_first": "Terry miró al anciano con ansiedad. \"No ha firmado ningún papel, ¿verdad, señor Langley?\" Ella miró su reloj. “Faltan sólo un minuto para las doce. Todavía estoy a tiempo de aprovechar esa opción. ¡Aquí está tu cheque!",
-        "quote_last": "",
-        "title": "En la isla de la aventura",
-        "author": "Bess Moyer",
         "sfw": "sfw"
     }
 ]

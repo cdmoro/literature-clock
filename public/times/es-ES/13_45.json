@@ -1,32 +1,32 @@
 [
     {
-        "id": "002095",
-        "time": "13:45",
-        "quote_time_case": "* un cuarto para las dos",
-        "quote_first": "Ese período siempre tan peligroso, cuando el portillo está mal, los diez minutos antes del almuerzo, resultó fatal para dos enemigos más. El último hombre acababa de llegar a las ventanillas, con el marcador en ciento treinta y uno, cuando llegaron las dos menos cuarto y con ellas el intervalo para el almuerzo.",
-        "quote_last": "",
-        "title": "Miguel",
-        "author": "P.G. Wodehouse",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002096",
-        "time": "13:45",
-        "quote_time_case": "* uno cuarenta cinco",
-        "quote_first": "El golpe cayó exactamente a la una cuarenta y cinco (hora de verano). Benson, el mayordomo de mi tía Agatha, me estaba ofreciendo las patatas fritas en ese momento, y mi emoción era tal que lancé seis de ellas sobre el aparador con la cuchara.",
-        "quote_last": "",
-        "title": "Sir Roderick viene a almorzar",
-        "author": "P.G. Wodehouse",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002097",
+        "id": "002065",
         "time": "13:45",
         "quote_time_case": "1:45",
-        "quote_first": "Háganos saber el momento en que Harvey deja su caja. Supongo que alrededor de la ",
-        "quote_last": " vendrá y mirará a los corredores y ciclistas para las dos en punto, lo que nos da una hora clara”.",
+        "quote_first": "Háganos saber el momento en que Harvey deja su caja. Supongo que alrededor de ",
+        "quote_last": " vendrá y mirará a los corredores y jinetes a las dos en punto, lo que nos da una hora clara”.",
         "title": "Ni un centavo más, ni un centavo menos",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
+    },
+    {
+        "id": "002066",
+        "time": "13:45",
+        "quote_time_case": "dos menos cuarto",
+        "quote_first": "Ese período siempre tan peligroso, cuando el portillo está mal, los diez minutos antes del almuerzo, resultó fatal para dos enemigos más. El último hombre acababa de llegar a los portillos, con el marcador en ciento treinta y uno, cuando llegó el ",
+        "quote_last": ", y con él el intervalo del almuerzo.",
+        "title": "Micro",
+        "author": "P.G. Wodehouse",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002067",
+        "time": "13:45",
+        "quote_time_case": "una cuarenta y cinco",
+        "quote_first": "El golpe cayó exactamente a las ",
+        "quote_last": " (horario de verano). Benson, el mayordomo de mi tía Agatha, me estaba ofreciendo las patatas fritas en ese momento, y mi emoción era tal que lancé seis de ellas sobre el aparador con la cuchara.",
+        "title": "Sir Roderick viene a almorzar",
+        "author": "P.G. Wodehouse",
+        "sfw": "unknown"
     }
 ]

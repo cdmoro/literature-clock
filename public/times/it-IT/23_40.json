@@ -2,9 +2,9 @@
     {
         "id": "003529",
         "time": "23:40",
-        "quote_time_case": "* mezzanotte meno venti",
-        "quote_first": "Mancavano circa venti minuti alle dodici. Fu allora che sentii l'ascensore. È di fronte alla suite della sorella... beh, immagino che tu l'abbia visto. Ho solo sentito il leggero clangore delle porte e poi una specie di fusa mentre scendevano.",
-        "quote_last": "",
+        "quote_time_case": "dodici meno venti",
+        "quote_first": "Mancavano circa ",
+        "quote_last": ". Fu allora che sentii l'ascensore. È di fronte alla suite della sorella... beh, immagino che tu l'abbia visto. Ho solo sentito il leggero clangore delle porte e poi una specie di fusa mentre scendevano.",
         "title": "Il paziente privato",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "003530",
         "time": "23:40",
-        "quote_time_case": "* 20 minuti fino a mezzanotte",
-        "quote_first": "Grant notò l'ora. \"Mancano 20 minuti a mezzanotte. Chi vuole aiutarmi a distribuire i bicchieri e versare lo champagne?\"",
-        "quote_last": "",
+        "quote_time_case": "20 minuti a mezzanotte",
+        "quote_first": "Grant notò l'ora. \"Mancano ",
+        "quote_last": ". Chi vuole aiutarmi a distribuire i bicchieri e versare lo champagne?\"",
         "title": "Monaco Guerriero",
         "author": "Ray Keating",
         "sfw": "sfw"
@@ -34,7 +34,7 @@
         "time": "23:40",
         "quote_time_case": "Venti minuti prima di mezzanotte",
         "quote_first": "",
-        "quote_last": ", prima che Oliver mettesse fine ai festeggiamenti, lei cedette al suo impulso e mandò un messaggio a suo figlio, ricordandogli il coprifuoco concordato di comune accordo.",
+        "quote_last": ", prima che Oliver mettesse fine ai festeggiamenti, cedette al suo impulso e mandò un messaggio a suo figlio, ricordandogli il coprifuoco concordato di comune accordo.",
         "title": "Dietro la bugia",
         "author": "Emilya Naymark",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "003533",
         "time": "23:40",
-        "quote_time_case": "* 11:40",
-        "quote_first": "Tutti noi abbiamo le mappe e gli apparecchi di vario genere che si possono avere. Io e il professor Van Helsing partiremo stasera con il treno delle 23:40 per Veresti, dove prenderemo una carrozza per raggiungere il Passo Borgo. Porteremo una buona quantità di denaro contante, poiché dobbiamo comprare una carrozza e dei cavalli.",
-        "quote_last": "",
+        "quote_time_case": "11:40",
+        "quote_first": "Tutti noi abbiamo le mappe e gli apparecchi di vario genere che si possono avere. Io e il professor Van Helsing partiremo stasera con il treno ",
+        "quote_last": " per Veresti, dove prenderemo una carrozza per andare al Passo Borgo. Porteremo una buona quantità di denaro contante, poiché dobbiamo comprare una carrozza e dei cavalli.",
         "title": "Dracula",
         "author": "Bram Stoker",
         "sfw": "unknown"

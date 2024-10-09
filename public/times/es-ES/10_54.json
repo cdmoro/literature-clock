@@ -1,42 +1,42 @@
 [
     {
-        "id": "001652",
+        "id": "001626",
         "time": "10:54",
-        "quote_time_case": "* seis minutos para las once",
-        "quote_first": "El murmullo de la charla nerviosa cesó a las once menos seis minutos, cuando un hombre alto y elegante vestido de mañana entró en la habitación, se detuvo al pie de la escalera y se volvió hacia los allí reunidos.",
-        "quote_last": "",
+        "quote_time_case": "las once menos seis minutos",
+        "quote_first": "El murmullo de la charla nerviosa cesó a las ",
+        "quote_last": " cuando un hombre alto y elegante vestido de mañana entró en la habitación, se detuvo al pie de la escalera y Se giró para mirar a la reunión reunida.",
         "title": "Este era un hombre",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001653",
+        "id": "001627",
         "time": "10:54",
-        "quote_time_case": "10:54",
-        "quote_first": "Le digo que pagó 6.495 en el banco Bennington's de High Street a las ",
-        "quote_last": " de la mañana de hoy, insistió Frost. \"Y le digo que no\", escupió el hombre.",
-        "title": "Escarcha dura",
-        "author": "R.D. Wingfield",
+        "quote_time_case": "10:54 GMT",
+        "quote_first": "",
+        "quote_last": "<br>\"Oficina del comandante Hawksby\".<br>\"Soy Bruce Lamont, Angela. ¿Puedes comunicarme con el jefe?\"<br> \"Todavía está en Italia, Bruce. No espero que regrese hasta el lunes\".",
+        "title": "Nada aventurado",
+        "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001654",
+        "id": "001628",
         "time": "10:54",
-        "quote_time_case": "10:54 a.m.",
-        "quote_first": "Eran las ",
+        "quote_time_case": "10:54 A.M.",
+        "quote_first": "Eran ",
         "quote_last": " Su llamada telefónica llegaría en un minuto. Eran a diferentes horas cada mañana y ella tenía un gráfico plastificado que le decía a qué hora esperar la llamada cada día.",
         "title": "Última llamada",
         "author": "Warren Murphy and Richard Sapir",
         "sfw": "sfw"
     },
     {
-        "id": "001655",
+        "id": "001629",
         "time": "10:54",
-        "quote_time_case": "10:54 GMT",
-        "quote_first": "",
-        "quote_last": "<br>\"Oficina del comandante Hawksby.\"<br>\"Soy Bruce Lamont, Angela. ¿Puedes comunicarme con el jefe?\"<br>\"Aún está en Italia, Bruce. Estoy No lo espero de vuelta hasta el lunes.\"",
-        "title": "Nada arriesgado",
-        "author": "Jeffrey Archer",
+        "quote_time_case": "10:54 a.m.",
+        "quote_first": "Te digo que pagaste 6.495 en el banco Bennington's de High Street a las ",
+        "quote_last": " hoy, insistió Frost.<br>\"Y te lo digo Yo no\", escupió el hombre.",
+        "title": "Escarcha dura",
+        "author": "R.D. Wingfield",
         "sfw": "sfw"
     }
 ]

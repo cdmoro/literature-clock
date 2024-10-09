@@ -4,7 +4,7 @@
         "time": "02:22",
         "quote_time_case": "deux heures vingt-deux minutes",
         "quote_first": "Après deux autres visites, le praticien le plus célèbre a déclaré à Popanilla que son trouble était « incontestablement nerveux » ; qu'il s'était surexcité en parlant trop ; qu'à l'avenir il devra compter cinq entre chaque mot prononcé, ne jamais poser de questions et éviter la société ; c'est-à-dire, ne restez jamais à une soirée pour quelque raison que ce soit après ",
-        "quote_last": ", et ne vous laissez jamais inciter par aucune persuasion à dîner dehors plus d'une fois le même jour.",
+        "quote_last": ", et ne vous laissez jamais inciter par quelque persuasion à dîner dehors plus d'une fois le jour même. le même jour.",
         "title": "Le voyage du capitaine Popanilla",
         "author": "Benjamin Disraeli",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "000331",
         "time": "02:22",
-        "quote_time_case": "02h22",
+        "quote_time_case": "2h22 du matin",
         "quote_first": "Brusquement, son estomac grogna. Elle était trop excitée pour manger beaucoup après l'accident, et maintenant la faim la serre sérieusement.<br>Elle jeta à nouveau un coup d'œil à l'horloge.<br>",
-        "quote_last": ".",
+        "quote_last": "",
         "title": "Nom de code : Princesse",
         "author": "Christina Skye",
         "sfw": "unknown"

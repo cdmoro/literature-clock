@@ -2,9 +2,9 @@
     {
         "id": "002546",
         "time": "16:57",
-        "quote_time_case": "* Três minutos para as cinco",
-        "quote_first": "“Faltam três minutos para as cinco.”<br>“Por favor, espere, Sr. Vaughan, há alguém na outra linha. Só vou demorar um momento. Kaufman colocou o fone preto sobre a mesa, pegou o vermelho e discou um número.",
-        "quote_last": "",
+        "quote_time_case": "Três minutos para as cinco",
+        "quote_first": "“",
+        "quote_last": ".”<br>“Por favor, espere, Sr. Vaughan, há alguém na outra linha. Só vou demorar um momento. Kaufman colocou o fone preto sobre a mesa, pegou o vermelho e discou um número.",
         "title": "Mais poderoso que a espada",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,8 +12,8 @@
     {
         "id": "002547",
         "time": "16:57",
-        "quote_time_case": "pouco antes das 17h.",
-        "quote_first": "Tom O'Sullivan e Phillip Taylor estavam brincando no balcão da Nikki's Hot Dog Stand enquanto faziam seu pedido ",
+        "quote_time_case": "pouco antes das 17h",
+        "quote_first": "Tom O'Sullivan e Phillip Taylor estavam conversando no balcão da Nikki's Hot Dog Stand enquanto faziam seu pedido ",
         "quote_last": "",
         "title": "A ambição",
         "author": "Lee Strobel",
@@ -32,9 +32,9 @@
     {
         "id": "002549",
         "time": "16:57",
-        "quote_time_case": "* quase 17h00.",
-        "quote_first": "Depois de uma hora, eles pegaram um peixe listrado dourado e marrom que era meio pequeno e o colocaram de volta. Prager jurou que era um bebê walleye; Eva parecia ter certeza de que não.<br>Depois de mais uma hora afogando minhocas e perdendo-as em pequenos petiscos, eram quase 17h, e supostamente o melhor horário para pegar walleye era à noite; claramente, eles estavam muito ansiosos e começaram muito cedo.",
-        "quote_last": "",
+        "quote_time_case": "quase 17h00",
+        "quote_first": "Depois de uma hora, eles pegaram um peixe listrado dourado e marrom que era meio pequeno e o colocaram de volta. Prager jurou que era um bebê walleye; Eva parecia ter quase certeza de que não era.<br>Depois de mais uma hora afogando minhocas e perdendo-as em pequenos petiscos, eram ",
+        "quote_last": ", e supostamente o a melhor hora para pegar walleye era à noite; claramente, eles estavam muito ansiosos e começaram muito cedo.",
         "title": "Cozinhas do Grande Centro-Oeste",
         "author": "J. Ryan Stradal",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "002550",
         "time": "16:57",
-        "quote_time_case": "* três minutos para as cinco",
-        "quote_first": "Então, às três para as cinco — Pendel nunca duvidou que Osnard seria pontual — chega um Ford hatchback marrom com um adesivo da Avis no vidro traseiro e estaciona no espaço reservado aos clientes.",
-        "quote_last": "",
+        "quote_time_case": "três minutos para as cinco",
+        "quote_first": "Então, às ",
+        "quote_last": " - Pendel de alguma forma nunca duvidou que Osnard seria pontual - chega um Ford hatchback marrom com um adesivo da Avis na janela traseira e entra no espaço reservado para clientes.",
         "title": "O Alfaiate do Panamá",
         "author": "John le Carré",
         "sfw": "unknown"

@@ -4,7 +4,7 @@
         "time": "19:45",
         "quote_time_case": "19:45",
         "quote_first": "Immagino di sì. È morto di notte, oppure è stato visto vivo l'ultima volta da Grace Willson alle ",
-        "quote_last": ". quando ascoltò la sua confessione. Immagino che sia morto di noia.",
+        "quote_last": " quando ha ascoltato la sua confessione. Immagino che sia morto di noia.",
         "title": "La Torre Nera",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "002963",
         "time": "19:45",
-        "quote_time_case": "* alle otto meno un quarto di sera",
-        "quote_first": "Alle otto meno un quarto di sera, Emmett era seduto in un saloon fatiscente alla periferia di Manhattan con un bicchiere di birra e una fotografia di Harrison Hewett sul bancone davanti a lui.",
-        "quote_last": "",
+        "quote_time_case": "otto meno un quarto di sera",
+        "quote_first": "Alle ",
+        "quote_last": ", Emmett era seduto in un saloon fatiscente alla periferia di Manhattan con un bicchiere di birra e una fotografia di Harrison Hewett sul bancone. di fronte a lui.",
         "title": "L'autostrada Lincoln",
         "author": "Amor Towles",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "002964",
         "time": "19:45",
-        "quote_time_case": "alle otto meno un quarto",
-        "quote_first": "«Stasera, ",
-        "quote_last": ", verrà a trovarvi un gentiluomo che desidera consultarvi su una questione della massima importanza. I tuoi recenti servizi a una delle case reali d'Europa hanno dimostrato che sei una persona a cui ci si può tranquillamente affidare per questioni di importanza che difficilmente può essere esagerata. Questo resoconto di te lo abbiamo ricevuto da ogni parte. Sii nella tua camera a quell'ora e non prendertela se il tuo visitatore indossa una maschera.",
+        "quote_time_case": "otto meno un quarto",
+        "quote_first": "\"Vi verrà a trovare stasera, alle ",
+        "quote_last": "\", diceva, \"un gentiluomo che desidera consultarvi su una questione di momento molto profondo. I tuoi recenti servizi a una delle case reali d'Europa hanno dimostrato che sei una persona a cui ci si può tranquillamente affidare per questioni di importanza che difficilmente può essere esagerata. Questo resoconto di te lo abbiamo ricevuto da ogni parte. Sii nella tua camera a quell'ora e non prendertela se il tuo visitatore indossa una maschera.",
         "title": "Le avventure di Sherlock Holmes",
         "author": "Sir Arthur Conan Doyle",
         "sfw": "unknown"
@@ -32,9 +32,9 @@
     {
         "id": "002965",
         "time": "19:45",
-        "quote_time_case": "* Sette e quarantacinque",
-        "quote_first": "Alle sette e quarantacinque i ragazzi neri si spostano lungo la fila dei Cronici e fissano i cateteri su quelli che reggeranno fermi. I cateteri sono preservativi di seconda mano le cui estremità vengono tagliate e fissate con elastici a tubi che scendono lungo le gambe dei pantaloni fino a un sacchetto di plastica con la scritta MONOUSO DA NON RIUTILIZZARE, che è mio compito lavare alla fine di ogni giornata.",
-        "quote_last": "",
+        "quote_time_case": "Sette-quarantacinque",
+        "quote_first": "",
+        "quote_last": " i ragazzi neri si muovono lungo la fila dei Cronici e fissano i cateteri su quelli che reggono fermi. I cateteri sono preservativi di seconda mano le cui estremità vengono tagliate e fissate con un elastico a tubi che scendono lungo le gambe dei pantaloni fino a un sacchetto di plastica con la scritta MONOUSO DA NON RIUTILIZZARE, che è mio compito lavare alla fine di ogni giornata.",
         "title": "Qualcuno volò sul nido del cuculo",
         "author": "Ken Kesey",
         "sfw": "nsfw"
@@ -42,9 +42,9 @@
     {
         "id": "002966",
         "time": "19:45",
-        "quote_time_case": "* alle otto meno quindici",
-        "quote_first": "Contrariamente alla sua abitudine di arrivare in ritardo, Pierre quel giorno arrivò a casa dei Berg non alle dieci, ma alle otto meno un quarto.",
-        "quote_last": "",
+        "quote_time_case": "otto meno un quarto",
+        "quote_first": "Contrariamente alla sua abitudine di arrivare in ritardo, quel giorno Pierre arrivò a casa dei Berg non alle dieci, ma alle ",
+        "quote_last": ".",
         "title": "Guerra e Pace",
         "author": "Leo Tolstoy",
         "sfw": "unknown"
@@ -53,7 +53,7 @@
         "id": "002967",
         "time": "19:45",
         "quote_time_case": "7:45",
-        "quote_first": "Mi insegnò che se dovevo incontrare qualcuno per un appuntamento dovevo rifiutarmi di seguire la “stupida abitudine umana” di scegliere arbitrariamente un orario in base ad intervalli di quindici minuti. \"Non incontrare mai le persone alle ",
+        "quote_first": "Mi insegnò che se dovevo incontrare qualcuno per un appuntamento dovevo rifiutarmi di seguire la “stupida abitudine umana” di scegliere arbitrariamente un orario in base ad intervalli di quindici minuti. \"Non incontrare mai persone alle ",
         "quote_last": " o alle 6:30, Jasper, ma scegli orari come le 7:12 e le 8:03!\"",
         "title": "Una frazione del tutto",
         "author": "Steve Toltz",

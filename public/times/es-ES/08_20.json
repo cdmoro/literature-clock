@@ -1,52 +1,52 @@
 [
     {
-        "id": "001150",
-        "time": "08:20",
-        "quote_time_case": "* Ocho y veinte",
-        "quote_first": "A las ocho y veinte salen las cartas y los rompecabezas.",
-        "quote_last": "",
-        "title": "Uno volo sobre el nido del cuco",
-        "author": "Ken Kesey",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001151",
-        "time": "08:20",
-        "quote_time_case": "8:20",
-        "quote_first": "A cada extremo del patio, los dos grandes globos de luz sostenidos por delfines de bronce arrojaban brillantes charcos sobre la agitada superficie del agua que, mientras ella observaba, brillaba como un gran manto de satén negro, sacudido, alisado y suavemente ondeado por una mano invisible. Mandy miró su reloj: ",
-        "quote_last": ".",
-        "title": "El pecado original",
-        "author": "P.D. James",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001152",
-        "time": "08:20",
-        "quote_time_case": "8:20",
-        "quote_first": "Cuando las máquinas de escribir se detienen (",
-        "quote_last": " y otras horas míticas), y no hay vuelos de bombarderos estadounidenses en el cielo, y el tráfico de automóviles no es demasiado denso en Oxford Street, se puede escuchar a los pájaros invernales piar afuera, ocupados en el comederos que han puesto las chicas.",
-        "title": "El arcoiris de la gravedad",
-        "author": "Thomas Pynchon",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001153",
+        "id": "001130",
         "time": "08:20",
         "quote_time_case": "ocho y veinte",
-        "quote_first": "Había observado cómo los viajeros de primera hora de la mañana llegaban en tropel a cada tren. A las ",
-        "quote_last": ", Adam consideró que estaban en su apogeo. Comprobó que el ícono estaba en su lugar y salió de su escondite para unirse a la inundación mientras se dirigían al trabajo.",
+        "quote_first": "Había observado cómo los viajeros de primera hora de la mañana llegaban en tropel a cada tren. Para ",
+        "quote_last": " Adam juzgó que estaban en su punto máximo. Comprobó que el ícono estaba en su lugar y salió de su escondite para unirse a la inundación mientras se dirigían al trabajo.",
         "title": "Una cuestión de honor",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001154",
+        "id": "001131",
         "time": "08:20",
         "quote_time_case": "ocho y veinte",
-        "quote_first": "Esta mañana saqué la lancha durante unos cuarenta minutos para probar el motor. Ha estado dando algunos problemas. Eso duró desde las siete cuarenta y cinco hasta las ",
+        "quote_first": "Esta mañana saqué la lancha durante unos cuarenta minutos para probar el motor. Ha estado dando algunos problemas. Eso tomó desde las siete cuarenta y cinco hasta ",
         "quote_last": ", bastante cerca.",
         "title": "El faro",
         "author": "P.D. James",
         "sfw": "sfw"
+    },
+    {
+        "id": "001132",
+        "time": "08:20",
+        "quote_time_case": "8:20",
+        "quote_first": "A cada extremo del patio, los dos grandes globos de luz sostenidos por delfines de bronce arrojaban brillantes charcos sobre la agitada superficie del agua que, mientras ella miraba, brillaba como un gran manto de raso negro, sacudido, alisado y suavemente ondeado por una mano invisible. Mandy miró su reloj: ",
+        "quote_last": ".",
+        "title": "Pecado original",
+        "author": "P.D. James",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001133",
+        "time": "08:20",
+        "quote_time_case": "Ocho y veinte",
+        "quote_first": "",
+        "quote_last": " se apagan las cartas y los rompecabezas.",
+        "title": "Alguien voló sobre el nido del cuco",
+        "author": "Ken Kesey",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001134",
+        "time": "08:20",
+        "quote_time_case": "8:20",
+        "quote_first": "Cuando las máquinas de escribir se detienen (",
+        "quote_last": " y otras horas míticas), y no hay vuelos de bombarderos estadounidenses en el cielo, y el tráfico de automóviles no es demasiado intenso en En Oxford Street se oye el piar de los pájaros invernales, ocupados en los comederos que han instalado las chicas.",
+        "title": "El arcoiris de la gravedad",
+        "author": "Thomas Pynchon",
+        "sfw": "unknown"
     }
 ]

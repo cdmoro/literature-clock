@@ -12,9 +12,9 @@
     {
         "id": "002062",
         "time": "13:42",
-        "quote_time_case": "* 13:42",
-        "quote_first": "L'ultima nota è stata registrata alle 13,42: G.M. in loco presso H-by; si occuperà della questione.",
-        "quote_last": "",
+        "quote_time_case": "13.42",
+        "quote_first": "L'ultima nota è stata registrata alle ",
+        "quote_last": ": G.M. in loco presso H-by; si occuperà della questione.",
         "title": "La ragazza con il tatuaggio del drago",
         "author": "Stieg Larsson",
         "sfw": "unknown"

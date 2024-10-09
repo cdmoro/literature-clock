@@ -46,6 +46,12 @@
   position: relative;
   align-self: end;
   max-width: 70%;
+  opacity: 1;
+}
+
+[data-theme|="whatsapp"] .share-quote blockquote p,
+[data-theme|="whatsapp"] .share-quote blockquote cite {
+  box-shadow: none;
 }
 
 [data-theme|="whatsapp"] cite:before {

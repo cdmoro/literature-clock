@@ -4,7 +4,7 @@
         "time": "09:00",
         "quote_time_case": "nove",
         "quote_first": "Nenhum vestígio de Inge foi encontrado naquele dia ou noite. Para alguns, a busca durou a noite toda. Então, por volta das ",
-        "quote_last": " da manhã seguinte, os sinos do campanário da Igreja de Sião começaram a tocar freneticamente.",
+        "quote_last": " na manhã seguinte, os sinos do campanário da Igreja de Sião começaram a tocar freneticamente.",
         "title": "Vale Brilhante do Amor",
         "author": "Edna Hong",
         "sfw": "sfw"
@@ -14,7 +14,7 @@
         "time": "09:00",
         "quote_time_case": "nove horas",
         "quote_first": "Às ",
-        "quote_last": ", a charrete do presbitério levou-os para o sul, pela estrada em direção a Ravelunda. Fridfeldt sentiu-se mais à vontade ao norte do vilarejo da igreja. Lá o avivamento foi mais evidente. Aqui em Vänneberga tinha um dos seus últimos postos avançados. Além dela ficava Sörbygden, onde a vida espiritual era de outro tipo. Lá era possível fumar e confessar o Salvador; ali foi pregada a doutrina da depravação pecaminosa total, e dizia-se que o uísque também poderia ser encontrado entre os despertos.",
+        "quote_last": " a charrete paroquial os levou para o sul pela estrada em direção a Ravelunda. Fridfeldt sentiu-se mais à vontade ao norte do vilarejo da igreja. Lá o avivamento foi mais evidente. Aqui em Vänneberga tinha um dos seus últimos postos avançados. Além dela ficava Sörbygden, onde a vida espiritual era de outro tipo. Lá era possível fumar e confessar o Salvador; ali foi pregada a doutrina da depravação pecaminosa total, e dizia-se que o uísque também poderia ser encontrado entre os despertos.",
         "title": "O Martelo de Deus",
         "author": "Bo Giertz",
         "sfw": "unknown"
@@ -23,8 +23,8 @@
         "id": "001248",
         "time": "09:00",
         "quote_time_case": "nove horas",
-        "quote_first": "Pontualmente, às ",
-        "quote_last": " da manhã seguinte, o soldado de bigodes verdes aproximou-se deles e, quatro minutos depois, todos entraram na Sala do Trono do Grande Oz.",
+        "quote_first": "Pontualmente às ",
+        "quote_last": " da manhã seguinte, o soldado de bigodes verdes veio até eles, e quatro minutos depois todos entraram na Sala do Trono do Grande Oz.",
         "title": "O feiticeiro de Oz",
         "author": "L. Frank Baum",
         "sfw": "unknown"
@@ -33,8 +33,8 @@
         "id": "001249",
         "time": "09:00",
         "quote_time_case": "nove horas",
-        "quote_first": "Ela pensou ter visto algo diferente em Peter, mas não conseguiu dizer exatamente o que era. Quando Anderson acordou na manhã seguinte (às ",
-        "quote_last": " perfeitamente normais), ela viu isso quase imediatamente.",
+        "quote_first": "Ela pensou ter visto algo diferente em Peter, mas não conseguiu dizer exatamente o que era. Quando Anderson acordou na manhã seguinte (em ",
+        "quote_last": " perfeitamente normal), ela viu isso quase imediatamente.",
         "title": "Os Tommyknockers",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -43,7 +43,7 @@
         "id": "001250",
         "time": "09:00",
         "quote_time_case": "nove horas",
-        "quote_first": "A tempestade durou até as ",
+        "quote_first": "A tempestade durou até ",
         "quote_last": ", e então Anderson tinha certeza de que eles teriam uma boa - o que os Havenites chamavam de “um verdadeiro Jeezer”.",
         "title": "Os Tommyknockers",
         "author": "Stephen King",
@@ -54,7 +54,7 @@
         "time": "09:00",
         "quote_time_case": "nove horas",
         "quote_first": "Às ",
-        "quote_last": " da manhã seguinte eu já estava abrindo a escola pontualmente; tranquilo, acomodado, preparado para as tarefas constantes do dia.",
+        "quote_last": " da manhã seguinte eu estava abrindo pontualmente a escola; tranquilo, acomodado, preparado para as tarefas constantes do dia.",
         "title": "Jane Eyre",
         "author": "Charlotte Brontë",
         "sfw": "unknown"
@@ -64,7 +64,7 @@
         "time": "09:00",
         "quote_time_case": "nove horas",
         "quote_first": "Às ",
-        "quote_last": ", sua secretária veio e leu-lhe os compromissos do dia.<br>Quando ele fez isso esta manhã, porém, ele o encontrou ainda olhando para o prato com uma expressão estranha.",
+        "quote_last": " sua secretária veio e leu para ele seus compromissos do dia.<br>Quando ele fez isso esta manhã, porém, ele o encontrou ainda olhando para seu prato com uma expressão estranha.",
         "title": "Johnny e a bomba",
         "author": "Terry Pratchett",
         "sfw": "unknown"
@@ -72,9 +72,9 @@
     {
         "id": "001253",
         "time": "09:00",
-        "quote_time_case": "* nove horas da manhã",
-        "quote_first": "Quando desci do trem, me perguntei ansiosamente para onde deveria ir. As casas noturnas eram ótimos lugares para comprar cocaína, mas poucas estavam abertas às nove da manhã.",
-        "quote_last": "",
+        "quote_time_case": "nove horas da manhã",
+        "quote_first": "Quando desci do trem, me perguntei ansiosamente para onde deveria ir. As casas noturnas eram ótimos lugares para comprar cocaína, mas poucas estavam abertas às ",
+        "quote_last": ".",
         "title": "Férias de Rachel",
         "author": "Marian Keyes",
         "sfw": "unknown"
@@ -84,7 +84,7 @@
         "time": "09:00",
         "quote_time_case": "nove",
         "quote_first": "Ele acordou às ",
-        "quote_last": ", trabalhou um pouco no quarto e depois disse que estava com sono. Ele foi até a cozinha, fez um café e bebeu. Mas o café não ajudou.<br>“Acho que vou tirar uma soneca”, disse ele. “Ouço um zumbido na parte de trás da minha cabeça.” Essas foram suas últimas palavras. Ele se enrolou na cama, adormeceu e nunca mais acordou.",
+        "quote_last": ", trabalhou um pouco em seu quarto e depois disse que estava com sono. Ele foi até a cozinha, fez um café e bebeu. Mas o café não ajudou.<br>“Acho que vou tirar uma soneca”, disse ele. “Ouço um zumbido na parte de trás da minha cabeça.” Essas foram suas últimas palavras. Ele se enrolou na cama, adormeceu e nunca mais acordou.",
         "title": "Salgueiro Cego, Mulher Adormecida",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -94,7 +94,7 @@
         "time": "09:00",
         "quote_time_case": "nove",
         "quote_first": "Do Palais du Louvre ao Etoile é como uma peça musical para pianoforte. Durante cinco dias não toquei na máquina de escrever nem olhei nenhum livro; nem tive uma única ideia na cabeça, exceto ir ao American Express. Às ",
-        "quote_last": " da manhã eu estava lá, no momento em que as portas estavam sendo abertas, e novamente à uma da tarde.",
+        "quote_last": " desta manhã eu estava lá, no momento em que as portas estavam sendo abertas, e novamente à uma hora.",
         "title": "Trópico de Câncer",
         "author": "Henry Miller",
         "sfw": "unknown"
@@ -114,7 +114,7 @@
         "time": "09:00",
         "quote_time_case": "nove horas",
         "quote_first": "Às ",
-        "quote_last": " liguei novamente. Ele respondeu.<br>“O que você quer?” ele perguntou.<br>“Eu estava esperando ouvir você dizer que sente minha falta.”<br>“Eu sinto sua falta,” ele disse. “É isso?”<br>Desliguei.",
+        "quote_last": ", liguei novamente. Ele respondeu.<br>“O que você quer?” ele perguntou.<br>“Eu estava esperando ouvir você dizer que sente minha falta.”<br>“Eu sinto sua falta,” ele disse. “É isso?”<br>Desliguei.",
         "title": "Meu ano de descanso e relaxamento",
         "author": "Ottessa Moshfegh",
         "sfw": "unknown"
@@ -124,7 +124,7 @@
         "time": "09:00",
         "quote_time_case": "nove horas",
         "quote_first": "Uma rotina de trabalho está se desenvolvendo. Ayrs e eu estamos na sala de música às ",
-        "quote_last": " da manhã, todas as manhãs, suas diversas doenças e dores o permitem. Sento-me ao piano, Ayrs no divã, fumando seus vis cigarros turcos, e adotamos um de nossos três modi operandi. \"Revisionais\" - ele me pede para repassar o trabalho da manhã anterior. Eu cantarolo, canto ou toco, dependendo do instrumento, e Ayrs modifica a partitura.",
+        "quote_last": " todas as manhãs, suas diversas doenças e dores o deixam. Sento-me ao piano, Ayrs no divã, fumando seus vis cigarros turcos, e adotamos um de nossos três modi operandi. \"Revisionais\" - ele me pede para repassar o trabalho da manhã anterior. Eu cantarolo, canto ou toco, dependendo do instrumento, e Ayrs modifica a partitura.",
         "title": "Atlas da Nuvem",
         "author": "David Mitchell",
         "sfw": "unknown"
@@ -134,7 +134,7 @@
         "time": "09:00",
         "quote_time_case": "nove horas",
         "quote_first": "Não choveu, como Holmes predissera, e a manhã surgiu clara e sem nuvens. Às ",
-        "quote_last": ", Lestrade nos chamou com a carruagem e partimos para Hatherley Farm e Boscombe Pool.",
+        "quote_last": " Lestrade nos chamou com a carruagem e partimos para Hatherley Farm e Boscombe Pool.",
         "title": "As Aventuras de Sherlock Holmes",
         "author": "Sir Arthur Conan Doyle",
         "sfw": "unknown"
@@ -143,7 +143,7 @@
         "id": "001260",
         "time": "09:00",
         "quote_time_case": "nove",
-        "quote_first": "“Não pense mais nisso, meu caro.” A expressão familiar não tinha mais familiaridade do que a mão que tocou meu ombro de forma tranquilizadora. “E não se esqueça que vamos subir de hidroavião amanhã de manhã, às ",
+        "quote_first": "“Não pense mais nisso, meu caro.” A expressão familiar não tinha mais familiaridade do que a mão que tocou meu ombro de forma tranquilizadora. “E não se esqueça que vamos subir no hidroavião amanhã de manhã, às ",
         "quote_last": ".”",
         "title": "O Grande Gatsby",
         "author": "F. Scott Fitzgerald",
@@ -162,9 +162,9 @@
     {
         "id": "001262",
         "time": "09:00",
-        "quote_time_case": "* 9:00 DA MANHÃ.",
-        "quote_first": "A Terra foi criada no domingo, 21 de outubro de 4.004 a.C., exatamente às 9h, porque Deus gostava de trabalhar de manhã cedo, enquanto se sentia revigorado.",
-        "quote_last": "",
+        "quote_time_case": "9h00",
+        "quote_first": "A Terra foi criada no domingo, 21 de outubro de 4004 a.C., exatamente ",
+        "quote_last": ", porque Deus gostava de trabalhar de manhã cedo, enquanto ele estava se sentindo fresco.",
         "title": "Bons presságios",
         "author": "Terry Pratchett and Neil Gaiman",
         "sfw": "unknown"
@@ -183,7 +183,7 @@
         "id": "001264",
         "time": "09:00",
         "quote_time_case": "nove horas",
-        "quote_first": "Quando ele estava completamente vestido, já eram ",
+        "quote_first": "Quando ele estava completamente vestido, eram ",
         "quote_last": ". Faltavam seis horas para o ultimato de Hitler expirar.<br>Ele foi em busca do café da manhã.",
         "title": "Munique",
         "author": "Robert Harris",
@@ -193,7 +193,7 @@
         "id": "001265",
         "time": "09:00",
         "quote_time_case": "nove horas",
-        "quote_first": "Contudo, às ",
+        "quote_first": "Porém, às ",
         "quote_last": " o príncipe, com o seu casaco de veludo com gola e boné de zibelina, saiu para o seu passeio habitual.",
         "title": "Guerra e Paz",
         "author": "Leo Tolstoy",
@@ -213,8 +213,8 @@
         "id": "001267",
         "time": "09:00",
         "quote_time_case": "nove horas",
-        "quote_first": "Quando o gongo soou para o café da manhã, às ",
-        "quote_last": ", encontrou todos acordados e aguardando a convocação.",
+        "quote_first": "Quando o gongo soou para o café da manhã às ",
+        "quote_last": " encontrou todos acordados e aguardando a convocação.",
         "title": "E então não havia nenhum",
         "author": "Agatha Christie",
         "sfw": "unknown"
@@ -233,8 +233,8 @@
         "id": "001269",
         "time": "09:00",
         "quote_time_case": "nove horas",
-        "quote_first": "Olhar. Inácio. Estou exausto. Estou na estrada desde as ",
-        "quote_last": " da manhã de ontem.",
+        "quote_first": "Olhar. Inácio. Estou exausto. Estou na estrada desde ",
+        "quote_last": " ontem de manhã.",
         "title": "Uma Confederação de Burros",
         "author": "John Kennedy Toole",
         "sfw": "unknown"
@@ -244,7 +244,7 @@
         "time": "09:00",
         "quote_time_case": "nove",
         "quote_first": "Na terceira manhã após a chegada deles, no momento em que todos os relógios da cidade marcavam ",
-        "quote_last": " horas individualmente, e algo em torno de novecentos e noventa e nove coletivamente, Sam estava tomando ar em George Yard, quando um tipo estranho de veículo recém-pintado passou. levantou-se, de onde saltou com grande agilidade, jogando as rédeas para um homem corpulento que estava sentado ao seu lado, um cavalheiro estranho, que parecia feito para o veículo, e o veículo para ele.",
+        "quote_last": " individualmente, e em algum lugar por volta de novecentos e noventa e nove coletivamente, Sam estava pegando o ar em George Yard, quando um estranho veículo recém-pintado apareceu, do qual saltou com grande agilidade, jogando as rédeas para um homem corpulento que estava sentado ao lado dele, um tipo estranho de cavalheiro, que parecia feito para o veículo, e o veículo para ele.",
         "title": "Os documentos de Pickwick",
         "author": "Charles Dickens",
         "sfw": "unknown"
@@ -264,7 +264,7 @@
         "time": "09:00",
         "quote_time_case": "nove",
         "quote_first": "Uma mosca zumbiu e o relógio de parede começou a bater. Depois que os ",
-        "quote_last": " traços dourados desapareceram, o capitão do distrito começou. \"Como está Herr Coronel Marek?\"<br>\"Obrigado, Papá, ele está bem.\"<br>\"Ainda fraco em geometria?\"<br>\"Obrigado, Papá, um pouco melhor.\"<br>\"Ler algum livro?\"<br>\"Sim senhor, Papá.\"",
+        "quote_last": " traços dourados desapareceram, o capitão do distrito começou. \"Como está Herr Coronel Marek?\"<br>\"Obrigado, Papá, ele está bem.\"<br>\"Ainda fraco em geometria?\"<br>\"Obrigado, Papá, um pouco melhor.\"<br>\"Leia algum livro?\"<br>\"Sim senhor, Papá.\"",
         "title": "A Marcha Radetzky",
         "author": "Joseph Roth",
         "sfw": "unknown"
@@ -273,8 +273,8 @@
         "id": "001273",
         "time": "09:00",
         "quote_time_case": "nove horas",
-        "quote_first": "Como as ",
-        "quote_last": " estavam atrasadas, o absurdo do atraso me dominou, e eu fui até o proprietário com um certo temperamento e disse que achava que ele deveria contratar outro cozinheiro, pesar as vergas e ir embora.",
+        "quote_first": "Como ",
+        "quote_last": " foi deixado para trás, o absurdo do atraso me dominou, e eu fui até o proprietário com um certo temperamento e disse que achava que ele deveria assinar em outro cozinheiro, pese as vergas e vá embora.",
         "title": "Uma única pedra",
         "author": "John Hershey",
         "sfw": "unknown"
@@ -284,7 +284,7 @@
         "time": "09:00",
         "quote_time_case": "nove horas",
         "quote_first": "Às ",
-        "quote_last": ", numa manhã no final de julho, o lindo carro de Gatsby subiu o caminho rochoso até minha porta e emitiu uma explosão de melodia em sua buzina de três notas.",
+        "quote_last": ", numa manhã no final de julho, o lindo carro de Gatsby subiu o caminho rochoso até minha porta e soltou uma explosão de melodia de sua buzina de três notas.",
         "title": "O Grande Gatsby",
         "author": "F. Scott Fitzgerald",
         "sfw": "unknown"
@@ -294,7 +294,7 @@
         "time": "09:00",
         "quote_time_case": "nove",
         "quote_first": "Ele estava tomando café da manhã às ",
-        "quote_last": " e pela vigésima vez consultou seu \"Bradshaw\" para ver a que horas o Dr. Grantly poderia chegar de Barchester.",
+        "quote_last": ", e pela vigésima vez consultou seu \"Bradshaw\", para ver a que hora mais cedo o Dr. Grantly poderia chegar de Barchester.",
         "title": "O diretor",
         "author": "Anthony Trollope",
         "sfw": "unknown"
@@ -303,8 +303,8 @@
         "id": "001276",
         "time": "09:00",
         "quote_time_case": "nove horas",
-        "quote_first": "Ele não aguenta bater. Agora, se você mantivesse boas relações com ele, ele faria quase tudo que você quisesse com o relógio. Por exemplo, suponha que sejam ",
-        "quote_last": " da manhã, hora certa para começar as aulas: bastaria sussurrar uma dica para o Tempo, e o relógio girava num piscar de olhos! Uma e meia, hora do jantar!",
+        "quote_first": "Ele não aguenta bater. Agora, se você mantivesse boas relações com ele, ele faria quase tudo que você quisesse com o relógio. Por exemplo, suponha que fossem ",
+        "quote_last": " da manhã, hora certa de começar as aulas: você só teria que sussurrar uma dica para o Tempo, e o círculo continua relógio em um piscar de olhos! Uma e meia, hora do jantar!",
         "title": "Alice no País das Maravilhas",
         "author": "Lewis Carroll",
         "sfw": "unknown"
@@ -314,7 +314,7 @@
         "time": "09:00",
         "quote_time_case": "nove horas",
         "quote_first": "Foi por volta das ",
-        "quote_last": " que atravessei a fronteira para a Cornualha. Isso foi pelo menos três horas antes de a chuva começar e as nuvens ainda eram de um branco brilhante. Na verdade, muitas das paisagens que me saudaram esta manhã estavam entre as mais encantadoras que encontrei até agora. Foi uma pena, então, que durante grande parte do tempo eu não pudesse dar-lhes a atenção que mereciam; pois podemos muito bem declarar que estávamos preocupados com a ideia de que - salvo alguma complicação invisível - encontraríamos a Srta. Kenton novamente antes do final do dia.",
+        "quote_last": " que cruzei a fronteira para a Cornualha. Isso foi pelo menos três horas antes de a chuva começar e as nuvens ainda eram de um branco brilhante. Na verdade, muitas das paisagens que me saudaram esta manhã estavam entre as mais encantadoras que encontrei até agora. Foi uma pena, então, que durante grande parte do tempo eu não pudesse dar-lhes a atenção que mereciam; pois podemos muito bem declarar que estávamos preocupados com a ideia de que - salvo alguma complicação invisível - encontraríamos a Srta. Kenton novamente antes do final do dia.",
         "title": "Os restos do dia",
         "author": "Kazuo Ishiguro",
         "sfw": "unknown"
@@ -324,7 +324,7 @@
         "time": "09:00",
         "quote_time_case": "Às nove",
         "quote_first": "Abrindo a janela, Aschenbach pensou sentir o cheiro fétido da lagoa. Um súbito desânimo tomou conta dele. Ele considerou partir naquele momento. Certa vez, anos antes, depois de semanas de uma linda primavera, ele foi atacado por esse tipo de clima e isso afetou tanto sua saúde que foi obrigado a fugir. Não estava se instalando a mesma febre apática? A pressão nas têmporas, as pálpebras pesadas? Mudar de hotel novamente seria um incômodo, mas se o vento não mudasse, ele não poderia permanecer ali. Por segurança, ele não desempacotou tudo. ",
-        "quote_last": " horas, foi tomar café da manhã no bufê especialmente designado, entre o saguão e a sala de jantar.",
+        "quote_last": " ele foi tomar café da manhã no buffet especialmente designado entre o lobby e a sala de jantar.",
         "title": "Morte em Veneza",
         "author": "Thomas Mann",
         "sfw": "unknown"
@@ -332,9 +332,9 @@
     {
         "id": "001279",
         "time": "09:00",
-        "quote_time_case": "* 9h00",
-        "quote_first": "Às vezes, o que eu não daria para que estivéssemos sentados em um bar novamente às 9h, contando mentiras um para o outro, longe de Deus.",
-        "quote_last": "",
+        "quote_time_case": "9h00",
+        "quote_first": "Às vezes, o que eu não daria para nos ver sentados em um bar novamente às ",
+        "quote_last": " contando mentiras um para o outro, longe de Deus.",
         "title": "Filho de Jesus",
         "author": "Denis Johnson",
         "sfw": "unknown"
@@ -344,7 +344,7 @@
         "time": "09:00",
         "quote_time_case": "nove",
         "quote_first": "O relógio bateu ",
-        "quote_last": " horas quando mandei a enfermeira; Em meia hora ela prometeu voltar.",
+        "quote_last": " quando mandei a enfermeira; Em meia hora ela prometeu voltar.",
         "title": "Romeu e Julieta",
         "author": "William Shakespeare",
         "sfw": "unknown"
@@ -353,7 +353,7 @@
         "id": "001281",
         "time": "09:00",
         "quote_time_case": "nove",
-        "quote_first": "Para onde Santa Maria Woolnoth marcava as horas<br>Com um som morto na última badalada das ",
+        "quote_first": "Para onde Santa Maria Woolnoth marcava as horas<br>Com um som morto na batida final de ",
         "quote_last": ".",
         "title": "A terra do desperdício",
         "author": "T.S. Eliot",
@@ -362,9 +362,9 @@
     {
         "id": "001282",
         "time": "09:00",
-        "quote_time_case": "* Nove horas",
-        "quote_first": "Às nove horas, jovens residentes usando cotovelos de couro conversam com os Agudos durante cinquenta minutos sobre o que eles faziam quando eram meninos. A Chefona desconfia da aparência de corte militar desses residentes, e o fato de cinquenta minutos eles estarem na enfermaria é um momento difícil para ela.",
-        "quote_last": "",
+        "quote_time_case": "Nove horas",
+        "quote_first": "",
+        "quote_last": " jovens residentes usando cotovelos de couro conversam com os Agudos durante cinquenta minutos sobre o que eles faziam quando eram meninos. A Chefona desconfia da aparência de corte militar desses residentes, e o fato de cinquenta minutos eles estarem na enfermaria é um momento difícil para ela.",
         "title": "Um voou sobre o ninho do cuco",
         "author": "Ken Kesey",
         "sfw": "unknown"

@@ -13,7 +13,7 @@
         "id": "001131",
         "time": "08:20",
         "quote_time_case": "otto e venti",
-        "quote_first": "Questa mattina sono uscito con la lancia per circa quaranta minuti per testare il motore. Ha dato un po' di problemi. Ci sono voluti dalle sette e quarantacinque alle ",
+        "quote_first": "Questa mattina sono uscito con la lancia per circa quaranta minuti per testare il motore. Ha dato un po' di problemi. Ci sono voluti dalle sette e quarantacinque fino alle ",
         "quote_last": ", abbastanza vicino.",
         "title": "Il Faro",
         "author": "P.D. James",
@@ -32,9 +32,9 @@
     {
         "id": "001133",
         "time": "08:20",
-        "quote_time_case": "* Otto e venti",
-        "quote_first": "Alle otto e venti escono le carte e i puzzle.",
-        "quote_last": "",
+        "quote_time_case": "Ottoventi",
+        "quote_first": "",
+        "quote_last": " escono le carte e gli enigmi.",
         "title": "Qualcuno volò sul nido del cuculo",
         "author": "Ken Kesey",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "001134",
         "time": "08:20",
-        "quote_time_case": "* 8:20",
-        "quote_first": "Quando le macchine da scrivere si fermano (8,20 e altre ore mitiche), e non ci sono voli di bombardieri americani nel cielo, e il traffico automobilistico non è troppo intenso in Oxford Street, puoi sentire gli uccelli invernali che cinguettano fuori, affaccendati al mangiatoie che le ragazze hanno messo su.",
-        "quote_last": "",
+        "quote_time_case": "8:20",
+        "quote_first": "Quando le macchine da scrivere si fermano (",
+        "quote_last": " e altre ore mitiche), e non ci sono voli di bombardieri americani nel cielo, e il traffico automobilistico non è troppo intenso Oxford Street, puoi sentire gli uccelli invernali che cinguettano fuori, affaccendati alle mangiatoie che le ragazze hanno montato.",
         "title": "L'arcobaleno della gravità",
         "author": "Thomas Pynchon",
         "sfw": "unknown"

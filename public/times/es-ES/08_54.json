@@ -1,22 +1,22 @@
 [
     {
-        "id": "001245",
+        "id": "001225",
         "time": "08:54",
-        "quote_time_case": "08.54",
-        "quote_first": "¿Está usted al tanto de que ayer a las ",
-        "quote_last": ", hora estándar de Carthedian, se recibió un informe del capitán J.L. Gafeska del carguero Axious de que los ocupantes del barco chárter KS55NZ/4 fueron encontrados muertos a bordo de dicho barco chárter?",
-        "title": "Doctor Who: La generación Dalek",
-        "author": "Nicholas Briggs",
+        "quote_time_case": "8:54 a.m.",
+        "quote_first": "Tuvo que gastar casi una libra en un taxi para asegurarse de llegar a la comisaría a las ",
+        "quote_last": " Un joven agente lo llevó directamente a la oficina del sargento detective Warwick. oficina y no una sala de entrevistas.",
+        "title": "Caras, ganas",
+        "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001246",
+        "id": "001226",
         "time": "08:54",
-        "quote_time_case": "8:54 a.m.",
-        "quote_first": "Tuvo que desembolsar casi una libra en un taxi para asegurarse de llegar a la comisaría a las ",
-        "quote_last": " Un joven agente lo llevó directamente a la oficina del sargento detective Warwick, y no a una sala de interrogatorios.",
-        "title": "Caras, ganas",
-        "author": "Jeffrey Archer",
+        "quote_time_case": "08.54",
+        "quote_first": "¿Sabe usted que ayer a las ",
+        "quote_last": " hora estándar de Carthedian, se recibió un informe del capitán J.L. Gafeska del carguero Axious de que los ocupantes del barco chárter KS55NZ/4 habían sido encontrados muertos? a bordo de dicho barco chárter?",
+        "title": "Doctor Who: La generación Dalek",
+        "author": "Nicholas Briggs",
         "sfw": "sfw"
     }
 ]

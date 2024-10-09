@@ -1,7 +1,6 @@
-import { getRandomLocale } from "./locales";
+import { getRandomLocale, getStrings } from "./locales";
 import { getStringSetting, isBooleanSettingTrue } from "../utils/settings";
 import { setTheme } from "./themes";
-import TRANSLATIONS from "../strings/translations.json";
 import { Locale, Quote } from "../types";
 import { fitQuote, getTime, updateGHLinks } from "../utils/utils";
 import FALLBACK_QUOTES from "../strings/fallbackQuotes.json";
@@ -18,7 +17,7 @@ function prefetchNextQuotes(locale: string) {
     .padStart(2, "0")}`;
 
   fetch(`../times/${locale}/${nextFileName}.json`, {
-    cache: 'force-cache',
+    cache: "force-cache",
   });
 }
 
@@ -50,6 +49,7 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
 async function getQuote(time: string, locale: Locale): Promise<Quote> {
   const quotes = await getQuotes(time, locale);
   const urlParams = new URLSearchParams(window.location.search);
+  const strings = getStrings();
 
   let quoteIndex = Math.floor(Math.random() * quotes.length);
 
@@ -69,8 +69,8 @@ async function getQuote(time: string, locale: Locale): Promise<Quote> {
   }
 
   if (urlParams.get("quote")) {
-    quote.title = TRANSLATIONS[locale].title;
-    quote.author = TRANSLATIONS[locale].author;
+    quote.title = strings.title;
+    quote.author = strings.author;
   }
 
   return quote;
@@ -87,10 +87,6 @@ export async function updateQuote(time = getTime()) {
 
   if (getStringSetting("locale") === "random") {
     locale = getRandomLocale();
-  }
-
-  if (getStringSetting("theme")?.includes("color")) {
-    setTheme(false);
   }
 
   const quote = await getQuote(time, locale);
@@ -115,7 +111,10 @@ export async function updateQuote(time = getTime()) {
     blockquote.appendChild(p);
     blockquote.appendChild(cite);
     blockquote.setAttribute("aria-label", quote.time);
-    blockquote.setAttribute("aria-description", `${quoteRaw.replace(/<br>/g, "\n")}\n${quote.title}, ${quote.author}`);
+    blockquote.setAttribute(
+      "aria-description",
+      `${quoteRaw.replace(/<br>/g, "\n")}\n${quote.title}, ${quote.author}`
+    );
     blockquote.dataset.locale = locale;
     blockquote.dataset.sfw = quote.sfw;
     if (quote.fallback) {
@@ -129,6 +128,10 @@ export async function updateQuote(time = getTime()) {
     }
 
     fitQuote();
+
+    if (getStringSetting("theme")?.includes("color")) {
+      setTheme();
+    }
   }
 
   prefetchNextQuotes(locale);

@@ -1,16 +1,16 @@
 [
     {
-        "id": "002628",
+        "id": "002587",
         "time": "17:01",
-        "quote_time_case": "* un minuto y cinco",
-        "quote_first": "A las cinco y un minuto, Beth salió del museo, paró un taxi y, después de darle su dirección al conductor, se sentó en la parte de atrás rodeada de cajas y derramó una lágrima sin vergüenza.",
-        "quote_last": "",
-        "title": "Próximo en la fila",
+        "quote_time_case": "cinco y un minuto",
+        "quote_first": "A las ",
+        "quote_last": ", Beth salió del museo, paró un taxi y, después de darle su dirección al conductor, se sentó atrás rodeada de cajas y derramó una lágrima sin vergüenza.",
+        "title": "Siguiente en la fila",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "002629",
+        "id": "002588",
         "time": "17:01",
         "quote_time_case": "Un minuto después de las cinco",
         "quote_first": "",

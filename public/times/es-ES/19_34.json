@@ -1,16 +1,6 @@
 [
     {
-        "id": "002985",
-        "time": "19:34",
-        "quote_time_case": "19:34",
-        "quote_first": "Miré mi reloj a las ",
-        "quote_last": " y pensé que sería desafortunado, ¿no?, si Pepperidge finalmente me llamara y escuchara sólo el tono de compromiso mientras Al preguntaba por la salud de su novia o de su tía o de quien sea que estuviera en el teléfono. En el otro extremo, mi pecho está más tranquilo pero todavía tengo tos, y el médico dice que no me importa lo que diga el médico, simplemente sal de la línea.",
-        "title": "La carrera de Quiller",
-        "author": "Adam Hall",
-        "sfw": "nsfw"
-    },
-    {
-        "id": "002986",
+        "id": "002937",
         "time": "19:34",
         "quote_time_case": "7:34",
         "quote_first": "“Será mejor que no esperes despierto, porque si fallo, Simon, probablemente saltaré encima de ti”.<br>“Gracias por la advertencia, Mark. Aguanta, hombre”.<br>Hermosa tarde, sube al auto, mira el reloj: ",
@@ -18,5 +8,15 @@
         "title": "¿Se lo contamos al presidente?",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
+    },
+    {
+        "id": "002938",
+        "time": "19:34",
+        "quote_time_case": "19:34",
+        "quote_first": "Miré mi reloj en ",
+        "quote_last": " y pensé que sería desafortunado, ¿no?, si Pepperidge finalmente me llamara y escuchara solo el tono de ocupado mientras Al preguntaba sobre la salud de su novia o la de su tía o quien sea que estuviera al otro lado, mi pecho está más tranquilo pero todavía hay esta tos, y el doctor dice que no me importa lo que diga el doctor, simplemente sal de la línea.",
+        "title": "La carrera de Quiller",
+        "author": "Adam Hall",
+        "sfw": "nsfw"
     }
 ]

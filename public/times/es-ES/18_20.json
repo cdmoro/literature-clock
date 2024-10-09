@@ -1,32 +1,32 @@
 [
     {
-        "id": "002797",
+        "id": "002754",
         "time": "18:20",
-        "quote_time_case": "* seis veinte",
-        "quote_first": "Eran las seis y veinte cuando Sarah Berowne logró comunicarse por teléfono con Ivor Garrod. Había estado en su apartamento casi toda la tarde, pero no se había atrevido a llamar desde allí.",
-        "quote_last": "",
+        "quote_time_case": "6:20 p.m.",
+        "quote_first": "En Harley Street, Bond Street, King's Road y Magdalen College, Oxford, eran ",
+        "quote_last": " Cuatro hombres, desconocidos entre sí, comprobaron el precio de mercado de Prospecta. Óleo en la edición final del London Evening Standard.",
+        "title": "Ni un centavo más, ni un centavo menos",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002755",
+        "time": "18:20",
+        "quote_time_case": "seis y veinte",
+        "quote_first": "Eran las ",
+        "quote_last": " cuando Sarah Berowne logró comunicarse con Ivor Garrod por teléfono. Había estado en su apartamento casi toda la tarde, pero no se había atrevido a llamar desde allí.",
         "title": "Un gusto por la muerte",
         "author": "P.D. James",
         "sfw": "sfw"
     },
     {
-        "id": "002798",
+        "id": "002756",
         "time": "18:20",
-        "quote_time_case": "* veinte pasadas las seis",
-        "quote_first": "Cuando la madre de Elliot llegaba a las seis y veinte, la señora Sen siempre se aseguraba de eliminar todas las pruebas de su corte.",
-        "quote_last": "",
+        "quote_time_case": "seis y veinte",
+        "quote_first": "Para cuando la madre de Elliot llegaba a las ",
+        "quote_last": ", la señora Sen siempre se aseguraba de eliminar toda evidencia de su corte.",
         "title": "Intérprete de enfermedades",
         "author": "Jhumpa Lahiri",
         "sfw": "unknown"
-    },
-    {
-        "id": "002799",
-        "time": "18:20",
-        "quote_time_case": "6:20 p.m.",
-        "quote_first": "En Harley Street, Bond Street, King's Road y Magdalen College, Oxford, eran las ",
-        "quote_last": " Cuatro hombres, desconocidos entre sí, comprobaron el precio de mercado de Prospecta Oil en la edición final del London Evening Standard.",
-        "title": "Ni un centavo más, ni un centavo menos",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
     }
 ]

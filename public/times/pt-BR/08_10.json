@@ -3,7 +3,7 @@
         "id": "001106",
         "time": "08:10",
         "quote_time_case": "8:10",
-        "quote_first": "Ela disse: \"Ei, dorminhoco, hora de levantar. Um Navy SEAL preparou o café da manhã, e não acho que você deveria se atrasar.\"<br>\"Sim, sim. Que horas são?\"<br>Ela olhou para o relógio digital em sua mesa de cabeceira. \"",
+        "quote_first": "Ela disse: \"Ei, dorminhoco, hora de levantar. Um Navy SEAL preparou o café da manhã, e acho que você não deveria se atrasar.\"<br>\"Sim, sim. Que horas são?\"<br>Ela olhou para o relógio digital em sua mesa de cabeceira. \"",
         "quote_last": ".\"",
         "title": "Coração de Leão",
         "author": "Ray Keating",
@@ -12,8 +12,8 @@
     {
         "id": "001107",
         "time": "08:10",
-        "quote_time_case": "* 8:10.",
-        "quote_first": "Sloane, com o ombro perfurado, estava em outra sala. Ele estava meio delirante e ficava ligando para alguma coisa sobre uma aula de química às 8h10.",
+        "quote_time_case": "8h10.",
+        "quote_first": "Sloane, com o ombro perfurado, estava em outra sala. Ele estava meio delirante e ficava ligando alguma coisa sobre uma aula de química às ",
         "quote_last": "",
         "title": "Este lado do paraíso",
         "author": "F. Scott Fitzgerald",
@@ -32,9 +32,9 @@
     {
         "id": "001109",
         "time": "08:10",
-        "quote_time_case": "* 8:10",
-        "quote_first": "Contagem de células até 400.000. Acordei às 8h10. Dormir 7h15. (Parece que perdi meu relógio sem perceber, tive que dirigir até a cidade para comprar outro.)",
-        "quote_last": "",
+        "quote_time_case": "8:10",
+        "quote_first": "Contagem de células até 400.000. Acordei ",
+        "quote_last": ". Dormir 7h15. (Parece que perdi meu relógio sem perceber, tive que dirigir até a cidade para comprar outro.)",
         "title": "As vozes do tempo",
         "author": "J.G. Ballard",
         "sfw": "unknown"

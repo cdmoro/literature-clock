@@ -1,276 +1,116 @@
 [
     {
-        "id": "002265",
-        "time": "15:00",
-        "quote_time_case": "las tres",
-        "quote_first": "A ",
-        "quote_last": " en punto estaba en Baker Street, pero Holmes aún no había regresado.",
-        "title": "Un escándalo en Bohemia, Las aventuras de Sherlock Holmes",
-        "author": "Sir Arthur Conan Doyle",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002266",
-        "time": "15:00",
-        "quote_time_case": "las tres",
-        "quote_first": "El pequeño velociraptor abrió las fauces y le siseó a Grant, en una postura de repentina e intensa furia.<br>“Fascinante”, dijo Grant.<br>“¿Puedo quedarme y jugar con ella?” dijo Tim.<br>“Ahora no”, dijo Ed Regis, mirando su reloj. \"Son ",
-        "quote_last": " de la tarde y es un buen momento para hacer un recorrido por el parque, para poder ver todos los dinosaurios en los hábitats que hemos diseñado para ellos\".",
-        "title": "Parque jurásico",
-        "author": "Michael Crichton",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002267",
-        "time": "15:00",
-        "quote_time_case": "Las tres",
-        "quote_first": "",
-        "quote_last": " en punto siempre es demasiado tarde o demasiado temprano para cualquier cosa que quieras hacer. Un momento extraño en la tarde.",
-        "title": "Náuseas",
-        "author": "Jean-Paul Sartre",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002268",
-        "time": "15:00",
-        "quote_time_case": "las tres",
-        "quote_first": "Momentos después, hacia ",
-        "quote_last": ", Courfeyrec pasaba por la calle Mouffetard en compañía de Bossuet. La nieve había redoblado su violencia y llenaba el aire.",
-        "title": "Los Miserables",
-        "author": "Victor Hugo",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002269",
-        "time": "15:00",
-        "quote_time_case": "las tres",
-        "quote_first": "Jarvis silbó entre dientes. “¿Ayudará la ley a un hombre de tu edad a recuperarse de múltiples fracturas de columna, Timothy?”<br>Eddie: “Los hombres de tu edad no se recuperan. Se estrellan.”<br>Luché con todas mis fuerzas, pero mi esfínter ya no era el mío y se disparó un cañonazo. Podría haber soportado la diversión o la condescendencia, pero la compasión de mis torturadores significó mi abyecta derrota. Tiraron de la cadena del retrete.<br>“A ",
-        "quote_last": " en punto”, Cavendish-Redux bajó la taza.",
-        "title": "Atlas de nubes",
-        "author": "David Mitchell",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002270",
-        "time": "15:00",
-        "quote_time_case": "las tres",
-        "quote_first": "Había presionado demasiado. “¡Maldita sea, Tim, mi banco 𝘤𝘳𝘢𝘴𝘩𝘦𝘥! ¡Nos desangraron esos chupasangres de Lloyds! ¡Los días en que tenía ese tipo de espondúlicos a mi entera disposición se han ido, se han ido, se han ido! ¡Nuestra casa está hipotecada dos veces! Yo soy el poderoso caído, tú eres el minúsculo caído. De todos modos, ¡tienes este libro de mal gusto saliendo volando de todas las librerías del mundo conocido!”<br>Mi cara decía algo para lo que no tenía palabras.<br>“Oh, Dios, idiota. ¿Cuál es el calendario de pagos?”<br>Miré mi reloj. “A ",
-        "quote_last": " de la tarde”.",
-        "title": "Atlas de nubes",
-        "author": "David Mitchell",
-        "sfw": "nsfw"
-    },
-    {
-        "id": "002271",
-        "time": "15:00",
-        "quote_time_case": "las tres",
-        "quote_first": "Que data de ",
-        "quote_last": " de la tarde de ayer. Mi influencia perpetua no podría comenzar antes, de lo contrario no habrías estado tan de mal humor antes.",
-        "title": "emma",
-        "author": "Jane Austen",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002272",
-        "time": "15:00",
-        "quote_time_case": "las tres",
-        "quote_first": "La tarde pasó del agradable purgador de ",
-        "quote_last": " a la belleza dorada de las cuatro.",
-        "title": "Este lado del paraiso",
-        "author": "F. Scott Fitzgerald",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002273",
-        "time": "15:00",
-        "quote_time_case": "las tres",
-        "quote_first": "Con cierta dificultad, James se abrió paso a través de oleadas de olor, voces chirriantes y cabello negro brillante.<br>“¿Qué diablos está pasando?” preguntó cuando llegó a la seguridad de su oficina.<br>Carlo se encogió de hombros. “Son ",
-        "quote_last": ".”<br>“Soy consciente de la hora, Carlo. ¿Por qué hay tantas mujeres afuera?”<br>“Ellas son las 𝘧𝘪𝘥𝘢𝘯𝘻𝘢𝘵𝘦. Las mujeres que quieren casarse con militares aliados.",
-        "title": "El oficial de bodas",
-        "author": "Anthony Capella",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002274",
-        "time": "15:00",
-        "quote_time_case": "las tres",
-        "quote_first": "A ",
-        "quote_last": " de la tarde de ese mismo día la visitó. Ella extendió sus dos manos, sonriendo en su habitual manera encantadora y amistosa; y durante unos segundos se miraron profundamente a los ojos.",
-        "title": "Bel Ami",
-        "author": "Guy de Maupassant",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002275",
-        "time": "15:00",
-        "quote_time_case": "las tres",
-        "quote_first": "Entra en el Hospital de Cosas Rotas el lunes a ",
-        "quote_last": " de la tarde. Ese fue el acuerdo. Si llegaba después de las seis, debía dirigirse directamente a la casa de Sunset Park.",
-        "title": "Parque del Atardecer",
-        "author": "Paul Auster",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002276",
-        "time": "15:00",
-        "quote_time_case": "las tres",
-        "quote_first": "Tenía una clase de psicología a ",
-        "quote_last": ", la primera reunión del semestre, y sospechaba que me la iba a perder. Yo tenía razón. Victoria hizo de todo un verdadero ritual: la ropa se quitaba con el coqueteo masturbatorio de un espectáculo de striptease, las mantas se retiraban periódicamente para mostrar este o aquel trozo de carne, estratégicamente revelado.",
-        "title": "Achates McNeil",
-        "author": "T.C. Boyle",
-        "sfw": "nsfw"
-    },
-    {
-        "id": "002277",
-        "time": "15:00",
-        "quote_time_case": "las tres",
-        "quote_first": "Eran ",
-        "quote_last": " de la tarde de un hermoso y ventoso día de otoño cuando el señor Casaubon se dirigió a su rectoría en Lowick, a sólo cinco millas de Tipton; y Dorothea, que llevaba sombrero y chal, corrió entre los arbustos y atravesó el parque para poder pasear por el bosque circundante sin otra compañía visible que la de Monk, el perro gran san bernardo, que siempre cuidaba del señoritas en sus paseos",
-        "title": "Middlemarch",
-        "author": "George Eliot",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002278",
-        "time": "15:00",
-        "quote_time_case": "las tres",
-        "quote_first": "Las señoras se bañaban antes del mediodía, después de la siesta de ",
-        "quote_last": ", y al caer la noche parecían suaves pasteles de té cubiertos de sudor y talco dulce.",
-        "title": "Matar a un ruiseñor",
-        "author": "Harper Lee",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002279",
-        "time": "15:00",
-        "quote_time_case": "las tres",
-        "quote_first": "El señor Madeleine solía llegar a ",
-        "quote_last": ", y como la puntualidad era amabilidad, él era puntual.",
-        "title": "Los Miserables",
-        "author": "Victor Hugo",
-        "sfw": "sfw"
-    },
-    {
-        "id": "002280",
-        "time": "15:00",
-        "quote_time_case": "las tres",
-        "quote_first": "El miércoles a ",
-        "quote_last": ", el señor y la señora Bovary, sentados en su coche de perros, partieron hacia Vaubyessard, con un gran baúl atado detrás y una caja para sombreros delante del delantal. Además de esto, Charles sostenía una sombrerera entre sus rodillas.",
-        "title": "Señora Bovary",
-        "author": "Gustave Flaubert",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002281",
-        "time": "15:00",
-        "quote_time_case": "Las tres",
-        "quote_first": "",
-        "quote_last": " en punto es la hora perfecta en Cham, porque todo es posible. Todavía se puede esquiar, pero también beber, las tiendas acaban de reabrir y el sol todavía está alto. Las tres en punto nunca es demasiado tarde ni demasiado temprano.",
-        "title": "cham",
-        "author": "Jonathan Trigell",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002282",
-        "time": "15:00",
-        "quote_time_case": "las tres",
-        "quote_first": "Hoy era el día que Alex había designado para su \"castigo\". Me puse cada vez más nervioso a medida que se acercaba la hora de ",
-        "quote_last": ". Estaba solo en la casa y caminaba inquieto de una habitación a otra, mirando los relojes de cada una de ellas.",
-        "title": "Sentencia sorda",
-        "author": "David Lodge",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002283",
-        "time": "15:00",
-        "quote_time_case": "a las tres",
-        "quote_first": "El olor, el humo y el sudor de un casino son nauseabundos ",
-        "quote_last": " de la madrugada. Entonces, la erosión del alma producida por el alto juego de azar -un abono de codicia, miedo y tensión nerviosa- se vuelve insoportable y los sentidos se despiertan y se rebelan contra ella.",
-        "title": "Casino Royale",
-        "author": "Ian Fleming",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002284",
-        "time": "15:00",
-        "quote_time_case": "las tres de la tarde",
-        "quote_first": "A ",
-        "quote_last": " se oyó un fuerte repique de campana, una voz autoritaria en el vestíbulo y, para mi sorpresa, se me presentó nada menos que el señor Athelney Jones. Sin embargo, era muy diferente del brusco y magistral profesor de sentido común que se había hecho cargo del caso con tanta confianza en Upper Norwood. Su expresión era abatida y su comportamiento era manso e incluso de disculpa.",
-        "title": "El signo del cuatro",
-        "author": "Sir Arthur Conan Doyle",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002285",
-        "time": "15:00",
-        "quote_time_case": "las tres de la tarde",
-        "quote_first": "Aproximadamente a ",
-        "quote_last": ", todo mi cuerpo se ve afectado por un cansancio abrumador y pasé las últimas horas del día examinando la tienda de regalos en busca de koalas rellenos para Kay y Olivia y relajándome en una mesa en el aire. -Cafetería acondicionada.",
-        "title": "Fotos de lirio",
-        "author": "Paige Toon",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002286",
-        "time": "15:00",
-        "quote_time_case": "las tres de la tarde",
-        "quote_first": "Me senté en la pila de leña que teníamos debajo de una lona en este lado de la casa. “Me imagino que estás aquí por negocios. El de mi esposa.”<br>“Lo soy.”<br>“Bueno, ya tomaste tu bebida, así que será mejor que nos pongamos manos a la obra. Todavía tengo un día completo de trabajo por delante y son ",
-        "quote_last": "”.",
-        "title": "Completamente oscuro, sin estrellas",
-        "author": "Stephen King",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002287",
-        "time": "15:00",
-        "quote_time_case": "las tres de la tarde",
-        "quote_first": "La tormenta arrasó toda Europa, arrasó toda la noche y continuó hasta el día siguiente, y cuando Cromwell murió a ",
-        "quote_last": " todavía estaba desolando la isla.",
-        "title": "Por siempre ámbar",
-        "author": "Kathleen Windsor",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002288",
+        "id": "002230",
         "time": "15:00",
         "quote_time_case": "tres",
-        "quote_first": "La campana de la torre del reloj de la plaza del pueblo dio las ",
+        "quote_first": "La campana de la torre del reloj de la plaza del pueblo sonó ",
         "quote_last": ". Declan se enderezó contra la pared de piedra, teniendo cuidado de permanecer oculto en las sombras mientras observaba el pub desde el callejón al otro lado de la calle.",
         "title": "En estas arenas negras",
         "author": "Vanessa Rasanen",
         "sfw": "sfw"
     },
     {
-        "id": "002289",
+        "id": "002231",
+        "time": "15:00",
+        "quote_time_case": "tres en punto",
+        "quote_first": "Los dos sentimientos encontrados de Gunther sobre la Navidad casi se borraron el uno del otro el primer domingo de Adviento. Para ",
+        "quote_last": " la sensación de miedo prácticamente había desaparecido.",
+        "title": "Brillante valle del amor",
+        "author": "Edna Hong",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002232",
         "time": "15:00",
         "quote_time_case": "tres",
         "quote_first": "A las ",
-        "quote_last": " de la tarde, fue Peter quien la sacó del semiaturdimiento en el que había estado trabajando, haciéndole consciente de que estaba casi dos veces: casi muerta de hambre y casi exhausta.",
+        "quote_last": " esa tarde, fue Peter quien la sacó del semiaturdimiento en el que había estado trabajando, haciéndole consciente de que era dos malditamente casi: malditamente muerta de hambre y malditamente muerta de hambre. -casi exhausto.",
         "title": "Los Tommyknockers",
         "author": "Stephen King",
         "sfw": "nsfw"
     },
     {
-        "id": "002290",
+        "id": "002233",
+        "time": "15:00",
+        "quote_time_case": "Son las tres",
+        "quote_first": "El pequeño velociraptor abrió las fauces y le siseó a Grant, en una postura de repentina e intensa furia.<br>“Fascinante”, dijo Grant.<br>“¿Puedo quedarme y jugar con ella?” dijo Tim.<br>“Ahora no”, dijo Ed Regis, mirando su reloj. “",
+        "quote_last": ", y es un buen momento para hacer un recorrido por el parque en sí, para poder ver todos los dinosaurios en los hábitats que hemos diseñado para ellos. \"",
+        "title": "Parque Jurásico",
+        "author": "Michael Crichton",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002234",
+        "time": "15:00",
+        "quote_time_case": "Las tres en punto",
+        "quote_first": "",
+        "quote_last": " siempre es demasiado tarde o demasiado temprano para cualquier cosa que quieras hacer. Un momento extraño en la tarde.",
+        "title": "Náuseas",
+        "author": "Jean-Paul Sartre",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002235",
+        "time": "15:00",
+        "quote_time_case": "las tres",
+        "quote_first": "Unos momentos más tarde, hacia las ",
+        "quote_last": ", Courfeyrec pasaba por la calle Mouffetard en compañía de Bossuet. La nieve había redoblado su violencia y llenaba el aire.",
+        "title": "Los Miserables",
+        "author": "Victor Hugo",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002236",
+        "time": "15:00",
+        "quote_time_case": "las tres de la tarde",
+        "quote_first": "A las ",
+        "quote_last": " sonó un fuerte repique de campana, una voz autoritaria en el vestíbulo y, para mi sorpresa, nada menos que el señor Me mostraron a Athelney Jones. Sin embargo, era muy diferente del brusco y magistral profesor de sentido común que se había hecho cargo del caso con tanta confianza en Upper Norwood. Su expresión era abatida y su comportamiento era manso e incluso de disculpa.",
+        "title": "El signo del cuatro",
+        "author": "Sir Arthur Conan Doyle",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002237",
+        "time": "15:00",
+        "quote_time_case": "tres en punto",
+        "quote_first": "“Entonces, buenas noches, majestad, y confío en que pronto tendremos buenas noticias para usted. Y buenas noches, Watson —añadió mientras las ruedas del berlina real avanzaban calle abajo. \"Si tiene la amabilidad de llamar mañana por la tarde a las ",
+        "quote_last": ", me gustaría conversar sobre este pequeño asunto con usted\".",
+        "title": "El signo del cuatro",
+        "author": "Sir Arthur Conan Doyle",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002238",
         "time": "15:00",
         "quote_time_case": "tres",
-        "quote_first": "La tarde siguiente, a las ",
+        "quote_first": "La tarde siguiente a las ",
         "quote_last": ", fui a conocer a la nueva maestra. Cuando entré a la oficina de Julian me quedé en shock. Estaba completamente vacío. Los libros, las alfombras, la gran mesa redonda habían desaparecido.",
         "title": "La historia secreta",
         "author": "Donna Tartt",
         "sfw": "unknown"
     },
     {
-        "id": "002291",
+        "id": "002239",
+        "time": "15:00",
+        "quote_time_case": "las tres de la tarde",
+        "quote_first": "Aproximadamente ",
+        "quote_last": ", todo mi cuerpo es golpeado por un cansancio abrumador y pasé las últimas horas del día examinando la tienda de regalos en busca de peluches. koalas para Kay y Olivia y relajarse en una mesa dentro de la cafetería con aire acondicionado.",
+        "title": "Fotos de lirio",
+        "author": "Paige Toon",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002240",
         "time": "15:00",
         "quote_time_case": "tres",
-        "quote_first": "Todas las puertas estaban cerradas con llave, todo en su debido lugar. Nada fuera de lo común. Regresé a la habitación del conserje, puse la alarma a las ",
+        "quote_first": "Todas las puertas estaban cerradas con llave, todo en su debido lugar. Nada fuera de lo normal. Regresé a la habitación del conserje, puse la alarma para ",
         "quote_last": " y me quedé profundamente dormido.",
         "title": "Sauce ciego, mujer dormida",
         "author": "Haruki Murakami",
         "sfw": "unknown"
     },
     {
-        "id": "002292",
+        "id": "002241",
         "time": "15:00",
         "quote_time_case": "tres",
         "quote_first": "Sin embargo, cuando sonó la alarma a las ",
@@ -280,143 +120,293 @@
         "sfw": "unknown"
     },
     {
-        "id": "002293",
-        "time": "15:00",
-        "quote_time_case": "tres",
-        "quote_first": "Cuando el reloj dio las ",
-        "quote_last": ", Elizabeth sintió que debía irse y, muy de mala gana, lo dijo. La señorita Bingley le ofreció el carruaje, y ella sólo quiso presionar un poco para aceptarlo, cuando Jane testificó tal preocupación al separarse de ella, que la señorita Bingley se vio obligada a convertir el ofrecimiento del carruaje en una invitación a permanecer en Netherfield por el momento. .",
-        "title": "Orgullo y prejuicio",
-        "author": "Jane Austen",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002294",
-        "time": "15:00",
-        "quote_time_case": "tres",
-        "quote_first": "Los relojes de la ciudad apenas habían dado las ",
-        "quote_last": ", pero ya estaba bastante oscuro (no había habido luz en todo el día) y en las ventanas de las oficinas vecinas brillaban velas, como manchas rojizas en el palpable aire marrón.",
-        "title": "Un villancico",
-        "author": "Charles Dickens",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002295",
-        "time": "15:00",
-        "quote_time_case": "Tres",
-        "quote_first": "Y el sonido de la campana inundó la habitación con su onda melancólica; que retrocedía y se recomponía para caer de nuevo, cuando oyó, distraídamente, algo que se movía a tientas, algo que arañaba la puerta. ¿Quién a esta hora? ¡",
-        "quote_last": ", cielos! ¡Ya son tres!",
-        "title": "Sra. Dalloway",
-        "author": "Virginia Woolf",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002296",
-        "time": "15:00",
-        "quote_time_case": "tres",
-        "quote_first": "A las ",
-        "quote_last": " de la tarde del miércoles esa parte del cuadro estaba terminada.",
-        "title": "La piedra lunar",
-        "author": "Wilkie Collins",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002297",
-        "time": "15:00",
-        "quote_time_case": "tres",
-        "quote_first": "Abandonado por la mujer que amaba, exalté mi sufrimiento hasta convertirlo en un signo de grandeza (acostado desplomado en una cama a las ",
-        "quote_last": " de la tarde) y, por lo tanto, me protegí de experimentar mi dolor como el resultado de lo que era, en el mejor de los casos, una ruptura romántica mundana. arriba. La partida de Chloe puede haberme matado, pero al menos me había dejado en gloriosa posesión de la autoridad moral. Fui un mártir.",
-        "title": "Ensayos de amor",
-        "author": "Alain de Botton",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002298",
-        "time": "15:00",
-        "quote_time_case": "tres de la tarde",
-        "quote_first": "recordaba «que el domingo pasado una negra vino a las ",
-        "quote_last": " y salió a las seis junto con Antonio».",
-        "title": "El juguete rabioso",
-        "author": "Roberto Arlt",
-        "sfw": "sfw"
-    },
-    {
-        "id": "002299",
+        "id": "002242",
         "time": "15:00",
         "quote_time_case": "tres en punto",
-        "quote_first": "Los dos sentimientos encontrados de Gunther sobre la Navidad casi se borraron el uno del otro el primer domingo de Adviento. A las ",
-        "quote_last": " la sensación de miedo prácticamente había desaparecido.",
-        "title": "Brillante valle del amor",
-        "author": "Edna Hong",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002300",
-        "time": "15:00",
-        "quote_time_case": "tres en punto",
-        "quote_first": "“Entonces, buenas noches, majestad, y confío en que pronto tendremos buenas noticias para usted. Y buenas noches, Watson —añadió mientras las ruedas del berlina real rodaban calle abajo. \"Si tiene la amabilidad de llamarme mañana por la tarde a las ",
-        "quote_last": ", me gustaría charlar con usted sobre este pequeño asunto\".",
-        "title": "El signo del cuatro",
-        "author": "Sir Arthur Conan Doyle",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002301",
-        "time": "15:00",
-        "quote_time_case": "tres en punto",
-        "quote_first": "Luisa cruza la oficina hacia la puerta de Dom Grelsch. Su jefe habla por teléfono en voz baja y furiosa. Luisa espera afuera pero escucha. “No, no, no, señor Frum, es en blanco y negro, dígame, oye, 𝘐’𝘮 hablando ahora, dígame, ¿una ‘condición’ en blanco y negro más que la leucemia? ¿Sabes lo que pienso? Creo que mi esposa es sólo un papeleo entre usted y su turno de golf de las ",
-        "quote_last": ", ¿no es así?",
+        "quote_first": "Luisa cruza la oficina hacia la puerta de Dom Grelsch. Su jefe habla por teléfono en voz baja y furiosa. Luisa espera afuera pero escucha. “No, no, no, señor Frum, es en blanco y negro, dígame, oye, 𝘐’𝘮 hablando ahora, dígame ¿una ‘condición’ en blanco y negro más que la leucemia? ¿Sabes lo que pienso? Creo que mi esposa es sólo una pieza de papeleo entre tú y tu ",
+        "quote_last": " ranura de golf, ¿no es así?",
         "title": "Atlas de nubes",
         "author": "David Mitchell",
         "sfw": "unknown"
     },
     {
-        "id": "002302",
+        "id": "002243",
+        "time": "15:00",
+        "quote_time_case": "Tres en punto",
+        "quote_first": "Jarvis silbó entre dientes. “¿Ayudará la ley a un hombre de tu edad a recuperarse de múltiples fracturas de columna, Timothy?”<br>Eddie: “Los hombres de tu edad no se recuperan. Se estrellan.”<br>Luché con todas mis fuerzas, pero mi esfínter ya no era el mío y se disparó un cañonazo. Podría haber soportado la diversión o la condescendencia, pero la compasión de mis torturadores significó mi abyecta derrota. Se tiró de la cadena del inodoro.<br>“",
+        "quote_last": "”, Cavendish-Redux bajó por la taza.",
+        "title": "Atlas de nubes",
+        "author": "David Mitchell",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002244",
+        "time": "15:00",
+        "quote_time_case": "Tres en punto",
+        "quote_first": "Había presionado demasiado. “¡Maldita sea, Tim, mi banco 𝘤𝘳𝘢𝘴𝘩𝘦𝘥! ¡Nos desangraron esos chupasangres de Lloyds! ¡Se acabaron los días en los que tenía ese tipo de espondúlicos a mi entera disposición! ¡Nuestra casa está hipotecada dos veces! Yo soy el poderoso caído, tú eres el minúsculo caído. De todos modos, ¡tienes este libro de mal gusto saliendo volando de todas las librerías del mundo conocido!”<br>Mi cara decía algo para lo que no tenía palabras.<br>“Oh, Dios, idiota. ¿Cuál es el calendario de pagos?”<br>Miré mi reloj. “",
+        "quote_last": " esta tarde”.",
+        "title": "Atlas de nubes",
+        "author": "David Mitchell",
+        "sfw": "nsfw"
+    },
+    {
+        "id": "002245",
         "time": "15:00",
         "quote_time_case": "tres en punto",
-        "quote_first": "A las ",
-        "quote_last": ", el calor se había transformado en una criatura salvaje, una serpiente empeñada en cazar a su presa. Silbó y se deslizó por las aceras, metió su lengua llameante por los ojos de las cerraduras. La gente se acercaba cada vez más a sus ventiladores, chupaba con más fuerza los cubitos de hielo y abría las ventanas, para cerrarlas instantáneamente.",
+        "quote_first": "Para ",
+        "quote_last": ", el calor se había transformado en una criatura salvaje, una serpiente empeñada en cazar a su presa. Silbó y se deslizó por las aceras, metió su lengua llameante por los ojos de las cerraduras. La gente se acercaba cada vez más a sus ventiladores, chupaba con más fuerza los cubitos de hielo y abría las ventanas, sólo para cerrarlas instantáneamente.",
         "title": "La isla de los árboles perdidos",
         "author": "Elif Shafak",
         "sfw": "unknown"
     },
     {
-        "id": "002303",
+        "id": "002246",
+        "time": "15:00",
+        "quote_time_case": "tres",
+        "quote_first": "Cuando el reloj dio ",
+        "quote_last": ", Elizabeth sintió que debía irse, y de muy mala gana lo dijo. La señorita Bingley le ofreció el carruaje, y ella sólo quiso presionar un poco para aceptarlo, cuando Jane testificó tal preocupación al separarse de ella, que la señorita Bingley se vio obligada a convertir el ofrecimiento del carruaje en una invitación a permanecer en Netherfield por el momento.",
+        "title": "Orgullo y prejuicio",
+        "author": "Jane Austen",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002247",
+        "time": "15:00",
+        "quote_time_case": "las tres de la tarde",
+        "quote_first": "Me senté en la pila de leña que teníamos debajo de una lona en este lado de la casa. “Me imagino que estás aquí por negocios. El de mi esposa.”<br>“Lo soy.”<br>“Bueno, ya tomaste tu bebida, así que será mejor que nos pongamos manos a la obra. Todavía tengo un día completo de trabajo por delante, y son ",
+        "quote_last": "”.",
+        "title": "Completamente oscuro, sin estrellas",
+        "author": "Stephen King",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002248",
+        "time": "15:00",
+        "quote_time_case": "las tres de la tarde",
+        "quote_first": "La tormenta arrasó toda Europa, arrasó toda la noche y continuó hasta el día siguiente, y cuando Cromwell murió a las ",
+        "quote_last": " todavía estaba desolando el isla.",
+        "title": "Por siempre ámbar",
+        "author": "Kathleen Windsor",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002249",
+        "time": "15:00",
+        "quote_time_case": "las tres en punto",
+        "quote_first": "A las ",
+        "quote_last": " estaba en Baker Street, pero Holmes aún no había regresado.",
+        "title": "Un escándalo en Bohemia, Las aventuras de Sherlock Holmes",
+        "author": "Sir Arthur Conan Doyle",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002250",
         "time": "15:00",
         "quote_time_case": "tres en punto",
-        "quote_first": "Y ahora eran las ",
+        "quote_first": "Y ahora eran ",
         "quote_last": ". El Anticristo había estado en la Tierra durante quince horas, y un ángel y un demonio habían estado bebiendo abundantemente durante tres de ellas.",
         "title": "Buenos augurios",
         "author": "Terry Pratchett, Neil Gaiman",
         "sfw": "unknown"
     },
     {
-        "id": "002304",
+        "id": "002251",
+        "time": "15:00",
+        "quote_time_case": "tres",
+        "quote_first": "Los relojes de la ciudad acababan de dar ",
+        "quote_last": ", pero ya estaba bastante oscuro (no había habido luz en todo el día) y en las ventanas de las oficinas vecinas brillaban velas. como manchas rojizas sobre el palpable aire marrón.",
+        "title": "Un cuento de Navidad",
+        "author": "Charles Dickens",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002252",
         "time": "15:00",
         "quote_time_case": "tres en punto",
-        "quote_first": "Amory veía chicas haciendo cosas que incluso en su memoria habrían sido imposibles: cenar a las ",
-        "quote_last": ", después del baile, en cafés imposibles, hablar de todos los aspectos de la vida con un aire mitad de seriedad, mitad de burla, pero con un Una emoción furtiva que Amory consideraba representaba una verdadera decepción moral. Pero nunca se dio cuenta de lo extendido que estaba hasta que vio las ciudades entre Nueva York y Chicago como una gran intriga juvenil.",
-        "title": "Este lado del paraiso",
+        "quote_first": "Fechado desde ",
+        "quote_last": " ayer. Mi influencia perpetua no podría comenzar antes, de lo contrario no habrías estado tan de mal humor antes.",
+        "title": "Emma",
+        "author": "Jane Austen",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002253",
+        "time": "15:00",
+        "quote_time_case": "tres en punto",
+        "quote_first": "Amory vio chicas haciendo cosas que incluso en su memoria habrían sido imposibles: comer ",
+        "quote_last": ", cenas después del baile en cafés imposibles, hablar de todos los aspectos de la vida. con un aire mitad de seriedad, mitad de burla, pero con una excitación furtiva que Amory consideraba que representaba una verdadera decepción moral. Pero nunca se dio cuenta de lo extendido que estaba hasta que vio las ciudades entre Nueva York y Chicago como una gran intriga juvenil.",
+        "title": "Este lado del paraíso",
         "author": "F. Scott Fitzgerald",
         "sfw": "unknown"
     },
     {
-        "id": "002305",
+        "id": "002254",
         "time": "15:00",
         "quote_time_case": "tres en punto",
-        "quote_first": "Debo llegar al centro a las ",
+        "quote_first": "La tarde decayó del bien purgante de ",
+        "quote_last": " a la belleza dorada de las cuatro.",
+        "title": "Este lado del paraíso",
+        "author": "F. Scott Fitzgerald",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002255",
+        "time": "15:00",
+        "quote_time_case": "tres en punto",
+        "quote_first": "Con cierta dificultad, James se abrió paso entre oleadas de olor, voces chirriantes y cabello negro brillante.<br>“¿Qué diablos está pasando?” preguntó cuando llegó a la seguridad de su oficina.<br>Carlo se encogió de hombros. “Son ",
+        "quote_last": ".”<br>“Soy consciente de la hora, Carlo. ¿Por qué hay tantas mujeres afuera?”<br>“Ellas son las 𝘧𝘪𝘥𝘢𝘯𝘻𝘢𝘵𝘦. Las mujeres que quieren casarse con militares aliados.",
+        "title": "El oficial de bodas",
+        "author": "Anthony Capella",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002256",
+        "time": "15:00",
+        "quote_time_case": "tres en punto",
+        "quote_first": "Debo llegar a la zona alta a las ",
         "quote_last": ".",
         "title": "Una confederación de tontos",
         "author": "John Kennedy Toole",
         "sfw": "unknown"
     },
     {
-        "id": "002306",
+        "id": "002257",
         "time": "15:00",
         "quote_time_case": "tres en punto",
-        "quote_first": "Recuerden, gritaban, \"batalla a las ",
-        "quote_last": ". No hay tiempo que perder\".",
-        "title": "golondrinas y amazonas",
+        "quote_first": "Recuerden, gritaron, \"batalla a las ",
+        "quote_last": " en punto. No hay tiempo que perder\".",
+        "title": "Golondrinas y amazonas",
         "author": "Arthur Ransome",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002258",
+        "time": "15:00",
+        "quote_time_case": "Tres",
+        "quote_first": "Y el sonido de la campana inundó la habitación con su onda melancólica; que retrocedía y se recomponía para caer de nuevo, cuando oyó, distraídamente, algo que se movía a tientas, algo que arañaba la puerta. ¿Quién a esta hora? ",
+        "quote_last": ", ¡Dios mío! ¡Ya son tres!",
+        "title": "Sra. Dalloway",
+        "author": "Virginia Woolf",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002259",
+        "time": "15:00",
+        "quote_time_case": "las tres",
+        "quote_first": "A las ",
+        "quote_last": " de la tarde de ese mismo día, la visitó. Ella extendió sus dos manos, sonriendo en su habitual manera encantadora y amistosa; y durante unos segundos se miraron profundamente a los ojos.",
+        "title": "Bel Ami",
+        "author": "Guy de Maupassant",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002260",
+        "time": "15:00",
+        "quote_time_case": "tres",
+        "quote_first": "A las ",
+        "quote_last": " del miércoles por la tarde, se completó esa parte de la pintura.",
+        "title": "La piedra lunar",
+        "author": "Wilkie Collins",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002261",
+        "time": "15:00",
+        "quote_time_case": "tres",
+        "quote_first": "Abandonado por la mujer que amaba, exalté mi sufrimiento hasta convertirlo en un signo de grandeza (acostado desplomado en una cama a las ",
+        "quote_last": " de la tarde), y así me protegí de experimentar mi el dolor como resultado de lo que fue, en el mejor de los casos, una ruptura romántica mundana. La partida de Chloe puede haberme matado, pero al menos me había dejado en gloriosa posesión de la autoridad moral. Fui un mártir.",
+        "title": "Ensayos de amor",
+        "author": "Alain de Botton",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002262",
+        "time": "15:00",
+        "quote_time_case": "tres en punto",
+        "quote_first": "Entra al Hospital de Cosas Rotas a las ",
+        "quote_last": " el lunes por la tarde. Ese fue el acuerdo. Si llegaba después de las seis, debía dirigirse directamente a la casa de Sunset Park.",
+        "title": "Parque del Atardecer",
+        "author": "Paul Auster",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002263",
+        "time": "15:00",
+        "quote_time_case": "tres en punto",
+        "quote_first": "Tenía una clase ",
+        "quote_last": " de psicología, la primera reunión del semestre, y sospechaba que me la iba a perder. Tenía razón. Victoria hizo un verdadero ritual de todo el asunto: la ropa se quitaba con el coqueteo masturbatorio de un espectáculo de striptease, las mantas se retiraban periódicamente para mostrar este o aquel trozo de carne, estratégicamente revelado.",
+        "title": "Achates McNeil",
+        "author": "T.C. Boyle",
+        "sfw": "nsfw"
+    },
+    {
+        "id": "002264",
+        "time": "15:00",
+        "quote_time_case": "las tres en punto",
+        "quote_first": "Eran ",
+        "quote_last": " de un hermoso y ventoso día de otoño cuando el señor Casaubon se dirigió a su rectoría en Lowick, a sólo cinco millas de Tipton; y Dorothea, que llevaba sombrero y chal, corrió entre los arbustos y atravesó el parque para poder pasear por el bosque circundante sin otra compañía visible que la de Monk, el perro gran san bernardo, que siempre cuidaba del señoritas en sus paseos.",
+        "title": "Middlemarch",
+        "author": "George Eliot",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002265",
+        "time": "15:00",
+        "quote_time_case": "tres en punto",
+        "quote_first": "Las señoras se bañaban antes del mediodía, después de sus siestas ",
+        "quote_last": ", y al caer la noche parecían suaves pasteles de té con glaseados de sudor y dulce talco.",
+        "title": "Matar a un ruiseñor",
+        "author": "Harper Lee",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002266",
+        "time": "15:00",
+        "quote_time_case": "las tres",
+        "quote_first": "El señor Madeleine solía venir a las ",
+        "quote_last": ", y como la puntualidad era amabilidad, era puntual.",
+        "title": "Los Miserables",
+        "author": "Victor Hugo",
+        "sfw": "sfw"
+    },
+    {
+        "id": "002267",
+        "time": "15:00",
+        "quote_time_case": "las tres",
+        "quote_first": "El miércoles a las ",
+        "quote_last": ", el señor y la señora Bovary, sentados en su coche de perros, partieron hacia Vaubyessard, con un gran baúl atado detrás y un sombrero. caja delante del delantal. Además de esto, Charles sostenía una sombrerera entre sus rodillas.",
+        "title": "Señora Bovary",
+        "author": "Gustave Flaubert",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002268",
+        "time": "15:00",
+        "quote_time_case": "a las tres",
+        "quote_first": "El olor, el humo y el sudor de un casino son nauseabundos ",
+        "quote_last": " de la mañana. Entonces, la erosión del alma producida por el alto juego de azar -un abono de codicia, miedo y tensión nerviosa- se vuelve insoportable y los sentidos se despiertan y se rebelan contra ella.",
+        "title": "Casino real",
+        "author": "Ian Fleming",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002269",
+        "time": "15:00",
+        "quote_time_case": "Las tres en punto",
+        "quote_first": "",
+        "quote_last": " es el momento perfecto en Cham, porque todo es posible. Todavía se puede esquiar, pero también beber, las tiendas acaban de reabrir y el sol todavía está alto. Las tres en punto nunca es demasiado tarde ni demasiado temprano.",
+        "title": "Cham",
+        "author": "Jonathan Trigell",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002270",
+        "time": "15:00",
+        "quote_time_case": "tres en punto",
+        "quote_first": "Hoy era el día que Alex había designado para su \"castigo\". Me puse cada vez más nervioso a medida que se acercaba la hora de ",
+        "quote_last": ". Estaba solo en la casa y caminaba inquieto de una habitación a otra, mirando los relojes de cada una de ellas.",
+        "title": "Sentencia sorda",
+        "author": "David Lodge",
         "sfw": "unknown"
     }
 ]

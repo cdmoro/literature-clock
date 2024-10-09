@@ -4,7 +4,7 @@
         "time": "16:30",
         "quote_time_case": "quatro e meia",
         "quote_first": "Mas acredito”, ele puxou o relógio, “que posso passar uma hora com você. São ",
-        "quote_last": " agora. Se ao menos eu fosse alguma coisa, proprietário de terras, pai, oficial de cavalaria, fotógrafo, jornalista... Não sou nada, não tenho especialidade, e às vezes fico positivamente entediado. Eu realmente pensei que você me contaria algo novo.",
+        "quote_last": " agora. Se ao menos eu fosse alguma coisa, proprietário de terras, pai, oficial de cavalaria, fotógrafo, jornalista... Não sou nada, não sou especialidade, e às vezes fico positivamente entediado. Eu realmente pensei que você me contaria algo novo.",
         "title": "Crime e punição",
         "author": "Fyodor Dostoyevsky",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "002482",
         "time": "16:30",
-        "quote_time_case": "* 4:30",
-        "quote_first": "Às 16h30, Gunther voltou para a Casa Berg com os braços cheios de narcisos amarelos. Frau Julia era novamente Frau Julia e recebeu ele e os narcisos de braços abertos.",
-        "quote_last": "",
+        "quote_time_case": "4:30",
+        "quote_first": "Às ",
+        "quote_last": " Gunther voltou para a Casa Berg com os braços cheios de narcisos amarelos. Frau Julia era novamente Frau Julia e recebeu ele e os narcisos de braços abertos.",
         "title": "Vale Brilhante do Amor",
         "author": "Edna Hong",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "002483",
         "time": "16:30",
-        "quote_time_case": "* 4:30",
-        "quote_first": "A polícia local não gostaria de ser chamada às 16h30 da véspera de Natal e, se isso fosse algum tipo de farsa, ele preferia não participar ativamente.",
-        "quote_last": "",
+        "quote_time_case": "4:30",
+        "quote_first": "A polícia local não gostaria de ser chamada às ",
+        "quote_last": " na véspera de Natal e, se isso fosse algum tipo de farsa, ele preferia não participar ativamente.",
         "title": "O Assassinato do Visco",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -43,8 +43,8 @@
         "id": "002485",
         "time": "16:30",
         "quote_time_case": "Quatro e meia",
-        "quote_first": "Jonas rola dolorosamente para fora da rede, a região lombar dolorida, rígida e inchada, precisando desesperadamente de um quiroprático. Ele verifica o relógio. ",
-        "quote_last": "... mas é da manhã ou da tarde?",
+        "quote_first": "Jonas rola dolorosamente para fora da rede, a parte inferior das costas dolorida, rígida e inchada, precisando desesperadamente de um quiroprático. Ele verifica o relógio. ",
+        "quote_last": "… mas é da manhã ou da tarde?",
         "title": "Meg, Águas Primordiais",
         "author": "Steve Alten",
         "sfw": "unknown"
@@ -52,9 +52,9 @@
     {
         "id": "002486",
         "time": "16:30",
-        "quote_time_case": "quatro e meia da tarde.",
+        "quote_time_case": "quatro e meia da tarde",
         "quote_first": "Às vezes me pergunto o que aconteceu com a garota — esse pensamento geralmente vem à minha mente quando estou diante de um prato de espaguete fumegante. Depois que ela desligou, ela desapareceu para sempre, sugada pelas ",
-        "quote_last": " sombras? Eu era parcialmente culpado?<br>Mas quero que você entenda minha posição. Na época, eu não queria me envolver com ninguém. É por isso que continuei cozinhando espaguete sozinho. Naquele pote enorme, grande o suficiente para conter um pastor alemão.",
+        "quote_last": " sombras? Eu fui parcialmente culpado?<br>Mas quero que você entenda minha posição. Na época, eu não queria me envolver com ninguém. É por isso que continuei cozinhando espaguete sozinho. Naquele pote enorme, grande o suficiente para conter um pastor alemão.",
         "title": "Salgueiro Cego, Mulher Adormecida",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -64,7 +64,7 @@
         "time": "16:30",
         "quote_time_case": "quatro e meia",
         "quote_first": "Às ",
-        "quote_last": ", saio correndo do hotel, decidido a fazer uma tentativa de última hora. Assim que viro a esquina, esbarro em Walter Pach. Como ele não me reconhece e como não tenho nada a dizer-lhe, não faço nenhuma tentativa de prendê-lo. Mais tarde, quando estou esticando as pernas nas Tulherias, sua figura me vem à mente.",
+        "quote_last": " saio correndo do hotel, decidido a fazer uma tentativa de última hora. Assim que viro a esquina, esbarro em Walter Pach. Como ele não me reconhece e como não tenho nada a dizer-lhe, não faço nenhuma tentativa de prendê-lo. Mais tarde, quando estou esticando as pernas nas Tulherias, sua figura me vem à mente.",
         "title": "Trópico de Câncer",
         "author": "Henry Miller",
         "sfw": "unknown"
@@ -83,8 +83,8 @@
         "id": "002489",
         "time": "16:30",
         "quote_time_case": "quatro e meia",
-        "quote_first": "Esta tarde tudo está combinando. Quando o turno de trabalho chega, o relógio marca ",
-        "quote_last": ", exatamente como deveria.",
+        "quote_first": "Esta tarde tudo está combinando. Quando chega o turno de plantão o relógio marca ",
+        "quote_last": ", como deveria.",
         "title": "Um voou sobre o ninho do cuco",
         "author": "Ken Kesey",
         "sfw": "unknown"
@@ -104,7 +104,7 @@
         "time": "16:30",
         "quote_time_case": "quatro e meia",
         "quote_first": "Às ",
-        "quote_last": " daquela tarde, no final de janeiro, quando entrei na sala com Boo, meu cachorro, Hutch estava em sua poltrona favorita, olhando carrancudo para a televisão, que ele havia silenciado.",
+        "quote_last": " daquela tarde do final de janeiro, quando entrei na sala com Boo, meu cachorro, Hutch estava em sua poltrona favorita, olhando carrancudo para a televisão, que ele tinha silenciado.",
         "title": "Horas estranhas",
         "author": "Dean Koontz",
         "sfw": "unknown"
@@ -114,8 +114,8 @@
         "time": "16:30",
         "quote_time_case": "quatro e meia",
         "quote_first": "Saio do escritório às ",
-        "quote_last": ", vou até o Xclusive, onde malho com pesos livres por uma hora, depois atravesso o parque de táxi até o Gio's, no Pierre Room, para um tratamento facial, uma manicure e, se o tempo permitir, uma pedicure.",
-        "title": "psicopata Americano",
+        "quote_last": ", vou até o Xclusive, onde malho com pesos livres por uma hora, depois atravesso o parque de táxi até o Gio's, no Pierre Room, para uma sessão facial, manicure e, se o tempo permitir, pedicure.",
+        "title": "Psicopata Americano",
         "author": "Bret Easton Ellis",
         "sfw": "unknown"
     },
@@ -123,8 +123,8 @@
         "id": "002493",
         "time": "16:30",
         "quote_time_case": "quatro e meia",
-        "quote_first": "Ela desligou na minha cara a princípio, depois me perguntou se eu fazia questão de me comportar como um “punk suburbano” com mulheres com quem havia dormido. Mas depois de desculpas, insultos, risos e lágrimas, Romeu e Julieta seriam vistos juntos mais tarde naquela tarde, de mãos dadas no escuro, na exibição de Amor e Morte, às ",
-        "quote_last": ", no National Film Theatre. Finais felizes – pelo menos por enquanto.",
+        "quote_first": "Ela desligou na minha cara a princípio, depois me perguntou se eu fazia questão de me comportar como um “punk suburbano” com mulheres com quem havia dormido. Mas depois de desculpas, insultos, risos e lágrimas, Romeu e Julieta seriam vistos juntos mais tarde naquela tarde, de mãos dadas no escuro em uma exibição de ",
+        "quote_last": " Amor e Morte no National Film Theatre. Finais felizes – pelo menos por enquanto.",
         "title": "Ensaios de amor",
         "author": "Alain de Botton",
         "sfw": "unknown"

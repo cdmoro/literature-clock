@@ -2,9 +2,9 @@
     {
         "id": "003353",
         "time": "22:24",
-        "quote_time_case": "* dix heures vingt-quatre minutes",
-        "quote_first": "Néanmoins, je l'aime. Je l'ai aimée dès le premier instant où je l'ai vue ; et c'était lors d'une soirée à Mayfair, à dix heures vingt-quatre précisément, le jeudi soir, le vingt-quatre décembre mil huit cent soixante-deux.",
-        "quote_last": "",
+        "quote_time_case": "dix heures vingt-quatre minutes",
+        "quote_first": "Néanmoins, je l'aime. Je l'ai aimée dès le premier instant où je l'ai vue ; et c'était lors d'une soirée à Mayfair, à ",
+        "quote_last": " le jeudi soir, le vingt-quatre décembre, mille huit cent cinquante. soixante-deux.",
         "title": "Mlle Carew",
         "author": "Amelia B. Edwards",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "003354",
         "time": "22:24",
-        "quote_time_case": "10h24",
+        "quote_time_case": "10:24",
         "quote_first": "Grâce à une dizaine de minutes de temps doux, vers ",
-        "quote_last": " la Terre est recouverte de grandes forêts carbonifères dont les résidus nous donnent tout notre charbon, et les premiers insectes ailés sont visibles.",
+        "quote_last": " la Terre est recouverte des grandes forêts carbonifères dont les résidus nous donnent tout notre charbon, et les premiers insectes ailés. sont évidents.",
         "title": "Une brève histoire de presque tout",
         "author": "Bill Bryson",
         "sfw": "unknown"

@@ -1,32 +1,32 @@
 [
     {
-        "id": "000343",
-        "time": "02:27",
-        "quote_time_case": "2.27",
-        "quote_first": "La luna no volvió a brillar hasta las ",
-        "quote_last": " de la madrugada. Esto fue suficiente para que Wallander se diera cuenta de que se encontraba a cierta distancia debajo del árbol.",
-        "title": "Un paso atras",
-        "author": "Henning Mankell",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000344",
+        "id": "000337",
         "time": "02:27",
         "quote_time_case": "2:27",
-        "quote_first": "La solicitud fue concedida, pero no hasta que se completó y firmó otro formulario. Dexter Hutchins hizo una llamada por cobrar al director de la CIA a las ",
-        "quote_last": " de esa mañana.",
+        "quote_first": "La solicitud fue concedida, pero no hasta que se completó y firmó otro formulario. Dexter Hutchins hizo una llamada por cobrar al Director de la CIA a las ",
+        "quote_last": " esa mañana.",
         "title": "Honor entre ladrones",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "000345",
+        "id": "000338",
         "time": "02:27",
         "quote_time_case": "las dos y veintisiete minutos",
         "quote_first": "Las manecillas de los cuatro mil relojes eléctricos de las cuatro mil salas del Bloomsbury Centre marcaban ",
         "quote_last": ".",
-        "title": "Nuevo mundo valiente",
+        "title": "Un mundo feliz",
         "author": "Aldous Leonard Huxley",
+        "sfw": "unknown"
+    },
+    {
+        "id": "000339",
+        "time": "02:27",
+        "quote_time_case": "2.27 am",
+        "quote_first": "La luna no volvió a brillar hasta las ",
+        "quote_last": ". Esto fue suficiente para que Wallander se diera cuenta de que se encontraba a cierta distancia debajo del árbol.",
+        "title": "Un paso atrás",
+        "author": "Henning Mankell",
         "sfw": "unknown"
     }
 ]

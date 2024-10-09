@@ -1,22 +1,22 @@
 [
     {
-        "id": "002843",
+        "id": "002800",
         "time": "18:40",
-        "quote_time_case": "* veinte minutos para las siete",
-        "quote_first": "Al tener que cambiar de autobús, conseguí mucho tiempo; de hecho, demasiado; porque llegamos a las siete menos veinte y Francing, según dijo el criado, acababa de subir a vestirse.",
-        "quote_last": "",
-        "title": "Diario de un don nadie",
-        "author": "George and Weedon Grossmith",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002844",
-        "time": "18:40",
-        "quote_time_case": "seis cuarenta",
-        "quote_first": "Eran las ",
+        "quote_time_case": "seis-cuarenta",
+        "quote_first": "Eran ",
         "quote_last": " del mismo martes cuando George Chandler-Powell terminó su lista de pacientes privados en el Hospital St. Angela. Al quitarse la bata de operaciones, se sintió paradójicamente agotado e inquieto.",
         "title": "El paciente privado",
         "author": "P.D. James",
         "sfw": "sfw"
+    },
+    {
+        "id": "002801",
+        "time": "18:40",
+        "quote_time_case": "las siete menos veinte",
+        "quote_first": "Al tener que cambiar de autobús, conseguí mucho tiempo; de hecho, demasiado; porque llegamos a las ",
+        "quote_last": ", y Francing, según dijo el criado, acababa de subir a vestirse.",
+        "title": "Diario de un don nadie",
+        "author": "George and Weedon Grossmith",
+        "sfw": "unknown"
     }
 ]

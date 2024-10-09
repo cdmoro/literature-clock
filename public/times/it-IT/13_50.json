@@ -2,7 +2,7 @@
     {
         "id": "002072",
         "time": "13:50",
-        "quote_time_case": "Dieci a due",
+        "quote_time_case": "Due meno dieci",
         "quote_first": "Doveva uscire da questo dannato camper. Potrebbe essere la più grande e lussuosa del mondo, ma in quel momento sembrava grande quanto una bara. Si diresse verso la porta, aggrappandosi alle cose per mantenere l'equilibrio. Prima di uscire guardò l'orologio sul cruscotto. ",
         "quote_last": ". Tutto era successo in soli venti minuti. Incredibile.",
         "title": "Dottor Sonno",
@@ -12,7 +12,7 @@
     {
         "id": "002073",
         "time": "13:50",
-        "quote_time_case": "Dieci a due",
+        "quote_time_case": "Due meno dieci",
         "quote_first": "Sull'orologio da polso giocattolo di Rahel era dipinta l'ora. ",
         "quote_last": ". Una delle sue ambizioni era possedere un orologio con cui poter cambiare l'ora ogni volta che lo desiderava (che secondo lei era lo scopo principale del tempo).",
         "title": "Il Dio delle piccole cose",
@@ -22,9 +22,9 @@
     {
         "id": "002074",
         "time": "13:50",
-        "quote_time_case": "uno e cinquanta",
-        "quote_first": "Il miglior treno della giornata fu il ",
-        "quote_last": " da Paddington che raggiunse Polgarwith poco dopo le sette.",
+        "quote_time_case": "uno-cinquanta",
+        "quote_first": "Il miglior treno della giornata è stato il ",
+        "quote_last": " da Paddington che ha raggiunto Polgarwith poco dopo le sette.",
         "title": "Il mistero della Cornovaglia",
         "author": "Agatha Christie",
         "sfw": "unknown"

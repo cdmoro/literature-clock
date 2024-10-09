@@ -1,22 +1,22 @@
 [
     {
-        "id": "000871",
-        "time": "06:35",
-        "quote_time_case": "siete menos veinticinco",
-        "quote_first": "Mi reloj estaba cerca, sobre el tocador; Al mirarlo, vi que eran las ",
-        "quote_last": " minutos. Me habían dicho que la familia desayunaba a las nueve, por lo que tenía casi dos horas y media de ocio. Por supuesto, saldría y disfrutaría del frescor de la mañana.",
-        "title": "Tribunal de Ravensdene",
-        "author": "J.S. Fletcher",
-        "sfw": "unknown"
-    },
-    {
-        "id": "000872",
+        "id": "000854",
         "time": "06:35",
         "quote_time_case": "6:35",
-        "quote_first": "Mark se despertó sobresaltado y se sentó, intentando centrar la vista en el reloj. Todo lo que podía ver era el segundero moviéndose: ",
+        "quote_first": "Mark se despertó sobresaltado y se sentó, intentando centrar la vista en el reloj. Todo lo que pudo ver fue el segundero moviéndose: ",
         "quote_last": ". Infierno. Se levantó de un salto de la silla, la rigidez del cuello y la espalda le dolían; todavía estaba vestido.",
         "title": "¿Se lo contamos al presidente?",
         "author": "Jeffrey Archer",
         "sfw": "nsfw"
+    },
+    {
+        "id": "000855",
+        "time": "06:35",
+        "quote_time_case": "veinticinco minutos para las siete",
+        "quote_first": "Mi reloj estaba cerca, sobre el tocador; Al mirarlo, vi que era la hora ",
+        "quote_last": ". Me habían dicho que la familia desayunaba a las nueve, por lo que tenía casi dos horas y media de ocio. Por supuesto, saldría y disfrutaría del frescor de la mañana.",
+        "title": "Tribunal de Ravensdene",
+        "author": "J.S. Fletcher",
+        "sfw": "unknown"
     }
 ]

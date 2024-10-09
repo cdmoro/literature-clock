@@ -2,10 +2,10 @@
     {
         "id": "000692",
         "time": "05:13",
-        "quote_time_case": "* cinq heures treize",
-        "quote_first": "Wu a déclaré: \"Vous avez arrêté à cinq heures trente ce matin, et lorsque vous avez redémarré, vous avez démarré avec l'alimentation auxiliaire.\"",
-        "quote_last": "",
-        "title": "parc jurassique",
+        "quote_time_case": "cinq-treize",
+        "quote_first": "Wu a déclaré: \"Vous avez arrêté à ",
+        "quote_last": " ce matin, et lorsque vous avez redémarré, vous avez démarré avec l'alimentation auxiliaire.\"",
+        "title": "Parc jurassique",
         "author": "Michael Crichton",
         "sfw": "unknown"
     },

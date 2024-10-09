@@ -1,32 +1,32 @@
 [
     {
-        "id": "000787",
+        "id": "000774",
         "time": "05:58",
         "quote_time_case": "5.58",
         "quote_first": "Se oyeron fuertes choques desde el piso de abajo a las ",
-        "quote_last": " de esta mañana, aunque ella había estado mirando el reloj mucho antes.",
+        "quote_last": " esta mañana, aunque ya había estado mirando el reloj mucho antes.",
         "title": "La mujer de abajo",
         "author": "Elisabeth Carpenter",
         "sfw": "unknown"
     },
     {
-        "id": "000788",
-        "time": "05:58",
-        "quote_time_case": "poco antes de las seis",
-        "quote_first": "Grant entró en su oficina en la iglesia luterana de St. Mary ",
-        "quote_last": " de la mañana siguiente. Su llegada inusualmente temprana – saltándose sus ejercicios habituales de la mañana – fue impulsada por el deseo de revisar el ensayo que había escrito años antes y comenzar el proceso de actualizarlo, como se le había pedido.",
-        "title": "Bajo la cúpula dorada",
-        "author": "Ray Keating",
-        "sfw": "sfw"
-    },
-    {
-        "id": "000789",
+        "id": "000775",
         "time": "05:58",
         "quote_time_case": "5.58 a.m.",
-        "quote_first": "Annika Giannini se despertó sobresaltada. Vio que eran las ",
+        "quote_first": "Annika Giannini se despertó sobresaltada. Vio que eran ",
         "quote_last": "",
         "title": "La chica que pateó el avispero",
         "author": "Stieg Larsson",
         "sfw": "unknown"
+    },
+    {
+        "id": "000776",
+        "time": "05:58",
+        "quote_time_case": "justo antes de las seis",
+        "quote_first": "Grant entró en su oficina en la Iglesia Luterana de St. Mary ",
+        "quote_last": " a la mañana siguiente. Su llegada inusualmente temprana – saltándose sus ejercicios habituales de la mañana – fue impulsada por el deseo de revisar el ensayo que había escrito años antes y comenzar el proceso de actualizarlo, como se le había pedido.",
+        "title": "Bajo la cúpula dorada",
+        "author": "Ray Keating",
+        "sfw": "sfw"
     }
 ]

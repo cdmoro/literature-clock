@@ -1,42 +1,42 @@
 [
     {
-        "id": "001937",
+        "id": "001907",
+        "time": "12:25",
+        "quote_time_case": "12:25",
+        "quote_first": "Después de un momento, la realidad se reafirmó y se dio cuenta de que no había estado alucinando, sino soñando. El reloj del escritorio marcaba las 12:55. Habían comenzado su sesión de diez minutos a las ",
+        "quote_last": ", así que obviamente ella tenía veinte minutos para contabilizar.",
+        "title": "El enclave",
+        "author": "Karen Hancock",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001908",
+        "time": "12:25",
+        "quote_time_case": "doce veinticinco",
+        "quote_first": "El señor Henry Urquhart de los señores Urquhart, Wimbush y Portway era el abogado de Josephine Fallon. La cita de Dalgliesh con él era para las ",
+        "quote_last": " p.m., hora elegida de manera descortés, según él, para insinuar que cada minuto del tiempo del abogado era valioso y que estaba preparado. para ahorrarle a la policía no más de media hora antes del almuerzo.",
+        "title": "Sudario para un ruiseñor",
+        "author": "P.D. James",
+        "sfw": "sfw"
+    },
+    {
+        "id": "001909",
         "time": "12:25",
         "quote_time_case": "12.25",
-        "quote_first": "Chicos, haganlo ahora. La hora de Dios es las ",
+        "quote_first": "Chicos, haganlo ahora. El tiempo de Dios es ",
         "quote_last": ".",
         "title": "Ulises",
         "author": "James Joyce",
         "sfw": "unknown"
     },
     {
-        "id": "001938",
+        "id": "001910",
         "time": "12:25",
-        "quote_time_case": "* doce veinticinco",
-        "quote_first": "El señor Henry Urquhart de los señores Urquhart, Wimbush y Portway era el abogado de Josephine Fallon. La cita de Dalgliesh con él era para las doce y veinticinco de la tarde, hora elegida de manera descortés, según él, para insinuar que cada minuto del tiempo del abogado era valioso y que estaba dispuesto a dedicarle a la policía no más de media hora antes del almuerzo.",
-        "quote_last": "",
-        "title": "Sudario para un ruiseñor",
-        "author": "P.D. James",
-        "sfw": "sfw"
-    },
-    {
-        "id": "001939",
-        "time": "12:25",
-        "quote_time_case": "12.25 h.",
+        "quote_time_case": "12.25 h",
         "quote_first": "",
-        "quote_last": " 26. 27. Cada vez que Billy salvaba un tiro parecía desconsolado.",
+        "quote_last": ". 26. 27. Cada vez que Billy salvaba un tiro parecía desconsolado.",
         "title": "Un cernícalo por bribón",
         "author": "Barry Hines",
         "sfw": "unknown"
-    },
-    {
-        "id": "001940",
-        "time": "12:25",
-        "quote_time_case": "12:25",
-        "quote_first": "Después de un momento, la realidad se reafirmó y se dio cuenta de que no había estado alucinando, sino soñando. El reloj del escritorio marcaba las 12:55. Habían comenzado su sesión de diez minutos a las ",
-        "quote_last": ", así que obviamente ella tenía veinte minutos para contar.",
-        "title": "El enclave",
-        "author": "Karen Hancock",
-        "sfw": "sfw"
     }
 ]

@@ -3,8 +3,8 @@
         "id": "003171",
         "time": "21:01",
         "quote_time_case": "21h01",
-        "quote_first": "Ele imaginou que começaria com uma refeição excepcionalmente americana: cheeseburgers, batatas fritas, salada de batata, Coca-Cola. Ele ganharia uma torta de sobremesa: maçã. Ele completaria com sorvete e observaria enquanto ela se contorcia e gritava. Quando ela terminasse, ele a levantaria da cadeira, a levaria para o quarto e beijaria cada centímetro. Eles fariam sexo a noite toda e, desta vez, ele não pagaria.<br>Ele olhou para o relógio: ",
-        "quote_last": ".",
+        "quote_first": "Ele imaginou que começaria com uma refeição excepcionalmente americana: cheeseburgers, batatas fritas, salada de batata, Coca-Cola. Ele ganharia uma torta de sobremesa: maçã. Ele completaria com sorvete e observaria enquanto ela se contorcia e gritava. Quando ela terminasse, ele a levantaria da cadeira, a levaria para o quarto e beijaria cada centímetro. Eles fariam sexo a noite toda e, desta vez, ele não pagaria.<br>Ele olhou para o relógio—",
+        "quote_last": "",
         "title": "Adiar",
         "author": "James Han Mattson",
         "sfw": "nsfw"
@@ -12,9 +12,9 @@
     {
         "id": "003172",
         "time": "21:01",
-        "quote_time_case": "* depois das nove",
-        "quote_first": "Já passava das nove. William havia terminado o dever de casa e o jantar. Depois de dar boa-noite aos pais e à Sra. Phillips, ele subiu as escadas até o sótão com os dois insetos, a lanterna e a lupa. Ele queria dar uma olhada mais de perto no token.",
-        "quote_last": "",
+        "quote_time_case": "nove depois",
+        "quote_first": "Foi ",
+        "quote_last": ". William havia terminado o dever de casa e o jantar. Depois de dar boa-noite aos pais e à Sra. Phillips, ele subiu as escadas até o sótão com os dois insetos, a lanterna e a lupa. Ele queria dar uma olhada mais de perto no token.",
         "title": "O Castelo no Sótão",
         "author": "Elizabeth Winthrop",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "003173",
         "time": "21:01",
-        "quote_time_case": "* por volta das nove horas",
-        "quote_first": "Na noite anterior ao trigésimo primeiro aniversário de K. — eram cerca de nove horas, quando há uma calmaria nas ruas — dois cavalheiros foram ao seu apartamento.",
-        "quote_last": "",
+        "quote_time_case": "cerca de nove horas",
+        "quote_first": "Na noite anterior ao trigésimo primeiro aniversário de K. - eram ",
+        "quote_last": ", quando há uma calmaria nas ruas - dois cavalheiros foram ao seu apartamento.",
         "title": "O julgamento",
         "author": "Franz Kafka",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "003175",
         "time": "21:01",
-        "quote_time_case": "* por volta das nove horas",
-        "quote_first": "Billy Weaver tinha viajado de Londres no lento trem da tarde, com uma baldeação em Swindon no caminho, e quando chegou a Bath eram cerca de nove horas da noite e a lua estava surgindo de um céu claro. céu estrelado sobre as casas em frente à entrada da estação. Mas o ar estava mortalmente frio e o vento era como uma lâmina plana de gelo em suas bochechas.",
-        "quote_last": "",
+        "quote_time_case": "cerca de nove horas",
+        "quote_first": "Billy Weaver havia viajado de Londres no lento trem da tarde, com uma baldeação em Swindon no caminho, e quando chegou a Bath eram ",
+        "quote_last": " à noite e a lua surgia de um céu claro e estrelado sobre as casas em frente à entrada da estação. Mas o ar estava mortalmente frio e o vento era como uma lâmina plana de gelo em suas bochechas.",
         "title": "A senhoria",
         "author": "Roald Dahl",
         "sfw": "unknown"

@@ -1,42 +1,42 @@
 [
     {
-        "id": "001907",
+        "id": "001877",
         "time": "12:10",
-        "quote_time_case": "* doce-diez",
-        "quote_first": "El niño dijo que eran las doce y diez y que Gonda ya llegaba tarde. Otro niño dijo que tal vez la lluvia lo había retrasado. Otro dijo, no, la lluvia no, su director estaba tomando un avión desde Hollywood.",
-        "quote_last": "",
+        "quote_time_case": "doce-diez",
+        "quote_first": "El niño dijo que eran ",
+        "quote_last": " y que Gonda ya llegaba tarde. Otro niño dijo que tal vez la lluvia lo había retrasado. Otro dijo, no, la lluvia no, su director estaba tomando un avión desde Hollywood.",
         "title": "Enoc y el gorila",
         "author": "Flannery O'Connor",
         "sfw": "unknown"
     },
     {
-        "id": "001908",
+        "id": "001878",
         "time": "12:10",
-        "quote_time_case": "* doce-diez",
-        "quote_first": "Pagaron sólo por una habitación y se quedaron con Einstein porque no iban a necesitar privacidad para hacer el amor. Agotado, Travis apenas logró besar a Nora antes de caer en un sueño profundo. Soñaba con cosas con ojos amarillos, cabezas deformes y bocas de cocodrilo llenas de dientes de tiburón. Se despertó cinco horas más tarde, a las doce y diez de la tarde del jueves.",
-        "quote_last": "",
-        "title": "Vigilantes",
-        "author": "Dean Koontz",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001909",
-        "time": "12:10",
-        "quote_time_case": "* las diez y media del mediodia",
-        "quote_first": "Dejé mi cesta con trapos sucios y Turtle Wax junto a la puerta de salida de la galería. Eran las diez y media del mediodía, pero en ese momento no tenía hambre de comida. Caminé lentamente por la pista hasta llegar a Horror House.",
-        "quote_last": "",
-        "title": "Joyland",
+        "quote_time_case": "diez y diez del mediodía",
+        "quote_first": "Dejé mi cesta con trapos sucios y Turtle Wax junto a la puerta de salida de la galería. Eran ",
+        "quote_last": ", pero en ese momento la comida no era lo que tenía hambre. Caminé lentamente por la pista hasta llegar a Horror House.",
+        "title": "Joylandia",
         "author": "Stephen King",
         "sfw": "unknown"
     },
     {
-        "id": "001910",
+        "id": "001879",
         "time": "12:10",
-        "quote_time_case": "* mediodía y diez minutos después",
-        "quote_first": "Madame Dumas llegó al mediodía y diez minutos más tarde Trause le entregó su tarjeta de cajero automático y le indicó que fuera al Citibank del barrio, cerca de Sheridan Square, y transfiriera cuarenta mil dólares de su cuenta de ahorros a su cuenta corriente.",
-        "quote_last": "",
+        "quote_time_case": "mediodía, y diez minutos después",
+        "quote_first": "Madame Dumas llegó al ",
+        "quote_last": " Trause le entregó su tarjeta de cajero automático y le indicó que fuera al Citibank del vecindario cerca de Sheridan Square y transfiriera cuarenta mil dólares de sus ahorros. cuenta a su cuenta corriente.",
         "title": "Noche del Oráculo",
         "author": "Paul Auster",
+        "sfw": "unknown"
+    },
+    {
+        "id": "001880",
+        "time": "12:10",
+        "quote_time_case": "doce-diez",
+        "quote_first": "Pagaron sólo por una habitación y se quedaron con Einstein porque no iban a necesitar privacidad para hacer el amor. Agotado, Travis apenas logró besar a Nora antes de caer en un sueño profundo. Soñaba con cosas con ojos amarillos, cabezas deformes y bocas de cocodrilo llenas de dientes de tiburón. Despertó cinco horas más tarde, a las ",
+        "quote_last": " del jueves por la tarde.",
+        "title": "Vigilantes",
+        "author": "Dean Koontz",
         "sfw": "unknown"
     }
 ]

@@ -2,9 +2,9 @@
     {
         "id": "000936",
         "time": "07:09",
-        "quote_time_case": "* 07:09",
-        "quote_first": "Nous nous réveillons et l'air est plus frissonnant. La montre indique 07h09, il a une batterie, c'est sa propre petite énergie cachée à l'intérieur.",
-        "quote_last": "",
+        "quote_time_case": "07:09",
+        "quote_first": "Nous nous réveillons et l'air est plus frissonnant. La montre dit ",
+        "quote_last": ", il a une batterie, c'est son propre petit pouvoir caché à l'intérieur.",
         "title": "Chambre",
         "author": "Emma Donoghue",
         "sfw": "unknown"
@@ -12,9 +12,9 @@
     {
         "id": "000937",
         "time": "07:09",
-        "quote_time_case": "* sept-neuf",
-        "quote_first": "La maison du matin était vide. L'horloge tournait, répétant et répétant ses sons dans le vide. Sept heures neuf heures, heure du petit déjeuner, sept heures neuf heures !",
-        "quote_last": "",
+        "quote_time_case": "sept-neuf",
+        "quote_first": "La maison du matin était vide. L'horloge tournait, répétant et répétant ses sons dans le vide. Sept heures neuf heures, l'heure du petit-déjeuner, ",
+        "quote_last": " !",
         "title": "Il viendra de douces pluies",
         "author": "Ray Bradbury",
         "sfw": "unknown"

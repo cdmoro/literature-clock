@@ -2,7 +2,7 @@
     {
         "id": "003058",
         "time": "20:20",
-        "quote_time_case": "8h20",
+        "quote_time_case": "8:20",
         "quote_first": "A chaque extrémité du parvis, les deux grands globes de lumière soutenus par des dauphins de bronze jetaient des flaques brillantes sur la surface houleuse de l'eau qui, sous ses yeux, scintillait comme un grand manteau de satin noir, secoué, lissé et doucement gonflé par une main invisible. Mandy jeta un coup d'œil à sa montre : ",
         "quote_last": ".",
         "title": "Péché originel",
@@ -14,7 +14,7 @@
         "time": "20:20",
         "quote_time_case": "huit heures vingt",
         "quote_first": "Le garçon frappa à nouveau. Encore une fois, il n'y eut aucune réponse. Gabriel l'observa et souffrit avec lui jusqu'à ce que, à ",
-        "quote_last": ", le garçon finisse par abandonner et se détourner.",
+        "quote_last": ", le garçon abandonne finalement et se détourne.",
         "title": "Le meurtre du gui",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "003060",
         "time": "20:20",
-        "quote_time_case": "* Huit vingt",
-        "quote_first": "Huit heures vingt, les cartes et les puzzles sortent. . . .",
-        "quote_last": "",
+        "quote_time_case": "Huit-vingt",
+        "quote_first": "",
+        "quote_last": " les cartes et les puzzles sortent. . . .",
         "title": "Vol au dessus d'un nid de coucou",
         "author": "Ken Kesey",
         "sfw": "unknown"
@@ -34,7 +34,7 @@
         "time": "20:20",
         "quote_time_case": "20h20",
         "quote_first": "",
-        "quote_last": " Jouer aux jeux sur ordinateur",
+        "quote_last": " Jouer à des jeux informatiques",
         "title": "Le curieux incident du chien pendant la nuit",
         "author": "Mark Haddon",
         "sfw": "sfw"
@@ -42,9 +42,9 @@
     {
         "id": "003062",
         "time": "20:20",
-        "quote_time_case": "* 20h20",
-        "quote_first": "À 20 h 20, tous les navires avaient terminé leur mazoutage. Heureusement, ils avaient eu toutes les peines du monde à garder position dans ce grand vent ; mais ils étaient infiniment plus en sécurité qu'en pleine mer",
-        "quote_last": "",
+        "quote_time_case": "20.20",
+        "quote_first": "Au ",
+        "quote_last": " tous les navires avaient terminé leur mazoutage. Heureusement, ils avaient eu toutes les peines du monde à garder position dans ce grand vent ; mais ils étaient infiniment plus en sécurité qu'en pleine mer",
         "title": "H.M.S. Ulysse",
         "author": "Alistair MacLean",
         "sfw": "unknown"
@@ -52,9 +52,9 @@
     {
         "id": "003063",
         "time": "20:20",
-        "quote_time_case": "huit heures vingt",
-        "quote_first": "Sachant que le dîner n'était que pour nous six, nous n'aurions jamais imaginé que ce serait une soirée en grande tenue. Je n'avais pas d'appétit. Il était ",
-        "quote_last": " minutes avant que nous nous mettions à table pour dîner.",
+        "quote_time_case": "huit heures vingt minutes",
+        "quote_first": "Sachant que le dîner n'était que pour nous six, nous n'aurions jamais imaginé que ce serait une soirée en grande tenue. Je n'avais pas d'appétit. Il était tout à fait ",
+        "quote_last": " avant que nous nous asseyions pour dîner.",
         "title": "Journal d'un personne",
         "author": "George and Weedon Grossmith",
         "sfw": "unknown"

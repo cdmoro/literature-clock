@@ -2,9 +2,9 @@
     {
         "id": "002622",
         "time": "17:20",
-        "quote_time_case": "* cinq vingt",
-        "quote_first": "Je vais me garer ici et entrer. Je ne veux pas entrer dans un zoo. Il jeta un coup d'œil à sa montre. \"Il n'est que cinq heures vingt. L'appel du kidnappeur est censé arriver à six heures. Nous avons le temps.\"",
-        "quote_last": "",
+        "quote_time_case": "cinq-vingt",
+        "quote_first": "Je vais me garer ici et entrer. Je ne veux pas entrer dans un zoo. Il jeta un coup d'œil à sa montre. \"Il n'est que ",
+        "quote_last": ". L'appel du kidnappeur est censé arriver à six heures. Nous avons le temps.\"",
         "title": "Crête du Purgatoire",
         "author": "William Kent Krueger",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "002623",
         "time": "17:20",
-        "quote_time_case": "* cinq vingt",
-        "quote_first": "Si elle parvient à maintenir sa vitesse à soixante-dix jusqu'à ce qu'elle quitte l'autoroute à péage au centre-ville, et si elle attrape la plupart des feux de circulation, elle estime qu'elle pourra être à son immeuble à cinq heures vingt.",
-        "quote_last": "",
+        "quote_time_case": "cinq-vingt",
+        "quote_first": "Si elle peut maintenir sa vitesse à soixante-dix jusqu'à ce qu'elle quitte l'autoroute à péage au centre-ville, et si elle attrape la plupart des feux de circulation, elle estime qu'elle pourra être à son immeuble d'ici ",
+        "quote_last": ".",
         "title": "Si ça saigne",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "002624",
         "time": "17:20",
-        "quote_time_case": "* 1720",
-        "quote_first": "La réunion était indiquée comme commençant à 17 h 30, et ce n'était que vers 17 h 20, et Hal pensait que les voix pourraient signifier une sorte d'orientation préalable à la réunion pour les personnes qui venaient pour la première fois, en quelque sorte provisoirement, juste pour explorer l'ensemble. entreprise, pour qu'il ne frappe pas.",
-        "quote_last": "",
+        "quote_time_case": "1720",
+        "quote_first": "La réunion était indiquée comme commençant à 17 h 30, et elle n'avait lieu que vers le ",
+        "quote_last": ", et Hal pensait que les voix pourraient signifier une sorte d'orientation préalable à la réunion pour les personnes venues. pour la première fois, en quelque sorte provisoirement, juste pour explorer toute l'entreprise, afin qu'il ne frappe pas.",
         "title": "Blague infini",
         "author": "David Foster Wallace",
         "sfw": "unknown"

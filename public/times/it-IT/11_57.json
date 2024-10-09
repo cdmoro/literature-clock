@@ -2,9 +2,9 @@
     {
         "id": "001810",
         "time": "11:57",
-        "quote_time_case": "* tre minuti alle dodici meno",
-        "quote_first": "«A mezzogiorno meno tre darò ufficialmente il benvenuto al nostro ospite d'onore. Il mio discorso durerà tre minuti, e al primo rintocco delle dodici, Sua Maestà darà il nome al Buckingham con la tradizionale rottura di una magnum di champagne sullo scafo”.",
-        "quote_last": "",
+        "quote_time_case": "dodici meno tre minuti",
+        "quote_first": "“Alle ",
+        "quote_last": " darò ufficialmente il benvenuto al nostro ospite d'onore. Il mio discorso durerà tre minuti, e al primo rintocco delle dodici, Sua Maestà darà il nome al Buckingham con la tradizionale rottura di una magnum di champagne sullo scafo”.",
         "title": "Fai attenzione a ciò che desideri",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -14,7 +14,7 @@
         "time": "11:57",
         "quote_time_case": "tre minuti a mezzogiorno",
         "quote_first": "Quando mancavano solo ",
-        "quote_last": ", il buffo oggetto in questione veniva percepito come un giovanotto dall'aspetto straniero molto minuscolo. Discese le colline a grande velocità, così che tutti presto lo poterono osservare bene.",
+        "quote_last": ", il buffo oggetto in questione veniva percepito come un giovanotto dall'aspetto straniero molto minuscolo. Discese le colline a grande velocità, tanto che presto tutti poterono vederlo bene.",
         "title": "Il diavolo nel campanile",
         "author": "Edgar Allan Poe",
         "sfw": "sfw"
@@ -22,9 +22,9 @@
     {
         "id": "001812",
         "time": "11:57",
-        "quote_time_case": "* verso mezzogiorno",
-        "quote_first": "Pochi minuti di luce intorno a mezzogiorno sono tutto ciò di cui hai bisogno per scoprire l'errore e reimpostare l'orologio, purché ti prendi la briga di salire e fare l'osservazione.",
-        "quote_last": "",
+        "quote_time_case": "intorno a mezzogiorno",
+        "quote_first": "Pochi minuti di luce ",
+        "quote_last": " sono tutto ciò di cui hai bisogno per scoprire l'errore e reimpostare l'orologio, purché ti prendi la briga di salire e fare l'osservazione.",
         "title": "Odalisca: Il Ciclo Barocco #3",
         "author": "Neal Stephenson",
         "sfw": "unknown"
@@ -32,7 +32,7 @@
     {
         "id": "001813",
         "time": "11:57",
-        "quote_time_case": "non possono essere le dodici lontane",
+        "quote_time_case": "non possono essere le dodici",
         "quote_first": "Mi chiedevo: che ore sono? disse quest'ultimo dopo una pausa.<br>\"Non lo so esattamente\", rispose Easton, \"ma ",
         "quote_last": ".\"",
         "title": "I filantropi dai pantaloni stracciati",

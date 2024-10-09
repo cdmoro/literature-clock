@@ -3,8 +3,8 @@
         "id": "000315",
         "time": "02:15",
         "quote_time_case": "2:15",
-        "quote_first": "Ha scorso [le e-mail], liquidando mentalmente la stragrande maggioranza come di bassa priorità, ma una in particolare ha scatenato la sua curiosità: proveniva da Art Bullock, inviata alle ",
-        "quote_last": ". L'oggetto diceva: URGENTE PER VENERDÌ MATTINA.",
+        "quote_first": "Ha scorso le [e-mail], liquidando mentalmente la stragrande maggioranza come a bassa priorità, ma una in particolare ha scatenato la sua curiosità: veniva da Art Bullock, inviata alle ",
+        "quote_last": " L'oggetto diceva: URGENTE PER VENERDÌ MATTINA.",
         "title": "L'ambizione",
         "author": "Lee Strobel",
         "sfw": "sfw"
@@ -13,7 +13,7 @@
         "id": "000316",
         "time": "02:15",
         "quote_time_case": "2:15",
-        "quote_first": "Era notte fonda quando squillò il telefono. Aprì gli occhi e trovò l'orologio che segnava le ",
+        "quote_first": "Era notte fonda quando squillò il telefono. Aprì gli occhi e trovò l'orologio che segnava ",
         "quote_last": ". All'inizio era troppo intontito per capire perché un campanello potesse suonare nelle vicinanze, ma scosse la testa e, quasi inconsciamente, prese il ricevitore e se lo portò all'orecchio.",
         "title": "Salice cieco, donna addormentata",
         "author": "Haruki Murakami",
@@ -22,9 +22,9 @@
     {
         "id": "000317",
         "time": "02:15",
-        "quote_time_case": "* 2:15",
-        "quote_first": "Alle 2,15 un poliziotto ha osservato il luogo nell'oscurità, ma con l'auto dello sconosciuto ferma sul marciapiede.",
-        "quote_last": "",
+        "quote_time_case": "2.15",
+        "quote_first": "Alle ",
+        "quote_last": " un poliziotto ha osservato il luogo nell'oscurità, ma con l'auto dello sconosciuto ferma sul marciapiede.",
         "title": "L'ombra fuori dal tempo",
         "author": "H.P. Lovecraft",
         "sfw": "unknown"
@@ -32,9 +32,9 @@
     {
         "id": "000318",
         "time": "02:15",
-        "quote_time_case": "* due quindici",
-        "quote_first": "Lo ha fatto. Quando la sveglia suonò alle due e un quarto, Lew la spense, accese la piccola lampada sul comodino, poi abbassò i piedi sul pavimento per sedersi sul bordo del letto, tenendo gli occhi aperti.",
-        "quote_last": "",
+        "quote_time_case": "due e un quarto",
+        "quote_first": "Lo ha fatto. Quando la sveglia suonò alle ",
+        "quote_last": ", Lew la spense, accese la piccola lampada sul comodino, poi abbassò i piedi sul pavimento per sedersi sul bordo del letto, tenendo gli occhi aperti.",
         "title": "Il Popolo della Notte",
         "author": "Jack Finney",
         "sfw": "unknown"

@@ -2,9 +2,9 @@
     {
         "id": "002737",
         "time": "18:10",
-        "quote_time_case": "* 6.10",
-        "quote_first": "«Vorrei vedere la tua lista dei passeggeri del volo delle 18.10 di ieri pomeriggio per Bruxelles.»",
-        "quote_last": "",
+        "quote_time_case": "6.10",
+        "quote_first": "«Vorrei vedere la lista dei passeggeri del volo ",
+        "quote_last": " di ieri pomeriggio per Bruxelles.»",
         "title": "Sul mio cadavere",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -14,7 +14,7 @@
         "time": "18:10",
         "quote_time_case": "sei e dieci",
         "quote_first": "Fammi vedere adesso. Hai preso un drink al Continental alle ",
-        "quote_last": ".<br>\"Sì.\"<br>\"E alle sei e quarantacinque stavi parlando con un altro giornalista sulla porta del Majestic?\"<br>\"Sì , Wilkins. Te l'ho già detto, Vigot, quella notte.\"",
+        "quote_last": ".<br>\"Sì.\"<br>\"E alle sei e quarantacinque stavi parlando con un altro giornalista al porta del Majestic?\"<br>\"Sì, Wilkins, ti ho detto tutto questo, Vigot, quella notte.\"",
         "title": "L'americano tranquillo",
         "author": "Graham Greene",
         "sfw": "unknown"

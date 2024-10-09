@@ -12,9 +12,9 @@
     {
         "id": "001745",
         "time": "11:29",
-        "quote_time_case": "* ventinove minuti e undici, a.m.",
-        "quote_first": "Sei quattro minuti troppo lento. Non importa; è sufficiente menzionare l'errore. Ora, da questo momento, ventinove minuti e undici, questo mercoledì, 2 ottobre, sei al mio servizio.",
-        "quote_last": "",
+        "quote_time_case": "undici e ventinove minuti",
+        "quote_first": "Sei quattro minuti troppo lento. Non importa; è sufficiente menzionare l'errore. Ora, da questo momento, ",
+        "quote_last": ", questo mercoledì, 2 ottobre, sei al mio servizio.",
         "title": "Giro del mondo in ottanta giorni",
         "author": "Jules Verne",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "001746",
         "time": "11:29",
-        "quote_time_case": "* minuto prima delle 23:30",
-        "quote_first": "Mancava ancora un minuto alle 23:30. Avrebbe trovato il tempo per visitare i monumenti della chiesa di St. George a Bradwell, ma dopo quella breve visita non ci sarebbero state scuse possibili per non tornare a Londra per pranzare a New Scotland Yard.",
-        "quote_last": "",
+        "quote_time_case": "minuto alle 23:30",
+        "quote_first": "Mancava ancora un ",
+        "quote_last": ". Avrebbe trovato il tempo per visitare i monumenti della chiesa di St. George a Bradwell, ma dopo quella breve visita non ci sarebbero state scuse possibili per non tornare a Londra per pranzare a New Scotland Yard.",
         "title": "Peccato originale",
         "author": "P.D. James",
         "sfw": "sfw"

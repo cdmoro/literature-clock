@@ -1,26 +1,16 @@
 [
     {
-        "id": "002178",
+        "id": "002144",
         "time": "14:20",
-        "quote_time_case": "14.20",
+        "quote_time_case": "2:20 p.m.",
         "quote_first": "Miró su reloj: ",
-        "quote_last": ". Inicio a las 3:00. Cuarenta mil fans iban todos en la misma dirección. La mayoría llevaba pañuelos rojos y blancos, aunque un gran contingente vestía de azul y blanco.",
+        "quote_last": " Inicio a las 3:00. Cuarenta mil fans iban todos en la misma dirección. La mayoría llevaba pañuelos rojos y blancos, aunque un gran contingente vestía de azul y blanco.",
         "title": "Hacer la vista gorda",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "002179",
-        "time": "14:20",
-        "quote_time_case": "dos y veinte",
-        "quote_first": "Las ",
-        "quote_last": " minutos, de camino a San Diego, escuchando una música extraña y cacófana; sin línea melódica, sin contenido.",
-        "title": "En algún lugar del tiempo (retorno en el momento de la oferta)",
-        "author": "Richard Matheson",
-        "sfw": "unknown"
-    },
-    {
-        "id": "002180",
+        "id": "002145",
         "time": "14:20",
         "quote_time_case": "Las dos y veinte",
         "quote_first": "",
@@ -30,23 +20,33 @@
         "sfw": "unknown"
     },
     {
-        "id": "002181",
+        "id": "002146",
         "time": "14:20",
         "quote_time_case": "las dos y veinte",
         "quote_first": "Miró su reloj y eran ",
         "quote_last": ". No tenía tiempo que perder, pero debía prepararse de inmediato.",
-        "title": "Un cuento sobre dos ciudades",
+        "title": "Una historia de dos ciudades",
         "author": "Charles Dickens",
         "sfw": "unknown"
     },
     {
-        "id": "002182",
+        "id": "002147",
         "time": "14:20",
-        "quote_time_case": "las dos y veinte",
-        "quote_first": "El joyero cuestionó el reloj encontrado en Weir, afirmando que le había dado cuerda y engastado a Edwin Drood, a ",
+        "quote_time_case": "las dos y veinte minutos",
+        "quote_first": "El joyero cuestionó el reloj encontrado en Weir, afirmando que le había dado cuerda y engastado a Edwin Drood, a las ",
         "quote_last": " de esa misma tarde; y había corrido, antes de ser arrojado al agua; y el joyero consideró positivamente que nunca había sido rebobinado.",
         "title": "El misterio de Edwin Drood",
         "author": "Charles Dickens",
+        "sfw": "unknown"
+    },
+    {
+        "id": "002148",
+        "time": "14:20",
+        "quote_time_case": "Las dos y veinte minutos",
+        "quote_first": "",
+        "quote_last": ", de camino a San Diego, escuchando música extraña y cacófana; sin línea melódica, sin contenido.",
+        "title": "En algún lugar en el tiempo (regreso en el momento de la oferta)",
+        "author": "Richard Matheson",
         "sfw": "unknown"
     }
 ]

@@ -1,22 +1,22 @@
 [
     {
-        "id": "001533",
-        "time": "10:02",
-        "quote_time_case": "* dos minutos después de las diez",
-        "quote_first": "Eran las diez y dos minutos; no estaba satisfecha con su ropa, su rostro, su apartamento. Volvió a calentar el café y se sentó en la silla junto a la ventana. No puedo hacer nada más ahora, pensó, no tiene sentido intentar mejorar nada en el último minuto.",
-        "quote_last": "",
-        "title": "El amante del demonio",
-        "author": "Shirley Jackson",
-        "sfw": "unknown"
-    },
-    {
-        "id": "001534",
+        "id": "001508",
         "time": "10:02",
         "quote_time_case": "10:02",
-        "quote_first": "A las ",
+        "quote_first": "",
         "quote_last": ", sus ojos se posaron por una fracción de segundo en cada persona que entraba.",
         "title": "Los pecados del padre",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
+    },
+    {
+        "id": "001509",
+        "time": "10:02",
+        "quote_time_case": "dos minutos después de las diez",
+        "quote_first": "Eran ",
+        "quote_last": "; no estaba satisfecha con su ropa, su rostro, su apartamento. Volvió a calentar el café y se sentó en la silla junto a la ventana. No puedo hacer nada más ahora, pensó, no tiene sentido intentar mejorar nada en el último minuto.",
+        "title": "El amante del demonio",
+        "author": "Shirley Jackson",
+        "sfw": "unknown"
     }
 ]

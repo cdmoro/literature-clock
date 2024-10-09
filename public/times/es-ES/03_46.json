@@ -1,22 +1,22 @@
 [
     {
-        "id": "000524",
+        "id": "000516",
         "time": "03:46",
-        "quote_time_case": "tres cuarenta y seis",
+        "quote_time_case": "03 46",
+        "quote_first": "Esta vez el año fue primero, 88, seguido por el mes, 09, y finalmente la hora, que acababa de pasar a ",
+        "quote_last": ".",
+        "title": "Sobre mi cadáver",
+        "author": "Jeffrey Archer",
+        "sfw": "sfw"
+    },
+    {
+        "id": "000517",
+        "time": "03:46",
+        "quote_time_case": "tres cuarenta y seis de la mañana",
         "quote_first": "Vi el Bentley girar hacia el recinto escolar a las ",
-        "quote_last": " de la madrugada y el suburbano con los dos agentes del Servicio Secreto pasar unos minutos más tarde.",
+        "quote_last": " y el suburbano con los dos agentes del Servicio Secreto pasar unos minutos más tarde.",
         "title": "Cruz mortal",
         "author": "James Patterson",
         "sfw": "unknown"
-    },
-    {
-        "id": "000525",
-        "time": "03:46",
-        "quote_time_case": "03 46",
-        "quote_first": "Esta vez apareció primero el año, 88, seguido del mes, 09, y finalmente la hora, que acababa de pasar a ",
-        "quote_last": ".",
-        "title": "Sobre mi cadaver",
-        "author": "Jeffrey Archer",
-        "sfw": "sfw"
     }
 ]

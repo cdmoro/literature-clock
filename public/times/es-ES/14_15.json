@@ -1,42 +1,42 @@
 [
     {
-        "id": "002169",
+        "id": "002135",
         "time": "14:15",
-        "quote_time_case": "14.15",
-        "quote_first": "Tenía una cita con ella al día siguiente a las ",
-        "quote_last": ". En mis propias habitaciones, aunque tuvo menos éxito, parecía haberse vuelto menos juvenil, más mujer de la noche a la mañana.",
-        "title": "lolita",
-        "author": "Vladimir Nabokov",
-        "sfw": "nsfw"
-    },
-    {
-        "id": "002170",
-        "time": "14:15",
-        "quote_time_case": "14.15 h.",
+        "quote_time_case": "2:15 P.M.",
         "quote_first": "",
-        "quote_last": " Segunda clase de la tarde",
-        "title": "El curioso incidente del perro a medianoche",
-        "author": "Mark Haddon",
+        "quote_last": "<br>Mark terminó su almuerzo. Otros dos hombres terminaron sus sándwiches y también se levantaron para irse. Mark regresó rápidamente al Senado, ya que quería encontrarse con Henry Lykham antes de que comenzara el debate.",
+        "title": "¿Se lo contamos al presidente?",
+        "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "002171",
+        "id": "002136",
         "time": "14:15",
-        "quote_time_case": "14:15",
+        "quote_time_case": "2:15 p.m.",
         "quote_first": "",
-        "quote_last": " La noticia publicada en los periódicos sobre niños de dos años que tenían que hacer exámenes para entrar en la guardería me hizo saltar de mi piel. Se supone que debo estar en la fiesta del té para el cumpleaños del ahijado Harry.",
+        "quote_last": " La historia en los periódicos sobre niños de dos años que tenían que tomar exámenes para ingresar a la guardería me hizo saltar de mi piel. Se supone que debo estar en la fiesta del té para el cumpleaños del ahijado Harry.",
         "title": "El diario de Bridget Jones",
         "author": "Helen Fielding",
         "sfw": "sfw"
     },
     {
-        "id": "002172",
+        "id": "002137",
         "time": "14:15",
         "quote_time_case": "2:15 p.m.",
+        "quote_first": "Tuve una cita con ella al día siguiente a las ",
+        "quote_last": " en mis propias habitaciones, pero fue menos exitosa, parecía haberse vuelto menos juvenil, más mujer de la noche a la mañana.",
+        "title": "Lolita",
+        "author": "Vladimir Nabokov",
+        "sfw": "nsfw"
+    },
+    {
+        "id": "002138",
+        "time": "14:15",
+        "quote_time_case": "14.15",
         "quote_first": "",
-        "quote_last": "<br>Mark terminó su almuerzo. Otros dos hombres terminaron sus sándwiches y también se levantaron para irse. Mark regresó rápidamente al Senado, ya que quería encontrarse con Henry Lykham antes de que comenzara el debate.",
-        "title": "¿Se lo contamos al presidente?",
-        "author": "Jeffrey Archer",
+        "quote_last": " Segunda clase de la tarde",
+        "title": "El curioso incidente del perro a medianoche",
+        "author": "Mark Haddon",
         "sfw": "sfw"
     }
 ]

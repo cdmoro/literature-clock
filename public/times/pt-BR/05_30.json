@@ -34,7 +34,7 @@
         "time": "05:30",
         "quote_time_case": "cinco e meia",
         "quote_first": "Se Thomas McGuire tivesse parado para admirar a fanfarra dos raios açafrão, ele poderia ter perdido o início do fim de seu governo sobre a pacata cidade litorânea. Mas, como acontecia frequentemente com homens com o seu temperamento, Thomas tinha pouco tempo para devaneios. O obstinado empresário havia saído de sua cama dura às ",
-        "quote_last": " daquela manhã, determinado como sempre a cuidar de seu império crescente de três pubs, duas lojas de bebidas espirituosas e uma pousada no Main Mall.",
+        "quote_last": " daquela manhã, determinado como sempre a cuidar de seu crescente império de três pubs, duas lojas de bebidas espirituosas e uma pousada no Main Mall.",
         "title": "Sopa de romã",
         "author": "Marsha Mehran",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "000723",
         "time": "05:30",
-        "quote_time_case": "* 5:30 da manhã",
-        "quote_first": "Quando Braque e seu irmão Randy eram crianças, a mãe costumava acordá-los às 5h30 da manhã para viagens em família, para evitar o trânsito; houve travas de segurança pela casa até os onze anos; não havia TV e com certeza não havia doces, refrigerantes, álcool ou fumo; ela passava lençóis e roupas íntimas branqueadas e limpava os banheiros pelo menos duas vezes por dia.",
-        "quote_last": "",
+        "quote_time_case": "5h30 da manhã",
+        "quote_first": "Quando Braque e seu irmão Randy eram crianças, sua mãe costumava acordá-los às ",
+        "quote_last": " para viagens em família, para evitar o trânsito; houve travas de segurança pela casa até os onze anos; não havia TV e com certeza não havia doces, refrigerantes, álcool ou fumo; ela passava lençóis e roupas íntimas branqueadas e limpava os banheiros pelo menos duas vezes por dia.",
         "title": "Cozinhas do Grande Centro-Oeste",
         "author": "J. Ryan Stradal",
         "sfw": "unknown"
@@ -54,7 +54,7 @@
         "time": "05:30",
         "quote_time_case": "cinco e meia",
         "quote_first": "Gideon tem sido muito diferente de Gideon. Como o próprio Walter Eastman está preocupado, ele não teve tempo, ou, mais precisamente, inclinação, para perceber um comportamento aberrante. Por exemplo, são ",
-        "quote_last": " da manhã de verão. A estreita cama de solteiro do jovem Chase evidentemente foi dormida, pois está amarrotada de uma forma que mal é mexida e que nunca pode ser falsificada.",
+        "quote_last": " na manhã de verão. A estreita cama de solteiro do jovem Chase evidentemente foi dormida, pois está amarrotada de uma forma que mal é mexida e que nunca pode ser falsificada.",
         "title": "Uma possessão insular",
         "author": "Timothy Mo",
         "sfw": "unknown"
@@ -63,8 +63,8 @@
         "id": "000725",
         "time": "05:30",
         "quote_time_case": "cinco e meia",
-        "quote_first": "A essa altura eram ",
-        "quote_last": " e o sol estava prestes a nascer; mas encontrei a cozinha ainda escura e silenciosa. … A quietude da madrugada dormia por toda parte. Os cavalos da carruagem batiam de vez em quando em seus estábulos fechados: todo o resto estava quieto.",
+        "quote_first": "Já era essa hora ",
+        "quote_last": ", e o sol estava prestes a nascer; mas encontrei a cozinha ainda escura e silenciosa. … A quietude da madrugada dormia por toda parte. Os cavalos da carruagem batiam de vez em quando em seus estábulos fechados: todo o resto estava quieto.",
         "title": "Jane Eyre",
         "author": "Charlotte Brontë",
         "sfw": "unknown"

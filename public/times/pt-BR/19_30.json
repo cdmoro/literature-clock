@@ -3,8 +3,8 @@
         "id": "002924",
         "time": "19:30",
         "quote_time_case": "sete e meia",
-        "quote_first": "Quando a notícia acabou, Anderson disse a Gardener que iria para a cama.<br>“Às ",
-        "quote_last": "?”<br>“Ainda estou cansado.” E ela parecia.",
+        "quote_first": "Quando a notícia acabou, Anderson disse a Gardener que estava indo para a cama.<br>“Às ",
+        "quote_last": "?”<br>“Ainda estou cansado.” E ela olhou.",
         "title": "Os Tommyknockers",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -14,7 +14,7 @@
         "time": "19:30",
         "quote_time_case": "sete e meia",
         "quote_first": "Às ",
-        "quote_last": ", Chetta Reynolds entrou na sala de exames onde os Stones e sua filha bebê, que gritava incessantemente, estavam escondidos. O poeta que supostamente estava na lista para a Medalha Presidencial da Liberdade vestia jeans de perna reta e um moletom BU com um buraco no cotovelo.",
+        "quote_last": ", Chetta Reynolds entrou na sala de exame onde os Stones e sua filhinha que gritava incessantemente estavam escondidos. O poeta que supostamente estava na lista para a Medalha Presidencial da Liberdade vestia jeans de perna reta e um moletom BU com um buraco no cotovelo.",
         "title": "Doutor Sono",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -43,7 +43,7 @@
         "id": "002928",
         "time": "19:30",
         "quote_time_case": "sete e meia",
-        "quote_first": "Todo mundo se vira na cadeira e observa aquela manteiga deslizar pela parede, começando, ficando imóvel, disparando para frente e deixando um rastro brilhante na vidraça. Ninguém diz uma palavra. Eles olham para a manteiga, depois para o relógio e depois novamente para a manteiga. O relógio está se movendo agora.<br>A manteiga chega ao chão cerca de meio minuto antes das ",
+        "quote_first": "Todo mundo se vira na cadeira e observa aquela manteiga deslizar pela parede, começando, ficando imóvel, disparando para frente e deixando um rastro brilhante na vidraça. Ninguém diz uma palavra. Eles olham para a manteiga, depois para o relógio e depois novamente para a manteiga. O relógio está se movendo agora.<br>A manteiga chega ao chão cerca de meio minuto antes de ",
         "quote_last": ", e McMurphy recupera todo o dinheiro que perdeu.",
         "title": "Um voou sobre o ninho do cuco",
         "author": "Ken Kesey",
@@ -53,7 +53,7 @@
         "id": "002929",
         "time": "19:30",
         "quote_time_case": "sete e meia",
-        "quote_first": "Mas agora ele estava perto – aqui estava a casa, aqui estavam os portões. Em algum lugar, um relógio bateu uma única badalada. “O quê, são mesmo ",
+        "quote_first": "Mas agora ele estava perto – aqui estava a casa, aqui estavam os portões. Em algum lugar, um relógio bateu uma única badalada. “O quê, é mesmo ",
         "quote_last": "? Isso é impossível, deve ser rápido!”",
         "title": "Crime e punição",
         "author": "Fyodor Dostoyevsky",
@@ -62,9 +62,9 @@
     {
         "id": "002930",
         "time": "19:30",
-        "quote_time_case": "7h30",
+        "quote_time_case": "7:30",
         "quote_first": "No dia 25 de julho, às 8h30, a cadela Novaya morre ao dar à luz. Às 10 horas ela é baixada em seu túmulo fresco, às ",
-        "quote_last": " daquela mesma noite vemos nossos primeiros blocos de gelo e os cumprimentamos desejando que fossem os últimos.",
+        "quote_last": " naquela mesma noite vemos nossos primeiros blocos de gelo e os cumprimentamos desejando que fossem os últimos.",
         "title": "Os Terrores do Gelo e da Escuridão",
         "author": "Christoph Ransmayr",
         "sfw": "nsfw"
@@ -82,9 +82,9 @@
     {
         "id": "002932",
         "time": "19:30",
-        "quote_time_case": "* 7h30",
-        "quote_first": "O telefonema ocorreu às 19h30 da noite do dia 18 de março, um sábado, véspera da barulhenta e colorida festa que a cidade realizou em homenagem a São José, o carpinteiro -",
-        "quote_last": "",
+        "quote_time_case": "7h30",
+        "quote_first": "O telefonema ocorreu às ",
+        "quote_last": " da noite de 18 de março, um sábado, véspera da barulhenta e colorida festa que a cidade realizou em homenagem a São José, o carpinteiro -",
         "title": "Uma história simples",
         "author": "Leonardo Sciascia",
         "sfw": "unknown"
@@ -94,7 +94,7 @@
         "time": "19:30",
         "quote_time_case": "sete e meia",
         "quote_first": "Às ",
-        "quote_last": " da noite, e conseqüentemente depois de jantar, em vez de antes, como eu teria preferido, ele tomou vinte e cinco grãos da droga.",
+        "quote_last": " da noite, e conseqüentemente depois do jantar, em vez de antes, como eu deveria ter preferido, ele tomou vinte e cinco grãos da droga.",
         "title": "O comedor de haxixe",
         "author": "Fitz Hugh Ludlow",
         "sfw": "nsfw"

@@ -2,9 +2,9 @@
     {
         "id": "003355",
         "time": "22:25",
-        "quote_time_case": "* vingt-cinq minutes après",
-        "quote_first": "Mme Bultitaft met toujours le lait chaud à dix heures. Environ vingt-cinq minutes plus tard, nous avons vu Sally porter sa tasse jusqu'à sa chambre.",
-        "quote_last": "",
+        "quote_time_case": "vingt-cinq minutes après",
+        "quote_first": "Mme Bultitaft met toujours le lait chaud à dix heures. Vers ",
+        "quote_last": " nous avons vu Sally porter sa tasse jusqu'à sa chambre.",
         "title": "Couvrir son visage",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -12,7 +12,7 @@
     {
         "id": "003356",
         "time": "22:25",
-        "quote_time_case": "10h25",
+        "quote_time_case": "10:25",
         "quote_first": "Dalgliesh réfléchit qu'Etienne n'aurait guère pu concevoir un moyen de dissuasion plus efficace contre les visiteurs et se demanda un instant s'il devait parcourir le demi-mile plutôt que de risquer sa suspension. En jetant un coup d'œil à sa montre, il vit qu'il était ",
         "quote_last": ". Il arriverait précisément à l'heure.",
         "title": "Péché originel",
@@ -22,9 +22,9 @@
     {
         "id": "003357",
         "time": "22:25",
-        "quote_time_case": "dix heures vingt-cinq heures",
-        "quote_first": "« Le dernier appel téléphonique est arrivé à ",
-        "quote_last": ". ce soir-là, quand j’écoutais le Concert by the Sea d’Erroll Garner et que je buvais la VO de Seagram. C’est pratique, n’est-ce pas, de tenir un journal comme celui-ci ? »",
+        "quote_time_case": "22 heures vingt-cinq",
+        "quote_first": "«Le dernier appel téléphonique est arrivé à ",
+        "quote_last": " ce soir-là, alors que j'écoutais le Concert by the Sea d'Erroll Garner et que je buvais la VO de Seagram. C’est pratique, n’est-ce pas, de tenir un journal comme celui-ci ? »",
         "title": "Saule aveugle, femme endormie",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -34,7 +34,7 @@
         "time": "22:25",
         "quote_time_case": "22h25",
         "quote_first": "",
-        "quote_last": " J'ai une nouvelle cassette maintenant. Droite. Tournez-vous vers « Enregistrement ».",
+        "quote_last": " J'ai une nouvelle cassette maintenant. Droite. Tournez-vous vers « Enregistrement ».",
         "title": "Le journal de Bridget Jones",
         "author": "Helen Fielding",
         "sfw": "sfw"

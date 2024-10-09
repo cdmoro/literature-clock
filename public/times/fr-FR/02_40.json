@@ -2,7 +2,7 @@
     {
         "id": "000363",
         "time": "02:40",
-        "quote_time_case": "deux heures quarante",
+        "quote_time_case": "deux-quarante",
         "quote_first": "Lorsque sa montre indiquait ",
         "quote_last": ", elle était prête à partir. Elle enfila son manteau le plus sombre, une grande boîte d'allumettes déjà dans sa poche, et noua un foulard sur sa tête.",
         "title": "Le patient privé",
@@ -12,9 +12,9 @@
     {
         "id": "000364",
         "time": "02:40",
-        "quote_time_case": "* 2h40",
-        "quote_first": "Mlle Conover a déclaré aux enquêteurs qu'à 2 h 40, l'agent Martin Willis est entré dans le restaurant et a commandé du café et des beignets.",
-        "quote_last": "",
+        "quote_time_case": "2 h 40",
+        "quote_first": "Mlle Conover a déclaré aux enquêteurs qu'à ",
+        "quote_last": ", l'agent Martin Willis est entré dans le restaurant et a commandé du café et des beignets.",
         "title": "La souche Andromède",
         "author": "Michael Crichton",
         "sfw": "unknown"
