@@ -49,7 +49,7 @@ body:not(.screensaver) blockquote {
 
 #clock {
   margin: 0 auto;
-  max-width: 80vw;
+  max-width: 150rem;
   position: relative;
   z-index: 2;
 }
