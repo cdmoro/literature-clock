@@ -26,16 +26,16 @@
 
 [data-theme="photo-light"] {
   --background: #DDDDDD;
-  --font-color: #2f2e2c;
+  --font-color: #282826;
   --accent-color: #e33725;
 }
 
 [data-theme="photo-light"] #photo-overlay {
-  opacity: .3;
+  opacity: .4;
 }
 
 [data-theme="photo-light"] #quote {
-  text-shadow: 0px 0px 25px #FFFFFF;
+  text-shadow: 0px 0px 25px #DFDFDF;
   color: #111111;
 }
 
@@ -49,16 +49,16 @@
 
 [data-theme="photo-dark"] {
   --background: #111111;
-  --font-color: #a3a29a;
+  --font-color: #d7d7d7;
   --accent-color: #fd3622;
 }
 
 [data-theme="photo-dark"] #photo-overlay {
-  opacity: .4;
+  opacity: .5;
 }
 
 [data-theme="photo-dark"] #quote {
-  text-shadow: 0px 0px 25px #000000;
+  text-shadow: 0px 0px 25px #1c1c1c;
   color: #EEEEEE;
 }
 
