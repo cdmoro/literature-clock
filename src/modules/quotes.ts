@@ -96,9 +96,10 @@ export async function updateQuote(time = getTime()) {
   const quote = await getQuote(time, locale);
   updateGHLinks(time, quote, locale);
   const quoteRaw = `${quote.quote_first}${quote.quote_time_case}${quote.quote_last}`;
+  const timeClass = quote.quote_time_case.length <= 10 ? "time text-nowrap" : "time";
   const quoteText =
     testQuote ||
-    `${quote.quote_first}<span class="time">${quote.quote_time_case}</span>${quote.quote_last}`;
+    `${quote.quote_first}<span class="${timeClass}">${quote.quote_time_case}</span>${quote.quote_last}`;
 
   const blockquote = document.getElementById("quote");
 
