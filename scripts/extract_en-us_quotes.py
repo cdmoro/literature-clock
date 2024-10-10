@@ -8,6 +8,6 @@ def process_csv(input_file, output_file):
     df[["Quote"]].to_csv(output_file, index=False, header=False)
 
 input_file = './quotes/quotes.en-US.csv'
-output_file = './scripts/quotes.en-US.extracted.csv'
+output_file = './scripts/output.csv'
 
 process_csv(input_file, output_file)
