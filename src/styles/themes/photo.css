@@ -42,7 +42,7 @@
   color: #111111;
 }
 
-[data-theme="photo-light"] footer {
+[data-theme="photo-light"] body:not(.zen) footer {
   background: #ffffff60;
 }
 
@@ -69,6 +69,6 @@
   color: #EEEEEE;
 }
 
-[data-theme="photo-dark"] footer {
+[data-theme="photo-dark"] body:not(.zen) footer {
   background: #00000093;
 }
