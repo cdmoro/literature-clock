@@ -7,7 +7,6 @@
   background-position: center;
 }
 
-
 [data-theme|="photo"] #photo-overlay {
   position: fixed;
   inset: 0;
@@ -43,6 +42,10 @@
   color: #111111;
 }
 
+[data-theme="photo-light"] footer {
+  background: #ffffff60;
+}
+
 [data-theme="photo-dark"] #time-clock {
   color: #EEEEEE;
 }
@@ -64,4 +67,8 @@
 
 [data-theme="photo-dark"] body.share-quote blockquote .time {
   color: #EEEEEE;
+}
+
+[data-theme="photo-dark"] footer {
+  background: #00000093;
 }
