@@ -83,7 +83,8 @@ export function initLocale(defaultValue = navigator.language) {
 }
 
 export function getStrings(): Translations {
-  const resolvedLocale = resolveLocale(getStringSetting("locale") || undefined);
+  const localeSelect = document.querySelector<HTMLSelectElement>("#locale-select");
+  const resolvedLocale = resolveLocale(localeSelect?.value);
   const lastLocale = getStringSetting("last-locale") as keyof typeof TRANSLATIONS;
 
   return TRANSLATIONS[resolvedLocale === "random" ? lastLocale || "en-US" : resolvedLocale];
@@ -96,7 +97,7 @@ function translateStrings(locale = navigator.language) {
 
   document.documentElement.lang =
     locale === "random" ? lastLocale?.substring(0, 2) || "en" : locale.substring(0, 2);
-  document.title = `[${time}] ${strings.document_title}`;
+  document.title = `${time} - ${strings.document_title}`;
 
   document
     .querySelectorAll<HTMLElement>("[data-text]")

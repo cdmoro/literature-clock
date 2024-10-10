@@ -69,7 +69,7 @@ async function shareQuote() {
 
       const shareData = {
         files: filesArray,
-        text: `${strings.document_title} - `,
+        text: `${strings.document_title}`,
         url: url.toString()
       }
 
