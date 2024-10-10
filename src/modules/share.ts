@@ -4,12 +4,14 @@ import { getStringSetting } from "../utils/settings";
 import { getStrings } from "./locales";
 
 export function initShare() {
+  const share = document.getElementById("share");
+
+  document.getElementById("download")?.addEventListener("click", downloadQuote);
+
   if (!!navigator.share) {
-    document.getElementById("download")?.remove();
-    document.getElementById("share")?.addEventListener("click", shareQuote);
+    share?.addEventListener("click", shareQuote);
   } else {
-    document.getElementById("share")?.remove();
-    document.getElementById("download")?.addEventListener("click", downloadQuote);
+    share?.remove();
   }
 }
 
