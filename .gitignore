@@ -1,3 +1,5 @@
 .vscode
 node_modules
 dist
+
+scripts/quotes.en-US.extracted.csv
