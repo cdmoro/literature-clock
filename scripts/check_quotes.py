@@ -14,6 +14,9 @@ def check_csv_files(directory):
             with open(filepath, 'r', newline='', encoding="cp437") as csvfile:
                 reader = csv.reader(csvfile)
                 rows = list(reader)
+
+                print(f'- Lines: {len(rows)}')
+
                 for row in rows[1:]:
                     if len(row) >= 3 and row[1] not in row[2]:
                         errors += 1
@@ -23,7 +26,7 @@ def check_csv_files(directory):
                     writer = csv.writer(csvfile)
                     writer.writerows(rows)
 
-            print(f"Errors found: {errors}\n")
+            print(f"- Errors found: {errors}\n")
 
 quotes_path = 'quotes/'
 check_csv_files(quotes_path)
