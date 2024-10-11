@@ -3,8 +3,8 @@
         "id": "002692",
         "time": "18:00",
         "quote_time_case": "seis",
-        "quote_first": "Faz mais de um ano que não vou à igreja.<br>\"Finalmente preocupado com sua alma?\"<br>\"Por favor\", disse Cork<br>\"Claro que podemos conversar. Quando?\"<br>\"Amanhã . No final da tarde, talvez, às cinco horas?\"<br>\"Faça ",
-        "quote_last": "\", sugeriu o padre. \"Meu escritório.\"<br>\"Estarei lá\", prometeu Cork.",
+        "quote_first": "Faz mais de um ano que não vou à igreja.<br>“Finalmente preocupado com sua alma?”<br>“Por favor”, disse Cork<br>“Claro que podemos conversar. Quando?”<br>“Amanhã . No final da tarde, talvez, às cinco horas?”<br>“Faça ",
+        "quote_last": "”, sugeriu o padre. “Meu escritório.”<br>“Estarei lá”, prometeu Cork.",
         "title": "Lago de Ferro",
         "author": "William Kent Krueger",
         "sfw": "sfw"
@@ -63,8 +63,8 @@
         "id": "002698",
         "time": "18:00",
         "quote_time_case": "seis horas",
-        "quote_first": "Quando é a hora do chá dele? Eu perguntei.<br>\"Ah, às ",
-        "quote_last": ". Ele fica de madrugada no campo. É melhor você trocar de vestido agora: eu irei com você e aperte-a. Aqui está uma vela.\"",
+        "quote_first": "Quando é a hora do chá dele? Eu perguntei.<br>“Ah, às ",
+        "quote_last": ". Ele fica de madrugada no campo. É melhor você trocar de vestido agora: eu irei com você e aperte-a. Aqui está uma vela.”",
         "title": "Jane Eyre",
         "author": "Charlotte Brontë",
         "sfw": "unknown"
@@ -213,8 +213,8 @@
         "id": "002713",
         "time": "18:00",
         "quote_time_case": "seis horas",
-        "quote_first": "E desde então, o Chapeleiro continuou em tom pesaroso, \"ele não fará nada do que eu peço! É sempre ",
-        "quote_last": " agora.\"",
+        "quote_first": "E desde então, o Chapeleiro continuou em tom pesaroso, “ele não fará nada do que eu peço! É sempre ",
+        "quote_last": " agora.”",
         "title": "Alice no País das Maravilhas",
         "author": "Lewis Carroll",
         "sfw": "sfw"
@@ -243,8 +243,8 @@
         "id": "002716",
         "time": "18:00",
         "quote_time_case": "seis horas",
-        "quote_first": "Você foi até a fazenda enquanto eu estava fora?<br>\"Não\", eu disse, \"mas vi Ted.\"<br>\"Ele tinha uma mensagem para mim?\" ela perguntou. \"Ele disse que hoje não era bom porque estava indo para Norwich. Mas sexta-feira às ",
-        "quote_last": ", como sempre.\"<br>\"Tem certeza que ele disse seis horas?\" ela perguntou, intrigada.<br>\"Com certeza.\"",
+        "quote_first": "Você foi até a fazenda enquanto eu estava fora?<br>“Não”, eu disse, “mas vi Ted.”<br>“Ele tinha uma mensagem para mim?” ela perguntou. “Ele disse que hoje não era bom porque estava indo para Norwich. Mas sexta-feira às ",
+        "quote_last": ", como sempre.”<br>“Tem certeza que ele disse seis horas?” ela perguntou, intrigada.<br>“Com certeza.”",
         "title": "O intermediário",
         "author": "L.P. Hartley",
         "sfw": "unknown"

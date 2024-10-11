@@ -23,8 +23,8 @@
         "id": "000900",
         "time": "07:00",
         "quote_time_case": "sete",
-        "quote_first": "E vamos para um bate-papo por vídeo hoje à noite? Quero dizer, de manhã? Sua manhã? Charlie perguntou.<br>\"Sim, você tem um horário em mente para que eu possa ter certeza de que vou acordar e tomar banho primeiro?\"<br>\"Tem certeza que você não pode conversar por vídeo no chuveiro?\" ele perguntou.<br>\"Nem tanto. Não.\"<br>\"Então acho que vou me contentar com ",
-        "quote_last": ".\"",
+        "quote_first": "E vamos para um bate-papo por vídeo hoje à noite? Quero dizer, de manhã? Sua manhã? Charlie perguntou.<br>“Sim, você tem um horário em mente para que eu possa ter certeza de que vou acordar e tomar banho primeiro?”<br>“Tem certeza que você não pode conversar por vídeo no chuveiro?” ele perguntou.<br>“Nem tanto. Não.”<br>“Então acho que vou me contentar com ",
+        "quote_last": ".”",
         "title": "Soldado ligado",
         "author": "Vanessa Rasanen",
         "sfw": "nsfw"
@@ -153,7 +153,7 @@
         "id": "000913",
         "time": "07:00",
         "quote_time_case": "sete",
-        "quote_first": "\"O que? Quer dizer, sim, é quando temos que estar no lote, mas tem um monte de coisas antes, você sabe, fantasias, maquiagem, tudo isso. Geralmente chego lá às ",
+        "quote_first": "“O que? Quer dizer, sim, é quando temos que estar no lote, mas tem um monte de coisas antes, você sabe, fantasias, maquiagem, tudo isso. Geralmente chego lá às ",
         "quote_last": ". Não acredito que ninguém lhe contou nada disso.",
         "title": "Adiar",
         "author": "James Han Mattson",
@@ -194,7 +194,7 @@
         "time": "07:00",
         "quote_time_case": "sete horas",
         "quote_first": "Já são ",
-        "quote_last": ", disse para si mesmo quando o relógio bateu novamente, \"sete horas, e ainda há uma neblina como esta.\"",
+        "quote_last": ", disse para si mesmo quando o relógio bateu novamente, “sete horas, e ainda há uma neblina como esta.”",
         "title": "Metamorfose",
         "author": "Franz Kafka",
         "sfw": "unknown"

@@ -24,7 +24,7 @@
         "time": "16:00",
         "quote_time_case": "quattro",
         "quote_first": "Seguii il suo sguardo fino alla mensola del caminetto. L'orologio si era fermato alle ",
-        "quote_last": ".<br>“Mon ami, qualcuno l'ha manomesso. Mancavano ancora tre giorni. È un orologio di otto giorni, capisci?\"<br>\"Ma per cosa dovrebbero volerlo fare? Qualche idea di una falsa pista facendo sembrare che il delitto sia avvenuto alle quattro?»",
+        "quote_last": ".<br>“Mon ami, qualcuno l'ha manomesso. Mancavano ancora tre giorni. È un orologio di otto giorni, capisci?”<br>“Ma per cosa dovrebbero volerlo fare? Qualche idea di una falsa pista facendo sembrare che il delitto sia avvenuto alle quattro?”",
         "title": "I Grandi Quattro",
         "author": "Agatha Christie",
         "sfw": "unknown"
@@ -44,7 +44,7 @@
         "time": "16:00",
         "quote_time_case": "quattro",
         "quote_first": "“Se mai passi dalle mie parti,” disse Bilbo, “non aspettare a bussare! Il tè è alle ",
-        "quote_last": ", ma chiunque di voi è il benvenuto a qualsiasi ora.\"",
+        "quote_last": ", ma chiunque di voi è il benvenuto a qualsiasi ora.”",
         "title": "Lo Hobbit",
         "author": "J.R.R. Tolkien",
         "sfw": "unknown"
@@ -103,8 +103,8 @@
         "id": "002394",
         "time": "16:00",
         "quote_time_case": "le quattro del pomeriggio",
-        "quote_first": "\"Buongiorno, dottor Tuttle\", dissi.<br>\"Sono ",
-        "quote_last": "\", disse. “Mi dispiace di aver impiegato così tanto tempo per rispondere alla tua chiamata. I miei gatti hanno avuto un'emergenza. Ti senti meglio? I sintomi che hai descritto nel tuo messaggio, francamente, mi lasciano perplesso”.",
+        "quote_first": "“Buongiorno, dottor Tuttle”, dissi.<br>“Sono ",
+        "quote_last": "”, disse. “Mi dispiace di aver impiegato così tanto tempo per rispondere alla tua chiamata. I miei gatti hanno avuto un'emergenza. Ti senti meglio? I sintomi che hai descritto nel tuo messaggio, francamente, mi lasciano perplesso”.",
         "title": "Il mio anno di riposo e relax",
         "author": "Ottessa Moshfegh",
         "sfw": "unknown"
@@ -133,8 +133,8 @@
         "id": "002397",
         "time": "16:00",
         "quote_time_case": "quattro",
-        "quote_first": "\"Alle ",
-        "quote_last": ", quindi, possiamo aspettarci questo gentiluomo pacificatore\", ha detto il signor Bennet, mentre ripiegava la lettera.",
+        "quote_first": "“Alle ",
+        "quote_last": ", quindi, possiamo aspettarci questo gentiluomo pacificatore”, ha detto il signor Bennet, mentre ripiegava la lettera.",
         "title": "Orgoglio e pregiudizio",
         "author": "Jane Austen",
         "sfw": "unknown"
@@ -173,8 +173,8 @@
         "id": "002401",
         "time": "16:00",
         "quote_time_case": "quattro del pomeriggio",
-        "quote_first": "Tanto per cominciare, lo interruppe Humpty Dumpty: \"ci sono un sacco di parole difficili. 'Brillig' significa ",
-        "quote_last": " - l'ora in cui inizi arrostire cose per cena.\"",
+        "quote_first": "Tanto per cominciare, lo interruppe Humpty Dumpty: “ci sono un sacco di parole difficili. 'Brillig' significa ",
+        "quote_last": " - l'ora in cui inizi arrostire cose per cena.”",
         "title": "Attraverso lo specchio",
         "author": "Lewis Carroll",
         "sfw": "unknown"
@@ -223,8 +223,8 @@
         "id": "002406",
         "time": "16:00",
         "quote_time_case": "quattro",
-        "quote_first": "\"Pensami domani, mia cara Emma, verso ",
-        "quote_last": "\", fu l'ingiunzione di addio di Mrs. Weston; parlato con una certa ansia e destinato solo a lei.",
+        "quote_first": "“Pensami domani, mia cara Emma, verso ",
+        "quote_last": "”, fu l'ingiunzione di addio di Mrs. Weston; parlato con una certa ansia e destinato solo a lei.",
         "title": "Emma",
         "author": "Jane Austen",
         "sfw": "unknown"
@@ -274,7 +274,7 @@
         "time": "16:00",
         "quote_time_case": "delle quattro",
         "quote_first": "Mentre svoltava verso il villaggio di pescatori di Cellardyke, i familiari segnali annunciarono il notiziario ",
-        "quote_last": ". La voce confortante del giornalista diede inizio al bollettino. \"Il serial killer condannato ed ex conduttore televisivo Jacko Vance ha iniziato il suo appello contro la condanna.\"",
+        "quote_last": ". La voce confortante del giornalista diede inizio al bollettino. “Il serial killer condannato ed ex conduttore televisivo Jacko Vance ha iniziato il suo appello contro la condanna.”",
         "title": "L'ultima tentazione",
         "author": "Val McDermid",
         "sfw": "unknown"
@@ -354,7 +354,7 @@
         "time": "16:00",
         "quote_time_case": "quattro",
         "quote_first": "Dubito che qualcuno sia stato incaricato di trasmettere la notizia tramite il telegrafo vero e proprio, eppure la signora Proudie lo sapeva prima delle ",
-        "quote_last": ". Ma lei non lo sapeva con precisione.<br>\"Vescovo\", disse, stando davanti alla porta dello studio di suo marito. \"Hanno messo quell'uomo in prigione. Non c'era alcun aiuto per loro a meno che non avessero giurato\".",
+        "quote_last": ". Ma lei non lo sapeva con precisione.<br>“Vescovo”, disse, stando davanti alla porta dello studio di suo marito. “Hanno messo quell'uomo in prigione. Non c'era alcun aiuto per loro a meno che non avessero giurato”.",
         "title": "L'ultima cronaca di Barset",
         "author": "Anthony Trollope",
         "sfw": "unknown"
