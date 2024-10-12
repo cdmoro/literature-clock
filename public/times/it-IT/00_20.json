@@ -4,7 +4,7 @@
         "time": "00:20",
         "quote_time_case": "dodici-venti",
         "quote_first": "Quando la polizia arrivò alle ",
-        "quote_last": " trovò la signora O'Keefe sdraiata su un unico divano nel salotto di casa sua, praticamente nuda.",
+        "quote_last": " trovò la signora O%Keefe sdraiata su un unico divano nel salotto di casa sua, praticamente nuda.",
         "title": "Una certa giustizia",
         "author": "P.D. James",
         "sfw": "nsfw"
@@ -23,9 +23,9 @@
         "id": "000092",
         "time": "00:20",
         "quote_time_case": "dodici-venti",
-        "quote_first": "Ora stava impastando la pallina di pasta calda sul bordo convesso della ciotola e sentivo l'odore dell'oppio. Non esiste un odore simile. Accanto al letto la sveglia segnava ",
+        "quote_first": "Ora stava impastando la pallina di pasta calda sul bordo convesso della ciotola e sentivo l%odore dell%oppio. Non esiste un odore simile. Accanto al letto la sveglia segnava ",
         "quote_last": ", ma già la mia tensione era passata. Pyle era diminuito.",
-        "title": "L'americano tranquillo",
+        "title": "L%americano tranquillo",
         "author": "Graham Greene",
         "sfw": "nsfw"
     }

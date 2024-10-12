@@ -204,7 +204,7 @@
         "time": "20:00",
         "quote_time_case": "ocho",
         "quote_first": "Freud me hizo llamar a la puerta de Jung, sin éxito. Esperaron hasta ",
-        "quote_last": ", luego partieron hacia Brill's sin él.",
+        "quote_last": ", luego partieron hacia Brill%s sin él.",
         "title": "La interpretación del asesinato",
         "author": "Jed Rubenfeld",
         "sfw": "unknown"

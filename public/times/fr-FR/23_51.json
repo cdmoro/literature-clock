@@ -4,8 +4,8 @@
         "time": "23:51",
         "quote_time_case": "neuf minutes moins douze",
         "quote_first": "Virginia vérifia sa montre : ",
-        "quote_last": ". Elle avait tenu sa part du marché. Elle appuya sur la sonnette et attendit de voir une lumière s'allumer au troisième étage.",
-        "title": "C'était un homme",
+        "quote_last": ". Elle avait tenu sa part du marché. Elle appuya sur la sonnette et attendit de voir une lumière s%allumer au troisième étage.",
+        "title": "C%était un homme",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
@@ -14,7 +14,7 @@
         "time": "23:51",
         "quote_time_case": "onze-cinquante-un",
         "quote_first": "Attendu à Waterloo à ",
-        "quote_last": ", haletait Smith. « Cela nous laisse trente-neuf minutes pour passer de l'autre côté de la rivière et rejoindre son hôtel. »",
+        "quote_last": ", haletait Smith. « Cela nous laisse trente-neuf minutes pour passer de l%autre côté de la rivière et rejoindre son hôtel. »",
         "title": "Le mystère du Dr Fu Manchu",
         "author": "Sax Rohmer",
         "sfw": "unknown"

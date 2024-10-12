@@ -4,7 +4,7 @@
         "time": "12:45",
         "quote_time_case": "12h45",
         "quote_first": "Vendredi à ",
-        "quote_last": ", David est arrivé à l'Athenaeum, un immense bâtiment blanc situé au coin de Pall Mall, surplombé par une statue du duc d'York.",
+        "quote_last": ", David est arrivé à l%Athenaeum, un immense bâtiment blanc situé au coin de Pall Mall, surplombé par une statue du duc d%York.",
         "title": "Pas un centime de plus, pas un centime de moins",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -14,7 +14,7 @@
         "time": "12:45",
         "quote_time_case": "une heure moins le quart",
         "quote_first": "Ce dimanche était une journée d’été digne d’un livre d’images dans le Maine : claire, lumineuse et chaude. À ",
-        "quote_last": ", Ruth McCausland, vêtue d'une jolie robe d'été bleue, a quitté sa maison pour la dernière fois.",
+        "quote_last": ", Ruth McCausland, vêtue d%une jolie robe d%été bleue, a quitté sa maison pour la dernière fois.",
         "title": "Les Tommyknockers",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -23,8 +23,8 @@
         "id": "001944",
         "time": "12:45",
         "quote_time_case": "12:45",
-        "quote_first": "Le garçon a remis une dépêche. Le professeur referma la porte et, après avoir regardé la direction, l'ouvrit et lut à haute voix. « Attention à D. Il vient tout à l'heure, ",
-        "quote_last": ", d'arriver précipitamment de Carfax et de se précipiter vers le Sud. Il semble faire le tour et voudra peut-être à bientôt : Mina »",
+        "quote_first": "Le garçon a remis une dépêche. Le professeur referma la porte et, après avoir regardé la direction, l%ouvrit et lut à haute voix. « Attention à D. Il vient tout à l%heure, ",
+        "quote_last": ", d%arriver précipitamment de Carfax et de se précipiter vers le Sud. Il semble faire le tour et voudra peut-être à bientôt : Mina »",
         "title": "Dracula",
         "author": "Bram Stoker",
         "sfw": "unknown"
@@ -33,9 +33,9 @@
         "id": "001945",
         "time": "12:45",
         "quote_time_case": "une heure moins le quart",
-        "quote_first": "Parce qu'il pleuvait, et parce qu'elle était déprimée et de mauvaise humeur, et parce que Robbie n'était pas venu ",
-        "quote_last": ", Elizabeth s'est offert un Martini en attendant, assis inconfortablement sur une chaise étroite dans le restaurant, regardant d'autres personnes peu impressionnantes entrer et sortir.",
-        "title": "La loterie ou l'aventure de James Harris",
+        "quote_first": "Parce qu%il pleuvait, et parce qu%elle était déprimée et de mauvaise humeur, et parce que Robbie n%était pas venu ",
+        "quote_last": ", Elizabeth s%est offert un Martini en attendant, assis inconfortablement sur une chaise étroite dans le restaurant, regardant d%autres personnes peu impressionnantes entrer et sortir.",
+        "title": "La loterie ou l%aventure de James Harris",
         "author": "Shirley Jackson",
         "sfw": "unknown"
     }

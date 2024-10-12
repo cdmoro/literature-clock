@@ -12,8 +12,8 @@
     {
         "id": "001973",
         "time": "13:00",
-        "quote_time_case": "one o'clock sharp",
-        "quote_first": "Guess what! said Klaus as he spooned lentil soup into Gunther's mouth at the noon meal in Gaza. “I have the honor of being the first man in Gaza to meet the medical examiners. At ",
+        "quote_time_case": "one o%clock sharp",
+        "quote_first": "Guess what! said Klaus as he spooned lentil soup into Gunther%s mouth at the noon meal in Gaza. “I have the honor of being the first man in Gaza to meet the medical examiners. At ",
         "quote_last": " in Hebron.”",
         "title": "Bright Valley of Love",
         "author": "Edna Hong",
@@ -22,7 +22,7 @@
     {
         "id": "001974",
         "time": "13:00",
-        "quote_time_case": "one o'clock",
+        "quote_time_case": "one o%clock",
         "quote_first": "Tomorrow at ",
         "quote_last": " Anders will be here with the sleigh, and then you two will make the rounds according to the list and leave a basket at each place.",
         "title": "The Hammer of God",
@@ -142,7 +142,7 @@
     {
         "id": "001986",
         "time": "13:00",
-        "quote_time_case": "One o'clock",
+        "quote_time_case": "One o%clock",
         "quote_first": "",
         "quote_last": " pee em! Hello, Insert Name Here!",
         "title": "Jingo",
@@ -152,7 +152,7 @@
     {
         "id": "001987",
         "time": "13:00",
-        "quote_time_case": "one o'clock",
+        "quote_time_case": "one o%clock",
         "quote_first": "Czarina Catherine reported entering Galatz at ",
         "quote_last": " today.",
         "title": "Dracula",
@@ -172,7 +172,7 @@
     {
         "id": "001989",
         "time": "13:00",
-        "quote_time_case": "1 o'clock",
+        "quote_time_case": "1 o%clock",
         "quote_first": "After ",
         "quote_last": " checks, Gretta always goes out for a smoke.",
         "title": "Girl, Interrupted",
@@ -192,8 +192,8 @@
     {
         "id": "001991",
         "time": "13:00",
-        "quote_time_case": "one o'clock",
-        "quote_first": "I got to Schmidt's early, feeling horribly nervous. At ",
+        "quote_time_case": "one o%clock",
+        "quote_first": "I got to Schmidt%s early, feeling horribly nervous. At ",
         "quote_last": " sharp: Toni. She was looking at the menu she knew well - Schmorbraten? Schnitzel? - when he loomed over her. I had seen him come in. She looked up, through him, at me. “Traitor.” Jamie, hovering, looking very big, said her pet name, a German diminutive chosen by her.",
         "title": "Jigsaw",
         "author": "Sybille Bedford",
@@ -212,7 +212,7 @@
     {
         "id": "001993",
         "time": "13:00",
-        "quote_time_case": "one o'clock",
+        "quote_time_case": "one o%clock",
         "quote_first": "It was ",
         "quote_last": ". I bought some apples and a small pork pie and drove across the bridge to the other side of the riverbank in the direction of Orford Ness.",
         "title": "The Swimmer",
@@ -232,9 +232,9 @@
     {
         "id": "001995",
         "time": "13:00",
-        "quote_time_case": "one o'clock",
+        "quote_time_case": "one o%clock",
         "quote_first": "That day it was ",
-        "quote_last": " before John and Roger rowed across and went up to Dixon's farm for the milk and a new supply of eggs and butter.",
+        "quote_last": " before John and Roger rowed across and went up to Dixon%s farm for the milk and a new supply of eggs and butter.",
         "title": "Swallows and Amazons",
         "author": "Arthur Ransome",
         "sfw": "unknown"
@@ -242,10 +242,10 @@
     {
         "id": "001996",
         "time": "13:00",
-        "quote_time_case": "one o'clock",
+        "quote_time_case": "one o%clock",
         "quote_first": "The day-room floor gets cleared of tables and at ",
-        "quote_last": " the doctor comes out of his office down the hall, nods once at the nurse as he goes past where he's watching out of her window, sits in his chair just to the left of the door.",
-        "title": "One Flew Over the Cuckoo's Nest",
+        "quote_last": " the doctor comes out of his office down the hall, nods once at the nurse as he goes past where he%s watching out of her window, sits in his chair just to the left of the door.",
+        "title": "One Flew Over the Cuckoo%s Nest",
         "author": "Ken Kesey",
         "sfw": "unknown"
     }

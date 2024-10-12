@@ -242,7 +242,7 @@
     {
         "id": "001489",
         "time": "10:00",
-        "quote_time_case": "ten o'clock",
+        "quote_time_case": "ten o%clock",
         "quote_first": "In assaying to put on his regimental coat and waistcoat, my uncle Toby found the same objection in his wig, so that went off too; So that with one thing and what with another, as always falls out when a man is in the most haste, 'twas ",
         "quote_last": ", which was half an hour later than his usual time, before my uncle Toby sallied out.",
         "title": "Tristram Shandy",
@@ -264,7 +264,7 @@
         "time": "10:00",
         "quote_time_case": "ten",
         "quote_first": "For some seconds the light went on becoming brighter and brighter, and she saw everything more and more clearly and the clock ticked louder and louder until there was a terrific explosion right in her ear. Orlando leapt as if she had been violently struck on the head. Ten times she was struck. In fact it was ",
-        "quote_last": " o'clock in the morning. It was the eleventh of October. It was 1928. It was the present moment.",
+        "quote_last": " o%clock in the morning. It was the eleventh of October. It was 1928. It was the present moment.",
         "title": "Orlando",
         "author": "Virginia Woolf",
         "sfw": "unknown"
@@ -292,7 +292,7 @@
     {
         "id": "001494",
         "time": "10:00",
-        "quote_time_case": "ten o'clock",
+        "quote_time_case": "ten o%clock",
         "quote_first": "At about ",
         "quote_last": " in the morning the sun threw a bright dust-laden bar through one of the side windows, and in and out of the beam flies shot like rushing stars.",
         "title": "Of Mice And Men",
@@ -312,7 +312,7 @@
     {
         "id": "001496",
         "time": "10:00",
-        "quote_time_case": "ten o'clock",
+        "quote_time_case": "ten o%clock",
         "quote_first": "If Wednesday should ever come! It did come, and exactly when it might be reasonably looked for. It came - it was fine - and Catherine trod on air. By ",
         "quote_last": ", the chaise and four conveyed the two from the abbey; and, after an agreeable drive of almost twenty miles, they entered Woodston, a large and populous village, in a situation not unpleasant.",
         "title": "Northanger Abbey",
@@ -323,7 +323,7 @@
         "id": "001497",
         "time": "10:00",
         "quote_time_case": "ten",
-        "quote_first": "King Richard: Well, but what's o'clock?<br>Buckingham: Upon the stroke of ",
+        "quote_first": "King Richard: Well, but what%s o%clock?<br>Buckingham: Upon the stroke of ",
         "quote_last": ".",
         "title": "Richard III",
         "author": "William Shakespeare",
@@ -342,7 +342,7 @@
     {
         "id": "001499",
         "time": "10:00",
-        "quote_time_case": "10 o'clock",
+        "quote_time_case": "10 o%clock",
         "quote_first": "On July 25th, 8:30 a.m. the bitch Novaya dies whelping. At ",
         "quote_last": " she is lowered into her cool grave, at 7:30 that same evening we see our first floes and greet them wishing they were the last.",
         "title": "The Terrors of Ice and Darkness",
@@ -364,7 +364,7 @@
         "time": "10:00",
         "quote_time_case": "ten o' clock",
         "quote_first": "The Saturday immediately preceding the examinations was a very busy day for Kennedy. At ",
-        "quote_last": " he was entering Willey's room; the latter had given him a key and left the room vacant by previous arrangement - in fact he had taken Olivia on another house hunting trip.",
+        "quote_last": " he was entering Willey%s room; the latter had given him a key and left the room vacant by previous arrangement - in fact he had taken Olivia on another house hunting trip.",
         "title": "The Greeks Have a Word for It",
         "author": "Barry Unsworth",
         "sfw": "unknown"
@@ -373,7 +373,7 @@
         "id": "001502",
         "time": "10:00",
         "quote_time_case": "ten in the morning",
-        "quote_first": "The summer holidays were near at hand when I made up my mind to break out of the weariness of school-life for one day at least. With Leo Dillon and a boy named Mahoney I planned a day's mitching. Each of us saved up sixpence. We were to meet at ",
+        "quote_first": "The summer holidays were near at hand when I made up my mind to break out of the weariness of school-life for one day at least. With Leo Dillon and a boy named Mahoney I planned a day%s mitching. Each of us saved up sixpence. We were to meet at ",
         "quote_last": " on the Canal Bridge.",
         "title": "Dubliners",
         "author": "James Joyce",

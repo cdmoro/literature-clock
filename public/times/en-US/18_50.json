@@ -14,7 +14,7 @@
         "time": "18:50",
         "quote_time_case": "6:50 that evening",
         "quote_first": "At ",
-        "quote_last": ", Lacey stood in the atrium dressed in shorts, a blue tank top, and sturdy tennis shoes, ready for a warm evening of walking about. She stared at the tiny red tree frog crouched on a branch at eye level as tour groups and a never-ending stream of smaller parties trooped around her, all wandering the portions of the zig that Swain had opened to the public for the weekend's open house.",
+        "quote_last": ", Lacey stood in the atrium dressed in shorts, a blue tank top, and sturdy tennis shoes, ready for a warm evening of walking about. She stared at the tiny red tree frog crouched on a branch at eye level as tour groups and a never-ending stream of smaller parties trooped around her, all wandering the portions of the zig that Swain had opened to the public for the weekend%s open house.",
         "title": "The Enclave",
         "author": "Karen Hancock",
         "sfw": "sfw"
@@ -34,8 +34,8 @@
         "time": "18:50",
         "quote_time_case": "ten minutes before seven",
         "quote_first": "It was time to go see the Lady. When we arrived at her house at ",
-        "quote_last": " o'clock, Damaronde answered the door.",
-        "title": "Boy's Life",
+        "quote_last": " o%clock, Damaronde answered the door.",
+        "title": "Boy%s Life",
         "author": "Robert R. McCammon",
         "sfw": "unknown"
     }

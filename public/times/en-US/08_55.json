@@ -16,7 +16,7 @@
         "quote_first": "She arrived at ",
         "quote_last": " and stood dripping in his aunts’ hall, a tubular bundle of baby-blue plastic from which nothing showed but her face. She was holding a damp paper sack and her large mouth was twisted in an uncertain smile. Overnight she had apparently lost some of her self-assurance.",
         "title": "The Partridge Festival",
-        "author": "Flannery O'Connor",
+        "author": "Flannery O%Connor",
         "sfw": "unknown"
     },
     {
@@ -54,7 +54,7 @@
         "time": "08:55",
         "quote_time_case": "five minutes to nine",
         "quote_first": "At ",
-        "quote_last": ", Jacques, in his gray butler's livery, came down the stairs and said, “Young master, your Herr Papá is coming.”",
+        "quote_last": ", Jacques, in his gray butler%s livery, came down the stairs and said, “Young master, your Herr Papá is coming.”",
         "title": "The Radetzky March",
         "author": "Joseph Roth",
         "sfw": "unknown"

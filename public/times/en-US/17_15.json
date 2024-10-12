@@ -14,7 +14,7 @@
         "time": "17:15",
         "quote_time_case": "5:15",
         "quote_first": "It was about ",
-        "quote_last": " when Grant noticed a new face entering the room. He was a priest roughly Grant's age. The medium-built man looked a bit disheveled.",
+        "quote_last": " when Grant noticed a new face entering the room. He was a priest roughly Grant%s age. The medium-built man looked a bit disheveled.",
         "title": "Warrior Monk",
         "author": "Ray Keating",
         "sfw": "sfw"

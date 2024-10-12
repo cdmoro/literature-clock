@@ -13,7 +13,7 @@
         "id": "002796",
         "time": "18:37",
         "quote_time_case": "Près de sept heures moins vingt",
-        "quote_first": "Amy : Qu'est-ce que c'est ? J'ai cru voir quelqu'un passer par la fenêtre. Quelle heure est-il ?<br>Charles : ",
+        "quote_first": "Amy : Qu%est-ce que c%est ? J%ai cru voir quelqu%un passer par la fenêtre. Quelle heure est-il ?<br>Charles : ",
         "quote_last": ".",
         "title": "La réunion de famille",
         "author": "T.S. Eliot",
@@ -23,9 +23,9 @@
         "id": "002797",
         "time": "18:37",
         "quote_time_case": "six heures trente-sept minutes",
-        "quote_first": "Venez au café Gray's-Inn, dit Pinto, « et je vous raconterai comment l'entaille est arrivée à la hache ». Et nous avons parcouru Holborn vers ",
+        "quote_first": "Venez au café Gray%s-Inn, dit Pinto, « et je vous raconterai comment l%entaille est arrivée à la hache ». Et nous avons parcouru Holborn vers ",
         "quote_last": ".",
-        "title": "L'encoche sur la hache",
+        "title": "L%encoche sur la hache",
         "author": "William Makepeace Thackeray",
         "sfw": "sfw"
     }

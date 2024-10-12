@@ -4,7 +4,7 @@
         "time": "02:12",
         "quote_time_case": "deux heures du matin",
         "quote_first": "À ",
-        "quote_last": ", Werner le sait, le Français émettra à nouveau, et Werner devra éteindre l'émetteur-récepteur ou bien faire comme s'il n'entendait que des parasites.",
+        "quote_last": ", Werner le sait, le Français émettra à nouveau, et Werner devra éteindre l%émetteur-récepteur ou bien faire comme s%il n%entendait que des parasites.",
         "title": "Toute la lumière que nous ne pouvons pas voir",
         "author": "Anthony Doerr",
         "sfw": "unknown"
@@ -13,8 +13,8 @@
         "id": "000312",
         "time": "02:12",
         "quote_time_case": "2h12",
-        "quote_first": "Puis les lumières se sont éteintes dans toute la ville. Cela s'est produit à ",
-        "quote_last": " selon les archives de la centrale électrique, mais le journal de Blake ne donne aucune indication sur l'heure. L'entrée est simplement : « Lumières éteintes – Que Dieu m'aide ».",
+        "quote_first": "Puis les lumières se sont éteintes dans toute la ville. Cela s%est produit à ",
+        "quote_last": " selon les archives de la centrale électrique, mais le journal de Blake ne donne aucune indication sur l%heure. L%entrée est simplement : « Lumières éteintes – Que Dieu m%aide ».",
         "title": "Le Hanteur des Ténèbres",
         "author": "H.P. Lovecraft",
         "sfw": "unknown"

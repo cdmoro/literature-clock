@@ -14,7 +14,7 @@
         "time": "08:25",
         "quote_time_case": "eight twenty-five",
         "quote_first": "The twenty-five minutes from eight until ",
-        "quote_last": " was the only time in which all the female suspects had been together, eating under the eye of Miss Collins and full in each other's gaze.",
+        "quote_last": " was the only time in which all the female suspects had been together, eating under the eye of Miss Collins and full in each other%s gaze.",
         "title": "Shroud for a Nightingale",
         "author": "P.D. James",
         "sfw": "sfw"
@@ -34,7 +34,7 @@
         "time": "08:25",
         "quote_time_case": "twenty-five after",
         "quote_first": "The next day, Jay sat at his desk promptly at eight. At ",
-        "quote_last": ", Irene came over. “Time to go to the meeting.”<br>Jay stood. “Who'll take over the phones?”",
+        "quote_last": ", Irene came over. “Time to go to the meeting.”<br>Jay stood. “Who%ll take over the phones?”",
         "title": "The Arachne Portal",
         "author": "Joan Marie Verba",
         "sfw": "unknown"

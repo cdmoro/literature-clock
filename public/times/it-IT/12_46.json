@@ -13,7 +13,7 @@
         "id": "001947",
         "time": "12:46",
         "quote_time_case": "dodici-quarantasei",
-        "quote_first": "“Lunedi. Ha ottenuto il permesso di ridurre l'orario mattutino. Immagino che sarà sul ",
+        "quote_first": "“Lunedi. Ha ottenuto il permesso di ridurre l%orario mattutino. Immagino che sarà sul ",
         "quote_last": ".”<br>“Sarà troppo tardi”, disse Hal in tono offeso. “Per Giove, è marcio! Non vedo perché non potesse far sapere alla gente che sarebbe andato.",
         "title": "La commedia che ha vinto",
         "author": "Ralph Henry Barbour",
@@ -22,11 +22,11 @@
     {
         "id": "001948",
         "time": "12:46",
-        "quote_time_case": "intorno all'una meno un quarto",
+        "quote_time_case": "intorno all%una meno un quarto",
         "quote_first": "È ",
-        "quote_last": ". Adesso la luce del sole non entra nella stanza dalle finestre a destra. Fuori la giornata è bella ma sempre più afosa, con una leggera foschia nell'aria che attutisce la luce del sole.",
+        "quote_last": ". Adesso la luce del sole non entra nella stanza dalle finestre a destra. Fuori la giornata è bella ma sempre più afosa, con una leggera foschia nell%aria che attutisce la luce del sole.",
         "title": "Il lungo viaggio verso la notte",
-        "author": "Eugene O'Neill",
+        "author": "Eugene O%Neill",
         "sfw": "unknown"
     }
 ]

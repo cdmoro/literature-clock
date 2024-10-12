@@ -3,7 +3,7 @@
         "id": "001234",
         "time": "08:56",
         "quote_time_case": "Four minutes before nine",
-        "quote_first": "I filled her in on the weekend's events, and she paled when I told her about the gunshot. “Thank the Lord you weren't hurt.”<br>We discussed the incident a few minutes longer, and then I noticed the time. ",
+        "quote_first": "I filled her in on the weekend%s events, and she paled when I told her about the gunshot. “Thank the Lord you weren%t hurt.”<br>We discussed the incident a few minutes longer, and then I noticed the time. ",
         "quote_last": ".",
         "title": "No Cats Allowed",
         "author": "Miranda James",
@@ -12,7 +12,7 @@
     {
         "id": "001235",
         "time": "08:56",
-        "quote_time_case": "nearly nine o'clock",
+        "quote_time_case": "nearly nine o%clock",
         "quote_first": "It was ",
         "quote_last": " and the sun was fiercer every minute.",
         "title": "Burmese Days",

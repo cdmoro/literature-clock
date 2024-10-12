@@ -2,7 +2,7 @@
     {
         "id": "003144",
         "time": "21:00",
-        "quote_time_case": "nine o'clock",
+        "quote_time_case": "nine o%clock",
         "quote_first": "They who had to go to bed so punctually, for whom the lights went out at ",
         "quote_last": ", could stay at Obermeier Farm until the fireflies and the stars came out-until the Chinese lanterns were lit and they could walk once more about the farm with their jovial host and hostess with these beautiful, swaying, colored lights.",
         "title": "Bright Valley of Love",
@@ -164,7 +164,7 @@
         "time": "21:00",
         "quote_time_case": "2100",
         "quote_first": "At ",
-        "quote_last": " at night it's cold out.",
+        "quote_last": " at night it%s cold out.",
         "title": "Infinite Jest",
         "author": "David Foster Wallace",
         "sfw": "unknown"
@@ -172,19 +172,19 @@
     {
         "id": "003161",
         "time": "21:00",
-        "quote_time_case": "nine o'clock",
+        "quote_time_case": "nine o%clock",
         "quote_first": "I got home from working at Burger Boy tonight about ",
         "quote_last": ", and I was kind of surprised because the whole house was dark.",
-        "title": "Don't You Dare Read This, Mrs. Dunphrey",
+        "title": "Don%t You Dare Read This, Mrs. Dunphrey",
         "author": "Margaret Peterson Haddix",
         "sfw": "unknown"
     },
     {
         "id": "003162",
         "time": "21:00",
-        "quote_time_case": "nine o'clock",
+        "quote_time_case": "nine o%clock",
         "quote_first": "It was ",
-        "quote_last": " at night upon the second of August—the most terrible August in the history of the world. One might have thought already that God's curse hung heavy over a degenerate world, for there was an awesome hush and a feeling of vague expectancy in the sultry and stagnant air",
+        "quote_last": " at night upon the second of August—the most terrible August in the history of the world. One might have thought already that God%s curse hung heavy over a degenerate world, for there was an awesome hush and a feeling of vague expectancy in the sultry and stagnant air",
         "title": "His Last Bow An Epilogue of Sherlock Holmes",
         "author": "Arthur Conan Doyle",
         "sfw": "unknown"
@@ -192,7 +192,7 @@
     {
         "id": "003163",
         "time": "21:00",
-        "quote_time_case": "nine o'clock",
+        "quote_time_case": "nine o%clock",
         "quote_first": "On the evening before K.'s thirty-first birthday - it was about ",
         "quote_last": ", when there is a lull in the streets - two gentlemen came to his apartment.",
         "title": "The Trial",
@@ -212,9 +212,9 @@
     {
         "id": "003165",
         "time": "21:00",
-        "quote_time_case": "nine o'clock",
+        "quote_time_case": "nine o%clock",
         "quote_first": "Shortly after ",
-        "quote_last": " that evening, Weyrother drove with his plans to Kutuzov's quarters where the council of war was to be held. All the commanders of columns were summoned to the commander in chief's and with the exception of Prince Bagration, who declined to come, were all there at the appointed time.",
+        "quote_last": " that evening, Weyrother drove with his plans to Kutuzov%s quarters where the council of war was to be held. All the commanders of columns were summoned to the commander in chief%s and with the exception of Prince Bagration, who declined to come, were all there at the appointed time.",
         "title": "War and Peace",
         "author": "Leo Tolstoy",
         "sfw": "unknown"
@@ -222,10 +222,10 @@
     {
         "id": "003166",
         "time": "21:00",
-        "quote_time_case": "nine o'clock",
+        "quote_time_case": "nine o%clock",
         "quote_first": "Standing in the chrome-and-tile desolation of the Polar-Shtern Kafeteria at ",
-        "quote_last": " on a Friday night, in a snowstorm, he's the loneliest Jew in the Sitka District.",
-        "title": "The Yiddish Policemen's Union",
+        "quote_last": " on a Friday night, in a snowstorm, he%s the loneliest Jew in the Sitka District.",
+        "title": "The Yiddish Policemen%s Union",
         "author": "Michael Chabon",
         "sfw": "unknown"
     },
@@ -235,14 +235,14 @@
         "quote_time_case": "at nine",
         "quote_first": "That night ",
         "quote_last": " the President addressed the nation.",
-        "title": "All the President's Men",
+        "title": "All the President%s Men",
         "author": "Bernstein & Woodward",
         "sfw": "unknown"
     },
     {
         "id": "003168",
         "time": "21:00",
-        "quote_time_case": "nine o'clock",
+        "quote_time_case": "nine o%clock",
         "quote_first": "Then he put on a grey jacket and left the flat to make his way to Praca da Alegria. It was already ",
         "quote_last": ", Pereira maintains.",
         "title": "Pereira Maintains",
@@ -252,7 +252,7 @@
     {
         "id": "003169",
         "time": "21:00",
-        "quote_time_case": "nine o'clock",
+        "quote_time_case": "nine o%clock",
         "quote_first": "This time, the putting on of her best hat at ",
         "quote_last": " at night with the idea of sallying forth from the castle, down the long drive and then northwards along the acacia avenue, had been enough to send her to her own doorway as though she suspected someone might be there, someone who was listening to her thoughts.",
         "title": "Titus Groan",

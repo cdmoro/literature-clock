@@ -4,7 +4,7 @@
         "time": "19:01",
         "quote_time_case": "sept heures une minute",
         "quote_first": "Les portes du cimetière étaient fermées au coucher du soleil ; le coucher du soleil a eu lieu cette nuit-là à ",
-        "quote_last": ", et la distance jusqu'à la ville est considérable.",
+        "quote_last": ", et la distance jusqu%à la ville est considérable.",
         "title": "Le bal en filigrane",
         "author": "Anna Katherine Green",
         "sfw": "sfw"
@@ -13,8 +13,8 @@
         "id": "002861",
         "time": "19:01",
         "quote_time_case": "autour de sept",
-        "quote_first": "Il attendit jusqu'à presque huit heures, parce que ",
-        "quote_last": " il y avait toujours plus de gens qui entraient et sortaient de la maison qu'à d'autres moments.",
+        "quote_first": "Il attendit jusqu%à presque huit heures, parce que ",
+        "quote_last": " il y avait toujours plus de gens qui entraient et sortaient de la maison qu%à d%autres moments.",
         "title": "Le talentueux M. Ripley",
         "author": "Patricia Highsmith",
         "sfw": "unknown"

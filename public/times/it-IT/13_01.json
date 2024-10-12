@@ -2,8 +2,8 @@
     {
         "id": "001997",
         "time": "13:01",
-        "quote_time_case": "l'una e un minuto",
-        "quote_first": "Sentì un grido lontano e confuso. Harse e il poliziotto? Ma non importava. L'unica cosa che contava era arrivare al Nexus Point all'",
+        "quote_time_case": "l%una e un minuto",
+        "quote_first": "Sentì un grido lontano e confuso. Harse e il poliziotto? Ma non importava. L%unica cosa che contava era arrivare al Nexus Point all%",
         "quote_last": ".",
         "title": "Kit di sopravvivenza",
         "author": "Frederik Pohl",
@@ -12,7 +12,7 @@
     {
         "id": "001998",
         "time": "13:01",
-        "quote_time_case": "circa l'una",
+        "quote_time_case": "circa l%una",
         "quote_first": "Ci sono cinque braccia là fuori, disse. Verrà spazzato via in quel modo quando la marea salirà ",
         "quote_last": ". Sono nove giorni oggi.",
         "title": "Odisseo",
@@ -22,7 +22,7 @@
     {
         "id": "001999",
         "time": "13:01",
-        "quote_time_case": "verso l'una",
+        "quote_time_case": "verso l%una",
         "quote_first": "Alle ",
         "quote_last": " arrivò il sorvegliante e disse loro che non aveva lavoro per loro.",
         "title": "La figlia di un sacerdote",
@@ -32,9 +32,9 @@
     {
         "id": "002000",
         "time": "13:01",
-        "quote_time_case": "poco dopo l'una",
+        "quote_time_case": "poco dopo l%una",
         "quote_first": "Era ",
-        "quote_last": " quando sono arrivato lì, era ora di pranzo, quindi ho mangiato. Il cibo era pessimo. Ma sarebbe finito sul conto spese, e dopo aver mangiato ho tirato fuori il taccuino e l'ho messo giù. Pranzo $ 1,50. Taxi $ 1,00.",
+        "quote_last": " quando sono arrivato lì, era ora di pranzo, quindi ho mangiato. Il cibo era pessimo. Ma sarebbe finito sul conto spese, e dopo aver mangiato ho tirato fuori il taccuino e l%ho messo giù. Pranzo $ 1,50. Taxi $ 1,00.",
         "title": "Il Grande Orologio",
         "author": "Kenneth Fearing",
         "sfw": "unknown"

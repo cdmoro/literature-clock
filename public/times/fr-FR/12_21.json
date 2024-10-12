@@ -4,7 +4,7 @@
         "time": "12:21",
         "quote_time_case": "12:21 GMT",
         "quote_first": "",
-        "quote_last": "<br>« Des questions ? » a demandé Jackie à la fin de son briefing.<br>Une main s'est levée. « Laquelle des deux équipes est la plus susceptible d'être nécessaire ? »",
+        "quote_last": "<br>« Des questions ? » a demandé Jackie à la fin de son briefing.<br>Une main s%est levée. « Laquelle des deux équipes est la plus susceptible d%être nécessaire ? »",
         "title": "Rien de risqué",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -13,7 +13,7 @@
         "id": "001902",
         "time": "12:21",
         "quote_time_case": "douze vingt et un",
-        "quote_first": "Jake pense à quelque chose. S'IL TE PLAÎT! ",
+        "quote_first": "Jake pense à quelque chose. S%IL TE PLAÎT! ",
         "quote_last": ".",
         "title": "22/11/63",
         "author": "Stephen King",

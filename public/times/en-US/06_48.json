@@ -23,7 +23,7 @@
         "id": "000879",
         "time": "06:48",
         "quote_time_case": "6:48 A.M.",
-        "quote_first": "His jet had touched down on the facility's runway at ",
+        "quote_first": "His jet had touched down on the facility%s runway at ",
         "quote_last": " and been promptly towed into the hangar. Tanzan Mino intended to be in personal command when Daedalus I went hypersonic, in just nineteen hours.",
         "title": "Project Daedalus",
         "author": "Thomas Hoover",

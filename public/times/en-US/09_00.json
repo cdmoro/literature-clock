@@ -12,7 +12,7 @@
     {
         "id": "001247",
         "time": "09:00",
-        "quote_time_case": "nine o'clock",
+        "quote_time_case": "nine o%clock",
         "quote_first": "At ",
         "quote_last": " the parsonage buggy carried them south on the highway toward Ravelunda. Fridfeldt felt more at home north of the church hamlet. There the revival had been more evident. Down here at Vänneberga it had one of its last outposts. Beyond it lay Sörbygden where the spiritual life was of another type. There one could both smoke and confess the Savior; there the doctrine of total sinful depravity was preached, and it was said whisky might be found also among the awakened.",
         "title": "The Hammer of God",
@@ -222,7 +222,7 @@
     {
         "id": "001268",
         "time": "09:00",
-        "quote_time_case": "nine o'clock",
+        "quote_time_case": "nine o%clock",
         "quote_first": "I could never get all the way down there before ",
         "quote_last": ".",
         "title": "A Confederacy of Dunces",
@@ -232,8 +232,8 @@
     {
         "id": "001269",
         "time": "09:00",
-        "quote_time_case": "nine o'clock",
-        "quote_first": "Look. Ignatius. I'm beat. I've been on the road since ",
+        "quote_time_case": "nine o%clock",
+        "quote_first": "Look. Ignatius. I%m beat. I%ve been on the road since ",
         "quote_last": " yesterday morning.",
         "title": "A Confederacy of Dunces",
         "author": "John Kennedy Toole",
@@ -264,7 +264,7 @@
         "time": "09:00",
         "quote_time_case": "nine",
         "quote_first": "A fly buzzed, the wall clock began to strike. After the ",
-        "quote_last": " golden strokes faded, the district captain began. “How is Herr Colonel Marek?”<br>“Thank you, Papá, he's fine.”<br>“Still weak in geometry?”<br>“Thank you, Papá, a little better.”<br>“Read any books?”<br>“Yessir, Papá.”",
+        "quote_last": " golden strokes faded, the district captain began. “How is Herr Colonel Marek?”<br>“Thank you, Papá, he%s fine.”<br>“Still weak in geometry?”<br>“Thank you, Papá, a little better.”<br>“Read any books?”<br>“Yessir, Papá.”",
         "title": "The Radetzky March",
         "author": "Joseph Roth",
         "sfw": "unknown"
@@ -282,9 +282,9 @@
     {
         "id": "001274",
         "time": "09:00",
-        "quote_time_case": "nine o'clock",
+        "quote_time_case": "nine o%clock",
         "quote_first": "At ",
-        "quote_last": ", one morning late in July, Gatsby's gorgeous car lurched up the rocky drive to my door and gave out a burst of melody from its three-noted horn.",
+        "quote_last": ", one morning late in July, Gatsby%s gorgeous car lurched up the rocky drive to my door and gave out a burst of melody from its three-noted horn.",
         "title": "The Great Gatsby",
         "author": "F. Scott Fitzgerald",
         "sfw": "unknown"
@@ -302,19 +302,19 @@
     {
         "id": "001276",
         "time": "09:00",
-        "quote_time_case": "nine o'clock",
-        "quote_first": "He won't stand beating. Now, if you only kept on good terms with him, he'd do almost anything you liked with the clock. For instance, suppose it were ",
-        "quote_last": " in the morning, just time to begin lessons: you'd only have to whisper a hint to Time, and round goes the clock in a twinkling! Half-past one, time for dinner!",
-        "title": "Alice's Adventures in Wonderland",
+        "quote_time_case": "nine o%clock",
+        "quote_first": "He won%t stand beating. Now, if you only kept on good terms with him, he%d do almost anything you liked with the clock. For instance, suppose it were ",
+        "quote_last": " in the morning, just time to begin lessons: you%d only have to whisper a hint to Time, and round goes the clock in a twinkling! Half-past one, time for dinner!",
+        "title": "Alice%s Adventures in Wonderland",
         "author": "Lewis Carroll",
         "sfw": "unknown"
     },
     {
         "id": "001277",
         "time": "09:00",
-        "quote_time_case": "nine o'clock",
+        "quote_time_case": "nine o%clock",
         "quote_first": "It was around ",
-        "quote_last": " that I crossed the border into Cornwall. This was at least three hours before the rain began and the clouds were still all of a brilliant white. In fact, many of the sights that greeted me this morning were among the most charming I have so far encountered. It was unfortunate, then, that I could not for much of the time give to them the attention they warranted; for one may as well declare it, one was in a condition of some preoccupation with the thought that - barring some unseen complication - one would be meeting Miss Kenton again before the day's end.",
+        "quote_last": " that I crossed the border into Cornwall. This was at least three hours before the rain began and the clouds were still all of a brilliant white. In fact, many of the sights that greeted me this morning were among the most charming I have so far encountered. It was unfortunate, then, that I could not for much of the time give to them the attention they warranted; for one may as well declare it, one was in a condition of some preoccupation with the thought that - barring some unseen complication - one would be meeting Miss Kenton again before the day%s end.",
         "title": "The Remains of the Day",
         "author": "Kazuo Ishiguro",
         "sfw": "unknown"
@@ -333,7 +333,7 @@
         "id": "001279",
         "time": "09:00",
         "quote_time_case": "9.00 am",
-        "quote_first": "Sometimes what I wouldn't give to have us sitting in a bar again at ",
+        "quote_first": "Sometimes what I wouldn%t give to have us sitting in a bar again at ",
         "quote_last": " telling lies to one another, far from God.",
         "title": "Jesus' Son",
         "author": "Denis Johnson",

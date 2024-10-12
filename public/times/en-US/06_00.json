@@ -133,7 +133,7 @@
         "id": "000792",
         "time": "06:00",
         "quote_time_case": "six",
-        "quote_first": "But every morning, even if there's been a nighttime session and he has only slept two hours, he gets up at ",
+        "quote_first": "But every morning, even if there%s been a nighttime session and he has only slept two hours, he gets up at ",
         "quote_last": " and reads his paper while he drinks a strong cup of coffee. In this way Papa constructs himself every day.",
         "title": "The Elegance of the Hedgehog",
         "author": "Muriel Barbery",
@@ -162,10 +162,10 @@
     {
         "id": "000795",
         "time": "06:00",
-        "quote_time_case": "six o'clock",
+        "quote_time_case": "six o%clock",
         "quote_first": "On the 15th of September 1840, about ",
         "quote_last": " in the morning, the Ville-de-Montereau, ready to depart, pouring out great whirls of smoke by the quai Saint-Bernard.",
-        "title": "L'Education sentimentale",
+        "title": "L%Education sentimentale",
         "author": "Gustave Flaubert",
         "sfw": "unknown"
     },

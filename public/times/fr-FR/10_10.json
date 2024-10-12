@@ -4,7 +4,7 @@
         "time": "10:10",
         "quote_time_case": "dix minutes dix",
         "quote_first": "À ",
-        "quote_last": " le lendemain matin, William reçut un autre appel de son courtier désormais agité. Un autre million de dollars d'actions Interstate avait été mis sur le marché à la cloche d'ouverture.",
+        "quote_last": " le lendemain matin, William reçut un autre appel de son courtier désormais agité. Un autre million de dollars d%actions Interstate avait été mis sur le marché à la cloche d%ouverture.",
         "title": "Kane et Abel",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -14,7 +14,7 @@
         "time": "10:10",
         "quote_time_case": "10:10",
         "quote_first": "À ",
-        "quote_last": ", deux infirmiers en blouse blanche ont fait sortir un homme grand et bien bâti dans une chaise par les portes battantes et, voyant la voiture garée dans l'espace du doyen, l'a guidé vers cela. Le conducteur a sauté et a rapidement ouvert la porte arrière. Pauvre homme, pensa-t-il, la tête couverte de bandages et ne laissant qu'une petite fissure pour les lèvres et les narines. Il se demanda si c'était des brûlures.",
+        "quote_last": ", deux infirmiers en blouse blanche ont fait sortir un homme grand et bien bâti dans une chaise par les portes battantes et, voyant la voiture garée dans l%espace du doyen, l%a guidé vers cela. Le conducteur a sauté et a rapidement ouvert la porte arrière. Pauvre homme, pensa-t-il, la tête couverte de bandages et ne laissant qu%une petite fissure pour les lèvres et les narines. Il se demanda si c%était des brûlures.",
         "title": "Honneur parmi les voleurs",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -35,7 +35,7 @@
         "quote_time_case": "10:10",
         "quote_first": "",
         "quote_last": " Un coup de feu est tiré.",
-        "title": "L'homme creux",
+        "title": "L%homme creux",
         "author": "John Dickson Carr",
         "sfw": "unknown"
     },
@@ -44,8 +44,8 @@
         "time": "10:10",
         "quote_time_case": "10 heures dix",
         "quote_first": "Le samedi matin était clair et ensoleillé, et à ",
-        "quote_last": " Donald est arrivé à l'entrée Embankment de la station de métro Charing Cross, portant une petite valise pleine de vêtements adaptés aux sports de plein air. et passe-temps.",
-        "title": "L'Angleterre, leur Angleterre",
+        "quote_last": " Donald est arrivé à l%entrée Embankment de la station de métro Charing Cross, portant une petite valise pleine de vêtements adaptés aux sports de plein air. et passe-temps.",
+        "title": "L%Angleterre, leur Angleterre",
         "author": "A.G. Macdonell",
         "sfw": "unknown"
     },
@@ -55,7 +55,7 @@
         "quote_time_case": "Dix minutes plus tard",
         "quote_first": "Vers dix heures, les premiers petits flocons de neige sont arrivés et se sont posés sur le bras de Jill. ",
         "quote_last": " ils tombaient assez épais. En vingt minutes, le sol était visiblement blanc.",
-        "title": "La chaise d'argent",
+        "title": "La chaise d%argent",
         "author": "C.S. Lewis",
         "sfw": "unknown"
     }

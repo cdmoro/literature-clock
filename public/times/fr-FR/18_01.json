@@ -4,7 +4,7 @@
         "time": "18:01",
         "quote_time_case": "six heures une minute",
         "quote_first": "À ",
-        "quote_last": ", il s'est tourné vers Tom et a dit : « Salut, je m'appelle Nat Cartwright et… »",
+        "quote_last": ", il s%est tourné vers Tom et a dit : « Salut, je m%appelle Nat Cartwright et… »",
         "title": "Fils de fortune",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -13,7 +13,7 @@
         "id": "002724",
         "time": "18:01",
         "quote_time_case": "six heures une minute",
-        "quote_first": "« Personne ne s'arrête, même pour reprendre son souffle, jusqu'à ",
+        "quote_first": "« Personne ne s%arrête, même pour reprendre son souffle, jusqu%à ",
         "quote_last": " lorsque le dernier vote aura été exprimé. »",
         "title": "Fils de fortune",
         "author": "Jeffrey Archer",
@@ -23,8 +23,8 @@
         "id": "002725",
         "time": "18:01",
         "quote_time_case": "six heures une minute",
-        "quote_first": "David m'avait suivi à ",
-        "quote_last": ". Puis trois autres avaient réussi à s'enfuir, ce qui faisait un total de cinq. Mais alors que le sixième ouragan prenait de la vitesse pour décoller, un essaim de Messerschmitt était arrivé en piqué au-dessus des oliviers.",
+        "quote_first": "David m%avait suivi à ",
+        "quote_last": ". Puis trois autres avaient réussi à s%enfuir, ce qui faisait un total de cinq. Mais alors que le sixième ouragan prenait de la vitesse pour décoller, un essaim de Messerschmitt était arrivé en piqué au-dessus des oliviers.",
         "title": "Partir seul",
         "author": "Roald Dahl",
         "sfw": "sfw"

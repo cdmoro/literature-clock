@@ -34,7 +34,7 @@
         "time": "08:30",
         "quote_time_case": "otto e mezza",
         "quote_first": "Fuori il vento continuava a salire. Di tanto in tanto dalla grondaia emetteva un grido agghiacciante che gli faceva alzare lo sguardo dal libro. Verso le ",
-        "quote_last": " ha cominciato a nevicare. Era pesante e bagnato, ricopriva rapidamente la sua finestra e gli impediva la vista delle montagne. In un certo senso era peggio. La neve aveva bloccato anche le finestre dell'Overlook.",
+        "quote_last": " ha cominciato a nevicare. Era pesante e bagnato, ricopriva rapidamente la sua finestra e gli impediva la vista delle montagne. In un certo senso era peggio. La neve aveva bloccato anche le finestre dell%Overlook.",
         "title": "Dottor Sonno",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -64,7 +64,7 @@
         "time": "08:30",
         "quote_time_case": "Otto e mezza",
         "quote_first": "",
-        "quote_last": " la porta della corsia si apre ed entrano due tecnici che odorano di vino d'uva; i tecnici si muovono sempre al passo veloce o al trotto perché sono sempre così inclinati in avanti che devono muoversi velocemente per restare in piedi.",
+        "quote_last": " la porta della corsia si apre ed entrano due tecnici che odorano di vino d%uva; i tecnici si muovono sempre al passo veloce o al trotto perché sono sempre così inclinati in avanti che devono muoversi velocemente per restare in piedi.",
         "title": "Qualcuno volò sul nido del cuculo",
         "author": "Ken Kesey",
         "sfw": "unknown"
@@ -83,7 +83,7 @@
         "id": "001164",
         "time": "08:30",
         "quote_time_case": "otto e mezza",
-        "quote_first": "“Che sciocchezza!” pensò Vronskij e guardò l'orologio.<br>Erano già ",
+        "quote_first": "“Che sciocchezza!” pensò Vronskij e guardò l%orologio.<br>Erano già ",
         "quote_last": ".",
         "title": "Anna Karenina",
         "author": "Leo Tolstoy",
@@ -106,7 +106,7 @@
         "quote_first": "Sono circa ",
         "quote_last": ". Il sole entra dalle finestre a destra. Quando si alza il sipario, la famiglia ha appena finito di fare colazione.",
         "title": "Il lungo viaggio verso la notte",
-        "author": "Eugene O'Neill",
+        "author": "Eugene O%Neill",
         "sfw": "unknown"
     },
     {
@@ -115,7 +115,7 @@
         "quote_time_case": "8:30",
         "quote_first": "Il 25 luglio ",
         "quote_last": " la cagna Novaya muore partorendo. Alle 10 viene calata nella sua fresca tomba, alle 7,30 della stessa sera vediamo i nostri primi banchi e li salutiamo desiderando che siano gli ultimi.",
-        "title": "I terrori del ghiaccio e dell'oscurità",
+        "title": "I terrori del ghiaccio e dell%oscurità",
         "author": "Christoph Ransmayr",
         "sfw": "nsfw"
     },
@@ -123,7 +123,7 @@
         "id": "001168",
         "time": "08:30",
         "quote_time_case": "otto e mezzo",
-        "quote_first": "La conferenza avrebbe dovuto tenersi l'indomani ed erano quasi le ",
+        "quote_first": "La conferenza avrebbe dovuto tenersi l%indomani ed erano quasi le ",
         "quote_last": ".",
         "title": "Una confederazione di somari",
         "author": "John Kennedy Toole",
@@ -134,7 +134,7 @@
         "time": "08:30",
         "quote_time_case": "otto e mezza",
         "quote_first": "Quando si svegliò, alle ",
-        "quote_last": ", era solo in camera da letto. Indossò la vestaglia, infilò l'apparecchio acustico e andò in soggiorno.",
+        "quote_last": ", era solo in camera da letto. Indossò la vestaglia, infilò l%apparecchio acustico e andò in soggiorno.",
         "title": "Frase sorda",
         "author": "David Lodge",
         "sfw": "unknown"
@@ -143,9 +143,9 @@
         "id": "001170",
         "time": "08:30",
         "quote_time_case": "otto e mezza",
-        "quote_first": "Vedo dal mio orologio, senza staccare la mano dall'impugnatura sinistra della bicicletta, che sono le ",
+        "quote_first": "Vedo dal mio orologio, senza staccare la mano dall%impugnatura sinistra della bicicletta, che sono le ",
         "quote_last": " del mattino.",
-        "title": "Lo Zen e l'arte della manutenzione della motocicletta",
+        "title": "Lo Zen e l%arte della manutenzione della motocicletta",
         "author": "Robert M. Pirsig",
         "sfw": "unknown"
     }

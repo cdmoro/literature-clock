@@ -3,7 +3,7 @@
         "id": "000187",
         "time": "01:10",
         "quote_time_case": "une heure dix",
-        "quote_first": "La porte arrière était déverrouillée, Monsieur, tandis que Caldwell et Miss Makepiece vérifiaient les lumières. C'était vers ",
+        "quote_first": "La porte arrière était déverrouillée, Monsieur, tandis que Caldwell et Miss Makepiece vérifiaient les lumières. C%était vers ",
         "quote_last": ".",
         "title": "Le meurtre du Père Noël",
         "author": "P.D. James",
@@ -24,8 +24,8 @@
         "time": "01:10",
         "quote_time_case": "1h10",
         "quote_first": "Samedi 26 février - Richards est sorti ",
-        "quote_last": " et a trouvé que le temps s'éclaircissait un peu, nous avons donc démarré le plus tôt possible, soit 2h10 du matin.",
-        "title": "Sud : l'expédition Endurance",
+        "quote_last": " et a trouvé que le temps s%éclaircissait un peu, nous avons donc démarré le plus tôt possible, soit 2h10 du matin.",
+        "title": "Sud : l%expédition Endurance",
         "author": "Ernest Shackleton",
         "sfw": "unknown"
     }

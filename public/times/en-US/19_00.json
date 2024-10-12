@@ -182,10 +182,10 @@
     {
         "id": "002854",
         "time": "19:00",
-        "quote_time_case": "seven o'clock",
+        "quote_time_case": "seven o%clock",
         "quote_first": "… in a word, seen always at the same evening hour, isolated from all its possible surroundings, detached and solitary against its shadowy background, the bare minimum of scenery necessary .. to the drama of my undressing, as though all Combray had consisted of but two floors joined by a slender staircase, and as though there had been no time there but ",
         "quote_last": " at night.",
-        "title": "In Search of Lost Time: Swann's Way",
+        "title": "In Search of Lost Time: Swann%s Way",
         "author": "Marcel Proust",
         "sfw": "unknown"
     },
@@ -214,7 +214,7 @@
         "time": "19:00",
         "quote_time_case": "seven",
         "quote_first": "Edward had been allowed to see me only from ",
-        "quote_last": " till nine-thirty pm, always inside the confines of my home and under the supervision of my dad's unfailingly crabby glare.",
+        "quote_last": " till nine-thirty pm, always inside the confines of my home and under the supervision of my dad%s unfailingly crabby glare.",
         "title": "New Moon",
         "author": "Stephenie Meyer",
         "sfw": "unknown"
@@ -222,9 +222,9 @@
     {
         "id": "002858",
         "time": "19:00",
-        "quote_time_case": "seven o'clock",
+        "quote_time_case": "seven o%clock",
         "quote_first": "It was ",
-        "quote_last": " and by this time she was not very far from Raveloe, but she was not familiar enough with those monotonous lanes to know how near she was to her journey's end. She needed comfort, and she knew but one comforter - the familiar demon in her bosom; but she hesitated a moment, after drawing out the black remnant, before she raised it to her lips.",
+        "quote_last": " and by this time she was not very far from Raveloe, but she was not familiar enough with those monotonous lanes to know how near she was to her journey%s end. She needed comfort, and she knew but one comforter - the familiar demon in her bosom; but she hesitated a moment, after drawing out the black remnant, before she raised it to her lips.",
         "title": "Silas Marner",
         "author": "George Eliot",
         "sfw": "unknown"
@@ -232,7 +232,7 @@
     {
         "id": "002859",
         "time": "19:00",
-        "quote_time_case": "seven o'clock",
+        "quote_time_case": "seven o%clock",
         "quote_first": "It was ",
         "quote_last": " when we got into the coupé with him and started for Long Island. [...] So we drove on toward death through the cooling twilight.",
         "title": "The Great Gatsby",

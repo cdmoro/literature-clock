@@ -4,7 +4,7 @@
         "time": "12:45",
         "quote_time_case": "12:45",
         "quote_first": "Venerdì alle ",
-        "quote_last": ", David arrivò all'Ateneo, un massiccio edificio bianco all'angolo di Pall Mall, sovrastato da una statua del Duca di York.",
+        "quote_last": ", David arrivò all%Ateneo, un massiccio edificio bianco all%angolo di Pall Mall, sovrastato da una statua del Duca di York.",
         "title": "Non un centesimo in più, non un centesimo in meno",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -14,7 +14,7 @@
         "time": "12:45",
         "quote_time_case": "una meno un quarto",
         "quote_first": "Quella domenica era una giornata estiva da libro illustrato nel Maine: limpida, luminosa, calda. Alle ",
-        "quote_last": ", Ruth McCausland, vestita con un grazioso abito estivo blu, lasciò la sua casa per l'ultima volta.",
+        "quote_last": ", Ruth McCausland, vestita con un grazioso abito estivo blu, lasciò la sua casa per l%ultima volta.",
         "title": "I Tommyknocker",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -35,7 +35,7 @@
         "quote_time_case": "una meno un quarto",
         "quote_first": "Poiché pioveva, e poiché era depressa e di cattivo umore, e poiché Robbie non era passato ",
         "quote_last": ", Elizabeth si concesse un Martini mentre aspettava, seduto a disagio su una sedia stretta nel ristorante, guardando altre persone insignificanti entrare e uscire.",
-        "title": "La lotteria o l'avventura di James Harris",
+        "title": "La lotteria o l%avventura di James Harris",
         "author": "Shirley Jackson",
         "sfw": "unknown"
     }

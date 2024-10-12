@@ -13,7 +13,7 @@
         "id": "000343",
         "time": "02:30",
         "quote_time_case": "due e mezza",
-        "quote_first": "Guardò l'orologio: ",
+        "quote_first": "Guardò l%orologio: ",
         "quote_last": ". Qualche minuto per calmarsi prima di andare via.",
         "title": "La stanza chiusa a chiave",
         "author": "Maj Sjöwall & Per Wahlöö",
@@ -23,8 +23,8 @@
         "id": "000344",
         "time": "02:30",
         "quote_time_case": "2:30",
-        "quote_first": "Anch'io indosso il mufti: guanti bianchi e scarpe da tennis abbinate. Ma mi dispiace dirti che Jo indossa ancora i suoi Dr. Dentons. Cosa indossi, Shirl?<br>“Il mio vecchio completo da majorette. Quello che indossavo alle finali statali. Ascolta, non possiamo allacciare i telefoni in questo modo.”<br>“Perché no?” disse Harry. “Chi chiamerà alle ",
-        "quote_last": " con un'idea migliore? Evviva, per citare Lew, stiamo dando una festa! Cosa stiamo servendo, Lew? ”<br>“Birra, immagino. Non abbiamo vino, vero, Jo?”<br>“Solo per cucinare.”",
+        "quote_first": "Anch%io indosso il mufti: guanti bianchi e scarpe da tennis abbinate. Ma mi dispiace dirti che Jo indossa ancora i suoi Dr. Dentons. Cosa indossi, Shirl?<br>“Il mio vecchio completo da majorette. Quello che indossavo alle finali statali. Ascolta, non possiamo allacciare i telefoni in questo modo.”<br>“Perché no?” disse Harry. “Chi chiamerà alle ",
+        "quote_last": " con un%idea migliore? Evviva, per citare Lew, stiamo dando una festa! Cosa stiamo servendo, Lew? ”<br>“Birra, immagino. Non abbiamo vino, vero, Jo?”<br>“Solo per cucinare.”",
         "title": "Il Popolo della Notte",
         "author": "Jack Finney",
         "sfw": "unknown"
@@ -34,7 +34,7 @@
         "time": "02:30",
         "quote_time_case": "due e mezza",
         "quote_first": "Verso le ",
-        "quote_last": " fu svegliata dallo scricchiolio dei passi sulle scale. All'inizio aveva avuto paura.",
+        "quote_last": " fu svegliata dallo scricchiolio dei passi sulle scale. All%inizio aveva avuto paura.",
         "title": "Il piccolo straniero",
         "author": "Sarah Waters",
         "sfw": "unknown"
@@ -44,7 +44,7 @@
         "time": "02:30",
         "quote_time_case": "0230",
         "quote_first": "Inc, ho provato a tirarla fuori verso ",
-        "quote_last": ", e c'era questo dannato... suono.",
+        "quote_last": ", e c%era questo dannato... suono.",
         "title": "Scherzo infinito",
         "author": "David Foster Wallace",
         "sfw": "nsfw"

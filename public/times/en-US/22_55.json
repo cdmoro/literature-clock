@@ -3,8 +3,8 @@
         "id": "003415",
         "time": "22:55",
         "quote_time_case": "ten fifty-five",
-        "quote_first": "All she could tell me was that she'd gone to sleep shortly after listening to the Dvorak String Quartet at ",
-        "quote_last": " - they had twin beds - and didn't stir until her husband woke her with news of the murder.",
+        "quote_first": "All she could tell me was that she%d gone to sleep shortly after listening to the Dvorak String Quartet at ",
+        "quote_last": " - they had twin beds - and didn%t stir until her husband woke her with news of the murder.",
         "title": "The Murder of Santa Claus",
         "author": "P.D. James",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "003417",
         "time": "22:55",
-        "quote_time_case": "Eleven o'clock, all but five minutes!",
-        "quote_first": "It is eleven o'clock! ",
-        "quote_last": "<br>“But which eleven o'clock?”<br>“The eleven o'clock that is to decide life or death!...He told me so just before he went....He is terrible....He is quite mad: he tore off his mask and his yellow eyes shot flames!...”",
+        "quote_time_case": "Eleven o%clock, all but five minutes!",
+        "quote_first": "It is eleven o%clock! ",
+        "quote_last": "<br>“But which eleven o%clock?”<br>“The eleven o%clock that is to decide life or death!...He told me so just before he went....He is terrible....He is quite mad: he tore off his mask and his yellow eyes shot flames!...”",
         "title": "The Phantom of the Opera",
         "author": "Gaston Leroux",
         "sfw": "unknown"
