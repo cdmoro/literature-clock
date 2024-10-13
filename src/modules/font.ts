@@ -56,7 +56,7 @@ export function initFont(defaultValue = "default") {
   }
 
   const customFont = getStringSetting("custom-font");
-  if (customFont) {
+  if (customFont && !FONTS.includes(customFont)) {
     fontSelect?.appendChild(createOption(customFont));
   }
 
