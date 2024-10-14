@@ -33,4 +33,4 @@ for author, group in grouped_by_author:
 
 # Display the results
 for author, t1, t2, ratio in similar_titles:
-    print(f"Author: {author} - Similar titles: '{t1}' and '{t2}' with a similarity of {ratio}%")
+    print(f"Author: {author} - Similar titles with a similarity of {ratio}%:\n  - '{t1}'\n  - '{t2}'\n")
