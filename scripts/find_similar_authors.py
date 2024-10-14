@@ -4,7 +4,7 @@ import sys
 
 # Check if the user provided the CSV file path
 if len(sys.argv) < 2:
-    print("Usage: python find_similar_authors.py en-US")
+    print("Usage: python find_similar_authors.py <locale>")
     sys.exit(1)
 
 # Get the CSV file path from the command-line argument
