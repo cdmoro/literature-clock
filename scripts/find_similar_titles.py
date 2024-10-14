@@ -4,14 +4,14 @@ import sys
 
 # Check if the user provided the CSV file path
 if len(sys.argv) < 2:
-    print("Usage: python script.py /path/to/your/file.csv")
+    print("Usage: python find_similar_titles.py en-US")
     sys.exit(1)
 
 # Get the CSV file path from the command-line argument
-csv_file = sys.argv[1]
+locale = sys.argv[1]
 
 # Load the CSV file
-df = pd.read_csv(csv_file)
+df = pd.read_csv("quotes/quotes." + locale + ".csv")
 
 # Define a similarity threshold (adjustable)
 threshold = 85
@@ -23,7 +23,7 @@ grouped_by_author = df.groupby('Author')
 similar_titles = []
 
 for author, group in grouped_by_author:
-    book_titles = group['book_title'].unique()
+    book_titles = group['Title'].unique()
     
     for i, title1 in enumerate(book_titles):
         for title2 in book_titles[i+1:]:
