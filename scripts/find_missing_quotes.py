@@ -1,13 +1,12 @@
 import os
 import pandas as pd
 import re
+from collections import defaultdict
 
 # Path to the folder containing the CSV files
 folder_path = 'quotes'
 # Name of the column to analyze
 column_name = 'Quote'
-# Output file to store the results
-output_file = 'scripts/quote_inconsistencies_' + column_name.replace(" ", "_") +'.csv'
 
 # Curved and angular quotes
 single_quote_open = '‘'
@@ -17,20 +16,24 @@ double_quote_close = '”'
 angular_quote_open = '«'
 angular_quote_close = '»'
 
-# Regex patterns to match single quote close not used in contractions
-single_quote_close_pattern = re.compile(rf"(?<!\w){re.escape(single_quote_close)}(?!\w)")
+# Regex to match valid contractions (between letters) to avoid false positives
+valid_contraction_pattern = re.compile(
+    rf"[\wáéíóúñüàâæçèéêëîïôœùûüÿãâçêíõú]{re.escape(single_quote_close)}[\wáéíóúñüàâæçèéêëîïôœùûüÿãâçêíõú]|po{re.escape(single_quote_close)}|E{re.escape(single_quote_close)} |e{re.escape(single_quote_close)} |all{re.escape(single_quote_close)}l{re.escape(single_quote_close)}|l{re.escape(single_quote_close)}l{re.escape(single_quote_close)}una|dell{re.escape(single_quote_close)}l{re.escape(single_quote_close)}una"
+)
 
 def check_quotes(text):
     """ Returns the count of open and close quotes for single, double, and angular quotes """
-    # Count single open quotes (no need to exclude contractions)
+    # Count single open quotes
+    single_quotes_open_count = text.count(single_quote_open)
     single_quotes_open_count = 0
-    # single_quotes_open_count = text.count(single_quote_open)
     
-    # Count single close quotes, ignoring those used in contractions
-    # single_quotes_close_count = len(single_quote_close_pattern.findall(text))
+    # Count single close quotes, ignoring valid contractions
+    # We'll remove the valid contractions from the text first, then count the remaining single close quotes
+    cleaned_text = re.sub(valid_contraction_pattern, '', text)
+    single_quotes_close_count = cleaned_text.count(single_quote_close)
     single_quotes_close_count = 0
     
-    # Count double and angular quotes (no need for special handling)
+    # Count double and angular quotes
     double_quotes_open_count = text.count(double_quote_open)
     double_quotes_close_count = text.count(double_quote_close)
     angular_quotes_open_count = text.count(angular_quote_open)
@@ -40,8 +43,8 @@ def check_quotes(text):
             double_quotes_open_count, double_quotes_close_count, 
             angular_quotes_open_count, angular_quotes_close_count)
 
-# List to store the results
-results = []
+# Dictionary to group results by row index
+grouped_results = defaultdict(list)
 
 # Iterate over all CSV files in the folder
 for filename in os.listdir(folder_path):
@@ -57,26 +60,21 @@ for filename in os.listdir(folder_path):
                 text = str(row[column_name])
                 single_open, single_close, double_open, double_close, angular_open, angular_close = check_quotes(text)
                 
-                # Append the result for this row if there is any inconsistency
+                # If any inconsistencies are found, store them in the grouped_results dictionary
                 if (single_open != single_close or double_open != double_close or 
                     angular_open != angular_close):
-                    results.append({
-                        'File': filename,
-                        'Row': idx + 2,  # The idx already corresponds to the correct row since headers are managed by pandas
-                        # 'Single Quotes Opened': single_open,
-                        # 'Single Quotes Closed': single_close,
-                        'Double Quotes Opened': double_open,
-                        'Double Quotes Closed': double_close,
-                        'Angular Quotes Opened': angular_open,
-                        'Angular Quotes Closed': angular_close
+                    grouped_results[idx + 2].append({
+                        'file': file_path,
+                        'single': (single_open, single_close),
+                        'double': (double_open, double_close),
+                        'angular': (angular_open, angular_close)
                     })
         else:
             print(f"File {filename}: Column '{column_name}' not found.")
 
-# Convert results to a DataFrame and save as a CSV
-if results:
-    results_df = pd.DataFrame(results)
-    results_df.to_csv(output_file, index=False)
-    print(f"Results saved to {output_file}")
-else:
-    print("No inconsistencies found.")
+# Print grouped results
+for iteration, (row, issues) in enumerate(grouped_results.items(), start=1):
+    for issue in issues:
+        print(f"{iteration}. {issue['file']}:{row}\t‘’ [{issue['single'][0]}:{issue['single'][1]}]  “” [{issue['double'][0]}:{issue['double'][1]}]  «» [{issue['angular'][0]}:{issue['angular'][1]}]\tquotes\\quotes.en-US.csv:{row}")
+        print(f"  quotes\\quotes.es-ES.csv:{row}\tquotes\\quotes.fr-FR.csv:{row}\tquotes\\quotes.it-IT.csv:{row}\tquotes\\quotes.pt-BR.csv:{row}")
+        print("-" * 80)
