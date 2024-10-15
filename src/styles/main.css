@@ -385,9 +385,9 @@ body.share-quote blockquote .time {
 	border: 0;
 }
 
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 1700px) {
   #clock {
-    max-width: 1300px;
+    max-width: 1500px;
   }
 }
 
