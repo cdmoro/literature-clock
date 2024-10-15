@@ -103,7 +103,7 @@
         "id": "000275",
         "time": "02:00",
         "quote_time_case": "two o’clock",
-        "quote_first": "“I’ll try the Infermiterol,” I said curtly.<br>“Good. And eat a high-dairy meal each day. Did you know that cows can choose to sleep standing up or lying down? Given the option, I know what 𝘐’𝘥 pick. Have you ever made yogurt on the stove? Don’t answer that. We’ll save the cooking lesson for our next meeting. Now write this down because I have a feeling you’re too psychotic to remember: Saturday, January twentieth, at ",
+        "quote_first": "“I’ll try the Infermiterol,” I said curtly.<br>“Good. And eat a high-dairy meal each day. Did you know that cows can choose to sleep standing up or lying down? Given the option, I know what <em>I’d</em> pick. Have you ever made yogurt on the stove? Don’t answer that. We’ll save the cooking lesson for our next meeting. Now write this down because I have a feeling you’re too psychotic to remember: Saturday, January twentieth, at ",
         "quote_last": ". And try the Infermiterol. Bye bye.”",
         "title": "My Year of Rest and Relaxation",
         "author": "Ottessa Moshfegh",
@@ -122,9 +122,9 @@
     {
         "id": "000277",
         "time": "02:00",
-        "quote_time_case": "2 𝘰’𝘤𝘭𝘰𝘤𝘬",
-        "quote_first": "Henry held out his hand for the note, which Victoria gave over in exchange for a Sweet Caporal. There were only four words: 𝘛𝘰𝘮𝘰𝘳𝘳𝘰𝘸 𝘮𝘰𝘳𝘯𝘪𝘯𝘨. ",
-        "quote_last": ".",
+        "quote_time_case": "2 o’clock",
+        "quote_first": "Henry held out his hand for the note, which Victoria gave over in exchange for a Sweet Caporal. There were only four words: <em>Tomorrow morning. ",
+        "quote_last": "</em>.",
         "title": "Full Dark, No Stars",
         "author": "Stephen King",
         "sfw": "unknown"
