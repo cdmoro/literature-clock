@@ -103,7 +103,7 @@
         "id": "000275",
         "time": "02:00",
         "quote_time_case": "due",
-        "quote_first": "“Proverò l’Infermiterol,” dissi bruscamente.<br>“Bene. E mangia un pasto ricco di latticini ogni giorno. Sapevi che le mucche possono scegliere di dormire in piedi o sdraiate? Data la possibilità, so cosa 𝘐’𝘥 scegliere. Hai mai fatto lo yogurt sul fuoco? Non rispondere. Salveremo la lezione di cucina per il nostro prossimo incontro. Adesso scrivilo perché ho la sensazione che tu sia troppo psicotico per ricordartelo: sabato, venti gennaio, alle ",
+        "quote_first": "“Proverò l’Infermiterol,” dissi bruscamente.<br>“Bene. E mangia un pasto ricco di latticini ogni giorno. Sapevi che le mucche possono scegliere di dormire in piedi o sdraiate? Data la possibilità, so cosa <em>sceglierei</em>. Hai mai fatto lo yogurt sul fuoco? Non rispondere. Salveremo la lezione di cucina per il nostro prossimo incontro. Adesso scrivilo perché ho la sensazione che tu sia troppo psicotico per ricordartelo: sabato, venti gennaio, alle ",
         "quote_last": ". E prova l’Infermiterol. Ciao ciao.”",
         "title": "Il mio anno di riposo e relax",
         "author": "Ottessa Moshfegh",
@@ -122,9 +122,9 @@
     {
         "id": "000277",
         "time": "02:00",
-        "quote_time_case": "2 𝘰’𝘤𝘭𝘰𝘤𝘬",
-        "quote_first": "Henry tese la mano per prendere il biglietto, che Victoria diede in cambio di un dolce caporal. C’erano solo quattro parole: 𝘛𝘰𝘮𝘰𝘳𝘳𝘰𝘸 𝘮𝘰𝘳𝘯𝘪𝘯𝘨. ",
-        "quote_last": ".",
+        "quote_time_case": "Alle 2",
+        "quote_first": "Henry tese la mano per prendere il biglietto, che Victoria diede in cambio di un dolce caporal. C’erano solo quattro parole: <em>Domani matina. ",
+        "quote_last": "</em>.",
         "title": "Buio completo, senza stelle",
         "author": "Stephen King",
         "sfw": "unknown"

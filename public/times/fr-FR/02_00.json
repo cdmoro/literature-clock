@@ -103,7 +103,7 @@
         "id": "000275",
         "time": "02:00",
         "quote_time_case": "deux heures",
-        "quote_first": "« Je vais essayer l’Infermiterol, » dis-je sèchement.<br>« Bien. Et mangez chaque jour un repas riche en produits laitiers. Saviez-vous que les vaches peuvent choisir de dormir debout ou couchées ? Étant donné l’option, je sais ce que 𝘐’𝘥 choisit. Avez-vous déjà fait du yaourt sur la cuisinière ? Ne répondez pas à cela. Nous garderons le cours de cuisine pour notre prochaine réunion. Maintenant, écris ceci parce que j’ai le sentiment que tu es trop psychotique pour t’en souvenir : samedi 20 janvier, à ",
+        "quote_first": "« Je vais essayer l’Infermiterol, » dis-je sèchement.<br>« Bien. Et mangez chaque jour un repas riche en produits laitiers. Saviez-vous que les vaches peuvent choisir de dormir debout ou couchées ? Étant donné l’option, je sais ce que je <em>choisire</em>. Avez-vous déjà fait du yaourt sur la cuisinière ? Ne répondez pas à cela. Nous garderons le cours de cuisine pour notre prochaine réunion. Maintenant, écris ceci parce que j’ai le sentiment que tu es trop psychotique pour t’en souvenir : samedi 20 janvier, à ",
         "quote_last": ". Et essayez l’Infermiterol. Au revoir. »",
         "title": "Mon année de repos et de détente",
         "author": "Ottessa Moshfegh",
@@ -122,9 +122,9 @@
     {
         "id": "000277",
         "time": "02:00",
-        "quote_time_case": "2 𝘰’𝘤𝘭𝘰𝘤𝘬",
-        "quote_first": "Henry tendit la main pour récupérer le billet, que Victoria céda en échange d’un Sweet Caporal. Il n’y avait que quatre mots : 𝘛𝘰𝘮𝘰𝘳𝘳𝘰𝘸 𝘮𝘰𝘳𝘯𝘪𝘯𝘨. ",
-        "quote_last": ".",
+        "quote_time_case": "2 heures",
+        "quote_first": "Henry tendit la main pour récupérer le billet, que Victoria céda en échange d’un Sweet Caporal. Il n’y avait que quatre mots : <em>Demain matin. ",
+        "quote_last": "</em>.",
         "title": "Pleine obscurité, pas d’étoiles",
         "author": "Stephen King",
         "sfw": "unknown"

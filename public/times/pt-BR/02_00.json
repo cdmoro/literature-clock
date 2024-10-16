@@ -103,7 +103,7 @@
         "id": "000275",
         "time": "02:00",
         "quote_time_case": "duas horas",
-        "quote_first": "“Vou experimentar o Infermiterol,” eu disse secamente.<br>“Bom. E coma uma refeição rica em laticínios todos os dias. Você sabia que as vacas podem optar por dormir em pé ou deitadas? Dada a opção, eu sei o que 𝘐’𝘥 escolher. Você já fez iogurte no fogão? Não responda isso. Guardaremos a aula de culinária para nossa próxima reunião. Agora escreva isso porque tenho a sensação de que você é psicótico demais para se lembrar: sábado, vinte de janeiro, às ",
+        "quote_first": "“Vou experimentar o Infermiterol,” eu disse secamente.<br>“Bom. E coma uma refeição rica em laticínios todos os dias. Você sabia que as vacas podem optar por dormir em pé ou deitadas? Dada a opção, eu sei o que <em>escolheria</em>. Você já fez iogurte no fogão? Não responda isso. Guardaremos a aula de culinária para nossa próxima reunião. Agora escreva isso porque tenho a sensação de que você é psicótico demais para se lembrar: sábado, vinte de janeiro, às ",
         "quote_last": ". E experimente o Infermiterol. Bye Bye.”",
         "title": "Meu ano de descanso e relaxamento",
         "author": "Ottessa Moshfegh",
@@ -122,9 +122,9 @@
     {
         "id": "000277",
         "time": "02:00",
-        "quote_time_case": "2 𝘰’𝘤𝘭𝘰𝘤𝘬",
-        "quote_first": "Henry estendeu a mão para pegar o bilhete, que Victoria entregou em troca de um Sweet Caporal. Havia apenas quatro palavras: 𝘛𝘰𝘮𝘰𝘳𝘳𝘰𝘸 𝘮𝘰𝘳𝘯𝘪𝘯𝘨. ",
-        "quote_last": ".",
+        "quote_time_case": "Às 2 horas",
+        "quote_first": "Henry estendeu a mão para pegar o bilhete, que Victoria entregou em troca de um Sweet Caporal. Havia apenas seis palavras: <em>Amanhã de manhã. ",
+        "quote_last": "</em>.",
         "title": "Totalmente escuro, sem estrelas",
         "author": "Stephen King",
         "sfw": "unknown"
