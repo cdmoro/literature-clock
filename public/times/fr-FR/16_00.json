@@ -44,7 +44,7 @@
         "time": "16:00",
         "quote_time_case": "four",
         "quote_first": "« Si jamais vous passez devant moi, » dit Bilbo, « n’attendez pas pour frapper ! Le thé est à ",
-        "quote_last": ", mais chacun d’entre vous est le bienvenu à tout moment.",
+        "quote_last": ", mais chacun d’entre vous est le bienvenu à tout moment. »",
         "title": "Le Hobbit",
         "author": "J.R.R. Tolkien",
         "sfw": "unknown"
@@ -104,7 +104,7 @@
         "time": "16:00",
         "quote_time_case": "quatre heures de l’après-midi",
         "quote_first": "« Bonjour, Dr Tuttle », dis-je.<br>« Il est ",
-        "quote_last": " », dit-elle. «Je suis désolé d’avoir mis si longtemps à vous rappeler. Mes chats ont eu une urgence. Vous sentez-vous mieux ? Franchement, les symptômes que vous avez décrits dans votre message me laissent perplexe.",
+        "quote_last": " », dit-elle. « Je suis désolé d’avoir mis si longtemps à vous rappeler. Mes chats ont eu une urgence. Vous sentez-vous mieux ? Franchement, les symptômes que vous avez décrits dans votre message me laissent perplexe. »",
         "title": "Mon année de repos et de détente",
         "author": "Ottessa Moshfegh",
         "sfw": "unknown"
@@ -173,8 +173,8 @@
         "id": "002401",
         "time": "16:00",
         "quote_time_case": "quatre heures de l’après-midi",
-        "quote_first": "Cela suffit pour commencer, l’interrompit Humpty Dumpty : « Il y a là beaucoup de mots durs. « Brillig » signifie ",
-        "quote_last": " — l’heure à laquelle vous commencez faire griller des choses pour le dîner.",
+        "quote_first": "Cela suffit pour commencer, l’interrompit Humpty Dumpty : « Il y a là beaucoup de mots durs. ‘Brillig’ signifie ",
+        "quote_last": " — l’heure à laquelle vous commencez faire griller des choses pour le dîner. »",
         "title": "De l’autre côté du miroir",
         "author": "Lewis Carroll",
         "sfw": "unknown"
@@ -204,7 +204,7 @@
         "time": "16:00",
         "quote_time_case": "quatre heures",
         "quote_first": "« Si vous n’avez pas d’objection à me recevoir chez vous,<br>je me propose la satisfaction de vous attendre, vous et votre famille,<br>lundi 18 novembre, avant ",
-        "quote_last": ", et j’empiéterai probablement sur votre hospitalité jusqu’au samedi seize soir suivant, ce que je peux faire sans aucun inconvénient, car Lady Catherine est loin de s’opposer à mes visites occasionnelles. absence un dimanche, à condition qu’un autre ecclésiastique soit engagé pour accomplir le devoir de la journée.",
+        "quote_last": ", et j’empiéterai probablement sur votre hospitalité jusqu’au samedi seize soir suivant, ce que je peux faire sans aucun inconvénient, car Lady Catherine est loin de s’opposer à mes visites occasionnelles. absence un dimanche, à condition qu’un autre ecclésiastique soit engagé pour accomplir le devoir de la journée. »",
         "title": "Orgueil et préjugés",
         "author": "Jane Austen",
         "sfw": "unknown"
