@@ -53,8 +53,8 @@
         "id": "003003",
         "time": "20:00",
         "quote_time_case": "ocho en punto",
-        "quote_first": "La madre asintió. Ella no parecía capaz de pronunciar una palabra. La hija rompió a llorar. Sentí más que nunca que aquella gente sabía algo del asunto.<br>¿A qué hora salió el señor Drebber de su casa para tomar el tren? Pregunté.<br>“A las ",
-        "quote_last": "”, dijo, tragando saliva para controlar su agitación.",
+        "quote_first": "La madre asintió. Ella no parecía capaz de pronunciar una palabra. La hija rompió a llorar. Sentí más que nunca que aquella gente sabía algo del asunto.<br>“¿A qué hora salió el señor Drebber de su casa para tomar el tren?” pregunté.<br>“A las ",
+        "quote_last": ",” dijo, tragando saliva para controlar su agitación.",
         "title": "Un estudio en escarlata",
         "author": "Sir Arthur Conan Doyle",
         "sfw": "unknown"
@@ -94,7 +94,7 @@
         "time": "20:00",
         "quote_time_case": "ocho en punto",
         "quote_first": "Ella le devolvió la mirada, sorprendida y confundida. Luego desafiante. De repente cerró el portátil y lo metió en su bolso. Sacó un bolígrafo y garabateó una dirección en una servilleta. “Si cambias de opinión”, dijo rígidamente, poniéndose de pie, “estaré en este lugar entre ",
-        "quote_last": " y las nueve en punto esta noche”.",
+        "quote_last": " y las nueve en punto esta noche.”",
         "title": "Las Catacumbas",
         "author": "Jeremy Bates",
         "sfw": "unknown"

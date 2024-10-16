@@ -74,7 +74,7 @@
         "time": "15:00",
         "quote_time_case": "tres en punto",
         "quote_first": "“Entonces, buenas noches, majestad, y confío en que pronto tendremos buenas noticias para usted. Y buenas noches, Watson —añadió mientras las ruedas del berlina real avanzaban calle abajo. “Si tiene la amabilidad de llamar mañana por la tarde a las ",
-        "quote_last": ", me gustaría conversar sobre este pequeño asunto con usted”.",
+        "quote_last": ", me gustaría conversar sobre este pequeño asunto con usted.”",
         "title": "El signo del cuatro",
         "author": "Sir Arthur Conan Doyle",
         "sfw": "unknown"
@@ -144,7 +144,7 @@
         "time": "15:00",
         "quote_time_case": "Tres en punto",
         "quote_first": "Había presionado demasiado. “¡Maldita sea, Tim, mi banco <em>colapsó</em>! ¡Nos desangraron esos chupasangres de Lloyds! ¡Se acabaron los días en los que tenía ese tipo de espondúlicos a mi entera disposición! ¡Nuestra casa está hipotecada dos veces! Yo soy el poderoso caído, tú eres el minúsculo caído. De todos modos, ¡tienes este libro de mal gusto saliendo volando de todas las librerías del mundo conocido!”<br>Mi cara decía algo para lo que no tenía palabras.<br>“Oh, Dios, idiota. ¿Cuál es el calendario de pagos?”<br>Miré mi reloj. “",
-        "quote_last": " esta tarde”.",
+        "quote_last": " esta tarde.”",
         "title": "Atlas de nubes",
         "author": "David Mitchell",
         "sfw": "nsfw"
@@ -174,7 +174,7 @@
         "time": "15:00",
         "quote_time_case": "las tres de la tarde",
         "quote_first": "Me senté en la pila de leña que teníamos debajo de una lona en este lado de la casa. “Me imagino que estás aquí por negocios. El de mi esposa.”<br>“Lo soy.”<br>“Bueno, ya tomaste tu bebida, así que será mejor que nos pongamos manos a la obra. Todavía tengo un día completo de trabajo por delante, y son ",
-        "quote_last": "”.",
+        "quote_last": ".”",
         "title": "Completamente oscuro, sin estrellas",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -274,7 +274,7 @@
         "time": "15:00",
         "quote_time_case": "tres en punto",
         "quote_first": "Recuerden, gritaron, “batalla a las ",
-        "quote_last": " en punto. No hay tiempo que perder”.",
+        "quote_last": " en punto. No hay tiempo que perder.”",
         "title": "Golondrinas y amazonas",
         "author": "Arthur Ransome",
         "sfw": "unknown"
