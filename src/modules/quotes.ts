@@ -54,7 +54,10 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
   let quoteIndex = Math.floor(Math.random() * quotes.length);
 
   if (useIndex) {
-    quoteIndex = parseInt(document.getElementById("quote")?.dataset.index || "") || quoteIndex;
+    const blockquoteIndex = parseInt(document.getElementById("quote")?.dataset.index!);
+    if (!isNaN(blockquoteIndex) && quotes[blockquoteIndex]) {
+      quoteIndex = blockquoteIndex;
+    }
   }
 
   if (urlParams.get("index")) {
