@@ -15,5 +15,9 @@ export interface Quote {
   title: string;
   author: string;
   sfw: string;
-  fallback?: boolean;
+}
+
+export interface ResolvedQuote extends Quote {
+  fallback: boolean;
+  index: number;
 }
