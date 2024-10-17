@@ -52,7 +52,7 @@ async function updateTime() {
       timeEl.innerHTML = time;
     }
     
-    updateQuote(time);
+    updateQuote({time});
     lastTime = time;
   }
 }

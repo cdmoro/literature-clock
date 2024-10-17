@@ -1,7 +1,7 @@
 import { getRandomLocale, getStrings } from "./locales";
 import { getStringSetting, isBooleanSettingTrue } from "../utils/settings";
 import { setTheme } from "./themes";
-import { Locale, Quote } from "../types";
+import { Locale, ResolvedQuote, Quote } from "../types";
 import { fitQuote, getTime, updateGHLinks } from "../utils/utils";
 import FALLBACK_QUOTES from "../strings/fallbackQuotes.json";
 import { fadeInQuote } from "./fade";
@@ -46,12 +46,16 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
   }
 }
 
-async function getQuote(time: string, locale: Locale): Promise<Quote> {
+async function getQuote(time: string, locale: Locale, useIndex: boolean = false): Promise<ResolvedQuote> {
   const quotes = await getQuotes(time, locale);
   const urlParams = new URLSearchParams(window.location.search);
   const strings = getStrings();
 
   let quoteIndex = Math.floor(Math.random() * quotes.length);
+
+  if (useIndex) {
+    quoteIndex = parseInt(document.getElementById("quote")?.dataset.index || "") || quoteIndex;
+  }
 
   if (urlParams.get("index")) {
     const urlParamsIndex = parseInt(urlParams.get("index")!);
@@ -60,7 +64,8 @@ async function getQuote(time: string, locale: Locale): Promise<Quote> {
     }
   }
 
-  const quote = Object.assign({}, quotes[quoteIndex]);
+  const quote = Object.assign({}, quotes[quoteIndex]) as ResolvedQuote;
+  quote.index = quoteIndex;
 
   if (!quote.quote_time_case) {
     quote.time = time;
@@ -76,7 +81,7 @@ async function getQuote(time: string, locale: Locale): Promise<Quote> {
   return quote;
 }
 
-export async function updateQuote(time = getTime()) {
+export async function updateQuote({time = getTime(), useIndex = false} = {}) {
   const urlParams = new URLSearchParams(window.location.search);
   const testQuote = urlParams.get("quote");
   let locale = getStringSetting("locale") as Locale;
@@ -89,7 +94,7 @@ export async function updateQuote(time = getTime()) {
     locale = getRandomLocale();
   }
 
-  const quote = await getQuote(time, locale);
+  const quote = await getQuote(time, locale, useIndex);
   updateGHLinks(time, quote, locale);
   const quoteRaw = `${quote.quote_first}${quote.quote_time_case}${quote.quote_last}`;
   const timeClass = quote.quote_time_case.length <= 10 ? "time text-nowrap" : "time";
@@ -117,6 +122,7 @@ export async function updateQuote(time = getTime()) {
     );
     blockquote.dataset.locale = locale;
     blockquote.dataset.sfw = quote.sfw;
+    blockquote.dataset.index = quote.index?.toString();
     if (quote.fallback) {
       blockquote.dataset.fallback = "true";
     } else {
