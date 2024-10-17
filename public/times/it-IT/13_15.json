@@ -4,7 +4,7 @@
         "time": "13:15",
         "quote_time_case": "13:15",
         "quote_first": "Alle ",
-        "quote_last": " Fletcher guardò l'addetto alla reception, che sembrava dispiaciuto e gli offrì un secondo caffè.",
+        "quote_last": " Fletcher guardò l’addetto alla reception, che sembrava dispiaciuto e gli offrì un secondo caffè.",
         "title": "Figli della fortuna",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
@@ -12,9 +12,9 @@
     {
         "id": "002021",
         "time": "13:15",
-        "quote_time_case": "L'una e quindici",
-        "quote_first": "Mi sono alzato lentamente e ho percorso il corridoio.<br>\"Sono 𝘴𝘭𝘦𝘦𝘱𝘪𝘯𝘨\", ho sibilato attraverso la porta. Ho strizzato gli occhi nello spioncino: Reva sembra in disordine e squilibrata.<br>\"Posso entrare?\" chiese. \"Ho davvero bisogno di parlare.\"<br>\"Posso chiamarti più tardi? Che ore sono?”<br>“",
-        "quote_last": ". Ho provato a chiamare,\" ha detto. “Ecco, il portiere ha inviato la tua posta. Ho bisogno di parlare. È una cosa seria.»",
+        "quote_time_case": "L’una e quindici",
+        "quote_first": "Mi sono alzato lentamente e ho percorso il corridoio.<br>“Sto <em>dormendo</em>”, ho sibilato attraverso la porta. Ho strizzato gli occhi nello spioncino: Reva sembra in disordine e squilibrata.<br>“Posso entrare?” chiese. “Ho davvero bisogno di parlare.”<br>“Posso chiamarti più tardi? Che ore sono?”<br>“",
+        "quote_last": ". Ho provato a chiamare,” ha detto. “Ecco, il portiere ha inviato la tua posta. Ho bisogno di parlare. È una cosa seria.”",
         "title": "Il mio anno di riposo e relax",
         "author": "Ottessa Moshfegh",
         "sfw": "unknown"
@@ -22,9 +22,9 @@
     {
         "id": "002022",
         "time": "13:15",
-        "quote_time_case": "Un'ora e un quarto",
-        "quote_first": "Il signore ha dormito bene stamattina, disse sorridendo.<br>\"Che ore sono, Victor?\" chiese Dorian Gray, assonnato.<br>\"",
-        "quote_last": ", monsieur.\"",
+        "quote_time_case": "Un’ora e un quarto",
+        "quote_first": "Il signore ha dormito bene stamattina, disse sorridendo.<br>“Che ore sono, Victor?” chiese Dorian Gray, assonnato.<br>“",
+        "quote_last": ", monsieur.”",
         "title": "Il ritratto di Dorian Gray",
         "author": "Oscar Wilde",
         "sfw": "unknown"
@@ -33,8 +33,8 @@
         "id": "002023",
         "time": "13:15",
         "quote_time_case": "Uno-quindici",
-        "quote_first": "Dove sono le signore e i signori? chiese Aleyn.<br>\"Signore, in giardino\", disse Bunce.<br>\"A che ora è il pranzo?\"<br>\"",
-        "quote_last": ".\"",
+        "quote_first": "“Dove sono le signore e i signori?” chiese Aleyn.<br>“Signore, in giardino”, disse Bunce.<br>“A che ora è il pranzo?”<br>“",
+        "quote_last": ".”",
         "title": "Un uomo giaceva morto",
         "author": "Ngaio Marsh",
         "sfw": "unknown"
@@ -42,9 +42,9 @@
     {
         "id": "002024",
         "time": "13:15",
-        "quote_time_case": "L'una e un quarto",
-        "quote_first": "L'orologio attirò l'attenzione di Miss LaFosse. \"Santo cielo!\" ansimò. \"Guarda l'ora. ",
-        "quote_last": ". Devi essere affamato.\" Si rivolse impetuosamente alla signorina Pettigrew.",
+        "quote_time_case": "L’una e un quarto",
+        "quote_first": "L’orologio attirò l’attenzione di Miss LaFosse. “Santo cielo!” ansimò. “Guarda l’ora. ",
+        "quote_last": ". Devi essere affamato.” Si rivolse impetuosamente alla signorina Pettigrew.",
         "title": "La signorina Pettigrew vive per un giorno",
         "author": "Winifred Watson",
         "sfw": "unknown"

@@ -12,8 +12,8 @@
     {
         "id": "002231",
         "time": "15:00",
-        "quote_time_case": "three o'clock",
-        "quote_first": "Gunther's two conflicting feelings about Christmas almost rubbed each other out on the First Sunday in Advent. By ",
+        "quote_time_case": "three o’clock",
+        "quote_first": "Gunther’s two conflicting feelings about Christmas almost rubbed each other out on the First Sunday in Advent. By ",
         "quote_last": " the fear feeling had practically vanished.",
         "title": "Bright Valley of Love",
         "author": "Edna Hong",
@@ -123,7 +123,7 @@
         "id": "002242",
         "time": "15:00",
         "quote_time_case": "three o’clock",
-        "quote_first": "Luisa crosses the office to Dom Grelsch’s door. Her boss is speaking on the phone in a low, irate voice. Luisa waits outside but overhears. “No—no, no, Mr, Frum, it 𝘪𝘴 black-and-white, tell me—hey, 𝘐’𝘮 talking now—tell me a 𝘮𝘰𝘳𝘦 black-and-white ‘condition’ than leukemia? Know what I think? I think my wife is just one piece of paperwork between you and your ",
+        "quote_first": "Luisa crosses the office to Dom Grelsch’s door. Her boss is speaking on the phone in a low, irate voice. Luisa waits outside but overhears. “No—no, no, Mr, Frum, it <em>is</em> black-and-white, tell me—hey, <em>I’m</em> talking now—tell me a <em>more</em> black-and-white ‘condition’ than leukemia? Know what I think? I think my wife is just one piece of paperwork between you and your ",
         "quote_last": " golf slot, isn’t she?”",
         "title": "Cloud Atlas",
         "author": "David Mitchell",
@@ -143,7 +143,7 @@
         "id": "002244",
         "time": "15:00",
         "quote_time_case": "Three o’clock",
-        "quote_first": "I had pushed too hard. “Damn it to hell, Tim, my bank 𝘤𝘳𝘢𝘴𝘩𝘦𝘥! We were bled dry by those bloodsuckers at Lloyds! The days when I had that kind of spondulics at my beck and call are gone, gone, gone! Out house is mortgaged, twice over! I’m the mighty fallen, you’re the miniscule fallen. Anyway, you’ve got this ruddy book flying out of every bookshop in the known world!”<br>My face said what I had no words for.<br>“Oh Christ, you idiot. What’s the repayment schedule?”<br>I looked at my watch. “",
+        "quote_first": "I had pushed too hard. “Damn it to hell, Tim, my bank <em>crashed</em>! We were bled dry by those bloodsuckers at Lloyds! The days when I had that kind of spondulics at my beck and call are gone, gone, gone! Out house is mortgaged, twice over! I’m the mighty fallen, you’re the miniscule fallen. Anyway, you’ve got this ruddy book flying out of every bookshop in the known world!”<br>My face said what I had no words for.<br>“Oh Christ, you idiot. What’s the repayment schedule?”<br>I looked at my watch. “",
         "quote_last": " this afternoon.”",
         "title": "Cloud Atlas",
         "author": "David Mitchell",
@@ -195,7 +195,7 @@
         "quote_time_case": "three o’clock precisely",
         "quote_first": "At ",
         "quote_last": " I was at Baker Street, but Holmes had not yet returned.",
-        "title": "A Scandal in Bohemia, The Adventures of Sherlock Holmes",
+        "title": "A Scandal in Bohemia",
         "author": "Sir Arthur Conan Doyle",
         "sfw": "unknown"
     },
@@ -206,7 +206,7 @@
         "quote_first": "And now it was ",
         "quote_last": ". The Antichrist had been on Earth for fifteen hours, and one angel and one demon had been drinking solidly for three of them.",
         "title": "Good Omens",
-        "author": "Terry Pratchett, Neil Gaiman",
+        "author": "Terry Pratchett and Neil Gaiman",
         "sfw": "unknown"
     },
     {
@@ -254,7 +254,7 @@
         "time": "15:00",
         "quote_time_case": "three o’clock",
         "quote_first": "With some difficulty, James battled his way past waves of scent, screeching voices and glossy black hair.<br>“What on earth is going on?” he asked when he reached the safety of his office.<br>Carlo shrugged. “It’s ",
-        "quote_last": ".”<br>“I’m aware of the time, Carlo. Why are there so many women outside?”<br>“They are the 𝘧𝘪𝘥𝘢𝘯𝘻𝘢𝘵𝘦. The women who want to marry Allied servicemen.”",
+        "quote_last": ".”<br>“I’m aware of the time, Carlo. Why are there so many women outside?”<br>“They are the <em>fidanzate</em>. The women who want to marry Allied servicemen.”",
         "title": "The Wedding Officer",
         "author": "Anthony Capella",
         "sfw": "unknown"
@@ -262,7 +262,7 @@
     {
         "id": "002256",
         "time": "15:00",
-        "quote_time_case": "three o'clock",
+        "quote_time_case": "three o’clock",
         "quote_first": "I gotta get uptown by ",
         "quote_last": ".",
         "title": "A Confederacy of Dunces",
@@ -272,9 +272,9 @@
     {
         "id": "002257",
         "time": "15:00",
-        "quote_time_case": "three o'clock",
-        "quote_first": "Remember, they shouted, \"battle at ",
-        "quote_last": " sharp. There's no time to lose.\"",
+        "quote_time_case": "three o’clock",
+        "quote_first": "Remember, they shouted, “battle at ",
+        "quote_last": " sharp. There’s no time to lose.”",
         "title": "Swallows and Amazons",
         "author": "Arthur Ransome",
         "sfw": "unknown"
@@ -292,9 +292,9 @@
     {
         "id": "002259",
         "time": "15:00",
-        "quote_time_case": "three o'clock",
+        "quote_time_case": "three o’clock",
         "quote_first": "At ",
-        "quote_last": " on the afternoon of that same day, he called on her. She held out her two hands, smiling in her usual charming, friendly way; and for a few seconds they looked deep into each other's eyes.",
+        "quote_last": " on the afternoon of that same day, he called on her. She held out her two hands, smiling in her usual charming, friendly way; and for a few seconds they looked deep into each other’s eyes.",
         "title": "Bel-Ami",
         "author": "Guy de Maupassant",
         "sfw": "unknown"
@@ -314,7 +314,7 @@
         "time": "15:00",
         "quote_time_case": "three",
         "quote_first": "Ditched by the woman I loved, I exalted my suffering into a sign of greatness (lying collapsed on a bed at ",
-        "quote_last": " in the afternoon), and hence protected myself from experiencing my grief as the outcome of what was at best a mundane romantic break-up. Chloe's departure may have killed me, but it had at least left me in glorious possession of the moral high ground. I was a martyr.",
+        "quote_last": " in the afternoon), and hence protected myself from experiencing my grief as the outcome of what was at best a mundane romantic break-up. Chloe’s departure may have killed me, but it had at least left me in glorious possession of the moral high ground. I was a martyr.",
         "title": "Essays in Love",
         "author": "Alain de Botton",
         "sfw": "unknown"
@@ -322,9 +322,9 @@
     {
         "id": "002262",
         "time": "15:00",
-        "quote_time_case": "three o'clock",
+        "quote_time_case": "three o’clock",
         "quote_first": "He walks into the Hospital for Broken Things at ",
-        "quote_last": " on Monday afternoon. That was the arrangement. If he came in after six o'clock, he was to head straight for the house in Sunset Park.",
+        "quote_last": " on Monday afternoon. That was the arrangement. If he came in after six o’clock, he was to head straight for the house in Sunset Park.",
         "title": "Sunset Park",
         "author": "Paul Auster",
         "sfw": "unknown"
@@ -342,7 +342,7 @@
     {
         "id": "002264",
         "time": "15:00",
-        "quote_time_case": "three o'clock",
+        "quote_time_case": "three o’clock",
         "quote_first": "It was ",
         "quote_last": " in the beautiful breezy autumn day when Mr. Casaubon drove off to his Rectory at Lowick, only five miles from Tipton; and Dorothea, who had on her bonnet and shawl, hurried along the shrubbery and across the park that she might wander through the bordering wood with no other visible companionship than that of Monk, the Great St. Bernard dog, who always took care of the young ladies in their walks.",
         "title": "Middlemarch",
@@ -362,7 +362,7 @@
     {
         "id": "002266",
         "time": "15:00",
-        "quote_time_case": "three o'clock",
+        "quote_time_case": "three o’clock",
         "quote_first": "M. Madeleine usually came at ",
         "quote_last": ", and as punctuality was kindness, he was punctual.",
         "title": "Les Misérables",
@@ -372,7 +372,7 @@
     {
         "id": "002267",
         "time": "15:00",
-        "quote_time_case": "three o'clock",
+        "quote_time_case": "three o’clock",
         "quote_first": "On Wednesday at ",
         "quote_last": ", Monsieur and Madame Bovary, seated in their dog-cart, set out for Vaubyessard, with a great trunk strapped on behind and a bonnet-box in front of the apron. Besides these Charles held a bandbox between his knees.",
         "title": "Madame Bovary",
@@ -384,7 +384,7 @@
         "time": "15:00",
         "quote_time_case": "at three",
         "quote_first": "The scent and smoke and sweat of a casino are nauseating ",
-        "quote_last": " in the morning. Then the soul-erosion produced by high gambling - a compost of greed and fear and nervous tension - becomes unbearable and the senses awake and revolt from it.",
+        "quote_last": " in the morning. Then the soul-erosion produced by high gambling — a compost of greed and fear and nervous tension — becomes unbearable and the senses awake and revolt from it.",
         "title": "Casino Royale",
         "author": "Ian Fleming",
         "sfw": "unknown"
@@ -392,9 +392,9 @@
     {
         "id": "002269",
         "time": "15:00",
-        "quote_time_case": "Three o'clock",
+        "quote_time_case": "Three o’clock",
         "quote_first": "",
-        "quote_last": " is the perfect time in Cham, because anything is possible. You can still ski, but also respectably start drinking, the shops have just reopened, the sun is still up. Three o'clock is never too late or too early.",
+        "quote_last": " is the perfect time in Cham, because anything is possible. You can still ski, but also respectably start drinking, the shops have just reopened, the sun is still up. Three o’clock is never too late or too early.",
         "title": "Cham",
         "author": "Jonathan Trigell",
         "sfw": "unknown"
@@ -402,8 +402,8 @@
     {
         "id": "002270",
         "time": "15:00",
-        "quote_time_case": "three o'clock",
-        "quote_first": "Today was the day Alex had appointed for her 'punishment'. I became increasingly nervous as the hour of ",
+        "quote_time_case": "three o’clock",
+        "quote_first": "Today was the day Alex had appointed for her ‘punishment’. I became increasingly nervous as the hour of ",
         "quote_last": " approached. I was alone in the house, and paced restlessly from room to room, glancing at the clocks in each of them.",
         "title": "Deaf Sentence",
         "author": "David Lodge",

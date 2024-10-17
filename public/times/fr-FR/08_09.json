@@ -2,10 +2,10 @@
     {
         "id": "001104",
         "time": "08:09",
-        "quote_time_case": "8.09",
-        "quote_first": "Il regarda son fils. 'Tu as réservé sous tous ces noms, comme je te l'ai appris ?'<br>'Bien sûr, papa. M. Parnell, 7h47 ; M. Parker, ",
-        "quote_last": " ; M. Tudor-Jones, 8h11 ; Monsieur Alexandre, 8h23.",
-        "title": "L'herbe est toujours plus verte",
+        "quote_time_case": "8h09",
+        "quote_first": "Il regarda son fils. « Tu as réservé sous tous ces noms, comme je te l’ai appris ? »<br>« Bien sûr, papa. M. Parnell, 7h47 ; M. Parker, ",
+        "quote_last": " ; M. Tudor-Jones, 8h11 ; Monsieur Alexandre, 8h23. »",
+        "title": "L’herbe est toujours plus verte",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
@@ -14,7 +14,7 @@
         "time": "08:09",
         "quote_time_case": "8:09",
         "quote_first": "Il suivit les cris dans un couloir. Une horloge murale indiquait ",
-        "quote_last": " - 10h09, heure de Dallas.",
+        "quote_last": "-10h09, heure de Dallas.",
         "title": "Tabloïd américain",
         "author": "James Ellroy",
         "sfw": "unknown"

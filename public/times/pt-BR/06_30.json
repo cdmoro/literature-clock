@@ -23,8 +23,8 @@
         "id": "000838",
         "time": "06:30",
         "quote_time_case": "seis e meia da manhã",
-        "quote_first": "Mas quando você faz a barba 𝘣𝘦𝘧𝘰𝘳𝘦 café da manhã como ela me faz fazer algumas manhãs— ",
-        "quote_last": " em uma sala toda com paredes brancas e bacias brancas, e longos candeeiros de luz no teto, certificando-se de que não há sombras, e rostos ao seu redor presos gritando atrás dos espelhos - então que chance você tem contra uma de suas máquinas?",
+        "quote_first": "Mas quando você faz a barba <em>antes</em> do café da manhã como ela me faz fazer algumas manhãs— ",
+        "quote_last": " em uma sala toda com paredes brancas e bacias brancas, e longos candeeiros de luz no teto, certificando-se de que não há sombras, e rostos ao seu redor presos gritando atrás dos espelhos — então que chance você tem contra uma de suas máquinas?",
         "title": "Um voou sobre o ninho do cuco",
         "author": "Ken Kesey",
         "sfw": "unknown"
@@ -53,8 +53,8 @@
         "id": "000841",
         "time": "06:30",
         "quote_time_case": "seis e meia",
-        "quote_first": "Daniel e os homens do FBI ouviram os sons de sua mãe acordando seu pai. Daniel ainda segurava a maçaneta. Ele estava pronto para fechar a porta no segundo que lhe mandassem.<br>\"Que horas são?\" disse seu pai com uma voz drogada.<br>\"Oh meu Deus, são ",
-        "quote_last": "\", disse sua mãe.",
+        "quote_first": "Daniel e os homens do FBI ouviram os sons de sua mãe acordando seu pai. Daniel ainda segurava a maçaneta. Ele estava pronto para fechar a porta no segundo que lhe mandassem.<br>“Que horas são?” disse seu pai com uma voz drogada.<br>“Oh meu Deus, são ",
+        "quote_last": "”, disse sua mãe.",
         "title": "O Livro de Daniel",
         "author": "E.L. Doctorow",
         "sfw": "unknown"
@@ -64,7 +64,7 @@
         "time": "06:30",
         "quote_time_case": "seis e meia",
         "quote_first": "Era ",
-        "quote_last": ". Quando o bebê chorou, eles não conseguiram identificá-lo, e Sam, enfiando ansiosamente o rosto entre seus ouvidos, disse: \"Ouça, aí, aí, esse é o novo bebê.\" Ele estava vermelho de alegria e sucesso.",
+        "quote_last": ". Quando o bebê chorou, eles não conseguiram identificá-lo, e Sam, enfiando ansiosamente o rosto entre seus ouvidos, disse: “Ouça, aí, aí, esse é o novo bebê.” Ele estava vermelho de alegria e sucesso.",
         "title": "O homem que amava as crianças",
         "author": "Christina Stead",
         "sfw": "unknown"
@@ -74,7 +74,7 @@
         "time": "06:30",
         "quote_time_case": "seis e meia",
         "quote_first": "Estava muito frio sentado na caminhonete e depois de um tempo ele saiu e andou e se debateu com os braços e bateu as botas. Então ele voltou para a caminhonete. O relógio do bar dizia ",
-        "quote_last": "... Às oito e meia ele decidiu que era isso que demoraria para fazer o táxi chegar, então era isso que ele faria e ele ligou o motor.",
+        "quote_last": "… Às oito e meia ele decidiu que era isso que demoraria para fazer o táxi chegar, então era isso que ele faria e ele ligou o motor.",
         "title": "Cidades da Planície",
         "author": "Cormac McCarthy",
         "sfw": "unknown"
@@ -104,7 +104,7 @@
         "time": "06:30",
         "quote_time_case": "6h30",
         "quote_first": "Às vezes eram carroças encapuzadas, às vezes eram apenas carroças abertas, com tábuas como assentos, nas quais sentavam doze mulheres encapuzadas e gorros, seis de cada lado, espremidas umas nas outras, para a viagem interminável. Ainda em 1914 eu conhecia o transportador de Croydon-cum-Clopton, a dezenove quilômetros de Cambridge; seu carrinho partia às ",
-        "quote_last": " da manhã e voltava por volta das dez da noite. Embora não fosse velho, não sabia ler nem escrever; mas ele recebeu encomendas ao longo do caminho - um pacote de agulhas para a Sra. Isto e um novo bule de chá para a Sra. Aquilo - e entregou tudo corretamente no caminho de volta.",
+        "quote_last": " da manhã e voltava por volta das dez da noite. Embora não fosse velho, não sabia ler nem escrever; mas ele recebeu encomendas ao longo do caminho — um pacote de agulhas para a Sra. Isto e um novo bule de chá para a Sra. Aquilo — e entregou tudo corretamente no caminho de volta.",
         "title": "Peça de época",
         "author": "Gwen Raverat",
         "sfw": "unknown"
