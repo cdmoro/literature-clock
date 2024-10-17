@@ -77,7 +77,7 @@ export function initLocale(defaultValue = navigator.language) {
 
     if (!isRandomLocale) {
       setStringSetting("last-locale", languageSelectValue);
-      updateQuote();
+      updateQuote({ useIndex: true });
     }
   });
 }
