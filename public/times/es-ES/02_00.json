@@ -4,7 +4,7 @@
         "time": "02:00",
         "quote_time_case": "dos de la mañana",
         "quote_first": "Entonces, cuando Dom, luciendo agitado y desesperado, llamó a la puerta de Tom a las ",
-        "quote_last": " y dijo que borraría una parte de la deuda a cambio de un \"recado\", Tom sabía que no tenía otra opción. Además, esto no era realmente una oferta; fue una orden.",
+        "quote_last": " y dijo que borraría una parte de la deuda a cambio de un “recado”, Tom sabía que no tenía otra opción. Además, esto no era realmente una oferta; fue una orden.",
         "title": "La ambición",
         "author": "Lee Strobel",
         "sfw": "sfw"
@@ -44,7 +44,7 @@
         "time": "02:00",
         "quote_time_case": "dos en punto",
         "quote_first": "“Es un pintor delirante el que termina un lienzo a las ",
-        "quote_last": " y espera una transformación social radical a las cuatro. Incluso cuando los artistas escriben manifiestos, son (con suerte) conscientes de que su tono exigente es, finalmente, prestado, y sólo hace eco e imita la urgencia de las demandas de la guerrilla o las protestas de los activistas, en lugar de representarlas verdaderamente. La gente a veces exige cambios. Casi nunca exigen arte”.",
+        "quote_last": " y espera una transformación social radical a las cuatro. Incluso cuando los artistas escriben manifiestos, son (con suerte) conscientes de que su tono exigente es, finalmente, prestado, y sólo hace eco e imita la urgencia de las demandas de la guerrilla o las protestas de los activistas, en lugar de representarlas verdaderamente. La gente a veces exige cambios. Casi nunca exigen arte.”",
         "title": "Insinuaciones",
         "author": "Zadie Smith",
         "sfw": "unknown"
@@ -63,8 +63,8 @@
         "id": "000271",
         "time": "02:00",
         "quote_time_case": "las dos de la mañana",
-        "quote_first": "“Mi querido señor Sherlock Holmes:<br>“Ha habido un mal negocio durante la noche en el número 3 de Lauriston Gardens, cerca de Brixton Road. Nuestro hombre en la ronda vio una luz allí alrededor de ",
-        "quote_last": ", y como la casa estaba vacía, sospechó que algo andaba mal”.",
+        "quote_first": "“Mi querido señor Sherlock Holmes:<br>Ha habido un mal negocio durante la noche en el número 3 de Lauriston Gardens, cerca de Brixton Road. Nuestro hombre en la ronda vio una luz allí alrededor de ",
+        "quote_last": ", y como la casa estaba vacía, sospechó que algo andaba mal.”",
         "title": "Un estudio en escarlata",
         "author": "Sir Arthur Conan Doyle",
         "sfw": "unknown"
@@ -84,7 +84,7 @@
         "time": "02:00",
         "quote_time_case": "las dos de la mañana",
         "quote_first": "Según su Timex, eran ",
-        "quote_last": ". La habitación estaba fría, pero tenía los brazos y el pecho viscosos por el sudor.<br>¿Quieres un consejo, Honeybear?<br>“No”, dijo. \"No de ti\".",
+        "quote_last": ". La habitación estaba fría, pero tenía los brazos y el pecho viscosos por el sudor.<br>¿Quieres un consejo, Honeybear?<br>“No”, dijo. “No de ti.”",
         "title": "Doctor Dormir",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -103,8 +103,8 @@
         "id": "000275",
         "time": "02:00",
         "quote_time_case": "dos en punto",
-        "quote_first": "“Probaré el Infermiterol,” dije secamente.<br>“Bien. Y coma una comida rica en lácteos todos los días. ¿Sabías que las vacas pueden elegir dormir de pie o tumbadas? Si tengo la opción, sé qué elegirá. ¿Alguna vez has hecho yogur en la estufa? No respondas eso. Guardaremos la lección de cocina para nuestra próxima reunión. Ahora escribe esto porque tengo la sensación de que eres demasiado psicótico para recordarlo: sábado veinte de enero, a las ",
-        "quote_last": ". Y prueba el Infermiterol. Adiós.\"",
+        "quote_first": "“Probaré el Infermiterol,” dije secamente.<br>“Bien. Y coma una comida rica en lácteos todos los días. ¿Sabías que las vacas pueden elegir dormir de pie o tumbadas? Si tengo la opción, sé qué <em>elegiría</em>. ¿Alguna vez has hecho yogur en la estufa? No respondas eso. Guardaremos la lección de cocina para nuestra próxima reunión. Ahora escribe esto porque tengo la sensación de que eres demasiado psicótico para recordarlo: sábado veinte de enero, a las ",
+        "quote_last": ". Y prueba el Infermiterol. Adiós.”",
         "title": "Mi año de descanso y relajación",
         "author": "Ottessa Moshfegh",
         "sfw": "unknown"
@@ -122,9 +122,9 @@
     {
         "id": "000277",
         "time": "02:00",
-        "quote_time_case": "2 𝘰’𝘤𝘭𝘰𝘤𝘬",
-        "quote_first": "Henry tendió la mano para recibir la nota, que Victoria entregó a cambio de un Sweet Caporal. Sólo había cuatro palabras: 𝘛𝘰𝘮𝘰𝘳𝘳𝘰𝘸 𝘮𝘰𝘳𝘯𝘪𝘯𝘨. ",
-        "quote_last": ".",
+        "quote_time_case": "A las dos",
+        "quote_first": "Henry tendió la mano para recibir la nota, que Victoria entregó a cambio de un Sweet Caporal. Sólo había siete palabras: <em>Mañana por la mañana. ",
+        "quote_last": "</em>.",
         "title": "Completamente oscuro, sin estrellas",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -163,8 +163,8 @@
         "id": "000281",
         "time": "02:00",
         "quote_time_case": "Dos",
-        "quote_first": "“¿El sábado por la tarde?” -Preguntó.<br>Le guiñó un ojo a Billy y apretó la cabeza de la niña con el hueco de su brazo. \"No. ",
-        "quote_last": " Sábado por la noche. Deslízate y toca la misma ventana en la que estabas esta mañana. Hablaré con el asistente nocturno para que te deje entrar.",
+        "quote_first": "“¿El sábado por la tarde?” —Preguntó.<br>Le guiñó un ojo a Billy y apretó la cabeza de la niña con el hueco de su brazo. “No. ",
+        "quote_last": " Sábado por la noche. Deslízate y toca la misma ventana en la que estabas esta mañana. Hablaré con el asistente nocturno para que te deje entrar.”",
         "title": "Alguien voló sobre el nido del cuco",
         "author": "Ken Kesey",
         "sfw": "unknown"
@@ -173,7 +173,7 @@
         "id": "000282",
         "time": "02:00",
         "quote_time_case": "las dos de la madrugada",
-        "quote_first": "\"He estado esperando aquí toda la noche\", dijo Shawn. “Cuéntamelo todo”.<br>“Shawn”, dijo. “Es todo asombroso. ¿Por dónde empiezo? . . .”<br>Hablaron hasta ",
+        "quote_first": "“He estado esperando aquí toda la noche”, dijo Shawn. “Cuéntamelo todo”.<br>“Shawn”, dijo. “Es todo asombroso. ¿Por dónde empiezo?…”<br>Hablaron hasta ",
         "quote_last": "",
         "title": "Indulto",
         "author": "James Han Mattson",

@@ -14,7 +14,7 @@
         "time": "14:00",
         "quote_time_case": "duas horas depois do meio-dia",
         "quote_first": "Um silêncio terrível seguiu-se a esta observação, que foi quebrada por Peter dizendo: “O gigante Wimbleweather e o Urso e o Centauro Glenstorm serão nossos marechais. O combate será às ",
-        "quote_last": ". Jantar exatamente ao meio-dia.",
+        "quote_last": ". Jantar exatamente ao meio-dia.”",
         "title": "Príncipe Caspian",
         "author": "C.S. Lewis",
         "sfw": "unknown"
@@ -44,7 +44,7 @@
         "time": "14:00",
         "quote_time_case": "duas horas",
         "quote_first": "Jesiba não se incomodou em responder, em vez disso disse: “Tenho um cliente chegando às ",
-        "quote_last": ". Esteja pronto. E pare de deixar Lehabah tagarelar. Ela tem um trabalho a fazer. A linha ficou muda.",
+        "quote_last": ". Esteja pronto. E pare de deixar Lehabah tagarelar. Ela tem um trabalho a fazer.” A linha ficou muda.",
         "title": "Casa da Terra e do Sangue",
         "author": "Sarah J. Maas",
         "sfw": "unknown"
@@ -84,7 +84,7 @@
         "time": "14:00",
         "quote_time_case": "duas da tarde",
         "quote_first": "As coisas começaram a desmoronar por volta das ",
-        "quote_last": ". Poderíamos ter ficado para o jantar, poderíamos ter ficado - se os convites bêbados do Sr. Corcoran fossem verdadeiros (o sorriso gelado da Sra. Corcoran nas suas costas nos informou que não) indefinidamente.",
+        "quote_last": ". Poderíamos ter ficado para o jantar, poderíamos ter ficado — se os convites bêbados do Sr. Corcoran fossem verdadeiros (o sorriso gelado da Sra. Corcoran nas suas costas nos informou que não) indefinidamente.",
         "title": "A história secreta",
         "author": "Donna Tartt",
         "sfw": "unknown"
@@ -154,7 +154,7 @@
         "time": "14:00",
         "quote_time_case": "duas horas",
         "quote_first": "Ele disse a ela que se tivesse algum fim de semana livre, ele a convidaria para sair, e ela disse que poderia visitá-la em duas semanas se ele lhe dissesse a que horas, e Billy olhou para McMurphy em busca de uma resposta. McMurphy colocou os braços em volta dos ombros deles e disse: “Vamos fazer ",
-        "quote_last": " no nariz”.",
+        "quote_last": " no nariz.”",
         "title": "Um voou sobre o ninho do cuco",
         "author": "Ken Kesey",
         "sfw": "unknown"
@@ -193,8 +193,8 @@
         "id": "002107",
         "time": "14:00",
         "quote_time_case": "duas horas",
-        "quote_first": "“Que estranho… estou quase feliz. E, no entanto, suponho que estou realmente em perigo... De alguma forma - agora - nada parece importar... não à luz do dia... sinto-me cheio de poder - sinto que não posso morrer...\"<br>Blore estava olhando para seu pulso- assistir. Ele disse:<br>“São ",
-        "quote_last": ". E o almoço?",
+        "quote_first": "“Que estranho… estou quase feliz. E, no entanto, suponho que estou realmente em perigo… De alguma forma — agora — nada parece importar… não à luz do dia… sinto-me cheio de poder — sinto que não posso morrer…”<br>Blore estava olhando para seu pulso— assistir. Ele disse:<br>“São ",
+        "quote_last": ". E o almoço?”",
         "title": "E então não havia nenhum",
         "author": "Agatha Christie",
         "sfw": "unknown"
@@ -236,7 +236,7 @@
         "quote_first": "Às ",
         "quote_last": ", os limpa-neves estavam em ação em Lillestrom.",
         "title": "O boneco de neve",
-        "author": "Jo Nesbo",
+        "author": "Jo Nesbø",
         "sfw": "unknown"
     },
     {
@@ -245,7 +245,7 @@
         "quote_time_case": "duas horas",
         "quote_first": "Peguei o ônibus ",
         "quote_last": ". Estava muito quente. Comi no restaurante da Céleste como sempre. Todos sentiram muita pena de mim e Céleste me disse: “Não há ninguém como uma mãe”.",
-        "title": "O lado de fora",
+        "title": "O estrangeiro",
         "author": "Albert Camus",
         "sfw": "unknown"
     },
@@ -255,7 +255,7 @@
         "quote_time_case": "duas horas",
         "quote_first": "O Lar para Idosos fica em Marengo, a cerca de oitenta quilômetros de Argel. Com o ônibus ",
         "quote_last": " devo chegar bem antes do anoitecer. Depois poderei passar a noite lá, mantendo a vigília habitual ao lado do corpo, e estarei de volta aqui amanhã à noite.",
-        "title": "O lado de fora",
+        "title": "O estrangeiro",
         "author": "Albert Camus",
         "sfw": "unknown"
     },

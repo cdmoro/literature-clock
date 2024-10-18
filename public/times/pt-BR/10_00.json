@@ -124,7 +124,7 @@
         "time": "10:00",
         "quote_time_case": "dez horas",
         "quote_first": "Ela passou aquela noite no quarto de Junpei. Beberam vinho – um presente do restaurante – fizeram sexo e foram dormir. Quando Junpei acordou às ",
-        "quote_last": " da manhã seguinte, ela havia sumido, deixando apenas uma marca como uma memória perdida no travesseiro ao lado dele, e um bilhete: “ Eu tenho que ir trabalhar. Entre em contato comigo se quiser. Ela incluiu o número do seu celular.",
+        "quote_last": " da manhã seguinte, ela havia sumido, deixando apenas uma marca como uma memória perdida no travesseiro ao lado dele, e um bilhete: “Eu tenho que ir trabalhar. Entre em contato comigo se quiser.” Ela incluiu o número do seu celular.",
         "title": "Salgueiro Cego, Mulher Adormecida",
         "author": "Haruki Murakami",
         "sfw": "nsfw"
@@ -164,7 +164,7 @@
         "time": "10:00",
         "quote_time_case": "dez horas",
         "quote_first": "Às ",
-        "quote_last": " ela estava faminta. Ela preparou um enorme brunch e comeu cada mordida. Então ela levou seu filme de volta para a Blockbuster e perguntou se eles tinham 𝘒𝘪𝘴𝘴 𝘰𝘧 𝘋𝘦𝘢𝘵𝘩. Eles não fizeram isso, mas depois de dez minutos de navegação, ela escolheu um substituto chamado 𝘓𝘢𝘴𝘵 𝘏𝘰𝘶𝘴𝘦 𝘰𝘯 𝘵𝘩𝘦 𝘓𝘦𝘧𝘵.",
+        "quote_last": " ela estava faminta. Ela preparou um enorme brunch e comeu cada mordida. Então ela levou seu filme de volta para a Blockbuster e perguntou se eles tinham <em>O beijo da morte</em>. Eles não fizeram isso, mas depois de dez minutos de navegação, ela escolheu um substituto chamado <em>A última casa à esquerda</em>.",
         "title": "Totalmente escuro, sem estrelas",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -183,8 +183,8 @@
         "id": "001483",
         "time": "10:00",
         "quote_time_case": "dez horas da manhã",
-        "quote_first": "Frodo acordou e se viu deitado na cama.<br>\"Onde estou e que horas são?\" ele disse em voz alta para o teto.<br>\"Na Casa de Elrond, e são ",
-        "quote_last": "\", disse Gandalf. \"É a manhã de 24 de outubro, se você quiser saber.\"",
+        "quote_first": "Frodo acordou e se viu deitado na cama.<br>“Onde estou e que horas são?” ele disse em voz alta para o teto.<br>“Na Casa de Elrond, e são ",
+        "quote_last": "”, disse Gandalf. “É a manhã de 24 de outubro, se você quiser saber.”",
         "title": "A sociedade do Anel",
         "author": "J.R.R. Tolkien",
         "sfw": "unknown"
@@ -194,7 +194,7 @@
         "time": "10:00",
         "quote_time_case": "dez da manhã",
         "quote_first": "Eles o trouxeram de volta para a enfermaria por volta das ",
-        "quote_last": "— \"Fulla mijo e vinagre, amigos; eles verificaram meus plugues e limparam meus pontos, e eu ganhei um brilho ligada como uma bobina de ignição Modelo T. Você já usou uma dessas bobinas na época do Halloween 𝘡𝘢𝘮!",
+        "quote_last": "— “Fulla mijo e vinagre, amigos; eles verificaram meus plugues e limparam meus pontos, e eu ganhei um brilho ligada como uma bobina de ignição Modelo T. Você já usou uma dessas bobinas na época do Halloween? <em>Zam</em>! Uma boa e limpia diversão.”",
         "title": "Um voou sobre o ninho do cuco",
         "author": "Ken Kesey",
         "sfw": "nsfw"
@@ -214,7 +214,7 @@
         "time": "10:00",
         "quote_time_case": "dez da manhã",
         "quote_first": "Eram ",
-        "quote_last": ", e Lars estava prestes a ir até o antigo açougue para adquirir o ingrediente chave para a surpresa quando Amy Jo e Wojtek Dragelski's Mazda 626 estacionou em uma vaga de estacionamento para hóspedes do lado de fora.",
+        "quote_last": ", e Lars estava prestes a ir até o antigo açougue para adquirir o ingrediente chave para a surpresa quando Amy Jo e Wojtek Dragelski’s Mazda 626 estacionou em uma vaga de estacionamento para hóspedes do lado de fora.",
         "title": "Cozinhas do Grande Centro-Oeste",
         "author": "J. Ryan Stradal",
         "sfw": "unknown"
@@ -313,7 +313,7 @@
         "id": "001496",
         "time": "10:00",
         "quote_time_case": "dez horas",
-        "quote_first": "Se quarta-feira chegasse! Ele veio, e exatamente quando poderia ser razoavelmente procurado. Chegou - estava tudo bem - e Catherine pisou no ar. Às ",
+        "quote_first": "Se quarta-feira chegasse! Ele veio, e exatamente quando poderia ser razoavelmente procurado. Chegou — estava tudo bem — e Catherine pisou no ar. Às ",
         "quote_last": ", a carruagem e quatro transportaram os dois da abadia; e, depois de uma viagem agradável de quase trinta quilômetros, entraram em Woodston, um vilarejo grande e populoso, em uma situação nada desagradável.",
         "title": "Abadia de Northanger",
         "author": "Jane Austen",
@@ -353,8 +353,8 @@
         "id": "001500",
         "time": "10:00",
         "quote_time_case": "Dez",
-        "quote_first": "O especialista suspirou. “Só um tolo como eu deixaria a porta aberta quando um motim pode ocorrer a qualquer momento, e só um tolo como eu diria sim para você,” disse ele. \"Que horas?\"<br>Apenas sua cabeça estava saindo pela porta parcialmente aberta. O dinheiro da bênção da fábrica de sorvetes deve ter entorpecido seu desejo de trabalhar, pensei.<br>\"",
-        "quote_last": ".\"<br>\"Dez e meia.\" Sem outra palavra, ele fechou a porta.",
+        "quote_first": "O especialista suspirou. “Só um tolo como eu deixaria a porta aberta quando um motim pode ocorrer a qualquer momento, e só um tolo como eu diria sim para você,” disse ele. “Que horas?”<br>Apenas sua cabeça estava saindo pela porta parcialmente aberta. O dinheiro da bênção da fábrica de sorvetes deve ter entorpecido seu desejo de trabalhar, pensei.<br>“",
+        "quote_last": ".”<br>“Dez e meia.” Sem outra palavra, ele fechou a porta.",
         "title": "Um pai obediente",
         "author": "Akhil Sharma",
         "sfw": "unknown"
@@ -364,7 +364,7 @@
         "time": "10:00",
         "quote_time_case": "dez horas",
         "quote_first": "O sábado imediatamente anterior aos exames foi um dia muito agitado para Kennedy. Às ",
-        "quote_last": " ele estava entrando no quarto de Willey; este último lhe deu uma chave e deixou o quarto vago por acordo prévio - na verdade, ele havia levado Olivia em outra viagem para procurar uma casa.",
+        "quote_last": " ele estava entrando no quarto de Willey; este último lhe deu uma chave e deixou o quarto vago por acordo prévio — na verdade, ele havia levado Olivia em outra viagem para procurar uma casa.",
         "title": "Os gregos têm uma palavra para isso",
         "author": "Barry Unsworth",
         "sfw": "unknown"

@@ -44,7 +44,7 @@
         "time": "09:00",
         "quote_time_case": "nueve en punto",
         "quote_first": "La tormenta se mantuvo hasta las ",
-        "quote_last": ", y para entonces Anderson estaba bastante seguro de que iban a tener una buena, lo que los havenitas llamaron \"un verdadero Jeezer\".",
+        "quote_last": ", y para entonces Anderson estaba bastante seguro de que iban a tener una buena, lo que los havenitas llamaron “un verdadero Jeezer.”",
         "title": "Los Tommyknockers",
         "author": "Stephen King",
         "sfw": "unknown"
@@ -84,7 +84,7 @@
         "time": "09:00",
         "quote_time_case": "nueve",
         "quote_first": "Se despertó a las ",
-        "quote_last": ", trabajó un rato en su habitación y luego dijo que tenía sueño. Fue a la cocina, preparó un poco de café y se lo bebió. Pero el café no ayudó.<br>“Creo que tomaré una siesta”, dijo. \"Escucho un zumbido en la parte posterior de mi cabeza\". Esas fueron sus últimas palabras. Se acurrucó en la cama, se durmió y nunca más despertó.",
+        "quote_last": ", trabajó un rato en su habitación y luego dijo que tenía sueño. Fue a la cocina, preparó un poco de café y se lo bebió. Pero el café no ayudó.<br>“Creo que tomaré una siesta”, dijo. “Escucho un zumbido en la parte posterior de mi cabeza”. Esas fueron sus últimas palabras. Se acurrucó en la cama, se durmió y nunca más despertó.",
         "title": "Sauce ciego, mujer dormida",
         "author": "Haruki Murakami",
         "sfw": "unknown"
@@ -124,7 +124,7 @@
         "time": "09:00",
         "quote_time_case": "nueve en punto",
         "quote_first": "Se está desarrollando una rutina de trabajo. Ayrs y yo estamos en la sala de música a las ",
-        "quote_last": " todas las mañanas, sus diversas dolencias y dolores se lo permiten. Me siento al piano, Ayrs en el diván, fumando sus viles cigarrillos turcos, y adoptamos uno de nuestros tres modi operandi. \"Revisiones\": me pide que repase el trabajo de la mañana anterior. Tarareo, canto o toco, según el instrumento, y Ayrs modifica la partitura.",
+        "quote_last": " todas las mañanas, sus diversas dolencias y dolores se lo permiten. Me siento al piano, Ayrs en el diván, fumando sus viles cigarrillos turcos, y adoptamos uno de nuestros tres modi operandi. “Revisiones”: me pide que repase el trabajo de la mañana anterior. Tarareo, canto o toco, según el instrumento, y Ayrs modifica la partitura.",
         "title": "Atlas de nubes",
         "author": "David Mitchell",
         "sfw": "unknown"
@@ -143,8 +143,8 @@
         "id": "001260",
         "time": "09:00",
         "quote_time_case": "nueve",
-        "quote_first": "\"No lo pienses más, viejo amigo\". La expresión familiar no tenía más familiaridad que la mano que rozó tranquilizadoramente mi hombro. \"Y no olvides que mañana por la mañana, a las ",
-        "quote_last": ", subiremos en el hidroavión\".",
+        "quote_first": "“No lo pienses más, viejo amigo”. La expresión familiar no tenía más familiaridad que la mano que rozó tranquilizadoramente mi hombro. “Y no olvides que mañana por la mañana, a las ",
+        "quote_last": ", subiremos en el hidroavión.”",
         "title": "El gran Gatsby",
         "author": "F. Scott Fitzgerald",
         "sfw": "unknown"
@@ -166,7 +166,7 @@
         "quote_first": "La Tierra fue creada el domingo 21 de octubre del año 4004 a.C., exactamente a las ",
         "quote_last": ", porque a Dios le gustaba trabajar temprano en la mañana mientras se sentía. fresco.",
         "title": "Buenos augurios",
-        "author": "Terry Pratchett and Neil Gaiman",
+        "author": "Terry Pratchett y Neil Gaiman",
         "sfw": "unknown"
     },
     {
@@ -174,7 +174,7 @@
         "time": "09:00",
         "quote_time_case": "nueve de la mañana",
         "quote_first": "Sólo ",
-        "quote_last": ", la cocina ya estaba llena de capacidad, cada rincón y encimera estaban ocupados por las creaciones gourmet de Marjan. Verduras marinadas (𝘵𝘰𝘳𝘴𝘩𝘪𝘴 de mango, berenjena y la variedad habitual de siete especias), empacadas hasta los bordes salados de botes transparentes de cinco galones, se encontraban en la isla de la cocina. Grandes tazones azules estaban llenos de ensaladas (lentejas angélica, tomate, pepino y menta, y pollo frito persa), 𝘥𝘰𝘭𝘮𝘦𝘩 y salsas (queso y nueces, yogur y pepino, baba ghanoush y hummus picante), que junto con el queso feta, Stilton y quesos cheddar, estaban cubiertos y apilados en el enorme frigorífico con puerta de cristal.",
+        "quote_last": ", la cocina ya estaba llena de capacidad, cada rincón y encimera estaban ocupados por las creaciones gourmet de Marjan. Verduras marinadas (<em>torshis</em> de mango, berenjena y la variedad habitual de siete especias), empacadas hasta los bordes salados de botes transparentes de cinco galones, se encontraban en la isla de la cocina. Grandes tazones azules estaban llenos de ensaladas (lentejas angélica, tomate, pepino y menta, y pollo frito persa), <em>dolmeh</em> y salsas (queso y nueces, yogur y pepino, baba ghanoush y hummus picante), que junto con el queso feta, Stilton y quesos cheddar, estaban cubiertos y apilados en el enorme frigorífico con puerta de cristal.",
         "title": "Sopa De Granada",
         "author": "Marsha Mehran",
         "sfw": "unknown"
@@ -264,7 +264,7 @@
         "time": "09:00",
         "quote_time_case": "nueve",
         "quote_first": "Una mosca zumbó y el reloj de la pared empezó a dar las campanadas. Después de que los ",
-        "quote_last": " trazos dorados se desvanecieran, el capitán del distrito comenzó. \"¿Cómo está Herr Coronel Marek?\"<br>\"Gracias, papá, está bien.\"<br>\"¿Aún tienes problemas en geometría?\"<br>\"Gracias, papá, un poco mejor.\"<br>\"Leer ¿Algún libro?\"<br>\"Sí señor, papá\".",
+        "quote_last": " trazos dorados se desvanecieran, el capitán del distrito comenzó. “¿Cómo está Herr Coronel Marek?”<br>“Gracias, papá, está bien.”<br>“¿Aún tienes problemas en geometría?”<br>“Gracias, papá, un poco mejor.”<br>“Leer ¿Algún libro?”<br>“Sí señor, papá.”",
         "title": "La Marcha Radetzky",
         "author": "Joseph Roth",
         "sfw": "unknown"
@@ -294,8 +294,8 @@
         "time": "09:00",
         "quote_time_case": "nueve",
         "quote_first": "Estaba desayunando a las ",
-        "quote_last": ", y por vigésima vez consultó su \"Bradshaw\" para ver a qué hora más temprana podría llegar el doctor Grantly desde Barchester.",
-        "title": "el guardián",
+        "quote_last": ", y por vigésima vez consultó su “Bradshaw” para ver a qué hora más temprana podría llegar el doctor Grantly desde Barchester.",
+        "title": "El guardián",
         "author": "Anthony Trollope",
         "sfw": "unknown"
     },

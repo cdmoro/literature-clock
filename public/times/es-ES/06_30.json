@@ -23,7 +23,7 @@
         "id": "000838",
         "time": "06:30",
         "quote_time_case": "seis y media de la mañana",
-        "quote_first": "Pero cuando te afeitas 𝘣𝘦𝘧𝘰𝘳𝘦 el desayuno como ella me pide que haga algunas mañanas— ",
+        "quote_first": "Pero cuando te afeitas <em>antes</em> el desayuno como ella me pide que haga algunas mañanas— ",
         "quote_last": " en una habitación con paredes blancas, lavabos blancos y luces de tubo largas en el techo asegurándote de que no haya sombras y caras a tu alrededor atrapadas gritando detrás de los espejos. Entonces, ¿qué posibilidades tienes contra una de sus máquinas?",
         "title": "Alguien voló sobre el nido del cuco",
         "author": "Ken Kesey",
@@ -45,7 +45,7 @@
         "quote_time_case": "6.30 am.",
         "quote_first": "Ahora dentro, ordenó MJ. Nos empujó a los tres hacia la habitación del hotel y luego cerró la puerta. Miré el reloj junto a la cama. ",
         "quote_last": " ¿Por qué despertaban a mamá y papá tan temprano?",
-        "title": "niña desaparecida",
+        "title": "Niña desaparecida",
         "author": "Sophie McKenzie",
         "sfw": "unknown"
     },
@@ -53,8 +53,8 @@
         "id": "000841",
         "time": "06:30",
         "quote_time_case": "seis y media",
-        "quote_first": "Daniel y los hombres del FBI escucharon los sonidos de su madre despertando a su padre. Daniel todavía sostenía el pomo de la puerta. Estaba listo para cerrar la puerta en el momento en que se lo ordenaron.<br>\"¿Qué hora es?\" dijo su padre con voz drogada.<br>\"Dios mío, son ",
-        "quote_last": "\", dijo su madre.",
+        "quote_first": "Daniel y los hombres del FBI escucharon los sonidos de su madre despertando a su padre. Daniel todavía sostenía el pomo de la puerta. Estaba listo para cerrar la puerta en el momento en que se lo ordenaron.<br>“¿Qué hora es?” dijo su padre con voz drogada.<br>“Dios mío, son ",
+        "quote_last": "”, dijo su madre.",
         "title": "El libro de Daniel",
         "author": "E.L. Doctorow",
         "sfw": "unknown"
@@ -64,7 +64,7 @@
         "time": "06:30",
         "quote_time_case": "seis y media",
         "quote_first": "Eran ",
-        "quote_last": ". Cuando llegó el llanto del bebé, no pudieron distinguirlo, y Sam, metiendo ansiosamente su rostro entre sus oídos, dijo: \"Escuchen, ahí, ahí, ese es el nuevo bebé\". Estaba rojo de alegría y éxito.",
+        "quote_last": ". Cuando llegó el llanto del bebé, no pudieron distinguirlo, y Sam, metiendo ansiosamente su rostro entre sus oídos, dijo: “Escuchen, ahí, ahí, ese es el nuevo bebé”. Estaba rojo de alegría y éxito.",
         "title": "El hombre que amaba a los niños",
         "author": "Christina Stead",
         "sfw": "unknown"
@@ -74,7 +74,7 @@
         "time": "06:30",
         "quote_time_case": "seis y media",
         "quote_first": "Hacía mucho frío sentado en la camioneta y después de un rato salió y caminó y se agitó con los brazos y golpeó con las botas. Luego volvió a subirse a la camioneta. El reloj del bar decía ",
-        "quote_last": "... A las ocho y media había decidido que era lo que tomaría para que llegara el taxi y eso es lo que haría. y puso en marcha el motor.",
+        "quote_last": "… A las ocho y media había decidido que era lo que tomaría para que llegara el taxi y eso es lo que haría. y puso en marcha el motor.",
         "title": "Ciudades de la Llanura",
         "author": "Cormac McCarthy",
         "sfw": "unknown"
@@ -85,7 +85,7 @@
         "quote_time_case": "las seis y media",
         "quote_first": "Nerviosamente se levantó de un salto y escuchó; la casa misma estaba tan silenciosa como siempre; Los pasos se habían retirado. A través de su ventana abierta de par en par, los brillantes rayos del sol de la mañana inundaban de luz su habitación. Miró el reloj; Eran ",
         "quote_last": ", demasiado temprano para que alguno de los miembros de la casa estuviera ya en movimiento.",
-        "title": "La pimpinela escarlata",
+        "title": "La Pimpinela Escarlata",
         "author": "Baroness Orczy",
         "sfw": "unknown"
     },

@@ -74,7 +74,7 @@
         "time": "01:00",
         "quote_time_case": "la una",
         "quote_first": "“No puedo hacerlo, Findle; ¡Estoy con alguien más! ¡Llámame mañana sobre ",
-        "quote_last": "!",
+        "quote_last": "!”",
         "title": "Este lado del paraíso",
         "author": "F. Scott Fitzgerald",
         "sfw": "unknown"
@@ -84,7 +84,7 @@
         "time": "01:00",
         "quote_time_case": "la una",
         "quote_first": "“Sobre ",
-        "quote_last": " se mudaron a Maxim's, y dos los encontraron en Deviniere's. Sloane había estado bebiendo consecutivamente y se encontraba en un estado de euforia inestable, pero Amory estaba bastante sobrio; No se habían topado con ninguno de esos viejos y corruptos compradores de champán que solían asistir a sus fiestas en Nueva York. \"",
+        "quote_last": " se mudaron a Maxim’s, y dos los encontraron en Deviniere’s. Sloane había estado bebiendo consecutivamente y se encontraba en un estado de euforia inestable, pero Amory estaba bastante sobrio; No se habían topado con ninguno de esos viejos y corruptos compradores de champán que solían asistir a sus fiestas en Nueva York.”",
         "title": "Este lado del paraíso",
         "author": "F. Scott Fitzgerald",
         "sfw": "unknown"
@@ -93,7 +93,7 @@
         "id": "000164",
         "time": "01:00",
         "quote_time_case": "golpeó uno",
-        "quote_first": "Cuanto más pensaba en ello, más perplejo estaba... No entendía este asunto del revólver...<br>Alguien en la casa tenía ese revólver...<br>Abajo, un reloj ",
+        "quote_first": "Cuanto más pensaba en ello, más perplejo estaba… No entendía este asunto del revólver…<br>Alguien en la casa tenía ese revólver…<br>Abajo, un reloj ",
         "quote_last": ".",
         "title": "Y luego no hubo ninguno",
         "author": "Agatha Christie",
@@ -153,8 +153,8 @@
         "id": "000170",
         "time": "01:00",
         "quote_time_case": "la una de la mañana",
-        "quote_first": "La estación estaba más llena de lo que esperaba encontrarla. ¿Qué era? miró el reloj -",
-        "quote_last": ". ¿Qué, en nombre de Dios, estaba haciendo en la estación de King's Cross a la una de la madrugada, sin un cigarrillo y sin una casa en la que razonablemente pudiera entrar sin ser asesinado a machetazos por un pájaro homicida?",
+        "quote_first": "La estación estaba más llena de lo que esperaba encontrarla. ¿Qué era? miró el reloj —",
+        "quote_last": ". ¿Qué, en nombre de Dios, estaba haciendo en la estación de King’s Cross a la una de la madrugada, sin un cigarrillo y sin una casa en la que razonablemente pudiera entrar sin ser asesinado a machetazos por un pájaro homicida?",
         "title": "La larga y oscura hora del té del alma",
         "author": "Douglas Adams",
         "sfw": "unknown"
