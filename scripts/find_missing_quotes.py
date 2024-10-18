@@ -25,19 +25,18 @@ def check_quotes(text):
     """ Returns the count of open and close quotes for single, double, and angular quotes """
     # Count single open quotes
     single_quotes_open_count = text.count(single_quote_open)
-    single_quotes_open_count = 0
     
     # Count single close quotes, ignoring valid contractions
     # We'll remove the valid contractions from the text first, then count the remaining single close quotes
     cleaned_text = re.sub(valid_contraction_pattern, '', text)
     single_quotes_close_count = cleaned_text.count(single_quote_close)
-    single_quotes_close_count = 0
     
     # Count double and angular quotes
     double_quotes_open_count = text.count(double_quote_open)
     double_quotes_close_count = text.count(double_quote_close)
     angular_quotes_open_count = text.count(angular_quote_open)
     angular_quotes_close_count = text.count(angular_quote_close)
+    
     
     return (single_quotes_open_count, single_quotes_close_count, 
             double_quotes_open_count, double_quotes_close_count, 
