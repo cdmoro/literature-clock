@@ -4,6 +4,7 @@ import csv
 print("Starting processing quotes...\n")
 
 def check_csv_files(directory):
+    total_errors = 0
     for file_name in os.listdir(directory):
         if file_name.endswith(".csv"):
             filepath = os.path.join(directory, file_name)
@@ -26,9 +27,12 @@ def check_csv_files(directory):
                     writer = csv.writer(csvfile)
                     writer.writerows(rows)
 
+            total_errors += errors
             print(f"- Errors found: {errors}\n")
+    return total_errors
 
 quotes_path = 'quotes/'
-check_csv_files(quotes_path)
+result = check_csv_files(quotes_path)
 
 print("Processing finished.")
+print(f"Errors found: {result}")
