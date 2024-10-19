@@ -79,6 +79,7 @@ blockquote p {
   font-size: 3.5vw;
   margin: 0 0 1rem;
   max-height: 60vh;
+  text-wrap: balance;
 }
 
 blockquote[aria-label]:before,
