@@ -24,6 +24,7 @@ export type Translations = {
   font: string;
   fr_FR: string;
   frame: string;
+  fullscreen_mode: string;
   gray: string;
   green: string;
   handwriting: string;
