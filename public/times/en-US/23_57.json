@@ -1,6 +1,6 @@
 [
     {
-        "id": "003571",
+        "id": "2357-000",
         "time": "23:57",
         "quote_time_case": "three minutes to midnight",
         "quote_first": "It said ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "003572",
+        "id": "2357-001",
         "time": "23:57",
         "quote_time_case": "Eleven fifty-seven",
         "quote_first": "",
@@ -18,5 +18,15 @@
         "title": "No Country for Old Men",
         "author": "Cormac McCarthy",
         "sfw": "unknown"
+    },
+    {
+        "id": "2357-002",
+        "time": "23:57",
+        "quote_time_case": "shortly before midnight",
+        "quote_first": "Lazara nailed him in his place with a silence of death. But he managed to overcome, ",
+        "quote_last": ", and fired him with a formal kiss.",
+        "title": "Twelve pilgrim stories",
+        "author": "Gabriel García Márquez",
+        "sfw": "sfw"
     }
 ]

@@ -1,6 +1,6 @@
 [
     {
-        "id": "001011",
+        "id": "0745-000",
         "time": "07:45",
         "quote_time_case": "huit heures moins le quart",
         "quote_first": "Quant à Koch, il passa une demi-heure chez l’orfèvre en bas, avant de s’approcher de la vieille femme et il le quitta à ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001012",
+        "id": "0745-001",
         "time": "07:45",
         "quote_time_case": "sept-quarante-cinq",
         "quote_first": "Ce matin, j’ai sorti la vedette pendant une quarantaine de minutes pour tester le moteur. Elle donne un peu de fil à retordre. Cela a duré ",
@@ -20,7 +20,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001013",
+        "id": "0745-002",
         "time": "07:45",
         "quote_time_case": "huit heures moins le quart",
         "quote_first": "Tony note les papiers jusqu’au ",
@@ -30,7 +30,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001014",
+        "id": "0745-003",
         "time": "07:45",
         "quote_time_case": "Seven-quarante-five",
         "quote_first": "",
@@ -40,7 +40,7 @@
         "sfw": "nsfw"
     },
     {
-        "id": "001015",
+        "id": "0745-004",
         "time": "07:45",
         "quote_time_case": "huit heures moins quinze",
         "quote_first": "Contrairement à son habitude d’être en retard, Pierre arriva ce jour-là chez les Berg, non pas à dix heures mais à ",
@@ -50,7 +50,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001016",
+        "id": "0745-005",
         "time": "07:45",
         "quote_time_case": "huit heures moins le quart",
         "quote_first": "M. Green est parti travailler à ",
@@ -60,7 +60,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001017",
+        "id": "0745-006",
         "time": "07:45",
         "quote_time_case": "7:45",
         "quote_first": "Il m’a appris que si je devais rencontrer quelqu’un pour un rendez-vous, je devais refuser de suivre la « stupide habitude humaine » de choisir arbitrairement une heure basée sur des intervalles de quinze minutes. « Ne rencontrez jamais de gens à ",
@@ -68,5 +68,15 @@
         "title": "Une fraction du tout",
         "author": "Steve Toltz",
         "sfw": "unknown"
+    },
+    {
+        "id": "0745-007",
+        "time": "07:45",
+        "quote_time_case": "sept et quarante-cinq",
+        "quote_first": "Je faisais mes exercices et je me demandais où j’aurais eu parce que c’était déjà ",
+        "quote_last": " ans et ce n’est toujours pas sorti.",
+        "title": "Détectives sauvages",
+        "author": "Roberto Bolaño",
+        "sfw": "sfw"
     }
 ]

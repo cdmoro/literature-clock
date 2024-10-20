@@ -1,6 +1,6 @@
 [
     {
-        "id": "000719",
+        "id": "0530-000",
         "time": "05:30",
         "quote_time_case": "cinco y media de la mañana",
         "quote_first": "“Cuando salieron del camino de entrada a las ",
@@ -10,7 +10,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000720",
+        "id": "0530-001",
         "time": "05:30",
         "quote_time_case": "cinco y media",
         "quote_first": "La levanta, la coloca en la cama y se acuesta a su lado. Él la besa de nuevo, tentativamente, prolongadamente. Luego pregunta qué hora es. Él mismo no tiene reloj. Lesje le dice que son ",
@@ -20,7 +20,7 @@
         "sfw": "nsfw"
     },
     {
-        "id": "000721",
+        "id": "0530-002",
         "time": "05:30",
         "quote_time_case": "las cinco y media",
         "quote_first": "Eran ",
@@ -30,7 +30,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000722",
+        "id": "0530-003",
         "time": "05:30",
         "quote_time_case": "cinco y media",
         "quote_first": "Si Thomas McGuire se hubiera detenido a admirar la fanfarria de las rayas azafrán, podría haberse perdido el principio del fin de su dominio sobre la tranquila ciudad costera. Pero, como solía ocurrir con los hombres de su temperamento, Thomas tenía poco tiempo para soñar despierto. El obstinado hombre de negocios había salido corriendo de su dura cama a las ",
@@ -40,7 +40,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000723",
+        "id": "0530-004",
         "time": "05:30",
         "quote_time_case": "5:30 de la mañana",
         "quote_first": "Cuando Braque y su hermano Randy eran niños, su mamá solía despertarlos a las ",
@@ -50,7 +50,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000724",
+        "id": "0530-005",
         "time": "05:30",
         "quote_time_case": "las cinco y media",
         "quote_first": "Gedeón ha sido muy diferente a Gedeón. Como Walter Eastman está preocupado, no ha tenido tiempo, o mejor dicho, ganas, de notar un comportamiento aberrante. Por ejemplo, son ",
@@ -60,7 +60,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000725",
+        "id": "0530-006",
         "time": "05:30",
         "quote_time_case": "las cinco y media",
         "quote_first": "Ya era ",
@@ -70,7 +70,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000726",
+        "id": "0530-007",
         "time": "05:30",
         "quote_time_case": "cinco y media",
         "quote_first": "El día que lo iban a matar, Santiago Nasar se levantó a las ",
@@ -78,5 +78,15 @@
         "title": "Crónica de una muerte anunciada",
         "author": "Gabriel García Márquez",
         "sfw": "unknown"
+    },
+    {
+        "id": "0530-008",
+        "time": "05:30",
+        "quote_time_case": "cinco y media",
+        "quote_first": "—Con lo cual —dijo Perico— le ocurre que una enana de la página veinte tiene dos metros cinco en la página cien. Me he percatado más de una vez. Hay escenas que empiezan a las seis de la tarde y acaban a las ",
+        "quote_last": ". Un asco.",
+        "title": "Rayuela",
+        "author": "Julio Cortázar",
+        "sfw": "sfw"
     }
 ]

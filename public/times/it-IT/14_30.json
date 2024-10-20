@@ -1,6 +1,6 @@
 [
     {
-        "id": "002164",
+        "id": "1430-000",
         "time": "14:30",
         "quote_time_case": "due e mezza",
         "quote_first": "Guardò l’orologio: ",
@@ -10,7 +10,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002165",
+        "id": "1430-001",
         "time": "14:30",
         "quote_time_case": "2:30",
         "quote_first": "Allora ho riaperto la porta, ho tirato fuori un pezzo di carta e una puntina da disegno e ho scritto:<br>Fuori brevemente. Ritorno per appuntamento alle ",
@@ -20,7 +20,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002166",
+        "id": "1430-002",
         "time": "14:30",
         "quote_time_case": "2:30",
         "quote_first": "Ah! Sono ",
@@ -30,7 +30,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002167",
+        "id": "1430-003",
         "time": "14:30",
         "quote_time_case": "14.30",
         "quote_first": "Alle ",
@@ -40,7 +40,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002168",
+        "id": "1430-004",
         "time": "14:30",
         "quote_time_case": "due e mezza",
         "quote_first": "Alle ",
@@ -50,7 +50,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002169",
+        "id": "1430-005",
         "time": "14:30",
         "quote_time_case": "due e mezza",
         "quote_first": "Erano le ",
@@ -60,7 +60,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002170",
+        "id": "1430-006",
         "time": "14:30",
         "quote_time_case": "due e mezza",
         "quote_first": "Erano le ",
@@ -70,7 +70,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002171",
+        "id": "1430-007",
         "time": "14:30",
         "quote_time_case": "2 e mezza",
         "quote_first": "14 maggio 1800. Wm e John partirono per lo Yorkshire dopo cena alle ",
@@ -78,5 +78,15 @@
         "title": "I diari di Dorothy Wordsworth",
         "author": "Dorothy Wordsworth",
         "sfw": "unknown"
+    },
+    {
+        "id": "1430-008",
+        "time": "14:30",
+        "quote_time_case": "due trenta del pomeriggio",
+        "quote_first": "Era doloroso risvegliarsi attraverso i ",
+        "quote_last": ", ma Oliveira aveva già le dita con le quali teneva le unghie, il sangue di Machucada iniziò a extravas, dando alle dita una cattiva aria di chipolato che era davvero disgustoso.",
+        "title": "Campana",
+        "author": "Julio Cortázar",
+        "sfw": "sfw"
     }
 ]

@@ -1,6 +1,6 @@
 [
     {
-        "id": "003573",
+        "id": "2358-000",
         "time": "23:58",
         "quote_time_case": "due minuti a mezzanotte",
         "quote_first": "Devi lasciare che il mondo vada all’inferno a modo suo, Gard, ",
@@ -10,13 +10,23 @@
         "sfw": "nsfw"
     },
     {
-        "id": "003574",
+        "id": "2358-001",
         "time": "23:58",
         "quote_time_case": "un minuto e diciassette secondi prima di mezzanotte",
         "quote_first": "Gli esseri umani emergono ",
         "quote_last": ". Tutta la nostra storia documentata, su questa scala, non durerebbe più di pochi secondi, una singola vita umana appena un istante.",
         "title": "Una breve storia di quasi tutto",
         "author": "Bill Bryson",
+        "sfw": "sfw"
+    },
+    {
+        "id": "2358-002",
+        "time": "23:58",
+        "quote_time_case": "poco prima di mezzanotte",
+        "quote_first": "Quindi, e ",
+        "quote_last": " sarebbe stato quando raggiungevamo il piede di uno sporco",
+        "title": "Don Quijote di La Mancha",
+        "author": "Miguel de Cervantes",
         "sfw": "sfw"
     }
 ]

@@ -1,6 +1,6 @@
 [
     {
-        "id": "001046",
+        "id": "0759-000",
         "time": "07:59",
         "quote_time_case": "huit heures moins une",
         "quote_first": "À ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001047",
+        "id": "0759-001",
         "time": "07:59",
         "quote_time_case": "huit heures, peut-être une minute avant",
         "quote_first": "C’était juste à ",
@@ -20,7 +20,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001048",
+        "id": "0759-002",
         "time": "07:59",
         "quote_time_case": "7.59",
         "quote_first": "J’avais passé cinquante-deux jours en 1958, mais ici il était ",
@@ -28,5 +28,15 @@
         "title": "22/11/63",
         "author": "Stephen King",
         "sfw": "unknown"
+    },
+    {
+        "id": "0759-003",
+        "time": "07:59",
+        "quote_time_case": "ce n’était pas encore huit",
+        "quote_first": "Un matin, je venais d’arriver à la maison et ",
+        "quote_last": ", j’ai trouvé que Don Octavio avait élevé, m’attendant dans la cuisine.",
+        "title": "Détectives sauvages",
+        "author": "Roberto Bolaño",
+        "sfw": "sfw"
     }
 ]

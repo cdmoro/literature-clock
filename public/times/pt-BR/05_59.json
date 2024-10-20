@@ -1,6 +1,6 @@
 [
     {
-        "id": "000777",
+        "id": "0559-000",
         "time": "05:59",
         "quote_time_case": "um minuto para as seis",
         "quote_first": "Às ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "000778",
+        "id": "0559-001",
         "time": "05:59",
         "quote_time_case": "antes do relógio bater seis horas",
         "quote_first": "As persianas da sala do canto sudeste foram as primeiras a serem levantadas. Era o quarto do antigo reitor. Ele estava lendo sua Bíblia ",
@@ -18,5 +18,15 @@
         "title": "O Martelo de Deus",
         "author": "Bo Giertz",
         "sfw": "unknown"
+    },
+    {
+        "id": "0559-002",
+        "time": "05:59",
+        "quote_time_case": "O amanhecer",
+        "quote_first": "",
+        "quote_last": " seria quando Don Quijote deixasse a venda, tão feliz, tão Gallardo, que se apressou por já estar armado, que a alegria o estourou pelas conchas do cavalo.",
+        "title": "Don Quijote de La Mancha",
+        "author": "Miguel de Cervantes",
+        "sfw": "sfw"
     }
 ]

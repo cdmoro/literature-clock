@@ -1,6 +1,6 @@
 [
     {
-        "id": "002924",
+        "id": "1930-000",
         "time": "19:30",
         "quote_time_case": "seven-thirty",
         "quote_first": "When the news was over, Anderson told Gardener she was going to bed.<br>“At ",
@@ -10,7 +10,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002925",
+        "id": "1930-001",
         "time": "19:30",
         "quote_time_case": "seven-thirty",
         "quote_first": "At ",
@@ -20,7 +20,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002926",
+        "id": "1930-002",
         "time": "19:30",
         "quote_time_case": "seven thirty",
         "quote_first": "I could see her eyeing the sweaty bottle of rosé. “Come out with me tonight, pretty please? My friend Jackie from Pilates is having a birthday party at a gay bar in the Village. I wasn’t going to go, but if you come with me it could be fun. It’s only ",
@@ -30,7 +30,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002927",
+        "id": "1930-003",
         "time": "19:30",
         "quote_time_case": "Seven-thirty",
         "quote_first": "",
@@ -40,7 +40,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002928",
+        "id": "1930-004",
         "time": "19:30",
         "quote_time_case": "seven-thirty",
         "quote_first": "Everybody turns in his chair and watches that butter sneak on down the wall, starting, hanging still, shooting ahead and leaving a shiny trail behind it on the pane. Nobody says a word. They look at the butter, then at the clock, then back at the butter. The clock’s moving now.<br>The butter makes it down to the floor about a half minute before ",
@@ -50,7 +50,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "002929",
+        "id": "1930-005",
         "time": "19:30",
         "quote_time_case": "half-past seven",
         "quote_first": "But now he was close — here was the house, here were the gates. Somewhere a clock beat a single chime. “What, is it really ",
@@ -60,7 +60,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002930",
+        "id": "1930-006",
         "time": "19:30",
         "quote_time_case": "7:30",
         "quote_first": "On July 25th, 8:30 a.m. the bitch Novaya dies whelping. At 10 o’clock she is lowered into her cool grave, at ",
@@ -70,7 +70,7 @@
         "sfw": "nsfw"
     },
     {
-        "id": "002931",
+        "id": "1930-007",
         "time": "19:30",
         "quote_time_case": "half-past seven",
         "quote_first": "The clock showed ",
@@ -80,7 +80,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002932",
+        "id": "1930-008",
         "time": "19:30",
         "quote_time_case": "7.30",
         "quote_first": "The telephone call came at ",
@@ -90,7 +90,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002933",
+        "id": "1930-009",
         "time": "19:30",
         "quote_time_case": "half past seven",
         "quote_first": "At ",
@@ -98,5 +98,15 @@
         "title": "The Hasheesh Eater",
         "author": "Fitz Hugh Ludlow",
         "sfw": "nsfw"
+    },
+    {
+        "id": "1930-010",
+        "time": "19:30",
+        "quote_time_case": "half past seven",
+        "quote_first": "It was already ",
+        "quote_last": ", and the cuca took out a polyverita and fixed her face with a gesture of clinic director, something between Madame Curie and Edwidge Feuillère.",
+        "title": "Hopscotch",
+        "author": "Julio Cortázar",
+        "sfw": "sfw"
     }
 ]

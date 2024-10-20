@@ -1,6 +1,6 @@
 [
     {
-        "id": "002924",
+        "id": "1930-000",
         "time": "19:30",
         "quote_time_case": "sette e mezzo",
         "quote_first": "Quando la notizia finì, Anderson disse a Gardener che sarebbe andata a letto.<br>“Alle ",
@@ -10,7 +10,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002925",
+        "id": "1930-001",
         "time": "19:30",
         "quote_time_case": "sette e mezza",
         "quote_first": "Alle ",
@@ -20,7 +20,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002926",
+        "id": "1930-002",
         "time": "19:30",
         "quote_time_case": "sette e mezza",
         "quote_first": "La vedevo fissare la bottiglia sudata di rosé. “Vieni fuori con me stasera, per favore? La mia amica Jackie di Pilates sta organizzando una festa di compleanno in un bar gay del Village. Non avevo intenzione di andare, ma se venissi con me potrebbe essere divertente. Sono solo le ",
@@ -30,7 +30,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002927",
+        "id": "1930-003",
         "time": "19:30",
         "quote_time_case": "Sette e mezza",
         "quote_first": "",
@@ -40,7 +40,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002928",
+        "id": "1930-004",
         "time": "19:30",
         "quote_time_case": "sette e mezzo",
         "quote_first": "Tutti si girano sulla sedia e guardano quel burro che scivola giù dal muro, sussulta, resta fermo, sfreccia in avanti e lascia dietro di sé una scia lucente sul vetro. Nessuno dice una parola. Guardano il burro, poi l’orologio, poi di nuovo il burro. Adesso l’orologio si muove.<br>Il burro arriva a terra circa mezzo minuto prima delle ",
@@ -50,7 +50,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "002929",
+        "id": "1930-005",
         "time": "19:30",
         "quote_time_case": "sette e mezza",
         "quote_first": "Ma ora era vicino: ecco la casa, ecco i cancelli. Da qualche parte un orologio batteva un unico rintocco. “Cosa, sono davvero ",
@@ -60,7 +60,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002930",
+        "id": "1930-006",
         "time": "19:30",
         "quote_time_case": "7:30",
         "quote_first": "Il 25 luglio alle 8:30 la cagna Novaya muore partorendo. Alle 10 viene calata nella sua fresca tomba, alle ",
@@ -70,7 +70,7 @@
         "sfw": "nsfw"
     },
     {
-        "id": "002931",
+        "id": "1930-007",
         "time": "19:30",
         "quote_time_case": "sette e mezza",
         "quote_first": "L’orologio segnava ",
@@ -80,7 +80,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002932",
+        "id": "1930-008",
         "time": "19:30",
         "quote_time_case": "7.30",
         "quote_first": "La telefonata arrivò alle ",
@@ -90,7 +90,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002933",
+        "id": "1930-009",
         "time": "19:30",
         "quote_time_case": "sette e mezza",
         "quote_first": "Alle ",
@@ -98,5 +98,15 @@
         "title": "Il mangiatore di Hasheesh",
         "author": "Fitz Hugh Ludlow",
         "sfw": "nsfw"
+    },
+    {
+        "id": "1930-010",
+        "time": "19:30",
+        "quote_time_case": "metà delle sette",
+        "quote_first": "Erano già la ",
+        "quote_last": " e la CUCA tirò fuori una poliverita e fissò la sua faccia con un gesto di direttore della clinica, qualcosa tra Madame Curie e Edwidge Feuillère.",
+        "title": "Campana",
+        "author": "Julio Cortázar",
+        "sfw": "sfw"
     }
 ]

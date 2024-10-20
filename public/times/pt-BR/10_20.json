@@ -1,6 +1,6 @@
 [
     {
-        "id": "001555",
+        "id": "1020-000",
         "time": "10:20",
         "quote_time_case": "dez e vinte minutos",
         "quote_first": "Eles chegaram em Brides of Bombay às ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001556",
+        "id": "1020-001",
         "time": "10:20",
         "quote_time_case": "10h20",
         "quote_first": "Às ",
@@ -20,7 +20,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001557",
+        "id": "1020-002",
         "time": "10:20",
         "quote_time_case": "Dez vinte",
         "quote_first": "Um vento de maio, inchando como um pedaço de fruta, com casca áspera, polpa viscosa, dezenas de sementes. A carne se abriu no ar, espirrando sementes como chumbo grosso na pele nua dos meus braços, deixando para trás um leve traço de dor.<br>“Que horas são?” meu primo me perguntou. Cerca de 20 centímetros mais baixo que eu, ele tinha que olhar para cima enquanto falava.<br>Olhei meu relógio. “",
@@ -30,7 +30,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001558",
+        "id": "1020-003",
         "time": "10:20",
         "quote_time_case": "Em vinte minutos",
         "quote_first": "Por volta das dez horas, os primeiros pequenos flocos de neve caíram e pousaram no braço de Jill. Dez minutos depois eles estavam caindo bastante. ",
@@ -38,5 +38,15 @@
         "title": "A cadeira prateada",
         "author": "C.S. Lewis",
         "sfw": "unknown"
+    },
+    {
+        "id": "1020-004",
+        "time": "10:20",
+        "quote_time_case": "dez e vinte da manhã",
+        "quote_first": "Na segunda-feira, às ",
+        "quote_last": ", Amarara estava usando Aureliano José, quando ele percebeu um tropel remoto e um toque de corneta",
+        "title": "100 anos de solidão",
+        "author": "Gabriel García Márquez",
+        "sfw": "sfw"
     }
 ]

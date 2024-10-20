@@ -1,6 +1,6 @@
 [
     {
-        "id": "003571",
+        "id": "2357-000",
         "time": "23:57",
         "quote_time_case": "três minutos para meia-noite",
         "quote_first": "Dizia ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "003572",
+        "id": "2357-001",
         "time": "23:57",
         "quote_time_case": "Onze e cinquenta e sete",
         "quote_first": "",
@@ -18,5 +18,15 @@
         "title": "Onde os Fracos Não Tem Vez",
         "author": "Cormac McCarthy",
         "sfw": "unknown"
+    },
+    {
+        "id": "2357-002",
+        "time": "23:57",
+        "quote_time_case": "pouco antes da meia-noite",
+        "quote_first": "Lazara o pregou em seu lugar com um silêncio da morte. Mas ele conseguiu superar, ",
+        "quote_last": ", e o demitiu com um beijo formal.",
+        "title": "Doze histórias de peregrinos",
+        "author": "Gabriel García Márquez",
+        "sfw": "sfw"
     }
 ]

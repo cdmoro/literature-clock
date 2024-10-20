@@ -1,6 +1,6 @@
 [
     {
-        "id": "000448",
+        "id": "0304-000",
         "time": "03:04",
         "quote_time_case": "3.04",
         "quote_first": "Il regarda son horloge de première ligne sur la table de chevet et remarqua qu’elle s’était arrêtée à ",
@@ -8,5 +8,15 @@
         "title": "Le retour du maître à danser",
         "author": "Henning Mankell",
         "sfw": "unknown"
+    },
+    {
+        "id": "0304-001",
+        "time": "03:04",
+        "quote_time_case": "près de trois heures",
+        "quote_first": "Je voulais, je dis, qu’être déjà englouti et être ",
+        "quote_last": " de la nuit, aller avec la bougie de victimes hautes",
+        "title": "Don Quijote de La Mancha",
+        "author": "Miguel de Cervantes",
+        "sfw": "sfw"
     }
 ]

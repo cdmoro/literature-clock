@@ -1,6 +1,6 @@
 [
     {
-        "id": "001555",
+        "id": "1020-000",
         "time": "10:20",
         "quote_time_case": "las diez y veinte minutos",
         "quote_first": "Llegaron a las afueras de Brides of Bombay a ",
@@ -10,17 +10,17 @@
         "sfw": "sfw"
     },
     {
-        "id": "001556",
+        "id": "1020-001",
         "time": "10:20",
         "quote_time_case": "10:20",
         "quote_first": "A las ",
-        "quote_last": " se escuchó un suave golpe en la puerta y, como el hada madrina, reapareció el Sr. Harrison.<br>“Espero que ambos hayan disfrutado de una buena noche de sueño,” aventuró.<br>“No podría haberlo hecho mejor,” dijo William, después de terminar su café. <br>No hay muchas posibilidades de que eso suceda cuando estás casada con un hombre de las cavernas, quiso decirle Beth, pero se guardó sus pensamientos para sí misma.",
+        "quote_last": " se escuchó un suave golpe en la puerta y, como el hada madrina, reapareció el Sr. Harrison.<br>“Espero que ambos hayan disfrutado de una buena noche de sueño,” aventuró.<br>“No podría haberlo hecho mejor,” dijo William, después de terminar su café.<br>No hay muchas posibilidades de que eso suceda cuando estás casada con un hombre de las cavernas, quiso decirle Beth, pero se guardó sus pensamientos para sí misma.",
         "title": "Oculto a plena vista",
         "author": "Jeffrey Archer",
         "sfw": "sfw"
     },
     {
-        "id": "001557",
+        "id": "1020-002",
         "time": "10:20",
         "quote_time_case": "Diez veinte",
         "quote_first": "Un viento de mayo, hinchado como un trozo de fruta, con piel exterior áspera, pulpa viscosa, decenas de semillas. La carne se abrió en el aire, rociando semillas como suaves perdigones en la piel desnuda de mis brazos, dejando un leve rastro de dolor.<br>“¿Qué hora es?” me preguntó mi prima. Aproximadamente veinte centímetros más bajo que yo, tenía que mirar hacia arriba cuando hablaba.<br>Miré mi reloj. “",
@@ -30,7 +30,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001558",
+        "id": "1020-003",
         "time": "10:20",
         "quote_time_case": "En veinte minutos",
         "quote_first": "Alrededor de las diez, los primeros pequeños copos de nieve cayeron y se posaron en el brazo de Jill. Diez minutos más tarde caían con bastante fuerza. ",
@@ -38,5 +38,15 @@
         "title": "La silla plateada",
         "author": "C.S. Lewis",
         "sfw": "unknown"
+    },
+    {
+        "id": "1020-004",
+        "time": "10:20",
+        "quote_time_case": "diez y veinte de la mañana",
+        "quote_first": "Un lunes, a las ",
+        "quote_last": ", Amaranta estaba vistiendo a Aureliano José, cuando percibió un tropel remoto y un toque de corneta",
+        "title": "100 años de soledad",
+        "author": "Gabriel García Márquez",
+        "sfw": "sfw"
     }
 ]

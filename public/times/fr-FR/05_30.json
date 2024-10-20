@@ -1,6 +1,6 @@
 [
     {
-        "id": "000719",
+        "id": "0530-000",
         "time": "05:30",
         "quote_time_case": "cinq heures trente du matin",
         "quote_first": "«Quand ils sortirent de l’allée à ",
@@ -10,7 +10,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000720",
+        "id": "0530-001",
         "time": "05:30",
         "quote_time_case": "cinq heures trente",
         "quote_first": "Il la soulève, la pose sur le lit, s’allonge à côté d’elle. Il l’embrasse à nouveau, timidement, longuement. Puis il demande quelle heure il est. Lui-même n’a pas de montre. Lesje lui dit qu’il est ",
@@ -20,7 +20,7 @@
         "sfw": "nsfw"
     },
     {
-        "id": "000721",
+        "id": "0530-002",
         "time": "05:30",
         "quote_time_case": "cinq heures et demie",
         "quote_first": "Il était ",
@@ -30,7 +30,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000722",
+        "id": "0530-003",
         "time": "05:30",
         "quote_time_case": "cinq heures trente",
         "quote_first": "Si Thomas McGuire s’était arrêté pour admirer la fanfare des rayons safran, il aurait peut-être manqué le début de la fin de son règne sur cette ville balnéaire endormie. Mais comme c’était souvent le cas des hommes de son tempérament, Thomas avait peu de temps pour la rêverie. L’homme d’affaires obstiné était sorti de son lit dur à ",
@@ -40,7 +40,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000723",
+        "id": "0530-004",
         "time": "05:30",
         "quote_time_case": "5h30 du matin",
         "quote_first": "Quand Braque et son frère Randy étaient enfants, leur mère les réveillait à ",
@@ -50,7 +50,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000724",
+        "id": "0530-005",
         "time": "05:30",
         "quote_time_case": "cinq heures et demie",
         "quote_first": "Gideon est très différent de Gideon. Comme Walter Eastman est lui-même préoccupé, il n’a pas eu le temps, ni plus précisément l’envie, de remarquer un comportement aberrant. Par exemple, il est ",
@@ -60,7 +60,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000725",
+        "id": "0530-006",
         "time": "05:30",
         "quote_time_case": "cinq heures et demie",
         "quote_first": "Il était alors ",
@@ -70,7 +70,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000726",
+        "id": "0530-007",
         "time": "05:30",
         "quote_time_case": "cinq heures trente",
         "quote_first": "Le jour où ils allaient le tuer, Santiago Nasar s’est levé à ",
@@ -78,5 +78,15 @@
         "title": "Chronique d’une mort annoncée",
         "author": "Gabriel García Márquez",
         "sfw": "unknown"
+    },
+    {
+        "id": "0530-008",
+        "time": "05:30",
+        "quote_time_case": "cinq heures et demie",
+        "quote_first": "« Avec quoi », a déclaré Perico, « il arrive qu’un nain de la page vingt ait deux mètres cinq sur la centaine. J’ai remarqué plus d’une fois. Il y a des scènes qui commencent à six dans l’après-midi et se terminent à ",
+        "quote_last": ". Un dégoût. »",
+        "title": "Marelle",
+        "author": "Julio Cortázar",
+        "sfw": "sfw"
     }
 ]

@@ -1,6 +1,6 @@
 [
     {
-        "id": "000719",
+        "id": "0530-000",
         "time": "05:30",
         "quote_time_case": "cinco e meia da manhã",
         "quote_first": "“Quando eles saíram da garagem às ",
@@ -10,7 +10,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000720",
+        "id": "0530-001",
         "time": "05:30",
         "quote_time_case": "cinco e meia",
         "quote_first": "Ele a pega, coloca-a na cama e deita-se ao lado dela. Ele a beija novamente, hesitantemente, demoradamente. Então ele pergunta que horas são. Ele próprio não tem relógio. Lesje diz a ele que são ",
@@ -20,7 +20,7 @@
         "sfw": "nsfw"
     },
     {
-        "id": "000721",
+        "id": "0530-002",
         "time": "05:30",
         "quote_time_case": "cinco e meia",
         "quote_first": "Eram ",
@@ -30,7 +30,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000722",
+        "id": "0530-003",
         "time": "05:30",
         "quote_time_case": "cinco e meia",
         "quote_first": "Se Thomas McGuire tivesse parado para admirar a fanfarra dos raios açafrão, ele poderia ter perdido o início do fim de seu governo sobre a pacata cidade litorânea. Mas, como acontecia frequentemente com homens com o seu temperamento, Thomas tinha pouco tempo para devaneios. O obstinado empresário havia saído de sua cama dura às ",
@@ -40,7 +40,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000723",
+        "id": "0530-004",
         "time": "05:30",
         "quote_time_case": "5h30 da manhã",
         "quote_first": "Quando Braque e seu irmão Randy eram crianças, sua mãe costumava acordá-los às ",
@@ -50,7 +50,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000724",
+        "id": "0530-005",
         "time": "05:30",
         "quote_time_case": "cinco e meia",
         "quote_first": "Gideon tem sido muito diferente de Gideon. Como o próprio Walter Eastman está preocupado, ele não teve tempo, ou, mais precisamente, inclinação, para perceber um comportamento aberrante. Por exemplo, são ",
@@ -60,7 +60,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000725",
+        "id": "0530-006",
         "time": "05:30",
         "quote_time_case": "cinco e meia",
         "quote_first": "Já era essa hora ",
@@ -70,7 +70,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000726",
+        "id": "0530-007",
         "time": "05:30",
         "quote_time_case": "cinco e meia",
         "quote_first": "No dia em que iam matá-lo, Santiago Nasar levantou-se às ",
@@ -78,5 +78,15 @@
         "title": "Crônica de uma morte anunciada",
         "author": "Gabriel García Márquez",
         "sfw": "unknown"
+    },
+    {
+        "id": "0530-008",
+        "time": "05:30",
+        "quote_time_case": "cinco e meia",
+        "quote_first": "“Com o qual”, disse Perico, “acontece que um anão da página vinte tem dois metros cinco na cem página. Eu notei mais de uma vez. Há cenas que começam às seis da tarde e terminam nas ",
+        "quote_last": ". Um nojo.”",
+        "title": "Amarelinha",
+        "author": "Julio Cortázar",
+        "sfw": "sfw"
     }
 ]

@@ -1,6 +1,6 @@
 [
     {
-        "id": "000777",
+        "id": "0559-000",
         "time": "05:59",
         "quote_time_case": "sei meno un minuto",
         "quote_first": "Alle ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "000778",
+        "id": "0559-001",
         "time": "05:59",
         "quote_time_case": "prima che l’orologio segnasse le sei",
         "quote_first": "Le persiane della stanza d’angolo a sud-est furono le prime ad essere alzate. Era la camera da letto del vecchio rettore. Stava leggendo la Bibbia ",
@@ -18,5 +18,15 @@
         "title": "Il martello di Dio",
         "author": "Bo Giertz",
         "sfw": "unknown"
+    },
+    {
+        "id": "0559-002",
+        "time": "05:59",
+        "quote_time_case": "L’alba",
+        "quote_first": "",
+        "quote_last": " sarebbe quando Don Quijote lasciò la vendita, così felice, così Gallardo, così affrettata ad essere già un gentiluomo armato, che la gioia lo fece scoppiare per le proiettili del cavallo.",
+        "title": "Don Quijote di La Mancha",
+        "author": "Miguel de Cervantes",
+        "sfw": "sfw"
     }
 ]

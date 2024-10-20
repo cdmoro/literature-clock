@@ -14,12 +14,12 @@ def generate_id(df):
         time_str = time_value.replace(":", "")
         
         if time_str not in counter:
-            counter[time_str] = 1
+            counter[time_str] = 0
         else:
             counter[time_str] += 1
         
-        # Generate the ID with the four additional digits
-        new_id = f"{time_str}{counter[time_str]:04d}"
+        # Generate the ID with the three additional digits
+        new_id = f"{time_str}-{counter[time_str]:03d}"
         ids.append(new_id)
     
     # Add the new 'id' column to the DataFrame
@@ -44,4 +44,4 @@ for file_name in os.listdir(folder_path):
         # Save the CSV with the new column
         df_with_id.to_csv(file_path, index=False)
 
-print("Columns 'Id' added successfully.")
+print("Column 'Id' added successfully.")

@@ -1,6 +1,6 @@
 [
     {
-        "id": "002087",
+        "id": "1359-000",
         "time": "13:59",
         "quote_time_case": "Uno… cinquantanove",
         "quote_first": "Per venti minuti rimase seduto e osservò mentre il divario tra la nave ed Epun si chiudeva, mentre il computer della nave elaborava e calcolava i numeri che l’avrebbero portata in un circuito attorno alla piccola luna, e avrebbero chiuso il circuito e l’avrebbero mantenuta lì, in orbita in perpetuo. oscurità. “",
@@ -8,5 +8,15 @@
         "title": "Addio e grazie per tutto il pesce",
         "author": "Douglas Adams",
         "sfw": "unknown"
+    },
+    {
+        "id": "1359-001",
+        "time": "13:59",
+        "quote_time_case": "circa due del pomeriggio",
+        "quote_first": "In ",
+        "quote_last": " abbiamo pranzo. Don Miguel che sostiene il piatto in un cassetto del cherosene, io all’angolo di un libro occupato con libri, la donna grassa in cucina e Don Gaetano al bancone.",
+        "title": "Il giocattolo rabbioso",
+        "author": "Roberto Arlt",
+        "sfw": "sfw"
     }
 ]
