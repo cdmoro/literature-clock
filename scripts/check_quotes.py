@@ -13,18 +13,23 @@ def check_csv_files(directory):
             print(f"Processing {file_name}...")
 
             with open(filepath, 'r', newline='', encoding="cp437") as csvfile:
-                reader = csv.reader(csvfile)
+                reader = csv.DictReader(csvfile)
                 rows = list(reader)
+                print(f'- Lines: {len(rows) + 1}')  # +1 to include the header
 
-                print(f'- Lines: {len(rows)}')
+                # Loop through the rows and update the 'Quote time' if needed
+                for row in rows:
+                    if 'Quote time' in row and 'Quote' in row:
+                        if row['Quote time'] not in row['Quote']:
+                            errors += 1
+                            if not row['Quote time'].startswith('*'):
+                                row['Quote time'] = "* " + row['Quote time']
 
-                for row in rows[1:]:
-                    if len(row) >= 3 and row[1] not in row[2]:
-                        errors += 1
-                        if not row[1].startswith('*'):
-                            row[1] = "* " + row[1]
+                # Write the updated rows back to the file
+                fieldnames = reader.fieldnames  # Preserve the original column names
                 with open(filepath, 'w', newline='', encoding="cp437") as csvfile:
-                    writer = csv.writer(csvfile)
+                    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                    writer.writeheader()
                     writer.writerows(rows)
 
             total_errors += errors
