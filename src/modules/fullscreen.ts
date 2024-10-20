@@ -1,7 +1,12 @@
 import { updateBooleanSettingButtonStatus } from "../utils/settings";
 
 export function initFullscreen() {
-    document.getElementById("fullscreen")?.addEventListener("click", toggleFullscreen);
+    const fullscreenBtn = document.getElementById("fullscreen");
+    if (document.fullscreenEnabled) {
+        fullscreenBtn?.addEventListener("click", toggleFullscreen);
+    } else {
+        fullscreenBtn?.remove();
+    }
 }
 
 function toggleFullscreen() {
