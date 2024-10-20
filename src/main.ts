@@ -10,6 +10,7 @@ import { initFadeMode } from "./modules/fade";
 import { initTimeMode } from "./modules/time";
 import { initCopy } from "./modules/copy";
 import { initShare } from "./modules/share";
+import { initFullscreen } from "./modules/fullscreen";
 
 document.addEventListener("DOMContentLoaded", () => {
   updateFavicon();
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initClock();
   initCopy();
   initShare();
+  initFullscreen();
 
   document.addEventListener("mousemove", onMouseMove);
   document.body.removeAttribute("data-loading");
