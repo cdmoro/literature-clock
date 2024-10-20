@@ -23,6 +23,8 @@ function prefetchNextQuotes(locale: string) {
 
 async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
   const fileName = time.replace(":", "_");
+  const urlParams = new URLSearchParams(window.location.search);
+
   try {
     const response = await fetch(`../times/${locale}/${fileName}.json`);
 
@@ -32,7 +34,7 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
 
     let quotes = (await response.json()) as Quote[];
 
-    if (isBooleanSettingTrue("work")) {
+    if (isBooleanSettingTrue("work") && !urlParams.get("index")) {
       quotes = quotes.filter((q) => q.sfw !== "nsfw");
     }
 
@@ -66,6 +68,8 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
       quoteIndex = urlParamsIndex;
     }
   }
+
+  console.log(quotes)
 
   const quote = Object.assign({}, quotes[quoteIndex]) as ResolvedQuote;
   quote.index = quoteIndex;
