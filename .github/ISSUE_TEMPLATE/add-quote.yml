@@ -7,11 +7,16 @@ body:
   - type: markdown
     attributes:
       value: "# Add quote"
-  - type: input
+  - type: dropdown
     id: locale
     attributes:
       label: Locale
-      placeholder: "en-US"
+      options:
+        - en-US
+        - es-ES
+        - pt-BR
+        - fr-FR
+        - it-IT
     validations:
       required: true
   - type: input
