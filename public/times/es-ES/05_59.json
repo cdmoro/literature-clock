@@ -1,6 +1,6 @@
 [
     {
-        "id": "000777",
+        "id": "0559-000",
         "time": "05:59",
         "quote_time_case": "un minuto para las seis",
         "quote_first": "A ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "000778",
+        "id": "0559-001",
         "time": "05:59",
         "quote_time_case": "antes de que el reloj marcara las seis",
         "quote_first": "Las persianas de la habitación de la esquina sureste fueron las primeras en levantarse. Era el dormitorio del viejo rector. Estaba leyendo su Biblia ",
@@ -18,5 +18,15 @@
         "title": "El martillo de Dios",
         "author": "Bo Giertz",
         "sfw": "unknown"
+    },
+    {
+        "id": "0559-002",
+        "time": "05:59",
+        "quote_time_case": "La del alba",
+        "quote_first": "",
+        "quote_last": " sería cuando don Quijote salió de la venta, tan contento, tan gallardo, tan alborozado por verse ya armado caballero, que el gozo le reventaba por las cinchas del caballo.",
+        "title": "Don Quijote de la Mancha",
+        "author": "Miguel de Cervantes",
+        "sfw": "sfw"
     }
 ]

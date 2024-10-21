@@ -64,7 +64,7 @@ for file_name in file_list:
 
                 # Construct the data dictionary
                 entry = {
-                    'id': f'{(index + 2):06}',
+                    'id': row['Id'],
                     'time': row['Time'],
                     'quote_time_case': row['Quote time'],
                     'quote_first': quote_first,

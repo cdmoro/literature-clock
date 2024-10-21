@@ -1,6 +1,6 @@
 [
     {
-        "id": "002087",
+        "id": "1359-000",
         "time": "13:59",
         "quote_time_case": "Um… cinquenta e nove",
         "quote_first": "Durante vinte minutos ele ficou sentado observando enquanto a distância entre a nave e Epun diminuía, enquanto o computador da nave provocava e amassava os números que a colocariam em um círculo ao redor da pequena lua, e fecharia o círculo e a manteria ali, orbitando em perpétua lua. obscuridade. “",
@@ -8,5 +8,15 @@
         "title": "Adeus e obrigado pelos peixes",
         "author": "Douglas Adams",
         "sfw": "unknown"
+    },
+    {
+        "id": "1359-001",
+        "time": "13:59",
+        "quote_time_case": "aproximadamente duas da tarde",
+        "quote_first": "Em ",
+        "quote_last": ", almoçamos. Don Miguel apoiando o prato em uma gaveta de querosene, eu no ângulo de um livro ocupado com livros, a mulher gorda na cozinha e Don Gaetano no balcão.",
+        "title": "O brinquedo raivoso",
+        "author": "Roberto Arlt",
+        "sfw": "sfw"
     }
 ]

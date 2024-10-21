@@ -1,6 +1,6 @@
 [
     {
-        "id": "003573",
+        "id": "2358-000",
         "time": "23:58",
         "quote_time_case": "minuit moins deux minutes",
         "quote_first": "Tu dois laisser le monde aller en enfer à sa manière, Gard, ",
@@ -10,13 +10,23 @@
         "sfw": "nsfw"
     },
     {
-        "id": "003574",
+        "id": "2358-001",
         "time": "23:58",
         "quote_time_case": "une minute et dix-sept secondes avant minuit",
         "quote_first": "Les humains émergent ",
         "quote_last": ". L’ensemble de notre histoire enregistrée, à cette échelle, ne durerait que quelques secondes, une vie humaine à peine un instant.",
         "title": "Une brève histoire de presque tout",
         "author": "Bill Bryson",
+        "sfw": "sfw"
+    },
+    {
+        "id": "2358-002",
+        "time": "23:58",
+        "quote_time_case": "peu avant minuit",
+        "quote_first": "Ainsi, et ",
+        "quote_last": ", ce serait quand nous avons atteint le pied d’une très saleté",
+        "title": "Don Quichotte de la Manche",
+        "author": "Miguel de Cervantes",
         "sfw": "sfw"
     }
 ]

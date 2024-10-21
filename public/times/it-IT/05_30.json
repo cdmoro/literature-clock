@@ -1,6 +1,6 @@
 [
     {
-        "id": "000719",
+        "id": "0530-000",
         "time": "05:30",
         "quote_time_case": "cinque e mezza del mattino",
         "quote_first": "“Quando uscirono dal vialetto alle ",
@@ -10,7 +10,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000720",
+        "id": "0530-001",
         "time": "05:30",
         "quote_time_case": "cinque e mezza",
         "quote_first": "La prende in braccio, la mette sul letto, si sdraia accanto a lei. La bacia di nuovo, timidamente, a lungo. Poi chiede che ore sono. Lui stesso non ha orologio. Lesje gli dice che sono ",
@@ -20,7 +20,7 @@
         "sfw": "nsfw"
     },
     {
-        "id": "000721",
+        "id": "0530-002",
         "time": "05:30",
         "quote_time_case": "cinque e mezza",
         "quote_first": "Erano ",
@@ -30,7 +30,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000722",
+        "id": "0530-003",
         "time": "05:30",
         "quote_time_case": "cinque e mezza",
         "quote_first": "Se Thomas McGuire si fosse fermato ad ammirare la fanfara dei raggi color zafferano, avrebbe potuto perdersi l’inizio della fine del suo governo sulla sonnolenta cittadina balneare. Ma come spesso accadeva agli uomini del suo temperamento, Thomas aveva poco tempo per sognare ad occhi aperti. L’ostinato uomo d’affari si era alzato dal suo duro letto alle ",
@@ -40,7 +40,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000723",
+        "id": "0530-004",
         "time": "05:30",
         "quote_time_case": "5:30 del mattino",
         "quote_first": "Quando Braque e suo fratello Randy erano bambini, la loro mamma li svegliava alle ",
@@ -50,7 +50,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000724",
+        "id": "0530-005",
         "time": "05:30",
         "quote_time_case": "cinque e mezza",
         "quote_first": "Gideon è stato molto diverso da Gideon. Poiché anche Walter Eastman è preoccupato, non ha avuto il tempo, o più precisamente, la voglia, di notare un comportamento aberrante. Ad esempio sono le ",
@@ -60,7 +60,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000725",
+        "id": "0530-006",
         "time": "05:30",
         "quote_time_case": "cinque e mezza",
         "quote_first": "Erano ormai le ",
@@ -70,7 +70,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000726",
+        "id": "0530-007",
         "time": "05:30",
         "quote_time_case": "cinque e mezza",
         "quote_first": "Il giorno in cui lo avrebbero ucciso, Santiago Nasar si alzò del mattino alle ",
@@ -78,5 +78,15 @@
         "title": "Cronaca di una morte annunciata",
         "author": "Gabriel García Márquez",
         "sfw": "unknown"
+    },
+    {
+        "id": "0530-008",
+        "time": "05:30",
+        "quote_time_case": "cinque e mezza",
+        "quote_first": "“Con il quale”, disse Perico, “succede che un nano della pagina venti abbia due metri cinque sulla cento page. Ho notato più di una volta. Ci sono scene che iniziano alle sei del pomeriggio e finiscono alle ",
+        "quote_last": ". Un disgusto.”",
+        "title": "Il gioto del mondo",
+        "author": "Julio Cortázar",
+        "sfw": "sfw"
     }
 ]

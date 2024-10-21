@@ -1,6 +1,6 @@
 [
     {
-        "id": "000078",
+        "id": "0012-000",
         "time": "00:12",
         "quote_time_case": "0 Hours, 12 Minutes",
         "quote_first": "Clock time is ",
@@ -10,7 +10,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000079",
+        "id": "0012-001",
         "time": "00:12",
         "quote_time_case": "twelve minutes past midnight",
         "quote_first": "It was ",

@@ -1,6 +1,6 @@
 [
     {
-        "id": "001046",
+        "id": "0759-000",
         "time": "07:59",
         "quote_time_case": "one minute to eight",
         "quote_first": "At ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001047",
+        "id": "0759-001",
         "time": "07:59",
         "quote_time_case": "eight o’clock, maybe a minute before",
         "quote_first": "It was right at ",
@@ -20,7 +20,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001048",
+        "id": "0759-002",
         "time": "07:59",
         "quote_time_case": "7.59",
         "quote_first": "I’d spent fifty two days in 1958, but here it was ",
@@ -28,5 +28,15 @@
         "title": "11/22/63",
         "author": "Stephen King",
         "sfw": "unknown"
+    },
+    {
+        "id": "0759-003",
+        "time": "07:59",
+        "quote_time_case": "it was not yet eight",
+        "quote_first": "One morning, I had just arrived at the house and ",
+        "quote_last": ", I found Don Octavio raised, waiting for me in the kitchen.",
+        "title": "Wild detectives",
+        "author": "Roberto Bolaño",
+        "sfw": "sfw"
     }
 ]
