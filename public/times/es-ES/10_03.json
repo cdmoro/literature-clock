@@ -1,6 +1,6 @@
 [
     {
-        "id": "001510",
+        "id": "1003-000",
         "time": "10:03",
         "quote_time_case": "tres minutos y [diez]",
         "quote_first": "Pasa el edificio del FBI a las ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001511",
+        "id": "1003-001",
         "time": "10:03",
         "quote_time_case": "10.03",
         "quote_first": "Son las ",
@@ -20,7 +20,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001512",
+        "id": "1003-002",
         "time": "10:03",
         "quote_time_case": "10.03",
         "quote_first": "La fecha era el 14 de mayo y el reloj de su escritorio decía que eran las diez y veintitrés minutos, por lo que marcó los números 10.23. Al menos, eso es lo que pretendía hacer. De hecho, escribió los números ",

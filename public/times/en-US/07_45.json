@@ -1,6 +1,6 @@
 [
     {
-        "id": "001011",
+        "id": "0745-000",
         "time": "07:45",
         "quote_time_case": "quarter to eight",
         "quote_first": "As for Koch, he spent half an hour at the silversmith’s below, before he went up to the old woman and he left him at exactly a ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001012",
+        "id": "0745-001",
         "time": "07:45",
         "quote_time_case": "seven-forty-five",
         "quote_first": "This morning I took the launch out for forty minutes or so to test the engine. She’s been giving a bit of trouble. That took from ",
@@ -20,7 +20,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001013",
+        "id": "0745-002",
         "time": "07:45",
         "quote_time_case": "quarter to eight",
         "quote_first": "Tony marks papers until ",
@@ -30,7 +30,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001014",
+        "id": "0745-003",
         "time": "07:45",
         "quote_time_case": "Seven-forty-five",
         "quote_first": "",
@@ -40,7 +40,7 @@
         "sfw": "nsfw"
     },
     {
-        "id": "001015",
+        "id": "0745-004",
         "time": "07:45",
         "quote_time_case": "fifteen minutes to eight",
         "quote_first": "Contrary to his habit of being late, Pierre on that day arrived at the Bergs’ house, not at ten but at ",
@@ -50,7 +50,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001016",
+        "id": "0745-005",
         "time": "07:45",
         "quote_time_case": "quarter to eight",
         "quote_first": "Mr. Green left for work at a ",
@@ -60,7 +60,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001017",
+        "id": "0745-006",
         "time": "07:45",
         "quote_time_case": "7:45",
         "quote_first": "He taught me that if I had to meet someone for an appointment, I must refuse to follow the “stupid human habit” of arbitrarily choosing a time based on fifteen-minute intervals. “Never meet people at ",
@@ -68,5 +68,15 @@
         "title": "A Fraction of the Whole",
         "author": "Steve Toltz",
         "sfw": "unknown"
+    },
+    {
+        "id": "0745-007",
+        "time": "07:45",
+        "quote_time_case": "seven and forty -five",
+        "quote_first": "I was doing my exercises and wondering where I would have gotten because it was already ",
+        "quote_last": " and it still didn’t come out.",
+        "title": "Wild detectives",
+        "author": "Roberto Bolaño",
+        "sfw": "sfw"
     }
 ]

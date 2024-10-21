@@ -1,6 +1,6 @@
 [
     {
-        "id": "001528",
+        "id": "1010-000",
         "time": "10:10",
         "quote_time_case": "diez y diez minutos",
         "quote_first": "A las ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001529",
+        "id": "1010-001",
         "time": "10:10",
         "quote_time_case": "10:10",
         "quote_first": "A las ",
@@ -20,7 +20,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001530",
+        "id": "1010-002",
         "time": "10:10",
         "quote_time_case": "10:10 A.M.",
         "quote_first": "",
@@ -30,7 +30,7 @@
         "sfw": "nsfw"
     },
     {
-        "id": "001531",
+        "id": "1010-003",
         "time": "10:10",
         "quote_time_case": "10:10",
         "quote_first": "",
@@ -40,7 +40,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001532",
+        "id": "1010-004",
         "time": "10:10",
         "quote_time_case": "diez minutos y 10",
         "quote_first": "El sábado por la mañana era luminoso y soleado, y a las ",
@@ -50,7 +50,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001533",
+        "id": "1010-005",
         "time": "10:10",
         "quote_time_case": "Diez minutos después",
         "quote_first": "Alrededor de las diez, los primeros pequeños copos de nieve cayeron y se posaron en el brazo de Jill. ",

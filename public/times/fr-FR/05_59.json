@@ -1,6 +1,6 @@
 [
     {
-        "id": "000777",
+        "id": "0559-000",
         "time": "05:59",
         "quote_time_case": "une minute moins six",
         "quote_first": "À ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "000778",
+        "id": "0559-001",
         "time": "05:59",
         "quote_time_case": "avant que l’horloge ne sonne six heures",
         "quote_first": "Les stores de la pièce d’angle au sud-est furent les premiers à être relevés. C’était la chambre de l’ancien recteur. Il lisait sa Bible ",
@@ -18,5 +18,15 @@
         "title": "Le marteau de Dieu",
         "author": "Bo Giertz",
         "sfw": "unknown"
+    },
+    {
+        "id": "0559-002",
+        "time": "05:59",
+        "quote_time_case": "L’aube",
+        "quote_first": "",
+        "quote_last": " serait lorsque Don Quijote a quitté la vente, si heureuse, si Gallardo, si précipitée pour être déjà un gentleman armé, que la joie l’a éclaté pour les coquilles du cheval.",
+        "title": "Don Quichotte de la Manche",
+        "author": "Miguel de Cervantes",
+        "sfw": "sfw"
     }
 ]

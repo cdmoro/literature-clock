@@ -1,6 +1,6 @@
 [
     {
-        "id": "003043",
+        "id": "2010-000",
         "time": "20:10",
         "quote_time_case": "otto e dieci minuti",
         "quote_first": "Sono le ",
@@ -10,7 +10,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "003044",
+        "id": "2010-001",
         "time": "20:10",
         "quote_time_case": "20:10",
         "quote_first": "",
@@ -20,7 +20,7 @@
         "sfw": "nsfw"
     },
     {
-        "id": "003045",
+        "id": "2010-002",
         "time": "20:10",
         "quote_time_case": "2010h.",
         "quote_first": "Alle ",

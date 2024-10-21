@@ -1,6 +1,6 @@
 [
     {
-        "id": "001409",
+        "id": "0945-000",
         "time": "09:45",
         "quote_time_case": "las diez menos cuarto",
         "quote_first": "A ",
@@ -10,7 +10,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001410",
+        "id": "0945-001",
         "time": "09:45",
         "quote_time_case": "las diez menos cuarto",
         "quote_first": "Miró el reloj en la mesa de noche y vio que eran ",
@@ -20,7 +20,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001411",
+        "id": "0945-002",
         "time": "09:45",
         "quote_time_case": "9.45",
         "quote_first": "9.15, 9.30, ",

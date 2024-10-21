@@ -1,6 +1,6 @@
 [
     {
-        "id": "001046",
+        "id": "0759-000",
         "time": "07:59",
         "quote_time_case": "otto meno un minuto",
         "quote_first": "Alle ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001047",
+        "id": "0759-001",
         "time": "07:59",
         "quote_time_case": "otto, forse un minuto prima",
         "quote_first": "Erano esattamente le ",
@@ -20,7 +20,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001048",
+        "id": "0759-002",
         "time": "07:59",
         "quote_time_case": "7.59",
         "quote_first": "Avevo trascorso cinquantadue giorni nel 1958, ma eccolo qui ",
@@ -28,5 +28,15 @@
         "title": "22/11/63",
         "author": "Stephen King",
         "sfw": "unknown"
+    },
+    {
+        "id": "0759-003",
+        "time": "07:59",
+        "quote_time_case": "non erano ancora otto",
+        "quote_first": "Una mattina, ero appena arrivato a casa e ",
+        "quote_last": ", ho trovato Don Octavio cresciuto, aspettandomi in cucina.",
+        "title": "Detective selvagge",
+        "author": "Roberto Bolaño",
+        "sfw": "sfw"
     }
 ]

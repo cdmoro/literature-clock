@@ -1,6 +1,6 @@
 [
     {
-        "id": "002924",
+        "id": "1930-000",
         "time": "19:30",
         "quote_time_case": "sete e meia",
         "quote_first": "Quando a notícia acabou, Anderson disse a Gardener que estava indo para a cama.<br>“Às ",
@@ -10,7 +10,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002925",
+        "id": "1930-001",
         "time": "19:30",
         "quote_time_case": "sete e meia",
         "quote_first": "Às ",
@@ -20,7 +20,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002926",
+        "id": "1930-002",
         "time": "19:30",
         "quote_time_case": "sete e meia",
         "quote_first": "Eu podia vê-la olhando para a suada garrafa de rosé. “Saia comigo esta noite, por favor? Minha amiga Jackie, do Pilates, está dando uma festa de aniversário em um bar gay no Village. Eu não ia, mas se você vier comigo pode ser divertido. São apenas ",
@@ -30,7 +30,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002927",
+        "id": "1930-003",
         "time": "19:30",
         "quote_time_case": "Sete e meia",
         "quote_first": "",
@@ -40,7 +40,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002928",
+        "id": "1930-004",
         "time": "19:30",
         "quote_time_case": "sete e meia",
         "quote_first": "Todo mundo se vira na cadeira e observa aquela manteiga deslizar pela parede, começando, ficando imóvel, disparando para frente e deixando um rastro brilhante na vidraça. Ninguém diz uma palavra. Eles olham para a manteiga, depois para o relógio e depois novamente para a manteiga. O relógio está se movendo agora.<br>A manteiga chega ao chão cerca de meio minuto antes de ",
@@ -50,7 +50,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "002929",
+        "id": "1930-005",
         "time": "19:30",
         "quote_time_case": "sete e meia",
         "quote_first": "Mas agora ele estava perto – aqui estava a casa, aqui estavam os portões. Em algum lugar, um relógio bateu uma única badalada. “O quê, é mesmo ",
@@ -60,7 +60,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002930",
+        "id": "1930-006",
         "time": "19:30",
         "quote_time_case": "7:30",
         "quote_first": "No dia 25 de julho, às 8h30, a cadela Novaya morre ao dar à luz. Às 10 horas ela é baixada em seu túmulo fresco, às ",
@@ -70,7 +70,7 @@
         "sfw": "nsfw"
     },
     {
-        "id": "002931",
+        "id": "1930-007",
         "time": "19:30",
         "quote_time_case": "sete e meia",
         "quote_first": "O relógio marcava ",
@@ -80,7 +80,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002932",
+        "id": "1930-008",
         "time": "19:30",
         "quote_time_case": "7h30",
         "quote_first": "O telefonema ocorreu às ",
@@ -90,7 +90,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002933",
+        "id": "1930-009",
         "time": "19:30",
         "quote_time_case": "sete e meia",
         "quote_first": "Às ",
@@ -98,5 +98,15 @@
         "title": "O comedor de haxixe",
         "author": "Fitz Hugh Ludlow",
         "sfw": "nsfw"
+    },
+    {
+        "id": "1930-010",
+        "time": "19:30",
+        "quote_time_case": "sete e meia",
+        "quote_first": "Já era ",
+        "quote_last": ", e a Cuca pegou uma Polyverita e fixou o rosto com um gesto de diretor da clínica, algo entre Madame Curie e Edwidge Feuillère.",
+        "title": "O Jogo do Mundo",
+        "author": "Julio Cortázar",
+        "sfw": "sfw"
     }
 ]

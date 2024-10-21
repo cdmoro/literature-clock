@@ -1,6 +1,6 @@
 [
     {
-        "id": "003571",
+        "id": "2357-000",
         "time": "23:57",
         "quote_time_case": "minuit avant trois minutes",
         "quote_first": "Il était écrit ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "003572",
+        "id": "2357-001",
         "time": "23:57",
         "quote_time_case": "Onze cinquante-sept",
         "quote_first": "",
@@ -18,5 +18,15 @@
         "title": "Il n’y a pas de pays pour les vieillards",
         "author": "Cormac McCarthy",
         "sfw": "unknown"
+    },
+    {
+        "id": "2357-002",
+        "time": "23:57",
+        "quote_time_case": "peu de temps avant minuit",
+        "quote_first": "Lazara l’a cloué à sa place avec un silence de mort. Mais il a réussi à surmonter, ",
+        "quote_last": ", et l’a licencié avec un baiser officiel.",
+        "title": "Douze histoires de pèlerins",
+        "author": "Gabriel García Márquez",
+        "sfw": "sfw"
     }
 ]

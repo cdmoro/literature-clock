@@ -1,6 +1,6 @@
 [
     {
-        "id": "001011",
+        "id": "0745-000",
         "time": "07:45",
         "quote_time_case": "um quarto para as oito",
         "quote_first": "Quanto a Koch, ele passou meia hora na ourivesaria lá embaixo, antes de se aproximar da velha e deixá-lo exatamente às ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001012",
+        "id": "0745-001",
         "time": "07:45",
         "quote_time_case": "sete-quarenta e cinco",
         "quote_first": "Esta manhã tirei a lancha por cerca de quarenta minutos para testar o motor. Ela está dando alguns problemas. Isso durou de ",
@@ -20,7 +20,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001013",
+        "id": "0745-002",
         "time": "07:45",
         "quote_time_case": "um quarto para as oito",
         "quote_first": "Tony marca os papéis até ",
@@ -30,7 +30,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001014",
+        "id": "0745-003",
         "time": "07:45",
         "quote_time_case": "Sete-quarenta e cinco",
         "quote_first": "",
@@ -40,7 +40,7 @@
         "sfw": "nsfw"
     },
     {
-        "id": "001015",
+        "id": "0745-004",
         "time": "07:45",
         "quote_time_case": "quinze minutos para as oito",
         "quote_first": "Contrariando seu hábito de se atrasar, Pierre naquele dia chegou à casa dos Berg, não às dez, mas às ",
@@ -50,7 +50,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001016",
+        "id": "0745-005",
         "time": "07:45",
         "quote_time_case": "um quarto para as oito",
         "quote_first": "O Sr. Green saiu para trabalhar às ",
@@ -60,7 +60,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001017",
+        "id": "0745-006",
         "time": "07:45",
         "quote_time_case": "7:45",
         "quote_first": "Ele me ensinou que, se eu tivesse que encontrar alguém para um compromisso, deveria me recusar a seguir o “hábito humano estúpido” de escolher arbitrariamente um horário com base em intervalos de quinze minutos. “Nunca conheça pessoas às ",
@@ -68,5 +68,15 @@
         "title": "Uma fração do todo",
         "author": "Steve Toltz",
         "sfw": "unknown"
+    },
+    {
+        "id": "0745-007",
+        "time": "07:45",
+        "quote_time_case": "sete e quarenta-cinco",
+        "quote_first": "Eu estava fazendo meus exercícios e me perguntando onde teria chegado porque já tinha ",
+        "quote_last": " e ainda não saiu.",
+        "title": "Detetives selvagens",
+        "author": "Roberto Bolaño",
+        "sfw": "sfw"
     }
 ]

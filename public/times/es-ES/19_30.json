@@ -1,6 +1,6 @@
 [
     {
-        "id": "002924",
+        "id": "1930-000",
         "time": "19:30",
         "quote_time_case": "siete y media",
         "quote_first": "Cuando terminaron las noticias, Anderson le dijo a Gardener que se iba a la cama.<br>“¿A las ",
@@ -10,7 +10,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002925",
+        "id": "1930-001",
         "time": "19:30",
         "quote_time_case": "siete y media",
         "quote_first": "A las ",
@@ -20,7 +20,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002926",
+        "id": "1930-002",
         "time": "19:30",
         "quote_time_case": "siete y media",
         "quote_first": "Pude verla mirando la botella sudorosa de rosado. “Sal conmigo esta noche, ¿por favor? Mi amiga Jackie de Pilates está celebrando una fiesta de cumpleaños en un bar gay del Village. No iba a ir, pero si vienes conmigo podría ser divertido. Son sólo ",
@@ -30,7 +30,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002927",
+        "id": "1930-003",
         "time": "19:30",
         "quote_time_case": "Siete y media",
         "quote_first": "",
@@ -40,7 +40,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002928",
+        "id": "1930-004",
         "time": "19:30",
         "quote_time_case": "siete y media",
         "quote_first": "Todos se giran en sus sillas y observan cómo la mantequilla se desliza por la pared, comienza a moverse, se queda quieta, avanza y deja un rastro brillante en el cristal. Nadie dice una palabra. Miran la mantequilla, luego el reloj y luego otra vez la mantequilla. El reloj se está moviendo ahora.<br>La mantequilla llega al suelo aproximadamente medio minuto antes de ",
@@ -50,7 +50,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "002929",
+        "id": "1930-005",
         "time": "19:30",
         "quote_time_case": "las siete y media",
         "quote_first": "Pero ahora estaba cerca: aquí estaba la casa, aquí estaban las puertas. En algún lugar, un reloj hizo sonar una sola campana. “¿Qué, realmente son ",
@@ -60,7 +60,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002930",
+        "id": "1930-006",
         "time": "19:30",
         "quote_time_case": "7:30",
         "quote_first": "El 25 de julio a las 8:30 horas la perra Novaya muere al dar a luz. A las 10 en punto la bajan a su fresca tumba, a las ",
@@ -70,7 +70,7 @@
         "sfw": "nsfw"
     },
     {
-        "id": "002931",
+        "id": "1930-007",
         "time": "19:30",
         "quote_time_case": "las siete y media",
         "quote_first": "El reloj marcaba ",
@@ -80,7 +80,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002932",
+        "id": "1930-008",
         "time": "19:30",
         "quote_time_case": "7.30",
         "quote_first": "La llamada telefónica se produjo a las ",
@@ -90,7 +90,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002933",
+        "id": "1930-009",
         "time": "19:30",
         "quote_time_case": "siete y media",
         "quote_first": "A las ",
@@ -98,5 +98,15 @@
         "title": "El comedor de hachís",
         "author": "Fitz Hugh Ludlow",
         "sfw": "nsfw"
+    },
+    {
+        "id": "1930-010",
+        "time": "19:30",
+        "quote_time_case": "siete y media",
+        "quote_first": "Ya eran las ",
+        "quote_last": ", y la Cuca sacaba una polverita y se arreglaba la cara con un gesto de directora de clínica, algo entre Madame Curie y Edwidge Feuillère.",
+        "title": "Rayuela",
+        "author": "Julio Cortázar",
+        "sfw": "sfw"
     }
 ]

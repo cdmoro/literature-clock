@@ -1,6 +1,6 @@
 [
     {
-        "id": "000171",
+        "id": "0101-000",
         "time": "01:01",
         "quote_time_case": "Vers une heure",
         "quote_first": "Quelle heure est-il maintenant ? dit-elle.<br>« ",
@@ -10,7 +10,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000172",
+        "id": "0101-001",
         "time": "01:01",
         "quote_time_case": "une heure et une minute",
         "quote_first": "C’est ainsi qu’à ",

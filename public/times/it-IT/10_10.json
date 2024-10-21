@@ -1,6 +1,6 @@
 [
     {
-        "id": "001528",
+        "id": "1010-000",
         "time": "10:10",
         "quote_time_case": "dieci e dieci minuti",
         "quote_first": "Alle ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001529",
+        "id": "1010-001",
         "time": "10:10",
         "quote_time_case": "10:10",
         "quote_first": "Alle ",
@@ -20,7 +20,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001530",
+        "id": "1010-002",
         "time": "10:10",
         "quote_time_case": "10:10",
         "quote_first": "",
@@ -30,7 +30,7 @@
         "sfw": "nsfw"
     },
     {
-        "id": "001531",
+        "id": "1010-003",
         "time": "10:10",
         "quote_time_case": "10:10",
         "quote_first": "",
@@ -40,7 +40,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001532",
+        "id": "1010-004",
         "time": "10:10",
         "quote_time_case": "10 e dieci minuti",
         "quote_first": "Sabato mattina era luminoso e soleggiato e alle ",
@@ -50,7 +50,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "001533",
+        "id": "1010-005",
         "time": "10:10",
         "quote_time_case": "Dieci minuti dopo",
         "quote_first": "Verso le dieci i primi minuscoli fiocchi di neve scesero lentamente e si posarono sul braccio di Jill. ",

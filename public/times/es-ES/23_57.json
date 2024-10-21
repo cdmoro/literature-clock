@@ -1,6 +1,6 @@
 [
     {
-        "id": "003571",
+        "id": "2357-000",
         "time": "23:57",
         "quote_time_case": "tres minutos para la medianoche",
         "quote_first": "Decía ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "003572",
+        "id": "2357-001",
         "time": "23:57",
         "quote_time_case": "Once cincuenta y siete",
         "quote_first": "",
@@ -18,5 +18,15 @@
         "title": "No es país para viejos",
         "author": "Cormac McCarthy",
         "sfw": "unknown"
+    },
+    {
+        "id": "2357-002",
+        "time": "23:57",
+        "quote_time_case": "poco antes de la media noche",
+        "quote_first": "Lazara lo clavó en su sitio con un silencio de muerte. Pero logró sobreponerse, ",
+        "quote_last": ", y lo despidió con un beso formal.",
+        "title": "Doce cuentos peregrinos",
+        "author": "Gabriel García Márquez",
+        "sfw": "sfw"
     }
 ]

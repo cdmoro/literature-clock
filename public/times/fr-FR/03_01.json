@@ -1,6 +1,6 @@
 [
     {
-        "id": "000442",
+        "id": "0301-000",
         "time": "03:01",
         "quote_time_case": "3h01",
         "quote_first": "À ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "000443",
+        "id": "0301-001",
         "time": "03:01",
         "quote_time_case": "vers trois heures du matin",
         "quote_first": "Hier, à ",
@@ -20,7 +20,7 @@
         "sfw": "nsfw"
     },
     {
-        "id": "000444",
+        "id": "0301-002",
         "time": "03:01",
         "quote_time_case": "environ trois heures",
         "quote_first": "Il était maintenant ",
@@ -30,7 +30,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000445",
+        "id": "0301-003",
         "time": "03:01",
         "quote_time_case": "Trois heures passées",
         "quote_first": "Je ne vais pas rester allongée ici, pensa-t-elle, et laisser ma vie être ruinée ! Et lorsqu’elle entendit : « Dieu vous souhaite le bonjour, mes maîtres ! ",

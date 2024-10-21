@@ -1,6 +1,6 @@
 [
     {
-        "id": "000442",
+        "id": "0301-000",
         "time": "03:01",
         "quote_time_case": "3:01 a.m.",
         "quote_first": "A las ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "000443",
+        "id": "0301-001",
         "time": "03:01",
         "quote_time_case": "alrededor de las tres de la mañana",
         "quote_first": "Ayer, a las ",
@@ -20,7 +20,7 @@
         "sfw": "nsfw"
     },
     {
-        "id": "000444",
+        "id": "0301-002",
         "time": "03:01",
         "quote_time_case": "cerca de las tres",
         "quote_first": "Ya eran ",
@@ -30,7 +30,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "000445",
+        "id": "0301-003",
         "time": "03:01",
         "quote_time_case": "Pasadas de las tres",
         "quote_first": "¡No voy a quedarme aquí tumbada, pensó, y dejar que mi vida se arruine! Y cuando escuchó: “¡Dios os dé buenos días, amos míos! ",

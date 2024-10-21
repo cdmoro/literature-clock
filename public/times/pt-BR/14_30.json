@@ -1,6 +1,6 @@
 [
     {
-        "id": "002164",
+        "id": "1430-000",
         "time": "14:30",
         "quote_time_case": "duas e meia",
         "quote_first": "Ela olhou para o relógio: ",
@@ -10,7 +10,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002165",
+        "id": "1430-001",
         "time": "14:30",
         "quote_time_case": "2:30",
         "quote_first": "Então abri a porta novamente, peguei um pedaço de papel e um percevejo e escrevi:<br>Saia brevemente. Retorno para consulta às ",
@@ -20,7 +20,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002166",
+        "id": "1430-002",
         "time": "14:30",
         "quote_time_case": "2:30",
         "quote_first": "Ah! É ",
@@ -30,7 +30,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002167",
+        "id": "1430-003",
         "time": "14:30",
         "quote_time_case": "14h30",
         "quote_first": "Às ",
@@ -40,7 +40,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002168",
+        "id": "1430-004",
         "time": "14:30",
         "quote_time_case": "duas e meia",
         "quote_first": "Às ",
@@ -50,7 +50,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002169",
+        "id": "1430-005",
         "time": "14:30",
         "quote_time_case": "duas e meia",
         "quote_first": "Eram ",
@@ -60,7 +60,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002170",
+        "id": "1430-006",
         "time": "14:30",
         "quote_time_case": "duas e meia",
         "quote_first": "Eram ",
@@ -70,7 +70,7 @@
         "sfw": "unknown"
     },
     {
-        "id": "002171",
+        "id": "1430-007",
         "time": "14:30",
         "quote_time_case": "14h00 e meia",
         "quote_first": "14 de maio de 1800. Wm e John partiram para Yorkshire depois do jantar às ",
@@ -78,5 +78,15 @@
         "title": "Os Diários de Dorothy Wordsworth",
         "author": "Dorothy Wordsworth",
         "sfw": "unknown"
+    },
+    {
+        "id": "1430-008",
+        "time": "14:30",
+        "quote_time_case": "dois trinta da tarde",
+        "quote_first": "Era doloroso despertar ",
+        "quote_last": ", mas Oliveira já tinha os dedos com os quais segurava as unhas, o sangue de Machucada começou a extrair, dando aos dedos um ar ruim que era realmente nojento.",
+        "title": "O Jogo do Mundo",
+        "author": "Julio Cortázar",
+        "sfw": "sfw"
     }
 ]

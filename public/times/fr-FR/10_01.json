@@ -1,6 +1,6 @@
 [
     {
-        "id": "001503",
+        "id": "1001-000",
         "time": "10:01",
         "quote_time_case": "10:01",
         "quote_first": "« Bien, allez-y », dit sèchement le directeur. « Faites-moi votre rapport dès qu’ils sont prêts, mais laissez le briefing final au dernier moment possible, et, Matt, je ne veux pas d’hélicoptères avant le ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001504",
+        "id": "1001-001",
         "time": "10:01",
         "quote_time_case": "dix heures dix",
         "quote_first": "Il entra dans le domaine vitré de l’avocat à ",
@@ -20,7 +20,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001505",
+        "id": "1001-002",
         "time": "10:01",
         "quote_time_case": "10h01",
         "quote_first": "",
@@ -30,7 +30,7 @@
         "sfw": "nsfw"
     },
     {
-        "id": "001506",
+        "id": "1001-003",
         "time": "10:01",
         "quote_time_case": "10h01",
         "quote_first": "",
@@ -40,7 +40,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "001507",
+        "id": "1001-004",
         "time": "10:01",
         "quote_time_case": "environ dix heures",
         "quote_first": "À ",

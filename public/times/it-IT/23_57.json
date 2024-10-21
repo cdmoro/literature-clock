@@ -1,6 +1,6 @@
 [
     {
-        "id": "003571",
+        "id": "2357-000",
         "time": "23:57",
         "quote_time_case": "tre minuti a mezzanotte",
         "quote_first": "Diceva ",
@@ -10,7 +10,7 @@
         "sfw": "sfw"
     },
     {
-        "id": "003572",
+        "id": "2357-001",
         "time": "23:57",
         "quote_time_case": "Undici e cinquantasette",
         "quote_first": "",
@@ -18,5 +18,15 @@
         "title": "Non è un paese per vecchi",
         "author": "Cormac McCarthy",
         "sfw": "unknown"
+    },
+    {
+        "id": "2357-002",
+        "time": "23:57",
+        "quote_time_case": "poco prima di mezzanotte",
+        "quote_first": "Lazara lo inchiodò al suo posto con un silenzio di morte. Ma è riuscito a superare, ",
+        "quote_last": ", e lo ha sparato con un bacio formale.",
+        "title": "Dodici storie di pellegrini",
+        "author": "Gabriel García Márquez",
+        "sfw": "sfw"
     }
 ]

@@ -1,6 +1,6 @@
 [
     {
-        "id": "002087",
+        "id": "1359-000",
         "time": "13:59",
         "quote_time_case": "One … fifty-nine",
         "quote_first": "For twenty minutes he sat and watched as the gap between the ship and Epun closed, as the ship’s computer teased and kneaded the numbers that would bring it into a loop around the little moon, and close the loop and keep it there, orbiting in perpetual obscurity. “",
@@ -8,5 +8,15 @@
         "title": "So Long, and Thanks for All the Fish",
         "author": "Douglas Adams",
         "sfw": "unknown"
+    },
+    {
+        "id": "1359-001",
+        "time": "13:59",
+        "quote_time_case": "approximately two in the afternoon",
+        "quote_first": "At ",
+        "quote_last": " we have lunch. Don Miguel supporting the dish in a kerosene drawer, I at the angle of a book occupied with books, the fat woman in the kitchen and Don Gaetano at the counter.",
+        "title": "The rabid toy",
+        "author": "Roberto Arlt",
+        "sfw": "sfw"
     }
 ]
