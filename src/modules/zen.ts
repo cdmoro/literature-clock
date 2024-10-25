@@ -1,24 +1,9 @@
-import {
-  initBooleanSetting,
-  setBooleanSetting,
-  toggleBooleanSetting,
-  updateBooleanSettingButtonStatus,
-  updateURL,
-} from '../utils/settings';
 import { exitScreensaverMode } from './screensaver';
+import { store } from '../store';
 
-export function initZenMode(defaultValue: boolean = false) {
-  const value = initBooleanSetting('zen', defaultValue);
-  setBooleanSetting('zen', value);
-  updateBooleanSettingButtonStatus('zen', value);
-
+export function initZenMode() {
   document.getElementById('zen')?.addEventListener('click', () => {
-    const isZenMode = toggleBooleanSetting('zen');
-
-    setBooleanSetting('zen', isZenMode);
-    updateURL('zen', isZenMode);
-    updateBooleanSettingButtonStatus('zen', isZenMode);
-
+    const isZenMode = store.toggleState('zen');
     if (isZenMode) {
       exitScreensaverMode();
     }
@@ -27,7 +12,5 @@ export function initZenMode(defaultValue: boolean = false) {
 }
 
 export function exitZenMode() {
-  setBooleanSetting('zen', false);
-  updateURL('zen', false);
-  updateBooleanSettingButtonStatus('zen', false);
+  store.setState('zen', false);
 }

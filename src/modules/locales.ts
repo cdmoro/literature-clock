@@ -1,9 +1,9 @@
 import { updateQuote } from './quotes';
-import { getStringSetting, initStringSetting, setStringSetting, updateURL } from '../utils/settings';
 import TRANSLATIONS from '../strings/translations.json';
 import { Locale } from '../types';
 import { getTime } from '../utils/utils';
 import { Translations } from '../types';
+import { store } from '../store';
 
 const DOMINANT_LOCALES: Record<string, Locale> = {
   en: 'en-US',
@@ -45,13 +45,12 @@ export function resolveLocale(locale = navigator.language): Locale | 'random' {
   return locale as Locale;
 }
 
-export function initLocale(defaultValue = navigator.language) {
-  const locale = resolveLocale(initStringSetting('locale', defaultValue));
+export function initLocale() {
+  const locale = store.getState('locale');
   const localeSelect = document.querySelector<HTMLSelectElement>('#locale-select');
 
-  setStringSetting('locale', locale);
   if (locale !== 'random') {
-    setStringSetting('last-locale', locale);
+    store.setState('last-locale', locale);
   }
 
   translateStrings(locale);
@@ -62,13 +61,12 @@ export function initLocale(defaultValue = navigator.language) {
   localeSelect?.addEventListener('change', (e) => {
     const languageSelectValue = (e.target as HTMLInputElement).value;
     const isRandomLocale = languageSelectValue === 'random';
-    const locale = isRandomLocale ? getStringSetting('last-locale') || 'en-US' : (languageSelectValue as Locale);
+    const locale = isRandomLocale ? store.getState('last-locale') || 'en-US' : (languageSelectValue as Locale);
     translateStrings(locale);
-    setStringSetting('locale', languageSelectValue);
-    updateURL('locale', languageSelectValue);
+    store.setState('locale', languageSelectValue);
 
     if (!isRandomLocale) {
-      setStringSetting('last-locale', languageSelectValue);
+      store.setState('last-locale', languageSelectValue);
       updateQuote({ useIndex: true });
     }
   });
@@ -77,14 +75,14 @@ export function initLocale(defaultValue = navigator.language) {
 export function getStrings(): Translations {
   const localeSelect = document.querySelector<HTMLSelectElement>('#locale-select');
   const resolvedLocale = resolveLocale(localeSelect?.value);
-  const lastLocale = getStringSetting('last-locale') as keyof typeof TRANSLATIONS;
+  const lastLocale = store.getState('last-locale') as keyof typeof TRANSLATIONS;
 
   return TRANSLATIONS[resolvedLocale === 'random' ? lastLocale || 'en-US' : resolvedLocale];
 }
 
 function translateStrings(locale = navigator.language) {
   const time = getTime();
-  const lastLocale = getStringSetting('last-locale') as keyof typeof TRANSLATIONS;
+  const lastLocale = store.getState('last-locale') as keyof typeof TRANSLATIONS;
   const strings = getStrings();
 
   document.documentElement.lang = locale === 'random' ? lastLocale?.substring(0, 2) || 'en' : locale.substring(0, 2);

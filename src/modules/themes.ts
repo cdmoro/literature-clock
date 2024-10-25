@@ -1,7 +1,7 @@
 import { THEME_FONTS, resetFont } from './font';
-import { initStringSetting, setStringSetting, updateURL } from '../utils/settings';
 import { doFitQuote, fitQuote, loadFontIfNotExists } from '../utils/utils';
 import { setDayParameters } from './dynamic';
+import { store } from '../store';
 
 function getRandomThemeColor() {
   let colors = Array.from(document.querySelectorAll<HTMLOptionElement>('#colors option')).map((op) => op.value);
@@ -13,13 +13,13 @@ function getRandomThemeColor() {
   return colors[Math.floor(Math.random() * colors.length)];
 }
 
-export function initTheme(defaultValue = 'base-dark') {
-  let [theme, variant = 'system'] = initStringSetting('theme', defaultValue).split('-');
+export function initTheme() {
+  let [theme, variant = 'system'] = store.getState('theme').split('-');
   const themeSelect = document.querySelector<HTMLSelectElement>('#theme-select');
   const variantSelect = document.querySelector<HTMLSelectElement>('#variant-select');
   const preferDarkThemes = window.matchMedia('(prefers-color-scheme: dark)');
 
-  setStringSetting('theme', `${theme}-${variant}`);
+  store.setState('theme', `${theme}-${variant}`);
   if (theme && THEME_FONTS[theme]) {
     THEME_FONTS[theme].forEach((font) => {
       loadFontIfNotExists(font);
@@ -49,7 +49,7 @@ export function initTheme(defaultValue = 'base-dark') {
     if (variant === 'system') {
       const theme = document.querySelector<HTMLSelectElement>('#theme-select')?.value;
 
-      setStringSetting('theme', `${theme}-system`);
+      store.setState('theme', `${theme}-system`);
       document.documentElement.dataset.theme = `${theme}-${e.matches ? 'dark' : 'light'}`;
     }
   });
@@ -71,8 +71,7 @@ export function setTheme({ isVariantChange = false } = {}) {
     });
     resetFont();
   }
-  setStringSetting('theme', `${theme}-${variant}`);
-  updateURL('theme', `${theme}-${variant}`);
+  store.setState('theme', `${theme}-${variant}`);
 
   if (theme === 'color') {
     theme = getRandomThemeColor();

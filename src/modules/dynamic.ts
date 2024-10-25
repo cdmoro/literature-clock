@@ -1,16 +1,14 @@
 import { Moon } from 'lunarphase-js';
+import { store } from '../store';
 
 const lunarPhase = Moon.lunarPhase();
-const urlParams = new URLSearchParams(window.location.search);
-const testScene = urlParams.get('scene');
-const testProgress = urlParams.get('progress');
 
 export function getDayProgress() {
   const now = new Date();
   const seconds = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
   const progress = (seconds * 100) / 86400;
 
-  return parseFloat(testProgress || progress.toFixed(2));
+  return parseFloat(store.getState('progress') || progress.toFixed(2));
 }
 
 export function getDayParameters() {
@@ -49,7 +47,7 @@ export function getDayParameters() {
   const period = progress < 50 ? 'am' : 'pm';
 
   return {
-    scene: testScene || scene,
+    scene: store.getState('scene') || scene,
     progress,
     period,
     segment,
