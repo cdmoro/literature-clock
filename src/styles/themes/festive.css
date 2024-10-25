@@ -1,28 +1,20 @@
-[data-theme|="festive"] {
-  --quote-font-family: "Borel", sans-serif;
+[data-theme|='festive'] {
+  --quote-font-family: 'Borel', sans-serif;
   --quote-line-height: 1.5;
   --accent-color: #e74c3c;
 }
 
-[data-theme|="festive"] blockquote:before,
-[data-theme|="festive"] blockquote:after {
+[data-theme|='festive'] blockquote:before,
+[data-theme|='festive'] blockquote:after {
   content: none;
 }
 
-[data-theme="festive-light"] {
+[data-theme='festive-light'] {
   --background: #fad0c4;
-  --background-image: linear-gradient(
-    to top right,
-    var(--background) 0%,
-    #ffd1ff 100%
-  );
+  --background-image: linear-gradient(to top right, var(--background) 0%, #ffd1ff 100%);
 }
 
-[data-theme="festive-dark"] {
+[data-theme='festive-dark'] {
   --background: #011b1b;
-  --background-image: linear-gradient(
-    to top right,
-    var(--background) 0%,
-    #43162c 100%
-  );
+  --background-image: linear-gradient(to top right, var(--background) 0%, #43162c 100%);
 }

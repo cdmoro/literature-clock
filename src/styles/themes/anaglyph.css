@@ -1,57 +1,61 @@
-[data-theme|="anaglyph"] {
-  --quote-font-family: "Anton", sans-serif;
+[data-theme|='anaglyph'] {
+  --quote-font-family: 'Anton', sans-serif;
   --quote-line-height: 1.2;
 }
 
-[data-theme|="anaglyph"] blockquote {
+[data-theme|='anaglyph'] blockquote {
   word-spacing: 0.25rem;
 }
 
-[data-theme="anaglyph-light"] {
+[data-theme='anaglyph-light'] {
   --accent-color: #c53a35;
   --background: #eaeaec;
-  --background-image: url("/assets/scanlines-bg-light.jpg");
+  --background-image: url('/assets/scanlines-bg-light.jpg');
   --font-color: #2f2e2c;
   --shadow: 5px 2px #e60c05, -5px -2px #4be4e2;
   --color-mix: color-mix(in srgb, var(--font-color), transparent 10%);
 }
 
-[data-theme="anaglyph-light"] .time {
+[data-theme='anaglyph-light'] .time {
   text-shadow: var(--shadow);
   color: var(--color-mix);
 }
 
-[data-theme="anaglyph-light"] #time-progress-bar {
+[data-theme='anaglyph-light'] #time-progress-bar {
   box-shadow: var(--shadow);
   background: var(--color-mix);
 }
 
-[data-theme|="anaglyph-light"] select:focus,
-[data-theme|="anaglyph-light"] button:focus {
-  box-shadow: 2px 2px #e60c05, -2px -2px #4be4e2 !important;
+[data-theme|='anaglyph-light'] select:focus,
+[data-theme|='anaglyph-light'] button:focus {
+  box-shadow:
+    2px 2px #e60c05,
+    -2px -2px #4be4e2 !important;
 }
 
-[data-theme="anaglyph-dark"] {
+[data-theme='anaglyph-dark'] {
   --accent-color: #3987b4;
   --background: #12121a;
-  --background-image: url("/assets/scanlines-bg-dark.jpg");
+  --background-image: url('/assets/scanlines-bg-dark.jpg');
   --font-color: #f0f0f0;
   --shadow: 5px 2px #f50d3f, -5px -2px #41ceee;
   --color-mix: color-mix(in srgb, var(--font-color), transparent 5%);
 }
 
-[data-theme="anaglyph-dark"] .time,
-[data-theme="anaglyph-dark"] #exit-zen {
+[data-theme='anaglyph-dark'] .time,
+[data-theme='anaglyph-dark'] #exit-zen {
   text-shadow: var(--shadow);
   color: var(--color-mix);
 }
 
-[data-theme="anaglyph-dark"] #time-progress-bar {
+[data-theme='anaglyph-dark'] #time-progress-bar {
   box-shadow: var(--shadow);
   background: var(--color-mix);
 }
 
-[data-theme|="anaglyph-dark"] select:focus,
-[data-theme|="anaglyph-dark"] button:focus {
-  box-shadow: 2px 2px #f50d3f, -2px -2px #41ceee !important;
+[data-theme|='anaglyph-dark'] select:focus,
+[data-theme|='anaglyph-dark'] button:focus {
+  box-shadow:
+    2px 2px #f50d3f,
+    -2px -2px #41ceee !important;
 }

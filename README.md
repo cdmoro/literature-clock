@@ -23,7 +23,6 @@ Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) (
 - Accessibility: All the quote elements have `aria-labels`
 - All the settings are saved in the browser's local storage and they are updated in the URL without refreshing the page, thanks to History API
 
-
 ## Settings
 
 The clock can be controlled using URL parameters, these parameters will overwrite the existing configuration
@@ -38,7 +37,7 @@ The clock can be controlled using URL parameters, these parameters will overwrit
 - `showtime`: enable/disable the clock on top of the screen
 
 Developer settings
-  
+
 - `time`: get the quotes for a particular time ([link](https://literatureclock.netlify.app/?time=12:30))
 - `quote`: test a quote before submitting it ([link](https://literatureclock.netlify.app/?quote=Hi%20mom!%20I%27m%20part%20of%20the%20Literature%20Clock!)) (it is no necessary to escape the quote by adding the special characters, just write the quote and the browser will add them)
 - `index`: get a specific quote from the array of quotes instead of a random one

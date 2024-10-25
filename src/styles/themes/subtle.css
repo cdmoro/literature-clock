@@ -1,11 +1,11 @@
-[data-theme|="subtle"] {
-  --quote-font-family: "Unna", sans-serif;
+[data-theme|='subtle'] {
+  --quote-font-family: 'Unna', sans-serif;
   --quote-line-height: 1.2;
 }
 
-[data-theme|="subtle"] blockquote[aria-label]:before,
-[data-theme|="subtle"] blockquote[aria-label]:after {
-  content: "";
+[data-theme|='subtle'] blockquote[aria-label]:before,
+[data-theme|='subtle'] blockquote[aria-label]:after {
+  content: '';
   height: 2px;
   width: 90px;
   left: 50%;
@@ -13,71 +13,66 @@
   background-color: var(--accent-color);
 }
 
-[data-theme|="subtle"] blockquote[aria-label]:after {
+[data-theme|='subtle'] blockquote[aria-label]:after {
   bottom: -2rem;
 }
 
-[data-theme|="subtle"] blockquote[aria-label] {
+[data-theme|='subtle'] blockquote[aria-label] {
   text-align: center;
   text-wrap: balance;
   position: relative;
 }
 
-[data-theme|="subtle"] p {
+[data-theme|='subtle'] p {
   max-height: 45vh;
 }
 
-[data-theme|="subtle"] cite:before {
+[data-theme|='subtle'] cite:before {
   content: none;
 }
 
-[data-theme|="subtle"] cite #title {
+[data-theme|='subtle'] cite #title {
   font-style: normal;
 }
 
-[data-theme|="subtle"] cite #author {
+[data-theme|='subtle'] cite #author {
   display: block;
 }
 
-[data-theme|="subtle"] cite {
+[data-theme|='subtle'] cite {
   font-variant: small-caps;
   display: inline-block;
   color: color-mix(in srgb, var(--accent-color), transparent 5%);
 }
 
-[data-theme|="subtle"] .time {
+[data-theme|='subtle'] .time {
   -webkit-text-fill-color: var(--accent-color);
 }
 
-[data-theme|="subtle"] p {
+[data-theme|='subtle'] p {
   background: var(--linear-gradient);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-[data-theme|="subtle"] body.share-quote p {
+[data-theme|='subtle'] body.share-quote p {
   background: unset;
   background-clip: unset;
   -webkit-text-fill-color: unset;
   color: rgb(238, 3, 117);
 }
 
-[data-theme|="subtle"] #time-progress-bar {
+[data-theme|='subtle'] #time-progress-bar {
   background: var(--linear-gradient);
 }
 
-[data-theme="subtle-light"] {
+[data-theme='subtle-light'] {
   --background: #f1f1f1;
   --accent-color: #333333;
-  --linear-gradient: linear-gradient(
-    90deg,
-    rgba(131, 58, 180, 1) 0%,
-    rgba(253, 29, 29, 1) 50%,
-    rgb(255, 156, 17) 100%
-  );
+  --linear-gradient: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgb(255, 156, 17) 100%);
 }
 
-[data-theme="subtle-dark"] {
+[data-theme='subtle-dark'] {
   --background: #060606;
   --accent-color: #eeeeee;
   --linear-gradient: linear-gradient(
