@@ -14,6 +14,7 @@ export default [
     rules: {
       'no-console': 'warn',
       quotes: ['error', 'single'],
+      'linebreak-style': ['error', 'unix'],
     },
   },
 ];
