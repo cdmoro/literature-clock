@@ -1,22 +1,22 @@
-[data-theme|="retro"] {
-  --quote-font-family: "VT323", sans-serif;
+[data-theme|='retro'] {
+  --quote-font-family: 'VT323', sans-serif;
   --quote-line-height: 1;
 }
 
-[data-theme|="retro"] #time-progress-bar {
+[data-theme|='retro'] #time-progress-bar {
   height: 100vh;
   opacity: 0.15;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0), var(--accent-color));
 }
 
-[data-theme="retro-light"] {
+[data-theme='retro-light'] {
   --accent-color: #daa908;
   --background: #f8f8f8;
-  --background-image: url("/assets/scanlines-bg-light.jpg");
+  --background-image: url('/assets/scanlines-bg-light.jpg');
 }
 
-[data-theme="retro-dark"] {
+[data-theme='retro-dark'] {
   --accent-color: #f1ba08;
   --background: #2c2c2c;
-  --background-image: url("/assets/scanlines-bg-dark.jpg");
+  --background-image: url('/assets/scanlines-bg-dark.jpg');
 }

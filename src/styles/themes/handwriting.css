@@ -1,33 +1,33 @@
-[data-theme|="handwriting"] {
-  --quote-font-family: "Reenie Beanie", sans-serif;
+[data-theme|='handwriting'] {
+  --quote-font-family: 'Reenie Beanie', sans-serif;
   --quote-line-height: 1;
   --accent-color: #077fc6;
 }
 
-[data-theme|="handwriting"] blockquote:before,
-[data-theme|="handwriting"] blockquote:after {
+[data-theme|='handwriting'] blockquote:before,
+[data-theme|='handwriting'] blockquote:after {
   content: none;
 }
 
-[data-theme|="handwriting"] .time {
+[data-theme|='handwriting'] .time {
   padding: 0 0.4rem;
   border-radius: 0.3rem;
   transform: rotate(-3deg);
   display: inline-block;
 }
 
-[data-theme="handwriting-light"] {
+[data-theme='handwriting-light'] {
   --background: #fef9e7;
 }
 
-[data-theme="handwriting-light"] .time {
+[data-theme='handwriting-light'] .time {
   background: #f5f514;
 }
 
-[data-theme="handwriting-dark"] {
+[data-theme='handwriting-dark'] {
   --background: #111111;
 }
 
-[data-theme="handwriting-dark"] .time {
+[data-theme='handwriting-dark'] .time {
   background: #ffff00aa;
 }

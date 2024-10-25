@@ -1,17 +1,17 @@
 name: Bug
 description: Add a new quote or an additional quote for a specific time.
-title: "[XX:XX][XX] Error in a quote"
+title: '[XX:XX][XX] Error in a quote'
 labels:
   - bug
 body:
   - type: markdown
     attributes:
-      value: "# Description of the error"
+      value: '# Description of the error'
   - type: input
     id: locale
     attributes:
       label: Locale
-      placeholder: "en-US"
+      placeholder: 'en-US'
     validations:
       required: true
   - type: input
@@ -19,14 +19,14 @@ body:
     attributes:
       label: Time
       description: Please update the title as well!
-      placeholder: "04:00"
+      placeholder: '04:00'
     validations:
       required: true
   - type: input
     id: book
     attributes:
       label: Book
-      placeholder: "2666"
+      placeholder: '2666'
     validations:
       required: false
   - type: input

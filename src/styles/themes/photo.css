@@ -1,78 +1,78 @@
-[data-theme|="photo"] {
-  --quote-font-family: "Abril Fatface", sans-serif;
+[data-theme|='photo'] {
+  --quote-font-family: 'Abril Fatface', sans-serif;
 }
 
-[data-theme|="photo"] body {
+[data-theme|='photo'] body {
   background-size: cover;
   background-position: center;
 }
 
-[data-theme|="photo"] #photo-overlay {
+[data-theme|='photo'] #photo-overlay {
   position: fixed;
   inset: 0;
   background: var(--background);
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
-[data-theme|="photo"] blockquote:before,
-[data-theme|="photo"] blockquote:after {
+[data-theme|='photo'] blockquote:before,
+[data-theme|='photo'] blockquote:after {
   content: none;
 }
 
-[data-theme|="photo"] #time-progress-bar {
+[data-theme|='photo'] #time-progress-bar {
   z-index: 3;
 }
 
-[data-theme="photo-light"] #time-clock {
+[data-theme='photo-light'] #time-clock {
   color: #111111;
 }
 
-[data-theme="photo-light"] {
-  --background: #DDDDDD;
+[data-theme='photo-light'] {
+  --background: #dddddd;
   --font-color: #282826;
   --accent-color: #e33725;
 }
 
-[data-theme="photo-light"] #photo-overlay {
-  opacity: .4;
+[data-theme='photo-light'] #photo-overlay {
+  opacity: 0.4;
 }
 
-[data-theme="photo-light"] #quote {
-  text-shadow: 0px 0px 25px #DFDFDF;
+[data-theme='photo-light'] #quote {
+  text-shadow: 0px 0px 25px #dfdfdf;
   color: #111111;
 }
 
-[data-theme="photo-light"] body.share-quote blockquote .time {
+[data-theme='photo-light'] body.share-quote blockquote .time {
   color: #111111;
 }
 
-[data-theme="photo-light"] body:not(.zen) footer {
+[data-theme='photo-light'] body:not(.zen) footer {
   background: #ffffff60;
 }
 
-[data-theme="photo-dark"] #time-clock {
-  color: #EEEEEE;
+[data-theme='photo-dark'] #time-clock {
+  color: #eeeeee;
 }
 
-[data-theme="photo-dark"] {
+[data-theme='photo-dark'] {
   --background: #111111;
   --font-color: #d7d7d7;
   --accent-color: #fd3622;
 }
 
-[data-theme="photo-dark"] #photo-overlay {
-  opacity: .5;
+[data-theme='photo-dark'] #photo-overlay {
+  opacity: 0.5;
 }
 
-[data-theme="photo-dark"] #quote {
+[data-theme='photo-dark'] #quote {
   text-shadow: 0px 0px 25px #1c1c1c;
-  color: #EEEEEE;
+  color: #eeeeee;
 }
 
-[data-theme="photo-dark"] body.share-quote blockquote .time {
-  color: #EEEEEE;
+[data-theme='photo-dark'] body.share-quote blockquote .time {
+  color: #eeeeee;
 }
 
-[data-theme="photo-dark"] body:not(.zen) footer {
+[data-theme='photo-dark'] body:not(.zen) footer {
   background: #00000093;
 }

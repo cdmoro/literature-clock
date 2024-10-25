@@ -1,25 +1,25 @@
 name: Add quote
 description: Add a new quote or an additional quote for a specific time.
-title: "[XX:XX] Add quote"
+title: '[XX:XX] Add quote'
 labels:
   - add-quote
 body:
   - type: markdown
     attributes:
-      value: "# Add quote"
+      value: '# Add quote'
   - type: input
     id: time
     attributes:
       label: Time
       description: Please update the title as well!
-      placeholder: "04:00"
+      placeholder: '04:00'
     validations:
       required: true
   - type: input
     id: book
     attributes:
       label: Book
-      placeholder: "2666"
+      placeholder: '2666'
     validations:
       required: true
   - type: input

@@ -8,7 +8,7 @@ export function initShare() {
 
   document.getElementById('download')?.addEventListener('click', downloadQuote);
 
-  if (navigator.share) {
+  if ('share' in navigator) {
     share?.addEventListener('click', shareQuote);
   } else {
     share?.remove();

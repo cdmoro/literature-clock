@@ -20,7 +20,7 @@ export function updateGHLinks(time: string, quote: Quote, locale: Locale) {
   const quoteRaw = `${quote.quote_first}${quote.quote_time_case}${quote.quote_last}`;
 
   const addQuoteUrl = new URL(GITHUB_NEW_ISSUE_URL);
-  addQuoteUrl.searchParams.set('template', `add-quote.yml`);
+  addQuoteUrl.searchParams.set('template', 'add-quote.yml');
   addQuoteUrl.searchParams.set('assignees', 'cdmoro');
   addQuoteUrl.searchParams.set('title', `[${time}][${locale}] Add quote`);
   addQuoteUrl.searchParams.set('labels', `add-quote,${locale}`);
@@ -32,7 +32,7 @@ export function updateGHLinks(time: string, quote: Quote, locale: Locale) {
   }
 
   const reportErrorUrl = new URL(GITHUB_NEW_ISSUE_URL);
-  reportErrorUrl.searchParams.set('template', `quote-error.yml`);
+  reportErrorUrl.searchParams.set('template', 'quote-error.yml');
   reportErrorUrl.searchParams.set('assignees', 'cdmoro');
   reportErrorUrl.searchParams.set('title', `[${time}][${locale}]${quote.id ? `[${quote.id}]` : ''} Report error`);
   reportErrorUrl.searchParams.set('labels', `bug,${locale}`);
@@ -66,7 +66,7 @@ export function doFitQuote() {
       fontSize -= 1;
 
       if (fontSize < 10) {
-        quote.style.fontSize = `10px`;
+        quote.style.fontSize = '10px';
         break;
       }
     }
@@ -112,7 +112,7 @@ export function getFaviconFileName(time: string) {
 }
 
 export function updateFavicon(time: string = getTime()) {
-  let link = document.querySelector<HTMLLinkElement>("link[rel~='icon']");
+  let link = document.querySelector<HTMLLinkElement>('link[rel~=icon]');
   if (!link) {
     link = document.createElement('link');
     link.rel = 'icon';

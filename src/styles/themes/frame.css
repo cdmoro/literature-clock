@@ -1,14 +1,14 @@
-[data-theme|="frame"] {
-  --quote-font-family: "Playfair Display", sans-serif;
+[data-theme|='frame'] {
+  --quote-font-family: 'Playfair Display', sans-serif;
   --quote-line-height: 1.2;
 }
 
-[data-theme|="frame"] blockquote:before,
-[data-theme|="frame"] blockquote:after {
+[data-theme|='frame'] blockquote:before,
+[data-theme|='frame'] blockquote:after {
   content: none;
 }
 
-[data-theme|="frame"] blockquote[aria-label] {
+[data-theme|='frame'] blockquote[aria-label] {
   border-width: 3px;
   border-style: solid;
   border-end-end-radius: 5vw;
@@ -18,51 +18,51 @@
   text-wrap: balance;
 }
 
-[data-theme|="frame"] p {
+[data-theme|='frame'] p {
   max-height: 40vh;
   margin-bottom: 1.2rem;
 }
 
-[data-theme|="frame"] p:before {
-  content: "“";
+[data-theme|='frame'] p:before {
+  content: '“';
   display: block;
   height: 120px;
   font-size: 10rem;
 }
 
-[data-theme|="frame"] cite:before {
+[data-theme|='frame'] cite:before {
   content: none;
 }
 
-[data-theme|="frame"] cite #author {
+[data-theme|='frame'] cite #author {
   display: block;
 }
 
-[data-theme="frame-light"] {
+[data-theme='frame-light'] {
   --background: #cefcff;
   --accent-color: #00b9c4;
 }
 
-[data-theme="frame-light"] blockquote {
+[data-theme='frame-light'] blockquote {
   border-color: #0003;
 }
 
-[data-theme="frame-dark"] {
+[data-theme='frame-dark'] {
   --background: #001c1e;
   --font-color: #f7f7f7;
   --accent-color: #00c4ce;
 }
 
-[data-theme="frame-dark"] blockquote {
+[data-theme='frame-dark'] blockquote {
   border-color: #fff3;
 }
 
 @media only screen and (max-width: 600px) {
-  [data-theme|="frame"] blockquote[aria-label] {
-    padding: .5rem 2rem 1.5rem;
+  [data-theme|='frame'] blockquote[aria-label] {
+    padding: 0.5rem 2rem 1.5rem;
   }
 
-  [data-theme|="frame"] p:before {
+  [data-theme|='frame'] p:before {
     font-size: 6rem;
     height: 80px;
   }
