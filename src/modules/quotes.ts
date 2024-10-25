@@ -1,5 +1,4 @@
 import { getRandomLocale, getStrings } from './locales';
-import { getStringSetting, isBooleanSettingTrue } from '../utils/settings';
 import { setTheme } from './themes';
 import { Locale, ResolvedQuote, Quote } from '../types';
 import { fitQuote, getTime, updateGHLinks } from '../utils/utils';
@@ -22,7 +21,6 @@ function prefetchNextQuotes(locale: string) {
 
 async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
   const fileName = time.replace(':', '_');
-  const urlParams = new URLSearchParams(window.location.search);
 
   try {
     const response = await fetch(`../times/${locale}/${fileName}.json`);
@@ -33,7 +31,7 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
 
     let quotes = (await response.json()) as Quote[];
 
-    if (isBooleanSettingTrue('work') && !urlParams.get('index')) {
+    if (store.getState('work') && !store.getState('index')) {
       quotes = quotes.filter((q) => q.sfw !== 'nsfw');
     }
 
@@ -50,7 +48,6 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
 
 async function getQuote(time: string, locale: Locale, useIndex: boolean = false): Promise<ResolvedQuote> {
   const quotes = await getQuotes(time, locale);
-  const urlParams = new URLSearchParams(window.location.search);
   const strings = getStrings();
 
   let quoteIndex = Math.floor(Math.random() * quotes.length);
@@ -66,8 +63,8 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
     }
   }
 
-  if (urlParams.get('index')) {
-    const urlParamsIndex = parseInt(urlParams.get('index')!);
+  if (store.getState('index')) {
+    const urlParamsIndex = parseInt(store.getState('index')!);
     if (!isNaN(urlParamsIndex) && quotes[urlParamsIndex]) {
       quoteIndex = urlParamsIndex;
     }
@@ -82,7 +79,7 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
     quote.fallback = true;
   }
 
-  if (urlParams.get('quote')) {
+  if (store.getState('quote')) {
     quote.title = strings.title;
     quote.author = strings.author;
   }
@@ -91,8 +88,7 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
 }
 
 export async function updateQuote({ time = getTime(), useIndex = false } = {}) {
-  const urlParams = new URLSearchParams(window.location.search);
-  const testQuote = urlParams.get('quote');
+  const testQuote = store.getState('quote');
   let locale = store.getState('locale') as Locale;
 
   if (!locale) {
@@ -134,13 +130,13 @@ export async function updateQuote({ time = getTime(), useIndex = false } = {}) {
       blockquote.removeAttribute('data-fallback');
     }
 
-    if (isBooleanSettingTrue('fade')) {
+    if (store.getState('fade')) {
       fadeInQuote();
     }
 
     fitQuote();
 
-    if (getStringSetting('theme')?.includes('color')) {
+    if (store.getState('theme')?.includes('color')) {
       setTheme();
     }
   }

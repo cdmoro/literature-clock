@@ -1,4 +1,4 @@
-export interface State {
+interface Stateful {
   locale: string;
   zen: boolean;
   work: boolean;
@@ -7,9 +7,19 @@ export interface State {
   showtime: boolean;
   font: string;
   theme: string;
+}
+
+export interface Stateless {
   'custom-font'?: string;
   'last-locale'?: string;
+  time?: string;
+  quote?: string;
+  scene?: string;
+  progress?: string;
+  index?: string;
 }
+
+type State = Stateful & Stateless;
 
 type Listener = (newState: State, oldState: State) => void;
 
@@ -23,17 +33,16 @@ const REMOVE_VALUES_FROM_URL: Partial<State> = {
   zen: false,
 };
 
-export function parseUrlParams(urlParams: URLSearchParams, knownKeys: (keyof State)[]): Partial<State> {
+export function parseUrlParams(urlParams: URLSearchParams): Partial<State> {
   const stateFromUrl: Partial<State> = {};
-  knownKeys.forEach((key) => {
-    if (urlParams.has(key)) {
-      const value = urlParams.get(key);
-      if (value !== null) {
-        // @ts-expect-error TODO
-        stateFromUrl[key] = value === 'true' ? true : value === 'false' ? false : value;
-      }
+
+  urlParams.forEach((value, key) => {
+    if (value !== null) {
+      // @ts-expect-error TODO
+      stateFromUrl[key] = value === 'true' ? true : value === 'false' ? false : value;
     }
   });
+
   return stateFromUrl;
 }
 
@@ -45,15 +54,15 @@ export function getStateFromLocalStorage(): Partial<State> {
 export class Store {
   private state: State;
   private listeners: Listener[] = [];
-  private knownKeys: (keyof State)[];
+  private knownKeys: (keyof Stateful)[];
 
   constructor(defaultState: State) {
     // Get known keys (state keys)
-    this.knownKeys = Object.keys(defaultState) as (keyof State)[];
+    this.knownKeys = Object.keys(defaultState) as (keyof Stateful)[];
 
     // Read settings from URL
     const urlParams = new URLSearchParams(window.location.search);
-    const stateFromUrl = parseUrlParams(urlParams, this.knownKeys);
+    const stateFromUrl = parseUrlParams(urlParams);
 
     // Read settings from localStorage
     const stateFromLocalStorage = getStateFromLocalStorage();
@@ -122,9 +131,18 @@ export class Store {
     this.listeners.forEach((listener) => listener({ ...this.state }, oldState));
   }
 
+  private getStatefulSettings() {
+    const statefulSettings = {} as Stateful;
+
+    // @ts-expect-error TODO
+    this.knownKeys.forEach((key) => (statefulSettings[key] = this.state[key]));
+
+    return statefulSettings;
+  }
+
   // Sync entire state to localStorage
   private syncToLocalStorage() {
-    localStorage.setItem('settings', JSON.stringify(this.state));
+    localStorage.setItem('settings', JSON.stringify(this.getStatefulSettings()));
   }
 
   // Sync only one property to the URL using history API
