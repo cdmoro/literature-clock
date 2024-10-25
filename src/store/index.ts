@@ -7,34 +7,30 @@ export interface State {
   showtime: boolean;
   font: string;
   theme: string;
-  "custom-font"?: string;
-  "last-locale"?: string;
+  'custom-font'?: string;
+  'last-locale'?: string;
 }
 
 type Listener = (newState: State, oldState: State) => void;
 
-const REMOVE_FROM_URL: (keyof State)[] = ['custom-font', 'last-locale']; 
+const REMOVE_FROM_URL: (keyof State)[] = ['custom-font', 'last-locale'];
 const REMOVE_VALUES_FROM_URL: Partial<State> = {
   screensaver: false,
   fade: false,
-  font: "default",
+  font: 'default',
   showtime: false,
   work: false,
   zen: false,
-}
+};
 
-export function parseUrlParams(
-  urlParams: URLSearchParams,
-  knownKeys: (keyof State)[]
-): Partial<State> {
+export function parseUrlParams(urlParams: URLSearchParams, knownKeys: (keyof State)[]): Partial<State> {
   const stateFromUrl: Partial<State> = {};
   knownKeys.forEach((key) => {
     if (urlParams.has(key)) {
       const value = urlParams.get(key);
       if (value !== null) {
         // @ts-expect-error TODO
-        stateFromUrl[key] =
-          value === "true" ? true : value === "false" ? false : value;
+        stateFromUrl[key] = value === 'true' ? true : value === 'false' ? false : value;
       }
     }
   });
@@ -42,7 +38,7 @@ export function parseUrlParams(
 }
 
 export function getStateFromLocalStorage(): Partial<State> {
-  const storedSettings = localStorage.getItem("settings");
+  const storedSettings = localStorage.getItem('settings');
   return storedSettings ? JSON.parse(storedSettings) : {};
 }
 
@@ -68,9 +64,9 @@ export class Store {
     Object.entries(this.state).forEach(([key, value]) => {
       if (value === true) {
         document.body.classList.toggle(key, value);
-        document.getElementById(key)?.classList.toggle("active", value);
+        document.getElementById(key)?.classList.toggle('active', value);
       }
-    })
+    });
 
     // Sync the final merged state to localStorage (without touching the URL yet)
     this.syncToLocalStorage();
@@ -91,8 +87,8 @@ export class Store {
 
     this.notifyListeners(oldState);
 
-    if (typeof value === "boolean") {
-      document.getElementById(key)?.classList.toggle("active", value);
+    if (typeof value === 'boolean') {
+      document.getElementById(key)?.classList.toggle('active', value);
       document.body.classList.toggle(key, value);
     }
 
@@ -100,7 +96,7 @@ export class Store {
   }
 
   toggleState(key: keyof State) {
-    if (typeof this.state[key] === "boolean") {
+    if (typeof this.state[key] === 'boolean') {
       const newValue = !this.getState(key);
       this.setState(key, newValue);
 
@@ -128,7 +124,7 @@ export class Store {
 
   // Sync entire state to localStorage
   private syncToLocalStorage() {
-    localStorage.setItem("settings", JSON.stringify(this.state));
+    localStorage.setItem('settings', JSON.stringify(this.state));
   }
 
   // Sync only one property to the URL using history API
@@ -136,7 +132,7 @@ export class Store {
     if (REMOVE_FROM_URL.includes(key)) {
       return;
     }
-    
+
     const urlParams = new URLSearchParams(window.location.search);
 
     if (REMOVE_VALUES_FROM_URL[key] === value) {
@@ -145,8 +141,8 @@ export class Store {
       urlParams.set(key, value.toString());
     }
 
-    const url = urlParams.size ? `?${urlParams.toString()}` : "/";
-    history.replaceState({}, "", url);
+    const url = urlParams.size ? `?${urlParams.toString()}` : '/';
+    history.replaceState({}, '', url);
   }
 }
 
