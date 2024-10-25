@@ -70,8 +70,6 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
     }
   }
 
-  console.log(quotes)
-
   const quote = Object.assign({}, quotes[quoteIndex]) as ResolvedQuote;
   quote.index = quoteIndex;
 
