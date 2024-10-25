@@ -44,6 +44,7 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
     }
 
     return quotes;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     return FALLBACK_QUOTES[locale];
   }
@@ -57,9 +58,13 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
   let quoteIndex = Math.floor(Math.random() * quotes.length);
 
   if (useIndex) {
-    const blockquoteIndex = parseInt(document.getElementById("quote")?.dataset.index!);
-    if (!isNaN(blockquoteIndex) && quotes[blockquoteIndex]) {
-      quoteIndex = blockquoteIndex;
+    const index = document.getElementById("quote")?.dataset.index;
+
+    if (index) {
+      const blockquoteIndex = parseInt(index);
+      if (!isNaN(blockquoteIndex) && quotes[blockquoteIndex]) {
+        quoteIndex = blockquoteIndex;
+      }
     }
   }
 

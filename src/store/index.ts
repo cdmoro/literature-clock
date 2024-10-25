@@ -32,7 +32,7 @@ export function parseUrlParams(
     if (urlParams.has(key)) {
       const value = urlParams.get(key);
       if (value !== null) {
-        // @ts-ignore
+        // @ts-expect-error TODO
         stateFromUrl[key] =
           value === "true" ? true : value === "false" ? false : value;
       }

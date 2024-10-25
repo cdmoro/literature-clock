@@ -117,6 +117,7 @@ export function loadFontIfNotExists(font: string) {
 }
 
 export function getFaviconFileName(time: string) {
+  // eslint-disable-next-line prefer-const
   let [hours, minutes] = time.split(":").map(Number);
 
   if (hours >= 12) {
@@ -129,7 +130,7 @@ export function getFaviconFileName(time: string) {
 }
 
 export function updateFavicon(time: string = getTime()) {
-  var link = document.querySelector<HTMLLinkElement>("link[rel~='icon']");
+  let link = document.querySelector<HTMLLinkElement>("link[rel~='icon']");
   if (!link) {
     link = document.createElement("link");
     link.rel = "icon";
