@@ -1,6 +1,6 @@
-import TRANSLATIONS from "./strings/translations.json";
+import TRANSLATIONS from './strings/translations.json';
 
-export type { Translations } from "./strings/types";
+export type { Translations } from './strings/types';
 
 export type Locale = keyof typeof TRANSLATIONS;
 

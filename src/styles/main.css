@@ -12,12 +12,25 @@ body {
   color: var(--font-color);
   display: flex;
   flex-direction: column;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-    "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    'Noto Sans',
+    'Liberation Sans',
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
   justify-content: center;
   overflow: hidden;
-  transition: background 0.5s, box-shadow 0.5s;
+  transition:
+    background 0.5s,
+    box-shadow 0.5s;
 }
 
 body[data-loading] {
@@ -64,7 +77,9 @@ blockquote {
   font-weight: 100;
   line-height: var(--quote-line-height, 1.1);
   position: relative;
-  transition: transform 1s ease, opacity 1s ease-in-out;
+  transition:
+    transform 1s ease,
+    opacity 1s ease-in-out;
 }
 
 blockquote.fade-in {
@@ -92,14 +107,14 @@ blockquote[aria-label]:after {
 }
 
 blockquote[aria-label]:before {
-  content: "“";
+  content: '“';
   left: -5rem;
   top: -2rem;
 }
 
 blockquote[aria-label]:after {
   bottom: 1rem;
-  content: "”";
+  content: '”';
   right: -5rem;
 }
 
@@ -108,16 +123,13 @@ blockquote .time {
 }
 
 cite {
-  font-family: var(
-    --cite-font-family,
-    var(--override-quote-font-family, var(--quote-font-family))
-  );
+  font-family: var(--cite-font-family, var(--override-quote-font-family, var(--quote-font-family)));
   font-size: 1.8vw;
   font-style: normal;
 }
 
 cite:before {
-  content: "— ";
+  content: '— ';
 }
 
 cite #title {
@@ -125,7 +137,7 @@ cite #title {
 }
 
 cite #title:after {
-  content: ", ";
+  content: ', ';
 }
 
 select {
@@ -145,10 +157,12 @@ select {
   line-height: 1.5;
   max-height: 30px;
   padding: 0.25rem 2rem 0.25rem 0.5rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 
-[data-theme*="dark"] select {
+[data-theme*='dark'] select {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23a3a29a' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
 }
 
@@ -178,7 +192,7 @@ select {
 .input-group-text {
   display: flex;
   align-items: center;
-  padding: 0 .6rem;
+  padding: 0 0.6rem;
   font-weight: 400;
   line-height: 1.5;
   text-align: center;
@@ -202,7 +216,9 @@ button {
   line-height: 1.5;
   max-height: 30px;
   padding: 0.25rem 0.5rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
   white-space: nowrap;
 }
 
@@ -224,8 +240,7 @@ button.active {
 select:focus,
 button:focus {
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 0.2rem
-    color-mix(in srgb, var(--accent-color), transparent 75%) !important;
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent-color), transparent 75%) !important;
   outline: 0;
   z-index: 1;
 }
@@ -311,7 +326,9 @@ footer {
   position: fixed;
   right: 0;
   z-index: 2;
-  transition: opacity 0.5s, background-color 0.5s;
+  transition:
+    opacity 0.5s,
+    background-color 0.5s;
 }
 
 #menu {
@@ -366,16 +383,16 @@ body.share-quote #share-signature {
 }
 
 .sr-only {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	overflow: hidden;
-	clip: rect(0,0,0,0);
-	white-space: nowrap;
-	-webkit-clip-path: inset(50%);
-	clip-path: inset(50%);
-	border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  border: 0;
 }
 
 @media screen and (min-width: 1700px) {
@@ -435,7 +452,7 @@ body.share-quote #share-signature {
   }
 
   .input-group-text {
-    padding: 0 .5rem;
+    padding: 0 0.5rem;
   }
 
   #theme,

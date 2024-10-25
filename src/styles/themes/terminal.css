@@ -1,40 +1,34 @@
-[data-theme|="terminal"] {
-  --quote-font-family: "B612 Mono", sans-serif;
+[data-theme|='terminal'] {
+  --quote-font-family: 'B612 Mono', sans-serif;
   --quote-line-height: 1.3;
 }
 
-[data-theme|="terminal"] body,
-[data-theme|="terminal"] select,
-[data-theme|="terminal"] button {
+[data-theme|='terminal'] body,
+[data-theme|='terminal'] select,
+[data-theme|='terminal'] button {
   font-family: var(--quote-font-family);
 }
 
-[data-theme|="terminal"] body:before {
-  content: "";
+[data-theme|='terminal'] body:before {
+  content: '';
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   box-shadow: 0 0 200px rgba(0, 0, 0, 0.9) inset;
-  background-size: 100% 2px, 3px 100%;
+  background-size:
+    100% 2px,
+    3px 100%;
   background-color: rgba(0, 0, 0, 0);
-  background-image: linear-gradient(
-      rgba(13, 14, 14, 0) 50%,
-      rgba(0, 0, 0, 0.25) 50%
-    ),
-    linear-gradient(
-      90deg,
-      rgba(204, 0, 0, 0.06),
-      rgba(51, 204, 0, 0.02),
-      rgba(0, 0, 204, 0.06)
-    );
+  background-image: linear-gradient(rgba(13, 14, 14, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(90deg, rgba(204, 0, 0, 0.06), rgba(51, 204, 0, 0.02), rgba(0, 0, 204, 0.06));
   z-index: 3;
   pointer-events: none;
 }
 
-[data-theme|="terminal"] body:after {
-  content: "";
+[data-theme|='terminal'] body:after {
+  content: '';
   display: block;
   position: fixed;
   top: 0;
@@ -50,61 +44,67 @@
   animation: flicker 0.5s infinite;
 }
 
-[data-theme|="terminal"] blockquote {
+[data-theme|='terminal'] blockquote {
   font-weight: bold;
-  text-shadow: rgba(0, 24, 204, 0.5) 2px 0px 1px,
-    rgba(204, 0, 64, 0.3) -2px 0px 1px, 0px 0px 3px,
+  text-shadow:
+    rgba(0, 24, 204, 0.5) 2px 0px 1px,
+    rgba(204, 0, 64, 0.3) -2px 0px 1px,
+    0px 0px 3px,
     color-mix(in srgb, var(--accent-color), transparent 70%) 0px 0px 15px;
 }
 
-[data-theme|="terminal"] blockquote:before,
-[data-theme|="terminal"] blockquote:after {
+[data-theme|='terminal'] blockquote:before,
+[data-theme|='terminal'] blockquote:after {
   content: none;
 }
 
-[data-theme|="terminal"] blockquote p {
+[data-theme|='terminal'] blockquote p {
   max-height: 50vh;
 }
 
-[data-theme|="terminal"] cite {
+[data-theme|='terminal'] cite {
   font-style: normal;
 }
 
-[data-theme|="terminal"] cite:before {
-  content: "> ";
+[data-theme|='terminal'] cite:before {
+  content: '> ';
 }
 
-[data-theme|="terminal"] cite:after {
-  content: "_";
+[data-theme|='terminal'] cite:after {
+  content: '_';
   display: inline-block;
   animation: blink 1s step-start 0s infinite;
   transform: translateY(-1px);
 }
 
-[data-theme|="terminal"] #time-progress-bar {
+[data-theme|='terminal'] #time-progress-bar {
   background: var(--accent-color);
   height: 7px;
-  box-shadow: rgba(0, 24, 204, 0.5) 2px 0px 1px,
-    rgba(204, 0, 64, 0.3) -2px 0px 1px, 0px 0px 3px,
+  box-shadow:
+    rgba(0, 24, 204, 0.5) 2px 0px 1px,
+    rgba(204, 0, 64, 0.3) -2px 0px 1px,
+    0px 0px 3px,
     color-mix(in srgb, var(--accent-color), transparent 70%) 0px 0px 15px;
 }
 
-[data-theme="terminal-light"] {
+[data-theme='terminal-light'] {
   --font-color: #181702;
   --background: #fff6ae;
   --accent-color: rgb(172, 127, 2);
 }
 
-[data-theme="terminal-light"] body:after {
+[data-theme='terminal-light'] body:after {
   background-color: rgba(18, 16, 16, 0.025);
 }
 
-[data-theme="terminal-light"] cite {
-  text-shadow: rgba(0, 24, 204, 0.5) 1.5px 0px 1px,
-    rgba(204, 0, 64, 0.3) -1.5px 0px 1px, 0px 0px 3px;
+[data-theme='terminal-light'] cite {
+  text-shadow:
+    rgba(0, 24, 204, 0.5) 1.5px 0px 1px,
+    rgba(204, 0, 64, 0.3) -1.5px 0px 1px,
+    0px 0px 3px;
 }
 
-[data-theme="terminal-dark"] {
+[data-theme='terminal-dark'] {
   --font-color: rgb(135, 224, 135);
   --background: rgb(2, 22, 0);
   --accent-color: rgb(27, 236, 27);
