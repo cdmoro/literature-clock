@@ -1,10 +1,4 @@
-import {
-  initBooleanSetting,
-  setBooleanSetting,
-  toggleBooleanSetting,
-  updateBooleanSettingButtonStatus,
-  updateURL,
-} from "../utils/settings";
+import { store } from "../store";
 import { exitZenMode } from "./zen";
 
 const INTERVAL = 10000;
@@ -34,13 +28,11 @@ function screensaver() {
   }
 }
 
-export function initScreensaver(defaultValue = false) {
-  const value = initBooleanSetting("screensaver", defaultValue);
-
-  setBooleanSetting("screensaver", value);
-  updateBooleanSettingButtonStatus("screensaver", value);
+export function initScreensaver() {
+  const value = store.getState("screensaver");
 
   if (value) {
+    startScreensaver();
     exitZenMode();
   }
 
@@ -50,6 +42,7 @@ export function initScreensaver(defaultValue = false) {
 }
 
 export function startScreensaver() {
+  document.querySelector("footer")?.classList.add("hidden");
   clearInterval(screensaverInterval);
 
   screensaver();
@@ -57,14 +50,9 @@ export function startScreensaver() {
 }
 
 function toggleScreensaverMode() {
-  const isScreensaverMode = toggleBooleanSetting("screensaver");
-  const menu = document.querySelector<HTMLElement>("footer");
-
-  updateURL("screensaver", isScreensaverMode);
-  updateBooleanSettingButtonStatus("screensaver", isScreensaverMode);
+  const isScreensaverMode = store.toggleState("screensaver");
 
   if (isScreensaverMode) {
-    menu?.classList.add("hidden");
     startScreensaver();
     exitZenMode();
   } else {
@@ -74,8 +62,5 @@ function toggleScreensaverMode() {
 
 export function exitScreensaverMode() {
   clearInterval(screensaverInterval);
-
-  setBooleanSetting("screensaver", false);
-  updateURL("screensaver", false);
-  updateBooleanSettingButtonStatus("screensaver", false);
+  store.setState("screensaver", false);
 }

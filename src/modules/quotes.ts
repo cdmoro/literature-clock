@@ -5,6 +5,7 @@ import { Locale, ResolvedQuote, Quote } from "../types";
 import { fitQuote, getTime, updateGHLinks } from "../utils/utils";
 import FALLBACK_QUOTES from "../strings/fallbackQuotes.json";
 import { fadeInQuote } from "./fade";
+import { store } from "../store";
 
 function prefetchNextQuotes(locale: string) {
   const now = new Date();
@@ -91,13 +92,13 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
 export async function updateQuote({time = getTime(), useIndex = false} = {}) {
   const urlParams = new URLSearchParams(window.location.search);
   const testQuote = urlParams.get("quote");
-  let locale = getStringSetting("locale") as Locale;
+  let locale = store.getState("locale") as Locale;
 
   if (!locale) {
     return;
   }
 
-  if (getStringSetting("locale") === "random") {
+  if (store.getState("locale") === "random") {
     locale = getRandomLocale();
   }
 

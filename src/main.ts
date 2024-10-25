@@ -1,4 +1,4 @@
-import { initLocale } from "./modules/locales";
+import { initLocale, resolveLocale } from "./modules/locales";
 import { initTheme } from "./modules/themes";
 import { initZenMode } from "./modules/zen";
 import { initWorkMode } from "./modules/work";
@@ -11,17 +11,29 @@ import { initTimeMode } from "./modules/time";
 import { initCopy } from "./modules/copy";
 import { initShare } from "./modules/share";
 import { initFullscreen } from "./modules/fullscreen";
+import { createStore } from "./store";
 
 document.addEventListener("DOMContentLoaded", () => {
+  createStore({
+    locale: resolveLocale(navigator.language),
+    screensaver: false,
+    work: false,
+    zen: false,
+    fade: false,
+    showtime: false,
+    font: "default",
+    theme: "base-dark"
+  })
+  
   updateFavicon();
-  initZenMode(false);
-  initWorkMode(false);
-  initFadeMode(false);
-  initScreensaver(false);
-  initTimeMode(false);
-  initTheme("base-dark");
-  initLocale(navigator.language);
-  initFont("default");
+  initZenMode();
+  initWorkMode();
+  initFadeMode();
+  initScreensaver();
+  initTimeMode();
+  initTheme();
+  initLocale();
+  initFont();
   initClock();
   initCopy();
   initShare();
