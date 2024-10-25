@@ -4,20 +4,19 @@ import {
   toggleBooleanSetting,
   updateBooleanSettingButtonStatus,
   updateURL,
-} from "../utils/settings";
-import { exitZenMode } from "./zen";
+} from '../utils/settings';
+import { exitZenMode } from './zen';
 
 const INTERVAL = 10000;
 const TRANSITION_DURATION = `${INTERVAL / 1000}s`;
 let screensaverInterval: NodeJS.Timeout;
 
 function screensaver() {
-  const quote = document.getElementById("quote");
+  const quote = document.getElementById('quote');
   if (quote) {
     quote.style.transitionDuration = TRANSITION_DURATION;
 
-    const getRandomNumber = (min: number, max: number) =>
-      Math.random() * (max - min) + min;
+    const getRandomNumber = (min: number, max: number) => Math.random() * (max - min) + min;
     const scale = getRandomNumber(0.6, 1);
     const windowHeight = window.innerHeight - 30;
     const windowWidth = window.innerWidth - 30;
@@ -29,24 +28,22 @@ function screensaver() {
 
     quote.style.transform = `scale(${scale}) translate(${getRandomNumber(
       xRange * -1,
-      xRange
+      xRange,
     )}px, ${getRandomNumber(yRange * -1, yRange)}px)`;
   }
 }
 
 export function initScreensaver(defaultValue = false) {
-  const value = initBooleanSetting("screensaver", defaultValue);
+  const value = initBooleanSetting('screensaver', defaultValue);
 
-  setBooleanSetting("screensaver", value);
-  updateBooleanSettingButtonStatus("screensaver", value);
+  setBooleanSetting('screensaver', value);
+  updateBooleanSettingButtonStatus('screensaver', value);
 
   if (value) {
     exitZenMode();
   }
 
-  document
-    .getElementById("screensaver")
-    ?.addEventListener("click", toggleScreensaverMode);
+  document.getElementById('screensaver')?.addEventListener('click', toggleScreensaverMode);
 }
 
 export function startScreensaver() {
@@ -57,14 +54,14 @@ export function startScreensaver() {
 }
 
 function toggleScreensaverMode() {
-  const isScreensaverMode = toggleBooleanSetting("screensaver");
-  const menu = document.querySelector<HTMLElement>("footer");
+  const isScreensaverMode = toggleBooleanSetting('screensaver');
+  const menu = document.querySelector<HTMLElement>('footer');
 
-  updateURL("screensaver", isScreensaverMode);
-  updateBooleanSettingButtonStatus("screensaver", isScreensaverMode);
+  updateURL('screensaver', isScreensaverMode);
+  updateBooleanSettingButtonStatus('screensaver', isScreensaverMode);
 
   if (isScreensaverMode) {
-    menu?.classList.add("hidden");
+    menu?.classList.add('hidden');
     startScreensaver();
     exitZenMode();
   } else {
@@ -75,7 +72,7 @@ function toggleScreensaverMode() {
 export function exitScreensaverMode() {
   clearInterval(screensaverInterval);
 
-  setBooleanSetting("screensaver", false);
-  updateURL("screensaver", false);
-  updateBooleanSettingButtonStatus("screensaver", false);
+  setBooleanSetting('screensaver', false);
+  updateURL('screensaver', false);
+  updateBooleanSettingButtonStatus('screensaver', false);
 }

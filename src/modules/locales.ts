@@ -83,38 +83,47 @@ export function initLocale(defaultValue = navigator.language) {
 }
 
 export function getStrings(): Translations {
-  const localeSelect = document.querySelector<HTMLSelectElement>("#locale-select");
+  const localeSelect =
+    document.querySelector<HTMLSelectElement>("#locale-select");
   const resolvedLocale = resolveLocale(localeSelect?.value);
-  const lastLocale = getStringSetting("last-locale") as keyof typeof TRANSLATIONS;
+  const lastLocale = getStringSetting(
+    "last-locale",
+  ) as keyof typeof TRANSLATIONS;
 
-  return TRANSLATIONS[resolvedLocale === "random" ? lastLocale || "en-US" : resolvedLocale];
+  return TRANSLATIONS[
+    resolvedLocale === "random" ? lastLocale || "en-US" : resolvedLocale
+  ];
 }
 
 function translateStrings(locale = navigator.language) {
   const time = getTime();
-  const lastLocale = getStringSetting("last-locale") as keyof typeof TRANSLATIONS;
+  const lastLocale = getStringSetting(
+    "last-locale",
+  ) as keyof typeof TRANSLATIONS;
   const strings = getStrings();
 
   document.documentElement.lang =
-    locale === "random" ? lastLocale?.substring(0, 2) || "en" : locale.substring(0, 2);
+    locale === "random"
+      ? lastLocale?.substring(0, 2) || "en"
+      : locale.substring(0, 2);
   document.title = `${time} - ${strings.document_title}`;
 
   document
     .querySelectorAll<HTMLElement>("[data-text]")
     .forEach(
       (el) =>
-        (el.textContent = strings[el.dataset.text as keyof typeof strings])
+        (el.textContent = strings[el.dataset.text as keyof typeof strings]),
     );
 
   document
     .querySelectorAll<HTMLOptionElement>("[data-label]")
     .forEach(
-      (el) => (el.label = strings[el.dataset.label as keyof typeof strings])
+      (el) => (el.label = strings[el.dataset.label as keyof typeof strings]),
     );
 
   document
     .querySelectorAll<HTMLElement>("[data-title]")
     .forEach(
-      (el) => (el.title = strings[el.dataset.title as keyof typeof strings])
+      (el) => (el.title = strings[el.dataset.title as keyof typeof strings]),
     );
 }

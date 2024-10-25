@@ -1,16 +1,13 @@
-export function initBooleanSetting(
-  name: string,
-  defaultValue: boolean = false
-): boolean {
+export function initBooleanSetting(name: string, defaultValue: boolean = false): boolean {
   const urlParams = new URLSearchParams(window.location.search);
   let value = defaultValue;
 
   if (localStorage.getItem(name)) {
-    value = localStorage.getItem(name) === "true";
+    value = localStorage.getItem(name) === 'true';
   }
 
   if (urlParams.has(name)) {
-    value = urlParams.get(name) === "true";
+    value = urlParams.get(name) === 'true';
   }
 
   return value;
@@ -22,18 +19,18 @@ export function setBooleanSetting(name: string, value: boolean = false) {
 }
 
 export function toggleBooleanSetting(name: string): boolean {
-  const value = !(localStorage.getItem(name) === "true");
+  const value = !(localStorage.getItem(name) === 'true');
   setBooleanSetting(name, value);
   return value;
 }
 
 export function updateBooleanSettingButtonStatus(name: string, value: boolean) {
   const button = document.getElementById(name);
-  button?.classList.toggle("active", value);
+  button?.classList.toggle('active', value);
 }
 
 export function isBooleanSettingTrue(name: string) {
-  return localStorage.getItem(name) === "true";
+  return localStorage.getItem(name) === 'true';
 }
 
 export function initStringSetting(name: string, defaultValue: string) {
@@ -68,14 +65,14 @@ export function updateURL(name: string, value: string | boolean) {
     urlParams.set(name, value.toString());
   }
 
-  const url = urlParams.size ? `?${urlParams.toString()}` : "/";
-  history.replaceState({}, "", url);
+  const url = urlParams.size ? `?${urlParams.toString()}` : '/';
+  history.replaceState({}, '', url);
 }
 
 export function removeURLParam(name: string) {
   const urlParams = new URLSearchParams(window.location.search);
   urlParams.delete(name);
 
-  const url = urlParams.size ? `?${urlParams.toString()}` : "/";
-  history.replaceState({}, "", url);
+  const url = urlParams.size ? `?${urlParams.toString()}` : '/';
+  history.replaceState({}, '', url);
 }

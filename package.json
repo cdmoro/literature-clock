@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest --environment=jsdom",
     "generate-times": "python ./scripts/generate_times.py",
-    "check-quotes": "python ./scripts/check_quotes.py"
+    "check-quotes": "python ./scripts/check_quotes.py",
+    "lint": "eslint"
   },
   "repository": {
     "type": "git",
@@ -24,8 +25,15 @@
   },
   "homepage": "https://github.com/cdmoro/literature-clock#readme",
   "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "eslint": "^9.13.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.11.0",
     "jsdom": "^24.0.0",
+    "prettier": "3.3.3",
     "typescript": "^5.4.5",
+    "typescript-eslint": "^8.11.0",
     "vite": "^5.2.11",
     "vitest": "^1.6.0"
   },
