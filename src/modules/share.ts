@@ -1,6 +1,5 @@
 import html2canvas from 'html2canvas-pro';
 import { getTime } from '../utils/utils';
-import { getStringSetting } from '../utils/settings';
 import { getStrings } from './locales';
 import { store } from '../store';
 
@@ -58,7 +57,7 @@ async function shareQuote() {
 
       const url = new URL('https://literatureclock.netlify.app/');
       const locale = store.getState('locale');
-      const theme = getStringSetting('theme');
+      const theme = store.getState('theme');
 
       if (locale) {
         url.searchParams.append('locale', locale);

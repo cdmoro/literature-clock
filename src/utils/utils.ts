@@ -1,5 +1,4 @@
 import { startScreensaver } from '../modules/screensaver';
-import { isBooleanSettingTrue } from './settings';
 import { Locale, Quote } from '../types';
 import { INITIAL_THEME_FONT_SIZE } from '../modules/font';
 import { store } from '../store';
@@ -78,7 +77,7 @@ export function fitQuote() {
   setTimeout(() => {
     clearInterval(interval);
 
-    if (isBooleanSettingTrue('screensaver')) {
+    if (store.getState('screensaver')) {
       startScreensaver();
     }
   }, 500);

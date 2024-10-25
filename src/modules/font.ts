@@ -78,9 +78,7 @@ function setFont() {
 
     if (font === 'default') {
       root?.style.removeProperty(CSS_FONT_VARIABLE);
-      // removeURLParam("font");
     } else {
-      // updateURL("font", font);
       loadFontIfNotExists(font);
       root?.style.setProperty(CSS_FONT_VARIABLE, `${font}, sans-serif`);
     }
@@ -98,5 +96,4 @@ export function resetFont() {
     fontSelect.value = 'default';
   }
   store.setState('font', 'default');
-  // removeURLParam("font");
 }
