@@ -13,7 +13,7 @@
     "generate-times": "python ./scripts/generate_times.py",
     "check-quotes": "python ./scripts/check_quotes.py",
     "lint": "eslint",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
     "typecheck": "tsc --noEmit",
     "prepare": "husky install"
   },
