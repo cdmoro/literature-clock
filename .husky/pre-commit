@@ -2,6 +2,6 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 npm run check-quotes
-npm run test:ci
-npm run lint
 npm run typecheck
+npm run lint
+npm run test:ci
