@@ -40,7 +40,7 @@ export function parseUrlParams(urlParams: URLSearchParams): Partial<State> {
 
   urlParams.forEach((value, key) => {
     if (value !== null) {
-      // @ts-expect-error TODO
+      // @ts-expect-error TODO: Investigate TS error
       stateFromUrl[key] = value === 'true' ? true : value === 'false' ? false : value;
     }
   });
@@ -141,7 +141,7 @@ export class Store {
   private getStatefulSettings() {
     const statefulSettings = {} as Stateful;
 
-    // @ts-expect-error TODO
+    // @ts-expect-error TODO: Investigate TS error
     this.knownKeys.forEach((key) => (statefulSettings[key] = this.state[key]));
 
     return statefulSettings;

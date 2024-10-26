@@ -2,15 +2,14 @@ import { exitScreensaverMode } from './screensaver';
 import { store } from '../store';
 
 export function initZenMode() {
+  if (store.getState('zen')) {
+    exitScreensaverMode();
+  }
+
   document.getElementById('zen')?.addEventListener('click', () => {
-    const isZenMode = store.toggleState('zen');
-    if (isZenMode) {
+    if (store.toggleState('zen')) {
       exitScreensaverMode();
     }
   });
-  document.getElementById('exit-zen')?.addEventListener('click', exitZenMode);
-}
-
-export function exitZenMode() {
-  store.setState('zen', false);
+  document.getElementById('exit-zen')?.addEventListener('click', () => store.setState('zen', false));
 }
