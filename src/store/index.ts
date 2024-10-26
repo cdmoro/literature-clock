@@ -51,6 +51,11 @@ export function getStateFromLocalStorage(): Partial<State> {
   return storedSettings ? JSON.parse(storedSettings) : {};
 }
 
+export function updateBooleanSettingStatus(key: string, value: boolean) {
+  document.body.classList.toggle(key, value);
+  document.getElementById(key)?.classList.toggle('active', value);
+}
+
 export class Store {
   private state: State;
   private listeners: Listener[] = [];
@@ -71,9 +76,8 @@ export class Store {
     this.state = { ...defaultState, ...stateFromLocalStorage, ...stateFromUrl };
 
     Object.entries(this.state).forEach(([key, value]) => {
-      if (value === true) {
-        document.body.classList.toggle(key, value);
-        document.getElementById(key)?.classList.toggle('active', value);
+      if (typeof value === 'boolean') {
+        updateBooleanSettingStatus(key, value);
       }
     });
 
@@ -97,8 +101,7 @@ export class Store {
     this.notifyListeners(oldState);
 
     if (typeof value === 'boolean') {
-      document.getElementById(key)?.classList.toggle('active', value);
-      document.body.classList.toggle(key, value);
+      updateBooleanSettingStatus(key, value);
     }
 
     return value;
