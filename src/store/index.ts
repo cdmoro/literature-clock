@@ -25,14 +25,10 @@ type State = Stateful & Stateless;
 
 type Listener = (newState: State, oldState: State) => void;
 
-const REMOVE_FROM_URL: (keyof State)[] = ['custom-font', 'last-locale'];
+const IGNORE_FROM_URL: (keyof State)[] = ['custom-font', 'last-locale'];
 const REMOVE_VALUES_FROM_URL: Partial<State> = {
-  screensaver: false,
-  fade: false,
   font: 'default',
-  showtime: false,
-  work: false,
-  zen: false,
+  theme: 'base-system',
 };
 
 export function parseUrlParams(urlParams: URLSearchParams): Partial<State> {
@@ -154,13 +150,13 @@ export class Store {
 
   // Sync only one property to the URL using history API
   private syncToUrl<K extends keyof State>(key: K, value: State[K]) {
-    if (REMOVE_FROM_URL.includes(key)) {
+    if (IGNORE_FROM_URL.includes(key)) {
       return;
     }
 
     const urlParams = new URLSearchParams(window.location.search);
 
-    if (REMOVE_VALUES_FROM_URL[key] === value) {
+    if (REMOVE_VALUES_FROM_URL[key] === value || value === false) {
       urlParams.delete(key);
     } else if (value) {
       urlParams.set(key, value.toString());
@@ -184,6 +180,6 @@ export function createStore() {
     fade: false,
     showtime: false,
     font: 'default',
-    theme: 'base-dark',
+    theme: 'base-system',
   });
 }
