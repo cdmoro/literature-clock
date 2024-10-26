@@ -1,5 +1,5 @@
 import { updateQuote } from './quotes';
-import { getTime, updateFavicon } from '../utils/utils';
+import { getTime, updateFavicon } from '../utils';
 import { setDayParameters } from './dynamic';
 import { fadeOutQuote } from './fade';
 import { removeBackgroundImage, setDynamicBackgroundPicture } from './themes';

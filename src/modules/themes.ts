@@ -1,5 +1,5 @@
 import { THEME_FONTS, resetFont } from './font';
-import { doFitQuote, fitQuote, loadFontIfNotExists } from '../utils/utils';
+import { doFitQuote, fitQuote, loadFontIfNotExists } from '../utils';
 import { setDayParameters } from './dynamic';
 import { store } from '../store';
 
@@ -19,7 +19,7 @@ export function initTheme() {
   const variantSelect = document.querySelector<HTMLSelectElement>('#variant-select');
   const preferDarkThemes = window.matchMedia('(prefers-color-scheme: dark)');
 
-  store.setState('theme', `${theme}-${variant}`);
+  store.setState('theme', `${theme}-${variant}`, false);
   if (theme && THEME_FONTS[theme]) {
     THEME_FONTS[theme].forEach((font) => {
       loadFontIfNotExists(font);

@@ -1,7 +1,7 @@
 import { updateQuote } from './quotes';
 import TRANSLATIONS from '../strings/translations.json';
 import { Locale } from '../types';
-import { getTime } from '../utils/utils';
+import { getTime } from '../utils';
 import { Translations } from '../types';
 import { store } from '../store';
 

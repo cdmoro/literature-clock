@@ -1,3 +1,5 @@
+import { resolveLocale } from '../modules/locales';
+
 interface Stateful {
   locale: string;
   zen: boolean;
@@ -91,12 +93,14 @@ export class Store {
   }
 
   // Update a state property and synchronize to localStorage and URL (for this key)
-  setState<K extends keyof State>(key: K, value: State[K]) {
+  setState<K extends keyof State>(key: K, value: State[K], syncToUrl: boolean = true) {
     const oldState = { ...this.state };
     this.state[key] = value;
 
     this.syncToLocalStorage();
-    this.syncToUrl(key, value); // Sync only this key to the URL
+    if (syncToUrl) {
+      this.syncToUrl(key, value);
+    }
 
     this.notifyListeners(oldState);
 
@@ -171,6 +175,15 @@ export class Store {
 export let store: Store;
 
 // Create the store and pass default state to constructor
-export function createStore(defaultState: State) {
-  store = new Store(defaultState);
+export function createStore() {
+  store = new Store({
+    locale: resolveLocale(navigator.language),
+    screensaver: false,
+    work: false,
+    zen: false,
+    fade: false,
+    showtime: false,
+    font: 'default',
+    theme: 'base-dark',
+  });
 }

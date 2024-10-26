@@ -1,7 +1,7 @@
 import { getRandomLocale, getStrings } from './locales';
 import { setTheme } from './themes';
 import { Locale, ResolvedQuote, Quote } from '../types';
-import { fitQuote, getTime, updateGHLinks } from '../utils/utils';
+import { fitQuote, getTime, updateGHLinks } from '../utils';
 import FALLBACK_QUOTES from '../strings/fallbackQuotes.json';
 import { fadeInQuote } from './fade';
 import { store } from '../store';

@@ -1,4 +1,4 @@
-import { fitQuote, loadFontIfNotExists } from '../utils/utils';
+import { fitQuote, loadFontIfNotExists } from '../utils';
 import { store } from '../store';
 
 export const THEME_FONTS: Record<string, string[]> = {
@@ -54,7 +54,7 @@ export function initFont() {
     fontSelect?.appendChild(createOption(customFont));
   }
 
-  store.setState('font', font);
+  store.setState('font', font, false);
   if (fontSelect) {
     fontSelect.value = font;
   }

@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { getFaviconFileName } from './utils';
+import { getFaviconFileName } from '.';
 
 describe('getFaviconFileName', () => {
   const TIMES = {

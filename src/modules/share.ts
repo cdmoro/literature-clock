@@ -1,5 +1,5 @@
 import html2canvas from 'html2canvas-pro';
-import { getTime } from '../utils/utils';
+import { getTime } from '../utils';
 import { getStrings } from './locales';
 import { store } from '../store';
 
