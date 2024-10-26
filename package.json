@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --open",
     "build": "tsc & vite build",
+    "deploy": "npm run generate-times && npm run build",
     "host": "vite --host",
     "preview": "vite preview",
     "test": "vitest --environment=jsdom",
