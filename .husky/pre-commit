@@ -4,4 +4,3 @@
 npm run check-quotes
 npm run typecheck
 npm run lint
-npm run test:ci

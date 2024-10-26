@@ -1,4 +1,4 @@
-import { updateBooleanSettingButtonStatus } from '../utils/settings';
+import { updateBooleanSettingStatus } from '../store';
 
 export function initFullscreen() {
   const fullscreenBtn = document.getElementById('fullscreen');
@@ -12,9 +12,9 @@ export function initFullscreen() {
 function toggleFullscreen() {
   if (!document.fullscreenElement) {
     document.documentElement.requestFullscreen();
-    updateBooleanSettingButtonStatus('fullscreen', true);
+    updateBooleanSettingStatus('fullscreen', true);
   } else if (document.exitFullscreen) {
     document.exitFullscreen();
-    updateBooleanSettingButtonStatus('fullscreen', false);
+    updateBooleanSettingStatus('fullscreen', false);
   }
 }

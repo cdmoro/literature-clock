@@ -1,11 +1,4 @@
-import {
-  initBooleanSetting,
-  setBooleanSetting,
-  toggleBooleanSetting,
-  updateBooleanSettingButtonStatus,
-  updateURL,
-} from '../utils/settings';
-import { exitZenMode } from './zen';
+import { store } from '../store';
 
 const INTERVAL = 10000;
 const TRANSITION_DURATION = `${INTERVAL / 1000}s`;
@@ -20,8 +13,8 @@ function screensaver() {
     const scale = getRandomNumber(0.6, 1);
     const windowHeight = window.innerHeight - 30;
     const windowWidth = window.innerWidth - 30;
-    const quoteHeight = quote?.offsetHeight * scale;
-    const quoteWidth = quote?.offsetWidth * scale;
+    const quoteHeight = quote.offsetHeight * scale;
+    const quoteWidth = quote.offsetWidth * scale;
 
     const xRange = (windowWidth - quoteWidth) / 2;
     const yRange = (windowHeight - quoteHeight) / 2;
@@ -33,46 +26,33 @@ function screensaver() {
   }
 }
 
-export function initScreensaver(defaultValue = false) {
-  const value = initBooleanSetting('screensaver', defaultValue);
-
-  setBooleanSetting('screensaver', value);
-  updateBooleanSettingButtonStatus('screensaver', value);
-
-  if (value) {
-    exitZenMode();
+export function initScreensaver() {
+  if (store.getState('screensaver')) {
+    startScreensaver();
   }
 
   document.getElementById('screensaver')?.addEventListener('click', toggleScreensaverMode);
 }
 
 export function startScreensaver() {
+  document.querySelector('footer')?.classList.add('hidden');
   clearInterval(screensaverInterval);
 
-  screensaver();
+  // TODO: Investigate why setTimeout is needed
+  setTimeout(screensaver, 1);
   screensaverInterval = setInterval(screensaver, INTERVAL);
 }
 
 function toggleScreensaverMode() {
-  const isScreensaverMode = toggleBooleanSetting('screensaver');
-  const menu = document.querySelector<HTMLElement>('footer');
-
-  updateURL('screensaver', isScreensaverMode);
-  updateBooleanSettingButtonStatus('screensaver', isScreensaverMode);
-
-  if (isScreensaverMode) {
-    menu?.classList.add('hidden');
+  if (store.toggleState('screensaver')) {
     startScreensaver();
-    exitZenMode();
-  } else {
-    exitScreensaverMode();
+    return;
   }
+
+  exitScreensaverMode();
 }
 
 export function exitScreensaverMode() {
   clearInterval(screensaverInterval);
-
-  setBooleanSetting('screensaver', false);
-  updateURL('screensaver', false);
-  updateBooleanSettingButtonStatus('screensaver', false);
+  store.setState('screensaver', false);
 }

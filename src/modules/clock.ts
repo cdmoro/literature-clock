@@ -1,14 +1,10 @@
 import { updateQuote } from './quotes';
-import { getTime, updateFavicon } from '../utils/utils';
-import { getStringSetting, isBooleanSettingTrue } from '../utils/settings';
+import { getTime, updateFavicon } from '../utils';
 import { setDayParameters } from './dynamic';
 import { fadeOutQuote } from './fade';
 import { removeBackgroundImage, setDynamicBackgroundPicture } from './themes';
+import { store } from '../store';
 
-const urlParams = new URLSearchParams(window.location.search);
-const testTime = urlParams.get('time');
-const testQuote = urlParams.get('quote');
-const isTest = !!(testTime || testQuote);
 const timeProgressBar = document.getElementById('time-progress-bar');
 let lastTime: string;
 
@@ -24,9 +20,9 @@ function updateProgressBar() {
 }
 
 async function updateTime() {
-  const time = testTime || getTime();
+  const time = store.getState('time') || getTime();
 
-  if (isBooleanSettingTrue('fade')) {
+  if (store.getState('fade')) {
     fadeOutQuote();
   }
 
@@ -35,11 +31,11 @@ async function updateTime() {
       updateFavicon(time);
     }
 
-    if (getStringSetting('theme')?.startsWith('dynamic')) {
+    if (store.getState('theme')?.startsWith('dynamic')) {
       setDayParameters();
     }
 
-    if (getStringSetting('theme')?.startsWith('photo')) {
+    if (store.getState('theme')?.startsWith('photo')) {
       setDynamicBackgroundPicture();
     } else {
       removeBackgroundImage();
@@ -58,6 +54,10 @@ async function updateTime() {
 }
 
 export function initClock() {
+  const testTime = store.getState('time');
+  const testQuote = store.getState('quote');
+  const isTest = !!(testTime || testQuote);
+
   updateTime();
 
   if (!isTest) {

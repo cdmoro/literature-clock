@@ -1,14 +1,13 @@
 import { startScreensaver } from '../modules/screensaver';
-import { isBooleanSettingTrue } from './settings';
 import { Locale, Quote } from '../types';
 import { INITIAL_THEME_FONT_SIZE } from '../modules/font';
+import { store } from '../store';
 
 const GITHUB_NEW_ISSUE_URL = 'https://github.com/cdmoro/literature-clock/issues/new';
 let mouseTimeout: NodeJS.Timeout;
 
 export function getTime() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const testTime = urlParams.get('time');
+  const testTime = store.getState('time');
   const now = new Date();
   const hours = now.getHours();
   const minutes = now.getMinutes();
@@ -78,7 +77,7 @@ export function fitQuote() {
   setTimeout(() => {
     clearInterval(interval);
 
-    if (isBooleanSettingTrue('screensaver')) {
+    if (store.getState('screensaver')) {
       startScreensaver();
     }
   }, 500);

@@ -1,6 +1,14 @@
 import { describe, expect, test, vi } from 'vitest';
 import { getDayParameters, getDayProgress } from './dynamic';
 
+vi.mock('../store', () => {
+  return {
+    store: {
+      getState: () => '',
+    },
+  };
+});
+
 const PROGRESS = {
   '0': new Date(2024, 5, 11, 0, 0, 0),
   '16.67': new Date(2024, 5, 11, 4, 0, 0),

@@ -15,6 +15,15 @@ export default [
       'no-console': 'warn',
       quotes: ['error', 'single'],
       'linebreak-style': ['error', 'unix'],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          args: 'all',
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
     },
   },
 ];

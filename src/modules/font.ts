@@ -1,5 +1,5 @@
-import { getStringSetting, initStringSetting, removeURLParam, setStringSetting, updateURL } from '../utils/settings';
-import { fitQuote, loadFontIfNotExists } from '../utils/utils';
+import { fitQuote, loadFontIfNotExists } from '../utils';
+import { store } from '../store';
 
 export const THEME_FONTS: Record<string, string[]> = {
   retro: ['VT323'],
@@ -37,8 +37,8 @@ function createOption(value: string) {
   return option;
 }
 
-export function initFont(defaultValue = 'default') {
-  const font = initStringSetting('font', defaultValue);
+export function initFont() {
+  const font = store.getState('font');
   const fontSelect = document.querySelector<HTMLSelectElement>('#font-select');
 
   FONTS.forEach((fontName) => {
@@ -46,15 +46,15 @@ export function initFont(defaultValue = 'default') {
   });
 
   if (font !== 'default' && !FONTS.includes(font)) {
-    setStringSetting('custom-font', font);
+    store.setState('custom-font', font);
   }
 
-  const customFont = getStringSetting('custom-font');
+  const customFont = store.getState('custom-font');
   if (customFont && !FONTS.includes(customFont)) {
     fontSelect?.appendChild(createOption(customFont));
   }
 
-  setStringSetting('font', font);
+  store.setState('font', font, false);
   if (fontSelect) {
     fontSelect.value = font;
   }
@@ -74,13 +74,11 @@ function setFont() {
   const root = document.querySelector<HTMLElement>(':root');
 
   if (font) {
-    setStringSetting('font', font);
+    store.setState('font', font);
 
     if (font === 'default') {
       root?.style.removeProperty(CSS_FONT_VARIABLE);
-      removeURLParam('font');
     } else {
-      updateURL('font', font);
       loadFontIfNotExists(font);
       root?.style.setProperty(CSS_FONT_VARIABLE, `${font}, sans-serif`);
     }
@@ -97,6 +95,5 @@ export function resetFont() {
   if (fontSelect) {
     fontSelect.value = 'default';
   }
-  setStringSetting('font', 'default');
-  removeURLParam('font');
+  store.setState('font', 'default');
 }
