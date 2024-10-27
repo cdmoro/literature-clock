@@ -4,6 +4,7 @@ export function initFullscreen() {
   const fullscreenBtn = document.getElementById('fullscreen');
   if (document.fullscreenEnabled) {
     fullscreenBtn?.addEventListener('click', toggleFullscreen);
+    document.addEventListener('fullscreenchange', exitFullscreen);
   } else {
     fullscreenBtn?.remove();
   }
@@ -13,8 +14,14 @@ function toggleFullscreen() {
   if (!document.fullscreenElement) {
     document.documentElement.requestFullscreen();
     updateBooleanSettingStatus('fullscreen', true);
-  } else if (document.exitFullscreen) {
+  } else {
     document.exitFullscreen();
+    updateBooleanSettingStatus('fullscreen', false);
+  }
+}
+
+function exitFullscreen() {
+  if (!document.fullscreenElement) {
     updateBooleanSettingStatus('fullscreen', false);
   }
 }
