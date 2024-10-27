@@ -111,18 +111,12 @@ To generate the times, simply run `python .\scripts\generate_times.py` in the ro
 
 This project is possible thanks to the following projects:
 
-- Javascript
-- Python
-- Vite
-- Vitest
-- Husky
-- Netlify
-- Estlint
-- Prettier
+- [Vite](https://vite.dev/)
+- [Vitest](https://vitest.dev/)
+- [Husky](https://typicode.github.io/husky/)
+- [Netlify](https://www.netlify.com/)
 
 ## Credits
-
-Credits to:
 
 - [html2canvas-pro](https://yorickshan.github.io/html2canvas-pro/)
 - [lunarphase-js](https://github.com/jasonsturges/lunarphase-js)
