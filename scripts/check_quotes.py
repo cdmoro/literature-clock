@@ -1,5 +1,6 @@
 import os
 import csv
+import errno, sys
 
 print("Starting processing quotes...\n")
 
@@ -10,12 +11,11 @@ def check_csv_files(directory):
             filepath = os.path.join(directory, file_name)
             errors = 0
 
-            print(f"Processing {file_name}...")
-
             with open(filepath, 'r', newline='', encoding="cp437") as csvfile:
                 reader = csv.DictReader(csvfile)
                 rows = list(reader)
-                print(f'- Lines: {len(rows) + 1}')  # +1 to include the header
+
+                print(f"Processing {file_name}...")
 
                 # Loop through the rows and update the 'Quote time' if needed
                 for row in rows:
@@ -33,11 +33,15 @@ def check_csv_files(directory):
                     writer.writerows(rows)
 
             total_errors += errors
+
+            print(f"- Lines: {len(rows) + 1}")
             print(f"- Errors found: {errors}\n")
     return total_errors
 
 quotes_path = 'quotes/'
 result = check_csv_files(quotes_path)
 
-print("Processing finished.")
-print(f"Errors found: {result}")
+if result > 0:
+    sys.exit(f"Error. {result} invalid quotes were found!")
+
+print("Processing finished, all good!")
