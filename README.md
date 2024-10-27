@@ -95,13 +95,32 @@ If you want to use this clock as a screensaver there are several ways to address
 
 ### Web
 
-To run the project you need to have Node and NPM installed on your system. Then, clone the project, install the dependencies, execute `npm run dev` and voila! The clock will be automatically opened in your favorite browser.
+To run the project you need to have Python, Node and NPM installed on your system.
+  1. Clone the project
+  1. Run `python .\scripts\generate_times.py` to generate the quote files
+  1. Install NPM dependencies
+  1. Run `npm run dev` and voila! The clock will be automatically opened in your favorite browser.
 
-### Generating quotes
+### About generating quotes
 
 I used Python to generate the JSON files (one per time if the time has quotes) with the quotes. The script goes through all the CSV files (one per locale) and puts the files in the appropriate folders. Also, the script generates an additional JSON file with statistics per locale, such as the times with fewer quotes, the author with the most quotes, etc.
 
 To generate the times, simply run `python .\scripts\generate_times.py` in the root folder. By default, the script will generate all the JSON files, if you want to generate the JSON files for a particular locale you can add it as a parameter, i.e. `.\scripts\generate_times.py en-US`.
+
+## Technology stack
+
+This project is possible thanks to the following projects:
+
+- [Vite](https://vite.dev/)
+- [Vitest](https://vitest.dev/)
+- [Husky](https://typicode.github.io/husky/)
+- [Netlify](https://www.netlify.com/)
+
+## Credits
+
+- [html2canvas-pro](https://yorickshan.github.io/html2canvas-pro/)
+- [lunarphase-js](https://github.com/jasonsturges/lunarphase-js)
+- [Picsum](https://picsum.photos/)
 
 ## Contact
 

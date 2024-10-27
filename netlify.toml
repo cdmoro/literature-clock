@@ -1,0 +1,3 @@
+[build]
+  command = "pip install -r requirements.txt && python scripts/generate_times.py && npm run build"
+  publish = "dist"
