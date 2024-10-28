@@ -19,16 +19,15 @@ def check_keys_consistency(languages):
         else:
             print(f"All keys match in {lang}")
 
-
 def generate_typescript_type(languages):
     subkeys = languages[next(iter(languages))].keys()
 
     ts_type = "export type Translations = {\n"
     for key in subkeys:
         ts_type += f"  {key}: string;\n"
-    ts_type += "};"
+    ts_type += "};\n"  # Ensure there is a final newline at the end
 
-    with open('src/strings/types.ts', 'w', encoding='utf-8') as ts_file:
+    with open('src/strings/types.ts', 'w', newline='\n', encoding='utf-8') as ts_file:
         ts_file.write(ts_type)
 
     print("TypeScript type generated successfully in 'src/strings/types.ts'.")
