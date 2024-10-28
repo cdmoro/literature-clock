@@ -5,7 +5,7 @@ export function initFadeMode() {
 }
 
 function toggleFadeMode() {
-  const isFadeMode = store.toggleState('fade');
+  const isFadeMode = store.toggle('fade');
 
   if (!isFadeMode) {
     document.getElementById('quote')?.classList.remove('fade-in', 'fade-out');

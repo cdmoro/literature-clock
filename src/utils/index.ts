@@ -7,7 +7,7 @@ const GITHUB_NEW_ISSUE_URL = 'https://github.com/cdmoro/literature-clock/issues/
 let mouseTimeout: NodeJS.Timeout;
 
 export function getTime() {
-  const testTime = store.getState('time');
+  const testTime = store.get('time');
   const now = new Date();
   const hours = now.getHours();
   const minutes = now.getMinutes();
@@ -77,7 +77,7 @@ export function fitQuote() {
   setTimeout(() => {
     clearInterval(interval);
 
-    if (store.getState('screensaver')) {
+    if (store.get('screensaver')) {
       startScreensaver();
     }
   }, 500);

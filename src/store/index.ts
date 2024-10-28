@@ -19,6 +19,7 @@ export interface Stateless {
   scene?: string;
   progress?: string;
   index?: string;
+  static?: boolean;
 }
 
 type State = Stateful & Stateless;
@@ -84,12 +85,12 @@ export class Store {
   }
 
   // Get current state
-  getState<K extends keyof State>(key: K) {
+  get<K extends keyof State>(key: K) {
     return this.state[key];
   }
 
   // Update a state property and synchronize to localStorage and URL (for this key)
-  setState<K extends keyof State>(key: K, value: State[K], syncToUrl: boolean = true) {
+  set<K extends keyof State>(key: K, value: State[K], syncToUrl: boolean = true) {
     const oldState = { ...this.state };
     this.state[key] = value;
 
@@ -107,10 +108,10 @@ export class Store {
     return value;
   }
 
-  toggleState(key: keyof State) {
+  toggle(key: keyof State) {
     if (typeof this.state[key] === 'boolean') {
-      const newValue = !this.getState(key);
-      this.setState(key, newValue);
+      const newValue = !this.get(key);
+      this.set(key, newValue);
 
       return newValue;
     } else {

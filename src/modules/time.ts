@@ -1,5 +1,5 @@
 import { store } from '../store';
 
 export function initTimeMode() {
-  document.getElementById('showtime')?.addEventListener('click', () => store.toggleState('showtime'));
+  document.getElementById('showtime')?.addEventListener('click', () => store.toggle('showtime'));
 }

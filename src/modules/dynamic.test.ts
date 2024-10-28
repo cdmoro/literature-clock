@@ -4,7 +4,7 @@ import { getDayParameters, getDayProgress } from './dynamic';
 vi.mock('../store', () => {
   return {
     store: {
-      getState: () => '',
+      get: () => '',
     },
   };
 });

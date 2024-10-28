@@ -14,7 +14,7 @@ function getRandomThemeColor() {
 }
 
 export function initTheme() {
-  let [theme, variant = 'system'] = store.getState('theme').split('-');
+  let [theme, variant = 'system'] = store.get('theme').split('-');
   const themeSelect = document.querySelector<HTMLSelectElement>('#theme-select');
   const variantSelect = document.querySelector<HTMLSelectElement>('#variant-select');
   const preferDarkThemes = window.matchMedia('(prefers-color-scheme: dark)');
@@ -41,12 +41,12 @@ export function initTheme() {
   themeSelect?.addEventListener('change', () => setTheme());
   variantSelect?.addEventListener('change', () => setTheme({ isVariantChange: true }));
   preferDarkThemes.addEventListener('change', (e) => {
-    const [_, variant] = store.getState('theme').split('-');
+    const [_, variant] = store.get('theme').split('-');
 
     if (variant === 'system') {
-      const [theme] = store.getState('theme').split('-');
+      const [theme] = store.get('theme').split('-');
 
-      store.setState('theme', `${theme}-system`);
+      store.set('theme', `${theme}-system`);
       document.documentElement.dataset.theme = `${theme}-${e.matches ? 'dark' : 'light'}`;
     }
   });
@@ -68,7 +68,7 @@ export function setTheme({ isVariantChange = false } = {}) {
     });
     resetFont();
   }
-  store.setState('theme', `${theme}-${variant}`);
+  store.set('theme', `${theme}-${variant}`);
 
   if (theme === 'color') {
     theme = getRandomThemeColor();

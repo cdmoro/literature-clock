@@ -38,7 +38,7 @@ function createOption(value: string) {
 }
 
 export function initFont() {
-  const font = store.getState('font');
+  const font = store.get('font');
   const fontSelect = document.querySelector<HTMLSelectElement>('#font-select');
 
   FONTS.forEach((fontName) => {
@@ -46,15 +46,15 @@ export function initFont() {
   });
 
   if (font !== 'default' && !FONTS.includes(font)) {
-    store.setState('custom-font', font);
+    store.set('custom-font', font);
   }
 
-  const customFont = store.getState('custom-font');
+  const customFont = store.get('custom-font');
   if (customFont && !FONTS.includes(customFont)) {
     fontSelect?.appendChild(createOption(customFont));
   }
 
-  store.setState('font', font, false);
+  store.set('font', font, false);
   if (fontSelect) {
     fontSelect.value = font;
   }
@@ -74,7 +74,7 @@ function setFont() {
   const root = document.querySelector<HTMLElement>(':root');
 
   if (font) {
-    store.setState('font', font);
+    store.set('font', font);
 
     if (font === 'default') {
       root?.style.removeProperty(CSS_FONT_VARIABLE);
@@ -95,5 +95,5 @@ export function resetFont() {
   if (fontSelect) {
     fontSelect.value = 'default';
   }
-  store.setState('font', 'default');
+  store.set('font', 'default');
 }

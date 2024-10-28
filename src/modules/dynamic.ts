@@ -8,7 +8,7 @@ export function getDayProgress() {
   const seconds = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
   const progress = (seconds * 100) / 86400;
 
-  return parseFloat(store.getState('progress') || progress.toFixed(2));
+  return parseFloat(store.get('progress') || progress.toFixed(2));
 }
 
 export function getDayParameters() {
@@ -47,7 +47,7 @@ export function getDayParameters() {
   const period = progress < 50 ? 'am' : 'pm';
 
   return {
-    scene: store.getState('scene') || scene,
+    scene: store.get('scene') || scene,
     progress,
     period,
     segment,

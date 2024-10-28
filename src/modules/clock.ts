@@ -20,9 +20,9 @@ function updateProgressBar() {
 }
 
 async function updateTime() {
-  const time = store.getState('time') || getTime();
+  const time = store.get('time') || getTime();
 
-  if (store.getState('fade')) {
+  if (store.get('fade')) {
     fadeOutQuote();
   }
 
@@ -31,11 +31,11 @@ async function updateTime() {
       updateFavicon(time);
     }
 
-    if (store.getState('theme')?.startsWith('dynamic')) {
+    if (store.get('theme')?.startsWith('dynamic')) {
       setDayParameters();
     }
 
-    if (store.getState('theme')?.startsWith('photo')) {
+    if (store.get('theme')?.startsWith('photo')) {
       setDynamicBackgroundPicture();
     } else {
       removeBackgroundImage();
@@ -54,8 +54,8 @@ async function updateTime() {
 }
 
 export function initClock() {
-  const testTime = store.getState('time');
-  const testQuote = store.getState('quote');
+  const testTime = store.get('time');
+  const testQuote = store.get('quote');
   const isTest = !!(testTime || testQuote);
 
   updateTime();
