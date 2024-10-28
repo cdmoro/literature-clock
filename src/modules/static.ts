@@ -1,6 +1,6 @@
 import { store } from '../store';
 
-export function initStatic() {
+export function initStaticMode() {
   if (store.get('static')) {
     document.querySelector('footer')?.remove();
   }

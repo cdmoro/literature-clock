@@ -1,29 +1,29 @@
-import { initStatic } from './static';
+import { initStaticMode } from './static';
 import { initClock } from './clock';
 import { initCopy } from './copy';
 import { initFadeMode } from './fade';
 import { initFont } from './font';
-import { initFullscreen } from './fullscreen';
+import { initFullscreenMode } from './fullscreen';
 import { initLocale } from './locales';
-import { initScreensaver } from './screensaver';
+import { initScreensaverMode } from './screensaver';
 import { initShare } from './share';
 import { initTheme } from './themes';
-import { initTimeMode } from './time';
+import { initShowtimeMode } from './time';
 import { initWorkMode } from './work';
 import { initZenMode } from './zen';
 
 const MODULES = [
-  initStatic,
+  initStaticMode,
   initClock,
   initCopy,
   initFadeMode,
   initFont,
-  initFullscreen,
+  initFullscreenMode,
   initLocale,
-  initScreensaver,
+  initScreensaverMode,
   initShare,
   initTheme,
-  initTimeMode,
+  initShowtimeMode,
   initWorkMode,
   initZenMode,
 ];

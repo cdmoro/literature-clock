@@ -1,6 +1,6 @@
 import { updateBooleanSettingStatus } from '../store';
 
-export function initFullscreen() {
+export function initFullscreenMode() {
   const fullscreenBtn = document.getElementById('fullscreen');
   if (document.fullscreenEnabled) {
     fullscreenBtn?.addEventListener('click', toggleFullscreen);

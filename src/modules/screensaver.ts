@@ -26,7 +26,7 @@ function screensaver() {
   }
 }
 
-export function initScreensaver() {
+export function initScreensaverMode() {
   if (store.get('screensaver')) {
     startScreensaver();
   }
