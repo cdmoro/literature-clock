@@ -1,0 +1,40 @@
+{
+  "name": "screensaver-windows",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": {
+    "name": "Carlos Bonadeo",
+    "email": "carlosbonadeo@gmail.com",
+    "url": "https://www.linkedin.com/in/cdbonadeo/"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^25.0.0",
+    "electron-builder": "^23.0.0"
+  },
+  "build": {
+    "appId": "com.tuapp.screensaver",
+    "win": {
+      "target": "nsis",
+      "artifactName": "${productName}-${version}.${ext}"
+    },
+    "mac": {
+      "target": "dmg",
+      "artifactName": "${productName}-${version}.${ext}"
+    },
+    "linux": {
+      "target": "AppImage",
+      "artifactName": "${productName}-${version}.${ext}"
+    },
+    "files": [
+      "../../dist/**/*",
+      "./**"
+    ],
+    "directories": {
+      "output": "dist/${platform}/${arch}"
+    }
+  }
+}

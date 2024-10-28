@@ -14,7 +14,7 @@ function prefetchNextQuotes(locale: string) {
   const minutes = now.getMinutes();
   const nextFileName = `${hours.toString().padStart(2, '0')}_${minutes.toString().padStart(2, '0')}`;
 
-  fetch(`../times/${locale}/${nextFileName}.json`, {
+  fetch(`./times/${locale}/${nextFileName}.json`, {
     cache: 'force-cache',
   });
 }
@@ -23,7 +23,7 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
   const fileName = time.replace(':', '_');
 
   try {
-    const response = await fetch(`../times/${locale}/${fileName}.json`);
+    const response = await fetch(`./times/${locale}/${fileName}.json`);
 
     if (!response.ok) {
       return FALLBACK_QUOTES[locale];

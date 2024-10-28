@@ -16,7 +16,9 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "typecheck": "tsc --noEmit",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "screensaver:windows:start": "npm run start -w screensaver",
+    "screensaver:windows:build": "npm run build -w screensaver"
   },
   "repository": {
     "type": "git",
@@ -46,5 +48,8 @@
   "dependencies": {
     "html2canvas-pro": "^1.5.8",
     "lunarphase-js": "^2.0.3"
-  }
+  },
+  "workspaces": [
+    "screensaver"
+  ]
 }
