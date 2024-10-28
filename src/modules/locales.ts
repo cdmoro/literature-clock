@@ -46,11 +46,11 @@ export function resolveLocale(locale = navigator.language): Locale | 'random' {
 }
 
 export function initLocale() {
-  const locale = store.getState('locale');
+  const locale = store.get('locale');
   const localeSelect = document.querySelector<HTMLSelectElement>('#locale-select');
 
   if (locale !== 'random') {
-    store.setState('last-locale', locale);
+    store.set('last-locale', locale);
   }
 
   translateStrings(locale);
@@ -61,12 +61,12 @@ export function initLocale() {
   localeSelect?.addEventListener('change', (e) => {
     const languageSelectValue = (e.target as HTMLInputElement).value;
     const isRandomLocale = languageSelectValue === 'random';
-    const locale = isRandomLocale ? store.getState('last-locale') || 'en-US' : (languageSelectValue as Locale);
+    const locale = isRandomLocale ? store.get('last-locale') || 'en-US' : (languageSelectValue as Locale);
     translateStrings(locale);
-    store.setState('locale', languageSelectValue);
+    store.set('locale', languageSelectValue);
 
     if (!isRandomLocale) {
-      store.setState('last-locale', languageSelectValue);
+      store.set('last-locale', languageSelectValue);
       updateQuote({ useIndex: true });
     }
   });
@@ -75,14 +75,14 @@ export function initLocale() {
 export function getStrings(): Translations {
   const localeSelect = document.querySelector<HTMLSelectElement>('#locale-select');
   const resolvedLocale = resolveLocale(localeSelect?.value);
-  const lastLocale = store.getState('last-locale') as keyof typeof TRANSLATIONS;
+  const lastLocale = store.get('last-locale') as keyof typeof TRANSLATIONS;
 
   return TRANSLATIONS[resolvedLocale === 'random' ? lastLocale || 'en-US' : resolvedLocale];
 }
 
 function translateStrings(locale = navigator.language) {
   const time = getTime();
-  const lastLocale = store.getState('last-locale') as keyof typeof TRANSLATIONS;
+  const lastLocale = store.get('last-locale') as keyof typeof TRANSLATIONS;
   const strings = getStrings();
 
   document.documentElement.lang = locale === 'random' ? lastLocale?.substring(0, 2) || 'en' : locale.substring(0, 2);

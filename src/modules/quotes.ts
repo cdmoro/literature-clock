@@ -31,7 +31,7 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
 
     let quotes = (await response.json()) as Quote[];
 
-    if (store.getState('work') && !store.getState('index')) {
+    if (store.get('work') && !store.get('index')) {
       quotes = quotes.filter((q) => q.sfw !== 'nsfw');
     }
 
@@ -63,8 +63,8 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
     }
   }
 
-  if (store.getState('index')) {
-    const urlParamsIndex = parseInt(store.getState('index')!);
+  if (store.get('index')) {
+    const urlParamsIndex = parseInt(store.get('index')!);
     if (!isNaN(urlParamsIndex) && quotes[urlParamsIndex]) {
       quoteIndex = urlParamsIndex;
     }
@@ -79,7 +79,7 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
     quote.fallback = true;
   }
 
-  if (store.getState('quote')) {
+  if (store.get('quote')) {
     quote.title = strings.title;
     quote.author = strings.author;
   }
@@ -88,14 +88,14 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
 }
 
 export async function updateQuote({ time = getTime(), useIndex = false } = {}) {
-  const testQuote = store.getState('quote');
-  let locale = store.getState('locale') as Locale;
+  const testQuote = store.get('quote');
+  let locale = store.get('locale') as Locale;
 
   if (!locale) {
     return;
   }
 
-  if (store.getState('locale') === 'random') {
+  if (store.get('locale') === 'random') {
     locale = getRandomLocale();
   }
 
@@ -130,13 +130,13 @@ export async function updateQuote({ time = getTime(), useIndex = false } = {}) {
       blockquote.removeAttribute('data-fallback');
     }
 
-    if (store.getState('fade')) {
+    if (store.get('fade')) {
       fadeInQuote();
     }
 
     fitQuote();
 
-    if (store.getState('theme')?.includes('color')) {
+    if (store.get('theme')?.includes('color')) {
       setTheme();
     }
   }

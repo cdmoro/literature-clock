@@ -7,7 +7,7 @@ export function initWorkMode() {
 
 function toggleWorkMode() {
   const quote = document.getElementById('quote');
-  const isWorkMode = store.toggleState('work');
+  const isWorkMode = store.toggle('work');
 
   if ((isWorkMode && quote?.dataset.sfw === 'nsfw') || (!isWorkMode && quote?.dataset.fallback === 'true')) {
     updateQuote();

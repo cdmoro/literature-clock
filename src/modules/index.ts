@@ -1,3 +1,4 @@
+import { initStatic } from './static';
 import { initClock } from './clock';
 import { initCopy } from './copy';
 import { initFadeMode } from './fade';
@@ -12,6 +13,7 @@ import { initWorkMode } from './work';
 import { initZenMode } from './zen';
 
 const MODULES = [
+  initStatic,
   initClock,
   initCopy,
   initFadeMode,

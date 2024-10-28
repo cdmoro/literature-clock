@@ -27,7 +27,7 @@ function screensaver() {
 }
 
 export function initScreensaver() {
-  if (store.getState('screensaver')) {
+  if (store.get('screensaver')) {
     startScreensaver();
   }
 
@@ -44,7 +44,7 @@ export function startScreensaver() {
 }
 
 function toggleScreensaverMode() {
-  if (store.toggleState('screensaver')) {
+  if (store.toggle('screensaver')) {
     startScreensaver();
     return;
   }
@@ -54,5 +54,5 @@ function toggleScreensaverMode() {
 
 export function exitScreensaverMode() {
   clearInterval(screensaverInterval);
-  store.setState('screensaver', false);
+  store.set('screensaver', false);
 }

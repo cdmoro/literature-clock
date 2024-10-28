@@ -56,8 +56,8 @@ async function shareQuote() {
       ];
 
       const url = new URL('https://literatureclock.netlify.app/');
-      const locale = store.getState('locale');
-      const theme = store.getState('theme');
+      const locale = store.get('locale');
+      const theme = store.get('theme');
 
       if (locale) {
         url.searchParams.append('locale', locale);
