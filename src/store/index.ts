@@ -9,6 +9,7 @@ interface Stateful {
   showtime: boolean;
   font: string;
   theme: string;
+  progressbar: boolean;
 }
 
 export interface Stateless {
@@ -182,5 +183,6 @@ export function createStore() {
     showtime: false,
     font: 'default',
     theme: 'base-system',
+    progressbar: true,
   });
 }

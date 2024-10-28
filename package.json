@@ -11,12 +11,14 @@
     "preview": "vite preview",
     "test": "vitest --environment=jsdom",
     "test:ci": "vitest run --environment=jsdom",
-    "generate-times": "python ./scripts/generate_times.py",
-    "check-quotes": "python ./scripts/check_quotes.py",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "typecheck": "tsc --noEmit",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "add-string": "python ./scripts/add_string.py",
+    "generate-times": "python ./scripts/generate_times.py",
+    "generate-strings-type": "python ./scripts/generate_strings_type.py",
+    "check-quotes": "python ./scripts/check_quotes.py"
   },
   "repository": {
     "type": "git",

@@ -36,6 +36,7 @@ export type Translations = {
   photo: string;
   pink: string;
   poster: string;
+  progressbar_mode: string;
   project: string;
   pt_BR: string;
   purple: string;

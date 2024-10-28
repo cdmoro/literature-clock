@@ -382,6 +382,10 @@ body.share-quote #share-signature {
   }
 }
 
+body:not(.progressbar) #time-progress-bar {
+  display: none;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

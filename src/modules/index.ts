@@ -11,6 +11,7 @@ import { initTheme } from './themes';
 import { initShowtimeMode } from './time';
 import { initWorkMode } from './work';
 import { initZenMode } from './zen';
+import { initProgressbarMode } from './progressbar';
 
 const MODULES = [
   initStaticMode,
@@ -20,10 +21,11 @@ const MODULES = [
   initFont,
   initFullscreenMode,
   initLocale,
+  initProgressbarMode,
   initScreensaverMode,
   initShare,
-  initTheme,
   initShowtimeMode,
+  initTheme,
   initWorkMode,
   initZenMode,
 ];
