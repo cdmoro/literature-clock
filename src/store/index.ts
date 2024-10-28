@@ -180,7 +180,7 @@ export function createStore() {
     work: false,
     zen: false,
     fade: false,
-    showtime: false,
+    showtime: true,
     font: 'default',
     theme: 'base-system',
     progressbar: true,
