@@ -15,6 +15,7 @@ export const THEME_FONTS: Record<string, string[]> = {
   poster: ['Averia Serif Libre', 'Allura'],
   dynamic: ['Caveat', 'Indie Flower', 'Yeseva One', 'Sacramento'],
   photo: ['Abril Fatface'],
+  kindle: ['Noto Serif'],
 };
 
 export const INITIAL_THEME_FONT_SIZE = {
@@ -24,6 +25,10 @@ export const INITIAL_THEME_FONT_SIZE = {
   frame: 35,
   subtle: 60,
   poster: 35,
+} as const;
+
+export const CITE_FACTOR = {
+  kindle: 0.5,
 } as const;
 
 const FONTS = ['Special Elite', ...new Set(Object.values(THEME_FONTS))].flat();

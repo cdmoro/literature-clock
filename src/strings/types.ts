@@ -29,6 +29,7 @@ export type Translations = {
   green: string;
   handwriting: string;
   it_IT: string;
+  kindle: string;
   language: string;
   light: string;
   made_by: string;

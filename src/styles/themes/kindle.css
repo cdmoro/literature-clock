@@ -1,0 +1,31 @@
+[data-theme|='kindle'] {
+  --quote-font-family: 'Noto Serif', sans-serif;
+  --quote-line-height: 1.4;
+}
+
+[data-theme|='kindle'] blockquote:before,
+[data-theme|='kindle'] blockquote:after {
+  content: none;
+}
+
+[data-theme|='kindle'] blockquote {
+  font-weight: bold;
+}
+
+[data-theme|='kindle'] cite {
+    display: block;
+    text-align: right;
+    color: var(--accent-color);
+}
+
+[data-theme='kindle-light'] {
+  --background: #dcd8d0;
+  --font-color: #646862;
+  --accent-color: #2C2C2E;
+}
+
+[data-theme='kindle-dark'] {
+  --background: #161920;
+  --font-color: #808187;
+  --accent-color: #dcd8d0;
+}
