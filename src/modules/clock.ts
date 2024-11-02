@@ -2,7 +2,6 @@ import { updateQuote } from './quotes';
 import { getTime, updateFavicon } from '../utils';
 import { setDayParameters } from './dynamic';
 import { fadeOutQuote } from './fade';
-import { removeBackgroundImage, setDynamicBackgroundPicture } from './themes';
 import { store } from '../store';
 
 const timeProgressBar = document.getElementById('time-progress-bar');
@@ -33,12 +32,6 @@ async function updateTime() {
 
     if (store.get('theme')?.startsWith('dynamic')) {
       setDayParameters();
-    }
-
-    if (store.get('theme')?.startsWith('photo')) {
-      setDynamicBackgroundPicture();
-    } else {
-      removeBackgroundImage();
     }
 
     document.title = document.title.replace(/[0-9]{2}:[0-9]{2}/, time);

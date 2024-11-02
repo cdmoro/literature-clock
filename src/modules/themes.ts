@@ -101,7 +101,8 @@ export function setTheme({ isVariantChange = false } = {}) {
 export function setDynamicBackgroundPicture() {
   const photoOverlay = document.getElementById('photo-overlay');
   const now = new Date();
-  const seed = `${now.getFullYear()}${now.getMonth() + 1}${now.getDay()}${now.getHours()}${now.getMinutes()}`;
+  const quote = store.get('resolved-quote');
+  const seed = `${now.getFullYear()}${now.getMonth() + 1}${now.getDay()}${quote?.id}`;
   let innerHeight = window.innerHeight;
   let innerWidth = window.innerWidth;
 
@@ -113,7 +114,7 @@ export function setDynamicBackgroundPicture() {
     innerWidth = 5000;
   }
 
-  if (photoOverlay) {
+  if (photoOverlay && !document.body.style.backgroundImage.includes(seed)) {
     photoOverlay.style.opacity = '1';
 
     setTimeout(() => {

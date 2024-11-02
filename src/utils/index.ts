@@ -129,3 +129,8 @@ export function onMouseMove() {
     footer?.classList.add('hidden');
   }, 3000);
 }
+
+export function contentLoaded() {
+  updateFavicon();
+  document.body.removeAttribute('data-loading');
+}

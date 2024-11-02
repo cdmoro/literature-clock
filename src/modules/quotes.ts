@@ -1,5 +1,5 @@
 import { getRandomLocale, getStrings } from './locales';
-import { setTheme } from './themes';
+import { removeBackgroundImage, setDynamicBackgroundPicture, setTheme } from './themes';
 import { Locale, ResolvedQuote, Quote } from '../types';
 import { fitQuote, getTime, updateGHLinks } from '../utils';
 import FALLBACK_QUOTES from '../strings/fallbackQuotes.json';
@@ -84,6 +84,8 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
     quote.author = strings.author;
   }
 
+  store.set('resolved-quote', quote);
+
   return quote;
 }
 
@@ -107,6 +109,12 @@ export async function updateQuote({ time = getTime(), useIndex = false } = {}) {
     testQuote || `${quote.quote_first}<span class="${timeClass}">${quote.quote_time_case}</span>${quote.quote_last}`;
 
   const blockquote = document.getElementById('quote');
+
+  if (store.get('theme')?.startsWith('photo')) {
+    setDynamicBackgroundPicture();
+  } else {
+    removeBackgroundImage();
+  }
 
   if (blockquote) {
     blockquote.innerHTML = '';

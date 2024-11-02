@@ -4,8 +4,6 @@ export type { Translations } from './strings/types';
 
 export type Locale = keyof typeof TRANSLATIONS;
 
-// type SafeForWork = "sfw" | "nsfw" | "unknown";
-
 export interface Quote {
   id: string;
   time: string;

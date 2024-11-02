@@ -1,4 +1,5 @@
 import { resolveLocale } from '../modules/locales';
+import { ResolvedQuote } from '../types';
 
 interface Stateful {
   locale: string;
@@ -21,13 +22,14 @@ export interface Stateless {
   progress?: string;
   index?: string;
   static?: boolean;
+  'resolved-quote'?: ResolvedQuote;
 }
 
 type State = Stateful & Stateless;
 
 type Listener = (newState: State, oldState: State) => void;
 
-const IGNORE_FROM_URL: (keyof State)[] = ['custom-font', 'last-locale'];
+const IGNORE_FROM_URL: (keyof State)[] = ['custom-font', 'last-locale', 'resolved-quote'];
 const REMOVE_VALUES_FROM_URL: Partial<State> = {
   font: 'default',
   theme: 'base-system',
@@ -179,7 +181,7 @@ export function createStore() {
     screensaver: false,
     work: false,
     zen: false,
-    fade: false,
+    fade: true,
     showtime: true,
     font: 'default',
     theme: 'base-system',
