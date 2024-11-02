@@ -1,6 +1,6 @@
 import { startScreensaver } from '../modules/screensaver';
 import { Locale, Quote } from '../types';
-import { INITIAL_THEME_FONT_SIZE } from '../modules/font';
+import { CITE_FACTOR, INITIAL_THEME_FONT_SIZE } from '../modules/font';
 import { store } from '../store';
 
 const GITHUB_NEW_ISSUE_URL = 'https://github.com/cdmoro/literature-clock/issues/new';
@@ -52,6 +52,7 @@ export function doFitQuote() {
   const quote = document.querySelector<HTMLElement>('blockquote p');
   const cite = document.querySelector<HTMLElement>('blockquote cite');
   let fontSize: number = INITIAL_THEME_FONT_SIZE[theme as keyof typeof INITIAL_THEME_FONT_SIZE] || 75;
+  const citeFactor: number = CITE_FACTOR[theme as keyof typeof CITE_FACTOR] || 0.7;
 
   if (quote) {
     quote.style.fontSize = `${fontSize}px`;
@@ -60,7 +61,7 @@ export function doFitQuote() {
     while (quote.scrollHeight > safeClientHeight) {
       quote.style.fontSize = `${fontSize}px`;
       if (cite) {
-        cite.style.fontSize = `${fontSize < 19 ? 10 : fontSize * 0.7}px`;
+        cite.style.fontSize = `${fontSize < 19 ? 10 : fontSize * citeFactor}px`;
       }
       fontSize -= 1;
 
