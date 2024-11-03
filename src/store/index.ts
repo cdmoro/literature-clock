@@ -1,8 +1,8 @@
 import { resolveLocale } from '../modules/locales';
-import { ResolvedQuote } from '../types';
+import { Locale, ResolvedQuote } from '../types';
 
 interface Stateful {
-  locale: string;
+  locale: Locale | 'random';
   zen: boolean;
   work: boolean;
   screensaver: boolean;
@@ -11,11 +11,11 @@ interface Stateful {
   font: string;
   theme: string;
   progressbar: boolean;
+  'last-locale': Locale;
 }
 
 export interface Stateless {
   'custom-font'?: string;
-  'last-locale'?: string;
   time?: string;
   quote?: string;
   scene?: string;
@@ -176,8 +176,10 @@ export let store: Store;
 
 // Create the store and pass default state to constructor
 export function createStore() {
+  const locale = resolveLocale(navigator.language);
+
   store = new Store({
-    locale: resolveLocale(navigator.language),
+    locale,
     screensaver: false,
     work: false,
     zen: false,
@@ -186,5 +188,6 @@ export function createStore() {
     font: 'default',
     theme: 'base-system',
     progressbar: true,
+    'last-locale': locale === 'random' ? 'en-US' : locale,
   });
 }

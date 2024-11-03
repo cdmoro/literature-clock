@@ -47,7 +47,8 @@ async function shareQuote() {
   canvas?.toBlob((blob) => {
     if (blob) {
       const time = getTime();
-      const strings = getStrings();
+      const locale = store.get('locale');
+      const strings = getStrings(locale);
       const filesArray = [
         new File([blob], `Quote ${time}.png`, {
           type: 'image/png',
@@ -56,7 +57,6 @@ async function shareQuote() {
       ];
 
       const url = new URL('https://literatureclock.netlify.app/');
-      const locale = store.get('locale');
       const theme = store.get('theme');
 
       if (locale) {

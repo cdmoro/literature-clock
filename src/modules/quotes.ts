@@ -48,7 +48,7 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
 
 async function getQuote(time: string, locale: Locale, useIndex: boolean = false): Promise<ResolvedQuote> {
   const quotes = await getQuotes(time, locale);
-  const strings = getStrings();
+  const strings = getStrings(locale);
 
   let quoteIndex = Math.floor(Math.random() * quotes.length);
 

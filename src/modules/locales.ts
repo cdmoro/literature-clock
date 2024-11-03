@@ -47,7 +47,7 @@ export function resolveLocale(locale = navigator.language): Locale | 'random' {
 }
 
 export function initLocale() {
-  const locale = store.get('locale');
+  const locale = store.get('locale') as Locale | 'random';
   const localeSelect = document.querySelector<HTMLSelectElement>('#locale-select');
 
   if (locale !== 'random') {
@@ -60,9 +60,9 @@ export function initLocale() {
   }
 
   localeSelect?.addEventListener('change', (e) => {
-    const languageSelectValue = (e.target as HTMLInputElement).value;
+    const languageSelectValue = (e.target as HTMLInputElement).value as Locale | 'random';
     const isRandomLocale = languageSelectValue === 'random';
-    const locale = isRandomLocale ? store.get('last-locale') || 'en-US' : (languageSelectValue as Locale);
+    const locale: Locale = isRandomLocale ? store.get('last-locale') : (languageSelectValue as Locale);
     translateStrings(locale);
     store.set('locale', languageSelectValue);
 
@@ -73,18 +73,17 @@ export function initLocale() {
   });
 }
 
-export function getStrings(): Translations {
-  const localeSelect = document.querySelector<HTMLSelectElement>('#locale-select');
-  const resolvedLocale = resolveLocale(localeSelect?.value);
+export function getStrings(locale: Locale | 'random'): Translations {
+  const resolvedLocale = resolveLocale(locale);
   const lastLocale = store.get('last-locale') as keyof typeof TRANSLATIONS;
 
-  return TRANSLATIONS[resolvedLocale === 'random' ? lastLocale || 'en-US' : resolvedLocale];
+  return TRANSLATIONS[resolvedLocale === 'random' ? lastLocale : resolvedLocale];
 }
 
-function translateStrings(locale = navigator.language) {
+function translateStrings(locale: Locale | 'random') {
   const time = getTime();
   const lastLocale = store.get('last-locale') as keyof typeof TRANSLATIONS;
-  const strings = getStrings();
+  const strings = getStrings(locale);
 
   document.documentElement.lang = locale === 'random' ? lastLocale?.substring(0, 2) || 'en' : locale.substring(0, 2);
   document.title = `${time} - ${strings.document_title}`;
