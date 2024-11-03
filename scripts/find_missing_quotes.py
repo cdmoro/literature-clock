@@ -75,5 +75,5 @@ for filename in os.listdir(folder_path):
 for iteration, (row, issues) in enumerate(grouped_results.items(), start=1):
     for issue in issues:
         print(f"{iteration}. {issue['file']}:{row}\t‘’ [{issue['single'][0]}:{issue['single'][1]}]  “” [{issue['double'][0]}:{issue['double'][1]}]  «» [{issue['angular'][0]}:{issue['angular'][1]}]\tquotes\\quotes.en-US.csv:{row}")
-        print(f"  quotes\\quotes.es-ES.csv:{row}\tquotes\\quotes.fr-FR.csv:{row}\tquotes\\quotes.it-IT.csv:{row}\tquotes\\quotes.pt-BR.csv:{row}")
+        print(f"  quotes\\quotes.es-ES.csv:{row}\tquotes\\quotes.fr-FR.csv:{row}\tquotes\\quotes.it-IT.csv:{row}\tquotes\\quotes.pt-BR.csv:{row}\tquotes\\quotes.de-DE.csv:{row}")
     print("-" * 80)
