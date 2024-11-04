@@ -102,7 +102,7 @@ export function setDynamicBackgroundPicture() {
   const photoOverlay = document.getElementById('photo-overlay');
   const now = new Date();
   const quote = store.get('resolved-quote');
-  const seed = `${now.getFullYear()}${now.getMonth() + 1}${now.getDay()}${quote?.id}`;
+  const seed = `${now.getFullYear()}${now.getMonth() + 1}${now.getDay()}${quote?.id}${quote?.locale}`;
   let innerHeight = window.innerHeight;
   let innerWidth = window.innerWidth;
 

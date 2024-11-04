@@ -72,6 +72,7 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
 
   const quote = Object.assign({}, quotes[quoteIndex]) as ResolvedQuote;
   quote.index = quoteIndex;
+  quote.locale = locale;
 
   if (!quote.quote_time_case) {
     quote.time = time;
