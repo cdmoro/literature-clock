@@ -77,7 +77,10 @@ export class Store {
     // Merge: URL > localStorage > defaultState
     this.state = { ...defaultState, ...stateFromLocalStorage, ...stateFromUrl };
 
-    if (!Object.keys(DOMINANT_LOCALES).includes(this.state.locale.substring(2)) || !this.state.locale.includes('-')) {
+    if (
+      !Object.keys(DOMINANT_LOCALES).includes(this.state.locale.substring(0, 2)) ||
+      !this.state.locale.includes('-')
+    ) {
       this.state.locale = resolveLocale(navigator.language);
       this.syncToUrl('locale', this.state.locale);
     }
