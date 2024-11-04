@@ -22,7 +22,7 @@ export const INITIAL_THEME_FONT_SIZE = {
   handwriting: 90,
   whatsapp: 45,
   retro: 70,
-  frame: 35,
+  frame: 40,
   subtle: 60,
   poster: 35,
 } as const;
