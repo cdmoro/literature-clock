@@ -102,7 +102,7 @@ export function setDynamicBackgroundPicture() {
   const photoOverlay = document.getElementById('photo-overlay');
   const now = new Date();
   const quote = store.get('resolved-quote');
-  const seed = `${now.getFullYear()}${now.getMonth() + 1}${now.getDay()}${quote?.id}`;
+  const seed = `${now.getFullYear()}${now.getMonth() + 1}${now.getDay()}${quote?.id}${quote?.locale}`;
   let innerHeight = window.innerHeight;
   let innerWidth = window.innerWidth;
 
@@ -118,12 +118,17 @@ export function setDynamicBackgroundPicture() {
     photoOverlay.style.opacity = '1';
 
     setTimeout(() => {
-      photoOverlay.style.removeProperty('opacity');
-      document.body.style.backgroundImage = `url(https://picsum.photos/seed/${seed}/${innerWidth}/${innerHeight}?blur=1)`;
+      if (store.get('theme').includes('photo-')) {
+        photoOverlay.style.removeProperty('opacity');
+        document.documentElement.style.setProperty(
+          '--background-image',
+          `url(https://picsum.photos/seed/${seed}/${innerWidth}/${innerHeight}?blur=1)`,
+        );
+      }
     }, 1000);
   }
 }
 
 export function removeBackgroundImage() {
-  document.body.style.removeProperty('background-image');
+  document.documentElement.style.removeProperty('--background-image');
 }

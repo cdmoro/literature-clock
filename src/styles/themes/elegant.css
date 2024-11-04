@@ -9,8 +9,8 @@
   text-align: right;
 }
 
-[data-theme|='elegant'] cite:before {
-  content: none;
+[data-theme|='elegant'] cite #hyphen {
+  display: none;
 }
 
 [data-theme|='elegant'] #time-progress-bar {

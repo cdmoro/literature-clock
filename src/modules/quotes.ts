@@ -72,6 +72,7 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
 
   const quote = Object.assign({}, quotes[quoteIndex]) as ResolvedQuote;
   quote.index = quoteIndex;
+  quote.locale = locale;
 
   if (!quote.quote_time_case) {
     quote.time = time;
@@ -123,7 +124,7 @@ export async function updateQuote({ time = getTime(), useIndex = false } = {}) {
     p.innerHTML = quoteText;
 
     const cite = document.createElement('cite');
-    cite.innerHTML = `<span id="title">${quote.title}</span><span id="author">${quote.author}</span>`;
+    cite.innerHTML = `<span id="hyphen">— </span><span id="title">${quote.title}</span><span id="comma">, </span><span id="author">${quote.author}</span>`;
 
     blockquote.appendChild(p);
     blockquote.appendChild(cite);

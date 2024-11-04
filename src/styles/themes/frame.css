@@ -30,8 +30,12 @@
   font-size: 10rem;
 }
 
-[data-theme|='frame'] cite:before {
-  content: none;
+[data-theme|='frame'] cite #hyphen {
+  display: none;
+}
+
+[data-theme|='frame'] cite #comma {
+  display: none;
 }
 
 [data-theme|='frame'] cite #author {

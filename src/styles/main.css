@@ -128,16 +128,8 @@ cite {
   font-style: normal;
 }
 
-cite:before {
-  content: '— ';
-}
-
 cite #title {
   font-style: italic;
-}
-
-cite #title:after {
-  content: ', ';
 }
 
 select {
