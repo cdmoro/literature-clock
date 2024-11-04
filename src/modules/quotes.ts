@@ -53,13 +53,10 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
   let quoteIndex = Math.floor(Math.random() * quotes.length);
 
   if (useIndex) {
-    const index = document.getElementById('quote')?.dataset.index;
+    const index = store.get('resolved-quote')?.index;
 
-    if (index) {
-      const blockquoteIndex = parseInt(index);
-      if (!isNaN(blockquoteIndex) && quotes[blockquoteIndex]) {
-        quoteIndex = blockquoteIndex;
-      }
+    if (index && quotes[index]) {
+      quoteIndex = index;
     }
   }
 
@@ -98,7 +95,7 @@ export async function updateQuote({ time = getTime(), useIndex = false } = {}) {
     return;
   }
 
-  if (store.get('locale') === 'random') {
+  if (store.get('random-locale')) {
     locale = getRandomLocale();
   }
 
