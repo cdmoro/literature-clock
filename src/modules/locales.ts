@@ -5,7 +5,7 @@ import { getTime } from '../utils';
 import { Translations } from '../types';
 import { store } from '../store';
 
-const DOMINANT_LOCALES: Record<string, Locale> = {
+export const DOMINANT_LOCALES: Record<string, Locale> = {
   en: 'en-US',
   es: 'es-ES',
   fr: 'fr-FR',
