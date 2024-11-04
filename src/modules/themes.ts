@@ -118,12 +118,17 @@ export function setDynamicBackgroundPicture() {
     photoOverlay.style.opacity = '1';
 
     setTimeout(() => {
-      photoOverlay.style.removeProperty('opacity');
-      document.body.style.backgroundImage = `url(https://picsum.photos/seed/${seed}/${innerWidth}/${innerHeight}?blur=1)`;
+      if (store.get('theme').includes('photo-')) {
+        photoOverlay.style.removeProperty('opacity');
+        document.documentElement.style.setProperty(
+          '--background-image',
+          `url(https://picsum.photos/seed/${seed}/${innerWidth}/${innerHeight}?blur=1)`,
+        );
+      }
     }, 1000);
   }
 }
 
 export function removeBackgroundImage() {
-  document.body.style.removeProperty('background-image');
+  document.documentElement.style.removeProperty('--background-image');
 }
