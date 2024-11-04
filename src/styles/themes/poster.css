@@ -33,8 +33,12 @@
   padding-top: 2rem;
 }
 
-[data-theme|='poster'] cite:before {
-  content: none;
+[data-theme|='poster'] cite #hyphen {
+  display: none;
+}
+
+[data-theme|='poster'] cite #comma {
+  display: none;
 }
 
 [data-theme|='poster'] #title {

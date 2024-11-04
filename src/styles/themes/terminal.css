@@ -70,6 +70,10 @@
   content: '> ';
 }
 
+[data-theme|='terminal'] cite #hyphen {
+  display: none;
+}
+
 [data-theme|='terminal'] cite:after {
   content: '_';
   display: inline-block;

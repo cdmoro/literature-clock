@@ -57,6 +57,10 @@
   content: '📖 ';
 }
 
+[data-theme|='whatsapp'] cite #hyphen {
+  display: none;
+}
+
 [data-theme|='whatsapp'] blockquote p:after,
 [data-theme|='whatsapp'] cite:after {
   position: absolute;

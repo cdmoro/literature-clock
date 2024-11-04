@@ -27,12 +27,12 @@
   max-height: 45vh;
 }
 
-[data-theme|='subtle'] cite:before {
-  content: none;
+[data-theme|='subtle'] cite #hyphen {
+  display: none;
 }
 
-[data-theme|='subtle'] cite #title {
-  font-style: normal;
+[data-theme|='subtle'] cite #comma {
+  display: none;
 }
 
 [data-theme|='subtle'] cite #author {

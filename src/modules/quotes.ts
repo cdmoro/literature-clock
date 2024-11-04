@@ -123,7 +123,7 @@ export async function updateQuote({ time = getTime(), useIndex = false } = {}) {
     p.innerHTML = quoteText;
 
     const cite = document.createElement('cite');
-    cite.innerHTML = `<span id="title">${quote.title}</span><span id="author">${quote.author}</span>`;
+    cite.innerHTML = `<span id="hyphen">— </span><span id="title">${quote.title}</span><span id="comma">, </span><span id="author">${quote.author}</span>`;
 
     blockquote.appendChild(p);
     blockquote.appendChild(cite);
