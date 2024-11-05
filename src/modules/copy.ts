@@ -1,3 +1,5 @@
+import { store } from '../store';
+
 export function initCopy() {
   document.getElementById('copy')?.addEventListener('click', copyQuote);
 }
@@ -7,11 +9,10 @@ function copyQuote() {
     return;
   }
 
-  const blockquote = document.getElementById('quote');
-  const quoteText = blockquote?.getAttribute('aria-description');
+  const quote = store.get('active-quote');
 
-  if (quoteText) {
-    navigator.clipboard.writeText(quoteText);
+  if (quote) {
+    navigator.clipboard.writeText(quote?.quote_raw);
   }
 
   document.body.classList.add('quote-copied');

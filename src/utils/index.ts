@@ -48,7 +48,7 @@ export function updateGHLinks(time: string, quote: Quote, locale: Locale) {
 }
 
 export function doFitQuote() {
-  const [theme] = (document.documentElement.dataset.theme || '').split('-');
+  const [theme] = store.get('theme').split('-');
   const quote = document.querySelector<HTMLElement>('blockquote p');
   const cite = document.querySelector<HTMLElement>('blockquote cite');
   let fontSize: number = INITIAL_THEME_FONT_SIZE[theme as keyof typeof INITIAL_THEME_FONT_SIZE] || 75;
