@@ -2,7 +2,7 @@ import { resolveLocale, DOMINANT_LOCALES } from '../modules/locales';
 import { Locale, ResolvedQuote } from '../types';
 
 interface Stateful {
-  locale: Locale | 'random';
+  locale: Locale;
   zen: boolean;
   work: boolean;
   screensaver: boolean;
@@ -11,7 +11,7 @@ interface Stateful {
   font: string;
   theme: string;
   progressbar: boolean;
-  'last-locale': Locale;
+  'random-locale': boolean;
 }
 
 export interface Stateless {
@@ -29,7 +29,7 @@ type State = Stateful & Stateless;
 
 type Listener = (newState: State, oldState: State) => void;
 
-const IGNORE_FROM_URL: (keyof State)[] = ['custom-font', 'last-locale', 'resolved-quote'];
+const IGNORE_FROM_URL: (keyof State)[] = ['custom-font', 'resolved-quote'];
 const REMOVE_VALUES_FROM_URL: Partial<State> = {
   font: 'default',
   theme: 'base-system',
@@ -184,10 +184,8 @@ export let store: Store;
 
 // Create the store and pass default state to constructor
 export function createStore() {
-  const locale = resolveLocale(navigator.language);
-
   store = new Store({
-    locale,
+    locale: resolveLocale(navigator.language),
     screensaver: false,
     work: false,
     zen: false,
@@ -196,6 +194,6 @@ export function createStore() {
     font: 'default',
     theme: 'base-system',
     progressbar: true,
-    'last-locale': locale === 'random' ? 'en-US' : locale,
+    'random-locale': false,
   });
 }

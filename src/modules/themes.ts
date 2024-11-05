@@ -4,11 +4,11 @@ import { setDayParameters } from './dynamic';
 import { store } from '../store';
 
 function getRandomThemeColor() {
-  let colors = Array.from(document.querySelectorAll<HTMLOptionElement>('#colors option')).map((op) => op.value);
-  const [themePrefix] = (document.documentElement.dataset.theme || '').split('-');
+  const colors = Array.from(document.querySelectorAll<HTMLOptionElement>('#colors option')).map((op) => op.value);
+  const [theme] = store.get('theme').split('-');
 
   colors.pop();
-  colors = colors.filter((color) => color !== themePrefix);
+  colors.splice(colors.indexOf(theme), 1);
 
   return colors[Math.floor(Math.random() * colors.length)];
 }
