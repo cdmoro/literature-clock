@@ -13,23 +13,18 @@ export const DOMINANT_LOCALES: Record<string, Locale> = {
   pt: 'pt-BR',
 } as const;
 
-export function getRandomLocale(): Locale {
-  let locales = Object.keys(TRANSLATIONS) as Locale[];
+export function getRandomLocale() {
+  const locales = Object.keys(TRANSLATIONS) as Locale[];
+  const localeQuote = store.get('resolved-quote')?.locale;
 
-  const blockquote = document.getElementById('quote');
-
-  if (blockquote && blockquote.dataset.locale) {
-    locales = locales.filter((locale) => locale !== blockquote.dataset.locale);
+  if (localeQuote) {
+    locales.splice(locales.indexOf(localeQuote), 1);
   }
 
   return locales[Math.floor(Math.random() * locales.length)];
 }
 
-export function resolveLocale(locale = navigator.language): Locale | 'random' {
-  if (locale === 'random') {
-    return locale;
-  }
-
+export function resolveLocale(locale = navigator.language): Locale {
   if (locale.length === 2) {
     locale = DOMINANT_LOCALES[locale];
   }
@@ -46,45 +41,45 @@ export function resolveLocale(locale = navigator.language): Locale | 'random' {
 }
 
 export function initLocale() {
-  const locale = store.get('locale') as Locale | 'random';
+  const locale = store.get('locale');
   const localeSelect = document.querySelector<HTMLSelectElement>('#locale-select');
 
-  if (locale !== 'random') {
-    store.set('last-locale', locale);
-  }
-
-  translateStrings(locale);
   if (localeSelect) {
     localeSelect.value = locale;
   }
 
-  localeSelect?.addEventListener('change', (e) => {
-    const languageSelectValue = (e.target as HTMLInputElement).value as Locale | 'random';
-    const isRandomLocale = languageSelectValue === 'random';
-    const locale: Locale = isRandomLocale ? store.get('last-locale') : (languageSelectValue as Locale);
-    translateStrings(locale);
-    store.set('locale', languageSelectValue);
+  translateStrings(locale);
 
-    if (!isRandomLocale) {
-      store.set('last-locale', languageSelectValue);
+  localeSelect?.addEventListener('change', (e) => {
+    const locale = (e.target as HTMLInputElement).value as Locale;
+    translateStrings(locale);
+    store.set('locale', locale);
+
+    if (!store.get('random-locale')) {
       updateQuote({ useIndex: true });
+    }
+  });
+  document.querySelector('#random-locale')?.addEventListener('click', () => {
+    const isRandomLocale = store.toggle('random-locale');
+    if (!isRandomLocale && store.get('locale') !== store.get('resolved-quote')?.locale) {
+      updateQuote({
+        useIndex: true,
+      });
     }
   });
 }
 
-export function getStrings(locale: Locale | 'random'): Translations {
+export function getStrings(locale: Locale): Translations {
   const resolvedLocale = resolveLocale(locale);
-  const lastLocale = store.get('last-locale') as keyof typeof TRANSLATIONS;
 
-  return TRANSLATIONS[resolvedLocale === 'random' ? lastLocale : resolvedLocale];
+  return TRANSLATIONS[resolvedLocale];
 }
 
-function translateStrings(locale: Locale | 'random') {
+function translateStrings(locale: Locale) {
   const time = getTime();
-  const lastLocale = store.get('last-locale') as keyof typeof TRANSLATIONS;
   const strings = getStrings(locale);
 
-  document.documentElement.lang = locale === 'random' ? lastLocale?.substring(0, 2) || 'en' : locale.substring(0, 2);
+  document.documentElement.lang = locale.substring(0, 2);
   document.title = `${time} - ${strings.document_title}`;
 
   document

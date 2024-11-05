@@ -8,11 +8,6 @@ describe('resolveLocale', () => {
     language = vitest.spyOn(window.navigator, 'language', 'get');
   });
 
-  test('should return random', () => {
-    const locale = resolveLocale('random');
-    expect(locale).toEqual('random');
-  });
-
   test('should return dominant locale en-GB when unsupported locale en-GB is passed', () => {
     const locale = resolveLocale('en-GB');
     expect(locale).toEqual('en-US');
