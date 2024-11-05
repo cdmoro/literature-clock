@@ -633,6 +633,6 @@
   color: #ffffff;
 }
 
-[data-theme|='dynamic'][data-scene='night'] #time-progress-bar {
+[data-theme|='dynamic'][data-scene='night'] #progress-bar {
   animation: glow 2s ease-in-out infinite alternate;
 }

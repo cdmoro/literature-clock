@@ -36,7 +36,7 @@ The clock can be controlled using URL parameters, these parameters will overwrit
 - `font`: set a custom font from Google Fonts (it will be available on the font selector input!)
 - `fade`: enable/disable fade effect
 - `progressbar`: enable/disable progressbar
-- `showtime`: enable/disable the time on top of the screen
+- `show-time`: enable/disable the time on top of the screen
 - `static`: get rid of the menu and control the clock only with query parameters!
 
 Developer settings

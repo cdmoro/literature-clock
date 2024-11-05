@@ -7,7 +7,7 @@ interface Stateful {
   work: boolean;
   screensaver: boolean;
   fade: boolean;
-  showtime: boolean;
+  'show-time': boolean;
   font: string;
   theme: string;
   progressbar: boolean;
@@ -190,7 +190,7 @@ export function createStore() {
     work: false,
     zen: false,
     fade: true,
-    showtime: true,
+    'show-time': true,
     font: 'default',
     theme: 'base-system',
     progressbar: true,
