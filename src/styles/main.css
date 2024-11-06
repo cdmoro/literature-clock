@@ -209,7 +209,6 @@ button {
   max-height: 30px;
   padding: 0.25rem 0.5rem;
   transition:
-    border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
   white-space: nowrap;
 }
@@ -222,7 +221,8 @@ button span {
   margin-inline-start: 0.2rem;
 }
 
-button.active {
+button.active,
+button:hover {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
   color: var(--background);
@@ -237,7 +237,8 @@ button:focus {
   z-index: 1;
 }
 
-button:focus.active {
+button:focus.active,
+button:hover {
   background-color: var(--accent-color);
 }
 
