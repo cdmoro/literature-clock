@@ -82,7 +82,7 @@
   right: -15px;
 }
 
-[data-theme|='whatsapp'] #time-progress-bar {
+[data-theme|='whatsapp'] #progress-bar {
   background: var(--accent-color);
 }
 

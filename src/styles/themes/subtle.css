@@ -62,7 +62,7 @@
   color: rgb(238, 3, 117);
 }
 
-[data-theme|='subtle'] #time-progress-bar {
+[data-theme|='subtle'] #progress-bar {
   background: var(--linear-gradient);
 }
 

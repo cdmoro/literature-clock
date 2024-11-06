@@ -3,7 +3,7 @@
   --quote-line-height: 1;
 }
 
-[data-theme|='retro'] #time-progress-bar {
+[data-theme|='retro'] #progress-bar {
   height: 100vh;
   opacity: 0.15;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0), var(--accent-color));

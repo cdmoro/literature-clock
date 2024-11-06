@@ -6,7 +6,6 @@ export type Locale = keyof typeof TRANSLATIONS;
 
 export interface Quote {
   id: string;
-  time: string;
   quote_first: string;
   quote_time_case: string;
   quote_last: string;
@@ -19,4 +18,5 @@ export interface ResolvedQuote extends Quote {
   fallback: boolean;
   index: number;
   locale: Locale;
+  quote_raw: string;
 }

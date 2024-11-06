@@ -37,7 +37,7 @@ body[data-loading] {
   display: none;
 }
 
-body.zen:not(.screensaver) #time-progress-bar,
+body.zen:not(.screensaver) #progress-bar,
 body.zen:not(.screensaver) #time-clock,
 body.zen:not(.screensaver) footer #menu {
   display: none !important;
@@ -47,7 +47,7 @@ body.zen:not(.screensaver) #exit-zen {
   display: block;
 }
 
-body:not(.showtime) #time-clock {
+body:not(.show-time) #time-clock {
   display: none;
 }
 
@@ -257,7 +257,7 @@ button:disabled {
   left: 0;
 }
 
-#time-progress-bar {
+#progress-bar {
   background-color: var(--font-color);
   bottom: 0;
   height: 4px;
@@ -374,7 +374,7 @@ body.share-quote #share-signature {
   }
 }
 
-body:not(.progressbar) #time-progress-bar {
+body:not(.progressbar) #progress-bar {
   display: none;
 }
 

@@ -13,7 +13,7 @@
   display: none;
 }
 
-[data-theme|='elegant'] #time-progress-bar {
+[data-theme|='elegant'] #progress-bar {
   background-color: var(--accent-color);
 }
 

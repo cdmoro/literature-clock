@@ -52,7 +52,7 @@ export function initTheme() {
   });
 }
 
-export function setTheme({ isVariantChange = false } = {}) {
+export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
   const p = document.querySelector<HTMLParagraphElement>('blockquote p');
 
   if (p) {
@@ -68,7 +68,8 @@ export function setTheme({ isVariantChange = false } = {}) {
     });
     resetFont();
   }
-  store.set('theme', `${theme}-${variant}`);
+
+  store.set('theme', `${theme}-${variant}`, syncToUrl);
 
   if (theme === 'color') {
     theme = getRandomThemeColor();
@@ -101,7 +102,7 @@ export function setTheme({ isVariantChange = false } = {}) {
 export function setDynamicBackgroundPicture() {
   const photoOverlay = document.getElementById('photo-overlay');
   const now = new Date();
-  const quote = store.get('resolved-quote');
+  const quote = store.get('active-quote');
   const seed = `${now.getFullYear()}${now.getMonth() + 1}${now.getDay()}${quote?.id}${quote?.locale}`;
   let innerHeight = window.innerHeight;
   let innerWidth = window.innerWidth;

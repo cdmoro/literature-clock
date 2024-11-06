@@ -21,7 +21,7 @@
   color: var(--color-mix);
 }
 
-[data-theme='anaglyph-light'] #time-progress-bar {
+[data-theme='anaglyph-light'] #progress-bar {
   box-shadow: var(--shadow);
   background: var(--color-mix);
 }
@@ -48,7 +48,7 @@
   color: var(--color-mix);
 }
 
-[data-theme='anaglyph-dark'] #time-progress-bar {
+[data-theme='anaglyph-dark'] #progress-bar {
   box-shadow: var(--shadow);
   background: var(--color-mix);
 }

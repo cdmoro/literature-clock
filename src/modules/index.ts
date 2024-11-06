@@ -8,7 +8,7 @@ import { initLocale } from './locales';
 import { initScreensaverMode } from './screensaver';
 import { initShare } from './share';
 import { initTheme } from './themes';
-import { initShowtimeMode } from './time';
+import { initShowTimeMode } from './show-time';
 import { initWorkMode } from './work';
 import { initZenMode } from './zen';
 import { initProgressbarMode } from './progressbar';
@@ -24,7 +24,7 @@ const MODULES = [
   initProgressbarMode,
   initScreensaverMode,
   initShare,
-  initShowtimeMode,
+  initShowTimeMode,
   initTheme,
   initWorkMode,
   initZenMode,
