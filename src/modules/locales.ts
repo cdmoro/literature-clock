@@ -16,7 +16,7 @@ export const DOMINANT_LOCALES: Record<string, Locale> = {
 
 export function getRandomLocale() {
   const locales = Object.keys(TRANSLATIONS) as Locale[];
-  const localeQuote = store.get('resolved-quote')?.locale;
+  const localeQuote = store.get('active-quote')?.locale;
 
   if (localeQuote) {
     locales.splice(locales.indexOf(localeQuote), 1);
@@ -62,7 +62,7 @@ export function initLocale() {
   });
   document.querySelector('#random-locale')?.addEventListener('click', () => {
     const isRandomLocale = store.toggle('random-locale');
-    if (!isRandomLocale && store.get('locale') !== store.get('resolved-quote')?.locale) {
+    if (!isRandomLocale && store.get('locale') !== store.get('active-quote')?.locale) {
       updateQuote({
         useIndex: true,
       });
@@ -85,13 +85,13 @@ function translateStrings(locale: Locale) {
 
   document
     .querySelectorAll<HTMLElement>('[data-text]')
-    .forEach((el) => (el.textContent = strings[el.dataset.text as keyof typeof strings]));
+    .forEach((el) => (el.textContent = strings[el.dataset.text as keyof Translations]));
 
   document
     .querySelectorAll<HTMLOptionElement>('[data-label]')
-    .forEach((el) => (el.label = strings[el.dataset.label as keyof typeof strings]));
+    .forEach((el) => (el.label = strings[el.dataset.label as keyof Translations]));
 
   document
     .querySelectorAll<HTMLElement>('[data-title]')
-    .forEach((el) => (el.title = strings[el.dataset.title as keyof typeof strings]));
+    .forEach((el) => (el.title = strings[el.dataset.title as keyof Translations]));
 }

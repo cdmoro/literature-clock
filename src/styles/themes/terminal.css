@@ -81,7 +81,7 @@
   transform: translateY(-1px);
 }
 
-[data-theme|='terminal'] #time-progress-bar {
+[data-theme|='terminal'] #progress-bar {
   background: var(--accent-color);
   height: 7px;
   box-shadow:

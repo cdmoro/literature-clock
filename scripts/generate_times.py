@@ -65,7 +65,6 @@ for file_name in file_list:
                 # Construct the data dictionary
                 entry = {
                     'id': row['Id'],
-                    'time': row['Time'],
                     'quote_time_case': row['Quote time'],
                     'quote_first': quote_first,
                     'quote_last': quote_last,

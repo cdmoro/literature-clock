@@ -7,7 +7,7 @@ interface Stateful {
   work: boolean;
   screensaver: boolean;
   fade: boolean;
-  showtime: boolean;
+  'show-time': boolean;
   font: string;
   theme: string;
   progressbar: boolean;
@@ -22,14 +22,14 @@ export interface Stateless {
   progress?: string;
   index?: string;
   static?: boolean;
-  'resolved-quote'?: ResolvedQuote;
+  'active-quote'?: ResolvedQuote;
 }
 
 type State = Stateful & Stateless;
 
 type Listener = (newState: State, oldState: State) => void;
 
-const IGNORE_FROM_URL: (keyof State)[] = ['custom-font', 'resolved-quote'];
+const IGNORE_FROM_URL: (keyof State)[] = ['custom-font', 'active-quote'];
 const REMOVE_VALUES_FROM_URL: Partial<State> = {
   font: 'default',
   theme: 'base-system',
@@ -190,7 +190,7 @@ export function createStore() {
     work: false,
     zen: false,
     fade: true,
-    showtime: true,
+    'show-time': true,
     font: 'default',
     theme: 'base-system',
     progressbar: true,

@@ -53,7 +53,7 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
   let quoteIndex = Math.floor(Math.random() * quotes.length);
 
   if (useIndex) {
-    const index = store.get('resolved-quote')?.index;
+    const index = store.get('active-quote')?.index;
 
     if (index && quotes[index]) {
       quoteIndex = index;
@@ -70,9 +70,9 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
   const quote = Object.assign({}, quotes[quoteIndex]) as ResolvedQuote;
   quote.index = quoteIndex;
   quote.locale = locale;
+  quote.quote_raw = `${quote.quote_first}${quote.quote_time_case}${quote.quote_last}`.replace(/<br>/g, '\n');
 
   if (!quote.quote_time_case) {
-    quote.time = time;
     quote.quote_time_case = time;
     quote.fallback = true;
   }
@@ -82,7 +82,7 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
     quote.author = strings.author;
   }
 
-  store.set('resolved-quote', quote);
+  store.set('active-quote', quote);
 
   return quote;
 }
@@ -101,7 +101,6 @@ export async function updateQuote({ time = getTime(), useIndex = false } = {}) {
 
   const quote = await getQuote(time, locale, useIndex);
   updateGHLinks(time, quote, locale);
-  const quoteRaw = `${quote.quote_first}${quote.quote_time_case}${quote.quote_last}`;
   const timeClass = quote.quote_time_case.replace(/<[^>]*>/g, '').length <= 11 ? 'time text-nowrap' : 'time';
   const quoteText =
     testQuote || `${quote.quote_first}<span class="${timeClass}">${quote.quote_time_case}</span>${quote.quote_last}`;
@@ -125,16 +124,8 @@ export async function updateQuote({ time = getTime(), useIndex = false } = {}) {
 
     blockquote.appendChild(p);
     blockquote.appendChild(cite);
-    blockquote.setAttribute('aria-label', quote.time);
-    blockquote.setAttribute('aria-description', `${quoteRaw.replace(/<br>/g, '\n')}\n${quote.title}, ${quote.author}`);
-    blockquote.dataset.locale = locale;
-    blockquote.dataset.sfw = quote.sfw;
-    blockquote.dataset.index = quote.index?.toString();
-    if (quote.fallback) {
-      blockquote.dataset.fallback = 'true';
-    } else {
-      blockquote.removeAttribute('data-fallback');
-    }
+    blockquote.setAttribute('aria-label', time);
+    blockquote.setAttribute('aria-description', `${quote.quote_raw} (${quote.title}, ${quote.author})`);
 
     if (store.get('fade')) {
       fadeInQuote();
@@ -143,7 +134,9 @@ export async function updateQuote({ time = getTime(), useIndex = false } = {}) {
     fitQuote();
 
     if (store.get('theme')?.includes('color')) {
-      setTheme();
+      setTheme({
+        syncToUrl: false,
+      });
     }
   }
 
