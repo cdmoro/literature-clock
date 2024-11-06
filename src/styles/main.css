@@ -222,11 +222,15 @@ button span {
 }
 
 button.active,
-button:hover {
+button.active:hover {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
   color: var(--background);
   z-index: 1;
+}
+
+button:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 80%);
 }
 
 select:focus,
@@ -237,8 +241,7 @@ button:focus {
   z-index: 1;
 }
 
-button:focus.active,
-button:hover {
+button:focus.active {
   background-color: var(--accent-color);
 }
 
