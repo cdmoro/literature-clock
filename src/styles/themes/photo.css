@@ -19,7 +19,7 @@
   content: none;
 }
 
-[data-theme|='photo'] #time-progress-bar {
+[data-theme|='photo'] #progress-bar {
   z-index: 3;
 }
 

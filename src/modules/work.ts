@@ -6,10 +6,10 @@ export function initWorkMode() {
 }
 
 function toggleWorkMode() {
-  const quote = document.getElementById('quote');
   const isWorkMode = store.toggle('work');
+  const quote = store.get('active-quote');
 
-  if ((isWorkMode && quote?.dataset.sfw === 'nsfw') || (!isWorkMode && quote?.dataset.fallback === 'true')) {
+  if ((isWorkMode && quote?.sfw === 'nsfw') || (!isWorkMode && quote?.fallback)) {
     updateQuote();
   }
 }

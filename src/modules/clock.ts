@@ -4,7 +4,7 @@ import { setDayParameters } from './dynamic';
 import { fadeOutQuote } from './fade';
 import { store } from '../store';
 
-const timeProgressBar = document.getElementById('time-progress-bar');
+const timeProgressBar = document.getElementById('progress-bar');
 let lastTime: string;
 
 function updateProgressBar() {
