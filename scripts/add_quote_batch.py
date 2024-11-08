@@ -8,7 +8,7 @@ import httpcore
 translator = Translator()
 
 # Available language codes
-languages = ["en-US", "es-ES", "pt-BR", "fr-FR", "it-IT"]
+languages = ["en-US", "es-ES", "pt-BR", "fr-FR", "it-IT", "de-DE"]
 
 # Path to the folder where CSV files are stored
 folder_path = 'quotes'
