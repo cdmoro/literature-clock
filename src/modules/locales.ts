@@ -10,7 +10,7 @@ export const DOMINANT_LOCALES: Record<string, Locale> = {
   es: 'es-ES',
   fr: 'fr-FR',
   it: 'it-IT',
-  pt: 'pt-BR',
+  pt: 'pt-PT',
 } as const;
 
 export function getRandomLocale() {

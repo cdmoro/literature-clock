@@ -24,6 +24,7 @@ def generate_typescript_type(languages):
 
     ts_type = "export type Translations = {\n"
     for key in subkeys:
+        key = f"'{key}'" if "-" in key else key
         ts_type += f"  {key}: string;\n"
     ts_type += "};\n"  # Ensure there is a final newline at the end
 

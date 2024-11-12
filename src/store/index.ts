@@ -1,4 +1,4 @@
-import { resolveLocale, DOMINANT_LOCALES } from '../modules/locales';
+import { resolveLocale } from '../modules/locales';
 import { Locale, ResolvedQuote } from '../types';
 
 interface Stateful {
@@ -77,11 +77,8 @@ export class Store {
     // Merge: URL > localStorage > defaultState
     this.state = { ...defaultState, ...stateFromLocalStorage, ...stateFromUrl };
 
-    if (
-      !Object.keys(DOMINANT_LOCALES).includes(this.state.locale.substring(0, 2)) ||
-      !this.state.locale.includes('-')
-    ) {
-      this.state.locale = resolveLocale(navigator.language);
+    this.state.locale = resolveLocale(this.state.locale);
+    if (urlParams.has('locale') && urlParams.get('locale') !== this.state.locale) {
       this.syncToUrl('locale', this.state.locale);
     }
 
@@ -185,7 +182,7 @@ export let store: Store;
 // Create the store and pass default state to constructor
 export function createStore() {
   store = new Store({
-    locale: resolveLocale(navigator.language),
+    locale: resolveLocale(),
     screensaver: false,
     work: false,
     zen: false,
