@@ -108,5 +108,27 @@
       "quote_time_case": "",
       "sfw": "sfw"
     }
+  ],
+  "de-DE": [
+    {
+      "quote_first": "Fehler ",
+      "quote_last": ": Zitat nicht gefunden.",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": "sfw"
+    },
+    {
+      "quote_first": "Logbuch des Kapitäns:<br>Wir suchen noch nach einem Angebot für ",
+      "quote_last": ".",
+      "title": "Moby Dick",
+      "author": "Kapitän Ahab",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": "sfw"
+    }
   ]
 }

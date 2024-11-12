@@ -11,6 +11,7 @@ export const DOMINANT_LOCALES: Record<string, Locale> = {
   fr: 'fr-FR',
   it: 'it-IT',
   pt: 'pt-PT',
+  de: 'de-DE',
 } as const;
 
 export function getRandomLocale() {
