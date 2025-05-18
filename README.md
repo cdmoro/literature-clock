@@ -125,7 +125,7 @@ This project is possible thanks to the following projects:
 
 ## Contact
 
-Hi! I'm Carlos and you can find me here
+Hi! I'm Carlos, and you can find me here
 
 - [Twitter](https://twitter.com/CarlosBonadeo)
-- [LinkedIn](https://twitter.com/CarlosBonadeo)
+- [LinkedIn]([https://twitter.com/CarlosBonadeo](https://www.linkedin.com/in/cdbonadeo/))
