@@ -12,7 +12,7 @@ def check_csv_files(directory):
             errors = 0
 
             with open(filepath, 'r', newline='', encoding="cp437") as csvfile:
-                reader = csv.DictReader(csvfile)
+                reader = csv.DictReader(csvfile, delimiter="|")
                 rows = list(reader)
 
                 print(f"Processing {file_name}...")
@@ -28,7 +28,7 @@ def check_csv_files(directory):
                 # Write the updated rows back to the file
                 fieldnames = reader.fieldnames  # Preserve the original column names
                 with open(filepath, 'w', newline='', encoding="cp437") as csvfile:
-                    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                    writer = csv.DictWriter(csvfile, fieldnames=fieldnames, delimiter="|")
                     writer.writeheader()
                     writer.writerows(rows)
 

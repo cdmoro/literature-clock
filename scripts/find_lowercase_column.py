@@ -26,7 +26,7 @@ for filename in os.listdir(folder_path):
         
         # Open the CSV file
         with open(file_path, mode='r', encoding='utf-8') as file:
-            reader = csv.DictReader(file)
+            reader = csv.DictReader(file, delimiter="|")
             
             # Check if the column exists in the CSV
             if column_name not in reader.fieldnames:
