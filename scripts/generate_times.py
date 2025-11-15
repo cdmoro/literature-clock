@@ -35,7 +35,7 @@ for file_name in file_list:
         locale = file_name.split('.')[1]
 
         # Read the CSV file
-        df = pd.read_csv(os.path.join(quotes_path, file_name))
+        df = pd.read_csv(os.path.join(quotes_path, file_name), sep="|")
 
         # Group the data by the 'Time' column
         groupedByTime = df.groupby('Time')

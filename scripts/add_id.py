@@ -36,7 +36,7 @@ def generate_id(df):
 for file_name in os.listdir(folder_path):
     if file_name.endswith('.csv'):
         file_path = os.path.join(folder_path, file_name)
-        df = pd.read_csv(file_path)
+        df = pd.read_csv(file_path, sep="|")
         
         # Generate the 'Id' column
         df_with_id = generate_id(df)
