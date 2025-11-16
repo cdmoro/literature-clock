@@ -51,7 +51,7 @@ for filename in os.listdir(folder_path):
         file_path = os.path.join(folder_path, filename)
         
         # Load the CSV with headers
-        df = pd.read_csv(file_path)
+        df = pd.read_csv(file_path, sep="|")
         
         # Check if the specified column exists in the CSV
         if column_name in df.columns:

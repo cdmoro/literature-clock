@@ -15,7 +15,7 @@ for file in csv_files:
     file_path = os.path.join(folder_path, file)
     
     # Read the CSV file
-    df = pd.read_csv(file_path)
+    df = pd.read_csv(file_path, sep="|")
     
     # Group by 'Author' and count the number of unique 'Title' for each author
     author_counts = df.groupby('Author')['Title'].nunique()

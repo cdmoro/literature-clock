@@ -76,14 +76,14 @@ def add_quote_to_csv(time_val, quote_time, quote, author, title, language_code, 
 # Function to process quotes in batch from a CSV file (reading by column names)
 def process_batch_csv(file_path, language_code):
     with open(file_path, mode='r', newline='', encoding='utf-8') as file:
-        reader = csv.DictReader(file)  # Use DictReader to read by column name
+        reader = csv.DictReader(file, delimiter="|")  # Use DictReader to read by column name
         
         # First, count the total number of quotes
         total_quotes = sum(1 for _ in reader)
         
         # Reset the reader to start reading from the beginning again
         file.seek(0)
-        reader = csv.DictReader(file)
+        reader = csv.DictReader(file, delimiter="|")
 
         # Initialize a counter
         quote_counter = 1

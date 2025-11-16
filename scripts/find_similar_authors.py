@@ -11,7 +11,7 @@ if len(sys.argv) < 2:
 locale = sys.argv[1]
 
 # Load the CSV file
-df = pd.read_csv("quotes/quotes." + locale + ".csv")
+df = pd.read_csv("quotes/quotes." + locale + ".csv", sep="|")
 
 # Define a similarity threshold (adjustable)
 threshold = 85
