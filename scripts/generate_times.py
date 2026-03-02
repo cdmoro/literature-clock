@@ -30,7 +30,7 @@ print("Starting processing quotes...\n")
 # Iterate over each CSV file
 for file_name in file_list:
     if file_name.endswith(ext):
-        errors = 0;
+        errors = 0
         # Extract the locale from the file name
         locale = file_name.split('.')[1]
 
@@ -52,12 +52,16 @@ for file_name in file_list:
             # Convert the group DataFrame to a list of dictionaries
             data = []
             for index, row in group.iterrows():
+                if row['Quote time'].startswith('*'):
+                    print(f"- Skipping quote with time [{row['Quote time']}] and id [{row['Id']}].")
+                    continue
+
                 # Split the quote based on Quote time
                 quote_parts = row['Quote'].split(str(row['Quote time']), 1)
 
                 if len(quote_parts) == 1:
                     errors += 1
-                    quote_parts.append('');
+                    quote_parts.append('')
 
                 quote_first = quote_parts[0]
                 quote_last = quote_parts[1]
@@ -75,7 +79,7 @@ for file_name in file_list:
                 data.append(entry)
 
             # Create the JSON file name
-            time_filename = os.path.join(output_path, locale, f'{key.replace(":", "_")}.json')
+            time_filename = os.path.join(output_path, locale, f'{str(key).replace(":", "_")}.json')
 
             # Write the data to the JSON file
             with open(time_filename, 'w', encoding="utf-8") as json_file:
