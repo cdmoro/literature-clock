@@ -8,7 +8,7 @@ import httpcore
 translator = Translator()
 
 # Available language codes
-languages = ["en-US", "es-ES", "pt-PT", "fr-FR", "it-IT", "de-DE"]
+languages = ["en-UK", "en-US", "es-ES", "pt-PT", "fr-FR", "it-IT", "de-DE"]
 
 # Path to the folder where CSV files are stored
 folder_path = 'quotes'
@@ -37,7 +37,7 @@ def generate_id(time, lang_code):
 def add_quote_to_csv(time_val, quote_time, quote, author, title, language_code, sfw_status):
     for lang_code in languages:
         # Translate the quote, title, and quote time if the language is not the original
-        if lang_code != language_code:
+        if lang_code.split("-")[0] != language_code.split("-")[0]:
             retry_attempts = 3  # Number of retry attempts in case of failure
             while retry_attempts > 0:
                 try:

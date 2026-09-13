@@ -11,7 +11,7 @@ Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) (
 - Zen mode: remove all the distractions ([link](https://literatureclock.netlify.app/?zen=true))
 - Work mode: only shows quotes that are safe for work ([link](https://literatureclock.netlify.app/?work=true))
 - [Screensaver mode](#screensaver): make the quotes dance around the screen! ([link](https://literatureclock.netlify.app/?screensaver=true))
-- Languages: supports English, Spanish, Portuguese, French, and Italian (by default, it will try to use the system language)
+- Languages: supports British and American English, Spanish, Portuguese, French, Italian, and German (by default, it will try to use the system language)
   - Random language: see a quote in a different language each minute, isn't that cool? ([link]([https://literatureclock.netlify.app/?locale=random](https://literatureclock.netlify.app/?random-locale=true)))
 - [Themes](#themes): the clock has `colour themes` and `special themes` and each theme has light and dark variants, of course
   - Random colour theme: see a different colour theme each minute, isn't that even cooler? ([link](https://literatureclock.netlify.app/?theme=color-system))
@@ -49,15 +49,21 @@ Developer settings
 
 There is support for the following languages (by default, it will try to use the system language):
 
-- English
+- British English (`en-UK`, default)
+- American English (`en-US`)
 - Spanish
 - Portuguese
 - French
 - Italian
+- German
+
+The clock preserves explicitly selected locales from the URL or saved settings. Browser `en-GB` maps to `en-UK`; generic English (`en`), unsupported English regions, and unrecognized languages fall back to `en-UK`. Locale matching is case-insensitive and accepts underscores (for example, `en_US`).
 
 Want to implement a new language? Sure thing, ping me and let's talk about it!
 
 ### About the quotes
+
+The `en-UK` catalogue preserves the original English quotes. The `en-US` catalogue starts from the same quotes and uses colons for numeric clock times (for example, `7:59` instead of `7.59`). This notation adaptation is not a verification of every US book edition; edition-specific wording can be corrected quote by quote.
 
 Translations
 
@@ -72,7 +78,7 @@ All translations were made from the original CSV English file, sometimes the tra
 
 If you want to help you can:
 
-- [Raise an issue to add a new quote](https://github.com/cdmoro/literature-clock/issues/new?template=add-quote.yml&labels=add-quote&title=%5B23%3A28%5D%5Ben%5D+Add+quote) or a new variant for a specific time
+- [Raise an issue to add a new quote](https://github.com/cdmoro/literature-clock/issues/new?template=add-quote.yml&labels=add-quote&title=%5B23%3A28%5D+%5Ben-UK%5D+Add+quote&locale=en-UK) or a new variant for a specific time
 - Raise an issue reporting a bug related to a quote (i.e. a typo)
 - Contact me and share your thoughts about a quote, the project, or anything you want :D
 - Show me your love in the form of [coffees](https://buymeacoffee.com/cdmoro), [cafecitos](http://cafecito.app/cdmoro)

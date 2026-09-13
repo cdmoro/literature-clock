@@ -16,6 +16,7 @@ export type Translations = {
   download: string;
   dynamic: string;
   elegant: string;
+  'en-UK': string;
   'en-US': string;
   'es-ES': string;
   exit_zen_title: string;

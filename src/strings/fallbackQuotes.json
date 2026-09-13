@@ -1,4 +1,26 @@
 {
+  "en-UK": [
+    {
+      "quote_first": "Error ",
+      "quote_last": ": quote not found.",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": "sfw"
+    },
+    {
+      "quote_first": "Captain's log:<br>We are still looking for a quote for ",
+      "quote_last": ".",
+      "title": "Moby Dick",
+      "author": "Captain Ahab",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": "sfw"
+    }
+  ],
   "en-US": [
     {
       "quote_first": "Error ",
