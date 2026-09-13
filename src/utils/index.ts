@@ -20,9 +20,10 @@ export function updateGHLinks(time: string, quote: Quote, locale: Locale) {
   const addQuoteUrl = new URL(GITHUB_NEW_ISSUE_URL);
   addQuoteUrl.searchParams.set('template', 'add-quote.yml');
   addQuoteUrl.searchParams.set('assignees', 'cdmoro');
-  addQuoteUrl.searchParams.set('title', `[${time}][${locale}] Add quote`);
+  addQuoteUrl.searchParams.set('title', `[${time}] [${locale}] Add quote`);
   addQuoteUrl.searchParams.set('labels', `add-quote,${locale}`);
   addQuoteUrl.searchParams.set('locale', locale);
+  addQuoteUrl.searchParams.set('time', time);
 
   const addQuoteLink = document.getElementById('add-quote') as HTMLAnchorElement;
   if (addQuoteLink) {
@@ -32,7 +33,7 @@ export function updateGHLinks(time: string, quote: Quote, locale: Locale) {
   const reportErrorUrl = new URL(GITHUB_NEW_ISSUE_URL);
   reportErrorUrl.searchParams.set('template', 'quote-error.yml');
   reportErrorUrl.searchParams.set('assignees', 'cdmoro');
-  reportErrorUrl.searchParams.set('title', `[${time}][${locale}]${quote.id ? `[${quote.id}]` : ''} Report error`);
+  reportErrorUrl.searchParams.set('title', `[${time}] [${locale}]${quote.id ? ` [${quote.id}]` : ''} Report error`);
   reportErrorUrl.searchParams.set('labels', `bug,${locale}`);
   reportErrorUrl.searchParams.set('locale', locale);
   reportErrorUrl.searchParams.set('time', time);

@@ -15,9 +15,10 @@ def add_and_translate_key(new_key, english_text):
     with open(json_path, "r", encoding="utf-8") as file:
         translations = json.load(file)
     
-    translations["en-US"][new_key] = english_text
     for lang_code in translations:
-        if lang_code != "en-US":
+        if lang_code.startswith("en-"):
+            translations[lang_code][new_key] = english_text
+        else:
             translations[lang_code][new_key] = translate_text(english_text, lang_code[:2])  # Google Translate uses 2-letter codes
     
     sorted_translations = {

@@ -6,7 +6,7 @@ from googletrans import Translator
 translator = Translator()
 
 # Available language codes
-languages = ["en-US", "es-ES", "pt-PT", "fr-FR", "it-IT", "de-DE"]
+languages = ["en-UK", "en-US", "es-ES", "pt-PT", "fr-FR", "it-IT", "de-DE"]
 
 # Path to the folder where CSV files are stored
 folder_path = "quotes"
@@ -62,7 +62,7 @@ def add_quote_to_csv(time, quote, title, author, language_code, sfw):
     for lang_code in languages:
         print(f"Processing language: {lang_code}")
         # Translate the quote and title if the language is not the original
-        if lang_code != language_code:
+        if lang_code.split("-")[0] != language_code.split("-")[0]:
             translated_quote = translator.translate(
                 quote, src=language_code.split("-")[0], dest=lang_code.split("-")[0]
             ).text
