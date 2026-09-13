@@ -70,11 +70,6 @@ Translations
 All translations were made from the original CSV English file, sometimes the translations are not accurate (I used Google Translate, yes, I know), but it's fine, this is something that can be fixed easily, just one quote at a time. :) So far, these are the times that don't have quotes:
 
 - 08:21
-- 10:28
-- 11:46
-- 12:31
-- 13:36
-- 18:44
 
 If you want to help you can:
 
