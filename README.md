@@ -71,9 +71,6 @@ All translations were made from the original CSV English file, sometimes the tra
 
 - 08:21
 - 10:28
-- 11:46
-- 12:31
-- 13:36
 - 18:44
 
 If you want to help you can:
