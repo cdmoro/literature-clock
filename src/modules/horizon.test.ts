@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, test, vi } from 'vitest';
-import { getDayParameters, getDayProgress, getSkyParameters, setDayParameters } from './dynamic';
+import { getDayParameters, getDayProgress, getSkyParameters, setDayParameters } from './horizon';
 
 vi.mock('../store', () => {
   return {

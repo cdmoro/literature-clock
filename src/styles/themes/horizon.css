@@ -1,7 +1,7 @@
 /* Horizonte: one continuous sky, with four familiar moments of the day. */
 .living-sky { display: none; }
 
-[data-theme|='dynamic'] {
+[data-theme|='horizon'] {
   --background: var(--sky-panel, #18243e);
   --font-color: var(--sky-ink, #fff4e6);
   --accent-color: var(--font-color);
@@ -10,11 +10,11 @@
   --glow-box-shadow: 0 0 45px 8px #e1eaff25;
 }
 
-[data-theme|='dynamic'] body {
+[data-theme|='horizon'] body {
   isolation: isolate;
   transition: color 8s ease, background-color 8s ease;
 }
-[data-theme|='dynamic'] .living-sky {
+[data-theme|='horizon'] .living-sky {
   display: block;
   position: fixed;
   inset: 0;
@@ -24,7 +24,7 @@
   background: linear-gradient(180deg, var(--sky-0), var(--sky-1) 62%, var(--sky-2));
 }
 
-[data-theme|='dynamic'] .sky-haze {
+[data-theme|='horizon'] .sky-haze {
   position: absolute;
   inset: -15%;
   opacity: calc(var(--sky-daylight) * 0.5);
@@ -33,8 +33,8 @@
   animation: horizon-drift 90s ease-in-out infinite alternate;
 }
 
-[data-theme|='dynamic'] .sky-sun,
-[data-theme|='dynamic'] .sky-moon {
+[data-theme|='horizon'] .sky-sun,
+[data-theme|='horizon'] .sky-moon {
   position: absolute;
   width: clamp(50px, 7vw, 100px);
   height: clamp(50px, 7vw, 100px);
@@ -44,19 +44,19 @@
   transition: left 1s linear, top 1s linear, opacity 1s linear;
 }
 
-[data-theme|='dynamic'] .sky-sun {
+[data-theme|='horizon'] .sky-sun {
   background: #fff4cf;
   box-shadow: 0 0 35px 12px #ffedb580, 0 0 100px 50px #ffd79b40, 0 0 180px 90px #ffd79b18;
   filter: blur(1px);
 }
 
-[data-theme|='dynamic'] .sky-moon {
+[data-theme|='horizon'] .sky-moon {
   background: #e7e8df;
   overflow: hidden;
   box-shadow: var(--glow-box-shadow);
 }
 
-[data-theme|='dynamic'] .sky-stars {
+[data-theme|='horizon'] .sky-stars {
   position: absolute;
   inset: 0;
   opacity: var(--sky-starlight);
@@ -70,10 +70,10 @@
   mask-image: linear-gradient(#000, #0009 55%, transparent 95%);
 }
 
-[data-theme|='dynamic'] blockquote::before,
-[data-theme|='dynamic'] blockquote::after { content: none; }
-[data-theme|='dynamic'] blockquote { text-shadow: 0 2px 24px color-mix(in srgb, var(--background), transparent 30%); }
-[data-theme|='dynamic'] .time {
+[data-theme|='horizon'] blockquote::before,
+[data-theme|='horizon'] blockquote::after { content: none; }
+[data-theme|='horizon'] blockquote { text-shadow: 0 2px 24px color-mix(in srgb, var(--background), transparent 30%); }
+[data-theme|='horizon'] .time {
   color: var(--sky-highlight, #f5cf8e);
   text-decoration: underline;
   text-decoration-color: color-mix(in srgb, currentColor, transparent 55%);
@@ -87,13 +87,13 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  [data-theme|='dynamic'] body { transition: none; }
-  [data-theme|='dynamic'] .sky-haze { animation: none; }
-  [data-theme|='dynamic'] .sky-sun,
-  [data-theme|='dynamic'] .sky-moon { transition: none; }
+  [data-theme|='horizon'] body { transition: none; }
+  [data-theme|='horizon'] .sky-haze { animation: none; }
+  [data-theme|='horizon'] .sky-sun,
+  [data-theme|='horizon'] .sky-moon { transition: none; }
 }
 
-[data-theme|='dynamic'] .sky-moon:before {
+[data-theme|='horizon'] .sky-moon:before {
   content: '';
   height: 25%;
   width: 25%;
@@ -108,17 +108,17 @@
     -0.7vw 2.9vw 0 -0.5vw #c5cdd4;
 }
 
-[data-theme|='dynamic'] .sky-moon[data-lunar-phase='New'] {
+[data-theme|='horizon'] .sky-moon[data-lunar-phase='New'] {
   background: #262626;
 }
-[data-theme|='dynamic'] .sky-moon[data-lunar-phase='New']:before {
+[data-theme|='horizon'] .sky-moon[data-lunar-phase='New']:before {
   opacity: 0.02;
 }
 
-[data-theme|='dynamic'] .sky-moon[data-lunar-phase='Waxing Crescent']:after,
-[data-theme|='dynamic'] .sky-moon[data-lunar-phase='First Quarter']:after,
-[data-theme|='dynamic'] .sky-moon[data-lunar-phase='Waning Crescent']:after,
-[data-theme|='dynamic'] .sky-moon[data-lunar-phase='Last Quarter']:after {
+[data-theme|='horizon'] .sky-moon[data-lunar-phase='Waxing Crescent']:after,
+[data-theme|='horizon'] .sky-moon[data-lunar-phase='First Quarter']:after,
+[data-theme|='horizon'] .sky-moon[data-lunar-phase='Waning Crescent']:after,
+[data-theme|='horizon'] .sky-moon[data-lunar-phase='Last Quarter']:after {
   position: absolute;
   top: 0;
   left: 0;
@@ -130,32 +130,32 @@
   filter: blur(1px);
 }
 
-[data-theme|='dynamic'] .sky-moon[data-lunar-phase='Waxing Crescent']:after {
+[data-theme|='horizon'] .sky-moon[data-lunar-phase='Waxing Crescent']:after {
   transform: translateX(-25%);
   border-radius: 50%;
 }
 
-[data-theme|='dynamic'] .sky-moon[data-lunar-phase='First Quarter']:after {
+[data-theme|='horizon'] .sky-moon[data-lunar-phase='First Quarter']:after {
   transform: translateX(-50%);
 }
 
-[data-theme|='dynamic'] .sky-moon[data-lunar-phase='Waning Crescent']:after {
+[data-theme|='horizon'] .sky-moon[data-lunar-phase='Waning Crescent']:after {
   transform: translateX(25%);
   border-radius: 50%;
 }
 
-[data-theme|='dynamic'] .sky-moon[data-lunar-phase='Waning Gibbous'] {
+[data-theme|='horizon'] .sky-moon[data-lunar-phase='Waning Gibbous'] {
   box-shadow:
     var(--glow-box-shadow),
     -3.5vw 0 1px -1.5vw rgba(0, 0, 0, 0.85) inset;
 }
 
-[data-theme|='dynamic'] .sky-moon[data-lunar-phase='Waxing Gibbous'] {
+[data-theme|='horizon'] .sky-moon[data-lunar-phase='Waxing Gibbous'] {
   box-shadow:
     var(--glow-box-shadow),
     38px 0 1px -15px rgba(0, 0, 0, 0.85) inset;
 }
 
-[data-theme|='dynamic'] .sky-moon[data-lunar-phase='Last Quarter']:after {
+[data-theme|='horizon'] .sky-moon[data-lunar-phase='Last Quarter']:after {
   transform: translateX(50%);
 }

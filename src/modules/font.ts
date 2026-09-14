@@ -13,7 +13,7 @@ export const THEME_FONTS: Record<string, string[]> = {
   frame: ['Playfair Display'],
   subtle: ['Unna'],
   poster: ['Averia Serif Libre', 'Allura'],
-  dynamic: ['Unna'],
+  horizon: ['Unna'],
   photo: ['Abril Fatface'],
   kindle: ['Noto Serif'],
 };

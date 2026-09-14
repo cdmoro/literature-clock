@@ -14,7 +14,7 @@ export type Translations = {
   default_font: string;
   document_title: string;
   download: string;
-  dynamic: string;
+  horizon: string;
   elegant: string;
   'en-GB': string;
   'en-US': string;

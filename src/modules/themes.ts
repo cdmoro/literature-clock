@@ -1,6 +1,6 @@
 import { THEME_FONTS, resetFont } from './font';
 import { doFitQuote, fitQuote, loadFontIfNotExists } from '../utils';
-import { setDayParameters } from './dynamic';
+import { setDayParameters } from './horizon';
 import { store } from '../store';
 import { contrastingText } from '../utils/colors';
 
@@ -155,7 +155,7 @@ export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
     variant = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 
-  if (theme === 'dynamic') {
+  if (theme === 'horizon') {
     setDayParameters();
   }
 
