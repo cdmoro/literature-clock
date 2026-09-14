@@ -104,6 +104,10 @@ function applyCustomColor(theme = 'base') {
   const resetColor = document.querySelector<HTMLButtonElement>('#reset-color');
   const customizable = CUSTOMIZABLE_THEMES.has(theme) && !NON_CUSTOMIZABLE_COLORS.has(theme) && !store.get('theme').startsWith('color-');
   root.classList.toggle('custom-accent', customizable);
+  root.classList.toggle(
+    'custom-anaglyph',
+    theme === 'anaglyph' && store.get('color').toLowerCase() !== defaultColor(theme).toLowerCase(),
+  );
   const controls = document.getElementById('color-controls');
   if (controls) controls.hidden = !customizable;
   if (customizable) root.style.setProperty('--accent-color', store.get('color'));
