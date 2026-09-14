@@ -22,6 +22,9 @@ const DEFAULT_COLORS: Record<string, string> = {
   whatsapp: '#e1ffc7',
 };
 
+// Non-customizable skins must not reinterpret the last editable skin's color.
+let followsDefaultColor = true;
+
 function defaultColor(theme: string) {
   const dark = document.documentElement.dataset.theme?.endsWith('-dark');
   const darkColors: Record<string, string> = { retro: '#f1ba08', anaglyph: '#3987b4', terminal: '#1bec1b', frame: '#00c4ce', photo: '#fd3622', whatsapp: '#245247' };
@@ -65,6 +68,7 @@ export function initTheme() {
     variant = preferDarkThemes.matches ? 'dark' : 'light';
   }
   document.documentElement.dataset.theme = `${theme}-${variant}`;
+  followsDefaultColor = store.get('color').toLowerCase() === defaultColor(theme).toLowerCase();
   applyCustomColor(theme);
 
   window.addEventListener('resize', doFitQuote);
@@ -127,7 +131,9 @@ function applyCustomColor(theme = 'base') {
 
 export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
   const previousTheme = store.get('theme').split('-')[0];
-  const wasDefault = store.get('color').toLowerCase() === defaultColor(previousTheme).toLowerCase();
+  if (CUSTOMIZABLE_THEMES.has(previousTheme)) {
+    followsDefaultColor = store.get('color').toLowerCase() === defaultColor(previousTheme).toLowerCase();
+  }
   const p = document.querySelector<HTMLParagraphElement>('blockquote p');
 
   if (p) {
@@ -167,7 +173,7 @@ export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
   }
 
   document.documentElement.dataset.theme = `${theme}-${variant}`;
-  if (wasDefault && theme && CUSTOMIZABLE_THEMES.has(theme)) {
+  if (followsDefaultColor && theme && CUSTOMIZABLE_THEMES.has(theme) && !store.get('theme').startsWith('color-')) {
     store.set('color', defaultColor(theme), syncToUrl);
   }
   applyCustomColor(theme);
