@@ -18,28 +18,36 @@ describe('locale settings', () => {
     expect(store.get('locale')).toBe('en-US');
   });
 
-  test('normalizes the URL locale and overrides saved settings', () => {
+  test.each(['en-GB', 'en-UK'])('normalizes URL locale %s and overrides saved settings', (locale) => {
     localStorage.setItem('settings', JSON.stringify({ locale: 'en-US' }));
-    history.replaceState({}, '', '/?locale=en-GB');
+    history.replaceState({}, '', `/?locale=${locale}`);
     createStore();
-    expect(store.get('locale')).toBe('en-UK');
-    expect(new URLSearchParams(location.search).get('locale')).toBe('en-UK');
-    expect(JSON.parse(localStorage.getItem('settings')!).locale).toBe('en-UK');
+    expect(store.get('locale')).toBe('en-GB');
+    expect(new URLSearchParams(location.search).get('locale')).toBe('en-GB');
+    expect(JSON.parse(localStorage.getItem('settings')!).locale).toBe('en-GB');
+  });
+
+  test('migrates saved British English to en-GB', () => {
+    localStorage.setItem('settings', JSON.stringify({ locale: 'en-UK' }));
+    createStore();
+    expect(store.get('locale')).toBe('en-GB');
+    expect(JSON.parse(localStorage.getItem('settings')!).locale).toBe('en-GB');
+    expect(new URLSearchParams(location.search).get('locale')).toBeNull();
   });
 
   test('initializes British English with a standard HTML language tag', () => {
     history.replaceState({}, '', '/?locale=en');
     document.body.innerHTML =
-      '<select id="locale-select"><option value="en-UK"></option><option value="en-US"></option></select>';
+      '<select id="locale-select"><option value="en-GB"></option><option value="en-US"></option></select>';
     createStore();
     initLocale();
-    expect(document.querySelector<HTMLSelectElement>('#locale-select')?.value).toBe('en-UK');
+    expect(document.querySelector<HTMLSelectElement>('#locale-select')?.value).toBe('en-GB');
     expect(document.documentElement.lang).toBe('en-GB');
-    expect(getStrings('en-UK').colors).toBe('Colours');
+    expect(getStrings('en-GB').colors).toBe('Colours');
     expect(getStrings('en-US').colors).toBe('Colors');
   });
 
-  test.each(['en-UK', 'en-US'] as const)('includes the full %s locale in issue links', (locale) => {
+  test.each(['en-GB', 'en-US'] as const)('includes the full %s locale in issue links', (locale) => {
     document.body.innerHTML = '<a id="add-quote"></a><a id="report-error"></a>';
     updateGHLinks(
       '10:28',

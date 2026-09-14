@@ -49,7 +49,7 @@ Developer settings
 
 There is support for the following languages (by default, it will try to use the system language):
 
-- British English (`en-UK`, default)
+- British English (`en-GB`, default)
 - American English (`en-US`)
 - Spanish
 - Portuguese
@@ -57,13 +57,13 @@ There is support for the following languages (by default, it will try to use the
 - Italian
 - German
 
-The clock preserves explicitly selected locales from the URL or saved settings. Browser `en-GB` maps to `en-UK`; generic English (`en`), unsupported English regions, and unrecognized languages fall back to `en-UK`. Locale matching is case-insensitive and accepts underscores (for example, `en_US`).
+The clock preserves explicitly selected locales from the URL or saved settings. Legacy `en-UK` links and saved settings resolve to `en-GB`; generic English (`en`), unsupported English regions, and unrecognized languages fall back to `en-GB`. Locale matching is case-insensitive and accepts underscores (for example, `en_US`).
 
 Want to implement a new language? Sure thing, ping me and let's talk about it!
 
 ### About the quotes
 
-The `en-UK` catalogue preserves the original English quotes. The `en-US` catalogue starts from the same quotes and uses colons for numeric clock times (for example, `7:59` instead of `7.59`). This notation adaptation is not a verification of every US book edition; edition-specific wording can be corrected quote by quote.
+The `en-GB` catalogue preserves the original English quotes. The `en-US` catalogue starts from the same quotes and uses colons for numeric clock times (for example, `7:59` instead of `7.59`). This notation adaptation is not a verification of every US book edition; edition-specific wording can be corrected quote by quote.
 
 Translations
 
@@ -74,7 +74,7 @@ All translations were made from the original CSV English file, sometimes the tra
 
 If you want to help you can:
 
-- [Raise an issue to add a new quote](https://github.com/cdmoro/literature-clock/issues/new?template=add-quote.yml&labels=add-quote&title=%5B23%3A28%5D+%5Ben-UK%5D+Add+quote&locale=en-UK) or a new variant for a specific time
+- [Raise an issue to add a new quote](https://github.com/cdmoro/literature-clock/issues/new?template=add-quote.yml&labels=add-quote&title=%5B23%3A28%5D+%5Ben-GB%5D+Add+quote&locale=en-GB) or a new variant for a specific time
 - Raise an issue reporting a bug related to a quote (i.e. a typo)
 - Contact me and share your thoughts about a quote, the project, or anything you want :D
 - Show me your love in the form of [coffees](https://buymeacoffee.com/cdmoro), [cafecitos](http://cafecito.app/cdmoro)
