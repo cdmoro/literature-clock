@@ -33,7 +33,12 @@ footer .input-group { vertical-align: top; }
 #color-picker::-webkit-color-swatch-wrapper { padding: 0; }
 #color-picker::-webkit-color-swatch { border: 0; border-radius: 0.2rem; }
 #color-picker::-moz-color-swatch { border: 0; border-radius: 0.2rem; }
-#color-picker:focus-visible { outline: 2px solid var(--font-color); outline-offset: 2px; }
+#color-picker:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent-color), transparent 75%) !important;
+  outline: 0;
+  z-index: 1;
+}
 #reset-color {
   display: inline-flex;
   align-items: center;
