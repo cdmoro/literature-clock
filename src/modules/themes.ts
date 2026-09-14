@@ -6,7 +6,7 @@ import { contrastingText } from '../utils/colors';
 
 // Skins in this list use their colour as part of their visual identity.
 const NON_CUSTOMIZABLE_COLORS = new Set(['pink', 'green', 'orange', 'purple', 'blue', 'gray']);
-const CUSTOMIZABLE_THEMES = new Set(['base', 'retro', 'elegant', 'festive', 'bohemian', 'handwriting', 'anaglyph', 'terminal', 'frame', 'poster', 'photo', 'whatsapp']);
+const CUSTOMIZABLE_THEMES = new Set(['base', 'retro', 'elegant', 'festive', 'bohemian', 'handwriting', 'terminal', 'frame', 'poster', 'photo', 'whatsapp']);
 const DEFAULT_COLORS: Record<string, string> = {
   base: '#d24335',
   retro: '#daa908',
@@ -14,7 +14,6 @@ const DEFAULT_COLORS: Record<string, string> = {
   festive: '#e74c3c',
   bohemian: '#1abc9c',
   handwriting: '#077fc6',
-  anaglyph: '#c53a35',
   terminal: '#ac7f02',
   frame: '#00b9c4',
   poster: '#fd4533',
@@ -27,7 +26,7 @@ let followsDefaultColor = true;
 
 function defaultColor(theme: string) {
   const dark = document.documentElement.dataset.theme?.endsWith('-dark');
-  const darkColors: Record<string, string> = { retro: '#f1ba08', anaglyph: '#3987b4', terminal: '#1bec1b', frame: '#00c4ce', photo: '#fd3622', whatsapp: '#245247' };
+  const darkColors: Record<string, string> = { retro: '#f1ba08', terminal: '#1bec1b', frame: '#00c4ce', photo: '#fd3622', whatsapp: '#245247' };
   return (dark && darkColors[theme]) || DEFAULT_COLORS[theme] || DEFAULT_COLORS.base;
 }
 
@@ -108,10 +107,6 @@ function applyCustomColor(theme = 'base') {
   const resetColor = document.querySelector<HTMLButtonElement>('#reset-color');
   const customizable = CUSTOMIZABLE_THEMES.has(theme) && !NON_CUSTOMIZABLE_COLORS.has(theme) && !store.get('theme').startsWith('color-');
   root.classList.toggle('custom-accent', customizable);
-  root.classList.toggle(
-    'custom-anaglyph',
-    theme === 'anaglyph' && store.get('color').toLowerCase() !== defaultColor(theme).toLowerCase(),
-  );
   const controls = document.getElementById('color-controls');
   if (controls) controls.hidden = !customizable;
   if (customizable) root.style.setProperty('--accent-color', store.get('color'));

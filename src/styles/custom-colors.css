@@ -61,15 +61,6 @@ footer .input-group { vertical-align: top; }
   --background: color-mix(in srgb, var(--accent-color) 16%, #101016);
 }
 
-[data-theme|='anaglyph'].custom-anaglyph {
-  --shadow: 5px 2px var(--accent-color), -5px -2px color-mix(in srgb, var(--accent-color) 25%, #4be4e2);
-}
-
-[data-theme|='anaglyph'].custom-anaglyph select:focus,
-[data-theme|='anaglyph'].custom-anaglyph button:focus {
-  box-shadow: var(--shadow) !important;
-}
-
 [data-theme|='whatsapp'].custom-accent cite {
   background-color: var(--accent-color);
   color: var(--bubble-text);
