@@ -1,0 +1,79 @@
+#color-controls {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 0;
+  margin: 0;
+  height: 30px;
+  white-space: nowrap;
+}
+
+footer .input-group { vertical-align: top; }
+
+[data-variant-icon] { display: none; }
+[data-variant='light'] [data-variant-icon='light'],
+[data-variant='dark'] [data-variant-icon='dark'],
+[data-variant='system'] [data-variant-icon='system'] { display: initial; }
+
+#color-controls[hidden],
+#reset-color[hidden] {
+  display: none;
+}
+
+#color-picker {
+  box-sizing: border-box;
+  width: 2.25rem;
+  height: 100%;
+  padding: 0.25rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
+  border-radius: 0.25rem 0 0 0.25rem;
+  background: var(--background);
+  cursor: pointer;
+}
+
+#color-picker::-webkit-color-swatch-wrapper { padding: 0; }
+#color-picker::-webkit-color-swatch { border: 0; border-radius: 0.2rem; }
+#color-picker::-moz-color-swatch { border: 0; border-radius: 0.2rem; }
+#reset-color {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+#color-controls:has(#reset-color[hidden]) #color-picker {
+  border-radius: 0.25rem;
+}
+
+@media only screen and (max-width: 600px) {
+  #color-controls { height: 26px; }
+  #color-picker { width: 2rem; }
+}
+
+[data-theme='base-light'].custom-accent,
+[data-theme='frame-light'].custom-accent {
+  --background: color-mix(in srgb, var(--accent-color) 15%, #fff);
+}
+
+[data-theme='base-dark'].custom-accent,
+[data-theme='frame-dark'].custom-accent {
+  --background: color-mix(in srgb, var(--accent-color) 16%, #101016);
+}
+
+[data-theme|='whatsapp'].custom-accent cite {
+  background-color: var(--accent-color);
+  color: var(--bubble-text);
+}
+
+[data-theme|='whatsapp'].custom-accent cite:after {
+  border-color: transparent transparent transparent var(--accent-color);
+}
+
+/* The highlighted time sits on the neutral incoming bubble, not the chosen color. */
+[data-theme='whatsapp-light'].custom-accent .time {
+  color: color-mix(in srgb, var(--accent-color) 45%, #000);
+}
+
+[data-theme='whatsapp-dark'].custom-accent .time {
+  color: color-mix(in srgb, var(--accent-color) 45%, #fff);
+}

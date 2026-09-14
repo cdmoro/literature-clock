@@ -67,6 +67,11 @@ async function shareQuote() {
         url.searchParams.append('theme', theme);
       }
 
+      const color = store.get('color');
+      if (color && color !== '#d24335') {
+        url.searchParams.append('color', color);
+      }
+
       const shareData = {
         files: filesArray,
         text: `${strings.document_title}`,

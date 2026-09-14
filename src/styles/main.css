@@ -234,6 +234,7 @@ button:hover {
 }
 
 select:focus,
+input[type='color']:focus,
 button:focus {
   border-color: var(--accent-color);
   box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent-color), transparent 75%) !important;

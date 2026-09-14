@@ -10,6 +10,7 @@ interface Stateful {
   'show-time': boolean;
   font: string;
   theme: string;
+  color: string;
   progressbar: boolean;
   'random-locale': boolean;
 }
@@ -33,6 +34,7 @@ const IGNORE_FROM_URL: (keyof State)[] = ['custom-font', 'active-quote'];
 const REMOVE_VALUES_FROM_URL: Partial<State> = {
   font: 'default',
   theme: 'base-system',
+  color: '#d24335',
 };
 
 export function parseUrlParams(urlParams: URLSearchParams): Partial<State> {
@@ -190,6 +192,7 @@ export function createStore() {
     'show-time': true,
     font: 'default',
     theme: 'base-system',
+    color: '#d24335',
     progressbar: true,
     'random-locale': false,
   });
