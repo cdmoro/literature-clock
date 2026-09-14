@@ -1,4 +1,4 @@
-import { getRandomLocale, getStrings } from './locales';
+import { getBaseLocale, getRandomLocale, getStrings } from './locales';
 import { removeBackgroundImage, setDynamicBackgroundPicture, setTheme } from './themes';
 import { Locale, ResolvedQuote, Quote } from '../types';
 import { fitQuote, getTime, updateGHLinks } from '../utils';
@@ -26,7 +26,7 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
     const response = await fetch(`../times/${locale}/${fileName}.json`);
 
     if (!response.ok) {
-      return FALLBACK_QUOTES[locale];
+    return FALLBACK_QUOTES[getBaseLocale(locale)];
     }
 
     let quotes = (await response.json()) as Quote[];
@@ -36,13 +36,13 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
     }
 
     if (!quotes.length) {
-      return FALLBACK_QUOTES[locale];
+      return FALLBACK_QUOTES[getBaseLocale(locale)];
     }
 
     return quotes;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
-    return FALLBACK_QUOTES[locale];
+      return FALLBACK_QUOTES[getBaseLocale(locale)];
   }
 }
 

@@ -49,7 +49,7 @@ Developer settings
 
 There is support for the following languages (by default, it will try to use the system language):
 
-- British English (`en-UK`, default)
+- British English (`en-GB`, default)
 - American English (`en-US`)
 - Spanish
 - Portuguese
@@ -57,25 +57,24 @@ There is support for the following languages (by default, it will try to use the
 - Italian
 - German
 
-The clock preserves explicitly selected locales from the URL or saved settings. Browser `en-GB` maps to `en-UK`; generic English (`en`), unsupported English regions, and unrecognized languages fall back to `en-UK`. Locale matching is case-insensitive and accepts underscores (for example, `en_US`).
+The clock preserves explicitly selected locales from the URL or saved settings. Legacy `en-UK` links and saved settings resolve to `en-GB`; generic English (`en`), unsupported English regions, and unrecognized languages fall back to `en-GB`. Locale matching is case-insensitive and accepts underscores (for example, `en_US`).
 
 Want to implement a new language? Sure thing, ping me and let's talk about it!
 
 ### About the quotes
 
-The `en-UK` catalogue preserves the original English quotes. The `en-US` catalogue starts from the same quotes and uses colons for numeric clock times (for example, `7:59` instead of `7.59`). This notation adaptation is not a verification of every US book edition; edition-specific wording can be corrected quote by quote.
+The `en-GB` catalogue preserves the original English quotes. The `en-US` catalogue starts from the same quotes and uses colons for numeric clock times (for example, `7:59` instead of `7.59`). This notation adaptation is not a verification of every US book edition; edition-specific wording can be corrected quote by quote.
 
 Translations
 
 All translations were made from the original CSV English file, sometimes the translations are not accurate (I used Google Translate, yes, I know), but it's fine, this is something that can be fixed easily, just one quote at a time. :) So far, these are the times that don't have quotes:
 
-- 08:21
 - 10:28
 - 18:44
 
 If you want to help you can:
 
-- [Raise an issue to add a new quote](https://github.com/cdmoro/literature-clock/issues/new?template=add-quote.yml&labels=add-quote&title=%5B23%3A28%5D+%5Ben-UK%5D+Add+quote&locale=en-UK) or a new variant for a specific time
+- [Raise an issue to add a new quote](https://github.com/cdmoro/literature-clock/issues/new?template=add-quote.yml&labels=add-quote&title=%5B23%3A28%5D+%5Ben-GB%5D+Add+quote&locale=en-GB) or a new variant for a specific time
 - Raise an issue reporting a bug related to a quote (i.e. a typo)
 - Contact me and share your thoughts about a quote, the project, or anything you want :D
 - Show me your love in the form of [coffees](https://buymeacoffee.com/cdmoro), [cafecitos](http://cafecito.app/cdmoro)
@@ -103,6 +102,10 @@ To run the project you need to have Python, Node and NPM installed on your syste
   1. Run `npm run generate-times` to generate all the quote files
   1. Run `npm run dev` and voila! The clock will be automatically opened in your favorite browser.
 
+### Translating a new catalogue
+
+For resumable Google Translate batches, progress tracking, review and export, see [the translation workflow](scripts/TRANSLATING.md). The existing single-quote tool remains available.
+
 ### About quote generation
 
 I used Python to generate the JSON files (one per time if the time has quotes) with the quotes. The script goes through all the CSV files (one per locale) and puts the files in the appropriate folders. Also, the script generates an additional JSON file with statistics per locale, such as the times with fewer quotes, the author with the most quotes, etc.
@@ -123,6 +126,12 @@ This project is possible thanks to the following projects:
 - [html2canvas-pro](https://yorickshan.github.io/html2canvas-pro/)
 - [lunarphase-js](https://github.com/jasonsturges/lunarphase-js)
 - [Picsum](https://picsum.photos/)
+
+## Licensing and quote provenance
+
+The original software contributions by Carlos Bonadeo are licensed under the [MIT License](LICENSE). The package metadata uses MIT to match that license. MIT permits adaptation, redistribution, and commercial use, provided the copyright and license notices are preserved.
+
+The MIT license does not relicense third-party material or the literary quotations included in this repository. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the quote collection's provenance, the upstream license notice, and the limits of the permissions we can confirm.
 
 ## Contact
 
