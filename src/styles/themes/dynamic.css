@@ -37,6 +37,7 @@
 [data-theme|='dynamic'] .sky-moon {
   position: absolute;
   width: clamp(50px, 7vw, 100px);
+  height: clamp(50px, 7vw, 100px);
   aspect-ratio: 1;
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -72,7 +73,14 @@
 [data-theme|='dynamic'] blockquote::before,
 [data-theme|='dynamic'] blockquote::after { content: none; }
 [data-theme|='dynamic'] blockquote { text-shadow: 0 2px 24px color-mix(in srgb, var(--background), transparent 30%); }
-[data-theme|='dynamic'] .time { color: inherit; text-shadow: none; }
+[data-theme|='dynamic'] .time {
+  color: var(--sky-highlight, #f5cf8e);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor, transparent 55%);
+  text-decoration-thickness: 0.045em;
+  text-underline-offset: 0.14em;
+  text-shadow: none;
+}
 
 @keyframes horizon-drift {
   to { transform: translate(3%, -2%) scale(1.04); }
@@ -111,25 +119,28 @@
 [data-theme|='dynamic'] .sky-moon[data-lunar-phase='First Quarter']:after,
 [data-theme|='dynamic'] .sky-moon[data-lunar-phase='Waning Crescent']:after,
 [data-theme|='dynamic'] .sky-moon[data-lunar-phase='Last Quarter']:after {
-  height: 110%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
   content: '';
   width: 100%;
   background: rgba(0, 0, 0, 0.85);
-  display: inline-block;
+  display: block;
   filter: blur(1px);
 }
 
 [data-theme|='dynamic'] .sky-moon[data-lunar-phase='Waxing Crescent']:after {
-  transform: translateX(-25%) translateY(-5px);
+  transform: translateX(-25%);
   border-radius: 50%;
 }
 
 [data-theme|='dynamic'] .sky-moon[data-lunar-phase='First Quarter']:after {
-  transform: translateX(-50%) translateY(-3px);
+  transform: translateX(-50%);
 }
 
 [data-theme|='dynamic'] .sky-moon[data-lunar-phase='Waning Crescent']:after {
-  transform: translateX(25%) translateY(-5px);
+  transform: translateX(25%);
   border-radius: 50%;
 }
 
@@ -146,5 +157,5 @@
 }
 
 [data-theme|='dynamic'] .sky-moon[data-lunar-phase='Last Quarter']:after {
-  transform: translateX(50%) translateY(-3px);
+  transform: translateX(50%);
 }

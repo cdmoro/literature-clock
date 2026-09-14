@@ -123,6 +123,7 @@ export function setDayParameters() {
   root.style.setProperty('--sky-daylight', daylight.toString());
   root.style.setProperty('--sky-starlight', (1 - daylight).toString());
   root.style.setProperty('--sky-ink', daylight > 0.55 ? '#243344' : '#fff4e6');
+  root.style.setProperty('--sky-highlight', daylight > 0.55 ? '#713b20' : '#f5cf8e');
   root.style.setProperty('--sky-panel', daylight > 0.55 ? '#e3e5df' : '#18243e');
   Object.entries({ sun, moon }).forEach(([name, orbit]) => {
     const element = sky.querySelector<HTMLElement>(`.sky-${name}`)!;
