@@ -27,6 +27,7 @@
 }
 
 [data-theme|='anaglyph-light'] select:focus,
+[data-theme|='anaglyph-light'] input[type='color']:focus,
 [data-theme|='anaglyph-light'] button:focus {
   box-shadow:
     2px 2px #e60c05,
@@ -54,6 +55,7 @@
 }
 
 [data-theme|='anaglyph-dark'] select:focus,
+[data-theme|='anaglyph-dark'] input[type='color']:focus,
 [data-theme|='anaglyph-dark'] button:focus {
   box-shadow:
     2px 2px #f50d3f,
