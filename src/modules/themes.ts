@@ -75,9 +75,11 @@ export function initTheme() {
 
     if (variant === 'system') {
       const [theme] = store.get('theme').split('-');
+      const wasDefault = store.get('color').toLowerCase() === defaultColor(theme).toLowerCase();
 
       store.set('theme', `${theme}-system`);
       document.documentElement.dataset.theme = `${theme}-${e.matches ? 'dark' : 'light'}`;
+      if (wasDefault && CUSTOMIZABLE_THEMES.has(theme)) store.set('color', defaultColor(theme));
       applyCustomColor(theme);
     }
   });
@@ -97,6 +99,7 @@ export function initTheme() {
 
 function applyCustomColor(theme = 'base') {
   const root = document.documentElement;
+  root.dataset.variant = store.get('theme').split('-')[1] || 'system';
   const colorPicker = document.querySelector<HTMLInputElement>('#color-picker');
   const resetColor = document.querySelector<HTMLButtonElement>('#reset-color');
   const customizable = CUSTOMIZABLE_THEMES.has(theme) && !NON_CUSTOMIZABLE_COLORS.has(theme) && !store.get('theme').startsWith('color-');
@@ -111,6 +114,7 @@ function applyCustomColor(theme = 'base') {
     root.style.removeProperty('--bubble-text');
   }
   if (colorPicker) {
+    colorPicker.value = store.get('color');
     colorPicker.hidden = !customizable;
     colorPicker.disabled = !customizable;
   }
@@ -118,6 +122,8 @@ function applyCustomColor(theme = 'base') {
 }
 
 export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
+  const previousTheme = store.get('theme').split('-')[0];
+  const wasDefault = store.get('color').toLowerCase() === defaultColor(previousTheme).toLowerCase();
   const p = document.querySelector<HTMLParagraphElement>('blockquote p');
 
   if (p) {
@@ -157,6 +163,9 @@ export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
   }
 
   document.documentElement.dataset.theme = `${theme}-${variant}`;
+  if (wasDefault && theme && CUSTOMIZABLE_THEMES.has(theme)) {
+    store.set('color', defaultColor(theme), syncToUrl);
+  }
   applyCustomColor(theme);
   fitQuote();
 

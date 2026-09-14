@@ -331,11 +331,6 @@
                   <option value="kindle" data-text="kindle">Kindle</option>
                 </optgroup>
               </select>
-              <select id="variant-select">
-                <option value="system" data-text="system">System</option>
-                <option value="light" data-text="light">Light</option>
-                <option value="dark" data-text="dark">Dark</option>
-              </select>
             </span>
             <span id="color-controls" class="input-group" hidden>
               <input id="color-picker" type="color" value="#d24335" aria-label="Custom color" title="Color" hidden />
@@ -344,6 +339,20 @@
                   <path d="M3 10a9 9 0 1 1 2.6 8.4M3 4v6h6" />
                 </svg>
               </button>
+            </span>
+            <span class="input-group" id="variant-controls">
+              <div class="input-group-text" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <g data-variant-icon="light"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" /></g>
+                  <g data-variant-icon="dark"><path d="M21 13a9 9 0 0 1-10-10 9 9 0 1 0 10 10Z" /></g>
+                  <g data-variant-icon="system"><circle cx="12" cy="12" r="9" /><path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor" /></g>
+                </svg>
+              </div>
+              <select id="variant-select" aria-label="Color scheme">
+                <option value="system" data-text="system">System</option>
+                <option value="light" data-text="light">Light</option>
+                <option value="dark" data-text="dark">Dark</option>
+              </select>
             </span>
             <span class="input-group">
               <div class="input-group-text" data-title="font">
