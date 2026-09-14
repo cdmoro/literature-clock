@@ -30,8 +30,8 @@ python3 scripts/translate_catalogue.py --target el --pilot --batch-size 25 --del
 
 Use Google language codes: `el` for Modern Greek, `ja` for Japanese, `ar` for
 Arabic, `nl` for Dutch, or `zh-CN` for Simplified Chinese. The source is always
-translated as English; by default it is the project's `quotes.en-UK.csv` (British
-English, equivalent to the user's en-GB original).
+translated as English; by default it is the project's `quotes.en-GB.csv` (British
+English, the project's original source catalogue).
 
 ## Inspect progress and resume
 

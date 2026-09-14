@@ -59,7 +59,7 @@ def validate(source, translated):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('target', type=Path)
-    parser.add_argument('--source', type=Path, default=ROOT / 'quotes/quotes.en-UK.csv')
+    parser.add_argument('--source', type=Path, default=ROOT / 'quotes/quotes.en-GB.csv')
     args = parser.parse_args()
     try:
         source = read_catalogue(args.source)

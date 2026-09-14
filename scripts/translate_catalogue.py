@@ -282,7 +282,7 @@ def export_review(review_path, source, output):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--source', type=Path, default=ROOT / 'quotes/quotes.en-UK.csv')
+    parser.add_argument('--source', type=Path, default=ROOT / 'quotes/quotes.en-GB.csv')
     parser.add_argument('--target', default='el')
     parser.add_argument('--state', type=Path, help='Default: .translation-work/<target>/state.json')
     parser.add_argument('--batch-size', type=int, default=25)
