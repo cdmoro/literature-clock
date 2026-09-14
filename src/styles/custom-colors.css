@@ -1,0 +1,46 @@
+#color-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0 0.5rem;
+  vertical-align: middle;
+}
+
+#color-controls[hidden],
+#reset-color[hidden] {
+  display: none;
+}
+
+#color-picker {
+  box-sizing: border-box;
+  width: 2.25rem;
+  height: 1.9rem;
+  padding: 0.25rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 45%);
+  border-radius: 0.4rem;
+  background: var(--background);
+  cursor: pointer;
+}
+
+#color-picker::-webkit-color-swatch-wrapper { padding: 0; }
+#color-picker::-webkit-color-swatch { border: 0; border-radius: 0.2rem; }
+#color-picker::-moz-color-swatch { border: 0; border-radius: 0.2rem; }
+#color-picker:focus-visible { outline: 2px solid var(--font-color); outline-offset: 2px; }
+#reset-color { border-radius: 0.4rem; }
+
+[data-theme='base-light'].custom-accent {
+  --background: color-mix(in srgb, var(--accent-color) 15%, #fff);
+}
+
+[data-theme='base-dark'].custom-accent {
+  --background: color-mix(in srgb, var(--accent-color) 16%, #101016);
+}
+
+[data-theme|='anaglyph'].custom-accent {
+  --shadow: 5px 2px var(--accent-color), -5px -2px color-mix(in srgb, var(--accent-color) 25%, #4be4e2);
+}
+
+[data-theme|='anaglyph'].custom-accent select:focus,
+[data-theme|='anaglyph'].custom-accent button:focus {
+  box-shadow: var(--shadow) !important;
+}

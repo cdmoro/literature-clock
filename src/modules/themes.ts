@@ -5,7 +5,7 @@ import { store } from '../store';
 
 // Skins in this list use their colour as part of their visual identity.
 const NON_CUSTOMIZABLE_COLORS = new Set(['pink', 'green', 'orange', 'purple', 'blue', 'gray']);
-const CUSTOMIZABLE_THEMES = new Set(['base', 'retro', 'elegant', 'festive', 'bohemian', 'handwriting', 'anaglyph']);
+const CUSTOMIZABLE_THEMES = new Set(['base', 'retro', 'elegant', 'festive', 'bohemian', 'handwriting', 'anaglyph', 'terminal', 'frame', 'poster', 'photo']);
 const DEFAULT_COLORS: Record<string, string> = {
   base: '#d24335',
   retro: '#daa908',
@@ -14,7 +14,17 @@ const DEFAULT_COLORS: Record<string, string> = {
   bohemian: '#1abc9c',
   handwriting: '#077fc6',
   anaglyph: '#c53a35',
+  terminal: '#ac7f02',
+  frame: '#00b9c4',
+  poster: '#fd4533',
+  photo: '#e33725',
 };
+
+function defaultColor(theme: string) {
+  const dark = document.documentElement.dataset.theme?.endsWith('-dark');
+  const darkColors: Record<string, string> = { retro: '#f1ba08', anaglyph: '#3987b4', terminal: '#1bec1b', frame: '#00c4ce', photo: '#fd3622' };
+  return (dark && darkColors[theme]) || DEFAULT_COLORS[theme] || DEFAULT_COLORS.base;
+}
 
 function getRandomThemeColor() {
   const colors = Array.from(document.querySelectorAll<HTMLOptionElement>('#colors option')).map((op) => op.value);
@@ -66,6 +76,7 @@ export function initTheme() {
 
       store.set('theme', `${theme}-system`);
       document.documentElement.dataset.theme = `${theme}-${e.matches ? 'dark' : 'light'}`;
+      applyCustomColor(theme);
     }
   });
 
@@ -75,25 +86,28 @@ export function initTheme() {
   });
   resetColor?.addEventListener('click', () => {
     const theme = themeSelect?.value || 'base';
-    const defaultColor = DEFAULT_COLORS[theme] || DEFAULT_COLORS.base;
-    store.set('color', defaultColor);
-    if (colorPicker) colorPicker.value = defaultColor;
+    const color = defaultColor(theme);
+    store.set('color', color);
+    if (colorPicker) colorPicker.value = color;
     applyCustomColor(theme);
   });
 }
 
-function applyCustomColor(theme: string) {
+function applyCustomColor(theme = 'base') {
   const root = document.documentElement;
   const colorPicker = document.querySelector<HTMLInputElement>('#color-picker');
   const resetColor = document.querySelector<HTMLButtonElement>('#reset-color');
-  const customizable = CUSTOMIZABLE_THEMES.has(theme) && !NON_CUSTOMIZABLE_COLORS.has(theme);
+  const customizable = CUSTOMIZABLE_THEMES.has(theme) && !NON_CUSTOMIZABLE_COLORS.has(theme) && !store.get('theme').startsWith('color-');
+  root.classList.toggle('custom-accent', customizable);
+  const controls = document.getElementById('color-controls');
+  if (controls) controls.hidden = !customizable;
   if (customizable) root.style.setProperty('--accent-color', store.get('color'));
   else root.style.removeProperty('--accent-color');
   if (colorPicker) {
     colorPicker.hidden = !customizable;
     colorPicker.disabled = !customizable;
   }
-  if (resetColor) resetColor.hidden = !customizable || store.get('color') === DEFAULT_COLORS[theme];
+  if (resetColor) resetColor.hidden = !customizable || store.get('color') === defaultColor(theme);
 }
 
 export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {

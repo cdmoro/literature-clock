@@ -331,8 +331,12 @@
                   <option value="kindle" data-text="kindle">Kindle</option>
                 </optgroup>
               </select>
-              <input id="color-picker" type="color" value="#d24335" aria-label="Custom color" hidden />
-              <button id="reset-color" type="button" hidden>Reset</button>
+            </span>
+            <span id="color-controls" hidden>
+              <input id="color-picker" type="color" value="#d24335" aria-label="Custom color" title="Color" hidden />
+              <button id="reset-color" type="button" title="Reset color" aria-label="Reset color" hidden>↺</button>
+            </span>
+            <span class="input-group">
               <select id="variant-select">
                 <option value="system" data-text="system">System</option>
                 <option value="light" data-text="light">Light</option>
