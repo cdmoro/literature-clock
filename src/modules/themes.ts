@@ -3,6 +3,19 @@ import { doFitQuote, fitQuote, loadFontIfNotExists } from '../utils';
 import { setDayParameters } from './dynamic';
 import { store } from '../store';
 
+// Skins in this list use their colour as part of their visual identity.
+const NON_CUSTOMIZABLE_COLORS = new Set(['pink', 'green', 'orange', 'purple', 'blue', 'gray']);
+const CUSTOMIZABLE_THEMES = new Set(['base', 'retro', 'elegant', 'festive', 'bohemian', 'handwriting', 'anaglyph']);
+const DEFAULT_COLORS: Record<string, string> = {
+  base: '#d24335',
+  retro: '#daa908',
+  elegant: '#9f5bd5',
+  festive: '#e74c3c',
+  bohemian: '#1abc9c',
+  handwriting: '#077fc6',
+  anaglyph: '#c53a35',
+};
+
 function getRandomThemeColor() {
   const colors = Array.from(document.querySelectorAll<HTMLOptionElement>('#colors option')).map((op) => op.value);
   const [theme] = store.get('theme').split('-');
@@ -18,6 +31,8 @@ export function initTheme() {
   const themeSelect = document.querySelector<HTMLSelectElement>('#theme-select');
   const variantSelect = document.querySelector<HTMLSelectElement>('#variant-select');
   const preferDarkThemes = window.matchMedia('(prefers-color-scheme: dark)');
+  const colorPicker = document.querySelector<HTMLInputElement>('#color-picker');
+  const resetColor = document.querySelector<HTMLButtonElement>('#reset-color');
 
   if (theme && THEME_FONTS[theme]) {
     THEME_FONTS[theme].forEach((font) => loadFontIfNotExists(font));
@@ -29,6 +44,8 @@ export function initTheme() {
     variantSelect.value = variant;
   }
 
+  if (colorPicker) colorPicker.value = store.get('color');
+
   if (theme === 'color') {
     theme = getRandomThemeColor();
   }
@@ -36,6 +53,7 @@ export function initTheme() {
     variant = preferDarkThemes.matches ? 'dark' : 'light';
   }
   document.documentElement.dataset.theme = `${theme}-${variant}`;
+  applyCustomColor(theme);
 
   window.addEventListener('resize', doFitQuote);
   themeSelect?.addEventListener('change', () => setTheme());
@@ -50,6 +68,32 @@ export function initTheme() {
       document.documentElement.dataset.theme = `${theme}-${e.matches ? 'dark' : 'light'}`;
     }
   });
+
+  colorPicker?.addEventListener('input', () => {
+    store.set('color', colorPicker.value);
+    applyCustomColor(themeSelect?.value || 'base');
+  });
+  resetColor?.addEventListener('click', () => {
+    const theme = themeSelect?.value || 'base';
+    const defaultColor = DEFAULT_COLORS[theme] || DEFAULT_COLORS.base;
+    store.set('color', defaultColor);
+    if (colorPicker) colorPicker.value = defaultColor;
+    applyCustomColor(theme);
+  });
+}
+
+function applyCustomColor(theme: string) {
+  const root = document.documentElement;
+  const colorPicker = document.querySelector<HTMLInputElement>('#color-picker');
+  const resetColor = document.querySelector<HTMLButtonElement>('#reset-color');
+  const customizable = CUSTOMIZABLE_THEMES.has(theme) && !NON_CUSTOMIZABLE_COLORS.has(theme);
+  if (customizable) root.style.setProperty('--accent-color', store.get('color'));
+  else root.style.removeProperty('--accent-color');
+  if (colorPicker) {
+    colorPicker.hidden = !customizable;
+    colorPicker.disabled = !customizable;
+  }
+  if (resetColor) resetColor.hidden = !customizable || store.get('color') === DEFAULT_COLORS[theme];
 }
 
 export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
@@ -92,6 +136,7 @@ export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
   }
 
   document.documentElement.dataset.theme = `${theme}-${variant}`;
+  applyCustomColor(theme);
   fitQuote();
 
   if (p) {
