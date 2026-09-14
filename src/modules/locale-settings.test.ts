@@ -47,6 +47,15 @@ describe('locale settings', () => {
     expect(getStrings('en-US').colors).toBe('Colors');
   });
 
+  test('uses base locale strings for draft previews', () => {
+    history.replaceState({}, '', '/?locale=de-DE-draft');
+    document.body.innerHTML = '<select id="locale-select"></select>';
+    createStore();
+    initLocale();
+    expect(document.title).toContain('Literaturuhr');
+    expect(document.documentElement.lang).toBe('de-DE-draft');
+  });
+
   test.each(['en-GB', 'en-US'] as const)('includes the full %s locale in issue links', (locale) => {
     document.body.innerHTML = '<a id="add-quote"></a><a id="report-error"></a>';
     updateGHLinks(

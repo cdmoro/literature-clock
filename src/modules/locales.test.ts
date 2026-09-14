@@ -20,6 +20,8 @@ describe('resolveLocale', () => {
     ['pt', 'pt-PT'],
     ['fr-FR', 'fr-FR'],
     ['de-DE', 'de-DE'],
+    ['en-GB-draft', 'en-GB-draft'],
+    ['de-DE-draft', 'de-DE-draft'],
     ['zu', 'en-GB'],
     ['', 'en-GB'],
   ])('resolves %s to %s', (input, expected) => {

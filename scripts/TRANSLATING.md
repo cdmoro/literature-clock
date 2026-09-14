@@ -53,6 +53,15 @@ share a cache, so identical text is translated only once, including when an
 interruption occurs halfway through a quote. No blank or failed row counts as a
 complete draft just because its ID is present. Generated files are ignored by Git.
 
+## Live draft previews
+
+After exporting a partial review, save it as `quotes/quotes.<locale>.draft.csv`,
+for example `quotes/quotes.el-GR.draft.csv`. The time generator maps that file to
+`public/times/<locale>-draft/`, which can be opened with `?locale=el-GR-draft`.
+Drafts use the base locale's interface strings and fallback behavior, but remain
+excluded from random language selection and supported-language lists. Keep the
+`.draft.csv` suffix until the catalogue has been reviewed completely.
+
 Source IDs, clock times, authors and SFW classifications are preserved. Resuming
 compares full source rows by ID: added quotes become pending, unchanged quotes are
 kept, and edited or removed originals have their old drafts archived in

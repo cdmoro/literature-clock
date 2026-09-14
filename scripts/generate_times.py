@@ -33,6 +33,8 @@ for file_name in file_list:
         errors = 0
         # Extract the locale from the file name
         locale = file_name.split('.')[1]
+        if file_name.endswith('.draft.csv'):
+            locale += '-draft'
 
         # Read the CSV file
         df = pd.read_csv(os.path.join(quotes_path, file_name), sep="|")
