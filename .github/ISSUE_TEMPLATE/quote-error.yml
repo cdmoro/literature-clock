@@ -1,6 +1,6 @@
 name: Bug
 description: Add a new quote or an additional quote for a specific time.
-title: "[XX:XX] [en-UK] Error in a quote"
+title: "[XX:XX] [en-GB] Error in a quote"
 labels:
   - bug
 body:
@@ -11,8 +11,8 @@ body:
     id: locale
     attributes:
       label: Locale
-      description: Use the full locale (en-UK, en-US, es-ES, pt-PT, fr-FR, it-IT, or de-DE) and update the title as well.
-      placeholder: "en-UK"
+      description: Use the full locale (en-GB, en-US, es-ES, pt-PT, fr-FR, it-IT, or de-DE) and update the title as well.
+      placeholder: "en-GB"
     validations:
       required: true
   - type: input

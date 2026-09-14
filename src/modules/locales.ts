@@ -6,7 +6,7 @@ import { Translations } from '../types';
 import { store } from '../store';
 
 export const DOMINANT_LOCALES: Record<string, Locale> = {
-  en: 'en-UK',
+  en: 'en-GB',
   es: 'es-ES',
   fr: 'fr-FR',
   it: 'it-IT',
@@ -27,16 +27,11 @@ export function getRandomLocale() {
 
 export function resolveLocale(locale = navigator.language): Locale {
   const normalized = typeof locale === 'string' ? locale.trim().replace(/_/g, '-').toLowerCase() : '';
-  // Browsers use en-GB; en-UK is the project's British English identifier.
-  if (normalized === 'en-gb' || normalized.startsWith('en-gb-')) {
-    return 'en-UK';
-  }
-
   const locales = Object.keys(TRANSLATIONS) as Locale[];
   const exactLocale = locales.find((supported) => supported.toLowerCase() === normalized);
   const regionalLocale = locales.find((supported) => normalized.startsWith(`${supported.toLowerCase()}-`));
 
-  return exactLocale || regionalLocale || DOMINANT_LOCALES[normalized.split('-')[0]] || 'en-UK';
+  return exactLocale || regionalLocale || DOMINANT_LOCALES[normalized.split('-')[0]] || 'en-GB';
 }
 
 export function initLocale() {
@@ -78,7 +73,7 @@ function translateStrings(locale: Locale) {
   const time = getTime();
   const strings = getStrings(locale);
 
-  document.documentElement.lang = locale === 'en-UK' ? 'en-GB' : locale;
+  document.documentElement.lang = locale;
   document.title = `${time} - ${strings.document_title}`;
 
   document
