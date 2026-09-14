@@ -1,6 +1,6 @@
 import { updateQuote } from './quotes';
 import TRANSLATIONS from '../strings/translations.json';
-import { Locale } from '../types';
+import { BaseLocale, Locale } from '../types';
 import { getTime } from '../utils';
 import { Translations } from '../types';
 import { store } from '../store';
@@ -14,12 +14,21 @@ export const DOMINANT_LOCALES: Record<string, Locale> = {
   de: 'de-DE',
 } as const;
 
+const DRAFT_SUFFIX = '-draft';
+
+export function getBaseLocale(locale: Locale): BaseLocale {
+  return (locale.endsWith(DRAFT_SUFFIX) ? locale.slice(0, -DRAFT_SUFFIX.length) : locale) as BaseLocale;
+}
+
 export function getRandomLocale() {
   const locales = Object.keys(TRANSLATIONS) as Locale[];
   const localeQuote = store.get('active-quote')?.locale;
 
   if (localeQuote) {
-    locales.splice(locales.indexOf(localeQuote), 1);
+    const index = locales.indexOf(localeQuote);
+    if (index >= 0) {
+      locales.splice(index, 1);
+    }
   }
 
   return locales[Math.floor(Math.random() * locales.length)];
@@ -27,11 +36,14 @@ export function getRandomLocale() {
 
 export function resolveLocale(locale = navigator.language): Locale {
   const normalized = typeof locale === 'string' ? locale.trim().replace(/_/g, '-').toLowerCase() : '';
+  const wantsDraft = normalized.endsWith(DRAFT_SUFFIX);
+  const lookup = wantsDraft ? normalized.slice(0, -DRAFT_SUFFIX.length) : normalized;
   const locales = Object.keys(TRANSLATIONS) as Locale[];
-  const exactLocale = locales.find((supported) => supported.toLowerCase() === normalized);
-  const regionalLocale = locales.find((supported) => normalized.startsWith(`${supported.toLowerCase()}-`));
+  const exactLocale = locales.find((supported) => supported.toLowerCase() === lookup);
+  const regionalLocale = locales.find((supported) => lookup.startsWith(`${supported.toLowerCase()}-`));
 
-  return exactLocale || regionalLocale || DOMINANT_LOCALES[normalized.split('-')[0]] || 'en-GB';
+  const resolved = exactLocale || regionalLocale || DOMINANT_LOCALES[lookup.split('-')[0]] || 'en-GB';
+  return wantsDraft ? (`${resolved}${DRAFT_SUFFIX}` as Locale) : resolved;
 }
 
 export function initLocale() {
@@ -64,7 +76,7 @@ export function initLocale() {
 }
 
 export function getStrings(locale: Locale): Translations {
-  const resolvedLocale = resolveLocale(locale);
+  const resolvedLocale = getBaseLocale(resolveLocale(locale));
 
   return TRANSLATIONS[resolvedLocale];
 }
