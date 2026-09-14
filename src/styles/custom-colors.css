@@ -61,3 +61,21 @@
 [data-theme|='anaglyph'].custom-accent button:focus {
   box-shadow: var(--shadow) !important;
 }
+
+[data-theme|='whatsapp'].custom-accent cite {
+  background-color: var(--accent-color);
+  color: var(--bubble-text);
+}
+
+[data-theme|='whatsapp'].custom-accent cite:after {
+  border-color: transparent transparent transparent var(--accent-color);
+}
+
+/* The highlighted time sits on the neutral incoming bubble, not the chosen color. */
+[data-theme='whatsapp-light'].custom-accent .time {
+  color: color-mix(in srgb, var(--accent-color) 45%, #000);
+}
+
+[data-theme='whatsapp-dark'].custom-accent .time {
+  color: color-mix(in srgb, var(--accent-color) 45%, #fff);
+}

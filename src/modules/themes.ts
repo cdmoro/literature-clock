@@ -2,10 +2,11 @@ import { THEME_FONTS, resetFont } from './font';
 import { doFitQuote, fitQuote, loadFontIfNotExists } from '../utils';
 import { setDayParameters } from './dynamic';
 import { store } from '../store';
+import { contrastingText } from '../utils/colors';
 
 // Skins in this list use their colour as part of their visual identity.
 const NON_CUSTOMIZABLE_COLORS = new Set(['pink', 'green', 'orange', 'purple', 'blue', 'gray']);
-const CUSTOMIZABLE_THEMES = new Set(['base', 'retro', 'elegant', 'festive', 'bohemian', 'handwriting', 'anaglyph', 'terminal', 'frame', 'poster', 'photo']);
+const CUSTOMIZABLE_THEMES = new Set(['base', 'retro', 'elegant', 'festive', 'bohemian', 'handwriting', 'anaglyph', 'terminal', 'frame', 'poster', 'photo', 'whatsapp']);
 const DEFAULT_COLORS: Record<string, string> = {
   base: '#d24335',
   retro: '#daa908',
@@ -18,11 +19,12 @@ const DEFAULT_COLORS: Record<string, string> = {
   frame: '#00b9c4',
   poster: '#fd4533',
   photo: '#e33725',
+  whatsapp: '#e1ffc7',
 };
 
 function defaultColor(theme: string) {
   const dark = document.documentElement.dataset.theme?.endsWith('-dark');
-  const darkColors: Record<string, string> = { retro: '#f1ba08', anaglyph: '#3987b4', terminal: '#1bec1b', frame: '#00c4ce', photo: '#fd3622' };
+  const darkColors: Record<string, string> = { retro: '#f1ba08', anaglyph: '#3987b4', terminal: '#1bec1b', frame: '#00c4ce', photo: '#fd3622', whatsapp: '#245247' };
   return (dark && darkColors[theme]) || DEFAULT_COLORS[theme] || DEFAULT_COLORS.base;
 }
 
@@ -103,6 +105,11 @@ function applyCustomColor(theme = 'base') {
   if (controls) controls.hidden = !customizable;
   if (customizable) root.style.setProperty('--accent-color', store.get('color'));
   else root.style.removeProperty('--accent-color');
+  if (theme === 'whatsapp' && customizable) {
+    root.style.setProperty('--bubble-text', contrastingText(store.get('color')));
+  } else {
+    root.style.removeProperty('--bubble-text');
+  }
   if (colorPicker) {
     colorPicker.hidden = !customizable;
     colorPicker.disabled = !customizable;
