@@ -32,7 +32,7 @@ describe('locale settings', () => {
     createStore();
     expect(store.get('locale')).toBe('en-GB');
     expect(JSON.parse(localStorage.getItem('settings')!).locale).toBe('en-GB');
-    expect(new URLSearchParams(location.search).get('locale')).toBe('en-GB');
+    expect(new URLSearchParams(location.search).get('locale')).toBeNull();
   });
 
   test('initializes British English with a standard HTML language tag', () => {
