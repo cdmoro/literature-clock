@@ -20,6 +20,7 @@ function updateProgressBar() {
 
 async function updateTime() {
   const time = store.get('time') || getTime();
+  if (store.get('theme')?.startsWith('dynamic')) setDayParameters();
 
   if (store.get('fade')) {
     fadeOutQuote();
@@ -30,9 +31,6 @@ async function updateTime() {
       updateFavicon(time);
     }
 
-    if (store.get('theme')?.startsWith('dynamic')) {
-      setDayParameters();
-    }
 
     document.title = document.title.replace(/[0-9]{2}:[0-9]{2}/, time);
 

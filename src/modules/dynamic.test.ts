@@ -1,5 +1,5 @@
-import { describe, expect, test, vi } from 'vitest';
-import { getDayParameters, getDayProgress } from './dynamic';
+import { afterEach, describe, expect, test, vi } from 'vitest';
+import { getDayParameters, getDayProgress, getSkyParameters, setDayParameters } from './dynamic';
 
 vi.mock('../store', () => {
   return {
@@ -72,5 +72,48 @@ describe('getDayParameters', () => {
     });
 
     vi.useRealTimers();
+  });
+});
+
+
+afterEach(() => vi.useRealTimers());
+
+describe('continuous sky', () => {
+  test('wraps seamlessly at midnight', () => {
+    expect(getSkyParameters(100)).toEqual(getSkyParameters(0));
+    const before = getSkyParameters(99.999);
+    const after = getSkyParameters(0.001);
+    expect(before.moon.x).toBeCloseTo(after.moon.x, 1);
+    expect(before.moon.y).toBeCloseTo(after.moon.y, 1);
+  });
+
+  test('the sun rises, culminates, and sets along an arc', () => {
+    const rise = getSkyParameters(5.5 / 0.24).sun;
+    const noon = getSkyParameters(12.5 / 0.24).sun;
+    const set = getSkyParameters(19.5 / 0.24).sun;
+    expect(rise.x).toBeLessThan(noon.x);
+    expect(noon.x).toBeLessThan(set.x);
+    expect(noon.y).toBeLessThan(rise.y);
+    expect(noon.y).toBeLessThan(set.y);
+    expect(rise.opacity).toBeCloseTo(0);
+    expect(set.opacity).toBeCloseTo(0);
+  });
+
+  test('scene boundaries do not teleport the sun or switch palettes', () => {
+    for (const hour of [5, 12, 17, 21]) {
+      const before = getSkyParameters((hour - 0.001) / 0.24);
+      const after = getSkyParameters((hour + 0.001) / 0.24);
+      expect(before.daylight).toBeCloseTo(after.daylight, 2);
+      expect(before.sun.y).toBeCloseTo(after.sun.y, 1);
+    }
+  });
+
+  test('reuses one decorative layer and refreshes the lunar phase', () => {
+    document.body.innerHTML = '<main></main>';
+    setDayParameters();
+    setDayParameters();
+    expect(document.querySelectorAll('.living-sky')).toHaveLength(1);
+    expect(document.querySelector('.living-sky')?.getAttribute('aria-hidden')).toBe('true');
+    expect(document.querySelector('.sky-moon')?.getAttribute('data-lunar-phase')).toBeTruthy();
   });
 });
