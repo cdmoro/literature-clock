@@ -1,6 +1,6 @@
 import { updateQuote } from './quotes';
 import TRANSLATIONS from '../strings/translations.json';
-import { Locale } from '../types';
+import { BaseLocale, Locale } from '../types';
 import { getTime } from '../utils';
 import { Translations } from '../types';
 import { store } from '../store';
@@ -16,8 +16,8 @@ export const DOMINANT_LOCALES: Record<string, Locale> = {
 
 const DRAFT_SUFFIX = '-draft';
 
-export function getBaseLocale(locale: Locale): Locale {
-  return (locale.endsWith(DRAFT_SUFFIX) ? locale.slice(0, -DRAFT_SUFFIX.length) : locale) as Locale;
+export function getBaseLocale(locale: Locale): BaseLocale {
+  return (locale.endsWith(DRAFT_SUFFIX) ? locale.slice(0, -DRAFT_SUFFIX.length) : locale) as BaseLocale;
 }
 
 export function getRandomLocale() {

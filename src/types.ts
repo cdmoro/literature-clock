@@ -2,7 +2,8 @@ import TRANSLATIONS from './strings/translations.json';
 
 export type { Translations } from './strings/types';
 
-export type Locale = keyof typeof TRANSLATIONS | `${keyof typeof TRANSLATIONS}-draft`;
+export type BaseLocale = keyof typeof TRANSLATIONS;
+export type Locale = BaseLocale | `${BaseLocale}-draft`;
 
 export interface Quote {
   id: string;
