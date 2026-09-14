@@ -1,5 +1,6 @@
 import { updateQuote } from './quotes';
 import TRANSLATIONS from '../strings/translations.json';
+import COLOR_CONTROLS from '../strings/colorControls.json';
 import { Locale } from '../types';
 import { getTime } from '../utils';
 import { Translations } from '../types';
@@ -76,7 +77,7 @@ export function getStrings(locale: Locale): Translations {
 
 function translateStrings(locale: Locale) {
   const time = getTime();
-  const strings = getStrings(locale);
+  const strings = { ...getStrings(locale), ...COLOR_CONTROLS[resolveLocale(locale)] };
 
   document.documentElement.lang = locale === 'en-UK' ? 'en-GB' : locale;
   document.title = `${time} - ${strings.document_title}`;
@@ -91,5 +92,9 @@ function translateStrings(locale: Locale) {
 
   document
     .querySelectorAll<HTMLElement>('[data-title]')
-    .forEach((el) => (el.title = strings[el.dataset.title as keyof Translations]));
+    .forEach((el) => (el.title = strings[el.dataset.title as keyof typeof strings]));
+
+  document.querySelectorAll<HTMLElement>('[data-aria-label]').forEach((el) => {
+    el.setAttribute('aria-label', strings[el.dataset.ariaLabel as keyof typeof strings]);
+  });
 }
