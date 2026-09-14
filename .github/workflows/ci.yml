@@ -26,3 +26,12 @@ jobs:
 
     - name: Build
       run: npm run build
+
+  translation-tools:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Test translation workflow without network requests
+      run: python3 -m unittest discover -s scripts -p 'test_*.py'

@@ -102,6 +102,10 @@ To run the project you need to have Python, Node and NPM installed on your syste
   1. Run `npm run generate-times` to generate all the quote files
   1. Run `npm run dev` and voila! The clock will be automatically opened in your favorite browser.
 
+### Translating a new catalogue
+
+For resumable Google Translate batches, progress tracking, review and export, see [the translation workflow](scripts/TRANSLATING.md). The existing single-quote tool remains available.
+
 ### About quote generation
 
 I used Python to generate the JSON files (one per time if the time has quotes) with the quotes. The script goes through all the CSV files (one per locale) and puts the files in the appropriate folders. Also, the script generates an additional JSON file with statistics per locale, such as the times with fewer quotes, the author with the most quotes, etc.
