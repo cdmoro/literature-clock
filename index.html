@@ -331,17 +331,19 @@
                   <option value="kindle" data-text="kindle">Kindle</option>
                 </optgroup>
               </select>
-            </span>
-            <span id="color-controls" hidden>
-              <input id="color-picker" type="color" value="#d24335" aria-label="Custom color" title="Color" hidden />
-              <button id="reset-color" type="button" title="Reset color" aria-label="Reset color" hidden>↺</button>
-            </span>
-            <span class="input-group">
               <select id="variant-select">
                 <option value="system" data-text="system">System</option>
                 <option value="light" data-text="light">Light</option>
                 <option value="dark" data-text="dark">Dark</option>
               </select>
+            </span>
+            <span id="color-controls" class="input-group" hidden>
+              <input id="color-picker" type="color" value="#d24335" aria-label="Custom color" title="Color" hidden />
+              <button id="reset-color" type="button" title="Reset color" aria-label="Reset color" hidden>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 10a9 9 0 1 1 2.6 8.4M3 4v6h6" />
+                </svg>
+              </button>
             </span>
             <span class="input-group">
               <div class="input-group-text" data-title="font">

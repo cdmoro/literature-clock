@@ -1,9 +1,11 @@
 #color-controls {
   display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  margin: 0 0.5rem;
+  align-items: stretch;
+  gap: 0;
+  margin: 0 0.2rem;
   vertical-align: middle;
+  height: 30px;
+  white-space: nowrap;
 }
 
 #color-controls[hidden],
@@ -14,10 +16,10 @@
 #color-picker {
   box-sizing: border-box;
   width: 2.25rem;
-  height: 1.9rem;
+  height: 100%;
   padding: 0.25rem;
-  border: 1px solid color-mix(in srgb, var(--font-color), transparent 45%);
-  border-radius: 0.4rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
+  border-radius: 0.25rem 0 0 0.25rem;
   background: var(--background);
   cursor: pointer;
 }
@@ -26,7 +28,22 @@
 #color-picker::-webkit-color-swatch { border: 0; border-radius: 0.2rem; }
 #color-picker::-moz-color-swatch { border: 0; border-radius: 0.2rem; }
 #color-picker:focus-visible { outline: 2px solid var(--font-color); outline-offset: 2px; }
-#reset-color { border-radius: 0.4rem; }
+#reset-color {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+#color-controls:has(#reset-color[hidden]) #color-picker {
+  border-radius: 0.25rem;
+}
+
+@media only screen and (max-width: 600px) {
+  #color-controls { height: 26px; }
+  #color-picker { width: 2rem; }
+}
 
 [data-theme='base-light'].custom-accent {
   --background: color-mix(in srgb, var(--accent-color) 15%, #fff);
