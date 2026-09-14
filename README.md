@@ -123,6 +123,12 @@ This project is possible thanks to the following projects:
 - [lunarphase-js](https://github.com/jasonsturges/lunarphase-js)
 - [Picsum](https://picsum.photos/)
 
+## Licensing and quote provenance
+
+The original software contributions by Carlos Bonadeo are licensed under the [MIT License](LICENSE). The package metadata uses MIT to match that license. MIT permits adaptation, redistribution, and commercial use, provided the copyright and license notices are preserved.
+
+The MIT license does not relicense third-party material or the literary quotations included in this repository. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the quote collection's provenance, the upstream license notice, and the limits of the permissions we can confirm.
+
 ## Contact
 
 Hi! I'm Carlos, and you can find me here
