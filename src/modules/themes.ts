@@ -6,13 +6,14 @@ import { contrastingText } from '../utils/colors';
 
 // Skins in this list use their colour as part of their visual identity.
 const NON_CUSTOMIZABLE_COLORS = new Set(['pink', 'green', 'orange', 'purple', 'blue', 'gray']);
-const CUSTOMIZABLE_THEMES = new Set(['base', 'retro', 'elegant', 'festive', 'bohemian', 'handwriting', 'terminal', 'frame', 'poster', 'photo', 'whatsapp']);
+const CUSTOMIZABLE_THEMES = new Set(['base', 'retro', 'elegant', 'festive', 'bohemian', 'book', 'handwriting', 'terminal', 'frame', 'poster', 'photo', 'whatsapp']);
 const DEFAULT_COLORS: Record<string, string> = {
   base: '#d24335',
   retro: '#daa908',
   elegant: '#9f5bd5',
   festive: '#e74c3c',
   bohemian: '#1abc9c',
+  book: '#bf942f',
   handwriting: '#077fc6',
   terminal: '#ac7f02',
   frame: '#00b9c4',
@@ -26,7 +27,7 @@ let followsDefaultColor = true;
 
 function defaultColor(theme: string) {
   const dark = document.documentElement.dataset.theme?.endsWith('-dark');
-  const darkColors: Record<string, string> = { retro: '#f1ba08', terminal: '#1bec1b', frame: '#00c4ce', photo: '#fd3622', whatsapp: '#245247' };
+  const darkColors: Record<string, string> = { retro: '#f1ba08', terminal: '#1bec1b', frame: '#00c4ce', photo: '#fd3622', whatsapp: '#245247', book: '#d9bd61' };
   return (dark && darkColors[theme]) || DEFAULT_COLORS[theme] || DEFAULT_COLORS.base;
 }
 
