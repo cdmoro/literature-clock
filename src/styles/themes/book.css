@@ -1,0 +1,85 @@
+[data-theme|='book'] {
+  --background: #e7dfcf;
+  --font-color: #29251f;
+  --accent-color: #9d7b22;
+  --quote-font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+  --quote-line-height: 1.55;
+}
+
+[data-theme|='book'] body {
+  background: var(--background);
+  background-color: #e7dfcf;
+  background-image:
+    radial-gradient(ellipse at 20% 10%, #fff8 0 1px, transparent 2px),
+    radial-gradient(ellipse at 80% 70%, #6f62520c 0 1px, transparent 2px),
+    repeating-linear-gradient(0deg, #6f625208 0 1px, transparent 1px 4px);
+  background-size: 17px 19px, 23px 29px, 100% 5px;
+}
+
+[data-theme|='book'] #clock {
+  max-width: min(900px, 82vw);
+}
+
+[data-theme|='book'] blockquote {
+  color: var(--font-color);
+  letter-spacing: -0.015em;
+  text-align: left;
+}
+
+[data-theme|='book'] blockquote::before,
+[data-theme|='book'] blockquote::after {
+  content: none;
+}
+
+[data-theme|='book'] blockquote p {
+  text-wrap: pretty;
+}
+
+/* The clock's time span becomes the book's highlighter mark. */
+[data-theme|='book'] blockquote .time {
+  color: inherit;
+  background: linear-gradient(transparent 12%, #d2c51a 12%, #d2c51a 88%, transparent 88%);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding-inline: 0.08em;
+  margin-inline: -0.08em;
+}
+
+[data-theme|='book'] cite {
+  color: #5e564b;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.65em;
+  letter-spacing: 0;
+  margin-top: 1.5rem;
+}
+
+[data-theme|='book'] #title {
+  font-style: italic;
+}
+
+[data-theme='book-dark'] {
+  --background: #28251f;
+  --font-color: #e9dfc9;
+  --accent-color: #d9bd61;
+}
+
+[data-theme='book-dark'] body {
+  background-color: #28251f;
+  background-image:
+    radial-gradient(ellipse at 20% 10%, #fff1 0 1px, transparent 2px),
+    repeating-linear-gradient(0deg, #fff108 0 1px, transparent 1px 4px);
+}
+
+[data-theme='book-dark'] cite {
+  color: #b9ac96;
+}
+
+@media only screen and (max-width: 750px) {
+  [data-theme|='book'] #clock {
+    max-width: 88vw;
+  }
+
+  [data-theme|='book'] cite {
+    margin-top: 1rem;
+  }
+}
