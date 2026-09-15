@@ -10,10 +10,10 @@
   background: var(--background);
   background-color: #e7dfcf;
   background-image:
-    radial-gradient(ellipse at 20% 10%, #fff8 0 1px, transparent 2px),
-    radial-gradient(ellipse at 80% 70%, #6f62520c 0 1px, transparent 2px),
-    repeating-linear-gradient(0deg, #6f625208 0 1px, transparent 1px 4px);
-  background-size: 17px 19px, 23px 29px, 100% 5px;
+    radial-gradient(ellipse at 18% 24%, #fff6 0 1px, transparent 2px),
+    radial-gradient(ellipse at 72% 68%, #6f62520b 0 1px, transparent 2px),
+    radial-gradient(ellipse at 42% 82%, #6f625208 0 1px, transparent 2px);
+  background-size: 31px 37px, 43px 53px, 67px 71px;
 }
 
 [data-theme|='book'] #clock {
@@ -66,12 +66,18 @@
 [data-theme='book-dark'] body {
   background-color: #28251f;
   background-image:
-    radial-gradient(ellipse at 20% 10%, #fff1 0 1px, transparent 2px),
-    repeating-linear-gradient(0deg, #fff108 0 1px, transparent 1px 4px);
+    radial-gradient(ellipse at 18% 24%, #fff1 0 1px, transparent 2px),
+    radial-gradient(ellipse at 72% 68%, #fff108 0 1px, transparent 2px),
+    radial-gradient(ellipse at 42% 82%, #fff106 0 1px, transparent 2px);
+  background-size: 31px 37px, 43px 53px, 67px 71px;
 }
 
 [data-theme='book-dark'] cite {
   color: #b9ac96;
+}
+
+[data-theme='book-dark'] blockquote {
+  color: #f4ead5;
 }
 
 @media only screen and (max-width: 750px) {
