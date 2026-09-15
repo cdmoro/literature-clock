@@ -10,6 +10,8 @@ describe('transition setting compatibility', () => {
   });
   it('gives a valid explicit selection priority and rejects unknown modes', () => {
     expect(resolveTransition('slide', false)).toBe('slide');
+    expect(resolveTransition('blur', false)).toBe('blur');
+    expect(resolveTransition('zoom', false)).toBe('zoom');
     expect(resolveTransition('none', true)).toBe('none');
     expect(resolveTransition('unknown')).toBe('fade');
   });

@@ -18,8 +18,17 @@ async function animateQuote(entering: boolean) {
   const transition = mode();
   if (transition === 'none') return;
   const slide = transition === 'slide';
-  const visible = { opacity: 1, translate: '0 0' };
-  const hidden = { opacity: 0, translate: slide ? `0 ${entering ? 10 : -10}px` : '0 0' };
+  const visible: Keyframe = { opacity: 1, translate: '0 0' };
+  const hidden: Keyframe = { opacity: 0, translate: slide ? `0 ${entering ? 10 : -10}px` : '0 0' };
+  if (transition === 'blur') {
+    visible.filter = 'blur(0px)';
+    hidden.filter = 'blur(4px)';
+  }
+  if (transition === 'zoom') {
+    // Shrink rather than enlarge, keeping the text within its fitted bounds.
+    visible.scale = '1';
+    hidden.scale = '0.96';
+  }
   const current = Array.from(document.querySelectorAll<HTMLElement>('#quote > p, #quote > cite'))
     .filter((element) => typeof element.animate === 'function')
     .map((element) => element.animate(entering ? [hidden, visible] : [visible, hidden], {

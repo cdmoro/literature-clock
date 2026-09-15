@@ -25,6 +25,25 @@ describe('quote transitions', () => {
     await transitionQuote(render, () => true);
     expect(render).toHaveBeenCalledOnce();
   });
+  it.each(['blur', 'zoom'] as const)('animates %s in both directions and clears its effects', async (mode) => {
+    vi.mocked(store.get).mockReturnValue(mode);
+    const cancel = vi.fn();
+    const animate = vi.fn((_: Keyframe[] | PropertyIndexedKeyframes | null) =>
+      ({ finished: Promise.resolve(), cancel }) as unknown as Animation,
+    );
+    document.querySelectorAll<HTMLElement>('p, cite').forEach((element) => { element.animate = animate; });
+    const render = vi.fn();
+    await transitionQuote(render, () => true);
+    expect(render).toHaveBeenCalledOnce();
+    expect(animate).toHaveBeenCalledTimes(4);
+    const frames = animate.mock.calls.map(([frames]) => frames as Keyframe[]);
+    const property = mode === 'blur' ? 'filter' : 'scale';
+    const visible = mode === 'blur' ? 'blur(0px)' : '1';
+    const hidden = mode === 'blur' ? 'blur(4px)' : '0.96';
+    expect(frames[0].map((frame) => (frame as Record<string, unknown>)[property])).toEqual([visible, hidden]);
+    expect(frames[2].map((frame) => (frame as Record<string, unknown>)[property])).toEqual([hidden, visible]);
+    expect(cancel).toHaveBeenCalledTimes(4);
+  });
   it('cancels an outgoing animation without leaving the quote invisible', async () => {
     const pending: { reject: (reason?: unknown) => void }[] = [];
     const animate = vi.fn(() => {

@@ -3,6 +3,8 @@ export type Translations = {
   transition_none: string;
   transition_fade: string;
   transition_slide: string;
+  transition_blur: string;
+  transition_zoom: string;
   add_quote: string;
   anaglyph: string;
   author: string;
