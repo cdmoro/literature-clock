@@ -10,8 +10,9 @@
   background: var(--background);
   background-color: #e7dfcf;
   background-image: url('/assets/book-paper-seamless.png');
-  background-repeat: repeat;
-  background-size: 626px 626px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 [data-theme|='book'] #clock {
@@ -36,7 +37,7 @@
 /* The clock's time span becomes the book's highlighter mark. */
 [data-theme|='book'] blockquote .time {
   color: inherit;
-  background: linear-gradient(transparent 12%, #d2c51a 12%, #d2c51a 88%, transparent 88%);
+  background: linear-gradient(transparent 12%, var(--accent-color) 12%, var(--accent-color) 88%, transparent 88%);
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
   padding-inline: 0.08em;
@@ -62,11 +63,12 @@
 }
 
 [data-theme='book-dark'] body {
-  background-color: #28251f;
+  background-color: #d2c39d;
   background-image: url('/assets/book-paper-seamless.png');
-  background-blend-mode: multiply;
-  background-repeat: repeat;
-  background-size: 626px 626px;
+  background-blend-mode: soft-light;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 [data-theme='book-dark'] cite {
