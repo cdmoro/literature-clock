@@ -137,14 +137,6 @@
               </svg>
               <span id="work-label" class="sr-only" data-text="work_mode">Work</span>
             </button>
-            <label class="sr-only" for="transition-select" data-text="transition">Transition</label>
-            <select id="transition-select" data-title="transition" aria-label="Transition" data-aria-label="transition">
-              <option value="none" data-text="transition_none">No transition</option>
-              <option value="fade" data-text="transition_fade">Fade</option>
-              <option value="slide" data-text="transition_slide">Gentle slide</option>
-              <option value="blur" data-text="transition_blur">Soft blur</option>
-              <option value="zoom" data-text="transition_zoom">Subtle zoom</option>
-            </select>
             <button id="show-time" data-title="time_mode">
               <svg
                 width="15"
@@ -191,6 +183,22 @@
 
               <span id="fullscreen-label" class="sr-only" data-text="fulscreen_mode">Fullscreen</span>
             </button>
+          </span>
+          <span class="input-group" id="transition-controls">
+            <div class="input-group-text" data-title="transition" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 7h16M4 12h10M4 17h16" />
+                <path d="m17 9 3 3-3 3" />
+              </svg>
+            </div>
+            <label class="sr-only" for="transition-select" data-text="transition">Transition</label>
+            <select id="transition-select" data-title="transition" aria-label="Transition" data-aria-label="transition">
+              <option value="none" data-text="transition_none">No transition</option>
+              <option value="fade" data-text="transition_fade">Fade</option>
+              <option value="slide" data-text="transition_slide">Gentle slide</option>
+              <option value="blur" data-text="transition_blur">Soft blur</option>
+              <option value="zoom" data-text="transition_zoom">Subtle zoom</option>
+            </select>
           </span>
           <span class="input-group">
             <button id="copy" title="Copy quote" data-title="copy_title">
