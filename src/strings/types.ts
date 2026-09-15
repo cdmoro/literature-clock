@@ -1,4 +1,8 @@
 export type Translations = {
+  transition: string;
+  transition_none: string;
+  transition_fade: string;
+  transition_slide: string;
   add_quote: string;
   anaglyph: string;
   author: string;

@@ -82,14 +82,6 @@ blockquote {
     opacity 1s ease-in-out;
 }
 
-blockquote.fade-in {
-  opacity: 1;
-}
-
-blockquote.fade-out {
-  opacity: 0;
-}
-
 blockquote p {
   font-size: 3.5vw;
   margin: 0 0 1rem;

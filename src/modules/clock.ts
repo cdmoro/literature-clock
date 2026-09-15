@@ -1,7 +1,6 @@
 import { updateQuote } from './quotes';
 import { getTime, updateFavicon } from '../utils';
 import { setDayParameters } from './horizon';
-import { fadeOutQuote } from './fade';
 import { store } from '../store';
 
 const timeProgressBar = document.getElementById('progress-bar');
@@ -21,10 +20,6 @@ function updateProgressBar() {
 async function updateTime() {
   const time = store.get('time') || getTime();
   if (store.get('theme')?.startsWith('horizon')) setDayParameters();
-
-  if (store.get('fade')) {
-    fadeOutQuote();
-  }
 
   if (lastTime !== time) {
     if (time.includes(':00') || time.includes(':30')) {
