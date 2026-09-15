@@ -79,6 +79,13 @@ export class Store {
     // Merge: URL > localStorage > defaultState
     this.state = { ...defaultState, ...stateFromLocalStorage, ...stateFromUrl };
 
+    // Migrate saved settings and shared links to the renamed skin.
+    const previousTheme = this.state.theme;
+    this.state.theme = previousTheme.replace(/^dynamic(?=-|$)/, 'horizon');
+    if (urlParams.has('theme') && previousTheme !== this.state.theme) {
+      this.syncToUrl('theme', this.state.theme);
+    }
+
     this.state.locale = resolveLocale(this.state.locale);
     if (urlParams.has('locale') && urlParams.get('locale') !== this.state.locale) {
       this.syncToUrl('locale', this.state.locale);
@@ -116,6 +123,13 @@ export class Store {
     }
 
     return value;
+  }
+
+  removeFromUrl(key: keyof State) {
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.delete(key);
+    const url = urlParams.size ? `?${urlParams.toString()}` : '/';
+    history.replaceState({}, '', url);
   }
 
   toggle(key: keyof State) {
