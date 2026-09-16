@@ -6,6 +6,7 @@ export const THEME_FONTS: Record<string, string[]> = {
   elegant: ['Playfair Display'],
   festive: ['Borel'],
   bohemian: ['Comfortaa'],
+  book: ['Libre Baskerville'],
   handwriting: ['Reenie Beanie'],
   anaglyph: ['Anton'],
   whatsapp: ['Roboto'],
@@ -25,6 +26,7 @@ export const INITIAL_THEME_FONT_SIZE = {
   frame: 40,
   subtle: 60,
   poster: 35,
+  book: 42,
 } as const;
 
 export const CITE_FACTOR = {
