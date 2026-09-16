@@ -22,10 +22,14 @@ let animation: Animation | undefined;
 let frame: number | undefined;
 let generation = 0;
 let reducedMotion: MediaQueryList | undefined;
+let phase: 'idle' | 'entering' | 'drifting' | 'returning' = 'idle';
+const ENTER_DURATION = 1200;
+const RETURN_DURATION = 800;
 const clamp = (value: number, min: number, max: number) => Math.max(min, Math.min(max, value));
 
 function stopMovement() {
   generation++;
+  phase = 'idle';
   if (frame !== undefined) cancelAnimationFrame(frame);
   frame = undefined;
   animation?.cancel();
@@ -39,7 +43,9 @@ function move() {
     stopMovement();
     return;
   }
-  const current = new DOMMatrixReadOnly(getComputedStyle(clock).transform);
+  const entering = phase === 'entering';
+  const currentTransform = getComputedStyle(clock).transform;
+  const current = new DOMMatrixReadOnly(currentTransform);
   animation?.cancel();
   const viewport = window.visualViewport;
   const bounds = movementBounds(clock.getBoundingClientRect(), {
@@ -54,16 +60,30 @@ function move() {
   const token = ++generation;
   // Motion belongs to the clock container; quote transitions can animate its children independently.
   animation = clock.animate([
-    { transform: transform(fromX, fromY) }, { transform: transform(x, y) },
-  ], { duration: 18000 + Math.random() * 6000, easing: 'ease-in-out', fill: 'forwards' });
+    { transform: entering ? currentTransform : transform(fromX, fromY) },
+    { transform: transform(x, y) },
+  ], {
+    duration: entering ? ENTER_DURATION : 18000 + Math.random() * 6000,
+    easing: 'ease-in-out',
+    fill: 'forwards',
+  });
   void animation.finished.then(() => {
-    if (token === generation) move();
+    if (token === generation) {
+      phase = 'drifting';
+      move();
+    }
   }, () => { /* Cancellation is expected on resize, exit, and backgrounding. */ });
 }
 
 export function startScreensaver() {
   if (!store.get('screensaver')) return;
   document.querySelector('footer')?.classList.add('hidden');
+  if (phase === 'idle' || phase === 'returning') {
+    // Keep the current visual pose until the next frame captures it, including
+    // when the user reactivates the screensaver halfway through its return.
+    generation++;
+    phase = 'entering';
+  }
   if (frame === undefined) frame = requestAnimationFrame(move);
 }
 
@@ -72,7 +92,7 @@ export function initScreensaverMode() {
   const refresh = () => {
     if (document.hidden || reducedMotion?.matches) stopMovement();
     else if (store.get('screensaver')) startScreensaver();
-    else stopMovement();
+    else if (phase !== 'returning') stopMovement();
   };
   reducedMotion.addEventListener('change', refresh);
   document.addEventListener('visibilitychange', refresh);
@@ -91,7 +111,22 @@ export function initScreensaverMode() {
 }
 
 export function exitScreensaverMode() {
-  stopMovement();
   store.set('screensaver', false);
   document.querySelector('footer')?.classList.remove('hidden');
+  if (phase === 'returning' && !document.hidden && !reducedMotion?.matches) return;
+
+  const clock = document.getElementById('clock');
+  const currentTransform = clock ? getComputedStyle(clock).transform : 'none';
+  stopMovement();
+  if (!clock || currentTransform === 'none' || document.hidden || reducedMotion?.matches) return;
+
+  phase = 'returning';
+  const token = generation;
+  const returning = clock.animate([
+    { transform: currentTransform }, { transform: 'none' },
+  ], { duration: RETURN_DURATION, easing: 'ease-in-out', fill: 'forwards' });
+  animation = returning;
+  void returning.finished.then(() => {
+    if (token === generation) stopMovement();
+  }, () => { /* Reactivation can interrupt the return without resetting the pose. */ });
 }
