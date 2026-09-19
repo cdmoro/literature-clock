@@ -45,8 +45,6 @@
 }
 
 [data-theme|='book'] cite {
-  color: #5e564b;
-  font-family: Georgia, 'Times New Roman', serif;
   font-size: 0.65em;
   letter-spacing: 0;
   margin-top: 1.5rem;
@@ -65,14 +63,10 @@
 [data-theme='book-dark'] body {
   background-color: #d2c39d;
   background-image: url('/assets/book-paper-seamless.png');
-  background-blend-mode: soft-light;
+  background-blend-mode: difference;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-}
-
-[data-theme='book-dark'] cite {
-  color: #b9ac96;
 }
 
 [data-theme='book-dark'] blockquote {
