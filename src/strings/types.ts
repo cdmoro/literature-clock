@@ -1,4 +1,10 @@
 export type Translations = {
+  transition: string;
+  transition_none: string;
+  transition_fade: string;
+  transition_slide: string;
+  transition_blur: string;
+  transition_zoom: string;
   add_quote: string;
   anaglyph: string;
   author: string;
@@ -14,9 +20,9 @@ export type Translations = {
   default_font: string;
   document_title: string;
   download: string;
-  dynamic: string;
+  horizon: string;
   elegant: string;
-  'en-UK': string;
+  'en-GB': string;
   'en-US': string;
   'es-ES': string;
   exit_zen_title: string;

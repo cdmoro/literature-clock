@@ -51,15 +51,6 @@ body:not(.show-time) #time-clock {
   display: none;
 }
 
-body.screensaver blockquote {
-  transition-timing-function: linear;
-}
-
-body:not(.screensaver) blockquote {
-  transform: none !important;
-  transition-duration: 1s !important;
-}
-
 #clock {
   margin: 0 auto;
   max-width: 80vw;
@@ -80,14 +71,6 @@ blockquote {
   transition:
     transform 1s ease,
     opacity 1s ease-in-out;
-}
-
-blockquote.fade-in {
-  opacity: 1;
-}
-
-blockquote.fade-out {
-  opacity: 0;
 }
 
 blockquote p {
@@ -470,4 +453,9 @@ body:not(.progressbar) #progress-bar {
   #clock {
     max-width: initial;
   }
+}
+
+/* Export the quote in its centered position, independent of screensaver motion. */
+body.share-quote #clock {
+  transform: none !important;
 }

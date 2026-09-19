@@ -1,5 +1,5 @@
 {
-  "en-UK": { "choose_color": "Choose a custom colour for this theme", "reset_color": "Restore this theme’s default colour" },
+  "en-GB": { "choose_color": "Choose a custom colour for this theme", "reset_color": "Restore this theme’s default colour" },
   "en-US": { "choose_color": "Choose a custom color for this theme", "reset_color": "Restore this theme’s default color" },
   "es-ES": { "choose_color": "Elegir un color personalizado para este tema", "reset_color": "Restaurar el color predeterminado de este tema" },
   "pt-PT": { "choose_color": "Escolher uma cor personalizada para este tema", "reset_color": "Restaurar a cor predefinida deste tema" },

@@ -1,5 +1,5 @@
 import { THEME_FONTS, resetFont } from './font';
-import { fitQuote, loadFontIfNotExists } from '../utils';
+import { doFitQuote, fitQuote, loadFontIfNotExists } from '../utils';
 import { setDayParameters } from './horizon';
 import { store } from '../store';
 import { contrastingText } from '../utils/colors';
@@ -70,6 +70,7 @@ export function initTheme() {
   followsDefaultColor = store.get('color').toLowerCase() === defaultColor(theme).toLowerCase();
   applyCustomColor(theme);
 
+  window.addEventListener('resize', doFitQuote);
   themeSelect?.addEventListener('change', () => setTheme());
   variantSelect?.addEventListener('change', () => setTheme({ isVariantChange: true }));
   preferDarkThemes.addEventListener('change', (e) => {
@@ -132,6 +133,12 @@ export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
   if (CUSTOMIZABLE_THEMES.has(previousTheme)) {
     followsDefaultColor = store.get('color').toLowerCase() === defaultColor(previousTheme).toLowerCase();
   }
+  const p = document.querySelector<HTMLParagraphElement>('blockquote p');
+
+  if (p) {
+    p.style.visibility = 'hidden';
+  }
+
   let theme = document.querySelector<HTMLSelectElement>('#theme-select')?.value;
   let variant = document.querySelector<HTMLSelectElement>('#variant-select')?.value;
 
@@ -171,6 +178,10 @@ export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
   }
   applyCustomColor(theme);
   fitQuote();
+
+  if (p) {
+    setTimeout(() => (p.style.visibility = 'visible'), 50);
+  }
 }
 
 export function setDynamicBackgroundPicture() {

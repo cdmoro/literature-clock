@@ -3,3 +3,5 @@ node_modules
 dist
 public/times
 scripts/*.csv
+.translation-work/
+__pycache__/
