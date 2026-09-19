@@ -138,6 +138,13 @@ export class Store {
     return value;
   }
 
+  removeFromUrl(key: keyof State) {
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.delete(key);
+    const url = urlParams.size ? `?${urlParams.toString()}` : '/';
+    history.replaceState({}, '', url);
+  }
+
   toggle(key: keyof State) {
     if (typeof this.state[key] === 'boolean') {
       const newValue = !this.get(key);

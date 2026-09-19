@@ -82,7 +82,10 @@ export function initTheme() {
 
       store.set('theme', `${theme}-system`);
       document.documentElement.dataset.theme = `${theme}-${e.matches ? 'dark' : 'light'}`;
-      if (wasDefault && CUSTOMIZABLE_THEMES.has(theme)) store.set('color', defaultColor(theme));
+      if (wasDefault && CUSTOMIZABLE_THEMES.has(theme)) {
+        store.set('color', defaultColor(theme), false);
+        store.removeFromUrl('color');
+      }
       applyCustomColor(theme);
     }
   });
@@ -94,7 +97,8 @@ export function initTheme() {
   resetColor?.addEventListener('click', () => {
     const theme = themeSelect?.value || 'base';
     const color = defaultColor(theme);
-    store.set('color', color);
+    store.set('color', color, false);
+    store.removeFromUrl('color');
     if (colorPicker) colorPicker.value = color;
     applyCustomColor(theme);
   });
@@ -169,7 +173,8 @@ export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
 
   document.documentElement.dataset.theme = `${theme}-${variant}`;
   if (followsDefaultColor && theme && CUSTOMIZABLE_THEMES.has(theme) && !store.get('theme').startsWith('color-')) {
-    store.set('color', defaultColor(theme), syncToUrl);
+    store.set('color', defaultColor(theme), false);
+    store.removeFromUrl('color');
   }
   applyCustomColor(theme);
   fitQuote();
