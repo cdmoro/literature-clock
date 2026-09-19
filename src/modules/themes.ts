@@ -13,7 +13,7 @@ const DEFAULT_COLORS: Record<string, string> = {
   elegant: '#9f5bd5',
   festive: '#e74c3c',
   bohemian: '#1abc9c',
-  book: '#bf942f',
+  book: '#fbf719',
   handwriting: '#077fc6',
   terminal: '#ac7f02',
   frame: '#00b9c4',
