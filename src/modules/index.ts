@@ -1,7 +1,7 @@
 import { initStaticMode } from './static';
 import { initClock } from './clock';
 import { initCopy } from './copy';
-import { initFadeMode } from './fade';
+import { initTransitions } from './transitions';
 import { initFont } from './font';
 import { initFullscreenMode } from './fullscreen';
 import { initLocale } from './locales';
@@ -17,7 +17,7 @@ const MODULES = [
   initStaticMode,
   initClock,
   initCopy,
-  initFadeMode,
+  initTransitions,
   initFont,
   initFullscreenMode,
   initLocale,
