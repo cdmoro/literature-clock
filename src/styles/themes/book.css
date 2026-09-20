@@ -29,7 +29,7 @@
   letter-spacing: -0.015em;
   text-align: justify;
   text-shadow: 0 0 2px var(--font-color);
-  hypens: auto;
+  hyphens: auto;
 }
 
 [data-theme|='book'] blockquote::before,
