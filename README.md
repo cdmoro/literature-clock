@@ -140,6 +140,9 @@ Hi! I'm Carlos, and you can find me here
 - [Twitter](https://twitter.com/CarlosBonadeo)
 - [LinkedIn]([https://twitter.com/CarlosBonadeo](https://www.linkedin.com/in/cdbonadeo/))
 
+Run `npm run translate` for a numbered menu to create languages, translate batches,
+review drafts in the terminal or browser, and apply approved translations.
+
 New languages can start as a full copy of `quotes.en-GB.csv` with `Draft=true` and
 publish reviewed quotes gradually. Pending quotes are excluded from clock data;
 uncovered minutes use localized fallback messages. See the [gradual translation workflow](scripts/TRANSLATING.md#start-a-language-and-publish-gradually).

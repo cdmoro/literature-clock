@@ -9,6 +9,62 @@ interactive tool for adding a single quote. Adding the new language to the
 website can happen as soon as its interface and fallback messages are ready;
 only reviewed quotes are published.
 
+## Interactive menu (recommended)
+
+Start with one command from the repository root:
+
+```sh
+npm run translate
+```
+
+Only Python 3.9+ is needed for the manager; no Python packages, frontend build or
+Google credentials are required. Alternatively run `python3 scripts/translation_manager.py`.
+Choose numbered options to create a language or resume a saved workspace. Creating
+a language asks for its locale (for example `el-GR`) and Google code (`el`); it
+initializes the full draft CSV or adopts an existing full catalogue without rewriting it.
+
+Inside a language, the menu offers:
+
+1. Translate the next batch with Google (25 quotes by default).
+2. Review/edit pending translations: compare the original, correct quote/title/time,
+   then explicitly approve or skip each quote. Structural errors block approval.
+3. Open a local browser preview with original and translation side by side,
+   highlighted time, review status, search and pagination.
+4. Export a separate JSON review file for a person or AI.
+5. Import that reviewed file, checking source identity, metadata and approved rows.
+6. Apply approved translations to the local catalogue, retaining pending drafts
+   and backing up the previous CSV. Commit the updated CSV in a PR to publish it.
+
+Translation sends texts to Google, but checkpoints, reviews and backups stay in
+`.translation-work/<locale>/`, ignored by Git. Corrections and approvals are saved
+in `review.json`, separate from regenerated machine drafts. Interrupted batches
+keep successful translations. Existing workspaces made with this menu resume from
+the language list. Adding a language also copies compatible progress from the
+older `.translation-work/<google-code>/state.json` location when present; the
+original checkpoint is left intact. Custom checkpoint paths are not auto-discovered.
+Import separately edited review files with option 5.
+
+For AI review, export with option 4, have the reviewer correct `translation` and
+set `approved: true` only after checking language and the meaning of the time,
+then import with option 5. Preserve each `source`, ID and metadata. Import accepts
+partial reviews and retains other entries; existing reviews are backed up. The
+manager does not call an AI provider itself or consider a structural pass proof
+of translation quality.
+
+### Seeing pending drafts in the browser
+
+Choose option 3 inside the language workspace. It opens an address such as
+`http://127.0.0.1:49152/` and prints the link if the browser does not open.
+Keep the language menu running; returning to the language list closes its server.
+Refresh the page after saving corrections. Drafts appear before approval, and a
+new locale works without registering interface strings in the clock.
+
+This is a **local review page**, separate from the clock and its skins. It does
+not write files to `public/` or expose unapproved quotes on the deployed site.
+The older `?locale=<supported-locale>-draft` clock view only reads generated
+`.draft.csv` preview catalogues and still excludes rows marked `Draft=true`.
+Use the menu preview to inspect actual unapproved machine translations.
+
 ## Start a language and publish gradually
 
 The canonical British English catalogue is `quotes/quotes.en-GB.csv`.
