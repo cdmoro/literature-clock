@@ -45,6 +45,8 @@ def insert_quote_sorted(file_path, new_row):
     header = rows[0]
     data_rows = rows[1:]
 
+    if header[-1] == 'Draft' and len(new_row) == len(header) - 1:
+        new_row = [*new_row, 'true']
     data_rows.append(new_row)
 
     data_rows.sort(
