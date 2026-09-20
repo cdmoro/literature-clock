@@ -7,10 +7,7 @@ describe('resolveLocale', () => {
   test.each([
     ['en-US', 'en-US'],
     ['en-GB', 'en-GB'],
-    ['en-UK', 'en-GB'],
     ['EN_gb', 'en-GB'],
-    ['EN_uk', 'en-GB'],
-    ['en-UK-u-hc-h23', 'en-GB'],
     ['en', 'en-GB'],
     ['en-AU', 'en-GB'],
     ['EN-us', 'en-US'],

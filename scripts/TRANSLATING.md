@@ -4,9 +4,54 @@
 unofficial public translation endpoint. It needs Python 3.9+ and no additional
 packages. The service may reject requests even when they are spaced out.
 
-This is a **new catalogue tool**. `add_quote.py` is unchanged and remains the
+This is a **new catalogue tool**. `add_quote.py` remains the
 interactive tool for adding a single quote. Adding the new language to the
-website is done after the catalogue has been reviewed.
+website can happen as soon as its interface and fallback messages are ready;
+only reviewed quotes are published.
+
+## Start a language and publish gradually
+
+The canonical British English catalogue is `quotes/quotes.en-GB.csv`.
+Create a full copy with every quote marked as a draft (no network requests):
+
+```sh
+python3 scripts/translate_catalogue.py --init-catalogue quotes/quotes.el-GR.csv
+```
+
+This preserves all source IDs, text and metadata and adds an eighth column,
+`Draft`, set to `true`. Existing files are never overwritten. Translate and review
+rows gradually, then set `Draft=false` for each approved quote. Machine translation
+alone does not approve a quote. The copied English text stays hidden until approved.
+Legacy seven-column CSVs remain supported and are treated as published. If the
+`Draft` column exists, every value must be `true` or `false` (case-insensitive);
+blank or misspelled values fail validation and generation.
+
+To incorporate a reviewed batch into the full catalogue:
+
+```sh
+python3 scripts/translate_catalogue.py \
+  --export-reviewed translations/el-GR/batch.review.json \
+  --catalogue quotes/quotes.el-GR.csv \
+  --output translations/el-GR/next.csv
+python3 scripts/validate_translation.py translations/el-GR/next.csv
+```
+
+Inspect `next.csv`, then replace `quotes/quotes.el-GR.csv` with it. Approved rows
+are merged by ID with `Draft=false`; other rows retain their text and draft status.
+Output must be a new path, protecting the current catalogue. For manual translation,
+edit the catalogue directly and run the same validator.
+
+Validation requires every source ID exactly once and preserved metadata even for
+drafts, but permits unfinished text in draft rows. It reports published/total quotes
+and the draft count. The time generator excludes drafts and removes stale generated
+files; minutes with no published quotes use the existing localized fallback.
+Generated `.statistics.json` files distinguish `publication_progress` (quotes)
+from `progress` (minutes covered), and include published, draft and total counts.
+
+A language can be enabled below 100%: add its interface strings, color-control
+strings, fallback quotes, language selector option and locale mapping as usual.
+The CSV alone does not register a new language. No new language is enabled by
+these commands.
 
 ## Translate a complete language
 
@@ -60,7 +105,9 @@ for example `quotes/quotes.el-GR.draft.csv`. The time generator maps that file t
 `public/times/<locale>-draft/`, which can be opened with `?locale=el-GR-draft`.
 Drafts use the base locale's interface strings and fallback behavior, but remain
 excluded from random language selection and supported-language lists. Keep the
-`.draft.csv` suffix until the catalogue has been reviewed completely.
+`.draft.csv` suffix for optional separate previews. This is independent of the
+per-row `Draft` column, which is also respected in previews; a normal catalogue
+can be published with draft rows still pending.
 
 Source IDs, clock times, authors and SFW classifications are preserved. Resuming
 compares full source rows by ID: added quotes become pending, unchanged quotes are
@@ -108,10 +155,11 @@ python3 scripts/translate_catalogue.py \
 
 Export checks the current originals and structural validity again, refuses
 unapproved or duplicate entries and refuses to overwrite an existing file.
-It writes the project's seven-column, UTF-8, pipe-delimited CSV format. A pilot
-belongs outside `quotes/`: it is not a complete language catalogue.
+It writes UTF-8, pipe-delimited CSV with `Draft=false` for approved rows. Without
+`--catalogue`, output contains only the reviewed batch; merge it into an initialized
+full catalogue before using full-coverage validation.
 
-When the complete catalogue is reviewed, validate its coverage before adding it:
+Validate the full catalogue, including pending draft rows, before publishing:
 
 ```sh
 python3 scripts/validate_translation.py quotes/quotes.el-GR.csv
@@ -129,4 +177,5 @@ python3 -m unittest discover -s scripts -p 'test_*.py'
 
 The older `add_quote_batch.py` is not used for this workflow: it does not pace
 successful requests, writes a different column order/delimiter and substitutes
-failure text. `add_quote.py` remains the existing interactive single-quote tool.
+failure text. `add_quote.py` remains the interactive single-quote tool and marks new rows as
+`Draft=true` when adding to a catalogue with that column.
