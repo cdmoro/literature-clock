@@ -1,3 +1,4 @@
+import { resolveTransition, TransitionMode } from '../utils/transition-settings';
 import { resolveLocale } from '../modules/locales';
 import { Locale, ResolvedQuote } from '../types';
 
@@ -6,7 +7,7 @@ interface Stateful {
   zen: boolean;
   work: boolean;
   screensaver: boolean;
-  fade: boolean;
+  transition: TransitionMode;
   'show-time': boolean;
   font: string;
   theme: string;
@@ -16,6 +17,7 @@ interface Stateful {
 }
 
 export interface Stateless {
+  fade?: boolean; // Legacy shared links and saved settings.
   'custom-font'?: string;
   time?: string;
   quote?: string;
@@ -32,6 +34,7 @@ type Listener = (newState: State, oldState: State) => void;
 
 const IGNORE_FROM_URL: (keyof State)[] = ['custom-font', 'active-quote'];
 const REMOVE_VALUES_FROM_URL: Partial<State> = {
+  transition: 'fade',
   font: 'default',
   theme: 'base-system',
   color: '#d24335',
@@ -79,6 +82,16 @@ export class Store {
     // Merge: URL > localStorage > defaultState
     this.state = { ...defaultState, ...stateFromLocalStorage, ...stateFromUrl };
 
+    const saved = stateFromLocalStorage;
+    this.state.transition = urlParams.has('transition') || urlParams.has('fade')
+      ? resolveTransition(urlParams.get('transition'), urlParams.get('fade'))
+      : resolveTransition(saved.transition, saved.fade);
+    delete this.state.fade;
+    if (urlParams.has('fade')) {
+      this.syncToUrl('fade', false);
+      this.syncToUrl('transition', this.state.transition);
+    }
+
     // Migrate saved settings and shared links to the renamed skin.
     const previousTheme = this.state.theme;
     this.state.theme = previousTheme.replace(/^dynamic(?=-|$)/, 'horizon');
@@ -123,6 +136,13 @@ export class Store {
     }
 
     return value;
+  }
+
+  removeFromUrl(key: keyof State) {
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.delete(key);
+    const url = urlParams.size ? `?${urlParams.toString()}` : '/';
+    history.replaceState({}, '', url);
   }
 
   toggle(key: keyof State) {
@@ -195,7 +215,7 @@ export function createStore() {
     screensaver: false,
     work: false,
     zen: false,
-    fade: true,
+    transition: 'fade',
     'show-time': true,
     font: 'default',
     theme: 'base-system',
