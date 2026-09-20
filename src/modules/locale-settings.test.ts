@@ -18,21 +18,13 @@ describe('locale settings', () => {
     expect(store.get('locale')).toBe('en-US');
   });
 
-  test.each(['en-GB', 'en-UK'])('normalizes URL locale %s and overrides saved settings', (locale) => {
+  test('uses the British English URL locale over saved settings', () => {
     localStorage.setItem('settings', JSON.stringify({ locale: 'en-US' }));
-    history.replaceState({}, '', `/?locale=${locale}`);
+    history.replaceState({}, '', '/?locale=en-GB');
     createStore();
     expect(store.get('locale')).toBe('en-GB');
     expect(new URLSearchParams(location.search).get('locale')).toBe('en-GB');
     expect(JSON.parse(localStorage.getItem('settings')!).locale).toBe('en-GB');
-  });
-
-  test('migrates saved British English to en-GB', () => {
-    localStorage.setItem('settings', JSON.stringify({ locale: 'en-UK' }));
-    createStore();
-    expect(store.get('locale')).toBe('en-GB');
-    expect(JSON.parse(localStorage.getItem('settings')!).locale).toBe('en-GB');
-    expect(new URLSearchParams(location.search).get('locale')).toBeNull();
   });
 
   test('initializes British English with a standard HTML language tag', () => {

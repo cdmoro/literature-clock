@@ -251,7 +251,7 @@ def write_review(state, path):
     atomic_write(path, json.dumps(review, ensure_ascii=False, indent=2) + '\n')
 
 
-def export_review(review_path, source, output):
+def export_review(review_path, source, output, catalogue=None):
     reviews = json.loads(Path(review_path).read_text(encoding='utf-8'))
     originals = {row['Id']: row for row in source}
     accepted = []
@@ -259,7 +259,7 @@ def export_review(review_path, source, output):
     for entry in reviews:
         if entry.get('approved') is not True:
             raise ValueError('Every exported row must be explicitly approved after language and time review.')
-        row = entry['translation']
+        row = {**entry['translation'], 'Draft': 'false'}
         original = originals.get(row['Id'])
         if original is None or row['Id'] in seen or entry['source'] != original:
             raise ValueError('Unknown, duplicate or outdated review row.')
@@ -272,12 +272,32 @@ def export_review(review_path, source, output):
         raise ValueError('There are no reviewed translations to export.')
     if Path(output).exists():
         raise ValueError('Output already exists; choose a new path to avoid overwriting a catalogue.')
+    approved_count = len(accepted)
+    if catalogue is not None:
+        existing = read_catalogue(catalogue)
+        errors = validate(source, existing)
+        if errors:
+            raise ValueError('\n'.join(errors))
+        updates = {row['Id']: row for row in accepted}
+        accepted = [updates.get(row['Id'], {**row, 'Draft': row.get('Draft', 'false')})
+                    for row in existing]
     buffer = io.StringIO(newline='')
-    writer = csv.DictWriter(buffer, fieldnames=FIELDS, delimiter='|')
+    writer = csv.DictWriter(buffer, fieldnames=FIELDS + ['Draft'], delimiter='|')
     writer.writeheader()
     writer.writerows(sorted(accepted, key=lambda row: (row['Time'], row['Id'])))
     atomic_write(output, buffer.getvalue())
-    print(f'Exported {len(accepted)} reviewed rows to {output}')
+    print(f'Exported {approved_count} reviewed rows in a {len(accepted)}-row catalogue to {output}')
+
+
+def initialize_catalogue(source, output):
+    output = Path(output)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    # Exclusive creation protects existing translations from accidental replacement.
+    with output.open('x', encoding='utf-8', newline='') as stream:
+        writer = csv.DictWriter(stream, fieldnames=FIELDS + ['Draft'], delimiter='|')
+        writer.writeheader()
+        writer.writerows({**row, 'Draft': 'true'} for row in source)
+    print(f'Initialized {len(source)} draft quotes in {output}')
 
 
 def main():
@@ -293,6 +313,8 @@ def main():
     parser.add_argument('--status', action='store_true', help='Show progress without making requests or writing files')
     parser.add_argument('--export-reviewed', type=Path)
     parser.add_argument('--output', type=Path)
+    parser.add_argument('--catalogue', type=Path, help='Merge approved rows into this full catalogue; write to a new --output')
+    parser.add_argument('--init-catalogue', type=Path, help='Copy every source row as Draft=true, without network requests')
     args = parser.parse_args()
     if args.batch_size < 1 or not 1 <= args.delay <= 60:
         parser.error('Use a positive batch size and a delay between 1 and 60 seconds.')
@@ -302,6 +324,8 @@ def main():
         parser.error('--batch-pause must be between 0 and 3600 seconds.')
     if args.pilot and args.all:
         parser.error('--pilot and --all cannot be combined.')
+    if args.init_catalogue and (args.status or args.all or args.pilot or args.export_reviewed or args.catalogue or args.output):
+        parser.error('--init-catalogue cannot be combined with other modes or output options')
     if args.status and (args.all or args.pilot or args.export_reviewed):
         parser.error('--status cannot be combined with translation or export modes.')
     args.state = args.state or ROOT / '.translation-work' / args.target / 'state.json'
@@ -311,10 +335,15 @@ def main():
     if len({row['Id'] for row in rows}) != len(rows):
         parser.error('Source IDs must be unique.')
     try:
+        if args.init_catalogue:
+            initialize_catalogue(rows, args.init_catalogue)
+            return
+        if args.catalogue and not args.export_reviewed:
+            parser.error('--catalogue requires --export-reviewed')
         if args.export_reviewed:
             if not args.output:
                 parser.error('--export-reviewed requires --output')
-            export_review(args.export_reviewed, rows, args.output)
+            export_review(args.export_reviewed, rows, args.output, args.catalogue)
             return
         state = load_state(args.state, rows, args.target)
         if args.status:

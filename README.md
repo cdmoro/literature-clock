@@ -57,7 +57,7 @@ There is support for the following languages (by default, it will try to use the
 - Italian
 - German
 
-The clock preserves explicitly selected locales from the URL or saved settings. Legacy `en-UK` links and saved settings resolve to `en-GB`; generic English (`en`), unsupported English regions, and unrecognized languages fall back to `en-GB`. Locale matching is case-insensitive and accepts underscores (for example, `en_US`).
+The clock preserves explicitly selected locales from the URL or saved settings. Generic English (`en`), unsupported English regions, and unrecognized languages fall back to `en-GB`. Locale matching is case-insensitive and accepts underscores (for example, `en_US`).
 
 Want to implement a new language? Sure thing, ping me and let's talk about it!
 
@@ -139,3 +139,10 @@ Hi! I'm Carlos, and you can find me here
 
 - [Twitter](https://twitter.com/CarlosBonadeo)
 - [LinkedIn]([https://twitter.com/CarlosBonadeo](https://www.linkedin.com/in/cdbonadeo/))
+
+Run `npm run translate` for a numbered menu to create languages, translate batches,
+review drafts in the terminal or browser, and apply approved translations.
+
+New languages can start as a full copy of `quotes.en-GB.csv` with `Draft=true` and
+publish reviewed quotes gradually. Pending quotes are excluded from clock data;
+uncovered minutes use localized fallback messages. See the [gradual translation workflow](scripts/TRANSLATING.md#start-a-language-and-publish-gradually).

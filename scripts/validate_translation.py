@@ -13,14 +13,31 @@ FIELDS = ['Time', 'Id', 'Quote time', 'Quote', 'Title', 'Author', 'SFW']
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def is_draft(row):
+    """Legacy catalogues are published; an explicit Draft must be true or false."""
+    value = str(row.get('Draft', 'false')).strip().lower()
+    if value not in ('true', 'false'):
+        raise ValueError(f"{row.get('Id', '?')}: Draft must be true or false")
+    return value == 'true'
+
+
+def catalogue_progress(rows):
+    published = [row for row in rows if not is_draft(row)]
+    return {'quotes_total': len(rows), 'quotes_published': len(published),
+            'quotes_draft': len(rows) - len(published),
+            'publication_progress': round(100 * len(published) / len(rows), 2) if rows else 0}
+
+
 def read_catalogue(path):
     with Path(path).open(encoding='utf-8', newline='') as stream:
         reader = csv.DictReader(stream, delimiter='|')
-        if reader.fieldnames != FIELDS:
+        if reader.fieldnames not in (FIELDS, FIELDS + ['Draft']):
             raise ValueError(f'{path}: unexpected CSV columns')
         rows = list(reader)
     if any(None in row or any(value is None for value in row.values()) for row in rows):
         raise ValueError(f'{path}: malformed CSV row')
+    for row in rows:
+        is_draft(row)
     return rows
 
 
@@ -41,6 +58,8 @@ def validate(source, translated):
         for field in ('Time', 'Author', 'SFW'):
             if row[field] != original[field]:
                 errors.append(f'{label}: {field} differs from the source')
+        if is_draft(row):
+            continue
         for field in ('Quote', 'Title', 'Quote time'):
             if not row[field].strip():
                 errors.append(f'{label}: empty {field}')
@@ -69,7 +88,9 @@ def main():
         parser.exit(1, f'{error}\n')
     if errors:
         parser.exit(1, '\n'.join(errors) + '\n')
-    print(f'Validated {len(target)} translations across {len({row["Time"] for row in target})} minutes.')
+    report = catalogue_progress(target)
+    print(f"{report['quotes_published']}/{report['quotes_total']} published; "
+          f"{report['quotes_draft']} drafts ({report['publication_progress']}%).")
 
 
 if __name__ == '__main__':
