@@ -64,7 +64,7 @@
 [data-theme='book-dark'] {
   --background: #28251f;
   --font-color: #e9dfc9;
-  --accent-color: #b9ebff;
+  --accent-color: #214cc6;
 }
 
 [data-theme='book-dark'] body {
@@ -74,16 +74,6 @@
   background-repeat: repeat;
   background-position: center;
   background-size: 420px 420px;
-}
-
-/* Keep cream text readable while retaining the selected accent's hue. */
-[data-theme='book-dark'] blockquote .time {
-  background: linear-gradient(
-    transparent 0%,
-    color-mix(in srgb, var(--accent-color) 30%, #081522) 0%,
-    color-mix(in srgb, var(--accent-color) 30%, #081522) 95%,
-    transparent 95%
-  );
 }
 
 [data-theme='book-dark'] blockquote {
