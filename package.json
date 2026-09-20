@@ -18,7 +18,8 @@
     "add-string": "python ./scripts/add_string.py",
     "generate-times": "python ./scripts/generate_times.py",
     "generate-strings-type": "python ./scripts/generate_strings_type.py",
-    "check-quotes": "python ./scripts/check_quotes.py"
+    "check-quotes": "python ./scripts/check_quotes.py",
+    "translate": "python3 scripts/translation_manager.py"
   },
   "repository": {
     "type": "git",
