@@ -1,4 +1,4 @@
-"""Generate public clock data from published CSV rows only."""
+"""Generate enabled clock catalogues and URL-only previews with pending rows."""
 import json
 import shutil
 import sys
@@ -8,10 +8,11 @@ from pathlib import Path
 from validate_translation import read_catalogue, is_draft, catalogue_progress
 
 
-def generate_catalogue(path, output):
+def generate_catalogue(path, output, include_drafts=False):
     rows = read_catalogue(path)
     locale = path.name.split('.')[1]
-    if path.name.endswith('.draft.csv'):
+    include_drafts = include_drafts or path.name.endswith('.draft.csv')
+    if include_drafts:
         locale += '-draft'
     folder = output / locale
     if folder.exists():
@@ -20,13 +21,16 @@ def generate_catalogue(path, output):
     grouped = defaultdict(list)
     published = []
     for row in rows:
-        if is_draft(row) or row['Quote time'].startswith('*'):
+        if (is_draft(row) and not include_drafts) or row['Quote time'].startswith('*'):
             continue
         phrase = row['Quote time']
         if not phrase or phrase not in row['Quote']:
+            if include_drafts and is_draft(row):
+                continue
             raise ValueError(f"{path}: {row['Id']}: published time phrase is missing from quote")
         first, last = row['Quote'].split(phrase, 1)
         grouped[row['Time']].append({
+            **({'draft': is_draft(row)} if include_drafts else {}),
             'id': row['Id'], 'quote_time_case': phrase, 'quote_first': first,
             'quote_last': last, 'title': row['Title'], 'author': row['Author'], 'sfw': row['SFW'],
         })
@@ -55,8 +59,24 @@ def main():
     suffix = f'.{sys.argv[1]}.csv' if len(sys.argv) == 2 else '.csv'
     if len(sys.argv) == 1 and output.exists():
         shutil.rmtree(output)
-    for path in sorted(Path('quotes').glob(f'*{suffix}')):
-        generate_catalogue(path, output)
+    generate_catalogues(Path('quotes'), output,
+                        Path('src/strings/translations.json'), suffix)
+
+
+def generate_catalogues(quotes, output, translations, suffix='.csv'):
+    enabled = json.loads(translations.read_text(encoding='utf-8'))
+    for path in sorted(quotes.glob(f'*{suffix}')):
+        locale = path.name.split('.')[1]
+        if path.name.endswith('.draft.csv'):
+            # A full catalogue takes precedence over legacy preview-only files.
+            if not (quotes / f'quotes.{locale}.csv').exists():
+                generate_catalogue(path, output, include_drafts=True)
+            continue
+        if locale in enabled:
+            generate_catalogue(path, output)
+        elif (output / locale).exists():
+            shutil.rmtree(output / locale)
+        generate_catalogue(path, output, include_drafts=True)
 
 
 if __name__ == '__main__':

@@ -3,9 +3,10 @@ import TRANSLATIONS from './strings/translations.json';
 export type { Translations } from './strings/types';
 
 export type BaseLocale = keyof typeof TRANSLATIONS;
-export type Locale = BaseLocale | `${BaseLocale}-draft`;
+export type Locale = BaseLocale | `${string}-draft`;
 
 export interface Quote {
+  draft?: boolean;
   id: string;
   quote_first: string;
   quote_time_case: string;

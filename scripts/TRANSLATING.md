@@ -6,10 +6,65 @@ packages. The service may reject requests even when they are spaced out.
 
 This is a **new catalogue tool**. `add_quote.py` remains the
 interactive tool for adding a single quote. Adding the new language to the
-website can happen as soon as its interface and fallback messages are ready;
-only reviewed quotes are published.
+website is a separate, explicit step after the language is complete and reviewed.
+Unlisted draft URLs are available earlier for previewing work in progress.
 
-## Interactive menu (recommended)
+## Local web administrator (recommended)
+
+```sh
+npm ci
+npm run admin
+```
+
+Open `http://127.0.0.1:5174`. This is a separate Vite application, backed by a
+loopback-only Python API. It is never included in the clock's production build.
+Python 3.9+ and Node 22 are supported; the administrator needs no Python packages.
+
+The dashboard lists every target catalogue and separates approval progress from
+whether a language is enabled in the clock. Create a locale, translate a batch,
+search/filter its quotes, compare with the original, edit and approve from the
+browser. Each completed Google translation is written immediately to its CSV
+with `Draft=true`, including completed rows before an interruption. Human edits
+are preserved on resume. Approving writes `Draft=false`; saving as draft revokes
+approval. Backups live in `.translation-work/<locale>/backups/`.
+
+A newly created locale stays out of the normal clock and selector, even after all
+its quotes are approved. Enabling a language still requires a separate, explicit
+change to the interface strings, fallback messages, locale mapping and selector.
+Approval is not language publication.
+
+**Create catalogue PR** shows a confirmation before preparing an isolated checkout,
+committing only the selected CSV, pushing a new branch and opening a GitHub PR.
+It requires authenticated Git and `gh`, leaves your working branch alone, and does
+not merge or enable a new language. Draft rows remain drafts in that PR. Network
+or validation failures are shown in the dashboard. A failure after push can leave
+the new branch on the remote for inspection; the current checkout is not changed.
+
+Only one translation/publication job runs at a time. The API blocks concurrent
+edits during that job and rejects stale edit forms; use Reload if a CSV changed
+outside the administrator. Do not run the CLI as another writer at the same time.
+
+### Clock previews through a draft URL
+
+Use **Generate clock preview**, then open your separate clock development server
+(`npm run dev`) with `?locale=el-GR-draft&time=07:30`, for example. Normal generation
+(`npm run generate-times`) also produces `<locale>-draft` data for each catalogue.
+Draft URLs work before the language is registered, display a draft notice, and use
+English interface/fallback strings until the language has its own strings.
+They do not add options to the selector or random-language pool.
+
+The draft view includes approved and pending CSV rows. Newly copied source text
+is still English until translated. A draft with an unresolved time highlight is
+skipped by the clock, but remains editable in the administrator. A normal locale
+only gets generated data when registered, and its drafts remain excluded.
+Legacy `.draft.csv` files remain supported when no full catalogue exists.
+
+Draft clock URLs are unlisted previews, **not private URLs**: once their catalogue
+is committed and deployed, anyone with the draft URL can view it. The administrator
+and its editing API remain local-only. Preview generation does not change approval
+or registration, and never makes `locale=el-GR` work for an unpublished language.
+
+## Interactive menu (legacy alternative)
 
 Start with one command from the repository root:
 
@@ -61,9 +116,8 @@ new locale works without registering interface strings in the clock.
 
 This is a **local review page**, separate from the clock and its skins. It does
 not write files to `public/` or expose unapproved quotes on the deployed site.
-The older `?locale=<supported-locale>-draft` clock view only reads generated
-`.draft.csv` preview catalogues and still excludes rows marked `Draft=true`.
-Use the menu preview to inspect actual unapproved machine translations.
+The separate clock view `?locale=<locale>-draft` now includes pending CSV rows
+after time-data generation; it also works for unregistered languages.
 
 ## Start a language and publish gradually
 
@@ -104,8 +158,8 @@ files; minutes with no published quotes use the existing localized fallback.
 Generated `.statistics.json` files distinguish `publication_progress` (quotes)
 from `progress` (minutes covered), and include published, draft and total counts.
 
-A language can be enabled below 100%: add its interface strings, color-control
-strings, fallback quotes, language selector option and locale mapping as usual.
+Once a language is complete and reviewed, explicitly add its interface strings,
+color-control strings, fallback quotes, selector option and locale mapping.
 The CSV alone does not register a new language. No new language is enabled by
 these commands.
 
@@ -156,14 +210,10 @@ complete draft just because its ID is present. Generated files are ignored by Gi
 
 ## Live draft previews
 
-After exporting a partial review, save it as `quotes/quotes.<locale>.draft.csv`,
-for example `quotes/quotes.el-GR.draft.csv`. The time generator maps that file to
-`public/times/<locale>-draft/`, which can be opened with `?locale=el-GR-draft`.
-Drafts use the base locale's interface strings and fallback behavior, but remain
-excluded from random language selection and supported-language lists. Keep the
-`.draft.csv` suffix for optional separate previews. This is independent of the
-per-row `Draft` column, which is also respected in previews; a normal catalogue
-can be published with draft rows still pending.
+Normal CSVs generate a separate `<locale>-draft` preview containing pending and
+approved quotes with valid time highlights. See the clock preview instructions
+above. A legacy `quotes.<locale>.draft.csv` is only used if there is no full CSV
+for that locale. Preview-only locales are never added to the selector or random pool.
 
 Source IDs, clock times, authors and SFW classifications are preserved. Resuming
 compares full source rows by ID: added quotes become pending, unchanged quotes are

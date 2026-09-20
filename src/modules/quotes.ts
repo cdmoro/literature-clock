@@ -28,7 +28,7 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
     const response = await fetch(`../times/${locale}/${fileName}.json`);
 
     if (!response.ok) {
-    return FALLBACK_QUOTES[getBaseLocale(locale)];
+      return FALLBACK_QUOTES[getBaseLocale(locale)];
     }
 
     let quotes = (await response.json()) as Quote[];
@@ -44,7 +44,7 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
     return quotes;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
-      return FALLBACK_QUOTES[getBaseLocale(locale)];
+    return FALLBACK_QUOTES[getBaseLocale(locale)];
   }
 }
 
@@ -109,38 +109,42 @@ export async function updateQuote({ time = getTime(), useIndex = false } = {}) {
 
   const blockquote = document.getElementById('quote');
 
-  await transitionQuote(() => {
-    store.set('active-quote', quote);
-    updateGHLinks(time, quote, locale);
-    if (store.get('theme')?.startsWith('photo')) {
-      setDynamicBackgroundPicture();
-    } else {
-      removeBackgroundImage();
-    }
-
-    if (blockquote) {
-      blockquote.innerHTML = '';
-
-      const p = document.createElement('p');
-      p.innerHTML = quoteText;
-
-      const cite = document.createElement('cite');
-      cite.innerHTML = `<span id="hyphen">— </span><span id="title">${quote.title}</span><span id="comma">, </span><span id="author">${quote.author}</span>`;
-
-      blockquote.appendChild(p);
-      blockquote.appendChild(cite);
-      blockquote.setAttribute('aria-label', time);
-      blockquote.setAttribute('aria-description', `${quote.quote_raw} (${quote.title}, ${quote.author})`);
-
-      fitQuote();
-
-      if (store.get('theme')?.includes('color')) {
-        setTheme({
-          syncToUrl: false,
-        });
+  await transitionQuote(
+    () => {
+      store.set('active-quote', quote);
+      updateGHLinks(time, quote, locale);
+      if (store.get('theme')?.startsWith('photo')) {
+        setDynamicBackgroundPicture();
+      } else {
+        removeBackgroundImage();
       }
-    }
-  }, () => request === latestRequest);
+
+      if (blockquote) {
+        blockquote.lang = locale.replace(/-draft$/, '');
+        blockquote.innerHTML = '';
+
+        const p = document.createElement('p');
+        p.innerHTML = quoteText;
+
+        const cite = document.createElement('cite');
+        cite.innerHTML = `<span id="hyphen">— </span><span id="title">${quote.title}</span><span id="comma">, </span><span id="author">${quote.author}</span>`;
+
+        blockquote.appendChild(p);
+        blockquote.appendChild(cite);
+        blockquote.setAttribute('aria-label', time);
+        blockquote.setAttribute('aria-description', `${quote.quote_raw} (${quote.title}, ${quote.author})`);
+
+        fitQuote();
+
+        if (store.get('theme')?.includes('color')) {
+          setTheme({
+            syncToUrl: false,
+          });
+        }
+      }
+    },
+    () => request === latestRequest,
+  );
 
   if (request !== latestRequest) return;
   prefetchNextQuotes(locale);

@@ -140,9 +140,12 @@ Hi! I'm Carlos, and you can find me here
 - [Twitter](https://twitter.com/CarlosBonadeo)
 - [LinkedIn]([https://twitter.com/CarlosBonadeo](https://www.linkedin.com/in/cdbonadeo/))
 
-Run `npm run translate` for a numbered menu to create languages, translate batches,
-review drafts in the terminal or browser, and apply approved translations.
+Run `npm run admin` for the local Vite translation administrator at
+`http://127.0.0.1:5174`. Create languages, translate batches directly into draft CSV
+rows, and review/edit/approve them from the browser. `npm run translate` remains
+available as a terminal alternative.
 
-New languages can start as a full copy of `quotes.en-GB.csv` with `Draft=true` and
-publish reviewed quotes gradually. Pending quotes are excluded from clock data;
-uncovered minutes use localized fallback messages. See the [gradual translation workflow](scripts/TRANSLATING.md#start-a-language-and-publish-gradually).
+New languages start from `quotes.en-GB.csv` with `Draft=true` and stay out of the
+clock's selector until explicitly enabled. `?locale=el-GR-draft` previews pending
+quotes after generating the time data, without enabling `locale=el-GR`. Draft URLs
+are unlisted, not private. See the [translation workflow](scripts/TRANSLATING.md).
