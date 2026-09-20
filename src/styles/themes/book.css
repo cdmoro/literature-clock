@@ -44,11 +44,12 @@
 /* The clock's time span becomes the book's highlighter mark. */
 [data-theme|='book'] blockquote .time {
   color: inherit;
-  background: linear-gradient(transparent 0%, var(--accent-color) 0%, var(--accent-color) 95%, transparent 95%);
+  background: var(--accent-color);
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
   padding-inline: 0.2em;
   margin-inline: -0.2em;
+  border-radius: 3px;
 }
 
 [data-theme|='book'] cite {
