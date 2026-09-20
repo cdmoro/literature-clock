@@ -27,7 +27,7 @@ let followsDefaultColor = true;
 
 function defaultColor(theme: string) {
   const dark = document.documentElement.dataset.theme?.endsWith('-dark');
-  const darkColors: Record<string, string> = { retro: '#f1ba08', terminal: '#1bec1b', frame: '#00c4ce', photo: '#fd3622', whatsapp: '#245247', book: '#d9bd61' };
+  const darkColors: Record<string, string> = { retro: '#f1ba08', terminal: '#1bec1b', frame: '#00c4ce', photo: '#fd3622', whatsapp: '#245247', book: '#89aebc' };
   return (dark && darkColors[theme]) || DEFAULT_COLORS[theme] || DEFAULT_COLORS.base;
 }
 

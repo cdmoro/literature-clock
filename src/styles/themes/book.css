@@ -1,7 +1,7 @@
 [data-theme|='book'] {
   --background: #e7dfcf;
   --font-color: #29251f;
-  --accent-color: #9d7b22;
+  --accent-color: #fbf719;
   --quote-font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
   --quote-line-height: 1.55;
 }
@@ -9,10 +9,15 @@
 [data-theme|='book'] body {
   background: var(--background);
   background-color: #e7dfcf;
-  background-image: url('/assets/book-paper-seamless.png');
-  background-repeat: no-repeat;
+  background-image: url('/assets/book-paper-seamless.jpg');
+  background-repeat: repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 420px 420px;
+}
+
+[data-theme|='book'] button.active,
+[data-theme|='book'] button.active:hover {
+  color: #000;
 }
 
 [data-theme|='book'] #clock {
@@ -59,16 +64,26 @@
 [data-theme='book-dark'] {
   --background: #28251f;
   --font-color: #e9dfc9;
-  --accent-color: #d9bd61;
+  --accent-color: #89aebc;
 }
 
 [data-theme='book-dark'] body {
   background-color: #d2c39d;
-  background-image: url('/assets/book-paper-seamless.png');
+  background-image: url('/assets/book-paper-seamless.jpg');
   background-blend-mode: difference;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 420px 420px;
+}
+
+/* Keep cream text readable while retaining the selected accent's hue. */
+[data-theme='book-dark'] blockquote .time {
+  background: linear-gradient(
+    transparent 0%,
+    color-mix(in srgb, var(--accent-color) 30%, #081522) 0%,
+    color-mix(in srgb, var(--accent-color) 30%, #081522) 95%,
+    transparent 95%
+  );
 }
 
 [data-theme='book-dark'] blockquote {
