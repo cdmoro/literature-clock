@@ -95,7 +95,15 @@ async function getQuote(time: string, locale: Locale, preserveQuote: boolean = f
   return quote;
 }
 
-export async function updateQuote({ time = getTime(), preserveQuote = false } = {}) {
+export function cancelPendingQuote() {
+  latestRequest++;
+  cancelQuoteTransition();
+}
+
+export async function updateQuote({
+  time = store.get('time') || (store.get('paused') ? store.get('active-quote')?.time : undefined) || getTime(),
+  preserveQuote = false,
+} = {}) {
   const request = ++latestRequest;
   cancelQuoteTransition();
   const testQuote = store.get('quote');

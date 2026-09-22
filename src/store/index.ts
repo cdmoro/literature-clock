@@ -21,6 +21,7 @@ export interface Stateless {
   'custom-font'?: string;
   time?: string;
   'quote-id'?: string;
+  paused?: boolean;
   quote?: string;
   scene?: string;
   progress?: string;
@@ -33,7 +34,7 @@ type State = Stateful & Stateless;
 
 type Listener = (newState: State, oldState: State) => void;
 
-const IGNORE_FROM_URL: (keyof State)[] = ['custom-font', 'active-quote'];
+const IGNORE_FROM_URL: (keyof State)[] = ['custom-font', 'active-quote', 'paused'];
 const REMOVE_VALUES_FROM_URL: Partial<State> = {
   transition: 'fade',
   font: 'default',

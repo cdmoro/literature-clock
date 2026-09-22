@@ -2,7 +2,7 @@ import { updateQuote } from './quotes';
 import TRANSLATIONS from '../strings/translations.json';
 import COLOR_CONTROLS from '../strings/colorControls.json';
 import { BaseLocale, Locale } from '../types';
-import { getTime } from '../utils';
+import { getLiveTime } from '../utils';
 import { Translations } from '../types';
 import { store } from '../store';
 
@@ -86,7 +86,7 @@ export function getStrings(locale: Locale): Translations {
 }
 
 function translateStrings(locale: Locale) {
-  const time = getTime();
+  const time = getLiveTime();
   const strings = { ...getStrings(locale), ...COLOR_CONTROLS[getBaseLocale(resolveLocale(locale))] };
 
   document.documentElement.lang = getBaseLocale(locale);
