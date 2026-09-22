@@ -65,3 +65,16 @@
 #reading-controls button {
   min-width: 2rem;
 }
+
+#quote-library .library-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-block: 1rem;
+}
+#quote-library [role='tab'][aria-selected='true'] {
+  background: var(--accent-color);
+  color: var(--background);
+}
+#quote-library #clear-quote-history {
+  font-size: 0.8rem;
+}

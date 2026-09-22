@@ -64,3 +64,34 @@ it('returns focus to the launcher when the dialog closes', () => {
   (document.getElementById('quote-library') as HTMLDialogElement).close();
   expect(document.activeElement?.id).toBe('open-quote-library');
 });
+
+import { readHistory } from '../utils/quote-collection';
+it('records rendered quotes and lets recent entries become favorites in the same dialog', () => {
+  expect(readHistory()).toHaveLength(1);
+  click('open-quote-library');
+  click('library-history-tab');
+  document.querySelector<HTMLButtonElement>('#quote-library li button')!.click();
+  expect(readFavorites()).toHaveLength(1);
+  click('clear-quote-history');
+  expect(readHistory()).toHaveLength(0);
+  expect(readFavorites()).toHaveLength(1);
+});
+it('does not duplicate a quote on unrelated settings changes or rebuild the open list on each tick', () => {
+  click('open-quote-library');
+  click('library-history-tab');
+  const link = document.querySelector<HTMLAnchorElement>('#quote-library li a')!;
+  link.focus();
+  store.set('active-quote', { ...quote, id: '1200-002' });
+  expect(readHistory()).toHaveLength(2);
+  expect(document.activeElement).toBe(link);
+  store.set('theme', 'base-dark');
+  expect(readHistory()).toHaveLength(2);
+});
+it('supports arrow-key navigation between collection tabs', () => {
+  click('open-quote-library');
+  document
+    .getElementById('library-favorites-tab')!
+    .dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true }));
+  expect(document.activeElement?.id).toBe('library-history-tab');
+  expect(document.activeElement?.getAttribute('aria-selected')).toBe('true');
+});

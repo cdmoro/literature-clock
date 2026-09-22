@@ -165,3 +165,7 @@ The circular-arrow button pauses reading and selects another quote for the displ
 ### Favorites
 
 Use the heart to save the displayed quote and “My quotes” to open your collection. Favorites are stored only in this browser, with no account or server, and survive reloads. Each includes the text, attribution and a permanent link. You can remove individual favorites; Work mode hides explicit entries without deleting them. There is a 500-quote limit, and storage failures are reported instead of claiming that a quote was saved. Clearing browser data removes the collection.
+
+### Recent quotes
+
+“My quotes” also includes a Recent tab: the last 100 distinct quotes actually displayed, newest first, stored only in this browser. Repeated views move a quote to the top. You can reopen a quote, save it as a favorite or clear the history without affecting favorites. Placeholder quotes and custom previews are excluded. While the dialog is open its list stays still; reopening it or switching tabs refreshes it. Work mode hides explicit entries in both tabs.
