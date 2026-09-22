@@ -66,14 +66,14 @@ export function initLocale() {
     store.set('locale', locale);
 
     if (!store.get('random-locale')) {
-      updateQuote({ useIndex: true });
+      updateQuote({ preserveQuote: true });
     }
   });
   document.querySelector('#random-locale')?.addEventListener('click', () => {
     const isRandomLocale = store.toggle('random-locale');
     if (!isRandomLocale && store.get('locale') !== store.get('active-quote')?.locale) {
       updateQuote({
-        useIndex: true,
+        preserveQuote: true,
       });
     }
   });

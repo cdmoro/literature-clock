@@ -1,6 +1,6 @@
 import { store } from '../store';
 
-let mouseTimeout: NodeJS.Timeout;
+let mouseTimeout: ReturnType<typeof setTimeout>;
 
 export function initStaticMode() {
   if (store.get('static')) {

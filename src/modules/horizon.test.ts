@@ -76,7 +76,7 @@ describe('getDayParameters', () => {
 });
 
 
-afterEach(() => vi.useRealTimers());
+afterEach(() => { vi.useRealTimers(); });
 
 describe('continuous sky', () => {
   test('wraps seamlessly at midnight', () => {
