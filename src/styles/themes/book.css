@@ -1,0 +1,92 @@
+[data-theme|='book'] {
+  --background: #e7dfcf;
+  --font-color: #29251f;
+  --accent-color: #fbf719;
+  --quote-font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+  --quote-line-height: 1.55;
+}
+
+[data-theme|='book'] body {
+  background: var(--background);
+  background-color: #e7dfcf;
+  background-image: url('/assets/book-paper-seamless.webp');
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 420px 420px;
+}
+
+[data-theme|='book'] button.active,
+[data-theme|='book'] button.active:hover {
+  color: #000;
+}
+
+[data-theme|='book'] #clock {
+  max-width: min(900px, 82vw);
+}
+
+[data-theme|='book'] blockquote {
+  color: var(--font-color);
+  letter-spacing: -0.015em;
+  text-align: justify;
+  text-shadow: 0 0 2px var(--font-color);
+  hyphens: auto;
+}
+
+[data-theme|='book'] blockquote::before,
+[data-theme|='book'] blockquote::after {
+  content: none;
+}
+
+[data-theme|='book'] blockquote p {
+  text-wrap: pretty;
+}
+
+/* The clock's time span becomes the book's highlighter mark. */
+[data-theme|='book'] blockquote .time {
+  color: inherit;
+  background: var(--accent-color);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding-inline: 0.2em;
+  margin-inline: -0.2em;
+  border-radius: 3px;
+}
+
+[data-theme|='book'] cite {
+  font-size: 0.65em;
+  letter-spacing: 0;
+  margin-top: 1.5rem;
+}
+
+[data-theme|='book'] #title {
+  font-style: normal;
+}
+
+[data-theme='book-dark'] {
+  --background: #28251f;
+  --font-color: #e9dfc9;
+  --accent-color: #214cc6;
+}
+
+[data-theme='book-dark'] body {
+  background-color: #d2c39d;
+  background-image: url('/assets/book-paper-seamless.webp');
+  background-blend-mode: difference;
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 420px 420px;
+}
+
+[data-theme='book-dark'] blockquote {
+  color: #f4ead5;
+}
+
+@media only screen and (max-width: 750px) {
+  [data-theme|='book'] #clock {
+    max-width: 88vw;
+  }
+
+  [data-theme|='book'] cite {
+    margin-top: 1rem;
+  }
+}

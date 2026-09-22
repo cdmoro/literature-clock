@@ -11,6 +11,7 @@ export type Translations = {
   base: string;
   blue: string;
   bohemian: string;
+  book: string;
   color: string;
   colors: string;
   copy_mode: string;
