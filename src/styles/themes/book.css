@@ -9,7 +9,7 @@
 [data-theme|='book'] body {
   background: var(--background);
   background-color: #e7dfcf;
-  background-image: url('/assets/book-paper-seamless.jpg');
+  background-image: url('/assets/book-paper-seamless.webp');
   background-repeat: repeat;
   background-position: center;
   background-size: 420px 420px;
@@ -70,7 +70,7 @@
 
 [data-theme='book-dark'] body {
   background-color: #d2c39d;
-  background-image: url('/assets/book-paper-seamless.jpg');
+  background-image: url('/assets/book-paper-seamless.webp');
   background-blend-mode: difference;
   background-repeat: repeat;
   background-position: center;
