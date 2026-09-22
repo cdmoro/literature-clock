@@ -48,18 +48,16 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
   }
 }
 
-async function getQuote(time: string, locale: Locale, useIndex: boolean = false): Promise<ResolvedQuote> {
+async function getQuote(time: string, locale: Locale, preserveQuote: boolean = false): Promise<ResolvedQuote> {
   const quotes = await getQuotes(time, locale);
   const strings = getStrings(locale);
 
   let quoteIndex = Math.floor(Math.random() * quotes.length);
 
-  if (useIndex) {
-    const index = store.get('active-quote')?.index;
-
-    if (index && quotes[index]) {
-      quoteIndex = index;
-    }
+  if (preserveQuote) {
+    const id = store.get('active-quote')?.id;
+    const index = quotes.findIndex((quote) => quote.id === id);
+    if (index >= 0) quoteIndex = index;
   }
 
   if (store.get('index')) {
@@ -72,6 +70,7 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
   const quote = Object.assign({}, quotes[quoteIndex]) as ResolvedQuote;
   quote.index = quoteIndex;
   quote.locale = locale;
+  quote.time = time;
   quote.quote_raw = `${quote.quote_first}${quote.quote_time_case}${quote.quote_last}`.replace(/<br>/g, '\n');
 
   if (!quote.quote_time_case) {
@@ -87,7 +86,7 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
   return quote;
 }
 
-export async function updateQuote({ time = getTime(), useIndex = false } = {}) {
+export async function updateQuote({ time = getTime(), preserveQuote = false } = {}) {
   const request = ++latestRequest;
   cancelQuoteTransition();
   const testQuote = store.get('quote');
@@ -101,7 +100,7 @@ export async function updateQuote({ time = getTime(), useIndex = false } = {}) {
     locale = getRandomLocale();
   }
 
-  const quote = await getQuote(time, locale, useIndex);
+  const quote = await getQuote(time, locale, preserveQuote);
   if (request !== latestRequest) return;
   const timeClass = quote.quote_time_case.replace(/<[^>]*>/g, '').length <= 11 ? 'time text-nowrap' : 'time';
   const quoteText =
