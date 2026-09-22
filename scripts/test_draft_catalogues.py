@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from generate_times import generate_catalogue
+from generate_times import generate_catalogue, generate_catalogues
 from translate_catalogue import initialize_catalogue, export_review
 from validate_translation import read_catalogue, validate, is_draft
 
@@ -76,10 +76,30 @@ class DraftCatalogueTest(unittest.TestCase):
             current = next_path
         self.assertEqual([is_draft(row) for row in read_catalogue(current)], [False, False])
 
-    def test_draft_preview_also_excludes_unapproved_rows(self):
+    def test_draft_preview_includes_unapproved_rows(self):
         preview = self.root / 'quotes.el-GR.draft.csv'
         initialize_catalogue(self.source, preview)
         generate_catalogue(preview, self.root / 'times')
         folder = self.root / 'times' / 'el-GR-draft'
         self.assertTrue(folder.is_dir())
-        self.assertEqual(list(folder.glob('[0-9]*.json')), [])
+        self.assertEqual(len(list(folder.glob('[0-9]*.json'))), 2)
+        self.assertTrue(json.loads((folder / '07_30.json').read_text())[0]['draft'])
+
+    def test_unregistered_language_is_generated_only_as_draft(self):
+        translations = self.root / 'translations.json'
+        translations.write_text('{"en-GB": {}}')
+        output = self.root / 'times'
+        (output / 'el-GR').mkdir(parents=True)
+        (output / 'el-GR' / 'stale.json').write_text('[]')
+        generate_catalogues(self.root, output, translations)
+        self.assertFalse((output / 'el-GR').exists())
+        self.assertTrue((output / 'el-GR-draft' / '07_30.json').exists())
+
+    def test_invalid_draft_time_is_skipped_without_breaking_preview(self):
+        self.source[0]['Quote time'] = ''
+        other = self.root / 'quotes.fr-FR.csv'
+        initialize_catalogue(self.source, other)
+        output = self.root / 'times'
+        generate_catalogue(other, output, include_drafts=True)
+        self.assertFalse((output / 'fr-FR-draft' / '07_30.json').exists())
+        self.assertTrue((output / 'fr-FR-draft' / '08_00.json').exists())

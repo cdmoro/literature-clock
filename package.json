@@ -19,7 +19,9 @@
     "generate-times": "python ./scripts/generate_times.py",
     "generate-strings-type": "python ./scripts/generate_strings_type.py",
     "check-quotes": "python ./scripts/check_quotes.py",
-    "translate": "python3 scripts/translation_manager.py"
+    "translate": "python3 scripts/translation_manager.py",
+    "admin": "python3 scripts/translation_admin.py",
+    "admin:build": "tsc -p admin/tsconfig.json && vite build --config admin/vite.config.mjs"
   },
   "repository": {
     "type": "git",
