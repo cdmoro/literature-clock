@@ -7,7 +7,19 @@
     "pause": "Pause reading",
     "resume": "Back to live clock",
     "pausedAt": "Paused at",
-    "nextQuote": "Another quote from this minute"
+    "nextQuote": "Another quote from this minute",
+    "myQuotes": "My quotes",
+    "favorites": "Favorites",
+    "saveFavorite": "Save favorite",
+    "removeFavorite": "Remove favorite",
+    "favoriteSaved": "Quote saved",
+    "favoriteRemoved": "Favorite removed",
+    "noFavorites": "No favorites yet. Save a quote with the heart button.",
+    "filteredLibrary": "Saved quotes are hidden by your content filter.",
+    "close": "Close",
+    "openQuote": "Open quote",
+    "favoritesFull": "Your favorites are full (500). Remove one to save another.",
+    "storageUnavailable": "Could not save changes on this device. Check browser storage permissions."
   },
   "en-US": {
     "copyLink": "Copy quote link",
@@ -17,7 +29,19 @@
     "pause": "Pause reading",
     "resume": "Back to live clock",
     "pausedAt": "Paused at",
-    "nextQuote": "Another quote from this minute"
+    "nextQuote": "Another quote from this minute",
+    "myQuotes": "My quotes",
+    "favorites": "Favorites",
+    "saveFavorite": "Save favorite",
+    "removeFavorite": "Remove favorite",
+    "favoriteSaved": "Quote saved",
+    "favoriteRemoved": "Favorite removed",
+    "noFavorites": "No favorites yet. Save a quote with the heart button.",
+    "filteredLibrary": "Saved quotes are hidden by your content filter.",
+    "close": "Close",
+    "openQuote": "Open quote",
+    "favoritesFull": "Your favorites are full (500). Remove one to save another.",
+    "storageUnavailable": "Could not save changes on this device. Check browser storage permissions."
   },
   "es-ES": {
     "copyLink": "Copiar enlace de la cita",
@@ -27,7 +51,19 @@
     "pause": "Pausar lectura",
     "resume": "Volver al reloj en vivo",
     "pausedAt": "En pausa a las",
-    "nextQuote": "Otra cita de este minuto"
+    "nextQuote": "Otra cita de este minuto",
+    "myQuotes": "Mis citas",
+    "favorites": "Favoritos",
+    "saveFavorite": "Guardar favorito",
+    "removeFavorite": "Quitar favorito",
+    "favoriteSaved": "Cita guardada",
+    "favoriteRemoved": "Favorito eliminado",
+    "noFavorites": "Todavía no hay favoritos. Guardá una cita con el corazón.",
+    "filteredLibrary": "El filtro de contenido oculta las citas guardadas.",
+    "close": "Cerrar",
+    "openQuote": "Abrir cita",
+    "favoritesFull": "Llegaste a 500 favoritos. Eliminá uno para guardar otro.",
+    "storageUnavailable": "No se pudieron guardar los cambios. Revisá los permisos de almacenamiento del navegador."
   },
   "fr-FR": {
     "copyLink": "Copier le lien de la citation",
@@ -37,7 +73,19 @@
     "pause": "Mettre en pause",
     "resume": "Revenir à l’horloge",
     "pausedAt": "En pause à",
-    "nextQuote": "Autre citation de cette minute"
+    "nextQuote": "Autre citation de cette minute",
+    "myQuotes": "Mes citations",
+    "favorites": "Favoris",
+    "saveFavorite": "Ajouter aux favoris",
+    "removeFavorite": "Retirer des favoris",
+    "favoriteSaved": "Citation enregistrée",
+    "favoriteRemoved": "Favori supprimé",
+    "noFavorites": "Aucun favori. Enregistrez une citation avec le cœur.",
+    "filteredLibrary": "Le filtre de contenu masque les citations enregistrées.",
+    "close": "Fermer",
+    "openQuote": "Ouvrir la citation",
+    "favoritesFull": "Limite de 500 favoris atteinte. Supprimez-en un pour continuer.",
+    "storageUnavailable": "Impossible d’enregistrer les modifications. Vérifiez les autorisations de stockage du navigateur."
   },
   "de-DE": {
     "copyLink": "Link zum Zitat kopieren",
@@ -47,7 +95,19 @@
     "pause": "Lesen pausieren",
     "resume": "Zurück zur aktuellen Uhrzeit",
     "pausedAt": "Pausiert um",
-    "nextQuote": "Weiteres Zitat dieser Minute"
+    "nextQuote": "Weiteres Zitat dieser Minute",
+    "myQuotes": "Meine Zitate",
+    "favorites": "Favoriten",
+    "saveFavorite": "Als Favorit speichern",
+    "removeFavorite": "Favorit entfernen",
+    "favoriteSaved": "Zitat gespeichert",
+    "favoriteRemoved": "Favorit entfernt",
+    "noFavorites": "Noch keine Favoriten. Speichern Sie ein Zitat mit dem Herz.",
+    "filteredLibrary": "Der Inhaltsfilter blendet die gespeicherten Zitate aus.",
+    "close": "Schließen",
+    "openQuote": "Zitat öffnen",
+    "favoritesFull": "500 Favoriten erreicht. Entfernen Sie einen, um einen neuen zu speichern.",
+    "storageUnavailable": "Änderungen konnten nicht gespeichert werden. Prüfen Sie die Speicherberechtigungen des Browsers."
   },
   "it-IT": {
     "copyLink": "Copia il link della citazione",
@@ -57,7 +117,19 @@
     "pause": "Pausa lettura",
     "resume": "Torna all’orologio",
     "pausedAt": "In pausa alle",
-    "nextQuote": "Un’altra citazione di questo minuto"
+    "nextQuote": "Un’altra citazione di questo minuto",
+    "myQuotes": "Le mie citazioni",
+    "favorites": "Preferiti",
+    "saveFavorite": "Salva nei preferiti",
+    "removeFavorite": "Rimuovi dai preferiti",
+    "favoriteSaved": "Citazione salvata",
+    "favoriteRemoved": "Preferito rimosso",
+    "noFavorites": "Nessun preferito. Salva una citazione con il cuore.",
+    "filteredLibrary": "Il filtro dei contenuti nasconde le citazioni salvate.",
+    "close": "Chiudi",
+    "openQuote": "Apri citazione",
+    "favoritesFull": "Hai raggiunto 500 preferiti. Rimuovine uno per salvarne un altro.",
+    "storageUnavailable": "Impossibile salvare le modifiche. Controlla i permessi di archiviazione del browser."
   },
   "pt-PT": {
     "copyLink": "Copiar ligação da citação",
@@ -67,6 +139,18 @@
     "pause": "Pausar leitura",
     "resume": "Voltar ao relógio",
     "pausedAt": "Em pausa às",
-    "nextQuote": "Outra citação deste minuto"
+    "nextQuote": "Outra citação deste minuto",
+    "myQuotes": "As minhas citações",
+    "favorites": "Favoritos",
+    "saveFavorite": "Guardar favorito",
+    "removeFavorite": "Remover favorito",
+    "favoriteSaved": "Citação guardada",
+    "favoriteRemoved": "Favorito removido",
+    "noFavorites": "Ainda não há favoritos. Guarde uma citação com o coração.",
+    "filteredLibrary": "O filtro de conteúdo oculta as citações guardadas.",
+    "close": "Fechar",
+    "openQuote": "Abrir citação",
+    "favoritesFull": "Atingiu 500 favoritos. Remova um para guardar outro.",
+    "storageUnavailable": "Não foi possível guardar as alterações. Verifique as permissões de armazenamento do navegador."
   }
 }

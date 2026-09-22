@@ -9,7 +9,9 @@ export function initShare() {
 
   document.getElementById('download')?.addEventListener('click', downloadQuote);
   store.subscribe((state) => {
-    if (share) (share as HTMLButtonElement).disabled = !state['active-quote'] || !getQuoteUrl(state['active-quote']);
+    if (share)
+      (share as HTMLButtonElement).disabled =
+        !!state.quote || !state['active-quote'] || !getQuoteUrl(state['active-quote']);
   });
   if (share) (share as HTMLButtonElement).disabled = true;
 
@@ -48,7 +50,7 @@ async function getCanvas() {
 
 export async function shareQuote() {
   const quote = store.get('active-quote');
-  if (!quote) return;
+  if (!quote || store.get('quote')) return;
   const url = getQuoteUrl(quote);
   if (!url) return;
   try {

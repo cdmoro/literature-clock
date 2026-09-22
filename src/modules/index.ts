@@ -1,5 +1,6 @@
 import { initStaticMode } from './static';
 import { initClock } from './clock';
+import { initQuoteLibrary } from './quote-library';
 import { initReadingControls } from './reading-controls';
 import { initCopy } from './copy';
 import { initTransitions } from './transitions';
@@ -17,6 +18,7 @@ import { initProgressbarMode } from './progressbar';
 const MODULES = [
   initStaticMode,
   initReadingControls,
+  initQuoteLibrary,
   initClock,
   initCopy,
   initTransitions,
