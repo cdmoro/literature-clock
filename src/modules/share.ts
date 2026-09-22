@@ -1,17 +1,22 @@
 import html2canvas from 'html2canvas-pro';
 import { getTime } from '../utils';
-import { getStrings } from './locales';
 import { store } from '../store';
+import { getQuoteUrl } from './quote-links';
+import { readingStrings, showQuoteNotice } from './reading-ui';
 
 export function initShare() {
   const share = document.getElementById('share');
 
   document.getElementById('download')?.addEventListener('click', downloadQuote);
+  store.subscribe((state) => {
+    if (share) (share as HTMLButtonElement).disabled = !state['active-quote'] || !getQuoteUrl(state['active-quote']);
+  });
+  if (share) (share as HTMLButtonElement).disabled = true;
 
-  if ('share' in navigator) {
-    share?.addEventListener('click', shareQuote);
-  } else {
-    share?.remove();
+  share?.addEventListener('click', shareQuote);
+  if (!('share' in navigator) && share) {
+    share.title = readingStrings().copyLink;
+    share.setAttribute('aria-label', readingStrings().copyLink);
   }
 }
 
@@ -41,54 +46,36 @@ async function getCanvas() {
   }
 }
 
-async function shareQuote() {
-  const canvas = await getCanvas();
-
-  canvas?.toBlob((blob) => {
-    if (blob) {
-      const time = getTime();
-      const locale = store.get('locale');
-      const strings = getStrings(locale);
-      const filesArray = [
-        new File([blob], `Quote ${time}.png`, {
-          type: 'image/png',
-          lastModified: new Date().getTime(),
-        }),
-      ];
-
-      const url = new URL('https://literatureclock.netlify.app/');
-      const theme = store.get('theme');
-
-      if (locale) {
-        url.searchParams.append('locale', locale);
-      }
-
-      if (theme) {
-        url.searchParams.append('theme', theme);
-      }
-
-      const color = store.get('color');
-      if (color && color !== '#d24335') {
-        url.searchParams.append('color', color);
-      }
-
-      const shareData = {
-        files: filesArray,
-        text: `${strings.document_title}`,
-        url: url.toString(),
-      };
-
-      if (navigator.canShare && navigator.canShare(shareData)) {
-        navigator.share(shareData);
-      }
+export async function shareQuote() {
+  const quote = store.get('active-quote');
+  if (!quote) return;
+  const url = getQuoteUrl(quote);
+  if (!url) return;
+  try {
+    if (!navigator.share) {
+      await navigator.clipboard.writeText(url);
+      showQuoteNotice(readingStrings().linkCopied);
+      return;
     }
-  });
+    const text = `${quote.quote_raw} — ${quote.title}, ${quote.author}`;
+    const shareData: ShareData = { text, url };
+    const canvas = await getCanvas();
+    const blob = await new Promise<Blob | null>((resolve) => (canvas ? canvas.toBlob(resolve) : resolve(null)));
+    if (blob && store.get('active-quote') === quote) {
+      const files = [new File([blob], `Quote ${quote.time}.png`, { type: 'image/png' })];
+      if (navigator.canShare?.({ ...shareData, files })) shareData.files = files;
+    }
+    await navigator.share(shareData);
+  } catch (error) {
+    if (error instanceof DOMException && error.name === 'AbortError') return;
+    showQuoteNotice(readingStrings().linkFailed);
+  }
 }
 
 async function downloadQuote() {
   const canvas = await getCanvas();
   const url = canvas?.toDataURL('image/png');
-  const time = getTime();
+  const time = store.get('active-quote')?.time || getTime();
 
   if (url) {
     const a = document.createElement('a');

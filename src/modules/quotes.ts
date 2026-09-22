@@ -7,6 +7,7 @@ import { cancelQuoteTransition, transitionQuote } from './transitions';
 
 let latestRequest = 0;
 import { store } from '../store';
+import { readingStrings, showQuoteNotice } from './reading-ui';
 
 function prefetchNextQuotes(locale: string) {
   const now = new Date();
@@ -18,6 +19,8 @@ function prefetchNextQuotes(locale: string) {
 
   fetch(`../times/${locale}/${nextFileName}.json`, {
     cache: 'force-cache',
+  }).catch(() => {
+    /* Prefetch is optional when offline. */
   });
 }
 
@@ -33,7 +36,7 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
 
     let quotes = (await response.json()) as Quote[];
 
-    if (store.get('work') && !store.get('index')) {
+    if (store.get('work')) {
       quotes = quotes.filter((q) => q.sfw !== 'nsfw');
     }
 
@@ -67,6 +70,12 @@ async function getQuote(time: string, locale: Locale, preserveQuote: boolean = f
     }
   }
 
+  const requestedId = store.get('quote-id');
+  if (requestedId) {
+    const index = quotes.findIndex((quote) => quote.id === requestedId);
+    if (index >= 0) quoteIndex = index;
+  }
+
   const quote = Object.assign({}, quotes[quoteIndex]) as ResolvedQuote;
   quote.index = quoteIndex;
   quote.locale = locale;
@@ -96,7 +105,7 @@ export async function updateQuote({ time = getTime(), preserveQuote = false } = 
     return;
   }
 
-  if (store.get('random-locale')) {
+  if (store.get('random-locale') && !store.get('quote-id')) {
     locale = getRandomLocale();
   }
 
@@ -110,6 +119,10 @@ export async function updateQuote({ time = getTime(), preserveQuote = false } = 
 
   await transitionQuote(
     () => {
+      showQuoteNotice(
+        store.get('quote-id') && quote.id !== store.get('quote-id') ? readingStrings().quoteUnavailable : '',
+        true,
+      );
       store.set('active-quote', quote);
       updateGHLinks(time, quote, locale);
       if (store.get('theme')?.startsWith('photo')) {

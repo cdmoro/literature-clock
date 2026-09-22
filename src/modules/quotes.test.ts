@@ -93,3 +93,22 @@ it('does not let a slower earlier request replace the current quote', async () =
   await previous;
   expect(active().id).toBe(second.id);
 });
+
+it('opens a stable ID even when saved random language and a legacy index disagree', async () => {
+  state['quote-id'] = first.id;
+  state['random-locale'] = true;
+  state.index = '1';
+  await updateQuote();
+  expect(active().id).toBe(first.id);
+  expect(active().locale).toBe('en-GB');
+});
+
+it('explains missing IDs and respects work mode even with a legacy index', async () => {
+  state.work = true;
+  state.index = '0';
+  state['quote-id'] = first.id;
+  vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => [{ ...first, sfw: 'nsfw' }, second] } as Response);
+  await updateQuote();
+  expect(active().id).toBe(second.id);
+  expect(document.getElementById('quote-notice')?.textContent).toContain('unavailable');
+});

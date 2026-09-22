@@ -149,3 +149,7 @@ New languages start from `quotes.en-GB.csv` with `Draft=true` and stay out of th
 clock's selector until explicitly enabled. `?locale=el-GR-draft` previews pending
 quotes after generating the time data, without enabling `locale=el-GR`. Draft URLs
 are unlisted, not private. See the [translation workflow](scripts/TRANSLATING.md).
+
+### Links to individual quotes
+
+Sharing includes the displayed quote's language, minute and stable `quote-id`, plus its theme, font and colour. Browsers without native sharing copy the link to the clipboard; image download remains available separately. The recipient's random-language preference cannot change a linked quote. Content filters still apply: unavailable or filtered IDs display an explanatory notice and another available quote. Legacy `index` links remain supported.

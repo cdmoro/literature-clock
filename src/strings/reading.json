@@ -1,0 +1,44 @@
+{
+  "en-GB": {
+    "copyLink": "Copy quote link",
+    "linkCopied": "Link copied",
+    "linkFailed": "Could not share the link. Please try again.",
+    "quoteUnavailable": "This quote is unavailable in this language or with your content filter. Showing another quote."
+  },
+  "en-US": {
+    "copyLink": "Copy quote link",
+    "linkCopied": "Link copied",
+    "linkFailed": "Could not share the link. Please try again.",
+    "quoteUnavailable": "This quote is unavailable in this language or with your content filter. Showing another quote."
+  },
+  "es-ES": {
+    "copyLink": "Copiar enlace de la cita",
+    "linkCopied": "Enlace copiado",
+    "linkFailed": "No se pudo compartir el enlace. Intentá de nuevo.",
+    "quoteUnavailable": "Esta cita no está disponible en este idioma o con tu filtro de contenido. Se muestra otra cita."
+  },
+  "fr-FR": {
+    "copyLink": "Copier le lien de la citation",
+    "linkCopied": "Lien copié",
+    "linkFailed": "Impossible de partager le lien. Réessayez.",
+    "quoteUnavailable": "Cette citation est indisponible dans cette langue ou avec votre filtre de contenu. Une autre citation est affichée."
+  },
+  "de-DE": {
+    "copyLink": "Link zum Zitat kopieren",
+    "linkCopied": "Link kopiert",
+    "linkFailed": "Der Link konnte nicht geteilt werden. Bitte erneut versuchen.",
+    "quoteUnavailable": "Dieses Zitat ist in dieser Sprache oder mit dem Inhaltsfilter nicht verfügbar. Ein anderes Zitat wird angezeigt."
+  },
+  "it-IT": {
+    "copyLink": "Copia il link della citazione",
+    "linkCopied": "Link copiato",
+    "linkFailed": "Impossibile condividere il link. Riprova.",
+    "quoteUnavailable": "Questa citazione non è disponibile in questa lingua o con il filtro dei contenuti. Viene mostrata un’altra citazione."
+  },
+  "pt-PT": {
+    "copyLink": "Copiar ligação da citação",
+    "linkCopied": "Ligação copiada",
+    "linkFailed": "Não foi possível partilhar a ligação. Tente novamente.",
+    "quoteUnavailable": "Esta citação não está disponível neste idioma ou com o filtro de conteúdo. É apresentada outra citação."
+  }
+}

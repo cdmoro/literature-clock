@@ -20,6 +20,7 @@ export interface Stateless {
   fade?: boolean; // Legacy shared links and saved settings.
   'custom-font'?: string;
   time?: string;
+  'quote-id'?: string;
   quote?: string;
   scene?: string;
   progress?: string;

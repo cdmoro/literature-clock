@@ -475,3 +475,18 @@ body.share-quote #clock {
   font: 12px/1.4 system-ui, sans-serif;
   pointer-events: none;
 }
+
+#quote-notice {
+  position: fixed;
+  top: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: min(90vw, 36rem);
+  padding: 0.6rem 1rem;
+  background: var(--background);
+  color: var(--font-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 0.5rem;
+  font: 0.85rem/1.4 system-ui, sans-serif;
+  z-index: 10;
+}
