@@ -1,12 +1,58 @@
 :root {
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-  color: #272a25;
-  background: #f7f7f2;
+  color: var(--text);
+  background: var(--page);
+  color-scheme: light;
   font-synthesis: none;
-  --muted: #7b8176;
+  --text: #272a25;
+  --page: #f7f7f2;
+  --surface: #ffffff;
+  --field: #fcfcf8;
+  --muted: #72786d;
   --line: #e1e5da;
   --green: #304733;
+  --on-green: #ffffff;
+  --link: #304733;
   --lime: #e4edca;
+  --hover: #819373;
+  --focus: #6d8555;
+  --status: #6c8958;
+  --progress: #809764;
+  --batch: #edf1e5;
+  --batch-line: #e0e6d4;
+  --selected: #f0f3e8;
+  --selection-edge: #70884f;
+  --highlight: #ece6b9;
+  --error: #a23b28;
+  --warning: #fff0e6;
+  --warning-text: #8b432c;
+  --backdrop: #19211166;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --text: #e6e9e0;
+  --page: #171c18;
+  --surface: #202721;
+  --field: #1b221d;
+  --muted: #abb5a5;
+  --line: #3b463b;
+  --green: #c0d79e;
+  --on-green: #1b2b16;
+  --link: #c0d79e;
+  --lime: #39492e;
+  --hover: #92aa7d;
+  --focus: #c0d79e;
+  --status: #a7cb85;
+  --progress: #a7cb85;
+  --batch: #293425;
+  --batch-line: #414f36;
+  --selected: #303e29;
+  --selection-edge: #a7cb85;
+  --highlight: #61592c;
+  --error: #ffae96;
+  --warning: #442e25;
+  --warning-text: #ffc1a4;
+  --backdrop: #050a07aa;
 }
 * {
   box-sizing: border-box;
@@ -24,12 +70,12 @@ button {
   cursor: pointer;
   border: 1px solid var(--line);
   border-radius: 7px;
-  background: #fff;
+  background: var(--surface);
   padding: 10px 15px;
   color: inherit;
 }
 button:hover {
-  border-color: #819373;
+  border-color: var(--hover);
 }
 button:disabled {
   opacity: 0.45;
@@ -39,18 +85,18 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #6d8555;
+  outline: 2px solid var(--focus);
   outline-offset: 2px;
 }
 a {
-  color: var(--green);
+  color: var(--link);
 }
 [hidden] {
   display: none !important;
 }
 .sidebar {
   width: 240px;
-  background: #fff;
+  background: var(--surface);
   position: fixed;
   inset: 0 auto 0 0;
   border-right: 1px solid var(--line);
@@ -79,7 +125,7 @@ a {
 }
 .new-language {
   background: var(--green);
-  color: white;
+  color: var(--on-green);
   border: 0;
   margin-bottom: 25px;
 }
@@ -132,7 +178,7 @@ a {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #6c8958;
+  background: var(--status);
   margin-right: 6px;
 }
 main {
@@ -161,13 +207,13 @@ main {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   margin: 15px 0;
-  color: var(--green);
+  color: var(--link);
 }
 .message:empty {
   margin: 0;
 }
 .error {
-  color: #a23b28;
+  color: var(--error);
 }
 .eyebrow {
   font-size: 10px;
@@ -212,7 +258,7 @@ h3 {
 .overview-card {
   text-align: left;
   padding: 24px;
-  background: #fff;
+  background: var(--surface);
 }
 .overview-card h2 {
   font:
@@ -238,7 +284,7 @@ progress::-webkit-progress-bar {
   border-radius: 4px;
 }
 progress::-webkit-progress-value {
-  background: #809764;
+  background: var(--progress);
   border-radius: 4px;
 }
 .workspace-heading {
@@ -261,8 +307,8 @@ progress::-webkit-progress-value {
 }
 .primary {
   background: var(--green);
-  border-color: var(--green);
-  color: #fff;
+  border-color: var(--link);
+  color: var(--on-green);
 }
 .secondary {
   background: transparent;
@@ -273,7 +319,7 @@ progress::-webkit-progress-value {
   grid-template-columns: repeat(4, 1fr);
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: white;
+  background: var(--surface);
   padding: 22px 0;
   margin-bottom: 25px;
 }
@@ -301,8 +347,8 @@ progress::-webkit-progress-value {
   align-items: center;
   gap: 14px;
   padding: 22px;
-  background: #edf1e5;
-  border: 1px solid #e0e6d4;
+  background: var(--batch);
+  border: 1px solid var(--batch-line);
   border-radius: 8px;
 }
 .batch > div {
@@ -319,7 +365,7 @@ progress::-webkit-progress-value {
 }
 .batch input {
   width: 70px;
-  background: #fff;
+  background: var(--surface);
   margin-left: 8px;
   padding: 8px;
   border: 1px solid var(--line);
@@ -348,7 +394,7 @@ progress::-webkit-progress-value {
   padding: 10px 12px;
   border: 1px solid var(--line);
   border-radius: 5px;
-  background: white;
+  background: var(--surface);
   font-size: 12px;
 }
 .review-toolbar input {
@@ -359,7 +405,7 @@ progress::-webkit-progress-value {
   grid-template-columns: 280px minmax(0, 1fr);
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: white;
+  background: var(--surface);
   overflow: hidden;
 }
 .quote-list {
@@ -376,11 +422,11 @@ progress::-webkit-progress-value {
   border-bottom: 1px solid var(--line);
   border-radius: 0;
   padding: 18px;
-  background: #fff;
+  background: var(--surface);
 }
 .quote-item.active {
-  background: #f0f3e8;
-  box-shadow: inset 3px 0 #70884f;
+  background: var(--selected);
+  box-shadow: inset 3px 0 var(--selection-edge);
 }
 .quote-item > span {
   display: flex;
@@ -446,7 +492,7 @@ blockquote {
   margin-bottom: 30px;
 }
 mark {
-  background: #ece6b9;
+  background: var(--highlight);
   padding: 0 2px;
   color: inherit;
 }
@@ -462,9 +508,9 @@ label input {
   padding: 12px;
   border: 1px solid var(--line);
   border-radius: 5px;
-  background: #fcfcf8;
+  background: var(--field);
   font-size: 13px;
-  color: #343a2e;
+  color: var(--text);
   margin-top: 8px;
   line-height: 1.6;
 }
@@ -493,8 +539,8 @@ textarea {
 }
 .validation {
   padding: 12px;
-  background: #fff0e6;
-  color: #8b432c;
+  background: var(--warning);
+  color: var(--warning-text);
   font-size: 12px;
 }
 .editor-actions {
@@ -520,7 +566,7 @@ dialog {
   color: inherit;
 }
 dialog::backdrop {
-  background: #19211166;
+  background: var(--backdrop);
 }
 dialog h2 {
   font:
@@ -637,5 +683,47 @@ dialog label {
   }
   h1 {
     font-size: 42px;
+  }
+}
+
+input,
+textarea,
+select {
+  color: var(--text);
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+dialog {
+  background: var(--surface);
+}
+dialog .error {
+  color: var(--error);
+}
+.appearance {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.appearance label {
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+.appearance select {
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--surface);
+  font-size: 11px;
+}
+@media (max-width: 760px) {
+  .topbar {
+    flex-wrap: wrap;
+    gap: 8px;
+    height: auto;
+    min-height: 55px;
+    padding: 10px 0;
   }
 }

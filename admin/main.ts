@@ -1,4 +1,5 @@
 import './style.css';
+import { initAppearance } from './appearance';
 
 type Quote = Record<'Id' | 'Time' | 'Quote' | 'Quote time' | 'Title' | 'Author' | 'SFW', string> & { Draft?: string };
 type Entry = { quote: Quote; source: Quote | null; issues: string[] };
@@ -68,7 +69,7 @@ el('app').innerHTML = `
 <aside class="sidebar"><a class="brand" href="/">LC<span>Literature Clock</span></a>
 <div class="section-label">TRANSLATION STUDIO</div><button id="new-language" class="new-language">＋ New language</button>
 <nav id="languages" aria-label="Languages"></nav><div class="local-note"><i></i> Local workspace<span>Changes are saved to your repository.</span></div></aside>
-<main><header class="topbar"><span>CATALOGUE / TRANSLATIONS</span><span class="local-badge">LOCAL ONLY</span></header>
+<main><header class="topbar"><span>CATALOGUE / TRANSLATIONS</span><div class="appearance"><label for="appearance">Theme</label><select id="appearance"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select><span class="local-badge">LOCAL ONLY</span></div></header>
 <div id="message" class="message" role="status" aria-live="polite"></div>
 <section id="welcome"><p class="eyebrow">A WORLD OF WORDS</p><h1>Every language.<br>One quote at a time.</h1><p class="intro">Translate, refine and review your literary clock.<br>Choose a catalogue to begin, or start a new language.</p><div id="overview" class="overview"></div></section>
 <section id="workspace" hidden><div class="workspace-heading"><div><p class="eyebrow">LANGUAGE WORKSPACE</p><h1 id="locale-title"></h1><p id="locale-status"></p></div><div class="heading-actions"><button id="clock-preview" class="secondary">Generate clock preview ↗</button><button id="prepare-pr" class="secondary">Create catalogue PR</button></div></div>
@@ -78,6 +79,8 @@ el('app').innerHTML = `
 </main>
 <dialog id="create-dialog"><form id="create-form"><p class="eyebrow">NEW CATALOGUE</p><h2>Start a new language</h2><p>Every source quote is copied from British English as a draft. Your language stays out of the clock's selector.</p><label>Locale<input id="new-locale" placeholder="el-GR" pattern="[a-z]{2,3}-[A-Z]{2}" required></label><label>Google language code<input id="new-target" placeholder="el" required></label><p id="create-error" class="error" role="alert"></p><div class="dialog-actions"><button type="button" id="cancel-create">Cancel</button><button class="primary">Create catalogue</button></div></form></dialog>
 <dialog id="pr-dialog"><h2>Create a catalogue PR?</h2><p>This will commit and push this language's CSV in an isolated branch, then open a GitHub pull request. Your current branch and other files are left untouched.</p><p>Draft rows remain accessible via the draft URL. Creating this PR does not enable a new language in the selector or merge the changes.</p><p>Git and the GitHub CLI must already be authenticated.</p><div class="dialog-actions"><button id="cancel-pr">Cancel</button><button id="confirm-pr" class="primary">Create pull request</button></div></dialog>`;
+
+initAppearance(el<HTMLSelectElement>('appearance'));
 
 function renderLanguages() {
   el('languages').innerHTML = languages

@@ -16,7 +16,9 @@ npm ci
 npm run admin
 ```
 
-Open `http://127.0.0.1:5174`. This is a separate Vite application, backed by a
+Open `http://127.0.0.1:5174`. The Theme selector offers System, Light and Dark;
+it follows the system by default and remembers your choice independently of the clock.
+This is a separate Vite application, backed by a
 loopback-only Python API. It is never included in the clock's production build.
 Python 3.9+ and Node 22 are supported; the administrator needs no Python packages.
 
