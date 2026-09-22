@@ -157,3 +157,7 @@ Sharing includes the displayed quote's language, minute and stable `quote-id`, p
 ### Pause reading
 
 Use the pause button to keep reading the current quote while the real clock continues. A small status shows the quote's minute and a “Back to live clock” button, also available in Zen mode. Opening a `time`/`quote-id` link starts paused; resuming clears its fixed selection and immediately shows the current minute. Language and content-filter changes keep the paused minute. Pausing is local to the current page and is not saved as a preference.
+
+### More quotes for this minute
+
+The circular-arrow button pauses reading and selects another quote for the displayed minute and language. It visits all eligible quotes before repeating, avoids an immediate repeat across cycles, and respects Work mode. It is disabled when there is only one available quote or a fallback. “Back to live clock” ends browsing.

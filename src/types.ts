@@ -18,6 +18,7 @@ export interface Quote {
 
 export interface ResolvedQuote extends Quote {
   time: string;
+  variants: number;
   fallback: boolean;
   index: number;
   locale: Locale;
