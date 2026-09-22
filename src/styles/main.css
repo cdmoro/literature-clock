@@ -490,3 +490,21 @@ body.share-quote #clock {
   font: 0.85rem/1.4 system-ui, sans-serif;
   z-index: 10;
 }
+
+#reading-status {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 95vw;
+  z-index: 5;
+  font: 0.75rem/1.5 system-ui, sans-serif;
+  color: var(--font-color);
+  background: var(--background);
+  border-radius: 0.4rem;
+  padding: 0.2rem 0.5rem;
+}
+#reading-status button { margin-inline-start: 0.5rem; font: inherit; }
+body.paused #time-clock { display: block !important; }
+body.paused #quote-notice { top: 4.5rem; }

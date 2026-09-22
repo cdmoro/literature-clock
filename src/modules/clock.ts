@@ -1,5 +1,5 @@
 import { updateQuote } from './quotes';
-import { getTime, updateFavicon } from '../utils';
+import { getLiveTime, updateFavicon } from '../utils';
 import { setDayParameters } from './horizon';
 import { store } from '../store';
 
@@ -18,7 +18,7 @@ function updateProgressBar() {
 }
 
 async function updateTime() {
-  const time = store.get('time') || getTime();
+  const time = getLiveTime();
   if (store.get('theme')?.startsWith('horizon')) setDayParameters();
 
   if (lastTime !== time) {
@@ -26,27 +26,24 @@ async function updateTime() {
       updateFavicon(time);
     }
 
-
     document.title = document.title.replace(/[0-9]{2}:[0-9]{2}/, time);
 
     const timeEl = document.getElementById('time-clock');
     if (timeEl) {
-      timeEl.innerHTML = time;
+      timeEl.textContent = time;
     }
 
-    updateQuote({ time });
+    if (!store.get('paused')) void updateQuote({ time });
     lastTime = time;
   }
 }
 
 export function initClock() {
-  const testTime = store.get('time');
-  const testQuote = store.get('quote');
-  const isTest = !!(testTime || testQuote);
-
-  updateTime();
-
-  if (!isTest) {
+  lastTime = '';
+  if (store.get('time')) store.set('paused', true, false);
+  if (store.get('paused')) void updateQuote();
+  void updateTime();
+  if (!store.get('quote')) {
     setInterval(updateTime, 1000);
     setInterval(updateProgressBar, 10);
   }

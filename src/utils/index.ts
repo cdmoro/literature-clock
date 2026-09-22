@@ -6,12 +6,15 @@ import { store } from '../store';
 const GITHUB_NEW_ISSUE_URL = 'https://github.com/cdmoro/literature-clock/issues/new';
 
 export function getTime() {
-  const testTime = store.get('time');
+  return store.get('time') || getLiveTime();
+}
+
+export function getLiveTime() {
   const now = new Date();
   const hours = now.getHours();
   const minutes = now.getMinutes();
 
-  return testTime || `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+  return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
 }
 
 export function updateGHLinks(time: string, quote: Quote, locale: Locale) {

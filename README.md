@@ -153,3 +153,7 @@ are unlisted, not private. See the [translation workflow](scripts/TRANSLATING.md
 ### Links to individual quotes
 
 Sharing includes the displayed quote's language, minute and stable `quote-id`, plus its theme, font and colour. Browsers without native sharing copy the link to the clipboard; image download remains available separately. The recipient's random-language preference cannot change a linked quote. Content filters still apply: unavailable or filtered IDs display an explanatory notice and another available quote. Legacy `index` links remain supported.
+
+### Pause reading
+
+Use the pause button to keep reading the current quote while the real clock continues. A small status shows the quote's minute and a “Back to live clock” button, also available in Zen mode. Opening a `time`/`quote-id` link starts paused; resuming clears its fixed selection and immediately shows the current minute. Language and content-filter changes keep the paused minute. Pausing is local to the current page and is not saved as a preference.
