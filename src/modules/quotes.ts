@@ -7,6 +7,8 @@ import { cancelQuoteTransition, transitionQuote } from './transitions';
 
 let latestRequest = 0;
 import { store } from '../store';
+import { QuoteCycle } from '../utils/quote-cycle';
+const quoteCycle = new QuoteCycle();
 import { readingStrings, showQuoteNotice } from './reading-ui';
 
 function prefetchNextQuotes(locale: string) {
@@ -51,7 +53,12 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
   }
 }
 
-async function getQuote(time: string, locale: Locale, preserveQuote: boolean = false): Promise<ResolvedQuote> {
+async function getQuote(
+  time: string,
+  locale: Locale,
+  preserveQuote: boolean = false,
+  nextVariant = false,
+): Promise<ResolvedQuote> {
   const quotes = await getQuotes(time, locale);
   const strings = getStrings(locale);
 
@@ -76,10 +83,15 @@ async function getQuote(time: string, locale: Locale, preserveQuote: boolean = f
     if (index >= 0) quoteIndex = index;
   }
 
+  if (nextVariant) {
+    quoteIndex = quoteCycle.next(quotes, `${time}/${locale}/${!!store.get('work')}`, store.get('active-quote')?.id);
+  }
+
   const quote = Object.assign({}, quotes[quoteIndex]) as ResolvedQuote;
   quote.index = quoteIndex;
   quote.locale = locale;
   quote.time = time;
+  quote.variants = quotes.length;
   quote.quote_raw = `${quote.quote_first}${quote.quote_time_case}${quote.quote_last}`.replace(/<br>/g, '\n');
 
   if (!quote.quote_time_case) {
@@ -103,6 +115,7 @@ export function cancelPendingQuote() {
 export async function updateQuote({
   time = store.get('time') || (store.get('paused') ? store.get('active-quote')?.time : undefined) || getTime(),
   preserveQuote = false,
+  nextVariant = false,
 } = {}) {
   const request = ++latestRequest;
   cancelQuoteTransition();
@@ -113,11 +126,13 @@ export async function updateQuote({
     return;
   }
 
-  if (store.get('random-locale') && !store.get('quote-id')) {
+  if (nextVariant && store.get('active-quote')) {
+    locale = store.get('active-quote')!.locale;
+  } else if (store.get('random-locale') && !store.get('quote-id')) {
     locale = getRandomLocale();
   }
 
-  const quote = await getQuote(time, locale, preserveQuote);
+  const quote = await getQuote(time, locale, preserveQuote, nextVariant);
   if (request !== latestRequest) return;
   const timeClass = quote.quote_time_case.replace(/<[^>]*>/g, '').length <= 11 ? 'time text-nowrap' : 'time';
   const quoteText =

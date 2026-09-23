@@ -112,3 +112,14 @@ it('explains missing IDs and respects work mode even with a legacy index', async
   expect(active().id).toBe(second.id);
   expect(document.getElementById('quote-notice')?.textContent).toContain('unavailable');
 });
+
+it('keeps the displayed language when exploring in random-language mode', async () => {
+  state['random-locale'] = true;
+  state.paused = true;
+  state['active-quote'] = { ...first, time: '09:00', locale: 'en-GB' };
+  await updateQuote({ nextVariant: true });
+  expect(active().locale).toBe('en-GB');
+  expect(active().time).toBe('09:00');
+  expect(active().id).toBe(second.id);
+  expect(active().variants).toBe(2);
+});

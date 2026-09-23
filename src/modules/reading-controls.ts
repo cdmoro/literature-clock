@@ -29,7 +29,28 @@ export function initReadingControls() {
   pause.id = 'pause-reading';
   pause.type = 'button';
   pause.addEventListener('click', () => (store.get('paused') ? resumeReading() : pauseReading()));
-  group.appendChild(pause);
+  const next = document.createElement('button');
+  next.id = 'next-quote';
+  next.type = 'button';
+  next.textContent = '↻';
+  let changing = false;
+  next.addEventListener('click', async () => {
+    if (changing || next.disabled) return;
+    changing = true;
+    pauseReading();
+    for (const key of ['quote-id', 'index'] as const) {
+      store.set(key, undefined, false);
+      store.removeFromUrl(key);
+    }
+    refresh();
+    try {
+      await updateQuote({ nextVariant: true });
+    } finally {
+      changing = false;
+      refresh();
+    }
+  });
+  group.append(pause, next);
   document.getElementById('settings')?.prepend(group);
 
   const status = document.createElement('div');
@@ -50,6 +71,10 @@ export function initReadingControls() {
     pause.setAttribute('aria-label', pause.title);
     pause.setAttribute('aria-pressed', String(paused));
     pause.disabled = !store.get('active-quote') || !!store.get('quote');
+    const quote = store.get('active-quote');
+    next.title = strings.nextQuote;
+    next.setAttribute('aria-label', strings.nextQuote);
+    next.disabled = changing || !quote || quote.fallback || quote.variants < 2 || !!store.get('quote');
     status.hidden = !paused;
     label.textContent = `${strings.pausedAt} ${store.get('active-quote')?.time || store.get('time') || ''}`;
     resume.textContent = strings.resume;
