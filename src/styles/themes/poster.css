@@ -51,19 +51,28 @@
   transform-origin: left;
 }
 
+[data-theme='poster-light'] body {
+  background: color-mix(in srgb, var(--accent-color) 15%, #fff);
+}
+
 [data-theme='poster-light'] blockquote {
-  border-color: #111111;
+  border-color: color-mix(in srgb, var(--accent-color) 15%, #111);
   box-shadow:
     5px 5px 10px #333333 inset,
-    10px 10px 25px #333;
+    10px 10px 15px #444B;
   background: #ffffff;
+  background-blend-mode: difference;
+}
+
+[data-theme='poster-dark'] body {
+  background: color-mix(in srgb, var(--accent-color) 16%, #101016);
 }
 
 [data-theme='poster-dark'] blockquote {
-  border-color: #dfab5d;
+  border-color: color-mix(in srgb, var(--accent-color) 16%, #dfab5d);
   box-shadow:
     5px 5px 15px #000000 inset,
-    10px 10px 25px #000000;
+    10px 10px 15px #000C;
   color: #ffffff;
   background-color: #000000;
   background-blend-mode: hard-light;
