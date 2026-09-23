@@ -1,7 +1,17 @@
 import { store } from '../store';
 import { getQuoteUrl } from './quote-links';
 import { readingStrings, showQuoteNotice } from './reading-ui';
-import { FAVORITES_KEY, isCollectible, quoteKey, readFavorites, toggleFavorite } from '../utils/quote-collection';
+import {
+  FAVORITES_KEY,
+  HISTORY_KEY,
+  clearHistory,
+  isCollectible,
+  quoteKey,
+  readFavorites,
+  readHistory,
+  recordQuote,
+  toggleFavorite,
+} from '../utils/quote-collection';
 import type { ResolvedQuote } from '../types';
 
 export function initQuoteLibrary() {
@@ -38,7 +48,46 @@ export function initQuoteLibrary() {
   empty.setAttribute('role', 'status');
   const feedback = document.createElement('p');
   feedback.setAttribute('role', 'status');
-  dialog.append(header, feedback, empty, list);
+  let view: 'favorites' | 'history' = 'favorites';
+  const tabs = document.createElement('div');
+  tabs.className = 'library-tabs';
+  tabs.setAttribute('role', 'tablist');
+  const tabButtons = (['favorites', 'history'] as const).map((name) => {
+    const button = document.createElement('button');
+    button.id = `library-${name}-tab`;
+    button.type = 'button';
+    button.setAttribute('role', 'tab');
+    button.setAttribute('aria-controls', 'library-panel');
+    button.addEventListener('click', () => {
+      view = name;
+      feedback.textContent = '';
+      refresh();
+    });
+    tabs.appendChild(button);
+    return button;
+  });
+  tabs.addEventListener('keydown', (event) => {
+    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+    event.preventDefault();
+    const index = event.key === 'Home' ? 0 : event.key === 'End' ? 1 : view === 'favorites' ? 1 : 0;
+    tabButtons[index].click();
+    tabButtons[index].focus();
+  });
+  const panel = document.createElement('section');
+  panel.id = 'library-panel';
+  panel.setAttribute('role', 'tabpanel');
+  panel.tabIndex = 0;
+  const clear = document.createElement('button');
+  clear.id = 'clear-quote-history';
+  clear.type = 'button';
+  clear.addEventListener('click', () => {
+    const success = clearHistory();
+    feedback.textContent = success ? readingStrings().historyCleared : readingStrings().storageUnavailable;
+    refresh();
+    tabButtons[1].focus();
+  });
+  panel.append(clear, feedback, empty, list);
+  dialog.append(header, tabs, panel);
   document.body.appendChild(dialog);
 
   const changeFavorite = (quote: ResolvedQuote) => {
@@ -69,13 +118,29 @@ export function initQuoteLibrary() {
     favorite.disabled = !isCollectible(current) || !!store.get('quote');
     open.title = strings.myQuotes;
     open.setAttribute('aria-label', strings.myQuotes);
-    title.textContent = strings.favorites;
+    title.textContent = strings.myQuotes;
+    tabs.setAttribute('aria-label', strings.myQuotes);
+    tabButtons.forEach((button, index) => {
+      const selected = (index === 0 ? 'favorites' : 'history') === view;
+      button.textContent = index === 0 ? strings.favorites : strings.history;
+      button.setAttribute('aria-selected', String(selected));
+      button.tabIndex = selected ? 0 : -1;
+    });
+    panel.setAttribute('aria-labelledby', `library-${view}-tab`);
+    clear.hidden = view !== 'history';
+    clear.textContent = strings.clearHistory;
     close.setAttribute('aria-label', strings.close);
     if (!dialog.open || !refreshList) return;
     list.replaceChildren();
-    const visible = favorites.filter((quote) => !store.get('work') || quote.sfw !== 'nsfw');
+    const items = view === 'favorites' ? favorites : readHistory();
+    clear.disabled = readHistory().length === 0;
+    const visible = items.filter((quote) => !store.get('work') || quote.sfw !== 'nsfw');
     empty.hidden = visible.length > 0;
-    empty.textContent = favorites.length ? strings.filteredLibrary : strings.noFavorites;
+    empty.textContent = items.length
+      ? strings.filteredLibrary
+      : view === 'favorites'
+        ? strings.noFavorites
+        : strings.noHistory;
     for (const quote of visible) {
       const item = document.createElement('li');
       const text = document.createElement('p');
@@ -90,7 +155,8 @@ export function initQuoteLibrary() {
       link.href = getQuoteUrl(quote)!;
       const remove = document.createElement('button');
       remove.type = 'button';
-      remove.textContent = strings.removeFavorite;
+      const isFavorite = favorites.some((item) => quoteKey(item) === quoteKey(quote));
+      remove.textContent = isFavorite ? strings.removeFavorite : strings.saveFavorite;
       remove.addEventListener('click', () => {
         const index = Array.from(list.children).indexOf(item);
         changeFavorite(quote);
@@ -113,9 +179,19 @@ export function initQuoteLibrary() {
   });
   dialog.addEventListener('close', () => open.focus());
   window.addEventListener('storage', (event) => {
-    if (event.key === FAVORITES_KEY || event.key === null) refresh();
+    if (event.key === FAVORITES_KEY || event.key === HISTORY_KEY || event.key === null) refresh();
   });
+  let storageWarningShown = false;
+  const remember = (quote: ResolvedQuote | undefined) => {
+    if (!isCollectible(quote) || store.get('quote')) return;
+    if (!recordQuote(quote) && !storageWarningShown) {
+      storageWarningShown = true;
+      showQuoteNotice(readingStrings().storageUnavailable);
+    }
+  };
+  remember(store.get('active-quote'));
   store.subscribe((state, previous) => {
+    if (state['active-quote'] !== previous['active-quote']) remember(state['active-quote']);
     if (state.locale !== previous.locale || state.work !== previous.work) refresh();
     else if (state['active-quote'] !== previous['active-quote']) refresh(false);
   });

@@ -19,7 +19,11 @@
     "close": "Close",
     "openQuote": "Open quote",
     "favoritesFull": "Your favorites are full (500). Remove one to save another.",
-    "storageUnavailable": "Could not save changes on this device. Check browser storage permissions."
+    "storageUnavailable": "Could not save changes on this device. Check browser storage permissions.",
+    "history": "Recent",
+    "clearHistory": "Clear history",
+    "historyCleared": "History cleared",
+    "noHistory": "No recent quotes. The last 100 quotes you view will appear here."
   },
   "en-US": {
     "copyLink": "Copy quote link",
@@ -41,7 +45,11 @@
     "close": "Close",
     "openQuote": "Open quote",
     "favoritesFull": "Your favorites are full (500). Remove one to save another.",
-    "storageUnavailable": "Could not save changes on this device. Check browser storage permissions."
+    "storageUnavailable": "Could not save changes on this device. Check browser storage permissions.",
+    "history": "Recent",
+    "clearHistory": "Clear history",
+    "historyCleared": "History cleared",
+    "noHistory": "No recent quotes. The last 100 quotes you view will appear here."
   },
   "es-ES": {
     "copyLink": "Copiar enlace de la cita",
@@ -63,7 +71,11 @@
     "close": "Cerrar",
     "openQuote": "Abrir cita",
     "favoritesFull": "Llegaste a 500 favoritos. Eliminá uno para guardar otro.",
-    "storageUnavailable": "No se pudieron guardar los cambios. Revisá los permisos de almacenamiento del navegador."
+    "storageUnavailable": "No se pudieron guardar los cambios. Revisá los permisos de almacenamiento del navegador.",
+    "history": "Recientes",
+    "clearHistory": "Borrar historial",
+    "historyCleared": "Historial borrado",
+    "noHistory": "No hay citas recientes. Acá aparecerán las últimas 100 citas que veas."
   },
   "fr-FR": {
     "copyLink": "Copier le lien de la citation",
@@ -85,7 +97,11 @@
     "close": "Fermer",
     "openQuote": "Ouvrir la citation",
     "favoritesFull": "Limite de 500 favoris atteinte. Supprimez-en un pour continuer.",
-    "storageUnavailable": "Impossible d’enregistrer les modifications. Vérifiez les autorisations de stockage du navigateur."
+    "storageUnavailable": "Impossible d’enregistrer les modifications. Vérifiez les autorisations de stockage du navigateur.",
+    "history": "Récentes",
+    "clearHistory": "Effacer l’historique",
+    "historyCleared": "Historique effacé",
+    "noHistory": "Aucune citation récente. Les 100 dernières citations vues apparaîtront ici."
   },
   "de-DE": {
     "copyLink": "Link zum Zitat kopieren",
@@ -107,7 +123,11 @@
     "close": "Schließen",
     "openQuote": "Zitat öffnen",
     "favoritesFull": "500 Favoriten erreicht. Entfernen Sie einen, um einen neuen zu speichern.",
-    "storageUnavailable": "Änderungen konnten nicht gespeichert werden. Prüfen Sie die Speicherberechtigungen des Browsers."
+    "storageUnavailable": "Änderungen konnten nicht gespeichert werden. Prüfen Sie die Speicherberechtigungen des Browsers.",
+    "history": "Zuletzt gesehen",
+    "clearHistory": "Verlauf löschen",
+    "historyCleared": "Verlauf gelöscht",
+    "noHistory": "Noch keine Zitate. Hier erscheinen die letzten 100 angesehenen Zitate."
   },
   "it-IT": {
     "copyLink": "Copia il link della citazione",
@@ -129,7 +149,11 @@
     "close": "Chiudi",
     "openQuote": "Apri citazione",
     "favoritesFull": "Hai raggiunto 500 preferiti. Rimuovine uno per salvarne un altro.",
-    "storageUnavailable": "Impossibile salvare le modifiche. Controlla i permessi di archiviazione del browser."
+    "storageUnavailable": "Impossibile salvare le modifiche. Controlla i permessi di archiviazione del browser.",
+    "history": "Recenti",
+    "clearHistory": "Cancella cronologia",
+    "historyCleared": "Cronologia cancellata",
+    "noHistory": "Nessuna citazione recente. Qui appariranno le ultime 100 citazioni visualizzate."
   },
   "pt-PT": {
     "copyLink": "Copiar ligação da citação",
@@ -151,6 +175,10 @@
     "close": "Fechar",
     "openQuote": "Abrir citação",
     "favoritesFull": "Atingiu 500 favoritos. Remova um para guardar outro.",
-    "storageUnavailable": "Não foi possível guardar as alterações. Verifique as permissões de armazenamento do navegador."
+    "storageUnavailable": "Não foi possível guardar as alterações. Verifique as permissões de armazenamento do navegador.",
+    "history": "Recentes",
+    "clearHistory": "Limpar histórico",
+    "historyCleared": "Histórico limpo",
+    "noHistory": "Sem citações recentes. As últimas 100 citações vistas aparecerão aqui."
   }
 }

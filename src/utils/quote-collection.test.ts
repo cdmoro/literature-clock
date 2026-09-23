@@ -60,3 +60,28 @@ it('rejects fallback entries and bounds the collection without silently discardi
   expect(toggleFavorite(savedQuote)).toBe('full');
   expect(readFavorites()).toHaveLength(500);
 });
+
+import { HISTORY_KEY, clearHistory, readHistory, recordQuote } from './quote-collection';
+it('keeps the 100 most recent distinct quotes in newest-first order', () => {
+  for (let i = 0; i < 105; i++) recordQuote({ ...savedQuote, id: String(i) });
+  expect(readHistory()).toHaveLength(100);
+  expect(readHistory()[0].id).toBe('104');
+  expect(readHistory()[99].id).toBe('5');
+  recordQuote({ ...savedQuote, id: '50' });
+  expect(readHistory()[0].id).toBe('50');
+  expect(readHistory()).toHaveLength(100);
+});
+it('clears history without deleting favorites', () => {
+  toggleFavorite(savedQuote);
+  recordQuote(savedQuote);
+  expect(clearHistory()).toBe(true);
+  expect(readHistory()).toEqual([]);
+  expect(readFavorites()).toEqual([savedQuote]);
+});
+it('rejects fallbacks and tolerates corrupted history', () => {
+  recordQuote({ ...savedQuote, fallback: true });
+  expect(readHistory()).toEqual([]);
+  localStorage.setItem(HISTORY_KEY, 'broken');
+  expect(recordQuote(savedQuote)).toBe(true);
+  expect(readHistory()).toEqual([savedQuote]);
+});
