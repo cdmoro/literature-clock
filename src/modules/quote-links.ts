@@ -3,7 +3,7 @@ import type { ResolvedQuote } from '../types';
 
 /** A quote is addressed by catalogue, minute and stable ID, never array position. */
 export function getQuoteUrl(quote: ResolvedQuote): string | undefined {
-  if (quote.fallback || !quote.id || store.get('quote')) return;
+  if (quote.fallback || !quote.id) return;
   const url = new URL(window.location.pathname, window.location.origin);
   url.searchParams.set('locale', quote.locale);
   url.searchParams.set('time', quote.time);

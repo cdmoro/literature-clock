@@ -21,8 +21,8 @@ it('links the displayed locale and minute rather than the current clock or prefe
     font: 'Lora',
   });
 });
-it('does not generate misleading links for fallback or custom preview text', () => {
+it('does not link fallback text and keeps saved quote links usable during custom previews', () => {
   expect(getQuoteUrl({ ...quote, fallback: true })).toBeUndefined();
   settings.quote = 'preview';
-  expect(getQuoteUrl(quote)).toBeUndefined();
+  expect(getQuoteUrl(quote)).toContain('quote-id=1200-000');
 });

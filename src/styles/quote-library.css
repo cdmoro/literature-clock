@@ -1,0 +1,67 @@
+#quote-library {
+  box-sizing: border-box;
+  width: min(42rem, calc(100vw - 2rem));
+  max-height: min(80dvh, 48rem);
+  padding: 1.25rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 0.75rem;
+  background: var(--background, #fff);
+  color: var(--font-color, #222);
+  font:
+    1rem/1.5 system-ui,
+    sans-serif;
+  text-align: start;
+  overflow: auto;
+  box-shadow: 0 1rem 4rem #0004;
+}
+#quote-library::backdrop {
+  background: #0008;
+}
+#quote-library header,
+#quote-library .saved-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+#quote-library h2 {
+  margin: 0;
+  font:
+    600 1.2rem/1.4 system-ui,
+    sans-serif;
+}
+#quote-library button {
+  font: inherit;
+  min-height: 2.25rem;
+  height: auto;
+  max-height: none;
+}
+#quote-library p {
+  margin: 0.65rem 0;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+}
+#quote-library .saved-quotes {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+#quote-library li {
+  padding: 1rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--font-color), transparent 80%);
+}
+#quote-library .saved-attribution,
+#quote-library .saved-actions {
+  font-size: 0.8rem;
+}
+#quote-library a {
+  color: var(--accent-color);
+}
+#quote-library .library-empty {
+  opacity: 0.8;
+  margin-block: 1.5rem;
+}
+#reading-controls button {
+  min-width: 2rem;
+}

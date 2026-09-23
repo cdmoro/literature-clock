@@ -161,3 +161,7 @@ Use the pause button to keep reading the current quote while the real clock cont
 ### More quotes for this minute
 
 The circular-arrow button pauses reading and selects another quote for the displayed minute and language. It visits all eligible quotes before repeating, avoids an immediate repeat across cycles, and respects Work mode. It is disabled when there is only one available quote or a fallback. “Back to live clock” ends browsing.
+
+### Favorites
+
+Use the heart to save the displayed quote and “My quotes” to open your collection. Favorites are stored only in this browser, with no account or server, and survive reloads. Each includes the text, attribution and a permanent link. You can remove individual favorites; Work mode hides explicit entries without deleting them. There is a 500-quote limit, and storage failures are reported instead of claiming that a quote was saved. Clearing browser data removes the collection.
