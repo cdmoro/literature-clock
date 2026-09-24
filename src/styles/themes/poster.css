@@ -56,10 +56,10 @@
 }
 
 [data-theme='poster-light'] blockquote {
-  border-color: color-mix(in srgb, var(--accent-color) 15%, #111);
+  border-image: url('/assets/poster-frame-light.jpg') 15;
   box-shadow:
-    5px 5px 10px #333333 inset,
-    10px 10px 15px #444B;
+    4px 5px 3px #333D inset,
+    8px 8px 12px #444B;
   background: #ffffff;
   background-blend-mode: difference;
 }
@@ -69,10 +69,10 @@
 }
 
 [data-theme='poster-dark'] blockquote {
-  border-color: color-mix(in srgb, var(--accent-color) 16%, #dfab5d);
+  border-image: url('/assets/poster-frame-dark.jpg') 15;
   box-shadow:
-    5px 5px 15px #000000 inset,
-    10px 10px 15px #000C;
+    6px 8px 8px #000D inset,
+    8px 8px 12px #000C;
   color: #ffffff;
   background-color: #000000;
   background-blend-mode: hard-light;
