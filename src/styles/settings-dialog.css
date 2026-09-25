@@ -128,8 +128,9 @@
   margin: 0.25rem 0 0.75rem;
 }
 #font-preview {
-  margin: 0.4rem 0 0;
-  padding: 0.5rem 0;
+  grid-column: 2;
+  margin: 0;
+  padding: 0;
 
   font-family: var(--override-quote-font-family, var(--quote-font-family));
   font-size: 1.2rem;
@@ -205,14 +206,22 @@
   }
 }
 
-.settings-font {
-  padding: 0.75rem;
-  margin: 0.75rem 0;
-  border: 1px solid color-mix(in srgb, var(--font-color), transparent 80%);
-  border-radius: 0.5rem;
+#settings-dialog .settings-font {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  row-gap: 0.5rem;
+  flex: 0 1 62%;
+  min-width: 0;
+  max-width: 65%;
 }
-#settings-dialog .settings-font .settings-row {
-  margin: 0;
+#settings-dialog .settings-font .input-group {
+  display: contents;
+}
+#settings-dialog .settings-row:has(.settings-font) {
+  align-items: flex-start;
+}
+#settings-dialog .settings-row:has(.settings-font) > label {
+  padding-top: 0.25rem;
 }
 .settings-follow {
   display: flex;

@@ -71,8 +71,9 @@ export function initSettingsDialog() {
   if (fontRow) {
     const fontGroup = document.createElement('div');
     fontGroup.className = 'settings-font';
-    fontRow.before(fontGroup);
-    fontGroup.append(fontRow);
+    const controls = fontRow.querySelector('.input-group')!;
+    controls.before(fontGroup);
+    fontGroup.append(controls);
     fontGroup.insertAdjacentHTML(
       'beforeend',
       '<p id="font-preview" data-text="settings_font_preview">The time is always right to read a good book.</p>',
