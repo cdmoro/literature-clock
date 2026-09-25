@@ -6,10 +6,8 @@ export function getQuoteUrl(quote: ResolvedQuote): string | undefined {
   if (quote.fallback || !quote.id) return;
   const url = new URL(window.location.pathname, window.location.origin);
   url.searchParams.set('locale', quote.locale);
-  url.searchParams.set('time', quote.time);
+  if (!/^([01]\d|2[0-3])[0-5]\d-\d+$/.test(quote.id)) url.searchParams.set('time', quote.time);
   url.searchParams.set('quote-id', quote.id);
-  // Override the recipient's saved random-language preference.
-  url.searchParams.set('random-locale', 'false');
   for (const key of ['theme', 'font'] as const) {
     const value = store.get(key);
     if (value) url.searchParams.set(key, value);

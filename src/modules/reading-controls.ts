@@ -17,7 +17,8 @@ export function resumeReading() {
   }
   store.set('paused', false, false);
   showQuoteNotice('');
-  void updateQuote({ time: getLiveTime() });
+  const time = getLiveTime();
+  if (store.get('active-quote')?.time !== time) void updateQuote({ time });
 }
 
 export function initReadingControls() {
@@ -29,28 +30,38 @@ export function initReadingControls() {
   pause.id = 'pause-reading';
   pause.type = 'button';
   pause.addEventListener('click', () => (store.get('paused') ? resumeReading() : pauseReading()));
+  const previous = document.createElement('button');
+  previous.id = 'previous-quote';
+  previous.type = 'button';
+  previous.textContent = '«';
+  const counter = document.createElement('span');
+  counter.id = 'quote-position';
+  counter.className = 'input-group-text';
+  counter.setAttribute('aria-live', 'polite');
+  counter.setAttribute('aria-atomic', 'true');
   const next = document.createElement('button');
   next.id = 'next-quote';
   next.type = 'button';
-  next.textContent = '↻';
+  next.textContent = '»';
   let changing = false;
-  next.addEventListener('click', async () => {
+  const changeVariant = async (direction: number) => {
     if (changing || next.disabled) return;
     changing = true;
-    pauseReading();
     for (const key of ['quote-id', 'index'] as const) {
       store.set(key, undefined, false);
       store.removeFromUrl(key);
     }
     refresh();
     try {
-      await updateQuote({ nextVariant: true });
+      await updateQuote({ variantStep: direction });
     } finally {
       changing = false;
       refresh();
     }
-  });
-  group.append(pause, next);
+  };
+  previous.addEventListener('click', () => void changeVariant(-1));
+  next.addEventListener('click', () => void changeVariant(1));
+  group.append(pause, previous, counter, next);
   document.getElementById('settings')?.prepend(group);
 
   const status = document.createElement('div');
@@ -72,9 +83,13 @@ export function initReadingControls() {
     pause.setAttribute('aria-pressed', String(paused));
     pause.disabled = !store.get('active-quote') || !!store.get('quote');
     const quote = store.get('active-quote');
+    previous.title = strings.previousQuote;
+    previous.setAttribute('aria-label', strings.previousQuote);
+    counter.textContent = quote && !quote.fallback ? `${quote.index + 1}/${quote.variants}` : '0/0';
     next.title = strings.nextQuote;
     next.setAttribute('aria-label', strings.nextQuote);
     next.disabled = changing || !quote || quote.fallback || quote.variants < 2 || !!store.get('quote');
+    previous.disabled = next.disabled;
     status.hidden = !paused;
     label.textContent = `${strings.pausedAt} ${store.get('active-quote')?.time || store.get('time') || ''}`;
     resume.textContent = strings.resume;

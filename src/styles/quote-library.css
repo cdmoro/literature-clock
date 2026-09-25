@@ -78,3 +78,10 @@
 #quote-library #clear-quote-history {
   font-size: 0.8rem;
 }
+
+#quote-position {
+  justify-content: center;
+  min-width: 3ch;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}

@@ -60,3 +60,39 @@ it('does not pause before the first quote has loaded', () => {
   pauseReading();
   expect(store.get('paused')).not.toBe(true);
 });
+
+it('resumes within the same minute without replacing the displayed quote', () => {
+  const quote = store.get('active-quote');
+  pauseReading();
+  resumeReading();
+  expect(store.get('paused')).toBe(false);
+  expect(store.get('active-quote')).toBe(quote);
+  expect(updateQuote).not.toHaveBeenCalled();
+});
+
+it('navigates both ways without pausing and displays the current position', async () => {
+  store.set('active-quote', { ...store.get('active-quote'), index: 1, variants: 3 } as ResolvedQuote);
+  initReadingControls();
+  expect(document.getElementById('quote-position')?.textContent).toBe('2/3');
+  document.getElementById('previous-quote')?.click();
+  await Promise.resolve();
+  expect(updateQuote).toHaveBeenLastCalledWith({ variantStep: -1 });
+  document.getElementById('next-quote')?.click();
+  await Promise.resolve();
+  expect(updateQuote).toHaveBeenLastCalledWith({ variantStep: 1 });
+  expect(store.get('paused')).not.toBe(true);
+});
+
+it('opens a compact ID link at its encoded minute, including midnight', () => {
+  history.replaceState({}, '', '/?locale=en-GB&quote-id=0000-002');
+  createStore();
+  initReadingControls();
+  expect(store.get('time')).toBe('00:00');
+  expect(store.get('paused')).toBe(true);
+});
+
+it('retains the explicit minute in legacy links', () => {
+  history.replaceState({}, '', '/?time=09:15&quote-id=0915-001');
+  createStore();
+  expect(store.get('time')).toBe('09:15');
+});
