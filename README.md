@@ -143,7 +143,9 @@ Hi! I'm Carlos, and you can find me here
 Run `npm run admin` for the local Vite translation administrator at
 `http://127.0.0.1:5174`. Create languages, translate batches directly into draft CSV
 rows, and review/edit/approve them from the browser. `npm run translate` remains
-available as a terminal alternative.
+available as a terminal alternative. Complete translations from Calibre or other
+tools can be imported with `scripts/import_translation.py` and reviewed directly,
+without running translation batches (see the workflow below).
 
 New languages start from `quotes.en-GB.csv` with `Draft=true` and stay out of the
 clock's selector until explicitly enabled. `?locale=el-GR-draft` previews pending
