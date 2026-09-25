@@ -10,11 +10,12 @@ export function initLanguagePreferences() {
   select.value = getBaseLocale(getInterfaceLocale());
   // Preserve the old random-language preference as an explicit selection of all languages.
   let selected = getQuoteLocales();
-  if (!selected.length)
+  if (!selected.length && store.get('quote-locales') !== '')
     selected = store.get('random-locale')
       ? Array.from(select.options, (option) => option.value as Locale)
       : [store.get('locale')];
-  follow.checked = !store.get('random-locale') && !getQuoteLocales().length && !store.get('locale').endsWith('-draft');
+  follow.checked =
+    !store.get('random-locale') && store.get('quote-locales') === undefined && !store.get('locale').endsWith('-draft');
   const inputs = Array.from(select.options, (option) => {
     const label = document.createElement('label');
     label.className = 'settings-check';
@@ -28,16 +29,12 @@ export function initLanguagePreferences() {
   });
   const refresh = () => {
     options.hidden = follow.checked;
-    const checked = inputs.filter((input) => input.checked);
-    inputs.forEach((input) => {
-      input.disabled = checked.length === 1 && input.checked;
-    });
   };
   const changeQuoteLanguages = (languages: Locale[], follows: boolean) => {
     // Keep the current UI language when choosing a different quote catalogue.
     store.set('ui-locale', select.value as Locale);
     store.set('quote-locales', follows ? undefined : languages.join(','));
-    store.set('locale', languages[0]);
+    store.set('locale', languages[0] || (select.value as Locale));
     store.set('random-locale', languages.length > 1);
     for (const key of ['quote-id', 'index'] as const) {
       store.set(key, undefined, false);
@@ -50,10 +47,6 @@ export function initLanguagePreferences() {
   inputs.forEach((input) =>
     input.addEventListener('change', () => {
       const languages = inputs.filter((item) => item.checked).map((item) => item.value as Locale);
-      if (!languages.length) {
-        input.checked = true;
-        return;
-      }
       changeQuoteLanguages(languages, false);
     }),
   );
@@ -65,11 +58,6 @@ export function initLanguagePreferences() {
       changeQuoteLanguages([select.value as Locale], true);
     } else {
       const languages = inputs.filter((input) => input.checked).map((input) => input.value as Locale);
-      // Draft previews have no checkbox in the public catalogue list.
-      if (!languages.length) {
-        inputs.find((input) => input.value === select.value)!.checked = true;
-        languages.push(select.value as Locale);
-      }
       changeQuoteLanguages(languages, false);
     }
   });
@@ -81,6 +69,8 @@ export function initLanguagePreferences() {
         input.checked = input.value === select.value;
       });
       changeQuoteLanguages([select.value as Locale], true);
+    } else if (!inputs.some((input) => input.checked)) {
+      changeQuoteLanguages([], false);
     }
   });
   refresh();

@@ -202,7 +202,7 @@ export class Store {
 
     if (REMOVE_VALUES_FROM_URL[key] === value || value === false) {
       urlParams.delete(key);
-    } else if (value) {
+    } else if (value || (key === 'quote-locales' && value === '')) {
       urlParams.set(key, value.toString());
     }
 

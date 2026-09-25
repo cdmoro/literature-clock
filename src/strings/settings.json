@@ -10,7 +10,7 @@
     "settings_ui_language": "Interface language",
     "settings_quote_languages": "Quote languages",
     "settings_follow_language": "Same as the interface",
-    "settings_languages_help": "Choose one or more languages to rotate through.",
+    "settings_languages_help": "Choose languages to rotate through. If none are selected, quotes use the interface language.",
     "settings_work_help": "Only show quotes that are safe to view at work.",
     "settings_font_preview": "The time is always right to read a good book."
   },
@@ -25,7 +25,7 @@
     "settings_ui_language": "Interface language",
     "settings_quote_languages": "Quote languages",
     "settings_follow_language": "Same as the interface",
-    "settings_languages_help": "Choose one or more languages to rotate through.",
+    "settings_languages_help": "Choose languages to rotate through. If none are selected, quotes use the interface language.",
     "settings_work_help": "Only show quotes that are safe to view at work.",
     "settings_font_preview": "The time is always right to read a good book."
   },
@@ -40,7 +40,7 @@
     "settings_ui_language": "Idioma de la interfaz",
     "settings_quote_languages": "Idiomas de las citas",
     "settings_follow_language": "Igual que la interfaz",
-    "settings_languages_help": "Elegí uno o varios idiomas para alternar las citas.",
+    "settings_languages_help": "Elegí los idiomas para alternar las citas. Si no seleccionás ninguno, se usará el idioma de la interfaz.",
     "settings_work_help": "Solo mostrar citas que sean seguras para ver en el trabajo.",
     "settings_font_preview": "Siempre es un buen momento para leer un buen libro."
   },
@@ -55,7 +55,7 @@
     "settings_ui_language": "Idioma da interface",
     "settings_quote_languages": "Idiomas das citações",
     "settings_follow_language": "Igual à interface",
-    "settings_languages_help": "Escolha um ou mais idiomas para alternar.",
+    "settings_languages_help": "Escolha os idiomas para alternar as citações. Sem seleção, é usado o idioma da interface.",
     "settings_work_help": "Mostrar apenas citações adequadas para ver no trabalho.",
     "settings_font_preview": "É sempre uma boa hora para ler um bom livro."
   },
@@ -70,7 +70,7 @@
     "settings_ui_language": "Langue de l’interface",
     "settings_quote_languages": "Langues des citations",
     "settings_follow_language": "Comme l’interface",
-    "settings_languages_help": "Choisissez une ou plusieurs langues à alterner.",
+    "settings_languages_help": "Choisissez les langues à alterner. Sans sélection, les citations utilisent la langue de l’interface.",
     "settings_work_help": "Afficher uniquement les citations adaptées au travail.",
     "settings_font_preview": "C’est toujours le bon moment pour lire un bon livre."
   },
@@ -85,7 +85,7 @@
     "settings_ui_language": "Lingua dell’interfaccia",
     "settings_quote_languages": "Lingue delle citazioni",
     "settings_follow_language": "Come l’interfaccia",
-    "settings_languages_help": "Scegli una o più lingue da alternare.",
+    "settings_languages_help": "Scegli le lingue da alternare. Se non ne selezioni nessuna, viene usata la lingua dell’interfaccia.",
     "settings_work_help": "Mostra solo citazioni adatte al luogo di lavoro.",
     "settings_font_preview": "È sempre il momento giusto per leggere un buon libro."
   },
@@ -100,7 +100,7 @@
     "settings_ui_language": "Sprache der Oberfläche",
     "settings_quote_languages": "Sprachen der Zitate",
     "settings_follow_language": "Wie die Oberfläche",
-    "settings_languages_help": "Eine oder mehrere Sprachen zum Abwechseln auswählen.",
+    "settings_languages_help": "Sprachen zum Abwechseln auswählen. Ohne Auswahl wird die Sprache der Oberfläche verwendet.",
     "settings_work_help": "Nur Zitate anzeigen, die für den Arbeitsplatz geeignet sind.",
     "settings_font_preview": "Für ein gutes Buch ist immer die richtige Zeit."
   },
@@ -115,7 +115,7 @@
     "settings_ui_language": "Γλώσσα διεπαφής",
     "settings_quote_languages": "Γλώσσες παραθεμάτων",
     "settings_follow_language": "Ίδια με τη διεπαφή",
-    "settings_languages_help": "Επιλέξτε μία ή περισσότερες γλώσσες για εναλλαγή.",
+    "settings_languages_help": "Επιλέξτε γλώσσες για εναλλαγή. Χωρίς επιλογή, χρησιμοποιείται η γλώσσα της διεπαφής.",
     "settings_work_help": "Εμφάνιση μόνο παραθεμάτων κατάλληλων για τον χώρο εργασίας.",
     "settings_font_preview": "Είναι πάντα η κατάλληλη στιγμή για ένα καλό βιβλίο."
   }

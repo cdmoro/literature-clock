@@ -36,7 +36,7 @@ test('follows the interface by default, then rotates only through selected langu
   init();
   expect(document.querySelector<HTMLInputElement>('#follow-ui-language')!.checked).toBe(true);
   document.getElementById('follow-ui-language')!.click();
-  expect(language('es-ES').disabled).toBe(true);
+  expect(language('es-ES').disabled).toBe(false);
   language('en-GB').click();
   expect(store.get('random-locale')).toBe(true);
   expect(store.get('quote-locales')).toBe('en-GB,es-ES');
@@ -45,7 +45,7 @@ test('follows the interface by default, then rotates only through selected langu
   language('es-ES').click();
   expect(store.get('locale')).toBe('en-GB');
   expect(store.get('random-locale')).toBe(false);
-  expect(language('en-GB').disabled).toBe(true);
+  expect(language('en-GB').disabled).toBe(false);
   expect(getRandomLocale()).toBe('en-GB');
   const saved = JSON.parse(localStorage.getItem('settings')!);
   expect(saved['ui-locale']).toBe('es-ES');
@@ -84,4 +84,27 @@ test('legacy random language preferences expose all languages without selecting 
     [...document.querySelectorAll<HTMLInputElement>('#quote-language-options input')].every((input) => input.checked),
   ).toBe(true);
   expect(getRandomLocale()).toBeTruthy();
+});
+
+test('an empty selection uses the interface language and stays empty after reload', () => {
+  history.replaceState({}, '', '/?locale=fr-FR&ui-locale=en-GB&quote-locales=fr-FR');
+  init();
+  language('fr-FR').click();
+  expect(store.get('locale')).toBe('en-GB');
+  expect(store.get('quote-locales')).toBe('');
+  expect(new URLSearchParams(location.search).get('quote-locales')).toBe('');
+  expect(store.get('random-locale')).toBe(false);
+  expect(document.querySelectorAll('#quote-language-options input:checked')).toHaveLength(0);
+  selectUi('es-ES');
+  expect(store.get('locale')).toBe('es-ES');
+  init();
+  expect(store.get('locale')).toBe('es-ES');
+  expect(document.querySelectorAll('#quote-language-options input:checked')).toHaveLength(0);
+  expect(document.querySelector<HTMLInputElement>('#follow-ui-language')!.checked).toBe(false);
+  expect(
+    [...document.querySelectorAll<HTMLInputElement>('#quote-language-options input')].every((input) => !input.disabled),
+  ).toBe(true);
+  language('de-DE').click();
+  expect(store.get('locale')).toBe('de-DE');
+  expect(store.get('quote-locales')).toBe('de-DE');
 });
