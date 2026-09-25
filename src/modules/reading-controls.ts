@@ -1,3 +1,4 @@
+import { readingIcon } from './reading-icons';
 import { store } from '../store';
 import { cancelPendingQuote, updateQuote } from './quotes';
 import { getLiveTime } from '../utils';
@@ -33,7 +34,7 @@ export function initReadingControls() {
   const previous = document.createElement('button');
   previous.id = 'previous-quote';
   previous.type = 'button';
-  previous.textContent = '«';
+  previous.innerHTML = readingIcon('previous');
   const counter = document.createElement('span');
   counter.id = 'quote-position';
   counter.className = 'input-group-text';
@@ -42,7 +43,7 @@ export function initReadingControls() {
   const next = document.createElement('button');
   next.id = 'next-quote';
   next.type = 'button';
-  next.textContent = '»';
+  next.innerHTML = readingIcon('next');
   let changing = false;
   const changeVariant = async (direction: number) => {
     if (changing || next.disabled) return;
@@ -61,8 +62,17 @@ export function initReadingControls() {
   };
   previous.addEventListener('click', () => void changeVariant(-1));
   next.addEventListener('click', () => void changeVariant(1));
-  group.append(pause, previous, counter, next);
-  document.getElementById('settings')?.prepend(group);
+  group.append(pause);
+  const shareGroup = document.getElementById('copy')?.parentElement;
+  if (shareGroup?.classList.contains('input-group')) {
+    group.append(...Array.from(shareGroup.children));
+    shareGroup.remove();
+  }
+  const navigation = document.createElement('span');
+  navigation.id = 'quote-navigation';
+  navigation.className = 'input-group';
+  navigation.append(previous, counter, next);
+  document.getElementById('settings')?.prepend(group, navigation);
 
   const status = document.createElement('div');
   status.id = 'reading-status';
@@ -77,7 +87,7 @@ export function initReadingControls() {
   const refresh = () => {
     const strings = readingStrings();
     const paused = !!store.get('paused');
-    pause.textContent = paused ? '▶' : 'Ⅱ';
+    pause.innerHTML = readingIcon(paused ? 'play' : 'pause');
     pause.title = paused ? strings.resume : strings.pause;
     pause.setAttribute('aria-label', pause.title);
     pause.setAttribute('aria-pressed', String(paused));
