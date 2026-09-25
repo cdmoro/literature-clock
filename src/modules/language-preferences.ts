@@ -82,6 +82,17 @@ export function initLanguagePreferences() {
       changeQuoteLanguages(languages, false);
     }
   });
+  document.getElementById('settings-dialog')?.addEventListener('close', () => {
+    // Empty selections already use the interface language; normalize the preference
+    // without fetching another quote. Draft previews have no public language chip.
+    if (store.get('quote-locales') !== '' || inputs.some((input) => input.checked)) return;
+    follow.checked = true;
+    inputs.forEach((input) => {
+      input.checked = input.value === select.value;
+    });
+    store.set('quote-locales', undefined);
+    refresh();
+  });
   select.addEventListener('change', () => {
     store.set('ui-locale', select.value as Locale);
     translateStrings(getInterfaceLocale());

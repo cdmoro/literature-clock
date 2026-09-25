@@ -149,3 +149,29 @@ test('inline bulk action toggles select all and deselect all, falling back to th
   language('fr-FR').click();
   expect(action.textContent).toBe('Seleccionar todos');
 });
+
+test('closing with no languages enables following the interface and persists without changing the quote', () => {
+  history.replaceState({}, '', '/?locale=fr-FR&ui-locale=en-GB&quote-locales=fr-FR');
+  init();
+  language('fr-FR').click();
+  vi.mocked(updateQuote).mockClear();
+  document.getElementById('settings-dialog')!.dispatchEvent(new Event('close'));
+  expect(document.querySelector<HTMLInputElement>('#follow-ui-language')!.checked).toBe(true);
+  expect(store.get('quote-locales')).toBeUndefined();
+  expect(new URLSearchParams(location.search).has('quote-locales')).toBe(false);
+  expect(store.get('locale')).toBe('en-GB');
+  expect(updateQuote).not.toHaveBeenCalled();
+  init();
+  expect(document.querySelector<HTMLInputElement>('#follow-ui-language')!.checked).toBe(true);
+  selectUi('es-ES');
+  expect(store.get('locale')).toBe('es-ES');
+});
+
+test('closing with a selected language keeps the explicit selection', () => {
+  history.replaceState({}, '', '/?locale=fr-FR&ui-locale=en-GB&quote-locales=fr-FR');
+  init();
+  document.getElementById('settings-dialog')!.dispatchEvent(new Event('close'));
+  expect(document.querySelector<HTMLInputElement>('#follow-ui-language')!.checked).toBe(false);
+  expect(store.get('quote-locales')).toBe('fr-FR');
+  expect(updateQuote).not.toHaveBeenCalled();
+});
