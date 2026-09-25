@@ -1,5 +1,8 @@
 import { fitQuote, loadFontIfNotExists } from '../utils';
 import { store } from '../store';
+import { loadGoogleFont, normalizeFontName } from '../utils/google-font';
+import { getBaseLocale, getInterfaceLocale } from './locales';
+import SETTINGS from '../strings/settings.json';
 
 export const THEME_FONTS: Record<string, string[]> = {
   retro: ['VT323'],
@@ -33,7 +36,8 @@ export const CITE_FACTOR = {
   kindle: 0.5,
 } as const;
 
-const FONTS = ['Special Elite', ...new Set(Object.values(THEME_FONTS))].flat();
+const FONTS = ['Special Elite', ...new Set(Object.values(THEME_FONTS).flat())];
+let fontRequest = 0;
 const CSS_FONT_VARIABLE = '--override-quote-font-family';
 
 function createOption(value: string) {
@@ -52,33 +56,74 @@ export function initFont() {
     fontSelect?.appendChild(createOption(fontName));
   });
 
+  if (fontSelect && FONTS.includes(font)) fontSelect.value = font;
   if (font !== 'default' && !FONTS.includes(font)) {
-    store.set('custom-font', font);
-  }
-
-  const customFont = store.get('custom-font');
-  if (customFont && !FONTS.includes(customFont)) {
-    fontSelect?.appendChild(createOption(customFont));
-  }
-
-  store.set('font', font, false);
-  if (fontSelect) {
-    fontSelect.value = font;
-  }
-
-  if (font !== 'default') {
+    const input = document.querySelector<HTMLInputElement>('#custom-font-name');
+    if (input) input.value = font;
+    void applyCustomFont(font);
+  } else if (font !== 'default') {
     loadFontIfNotExists(font);
-    const root = document.querySelector<HTMLElement>(':root');
-    root?.style.setProperty(CSS_FONT_VARIABLE, `${font}, sans-serif`);
+    document.documentElement.style.setProperty(CSS_FONT_VARIABLE, `"${font}", var(--quote-font-family)`);
   }
 
   fontSelect?.addEventListener('change', setFont);
+  document.getElementById('custom-font-form')?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    void applyCustomFont(document.querySelector<HTMLInputElement>('#custom-font-name')?.value || '');
+  });
+}
+
+function fontStatus(key?: 'settings_font_loading' | 'settings_font_error') {
+  const status = document.getElementById('custom-font-status');
+  if (!status) return;
+  if (key) {
+    status.dataset.text = key;
+    status.textContent = SETTINGS[getBaseLocale(getInterfaceLocale())][key];
+  } else {
+    delete status.dataset.text;
+    status.textContent = '';
+  }
+}
+
+export async function applyCustomFont(value: string) {
+  const request = ++fontRequest;
+  const name = normalizeFontName(value);
+  if (!name) {
+    resetFont();
+    if (value.trim()) fontStatus('settings_font_error');
+    return;
+  }
+  fontStatus('settings_font_loading');
+  try {
+    await loadGoogleFont(name);
+    if (request !== fontRequest) return;
+    const select = document.querySelector<HTMLSelectElement>('#font-select');
+    if (select && !Array.from(select.options).some((option) => option.value === name)) {
+      select.append(createOption(name));
+    }
+    if (select) select.value = name;
+    document.documentElement.style.setProperty(CSS_FONT_VARIABLE, `"${name}", var(--quote-font-family)`);
+    store.set('font', name);
+    store.set('custom-font', name, false);
+    fontStatus();
+    fitQuote();
+  } catch {
+    if (request !== fontRequest) return;
+    resetFont();
+    fontStatus('settings_font_error');
+  }
 }
 
 function setFont() {
   const fontSelect = document.querySelector<HTMLSelectElement>('#font-select');
   const font = fontSelect?.value;
   const root = document.querySelector<HTMLElement>(':root');
+  if (font && font !== 'default' && !FONTS.includes(font)) {
+    void applyCustomFont(font);
+    return;
+  }
+  fontRequest++;
+  fontStatus();
 
   if (font) {
     store.set('font', font);
@@ -95,6 +140,8 @@ function setFont() {
 }
 
 export function resetFont() {
+  fontRequest++;
+  fontStatus();
   const root = document.querySelector<HTMLElement>(':root');
   const fontSelect = document.querySelector<HTMLSelectElement>('#font-select');
 
@@ -103,4 +150,5 @@ export function resetFont() {
     fontSelect.value = 'default';
   }
   store.set('font', 'default');
+  fitQuote();
 }

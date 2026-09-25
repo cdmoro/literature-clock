@@ -76,7 +76,16 @@ export function initSettingsDialog() {
     fontGroup.append(controls);
     fontGroup.insertAdjacentHTML(
       'beforeend',
-      '<p id="font-preview" data-text="settings_font_preview">The time is always right to read a good book.</p>',
+      `<p id="font-preview" data-text="settings_font_preview">The time is always right to read a good book.</p>
+      <details class="settings-custom-font"><summary data-text="settings_custom_font">Google Fonts</summary>
+        <p id="custom-font-help" class="settings-help" data-text="settings_font_help">Paste a Google Fonts family name and choose Apply. If unavailable, the theme’s default font is used.</p>
+        <form id="custom-font-form">
+          <label for="custom-font-name" data-text="settings_font_name">Font family name</label>
+          <div><input id="custom-font-name" type="text" maxlength="100" placeholder="e.g. Lora" autocomplete="off" spellcheck="false" aria-describedby="custom-font-help custom-font-status">
+          <button type="submit" data-text="settings_font_apply">Apply</button></div>
+          <p id="custom-font-status" role="status" aria-live="polite"></p>
+        </form>
+      </details>`,
     );
   }
 

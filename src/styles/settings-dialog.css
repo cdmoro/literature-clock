@@ -1,6 +1,6 @@
 #settings-dialog {
   box-sizing: border-box;
-  width: min(32rem, calc(100vw - 2rem));
+  width: min(40rem, calc(100vw - 2rem));
   max-height: calc(100dvh - 2rem);
   overflow: auto;
   padding: 1.5rem;
@@ -128,12 +128,12 @@
   margin: 0.25rem 0 0.75rem;
 }
 #font-preview {
-  grid-column: 2;
+  grid-column: 1 / -1;
   margin: 0;
   padding: 0;
 
   font-family: var(--override-quote-font-family, var(--quote-font-family));
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
@@ -237,4 +237,38 @@
   margin: 0;
   box-sizing: content-box;
   cursor: pointer;
+}
+
+.settings-custom-font {
+  grid-column: 1 / -1;
+  min-width: 0;
+  font-size: 0.8rem;
+}
+.settings-custom-font summary {
+  cursor: pointer;
+}
+.settings-custom-font form {
+  margin-top: 0.5rem;
+}
+.settings-custom-font label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.settings-custom-font form > div {
+  display: flex;
+  gap: 0.4rem;
+}
+#custom-font-name {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 40%);
+  border-radius: 0.25rem;
+  padding: 0.35rem;
+  background: var(--background);
+  color: var(--font-color);
+  font: inherit;
+}
+#custom-font-status {
+  margin: 0.35rem 0 0;
 }

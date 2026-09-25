@@ -14,7 +14,13 @@
     "settings_work_help": "Only show quotes that are safe to view at work.",
     "settings_font_preview": "The time is always right to read a good book.",
     "settings_select_all": "Select all",
-    "settings_deselect_all": "Deselect all"
+    "settings_deselect_all": "Deselect all",
+    "settings_custom_font": "Google Fonts",
+    "settings_font_name": "Font family name",
+    "settings_font_apply": "Apply",
+    "settings_font_loading": "Loading font…",
+    "settings_font_error": "Font unavailable. Using the theme’s default font.",
+    "settings_font_help": "Paste a Google Fonts family name and choose Apply. If unavailable, the theme’s default font is used."
   },
   "en-US": {
     "settings_title": "Settings",
@@ -31,7 +37,13 @@
     "settings_work_help": "Only show quotes that are safe to view at work.",
     "settings_font_preview": "The time is always right to read a good book.",
     "settings_select_all": "Select all",
-    "settings_deselect_all": "Deselect all"
+    "settings_deselect_all": "Deselect all",
+    "settings_custom_font": "Google Fonts",
+    "settings_font_name": "Font family name",
+    "settings_font_apply": "Apply",
+    "settings_font_loading": "Loading font…",
+    "settings_font_error": "Font unavailable. Using the theme’s default font.",
+    "settings_font_help": "Paste a Google Fonts family name and choose Apply. If unavailable, the theme’s default font is used."
   },
   "es-ES": {
     "settings_title": "Configuración",
@@ -48,7 +60,13 @@
     "settings_work_help": "Solo mostrar citas que sean seguras para ver en el trabajo.",
     "settings_font_preview": "Siempre es un buen momento para leer un buen libro.",
     "settings_select_all": "Seleccionar todos",
-    "settings_deselect_all": "Deseleccionar todos"
+    "settings_deselect_all": "Deseleccionar todos",
+    "settings_custom_font": "Google Fonts",
+    "settings_font_name": "Nombre de la fuente",
+    "settings_font_apply": "Aplicar",
+    "settings_font_loading": "Cargando fuente…",
+    "settings_font_error": "Fuente no disponible. Se usa la fuente predeterminada del tema.",
+    "settings_font_help": "Pegá el nombre de una fuente de Google Fonts y pulsá Aplicar. Si no está disponible, se usará la fuente predeterminada del tema."
   },
   "pt-PT": {
     "settings_title": "Configurações",
@@ -65,7 +83,13 @@
     "settings_work_help": "Mostrar apenas citações adequadas para ver no trabalho.",
     "settings_font_preview": "É sempre uma boa hora para ler um bom livro.",
     "settings_select_all": "Selecionar todos",
-    "settings_deselect_all": "Desmarcar todos"
+    "settings_deselect_all": "Desmarcar todos",
+    "settings_custom_font": "Google Fonts",
+    "settings_font_name": "Nome da fonte",
+    "settings_font_apply": "Aplicar",
+    "settings_font_loading": "A carregar fonte…",
+    "settings_font_error": "Fonte indisponível. A usar a fonte predefinida do tema.",
+    "settings_font_help": "Cole o nome de uma fonte do Google Fonts e selecione Aplicar. Se não estiver disponível, será usada a fonte predefinida do tema."
   },
   "fr-FR": {
     "settings_title": "Paramètres",
@@ -82,7 +106,13 @@
     "settings_work_help": "Afficher uniquement les citations adaptées au travail.",
     "settings_font_preview": "C’est toujours le bon moment pour lire un bon livre.",
     "settings_select_all": "Tout sélectionner",
-    "settings_deselect_all": "Tout désélectionner"
+    "settings_deselect_all": "Tout désélectionner",
+    "settings_custom_font": "Google Fonts",
+    "settings_font_name": "Nom de la police",
+    "settings_font_apply": "Appliquer",
+    "settings_font_loading": "Chargement de la police…",
+    "settings_font_error": "Police indisponible. La police du thème est utilisée.",
+    "settings_font_help": "Collez le nom d’une police Google Fonts et choisissez Appliquer. Si elle est indisponible, la police du thème sera utilisée."
   },
   "it-IT": {
     "settings_title": "Impostazioni",
@@ -99,7 +129,13 @@
     "settings_work_help": "Mostra solo citazioni adatte al luogo di lavoro.",
     "settings_font_preview": "È sempre il momento giusto per leggere un buon libro.",
     "settings_select_all": "Seleziona tutto",
-    "settings_deselect_all": "Deseleziona tutto"
+    "settings_deselect_all": "Deseleziona tutto",
+    "settings_custom_font": "Google Fonts",
+    "settings_font_name": "Nome del carattere",
+    "settings_font_apply": "Applica",
+    "settings_font_loading": "Caricamento del carattere…",
+    "settings_font_error": "Carattere non disponibile. Viene usato quello predefinito del tema.",
+    "settings_font_help": "Incolla il nome di un carattere Google Fonts e scegli Applica. Se non è disponibile, verrà usato quello predefinito del tema."
   },
   "de-DE": {
     "settings_title": "Einstellungen",
@@ -116,7 +152,13 @@
     "settings_work_help": "Nur Zitate anzeigen, die für den Arbeitsplatz geeignet sind.",
     "settings_font_preview": "Für ein gutes Buch ist immer die richtige Zeit.",
     "settings_select_all": "Alle auswählen",
-    "settings_deselect_all": "Alle abwählen"
+    "settings_deselect_all": "Alle abwählen",
+    "settings_custom_font": "Google Fonts",
+    "settings_font_name": "Name der Schriftfamilie",
+    "settings_font_apply": "Anwenden",
+    "settings_font_loading": "Schrift wird geladen…",
+    "settings_font_error": "Schrift nicht verfügbar. Die Standardschrift des Designs wird verwendet.",
+    "settings_font_help": "Den Namen einer Google-Fonts-Schrift eingeben und Anwenden wählen. Ist sie nicht verfügbar, wird die Standardschrift des Designs verwendet."
   },
   "el-GR": {
     "settings_title": "Ρυθμίσεις",
@@ -133,6 +175,12 @@
     "settings_work_help": "Εμφάνιση μόνο παραθεμάτων κατάλληλων για τον χώρο εργασίας.",
     "settings_font_preview": "Είναι πάντα η κατάλληλη στιγμή για ένα καλό βιβλίο.",
     "settings_select_all": "Επιλογή όλων",
-    "settings_deselect_all": "Αποεπιλογή όλων"
+    "settings_deselect_all": "Αποεπιλογή όλων",
+    "settings_custom_font": "Google Fonts",
+    "settings_font_name": "Όνομα γραμματοσειράς",
+    "settings_font_apply": "Εφαρμογή",
+    "settings_font_loading": "Φόρτωση γραμματοσειράς…",
+    "settings_font_error": "Η γραμματοσειρά δεν είναι διαθέσιμη. Χρησιμοποιείται η προεπιλεγμένη του θέματος.",
+    "settings_font_help": "Επικολλήστε το όνομα μιας γραμματοσειράς Google Fonts και επιλέξτε Εφαρμογή. Αν δεν είναι διαθέσιμη, χρησιμοποιείται η προεπιλεγμένη του θέματος."
   }
 }
