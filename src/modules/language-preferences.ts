@@ -12,9 +12,7 @@ export function initLanguagePreferences() {
   // Preserve the old random-language preference as an explicit selection of all languages.
   let selected = getQuoteLocales();
   if (!selected.length && store.get('quote-locales') !== '')
-    selected = store.get('random-locale')
-      ? Array.from(select.options, (option) => option.value as Locale)
-      : [store.get('locale')];
+    selected = store.get('random-locale') ? Array.from(select.options, (option) => option.value as Locale) : [];
   follow.checked =
     !store.get('random-locale') && store.get('quote-locales') === undefined && !store.get('locale').endsWith('-draft');
   const inputs = Array.from(select.options, (option) => {
@@ -74,7 +72,7 @@ export function initLanguagePreferences() {
   follow.addEventListener('change', () => {
     if (follow.checked) {
       inputs.forEach((input) => {
-        input.checked = input.value === select.value;
+        input.checked = false;
       });
       changeQuoteLanguages([select.value as Locale], true);
     } else {
@@ -88,7 +86,7 @@ export function initLanguagePreferences() {
     if (store.get('quote-locales') !== '' || inputs.some((input) => input.checked)) return;
     follow.checked = true;
     inputs.forEach((input) => {
-      input.checked = input.value === select.value;
+      input.checked = false;
     });
     store.set('quote-locales', undefined);
     refresh();
@@ -99,7 +97,7 @@ export function initLanguagePreferences() {
     refresh();
     if (follow.checked) {
       inputs.forEach((input) => {
-        input.checked = input.value === select.value;
+        input.checked = false;
       });
       changeQuoteLanguages([select.value as Locale], true);
     } else if (!inputs.some((input) => input.checked)) {

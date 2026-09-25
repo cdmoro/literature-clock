@@ -36,7 +36,8 @@ test('follows the interface by default, then rotates only through selected langu
   init();
   expect(document.querySelector<HTMLInputElement>('#follow-ui-language')!.checked).toBe(true);
   document.getElementById('follow-ui-language')!.click();
-  expect(language('es-ES').disabled).toBe(false);
+  expect(document.querySelectorAll('#quote-language-options input:checked')).toHaveLength(0);
+  language('es-ES').click();
   language('en-GB').click();
   expect(store.get('random-locale')).toBe(true);
   expect(store.get('quote-locales')).toBe('en-GB,es-ES');
@@ -174,4 +175,29 @@ test('closing with a selected language keeps the explicit selection', () => {
   expect(document.querySelector<HTMLInputElement>('#follow-ui-language')!.checked).toBe(false);
   expect(store.get('quote-locales')).toBe('fr-FR');
   expect(updateQuote).not.toHaveBeenCalled();
+});
+
+test('following the interface never preselects a chip, including after closing and reloading', () => {
+  history.replaceState({}, '', '/?locale=en-US');
+  init();
+  const checkedChips = () => document.querySelectorAll('#quote-language-options input:checked');
+  expect(checkedChips()).toHaveLength(0);
+  document.getElementById('follow-ui-language')!.click();
+  expect(checkedChips()).toHaveLength(0);
+  selectUi('es-ES');
+  expect(checkedChips()).toHaveLength(0);
+  expect(store.get('locale')).toBe('es-ES');
+  document.getElementById('settings-dialog')!.dispatchEvent(new Event('close'));
+  expect(document.querySelector<HTMLInputElement>('#follow-ui-language')!.checked).toBe(true);
+  expect(checkedChips()).toHaveLength(0);
+  init();
+  document.getElementById('follow-ui-language')!.click();
+  expect(checkedChips()).toHaveLength(0);
+  language('fr-FR').click();
+  document.getElementById('follow-ui-language')!.click();
+  expect(checkedChips()).toHaveLength(0);
+  selectUi('de-DE');
+  document.getElementById('follow-ui-language')!.click();
+  expect(checkedChips()).toHaveLength(0);
+  expect(store.get('locale')).toBe('de-DE');
 });
