@@ -54,6 +54,10 @@ export function parseUrlParams(urlParams: URLSearchParams): Partial<State> {
     }
   });
 
+  const id = stateFromUrl['quote-id'];
+  if (!stateFromUrl.time && typeof id === 'string' && /^([01]\d|2[0-3])[0-5]\d-\d+$/.test(id)) {
+    stateFromUrl.time = `${id.slice(0, 2)}:${id.slice(2, 4)}`;
+  }
   return stateFromUrl;
 }
 

@@ -95,3 +95,16 @@ it('supports arrow-key navigation between collection tabs', () => {
   expect(document.activeElement?.id).toBe('library-history-tab');
   expect(document.activeElement?.getAttribute('aria-selected')).toBe('true');
 });
+
+it('closes favorites and recent quotes with Escape and restores launcher focus', () => {
+  for (const tabIndex of [0, 1]) {
+    click('open-quote-library');
+    const dialog = document.getElementById('quote-library') as HTMLDialogElement;
+    const tab = dialog.querySelectorAll<HTMLButtonElement>('[role="tab"]')[tabIndex];
+    tab.click();
+    tab.focus();
+    tab.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }));
+    expect(dialog.open).toBe(false);
+    expect(document.activeElement?.id).toBe('open-quote-library');
+  }
+});
