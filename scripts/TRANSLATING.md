@@ -20,10 +20,10 @@ Keep the input as UTF-8, pipe-delimited CSV with the original English header:
 Preserve every source ID exactly once, even if the external tool reorders rows.
 Do not translate IDs or headers. CSV quoting must protect pipes and newlines in text.
 
-For example, with the existing Greek translation:
+For example, with an external Greek translation saved outside the catalogue folder:
 
 ```sh
-python3 scripts/import_translation.py quotes/quotes.el-GR.draft.csv \
+python3 scripts/import_translation.py /path/to/greek-translation.csv \
   --output quotes/quotes.el-GR.csv
 python3 scripts/validate_translation.py quotes/quotes.el-GR.csv
 npm run admin
