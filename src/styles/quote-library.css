@@ -87,17 +87,7 @@
   font-variant-numeric: tabular-nums;
 }
 
-#settings > #reading-controls,
-#settings > #quote-navigation {
-  margin-inline-end: 0.5rem;
-}
-
-#quote-position {
-  background: var(--background);
-  color: var(--font-color);
-  border-color: color-mix(in srgb, var(--font-color), transparent 20%);
-}
-
 #favorite-quote[aria-pressed='true'] svg {
-  fill: currentColor;
+  stroke: #ff6447;
+  fill: #ff6447;
 }
