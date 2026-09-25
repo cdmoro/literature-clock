@@ -108,3 +108,44 @@ test('an empty selection uses the interface language and stays empty after reloa
   expect(store.get('locale')).toBe('de-DE');
   expect(store.get('quote-locales')).toBe('de-DE');
 });
+
+test('select all activates every language chip with a single locale code and persists the selection', () => {
+  history.replaceState({}, '', '/?locale=fr-FR&ui-locale=en-GB&quote-locales=fr-FR');
+  init();
+  document.getElementById('select-all-languages')!.click();
+  const chips = [...document.querySelectorAll<HTMLInputElement>('#quote-language-options input')];
+  expect(chips.every((input) => input.checked)).toBe(true);
+  expect(store.get('random-locale')).toBe(true);
+  expect(store.get('quote-locales')).toBe(chips.map((input) => input.value).join(','));
+  for (const input of chips) {
+    expect(input.nextElementSibling?.textContent?.split(`(${input.value})`)).toHaveLength(2);
+  }
+  language('fr-FR').click();
+  expect(language('fr-FR').checked).toBe(false);
+  selectUi('es-ES');
+  expect(language('fr-FR').nextElementSibling?.textContent).toContain('(fr-FR)');
+  init();
+  expect(language('fr-FR').checked).toBe(false);
+  expect(language('en-GB').checked).toBe(true);
+});
+
+test('inline bulk action toggles select all and deselect all, falling back to the interface language', () => {
+  history.replaceState({}, '', '/?locale=fr-FR&ui-locale=en-GB&quote-locales=fr-FR');
+  init();
+  const action = document.getElementById('select-all-languages')!;
+  expect(action.closest('p')?.querySelector('[data-text="settings_languages_help"]')).not.toBeNull();
+  expect(action.textContent).toBe('Select all');
+  action.click();
+  expect(action.textContent).toBe('Deselect all');
+  action.click();
+  expect(action.textContent).toBe('Select all');
+  expect(document.querySelectorAll('#quote-language-options input:checked')).toHaveLength(0);
+  expect(store.get('locale')).toBe('en-GB');
+  expect(store.get('random-locale')).toBe(false);
+  expect(store.get('quote-locales')).toBe('');
+  action.click();
+  selectUi('es-ES');
+  expect(action.textContent).toBe('Deseleccionar todos');
+  language('fr-FR').click();
+  expect(action.textContent).toBe('Seleccionar todos');
+});

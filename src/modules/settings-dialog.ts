@@ -41,7 +41,7 @@ export function initSettingsDialog() {
     `
     <fieldset id="quote-languages"><legend data-text="settings_quote_languages">Quote languages</legend>
       <label class="settings-follow"><span data-text="settings_follow_language">Same as the interface</span><input class="settings-switch" type="checkbox" role="switch" id="follow-ui-language"></label>
-      <p class="settings-help" data-text="settings_languages_help">Choose one or more languages to rotate through.</p>
+      <p class="settings-help"><span data-text="settings_languages_help">Choose languages to rotate through. If none are selected, quotes use the interface language.</span> <span id="select-all-languages-row"><a id="select-all-languages" href="#" data-text="settings_select_all">Select all</a>.</span></p>
       <div id="quote-language-options"></div>
     </fieldset>`,
   );

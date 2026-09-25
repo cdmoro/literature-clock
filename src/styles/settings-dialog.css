@@ -144,23 +144,37 @@
 #quote-languages legend {
   margin-bottom: 0.5rem;
 }
-.settings-check {
+#quote-language-options {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
-  padding: 0.25rem 0;
+}
+.language-chip {
+  position: relative;
   cursor: pointer;
 }
-.settings-check input {
-  accent-color: var(--accent-color);
-  width: 1rem;
-  height: 1rem;
-  flex-shrink: 0;
+.language-chip span {
+  display: block;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 65%);
+  border-radius: 2rem;
+  font-size: 0.8rem;
 }
-#quote-language-options {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.25rem 0.75rem;
+.language-chip:has(input:checked) span {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--background);
+}
+.language-chip:has(input:focus-visible) span {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+.language-chip:hover span {
+  border-color: var(--accent-color);
+}
+#select-all-languages {
+  text-decoration: underline;
+  text-underline-offset: 0.15rem;
 }
 #quote-language-options[hidden] {
   display: none;
