@@ -180,6 +180,12 @@ export function initQuoteLibrary() {
     dialog.showModal();
     refresh();
   });
+  dialog.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape' || !dialog.open) return;
+    event.preventDefault();
+    event.stopPropagation();
+    dialog.close();
+  });
   dialog.addEventListener('close', () => open.focus());
   window.addEventListener('storage', (event) => {
     if (event.key === FAVORITES_KEY || event.key === HISTORY_KEY || event.key === null) refresh();
