@@ -62,7 +62,8 @@
   opacity: 0.8;
   margin-block: 1.5rem;
 }
-#reading-controls button {
+#reading-controls button,
+#quote-navigation button {
   min-width: 2rem;
 }
 
@@ -77,4 +78,26 @@
 }
 #quote-library #clear-quote-history {
   font-size: 0.8rem;
+}
+
+#quote-position {
+  justify-content: center;
+  min-width: 3ch;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+#favorite-quote[aria-pressed='true'] svg {
+  stroke: #ff6447;
+  fill: #ff6447;
+}
+
+#quote-navigation button:disabled {
+  opacity: 1;
+  cursor: default;
+  background: var(--background);
+}
+
+#quote-navigation button:disabled svg {
+  opacity: 0.3;
 }

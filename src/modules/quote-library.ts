@@ -1,3 +1,4 @@
+import { readingIcon } from './reading-icons';
 import { store } from '../store';
 import { getQuoteUrl } from './quote-links';
 import { readingStrings, showQuoteNotice } from './reading-ui';
@@ -24,9 +25,11 @@ export function initQuoteLibrary() {
   const open = document.createElement('button');
   open.id = 'open-quote-library';
   open.type = 'button';
-  open.textContent = '☷';
+  open.innerHTML = readingIcon('history');
   open.setAttribute('aria-haspopup', 'dialog');
-  group.append(favorite, open);
+  const copy = group.querySelector('#copy');
+  group.insertBefore(favorite, copy);
+  group.insertBefore(open, copy);
 
   const dialog = document.createElement('dialog');
   dialog.id = 'quote-library';
@@ -37,7 +40,7 @@ export function initQuoteLibrary() {
   title.id = 'quote-library-title';
   const close = document.createElement('button');
   close.type = 'button';
-  close.textContent = '×';
+  close.innerHTML = readingIcon('close');
   close.autofocus = true;
   close.addEventListener('click', () => dialog.close());
   header.append(title, close);
@@ -111,7 +114,7 @@ export function initQuoteLibrary() {
     const current = store.get('active-quote');
     const favorites = readFavorites();
     const saved = !!current && favorites.some((quote) => quoteKey(quote) === quoteKey(current));
-    favorite.textContent = saved ? '♥' : '♡';
+    favorite.innerHTML = readingIcon('heart');
     favorite.title = saved ? strings.removeFavorite : strings.saveFavorite;
     favorite.setAttribute('aria-label', favorite.title);
     favorite.setAttribute('aria-pressed', String(saved));
@@ -176,6 +179,12 @@ export function initQuoteLibrary() {
   open.addEventListener('click', () => {
     dialog.showModal();
     refresh();
+  });
+  dialog.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape' || !dialog.open) return;
+    event.preventDefault();
+    event.stopPropagation();
+    dialog.close();
   });
   dialog.addEventListener('close', () => open.focus());
   window.addEventListener('storage', (event) => {

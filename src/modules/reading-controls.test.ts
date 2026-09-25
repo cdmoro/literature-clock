@@ -60,3 +60,62 @@ it('does not pause before the first quote has loaded', () => {
   pauseReading();
   expect(store.get('paused')).not.toBe(true);
 });
+
+it('resumes within the same minute without replacing the displayed quote', () => {
+  const quote = store.get('active-quote');
+  pauseReading();
+  resumeReading();
+  expect(store.get('paused')).toBe(false);
+  expect(store.get('active-quote')).toBe(quote);
+  expect(updateQuote).not.toHaveBeenCalled();
+});
+
+it('navigates both ways without pausing and displays the current position', async () => {
+  store.set('active-quote', { ...store.get('active-quote'), index: 1, variants: 3 } as ResolvedQuote);
+  initReadingControls();
+  expect(document.getElementById('quote-position')?.textContent).toBe('2/3');
+  document.getElementById('previous-quote')?.click();
+  await Promise.resolve();
+  expect(updateQuote).toHaveBeenLastCalledWith({ variantStep: -1 });
+  document.getElementById('next-quote')?.click();
+  await Promise.resolve();
+  expect(updateQuote).toHaveBeenLastCalledWith({ variantStep: 1 });
+  expect(store.get('paused')).not.toBe(true);
+});
+
+it('opens a compact ID link at its encoded minute, including midnight', () => {
+  history.replaceState({}, '', '/?locale=en-GB&quote-id=0000-002');
+  createStore();
+  initReadingControls();
+  expect(store.get('time')).toBe('00:00');
+  expect(store.get('paused')).toBe(true);
+});
+
+it('retains the explicit minute in legacy links', () => {
+  history.replaceState({}, '', '/?time=09:15&quote-id=0915-001');
+  createStore();
+  expect(store.get('time')).toBe('09:15');
+});
+
+it('shows a loading placeholder and disables navigation until multiple quotes are available', () => {
+  store.set('active-quote', undefined);
+  initReadingControls();
+  const counter = document.getElementById('quote-position')!;
+  const previous = document.getElementById('previous-quote') as HTMLButtonElement;
+  const next = document.getElementById('next-quote') as HTMLButtonElement;
+  expect(counter.textContent).toBe('…');
+  expect(counter.getAttribute('aria-busy')).toBe('true');
+  expect(previous.disabled).toBe(true);
+  expect(next.disabled).toBe(true);
+  store.set('active-quote', { id: '1200-000', time: '12:00', locale: 'en-GB', index: 0, variants: 1 } as ResolvedQuote);
+  expect(counter.textContent).toBe('1/1');
+  expect(counter.getAttribute('aria-busy')).toBe('false');
+  previous.click();
+  next.click();
+  expect(previous.disabled).toBe(true);
+  expect(next.disabled).toBe(true);
+  expect(updateQuote).not.toHaveBeenCalled();
+  store.set('active-quote', { ...store.get('active-quote'), variants: 2 } as ResolvedQuote);
+  expect(previous.disabled).toBe(false);
+  expect(next.disabled).toBe(false);
+});
