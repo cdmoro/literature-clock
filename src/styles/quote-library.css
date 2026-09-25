@@ -91,3 +91,13 @@
   stroke: #ff6447;
   fill: #ff6447;
 }
+
+#quote-navigation button:disabled {
+  opacity: 1;
+  cursor: default;
+  background: var(--background);
+}
+
+#quote-navigation button:disabled svg {
+  opacity: 0.3;
+}

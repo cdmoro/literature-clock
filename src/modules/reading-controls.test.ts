@@ -96,3 +96,26 @@ it('retains the explicit minute in legacy links', () => {
   createStore();
   expect(store.get('time')).toBe('09:15');
 });
+
+it('shows a loading placeholder and disables navigation until multiple quotes are available', () => {
+  store.set('active-quote', undefined);
+  initReadingControls();
+  const counter = document.getElementById('quote-position')!;
+  const previous = document.getElementById('previous-quote') as HTMLButtonElement;
+  const next = document.getElementById('next-quote') as HTMLButtonElement;
+  expect(counter.textContent).toBe('…');
+  expect(counter.getAttribute('aria-busy')).toBe('true');
+  expect(previous.disabled).toBe(true);
+  expect(next.disabled).toBe(true);
+  store.set('active-quote', { id: '1200-000', time: '12:00', locale: 'en-GB', index: 0, variants: 1 } as ResolvedQuote);
+  expect(counter.textContent).toBe('1/1');
+  expect(counter.getAttribute('aria-busy')).toBe('false');
+  previous.click();
+  next.click();
+  expect(previous.disabled).toBe(true);
+  expect(next.disabled).toBe(true);
+  expect(updateQuote).not.toHaveBeenCalled();
+  store.set('active-quote', { ...store.get('active-quote'), variants: 2 } as ResolvedQuote);
+  expect(previous.disabled).toBe(false);
+  expect(next.disabled).toBe(false);
+});

@@ -95,7 +95,8 @@ export function initReadingControls() {
     const quote = store.get('active-quote');
     previous.title = strings.previousQuote;
     previous.setAttribute('aria-label', strings.previousQuote);
-    counter.textContent = quote && !quote.fallback ? `${quote.index + 1}/${quote.variants}` : '0/0';
+    counter.textContent = !quote ? '…' : quote.fallback ? '—' : `${quote.index + 1}/${quote.variants}`;
+    counter.setAttribute('aria-busy', String(!quote));
     next.title = strings.nextQuote;
     next.setAttribute('aria-label', strings.nextQuote);
     next.disabled = changing || !quote || quote.fallback || quote.variants < 2 || !!store.get('quote');
