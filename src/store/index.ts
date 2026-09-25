@@ -4,6 +4,8 @@ import { Locale, ResolvedQuote } from '../types';
 
 interface Stateful {
   locale: Locale;
+  'ui-locale'?: Locale;
+  'quote-locales'?: string;
   zen: boolean;
   work: boolean;
   screensaver: boolean;
@@ -85,9 +87,10 @@ export class Store {
     this.state = { ...defaultState, ...stateFromLocalStorage, ...stateFromUrl };
 
     const saved = stateFromLocalStorage;
-    this.state.transition = urlParams.has('transition') || urlParams.has('fade')
-      ? resolveTransition(urlParams.get('transition'), urlParams.get('fade'))
-      : resolveTransition(saved.transition, saved.fade);
+    this.state.transition =
+      urlParams.has('transition') || urlParams.has('fade')
+        ? resolveTransition(urlParams.get('transition'), urlParams.get('fade'))
+        : resolveTransition(saved.transition, saved.fade);
     delete this.state.fade;
     if (urlParams.has('fade')) {
       this.syncToUrl('fade', false);
@@ -102,6 +105,7 @@ export class Store {
     }
 
     this.state.locale = resolveLocale(this.state.locale);
+    if (this.state['ui-locale']) this.state['ui-locale'] = resolveLocale(this.state['ui-locale']);
     if (urlParams.has('locale') && urlParams.get('locale') !== this.state.locale) {
       this.syncToUrl('locale', this.state.locale);
     }
@@ -214,6 +218,8 @@ export let store: Store;
 export function createStore() {
   store = new Store({
     locale: resolveLocale(),
+    'ui-locale': undefined,
+    'quote-locales': undefined,
     screensaver: false,
     work: false,
     zen: false,

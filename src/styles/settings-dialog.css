@@ -1,0 +1,194 @@
+#settings-dialog {
+  box-sizing: border-box;
+  width: min(32rem, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+  overflow: auto;
+  padding: 1.5rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 75%);
+  border-radius: 1rem;
+  background: var(--background);
+  color: var(--font-color);
+  box-shadow: 0 1rem 4rem #0005;
+  font:
+    0.9rem/1.5 system-ui,
+    sans-serif;
+}
+#settings-dialog::backdrop {
+  background: #0006;
+  backdrop-filter: blur(4px);
+}
+#settings-dialog header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+#settings-dialog h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+#settings-dialog h3 {
+  margin: 1.25rem 0 0.75rem;
+  font-size: 0.95rem;
+}
+#settings-dialog section + section {
+  border-top: 1px solid color-mix(in srgb, var(--font-color), transparent 85%);
+  margin-top: 1.25rem;
+}
+#settings-dialog .settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0.75rem 0;
+}
+#settings-dialog .settings-row[hidden] {
+  display: none;
+}
+#settings-dialog .input-group {
+  min-width: 0;
+  max-width: 65%;
+}
+#settings-dialog select {
+  min-width: 0;
+  width: 100%;
+  max-height: none;
+}
+#settings-dialog button {
+  max-height: none;
+}
+#settings > .input-group:empty,
+#settings > span:empty {
+  display: none;
+}
+@media (max-width: 400px) {
+  #settings-dialog {
+    padding: 1rem;
+  }
+  #settings-dialog .settings-row {
+    gap: 0.5rem;
+  }
+}
+
+/* Keep the original SVG controls and round the visible edges of every group. */
+#settings-dialog .input-group-text {
+  display: flex;
+}
+#settings-dialog .input-group {
+  flex: 0 1 62%;
+}
+#settings-dialog .input-group > :first-child {
+  border-radius: 0.35rem 0 0 0.35rem;
+  margin-left: 0;
+}
+#settings-dialog .input-group > :last-child {
+  border-radius: 0 0.35rem 0.35rem 0;
+}
+#settings-dialog .input-group > :only-child {
+  border-radius: 0.35rem;
+}
+#settings-dialog .settings-row:has(.settings-switch) {
+  display: grid;
+  grid-template-columns: 18px 1fr auto;
+  gap: 0.4rem 0.6rem;
+}
+#settings-dialog .settings-switch {
+  position: relative;
+  width: 2.5rem;
+  height: 1.4rem;
+  padding: 0;
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--font-color), transparent 80%);
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 50%);
+}
+#settings-dialog .settings-switch::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--font-color);
+  transition: transform 0.15s;
+}
+#settings-dialog .settings-switch[aria-checked='true'] {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+}
+#settings-dialog .settings-switch[aria-checked='true']::after {
+  transform: translateX(17px);
+  background: var(--background);
+}
+.settings-help {
+  opacity: 0.75;
+  font-size: 0.8rem;
+  margin: 0.25rem 0 0.75rem;
+}
+#work-description {
+  grid-column: 2 / -1;
+  margin: 0;
+}
+#font-preview {
+  padding: 0.75rem;
+  border: 1px dashed color-mix(in srgb, var(--font-color), transparent 75%);
+  border-radius: 0.5rem;
+  font-family: var(--override-quote-font-family, var(--quote-font-family));
+  font-size: 1.2rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+#quote-languages {
+  border: 0;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+#quote-languages legend {
+  margin-bottom: 0.5rem;
+}
+.settings-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+  cursor: pointer;
+}
+.settings-check input {
+  accent-color: var(--accent-color);
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+#quote-language-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.25rem 0.75rem;
+}
+#quote-language-options[hidden] {
+  display: none;
+}
+#settings-dialog :is(input, button, select):focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  #settings-dialog .settings-switch::after {
+    transition: none;
+  }
+}
+
+#settings-dialog #settings-color-controls {
+  flex: 0 0 auto;
+}
+#settings-dialog header {
+  position: sticky;
+  top: -1.5rem;
+  padding: 0.5rem 0;
+  background: var(--background);
+  z-index: 2;
+}
+@media (max-width: 400px) {
+  #settings-dialog header {
+    top: -1rem;
+  }
+}

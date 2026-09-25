@@ -1,9 +1,9 @@
-import { getBaseLocale } from './locales';
 import { store } from '../store';
+import { getBaseLocale } from './locales';
 import STRINGS from '../strings/reading.json';
 
 export function readingStrings() {
-  return STRINGS[getBaseLocale(store.get('locale'))];
+  return STRINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))];
 }
 
 let noticeTimeout: ReturnType<typeof setTimeout> | undefined;
