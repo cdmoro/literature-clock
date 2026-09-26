@@ -201,7 +201,12 @@ export function initQuoteLibrary() {
   remember(store.get('active-quote'));
   store.subscribe((state, previous) => {
     if (state['active-quote'] !== previous['active-quote']) remember(state['active-quote']);
-    if (state.locale !== previous.locale || state.work !== previous.work) refresh();
+    if (
+      state.locale !== previous.locale ||
+      state['ui-locale'] !== previous['ui-locale'] ||
+      state.work !== previous.work
+    )
+      refresh();
     else if (state['active-quote'] !== previous['active-quote']) refresh(false);
   });
   refresh();
