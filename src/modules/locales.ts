@@ -132,6 +132,10 @@ export function translateStrings(locale: Locale) {
     .querySelectorAll<HTMLOptionElement>('[data-label]')
     .forEach((el) => (el.label = strings[el.dataset.label as keyof Translations]));
 
+  document.querySelectorAll<HTMLOptionElement>('#font-select option[data-custom-font]').forEach((option) => {
+    option.textContent = `${option.value} (${strings.settings_font_custom_label})`;
+  });
+
   document
     .querySelectorAll<HTMLElement>('[data-title]')
     .forEach((el) => (el.title = strings[el.dataset.title as keyof typeof strings]));

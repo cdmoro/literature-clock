@@ -66,7 +66,10 @@ function saveCustomFonts() {
 function createOption(value: string) {
   const option = document.createElement('option');
   option.value = value;
-  option.textContent = value;
+  if (customFonts.includes(value)) {
+    option.dataset.customFont = '';
+    option.textContent = `${value} (${SETTINGS[getBaseLocale(getInterfaceLocale())].settings_font_custom_label})`;
+  } else option.textContent = value;
   return option;
 }
 
