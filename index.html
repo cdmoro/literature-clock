@@ -6,51 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Discover inspiring quotes from your favorite books with Literature Clock. Customize language, colors, and more for a unique experience"
+      content="A free online clock that tells the time with quotes from books. Explore six languages, personalize themes and fonts, or use it as a literary screensaver."
     />
-    <meta name="keywords" content="literature, quotes, books, clock, reading, wisdom" />
-    <link rel="canonical" href="https://literatureclock.netlify.app" />
+    <link rel="canonical" href="https://literatureclock.netlify.app/" />
     <meta name="robots" content="index, follow" />
-    <link rel="alternate" href="https://literatureclock.netlify.app?locale=es-ES" hreflang="es" />
-    <link rel="alternate" href="https://literatureclock.netlify.app?locale=pt-PT" hreflang="pt" />
-    <link rel="alternate" href="https://literatureclock.netlify.app?locale=it-IT" hreflang="it" />
-    <link rel="alternate" href="https://literatureclock.netlify.app?locale=fr-FR" hreflang="fr" />
-    <link rel="alternate" href="https://literatureclock.netlify.app?locale=de-DE" hreflang="de" />
 
     <!-- Open Graph tags -->
-    <meta property="og:title" content="Literature Clock - Online Literary Quotes Clock" />
+    <meta property="og:title" content="Literature Clock — Book Quotes That Tell the Time" />
     <meta
       property="og:description"
-      content="Discover inspiring quotes from your favorite books with Literature Clock. Customize language, colors, and more for a unique experience"
+      content="A free online clock that tells the time with quotes from books. Explore six languages, personalize themes and fonts, or use it as a literary screensaver."
     />
-    <meta property="og:url" content="https://literatureclock.netlify.app" />
+    <meta property="og:url" content="https://literatureclock.netlify.app/" />
     <meta property="og:image" content="https://literatureclock.netlify.app/assets/github-dark.png" />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content="en_GB" />
     <meta property="og:site_name" content="Literature Clock" />
+
+    <meta property="og:image:alt" content="Literature Clock displaying a literary quotation in its dark theme" />
 
     <!-- Twitter meta tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Literature Clock - Online Literary Quotes Clock" />
+    <meta name="twitter:title" content="Literature Clock — Book Quotes That Tell the Time" />
     <meta
       name="twitter:description"
-      content="Discover inspiring quotes from your favorite books with Literature Clock. Customize language, colors, and more for a unique experience"
+      content="A free online clock that tells the time with quotes from books. Explore six languages, personalize themes and fonts, or use it as a literary screensaver."
     />
-    <meta name="twitter:image" content="https://literatureclock.netlify.app/images/github-dark.png" />
+    <meta name="twitter:image" content="https://literatureclock.netlify.app/assets/github-dark.png" />
     <meta name="twitter:site" content="@CarlosBonadeo" />
 
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Literature Clock",
+        "url": "https://literatureclock.netlify.app/",
+        "description": "A free online clock that tells the time with quotes from books, with six languages, customizable themes and a screensaver mode.",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript and a modern web browser",
+        "inLanguage": ["en", "es", "pt", "fr", "it", "de"],
+        "isAccessibleForFree": true,
+        "author": { "@type": "Person", "name": "Carlos Bonadeo" }
+      }
+    </script>
+    <noscript><style>body[data-loading] { display: flex; }</style></noscript>
     <link rel="stylesheet" href="src/styles/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet" />
 
-    <title>Literature Clock</title>
+    <title>Literature Clock — Book Quotes That Tell the Time</title>
   </head>
 
   <body data-loading>
     <main>
       <div id="photo-overlay"></div>
       <div id="time-clock" data-html2canvas-ignore></div>
+      <noscript><p>Enable JavaScript to see the live clock. Read about Literature Clock below.</p></noscript>
       <div id="clock">
         <blockquote id="quote"></blockquote>
       </div>
@@ -396,6 +409,33 @@
             <span id="made-by" data-text="made_by">Made by</span>
             <a href="https://www.linkedin.com/in/cdbonadeo/" target="_blank">@CarlosBonadeo</a>
           </span>
+          |
+          <details id="about-clock">
+            <summary data-text="about">About</summary>
+            <section aria-labelledby="about-clock-title" lang="en-GB">
+              <h1 id="about-clock-title">Literature Clock — a clock told through book quotes</h1>
+              <p>Literature Clock is a free online literary clock for book lovers. It matches your
+                local time with a passage from a book that mentions that time, updating every minute.
+                Discover authors and books as the day goes by.</p>
+              <h2>A literary clock in six languages</h2>
+              <p>Read in English, Spanish, Portuguese, French, Italian or German. Choose a language
+                from the settings, or use random language mode to explore a different one each minute.
+                Translations may contain inaccuracies; you can report a quote that needs correcting.</p>
+              <h2>Make the clock your own</h2>
+              <p>Choose light or dark themes, change fonts and colours, and switch to fullscreen.
+                Zen mode removes the controls for a quiet reading experience, while screensaver mode
+                moves the quotation around the screen. Work mode filters quotes marked explicit.</p>
+              <h2>Save and share favourite passages</h2>
+              <p>Save favourites in your browser, revisit recent quotes, copy a passage or download
+                an image to share. Your saved collection stays in this browser, without an account.</p>
+              <h2>About the project</h2>
+              <p>Created by Carlos Bonadeo, building on the literary clock work of
+                <a href="https://literature-clock.jenevoldsen.com/">Johannes Enevoldsen</a> and
+                <a href="https://www.instructables.com/Literary-Clock-Made-From-E-reader/">Jaap Meijers</a>.
+                Visit the <a href="https://github.com/cdmoro/literature-clock">open-source project</a>
+                to suggest improvements or contribute quotations.</p>
+            </section>
+          </details>
         </div>
       </div>
     </footer>

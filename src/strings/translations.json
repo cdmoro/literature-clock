@@ -1,5 +1,6 @@
 {
   "en-GB": {
+    "about": "About",
     "add_quote": "Add quote",
     "anaglyph": "Anaglyph",
     "author": "Author",
@@ -70,6 +71,7 @@
     "zen_mode_title": "Remove everything that distracts you"
   },
   "en-US": {
+    "about": "About",
     "add_quote": "Add quote",
     "anaglyph": "Anaglyph",
     "author": "Author",
@@ -140,6 +142,7 @@
     "zen_mode_title": "Remove everything that distracts you"
   },
   "es-ES": {
+    "about": "Acerca de",
     "add_quote": "Agregar cita",
     "anaglyph": "Anaglifo",
     "author": "Autor",
@@ -210,6 +213,7 @@
     "zen_mode_title": "Elimina todo lo que te distrae"
   },
   "pt-PT": {
+    "about": "Sobre",
     "add_quote": "Adicionar citação",
     "anaglyph": "Anaglifo",
     "author": "Autor",
@@ -280,6 +284,7 @@
     "zen_mode_title": "Remova tudo o que te distrai"
   },
   "fr-FR": {
+    "about": "À propos",
     "add_quote": "Ajouter une citation",
     "anaglyph": "Anaglyphe",
     "author": "Auteur",
@@ -350,6 +355,7 @@
     "zen_mode_title": "Supprimez tout ce qui vous distrait"
   },
   "it-IT": {
+    "about": "Informazioni",
     "add_quote": "Aggiungi citazione",
     "anaglyph": "Anaglifo",
     "author": "Autore",
@@ -420,6 +426,7 @@
     "zen_mode_title": "Rimuovi tutto ciò che ti distrae"
   },
   "de-DE": {
+    "about": "Über",
     "add_quote": "Zitat hinzufügen",
     "anaglyph": "Anaglyph",
     "author": "Autor",
