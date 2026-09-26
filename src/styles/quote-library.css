@@ -3,8 +3,8 @@
   width: min(42rem, calc(100vw - 2rem));
   max-height: min(80dvh, 48rem);
   padding: 1.25rem;
-  border: 1px solid var(--accent-color);
-  border-radius: 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--font-color, #222), transparent 75%);
+  border-radius: 1rem;
   background: var(--background, #fff);
   color: var(--font-color, #222);
   font:
@@ -12,10 +12,11 @@
     sans-serif;
   text-align: start;
   overflow: auto;
-  box-shadow: 0 1rem 4rem #0004;
+  box-shadow: 0 1rem 4rem #0005;
 }
 #quote-library::backdrop {
-  background: #0008;
+  background: #0006;
+  backdrop-filter: blur(4px);
 }
 #quote-library header,
 #quote-library .saved-actions {

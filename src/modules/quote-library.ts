@@ -39,6 +39,7 @@ export function initQuoteLibrary() {
   const header = document.createElement('header');
   const title = document.createElement('h2');
   title.id = 'quote-library-title';
+  title.tabIndex = -1;
   const close = document.createElement('button');
   close.type = 'button';
   close.className = 'dialog-close';
@@ -180,6 +181,10 @@ export function initQuoteLibrary() {
   open.addEventListener('click', () => {
     dialog.showModal();
     refresh();
+    // Land focus on the title, not the close button — showModal() would
+    // otherwise focus the first focusable descendant (the close button),
+    // making it look focused as soon as the dialog opens.
+    title.focus();
   });
   dialog.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape' || !dialog.open) return;

@@ -39,7 +39,8 @@ body[data-loading] {
 
 body.zen:not(.screensaver) #progress-bar,
 body.zen:not(.screensaver) #time-clock,
-body.zen:not(.screensaver) footer #menu {
+body.zen:not(.screensaver) footer #menu,
+body.zen:not(.screensaver) .github-corner {
   display: none !important;
 }
 

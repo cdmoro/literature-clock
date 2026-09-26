@@ -1,0 +1,61 @@
+/* "GitHub Corners" by Tim Holman (MIT) — https://github.com/tholman/github-corners
+ * Positioned fixed to the viewport (rather than the library's own
+ * `position: absolute`) so it sits in the corner regardless of <footer>'s
+ * own position. It stays a child of <footer> so it fades out with the rest
+ * of the toolbar after a few seconds of inactivity (see static.ts) instead
+ * of needing its own timer. */
+.github-corner {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 80px;
+  height: 80px;
+  fill: #fff;
+  color: #151513;
+}
+
+/* Flip the ribbon to a dark cat on a light corner for light themes, instead
+ * of always the same black-and-white pair regardless of the page behind it. */
+[data-theme$='light'] .github-corner {
+  fill: #151513;
+  color: #fff;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+.octo-arm {
+  transform-origin: 130px 106px;
+}
+
+@media (max-width: 500px) {
+  .github-corner {
+    width: 60px;
+    height: 60px;
+  }
+
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}

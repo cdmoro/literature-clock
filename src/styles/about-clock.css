@@ -1,5 +1,7 @@
 /* Closed state: a discreet footer link, sitting quietly among the other
-   footer links instead of a large panel above the toolbar. */
+   footer links instead of a large panel above the toolbar. It stays this
+   simple text link at all times — see about-clock.ts for why the actual
+   panel is moved out to #about-clock-overlay once JS runs. */
 #about-clock {
   display: inline;
 }
@@ -16,44 +18,42 @@
   display: none;
 }
 
-/* Open state: a centred, dialog-like card with a dimmed backdrop, matching
-   the app's other panels (see settings-dialog.css / quote-library.css)
-   without needing a <dialog> element for content that must stay readable
-   without JavaScript. */
-#about-clock[open] {
+/* No-JS fallback: if about-clock.ts never runs, the <section> is never
+   moved out, so opening the <details> reveals it right here inline. */
+#about-clock section {
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* Once JS runs, the panel lives here instead — a centred, dialog-like card
+   with a dimmed backdrop, matching the app's other panels (see
+   settings-dialog.css / quote-library.css). Living at the body level keeps
+   it clear of the footer's own auto-hide fade after a few seconds of
+   inactivity. */
+#about-clock-overlay {
+  display: none;
   position: fixed;
   inset: 0;
   z-index: 100;
-  font-size: 0.85rem;
-}
-
-#about-clock[open]::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
   background: #0006;
   backdrop-filter: blur(4px);
 }
 
-/* The footer link is only needed to open the panel; the close button inside
-   it (matching Settings and My quotes) takes over from here. */
-#about-clock[open] summary {
-  display: none;
+#about-clock-overlay:not([hidden]) {
+  display: flex;
 }
 
-#about-clock section {
+#about-clock-overlay section {
   box-sizing: border-box;
-  position: fixed;
-  inset: 0;
-  margin: auto;
+  position: relative;
   width: min(38rem, calc(100vw - 2rem));
   max-height: min(80dvh, 44rem);
-  height: fit-content;
   padding: 1.5rem 1.5rem 1.25rem;
   overflow-y: auto;
-  text-align: left;
-  line-height: 1.6;
+  font-size: 0.85rem;
   background: var(--background, white);
   color: var(--font-color, black);
   border: 1px solid color-mix(in srgb, var(--font-color, black), transparent 75%);
@@ -61,23 +61,23 @@
   box-shadow: 0 1rem 4rem #0005;
 }
 
-#about-clock .dialog-close {
+#about-clock-overlay .dialog-close {
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;
 }
 
-#about-clock h1 {
+#about-clock-overlay h1 {
   margin-top: 0;
   margin-inline-end: 2.5rem;
   font-size: 1.3rem;
 }
 
-#about-clock h2 {
+#about-clock-overlay h2 {
   margin: 1.25rem 0 0.5rem;
   font-size: 1.05rem;
 }
 
-#about-clock section a {
+#about-clock-overlay a {
   color: var(--accent-color);
 }

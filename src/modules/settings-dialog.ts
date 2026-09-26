@@ -12,7 +12,7 @@ export function initSettingsDialog() {
   dialog.setAttribute('aria-labelledby', 'settings-title');
   dialog.setAttribute('data-html2canvas-ignore', '');
   dialog.innerHTML = `
-    <header><h2 id="settings-title" data-text="settings_title">Settings</h2>
+    <header><h2 id="settings-title" tabindex="-1" data-text="settings_title">Settings</h2>
       <button type="button" id="close-settings" class="dialog-close" data-aria-label="settings_close" aria-label="Close settings">${readingIcon('close')}</button></header>
     <section id="settings-appearance"><h3 data-text="settings_appearance">Appearance</h3></section>
     <section id="settings-content"><h3 data-text="settings_content">Content</h3></section>
@@ -128,6 +128,10 @@ export function initSettingsDialog() {
   open.addEventListener('click', () => {
     dialog.showModal();
     dialog.scrollTop = 0;
+    // Land focus on the title, not the close button — showModal() would
+    // otherwise focus the first focusable descendant (the close button),
+    // making it look focused as soon as the dialog opens.
+    dialog.querySelector<HTMLElement>('#settings-title')?.focus();
   });
   dialog.querySelector('#close-settings')!.addEventListener('click', () => dialog.close());
   closeDialogOnBackdropClick(dialog);
