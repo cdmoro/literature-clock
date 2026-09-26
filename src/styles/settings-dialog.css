@@ -223,22 +223,6 @@
 #settings-dialog .settings-row:has(.settings-font) > label {
   padding-top: 0.25rem;
 }
-.settings-follow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin: 0.5rem 0;
-  cursor: pointer;
-}
-#settings-dialog input.settings-switch {
-  appearance: none;
-  flex-shrink: 0;
-  margin: 0;
-  box-sizing: content-box;
-  cursor: pointer;
-}
-
 .settings-custom-font {
   grid-column: 1 / -1;
   min-width: 0;
@@ -271,4 +255,11 @@
 }
 #custom-font-status {
   margin: 0.35rem 0 0;
+}
+
+.custom-font-actions {
+  margin: 0.5rem 0 0;
+}
+.custom-font-actions a {
+  text-decoration: underline;
 }

@@ -31,173 +31,84 @@ function selectUi(value: string) {
   select.dispatchEvent(new Event('change'));
 }
 
-test('follows the interface by default, then rotates only through selected languages', () => {
+test('chips start empty and interface changes update the quote language', () => {
+  history.replaceState({}, '', '/?locale=en-US');
+  init();
+  expect(document.getElementById('follow-ui-language')).toBeNull();
+  expect(document.querySelectorAll('#quote-language-options input:checked')).toHaveLength(0);
+  expect(document.getElementById('quote-language-options')!.hidden).toBe(false);
+  expect(document.getElementById('clear-languages-action')!.hidden).toBe(true);
+  selectUi('es-ES');
+  expect(store.get('locale')).toBe('es-ES');
+  expect(document.querySelectorAll('#quote-language-options input:checked')).toHaveLength(0);
+});
+
+test('explicit selections rotate only chosen languages and preserve the interface', () => {
   history.replaceState({}, '', '/?locale=es-ES');
   init();
-  expect(document.querySelector<HTMLInputElement>('#follow-ui-language')!.checked).toBe(true);
-  document.getElementById('follow-ui-language')!.click();
-  expect(document.querySelectorAll('#quote-language-options input:checked')).toHaveLength(0);
-  language('es-ES').click();
   language('en-GB').click();
+  language('fr-FR').click();
+  expect(store.get('quote-locales')).toBe('en-GB,fr-FR');
   expect(store.get('random-locale')).toBe(true);
-  expect(store.get('quote-locales')).toBe('en-GB,es-ES');
   expect(document.documentElement.lang).toBe('es-ES');
-  for (let i = 0; i < 20; i++) expect(['en-GB', 'es-ES']).toContain(getRandomLocale());
-  language('es-ES').click();
-  expect(store.get('locale')).toBe('en-GB');
-  expect(store.get('random-locale')).toBe(false);
-  expect(language('en-GB').disabled).toBe(false);
-  expect(getRandomLocale()).toBe('en-GB');
-  const saved = JSON.parse(localStorage.getItem('settings')!);
-  expect(saved['ui-locale']).toBe('es-ES');
-  expect(saved['quote-locales']).toBe('en-GB');
-});
-
-test('changing only the interface preserves the quote and translates reading controls', () => {
-  history.replaceState({}, '', '/?locale=en-GB&ui-locale=es-ES&quote-locales=en-GB');
-  init();
-  selectUi('fr-FR');
-  expect(document.documentElement.lang).toBe('fr-FR');
-  expect(store.get('locale')).toBe('en-GB');
-  expect(updateQuote).not.toHaveBeenCalled();
-  expect(readingStrings().pause).toBe('Mettre en pause');
-  expect(document.getElementById('settings-title')?.textContent).toBe('Paramètres');
-});
-
-test('following the interface again resets the subset and persists across reloads', () => {
-  history.replaceState({}, '', '/?locale=en-GB&ui-locale=es-ES&quote-locales=en-GB,fr-FR&random-locale=true');
-  init();
-  document.getElementById('follow-ui-language')!.click();
-  expect(store.get('quote-locales')).toBeUndefined();
-  expect(store.get('locale')).toBe('es-ES');
+  for (let i = 0; i < 20; i++) expect(['en-GB', 'fr-FR']).toContain(getRandomLocale());
   selectUi('de-DE');
-  expect(store.get('locale')).toBe('de-DE');
-  init();
-  expect(document.querySelector<HTMLInputElement>('#follow-ui-language')!.checked).toBe(true);
-  expect(store.get('locale')).toBe('de-DE');
+  expect(store.get('quote-locales')).toBe('en-GB,fr-FR');
+  expect(document.documentElement.lang).toBe('de-DE');
 });
 
-test('legacy random language preferences expose all languages without selecting an empty pool', () => {
-  history.replaceState({}, '', '/?locale=es-ES&random-locale=true&quote-locales=invalid');
+test('select all is idempotent; clear is available for partial selections and follows the interface', () => {
+  history.replaceState({}, '', '/?locale=fr-FR&ui-locale=en-GB&quote-locales=fr-FR');
   init();
-  expect(document.querySelector<HTMLInputElement>('#follow-ui-language')!.checked).toBe(false);
+  const all = document.getElementById('select-all-languages')!;
+  const clear = document.getElementById('clear-languages')!;
+  expect(all.closest('p')).toBe(clear.closest('p'));
+  expect(document.getElementById('clear-languages-action')!.hidden).toBe(false);
+  all.click();
+  all.click();
   expect(
     [...document.querySelectorAll<HTMLInputElement>('#quote-language-options input')].every((input) => input.checked),
   ).toBe(true);
-  expect(getRandomLocale()).toBeTruthy();
-});
-
-test('an empty selection uses the interface language and stays empty after reload', () => {
-  history.replaceState({}, '', '/?locale=fr-FR&ui-locale=en-GB&quote-locales=fr-FR');
-  init();
+  expect(all.textContent).toBe('Select all');
   language('fr-FR').click();
-  expect(store.get('locale')).toBe('en-GB');
+  expect(document.getElementById('clear-languages-action')!.hidden).toBe(false);
+  clear.click();
   expect(store.get('quote-locales')).toBe('');
-  expect(new URLSearchParams(location.search).get('quote-locales')).toBe('');
   expect(store.get('random-locale')).toBe(false);
+  expect(store.get('locale')).toBe('en-GB');
+  expect(document.getElementById('clear-languages-action')!.hidden).toBe(true);
+  init();
   expect(document.querySelectorAll('#quote-language-options input:checked')).toHaveLength(0);
   selectUi('es-ES');
   expect(store.get('locale')).toBe('es-ES');
-  init();
-  expect(store.get('locale')).toBe('es-ES');
-  expect(document.querySelectorAll('#quote-language-options input:checked')).toHaveLength(0);
-  expect(document.querySelector<HTMLInputElement>('#follow-ui-language')!.checked).toBe(false);
-  expect(
-    [...document.querySelectorAll<HTMLInputElement>('#quote-language-options input')].every((input) => !input.disabled),
-  ).toBe(true);
-  language('de-DE').click();
-  expect(store.get('locale')).toBe('de-DE');
-  expect(store.get('quote-locales')).toBe('de-DE');
 });
 
-test('select all activates every language chip with a single locale code and persists the selection', () => {
-  history.replaceState({}, '', '/?locale=fr-FR&ui-locale=en-GB&quote-locales=fr-FR');
+test('changing only the interface preserves the quote and translates controls and chip codes', () => {
+  history.replaceState({}, '', '/?locale=en-GB&ui-locale=es-ES&quote-locales=en-GB');
   init();
-  document.getElementById('select-all-languages')!.click();
-  const chips = [...document.querySelectorAll<HTMLInputElement>('#quote-language-options input')];
-  expect(chips.every((input) => input.checked)).toBe(true);
-  expect(store.get('random-locale')).toBe(true);
-  expect(store.get('quote-locales')).toBe(chips.map((input) => input.value).join(','));
-  for (const input of chips) {
-    expect(input.nextElementSibling?.textContent?.split(`(${input.value})`)).toHaveLength(2);
+  selectUi('fr-FR');
+  expect(store.get('locale')).toBe('en-GB');
+  expect(updateQuote).not.toHaveBeenCalled();
+  expect(readingStrings().pause).toBe('Mettre en pause');
+  for (const input of document.querySelectorAll<HTMLInputElement>('#quote-language-options input')) {
+    expect(input.nextElementSibling!.textContent!.split(`(${input.value})`)).toHaveLength(2);
   }
-  language('fr-FR').click();
-  expect(language('fr-FR').checked).toBe(false);
-  selectUi('es-ES');
-  expect(language('fr-FR').nextElementSibling?.textContent).toContain('(fr-FR)');
-  init();
-  expect(language('fr-FR').checked).toBe(false);
-  expect(language('en-GB').checked).toBe(true);
 });
 
-test('inline bulk action toggles select all and deselect all, falling back to the interface language', () => {
+test('legacy random preferences still select every language', () => {
+  history.replaceState({}, '', '/?locale=es-ES&random-locale=true');
+  init();
+  expect(
+    [...document.querySelectorAll<HTMLInputElement>('#quote-language-options input')].every((input) => input.checked),
+  ).toBe(true);
+});
+
+test('deselecting the last chip follows the interface without preselecting a replacement', () => {
   history.replaceState({}, '', '/?locale=fr-FR&ui-locale=en-GB&quote-locales=fr-FR');
   init();
-  const action = document.getElementById('select-all-languages')!;
-  expect(action.closest('p')?.querySelector('[data-text="settings_languages_help"]')).not.toBeNull();
-  expect(action.textContent).toBe('Select all');
-  action.click();
-  expect(action.textContent).toBe('Deselect all');
-  action.click();
-  expect(action.textContent).toBe('Select all');
+  language('fr-FR').click();
+  expect(store.get('locale')).toBe('en-GB');
   expect(document.querySelectorAll('#quote-language-options input:checked')).toHaveLength(0);
-  expect(store.get('locale')).toBe('en-GB');
-  expect(store.get('random-locale')).toBe(false);
-  expect(store.get('quote-locales')).toBe('');
-  action.click();
-  selectUi('es-ES');
-  expect(action.textContent).toBe('Deseleccionar todos');
-  language('fr-FR').click();
-  expect(action.textContent).toBe('Seleccionar todos');
-});
-
-test('closing with no languages enables following the interface and persists without changing the quote', () => {
-  history.replaceState({}, '', '/?locale=fr-FR&ui-locale=en-GB&quote-locales=fr-FR');
-  init();
-  language('fr-FR').click();
-  vi.mocked(updateQuote).mockClear();
   document.getElementById('settings-dialog')!.dispatchEvent(new Event('close'));
-  expect(document.querySelector<HTMLInputElement>('#follow-ui-language')!.checked).toBe(true);
-  expect(store.get('quote-locales')).toBeUndefined();
-  expect(new URLSearchParams(location.search).has('quote-locales')).toBe(false);
-  expect(store.get('locale')).toBe('en-GB');
-  expect(updateQuote).not.toHaveBeenCalled();
-  init();
-  expect(document.querySelector<HTMLInputElement>('#follow-ui-language')!.checked).toBe(true);
-  selectUi('es-ES');
-  expect(store.get('locale')).toBe('es-ES');
-});
-
-test('closing with a selected language keeps the explicit selection', () => {
-  history.replaceState({}, '', '/?locale=fr-FR&ui-locale=en-GB&quote-locales=fr-FR');
-  init();
-  document.getElementById('settings-dialog')!.dispatchEvent(new Event('close'));
-  expect(document.querySelector<HTMLInputElement>('#follow-ui-language')!.checked).toBe(false);
-  expect(store.get('quote-locales')).toBe('fr-FR');
-  expect(updateQuote).not.toHaveBeenCalled();
-});
-
-test('following the interface never preselects a chip, including after closing and reloading', () => {
-  history.replaceState({}, '', '/?locale=en-US');
-  init();
-  const checkedChips = () => document.querySelectorAll('#quote-language-options input:checked');
-  expect(checkedChips()).toHaveLength(0);
-  document.getElementById('follow-ui-language')!.click();
-  expect(checkedChips()).toHaveLength(0);
-  selectUi('es-ES');
-  expect(checkedChips()).toHaveLength(0);
-  expect(store.get('locale')).toBe('es-ES');
-  document.getElementById('settings-dialog')!.dispatchEvent(new Event('close'));
-  expect(document.querySelector<HTMLInputElement>('#follow-ui-language')!.checked).toBe(true);
-  expect(checkedChips()).toHaveLength(0);
-  init();
-  document.getElementById('follow-ui-language')!.click();
-  expect(checkedChips()).toHaveLength(0);
-  language('fr-FR').click();
-  document.getElementById('follow-ui-language')!.click();
-  expect(checkedChips()).toHaveLength(0);
-  selectUi('de-DE');
-  document.getElementById('follow-ui-language')!.click();
-  expect(checkedChips()).toHaveLength(0);
-  expect(store.get('locale')).toBe('de-DE');
+  expect(document.querySelectorAll('#quote-language-options input:checked')).toHaveLength(0);
 });

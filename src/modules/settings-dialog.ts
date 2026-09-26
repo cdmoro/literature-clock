@@ -40,8 +40,7 @@ export function initSettingsDialog() {
     'beforeend',
     `
     <fieldset id="quote-languages"><legend data-text="settings_quote_languages">Quote languages</legend>
-      <label class="settings-follow"><span data-text="settings_follow_language">Same as the interface</span><input class="settings-switch" type="checkbox" role="switch" id="follow-ui-language"></label>
-      <p class="settings-help"><span data-text="settings_languages_help">Choose languages to rotate through. If none are selected, quotes use the interface language.</span> <span id="select-all-languages-row"><a id="select-all-languages" href="#" data-text="settings_select_all">Select all</a>.</span></p>
+      <p class="settings-help"><span data-text="settings_languages_help">Choose languages to rotate through. If none are selected, quotes use the interface language.</span> <span id="select-all-languages-row"><a id="select-all-languages" href="#" data-text="settings_select_all">Select all</a><span id="clear-languages-action" hidden> · <a id="clear-languages" href="#" data-text="settings_clear_selection">Clear selection</a></span>.</span></p>
       <div id="quote-language-options"></div>
     </fieldset>`,
   );
@@ -85,6 +84,7 @@ export function initSettingsDialog() {
           <button type="submit" data-text="settings_font_apply">Apply</button></div>
           <p id="custom-font-status" role="status" aria-live="polite"></p>
         </form>
+        <p class="custom-font-actions"><a href="#" id="remove-custom-font" data-text="settings_font_remove" hidden>Remove this font</a><span id="custom-font-action-separator" hidden> · </span><a href="#" id="remove-all-custom-fonts" data-text="settings_font_remove_all" hidden>Remove all custom fonts</a></p>
       </details>`,
     );
   }
