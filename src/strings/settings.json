@@ -60,7 +60,7 @@
     "settings_ui_language": "Idioma de la interfaz",
     "settings_quote_languages": "Idiomas de las citas",
     "settings_languages_help": "Elegí los idiomas para alternar las citas. Si no seleccionás ninguno, se usará el idioma de la interfaz.",
-    "settings_work_help": "Solo mostrar citas que sean seguras para ver en el trabajo.",
+    "settings_work_help": "Mostrar citas que sean seguras para ver en el trabajo",
     "settings_font_preview": "Siempre es un buen momento para leer un buen libro.",
     "settings_select_all": "Seleccionar todos",
     "settings_custom_font": "Google Fonts",
