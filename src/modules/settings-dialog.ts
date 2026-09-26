@@ -107,6 +107,11 @@ export function initSettingsDialog() {
     document.getElementById('theme-select')?.closest('.settings-row')?.after(colorRow);
   }
 
+  // Moving controls leaves whitespace-only wrappers that still occupy a flex gap.
+  toolbar.querySelectorAll(':scope > span').forEach((group) => {
+    if (!group.children.length && !group.textContent?.trim()) group.remove();
+  });
+
   const open = document.createElement('button');
   open.id = 'open-settings';
   open.type = 'button';
