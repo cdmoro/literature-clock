@@ -73,6 +73,12 @@ export function initSettingsDialog() {
     const controls = fontRow.querySelector('.input-group')!;
     controls.before(fontGroup);
     fontGroup.append(controls);
+    controls.insertAdjacentHTML(
+      'beforeend',
+      `<button type="button" id="remove-custom-font" data-title="settings_font_remove" data-aria-label="settings_font_remove" aria-label="Remove this font" hidden>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 3h6l1 2h4v2H4V5h4l1-2Zm-3 6h12l-1 12H7L6 9Z"/></svg>
+      </button>`,
+    );
     fontGroup.insertAdjacentHTML(
       'beforeend',
       `<p id="font-preview" data-text="settings_font_preview">The time is always right to read a good book.</p>
@@ -84,7 +90,6 @@ export function initSettingsDialog() {
           <button type="submit" data-text="settings_font_apply">Apply</button></div>
           <p id="custom-font-status" role="status" aria-live="polite"></p>
         </form>
-        <p class="custom-font-actions"><a href="#" id="remove-custom-font" data-text="settings_font_remove" hidden>Remove this font</a><span id="custom-font-action-separator" hidden> · </span><a href="#" id="remove-all-custom-fonts" data-text="settings_font_remove_all" hidden>Remove all custom fonts</a></p>
       </details>`,
     );
   }

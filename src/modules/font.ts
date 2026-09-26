@@ -73,11 +73,9 @@ function createOption(value: string) {
   return option;
 }
 
-function refreshRemovalLinks() {
+function refreshRemovalButton() {
   const selected = customFonts.includes(store.get('font'));
   document.getElementById('remove-custom-font')?.toggleAttribute('hidden', !selected);
-  document.getElementById('custom-font-action-separator')?.toggleAttribute('hidden', !selected);
-  document.getElementById('remove-all-custom-fonts')?.toggleAttribute('hidden', !customFonts.length);
 }
 
 export function initFont() {
@@ -101,13 +99,10 @@ export function initFont() {
   });
   document.getElementById('remove-custom-font')?.addEventListener('click', (event) => {
     event.preventDefault();
-    removeCustomFonts(false);
+    removeCustomFont();
+    document.getElementById('font-select')?.focus();
   });
-  document.getElementById('remove-all-custom-fonts')?.addEventListener('click', (event) => {
-    event.preventDefault();
-    removeCustomFonts(true);
-  });
-  refreshRemovalLinks();
+  refreshRemovalButton();
 }
 
 function fontStatus(key?: 'settings_font_loading' | 'settings_font_error' | 'settings_font_add_error') {
@@ -128,7 +123,7 @@ function selectFont(name: string) {
   document.documentElement.style.setProperty(CSS_FONT_VARIABLE, `"${name}", var(--quote-font-family)`);
   store.set('font', name);
   fontStatus();
-  refreshRemovalLinks();
+  refreshRemovalButton();
   fitQuote();
 }
 
@@ -173,11 +168,11 @@ export async function applyCustomFont(value: string, restoreDefaultOnError = fal
   }
 }
 
-export function removeCustomFonts(all: boolean) {
+export function removeCustomFont() {
   fontRequest++;
   fontStatus();
   const active = store.get('font');
-  const removed = all ? [...customFonts] : customFonts.filter((name) => name === active);
+  const removed = customFonts.filter((name) => name === active);
   customFonts = customFonts.filter((name) => !removed.includes(name));
   saveCustomFonts();
   document.querySelectorAll<HTMLOptionElement>('#font-select option').forEach((option) => {
@@ -185,7 +180,7 @@ export function removeCustomFonts(all: boolean) {
   });
   removed.forEach((name) => loadedFonts.delete(name));
   if (removed.includes(active)) resetFont();
-  refreshRemovalLinks();
+  refreshRemovalButton();
 }
 
 export function resetFont() {
@@ -195,6 +190,6 @@ export function resetFont() {
   const select = document.querySelector<HTMLSelectElement>('#font-select');
   if (select) select.value = 'default';
   store.set('font', 'default');
-  refreshRemovalLinks();
+  refreshRemovalButton();
   fitQuote();
 }

@@ -22,7 +22,6 @@
     "settings_clear_selection": "Clear selection",
     "settings_font_add_error": "Font unavailable. It was not added; your current font is unchanged.",
     "settings_font_remove": "Remove this font",
-    "settings_font_remove_all": "Remove all custom fonts",
     "settings_font_custom_label": "custom"
   },
   "en-US": {
@@ -48,7 +47,6 @@
     "settings_clear_selection": "Clear selection",
     "settings_font_add_error": "Font unavailable. It was not added; your current font is unchanged.",
     "settings_font_remove": "Remove this font",
-    "settings_font_remove_all": "Remove all custom fonts",
     "settings_font_custom_label": "custom"
   },
   "es-ES": {
@@ -74,7 +72,6 @@
     "settings_clear_selection": "Borrar selección",
     "settings_font_add_error": "Fuente no disponible. No se agregó; se mantiene la fuente actual.",
     "settings_font_remove": "Eliminar esta fuente",
-    "settings_font_remove_all": "Eliminar todas las fuentes personalizadas",
     "settings_font_custom_label": "personalizada"
   },
   "pt-PT": {
@@ -100,7 +97,6 @@
     "settings_clear_selection": "Limpar seleção",
     "settings_font_add_error": "Fonte indisponível. Não foi adicionada; a fonte atual mantém-se.",
     "settings_font_remove": "Remover esta fonte",
-    "settings_font_remove_all": "Remover todas as fontes personalizadas",
     "settings_font_custom_label": "personalizada"
   },
   "fr-FR": {
@@ -126,7 +122,6 @@
     "settings_clear_selection": "Effacer la sélection",
     "settings_font_add_error": "Police indisponible. Elle n’a pas été ajoutée ; la police actuelle est conservée.",
     "settings_font_remove": "Supprimer cette police",
-    "settings_font_remove_all": "Supprimer toutes les polices personnalisées",
     "settings_font_custom_label": "personnalisée"
   },
   "it-IT": {
@@ -152,7 +147,6 @@
     "settings_clear_selection": "Cancella selezione",
     "settings_font_add_error": "Carattere non disponibile. Non è stato aggiunto; quello attuale resta invariato.",
     "settings_font_remove": "Rimuovi questo carattere",
-    "settings_font_remove_all": "Rimuovi tutti i caratteri personalizzati",
     "settings_font_custom_label": "personalizzato"
   },
   "de-DE": {
@@ -178,7 +172,6 @@
     "settings_clear_selection": "Auswahl löschen",
     "settings_font_add_error": "Schrift nicht verfügbar. Sie wurde nicht hinzugefügt; die aktuelle Schrift bleibt unverändert.",
     "settings_font_remove": "Diese Schrift entfernen",
-    "settings_font_remove_all": "Alle eigenen Schriften entfernen",
     "settings_font_custom_label": "benutzerdefiniert"
   },
   "el-GR": {
@@ -204,7 +197,6 @@
     "settings_clear_selection": "Εκκαθάριση επιλογής",
     "settings_font_add_error": "Μη διαθέσιμη γραμματοσειρά. Δεν προστέθηκε· η τρέχουσα παραμένει.",
     "settings_font_remove": "Αφαίρεση αυτής της γραμματοσειράς",
-    "settings_font_remove_all": "Αφαίρεση όλων των προσαρμοσμένων γραμματοσειρών",
     "settings_font_custom_label": "προσαρμοσμένη"
   }
 }

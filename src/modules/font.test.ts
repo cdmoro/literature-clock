@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, test, vi } from 'vitest';
-import { applyCustomFont, initFont, resetFont, removeCustomFonts, CUSTOM_FONTS_KEY } from './font';
+import { applyCustomFont, initFont, resetFont, removeCustomFont, CUSTOM_FONTS_KEY } from './font';
 import { loadGoogleFont } from '../utils/google-font';
 import { createStore, store } from '../store';
 
@@ -79,20 +79,20 @@ test('custom fonts survive reloads, switching and case-insensitive duplicate add
   await vi.waitFor(() => expect(document.querySelector<HTMLSelectElement>('#font-select')!.value).toBe('Nunito'));
 });
 
-test('removing one or all custom fonts resets only an affected active font', async () => {
+test('removing a custom font preserves other fonts and resets only the active custom font', async () => {
   vi.mocked(loadGoogleFont).mockResolvedValue();
   await applyCustomFont('Lora');
   await applyCustomFont('Nunito');
-  removeCustomFonts(false);
+  removeCustomFont();
   expect(store.get('font')).toBe('default');
   expect(JSON.parse(localStorage.getItem(CUSTOM_FONTS_KEY)!)).toEqual(['Lora']);
   expect(document.querySelector('option[value="Nunito"]')).toBeNull();
   await applyCustomFont('Roboto');
-  removeCustomFonts(true);
+  removeCustomFont();
   expect(store.get('font')).toBe('Roboto');
-  expect(JSON.parse(localStorage.getItem(CUSTOM_FONTS_KEY)!)).toEqual([]);
+  expect(JSON.parse(localStorage.getItem(CUSTOM_FONTS_KEY)!)).toEqual(['Lora']);
   await applyCustomFont('Lora');
-  removeCustomFonts(true);
+  removeCustomFont();
   expect(store.get('font')).toBe('default');
 });
 
@@ -107,7 +107,7 @@ test('removal cancels pending additions and malformed saved lists do not break i
       }),
   );
   const adding = applyCustomFont('Lora');
-  removeCustomFonts(true);
+  removeCustomFont();
   finish();
   await adding;
   expect(JSON.parse(localStorage.getItem(CUSTOM_FONTS_KEY)!)).toEqual([]);

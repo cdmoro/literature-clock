@@ -208,7 +208,7 @@
 
 #settings-dialog .settings-font {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: auto minmax(0, 1fr) auto;
   row-gap: 0.5rem;
   flex: 0 1 62%;
   min-width: 0;
@@ -257,9 +257,18 @@
   margin: 0.35rem 0 0;
 }
 
-.custom-font-actions {
-  margin: 0.5rem 0 0;
+#settings-dialog #remove-custom-font {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.5rem;
 }
-.custom-font-actions a {
-  text-decoration: underline;
+#settings-dialog #remove-custom-font[hidden] {
+  display: none;
+}
+#settings-dialog #font-select {
+  border-radius: 0;
+}
+#settings-dialog .input-group:has(#remove-custom-font[hidden]) #font-select {
+  border-radius: 0 0.35rem 0.35rem 0;
 }
