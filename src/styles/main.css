@@ -233,6 +233,40 @@ button:disabled {
   opacity: 0.7;
 }
 
+/* Shared close ("×") button for dialogs and panels (Settings, My quotes, About):
+   a round, borderless icon button — deliberately different from the app's
+   other square, bordered buttons, so it reads as "close this" rather than
+   another toolbar control. */
+.dialog-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  max-height: none;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+}
+
+.dialog-close svg {
+  display: block;
+  transform: none;
+}
+
+.dialog-close:hover {
+  background-color: color-mix(in srgb, var(--font-color), transparent 88%);
+}
+
+/* A soft round halo instead of the square accent border the generic
+ * button:focus rule draws — these dialogs often focus their close button
+ * first, so this shows up as soon as they open. */
+.dialog-close:focus {
+  border: none;
+  box-shadow: 0 0 0 0.15rem color-mix(in srgb, var(--accent-color), transparent 70%) !important;
+}
+
 #time-clock {
   position: fixed;
   top: 0;
@@ -329,6 +363,26 @@ footer {
 
 #contact {
   display: inline-block;
+}
+
+/* The footer's secondary links (Add quote, Report error, GitHub, About, Made by).
+ * Flex + a generated separator keeps each "| Label" pair glued together, so
+ * wrapping on narrow screens breaks between items rather than leaving a
+ * stray "|" stranded at the start of a line. */
+#footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+#footer-links > * + *::before {
+  content: '|';
+  margin-inline-end: 0.4rem;
+  color: var(--font-color);
+  text-decoration: none;
+  opacity: 0.6;
 }
 
 #flash {

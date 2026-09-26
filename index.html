@@ -390,9 +390,8 @@
             </span>
           </span>
         </div>
-        <div>
+        <div id="footer-links">
           <a id="add-quote" href="#" target="_blank" data-text="add_quote">Add quote</a>
-          |
           <a
             id="report-error"
             href="https://github.com/cdmoro/literature-clock/issues/new?template=quote-error.yml&labels=bug"
@@ -400,14 +399,34 @@
             data-text="report_error"
             >Report error</a
           >
-          |
           <a id="github" href="https://github.com/cdmoro/literature-clock" target="_blank" data-text="github"
             >GitHub</a
           >
-          |
           <details id="about-clock">
             <summary data-text="about">About</summary>
             <section aria-labelledby="about-clock-title" lang="en-GB">
+              <button
+                type="button"
+                id="about-clock-close"
+                class="dialog-close"
+                data-aria-label="about_close"
+                aria-label="Close"
+              >
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="m6 6 12 12M6 18 18 6" />
+                </svg>
+              </button>
               <h1 id="about-clock-title">Literature Clock — a clock told through book quotes</h1>
               <p>Literature Clock is a free online literary clock for book lovers. It matches your
                 local time with a passage from a book that mentions that time, updating every minute.
@@ -431,7 +450,6 @@
                 to suggest improvements or contribute quotations.</p>
             </section>
           </details>
-          |
           <span id="contact">
             <span id="made-by" data-text="made_by">Made by</span>
             <a href="https://www.linkedin.com/in/cdbonadeo/" target="_blank">@CarlosBonadeo</a>

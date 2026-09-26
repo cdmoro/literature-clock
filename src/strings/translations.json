@@ -1,6 +1,7 @@
 {
   "en-GB": {
     "about": "About",
+    "about_close": "Close",
     "add_quote": "Add quote",
     "anaglyph": "Anaglyph",
     "author": "Author",
@@ -72,6 +73,7 @@
   },
   "en-US": {
     "about": "About",
+    "about_close": "Close",
     "add_quote": "Add quote",
     "anaglyph": "Anaglyph",
     "author": "Author",
@@ -143,6 +145,7 @@
   },
   "es-ES": {
     "about": "Acerca de",
+    "about_close": "Cerrar",
     "add_quote": "Agregar cita",
     "anaglyph": "Anaglifo",
     "author": "Autor",
@@ -214,6 +217,7 @@
   },
   "pt-PT": {
     "about": "Sobre",
+    "about_close": "Fechar",
     "add_quote": "Adicionar citação",
     "anaglyph": "Anaglifo",
     "author": "Autor",
@@ -285,6 +289,7 @@
   },
   "fr-FR": {
     "about": "À propos",
+    "about_close": "Fermer",
     "add_quote": "Ajouter une citation",
     "anaglyph": "Anaglyphe",
     "author": "Auteur",
@@ -356,6 +361,7 @@
   },
   "it-IT": {
     "about": "Informazioni",
+    "about_close": "Chiudi",
     "add_quote": "Aggiungi citazione",
     "anaglyph": "Anaglifo",
     "author": "Autore",
@@ -427,6 +433,7 @@
   },
   "de-DE": {
     "about": "Über",
+    "about_close": "Schließen",
     "add_quote": "Zitat hinzufügen",
     "anaglyph": "Anaglyph",
     "author": "Autor",

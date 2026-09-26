@@ -2,6 +2,7 @@ import { readingIcon } from './reading-icons';
 import { store } from '../store';
 import { getQuoteUrl } from './quote-links';
 import { readingStrings, showQuoteNotice } from './reading-ui';
+import { closeDialogOnBackdropClick } from '../utils/dialog';
 import {
   FAVORITES_KEY,
   HISTORY_KEY,
@@ -40,8 +41,8 @@ export function initQuoteLibrary() {
   title.id = 'quote-library-title';
   const close = document.createElement('button');
   close.type = 'button';
+  close.className = 'dialog-close';
   close.innerHTML = readingIcon('close');
-  close.autofocus = true;
   close.addEventListener('click', () => dialog.close());
   header.append(title, close);
   const list = document.createElement('ul');
@@ -187,6 +188,7 @@ export function initQuoteLibrary() {
     dialog.close();
   });
   dialog.addEventListener('close', () => open.focus());
+  closeDialogOnBackdropClick(dialog);
   window.addEventListener('storage', (event) => {
     if (event.key === FAVORITES_KEY || event.key === HISTORY_KEY || event.key === null) refresh();
   });

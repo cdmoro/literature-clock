@@ -8,15 +8,12 @@
   display: inline;
   list-style: none;
   color: var(--accent-color);
+  text-decoration: underline;
   cursor: pointer;
 }
 
 #about-clock summary::-webkit-details-marker {
   display: none;
-}
-
-#about-clock summary:hover {
-  text-decoration: underline;
 }
 
 /* Open state: a centred, dialog-like card with a dimmed backdrop, matching
@@ -39,16 +36,10 @@
   backdrop-filter: blur(4px);
 }
 
+/* The footer link is only needed to open the panel; the close button inside
+   it (matching Settings and My quotes) takes over from here. */
 #about-clock[open] summary {
-  position: fixed;
-  top: 1rem;
-  right: 1.25rem;
-  z-index: 1;
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-  background: var(--background, white);
-  color: var(--font-color, black);
-  box-shadow: 0 0.25rem 1rem #0004;
+  display: none;
 }
 
 #about-clock section {
@@ -70,8 +61,15 @@
   box-shadow: 0 1rem 4rem #0005;
 }
 
+#about-clock .dialog-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
 #about-clock h1 {
   margin-top: 0;
+  margin-inline-end: 2.5rem;
   font-size: 1.3rem;
 }
 

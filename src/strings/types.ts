@@ -1,5 +1,6 @@
 export type Translations = {
   about: string;
+  about_close: string;
   add_quote: string;
   anaglyph: string;
   author: string;

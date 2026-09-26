@@ -1,4 +1,6 @@
 import { store } from '../store';
+import { readingIcon } from './reading-icons';
+import { closeDialogOnBackdropClick } from '../utils/dialog';
 
 /** Move the existing controls so their state and event handlers remain shared. */
 export function initSettingsDialog() {
@@ -11,7 +13,7 @@ export function initSettingsDialog() {
   dialog.setAttribute('data-html2canvas-ignore', '');
   dialog.innerHTML = `
     <header><h2 id="settings-title" data-text="settings_title">Settings</h2>
-      <button type="button" id="close-settings" autofocus data-aria-label="settings_close" aria-label="Close settings">×</button></header>
+      <button type="button" id="close-settings" class="dialog-close" data-aria-label="settings_close" aria-label="Close settings">${readingIcon('close')}</button></header>
     <section id="settings-appearance"><h3 data-text="settings_appearance">Appearance</h3></section>
     <section id="settings-content"><h3 data-text="settings_content">Content</h3></section>
     <section id="settings-behavior"><h3 data-text="settings_behavior">Behaviour</h3></section>`;
@@ -128,18 +130,6 @@ export function initSettingsDialog() {
     dialog.scrollTop = 0;
   });
   dialog.querySelector('#close-settings')!.addEventListener('click', () => dialog.close());
-  // A click on empty space within the panel is not a backdrop click.
-  dialog.addEventListener('click', (event) => {
-    const rect = dialog.getBoundingClientRect();
-    if (
-      event.target === dialog &&
-      (event.clientX < rect.left ||
-        event.clientX > rect.right ||
-        event.clientY < rect.top ||
-        event.clientY > rect.bottom)
-    ) {
-      dialog.close();
-    }
-  });
+  closeDialogOnBackdropClick(dialog);
   dialog.addEventListener('close', () => open.focus());
 }
