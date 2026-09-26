@@ -122,7 +122,17 @@ export function translateStrings(locale: Locale) {
     notice.textContent = `Draft preview · ${quoteLocale.slice(0, -DRAFT_SUFFIX.length)} · Unreviewed quotes may appear`;
     document.body.appendChild(notice);
   }
-  document.title = `${time} - ${strings.document_title}`;
+  const descriptions: Record<string, string> = {
+    'en-GB': 'Book Quotes That Tell the Time',
+    'en-US': 'Book Quotes That Tell the Time',
+    'es-ES': 'La hora en citas de libros',
+    'pt-PT': 'As horas em citações de livros',
+    'fr-FR': 'L’heure en citations de livres',
+    'it-IT': 'L’ora nelle citazioni dei libri',
+    'de-DE': 'Die Uhrzeit in Buchzitaten',
+  };
+  const description = descriptions[getBaseLocale(locale)] || descriptions['en-GB'];
+  document.title = `${time} - ${strings.document_title} — ${description}`;
 
   document
     .querySelectorAll<HTMLElement>('[data-text]')

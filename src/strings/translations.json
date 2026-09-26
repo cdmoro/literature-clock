@@ -1,5 +1,7 @@
 {
   "en-GB": {
+    "about": "About",
+    "about_close": "Close",
     "add_quote": "Add quote",
     "anaglyph": "Anaglyph",
     "author": "Author",
@@ -48,7 +50,6 @@
     "pink": "Pink",
     "poster": "Poster",
     "progressbar_mode": "Show progress bar",
-    "project": "Project",
     "pt-PT": "Português (pt-PT)",
     "purple": "Purple",
     "random": "Random language",
@@ -70,6 +71,8 @@
     "zen_mode_title": "Remove everything that distracts you"
   },
   "en-US": {
+    "about": "About",
+    "about_close": "Close",
     "add_quote": "Add quote",
     "anaglyph": "Anaglyph",
     "author": "Author",
@@ -118,7 +121,6 @@
     "pink": "Pink",
     "poster": "Poster",
     "progressbar_mode": "Show progress bar",
-    "project": "Project",
     "pt-PT": "Português (pt-PT)",
     "purple": "Purple",
     "random": "Random language",
@@ -140,6 +142,8 @@
     "zen_mode_title": "Remove everything that distracts you"
   },
   "es-ES": {
+    "about": "Acerca de",
+    "about_close": "Cerrar",
     "add_quote": "Agregar cita",
     "anaglyph": "Anaglifo",
     "author": "Autor",
@@ -188,7 +192,6 @@
     "pink": "Rosa",
     "poster": "Poster",
     "progressbar_mode": "Mostrar barra de progreso",
-    "project": "Proyecto",
     "pt-PT": "Português (pt-PT)",
     "purple": "Morado",
     "random": "Lenguaje aleatorio",
@@ -210,6 +213,8 @@
     "zen_mode_title": "Elimina todo lo que te distrae"
   },
   "pt-PT": {
+    "about": "Sobre",
+    "about_close": "Fechar",
     "add_quote": "Adicionar citação",
     "anaglyph": "Anaglifo",
     "author": "Autor",
@@ -258,7 +263,6 @@
     "pink": "Rosa",
     "poster": "Pôster",
     "progressbar_mode": "Mostrar a barra de progresso",
-    "project": "Projeto",
     "pt-PT": "Português (pt-PT)",
     "purple": "Roxo",
     "random": "Idioma aleatório",
@@ -280,6 +284,8 @@
     "zen_mode_title": "Remova tudo o que te distrai"
   },
   "fr-FR": {
+    "about": "À propos",
+    "about_close": "Fermer",
     "add_quote": "Ajouter une citation",
     "anaglyph": "Anaglyphe",
     "author": "Auteur",
@@ -328,7 +334,6 @@
     "pink": "Rose",
     "poster": "Affiche",
     "progressbar_mode": "Afficher la barre de progression",
-    "project": "Projet",
     "pt-PT": "Português (pt-PT)",
     "purple": "Violet",
     "random": "Langue aléatoire",
@@ -350,6 +355,8 @@
     "zen_mode_title": "Supprimez tout ce qui vous distrait"
   },
   "it-IT": {
+    "about": "Informazioni",
+    "about_close": "Chiudi",
     "add_quote": "Aggiungi citazione",
     "anaglyph": "Anaglifo",
     "author": "Autore",
@@ -398,7 +405,6 @@
     "pink": "Rosa",
     "poster": "Poster",
     "progressbar_mode": "Mostra la barra di avanzamento",
-    "project": "Progetto",
     "pt-PT": "Português (pt-PT)",
     "purple": "Viola",
     "random": "Lingua casuale",
@@ -420,6 +426,8 @@
     "zen_mode_title": "Rimuovi tutto ciò che ti distrae"
   },
   "de-DE": {
+    "about": "Über",
+    "about_close": "Schließen",
     "add_quote": "Zitat hinzufügen",
     "anaglyph": "Anaglyph",
     "author": "Autor",
@@ -468,7 +476,6 @@
     "pink": "Rosa",
     "poster": "Poster",
     "progressbar_mode": "Fortschrittsbalken anzeigen",
-    "project": "Projekt",
     "pt-PT": "Português (pt-PT)",
     "purple": "Lila",
     "random": "Zufällige Sprache",
