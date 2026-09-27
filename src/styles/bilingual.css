@@ -55,6 +55,7 @@
   font:
     0.85rem/1.5 system-ui,
     sans-serif;
+  font-style: italic;
 }
 /* Keep framed themes and short viewports reachable without clipping content. */
 #quote:has(#quote-translation) {
