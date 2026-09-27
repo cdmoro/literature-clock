@@ -90,18 +90,6 @@ blockquote[aria-label]:after {
   width: 4rem;
 }
 
-blockquote[aria-label]:before {
-  content: '“';
-  left: -5rem;
-  top: -2rem;
-}
-
-blockquote[aria-label]:after {
-  bottom: 1rem;
-  content: '”';
-  right: -5rem;
-}
-
 blockquote .time {
   color: var(--accent-color);
 }

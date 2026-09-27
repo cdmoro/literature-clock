@@ -88,7 +88,7 @@
 
 [data-theme='whatsapp-light'] {
   --accent-color: #245247;
-  --background: #eaeaec;
+  --background: #f0e8df;
   --background-image: url('/assets/whatsapp-bg-light.jpg');
 }
 
@@ -112,7 +112,7 @@
 
 [data-theme='whatsapp-dark'] {
   --accent-color: #a9eb91;
-  --background: #12121a;
+  --background: #020202;
   --background-image: url('/assets/whatsapp-bg-dark.jpg');
 }
 

@@ -1,5 +1,5 @@
 [data-theme|='book'] {
-  --background: #e7dfcf;
+  --background: #e1bf80;
   --font-color: #29251f;
   --accent-color: #fbf719;
   --quote-font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
@@ -7,8 +7,6 @@
 }
 
 [data-theme|='book'] body {
-  background: var(--background);
-  background-color: #e7dfcf;
   background-image: url('/assets/book-paper-seamless.webp');
   background-repeat: repeat;
   background-position: center;
@@ -63,7 +61,7 @@
 }
 
 [data-theme='book-dark'] {
-  --background: #28251f;
+  --background: #080a2d;
   --font-color: #e9dfc9;
   --accent-color: #214cc6;
 }
