@@ -8,6 +8,7 @@ import { cancelQuoteTransition, transitionQuote } from './transitions';
 
 let latestRequest = 0;
 import { store } from '../store';
+import { quoteMarkup } from '../utils/quote-markup';
 import { readingStrings, showQuoteNotice } from './reading-ui';
 
 function prefetchNextQuotes(locale: string) {
@@ -135,9 +136,6 @@ export async function updateQuote({
   const quote = await getQuote(time, locale, preserveQuote, variantStep);
   if (request !== latestRequest) return;
   const timeClass = quote.quote_time_case.replace(/<[^>]*>/g, '').length <= 11 ? 'time text-nowrap' : 'time';
-  const quoteText =
-    testQuote || `${quote.quote_first}<span class="${timeClass}">${quote.quote_time_case}</span>${quote.quote_last}`;
-
   const blockquote = document.getElementById('quote');
 
   await transitionQuote(
@@ -159,10 +157,28 @@ export async function updateQuote({
         blockquote.innerHTML = '';
 
         const p = document.createElement('p');
-        p.innerHTML = quoteText;
+        if (testQuote) {
+          p.textContent = testQuote;
+        } else {
+          p.append(quoteMarkup(quote.quote_first));
+          const timeSpan = document.createElement('span');
+          timeSpan.className = timeClass;
+          timeSpan.append(quoteMarkup(quote.quote_time_case));
+          p.append(timeSpan, quoteMarkup(quote.quote_last));
+        }
 
         const cite = document.createElement('cite');
-        cite.innerHTML = `<span id="hyphen">— </span><span id="title">${quote.title}</span><span id="comma">, </span><span id="author">${quote.author}</span>`;
+        for (const [id, text] of [
+          ['hyphen', '— '],
+          ['title', quote.title],
+          ['comma', ', '],
+          ['author', quote.author],
+        ]) {
+          const span = document.createElement('span');
+          span.id = id;
+          span.textContent = text;
+          cite.append(span);
+        }
 
         blockquote.appendChild(p);
         blockquote.appendChild(cite);
