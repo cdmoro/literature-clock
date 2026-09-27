@@ -73,7 +73,12 @@ export function initBilingual() {
   languageRow.className = 'settings-row';
   languageRow.innerHTML =
     '<label for="translation-locale" data-text="bilingual_language"></label><div class="input-group"><select id="translation-locale"></select></div>';
-  document.getElementById('settings-content')?.append(row, languageRow);
+  const notice = document.createElement('p');
+  notice.id = 'translation-language-notice';
+  notice.className = 'settings-help';
+  notice.setAttribute('role', 'status');
+  notice.hidden = true;
+  document.getElementById('settings-content')?.append(row, languageRow, notice);
   const switchButton = row.querySelector('button')!;
   const select = languageRow.querySelector('select')!;
   for (const locale of Object.keys(SETTINGS)) {
@@ -89,6 +94,11 @@ export function initBilingual() {
     toolbarButton.setAttribute('aria-pressed', String(enabled));
     switchButton.setAttribute('aria-checked', String(enabled));
     select.value = targetLocale();
+    const sameLanguage = enabled && targetLocale() === getBaseLocale(getInterfaceLocale());
+    notice.hidden = !sameLanguage;
+    notice.textContent = sameLanguage ? strings().bilingual_language_notice : '';
+    if (sameLanguage) select.setAttribute('aria-describedby', notice.id);
+    else select.removeAttribute('aria-describedby');
     const labels = getStrings(getInterfaceLocale());
     for (const option of select.options) option.textContent = labels[getBaseLocale(option.value as Locale)];
   };

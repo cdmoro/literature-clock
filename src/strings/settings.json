@@ -28,7 +28,8 @@
     "bilingual_show": "Show translation",
     "bilingual_loading": "Loading translation…",
     "bilingual_unavailable": "No published translation is available for this quote.",
-    "bilingual_same": "This quote is already in the selected language."
+    "bilingual_same": "This quote is already in the selected language.",
+    "bilingual_language_notice": "You selected the interface language. Translation is hidden for quotes already in this language; quotes in other languages will still show a translation."
   },
   "en-US": {
     "settings_title": "Settings",
@@ -59,7 +60,8 @@
     "bilingual_show": "Show translation",
     "bilingual_loading": "Loading translation…",
     "bilingual_unavailable": "No published translation is available for this quote.",
-    "bilingual_same": "This quote is already in the selected language."
+    "bilingual_same": "This quote is already in the selected language.",
+    "bilingual_language_notice": "You selected the interface language. Translation is hidden for quotes already in this language; quotes in other languages will still show a translation."
   },
   "es-ES": {
     "settings_title": "Configuración",
@@ -90,7 +92,8 @@
     "bilingual_show": "Mostrar traducción",
     "bilingual_loading": "Cargando traducción…",
     "bilingual_unavailable": "No hay una traducción publicada para esta cita.",
-    "bilingual_same": "Esta cita ya está en el idioma seleccionado."
+    "bilingual_same": "Esta cita ya está en el idioma seleccionado.",
+    "bilingual_language_notice": "Elegiste el idioma de la interfaz. La traducción se oculta en las citas que ya estén en este idioma; las citas en otros idiomas sí mostrarán una traducción."
   },
   "pt-PT": {
     "settings_title": "Configurações",
@@ -121,7 +124,8 @@
     "bilingual_show": "Mostrar tradução",
     "bilingual_loading": "A carregar tradução…",
     "bilingual_unavailable": "Não existe tradução publicada para esta citação.",
-    "bilingual_same": "Esta citação já está no idioma selecionado."
+    "bilingual_same": "Esta citação já está no idioma selecionado.",
+    "bilingual_language_notice": "Escolheu o idioma da interface. A tradução fica oculta nas citações que já estão neste idioma; as citações noutros idiomas mostrarão uma tradução."
   },
   "fr-FR": {
     "settings_title": "Paramètres",
@@ -152,7 +156,8 @@
     "bilingual_show": "Afficher la traduction",
     "bilingual_loading": "Chargement de la traduction…",
     "bilingual_unavailable": "Aucune traduction publiée pour cette citation.",
-    "bilingual_same": "Cette citation est déjà dans la langue sélectionnée."
+    "bilingual_same": "Cette citation est déjà dans la langue sélectionnée.",
+    "bilingual_language_notice": "Vous avez choisi la langue de l’interface. La traduction est masquée pour les citations déjà dans cette langue ; les citations dans d’autres langues afficheront une traduction."
   },
   "it-IT": {
     "settings_title": "Impostazioni",
@@ -183,7 +188,8 @@
     "bilingual_show": "Mostra traduzione",
     "bilingual_loading": "Caricamento della traduzione…",
     "bilingual_unavailable": "Nessuna traduzione pubblicata per questa citazione.",
-    "bilingual_same": "Questa citazione è già nella lingua selezionata."
+    "bilingual_same": "Questa citazione è già nella lingua selezionata.",
+    "bilingual_language_notice": "Hai scelto la lingua dell’interfaccia. La traduzione è nascosta per le citazioni già in questa lingua; le citazioni in altre lingue mostreranno una traduzione."
   },
   "de-DE": {
     "settings_title": "Einstellungen",
@@ -214,7 +220,8 @@
     "bilingual_show": "Übersetzung anzeigen",
     "bilingual_loading": "Übersetzung wird geladen…",
     "bilingual_unavailable": "Für dieses Zitat ist keine veröffentlichte Übersetzung verfügbar.",
-    "bilingual_same": "Dieses Zitat ist bereits in der ausgewählten Sprache."
+    "bilingual_same": "Dieses Zitat ist bereits in der ausgewählten Sprache.",
+    "bilingual_language_notice": "Du hast die Sprache der Benutzeroberfläche gewählt. Für Zitate, die bereits in dieser Sprache sind, wird keine Übersetzung angezeigt. Zitate in anderen Sprachen werden weiterhin übersetzt."
   },
   "el-GR": {
     "settings_title": "Ρυθμίσεις",
