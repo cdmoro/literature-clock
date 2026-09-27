@@ -37,6 +37,13 @@ body:
       placeholder: Roberto Bolaño
     validations:
       required: false
+  - type: input
+    id: quote-url
+    attributes:
+      label: Quote URL
+      description: Direct link to the quote, automatically filled by Report error.
+    validations:
+      required: false
   - type: textarea
     id: quote
     attributes:
