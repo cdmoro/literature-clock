@@ -14,8 +14,6 @@ export async function renderTranslation() {
   if (!store.get('bilingual') || !quote || !blockquote || store.get('quote')) return;
 
   const locale = targetLocale();
-  // Keep the preference enabled, but avoid duplicating a passage in its own language.
-  if (getBaseLocale(quote.locale) === locale) return;
   const panel = document.createElement('section');
   panel.id = 'quote-translation';
   panel.setAttribute('aria-labelledby', 'translation-heading');
@@ -30,6 +28,12 @@ export async function renderTranslation() {
   content.setAttribute('role', 'status');
   panel.append(heading, content);
   blockquote.append(panel);
+  if (getBaseLocale(quote.locale) === locale) {
+    content.classList.add('translation-notice');
+    content.textContent = strings().bilingual_same.replace('{language}', name || locale);
+    fitQuote();
+    return;
+  }
   content.textContent = strings().bilingual_loading;
   fitQuote();
   try {
