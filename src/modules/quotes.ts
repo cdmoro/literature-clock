@@ -7,6 +7,7 @@ import { cancelQuoteTransition, transitionQuote } from './transitions';
 
 let latestRequest = 0;
 import { store } from '../store';
+import { quoteMarkup } from '../utils/quote-markup';
 
 function prefetchNextQuotes(locale: string) {
   const now = new Date();
@@ -18,6 +19,8 @@ function prefetchNextQuotes(locale: string) {
 
   fetch(`../times/${locale}/${nextFileName}.json`, {
     cache: 'force-cache',
+  }).catch(() => {
+    /* Prefetch is optional when offline. */
   });
 }
 
@@ -28,7 +31,7 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
     const response = await fetch(`../times/${locale}/${fileName}.json`);
 
     if (!response.ok) {
-    return FALLBACK_QUOTES[getBaseLocale(locale)];
+      return FALLBACK_QUOTES[getBaseLocale(locale)];
     }
 
     let quotes = (await response.json()) as Quote[];
@@ -44,7 +47,7 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
     return quotes;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
-      return FALLBACK_QUOTES[getBaseLocale(locale)];
+    return FALLBACK_QUOTES[getBaseLocale(locale)];
   }
 }
 
@@ -57,7 +60,7 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
   if (useIndex) {
     const index = store.get('active-quote')?.index;
 
-    if (index && quotes[index]) {
+    if (index !== undefined && quotes[index]) {
       quoteIndex = index;
     }
   }
@@ -104,43 +107,61 @@ export async function updateQuote({ time = getTime(), useIndex = false } = {}) {
   const quote = await getQuote(time, locale, useIndex);
   if (request !== latestRequest) return;
   const timeClass = quote.quote_time_case.replace(/<[^>]*>/g, '').length <= 11 ? 'time text-nowrap' : 'time';
-  const quoteText =
-    testQuote || `${quote.quote_first}<span class="${timeClass}">${quote.quote_time_case}</span>${quote.quote_last}`;
-
   const blockquote = document.getElementById('quote');
 
-  await transitionQuote(() => {
-    store.set('active-quote', quote);
-    updateGHLinks(time, quote, locale);
-    if (store.get('theme')?.startsWith('photo')) {
-      setDynamicBackgroundPicture();
-    } else {
-      removeBackgroundImage();
-    }
-
-    if (blockquote) {
-      blockquote.innerHTML = '';
-
-      const p = document.createElement('p');
-      p.innerHTML = quoteText;
-
-      const cite = document.createElement('cite');
-      cite.innerHTML = `<span id="hyphen">— </span><span id="title">${quote.title}</span><span id="comma">, </span><span id="author">${quote.author}</span>`;
-
-      blockquote.appendChild(p);
-      blockquote.appendChild(cite);
-      blockquote.setAttribute('aria-label', time);
-      blockquote.setAttribute('aria-description', `${quote.quote_raw} (${quote.title}, ${quote.author})`);
-
-      fitQuote();
-
-      if (store.get('theme')?.includes('color')) {
-        setTheme({
-          syncToUrl: false,
-        });
+  await transitionQuote(
+    () => {
+      store.set('active-quote', quote);
+      updateGHLinks(time, quote, locale);
+      if (store.get('theme')?.startsWith('photo')) {
+        setDynamicBackgroundPicture();
+      } else {
+        removeBackgroundImage();
       }
-    }
-  }, () => request === latestRequest);
+
+      if (blockquote) {
+        blockquote.innerHTML = '';
+
+        const p = document.createElement('p');
+        if (testQuote) {
+          p.textContent = testQuote;
+        } else {
+          p.append(quoteMarkup(quote.quote_first));
+          const timeSpan = document.createElement('span');
+          timeSpan.className = timeClass;
+          timeSpan.append(quoteMarkup(quote.quote_time_case));
+          p.append(timeSpan, quoteMarkup(quote.quote_last));
+        }
+
+        const cite = document.createElement('cite');
+        for (const [id, text] of [
+          ['hyphen', '— '],
+          ['title', quote.title],
+          ['comma', ', '],
+          ['author', quote.author],
+        ]) {
+          const span = document.createElement('span');
+          span.id = id;
+          span.textContent = text;
+          cite.append(span);
+        }
+
+        blockquote.appendChild(p);
+        blockquote.appendChild(cite);
+        blockquote.setAttribute('aria-label', time);
+        blockquote.setAttribute('aria-description', `${quote.quote_raw} (${quote.title}, ${quote.author})`);
+
+        fitQuote();
+
+        if (store.get('theme')?.includes('color')) {
+          setTheme({
+            syncToUrl: false,
+          });
+        }
+      }
+    },
+    () => request === latestRequest,
+  );
 
   if (request !== latestRequest) return;
   prefetchNextQuotes(locale);
