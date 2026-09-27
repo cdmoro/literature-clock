@@ -18,6 +18,7 @@ const quote = {
   quote_raw: 'At noon',
 };
 beforeEach(() => {
+  vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: false }));
   localStorage.clear();
   history.replaceState({}, '', '/');
   document.body.innerHTML =
@@ -29,26 +30,24 @@ beforeEach(() => {
 afterEach(() => {
   vi.unstubAllGlobals();
 });
-async function expand() {
-  const details = document.querySelector<HTMLDetailsElement>('details')!;
-  details.open = true;
-  details.dispatchEvent(new Event('toggle'));
-  await vi.waitFor(() => expect(details.textContent).not.toContain('Loading translation'));
-  return details;
+async function translationPanel() {
+  const panel = document.getElementById('quote-translation')!;
+  await vi.waitFor(() => expect(panel.textContent).not.toContain('Loading translation'));
+  return panel;
 }
 it('synchronizes both switches and persists the language', () => {
   document.getElementById('bilingual')!.click();
   expect(document.getElementById('settings-bilingual')!.getAttribute('aria-checked')).toBe('true');
-  expect(document.querySelector('details')).not.toBeNull();
+  expect(document.getElementById('quote-translation')).not.toBeNull();
   const select = document.querySelector('select')!;
   select.value = 'fr-FR';
   select.dispatchEvent(new Event('change'));
   expect(JSON.parse(localStorage.getItem('settings')!)['translation-locale']).toBe('fr-FR');
   document.getElementById('settings-bilingual')!.click();
-  expect(document.querySelector('details')).toBeNull();
+  expect(document.getElementById('quote-translation')).toBeNull();
   expect(document.getElementById('bilingual')!.getAttribute('aria-pressed')).toBe('false');
 });
-it('loads the matching ID only when expanded', async () => {
+it('automatically loads the matching ID when enabled', async () => {
   const fetch = vi.fn().mockResolvedValue({
     ok: true,
     json: async () => [
@@ -58,8 +57,9 @@ it('loads the matching ID only when expanded', async () => {
   });
   vi.stubGlobal('fetch', fetch);
   store.set('bilingual', true);
-  expect(fetch).not.toHaveBeenCalled();
-  const details = await expand();
+  expect(fetch).toHaveBeenCalledOnce();
+  expect(document.querySelector('details')).toBeNull();
+  const details = await translationPanel();
   expect(details.textContent).toContain('Al mediodía');
   expect(details.textContent).not.toContain('Wrong');
   expect(details.querySelector('[lang]')!.getAttribute('lang')).toBe('es-ES');
@@ -67,14 +67,15 @@ it('loads the matching ID only when expanded', async () => {
 it('reports missing translations without using another quote', async () => {
   vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, json: async () => [{ ...quote, id: 'other' }] }));
   store.set('bilingual', true);
-  expect((await expand()).textContent).toContain('No published translation');
+  expect((await translationPanel()).textContent).toContain('No published translation');
 });
 it('does not fetch the same language', async () => {
   const fetch = vi.fn();
   vi.stubGlobal('fetch', fetch);
   store.set('translation-locale', 'en-GB');
   store.set('bilingual', true);
-  expect((await expand()).textContent).toContain('already in the selected language');
+  expect(document.getElementById('quote-translation')).toBeNull();
+  expect(store.get('bilingual')).toBe(true);
   expect(fetch).not.toHaveBeenCalled();
 });
 it('discards a response after the quote changes', async () => {
@@ -89,13 +90,19 @@ it('discards a response after the quote changes', async () => {
     ),
   );
   store.set('bilingual', true);
-  const old = document.querySelector<HTMLDetailsElement>('details')!;
-  old.open = true;
-  old.dispatchEvent(new Event('toggle'));
+  const resolveOld = resolve;
   store.set('active-quote', { ...quote, id: '1200-001' });
   renderTranslation();
-  resolve({ ok: true, json: async () => [{ ...quote, quote_first: 'Stale translation' }] });
+  resolveOld({ ok: true, json: async () => [{ ...quote, quote_first: 'Stale translation' }] });
   await Promise.resolve();
   await Promise.resolve();
   expect(document.getElementById('quote')!.textContent).not.toContain('Stale translation');
+});
+
+it('uses the interface selector labels and an explicit locale heading', async () => {
+  store.set('translation-locale', 'it-IT');
+  store.set('bilingual', true);
+  expect(document.querySelector('option[value="it-IT"]')!.textContent).toBe('Italiano (it-IT)');
+  expect(document.getElementById('translation-heading')!.textContent).toBe('Italian (it-IT)');
+  expect(document.querySelector('#bilingual svg')!.getAttribute('width')).toBe('16');
 });

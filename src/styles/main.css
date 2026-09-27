@@ -559,17 +559,10 @@ body.paused #quote-notice { top: 4.5rem; }
   font-size: clamp(14px, 1.8vw, 24px);
   line-height: 1.4;
 }
-#quote-translation summary {
-  cursor: pointer;
-  font:
-    0.85rem/1.5 system-ui,
-    sans-serif;
+#translation-heading {
+  font: 0.85rem/1.5 system-ui, sans-serif;
 }
-#quote-translation summary:focus-visible {
-  outline: 2px solid var(--accent-color);
-  outline-offset: 4px;
-}
-#quote-translation div {
+#quote-translation .translation-content {
   margin-top: 0.7em;
   max-height: 25vh;
   overflow-y: auto;
@@ -583,6 +576,6 @@ body.paused #quote-notice { top: 4.5rem; }
   font-size: 0.75em;
 }
 
-blockquote:has(#quote-translation[open]) > p {
+blockquote:has(#quote-translation) > p {
   max-height: 35vh;
 }
