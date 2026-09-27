@@ -22,7 +22,14 @@
     "settings_clear_selection": "Clear selection",
     "settings_font_add_error": "Font unavailable. It was not added; your current font is unchanged.",
     "settings_font_remove": "Remove this font",
-    "settings_font_custom_label": "custom"
+    "settings_font_custom_label": "custom",
+    "bilingual_mode": "Bilingual mode",
+    "bilingual_language": "Translation language",
+    "bilingual_show": "Show translation",
+    "bilingual_loading": "Loading translation…",
+    "bilingual_unavailable": "No published translation is available for this quote.",
+    "bilingual_same": "This quote is already in the selected language.",
+    "bilingual_language_notice": "When a quote is already in the translation language, a short notice appears instead."
   },
   "en-US": {
     "settings_title": "Settings",
@@ -47,7 +54,14 @@
     "settings_clear_selection": "Clear selection",
     "settings_font_add_error": "Font unavailable. It was not added; your current font is unchanged.",
     "settings_font_remove": "Remove this font",
-    "settings_font_custom_label": "custom"
+    "settings_font_custom_label": "custom",
+    "bilingual_mode": "Bilingual mode",
+    "bilingual_language": "Translation language",
+    "bilingual_show": "Show translation",
+    "bilingual_loading": "Loading translation…",
+    "bilingual_unavailable": "No published translation is available for this quote.",
+    "bilingual_same": "This quote is already in the selected language.",
+    "bilingual_language_notice": "When a quote is already in the translation language, a short notice appears instead."
   },
   "es-ES": {
     "settings_title": "Configuración",
@@ -72,7 +86,14 @@
     "settings_clear_selection": "Borrar selección",
     "settings_font_add_error": "Fuente no disponible. No se agregó; se mantiene la fuente actual.",
     "settings_font_remove": "Eliminar esta fuente",
-    "settings_font_custom_label": "personalizada"
+    "settings_font_custom_label": "personalizada",
+    "bilingual_mode": "Modo bilingüe",
+    "bilingual_language": "Idioma de traducción",
+    "bilingual_show": "Mostrar traducción",
+    "bilingual_loading": "Cargando traducción…",
+    "bilingual_unavailable": "No hay una traducción publicada para esta cita.",
+    "bilingual_same": "Esta cita ya está en el idioma seleccionado.",
+    "bilingual_language_notice": "Si la cita ya está en el idioma de traducción, se muestra un breve aviso en su lugar."
   },
   "pt-PT": {
     "settings_title": "Configurações",
@@ -97,7 +118,14 @@
     "settings_clear_selection": "Limpar seleção",
     "settings_font_add_error": "Fonte indisponível. Não foi adicionada; a fonte atual mantém-se.",
     "settings_font_remove": "Remover esta fonte",
-    "settings_font_custom_label": "personalizada"
+    "settings_font_custom_label": "personalizada",
+    "bilingual_mode": "Modo bilingue",
+    "bilingual_language": "Idioma da tradução",
+    "bilingual_show": "Mostrar tradução",
+    "bilingual_loading": "A carregar tradução…",
+    "bilingual_unavailable": "Não existe tradução publicada para esta citação.",
+    "bilingual_same": "Esta citação já está no idioma selecionado.",
+    "bilingual_language_notice": "Se a citação já estiver no idioma da tradução, é apresentado um breve aviso."
   },
   "fr-FR": {
     "settings_title": "Paramètres",
@@ -122,7 +150,14 @@
     "settings_clear_selection": "Effacer la sélection",
     "settings_font_add_error": "Police indisponible. Elle n’a pas été ajoutée ; la police actuelle est conservée.",
     "settings_font_remove": "Supprimer cette police",
-    "settings_font_custom_label": "personnalisée"
+    "settings_font_custom_label": "personnalisée",
+    "bilingual_mode": "Mode bilingue",
+    "bilingual_language": "Langue de traduction",
+    "bilingual_show": "Afficher la traduction",
+    "bilingual_loading": "Chargement de la traduction…",
+    "bilingual_unavailable": "Aucune traduction publiée pour cette citation.",
+    "bilingual_same": "Cette citation est déjà dans la langue sélectionnée.",
+    "bilingual_language_notice": "Si la citation est déjà dans la langue de traduction, un bref message s’affiche à la place."
   },
   "it-IT": {
     "settings_title": "Impostazioni",
@@ -147,7 +182,14 @@
     "settings_clear_selection": "Cancella selezione",
     "settings_font_add_error": "Carattere non disponibile. Non è stato aggiunto; quello attuale resta invariato.",
     "settings_font_remove": "Rimuovi questo carattere",
-    "settings_font_custom_label": "personalizzato"
+    "settings_font_custom_label": "personalizzato",
+    "bilingual_mode": "Modalità bilingue",
+    "bilingual_language": "Lingua della traduzione",
+    "bilingual_show": "Mostra traduzione",
+    "bilingual_loading": "Caricamento della traduzione…",
+    "bilingual_unavailable": "Nessuna traduzione pubblicata per questa citazione.",
+    "bilingual_same": "Questa citazione è già nella lingua selezionata.",
+    "bilingual_language_notice": "Se la citazione è già nella lingua di traduzione, viene mostrato un breve avviso."
   },
   "de-DE": {
     "settings_title": "Einstellungen",
@@ -172,7 +214,14 @@
     "settings_clear_selection": "Auswahl löschen",
     "settings_font_add_error": "Schrift nicht verfügbar. Sie wurde nicht hinzugefügt; die aktuelle Schrift bleibt unverändert.",
     "settings_font_remove": "Diese Schrift entfernen",
-    "settings_font_custom_label": "benutzerdefiniert"
+    "settings_font_custom_label": "benutzerdefiniert",
+    "bilingual_mode": "Zweisprachiger Modus",
+    "bilingual_language": "Übersetzungssprache",
+    "bilingual_show": "Übersetzung anzeigen",
+    "bilingual_loading": "Übersetzung wird geladen…",
+    "bilingual_unavailable": "Für dieses Zitat ist keine veröffentlichte Übersetzung verfügbar.",
+    "bilingual_same": "Dieses Zitat ist bereits in der ausgewählten Sprache.",
+    "bilingual_language_notice": "Ist das Zitat bereits in der Übersetzungssprache, erscheint stattdessen ein kurzer Hinweis."
   },
   "el-GR": {
     "settings_title": "Ρυθμίσεις",

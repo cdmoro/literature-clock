@@ -1,3 +1,4 @@
+import { renderTranslation } from './bilingual';
 import { getBaseLocale, getRandomLocale, getStrings } from './locales';
 import { removeBackgroundImage, setDynamicBackgroundPicture, setTheme } from './themes';
 import { Locale, ResolvedQuote, Quote } from '../types';
@@ -181,6 +182,7 @@ export async function updateQuote({
 
         blockquote.appendChild(p);
         blockquote.appendChild(cite);
+        renderTranslation();
         blockquote.setAttribute('aria-label', time);
         blockquote.setAttribute('aria-description', `${quote.quote_raw} (${quote.title}, ${quote.author})`);
 

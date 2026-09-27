@@ -6,6 +6,8 @@ interface Stateful {
   locale: Locale;
   'ui-locale'?: Locale;
   'quote-locales'?: string;
+  bilingual?: boolean;
+  'translation-locale'?: Locale;
   zen: boolean;
   work: boolean;
   screensaver: boolean;
@@ -290,6 +292,8 @@ export function createStore() {
     locale: resolveLocale(),
     'ui-locale': undefined,
     'quote-locales': undefined,
+    bilingual: false,
+    'translation-locale': 'es-ES',
     screensaver: false,
     work: false,
     zen: false,
