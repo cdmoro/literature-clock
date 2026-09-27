@@ -76,11 +76,10 @@ export function initBilingual() {
   const notice = document.createElement('p');
   notice.id = 'translation-language-notice';
   notice.className = 'settings-help';
-  notice.setAttribute('role', 'status');
-  notice.hidden = true;
   document.getElementById('settings-content')?.append(row, languageRow, notice);
   const switchButton = row.querySelector('button')!;
   const select = languageRow.querySelector('select')!;
+  select.setAttribute('aria-describedby', notice.id);
   for (const locale of Object.keys(SETTINGS)) {
     const option = new Option(locale, locale);
     option.dataset.text = locale;
@@ -94,11 +93,7 @@ export function initBilingual() {
     toolbarButton.setAttribute('aria-pressed', String(enabled));
     switchButton.setAttribute('aria-checked', String(enabled));
     select.value = targetLocale();
-    const sameLanguage = enabled && targetLocale() === getBaseLocale(getInterfaceLocale());
-    notice.hidden = !sameLanguage;
-    notice.textContent = sameLanguage ? strings().bilingual_language_notice : '';
-    if (sameLanguage) select.setAttribute('aria-describedby', notice.id);
-    else select.removeAttribute('aria-describedby');
+    notice.textContent = strings().bilingual_language_notice;
     const labels = getStrings(getInterfaceLocale());
     for (const option of select.options) option.textContent = labels[getBaseLocale(option.value as Locale)];
   };
