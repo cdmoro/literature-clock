@@ -119,12 +119,12 @@ def write_progress(rows, state, path):
 
 
 def run_batches(rows, state, path, translator, batch_size=25, until_complete=False,
-                batch_pause=60, sleep=time.sleep, catalogue_rows=None):
+                batch_pause=60, sleep=time.sleep, catalogue_rows=None, on_saved=None):
     completed = 0
     report_rows = rows if catalogue_rows is None else catalogue_rows
     try:
         while progress(rows, state)['pending']:
-            count = translate_rows(rows, state, path, translator, batch_size)
+            count = translate_rows(rows, state, path, translator, batch_size, on_saved=on_saved)
             completed += count
             report = write_progress(report_rows, state, path)
             print_progress(report)
@@ -222,7 +222,7 @@ def pilot_rows(rows, count):
     return chosen
 
 
-def translate_rows(rows, state, path, translator, limit):
+def translate_rows(rows, state, path, translator, limit, on_saved=None):
     completed = 0
     for original in rows:
         if entry_complete(state['rows'].get(original['Id']), original):
@@ -240,6 +240,8 @@ def translate_rows(rows, state, path, translator, limit):
             'issues': validate([original], [draft]), 'approved': False,
         }
         save(path, state)
+        if on_saved:
+            on_saved(original, draft)
         completed += 1
         print(f'{original["Id"]}: saved for review ({completed}/{limit})', flush=True)
     return completed

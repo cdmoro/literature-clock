@@ -19,6 +19,10 @@ describe('resolveLocale', () => {
     ['de-DE', 'de-DE'],
     ['en-GB-draft', 'en-GB-draft'],
     ['de-DE-draft', 'de-DE-draft'],
+    ['el-GR-draft', 'el-GR-draft'],
+    ['EL_gr_DRAFT', 'el-GR-draft'],
+    ['el-GR', 'en-GB'],
+    ['../../el-GR-draft', 'en-GB-draft'],
     ['zu', 'en-GB'],
     ['', 'en-GB'],
   ])('resolves %s to %s', (input, expected) => {

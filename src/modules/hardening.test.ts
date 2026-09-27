@@ -7,6 +7,7 @@ import { initClock } from './clock';
 vi.mock('../utils', () => ({
   fitQuote: vi.fn(),
   getTime: () => '12:00',
+  getLiveTime: () => '12:00',
   updateGHLinks: vi.fn(),
   updateFavicon: vi.fn(),
 }));
@@ -152,4 +153,30 @@ test('progress work stops when disabled and all clock timers stop in a hidden ta
   hidden.mockReturnValue(false);
   document.dispatchEvent(new Event('visibilitychange'));
   expect(vi.getTimerCount()).toBe(2);
+});
+
+test('validates new reading links and preserves language and book preferences', () => {
+  localStorage.setItem(
+    'settings',
+    JSON.stringify({
+      'ui-locale': 'es-ES',
+      'quote-locales': 'en-GB,fr-FR',
+      theme: 'book-dark',
+      'quote-id': '1200-001',
+      paused: true,
+    }),
+  );
+  createStore();
+  expect(store.get('ui-locale')).toBe('es-ES');
+  expect(store.get('quote-locales')).toBe('en-GB,fr-FR');
+  expect(store.get('theme')).toBe('book-dark');
+  expect(store.get('quote-id')).toBeUndefined();
+  expect(store.get('paused')).toBeUndefined();
+  expect(parseUrlParams(new URLSearchParams('quote-id=2359-001&quote-locales=&ui-locale=es-ES'))).toEqual({
+    'quote-id': '2359-001',
+    time: '23:59',
+    'quote-locales': '',
+    'ui-locale': 'es-ES',
+  });
+  expect(parseUrlParams(new URLSearchParams('quote-id=2460-001&paused=true&quote-locales=<img>'))).toEqual({});
 });

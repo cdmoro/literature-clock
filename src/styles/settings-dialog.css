@@ -1,0 +1,274 @@
+#settings-dialog {
+  box-sizing: border-box;
+  width: min(40rem, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+  overflow: auto;
+  padding: 1.5rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 75%);
+  border-radius: 1rem;
+  background: var(--background);
+  color: var(--font-color);
+  box-shadow: 0 1rem 4rem #0005;
+  font:
+    0.9rem/1.5 system-ui,
+    sans-serif;
+}
+#settings-dialog::backdrop {
+  background: #0006;
+  backdrop-filter: blur(4px);
+}
+#settings-dialog header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+#settings-dialog h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+#settings-dialog h3 {
+  margin: 1.25rem 0 0.75rem;
+  font-size: 0.95rem;
+}
+#settings-dialog section + section {
+  border-top: 1px solid color-mix(in srgb, var(--font-color), transparent 85%);
+  margin-top: 1.25rem;
+}
+#settings-dialog .settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0.75rem 0;
+}
+#settings-dialog .settings-row[hidden] {
+  display: none;
+}
+#settings-dialog .input-group {
+  min-width: 0;
+  max-width: 65%;
+}
+#settings-dialog select {
+  min-width: 0;
+  width: 100%;
+  max-height: none;
+}
+#settings-dialog button {
+  max-height: none;
+}
+#settings > .input-group:empty,
+#settings > span:empty {
+  display: none;
+}
+@media (max-width: 400px) {
+  #settings-dialog {
+    padding: 1rem;
+  }
+  #settings-dialog .settings-row {
+    gap: 0.5rem;
+  }
+}
+
+/* Keep the original SVG controls and round the visible edges of every group. */
+#settings-dialog .input-group-text {
+  display: flex;
+}
+#settings-dialog .input-group {
+  flex: 0 1 62%;
+}
+#settings-dialog .input-group > :first-child {
+  border-radius: 0.35rem 0 0 0.35rem;
+  margin-left: 0;
+}
+#settings-dialog .input-group > :last-child {
+  border-radius: 0 0.35rem 0.35rem 0;
+}
+#settings-dialog .input-group > :only-child {
+  border-radius: 0.35rem;
+}
+#settings-dialog .settings-row:has(.settings-switch) {
+  display: grid;
+  grid-template-columns: 18px 1fr auto;
+  gap: 0.4rem 0.6rem;
+}
+#settings-dialog .settings-switch {
+  position: relative;
+  width: 2.5rem;
+  height: 1.4rem;
+  padding: 0;
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--font-color), transparent 80%);
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 50%);
+}
+#settings-dialog .settings-switch::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--font-color);
+  transition: transform 0.15s;
+}
+#settings-dialog .settings-switch[aria-checked='true'],
+#settings-dialog .settings-switch:checked {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+}
+#settings-dialog .settings-switch[aria-checked='true']::after,
+#settings-dialog .settings-switch:checked::after {
+  transform: translateX(17px);
+  background: var(--background);
+}
+.settings-help {
+  opacity: 0.75;
+  font-size: 0.8rem;
+  margin: 0.25rem 0 0.75rem;
+}
+#font-preview {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 0;
+
+  font-family: var(--override-quote-font-family, var(--quote-font-family));
+  font-size: 1rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+#quote-languages {
+  border: 0;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+#quote-languages legend {
+  margin-bottom: 0.5rem;
+}
+#quote-language-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.language-chip {
+  position: relative;
+  cursor: pointer;
+}
+.language-chip span {
+  display: block;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 65%);
+  border-radius: 2rem;
+  font-size: 0.8rem;
+}
+.language-chip:has(input:checked) span {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--background);
+}
+.language-chip:has(input:focus-visible) span {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+.language-chip:hover span {
+  border-color: var(--accent-color);
+}
+#select-all-languages {
+  text-decoration: underline;
+  text-underline-offset: 0.15rem;
+}
+#quote-language-options[hidden] {
+  display: none;
+}
+#settings-dialog :is(input, button, select):focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  #settings-dialog .settings-switch::after {
+    transition: none;
+  }
+}
+
+#settings-dialog #settings-color-controls {
+  flex: 0 0 auto;
+}
+#settings-dialog header {
+  position: sticky;
+  top: -1.5rem;
+  padding: 0.5rem 0;
+  background: var(--background);
+  z-index: 2;
+}
+@media (max-width: 400px) {
+  #settings-dialog header {
+    top: -1rem;
+  }
+}
+
+#settings-dialog .settings-font {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  row-gap: 0.5rem;
+  flex: 0 1 62%;
+  min-width: 0;
+  max-width: 65%;
+}
+#settings-dialog .settings-font .input-group {
+  display: contents;
+}
+#settings-dialog .settings-row:has(.settings-font) {
+  align-items: flex-start;
+}
+#settings-dialog .settings-row:has(.settings-font) > label {
+  padding-top: 0.25rem;
+}
+.settings-custom-font {
+  grid-column: 1 / -1;
+  min-width: 0;
+  font-size: 0.8rem;
+}
+.settings-custom-font summary {
+  cursor: pointer;
+}
+.settings-custom-font form {
+  margin-top: 0.5rem;
+}
+.settings-custom-font label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.settings-custom-font form > div {
+  display: flex;
+  gap: 0.4rem;
+}
+#custom-font-name {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 40%);
+  border-radius: 0.25rem;
+  padding: 0.35rem;
+  background: var(--background);
+  color: var(--font-color);
+  font: inherit;
+}
+#custom-font-status {
+  margin: 0.35rem 0 0;
+}
+
+#settings-dialog #remove-custom-font {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.5rem;
+}
+#settings-dialog #remove-custom-font[hidden] {
+  display: none;
+}
+#settings-dialog #font-select {
+  border-radius: 0;
+}
+#settings-dialog .input-group:has(#remove-custom-font[hidden]) #font-select {
+  border-radius: 0 0.35rem 0.35rem 0;
+}

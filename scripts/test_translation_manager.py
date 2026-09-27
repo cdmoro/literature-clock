@@ -114,7 +114,7 @@ class TranslationManagerTest(unittest.TestCase):
             self.project.export_reviews(path)
         self.assertEqual(json.loads(path.read_text()), self.entries)
 
-    def test_translation_resumes_and_does_not_touch_catalogue(self):
+    def test_translation_resumes_and_saves_drafts_directly_to_catalogue(self):
         before = self.project.catalogue.read_bytes()
         with patch('translation_manager.PacedTranslator') as factory:
             factory.return_value.translate.side_effect = lambda text: 'Vers ' + text
@@ -124,7 +124,30 @@ class TranslationManagerTest(unittest.TestCase):
             self.assertEqual(len(self.project.reviews()), 2)
             self.project.translate(1)
             self.assertEqual(factory.return_value.translate.call_count, 6)
-        self.assertEqual(self.project.catalogue.read_bytes(), before)
+        self.assertNotEqual(self.project.catalogue.read_bytes(), before)
+        self.assertTrue(all(is_draft(row) for row in read_catalogue(self.project.catalogue)))
+
+    def test_each_translation_is_in_csv_before_progress_is_reported(self):
+        saved = []
+        def progress(identifier):
+            row = next(row for row in read_catalogue(self.project.catalogue) if row['Id'] == identifier)
+            self.assertTrue(row['Quote'].startswith('Translated '))
+            self.assertTrue(is_draft(row))
+            saved.append(identifier)
+        with patch('translation_manager.PacedTranslator') as factory:
+            factory.return_value.translate.side_effect = lambda text: 'Translated ' + text
+            self.project.translate(2, on_progress=progress)
+        self.assertEqual(saved, [row['Id'] for row in self.rows])
+
+    def test_direct_csv_edits_are_preserved_when_translating_next_batch(self):
+        rows = read_catalogue(self.project.catalogue)
+        rows[0]['Title'] = 'Manually corrected title'
+        self.project.write_catalogue(rows)
+        with patch('translation_manager.PacedTranslator') as factory:
+            factory.return_value.translate.side_effect = lambda text: 'Translated ' + text
+            self.project.translate(2)
+            self.assertEqual(factory.return_value.translate.call_count, 3)
+        self.assertEqual(read_catalogue(self.project.catalogue)[0]['Title'], 'Manually corrected title')
 
     def test_interruption_keeps_completed_translations_for_review(self):
         with patch('translation_manager.PacedTranslator') as factory:

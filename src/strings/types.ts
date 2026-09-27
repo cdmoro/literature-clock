@@ -1,22 +1,20 @@
 export type Translations = {
-  transition: string;
-  transition_none: string;
-  transition_fade: string;
-  transition_slide: string;
-  transition_blur: string;
-  transition_zoom: string;
+  about: string;
+  about_close: string;
   add_quote: string;
   anaglyph: string;
   author: string;
   base: string;
   blue: string;
   bohemian: string;
+  book: string;
   color: string;
   colors: string;
   copy_mode: string;
   copy_mode_copied: string;
   copy_title: string;
   dark: string;
+  'de-DE': string;
   default_font: string;
   document_title: string;
   download: string;
@@ -26,6 +24,12 @@ export type Translations = {
   'en-US': string;
   'es-ES': string;
   exit_zen_title: string;
+  transition: string;
+  transition_none: string;
+  transition_fade: string;
+  transition_slide: string;
+  transition_blur: string;
+  transition_zoom: string;
   fade_mode: string;
   festive: string;
   font: string;
@@ -45,7 +49,6 @@ export type Translations = {
   pink: string;
   poster: string;
   progressbar_mode: string;
-  project: string;
   'pt-PT': string;
   purple: string;
   random: string;

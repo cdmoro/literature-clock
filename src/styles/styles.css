@@ -3,6 +3,7 @@
 @import url(themes/base.css);
 @import url(themes/anaglyph.css);
 @import url(themes/bohemian.css);
+@import url(themes/book.css);
 @import url(themes/colors.css);
 @import url(themes/horizon.css);
 @import url(themes/elegant.css);
@@ -17,3 +18,11 @@
 @import url(themes/terminal.css);
 @import url(themes/whatsapp.css);
 @import url(custom-colors.css);
+
+@import url(quote-library.css);
+
+@import url(settings-dialog.css);
+
+@import url(about-clock.css);
+
+@import url(github-corner.css);

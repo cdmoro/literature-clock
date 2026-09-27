@@ -17,7 +17,7 @@ function onMouseMove() {
   clearTimeout(mouseTimeout);
 
   mouseTimeout = setTimeout(() => {
-    if (!footer?.matches(':hover')) {
+    if (!footer?.matches(':hover') && !footer?.contains(document.activeElement)) {
       footer?.classList.add('hidden');
     }
   }, 3000);

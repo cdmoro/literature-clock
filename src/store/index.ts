@@ -4,6 +4,8 @@ import { Locale, ResolvedQuote } from '../types';
 
 interface Stateful {
   locale: Locale;
+  'ui-locale'?: Locale;
+  'quote-locales'?: string;
   zen: boolean;
   work: boolean;
   screensaver: boolean;
@@ -20,6 +22,8 @@ export interface Stateless {
   fade?: boolean; // Legacy shared links and saved settings.
   'custom-font'?: string;
   time?: string;
+  'quote-id'?: string;
+  paused?: boolean;
   quote?: string;
   scene?: string;
   progress?: string;
@@ -32,7 +36,7 @@ type State = Stateful & Stateless;
 
 type Listener = (newState: State, oldState: State) => void;
 
-const IGNORE_FROM_URL: (keyof State)[] = ['custom-font', 'active-quote'];
+const IGNORE_FROM_URL: (keyof State)[] = ['custom-font', 'active-quote', 'paused'];
 const REMOVE_VALUES_FROM_URL: Partial<State> = {
   transition: 'fade',
   font: 'default',
@@ -51,8 +55,8 @@ const BOOLEAN_KEYS = new Set([
   'fade',
 ]);
 const THEMES =
-  /^(base|pink|green|orange|purple|blue|gray|color|retro|elegant|festive|bohemian|handwriting|anaglyph|whatsapp|terminal|frame|subtle|poster|horizon|dynamic|photo|kindle)(-(system|light|dark))?$/;
-const TEMPORARY_KEYS = new Set(['time', 'quote', 'scene', 'progress', 'index', 'static']);
+  /^(base|pink|green|orange|purple|blue|gray|color|retro|elegant|festive|bohemian|book|handwriting|anaglyph|whatsapp|terminal|frame|subtle|poster|horizon|dynamic|photo|kindle)(-(system|light|dark))?$/;
+const TEMPORARY_KEYS = new Set(['time', 'quote', 'quote-id', 'scene', 'progress', 'index', 'static']);
 
 function validateSettings(input: unknown, fromUrl: boolean): Partial<State> {
   if (!input || typeof input !== 'object' || Array.isArray(input)) return {};
@@ -66,8 +70,15 @@ function validateSettings(input: unknown, fromUrl: boolean): Partial<State> {
     }
     if (typeof raw !== 'string') continue;
     switch (key) {
+      case 'ui-locale':
       case 'locale':
         result[key] = resolveLocale(raw);
+        break;
+      case 'quote-locales':
+        if (raw === '' || raw.split(',').every((locale) => /^[a-z]{2,3}-[A-Z]{2}$/.test(locale))) result[key] = raw;
+        break;
+      case 'quote-id':
+        if (/^([01]\d|2[0-3])[0-5]\d-\d+$/.test(raw)) result[key] = raw;
         break;
       case 'theme':
         if (THEMES.test(raw)) result[key] = raw;
@@ -102,7 +113,10 @@ function validateSettings(input: unknown, fromUrl: boolean): Partial<State> {
 }
 
 export function parseUrlParams(urlParams: URLSearchParams): Partial<State> {
-  return validateSettings(Object.fromEntries(urlParams), true);
+  const stateFromUrl = validateSettings(Object.fromEntries(urlParams), true);
+  const id = stateFromUrl['quote-id'];
+  if (!stateFromUrl.time && id) stateFromUrl.time = `${id.slice(0, 2)}:${id.slice(2, 4)}`;
+  return stateFromUrl;
 }
 
 export function getStateFromLocalStorage(): Partial<State> {
@@ -157,6 +171,7 @@ export class Store {
     }
 
     this.state.locale = resolveLocale(this.state.locale);
+    if (this.state['ui-locale']) this.state['ui-locale'] = resolveLocale(this.state['ui-locale']);
     if (urlParams.has('locale') && urlParams.get('locale') !== this.state.locale) {
       this.syncToUrl('locale', this.state.locale);
     }
@@ -257,7 +272,7 @@ export class Store {
 
     if (REMOVE_VALUES_FROM_URL[key] === value || value === false) {
       urlParams.delete(key);
-    } else if (value) {
+    } else if (value || (key === 'quote-locales' && value === '')) {
       urlParams.set(key, value.toString());
     }
 
@@ -273,6 +288,8 @@ export let store: Store;
 export function createStore() {
   store = new Store({
     locale: resolveLocale(),
+    'ui-locale': undefined,
+    'quote-locales': undefined,
     screensaver: false,
     work: false,
     zen: false,

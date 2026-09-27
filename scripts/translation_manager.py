@@ -1,5 +1,7 @@
 """Interactive, local catalogue translation and review. Run: npm run translate."""
 import copy
+import csv
+import io
 import json
 import re
 import shutil
@@ -10,7 +12,7 @@ from pathlib import Path
 from translate_catalogue import (PacedTranslator, TranslationStopped, atomic_write,
                                  export_review, initialize_catalogue, load_state,
                                  run_batches, save)
-from validate_translation import ROOT, catalogue_progress, is_draft, read_catalogue, validate
+from validate_translation import FIELDS, ROOT, catalogue_progress, is_draft, read_catalogue, validate
 
 
 class Project:
@@ -81,30 +83,95 @@ class Project:
         # Corrections and approvals live separately from regenerated machine drafts.
         reviews = self.reviews()
         seen = {entry['translation']['Id'] for entry in reviews}
-        reviews += [copy.deepcopy(entry) for identifier, entry in state['rows'].items()
-                    if identifier not in seen]
+        added = [copy.deepcopy(entry) for identifier, entry in state['rows'].items()
+                 if identifier not in seen]
+        reviews += added
         self.check_reviews(reviews)
+        for entry in added:
+            self.store_draft(entry['source'], entry['translation'])
         save(self.review_path, reviews)
         return reviews
 
-    def translate(self, count=25, request=None):
+    def translate(self, count=25, request=None, cancel=None, on_progress=None):
         rows = self.source()
         catalogue = read_catalogue(self.catalogue)
         errors = validate(rows, catalogue)
         if errors:
             raise ValueError('\n'.join(errors))
-        pending = {row['Id'] for row in catalogue if is_draft(row)}
+        originals = {row['Id']: row for row in rows}
+        pending = {row['Id'] for row in catalogue if is_draft(row) and all(
+            row[field] == originals[row['Id']][field] for field in ('Quote', 'Title', 'Quote time'))}
         reviewed = {entry['translation']['Id'] for entry in self.reviews()}
         state = load_state(self.state_path, rows, self.target)
         translator = PacedTranslator(state, self.state_path, self.target,
                                      **({'request': request} if request else {}))
         selection = [row for row in rows if row['Id'] in pending and row['Id'] not in reviewed]
+        if cancel:
+            translate = translator.translate
+
+            def cancellable(text):
+                if cancel.is_set():
+                    raise TranslationStopped('Translation stopped. Completed quotes have been saved.')
+                return translate(text)
+
+            translator.translate = cancellable
+        def saved(original, translation):
+            self.store_draft(original, translation)
+            if on_progress:
+                on_progress(original['Id'])
+
+        self.backup(self.catalogue)
         try:
             run_batches(selection, state, self.state_path, translator,
-                        batch_size=count, catalogue_rows=rows)
+                        batch_size=count, catalogue_rows=rows, on_saved=saved)
         finally:
             # Also retain successful rows when interrupted or rate limited.
             self.sync_reviews(state)
+
+    def write_catalogue(self, rows):
+        buffer = io.StringIO(newline='')
+        writer = csv.DictWriter(buffer, fieldnames=FIELDS + ['Draft'], delimiter='|')
+        writer.writeheader()
+        writer.writerows({**row, 'Draft': row.get('Draft', 'false')} for row in rows)
+        atomic_write(self.catalogue, buffer.getvalue())
+
+    def store_draft(self, original, translation):
+        rows = read_catalogue(self.catalogue)
+        for index, row in enumerate(rows):
+            if row['Id'] == original['Id'] and is_draft(row) and all(
+                    row[field] == original[field] for field in ('Quote', 'Title', 'Quote time')):
+                updated = {**translation, 'Draft': 'true'}
+                if updated != row:
+                    rows[index] = updated
+                    self.write_catalogue(rows)
+                break
+
+    def edit_quote(self, identifier, fields, approved):
+        if type(approved) is not bool or set(fields) != {'Quote', 'Title', 'Quote time'}:
+            raise ValueError('Provide quote, title, time phrase and a boolean approval.')
+        if any(not isinstance(value, str) for value in fields.values()):
+            raise ValueError('Translation fields must be text.')
+        rows = read_catalogue(self.catalogue)
+        source = {row['Id']: row for row in self.source()}
+        for index, row in enumerate(rows):
+            if row['Id'] != identifier:
+                continue
+            updated = {**row, **fields, 'Draft': 'false' if approved else 'true'}
+            errors = validate([source[identifier]], [updated])
+            if errors:
+                raise ValueError('\n'.join(errors))
+            reviews = self.reviews()
+            entry = {'source': source[identifier], 'translation': updated, 'approved': approved}
+            if any(item['translation']['Id'] == identifier for item in reviews):
+                reviews = [entry if item['translation']['Id'] == identifier else item for item in reviews]
+            else:
+                reviews.append(entry)
+            self.backup(self.catalogue)
+            rows[index] = updated
+            self.write_catalogue(rows)
+            save(self.review_path, reviews)
+            return
+        raise ValueError('Quote not found.')
 
     def summary(self):
         report = catalogue_progress(read_catalogue(self.catalogue))
@@ -186,7 +253,7 @@ def review_drafts(project):
                     print('Correct the issues before approving.')
                     continue
                 entry['approved'] = True
-                save(project.review_path, entries)
+                project.edit_quote(row['Id'], {field: row[field] for field in ('Quote', 'Title', 'Quote time')}, True)
                 break
             if choice == 2:
                 project.backup(project.review_path)
@@ -194,7 +261,7 @@ def review_drafts(project):
                     value = input(f'{field} (Enter keeps current; use <br> for line breaks): ')
                     if value:
                         row[field] = value
-                save(project.review_path, entries)
+                project.edit_quote(row['Id'], {field: row[field] for field in ('Quote', 'Title', 'Quote time')}, False)
             if choice == 3:
                 break
 

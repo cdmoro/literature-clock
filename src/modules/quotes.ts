@@ -8,6 +8,7 @@ import { cancelQuoteTransition, transitionQuote } from './transitions';
 let latestRequest = 0;
 import { store } from '../store';
 import { quoteMarkup } from '../utils/quote-markup';
+import { readingStrings, showQuoteNotice } from './reading-ui';
 
 function prefetchNextQuotes(locale: string) {
   const now = new Date();
@@ -36,7 +37,7 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
 
     let quotes = (await response.json()) as Quote[];
 
-    if (store.get('work') && !store.get('index')) {
+    if (store.get('work')) {
       quotes = quotes.filter((q) => q.sfw !== 'nsfw');
     }
 
@@ -51,18 +52,21 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
   }
 }
 
-async function getQuote(time: string, locale: Locale, useIndex: boolean = false): Promise<ResolvedQuote> {
+async function getQuote(
+  time: string,
+  locale: Locale,
+  preserveQuote: boolean = false,
+  variantStep = 0,
+): Promise<ResolvedQuote> {
   const quotes = await getQuotes(time, locale);
   const strings = getStrings(locale);
 
   let quoteIndex = Math.floor(Math.random() * quotes.length);
 
-  if (useIndex) {
-    const index = store.get('active-quote')?.index;
-
-    if (index !== undefined && quotes[index]) {
-      quoteIndex = index;
-    }
+  if (preserveQuote) {
+    const id = store.get('active-quote')?.id;
+    const index = quotes.findIndex((quote) => quote.id === id);
+    if (index >= 0) quoteIndex = index;
   }
 
   if (store.get('index')) {
@@ -72,9 +76,22 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
     }
   }
 
+  const requestedId = store.get('quote-id');
+  if (requestedId) {
+    const index = quotes.findIndex((quote) => quote.id === requestedId);
+    if (index >= 0) quoteIndex = index;
+  }
+
+  if (variantStep) {
+    const current = quotes.findIndex((quote) => quote.id === store.get('active-quote')?.id);
+    if (current >= 0) quoteIndex = (current + variantStep + quotes.length) % quotes.length;
+  }
+
   const quote = Object.assign({}, quotes[quoteIndex]) as ResolvedQuote;
   quote.index = quoteIndex;
   quote.locale = locale;
+  quote.time = time;
+  quote.variants = quotes.length;
   quote.quote_raw = `${quote.quote_first}${quote.quote_time_case}${quote.quote_last}`.replace(/<br>/g, '\n');
 
   if (!quote.quote_time_case) {
@@ -90,7 +107,16 @@ async function getQuote(time: string, locale: Locale, useIndex: boolean = false)
   return quote;
 }
 
-export async function updateQuote({ time = getTime(), useIndex = false } = {}) {
+export function cancelPendingQuote() {
+  latestRequest++;
+  cancelQuoteTransition();
+}
+
+export async function updateQuote({
+  time = store.get('time') || (store.get('paused') ? store.get('active-quote')?.time : undefined) || getTime(),
+  preserveQuote = false,
+  variantStep = 0,
+} = {}) {
   const request = ++latestRequest;
   cancelQuoteTransition();
   const testQuote = store.get('quote');
@@ -100,17 +126,23 @@ export async function updateQuote({ time = getTime(), useIndex = false } = {}) {
     return;
   }
 
-  if (store.get('random-locale')) {
+  if (variantStep && store.get('active-quote')) {
+    locale = store.get('active-quote')!.locale;
+  } else if (store.get('random-locale') && !store.get('quote-id')) {
     locale = getRandomLocale();
   }
 
-  const quote = await getQuote(time, locale, useIndex);
+  const quote = await getQuote(time, locale, preserveQuote, variantStep);
   if (request !== latestRequest) return;
   const timeClass = quote.quote_time_case.replace(/<[^>]*>/g, '').length <= 11 ? 'time text-nowrap' : 'time';
   const blockquote = document.getElementById('quote');
 
   await transitionQuote(
     () => {
+      showQuoteNotice(
+        store.get('quote-id') && quote.id !== store.get('quote-id') ? readingStrings().quoteUnavailable : '',
+        true,
+      );
       store.set('active-quote', quote);
       updateGHLinks(time, quote, locale);
       if (store.get('theme')?.startsWith('photo')) {
@@ -120,6 +152,7 @@ export async function updateQuote({ time = getTime(), useIndex = false } = {}) {
       }
 
       if (blockquote) {
+        blockquote.lang = locale.replace(/-draft$/, '');
         blockquote.innerHTML = '';
 
         const p = document.createElement('p');

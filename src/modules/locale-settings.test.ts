@@ -45,7 +45,25 @@ describe('locale settings', () => {
     createStore();
     initLocale();
     expect(document.title).toContain('Literaturuhr');
-    expect(document.documentElement.lang).toBe('de-DE-draft');
+    expect(document.documentElement.lang).toBe('de-DE');
+    expect(document.getElementById('draft-preview-notice')?.textContent).toContain('de-DE');
+  });
+
+  test('keeps an unpublished draft URL without adding it to the selector', () => {
+    history.replaceState({}, '', '/?locale=el-GR-draft');
+    document.body.innerHTML = '<select id="locale-select"><option value="en-GB"></option></select>';
+    createStore();
+    initLocale();
+    expect(store.get('locale')).toBe('el-GR-draft');
+    expect(getStrings('el-GR-draft')).toEqual(getStrings('en-GB'));
+    expect(document.querySelectorAll('#locale-select option')).toHaveLength(1);
+    expect(document.getElementById('draft-preview-notice')?.textContent).toContain('el-GR');
+    const select = document.querySelector<HTMLSelectElement>('#locale-select')!;
+    select.value = 'en-GB';
+    // Locale changes update the notice before refreshing the quote.
+    store.set('random-locale', true);
+    select.dispatchEvent(new Event('change'));
+    expect(document.getElementById('draft-preview-notice')).toBeNull();
   });
 
   test.each(['en-GB', 'en-US'] as const)('includes the full %s locale in issue links', (locale) => {

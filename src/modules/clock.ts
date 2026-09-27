@@ -1,5 +1,5 @@
 import { updateQuote } from './quotes';
-import { getTime, updateFavicon } from '../utils';
+import { getLiveTime, updateFavicon } from '../utils';
 import { setDayParameters } from './horizon';
 import { store } from '../store';
 
@@ -18,7 +18,7 @@ function updateProgressBar() {
 }
 
 async function updateTime() {
-  const time = store.get('time') || getTime();
+  const time = getLiveTime();
   if (store.get('theme')?.startsWith('horizon')) setDayParameters();
 
   if (lastTime !== time) {
@@ -33,19 +33,18 @@ async function updateTime() {
       timeEl.textContent = time;
     }
 
-    updateQuote({ time });
+    if (!store.get('paused')) void updateQuote({ time });
     lastTime = time;
   }
 }
 
 export function initClock() {
-  const testTime = store.get('time');
-  const testQuote = store.get('quote');
-  const isTest = !!(testTime || testQuote);
+  lastTime = '';
+  if (store.get('time')) store.set('paused', true, false);
+  if (store.get('paused')) void updateQuote();
+  void updateTime();
 
-  updateTime();
-
-  if (!isTest) {
+  if (!store.get('quote')) {
     let clockTimer: ReturnType<typeof setInterval> | undefined;
     let progressTimer: ReturnType<typeof setInterval> | undefined;
     const syncTimers = () => {

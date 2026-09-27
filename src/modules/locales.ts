@@ -1,8 +1,10 @@
+import { initLanguagePreferences } from './language-preferences';
 import { updateQuote } from './quotes';
 import TRANSLATIONS from '../strings/translations.json';
+import SETTINGS from '../strings/settings.json';
 import COLOR_CONTROLS from '../strings/colorControls.json';
 import { BaseLocale, Locale } from '../types';
-import { getTime } from '../utils';
+import { getLiveTime } from '../utils';
 import { Translations } from '../types';
 import { store } from '../store';
 
@@ -18,14 +20,16 @@ export const DOMINANT_LOCALES: Record<string, Locale> = {
 const DRAFT_SUFFIX = '-draft';
 
 export function getBaseLocale(locale: Locale): BaseLocale {
-  return (locale.endsWith(DRAFT_SUFFIX) ? locale.slice(0, -DRAFT_SUFFIX.length) : locale) as BaseLocale;
+  const base = locale.endsWith(DRAFT_SUFFIX) ? locale.slice(0, -DRAFT_SUFFIX.length) : locale;
+  return Object.prototype.hasOwnProperty.call(TRANSLATIONS, base) ? (base as BaseLocale) : 'en-GB';
 }
 
 export function getRandomLocale() {
-  const locales = Object.keys(TRANSLATIONS) as Locale[];
+  const selected = getQuoteLocales();
+  const locales = selected.length ? selected : (Object.keys(TRANSLATIONS) as Locale[]);
   const localeQuote = store.get('active-quote')?.locale;
 
-  if (localeQuote) {
+  if (localeQuote && locales.length > 1) {
     const index = locales.indexOf(localeQuote);
     if (index >= 0) {
       locales.splice(index, 1);
@@ -39,6 +43,8 @@ export function resolveLocale(locale = navigator.language): Locale {
   const normalized = typeof locale === 'string' ? locale.trim().replace(/_/g, '-').toLowerCase() : '';
   const wantsDraft = normalized.endsWith(DRAFT_SUFFIX);
   const lookup = wantsDraft ? normalized.slice(0, -DRAFT_SUFFIX.length) : normalized;
+  const draftMatch = wantsDraft && /^([a-z]{2,3})-([a-z]{2}|[0-9]{3})$/.exec(lookup);
+  if (draftMatch) return `${draftMatch[1]}-${draftMatch[2].toUpperCase()}-draft`;
   const locales = Object.keys(TRANSLATIONS) as Locale[];
   const exactLocale = locales.find((supported) => supported.toLowerCase() === lookup);
   const regionalLocale = locales.find((supported) => lookup.startsWith(`${supported.toLowerCase()}-`));
@@ -47,7 +53,23 @@ export function resolveLocale(locale = navigator.language): Locale {
   return wantsDraft ? (`${resolved}${DRAFT_SUFFIX}` as Locale) : resolved;
 }
 
+export function getInterfaceLocale(): Locale {
+  return store.get('ui-locale') || store.get('locale');
+}
+
+export function getQuoteLocales(): Locale[] {
+  const value = store.get('quote-locales');
+  if (typeof value !== 'string') return [];
+  return [
+    ...new Set(value.split(',').filter((locale) => Object.prototype.hasOwnProperty.call(TRANSLATIONS, locale))),
+  ] as Locale[];
+}
+
 export function initLocale() {
+  if (document.getElementById('ui-locale-select')) {
+    initLanguagePreferences();
+    return;
+  }
   const locale = store.get('locale');
   const localeSelect = document.querySelector<HTMLSelectElement>('#locale-select');
 
@@ -59,18 +81,18 @@ export function initLocale() {
 
   localeSelect?.addEventListener('change', (e) => {
     const locale = (e.target as HTMLInputElement).value as Locale;
-    translateStrings(locale);
     store.set('locale', locale);
+    translateStrings(getInterfaceLocale());
 
     if (!store.get('random-locale')) {
-      updateQuote({ useIndex: true });
+      updateQuote({ preserveQuote: true });
     }
   });
   document.querySelector('#random-locale')?.addEventListener('click', () => {
     const isRandomLocale = store.toggle('random-locale');
     if (!isRandomLocale && store.get('locale') !== store.get('active-quote')?.locale) {
       updateQuote({
-        useIndex: true,
+        preserveQuote: true,
       });
     }
   });
@@ -82,12 +104,35 @@ export function getStrings(locale: Locale): Translations {
   return TRANSLATIONS[resolvedLocale];
 }
 
-function translateStrings(locale: Locale) {
-  const time = getTime();
-  const strings = { ...getStrings(locale), ...COLOR_CONTROLS[getBaseLocale(resolveLocale(locale))] };
+export function translateStrings(locale: Locale) {
+  const time = getLiveTime();
+  const strings = {
+    ...getStrings(locale),
+    ...COLOR_CONTROLS[getBaseLocale(resolveLocale(locale))],
+    ...SETTINGS[getBaseLocale(resolveLocale(locale))],
+  };
 
-  document.documentElement.lang = locale;
-  document.title = `${time} - ${strings.document_title}`;
+  document.documentElement.lang = getBaseLocale(locale);
+  document.getElementById('draft-preview-notice')?.remove();
+  const quoteLocale = store.get('locale');
+  if (quoteLocale.endsWith(DRAFT_SUFFIX)) {
+    const notice = document.createElement('aside');
+    notice.id = 'draft-preview-notice';
+    notice.setAttribute('role', 'status');
+    notice.textContent = `Draft preview · ${quoteLocale.slice(0, -DRAFT_SUFFIX.length)} · Unreviewed quotes may appear`;
+    document.body.appendChild(notice);
+  }
+  const descriptions: Record<string, string> = {
+    'en-GB': 'Book Quotes That Tell the Time',
+    'en-US': 'Book Quotes That Tell the Time',
+    'es-ES': 'La hora en citas de libros',
+    'pt-PT': 'As horas em citações de livros',
+    'fr-FR': 'L’heure en citations de livres',
+    'it-IT': 'L’ora nelle citazioni dei libri',
+    'de-DE': 'Die Uhrzeit in Buchzitaten',
+  };
+  const description = descriptions[getBaseLocale(locale)] || descriptions['en-GB'];
+  document.title = `${time} - ${strings.document_title} — ${description}`;
 
   document
     .querySelectorAll<HTMLElement>('[data-text]')
@@ -96,6 +141,10 @@ function translateStrings(locale: Locale) {
   document
     .querySelectorAll<HTMLOptionElement>('[data-label]')
     .forEach((el) => (el.label = strings[el.dataset.label as keyof Translations]));
+
+  document.querySelectorAll<HTMLOptionElement>('#font-select option[data-custom-font]').forEach((option) => {
+    option.textContent = `${option.value} (${strings.settings_font_custom_label})`;
+  });
 
   document
     .querySelectorAll<HTMLElement>('[data-title]')

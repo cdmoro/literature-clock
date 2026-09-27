@@ -39,7 +39,8 @@ body[data-loading] {
 
 body.zen:not(.screensaver) #progress-bar,
 body.zen:not(.screensaver) #time-clock,
-body.zen:not(.screensaver) footer #menu {
+body.zen:not(.screensaver) footer #menu,
+body.zen:not(.screensaver) .github-corner {
   display: none !important;
 }
 
@@ -87,18 +88,6 @@ blockquote[aria-label]:after {
   height: 4rem;
   position: absolute;
   width: 4rem;
-}
-
-blockquote[aria-label]:before {
-  content: '“';
-  left: -5rem;
-  top: -2rem;
-}
-
-blockquote[aria-label]:after {
-  bottom: 1rem;
-  content: '”';
-  right: -5rem;
 }
 
 blockquote .time {
@@ -233,6 +222,40 @@ button:disabled {
   opacity: 0.7;
 }
 
+/* Shared close ("×") button for dialogs and panels (Settings, My quotes, About):
+   a round, borderless icon button — deliberately different from the app's
+   other square, bordered buttons, so it reads as "close this" rather than
+   another toolbar control. */
+.dialog-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  max-height: none;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+}
+
+.dialog-close svg {
+  display: block;
+  transform: none;
+}
+
+.dialog-close:hover {
+  background-color: color-mix(in srgb, var(--font-color), transparent 88%);
+}
+
+/* A soft round halo instead of the square accent border the generic
+ * button:focus rule draws — these dialogs often focus their close button
+ * first, so this shows up as soon as they open. */
+.dialog-close:focus {
+  border: none;
+  box-shadow: 0 0 0 0.15rem color-mix(in srgb, var(--accent-color), transparent 70%) !important;
+}
+
 #time-clock {
   position: fixed;
   top: 0;
@@ -329,6 +352,26 @@ footer {
 
 #contact {
   display: inline-block;
+}
+
+/* The footer's secondary links (Add quote, Report error, GitHub, About, Made by).
+ * Flex + a generated separator keeps each "| Label" pair glued together, so
+ * wrapping on narrow screens breaks between items rather than leaving a
+ * stray "|" stranded at the start of a line. */
+#footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+#footer-links > * + *::before {
+  content: '|';
+  margin-inline-end: 0.4rem;
+  color: var(--font-color);
+  text-decoration: none;
+  opacity: 0.6;
 }
 
 #flash {
@@ -459,3 +502,52 @@ body:not(.progressbar) #progress-bar {
 body.share-quote #clock {
   transform: none !important;
 }
+
+/* URL-only catalogue preview; never added to the language selector. */
+#draft-preview-notice {
+  position: fixed;
+  inset: auto 12px 12px;
+  z-index: 10000;
+  width: fit-content;
+  max-width: calc(100% - 24px);
+  margin: auto;
+  padding: 7px 14px;
+  border-radius: 6px;
+  background: #fff0bd;
+  color: #42331b;
+  font: 12px/1.4 system-ui, sans-serif;
+  pointer-events: none;
+}
+
+#quote-notice {
+  position: fixed;
+  top: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: min(90vw, 36rem);
+  padding: 0.6rem 1rem;
+  background: var(--background);
+  color: var(--font-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 0.5rem;
+  font: 0.85rem/1.4 system-ui, sans-serif;
+  z-index: 10;
+}
+
+#reading-status {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 95vw;
+  z-index: 5;
+  font: 0.75rem/1.5 system-ui, sans-serif;
+  color: var(--font-color);
+  background: var(--background);
+  border-radius: 0.4rem;
+  padding: 0.2rem 0.5rem;
+}
+#reading-status button { margin-inline-start: 0.5rem; font: inherit; }
+body.paused #time-clock { display: block !important; }
+body.paused #quote-notice { top: 4.5rem; }

@@ -140,9 +140,48 @@ Hi! I'm Carlos, and you can find me here
 - [Twitter](https://twitter.com/CarlosBonadeo)
 - [LinkedIn]([https://twitter.com/CarlosBonadeo](https://www.linkedin.com/in/cdbonadeo/))
 
-Run `npm run translate` for a numbered menu to create languages, translate batches,
-review drafts in the terminal or browser, and apply approved translations.
+Run `npm run admin` for the local Vite translation administrator at
+`http://127.0.0.1:5174`. Create languages, translate batches directly into draft CSV
+rows, and review/edit/approve them from the browser. `npm run translate` remains
+available as a terminal alternative. Complete translations from Calibre or other
+tools can be imported with `scripts/import_translation.py` and reviewed directly,
+without running translation batches (see the workflow below).
 
-New languages can start as a full copy of `quotes.en-GB.csv` with `Draft=true` and
-publish reviewed quotes gradually. Pending quotes are excluded from clock data;
-uncovered minutes use localized fallback messages. See the [gradual translation workflow](scripts/TRANSLATING.md#start-a-language-and-publish-gradually).
+New languages start from `quotes.en-GB.csv` with `Draft=true` and stay out of the
+clock's selector until explicitly enabled. `?locale=el-GR-draft` previews pending
+quotes after generating the time data, without enabling `locale=el-GR`. Draft URLs
+are unlisted, not private. See the [translation workflow](scripts/TRANSLATING.md).
+
+### Links to individual quotes
+
+Sharing includes the displayed quote's language, minute and stable `quote-id`, plus its theme, font and colour. Browsers without native sharing copy the link to the clipboard; image download remains available separately. The recipient's random-language preference cannot change a linked quote. Content filters still apply: unavailable or filtered IDs display an explanatory notice and another available quote. Legacy `index` links remain supported.
+
+### Pause reading
+
+Use the pause button to keep reading the current quote while the real clock continues. A small status shows the quote's minute and a “Back to live clock” button, also available in Zen mode. Opening a `time`/`quote-id` link starts paused; resuming clears its fixed selection and immediately shows the current minute. Language and content-filter changes keep the paused minute. Pausing is local to the current page and is not saved as a preference.
+
+### More quotes for this minute
+
+The circular-arrow button pauses reading and selects another quote for the displayed minute and language. It visits all eligible quotes before repeating, avoids an immediate repeat across cycles, and respects Work mode. It is disabled when there is only one available quote or a fallback. “Back to live clock” ends browsing.
+
+### Favorites
+
+Use the heart to save the displayed quote and “My quotes” to open your collection. Favorites are stored only in this browser, with no account or server, and survive reloads. Each includes the text, attribution and a permanent link. You can remove individual favorites; Work mode hides explicit entries without deleting them. There is a 500-quote limit, and storage failures are reported instead of claiming that a quote was saved. Clearing browser data removes the collection.
+
+### Recent quotes
+
+“My quotes” also includes a Recent tab: the last 100 distinct quotes actually displayed, newest first, stored only in this browser. Repeated views move a quote to the top. You can reopen a quote, save it as a favorite or clear the history without affecting favorites. Placeholder quotes and custom previews are excluded. While the dialog is open its list stays still; reopening it or switching tabs refreshes it. Work mode hides explicit entries in both tabs.
+
+## Search visibility
+
+The production canonical URL is `https://literatureclock.netlify.app/`. Vite copies
+`public/robots.txt` and `public/sitemap.xml` into the deployment. The home page
+includes an accessible About section and WebApplication structured data.
+Language and appearance query parameters remain app settings under the same
+canonical page; they are not advertised as separately indexed translations.
+
+After deployment, verify the URL-prefix property in Google Search Console, inspect
+the home page using the live URL test, request indexing and submit `sitemap.xml`.
+Indexing and rankings are determined by Google, not by the deployment itself.
+If changing domains, update the canonical URL, social metadata, structured data,
+robots sitemap URL and sitemap together, and redirect the old domain.
