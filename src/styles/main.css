@@ -551,3 +551,38 @@ body.share-quote #clock {
 #reading-status button { margin-inline-start: 0.5rem; font: inherit; }
 body.paused #time-clock { display: block !important; }
 body.paused #quote-notice { top: 4.5rem; }
+
+#quote-translation {
+  margin-top: 1.2em;
+  padding-top: 0.65em;
+  border-top: 1px solid color-mix(in srgb, var(--font-color), transparent 75%);
+  font-size: clamp(14px, 1.8vw, 24px);
+  line-height: 1.4;
+}
+#quote-translation summary {
+  cursor: pointer;
+  font:
+    0.85rem/1.5 system-ui,
+    sans-serif;
+}
+#quote-translation summary:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 4px;
+}
+#quote-translation div {
+  margin-top: 0.7em;
+  max-height: 25vh;
+  overflow-y: auto;
+}
+#quote-translation p {
+  margin: 0 0 0.5em;
+  font-size: inherit;
+  max-height: none;
+}
+#quote-translation cite {
+  font-size: 0.75em;
+}
+
+blockquote:has(#quote-translation[open]) > p {
+  max-height: 35vh;
+}
