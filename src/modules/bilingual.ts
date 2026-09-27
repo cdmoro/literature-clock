@@ -30,7 +30,7 @@ export async function renderTranslation() {
   blockquote.append(panel);
   if (getBaseLocale(quote.locale) === locale) {
     content.classList.add('translation-notice');
-    content.textContent = strings().bilingual_same.replace('{language}', name || locale);
+    content.textContent = strings().bilingual_same;
     fitQuote();
     return;
   }

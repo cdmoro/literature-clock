@@ -28,7 +28,7 @@
     "bilingual_show": "Show translation",
     "bilingual_loading": "Loading translation…",
     "bilingual_unavailable": "No published translation is available for this quote.",
-    "bilingual_same": "This quote is already in {language}.",
+    "bilingual_same": "This quote is already in the selected language.",
     "bilingual_language_notice": "When a quote is already in the translation language, a short notice appears instead."
   },
   "en-US": {
@@ -60,7 +60,7 @@
     "bilingual_show": "Show translation",
     "bilingual_loading": "Loading translation…",
     "bilingual_unavailable": "No published translation is available for this quote.",
-    "bilingual_same": "This quote is already in {language}.",
+    "bilingual_same": "This quote is already in the selected language.",
     "bilingual_language_notice": "When a quote is already in the translation language, a short notice appears instead."
   },
   "es-ES": {
@@ -92,7 +92,7 @@
     "bilingual_show": "Mostrar traducción",
     "bilingual_loading": "Cargando traducción…",
     "bilingual_unavailable": "No hay una traducción publicada para esta cita.",
-    "bilingual_same": "Esta cita ya está en {language}.",
+    "bilingual_same": "Esta cita ya está en el idioma seleccionado.",
     "bilingual_language_notice": "Si la cita ya está en el idioma de traducción, se muestra un breve aviso en su lugar."
   },
   "pt-PT": {
@@ -124,7 +124,7 @@
     "bilingual_show": "Mostrar tradução",
     "bilingual_loading": "A carregar tradução…",
     "bilingual_unavailable": "Não existe tradução publicada para esta citação.",
-    "bilingual_same": "Esta citação já está em {language}.",
+    "bilingual_same": "Esta citação já está no idioma selecionado.",
     "bilingual_language_notice": "Se a citação já estiver no idioma da tradução, é apresentado um breve aviso."
   },
   "fr-FR": {
@@ -156,7 +156,7 @@
     "bilingual_show": "Afficher la traduction",
     "bilingual_loading": "Chargement de la traduction…",
     "bilingual_unavailable": "Aucune traduction publiée pour cette citation.",
-    "bilingual_same": "Cette citation est déjà en {language}.",
+    "bilingual_same": "Cette citation est déjà dans la langue sélectionnée.",
     "bilingual_language_notice": "Si la citation est déjà dans la langue de traduction, un bref message s’affiche à la place."
   },
   "it-IT": {
@@ -188,7 +188,7 @@
     "bilingual_show": "Mostra traduzione",
     "bilingual_loading": "Caricamento della traduzione…",
     "bilingual_unavailable": "Nessuna traduzione pubblicata per questa citazione.",
-    "bilingual_same": "Questa citazione è già in {language}.",
+    "bilingual_same": "Questa citazione è già nella lingua selezionata.",
     "bilingual_language_notice": "Se la citazione è già nella lingua di traduzione, viene mostrato un breve avviso."
   },
   "de-DE": {
@@ -220,7 +220,7 @@
     "bilingual_show": "Übersetzung anzeigen",
     "bilingual_loading": "Übersetzung wird geladen…",
     "bilingual_unavailable": "Für dieses Zitat ist keine veröffentlichte Übersetzung verfügbar.",
-    "bilingual_same": "Dieses Zitat ist bereits auf {language}.",
+    "bilingual_same": "Dieses Zitat ist bereits in der ausgewählten Sprache.",
     "bilingual_language_notice": "Ist das Zitat bereits in der Übersetzungssprache, erscheint stattdessen ein kurzer Hinweis."
   },
   "el-GR": {

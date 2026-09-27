@@ -74,7 +74,9 @@ it('does not fetch the same language', async () => {
   vi.stubGlobal('fetch', fetch);
   store.set('translation-locale', 'en-GB');
   store.set('bilingual', true);
-  expect(document.querySelector('.translation-notice')!.textContent).toBe('This quote is already in English.');
+  expect(document.querySelector('.translation-notice')!.textContent).toBe(
+    'This quote is already in the selected language.',
+  );
   expect(store.get('bilingual')).toBe(true);
   expect(fetch).not.toHaveBeenCalled();
 });
