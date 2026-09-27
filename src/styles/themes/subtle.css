@@ -13,6 +13,10 @@
   background-color: var(--accent-color);
 }
 
+[data-theme|='subtle'] blockquote[aria-label]:before {
+  top: -2rem;
+}
+
 [data-theme|='subtle'] blockquote[aria-label]:after {
   bottom: -2rem;
 }

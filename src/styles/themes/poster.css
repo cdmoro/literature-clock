@@ -51,8 +51,8 @@
   transform-origin: left;
 }
 
-[data-theme='poster-light'] body {
-  background: color-mix(in srgb, var(--accent-color) 15%, #fff);
+[data-theme='poster-light'] {
+  --background: color-mix(in srgb, var(--accent-color) 15%, #fff);
 }
 
 [data-theme='poster-light'] blockquote {
@@ -64,8 +64,8 @@
   background-blend-mode: difference;
 }
 
-[data-theme='poster-dark'] body {
-  background: color-mix(in srgb, var(--accent-color) 16%, #101016);
+[data-theme='poster-dark'] {
+  --background: color-mix(in srgb, var(--accent-color) 16%, #101016);
 }
 
 [data-theme='poster-dark'] blockquote {
