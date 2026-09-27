@@ -1,3 +1,4 @@
+import { initBilingual } from './bilingual';
 import { initAboutClock } from './about-clock';
 import { initSettingsDialog } from './settings-dialog';
 import { initStaticMode } from './static';
@@ -20,6 +21,7 @@ import { initProgressbarMode } from './progressbar';
 const MODULES = [
   initAboutClock,
   initSettingsDialog,
+  initBilingual,
   initStaticMode,
   initReadingControls,
   initQuoteLibrary,

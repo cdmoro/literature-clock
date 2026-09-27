@@ -1,0 +1,102 @@
+/* Secondary reading content inherits the theme's palette and typeface, but not
+   its primary quote's bubbles, oversized ornaments or attribution layout. */
+#quote #quote-translation {
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: start;
+  text-shadow: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  font-weight: normal;
+  overflow-wrap: anywhere;
+}
+#quote #quote-translation p,
+#quote #quote-translation cite {
+  display: block;
+  position: static;
+  width: auto;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  color: inherit;
+  -webkit-text-fill-color: currentColor;
+  text-shadow: none;
+  text-align: start;
+  text-wrap: pretty;
+  font-variant: normal;
+}
+#quote #quote-translation p {
+  font-size: inherit;
+  margin-bottom: 0.65em;
+}
+#quote #quote-translation cite {
+  font-family: inherit;
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+#quote #quote-translation :is(p, cite)::before,
+#quote #quote-translation :is(p, cite)::after {
+  content: none;
+}
+#quote #quote-translation .time {
+  text-shadow: none;
+}
+#quote #quote-translation .translation-content {
+  padding-inline-end: 0.4rem;
+  scrollbar-width: thin;
+}
+#quote #quote-translation .translation-notice {
+  font:
+    0.85rem/1.5 system-ui,
+    sans-serif;
+  font-style: italic;
+}
+/* Keep framed themes and short viewports reachable without clipping content. */
+#quote:has(#quote-translation) {
+  box-sizing: border-box;
+  max-height: calc(100dvh - 10rem);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+#quote:has(#quote-translation) > p {
+  max-height: 30vh;
+}
+#quote #quote-translation .translation-content {
+  max-height: none;
+  overflow: visible;
+}
+[data-theme|='frame'] #quote:has(#quote-translation) > p::before {
+  height: 60px;
+  font-size: 5rem;
+}
+[data-theme|='poster'] #clock:has(#quote-translation) {
+  max-width: 80vw;
+}
+[data-theme|='poster'] #quote:has(#quote-translation) {
+  padding: 1.5rem;
+}
+[data-theme|='poster'] #quote:has(#quote-translation) > cite {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+}
+@media (max-width: 600px) {
+  [data-theme|='poster'] #clock:has(#quote-translation) {
+    max-width: 95vw;
+  }
+  [data-theme|='poster'] #quote:has(#quote-translation),
+  [data-theme|='frame'] #quote:has(#quote-translation) {
+    padding: 1rem;
+  }
+}
+/* A quiet surface keeps secondary text readable over the chat wallpaper. */
+[data-theme|='whatsapp'] #quote #quote-translation {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background: color-mix(in srgb, var(--background) 94%, transparent);
+}
