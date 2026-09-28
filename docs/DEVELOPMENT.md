@@ -52,4 +52,3 @@ Complete translations from Calibre or other tools can be imported with `scripts/
 New languages start from `quotes.en-GB.csv` with `Draft=true` and stay out of the language selector until explicitly enabled. After generating the quote data, a URL such as `?locale=el-GR-draft` previews pending quotes without enabling the language. Draft URLs are unlisted, not private.
 
 See the [translation workflow](../scripts/TRANSLATING.md) for requirements, importing, review, backups and language publication, and the [deployment guide](DEPLOYMENT.md) for hosting and search visibility.
-
