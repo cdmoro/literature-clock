@@ -46,15 +46,107 @@ Create the target language in the administrator, or open its existing catalogue.
 
 Use the language and region agreed for the contribution—for example, `el-GR` for Greek in Greece. Creating a catalogue does not add it to the public language selector.
 
-### 3. Prepare a small batch
+### 3. Choose how to prepare your translation
 
-Choose the approach that suits you:
+**Thousands of quotes do not have to mean thousands of translations written from scratch.** You can generate a first draft of the whole catalogue, then review it a little at a time. Or translate and review one small batch before starting the next. Both approaches fit the incubator.
 
-- **Translate manually:** edit draft passages in the administrator using the English source for comparison.
-- **Start with machine drafts:** use **Translate batch** to request translations from Google, then correct them. Successful translations are saved as drafts, and interrupted work can be resumed.
-- **Import a complete translation:** if you've already translated the full catalogue with Calibre or another tool, use the [import instructions](../scripts/TRANSLATING.md#import-a-complete-translation-from-calibre-or-another-tool), then review it in the administrator. This importer expects a complete catalogue with preserved source IDs; it is not a partial-batch importer.
+Start with a pilot of 10–25 varied passages to check the language, time expressions and file format before scaling up. These are quotes, sometimes containing several sentences; a batch of 25 means 25 catalogue entries.
 
-Machine translation is optional. The batch tool sends text to Google's unofficial public endpoint, which may temporarily reject requests. Saved work can be resumed later; see the [technical workflow](../scripts/TRANSLATING.md) for details.
+| Approach | A good fit when… | How it reaches the incubator |
+| --- | --- | --- |
+| Manual translation, optionally assisted by Google Translate | You want close control or only have time for a few passages | Edit and save drafts in the administrator |
+| Built-in Google translation batches | You want the tools to manage IDs, saving and progress | Translate 25 quotes at a time in the administrator, or run resumable batches from the terminal |
+| Calibre with Ebook Translator | You already use an ebook translation workflow | Convert the results back to the catalogue CSV format, then import the complete file |
+| An AI assistant or agent | You want help drafting, organizing batches or checking consistency | Have it produce a complete CSV with preserved IDs, then import and review it |
+
+#### Option A: translate manually, with help when useful
+
+Open a draft in the administrator and translate it yourself, or paste the English passage into [Google Translate](https://translate.google.com/) to get a starting point. Read and edit the result before saving it. Translate the book title as appropriate and choose the exact words in the translated passage that express the time.
+
+Work passage by passage so that text stays attached to the correct ID. Avoid pasting a raw CSV into a translation website and assuming it will preserve headers, separators and metadata. This approach works well for a small contribution and for fixing difficult passages after a larger automated run.
+
+#### Option B: use the built-in batches of 25
+
+In the administrator, **Translate batch** requests Google translations for 25 quotes by default. Successful results are saved as drafts, and interrupted work can be resumed. You can review that batch immediately or continue generating drafts first.
+
+To prepare the entire catalogue through repeated batches, the terminal tool offers a resumable run. For example, for Greek:
+
+```sh
+python3 scripts/translate_catalogue.py --target el --all --batch-size 25 --delay 4 --batch-pause 60
+```
+
+Replace `el` with the target's Google language code. This requests batches with pauses, saves checkpoints and stops when drafting is complete, on a service error, or when you interrupt it. Run the same command again to resume. Terminal drafts live in a separate translation workspace; follow the [terminal workflow](../scripts/TRANSLATING.md#translate-a-complete-language) for reviewing and exporting them into a catalogue.
+
+The built-in tools use Google's unofficial public endpoint, which may temporarily reject requests. If the service blocks requests, keep the saved progress and wait before resuming. Generating every draft is a milestone; you can review the results gradually afterwards.
+
+#### Option C: use Calibre's Ebook Translator
+
+If you already work with Calibre, [Ebook Translator](https://github.com/bookfere/Ebook-Translator-Calibre-Plugin) is another way to prepare draft text. It translates ebooks; it is not a direct Literature Clock CSV integration.
+
+This route needs a conversion step: prepare an ebook-compatible document containing the passages with their source IDs, translate it, then map the translated passages back into the catalogue CSV. Keep a separate copy of the original ID-to-passage mapping. Test a small sample through the entire round trip before translating everything—if IDs or passage boundaries change, the result must be repaired before importing.
+
+Use the plugin's documentation for installation and translation-engine setup. After conversion, follow the complete-file import steps below. An EPUB or other ebook output cannot be passed directly to the catalogue importer. If you do not already have a reliable conversion workflow, the built-in batches require less preparation.
+
+#### Option D: ask an AI assistant or agent
+
+An AI assistant can draft translations, compare wording and flag suspicious time expressions. An agent with file access can also split the catalogue into batches, save progress and assemble the result. This is an external workflow you run with your chosen tool; the incubator does not call an AI provider itself.
+
+Give it the English source catalogue and a precise target language and region. Ask it to process small batches, preserve IDs, save checkpoints and report unfinished work instead of attempting thousands of quotes in one chat response. A useful starting prompt is:
+
+```text
+Prepare a draft translation of quotes/quotes.en-GB.csv into [language and region].
+Read scripts/TRANSLATING.md for the catalogue format before starting.
+
+First translate a pilot of 25 entries for me to inspect. After I approve the
+approach, continue in batches, saving progress so interrupted work can resume.
+Write to a new file outside quotes/; never overwrite the source catalogue.
+
+Use UTF-8, pipe-delimited CSV with the original English headers. Preserve every
+source Id exactly once. Keep Time, Id, Author and SFW unchanged. Translate only
+Quote, Quote time and Title. Preserve intentional <br> and <em> formatting and
+use proper CSV quoting for embedded pipes, quotes and newlines.
+
+Make Quote time an exact substring of the translated Quote that expresses the
+same time as the source. Preserve approximate times; do not invent precision.
+If unsure, leave the time highlight empty and list the ID for human review.
+Do not invent published book titles or claim that wording is edition-verified.
+
+Keep all output unapproved: set Draft=true if including a Draft column.
+Do not silently skip, duplicate, summarize or truncate entries. Record completed
+and pending IDs separately. Assemble the complete output only when all entries
+have been processed, and check its IDs against the source before handing it over.
+Do not publish, enable the language, or mark translations as human-reviewed.
+```
+
+An AI can also provide a second pass for consistency, but its confidence is not a substitute for a reader who knows the language. Keep uncertain passages in draft for review.
+
+#### Bring an external translation into the administrator
+
+For Calibre, an AI agent or any other external tool, the importer expects a **complete UTF-8, pipe-delimited CSV** with every source ID exactly once and the original headers:
+
+```text
+Time|Id|Quote time|Quote|Title|Author|SFW
+```
+
+An optional `Draft` column is accepted. The importer takes the translated quote, time phrase and title, restores source metadata by ID and marks every imported row as draft. It does not approve translations.
+
+For example, with a complete Greek translation saved outside `quotes/`:
+
+```sh
+python3 scripts/import_translation.py /path/to/greek-translation.csv --output quotes/quotes.el-GR.csv
+python3 scripts/validate_translation.py quotes/quotes.el-GR.csv
+npm run admin
+```
+
+The output must be a new path. If you already created that catalogue in step 2, do not overwrite it or discard reviewed work; consult the [import workflow](../scripts/TRANSLATING.md#import-a-complete-translation-from-calibre-or-another-tool) and coordinate how to incorporate the external work. This importer is for complete catalogues, not partial batches. For small contributions, editing drafts in the administrator is the simpler route.
+
+Importing or passing structural validation does not mean the language is ready. Open it in the administrator and review the drafts below.
+
+#### Make the review manageable
+
+Separate **drafting progress** from **review progress**. Producing an entire first draft can remove the blank-page problem, while reviewing 10–25 passages at a time keeps each session bounded. Pick a batch, correct it, save your progress and stop whenever you need to.
+
+If several people are helping, agree on source IDs or time ranges in the issue so work does not overlap. Share small pull requests, note uncertain passages and resume with the next batch. Nobody needs to finish the whole language in one sitting—or alone.
 
 ### 4. Review for meaning, language and time
 
