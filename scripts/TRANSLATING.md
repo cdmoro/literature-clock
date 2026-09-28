@@ -2,7 +2,7 @@
 
 New to contributing a language? Start with the [language incubator guide](../docs/LANGUAGE_INCUBATOR.md) for an overview and ways to help. This document covers the technical workflow.
 
-`translate_catalogue.py` reads the British English catalogue and uses Google's
+`translate_catalogue.py` resolves each passage from its declared source catalogue and uses Google's
 unofficial public translation endpoint. It needs Python 3.9+ and no additional
 packages. The service may reject requests even when they are spaced out.
 
@@ -23,8 +23,8 @@ Batch translation is optional. If Google Translate, DeepL or another external to
 has already translated the whole catalogue, import it once and go straight to review.
 The importer makes no network requests and never approves translations.
 
-Keep the input as UTF-8, pipe-delimited CSV with the original English header:
-`Time|Id|Quote time|Quote|Title|Author|SFW` (an optional `Draft` column is accepted).
+Keep the input as UTF-8, pipe-delimited CSV with the catalogue header:
+`Time|Id|Quote time|Quote|Title|Author|SFW|Source locale` (an optional `Draft` column is accepted).
 Preserve every source ID exactly once, even if the external tool reorders rows.
 Do not translate IDs or headers. CSV quoting must protect pipes and newlines in text.
 
@@ -44,7 +44,7 @@ A `.draft.csv` file alone is a legacy clock preview, not an administrator catalo
 If both files exist, clock generation uses the regular catalogue.
 
 Import copies `Quote`, `Quote time` and `Title` from the translated file, restores
-`Time`, `Author` and `SFW` from the English source by ID, and sets `Draft=true`
+`Time`, `Author` and `SFW` from the declared source by ID, and sets `Draft=true`
 regardless of input approval flags. It refuses missing, duplicate or unknown IDs
 and never overwrites an existing output. The original input is left untouched.
 
@@ -179,17 +179,17 @@ after time-data generation; it also works for unregistered languages.
 
 ## Start a language and publish gradually
 
-The canonical British English catalogue is `quotes/quotes.en-GB.csv`.
+Source passages are resolved by ID and `Source locale` across the catalogues.
 Create a full copy with every quote marked as a draft (no network requests):
 
 ```sh
 python3 scripts/translate_catalogue.py --init-catalogue quotes/quotes.el-GR.csv
 ```
 
-This preserves all source IDs, text and metadata and adds an eighth column,
+This preserves all source IDs, text and metadata and adds an optional ninth column,
 `Draft`, set to `true`. Existing files are never overwritten. Translate and review
 rows gradually, then set `Draft=false` for each approved quote. Machine translation
-alone does not approve a quote. The copied English text stays hidden until approved.
+alone does not approve a quote. The copied source text stays hidden until approved.
 Legacy seven-column CSVs remain supported and are treated as published. If the
 `Draft` column exists, every value must be `true` or `false` (case-insensitive);
 blank or misspelled values fail validation and generation.
@@ -242,9 +242,10 @@ python3 scripts/translate_catalogue.py --target el --pilot --batch-size 25 --del
 ```
 
 Use Google language codes: `el` for Modern Greek, `ja` for Japanese, `ar` for
-Arabic, `nl` for Dutch, or `zh-CN` for Simplified Chinese. The source is always
-translated as English; by default it is the project's `quotes.en-GB.csv` (British
-English, the project's original source catalogue).
+Arabic, `nl` for Dutch, or `zh-CN` for Simplified Chinese. Each passage is translated from its `Source locale` language. Repository source
+paths resolve the complete union of IDs; use an exported standalone source CSV
+for a deliberately limited selection. Regional provenance is retained even when
+the translation provider only accepts the general language code.
 
 ## Inspect progress and resume
 

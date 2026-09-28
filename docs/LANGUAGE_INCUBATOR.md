@@ -2,6 +2,45 @@
 
 [← Back to the README](../README.md#language-incubator)
 
+## Source language and regional variants
+
+Every row has one `Source locale` column, shared by all versions of the same ID.
+It describes the reference passage, not the author's nationality or the language
+of the current translation. Both general (`en`, `es`) and regional (`es-AR`,
+`es-CO`, `es-CL`, `en-US`) values are accepted. Use a general language when the
+regional provenance is unknown.
+
+The resolver first uses an exact catalogue if present, then the configured
+language default: English → `en-GB`, Spanish → `es-ES`, Portuguese → `pt-PT`,
+French → `fr-FR`, Italian → `it-IT`, German → `de-DE`. Other languages can use a
+single unambiguous catalogue; configure a default if several variants exist.
+An Argentine passage can therefore live in `quotes.es-ES.csv` without adapting
+its idioms. Same-language drafts retain the source text; regional punctuation
+and time notation differences are allowed during review.
+
+The source row must exist with the same ID and be published. Adding an exact
+regional catalogue requires those source rows before it can replace the fallback.
+Run `python3 scripts/quote_sources.py` to check references and origin agreement.
+This check runs in CI. Use `python3 scripts/quote_sources.py --output /tmp/source-passages.csv`
+to export the resolved passages for an external translation tool. It does not certify linguistic accuracy or require every
+translation to have identical text. The translation validator additionally checks
+metadata, time highlighting and formatting against the resolved source.
+
+The administrator shows the actual source locale, including when editing English.
+Machine translation uses the source language instead of assuming English; caches
+are separated by source language. Importing an external CSV restores source
+metadata by ID, including `Source locale`. Legacy seven-column imports remain
+accepted; committed catalogues must retain the new column.
+
+Existing saved reviews whose source has changed are rejected as outdated, and
+machine checkpoints retain outdated drafts in `obsolete_rows`. Back up old review
+files and re-review affected passages against the resolved source; approvals are
+not automatically transferred to a different reference.
+
+To add quotes, use `python3 scripts/add_quote.py`, or
+`python3 scripts/add_quote_batch.py passages.csv --source-locale es-AR`.
+Batch rows can override that default with their own `Source locale`.
+
 ## Bring your language to Literature Clock
 
 A literary clock feels different when it speaks your language. If you can translate from English or help make a translation sound natural, you can help build a new catalogue for Literature Clock.
@@ -15,7 +54,7 @@ The incubator is the project's draft-and-review workflow. It gives new languages
 | If you'd like to… | Start here |
 | --- | --- |
 | Bring a missing language to the clock | Propose the language and regional variant in an issue, then create or join its catalogue |
-| Translate a few passages | Pick a small batch and compare your translation with the English source |
+| Translate a few passages | Pick a small batch and compare your translation with the declared source |
 | Review an existing draft | Check natural wording, meaning, book titles and time expressions |
 | Help without installing tools | Open an issue describing your language skills and offer to review passages with other contributors |
 | Improve a language already available | Use **Report error** on a quote, or propose a correction in an issue or pull request |
@@ -32,7 +71,7 @@ Knowing the language is the most valuable part. Git experience helps with submit
 
 **Never change a quote's `Id`. It is the only reliable key we use to track the same passage across translations.** Matching text, book titles, row positions or clock times cannot replace it: wording changes between languages and several quotes can belong to the same minute. Bilingual mode also uses this ID to find the matching translation.
 
-Copy each ID exactly from the English source and keep it attached to that same passage throughout translation, conversion, review and export. Treat IDs as text: never translate, renumber, regenerate, trim or reformat them, and preserve leading zeros and punctuation. A complete catalogue must contain every source ID exactly once, with no missing, duplicate or invented IDs. Correct-looking IDs attached to the wrong passages are also an error; check the mapping as well as the list of IDs.
+Copy each ID exactly from the declared source and keep it attached to that same passage throughout translation, conversion, review and export. Treat IDs as text: never translate, renumber, regenerate, trim or reformat them, and preserve leading zeros and punctuation. A complete catalogue must contain every source ID exactly once, with no missing, duplicate or invented IDs. Correct-looking IDs attached to the wrong passages are also an error; check the mapping as well as the list of IDs.
 
 To keep the translation focused and simple:
 
@@ -56,7 +95,7 @@ Open [the local administrator](http://127.0.0.1:5174). Its dashboard lists catal
 
 ### 2. Create or resume a catalogue
 
-Create the target language in the administrator, or open its existing catalogue. A new language starts with a copy of the British English source and marks its entries as drafts. The copied English text is a starting point, not a completed translation.
+Create the target language in the administrator, or open its existing catalogue. A new language starts with a copy of each passage from its declared source and marks its entries as drafts. The copied source text is a starting point, not a completed translation.
 
 Use the language and region agreed for the contribution—for example, `el-GR` for Greek in Greece. Creating a catalogue does not add it to the public language selector.
 
@@ -75,7 +114,7 @@ Start with a pilot of 10–25 varied passages to check the language, time expres
 
 #### Option A: translate manually, with help when useful
 
-Open a draft in the administrator and translate it yourself, or paste the English passage into [Google Translate](https://translate.google.com/) to get a starting point. Read and edit the result before saving it. Keep the author unchanged, preferably keep the source book title, and choose the exact words in the translated passage that express the time.
+Open a draft in the administrator and translate it yourself, or paste the source passage into [Google Translate](https://translate.google.com/) to get a starting point. Read and edit the result before saving it. Keep the author unchanged, preferably keep the source book title, and choose the exact words in the translated passage that express the time.
 
 Work passage by passage so that text stays attached to the correct ID. Avoid pasting a raw CSV into a translation website and assuming it will preserve headers, separators and metadata. This approach works well for a small contribution and for fixing difficult passages after a larger automated run.
 
@@ -105,21 +144,21 @@ Use the plugin's documentation for installation and translation-engine setup. Af
 
 An AI assistant can draft translations, compare wording and flag suspicious time expressions. An agent with file access can also split the catalogue into batches, save progress and assemble the result. This is an external workflow you run with your chosen tool; the incubator does not call an AI provider itself.
 
-Give it the English source catalogue and a precise target language and region. Ask it to process small batches, preserve IDs, save checkpoints and report unfinished work instead of attempting thousands of quotes in one chat response. A useful starting prompt is:
+Give it the declared source catalogue and a precise target language and region. Ask it to process small batches, preserve IDs, save checkpoints and report unfinished work instead of attempting thousands of quotes in one chat response. A useful starting prompt is:
 
 ```text
-Prepare a draft translation of quotes/quotes.en-GB.csv into [language and region].
+Prepare a draft translation of the resolved source passages into [language and region].
 Read scripts/TRANSLATING.md for the catalogue format before starting.
 
 First translate a pilot of 25 entries for me to inspect. After I approve the
 approach, continue in batches, saving progress so interrupted work can resume.
 Write to a new file outside quotes/; never overwrite the source catalogue.
 
-Use UTF-8, pipe-delimited CSV with the original English headers. Preserve every
+Use UTF-8, pipe-delimited CSV with the catalogue headers. Preserve every
 source Id exactly once and attached to its original passage. IDs are the only
 cross-language tracking key: never translate, renumber, regenerate or reformat
 them. Treat them as text and preserve leading zeros and punctuation.
-Keep Time, Id, Author and SFW exactly unchanged. Keep Title unchanged too for
+Keep Time, Id, Author, SFW and Source locale exactly unchanged. Keep Title unchanged too for
 this translation task. Translate only Quote and Quote time.
 Preserve intentional <br> and <em> formatting and
 use proper CSV quoting for embedded pipes, quotes and newlines.
@@ -143,7 +182,7 @@ An AI can also provide a second pass for consistency, but its confidence is not 
 For Calibre, an AI agent or any other external tool, the importer expects a **complete UTF-8, pipe-delimited CSV** with every source ID exactly once and the original headers:
 
 ```text
-Time|Id|Quote time|Quote|Title|Author|SFW
+Time|Id|Quote time|Quote|Title|Author|SFW|Source locale
 ```
 
 An optional `Draft` column is accepted. The importer takes the translated quote, time phrase and title, restores source metadata by ID and marks every imported row as draft. It does not approve translations.
@@ -168,7 +207,7 @@ If several people are helping, agree on source IDs or time ranges in the issue s
 
 ### 4. Review for meaning, language and time
 
-For each passage, compare the draft with its English source and check:
+For each passage, compare the draft with its declared source and check:
 
 - **Meaning and voice:** preserve the passage's meaning and tone, without omissions or added details. Read it as prose, not just as a translated sentence.
 - **The time expression:** the highlighted words must appear exactly in the translated passage and mean the same time as the source. Watch for AM/PM, “quarter to”, “half past” and approximate times. Do not make an approximate source more precise.

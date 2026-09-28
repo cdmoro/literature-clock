@@ -51,6 +51,6 @@ Run `npm run admin` and open **http://127.0.0.1:5174** to create catalogues, tra
 
 Complete translations from Calibre or other tools can be imported with `scripts/import_translation.py` and reviewed without running translation batches. `npm run translate` provides a terminal alternative.
 
-New languages start from `quotes.en-GB.csv` with `Draft=true` and stay out of the language selector until explicitly enabled. After generating the quote data, a URL such as `?locale=el-GR-draft` previews pending quotes without enabling the language. Draft URLs are unlisted, not private.
+New languages start from the union of quote IDs and their declared sources with `Draft=true` and stay out of the language selector until explicitly enabled. After generating the quote data, a URL such as `?locale=el-GR-draft` previews pending quotes without enabling the language. Draft URLs are unlisted, not private.
 
 See the [translation workflow](../scripts/TRANSLATING.md) for requirements, importing, review, backups and language publication.

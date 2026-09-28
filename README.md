@@ -71,7 +71,7 @@ Many translations were originally made with Google Translate and may need correc
 
 **Speak a language that is missing from the clock? Help bring it to life.** You can start a new catalogue, translate a few passages or review someone else's work. You don't have to take on an entire language alone: a small, carefully reviewed contribution is a useful start.
 
-The **language incubator** is the workflow for growing new catalogues before they join the clock. A local translation administrator lets you create a language, prepare draft translations, compare them with the English source, edit and approve passages, and preview them in the clock. You can prepare drafts manually, with built-in batches of 25, through Calibre or with an AI agent, then review a few passages at a time. You don't have to translate thousands of quotes from scratch; people who know the language make those drafts worth reading.
+The **language incubator** is the workflow for growing new catalogues before they join the clock. A local translation administrator lets you create a language, prepare draft translations, compare them with the declared source, edit and approve passages, and preview them in the clock. You can prepare drafts manually, with built-in batches of 25, through Calibre or with an AI agent, then review a few passages at a time. You don't have to translate thousands of quotes from scratch; people who know the language make those drafts worth reading.
 
 Keep author names unchanged and preferably retain the source book titles. **Quote IDs must stay exactly the same: they are the key that connects each passage across languages.**
 

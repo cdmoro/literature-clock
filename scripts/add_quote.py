@@ -1,114 +1,68 @@
+"""Add one passage with a shared ID and its actual source locale."""
 import csv
-import os
-from googletrans import Translator
+from pathlib import Path
 
-# Initialize the translator
-translator = Translator()
+from quote_sources import resolve_locale, source_language
+from translate_catalogue import atomic_write
+from validate_translation import FIELDS, ROOT, read_catalogue
+import io
 
-# Available language codes
-languages = ["en-GB", "en-US", "es-ES", "pt-PT", "fr-FR", "it-IT", "de-DE"]
-
-# Path to the folder where CSV files are stored
-folder_path = "quotes"
+folder_path = ROOT / 'quotes'
 
 
-# Function to generate the ID based on the time and existing entries
-def generate_id(time, lang_code):
-    file_name = f"quotes.{lang_code}.csv"
-    file_path = os.path.join(folder_path, file_name)
-
-    # Initialize the count for the current time
-    count = 0
-    time_without_colon = time.replace(":", "")
-
-    # Check how many entries exist with the same time
-    if os.path.exists(file_path):
-        with open(file_path, mode="r", newline="", encoding="utf-8") as file:
-            reader = csv.reader(file, delimiter="|")
-            for row in reader:
-                if (
-                    len(row) > 0 and row[0] == time
-                ):  # Assuming the time is in the first column
-                    count += 1
-
-    # Create the ID in the format HHMM-XXX
-    return f"{time_without_colon}-{count:03}"
+def generate_id(time, directory=None):
+    prefix = time.replace(':', '') + '-'
+    used = {row['Id'] for path in Path(directory or folder_path).glob('quotes.*.csv')
+            for row in read_catalogue(path)}
+    number = max((int(value[len(prefix):]) for value in used if value.startswith(prefix)), default=-1) + 1
+    return f'{prefix}{number:03}'
 
 
-def insert_quote_sorted(file_path, new_row):
-    rows = []
-
-    with open(file_path, mode="r", encoding="utf-8") as file:
-        reader = csv.reader(file, delimiter="|")
-        rows = list(reader)
-
-    header = rows[0]
-    data_rows = rows[1:]
-
-    if header[-1] == 'Draft' and len(new_row) == len(header) - 1:
-        new_row = [*new_row, 'true']
-    data_rows.append(new_row)
-
-    data_rows.sort(
-        key=lambda row: (int(row[1].split("-")[0]), int(row[1].split("-")[1]))
-    )
-
-    with open(file_path, mode="w", newline="", encoding="utf-8") as file:
-        writer = csv.writer(file, delimiter="|")
-        writer.writerow(header)
-        writer.writerows(data_rows)
-
-
-# Function to add the translated quote and title to the CSV files
-def add_quote_to_csv(time, quote, title, author, language_code, sfw):
-    for lang_code in languages:
-        print(f"Processing language: {lang_code}")
-        # Translate the quote and title if the language is not the original
-        if lang_code.split("-")[0] != language_code.split("-")[0]:
-            translated_quote = translator.translate(
-                quote, src=language_code.split("-")[0], dest=lang_code.split("-")[0]
-            ).text
-            translated_title = translator.translate(
-                title, src=language_code.split("-")[0], dest=lang_code.split("-")[0]
-            ).text
-        else:
-            translated_quote = quote
-            translated_title = title
-
-        # Generate the ID for the new quote
-        quote_id = generate_id(time, lang_code)
-
-        # Open the corresponding CSV file and append the translated quote and title
-        file_name = f"quotes.{lang_code}.csv"
-        file_path = os.path.join(folder_path, file_name)
-
-        new_row = [time, quote_id, "*", translated_quote, translated_title, author, sfw]
-        insert_quote_sorted(file_path, new_row)
+def add_quote_to_csv(time, quote, title, author, language_code, sfw, quote_time='*',
+                     directory=None, translator=None):
+    directory = Path(directory or folder_path)
+    paths = {path.name[len('quotes.'):-4]: path for path in directory.glob('quotes.*.csv')
+             if not path.name.endswith('.draft.csv')}
+    source_language(language_code)
+    resolve_locale(language_code, paths)  # Fail before translation or writes.
+    identifier = generate_id(time, directory)
+    pending = []
+    for locale, path in sorted(paths.items()):
+        values = [quote, title, quote_time]
+        if source_language(locale) != source_language(language_code):
+            if translator is None:
+                from googletrans import Translator
+                translator = Translator()
+            values = [translator.translate(value, src=source_language(language_code),
+                       dest=source_language(locale)).text if value != '*' else value for value in values]
+        rows = read_catalogue(path)
+        row = dict(zip(['Quote', 'Title', 'Quote time'], values))
+        row.update({'Time': time, 'Id': identifier, 'Author': author, 'SFW': sfw,
+                    'Source locale': language_code})
+        fields = FIELDS + (['Draft'] if any('Draft' in item for item in rows) else [])
+        if 'Draft' in fields:
+            row['Draft'] = 'false' if source_language(locale) == source_language(language_code) else 'true'
+        rows.append(row)
+        output = io.StringIO(newline='')
+        writer = csv.DictWriter(output, fieldnames=fields, delimiter='|')
+        writer.writeheader()
+        writer.writerows(sorted(rows, key=lambda item: (item['Time'], item['Id'])))
+        pending.append((path, output.getvalue()))
+    for path, text in pending:
+        atomic_write(path, text)
+    return identifier
 
 
-# Function to ask the user for quote details
 def input_quote():
-    time = input("Time (HH:MM): ")
-    quote = input("Quote: ")
-    title = input("Book: ")
-    author = input("Author: ")
-
-    print("Is this quote Safe for Work (y/N)?")
-    sfw_input = input().strip().upper() or "N"
-    sfw = "sfw" if sfw_input == "Y" else "nsfw"
-
-    print("Select the original language of the quote:")
-    for i, code in enumerate(languages):
-        print(f"{i + 1}. {code}")
-    language_index = int(input("Language number: ")) - 1
-
-    if language_index < 0 or language_index >= len(languages):
-        print("Invalid language.")
-        return
-
-    language_code = languages[language_index]
-    add_quote_to_csv(time, quote, title, author, language_code, sfw)
+    time = input('Time (HH:MM): ')
+    quote = input('Quote: ')
+    quote_time = input('Exact time phrase: ')
+    title = input('Book: ')
+    author = input('Author: ')
+    sfw = 'sfw' if input('Safe for work (y/N)? ').strip().upper() == 'Y' else 'nsfw'
+    locale = input('Source locale (for example es-AR, es or en): ').strip()
+    print('Added ' + add_quote_to_csv(time, quote, title, author, locale, sfw, quote_time))
 
 
-# Run the script
-input_quote()
+if __name__ == '__main__':
+    input_quote()
