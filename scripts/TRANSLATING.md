@@ -11,6 +11,12 @@ interactive tool for adding a single quote. Adding the new language to the
 website is a separate, explicit step after the language is complete and reviewed.
 Unlisted draft URLs are available earlier for previewing work in progress.
 
+## Preserve quote identity and attribution
+
+**The source `Id` is the only reliable key for tracking the same quote across languages. Never change it.** Keep it attached to its original passage: do not translate, renumber, regenerate or reformat IDs, and preserve leading zeros and punctuation by treating them as text. Every complete catalogue must contain every source ID exactly once. Matching text, titles, row order or clock times cannot replace this identity; bilingual lookup and catalogue imports depend on it. Checking the ID set alone cannot detect translated passages accidentally assigned to the wrong IDs.
+
+Keep `Author` exactly as in the source, without translation or transliteration. Prefer keeping `Title` unchanged too, so contributors can focus on `Quote` and `Quote time`. A verified published title in the target language may be used deliberately and reviewed, but translating book titles is not required. The batch tools currently generate title translations as drafts; prefer restoring the source title during review unless using a verified localized title. Keep `Time` and `SFW` unchanged.
+
 ## Import a complete translation from Calibre or another tool
 
 Batch translation is optional. If Google Translate, DeepL or another external tool
@@ -291,8 +297,8 @@ entry includes the original, translation, time candidate and structural issues.
 For every quote:
 
 - Read the entire source and translation for omissions, unnatural language and
-  changes in meaning. Check names and consistent book titles. Translated titles
-  are not claims about published editions.
+  changes in meaning. Preserve author names exactly and preferably keep source book
+  titles. Any deliberately localized title should be verified and flagged for review.
 - Find the exact expression of time within the translated quote. Set `Quote time`
   to that exact substring. A separately translated candidate is only a suggestion;
   if it does not occur in the quote, the field is deliberately left empty.

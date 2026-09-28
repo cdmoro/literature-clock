@@ -6,7 +6,7 @@
 
 A literary clock feels different when it speaks your language. If you can translate from English or help make a translation sound natural, you can help build a new catalogue for Literature Clock.
 
-You can start a language, review a handful of passages, improve book titles or check that the highlighted words tell the right time. You don't need to commit to translating the whole collection. Small batches make it easier to contribute and easier for another reader to review.
+You can start a language, review a handful of passages, check attribution or verify that the highlighted words tell the right time. You don't need to commit to translating the whole collection. Small batches make it easier to contribute and easier for another reader to review.
 
 The incubator is the project's draft-and-review workflow. It gives new languages room to develop before they appear in the public language selector. Its browser-based administrator runs locally on your computer; there isn't a shared online translation dashboard.
 
@@ -27,6 +27,20 @@ Start by [checking existing issues](https://github.com/cdmoro/literature-clock/i
 - Any existing work you'd like to build on, and the batch you plan to tackle.
 
 Knowing the language is the most valuable part. Git experience helps with submitting changes, but you can begin by discussing a contribution in an issue. Coordination happens through issues and pull requests; edits in your local administrator are not automatically shared with other contributors.
+
+## Keep the connection between languages intact
+
+**Never change a quote's `Id`. It is the only reliable key we use to track the same passage across translations.** Matching text, book titles, row positions or clock times cannot replace it: wording changes between languages and several quotes can belong to the same minute. Bilingual mode also uses this ID to find the matching translation.
+
+Copy each ID exactly from the English source and keep it attached to that same passage throughout translation, conversion, review and export. Treat IDs as text: never translate, renumber, regenerate, trim or reformat them, and preserve leading zeros and punctuation. A complete catalogue must contain every source ID exactly once, with no missing, duplicate or invented IDs. Correct-looking IDs attached to the wrong passages are also an error; check the mapping as well as the list of IDs.
+
+To keep the translation focused and simple:
+
+- **Authors (`Author`): always keep the source name exactly as it is.** Do not translate, transliterate or normalize it.
+- **Book titles (`Title`): preferably keep the source title unchanged.** Translating titles is not required to contribute a language. If you deliberately use a verified published title in the target language, flag it for review; do not invent a title through literal or machine translation.
+- **Passage and time phrase (`Quote`, `Quote time`): focus your translation work here.** Keep the source `Time` and `SFW` values unchanged as well.
+
+These rules apply whichever translation tool you choose. The built-in batch tool may produce translated title drafts; during review, prefer restoring the source title unless a deliberate, verified localized title is being used.
 
 ## From an idea to a published language
 
@@ -61,7 +75,7 @@ Start with a pilot of 10–25 varied passages to check the language, time expres
 
 #### Option A: translate manually, with help when useful
 
-Open a draft in the administrator and translate it yourself, or paste the English passage into [Google Translate](https://translate.google.com/) to get a starting point. Read and edit the result before saving it. Translate the book title as appropriate and choose the exact words in the translated passage that express the time.
+Open a draft in the administrator and translate it yourself, or paste the English passage into [Google Translate](https://translate.google.com/) to get a starting point. Read and edit the result before saving it. Keep the author unchanged, preferably keep the source book title, and choose the exact words in the translated passage that express the time.
 
 Work passage by passage so that text stays attached to the correct ID. Avoid pasting a raw CSV into a translation website and assuming it will preserve headers, separators and metadata. This approach works well for a small contribution and for fixing difficult passages after a larger automated run.
 
@@ -102,8 +116,12 @@ approach, continue in batches, saving progress so interrupted work can resume.
 Write to a new file outside quotes/; never overwrite the source catalogue.
 
 Use UTF-8, pipe-delimited CSV with the original English headers. Preserve every
-source Id exactly once. Keep Time, Id, Author and SFW unchanged. Translate only
-Quote, Quote time and Title. Preserve intentional <br> and <em> formatting and
+source Id exactly once and attached to its original passage. IDs are the only
+cross-language tracking key: never translate, renumber, regenerate or reformat
+them. Treat them as text and preserve leading zeros and punctuation.
+Keep Time, Id, Author and SFW exactly unchanged. Keep Title unchanged too for
+this translation task. Translate only Quote and Quote time.
+Preserve intentional <br> and <em> formatting and
 use proper CSV quoting for embedded pipes, quotes and newlines.
 
 Make Quote time an exact substring of the translated Quote that expresses the
@@ -154,7 +172,8 @@ For each passage, compare the draft with its English source and check:
 
 - **Meaning and voice:** preserve the passage's meaning and tone, without omissions or added details. Read it as prose, not just as a translated sentence.
 - **The time expression:** the highlighted words must appear exactly in the translated passage and mean the same time as the source. Watch for AM/PM, “quarter to”, “half past” and approximate times. Do not make an approximate source more precise.
-- **Book titles and names:** check the title and preserve the author. A machine-translated title is not evidence of a published edition's title.
+- **IDs:** verify that every ID is unchanged and still belongs to the same source passage. Never repair a mismatch by inventing or renumbering IDs.
+- **Book titles and names:** preserve the author exactly and preferably retain the source title. If using a localized title, verify it against a published edition and flag the change for review. A machine-translated title is not evidence of a published edition's title.
 - **Formatting:** preserve intentional emphasis and line breaks.
 
 For example, a source phrase such as “a quarter to eight” means 7:45. A fluent translation that means 8:15 would still be wrong for the clock, even if its words are highlighted correctly.
