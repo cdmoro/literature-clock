@@ -130,7 +130,7 @@ Help the clock grow, one passage at a time:
 
 ## Development
 
-See the [development guide](docs/DEVELOPMENT.md) for local setup, commands, tests, quote generation and the translation administrator. For publishing the site, see the [deployment guide](docs/DEPLOYMENT.md).
+See the [development guide](docs/DEVELOPMENT.md) for local setup, commands, tests, quote generation and the translation administrator.
 
 ## Technology and credits
 
