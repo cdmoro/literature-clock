@@ -4,11 +4,12 @@ import csv
 from collections import Counter
 from pathlib import Path
 
+from quote_sources import read_source
 from validate_translation import FIELDS, ROOT, read_catalogue, validate
 
 
 def import_translation(source_path, translated_path, output):
-    source = read_catalogue(source_path)
+    source = read_source(source_path)
     translated = read_catalogue(translated_path)
     source_ids = Counter(row['Id'] for row in source)
     if any(count != 1 for count in source_ids.values()) or source_ids != Counter(

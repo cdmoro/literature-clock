@@ -18,7 +18,7 @@ class BatchTranslationTest(unittest.TestCase):
         self.path = Path(self.directory.name) / 'state.json'
         self.rows = [{'Time': '07:30', 'Id': '0730-000', 'Quote time': 'half past seven',
                       'Quote': 'It was half past seven.', 'Title': 'Book',
-                      'Author': 'Author', 'SFW': 'sfw'}]
+                      'Author': 'Author', 'SFW': 'sfw', 'Source locale': 'en'}]
         self.state = load_state(self.path, self.rows, 'el')
         self.now = 10000
         self.calls = []

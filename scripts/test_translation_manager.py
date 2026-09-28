@@ -19,9 +19,9 @@ class TranslationManagerTest(unittest.TestCase):
         self.root = Path(self.temp.name)
         (self.root / 'quotes').mkdir()
         self.rows = [dict(Time='07:30', Id='0730-000', Quote='At seven thirty.',
-                          Title='Book', Author='Writer', SFW='sfw', **{'Quote time': 'seven thirty'}),
+                          Title='Book', Author='Writer', SFW='sfw', **{'Source locale': 'en', 'Quote time': 'seven thirty'}),
                      dict(Time='08:00', Id='0800-000', Quote='At eight.',
-                          Title='Book', Author='Writer', SFW='sfw', **{'Quote time': 'eight'})]
+                          Title='Book', Author='Writer', SFW='sfw', **{'Source locale': 'en', 'Quote time': 'eight'})]
         with (self.root / 'quotes/quotes.en-GB.csv').open('w') as stream:
             writer = csv.DictWriter(stream, fieldnames=FIELDS, delimiter='|')
             writer.writeheader()
@@ -39,8 +39,7 @@ class TranslationManagerTest(unittest.TestCase):
         self.assertEqual(before, self.project.catalogue.read_bytes())
         with self.assertRaises(ValueError):
             Project(self.root, '../escape', 'fr')
-        with self.assertRaises(ValueError):
-            Project(self.root, 'en-GB', 'en')
+        self.assertEqual(Project(self.root, 'en-GB', 'en').locale, 'en-GB')
 
     def test_create_adopts_legacy_checkpoint_without_modifying_it(self):
         project = Project(self.root, 'fr-CA', 'fr')

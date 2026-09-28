@@ -10,7 +10,7 @@ class TranslationValidationTest(unittest.TestCase):
     def setUp(self):
         self.source = [{'Time': '07:30', 'Id': '0730-000', 'Quote time': 'half past seven',
                         'Quote': 'It was half past seven.<br>He waited.', 'Title': 'Book',
-                        'Author': 'Author', 'SFW': 'sfw'}]
+                        'Author': 'Author', 'SFW': 'sfw', 'Source locale': 'en'}]
         self.target = [{**self.source[0], 'Quote time': 'επτά και μισή',
                         'Quote': 'Ήταν επτά και μισή.<br>Περίμενε.', 'Title': 'Βιβλίο'}]
 
