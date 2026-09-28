@@ -1,5 +1,7 @@
 # Translating and reviewing a catalogue
 
+New to contributing a language? Start with the [language incubator guide](../docs/LANGUAGE_INCUBATOR.md) for an overview and ways to help. This document covers the technical workflow.
+
 `translate_catalogue.py` reads the British English catalogue and uses Google's
 unofficial public translation endpoint. It needs Python 3.9+ and no additional
 packages. The service may reject requests even when they are spaced out.

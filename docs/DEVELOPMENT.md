@@ -45,6 +45,8 @@ npm run generate-times -- en-US
 
 ## Translation administrator
 
+To contribute a new language, start with the [language incubator guide](LANGUAGE_INCUBATOR.md).
+
 Run `npm run admin` and open **http://127.0.0.1:5174** to create catalogues, translate batches, compare passages with the original, and edit or approve translations. This local application writes to the catalogue CSV files and is separate from the deployed clock.
 
 Complete translations from Calibre or other tools can be imported with `scripts/import_translation.py` and reviewed without running translation batches. `npm run translate` provides a terminal alternative.

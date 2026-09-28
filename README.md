@@ -6,7 +6,7 @@ Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) (
 
 ![Literature Clock displaying a literary quote with the time highlighted](https://github.com/user-attachments/assets/15fedb98-8d39-418a-86fa-a7fd9d0077d2)
 
-**[Open Literature Clock](https://literatureclock.netlify.app/)** · [Themes](#themes) · [Settings](#settings) · [Contributing](#contributing) · [Development](#development)
+**[Open Literature Clock](https://literatureclock.netlify.app/)** · [Themes](#themes) · [Settings](#settings) · [Language incubator](#language-incubator) · [Contributing](#contributing) · [Development](#development)
 
 ## Features
 
@@ -67,6 +67,14 @@ The `en-GB` catalogue preserves the original English quotes. The `en-US` catalog
 
 Many translations were originally made with Google Translate and may need corrections. Contributions that improve wording, book titles and time references are welcome. If a minute has no eligible quote, the clock displays a localized fallback.
 
+## Language incubator
+
+**Speak a language that is missing from the clock? Help bring it to life.** You can start a new catalogue, translate a few passages or review someone else's work. You don't have to take on an entire language alone: a small, carefully reviewed contribution is a useful start.
+
+The **language incubator** is the workflow for growing new catalogues before they join the clock. A local translation administrator lets you create a language, prepare draft translations, compare them with the English source, edit and approve passages, and preview them in the clock. Machine translation can help with a first draft; people who know the language make it worth reading.
+
+[**Explore the language incubator →**](docs/LANGUAGE_INCUBATOR.md) for the step-by-step guide, or [open an issue](https://github.com/cdmoro/literature-clock/issues/new) with the language you'd like to contribute and the kind of help you can offer. If you're comfortable reviewing text but not setting up the tools, say so—an issue is a good place to coordinate with other contributors.
+
 ## Settings
 
 Open **Settings** to configure languages, appearance and display options. You can choose a theme font or add a Google Fonts family by name, preview it and keep it in your custom font list.
@@ -125,7 +133,7 @@ Help the clock grow, one passage at a time:
 - [Suggest a new quote or a variant for an existing minute](https://github.com/cdmoro/literature-clock/issues/new?template=add-quote.yml&labels=add-quote&title=%5B23%3A28%5D+%5Ben-GB%5D+Add+quote&locale=en-GB).
 - Use **Report error** on a displayed quote to report a typo, incorrect time or translation problem.
 - [Open an issue](https://github.com/cdmoro/literature-clock/issues) for bugs, ideas or a new language proposal.
-- Review translations or create a new catalogue with the [translation workflow](scripts/TRANSLATING.md).
+- Start a language or help review one through the [language incubator](docs/LANGUAGE_INCUBATOR.md).
 - Submit a pull request with improvements to the clock, themes or documentation.
 
 ## Development
