@@ -5,7 +5,7 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from validate_translation import read_catalogue, is_draft, catalogue_progress
+from validate_translation import read_catalogue, is_draft, catalogue_progress, parse_sfw
 
 
 def generate_catalogue(path, output, include_drafts=False):
@@ -34,7 +34,8 @@ def generate_catalogue(path, output, include_drafts=False):
         grouped[row['Time']].append({
             **({'draft': is_draft(row)} if include_drafts else {}),
             'id': row['Id'], 'quote_time_case': phrase, 'quote_first': first,
-            'quote_last': last, 'title': row['Title'], 'author': row['Author'], 'sfw': row['SFW'],
+            'quote_last': last, 'title': row['Title'], 'author': row['Author'],
+            'sfw': parse_sfw(row['SFW'], row['Id']),
         })
         published.append(row)
     for minute, quotes in grouped.items():

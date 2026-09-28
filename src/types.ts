@@ -13,7 +13,7 @@ export interface Quote {
   quote_last: string;
   title: string;
   author: string;
-  sfw: string;
+  sfw: boolean;
 }
 
 export interface ResolvedQuote extends Quote {

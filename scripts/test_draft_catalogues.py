@@ -18,9 +18,9 @@ class DraftCatalogueTest(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
         self.source = [dict(Time='07:30', Id='1', Quote='At seven thirty.',
-                            Title='Book', Author='Author', SFW='sfw', **{'Source locale': 'en', 'Quote time': 'seven thirty'}),
+                            Title='Book', Author='Author', SFW='true', **{'Source locale': 'en', 'Quote time': 'seven thirty'}),
                        dict(Time='08:00', Id='2', Quote='At eight.',
-                            Title='Book', Author='Author', SFW='sfw', **{'Source locale': 'en', 'Quote time': 'eight'})]
+                            Title='Book', Author='Author', SFW='true', **{'Source locale': 'en', 'Quote time': 'eight'})]
         self.catalogue = self.root / 'quotes.el-GR.csv'
         initialize_catalogue(self.source, self.catalogue)
 
@@ -114,7 +114,7 @@ class DraftCatalogueTest(unittest.TestCase):
         output = self.root / 'times'
         generate_catalogues(self.root, output, translations)
         self.assertTrue((output / 'el-GR-draft').exists())
-        self.catalogue.write_text(self.catalogue.read_text().replace('|true', '|false'))
+        self.catalogue.write_text(self.catalogue.read_text().replace('|en|true', '|en|false'))
         generate_catalogues(self.root, output, translations)
         self.assertTrue((output / 'el-GR' / '07_30.json').exists())
         self.assertFalse((output / 'el-GR-draft').exists())
@@ -165,7 +165,7 @@ class DraftCatalogueTest(unittest.TestCase):
 
     def test_external_import_preserves_text_restores_metadata_and_revokes_approval(self):
         external = self.root / 'external.csv'
-        external.write_text(self.catalogue.read_text().replace('Author|sfw|en|true', 'Translated author|sfw|es-AR|false')
+        external.write_text(self.catalogue.read_text().replace('Author|true|en|true', 'Translated author|true|es-AR|false')
                             .replace('At seven thirty.', 'Translated quote.'))
         output = self.root / 'imported.csv'
         self.assertEqual(import_translation(self.catalogue, external, output), (2, 1))

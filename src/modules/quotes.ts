@@ -39,7 +39,7 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
     let quotes = (await response.json()) as Quote[];
 
     if (store.get('work')) {
-      quotes = quotes.filter((q) => q.sfw !== 'nsfw');
+      quotes = quotes.filter((q) => q.sfw === true);
     }
 
     if (!quotes.length) {

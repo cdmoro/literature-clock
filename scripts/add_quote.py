@@ -4,7 +4,7 @@ from pathlib import Path
 
 from quote_sources import resolve_locale, source_language
 from translate_catalogue import atomic_write
-from validate_translation import FIELDS, ROOT, read_catalogue
+from validate_translation import FIELDS, ROOT, read_catalogue, parse_sfw
 import io
 
 folder_path = ROOT / 'quotes'
@@ -20,6 +20,7 @@ def generate_id(time, directory=None):
 
 def add_quote_to_csv(time, quote, title, author, language_code, sfw, quote_time='*',
                      directory=None, translator=None):
+    parse_sfw(sfw)
     directory = Path(directory or folder_path)
     paths = {path.name[len('quotes.'):-4]: path for path in directory.glob('quotes.*.csv')
              if not path.name.endswith('.draft.csv')}
@@ -59,7 +60,7 @@ def input_quote():
     quote_time = input('Exact time phrase: ')
     title = input('Book: ')
     author = input('Author: ')
-    sfw = 'sfw' if input('Safe for work (y/N)? ').strip().upper() == 'Y' else 'nsfw'
+    sfw = 'true' if input('Safe for work (y/N)? ').strip().upper() == 'Y' else 'false'
     locale = input('Source locale (for example es-AR, es or en): ').strip()
     print('Added ' + add_quote_to_csv(time, quote, title, author, locale, sfw, quote_time))
 

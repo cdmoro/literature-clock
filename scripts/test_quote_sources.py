@@ -20,7 +20,7 @@ class QuoteSourcesTest(unittest.TestCase):
         self.directory.mkdir()
         self.spanish = {'Id': '0730-000', 'Time': '07:30', 'Quote': 'Eran las siete y media.',
                         'Quote time': 'siete y media', 'Title': 'Libro', 'Author': 'Autor',
-                        'SFW': 'sfw', 'Source locale': 'es-AR'}
+                        'SFW': 'true', 'Source locale': 'es-AR'}
 
     def write(self, locale, rows):
         path = self.directory / f'quotes.{locale}.csv'
@@ -112,7 +112,7 @@ class QuoteSourcesTest(unittest.TestCase):
         self.write('es-ES', [self.spanish])
         self.write('es-AR', [{**self.spanish, 'Id': '0730-003'}])
         identifier = add_quote_to_csv('07:30', self.spanish['Quote'], 'Libro', 'Autor', 'es-AR',
-                                      'sfw', self.spanish['Quote time'], self.directory)
+                                      'true', self.spanish['Quote time'], self.directory)
         self.assertEqual(identifier, '0730-004')
         for path in self.directory.glob('*.csv'):
             row = read_catalogue(path)[-1]

@@ -92,7 +92,7 @@ const quote = (text: string) => ({
   quote_last: '.',
   title: '<img src=x>',
   author: '<script>bad()</script>',
-  sfw: 'sfw',
+  sfw: true,
 });
 const response = (text: string) => ({ ok: true, json: async () => [quote(text)] }) as Response;
 

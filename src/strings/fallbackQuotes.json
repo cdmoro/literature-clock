@@ -8,7 +8,7 @@
       "id": "",
       "time": "",
       "quote_time_case": "",
-      "sfw": "sfw"
+      "sfw": true
     },
     {
       "quote_first": "Captain's log:<br>We are still looking for a quote for ",
@@ -18,7 +18,7 @@
       "id": "",
       "time": "",
       "quote_time_case": "",
-      "sfw": "sfw"
+      "sfw": true
     }
   ],
   "en-US": [
@@ -30,7 +30,7 @@
       "id": "",
       "time": "",
       "quote_time_case": "",
-      "sfw": "sfw"
+      "sfw": true
     },
     {
       "quote_first": "Captain's log:<br>We are still looking for a quote for ",
@@ -40,7 +40,7 @@
       "id": "",
       "time": "",
       "quote_time_case": "",
-      "sfw": "sfw"
+      "sfw": true
     }
   ],
   "es-ES": [
@@ -52,7 +52,7 @@
       "id": "",
       "time": "",
       "quote_time_case": "",
-      "sfw": "sfw"
+      "sfw": true
     },
     {
       "quote_first": "Bitácora del Capitán:<br>Seguimos buscando una cita para las ",
@@ -62,7 +62,7 @@
       "id": "",
       "time": "",
       "quote_time_case": "",
-      "sfw": "sfw"
+      "sfw": true
     }
   ],
   "pt-PT": [
@@ -74,7 +74,7 @@
       "id": "",
       "time": "",
       "quote_time_case": "",
-      "sfw": "sfw"
+      "sfw": true
     },
     {
       "quote_first": "Registro do capitão:<br>Ainda estamos procurando uma data para o ",
@@ -84,7 +84,7 @@
       "id": "",
       "time": "",
       "quote_time_case": "",
-      "sfw": "sfw"
+      "sfw": true
     }
   ],
   "fr-FR": [
@@ -96,7 +96,7 @@
       "id": "",
       "time": "",
       "quote_time_case": "",
-      "sfw": "sfw"
+      "sfw": true
     },
     {
       "quote_first": "Journal du capitaine:<br>Nous sommes toujours à la recherche d'una citation pour ",
@@ -106,7 +106,7 @@
       "id": "",
       "time": "",
       "quote_time_case": "",
-      "sfw": "sfw"
+      "sfw": true
     }
   ],
   "it-IT": [
@@ -118,7 +118,7 @@
       "id": "",
       "time": "",
       "quote_time_case": "",
-      "sfw": "sfw"
+      "sfw": true
     },
     {
       "quote_first": "Diario del capitano:<br>Stiamo ancora cercando una data per il ",
@@ -128,7 +128,7 @@
       "id": "",
       "time": "",
       "quote_time_case": "",
-      "sfw": "sfw"
+      "sfw": true
     }
   ],
   "de-DE": [
@@ -140,7 +140,7 @@
       "id": "",
       "time": "",
       "quote_time_case": "",
-      "sfw": "sfw"
+      "sfw": true
     },
     {
       "quote_first": "Logbuch des Kapitäns:<br>Wir suchen noch nach einem Angebot für ",
@@ -150,7 +150,7 @@
       "id": "",
       "time": "",
       "quote_time_case": "",
-      "sfw": "sfw"
+      "sfw": true
     }
   ]
 }
