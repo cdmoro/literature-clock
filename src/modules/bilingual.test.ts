@@ -11,7 +11,7 @@ const quote = {
   quote_last: '',
   title: 'Book',
   author: 'Author',
-  sfw: 'sfw',
+  sfw: true,
   fallback: false,
   variants: 1,
   index: 0,
@@ -69,6 +69,16 @@ it('reports missing translations without using another quote', async () => {
   store.set('bilingual', true);
   expect((await translationPanel()).textContent).toContain('No published translation');
 });
+
+it.each([false, 'false', 'true', 'unknown', undefined])(
+  'work mode excludes translations without an explicit boolean true: %s',
+  async (sfw) => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, json: async () => [{ ...quote, sfw }] }));
+    store.set('work', true);
+    store.set('bilingual', true);
+    expect((await translationPanel()).textContent).toContain('No published translation');
+  },
+);
 it('does not fetch the same language', async () => {
   const fetch = vi.fn();
   vi.stubGlobal('fetch', fetch);

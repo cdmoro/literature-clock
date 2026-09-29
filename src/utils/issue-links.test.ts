@@ -8,7 +8,7 @@ const quote = {
   quote_first: 'Then<br>',
   quote_time_case: '2336',
   quote_last: '.',
-  sfw: 'sfw',
+  sfw: true,
 };
 
 beforeEach(() => {

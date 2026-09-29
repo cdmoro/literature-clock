@@ -18,7 +18,7 @@ const quote: ResolvedQuote = {
   quote_raw: '<img src=x onerror=alert(1)>',
   title: 'Book',
   author: 'Author',
-  sfw: 'sfw',
+  sfw: true,
 };
 const click = (id: string) => document.getElementById(id)!.click();
 beforeEach(() => {
@@ -53,7 +53,7 @@ it('saves, reopens and removes favorites without inserting stored text as HTML',
   expect(dialog.querySelector('li')).toBeNull();
 });
 it('hides explicit favorites in Work mode without deleting them', () => {
-  toggleFavorite({ ...quote, sfw: 'nsfw' });
+  toggleFavorite({ ...quote, sfw: false });
   store.set('work', true);
   click('open-quote-library');
   expect(document.querySelector('#quote-library li')).toBeNull();

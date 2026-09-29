@@ -17,7 +17,7 @@ Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) (
 - **Keep the passages you love.** Save favourites and revisit recently displayed quotes in **My quotes**, without an account.
 - **Share the exact quote.** Send a direct link to the displayed passage, copy it when native sharing isn't available, or download an image.
 - **Set the mood.** Use Zen mode, fullscreen or a gently moving screensaver. Choose fade, slide, blur or zoom transitions—or no animation—and toggle the time and progress bar.
-- **Filter explicit passages.** Work mode shows quotes marked safe for work in the catalogue.
+- **Filter explicit passages.** Work mode shows only quotes whose `SFW` classification is `true`.
 
 ## Themes
 

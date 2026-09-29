@@ -19,9 +19,9 @@ class TranslationManagerTest(unittest.TestCase):
         self.root = Path(self.temp.name)
         (self.root / 'quotes').mkdir()
         self.rows = [dict(Time='07:30', Id='0730-000', Quote='At seven thirty.',
-                          Title='Book', Author='Writer', SFW='sfw', **{'Source locale': 'en', 'Quote time': 'seven thirty'}),
+                          Title='Book', Author='Writer', SFW='true', **{'Source locale': 'en', 'Quote time': 'seven thirty'}),
                      dict(Time='08:00', Id='0800-000', Quote='At eight.',
-                          Title='Book', Author='Writer', SFW='sfw', **{'Source locale': 'en', 'Quote time': 'eight'})]
+                          Title='Book', Author='Writer', SFW='true', **{'Source locale': 'en', 'Quote time': 'eight'})]
         with (self.root / 'quotes/quotes.en-GB.csv').open('w') as stream:
             writer = csv.DictWriter(stream, fieldnames=FIELDS, delimiter='|')
             writer.writeheader()

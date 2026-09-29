@@ -3,6 +3,7 @@ import argparse
 import csv
 
 from add_quote import add_quote_to_csv
+from validate_translation import parse_sfw
 
 
 def process_batch_csv(file_path, language_code=None):
@@ -11,6 +12,7 @@ def process_batch_csv(file_path, language_code=None):
     from quote_sources import source_language
     for row in rows:
         source_language(row.get('Source locale') or language_code)
+        parse_sfw(row['SFW'], row.get('Id', '?'))
     for row in rows:
         identifier = add_quote_to_csv(row['Time'], row['Quote'], row['Title'], row['Author'],
                                      row.get('Source locale') or language_code, row['SFW'], row['Quote time'])

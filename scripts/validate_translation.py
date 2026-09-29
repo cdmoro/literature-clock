@@ -14,6 +14,13 @@ FIELDS = LEGACY_FIELDS + ['Source locale']
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def parse_sfw(value, quote_id='?'):
+    """CSV booleans are canonical text; runtime JSON must contain real booleans."""
+    if value not in ('true', 'false'):
+        raise ValueError(f'{quote_id}: SFW must be true or false')
+    return value == 'true'
+
+
 def is_draft(row):
     """Legacy catalogues are published; an explicit Draft must be true or false."""
     value = str(row.get('Draft', 'false')).strip().lower()
@@ -41,6 +48,7 @@ def read_catalogue(path, require_source=False):
         raise ValueError(f'{path}: malformed CSV row')
     for row in rows:
         is_draft(row)
+        parse_sfw(row['SFW'], row['Id'])
         row.setdefault('Source locale', 'en')
         from quote_sources import source_language
         source_language(row['Source locale'])
@@ -49,6 +57,11 @@ def read_catalogue(path, require_source=False):
 
 def validate(source, translated):
     errors = []
+    for row in [*source, *translated]:
+        try:
+            parse_sfw(row.get('SFW'), row.get('Id', '?'))
+        except ValueError as error:
+            errors.append(str(error))
     source_ids = Counter(row['Id'] for row in source)
     target_ids = Counter(row['Id'] for row in translated)
     if any(count != 1 for count in source_ids.values()):

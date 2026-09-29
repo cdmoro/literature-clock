@@ -41,7 +41,7 @@ export async function renderTranslation() {
     if (!response.ok) throw new Error('Translation unavailable');
     const quotes: Quote[] = await response.json();
     const translation = quotes.find(
-      (item) => item.id === quote.id && !item.draft && (!store.get('work') || item.sfw !== 'nsfw'),
+      (item) => item.id === quote.id && !item.draft && (!store.get('work') || item.sfw === true),
     );
     if (!translation || quote.fallback) throw new Error('Translation unavailable');
     if (!panel.isConnected) return;

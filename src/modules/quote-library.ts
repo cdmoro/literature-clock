@@ -139,7 +139,7 @@ export function initQuoteLibrary() {
     list.replaceChildren();
     const items = view === 'favorites' ? favorites : readHistory();
     clear.disabled = readHistory().length === 0;
-    const visible = items.filter((quote) => !store.get('work') || quote.sfw !== 'nsfw');
+    const visible = items.filter((quote) => !store.get('work') || quote.sfw === true);
     empty.hidden = visible.length > 0;
     empty.textContent = items.length
       ? strings.filteredLibrary
