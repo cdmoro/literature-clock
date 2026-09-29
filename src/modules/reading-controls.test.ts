@@ -17,7 +17,7 @@ beforeEach(() => {
   vi.setSystemTime(new Date(2026, 8, 22, 12, 0, 30));
   localStorage.clear();
   history.replaceState({}, '', '/');
-  document.body.innerHTML = '<footer><div id="settings"></div></footer><div id="time-clock"></div>';
+  document.body.innerHTML = '<footer><div id="settings"></div></footer><div id="time-clock"><span></span></div>';
   createStore();
   store.set('active-quote', { id: '1200-000', time: '12:00', locale: 'en-GB' } as ResolvedQuote);
   vi.clearAllMocks();
