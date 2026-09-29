@@ -8,6 +8,13 @@
   background-size: calc(25vw + 500px);
 }
 
+[data-theme|='whatsapp'] #time-clock span {
+  padding: .3rem .5rem;
+  display: inline-block;
+  font-weight: normal;
+  border-radius: 0.6rem;
+}
+
 [data-theme|='whatsapp'] blockquote {
   display: flex;
   flex-direction: column;
@@ -40,6 +47,7 @@
   margin-bottom: .2rem;
   box-sizing: content-box;
   width: fit-content;
+  margin-top: 1.2rem;
 }
 
 [data-theme|="whatsapp"] #translation-heading {
@@ -102,6 +110,31 @@
   --accent-color: #245247;
   --background: #f0e8df;
   --background-image: url('/assets/whatsapp-bg-light.jpg');
+  --custom-accent-color: #245247;
+}
+
+[data-theme='whatsapp-light'] .github-corner {
+  fill: var(--custom-accent-color);
+}
+
+[data-theme='whatsapp-light'] button.active {
+  background-color: var(--custom-accent-color);
+  border-color: var(--custom-accent-color);
+}
+
+[data-theme='whatsapp-light'] a,
+[data-theme='whatsapp-light'] a:visited,
+[data-theme='whatsapp-light'] #about-clock summary {
+  color: var(--custom-accent-color);
+}
+
+[data-theme='whatsapp-light'] button:focus {
+  border-color: var(--custom-accent-color);
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--custom-accent-color), transparent 75%) !important;
+}
+
+[data-theme='whatsapp-light'] #time-clock span {
+  background-color: #EEE;
 }
 
 [data-theme='whatsapp-light'] blockquote p,
@@ -128,6 +161,10 @@
   --accent-color: #a9eb91;
   --background: #020202;
   --background-image: url('/assets/whatsapp-bg-dark.jpg');
+}
+
+[data-theme='whatsapp-dark'] #time-clock span {
+  background-color: #111;
 }
 
 [data-theme='whatsapp-dark'] blockquote p,

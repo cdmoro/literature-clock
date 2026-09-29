@@ -28,7 +28,7 @@ async function updateTime() {
 
     document.title = document.title.replace(/[0-9]{2}:[0-9]{2}/, time);
 
-    const timeEl = document.getElementById('time-clock');
+    const timeEl = document.querySelector('#time-clock span');
     if (timeEl) {
       timeEl.textContent = time;
     }
