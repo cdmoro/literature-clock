@@ -133,12 +133,26 @@ test('preview quotes are rendered as plain text', async () => {
 });
 
 test('progress work stops when disabled and all clock timers stop in a hidden tab', () => {
-  vi.useFakeTimers({ toFake: ['setInterval', 'clearInterval', 'Date'] });
+  vi.useFakeTimers({
+    toFake: ['setInterval', 'clearInterval', 'requestAnimationFrame', 'cancelAnimationFrame', 'Date'],
+  });
   const hidden = vi.spyOn(document, 'hidden', 'get').mockReturnValue(false);
   vi.stubGlobal('fetch', vi.fn().mockResolvedValue(response('Clock')));
   createStore();
   document.body.innerHTML = '<div id="progress-bar"></div>';
+  vi.setSystemTime(new Date(2026, 8, 29, 12, 0, 30));
   initClock();
+  const bar = document.getElementById('progress-bar')!;
+  expect(parseFloat(bar.style.width)).toBe(50);
+  vi.advanceTimersByTime(32);
+  const firstFrameWidth = parseFloat(bar.style.width);
+  expect(firstFrameWidth).toBeGreaterThan(50);
+  vi.advanceTimersByTime(32);
+  expect(parseFloat(bar.style.width)).toBeGreaterThan(firstFrameWidth);
+  // The next frame uses wall-clock time and resets directly at the minute boundary.
+  vi.setSystemTime(new Date(2026, 8, 29, 12, 1, 0));
+  vi.advanceTimersByTime(32);
+  expect(parseFloat(bar.style.width)).toBeLessThan(0.1);
   expect(vi.getTimerCount()).toBe(2);
   store.set('progressbar', false, false);
   expect(vi.getTimerCount()).toBe(1);
@@ -150,9 +164,16 @@ test('progress work stops when disabled and all clock timers stop in a hidden ta
   expect(vi.getTimerCount()).toBe(0);
   store.set('progressbar', true, false);
   expect(vi.getTimerCount()).toBe(0);
+  vi.setSystemTime(new Date(2026, 8, 29, 12, 1, 45));
   hidden.mockReturnValue(false);
   document.dispatchEvent(new Event('visibilitychange'));
   expect(vi.getTimerCount()).toBe(2);
+  expect(parseFloat(bar.style.width)).toBe(75);
+  document.dispatchEvent(new Event('visibilitychange'));
+  expect(vi.getTimerCount()).toBe(2);
+  hidden.mockReturnValue(true);
+  document.dispatchEvent(new Event('visibilitychange'));
+  expect(vi.getTimerCount()).toBe(0);
 });
 
 test('validates new reading links and preserves language and book preferences', () => {
