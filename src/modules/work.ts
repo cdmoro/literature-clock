@@ -6,10 +6,8 @@ export function initWorkMode() {
 }
 
 function toggleWorkMode() {
-  const isWorkMode = store.toggle('work');
+  store.toggle('work');
   const quote = store.get('active-quote');
 
-  if ((isWorkMode && quote?.sfw !== true) || (!isWorkMode && quote?.fallback)) {
-    updateQuote();
-  }
+  void updateQuote({ time: quote?.time, locale: quote?.locale, preserveQuote: true });
 }

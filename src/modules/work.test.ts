@@ -27,10 +27,10 @@ it.each([false, 'false', 'true', 'unknown', undefined])(
   },
 );
 
-it('keeps a safe active quote', () => {
-  state['active-quote'] = { sfw: true };
+it('refreshes variants while preserving the active minute, language and safe quote', () => {
+  state['active-quote'] = { sfw: true, time: '09:15', locale: 'es-ES' };
   document.getElementById('work')!.click();
-  expect(updateQuote).not.toHaveBeenCalled();
+  expect(updateQuote).toHaveBeenCalledWith({ time: '09:15', locale: 'es-ES', preserveQuote: true });
 });
 
 it('replaces the fallback when work mode is disabled', () => {

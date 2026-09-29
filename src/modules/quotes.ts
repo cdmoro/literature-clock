@@ -64,12 +64,6 @@ async function getQuote(
 
   let quoteIndex = Math.floor(Math.random() * quotes.length);
 
-  if (preserveQuote) {
-    const id = store.get('active-quote')?.id;
-    const index = quotes.findIndex((quote) => quote.id === id);
-    if (index >= 0) quoteIndex = index;
-  }
-
   if (store.get('index')) {
     const urlParamsIndex = parseInt(store.get('index')!);
     if (!isNaN(urlParamsIndex) && quotes[urlParamsIndex]) {
@@ -86,6 +80,12 @@ async function getQuote(
   if (variantStep) {
     const current = quotes.findIndex((quote) => quote.id === store.get('active-quote')?.id);
     if (current >= 0) quoteIndex = (current + variantStep + quotes.length) % quotes.length;
+  }
+
+  if (preserveQuote) {
+    const id = store.get('active-quote')?.id;
+    const index = quotes.findIndex((quote) => quote.id === id);
+    if (index >= 0) quoteIndex = index;
   }
 
   const quote = Object.assign({}, quotes[quoteIndex]) as ResolvedQuote;
@@ -117,11 +117,12 @@ export async function updateQuote({
   time = store.get('time') || (store.get('paused') ? store.get('active-quote')?.time : undefined) || getTime(),
   preserveQuote = false,
   variantStep = 0,
-} = {}) {
+  locale: requestedLocale,
+}: { time?: string; preserveQuote?: boolean; variantStep?: number; locale?: Locale } = {}) {
   const request = ++latestRequest;
   cancelQuoteTransition();
   const testQuote = store.get('quote');
-  let locale = store.get('locale') as Locale;
+  let locale = requestedLocale || (store.get('locale') as Locale);
 
   if (!locale) {
     return;
@@ -129,7 +130,7 @@ export async function updateQuote({
 
   if (variantStep && store.get('active-quote')) {
     locale = store.get('active-quote')!.locale;
-  } else if (store.get('random-locale') && !store.get('quote-id')) {
+  } else if (!requestedLocale && store.get('random-locale') && !store.get('quote-id')) {
     locale = getRandomLocale();
   }
 
