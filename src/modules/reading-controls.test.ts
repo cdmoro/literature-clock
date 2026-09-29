@@ -33,7 +33,7 @@ it('keeps the real clock ticking without replacing a paused quote', () => {
   pauseReading();
   vi.mocked(updateQuote).mockClear();
   vi.advanceTimersByTime(60000);
-  expect(document.getElementById('time-clock')?.textContent).toBe('12:01');
+  expect(document.querySelector('#time-clock span')?.textContent).toBe('12:01');
   expect(updateQuote).not.toHaveBeenCalled();
   expect(cancelPendingQuote).toHaveBeenCalled();
   expect(document.getElementById('pause-reading')?.getAttribute('aria-pressed')).toBe('true');
