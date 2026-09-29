@@ -22,7 +22,8 @@
   font-weight: bold;
 }
 
-[data-theme|='whatsapp'] blockquote p {
+[data-theme|='whatsapp'] blockquote p,
+[data-theme|="whatsapp"] #quote #quote-translation {
   border-radius: 0.75rem;
   border-start-start-radius: 0;
   box-shadow: var(--box-shadow);
@@ -30,7 +31,19 @@
   padding: 0.75rem 1rem;
   position: relative;
   margin-inline-start: 1rem;
+  margin-bottom: 0;
   max-height: 40vh;
+}
+
+[data-theme|="whatsapp"] #quote #quote-translation {
+  border: 0;
+  margin-bottom: .2rem;
+  box-sizing: content-box;
+  width: fit-content;
+}
+
+[data-theme|="whatsapp"] #translation-heading {
+    opacity: 0.6;
 }
 
 [data-theme|='whatsapp'] blockquote cite {
@@ -40,7 +53,7 @@
   box-shadow: var(--box-shadow);
   font-style: normal;
   margin-inline-end: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 1.3rem;
   display: block;
   position: relative;
   align-self: end;
@@ -49,12 +62,9 @@
 }
 
 [data-theme|='whatsapp'] .share-quote blockquote p,
+[data-theme|="whatsapp"] .share-quote #quote #quote-translation,
 [data-theme|='whatsapp'] .share-quote blockquote cite {
   box-shadow: none;
-}
-
-[data-theme|='whatsapp'] cite:before {
-  content: '📖 ';
 }
 
 [data-theme|='whatsapp'] cite #hyphen {
@@ -62,6 +72,7 @@
 }
 
 [data-theme|='whatsapp'] blockquote p:after,
+[data-theme|="whatsapp"] #quote #quote-translation:after,
 [data-theme|='whatsapp'] cite:after {
   position: absolute;
   content: '';
@@ -70,7 +81,8 @@
   border-style: solid;
 }
 
-[data-theme|='whatsapp'] blockquote p:after {
+[data-theme|='whatsapp'] blockquote p:after,
+[data-theme|="whatsapp"] #quote #quote-translation:after {
   border-width: 0px 15px 15px 0;
   top: 0px;
   left: -15px;
@@ -92,7 +104,8 @@
   --background-image: url('/assets/whatsapp-bg-light.jpg');
 }
 
-[data-theme='whatsapp-light'] blockquote p {
+[data-theme='whatsapp-light'] blockquote p,
+[data-theme='whatsapp-light'] #quote #quote-translation {
   background-color: #ffffff;
   color: #333333;
 }
@@ -102,7 +115,8 @@
   color: #333333;
 }
 
-[data-theme='whatsapp-light'] blockquote p:after {
+[data-theme='whatsapp-light'] blockquote p:after,
+[data-theme='whatsapp-light'] #quote #quote-translation:after {
   border-color: transparent #fff transparent transparent;
 }
 
@@ -116,7 +130,8 @@
   --background-image: url('/assets/whatsapp-bg-dark.jpg');
 }
 
-[data-theme='whatsapp-dark'] blockquote p {
+[data-theme='whatsapp-dark'] blockquote p,
+[data-theme='whatsapp-dark'] #quote #quote-translation {
   background-color: #3d3c3f;
   color: #f1f1f1;
 }
@@ -126,7 +141,8 @@
   color: #f1f1f1;
 }
 
-[data-theme='whatsapp-dark'] blockquote p:after {
+[data-theme='whatsapp-dark'] blockquote p:after,
+[data-theme='whatsapp-dark'] #quote #quote-translation:after {
   border-color: transparent #3d3c3f transparent transparent;
 }
 
