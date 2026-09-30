@@ -17,7 +17,7 @@ beforeEach(() => {
   vi.setSystemTime(new Date(2026, 8, 22, 12, 0, 30));
   localStorage.clear();
   history.replaceState({}, '', '/');
-  document.body.innerHTML = '<footer><div id="settings"></div></footer><div id="time-clock"></div>';
+  document.body.innerHTML = '<footer><div id="settings"></div></footer><div id="time-clock"><span></span></div>';
   createStore();
   store.set('active-quote', { id: '1200-000', time: '12:00', locale: 'en-GB' } as ResolvedQuote);
   vi.clearAllMocks();
@@ -33,7 +33,7 @@ it('keeps the real clock ticking without replacing a paused quote', () => {
   pauseReading();
   vi.mocked(updateQuote).mockClear();
   vi.advanceTimersByTime(60000);
-  expect(document.getElementById('time-clock')?.textContent).toBe('12:01');
+  expect(document.querySelector('#time-clock span')?.textContent).toBe('12:01');
   expect(updateQuote).not.toHaveBeenCalled();
   expect(cancelPendingQuote).toHaveBeenCalled();
   expect(document.getElementById('pause-reading')?.getAttribute('aria-pressed')).toBe('true');

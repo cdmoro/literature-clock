@@ -94,9 +94,3 @@
     padding: 1rem;
   }
 }
-/* A quiet surface keeps secondary text readable over the chat wallpaper. */
-[data-theme|='whatsapp'] #quote #quote-translation {
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  background: color-mix(in srgb, var(--background) 94%, transparent);
-}

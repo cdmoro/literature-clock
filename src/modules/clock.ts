@@ -28,7 +28,7 @@ async function updateTime() {
 
     document.title = document.title.replace(/[0-9]{2}:[0-9]{2}/, time);
 
-    const timeEl = document.getElementById('time-clock');
+    const timeEl = document.querySelector('#time-clock span');
     if (timeEl) {
       timeEl.textContent = time;
     }
@@ -46,16 +46,20 @@ export function initClock() {
 
   if (!store.get('quote')) {
     let clockTimer: ReturnType<typeof setInterval> | undefined;
-    let progressTimer: ReturnType<typeof setInterval> | undefined;
+    let progressFrame: number | undefined;
+    const animateProgress = () => {
+      updateProgressBar();
+      progressFrame = requestAnimationFrame(animateProgress);
+    };
     const syncTimers = () => {
       clearInterval(clockTimer);
-      clearInterval(progressTimer);
+      if (progressFrame !== undefined) cancelAnimationFrame(progressFrame);
+      progressFrame = undefined;
       if (document.hidden) return;
       void updateTime();
       clockTimer = setInterval(updateTime, 1000);
       if (store.get('progressbar')) {
-        updateProgressBar();
-        progressTimer = setInterval(updateProgressBar, 100);
+        animateProgress();
       }
     };
     store.subscribe((state, previous) => {
