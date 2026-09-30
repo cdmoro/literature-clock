@@ -143,7 +143,9 @@ Hi! I'm Carlos, and you can find me here
 Run `npm run admin` for the local Vite translation administrator at
 `http://127.0.0.1:5174`. Create languages, translate batches directly into draft CSV
 rows, and review/edit/approve them from the browser. `npm run translate` remains
-available as a terminal alternative.
+available as a terminal alternative. Complete translations from Calibre or other
+tools can be imported with `scripts/import_translation.py` and reviewed directly,
+without running translation batches (see the workflow below).
 
 New languages start from `quotes.en-GB.csv` with `Draft=true` and stay out of the
 clock's selector until explicitly enabled. `?locale=el-GR-draft` previews pending
@@ -169,3 +171,17 @@ Use the heart to save the displayed quote and “My quotes” to open your colle
 ### Recent quotes
 
 “My quotes” also includes a Recent tab: the last 100 distinct quotes actually displayed, newest first, stored only in this browser. Repeated views move a quote to the top. You can reopen a quote, save it as a favorite or clear the history without affecting favorites. Placeholder quotes and custom previews are excluded. While the dialog is open its list stays still; reopening it or switching tabs refreshes it. Work mode hides explicit entries in both tabs.
+
+## Search visibility
+
+The production canonical URL is `https://literatureclock.netlify.app/`. Vite copies
+`public/robots.txt` and `public/sitemap.xml` into the deployment. The home page
+includes an accessible About section and WebApplication structured data.
+Language and appearance query parameters remain app settings under the same
+canonical page; they are not advertised as separately indexed translations.
+
+After deployment, verify the URL-prefix property in Google Search Console, inspect
+the home page using the live URL test, request indexing and submit `sitemap.xml`.
+Indexing and rankings are determined by Google, not by the deployment itself.
+If changing domains, update the canonical URL, social metadata, structured data,
+robots sitemap URL and sitemap together, and redirect the old domain.

@@ -6,7 +6,20 @@ import { contrastingText } from '../utils/colors';
 
 // Skins in this list use their colour as part of their visual identity.
 const NON_CUSTOMIZABLE_COLORS = new Set(['pink', 'green', 'orange', 'purple', 'blue', 'gray']);
-const CUSTOMIZABLE_THEMES = new Set(['base', 'retro', 'elegant', 'festive', 'bohemian', 'book', 'handwriting', 'terminal', 'frame', 'poster', 'photo', 'whatsapp']);
+const CUSTOMIZABLE_THEMES = new Set([
+  'base',
+  'retro',
+  'elegant',
+  'festive',
+  'bohemian',
+  'book',
+  'handwriting',
+  'terminal',
+  'frame',
+  'poster',
+  'photo',
+  'whatsapp',
+]);
 const DEFAULT_COLORS: Record<string, string> = {
   base: '#d24335',
   retro: '#daa908',
@@ -27,7 +40,14 @@ let followsDefaultColor = true;
 
 function defaultColor(theme: string) {
   const dark = document.documentElement.dataset.theme?.endsWith('-dark');
-  const darkColors: Record<string, string> = { retro: '#f1ba08', terminal: '#1bec1b', frame: '#00c4ce', photo: '#fd3622', whatsapp: '#245247', book: '#566971' };
+  const darkColors: Record<string, string> = {
+    retro: '#f1ba08',
+    terminal: '#1bec1b',
+    frame: '#00c4ce',
+    photo: '#fd3622',
+    whatsapp: '#245247',
+    book: '#566971',
+  };
   return (dark && darkColors[theme]) || DEFAULT_COLORS[theme] || DEFAULT_COLORS.base;
 }
 
@@ -46,8 +66,8 @@ export function initTheme() {
   const themeSelect = document.querySelector<HTMLSelectElement>('#theme-select');
   const variantSelect = document.querySelector<HTMLSelectElement>('#variant-select');
   const preferDarkThemes = window.matchMedia('(prefers-color-scheme: dark)');
-  const colorPicker = document.querySelector<HTMLInputElement>('#color-picker');
-  const resetColor = document.querySelector<HTMLButtonElement>('#reset-color');
+  const colorPickers = document.querySelectorAll<HTMLInputElement>('#color-picker, #settings-color-picker');
+  const resetColors = document.querySelectorAll<HTMLButtonElement>('#reset-color, #settings-reset-color');
 
   if (theme && THEME_FONTS[theme]) {
     THEME_FONTS[theme].forEach((font) => loadFontIfNotExists(font));
@@ -59,7 +79,9 @@ export function initTheme() {
     variantSelect.value = variant;
   }
 
-  if (colorPicker) colorPicker.value = store.get('color');
+  colorPickers.forEach((picker) => {
+    picker.value = store.get('color');
+  });
 
   if (theme === 'color') {
     theme = getRandomThemeColor();
@@ -91,29 +113,35 @@ export function initTheme() {
     }
   });
 
-  colorPicker?.addEventListener('input', () => {
-    store.set('color', colorPicker.value);
-    applyCustomColor(themeSelect?.value || 'base');
-  });
-  resetColor?.addEventListener('click', () => {
-    const theme = themeSelect?.value || 'base';
-    const color = defaultColor(theme);
-    store.set('color', color, false);
-    store.removeFromUrl('color');
-    if (colorPicker) colorPicker.value = color;
-    applyCustomColor(theme);
-  });
+  colorPickers.forEach((colorPicker) =>
+    colorPicker.addEventListener('input', () => {
+      store.set('color', colorPicker.value);
+      applyCustomColor(themeSelect?.value || 'base');
+    }),
+  );
+  resetColors.forEach((resetColor) =>
+    resetColor.addEventListener('click', () => {
+      const theme = themeSelect?.value || 'base';
+      const color = defaultColor(theme);
+      store.set('color', color, false);
+      store.removeFromUrl('color');
+      applyCustomColor(theme);
+    }),
+  );
 }
 
 function applyCustomColor(theme = 'base') {
   const root = document.documentElement;
   root.dataset.variant = store.get('theme').split('-')[1] || 'system';
-  const colorPicker = document.querySelector<HTMLInputElement>('#color-picker');
-  const resetColor = document.querySelector<HTMLButtonElement>('#reset-color');
-  const customizable = CUSTOMIZABLE_THEMES.has(theme) && !NON_CUSTOMIZABLE_COLORS.has(theme) && !store.get('theme').startsWith('color-');
+  const colorPickers = document.querySelectorAll<HTMLInputElement>('#color-picker, #settings-color-picker');
+  const resetColors = document.querySelectorAll<HTMLButtonElement>('#reset-color, #settings-reset-color');
+  const customizable =
+    CUSTOMIZABLE_THEMES.has(theme) && !NON_CUSTOMIZABLE_COLORS.has(theme) && !store.get('theme').startsWith('color-');
   root.classList.toggle('custom-accent', customizable);
-  const controls = document.getElementById('color-controls');
-  if (controls) controls.hidden = !customizable;
+  document.querySelectorAll<HTMLElement>('#color-controls, #settings-color-controls').forEach((controls) => {
+    controls.hidden = !customizable;
+    controls.closest('.settings-row')?.toggleAttribute('hidden', !customizable);
+  });
   if (customizable) root.style.setProperty('--accent-color', store.get('color'));
   else root.style.removeProperty('--accent-color');
   if (theme === 'whatsapp' && customizable) {
@@ -121,12 +149,14 @@ function applyCustomColor(theme = 'base') {
   } else {
     root.style.removeProperty('--bubble-text');
   }
-  if (colorPicker) {
+  colorPickers.forEach((colorPicker) => {
     colorPicker.value = store.get('color');
     colorPicker.hidden = !customizable;
     colorPicker.disabled = !customizable;
-  }
-  if (resetColor) resetColor.hidden = !customizable || store.get('color') === defaultColor(theme);
+  });
+  resetColors.forEach((resetColor) => {
+    resetColor.hidden = !customizable || store.get('color') === defaultColor(theme);
+  });
 }
 
 export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {

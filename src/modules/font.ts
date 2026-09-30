@@ -1,5 +1,8 @@
 import { fitQuote, loadFontIfNotExists } from '../utils';
 import { store } from '../store';
+import { loadGoogleFont, normalizeFontName } from '../utils/google-font';
+import { getBaseLocale, getInterfaceLocale } from './locales';
+import SETTINGS from '../strings/settings.json';
 
 export const THEME_FONTS: Record<string, string[]> = {
   retro: ['VT323'],
@@ -33,74 +36,160 @@ export const CITE_FACTOR = {
   kindle: 0.5,
 } as const;
 
-const FONTS = ['Special Elite', ...new Set(Object.values(THEME_FONTS))].flat();
+const FONTS = ['Special Elite', ...new Set(Object.values(THEME_FONTS).flat())];
+let fontRequest = 0;
 const CSS_FONT_VARIABLE = '--override-quote-font-family';
+export const CUSTOM_FONTS_KEY = 'custom-fonts';
+let customFonts: string[] = [];
+const loadedFonts = new Set<string>();
+
+function readCustomFonts(): string[] {
+  try {
+    const value: unknown = JSON.parse(localStorage.getItem(CUSTOM_FONTS_KEY) || '[]');
+    if (!Array.isArray(value)) return [];
+    const names: string[] = [];
+    for (const item of value) {
+      const name = typeof item === 'string' ? normalizeFontName(item) : undefined;
+      if (name && ![...FONTS, ...names].some((existing) => existing.toLowerCase() === name.toLowerCase()))
+        names.push(name);
+    }
+    return names;
+  } catch {
+    return [];
+  }
+}
+
+function saveCustomFonts() {
+  localStorage.setItem(CUSTOM_FONTS_KEY, JSON.stringify(customFonts));
+}
 
 function createOption(value: string) {
   const option = document.createElement('option');
   option.value = value;
-  option.textContent = value;
-
+  if (customFonts.includes(value)) {
+    option.dataset.customFont = '';
+    option.textContent = `${value} (${SETTINGS[getBaseLocale(getInterfaceLocale())].settings_font_custom_label})`;
+  } else option.textContent = value;
   return option;
 }
 
-export function initFont() {
-  const font = store.get('font');
-  const fontSelect = document.querySelector<HTMLSelectElement>('#font-select');
-
-  FONTS.forEach((fontName) => {
-    fontSelect?.appendChild(createOption(fontName));
-  });
-
-  if (font !== 'default' && !FONTS.includes(font)) {
-    store.set('custom-font', font);
-  }
-
-  const customFont = store.get('custom-font');
-  if (customFont && !FONTS.includes(customFont)) {
-    fontSelect?.appendChild(createOption(customFont));
-  }
-
-  store.set('font', font, false);
-  if (fontSelect) {
-    fontSelect.value = font;
-  }
-
-  if (font !== 'default') {
-    loadFontIfNotExists(font);
-    const root = document.querySelector<HTMLElement>(':root');
-    root?.style.setProperty(CSS_FONT_VARIABLE, `${font}, sans-serif`);
-  }
-
-  fontSelect?.addEventListener('change', setFont);
+function refreshRemovalButton() {
+  const selected = customFonts.includes(store.get('font'));
+  document.getElementById('remove-custom-font')?.toggleAttribute('hidden', !selected);
 }
 
-function setFont() {
-  const fontSelect = document.querySelector<HTMLSelectElement>('#font-select');
-  const font = fontSelect?.value;
-  const root = document.querySelector<HTMLElement>(':root');
+export function initFont() {
+  fontRequest++;
+  loadedFonts.clear();
+  customFonts = readCustomFonts();
+  const font = store.get('font');
+  const select = document.querySelector<HTMLSelectElement>('#font-select');
+  // Keep the translated theme-default option and recreate the catalogue once.
+  select?.querySelectorAll('option:not([value="default"])').forEach((option) => option.remove());
+  [...FONTS, ...customFonts].forEach((name) => select?.append(createOption(name)));
+  if (font !== 'default') void applyCustomFont(font, true);
+  else resetFont();
+  select?.addEventListener('change', () => {
+    if (select.value === 'default') resetFont();
+    else void applyCustomFont(select.value, true);
+  });
+  document.getElementById('custom-font-form')?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    void applyCustomFont(document.querySelector<HTMLInputElement>('#custom-font-name')?.value || '');
+  });
+  document.getElementById('remove-custom-font')?.addEventListener('click', (event) => {
+    event.preventDefault();
+    removeCustomFont();
+    document.getElementById('font-select')?.focus();
+  });
+  refreshRemovalButton();
+}
 
-  if (font) {
-    store.set('font', font);
-
-    if (font === 'default') {
-      root?.style.removeProperty(CSS_FONT_VARIABLE);
-    } else {
-      loadFontIfNotExists(font);
-      root?.style.setProperty(CSS_FONT_VARIABLE, `${font}, sans-serif`);
-    }
+function fontStatus(key?: 'settings_font_loading' | 'settings_font_error' | 'settings_font_add_error') {
+  const status = document.getElementById('custom-font-status');
+  if (!status) return;
+  if (key) {
+    status.dataset.text = key;
+    status.textContent = SETTINGS[getBaseLocale(getInterfaceLocale())][key];
+  } else {
+    delete status.dataset.text;
+    status.textContent = '';
   }
+}
 
+function selectFont(name: string) {
+  const select = document.querySelector<HTMLSelectElement>('#font-select');
+  if (select) select.value = name;
+  document.documentElement.style.setProperty(CSS_FONT_VARIABLE, `"${name}", var(--quote-font-family)`);
+  store.set('font', name);
+  fontStatus();
+  refreshRemovalButton();
   fitQuote();
 }
 
-export function resetFont() {
-  const root = document.querySelector<HTMLElement>(':root');
-  const fontSelect = document.querySelector<HTMLSelectElement>('#font-select');
-
-  root?.style.removeProperty(CSS_FONT_VARIABLE);
-  if (fontSelect) {
-    fontSelect.value = 'default';
+export async function applyCustomFont(value: string, restoreDefaultOnError = false) {
+  const request = ++fontRequest;
+  const normalized = normalizeFontName(value);
+  const fail = () => {
+    if (restoreDefaultOnError) resetFont();
+    else {
+      const select = document.querySelector<HTMLSelectElement>('#font-select');
+      if (select) select.value = store.get('font');
+    }
+    fontStatus(restoreDefaultOnError ? 'settings_font_error' : 'settings_font_add_error');
+  };
+  if (!normalized) {
+    fail();
+    return;
   }
+  const name = [...FONTS, ...customFonts].find((item) => item.toLowerCase() === normalized.toLowerCase()) || normalized;
+  if (FONTS.includes(name)) {
+    loadFontIfNotExists(name);
+    selectFont(name);
+    return;
+  }
+  if (loadedFonts.has(name)) {
+    selectFont(name);
+    return;
+  }
+  fontStatus('settings_font_loading');
+  try {
+    await loadGoogleFont(name);
+    if (request !== fontRequest) return;
+    loadedFonts.add(name);
+    if (!customFonts.includes(name)) {
+      customFonts.push(name);
+      saveCustomFonts();
+      document.querySelector<HTMLSelectElement>('#font-select')?.append(createOption(name));
+    }
+    selectFont(name);
+  } catch {
+    if (request === fontRequest) fail();
+  }
+}
+
+export function removeCustomFont() {
+  fontRequest++;
+  fontStatus();
+  const active = store.get('font');
+  const removed = customFonts.filter((name) => name === active);
+  customFonts = customFonts.filter((name) => !removed.includes(name));
+  saveCustomFonts();
+  document.querySelectorAll<HTMLOptionElement>('#font-select option').forEach((option) => {
+    if (removed.includes(option.value)) option.remove();
+  });
+  removed.forEach((name) => loadedFonts.delete(name));
+  if (removed.includes(active)) resetFont();
+  refreshRemovalButton();
+}
+
+export function resetFont() {
+  fontRequest++;
+  fontStatus();
+  document.documentElement.style.removeProperty(CSS_FONT_VARIABLE);
+  const select = document.querySelector<HTMLSelectElement>('#font-select');
+  if (select) select.value = 'default';
   store.set('font', 'default');
+  refreshRemovalButton();
+  fitQuote();
 }

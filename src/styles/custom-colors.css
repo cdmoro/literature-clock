@@ -1,4 +1,4 @@
-#color-controls {
+:is(#color-controls, #settings-color-controls) {
   display: inline-flex;
   align-items: stretch;
   gap: 0;
@@ -14,12 +14,12 @@ footer .input-group { vertical-align: top; }
 [data-variant='dark'] [data-variant-icon='dark'],
 [data-variant='system'] [data-variant-icon='system'] { display: initial; }
 
-#color-controls[hidden],
-#reset-color[hidden] {
+:is(#color-controls, #settings-color-controls)[hidden],
+:is(#reset-color, #settings-reset-color)[hidden] {
   display: none;
 }
 
-#color-picker {
+:is(#color-picker, #settings-color-picker) {
   box-sizing: border-box;
   width: 2.25rem;
   height: 100%;
@@ -30,10 +30,10 @@ footer .input-group { vertical-align: top; }
   cursor: pointer;
 }
 
-#color-picker::-webkit-color-swatch-wrapper { padding: 0; }
-#color-picker::-webkit-color-swatch { border: 0; border-radius: 0.2rem; }
-#color-picker::-moz-color-swatch { border: 0; border-radius: 0.2rem; }
-#reset-color {
+:is(#color-picker, #settings-color-picker)::-webkit-color-swatch-wrapper { padding: 0; }
+:is(#color-picker, #settings-color-picker)::-webkit-color-swatch { border: 0; border-radius: 0.2rem; }
+:is(#color-picker, #settings-color-picker)::-moz-color-swatch { border: 0; border-radius: 0.2rem; }
+:is(#reset-color, #settings-reset-color) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -41,13 +41,13 @@ footer .input-group { vertical-align: top; }
   border-radius: 0 0.25rem 0.25rem 0;
 }
 
-#color-controls:has(#reset-color[hidden]) #color-picker {
+:is(#color-controls, #settings-color-controls):has(:is(#reset-color, #settings-reset-color)[hidden]) :is(#color-picker, #settings-color-picker) {
   border-radius: 0.25rem;
 }
 
 @media only screen and (max-width: 600px) {
-  #color-controls { height: 26px; }
-  #color-picker { width: 2rem; }
+  :is(#color-controls, #settings-color-controls) { height: 26px; }
+  :is(#color-picker, #settings-color-picker) { width: 2rem; }
 }
 
 [data-theme='base-light'].custom-accent,

@@ -1,11 +1,15 @@
 import json
+import csv
+import io
 import tempfile
 import unittest
+from contextlib import redirect_stderr
 from pathlib import Path
 
 from generate_times import generate_catalogue, generate_catalogues
 from translate_catalogue import initialize_catalogue, export_review
-from validate_translation import read_catalogue, validate, is_draft
+from validate_translation import FIELDS, read_catalogue, validate, is_draft
+from import_translation import import_translation
 
 
 class DraftCatalogueTest(unittest.TestCase):
@@ -103,3 +107,83 @@ class DraftCatalogueTest(unittest.TestCase):
         generate_catalogue(other, output, include_drafts=True)
         self.assertFalse((output / 'fr-FR-draft' / '07_30.json').exists())
         self.assertTrue((output / 'fr-FR-draft' / '08_00.json').exists())
+
+    def test_approved_catalogue_removes_stale_preview(self):
+        translations = self.root / 'translations.json'
+        translations.write_text('{"el-GR": {}}')
+        output = self.root / 'times'
+        generate_catalogues(self.root, output, translations)
+        self.assertTrue((output / 'el-GR-draft').exists())
+        self.catalogue.write_text(self.catalogue.read_text().replace('|true', '|false'))
+        generate_catalogues(self.root, output, translations)
+        self.assertTrue((output / 'el-GR' / '07_30.json').exists())
+        self.assertFalse((output / 'el-GR-draft').exists())
+
+    def test_invalid_preview_phrases_warn_even_without_draft_column(self):
+        for legacy in (True, False):
+            for phrase in ('', 'missing'):
+                with self.subTest(legacy=legacy, phrase=phrase):
+                    path = self.root / ('quotes.fr-FR.draft.csv' if legacy else 'quotes.fr-FR.csv')
+                    rows = [{**row, 'Quote time': phrase if index == 0 else row['Quote time']}
+                            for index, row in enumerate(self.source)]
+                    with path.open('w', newline='') as stream:
+                        writer = csv.DictWriter(stream, fieldnames=FIELDS, delimiter='|')
+                        writer.writeheader()
+                        writer.writerows(rows)
+                    warnings = io.StringIO()
+                    with redirect_stderr(warnings):
+                        generate_catalogue(path, self.root / 'times', include_drafts=not legacy)
+                    self.assertIn(f'{path}: 1:', warnings.getvalue())
+                    folder = self.root / 'times/fr-FR-draft'
+                    self.assertFalse((folder / '07_30.json').exists())
+                    self.assertEqual(json.loads((folder / '08_00.json').read_text())[0]['quote_last'], '.')
+
+    def test_published_invalid_phrase_fails_and_asterisk_still_skips(self):
+        for phrase in ('missing', '', '*unresolved'):
+            with self.subTest(phrase=phrase):
+                rows = [{**row, 'Quote time': phrase if index == 0 else row['Quote time']}
+                        for index, row in enumerate(self.source)]
+                with self.catalogue.open('w', newline='') as stream:
+                    writer = csv.DictWriter(stream, fieldnames=FIELDS, delimiter='|')
+                    writer.writeheader()
+                    writer.writerows(rows)
+                if phrase.startswith('*'):
+                    generate_catalogue(self.catalogue, self.root / 'times')
+                    folder = self.root / 'times/el-GR'
+                    self.assertFalse((folder / '07_30.json').exists())
+                    self.assertTrue((folder / '08_00.json').exists())
+                else:
+                    with self.assertRaisesRegex(ValueError, 'published time phrase'):
+                        generate_catalogue(self.catalogue, self.root / 'times')
+
+    def test_time_phrase_at_end_produces_empty_string_suffix(self):
+        self.catalogue.write_text(self.catalogue.read_text().replace('At seven thirty.', 'At seven thirty'))
+        generate_catalogue(self.catalogue, self.root / 'times', include_drafts=True)
+        row = json.loads((self.root / 'times/el-GR-draft/07_30.json').read_text())[0]
+        self.assertEqual(row['quote_first'], 'At ')
+        self.assertEqual(row['quote_last'], '')
+
+    def test_external_import_preserves_text_restores_metadata_and_revokes_approval(self):
+        external = self.root / 'external.csv'
+        external.write_text(self.catalogue.read_text().replace('Author|sfw|true', 'Translated author|sfw|false')
+                            .replace('At seven thirty.', 'Translated quote.'))
+        output = self.root / 'imported.csv'
+        self.assertEqual(import_translation(self.catalogue, external, output), (2, 1))
+        rows = read_catalogue(output)
+        self.assertEqual(rows[0]['Quote'], 'Translated quote.')
+        self.assertEqual(rows[0]['Author'], 'Author')
+        self.assertTrue(all(is_draft(row) for row in rows))
+        self.assertEqual(validate(self.source, rows), [])
+        with self.assertRaises(FileExistsError):
+            import_translation(self.catalogue, external, output)
+
+    def test_external_import_rejects_missing_duplicate_and_unknown_ids(self):
+        content = self.catalogue.read_text().splitlines(keepends=True)
+        for records in (content[:2], content + [content[1]],
+                        [line.replace('|2|', '|999|') for line in content]):
+            external = self.root / 'external.csv'
+            external.write_text(''.join(records))
+            output = self.root / 'invalid.csv'
+            with self.assertRaises(ValueError):
+                import_translation(self.catalogue, external, output)
+            self.assertFalse(output.exists())

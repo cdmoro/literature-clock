@@ -1,3 +1,5 @@
+import { initAboutClock } from './about-clock';
+import { initSettingsDialog } from './settings-dialog';
 import { initStaticMode } from './static';
 import { initClock } from './clock';
 import { initQuoteLibrary } from './quote-library';
@@ -16,6 +18,8 @@ import { initZenMode } from './zen';
 import { initProgressbarMode } from './progressbar';
 
 const MODULES = [
+  initAboutClock,
+  initSettingsDialog,
   initStaticMode,
   initReadingControls,
   initQuoteLibrary,

@@ -1,3 +1,4 @@
+import { readingIcon } from './reading-icons';
 import { store } from '../store';
 import { cancelPendingQuote, updateQuote } from './quotes';
 import { getLiveTime } from '../utils';
@@ -17,7 +18,8 @@ export function resumeReading() {
   }
   store.set('paused', false, false);
   showQuoteNotice('');
-  void updateQuote({ time: getLiveTime() });
+  const time = getLiveTime();
+  if (store.get('active-quote')?.time !== time) void updateQuote({ time });
 }
 
 export function initReadingControls() {
@@ -29,29 +31,48 @@ export function initReadingControls() {
   pause.id = 'pause-reading';
   pause.type = 'button';
   pause.addEventListener('click', () => (store.get('paused') ? resumeReading() : pauseReading()));
+  const previous = document.createElement('button');
+  previous.id = 'previous-quote';
+  previous.type = 'button';
+  previous.innerHTML = readingIcon('previous');
+  const counter = document.createElement('span');
+  counter.id = 'quote-position';
+  counter.className = 'input-group-text';
+  counter.setAttribute('aria-live', 'polite');
+  counter.setAttribute('aria-atomic', 'true');
   const next = document.createElement('button');
   next.id = 'next-quote';
   next.type = 'button';
-  next.textContent = '↻';
+  next.innerHTML = readingIcon('next');
   let changing = false;
-  next.addEventListener('click', async () => {
+  const changeVariant = async (direction: number) => {
     if (changing || next.disabled) return;
     changing = true;
-    pauseReading();
     for (const key of ['quote-id', 'index'] as const) {
       store.set(key, undefined, false);
       store.removeFromUrl(key);
     }
     refresh();
     try {
-      await updateQuote({ nextVariant: true });
+      await updateQuote({ variantStep: direction });
     } finally {
       changing = false;
       refresh();
     }
-  });
-  group.append(pause, next);
-  document.getElementById('settings')?.prepend(group);
+  };
+  previous.addEventListener('click', () => void changeVariant(-1));
+  next.addEventListener('click', () => void changeVariant(1));
+  group.append(pause);
+  const shareGroup = document.getElementById('copy')?.parentElement;
+  if (shareGroup?.classList.contains('input-group')) {
+    group.append(...Array.from(shareGroup.children));
+    shareGroup.remove();
+  }
+  const navigation = document.createElement('span');
+  navigation.id = 'quote-navigation';
+  navigation.className = 'input-group';
+  navigation.append(previous, counter, next);
+  document.getElementById('settings')?.prepend(group, navigation);
 
   const status = document.createElement('div');
   status.id = 'reading-status';
@@ -66,15 +87,20 @@ export function initReadingControls() {
   const refresh = () => {
     const strings = readingStrings();
     const paused = !!store.get('paused');
-    pause.textContent = paused ? '▶' : 'Ⅱ';
+    pause.innerHTML = readingIcon(paused ? 'play' : 'pause');
     pause.title = paused ? strings.resume : strings.pause;
     pause.setAttribute('aria-label', pause.title);
     pause.setAttribute('aria-pressed', String(paused));
     pause.disabled = !store.get('active-quote') || !!store.get('quote');
     const quote = store.get('active-quote');
+    previous.title = strings.previousQuote;
+    previous.setAttribute('aria-label', strings.previousQuote);
+    counter.textContent = !quote ? '…' : quote.fallback ? '—' : `${quote.index + 1}/${quote.variants}`;
+    counter.setAttribute('aria-busy', String(!quote));
     next.title = strings.nextQuote;
     next.setAttribute('aria-label', strings.nextQuote);
     next.disabled = changing || !quote || quote.fallback || quote.variants < 2 || !!store.get('quote');
+    previous.disabled = next.disabled;
     status.hidden = !paused;
     label.textContent = `${strings.pausedAt} ${store.get('active-quote')?.time || store.get('time') || ''}`;
     resume.textContent = strings.resume;
