@@ -127,16 +127,6 @@
   font-size: 0.8rem;
   margin: 0.25rem 0 0.75rem;
 }
-#font-preview {
-  grid-column: 1 / -1;
-  margin: 0;
-  padding: 0;
-
-  font-family: var(--override-quote-font-family, var(--quote-font-family));
-  font-size: 1rem;
-  line-height: 1.5;
-  overflow-wrap: anywhere;
-}
 #quote-languages {
   border: 0;
   margin: 1rem 0 0;
@@ -271,4 +261,203 @@
 }
 #settings-dialog .input-group:has(#remove-custom-font[hidden]) #font-select {
   border-radius: 0 0.35rem 0.35rem 0;
+}
+
+/* Tabs share a single panel area, keeping the dialog compact. */
+#settings-dialog .settings-tabs {
+  display: flex;
+  gap: 0.25rem;
+  margin: 1rem 0;
+  padding: 0.25rem;
+  border-radius: 0.6rem;
+  background: color-mix(in srgb, var(--font-color), transparent 94%);
+}
+#settings-dialog .settings-tabs button {
+  flex: 1;
+  padding: 0.55rem 0.3rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+#settings-dialog .settings-tabs [aria-selected='true'] {
+  background: var(--background);
+  box-shadow: 0 1px 4px #0002;
+  font-weight: 600;
+}
+#settings-dialog [role='tabpanel'] {
+  border: 0;
+  margin: 0;
+}
+#settings-dialog [role='tabpanel'][hidden] {
+  display: none;
+}
+.settings-theme-heading {
+  margin-bottom: 0.5rem;
+}
+#settings-dialog .settings-theme-navigation {
+  display: flex;
+  align-items: stretch;
+  height: 2.25rem;
+  gap: 0.4rem;
+  margin-bottom: 0.65rem;
+}
+#settings-dialog .settings-theme-navigation button {
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 75%);
+  border-radius: 0.45rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  padding: 0.4rem 0.6rem;
+}
+#settings-dialog #theme-picker-toggle {
+  display: flex;
+  justify-content: space-between;
+  flex: 1 1 0;
+  min-width: 0;
+  gap: 0.5rem;
+}
+#settings-dialog .theme-previous,
+#settings-dialog .theme-next {
+  display: grid;
+  place-items: center;
+  flex: 0 0 2.25rem;
+  padding: 0.4rem;
+}
+#settings-dialog .settings-theme-navigation button:hover {
+  border-color: var(--accent-color);
+}
+.settings-theme-stage {
+  height: 11rem;
+  margin-bottom: 1rem;
+}
+#settings-theme-preview {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 85%);
+  border-radius: 0.65rem;
+  pointer-events: none;
+  background: var(--background);
+}
+#theme-picker-list {
+  box-sizing: border-box;
+  height: 100%;
+  overflow-y: auto;
+  padding: 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 80%);
+  border-radius: 0.5rem;
+  scrollbar-width: thin;
+}
+#theme-picker-list[hidden],
+#settings-theme-preview[hidden] {
+  display: none;
+}
+.settings-theme-group-title {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  padding: 0.25rem 0.35rem;
+}
+.settings-theme-group + .settings-theme-group {
+  margin-top: 0.5rem;
+}
+.settings-theme-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.2rem;
+}
+#settings-dialog .settings-theme-option {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+  padding: 0.4rem 0.35rem;
+  border: 1px solid transparent;
+  border-radius: 0.35rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.8rem;
+  text-align: left;
+}
+#settings-dialog .settings-theme-option:hover {
+  background: color-mix(in srgb, var(--font-color), transparent 94%);
+}
+#settings-dialog .settings-theme-option[aria-pressed='true'] {
+  border-color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+}
+#settings-dialog .settings-theme-option[aria-pressed='true']::after {
+  content: '✓';
+}
+
+/* Reset inherited theme tokens before applying each swatch's own theme selectors. */
+:where(.settings-theme-swatch) {
+  --accent-color: #d24335;
+  --background: #eaeaec;
+  --font-color: #2f2e2c;
+}
+.settings-theme-swatch {
+  flex: 0 0 1rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--accent-color);
+  box-shadow: inset 0 0 0 1px #0002;
+}
+.settings-theme-swatch[data-theme|='color'] {
+  background: conic-gradient(#ff6b81, #f39c12, #2ecc71, #2c97df, #9b59b6, #ff6b81);
+}
+.settings-theme-swatch[data-theme|='horizon'] {
+  background: linear-gradient(180deg, var(--sky-0, #699dbf), var(--sky-2, #e4e9da));
+}
+#settings-dialog .settings-theme-option > span:not(.settings-theme-swatch) {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+#settings-dialog .settings-theme-option[aria-pressed='true']::after {
+  margin-left: auto;
+}
+
+#settings-dialog .theme-chevron {
+  flex: 0 0 1rem;
+  width: 1rem;
+  height: 1rem;
+  align-self: center;
+}
+#settings-dialog .theme-previous .theme-chevron {
+  transform: rotate(90deg);
+}
+#settings-dialog .theme-next .theme-chevron {
+  transform: rotate(-90deg);
+}
+#settings-dialog #theme-picker-toggle[aria-expanded='true'] .theme-chevron {
+  transform: rotate(180deg);
+}
+
+#selected-theme-name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  align-self: center;
+}
+#settings-dialog .settings-theme-navigation #settings-color-controls {
+  flex: 0 0 auto;
+  height: 100%;
+  max-width: none;
+}
+#settings-dialog .settings-theme-navigation #settings-color-picker {
+  border-radius: 0.45rem 0 0 0.45rem;
+}
+#settings-dialog .settings-theme-navigation #settings-reset-color {
+  border-radius: 0 0.45rem 0.45rem 0;
+  padding: 0.35rem 0.5rem;
+}
+#settings-dialog
+  .settings-theme-navigation
+  #settings-color-controls:has(#settings-reset-color[hidden])
+  #settings-color-picker {
+  border-radius: 0.45rem;
 }
