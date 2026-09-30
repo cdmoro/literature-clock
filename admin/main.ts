@@ -1,7 +1,9 @@
 import './style.css';
 import { initAppearance } from './appearance';
 
-type Quote = Record<'Id' | 'Time' | 'Quote' | 'Quote time' | 'Title' | 'Author' | 'SFW', string> & { Draft?: string };
+type Quote = Record<'Id' | 'Time' | 'Quote' | 'Quote time' | 'Title' | 'Author' | 'SFW' | 'Source locale', string> & {
+  Draft?: string;
+};
 type Entry = { quote: Quote; source: Quote | null; issues: string[] };
 type Language = {
   locale: string;
@@ -77,7 +79,7 @@ el('app').innerHTML = `
 <p id="job" role="status"></p><div class="review-toolbar"><h2>Review desk</h2><button id="reload-quotes" class="secondary">Reload</button><input id="search" type="search" placeholder="Search quotes, books or IDs" aria-label="Search quotes"><select id="status" aria-label="Quote status"><option value="draft">Drafts</option><option value="approved">Approved</option><option value="all">All quotes</option></select></div>
 <div class="review-layout"><section class="quote-list"><div id="quotes"></div><footer class="pagination"><button id="previous" aria-label="Previous page">←</button><span id="page-label"></span><button id="next" aria-label="Next page">→</button></footer></section><section id="editor" class="editor"></section></div></section>
 </main>
-<dialog id="create-dialog"><form id="create-form"><p class="eyebrow">NEW CATALOGUE</p><h2>Start a new language</h2><p>Every source quote is copied from British English as a draft. Your language stays out of the clock's selector.</p><label>Locale<input id="new-locale" placeholder="el-GR" pattern="[a-z]{2,3}-[A-Z]{2}" required></label><label>Google language code<input id="new-target" placeholder="el" required></label><p id="create-error" class="error" role="alert"></p><div class="dialog-actions"><button type="button" id="cancel-create">Cancel</button><button class="primary">Create catalogue</button></div></form></dialog>
+<dialog id="create-dialog"><form id="create-form"><p class="eyebrow">NEW CATALOGUE</p><h2>Start a new language</h2><p>Each quote is copied from its declared source as a draft. Your language stays out of the clock's selector.</p><label>Locale<input id="new-locale" placeholder="el-GR" pattern="[a-z]{2,3}-[A-Z]{2}" required></label><label>Google language code<input id="new-target" placeholder="el" required></label><p id="create-error" class="error" role="alert"></p><div class="dialog-actions"><button type="button" id="cancel-create">Cancel</button><button class="primary">Create catalogue</button></div></form></dialog>
 <dialog id="pr-dialog"><h2>Create a catalogue PR?</h2><p>This will commit and push this language's CSV in an isolated branch, then open a GitHub pull request. Your current branch and other files are left untouched.</p><p>Draft rows remain accessible via the draft URL. Creating this PR does not enable a new language in the selector or merge the changes.</p><p>Git and the GitHub CLI must already be authenticated.</p><div class="dialog-actions"><button id="cancel-pr">Cancel</button><button id="confirm-pr" class="primary">Create pull request</button></div></dialog>`;
 
 initAppearance(el<HTMLSelectElement>('appearance'));
@@ -197,7 +199,7 @@ function renderEditor() {
   const quote = entry.quote;
   el('editor').innerHTML =
     `<div class="editor-heading"><span class="eyebrow">${escape(quote.Id)} · ${escape(quote.Time)}</span><span class="tag">${quote.Draft?.toLowerCase() === 'true' ? 'Draft' : 'Approved'}</span></div>
-  <h3>Original · en-GB</h3><blockquote lang="en-GB">${entry.source ? highlight(entry.source) : 'Source unavailable'}</blockquote><p class="credit">${escape(entry.source?.Title || '')} — ${escape(quote.Author)}</p>
+  <h3>Original · ${escape(entry.source?.['Source locale'] || 'en')}</h3><blockquote lang="${escape(entry.source?.['Source locale'] || 'en')}">${entry.source ? highlight(entry.source) : 'Source unavailable'}</blockquote><p class="credit">${escape(entry.source?.Title || '')} — ${escape(quote.Author)}</p>
   <form id="edit-form"><h3>Translation · ${escape(locale)}</h3><label>Quote<textarea id="quote-text" rows="6" required>${escape(quote.Quote)}</textarea></label><div class="field-pair"><label>Book title<input id="quote-title" value="${escape(quote.Title)}" required></label><label>Exact time phrase<input id="quote-time" value="${escape(quote['Quote time'])}"></label></div><p class="hint">Use &lt;br&gt; for line breaks and &lt;em&gt; for emphasis. Check that the time keeps its original meaning.</p><div id="translation-preview" class="translation-preview" lang="${escape(locale)}">${highlight(quote)}</div>
   ${entry.issues.length ? `<p class="validation">${entry.issues.map(escape).join('<br>')}</p>` : ''}
   <div class="editor-actions"><button type="button" id="save-draft" class="secondary">Save as draft</button><button class="primary" id="approve">Approve translation ✓</button></div></form>`;

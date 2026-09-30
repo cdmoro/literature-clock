@@ -5,7 +5,7 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from validate_translation import read_catalogue, is_draft, catalogue_progress
+from validate_translation import read_catalogue, is_draft, catalogue_progress, parse_sfw
 
 
 def generate_catalogue(path, output, include_drafts=False):
@@ -25,14 +25,17 @@ def generate_catalogue(path, output, include_drafts=False):
             continue
         phrase = row['Quote time']
         if not phrase or phrase not in row['Quote']:
-            if include_drafts and is_draft(row):
+            if include_drafts:
+                print(f"Warning: {path}: {row['Id']}: time phrase is missing from quote; "
+                      "skipping draft preview row", file=sys.stderr)
                 continue
             raise ValueError(f"{path}: {row['Id']}: published time phrase is missing from quote")
         first, last = row['Quote'].split(phrase, 1)
         grouped[row['Time']].append({
             **({'draft': is_draft(row)} if include_drafts else {}),
             'id': row['Id'], 'quote_time_case': phrase, 'quote_first': first,
-            'quote_last': last, 'title': row['Title'], 'author': row['Author'], 'sfw': row['SFW'],
+            'quote_last': last, 'title': row['Title'], 'author': row['Author'],
+            'sfw': parse_sfw(row['SFW'], row['Id']),
         })
         published.append(row)
     for minute, quotes in grouped.items():
@@ -76,7 +79,10 @@ def generate_catalogues(quotes, output, translations, suffix='.csv'):
             generate_catalogue(path, output)
         elif (output / locale).exists():
             shutil.rmtree(output / locale)
-        generate_catalogue(path, output, include_drafts=True)
+        if any(is_draft(row) for row in read_catalogue(path)):
+            generate_catalogue(path, output, include_drafts=True)
+        elif (output / f'{locale}-draft').exists():
+            shutil.rmtree(output / f'{locale}-draft')
 
 
 if __name__ == '__main__':

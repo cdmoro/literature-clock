@@ -1,4 +1,4 @@
-"""Read-only structural checks for a catalogue translated from British English.
+"""Read-only structural checks against each quote's declared source.
 
 These checks do not evaluate linguistic quality or the meaning of a time phrase.
 Usage: python3 scripts/validate_translation.py quotes/quotes.el-GR.csv
@@ -9,8 +9,16 @@ import re
 from collections import Counter
 from pathlib import Path
 
-FIELDS = ['Time', 'Id', 'Quote time', 'Quote', 'Title', 'Author', 'SFW']
+LEGACY_FIELDS = ['Time', 'Id', 'Quote time', 'Quote', 'Title', 'Author', 'SFW']
+FIELDS = LEGACY_FIELDS + ['Source locale']
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def parse_sfw(value, quote_id='?'):
+    """CSV booleans are canonical text; runtime JSON must contain real booleans."""
+    if value not in ('true', 'false'):
+        raise ValueError(f'{quote_id}: SFW must be true or false')
+    return value == 'true'
 
 
 def is_draft(row):
@@ -28,21 +36,32 @@ def catalogue_progress(rows):
             'publication_progress': round(100 * len(published) / len(rows), 2) if rows else 0}
 
 
-def read_catalogue(path):
+def read_catalogue(path, require_source=False):
     with Path(path).open(encoding='utf-8', newline='') as stream:
         reader = csv.DictReader(stream, delimiter='|')
-        if reader.fieldnames not in (FIELDS, FIELDS + ['Draft']):
+        if reader.fieldnames not in (LEGACY_FIELDS, LEGACY_FIELDS + ['Draft'], FIELDS, FIELDS + ['Draft']):
             raise ValueError(f'{path}: unexpected CSV columns')
+        if require_source and 'Source locale' not in reader.fieldnames:
+            raise ValueError(f'{path}: missing Source locale column')
         rows = list(reader)
     if any(None in row or any(value is None for value in row.values()) for row in rows):
         raise ValueError(f'{path}: malformed CSV row')
     for row in rows:
         is_draft(row)
+        parse_sfw(row['SFW'], row['Id'])
+        row.setdefault('Source locale', 'en')
+        from quote_sources import source_language
+        source_language(row['Source locale'])
     return rows
 
 
 def validate(source, translated):
     errors = []
+    for row in [*source, *translated]:
+        try:
+            parse_sfw(row.get('SFW'), row.get('Id', '?'))
+        except ValueError as error:
+            errors.append(str(error))
     source_ids = Counter(row['Id'] for row in source)
     target_ids = Counter(row['Id'] for row in translated)
     if any(count != 1 for count in source_ids.values()):
@@ -55,6 +74,8 @@ def validate(source, translated):
         original = originals.get(label)
         if original is None:
             continue
+        if row.get('Source locale') != original.get('Source locale'):
+            errors.append(f'{label}: Source locale differs from the source')
         for field in ('Time', 'Author', 'SFW'):
             if row[field] != original[field]:
                 errors.append(f'{label}: {field} differs from the source')
@@ -81,7 +102,8 @@ def main():
     parser.add_argument('--source', type=Path, default=ROOT / 'quotes/quotes.en-GB.csv')
     args = parser.parse_args()
     try:
-        source = read_catalogue(args.source)
+        from quote_sources import read_source
+        source = read_source(args.source)
         target = read_catalogue(args.target)
         errors = validate(source, target)
     except (OSError, ValueError) as error:

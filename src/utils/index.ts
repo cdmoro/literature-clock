@@ -4,6 +4,25 @@ import { CITE_FACTOR, INITIAL_THEME_FONT_SIZE } from '../modules/font';
 import { store } from '../store';
 
 const GITHUB_NEW_ISSUE_URL = 'https://github.com/cdmoro/literature-clock/issues/new';
+// Conservative compatibility budget for the full, percent-encoded URL.
+const MAX_ISSUE_URL_LENGTH = 2048;
+
+function setIssueQuote(url: URL, text: string) {
+  url.searchParams.set('quote', text);
+  if (url.href.length <= MAX_ISSUE_URL_LENGTH) return;
+
+  // Search by Unicode code point so truncation cannot split a surrogate pair.
+  const characters = Array.from(text);
+  let low = 0;
+  let high = characters.length;
+  while (low < high) {
+    const middle = Math.ceil((low + high) / 2);
+    url.searchParams.set('quote', `${characters.slice(0, middle).join('')}…`);
+    if (url.href.length <= MAX_ISSUE_URL_LENGTH) low = middle;
+    else high = middle - 1;
+  }
+  url.searchParams.set('quote', low ? `${characters.slice(0, low).join('')}…` : '');
+}
 
 export function getTime() {
   return store.get('time') || getLiveTime();
@@ -42,7 +61,14 @@ export function updateGHLinks(time: string, quote: Quote, locale: Locale) {
   reportErrorUrl.searchParams.set('time', time);
   reportErrorUrl.searchParams.set('book', quote.title);
   reportErrorUrl.searchParams.set('author', quote.author);
-  reportErrorUrl.searchParams.set('quote', quoteRaw.replace(/<br>/g, ' '));
+  if (quote.id) {
+    const quoteUrl = new URL(window.location.pathname, window.location.origin);
+    quoteUrl.searchParams.set('locale', locale);
+    quoteUrl.searchParams.set('time', time);
+    quoteUrl.searchParams.set('quote-id', quote.id);
+    reportErrorUrl.searchParams.set('quote-url', quoteUrl.href);
+  }
+  setIssueQuote(reportErrorUrl, quoteRaw.replace(/<br>/g, ' '));
 
   const reportError = document.querySelector<HTMLAnchorElement>('#report-error');
   if (reportError) {

@@ -18,7 +18,7 @@ const quote: ResolvedQuote = {
   quote_raw: '<img src=x onerror=alert(1)>',
   title: 'Book',
   author: 'Author',
-  sfw: 'sfw',
+  sfw: true,
 };
 const click = (id: string) => document.getElementById(id)!.click();
 beforeEach(() => {
@@ -53,7 +53,7 @@ it('saves, reopens and removes favorites without inserting stored text as HTML',
   expect(dialog.querySelector('li')).toBeNull();
 });
 it('hides explicit favorites in Work mode without deleting them', () => {
-  toggleFavorite({ ...quote, sfw: 'nsfw' });
+  toggleFavorite({ ...quote, sfw: false });
   store.set('work', true);
   click('open-quote-library');
   expect(document.querySelector('#quote-library li')).toBeNull();
@@ -94,4 +94,17 @@ it('supports arrow-key navigation between collection tabs', () => {
     .dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true }));
   expect(document.activeElement?.id).toBe('library-history-tab');
   expect(document.activeElement?.getAttribute('aria-selected')).toBe('true');
+});
+
+it('closes favorites and recent quotes with Escape and restores launcher focus', () => {
+  for (const tabIndex of [0, 1]) {
+    click('open-quote-library');
+    const dialog = document.getElementById('quote-library') as HTMLDialogElement;
+    const tab = dialog.querySelectorAll<HTMLButtonElement>('[role="tab"]')[tabIndex];
+    tab.click();
+    tab.focus();
+    tab.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }));
+    expect(dialog.open).toBe(false);
+    expect(document.activeElement?.id).toBe('open-quote-library');
+  }
 });

@@ -7,7 +7,7 @@
     "pause": "Pause reading",
     "resume": "Back to live clock",
     "pausedAt": "Paused at",
-    "nextQuote": "Another quote from this minute",
+    "nextQuote": "Next quote from this minute",
     "myQuotes": "My quotes",
     "favorites": "Favorites",
     "saveFavorite": "Save favorite",
@@ -23,7 +23,8 @@
     "history": "Recent",
     "clearHistory": "Clear history",
     "historyCleared": "History cleared",
-    "noHistory": "No recent quotes. The last 100 quotes you view will appear here."
+    "noHistory": "No recent quotes. The last 100 quotes you view will appear here.",
+    "previousQuote": "Previous quote from this minute"
   },
   "en-US": {
     "copyLink": "Copy quote link",
@@ -33,7 +34,7 @@
     "pause": "Pause reading",
     "resume": "Back to live clock",
     "pausedAt": "Paused at",
-    "nextQuote": "Another quote from this minute",
+    "nextQuote": "Next quote from this minute",
     "myQuotes": "My quotes",
     "favorites": "Favorites",
     "saveFavorite": "Save favorite",
@@ -49,7 +50,8 @@
     "history": "Recent",
     "clearHistory": "Clear history",
     "historyCleared": "History cleared",
-    "noHistory": "No recent quotes. The last 100 quotes you view will appear here."
+    "noHistory": "No recent quotes. The last 100 quotes you view will appear here.",
+    "previousQuote": "Previous quote from this minute"
   },
   "es-ES": {
     "copyLink": "Copiar enlace de la cita",
@@ -59,7 +61,7 @@
     "pause": "Pausar lectura",
     "resume": "Volver al reloj en vivo",
     "pausedAt": "En pausa a las",
-    "nextQuote": "Otra cita de este minuto",
+    "nextQuote": "Siguiente cita de este minuto",
     "myQuotes": "Mis citas",
     "favorites": "Favoritos",
     "saveFavorite": "Guardar favorito",
@@ -75,7 +77,8 @@
     "history": "Recientes",
     "clearHistory": "Borrar historial",
     "historyCleared": "Historial borrado",
-    "noHistory": "No hay citas recientes. Acá aparecerán las últimas 100 citas que veas."
+    "noHistory": "No hay citas recientes. Acá aparecerán las últimas 100 citas que veas.",
+    "previousQuote": "Cita anterior de este minuto"
   },
   "fr-FR": {
     "copyLink": "Copier le lien de la citation",
@@ -85,7 +88,7 @@
     "pause": "Mettre en pause",
     "resume": "Revenir à l’horloge",
     "pausedAt": "En pause à",
-    "nextQuote": "Autre citation de cette minute",
+    "nextQuote": "Citation suivante de cette minute",
     "myQuotes": "Mes citations",
     "favorites": "Favoris",
     "saveFavorite": "Ajouter aux favoris",
@@ -101,7 +104,8 @@
     "history": "Récentes",
     "clearHistory": "Effacer l’historique",
     "historyCleared": "Historique effacé",
-    "noHistory": "Aucune citation récente. Les 100 dernières citations vues apparaîtront ici."
+    "noHistory": "Aucune citation récente. Les 100 dernières citations vues apparaîtront ici.",
+    "previousQuote": "Citation précédente de cette minute"
   },
   "de-DE": {
     "copyLink": "Link zum Zitat kopieren",
@@ -111,7 +115,7 @@
     "pause": "Lesen pausieren",
     "resume": "Zurück zur aktuellen Uhrzeit",
     "pausedAt": "Pausiert um",
-    "nextQuote": "Weiteres Zitat dieser Minute",
+    "nextQuote": "Nächstes Zitat dieser Minute",
     "myQuotes": "Meine Zitate",
     "favorites": "Favoriten",
     "saveFavorite": "Als Favorit speichern",
@@ -127,7 +131,8 @@
     "history": "Zuletzt gesehen",
     "clearHistory": "Verlauf löschen",
     "historyCleared": "Verlauf gelöscht",
-    "noHistory": "Noch keine Zitate. Hier erscheinen die letzten 100 angesehenen Zitate."
+    "noHistory": "Noch keine Zitate. Hier erscheinen die letzten 100 angesehenen Zitate.",
+    "previousQuote": "Vorheriges Zitat dieser Minute"
   },
   "it-IT": {
     "copyLink": "Copia il link della citazione",
@@ -137,7 +142,7 @@
     "pause": "Pausa lettura",
     "resume": "Torna all’orologio",
     "pausedAt": "In pausa alle",
-    "nextQuote": "Un’altra citazione di questo minuto",
+    "nextQuote": "Citazione successiva di questo minuto",
     "myQuotes": "Le mie citazioni",
     "favorites": "Preferiti",
     "saveFavorite": "Salva nei preferiti",
@@ -153,7 +158,8 @@
     "history": "Recenti",
     "clearHistory": "Cancella cronologia",
     "historyCleared": "Cronologia cancellata",
-    "noHistory": "Nessuna citazione recente. Qui appariranno le ultime 100 citazioni visualizzate."
+    "noHistory": "Nessuna citazione recente. Qui appariranno le ultime 100 citazioni visualizzate.",
+    "previousQuote": "Citazione precedente di questo minuto"
   },
   "pt-PT": {
     "copyLink": "Copiar ligação da citação",
@@ -163,7 +169,7 @@
     "pause": "Pausar leitura",
     "resume": "Voltar ao relógio",
     "pausedAt": "Em pausa às",
-    "nextQuote": "Outra citação deste minuto",
+    "nextQuote": "Citação seguinte deste minuto",
     "myQuotes": "As minhas citações",
     "favorites": "Favoritos",
     "saveFavorite": "Guardar favorito",
@@ -179,6 +185,7 @@
     "history": "Recentes",
     "clearHistory": "Limpar histórico",
     "historyCleared": "Histórico limpo",
-    "noHistory": "Sem citações recentes. As últimas 100 citações vistas aparecerão aqui."
+    "noHistory": "Sem citações recentes. As últimas 100 citações vistas aparecerão aqui.",
+    "previousQuote": "Citação anterior deste minuto"
   }
 }

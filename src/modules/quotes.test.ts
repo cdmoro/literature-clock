@@ -36,10 +36,21 @@ const first: Quote = {
   quote_last: '.',
   title: 'Book',
   author: 'Writer',
-  sfw: 'sfw',
+  sfw: true,
 };
 const second = { ...first, id: '1200-001' };
 const active = () => state['active-quote'] as ResolvedQuote;
+
+it.each([false, 'false', 'true', 'sfw', 'nsfw', 'unknown', undefined, null, 1])(
+  'work mode excludes non-boolean-true classifications: %s',
+  async (sfw) => {
+    state.work = true;
+    vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => [{ ...first, sfw }, second] } as Response);
+    await updateQuote();
+    expect(active().id).toBe(second.id);
+    expect(active().variants).toBe(1);
+  },
+);
 
 beforeEach(() => {
   vi.restoreAllMocks();
@@ -67,7 +78,7 @@ it('chooses an available quote if the identity is missing in the target locale',
 it('preserves identity after work mode filters earlier entries', async () => {
   state.work = true;
   state['active-quote'] = { ...second, index: 1 };
-  vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => [{ ...first, sfw: 'nsfw' }, second] } as Response);
+  vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => [{ ...first, sfw: false }, second] } as Response);
   await updateQuote({ preserveQuote: true });
   expect(active().id).toBe(second.id);
   expect(active().index).toBe(0);
@@ -107,7 +118,7 @@ it('explains missing IDs and respects work mode even with a legacy index', async
   state.work = true;
   state.index = '0';
   state['quote-id'] = first.id;
-  vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => [{ ...first, sfw: 'nsfw' }, second] } as Response);
+  vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => [{ ...first, sfw: false }, second] } as Response);
   await updateQuote();
   expect(active().id).toBe(second.id);
   expect(document.getElementById('quote-notice')?.textContent).toContain('unavailable');
@@ -117,9 +128,22 @@ it('keeps the displayed language when exploring in random-language mode', async 
   state['random-locale'] = true;
   state.paused = true;
   state['active-quote'] = { ...first, time: '09:00', locale: 'en-GB' };
-  await updateQuote({ nextVariant: true });
+  await updateQuote({ variantStep: 1 });
   expect(active().locale).toBe('en-GB');
   expect(active().time).toBe('09:00');
   expect(active().id).toBe(second.id);
   expect(active().variants).toBe(2);
+});
+
+it('moves sequentially and wraps in both directions', async () => {
+  const third = { ...first, id: '1200-002' };
+  vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => [first, second, third] } as Response);
+  state['active-quote'] = { ...first, locale: 'en-GB', time: '12:00' };
+  await updateQuote({ variantStep: -1 });
+  expect(active().id).toBe(third.id);
+  expect(active().index).toBe(2);
+  await updateQuote({ variantStep: 1 });
+  expect(active().id).toBe(first.id);
+  await updateQuote({ variantStep: 1 });
+  expect(active().id).toBe(second.id);
 });

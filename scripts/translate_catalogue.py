@@ -18,7 +18,8 @@ import urllib.request
 from pathlib import Path
 from email.utils import parsedate_to_datetime
 
-from validate_translation import FIELDS, ROOT, read_catalogue, validate
+from quote_sources import read_source, source_language
+from validate_translation import FIELDS, LEGACY_FIELDS, ROOT, read_catalogue, validate
 
 
 class TranslationStopped(Exception):
@@ -51,8 +52,9 @@ def entry_complete(entry, original):
     required = (translated.get('Quote'), translated.get('Title'), entry.get('time_candidate'))
     return (all(isinstance(value, str) and value.strip() and value != 'NO TRANSLATED'
                 for value in required)
-            and all(isinstance(translated.get(field), str) for field in FIELDS)
-            and all(translated[field] == original[field] for field in ('Id', 'Time', 'Author', 'SFW')))
+            and all(isinstance(translated.get(field), str) for field in (FIELDS if "Source locale" in original else LEGACY_FIELDS))
+            and all(translated[field] == original[field] for field in ('Id', 'Time', 'Author', 'SFW'))
+            and translated.get('Source locale') == original.get('Source locale'))
 
 
 def load_state(path, rows, target):
@@ -75,12 +77,17 @@ def load_state(path, rows, target):
     return state
 
 
+def cache_key(text, source):
+    # Preserve legacy English checkpoints, without sharing responses across languages.
+    return text if source == 'en' else json.dumps([source, text], ensure_ascii=False)
+
+
 def progress(rows, state):
     translated = [row for row in rows if entry_complete(state['rows'].get(row['Id']), row)]
     done = {row['Id'] for row in translated}
     pending = [row for row in rows if row['Id'] not in done]
     partial = [row['Id'] for row in pending if any(
-        row[field] in state['cache'] for field in ('Quote', 'Title', 'Quote time'))]
+        cache_key(row[field], source_language(row.get('Source locale', 'en'))) in state['cache'] for field in ('Quote', 'Title', 'Quote time'))]
     unresolved = [row['Id'] for row in translated
                   if not state['rows'][row['Id']]['translation']['Quote time']]
     structural = [row['Id'] for row in translated if validate(
@@ -143,8 +150,8 @@ def run_batches(rows, state, path, translator, batch_size=25, until_complete=Fal
     return completed
 
 
-def google_translate(text, target):
-    query = urllib.parse.urlencode({'client': 'gtx', 'sl': 'en', 'tl': target, 'dt': 't', 'q': text})
+def google_translate(text, target, source='en'):
+    query = urllib.parse.urlencode({'client': 'gtx', 'sl': source, 'tl': target, 'dt': 't', 'q': text})
     request = urllib.request.Request('https://translate.googleapis.com/translate_a/single?' + query)
     with urllib.request.urlopen(request, timeout=30) as response:
         payload = json.load(response)
@@ -162,9 +169,13 @@ class PacedTranslator:
                  clock=time.time, sleep=time.sleep):
         self.state, self.path, self.target = state, path, target
         self.delay, self.request, self.clock, self.sleep = delay, request, clock, sleep
+        self.source = 'en'
 
     def translate(self, text):
-        cached = self.state['cache'].get(text)
+        if self.source == self.target.split('-')[0]:
+            return text
+        key = cache_key(text, self.source)
+        cached = self.state['cache'].get(key)
         if isinstance(cached, str) and cached.strip() and cached != 'NO TRANSLATED':
             return cached
         for attempt in range(3):
@@ -176,7 +187,8 @@ class PacedTranslator:
             self.state['last_request'] = self.clock()
             save(self.path, self.state)
             try:
-                result = self.request(text, self.target)
+                result = (self.request(text, self.target) if self.source == 'en'
+                          else self.request(text, self.target, self.source))
             except urllib.error.HTTPError as error:
                 if error.code in (403, 429):
                     retry = error.headers.get('Retry-After', '') if error.headers else ''
@@ -197,7 +209,7 @@ class PacedTranslator:
                 failure = type(error).__name__
             else:
                 self.state['last_request'] = self.clock()
-                self.state['cache'][text] = result
+                self.state['cache'][key] = result
                 save(self.path, self.state)
                 return result
             if attempt < 2:
@@ -229,6 +241,7 @@ def translate_rows(rows, state, path, translator, limit, on_saved=None):
             continue
         if completed >= limit:
             break
+        translator.source = source_language(original.get('Source locale', 'en'))
         # Translate the complete quote first, preserving sentence context.
         quote = translator.translate(original['Quote'])
         title = translator.translate(original['Title'])
@@ -331,7 +344,7 @@ def main():
     if args.status and (args.all or args.pilot or args.export_reviewed):
         parser.error('--status cannot be combined with translation or export modes.')
     args.state = args.state or ROOT / '.translation-work' / args.target / 'state.json'
-    rows = read_catalogue(args.source)
+    rows = read_source(args.source)
     if not rows:
         parser.error('The source catalogue is empty.')
     if len({row['Id'] for row in rows}) != len(rows):

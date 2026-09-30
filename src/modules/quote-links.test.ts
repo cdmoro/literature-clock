@@ -14,9 +14,7 @@ it('links the displayed locale and minute rather than the current clock or prefe
   const url = new URL(getQuoteUrl(quote)!);
   expect(Object.fromEntries(url.searchParams)).toEqual({
     locale: 'es-ES',
-    time: '12:00',
     'quote-id': '1200-000',
-    'random-locale': 'false',
     theme: 'base-dark',
     font: 'Lora',
   });

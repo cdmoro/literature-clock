@@ -19,14 +19,14 @@ class AdminTest(unittest.TestCase):
         self.admin = Admin(self.root)
 
     def test_new_language_is_hidden_and_web_approval_updates_csv(self):
-        self.assertFalse(self.admin.languages()['languages'][0]['enabled'])
+        self.assertFalse(next(row for row in self.admin.languages()['languages'] if row['locale'] == 'fr-FR')['enabled'])
         result = self.admin.quotes('fr-FR')
         self.admin.mutate('edit', {'locale': 'fr-FR', 'id': self.rows[0]['Id'],
                                  'fields': {field: self.rows[0][field] for field in ('Quote', 'Title', 'Quote time')},
                                  'approved': True, 'revision': result['revision']})
         self.assertFalse(is_draft(read_catalogue(self.project.catalogue)[0]))
         self.assertEqual(self.admin.quotes('fr-FR', status='approved')['total'], 1)
-        self.assertFalse(self.admin.languages()['languages'][0]['enabled'])
+        self.assertFalse(next(row for row in self.admin.languages()['languages'] if row['locale'] == 'fr-FR')['enabled'])
 
     def test_stale_web_form_cannot_overwrite_another_edit(self):
         data = {'locale': 'fr-FR', 'id': self.rows[0]['Id'],

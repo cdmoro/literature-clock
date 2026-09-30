@@ -12,6 +12,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
 
+from quote_sources import source_catalogue
 from generate_times import generate_catalogue
 from translation_manager import Project
 from validate_translation import ROOT, catalogue_progress, is_draft, read_catalogue, validate
@@ -45,7 +46,7 @@ class Admin:
         enabled = self.enabled()
         result = []
         for path in sorted((self.root / 'quotes').glob('quotes.*.csv')):
-            if path.name.endswith('.draft.csv') or path.name == 'quotes.en-GB.csv':
+            if path.name.endswith('.draft.csv'):
                 continue
             locale = path.name.split('.')[1]
             project = self.project(locale)
@@ -142,7 +143,7 @@ class Admin:
             command(['git', 'checkout', '-b', branch, 'FETCH_HEAD'], checkout)
             relative = f'quotes/quotes.{project.locale}.csv'
             (checkout / relative).write_bytes(snapshot)
-            errors = validate(read_catalogue(checkout / 'quotes/quotes.en-GB.csv'), read_catalogue(checkout / relative))
+            errors = validate(source_catalogue(checkout / 'quotes'), read_catalogue(checkout / relative))
             if errors:
                 raise ValueError('\n'.join(errors))
             command(['git', 'add', '--', relative], checkout)

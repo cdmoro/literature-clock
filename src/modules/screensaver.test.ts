@@ -29,7 +29,7 @@ describe('screensaver movement bounds', () => {
 describe('screensaver entry and return', () => {
   let pose: string;
   let frame: FrameRequestCallback | undefined;
-  let motions: { frames: Keyframe[]; finish: () => void; cancel: ReturnType<typeof vi.fn<[], void>> }[];
+  let motions: { frames: Keyframe[]; finish: () => void; cancel: () => void }[];
 
   beforeEach(() => {
     pose = 'none';

@@ -14,7 +14,7 @@ export const savedQuote: ResolvedQuote = {
   quote_raw: 'At noon.',
   title: 'Book',
   author: 'Author',
-  sfw: 'sfw',
+  sfw: true,
 };
 beforeEach(() => {
   vi.restoreAllMocks();
@@ -62,6 +62,25 @@ it('rejects fallback entries and bounds the collection without silently discardi
 });
 
 import { HISTORY_KEY, clearHistory, readHistory, recordQuote } from './quote-collection';
+it.each([
+  ['sfw', true],
+  ['nsfw', false],
+  ['nswf', false],
+  ['unknown', false],
+])('retains legacy %s snapshots with a boolean classification', (legacy, sfw) => {
+  for (const key of [FAVORITES_KEY, HISTORY_KEY]) {
+    localStorage.setItem(key, JSON.stringify({ version: 1, items: [{ ...savedQuote, sfw: legacy }] }));
+  }
+  expect(readFavorites()).toEqual([{ ...savedQuote, sfw }]);
+  expect(readHistory()).toEqual([{ ...savedQuote, sfw }]);
+  recordQuote(savedQuote);
+  expect(readHistory()).toEqual([savedQuote]);
+});
+
+it.each(['true', 'false', 1, null, undefined])('rejects malformed saved classifications: %s', (sfw) => {
+  localStorage.setItem(FAVORITES_KEY, JSON.stringify({ version: 1, items: [{ ...savedQuote, sfw }] }));
+  expect(readFavorites()).toEqual([]);
+});
 it('keeps the 100 most recent distinct quotes in newest-first order', () => {
   for (let i = 0; i < 105; i++) recordQuote({ ...savedQuote, id: String(i) });
   expect(readHistory()).toHaveLength(100);

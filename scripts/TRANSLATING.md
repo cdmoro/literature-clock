@@ -1,6 +1,8 @@
-# Translating a catalogue in batches
+# Translating and reviewing a catalogue
 
-`translate_catalogue.py` reads the British English catalogue and uses Google's
+New to contributing a language? Start with the [language incubator guide](../docs/LANGUAGE_INCUBATOR.md) for an overview and ways to help. This document covers the technical workflow.
+
+`translate_catalogue.py` resolves each passage from its declared source catalogue and uses Google's
 unofficial public translation endpoint. It needs Python 3.9+ and no additional
 packages. The service may reject requests even when they are spaced out.
 
@@ -8,6 +10,55 @@ This is a **new catalogue tool**. `add_quote.py` remains the
 interactive tool for adding a single quote. Adding the new language to the
 website is a separate, explicit step after the language is complete and reviewed.
 Unlisted draft URLs are available earlier for previewing work in progress.
+
+## Preserve quote identity and attribution
+
+**The source `Id` is the only reliable key for tracking the same quote across languages. Never change it.** Keep it attached to its original passage: do not translate, renumber, regenerate or reformat IDs, and preserve leading zeros and punctuation by treating them as text. Every complete catalogue must contain every source ID exactly once. Matching text, titles, row order or clock times cannot replace this identity; bilingual lookup and catalogue imports depend on it. Checking the ID set alone cannot detect translated passages accidentally assigned to the wrong IDs.
+
+Keep `Author` exactly as in the source, without translation or transliteration. Prefer keeping `Title` unchanged too, so contributors can focus on `Quote` and `Quote time`. A verified published title in the target language may be used deliberately and reviewed, but translating book titles is not required. The batch tools currently generate title translations as drafts; prefer restoring the source title during review unless using a verified localized title. Keep `Time` and `SFW` unchanged. `SFW` must be the canonical CSV boolean `true` or `false`, shared by all translations of the same ID.
+
+## Import a complete translation from Calibre or another tool
+
+Batch translation is optional. If Google Translate, DeepL or another external tool
+has already translated the whole catalogue, import it once and go straight to review.
+The importer makes no network requests and never approves translations.
+
+Keep the input as UTF-8, pipe-delimited CSV with the catalogue header:
+`Time|Id|Quote time|Quote|Title|Author|SFW|Source locale` (an optional `Draft` column is accepted).
+Preserve every source ID exactly once, even if the external tool reorders rows.
+Do not translate IDs or headers. CSV quoting must protect pipes and newlines in text.
+
+For example, with an external Greek translation saved outside the catalogue folder:
+
+```sh
+python3 scripts/import_translation.py /path/to/greek-translation.csv \
+  --output quotes/quotes.el-GR.csv
+python3 scripts/validate_translation.py quotes/quotes.el-GR.csv
+npm run admin
+```
+
+The input may have any filename outside the catalogue folder; `.draft.csv` is not
+required. The recommended review catalogue is **`quotes.<locale>.csv` with every
+row initially marked `Draft=true`**, which the administrator discovers automatically.
+A `.draft.csv` file alone is a legacy clock preview, not an administrator catalogue.
+If both files exist, clock generation uses the regular catalogue.
+
+Import copies `Quote`, `Quote time` and `Title` from the translated file, restores
+`Time`, `Author` and `SFW` from the declared source by ID, and sets `Draft=true`
+regardless of input approval flags. It refuses missing, duplicate or unknown IDs
+and never overwrites an existing output. The original input is left untouched.
+
+In the administrator, open the language and review/edit/approve its pending quotes;
+skip **Translate batch**, which is for requesting translations, not importing them.
+Correct time highlights to exact substrings and verify their meaning, formatting,
+book titles and translation quality. Unresolved highlights remain available for
+editing but are skipped by draft clock previews. Structural validation of drafts
+checks identity and metadata only: passing it does not mean the text is approved.
+
+Use **Generate clock preview** to inspect the clock. After review, enable the
+language separately by adding the interface strings, fallback messages, locale
+mapping and selector option as described below. Review may be gradual even when
+translation was completed in one operation.
 
 ## Local web administrator (recommended)
 
@@ -50,14 +101,19 @@ outside the administrator. Do not run the CLI as another writer at the same time
 
 Use **Generate clock preview**, then open your separate clock development server
 (`npm run dev`) with `?locale=el-GR-draft&time=07:30`, for example. Normal generation
-(`npm run generate-times`) also produces `<locale>-draft` data for each catalogue.
+(`npm run generate-times`) produces `<locale>-draft` data only for catalogues
+with `Draft=true` rows or explicit `.draft.csv` files. Fully approved catalogues
+do not get an automatic duplicate; stale draft output is removed. The administrator
+can still explicitly generate a preview of any catalogue.
 Draft URLs work before the language is registered, display a draft notice, and use
 English interface/fallback strings until the language has its own strings.
 They do not add options to the selector or random-language pool.
 
 The draft view includes approved and pending CSV rows. Newly copied source text
 is still English until translated. A draft with an unresolved time highlight is
-skipped by the clock, but remains editable in the administrator. A normal locale
+skipped by the clock with a warning identifying its ID, but remains editable in
+the administrator. This also applies to legacy `.draft.csv` files without a
+`Draft` column. A leading `*` in `Quote time` still explicitly skips a row. A normal locale
 only gets generated data when registered, and its drafts remain excluded.
 Legacy `.draft.csv` files remain supported when no full catalogue exists.
 
@@ -123,17 +179,17 @@ after time-data generation; it also works for unregistered languages.
 
 ## Start a language and publish gradually
 
-The canonical British English catalogue is `quotes/quotes.en-GB.csv`.
+Source passages are resolved by ID and `Source locale` across the catalogues.
 Create a full copy with every quote marked as a draft (no network requests):
 
 ```sh
 python3 scripts/translate_catalogue.py --init-catalogue quotes/quotes.el-GR.csv
 ```
 
-This preserves all source IDs, text and metadata and adds an eighth column,
+This preserves all source IDs, text and metadata and adds an optional ninth column,
 `Draft`, set to `true`. Existing files are never overwritten. Translate and review
 rows gradually, then set `Draft=false` for each approved quote. Machine translation
-alone does not approve a quote. The copied English text stays hidden until approved.
+alone does not approve a quote. The copied source text stays hidden until approved.
 Legacy seven-column CSVs remain supported and are treated as published. If the
 `Draft` column exists, every value must be `true` or `false` (case-insensitive);
 blank or misspelled values fail validation and generation.
@@ -186,9 +242,10 @@ python3 scripts/translate_catalogue.py --target el --pilot --batch-size 25 --del
 ```
 
 Use Google language codes: `el` for Modern Greek, `ja` for Japanese, `ar` for
-Arabic, `nl` for Dutch, or `zh-CN` for Simplified Chinese. The source is always
-translated as English; by default it is the project's `quotes.en-GB.csv` (British
-English, the project's original source catalogue).
+Arabic, `nl` for Dutch, or `zh-CN` for Simplified Chinese. Each passage is translated from its `Source locale` language. Repository source
+paths resolve the complete union of IDs; use an exported standalone source CSV
+for a deliberately limited selection. Regional provenance is retained even when
+the translation provider only accepts the general language code.
 
 ## Inspect progress and resume
 
@@ -212,8 +269,8 @@ complete draft just because its ID is present. Generated files are ignored by Gi
 
 ## Live draft previews
 
-Normal CSVs generate a separate `<locale>-draft` preview containing pending and
-approved quotes with valid time highlights. See the clock preview instructions
+Normal CSVs with pending rows generate a separate `<locale>-draft` preview
+containing pending and approved quotes with valid time highlights. See the clock preview instructions
 above. A legacy `quotes.<locale>.draft.csv` is only used if there is no full CSV
 for that locale. Preview-only locales are never added to the selector or random pool.
 
@@ -241,8 +298,8 @@ entry includes the original, translation, time candidate and structural issues.
 For every quote:
 
 - Read the entire source and translation for omissions, unnatural language and
-  changes in meaning. Check names and consistent book titles. Translated titles
-  are not claims about published editions.
+  changes in meaning. Preserve author names exactly and preferably keep source book
+  titles. Any deliberately localized title should be verified and flagged for review.
 - Find the exact expression of time within the translated quote. Set `Quote time`
   to that exact substring. A separately translated candidate is only a suggestion;
   if it does not occur in the quote, the field is deliberately left empty.

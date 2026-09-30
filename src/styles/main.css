@@ -39,7 +39,8 @@ body[data-loading] {
 
 body.zen:not(.screensaver) #progress-bar,
 body.zen:not(.screensaver) #time-clock,
-body.zen:not(.screensaver) footer #menu {
+body.zen:not(.screensaver) footer #menu,
+body.zen:not(.screensaver) .github-corner {
   display: none !important;
 }
 
@@ -87,18 +88,6 @@ blockquote[aria-label]:after {
   height: 4rem;
   position: absolute;
   width: 4rem;
-}
-
-blockquote[aria-label]:before {
-  content: '“';
-  left: -5rem;
-  top: -2rem;
-}
-
-blockquote[aria-label]:after {
-  bottom: 1rem;
-  content: '”';
-  right: -5rem;
 }
 
 blockquote .time {
@@ -233,6 +222,40 @@ button:disabled {
   opacity: 0.7;
 }
 
+/* Shared close ("×") button for dialogs and panels (Settings, My quotes, About):
+   a round, borderless icon button — deliberately different from the app's
+   other square, bordered buttons, so it reads as "close this" rather than
+   another toolbar control. */
+.dialog-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  max-height: none;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+}
+
+.dialog-close svg {
+  display: block;
+  transform: none;
+}
+
+.dialog-close:hover {
+  background-color: color-mix(in srgb, var(--font-color), transparent 88%);
+}
+
+/* A soft round halo instead of the square accent border the generic
+ * button:focus rule draws — these dialogs often focus their close button
+ * first, so this shows up as soon as they open. */
+.dialog-close:focus {
+  border: none;
+  box-shadow: 0 0 0 0.15rem color-mix(in srgb, var(--accent-color), transparent 70%) !important;
+}
+
 #time-clock {
   position: fixed;
   top: 0;
@@ -329,6 +352,26 @@ footer {
 
 #contact {
   display: inline-block;
+}
+
+/* The footer's secondary links (Add quote, Report error, GitHub, About, Made by).
+ * Flex + a generated separator keeps each "| Label" pair glued together, so
+ * wrapping on narrow screens breaks between items rather than leaving a
+ * stray "|" stranded at the start of a line. */
+#footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+#footer-links > * + *::before {
+  content: '|';
+  margin-inline-end: 0.4rem;
+  color: var(--font-color);
+  text-decoration: none;
+  opacity: 0.6;
 }
 
 #flash {
@@ -508,3 +551,40 @@ body.share-quote #clock {
 #reading-status button { margin-inline-start: 0.5rem; font: inherit; }
 body.paused #time-clock { display: block !important; }
 body.paused #quote-notice { top: 4.5rem; }
+
+#quote-translation {
+  margin-top: 1.2em;
+  padding-top: 0.65em;
+  border-top: 1px solid color-mix(in srgb, var(--font-color), transparent 75%);
+  font-size: clamp(14px, 1.8vw, 24px);
+  line-height: 1.4;
+}
+#translation-heading {
+  font: 0.85rem/1.5 system-ui, sans-serif;
+}
+#translation-heading:first-letter {
+  text-transform: capitalize;
+}
+#quote-translation .translation-content {
+  margin-top: 0.7em;
+  max-height: 25vh;
+  overflow-y: auto;
+}
+#quote-translation p {
+  margin: 0 0 0.5em;
+  font-size: inherit;
+  max-height: none;
+}
+#quote-translation cite {
+  font-size: 0.75em;
+}
+
+blockquote:has(#quote-translation) > p {
+  max-height: 35vh;
+}
+
+body.hide-book-title #quote #title,
+body.hide-book-title #quote #comma,
+body.hide-book-title #quote .translation-book-title {
+  display: none;
+}

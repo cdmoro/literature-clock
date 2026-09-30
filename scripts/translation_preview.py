@@ -49,8 +49,8 @@ def render(project, query=''):
         cards.append(f'''<article>
           <header><strong>{html.escape(row['Time'])}</strong> · {html.escape(row['Id'])}
           <span class="badge">{status}</span></header>
-          <div class="comparison"><section><h2>Original · en-GB</h2>
-          <blockquote lang="en-GB">{quote_html(entry['source'])}</blockquote>
+          <div class="comparison"><section><h2>Original · {html.escape(entry['source'].get('Source locale', 'en'))}</h2>
+          <blockquote lang="{html.escape(entry['source'].get('Source locale', 'en'))}">{quote_html(entry['source'])}</blockquote>
           <p class="credit">{formatted(entry['source']['Title'])} — {html.escape(row['Author'])}</p></section>
           <section><h2>Translation · {html.escape(project.locale)}</h2>
           <blockquote lang="{html.escape(project.locale)}">{quote_html(row)}</blockquote>
