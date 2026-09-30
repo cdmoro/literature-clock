@@ -48,6 +48,7 @@ const REMOVE_VALUES_FROM_URL: Partial<State> = {
 };
 
 const BOOLEAN_KEYS = new Set([
+  'bilingual',
   'zen',
   'work',
   'screensaver',
@@ -75,6 +76,7 @@ function validateSettings(input: unknown, fromUrl: boolean): Partial<State> {
     if (typeof raw !== 'string') continue;
     switch (key) {
       case 'ui-locale':
+      case 'translation-locale':
       case 'locale':
         result[key] = resolveLocale(raw);
         break;

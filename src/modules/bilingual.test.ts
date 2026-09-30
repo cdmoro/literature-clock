@@ -47,6 +47,37 @@ it('synchronizes both switches and persists the language', () => {
   expect(document.getElementById('quote-translation')).toBeNull();
   expect(document.getElementById('bilingual')!.getAttribute('aria-pressed')).toBe('false');
 });
+it.each([true, false])('restores bilingual preferences after reload (keep URL: %s)', (keepUrl) => {
+  document.getElementById('settings-bilingual')!.click();
+  const select = document.querySelector<HTMLSelectElement>('#translation-locale')!;
+  select.value = 'fr-FR';
+  select.dispatchEvent(new Event('change'));
+
+  if (!keepUrl) history.replaceState({}, '', '/');
+  document.body.innerHTML =
+    '<button id="screensaver"></button><section id="settings-content"></section><blockquote id="quote"></blockquote>';
+  createStore();
+  initBilingual();
+
+  expect(store.get('bilingual')).toBe(true);
+  expect(store.get('translation-locale')).toBe('fr-FR');
+  expect(document.getElementById('settings-bilingual')!.getAttribute('aria-checked')).toBe('true');
+  expect(document.getElementById('bilingual')!.getAttribute('aria-pressed')).toBe('true');
+  expect(document.querySelector<HTMLSelectElement>('#translation-locale')!.value).toBe('fr-FR');
+  expect(JSON.parse(localStorage.getItem('settings')!)).toMatchObject({
+    bilingual: true,
+    'translation-locale': 'fr-FR',
+  });
+});
+
+it('lets URL bilingual preferences override saved settings', () => {
+  localStorage.setItem('settings', JSON.stringify({ bilingual: true, 'translation-locale': 'fr-FR' }));
+  history.replaceState({}, '', '/?bilingual=false&translation-locale=it-IT');
+  createStore();
+  expect(store.get('bilingual')).toBe(false);
+  expect(store.get('translation-locale')).toBe('it-IT');
+});
+
 it('automatically loads the matching ID when enabled', async () => {
   const fetch = vi.fn().mockResolvedValue({
     ok: true,
