@@ -299,3 +299,27 @@ test('bilingual content cannot change the primary preview or trigger translation
   expect(source.querySelectorAll('#quote p')).toHaveLength(1);
   expect(quote.querySelector('#quote-translation')).not.toBeNull();
 });
+
+test('production stylesheets load in the opaque preview without changing the main document', () => {
+  document.body.innerHTML = page;
+  document.head.insertAdjacentHTML(
+    'beforeend',
+    '<link id="test-theme-styles" rel="stylesheet" crossorigin href="/assets/index-production.css">',
+  );
+  createStore();
+  initSettingsDialog();
+  const dialog = document.querySelector<HTMLDialogElement>('#settings-dialog')!;
+  dialog.setAttribute('open', '');
+  document.documentElement.dataset.theme = 'pink-dark';
+  document.getElementById('quote')!.innerHTML = '<p>A production quote</p>';
+  dialog.dispatchEvent(new Event('settings-preview'));
+  const preview = new DOMParser().parseFromString(
+    document.querySelector<HTMLIFrameElement>('#settings-theme-preview')!.srcdoc,
+    'text/html',
+  );
+  const stylesheet = preview.querySelector('link[rel="stylesheet"]')!;
+  expect(stylesheet.getAttribute('href')).toBe('http://localhost:3000/assets/index-production.css');
+  expect(stylesheet.hasAttribute('crossorigin')).toBe(false);
+  expect(document.getElementById('test-theme-styles')!.hasAttribute('crossorigin')).toBe(true);
+  expect(preview.documentElement.dataset.theme).toBe('pink-dark');
+});

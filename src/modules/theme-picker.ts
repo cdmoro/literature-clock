@@ -12,7 +12,12 @@ export function themePreviewDocument() {
   head.append(base);
   document.head.querySelectorAll('style, link[rel="stylesheet"]').forEach((style) => {
     const copy = style.cloneNode(true) as HTMLElement;
-    if (copy instanceof HTMLLinkElement) copy.href = (style as HTMLLinkElement).href;
+    if (copy instanceof HTMLLinkElement) {
+      copy.href = (style as HTMLLinkElement).href;
+      // Vite adds crossorigin to production CSS. The sandbox has an opaque origin,
+      // so request these public stylesheets normally instead of requiring CORS.
+      copy.removeAttribute('crossorigin');
+    }
     head.append(copy);
   });
   const sizing = document.createElement('style');
