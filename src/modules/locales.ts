@@ -1,3 +1,4 @@
+import { refreshDefaultFontLabel } from './font';
 import { initLanguagePreferences } from './language-preferences';
 import { updateQuote } from './quotes';
 import TRANSLATIONS from '../strings/translations.json';
@@ -138,6 +139,8 @@ export function translateStrings(locale: Locale) {
   document
     .querySelectorAll<HTMLElement>('[data-text]')
     .forEach((el) => (el.textContent = strings[el.dataset.text as keyof Translations]));
+
+  refreshDefaultFontLabel();
 
   document
     .querySelectorAll<HTMLOptionElement>('[data-label]')

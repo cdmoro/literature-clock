@@ -6,7 +6,7 @@ import { initTheme } from './themes';
 import { createStore, store } from '../store';
 
 vi.mock('../utils', () => ({ doFitQuote: vi.fn(), fitQuote: vi.fn(), loadFontIfNotExists: vi.fn() }));
-vi.mock('./font', () => ({ THEME_FONTS: {}, resetFont: vi.fn() }));
+vi.mock('./font', () => ({ THEME_FONTS: {}, resetFont: vi.fn(), refreshDefaultFontLabel: vi.fn() }));
 vi.mock('./horizon', () => ({ setDayParameters: vi.fn() }));
 
 afterEach(() => {

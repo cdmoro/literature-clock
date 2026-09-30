@@ -3,7 +3,7 @@ import { createStore, store } from '../store';
 import { initTheme } from './themes';
 
 vi.mock('../utils', () => ({ doFitQuote: vi.fn(), fitQuote: vi.fn(), loadFontIfNotExists: vi.fn() }));
-vi.mock('./font', () => ({ THEME_FONTS: {}, resetFont: vi.fn() }));
+vi.mock('./font', () => ({ THEME_FONTS: {}, resetFont: vi.fn(), refreshDefaultFontLabel: vi.fn() }));
 vi.mock('./horizon', () => ({ setDayParameters: vi.fn() }));
 
 let systemChange: (event: { matches: boolean }) => void;
