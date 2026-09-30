@@ -21,7 +21,8 @@ function isSavedQuote(value: unknown): value is ResolvedQuote {
     isCollectible(quote) &&
     typeof quote.locale === 'string' &&
     /^[a-z]{2,3}-[A-Z]{2}(?:-draft)?$/.test(quote.locale) &&
-    ['id', 'quote_first', 'quote_time_case', 'quote_last', 'quote_raw', 'title', 'author', 'sfw'].every(
+    typeof quote.sfw === 'boolean' &&
+    ['id', 'quote_first', 'quote_time_case', 'quote_last', 'quote_raw', 'title', 'author'].every(
       (key) => typeof (value as Record<string, unknown>)[key] === 'string',
     )
   );
@@ -33,6 +34,15 @@ function readCollection(key: string, limit: number): ResolvedQuote[] {
     if (saved?.version !== 1 || !Array.isArray(saved.items)) return [];
     const keys = new Set<string>();
     return saved.items
+      .map((item: unknown) => {
+        if (!item || typeof item !== 'object') return item;
+        const legacy = item as Record<string, unknown>;
+        // Preserve old snapshots, but never treat unclassified content as safe.
+        if (['sfw', 'nsfw', 'nswf', 'unknown'].includes(legacy.sfw as string)) {
+          return { ...legacy, sfw: legacy.sfw === 'sfw' };
+        }
+        return item;
+      })
       .filter((item: unknown) => {
         if (!isSavedQuote(item) || keys.has(quoteKey(item))) return false;
         keys.add(quoteKey(item));

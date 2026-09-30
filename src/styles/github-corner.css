@@ -13,13 +13,7 @@
   height: 80px;
   fill: #fff;
   color: #151513;
-}
-
-/* Flip the ribbon to a dark cat on a light corner for light themes, instead
- * of always the same black-and-white pair regardless of the page behind it. */
-[data-theme$='light'] .github-corner {
-  fill: #151513;
-  color: #fff;
+  fill: var(--accent-color);
 }
 
 .github-corner:hover .octo-arm {
@@ -41,12 +35,18 @@
   }
 }
 
+.octo-body {
+  fill: var(--background);
+}
+
 .octo-arm {
   transform-origin: 130px 106px;
+  fill: var(--background);
 }
 
 @media (max-width: 500px) {
-  .github-corner {
+  .github-corner,
+  .github-corner svg {
     width: 60px;
     height: 60px;
   }

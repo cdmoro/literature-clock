@@ -1,4 +1,5 @@
 import { store } from '../store';
+import { initThemePicker } from './theme-picker';
 import { readingIcon } from './reading-icons';
 import { closeDialogOnBackdropClick } from '../utils/dialog';
 
@@ -14,10 +15,50 @@ export function initSettingsDialog() {
   dialog.innerHTML = `
     <header><h2 id="settings-title" tabindex="-1" data-text="settings_title">Settings</h2>
       <button type="button" id="close-settings" class="dialog-close" data-aria-label="settings_close" aria-label="Close settings">${readingIcon('close')}</button></header>
-    <section id="settings-appearance"><h3 data-text="settings_appearance">Appearance</h3></section>
-    <section id="settings-content"><h3 data-text="settings_content">Content</h3></section>
-    <section id="settings-behavior"><h3 data-text="settings_behavior">Behaviour</h3></section>`;
+    <div class="settings-tabs" role="tablist" data-aria-label="settings_title" aria-label="Settings">
+      <button type="button" id="tab-appearance" role="tab" aria-controls="settings-appearance" aria-selected="true" data-text="settings_appearance">Appearance</button>
+      <button type="button" id="tab-content" role="tab" aria-controls="settings-content" aria-selected="false" tabindex="-1" data-text="settings_content">Content</button>
+      <button type="button" id="tab-behavior" role="tab" aria-controls="settings-behavior" aria-selected="false" tabindex="-1" data-text="settings_behavior">Behaviour</button>
+    </div>
+    <section id="settings-appearance" role="tabpanel" aria-labelledby="tab-appearance" tabindex="0"></section>
+    <section id="settings-content" role="tabpanel" aria-labelledby="tab-content" tabindex="0" hidden></section>
+    <section id="settings-behavior" role="tabpanel" aria-labelledby="tab-behavior" tabindex="0" hidden></section>`;
   document.body.append(dialog);
+
+  const tabs = [...dialog.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
+  const selectTab = (selected: HTMLButtonElement) => {
+    tabs.forEach((tab) => {
+      const active = tab === selected;
+      tab.setAttribute('aria-selected', String(active));
+      tab.tabIndex = active ? 0 : -1;
+      document.getElementById(tab.getAttribute('aria-controls')!)!.hidden = !active;
+    });
+  };
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => selectTab(tab));
+    tab.addEventListener('keydown', (event) => {
+      let next: number;
+      switch (event.key) {
+        case 'ArrowRight':
+          next = (index + 1) % tabs.length;
+          break;
+        case 'ArrowLeft':
+          next = (index + tabs.length - 1) % tabs.length;
+          break;
+        case 'Home':
+          next = 0;
+          break;
+        case 'End':
+          next = tabs.length - 1;
+          break;
+        default:
+          return;
+      }
+      event.preventDefault();
+      selectTab(tabs[next]);
+      tabs[next].focus();
+    });
+  });
 
   const move = (id: string, section: string, label: string, group = false) => {
     const control = document.getElementById(id);
@@ -33,7 +74,7 @@ export function initSettingsDialog() {
   move('variant-select', 'appearance', 'settings_scheme', true);
   move('theme-select', 'appearance', 'theme', true);
   move('font-select', 'appearance', 'font', true);
-  move('transition-select', 'appearance', 'transition', true);
+  move('transition-select', 'behavior', 'transition', true);
   const localeSelect = document.getElementById('locale-select');
   if (localeSelect) localeSelect.id = 'ui-locale-select';
   document.getElementById('random-locale')?.remove();
@@ -46,11 +87,19 @@ export function initSettingsDialog() {
       <div id="quote-language-options"></div>
     </fieldset>`,
   );
+  const hideTitle = document.createElement('button');
+  hideTitle.id = 'hide-book-title';
+  hideTitle.type = 'button';
+  hideTitle.innerHTML = readingIcon('hide-title');
+  toolbar.append(hideTitle);
+  hideTitle.addEventListener('click', () => store.toggle('hide-book-title'));
+  move('hide-book-title', 'behavior', 'settings_hide_book_title');
   move('work', 'behavior', 'settings_work_help');
+
   move('show-time', 'behavior', 'time_mode');
   move('progressbar', 'behavior', 'progressbar_mode');
 
-  for (const key of ['work', 'show-time', 'progressbar'] as const) {
+  for (const key of ['work', 'show-time', 'progressbar', 'hide-book-title'] as const) {
     const button = document.getElementById(key);
     if (!button) continue;
     button.classList.add('settings-switch');
@@ -83,8 +132,7 @@ export function initSettingsDialog() {
     );
     fontGroup.insertAdjacentHTML(
       'beforeend',
-      `<p id="font-preview" data-text="settings_font_preview">The time is always right to read a good book.</p>
-      <details class="settings-custom-font"><summary data-text="settings_custom_font">Google Fonts</summary>
+      `<details class="settings-custom-font"><summary data-text="settings_custom_font">Google Fonts</summary>
         <p id="custom-font-help" class="settings-help" data-text="settings_font_help">Paste a Google Fonts family name and choose Apply. If unavailable, the theme’s default font is used.</p>
         <form id="custom-font-form">
           <label for="custom-font-name" data-text="settings_font_name">Font family name</label>
@@ -109,6 +157,8 @@ export function initSettingsDialog() {
     document.getElementById('theme-select')?.closest('.settings-row')?.after(colorRow);
   }
 
+  initThemePicker(dialog);
+
   // Moving controls leaves whitespace-only wrappers that still occupy a flex gap.
   toolbar.querySelectorAll(':scope > span').forEach((group) => {
     if (!group.children.length && !group.textContent?.trim()) group.remove();
@@ -127,6 +177,7 @@ export function initSettingsDialog() {
   toolbar.append(open);
   open.addEventListener('click', () => {
     dialog.showModal();
+    dialog.dispatchEvent(new Event('settings-preview'));
     dialog.scrollTop = 0;
     // Land focus on the title, not the close button — showModal() would
     // otherwise focus the first focusable descendant (the close button),

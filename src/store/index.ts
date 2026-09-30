@@ -6,11 +6,14 @@ interface Stateful {
   locale: Locale;
   'ui-locale'?: Locale;
   'quote-locales'?: string;
+  bilingual?: boolean;
+  'translation-locale'?: Locale;
   zen: boolean;
   work: boolean;
   screensaver: boolean;
   transition: TransitionMode;
   'show-time': boolean;
+  'hide-book-title': boolean;
   font: string;
   theme: string;
   color: string;
@@ -44,26 +47,91 @@ const REMOVE_VALUES_FROM_URL: Partial<State> = {
   color: '#d24335',
 };
 
-export function parseUrlParams(urlParams: URLSearchParams): Partial<State> {
-  const stateFromUrl: Partial<State> = {};
+const BOOLEAN_KEYS = new Set([
+  'bilingual',
+  'zen',
+  'work',
+  'screensaver',
+  'show-time',
+  'hide-book-title',
+  'progressbar',
+  'random-locale',
+  'static',
+  'fade',
+]);
+const THEMES =
+  /^(base|pink|green|orange|purple|blue|gray|color|retro|elegant|festive|bohemian|book|handwriting|anaglyph|whatsapp|terminal|frame|subtle|poster|horizon|dynamic|photo|kindle)(-(system|light|dark))?$/;
+const TEMPORARY_KEYS = new Set(['time', 'quote', 'quote-id', 'scene', 'progress', 'index', 'static']);
 
-  urlParams.forEach((value, key) => {
-    if (value !== null) {
-      // @ts-expect-error TODO: Investigate TS error
-      stateFromUrl[key] = value === 'true' ? true : value === 'false' ? false : value;
+function validateSettings(input: unknown, fromUrl: boolean): Partial<State> {
+  if (!input || typeof input !== 'object' || Array.isArray(input)) return {};
+  const result: Record<string, string | boolean> = {};
+  for (const [key, raw] of Object.entries(input)) {
+    if (!fromUrl && TEMPORARY_KEYS.has(key)) continue;
+    if (BOOLEAN_KEYS.has(key)) {
+      const value = fromUrl ? (raw === 'true' ? true : raw === 'false' ? false : undefined) : raw;
+      if (typeof value === 'boolean') result[key] = value;
+      continue;
     }
-  });
-
-  const id = stateFromUrl['quote-id'];
-  if (!stateFromUrl.time && typeof id === 'string' && /^([01]\d|2[0-3])[0-5]\d-\d+$/.test(id)) {
-    stateFromUrl.time = `${id.slice(0, 2)}:${id.slice(2, 4)}`;
+    if (typeof raw !== 'string') continue;
+    switch (key) {
+      case 'ui-locale':
+      case 'translation-locale':
+      case 'locale':
+        result[key] = resolveLocale(raw);
+        break;
+      case 'quote-locales':
+        if (raw === '' || raw.split(',').every((locale) => /^[a-z]{2,3}-[A-Z]{2}$/.test(locale))) result[key] = raw;
+        break;
+      case 'quote-id':
+        if (/^([01]\d|2[0-3])[0-5]\d-\d+$/.test(raw)) result[key] = raw;
+        break;
+      case 'theme':
+        if (THEMES.test(raw)) result[key] = raw;
+        break;
+      case 'transition':
+        if (['none', 'fade', 'slide', 'blur', 'zoom'].includes(raw)) result[key] = raw;
+        break;
+      case 'color':
+        if (/^#[0-9a-f]{6}$/i.test(raw)) result[key] = raw;
+        break;
+      case 'font':
+        if (/^[\p{L}\p{N} _-]{1,100}$/u.test(raw)) result[key] = raw;
+        break;
+      case 'time':
+        if (/^([01]\d|2[0-3]):[0-5]\d$/.test(raw)) result[key] = raw;
+        break;
+      case 'index':
+        if (/^\d+$/.test(raw) && Number.isSafeInteger(Number(raw))) result[key] = raw;
+        break;
+      case 'progress':
+        if (/^\d+(\.\d+)?$/.test(raw) && Number(raw) <= 100) result[key] = raw;
+        break;
+      case 'scene':
+        if (['morning', 'afternoon', 'evening', 'night'].includes(raw)) result[key] = raw;
+        break;
+      case 'quote':
+        result[key] = raw;
+        break;
+    }
   }
+  return result as Partial<State>;
+}
+
+export function parseUrlParams(urlParams: URLSearchParams): Partial<State> {
+  const stateFromUrl = validateSettings(Object.fromEntries(urlParams), true);
+  const id = stateFromUrl['quote-id'];
+  if (!stateFromUrl.time && id) stateFromUrl.time = `${id.slice(0, 2)}:${id.slice(2, 4)}`;
   return stateFromUrl;
 }
 
 export function getStateFromLocalStorage(): Partial<State> {
-  const storedSettings = localStorage.getItem('settings');
-  return storedSettings ? JSON.parse(storedSettings) : {};
+  try {
+    const storedSettings = localStorage.getItem('settings');
+    return storedSettings ? validateSettings(JSON.parse(storedSettings), false) : {};
+  } catch {
+    return {};
+  }
 }
 
 export function updateBooleanSettingStatus(key: string, value: boolean) {
@@ -92,8 +160,8 @@ export class Store {
 
     const saved = stateFromLocalStorage;
     this.state.transition =
-      urlParams.has('transition') || urlParams.has('fade')
-        ? resolveTransition(urlParams.get('transition'), urlParams.get('fade'))
+      stateFromUrl.transition !== undefined || stateFromUrl.fade !== undefined
+        ? resolveTransition(stateFromUrl.transition, stateFromUrl.fade)
         : resolveTransition(saved.transition, saved.fade);
     delete this.state.fade;
     if (urlParams.has('fade')) {
@@ -193,7 +261,11 @@ export class Store {
 
   // Sync entire state to localStorage
   private syncToLocalStorage() {
-    localStorage.setItem('settings', JSON.stringify(this.getStatefulSettings()));
+    try {
+      localStorage.setItem('settings', JSON.stringify(this.getStatefulSettings()));
+    } catch {
+      // Settings still work in memory when browser storage is unavailable.
+    }
   }
 
   // Sync only one property to the URL using history API
@@ -224,11 +296,14 @@ export function createStore() {
     locale: resolveLocale(),
     'ui-locale': undefined,
     'quote-locales': undefined,
+    bilingual: false,
+    'translation-locale': 'es-ES',
     screensaver: false,
     work: false,
     zen: false,
     transition: 'fade',
     'show-time': true,
+    'hide-book-title': false,
     font: 'default',
     theme: 'base-system',
     color: '#d24335',

@@ -36,10 +36,21 @@ const first: Quote = {
   quote_last: '.',
   title: 'Book',
   author: 'Writer',
-  sfw: 'sfw',
+  sfw: true,
 };
 const second = { ...first, id: '1200-001' };
 const active = () => state['active-quote'] as ResolvedQuote;
+
+it.each([false, 'false', 'true', 'sfw', 'nsfw', 'unknown', undefined, null, 1])(
+  'work mode excludes non-boolean-true classifications: %s',
+  async (sfw) => {
+    state.work = true;
+    vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => [{ ...first, sfw }, second] } as Response);
+    await updateQuote();
+    expect(active().id).toBe(second.id);
+    expect(active().variants).toBe(1);
+  },
+);
 
 beforeEach(() => {
   vi.restoreAllMocks();
@@ -67,7 +78,7 @@ it('chooses an available quote if the identity is missing in the target locale',
 it('preserves identity after work mode filters earlier entries', async () => {
   state.work = true;
   state['active-quote'] = { ...second, index: 1 };
-  vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => [{ ...first, sfw: 'nsfw' }, second] } as Response);
+  vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => [{ ...first, sfw: false }, second] } as Response);
   await updateQuote({ preserveQuote: true });
   expect(active().id).toBe(second.id);
   expect(active().index).toBe(0);
@@ -107,7 +118,7 @@ it('explains missing IDs and respects work mode even with a legacy index', async
   state.work = true;
   state.index = '0';
   state['quote-id'] = first.id;
-  vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => [{ ...first, sfw: 'nsfw' }, second] } as Response);
+  vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => [{ ...first, sfw: false }, second] } as Response);
   await updateQuote();
   expect(active().id).toBe(second.id);
   expect(document.getElementById('quote-notice')?.textContent).toContain('unavailable');

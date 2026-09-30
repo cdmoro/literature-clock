@@ -91,6 +91,7 @@ export function initReadingControls() {
     pause.title = paused ? strings.resume : strings.pause;
     pause.setAttribute('aria-label', pause.title);
     pause.setAttribute('aria-pressed', String(paused));
+    pause.classList.toggle('active', !paused);
     pause.disabled = !store.get('active-quote') || !!store.get('quote');
     const quote = store.get('active-quote');
     previous.title = strings.previousQuote;

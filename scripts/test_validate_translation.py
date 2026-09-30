@@ -10,7 +10,7 @@ class TranslationValidationTest(unittest.TestCase):
     def setUp(self):
         self.source = [{'Time': '07:30', 'Id': '0730-000', 'Quote time': 'half past seven',
                         'Quote': 'It was half past seven.<br>He waited.', 'Title': 'Book',
-                        'Author': 'Author', 'SFW': 'sfw'}]
+                        'Author': 'Author', 'SFW': 'true', 'Source locale': 'en'}]
         self.target = [{**self.source[0], 'Quote time': 'επτά και μισή',
                         'Quote': 'Ήταν επτά και μισή.<br>Περίμενε.', 'Title': 'Βιβλίο'}]
 
@@ -28,7 +28,7 @@ class TranslationValidationTest(unittest.TestCase):
         self.assertTrue(validate(self.source, self.target))
 
     def test_rejects_changed_metadata_and_lost_formatting(self):
-        for field, value in [('Time', '19:30'), ('SFW', 'nsfw'), ('Author', 'Other'),
+        for field, value in [('Time', '19:30'), ('SFW', 'false'), ('Author', 'Other'),
                              ('Quote', 'Ήταν επτά και μισή.'), ('Title', '')]:
             with self.subTest(field=field):
                 changed = [{**self.target[0], field: value}]
@@ -38,7 +38,7 @@ class TranslationValidationTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / 'quotes.csv'
             contents = ('Time|Id|Quote time|Quote|Title|Author|SFW\n'
-                        '07:30|0730-000|επτά και μισή|Ήταν επτά και μισή.|Βιβλίο|Author|sfw\n')
+                        '07:30|0730-000|επτά και μισή|Ήταν επτά και μισή.|Βιβλίο|Author|true\n')
             path.write_text(contents, encoding='utf-8')
             before = path.read_bytes()
             self.assertEqual(read_catalogue(path)[0]['Title'], 'Βιβλίο')

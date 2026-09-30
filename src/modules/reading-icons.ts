@@ -1,4 +1,5 @@
 const paths = {
+  'hide-title': '<path d="M3 3l18 18M10 5h10v14M6 5H4v14h12M8 9h8M12 9v6"/>',
   pause: '<path d="M7 5v14M17 5v14" stroke-width="4"/>',
   play: '<path d="m8 5 11 7-11 7Z" fill="currentColor" stroke="none"/>',
   previous: '<path d="m14 6-6 6 6 6"/>',

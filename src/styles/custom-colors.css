@@ -71,9 +71,9 @@ footer .input-group { vertical-align: top; }
 
 /* The highlighted time sits on the neutral incoming bubble, not the chosen color. */
 [data-theme='whatsapp-light'].custom-accent .time {
-  color: color-mix(in srgb, var(--accent-color) 45%, #000);
+  color: color-mix(in srgb, var(--accent-color) 65%, #000);
 }
 
 [data-theme='whatsapp-dark'].custom-accent .time {
-  color: color-mix(in srgb, var(--accent-color) 45%, #fff);
+  color: color-mix(in srgb, var(--accent-color) 65%, #fff);
 }

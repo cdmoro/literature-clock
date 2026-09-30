@@ -77,7 +77,7 @@ describe('locale settings', () => {
         quote_last: '.',
         title: 'Book',
         author: 'Author',
-        sfw: 'sfw',
+        sfw: true,
       },
       locale,
     );

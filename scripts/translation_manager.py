@@ -12,6 +12,7 @@ from pathlib import Path
 from translate_catalogue import (PacedTranslator, TranslationStopped, atomic_write,
                                  export_review, initialize_catalogue, load_state,
                                  run_batches, save)
+from quote_sources import resolve_locale, source_catalogue
 from validate_translation import FIELDS, ROOT, catalogue_progress, is_draft, read_catalogue, validate
 
 
@@ -21,8 +22,6 @@ class Project:
             raise ValueError('Use a full locale such as el-GR, ja-JP or pt-BR.')
         if not re.fullmatch(r'[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*', target):
             raise ValueError('Use a Google language code such as el, ja or zh-CN.')
-        if locale == 'en-GB':
-            raise ValueError('en-GB is the source catalogue. Choose a target language.')
         self.root, self.locale, self.target = Path(root), locale, target
         self.folder = self.root / '.translation-work' / locale
         self.catalogue = self.root / 'quotes' / f'quotes.{locale}.csv'
@@ -30,7 +29,7 @@ class Project:
         self.review_path = self.folder / 'review.json'
 
     def source(self):
-        return read_catalogue(self.root / 'quotes' / 'quotes.en-GB.csv')
+        return source_catalogue(self.root / 'quotes')
 
     def create(self):
         config = self.folder / 'project.json'
@@ -156,12 +155,18 @@ class Project:
         for index, row in enumerate(rows):
             if row['Id'] != identifier:
                 continue
+            available = [path.name[len('quotes.'):-4] for path in (self.root / 'quotes').glob('quotes.*.csv')
+                         if not path.name.endswith('.draft.csv')]
+            edits_source = resolve_locale(row['Source locale'], available) == self.locale
+            if edits_source and not approved:
+                raise ValueError('A reference passage must stay published; it cannot be saved as a draft.')
             updated = {**row, **fields, 'Draft': 'false' if approved else 'true'}
             errors = validate([source[identifier]], [updated])
             if errors:
                 raise ValueError('\n'.join(errors))
             reviews = self.reviews()
-            entry = {'source': source[identifier], 'translation': updated, 'approved': approved}
+            reference = {key: value for key, value in updated.items() if key != 'Draft'} if edits_source else source[identifier]
+            entry = {'source': reference, 'translation': updated, 'approved': approved}
             if any(item['translation']['Id'] == identifier for item in reviews):
                 reviews = [entry if item['translation']['Id'] == identifier else item for item in reviews]
             else:

@@ -1,3 +1,5 @@
+import { updateQuoteDescription } from './hide-book-title';
+import { renderTranslation } from './bilingual';
 import { getBaseLocale, getRandomLocale, getStrings } from './locales';
 import { removeBackgroundImage, setDynamicBackgroundPicture, setTheme } from './themes';
 import { Locale, ResolvedQuote, Quote } from '../types';
@@ -7,6 +9,7 @@ import { cancelQuoteTransition, transitionQuote } from './transitions';
 
 let latestRequest = 0;
 import { store } from '../store';
+import { quoteMarkup } from '../utils/quote-markup';
 import { readingStrings, showQuoteNotice } from './reading-ui';
 
 function prefetchNextQuotes(locale: string) {
@@ -37,7 +40,7 @@ async function getQuotes(time: string, locale: Locale): Promise<Quote[]> {
     let quotes = (await response.json()) as Quote[];
 
     if (store.get('work')) {
-      quotes = quotes.filter((q) => q.sfw !== 'nsfw');
+      quotes = quotes.filter((q) => q.sfw === true);
     }
 
     if (!quotes.length) {
@@ -62,12 +65,6 @@ async function getQuote(
 
   let quoteIndex = Math.floor(Math.random() * quotes.length);
 
-  if (preserveQuote) {
-    const id = store.get('active-quote')?.id;
-    const index = quotes.findIndex((quote) => quote.id === id);
-    if (index >= 0) quoteIndex = index;
-  }
-
   if (store.get('index')) {
     const urlParamsIndex = parseInt(store.get('index')!);
     if (!isNaN(urlParamsIndex) && quotes[urlParamsIndex]) {
@@ -84,6 +81,12 @@ async function getQuote(
   if (variantStep) {
     const current = quotes.findIndex((quote) => quote.id === store.get('active-quote')?.id);
     if (current >= 0) quoteIndex = (current + variantStep + quotes.length) % quotes.length;
+  }
+
+  if (preserveQuote) {
+    const id = store.get('active-quote')?.id;
+    const index = quotes.findIndex((quote) => quote.id === id);
+    if (index >= 0) quoteIndex = index;
   }
 
   const quote = Object.assign({}, quotes[quoteIndex]) as ResolvedQuote;
@@ -115,11 +118,12 @@ export async function updateQuote({
   time = store.get('time') || (store.get('paused') ? store.get('active-quote')?.time : undefined) || getTime(),
   preserveQuote = false,
   variantStep = 0,
-} = {}) {
+  locale: requestedLocale,
+}: { time?: string; preserveQuote?: boolean; variantStep?: number; locale?: Locale } = {}) {
   const request = ++latestRequest;
   cancelQuoteTransition();
   const testQuote = store.get('quote');
-  let locale = store.get('locale') as Locale;
+  let locale = requestedLocale || (store.get('locale') as Locale);
 
   if (!locale) {
     return;
@@ -127,16 +131,13 @@ export async function updateQuote({
 
   if (variantStep && store.get('active-quote')) {
     locale = store.get('active-quote')!.locale;
-  } else if (store.get('random-locale') && !store.get('quote-id')) {
+  } else if (!requestedLocale && store.get('random-locale') && !store.get('quote-id')) {
     locale = getRandomLocale();
   }
 
   const quote = await getQuote(time, locale, preserveQuote, variantStep);
   if (request !== latestRequest) return;
   const timeClass = quote.quote_time_case.replace(/<[^>]*>/g, '').length <= 11 ? 'time text-nowrap' : 'time';
-  const quoteText =
-    testQuote || `${quote.quote_first}<span class="${timeClass}">${quote.quote_time_case}</span>${quote.quote_last}`;
-
   const blockquote = document.getElementById('quote');
 
   await transitionQuote(
@@ -158,15 +159,34 @@ export async function updateQuote({
         blockquote.innerHTML = '';
 
         const p = document.createElement('p');
-        p.innerHTML = quoteText;
+        if (testQuote) {
+          p.textContent = testQuote;
+        } else {
+          p.append(quoteMarkup(quote.quote_first));
+          const timeSpan = document.createElement('span');
+          timeSpan.className = timeClass;
+          timeSpan.append(quoteMarkup(quote.quote_time_case));
+          p.append(timeSpan, quoteMarkup(quote.quote_last));
+        }
 
         const cite = document.createElement('cite');
-        cite.innerHTML = `<span id="hyphen">— </span><span id="title">${quote.title}</span><span id="comma">, </span><span id="author">${quote.author}</span>`;
+        for (const [id, text] of [
+          ['hyphen', '— '],
+          ['title', quote.title],
+          ['comma', ', '],
+          ['author', quote.author],
+        ]) {
+          const span = document.createElement('span');
+          span.id = id;
+          span.textContent = text;
+          cite.append(span);
+        }
 
         blockquote.appendChild(p);
         blockquote.appendChild(cite);
+        renderTranslation();
         blockquote.setAttribute('aria-label', time);
-        blockquote.setAttribute('aria-description', `${quote.quote_raw} (${quote.title}, ${quote.author})`);
+        updateQuoteDescription();
 
         fitQuote();
 

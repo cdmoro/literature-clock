@@ -33,6 +33,7 @@ export const INITIAL_THEME_FONT_SIZE = {
 } as const;
 
 export const CITE_FACTOR = {
+  poster: 1.05,
   kindle: 0.5,
 } as const;
 

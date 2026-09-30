@@ -4,128 +4,153 @@ A clock for book lovers that tells the time using quotes from literature. Suppor
 
 Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) ([literature-clock](https://github.com/JohannesNE/literature-clock)) and [Jaap Meijers](http://www.eerlijkemedia.nl/) ([e-reader clock](https://www.instructables.com/id/Literary-Clock-Made-From-E-reader/)).
 
-![373910718-c9d2543f-b95c-41d1-bcdc-2c5f7631cd1f](https://github.com/user-attachments/assets/15fedb98-8d39-418a-86fa-a7fd9d0077d2)
+![Literature Clock displaying a literary quote with the time highlighted](https://github.com/user-attachments/assets/15fedb98-8d39-418a-86fa-a7fd9d0077d2)
+
+**[Open Literature Clock](https://literatureclock.netlify.app/)** · [Themes](#themes) · [Settings](#settings) · [Language incubator](#language-incubator) · [Contributing](#contributing) · [Development](#development)
 
 ## Features
 
-- Zen mode: remove all the distractions ([link](https://literatureclock.netlify.app/?zen=true))
-- Work mode: only shows quotes that are safe for work ([link](https://literatureclock.netlify.app/?work=true))
-- [Screensaver mode](#screensaver): make the quotes dance around the screen! ([link](https://literatureclock.netlify.app/?screensaver=true))
-- Languages: supports British and American English, Spanish, Portuguese, French, Italian, and German (by default, it will try to use the system language)
-  - Random language: see a quote in a different language each minute, isn't that cool? ([link]([https://literatureclock.netlify.app/?locale=random](https://literatureclock.netlify.app/?random-locale=true)))
-- [Themes](#themes): the clock has `colour themes` and `special themes` and each theme has light and dark variants, of course
-  - Random colour theme: see a different colour theme each minute, isn't that even cooler? ([link](https://literatureclock.netlify.app/?theme=color-system))
-- Fade effect
-- Share your favourite quotes across your social media!
-- Font personalization: if you don't like the default font of a theme, that's perfectly fine, we won't judge you, so you can change it for another using the `font` param!
-- Progress bar: why? because it is cute :) (you can disable it if you don't like cute things, no problem)
-- Responsive: no matter how long a quote is, it will always look good on desktop and mobile 😎
-- Static mode: get rid of all the javascript event listener an control the clock only with query parameters
-- All the settings are saved in the browser's local storage and they are updated in the URL without refreshing the page, thanks to History API
-
-## Settings
-
-The clock can be controlled using URL parameters, these parameters will overwrite the existing configuration
-
-- `zen`: enable/disable Zen mode
-- `work`: enable/disable Work mode
-- `screensaver`: enable/disable Screensaver mode
-- `locale`: set the locale
-- `random-locale`: set random locale
-- `theme`: set the theme
-- `font`: set a custom font from Google Fonts (it will be available on the font selector input!)
-- `fade`: enable/disable fade effect
-- `progressbar`: enable/disable progressbar
-- `show-time`: enable/disable the time at the top of the screen
-- `static`: get rid of the menu and control the clock only with query parameters!
-
-Developer settings
-
-- `time`: get the quotes for a particular time ([link](https://literatureclock.netlify.app/?time=12:30))
-- `quote`: test a quote before submitting it ([link](https://literatureclock.netlify.app/?quote=Hi%20mom!%20I%27m%20part%20of%20the%20Literature%20Clock!)) (it is no necessary to escape the quote by adding the special characters, just write the quote and the browser will add them)
-- `index`: get a specific quote from the array of quotes instead of a random one
-
-## Languages
-
-There is support for the following languages (by default, it will try to use the system language):
-
-- British English (`en-GB`, default)
-- American English (`en-US`)
-- Spanish
-- Portuguese
-- French
-- Italian
-- German
-
-The clock preserves explicitly selected locales from the URL or saved settings. Generic English (`en`), unsupported English regions, and unrecognized languages fall back to `en-GB`. Locale matching is case-insensitive and accepts underscores (for example, `en_US`).
-
-Want to implement a new language? Sure thing, ping me and let's talk about it!
-
-### About the quotes
-
-The `en-GB` catalogue preserves the original English quotes. The `en-US` catalogue starts from the same quotes and uses colons for numeric clock times (for example, `7:59` instead of `7.59`). This notation adaptation is not a verification of every US book edition; edition-specific wording can be corrected quote by quote.
-
-Translations
-
-All translations were made from the original CSV English file, sometimes the translations are not accurate (I used Google Translate, yes, I know), but it's fine, this is something that can be fixed easily, just one quote at a time. :) So far, these are the times that don't have quotes:
-
-- 10:28
-- 18:44
-
-If you want to help you can:
-
-- [Raise an issue to add a new quote](https://github.com/cdmoro/literature-clock/issues/new?template=add-quote.yml&labels=add-quote&title=%5B23%3A28%5D+%5Ben-GB%5D+Add+quote&locale=en-GB) or a new variant for a specific time
-- Raise an issue reporting a bug related to a quote (i.e. a typo)
-- Contact me and share your thoughts about a quote, the project, or anything you want :D
-- Show me your love in the form of [coffees](https://buymeacoffee.com/cdmoro), [cafecitos](http://cafecito.app/cdmoro)
-- Be my [Patreon](https://patreon.com/cdmoro)
-
-## Screensaver
-
-If you want to use this clock as a screensaver there are several ways to address this, although, it depends on the OS. I'm currently using the Mac OS solution and it worked like a charm. You can find more information here:
-
-- Mac OS: Mac OS X Screen Saver powered by a Web View (https://github.com/liquidx/webviewscreensaver)
-- Windows: Set Webpage as Screensaver in Windows 10 (https://www.youtube.com/watch?v=UovZwUlwwEs)
-- Linux: Live Webpage as a Desktop Wallpaper on KDE Desktop (https://www.youtube.com/watch?v=_v1sJhBu25o)
+- **A little literature, every minute.** Read a passage that mentions the current time, with its book and author. The layout adapts to desktop and mobile screens.
+- **Make it your own.** Read on a textured **Book Page**, watch the day unfold in **Horizon**, or explore Poster, Terminal, Handwriting and more. Choose light, dark or system appearance, custom accent colours and Google Fonts.
+- **Read across languages.** Choose from six languages, including British and American English catalogues. Pick your quote languages independently of the interface, rotate between them, or enable **bilingual mode** to see a matching translation below the passage.
+- **Take your time.** Pause a quote, browse other quotes for the same minute, then return to the live clock whenever you're ready.
+- **Keep the passages you love.** Save favourites and revisit recently displayed quotes in **My quotes**, without an account.
+- **Share the exact quote.** Send a direct link to the displayed passage, copy it when native sharing isn't available, or download an image.
+- **Set the mood.** Use Zen mode, fullscreen or a gently moving screensaver. Choose fade, slide, blur or zoom transitions—or no animation—and toggle the time and progress bar.
+- **Filter explicit passages.** Work mode shows only quotes whose `SFW` classification is `true`.
 
 ## Themes
 
-![splash](https://github.com/user-attachments/assets/d882b15c-0947-45ed-8456-25f56fb6083c)
+![A selection of Literature Clock themes](https://github.com/user-attachments/assets/d882b15c-0947-45ed-8456-25f56fb6083c)
+
+A few places to start:
+
+| Theme | Look and feel | Try it |
+| --- | --- | --- |
+| Book Page | Paper texture, book typography and a highlighted time | [Light](https://literatureclock.netlify.app/?theme=book-light) · [Dark](https://literatureclock.netlify.app/?theme=book-dark) |
+| Horizon | A sky that changes with the time of day | [Open Horizon](https://literatureclock.netlify.app/?theme=horizon-system) |
+| Poster | Bold typography in a decorative frame | [Open Poster](https://literatureclock.netlify.app/?theme=poster-system) |
+| Terminal | A terminal-inspired reading display | [Open Terminal](https://literatureclock.netlify.app/?theme=terminal-dark) |
+| Random colours | A different colour theme each minute | [Try random colours](https://literatureclock.netlify.app/?theme=color-system) |
+
+Explore the full selection in **Settings**: Base, colour themes, Retro, Elegant, Festive, Bohemian, Book Page, Handwriting, Anaglyph, WhatsApp, Terminal, Frame, Subtle, Poster, Horizon, Photo and Kindle. Themes offer light, dark and system variants; supported themes also let you choose an accent colour and reset it to the theme default.
+
+## Reading and collecting quotes
+
+**Pause and browse.** The pause button holds the current passage while the real clock continues. The circular-arrow button pauses reading and cycles through available quotes for that minute and language, visiting each before repeating. **Back to live clock** resumes the current minute, including in Zen mode. Pausing only affects the current page and is not saved as a preference.
+
+**Favourites and history.** Use the heart to save a passage, then open **My quotes** to see your Favourites and Recent tabs. The browser keeps up to 500 favourites and the last 100 distinct displayed quotes. Reopen a passage, remove a favourite or clear recent history independently. These collections stay in this browser; clearing its data removes them. Work mode hides explicit entries without deleting them.
+
+**Sharing and reporting.** Shared links identify the quote by language, minute and stable ID, and include its theme, font and colour. Opening one starts paused so the recipient can read it. Content filters still apply; unavailable or filtered quotes show a notice and an available alternative. The **Report error** link also includes a direct quote link to help locate the passage that needs correcting.
+
+## Languages and bilingual mode
+
+| Language | Locale |
+| --- | --- |
+| British English | `en-GB` (default) |
+| American English | `en-US` |
+| Spanish | `es-ES` |
+| Portuguese | `pt-PT` |
+| French | `fr-FR` |
+| Italian | `it-IT` |
+| German | `de-DE` |
+
+The clock initially follows your browser's language. In **Settings**, choose an interface language and select one or more quote languages. An empty selection follows the interface language; multiple selections rotate quotes between those languages.
+
+Enable **bilingual mode** and choose a translation language to display the matching catalogue translation beneath the quote. This uses existing translations, not live machine translation. When a translation is unavailable, or the passage is already in the selected locale, the clock explains why a second passage isn't shown.
+
+Explicit URL and saved locale choices are preserved. Generic English (`en`), unsupported English regions and unrecognized languages fall back to `en-GB`. Locale matching ignores case and accepts underscores, such as `en_US`.
+
+### About the catalogues
+
+The `en-GB` catalogue preserves the original English quotes. The `en-US` catalogue starts from the same collection and uses colons for numeric times, such as `7:59` instead of `7.59`. This is a notation adaptation, not a verification of every US book edition.
+
+Many translations were originally made with Google Translate and may need corrections. Contributions that improve wording, book titles and time references are welcome. If a minute has no eligible quote, the clock displays a localized fallback.
+
+## Language incubator
+
+**Speak a language that is missing from the clock? Help bring it to life.** You can start a new catalogue, translate a few passages or review someone else's work. You don't have to take on an entire language alone: a small, carefully reviewed contribution is a useful start.
+
+The **language incubator** is the workflow for growing new catalogues before they join the clock. A local translation administrator lets you create a language, prepare draft translations, compare them with the declared source, edit and approve passages, and preview them in the clock. You can prepare drafts manually, with built-in batches of 25, through Calibre or with an AI agent, then review a few passages at a time. You don't have to translate thousands of quotes from scratch; people who know the language make those drafts worth reading.
+
+Keep author names unchanged and preferably retain the source book titles. **Quote IDs must stay exactly the same: they are the key that connects each passage across languages.**
+
+[**Explore the language incubator →**](docs/LANGUAGE_INCUBATOR.md) for the step-by-step guide, or [open an issue](https://github.com/cdmoro/literature-clock/issues/new) with the language you'd like to contribute and the kind of help you can offer. If you're comfortable reviewing text but not setting up the tools, say so—an issue is a good place to coordinate with other contributors.
+
+## Settings
+
+Open **Settings** to configure languages, appearance and display options. You can choose a theme font or add a Google Fonts family by name, preview it and keep it in your custom font list.
+
+Preferences are saved in the browser. URL parameters override saved settings, and changes update the address without reloading the page. Reading state and collections are separate from those preferences.
+
+<details>
+<summary><strong>URL parameter reference</strong></summary>
+
+Use `true` or `false` for boolean options. For example: [Book Page in Zen mode](https://literatureclock.netlify.app/?theme=book-light&zen=true).
+
+| Parameter | Purpose / values |
+| --- | --- |
+| `theme` | Theme and variant, such as `book-light`, `poster-dark` or `horizon-system` |
+| `color` | Custom accent colour on supported themes; encode `#` as `%23` in URLs |
+| `font` | Google Fonts family name, or `default` for the theme font |
+| `locale` | Quote locale, such as `en-GB` or `es-ES` |
+| `ui-locale` | Interface language, independently of the quote language |
+| `quote-locales` | Comma-separated quote locales; an empty value follows the interface language |
+| `random-locale` | Rotate quote languages; `true` uses the selected languages, or all supported languages when no selection is configured |
+| `bilingual` | Show a matching catalogue translation |
+| `translation-locale` | Translation language, such as `es-ES` |
+| `zen` | Hide distractions |
+| `work` | Filter quotes using the catalogue's safe-for-work classification |
+| `screensaver` | Move the quote around the screen |
+| `transition` | `none`, `fade`, `slide`, `blur` or `zoom` |
+| `progressbar` | Show the minute progress bar |
+| `show-time` | Show the clock time above the quote |
+| `static` | Remove the footer controls for a display configured through its URL |
+
+For fixed passages and previews:
+
+| Parameter | Purpose |
+| --- | --- |
+| `time` | Hold a particular minute, such as [12:30](https://literatureclock.netlify.app/?time=12:30) |
+| `quote-id` | Open a specific quote by stable ID; use the share action to create the full link |
+| `quote` | Preview custom text before submitting a quote |
+| `index` | Legacy selection by position in the minute's quote array |
+
+Older `fade=true` / `fade=false` links remain supported. Prefer `transition` for new links.
+
+</details>
+
+## Screensaver
+
+[Enable screensaver mode](https://literatureclock.netlify.app/?screensaver=true) to move the quote gently around the screen. For an operating-system screensaver or desktop display, these external guides and tools offer possible setups:
+
+- [macOS: WebViewScreenSaver](https://github.com/liquidx/webviewscreensaver)
+- [Windows: webpage screensaver setup guide](https://www.youtube.com/watch?v=UovZwUlwwEs)
+- [Linux / KDE: webpage wallpaper setup guide](https://www.youtube.com/watch?v=_v1sJhBu25o)
+
+## Contributing
+
+Help the clock grow, one passage at a time:
+
+- [Suggest a new quote or a variant for an existing minute](https://github.com/cdmoro/literature-clock/issues/new?template=add-quote.yml&labels=add-quote&title=%5B23%3A28%5D+%5Ben-GB%5D+Add+quote&locale=en-GB).
+- Use **Report error** on a displayed quote to report a typo, incorrect time or translation problem.
+- [Open an issue](https://github.com/cdmoro/literature-clock/issues) for bugs, ideas or a new language proposal.
+- Start a language or help review one through the [language incubator](docs/LANGUAGE_INCUBATOR.md).
+- Submit a pull request with improvements to the clock, themes or documentation.
 
 ## Development
 
-### Web
+See the [development guide](docs/DEVELOPMENT.md) for local setup, commands, tests, quote generation and the translation administrator.
 
-To run the project you need to have Python, Node and NPM installed on your system.
-  1. Clone the project
-  1. Install NPM dependencies
-  1. Run `npm run generate-times` to generate all the quote files
-  1. Run `npm run dev` and voila! The clock will be automatically opened in your favorite browser.
+## Technology and credits
 
-### Translating a new catalogue
+Built with TypeScript and [Vite](https://vite.dev/), tested with [Vitest](https://vitest.dev/), with [Husky](https://typicode.github.io/husky/) for Git hooks and [Netlify](https://www.netlify.com/) for hosting.
 
-For resumable Google Translate batches, progress tracking, review and export, see [the translation workflow](scripts/TRANSLATING.md). The existing single-quote tool remains available.
+Also made possible by:
 
-### About quote generation
-
-I used Python to generate the JSON files (one per time if the time has quotes) with the quotes. The script goes through all the CSV files (one per locale) and puts the files in the appropriate folders. Also, the script generates an additional JSON file with statistics per locale, such as the times with fewer quotes, the author with the most quotes, etc.
-
-To generate the times, simply run `python .\scripts\generate_times.py` in the root folder. By default, the script will generate all the JSON files, if you want to generate the JSON files for a particular locale you can add it as a parameter, i.e. `.\scripts\generate_times.py en-US`.
-
-## Technology stack
-
-This project is possible thanks to the following projects:
-
-- [Vite](https://vite.dev/)
-- [Vitest](https://vitest.dev/)
-- [Husky](https://typicode.github.io/husky/)
-- [Netlify](https://www.netlify.com/)
-
-## Credits
-
-- [html2canvas-pro](https://yorickshan.github.io/html2canvas-pro/)
-- [lunarphase-js](https://github.com/jasonsturges/lunarphase-js)
-- [Picsum](https://picsum.photos/)
+- [html2canvas-pro](https://yorickshan.github.io/html2canvas-pro/) for quote images
+- [lunarphase-js](https://github.com/jasonsturges/lunarphase-js) for moon phases
+- [Picsum](https://picsum.photos/) for photographs
 
 ## Licensing and quote provenance
 
@@ -133,55 +158,8 @@ The original software contributions by Carlos Bonadeo are licensed under the [MI
 
 The MIT license does not relicense third-party material or the literary quotations included in this repository. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the quote collection's provenance, the upstream license notice, and the limits of the permissions we can confirm.
 
-## Contact
+## Contact and support
 
-Hi! I'm Carlos, and you can find me here
+Hi! I'm Carlos. Find me on [Twitter](https://twitter.com/CarlosBonadeo) or [LinkedIn](https://www.linkedin.com/in/cdbonadeo/).
 
-- [Twitter](https://twitter.com/CarlosBonadeo)
-- [LinkedIn]([https://twitter.com/CarlosBonadeo](https://www.linkedin.com/in/cdbonadeo/))
-
-Run `npm run admin` for the local Vite translation administrator at
-`http://127.0.0.1:5174`. Create languages, translate batches directly into draft CSV
-rows, and review/edit/approve them from the browser. `npm run translate` remains
-available as a terminal alternative. Complete translations from Calibre or other
-tools can be imported with `scripts/import_translation.py` and reviewed directly,
-without running translation batches (see the workflow below).
-
-New languages start from `quotes.en-GB.csv` with `Draft=true` and stay out of the
-clock's selector until explicitly enabled. `?locale=el-GR-draft` previews pending
-quotes after generating the time data, without enabling `locale=el-GR`. Draft URLs
-are unlisted, not private. See the [translation workflow](scripts/TRANSLATING.md).
-
-### Links to individual quotes
-
-Sharing includes the displayed quote's language, minute and stable `quote-id`, plus its theme, font and colour. Browsers without native sharing copy the link to the clipboard; image download remains available separately. The recipient's random-language preference cannot change a linked quote. Content filters still apply: unavailable or filtered IDs display an explanatory notice and another available quote. Legacy `index` links remain supported.
-
-### Pause reading
-
-Use the pause button to keep reading the current quote while the real clock continues. A small status shows the quote's minute and a “Back to live clock” button, also available in Zen mode. Opening a `time`/`quote-id` link starts paused; resuming clears its fixed selection and immediately shows the current minute. Language and content-filter changes keep the paused minute. Pausing is local to the current page and is not saved as a preference.
-
-### More quotes for this minute
-
-The circular-arrow button pauses reading and selects another quote for the displayed minute and language. It visits all eligible quotes before repeating, avoids an immediate repeat across cycles, and respects Work mode. It is disabled when there is only one available quote or a fallback. “Back to live clock” ends browsing.
-
-### Favorites
-
-Use the heart to save the displayed quote and “My quotes” to open your collection. Favorites are stored only in this browser, with no account or server, and survive reloads. Each includes the text, attribution and a permanent link. You can remove individual favorites; Work mode hides explicit entries without deleting them. There is a 500-quote limit, and storage failures are reported instead of claiming that a quote was saved. Clearing browser data removes the collection.
-
-### Recent quotes
-
-“My quotes” also includes a Recent tab: the last 100 distinct quotes actually displayed, newest first, stored only in this browser. Repeated views move a quote to the top. You can reopen a quote, save it as a favorite or clear the history without affecting favorites. Placeholder quotes and custom previews are excluded. While the dialog is open its list stays still; reopening it or switching tabs refreshes it. Work mode hides explicit entries in both tabs.
-
-## Search visibility
-
-The production canonical URL is `https://literatureclock.netlify.app/`. Vite copies
-`public/robots.txt` and `public/sitemap.xml` into the deployment. The home page
-includes an accessible About section and WebApplication structured data.
-Language and appearance query parameters remain app settings under the same
-canonical page; they are not advertised as separately indexed translations.
-
-After deployment, verify the URL-prefix property in Google Search Console, inspect
-the home page using the live URL test, request indexing and submit `sitemap.xml`.
-Indexing and rankings are determined by Google, not by the deployment itself.
-If changing domains, update the canonical URL, social metadata, structured data,
-robots sitemap URL and sitemap together, and redirect the old domain.
+If you enjoy Literature Clock, you can support the project with a [coffee](https://buymeacoffee.com/cdmoro), a [cafecito](http://cafecito.app/cdmoro) or through [Patreon](https://patreon.com/cdmoro).

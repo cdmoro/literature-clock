@@ -3,10 +3,10 @@ import { getLiveTime, updateFavicon } from '../utils';
 import { setDayParameters } from './horizon';
 import { store } from '../store';
 
-const timeProgressBar = document.getElementById('progress-bar');
 let lastTime: string;
 
 function updateProgressBar() {
+  const timeProgressBar = document.getElementById('progress-bar');
   const now = new Date();
   const time = parseFloat(`${now.getSeconds()}.${now.getMilliseconds().toString().padStart(3, '0')}`);
   const percentage = ((time / 60) * 100).toFixed(4);
@@ -28,7 +28,7 @@ async function updateTime() {
 
     document.title = document.title.replace(/[0-9]{2}:[0-9]{2}/, time);
 
-    const timeEl = document.getElementById('time-clock');
+    const timeEl = document.querySelector('#time-clock span');
     if (timeEl) {
       timeEl.textContent = time;
     }
@@ -43,8 +43,29 @@ export function initClock() {
   if (store.get('time')) store.set('paused', true, false);
   if (store.get('paused')) void updateQuote();
   void updateTime();
+
   if (!store.get('quote')) {
-    setInterval(updateTime, 1000);
-    setInterval(updateProgressBar, 10);
+    let clockTimer: ReturnType<typeof setInterval> | undefined;
+    let progressFrame: number | undefined;
+    const animateProgress = () => {
+      updateProgressBar();
+      progressFrame = requestAnimationFrame(animateProgress);
+    };
+    const syncTimers = () => {
+      clearInterval(clockTimer);
+      if (progressFrame !== undefined) cancelAnimationFrame(progressFrame);
+      progressFrame = undefined;
+      if (document.hidden) return;
+      void updateTime();
+      clockTimer = setInterval(updateTime, 1000);
+      if (store.get('progressbar')) {
+        animateProgress();
+      }
+    };
+    store.subscribe((state, previous) => {
+      if (state.progressbar !== previous.progressbar) syncTimers();
+    });
+    document.addEventListener('visibilitychange', syncTimers);
+    syncTimers();
   }
 }
