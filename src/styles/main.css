@@ -65,7 +65,7 @@ a:visited {
 }
 
 blockquote {
-  font-family: var(--override-quote-font-family, var(--quote-font-family));
+  font-family: var(--override-quote-font-family, var(--locale-quote-font-family, var(--quote-font-family)));
   font-weight: 100;
   line-height: var(--quote-line-height, 1.1);
   position: relative;
@@ -95,7 +95,10 @@ blockquote .time {
 }
 
 cite {
-  font-family: var(--cite-font-family, var(--override-quote-font-family, var(--quote-font-family)));
+  font-family: var(
+    --cite-font-family,
+    var(--override-quote-font-family, var(--locale-quote-font-family, var(--quote-font-family)))
+  );
   font-size: 1.8vw;
   font-style: normal;
 }
@@ -180,8 +183,7 @@ button {
   line-height: 1.5;
   max-height: 30px;
   padding: 0.25rem 0.5rem;
-  transition:
-    box-shadow 0.15s ease-in-out;
+  transition: box-shadow 0.15s ease-in-out;
   white-space: nowrap;
 }
 
@@ -515,7 +517,9 @@ body.share-quote #clock {
   border-radius: 6px;
   background: #fff0bd;
   color: #42331b;
-  font: 12px/1.4 system-ui, sans-serif;
+  font:
+    12px/1.4 system-ui,
+    sans-serif;
   pointer-events: none;
 }
 
@@ -530,7 +534,9 @@ body.share-quote #clock {
   color: var(--font-color);
   border: 1px solid var(--accent-color);
   border-radius: 0.5rem;
-  font: 0.85rem/1.4 system-ui, sans-serif;
+  font:
+    0.85rem/1.4 system-ui,
+    sans-serif;
   z-index: 10;
 }
 
@@ -542,15 +548,24 @@ body.share-quote #clock {
   width: max-content;
   max-width: 95vw;
   z-index: 5;
-  font: 0.75rem/1.5 system-ui, sans-serif;
+  font:
+    0.75rem/1.5 system-ui,
+    sans-serif;
   color: var(--font-color);
   background: var(--background);
   border-radius: 0.4rem;
   padding: 0.2rem 0.5rem;
 }
-#reading-status button { margin-inline-start: 0.5rem; font: inherit; }
-body.paused #time-clock { display: block !important; }
-body.paused #quote-notice { top: 4.5rem; }
+#reading-status button {
+  margin-inline-start: 0.5rem;
+  font: inherit;
+}
+body.paused #time-clock {
+  display: block !important;
+}
+body.paused #quote-notice {
+  top: 4.5rem;
+}
 
 #quote-translation {
   margin-top: 1.2em;
@@ -560,7 +575,9 @@ body.paused #quote-notice { top: 4.5rem; }
   line-height: 1.4;
 }
 #translation-heading {
-  font: 0.85rem/1.5 system-ui, sans-serif;
+  font:
+    0.85rem/1.5 system-ui,
+    sans-serif;
 }
 #translation-heading:first-letter {
   text-transform: capitalize;

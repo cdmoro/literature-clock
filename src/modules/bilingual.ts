@@ -1,3 +1,4 @@
+import { applyLocaleThemeFont } from './locale-fonts';
 import { store } from '../store';
 import { getBaseLocale, getInterfaceLocale, getStrings, resolveLocale } from './locales';
 import SETTINGS from '../strings/settings.json';
@@ -46,6 +47,7 @@ export async function renderTranslation() {
     if (!translation || quote.fallback) throw new Error('Translation unavailable');
     if (!panel.isConnected) return;
     content.lang = locale;
+    applyLocaleThemeFont(content);
     const passage = document.createElement('p');
     passage.innerHTML = `${translation.quote_first}<span class="time">${translation.quote_time_case}</span>${translation.quote_last}`;
     const attribution = document.createElement('cite');

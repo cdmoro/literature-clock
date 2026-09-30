@@ -68,7 +68,8 @@
     "work_mode": "Work",
     "work_mode_title": "Show only safe for work quotes",
     "zen_mode": "Zen",
-    "zen_mode_title": "Remove everything that distracts you"
+    "zen_mode_title": "Remove everything that distracts you",
+    "el-GR": "Ελληνικά (el-GR)"
   },
   "en-US": {
     "about": "About",
@@ -139,7 +140,8 @@
     "work_mode": "Work",
     "work_mode_title": "Show only safe for work quotes",
     "zen_mode": "Zen",
-    "zen_mode_title": "Remove everything that distracts you"
+    "zen_mode_title": "Remove everything that distracts you",
+    "el-GR": "Ελληνικά (el-GR)"
   },
   "es-ES": {
     "about": "Acerca de",
@@ -210,7 +212,8 @@
     "work_mode": "Trabajo",
     "work_mode_title": "Mostrar solo citas seguras para el trabajo",
     "zen_mode": "Zen",
-    "zen_mode_title": "Elimina todo lo que te distrae"
+    "zen_mode_title": "Elimina todo lo que te distrae",
+    "el-GR": "Ελληνικά (el-GR)"
   },
   "pt-PT": {
     "about": "Sobre",
@@ -281,7 +284,8 @@
     "work_mode": "Trabalho",
     "work_mode_title": "Mostrar apenas citações seguras para o trabalho",
     "zen_mode": "Zen",
-    "zen_mode_title": "Remova tudo o que te distrai"
+    "zen_mode_title": "Remova tudo o que te distrai",
+    "el-GR": "Ελληνικά (el-GR)"
   },
   "fr-FR": {
     "about": "À propos",
@@ -352,7 +356,8 @@
     "work_mode": "Travail",
     "work_mode_title": "Afficher uniquement des citations appropriées pour le travail",
     "zen_mode": "Zen",
-    "zen_mode_title": "Supprimez tout ce qui vous distrait"
+    "zen_mode_title": "Supprimez tout ce qui vous distrait",
+    "el-GR": "Ελληνικά (el-GR)"
   },
   "it-IT": {
     "about": "Informazioni",
@@ -423,7 +428,8 @@
     "work_mode": "Lavoro",
     "work_mode_title": "Mostra solo citazioni appropriate per il lavoro",
     "zen_mode": "Zen",
-    "zen_mode_title": "Rimuovi tutto ciò che ti distrae"
+    "zen_mode_title": "Rimuovi tutto ciò che ti distrae",
+    "el-GR": "Ελληνικά (el-GR)"
   },
   "de-DE": {
     "about": "Über",
@@ -494,6 +500,79 @@
     "work_mode": "Arbeit",
     "work_mode_title": "Nur sichere Zitate für die Arbeit anzeigen",
     "zen_mode": "Zen",
-    "zen_mode_title": "Entferne alles, was dich ablenkt"
+    "zen_mode_title": "Entferne alles, was dich ablenkt",
+    "el-GR": "Ελληνικά (el-GR)"
+  },
+  "el-GR": {
+    "about": "Σχετικά",
+    "about_close": "Κλείσιμο",
+    "add_quote": "Προσθήκη παραθέματος",
+    "anaglyph": "Ανάγλυφο",
+    "author": "Συγγραφέας",
+    "base": "Βασικό",
+    "blue": "Μπλε",
+    "bohemian": "Μποέμ",
+    "book": "Σελίδα βιβλίου",
+    "color": "Τυχαία χρώματα",
+    "colors": "Χρώματα",
+    "copy_mode": "Αντιγραφή",
+    "copy_mode_copied": "Το παράθεμα αντιγράφηκε!",
+    "copy_title": "Αντιγραφή στο πρόχειρο",
+    "dark": "Σκοτεινό",
+    "de-DE": "Deutsch (de-DE)",
+    "default_font": "Προεπιλεγμένη",
+    "document_title": "Λογοτεχνικό ρολόι",
+    "download": "Λήψη",
+    "horizon": "Ορίζοντας",
+    "elegant": "Κομψό",
+    "en-GB": "English (en-GB)",
+    "en-US": "English (en-US)",
+    "es-ES": "Español (es-ES)",
+    "exit_zen_title": "Έξοδος από τη λειτουργία Ζεν",
+    "transition": "Μετάβαση",
+    "transition_none": "Χωρίς μετάβαση",
+    "transition_fade": "Σταδιακή εμφάνιση",
+    "transition_slide": "Απαλή ολίσθηση",
+    "transition_blur": "Απαλή θόλωση",
+    "transition_zoom": "Διακριτικό ζουμ",
+    "fade_mode": "Σταδιακή εμφάνιση",
+    "festive": "Γιορτινό",
+    "font": "Γραμματοσειρά",
+    "fr-FR": "Français (fr-FR)",
+    "frame": "Κορνίζα",
+    "fullscreen_mode": "Πλήρης οθόνη",
+    "gray": "Γκρι",
+    "green": "Πράσινο",
+    "handwriting": "Χειρόγραφο",
+    "it-IT": "Italiano (it-IT)",
+    "kindle": "Kindle",
+    "language": "Γλώσσα",
+    "light": "Φωτεινό",
+    "made_by": "Δημιουργήθηκε από",
+    "orange": "Πορτοκαλί",
+    "photo": "Φωτογραφία",
+    "pink": "Ροζ",
+    "poster": "Αφίσα",
+    "progressbar_mode": "Εμφάνιση γραμμής προόδου",
+    "pt-PT": "Português (pt-PT)",
+    "purple": "Μωβ",
+    "random": "Τυχαία γλώσσα",
+    "report_error": "Αναφορά σφάλματος",
+    "retro": "Ρετρό",
+    "screensaver_mode": "Προφύλαξη οθόνης",
+    "share": "Κοινοποίηση",
+    "subtle": "Διακριτικό",
+    "system": "Σύστημα",
+    "terminal": "Τερματικό",
+    "theme": "Θέμα",
+    "themes": "Θέματα",
+    "time_mode": "Εμφάνιση ώρας",
+    "title": "Τίτλος",
+    "whatsapp": "WhatsApp",
+    "work_mode": "Εργασία",
+    "work_mode_title": "Εμφάνιση μόνο παραθεμάτων κατάλληλων για τον χώρο εργασίας",
+    "zen_mode": "Ζεν",
+    "zen_mode_title": "Απόκρυψη όλων των περισπασμών",
+    "el-GR": "Ελληνικά (el-GR)"
   }
 }

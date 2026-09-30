@@ -1,3 +1,4 @@
+import { refreshLocaleThemeFonts } from './locale-fonts';
 import { THEME_FONTS, resetFont } from './font';
 import { doFitQuote, fitQuote, loadFontIfNotExists } from '../utils';
 import { setDayParameters } from './horizon';
@@ -90,6 +91,7 @@ export function initTheme() {
     variant = preferDarkThemes.matches ? 'dark' : 'light';
   }
   document.documentElement.dataset.theme = `${theme}-${variant}`;
+  refreshLocaleThemeFonts();
   followsDefaultColor = store.get('color').toLowerCase() === defaultColor(theme).toLowerCase();
   applyCustomColor(theme);
 
@@ -105,6 +107,7 @@ export function initTheme() {
 
       store.set('theme', `${theme}-system`);
       document.documentElement.dataset.theme = `${theme}-${e.matches ? 'dark' : 'light'}`;
+      refreshLocaleThemeFonts();
       if (wasDefault && CUSTOMIZABLE_THEMES.has(theme)) {
         store.set('color', defaultColor(theme), false);
         store.removeFromUrl('color');
@@ -203,6 +206,7 @@ export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
   }
 
   document.documentElement.dataset.theme = `${theme}-${variant}`;
+  refreshLocaleThemeFonts();
   if (followsDefaultColor && theme && CUSTOMIZABLE_THEMES.has(theme) && !store.get('theme').startsWith('color-')) {
     store.set('color', defaultColor(theme), false);
     store.removeFromUrl('color');

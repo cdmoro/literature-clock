@@ -50,14 +50,14 @@ describe('locale settings', () => {
   });
 
   test('keeps an unpublished draft URL without adding it to the selector', () => {
-    history.replaceState({}, '', '/?locale=el-GR-draft');
+    history.replaceState({}, '', '/?locale=nl-NL-draft');
     document.body.innerHTML = '<select id="locale-select"><option value="en-GB"></option></select>';
     createStore();
     initLocale();
-    expect(store.get('locale')).toBe('el-GR-draft');
-    expect(getStrings('el-GR-draft')).toEqual(getStrings('en-GB'));
+    expect(store.get('locale')).toBe('nl-NL-draft');
+    expect(getStrings('nl-NL-draft')).toEqual(getStrings('en-GB'));
     expect(document.querySelectorAll('#locale-select option')).toHaveLength(1);
-    expect(document.getElementById('draft-preview-notice')?.textContent).toContain('el-GR');
+    expect(document.getElementById('draft-preview-notice')?.textContent).toContain('nl-NL');
     const select = document.querySelector<HTMLSelectElement>('#locale-select')!;
     select.value = 'en-GB';
     // Locale changes update the notice before refreshing the quote.

@@ -68,4 +68,5 @@ export type Translations = {
   work_mode_title: string;
   zen_mode: string;
   zen_mode_title: string;
+  'el-GR': string;
 };
