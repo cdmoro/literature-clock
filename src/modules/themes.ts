@@ -147,6 +147,8 @@ function applyCustomColor(theme = 'base') {
   });
   if (customizable) root.style.setProperty('--accent-color', store.get('color'));
   else root.style.removeProperty('--accent-color');
+  const accent = customizable ? store.get('color') : getComputedStyle(root).getPropertyValue('--accent-color').trim();
+  root.style.setProperty('--accent-text', contrastingText(accent));
   if (theme === 'whatsapp' && customizable) {
     root.style.setProperty('--bubble-text', contrastingText(store.get('color')));
   } else {

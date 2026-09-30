@@ -15,9 +15,9 @@ test('Greek draft passages use the base alternative in both variants and colour 
   for (const theme of ['base-light', 'base-dark', 'pink-light']) {
     document.documentElement.dataset.theme = theme;
     applyLocaleThemeFont(quote);
-    expect(quote.style.getPropertyValue('--locale-quote-font-family')).toContain('Moderustic');
+    expect(quote.style.getPropertyValue('--locale-quote-font-family')).toContain('Sansation');
   }
-  expect(loadFontIfNotExists).toHaveBeenCalledWith('Moderustic');
+  expect(loadFontIfNotExists).toHaveBeenCalledWith('Sansation');
   // A custom font remains higher priority and is never cleared by language changes.
   document.documentElement.style.setProperty('--override-quote-font-family', 'Lora');
   applyLocaleThemeFont(quote);
@@ -45,19 +45,17 @@ test('bilingual passages select fonts independently of their parent language', (
     '<blockquote id="quote" lang="el-GR"><section id="quote-translation"><div class="translation-content" lang="en-GB"></div></section></blockquote>';
   refreshLocaleThemeFonts();
   const translation = document.querySelector<HTMLElement>('.translation-content')!;
-  expect(document.getElementById('quote')!.style.getPropertyValue('--locale-quote-font-family')).toContain(
-    'Moderustic',
-  );
+  expect(document.getElementById('quote')!.style.getPropertyValue('--locale-quote-font-family')).toContain('Sansation');
   expect(translation.style.getPropertyValue('--locale-quote-font-family')).toBe('initial');
   translation.lang = 'el-GR';
   document.getElementById('quote')!.lang = 'en-GB';
   refreshLocaleThemeFonts();
-  expect(translation.style.getPropertyValue('--locale-quote-font-family')).toContain('Moderustic');
+  expect(translation.style.getPropertyValue('--locale-quote-font-family')).toContain('Sansation');
 });
 
 test.each([
   ['handwriting', 'Mansalva'],
-  ['terminal', 'Iosevka Charon Mono'],
+  ['terminal', 'Victor Mono'],
   ['bohemian', 'M PLUS Rounded 1c'],
 ])('Greek %s passages use %s in both variants', (theme, font) => {
   const quote = document.createElement('blockquote');

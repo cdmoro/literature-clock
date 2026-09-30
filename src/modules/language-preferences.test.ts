@@ -112,3 +112,14 @@ test('deselecting the last chip follows the interface without preselecting a rep
   document.getElementById('settings-dialog')!.dispatchEvent(new Event('close'));
   expect(document.querySelectorAll('#quote-language-options input:checked')).toHaveLength(0);
 });
+
+test('Greek is selectable for the interface and quote rotation', () => {
+  init();
+  selectUi('el-GR');
+  expect(document.documentElement.lang).toBe('el-GR');
+  expect(store.get('locale')).toBe('el-GR');
+  language('el-GR').click();
+  expect(store.get('quote-locales')).toBe('el-GR');
+  expect(getRandomLocale()).toBe('el-GR');
+  expect(language('el-GR').nextElementSibling!.textContent).toContain('(el-GR)');
+});

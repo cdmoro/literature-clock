@@ -76,9 +76,11 @@ test('both color pickers and resets share state, including theme availability', 
   inside.dispatchEvent(new Event('input'));
   expect(outside.value).toBe('#123456');
   expect(store.get('color')).toBe('#123456');
+  expect(document.documentElement.style.getPropertyValue('--accent-text')).toBe('#ffffff');
   outside.value = '#abcdef';
   outside.dispatchEvent(new Event('input'));
   expect(inside.value).toBe('#abcdef');
+  expect(document.documentElement.style.getPropertyValue('--accent-text')).toBe('#000000');
   document.getElementById('settings-reset-color')!.click();
   expect(inside.value).toBe('#d24335');
   expect(outside.value).toBe(inside.value);
@@ -117,21 +119,39 @@ test('tabs show one panel and support keyboard navigation with roving focus', ()
   const appearance = document.getElementById('tab-appearance')!;
   const content = document.getElementById('tab-content')!;
   const behavior = document.getElementById('tab-behavior')!;
-  expect(document.getElementById('settings-content')!.hidden).toBe(true);
+  expect([...document.querySelectorAll('[role=tab]')].map((tab) => tab.id)).toEqual([
+    'tab-content',
+    'tab-appearance',
+    'tab-behavior',
+  ]);
+  expect(document.getElementById('settings-content')!.hidden).toBe(false);
   content.click();
   expect(content.getAttribute('aria-selected')).toBe('true');
   expect(appearance.tabIndex).toBe(-1);
   expect(document.getElementById('settings-appearance')!.hidden).toBe(true);
   expect(document.getElementById('settings-content')!.hidden).toBe(false);
   content.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true }));
-  expect(document.activeElement).toBe(behavior);
-  expect(behavior.getAttribute('aria-selected')).toBe('true');
-  behavior.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true }));
   expect(document.activeElement).toBe(appearance);
-  appearance.dispatchEvent(new KeyboardEvent('keydown', { key: 'End', bubbles: true }));
+  expect(appearance.getAttribute('aria-selected')).toBe('true');
+  appearance.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true }));
+  expect(document.activeElement).toBe(behavior);
+  behavior.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true }));
+  expect(document.activeElement).toBe(content);
+  content.dispatchEvent(new KeyboardEvent('keydown', { key: 'End', bubbles: true }));
   expect(document.activeElement).toBe(behavior);
   behavior.dispatchEvent(new KeyboardEvent('keydown', { key: 'Home', bubbles: true }));
-  expect(document.activeElement).toBe(appearance);
+  expect(document.activeElement).toBe(content);
+  const dialog = document.querySelector<HTMLDialogElement>('#settings-dialog')!;
+  dialog.showModal = vi.fn();
+  for (const tab of [appearance, behavior]) {
+    tab.click();
+    document.getElementById('open-settings')!.click();
+    expect(content.getAttribute('aria-selected')).toBe('true');
+    expect(content.tabIndex).toBe(0);
+    expect(tab.tabIndex).toBe(-1);
+    expect(document.getElementById('settings-content')!.hidden).toBe(false);
+    expect(document.getElementById(tab.getAttribute('aria-controls')!)!.hidden).toBe(true);
+  }
   expect(document.querySelector('#settings-behavior #work')).not.toBeNull();
   expect(document.querySelector('#settings-behavior #transition-select')).not.toBeNull();
 });

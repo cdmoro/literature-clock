@@ -282,7 +282,8 @@
   font: inherit;
 }
 #settings-dialog .settings-tabs [aria-selected='true'] {
-  background: var(--background);
+  background: var(--accent-color);
+  color: var(--accent-text);
   box-shadow: 0 1px 4px #0002;
   font-weight: 600;
 }
