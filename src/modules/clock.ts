@@ -58,7 +58,7 @@ export function initClock() {
       if (document.hidden) return;
       void updateTime();
       clockTimer = setInterval(updateTime, 1000);
-      if (store.get('progressbar')) {
+      if (store.get('progressbar') !== 'none') {
         animateProgress();
       }
     };

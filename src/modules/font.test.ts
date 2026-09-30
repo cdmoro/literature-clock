@@ -1,5 +1,12 @@
 import { afterEach, beforeEach, expect, test, vi } from 'vitest';
-import { applyCustomFont, initFont, resetFont, removeCustomFont, CUSTOM_FONTS_KEY } from './font';
+import {
+  applyCustomFont,
+  initFont,
+  resetFont,
+  removeCustomFont,
+  refreshDefaultFontLabel,
+  CUSTOM_FONTS_KEY,
+} from './font';
 import { loadGoogleFont } from '../utils/google-font';
 import { createStore, store } from '../store';
 
@@ -20,6 +27,7 @@ afterEach(() => {
   localStorage.clear();
   history.replaceState({}, '', '/');
   document.body.innerHTML = '';
+  delete document.documentElement.dataset.theme;
   vi.resetAllMocks();
 });
 
@@ -121,4 +129,28 @@ test('an unavailable saved font falls back to the theme without deleting the sav
   initFont();
   await vi.waitFor(() => expect(store.get('font')).toBe('default'));
   expect(JSON.parse(localStorage.getItem(CUSTOM_FONTS_KEY)!)).toEqual(['Lora']);
+});
+
+test('the default label follows the theme and interface language', () => {
+  store.set('ui-locale', 'es-ES');
+  document.documentElement.dataset.theme = 'poster-light';
+  refreshDefaultFontLabel();
+  expect(document.querySelector('option[value="default"]')!.textContent).toBe('Por defecto (Averia Serif Libre)');
+  document.documentElement.dataset.theme = 'base-dark';
+  refreshDefaultFontLabel();
+  expect(document.querySelector('option[value="default"]')!.textContent).toBe('Por defecto (Special Elite)');
+});
+
+test('adding a font clears the input after success and preserves it on failure', async () => {
+  const input = document.querySelector<HTMLInputElement>('#custom-font-name')!;
+  const form = document.getElementById('custom-font-form')!;
+  vi.mocked(loadGoogleFont).mockResolvedValue();
+  input.value = 'Lora';
+  form.dispatchEvent(new Event('submit', { cancelable: true }));
+  await vi.waitFor(() => expect(input.value).toBe(''));
+  vi.mocked(loadGoogleFont).mockRejectedValue(new Error('Not found'));
+  input.value = 'Missing Family';
+  form.dispatchEvent(new Event('submit', { cancelable: true }));
+  await vi.waitFor(() => expect(document.getElementById('custom-font-status')!.textContent).toContain('not added'));
+  expect(input.value).toBe('Missing Family');
 });

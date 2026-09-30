@@ -6,7 +6,7 @@ import { initTheme } from './themes';
 import { createStore, store } from '../store';
 
 vi.mock('../utils', () => ({ doFitQuote: vi.fn(), fitQuote: vi.fn(), loadFontIfNotExists: vi.fn() }));
-vi.mock('./font', () => ({ THEME_FONTS: {}, resetFont: vi.fn() }));
+vi.mock('./font', () => ({ THEME_FONTS: {}, resetFont: vi.fn(), refreshDefaultFontLabel: vi.fn() }));
 vi.mock('./horizon', () => ({ setDayParameters: vi.fn() }));
 
 afterEach(() => {
@@ -40,6 +40,9 @@ test('keeps quick actions outside and moves every settings control without repla
     expect(document.querySelector(`#settings-dialog #${id}`)).not.toBeNull();
   }
   expect(document.getElementById('theme-select')).toBe(theme);
+  const progress = document.querySelector<HTMLSelectElement>('#settings-behavior select#progressbar')!;
+  expect([...progress.options].map((option) => option.value)).toEqual(['theme', 'bottom', 'top', 'background', 'none']);
+  expect(progress.hasAttribute('role')).toBe(false);
   const navigation = document.querySelector('.settings-theme-navigation')!;
   expect([...navigation.children].map((element) => element.id || element.className)).toEqual([
     'theme-previous',

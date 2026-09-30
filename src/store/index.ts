@@ -2,6 +2,8 @@ import { resolveTransition, TransitionMode } from '../utils/transition-settings'
 import { resolveLocale } from '../modules/locales';
 import { Locale, ResolvedQuote } from '../types';
 
+export type ProgressbarMode = 'theme' | 'bottom' | 'top' | 'background' | 'none';
+
 interface Stateful {
   locale: Locale;
   'ui-locale'?: Locale;
@@ -17,7 +19,7 @@ interface Stateful {
   font: string;
   theme: string;
   color: string;
-  progressbar: boolean;
+  progressbar: ProgressbarMode;
   'random-locale': boolean;
 }
 
@@ -42,6 +44,7 @@ type Listener = (newState: State, oldState: State) => void;
 const IGNORE_FROM_URL: (keyof State)[] = ['custom-font', 'active-quote', 'paused'];
 const REMOVE_VALUES_FROM_URL: Partial<State> = {
   transition: 'fade',
+  progressbar: 'theme',
   font: 'default',
   theme: 'base-system',
   color: '#d24335',
@@ -54,7 +57,6 @@ const BOOLEAN_KEYS = new Set([
   'screensaver',
   'show-time',
   'hide-book-title',
-  'progressbar',
   'random-locale',
   'static',
   'fade',
@@ -68,6 +70,13 @@ function validateSettings(input: unknown, fromUrl: boolean): Partial<State> {
   const result: Record<string, string | boolean> = {};
   for (const [key, raw] of Object.entries(input)) {
     if (!fromUrl && TEMPORARY_KEYS.has(key)) continue;
+    if (key === 'progressbar') {
+      if (raw === true || (fromUrl && raw === 'true')) result[key] = 'theme';
+      else if (raw === false || (fromUrl && raw === 'false')) result[key] = 'none';
+      else if (typeof raw === 'string' && ['theme', 'bottom', 'top', 'background', 'none'].includes(raw))
+        result[key] = raw;
+      continue;
+    }
     if (BOOLEAN_KEYS.has(key)) {
       const value = fromUrl ? (raw === 'true' ? true : raw === 'false' ? false : undefined) : raw;
       if (typeof value === 'boolean') result[key] = value;
@@ -157,6 +166,10 @@ export class Store {
 
     // Merge: URL > localStorage > defaultState
     this.state = { ...defaultState, ...stateFromLocalStorage, ...stateFromUrl };
+
+    if (['true', 'false'].includes(urlParams.get('progressbar') || '')) {
+      this.syncToUrl('progressbar', this.state.progressbar);
+    }
 
     const saved = stateFromLocalStorage;
     this.state.transition =
@@ -307,7 +320,7 @@ export function createStore() {
     font: 'default',
     theme: 'base-system',
     color: '#d24335',
-    progressbar: true,
+    progressbar: 'theme',
     'random-locale': false,
   });
 }
