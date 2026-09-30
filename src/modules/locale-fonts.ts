@@ -3,10 +3,13 @@ import { loadFontIfNotExists } from '../utils';
 // Alternatives belong to the passage language, including unregistered draft
 // catalogues; the interface language can be different.
 export const LOCALE_THEME_FONTS: Record<string, Record<string, string>> = {
-  base: { el: 'Moderustic' },
+  base: { el: 'Sansation' },
+  retro: { el: 'Handjet' },
   handwriting: { el: 'Mansalva' },
-  terminal: { el: 'Iosevka Charon Mono' },
+  festive: { el: 'Comic Relief' },
+  terminal: { el: 'Victor Mono' },
   bohemian: { el: 'M PLUS Rounded 1c' },
+  photo: { el: 'Dela Gothic One' }
 };
 const BASE_FONT_THEMES = new Set(['base', 'pink', 'green', 'orange', 'purple', 'blue', 'gray']);
 
