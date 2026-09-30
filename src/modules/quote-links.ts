@@ -12,6 +12,7 @@ export function getQuoteUrl(quote: ResolvedQuote): string | undefined {
     const value = store.get(key);
     if (value) url.searchParams.set(key, value);
   }
+  if (store.get('hide-book-title')) url.searchParams.set('hide-book-title', 'true');
   const color = new URLSearchParams(window.location.search).get('color');
   if (color) url.searchParams.set('color', color);
   return url.toString();

@@ -13,6 +13,7 @@ interface Stateful {
   screensaver: boolean;
   transition: TransitionMode;
   'show-time': boolean;
+  'hide-book-title': boolean;
   font: string;
   theme: string;
   color: string;
@@ -52,6 +53,7 @@ const BOOLEAN_KEYS = new Set([
   'work',
   'screensaver',
   'show-time',
+  'hide-book-title',
   'progressbar',
   'random-locale',
   'static',
@@ -301,6 +303,7 @@ export function createStore() {
     zen: false,
     transition: 'fade',
     'show-time': true,
+    'hide-book-title': false,
     font: 'default',
     theme: 'base-system',
     color: '#d24335',
