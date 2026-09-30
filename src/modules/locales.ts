@@ -15,6 +15,7 @@ export const DOMINANT_LOCALES: Record<string, Locale> = {
   it: 'it-IT',
   pt: 'pt-PT',
   de: 'de-DE',
+  el: 'el-GR',
 } as const;
 
 const DRAFT_SUFFIX = '-draft';

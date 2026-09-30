@@ -31,7 +31,11 @@
   text-wrap: pretty;
   font-variant: normal;
 }
+#quote #quote-translation .translation-content {
+  font-family: var(--override-quote-font-family, var(--locale-quote-font-family, var(--quote-font-family)));
+}
 #quote #quote-translation p {
+  font-family: inherit;
   font-size: inherit;
   margin-bottom: 0.65em;
 }

@@ -270,6 +270,13 @@
     "settings_font_custom_label": "προσαρμοσμένη",
     "settings_hide_book_title": "Απόκρυψη τίτλου βιβλίου",
     "settings_previous_theme": "Προηγούμενο θέμα",
-    "settings_next_theme": "Επόμενο θέμα"
+    "settings_next_theme": "Επόμενο θέμα",
+    "bilingual_mode": "Δίγλωσση λειτουργία",
+    "bilingual_language": "Γλώσσα μετάφρασης",
+    "bilingual_show": "Εμφάνιση μετάφρασης",
+    "bilingual_loading": "Φόρτωση μετάφρασης…",
+    "bilingual_unavailable": "Δεν υπάρχει δημοσιευμένη μετάφραση για αυτό το παράθεμα.",
+    "bilingual_same": "Αυτό το παράθεμα είναι ήδη στην επιλεγμένη γλώσσα.",
+    "bilingual_language_notice": "Όταν ένα παράθεμα είναι ήδη στη γλώσσα μετάφρασης, εμφανίζεται μια σύντομη ειδοποίηση."
   }
 }
