@@ -106,7 +106,7 @@ export function initSettingsDialog() {
       <option value="background" data-text="settings_progress_background">Background</option>
       <option value="none" data-text="settings_progress_none">Hidden</option>
     </select></div>`;
-    move('progressbar', 'appearance', 'settings_progress_label', true);
+    move('progressbar', 'behavior', 'progressbar_mode', true);
   }
 
   for (const key of ['work', 'show-time', 'hide-book-title'] as const) {
