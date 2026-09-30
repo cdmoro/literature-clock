@@ -214,19 +214,19 @@
   padding-top: 0.25rem;
 }
 .settings-custom-font {
-  grid-column: 1 / -1;
+  flex: 0 1 62%;
+  max-width: 65%;
   min-width: 0;
   font-size: 0.8rem;
 }
-.settings-custom-font summary {
-  cursor: pointer;
+#settings-dialog .settings-google-fonts {
+  align-items: flex-start;
+}
+#settings-dialog .settings-google-fonts > label {
+  padding-top: 0.25rem;
 }
 .settings-custom-font form {
   margin-top: 0.5rem;
-}
-.settings-custom-font label {
-  display: block;
-  margin-bottom: 0.3rem;
 }
 .settings-custom-font form > div {
   display: flex;

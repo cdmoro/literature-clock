@@ -130,17 +130,19 @@ export function initSettingsDialog() {
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 3h6l1 2h4v2H4V5h4l1-2Zm-3 6h12l-1 12H7L6 9Z"/></svg>
       </button>`,
     );
-    fontGroup.insertAdjacentHTML(
-      'beforeend',
-      `<details class="settings-custom-font"><summary data-text="settings_custom_font">Google Fonts</summary>
+    fontRow.insertAdjacentHTML(
+      'afterend',
+      `<div class="settings-row settings-google-fonts">
+        <label for="custom-font-name" data-text="settings_custom_font">Google Fonts</label>
+        <div class="settings-custom-font">
         <p id="custom-font-help" class="settings-help" data-text="settings_font_help">Paste a Google Fonts family name and choose Apply. If unavailable, the theme’s default font is used.</p>
         <form id="custom-font-form">
-          <label for="custom-font-name" data-text="settings_font_name">Font family name</label>
           <div><input id="custom-font-name" type="text" maxlength="100" placeholder="e.g. Lora" autocomplete="off" spellcheck="false" aria-describedby="custom-font-help custom-font-status">
           <button type="submit" data-text="settings_font_apply">Apply</button></div>
           <p id="custom-font-status" role="status" aria-live="polite"></p>
         </form>
-      </details>`,
+        </div>
+      </div>`,
     );
   }
 
