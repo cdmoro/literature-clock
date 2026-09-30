@@ -149,3 +149,17 @@ it('uses the interface selector labels and an explicit locale heading', async ()
   expect(document.getElementById('translation-heading')!.textContent).toBe('Italian (it-IT)');
   expect(document.querySelector('#bilingual svg')!.getAttribute('width')).toBe('16');
 });
+
+it('lists Greek separately from British English and preserves the selected locale', () => {
+  const select = document.querySelector<HTMLSelectElement>('#translation-locale')!;
+  const options = [...select.options];
+  expect(options.filter((option) => option.value === 'en-GB')).toHaveLength(1);
+  expect(
+    options.filter((option) => option.textContent === options.find((item) => item.value === 'en-GB')!.textContent),
+  ).toHaveLength(1);
+  expect(options.find((option) => option.value === 'el-GR')!.textContent).toContain('(el-GR)');
+  select.value = 'el-GR';
+  select.dispatchEvent(new Event('change'));
+  expect(store.get('translation-locale')).toBe('el-GR');
+  expect(select.value).toBe('el-GR');
+});
