@@ -1,0 +1,2415 @@
+{
+  "scope": "Automated triage only; absence of a finding does not certify a translation. AM/PM and narrative arithmetic require human review.",
+  "coverage": {
+    "rows": 3640,
+    "time_pairs_parsed": 2776,
+    "structural_findings": 0
+  },
+  "strict_structural_errors": [],
+  "changed_fields": {
+    "Quote": 189,
+    "Quote time": 438,
+    "Title": 0
+  },
+  "provenance": {
+    "en": 3583,
+    "es-ES": 15,
+    "es-AR": 26,
+    "es-CL": 4,
+    "es-CO": 12
+  },
+  "categories": {
+    "numbers": 82
+  },
+  "findings": [
+    {
+      "id": "0018-001",
+      "locale": "el-GR",
+      "line": 93,
+      "source_locale": "en",
+      "time": "00:18",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "12:18 a.m.",
+      "target_time": "12:18 π.μ.",
+      "source_quote": "21st December 1985, 12:18 a.m.<br>[IN BED]<br>Michael doesn’t believe in Heaven or Hell. He’s got closer to death than most living people and he tells me there was no tunnel of light or dancing angels. I’m a bit disappointed, to be honest.",
+      "target_quote": "21 Δεκεμβρίου 1985, 12:18 π.μ.<br>[ΣΤΟ ΚΡΕΒΑΤΙ]<br>Ο Μάικλ δεν πιστεύει στον Παράδεισο ή την Κόλαση. Έχει πλησιάσει περισσότερο τον θάνατο από τους περισσότερους ζωντανούς ανθρώπους και μου λέει ότι δεν υπήρχε σήραγγα φωτός ή άγγελοι που χόρευαν. Είμαι λίγο απογοητευμένος, για να είμαι ειλικρινής.",
+      "source_author": "Mary Horlock",
+      "target_author": "Mary Horlock",
+      "title": "Το Βιβλίο των Ψεμάτων"
+    },
+    {
+      "id": "0100-013",
+      "locale": "el-GR",
+      "line": 173,
+      "source_locale": "en",
+      "time": "01:00",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "One am",
+      "target_time": "Μία π.μ.",
+      "source_quote": "It was the thirtieth of May by now. One am on the thirtieth of May 1940. Quite a famous date on which to be lying awake and staring at the ceiling. Already in the creeks and tidal estuaries of England the pleasure-boats and paddle-steamers were casting their moorings for the day trip to Dunkirk. And, over on the other side, Ted stood as a good a chance as anyone else.",
+      "target_quote": "Ήταν πια 30 Μαΐου. Μία π.μ. στις 30 Μαΐου 1940. Μια αρκετά διάσημη ημερομηνία για να είσαι ξύπνιος και να κοιτάς το ταβάνι. Ήδη στα ρυάκια και τις παλιρροιακές εκβολές ποταμών της Αγγλίας, τα σκάφη αναψυχής και τα ατμόπλοια έριχναν τις βάσεις τους για την ημερήσια εκδρομή στη Δουνκέρκη. Και, από την άλλη πλευρά, ο Τεντ είχε τόσες πολλές πιθανότητες όσο και όλοι οι άλλοι.",
+      "source_author": "Norman Collins",
+      "target_author": "Norman Collins",
+      "title": "Το Λονδίνο μου ανήκει"
+    },
+    {
+      "id": "0110-002",
+      "locale": "el-GR",
+      "line": 194,
+      "source_locale": "en",
+      "time": "01:10",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "1.10 am",
+      "target_time": "1.10 π.μ.",
+      "source_quote": "February 26, Saturday — Richards went out 1.10 am and found it clearing a bit, so we got under way as soon as possible, which was 2:10a.m.",
+      "target_quote": "26 Φεβρουαρίου, Σάββατο — Ο Ρίτσαρντς βγήκε στις 1.10 π.μ. και διαπίστωσε ότι είχε αδειάσει λίγο, οπότε ξεκινήσαμε το συντομότερο δυνατό, δηλαδή στις 2:10 π.μ.",
+      "source_author": "Ernest Shackleton",
+      "target_author": "Ernest Shackleton",
+      "title": "Νότια: Η Αποστολή Αντοχής"
+    },
+    {
+      "id": "0127-000",
+      "locale": "el-GR",
+      "line": 223,
+      "source_locale": "en",
+      "time": "01:27",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "1:27 A.M.",
+      "target_time": "1:27 π.μ.",
+      "source_quote": "It was a receipt for the purchase of 13.6 gallons of gas, a credit card transaction bearing Soderburg’s signature. It had been generated at the Food ’N Fuel at 1:27 A.M. on January 1.",
+      "target_quote": "Ήταν μια απόδειξη για την αγορά 13,6 γαλονιών βενζίνης, μια συναλλαγή με πιστωτική κάρτα που έφερε την υπογραφή του Σόντερμπουργκ. Είχε εκδοθεί στο Food ’N Fuel στις 1:27 π.μ. την 1η Ιανουαρίου.",
+      "source_author": "William Kent Krueger",
+      "target_author": "William Kent Krueger",
+      "title": "Blood Hollow"
+    },
+    {
+      "id": "0230-004",
+      "locale": "el-GR",
+      "line": 352,
+      "source_locale": "en",
+      "time": "02:30",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "0230",
+      "target_time": "02:30",
+      "source_quote": "Inc, I tried to pull her off about 0230, and there was this fucking… sound.",
+      "target_quote": "Inc, προσπάθησα να την πετύχω γύρω στο 02:30, και ακούστηκε αυτός ο γαμημένο... ήχος.",
+      "source_author": "David Foster Wallace",
+      "target_author": "David Foster Wallace",
+      "title": "Ατελείωτο αστείο"
+    },
+    {
+      "id": "0318-000",
+      "locale": "el-GR",
+      "line": 482,
+      "source_locale": "en",
+      "time": "03:18",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "03.18 hours",
+      "target_time": "03:18",
+      "source_quote": "The truth of the matter we may never know. All we know at the moment is that at 03.18 hours on 10th February the Southern Cross was firmly beset by the ice and she was sending out an SOS. Sometime during the night that lead must have come to an end. The westward-driven pack ice closed round her and in a matter of hours she was gone.",
+      "target_quote": "Την αλήθεια μπορεί να μην τη μάθουμε ποτέ. Το μόνο που γνωρίζουμε αυτή τη στιγμή είναι ότι στις 03:18 στις 10 Φεβρουαρίου, το Southern Cross περικυκλωνόταν σφιχτά από τον πάγο και εξέπεμπε σήμα SOS. Κάποια στιγμή κατά τη διάρκεια της νύχτας, αυτό το ίχνος πάγου πρέπει να είχε τελειώσει. Ο πάγος που κινούνταν προς τα δυτικά το περικύκλωσε και σε λίγες ώρες είχε εξαφανιστεί.",
+      "source_author": "Hammond Innes",
+      "target_author": "Hammond Innes",
+      "title": "Ο Λευκός Νότος"
+    },
+    {
+      "id": "0320-000",
+      "locale": "el-GR",
+      "line": 484,
+      "source_locale": "en",
+      "time": "03:20",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "3.20 am",
+      "target_time": "3.20 π.μ.",
+      "source_quote": "Prabath Kumara, 16. 17th November 1989. At 3.20 am from the home of a friend.",
+      "target_quote": "Πραμπάθ Κουμάρα, 16. 17 Νοεμβρίου 1989. Στις 3.20 π.μ. από το σπίτι ενός φίλου.",
+      "source_author": "Michael Ondaatje",
+      "target_author": "Michael Ondaatje",
+      "title": "Το φάντασμα του Ανίλ"
+    },
+    {
+      "id": "0343-000",
+      "locale": "el-GR",
+      "line": 518,
+      "source_locale": "en",
+      "time": "03:43",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "3.43 am",
+      "target_time": "3.43 π.μ.",
+      "source_quote": "The clock says 3.43 am. The thermometer says it’s a chilly fourteen degrees Fahrenheit. The weatherman says the cold spell will last until Thursday, so bundle up and bundle up some more. There are icicles barring the window of the bat cave.",
+      "target_quote": "Το ρολόι δείχνει 3.43 π.μ. Το θερμόμετρο λέει ότι η θερμοκρασία είναι 14 βαθμοί Φαρενάιτ. Ο μετεωρολόγος λέει ότι το κύμα ψύχους θα διαρκέσει μέχρι την Πέμπτη, οπότε πάρτε τα μάζεμα σας και πάρτε τα μάζεμα σας ακόμα. Υπάρχουν παγοκρύσταλλοι έξω από το παράθυρο της σπηλιάς με τις νυχτερίδες.",
+      "source_author": "David Mitchell",
+      "target_author": "David Mitchell",
+      "title": "Γράφτηκε από φάντασμα"
+    },
+    {
+      "id": "0419-000",
+      "locale": "el-GR",
+      "line": 598,
+      "source_locale": "en",
+      "time": "04:19",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "nineteen minutes past four",
+      "target_time": "τέσσερις και δεκαεννέα λεπτά",
+      "source_quote": "At nineteen minutes past four on the morning of December 27, 2040, her eyes, dark as an Aztec sacrificial knife, flicked open.",
+      "target_quote": "Στις τέσσερις και δεκαεννέα λεπτά το πρωί της 27ης Δεκεμβρίου 2040, τα μάτια της, σκοτεινά σαν μαχαίρι θυσίας των Αζτέκων, άνοιξαν διάπλατα.",
+      "source_author": "James Axler",
+      "target_author": "James Axler",
+      "title": "Aurora Quest"
+    },
+    {
+      "id": "0428-000",
+      "locale": "el-GR",
+      "line": 609,
+      "source_locale": "en",
+      "time": "04:28",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "0428",
+      "target_time": "04:28.",
+      "source_quote": "He had been the only survivor — the only one who’d come home alive. So what the hell was going on? Who was this new character in his nightmares? He glanced up at the clock and was disheartened to discover that it was only 0428 hours.",
+      "target_quote": "Ήταν ο μόνος επιζών — ο μόνος που είχε γυρίσει σπίτι ζωντανός. Τι στο καλό συνέβαινε λοιπόν; Ποιος ήταν αυτός ο νέος χαρακτήρας στους εφιάλτες του; Κοίταξε ψηλά στο ρολόι και απογοητεύτηκε όταν ανακάλυψε ότι ήταν μόνο 04:28.",
+      "source_author": "Glenn Smith",
+      "target_author": "Glenn Smith",
+      "title": "Solfleet: The Call of Duty"
+    },
+    {
+      "id": "0429-000",
+      "locale": "el-GR",
+      "line": 610,
+      "source_locale": "en",
+      "time": "04:29",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "0429 hours",
+      "target_time": "04:29 ώρες",
+      "source_quote": "Your pardon, Dr. Leving, but there is an urgent call for you. The pseudo-robot Caliban says he must speak with you at once.<br>Fredda sighed. She knew she had to take the call, and that Caliban would only call if it were important. But even so, it was turning into a very long night.<br>“Now what time is it?” she asked.<br>“It is now 0429 hours,” Donald said.",
+      "target_quote": "Συγγνώμη, Δρ. Λέβινγκ, αλλά υπάρχει μια επείγουσα κλήση για εσάς. Το ψευδορομπότ Κάλιμπαν λέει ότι πρέπει να μιλήσει μαζί σας αμέσως.<br>Η Φρέντα αναστέναξε. Ήξερε ότι έπρεπε να απαντήσει στην κλήση και ότι ο Κάλιμπαν θα τηλεφωνούσε μόνο αν ήταν σημαντικό. Αλλά ακόμα κι έτσι, η νύχτα μετατρεπόταν σε πολύ μεγάλη.<br>«Τώρα τι ώρα είναι;» ρώτησε.<br>«Είναι τώρα 04:29 ώρες», είπε ο Ντόναλντ.",
+      "source_author": "Roger MacBride Allen",
+      "target_author": "Roger MacBride Allen",
+      "title": "Ουτοπία"
+    },
+    {
+      "id": "0430-007",
+      "locale": "el-GR",
+      "line": 618,
+      "source_locale": "en",
+      "time": "04:30",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "0430",
+      "target_time": "04:30",
+      "source_quote": "Hester Thrale undulates in in a false fox jacket at 2330 as usual even though she has to be up at like 0430 for the breakfast shift at the Provident Nursing Home and sometimes eats breakfast with Gately, both their faces nodding perilously close to their Frosted Flakes.",
+      "target_quote": "Η Hester Thrale κάνει κουνάβια φορώντας ένα ψεύτικο μπουφάν αλεπούς στις 23:30 όπως συνήθως, παρόλο που πρέπει να είναι ξύπνια γύρω στις 04:30 για τη βάρδια του πρωινού στο Γηροκομείο Provident και μερικές φορές τρώει πρωινό με την Gately, και τα δύο πρόσωπά τους γνέφουν επικίνδυνα κοντά στις Frosted Flakes τους.",
+      "source_author": "David Foster Wallace",
+      "target_author": "David Foster Wallace",
+      "title": "Ατελείωτο αστείο"
+    },
+    {
+      "id": "0444-000",
+      "locale": "el-GR",
+      "line": 635,
+      "source_locale": "en",
+      "time": "04:44",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "0444 hours",
+      "target_time": "04:44",
+      "source_quote": "At 0444 hours yesterday morning, the landing craft Orpheus was appropriated by Dr. Diana Chandler, twenty-seven, an astrophysicist from Toronto, Canada. Dr. Chandler, apparently disconsolate over the failure of her husband, Aaron Rossman, also twenty-seven, also of Toronto, to renew their recently expired two-year marriage contract, presumably committed suicide. Mr. Rossman is the Starcology’s dock master.",
+      "target_quote": "Στις 04:44 χθες το πρωί, το αποβατικό σκάφος Orpheus κατασχέθηκε από την Δρ. Diana Chandler, είκοσι επτά ετών, αστροφυσικό από το Τορόντο του Καναδά. Η Δρ. Chandler, προφανώς απελπισμένη από την αποτυχία του συζύγου της, Aaron Rossman, επίσης είκοσι επτά ετών, επίσης από το Τορόντο, να ανανεώσει το πρόσφατα λήξαν διετές συμβόλαιο γάμου τους, πιθανώς αυτοκτόνησε. Ο κ. Rossman είναι ο λιμενάρχης του Starcology.",
+      "source_author": "Robert J. Sawyer",
+      "target_author": "Robert J. Sawyer",
+      "title": "Χρυσόμαλλο Δέρας"
+    },
+    {
+      "id": "0459-001",
+      "locale": "el-GR",
+      "line": 660,
+      "source_locale": "en",
+      "time": "04:59",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "0459",
+      "target_time": "04:59",
+      "source_quote": "The whole place smells like death no matter what the fuck you do. Gately gets to the shelter at 0459.9h and just shuts his head off as if his head had a control switch.",
+      "target_quote": "Όλο το μέρος μυρίζει θάνατο ό,τι και να κάνεις. Ο Γκέιτλι φτάνει στο καταφύγιο στις 04:59.9 και απλώς κλείνει το κεφάλι του σαν να είχε διακόπτη ελέγχου.",
+      "source_author": "David Foster Wallace",
+      "target_author": "David Foster Wallace",
+      "title": "Απείρως αστεία"
+    },
+    {
+      "id": "0544-000",
+      "locale": "el-GR",
+      "line": 763,
+      "source_locale": "en",
+      "time": "05:44",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "0544 hours",
+      "target_time": "05:44 ώρες",
+      "source_quote": "And what time, again, did the defendant actually say these words?<br>“That would have been — you can see the time on the film tape on the frame where you’ve stopped it. 0544 hours.”",
+      "target_quote": "Και τι ώρα, πάλι, είπε στην πραγματικότητα ο κατηγορούμενος αυτά τα λόγια;<br>«Αυτό θα ήταν — μπορείτε να δείτε την ώρα στην ταινία στο καρέ όπου την σταματήσατε. 05:44 ώρες.»",
+      "source_author": "Perri O’Shaughnessy",
+      "target_author": "Perri O’Shaughnessy",
+      "title": "Παραβίαση της Ιδιωτικότητας"
+    },
+    {
+      "id": "0600-016",
+      "locale": "el-GR",
+      "line": 809,
+      "source_locale": "en",
+      "time": "06:00",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "six o’clock",
+      "target_time": "έξι",
+      "source_quote": "On the 15th of September 1840, about six o’clock in the morning, the Ville-de-Montereau, ready to depart, pouring out great whirls of smoke by the quai Saint-Bernard.",
+      "target_quote": "Στις 15 Σεπτεμβρίου 1840, περίπου στις έξι το πρωί, το Ville-de-Montereau, έτοιμο να αναχωρήσει, έβγαζε μεγάλες δίνες καπνού δίπλα στην παραλία Saint-Bernard.",
+      "source_author": "Gustave Flaubert",
+      "target_author": "Gustave Flaubert",
+      "title": "L’Education sentimentale"
+    },
+    {
+      "id": "0616-000",
+      "locale": "el-GR",
+      "line": 833,
+      "source_locale": "en",
+      "time": "06:16",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "06:16",
+      "target_time": "6:16",
+      "source_quote": "And, as they boarded the 06:16 to Mittelsteine, Erika toyed with the notion that although every metre of this journey took her further from her mother it would also bring her closer to the possibility of seeing Max again and the blossoming of their new little family.",
+      "target_quote": "Και, καθώς επιβιβάζονταν στο τρένο των 6:16 προς το Μίτελσταϊν, η Έρικα έπαιζε με την ιδέα ότι, παρόλο που κάθε μέτρο αυτού του ταξιδιού την απομάκρυνε από τη μητέρα της, θα την έφερνε επίσης πιο κοντά στην πιθανότητα να ξαναδεί τον Μαξ και την άνθιση της νέας τους μικρής οικογένειας.",
+      "source_author": "Monika Jephcott Thomas",
+      "target_author": "Monika Jephcott Thomas",
+      "title": "Δεκαπέντε Λέξεις"
+    },
+    {
+      "id": "0619-000",
+      "locale": "el-GR",
+      "line": 837,
+      "source_locale": "en",
+      "time": "06:19",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "6.19 am",
+      "target_time": "6.19 π.μ.",
+      "source_quote": "6.19 am, 8th June 2004, the jet of your pupil set in the gold of your eye.",
+      "target_quote": "6.19 π.μ., 8 Ιουνίου 2004, το τζετ της κόρης σου βυθισμένο στο χρυσό του ματιού σου.",
+      "source_author": "Carol Ann Duffy",
+      "target_author": "Carol Ann Duffy",
+      "title": "Αφροδίτη"
+    },
+    {
+      "id": "0626-000",
+      "locale": "el-GR",
+      "line": 846,
+      "source_locale": "en",
+      "time": "06:26",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "0626 hours",
+      "target_time": "06:26.",
+      "source_quote": "No lights were on in the master bedroom at this time but it is noted that the official time of sunrise for this date is 0626 hours. Victim is quite clear that sufficient light was entering via the large picture window to allow good visibility.",
+      "target_quote": "Δεν υπήρχαν φώτα στην κύρια κρεβατοκάμαρα εκείνη την ώρα, αλλά σημειώνεται ότι η επίσημη ώρα ανατολής για αυτήν την ημερομηνία είναι 06:26. Το θύμα είναι αρκετά σαφές ότι εισερχόταν αρκετό φως από το μεγάλο παράθυρο για να επιτρέπει καλή ορατότητα.",
+      "source_author": "Don and Linda Pendleton",
+      "target_author": "Don and Linda Pendleton",
+      "title": "Ρουλέτα"
+    },
+    {
+      "id": "0627-003",
+      "locale": "el-GR",
+      "line": 851,
+      "source_locale": "en",
+      "time": "06:27",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "0627 hours",
+      "target_time": "06:27",
+      "source_quote": "Early in the morning, late in the century, Cricklewood Broadway. At 0627 hours on January 1, 1975, Alfred Archibald Jones was dressed in corduroy and sat in a fume-filled Cavalier Musketeer Estate, facedown on the steering wheel, hoping the judgment would not be too heavy upon him.",
+      "target_quote": "Νωρίς το πρωί, στα τέλη του αιώνα, Cricklewood Broadway. Στις 06:27 την 1η Ιανουαρίου 1975, ο Alfred Archibald Jones ήταν ντυμένος με κοτλέ και καθόταν σε ένα γεμάτο αναθυμιάσεις Cavalier Musketeer Estate, μπρούμυτα στο τιμόνι, ελπίζοντας ότι η κρίση δεν θα ήταν πολύ βαριά πάνω του.",
+      "source_author": "Zadie Smith",
+      "target_author": "Zadie Smith",
+      "title": "Λευκά δόντια"
+    },
+    {
+      "id": "0639-000",
+      "locale": "el-GR",
+      "line": 879,
+      "source_locale": "en",
+      "time": "06:39",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "0639",
+      "target_time": "06:39",
+      "source_quote": "He fired another torpedo at 0639 hours from a distance of 500 metres. Again it missed its intended target, but exploded seven minutes later. The torpedos would only detonate on contact with a solid object.",
+      "target_quote": "Εκρότησε άλλη μια τορπίλη στις 06:39 από απόσταση 500 μέτρων. Και πάλι, αστόχησε στον προβλεπόμενο στόχο της, αλλά εξερράγη επτά λεπτά αργότερα. Οι τορπίλες θα εκραγούν μόνο σε περίπτωση επαφής με ένα στερεό αντικείμενο.",
+      "source_author": "Keith Jessop and Neil Hanson",
+      "target_author": "Keith Jessop and Neil Hanson",
+      "title": "Goldfinder"
+    },
+    {
+      "id": "0652-001",
+      "locale": "el-GR",
+      "line": 904,
+      "source_locale": "en",
+      "time": "06:52",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "06.52",
+      "target_time": "6.52",
+      "source_quote": "Having lied to Mum, I realised that my only option was to take the 06.52 to London as if I hadn’t been dismissed at all.",
+      "target_quote": "Έχοντας πει ψέματα στη μαμά, συνειδητοποίησα ότι η μόνη μου επιλογή ήταν να πάρω το τρένο των 6.52 για το Λονδίνο σαν να μην με είχαν απολύσει καθόλου.",
+      "source_author": "Will Storr",
+      "target_author": "Will Storr",
+      "title": "Η Πείνα και το Ουρλιαχτό του Κίλιαν Λόουν"
+    },
+    {
+      "id": "0655-001",
+      "locale": "el-GR",
+      "line": 908,
+      "source_locale": "en",
+      "time": "06:55",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "6:55 am",
+      "target_time": "6:55 π.μ.",
+      "source_quote": "At 6:55 am Lisa parked and took the lift from the frozen underground car park up to level 1 of Green Oaks Shopping Centre.",
+      "target_quote": "Στις 6:55 π.μ. η Λίζα πάρκαρε και πήρε το ασανσέρ από το παγωμένο υπόγειο πάρκινγκ μέχρι τον πρώτο όροφο του εμπορικού κέντρου Green Oaks.",
+      "source_author": "Catherine O’Flynn",
+      "target_author": "Catherine O’Flynn",
+      "title": "Τι χάθηκε"
+    },
+    {
+      "id": "0715-001",
+      "locale": "el-GR",
+      "line": 971,
+      "source_locale": "en",
+      "time": "07:15",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "7:15 A.M.",
+      "target_time": "7:15 π.μ.",
+      "source_quote": "At 7:15 A.M., January 25th, we started flying northwestward under McTighe’s pilotage with ten men, seven dogs, a sledge, a fuel and food supply, and other items including the plane’s wireless outfit.",
+      "target_quote": "Στις 7:15 π.μ., στις 25 Ιανουαρίου, ξεκινήσαμε να πετάμε βορειοδυτικά υπό την καθοδήγηση του McTighe με δέκα άνδρες, επτά σκυλιά, ένα έλκηθρο, προμήθειες καυσίμων και τροφίμων, καθώς και άλλα είδη, συμπεριλαμβανομένου του ασύρματου εξοπλισμού του αεροπλάνου.",
+      "source_author": "H.P. Lovecraft",
+      "target_author": "H.P. Lovecraft",
+      "title": "Στα Βουνά της Τρέλας"
+    },
+    {
+      "id": "0715-003",
+      "locale": "el-GR",
+      "line": 973,
+      "source_locale": "en",
+      "time": "07:15",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "quarter-past seven",
+      "target_time": "επτά και τέταρτο",
+      "source_quote": "It was early in April in the year ’83 that I woke one morning to find Sherlock Holmes standing, fully dressed, by the side of my bed. He was a late riser, as a rule, and as the clock on the mantelpiece showed me that it was only a quarter-past seven, I blinked up at him in some surprise, and perhaps just a little resentment, for I was myself regular in my habits.",
+      "target_quote": "Ήταν στις αρχές Απριλίου του 1983 που ξύπνησα ένα πρωί και βρήκα τον Σέρλοκ Χολμς να στέκεται, ντυμένος, δίπλα στο κρεβάτι μου. Κατά κανόνα, ξυπνούσε αργά, και καθώς το ρολόι στο τζάκι μου έδειξε ότι ήταν μόνο επτά και τέταρτο, τον κοίταξα με κάποια έκπληξη, και ίσως με μια μικρή δυσαρέσκεια, γιατί κι εγώ ο ίδιος ήμουν τακτικός στις συνήθειές μου.",
+      "source_author": "Sir Arthur Conan Doyle",
+      "target_author": "Sir Arthur Conan Doyle",
+      "title": "Η περιπέτεια της πιτσιλωτής μπάντας"
+    },
+    {
+      "id": "0729-002",
+      "locale": "el-GR",
+      "line": 999,
+      "source_locale": "en",
+      "time": "07:29",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "7.29",
+      "target_time": "7.29",
+      "source_quote": "At 7.29 in the morning of 1 July, the cinematographer finds himself filming silence itself.",
+      "target_quote": "Στις 7.29 το πρωί της 1ης Ιουλίου, ο κινηματογραφιστής βρίσκεται να κινηματογραφεί την ίδια τη σιωπή.",
+      "source_author": "Elizabeth Speller",
+      "target_author": "Elizabeth Speller",
+      "title": "Την αυγή της αυγής"
+    },
+    {
+      "id": "0830-011",
+      "locale": "el-GR",
+      "line": 1190,
+      "source_locale": "en",
+      "time": "08:30",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "8:30 a.m.",
+      "target_time": "8:30 π.μ.",
+      "source_quote": "On July 25th, 8:30 a.m. the bitch Novaya dies whelping. At 10 o’clock she is lowered into her cool grave, at 7:30 that same evening we see our first floes and greet them wishing they were the last.",
+      "target_quote": "Στις 25 Ιουλίου, στις 8:30 π.μ., η σκύλα Νοβάγια πεθαίνει έγκυος. Στις 10 η ώρα την βάζουν στον δροσερό τάφο της, και στις 7:30 το ίδιο βράδυ βλέπουμε τους πρώτους μας ογκόλιθους και τους χαιρετάμε ευχόμενοι να ήταν οι τελευταίοι.",
+      "source_author": "Christoph Ransmayr",
+      "target_author": "Christoph Ransmayr",
+      "title": "Οι Τρόμοι του Πάγου και του Σκότους"
+    },
+    {
+      "id": "0832-001",
+      "locale": "el-GR",
+      "line": 1196,
+      "source_locale": "en",
+      "time": "08:32",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "8:32 a.m.",
+      "target_time": "8:32 π.μ.",
+      "source_quote": "It’s 8:32 a.m. on the twenty-fourth of December and Henry and I are on our way to Meadowlark House for Christmas. It’s a beautiful clear day, no snow here in Chicago, but six inches on the ground in South Haven.",
+      "target_quote": "Είναι 8:32 π.μ. στις 24 Δεκεμβρίου και ο Χένρι κι εγώ πηγαίνουμε στο Meadowlark House για τα Χριστούγεννα. Είναι μια όμορφη, καθαρή μέρα, δεν χιονίζει εδώ στο Σικάγο, αλλά έχει χιόνι 15 εκατοστά στο έδαφος στο Σάουθ Χέιβεν.",
+      "source_author": "Audrey Niffenegger",
+      "target_author": "Audrey Niffenegger",
+      "title": "Η Σύζυγος του Ταξιδιώτη του Χρόνου"
+    },
+    {
+      "id": "0832-002",
+      "locale": "el-GR",
+      "line": 1197,
+      "source_locale": "en",
+      "time": "08:32",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "0832",
+      "target_time": "08:32",
+      "source_quote": "Does anybody know the time a little more exactly is what I’m wondering, Don, since Day doesn’t.<br>Gately checks his cheap digital, head still hung over the sofa’s arm. “I got 0832:14, 15, 16, Randy.”<br>“’ks a lot, D.G. man.”",
+      "target_quote": "Αυτό που με απασχολεί είναι αν κάποιος ξέρει την ώρα λίγο πιο ακριβώς, Ντον, αφού ο Ντέι δεν ξέρει.<br>Ο Γκέιτλι κοιτάζει την φτηνή ψηφιακή του συσκευή, με το κεφάλι ακόμα κρεμασμένο πάνω από το μπράτσο του καναπέ. «Έχω 08:32:14, 15, 16, Ράντι.»<br>«Είναι πολύ, φίλε του Διευθυντή.»",
+      "source_author": "David Foster Wallace",
+      "target_author": "David Foster Wallace",
+      "title": "Ατελείωτα αστεία"
+    },
+    {
+      "id": "0900-016",
+      "locale": "el-GR",
+      "line": 1285,
+      "source_locale": "en",
+      "time": "09:00",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "9:00 A.M.",
+      "target_time": "9:00 π.μ.",
+      "source_quote": "The Earth was created on Sunday the 21st of October, 4004 B.C., at exactly 9:00 A.M., because God liked to get work done early in the morning while he was feeling fresh.",
+      "target_quote": "Η Γη δημιουργήθηκε την Κυριακή 21 Οκτωβρίου του 4004 π.Χ., ακριβώς στις 9:00 π.μ., επειδή στον Θεό άρεσε να κάνει τη δουλειά του νωρίς το πρωί, ενώ ένιωθε φρέσκος.",
+      "source_author": "Terry Pratchett and Neil Gaiman",
+      "target_author": "Terry Pratchett and Neil Gaiman",
+      "title": "Καλοί οιωνοί"
+    },
+    {
+      "id": "0915-003",
+      "locale": "el-GR",
+      "line": 1354,
+      "source_locale": "en",
+      "time": "09:15",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "0915",
+      "target_time": "09:15",
+      "source_quote": "Great! Jones commented. “I’ve never seen it do that before. That’s all right. Okay.” Jones pulled a handful of pencils from his back pocket. “Now, I got the contact first at 0915 or so, and the bearing was about two-six-nine.”",
+      "target_quote": "Τέλεια! σχολίασε ο Τζόουνς. «Δεν το έχω ξαναδεί να το κάνει αυτό. Δεν πειράζει. Εντάξει.» Ο Τζόουνς έβγαλε μια χούφτα μολύβια από την πίσω τσέπη του. «Λοιπόν, πήρα το φινάλε για πρώτη φορά στις 09:15 περίπου, και η κατεύθυνση ήταν περίπου δύο και έξι και εννέα.»",
+      "source_author": "Tom Clancy",
+      "target_author": "Tom Clancy",
+      "title": "Το κυνήγι του Κόκκινου Οκτώβρη"
+    },
+    {
+      "id": "0922-001",
+      "locale": "el-GR",
+      "line": 1374,
+      "source_locale": "en",
+      "time": "09:22",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "9:22",
+      "target_time": "9:22",
+      "source_quote": "Two days later, on the second of February at 9:22 Jerusalem time, the Dominion launched a simultaneous and massive attack on twenty-two of the worlds between Bannermere and Earth.",
+      "target_quote": "Δύο μέρες αργότερα, στις 2 Φεβρουαρίου στις 9:22 ώρα Ιερουσαλήμ, η Κυριαρχία εξαπέλυσε μια ταυτόχρονη και μαζική επίθεση σε είκοσι δύο από τους κόσμους μεταξύ Μπάνερμιρ και Γης.",
+      "source_author": "Chris Walley",
+      "target_author": "Chris Walley",
+      "title": "Η Άπειρη Μέρα"
+    },
+    {
+      "id": "0949-000",
+      "locale": "el-GR",
+      "line": 1451,
+      "source_locale": "en",
+      "time": "09:49",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "0949 hours",
+      "target_time": "09:49.",
+      "source_quote": "Twenty-four hours later there was a new message on the numbers station. Porter listened to it twice before decoding it. It simply said, Message received. Assets en route. Landing tomorrow at 0949 hours. GCHQ listening in.",
+      "target_quote": "Είκοσι τέσσερις ώρες αργότερα, υπήρχε ένα νέο μήνυμα στον σταθμό αριθμών. Ο Πόρτερ το άκουσε δύο φορές πριν το αποκωδικοποιήσει. Έγραφε απλώς, Μήνυμα ελήφθη. Πόροι καθ' οδόν. Προσγείωση αύριο στις 09:49. Το GCHQ ακούει.",
+      "source_author": "Chris Ryan",
+      "target_author": "Chris Ryan",
+      "title": "Deathlist"
+    },
+    {
+      "id": "1000-026",
+      "locale": "el-GR",
+      "line": 1516,
+      "source_locale": "en",
+      "time": "10:00",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "ten",
+      "target_time": "δέκα",
+      "source_quote": "For some seconds the light went on becoming brighter and brighter, and she saw everything more and more clearly and the clock ticked louder and louder until there was a terrific explosion right in her ear. Orlando leapt as if she had been violently struck on the head. Ten times she was struck. In fact it was ten o’clock in the morning. It was the eleventh of October. It was 1928. It was the present moment.",
+      "target_quote": "Για μερικά δευτερόλεπτα το φως συνέχιζε να γίνεται όλο και πιο φωτεινό, και έβλεπε τα πάντα όλο και πιο καθαρά και το ρολόι χτυπούσε όλο και πιο δυνατά μέχρι που ακούστηκε μια τρομερή έκρηξη ακριβώς στο αυτί της. Η Ορλάντο πετάχτηκε σαν να την είχαν χτυπήσει βίαια στο κεφάλι. Δέκα φορές την είχαν χτυπήσει. Στην πραγματικότητα ήταν δέκα η ώρα το πρωί. Ήταν 11 Οκτωβρίου. Ήταν το 1928. Ήταν η παρούσα στιγμή.",
+      "source_author": "Virginia Woolf",
+      "target_author": "Virginia Woolf",
+      "title": "Ορλάντο"
+    },
+    {
+      "id": "1000-034",
+      "locale": "el-GR",
+      "line": 1524,
+      "source_locale": "en",
+      "time": "10:00",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "10 o’clock",
+      "target_time": "10 η ώρα",
+      "source_quote": "On July 25th, 8:30 a.m. the bitch Novaya dies whelping. At 10 o’clock she is lowered into her cool grave, at 7:30 that same evening we see our first floes and greet them wishing they were the last.",
+      "target_quote": "Στις 25 Ιουλίου, στις 8:30 π.μ., η σκύλα Νοβάγια πεθαίνει έγκυος. Στις 10 η ώρα την βάζουν στον δροσερό τάφο της, στις 7:30 το ίδιο βράδυ βλέπουμε τους πρώτους μας ογκόλιθους και τους χαιρετάμε ευχόμενοι να ήταν οι τελευταίοι.",
+      "source_author": "Christoph Ransmayr",
+      "target_author": "Christoph Ransmayr",
+      "title": "Οι Τρόμοι του Πάγου και του Σκότους"
+    },
+    {
+      "id": "1003-002",
+      "locale": "el-GR",
+      "line": 1540,
+      "source_locale": "en",
+      "time": "10:03",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "10.03",
+      "target_time": "10.03",
+      "source_quote": "The date was the 14th of May and the clock on his desk said the time was twenty three minutes past ten, so he tapped in the numbers 10.23. At least, that’s what he meant to do. In fact he typed in the numbers 10.03.",
+      "target_quote": "Η ημερομηνία ήταν 14 Μαΐου και το ρολόι στο γραφείο του έδειχνε δέκα και είκοσι τρία λεπτά, οπότε πληκτρολόγησε τους αριθμούς 10.23. Τουλάχιστον, αυτό ήθελε να κάνει. Στην πραγματικότητα, πληκτρολόγησε τους αριθμούς 10.03.",
+      "source_author": "Andrew Norriss",
+      "target_author": "Andrew Norriss",
+      "title": "Ctrl-Z"
+    },
+    {
+      "id": "1023-000",
+      "locale": "el-GR",
+      "line": 1592,
+      "source_locale": "en",
+      "time": "10:23",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "twenty three minutes past ten",
+      "target_time": "δέκα και είκοσι τρία λεπτά",
+      "source_quote": "The date was the 14th of May and the clock on his desk said the time was twenty three minutes past ten, so he tapped in the numbers 10.23. At least, that’s what he meant to do. In fact he typed in the numbers 10.03",
+      "target_quote": "Η ημερομηνία ήταν 14 Μαΐου και το ρολόι στο γραφείο του έδειχνε δέκα και είκοσι τρία λεπτά, οπότε πληκτρολόγησε τους αριθμούς 10:23. Τουλάχιστον, αυτό ήθελε να κάνει. Στην πραγματικότητα, πληκτρολόγησε τους αριθμούς 10:03",
+      "source_author": "Andrew Norriss",
+      "target_author": "Andrew Norriss",
+      "title": "Ctrl-Z"
+    },
+    {
+      "id": "1030-002",
+      "locale": "el-GR",
+      "line": 1606,
+      "source_locale": "en",
+      "time": "10:30",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "exactly half past 10 o’clock",
+      "target_time": "ακριβώς 10:30 η ώρα",
+      "source_quote": "“So be it, then,” replied the count; and extending his hand towards a calendar suspended near the chimney piece, he said, “today is the 21st of February”, and drawing out his watch, added, “it is exactly half past 10 o’clock. Now promise me to remember this, and expect me on the 21st of May at half past 10 in the forenoon.”",
+      "target_quote": "«Έτσι λοιπόν», απάντησε ο κόμης· και απλώνοντας το χέρι του προς ένα ημερολόγιο που κρεμόταν κοντά στην καμινάδα, είπε, «σήμερα είναι 21 Φεβρουαρίου», και βγάζοντας το ρολόι του, πρόσθεσε, «είναι ακριβώς 10:30 η ώρα. Τώρα υποσχέσου μου να το θυμάσαι αυτό και περίμενέ με στις 21 Μαΐου στις 10:30 το πρωί».",
+      "source_author": "Alexandre Dumas",
+      "target_author": "Alexandre Dumas",
+      "title": "Ο Κόμης του Μόντε Κρίστο"
+    },
+    {
+      "id": "1037-000",
+      "locale": "el-GR",
+      "line": 1618,
+      "source_locale": "en",
+      "time": "10:37",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "10.37 a.m.",
+      "target_time": "10:37 π.μ.",
+      "source_quote": "I quite agree with you, said Mr. Murbles. “It is a most awkward situation. Lady Dormer died at precisely 10.37 a.m. on November 11th.”",
+      "target_quote": "Συμφωνώ απόλυτα μαζί σας, είπε ο κ. Μέρμπλς. «Είναι μια πολύ αμήχανη κατάσταση. Η λαίδη Ντόρμερ πέθανε ακριβώς στις 10:37 π.μ. στις 11 Νοεμβρίου.»",
+      "source_author": "Dorothy L. Sayers",
+      "target_author": "Dorothy L. Sayers",
+      "title": "Η δυσαρέσκεια στη λέσχη Bellona"
+    },
+    {
+      "id": "1100-025",
+      "locale": "el-GR",
+      "line": 1700,
+      "source_locale": "en",
+      "time": "11:00",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "11 o’clock A.M.",
+      "target_time": "11 π.μ.",
+      "source_quote": "“Armstrong must have gone into the sea sometime during the night of the 10th-11th — and I’ll explain why. We found the point where the body was washed up — it had been wedged between two rocks and there were bits of cloth, hair, etc. on them. It must have been deposited there at high water on the 11th — that’s to say round about 11 o’clock A.M. After that, the storm subsided, and succeeding high water marks are considerably lower.”",
+      "target_quote": "«Ο Άρμστρονγκ πρέπει να μπήκε στη θάλασσα κάποια στιγμή τη νύχτα της 10ης προς 11η — και θα εξηγήσω γιατί. Βρήκαμε το σημείο όπου ξεβράστηκε το σώμα — ήταν σφηνωμένο ανάμεσα σε δύο βράχους και υπήρχαν κομμάτια υφάσματος, μαλλιών κ.λπ. πάνω τους. Πρέπει να είχε αποτεθεί εκεί σε υψηλή στάθμη νερού στις 11 — δηλαδή γύρω στις 11 π.μ. Μετά από αυτό, η καταιγίδα κόπασε και τα επόμενα σημάδια υψηλής στάθμης νερού είναι σημαντικά χαμηλότερα.»",
+      "source_author": "Agatha Christie",
+      "target_author": "Agatha Christie",
+      "title": "Και μετά δεν υπήρχαν"
+    },
+    {
+      "id": "1102-000",
+      "locale": "el-GR",
+      "line": 1718,
+      "source_locale": "en",
+      "time": "11:02",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "11.02 am",
+      "target_time": "11.02 π.μ.",
+      "source_quote": "On August 9th, three days later, at 11.02 am, another B−29 dropped the second bomb on the industrial section of the city of Nagasaki, totally destroying 1 1/2 square miles of the city, killing 39,000 persons and injuring 25,000 more.",
+      "target_quote": "Στις 9 Αυγούστου, τρεις ημέρες αργότερα, στις 11.02 π.μ., ένα άλλο B-29 έριξε τη δεύτερη βόμβα στη βιομηχανική περιοχή της πόλης του Ναγκασάκι, καταστρέφοντας ολοσχερώς 1 1/2 τετραγωνικά μίλια της πόλης, σκοτώνοντας 39.000 άτομα και τραυματίζοντας 25.000 ακόμη.",
+      "source_author": "The Manhattan Engineer District",
+      "target_author": "The Manhattan Engineer District",
+      "title": "Οι ατομικές βομβιστικές επιθέσεις στη Χιροσίμα και το Ναγκασάκι"
+    },
+    {
+      "id": "1120-002",
+      "locale": "el-GR",
+      "line": 1758,
+      "source_locale": "en",
+      "time": "11:20",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "11h20",
+      "target_time": "11:20",
+      "source_quote": "OFFICER’S NOTES Disruption alert logged 11h20 from Stones’ Pool Hall (Premises ID 33CBD-Long181). Officer and Aito /379 responded. On arrival found subject shouting threats and acting in aggressive manner. A scan of the subject’s SIM ID register revealed that the subject has recent priors including previous public disruptions and a juvenile record.",
+      "target_quote": "ΣΗΜΕΙΩΣΕΙΣ ΑΞΙΩΜΑΤΙΚΟΥ Η ειδοποίηση διακοπής καταγράφηκε στις 11:20 από το Stones’ Pool Hall (Αριθμός Εγκαταστάσεων 33CBD-Long181). Ο αστυνομικός και ο Aito /379 ανταποκρίθηκαν. Κατά την άφιξη, το άτομο βρέθηκε να φωνάζει απειλές και να ενεργεί επιθετικά. Μια σάρωση του μητρώου SIM του ατόμου αποκάλυψε ότι το άτομο είχε πρόσφατο παρελθόν, συμπεριλαμβανομένων προηγούμενων δημόσιων διαταραχών και ανηλίκους.",
+      "source_author": "Lauren Beukes",
+      "target_author": "Lauren Beukes",
+      "title": "Moxyland"
+    },
+    {
+      "id": "1127-001",
+      "locale": "el-GR",
+      "line": 1771,
+      "source_locale": "en",
+      "time": "11:27",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "11.27",
+      "target_time": "11.27",
+      "source_quote": "It’s from one of the more recent plates the tree has scanned: 11.27 in the morning of 4 April 1175",
+      "target_quote": "Είναι από μία από τις πιο πρόσφατες πλάκες που έχει σκανάρει το δέντρο: 11.27 το πρωί της 4ης Απριλίου 1175",
+      "source_author": "Chris James",
+      "target_author": "Chris James",
+      "title": "Το Δεύτερο Internet Cafe, Μέρος 2ο: Ο Καταρράκτης που Εξολοθρεύει"
+    },
+    {
+      "id": "1131-000",
+      "locale": "el-GR",
+      "line": 1788,
+      "source_locale": "en",
+      "time": "11:31",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "1131",
+      "target_time": "11:31",
+      "source_quote": "Albatross 8 passed over Pamlico Sound at 1131 local time. Its on-board programming was designed to trace thermal receptors over the entire visible horizon, interrogating everything in sight and locking on any signature that fit its acquisition parameters.",
+      "target_quote": "Το Albatross 8 πέρασε πάνω από τον Ήχο Πάμλικο στις 11:31 τοπική ώρα. Ο προγραμματισμός του σχεδιάστηκε για να εντοπίζει θερμικούς υποδοχείς σε ολόκληρο τον ορατό ορίζοντα, διερευνώντας οτιδήποτε βρισκόταν στο οπτικό του πεδίο και κλειδώνοντας οποιαδήποτε υπογραφή που ταιριάζει στις παραμέτρους λήψης δεδομένων.",
+      "source_author": "Tom Clancy",
+      "target_author": "Tom Clancy",
+      "title": "Το κυνήγι του Κόκκινου Οκτώβρη"
+    },
+    {
+      "id": "1140-001",
+      "locale": "el-GR",
+      "line": 1805,
+      "source_locale": "en",
+      "time": "11:40",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "11.40 am",
+      "target_time": "11.40 π.μ.",
+      "source_quote": "But the door was locked, and the window heavily barred with iron rods. He sat down again, and drew his journal from his pocket. On the line where these words were written, “21st December, Saturday, Liverpool,” he added, “80th day, 11.40 am,” and waited.",
+      "target_quote": "Αλλά η πόρτα ήταν κλειδωμένη και το παράθυρο ήταν βαριά κλεισμένο με σιδερένιες ράβδους. Κάθισε ξανά και έβγαλε το ημερολόγιό του από την τσέπη του. Στη γραμμή όπου ήταν γραμμένες αυτές οι λέξεις, «21 Δεκεμβρίου, Σάββατο, Λίβερπουλ», πρόσθεσε, «80ή ημέρα, 11.40 π.μ.» και περίμενε.",
+      "source_author": "Jules Verne",
+      "target_author": "Jules Verne",
+      "title": "Ο Γύρος του Κόσμου σε Ογδόντα Μέρες"
+    },
+    {
+      "id": "1145-004",
+      "locale": "el-GR",
+      "line": 1819,
+      "source_locale": "en",
+      "time": "11:45",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "11.45 am",
+      "target_time": "11:45 π.μ.",
+      "source_quote": "I arrived at St. Gatien from Nice on Tuesday, the 14th of August. I was arrested at 11.45 am on Thursday, the 16th by an agent de police and an inspector in plain clothes and taken to the Commissariat.",
+      "target_quote": "Έφτασα στο Σεντ Γκατιέν από τη Νίκαια την Τρίτη, 14 Αυγούστου. Συνελήφθησα στις 11:45 π.μ. την Πέμπτη, 16 Αυγούστου, από έναν αστυνομικό και έναν επιθεωρητή με πολιτικά και με οδήγησαν στο Επιμελητήριο.",
+      "source_author": "Eric Ambler",
+      "target_author": "Eric Ambler",
+      "title": "Επιτάφιος για έναν Κατάσκοπο"
+    },
+    {
+      "id": "1156-001",
+      "locale": "el-GR",
+      "line": 1840,
+      "source_locale": "en",
+      "time": "11:56",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "11:56 a.m.",
+      "target_time": "11:56 π.μ.",
+      "source_quote": "16th December 1985, 11:56 a.m.<br>[UNIT 4B, KING’S MILLS. (MUM IS MAKING ME SIT IN THE OFFICE BECAUSE SHE DOESN’T TRUST ME TO BE IN THE HOUSE ON MY OWN.)]<br>“Doctor, doctor, everyone thinks I’m a liar.”<br>“I find that hard to believe.”",
+      "target_quote": "16 Δεκεμβρίου 1985, 11:56 π.μ.<br>[ΜΟΝΑΔΑ 4Β, KING’S MILLS. (Η ΜΑΜΑ ΜΕ ΒΑΖΕΙ ΝΑ ΚΑΘΙΣΩ ΣΤΟ ΓΡΑΦΕΙΟ ΕΠΕΙΔΗ ΔΕΝ ΜΕ ΕΜΠΙΣΤΕΥΕΤΑΙ ΟΤΙ ΕΙΜΑΙ ΜΟΝΗ ΜΟΥ ΣΤΟ ΣΠΙΤΙ.)]<br>«Γιατρέ, γιατρέ, όλοι νομίζουν ότι είμαι ψεύτρα.»<br>«Δυσκολεύομαι να το πιστέψω.»",
+      "source_author": "Mary Horlock",
+      "target_author": "Mary Horlock",
+      "title": "Το Βιβλίο των Ψεμάτων"
+    },
+    {
+      "id": "1200-033",
+      "locale": "el-GR",
+      "line": 1886,
+      "source_locale": "en",
+      "time": "12:00",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "noon",
+      "target_time": "μεσημέρι",
+      "source_quote": "On Friday noon, July the twentieth, 1714, the finest bridge in all Peru broke and precipitated five travellers into the gulf below.",
+      "target_quote": "Το μεσημέρι της Παρασκευής, στις 20 Ιουλίου 1714, η καλύτερη γέφυρα σε όλο το Περού έσπασε και έριξε πέντε ταξιδιώτες στον κόλπο από κάτω.",
+      "source_author": "Thornton Wilder",
+      "target_author": "Thornton Wilder",
+      "title": "Η Γέφυρα του Σαν Λούις Ρέι"
+    },
+    {
+      "id": "1217-001",
+      "locale": "el-GR",
+      "line": 1927,
+      "source_locale": "en",
+      "time": "12:17",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "12:17 p.m.",
+      "target_time": "12:17 μ.μ.",
+      "source_quote": "In a bus of the S-line, 10 meters long, 3 wide, 6 high, at 3 km. 600m. from its starting point, loaded with 48 people at 12:17 p.m., a person of the masculine sex aged 27 years 3 months and 8 days, 1 m. 72 cm tall and weighing 65 kg. and wearing a hat 35 cm. in height round the crown of which was a ribbon 60 cm.",
+      "target_quote": "Σε λεωφορείο της γραμμής S, μήκους 10 μέτρων, πλάτους 3, ύψους 6, σε απόσταση 3 χλμ. 600 μ. από την αφετηρία του, φορτωμένο με 48 άτομα στις 12:17 μ.μ., ένα άτομο ανδρικού φύλου ηλικίας 27 ετών, 3 μηνών και 8 ημερών, ύψους 1 μ. 72 εκ. και βάρους 65 κιλών, που φορούσε καπέλο ύψους 35 εκ. γύρω από το οποίο έφερε κορδέλα 60 εκ.",
+      "source_author": "Raymon Queneau",
+      "target_author": "Raymon Queneau",
+      "title": "Ασκήσεις Στυλ"
+    },
+    {
+      "id": "1240-001",
+      "locale": "el-GR",
+      "line": 1972,
+      "source_locale": "en",
+      "time": "12:40",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "12:40",
+      "target_time": "12:40",
+      "source_quote": "“I have received your name from the Skilled Women’s Agency together with their recommendation. I understand they know you personally. I shall be glad to pay you the salary you ask and shall expect you to take up your duties on August 8th. The train is the 12:40 from Paddington and you will be met at Oakbridge station. I enclose five pound notes for expenses.”",
+      "target_quote": "«Έλαβα το όνομά σας από το Γραφείο Εξειδικευμένων Γυναικών μαζί με τη σύστασή τους. Καταλαβαίνω ότι σας γνωρίζουν προσωπικά. Θα χαρώ να σας πληρώσω τον μισθό που ζητάτε και αναμένω να αναλάβετε τα καθήκοντά σας στις 8 Αυγούστου. Το τρένο έρχεται στις 12:40 από το Πάντινγκτον και θα σας συναντήσουν στον σταθμό Όουκμπριτζ. Επισυνάπτω χαρτονομίσματα των πέντε λιρών για τα έξοδα.»",
+      "source_author": "Agatha Christie",
+      "target_author": "Agatha Christie",
+      "title": "Και μετά δεν υπήρχαν"
+    },
+    {
+      "id": "1246-000",
+      "locale": "el-GR",
+      "line": 1982,
+      "source_locale": "en",
+      "time": "12:46",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "12:46 p.m.",
+      "target_time": "12:46 μ.μ.",
+      "source_quote": "And so at 12:46 p.m. on January 9th, 1955, a moribund world drew the first blood from its extraterrestrial assassins.",
+      "target_quote": "Και έτσι, στις 12:46 μ.μ. στις 9 Ιανουαρίου 1955, ένας ετοιμοθάνατος κόσμος άντλησε το πρώτο αίμα από τους εξωγήινους δολοφόνους του.",
+      "source_author": "Geoff St. Reynard",
+      "target_author": "Geoff St. Reynard",
+      "title": "Μην πανικοβάλλεστε!"
+    },
+    {
+      "id": "1314-000",
+      "locale": "el-GR",
+      "line": 2055,
+      "source_locale": "en",
+      "time": "13:14",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "1:14 pm",
+      "target_time": "1:14 μ.μ.",
+      "source_quote": "Agent Brooks pulled out a small notepad and flipped to a page. “On September 26th at 1:14 pm Central Standard Time, Oakly Acadia Laveau’s biological tracker registered an error code. Afterward, all biological activity ceased.”",
+      "target_quote": "Ο πράκτορας Μπρουκς έβγαλε ένα μικρό σημειωματάριο και το γύρισε σε μια σελίδα. «Στις 26 Σεπτεμβρίου στις 1:14 μ.μ. ώρα Κεντρικής Τυπικής, ο βιολογικός ιχνηλάτης της Oakly Acadia Laveau κατέγραψε έναν κωδικό σφάλματος. Στη συνέχεια, κάθε βιολογική δραστηριότητα σταμάτησε.»",
+      "source_author": "Janice Boekhoff",
+      "target_author": "Janice Boekhoff",
+      "title": "Νησί Εξαφάνισης"
+    },
+    {
+      "id": "1346-000",
+      "locale": "el-GR",
+      "line": 2105,
+      "source_locale": "en",
+      "time": "13:46",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "1346 hours",
+      "target_time": "13:46",
+      "source_quote": "PAUL: I noticed Malatarsis right after Mama called me. At 1346 hours on Thursday the twenty-fourth. Brett was killed at least fourteen hours later, in the wee hours of the twenty-fifth.",
+      "target_quote": "ΠΑΥΛΟΣ: Παρατήρησα τον Μαλατάρση αμέσως αφότου με κάλεσε η μαμά. Στις 13:46 την Πέμπτη, εικοστή τέταρτη. Ο Μπρετ σκοτώθηκε τουλάχιστον δεκατέσσερις ώρες αργότερα, τις πρώτες πρωινές ώρες της εικοστής πέμπτης.",
+      "source_author": "Julian May",
+      "target_author": "Julian May",
+      "title": "Τζακ ο Ασώματος"
+    },
+    {
+      "id": "1400-021",
+      "locale": "el-GR",
+      "line": 2147,
+      "source_locale": "en",
+      "time": "14:00",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "1400 hours",
+      "target_time": "14:00",
+      "source_quote": "At approximately 1400 hours a pair of enemy Skyhawks came flying in at deck level out of nowhere.",
+      "target_quote": "Περίπου στις 14:00, ένα ζευγάρι εχθρικών Skyhawk εμφανίστηκε πετώντας στο επίπεδο του καταστρώματος από το πουθενά.",
+      "source_author": "David Mitchell",
+      "target_author": "David Mitchell",
+      "title": "Black Swan Green"
+    },
+    {
+      "id": "1407-000",
+      "locale": "el-GR",
+      "line": 2165,
+      "source_locale": "en",
+      "time": "14:07",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "2:07 P.M.",
+      "target_time": "2:07 μ.μ.",
+      "source_quote": "2:07 P.M., SUNDAY, JUNE 8TH, 1924<br>WHEN GEORGE LOOKED up again, it appeared as if the peak was within touching distance, despite the altimeter warning him that they still had over 300 feet to climb.",
+      "target_quote": "2:07 μ.μ., ΚΥΡΙΑΚΗ, 8 ΙΟΥΝΙΟΥ 1924<br>Όταν ο Τζορτζ κοίταξε ξανά ψηλά, φαινόταν σαν η κορυφή να βρισκόταν σε απόσταση επαφής, παρά το γεγονός ότι το υψόμετρο τον προειδοποιούσε ότι είχαν ακόμα πάνω από 300 πόδια να ανέβουν.",
+      "source_author": "Jeffrey Archer",
+      "target_author": "Jeffrey Archer",
+      "title": "Μονοπάτια της Δόξας"
+    },
+    {
+      "id": "1430-003",
+      "locale": "el-GR",
+      "line": 2208,
+      "source_locale": "en",
+      "time": "14:30",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "2.30 pm",
+      "target_time": "2.30 μ.μ.",
+      "source_quote": "At 2.30 pm on the 13th inst. began to shadow Sir Bobadil the Ostrich, whom I suspect of being the criminal. Shadowing successful. Didn’t lose sight of him once.",
+      "target_quote": "Στις 2.30 μ.μ. στις 13 του μήνα άρχισε να παρακολουθεί τον Σερ Μπομπαντίλ τη Στρουθοκάμηλο, τον οποίο υποψιάζομαι ότι είναι ο εγκληματίας. Η παρακολούθηση ήταν επιτυχής. Δεν τον έχασα ούτε μια φορά από τα μάτια μου.",
+      "source_author": "Eric Linklater",
+      "target_author": "Eric Linklater",
+      "title": "Ο Άνεμος στο Φεγγάρι"
+    },
+    {
+      "id": "1430-007",
+      "locale": "el-GR",
+      "line": 2212,
+      "source_locale": "en",
+      "time": "14:30",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "1/2 past 2 o’clock",
+      "target_time": "2:30 μ.μ.",
+      "source_quote": "May 14th 1800. Wm and John set off into Yorkshire after dinner at 1/2 past 2 o’clock, cold pork in their pockets. I left them at the turning of the Low-wood bay under the trees. My heart was so full that I could barely speak to W. when I gave him a farewell kiss.",
+      "target_quote": "14 Μαΐου 1800. Ο Wm και ο John ξεκίνησαν για το Γιορκσάιρ μετά το δείπνο στις 2:30 μ.μ., με κρύο χοιρινό στις τσέπες τους. Τους άφησα στη στροφή του κόλπου Low-wood κάτω από τα δέντρα. Η καρδιά μου ήταν τόσο γεμάτη που μόλις που μπορούσα να μιλήσω στον W. όταν του έδωσα ένα αποχαιρετιστήριο φιλί.",
+      "source_author": "Dorothy Wordsworth",
+      "target_author": "Dorothy Wordsworth",
+      "title": "Τα Ημερολόγια της Ντόροθι Γουόρντσγουορθ"
+    },
+    {
+      "id": "1516-000",
+      "locale": "el-GR",
+      "line": 2347,
+      "source_locale": "en",
+      "time": "15:16",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "1516",
+      "target_time": "15:16",
+      "source_quote": "The Nimrod rendezvoused with the light aircraft at 1516 GMT.",
+      "target_quote": "Το Nimrod συναντήθηκε με το ελαφρύ αεροσκάφος στις 15:16 GMT.",
+      "source_author": "Iain Banks",
+      "target_author": "Iain Banks",
+      "title": "Δε Κρόου Ρόουντ"
+    },
+    {
+      "id": "1539-000",
+      "locale": "el-GR",
+      "line": 2393,
+      "source_locale": "en",
+      "time": "15:39",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "three thirty-nine",
+      "target_time": "τρεις και τριάντα εννέα",
+      "source_quote": "I lived two lives in late 1965 and early 1963, one in Dallas and one in Jodie. They came together at three thirty-nine in the afternoon of April 10.",
+      "target_quote": "Έζησα δύο ζωές στα τέλη του 1965 και στις αρχές του 1963, μία στο Ντάλας και μία στην Τζόντι. Συναντήθηκαν στις τρεις και τριάντα εννέα το απόγευμα της 10ης Απριλίου.",
+      "source_author": "Stephen King",
+      "target_author": "Stephen King",
+      "title": "22/11/63"
+    },
+    {
+      "id": "1545-002",
+      "locale": "el-GR",
+      "line": 2402,
+      "source_locale": "en",
+      "time": "15:45",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "3:45 pm",
+      "target_time": "3:45 μ.μ.",
+      "source_quote": "I opened my notebook, flipped almost to the end before I found a blank page, and wrote October 5th, 3:45 pm, Dunning to Longview Cem, puts flowers on parents’ (?) graves. Rain.",
+      "target_quote": "Άνοιξα το σημειωματάριό μου, το γύρισα σχεδόν μέχρι το τέλος πριν βρω μια κενή σελίδα και έγραψα 5 Οκτωβρίου, 3:45 μ.μ., Ο Ντάνινγκ στο νεκροταφείο του Λόνγκβιου, βάζει λουλούδια στους τάφους των γονιών (?). Βροχή.",
+      "source_author": "Stephen King",
+      "target_author": "Stephen King",
+      "title": "22/11/63"
+    },
+    {
+      "id": "1547-001",
+      "locale": "el-GR",
+      "line": 2407,
+      "source_locale": "en",
+      "time": "15:47",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "3:47 P.M.",
+      "target_time": "3:47 μ.μ.",
+      "source_quote": "One day, the 30th of September, at 3:47 P.M., a telegram, transmitted by cable from Valentia (Ireland) to Newfoundland and the American Mainland, arrived at the address of President Barbicane.",
+      "target_quote": "Μια μέρα, στις 30 Σεπτεμβρίου, στις 3:47 μ.μ., ένα τηλεγράφημα, που στάλθηκε με καλώδιο από τη Βαλέντια (Ιρλανδία) στη Νέα Γη και την αμερικανική ηπειρωτική χώρα, έφτασε στη διεύθυνση του Προέδρου Μπάρμπικαν.",
+      "source_author": "Jules Verne",
+      "target_author": "Jules Verne",
+      "title": "Ταξίδι στο Κέντρο της Γης"
+    },
+    {
+      "id": "1600-018",
+      "locale": "el-GR",
+      "line": 2445,
+      "source_locale": "en",
+      "time": "16:00",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "4 p.m.",
+      "target_time": "4 μ.μ.",
+      "source_quote": "Please join us on Sunday February 2nd 2003 from 4 p.m. at the Hoxton Gallery, London N1, to preview a new exhibition of faecal paintings by Catherine Leidensteiner.",
+      "target_quote": "Ελάτε μαζί μας την Κυριακή 2 Φεβρουαρίου 2003 από τις 4 μ.μ. στην Πινακοθήκη Hoxton, Λονδίνο N1, για να δείτε μια προεπισκόπηση μιας νέας έκθεσης ζωγραφικής με κόπρανα της Catherine Leidensteiner.",
+      "source_author": "Sue Townsend",
+      "target_author": "Sue Townsend",
+      "title": "Ο Adrian Mole και τα Όπλα Μαζικής Καταστροφής"
+    },
+    {
+      "id": "1654-003",
+      "locale": "el-GR",
+      "line": 2585,
+      "source_locale": "en",
+      "time": "16:54",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "1654",
+      "target_time": "16:54",
+      "source_quote": "It was 1654 local time when the Red October broke the surface of the Atlantic Ocean for the first time, forty-seven miles southeast of Norfolk. There was no other ship in sight.",
+      "target_quote": "Ήταν 16:54 τοπική ώρα όταν ο Κόκκινος Οκτώβρης έσκασε στην επιφάνεια του Ατλαντικού Ωκεανού για πρώτη φορά, σαράντα επτά μίλια νοτιοανατολικά του Νόρφολκ. Δεν υπήρχε άλλο πλοίο στο οπτικό πεδίο.",
+      "source_author": "Tom Clancy",
+      "target_author": "Tom Clancy",
+      "title": "Το κυνήγι του Κόκκινου Οκτώβρη"
+    },
+    {
+      "id": "1732-000",
+      "locale": "el-GR",
+      "line": 2694,
+      "source_locale": "en",
+      "time": "17:32",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "thirty-two minutes past five o’clock",
+      "target_time": "πέντε και τριάντα δύο λεπτά",
+      "source_quote": "It was exactly thirty-two minutes past five o’clock on the evening of Friday, December 9th, when the station-master at Anerly received the following communication by wire from the signal box at Froest Hill: 5.28 down from London Bridge just passed.",
+      "target_quote": "Ήταν ακριβώς πέντε και τριάντα δύο λεπτά το βράδυ της Παρασκευής 9 Δεκεμβρίου, όταν ο σταθμάρχης στο Άνερλι έλαβε την ακόλουθη επικοινωνία μέσω καλωδίου από το κέντρο σημάτων στο Φρόεστ Χιλ: Μόλις πέρασε η ώρα 5.28 κάτω από τη Γέφυρα του Λονδίνου.",
+      "source_author": "Thomas W. Hanshew",
+      "target_author": "Thomas W. Hanshew",
+      "title": "Κλικ, ο Αρχιντετέκτιβ"
+    },
+    {
+      "id": "1749-000",
+      "locale": "el-GR",
+      "line": 2719,
+      "source_locale": "en",
+      "time": "17:49",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "5:49 P.M.",
+      "target_time": "5:49 μ.μ.",
+      "source_quote": "5:49 P.M., SUNDAY, JUNE 8TH, 1924 WHEN ODELL ARRIVED back at Camp IV, he was unable to conceal his excitement. He crawled into Norton’s tent and told him what he’d seen.",
+      "target_quote": "5:49 μ.μ., ΚΥΡΙΑΚΗ, 8 ΙΟΥΝΙΟΥ 1924 ΟΤΑΝ Ο ΟΝΤΕΛ ΕΦΤΑΣΕ πίσω στο Στρατόπεδο IV, δεν μπόρεσε να κρύψει τον ενθουσιασμό του. Μπήκε στη σκηνή του Νόρτον και του είπε τι είχε δει.",
+      "source_author": "Jeffrey Archer",
+      "target_author": "Jeffrey Archer",
+      "title": "Μονοπάτια της Δόξας"
+    },
+    {
+      "id": "1926-000",
+      "locale": "el-GR",
+      "line": 2971,
+      "source_locale": "en",
+      "time": "19:26",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "19.26 hours",
+      "target_time": "19.26 ώρες",
+      "source_quote": "Newman pointed up at the hotel. Under the eaves shards of ice a foot long projected downwards. A palisade of icicles. Inverted. The station was little more than a one-storey hut, an isolated building with no one about. The dashboard clock registered 19.26 hours.",
+      "target_quote": "Ο Νιούμαν έδειξε προς το ξενοδοχείο. Κάτω από τις μαρκίζες θραύσματα πάγου μήκους 30 εκατοστών προεξείχαν προς τα κάτω. Ένα περίπτερο από παγοκρύσταλλα. Ανεστραμμένο. Ο σταθμός ήταν λίγο περισσότερο από μια μονώροφη καλύβα, ένα απομονωμένο κτίριο χωρίς κανέναν τριγύρω. Το ρολόι του ταμπλό έγραφε 19.26 ώρες.",
+      "source_author": "Colin Forbes",
+      "target_author": "Colin Forbes",
+      "title": "Τερματικός σταθμός"
+    },
+    {
+      "id": "1930-006",
+      "locale": "el-GR",
+      "line": 2984,
+      "source_locale": "en",
+      "time": "19:30",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "7:30",
+      "target_time": "7:30",
+      "source_quote": "On July 25th, 8:30 a.m. the bitch Novaya dies whelping. At 10 o’clock she is lowered into her cool grave, at 7:30 that same evening we see our first floes and greet them wishing they were the last.",
+      "target_quote": "Στις 25 Ιουλίου, στις 8:30 π.μ., η σκύλα Νοβάγια πεθαίνει έγκυος. Στις 10 η ώρα την βάζουν στον δροσερό τάφο της, και στις 7:30 το ίδιο βράδυ βλέπουμε τους πρώτους μας ογκόλιθους και τους χαιρετάμε ευχόμενοι να ήταν οι τελευταίοι.",
+      "source_author": "Christoph Ransmayr",
+      "target_author": "Christoph Ransmayr",
+      "title": "Οι Τρόμοι του Πάγου και του Σκότους"
+    },
+    {
+      "id": "1941-000",
+      "locale": "el-GR",
+      "line": 3007,
+      "source_locale": "en",
+      "time": "19:41",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "7:41 P.M.",
+      "target_time": "7:41 μ.μ.",
+      "source_quote": "LIGHTING-UP TIME WAS 7:41 P.M. on September 25th. Krantz didn’t appear on the outskirts of Wentworth until just after eight.",
+      "target_quote": "Η ΩΡΑ ΑΝΑΜΜΑΤΟΣ ΗΤΑΝ 7:41 μ.μ. στις 25 Σεπτεμβρίου. Ο Κραντζ δεν εμφανίστηκε στα περίχωρα του Γουέντγουορθ παρά λίγο μετά τις οκτώ.",
+      "source_author": "Jeffrey Archer",
+      "target_author": "Jeffrey Archer",
+      "title": "Ψευδής Εντύπωση"
+    },
+    {
+      "id": "1947-000",
+      "locale": "el-GR",
+      "line": 3025,
+      "source_locale": "en",
+      "time": "19:47",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "7:47 P.M.",
+      "target_time": "7:47 μ.μ.",
+      "source_quote": "7:47 P.M.<br>Vance watched as the frigate got off a warning tracer, but to no effect. The Hind ignored it, as a stream of 57mm rockets from under the chopper’s stubby starboard wing flared down, while the radar-slaved machine gun beneath the nose opened fire.",
+      "target_quote": "7:47 μ.μ.<br>Ο Βανς παρακολουθούσε καθώς η φρεγάτα κατέβαινε από έναν προειδοποιητικό ιχνηλάτη, αλλά χωρίς αποτέλεσμα. Το Hind το αγνόησε, καθώς μια ροή ρουκετών 57 χιλιοστών από κάτω από την κοντή δεξιά πτέρυγα του ελικοπτέρου έπεσε προς τα κάτω, ενώ το πολυβόλο που λειτουργούσε με ραντάρ κάτω από τη μύτη άνοιξε πυρ.",
+      "source_author": "Thomas Hoover",
+      "target_author": "Thomas Hoover",
+      "title": "Project Cyclops"
+    },
+    {
+      "id": "1952-000",
+      "locale": "el-GR",
+      "line": 3036,
+      "source_locale": "en",
+      "time": "19:52",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "7:52 P.M.",
+      "target_time": "7:52 μ.μ.",
+      "source_quote": "7:52 P.M.<br>Vance pulled himself across the planking and stretched for a box of gear stowed beneath the stern platform. In it was a constant traveling companion: his chrome-handled 9mm Walther. Although the concept of downing a Hind gunship with small-arms fire had been tested in Afghanistan and found wanting, he was so angry his better judgment was not fully in play.",
+      "target_quote": "7:52 μ.μ.<br>Ο Βανς διέσχισε την σανίδα και τεντώθηκε για ένα κουτί με εξοπλισμό που ήταν αποθηκευμένο κάτω από την πρυμναία πλατφόρμα. Μέσα σε αυτό βρισκόταν ένας σταθερός σύντροφος στο ταξίδι του: το Walther 9 χιλιοστών με χρωμιωμένη λαβή. Αν και η ιδέα της κατάρριψης ενός πολεμικού πλοίου Hind με πυρά μικρών όπλων είχε δοκιμαστεί στο Αφγανιστάν και είχε αποδειχθεί ανεπαρκής, ήταν τόσο θυμωμένος που η καλύτερη κρίση του δεν ήταν πλήρως ενεργή.",
+      "source_author": "Thomas Hoover",
+      "target_author": "Thomas Hoover",
+      "title": "Project Cyclops"
+    },
+    {
+      "id": "2000-007",
+      "locale": "el-GR",
+      "line": 3060,
+      "source_locale": "en",
+      "time": "20:00",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "eight o’clock",
+      "target_time": "οκτώ η ώρα",
+      "source_quote": "Again at eight o’clock, when the dark lanes of the Forties were lined five deep with throbbing taxicabs, bound for the theatre district, I felt a sinking in my heart. Forms leaned together in the taxis as they waited, and voices sang, and there was laughter from unheard jokes, and lighted cigarettes outlined unintelligible 70 gestures inside.",
+      "target_quote": "Πάλι στις οκτώ η ώρα, όταν τα σκοτεινά σοκάκια της δεκαετίας του '40 ήταν γεμάτα πέντε βάθη με παλλόμενα ταξί, με προορισμό την περιοχή των θεάτρων, ένιωσα ένα σφίξιμο στην καρδιά μου. Μορφές ακουμπούσαν η μία στην άλλη στα ταξί καθώς περίμεναν, και φωνές τραγουδούσαν, και υπήρχαν γέλια από ανήκουστα αστεία, και αναμμένα τσιγάρα σκιαγράφησαν ακατανόητες 70 χειρονομίες μέσα.",
+      "source_author": "F. Scott Fitzgerald",
+      "target_author": "F. Scott Fitzgerald",
+      "title": "Ο Μεγάλος Γκάτσμπυ"
+    },
+    {
+      "id": "2005-001",
+      "locale": "el-GR",
+      "line": 3092,
+      "source_locale": "en",
+      "time": "20:05",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "8.05 pm",
+      "target_time": "8.05 μ.μ.",
+      "source_quote": "December 23rd At 8.05 pm Prof. Preobrazhensky commenced the first operation of its kind to be performed in Europe: removal under anaesthesia of a dog’s testicles and their replacement by implanted human testes, with appendages and seminal ducts, taken from a 28-year-old human male",
+      "target_quote": "23 Δεκεμβρίου Στις 8.05 μ.μ. ο καθηγητής Πρεομπραζένσκι ξεκίνησε την πρώτη επέμβαση αυτού του είδους που πραγματοποιήθηκε στην Ευρώπη: αφαίρεση υπό αναισθησία των όρχεων ενός σκύλου και αντικατάστασή τους από εμφυτευμένους ανθρώπινους όρχεις, με εξαρτήματα και σπερματοδόχους πόρους, που ελήφθησαν από έναν 28χρονο άνδρα ",
+      "source_author": "Mikhail Bulgakov",
+      "target_author": "Mikhail Bulgakov",
+      "title": " Η Καρδιά ενός Σκύλου "
+    },
+    {
+      "id": "2010-000",
+      "locale": "el-GR",
+      "line": 3101,
+      "source_locale": "en",
+      "time": "20:10",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "ten minutes past eight",
+      "target_time": "οκτώ και δέκα λεπτά",
+      "source_quote": "It is ten minutes past eight. I must tell you how much I love you at ten minutes past eight on a Sunday evening, January 27th 1918.",
+      "target_quote": "Είναι οκτώ και δέκα λεπτά. Πρέπει να σου πω πόσο σε αγαπώ στις οκτώ και δέκα λεπτά ένα βράδυ Κυριακής, 27 Ιανουαρίου 1918.",
+      "source_author": "Katherine Mansfield",
+      "target_author": "Katherine Mansfield",
+      "title": "Γράμμα στον John Middleton Murry"
+    },
+    {
+      "id": "2010-002",
+      "locale": "el-GR",
+      "line": 3103,
+      "source_locale": "en",
+      "time": "20:10",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "2010h.",
+      "target_time": "20:10",
+      "source_quote": "At 2010h. on 1 April Y.D.A.U., the medical attache is still watching the unlabelled entertainment cartridge.",
+      "target_quote": "Στις 20:10 την 1η Απριλίου του Y.D.A.U., ο ιατρικός ακόλουθος εξακολουθεί να παρακολουθεί την κασέτα ψυχαγωγίας χωρίς ετικέτα.",
+      "source_author": "David Foster Wallace",
+      "target_author": "David Foster Wallace",
+      "title": "Απείρως αστεία"
+    },
+    {
+      "id": "2022-000",
+      "locale": "el-GR",
+      "line": 3124,
+      "source_locale": "en",
+      "time": "20:22",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "8:22 P.M.",
+      "target_time": "8:22 μ.μ.",
+      "source_quote": "8:22 P.M.<br>Eric Hamblin, formerly of Sweetwater, Texas, had worked as a guard for SatCom for the past two and a half years and he loved the job. He was twenty-four, a college-dropout casualty of the go-go eighties who got to spend his afternoons hanging out on one of Greece’s most beautiful islands.",
+      "target_quote": "8:22 μ.μ.<br>Ο Έρικ Χάμπλιν, πρώην κάτοικος του Σουίτγουοτερ του Τέξας, εργαζόταν ως φύλακας για την SatCom τα τελευταία δυόμισι χρόνια και αγαπούσε τη δουλειά. Ήταν είκοσι τεσσάρων ετών, ένα θύμα της άτακτης δεκαετίας του '80 που παράτησε το κολέγιο και είχε την ευκαιρία να περνάει τα απογεύματά του σε ένα από τα πιο όμορφα νησιά της Ελλάδας.",
+      "source_author": "Thomas Hoover",
+      "target_author": "Thomas Hoover",
+      "title": "Project Cyclops"
+    },
+    {
+      "id": "2046-000",
+      "locale": "el-GR",
+      "line": 3175,
+      "source_locale": "en",
+      "time": "20:46",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "8:46",
+      "target_time": "8:46",
+      "source_quote": "And then he walked into the bedroom and saw the one clue that confirmed that Tina had been in the apartment on the evening of 9/11. By the side of Anna’s bed was a watch. Jack checked the time: 8:46.",
+      "target_quote": "Και μετά μπήκε στην κρεβατοκάμαρα και είδε το ένα στοιχείο που επιβεβαίωνε ότι η Τίνα βρισκόταν στο διαμέρισμα το βράδυ της 11ης Σεπτεμβρίου. Δίπλα στο κρεβάτι της Άννας υπήρχε ένα ρολόι. Ο Τζακ έλεγξε την ώρα: 8:46.",
+      "source_author": "Jeffrey Archer",
+      "target_author": "Jeffrey Archer",
+      "title": "Λανθασμένη εντύπωση"
+    },
+    {
+      "id": "2100-016",
+      "locale": "el-GR",
+      "line": 3218,
+      "source_locale": "en",
+      "time": "21:00",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "2100",
+      "target_time": "21:00",
+      "source_quote": "At 2100 at night it’s cold out.",
+      "target_quote": "Στις 21:00 το βράδυ κάνει κρύο έξω.",
+      "source_author": "David Foster Wallace",
+      "target_author": "David Foster Wallace",
+      "title": "Ατελείωτα αστεία"
+    },
+    {
+      "id": "2104-001",
+      "locale": "el-GR",
+      "line": 3238,
+      "source_locale": "en",
+      "time": "21:04",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "9:04 P.M.",
+      "target_time": "9:04 μ.μ.",
+      "source_quote": "9:04 P.M.<br>“How does an ETA of 0200 hours sound to you?” Dimitri Spiros was using an unsecured radio, but he had no choice. “That’ll give us about twenty-nine hours. Enough time to get everything together.”",
+      "target_quote": "9:04 μ.μ.<br>«Πώς σας φαίνεται μια ώρα άφιξης 02:00;» Ο Δημήτρης Σπύρος χρησιμοποιούσε έναν μη ασφαλισμένο ασύρματο, αλλά δεν είχε άλλη επιλογή. «Αυτό θα μας δώσει περίπου είκοσι εννέα ώρες. Αρκετό χρόνο για να τα συναρμολογήσουμε όλα.»",
+      "source_author": "Thomas Hoover",
+      "target_author": "Thomas Hoover",
+      "title": "Project Cyclops"
+    },
+    {
+      "id": "2122-001",
+      "locale": "el-GR",
+      "line": 3270,
+      "source_locale": "en",
+      "time": "21:22",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "9:22",
+      "target_time": "9:22",
+      "source_quote": "Two days later, on the second of February at 9:22 Jerusalem time, the Dominion launched a simultaneous and massive attack on twenty-two of the worlds between Bannermere and Earth.",
+      "target_quote": "Δύο μέρες αργότερα, στις 2 Φεβρουαρίου στις 9:22 ώρα Ιερουσαλήμ, η Κυριαρχία εξαπέλυσε μια ταυτόχρονη και μαζική επίθεση σε είκοσι δύο από τους κόσμους μεταξύ Μπάνερμιρ και Γης.",
+      "source_author": "Chris Walley",
+      "target_author": "Chris Walley",
+      "title": "Η Άπειρη Μέρα"
+    },
+    {
+      "id": "2212-002",
+      "locale": "el-GR",
+      "line": 3392,
+      "source_locale": "en",
+      "time": "22:12",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "2212",
+      "target_time": "22:12",
+      "source_quote": "The Chinese women scuttled at an amazing rate, given their size and the bags’ size. It was c. 2212:30-40h., smack in the middle of the former Interval of Issues Resolution.",
+      "target_quote": "Οι Κινέζες έτρεχαν με εκπληκτικό ρυθμό, δεδομένου του μεγέθους τους και του μεγέθους των τσαντών. Ήταν περίπου 22:12:30–40, ακριβώς στη μέση του προηγούμενου Διαστήματος Επίλυσης Θεμάτων.",
+      "source_author": "David Foster Wallace",
+      "target_author": "David Foster Wallace",
+      "title": "Απείρων Αστείων"
+    },
+    {
+      "id": "2316-001",
+      "locale": "el-GR",
+      "line": 3548,
+      "source_locale": "en",
+      "time": "23:16",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "11.16 p.m.",
+      "target_time": "11.16 μ.μ.",
+      "source_quote": "But I couldn’t get out of the house straightaway because he would see me, so I would have to wait until he was asleep.<br>The time was 11.16 p.m.<br>I tried doubling 2s again, but I couldn’t get past 2(15) which was 32,768. So I groaned to make the time pass quicker and not think.",
+      "target_quote": "Αλλά δεν μπορούσα να βγω αμέσως από το σπίτι επειδή θα με έβλεπε, οπότε θα έπρεπε να περιμένω μέχρι να κοιμηθεί.<br>Η ώρα ήταν 11.16 μ.μ.<br>Προσπάθησα να διπλασιάσω ξανά τα 2, αλλά δεν κατάφερα να ξεπεράσω το 2(15) που ήταν 32.768. Έτσι γκρίνιαξα για να περάσει ο χρόνος πιο γρήγορα και να μην σκέφτομαι.",
+      "source_author": "Mark Haddon",
+      "target_author": "Mark Haddon",
+      "title": "Το Περίεργο Περιστατικό με τον Σκύλο τη Νύχτα"
+    },
+    {
+      "id": "2336-000",
+      "locale": "el-GR",
+      "line": 3586,
+      "source_locale": "en",
+      "time": "23:36",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "2336",
+      "target_time": "23:36",
+      "source_quote": "Then Green knocks at the front door at 2336 — Gately has to Log the exact time and then it’s his call whether to unlock the door.",
+      "target_quote": "Τότε ο Γκριν χτυπάει την μπροστινή πόρτα στις 23:36 — Ο Γκέιτλι πρέπει να καταγράψει την ακριβή ώρα και μετά είναι δική του απόφαση αν θα ξεκλειδώσει την πόρτα.",
+      "source_author": "David Foster Wallace",
+      "target_author": "David Foster Wallace",
+      "title": "Απείρων Αστείων"
+    }
+  ],
+  "editorial_dispositions": [
+    {
+      "id": "0018-001",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "21st December 1985, 12:18 a.m.<br>[IN BED]<br>Michael doesn’t believe in Heaven or Hell. He’s got closer to death than most living people and he tells me there was no tunnel of light or dancing angels. I’m a bit disappointed, to be honest.",
+      "target_quote": "21 Δεκεμβρίου 1985, 12:18 π.μ.<br>[ΣΤΟ ΚΡΕΒΑΤΙ]<br>Ο Μάικλ δεν πιστεύει στον Παράδεισο ή την Κόλαση. Έχει πλησιάσει περισσότερο τον θάνατο από τους περισσότερους ζωντανούς ανθρώπους και μου λέει ότι δεν υπήρχε σήραγγα φωτός ή άγγελοι που χόρευαν. Είμαι λίγο απογοητευμένος, για να είμαι ειλικρινής."
+    },
+    {
+      "id": "0100-013",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "It was the thirtieth of May by now. One am on the thirtieth of May 1940. Quite a famous date on which to be lying awake and staring at the ceiling. Already in the creeks and tidal estuaries of England the pleasure-boats and paddle-steamers were casting their moorings for the day trip to Dunkirk. And, over on the other side, Ted stood as a good a chance as anyone else.",
+      "target_quote": "Ήταν πια 30 Μαΐου. Μία π.μ. στις 30 Μαΐου 1940. Μια αρκετά διάσημη ημερομηνία για να είσαι ξύπνιος και να κοιτάς το ταβάνι. Ήδη στα ρυάκια και τις παλιρροιακές εκβολές ποταμών της Αγγλίας, τα σκάφη αναψυχής και τα ατμόπλοια έλυναν τους κάβους τους για την ημερήσια εκδρομή στη Δουνκέρκη. Και, από την άλλη πλευρά, ο Τεντ είχε τόσες πολλές πιθανότητες όσο και όλοι οι άλλοι."
+    },
+    {
+      "id": "0110-002",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "February 26, Saturday — Richards went out 1.10 am and found it clearing a bit, so we got under way as soon as possible, which was 2:10a.m.",
+      "target_quote": "26 Φεβρουαρίου, Σάββατο — Ο Ρίτσαρντς βγήκε στις 1.10 π.μ. και διαπίστωσε ότι ο καιρός είχε αρχίσει να καθαρίζει λίγο, οπότε ξεκινήσαμε το συντομότερο δυνατό, δηλαδή στις 2:10 π.μ."
+    },
+    {
+      "id": "0127-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "It was a receipt for the purchase of 13.6 gallons of gas, a credit card transaction bearing Soderburg’s signature. It had been generated at the Food ’N Fuel at 1:27 A.M. on January 1.",
+      "target_quote": "Ήταν μια απόδειξη για την αγορά 13,6 γαλονιών βενζίνης, μια συναλλαγή με πιστωτική κάρτα που έφερε την υπογραφή του Σόντερμπουργκ. Είχε εκδοθεί στο Food ’N Fuel στις 1:27 π.μ. την 1η Ιανουαρίου."
+    },
+    {
+      "id": "0230-004",
+      "draft": false,
+      "disposition": "corrected_context_verified",
+      "reason": "Context identifies Stice’s forehead frozen to glass; Greek names the forehead explicitly. Google’s suggested Bruce Green/vinyl sofa context was incorrect.",
+      "source_locale": "en",
+      "source_quote": "Inc, I tried to pull her off about 0230, and there was this fucking… sound.",
+      "target_quote": "Inc, προσπάθησα να ξεκολλήσω το μέτωπό μου κατά τις 02:30, και ακούστηκε αυτός ο γαμημένος… ήχος."
+    },
+    {
+      "id": "0318-000",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "The truth of the matter we may never know. All we know at the moment is that at 03.18 hours on 10th February the Southern Cross was firmly beset by the ice and she was sending out an SOS. Sometime during the night that lead must have come to an end. The westward-driven pack ice closed round her and in a matter of hours she was gone.",
+      "target_quote": "Την αλήθεια μπορεί να μην τη μάθουμε ποτέ. Το μόνο που γνωρίζουμε αυτή τη στιγμή είναι ότι στις 03:18 στις 10 Φεβρουαρίου, το Southern Cross περικυκλωνόταν σφιχτά από τον πάγο και εξέπεμπε σήμα SOS. Κάποια στιγμή κατά τη διάρκεια της νύχτας, εκείνο το πέρασμα ανάμεσα στους πάγους πρέπει να είχε κλείσει. Ο πάγος που κινούνταν προς τα δυτικά το περικύκλωσε και σε λίγες ώρες είχε εξαφανιστεί."
+    },
+    {
+      "id": "0320-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "Prabath Kumara, 16. 17th November 1989. At 3.20 am from the home of a friend.",
+      "target_quote": "Πραμπάθ Κουμάρα, 16. 17 Νοεμβρίου 1989. Στις 3.20 π.μ. από το σπίτι ενός φίλου."
+    },
+    {
+      "id": "0343-000",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "The clock says 3.43 am. The thermometer says it’s a chilly fourteen degrees Fahrenheit. The weatherman says the cold spell will last until Thursday, so bundle up and bundle up some more. There are icicles barring the window of the bat cave.",
+      "target_quote": "Το ρολόι δείχνει 3.43 π.μ. Το θερμόμετρο λέει ότι η θερμοκρασία είναι 14 βαθμοί Φαρενάιτ. Ο μετεωρολόγος λέει ότι το κύμα ψύχους θα διαρκέσει μέχρι την Πέμπτη, οπότε ντυθείτε ζεστά και βάλτε κι άλλα ρούχα. Σταλακτίτες πάγου φράζουν το παράθυρο της σπηλιάς με τις νυχτερίδες."
+    },
+    {
+      "id": "0419-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "At nineteen minutes past four on the morning of December 27, 2040, her eyes, dark as an Aztec sacrificial knife, flicked open.",
+      "target_quote": "Στις τέσσερις και δεκαεννέα λεπτά το πρωί της 27ης Δεκεμβρίου 2040, τα μάτια της, σκοτεινά σαν μαχαίρι θυσίας των Αζτέκων, άνοιξαν διάπλατα."
+    },
+    {
+      "id": "0428-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "He had been the only survivor — the only one who’d come home alive. So what the hell was going on? Who was this new character in his nightmares? He glanced up at the clock and was disheartened to discover that it was only 0428 hours.",
+      "target_quote": "Ήταν ο μόνος επιζών — ο μόνος που είχε γυρίσει σπίτι ζωντανός. Τι στο καλό συνέβαινε λοιπόν; Ποιος ήταν αυτός ο νέος χαρακτήρας στους εφιάλτες του; Κοίταξε ψηλά στο ρολόι και απογοητεύτηκε όταν ανακάλυψε ότι ήταν μόνο 04:28."
+    },
+    {
+      "id": "0429-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "Your pardon, Dr. Leving, but there is an urgent call for you. The pseudo-robot Caliban says he must speak with you at once.<br>Fredda sighed. She knew she had to take the call, and that Caliban would only call if it were important. But even so, it was turning into a very long night.<br>“Now what time is it?” she asked.<br>“It is now 0429 hours,” Donald said.",
+      "target_quote": "Συγγνώμη, Δρ. Λέβινγκ, αλλά υπάρχει μια επείγουσα κλήση για εσάς. Το ψευδορομπότ Κάλιμπαν λέει ότι πρέπει να μιλήσει μαζί σας αμέσως.<br>Η Φρέντα αναστέναξε. Ήξερε ότι έπρεπε να απαντήσει στην κλήση και ότι ο Κάλιμπαν θα τηλεφωνούσε μόνο αν ήταν σημαντικό. Αλλά ακόμα κι έτσι, η νύχτα μετατρεπόταν σε πολύ μεγάλη.<br>«Τώρα τι ώρα είναι;» ρώτησε.<br>«Είναι τώρα 04:29 ώρες», είπε ο Ντόναλντ."
+    },
+    {
+      "id": "0430-007",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "Hester Thrale undulates in in a false fox jacket at 2330 as usual even though she has to be up at like 0430 for the breakfast shift at the Provident Nursing Home and sometimes eats breakfast with Gately, both their faces nodding perilously close to their Frosted Flakes.",
+      "target_quote": "Η Hester Thrale μπαίνει λικνιζόμενη, φορώντας ένα μπουφάν από απομίμηση γούνας αλεπούς στις 23:30 όπως συνήθως, παρόλο που πρέπει να είναι ξύπνια γύρω στις 04:30 για τη βάρδια του πρωινού στο Γηροκομείο Provident και μερικές φορές τρώει πρωινό με τον Gately, και τα κεφάλια και των δύο γέρνουν από τη νύστα επικίνδυνα κοντά στις Frosted Flakes τους."
+    },
+    {
+      "id": "0444-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "At 0444 hours yesterday morning, the landing craft Orpheus was appropriated by Dr. Diana Chandler, twenty-seven, an astrophysicist from Toronto, Canada. Dr. Chandler, apparently disconsolate over the failure of her husband, Aaron Rossman, also twenty-seven, also of Toronto, to renew their recently expired two-year marriage contract, presumably committed suicide. Mr. Rossman is the Starcology’s dock master.",
+      "target_quote": "Στις 04:44 χθες το πρωί, το αποβατικό σκάφος Orpheus κατασχέθηκε από την Δρ. Diana Chandler, είκοσι επτά ετών, αστροφυσικό από το Τορόντο του Καναδά. Η Δρ. Chandler, προφανώς απελπισμένη από την αποτυχία του συζύγου της, Aaron Rossman, επίσης είκοσι επτά ετών, επίσης από το Τορόντο, να ανανεώσει το πρόσφατα λήξαν διετές συμβόλαιο γάμου τους, πιθανώς αυτοκτόνησε. Ο κ. Rossman είναι ο λιμενάρχης του Starcology."
+    },
+    {
+      "id": "0459-001",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "The whole place smells like death no matter what the fuck you do. Gately gets to the shelter at 0459.9h and just shuts his head off as if his head had a control switch.",
+      "target_quote": "Όλο το μέρος μυρίζει θάνατο ό,τι και να κάνεις. Ο Γκέιτλι φτάνει στο καταφύγιο στις 04:59.9 και απλώς κλείνει το κεφάλι του σαν να είχε διακόπτη ελέγχου."
+    },
+    {
+      "id": "0544-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "And what time, again, did the defendant actually say these words?<br>“That would have been — you can see the time on the film tape on the frame where you’ve stopped it. 0544 hours.”",
+      "target_quote": "Και τι ώρα, πάλι, είπε στην πραγματικότητα ο κατηγορούμενος αυτά τα λόγια;<br>«Αυτό θα ήταν — μπορείτε να δείτε την ώρα στην ταινία στο καρέ όπου την σταματήσατε. 05:44 ώρες.»"
+    },
+    {
+      "id": "0600-016",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "On the 15th of September 1840, about six o’clock in the morning, the Ville-de-Montereau, ready to depart, pouring out great whirls of smoke by the quai Saint-Bernard.",
+      "target_quote": "Στις 15 Σεπτεμβρίου 1840, περίπου στις έξι το πρωί, το Ville-de-Montereau, έτοιμο να αναχωρήσει, έβγαζε μεγάλες δίνες καπνού δίπλα στην αποβάθρα Saint-Bernard."
+    },
+    {
+      "id": "0616-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "And, as they boarded the 06:16 to Mittelsteine, Erika toyed with the notion that although every metre of this journey took her further from her mother it would also bring her closer to the possibility of seeing Max again and the blossoming of their new little family.",
+      "target_quote": "Και, καθώς επιβιβάζονταν στο τρένο των 6:16 προς το Μίτελσταϊν, η Έρικα έπαιζε με την ιδέα ότι, παρόλο που κάθε μέτρο αυτού του ταξιδιού την απομάκρυνε από τη μητέρα της, θα την έφερνε επίσης πιο κοντά στην πιθανότητα να ξαναδεί τον Μαξ και την άνθιση της νέας τους μικρής οικογένειας."
+    },
+    {
+      "id": "0619-000",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "6.19 am, 8th June 2004, the jet of your pupil set in the gold of your eye.",
+      "target_quote": "6.19 π.μ., 8 Ιουνίου 2004, το κατάμαυρο της κόρης σου δεμένο στο χρυσό του ματιού σου."
+    },
+    {
+      "id": "0626-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "No lights were on in the master bedroom at this time but it is noted that the official time of sunrise for this date is 0626 hours. Victim is quite clear that sufficient light was entering via the large picture window to allow good visibility.",
+      "target_quote": "Δεν υπήρχαν φώτα στην κύρια κρεβατοκάμαρα εκείνη την ώρα, αλλά σημειώνεται ότι η επίσημη ώρα ανατολής για αυτήν την ημερομηνία είναι 06:26. Το θύμα είναι αρκετά σαφές ότι εισερχόταν αρκετό φως από το μεγάλο παράθυρο για να επιτρέπει καλή ορατότητα."
+    },
+    {
+      "id": "0627-003",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "Early in the morning, late in the century, Cricklewood Broadway. At 0627 hours on January 1, 1975, Alfred Archibald Jones was dressed in corduroy and sat in a fume-filled Cavalier Musketeer Estate, facedown on the steering wheel, hoping the judgment would not be too heavy upon him.",
+      "target_quote": "Νωρίς το πρωί, στα τέλη του αιώνα, Cricklewood Broadway. Στις 06:27 την 1η Ιανουαρίου 1975, ο Alfred Archibald Jones ήταν ντυμένος με κοτλέ και καθόταν σε ένα γεμάτο αναθυμιάσεις Cavalier Musketeer Estate, μπρούμυτα στο τιμόνι, ελπίζοντας ότι η κρίση δεν θα ήταν πολύ βαριά πάνω του."
+    },
+    {
+      "id": "0639-000",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "He fired another torpedo at 0639 hours from a distance of 500 metres. Again it missed its intended target, but exploded seven minutes later. The torpedos would only detonate on contact with a solid object.",
+      "target_quote": "Εκτόξευσε άλλη μια τορπίλη στις 06:39 από απόσταση 500 μέτρων. Και πάλι, αστόχησε στον προβλεπόμενο στόχο της, αλλά εξερράγη επτά λεπτά αργότερα. Οι τορπίλες πυροδοτούνταν μόνο κατά την επαφή με ένα στερεό αντικείμενο."
+    },
+    {
+      "id": "0652-001",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "Having lied to Mum, I realised that my only option was to take the 06.52 to London as if I hadn’t been dismissed at all.",
+      "target_quote": "Έχοντας πει ψέματα στη μαμά, συνειδητοποίησα ότι η μόνη μου επιλογή ήταν να πάρω το τρένο των 6.52 για το Λονδίνο σαν να μην με είχαν απολύσει καθόλου."
+    },
+    {
+      "id": "0655-001",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "At 6:55 am Lisa parked and took the lift from the frozen underground car park up to level 1 of Green Oaks Shopping Centre.",
+      "target_quote": "Στις 6:55 π.μ. η Λίζα πάρκαρε και πήρε το ασανσέρ από το παγωμένο υπόγειο πάρκινγκ μέχρι τον πρώτο όροφο του εμπορικού κέντρου Green Oaks."
+    },
+    {
+      "id": "0715-001",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "At 7:15 A.M., January 25th, we started flying northwestward under McTighe’s pilotage with ten men, seven dogs, a sledge, a fuel and food supply, and other items including the plane’s wireless outfit.",
+      "target_quote": "Στις 7:15 π.μ., στις 25 Ιανουαρίου, ξεκινήσαμε να πετάμε βορειοδυτικά υπό την καθοδήγηση του McTighe με δέκα άνδρες, επτά σκυλιά, ένα έλκηθρο, προμήθειες καυσίμων και τροφίμων, καθώς και άλλα είδη, συμπεριλαμβανομένου του ασύρματου εξοπλισμού του αεροπλάνου."
+    },
+    {
+      "id": "0715-003",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "It was early in April in the year ’83 that I woke one morning to find Sherlock Holmes standing, fully dressed, by the side of my bed. He was a late riser, as a rule, and as the clock on the mantelpiece showed me that it was only a quarter-past seven, I blinked up at him in some surprise, and perhaps just a little resentment, for I was myself regular in my habits.",
+      "target_quote": "Ήταν στις αρχές Απριλίου του ’83 που ξύπνησα ένα πρωί και βρήκα τον Σέρλοκ Χολμς να στέκεται, ντυμένος, δίπλα στο κρεβάτι μου. Κατά κανόνα, ξυπνούσε αργά, και καθώς το ρολόι στο τζάκι μου έδειξε ότι ήταν μόνο επτά και τέταρτο, τον κοίταξα με κάποια έκπληξη, και ίσως με μια μικρή δυσαρέσκεια, γιατί κι εγώ ο ίδιος ήμουν τακτικός στις συνήθειές μου."
+    },
+    {
+      "id": "0729-002",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "At 7.29 in the morning of 1 July, the cinematographer finds himself filming silence itself.",
+      "target_quote": "Στις 7.29 το πρωί της 1ης Ιουλίου, ο κινηματογραφιστής βρίσκεται να κινηματογραφεί την ίδια τη σιωπή."
+    },
+    {
+      "id": "0830-011",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "On July 25th, 8:30 a.m. the bitch Novaya dies whelping. At 10 o’clock she is lowered into her cool grave, at 7:30 that same evening we see our first floes and greet them wishing they were the last.",
+      "target_quote": "Στις 25 Ιουλίου, στις 8:30 π.μ., η σκύλα Νοβάγια πεθαίνει γεννώντας. Στις 10 η ώρα την βάζουν στον δροσερό τάφο της, και στις 7:30 το ίδιο βράδυ βλέπουμε τους πρώτους μας πλάκες θαλάσσιου πάγου και τους χαιρετάμε ευχόμενοι να ήταν οι τελευταίοι."
+    },
+    {
+      "id": "0832-001",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "It’s 8:32 a.m. on the twenty-fourth of December and Henry and I are on our way to Meadowlark House for Christmas. It’s a beautiful clear day, no snow here in Chicago, but six inches on the ground in South Haven.",
+      "target_quote": "Είναι 8:32 π.μ. στις 24 Δεκεμβρίου και ο Χένρι κι εγώ πηγαίνουμε στο Meadowlark House για τα Χριστούγεννα. Είναι μια όμορφη, καθαρή μέρα, δεν χιονίζει εδώ στο Σικάγο, αλλά το έδαφος είναι καλυμμένο με έξι ίντσες χιόνι στο Σάουθ Χέιβεν."
+    },
+    {
+      "id": "0832-002",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "Does anybody know the time a little more exactly is what I’m wondering, Don, since Day doesn’t.<br>Gately checks his cheap digital, head still hung over the sofa’s arm. “I got 0832:14, 15, 16, Randy.”<br>“’ks a lot, D.G. man.”",
+      "target_quote": "Αυτό που με απασχολεί είναι αν κάποιος ξέρει την ώρα λίγο πιο ακριβώς, Ντον, αφού ο Ντέι δεν ξέρει.<br>Ο Γκέιτλι κοιτάζει την φτηνή ψηφιακή του συσκευή, με το κεφάλι ακόμα κρεμασμένο πάνω από το μπράτσο του καναπέ. «Έχω 08:32:14, 15, 16, Ράντι.»<br>«Ευχαριστώ πολύ, φίλε Ντι Τζι.»"
+    },
+    {
+      "id": "0900-016",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "The Earth was created on Sunday the 21st of October, 4004 B.C., at exactly 9:00 A.M., because God liked to get work done early in the morning while he was feeling fresh.",
+      "target_quote": "Η Γη δημιουργήθηκε την Κυριακή 21 Οκτωβρίου του 4004 π.Χ., ακριβώς στις 9:00 π.μ., επειδή στον Θεό άρεσε να κάνει τη δουλειά του νωρίς το πρωί, ενώ ένιωθε φρέσκος."
+    },
+    {
+      "id": "0915-003",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "Great! Jones commented. “I’ve never seen it do that before. That’s all right. Okay.” Jones pulled a handful of pencils from his back pocket. “Now, I got the contact first at 0915 or so, and the bearing was about two-six-nine.”",
+      "target_quote": "Τέλεια! σχολίασε ο Τζόουνς. «Δεν το έχω ξαναδεί να το κάνει αυτό. Δεν πειράζει. Εντάξει.» Ο Τζόουνς έβγαλε μια χούφτα μολύβια από την πίσω τσέπη του. «Λοιπόν, εντόπισα την επαφή για πρώτη φορά στις 09:15 περίπου, και η κατεύθυνση ήταν περίπου δύο-έξι-εννέα.»"
+    },
+    {
+      "id": "0922-001",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "Two days later, on the second of February at 9:22 Jerusalem time, the Dominion launched a simultaneous and massive attack on twenty-two of the worlds between Bannermere and Earth.",
+      "target_quote": "Δύο μέρες αργότερα, στις 2 Φεβρουαρίου στις 9:22 ώρα Ιερουσαλήμ, η Κυριαρχία εξαπέλυσε μια ταυτόχρονη και μαζική επίθεση σε είκοσι δύο από τους κόσμους μεταξύ Μπάνερμιρ και Γης."
+    },
+    {
+      "id": "0949-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "Twenty-four hours later there was a new message on the numbers station. Porter listened to it twice before decoding it. It simply said, Message received. Assets en route. Landing tomorrow at 0949 hours. GCHQ listening in.",
+      "target_quote": "Είκοσι τέσσερις ώρες αργότερα, υπήρχε ένα νέο μήνυμα στον σταθμό αριθμών. Ο Πόρτερ το άκουσε δύο φορές πριν το αποκωδικοποιήσει. Έγραφε απλώς, Μήνυμα ελήφθη. Πόροι καθ' οδόν. Προσγείωση αύριο στις 09:49. Το GCHQ ακούει."
+    },
+    {
+      "id": "1000-026",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "For some seconds the light went on becoming brighter and brighter, and she saw everything more and more clearly and the clock ticked louder and louder until there was a terrific explosion right in her ear. Orlando leapt as if she had been violently struck on the head. Ten times she was struck. In fact it was ten o’clock in the morning. It was the eleventh of October. It was 1928. It was the present moment.",
+      "target_quote": "Για μερικά δευτερόλεπτα το φως συνέχιζε να γίνεται όλο και πιο φωτεινό, και έβλεπε τα πάντα όλο και πιο καθαρά και το ρολόι χτυπούσε όλο και πιο δυνατά μέχρι που ακούστηκε μια τρομερή έκρηξη ακριβώς στο αυτί της. Η Ορλάντο πετάχτηκε σαν να την είχαν χτυπήσει βίαια στο κεφάλι. Δέκα φορές την είχαν χτυπήσει. Στην πραγματικότητα ήταν δέκα η ώρα το πρωί. Ήταν 11 Οκτωβρίου. Ήταν το 1928. Ήταν η παρούσα στιγμή."
+    },
+    {
+      "id": "1000-034",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "On July 25th, 8:30 a.m. the bitch Novaya dies whelping. At 10 o’clock she is lowered into her cool grave, at 7:30 that same evening we see our first floes and greet them wishing they were the last.",
+      "target_quote": "Στις 25 Ιουλίου, στις 8:30 π.μ., η σκύλα Νοβάγια πεθαίνει γεννώντας. Στις 10 η ώρα την βάζουν στον δροσερό τάφο της, στις 7:30 το ίδιο βράδυ βλέπουμε τους πρώτους μας πλάκες θαλάσσιου πάγου και τους χαιρετάμε ευχόμενοι να ήταν οι τελευταίοι."
+    },
+    {
+      "id": "1003-002",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "The date was the 14th of May and the clock on his desk said the time was twenty three minutes past ten, so he tapped in the numbers 10.23. At least, that’s what he meant to do. In fact he typed in the numbers 10.03.",
+      "target_quote": "Η ημερομηνία ήταν 14 Μαΐου και το ρολόι στο γραφείο του έδειχνε δέκα και είκοσι τρία λεπτά, οπότε πληκτρολόγησε τους αριθμούς 10.23. Τουλάχιστον, αυτό ήθελε να κάνει. Στην πραγματικότητα, πληκτρολόγησε τους αριθμούς 10.03."
+    },
+    {
+      "id": "1023-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "The date was the 14th of May and the clock on his desk said the time was twenty three minutes past ten, so he tapped in the numbers 10.23. At least, that’s what he meant to do. In fact he typed in the numbers 10.03",
+      "target_quote": "Η ημερομηνία ήταν 14 Μαΐου και το ρολόι στο γραφείο του έδειχνε δέκα και είκοσι τρία λεπτά, οπότε πληκτρολόγησε τους αριθμούς 10:23. Τουλάχιστον, αυτό ήθελε να κάνει. Στην πραγματικότητα, πληκτρολόγησε τους αριθμούς 10:03"
+    },
+    {
+      "id": "1030-002",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "“So be it, then,” replied the count; and extending his hand towards a calendar suspended near the chimney piece, he said, “today is the 21st of February”, and drawing out his watch, added, “it is exactly half past 10 o’clock. Now promise me to remember this, and expect me on the 21st of May at half past 10 in the forenoon.”",
+      "target_quote": "«Έτσι λοιπόν», απάντησε ο κόμης· και απλώνοντας το χέρι του προς ένα ημερολόγιο που κρεμόταν κοντά στην καμινάδα, είπε, «σήμερα είναι 21 Φεβρουαρίου», και βγάζοντας το ρολόι του, πρόσθεσε, «είναι ακριβώς 10:30 η ώρα. Τώρα υποσχέσου μου να το θυμάσαι αυτό και περίμενέ με στις 21 Μαΐου στις 10:30 το πρωί»."
+    },
+    {
+      "id": "1037-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "I quite agree with you, said Mr. Murbles. “It is a most awkward situation. Lady Dormer died at precisely 10.37 a.m. on November 11th.”",
+      "target_quote": "Συμφωνώ απόλυτα μαζί σας, είπε ο κ. Μέρμπλς. «Είναι μια πολύ αμήχανη κατάσταση. Η λαίδη Ντόρμερ πέθανε ακριβώς στις 10:37 π.μ. στις 11 Νοεμβρίου.»"
+    },
+    {
+      "id": "1100-025",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "“Armstrong must have gone into the sea sometime during the night of the 10th-11th — and I’ll explain why. We found the point where the body was washed up — it had been wedged between two rocks and there were bits of cloth, hair, etc. on them. It must have been deposited there at high water on the 11th — that’s to say round about 11 o’clock A.M. After that, the storm subsided, and succeeding high water marks are considerably lower.”",
+      "target_quote": "«Ο Άρμστρονγκ πρέπει να μπήκε στη θάλασσα κάποια στιγμή τη νύχτα της 10ης προς 11η — και θα εξηγήσω γιατί. Βρήκαμε το σημείο όπου ξεβράστηκε το σώμα — ήταν σφηνωμένο ανάμεσα σε δύο βράχους και υπήρχαν κομμάτια υφάσματος, μαλλιών κ.λπ. πάνω τους. Πρέπει να είχε αποτεθεί εκεί σε υψηλή στάθμη νερού στις 11 — δηλαδή γύρω στις 11 π.μ. Μετά από αυτό, η καταιγίδα κόπασε και τα επόμενα σημάδια υψηλής στάθμης νερού είναι σημαντικά χαμηλότερα.»"
+    },
+    {
+      "id": "1102-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "On August 9th, three days later, at 11.02 am, another B−29 dropped the second bomb on the industrial section of the city of Nagasaki, totally destroying 1 1/2 square miles of the city, killing 39,000 persons and injuring 25,000 more.",
+      "target_quote": "Στις 9 Αυγούστου, τρεις ημέρες αργότερα, στις 11.02 π.μ., ένα άλλο B-29 έριξε τη δεύτερη βόμβα στη βιομηχανική περιοχή της πόλης του Ναγκασάκι, καταστρέφοντας ολοσχερώς 1 1/2 τετραγωνικά μίλια της πόλης, σκοτώνοντας 39.000 άτομα και τραυματίζοντας 25.000 ακόμη."
+    },
+    {
+      "id": "1120-002",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "OFFICER’S NOTES Disruption alert logged 11h20 from Stones’ Pool Hall (Premises ID 33CBD-Long181). Officer and Aito /379 responded. On arrival found subject shouting threats and acting in aggressive manner. A scan of the subject’s SIM ID register revealed that the subject has recent priors including previous public disruptions and a juvenile record.",
+      "target_quote": "ΣΗΜΕΙΩΣΕΙΣ ΑΞΙΩΜΑΤΙΚΟΥ Η ειδοποίηση για διατάραξη της τάξης καταγράφηκε στις 11:20 από το Stones’ Pool Hall (Αριθμός Εγκαταστάσεων 33CBD-Long181). Ο αστυνομικός και ο Aito /379 ανταποκρίθηκαν. Κατά την άφιξη, το άτομο βρέθηκε να φωνάζει απειλές και να ενεργεί επιθετικά. Μια σάρωση του μητρώου SIM του ατόμου αποκάλυψε ότι το άτομο είχε πρόσφατο παρελθόν, συμπεριλαμβανομένων προηγούμενων περιστατικών διατάραξης της δημόσιας τάξης και αδικημάτων ως ανήλικος."
+    },
+    {
+      "id": "1127-001",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "It’s from one of the more recent plates the tree has scanned: 11.27 in the morning of 4 April 1175",
+      "target_quote": "Είναι από μία από τις πιο πρόσφατες πλάκες που έχει σκανάρει το δέντρο: 11.27 το πρωί της 4ης Απριλίου 1175"
+    },
+    {
+      "id": "1131-000",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "Albatross 8 passed over Pamlico Sound at 1131 local time. Its on-board programming was designed to trace thermal receptors over the entire visible horizon, interrogating everything in sight and locking on any signature that fit its acquisition parameters.",
+      "target_quote": "Το Albatross 8 πέρασε πάνω από τον κόλπο Πάμλικο στις 11:31 τοπική ώρα. Ο προγραμματισμός του σχεδιάστηκε για να αναζητά θερμικά σήματα σε ολόκληρο τον ορατό ορίζοντα, διερευνώντας οτιδήποτε βρισκόταν στο οπτικό του πεδίο και κλειδώνοντας οποιαδήποτε υπογραφή που ταιριάζει στις παραμέτρους λήψης δεδομένων."
+    },
+    {
+      "id": "1140-001",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "But the door was locked, and the window heavily barred with iron rods. He sat down again, and drew his journal from his pocket. On the line where these words were written, “21st December, Saturday, Liverpool,” he added, “80th day, 11.40 am,” and waited.",
+      "target_quote": "Αλλά η πόρτα ήταν κλειδωμένη και το παράθυρο ήταν βαριά κλεισμένο με σιδερένιες ράβδους. Κάθισε ξανά και έβγαλε το ημερολόγιό του από την τσέπη του. Στη γραμμή όπου ήταν γραμμένες αυτές οι λέξεις, «21 Δεκεμβρίου, Σάββατο, Λίβερπουλ», πρόσθεσε, «80ή ημέρα, 11.40 π.μ.» και περίμενε."
+    },
+    {
+      "id": "1145-004",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "I arrived at St. Gatien from Nice on Tuesday, the 14th of August. I was arrested at 11.45 am on Thursday, the 16th by an agent de police and an inspector in plain clothes and taken to the Commissariat.",
+      "target_quote": "Έφτασα στο Σεντ Γκατιέν από τη Νίκαια την Τρίτη, 14 Αυγούστου. Συνελήφθησα στις 11:45 π.μ. την Πέμπτη, 16 Αυγούστου, από έναν αστυνομικό και έναν επιθεωρητή με πολιτικά και με οδήγησαν στο αστυνομικό τμήμα."
+    },
+    {
+      "id": "1156-001",
+      "draft": false,
+      "disposition": "corrected_context_verified",
+      "reason": "Kept feminine agreement for Catherine and applied the revised wording.",
+      "source_locale": "en",
+      "source_quote": "16th December 1985, 11:56 a.m.<br>[UNIT 4B, KING’S MILLS. (MUM IS MAKING ME SIT IN THE OFFICE BECAUSE SHE DOESN’T TRUST ME TO BE IN THE HOUSE ON MY OWN.)]<br>“Doctor, doctor, everyone thinks I’m a liar.”<br>“I find that hard to believe.”",
+      "target_quote": "16 Δεκεμβρίου 1985, 11:56 π.μ.<br>[ΜΟΝΑΔΑ 4Β, ΚΙΝΓΚΣ ΜΙΛΣ. (Η ΜΑΜΑ ΜΕ ΒΑΖΕΙ ΝΑ ΚΑΘΟΜΑΙ ΣΤΟ ΓΡΑΦΕΙΟ ΕΠΕΙΔΗ ΔΕΝ ΜΕ ΕΜΠΙΣΤΕΥΕΤΑΙ ΝΑ ΕΙΜΑΙ ΜΟΝΗ ΜΟΥ ΣΤΟ ΣΠΙΤΙ.)]<br>«Γιατρέ, γιατρέ, όλοι νομίζουν ότι είμαι ψεύτρα.»<br>«Μου είναι δύσκολο να το πιστέψω.»"
+    },
+    {
+      "id": "1200-033",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "On Friday noon, July the twentieth, 1714, the finest bridge in all Peru broke and precipitated five travellers into the gulf below.",
+      "target_quote": "Το μεσημέρι της Παρασκευής, στις 20 Ιουλίου 1714, η καλύτερη γέφυρα σε όλο το Περού έσπασε και έριξε πέντε ταξιδιώτες στο βάραθρο από κάτω."
+    },
+    {
+      "id": "1217-001",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "In a bus of the S-line, 10 meters long, 3 wide, 6 high, at 3 km. 600m. from its starting point, loaded with 48 people at 12:17 p.m., a person of the masculine sex aged 27 years 3 months and 8 days, 1 m. 72 cm tall and weighing 65 kg. and wearing a hat 35 cm. in height round the crown of which was a ribbon 60 cm.",
+      "target_quote": "Σε λεωφορείο της γραμμής S, μήκους 10 μέτρων, πλάτους 3, ύψους 6, σε απόσταση 3 χλμ. 600 μ. από την αφετηρία του, φορτωμένο με 48 άτομα στις 12:17 μ.μ., ένα άτομο ανδρικού φύλου ηλικίας 27 ετών, 3 μηνών και 8 ημερών, ύψους 1 μ. 72 εκ. και βάρους 65 κιλών, που φορούσε καπέλο ύψους 35 εκ. γύρω από το οποίο έφερε κορδέλα 60 εκ."
+    },
+    {
+      "id": "1240-001",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "“I have received your name from the Skilled Women’s Agency together with their recommendation. I understand they know you personally. I shall be glad to pay you the salary you ask and shall expect you to take up your duties on August 8th. The train is the 12:40 from Paddington and you will be met at Oakbridge station. I enclose five pound notes for expenses.”",
+      "target_quote": "«Έλαβα το όνομά σας από το Γραφείο Εξειδικευμένων Γυναικών μαζί με τη σύστασή τους. Καταλαβαίνω ότι σας γνωρίζουν προσωπικά. Θα χαρώ να σας πληρώσω τον μισθό που ζητάτε και αναμένω να αναλάβετε τα καθήκοντά σας στις 8 Αυγούστου. Το τρένο έρχεται στις 12:40 από το Πάντινγκτον και θα σας συναντήσουν στον σταθμό Όουκμπριτζ. Επισυνάπτω χαρτονομίσματα των πέντε λιρών για τα έξοδα.»"
+    },
+    {
+      "id": "1246-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "And so at 12:46 p.m. on January 9th, 1955, a moribund world drew the first blood from its extraterrestrial assassins.",
+      "target_quote": "Και έτσι, στις 12:46 μ.μ. στις 9 Ιανουαρίου 1955, ένας ετοιμοθάνατος κόσμος άντλησε το πρώτο αίμα από τους εξωγήινους δολοφόνους του."
+    },
+    {
+      "id": "1314-000",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "Agent Brooks pulled out a small notepad and flipped to a page. “On September 26th at 1:14 pm Central Standard Time, Oakly Acadia Laveau’s biological tracker registered an error code. Afterward, all biological activity ceased.”",
+      "target_quote": "Ο πράκτορας Μπρουκς έβγαλε ένα μικρό σημειωματάριο και το γύρισε σε μια σελίδα. «Στις 26 Σεπτεμβρίου στις 1:14 μ.μ. Κεντρική Κανονική Ώρα, ο βιολογικός ιχνηλάτης της Oakly Acadia Laveau κατέγραψε έναν κωδικό σφάλματος. Στη συνέχεια, κάθε βιολογική δραστηριότητα σταμάτησε.»"
+    },
+    {
+      "id": "1346-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "PAUL: I noticed Malatarsis right after Mama called me. At 1346 hours on Thursday the twenty-fourth. Brett was killed at least fourteen hours later, in the wee hours of the twenty-fifth.",
+      "target_quote": "ΠΑΥΛΟΣ: Παρατήρησα τον Μαλατάρση αμέσως αφότου με κάλεσε η μαμά. Στις 13:46 την Πέμπτη, εικοστή τέταρτη. Ο Μπρετ σκοτώθηκε τουλάχιστον δεκατέσσερις ώρες αργότερα, τις πρώτες πρωινές ώρες της εικοστής πέμπτης."
+    },
+    {
+      "id": "1400-021",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "At approximately 1400 hours a pair of enemy Skyhawks came flying in at deck level out of nowhere.",
+      "target_quote": "Περίπου στις 14:00, ένα ζευγάρι εχθρικών Skyhawk εμφανίστηκε πετώντας στο επίπεδο του καταστρώματος από το πουθενά."
+    },
+    {
+      "id": "1407-000",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "2:07 P.M., SUNDAY, JUNE 8TH, 1924<br>WHEN GEORGE LOOKED up again, it appeared as if the peak was within touching distance, despite the altimeter warning him that they still had over 300 feet to climb.",
+      "target_quote": "2:07 μ.μ., ΚΥΡΙΑΚΗ, 8 ΙΟΥΝΙΟΥ 1924<br>Όταν ο Τζορτζ κοίταξε ξανά ψηλά, φαινόταν σαν η κορυφή να βρισκόταν σε απόσταση επαφής, παρά το γεγονός ότι το υψομετρικό όργανο τον προειδοποιούσε ότι είχαν ακόμα πάνω από 300 πόδια να ανέβουν."
+    },
+    {
+      "id": "1430-003",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "At 2.30 pm on the 13th inst. began to shadow Sir Bobadil the Ostrich, whom I suspect of being the criminal. Shadowing successful. Didn’t lose sight of him once.",
+      "target_quote": "Στις 2.30 μ.μ. στις 13 του μήνα άρχισα να παρακολουθώ τον Σερ Μπομπαντίλ τη Στρουθοκάμηλο, τον οποίο υποψιάζομαι ότι είναι ο εγκληματίας. Η παρακολούθηση ήταν επιτυχής. Δεν τον έχασα ούτε μια φορά από τα μάτια μου."
+    },
+    {
+      "id": "1430-007",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "May 14th 1800. Wm and John set off into Yorkshire after dinner at 1/2 past 2 o’clock, cold pork in their pockets. I left them at the turning of the Low-wood bay under the trees. My heart was so full that I could barely speak to W. when I gave him a farewell kiss.",
+      "target_quote": "14 Μαΐου 1800. Ο Wm και ο John ξεκίνησαν για το Γιορκσάιρ μετά το δείπνο στις 2:30 μ.μ., με κρύο χοιρινό στις τσέπες τους. Τους άφησα στη στροφή του κόλπου Low-wood κάτω από τα δέντρα. Η καρδιά μου ήταν τόσο γεμάτη που μόλις που μπορούσα να μιλήσω στον W. όταν του έδωσα ένα αποχαιρετιστήριο φιλί."
+    },
+    {
+      "id": "1516-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "The Nimrod rendezvoused with the light aircraft at 1516 GMT.",
+      "target_quote": "Το Nimrod συναντήθηκε με το ελαφρύ αεροσκάφος στις 15:16 GMT."
+    },
+    {
+      "id": "1539-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "I lived two lives in late 1965 and early 1963, one in Dallas and one in Jodie. They came together at three thirty-nine in the afternoon of April 10.",
+      "target_quote": "Έζησα δύο ζωές στα τέλη του 1965 και στις αρχές του 1963, μία στο Ντάλας και μία στην Τζόντι. Συναντήθηκαν στις τρεις και τριάντα εννέα το απόγευμα της 10ης Απριλίου."
+    },
+    {
+      "id": "1545-002",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "I opened my notebook, flipped almost to the end before I found a blank page, and wrote October 5th, 3:45 pm, Dunning to Longview Cem, puts flowers on parents’ (?) graves. Rain.",
+      "target_quote": "Άνοιξα το σημειωματάριό μου, το γύρισα σχεδόν μέχρι το τέλος πριν βρω μια κενή σελίδα και έγραψα 5 Οκτωβρίου, 3:45 μ.μ., Ο Ντάνινγκ στο νεκροταφείο του Λόνγκβιου, βάζει λουλούδια στους τάφους των γονιών (?). Βροχή."
+    },
+    {
+      "id": "1547-001",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "One day, the 30th of September, at 3:47 P.M., a telegram, transmitted by cable from Valentia (Ireland) to Newfoundland and the American Mainland, arrived at the address of President Barbicane.",
+      "target_quote": "Μια μέρα, στις 30 Σεπτεμβρίου, στις 3:47 μ.μ., ένα τηλεγράφημα, που στάλθηκε με καλώδιο από τη Βαλέντια (Ιρλανδία) στη Νέα Γη και την αμερικανική ηπειρωτική χώρα, έφτασε στη διεύθυνση του Προέδρου Μπάρμπικαν."
+    },
+    {
+      "id": "1600-018",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "Please join us on Sunday February 2nd 2003 from 4 p.m. at the Hoxton Gallery, London N1, to preview a new exhibition of faecal paintings by Catherine Leidensteiner.",
+      "target_quote": "Ελάτε μαζί μας την Κυριακή 2 Φεβρουαρίου 2003 από τις 4 μ.μ. στην Πινακοθήκη Hoxton, Λονδίνο N1, για να δείτε μια προεπισκόπηση μιας νέας έκθεσης ζωγραφικής με κόπρανα της Catherine Leidensteiner."
+    },
+    {
+      "id": "1654-003",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "It was 1654 local time when the Red October broke the surface of the Atlantic Ocean for the first time, forty-seven miles southeast of Norfolk. There was no other ship in sight.",
+      "target_quote": "Ήταν 16:54 τοπική ώρα όταν ο Κόκκινος Οκτώβρης έσκασε στην επιφάνεια του Ατλαντικού Ωκεανού για πρώτη φορά, σαράντα επτά μίλια νοτιοανατολικά του Νόρφολκ. Δεν υπήρχε άλλο πλοίο στο οπτικό πεδίο."
+    },
+    {
+      "id": "1732-000",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "It was exactly thirty-two minutes past five o’clock on the evening of Friday, December 9th, when the station-master at Anerly received the following communication by wire from the signal box at Froest Hill: 5.28 down from London Bridge just passed.",
+      "target_quote": "Ήταν ακριβώς πέντε και τριάντα δύο λεπτά το βράδυ της Παρασκευής 9 Δεκεμβρίου, όταν ο σταθμάρχης στο Άνερλι έλαβε την ακόλουθη επικοινωνία μέσω καλωδίου από το κέντρο σημάτων στο Φρόεστ Χιλ: Μόλις πέρασε το τρένο των 5.28 από τον σταθμό London Bridge."
+    },
+    {
+      "id": "1749-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "5:49 P.M., SUNDAY, JUNE 8TH, 1924 WHEN ODELL ARRIVED back at Camp IV, he was unable to conceal his excitement. He crawled into Norton’s tent and told him what he’d seen.",
+      "target_quote": "5:49 μ.μ., ΚΥΡΙΑΚΗ, 8 ΙΟΥΝΙΟΥ 1924 ΟΤΑΝ Ο ΟΝΤΕΛ ΕΦΤΑΣΕ πίσω στο Στρατόπεδο IV, δεν μπόρεσε να κρύψει τον ενθουσιασμό του. Μπήκε στη σκηνή του Νόρτον και του είπε τι είχε δει."
+    },
+    {
+      "id": "1926-000",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "Newman pointed up at the hotel. Under the eaves shards of ice a foot long projected downwards. A palisade of icicles. Inverted. The station was little more than a one-storey hut, an isolated building with no one about. The dashboard clock registered 19.26 hours.",
+      "target_quote": "Ο Νιούμαν έδειξε προς το ξενοδοχείο. Κάτω από τις μαρκίζες θραύσματα πάγου μήκους 30 εκατοστών προεξείχαν προς τα κάτω. Ένας φράχτης από σταλακτίτες πάγου. Ανεστραμμένο. Ο σταθμός ήταν λίγο περισσότερο από μια μονώροφη καλύβα, ένα απομονωμένο κτίριο χωρίς κανέναν τριγύρω. Το ρολόι του ταμπλό έγραφε 19.26 ώρες."
+    },
+    {
+      "id": "1930-006",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "On July 25th, 8:30 a.m. the bitch Novaya dies whelping. At 10 o’clock she is lowered into her cool grave, at 7:30 that same evening we see our first floes and greet them wishing they were the last.",
+      "target_quote": "Στις 25 Ιουλίου, στις 8:30 π.μ., η σκύλα Νοβάγια πεθαίνει γεννώντας. Στις 10 η ώρα την βάζουν στον δροσερό τάφο της, και στις 7:30 το ίδιο βράδυ βλέπουμε τους πρώτους μας πλάκες θαλάσσιου πάγου και τους χαιρετάμε ευχόμενοι να ήταν οι τελευταίοι."
+    },
+    {
+      "id": "1941-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "LIGHTING-UP TIME WAS 7:41 P.M. on September 25th. Krantz didn’t appear on the outskirts of Wentworth until just after eight.",
+      "target_quote": "Η ΩΡΑ ΑΝΑΜΜΑΤΟΣ ΗΤΑΝ 7:41 μ.μ. στις 25 Σεπτεμβρίου. Ο Κραντζ δεν εμφανίστηκε στα περίχωρα του Γουέντγουορθ παρά λίγο μετά τις οκτώ."
+    },
+    {
+      "id": "1947-000",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "7:47 P.M.<br>Vance watched as the frigate got off a warning tracer, but to no effect. The Hind ignored it, as a stream of 57mm rockets from under the chopper’s stubby starboard wing flared down, while the radar-slaved machine gun beneath the nose opened fire.",
+      "target_quote": "7:47 μ.μ.<br>Ο Βανς παρακολουθούσε καθώς η φρεγάτα έριχνε μια προειδοποιητική τροχιοδεικτική βολή, αλλά χωρίς αποτέλεσμα. Το Hind το αγνόησε, καθώς μια ροή ρουκετών 57 χιλιοστών από κάτω από την κοντή δεξιά πτέρυγα του ελικοπτέρου έπεσε προς τα κάτω, ενώ το πολυβόλο που λειτουργούσε με ραντάρ κάτω από τη μύτη άνοιξε πυρ."
+    },
+    {
+      "id": "1952-000",
+      "draft": false,
+      "disposition": "corrected",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "7:52 P.M.<br>Vance pulled himself across the planking and stretched for a box of gear stowed beneath the stern platform. In it was a constant traveling companion: his chrome-handled 9mm Walther. Although the concept of downing a Hind gunship with small-arms fire had been tested in Afghanistan and found wanting, he was so angry his better judgment was not fully in play.",
+      "target_quote": "7:52 μ.μ.<br>Ο Βανς διέσχισε την σανίδα και τεντώθηκε για ένα κουτί με εξοπλισμό που ήταν αποθηκευμένο κάτω από την πρυμναία πλατφόρμα. Μέσα σε αυτό βρισκόταν ένας σταθερός σύντροφος στο ταξίδι του: το Walther 9 χιλιοστών με χρωμιωμένη λαβή. Αν και η ιδέα της κατάρριψης ενός επιθετικού ελικοπτέρου Hind με πυρά μικρών όπλων είχε δοκιμαστεί στο Αφγανιστάν και είχε αποδειχθεί ανεπαρκής, ήταν τόσο θυμωμένος που η καλύτερη κρίση του δεν ήταν πλήρως ενεργή."
+    },
+    {
+      "id": "2000-007",
+      "draft": false,
+      "disposition": "corrected_context_verified",
+      "reason": "Removed the spurious 70 after checking the 1925 text; preserved geographic Forties, five rows, and throbbing engines.",
+      "source_locale": "en",
+      "source_quote": "Again at eight o’clock, when the dark lanes of the Forties were lined five deep with throbbing taxicabs, bound for the theatre district, I felt a sinking in my heart. Forms leaned together in the taxis as they waited, and voices sang, and there was laughter from unheard jokes, and lighted cigarettes outlined unintelligible 70 gestures inside.",
+      "target_quote": "Ξανά στις οκτώ η ώρα, όταν τα σκοτεινά στενά της περιοχής των Forties ήταν γεμάτα, σε πέντε σειρές, με ταξί με τις μηχανές τους να πάλλονται, με κατεύθυνση τη θεατρική συνοικία, ένιωσα μια θλίψη στην καρδιά μου. Μορφές έγερναν η μία προς την άλλη στα ταξί καθώς περίμεναν, και φωνές τραγουδούσαν, και ακούγονταν γέλια από ανέκδοτα που δεν έφταναν στα αυτιά μου, και αναμμένα τσιγάρα σχεδίαζαν ακατάληπτες χειρονομίες στο εσωτερικό τους."
+    },
+    {
+      "id": "2005-001",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "December 23rd At 8.05 pm Prof. Preobrazhensky commenced the first operation of its kind to be performed in Europe: removal under anaesthesia of a dog’s testicles and their replacement by implanted human testes, with appendages and seminal ducts, taken from a 28-year-old human male",
+      "target_quote": "23 Δεκεμβρίου Στις 8.05 μ.μ. ο καθηγητής Πρεομπραζένσκι ξεκίνησε την πρώτη επέμβαση αυτού του είδους που πραγματοποιήθηκε στην Ευρώπη: αφαίρεση υπό αναισθησία των όρχεων ενός σκύλου και αντικατάστασή τους από εμφυτευμένους ανθρώπινους όρχεις, με εξαρτήματα και σπερματοδόχους πόρους, που ελήφθησαν από έναν 28χρονο άνδρα "
+    },
+    {
+      "id": "2010-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "It is ten minutes past eight. I must tell you how much I love you at ten minutes past eight on a Sunday evening, January 27th 1918.",
+      "target_quote": "Είναι οκτώ και δέκα λεπτά. Πρέπει να σου πω πόσο σε αγαπώ στις οκτώ και δέκα λεπτά ένα βράδυ Κυριακής, 27 Ιανουαρίου 1918."
+    },
+    {
+      "id": "2010-002",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "At 2010h. on 1 April Y.D.A.U., the medical attache is still watching the unlabelled entertainment cartridge.",
+      "target_quote": "Στις 20:10 την 1η Απριλίου του Y.D.A.U., ο ιατρικός ακόλουθος εξακολουθεί να παρακολουθεί την κασέτα ψυχαγωγίας χωρίς ετικέτα."
+    },
+    {
+      "id": "2022-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "8:22 P.M.<br>Eric Hamblin, formerly of Sweetwater, Texas, had worked as a guard for SatCom for the past two and a half years and he loved the job. He was twenty-four, a college-dropout casualty of the go-go eighties who got to spend his afternoons hanging out on one of Greece’s most beautiful islands.",
+      "target_quote": "8:22 μ.μ.<br>Ο Έρικ Χάμπλιν, πρώην κάτοικος του Σουίτγουοτερ του Τέξας, εργαζόταν ως φύλακας για την SatCom τα τελευταία δυόμισι χρόνια και αγαπούσε τη δουλειά. Ήταν είκοσι τεσσάρων ετών, ένα θύμα της άτακτης δεκαετίας του '80 που παράτησε το κολέγιο και είχε την ευκαιρία να περνάει τα απογεύματά του σε ένα από τα πιο όμορφα νησιά της Ελλάδας."
+    },
+    {
+      "id": "2046-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "And then he walked into the bedroom and saw the one clue that confirmed that Tina had been in the apartment on the evening of 9/11. By the side of Anna’s bed was a watch. Jack checked the time: 8:46.",
+      "target_quote": "Και μετά μπήκε στην κρεβατοκάμαρα και είδε το ένα στοιχείο που επιβεβαίωνε ότι η Τίνα βρισκόταν στο διαμέρισμα το βράδυ της 11ης Σεπτεμβρίου. Δίπλα στο κρεβάτι της Άννας υπήρχε ένα ρολόι. Ο Τζακ έλεγξε την ώρα: 8:46."
+    },
+    {
+      "id": "2100-016",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "At 2100 at night it’s cold out.",
+      "target_quote": "Στις 21:00 το βράδυ κάνει κρύο έξω."
+    },
+    {
+      "id": "2104-001",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "9:04 P.M.<br>“How does an ETA of 0200 hours sound to you?” Dimitri Spiros was using an unsecured radio, but he had no choice. “That’ll give us about twenty-nine hours. Enough time to get everything together.”",
+      "target_quote": "9:04 μ.μ.<br>«Πώς σας φαίνεται μια ώρα άφιξης 02:00;» Ο Δημήτρης Σπύρος χρησιμοποιούσε έναν μη ασφαλισμένο ασύρματο, αλλά δεν είχε άλλη επιλογή. «Αυτό θα μας δώσει περίπου είκοσι εννέα ώρες. Αρκετό χρόνο για να τα συναρμολογήσουμε όλα.»"
+    },
+    {
+      "id": "2122-001",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "Two days later, on the second of February at 9:22 Jerusalem time, the Dominion launched a simultaneous and massive attack on twenty-two of the worlds between Bannermere and Earth.",
+      "target_quote": "Δύο μέρες αργότερα, στις 2 Φεβρουαρίου στις 9:22 ώρα Ιερουσαλήμ, η Κυριαρχία εξαπέλυσε μια ταυτόχρονη και μαζική επίθεση σε είκοσι δύο από τους κόσμους μεταξύ Μπάνερμιρ και Γης."
+    },
+    {
+      "id": "2212-002",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "The Chinese women scuttled at an amazing rate, given their size and the bags’ size. It was c. 2212:30-40h., smack in the middle of the former Interval of Issues Resolution.",
+      "target_quote": "Οι Κινέζες έτρεχαν με εκπληκτικό ρυθμό, δεδομένου του μεγέθους τους και του μεγέθους των τσαντών. Ήταν περίπου 22:12:30–40, ακριβώς στη μέση του προηγούμενου Διαστήματος Επίλυσης Θεμάτων."
+    },
+    {
+      "id": "2316-001",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "But I couldn’t get out of the house straightaway because he would see me, so I would have to wait until he was asleep.<br>The time was 11.16 p.m.<br>I tried doubling 2s again, but I couldn’t get past 2(15) which was 32,768. So I groaned to make the time pass quicker and not think.",
+      "target_quote": "Αλλά δεν μπορούσα να βγω αμέσως από το σπίτι επειδή θα με έβλεπε, οπότε θα έπρεπε να περιμένω μέχρι να κοιμηθεί.<br>Η ώρα ήταν 11.16 μ.μ.<br>Προσπάθησα να διπλασιάσω ξανά τα 2, αλλά δεν κατάφερα να ξεπεράσω το 2(15) που ήταν 32.768. Έτσι γκρίνιαξα για να περάσει ο χρόνος πιο γρήγορα και να μην σκέφτομαι."
+    },
+    {
+      "id": "2336-000",
+      "draft": false,
+      "disposition": "accepted_numeric_localization",
+      "reason": "Numeric differences preserve the source values; time formatting, date ordinals or numbers written in words are legitimate.",
+      "source_locale": "en",
+      "source_quote": "Then Green knocks at the front door at 2336 — Gately has to Log the exact time and then it’s his call whether to unlock the door.",
+      "target_quote": "Τότε ο Γκριν χτυπάει την μπροστινή πόρτα στις 23:36 — Ο Γκέιτλι πρέπει να καταγράψει την ακριβή ώρα και μετά είναι δική του απόφαση αν θα ξεκλειδώσει την πόρτα."
+    }
+  ],
+  "publication": {
+    "published": 3640,
+    "draft": 0
+  },
+  "context_sources": {
+    "0230-004": "https://communiteq-eu5.nbg1.your-objectstorage.com/uploads/db8181/original/3X/d/3/d3ac07190508c6c7e0f87376b40a73dcb241dd36.pdf",
+    "1156-001": "https://canongate.co.uk/books/1257-the-book-of-lies/",
+    "2000-007": "https://en.wikisource.org/wiki/Page:The_Great_Gatsby_(1925).djvu/80"
+  }
+}

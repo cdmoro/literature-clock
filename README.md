@@ -12,7 +12,7 @@ Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) (
 
 - **A little literature, every minute.** Read a passage that mentions the current time, with its book and author. The layout adapts to desktop and mobile screens.
 - **Make it your own.** Read on a textured **Book Page**, watch the day unfold in **Horizon**, or explore Poster, Terminal, Handwriting and more. Choose light, dark or system appearance, custom accent colours and Google Fonts.
-- **Read across languages.** Choose from six languages, including British and American English catalogues. Pick your quote languages independently of the interface, rotate between them, or enable **bilingual mode** to see a matching translation below the passage.
+- **Read across languages.** Choose from seven languages, including British and American English catalogues. Pick your quote languages independently of the interface, rotate between them, or enable **bilingual mode** to see a matching translation below the passage.
 - **Take your time.** Pause a quote, browse other quotes for the same minute, then return to the live clock whenever you're ready.
 - **Keep the passages you love.** Save favourites and revisit recently displayed quotes in **My quotes**, without an account.
 - **Share the exact quote.** Send a direct link to the displayed passage, copy it when native sharing isn't available, or download an image.
@@ -54,6 +54,7 @@ Explore the full selection in **Settings**: Base, colour themes, Retro, Elegant,
 | French | `fr-FR` |
 | Italian | `it-IT` |
 | German | `de-DE` |
+| Greek | `el-GR` |
 
 The clock initially follows your browser's language. In **Settings**, choose an interface language and select one or more quote languages. An empty selection follows the interface language; multiple selections rotate quotes between those languages.
 

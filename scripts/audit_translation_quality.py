@@ -68,6 +68,9 @@ def clock_phrase(phrase, lang):
     Does not infer AM/PM, approximate times, arithmetic in narrative, or a time
     from an arbitrary number embedded in a sentence.
     """
+    if lang == 'el':
+        from greek_time import clock_phrase as greek_clock_phrase
+        return greek_clock_phrase(phrase)
     if lang not in NUMBERS:
         return None
     text = phrase.casefold().strip(' .!?,“”«»')
@@ -135,6 +138,7 @@ def plain(text):
 def explicit_period(phrase, lang):
     """Only explicit, unambiguous day periods; 'night' alone stays contextual."""
     patterns = {
+        'el': (r'\b(?:μεσάνυχτα|μεσονύχτια|πρωί|ξημερώματα|π\.μ\.)', r'\b(?:μεσημέρι|απόγευμα|βράδυ|μ\.μ\.)'),
         'en': (r'\b(?:midnight|morning|a\.?m\.?)\b', r'\b(?:noon|afternoon|evening|p\.?m\.?)\b'),
         'es': (r'\b(?:medianoche|mañana|madrugada)\b', r'\b(?:mediodía|tarde)\b'),
         'fr': (r'\b(?:minuit|matin)\b', r'\b(?:midi|soir)\b'),

@@ -152,5 +152,27 @@
       "quote_time_case": "",
       "sfw": true
     }
+  ],
+  "el-GR": [
+    {
+      "quote_first": "Σφάλμα ",
+      "quote_last": ": δεν βρέθηκε παράθεμα.",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "Ημερολόγιο πλοίου:<br>Αναζητούμε ακόμη ένα παράθεμα για τις ",
+      "quote_last": ".",
+      "title": "Μόμπι Ντικ",
+      "author": "Καπετάνιος Άχαμπ",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
   ]
 }
