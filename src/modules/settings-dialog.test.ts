@@ -40,6 +40,9 @@ test('keeps quick actions outside and moves every settings control without repla
     expect(document.querySelector(`#settings-dialog #${id}`)).not.toBeNull();
   }
   expect(document.getElementById('theme-select')).toBe(theme);
+  const progress = document.querySelector<HTMLSelectElement>('#settings-appearance select#progressbar')!;
+  expect([...progress.options].map((option) => option.value)).toEqual(['theme', 'bottom', 'top', 'background', 'none']);
+  expect(progress.hasAttribute('role')).toBe(false);
   const navigation = document.querySelector('.settings-theme-navigation')!;
   expect([...navigation.children].map((element) => element.id || element.className)).toEqual([
     'theme-previous',

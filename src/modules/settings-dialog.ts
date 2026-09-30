@@ -97,9 +97,19 @@ export function initSettingsDialog() {
   move('work', 'behavior', 'settings_work_help');
 
   move('show-time', 'behavior', 'time_mode');
-  move('progressbar', 'behavior', 'progressbar_mode');
+  const progressControl = document.getElementById('progressbar');
+  if (progressControl) {
+    progressControl.outerHTML = `<div class="input-group"><select id="progressbar">
+      <option value="theme" data-text="settings_progress_theme">Theme default</option>
+      <option value="bottom" data-text="settings_progress_bottom">Bottom</option>
+      <option value="top" data-text="settings_progress_top">Top</option>
+      <option value="background" data-text="settings_progress_background">Background</option>
+      <option value="none" data-text="settings_progress_none">Hidden</option>
+    </select></div>`;
+    move('progressbar', 'appearance', 'settings_progress_label', true);
+  }
 
-  for (const key of ['work', 'show-time', 'progressbar', 'hide-book-title'] as const) {
+  for (const key of ['work', 'show-time', 'hide-book-title'] as const) {
     const button = document.getElementById(key);
     if (!button) continue;
     button.classList.add('settings-switch');

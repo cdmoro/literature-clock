@@ -273,9 +273,10 @@ button:disabled {
 #progress-bar {
   background-color: var(--font-color);
   bottom: 0;
-  height: 4px;
+  height: var(--progress-height, 4px);
   left: 0;
-  opacity: 1;
+  opacity: var(--progress-opacity, 1);
+  pointer-events: none;
   position: fixed;
 }
 
@@ -407,7 +408,7 @@ body.share-quote #share-signature {
   }
 }
 
-body:not(.progressbar) #progress-bar {
+html[data-progressbar='none'] #progress-bar {
   display: none;
 }
 

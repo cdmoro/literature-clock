@@ -154,7 +154,7 @@ test('progress work stops when disabled and all clock timers stop in a hidden ta
   vi.advanceTimersByTime(32);
   expect(parseFloat(bar.style.width)).toBeLessThan(0.1);
   expect(vi.getTimerCount()).toBe(2);
-  store.set('progressbar', false, false);
+  store.set('progressbar', 'none', false);
   expect(vi.getTimerCount()).toBe(1);
   const width = document.getElementById('progress-bar')!.style.width;
   vi.advanceTimersByTime(500);
@@ -162,7 +162,7 @@ test('progress work stops when disabled and all clock timers stop in a hidden ta
   hidden.mockReturnValue(true);
   document.dispatchEvent(new Event('visibilitychange'));
   expect(vi.getTimerCount()).toBe(0);
-  store.set('progressbar', true, false);
+  store.set('progressbar', 'theme', false);
   expect(vi.getTimerCount()).toBe(0);
   vi.setSystemTime(new Date(2026, 8, 29, 12, 1, 45));
   hidden.mockReturnValue(false);
