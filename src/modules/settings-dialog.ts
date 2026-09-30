@@ -46,11 +46,18 @@ export function initSettingsDialog() {
       <div id="quote-language-options"></div>
     </fieldset>`,
   );
+  const hideTitle = document.createElement('button');
+  hideTitle.id = 'hide-book-title';
+  hideTitle.type = 'button';
+  hideTitle.innerHTML = readingIcon('hide-title');
+  toolbar.append(hideTitle);
+  hideTitle.addEventListener('click', () => store.toggle('hide-book-title'));
+  move('hide-book-title', 'behavior', 'settings_hide_book_title');
   move('work', 'behavior', 'settings_work_help');
   move('show-time', 'behavior', 'time_mode');
   move('progressbar', 'behavior', 'progressbar_mode');
 
-  for (const key of ['work', 'show-time', 'progressbar'] as const) {
+  for (const key of ['work', 'show-time', 'progressbar', 'hide-book-title'] as const) {
     const button = document.getElementById(key);
     if (!button) continue;
     button.classList.add('settings-switch');

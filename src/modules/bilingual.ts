@@ -49,7 +49,10 @@ export async function renderTranslation() {
     const passage = document.createElement('p');
     passage.innerHTML = `${translation.quote_first}<span class="time">${translation.quote_time_case}</span>${translation.quote_last}`;
     const attribution = document.createElement('cite');
-    attribution.textContent = `— ${translation.title}, ${translation.author}`;
+    const title = document.createElement('span');
+    title.className = 'translation-book-title';
+    title.textContent = `${translation.title}, `;
+    attribution.append('— ', title, translation.author);
     content.replaceChildren(passage, attribution);
   } catch {
     if (!panel.isConnected) return;

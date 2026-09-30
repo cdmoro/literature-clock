@@ -582,3 +582,9 @@ body.paused #quote-notice { top: 4.5rem; }
 blockquote:has(#quote-translation) > p {
   max-height: 35vh;
 }
+
+body.hide-book-title #quote #title,
+body.hide-book-title #quote #comma,
+body.hide-book-title #quote .translation-book-title {
+  display: none;
+}

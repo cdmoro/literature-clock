@@ -29,7 +29,8 @@
     "bilingual_loading": "Loading translation…",
     "bilingual_unavailable": "No published translation is available for this quote.",
     "bilingual_same": "This quote is already in the selected language.",
-    "bilingual_language_notice": "When a quote is already in the translation language, a short notice appears instead."
+    "bilingual_language_notice": "When a quote is already in the translation language, a short notice appears instead.",
+    "settings_hide_book_title": "Hide book title"
   },
   "en-US": {
     "settings_title": "Settings",
@@ -61,7 +62,8 @@
     "bilingual_loading": "Loading translation…",
     "bilingual_unavailable": "No published translation is available for this quote.",
     "bilingual_same": "This quote is already in the selected language.",
-    "bilingual_language_notice": "When a quote is already in the translation language, a short notice appears instead."
+    "bilingual_language_notice": "When a quote is already in the translation language, a short notice appears instead.",
+    "settings_hide_book_title": "Hide book title"
   },
   "es-ES": {
     "settings_title": "Configuración",
@@ -93,7 +95,8 @@
     "bilingual_loading": "Cargando traducción…",
     "bilingual_unavailable": "No hay una traducción publicada para esta cita.",
     "bilingual_same": "Esta cita ya está en el idioma seleccionado.",
-    "bilingual_language_notice": "Si la cita ya está en el idioma de traducción, se muestra un breve aviso en su lugar."
+    "bilingual_language_notice": "Si la cita ya está en el idioma de traducción, se muestra un breve aviso en su lugar.",
+    "settings_hide_book_title": "Ocultar el título del libro"
   },
   "pt-PT": {
     "settings_title": "Configurações",
@@ -125,7 +128,8 @@
     "bilingual_loading": "A carregar tradução…",
     "bilingual_unavailable": "Não existe tradução publicada para esta citação.",
     "bilingual_same": "Esta citação já está no idioma selecionado.",
-    "bilingual_language_notice": "Se a citação já estiver no idioma da tradução, é apresentado um breve aviso."
+    "bilingual_language_notice": "Se a citação já estiver no idioma da tradução, é apresentado um breve aviso.",
+    "settings_hide_book_title": "Ocultar o título do livro"
   },
   "fr-FR": {
     "settings_title": "Paramètres",
@@ -157,7 +161,8 @@
     "bilingual_loading": "Chargement de la traduction…",
     "bilingual_unavailable": "Aucune traduction publiée pour cette citation.",
     "bilingual_same": "Cette citation est déjà dans la langue sélectionnée.",
-    "bilingual_language_notice": "Si la citation est déjà dans la langue de traduction, un bref message s’affiche à la place."
+    "bilingual_language_notice": "Si la citation est déjà dans la langue de traduction, un bref message s’affiche à la place.",
+    "settings_hide_book_title": "Masquer le titre du livre"
   },
   "it-IT": {
     "settings_title": "Impostazioni",
@@ -189,7 +194,8 @@
     "bilingual_loading": "Caricamento della traduzione…",
     "bilingual_unavailable": "Nessuna traduzione pubblicata per questa citazione.",
     "bilingual_same": "Questa citazione è già nella lingua selezionata.",
-    "bilingual_language_notice": "Se la citazione è già nella lingua di traduzione, viene mostrato un breve avviso."
+    "bilingual_language_notice": "Se la citazione è già nella lingua di traduzione, viene mostrato un breve avviso.",
+    "settings_hide_book_title": "Nascondi il titolo del libro"
   },
   "de-DE": {
     "settings_title": "Einstellungen",
@@ -221,7 +227,8 @@
     "bilingual_loading": "Übersetzung wird geladen…",
     "bilingual_unavailable": "Für dieses Zitat ist keine veröffentlichte Übersetzung verfügbar.",
     "bilingual_same": "Dieses Zitat ist bereits in der ausgewählten Sprache.",
-    "bilingual_language_notice": "Ist das Zitat bereits in der Übersetzungssprache, erscheint stattdessen ein kurzer Hinweis."
+    "bilingual_language_notice": "Ist das Zitat bereits in der Übersetzungssprache, erscheint stattdessen ein kurzer Hinweis.",
+    "settings_hide_book_title": "Buchtitel ausblenden"
   },
   "el-GR": {
     "settings_title": "Ρυθμίσεις",
@@ -246,6 +253,7 @@
     "settings_clear_selection": "Εκκαθάριση επιλογής",
     "settings_font_add_error": "Μη διαθέσιμη γραμματοσειρά. Δεν προστέθηκε· η τρέχουσα παραμένει.",
     "settings_font_remove": "Αφαίρεση αυτής της γραμματοσειράς",
-    "settings_font_custom_label": "προσαρμοσμένη"
+    "settings_font_custom_label": "προσαρμοσμένη",
+    "settings_hide_book_title": "Απόκρυψη τίτλου βιβλίου"
   }
 }

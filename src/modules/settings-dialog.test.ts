@@ -32,6 +32,7 @@ test('keeps quick actions outside and moves every settings control without repla
     'ui-locale-select',
     'work',
     'show-time',
+    'hide-book-title',
     'progressbar',
     'settings-color-picker',
   ]) {
@@ -78,4 +79,24 @@ test('both color pickers and resets share state, including theme availability', 
   expect(outside.disabled).toBe(true);
   expect(inside.disabled).toBe(true);
   expect(inside.closest('.settings-row')!.hasAttribute('hidden')).toBe(true);
+});
+
+test('hide book title persists, restores, and allows URL overrides', () => {
+  document.body.innerHTML = page;
+  createStore();
+  initSettingsDialog();
+  const button = document.getElementById('hide-book-title')!;
+  expect(button.getAttribute('aria-checked')).toBe('false');
+  button.click();
+  expect(button.getAttribute('aria-checked')).toBe('true');
+  expect(document.body.classList.contains('hide-book-title')).toBe(true);
+  expect(JSON.parse(localStorage.getItem('settings')!)['hide-book-title']).toBe(true);
+  expect(new URLSearchParams(location.search).get('hide-book-title')).toBe('true');
+  history.replaceState({}, '', '/');
+  createStore();
+  expect(store.get('hide-book-title')).toBe(true);
+  history.replaceState({}, '', '/?hide-book-title=false');
+  createStore();
+  expect(store.get('hide-book-title')).toBe(false);
+  expect(document.body.classList.contains('hide-book-title')).toBe(false);
 });

@@ -1,3 +1,4 @@
+import { updateQuoteDescription } from './hide-book-title';
 import { renderTranslation } from './bilingual';
 import { getBaseLocale, getRandomLocale, getStrings } from './locales';
 import { removeBackgroundImage, setDynamicBackgroundPicture, setTheme } from './themes';
@@ -185,7 +186,7 @@ export async function updateQuote({
         blockquote.appendChild(cite);
         renderTranslation();
         blockquote.setAttribute('aria-label', time);
-        blockquote.setAttribute('aria-description', `${quote.quote_raw} (${quote.title}, ${quote.author})`);
+        updateQuoteDescription();
 
         fitQuote();
 
