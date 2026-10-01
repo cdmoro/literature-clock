@@ -8,6 +8,7 @@ from audit_translation_quality import clock_phrase
 from generate_times import generate_catalogue
 from quote_sources import source_catalogue, source_language
 from validate_translation import ROOT, read_catalogue, validate
+from russian_review_time import review_clock
 
 
 class RussianCatalogueTest(unittest.TestCase):
@@ -44,6 +45,26 @@ class RussianCatalogueTest(unittest.TestCase):
         self.assertIn('полуночная', self.by_id['0000-053']['Quote'])
         self.assertIn('15:08', self.by_id['1459-002']['Quote'])
         self.assertIn('22:12:30–40', self.by_id['2212-002']['Quote'])
+
+    def test_extended_time_comparisons_preserve_source_meaning(self):
+        compared = 0
+        for row in self.rows:
+            source = self.sources[row['Id']]
+            expected = review_clock(source['Quote time'], source_language(source['Source locale']))
+            actual = review_clock(row['Quote time'], 'ru')
+            if expected is not None and actual is not None:
+                compared += 1
+                with self.subTest(identifier=row['Id']):
+                    self.assertEqual(actual, expected)
+        self.assertGreater(compared, 3300)
+
+    def test_contextual_hour_and_relative_time_repairs(self):
+        self.assertIn('почти час ночи', self.by_id['0059-003']['Quote'])
+        self.assertIn('четверти первого', self.by_id['1215-000']['Quote'])
+        self.assertIn('после восьми часов', self.by_id['2009-000']['Quote time'])
+        self.assertNotIn('0:01', self.by_id['0439-000']['Quote'])
+        self.assertIn('Через пять секунд после начала атаки', self.by_id['0439-000']['Quote'])
+        self.assertIn('Который теперь час?', self.by_id['0429-000']['Quote'])
 
     def test_every_quote_is_generated_with_a_visible_time_and_boolean_safety(self):
         with tempfile.TemporaryDirectory() as directory:
