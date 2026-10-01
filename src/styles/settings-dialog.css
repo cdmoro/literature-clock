@@ -553,3 +553,24 @@
   #settings-color-picker {
   border-radius: 0.45rem;
 }
+
+.settings-saved-themes {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.settings-saved-themes .input-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.settings-saved-themes select,
+.settings-saved-themes input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+}
+.settings-saved-themes .settings-help,
+#saved-theme-status {
+  margin: 0;
+}

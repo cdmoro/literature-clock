@@ -37,7 +37,15 @@
     "settings_progress_bottom": "Bottom",
     "settings_progress_top": "Top",
     "settings_progress_background": "Background",
-    "settings_progress_none": "Hidden"
+    "settings_progress_none": "Hidden",
+    "settings_saved_themes": "Saved themes",
+    "settings_saved_apply": "Apply",
+    "settings_saved_delete": "Delete",
+    "settings_saved_name": "Name (optional)",
+    "settings_saved_save": "Save current",
+    "settings_saved_help": "Saved only in this browser. Includes colours, font, transitions, safe-for-work filter, time visibility, book title and progress bar.",
+    "settings_saved_choose": "Choose a saved theme",
+    "settings_saved_error": "Could not save. Browser storage is unavailable or full."
   },
   "en-US": {
     "settings_title": "Settings",
@@ -77,7 +85,15 @@
     "settings_progress_bottom": "Bottom",
     "settings_progress_top": "Top",
     "settings_progress_background": "Background",
-    "settings_progress_none": "Hidden"
+    "settings_progress_none": "Hidden",
+    "settings_saved_themes": "Saved themes",
+    "settings_saved_apply": "Apply",
+    "settings_saved_delete": "Delete",
+    "settings_saved_name": "Name (optional)",
+    "settings_saved_save": "Save current",
+    "settings_saved_help": "Saved only in this browser. Includes colours, font, transitions, safe-for-work filter, time visibility, book title and progress bar.",
+    "settings_saved_choose": "Choose a saved theme",
+    "settings_saved_error": "Could not save. Browser storage is unavailable or full."
   },
   "es-ES": {
     "settings_title": "Configuración",
@@ -117,7 +133,15 @@
     "settings_progress_bottom": "Abajo",
     "settings_progress_top": "Arriba",
     "settings_progress_background": "Fondo",
-    "settings_progress_none": "Oculto"
+    "settings_progress_none": "Oculto",
+    "settings_saved_themes": "Temas guardados",
+    "settings_saved_apply": "Aplicar",
+    "settings_saved_delete": "Eliminar",
+    "settings_saved_name": "Nombre (opcional)",
+    "settings_saved_save": "Guardar actual",
+    "settings_saved_help": "Se guardan solo en este navegador. Incluyen colores, fuente, transiciones, filtro seguro para el trabajo, visibilidad de la hora, título del libro y barra de progreso.",
+    "settings_saved_choose": "Elegir un tema guardado",
+    "settings_saved_error": "No se pudo guardar. El almacenamiento del navegador no está disponible o está lleno."
   },
   "pt-PT": {
     "settings_title": "Configurações",
@@ -157,7 +181,15 @@
     "settings_progress_bottom": "Em baixo",
     "settings_progress_top": "Em cima",
     "settings_progress_background": "Fundo",
-    "settings_progress_none": "Oculto"
+    "settings_progress_none": "Oculto",
+    "settings_saved_themes": "Temas guardados",
+    "settings_saved_apply": "Aplicar",
+    "settings_saved_delete": "Eliminar",
+    "settings_saved_name": "Nome (opcional)",
+    "settings_saved_save": "Guardar atual",
+    "settings_saved_help": "Guardados apenas neste navegador. Incluem cores, tipo de letra, transições, filtro adequado ao trabalho, visibilidade da hora, título do livro e barra de progresso.",
+    "settings_saved_choose": "Escolher um tema guardado",
+    "settings_saved_error": "Não foi possível guardar. O armazenamento do navegador está indisponível ou cheio."
   },
   "fr-FR": {
     "settings_title": "Paramètres",
@@ -197,7 +229,15 @@
     "settings_progress_bottom": "En bas",
     "settings_progress_top": "En haut",
     "settings_progress_background": "Arrière-plan",
-    "settings_progress_none": "Masqué"
+    "settings_progress_none": "Masqué",
+    "settings_saved_themes": "Thèmes enregistrés",
+    "settings_saved_apply": "Appliquer",
+    "settings_saved_delete": "Supprimer",
+    "settings_saved_name": "Nom (facultatif)",
+    "settings_saved_save": "Enregistrer le thème actuel",
+    "settings_saved_help": "Enregistrés uniquement dans ce navigateur. Incluent les couleurs, la police, les transitions, le filtre adapté au travail, la visibilité de l’heure, le titre du livre et la barre de progression.",
+    "settings_saved_choose": "Choisir un thème enregistré",
+    "settings_saved_error": "Enregistrement impossible. Le stockage du navigateur est indisponible ou plein."
   },
   "it-IT": {
     "settings_title": "Impostazioni",
@@ -237,7 +277,15 @@
     "settings_progress_bottom": "In basso",
     "settings_progress_top": "In alto",
     "settings_progress_background": "Sfondo",
-    "settings_progress_none": "Nascosto"
+    "settings_progress_none": "Nascosto",
+    "settings_saved_themes": "Temi salvati",
+    "settings_saved_apply": "Applica",
+    "settings_saved_delete": "Elimina",
+    "settings_saved_name": "Nome (facoltativo)",
+    "settings_saved_save": "Salva attuale",
+    "settings_saved_help": "Salvati solo in questo browser. Includono colori, carattere, transizioni, filtro adatto al lavoro, visibilità dell’ora, titolo del libro e barra di avanzamento.",
+    "settings_saved_choose": "Scegli un tema salvato",
+    "settings_saved_error": "Impossibile salvare. La memoria del browser non è disponibile o è piena."
   },
   "de-DE": {
     "settings_title": "Einstellungen",
@@ -277,7 +325,15 @@
     "settings_progress_bottom": "Unten",
     "settings_progress_top": "Oben",
     "settings_progress_background": "Hintergrund",
-    "settings_progress_none": "Ausgeblendet"
+    "settings_progress_none": "Ausgeblendet",
+    "settings_saved_themes": "Gespeicherte Designs",
+    "settings_saved_apply": "Anwenden",
+    "settings_saved_delete": "Löschen",
+    "settings_saved_name": "Name (optional)",
+    "settings_saved_save": "Aktuelles Design speichern",
+    "settings_saved_help": "Nur in diesem Browser gespeichert. Enthält Farben, Schrift, Übergänge, den Filter für arbeitstaugliche Zitate, Zeitanzeige, Buchtitel und Fortschrittsbalken.",
+    "settings_saved_choose": "Gespeichertes Design wählen",
+    "settings_saved_error": "Speichern fehlgeschlagen. Der Browserspeicher ist nicht verfügbar oder voll."
   },
   "el-GR": {
     "settings_title": "Ρυθμίσεις",
@@ -317,6 +373,14 @@
     "settings_progress_bottom": "Κάτω",
     "settings_progress_top": "Πάνω",
     "settings_progress_background": "Φόντο",
-    "settings_progress_none": "Κρυφό"
+    "settings_progress_none": "Κρυφό",
+    "settings_saved_themes": "Αποθηκευμένα θέματα",
+    "settings_saved_apply": "Εφαρμογή",
+    "settings_saved_delete": "Διαγραφή",
+    "settings_saved_name": "Όνομα (προαιρετικό)",
+    "settings_saved_save": "Αποθήκευση τρέχοντος",
+    "settings_saved_help": "Αποθηκεύονται μόνο σε αυτό το πρόγραμμα περιήγησης. Περιλαμβάνουν χρώματα, γραμματοσειρά, μεταβάσεις, φίλτρο κατάλληλο για εργασία, εμφάνιση ώρας, τίτλο βιβλίου και γραμμή προόδου.",
+    "settings_saved_choose": "Επιλογή αποθηκευμένου θέματος",
+    "settings_saved_error": "Η αποθήκευση απέτυχε. Ο χώρος αποθήκευσης δεν είναι διαθέσιμος ή είναι πλήρης."
   }
 }
