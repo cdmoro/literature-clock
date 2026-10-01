@@ -196,7 +196,10 @@ test('visual theme choices preserve theme events, URL state and current quote wi
 
 test('theme preview stays invisible until its document loads and hides again when the theme changes', async () => {
   document.body.innerHTML = page;
-  vi.stubGlobal('matchMedia', vi.fn(() => ({ matches: false, addEventListener: vi.fn() })));
+  vi.stubGlobal(
+    'matchMedia',
+    vi.fn(() => ({ matches: false, addEventListener: vi.fn() })),
+  );
   createStore();
   initSettingsDialog();
   initTheme();
