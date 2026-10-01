@@ -48,8 +48,8 @@ export function resolveLocale(locale = navigator.language): Locale {
   const normalized = typeof locale === 'string' ? locale.trim().replace(/_/g, '-').toLowerCase() : '';
   const wantsDraft = normalized.endsWith(DRAFT_SUFFIX);
   const lookup = wantsDraft ? normalized.slice(0, -DRAFT_SUFFIX.length) : normalized;
-  const draftMatch = wantsDraft && /^([a-z]{2,3})-([a-z]{2}|[0-9]{3})$/.exec(lookup);
-  if (draftMatch) return `${draftMatch[1]}-${draftMatch[2].toUpperCase()}-draft`;
+  const draftMatch = wantsDraft && /^([a-z]{2,3})(?:-([a-z]{2}|[0-9]{3}))?$/.exec(lookup);
+  if (draftMatch) return `${draftMatch[1]}${draftMatch[2] ? `-${draftMatch[2].toUpperCase()}` : ''}-draft`;
   const locales = Object.keys(TRANSLATIONS) as Locale[];
   const exactLocale = locales.find((supported) => supported.toLowerCase() === lookup);
   const regionalLocale = locales.find((supported) => lookup.startsWith(`${supported.toLowerCase()}-`));

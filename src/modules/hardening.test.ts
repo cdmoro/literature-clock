@@ -46,6 +46,14 @@ test('rejects unknown keys, malformed values and runtime-only state', () => {
   });
 });
 
+test('retains regionless quote preferences and draft URLs while rejecting unsafe locale lists', () => {
+  expect(parseUrlParams(new URLSearchParams('locale=eo-draft&quote-locales=eo,en-GB'))).toEqual({
+    locale: 'eo-draft',
+    'quote-locales': 'eo,en-GB',
+  });
+  expect(parseUrlParams(new URLSearchParams('quote-locales=eo,../../en'))).toEqual({});
+});
+
 test.each(['{bad', 'null', '[]', '{"theme":true,"font":12,"color":{},"zen":"false"}'])(
   'recovers from invalid saved settings: %s',
   (settings) => {

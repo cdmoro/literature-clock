@@ -37,7 +37,7 @@ export async function renderTranslation() {
   content.setAttribute('role', 'status');
   panel.append(heading, content);
   blockquote.append(panel);
-  if (getBaseLocale(quote.locale) === locale) {
+  if (quote.locale.replace(/-draft$/, '') === locale) {
     content.classList.add('translation-notice');
     content.textContent = strings().bilingual_same;
     fitQuote();

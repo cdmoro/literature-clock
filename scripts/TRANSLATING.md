@@ -122,6 +122,12 @@ is committed and deployed, anyone with the draft URL can view it. The administra
 and its editing API remain local-only. Preview generation does not change approval
 or registration, and never makes `locale=el-GR` work for an unpublished language.
 
+Esperanto uses the regionless locale `eo`. Its catalogue is `quotes/quotes.eo.csv`,
+and its unlisted preview is `?locale=eo-draft&time=07:45`. Regionless locales
+work in the administrator, draft clock URLs and saved quote collections. The
+Esperanto catalogue is undergoing review; only individually reviewed passages
+are approved, and the language is not yet enabled in the normal clock.
+
 ## Interactive menu (legacy alternative)
 
 Start with one command from the repository root:
@@ -133,7 +139,7 @@ npm run translate
 Only Python 3.9+ is needed for the manager; no Python packages, frontend build or
 Google credentials are required. Alternatively run `python3 scripts/translation_manager.py`.
 Choose numbered options to create a language or resume a saved workspace. Creating
-a language asks for its locale (for example `el-GR`) and Google code (`el`); it
+a language asks for its locale (for example `eo` or `el-GR`) and Google code (`eo` or `el`); it
 initializes the full draft CSV or adopts an existing full catalogue without rewriting it.
 
 Inside a language, the menu offers:

@@ -121,6 +121,16 @@ it('does not fetch the same language', async () => {
   expect(store.get('bilingual')).toBe(true);
   expect(fetch).not.toHaveBeenCalled();
 });
+it('loads English for an unregistered Esperanto draft despite its English interface fallback', async () => {
+  const fetch = vi.fn().mockResolvedValue({ ok: true, json: async () => [quote] });
+  vi.stubGlobal('fetch', fetch);
+  store.set('active-quote', { ...quote, locale: 'eo-draft', quote_raw: 'Je noktomezo' });
+  store.set('translation-locale', 'en-GB');
+  store.set('bilingual', true);
+  expect(fetch).toHaveBeenCalledWith('../times/en-GB/12_00.json');
+  expect((await translationPanel()).textContent).toContain('At noon');
+  expect(document.querySelector('.translation-notice')).toBeNull();
+});
 it('discards a response after the quote changes', async () => {
   let resolve!: (value: unknown) => void;
   vi.stubGlobal(
