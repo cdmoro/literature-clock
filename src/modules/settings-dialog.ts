@@ -83,8 +83,8 @@ export function initSettingsDialog() {
     'beforeend',
     `
     <fieldset id="quote-languages"><legend data-text="settings_quote_languages">Quote languages</legend>
-      <p class="settings-help"><span data-text="settings_languages_help">Choose languages to rotate through. If none are selected, quotes use the interface language.</span> <span id="select-all-languages-row"><a id="select-all-languages" href="#" data-text="settings_select_all">Select all</a><span id="clear-languages-action" hidden> · <a id="clear-languages" href="#" data-text="settings_clear_selection">Clear selection</a></span>.</span></p>
-      <div id="quote-language-options"></div>
+      <div id="quote-language-options" aria-describedby="quote-languages-help"></div>
+      <p id="quote-languages-help" class="settings-help"><span data-text="settings_languages_help">Choose languages to rotate through. If none are selected, quotes use the interface language.</span> <span id="select-all-languages-row"><a id="select-all-languages" href="#" data-text="settings_select_all">Select all</a><span id="clear-languages-action" hidden> · <a id="clear-languages" href="#" data-text="settings_clear_selection">Clear selection</a></span>.</span></p>
     </fieldset>`,
   );
   const hideTitle = document.createElement('button');
@@ -145,14 +145,14 @@ export function initSettingsDialog() {
       `<div class="settings-row settings-google-fonts">
         <label for="custom-font-name" data-text="settings_custom_font">Google Fonts</label>
         <div class="settings-custom-font">
-        <p id="custom-font-help" class="settings-help" data-text="settings_font_help">Paste a Google Fonts family name and choose Apply. If unavailable, the theme’s default font is used.</p>
         <form id="custom-font-form">
           <div><input id="custom-font-name" type="text" maxlength="100" placeholder="e.g. Lora" autocomplete="off" spellcheck="false" aria-describedby="custom-font-help custom-font-status">
           <button type="submit" data-text="settings_font_apply">Apply</button></div>
           <p id="custom-font-status" role="status" aria-live="polite"></p>
         </form>
         </div>
-      </div>`,
+      </div>
+      <p id="custom-font-help" class="settings-help" data-text="settings_font_help">Paste a Google Fonts family name and choose Apply. If unavailable, the theme’s default font is used.</p>`,
     );
   }
 
