@@ -91,3 +91,30 @@ test.each([
   applyLocaleThemeFont(quote);
   expect(quote.style.getPropertyValue('--locale-quote-font-family')).toBe('initial');
 });
+
+test.each([
+  ['base', 'PT Mono'],
+  ['pink', 'PT Mono'],
+  ['retro', 'PT Mono'],
+  ['handwriting', 'Caveat'],
+  ['festive', 'Caveat'],
+  ['poster', 'Literata'],
+  ['book', 'Literata'],
+  ['subtle', 'Literata'],
+  ['horizon', 'Literata'],
+  ['terminal', 'PT Mono'],
+  ['photo', 'Russo One'],
+  ['anaglyph', 'Russo One'],
+])('Russian %s passages load %s independently in both variants', (theme, font) => {
+  const quote = document.createElement('blockquote');
+  quote.lang = 'ru-RU';
+  for (const variant of ['light', 'dark']) {
+    document.documentElement.dataset.theme = `${theme}-${variant}`;
+    applyLocaleThemeFont(quote);
+    expect(quote.style.getPropertyValue('--locale-quote-font-family')).toContain(font);
+    expect(loadFontIfNotExists).toHaveBeenCalledWith(font);
+  }
+  quote.lang = 'en-GB';
+  applyLocaleThemeFont(quote);
+  expect(quote.style.getPropertyValue('--locale-quote-font-family')).toBe('initial');
+});

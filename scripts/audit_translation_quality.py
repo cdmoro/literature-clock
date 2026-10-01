@@ -68,6 +68,9 @@ def clock_phrase(phrase, lang):
     Does not infer AM/PM, approximate times, arithmetic in narrative, or a time
     from an arbitrary number embedded in a sentence.
     """
+    if lang == 'ru':
+        from russian_time import clock_phrase as russian_clock_phrase
+        return russian_clock_phrase(phrase)
     if lang == 'zh':
         from chinese_time import clock_phrase as chinese_clock_phrase
         return chinese_clock_phrase(phrase)

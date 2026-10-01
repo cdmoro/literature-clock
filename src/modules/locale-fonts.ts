@@ -3,15 +3,19 @@ import { loadFontIfNotExists } from '../utils';
 // Alternatives belong to the passage language, including unregistered draft
 // catalogues; the interface language can be different.
 export const LOCALE_THEME_FONTS: Record<string, Record<string, string>> = {
-  base: { el: 'Sansation', zh: 'Noto Sans SC' },
-  retro: { el: 'Handjet', zh: 'ZCOOL QingKe HuangYou' },
-  handwriting: { el: 'Mansalva', zh: 'Long Cang' },
+  base: { ru: 'PT Mono', el: 'Sansation', zh: 'Noto Sans SC' },
+  retro: { ru: 'PT Mono', el: 'Handjet', zh: 'ZCOOL QingKe HuangYou' },
+  handwriting: { ru: 'Caveat', el: 'Mansalva', zh: 'Long Cang' },
+  subtle: { ru: 'Literata' },
+  horizon: { ru: 'Literata' },
+  book: { ru: 'Literata' },
+  anaglyph: { ru: 'Russo One' },
   elegant: { zh: 'ZCOOL XiaoWei' },
-  poster: { zh: 'Liu Jian Mao Cao' },
-  festive: { el: 'Comic Relief' },
-  terminal: { el: 'Victor Mono', zh: 'ZCOOL QingKe HuangYou' },
+  poster: { ru: 'Literata', zh: 'Liu Jian Mao Cao' },
+  festive: { ru: 'Caveat', el: 'Comic Relief' },
+  terminal: { ru: 'PT Mono', el: 'Victor Mono', zh: 'ZCOOL QingKe HuangYou' },
   bohemian: { el: 'M PLUS Rounded 1c' },
-  photo: { el: 'Dela Gothic One', zh: 'ZCOOL KuaiLe' },
+  photo: { ru: 'Russo One', el: 'Dela Gothic One', zh: 'ZCOOL KuaiLe' },
 };
 const BASE_FONT_THEMES = new Set(['base', 'pink', 'green', 'orange', 'purple', 'blue', 'gray']);
 

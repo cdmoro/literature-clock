@@ -196,3 +196,14 @@ it('fetches Chinese translations and retains the selected locale', async () => {
   await translationPanel();
   expect(document.querySelector<HTMLSelectElement>('#clock-translation-locale')!.value).toBe('zh-CN');
 });
+it('fetches Russian translations and retains the selected locale', async () => {
+  store.set('bilingual', true);
+  const select = document.querySelector<HTMLSelectElement>('#translation-locale')!;
+  expect([...select.options].find((option) => option.value === 'ru-RU')!.textContent).toContain('Русский');
+  select.value = 'ru-RU';
+  select.dispatchEvent(new Event('change'));
+  expect(store.get('translation-locale')).toBe('ru-RU');
+  expect(fetch).toHaveBeenLastCalledWith('../times/ru-RU/12_00.json');
+  await translationPanel();
+  expect(document.querySelector<HTMLSelectElement>('#clock-translation-locale')!.value).toBe('ru-RU');
+});

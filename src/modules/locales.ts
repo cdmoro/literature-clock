@@ -19,6 +19,7 @@ export const DOMINANT_LOCALES: Record<string, Locale> = {
   de: 'de-DE',
   el: 'el-GR',
   zh: 'zh-CN',
+  ru: 'ru-RU',
 } as const;
 
 const DRAFT_SUFFIX = '-draft';
@@ -117,7 +118,8 @@ export function translateStrings(locale: Locale) {
   };
 
   document.documentElement.lang = getBaseLocale(locale);
-  const aboutLocale = getBaseLocale(locale) === 'zh-CN' ? 'zh-CN' : 'en-GB';
+  const baseLocale = getBaseLocale(locale);
+  const aboutLocale = baseLocale === 'zh-CN' || baseLocale === 'ru-RU' ? baseLocale : 'en-GB';
   const aboutTitle = document.getElementById('about-clock-title');
   if (aboutTitle?.parentElement) aboutTitle.parentElement.lang = aboutLocale;
   document.querySelectorAll<HTMLElement>('[data-about-text]').forEach((element) => {
@@ -141,6 +143,7 @@ export function translateStrings(locale: Locale) {
     'it-IT': 'L’ora nelle citazioni dei libri',
     'de-DE': 'Die Uhrzeit in Buchzitaten',
     'zh-CN': '用文学引文诉说时间',
+    'ru-RU': 'Время в цитатах из книг',
   };
   const description = descriptions[getBaseLocale(locale)] || descriptions['en-GB'];
   document.title = `${time} - ${strings.document_title} — ${description}`;

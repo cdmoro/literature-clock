@@ -198,3 +198,13 @@ test('Chinese is selectable for the interface and quote rotation', () => {
   expect(store.get('quote-locales')).toBe('zh-CN');
   expect(getRandomLocale()).toBe('zh-CN');
 });
+test('Russian is selectable for the interface and quote rotation', () => {
+  init();
+  selectUi('ru-RU');
+  expect(document.documentElement.lang).toBe('ru-RU');
+  expect(document.getElementById('about-clock-title')!.textContent).toContain('Литературные часы');
+  expect(document.getElementById('ui-locale-select')!.textContent).toContain('Русский');
+  language('ru-RU').click();
+  expect(store.get('quote-locales')).toBe('ru-RU');
+  expect(getRandomLocale()).toBe('ru-RU');
+});
