@@ -50,6 +50,8 @@
   max-width: 65%;
 }
 #settings-dialog select {
+  box-sizing: border-box;
+  height: 2rem;
   min-width: 0;
   width: 100%;
   max-height: none;
@@ -70,9 +72,9 @@
   }
 }
 
-/* Keep the original SVG controls and round the visible edges of every group. */
+/* Hidden icon prefixes must not change the visible controls' rounded edges. */
 #settings-dialog .input-group-text {
-  display: flex;
+  display: none;
 }
 #settings-dialog .input-group {
   flex: 0 1 62%;
@@ -87,10 +89,17 @@
 #settings-dialog .input-group > :only-child {
   border-radius: 0.35rem;
 }
+#settings-dialog .input-group > select:is(:first-child, :last-child) {
+  margin-left: 0;
+  border-radius: 0.35rem;
+}
 #settings-dialog .settings-row:has(.settings-switch) {
   display: grid;
-  grid-template-columns: 18px 1fr auto;
+  grid-template-columns: 1fr auto;
   gap: 0.4rem 0.6rem;
+}
+#settings-dialog .settings-row > svg {
+  display: none;
 }
 #settings-dialog .settings-switch {
   position: relative;
@@ -127,41 +136,104 @@
   font-size: 0.8rem;
   margin: 0.25rem 0 0.75rem;
 }
-#quote-languages {
-  border: 0;
-  margin: 1rem 0 0;
-  padding: 0;
+#settings-dialog #quote-languages {
+  align-items: flex-start;
 }
-#quote-languages legend {
-  margin-bottom: 0.5rem;
+#quote-languages-label {
+  padding-top: 0.25rem;
 }
-#quote-language-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-.language-chip {
-  position: relative;
-  cursor: pointer;
-}
-.language-chip span {
+#settings-dialog #quote-language-picker {
   display: block;
-  padding: 0.35rem 0.7rem;
-  border: 1px solid color-mix(in srgb, var(--font-color), transparent 65%);
-  border-radius: 2rem;
-  font-size: 0.8rem;
+  width: 100%;
+  flex: 1 1 0;
+  min-width: 0;
 }
-.language-chip:has(input:checked) span {
-  background: var(--accent-color);
-  border-color: var(--accent-color);
-  color: var(--background);
+#settings-dialog #quote-language-picker summary {
+  margin: 0;
+  border-radius: 0.35rem;
 }
-.language-chip:has(input:focus-visible) span {
+#settings-dialog .settings-quote-languages {
+  align-items: flex-start;
+}
+#settings-dialog .settings-quote-languages:has(#clear-quote-languages:not([hidden])) summary {
+  border-radius: 0.35rem 0 0 0.35rem;
+}
+#quote-language-picker summary {
+  box-sizing: border-box;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-width: 0;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
+  border-radius: 0.35rem;
+  cursor: pointer;
+  list-style: none;
+}
+#quote-language-picker summary::-webkit-details-marker {
+  display: none;
+}
+#quote-language-picker summary::after {
+  content: '';
+  flex: 0 0 0.4rem;
+  height: 0.4rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  margin: -0.2rem 0.2rem 0 0;
+}
+#quote-language-summary {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#quote-language-picker summary:focus-visible {
   outline: 2px solid var(--accent-color);
   outline-offset: 3px;
 }
-.language-chip:hover span {
-  border-color: var(--accent-color);
+#settings-dialog #quote-language-picker .quote-language-menu {
+  box-sizing: border-box;
+  width: 100%;
+  margin-left: 0;
+  margin-top: 0;
+  padding: 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
+  border-top: 0;
+  border-radius: 0 0 0.35rem 0.35rem;
+}
+#settings-dialog #quote-language-picker[open] summary {
+  border-radius: 0.35rem 0.35rem 0 0;
+}
+#select-all-languages-row {
+  margin: 0 0 0.4rem;
+  font-size: 0.8rem;
+}
+#quote-language-options {
+  display: grid;
+  max-height: 14rem;
+  overflow-y: auto;
+  gap: 0.15rem;
+  padding: 0.2rem;
+}
+.quote-language-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.quote-language-option input {
+  flex: 0 0 auto;
+  accent-color: var(--accent-color);
+}
+.quote-language-option:hover {
+  background: color-mix(in srgb, var(--font-color), transparent 94%);
 }
 #select-all-languages {
   text-decoration: underline;
@@ -170,9 +242,10 @@
 #quote-language-options[hidden] {
   display: none;
 }
-#settings-dialog :is(input, button, select):focus-visible {
-  outline: 2px solid var(--accent-color);
-  outline-offset: 3px;
+#settings-dialog :is(input, button, select, summary):focus {
+  border-color: var(--accent-color);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent-color), transparent 75%) !important;
 }
 @media (prefers-reduced-motion: reduce) {
   #settings-dialog .settings-switch::after {
@@ -197,15 +270,15 @@
 }
 
 #settings-dialog .settings-font {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  row-gap: 0.5rem;
+  display: flex;
   flex: 0 1 62%;
   min-width: 0;
   max-width: 65%;
 }
 #settings-dialog .settings-font .input-group {
-  display: contents;
+  display: flex;
+  flex: 1;
+  max-width: 100%;
 }
 #settings-dialog .settings-row:has(.settings-font) {
   align-items: flex-start;
@@ -226,7 +299,7 @@
   padding-top: 0.25rem;
 }
 .settings-custom-font form {
-  margin-top: 0.5rem;
+  margin-top: 0;
 }
 .settings-custom-font form > div {
   display: flex;
@@ -236,31 +309,49 @@
   box-sizing: border-box;
   width: 100%;
   min-width: 0;
-  border: 1px solid color-mix(in srgb, var(--font-color), transparent 40%);
-  border-radius: 0.25rem;
+  height: 2rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
+  border-radius: 0.35rem;
   padding: 0.35rem;
   background: var(--background);
   color: var(--font-color);
   font: inherit;
 }
+#settings-dialog #custom-font-form button[type='submit'] {
+  height: 2rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 0.35rem;
+  background: var(--accent-color);
+  color: var(--accent-text);
+  font-weight: 600;
+}
+#settings-dialog #custom-font-form button[type='submit']:hover {
+  filter: brightness(1.08);
+}
 #custom-font-status {
   margin: 0.35rem 0 0;
 }
 
-#settings-dialog #remove-custom-font {
+#settings-dialog :is(#remove-custom-font, #clear-quote-languages) {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.35rem 0.5rem;
+  box-sizing: border-box;
+  height: 2rem;
+  flex: 0 0 2rem;
+  border-color: var(--accent-color);
+  background: var(--accent-color);
+  color: var(--accent-text);
 }
-#settings-dialog #remove-custom-font[hidden] {
+#settings-dialog :is(#remove-custom-font, #clear-quote-languages)[hidden] {
   display: none;
 }
 #settings-dialog #font-select {
-  border-radius: 0;
+  border-radius: 0.35rem 0 0 0.35rem;
 }
 #settings-dialog .input-group:has(#remove-custom-font[hidden]) #font-select {
-  border-radius: 0 0.35rem 0.35rem 0;
+  border-radius: 0.35rem;
 }
 
 /* Tabs share a single panel area, keeping the dialog compact. */
@@ -305,7 +396,7 @@
   margin-bottom: 0.65rem;
 }
 #settings-dialog .settings-theme-navigation button {
-  border: 1px solid color-mix(in srgb, var(--font-color), transparent 75%);
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
   border-radius: 0.45rem;
   background: transparent;
   color: inherit;

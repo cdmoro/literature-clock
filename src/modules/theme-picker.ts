@@ -73,7 +73,9 @@ export function themePreviewDocument() {
   if (quote) {
     // Remove secondary content so bilingual :has() layout rules cannot affect the preview.
     quote.querySelector('#quote-translation')?.remove();
+    const localeFont = quote.style.getPropertyValue('--locale-quote-font-family');
     quote.removeAttribute('style');
+    if (localeFont) quote.style.setProperty('--locale-quote-font-family', localeFont);
     quote.querySelectorAll('[style]').forEach((element) => element.removeAttribute('style'));
     // Clamp only the text, leaving themed bubbles, padding and borders intact.
     for (const [selector, className] of [
@@ -124,6 +126,13 @@ export function initThemePicker(dialog: HTMLDialogElement) {
   }
   const list = picker.querySelector<HTMLElement>('#theme-picker-list')!;
   const preview = picker.querySelector<HTMLIFrameElement>('#settings-theme-preview')!;
+  // The first stylesheet request may be cold. Reveal the document only once
+  // its stylesheets have loaded, keeping the preview's reserved space intact.
+  preview.style.visibility = 'hidden';
+  preview.addEventListener('load', () => {
+    if (!preview.srcdoc) return;
+    preview.style.visibility = 'visible';
+  });
   const toggle = picker.querySelector<HTMLButtonElement>('#theme-picker-toggle')!;
   const setExpanded = (expanded: boolean) => {
     toggle.setAttribute('aria-expanded', String(expanded));
@@ -200,7 +209,10 @@ export function initThemePicker(dialog: HTMLDialogElement) {
     });
     if (!dialog.open) return;
     const source = themePreviewDocument();
-    if (preview.srcdoc !== source) preview.srcdoc = source;
+    if (preview.srcdoc !== source) {
+      preview.style.visibility = 'hidden';
+      preview.srcdoc = source;
+    }
   };
   // Observe completed updates, never an interpolated background during its transition.
   let scheduled = false;

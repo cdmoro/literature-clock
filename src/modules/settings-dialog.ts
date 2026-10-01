@@ -20,9 +20,9 @@ export function initSettingsDialog() {
       <button type="button" id="tab-appearance" role="tab" aria-controls="settings-appearance" aria-selected="false" tabindex="-1" data-text="settings_appearance">Appearance</button>
       <button type="button" id="tab-behavior" role="tab" aria-controls="settings-behavior" aria-selected="false" tabindex="-1" data-text="settings_behavior">Behaviour</button>
     </div>
-    <section id="settings-appearance" role="tabpanel" aria-labelledby="tab-appearance" tabindex="0" hidden></section>
-    <section id="settings-content" role="tabpanel" aria-labelledby="tab-content" tabindex="0"></section>
-    <section id="settings-behavior" role="tabpanel" aria-labelledby="tab-behavior" tabindex="0" hidden></section>`;
+    <section id="settings-appearance" role="tabpanel" aria-labelledby="tab-appearance" hidden></section>
+    <section id="settings-content" role="tabpanel" aria-labelledby="tab-content"></section>
+    <section id="settings-behavior" role="tabpanel" aria-labelledby="tab-behavior" hidden></section>`;
   document.body.append(dialog);
 
   const tabs = [...dialog.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
@@ -82,10 +82,15 @@ export function initSettingsDialog() {
   dialog.querySelector('#settings-content')!.insertAdjacentHTML(
     'beforeend',
     `
-    <fieldset id="quote-languages"><legend data-text="settings_quote_languages">Quote languages</legend>
-      <p class="settings-help"><span data-text="settings_languages_help">Choose languages to rotate through. If none are selected, quotes use the interface language.</span> <span id="select-all-languages-row"><a id="select-all-languages" href="#" data-text="settings_select_all">Select all</a><span id="clear-languages-action" hidden> · <a id="clear-languages" href="#" data-text="settings_clear_selection">Clear selection</a></span>.</span></p>
-      <div id="quote-language-options"></div>
-    </fieldset>`,
+    <div id="quote-languages" class="settings-row"><span id="quote-languages-label" data-text="settings_quote_languages">Quote languages</span>
+      <div class="input-group settings-quote-languages"><details id="quote-language-picker">
+        <summary aria-labelledby="quote-languages-label quote-language-summary"><span id="quote-language-summary"></span></summary>
+        <div class="quote-language-menu">
+          <p id="select-all-languages-row"><a id="select-all-languages" href="#" data-text="settings_select_all">Select all</a><span id="clear-languages-action" hidden> · <a id="clear-languages" href="#" data-text="settings_clear_selection">Clear selection</a></span></p>
+          <div id="quote-language-options"></div>
+        </div>
+      </details><button type="button" id="clear-quote-languages" data-aria-label="settings_clear_selection" data-title="settings_clear_selection" hidden>${readingIcon('close')}</button></div>
+    </div>`,
   );
   const hideTitle = document.createElement('button');
   hideTitle.id = 'hide-book-title';
@@ -145,14 +150,14 @@ export function initSettingsDialog() {
       `<div class="settings-row settings-google-fonts">
         <label for="custom-font-name" data-text="settings_custom_font">Google Fonts</label>
         <div class="settings-custom-font">
-        <p id="custom-font-help" class="settings-help" data-text="settings_font_help">Paste a Google Fonts family name and choose Apply. If unavailable, the theme’s default font is used.</p>
         <form id="custom-font-form">
           <div><input id="custom-font-name" type="text" maxlength="100" placeholder="e.g. Lora" autocomplete="off" spellcheck="false" aria-describedby="custom-font-help custom-font-status">
           <button type="submit" data-text="settings_font_apply">Apply</button></div>
           <p id="custom-font-status" role="status" aria-live="polite"></p>
         </form>
         </div>
-      </div>`,
+      </div>
+      <p id="custom-font-help" class="settings-help" data-text="settings_font_help">Paste a Google Fonts family name and choose Apply. If unavailable, the theme’s default font is used.</p>`,
     );
   }
 
@@ -188,7 +193,6 @@ export function initSettingsDialog() {
     '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M19.76 8.79 20.18 10.11 22.83 10.09 22.83 13.91 20.18 13.89 19.76 15.21 19.12 16.45 21.01 18.31 18.31 21.01 16.45 19.12 15.21 19.76 13.89 20.18 13.91 22.83 10.09 22.83 10.11 20.18 8.79 19.76 7.55 19.12 5.69 21.01 2.99 18.31 4.88 16.45 4.24 15.21 3.82 13.89 1.17 13.91 1.17 10.09 3.82 10.11 4.24 8.79 4.88 7.55 2.99 5.69 5.69 2.99 7.55 4.88 8.79 4.24 10.11 3.82 10.09 1.17 13.91 1.17 13.89 3.82 15.21 4.24 16.45 4.88 18.31 2.99 21.01 5.69 19.12 7.55Z M12 8a4 4 0 1 0 0 8a4 4 0 0 0 0-8Z"/></svg>';
   toolbar.append(open);
   open.addEventListener('click', () => {
-    selectTab(tabs[0]);
     dialog.showModal();
     dialog.dispatchEvent(new Event('settings-preview'));
     dialog.scrollTop = 0;

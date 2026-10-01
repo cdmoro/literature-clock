@@ -4,6 +4,7 @@ import { afterEach, expect, test, vi } from 'vitest';
 import { initSettingsDialog } from './settings-dialog';
 import { initTheme } from './themes';
 import { createStore, store } from '../store';
+import { themePreviewDocument } from './theme-picker';
 
 vi.mock('../utils', () => ({ doFitQuote: vi.fn(), fitQuote: vi.fn(), loadFontIfNotExists: vi.fn() }));
 vi.mock('./font', () => ({ THEME_FONTS: {}, resetFont: vi.fn(), refreshDefaultFontLabel: vi.fn() }));
@@ -15,6 +16,18 @@ afterEach(() => {
   localStorage.clear();
   history.replaceState({}, '', '/');
   vi.unstubAllGlobals();
+});
+
+test('theme preview preserves locale fonts while removing live quote sizing', () => {
+  document.body.innerHTML = '<blockquote id="quote" lang="el-GR"><p>Greek quote</p></blockquote>';
+  const quote = document.getElementById('quote')!;
+  quote.style.setProperty('--locale-quote-font-family', '"Mansalva", monospace');
+  quote.style.fontSize = '72px';
+  const source = new DOMParser().parseFromString(themePreviewDocument(), 'text/html');
+  const preview = source.getElementById('quote')!;
+  expect(preview.style.getPropertyValue('--locale-quote-font-family')).toBe('"Mansalva", monospace');
+  expect(preview.style.fontSize).toBe('');
+  expect(preview.lang).toBe('el-GR');
 });
 
 test('keeps quick actions outside and moves every settings control without replacing it', () => {
@@ -128,6 +141,9 @@ test('tabs show one panel and support keyboard navigation with roving focus', ()
     'tab-behavior',
   ]);
   expect(document.getElementById('settings-content')!.hidden).toBe(false);
+  for (const panel of document.querySelectorAll<HTMLElement>('#settings-dialog [role="tabpanel"]')) {
+    expect(panel.hasAttribute('tabindex')).toBe(false);
+  }
   content.click();
   expect(content.getAttribute('aria-selected')).toBe('true');
   expect(appearance.tabIndex).toBe(-1);
@@ -149,11 +165,11 @@ test('tabs show one panel and support keyboard navigation with roving focus', ()
   for (const tab of [appearance, behavior]) {
     tab.click();
     document.getElementById('open-settings')!.click();
-    expect(content.getAttribute('aria-selected')).toBe('true');
-    expect(content.tabIndex).toBe(0);
-    expect(tab.tabIndex).toBe(-1);
-    expect(document.getElementById('settings-content')!.hidden).toBe(false);
-    expect(document.getElementById(tab.getAttribute('aria-controls')!)!.hidden).toBe(true);
+    expect(tab.getAttribute('aria-selected')).toBe('true');
+    expect(tab.tabIndex).toBe(0);
+    expect(content.tabIndex).toBe(-1);
+    expect(document.getElementById('settings-content')!.hidden).toBe(true);
+    expect(document.getElementById(tab.getAttribute('aria-controls')!)!.hidden).toBe(false);
   }
   expect(document.querySelector('#settings-behavior #work')).not.toBeNull();
   expect(document.querySelector('#settings-behavior #transition-select')).not.toBeNull();
@@ -192,6 +208,33 @@ test('visual theme choices preserve theme events, URL state and current quote wi
   await Promise.resolve();
   await Promise.resolve();
   expect(previewDocument().querySelector('#quote p')!.textContent).toBe('The next quote');
+});
+
+test('theme preview stays invisible until its document loads and hides again when the theme changes', async () => {
+  document.body.innerHTML = page;
+  vi.stubGlobal(
+    'matchMedia',
+    vi.fn(() => ({ matches: false, addEventListener: vi.fn() })),
+  );
+  createStore();
+  initSettingsDialog();
+  initTheme();
+  const dialog = document.querySelector<HTMLDialogElement>('#settings-dialog')!;
+  const preview = document.querySelector<HTMLIFrameElement>('#settings-theme-preview')!;
+  expect(preview.style.visibility).toBe('hidden');
+  preview.dispatchEvent(new Event('load'));
+  expect(preview.style.visibility).toBe('hidden');
+  dialog.setAttribute('open', '');
+  dialog.dispatchEvent(new Event('settings-preview'));
+  expect(preview.srcdoc).toContain('<!doctype html>');
+  expect(preview.style.visibility).toBe('hidden');
+  preview.dispatchEvent(new Event('load'));
+  expect(preview.style.visibility).toBe('visible');
+  document.querySelector<HTMLButtonElement>('.theme-next')!.click();
+  await Promise.resolve();
+  expect(preview.style.visibility).toBe('hidden');
+  preview.dispatchEvent(new Event('load'));
+  expect(preview.style.visibility).toBe('visible');
 });
 
 test('theme list stays collapsed, supports stepping and closes after choosing or Escape', async () => {
