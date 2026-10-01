@@ -159,7 +159,7 @@ test.each([
   ['el-GR', 'base-dark', 'Sansation'],
   ['el-GR-draft', 'retro-light', 'Handjet'],
   ['el-GR', 'handwriting-dark', 'Mansalva'],
-  ['zh-CN', 'base-light', 'Noto Sans SC'],
+  ['zh-CN', 'base-light', 'ZCOOL KuaiLe'],
   ['zh-CN', 'poster-dark', 'Liu Jian Mao Cao'],
   ['en-GB', 'base-light', 'Special Elite'],
 ])('default label follows the displayed %s passage in %s', (locale, theme, font) => {
