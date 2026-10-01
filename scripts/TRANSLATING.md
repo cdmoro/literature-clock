@@ -125,8 +125,13 @@ or registration, and never makes `locale=el-GR` work for an unpublished language
 Esperanto uses the regionless locale `eo`. Its catalogue is `quotes/quotes.eo.csv`,
 and its unlisted preview is `?locale=eo-draft&time=07:45`. Regionless locales
 work in the administrator, draft clock URLs and saved quote collections. The
-Esperanto catalogue is undergoing review; only individually reviewed passages
-are approved, and the language is not yet enabled in the normal clock.
+Esperanto catalogue is undergoing review. The focused pass covers the 188
+numeric audit candidates and all 864 source/target time pairs that the
+conservative parsers could not compare directly. It includes full passage
+comparison for those cases, not a complete literary review of all 3,640 rows.
+There are 1,044 individually approved passages; the other 2,596 remain drafts,
+including two unresolved source-edition ambiguities (1240-001 and 2328-000).
+The language is not yet enabled in the normal clock.
 
 ## Interactive menu (legacy alternative)
 
