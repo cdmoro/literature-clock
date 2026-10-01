@@ -25,6 +25,7 @@
 
 [data-theme|='frame'] #quote[aria-label]:before {
   content: '“';
+  font-family: Georgia, 'Times New Roman', serif;
   position: static;
   display: block;
   width: auto;
