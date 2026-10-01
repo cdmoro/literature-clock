@@ -139,5 +139,6 @@ export function initSavedThemes(dialog: HTMLDialogElement) {
   remove.addEventListener('click', () => {
     if (persist(entries.filter((entry) => entry.id !== select.value))) refresh('');
   });
-  refresh();
+  const matching = entries.find((entry) => KEYS.every((key) => entry.settings[key] === store.get(key)));
+  refresh(matching?.id || '');
 }
