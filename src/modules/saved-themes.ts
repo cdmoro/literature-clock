@@ -4,6 +4,7 @@ import { setTheme } from './themes';
 import { getBaseLocale, getInterfaceLocale } from './locales';
 import SETTINGS from '../strings/settings.json';
 
+const ACTIVE_THEME_KEY = 'active-saved-theme';
 export const SAVED_THEMES_KEY = 'saved-themes';
 const KEYS = ['theme', 'color', 'font', 'transition', 'work', 'show-time', 'hide-book-title', 'progressbar'] as const;
 type Preferences = Pick<ReturnType<typeof validateSettings>, (typeof KEYS)[number]>;
@@ -71,11 +72,12 @@ export function initSavedThemes(dialog: HTMLDialogElement) {
     <div class="settings-saved-themes">
       <label for="saved-theme-select" data-text="settings_saved_themes">Saved themes</label>
       <div class="input-group"><select id="saved-theme-select"></select>
-        <button type="button" id="apply-saved-theme" data-text="settings_saved_apply">Apply</button>
-        <button type="button" id="delete-saved-theme" data-text="settings_saved_delete">Delete</button></div>
+        <button type="button" id="apply-saved-theme" data-title="settings_saved_apply" data-aria-label="settings_saved_apply" title="Apply" aria-label="Apply"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></button>
+        <button type="button" id="delete-saved-theme" data-title="settings_saved_delete" data-aria-label="settings_saved_delete" title="Delete" aria-label="Delete"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7M14 10v7"/></svg></button></div>
       <form id="save-theme-form"><div class="input-group">
         <input id="saved-theme-name" maxlength="100" data-aria-label="settings_saved_name" aria-label="Name (optional)" data-placeholder="settings_saved_name" placeholder="Name (optional)">
         <button type="submit" data-text="settings_saved_save">Save current</button></div></form>
+      <button type="button" id="update-saved-theme" data-text="settings_saved_update" hidden>Update active theme</button>
       <p class="settings-help" data-text="settings_saved_help">Saved only in this browser. Includes colours, font, transitions, safe-for-work filter, time visibility, book title and progress bar.</p>
       <p id="saved-theme-status" role="status" aria-live="polite"></p>
     </div>`,
@@ -85,7 +87,30 @@ export function initSavedThemes(dialog: HTMLDialogElement) {
   const remove = dialog.querySelector<HTMLButtonElement>('#delete-saved-theme')!;
   const input = dialog.querySelector<HTMLInputElement>('#saved-theme-name')!;
   const status = dialog.querySelector<HTMLElement>('#saved-theme-status')!;
+  const update = dialog.querySelector<HTMLButtonElement>('#update-saved-theme')!;
   let entries = readSavedThemes();
+  let activeId = '';
+  try {
+    activeId = localStorage.getItem(ACTIVE_THEME_KEY) || '';
+  } catch {
+    /* Storage may be unavailable. */
+  }
+  const setActive = (id: string) => {
+    activeId = id;
+    try {
+      localStorage.setItem(ACTIVE_THEME_KEY, id);
+    } catch {
+      /* Settings still apply in memory. */
+    }
+  };
+  const snapshot = () => Object.fromEntries(KEYS.map((key) => [key, store.get(key)])) as Preferences;
+  const refreshActions = () => {
+    apply.disabled = remove.disabled = !select.value;
+    update.hidden = !activeId || select.value !== activeId;
+    const active = entries.find((entry) => entry.id === activeId);
+    update.disabled = !active || KEYS.every((key) => active.settings[key] === store.get(key));
+  };
+  store.subscribe(refreshActions);
   const strings = () => SETTINGS[getBaseLocale(getInterfaceLocale())];
   const refresh = (id = select.value) => {
     select.replaceChildren();
@@ -94,7 +119,7 @@ export function initSavedThemes(dialog: HTMLDialogElement) {
     select.append(placeholder);
     entries.forEach((entry) => select.append(new Option(entry.name, entry.id)));
     select.value = entries.some((entry) => entry.id === id) ? id : '';
-    apply.disabled = remove.disabled = !select.value;
+    refreshActions();
   };
   const persist = (next: SavedTheme[]) => {
     try {
@@ -109,9 +134,7 @@ export function initSavedThemes(dialog: HTMLDialogElement) {
       return false;
     }
   };
-  select.addEventListener('change', () => {
-    apply.disabled = remove.disabled = !select.value;
-  });
+  select.addEventListener('change', refreshActions);
   dialog.querySelector('#save-theme-form')!.addEventListener('submit', (event) => {
     event.preventDefault();
     const baseName =
@@ -119,10 +142,11 @@ export function initSavedThemes(dialog: HTMLDialogElement) {
     let number = 1;
     while (entries.some((entry) => entry.name === `${baseName} (custom) ${number}`)) number++;
     const name = input.value.trim() || `${baseName} (custom) ${number}`;
-    const settings = Object.fromEntries(KEYS.map((key) => [key, store.get(key)])) as Preferences;
+    const settings = snapshot();
     const entry = { id: crypto.randomUUID(), name, settings };
     if (persist([...entries, entry])) {
       input.value = '';
+      setActive(entry.id);
       refresh(entry.id);
     }
   });
@@ -132,13 +156,25 @@ export function initSavedThemes(dialog: HTMLDialogElement) {
     apply.disabled = true;
     try {
       await applySavedTheme(entry.settings);
+      setActive(entry.id);
+      refreshActions();
     } finally {
       apply.disabled = !select.value;
     }
   });
   remove.addEventListener('click', () => {
-    if (persist(entries.filter((entry) => entry.id !== select.value))) refresh('');
+    const id = select.value;
+    if (persist(entries.filter((entry) => entry.id !== id))) {
+      if (activeId === id) setActive('');
+      refresh('');
+    }
+  });
+  update.addEventListener('click', () => {
+    if (update.hidden || update.disabled) return;
+    const next = entries.map((entry) => (entry.id === activeId ? { ...entry, settings: snapshot() } : entry));
+    if (persist(next)) refresh(activeId);
   });
   const matching = entries.find((entry) => KEYS.every((key) => entry.settings[key] === store.get(key)));
-  refresh(matching?.id || '');
+  if (!entries.some((entry) => entry.id === activeId)) activeId = matching?.id || '';
+  refresh(activeId);
 }

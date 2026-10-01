@@ -91,3 +91,43 @@ test('reports storage failure without adding a phantom saved theme', () => {
   expect((document.getElementById('saved-theme-select') as HTMLSelectElement).options).toHaveLength(1);
   vi.restoreAllMocks();
 });
+
+test('updates the active snapshot without creating or renaming another theme', () => {
+  setup();
+  const form = document.getElementById('save-theme-form')!;
+  form.dispatchEvent(new Event('submit', { cancelable: true }));
+  const original = readSavedThemes()[0];
+  const update = document.getElementById('update-saved-theme') as HTMLButtonElement;
+  expect(update.hidden).toBe(false);
+  expect(update.disabled).toBe(true);
+  store.set('color', '#abcdef');
+  expect(update.disabled).toBe(false);
+  update.click();
+  expect(readSavedThemes()).toEqual([{ ...original, settings: { ...original.settings, color: '#abcdef' } }]);
+  expect(update.disabled).toBe(true);
+});
+
+test('keeps the active theme available for updating after edits and reload', () => {
+  setup();
+  document.getElementById('save-theme-form')!.dispatchEvent(new Event('submit', { cancelable: true }));
+  const id = readSavedThemes()[0].id;
+  store.set('color', '#abcdef');
+  document.body.innerHTML = page;
+  createStore();
+  initSettingsDialog();
+  expect((document.getElementById('saved-theme-select') as HTMLSelectElement).value).toBe(id);
+  expect((document.getElementById('update-saved-theme') as HTMLButtonElement).disabled).toBe(false);
+  document.getElementById('update-saved-theme')!.click();
+  expect(readSavedThemes()[0].settings.color).toBe('#abcdef');
+});
+
+test('selecting another saved entry does not offer to overwrite it as the active theme', () => {
+  setup();
+  const form = document.getElementById('save-theme-form')!;
+  form.dispatchEvent(new Event('submit', { cancelable: true }));
+  form.dispatchEvent(new Event('submit', { cancelable: true }));
+  const select = document.getElementById('saved-theme-select') as HTMLSelectElement;
+  select.value = readSavedThemes()[0].id;
+  select.dispatchEvent(new Event('change'));
+  expect((document.getElementById('update-saved-theme') as HTMLButtonElement).hidden).toBe(true);
+});
