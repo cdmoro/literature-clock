@@ -1,6 +1,6 @@
 # Citas chinas revisadas y resueltas
 
-Las cinco decisiones fueron aceptadas por el usuario. Todas las citas están habilitadas; no quedan casos en borrador.
+Las cinco decisiones fueron aceptadas por el usuario. Estas cinco citas están habilitadas. Una segunda revisión encontró el caso pendiente descrito al final.
 
 | ID estable | Hora | Resolución |
 | --- | --- | --- |
@@ -19,3 +19,9 @@ La [escena de Fire Mountain](https://www.gutenberg.org/files/30496/30496-h/30496
 El centenario de Coach se interpreta a partir del diálogo suministrado. El fragmento de Casino Royale se conserva completo: el fragmento breve existente no contiene la segunda oración.
 
 Los valores anteriores y nuevos están registrados en chinese-corrections.json. El CSV recibido permanece intacto.
+
+## Nuevo caso pendiente — 0000-032, A Squatter’s Tale (Ike Oguine)
+
+El catálogo asigna 00:00. El pasaje completo dice «Patrolled perimeter 12.00 pm, No Incident», aunque habla de turnos nocturnos. La traducción china había inferido «午夜12点» (medianoche). La indicación pm corresponde al mediodía y entra en conflicto con esa inferencia y con el horario asignado.
+
+La cita china queda en borrador hasta verificar una edición del libro. Si pm es un error de transcripción, corresponde reparar el original; si es correcto, corresponde revisar la asignación y la traducción. El contexto del turno nocturno no permite resolverlo por sí solo. Las otras lenguas se conservan pendientes de esa verificación del original.

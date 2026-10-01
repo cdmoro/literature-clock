@@ -42,7 +42,8 @@
       "reasons": [
         "equivalent_time",
         "source-based time or wording correction",
-        "time highlight correction"
+        "time highlight correction",
+        "source says 12.00 pm but slot is 00:00; context alone cannot establish a typo"
       ],
       "changes": {
         "Quote time": {
@@ -52,6 +53,10 @@
         "Quote": {
           "before": "一个几乎看不见两英尺以外东西的人居然能被雇佣当保安，这让我觉得我们的工作根本不是为了保护任何东西，而是为了每天晚上来上班，在厚厚的账簿上写满诸如“中午12点巡逻周边，无事件发生”之类的晦涩难懂的记录，然后每两周去办公室领工资，听喋喋不休的埃尔加西尔女士唠叨。",
           "after": "一个几乎看不见两英尺以外东西的人居然能被雇佣当保安，这让我觉得我们的工作根本不是为了保护任何东西，而是为了每天晚上来上班，在厚厚的账簿上写满诸如“午夜12点巡逻周边，无事件发生”之类的晦涩难懂的记录，然后每两周去办公室领工资，听喋喋不休的埃尔加西尔女士唠叨。"
+        },
+        "Draft": {
+          "before": "false",
+          "after": "true"
         }
       }
     },
@@ -140,14 +145,35 @@
       }
     },
     {
+      "id": "0008-000",
+      "reasons": [
+        "00:08, not eight o’clock"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "午夜过后八点",
+          "after": "午夜过后八分钟"
+        },
+        "Quote": {
+          "before": "“夜深人静之时！”牧师惊呼道，“现在是白天，不是黑夜，而且现在是午夜过后八点！”",
+          "after": "“夜深人静之时！”牧师惊呼道，“现在是白天，不是黑夜，而且现在是午夜过后八分钟！”"
+        }
+      }
+    },
+    {
       "id": "0012-000",
       "reasons": [
-        "reviewed equivalent or contextual highlight"
+        "reviewed equivalent or contextual highlight",
+        "restore lies, paired identical telescopes and optical equipment rather than nozzles"
       ],
       "changes": {
         "Quote time": {
           "before": "0 小时 12 分钟",
           "after": "0 小时 12 分"
+        },
+        "Quote": {
+          "before": "时钟时间为 0 小时 12 分 0 秒。23 分钟后，他们第一次看到了金星。每个人都将眼睛贴在由肖特先生制作的、带有伯德先生制作的变暗喷嘴的相同两英尺半格里高利反射望远镜的喷嘴上。",
+          "after": "时钟时间为 0 小时 12 分 0 秒。23 分钟后，他们第一次看到了金星。每个人都躺着，把眼睛贴在一架两英尺半长的格里高利式反射望远镜的镜筒口上；两架望远镜完全一样，由肖特先生制作，配有伯德先生制作的遮光装置。"
         }
       }
     },
@@ -160,6 +186,38 @@
         "Quote time": {
           "before": "凌晨12:22",
           "after": "12:22"
+        }
+      }
+    },
+    {
+      "id": "0025-001",
+      "reasons": [
+        "five-and-twenty is 25 minutes, not 25 minutes 20 seconds"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "午夜过后25分20秒",
+          "after": "午夜过后二十五分钟"
+        },
+        "Quote": {
+          "before": "夏洛特记得，她听到格雷戈尔刚进卧室就又下楼了，甚至在仆人锁好房门之前。他肯定是匆匆赶去某个小树林找特蕾莎，然后他们肯定又匆匆赶往维约堡车站，最后一班开往巴黎的火车在午夜过后25分20秒从那里出发。事情的确就是这样发生的。",
+          "after": "夏洛特记得，她听到格雷戈尔刚进卧室就又下楼了，甚至在仆人锁好房门之前。他肯定是匆匆赶去某个小树林找特蕾莎，然后他们肯定又匆匆赶往维约堡车站，最后一班开往巴黎的火车在午夜过后二十五分钟从那里出发。事情的确就是这样发生的。"
+        }
+      }
+    },
+    {
+      "id": "0030-001",
+      "reasons": [
+        "restore the missing half hour"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "午夜过后",
+          "after": "午夜过后半小时"
+        },
+        "Quote": {
+          "before": "“我爱你胜过你所能想象的一切。”<br>“我也爱你。”我笑了，他的唇在我脸颊上停留片刻。他沿着走廊走去，我看了看时间：午夜过后。",
+          "after": "“我爱你胜过你所能想象的一切。”<br>“我也爱你。”我笑了，他的唇在我脸颊上停留片刻。他沿着走廊走去，我看了看时间：午夜过后半小时。"
         }
       }
     },
@@ -307,6 +365,39 @@
       }
     },
     {
+      "id": "0058-000",
+      "reasons": [
+        "preserve approaching one, not around one"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "在发生那么多事之后，他竟然还敢在晚上，几乎凌晨一点左右来拜访他们，真是厚颜无耻。",
+          "after": "在发生那么多事之后，他竟然还敢在晚上，快到凌晨一点来拜访他们，真是厚颜无耻。"
+        },
+        "Quote time": {
+          "before": "凌晨一点左右",
+          "after": "快到凌晨一点"
+        }
+      }
+    },
+    {
+      "id": "0059-000",
+      "reasons": [
+        "restore the missing following hour",
+        "highlight includes the following hour"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "差一分钟",
+          "after": "差一分钟到一点"
+        },
+        "Quote": {
+          "before": "只有一声迟到的汽车喇叭声轻轻打破了寂静。<br>我看了看手表。显示差一分钟。当我抬起头时，某个地方不耐烦的钟表也证实了这一点。<br>我打了个哈欠，哄着小梗犬睡觉，伸手去拿开关。<br>就在这时，它又低吼了一声。",
+          "after": "只有一声迟到的汽车喇叭声轻轻打破了寂静。<br>我看了看手表。显示差一分钟到一点。当我抬起头时，某个地方不耐烦的钟表也证实了这一点。<br>我打了个哈欠，哄着小梗犬睡觉，伸手去拿开关。<br>就在这时，它又低吼了一声。"
+        }
+      }
+    },
+    {
       "id": "0100-002",
       "reasons": [
         "retranslate missing or corrupt passage from declared source"
@@ -352,6 +443,34 @@
         "Quote": {
           "before": "他越想越困惑……他不明白这把左轮手枪是怎么回事……<br>房子里有人拿到了那把左轮手枪……<br>楼下，钟敲了一声。",
           "after": "他越想越困惑……他不明白这把左轮手枪<br>是怎么回事……<br>房子里有人拿到了那把左轮手枪……<br>楼下，钟敲了一声。"
+        }
+      }
+    },
+    {
+      "id": "0100-013",
+      "reasons": [
+        "casting their moorings means departing, not anchoring"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "此时已是5月30日。1940年5月30日凌晨一点。对于一个彻夜难眠、盯着天花板的人来说，这真是一个著名的日子。在英格兰的溪流和潮汐河口，游船和明轮船已经开始抛锚，准备前往敦刻尔克进行一日游。而在另一边，泰德和其他人一样，都面临着同样的命运。",
+          "after": "此时已是5月30日。1940年5月30日凌晨一点。对于一个彻夜难眠、盯着天花板的人来说，这真是一个著名的日子。在英格兰的溪流和潮汐河口，游船和明轮船已经开始解缆，准备前往敦刻尔克进行一日游。而在另一边，泰德和其他人一样，都面临着同样的命运。"
+        }
+      }
+    },
+    {
+      "id": "0100-014",
+      "reasons": [
+        "restore one o’clock"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "钟声敲响",
+          "after": "钟声正敲着一点"
+        },
+        "Quote": {
+          "before": "昨晚，当那颗从极点向西的星辰，照亮了如今燃烧的那片天空，我和马塞勒斯，钟声敲响。",
+          "after": "昨晚，当那颗从极点向西的星辰，照亮了如今燃烧的那片天空，我和马塞勒斯，钟声正敲着一点。"
         }
       }
     },
@@ -808,12 +927,17 @@
     {
       "id": "0207-002",
       "reasons": [
-        "equivalent_time"
+        "equivalent_time",
+        "source does not specify a poem"
       ],
       "changes": {
         "Quote time": {
           "before": " 2.07 ",
           "after": "凌晨 2:07"
+        },
+        "Quote": {
+          "before": " 星期六，11 月 17 日 — 凌晨 2:07。我睡不着。本在楼上，已经回床上躺着了，而我正在厨房里写这首诗。他以为我在喝他刚给我做的可可。他以为我很快就会回床上睡觉。我会的，但首先我必须再写一会儿。",
+          "after": " 星期六，11 月 17 日 — 凌晨 2:07。我睡不着。本在楼上，已经回床上躺着了，而我正在厨房里写下这些文字。他以为我在喝他刚给我做的可可。他以为我很快就会回床上睡觉。我会的，但首先我必须再写一会儿。"
         }
       }
     },
@@ -1735,12 +1859,29 @@
     {
       "id": "0318-000",
       "reasons": [
-        "reviewed equivalent or contextual highlight"
+        "reviewed equivalent or contextual highlight",
+        "lead is the navigable opening in the ice, not the SOS"
       ],
       "changes": {
         "Quote time": {
           "before": "03:18 小时",
           "after": "凌晨3点18分"
+        },
+        "Quote": {
+          "before": "真相或许永远不得而知。我们目前只知道，2月10日凌晨3点18分，“南十字星”号被冰层牢牢包围，并发出求救信号。夜间某个时候，求救信号必然中断。西向涌来的浮冰将她包围，几个小时后，她便消失在茫茫大海之中。",
+          "after": "真相或许永远不得而知。我们目前只知道，2月10日凌晨3点18分，“南十字星”号被冰层牢牢包围，并发出求救信号。夜间某个时候，那条水道一定已经到了尽头。西向涌来的浮冰将她包围，几个小时后，她便消失在茫茫大海之中。"
+        }
+      }
+    },
+    {
+      "id": "0320-000",
+      "reasons": [
+        "restore omitted age 16"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "普拉巴特·库马拉，1989 年 11 月 17 日，凌晨 3:20，从朋友家中。",
+          "after": "普拉巴特·库马拉，16岁。1989 年 11 月 17 日，凌晨 3:20，从朋友家中。"
         }
       }
     },
@@ -1817,6 +1958,22 @@
         "Quote time": {
           "before": "03.29",
           "after": "凌晨3点29分"
+        }
+      }
+    },
+    {
+      "id": "0331-000",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "03:31 小时",
+          "after": "03:31"
+        },
+        "Quote": {
+          "before": "他犹豫片刻，伸手去够海军上将的呼叫图标，小心翼翼地触碰，仿佛那是核弹的引爆装置。阿拉山将准确时间记录在值班日志中：03:31 小时。",
+          "after": "他犹豫片刻，伸手去够海军上将的呼叫图标，小心翼翼地触碰，仿佛那是核弹的引爆装置。阿拉山将准确时间记录在值班日志中：03:31。"
         }
       }
     },
@@ -2016,6 +2173,22 @@
       }
     },
     {
+      "id": "0352-000",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "这太完美了，完美得过分。航海日志翻开，最后一条记录是：03.52 小时 — 布雷迪机场信标，方位角 312°，约 8 英里。",
+          "after": "这太完美了，完美得过分。航海日志翻开，最后一条记录是：03:52 — 布雷迪机场信标，方位角 312°，约 8 英里。"
+        },
+        "Quote time": {
+          "before": "03.52",
+          "after": "03:52"
+        }
+      }
+    },
+    {
       "id": "0354-000",
       "reasons": [
         "whitespace"
@@ -2108,12 +2281,17 @@
     {
       "id": "0401-001",
       "reasons": [
-        "reviewed equivalent or contextual highlight"
+        "reviewed equivalent or contextual highlight",
+        "restore explicit AM in the source"
       ],
       "changes": {
         "Quote time": {
           "before": "凌晨四点刚过",
-          "after": "刚过四点"
+          "after": "刚过凌晨四点"
+        },
+        "Quote": {
+          "before": "查理瞥了一眼钟。家里刚过四点。星期天。她应该已经起床了。可能会一边喝咖啡一边看书，然后在去教堂前跑步。",
+          "after": "查理瞥了一眼钟。家里刚过凌晨四点。星期天。她应该已经起床了。可能会一边喝咖啡一边看书，然后在去教堂前跑步。"
         }
       }
     },
@@ -2813,6 +2991,19 @@
       }
     },
     {
+      "id": "0530-004",
+      "reasons": [
+        "do not invent daily family road trips",
+        "twice a day qualifies bathroom cleaning, not ironing"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "布拉克和她弟弟兰迪小时候，为了避开交通高峰，妈妈每天早上5:30就叫醒他们，带他们去自驾游；直到她11岁，家里都装着安全锁；家里没有电视，当然也没有糖果、汽水、酒或烟；她每天至少熨两次床单，漂白内衣，打扫两次浴室。",
+          "after": "布拉克和她弟弟兰迪小时候，为了避开交通高峰，妈妈为了全家自驾出游，会在早上5:30叫醒他们；直到她11岁，家里都装着安全锁；家里没有电视，当然也没有糖果、汽水、酒或烟；她熨床单，给内衣漂白，每天至少打扫两次浴室。"
+        }
+      }
+    },
+    {
       "id": "0532-000",
       "reasons": [
         "equivalent_time"
@@ -2851,12 +3042,17 @@
     {
       "id": "0536-000",
       "reasons": [
-        "equivalent_time"
+        "equivalent_time",
+        "wiped the previous evening refers to lost memory, not wiping a face"
       ],
       "changes": {
         "Quote time": {
           "before": "05.36",
           "after": "5点36分"
+        },
+        "Quote": {
+          "before": "她喝了一瓶杰克丹尼威士忌。她5点36分醒来时，已经擦干了前一天晚上的脸。",
+          "after": "她喝了一瓶杰克丹尼威士忌。她5点36分醒来时，已经把前一晚的事忘得一干二净。"
         }
       }
     },
@@ -3377,6 +3573,22 @@
       }
     },
     {
+      "id": "0646-001",
+      "reasons": [
+        "quarter to seven plus one minute is 06:46, not 06:59"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "七点差一分",
+          "after": "差一刻到七点之后的一分钟"
+        },
+        "Quote": {
+          "before": "七点差一分，我听到外面罐子碰撞的响声。我打开前门，看到我的那个人，正从他扛着的一堆罐子里挑出我的罐子，一边吹着口哨。",
+          "after": "差一刻到七点之后的一分钟，我听到外面罐子碰撞的响声。我打开前门，看到我的那个人，正从他扛着的一堆罐子里挑出我的罐子，一边吹着口哨。"
+        }
+      }
+    },
+    {
       "id": "0648-001",
       "reasons": [
         "equivalent_time"
@@ -3576,6 +3788,22 @@
         "Quote time": {
           "before": "上午7:05",
           "after": "早上7:05"
+        }
+      }
+    },
+    {
+      "id": "0709-001",
+      "reasons": [
+        "spoken hour/minute pair, not a bare number"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "七九",
+          "after": "七点零九分"
+        },
+        "Quote": {
+          "before": "清晨，房子空无一人。时钟滴答作响，在空旷中一遍又一遍地重复着它的声音。七九，早餐时间，七九！",
+          "after": "清晨，房子空无一人。时钟滴答作响，在空旷中一遍又一遍地重复着它的声音。七点零九分，早餐时间，七点零九分！"
         }
       }
     },
@@ -4133,6 +4361,72 @@
       }
     },
     {
+      "id": "0800-035",
+      "reasons": [
+        "oh eight oh oh is 08:00, not 08:08",
+        "glazzies refers to eyes in this context"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "八点零八点",
+          "after": "八点整"
+        },
+        "Quote": {
+          "before": "第二天早上我八点零八点醒了，我的兄弟们，我仍然感觉筋疲力尽、精疲力竭、狼狈不堪，而且我的眼镜像被睡眠胶粘在一起一样，简直惨不忍睹，所以我决定不去上学了。",
+          "after": "第二天早上我八点整醒了，我的兄弟们，我仍然感觉筋疲力尽、精疲力竭、狼狈不堪，而且我的眼睛被睡眠的黏胶糊得严严实实，简直惨不忍睹，所以我决定不去上学了。"
+        }
+      }
+    },
+    {
+      "id": "0801-000",
+      "reasons": [
+        "eight-one is 08:01",
+        "preserve repeated spoken clock announcements"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "八一",
+          "after": "八点零一分"
+        },
+        "Quote": {
+          "before": "八一，滴答滴答，八点一点，上学，上班，跑，跑，八一！",
+          "after": "八点零一分，滴答滴答，八点零一分，上学，上班，跑，跑，八点零一分！"
+        }
+      }
+    },
+    {
+      "id": "0802-000",
+      "reasons": [
+        "restore hour/minute separators and AM while preserving the malfunctioning repeated syllables/seconds"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "八零二",
+          "after": "八点零二分"
+        },
+        "Quote": {
+          "before": "八零二，下士利特尔博顿博顿之死……八零三……德特里图斯中士之死……八零三零三零七秒……维斯蒂夫警员之死……八零三零九九秒……之死之死之死……",
+          "after": "早上八点零二分，下士利特尔博顿博顿之死……早上八点零三分……德特里图斯中士之死……早上八点零三、三、三分又七秒、秒……维斯蒂夫警员之死……早上八点零三分又九、九、九秒……之死之死之死……"
+        }
+      }
+    },
+    {
+      "id": "0803-003",
+      "reasons": [
+        "restore hour/minute separators and AM while preserving the malfunctioning repeated syllables/seconds"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "八零三",
+          "after": "八点零三分"
+        },
+        "Quote": {
+          "before": "八零二，下士利特尔博顿博顿之死……八零三……德特里图斯中士之死……八零三零三零七秒……维斯蒂夫警员之死……八零三零九九秒……之死之死之死……",
+          "after": "早上八点零二分，下士利特尔博顿博顿之死……早上八点零三分……德特里图斯中士之死……早上八点零三、三、三分又七秒、秒……维斯蒂夫警员之死……早上八点零三分又九、九、九秒……之死之死之死……"
+        }
+      }
+    },
+    {
       "id": "0804-000",
       "reasons": [
         "whitespace"
@@ -4169,6 +4463,18 @@
       }
     },
     {
+      "id": "0810-003",
+      "reasons": [
+        "cell count refers to cells, not phones; cross-check duplicate 1915-004"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "手机数量降至40万。8:10醒来。7:15入睡。（似乎不小心把手表弄丢了，只好开车进城去买一块。）",
+          "after": "细胞数量降至40万。8:10醒来。7:15入睡。（似乎不小心把手表弄丢了，只好开车进城去买一块。）"
+        }
+      }
+    },
+    {
       "id": "0811-000",
       "reasons": [
         "equivalent_time"
@@ -4177,6 +4483,22 @@
         "Quote time": {
           "before": "8.11",
           "after": "8:11"
+        }
+      }
+    },
+    {
+      "id": "0811-001",
+      "reasons": [
+        "eight-eleven is 08:11, not 81"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "八十一",
+          "after": "八点十一分"
+        },
+        "Quote": {
+          "before": "“想不想试试引擎？”他朝那两个女仆喊道，指了指脚踏板。她们笑了，但还是决定不开，而是带着浴缸爬进了其中一辆老式蒸汽机车里。她们俩都戴着非常漂亮的帽子，每顶帽子上都别着一朵花，但她们漂亮的脸蛋让人觉得不止一朵。不知为何，她们的裙子上都别着白色的玫瑰花结。我又看了一眼钟：八十一。",
+          "after": "“想不想试试引擎？”他朝那两个女仆喊道，指了指脚踏板。她们笑了，但还是决定不开，而是带着浴缸爬进了其中一辆老式蒸汽机车里。她们俩都戴着非常漂亮的帽子，每顶帽子上都别着一朵花，但她们漂亮的脸蛋让人觉得不止一朵。不知为何，她们的裙子上都别着白色的玫瑰花结。我又看了一眼钟：八点十一分。"
         }
       }
     },
@@ -4408,12 +4730,17 @@
     {
       "id": "0832-002",
       "reasons": [
-        "equivalent_time"
+        "equivalent_time",
+        "clipped thanks a lot is gratitude, not a count"
       ],
       "changes": {
         "Quote time": {
           "before": "0832",
           "after": "08:32"
+        },
+        "Quote": {
+          "before": "唐，我想知道的是，有没有人知道更精确的时间，因为戴不知道。<br>盖特利查看他那廉价的电子表，头还搭在沙发扶手上。“我查到的是08:32:14、15、16，兰迪。”<br>“很多次了，D.G.老兄。”",
+          "after": "唐，我想知道的是，有没有人知道更精确的时间，因为戴不知道。<br>盖特利查看他那廉价的电子表，头还搭在沙发扶手上。“我查到的是08:32:14、15、16，兰迪。”<br>“多谢了，D.G.老兄。”"
         }
       }
     },
@@ -4548,6 +4875,22 @@
         "Quote": {
           "before": "加德纳醒来时，明亮的阳光透过西窗照进他的脸。他的背痛得厉害，站起来时，脖子发出令人作呕的关节炎嘎吱声，疼得他直皱眉。现在是九点一刻。",
           "after": "加德纳醒来时，明亮的阳光透过西窗照进他的脸。他的背痛得厉害，站起来时，脖子发出令人作呕的关节炎嘎吱声，疼得他直皱眉。现在是差一刻九点。"
+        }
+      }
+    },
+    {
+      "id": "0845-003",
+      "reasons": [
+        "quarter to nine is 08:45/20:45, not 09:45"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "九点四十五分",
+          "after": "差一刻九点"
+        },
+        "Quote": {
+          "before": "到了九点四十五分，还是没人来，加德纳开始怀疑他们是不是要放弃了。他坐在门廊上博比的摇椅上，一边琢磨着这个想法，一边用手指抚摸着脸上博兹曼打在他脸上的那块又大又肿的淤青。",
+          "after": "到了差一刻九点，还是没人来，加德纳开始怀疑他们是不是要放弃了。他坐在门廊上博比的摇椅上，一边琢磨着这个想法，一边用手指抚摸着脸上博兹曼打在他脸上的那块又大又肿的淤青。"
         }
       }
     },
@@ -5123,12 +5466,17 @@
     {
       "id": "0925-000",
       "reasons": [
-        "equivalent_time"
+        "equivalent_time",
+        "secondary time eight minutes to ten is 09:52"
       ],
       "changes": {
         "Quote time": {
           "before": "9:25",
           "after": "早上9点25分"
+        },
+        "Quote": {
+          "before": "考虑到这一点，艾玛那天早上9点25分离开了庄园，并在9点50分整乘车驶入了巴灵顿造船厂的大门。",
+          "after": "考虑到这一点，艾玛那天早上9点25分离开了庄园，并在9点52分整乘车驶入了巴灵顿造船厂的大门。"
         }
       }
     },
@@ -5570,6 +5918,23 @@
       }
     },
     {
+      "id": "0955-000",
+      "reasons": [
+        "five to ten is 09:55, not five-to-ten range",
+        "coach of an orchestra is their bus"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "五点到十点",
+          "after": "差五分钟到十点"
+        },
+        "Quote": {
+          "before": "五点到十点离开房间，到大厅加入乐团，然后前往前门，你会看到他们的马车停在那里。",
+          "after": "差五分钟到十点离开房间，到大厅加入乐团，然后前往前门，你会看到他们的大客车停在那里。"
+        }
+      }
+    },
+    {
       "id": "0955-001",
       "reasons": [
         "source-based time or wording correction",
@@ -5964,6 +6329,21 @@
       }
     },
     {
+      "id": "1010-001",
+      "reasons": [
+        "remove duplicated time",
+        "hospital orderlies, not military orderlies",
+        "swing doors, not revolving doors",
+        "parking-space owner, not car owner"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "10:10，10点10分，两名身穿白大褂的勤务兵推着一位身材高大魁梧的男子，用轮椅从旋转门里出来。他们看到院长的车停在指定位置，便引导他过去。司机跳下车，迅速打开后车门。可怜的人，他心想，那人的头上缠满了绷带，只留下嘴唇和鼻孔的小缝隙。他怀疑那是不是烧伤了。",
+          "after": "10:10，两名身穿白大褂的护工推着一位身材高大魁梧的男子，用轮椅从双向弹簧门里出来。他们看到车停在院长的专用车位，便引导他过去。司机跳下车，迅速打开后车门。可怜的人，他心想，那人的头上缠满了绷带，只留下嘴唇和鼻孔的小缝隙。他怀疑那是不是烧伤了。"
+        }
+      }
+    },
+    {
       "id": "1011-000",
       "reasons": [
         "equivalent_time"
@@ -6253,6 +6633,22 @@
       }
     },
     {
+      "id": "1053-002",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "10.53 小时",
+          "after": "10:53"
+        },
+        "Quote": {
+          "before": "他开始记录我们的观察结果。“10.53 小时，”他写道，我们蹲在楼梯顶端，听着他母亲在楼下走廊里说话。",
+          "after": "他开始记录我们的观察结果。“10:53，”他写道，我们蹲在楼梯顶端，听着他母亲在楼下走廊里说话。"
+        }
+      }
+    },
+    {
       "id": "1054-000",
       "reasons": [
         "source-based time or wording correction",
@@ -6347,6 +6743,18 @@
       }
     },
     {
+      "id": "1100-004",
+      "reasons": [
+        "prison governor, not political governor"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "巴巴·迪奥普在弗勒里-梅罗吉度过了他生命的最后36个小时。第二天上午11点，他在被押往总督办公室的途中，被一把削尖的梳子刺穿了喉咙。",
+          "after": "巴巴·迪奥普在弗勒里-梅罗吉度过了他生命的最后36个小时。第二天上午11点，他在被押往监狱长办公室的途中，被一把削尖的梳子刺穿了喉咙。"
+        }
+      }
+    },
+    {
       "id": "1102-000",
       "reasons": [
         "equivalent_time"
@@ -6379,6 +6787,18 @@
         "Quote time": {
           "before": "11.04",
           "after": "11:04"
+        }
+      }
+    },
+    {
+      "id": "1105-001",
+      "reasons": [
+        "remove unsupported AM from source To sleep 3:15, reused at 15:15"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "7月3日：5小时45分钟。今天几乎没做什么。越来越疲惫，拖着疲惫的身体走到实验室，差点两次冲出马路。勉强集中精力喂了动物园的动物，并更新了日志。最后一次阅读了惠特比留下的操作手册，决定将辐射剂量率设为每分钟40伦琴，目标距离设为530厘米。一切准备就绪。11:05起床。凌晨3:15入睡。",
+          "after": "7月3日：5小时45分钟。今天几乎没做什么。越来越疲惫，拖着疲惫的身体走到实验室，差点两次冲出马路。勉强集中精力喂了动物园的动物，并更新了日志。最后一次阅读了惠特比留下的操作手册，决定将辐射剂量率设为每分钟40伦琴，目标距离设为530厘米。一切准备就绪。11:05起床。3:15入睡。"
         }
       }
     },
@@ -6587,6 +7007,18 @@
       }
     },
     {
+      "id": "1145-001",
+      "reasons": [
+        "preserve ambiguous date ordering rather than choosing a month/day convention"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "上午11:45 - 2014年6月5日<br>关于周三清晨发生在瓦尔德格拉斯的凶杀案的调查有了更多细节浮出水面。",
+          "after": "上午11:45 - 06/05/2014<br>关于周三清晨发生在瓦尔德格拉斯的凶杀案的调查有了更多细节浮出水面。"
+        }
+      }
+    },
+    {
       "id": "1147-001",
       "reasons": [
         "reviewed equivalent or contextual highlight"
@@ -6672,6 +7104,26 @@
         "Quote time": {
           "before": "11.58",
           "after": "上午11点58分"
+        }
+      }
+    },
+    {
+      "id": "1158-003",
+      "reasons": [
+        "keep the time two minutes before noon, not at noon",
+        "remove duplicated location wording",
+        "the block in this execution scene is not an altar",
+        "restore masked and avoid interpreting minister as a political official",
+        "executioner, not political minister"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "正午时分，时钟敲响前两分钟",
+          "after": "正午钟声敲响前两分钟"
+        },
+        "Quote": {
+          "before": "正午时分，时钟敲响前两分钟，残暴的男爵登上台上，检阅着中午那场可怕仪式的准备工作。祭坛已经摆好——那位面目狰狞、身着黑衣、手持燃烧长柄刀的复仇大臣已准备就绪。男爵用手指试了试刀刃，问那可怕的剑客他的手是否稳固？嗜血之人点了点头。",
+          "after": "正午钟声敲响前两分钟，残暴的男爵站在台上，检阅着中午那场可怕仪式的准备工作。断头台已经摆好——那位可怕的复仇执行者蒙着面，身穿黑衣，手持闪着光芒的长刀，已经准备就绪。男爵用手指试了试刀刃，问那可怕的剑客他的手是否稳固？嗜血之人点了点头。"
         }
       }
     },
@@ -6857,6 +7309,23 @@
       }
     },
     {
+      "id": "1215-000",
+      "reasons": [
+        "restore the noon-to-12:15 interval",
+        "highlight the ending clock time, not a detached duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "一刻钟",
+          "after": "十二点一刻"
+        },
+        "Quote": {
+          "before": "我不可能犯下这桩罪行。宝琳·斯泰西是在十二点零五分从这层楼摔到地上的。一百个人会出庭作证，说我从正午将至一刻钟——我通常公开祈祷的时间——一直站在楼上自己房间的阳台上。",
+          "after": "我不可能犯下这桩罪行。宝琳·斯泰西是在十二点零五分从这层楼摔到地上的。一百个人会出庭作证，说我从正午敲响之前一直到十二点一刻——我通常公开祈祷的时间——一直站在楼上自己房间的阳台上。"
+        }
+      }
+    },
+    {
       "id": "1215-002",
       "reasons": [
         "equivalent_time"
@@ -6951,6 +7420,22 @@
       }
     },
     {
+      "id": "1245-001",
+      "reasons": [
+        "quarter to one is 12:45"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "差一刻一刻",
+          "after": "差一刻一点"
+        },
+        "Quote": {
+          "before": "那个星期天是缅因州如画般的夏日：晴朗、明媚、温暖。差一刻一刻，露丝·麦考斯兰穿着一件漂亮的蓝色夏日连衣裙，最后一次离开了家。",
+          "after": "那个星期天是缅因州如画般的夏日：晴朗、明媚、温暖。差一刻一点，露丝·麦考斯兰穿着一件漂亮的蓝色夏日连衣裙，最后一次离开了家。"
+        }
+      }
+    },
+    {
       "id": "1245-003",
       "reasons": [
         "source-based time or wording correction",
@@ -6964,6 +7449,22 @@
         "Quote": {
           "before": "因为下着雨，因为她心情低落，又因为罗比到一点四十五分还没来，伊丽莎白在餐厅里等罗比的时候，给自己点了一杯马提尼。她不舒服地坐在餐厅里一张窄椅子上，看着其他一些毫不起眼的人进进出出。",
           "after": "因为下着雨，因为她心情低落，又因为罗比到差一刻一点还没来，伊丽莎白在餐厅里等罗比的时候，给自己点了一杯马提尼。她不舒服地坐在餐厅里一张窄椅子上，看着其他一些毫不起眼的人进进出出。"
+        }
+      }
+    },
+    {
+      "id": "1246-002",
+      "reasons": [
+        "preserve approximate quarter-to-one, not 01:45"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "大约一点四十五分",
+          "after": "大约差一刻一点"
+        },
+        "Quote": {
+          "before": "现在大约一点四十五分。阳光无法透过右侧的窗户照进房间。外面天气晴朗，但越来越闷热，空气中弥漫着淡淡的薄雾，柔化了刺眼的阳光。",
+          "after": "现在大约差一刻一点。阳光无法透过右侧的窗户照进房间。外面天气晴朗，但越来越闷热，空气中弥漫着淡淡的薄雾，柔化了刺眼的阳光。"
         }
       }
     },
@@ -7082,6 +7583,22 @@
       }
     },
     {
+      "id": "1307-000",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "1307时",
+          "after": "13:07"
+        },
+        "Quote": {
+          "before": "奈克萨博士以一种更为优雅的姿态接受了她被迫屈服于不可避免的命运。她看着护士莱克姆，指着人类、博利安人和扎尔丹人说道：“哈钦森中尉的死亡时间是1307时。”",
+          "after": "奈克萨博士以一种更为优雅的姿态接受了她被迫屈服于不可避免的命运。她看着护士莱克姆，指着人类、博利安人和扎尔丹人说道：“哈钦森中尉的死亡时间是13:07。”"
+        }
+      }
+    },
+    {
       "id": "1310-000",
       "reasons": [
         "equivalent_time"
@@ -7090,6 +7607,18 @@
         "Quote time": {
           "before": "1:10",
           "after": "1点10分"
+        }
+      }
+    },
+    {
+      "id": "1310-002",
+      "reasons": [
+        "wedding day, not anniversary"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "他说了些什么，但我没听见，因为我正在看《南黑文日报》。今天是1993年10月23日，星期六。我们的结婚纪念日。香烟架上方的钟显示1:10。<br>“我得走了，”我对老人说，然后就走了。",
+          "after": "他说了些什么，但我没听见，因为我正在看《南黑文日报》。今天是1993年10月23日，星期六。我们的婚礼当天。香烟架上方的钟显示1:10。<br>“我得走了，”我对老人说，然后就走了。"
         }
       }
     },
@@ -7139,6 +7668,40 @@
         "Quote": {
           "before": "我慢慢起身，沿着走廊走去。<br>“我在睡觉，”我隔着门低声说道。我眯着眼从猫眼往外看：瑞瓦看起来衣衫褴褛，神情恍惚。<br>“我可以进来吗？”她问。“我真的需要谈谈。”<br>“我可以晚点再给你打电话吗？现在几点了？”<br>“一点十五。我试着打过电话，”她说。“门卫把你的邮件送上来了。我需要谈谈。情况很严重。”",
           "after": "我慢慢起身，沿着走廊走去。<br>“我在<em>睡觉</em>，”我隔着门低声说道。我眯着眼从猫眼往外看：瑞瓦看起来衣衫褴褛，神情恍惚。<br>“我可以进来吗？”她问。“我真的需要谈谈。”<br>“我可以晚点再给你打电话吗？现在几点了？”<br>“一点十五。我试着打过电话，”她说。“门卫把你的邮件送上来了。我需要谈谈。情况很严重。”"
+        }
+      }
+    },
+    {
+      "id": "1317-001",
+      "reasons": [
+        "one seventeen and four seconds is 13:17:04",
+        "preserve the second clock mention and seconds",
+        "highlight the actual hour/minute"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "17点",
+          "after": "一点十七分"
+        },
+        "Quote": {
+          "before": "17点零4秒。那个矮个子真走运，骑上摩托车，那个高个子也进去了。17点40秒。那个女孩，她头发上系着一条绿丝带。可惜那辆公交车把她挡住了视线。",
+          "after": "一点十七分零四秒。那个矮个子真走运，骑上摩托车，那个高个子也进去了。一点十七分四十秒。那个女孩，她头发上系着一条绿丝带。可惜那辆公交车把她挡住了视线。"
+        }
+      }
+    },
+    {
+      "id": "1320-001",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "1320时",
+          "after": "13:20"
+        },
+        "Quote": {
+          "before": "“卡马罗夫，向普尔加号发出信号：潜水时间——”他看了看表，“——1320时。十月霜冻演习按计划开始。你被安排执行其他任务。我们将按计划返回。”<br>卡马罗夫按下闪光灯的触发器发送了信息。普尔加号立即做出回应，拉米乌斯无需帮助便读出了闪烁的信号：“如果鲸鱼没吃掉你。祝红色十月好运！”",
+          "after": "“卡马罗夫，向普尔加号发出信号：潜水时间——”他看了看表，“——13:20。十月霜冻演习按计划开始。你被安排执行其他任务。我们将按计划返回。”<br>卡马罗夫按下闪光灯的触发器发送了信息。普尔加号立即做出回应，拉米乌斯无需帮助便读出了闪烁的信号：“如果鲸鱼没吃掉你。祝红色十月好运！”"
         }
       }
     },
@@ -7204,6 +7767,22 @@
         "Quote": {
           "before": "“两点差十七分有一趟火车，”迪迪埃说。他做了个祷告，站了起来。他犹豫了一下。“怎么了？”“我们是不是该跟爷爷道别了？他通常会给我留张支票。”",
           "after": "“两点差十七分有一趟火车，”迪迪埃说。他做了个祷告，站了起来。他犹豫了一下。<br>“怎么了？”<br>“我们是不是该跟爷爷道别了？他通常会给我留张支票。”"
+        }
+      }
+    },
+    {
+      "id": "1346-000",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "1346时",
+          "after": "13:46"
+        },
+        "Quote": {
+          "before": "保罗：妈妈给我打电话后，我立刻就注意到了马拉塔西斯。那是24号星期四1346时。布雷特至少在14个小时后，也就是25号凌晨被杀。",
+          "after": "保罗：妈妈给我打电话后，我立刻就注意到了马拉塔西斯。那是24号星期四13:46。布雷特至少在14个小时后，也就是25号凌晨被杀。"
         }
       }
     },
@@ -7329,14 +7908,31 @@
       }
     },
     {
+      "id": "1400-013",
+      "reasons": [
+        "half past, not later than half past"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "接下来的几个小时就像快门声一样，不停地拍着照片，就像在手机上一样。她眨眨眼，一张照片就出现了。再眨眨眼，又是另一张照片。她看了看手表，下午2点，过了一会儿又看了一眼，已经过了2点半了。她什么都担心不了，就算想担心也担心不了。感觉真好。",
+          "after": "接下来的几个小时就像快门声一样，不停地拍着照片，就像在手机上一样。她眨眨眼，一张照片就出现了。再眨眨眼，又是另一张照片。她看了看手表，下午2点，过了一会儿又看了一眼，已经是2点半了。她什么都担心不了，就算想担心也担心不了。感觉真好。"
+        }
+      }
+    },
+    {
       "id": "1400-021",
       "reasons": [
-        "reviewed equivalent or contextual highlight"
+        "reviewed equivalent or contextual highlight",
+        "render military clock notation as a clock, not an elapsed duration"
       ],
       "changes": {
         "Quote time": {
           "before": "1400 小时",
-          "after": "1400 时"
+          "after": "14:00"
+        },
+        "Quote": {
+          "before": "大约 1400 时，两架敌方天鹰战机突然从不知何处飞来，贴着甲板飞行。",
+          "after": "大约 14:00，两架敌方天鹰战机突然从不知何处飞来，贴着甲板飞行。"
         }
       }
     },
@@ -7826,6 +8422,18 @@
       }
     },
     {
+      "id": "1515-005",
+      "reasons": [
+        "remove unsupported AM from source To sleep 3:15, reused at 15:15"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "7月3日：5小时45分钟。今天几乎没做什么。越来越疲惫，拖着疲惫的身体走到实验室，差点两次冲出马路。勉强集中精力喂了动物园的动物，并更新了日志。最后一次阅读了惠特比留下的操作手册，决定将辐射剂量率设为每分钟40伦琴，目标距离设为530厘米。一切准备就绪。11:05起床。凌晨3:15入睡。",
+          "after": "7月3日：5小时45分钟。今天几乎没做什么。越来越疲惫，拖着疲惫的身体走到实验室，差点两次冲出马路。勉强集中精力喂了动物园的动物，并更新了日志。最后一次阅读了惠特比留下的操作手册，决定将辐射剂量率设为每分钟40伦琴，目标距离设为530厘米。一切准备就绪。11:05起床。3:15入睡。"
+        }
+      }
+    },
+    {
       "id": "1516-000",
       "reasons": [
         "equivalent_time"
@@ -7864,12 +8472,13 @@
     {
       "id": "1520-003",
       "reasons": [
-        "reviewed mistranslated time or dialogue"
+        "reviewed mistranslated time or dialogue",
+        "preserve nine repetitions rather than eight"
       ],
       "changes": {
         "Quote": {
           "before": "1948年1月26日星期一三点二十分，在东京，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒。",
-          "after": "1948年1月26日星期一，三点二十分，在东京，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒。"
+          "after": "1948年1月26日星期一，三点二十分，在东京，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒。"
         }
       }
     },
@@ -7906,6 +8515,18 @@
         "Quote time": {
           "before": "15.26",
           "after": "15点26分"
+        }
+      }
+    },
+    {
+      "id": "1527-000",
+      "reasons": [
+        "source Albert is not identified as a prince"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "下午3点27分，正是阿尔伯特亲王1907年出生的确切时刻，这位老人在五个子女、十一个孙子女和十九个曾孙子女的簇拥下，将一把银柄刀插入一个三层蛋糕中。",
+          "after": "下午3点27分，正是阿尔伯特1907年出生的确切时刻，这位老人在五个子女、十一个孙子女和十九个曾孙子女的簇拥下，将一把银柄刀插入一个三层蛋糕中。"
         }
       }
     },
@@ -8286,6 +8907,18 @@
       }
     },
     {
+      "id": "1639-001",
+      "reasons": [
+        "two slices, not two whole pizzas"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "哈莱姆区享受着慵懒的安息日早晨，不过下午做完礼拜后，节奏又会加快。我的手表显示下午4:39，我才意识到自己一整天都没吃东西。我在122街和莱诺克斯大道交汇处的路边摊买了两个披萨，就着一瓶葡萄味Snapple饮料咽了下去。",
+          "after": "哈莱姆区享受着慵懒的安息日早晨，不过下午做完礼拜后，节奏又会加快。我的手表显示下午4:39，我才意识到自己一整天都没吃东西。我在122街和莱诺克斯大道交汇处的路边摊买了两块披萨，就着一瓶葡萄味Snapple饮料咽了下去。"
+        }
+      }
+    },
+    {
       "id": "1640-000",
       "reasons": [
         "equivalent_time"
@@ -8442,6 +9075,23 @@
         "Quote": {
           "before": "五分五点，他向前倾身，拿起那部黑色电话。他拨通了梅菲尔区一家房地产中介的电话，要求与高级合伙人通话。",
           "after": "差六分钟到五点，他向前倾身，拿起那部黑色电话。他拨通了梅菲尔区一家房地产中介的电话，要求与高级合伙人通话。"
+        }
+      }
+    },
+    {
+      "id": "1654-003",
+      "reasons": [
+        "1654 is 16:54, not year 1654",
+        "highlight the corrected clock"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "1654",
+          "after": "16:54"
+        },
+        "Quote": {
+          "before": "当地时间1654年，红色十月号首次驶出大西洋海面，位于诺福克东南47英里处。周围没有其他船只。",
+          "after": "当地时间16:54，红色十月号首次驶出大西洋海面，位于诺福克东南47英里处。周围没有其他船只。"
         }
       }
     },
@@ -8761,6 +9411,18 @@
         "Quote time": {
           "before": "5:30",
           "after": "五点半"
+        }
+      }
+    },
+    {
+      "id": "1732-000",
+      "reasons": [
+        "5.28 identifies the train departure, not the report time"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "12月9日星期五傍晚五点三十二分整，阿纳利车站站长收到弗罗斯特山信号站发来的电报：伦敦桥方向刚刚经过，时间是5点28分。",
+          "after": "12月9日星期五傍晚五点三十二分整，阿纳利车站站长收到弗罗斯特山信号站发来的电报：5点28分从伦敦桥开出的下行列车刚刚通过。"
         }
       }
     },
@@ -9114,6 +9776,22 @@
       }
     },
     {
+      "id": "1837-001",
+      "reasons": [
+        "nearly twenty to seven is approaching 18:40, not 19:20"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "快七点二十分",
+          "after": "快到差二十分七点了"
+        },
+        "Quote": {
+          "before": "艾米：那是什么？我好像看到有人从窗外经过。现在几点了？<br>查尔斯：快七点二十分。",
+          "after": "艾米：那是什么？我好像看到有人从窗外经过。现在几点了？<br>查尔斯：快到差二十分七点了。"
+        }
+      }
+    },
+    {
       "id": "1843-000",
       "reasons": [
         "equivalent_time"
@@ -9401,6 +10079,22 @@
       }
     },
     {
+      "id": "1926-000",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "19.26 小时",
+          "after": "19:26"
+        },
+        "Quote": {
+          "before": "纽曼指着酒店。屋檐下，一截截一英尺长的冰块向下伸出，像一排倒置的冰柱。车站不过是一间单层小屋，孤零零的，空无一人。仪表盘上的时钟显示 19.26 小时。",
+          "after": "纽曼指着酒店。屋檐下，一截截一英尺长的冰块向下伸出，像一排倒置的冰柱。车站不过是一间单层小屋，孤零零的，空无一人。仪表盘上的时钟显示 19:26。"
+        }
+      }
+    },
+    {
       "id": "1928-001",
       "reasons": [
         "equivalent_time"
@@ -9481,6 +10175,19 @@
         "Quote time": {
           "before": "19.36",
           "after": "19:36"
+        }
+      }
+    },
+    {
+      "id": "1939-002",
+      "reasons": [
+        "Fire Dog is not turkey; preserve original product name in parentheses",
+        "do not invent the gender of sore losers"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "下午7:39<br>伊娃和布拉克在杰克·切尔马克餐厅赚了180美元，但爱管闲事的服务员和输不起的怨妇们的抱怨迫使他们离开了。之后，他们在安德森维尔著名的“人人都是香肠”（Every 1’s A Wiener）热狗摊只咬了一口“火鸡热狗”（Fire Dog），就赚了5美元。伊娃实际上咬了两口，因为她就是这样的人。",
+          "after": "下午7:39<br>伊娃和布拉克在杰克·切尔马克餐厅赚了180美元，但爱管闲事的服务员和输不起又爱抱怨的家伙们的抱怨迫使他们离开了。之后，他们在安德森维尔著名的“人人都是香肠”（Every 1’s A Wiener）热狗摊只咬了一口“烈火热狗”（Fire Dog），就赚了5美元。伊娃实际上咬了两口，因为她就是这样的人。"
         }
       }
     },
@@ -9627,14 +10334,36 @@
       }
     },
     {
+      "id": "1959-001",
+      "reasons": [
+        "natural temporal rendering of teetering on",
+        "retain approximate direction"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "摇摇欲坠地接近八点",
+          "after": "眼看就要到八点了"
+        },
+        "Quote": {
+          "before": "我刚下自行车就看到了莉尔，她银色的辫子搭在右肩上。她坐在前廊上，在夕阳的余晖中，她柔软而饱经风霜的皮肤泛着淡淡的玫瑰色。时间摇摇欲坠地接近八点。",
+          "after": "我刚下自行车就看到了莉尔，她银色的辫子搭在右肩上。她坐在前廊上，在夕阳的余晖中，她柔软而饱经风霜的皮肤泛着淡淡的玫瑰色。时间眼看就要到八点了。"
+        }
+      }
+    },
+    {
       "id": "2000-002",
       "reasons": [
-        "equivalent_time"
+        "equivalent_time",
+        "company directors meeting, not film directors"
       ],
       "changes": {
         "Quote time": {
           "before": "晚上8:00",
           "after": "晚上8点"
+        },
+        "Quote": {
+          "before": "会议室里坐着的十位导演显得焦躁不安。现在是晚上8点。他们过去十分钟一直在交谈，但现在渐渐安静了下来。",
+          "after": "会议室里坐着的十位董事显得焦躁不安。现在是晚上8点。他们过去十分钟一直在交谈，但现在渐渐安静了下来。"
         }
       }
     },
@@ -9689,12 +10418,17 @@
     {
       "id": "2010-002",
       "reasons": [
-        "equivalent_time"
+        "equivalent_time",
+        "2010h is 20:10; preserve the fictional year label instead of inventing year 2010"
       ],
       "changes": {
         "Quote time": {
           "before": "2010h.",
           "after": "20:10"
+        },
+        "Quote": {
+          "before": "2010年4月1日20:10，医疗专员仍在观看那盘未贴标签的娱乐卡带。",
+          "after": "Y.D.A.U.年4月1日20:10，医疗专员仍在观看那盘未贴标签的娱乐卡带。"
         }
       }
     },
@@ -9719,6 +10453,22 @@
         "Quote time": {
           "before": "8.15",
           "after": "晚上8点15分"
+        }
+      }
+    },
+    {
+      "id": "2018-000",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "2018 小时",
+          "after": "20:18"
+        },
+        "Quote": {
+          "before": "2018 小时 卡佳抵达敖德萨酒店。巴利和卡佳正在餐厅交谈。威克洛和一名不速之客在旁观察。更多。",
+          "after": "20:18 卡佳抵达敖德萨酒店。巴利和卡佳正在餐厅交谈。威克洛和一名不速之客在旁观察。更多。"
         }
       }
     },
@@ -9771,6 +10521,35 @@
       }
     },
     {
+      "id": "2030-000",
+      "reasons": [
+        "preserve unsigned source temperature; do not invent a minus sign or convert unspecified unit"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "到了晚上8:30，狗狗们放弃了，开始四处游荡。约翰那时已经麻木了。气温只有零下20度，他不知道自己还能在卡车顶上待多久，才能摆脱这凛冽的寒风。",
+          "after": "到了晚上8:30，狗狗们放弃了，开始四处游荡。约翰那时已经麻木了。气温只有20度，他不知道自己还能在卡车顶上待多久，才能摆脱这凛冽的寒风。"
+        }
+      }
+    },
+    {
+      "id": "2035-002",
+      "reasons": [
+        "five and twenty to nine is 20:35",
+        "remove accidental duplication"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "差五点二十九",
+          "after": "差二十五分钟到九点"
+        },
+        "Quote": {
+          "before": "她若有所思地停顿了一下。毫无疑问，他现在非常感兴趣。凶手必然会对谋杀案感兴趣。她赌对了，而且赌对了。她偷偷瞥了一眼钟。差五点二十九。",
+          "after": "她若有所思地停顿了一下。毫无疑问，他现在非常感兴趣。凶手必然会对谋杀案感兴趣。她赌的就是这一点，而且赌赢了。她偷偷瞥了一眼钟。差二十五分钟到九点。"
+        }
+      }
+    },
+    {
       "id": "2037-000",
       "reasons": [
         "equivalent_time"
@@ -9815,6 +10594,22 @@
         "Quote time": {
           "before": "20.43",
           "after": "20:43"
+        }
+      }
+    },
+    {
+      "id": "2045-000",
+      "reasons": [
+        "quarter to nine is 08:45/20:45, not 09:45"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "九点四十五分",
+          "after": "差一刻九点"
+        },
+        "Quote": {
+          "before": "到了九点四十五分，还是没人来，加德纳开始怀疑他们是不是要放弃了。他坐在博比的摇椅上，在门廊上琢磨着这个问题，手指摩挲着脸上博兹曼打在他脸上的那块又大又肿的淤青。",
+          "after": "到了差一刻九点，还是没人来，加德纳开始怀疑他们是不是要放弃了。他坐在博比的摇椅上，在门廊上琢磨着这个问题，手指摩挲着脸上博兹曼打在他脸上的那块又大又肿的淤青。"
         }
       }
     },
@@ -10005,6 +10800,22 @@
       }
     },
     {
+      "id": "2105-000",
+      "reasons": [
+        "nine-five is 21:05"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "九五",
+          "after": "九点零五分"
+        },
+        "Quote": {
+          "before": "九五。书房天花板上传来一个声音：“麦克莱伦太太，您今晚想读哪首诗？”屋里一片寂静。声音最后说道：“既然您没有特别的偏好，我就随机选一首吧。”",
+          "after": "九点零五分。书房天花板上传来一个声音：“麦克莱伦太太，您今晚想读哪首诗？”屋里一片寂静。声音最后说道：“既然您没有特别的偏好，我就随机选一首吧。”"
+        }
+      }
+    },
+    {
       "id": "2110-001",
       "reasons": [
         "equivalent_time"
@@ -10073,6 +10884,22 @@
         "Quote time": {
           "before": "9.20",
           "after": "9点20分"
+        }
+      }
+    },
+    {
+      "id": "2122-000",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "21.22 小时",
+          "after": "21:22"
+        },
+        "Quote": {
+          "before": "十五分钟后（21.22 小时），斯奎尔小姐抵达斯基普顿，并在当地一家民宿预订了房间。这家民宿就在玛丽·卡拉汉的羽毛剪发店对面。",
+          "after": "十五分钟后（21:22），斯奎尔小姐抵达斯基普顿，并在当地一家民宿预订了房间。这家民宿就在玛丽·卡拉汉的羽毛剪发店对面。"
         }
       }
     },
@@ -10158,6 +10985,18 @@
         "Quote time": {
           "before": "9:31",
           "after": "9点31分"
+        }
+      }
+    },
+    {
+      "id": "2134-000",
+      "reasons": [
+        "expect me is arrival, not a request for a call"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "谢谢；请于26日晚上9:34联系我；三个小时后，我收到回复：“很高兴；请带一个3号Rippingille炉子”——这则指示令人费解，又透着不祥之兆，尽管内容本身并不令人意外，却还是让我不寒而栗。",
+          "after": "谢谢；我将于26日晚上9:34到达，请等我；三个小时后，我收到回复：“很高兴；请带一个3号Rippingille炉子”——这则指示令人费解，又透着不祥之兆，尽管内容本身并不令人意外，却还是让我不寒而栗。"
         }
       }
     },
@@ -10301,6 +11140,22 @@
       }
     },
     {
+      "id": "2200-019",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "2200 时",
+          "after": "22:00"
+        },
+        "Quote": {
+          "before": "他瞥了一眼钟。2200 时。快到午夜了。他赶紧穿好衣服。",
+          "after": "他瞥了一眼钟。22:00。快到午夜了。他赶紧穿好衣服。"
+        }
+      }
+    },
+    {
       "id": "2201-002",
       "reasons": [
         "reviewed equivalent or contextual highlight"
@@ -10321,6 +11176,23 @@
         "Quote time": {
           "before": "晚上10:03",
           "after": "晚上10点03分"
+        }
+      }
+    },
+    {
+      "id": "2205-001",
+      "reasons": [
+        "restore hour/minute separation",
+        "include minute unit"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "十零五",
+          "after": "十点零五分"
+        },
+        "Quote": {
+          "before": "如果你不告诉我所有我需要知道的事情——他看了看手腕上的表——“明天晚上十零五分之前，你就会被处决。你和那三个死刑犯。”",
+          "after": "如果你不告诉我所有我需要知道的事情——他看了看手腕上的表——“明天晚上十点零五分之前，你就会被处决。你和那三个死刑犯。”"
         }
       }
     },
@@ -10434,6 +11306,22 @@
       }
     },
     {
+      "id": "2235-001",
+      "reasons": [
+        "five-and-twenty to eleven is 22:35"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "五点二十分到十一点",
+          "after": "差二十五分钟到十一点"
+        },
+        "Quote": {
+          "before": "五点二十分到十一点。可怕的时刻——一个阴森恐怖的时刻，因为这不仅是享乐的时刻结束，更是享乐本身也变得索然无味的时刻。",
+          "after": "差二十五分钟到十一点。可怕的时刻——一个阴森恐怖的时刻，因为这不仅是享乐的时刻结束，更是享乐本身也变得索然无味的时刻。"
+        }
+      }
+    },
+    {
       "id": "2235-002",
       "reasons": [
         "restore source formatting or correct adjacent wording"
@@ -10502,6 +11390,22 @@
         "Quote time": {
           "before": "10:41",
           "after": "10点41分"
+        }
+      }
+    },
+    {
+      "id": "2244-000",
+      "reasons": [
+        "approximate quarter to eleven is 22:45, not 23:45"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "大约11点45分",
+          "after": "大约差一刻十一点"
+        },
+        "Quote": {
+          "before": "亚历克竖起了耳朵。“什么时候？”<br>“哦，昨天晚上。”<br>“几点？”<br>“大约11点45分。我在打桥牌。”",
+          "after": "亚历克竖起了耳朵。“什么时候？”<br>“哦，昨天晚上。”<br>“几点？”<br>“大约差一刻十一点。我在打桥牌。”"
         }
       }
     },
@@ -10699,6 +11603,22 @@
       }
     },
     {
+      "id": "2314-000",
+      "reasons": [
+        "restore 23:14; no rounding to the quarter"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "十一点一刻",
+          "after": "十一点十四分"
+        },
+        "Quote": {
+          "before": "他们吃完汉堡后，梅丽莎瞥了一眼手表，那是一块硕大的塑料电子表，看起来像是小孩子的玩意儿。<br>“十一点一刻，”梅丽莎说。“世界末日到来之前，我们还有四十四分钟可以消磨。”",
+          "after": "他们吃完汉堡后，梅丽莎瞥了一眼手表，那是一块硕大的塑料电子表，看起来像是小孩子的玩意儿。<br>“十一点十四分，”梅丽莎说。“世界末日到来之前，我们还有四十四分钟可以消磨。”"
+        }
+      }
+    },
+    {
       "id": "2316-000",
       "reasons": [
         "equivalent_time"
@@ -10707,6 +11627,18 @@
         "Quote time": {
           "before": "11:16",
           "after": "11点16分"
+        }
+      }
+    },
+    {
+      "id": "2316-001",
+      "reasons": [
+        "preserve repeated doubling and exponent 2^15"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "但我不能马上出门，因为他会看到我，所以我得等到他睡着了。<br>时间是晚上11点16分。<br>我又试着把2乘以2，但我算不出2(15)之后的数字，也就是32768。所以我呻吟了一声，想让时间过得快点，不想去想。",
+          "after": "但我不能马上出门，因为他会看到我，所以我得等到他睡着了。<br>时间是晚上11点16分。<br>我又试着从2开始不断翻倍，但算到2的15次方，也就是32768，就再也算不下去了。所以我呻吟了一声，想让时间过得快点，不想去想。"
         }
       }
     },
@@ -10879,6 +11811,39 @@
       }
     },
     {
+      "id": "2350-000",
+      "reasons": [
+        "ten to midnight refers to minutes"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "差十点到午夜",
+          "after": "差十分钟到午夜"
+        },
+        "Quote": {
+          "before": "墙上的钟显示差十点到午夜。科克想拨回指针，一切都要重新来过，让他每次都能出现在正确的时间和地点。他想要重新经历过去的几天，过去的几年。",
+          "after": "墙上的钟显示差十分钟到午夜。科克想拨回指针，一切都要重新来过，让他每次都能出现在正确的时间和地点。他想要重新经历过去的几天，过去的几年。"
+        }
+      }
+    },
+    {
+      "id": "2350-001",
+      "reasons": [
+        "hardly more does not assert extra time",
+        "highlight the time separately from the hedge"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "距离可怕的午夜只剩十分钟，再多一点",
+          "after": "距离可怕的午夜只剩十分钟"
+        },
+        "Quote": {
+          "before": "“哦，麦克利尔先生，”他开玩笑地说，“我很高兴你刚刚侥幸逃脱了违反安息日的惩罚！你真是死里逃生！距离可怕的午夜只剩十分钟，再多一点！”",
+          "after": "“哦，麦克利尔先生，”他开玩笑地说，“我很高兴你刚刚侥幸逃脱了违反安息日的惩罚！你真是死里逃生！距离可怕的午夜只剩十分钟，最多也多不了多少！”"
+        }
+      }
+    },
+    {
       "id": "2350-002",
       "reasons": [
         "equivalent_time"
@@ -10967,9 +11932,25 @@
           "after": "屏幕上显示还有三分钟就到午夜。以我当时的心情，这似乎并不算太晚。我穿上睡袍，带上口袋手电筒，去了莎莉的房间。"
         }
       }
+    },
+    {
+      "id": "2359-000",
+      "reasons": [
+        "restore the explicit minute"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "午夜将至",
+          "after": "离午夜还有一分钟"
+        },
+        "Quote": {
+          "before": "午夜将至，罗肯顿握着妻子的手，给她留下最后的嘱咐。午夜钟声敲响之际，她感到伴侣的手渐渐消失在自己的手中。",
+          "after": "离午夜还有一分钟，罗肯顿握着妻子的手，给她留下最后的嘱咐。午夜钟声敲响之际，她感到伴侣的手渐渐消失在自己的手中。"
+        }
+      }
     }
   ],
-  "changed_rows": 847,
+  "changed_rows": 908,
   "draft_status_changes": [
     {
       "id": "0000-002",
@@ -15219,6 +16200,1085 @@
         "Draft": {
           "before": "true",
           "after": "false"
+        }
+      }
+    }
+  ],
+  "second_pass_changes": [
+    {
+      "id": "0000-032",
+      "reasons": [
+        "source says 12.00 pm but slot is 00:00; context alone cannot establish a typo"
+      ],
+      "changes": {
+        "Draft": {
+          "before": "false",
+          "after": "true"
+        }
+      }
+    },
+    {
+      "id": "0008-000",
+      "reasons": [
+        "00:08, not eight o’clock"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "午夜过后八点",
+          "after": "午夜过后八分钟"
+        },
+        "Quote": {
+          "before": "“夜深人静之时！”牧师惊呼道，“现在是白天，不是黑夜，而且现在是午夜过后八点！”",
+          "after": "“夜深人静之时！”牧师惊呼道，“现在是白天，不是黑夜，而且现在是午夜过后八分钟！”"
+        }
+      }
+    },
+    {
+      "id": "0012-000",
+      "reasons": [
+        "restore lies, paired identical telescopes and optical equipment rather than nozzles"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "时钟时间为 0 小时 12 分 0 秒。23 分钟后，他们第一次看到了金星。每个人都将眼睛贴在由肖特先生制作的、带有伯德先生制作的变暗喷嘴的相同两英尺半格里高利反射望远镜的喷嘴上。",
+          "after": "时钟时间为 0 小时 12 分 0 秒。23 分钟后，他们第一次看到了金星。每个人都躺着，把眼睛贴在一架两英尺半长的格里高利式反射望远镜的镜筒口上；两架望远镜完全一样，由肖特先生制作，配有伯德先生制作的遮光装置。"
+        }
+      }
+    },
+    {
+      "id": "0025-001",
+      "reasons": [
+        "five-and-twenty is 25 minutes, not 25 minutes 20 seconds"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "午夜过后25分20秒",
+          "after": "午夜过后二十五分钟"
+        },
+        "Quote": {
+          "before": "夏洛特记得，她听到格雷戈尔刚进卧室就又下楼了，甚至在仆人锁好房门之前。他肯定是匆匆赶去某个小树林找特蕾莎，然后他们肯定又匆匆赶往维约堡车站，最后一班开往巴黎的火车在午夜过后25分20秒从那里出发。事情的确就是这样发生的。",
+          "after": "夏洛特记得，她听到格雷戈尔刚进卧室就又下楼了，甚至在仆人锁好房门之前。他肯定是匆匆赶去某个小树林找特蕾莎，然后他们肯定又匆匆赶往维约堡车站，最后一班开往巴黎的火车在午夜过后二十五分钟从那里出发。事情的确就是这样发生的。"
+        }
+      }
+    },
+    {
+      "id": "0030-001",
+      "reasons": [
+        "restore the missing half hour"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "午夜过后",
+          "after": "午夜过后半小时"
+        },
+        "Quote": {
+          "before": "“我爱你胜过你所能想象的一切。”<br>“我也爱你。”我笑了，他的唇在我脸颊上停留片刻。他沿着走廊走去，我看了看时间：午夜过后。",
+          "after": "“我爱你胜过你所能想象的一切。”<br>“我也爱你。”我笑了，他的唇在我脸颊上停留片刻。他沿着走廊走去，我看了看时间：午夜过后半小时。"
+        }
+      }
+    },
+    {
+      "id": "0058-000",
+      "reasons": [
+        "preserve approaching one, not around one"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "在发生那么多事之后，他竟然还敢在晚上，几乎凌晨一点左右来拜访他们，真是厚颜无耻。",
+          "after": "在发生那么多事之后，他竟然还敢在晚上，快到凌晨一点来拜访他们，真是厚颜无耻。"
+        },
+        "Quote time": {
+          "before": "凌晨一点左右",
+          "after": "快到凌晨一点"
+        }
+      }
+    },
+    {
+      "id": "0059-000",
+      "reasons": [
+        "restore the missing following hour",
+        "highlight includes the following hour"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "差一分钟",
+          "after": "差一分钟到一点"
+        },
+        "Quote": {
+          "before": "只有一声迟到的汽车喇叭声轻轻打破了寂静。<br>我看了看手表。显示差一分钟。当我抬起头时，某个地方不耐烦的钟表也证实了这一点。<br>我打了个哈欠，哄着小梗犬睡觉，伸手去拿开关。<br>就在这时，它又低吼了一声。",
+          "after": "只有一声迟到的汽车喇叭声轻轻打破了寂静。<br>我看了看手表。显示差一分钟到一点。当我抬起头时，某个地方不耐烦的钟表也证实了这一点。<br>我打了个哈欠，哄着小梗犬睡觉，伸手去拿开关。<br>就在这时，它又低吼了一声。"
+        }
+      }
+    },
+    {
+      "id": "0100-013",
+      "reasons": [
+        "casting their moorings means departing, not anchoring"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "此时已是5月30日。1940年5月30日凌晨一点。对于一个彻夜难眠、盯着天花板的人来说，这真是一个著名的日子。在英格兰的溪流和潮汐河口，游船和明轮船已经开始抛锚，准备前往敦刻尔克进行一日游。而在另一边，泰德和其他人一样，都面临着同样的命运。",
+          "after": "此时已是5月30日。1940年5月30日凌晨一点。对于一个彻夜难眠、盯着天花板的人来说，这真是一个著名的日子。在英格兰的溪流和潮汐河口，游船和明轮船已经开始解缆，准备前往敦刻尔克进行一日游。而在另一边，泰德和其他人一样，都面临着同样的命运。"
+        }
+      }
+    },
+    {
+      "id": "0100-014",
+      "reasons": [
+        "restore one o’clock"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "钟声敲响",
+          "after": "钟声正敲着一点"
+        },
+        "Quote": {
+          "before": "昨晚，当那颗从极点向西的星辰，照亮了如今燃烧的那片天空，我和马塞勒斯，钟声敲响。",
+          "after": "昨晚，当那颗从极点向西的星辰，照亮了如今燃烧的那片天空，我和马塞勒斯，钟声正敲着一点。"
+        }
+      }
+    },
+    {
+      "id": "0207-002",
+      "reasons": [
+        "source does not specify a poem"
+      ],
+      "changes": {
+        "Quote": {
+          "before": " 星期六，11 月 17 日 — 凌晨 2:07。我睡不着。本在楼上，已经回床上躺着了，而我正在厨房里写这首诗。他以为我在喝他刚给我做的可可。他以为我很快就会回床上睡觉。我会的，但首先我必须再写一会儿。",
+          "after": " 星期六，11 月 17 日 — 凌晨 2:07。我睡不着。本在楼上，已经回床上躺着了，而我正在厨房里写下这些文字。他以为我在喝他刚给我做的可可。他以为我很快就会回床上睡觉。我会的，但首先我必须再写一会儿。"
+        }
+      }
+    },
+    {
+      "id": "0318-000",
+      "reasons": [
+        "lead is the navigable opening in the ice, not the SOS"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "真相或许永远不得而知。我们目前只知道，2月10日凌晨3点18分，“南十字星”号被冰层牢牢包围，并发出求救信号。夜间某个时候，求救信号必然中断。西向涌来的浮冰将她包围，几个小时后，她便消失在茫茫大海之中。",
+          "after": "真相或许永远不得而知。我们目前只知道，2月10日凌晨3点18分，“南十字星”号被冰层牢牢包围，并发出求救信号。夜间某个时候，那条水道一定已经到了尽头。西向涌来的浮冰将她包围，几个小时后，她便消失在茫茫大海之中。"
+        }
+      }
+    },
+    {
+      "id": "0320-000",
+      "reasons": [
+        "restore omitted age 16"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "普拉巴特·库马拉，1989 年 11 月 17 日，凌晨 3:20，从朋友家中。",
+          "after": "普拉巴特·库马拉，16岁。1989 年 11 月 17 日，凌晨 3:20，从朋友家中。"
+        }
+      }
+    },
+    {
+      "id": "0331-000",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "03:31 小时",
+          "after": "03:31"
+        },
+        "Quote": {
+          "before": "他犹豫片刻，伸手去够海军上将的呼叫图标，小心翼翼地触碰，仿佛那是核弹的引爆装置。阿拉山将准确时间记录在值班日志中：03:31 小时。",
+          "after": "他犹豫片刻，伸手去够海军上将的呼叫图标，小心翼翼地触碰，仿佛那是核弹的引爆装置。阿拉山将准确时间记录在值班日志中：03:31。"
+        }
+      }
+    },
+    {
+      "id": "0352-000",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "这太完美了，完美得过分。航海日志翻开，最后一条记录是：03.52 小时 — 布雷迪机场信标，方位角 312°，约 8 英里。",
+          "after": "这太完美了，完美得过分。航海日志翻开，最后一条记录是：03:52 — 布雷迪机场信标，方位角 312°，约 8 英里。"
+        },
+        "Quote time": {
+          "before": "03.52",
+          "after": "03:52"
+        }
+      }
+    },
+    {
+      "id": "0401-001",
+      "reasons": [
+        "restore explicit AM in the source"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "查理瞥了一眼钟。家里刚过四点。星期天。她应该已经起床了。可能会一边喝咖啡一边看书，然后在去教堂前跑步。",
+          "after": "查理瞥了一眼钟。家里刚过凌晨四点。星期天。她应该已经起床了。可能会一边喝咖啡一边看书，然后在去教堂前跑步。"
+        },
+        "Quote time": {
+          "before": "刚过四点",
+          "after": "刚过凌晨四点"
+        }
+      }
+    },
+    {
+      "id": "0530-004",
+      "reasons": [
+        "do not invent daily family road trips",
+        "twice a day qualifies bathroom cleaning, not ironing"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "布拉克和她弟弟兰迪小时候，为了避开交通高峰，妈妈每天早上5:30就叫醒他们，带他们去自驾游；直到她11岁，家里都装着安全锁；家里没有电视，当然也没有糖果、汽水、酒或烟；她每天至少熨两次床单，漂白内衣，打扫两次浴室。",
+          "after": "布拉克和她弟弟兰迪小时候，为了避开交通高峰，妈妈为了全家自驾出游，会在早上5:30叫醒他们；直到她11岁，家里都装着安全锁；家里没有电视，当然也没有糖果、汽水、酒或烟；她熨床单，给内衣漂白，每天至少打扫两次浴室。"
+        }
+      }
+    },
+    {
+      "id": "0536-000",
+      "reasons": [
+        "wiped the previous evening refers to lost memory, not wiping a face"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "她喝了一瓶杰克丹尼威士忌。她5点36分醒来时，已经擦干了前一天晚上的脸。",
+          "after": "她喝了一瓶杰克丹尼威士忌。她5点36分醒来时，已经把前一晚的事忘得一干二净。"
+        }
+      }
+    },
+    {
+      "id": "0646-001",
+      "reasons": [
+        "quarter to seven plus one minute is 06:46, not 06:59"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "七点差一分",
+          "after": "差一刻到七点之后的一分钟"
+        },
+        "Quote": {
+          "before": "七点差一分，我听到外面罐子碰撞的响声。我打开前门，看到我的那个人，正从他扛着的一堆罐子里挑出我的罐子，一边吹着口哨。",
+          "after": "差一刻到七点之后的一分钟，我听到外面罐子碰撞的响声。我打开前门，看到我的那个人，正从他扛着的一堆罐子里挑出我的罐子，一边吹着口哨。"
+        }
+      }
+    },
+    {
+      "id": "0709-001",
+      "reasons": [
+        "spoken hour/minute pair, not a bare number"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "七九",
+          "after": "七点零九分"
+        },
+        "Quote": {
+          "before": "清晨，房子空无一人。时钟滴答作响，在空旷中一遍又一遍地重复着它的声音。七九，早餐时间，七九！",
+          "after": "清晨，房子空无一人。时钟滴答作响，在空旷中一遍又一遍地重复着它的声音。七点零九分，早餐时间，七点零九分！"
+        }
+      }
+    },
+    {
+      "id": "0800-035",
+      "reasons": [
+        "oh eight oh oh is 08:00, not 08:08",
+        "glazzies refers to eyes in this context"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "八点零八点",
+          "after": "八点整"
+        },
+        "Quote": {
+          "before": "第二天早上我八点零八点醒了，我的兄弟们，我仍然感觉筋疲力尽、精疲力竭、狼狈不堪，而且我的眼镜像被睡眠胶粘在一起一样，简直惨不忍睹，所以我决定不去上学了。",
+          "after": "第二天早上我八点整醒了，我的兄弟们，我仍然感觉筋疲力尽、精疲力竭、狼狈不堪，而且我的眼睛被睡眠的黏胶糊得严严实实，简直惨不忍睹，所以我决定不去上学了。"
+        }
+      }
+    },
+    {
+      "id": "0801-000",
+      "reasons": [
+        "eight-one is 08:01",
+        "preserve repeated spoken clock announcements"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "八一",
+          "after": "八点零一分"
+        },
+        "Quote": {
+          "before": "八一，滴答滴答，八点一点，上学，上班，跑，跑，八一！",
+          "after": "八点零一分，滴答滴答，八点零一分，上学，上班，跑，跑，八点零一分！"
+        }
+      }
+    },
+    {
+      "id": "0802-000",
+      "reasons": [
+        "restore hour/minute separators and AM while preserving the malfunctioning repeated syllables/seconds"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "八零二",
+          "after": "八点零二分"
+        },
+        "Quote": {
+          "before": "八零二，下士利特尔博顿博顿之死……八零三……德特里图斯中士之死……八零三零三零七秒……维斯蒂夫警员之死……八零三零九九秒……之死之死之死……",
+          "after": "早上八点零二分，下士利特尔博顿博顿之死……早上八点零三分……德特里图斯中士之死……早上八点零三、三、三分又七秒、秒……维斯蒂夫警员之死……早上八点零三分又九、九、九秒……之死之死之死……"
+        }
+      }
+    },
+    {
+      "id": "0803-003",
+      "reasons": [
+        "restore hour/minute separators and AM while preserving the malfunctioning repeated syllables/seconds"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "八零三",
+          "after": "八点零三分"
+        },
+        "Quote": {
+          "before": "八零二，下士利特尔博顿博顿之死……八零三……德特里图斯中士之死……八零三零三零七秒……维斯蒂夫警员之死……八零三零九九秒……之死之死之死……",
+          "after": "早上八点零二分，下士利特尔博顿博顿之死……早上八点零三分……德特里图斯中士之死……早上八点零三、三、三分又七秒、秒……维斯蒂夫警员之死……早上八点零三分又九、九、九秒……之死之死之死……"
+        }
+      }
+    },
+    {
+      "id": "0810-003",
+      "reasons": [
+        "cell count refers to cells, not phones; cross-check duplicate 1915-004"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "手机数量降至40万。8:10醒来。7:15入睡。（似乎不小心把手表弄丢了，只好开车进城去买一块。）",
+          "after": "细胞数量降至40万。8:10醒来。7:15入睡。（似乎不小心把手表弄丢了，只好开车进城去买一块。）"
+        }
+      }
+    },
+    {
+      "id": "0811-001",
+      "reasons": [
+        "eight-eleven is 08:11, not 81"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "八十一",
+          "after": "八点十一分"
+        },
+        "Quote": {
+          "before": "“想不想试试引擎？”他朝那两个女仆喊道，指了指脚踏板。她们笑了，但还是决定不开，而是带着浴缸爬进了其中一辆老式蒸汽机车里。她们俩都戴着非常漂亮的帽子，每顶帽子上都别着一朵花，但她们漂亮的脸蛋让人觉得不止一朵。不知为何，她们的裙子上都别着白色的玫瑰花结。我又看了一眼钟：八十一。",
+          "after": "“想不想试试引擎？”他朝那两个女仆喊道，指了指脚踏板。她们笑了，但还是决定不开，而是带着浴缸爬进了其中一辆老式蒸汽机车里。她们俩都戴着非常漂亮的帽子，每顶帽子上都别着一朵花，但她们漂亮的脸蛋让人觉得不止一朵。不知为何，她们的裙子上都别着白色的玫瑰花结。我又看了一眼钟：八点十一分。"
+        }
+      }
+    },
+    {
+      "id": "0832-002",
+      "reasons": [
+        "clipped thanks a lot is gratitude, not a count"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "唐，我想知道的是，有没有人知道更精确的时间，因为戴不知道。<br>盖特利查看他那廉价的电子表，头还搭在沙发扶手上。“我查到的是08:32:14、15、16，兰迪。”<br>“很多次了，D.G.老兄。”",
+          "after": "唐，我想知道的是，有没有人知道更精确的时间，因为戴不知道。<br>盖特利查看他那廉价的电子表，头还搭在沙发扶手上。“我查到的是08:32:14、15、16，兰迪。”<br>“多谢了，D.G.老兄。”"
+        }
+      }
+    },
+    {
+      "id": "0845-003",
+      "reasons": [
+        "quarter to nine is 08:45/20:45, not 09:45"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "九点四十五分",
+          "after": "差一刻九点"
+        },
+        "Quote": {
+          "before": "到了九点四十五分，还是没人来，加德纳开始怀疑他们是不是要放弃了。他坐在门廊上博比的摇椅上，一边琢磨着这个想法，一边用手指抚摸着脸上博兹曼打在他脸上的那块又大又肿的淤青。",
+          "after": "到了差一刻九点，还是没人来，加德纳开始怀疑他们是不是要放弃了。他坐在门廊上博比的摇椅上，一边琢磨着这个想法，一边用手指抚摸着脸上博兹曼打在他脸上的那块又大又肿的淤青。"
+        }
+      }
+    },
+    {
+      "id": "0925-000",
+      "reasons": [
+        "secondary time eight minutes to ten is 09:52"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "考虑到这一点，艾玛那天早上9点25分离开了庄园，并在9点50分整乘车驶入了巴灵顿造船厂的大门。",
+          "after": "考虑到这一点，艾玛那天早上9点25分离开了庄园，并在9点52分整乘车驶入了巴灵顿造船厂的大门。"
+        }
+      }
+    },
+    {
+      "id": "0955-000",
+      "reasons": [
+        "five to ten is 09:55, not five-to-ten range",
+        "coach of an orchestra is their bus"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "五点到十点",
+          "after": "差五分钟到十点"
+        },
+        "Quote": {
+          "before": "五点到十点离开房间，到大厅加入乐团，然后前往前门，你会看到他们的马车停在那里。",
+          "after": "差五分钟到十点离开房间，到大厅加入乐团，然后前往前门，你会看到他们的大客车停在那里。"
+        }
+      }
+    },
+    {
+      "id": "1010-001",
+      "reasons": [
+        "remove duplicated time",
+        "hospital orderlies, not military orderlies",
+        "swing doors, not revolving doors",
+        "parking-space owner, not car owner"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "10:10，10点10分，两名身穿白大褂的勤务兵推着一位身材高大魁梧的男子，用轮椅从旋转门里出来。他们看到院长的车停在指定位置，便引导他过去。司机跳下车，迅速打开后车门。可怜的人，他心想，那人的头上缠满了绷带，只留下嘴唇和鼻孔的小缝隙。他怀疑那是不是烧伤了。",
+          "after": "10:10，两名身穿白大褂的护工推着一位身材高大魁梧的男子，用轮椅从双向弹簧门里出来。他们看到车停在院长的专用车位，便引导他过去。司机跳下车，迅速打开后车门。可怜的人，他心想，那人的头上缠满了绷带，只留下嘴唇和鼻孔的小缝隙。他怀疑那是不是烧伤了。"
+        }
+      }
+    },
+    {
+      "id": "1053-002",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "10.53 小时",
+          "after": "10:53"
+        },
+        "Quote": {
+          "before": "他开始记录我们的观察结果。“10.53 小时，”他写道，我们蹲在楼梯顶端，听着他母亲在楼下走廊里说话。",
+          "after": "他开始记录我们的观察结果。“10:53，”他写道，我们蹲在楼梯顶端，听着他母亲在楼下走廊里说话。"
+        }
+      }
+    },
+    {
+      "id": "1100-004",
+      "reasons": [
+        "prison governor, not political governor"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "巴巴·迪奥普在弗勒里-梅罗吉度过了他生命的最后36个小时。第二天上午11点，他在被押往总督办公室的途中，被一把削尖的梳子刺穿了喉咙。",
+          "after": "巴巴·迪奥普在弗勒里-梅罗吉度过了他生命的最后36个小时。第二天上午11点，他在被押往监狱长办公室的途中，被一把削尖的梳子刺穿了喉咙。"
+        }
+      }
+    },
+    {
+      "id": "1105-001",
+      "reasons": [
+        "remove unsupported AM from source To sleep 3:15, reused at 15:15"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "7月3日：5小时45分钟。今天几乎没做什么。越来越疲惫，拖着疲惫的身体走到实验室，差点两次冲出马路。勉强集中精力喂了动物园的动物，并更新了日志。最后一次阅读了惠特比留下的操作手册，决定将辐射剂量率设为每分钟40伦琴，目标距离设为530厘米。一切准备就绪。11:05起床。凌晨3:15入睡。",
+          "after": "7月3日：5小时45分钟。今天几乎没做什么。越来越疲惫，拖着疲惫的身体走到实验室，差点两次冲出马路。勉强集中精力喂了动物园的动物，并更新了日志。最后一次阅读了惠特比留下的操作手册，决定将辐射剂量率设为每分钟40伦琴，目标距离设为530厘米。一切准备就绪。11:05起床。3:15入睡。"
+        }
+      }
+    },
+    {
+      "id": "1145-001",
+      "reasons": [
+        "preserve ambiguous date ordering rather than choosing a month/day convention"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "上午11:45 - 2014年6月5日<br>关于周三清晨发生在瓦尔德格拉斯的凶杀案的调查有了更多细节浮出水面。",
+          "after": "上午11:45 - 06/05/2014<br>关于周三清晨发生在瓦尔德格拉斯的凶杀案的调查有了更多细节浮出水面。"
+        }
+      }
+    },
+    {
+      "id": "1158-003",
+      "reasons": [
+        "keep the time two minutes before noon, not at noon",
+        "remove duplicated location wording",
+        "the block in this execution scene is not an altar",
+        "restore masked and avoid interpreting minister as a political official",
+        "executioner, not political minister"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "正午时分，时钟敲响前两分钟",
+          "after": "正午钟声敲响前两分钟"
+        },
+        "Quote": {
+          "before": "正午时分，时钟敲响前两分钟，残暴的男爵登上台上，检阅着中午那场可怕仪式的准备工作。祭坛已经摆好——那位面目狰狞、身着黑衣、手持燃烧长柄刀的复仇大臣已准备就绪。男爵用手指试了试刀刃，问那可怕的剑客他的手是否稳固？嗜血之人点了点头。",
+          "after": "正午钟声敲响前两分钟，残暴的男爵站在台上，检阅着中午那场可怕仪式的准备工作。断头台已经摆好——那位可怕的复仇执行者蒙着面，身穿黑衣，手持闪着光芒的长刀，已经准备就绪。男爵用手指试了试刀刃，问那可怕的剑客他的手是否稳固？嗜血之人点了点头。"
+        }
+      }
+    },
+    {
+      "id": "1215-000",
+      "reasons": [
+        "restore the noon-to-12:15 interval",
+        "highlight the ending clock time, not a detached duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "一刻钟",
+          "after": "十二点一刻"
+        },
+        "Quote": {
+          "before": "我不可能犯下这桩罪行。宝琳·斯泰西是在十二点零五分从这层楼摔到地上的。一百个人会出庭作证，说我从正午将至一刻钟——我通常公开祈祷的时间——一直站在楼上自己房间的阳台上。",
+          "after": "我不可能犯下这桩罪行。宝琳·斯泰西是在十二点零五分从这层楼摔到地上的。一百个人会出庭作证，说我从正午敲响之前一直到十二点一刻——我通常公开祈祷的时间——一直站在楼上自己房间的阳台上。"
+        }
+      }
+    },
+    {
+      "id": "1245-001",
+      "reasons": [
+        "quarter to one is 12:45"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "差一刻一刻",
+          "after": "差一刻一点"
+        },
+        "Quote": {
+          "before": "那个星期天是缅因州如画般的夏日：晴朗、明媚、温暖。差一刻一刻，露丝·麦考斯兰穿着一件漂亮的蓝色夏日连衣裙，最后一次离开了家。",
+          "after": "那个星期天是缅因州如画般的夏日：晴朗、明媚、温暖。差一刻一点，露丝·麦考斯兰穿着一件漂亮的蓝色夏日连衣裙，最后一次离开了家。"
+        }
+      }
+    },
+    {
+      "id": "1246-002",
+      "reasons": [
+        "preserve approximate quarter-to-one, not 01:45"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "大约一点四十五分",
+          "after": "大约差一刻一点"
+        },
+        "Quote": {
+          "before": "现在大约一点四十五分。阳光无法透过右侧的窗户照进房间。外面天气晴朗，但越来越闷热，空气中弥漫着淡淡的薄雾，柔化了刺眼的阳光。",
+          "after": "现在大约差一刻一点。阳光无法透过右侧的窗户照进房间。外面天气晴朗，但越来越闷热，空气中弥漫着淡淡的薄雾，柔化了刺眼的阳光。"
+        }
+      }
+    },
+    {
+      "id": "1307-000",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "1307时",
+          "after": "13:07"
+        },
+        "Quote": {
+          "before": "奈克萨博士以一种更为优雅的姿态接受了她被迫屈服于不可避免的命运。她看着护士莱克姆，指着人类、博利安人和扎尔丹人说道：“哈钦森中尉的死亡时间是1307时。”",
+          "after": "奈克萨博士以一种更为优雅的姿态接受了她被迫屈服于不可避免的命运。她看着护士莱克姆，指着人类、博利安人和扎尔丹人说道：“哈钦森中尉的死亡时间是13:07。”"
+        }
+      }
+    },
+    {
+      "id": "1310-002",
+      "reasons": [
+        "wedding day, not anniversary"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "他说了些什么，但我没听见，因为我正在看《南黑文日报》。今天是1993年10月23日，星期六。我们的结婚纪念日。香烟架上方的钟显示1:10。<br>“我得走了，”我对老人说，然后就走了。",
+          "after": "他说了些什么，但我没听见，因为我正在看《南黑文日报》。今天是1993年10月23日，星期六。我们的婚礼当天。香烟架上方的钟显示1:10。<br>“我得走了，”我对老人说，然后就走了。"
+        }
+      }
+    },
+    {
+      "id": "1317-001",
+      "reasons": [
+        "one seventeen and four seconds is 13:17:04",
+        "preserve the second clock mention and seconds",
+        "highlight the actual hour/minute"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "17点",
+          "after": "一点十七分"
+        },
+        "Quote": {
+          "before": "17点零4秒。那个矮个子真走运，骑上摩托车，那个高个子也进去了。17点40秒。那个女孩，她头发上系着一条绿丝带。可惜那辆公交车把她挡住了视线。",
+          "after": "一点十七分零四秒。那个矮个子真走运，骑上摩托车，那个高个子也进去了。一点十七分四十秒。那个女孩，她头发上系着一条绿丝带。可惜那辆公交车把她挡住了视线。"
+        }
+      }
+    },
+    {
+      "id": "1320-001",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "1320时",
+          "after": "13:20"
+        },
+        "Quote": {
+          "before": "“卡马罗夫，向普尔加号发出信号：潜水时间——”他看了看表，“——1320时。十月霜冻演习按计划开始。你被安排执行其他任务。我们将按计划返回。”<br>卡马罗夫按下闪光灯的触发器发送了信息。普尔加号立即做出回应，拉米乌斯无需帮助便读出了闪烁的信号：“如果鲸鱼没吃掉你。祝红色十月好运！”",
+          "after": "“卡马罗夫，向普尔加号发出信号：潜水时间——”他看了看表，“——13:20。十月霜冻演习按计划开始。你被安排执行其他任务。我们将按计划返回。”<br>卡马罗夫按下闪光灯的触发器发送了信息。普尔加号立即做出回应，拉米乌斯无需帮助便读出了闪烁的信号：“如果鲸鱼没吃掉你。祝红色十月好运！”"
+        }
+      }
+    },
+    {
+      "id": "1346-000",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "1346时",
+          "after": "13:46"
+        },
+        "Quote": {
+          "before": "保罗：妈妈给我打电话后，我立刻就注意到了马拉塔西斯。那是24号星期四1346时。布雷特至少在14个小时后，也就是25号凌晨被杀。",
+          "after": "保罗：妈妈给我打电话后，我立刻就注意到了马拉塔西斯。那是24号星期四13:46。布雷特至少在14个小时后，也就是25号凌晨被杀。"
+        }
+      }
+    },
+    {
+      "id": "1400-013",
+      "reasons": [
+        "half past, not later than half past"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "接下来的几个小时就像快门声一样，不停地拍着照片，就像在手机上一样。她眨眨眼，一张照片就出现了。再眨眨眼，又是另一张照片。她看了看手表，下午2点，过了一会儿又看了一眼，已经过了2点半了。她什么都担心不了，就算想担心也担心不了。感觉真好。",
+          "after": "接下来的几个小时就像快门声一样，不停地拍着照片，就像在手机上一样。她眨眨眼，一张照片就出现了。再眨眨眼，又是另一张照片。她看了看手表，下午2点，过了一会儿又看了一眼，已经是2点半了。她什么都担心不了，就算想担心也担心不了。感觉真好。"
+        }
+      }
+    },
+    {
+      "id": "1400-021",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "1400 时",
+          "after": "14:00"
+        },
+        "Quote": {
+          "before": "大约 1400 时，两架敌方天鹰战机突然从不知何处飞来，贴着甲板飞行。",
+          "after": "大约 14:00，两架敌方天鹰战机突然从不知何处飞来，贴着甲板飞行。"
+        }
+      }
+    },
+    {
+      "id": "1515-005",
+      "reasons": [
+        "remove unsupported AM from source To sleep 3:15, reused at 15:15"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "7月3日：5小时45分钟。今天几乎没做什么。越来越疲惫，拖着疲惫的身体走到实验室，差点两次冲出马路。勉强集中精力喂了动物园的动物，并更新了日志。最后一次阅读了惠特比留下的操作手册，决定将辐射剂量率设为每分钟40伦琴，目标距离设为530厘米。一切准备就绪。11:05起床。凌晨3:15入睡。",
+          "after": "7月3日：5小时45分钟。今天几乎没做什么。越来越疲惫，拖着疲惫的身体走到实验室，差点两次冲出马路。勉强集中精力喂了动物园的动物，并更新了日志。最后一次阅读了惠特比留下的操作手册，决定将辐射剂量率设为每分钟40伦琴，目标距离设为530厘米。一切准备就绪。11:05起床。3:15入睡。"
+        }
+      }
+    },
+    {
+      "id": "1520-003",
+      "reasons": [
+        "preserve nine repetitions rather than eight"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "1948年1月26日星期一，三点二十分，在东京，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒。",
+          "after": "1948年1月26日星期一，三点二十分，在东京，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒。"
+        }
+      }
+    },
+    {
+      "id": "1527-000",
+      "reasons": [
+        "source Albert is not identified as a prince"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "下午3点27分，正是阿尔伯特亲王1907年出生的确切时刻，这位老人在五个子女、十一个孙子女和十九个曾孙子女的簇拥下，将一把银柄刀插入一个三层蛋糕中。",
+          "after": "下午3点27分，正是阿尔伯特1907年出生的确切时刻，这位老人在五个子女、十一个孙子女和十九个曾孙子女的簇拥下，将一把银柄刀插入一个三层蛋糕中。"
+        }
+      }
+    },
+    {
+      "id": "1639-001",
+      "reasons": [
+        "two slices, not two whole pizzas"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "哈莱姆区享受着慵懒的安息日早晨，不过下午做完礼拜后，节奏又会加快。我的手表显示下午4:39，我才意识到自己一整天都没吃东西。我在122街和莱诺克斯大道交汇处的路边摊买了两个披萨，就着一瓶葡萄味Snapple饮料咽了下去。",
+          "after": "哈莱姆区享受着慵懒的安息日早晨，不过下午做完礼拜后，节奏又会加快。我的手表显示下午4:39，我才意识到自己一整天都没吃东西。我在122街和莱诺克斯大道交汇处的路边摊买了两块披萨，就着一瓶葡萄味Snapple饮料咽了下去。"
+        }
+      }
+    },
+    {
+      "id": "1654-003",
+      "reasons": [
+        "1654 is 16:54, not year 1654",
+        "highlight the corrected clock"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "1654",
+          "after": "16:54"
+        },
+        "Quote": {
+          "before": "当地时间1654年，红色十月号首次驶出大西洋海面，位于诺福克东南47英里处。周围没有其他船只。",
+          "after": "当地时间16:54，红色十月号首次驶出大西洋海面，位于诺福克东南47英里处。周围没有其他船只。"
+        }
+      }
+    },
+    {
+      "id": "1732-000",
+      "reasons": [
+        "5.28 identifies the train departure, not the report time"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "12月9日星期五傍晚五点三十二分整，阿纳利车站站长收到弗罗斯特山信号站发来的电报：伦敦桥方向刚刚经过，时间是5点28分。",
+          "after": "12月9日星期五傍晚五点三十二分整，阿纳利车站站长收到弗罗斯特山信号站发来的电报：5点28分从伦敦桥开出的下行列车刚刚通过。"
+        }
+      }
+    },
+    {
+      "id": "1837-001",
+      "reasons": [
+        "nearly twenty to seven is approaching 18:40, not 19:20"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "快七点二十分",
+          "after": "快到差二十分七点了"
+        },
+        "Quote": {
+          "before": "艾米：那是什么？我好像看到有人从窗外经过。现在几点了？<br>查尔斯：快七点二十分。",
+          "after": "艾米：那是什么？我好像看到有人从窗外经过。现在几点了？<br>查尔斯：快到差二十分七点了。"
+        }
+      }
+    },
+    {
+      "id": "1926-000",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "19.26 小时",
+          "after": "19:26"
+        },
+        "Quote": {
+          "before": "纽曼指着酒店。屋檐下，一截截一英尺长的冰块向下伸出，像一排倒置的冰柱。车站不过是一间单层小屋，孤零零的，空无一人。仪表盘上的时钟显示 19.26 小时。",
+          "after": "纽曼指着酒店。屋檐下，一截截一英尺长的冰块向下伸出，像一排倒置的冰柱。车站不过是一间单层小屋，孤零零的，空无一人。仪表盘上的时钟显示 19:26。"
+        }
+      }
+    },
+    {
+      "id": "1939-002",
+      "reasons": [
+        "Fire Dog is not turkey; preserve original product name in parentheses",
+        "do not invent the gender of sore losers"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "下午7:39<br>伊娃和布拉克在杰克·切尔马克餐厅赚了180美元，但爱管闲事的服务员和输不起的怨妇们的抱怨迫使他们离开了。之后，他们在安德森维尔著名的“人人都是香肠”（Every 1’s A Wiener）热狗摊只咬了一口“火鸡热狗”（Fire Dog），就赚了5美元。伊娃实际上咬了两口，因为她就是这样的人。",
+          "after": "下午7:39<br>伊娃和布拉克在杰克·切尔马克餐厅赚了180美元，但爱管闲事的服务员和输不起又爱抱怨的家伙们的抱怨迫使他们离开了。之后，他们在安德森维尔著名的“人人都是香肠”（Every 1’s A Wiener）热狗摊只咬了一口“烈火热狗”（Fire Dog），就赚了5美元。伊娃实际上咬了两口，因为她就是这样的人。"
+        }
+      }
+    },
+    {
+      "id": "1959-001",
+      "reasons": [
+        "natural temporal rendering of teetering on",
+        "retain approximate direction"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "摇摇欲坠地接近八点",
+          "after": "眼看就要到八点了"
+        },
+        "Quote": {
+          "before": "我刚下自行车就看到了莉尔，她银色的辫子搭在右肩上。她坐在前廊上，在夕阳的余晖中，她柔软而饱经风霜的皮肤泛着淡淡的玫瑰色。时间摇摇欲坠地接近八点。",
+          "after": "我刚下自行车就看到了莉尔，她银色的辫子搭在右肩上。她坐在前廊上，在夕阳的余晖中，她柔软而饱经风霜的皮肤泛着淡淡的玫瑰色。时间眼看就要到八点了。"
+        }
+      }
+    },
+    {
+      "id": "2000-002",
+      "reasons": [
+        "company directors meeting, not film directors"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "会议室里坐着的十位导演显得焦躁不安。现在是晚上8点。他们过去十分钟一直在交谈，但现在渐渐安静了下来。",
+          "after": "会议室里坐着的十位董事显得焦躁不安。现在是晚上8点。他们过去十分钟一直在交谈，但现在渐渐安静了下来。"
+        }
+      }
+    },
+    {
+      "id": "2010-002",
+      "reasons": [
+        "2010h is 20:10; preserve the fictional year label instead of inventing year 2010"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "2010年4月1日20:10，医疗专员仍在观看那盘未贴标签的娱乐卡带。",
+          "after": "Y.D.A.U.年4月1日20:10，医疗专员仍在观看那盘未贴标签的娱乐卡带。"
+        }
+      }
+    },
+    {
+      "id": "2018-000",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "2018 小时",
+          "after": "20:18"
+        },
+        "Quote": {
+          "before": "2018 小时 卡佳抵达敖德萨酒店。巴利和卡佳正在餐厅交谈。威克洛和一名不速之客在旁观察。更多。",
+          "after": "20:18 卡佳抵达敖德萨酒店。巴利和卡佳正在餐厅交谈。威克洛和一名不速之客在旁观察。更多。"
+        }
+      }
+    },
+    {
+      "id": "2030-000",
+      "reasons": [
+        "preserve unsigned source temperature; do not invent a minus sign or convert unspecified unit"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "到了晚上8:30，狗狗们放弃了，开始四处游荡。约翰那时已经麻木了。气温只有零下20度，他不知道自己还能在卡车顶上待多久，才能摆脱这凛冽的寒风。",
+          "after": "到了晚上8:30，狗狗们放弃了，开始四处游荡。约翰那时已经麻木了。气温只有20度，他不知道自己还能在卡车顶上待多久，才能摆脱这凛冽的寒风。"
+        }
+      }
+    },
+    {
+      "id": "2035-002",
+      "reasons": [
+        "five and twenty to nine is 20:35",
+        "remove accidental duplication"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "差五点二十九",
+          "after": "差二十五分钟到九点"
+        },
+        "Quote": {
+          "before": "她若有所思地停顿了一下。毫无疑问，他现在非常感兴趣。凶手必然会对谋杀案感兴趣。她赌对了，而且赌对了。她偷偷瞥了一眼钟。差五点二十九。",
+          "after": "她若有所思地停顿了一下。毫无疑问，他现在非常感兴趣。凶手必然会对谋杀案感兴趣。她赌的就是这一点，而且赌赢了。她偷偷瞥了一眼钟。差二十五分钟到九点。"
+        }
+      }
+    },
+    {
+      "id": "2045-000",
+      "reasons": [
+        "quarter to nine is 08:45/20:45, not 09:45"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "九点四十五分",
+          "after": "差一刻九点"
+        },
+        "Quote": {
+          "before": "到了九点四十五分，还是没人来，加德纳开始怀疑他们是不是要放弃了。他坐在博比的摇椅上，在门廊上琢磨着这个问题，手指摩挲着脸上博兹曼打在他脸上的那块又大又肿的淤青。",
+          "after": "到了差一刻九点，还是没人来，加德纳开始怀疑他们是不是要放弃了。他坐在博比的摇椅上，在门廊上琢磨着这个问题，手指摩挲着脸上博兹曼打在他脸上的那块又大又肿的淤青。"
+        }
+      }
+    },
+    {
+      "id": "2105-000",
+      "reasons": [
+        "nine-five is 21:05"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "九五",
+          "after": "九点零五分"
+        },
+        "Quote": {
+          "before": "九五。书房天花板上传来一个声音：“麦克莱伦太太，您今晚想读哪首诗？”屋里一片寂静。声音最后说道：“既然您没有特别的偏好，我就随机选一首吧。”",
+          "after": "九点零五分。书房天花板上传来一个声音：“麦克莱伦太太，您今晚想读哪首诗？”屋里一片寂静。声音最后说道：“既然您没有特别的偏好，我就随机选一首吧。”"
+        }
+      }
+    },
+    {
+      "id": "2122-000",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "21.22 小时",
+          "after": "21:22"
+        },
+        "Quote": {
+          "before": "十五分钟后（21.22 小时），斯奎尔小姐抵达斯基普顿，并在当地一家民宿预订了房间。这家民宿就在玛丽·卡拉汉的羽毛剪发店对面。",
+          "after": "十五分钟后（21:22），斯奎尔小姐抵达斯基普顿，并在当地一家民宿预订了房间。这家民宿就在玛丽·卡拉汉的羽毛剪发店对面。"
+        }
+      }
+    },
+    {
+      "id": "2134-000",
+      "reasons": [
+        "expect me is arrival, not a request for a call"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "谢谢；请于26日晚上9:34联系我；三个小时后，我收到回复：“很高兴；请带一个3号Rippingille炉子”——这则指示令人费解，又透着不祥之兆，尽管内容本身并不令人意外，却还是让我不寒而栗。",
+          "after": "谢谢；我将于26日晚上9:34到达，请等我；三个小时后，我收到回复：“很高兴；请带一个3号Rippingille炉子”——这则指示令人费解，又透着不祥之兆，尽管内容本身并不令人意外，却还是让我不寒而栗。"
+        }
+      }
+    },
+    {
+      "id": "2200-019",
+      "reasons": [
+        "render military clock notation as a clock, not an elapsed duration"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "2200 时",
+          "after": "22:00"
+        },
+        "Quote": {
+          "before": "他瞥了一眼钟。2200 时。快到午夜了。他赶紧穿好衣服。",
+          "after": "他瞥了一眼钟。22:00。快到午夜了。他赶紧穿好衣服。"
+        }
+      }
+    },
+    {
+      "id": "2205-001",
+      "reasons": [
+        "restore hour/minute separation",
+        "include minute unit"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "十零五",
+          "after": "十点零五分"
+        },
+        "Quote": {
+          "before": "如果你不告诉我所有我需要知道的事情——他看了看手腕上的表——“明天晚上十零五分之前，你就会被处决。你和那三个死刑犯。”",
+          "after": "如果你不告诉我所有我需要知道的事情——他看了看手腕上的表——“明天晚上十点零五分之前，你就会被处决。你和那三个死刑犯。”"
+        }
+      }
+    },
+    {
+      "id": "2235-001",
+      "reasons": [
+        "five-and-twenty to eleven is 22:35"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "五点二十分到十一点",
+          "after": "差二十五分钟到十一点"
+        },
+        "Quote": {
+          "before": "五点二十分到十一点。可怕的时刻——一个阴森恐怖的时刻，因为这不仅是享乐的时刻结束，更是享乐本身也变得索然无味的时刻。",
+          "after": "差二十五分钟到十一点。可怕的时刻——一个阴森恐怖的时刻，因为这不仅是享乐的时刻结束，更是享乐本身也变得索然无味的时刻。"
+        }
+      }
+    },
+    {
+      "id": "2244-000",
+      "reasons": [
+        "approximate quarter to eleven is 22:45, not 23:45"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "大约11点45分",
+          "after": "大约差一刻十一点"
+        },
+        "Quote": {
+          "before": "亚历克竖起了耳朵。“什么时候？”<br>“哦，昨天晚上。”<br>“几点？”<br>“大约11点45分。我在打桥牌。”",
+          "after": "亚历克竖起了耳朵。“什么时候？”<br>“哦，昨天晚上。”<br>“几点？”<br>“大约差一刻十一点。我在打桥牌。”"
+        }
+      }
+    },
+    {
+      "id": "2314-000",
+      "reasons": [
+        "restore 23:14; no rounding to the quarter"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "十一点一刻",
+          "after": "十一点十四分"
+        },
+        "Quote": {
+          "before": "他们吃完汉堡后，梅丽莎瞥了一眼手表，那是一块硕大的塑料电子表，看起来像是小孩子的玩意儿。<br>“十一点一刻，”梅丽莎说。“世界末日到来之前，我们还有四十四分钟可以消磨。”",
+          "after": "他们吃完汉堡后，梅丽莎瞥了一眼手表，那是一块硕大的塑料电子表，看起来像是小孩子的玩意儿。<br>“十一点十四分，”梅丽莎说。“世界末日到来之前，我们还有四十四分钟可以消磨。”"
+        }
+      }
+    },
+    {
+      "id": "2316-001",
+      "reasons": [
+        "preserve repeated doubling and exponent 2^15"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "但我不能马上出门，因为他会看到我，所以我得等到他睡着了。<br>时间是晚上11点16分。<br>我又试着把2乘以2，但我算不出2(15)之后的数字，也就是32768。所以我呻吟了一声，想让时间过得快点，不想去想。",
+          "after": "但我不能马上出门，因为他会看到我，所以我得等到他睡着了。<br>时间是晚上11点16分。<br>我又试着从2开始不断翻倍，但算到2的15次方，也就是32768，就再也算不下去了。所以我呻吟了一声，想让时间过得快点，不想去想。"
+        }
+      }
+    },
+    {
+      "id": "2350-000",
+      "reasons": [
+        "ten to midnight refers to minutes"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "差十点到午夜",
+          "after": "差十分钟到午夜"
+        },
+        "Quote": {
+          "before": "墙上的钟显示差十点到午夜。科克想拨回指针，一切都要重新来过，让他每次都能出现在正确的时间和地点。他想要重新经历过去的几天，过去的几年。",
+          "after": "墙上的钟显示差十分钟到午夜。科克想拨回指针，一切都要重新来过，让他每次都能出现在正确的时间和地点。他想要重新经历过去的几天，过去的几年。"
+        }
+      }
+    },
+    {
+      "id": "2350-001",
+      "reasons": [
+        "hardly more does not assert extra time",
+        "highlight the time separately from the hedge"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "距离可怕的午夜只剩十分钟，再多一点",
+          "after": "距离可怕的午夜只剩十分钟"
+        },
+        "Quote": {
+          "before": "“哦，麦克利尔先生，”他开玩笑地说，“我很高兴你刚刚侥幸逃脱了违反安息日的惩罚！你真是死里逃生！距离可怕的午夜只剩十分钟，再多一点！”",
+          "after": "“哦，麦克利尔先生，”他开玩笑地说，“我很高兴你刚刚侥幸逃脱了违反安息日的惩罚！你真是死里逃生！距离可怕的午夜只剩十分钟，最多也多不了多少！”"
+        }
+      }
+    },
+    {
+      "id": "2359-000",
+      "reasons": [
+        "restore the explicit minute"
+      ],
+      "changes": {
+        "Quote time": {
+          "before": "午夜将至",
+          "after": "离午夜还有一分钟"
+        },
+        "Quote": {
+          "before": "午夜将至，罗肯顿握着妻子的手，给她留下最后的嘱咐。午夜钟声敲响之际，她感到伴侣的手渐渐消失在自己的手中。",
+          "after": "离午夜还有一分钟，罗肯顿握着妻子的手，给她留下最后的嘱咐。午夜钟声敲响之际，她感到伴侣的手渐渐消失在自己的手中。"
         }
       }
     }

@@ -9,6 +9,7 @@ import json
 from pathlib import Path
 
 from audit_translation_quality import audit
+from review_chinese_second_pass import second_pass_status
 from quote_sources import source_catalogue
 from validate_translation import ROOT, catalogue_progress, is_draft, read_catalogue, validate
 
@@ -46,7 +47,16 @@ def review():
             add(entry['id'], entry['category'], entry['reason'])
     for identifier, entry in findings.items():
         entry['draft'] = is_draft(targets[identifier])
+    second_pass = second_pass_status(sources, rows)
+    reviewed = second_pass.pop('reviewed_candidates')
+    for identifier, entry in findings.items():
+        decision = reviewed.get(identifier)
+        if decision:
+            entry['second_pass_review'] = {'outcome': decision['outcome'], 'reason': decision['reason']}
+    unreviewed = [identifier for identifier, entry in findings.items()
+                  if identifier not in reviewed and any(reason['category'] in ('numbers', 'length') for reason in entry['reasons'])]
     return {
+        'second_pass': second_pass, 'unreviewed_numeric_length_ids': unreviewed,
         'scope': 'Automated triage plus documented context/source findings, not full literary certification. CJK character length uses a heuristic 0.15 lower threshold; short translated passages are not inherently omissions. Conservative whole-phrase parsing; unparsed expressions and narrative arithmetic need review.',
         'received': 'docs/chinese-received.csv',
         'authors_restored': sum(row['Author'] != originals[row['Id']]['Author'] for row in received),

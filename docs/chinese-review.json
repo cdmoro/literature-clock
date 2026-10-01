@@ -1,26 +1,309 @@
 {
+  "second_pass": {
+    "numeric_and_length_reviewed": 311,
+    "stale_numeric_reviews": [],
+    "stale_time_reviews": [],
+    "expanded_time_pairs_matching": 3369,
+    "expanded_time_mismatches": [],
+    "expanded_time_pairs_contextual": 271,
+    "contextual_ids": [
+      "0000-032",
+      "0000-058",
+      "0003-001",
+      "0005-000",
+      "0012-000",
+      "0035-000",
+      "0037-000",
+      "0045-002",
+      "0058-000",
+      "0058-001",
+      "0059-001",
+      "0059-002",
+      "0059-003",
+      "0100-009",
+      "0100-014",
+      "0101-000",
+      "0102-001",
+      "0107-000",
+      "0111-000",
+      "0145-001",
+      "0158-000",
+      "0158-001",
+      "0159-000",
+      "0200-006",
+      "0200-016",
+      "0200-023",
+      "0200-025",
+      "0202-000",
+      "0203-001",
+      "0206-002",
+      "0229-000",
+      "0245-002",
+      "0259-002",
+      "0301-001",
+      "0301-002",
+      "0301-003",
+      "0304-001",
+      "0337-000",
+      "0350-000",
+      "0359-000",
+      "0401-001",
+      "0401-002",
+      "0456-000",
+      "0457-002",
+      "0501-001",
+      "0512-000",
+      "0529-001",
+      "0534-001",
+      "0535-003",
+      "0558-002",
+      "0559-001",
+      "0559-002",
+      "0609-000",
+      "0629-001",
+      "0637-000",
+      "0646-001",
+      "0708-001",
+      "0729-001",
+      "0742-001",
+      "0756-002",
+      "0759-001",
+      "0759-003",
+      "0800-035",
+      "0800-037",
+      "0818-000",
+      "0825-003",
+      "0827-002",
+      "0834-000",
+      "0856-001",
+      "0856-002",
+      "0859-002",
+      "0902-001",
+      "0903-000",
+      "0905-001",
+      "0907-001",
+      "0908-000",
+      "0908-001",
+      "0909-000",
+      "0910-000",
+      "0929-001",
+      "0938-000",
+      "0949-000",
+      "0950-004",
+      "0955-002",
+      "0958-002",
+      "0959-004",
+      "1000-004",
+      "1000-010",
+      "1000-025",
+      "1001-004",
+      "1003-000",
+      "1005-000",
+      "1006-001",
+      "1007-002",
+      "1010-005",
+      "1020-003",
+      "1030-002",
+      "1054-001",
+      "1101-001",
+      "1101-002",
+      "1104-002",
+      "1113-001",
+      "1120-002",
+      "1129-002",
+      "1136-000",
+      "1140-002",
+      "1147-001",
+      "1150-000",
+      "1154-001",
+      "1157-001",
+      "1157-002",
+      "1157-003",
+      "1158-003",
+      "1158-004",
+      "1159-001",
+      "1159-002",
+      "1200-001",
+      "1200-006",
+      "1200-008",
+      "1200-009",
+      "1200-010",
+      "1200-020",
+      "1200-041",
+      "1206-000",
+      "1210-002",
+      "1215-000",
+      "1221-000",
+      "1226-001",
+      "1227-000",
+      "1236-000",
+      "1242-000",
+      "1246-002",
+      "1300-013",
+      "1301-001",
+      "1301-002",
+      "1301-003",
+      "1306-000",
+      "1308-002",
+      "1315-002",
+      "1319-000",
+      "1331-000",
+      "1332-001",
+      "1333-000",
+      "1334-000",
+      "1358-001",
+      "1359-000",
+      "1359-001",
+      "1400-000",
+      "1400-001",
+      "1400-002",
+      "1400-008",
+      "1400-016",
+      "1401-000",
+      "1401-001",
+      "1413-000",
+      "1428-000",
+      "1430-007",
+      "1454-001",
+      "1455-003",
+      "1459-001",
+      "1500-003",
+      "1500-023",
+      "1500-035",
+      "1501-000",
+      "1504-002",
+      "1508-001",
+      "1528-001",
+      "1530-005",
+      "1531-000",
+      "1559-002",
+      "1559-003",
+      "1559-004",
+      "1600-005",
+      "1600-038",
+      "1601-000",
+      "1601-001",
+      "1603-000",
+      "1603-001",
+      "1610-002",
+      "1623-001",
+      "1636-001",
+      "1637-003",
+      "1641-001",
+      "1657-001",
+      "1657-002",
+      "1657-003",
+      "1658-001",
+      "1658-002",
+      "1700-008",
+      "1700-019",
+      "1700-033",
+      "1706-001",
+      "1706-002",
+      "1707-001",
+      "1734-000",
+      "1736-000",
+      "1744-000",
+      "1759-001",
+      "1759-002",
+      "1822-000",
+      "1826-001",
+      "1831-002",
+      "1831-003",
+      "1834-001",
+      "1837-001",
+      "1850-001",
+      "1852-001",
+      "1852-002",
+      "1853-001",
+      "1853-002",
+      "1854-000",
+      "1857-000",
+      "1901-001",
+      "1902-001",
+      "1910-004",
+      "1924-001",
+      "1929-001",
+      "1942-003",
+      "1951-002",
+      "1955-003",
+      "1959-000",
+      "1959-001",
+      "1959-002",
+      "2001-001",
+      "2009-000",
+      "2029-000",
+      "2057-000",
+      "2101-001",
+      "2101-002",
+      "2101-003",
+      "2101-004",
+      "2145-000",
+      "2150-004",
+      "2150-005",
+      "2157-003",
+      "2200-021",
+      "2201-002",
+      "2206-000",
+      "2206-002",
+      "2210-001",
+      "2214-000",
+      "2219-001",
+      "2220-003",
+      "2225-000",
+      "2234-000",
+      "2244-000",
+      "2249-000",
+      "2250-000",
+      "2255-002",
+      "2256-001",
+      "2257-001",
+      "2315-004",
+      "2325-001",
+      "2330-003",
+      "2332-000",
+      "2338-000",
+      "2340-001",
+      "2345-002",
+      "2347-000",
+      "2348-000",
+      "2348-001",
+      "2350-000",
+      "2350-001",
+      "2353-001",
+      "2353-002",
+      "2353-003",
+      "2353-004",
+      "2357-002",
+      "2358-001",
+      "2358-002",
+      "2359-001"
+    ]
+  },
+  "unreviewed_numeric_length_ids": [],
   "scope": "Automated triage plus documented context/source findings, not full literary certification. CJK character length uses a heuristic 0.15 lower threshold; short translated passages are not inherently omissions. Conservative whole-phrase parsing; unparsed expressions and narrative arithmetic need review.",
   "received": "docs/chinese-received.csv",
   "authors_restored": 3564,
   "progress": {
     "quotes_total": 3640,
-    "quotes_published": 3640,
-    "quotes_draft": 0,
-    "publication_progress": 100.0
+    "quotes_published": 3639,
+    "quotes_draft": 1,
+    "publication_progress": 99.97
   },
   "coverage": {
     "rows": 3640,
-    "time_pairs_parsed": 2694,
+    "time_pairs_parsed": 2696,
     "structural_findings": 0
   },
   "categories": {
-    "numbers": 305,
+    "numbers": 308,
+    "source_slot": 1,
     "length": 1
   },
-  "candidate_rows": 306,
+  "candidate_rows": 309,
   "strict_structural_errors": 0,
-  "pending_context_rows": 0,
-  "time_pairs_unparsed": 946,
+  "pending_context_rows": 1,
+  "time_pairs_unparsed": 944,
   "findings": [
     {
       "id": "0000-032",
@@ -32,6 +315,10 @@
         {
           "category": "numbers",
           "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        },
+        {
+          "category": "source_slot",
+          "detail": "A Squatter’s Tale explicitly says 12.00 pm in the full passage, but the assigned slot is 00:00. Existing Chinese wording infers midnight from night shifts. Verify the edition before changing source or slot; this inference is not sufficient to publish."
         }
       ],
       "source_time": "12.00",
@@ -41,7 +328,11 @@
       "source_author": "Ike Oguine",
       "target_author": "Ike Oguine",
       "title": "一个棚户区居民的故事",
-      "draft": false
+      "draft": true,
+      "second_pass_review": {
+        "outcome": "needs_source_context",
+        "reason": "Explicit pm in source conflicts with midnight slot; Chinese row held as draft."
+      }
     },
     {
       "id": "0003-000",
@@ -62,7 +353,11 @@
       "source_author": "P.D. James",
       "target_author": "P.D. James",
       "title": "《人类之子》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0004-001",
@@ -83,7 +378,11 @@
       "source_author": "Fred Sheehan",
       "target_author": "Fred Sheehan",
       "title": "安齐奥：英勇史诗",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0009-000",
@@ -104,7 +403,11 @@
       "source_author": "Amir Mir",
       "target_author": "Amir Mir",
       "title": "布托谋杀案追踪：从瓦济里斯坦到总参谋部",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0012-000",
@@ -121,11 +424,15 @@
       "source_time": "0 Hours, 12 Minutes",
       "target_time": "0 小时 12 分",
       "source_quote": "Clock time is 0 Hours, 12 Minutes, 0 Seconds. Twenty three minutes later, they have their first sight of Venus. Each lies with his Eye clapp’d to the Snout of an identical two and a half foot Gregorian reflector made by Mr. Short, with Darkening-Nozzles by Mr. Bird.",
-      "target_quote": "时钟时间为 0 小时 12 分 0 秒。23 分钟后，他们第一次看到了金星。每个人都将眼睛贴在由肖特先生制作的、带有伯德先生制作的变暗喷嘴的相同两英尺半格里高利反射望远镜的喷嘴上。",
+      "target_quote": "时钟时间为 0 小时 12 分 0 秒。23 分钟后，他们第一次看到了金星。每个人都躺着，把眼睛贴在一架两英尺半长的格里高利式反射望远镜的镜筒口上；两架望远镜完全一样，由肖特先生制作，配有伯德先生制作的遮光装置。",
       "source_author": "Thomas Pynchon",
       "target_author": "Thomas Pynchon",
       "title": "梅森和迪克森",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "restore lies, paired identical telescopes and optical equipment rather than nozzles"
+      }
     },
     {
       "id": "0018-001",
@@ -146,7 +453,11 @@
       "source_author": "Mary Horlock",
       "target_author": "Mary Horlock",
       "title": "谎言之书",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0021-002",
@@ -167,7 +478,11 @@
       "source_author": "Steven Hall",
       "target_author": "Steven Hall",
       "title": "《生鲨短信》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0022-000",
@@ -188,7 +503,11 @@
       "source_author": "Steven Hall",
       "target_author": "Steven Hall",
       "title": "《生鲨短信》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0100-013",
@@ -205,11 +524,15 @@
       "source_time": "One am",
       "target_time": "凌晨一点",
       "source_quote": "It was the thirtieth of May by now. One am on the thirtieth of May 1940. Quite a famous date on which to be lying awake and staring at the ceiling. Already in the creeks and tidal estuaries of England the pleasure-boats and paddle-steamers were casting their moorings for the day trip to Dunkirk. And, over on the other side, Ted stood as a good a chance as anyone else.",
-      "target_quote": "此时已是5月30日。1940年5月30日凌晨一点。对于一个彻夜难眠、盯着天花板的人来说，这真是一个著名的日子。在英格兰的溪流和潮汐河口，游船和明轮船已经开始抛锚，准备前往敦刻尔克进行一日游。而在另一边，泰德和其他人一样，都面临着同样的命运。",
+      "target_quote": "此时已是5月30日。1940年5月30日凌晨一点。对于一个彻夜难眠、盯着天花板的人来说，这真是一个著名的日子。在英格兰的溪流和潮汐河口，游船和明轮船已经开始解缆，准备前往敦刻尔克进行一日游。而在另一边，泰德和其他人一样，都面临着同样的命运。",
       "source_author": "Norman Collins",
       "target_author": "Norman Collins",
       "title": "伦敦属于我",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "casting their moorings means departing, not anchoring"
+      }
     },
     {
       "id": "0104-001",
@@ -230,7 +553,11 @@
       "source_author": "Stephen King",
       "target_author": "Stephen King",
       "title": "《汤米诺克》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0108-001",
@@ -251,7 +578,11 @@
       "source_author": "David Mitchell",
       "target_author": "David Mitchell",
       "title": "骨钟",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0110-002",
@@ -272,7 +603,11 @@
       "source_author": "Ernest Shackleton",
       "target_author": "Ernest Shackleton",
       "title": "南方：坚忍号探险",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0127-000",
@@ -293,7 +628,11 @@
       "source_author": "William Kent Krueger",
       "target_author": "William Kent Krueger",
       "title": "血谷",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0134-000",
@@ -314,7 +653,11 @@
       "source_author": "Donald E. Westlake",
       "target_author": "Donald E. Westlake",
       "title": "溺亡的希望",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0137-000",
@@ -335,7 +678,11 @@
       "source_author": "Gail Delaney",
       "target_author": "Gail Delaney",
       "title": "Outcasts",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0139-000",
@@ -356,7 +703,11 @@
       "source_author": "Joanne Harris",
       "target_author": "Joanne Harris",
       "title": "Blueeyedboy",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0142-000",
@@ -377,7 +728,11 @@
       "source_author": "Malcolm Gladwell",
       "target_author": "Malcolm Gladwell",
       "title": "《异类：成功人士的故事》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0143-001",
@@ -398,7 +753,11 @@
       "source_author": "David Evans",
       "target_author": "David Evans",
       "title": "奖杯",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0200-002",
@@ -419,7 +778,11 @@
       "source_author": "Loreth Anne White",
       "target_author": "Loreth Anne White",
       "title": "魔鬼桥下",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0200-005",
@@ -440,7 +803,11 @@
       "source_author": "Frank Herbert",
       "target_author": "Frank Herbert",
       "title": "沙丘",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0200-015",
@@ -461,7 +828,11 @@
       "source_author": "Coco Mellors",
       "target_author": "Coco Mellors",
       "title": "克利奥帕特拉与弗兰肯斯坦",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0207-002",
@@ -478,11 +849,15 @@
       "source_time": "2.07 a.m.",
       "target_time": "凌晨 2:07",
       "source_quote": "Saturday, 17 November — 2.07 a.m. I cannot sleep. Ben is upstairs, back in bed, and I am writing this in the kitchen. He thinks I am drinking a cup of cocoa that he has just made for me. He thinks I will come back to bed soon. I will, but first I must write again.",
-      "target_quote": " 星期六，11 月 17 日 — 凌晨 2:07。我睡不着。本在楼上，已经回床上躺着了，而我正在厨房里写这首诗。他以为我在喝他刚给我做的可可。他以为我很快就会回床上睡觉。我会的，但首先我必须再写一会儿。",
+      "target_quote": " 星期六，11 月 17 日 — 凌晨 2:07。我睡不着。本在楼上，已经回床上躺着了，而我正在厨房里写下这些文字。他以为我在喝他刚给我做的可可。他以为我很快就会回床上睡觉。我会的，但首先我必须再写一会儿。",
       "source_author": "S.J. Watson",
       "target_author": "S.J. Watson",
       "title": "《睡前》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "source does not specify a poem"
+      }
     },
     {
       "id": "0210-003",
@@ -503,7 +878,11 @@
       "source_author": "Ernest Shackleton",
       "target_author": "Ernest Shackleton",
       "title": "南方：坚忍号远征",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0213-000",
@@ -524,7 +903,11 @@
       "source_author": "Chris James",
       "target_author": "Chris James",
       "title": "第二家网吧，第一部分：维度研究员",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0216-000",
@@ -545,7 +928,11 @@
       "source_author": "Rob Buckman",
       "target_author": "Rob Buckman",
       "title": "明日回声",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0230-004",
@@ -566,7 +953,11 @@
       "source_author": "David Foster Wallace",
       "target_author": "David Foster Wallace",
       "title": "无尽的玩笑",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0236-001",
@@ -587,7 +978,11 @@
       "source_author": "Len Deighton",
       "target_author": "Len Deighton",
       "title": "伊普克雷斯档案",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0237-001",
@@ -608,7 +1003,11 @@
       "source_author": "Stephen King",
       "target_author": "Stephen King",
       "title": "《末日逼近》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0241-000",
@@ -629,7 +1028,11 @@
       "source_author": "Ben Bova",
       "target_author": "Ben Bova",
       "title": "月球战争",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0246-001",
@@ -650,7 +1053,11 @@
       "source_author": "Steve Sohmer",
       "target_author": "Steve Sohmer",
       "title": "爱国者",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0300-044",
@@ -671,7 +1078,11 @@
       "source_author": "David Foster Wallace",
       "target_author": "David Foster Wallace",
       "title": "《无尽的玩笑》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0302-000",
@@ -692,7 +1103,11 @@
       "source_author": "P.D. James",
       "target_author": "P.D. James",
       "title": "《人类之子》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0305-001",
@@ -713,7 +1128,11 @@
       "source_author": "Jonathan Franzen",
       "target_author": "Jonathan Franzen",
       "title": "更正",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0318-000",
@@ -730,11 +1149,15 @@
       "source_time": "03.18 hours",
       "target_time": "凌晨3点18分",
       "source_quote": "The truth of the matter we may never know. All we know at the moment is that at 03.18 hours on 10th February the Southern Cross was firmly beset by the ice and she was sending out an SOS. Sometime during the night that lead must have come to an end. The westward-driven pack ice closed round her and in a matter of hours she was gone.",
-      "target_quote": "真相或许永远不得而知。我们目前只知道，2月10日凌晨3点18分，“南十字星”号被冰层牢牢包围，并发出求救信号。夜间某个时候，求救信号必然中断。西向涌来的浮冰将她包围，几个小时后，她便消失在茫茫大海之中。",
+      "target_quote": "真相或许永远不得而知。我们目前只知道，2月10日凌晨3点18分，“南十字星”号被冰层牢牢包围，并发出求救信号。夜间某个时候，那条水道一定已经到了尽头。西向涌来的浮冰将她包围，几个小时后，她便消失在茫茫大海之中。",
       "source_author": "Hammond Innes",
       "target_author": "Hammond Innes",
       "title": "白色南方",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "lead is the navigable opening in the ice, not the SOS"
+      }
     },
     {
       "id": "0320-000",
@@ -751,11 +1174,15 @@
       "source_time": "3.20 am",
       "target_time": "凌晨 3:20",
       "source_quote": "Prabath Kumara, 16. 17th November 1989. At 3.20 am from the home of a friend.",
-      "target_quote": "普拉巴特·库马拉，1989 年 11 月 17 日，凌晨 3:20，从朋友家中。",
+      "target_quote": "普拉巴特·库马拉，16岁。1989 年 11 月 17 日，凌晨 3:20，从朋友家中。",
       "source_author": "Michael Ondaatje",
       "target_author": "Michael Ondaatje",
       "title": "阿尼尔的鬼魂",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "restore omitted age 16"
+      }
     },
     {
       "id": "0321-000",
@@ -776,7 +1203,11 @@
       "source_author": "Jeffrey Archer",
       "target_author": "Jeffrey Archer",
       "title": "盗亦有道",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0322-000",
@@ -797,7 +1228,11 @@
       "source_author": "Dave Donovan",
       "target_author": "Dave Donovan",
       "title": "礼物",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0329-000",
@@ -818,7 +1253,11 @@
       "source_author": "Graham Hurley",
       "target_author": "Graham Hurley",
       "title": "借来的光",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0332-000",
@@ -839,7 +1278,11 @@
       "source_author": "John McNally",
       "target_author": "John McNally",
       "title": "斯卡拉蒂之子",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0339-000",
@@ -860,7 +1303,11 @@
       "source_author": "William Jablonsky",
       "target_author": "William Jablonsky",
       "title": "《发条人》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0343-000",
@@ -881,7 +1328,11 @@
       "source_author": "David Mitchell",
       "target_author": "David Mitchell",
       "title": "代笔",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0348-000",
@@ -902,7 +1353,11 @@
       "source_author": "Jeffrey Archer",
       "target_author": "Jeffrey Archer",
       "title": "除非我死了",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0352-000",
@@ -917,13 +1372,17 @@
         }
       ],
       "source_time": "03.52",
-      "target_time": "03.52",
+      "target_time": "03:52",
       "source_quote": "It was neat, too much so. The log book was open at the last entry: 03.52 hours — Brady Field Beacon bearing 312°, approximately eight miles.",
-      "target_quote": "这太完美了，完美得过分。航海日志翻开，最后一条记录是：03.52 小时 — 布雷迪机场信标，方位角 312°，约 8 英里。",
+      "target_quote": "这太完美了，完美得过分。航海日志翻开，最后一条记录是：03:52 — 布雷迪机场信标，方位角 312°，约 8 英里。",
       "source_author": "Clive Cussler",
       "target_author": "Clive Cussler",
       "title": "《地中海奇遇记》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "render military clock notation as a clock, not an elapsed duration"
+      }
     },
     {
       "id": "0400-018",
@@ -944,7 +1403,11 @@
       "source_author": "Marsha Mehran",
       "target_author": "Marsha Mehran",
       "title": "石榴汤",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0419-000",
@@ -965,7 +1428,11 @@
       "source_author": "James Axler",
       "target_author": "James Axler",
       "title": "极光探索",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0424-000",
@@ -986,7 +1453,11 @@
       "source_author": "Carlos J. Cortes",
       "target_author": "Carlos J. Cortes",
       "title": "完美圆圈",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0428-000",
@@ -1007,7 +1478,11 @@
       "source_author": "Glenn Smith",
       "target_author": "Glenn Smith",
       "title": "Solfleet：使命召唤",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0429-000",
@@ -1028,7 +1503,11 @@
       "source_author": "Roger MacBride Allen",
       "target_author": "Roger MacBride Allen",
       "title": "乌托邦",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0430-007",
@@ -1049,7 +1528,11 @@
       "source_author": "David Foster Wallace",
       "target_author": "David Foster Wallace",
       "title": "《无尽的玩笑》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0440-000",
@@ -1070,7 +1553,11 @@
       "source_author": "Tina Fey",
       "target_author": "Tina Fey",
       "title": "老板娘",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0442-000",
@@ -1091,7 +1578,11 @@
       "source_author": "Matthew Warwick",
       "target_author": "Matthew Warwick",
       "title": "死城",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0444-000",
@@ -1112,7 +1603,11 @@
       "source_author": "Robert J. Sawyer",
       "target_author": "Robert J. Sawyer",
       "title": "金羊毛",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0457-000",
@@ -1133,7 +1628,11 @@
       "source_author": "Cleveland Moffett",
       "target_author": "Cleveland Moffett",
       "title": "危险与冒险的职业生涯",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0459-001",
@@ -1154,7 +1653,11 @@
       "source_author": "David Foster Wallace",
       "target_author": "David Foster Wallace",
       "title": "无尽的玩笑",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0500-016",
@@ -1175,7 +1678,11 @@
       "source_author": "H.P. Lovecraft",
       "target_author": "H.P. Lovecraft",
       "title": "《邓威治恐怖事件》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0502-000",
@@ -1196,7 +1703,11 @@
       "source_author": "Brenda Joyce",
       "target_author": "Brenda Joyce",
       "title": "奖赏",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0512-000",
@@ -1217,7 +1728,11 @@
       "source_author": "Herbert Asbury",
       "target_author": "Herbert Asbury",
       "title": "《斯卢默的天堂》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0516-000",
@@ -1238,7 +1753,11 @@
       "source_author": "Hunter S. Thompson",
       "target_author": "Hunter S. Thompson",
       "title": "《恐惧与厌恶：1972年竞选之路》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0524-000",
@@ -1259,7 +1778,11 @@
       "source_author": "Arthur Phillips",
       "target_author": "Arthur Phillips",
       "title": "亚瑟的悲剧",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0526-000",
@@ -1280,7 +1803,11 @@
       "source_author": "Hallgrímur Helgason",
       "target_author": "Hallgrímur Helgason",
       "title": "101 雷克雅未克",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0530-004",
@@ -1297,11 +1824,15 @@
       "source_time": "5:30 in the morning",
       "target_time": "早上5:30",
       "source_quote": "When Braque and her brother Randy were kids, their mom used to wake them up at 5:30 in the morning for family road trips, to avoid traffic; there were safety latches around the house until she was eleven; there was no TV and sure as sh*t no candy, pop, alcohol, or smoking; she ironed bedsheets and bleached underwear and cleaned the bathrooms at least twice a day.",
-      "target_quote": "布拉克和她弟弟兰迪小时候，为了避开交通高峰，妈妈每天早上5:30就叫醒他们，带他们去自驾游；直到她11岁，家里都装着安全锁；家里没有电视，当然也没有糖果、汽水、酒或烟；她每天至少熨两次床单，漂白内衣，打扫两次浴室。",
+      "target_quote": "布拉克和她弟弟兰迪小时候，为了避开交通高峰，妈妈为了全家自驾出游，会在早上5:30叫醒他们；直到她11岁，家里都装着安全锁；家里没有电视，当然也没有糖果、汽水、酒或烟；她熨床单，给内衣漂白，每天至少打扫两次浴室。",
       "source_author": "J. Ryan Stradal",
       "target_author": "J. Ryan Stradal",
       "title": "美国中西部厨房",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "do not invent daily family road trips; twice a day qualifies bathroom cleaning, not ironing"
+      }
     },
     {
       "id": "0532-000",
@@ -1322,7 +1853,11 @@
       "source_author": "Paul Mason",
       "target_author": "Paul Mason",
       "title": "稀土",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0536-000",
@@ -1339,11 +1874,15 @@
       "source_time": "05.36",
       "target_time": "5点36分",
       "source_quote": "She drank a bottle of Jack Daniels. When she woke at 05.36 she had wiped the previous evening.",
-      "target_quote": "她喝了一瓶杰克丹尼威士忌。她5点36分醒来时，已经擦干了前一天晚上的脸。",
+      "target_quote": "她喝了一瓶杰克丹尼威士忌。她5点36分醒来时，已经把前一晚的事忘得一干二净。",
       "source_author": "Jonathan Meades",
       "target_author": "Jonathan Meades",
       "title": "福勒家族企业",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "wiped the previous evening refers to lost memory, not wiping a face"
+      }
     },
     {
       "id": "0537-000",
@@ -1364,7 +1903,11 @@
       "source_author": "A.M. Homes",
       "target_author": "A.M. Homes",
       "title": "这本书会拯救你的生命",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0543-000",
@@ -1385,7 +1928,11 @@
       "source_author": "Jeffrey Archer",
       "target_author": "Jeffrey Archer",
       "title": "《直线飞行》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0543-003",
@@ -1406,7 +1953,11 @@
       "source_author": "Hunter S. Thompson",
       "target_author": "Hunter S. Thompson",
       "title": "《恐惧与厌恶：1972年竞选之路》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0544-000",
@@ -1427,7 +1978,11 @@
       "source_author": "Perri O’Shaughnessy",
       "target_author": "Perri O’Shaughnessy",
       "title": "侵犯隐私",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0557-000",
@@ -1448,7 +2003,11 @@
       "source_author": "Emma Donoghue",
       "target_author": "Emma Donoghue",
       "title": "房间",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ. Dinner suggests evening despite 05.57; Chinese preserves the source without adding an AM/PM assertion. Slot merits edition context."
+      }
     },
     {
       "id": "0600-009",
@@ -1469,7 +2028,11 @@
       "source_author": "J. Ryan Stradal",
       "target_author": "J. Ryan Stradal",
       "title": "美国中西部厨房",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0600-016",
@@ -1490,7 +2053,11 @@
       "source_author": "Gustave Flaubert",
       "target_author": "Gustave Flaubert",
       "title": "《情感教育》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0601-000",
@@ -1511,7 +2078,11 @@
       "source_author": "Justin Cronin",
       "target_author": "Justin Cronin",
       "title": "通道",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0616-000",
@@ -1532,7 +2103,11 @@
       "source_author": "Monika Jephcott Thomas",
       "target_author": "Monika Jephcott Thomas",
       "title": "十五个字",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0619-000",
@@ -1553,7 +2128,11 @@
       "source_author": "Carol Ann Duffy",
       "target_author": "Carol Ann Duffy",
       "title": "金星",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0625-001",
@@ -1574,7 +2153,11 @@
       "source_author": "Mark Lawson",
       "target_author": "Mark Lawson",
       "title": "死亡",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0626-000",
@@ -1595,7 +2178,11 @@
       "source_author": "Don and Linda Pendleton",
       "target_author": "Don and Linda Pendleton",
       "title": "轮盘赌",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0627-003",
@@ -1616,7 +2203,11 @@
       "source_author": "Zadie Smith",
       "target_author": "Zadie Smith",
       "title": "白牙",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0630-010",
@@ -1637,7 +2228,11 @@
       "source_author": "Gwen Raverat",
       "target_author": "Gwen Raverat",
       "title": "时代剧",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0633-000",
@@ -1658,7 +2253,11 @@
       "source_author": "J.G. Ballard",
       "target_author": "J.G. Ballard",
       "title": "时间之声",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0637-000",
@@ -1679,7 +2278,11 @@
       "source_author": "Jeffrey Archer",
       "target_author": "Jeffrey Archer",
       "title": "《不入虎穴焉得虎子》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0639-000",
@@ -1700,7 +2303,11 @@
       "source_author": "Keith Jessop and Neil Hanson",
       "target_author": "Keith Jessop and Neil Hanson",
       "title": "淘金者",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0644-000",
@@ -1721,7 +2328,11 @@
       "source_author": "Mark Lawson",
       "target_author": "Mark Lawson",
       "title": "死亡",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0648-002",
@@ -1742,7 +2353,11 @@
       "source_author": "Thomas Hoover",
       "target_author": "Thomas Hoover",
       "title": "代达罗斯计划",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0651-000",
@@ -1763,7 +2378,11 @@
       "source_author": "Jack Heath",
       "target_author": "Jack Heath",
       "title": "杀死你的兄弟",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0652-001",
@@ -1784,7 +2403,11 @@
       "source_author": "Will Storr",
       "target_author": "Will Storr",
       "title": "《基利安·隆的饥饿与嚎叫》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0700-012",
@@ -1805,7 +2428,11 @@
       "source_author": "Taylor Jenkins Reid",
       "target_author": "Taylor Jenkins Reid",
       "title": "马里布崛起",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0700-017",
@@ -1826,7 +2453,11 @@
       "source_author": "J. Ryan Stradal",
       "target_author": "J. Ryan Stradal",
       "title": "美国中西部厨房",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0703-002",
@@ -1847,7 +2478,11 @@
       "source_author": "John Wyndham",
       "target_author": "John Wyndham",
       "title": "《三尖树时代》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0715-001",
@@ -1868,7 +2503,11 @@
       "source_author": "H.P. Lovecraft",
       "target_author": "H.P. Lovecraft",
       "title": "疯狂山脉",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0715-003",
@@ -1889,7 +2528,11 @@
       "source_author": "Sir Arthur Conan Doyle",
       "target_author": "Sir Arthur Conan Doyle",
       "title": "《斑点带子案》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0717-000",
@@ -1910,7 +2553,11 @@
       "source_author": "Thomas Pynchon",
       "target_author": "Thomas Pynchon",
       "title": "《反日》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0722-000",
@@ -1931,7 +2578,11 @@
       "source_author": "Thomas Hoover",
       "target_author": "Thomas Hoover",
       "title": "独眼巨人计划",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0723-000",
@@ -1952,7 +2603,11 @@
       "source_author": "Thomas Hoover",
       "target_author": "Thomas Hoover",
       "title": "独眼巨人计划",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0725-002",
@@ -1973,7 +2628,11 @@
       "source_author": "J. Ryan Stradal",
       "target_author": "J. Ryan Stradal",
       "title": "大中西部厨房",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0729-002",
@@ -1994,7 +2653,11 @@
       "source_author": "Elizabeth Speller",
       "target_author": "Elizabeth Speller",
       "title": "破晓时分",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0731-000",
@@ -2015,7 +2678,11 @@
       "source_author": "Adam Hall",
       "target_author": "Adam Hall",
       "title": "新疆行政官",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0756-002",
@@ -2036,7 +2703,11 @@
       "source_author": "Lee Strobel",
       "target_author": "Lee Strobel",
       "title": "《野心》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0759-002",
@@ -2057,7 +2728,11 @@
       "source_author": "Stephen King",
       "target_author": "Stephen King",
       "title": "1963年11月22日",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0800-001",
@@ -2078,7 +2753,11 @@
       "source_author": "Edna Hong",
       "target_author": "Edna Hong",
       "title": "爱的明谷",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0800-007",
@@ -2099,7 +2778,11 @@
       "source_author": "Michael Crichton",
       "target_author": "Michael Crichton",
       "title": "侏罗纪公园",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0810-003",
@@ -2116,11 +2799,15 @@
       "source_time": "8:10",
       "target_time": "8:10",
       "source_quote": "Cell count down to 400,000. Woke 8:10. To sleep 7:15. (Appear to have lost my watch without realising it, had to drive into town to buy another.)",
-      "target_quote": "手机数量降至40万。8:10醒来。7:15入睡。（似乎不小心把手表弄丢了，只好开车进城去买一块。）",
+      "target_quote": "细胞数量降至40万。8:10醒来。7:15入睡。（似乎不小心把手表弄丢了，只好开车进城去买一块。）",
       "source_author": "J.G. Ballard",
       "target_author": "J.G. Ballard",
       "title": "时间之声",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "cell count refers to cells, not phones; cross-check duplicate 1915-004"
+      }
     },
     {
       "id": "0817-003",
@@ -2141,7 +2828,11 @@
       "source_author": "Jules Verne",
       "target_author": "Jules Verne",
       "title": "地心游记",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ. The 297-inch barometer value is present in the published English excerpt; preserved rather than silently correcting a possible edition error. Source: https://etc.usf.edu/lit2go/222/the-journey-to-the-center-of-the-earth/5666/chapter-xviii-the-wonders-of-terrestrial-depths/"
+      }
     },
     {
       "id": "0819-001",
@@ -2162,7 +2853,11 @@
       "source_author": "Jonathan Coe",
       "target_author": "Jonathan Coe",
       "title": "麦克斯韦·西姆的可怕隐私",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0829-000",
@@ -2183,7 +2878,11 @@
       "source_author": "Jeffrey Archer",
       "target_author": "Jeffrey Archer",
       "title": "我们该告诉总统吗？",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0829-001",
@@ -2204,7 +2903,11 @@
       "source_author": "Michael Crichton",
       "target_author": "Michael Crichton",
       "title": "《火车大劫案》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0830-007",
@@ -2225,7 +2928,11 @@
       "source_author": "Marsha Mehran",
       "target_author": "Marsha Mehran",
       "title": "石榴汤",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0830-011",
@@ -2246,7 +2953,11 @@
       "source_author": "Christoph Ransmayr",
       "target_author": "Christoph Ransmayr",
       "title": "冰与黑暗的恐怖",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0832-001",
@@ -2267,7 +2978,11 @@
       "source_author": "Audrey Niffenegger",
       "target_author": "Audrey Niffenegger",
       "title": "《时间旅行者的妻子》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0832-002",
@@ -2284,11 +2999,15 @@
       "source_time": "0832",
       "target_time": "08:32",
       "source_quote": "Does anybody know the time a little more exactly is what I’m wondering, Don, since Day doesn’t.<br>Gately checks his cheap digital, head still hung over the sofa’s arm. “I got 0832:14, 15, 16, Randy.”<br>“’ks a lot, D.G. man.”",
-      "target_quote": "唐，我想知道的是，有没有人知道更精确的时间，因为戴不知道。<br>盖特利查看他那廉价的电子表，头还搭在沙发扶手上。“我查到的是08:32:14、15、16，兰迪。”<br>“很多次了，D.G.老兄。”",
+      "target_quote": "唐，我想知道的是，有没有人知道更精确的时间，因为戴不知道。<br>盖特利查看他那廉价的电子表，头还搭在沙发扶手上。“我查到的是08:32:14、15、16，兰迪。”<br>“多谢了，D.G.老兄。”",
       "source_author": "David Foster Wallace",
       "target_author": "David Foster Wallace",
       "title": "无尽的玩笑",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "clipped thanks a lot is gratitude, not a count"
+      }
     },
     {
       "id": "0834-000",
@@ -2309,7 +3028,11 @@
       "source_author": "James Follett",
       "target_author": "James Follett",
       "title": "末日最后通牒",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0835-000",
@@ -2330,7 +3053,11 @@
       "source_author": "Raymond Chandler",
       "target_author": "Raymond Chandler",
       "title": "《长眠不醒》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0843-001",
@@ -2351,7 +3078,11 @@
       "source_author": "John Grisham",
       "target_author": "John Grisham",
       "title": "《杀戮时刻》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0845-001",
@@ -2372,7 +3103,11 @@
       "source_author": "P.D. James",
       "target_author": "P.D. James",
       "title": "嗜死之味",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0849-001",
@@ -2393,7 +3128,11 @@
       "source_author": "Jonathan Coe",
       "target_author": "Jonathan Coe",
       "title": "麦克斯韦·西姆的可怕隐私",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0854-001",
@@ -2414,7 +3153,11 @@
       "source_author": "Nicholas Briggs",
       "target_author": "Nicholas Briggs",
       "title": "神秘博士：戴立克世代",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0859-003",
@@ -2435,7 +3178,11 @@
       "source_author": "Jeffrey Archer",
       "target_author": "Jeffrey Archer",
       "title": "中国雕像",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0900-016",
@@ -2456,7 +3203,11 @@
       "source_author": "Terry Pratchett and Neil Gaiman",
       "target_author": "Terry Pratchett and Neil Gaiman",
       "title": "好兆头",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0900-033",
@@ -2477,7 +3228,11 @@
       "source_author": "Denis Johnson",
       "target_author": "Denis Johnson",
       "title": "耶稣之子",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0915-003",
@@ -2498,7 +3253,11 @@
       "source_author": "Tom Clancy",
       "target_author": "Tom Clancy",
       "title": "《猎杀红色十月》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0922-001",
@@ -2519,7 +3278,11 @@
       "source_author": "Chris Walley",
       "target_author": "Chris Walley",
       "title": "无限之日",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0925-000",
@@ -2536,11 +3299,15 @@
       "source_time": "9:25",
       "target_time": "早上9点25分",
       "source_quote": "With that in mind, Emma left the Manor House at 9:25 that morning, and was driven through the gates of Barrington’s shipyard at exactly eight minutes to ten.",
-      "target_quote": "考虑到这一点，艾玛那天早上9点25分离开了庄园，并在9点50分整乘车驶入了巴灵顿造船厂的大门。",
+      "target_quote": "考虑到这一点，艾玛那天早上9点25分离开了庄园，并在9点52分整乘车驶入了巴灵顿造船厂的大门。",
       "source_author": "Jeffrey Archer",
       "target_author": "Jeffrey Archer",
       "title": "父辈的罪孽",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "secondary time eight minutes to ten is 09:52"
+      }
     },
     {
       "id": "0930-003",
@@ -2561,7 +3328,11 @@
       "source_author": "Haruki Murakami",
       "target_author": "Haruki Murakami",
       "title": "《盲柳，睡女》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0930-005",
@@ -2582,7 +3353,11 @@
       "source_author": "Robert Harris",
       "target_author": "Robert Harris",
       "title": "慕尼黑",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0940-001",
@@ -2603,7 +3378,11 @@
       "source_author": "Jeffrey Archer",
       "target_author": "Jeffrey Archer",
       "title": "时辰已到",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0941-000",
@@ -2624,7 +3403,11 @@
       "source_author": "S.M. Stirling",
       "target_author": "S.M. Stirling",
       "title": "石狗",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0949-000",
@@ -2645,7 +3428,11 @@
       "source_author": "Chris Ryan",
       "target_author": "Chris Ryan",
       "title": "死亡名单",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0951-002",
@@ -2666,7 +3453,11 @@
       "source_author": "Jeffrey Archer",
       "target_author": "Jeffrey Archer",
       "title": "父辈的罪孽",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0955-002",
@@ -2687,7 +3478,11 @@
       "source_author": "P.D. James",
       "target_author": "P.D. James",
       "title": "圣职殉道",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "0957-001",
@@ -2708,7 +3503,11 @@
       "source_author": "Thomas Hoover",
       "target_author": "Thomas Hoover",
       "title": "代达罗斯计划",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1000-009",
@@ -2729,7 +3528,11 @@
       "source_author": "Stephen King",
       "target_author": "Stephen King",
       "title": "欢乐园",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1000-026",
@@ -2750,7 +3553,11 @@
       "source_author": "Virginia Woolf",
       "target_author": "Virginia Woolf",
       "title": "奥兰多",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1000-027",
@@ -2771,7 +3578,11 @@
       "source_author": "Stieg Larsson",
       "target_author": "Stieg Larsson",
       "title": "《龙纹身的女孩》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1000-028",
@@ -2792,7 +3603,11 @@
       "source_author": "Haruki Murakami",
       "target_author": "Haruki Murakami",
       "title": "海边的卡夫卡",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1000-033",
@@ -2813,7 +3628,11 @@
       "source_author": "Samuel Pepys",
       "target_author": "Samuel Pepys",
       "title": "塞缪尔·佩皮斯日记",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1000-034",
@@ -2834,7 +3653,11 @@
       "source_author": "Christoph Ransmayr",
       "target_author": "Christoph Ransmayr",
       "title": "冰与黑暗的恐怖",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1000-038",
@@ -2855,7 +3678,11 @@
       "source_author": "Ricardo Piglia",
       "target_author": "Ricardo Piglia",
       "title": "人工呼吸",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1003-002",
@@ -2876,7 +3703,11 @@
       "source_author": "Andrew Norriss",
       "target_author": "Andrew Norriss",
       "title": "Ctrl-Z",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1004-000",
@@ -2897,7 +3728,11 @@
       "source_author": "Marc Sumerak",
       "target_author": "Marc Sumerak",
       "title": "回到未来：穿越时空",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1005-001",
@@ -2918,28 +3753,11 @@
       "source_author": "Jeffrey Archer",
       "target_author": "Jeffrey Archer",
       "title": "荣耀之路",
-      "draft": false
-    },
-    {
-      "id": "1010-001",
-      "locale": "zh-CN",
-      "line": 1557,
-      "source_locale": "en",
-      "time": "10:10",
-      "reasons": [
-        {
-          "category": "numbers",
-          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
-        }
-      ],
-      "source_time": "10:10",
-      "target_time": "10:10",
-      "source_quote": "At 10:10, two white-coated orderlies wheeled a tall, well-built man in a chair out through the swing doors and, seeing the car parked in the dean’s space, guided him towards it. The driver jumped out and quickly opened the back door. Poor man, he thought, his head all covered in bandages and only a small crack left for his lips and nostrils. He wondered if it had been burns.",
-      "target_quote": "10:10，10点10分，两名身穿白大褂的勤务兵推着一位身材高大魁梧的男子，用轮椅从旋转门里出来。他们看到院长的车停在指定位置，便引导他过去。司机跳下车，迅速打开后车门。可怜的人，他心想，那人的头上缠满了绷带，只留下嘴唇和鼻孔的小缝隙。他怀疑那是不是烧伤了。",
-      "source_author": "Jeffrey Archer",
-      "target_author": "Jeffrey Archer",
-      "title": "盗亦有道",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1010-004",
@@ -2960,7 +3778,11 @@
       "source_author": "A.G. Macdonell",
       "target_author": "A.G. Macdonell",
       "title": "《英格兰，他们的英格兰》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1015-002",
@@ -2981,7 +3803,11 @@
       "source_author": "Agatha Christie",
       "target_author": "Agatha Christie",
       "title": "《阳光下的罪恶》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1017-001",
@@ -3002,7 +3828,11 @@
       "source_author": "Carmen Reid",
       "target_author": "Carmen Reid",
       "title": "纽约情人节",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1019-000",
@@ -3023,7 +3853,11 @@
       "source_author": "Thomas Hoover",
       "target_author": "Thomas Hoover",
       "title": "代达罗斯计划",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1023-000",
@@ -3044,7 +3878,11 @@
       "source_author": "Andrew Norriss",
       "target_author": "Andrew Norriss",
       "title": "Ctrl-Z",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1027-000",
@@ -3065,7 +3903,11 @@
       "source_author": "A.G. Macdonell",
       "target_author": "A.G. Macdonell",
       "title": "《英格兰，他们的英格兰》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1032-000",
@@ -3086,7 +3928,11 @@
       "source_author": "Gavin Extence",
       "target_author": "Gavin Extence",
       "title": "宇宙对抗Alex Woods",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1033-000",
@@ -3107,7 +3953,11 @@
       "source_author": "Chuck Logan",
       "target_author": "Chuck Logan",
       "title": "大律政",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1037-000",
@@ -3128,7 +3978,11 @@
       "source_author": "Dorothy L. Sayers",
       "target_author": "Dorothy L. Sayers",
       "title": "《贝洛纳俱乐部的不愉快事件》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1043-000",
@@ -3149,7 +4003,11 @@
       "source_author": "Jane Costello",
       "target_author": "Jane Costello",
       "title": "愿望清单",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1050-000",
@@ -3170,7 +4028,11 @@
       "source_author": "Jeffrey Archer",
       "target_author": "Jeffrey Archer",
       "title": "《这是一个人》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1054-003",
@@ -3191,7 +4053,11 @@
       "source_author": "R.D. Wingfield",
       "target_author": "R.D. Wingfield",
       "title": "哈德·弗罗斯特",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1055-003",
@@ -3212,7 +4078,11 @@
       "source_author": "P.D. James",
       "target_author": "P.D. James",
       "title": "灯塔",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1100-004",
@@ -3229,11 +4099,15 @@
       "source_time": "11 a.m.",
       "target_time": "上午11点",
       "source_quote": "Baba Diop spent the final thirty-six hours of his life at Fleury-Mérogis. At 11 a.m. on the second day, he was stabbed in the throat with a sharpened comb while being led under escort to the governor’s office.",
-      "target_quote": "巴巴·迪奥普在弗勒里-梅罗吉度过了他生命的最后36个小时。第二天上午11点，他在被押往总督办公室的途中，被一把削尖的梳子刺穿了喉咙。",
+      "target_quote": "巴巴·迪奥普在弗勒里-梅罗吉度过了他生命的最后36个小时。第二天上午11点，他在被押往监狱长办公室的途中，被一把削尖的梳子刺穿了喉咙。",
       "source_author": "John Connolly",
       "target_author": "John Connolly",
       "title": "无名氏",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "prison governor, not political governor"
+      }
     },
     {
       "id": "1100-005",
@@ -3254,7 +4128,11 @@
       "source_author": "Margaret Atwood",
       "target_author": "Margaret Atwood",
       "title": "《强盗新娘》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1100-025",
@@ -3275,7 +4153,11 @@
       "source_author": "Agatha Christie",
       "target_author": "Agatha Christie",
       "title": "《无人生还》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1102-000",
@@ -3296,7 +4178,11 @@
       "source_author": "The Manhattan Engineer District",
       "target_author": "The Manhattan Engineer District",
       "title": "广岛和长崎原子弹爆炸",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1103-001",
@@ -3317,7 +4203,11 @@
       "source_author": "Jorge Luis Borges",
       "target_author": "Jorge Luis Borges",
       "title": "死亡与罗盘",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1104-001",
@@ -3338,7 +4228,11 @@
       "source_author": "Jasper Fforde",
       "target_author": "Jasper Fforde",
       "title": "沉浸在好书中",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1105-001",
@@ -3355,11 +4249,15 @@
       "source_time": "11:05",
       "target_time": "11:05",
       "source_quote": "July 3: 5 3/4 hours. Little done today. Deepening lethargy, dragged myself over to the lab, nearly left the road twice. Concentrated enough to feed the zoo and get the log up to date. Read through the operating manuals Whitby left for the last time, decided on a delivery rate of 40 röntgens/min., target distance of 530 cm. Everything is ready now. Woke 11:05. To sleep 3:15.",
-      "target_quote": "7月3日：5小时45分钟。今天几乎没做什么。越来越疲惫，拖着疲惫的身体走到实验室，差点两次冲出马路。勉强集中精力喂了动物园的动物，并更新了日志。最后一次阅读了惠特比留下的操作手册，决定将辐射剂量率设为每分钟40伦琴，目标距离设为530厘米。一切准备就绪。11:05起床。凌晨3:15入睡。",
+      "target_quote": "7月3日：5小时45分钟。今天几乎没做什么。越来越疲惫，拖着疲惫的身体走到实验室，差点两次冲出马路。勉强集中精力喂了动物园的动物，并更新了日志。最后一次阅读了惠特比留下的操作手册，决定将辐射剂量率设为每分钟40伦琴，目标距离设为530厘米。一切准备就绪。11:05起床。3:15入睡。",
       "source_author": "J.G. Ballard",
       "target_author": "J.G. Ballard",
       "title": "时间之声",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "remove unsupported AM from source To sleep 3:15, reused at 15:15"
+      }
     },
     {
       "id": "1106-001",
@@ -3380,7 +4278,11 @@
       "source_author": "Jasper Fforde",
       "target_author": "Jasper Fforde",
       "title": "我们的一个星期四消失了",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1108-002",
@@ -3401,7 +4303,11 @@
       "source_author": "Michael Crichton",
       "target_author": "Michael Crichton",
       "title": "《仙女座病毒》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1109-000",
@@ -3422,7 +4328,11 @@
       "source_author": "James Patterson",
       "target_author": "James Patterson",
       "title": "纽约重案组3",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1113-001",
@@ -3443,7 +4353,11 @@
       "source_author": "Raymond Carver",
       "target_author": "Raymond Carver",
       "title": "《我打电话的地方》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1114-000",
@@ -3464,7 +4378,11 @@
       "source_author": "Stieg Larsson",
       "target_author": "Stieg Larsson",
       "title": "《龙纹身的女孩》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1120-001",
@@ -3485,7 +4403,11 @@
       "source_author": "Belinda Alexandra",
       "target_author": "Belinda Alexandra",
       "title": "南方红宝石",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1120-002",
@@ -3506,7 +4428,11 @@
       "source_author": "Lauren Beukes",
       "target_author": "Lauren Beukes",
       "title": "Moxyland",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1126-000",
@@ -3527,7 +4453,11 @@
       "source_author": "John Galligan",
       "target_author": "John Galligan",
       "title": "风结",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1126-001",
@@ -3548,7 +4478,11 @@
       "source_author": "William Hertling",
       "target_author": "William Hertling",
       "title": "图灵异常",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1127-001",
@@ -3569,7 +4503,11 @@
       "source_author": "Chris James",
       "target_author": "Chris James",
       "title": "第二家网吧，第二部分：瀑布毁灭者",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1130-000",
@@ -3590,7 +4528,11 @@
       "source_author": "Edna Hong",
       "target_author": "Edna Hong",
       "title": "爱的明谷",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1130-007",
@@ -3611,7 +4553,11 @@
       "source_author": "Charles Stross",
       "target_author": "Charles Stross",
       "title": "奇点天空",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1131-000",
@@ -3632,7 +4578,11 @@
       "source_author": "Tom Clancy",
       "target_author": "Tom Clancy",
       "title": "猎杀红色十月",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1138-001",
@@ -3653,7 +4603,11 @@
       "source_author": "Dave Eggers",
       "target_author": "Dave Eggers",
       "title": "《圆圈》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1140-001",
@@ -3674,28 +4628,11 @@
       "source_author": "Jules Verne",
       "target_author": "Jules Verne",
       "title": "环游世界八十天",
-      "draft": false
-    },
-    {
-      "id": "1145-001",
-      "locale": "zh-CN",
-      "line": 1816,
-      "source_locale": "en",
-      "time": "11:45",
-      "reasons": [
-        {
-          "category": "numbers",
-          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
-        }
-      ],
-      "source_time": "11:45 AM",
-      "target_time": "上午11:45",
-      "source_quote": "11:45 AM - 06/05/2014<br>More details have emerged in the investigation into the killings at Val-de-Grâce early Wednesday morning.",
-      "target_quote": "上午11:45 - 2014年6月5日<br>关于周三清晨发生在瓦尔德格拉斯的凶杀案的调查有了更多细节浮出水面。",
-      "source_author": "Jeremy Bates",
-      "target_author": "Jeremy Bates",
-      "title": "地下墓穴",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1145-004",
@@ -3716,7 +4653,11 @@
       "source_author": "Eric Ambler",
       "target_author": "Eric Ambler",
       "title": "间谍墓志铭",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1150-000",
@@ -3737,7 +4678,11 @@
       "source_author": "Dave Eggers",
       "target_author": "Dave Eggers",
       "title": "《圆圈》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1155-002",
@@ -3758,7 +4703,11 @@
       "source_author": "Bernstein & Woodward",
       "target_author": "Bernstein & Woodward",
       "title": "总统班底",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1156-001",
@@ -3779,7 +4728,11 @@
       "source_author": "Mary Horlock",
       "target_author": "Mary Horlock",
       "title": "《谎言之书》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1158-002",
@@ -3800,7 +4753,11 @@
       "source_author": "Stephen King",
       "target_author": "Stephen King",
       "title": "1963年11月22日",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1200-033",
@@ -3821,7 +4778,11 @@
       "source_author": "Thornton Wilder",
       "target_author": "Thornton Wilder",
       "title": "圣路易斯雷桥",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1209-000",
@@ -3842,7 +4803,11 @@
       "source_author": "Arthur C. Clarke",
       "target_author": "Arthur C. Clarke",
       "title": "天堂之泉",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1217-001",
@@ -3863,7 +4828,11 @@
       "source_author": "Raymon Queneau",
       "target_author": "Raymon Queneau",
       "title": "风格练习",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1218-000",
@@ -3884,7 +4853,11 @@
       "source_author": "Thomas Hoover",
       "target_author": "Thomas Hoover",
       "title": "综合症",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1231-000",
@@ -3905,7 +4878,11 @@
       "source_author": "William B. Lyons",
       "target_author": "William B. Lyons",
       "title": "黑暗迷恋",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1240-001",
@@ -3926,7 +4903,11 @@
       "source_author": "Agatha Christie",
       "target_author": "Agatha Christie",
       "title": "《无人生还》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ. Five pound notes can refer to banknote denomination or number; supplied wording retains five-pound banknotes without specifying a total."
+      }
     },
     {
       "id": "1246-000",
@@ -3947,7 +4928,11 @@
       "source_author": "Geoff St. Reynard",
       "target_author": "Geoff St. Reynard",
       "title": "别慌！",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1250-001",
@@ -3968,7 +4953,11 @@
       "source_author": "Jeffrey Archer",
       "target_author": "Jeffrey Archer",
       "title": "时辰已到",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1257-000",
@@ -3989,7 +4978,11 @@
       "source_author": "Thomas Hoover",
       "target_author": "Thomas Hoover",
       "title": "综合症",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1301-003",
@@ -4010,7 +5003,36 @@
       "source_author": "Kenneth Fearing",
       "target_author": "Kenneth Fearing",
       "title": "大钟",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
+    },
+    {
+      "id": "1307-000",
+      "locale": "zh-CN",
+      "line": 2043,
+      "source_locale": "en",
+      "time": "13:07",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "1307 hours",
+      "target_time": "13:07",
+      "source_quote": "Dr. Nexa accepted her forced surrender to the inevitable with a greater modicum of grace. She looked at Nurse L’Kem and said, pointing to the human, the Bolian, and then the Zaldan, “Time of death for Lieutenant Hutchinson, 1307 hours.”",
+      "target_quote": "奈克萨博士以一种更为优雅的姿态接受了她被迫屈服于不可避免的命运。她看着护士莱克姆，指着人类、博利安人和扎尔丹人说道：“哈钦森中尉的死亡时间是13:07。”",
+      "source_author": "David Mack",
+      "target_author": "David Mack",
+      "title": "《星际迷航：命运》#3：迷失的灵魂",
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "New digit-token alert caused by a reviewed repair: four-digit military clock is now written HH:MM, preserving the hour/minute rather than a duration."
+      }
     },
     {
       "id": "1310-002",
@@ -4027,11 +5049,15 @@
       "source_time": "1:10",
       "target_time": "1:10",
       "source_quote": "He says something but I don’t hear it because I am looking at the South Haven Daily. Today is Saturday, October 23, 1993. Our wedding day. The clock above the cigarette rack says 1:10.<br>“Gotta run,” I say to the old man, and I do.",
-      "target_quote": "他说了些什么，但我没听见，因为我正在看《南黑文日报》。今天是1993年10月23日，星期六。我们的结婚纪念日。香烟架上方的钟显示1:10。<br>“我得走了，”我对老人说，然后就走了。",
+      "target_quote": "他说了些什么，但我没听见，因为我正在看《南黑文日报》。今天是1993年10月23日，星期六。我们的婚礼当天。香烟架上方的钟显示1:10。<br>“我得走了，”我对老人说，然后就走了。",
       "source_author": "Audrey Niffenegger",
       "target_author": "Audrey Niffenegger",
       "title": "时间旅行者的妻子",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "wedding day, not anniversary"
+      }
     },
     {
       "id": "1314-000",
@@ -4052,7 +5078,36 @@
       "source_author": "Janice Boekhoff",
       "target_author": "Janice Boekhoff",
       "title": "灭绝岛",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
+    },
+    {
+      "id": "1320-001",
+      "locale": "zh-CN",
+      "line": 2067,
+      "source_locale": "en",
+      "time": "13:20",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "1320 hours",
+      "target_time": "13:20",
+      "source_quote": "“Kamarov, signal to Purga: Diving at—,” he checked his watch, “—1320 hours. Exercise OCTOBER FROST begins as scheduled. You are released to other assigned duties. We will return as scheduled.”<br>Kamarov worked the trigger on the blinker light to transmit the message. The Purga responded at once, and Ramius read the flashing signal unaided: “IF THE WHALES DON’T EAT YOU. GOOD LUCK TO RED OCTOBER!”",
+      "target_quote": "“卡马罗夫，向普尔加号发出信号：潜水时间——”他看了看表，“——13:20。十月霜冻演习按计划开始。你被安排执行其他任务。我们将按计划返回。”<br>卡马罗夫按下闪光灯的触发器发送了信息。普尔加号立即做出回应，拉米乌斯无需帮助便读出了闪烁的信号：“如果鲸鱼没吃掉你。祝红色十月好运！”",
+      "source_author": "Tom Clancy",
+      "target_author": "Tom Clancy",
+      "title": "猎杀红色十月",
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "New digit-token alert caused by a reviewed repair: four-digit military clock is now written HH:MM, preserving the hour/minute rather than a duration."
+      }
     },
     {
       "id": "1327-000",
@@ -4073,7 +5128,11 @@
       "source_author": "Jessica Cornwell",
       "target_author": "Jessica Cornwell",
       "title": "《蛇形文件》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1329-000",
@@ -4094,7 +5153,11 @@
       "source_author": "Thomas Hoover",
       "target_author": "Thomas Hoover",
       "title": "综合症",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1341-000",
@@ -4115,7 +5178,11 @@
       "source_author": "Stephen Euin Cobb",
       "target_author": "Stephen Euin Cobb",
       "title": "《烧焦的骨头》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1346-000",
@@ -4130,13 +5197,17 @@
         }
       ],
       "source_time": "1346 hours",
-      "target_time": "1346时",
+      "target_time": "13:46",
       "source_quote": "PAUL: I noticed Malatarsis right after Mama called me. At 1346 hours on Thursday the twenty-fourth. Brett was killed at least fourteen hours later, in the wee hours of the twenty-fifth.",
-      "target_quote": "保罗：妈妈给我打电话后，我立刻就注意到了马拉塔西斯。那是24号星期四1346时。布雷特至少在14个小时后，也就是25号凌晨被杀。",
+      "target_quote": "保罗：妈妈给我打电话后，我立刻就注意到了马拉塔西斯。那是24号星期四13:46。布雷特至少在14个小时后，也就是25号凌晨被杀。",
       "source_author": "Julian May",
       "target_author": "Julian May",
       "title": "无身杰克",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "render military clock notation as a clock, not an elapsed duration"
+      }
     },
     {
       "id": "1354-000",
@@ -4157,7 +5228,11 @@
       "source_author": "Jeremy Bates",
       "target_author": "Jeremy Bates",
       "title": "地下墓穴",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1400-013",
@@ -4174,11 +5249,40 @@
       "source_time": "2 p.m.",
       "target_time": "下午2点",
       "source_quote": "The next few hours are shutter-snaps. Pictures like on her phone. She blinks and there’s a picture. Blinks again and there’s something else. She looks at her watch and it’s 2 p.m., looks a moment later and it’s half past. She couldn’t worry about anything if she tried. It’s good.",
-      "target_quote": "接下来的几个小时就像快门声一样，不停地拍着照片，就像在手机上一样。她眨眨眼，一张照片就出现了。再眨眨眼，又是另一张照片。她看了看手表，下午2点，过了一会儿又看了一眼，已经过了2点半了。她什么都担心不了，就算想担心也担心不了。感觉真好。",
+      "target_quote": "接下来的几个小时就像快门声一样，不停地拍着照片，就像在手机上一样。她眨眨眼，一张照片就出现了。再眨眨眼，又是另一张照片。她看了看手表，下午2点，过了一会儿又看了一眼，已经是2点半了。她什么都担心不了，就算想担心也担心不了。感觉真好。",
       "source_author": "Naomi Alderman",
       "target_author": "Naomi Alderman",
       "title": "权力",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "half past, not later than half past"
+      }
+    },
+    {
+      "id": "1400-021",
+      "locale": "zh-CN",
+      "line": 2147,
+      "source_locale": "en",
+      "time": "14:00",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "1400 hours",
+      "target_time": "14:00",
+      "source_quote": "At approximately 1400 hours a pair of enemy Skyhawks came flying in at deck level out of nowhere.",
+      "target_quote": "大约 14:00，两架敌方天鹰战机突然从不知何处飞来，贴着甲板飞行。",
+      "source_author": "David Mitchell",
+      "target_author": "David Mitchell",
+      "title": "黑天鹅绿",
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "New digit-token alert caused by a reviewed repair: four-digit military clock is now written HH:MM, preserving the hour/minute rather than a duration."
+      }
     },
     {
       "id": "1400-026",
@@ -4199,7 +5303,11 @@
       "source_author": "Stieg Larsson",
       "target_author": "Stieg Larsson",
       "title": "《捅马蜂窝的女孩》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1402-001",
@@ -4220,7 +5328,11 @@
       "source_author": "Jasper Fforde",
       "target_author": "Jasper Fforde",
       "title": "死了很多次的女人",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1405-000",
@@ -4241,7 +5353,11 @@
       "source_author": "Mikhail Bulgakov",
       "target_author": "Mikhail Bulgakov",
       "title": "《乡村医生的笔记》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1407-000",
@@ -4262,7 +5378,11 @@
       "source_author": "Jeffrey Archer",
       "target_author": "Jeffrey Archer",
       "title": "《光荣之路》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1409-000",
@@ -4283,7 +5403,11 @@
       "source_author": "Gordon R. Dickson",
       "target_author": "Gordon R. Dickson",
       "title": "死灵法师",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1430-002",
@@ -4304,7 +5428,11 @@
       "source_author": "Art Spiegelman",
       "target_author": "Art Spiegelman",
       "title": "鼠族",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1430-003",
@@ -4325,7 +5453,11 @@
       "source_author": "Eric Linklater",
       "target_author": "Eric Linklater",
       "title": "月风",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1430-007",
@@ -4346,7 +5478,11 @@
       "source_author": "Dorothy Wordsworth",
       "target_author": "Dorothy Wordsworth",
       "title": "多萝西·华兹华斯日记",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1432-000",
@@ -4367,7 +5503,11 @@
       "source_author": "Charles Bukowski",
       "target_author": "Charles Bukowski",
       "title": "邮局",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1435-000",
@@ -4388,7 +5528,11 @@
       "source_author": "Charles Bukowski",
       "target_author": "Charles Bukowski",
       "title": "邮局",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1438-000",
@@ -4409,7 +5553,11 @@
       "source_author": "Thomas Hoover",
       "target_author": "Thomas Hoover",
       "title": "独眼巨人计划",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1442-001",
@@ -4430,7 +5578,11 @@
       "source_author": "Walter Jon Williams",
       "target_author": "Walter Jon Williams",
       "title": "《火烧城市》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1502-000",
@@ -4451,7 +5603,11 @@
       "source_author": "P.D. James",
       "target_author": "P.D. James",
       "title": "《人类之子》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1515-005",
@@ -4468,11 +5624,15 @@
       "source_time": "3:15",
       "target_time": "3:15",
       "source_quote": "July 3: 5 3/4 hours. Little done today. Deepening lethargy, dragged myself over to the lab, nearly left the road twice. Concentrated enough to feed the zoo and get the log up to date. Read through the operating manuals Whitby left for the last time, decided on a delivery rate of 40 röntgens/min., target distance of 530 cm. Everything is ready now. Woke 11:05. To sleep 3:15.",
-      "target_quote": "7月3日：5小时45分钟。今天几乎没做什么。越来越疲惫，拖着疲惫的身体走到实验室，差点两次冲出马路。勉强集中精力喂了动物园的动物，并更新了日志。最后一次阅读了惠特比留下的操作手册，决定将辐射剂量率设为每分钟40伦琴，目标距离设为530厘米。一切准备就绪。11:05起床。凌晨3:15入睡。",
+      "target_quote": "7月3日：5小时45分钟。今天几乎没做什么。越来越疲惫，拖着疲惫的身体走到实验室，差点两次冲出马路。勉强集中精力喂了动物园的动物，并更新了日志。最后一次阅读了惠特比留下的操作手册，决定将辐射剂量率设为每分钟40伦琴，目标距离设为530厘米。一切准备就绪。11:05起床。3:15入睡。",
       "source_author": "J.G. Ballard",
       "target_author": "J.G. Ballard",
       "title": "时间之声",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "remove unsupported AM from source To sleep 3:15, reused at 15:15"
+      }
     },
     {
       "id": "1516-000",
@@ -4493,7 +5653,11 @@
       "source_author": "Iain Banks",
       "target_author": "Iain Banks",
       "title": "《乌鸦之路》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1520-002",
@@ -4514,7 +5678,11 @@
       "source_author": "Haruki Murakami",
       "target_author": "Haruki Murakami",
       "title": "盲柳，睡女",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1520-003",
@@ -4531,11 +5699,15 @@
       "source_time": "twenty minutes past three",
       "target_time": "三点二十分",
       "source_quote": "At twenty minutes past three on Monday, 26 January 1948, in Tokyo, and I am drinking and I am drinking and I am drinking and I am drinking and I am drinking and I am drinking and I am drinking and I am drinking and I am drinking.",
-      "target_quote": "1948年1月26日星期一，三点二十分，在东京，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒。",
+      "target_quote": "1948年1月26日星期一，三点二十分，在东京，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒，我正在喝酒。",
       "source_author": "David Peace",
       "target_author": "David Peace",
       "title": "占领城市",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "preserve nine repetitions rather than eight"
+      }
     },
     {
       "id": "1527-000",
@@ -4552,11 +5724,15 @@
       "source_time": "three twenty-seven P.M.",
       "target_time": "下午3点27分",
       "source_quote": "At three twenty-seven P.M., the precise minute Albert had been born in 1907, the old man, surrounded by his five children, eleven grandchildren, and nineteen great-grandchildren, thrust a silver-handled knife into a three-tier cake.",
-      "target_quote": "下午3点27分，正是阿尔伯特亲王1907年出生的确切时刻，这位老人在五个子女、十一个孙子女和十九个曾孙子女的簇拥下，将一把银柄刀插入一个三层蛋糕中。",
+      "target_quote": "下午3点27分，正是阿尔伯特1907年出生的确切时刻，这位老人在五个子女、十一个孙子女和十九个曾孙子女的簇拥下，将一把银柄刀插入一个三层蛋糕中。",
       "source_author": "Jeffrey Archer",
       "target_author": "Jeffrey Archer",
       "title": "女王生日电报",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "source Albert is not identified as a prince"
+      }
     },
     {
       "id": "1539-000",
@@ -4577,7 +5753,11 @@
       "source_author": "Stephen King",
       "target_author": "Stephen King",
       "title": "1963年11月22日",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1545-002",
@@ -4598,7 +5778,11 @@
       "source_author": "Stephen King",
       "target_author": "Stephen King",
       "title": "1963年11月22日",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1547-001",
@@ -4619,7 +5803,11 @@
       "source_author": "Jules Verne",
       "target_author": "Jules Verne",
       "title": "《地心游记》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1551-000",
@@ -4640,7 +5828,11 @@
       "source_author": "Mark Twain",
       "target_author": "Mark Twain",
       "title": "《没有主人的意大利语》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1600-018",
@@ -4661,7 +5853,11 @@
       "source_author": "Sue Townsend",
       "target_author": "Sue Townsend",
       "title": "阿德里安·莫尔与大规模杀伤性武器",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1614-000",
@@ -4682,7 +5878,11 @@
       "source_author": "Denis Johnson",
       "target_author": "Denis Johnson",
       "title": "已死",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1623-000",
@@ -4703,7 +5903,11 @@
       "source_author": "Jennifer Egan",
       "target_author": "Jennifer Egan",
       "title": "恶棍来访",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1629-000",
@@ -4724,7 +5928,11 @@
       "source_author": "Mark Lavorato",
       "target_author": "Mark Lavorato",
       "title": "相信塞德里克",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1630-002",
@@ -4745,7 +5953,11 @@
       "source_author": "P.D. James",
       "target_author": "P.D. James",
       "title": "槲寄生谋杀案",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1631-000",
@@ -4766,7 +5978,11 @@
       "source_author": "Lisa Becker",
       "target_author": "Lisa Becker",
       "title": "《点击：一段网络爱情故事》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1639-001",
@@ -4783,11 +5999,15 @@
       "source_time": "4:39 p.m.",
       "target_time": "下午4:39",
       "source_quote": "Harlem enjoys lazy Sabbath mornings, although the pace picks up again in the afternoon, after church. My watch read 4:39 p.m., and I realized that I hadn’t eaten all day. I bought two slices of pizza from a sidewalk vendor on 122nd and Lenox Avenue and washed it down with a grape Snapple.",
-      "target_quote": "哈莱姆区享受着慵懒的安息日早晨，不过下午做完礼拜后，节奏又会加快。我的手表显示下午4:39，我才意识到自己一整天都没吃东西。我在122街和莱诺克斯大道交汇处的路边摊买了两个披萨，就着一瓶葡萄味Snapple饮料咽了下去。",
+      "target_quote": "哈莱姆区享受着慵懒的安息日早晨，不过下午做完礼拜后，节奏又会加快。我的手表显示下午4:39，我才意识到自己一整天都没吃东西。我在122街和莱诺克斯大道交汇处的路边摊买了两块披萨，就着一瓶葡萄味Snapple饮料咽了下去。",
       "source_author": "Teddy Hayes",
       "target_author": "Teddy Hayes",
       "title": "血红蓝调",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "two slices, not two whole pizzas"
+      }
     },
     {
       "id": "1642-001",
@@ -4808,7 +6028,11 @@
       "source_author": "Haruki Murakami",
       "target_author": "Haruki Murakami",
       "title": "当我谈论跑步时，我谈论些什么",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1654-003",
@@ -4823,13 +6047,17 @@
         }
       ],
       "source_time": "1654",
-      "target_time": "1654",
+      "target_time": "16:54",
       "source_quote": "It was 1654 local time when the Red October broke the surface of the Atlantic Ocean for the first time, forty-seven miles southeast of Norfolk. There was no other ship in sight.",
-      "target_quote": "当地时间1654年，红色十月号首次驶出大西洋海面，位于诺福克东南47英里处。周围没有其他船只。",
+      "target_quote": "当地时间16:54，红色十月号首次驶出大西洋海面，位于诺福克东南47英里处。周围没有其他船只。",
       "source_author": "Tom Clancy",
       "target_author": "Tom Clancy",
       "title": "猎杀红色十月",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "1654 is 16:54, not year 1654; highlight the corrected clock"
+      }
     },
     {
       "id": "1657-001",
@@ -4850,7 +6078,11 @@
       "source_author": "Lee Strobel",
       "target_author": "Lee Strobel",
       "title": "《雄心》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1657-003",
@@ -4871,7 +6103,11 @@
       "source_author": "J. Ryan Stradal",
       "target_author": "J. Ryan Stradal",
       "title": "大中西部厨房",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1700-007",
@@ -4892,7 +6128,11 @@
       "source_author": "Haruki Murakami",
       "target_author": "Haruki Murakami",
       "title": "盲柳，睡女",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1700-014",
@@ -4913,7 +6153,11 @@
       "source_author": "James Patterson",
       "target_author": "James Patterson",
       "title": "第一个死去",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1710-000",
@@ -4934,7 +6178,11 @@
       "source_author": "Chris Walley",
       "target_author": "Chris Walley",
       "title": "阴影与夜晚",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1720-002",
@@ -4955,7 +6203,11 @@
       "source_author": "David Foster Wallace",
       "target_author": "David Foster Wallace",
       "title": "《无尽的玩笑》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1728-000",
@@ -4976,7 +6228,11 @@
       "source_author": "Judy Blume",
       "target_author": "Judy Blume",
       "title": "聪明女人",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1730-005",
@@ -4997,7 +6253,11 @@
       "source_author": "André Breton",
       "target_author": "André Breton",
       "title": "娜嘉",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1732-000",
@@ -5014,11 +6274,15 @@
       "source_time": "thirty-two minutes past five o’clock",
       "target_time": "五点三十二分",
       "source_quote": "It was exactly thirty-two minutes past five o’clock on the evening of Friday, December 9th, when the station-master at Anerly received the following communication by wire from the signal box at Froest Hill: 5.28 down from London Bridge just passed.",
-      "target_quote": "12月9日星期五傍晚五点三十二分整，阿纳利车站站长收到弗罗斯特山信号站发来的电报：伦敦桥方向刚刚经过，时间是5点28分。",
+      "target_quote": "12月9日星期五傍晚五点三十二分整，阿纳利车站站长收到弗罗斯特山信号站发来的电报：5点28分从伦敦桥开出的下行列车刚刚通过。",
       "source_author": "Thomas W. Hanshew",
       "target_author": "Thomas W. Hanshew",
       "title": "侦探大师克里克",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "5.28 identifies the train departure, not the report time"
+      }
     },
     {
       "id": "1739-000",
@@ -5039,7 +6303,11 @@
       "source_author": "Emma Donoghue",
       "target_author": "Emma Donoghue",
       "title": "房间",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1740-001",
@@ -5060,7 +6328,11 @@
       "source_author": "Zhu Wen",
       "target_author": "Zhu Wen",
       "title": "我爱美元",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1741-000",
@@ -5081,7 +6353,11 @@
       "source_author": "Tanya Huff",
       "target_author": "Tanya Huff",
       "title": "英勇之心",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1744-000",
@@ -5102,7 +6378,11 @@
       "source_author": "John Updike",
       "target_author": "John Updike",
       "title": "《兔子有钱了》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1749-000",
@@ -5123,7 +6403,11 @@
       "source_author": "Jeffrey Archer",
       "target_author": "Jeffrey Archer",
       "title": "《光荣之路》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1800-012",
@@ -5144,7 +6428,11 @@
       "source_author": "Audrey Niffenegger",
       "target_author": "Audrey Niffenegger",
       "title": "《时间旅行者的妻子》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1802-000",
@@ -5165,7 +6453,11 @@
       "source_author": "Chris Walley",
       "target_author": "Chris Walley",
       "title": "阴影与夜晚",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1812-002",
@@ -5186,7 +6478,11 @@
       "source_author": "Thomas Hoover",
       "target_author": "Thomas Hoover",
       "title": "代达罗斯计划",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1812-003",
@@ -5207,7 +6503,11 @@
       "source_author": "Emma Donoghue",
       "target_author": "Emma Donoghue",
       "title": "房间",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1815-002",
@@ -5228,7 +6528,11 @@
       "source_author": "Sophie McKenzie",
       "target_author": "Sophie McKenzie",
       "title": "失踪女孩",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1818-001",
@@ -5249,7 +6553,11 @@
       "source_author": "Ben Trebilcook",
       "target_author": "Ben Trebilcook",
       "title": "我的名字不是雅各布·拉姆齐",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1826-000",
@@ -5270,7 +6578,11 @@
       "source_author": "Ananth",
       "target_author": "Ananth",
       "title": "和我一起玩",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1830-002",
@@ -5291,7 +6603,11 @@
       "source_author": "Sir Arthur Conan Doyle",
       "target_author": "Sir Arthur Conan Doyle",
       "title": "《福尔摩斯探案集》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1837-000",
@@ -5312,7 +6628,11 @@
       "source_author": "Jeffrey Archer",
       "target_author": "Jeffrey Archer",
       "title": "视而不见",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1915-003",
@@ -5333,7 +6653,11 @@
       "source_author": "J. Ryan Stradal",
       "target_author": "J. Ryan Stradal",
       "title": "大中西部厨房",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1915-004",
@@ -5354,7 +6678,11 @@
       "source_author": "J.G. Ballard",
       "target_author": "J.G. Ballard",
       "title": "时间之声",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1922-002",
@@ -5375,7 +6703,11 @@
       "source_author": "Frank Herbert",
       "target_author": "Frank Herbert",
       "title": "手术综合症",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1925-002",
@@ -5396,7 +6728,11 @@
       "source_author": "J. Ryan Stradal",
       "target_author": "J. Ryan Stradal",
       "title": "大中西部厨房",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1930-006",
@@ -5417,7 +6753,11 @@
       "source_author": "Christoph Ransmayr",
       "target_author": "Christoph Ransmayr",
       "title": "冰与黑暗的恐怖",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1930-008",
@@ -5438,7 +6778,11 @@
       "source_author": "Leonardo Sciascia",
       "target_author": "Leonardo Sciascia",
       "title": "一个简单的故事",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1939-002",
@@ -5455,11 +6799,15 @@
       "source_time": "7:39 P.M.",
       "target_time": "下午7:39",
       "source_quote": "7:39 P.M.<br>Eva and Braque made $180 at Jack Cermak’s before complains from the nosy wait staff and whiny-ass sore losers forced them out. Then they made a quick five bucks at the famous Every 1’s A Wiener hot dog stand in Andersonville just for taking a bite from a Fire Dog. Eva actually took two bites, because that’s just who she was.",
-      "target_quote": "下午7:39<br>伊娃和布拉克在杰克·切尔马克餐厅赚了180美元，但爱管闲事的服务员和输不起的怨妇们的抱怨迫使他们离开了。之后，他们在安德森维尔著名的“人人都是香肠”（Every 1’s A Wiener）热狗摊只咬了一口“火鸡热狗”（Fire Dog），就赚了5美元。伊娃实际上咬了两口，因为她就是这样的人。",
+      "target_quote": "下午7:39<br>伊娃和布拉克在杰克·切尔马克餐厅赚了180美元，但爱管闲事的服务员和输不起又爱抱怨的家伙们的抱怨迫使他们离开了。之后，他们在安德森维尔著名的“人人都是香肠”（Every 1’s A Wiener）热狗摊只咬了一口“烈火热狗”（Fire Dog），就赚了5美元。伊娃实际上咬了两口，因为她就是这样的人。",
       "source_author": "J. Ryan Stradal",
       "target_author": "J. Ryan Stradal",
       "title": "大中西部厨房",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "Fire Dog is not turkey; preserve original product name in parentheses; do not invent the gender of sore losers"
+      }
     },
     {
       "id": "1941-000",
@@ -5480,7 +6828,11 @@
       "source_author": "Jeffrey Archer",
       "target_author": "Jeffrey Archer",
       "title": "虚假印象",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1947-000",
@@ -5501,7 +6853,11 @@
       "source_author": "Thomas Hoover",
       "target_author": "Thomas Hoover",
       "title": "独眼巨人计划",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1952-000",
@@ -5522,7 +6878,11 @@
       "source_author": "Thomas Hoover",
       "target_author": "Thomas Hoover",
       "title": "独眼巨人计划",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "1953-001",
@@ -5543,7 +6903,11 @@
       "source_author": "Val McDermid",
       "target_author": "Val McDermid",
       "title": "行刑地",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2000-002",
@@ -5560,11 +6924,15 @@
       "source_time": "8:00 P.M.",
       "target_time": "晚上8点",
       "source_quote": "The ten directors now sitting in the conference room were irritable and impatient. It was 8:00 P.M. They had been talking among themselves for the last ten minutes, but slowly had fallen silent.",
-      "target_quote": "会议室里坐着的十位导演显得焦躁不安。现在是晚上8点。他们过去十分钟一直在交谈，但现在渐渐安静了下来。",
+      "target_quote": "会议室里坐着的十位董事显得焦躁不安。现在是晚上8点。他们过去十分钟一直在交谈，但现在渐渐安静了下来。",
       "source_author": "Michael Crichton",
       "target_author": "Michael Crichton",
       "title": "侏罗纪公园",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "company directors meeting, not film directors"
+      }
     },
     {
       "id": "2000-010",
@@ -5585,7 +6953,11 @@
       "source_author": "Mitch Albom",
       "target_author": "Mitch Albom",
       "title": "来自天堂的第一通电话",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2005-001",
@@ -5606,7 +6978,11 @@
       "source_author": "Mikhail Bulgakov",
       "target_author": "Mikhail Bulgakov",
       "title": "《狗的心》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2007-000",
@@ -5627,7 +7003,11 @@
       "source_author": "Mark Haddon",
       "target_author": "Mark Haddon",
       "title": "《深夜小狗神秘事件》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2010-000",
@@ -5648,7 +7028,11 @@
       "source_author": "Katherine Mansfield",
       "target_author": "Katherine Mansfield",
       "title": "致约翰·米德尔顿·默里的信",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2010-001",
@@ -5669,7 +7053,11 @@
       "source_author": "J. Ryan Stradal",
       "target_author": "J. Ryan Stradal",
       "title": "大中西部厨房",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2010-002",
@@ -5686,11 +7074,40 @@
       "source_time": "2010h.",
       "target_time": "20:10",
       "source_quote": "At 2010h. on 1 April Y.D.A.U., the medical attache is still watching the unlabelled entertainment cartridge.",
-      "target_quote": "2010年4月1日20:10，医疗专员仍在观看那盘未贴标签的娱乐卡带。",
+      "target_quote": "Y.D.A.U.年4月1日20:10，医疗专员仍在观看那盘未贴标签的娱乐卡带。",
       "source_author": "David Foster Wallace",
       "target_author": "David Foster Wallace",
       "title": "《无尽的玩笑》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "2010h is 20:10; preserve the fictional year label instead of inventing year 2010"
+      }
+    },
+    {
+      "id": "2018-000",
+      "locale": "zh-CN",
+      "line": 3113,
+      "source_locale": "en",
+      "time": "20:18",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "2018 hrs",
+      "target_time": "20:18",
+      "source_quote": "2018 hrs Katya has arrived at the Odessa Hotel. Barley and Katya are talking in the canteen. Wicklow and one irregular observing. More.",
+      "target_quote": "20:18 卡佳抵达敖德萨酒店。巴利和卡佳正在餐厅交谈。威克洛和一名不速之客在旁观察。更多。",
+      "source_author": "John le Carré",
+      "target_author": "John le Carré",
+      "title": "俄罗斯之家",
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "New digit-token alert caused by a reviewed repair: four-digit military clock is now written HH:MM, preserving the hour/minute rather than a duration."
+      }
     },
     {
       "id": "2022-000",
@@ -5711,7 +7128,11 @@
       "source_author": "Thomas Hoover",
       "target_author": "Thomas Hoover",
       "title": "独眼巨人计划",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2030-000",
@@ -5728,11 +7149,15 @@
       "source_time": "8:30 P.M.",
       "target_time": "晚上8:30",
       "source_quote": "The dogs gave up and started to wander by 8:30 P.M. John was numb by then. It was twenty degrees, and he was unsure how much longer he could stay on top of the truck exposed to the wind and cold.",
-      "target_quote": "到了晚上8:30，狗狗们放弃了，开始四处游荡。约翰那时已经麻木了。气温只有零下20度，他不知道自己还能在卡车顶上待多久，才能摆脱这凛冽的寒风。",
+      "target_quote": "到了晚上8:30，狗狗们放弃了，开始四处游荡。约翰那时已经麻木了。气温只有20度，他不知道自己还能在卡车顶上待多久，才能摆脱这凛冽的寒风。",
       "source_author": "Peter Rennebohm",
       "target_author": "Peter Rennebohm",
       "title": "法兰西溪",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "preserve unsigned source temperature; do not invent a minus sign or convert unspecified unit"
+      }
     },
     {
       "id": "2035-001",
@@ -5753,7 +7178,11 @@
       "source_author": "Bram Stoker",
       "target_author": "Bram Stoker",
       "title": "德古拉",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2045-002",
@@ -5774,7 +7203,11 @@
       "source_author": "Jules Verne",
       "target_author": "Jules Verne",
       "title": "《环游世界八十天》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2050-004",
@@ -5795,7 +7228,11 @@
       "source_author": "David Foster Wallace",
       "target_author": "David Foster Wallace",
       "title": "《无尽的玩笑》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2100-003",
@@ -5816,7 +7253,11 @@
       "source_author": "Michael Crichton",
       "target_author": "Michael Crichton",
       "title": "侏罗纪公园",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2100-016",
@@ -5837,7 +7278,11 @@
       "source_author": "David Foster Wallace",
       "target_author": "David Foster Wallace",
       "title": "《无尽的玩笑》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2104-001",
@@ -5858,7 +7303,11 @@
       "source_author": "Thomas Hoover",
       "target_author": "Thomas Hoover",
       "title": "独眼巨人计划",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2121-000",
@@ -5879,7 +7328,11 @@
       "source_author": "Edgar Rice Burroughs",
       "target_author": "Edgar Rice Burroughs",
       "title": "《泥巴》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2122-001",
@@ -5900,7 +7353,11 @@
       "source_author": "Chris Walley",
       "target_author": "Chris Walley",
       "title": "《无限之日》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2128-000",
@@ -5921,7 +7378,11 @@
       "source_author": "Jonathan Safran Foer",
       "target_author": "Jonathan Safran Foer",
       "title": "一切都被照亮了",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2134-000",
@@ -5938,11 +7399,15 @@
       "source_time": "9.34 p.m.",
       "target_time": "晚上9:34",
       "source_quote": "Thanks; expect me 9.34 p.m. 26th; which produced, three hours later, a reply: “Delighted; please bring a No. 3 Rippingille stove” — a perplexing and ominous direction, which somehow chilled me in spite of its subject matter.",
-      "target_quote": "谢谢；请于26日晚上9:34联系我；三个小时后，我收到回复：“很高兴；请带一个3号Rippingille炉子”——这则指示令人费解，又透着不祥之兆，尽管内容本身并不令人意外，却还是让我不寒而栗。",
+      "target_quote": "谢谢；我将于26日晚上9:34到达，请等我；三个小时后，我收到回复：“很高兴；请带一个3号Rippingille炉子”——这则指示令人费解，又透着不祥之兆，尽管内容本身并不令人意外，却还是让我不寒而栗。",
       "source_author": "Erskine Childers",
       "target_author": "Erskine Childers",
       "title": "沙滩之谜",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "expect me is arrival, not a request for a call"
+      }
     },
     {
       "id": "2144-000",
@@ -5963,7 +7428,36 @@
       "source_author": "Charles Stough",
       "target_author": "Charles Stough",
       "title": "石笛",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
+    },
+    {
+      "id": "2200-019",
+      "locale": "zh-CN",
+      "line": 3360,
+      "source_locale": "en",
+      "time": "22:00",
+      "reasons": [
+        {
+          "category": "numbers",
+          "detail": "Digit tokens differ; may be legitimate spelling or time-format localization"
+        }
+      ],
+      "source_time": "2200 hours",
+      "target_time": "22:00",
+      "source_quote": "He glanced at the clock. 2200 hours. Getting on toward midnight. He hurried to dress.",
+      "target_quote": "他瞥了一眼钟。22:00。快到午夜了。他赶紧穿好衣服。",
+      "source_author": "Michael Crichton",
+      "target_author": "Michael Crichton",
+      "title": "《安德洛墨达病毒》",
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "New digit-token alert caused by a reviewed repair: four-digit military clock is now written HH:MM, preserving the hour/minute rather than a duration."
+      }
     },
     {
       "id": "2204-000",
@@ -5984,7 +7478,11 @@
       "source_author": "Marc Sumerak",
       "target_author": "Marc Sumerak",
       "title": "回到未来：穿越时空",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2212-002",
@@ -6005,7 +7503,11 @@
       "source_author": "David Foster Wallace",
       "target_author": "David Foster Wallace",
       "title": "《无尽的玩笑》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2214-000",
@@ -6026,7 +7528,11 @@
       "source_author": "David Foster Wallace",
       "target_author": "David Foster Wallace",
       "title": "无尽的玩笑",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2221-001",
@@ -6047,7 +7553,11 @@
       "source_author": "David Foster Wallace",
       "target_author": "David Foster Wallace",
       "title": "《无尽的玩笑》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2226-000",
@@ -6068,7 +7578,11 @@
       "source_author": "Jeffrey Archer",
       "target_author": "Jeffrey Archer",
       "title": "《保守得最好的秘密》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2227-001",
@@ -6089,7 +7603,11 @@
       "source_author": "A.G. Macdonell",
       "target_author": "A.G. Macdonell",
       "title": "《英格兰，他们的英格兰》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2230-006",
@@ -6110,7 +7628,11 @@
       "source_author": "Fitz Hugh Ludlow",
       "target_author": "Fitz Hugh Ludlow",
       "title": "《大麻食者》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_compact_translation",
+        "reason": "The Chinese sentence preserves late administration of the dose and onset at half past ten; shorter character count is not an omission."
+      }
     },
     {
       "id": "2239-000",
@@ -6131,7 +7653,11 @@
       "source_author": "Thomas Hoover",
       "target_author": "Thomas Hoover",
       "title": "综合症",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2246-000",
@@ -6152,7 +7678,11 @@
       "source_author": "Erskine Childers",
       "target_author": "Erskine Childers",
       "title": "沙滩之谜",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2256-000",
@@ -6173,7 +7703,11 @@
       "source_author": "Raymond Chandler",
       "target_author": "Raymond Chandler",
       "title": "《再见，吾爱》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2308-001",
@@ -6194,7 +7728,11 @@
       "source_author": "Michael Crichton",
       "target_author": "Michael Crichton",
       "title": "《仙女座病毒》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2311-001",
@@ -6215,7 +7753,11 @@
       "source_author": "Joan Didion",
       "target_author": "Joan Didion",
       "title": "奇想之年",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2312-001",
@@ -6236,7 +7778,11 @@
       "source_author": "Sergio De La Pava",
       "target_author": "Sergio De La Pava",
       "title": "赤裸奇点",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2313-000",
@@ -6257,7 +7803,11 @@
       "source_author": "Chris Walley",
       "target_author": "Chris Walley",
       "title": "《无限之日》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2315-002",
@@ -6278,7 +7828,11 @@
       "source_author": "Helen Fielding",
       "target_author": "Helen Fielding",
       "title": "BJ单身日记",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2316-001",
@@ -6295,11 +7849,15 @@
       "source_time": "11.16 p.m.",
       "target_time": "晚上11点16分",
       "source_quote": "But I couldn’t get out of the house straightaway because he would see me, so I would have to wait until he was asleep.<br>The time was 11.16 p.m.<br>I tried doubling 2s again, but I couldn’t get past 2(15) which was 32,768. So I groaned to make the time pass quicker and not think.",
-      "target_quote": "但我不能马上出门，因为他会看到我，所以我得等到他睡着了。<br>时间是晚上11点16分。<br>我又试着把2乘以2，但我算不出2(15)之后的数字，也就是32768。所以我呻吟了一声，想让时间过得快点，不想去想。",
+      "target_quote": "但我不能马上出门，因为他会看到我，所以我得等到他睡着了。<br>时间是晚上11点16分。<br>我又试着从2开始不断翻倍，但算到2的15次方，也就是32768，就再也算不下去了。所以我呻吟了一声，想让时间过得快点，不想去想。",
       "source_author": "Mark Haddon",
       "target_author": "Mark Haddon",
       "title": "《深夜小狗神秘事件》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "corrected",
+        "reason": "preserve repeated doubling and exponent 2^15"
+      }
     },
     {
       "id": "2318-000",
@@ -6320,7 +7878,11 @@
       "source_author": "Chris Walley",
       "target_author": "Chris Walley",
       "title": "《无限之日》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2322-000",
@@ -6341,7 +7903,11 @@
       "source_author": "Chris Walley",
       "target_author": "Chris Walley",
       "title": "《无限之日》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2324-000",
@@ -6362,7 +7928,11 @@
       "source_author": "Thomas Hoover",
       "target_author": "Thomas Hoover",
       "title": "独眼巨人计划",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2336-000",
@@ -6383,7 +7953,11 @@
       "source_author": "David Foster Wallace",
       "target_author": "David Foster Wallace",
       "title": "《无尽的玩笑》",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2348-002",
@@ -6404,7 +7978,11 @@
       "source_author": "James Ellroy",
       "target_author": "James Ellroy",
       "title": "美国小报",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2352-000",
@@ -6425,7 +8003,11 @@
       "source_author": "Ottessa Moshfegh",
       "target_author": "Ottessa Moshfegh",
       "title": "我的休息与放松之年",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     },
     {
       "id": "2354-000",
@@ -6446,7 +8028,11 @@
       "source_author": "Greg Tobin",
       "target_author": "Greg Tobin",
       "title": "会议",
-      "draft": false
+      "draft": false,
+      "second_pass_review": {
+        "outcome": "retained_localization",
+        "reason": "Quantities and dates compared with declared source; digit/word spelling, separators, leading zeros, date order, numeral units and time localization may differ."
+      }
     }
   ]
 }
