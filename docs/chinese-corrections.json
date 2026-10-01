@@ -5074,7 +5074,8 @@
       "id": "0919-000",
       "reasons": [
         "recover shifted CSV columns",
-        "equivalent_time"
+        "equivalent_time",
+        "resolve jointly approved context/source finding"
       ],
       "changes": {
         "Quote time": {
@@ -5083,11 +5084,15 @@
         },
         "Quote": {
           "before": "《邦蒂号叛变》",
-          "after": "根据记载，上午九点十九分是满水位：我观察到洪水从南面涌来，但在复兴岛，我以为是从北面涌来的。"
+          "after": "据此推算，在满月和新月时，上午九点十九分达到高潮：我观察到涨潮的潮流来自南方，不过在复兴岛时，我以为潮流来自北方。"
         },
         "Title": {
           "before": "威廉·布莱船长",
           "after": "《邦蒂号叛变》"
+        },
+        "Draft": {
+          "before": "true",
+          "after": "false"
         }
       }
     },
@@ -7432,6 +7437,22 @@
       }
     },
     {
+      "id": "1430-008",
+      "reasons": [
+        "resolve jointly approved context/source finding"
+      ],
+      "changes": {
+        "Quote": {
+          "before": "下午两点半叫醒旅行者实在太可惜了，但奥利维拉握着指甲的手指已经淤青了；被困的血开始渗出来，让他的手指看起来像劣质小香肠，真是令人作呕。",
+          "after": "下午两点半叫醒Traveler实在让人为难，但奥利维拉夹着钉子的手指已经青紫了；淤积的血开始向外渗出，使那些手指看起来像做得很糟的小香肠，实在令人作呕。"
+        },
+        "Draft": {
+          "before": "true",
+          "after": "false"
+        }
+      }
+    },
+    {
       "id": "1435-000",
       "reasons": [
         "equivalent_time"
@@ -7718,7 +7739,8 @@
     {
       "id": "1500-038",
       "reasons": [
-        "retranslate missing or corrupt passage from declared source"
+        "retranslate missing or corrupt passage from declared source",
+        "resolve jointly approved context/source finding"
       ],
       "changes": {
         "Quote time": {
@@ -7732,6 +7754,14 @@
         "Title": {
           "before": "英文",
           "after": "Casino Royale"
+        },
+        "Time": {
+          "before": "15:00",
+          "after": "03:00"
+        },
+        "Draft": {
+          "before": "true",
+          "after": "false"
         }
       }
     },
@@ -10240,7 +10270,8 @@
       "id": "2156-000",
       "reasons": [
         "source-based time or wording correction",
-        "time highlight correction"
+        "time highlight correction",
+        "resolve jointly approved context/source finding"
       ],
       "changes": {
         "Quote time": {
@@ -10249,7 +10280,11 @@
         },
         "Quote": {
           "before": "他伸手去拿手表，发现小比利的包已经打开了他的大衣。他划了一根火柴，发现还剩四分十点——还有四分钟就到下一个拐角了。他两分钟就能到，不过他还是得动身了。",
-          "after": "他伸手去拿手表，发现小比利的包已经打开了他的大衣。他划了一根火柴，发现还有四分钟就到十点——还有四分钟就到下一个拐角了。他两分钟就能到，不过他还是得动身了。"
+          "after": "他伸手去拿怀表，发现小比利刚才的一抓已把他的大衣扯开了。他划了一根火柴，看清还有四分钟就到十点——他还有四分钟赶到下一个街角。两分钟就能赶到，不过也该动身了。"
+        },
+        "Draft": {
+          "before": "true",
+          "after": "false"
         }
       }
     },
@@ -10515,7 +10550,8 @@
       "id": "2250-001",
       "reasons": [
         "reviewed mistranslated time or dialogue",
-        "correct matching time highlight"
+        "correct matching time highlight",
+        "resolve jointly approved context/source finding"
       ],
       "changes": {
         "Quote time": {
@@ -10524,7 +10560,11 @@
         },
         "Quote": {
           "before": "星期六晚上。我说：“今年是一百度，没人注意到吗？”杰克问：“一百度是什么意思？”我说：“酒吧是，教练是。看看表。”杰克说：“差十点到十一点。”",
-          "after": "星期六晚上。我说：“今年是一百度，没人注意到吗？”杰克问：“一百度是什么意思？”我说：“酒吧是，教练是。看看表。”杰克说：“差十分钟到十一点。”"
+          "after": "星期六晚上。我说：“今年满一百年了，难道没人注意到吗？”杰克问：“什么满一百年了？”我说：“这家酒吧啊，Coach啊。看看钟。”杰克说：“差十分钟到十一点。”"
+        },
+        "Draft": {
+          "before": "true",
+          "after": "false"
         }
       }
     },
@@ -10929,7 +10969,7 @@
       }
     }
   ],
-  "changed_rows": 846,
+  "changed_rows": 847,
   "draft_status_changes": [
     {
       "id": "0000-002",
@@ -14854,7 +14894,7 @@
     {
       "id": "2250-001",
       "before": "false",
-      "after": "true"
+      "after": "false"
     },
     {
       "id": "2250-002",
@@ -15005,6 +15045,182 @@
       "id": "2357-000",
       "before": "true",
       "after": "false"
+    }
+  ],
+  "approved_followup_changes": [
+    {
+      "catalogue": "quotes.de-DE.csv",
+      "id": "1500-038",
+      "changes": {
+        "Time": {
+          "before": "15:00",
+          "after": "03:00"
+        }
+      }
+    },
+    {
+      "catalogue": "quotes.el-GR.csv",
+      "id": "1500-038",
+      "changes": {
+        "Time": {
+          "before": "15:00",
+          "after": "03:00"
+        }
+      }
+    },
+    {
+      "catalogue": "quotes.en-GB.csv",
+      "id": "0919-000",
+      "changes": {
+        "Quote": {
+          "before": "According to this, it is high-water on the full and charge at nineteen minutes past nine in the morning: I observed the flood to come from southward, though at Restoration Island, I thought it came from the northward.",
+          "after": "According to this, it is high-water on the full and change at nineteen minutes past nine in the morning: I observed the flood to come from southward, though at Restoration Island, I thought it came from the northward."
+        }
+      }
+    },
+    {
+      "catalogue": "quotes.en-GB.csv",
+      "id": "1500-038",
+      "changes": {
+        "Time": {
+          "before": "15:00",
+          "after": "03:00"
+        }
+      }
+    },
+    {
+      "catalogue": "quotes.en-US.csv",
+      "id": "0919-000",
+      "changes": {
+        "Quote": {
+          "before": "According to this, it is high-water on the full and charge at nineteen minutes past nine in the morning: I observed the flood to come from southward, though at Restoration Island, I thought it came from the northward.",
+          "after": "According to this, it is high-water on the full and change at nineteen minutes past nine in the morning: I observed the flood to come from southward, though at Restoration Island, I thought it came from the northward."
+        }
+      }
+    },
+    {
+      "catalogue": "quotes.en-US.csv",
+      "id": "1500-038",
+      "changes": {
+        "Time": {
+          "before": "15:00",
+          "after": "03:00"
+        }
+      }
+    },
+    {
+      "catalogue": "quotes.es-ES.csv",
+      "id": "1500-038",
+      "changes": {
+        "Time": {
+          "before": "15:00",
+          "after": "03:00"
+        }
+      }
+    },
+    {
+      "catalogue": "quotes.fr-FR.csv",
+      "id": "1500-038",
+      "changes": {
+        "Time": {
+          "before": "15:00",
+          "after": "03:00"
+        }
+      }
+    },
+    {
+      "catalogue": "quotes.it-IT.csv",
+      "id": "1500-038",
+      "changes": {
+        "Time": {
+          "before": "15:00",
+          "after": "03:00"
+        }
+      }
+    },
+    {
+      "catalogue": "quotes.pt-PT.csv",
+      "id": "1500-038",
+      "changes": {
+        "Time": {
+          "before": "15:00",
+          "after": "03:00"
+        }
+      }
+    },
+    {
+      "catalogue": "quotes.zh-CN.csv",
+      "id": "0919-000",
+      "changes": {
+        "Quote": {
+          "before": "根据记载，上午九点十九分是满水位：我观察到洪水从南面涌来，但在复兴岛，我以为是从北面涌来的。",
+          "after": "据此推算，在满月和新月时，上午九点十九分达到高潮：我观察到涨潮的潮流来自南方，不过在复兴岛时，我以为潮流来自北方。"
+        },
+        "Draft": {
+          "before": "true",
+          "after": "false"
+        }
+      }
+    },
+    {
+      "catalogue": "quotes.zh-CN.csv",
+      "id": "1430-008",
+      "changes": {
+        "Quote": {
+          "before": "下午两点半叫醒旅行者实在太可惜了，但奥利维拉握着指甲的手指已经淤青了；被困的血开始渗出来，让他的手指看起来像劣质小香肠，真是令人作呕。",
+          "after": "下午两点半叫醒Traveler实在让人为难，但奥利维拉夹着钉子的手指已经青紫了；淤积的血开始向外渗出，使那些手指看起来像做得很糟的小香肠，实在令人作呕。"
+        },
+        "Draft": {
+          "before": "true",
+          "after": "false"
+        }
+      }
+    },
+    {
+      "catalogue": "quotes.zh-CN.csv",
+      "id": "1500-038",
+      "changes": {
+        "Time": {
+          "before": "15:00",
+          "after": "03:00"
+        },
+        "Draft": {
+          "before": "true",
+          "after": "false"
+        }
+      }
+    },
+    {
+      "catalogue": "quotes.zh-CN.csv",
+      "id": "2156-000",
+      "changes": {
+        "Quote time": {
+          "before": "还有四分钟就到十点",
+          "after": "还有四分钟就到十点"
+        },
+        "Quote": {
+          "before": "他伸手去拿手表，发现小比利的包已经打开了他的大衣。他划了一根火柴，发现还有四分钟就到十点——还有四分钟就到下一个拐角了。他两分钟就能到，不过他还是得动身了。",
+          "after": "他伸手去拿怀表，发现小比利刚才的一抓已把他的大衣扯开了。他划了一根火柴，看清还有四分钟就到十点——他还有四分钟赶到下一个街角。两分钟就能赶到，不过也该动身了。"
+        },
+        "Draft": {
+          "before": "true",
+          "after": "false"
+        }
+      }
+    },
+    {
+      "catalogue": "quotes.zh-CN.csv",
+      "id": "2250-001",
+      "changes": {
+        "Quote": {
+          "before": "星期六晚上。我说：“今年是一百度，没人注意到吗？”杰克问：“一百度是什么意思？”我说：“酒吧是，教练是。看看表。”杰克说：“差十分钟到十一点。”",
+          "after": "星期六晚上。我说：“今年满一百年了，难道没人注意到吗？”杰克问：“什么满一百年了？”我说：“这家酒吧啊，Coach啊。看看钟。”杰克说：“差十分钟到十一点。”"
+        },
+        "Draft": {
+          "before": "true",
+          "after": "false"
+        }
+      }
     }
   ]
 }

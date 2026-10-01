@@ -4,9 +4,9 @@
   "authors_restored": 3564,
   "progress": {
     "quotes_total": 3640,
-    "quotes_published": 3635,
-    "quotes_draft": 5,
-    "publication_progress": 99.86
+    "quotes_published": 3640,
+    "quotes_draft": 0,
+    "publication_progress": 100.0
   },
   "coverage": {
     "rows": 3640,
@@ -15,14 +15,11 @@
   },
   "categories": {
     "numbers": 305,
-    "length": 1,
-    "character_name": 1,
-    "context": 3,
-    "source_slot": 1
+    "length": 1
   },
-  "candidate_rows": 311,
+  "candidate_rows": 306,
   "strict_structural_errors": 0,
-  "pending_context_rows": 5,
+  "pending_context_rows": 0,
   "time_pairs_unparsed": 946,
   "findings": [
     {
@@ -2504,23 +2501,6 @@
       "draft": false
     },
     {
-      "id": "0919-000",
-      "locale": "zh-CN",
-      "time": "09:19",
-      "source_time": "nineteen minutes past nine in the morning",
-      "target_time": "上午九点十九分",
-      "source_quote": "According to this, it is high-water on the full and charge at nineteen minutes past nine in the morning: I observed the flood to come from southward, though at Restoration Island, I thought it came from the northward.",
-      "target_quote": "根据记载，上午九点十九分是满水位：我观察到洪水从南面涌来，但在复兴岛，我以为是从北面涌来的。",
-      "title": "《邦蒂号叛变》",
-      "reasons": [
-        {
-          "category": "context",
-          "detail": "The supplied translation misreads high-water and full and charge (possibly a source typo for full and change). Tidal terminology and the source wording need contextual verification."
-        }
-      ],
-      "draft": true
-    },
-    {
       "id": "0922-001",
       "locale": "zh-CN",
       "line": 1374,
@@ -4369,23 +4349,6 @@
       "draft": false
     },
     {
-      "id": "1430-008",
-      "locale": "zh-CN",
-      "time": "14:30",
-      "source_time": "dos y media de la tarde",
-      "target_time": "下午两点半",
-      "source_quote": "Era penoso despertar a Traveler a las dos y media de la tarde, pero Oliveira tenía ya amoratados los dedos con que sujetaba los clavos, la sangre machucada empezaba a extravasarse, dando a los dedos un aire de chipolatas mal hechas que era realmente repugnante.",
-      "target_quote": "下午两点半叫醒旅行者实在太可惜了，但奥利维拉握着指甲的手指已经淤青了；被困的血开始渗出来，让他的手指看起来像劣质小香肠，真是令人作呕。",
-      "title": "跳房子",
-      "reasons": [
-        {
-          "category": "character_name",
-          "detail": "Traveler is a character name, rendered as the common noun 旅行者. Decide whether to preserve Traveler or use an established Chinese name."
-        }
-      ],
-      "draft": true
-    },
-    {
       "id": "1432-000",
       "locale": "zh-CN",
       "line": 2215,
@@ -4468,23 +4431,6 @@
       "target_author": "Walter Jon Williams",
       "title": "《火烧城市》",
       "draft": false
-    },
-    {
-      "id": "1500-038",
-      "locale": "zh-CN",
-      "time": "15:00",
-      "source_time": "at three",
-      "target_time": "凌晨三点",
-      "source_quote": "The scent and smoke and sweat of a casino are nauseating at three in the morning. Then the soul-erosion produced by high gambling — a compost of greed and fear and nervous tension — becomes unbearable and the senses awake and revolt from it.",
-      "target_quote": "凌晨三点，赌场里的气味、烟雾和汗味令人作呕。接着，豪赌带来的灵魂侵蚀——贪婪、恐惧和精神紧张混杂成的堆肥——变得无法忍受，感官从麻木中醒来，开始反抗。",
-      "title": "Casino Royale",
-      "reasons": [
-        {
-          "category": "source_slot",
-          "detail": "The declared source passage explicitly says three in the morning, but its source Time slot is 15:00. Translation now preserves the source AM wording. Resolve source slot across catalogues before publishing this row."
-        }
-      ],
-      "draft": true
     },
     {
       "id": "1502-000",
@@ -6020,23 +5966,6 @@
       "draft": false
     },
     {
-      "id": "2156-000",
-      "locale": "zh-CN",
-      "time": "21:56",
-      "source_time": "four minutes to ten",
-      "target_time": "还有四分钟就到十点",
-      "source_quote": "He reached for his watch and noted that Little Billy’s clutch had opened his overcoat. He struck a match and discovered it was four minutes to ten—four minutes to reach the next corner. He could make it in two, still it was time he was moving.",
-      "target_quote": "他伸手去拿手表，发现小比利的包已经打开了他的大衣。他划了一根火柴，发现还有四分钟就到十点——还有四分钟就到下一个拐角了。他两分钟就能到，不过他还是得动身了。",
-      "title": "火山",
-      "reasons": [
-        {
-          "category": "context",
-          "detail": "Time is repaired. Little Billy’s clutch is rendered as his bag; establish the physical action before rewriting the sentence."
-        }
-      ],
-      "draft": true
-    },
-    {
       "id": "2204-000",
       "locale": "zh-CN",
       "line": 3375,
@@ -6224,23 +6153,6 @@
       "target_author": "Erskine Childers",
       "title": "沙滩之谜",
       "draft": false
-    },
-    {
-      "id": "2250-001",
-      "locale": "zh-CN",
-      "time": "22:50",
-      "source_time": "ten to eleven",
-      "target_time": "差十分钟到十一点",
-      "source_quote": "Saturday night. And I said, “It’s a hundred this year, ain’t anybody noticed?” Jack said, “What’s a hundred?” I said, “Pub is. Coach is. Look at the clock.” Jack said, “It’s ten to eleven.”",
-      "target_quote": "星期六晚上。我说：“今年是一百度，没人注意到吗？”杰克问：“一百度是什么意思？”我说：“酒吧是，教练是。看看表。”杰克说：“差十分钟到十一点。”",
-      "title": "最后点单",
-      "reasons": [
-        {
-          "category": "context",
-          "detail": "Time is repaired, but the pub/Coach/hundred exchange is still rendered as degrees and a coach/trainer. Verify the pub name and the anniversary reference before replacing the dialogue."
-        }
-      ],
-      "draft": true
     },
     {
       "id": "2256-000",

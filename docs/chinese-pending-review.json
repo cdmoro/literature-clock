@@ -1,30 +1,4 @@
 {
-  "scope": "Context/source issues reserved for joint review; other heuristic numeric candidates are not automatically errors.",
-  "findings": [
-    {
-      "id": "1430-008",
-      "category": "character_name",
-      "reason": "Traveler is a character name, rendered as the common noun 旅行者. Decide whether to preserve Traveler or use an established Chinese name."
-    },
-    {
-      "id": "0919-000",
-      "category": "context",
-      "reason": "The supplied translation misreads high-water and full and charge (possibly a source typo for full and change). Tidal terminology and the source wording need contextual verification."
-    },
-    {
-      "id": "2250-001",
-      "category": "context",
-      "reason": "Time is repaired, but the pub/Coach/hundred exchange is still rendered as degrees and a coach/trainer. Verify the pub name and the anniversary reference before replacing the dialogue."
-    },
-    {
-      "id": "2156-000",
-      "category": "context",
-      "reason": "Time is repaired. Little Billy’s clutch is rendered as his bag; establish the physical action before rewriting the sentence."
-    },
-    {
-      "id": "1500-038",
-      "category": "source_slot",
-      "reason": "The declared source passage explicitly says three in the morning, but its source Time slot is 15:00. Translation now preserves the source AM wording. Resolve source slot across catalogues before publishing this row."
-    }
-  ]
+  "scope": "All five jointly reviewed context/source findings have been resolved. See CHINESE_PENDING_REVIEW.md for decisions and sources.",
+  "findings": []
 }

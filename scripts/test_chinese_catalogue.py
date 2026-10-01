@@ -55,6 +55,25 @@ class ChineseCatalogueTest(unittest.TestCase):
             self.assertNotEqual(self.index[a]['Quote time'], self.index[b]['Quote time'])
         self.assertEqual(self.index['0950-003']['Quote'], self.index['2150-002']['Quote'])
 
+    def test_jointly_reviewed_passages_are_enabled_and_source_slots_agree(self):
+        for identifier in ['1430-008', '0919-000', '2250-001', '2156-000', '1500-038']:
+            self.assertFalse(is_draft(self.index[identifier]))
+        self.assertIn('Traveler', self.index['1430-008']['Quote'])
+        self.assertIn('钉子', self.index['1430-008']['Quote'])
+        self.assertIn('满月和新月', self.index['0919-000']['Quote'])
+        self.assertIn('Coach', self.index['2250-001']['Quote'])
+        self.assertNotIn('一百度', self.index['2250-001']['Quote'])
+        self.assertIn('扯开', self.index['2156-000']['Quote'])
+        self.assertEqual(clock_phrase(self.index['2156-000']['Quote time']), 596)
+        for path in (ROOT / 'quotes').glob('quotes.*.csv'):
+            rows = {row['Id']: row for row in read_catalogue(path)}
+            with self.subTest(catalogue=path.name):
+                self.assertEqual(rows['1500-038']['Time'], '03:00')
+                self.assertNotEqual(rows['1500-038']['Quote'], rows['0300-002']['Quote'])
+        for locale in ['en-GB', 'en-US']:
+            rows = {row['Id']: row for row in read_catalogue(ROOT / f'quotes/quotes.{locale}.csv')}
+            self.assertIn('full and change', rows['0919-000']['Quote'])
+
     def test_context_and_source_slot_drafts_do_not_enter_public_json(self):
         pending = json.loads((ROOT / 'docs/chinese-pending-review.json').read_text())['findings']
         identifiers = {row['id'] for row in pending if is_draft(self.index[row['id']])}
