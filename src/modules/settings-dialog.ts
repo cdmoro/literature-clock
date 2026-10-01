@@ -83,8 +83,14 @@ export function initSettingsDialog() {
     'beforeend',
     `
     <fieldset id="quote-languages"><legend data-text="settings_quote_languages">Quote languages</legend>
-      <div id="quote-language-options" aria-describedby="quote-languages-help"></div>
-      <p id="quote-languages-help" class="settings-help"><span data-text="settings_languages_help">Choose languages to rotate through. If none are selected, quotes use the interface language.</span> <span id="select-all-languages-row"><a id="select-all-languages" href="#" data-text="settings_select_all">Select all</a><span id="clear-languages-action" hidden> · <a id="clear-languages" href="#" data-text="settings_clear_selection">Clear selection</a></span>.</span></p>
+      <details id="quote-language-picker">
+        <summary aria-describedby="quote-languages-help"><span id="quote-language-summary"></span></summary>
+        <div class="quote-language-menu">
+          <p id="select-all-languages-row"><a id="select-all-languages" href="#" data-text="settings_select_all">Select all</a><span id="clear-languages-action" hidden> · <a id="clear-languages" href="#" data-text="settings_clear_selection">Clear selection</a></span></p>
+          <div id="quote-language-options"></div>
+        </div>
+      </details>
+      <p id="quote-languages-help" class="settings-help" data-text="settings_languages_help">Choose languages to rotate through. If none are selected, quotes use the interface language.</p>
     </fieldset>`,
   );
   const hideTitle = document.createElement('button');

@@ -13,10 +13,9 @@ export function initLanguagePreferences() {
     selected = store.get('random-locale') ? Array.from(select.options, (option) => option.value as Locale) : [];
   const inputs = Array.from(select.options, (option) => {
     const label = document.createElement('label');
-    label.className = 'language-chip';
+    label.className = 'quote-language-option';
     const input = document.createElement('input');
     input.type = 'checkbox';
-    input.className = 'sr-only';
     input.value = option.value;
     input.checked = selected.includes(option.value as Locale);
     label.append(input, document.createElement('span'));
@@ -30,6 +29,10 @@ export function initLanguagePreferences() {
       const name = (option.textContent || option.value).replace(`(${option.value})`, '').trim();
       input.nextElementSibling!.textContent = `${name} (${option.value})`;
     });
+    const chosen = inputs.filter((input) => input.checked);
+    document.getElementById('quote-language-summary')!.textContent = chosen.length
+      ? chosen.map((input) => input.nextElementSibling!.textContent).join(', ')
+      : select.selectedOptions[0]?.textContent || select.value;
   };
   const changeQuoteLanguages = (languages: Locale[]) => {
     // Keep the current UI language when choosing a different quote catalogue.
@@ -57,6 +60,17 @@ export function initLanguagePreferences() {
       input.checked = true;
     });
     changeQuoteLanguages(inputs.map((input) => input.value as Locale));
+  });
+  const picker = document.querySelector<HTMLDetailsElement>('#quote-language-picker')!;
+  picker.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape' || !picker.open) return;
+    event.preventDefault();
+    event.stopPropagation();
+    picker.open = false;
+    picker.querySelector('summary')!.focus();
+  });
+  document.getElementById('settings-dialog')!.addEventListener('close', () => {
+    picker.open = false;
   });
   document.getElementById('clear-languages')!.addEventListener('click', (event) => {
     event.preventDefault();

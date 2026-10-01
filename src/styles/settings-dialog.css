@@ -135,33 +135,69 @@
 #quote-languages legend {
   margin-bottom: 0.5rem;
 }
-#quote-language-options {
+#quote-language-picker summary {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-.language-chip {
-  position: relative;
-  cursor: pointer;
-}
-.language-chip span {
-  display: block;
-  padding: 0.35rem 0.7rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.4rem 0.6rem;
   border: 1px solid color-mix(in srgb, var(--font-color), transparent 65%);
-  border-radius: 2rem;
-  font-size: 0.8rem;
+  border-radius: 0.35rem;
+  cursor: pointer;
+  list-style: none;
 }
-.language-chip:has(input:checked) span {
-  background: var(--accent-color);
-  border-color: var(--accent-color);
-  color: var(--background);
+#quote-language-picker summary::-webkit-details-marker {
+  display: none;
 }
-.language-chip:has(input:focus-visible) span {
+#quote-language-picker summary::after {
+  content: '';
+  flex: 0 0 0.4rem;
+  height: 0.4rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  margin: -0.2rem 0.2rem 0 0;
+}
+#quote-language-summary {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#quote-language-picker summary:focus-visible {
   outline: 2px solid var(--accent-color);
   outline-offset: 3px;
 }
-.language-chip:hover span {
-  border-color: var(--accent-color);
+.quote-language-menu {
+  margin-top: 0.4rem;
+  padding: 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 75%);
+  border-radius: 0.35rem;
+}
+#select-all-languages-row {
+  margin: 0 0 0.4rem;
+  font-size: 0.8rem;
+}
+#quote-language-options {
+  display: grid;
+  max-height: 14rem;
+  overflow-y: auto;
+  gap: 0.15rem;
+  padding: 0.2rem;
+}
+.quote-language-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.quote-language-option input {
+  flex: 0 0 auto;
+  accent-color: var(--accent-color);
+}
+.quote-language-option:hover {
+  background: color-mix(in srgb, var(--font-color), transparent 94%);
 }
 #select-all-languages {
   text-decoration: underline;

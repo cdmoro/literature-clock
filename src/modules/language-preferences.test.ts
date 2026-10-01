@@ -31,7 +31,7 @@ function selectUi(value: string) {
   select.dispatchEvent(new Event('change'));
 }
 
-test('chips start empty and interface changes update the quote language', () => {
+test('language choices start empty and interface changes update the quote language', () => {
   history.replaceState({}, '', '/?locale=en-US');
   init();
   expect(document.getElementById('follow-ui-language')).toBeNull();
@@ -41,6 +41,30 @@ test('chips start empty and interface changes update the quote language', () => 
   selectUi('es-ES');
   expect(store.get('locale')).toBe('es-ES');
   expect(document.querySelectorAll('#quote-language-options input:checked')).toHaveLength(0);
+});
+
+test('collapsed picker summarizes selected languages and closes on Escape or dialog close', () => {
+  init();
+  const picker = document.querySelector<HTMLDetailsElement>('#quote-language-picker')!;
+  const summary = picker.querySelector('summary')!;
+  const caption = document.getElementById('quote-language-summary')!;
+  expect(picker.open).toBe(false);
+  expect(caption.textContent).toBe(
+    document.querySelector<HTMLSelectElement>('#ui-locale-select')!.selectedOptions[0].textContent,
+  );
+  picker.open = true;
+  language('fr-FR').click();
+  language('el-GR').click();
+  expect(picker.open).toBe(true);
+  expect(caption.textContent).toContain('(fr-FR)');
+  expect(caption.textContent).toContain('(el-GR)');
+  language('fr-FR').dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+  expect(picker.open).toBe(false);
+  expect(document.activeElement).toBe(summary);
+  picker.open = true;
+  document.getElementById('settings-dialog')!.dispatchEvent(new Event('close'));
+  expect(picker.open).toBe(false);
+  expect(store.get('quote-locales')).toBe('fr-FR,el-GR');
 });
 
 test('explicit selections rotate only chosen languages and preserve the interface', () => {
