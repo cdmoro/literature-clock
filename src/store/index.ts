@@ -65,7 +65,7 @@ const THEMES =
   /^(base|pink|green|orange|purple|blue|gray|color|retro|elegant|festive|bohemian|book|handwriting|anaglyph|whatsapp|terminal|frame|subtle|poster|horizon|dynamic|photo|kindle)(-(system|light|dark))?$/;
 const TEMPORARY_KEYS = new Set(['time', 'quote', 'quote-id', 'scene', 'progress', 'index', 'static']);
 
-function validateSettings(input: unknown, fromUrl: boolean): Partial<State> {
+export function validateSettings(input: unknown, fromUrl: boolean): Partial<State> {
   if (!input || typeof input !== 'object' || Array.isArray(input)) return {};
   const result: Record<string, string | boolean> = {};
   for (const [key, raw] of Object.entries(input)) {

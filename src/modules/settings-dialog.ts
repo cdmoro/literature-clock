@@ -1,4 +1,5 @@
 import { store } from '../store';
+import { initSavedThemes } from './saved-themes';
 import { initThemePicker } from './theme-picker';
 import { readingIcon } from './reading-icons';
 import { closeDialogOnBackdropClick } from '../utils/dialog';
@@ -175,6 +176,7 @@ export function initSettingsDialog() {
   }
 
   initThemePicker(dialog);
+  initSavedThemes(dialog);
 
   // Moving controls leaves whitespace-only wrappers that still occupy a flex gap.
   toolbar.querySelectorAll(':scope > span').forEach((group) => {

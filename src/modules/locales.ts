@@ -140,6 +140,10 @@ export function translateStrings(locale: Locale) {
     .querySelectorAll<HTMLElement>('[data-text]')
     .forEach((el) => (el.textContent = strings[el.dataset.text as keyof Translations]));
 
+  document.querySelectorAll<HTMLInputElement>('[data-placeholder]').forEach((el) => {
+    el.placeholder = strings[el.dataset.placeholder as keyof typeof strings];
+  });
+
   refreshDefaultFontLabel();
 
   document
