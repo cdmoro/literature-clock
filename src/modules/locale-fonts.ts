@@ -3,15 +3,19 @@ import { loadFontIfNotExists } from '../utils';
 // Alternatives belong to the passage language, including unregistered draft
 // catalogues; the interface language can be different.
 export const LOCALE_THEME_FONTS: Record<string, Record<string, string>> = {
-  base: { el: 'Sansation', zh: 'Noto Sans SC' },
-  retro: { el: 'Handjet', zh: 'ZCOOL QingKe HuangYou' },
-  handwriting: { el: 'Mansalva', zh: 'Long Cang' },
-  elegant: { zh: 'ZCOOL XiaoWei' },
-  poster: { zh: 'Liu Jian Mao Cao' },
-  festive: { el: 'Comic Relief' },
-  terminal: { el: 'Victor Mono', zh: 'ZCOOL QingKe HuangYou' },
-  bohemian: { el: 'M PLUS Rounded 1c' },
-  photo: { el: 'Dela Gothic One', zh: 'ZCOOL KuaiLe' },
+  base: { ru: 'Pangolin', el: 'Sansation', zh: 'ZCOOL KuaiLe' },
+  retro: { ru: 'DotGothic16', el: 'Handjet', zh: 'ZCOOL QingKe HuangYou' },
+  handwriting: { ru: 'Shantell Sans', el: 'Mansalva', zh: 'Long Cang' },
+  subtle: { ru: 'Literata' },
+  horizon: { ru: 'Literata' },
+  book: { ru: 'Literata' },
+  anaglyph: { ru: 'Russo One' },
+  elegant: { ru: 'Poiret One', zh: 'ZCOOL XiaoWei' },
+  poster: { ru: 'Rubik Mono One', zh: 'Liu Jian Mao Cao' },
+  festive: { ru: 'Pacifico', el: 'Comic Relief' },
+  terminal: { ru: 'JetBrains Mono', el: 'Victor Mono', zh: 'ZCOOL QingKe HuangYou' },
+  bohemian: { ru: 'Comfortaa', el: 'M PLUS Rounded 1c' },
+  photo: { ru: 'Russo One', el: 'Dela Gothic One', zh: 'ZCOOL KuaiLe' },
 };
 const BASE_FONT_THEMES = new Set(['base', 'pink', 'green', 'orange', 'purple', 'blue', 'gray']);
 

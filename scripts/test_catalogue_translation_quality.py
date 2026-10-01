@@ -56,7 +56,11 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
             for identifier, name in [('1400-029', 'Remedios'), ('1900-026', 'Aureliano Triste'),
                                      ('0600-019', 'Tardewski'), ('1430-008', 'Traveler')]:
                 with self.subTest(locale=locale, identifier=identifier):
-                    if locale == 'zh-CN':
+                    if locale == 'ru-RU':
+                        localized = {'1400-029': 'Ремедиос', '1900-026': 'Аурелиано Тристе',
+                                     '0600-019': 'Тардевск', '1430-008': 'Травелер'}
+                        self.assertIn(localized[identifier], rows[identifier]['Quote'])
+                    elif locale == 'zh-CN':
                         # Chinese transliteration is legitimate; Traveler is retained as a name.
                         if identifier == '1430-008':
                             self.assertIn('Traveler', rows[identifier]['Quote'])

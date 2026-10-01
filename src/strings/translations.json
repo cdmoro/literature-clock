@@ -70,7 +70,8 @@
     "zen_mode": "Zen",
     "zen_mode_title": "Remove everything that distracts you",
     "el-GR": "Ελληνικά (el-GR)",
-    "zh-CN": "中文（简体） (zh-CN)"
+    "zh-CN": "中文（简体） (zh-CN)",
+    "ru-RU": "Русский (ru-RU)"
   },
   "en-US": {
     "about": "About",
@@ -143,7 +144,8 @@
     "zen_mode": "Zen",
     "zen_mode_title": "Remove everything that distracts you",
     "el-GR": "Ελληνικά (el-GR)",
-    "zh-CN": "中文（简体） (zh-CN)"
+    "zh-CN": "中文（简体） (zh-CN)",
+    "ru-RU": "Русский (ru-RU)"
   },
   "es-ES": {
     "about": "Acerca de",
@@ -216,7 +218,8 @@
     "zen_mode": "Zen",
     "zen_mode_title": "Elimina todo lo que te distrae",
     "el-GR": "Ελληνικά (el-GR)",
-    "zh-CN": "中文（简体） (zh-CN)"
+    "zh-CN": "中文（简体） (zh-CN)",
+    "ru-RU": "Русский (ru-RU)"
   },
   "pt-PT": {
     "about": "Sobre",
@@ -289,7 +292,8 @@
     "zen_mode": "Zen",
     "zen_mode_title": "Remova tudo o que te distrai",
     "el-GR": "Ελληνικά (el-GR)",
-    "zh-CN": "中文（简体） (zh-CN)"
+    "zh-CN": "中文（简体） (zh-CN)",
+    "ru-RU": "Русский (ru-RU)"
   },
   "fr-FR": {
     "about": "À propos",
@@ -362,7 +366,8 @@
     "zen_mode": "Zen",
     "zen_mode_title": "Supprimez tout ce qui vous distrait",
     "el-GR": "Ελληνικά (el-GR)",
-    "zh-CN": "中文（简体） (zh-CN)"
+    "zh-CN": "中文（简体） (zh-CN)",
+    "ru-RU": "Русский (ru-RU)"
   },
   "it-IT": {
     "about": "Informazioni",
@@ -435,7 +440,8 @@
     "zen_mode": "Zen",
     "zen_mode_title": "Rimuovi tutto ciò che ti distrae",
     "el-GR": "Ελληνικά (el-GR)",
-    "zh-CN": "中文（简体） (zh-CN)"
+    "zh-CN": "中文（简体） (zh-CN)",
+    "ru-RU": "Русский (ru-RU)"
   },
   "de-DE": {
     "about": "Über",
@@ -508,7 +514,8 @@
     "zen_mode": "Zen",
     "zen_mode_title": "Entferne alles, was dich ablenkt",
     "el-GR": "Ελληνικά (el-GR)",
-    "zh-CN": "中文（简体） (zh-CN)"
+    "zh-CN": "中文（简体） (zh-CN)",
+    "ru-RU": "Русский (ru-RU)"
   },
   "el-GR": {
     "about": "Σχετικά",
@@ -581,7 +588,8 @@
     "zen_mode": "Ζεν",
     "zen_mode_title": "Απόκρυψη όλων των περισπασμών",
     "el-GR": "Ελληνικά (el-GR)",
-    "zh-CN": "中文（简体） (zh-CN)"
+    "zh-CN": "中文（简体） (zh-CN)",
+    "ru-RU": "Русский (ru-RU)"
   },
   "zh-CN": {
     "about": "关于",
@@ -654,6 +662,81 @@
     "it-IT": "Italiano (it-IT)",
     "pt-PT": "Português (pt-PT)",
     "el-GR": "Ελληνικά (el-GR)",
-    "zh-CN": "中文（简体） (zh-CN)"
+    "zh-CN": "中文（简体） (zh-CN)",
+    "ru-RU": "Русский (ru-RU)"
+  },
+  "ru-RU": {
+    "about": "О проекте",
+    "about_close": "Закрыть",
+    "add_quote": "Добавить цитату",
+    "anaglyph": "Анаглиф",
+    "author": "Автор",
+    "base": "Базовая",
+    "blue": "Синяя",
+    "bohemian": "Богемная",
+    "book": "Книжная страница",
+    "color": "Случайные цвета",
+    "colors": "Цвета",
+    "copy_mode": "Копировать",
+    "copy_mode_copied": "Цитата скопирована!",
+    "copy_title": "Копировать в буфер обмена",
+    "dark": "Тёмная",
+    "de-DE": "Deutsch (de-DE)",
+    "default_font": "По умолчанию",
+    "document_title": "Литературные часы",
+    "download": "Скачать",
+    "horizon": "Горизонт",
+    "elegant": "Элегантная",
+    "en-GB": "English (en-GB)",
+    "en-US": "English (en-US)",
+    "es-ES": "Español (es-ES)",
+    "exit_zen_title": "Выйти из режима дзен",
+    "transition": "Переход",
+    "transition_none": "Без перехода",
+    "transition_fade": "Затухание",
+    "transition_slide": "Плавный сдвиг",
+    "transition_blur": "Мягкое размытие",
+    "transition_zoom": "Лёгкое масштабирование",
+    "fade_mode": "Затухание",
+    "festive": "Праздничная",
+    "font": "Шрифт",
+    "fr-FR": "Français (fr-FR)",
+    "frame": "Рамка",
+    "fullscreen_mode": "Полноэкранный режим",
+    "gray": "Серая",
+    "green": "Зелёная",
+    "handwriting": "Рукописная",
+    "it-IT": "Italiano (it-IT)",
+    "kindle": "Kindle",
+    "language": "Язык",
+    "light": "Светлая",
+    "made_by": "Создано",
+    "orange": "Оранжевая",
+    "photo": "Фото",
+    "pink": "Розовая",
+    "poster": "Плакат",
+    "progressbar_mode": "Показывать индикатор прогресса",
+    "pt-PT": "Português (pt-PT)",
+    "purple": "Фиолетовая",
+    "random": "Случайный язык",
+    "report_error": "Сообщить об ошибке",
+    "retro": "Ретро",
+    "screensaver_mode": "Заставка",
+    "share": "Поделиться",
+    "subtle": "Сдержанная",
+    "system": "Системная",
+    "terminal": "Терминал",
+    "theme": "Тема",
+    "themes": "Темы",
+    "time_mode": "Показывать время",
+    "title": "Название",
+    "whatsapp": "WhatsApp",
+    "work_mode": "Работа",
+    "work_mode_title": "Показывать только цитаты, подходящие для работы",
+    "zen_mode": "Дзен",
+    "zen_mode_title": "Скрыть всё, что отвлекает",
+    "el-GR": "Ελληνικά (el-GR)",
+    "zh-CN": "中文（简体） (zh-CN)",
+    "ru-RU": "Русский (ru-RU)"
   }
 }

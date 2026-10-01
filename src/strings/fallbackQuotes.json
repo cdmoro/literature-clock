@@ -196,5 +196,27 @@
       "quote_time_case": "",
       "sfw": true
     }
+  ],
+  "ru-RU": [
+    {
+      "quote_first": "Ошибка ",
+      "quote_last": ": цитата не найдена.",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "Судовой журнал:<br>Мы всё ещё ищем цитату для ",
+      "quote_last": ".",
+      "title": "Моби Дик",
+      "author": "Капитан Ахав",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
   ]
 }
