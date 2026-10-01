@@ -75,8 +75,7 @@ class ChineseCatalogueTest(unittest.TestCase):
             self.assertIn('full and change', rows['0919-000']['Quote'])
 
     def test_context_and_source_slot_drafts_do_not_enter_public_json(self):
-        pending = json.loads((ROOT / 'docs/chinese-pending-review.json').read_text())['findings']
-        identifiers = {row['id'] for row in pending if is_draft(self.index[row['id']])}
+        identifiers = {row['Id'] for row in self.rows if is_draft(row)}
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory)
             generate_catalogue(ROOT / 'quotes/quotes.zh-CN.csv', output)

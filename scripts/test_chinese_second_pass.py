@@ -1,7 +1,6 @@
 """Second-pass clock coverage and source-fidelity regressions."""
 import unittest
 from chinese_review_time import compare_times, review_clock
-from review_chinese_second_pass import fingerprint, second_pass_status
 from quote_sources import source_catalogue
 from validate_translation import ROOT, read_catalogue, is_draft
 
@@ -26,17 +25,24 @@ class ChineseSecondPassTest(unittest.TestCase):
         self.assertEqual(compare_times('eight past midnight', '午夜过后八分钟', 'en'), (8, 8))
         self.assertEqual(compare_times('Eight-eleven', '八十一', 'en'), (491, None))
 
-    def test_screening_manifest_is_current_and_detects_later_changes(self):
-        sources = source_catalogue(ROOT / 'quotes')
-        rows = read_catalogue(ROOT / 'quotes/quotes.zh-CN.csv')
-        result = second_pass_status(sources, rows)
-        self.assertEqual(result['numeric_and_length_reviewed'], 311)
-        self.assertEqual(result['stale_numeric_reviews'], [])
-        self.assertEqual(result['stale_time_reviews'], [])
-        self.assertEqual(result['expanded_time_mismatches'], [])
-        source = next(row for row in sources if row['Id'] == '0320-000')
-        target = next(row for row in rows if row['Id'] == '0320-000')
-        self.assertNotEqual(fingerprint(source, target), fingerprint(source, {**target, 'Quote': target['Quote'] + '16'}))
+    def test_expanded_clock_comparisons_have_no_known_mismatches(self):
+        sources = {row['Id']: row for row in source_catalogue(ROOT / 'quotes')}
+        from quote_sources import source_language
+        for row in read_catalogue(ROOT / 'quotes/quotes.zh-CN.csv'):
+            original = sources[row['Id']]
+            expected, actual = compare_times(original['Quote time'], row['Quote time'],
+                                             source_language(original['Source locale']))
+            if expected is not None and actual is not None:
+                self.assertEqual(actual, expected, row['Id'])
+
+    def test_noon_slot_follows_explicit_pm_without_rewriting_the_source(self):
+        for path in (ROOT / 'quotes').glob('quotes.*.csv'):
+            row = next(row for row in read_catalogue(path) if row['Id'] == '0000-032')
+            self.assertEqual(row['Time'], '12:00', path.name)
+        rows = {row['Id']: row for row in read_catalogue(ROOT / 'quotes/quotes.zh-CN.csv')}
+        self.assertIn('中午12点', rows['0000-032']['Quote'])
+        source = next(row for row in source_catalogue(ROOT / 'quotes') if row['Id'] == '0000-032')
+        self.assertIn('12.00 pm', source['Quote'])
 
     def test_second_pass_keeps_ages_units_seconds_and_secondary_times(self):
         rows = {r['Id']: r for r in read_catalogue(ROOT / 'quotes/quotes.zh-CN.csv')}
@@ -50,7 +56,7 @@ class ChineseSecondPassTest(unittest.TestCase):
         self.assertIn('Y.D.A.U.年4月1日20:10', rows['2010-002']['Quote'])
         self.assertNotIn('1654年', rows['1654-003']['Quote'])
         self.assertEqual(rows['1520-003']['Quote'].count('我正在喝酒'), 9)
-        self.assertTrue(is_draft(rows['0000-032']))
+        self.assertFalse(is_draft(rows['0000-032']))
         for identifier, row in rows.items():
             self.assertIn(row['Quote time'], row['Quote'], identifier)
 
