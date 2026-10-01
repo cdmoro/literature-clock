@@ -28,7 +28,7 @@ const DEFAULT_COLORS: Record<string, string> = {
   festive: '#e74c3c',
   bohemian: '#1abc9c',
   book: '#fbf719',
-  handwriting: '#077fc6',
+  handwriting: '#067abf',
   terminal: '#ac7f02',
   frame: '#00b9c4',
   poster: '#fd4533',

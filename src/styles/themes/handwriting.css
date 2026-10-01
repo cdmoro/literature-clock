@@ -1,7 +1,7 @@
 [data-theme|='handwriting'] {
   --quote-font-family: 'Reenie Beanie', sans-serif;
   --quote-line-height: 1;
-  --accent-color: #077fc6;
+  --accent-color: #067abf;
 }
 
 [data-theme|='handwriting'] blockquote:before,
