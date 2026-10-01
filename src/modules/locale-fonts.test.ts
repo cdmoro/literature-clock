@@ -69,15 +69,15 @@ test.each([
 });
 
 test.each([
-  ['base', 'Noto Sans SC'],
-  ['pink', 'Noto Sans SC'],
+  ['base', 'ZCOOL KuaiLe'],
+  ['pink', 'ZCOOL KuaiLe'],
   ['retro', 'ZCOOL QingKe HuangYou'],
   ['elegant', 'ZCOOL XiaoWei'],
   ['terminal', 'ZCOOL QingKe HuangYou'],
   ['handwriting', 'Long Cang'],
   ['photo', 'ZCOOL KuaiLe'],
   ['poster', 'Liu Jian Mao Cao'],
-  ['kindle', 'Noto Sans SC'],
+  ['kindle', 'ZCOOL KuaiLe'],
 ])('Chinese %s passages load %s in both variants', (theme, font) => {
   const quote = document.createElement('blockquote');
   quote.lang = 'zh-CN';
@@ -93,16 +93,18 @@ test.each([
 });
 
 test.each([
-  ['base', 'PT Mono'],
-  ['pink', 'PT Mono'],
-  ['retro', 'PT Mono'],
-  ['handwriting', 'Caveat'],
-  ['festive', 'Caveat'],
-  ['poster', 'Literata'],
+  ['base', 'Pangolin'],
+  ['pink', 'Pangolin'],
+  ['retro', 'DotGothic16'],
+  ['handwriting', 'Shantell Sans'],
+  ['festive', 'Pacifico'],
+  ['poster', 'Rubik Mono One'],
   ['book', 'Literata'],
   ['subtle', 'Literata'],
   ['horizon', 'Literata'],
-  ['terminal', 'PT Mono'],
+  ['terminal', 'JetBrains Mono'],
+  ['elegant', 'Poiret One'],
+  ['bohemian', 'Comfortaa'],
   ['photo', 'Russo One'],
   ['anaglyph', 'Russo One'],
 ])('Russian %s passages load %s independently in both variants', (theme, font) => {
