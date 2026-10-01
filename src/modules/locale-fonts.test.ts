@@ -67,3 +67,27 @@ test.each([
     expect(loadFontIfNotExists).toHaveBeenCalledWith(font);
   }
 });
+
+test.each([
+  ['base', 'Noto Sans SC'],
+  ['pink', 'Noto Sans SC'],
+  ['retro', 'ZCOOL QingKe HuangYou'],
+  ['elegant', 'ZCOOL XiaoWei'],
+  ['terminal', 'ZCOOL QingKe HuangYou'],
+  ['handwriting', 'Long Cang'],
+  ['photo', 'ZCOOL KuaiLe'],
+  ['poster', 'Liu Jian Mao Cao'],
+  ['kindle', 'Noto Sans SC'],
+])('Chinese %s passages load %s in both variants', (theme, font) => {
+  const quote = document.createElement('blockquote');
+  quote.lang = 'zh-CN';
+  for (const variant of ['light', 'dark']) {
+    document.documentElement.dataset.theme = `${theme}-${variant}`;
+    applyLocaleThemeFont(quote);
+    expect(quote.style.getPropertyValue('--locale-quote-font-family')).toContain(font);
+    expect(loadFontIfNotExists).toHaveBeenCalledWith(font);
+  }
+  quote.lang = 'en-GB';
+  applyLocaleThemeFont(quote);
+  expect(quote.style.getPropertyValue('--locale-quote-font-family')).toBe('initial');
+});

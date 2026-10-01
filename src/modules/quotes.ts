@@ -1,3 +1,4 @@
+import { refreshDefaultFontLabel } from './font';
 import { applyLocaleThemeFont } from './locale-fonts';
 import { updateQuoteDescription } from './hide-book-title';
 import { renderTranslation } from './bilingual';
@@ -158,6 +159,7 @@ export async function updateQuote({
       if (blockquote) {
         blockquote.lang = locale.replace(/-draft$/, '');
         applyLocaleThemeFont(blockquote);
+        refreshDefaultFontLabel();
         blockquote.innerHTML = '';
 
         const p = document.createElement('p');

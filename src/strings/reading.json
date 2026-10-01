@@ -214,5 +214,32 @@
     "historyCleared": "Το ιστορικό διαγράφηκε",
     "noHistory": "Δεν υπάρχουν πρόσφατα παραθέματα. Εδώ θα εμφανίζονται τα τελευταία 100 παραθέματα που βλέπετε.",
     "previousQuote": "Προηγούμενο παράθεμα αυτού του λεπτού"
+  },
+  "zh-CN": {
+    "copyLink": "复制引文链接",
+    "linkCopied": "链接已复制",
+    "linkFailed": "无法分享链接，请重试。",
+    "quoteUnavailable": "此引文在当前语言或内容筛选条件下不可用，已显示另一条引文。",
+    "pause": "暂停阅读",
+    "resume": "返回实时时钟",
+    "pausedAt": "暂停于",
+    "nextQuote": "此分钟的下一条引文",
+    "myQuotes": "我的引文",
+    "favorites": "收藏",
+    "saveFavorite": "收藏引文",
+    "removeFavorite": "取消收藏",
+    "favoriteSaved": "引文已收藏",
+    "favoriteRemoved": "已取消收藏",
+    "noFavorites": "暂无收藏。点击爱心按钮收藏引文。",
+    "filteredLibrary": "部分已保存引文因内容筛选而隐藏。",
+    "close": "关闭",
+    "openQuote": "打开引文",
+    "favoritesFull": "收藏已满（500条）。请移除一条后再收藏。",
+    "storageUnavailable": "无法在此设备上保存更改，请检查浏览器存储权限。",
+    "history": "最近阅读",
+    "clearHistory": "清除历史记录",
+    "historyCleared": "历史记录已清除",
+    "noHistory": "暂无最近阅读记录。最近查看的100条引文将显示在这里。",
+    "previousQuote": "此分钟的上一条引文"
   }
 }

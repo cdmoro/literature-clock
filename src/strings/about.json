@@ -1,0 +1,24 @@
+{
+  "en-GB": {
+    "title": "Literature Clock — a clock told through book quotes",
+    "description": "Literature Clock is a free online clock that matches your local time to a passage from a book mentioning that time, updating every minute — in English, Spanish, Portuguese, French, Italian, German, Greek or Simplified Chinese.",
+    "features": "Personalise it with light or dark themes, custom fonts and colours, a distraction-free zen mode, or a screensaver that moves the quote around the screen. Save favourite passages, revisit recent quotes, and share or download them as an image — all stored locally in your browser, with no account needed.",
+    "project": "About the project",
+    "credits": "Created by Carlos Bonadeo, building on the literary clock work of",
+    "and": "and",
+    "visit": "Visit the",
+    "source": "open-source project",
+    "contribute": "to suggest improvements or contribute quotations."
+  },
+  "zh-CN": {
+    "title": "文学时钟——用书中引文诉说时间",
+    "description": "文学时钟是一款免费的在线时钟。它根据您的当地时间，显示书中提及该时间的段落，每分钟更新一次，支持英语、西班牙语、葡萄牙语、法语、意大利语、德语、希腊语和简体中文。",
+    "features": "您可以选择浅色或深色主题、自定义字体和颜色，启用专注阅读的禅模式，或让引文在屏幕上移动的屏幕保护模式。收藏喜爱的段落，重温最近阅读的引文，分享链接或下载图片。所有记录均保存在您的浏览器中，无需注册账号。",
+    "project": "关于项目",
+    "credits": "由 Carlos Bonadeo 创建，基于以下作者的文学时钟作品：",
+    "and": "和",
+    "visit": "欢迎访问",
+    "source": "开源项目",
+    "contribute": "，提出改进建议或贡献引文。"
+  }
+}

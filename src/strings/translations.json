@@ -69,7 +69,8 @@
     "work_mode_title": "Show only safe for work quotes",
     "zen_mode": "Zen",
     "zen_mode_title": "Remove everything that distracts you",
-    "el-GR": "Ελληνικά (el-GR)"
+    "el-GR": "Ελληνικά (el-GR)",
+    "zh-CN": "中文（简体） (zh-CN)"
   },
   "en-US": {
     "about": "About",
@@ -141,7 +142,8 @@
     "work_mode_title": "Show only safe for work quotes",
     "zen_mode": "Zen",
     "zen_mode_title": "Remove everything that distracts you",
-    "el-GR": "Ελληνικά (el-GR)"
+    "el-GR": "Ελληνικά (el-GR)",
+    "zh-CN": "中文（简体） (zh-CN)"
   },
   "es-ES": {
     "about": "Acerca de",
@@ -213,7 +215,8 @@
     "work_mode_title": "Mostrar solo citas seguras para el trabajo",
     "zen_mode": "Zen",
     "zen_mode_title": "Elimina todo lo que te distrae",
-    "el-GR": "Ελληνικά (el-GR)"
+    "el-GR": "Ελληνικά (el-GR)",
+    "zh-CN": "中文（简体） (zh-CN)"
   },
   "pt-PT": {
     "about": "Sobre",
@@ -285,7 +288,8 @@
     "work_mode_title": "Mostrar apenas citações seguras para o trabalho",
     "zen_mode": "Zen",
     "zen_mode_title": "Remova tudo o que te distrai",
-    "el-GR": "Ελληνικά (el-GR)"
+    "el-GR": "Ελληνικά (el-GR)",
+    "zh-CN": "中文（简体） (zh-CN)"
   },
   "fr-FR": {
     "about": "À propos",
@@ -357,7 +361,8 @@
     "work_mode_title": "Afficher uniquement des citations appropriées pour le travail",
     "zen_mode": "Zen",
     "zen_mode_title": "Supprimez tout ce qui vous distrait",
-    "el-GR": "Ελληνικά (el-GR)"
+    "el-GR": "Ελληνικά (el-GR)",
+    "zh-CN": "中文（简体） (zh-CN)"
   },
   "it-IT": {
     "about": "Informazioni",
@@ -429,7 +434,8 @@
     "work_mode_title": "Mostra solo citazioni appropriate per il lavoro",
     "zen_mode": "Zen",
     "zen_mode_title": "Rimuovi tutto ciò che ti distrae",
-    "el-GR": "Ελληνικά (el-GR)"
+    "el-GR": "Ελληνικά (el-GR)",
+    "zh-CN": "中文（简体） (zh-CN)"
   },
   "de-DE": {
     "about": "Über",
@@ -501,7 +507,8 @@
     "work_mode_title": "Nur sichere Zitate für die Arbeit anzeigen",
     "zen_mode": "Zen",
     "zen_mode_title": "Entferne alles, was dich ablenkt",
-    "el-GR": "Ελληνικά (el-GR)"
+    "el-GR": "Ελληνικά (el-GR)",
+    "zh-CN": "中文（简体） (zh-CN)"
   },
   "el-GR": {
     "about": "Σχετικά",
@@ -573,6 +580,80 @@
     "work_mode_title": "Εμφάνιση μόνο παραθεμάτων κατάλληλων για τον χώρο εργασίας",
     "zen_mode": "Ζεν",
     "zen_mode_title": "Απόκρυψη όλων των περισπασμών",
-    "el-GR": "Ελληνικά (el-GR)"
+    "el-GR": "Ελληνικά (el-GR)",
+    "zh-CN": "中文（简体） (zh-CN)"
+  },
+  "zh-CN": {
+    "about": "关于",
+    "about_close": "关闭",
+    "add_quote": "添加引文",
+    "anaglyph": "立体效果",
+    "author": "作者",
+    "base": "基础",
+    "blue": "蓝色",
+    "bohemian": "波西米亚",
+    "book": "书页",
+    "color": "随机颜色",
+    "colors": "颜色",
+    "copy_mode": "复制",
+    "copy_mode_copied": "引文已复制！",
+    "copy_title": "复制到剪贴板",
+    "dark": "深色",
+    "default_font": "默认",
+    "document_title": "文学时钟",
+    "download": "下载",
+    "horizon": "地平线",
+    "elegant": "典雅",
+    "exit_zen_title": "退出禅模式",
+    "transition": "切换效果",
+    "transition_none": "无动画",
+    "transition_fade": "淡入淡出",
+    "transition_slide": "轻柔滑动",
+    "transition_blur": "柔和模糊",
+    "transition_zoom": "轻微缩放",
+    "fade_mode": "淡入淡出",
+    "festive": "节日",
+    "font": "字体",
+    "frame": "相框",
+    "fullscreen_mode": "全屏模式",
+    "gray": "灰色",
+    "green": "绿色",
+    "handwriting": "手写",
+    "kindle": "Kindle",
+    "language": "语言",
+    "light": "浅色",
+    "made_by": "制作",
+    "orange": "橙色",
+    "photo": "照片",
+    "pink": "粉色",
+    "poster": "海报",
+    "progressbar_mode": "显示进度条",
+    "purple": "紫色",
+    "random": "随机语言",
+    "report_error": "报告错误",
+    "retro": "复古",
+    "screensaver_mode": "屏幕保护",
+    "share": "分享",
+    "subtle": "简约",
+    "system": "跟随系统",
+    "terminal": "终端",
+    "theme": "主题",
+    "themes": "主题",
+    "time_mode": "显示时间",
+    "title": "书名",
+    "whatsapp": "WhatsApp",
+    "work_mode": "工作模式",
+    "work_mode_title": "仅显示适合在工作场合阅读的引文",
+    "zen_mode": "禅模式",
+    "zen_mode_title": "隐藏所有干扰阅读的元素",
+    "de-DE": "Deutsch (de-DE)",
+    "en-GB": "English (en-GB)",
+    "en-US": "English (en-US)",
+    "es-ES": "Español (es-ES)",
+    "fr-FR": "Français (fr-FR)",
+    "it-IT": "Italiano (it-IT)",
+    "pt-PT": "Português (pt-PT)",
+    "el-GR": "Ελληνικά (el-GR)",
+    "zh-CN": "中文（简体） (zh-CN)"
   }
 }

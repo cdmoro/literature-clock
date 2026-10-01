@@ -3,20 +3,30 @@ import { loadFontIfNotExists } from '../utils';
 // Alternatives belong to the passage language, including unregistered draft
 // catalogues; the interface language can be different.
 export const LOCALE_THEME_FONTS: Record<string, Record<string, string>> = {
-  base: { el: 'Sansation' },
-  retro: { el: 'Handjet' },
-  handwriting: { el: 'Mansalva' },
+  base: { el: 'Sansation', zh: 'Noto Sans SC' },
+  retro: { el: 'Handjet', zh: 'ZCOOL QingKe HuangYou' },
+  handwriting: { el: 'Mansalva', zh: 'Long Cang' },
+  elegant: { zh: 'ZCOOL XiaoWei' },
+  poster: { zh: 'Liu Jian Mao Cao' },
   festive: { el: 'Comic Relief' },
-  terminal: { el: 'Victor Mono' },
+  terminal: { el: 'Victor Mono', zh: 'ZCOOL QingKe HuangYou' },
   bohemian: { el: 'M PLUS Rounded 1c' },
-  photo: { el: 'Dela Gothic One' }
+  photo: { el: 'Dela Gothic One', zh: 'ZCOOL KuaiLe' },
 };
 const BASE_FONT_THEMES = new Set(['base', 'pink', 'green', 'orange', 'purple', 'blue', 'gray']);
 
-export function applyLocaleThemeFont(element: HTMLElement, locale = element.lang) {
-  const theme = document.documentElement.dataset.theme?.split('-')[0] || 'base';
+export function getLocaleThemeFont(theme: string, locale: string) {
+  const name = theme.split('-')[0];
   const language = locale.split('-')[0].toLowerCase();
-  const font = LOCALE_THEME_FONTS[BASE_FONT_THEMES.has(theme) ? 'base' : theme]?.[language];
+  return (
+    LOCALE_THEME_FONTS[BASE_FONT_THEMES.has(name) ? 'base' : name]?.[language] ||
+    (language === 'zh' ? LOCALE_THEME_FONTS.base.zh : undefined)
+  );
+}
+
+export function applyLocaleThemeFont(element: HTMLElement, locale = element.lang) {
+  const theme = document.documentElement.dataset.theme || 'base';
+  const font = getLocaleThemeFont(theme, locale);
   // Block inheritance when secondary reading content uses another language.
   element.style.setProperty('--locale-quote-font-family', font ? `"${font}", monospace` : 'initial');
   if (font) loadFontIfNotExists(font);

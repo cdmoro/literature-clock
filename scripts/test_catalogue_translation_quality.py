@@ -56,7 +56,16 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
             for identifier, name in [('1400-029', 'Remedios'), ('1900-026', 'Aureliano Triste'),
                                      ('0600-019', 'Tardewski'), ('1430-008', 'Traveler')]:
                 with self.subTest(locale=locale, identifier=identifier):
-                    self.assertIn(name, rows[identifier]['Quote'])
+                    if locale == 'zh-CN':
+                        # Chinese transliteration is legitimate; Traveler is retained as a name.
+                        if identifier == '1430-008':
+                            self.assertIn('Traveler', rows[identifier]['Quote'])
+                            self.assertEqual(rows[identifier]['Draft'], 'false')
+                        else:
+                            localized = {'1400-029': '雷梅', '1900-026': '奥雷利亚诺', '0600-019': '塔德夫斯基'}
+                            self.assertIn(localized[identifier], rows[identifier]['Quote'])
+                    else:
+                        self.assertIn(name, rows[identifier]['Quote'])
 
     def test_repaired_dialogues_keep_speech_boundaries(self):
         examples = {'de-DE': ['0203-001', '0217-000', '0359-001', '0639-001',

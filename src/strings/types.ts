@@ -69,4 +69,5 @@ export type Translations = {
   zen_mode: string;
   zen_mode_title: string;
   'el-GR': string;
+  'zh-CN': string;
 };

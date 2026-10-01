@@ -2,6 +2,7 @@ import { fitQuote, loadFontIfNotExists } from '../utils';
 import { store } from '../store';
 import { loadGoogleFont, normalizeFontName } from '../utils/google-font';
 import { getBaseLocale, getInterfaceLocale, getStrings } from './locales';
+import { getLocaleThemeFont, LOCALE_THEME_FONTS } from './locale-fonts';
 import SETTINGS from '../strings/settings.json';
 
 export const THEME_FONTS: Record<string, string[]> = {
@@ -37,7 +38,10 @@ export const CITE_FACTOR = {
   kindle: 0.5,
 } as const;
 
-const FONTS = ['Special Elite', ...new Set(Object.values(THEME_FONTS).flat())];
+const FONTS = [
+  'Special Elite',
+  ...new Set([...Object.values(THEME_FONTS).flat(), ...Object.values(LOCALE_THEME_FONTS).flatMap(Object.values)]),
+];
 let fontRequest = 0;
 const CSS_FONT_VARIABLE = '--override-quote-font-family';
 export const CUSTOM_FONTS_KEY = 'custom-fonts';
@@ -83,7 +87,8 @@ export function refreshDefaultFontLabel() {
   const option = document.querySelector<HTMLOptionElement>('#font-select option[value="default"]');
   if (!option) return;
   const theme = (document.documentElement.dataset.theme || store.get('theme')).split('-')[0];
-  const name = THEME_FONTS[theme]?.[0] || 'Special Elite';
+  const locale = document.getElementById('quote')?.lang || store.get('locale');
+  const name = getLocaleThemeFont(theme, locale) || THEME_FONTS[theme]?.[0] || 'Special Elite';
   option.textContent = `${getStrings(getInterfaceLocale()).default_font} (${name})`;
 }
 
