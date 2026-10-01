@@ -149,11 +149,11 @@ test('tabs show one panel and support keyboard navigation with roving focus', ()
   for (const tab of [appearance, behavior]) {
     tab.click();
     document.getElementById('open-settings')!.click();
-    expect(content.getAttribute('aria-selected')).toBe('true');
-    expect(content.tabIndex).toBe(0);
-    expect(tab.tabIndex).toBe(-1);
-    expect(document.getElementById('settings-content')!.hidden).toBe(false);
-    expect(document.getElementById(tab.getAttribute('aria-controls')!)!.hidden).toBe(true);
+    expect(tab.getAttribute('aria-selected')).toBe('true');
+    expect(tab.tabIndex).toBe(0);
+    expect(content.tabIndex).toBe(-1);
+    expect(document.getElementById('settings-content')!.hidden).toBe(true);
+    expect(document.getElementById(tab.getAttribute('aria-controls')!)!.hidden).toBe(false);
   }
   expect(document.querySelector('#settings-behavior #work')).not.toBeNull();
   expect(document.querySelector('#settings-behavior #transition-select')).not.toBeNull();

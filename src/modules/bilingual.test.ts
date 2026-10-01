@@ -146,8 +146,29 @@ it('uses the interface selector labels and an explicit locale heading', async ()
   store.set('translation-locale', 'it-IT');
   store.set('bilingual', true);
   expect(document.querySelector('option[value="it-IT"]')!.textContent).toBe('Italiano (it-IT)');
-  expect(document.getElementById('translation-heading')!.textContent).toBe('Italian (it-IT)');
+  const clockSelect = document.querySelector<HTMLSelectElement>('#clock-translation-locale')!;
+  expect(clockSelect.selectedOptions[0].textContent).toBe('Italian (it-IT)');
+  expect(clockSelect.getAttribute('aria-label')).toBe('Translation language');
   expect(document.querySelector('#bilingual svg')!.getAttribute('width')).toBe('16');
+});
+
+it('changes translation from the clock and synchronizes settings without changing the primary quote', async () => {
+  store.set('bilingual', true);
+  const select = document.querySelector<HTMLSelectElement>('#clock-translation-locale')!;
+  select.value = 'fr-FR';
+  select.dispatchEvent(new Event('change'));
+  expect(store.get('translation-locale')).toBe('fr-FR');
+  expect(document.querySelector<HTMLSelectElement>('#translation-locale')!.value).toBe('fr-FR');
+  expect(document.querySelector<HTMLSelectElement>('#clock-translation-locale')!.value).toBe('fr-FR');
+  expect(JSON.parse(localStorage.getItem('settings')!)['translation-locale']).toBe('fr-FR');
+  expect(fetch).toHaveBeenLastCalledWith('../times/fr-FR/12_00.json');
+  expect(store.get('active-quote')).toEqual(quote);
+  await translationPanel();
+  const settingsSelect = document.querySelector<HTMLSelectElement>('#translation-locale')!;
+  settingsSelect.value = 'en-GB';
+  settingsSelect.dispatchEvent(new Event('change'));
+  expect(document.querySelector<HTMLSelectElement>('#clock-translation-locale')!.value).toBe('en-GB');
+  expect(document.querySelector('.translation-notice')).not.toBeNull();
 });
 
 it('lists Greek separately from British English and preserves the selected locale', () => {

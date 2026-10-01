@@ -20,10 +20,16 @@ export async function renderTranslation() {
   panel.setAttribute('aria-labelledby', 'translation-heading');
   const heading = document.createElement('div');
   heading.id = 'translation-heading';
-  const name = new Intl.DisplayNames([getBaseLocale(getInterfaceLocale())], { type: 'language' }).of(
-    locale.split('-')[0],
-  );
-  heading.textContent = `${name} (${locale})`;
+  const select = document.createElement('select');
+  select.id = 'clock-translation-locale';
+  select.setAttribute('aria-label', strings().bilingual_language);
+  const names = new Intl.DisplayNames([getBaseLocale(getInterfaceLocale())], { type: 'language' });
+  for (const language of Object.keys(SETTINGS)) {
+    select.add(new Option(`${names.of(language.split('-')[0])} (${language})`, language));
+  }
+  select.value = locale;
+  select.addEventListener('change', () => store.set('translation-locale', select.value as Locale));
+  heading.append(select);
   const content = document.createElement('div');
   content.className = 'translation-content';
   content.setAttribute('role', 'status');

@@ -188,7 +188,6 @@ export function initSettingsDialog() {
     '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M19.76 8.79 20.18 10.11 22.83 10.09 22.83 13.91 20.18 13.89 19.76 15.21 19.12 16.45 21.01 18.31 18.31 21.01 16.45 19.12 15.21 19.76 13.89 20.18 13.91 22.83 10.09 22.83 10.11 20.18 8.79 19.76 7.55 19.12 5.69 21.01 2.99 18.31 4.88 16.45 4.24 15.21 3.82 13.89 1.17 13.91 1.17 10.09 3.82 10.11 4.24 8.79 4.88 7.55 2.99 5.69 5.69 2.99 7.55 4.88 8.79 4.24 10.11 3.82 10.09 1.17 13.91 1.17 13.89 3.82 15.21 4.24 16.45 4.88 18.31 2.99 21.01 5.69 19.12 7.55Z M12 8a4 4 0 1 0 0 8a4 4 0 0 0 0-8Z"/></svg>';
   toolbar.append(open);
   open.addEventListener('click', () => {
-    selectTab(tabs[0]);
     dialog.showModal();
     dialog.dispatchEvent(new Event('settings-preview'));
     dialog.scrollTop = 0;
