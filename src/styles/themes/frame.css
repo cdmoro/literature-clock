@@ -18,27 +18,30 @@
   text-wrap: balance;
 }
 
-[data-theme|='frame'] p {
+[data-theme|='frame'] #quote > p {
   max-height: 40vh;
   margin-bottom: 1.2rem;
 }
 
-[data-theme|='frame'] p:before {
+[data-theme|='frame'] #quote[aria-label]:before {
   content: '“';
+  position: static;
   display: block;
+  width: auto;
+  color: inherit;
   height: 120px;
   font-size: 10rem;
 }
 
-[data-theme|='frame'] cite #hyphen {
+[data-theme|='frame'] #quote cite #hyphen {
   display: none;
 }
 
-[data-theme|='frame'] cite #comma {
+[data-theme|='frame'] #quote cite #comma {
   display: none;
 }
 
-[data-theme|='frame'] cite #author {
+[data-theme|='frame'] #quote cite #author {
   display: block;
 }
 
@@ -66,7 +69,7 @@
     padding: 0.5rem 2rem 1.5rem;
   }
 
-  [data-theme|='frame'] p:before {
+  [data-theme|='frame'] #quote[aria-label]:before {
     font-size: 6rem;
     height: 80px;
   }
