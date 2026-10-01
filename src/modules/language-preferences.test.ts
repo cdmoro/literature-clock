@@ -106,6 +106,21 @@ test('explicit selections rotate only chosen languages and preserve the interfac
   expect(document.documentElement.lang).toBe('de-DE');
 });
 
+test('external clear button follows selection and clears without opening the picker', () => {
+  init();
+  const clear = document.getElementById('clear-quote-languages')!;
+  const picker = document.querySelector<HTMLDetailsElement>('#quote-language-picker')!;
+  expect(clear.hidden).toBe(true);
+  language('el-GR').click();
+  expect(clear.hidden).toBe(false);
+  expect(picker.open).toBe(false);
+  clear.click();
+  expect(store.get('quote-locales')).toBe('');
+  expect(clear.hidden).toBe(true);
+  expect(picker.open).toBe(false);
+  expect(document.activeElement).toBe(picker.querySelector('summary'));
+});
+
 test('select all is idempotent; clear is available for partial selections and follows the interface', () => {
   history.replaceState({}, '', '/?locale=fr-FR&ui-locale=en-GB&quote-locales=fr-FR');
   init();

@@ -24,6 +24,7 @@ export function initLanguagePreferences() {
   });
   const refresh = () => {
     document.getElementById('clear-languages-action')!.hidden = !inputs.some((input) => input.checked);
+    document.getElementById('clear-quote-languages')!.hidden = !inputs.some((input) => input.checked);
     inputs.forEach((input, index) => {
       const option = select.options[index];
       const name = (option.textContent || option.value).replace(`(${option.value})`, '').trim();
@@ -64,6 +65,9 @@ export function initLanguagePreferences() {
     picker.querySelector('summary')!.focus();
   });
   const picker = document.querySelector<HTMLDetailsElement>('#quote-language-picker')!;
+  document.getElementById('clear-quote-languages')!.addEventListener('click', () => {
+    document.getElementById('clear-languages')!.click();
+  });
   document.addEventListener('click', (event) => {
     if (event.target instanceof Node && !picker.contains(event.target)) picker.open = false;
   });

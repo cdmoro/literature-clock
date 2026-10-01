@@ -83,13 +83,13 @@ export function initSettingsDialog() {
     'beforeend',
     `
     <div id="quote-languages" class="settings-row"><span id="quote-languages-label" data-text="settings_quote_languages">Quote languages</span>
-      <details id="quote-language-picker" class="input-group">
+      <div class="input-group settings-quote-languages"><details id="quote-language-picker">
         <summary aria-labelledby="quote-languages-label quote-language-summary"><span id="quote-language-summary"></span></summary>
         <div class="quote-language-menu">
           <p id="select-all-languages-row"><a id="select-all-languages" href="#" data-text="settings_select_all">Select all</a><span id="clear-languages-action" hidden> · <a id="clear-languages" href="#" data-text="settings_clear_selection">Clear selection</a></span></p>
           <div id="quote-language-options"></div>
         </div>
-      </details>
+      </details><button type="button" id="clear-quote-languages" data-aria-label="settings_clear_selection" data-title="settings_clear_selection" hidden>${readingIcon('close')}</button></div>
     </div>`,
   );
   const hideTitle = document.createElement('button');

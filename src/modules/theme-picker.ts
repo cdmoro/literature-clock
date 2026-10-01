@@ -73,7 +73,9 @@ export function themePreviewDocument() {
   if (quote) {
     // Remove secondary content so bilingual :has() layout rules cannot affect the preview.
     quote.querySelector('#quote-translation')?.remove();
+    const localeFont = quote.style.getPropertyValue('--locale-quote-font-family');
     quote.removeAttribute('style');
+    if (localeFont) quote.style.setProperty('--locale-quote-font-family', localeFont);
     quote.querySelectorAll('[style]').forEach((element) => element.removeAttribute('style'));
     // Clamp only the text, leaving themed bubbles, padding and borders intact.
     for (const [selector, className] of [

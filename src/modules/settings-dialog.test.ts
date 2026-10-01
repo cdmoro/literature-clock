@@ -4,6 +4,7 @@ import { afterEach, expect, test, vi } from 'vitest';
 import { initSettingsDialog } from './settings-dialog';
 import { initTheme } from './themes';
 import { createStore, store } from '../store';
+import { themePreviewDocument } from './theme-picker';
 
 vi.mock('../utils', () => ({ doFitQuote: vi.fn(), fitQuote: vi.fn(), loadFontIfNotExists: vi.fn() }));
 vi.mock('./font', () => ({ THEME_FONTS: {}, resetFont: vi.fn(), refreshDefaultFontLabel: vi.fn() }));
@@ -15,6 +16,18 @@ afterEach(() => {
   localStorage.clear();
   history.replaceState({}, '', '/');
   vi.unstubAllGlobals();
+});
+
+test('theme preview preserves locale fonts while removing live quote sizing', () => {
+  document.body.innerHTML = '<blockquote id="quote" lang="el-GR"><p>Greek quote</p></blockquote>';
+  const quote = document.getElementById('quote')!;
+  quote.style.setProperty('--locale-quote-font-family', '"Mansalva", monospace');
+  quote.style.fontSize = '72px';
+  const source = new DOMParser().parseFromString(themePreviewDocument(), 'text/html');
+  const preview = source.getElementById('quote')!;
+  expect(preview.style.getPropertyValue('--locale-quote-font-family')).toBe('"Mansalva", monospace');
+  expect(preview.style.fontSize).toBe('');
+  expect(preview.lang).toBe('el-GR');
 });
 
 test('keeps quick actions outside and moves every settings control without replacing it', () => {
