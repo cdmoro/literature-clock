@@ -121,13 +121,54 @@ test('keeps the active theme available for updating after edits and reload', () 
   expect(readSavedThemes()[0].settings.color).toBe('#abcdef');
 });
 
-test('selecting another saved entry does not offer to overwrite it as the active theme', () => {
+test('selecting either saved entry applies it immediately and allows updating it', async () => {
   setup();
   const form = document.getElementById('save-theme-form')!;
+  initTheme();
   form.dispatchEvent(new Event('submit', { cancelable: true }));
+  store.set('color', '#123456');
   form.dispatchEvent(new Event('submit', { cancelable: true }));
   const select = document.getElementById('saved-theme-select') as HTMLSelectElement;
   select.value = readSavedThemes()[0].id;
   select.dispatchEvent(new Event('change'));
-  expect((document.getElementById('update-saved-theme') as HTMLButtonElement).hidden).toBe(true);
+  await Promise.resolve();
+  const update = document.getElementById('update-saved-theme') as HTMLButtonElement;
+  expect(document.getElementById('apply-saved-theme')).toBeNull();
+  expect(update.closest('.input-group')).toBe(select.closest('.input-group'));
+  expect(store.get('color')).toBe('#d24335');
+  expect(update.hidden).toBe(false);
+  store.set('color', '#abcdef');
+  expect(update.disabled).toBe(false);
+  update.click();
+  expect(readSavedThemes()[0].settings.color).toBe('#abcdef');
+  expect(readSavedThemes()[1].settings.color).toBe('#123456');
+  select.value = readSavedThemes()[1].id;
+  select.dispatchEvent(new Event('change'));
+  await Promise.resolve();
+  expect(store.get('color')).toBe('#123456');
+  store.set('color', '#fedcba');
+  expect(update.disabled).toBe(false);
+  update.click();
+  expect(readSavedThemes()[1].settings.color).toBe('#fedcba');
+});
+
+test.each(['light', 'dark', 'system'])('saves and restores the %s colour scheme after refresh', async (scheme) => {
+  setup();
+  initTheme();
+  const variant = document.getElementById('variant-select') as HTMLSelectElement;
+  variant.value = scheme;
+  variant.dispatchEvent(new Event('change'));
+  document.getElementById('save-theme-form')!.dispatchEvent(new Event('submit', { cancelable: true }));
+  expect(readSavedThemes()[0].settings.theme).toBe(`base-${scheme}`);
+  variant.value = scheme === 'dark' ? 'light' : 'dark';
+  variant.dispatchEvent(new Event('change'));
+  const select = document.getElementById('saved-theme-select') as HTMLSelectElement;
+  select.value = readSavedThemes()[0].id;
+  select.dispatchEvent(new Event('change'));
+  await Promise.resolve();
+  expect(variant.value).toBe(scheme);
+  expect(store.get('theme')).toBe(`base-${scheme}`);
+  history.replaceState({}, '', '/');
+  createStore();
+  expect(store.get('theme')).toBe(`base-${scheme}`);
 });

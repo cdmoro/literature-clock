@@ -586,27 +586,25 @@
   height: 2rem;
   flex-shrink: 0;
 }
-#settings-dialog :is(#apply-saved-theme, #delete-saved-theme) {
+#settings-dialog #delete-saved-theme {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 2rem;
   padding: 0;
 }
-#settings-dialog #save-theme-form button {
+#settings-dialog :is(#save-theme-form button, #update-saved-theme) {
   border-color: var(--accent-color);
   background: var(--accent-color);
   color: var(--accent-text);
   font-weight: 600;
 }
-#settings-dialog #save-theme-form button:hover {
+#settings-dialog :is(#save-theme-form button, #update-saved-theme):hover {
   filter: brightness(1.08);
 }
-#update-saved-theme {
-  justify-self: start;
-}
-#update-saved-theme[hidden] {
-  display: none;
+#settings-dialog #update-saved-theme {
+  border-radius: 0;
+  padding: 0 0.6rem;
 }
 .settings-saved-themes .settings-help,
 #saved-theme-status {
