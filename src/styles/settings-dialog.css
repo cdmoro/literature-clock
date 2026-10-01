@@ -72,13 +72,9 @@
   }
 }
 
-/* Keep the original SVG controls and round the visible edges of every group. */
+/* Hidden icon prefixes must not change the visible controls' rounded edges. */
 #settings-dialog .input-group-text {
   display: none;
-}
-#settings-dialog .input-group > select {
-  margin-left: 0;
-  border-radius: 0.35rem;
 }
 #settings-dialog .input-group {
   flex: 0 1 62%;
@@ -91,6 +87,10 @@
   border-radius: 0 0.35rem 0.35rem 0;
 }
 #settings-dialog .input-group > :only-child {
+  border-radius: 0.35rem;
+}
+#settings-dialog .input-group > select:is(:first-child, :last-child) {
+  margin-left: 0;
   border-radius: 0.35rem;
 }
 #settings-dialog .settings-row:has(.settings-switch) {
@@ -301,12 +301,24 @@
   box-sizing: border-box;
   width: 100%;
   min-width: 0;
-  border: 1px solid color-mix(in srgb, var(--font-color), transparent 40%);
-  border-radius: 0.25rem;
+  height: 2rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
+  border-radius: 0.35rem;
   padding: 0.35rem;
   background: var(--background);
   color: var(--font-color);
   font: inherit;
+}
+#settings-dialog #custom-font-form button[type='submit'] {
+  height: 2rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 0.35rem;
+  background: var(--accent-color);
+  color: var(--accent-text);
+  font-weight: 600;
+}
+#settings-dialog #custom-font-form button[type='submit']:hover {
+  filter: brightness(1.08);
 }
 #custom-font-status {
   margin: 0.35rem 0 0;
