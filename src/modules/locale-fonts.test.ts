@@ -68,15 +68,25 @@ test.each([
   }
 });
 
-test('Chinese passages keep local CJK fonts across themes and clear them for English', () => {
+test.each([
+  ['base', 'Noto Sans SC'],
+  ['pink', 'Noto Sans SC'],
+  ['retro', 'ZCOOL QingKe HuangYou'],
+  ['elegant', 'ZCOOL XiaoWei'],
+  ['terminal', 'ZCOOL QingKe HuangYou'],
+  ['handwriting', 'Long Cang'],
+  ['photo', 'ZCOOL KuaiLe'],
+  ['poster', 'Liu Jian Mao Cao'],
+  ['kindle', 'Noto Sans SC'],
+])('Chinese %s passages load %s in both variants', (theme, font) => {
   const quote = document.createElement('blockquote');
   quote.lang = 'zh-CN';
-  for (const theme of ['base-light', 'terminal-dark', 'handwriting-light', 'kindle-dark']) {
-    document.documentElement.dataset.theme = theme;
+  for (const variant of ['light', 'dark']) {
+    document.documentElement.dataset.theme = `${theme}-${variant}`;
     applyLocaleThemeFont(quote);
-    expect(quote.style.getPropertyValue('--locale-quote-font-family')).toContain('Songti SC');
+    expect(quote.style.getPropertyValue('--locale-quote-font-family')).toContain(font);
+    expect(loadFontIfNotExists).toHaveBeenCalledWith(font);
   }
-  expect(loadFontIfNotExists).not.toHaveBeenCalled();
   quote.lang = 'en-GB';
   applyLocaleThemeFont(quote);
   expect(quote.style.getPropertyValue('--locale-quote-font-family')).toBe('initial');

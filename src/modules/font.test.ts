@@ -154,3 +154,26 @@ test('adding a font clears the input after success and preserves it on failure',
   await vi.waitFor(() => expect(document.getElementById('custom-font-status')!.textContent).toContain('not added'));
   expect(input.value).toBe('Missing Family');
 });
+
+test.each([
+  ['el-GR', 'base-dark', 'Sansation'],
+  ['el-GR-draft', 'retro-light', 'Handjet'],
+  ['el-GR', 'handwriting-dark', 'Mansalva'],
+  ['zh-CN', 'base-light', 'Noto Sans SC'],
+  ['zh-CN', 'poster-dark', 'Liu Jian Mao Cao'],
+  ['en-GB', 'base-light', 'Special Elite'],
+])('default label follows the displayed %s passage in %s', (locale, theme, font) => {
+  store.set('ui-locale', 'es-ES');
+  store.set('locale', 'en-GB');
+  const quote = document.createElement('blockquote');
+  quote.id = 'quote';
+  quote.lang = locale;
+  document.body.append(quote);
+  document.documentElement.dataset.theme = theme;
+  refreshDefaultFontLabel();
+  expect(document.querySelector('option[value="default"]')!.textContent).toBe(`Por defecto (${font})`);
+  expect(store.get('font')).toBe('default');
+  quote.lang = 'en-GB';
+  refreshDefaultFontLabel();
+  expect(document.querySelector('option[value="default"]')!.textContent).not.toContain('Sansation');
+});

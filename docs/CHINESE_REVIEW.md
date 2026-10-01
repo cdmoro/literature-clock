@@ -22,7 +22,7 @@ The detailed report contains 306 candidate rows: 305 numeric-token differences a
 
 ## Typography and integration
 
-The interface, About panel, reading controls, settings, colour controls, fallback passages and language selectors include Chinese. Theme quotes use local CJK serif families (Songti SC, SimSun, Noto Serif CJK SC) with a generic serif fallback. Bilingual passages choose their font independently; custom user fonts retain their priority.
+The interface, About panel, reading controls, settings, colour controls, fallback passages and language selectors include Chinese. Chinese theme defaults load Google Fonts: Noto Sans SC for base and otherwise unassigned themes, ZCOOL QingKe HuangYou for retro/terminal, ZCOOL XiaoWei for elegant, Long Cang for handwriting, ZCOOL KuaiLe for photo, and Liu Jian Mao Cao for poster. The font selector labels the actual default for the displayed passage language and current theme. Bilingual passages choose their font independently; custom user fonts retain their priority.
 
 ## Reproduce
 
