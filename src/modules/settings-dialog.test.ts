@@ -194,6 +194,30 @@ test('visual theme choices preserve theme events, URL state and current quote wi
   expect(previewDocument().querySelector('#quote p')!.textContent).toBe('The next quote');
 });
 
+test('theme preview stays invisible until its document loads and hides again when the theme changes', async () => {
+  document.body.innerHTML = page;
+  vi.stubGlobal('matchMedia', vi.fn(() => ({ matches: false, addEventListener: vi.fn() })));
+  createStore();
+  initSettingsDialog();
+  initTheme();
+  const dialog = document.querySelector<HTMLDialogElement>('#settings-dialog')!;
+  const preview = document.querySelector<HTMLIFrameElement>('#settings-theme-preview')!;
+  expect(preview.style.visibility).toBe('hidden');
+  preview.dispatchEvent(new Event('load'));
+  expect(preview.style.visibility).toBe('hidden');
+  dialog.setAttribute('open', '');
+  dialog.dispatchEvent(new Event('settings-preview'));
+  expect(preview.srcdoc).toContain('<!doctype html>');
+  expect(preview.style.visibility).toBe('hidden');
+  preview.dispatchEvent(new Event('load'));
+  expect(preview.style.visibility).toBe('visible');
+  document.querySelector<HTMLButtonElement>('.theme-next')!.click();
+  await Promise.resolve();
+  expect(preview.style.visibility).toBe('hidden');
+  preview.dispatchEvent(new Event('load'));
+  expect(preview.style.visibility).toBe('visible');
+});
+
 test('theme list stays collapsed, supports stepping and closes after choosing or Escape', async () => {
   document.body.innerHTML = page;
   vi.stubGlobal(
