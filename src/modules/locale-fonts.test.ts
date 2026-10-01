@@ -67,3 +67,17 @@ test.each([
     expect(loadFontIfNotExists).toHaveBeenCalledWith(font);
   }
 });
+
+test('Chinese passages keep local CJK fonts across themes and clear them for English', () => {
+  const quote = document.createElement('blockquote');
+  quote.lang = 'zh-CN';
+  for (const theme of ['base-light', 'terminal-dark', 'handwriting-light', 'kindle-dark']) {
+    document.documentElement.dataset.theme = theme;
+    applyLocaleThemeFont(quote);
+    expect(quote.style.getPropertyValue('--locale-quote-font-family')).toContain('Songti SC');
+  }
+  expect(loadFontIfNotExists).not.toHaveBeenCalled();
+  quote.lang = 'en-GB';
+  applyLocaleThemeFont(quote);
+  expect(quote.style.getPropertyValue('--locale-quote-font-family')).toBe('initial');
+});

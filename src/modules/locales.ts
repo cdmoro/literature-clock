@@ -3,6 +3,7 @@ import { initLanguagePreferences } from './language-preferences';
 import { updateQuote } from './quotes';
 import TRANSLATIONS from '../strings/translations.json';
 import SETTINGS from '../strings/settings.json';
+import ABOUT from '../strings/about.json';
 import COLOR_CONTROLS from '../strings/colorControls.json';
 import { BaseLocale, Locale } from '../types';
 import { getLiveTime } from '../utils';
@@ -17,6 +18,7 @@ export const DOMINANT_LOCALES: Record<string, Locale> = {
   pt: 'pt-PT',
   de: 'de-DE',
   el: 'el-GR',
+  zh: 'zh-CN',
 } as const;
 
 const DRAFT_SUFFIX = '-draft';
@@ -115,6 +117,12 @@ export function translateStrings(locale: Locale) {
   };
 
   document.documentElement.lang = getBaseLocale(locale);
+  const aboutLocale = getBaseLocale(locale) === 'zh-CN' ? 'zh-CN' : 'en-GB';
+  const aboutTitle = document.getElementById('about-clock-title');
+  if (aboutTitle?.parentElement) aboutTitle.parentElement.lang = aboutLocale;
+  document.querySelectorAll<HTMLElement>('[data-about-text]').forEach((element) => {
+    element.textContent = ABOUT[aboutLocale][element.dataset.aboutText as keyof (typeof ABOUT)['en-GB']];
+  });
   document.getElementById('draft-preview-notice')?.remove();
   const quoteLocale = store.get('locale');
   if (quoteLocale.endsWith(DRAFT_SUFFIX)) {
@@ -132,6 +140,7 @@ export function translateStrings(locale: Locale) {
     'fr-FR': 'L’heure en citations de livres',
     'it-IT': 'L’ora nelle citazioni dei libri',
     'de-DE': 'Die Uhrzeit in Buchzitaten',
+    'zh-CN': '用文学引文诉说时间',
   };
   const description = descriptions[getBaseLocale(locale)] || descriptions['en-GB'];
   document.title = `${time} - ${strings.document_title} — ${description}`;

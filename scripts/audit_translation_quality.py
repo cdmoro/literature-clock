@@ -68,6 +68,9 @@ def clock_phrase(phrase, lang):
     Does not infer AM/PM, approximate times, arithmetic in narrative, or a time
     from an arbitrary number embedded in a sentence.
     """
+    if lang == 'zh':
+        from chinese_time import clock_phrase as chinese_clock_phrase
+        return chinese_clock_phrase(phrase)
     if lang == 'el':
         from greek_time import clock_phrase as greek_clock_phrase
         return greek_clock_phrase(phrase)
@@ -138,6 +141,7 @@ def plain(text):
 def explicit_period(phrase, lang):
     """Only explicit, unambiguous day periods; 'night' alone stays contextual."""
     patterns = {
+        'zh': (r'(?:午夜|子夜|凌晨|清晨|早晨|早上|上午)', r'(?:正午|中午|下午|傍晚|晚上)'),
         'el': (r'\b(?:μεσάνυχτα|μεσονύχτια|πρωί|ξημερώματα|π\.μ\.)', r'\b(?:μεσημέρι|απόγευμα|βράδυ|μ\.μ\.)'),
         'en': (r'\b(?:midnight|morning|a\.?m\.?)\b', r'\b(?:noon|afternoon|evening|p\.?m\.?)\b'),
         'es': (r'\b(?:medianoche|mañana|madrugada)\b', r'\b(?:mediodía|tarde)\b'),
@@ -228,10 +232,10 @@ def audit(directory):
                 if row['Quote'] == original['Quote']:
                     reasons.append(('unchanged', 'Full passage identical across different languages'))
                 ratio = len(plain(row['Quote'])) / max(1, len(plain(original['Quote'])))
-                if ratio < .60 or ratio > 1.75:
+                if ratio < (.15 if lang == 'zh' else .60) or ratio > 1.75:
                     reasons.append(('length', f'Target/source character ratio {ratio:.2f}; possible omission or addition'))
                 source_digits = Counter(re.findall(r'\b\d+\b', plain(original['Quote'])))
-                target_digits = Counter(re.findall(r'\b\d+\b', plain(row['Quote'])))
+                target_digits = Counter(re.findall(r'(?<![0-9])\d+(?![0-9])' if lang == 'zh' else r'\b\d+\b', plain(row['Quote'])))
                 # Reformatting numbers as words is legitimate: this only queues review.
                 if source_digits and target_digits and source_digits != target_digits:
                     reasons.append(('numbers', 'Digit tokens differ; may be legitimate spelling or time-format localization'))

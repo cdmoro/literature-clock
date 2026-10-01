@@ -184,3 +184,15 @@ it('lists Greek separately from British English and preserves the selected local
   expect(store.get('translation-locale')).toBe('el-GR');
   expect(select.value).toBe('el-GR');
 });
+
+it('fetches Chinese translations and retains the selected locale', async () => {
+  store.set('bilingual', true);
+  const select = document.querySelector<HTMLSelectElement>('#translation-locale')!;
+  expect([...select.options].find((option) => option.value === 'zh-CN')!.textContent).toContain('中文（简体）');
+  select.value = 'zh-CN';
+  select.dispatchEvent(new Event('change'));
+  expect(store.get('translation-locale')).toBe('zh-CN');
+  expect(fetch).toHaveBeenLastCalledWith('../times/zh-CN/12_00.json');
+  await translationPanel();
+  expect(document.querySelector<HTMLSelectElement>('#clock-translation-locale')!.value).toBe('zh-CN');
+});

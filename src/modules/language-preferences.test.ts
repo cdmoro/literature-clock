@@ -187,3 +187,14 @@ test('Greek is selectable for the interface and quote rotation', () => {
   expect(getRandomLocale()).toBe('el-GR');
   expect(language('el-GR').nextElementSibling!.textContent).toContain('(el-GR)');
 });
+
+test('Chinese is selectable for the interface and quote rotation', () => {
+  init();
+  selectUi('zh-CN');
+  expect(document.documentElement.lang).toBe('zh-CN');
+  expect(document.getElementById('about-clock-title')!.textContent).toContain('文学时钟');
+  expect(document.getElementById('ui-locale-select')!.textContent).toContain('中文（简体）');
+  language('zh-CN').click();
+  expect(store.get('quote-locales')).toBe('zh-CN');
+  expect(getRandomLocale()).toBe('zh-CN');
+});

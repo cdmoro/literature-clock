@@ -25,7 +25,9 @@ export async function renderTranslation() {
   select.setAttribute('aria-label', strings().bilingual_language);
   const names = new Intl.DisplayNames([getBaseLocale(getInterfaceLocale())], { type: 'language' });
   for (const language of Object.keys(SETTINGS)) {
-    select.add(new Option(`${names.of(language.split('-')[0])} (${language})`, language));
+    select.add(
+      new Option(`${names.of(language === 'zh-CN' ? 'zh-Hans' : language.split('-')[0])} (${language})`, language),
+    );
   }
   select.value = locale;
   select.addEventListener('change', () => store.set('translation-locale', select.value as Locale));

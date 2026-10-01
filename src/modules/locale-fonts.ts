@@ -9,13 +9,18 @@ export const LOCALE_THEME_FONTS: Record<string, Record<string, string>> = {
   festive: { el: 'Comic Relief' },
   terminal: { el: 'Victor Mono' },
   bohemian: { el: 'M PLUS Rounded 1c' },
-  photo: { el: 'Dela Gothic One' }
+  photo: { el: 'Dela Gothic One' },
 };
 const BASE_FONT_THEMES = new Set(['base', 'pink', 'green', 'orange', 'purple', 'blue', 'gray']);
 
 export function applyLocaleThemeFont(element: HTMLElement, locale = element.lang) {
   const theme = document.documentElement.dataset.theme?.split('-')[0] || 'base';
   const language = locale.split('-')[0].toLowerCase();
+  if (language === 'zh') {
+    // Local CJK families cover every theme and also work without external font services.
+    element.style.setProperty('--locale-quote-font-family', '"Songti SC", "SimSun", "Noto Serif CJK SC", serif');
+    return;
+  }
   const font = LOCALE_THEME_FONTS[BASE_FONT_THEMES.has(theme) ? 'base' : theme]?.[language];
   // Block inheritance when secondary reading content uses another language.
   element.style.setProperty('--locale-quote-font-family', font ? `"${font}", monospace` : 'initial');

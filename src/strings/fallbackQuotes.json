@@ -174,5 +174,27 @@
       "quote_time_case": "",
       "sfw": true
     }
+  ],
+  "zh-CN": [
+    {
+      "quote_first": "错误 ",
+      "quote_last": "：未找到引文。",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "船长日志：<br>我们仍在寻找对应以下时间的引文：",
+      "quote_last": "。",
+      "title": "白鲸",
+      "author": "亚哈船长",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
   ]
 }

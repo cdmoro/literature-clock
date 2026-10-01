@@ -55,6 +55,7 @@ Explore the full selection in **Settings**: Base, colour themes, Retro, Elegant,
 | Italian | `it-IT` |
 | German | `de-DE` |
 | Greek | `el-GR` |
+| Simplified Chinese | `zh-CN` |
 
 The clock initially follows your browser's language. In **Settings**, choose an interface language and select one or more quote languages. An empty selection follows the interface language; multiple selections rotate quotes between those languages.
 
