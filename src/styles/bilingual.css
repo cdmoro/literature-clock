@@ -2,11 +2,11 @@
    its primary quote's bubbles, oversized ornaments or attribution layout. */
 #quote #clock-translation-locale {
   width: auto;
+  max-width: 100%;
+  box-sizing: border-box;
   margin: 0;
-  padding: 0 0.25em 0 0;
   border: 0;
-  border-radius: 0;
-  background: transparent;
+  background: color-mix(in srgb, var(--font-color), transparent 94%);
   box-shadow: none;
   color: inherit;
   font: inherit;
@@ -14,9 +14,10 @@
   cursor: pointer;
   appearance: auto;
 }
-#quote #clock-translation-locale:focus-visible {
-  outline: 1px solid currentColor;
-  outline-offset: 3px;
+#quote #clock-translation-locale:focus {
+  /* Keep the focus ring inside the control so the quote's scrollport cannot clip it. */
+  box-shadow: inset 0 0 0 2px var(--accent-color) !important;
+  outline: 0;
 }
 #quote #quote-translation {
   min-width: 0;
