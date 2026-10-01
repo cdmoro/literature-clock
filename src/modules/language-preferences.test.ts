@@ -67,6 +67,22 @@ test('collapsed picker summarizes selected languages and closes on Escape or dia
   expect(store.get('quote-locales')).toBe('fr-FR,el-GR');
 });
 
+test('picker stays open for selections and closes when clicking outside', () => {
+  init();
+  const picker = document.querySelector<HTMLDetailsElement>('#quote-language-picker')!;
+  picker.open = true;
+  document.getElementById('select-all-languages')!.click();
+  expect(picker.open).toBe(true);
+  expect(document.getElementById('quote-language-summary')!.textContent).toContain('(el-GR)');
+  expect(document.getElementById('quote-languages-help')).toBeNull();
+  expect(picker.closest('.settings-row')?.id).toBe('quote-languages');
+  document.getElementById('ui-locale-select')!.click();
+  expect(picker.open).toBe(false);
+  expect(
+    [...document.querySelectorAll<HTMLInputElement>('#quote-language-options input')].every((input) => input.checked),
+  ).toBe(true);
+});
+
 test('explicit selections rotate only chosen languages and preserve the interface', () => {
   history.replaceState({}, '', '/?locale=es-ES');
   init();

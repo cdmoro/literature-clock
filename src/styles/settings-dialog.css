@@ -127,21 +127,30 @@
   font-size: 0.8rem;
   margin: 0.25rem 0 0.75rem;
 }
-#quote-languages {
-  border: 0;
-  margin: 1rem 0 0;
-  padding: 0;
+#settings-dialog #quote-languages {
+  align-items: flex-start;
 }
-#quote-languages legend {
-  margin-bottom: 0.5rem;
+#quote-languages-label {
+  padding-top: 0.25rem;
+}
+#settings-dialog #quote-language-picker {
+  display: block;
+  width: 62%;
+  min-width: 0;
+}
+#settings-dialog #quote-language-picker summary {
+  margin: 0;
+  border-radius: 0.35rem;
 }
 #quote-language-picker summary {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  padding: 0.4rem 0.6rem;
-  border: 1px solid color-mix(in srgb, var(--font-color), transparent 65%);
+  min-width: 0;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
   border-radius: 0.35rem;
   cursor: pointer;
   list-style: none;
@@ -159,6 +168,8 @@
   margin: -0.2rem 0.2rem 0 0;
 }
 #quote-language-summary {
+  min-width: 0;
+  flex: 1;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -167,11 +178,15 @@
   outline: 2px solid var(--accent-color);
   outline-offset: 3px;
 }
-.quote-language-menu {
-  margin-top: 0.4rem;
+#settings-dialog #quote-language-picker .quote-language-menu {
+  margin-top: 0;
   padding: 0.5rem;
-  border: 1px solid color-mix(in srgb, var(--font-color), transparent 75%);
-  border-radius: 0.35rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
+  border-top: 0;
+  border-radius: 0 0 0.35rem 0.35rem;
+}
+#settings-dialog #quote-language-picker[open] summary {
+  border-radius: 0.35rem 0.35rem 0 0;
 }
 #select-all-languages-row {
   margin: 0 0 0.4rem;

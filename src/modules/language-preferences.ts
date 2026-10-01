@@ -62,6 +62,9 @@ export function initLanguagePreferences() {
     changeQuoteLanguages(inputs.map((input) => input.value as Locale));
   });
   const picker = document.querySelector<HTMLDetailsElement>('#quote-language-picker')!;
+  document.addEventListener('click', (event) => {
+    if (event.target instanceof Node && !picker.contains(event.target)) picker.open = false;
+  });
   picker.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape' || !picker.open) return;
     event.preventDefault();
