@@ -50,6 +50,8 @@
   max-width: 65%;
 }
 #settings-dialog select {
+  box-sizing: border-box;
+  height: 2rem;
   min-width: 0;
   width: 100%;
   max-height: none;
@@ -72,7 +74,11 @@
 
 /* Keep the original SVG controls and round the visible edges of every group. */
 #settings-dialog .input-group-text {
-  display: flex;
+  display: none;
+}
+#settings-dialog .input-group > select {
+  margin-left: 0;
+  border-radius: 0.35rem;
 }
 #settings-dialog .input-group {
   flex: 0 1 62%;
@@ -89,8 +95,11 @@
 }
 #settings-dialog .settings-row:has(.settings-switch) {
   display: grid;
-  grid-template-columns: 18px 1fr auto;
+  grid-template-columns: 1fr auto;
   gap: 0.4rem 0.6rem;
+}
+#settings-dialog .settings-row > svg {
+  display: none;
 }
 #settings-dialog .settings-switch {
   position: relative;
@@ -143,6 +152,8 @@
   border-radius: 0.35rem;
 }
 #quote-language-picker summary {
+  box-sizing: border-box;
+  height: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -179,6 +190,9 @@
   outline-offset: 3px;
 }
 #settings-dialog #quote-language-picker .quote-language-menu {
+  box-sizing: border-box;
+  width: 100%;
+  margin-left: 0;
   margin-top: 0;
   padding: 0.5rem;
   border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
@@ -308,10 +322,10 @@
   display: none;
 }
 #settings-dialog #font-select {
-  border-radius: 0;
+  border-radius: 0.35rem 0 0 0.35rem;
 }
 #settings-dialog .input-group:has(#remove-custom-font[hidden]) #font-select {
-  border-radius: 0 0.35rem 0.35rem 0;
+  border-radius: 0.35rem;
 }
 
 /* Tabs share a single panel area, keeping the dialog compact. */

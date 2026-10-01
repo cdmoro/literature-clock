@@ -71,16 +71,25 @@ test('picker stays open for selections and closes when clicking outside', () => 
   init();
   const picker = document.querySelector<HTMLDetailsElement>('#quote-language-picker')!;
   picker.open = true;
-  document.getElementById('select-all-languages')!.click();
+  language('fr-FR').click();
   expect(picker.open).toBe(true);
+  document.getElementById('select-all-languages')!.click();
+  expect(picker.open).toBe(false);
+  expect(document.activeElement).toBe(picker.querySelector('summary'));
   expect(document.getElementById('quote-language-summary')!.textContent).toContain('(el-GR)');
   expect(document.getElementById('quote-languages-help')).toBeNull();
   expect(picker.closest('.settings-row')?.id).toBe('quote-languages');
+  picker.open = true;
   document.getElementById('ui-locale-select')!.click();
   expect(picker.open).toBe(false);
   expect(
     [...document.querySelectorAll<HTMLInputElement>('#quote-language-options input')].every((input) => input.checked),
   ).toBe(true);
+  picker.open = true;
+  document.getElementById('clear-languages')!.click();
+  expect(picker.open).toBe(false);
+  expect(document.activeElement).toBe(picker.querySelector('summary'));
+  expect(store.get('quote-locales')).toBe('');
 });
 
 test('explicit selections rotate only chosen languages and preserve the interface', () => {

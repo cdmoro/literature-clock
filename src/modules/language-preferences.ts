@@ -60,6 +60,8 @@ export function initLanguagePreferences() {
       input.checked = true;
     });
     changeQuoteLanguages(inputs.map((input) => input.value as Locale));
+    picker.open = false;
+    picker.querySelector('summary')!.focus();
   });
   const picker = document.querySelector<HTMLDetailsElement>('#quote-language-picker')!;
   document.addEventListener('click', (event) => {
@@ -81,6 +83,8 @@ export function initLanguagePreferences() {
       input.checked = false;
     });
     changeQuoteLanguages([]);
+    picker.open = false;
+    picker.querySelector('summary')!.focus();
   });
   select.addEventListener('change', () => {
     store.set('ui-locale', select.value as Locale);
