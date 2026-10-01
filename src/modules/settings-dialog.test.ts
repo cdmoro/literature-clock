@@ -141,6 +141,9 @@ test('tabs show one panel and support keyboard navigation with roving focus', ()
     'tab-behavior',
   ]);
   expect(document.getElementById('settings-content')!.hidden).toBe(false);
+  for (const panel of document.querySelectorAll<HTMLElement>('#settings-dialog [role="tabpanel"]')) {
+    expect(panel.hasAttribute('tabindex')).toBe(false);
+  }
   content.click();
   expect(content.getAttribute('aria-selected')).toBe('true');
   expect(appearance.tabIndex).toBe(-1);

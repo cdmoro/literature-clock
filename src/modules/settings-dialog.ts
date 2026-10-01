@@ -20,9 +20,9 @@ export function initSettingsDialog() {
       <button type="button" id="tab-appearance" role="tab" aria-controls="settings-appearance" aria-selected="false" tabindex="-1" data-text="settings_appearance">Appearance</button>
       <button type="button" id="tab-behavior" role="tab" aria-controls="settings-behavior" aria-selected="false" tabindex="-1" data-text="settings_behavior">Behaviour</button>
     </div>
-    <section id="settings-appearance" role="tabpanel" aria-labelledby="tab-appearance" tabindex="0" hidden></section>
-    <section id="settings-content" role="tabpanel" aria-labelledby="tab-content" tabindex="0"></section>
-    <section id="settings-behavior" role="tabpanel" aria-labelledby="tab-behavior" tabindex="0" hidden></section>`;
+    <section id="settings-appearance" role="tabpanel" aria-labelledby="tab-appearance" hidden></section>
+    <section id="settings-content" role="tabpanel" aria-labelledby="tab-content"></section>
+    <section id="settings-behavior" role="tabpanel" aria-labelledby="tab-behavior" hidden></section>`;
   document.body.append(dialog);
 
   const tabs = [...dialog.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
