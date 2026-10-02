@@ -128,6 +128,56 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
         self.assertIn('كنتُ أرى', dialogue['Quote'])
         self.assertEqual(dialogue['Quote time'], 'قبيل 2:04')
 
+    def test_arabic_military_time_is_not_a_year_or_duration(self):
+        row = self.catalogues['ar-AE']['1504-002']
+        self.assertIn('Woken at 1504 by Michelangelo', self.source_by_id['1504-002']['Quote'])
+        # This passage deliberately retains four-digit military notation.
+        self.assertEqual(clock_phrase(row['Quote time'], 'en'), 3 * 60 + 4)
+        self.assertIn('أيقظني مايكل أنجلو', row['Quote'])
+        self.assertNotIn('عام', row['Quote'])
+        for identifier in ['0544-000', '2018-000']:
+            with self.subTest(identifier=identifier):
+                source = self.source_by_id[identifier]
+                target = self.catalogues['ar-AE'][identifier]
+                military = re.sub(r'\bhrs\b', 'hours', source['Quote time'])
+                self.assertEqual(clock_phrase(military, 'en'),
+                                 clock_phrase(target['Quote time'], 'ar'))
+                self.assertNotIn('ساعة', target['Quote time'])
+
+    def test_arabic_death_and_rescue_actions_keep_their_subjects(self):
+        departed = self.catalogues['ar-AE']['1853-002']['Quote']
+        self.assertIn('West departed', self.source_by_id['1853-002']['Quote'])
+        self.assertIn('ويست غادر المكان', departed)
+        self.assertNotIn('ويست فارق الحياة', departed)
+        for identifier in ['0803-001', '2003-000']:
+            with self.subTest(identifier=identifier):
+                passage = self.catalogues['ar-AE'][identifier]['Quote']
+                self.assertIn('أنزلتموها', passage)
+                self.assertNotIn('قتلتموها', passage)
+        opium = self.catalogues['ar-AE']['2355-003']['Quote']
+        self.assertIn('لاحظتُ', opium)
+        self.assertIn('تأثير صبغة الأفيون عليه', opium)
+        self.assertNotIn('تظهر عليّ', opium)
+
+    def test_arabic_broken_clock_keeps_repeated_seconds(self):
+        for identifier in ['0802-000', '0803-003']:
+            with self.subTest(identifier=identifier):
+                passage = self.catalogues['ar-AE'][identifier]['Quote']
+                self.assertIn('ثلاثة ثلاثة ثلاثة', passage)
+                self.assertIn('سبع ثوانٍ ثوانٍ', passage)
+                self.assertIn('تسع تسع تسع', passage)
+                self.assertIn('وفاة وفاة وفاة', passage)
+                self.assertNotIn('تسعين', passage)
+
+    def test_arabic_repeated_passages_share_repaired_meaning(self):
+        for first, second in [('0203-001', '0204-000'), ('0043-000', '1243-000'),
+                              ('0659-001', '1859-000'), ('0805-001', '2005-003'),
+                              ('1215-000', '1205-000'), ('2348-001', '2353-002')]:
+            with self.subTest(first=first, second=second):
+                self.assertEqual(self.source_by_id[first]['Quote'], self.source_by_id[second]['Quote'])
+                self.assertEqual(self.catalogues['ar-AE'][first]['Quote'],
+                                 self.catalogues['ar-AE'][second]['Quote'])
+
 
     def test_spanish_passages_reused_at_other_times_keep_the_same_translation(self):
         for locale, rows in self.catalogues.items():
