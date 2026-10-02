@@ -120,3 +120,30 @@ test.each([
   applyLocaleThemeFont(quote);
   expect(quote.style.getPropertyValue('--locale-quote-font-family')).toBe('initial');
 });
+
+
+test.each([
+  ['festive', 'Playwrite AR'],
+  ['handwriting', 'Give You Glory'],
+  ['terminal', 'LXGW WenKai Mono TC'],
+  ['poster', 'Spectral'],
+  ['subtle', 'Literata'],
+  ['horizon', 'Literata'],
+])('Esperanto %s passages load %s independently in both variants', (theme, font) => {
+  document.body.innerHTML =
+    '<blockquote id="quote" lang="eo"><section id="quote-translation"><div class="translation-content" lang="en-GB"></div></section></blockquote>';
+  const quote = document.getElementById('quote')!;
+  const translation = document.querySelector<HTMLElement>('.translation-content')!;
+  for (const variant of ['light', 'dark']) {
+    document.documentElement.dataset.theme = `${theme}-${variant}`;
+    refreshLocaleThemeFonts();
+    expect(quote.style.getPropertyValue('--locale-quote-font-family')).toContain(font);
+    expect(translation.style.getPropertyValue('--locale-quote-font-family')).toBe('initial');
+    expect(loadFontIfNotExists).toHaveBeenCalledWith(font);
+  }
+  quote.lang = 'en-GB';
+  translation.lang = 'eo';
+  refreshLocaleThemeFonts();
+  expect(quote.style.getPropertyValue('--locale-quote-font-family')).toBe('initial');
+  expect(translation.style.getPropertyValue('--locale-quote-font-family')).toContain(font);
+});

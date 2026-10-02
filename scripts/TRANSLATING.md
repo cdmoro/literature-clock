@@ -140,9 +140,10 @@ Esperanto is registered in the normal clock as `eo`, with translated interface,
 reading controls, settings, About and fallback messages. It is available in the
 interface, quote-rotation and bilingual selectors. Use
 `?locale=eo&time=14:02&quote-id=1402-001` to inspect an approved passage.
-Original theme fonts remain in use. Handwriting (Reenie Beanie), Subtle and
-Horizon (Unna), Poster (Averia Serif Libre), Festive (Borel) and Terminal
-(B612 Mono) still need user-selected alternatives for Esperanto diacritics.
+The user-selected Esperanto fonts are Give You Glory (Handwriting), Literata
+(Subtle and Horizon), Spectral (Poster), Playwrite AR (Festive) and LXGW WenKai
+Mono TC (Terminal). Their glyph sets cover `ĈĜĤĴŜŬĉĝĥĵŝŭ`; fonts apply to each
+bilingual passage independently and preserve custom-font priority.
 
 ## Interactive menu (legacy alternative)
 
