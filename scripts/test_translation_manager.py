@@ -41,6 +41,17 @@ class TranslationManagerTest(unittest.TestCase):
             Project(self.root, '../escape', 'fr')
         self.assertEqual(Project(self.root, 'en-GB', 'en').locale, 'en-GB')
 
+    def test_regionless_locale_is_created_and_can_resume(self):
+        project = Project(self.root, 'eo', 'eo')
+        project.create()
+        self.assertEqual(project.catalogue.name, 'quotes.eo.csv')
+        self.assertTrue(all(is_draft(row) for row in read_catalogue(project.catalogue)))
+        resumed = Project(self.root, 'eo', 'eo')
+        self.assertEqual(resumed.catalogue, project.catalogue)
+        for invalid in ('../eo', 'eo/escape', 'eo-draft', 'eo-', 'eo_XX'):
+            with self.subTest(locale=invalid), self.assertRaises(ValueError):
+                Project(self.root, invalid, 'eo')
+
     def test_create_adopts_legacy_checkpoint_without_modifying_it(self):
         project = Project(self.root, 'fr-CA', 'fr')
         legacy = self.root / '.translation-work/fr/state.json'

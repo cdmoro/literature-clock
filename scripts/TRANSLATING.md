@@ -122,6 +122,48 @@ is committed and deployed, anyone with the draft URL can view it. The administra
 and its editing API remain local-only. Preview generation does not change approval
 or registration, and never makes `locale=el-GR` work for an unpublished language.
 
+Esperanto uses the regionless locale `eo`. Its catalogue is `quotes/quotes.eo.csv`.
+Regionless locales work in the administrator, draft clock URLs and saved quote
+collections. All 3,640 passages have been read in full against their declared
+originals and approved, including secondary times, quantities, periods, names
+and narrative meaning. Time highlights retain seconds and ranges where stated.
+This editorial review does not claim a native-speaker literary review.
+
+Two source defects require documented editorial choices: 1240-001 reads the
+unhyphenated “five pound notes” as five-pound-denomination banknotes, without
+adding a note count; 2328-000 omits the stray “maitre” before “nineteenth-century
+inn” found in the author-authorized Gutenberg text, without inventing a
+replacement adjective. These choices affect wording, not the quote's clock time.
+Source catalogues remain unchanged.
+
+Esperanto is registered in the normal clock as `eo`, with translated interface,
+reading controls, settings, About and fallback messages. It is available in the
+interface, quote-rotation and bilingual selectors. Use
+`?locale=eo&time=14:02&quote-id=1402-001` to inspect an approved passage.
+The user-selected Esperanto fonts are Give You Glory (Handwriting), Literata
+(Subtle and Horizon), Spectral (Poster), Playwrite AR (Festive) and LXGW WenKai
+Mono TC (Terminal). Their glyph sets cover `ĈĜĤĴŜŬĉĝĥĵŝŭ`; fonts apply to each
+bilingual passage independently and preserve custom-font priority.
+
+Font choices are saved by passage language, independently of the interface.
+The selector includes compatible general theme fonts, alternatives assigned to
+that language and the user's saved families. A compatible manually chosen family
+is retained across language/theme changes; an incompatible family falls back to
+the current theme's automatic font without deleting the preference. Each bilingual
+passage resolves its own choice. Unverified user families remain selectable with
+a coverage notice; known incompatible saved families are disabled and removable.
+Existing global font settings migrate to the current language, and explicit
+`font` links override that language's preference.
+
+`src/font-coverage.json` records verified languages, official Google Fonts source
+URLs and SHA-256 hashes of checked font files. Coverage checks use Latin letters
+plus each language's accented alphabet, Greek and Russian alphabets, and common
+Simplified Chinese clock characters. This is alphabet/script coverage, not a
+promise to cover every uncommon or foreign character in a literary passage.
+Recheck the registry when adding fonts or languages; downloading a custom font
+successfully does not establish its glyph coverage.
+
+
 ## Interactive menu (legacy alternative)
 
 Start with one command from the repository root:
@@ -133,7 +175,7 @@ npm run translate
 Only Python 3.9+ is needed for the manager; no Python packages, frontend build or
 Google credentials are required. Alternatively run `python3 scripts/translation_manager.py`.
 Choose numbered options to create a language or resume a saved workspace. Creating
-a language asks for its locale (for example `el-GR`) and Google code (`el`); it
+a language asks for its locale (for example `eo` or `el-GR`) and Google code (`eo` or `el`); it
 initializes the full draft CSV or adopts an existing full catalogue without rewriting it.
 
 Inside a language, the menu offers:

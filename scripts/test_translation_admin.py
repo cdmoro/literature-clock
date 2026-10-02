@@ -44,6 +44,20 @@ class AdminTest(unittest.TestCase):
         self.assertTrue((path / 'fr-FR-draft/07_30.json').exists())
         self.assertFalse((path / 'fr-FR').exists())
 
+    def test_regionless_language_supports_review_and_preview(self):
+        self.admin.mutate('create', {'locale': 'eo', 'target': 'eo'})
+        language = next(row for row in self.admin.languages()['languages'] if row['locale'] == 'eo')
+        self.assertFalse(language['enabled'])
+        result = self.admin.quotes('eo')
+        self.assertEqual(result['total'], 2)
+        self.admin.mutate('edit', {'locale': 'eo', 'id': self.rows[0]['Id'],
+                                 'fields': {field: self.rows[0][field] for field in ('Quote', 'Title', 'Quote time')},
+                                 'approved': True, 'revision': result['revision']})
+        self.assertEqual(self.admin.quotes('eo', status='approved')['total'], 1)
+        self.admin.mutate('preview', {'locale': 'eo'})
+        self.assertTrue((self.root / 'public/times/eo-draft/07_30.json').exists())
+        self.assertFalse((self.root / 'public/times/eo').exists())
+
     def test_quote_search_preserves_newlines_and_blocks_path_traversal(self):
         rows = read_catalogue(self.project.catalogue)
         rows[0]['Quote'] = 'Line one\nAt seven thirty.'

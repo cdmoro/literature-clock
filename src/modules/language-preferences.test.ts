@@ -208,3 +208,16 @@ test('Russian is selectable for the interface and quote rotation', () => {
   expect(store.get('quote-locales')).toBe('ru-RU');
   expect(getRandomLocale()).toBe('ru-RU');
 });
+
+test('regionless Esperanto works for the interface and independent quote rotation', () => {
+  init();
+  selectUi('eo');
+  expect(document.documentElement.lang).toBe('eo');
+  expect(document.getElementById('about-clock-title')!.textContent).toContain('Literatura Horloĝo');
+  expect(readingStrings().favorites).toBe('Ŝatataj');
+  language('eo').click();
+  selectUi('en-GB');
+  expect(store.get('quote-locales')).toBe('eo');
+  expect(getRandomLocale()).toBe('eo');
+  expect(document.documentElement.lang).toBe('en-GB');
+});

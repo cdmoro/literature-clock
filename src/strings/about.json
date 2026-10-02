@@ -1,7 +1,7 @@
 {
   "en-GB": {
     "title": "Literature Clock — a clock told through book quotes",
-    "description": "Literature Clock is a free online clock that matches your local time to a passage from a book mentioning that time, updating every minute — in English, Spanish, Portuguese, French, Italian, German, Greek, Simplified Chinese or Russian.",
+    "description": "Literature Clock is a free online clock that matches your local time to a passage from a book mentioning that time, updating every minute — in English, Spanish, Portuguese, French, Italian, German, Greek, Simplified Chinese, Russian or Esperanto.",
     "features": "Personalise it with light or dark themes, custom fonts and colours, a distraction-free zen mode, or a screensaver that moves the quote around the screen. Save favourite passages, revisit recent quotes, and share or download them as an image — all stored locally in your browser, with no account needed.",
     "project": "About the project",
     "credits": "Created by Carlos Bonadeo, building on the literary clock work of",
@@ -12,7 +12,7 @@
   },
   "zh-CN": {
     "title": "文学时钟——用书中引文诉说时间",
-    "description": "文学时钟是一款免费的在线时钟。它根据您的当地时间，显示书中提及该时间的段落，每分钟更新一次，支持英语、西班牙语、葡萄牙语、法语、意大利语、德语、希腊语、简体中文和俄语。",
+    "description": "文学时钟是一款免费的在线时钟。它根据您的当地时间，显示书中提及该时间的段落，每分钟更新一次，支持英语、西班牙语、葡萄牙语、法语、意大利语、德语、希腊语、简体中文、俄语和世界语。",
     "features": "您可以选择浅色或深色主题、自定义字体和颜色，启用专注阅读的禅模式，或让引文在屏幕上移动的屏幕保护模式。收藏喜爱的段落，重温最近阅读的引文，分享链接或下载图片。所有记录均保存在您的浏览器中，无需注册账号。",
     "project": "关于项目",
     "credits": "由 Carlos Bonadeo 创建，基于以下作者的文学时钟作品：",
@@ -23,7 +23,7 @@
   },
   "ru-RU": {
     "title": "Литературные часы — время в цитатах из книг",
-    "description": "Литературные часы — бесплатные онлайн-часы, которые каждую минуту показывают отрывок из книги с упоминанием вашего местного времени. Доступны английский, испанский, португальский, французский, итальянский, немецкий, греческий, китайский (упрощённое письмо) и русский языки.",
+    "description": "Литературные часы — бесплатные онлайн-часы, которые каждую минуту показывают отрывок из книги с упоминанием вашего местного времени. Доступны английский, испанский, португальский, французский, итальянский, немецкий, греческий, китайский (упрощённое письмо) русский языки и эсперанто.",
     "features": "Выбирайте светлые и тёмные темы, свои шрифты и цвета, режим дзен для чтения без отвлечений или заставку с перемещающейся цитатой. Сохраняйте любимые отрывки, возвращайтесь к недавним цитатам, делитесь ими или скачивайте их как изображения. Всё хранится в вашем браузере, без регистрации.",
     "project": "О проекте",
     "credits": "Создано Carlos Bonadeo на основе работ над литературными часами следующих авторов:",
@@ -31,5 +31,16 @@
     "visit": "Посетите",
     "source": "проект с открытым исходным кодом",
     "contribute": "и предложите улучшения или добавьте цитаты."
+  },
+  "eo": {
+    "title": "Literatura Horloĝo — horloĝo per citaĵoj el libroj",
+    "description": "Literatura Horloĝo estas senpaga reta horloĝo, kiu ligas vian lokan horon al fragmento el libro mencianta tiun horon kaj ĝisdatigas sin ĉiuminute — en la angla, hispana, portugala, franca, itala, germana, greka, simpligita ĉina, rusa aŭ Esperanto.",
+    "features": "Agordu ĝin per helaj aŭ malhelaj etosoj, propraj tiparoj kaj koloroj, zena reĝimo sen distraĵoj aŭ ekrankurteno, kiu movas la citaĵon sur la ekrano. Konservu ŝatatajn fragmentojn, revenu al lastatempaj citaĵoj kaj kunhavigu aŭ elŝutu ilin kiel bildon — ĉio konserviĝas loke en via retumilo, sen bezono de konto.",
+    "project": "Pri la projekto",
+    "credits": "Kreita de Carlos Bonadeo, surbaze de la laboro pri literatura horloĝo de",
+    "and": "kaj",
+    "visit": "Vizitu la",
+    "source": "liberkodan projekton",
+    "contribute": "por proponi plibonigojn aŭ kontribui citaĵojn."
   }
 }

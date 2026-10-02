@@ -20,6 +20,7 @@ export const DOMINANT_LOCALES: Record<string, Locale> = {
   el: 'el-GR',
   zh: 'zh-CN',
   ru: 'ru-RU',
+  eo: 'eo',
 } as const;
 
 const DRAFT_SUFFIX = '-draft';
@@ -48,8 +49,8 @@ export function resolveLocale(locale = navigator.language): Locale {
   const normalized = typeof locale === 'string' ? locale.trim().replace(/_/g, '-').toLowerCase() : '';
   const wantsDraft = normalized.endsWith(DRAFT_SUFFIX);
   const lookup = wantsDraft ? normalized.slice(0, -DRAFT_SUFFIX.length) : normalized;
-  const draftMatch = wantsDraft && /^([a-z]{2,3})-([a-z]{2}|[0-9]{3})$/.exec(lookup);
-  if (draftMatch) return `${draftMatch[1]}-${draftMatch[2].toUpperCase()}-draft`;
+  const draftMatch = wantsDraft && /^([a-z]{2,3})(?:-([a-z]{2}|[0-9]{3}))?$/.exec(lookup);
+  if (draftMatch) return `${draftMatch[1]}${draftMatch[2] ? `-${draftMatch[2].toUpperCase()}` : ''}-draft`;
   const locales = Object.keys(TRANSLATIONS) as Locale[];
   const exactLocale = locales.find((supported) => supported.toLowerCase() === lookup);
   const regionalLocale = locales.find((supported) => lookup.startsWith(`${supported.toLowerCase()}-`));
@@ -119,7 +120,7 @@ export function translateStrings(locale: Locale) {
 
   document.documentElement.lang = getBaseLocale(locale);
   const baseLocale = getBaseLocale(locale);
-  const aboutLocale = baseLocale === 'zh-CN' || baseLocale === 'ru-RU' ? baseLocale : 'en-GB';
+  const aboutLocale = baseLocale === 'zh-CN' || baseLocale === 'ru-RU' || baseLocale === 'eo' ? baseLocale : 'en-GB';
   const aboutTitle = document.getElementById('about-clock-title');
   if (aboutTitle?.parentElement) aboutTitle.parentElement.lang = aboutLocale;
   document.querySelectorAll<HTMLElement>('[data-about-text]').forEach((element) => {
@@ -144,6 +145,7 @@ export function translateStrings(locale: Locale) {
     'de-DE': 'Die Uhrzeit in Buchzitaten',
     'zh-CN': '用文学引文诉说时间',
     'ru-RU': 'Время в цитатах из книг',
+    eo: 'La horo per citaĵoj el libroj',
   };
   const description = descriptions[getBaseLocale(locale)] || descriptions['en-GB'];
   document.title = `${time} - ${strings.document_title} — ${description}`;
@@ -161,10 +163,6 @@ export function translateStrings(locale: Locale) {
   document
     .querySelectorAll<HTMLOptionElement>('[data-label]')
     .forEach((el) => (el.label = strings[el.dataset.label as keyof Translations]));
-
-  document.querySelectorAll<HTMLOptionElement>('#font-select option[data-custom-font]').forEach((option) => {
-    option.textContent = `${option.value} (${strings.settings_font_custom_label})`;
-  });
 
   document
     .querySelectorAll<HTMLElement>('[data-title]')

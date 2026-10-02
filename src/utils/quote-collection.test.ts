@@ -31,6 +31,15 @@ it('stores different translations separately', () => {
   toggleFavorite({ ...savedQuote, locale: 'es-ES' });
   expect(readFavorites()).toHaveLength(2);
 });
+it('retains regionless locale snapshots in favorites and history', () => {
+  for (const locale of ['eo', 'eo-draft'] as const) {
+    const quote = { ...savedQuote, locale } as ResolvedQuote;
+    expect(toggleFavorite(quote)).toBe('saved');
+    expect(recordQuote(quote)).toBe(true);
+  }
+  expect(readFavorites().map((quote) => quote.locale)).toEqual(['eo-draft', 'eo']);
+  expect(readHistory().map((quote) => quote.locale)).toEqual(['eo-draft', 'eo']);
+});
 it('recovers from malformed storage and discards invalid records', () => {
   localStorage.setItem(FAVORITES_KEY, '{broken');
   expect(readFavorites()).toEqual([]);

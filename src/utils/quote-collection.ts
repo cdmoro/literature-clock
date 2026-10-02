@@ -20,7 +20,7 @@ function isSavedQuote(value: unknown): value is ResolvedQuote {
   return (
     isCollectible(quote) &&
     typeof quote.locale === 'string' &&
-    /^[a-z]{2,3}-[A-Z]{2}(?:-draft)?$/.test(quote.locale) &&
+    /^[a-z]{2,3}(?:-[A-Z]{2})?(?:-draft)?$/.test(quote.locale) &&
     typeof quote.sfw === 'boolean' &&
     ['id', 'quote_first', 'quote_time_case', 'quote_last', 'quote_raw', 'title', 'author'].every(
       (key) => typeof (value as Record<string, unknown>)[key] === 'string',

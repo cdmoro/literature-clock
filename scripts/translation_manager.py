@@ -18,8 +18,8 @@ from validate_translation import FIELDS, ROOT, catalogue_progress, is_draft, rea
 
 class Project:
     def __init__(self, root, locale, target):
-        if not re.fullmatch(r'[a-z]{2,3}-[A-Z]{2}', locale):
-            raise ValueError('Use a full locale such as el-GR, ja-JP or pt-BR.')
+        if not re.fullmatch(r'[a-z]{2,3}(?:-[A-Z]{2})?', locale):
+            raise ValueError('Use a locale such as eo, el-GR, ja-JP or pt-BR.')
         if not re.fullmatch(r'[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*', target):
             raise ValueError('Use a Google language code such as el, ja or zh-CN.')
         self.root, self.locale, self.target = Path(root), locale, target

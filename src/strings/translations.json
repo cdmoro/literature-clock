@@ -71,7 +71,8 @@
     "zen_mode_title": "Remove everything that distracts you",
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
-    "ru-RU": "Русский (ru-RU)"
+    "ru-RU": "Русский (ru-RU)",
+    "eo": "Esperanto (eo)"
   },
   "en-US": {
     "about": "About",
@@ -145,7 +146,8 @@
     "zen_mode_title": "Remove everything that distracts you",
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
-    "ru-RU": "Русский (ru-RU)"
+    "ru-RU": "Русский (ru-RU)",
+    "eo": "Esperanto (eo)"
   },
   "es-ES": {
     "about": "Acerca de",
@@ -219,7 +221,8 @@
     "zen_mode_title": "Elimina todo lo que te distrae",
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
-    "ru-RU": "Русский (ru-RU)"
+    "ru-RU": "Русский (ru-RU)",
+    "eo": "Esperanto (eo)"
   },
   "pt-PT": {
     "about": "Sobre",
@@ -293,7 +296,8 @@
     "zen_mode_title": "Remova tudo o que te distrai",
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
-    "ru-RU": "Русский (ru-RU)"
+    "ru-RU": "Русский (ru-RU)",
+    "eo": "Esperanto (eo)"
   },
   "fr-FR": {
     "about": "À propos",
@@ -367,7 +371,8 @@
     "zen_mode_title": "Supprimez tout ce qui vous distrait",
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
-    "ru-RU": "Русский (ru-RU)"
+    "ru-RU": "Русский (ru-RU)",
+    "eo": "Esperanto (eo)"
   },
   "it-IT": {
     "about": "Informazioni",
@@ -441,7 +446,8 @@
     "zen_mode_title": "Rimuovi tutto ciò che ti distrae",
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
-    "ru-RU": "Русский (ru-RU)"
+    "ru-RU": "Русский (ru-RU)",
+    "eo": "Esperanto (eo)"
   },
   "de-DE": {
     "about": "Über",
@@ -515,7 +521,8 @@
     "zen_mode_title": "Entferne alles, was dich ablenkt",
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
-    "ru-RU": "Русский (ru-RU)"
+    "ru-RU": "Русский (ru-RU)",
+    "eo": "Esperanto (eo)"
   },
   "el-GR": {
     "about": "Σχετικά",
@@ -589,7 +596,8 @@
     "zen_mode_title": "Απόκρυψη όλων των περισπασμών",
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
-    "ru-RU": "Русский (ru-RU)"
+    "ru-RU": "Русский (ru-RU)",
+    "eo": "Esperanto (eo)"
   },
   "zh-CN": {
     "about": "关于",
@@ -663,7 +671,8 @@
     "pt-PT": "Português (pt-PT)",
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
-    "ru-RU": "Русский (ru-RU)"
+    "ru-RU": "Русский (ru-RU)",
+    "eo": "Esperanto (eo)"
   },
   "ru-RU": {
     "about": "О проекте",
@@ -737,6 +746,82 @@
     "zen_mode_title": "Скрыть всё, что отвлекает",
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
-    "ru-RU": "Русский (ru-RU)"
+    "ru-RU": "Русский (ru-RU)",
+    "eo": "Esperanto (eo)"
+  },
+  "eo": {
+    "about": "Pri la projekto",
+    "about_close": "Fermi",
+    "add_quote": "Aldoni citaĵon",
+    "anaglyph": "Anaglifo",
+    "author": "Aŭtoro",
+    "base": "Baza",
+    "blue": "Blua",
+    "bohemian": "Bohema",
+    "book": "Libropaĝo",
+    "color": "Hazardaj koloroj",
+    "colors": "Koloroj",
+    "copy_mode": "Kopii",
+    "copy_mode_copied": "Citaĵo kopiita!",
+    "copy_title": "Kopii al la tondujo",
+    "dark": "Malhela",
+    "de-DE": "Deutsch (de-DE)",
+    "default_font": "Defaŭlta",
+    "document_title": "Literatura Horloĝo",
+    "download": "Elŝuti",
+    "horizon": "Horizonto",
+    "elegant": "Eleganta",
+    "en-GB": "English (en-GB)",
+    "en-US": "English (en-US)",
+    "es-ES": "Español (es-ES)",
+    "exit_zen_title": "Eliri el la zena reĝimo",
+    "transition": "Transiro",
+    "transition_none": "Sen transiro",
+    "transition_fade": "Dissolviĝo",
+    "transition_slide": "Milda glitado",
+    "transition_blur": "Milda malklariĝo",
+    "transition_zoom": "Eta zomado",
+    "fade_mode": "Dissolviĝo",
+    "festive": "Festa",
+    "font": "Tiparo",
+    "fr-FR": "Français (fr-FR)",
+    "frame": "Kadro",
+    "fullscreen_mode": "Plenekrana reĝimo",
+    "gray": "Griza",
+    "green": "Verda",
+    "handwriting": "Manskribo",
+    "it-IT": "Italiano (it-IT)",
+    "kindle": "Kindle",
+    "language": "Lingvo",
+    "light": "Hela",
+    "made_by": "Kreita de",
+    "orange": "Oranĝa",
+    "photo": "Foto",
+    "pink": "Rozkolora",
+    "poster": "Afiŝo",
+    "progressbar_mode": "Montri progresbreton",
+    "pt-PT": "Português (pt-PT)",
+    "purple": "Purpura",
+    "random": "Hazarda lingvo",
+    "report_error": "Raporti eraron",
+    "retro": "Retroa",
+    "screensaver_mode": "Ekrankurteno",
+    "share": "Kunhavigi",
+    "subtle": "Diskreta",
+    "system": "Sistemo",
+    "terminal": "Terminalo",
+    "theme": "Etoso",
+    "themes": "Etosoj",
+    "time_mode": "Montri la horon",
+    "title": "Titolo",
+    "whatsapp": "WhatsApp",
+    "work_mode": "Laboro",
+    "work_mode_title": "Montri nur citaĵojn taŭgajn por la laborejo",
+    "zen_mode": "Zeno",
+    "zen_mode_title": "Kaŝi ĉion, kio distras vin",
+    "el-GR": "Ελληνικά (el-GR)",
+    "zh-CN": "中文（简体） (zh-CN)",
+    "ru-RU": "Русский (ru-RU)",
+    "eo": "Esperanto (eo)"
   }
 }

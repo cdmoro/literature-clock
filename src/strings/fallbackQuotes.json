@@ -218,5 +218,27 @@
       "quote_time_case": "",
       "sfw": true
     }
+  ],
+  "eo": [
+    {
+      "quote_first": "Eraro ",
+      "quote_last": ": citaĵo ne trovita.",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "Taglibro de la kapitano:<br>Ni ankoraŭ serĉas citaĵon por ",
+      "quote_last": ".",
+      "title": "Moby Dick",
+      "author": "Kapitano Ahab",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
   ]
 }

@@ -68,6 +68,9 @@ def clock_phrase(phrase, lang):
     Does not infer AM/PM, approximate times, arithmetic in narrative, or a time
     from an arbitrary number embedded in a sentence.
     """
+    if lang == 'eo':
+        from esperanto_time import clock_phrase as esperanto_clock_phrase
+        return esperanto_clock_phrase(phrase)
     if lang == 'ru':
         from russian_time import clock_phrase as russian_clock_phrase
         return russian_clock_phrase(phrase)
@@ -144,6 +147,8 @@ def plain(text):
 def explicit_period(phrase, lang):
     """Only explicit, unambiguous day periods; 'night' alone stays contextual."""
     patterns = {
+        'eo': (r'\b(?:noktomez[oaen]*|matene|antaŭtagmeze|a\.?\s*t\.?\s*m\.?|a\.?m\.?)\b',
+               r'\b(?:tagmez[oaen]*|posttagmeze|vespere|p\.?\s*t\.?\s*m\.?|p\.?m\.?)\b'),
         'zh': (r'(?:午夜|子夜|凌晨|清晨|早晨|早上|上午)', r'(?:正午|中午|下午|傍晚|晚上)'),
         'el': (r'\b(?:μεσάνυχτα|μεσονύχτια|πρωί|ξημερώματα|π\.μ\.)', r'\b(?:μεσημέρι|απόγευμα|βράδυ|μ\.μ\.)'),
         'en': (r'\b(?:midnight|morning|a\.?m\.?)\b', r'\b(?:noon|afternoon|evening|p\.?m\.?)\b'),

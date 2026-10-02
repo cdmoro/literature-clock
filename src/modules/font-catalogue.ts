@@ -1,0 +1,33 @@
+export const THEME_FONTS: Record<string, string[]> = {
+  retro: ['VT323'],
+  elegant: ['Playfair Display'],
+  festive: ['Borel'],
+  bohemian: ['Comfortaa'],
+  book: ['Libre Baskerville'],
+  handwriting: ['Reenie Beanie'],
+  anaglyph: ['Anton'],
+  whatsapp: ['Roboto'],
+  terminal: ['B612 Mono'],
+  frame: ['Playfair Display'],
+  subtle: ['Unna'],
+  poster: ['Averia Serif Libre', 'Allura'],
+  horizon: ['Unna'],
+  photo: ['Abril Fatface'],
+  kindle: ['Noto Serif'],
+};
+
+export const LOCALE_THEME_FONTS: Record<string, Record<string, string>> = {
+  base: { ru: 'Pangolin', el: 'Sansation', zh: 'ZCOOL KuaiLe' },
+  retro: { ru: 'DotGothic16', el: 'Handjet', zh: 'ZCOOL QingKe HuangYou' },
+  handwriting: { eo: 'Give You Glory', ru: 'Shantell Sans', el: 'Mansalva', zh: 'Long Cang' },
+  subtle: { eo: 'Literata', ru: 'Literata' },
+  horizon: { eo: 'Literata', ru: 'Literata' },
+  book: { ru: 'Literata' },
+  anaglyph: { ru: 'Russo One' },
+  elegant: { ru: 'Poiret One', zh: 'ZCOOL XiaoWei' },
+  poster: { eo: 'Spectral', ru: 'Rubik Mono One', zh: 'Liu Jian Mao Cao' },
+  festive: { eo: 'Playwrite AR', ru: 'Pacifico', el: 'Comic Relief' },
+  terminal: { eo: 'LXGW WenKai Mono TC', ru: 'JetBrains Mono', el: 'Victor Mono', zh: 'ZCOOL QingKe HuangYou' },
+  bohemian: { ru: 'Comfortaa', el: 'M PLUS Rounded 1c' },
+  photo: { ru: 'Russo One', el: 'Dela Gothic One', zh: 'ZCOOL KuaiLe' },
+};

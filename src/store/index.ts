@@ -90,7 +90,8 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
         result[key] = resolveLocale(raw);
         break;
       case 'quote-locales':
-        if (raw === '' || raw.split(',').every((locale) => /^[a-z]{2,3}-[A-Z]{2}$/.test(locale))) result[key] = raw;
+        if (raw === '' || raw.split(',').every((locale) => /^[a-z]{2,3}(?:-[A-Z]{2})?$/.test(locale)))
+          result[key] = raw;
         break;
       case 'quote-id':
         if (/^([01]\d|2[0-3])[0-5]\d-\d+$/.test(raw)) result[key] = raw;

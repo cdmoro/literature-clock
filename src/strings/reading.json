@@ -268,5 +268,32 @@
     "historyCleared": "История очищена",
     "noHistory": "Недавних цитат пока нет. Здесь появятся последние 100 просмотренных цитат.",
     "previousQuote": "Предыдущая цитата этой минуты"
+  },
+  "eo": {
+    "copyLink": "Kopii ligilon al la citaĵo",
+    "linkCopied": "Ligilo kopiita",
+    "linkFailed": "Ne eblis kunhavigi la ligilon. Bonvolu reprovi.",
+    "quoteUnavailable": "Ĉi tiu citaĵo ne estas disponebla en ĉi tiu lingvo aŭ kun via enhavfiltrilo. Alia citaĵo estas montrata.",
+    "pause": "Paŭzigi la legadon",
+    "resume": "Reveni al la aktuala horloĝo",
+    "pausedAt": "Paŭzigita je",
+    "nextQuote": "Sekva citaĵo de ĉi tiu minuto",
+    "myQuotes": "Miaj citaĵoj",
+    "favorites": "Ŝatataj",
+    "saveFavorite": "Konservi kiel ŝatatan",
+    "removeFavorite": "Forigi el la ŝatataj",
+    "favoriteSaved": "Citaĵo konservita",
+    "favoriteRemoved": "Ŝatata citaĵo forigita",
+    "noFavorites": "Ankoraŭ neniu ŝatata citaĵo. Konservu citaĵon per la korbutono.",
+    "filteredLibrary": "Konservitaj citaĵoj estas kaŝitaj de via enhavfiltrilo.",
+    "close": "Fermi",
+    "openQuote": "Malfermi la citaĵon",
+    "favoritesFull": "Via listo de ŝatataj citaĵoj estas plena (500). Forigu unu por konservi alian.",
+    "storageUnavailable": "Ne eblis konservi la ŝanĝojn sur ĉi tiu aparato. Kontrolu la permesojn de la retumila konservejo.",
+    "history": "Lastatempaj",
+    "clearHistory": "Forviŝi la historion",
+    "historyCleared": "Historio forviŝita",
+    "noHistory": "Neniu lastatempa citaĵo. La lastaj 100 citaĵoj, kiujn vi rigardas, aperos ĉi tie.",
+    "previousQuote": "Antaŭa citaĵo de ĉi tiu minuto"
   }
 }
