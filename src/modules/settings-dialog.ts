@@ -142,7 +142,10 @@ export function initSettingsDialog() {
     fontGroup.append(controls);
     controls.insertAdjacentHTML(
       'beforeend',
-      `<button type="button" id="remove-custom-font" data-title="settings_font_remove" data-aria-label="settings_font_remove" aria-label="Remove this font" hidden>
+      `<button type="button" id="reset-font" aria-label="Default font" hidden>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 4 8 8M12 4l-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <button type="button" id="remove-custom-font" data-title="settings_font_remove" data-aria-label="settings_font_remove" aria-label="Remove this font" hidden>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 3h6l1 2h4v2H4V5h4l1-2Zm-3 6h12l-1 12H7L6 9Z"/></svg>
       </button>`,
     );

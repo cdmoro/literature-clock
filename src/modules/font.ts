@@ -91,6 +91,12 @@ function createOption(value: string) {
 
 function refreshRemovalButton() {
   const name = preferredFont(passageLocale());
+  const reset = document.getElementById('reset-font');
+  if (reset) {
+    reset.hidden = name === 'default';
+    reset.title = getStrings(getInterfaceLocale()).default_font;
+    reset.setAttribute('aria-label', reset.title);
+  }
   const button = document.getElementById('remove-custom-font');
   button?.toggleAttribute('hidden', !customFonts.includes(name));
   if (button) {
@@ -172,6 +178,10 @@ export function initFont() {
     if (!input) return;
     const value = input.value;
     if ((await applyCustomFont(value)) && input.value === value) input.value = '';
+  });
+  document.getElementById('reset-font')?.addEventListener('click', () => {
+    resetFont();
+    document.getElementById('font-select')?.focus();
   });
   document.getElementById('remove-custom-font')?.addEventListener('click', (event) => {
     event.preventDefault();

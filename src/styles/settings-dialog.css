@@ -332,7 +332,7 @@
   margin: 0.35rem 0 0;
 }
 
-#settings-dialog :is(#remove-custom-font, #clear-quote-languages) {
+#settings-dialog :is(#reset-font, #remove-custom-font, #clear-quote-languages) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -344,13 +344,13 @@
   background: var(--accent-color);
   color: var(--accent-text);
 }
-#settings-dialog :is(#remove-custom-font, #clear-quote-languages)[hidden] {
+#settings-dialog :is(#reset-font, #remove-custom-font, #clear-quote-languages)[hidden] {
   display: none;
 }
 #settings-dialog #font-select {
   border-radius: 0.35rem 0 0 0.35rem;
 }
-#settings-dialog .input-group:has(#remove-custom-font[hidden]) #font-select {
+#settings-dialog .input-group:has(#reset-font[hidden]):has(#remove-custom-font[hidden]) #font-select {
   border-radius: 0.35rem;
 }
 
