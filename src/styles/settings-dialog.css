@@ -348,7 +348,13 @@
   display: none;
 }
 #settings-dialog #font-select {
-  border-radius: 0.35rem 0 0 0.35rem;
+  border-radius: 0;
+  border-start-start-radius: 0.35rem;
+  border-end-start-radius: 0.35rem;
+}
+#settings-dialog .input-group:has(#remove-custom-font[hidden]) #reset-font {
+  border-start-end-radius: 0.35rem;
+  border-end-end-radius: 0.35rem;
 }
 #settings-dialog .input-group:has(#reset-font[hidden]):has(#remove-custom-font[hidden]) #font-select {
   border-radius: 0.35rem;
