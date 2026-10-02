@@ -143,7 +143,7 @@ select {
 
 .input-group > * {
   border-radius: 0;
-  margin-left: -1px;
+  margin-inline-start: -1px;
 }
 
 .input-group > *:first-child {
@@ -605,4 +605,25 @@ body.hide-book-title #quote #title,
 body.hide-book-title #quote #comma,
 body.hide-book-title #quote .translation-book-title {
   display: none;
+}
+
+/* Isolate mixed scripts without reversing numbers or passage text. */
+#quote, .translation-content, cite [dir='auto'] {
+  unicode-bidi: isolate;
+}
+#quote:lang(ar), .translation-content:lang(ar) {
+  --quote-line-height: 1.65;
+}
+#time-clock { direction: ltr; unicode-bidi: isolate; }
+select:dir(rtl) {
+  background-position: left 0.5rem center;
+  padding-inline: 0.5rem 2rem;
+}
+
+#quote:lang(ar) > p, .translation-content:lang(ar) p {
+  letter-spacing: normal;
+  line-height: 1.65;
+}
+#quote:lang(ar) > cite {
+  font-family: var(--override-quote-font-family, var(--locale-quote-font-family));
 }

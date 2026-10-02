@@ -1,3 +1,4 @@
+import { setTextLocale } from '../utils/text-direction';
 import { applyLocaleThemeFont } from './locale-fonts';
 import { store } from '../store';
 import { getBaseLocale, getInterfaceLocale, getStrings, resolveLocale } from './locales';
@@ -17,6 +18,7 @@ export async function renderTranslation() {
   const locale = targetLocale();
   const panel = document.createElement('section');
   panel.id = 'quote-translation';
+  setTextLocale(panel, getBaseLocale(getInterfaceLocale()));
   panel.setAttribute('aria-labelledby', 'translation-heading');
   const heading = document.createElement('div');
   heading.id = 'translation-heading';
@@ -34,6 +36,7 @@ export async function renderTranslation() {
   heading.append(select);
   const content = document.createElement('div');
   content.className = 'translation-content';
+  setTextLocale(content, getBaseLocale(getInterfaceLocale()));
   content.setAttribute('role', 'status');
   panel.append(heading, content);
   blockquote.append(panel);
@@ -54,15 +57,22 @@ export async function renderTranslation() {
     );
     if (!translation || quote.fallback) throw new Error('Translation unavailable');
     if (!panel.isConnected) return;
-    content.lang = locale;
+    setTextLocale(content, locale);
     applyLocaleThemeFont(content);
     const passage = document.createElement('p');
     passage.innerHTML = `${translation.quote_first}<span class="time">${translation.quote_time_case}</span>${translation.quote_last}`;
     const attribution = document.createElement('cite');
+    attribution.dir = 'auto';
     const title = document.createElement('span');
     title.className = 'translation-book-title';
-    title.textContent = `${translation.title}, `;
-    attribution.append('— ', title, translation.author);
+    title.dir = 'auto';
+    title.textContent = translation.title;
+    const separator = document.createElement('span');
+    separator.className = 'translation-book-title';
+    separator.textContent = ', ';
+    const author = document.createElement('bdi');
+    author.textContent = translation.author;
+    attribution.append('— ', title, separator, author);
     content.replaceChildren(passage, attribution);
   } catch {
     if (!panel.isConnected) return;

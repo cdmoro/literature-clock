@@ -15,6 +15,8 @@ export function getLocaleThemeFont(theme: string, locale: string) {
     LOCALE_THEME_FONTS[BASE_FONT_THEMES.has(name) ? 'base' : name]?.[language] ||
     (language === 'zh' ? LOCALE_THEME_FONTS.base.zh : undefined);
   if (alternative) return alternative;
+  // Use the system Arabic face until theme alternatives are selected.
+  if (language === 'ar') return undefined;
   const original = THEME_FONTS[name]?.[0] || 'Special Elite';
   if (fontSupportsLocale(original, locale) === false) {
     return ['terminal', 'retro'].includes(name) ? 'JetBrains Mono' : 'Noto Serif';
@@ -32,7 +34,7 @@ export function applyLocaleThemeFont(element: HTMLElement, locale = element.lang
   );
   if (selected !== 'default') loadFontIfNotExists(selected);
   // Block inheritance when secondary reading content uses another language.
-  element.style.setProperty('--locale-quote-font-family', font ? `"${font}", monospace` : 'initial');
+  element.style.setProperty('--locale-quote-font-family', locale.split('-')[0] === 'ar' && !font ? 'system-ui, sans-serif' : font ? `"${font}", monospace` : 'initial');
   if (font) loadFontIfNotExists(font);
 }
 

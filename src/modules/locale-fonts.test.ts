@@ -147,3 +147,15 @@ test.each([
   expect(quote.style.getPropertyValue('--locale-quote-font-family')).toBe('initial');
   expect(translation.style.getPropertyValue('--locale-quote-font-family')).toContain(font);
 });
+
+test('Arabic uses a system face while theme font choices are pending', () => {
+  const quote = document.createElement('blockquote');
+  quote.lang = 'ar-AE';
+  document.documentElement.dataset.theme = 'poster-light';
+  applyLocaleThemeFont(quote);
+  expect(quote.style.getPropertyValue('--locale-quote-font-family')).toBe('system-ui, sans-serif');
+  expect(loadFontIfNotExists).not.toHaveBeenCalled();
+  quote.lang = 'en-GB';
+  applyLocaleThemeFont(quote);
+  expect(quote.style.getPropertyValue('--locale-quote-font-family')).toBe('initial');
+});

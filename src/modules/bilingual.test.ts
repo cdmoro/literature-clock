@@ -217,3 +217,29 @@ it('fetches Russian translations and retains the selected locale', async () => {
   await translationPanel();
   expect(document.querySelector<HTMLSelectElement>('#clock-translation-locale')!.value).toBe('ru-RU');
 });
+
+it('keeps Arabic translation direction independent of the English interface', async () => {
+  store.set('ui-locale', 'en-GB');
+  store.set('translation-locale', 'ar-AE');
+  vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => [{ ...quote, quote_first: 'عند ', quote_time_case: 'الظهر', title: 'Book', author: 'Author' }] } as Response);
+  store.set('bilingual', true);
+  await renderTranslation();
+  const panel = document.getElementById('quote-translation')!;
+  const content = panel.querySelector<HTMLElement>('.translation-content')!;
+  expect(panel.dir).toBe('ltr');
+  expect(content.dir).toBe('rtl');
+  expect(content.lang).toBe('ar-AE');
+  expect(content.querySelector('cite')!.dir).toBe('auto');
+  expect(content.querySelector('bdi')!.textContent).toBe('Author');
+});
+
+it('keeps untranslated notices in Arabic when the main passage is English', async () => {
+  store.set('ui-locale', 'ar-AE');
+  store.set('translation-locale', 'ar-AE');
+  store.set('bilingual', true);
+  await renderTranslation();
+  const content = document.querySelector<HTMLElement>('.translation-content')!;
+  expect(content.lang).toBe('ar-AE');
+  expect(content.dir).toBe('rtl');
+  expect(content.textContent).toContain('لا تتوفر ترجمة');
+});
