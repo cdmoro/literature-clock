@@ -57,6 +57,37 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
                     self.assertIsNotNone(expected)
                     self.assertEqual(actual, expected)
 
+    def test_arabic_word_clocks_do_not_drop_minutes_or_change_the_hour(self):
+        # Values come from the source wording, never from the assigned Time slot.
+        examples = {
+            '0008-000': ('eight past midnight', 8),
+            '0011-001': ('eleven minutes past midnight', 11),
+            '0212-000': ('two twelve A.M.', 2 * 60 + 12),
+            '0416-001': ('four sixteen', 4 * 60 + 16),
+        }
+        for identifier, (source_phrase, expected) in examples.items():
+            with self.subTest(identifier=identifier):
+                self.assertEqual(self.source_by_id[identifier]['Quote time'], source_phrase)
+                translated = self.catalogues['ar-AE'][identifier]
+                self.assertEqual(clock_phrase(translated['Quote time'], 'ar'), expected)
+                if identifier == '0416-001':
+                    # Both occurrences in this passage must remain 4:16.
+                    self.assertEqual(translated['Quote'].count('الرابعة وست عشرة دقيقة'), 2)
+
+    def test_arabic_uncertain_times_keep_the_source_comparison_and_range(self):
+        examples = {
+            '0111-000': ('nearer to one than half past',
+                         'أقرب إلى الواحدة منها إلى الواحدة والنصف'),
+            '0350-000': ('ten or five to four',
+                         'الرابعة إلا عشر دقائق أو خمس دقائق'),
+            '0202-000': ('About two. Just past.',
+                         'حوالي الثانية. بعد الثانية بقليل.'),
+        }
+        for identifier, (source_phrase, translated_phrase) in examples.items():
+            with self.subTest(identifier=identifier):
+                self.assertEqual(self.source_by_id[identifier]['Quote time'], source_phrase)
+                self.assertEqual(self.catalogues['ar-AE'][identifier]['Quote time'], translated_phrase)
+
     def test_spanish_passages_reused_at_other_times_keep_the_same_translation(self):
         for locale, rows in self.catalogues.items():
             for first, second in [('0000-057', '0900-038'), ('1800-031', '2000-029'),
