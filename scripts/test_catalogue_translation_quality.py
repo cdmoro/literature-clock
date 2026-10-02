@@ -105,6 +105,19 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
         passage = self.catalogues['ar-AE']['1317-001']['Quote']
         self.assertIn('الواحدة وسبع عشرة دقيقة وأربعون ثانية', passage)
 
+    def test_arabic_full_review_preserves_measurements_and_who_died(self):
+        source = self.source_by_id['0058-001']['Quote']
+        self.assertIn('an inch', source)
+        self.assertIn('a few yards', source)
+        translated = self.catalogues['ar-AE']['0058-001']['Quote']
+        self.assertIn('بمقدار بوصة', translated)
+        self.assertIn('بضع ياردات', translated)
+        self.assertIn('أربعة رجال', translated)
+        death = self.catalogues['ar-AE']['0043-000']['Quote']
+        self.assertIn('الوفاة حدثت قبل خمس دقائق', death)
+        self.assertNotIn('إنك مت', death)
+        self.assertIn('الثانية عشرة وثلاث وأربعون دقيقة', death)
+
 
     def test_spanish_passages_reused_at_other_times_keep_the_same_translation(self):
         for locale, rows in self.catalogues.items():
