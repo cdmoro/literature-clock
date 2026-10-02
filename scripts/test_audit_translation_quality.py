@@ -3,10 +3,18 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from audit_translation_quality import clock_phrase, explicit_period, passage_findings, audit
+from audit_translation_quality import clock_phrase, explicit_period, passage_findings, audit, digit_tokens
 
 
 class TimePhraseTests(unittest.TestCase):
+    def test_digit_script_changes_preserve_values_and_repeated_quantities(self):
+        source = digit_tokens('2:36, 1985, 26 seconds, 26 people', 'en')
+        self.assertEqual(source, digit_tokens('٢:٣٦، ١٩٨٥، ٢٦ ثانية، ٢٦ شخصًا', 'ar'))
+        self.assertEqual(source, digit_tokens('۲:۳۶، ۱۹۸۵، ۲۶، ۲۶', 'ar'))
+        self.assertNotEqual(source, digit_tokens('٢:٣٥، ١٩٨٥، ٢٦، ٢٦', 'ar'))
+        self.assertNotEqual(source, digit_tokens('٢:٣٦، ١٩٨٥، ٢٦', 'ar'))
+        self.assertNotEqual(digit_tokens('01:34', 'en'), digit_tokens('1:34', 'ar'))
+
     def test_real_time_regressions(self):
         examples = [
             ('en', 'Half-past one', 90), ('en', 'half past one', 90),

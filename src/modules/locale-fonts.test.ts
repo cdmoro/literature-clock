@@ -148,7 +148,35 @@ test.each([
   expect(translation.style.getPropertyValue('--locale-quote-font-family')).toContain(font);
 });
 
-test('Arabic uses a system face while theme font choices are pending', () => {
+test.each([
+  ['base', 'Tajawal'],
+  ['pink', 'Tajawal'],
+  ['photo', 'Lalezar'],
+  ['festive', 'Playpen Sans Arabic'],
+  ['bohemian', 'Zain'],
+  ['retro', 'Handjet'],
+  ['handwriting', 'Amiri Quran'],
+  ['terminal', 'Cascadia Code'],
+])('Arabic %s fonts follow the passage in either bilingual position', (theme, font) => {
+  document.body.innerHTML =
+    '<blockquote id="quote" lang="ar-AE"><section id="quote-translation"><div class="translation-content" lang="en-GB"></div></section></blockquote>';
+  const quote = document.getElementById('quote')!;
+  const translation = document.querySelector<HTMLElement>('.translation-content')!;
+  for (const variant of ['light', 'dark']) {
+    document.documentElement.dataset.theme = `${theme}-${variant}`;
+    refreshLocaleThemeFonts();
+    expect(quote.style.getPropertyValue('--locale-quote-font-family')).toContain(font);
+    expect(translation.style.getPropertyValue('--locale-quote-font-family')).toBe('initial');
+    expect(loadFontIfNotExists).toHaveBeenCalledWith(font);
+  }
+  quote.lang = 'en-GB';
+  translation.lang = 'ar-AE';
+  refreshLocaleThemeFonts();
+  expect(quote.style.getPropertyValue('--locale-quote-font-family')).toBe('initial');
+  expect(translation.style.getPropertyValue('--locale-quote-font-family')).toContain(font);
+});
+
+test('Arabic uses a system face for themes without an assigned font', () => {
   const quote = document.createElement('blockquote');
   quote.lang = 'ar-AE';
   document.documentElement.dataset.theme = 'poster-light';

@@ -26,6 +26,17 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
             with self.subTest(locale=locale):
                 self.assertEqual(validate(self.sources, list(rows.values())), [])
 
+    def test_arabic_drafts_also_keep_visible_highlights_and_source_formatting(self):
+        # Draft status must not hide the import's lost highlights and HTML.
+        from collections import Counter
+        for identifier, row in self.catalogues['ar-AE'].items():
+            with self.subTest(identifier=identifier):
+                self.assertTrue(row['Quote time'])
+                self.assertIn(row['Quote time'], row['Quote'])
+                source = self.source_by_id[identifier]
+                tags = lambda text: Counter(re.findall(r'</?[^>]+>', text))
+                self.assertEqual(tags(row['Quote']), tags(source['Quote']))
+
     def test_known_time_regressions_match_source_meaning(self):
         examples = {
             'de-DE': ['0130-003', '0330-002', '1930-010'],
@@ -33,6 +44,9 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
             'es-ES': ['0753-001', '0855-002', '0955-001'],
             'it-IT': ['0030-000', '0222-000', '1230-000', '2322-002'],
             'pt-PT': ['0245-001', '0345-001', '1445-001'],
+            'ar-AE': ['0033-000', '0045-000', '0321-002', '0510-001',
+                      '0753-001', '0845-002', '1045-000', '1855-000',
+                      '1916-001', '2242-000'],
         }
         for locale, identifiers in examples.items():
             for identifier in identifiers:

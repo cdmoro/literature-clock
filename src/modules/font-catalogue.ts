@@ -17,17 +17,17 @@ export const THEME_FONTS: Record<string, string[]> = {
 };
 
 export const LOCALE_THEME_FONTS: Record<string, Record<string, string>> = {
-  base: { ru: 'Pangolin', el: 'Sansation', zh: 'ZCOOL KuaiLe' },
-  retro: { ru: 'DotGothic16', el: 'Handjet', zh: 'ZCOOL QingKe HuangYou' },
-  handwriting: { eo: 'Give You Glory', ru: 'Shantell Sans', el: 'Mansalva', zh: 'Long Cang' },
+  base: { ar: 'Tajawal', ru: 'Pangolin', el: 'Sansation', zh: 'ZCOOL KuaiLe' },
+  retro: { ar: 'Handjet', ru: 'DotGothic16', el: 'Handjet', zh: 'ZCOOL QingKe HuangYou' },
+  handwriting: { ar: 'Amiri Quran', eo: 'Give You Glory', ru: 'Shantell Sans', el: 'Mansalva', zh: 'Long Cang' },
   subtle: { eo: 'Literata', ru: 'Literata' },
   horizon: { eo: 'Literata', ru: 'Literata' },
   book: { ru: 'Literata' },
   anaglyph: { ru: 'Russo One' },
   elegant: { ru: 'Poiret One', zh: 'ZCOOL XiaoWei' },
   poster: { eo: 'Spectral', ru: 'Rubik Mono One', zh: 'Liu Jian Mao Cao' },
-  festive: { eo: 'Playwrite AR', ru: 'Pacifico', el: 'Comic Relief' },
-  terminal: { eo: 'LXGW WenKai Mono TC', ru: 'JetBrains Mono', el: 'Victor Mono', zh: 'ZCOOL QingKe HuangYou' },
-  bohemian: { ru: 'Comfortaa', el: 'M PLUS Rounded 1c' },
-  photo: { ru: 'Russo One', el: 'Dela Gothic One', zh: 'ZCOOL KuaiLe' },
+  festive: { ar: 'Playpen Sans Arabic', eo: 'Playwrite AR', ru: 'Pacifico', el: 'Comic Relief' },
+  terminal: { ar: 'Cascadia Code', eo: 'LXGW WenKai Mono TC', ru: 'JetBrains Mono', el: 'Victor Mono', zh: 'ZCOOL QingKe HuangYou' },
+  bohemian: { ar: 'Zain', ru: 'Comfortaa', el: 'M PLUS Rounded 1c' },
+  photo: { ar: 'Lalezar', ru: 'Russo One', el: 'Dela Gothic One', zh: 'ZCOOL KuaiLe' },
 };

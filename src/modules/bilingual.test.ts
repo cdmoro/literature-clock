@@ -1,7 +1,7 @@
 import { beforeEach, afterEach, expect, it, vi } from 'vitest';
 import { createStore, store } from '../store';
 import { initBilingual, renderTranslation } from './bilingual';
-vi.mock('../utils', () => ({ fitQuote: vi.fn() }));
+vi.mock('../utils', () => ({ fitQuote: vi.fn(), loadFontIfNotExists: vi.fn() }));
 const quote = {
   id: '1200-000',
   time: '12:00',

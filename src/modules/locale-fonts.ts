@@ -15,7 +15,7 @@ export function getLocaleThemeFont(theme: string, locale: string) {
     LOCALE_THEME_FONTS[BASE_FONT_THEMES.has(name) ? 'base' : name]?.[language] ||
     (language === 'zh' ? LOCALE_THEME_FONTS.base.zh : undefined);
   if (alternative) return alternative;
-  // Use the system Arabic face until theme alternatives are selected.
+  // Unassigned themes use the system Arabic face.
   if (language === 'ar') return undefined;
   const original = THEME_FONTS[name]?.[0] || 'Special Elite';
   if (fontSupportsLocale(original, locale) === false) {
