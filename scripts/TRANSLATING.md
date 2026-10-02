@@ -136,11 +136,13 @@ inn” found in the author-authorized Gutenberg text, without inventing a
 replacement adjective. These choices affect wording, not the quote's clock time.
 Source catalogues remain unchanged.
 
-The reviewed catalogue is not yet registered in the normal clock. Interface
-strings and final font selection remain a separate enablement step. To inspect
-it before that step, generate an explicit administrator preview and use
-`?locale=eo-draft&time=07:45`. Normal generation does not retain an automatic
-preview of a fully approved, unregistered catalogue.
+Esperanto is registered in the normal clock as `eo`, with translated interface,
+reading controls, settings, About and fallback messages. It is available in the
+interface, quote-rotation and bilingual selectors. Use
+`?locale=eo&time=14:02&quote-id=1402-001` to inspect an approved passage.
+Original theme fonts remain in use. Handwriting (Reenie Beanie), Subtle and
+Horizon (Unna), Poster (Averia Serif Libre), Festive (Borel) and Terminal
+(B612 Mono) still need user-selected alternatives for Esperanto diacritics.
 
 ## Interactive menu (legacy alternative)
 

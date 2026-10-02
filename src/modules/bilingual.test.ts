@@ -121,7 +121,7 @@ it('does not fetch the same language', async () => {
   expect(store.get('bilingual')).toBe(true);
   expect(fetch).not.toHaveBeenCalled();
 });
-it('loads English for an unregistered Esperanto draft despite its English interface fallback', async () => {
+it('loads English for an Esperanto draft with an independent English interface', async () => {
   const fetch = vi.fn().mockResolvedValue({ ok: true, json: async () => [quote] });
   vi.stubGlobal('fetch', fetch);
   store.set('active-quote', { ...quote, locale: 'eo-draft', quote_raw: 'Je noktomezo' });

@@ -20,6 +20,7 @@ export const DOMINANT_LOCALES: Record<string, Locale> = {
   el: 'el-GR',
   zh: 'zh-CN',
   ru: 'ru-RU',
+  eo: 'eo',
 } as const;
 
 const DRAFT_SUFFIX = '-draft';
@@ -119,7 +120,7 @@ export function translateStrings(locale: Locale) {
 
   document.documentElement.lang = getBaseLocale(locale);
   const baseLocale = getBaseLocale(locale);
-  const aboutLocale = baseLocale === 'zh-CN' || baseLocale === 'ru-RU' ? baseLocale : 'en-GB';
+  const aboutLocale = baseLocale === 'zh-CN' || baseLocale === 'ru-RU' || baseLocale === 'eo' ? baseLocale : 'en-GB';
   const aboutTitle = document.getElementById('about-clock-title');
   if (aboutTitle?.parentElement) aboutTitle.parentElement.lang = aboutLocale;
   document.querySelectorAll<HTMLElement>('[data-about-text]').forEach((element) => {
@@ -144,6 +145,7 @@ export function translateStrings(locale: Locale) {
     'de-DE': 'Die Uhrzeit in Buchzitaten',
     'zh-CN': '用文学引文诉说时间',
     'ru-RU': 'Время в цитатах из книг',
+    eo: 'La horo per citaĵoj el libroj',
   };
   const description = descriptions[getBaseLocale(locale)] || descriptions['en-GB'];
   document.title = `${time} - ${strings.document_title} — ${description}`;

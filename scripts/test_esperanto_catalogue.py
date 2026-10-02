@@ -14,11 +14,11 @@ class EsperantoCatalogueTests(unittest.TestCase):
         titles = {row['Id']: row['Title'] for row in source}
         self.assertTrue(all(row['Title'] == titles[row['Id']] for row in rows))
 
-    def test_reviewed_catalogue_requires_separate_interface_enablement(self):
+    def test_enabled_catalogue_is_fully_reviewed(self):
         rows = read_catalogue(ROOT / 'quotes/quotes.eo.csv')
         self.assertTrue(all(not is_draft(row) for row in rows))
         enabled = json.loads((ROOT / 'src/strings/translations.json').read_text())
-        self.assertNotIn('eo', enabled)
+        self.assertIn('eo', enabled)
 
     def test_highlights_do_not_cut_off_numeric_seconds(self):
         rows = read_catalogue(ROOT / 'quotes/quotes.eo.csv')

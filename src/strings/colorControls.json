@@ -38,5 +38,9 @@
   "ru-RU": {
     "choose_color": "Выбрать свой цвет для этой темы",
     "reset_color": "Восстановить цвет этой темы по умолчанию"
+  },
+  "eo": {
+    "choose_color": "Elekti propran koloron por ĉi tiu etoso",
+    "reset_color": "Restarigi la defaŭltan koloron de ĉi tiu etoso"
   }
 }
