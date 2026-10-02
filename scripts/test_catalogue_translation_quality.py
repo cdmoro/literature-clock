@@ -118,6 +118,16 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
         self.assertNotIn('إنك مت', death)
         self.assertIn('الثانية عشرة وثلاث وأربعون دقيقة', death)
 
+    def test_arabic_clock_dialogue_preserves_time_questions_and_bell_hours(self):
+        bell = self.catalogues['ar-AE']['0100-014']
+        self.assertIn('يدق الواحدة', bell['Quote time'])
+        self.assertNotIn('مرة واحدة', bell['Quote'])
+        dialogue = self.catalogues['ar-AE']['0203-001']
+        self.assertIn('كم الساعة؟', dialogue['Quote'])
+        self.assertNotIn('حان الوقت', dialogue['Quote'])
+        self.assertIn('كنتُ أرى', dialogue['Quote'])
+        self.assertEqual(dialogue['Quote time'], 'قبيل 2:04')
+
 
     def test_spanish_passages_reused_at_other_times_keep_the_same_translation(self):
         for locale, rows in self.catalogues.items():
