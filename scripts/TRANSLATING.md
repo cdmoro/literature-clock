@@ -122,16 +122,25 @@ is committed and deployed, anyone with the draft URL can view it. The administra
 and its editing API remain local-only. Preview generation does not change approval
 or registration, and never makes `locale=el-GR` work for an unpublished language.
 
-Esperanto uses the regionless locale `eo`. Its catalogue is `quotes/quotes.eo.csv`,
-and its unlisted preview is `?locale=eo-draft&time=07:45`. Regionless locales
-work in the administrator, draft clock URLs and saved quote collections. The
-Esperanto catalogue is undergoing review. The focused pass covers the 188
-numeric audit candidates and all 864 source/target time pairs that the
-conservative parsers could not compare directly. It includes full passage
-comparison for those cases, not a complete literary review of all 3,640 rows.
-There are 1,044 individually approved passages; the other 2,596 remain drafts,
-including two unresolved source-edition ambiguities (1240-001 and 2328-000).
-The language is not yet enabled in the normal clock.
+Esperanto uses the regionless locale `eo`. Its catalogue is `quotes/quotes.eo.csv`.
+Regionless locales work in the administrator, draft clock URLs and saved quote
+collections. All 3,640 passages have been read in full against their declared
+originals and approved, including secondary times, quantities, periods, names
+and narrative meaning. Time highlights retain seconds and ranges where stated.
+This editorial review does not claim a native-speaker literary review.
+
+Two source defects require documented editorial choices: 1240-001 reads the
+unhyphenated “five pound notes” as five-pound-denomination banknotes, without
+adding a note count; 2328-000 omits the stray “maitre” before “nineteenth-century
+inn” found in the author-authorized Gutenberg text, without inventing a
+replacement adjective. These choices affect wording, not the quote's clock time.
+Source catalogues remain unchanged.
+
+The reviewed catalogue is not yet registered in the normal clock. Interface
+strings and final font selection remain a separate enablement step. To inspect
+it before that step, generate an explicit administrator preview and use
+`?locale=eo-draft&time=07:45`. Normal generation does not retain an automatic
+preview of a fully approved, unregistered catalogue.
 
 ## Interactive menu (legacy alternative)
 

@@ -1,4 +1,5 @@
 import json
+import re
 import unittest
 
 from quote_sources import source_catalogue
@@ -6,20 +7,28 @@ from validate_translation import ROOT, read_catalogue, validate, is_draft
 
 
 class EsperantoCatalogueTests(unittest.TestCase):
-    def test_every_draft_preserves_identity_and_can_be_previewed(self):
+    def test_complete_catalogue_preserves_identity_and_attribution(self):
         rows = read_catalogue(ROOT / 'quotes/quotes.eo.csv', require_source=True)
         source = source_catalogue(ROOT / 'quotes')
-        # Preview readiness includes draft text, not just published-row validation.
-        self.assertEqual(validate(source, [{**row, 'Draft': 'false'} for row in rows]), [])
+        self.assertEqual(validate(source, rows), [])
         titles = {row['Id']: row['Title'] for row in source}
         self.assertTrue(all(row['Title'] == titles[row['Id']] for row in rows))
 
-    def test_pending_catalogue_does_not_enable_the_language(self):
+    def test_reviewed_catalogue_requires_separate_interface_enablement(self):
         rows = read_catalogue(ROOT / 'quotes/quotes.eo.csv')
-        self.assertTrue(any(is_draft(row) for row in rows))
-        self.assertTrue(any(not is_draft(row) for row in rows))
+        self.assertTrue(all(not is_draft(row) for row in rows))
         enabled = json.loads((ROOT / 'src/strings/translations.json').read_text())
         self.assertNotIn('eo', enabled)
+
+    def test_highlights_do_not_cut_off_numeric_seconds(self):
+        rows = read_catalogue(ROOT / 'quotes/quotes.eo.csv')
+        for row in rows:
+            highlight = row['Quote time']
+            for match in re.finditer(re.escape(highlight), row['Quote']):
+                remainder = row['Quote'][match.end():]
+                with self.subTest(identifier=row['Id']):
+                    if re.search(r'\d{1,2}:\d{2}$', highlight):
+                        self.assertIsNone(re.match(r':\d{2}', remainder))
 
     def test_corrected_times_keep_minutes_and_before_after_meaning(self):
         from audit_translation_quality import clock_phrase
