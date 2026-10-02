@@ -88,6 +88,24 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
                 self.assertEqual(self.source_by_id[identifier]['Quote time'], source_phrase)
                 self.assertEqual(self.catalogues['ar-AE'][identifier]['Quote time'], translated_phrase)
 
+    def test_arabic_minutes_seconds_and_fractional_minutes_keep_distinct_units(self):
+        examples = {
+            '1317-001': ('One seventeen', 'الواحدة وسبع عشرة دقيقة وأربع ثوانٍ'),
+            '1658-002': ('A minute and twenty-one seconds to five',
+                         'الخامسة إلا دقيقة وإحدى وعشرين ثانية'),
+            '2027-000': ('seven-and-twenty minutes past eight',
+                         'الثامنة وسبع وعشرون دقيقة'),
+            '2029-000': ('Twenty-nine and a half minutes past eight',
+                         'الثامنة وتسع وعشرون دقيقة ونصف'),
+        }
+        for identifier, (source_phrase, translated_phrase) in examples.items():
+            with self.subTest(identifier=identifier):
+                self.assertEqual(self.source_by_id[identifier]['Quote time'], source_phrase)
+                self.assertEqual(self.catalogues['ar-AE'][identifier]['Quote time'], translated_phrase)
+        passage = self.catalogues['ar-AE']['1317-001']['Quote']
+        self.assertIn('الواحدة وسبع عشرة دقيقة وأربعون ثانية', passage)
+
+
     def test_spanish_passages_reused_at_other_times_keep_the_same_translation(self):
         for locale, rows in self.catalogues.items():
             for first, second in [('0000-057', '0900-038'), ('1800-031', '2000-029'),

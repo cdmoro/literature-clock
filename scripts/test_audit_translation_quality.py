@@ -7,6 +7,22 @@ from audit_translation_quality import clock_phrase, explicit_period, passage_fin
 
 
 class TimePhraseTests(unittest.TestCase):
+    def test_english_spoken_and_military_clock_phrases(self):
+        examples = {'two-twelve A.M.': 132, 'seven-nine': 429,
+                    'eleven thirty two': 692, 'eight oh two': 482,
+                    'one-fifty': 110, '0000h.': 0, '1346 hours': 106,
+                    'eight past midnight': 8, 'ten past noon': 10,
+                    'five o’clock in the morning': 300}
+        for phrase, expected in examples.items():
+            with self.subTest(phrase=phrase):
+                self.assertEqual(clock_phrase(phrase, 'en'), expected)
+        for phrase in ['about one-fifty', 'one seventeen and four seconds',
+                       'ten or five to four', 'one … thirty-two',
+                       '2400 hours', '1260', 'eleven sixty',
+                       'one hundred', 'train at one-fifty']:
+            with self.subTest(phrase=phrase):
+                self.assertIsNone(clock_phrase(phrase, 'en'))
+
     def test_digit_script_changes_preserve_values_and_repeated_quantities(self):
         source = digit_tokens('2:36, 1985, 26 seconds, 26 people', 'en')
         self.assertEqual(source, digit_tokens('٢:٣٦، ١٩٨٥، ٢٦ ثانية، ٢٦ شخصًا', 'ar'))

@@ -98,6 +98,21 @@ def clock_phrase(phrase, lang):
         'pt': r' (?:da manhã|da tarde|da noite)$',
     }
     text = re.sub(suffixes[lang], '', text)
+    if lang == 'en':
+        text = re.sub(r" o[’']clock$", '', text)
+        military = re.fullmatch(r'(\d{2})(\d{2})(?:h| hours)?', text)
+        if military:
+            hour, minute = map(int, military.groups())
+            return (hour % 12) * 60 + minute if hour < 24 and minute < 60 else None
+        # Whole clock phrases only: never pick numbers out of prose or ranges.
+        words = text.replace('-', ' ')
+        spoken = re.fullmatch(r'(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve) (.+)', words)
+        if spoken:
+            hour_word, minute_word = spoken.groups()
+            minute_word = re.sub(r'^(?:oh|zero) ', '', minute_word)
+            minute = number(minute_word.replace(' ', '-'), 'en')
+            if minute is not None and 0 <= minute < 60:
+                return (number(hour_word, 'en') % 12) * 60 + minute
     if lang == 'de':
         text = re.sub(r' uhr$', '', text)
     numeric = re.fullmatch(r'(\d{1,2})[:.](\d{2})', text)
@@ -132,7 +147,8 @@ def clock_phrase(phrase, lang):
         if kind == 'half':
             return result(number(parts[0], lang), 30, -1 if lang == 'de' else 1)
         if kind == 'relative':
-            parsed = result(number(parts[2], lang), number(parts[0], lang),
+            hour = 12 if lang == 'en' and parts[2] in ('midnight', 'noon') else number(parts[2], lang)
+            parsed = result(hour, number(parts[0], lang),
                             1 if parts[1] in ('past', 'after', 'nach') else -1)
             if parsed is not None:
                 return parsed
