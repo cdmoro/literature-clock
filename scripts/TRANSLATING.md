@@ -145,6 +145,25 @@ The user-selected Esperanto fonts are Give You Glory (Handwriting), Literata
 Mono TC (Terminal). Their glyph sets cover `ĈĜĤĴŜŬĉĝĥĵŝŭ`; fonts apply to each
 bilingual passage independently and preserve custom-font priority.
 
+Font choices are saved by passage language, independently of the interface.
+The selector includes compatible general theme fonts, alternatives assigned to
+that language and the user's saved families. A compatible manually chosen family
+is retained across language/theme changes; an incompatible family falls back to
+the current theme's automatic font without deleting the preference. Each bilingual
+passage resolves its own choice. Unverified user families remain selectable with
+a coverage notice; known incompatible saved families are disabled and removable.
+Existing global font settings migrate to the current language, and explicit
+`font` links override that language's preference.
+
+`src/font-coverage.json` records verified languages, official Google Fonts source
+URLs and SHA-256 hashes of checked font files. Coverage checks use Latin letters
+plus each language's accented alphabet, Greek and Russian alphabets, and common
+Simplified Chinese clock characters. This is alphabet/script coverage, not a
+promise to cover every uncommon or foreign character in a literary passage.
+Recheck the registry when adding fonts or languages; downloading a custom font
+successfully does not establish its glyph coverage.
+
+
 ## Interactive menu (legacy alternative)
 
 Start with one command from the repository root:

@@ -177,3 +177,148 @@ test.each([
   refreshDefaultFontLabel();
   expect(document.querySelector('option[value="default"]')!.textContent).not.toContain('Sansation');
 });
+
+test('rotation filters the selector, falls back for Chinese and restores the Spanish choice', async () => {
+  const quote = document.createElement('blockquote');
+  quote.id = 'quote';
+  quote.lang = 'es-ES';
+  document.body.append(quote);
+  document.documentElement.dataset.theme = 'terminal-light';
+  await applyCustomFont('B612 Mono');
+  quote.lang = 'zh-CN';
+  refreshDefaultFontLabel();
+  expect(store.get('font')).toBe('default');
+  expect(document.querySelector('option[value="B612 Mono"]')).toBeNull();
+  expect(document.querySelector('option[value="ZCOOL KuaiLe"]')).not.toBeNull();
+  expect(document.querySelector<HTMLSelectElement>('#font-select')!.value).toBe('default');
+  expect(document.querySelector('option[value="default"]')!.textContent).toContain('ZCOOL QingKe HuangYou');
+  expect(quote.style.getPropertyValue('--override-quote-font-family')).toBe('initial');
+  quote.lang = 'es-ES';
+  refreshDefaultFontLabel();
+  expect(store.get('font')).toBe('B612 Mono');
+  expect(quote.style.getPropertyValue('--override-quote-font-family')).toContain('B612 Mono');
+});
+
+test('compatible choices survive language and theme changes, while explicit choices stay per language', async () => {
+  const quote = document.createElement('blockquote');
+  quote.id = 'quote';
+  quote.lang = 'es-ES';
+  document.body.append(quote);
+  await applyCustomFont('Literata');
+  quote.lang = 'eo';
+  document.documentElement.dataset.theme = 'festive-dark';
+  refreshDefaultFontLabel();
+  expect(store.get('font')).toBe('Literata');
+  await applyCustomFont('Give You Glory');
+  quote.lang = 'es-ES';
+  refreshDefaultFontLabel();
+  expect(store.get('font')).toBe('Literata');
+  quote.lang = 'eo';
+  refreshDefaultFontLabel();
+  expect(store.get('font')).toBe('Give You Glory');
+  initFont();
+  expect(store.get('font')).toBe('Give You Glory');
+});
+
+test('bilingual fonts follow each passage and never inherit an incompatible primary override', async () => {
+  document.body.insertAdjacentHTML(
+    'beforeend',
+    '<blockquote id="quote" lang="es-ES"><section id="quote-translation"><div class="translation-content" lang="zh-CN"></div></section></blockquote>',
+  );
+  await applyCustomFont('Special Elite');
+  const primary = document.getElementById('quote')!;
+  const secondary = document.querySelector<HTMLElement>('.translation-content')!;
+  expect(primary.style.getPropertyValue('--override-quote-font-family')).toContain('Special Elite');
+  expect(secondary.style.getPropertyValue('--override-quote-font-family')).toBe('initial');
+  expect(secondary.style.getPropertyValue('--locale-quote-font-family')).toContain('ZCOOL KuaiLe');
+  primary.lang = 'zh-CN';
+  secondary.lang = 'es-ES';
+  refreshDefaultFontLabel();
+  expect(primary.style.getPropertyValue('--override-quote-font-family')).toBe('initial');
+  expect(secondary.style.getPropertyValue('--override-quote-font-family')).toContain('Special Elite');
+});
+
+test('unverified custom fonts remain selected with a translated coverage notice', async () => {
+  vi.mocked(loadGoogleFont).mockResolvedValue();
+  await applyCustomFont('Lora');
+  const quote = document.createElement('blockquote');
+  quote.id = 'quote';
+  quote.lang = 'zh-CN';
+  document.body.append(quote);
+  store.set('ui-locale', 'es-ES');
+  refreshDefaultFontLabel();
+  expect(store.get('font')).toBe('Lora');
+  expect(document.querySelector<HTMLSelectElement>('#font-select')!.value).toBe('Lora');
+  expect(document.getElementById('custom-font-status')!.textContent).toContain('No se verificó');
+});
+
+test('a custom font response for the previous language cannot replace the new language choice', async () => {
+  const quote = document.createElement('blockquote');
+  quote.id = 'quote';
+  quote.lang = 'es-ES';
+  document.body.append(quote);
+  refreshDefaultFontLabel();
+  let finish!: () => void;
+  vi.mocked(loadGoogleFont).mockImplementation(
+    () =>
+      new Promise<void>((resolve) => {
+        finish = resolve;
+      }),
+  );
+  const pending = applyCustomFont('Lora');
+  quote.lang = 'zh-CN';
+  refreshDefaultFontLabel();
+  finish();
+  await pending;
+  expect(store.get('font')).toBe('default');
+  expect(document.querySelector('option[value="Lora"]')).toBeNull();
+});
+
+test('the curated list excludes other-language additions and incompatible saved fonts remain removable', async () => {
+  const quote = document.createElement('blockquote');
+  quote.id = 'quote';
+  quote.lang = 'es-ES';
+  document.body.append(quote);
+  document.body.insertAdjacentHTML('beforeend', '<button id="remove-custom-font" hidden></button>');
+  refreshDefaultFontLabel();
+  expect(document.querySelector('option[value="ZCOOL KuaiLe"]')).toBeNull();
+  // Adding a known family outside the suggested list keeps it in the user's library.
+  await applyCustomFont('Give You Glory');
+  expect(JSON.parse(localStorage.getItem(CUSTOM_FONTS_KEY)!)).toContain('Give You Glory');
+  quote.lang = 'zh-CN';
+  refreshDefaultFontLabel();
+  const saved = document.querySelector<HTMLOptionElement>('option[value="Give You Glory"]')!;
+  expect(saved.disabled).toBe(true);
+  expect(saved.textContent).toContain('incompatible');
+  expect(document.getElementById('remove-custom-font')!.hidden).toBe(false);
+  expect(document.getElementById('remove-custom-font')!.getAttribute('aria-label')).toContain('Give You Glory');
+  expect(document.getElementById('custom-font-status')!.textContent).toContain('choice remains saved');
+  initFont();
+  expect(document.querySelector<HTMLOptionElement>('option[value="Give You Glory"]')!.disabled).toBe(true);
+  removeCustomFont();
+  expect(document.querySelector('option[value="Give You Glory"]')).toBeNull();
+  quote.lang = 'es-ES';
+  refreshDefaultFontLabel();
+  expect(store.get('font')).toBe('default');
+});
+
+test('regional variants of the same language do not cancel a pending font choice', async () => {
+  const quote = document.createElement('blockquote');
+  quote.id = 'quote';
+  quote.lang = 'en-GB';
+  document.body.append(quote);
+  refreshDefaultFontLabel();
+  let finish!: () => void;
+  vi.mocked(loadGoogleFont).mockImplementation(
+    () =>
+      new Promise<void>((resolve) => {
+        finish = resolve;
+      }),
+  );
+  const pending = applyCustomFont('Lora');
+  quote.lang = 'en-US';
+  refreshDefaultFontLabel();
+  finish();
+  await pending;
+  expect(store.get('font')).toBe('Lora');
+});

@@ -1,5 +1,5 @@
 import { refreshLocaleThemeFonts } from './locale-fonts';
-import { THEME_FONTS, resetFont, refreshDefaultFontLabel } from './font';
+import { THEME_FONTS, refreshDefaultFontLabel } from './font';
 import { doFitQuote, fitQuote, loadFontIfNotExists } from '../utils';
 import { setDayParameters } from './horizon';
 import { store } from '../store';
@@ -184,7 +184,6 @@ export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
     THEME_FONTS[theme].forEach((font) => {
       loadFontIfNotExists(font);
     });
-    resetFont();
   }
 
   store.set('theme', `${theme}-${variant}`, syncToUrl);

@@ -45,7 +45,11 @@
     "settings_saved_help": "Saved only in this browser. Includes colours, font, transitions, safe-for-work filter, time visibility, book title and progress bar.",
     "settings_saved_choose": "Choose a saved theme",
     "settings_saved_error": "Could not save. Browser storage is unavailable or full.",
-    "settings_saved_update": "Update"
+    "settings_saved_update": "Update",
+    "settings_font_unverified": "Character coverage for this font has not been verified for the current quote language.",
+    "settings_font_unverified_label": "unverified",
+    "settings_font_incompatible_label": "incompatible",
+    "settings_font_fallback": "The chosen font does not support this language. The theme’s font is used; your choice remains saved."
   },
   "en-US": {
     "settings_title": "Settings",
@@ -93,7 +97,11 @@
     "settings_saved_help": "Saved only in this browser. Includes colours, font, transitions, safe-for-work filter, time visibility, book title and progress bar.",
     "settings_saved_choose": "Choose a saved theme",
     "settings_saved_error": "Could not save. Browser storage is unavailable or full.",
-    "settings_saved_update": "Update"
+    "settings_saved_update": "Update",
+    "settings_font_unverified": "Character coverage for this font has not been verified for the current quote language.",
+    "settings_font_unverified_label": "unverified",
+    "settings_font_incompatible_label": "incompatible",
+    "settings_font_fallback": "The chosen font does not support this language. The theme’s font is used; your choice remains saved."
   },
   "es-ES": {
     "settings_title": "Configuración",
@@ -141,7 +149,11 @@
     "settings_saved_help": "Se guardan solo en este navegador. Incluyen colores, fuente, transiciones, filtro seguro para el trabajo, visibilidad de la hora, título del libro y barra de progreso.",
     "settings_saved_choose": "Elegir un tema guardado",
     "settings_saved_error": "No se pudo guardar. El almacenamiento del navegador no está disponible o está lleno.",
-    "settings_saved_update": "Actualizar"
+    "settings_saved_update": "Actualizar",
+    "settings_font_unverified": "No se verificó la cobertura de caracteres de esta fuente para el idioma de la cita.",
+    "settings_font_unverified_label": "sin verificar",
+    "settings_font_incompatible_label": "incompatible",
+    "settings_font_fallback": "La fuente elegida no admite este idioma. Se usa la fuente del tema; tu elección sigue guardada."
   },
   "pt-PT": {
     "settings_title": "Configurações",
@@ -189,7 +201,11 @@
     "settings_saved_help": "Guardados apenas neste navegador. Incluem cores, tipo de letra, transições, filtro adequado ao trabalho, visibilidade da hora, título do livro e barra de progresso.",
     "settings_saved_choose": "Escolher um tema guardado",
     "settings_saved_error": "Não foi possível guardar. O armazenamento do navegador está indisponível ou cheio.",
-    "settings_saved_update": "Atualizar"
+    "settings_saved_update": "Atualizar",
+    "settings_font_unverified": "A cobertura de caracteres desta fonte não foi verificada para o idioma da citação.",
+    "settings_font_unverified_label": "não verificada",
+    "settings_font_incompatible_label": "incompatível",
+    "settings_font_fallback": "A fonte escolhida não suporta este idioma. É usada a fonte do tema; a sua escolha continua guardada."
   },
   "fr-FR": {
     "settings_title": "Paramètres",
@@ -237,7 +253,11 @@
     "settings_saved_help": "Enregistrés uniquement dans ce navigateur. Incluent les couleurs, la police, les transitions, le filtre adapté au travail, la visibilité de l’heure, le titre du livre et la barre de progression.",
     "settings_saved_choose": "Choisir un thème enregistré",
     "settings_saved_error": "Enregistrement impossible. Le stockage du navigateur est indisponible ou plein.",
-    "settings_saved_update": "Actualiser"
+    "settings_saved_update": "Actualiser",
+    "settings_font_unverified": "La couverture des caractères de cette police n’a pas été vérifiée pour la langue de la citation.",
+    "settings_font_unverified_label": "non vérifiée",
+    "settings_font_incompatible_label": "incompatible",
+    "settings_font_fallback": "La police choisie ne prend pas en charge cette langue. La police du thème est utilisée ; votre choix reste enregistré."
   },
   "it-IT": {
     "settings_title": "Impostazioni",
@@ -285,7 +305,11 @@
     "settings_saved_help": "Salvati solo in questo browser. Includono colori, carattere, transizioni, filtro adatto al lavoro, visibilità dell’ora, titolo del libro e barra di avanzamento.",
     "settings_saved_choose": "Scegli un tema salvato",
     "settings_saved_error": "Impossibile salvare. La memoria del browser non è disponibile o è piena.",
-    "settings_saved_update": "Aggiorna"
+    "settings_saved_update": "Aggiorna",
+    "settings_font_unverified": "La copertura dei caratteri di questo font non è stata verificata per la lingua della citazione.",
+    "settings_font_unverified_label": "non verificato",
+    "settings_font_incompatible_label": "incompatibile",
+    "settings_font_fallback": "Il font scelto non supporta questa lingua. Si usa il font del tema; la tua scelta resta salvata."
   },
   "de-DE": {
     "settings_title": "Einstellungen",
@@ -333,7 +357,11 @@
     "settings_saved_help": "Nur in diesem Browser gespeichert. Enthält Farben, Schrift, Übergänge, den Filter für arbeitstaugliche Zitate, Zeitanzeige, Buchtitel und Fortschrittsbalken.",
     "settings_saved_choose": "Gespeichertes Design wählen",
     "settings_saved_error": "Speichern fehlgeschlagen. Der Browserspeicher ist nicht verfügbar oder voll.",
-    "settings_saved_update": "Aktualisieren"
+    "settings_saved_update": "Aktualisieren",
+    "settings_font_unverified": "Die Zeichenabdeckung dieser Schrift wurde für die Sprache des Zitats nicht geprüft.",
+    "settings_font_unverified_label": "nicht geprüft",
+    "settings_font_incompatible_label": "nicht kompatibel",
+    "settings_font_fallback": "Die gewählte Schrift unterstützt diese Sprache nicht. Die Schrift des Designs wird verwendet; deine Auswahl bleibt gespeichert."
   },
   "el-GR": {
     "settings_title": "Ρυθμίσεις",
@@ -381,7 +409,11 @@
     "settings_saved_help": "Αποθηκεύονται μόνο σε αυτό το πρόγραμμα περιήγησης. Περιλαμβάνουν χρώματα, γραμματοσειρά, μεταβάσεις, φίλτρο κατάλληλο για εργασία, εμφάνιση ώρας, τίτλο βιβλίου και γραμμή προόδου.",
     "settings_saved_choose": "Επιλογή αποθηκευμένου θέματος",
     "settings_saved_error": "Η αποθήκευση απέτυχε. Ο χώρος αποθήκευσης δεν είναι διαθέσιμος ή είναι πλήρης.",
-    "settings_saved_update": "Ενημέρωση"
+    "settings_saved_update": "Ενημέρωση",
+    "settings_font_unverified": "Η κάλυψη χαρακτήρων αυτής της γραμματοσειράς δεν έχει επαληθευτεί για τη γλώσσα του αποσπάσματος.",
+    "settings_font_unverified_label": "μη επαληθευμένη",
+    "settings_font_incompatible_label": "μη συμβατή",
+    "settings_font_fallback": "Η επιλεγμένη γραμματοσειρά δεν υποστηρίζει αυτή τη γλώσσα. Χρησιμοποιείται η γραμματοσειρά του θέματος· η επιλογή σας παραμένει αποθηκευμένη."
   },
   "zh-CN": {
     "settings_title": "设置",
@@ -429,7 +461,11 @@
     "settings_saved_help": "仅保存在此浏览器中。包括颜色、字体、切换效果、工作场合内容筛选、时间显示、书名和进度条。",
     "settings_saved_choose": "选择已保存的主题",
     "settings_saved_error": "无法保存。浏览器存储不可用或已满。",
-    "settings_saved_update": "更新"
+    "settings_saved_update": "更新",
+    "settings_font_unverified": "尚未验证此字体是否支持当前引文语言的字符。",
+    "settings_font_unverified_label": "未验证",
+    "settings_font_incompatible_label": "不兼容",
+    "settings_font_fallback": "所选字体不支持此语言。当前使用主题字体，您的选择仍已保存。"
   },
   "ru-RU": {
     "settings_title": "Настройки",
@@ -477,7 +513,11 @@
     "settings_saved_help": "Сохраняется только в этом браузере. Включает цвета, шрифт, переходы, фильтр цитат для работы, отображение времени, названия книги и индикатора прогресса.",
     "settings_saved_choose": "Выберите сохранённую тему",
     "settings_saved_error": "Не удалось сохранить. Хранилище браузера недоступно или заполнено.",
-    "settings_saved_update": "Обновить"
+    "settings_saved_update": "Обновить",
+    "settings_font_unverified": "Поддержка символов языка текущей цитаты этим шрифтом не проверена.",
+    "settings_font_unverified_label": "не проверен",
+    "settings_font_incompatible_label": "несовместим",
+    "settings_font_fallback": "Выбранный шрифт не поддерживает этот язык. Используется шрифт темы; ваш выбор остаётся сохранённым."
   },
   "eo": {
     "settings_title": "Agordoj",
@@ -525,6 +565,10 @@
     "settings_saved_help": "Konservata nur en ĉi tiu retumilo. Inkluzivas kolorojn, tiparon, transirojn, filtrilon por laboreje taŭgaj citaĵoj, videblecon de la horo, librotitolon kaj progresbreton.",
     "settings_saved_choose": "Elekti konservitan etoson",
     "settings_saved_error": "Ne eblis konservi. La retumila konservejo ne estas disponebla aŭ estas plena.",
-    "settings_saved_update": "Ĝisdatigi"
+    "settings_saved_update": "Ĝisdatigi",
+    "settings_font_unverified": "La signokovrado de ĉi tiu tiparo ne estas kontrolita por la lingvo de la citaĵo.",
+    "settings_font_unverified_label": "nekontrolita",
+    "settings_font_incompatible_label": "nekongrua",
+    "settings_font_fallback": "La elektita tiparo ne subtenas ĉi tiun lingvon. La tiparo de la etoso estas uzata; via elekto restas konservita."
   }
 }
