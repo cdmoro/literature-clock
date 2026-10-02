@@ -149,8 +149,8 @@ test.each([
 });
 
 test.each([
-  ['base', 'Tajawal'],
-  ['pink', 'Tajawal'],
+  ['base', 'Marhey'],
+  ['pink', 'Marhey'],
   ['photo', 'Lalezar'],
   ['festive', 'Playpen Sans Arabic'],
   ['bohemian', 'Zain'],

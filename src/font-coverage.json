@@ -199,10 +199,10 @@
     "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/spectral/Spectral-Regular.ttf",
     "sha256": "c89021dc20720c8d0dcf40b0b2f6e00c13665fa8041717f581396f51b8c78f5d"
   },
-  "Tajawal": {
+  "Marhey": {
     "languages": ["ar"],
-    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/tajawal/Tajawal-Regular.ttf",
-    "sha256": "6882892da3e03527d5db2bbab3b48bde6ef2e878a43f522d1a4eebda90010a19"
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/marhey/Marhey%5Bwght%5D.ttf",
+    "sha256": "19c30686157ec965797fae8c8feb7bb142b082217227562d1a809c067df447e9"
   },
   "Lalezar": {
     "languages": ["ar"],
