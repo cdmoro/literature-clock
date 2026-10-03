@@ -1,8 +1,13 @@
 import { beforeEach, expect, it, vi } from 'vitest';
 import html2canvas from 'html2canvas-pro';
+import { loadGoogleFont } from '../utils/google-font';
 import { renderShareCard } from './share-card';
 import type { ResolvedQuote } from '../types';
 vi.mock('../store', () => ({ store: { get: () => 'none' } }));
+vi.mock('../utils/google-font', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('../utils/google-font')>()),
+  loadGoogleFont: vi.fn().mockResolvedValue(undefined),
+}));
 vi.mock('html2canvas-pro', () => ({ default: vi.fn() }));
 const quote = {
   locale: 'es-ES',
@@ -17,6 +22,7 @@ const quote = {
 beforeEach(() => {
   document.body.innerHTML = '<blockquote id="quote"></blockquote>';
   vi.mocked(html2canvas).mockReset();
+  vi.mocked(loadGoogleFont).mockReset().mockResolvedValue(undefined);
 });
 it.each([
   ['square', 1080, 1080],
@@ -81,4 +87,34 @@ it('resolves preview colour and pattern on an isolated palette and exports its t
   expect(document.documentElement.getAttribute('style')).toBe(liveStyle);
   expect(document.documentElement.dataset.theme).toBe('base-light');
   computed.mockRestore();
+});
+
+it('loads the chosen image font and exports it without changing the live font', async () => {
+  const liveFamily = document.getElementById('quote')!.style.fontFamily;
+  vi.mocked(html2canvas).mockImplementation(async (element) => {
+    expect(element.style.fontFamily).toContain('Lora');
+    return document.createElement('canvas');
+  });
+  await renderShareCard(quote, 'square', undefined, undefined, { font: 'Lora' });
+  expect(loadGoogleFont).toHaveBeenCalledWith('Lora');
+  expect(document.getElementById('quote')!.style.fontFamily).toBe(liveFamily);
+});
+
+it('uses the theme fallback when a custom image font cannot load', async () => {
+  vi.mocked(loadGoogleFont).mockRejectedValue(new Error('unavailable'));
+  vi.mocked(html2canvas).mockImplementation(async (element) => {
+    expect(element.style.fontFamily).not.toContain('Unavailable Family');
+    return document.createElement('canvas');
+  });
+  await renderShareCard(quote, 'square', undefined, undefined, { font: 'Unavailable Family' });
+  expect(loadGoogleFont).toHaveBeenCalledWith('Unavailable Family');
+});
+
+it('rejects a known incompatible font when rendering an Arabic quote', async () => {
+  vi.mocked(html2canvas).mockImplementation(async (element) => {
+    expect(element.style.fontFamily).not.toContain('Special Elite');
+    return document.createElement('canvas');
+  });
+  await renderShareCard({ ...quote, locale: 'ar-AE' }, 'square', undefined, undefined, { font: 'Special Elite' });
+  expect(loadGoogleFont).not.toHaveBeenCalledWith('Special Elite');
 });

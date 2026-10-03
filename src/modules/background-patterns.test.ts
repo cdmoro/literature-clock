@@ -122,3 +122,13 @@ test('saved themes capture patterns and migrate older snapshots', async () => {
   await applySavedTheme(migrated.settings);
   expect(document.documentElement.dataset.backgroundPattern).toBe('none');
 });
+
+test('persists and restores the large circles pattern through its own URL parameter', () => {
+  setup();
+  choosePattern('circles');
+  expect(document.documentElement.dataset.backgroundPattern).toBe('circles');
+  expect(new URLSearchParams(location.search).get('background-pattern')).toBe('circles');
+  createStore();
+  expect(store.get('background-pattern')).toBe('circles');
+  expect(validateSettings({ 'background-pattern': 'circles' }, false)).toEqual({ 'background-pattern': 'circles' });
+});

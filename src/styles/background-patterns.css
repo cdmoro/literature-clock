@@ -39,3 +39,9 @@ html[data-background-pattern]:not([data-background-pattern='none']) body,
     linear-gradient(45deg, var(--pattern-ink) 25%, transparent 25%);
   --pattern-size: 32px 32px;
 }
+
+[data-background-pattern='circles'] {
+  --pattern-position: 0 0;
+  --pattern-image: radial-gradient(circle, var(--pattern-ink) 10px, transparent 10.5px);
+  --pattern-size: 48px 48px;
+}

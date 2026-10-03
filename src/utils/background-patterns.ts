@@ -1,4 +1,4 @@
-export const BACKGROUND_PATTERNS = ['none', 'dots', 'diagonal', 'grid', 'zigzag'] as const;
+export const BACKGROUND_PATTERNS = ['none', 'dots', 'circles', 'diagonal', 'grid', 'zigzag'] as const;
 export type BackgroundPattern = (typeof BACKGROUND_PATTERNS)[number];
 
 // These skins have a plain page background in both colour schemes.

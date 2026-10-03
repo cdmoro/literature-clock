@@ -1,5 +1,6 @@
 import { store } from '../store';
-import { getBaseLocale } from './locales';
+import { fontSupportsLocale } from './font-preferences';
+import { getBaseLocale, getStrings } from './locales';
 import { readingStrings } from './reading-ui';
 import { closeDialogOnBackdropClick } from '../utils/dialog';
 import { renderShareCard, type CardAppearance, type CardFormat } from './share-card';
@@ -13,7 +14,12 @@ let appearance: CardAppearance | undefined;
 let theme: string | undefined;
 let pattern: BackgroundPattern | undefined;
 let color: string | undefined;
-export const selectedCardOptions = () => ({ pattern: pattern ?? store.get('background-pattern') ?? 'none', color });
+let font: string | undefined;
+export const selectedCardOptions = () => ({
+  pattern: pattern ?? store.get('background-pattern') ?? 'none',
+  color,
+  font,
+});
 export const selectedCardTheme = () => theme;
 export const selectedCardAppearance = () => appearance;
 export const selectedCardFormat = () => format;
@@ -38,6 +44,7 @@ export function initShareOptions() {
     const settingsStrings = SETTINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))];
     pattern = store.get('background-pattern') || 'none';
     color = undefined;
+    font = store.get('font') || 'default';
     const dialog = document.createElement('dialog');
     dialog.id = 'share-preview';
     dialog.setAttribute('aria-labelledby', 'share-preview-title');
@@ -174,6 +181,31 @@ export function initShareOptions() {
     });
     patternControl.append(patternCaption, patternSelect);
     controls.append(patternControl);
+    const fontControl = document.createElement('label');
+    fontControl.className = 'share-font-control';
+    const fontCaption = document.createElement('span');
+    const fontStrings = getStrings(store.get('ui-locale') || store.get('locale'));
+    fontCaption.textContent = fontStrings.font;
+    const fontSelect = document.createElement('select');
+    fontSelect.id = 'share-preview-font';
+    const sourceFonts = document.querySelectorAll<HTMLOptionElement>('#font-select option');
+    for (const source of sourceFonts) {
+      const option = source.cloneNode(true) as HTMLOptionElement;
+      option.removeAttribute('data-text');
+      option.disabled = option.value !== 'default' && fontSupportsLocale(option.value, snapshot.locale) === false;
+      fontSelect.append(option);
+    }
+    if (!fontSelect.querySelector('option[value="default"]')) fontSelect.prepend(new Option('', 'default'));
+    fontSelect.querySelector<HTMLOptionElement>('option[value="default"]')!.textContent = fontStrings.default_font;
+    if (fontSupportsLocale(font, snapshot.locale) === false) font = 'default';
+    if (![...fontSelect.options].some((option) => option.value === font)) font = 'default';
+    fontSelect.value = font;
+    fontSelect.addEventListener('change', () => {
+      font = fontSelect.value;
+      void refresh();
+    });
+    fontControl.append(fontCaption, fontSelect);
+    controls.append(fontControl);
     const preview = document.createElement('div');
     preview.className = 'share-preview-image';
     preview.setAttribute('role', 'group');
@@ -243,6 +275,7 @@ export function initShareOptions() {
       revision++;
       pattern = undefined;
       color = undefined;
+      font = undefined;
       dialog.remove();
       button.focus();
     });

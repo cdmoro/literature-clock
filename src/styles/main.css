@@ -813,3 +813,14 @@ select:dir(rtl) {
   cursor: pointer;
 }
 .share-theme-carousel:has(#share-preview-color) > button:last-of-type { border-radius: 0; }
+
+.share-font-control {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  min-width: 0;
+}
+#share-preview-font {
+  max-width: min(220px, 60vw);
+  font-size: .85rem;
+}

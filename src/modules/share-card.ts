@@ -2,7 +2,8 @@ import { store } from '../store';
 import { type BackgroundPattern, supportsBackgroundPattern } from '../utils/background-patterns';
 import html2canvas from 'html2canvas-pro';
 import type { ResolvedQuote } from '../types';
-import { loadGoogleFont } from '../utils/google-font';
+import { fontSupportsLocale } from './font-preferences';
+import { loadGoogleFont, normalizeFontName } from '../utils/google-font';
 import { getLocaleThemeFont } from './locale-fonts';
 import { quoteMarkup } from '../utils/quote-markup';
 
@@ -12,6 +13,7 @@ export type CardAppearance = 'light' | 'dark';
 export interface CardOptions {
   pattern?: BackgroundPattern;
   color?: string;
+  font?: string;
 }
 const themeFontLoads = new Map<string, Promise<void>>();
 
@@ -69,26 +71,35 @@ export async function renderShareCard(
   const accent = isolated
     ? paletteStyle.getPropertyValue('--accent-color')
     : getComputedStyle(document.documentElement).getPropertyValue('--accent-color');
-  const localeFont = theme ? getLocaleThemeFont(theme, quote.locale) : undefined;
-  const fontFamily = theme
-    ? localeFont
-      ? `"${localeFont}", serif`
-      : quote.locale.startsWith('ar')
-        ? 'system-ui, sans-serif'
-        : paletteStyle.getPropertyValue('--quote-font-family')
-    : quoteStyle.fontFamily;
+  const localeFont = getLocaleThemeFont(skin, quote.locale);
+  const themeFontFamily = localeFont
+    ? `"${localeFont}", serif`
+    : quote.locale.startsWith('ar')
+      ? 'system-ui, sans-serif'
+      : paletteStyle.getPropertyValue('--quote-font-family') || 'serif';
+  const candidate = options.font && options.font !== 'default' ? normalizeFontName(options.font) : undefined;
+  const customFont = candidate && fontSupportsLocale(candidate, quote.locale) !== false ? candidate : undefined;
+  const fontFamily = customFont
+    ? `"${customFont}", ${themeFontFamily}`
+    : theme || options.font !== undefined
+      ? themeFontFamily
+      : quoteStyle.fontFamily;
   let fontLoading: Promise<void> | undefined;
-  if (theme) {
-    const font = localeFont || fontFamily.split(',')[0].replace(/["']/g, '').trim();
-    if (font && !['system-ui', 'serif', 'sans-serif', 'monospace'].includes(font)) {
-      fontLoading = themeFontLoads.get(font);
-      if (!fontLoading) {
-        fontLoading = loadGoogleFont(font).catch(() => {
-          themeFontLoads.delete(font);
-        });
-        themeFontLoads.set(font, fontLoading);
-      }
+  const requestedFont =
+    customFont ||
+    (theme || options.font !== undefined
+      ? localeFont || themeFontFamily.split(',')[0].replace(/["']/g, '').trim()
+      : undefined);
+  if (requestedFont && !['system-ui', 'serif', 'sans-serif', 'monospace'].includes(requestedFont)) {
+    let loading = themeFontLoads.get(requestedFont);
+    if (!loading) {
+      loading = loadGoogleFont(requestedFont);
+      themeFontLoads.set(requestedFont, loading);
     }
+    fontLoading = loading.catch(() => {
+      themeFontLoads.delete(requestedFont);
+      card.style.fontFamily = themeFontFamily;
+    });
   }
   const backgroundSize = pattern !== 'none' ? paletteStyle.backgroundSize : 'cover';
   const backgroundPosition = pattern !== 'none' ? paletteStyle.backgroundPosition : 'center';
