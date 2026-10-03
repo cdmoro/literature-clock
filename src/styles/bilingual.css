@@ -6,13 +6,14 @@
   box-sizing: border-box;
   margin: 0;
   border: 0;
-  background: color-mix(in srgb, var(--font-color), transparent 94%);
+  background-color: color-mix(in srgb, var(--font-color), transparent 94%);
   box-shadow: none;
   color: inherit;
   font: inherit;
   letter-spacing: inherit;
   cursor: pointer;
-  appearance: auto;
+  appearance: none;
+  padding-inline: 0.5rem 2rem;
 }
 #quote #clock-translation-locale:focus {
   /* Keep the focus ring inside the control so the quote's scrollport cannot clip it. */
