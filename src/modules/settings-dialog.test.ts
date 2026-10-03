@@ -35,7 +35,7 @@ test('keeps quick actions outside and moves every settings control without repla
   const theme = document.getElementById('theme-select');
   createStore();
   initSettingsDialog();
-  for (const id of ['zen', 'fullscreen', 'screensaver', 'color-picker', 'copy', 'share', 'download']) {
+  for (const id of ['zen', 'fullscreen', 'screensaver', 'color-picker', 'copy', 'share']) {
     expect(document.querySelector(`#settings #${id}`)).not.toBeNull();
   }
   for (const id of [

@@ -1,3 +1,4 @@
+import { initBackgroundPatterns } from './background-patterns';
 import { store } from '../store';
 import { initSavedThemes } from './saved-themes';
 import { initThemePicker } from './theme-picker';
@@ -181,6 +182,7 @@ export function initSettingsDialog() {
   }
 
   initThemePicker(dialog);
+  initBackgroundPatterns(dialog);
   initSavedThemes(dialog);
 
   // Moving controls leaves whitespace-only wrappers that still occupy a flex gap.
