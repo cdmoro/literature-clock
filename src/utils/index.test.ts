@@ -1,5 +1,5 @@
 import { describe, expect, test, vi } from 'vitest';
-import { fitQuote, getFaviconFileName } from '.';
+import { doFitQuote, fitQuote, getFaviconFileName } from '.';
 import { createStore } from '../store';
 
 describe('getFaviconFileName', () => {
@@ -33,10 +33,29 @@ test('fits replacement text immediately rather than leaving overflow until the n
     Object.defineProperty(passage, 'clientHeight', { get: () => 100 });
     Object.defineProperty(passage, 'scrollHeight', { get: () => parseFloat(passage.style.fontSize) * 4 });
     fitQuote();
-    expect(passage.scrollHeight).toBeLessThanOrEqual(passage.clientHeight - 10);
+    expect(passage.scrollHeight).toBeLessThanOrEqual(passage.clientHeight + 1);
   } finally {
     vi.clearAllTimers();
     vi.useRealTimers();
+    document.body.innerHTML = '';
+  }
+});
+
+test('preserves the size of a short bilingual quote whose height follows its content', () => {
+  createStore();
+  document.body.innerHTML =
+    '<blockquote id="quote" dir="rtl"><p>نص قصير</p><cite>Author</cite><section id="quote-translation">Translation</section></blockquote>';
+  try {
+    const passage = document.querySelector<HTMLElement>('#quote > p')!;
+    const height = () => parseFloat(passage.style.fontSize) * 1.65;
+    Object.defineProperty(passage, 'clientHeight', { get: height });
+    Object.defineProperty(passage, 'scrollHeight', { get: height });
+    doFitQuote();
+    const size = passage.style.fontSize;
+    expect(parseFloat(size)).toBeGreaterThan(10);
+    doFitQuote();
+    expect(passage.style.fontSize).toBe(size);
+  } finally {
     document.body.innerHTML = '';
   }
 });

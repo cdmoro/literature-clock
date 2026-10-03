@@ -85,23 +85,21 @@ export function doFitQuote() {
 
   if (quote) {
     quote.style.fontSize = `${fontSize}px`;
-    const safeClientHeight = quote.clientHeight - 10;
+    if (cite) cite.style.fontSize = `${fontSize * citeFactor}px`;
     const container = quote.closest<HTMLElement>('#quote');
     const bilingual = !!container?.querySelector('#quote-translation');
     const containerOverflows = () =>
       bilingual && container!.clientHeight > 0 && container!.scrollHeight > container!.clientHeight + 1;
 
     // The attribution and secondary passage share the bounded bilingual container.
-    while (quote.scrollHeight > safeClientHeight || containerOverflows()) {
+    // An unconstrained paragraph's clientHeight follows its content. Subtracting
+    // a margin from that height makes a short, single-line quote never fit.
+    while (quote.scrollHeight > quote.clientHeight + 1 || containerOverflows()) {
+      if (fontSize <= 10) break;
+      fontSize -= 1;
       quote.style.fontSize = `${fontSize}px`;
       if (cite) {
         cite.style.fontSize = `${fontSize < 19 ? 10 : fontSize * citeFactor}px`;
-      }
-      fontSize -= 1;
-
-      if (fontSize < 10) {
-        quote.style.fontSize = '10px';
-        break;
       }
     }
   }
