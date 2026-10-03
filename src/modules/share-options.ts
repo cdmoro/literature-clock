@@ -80,7 +80,22 @@ export function initShareOptions() {
     for (const value of ['light', 'dark'] as const) {
       const option = document.createElement('button');
       option.type = 'button';
-      option.textContent = strings[value];
+      option.title = strings[value];
+      option.setAttribute('aria-label', strings[value]);
+      const source = document.querySelector<SVGGElement>(`[data-variant-icon="${value}"]`);
+      if (source?.parentElement) {
+        const icon = source.parentElement.cloneNode(false) as SVGSVGElement;
+        const shape = source.cloneNode(true) as SVGGElement;
+        shape.removeAttribute('data-variant-icon');
+        icon.setAttribute('width', '24');
+        icon.setAttribute('height', '24');
+        icon.setAttribute('aria-hidden', 'true');
+        icon.setAttribute('focusable', 'false');
+        icon.append(shape);
+        option.append(icon);
+      } else {
+        option.textContent = strings[value];
+      }
       option.addEventListener('click', () => {
         appearance = value;
         void refresh();
