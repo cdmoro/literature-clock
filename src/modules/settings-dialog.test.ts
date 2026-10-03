@@ -2,6 +2,7 @@
 import page from '../../index.html?raw';
 import { afterEach, expect, test, vi } from 'vitest';
 import { initSettingsDialog } from './settings-dialog';
+import { initSpeech } from './speech';
 import { initTheme } from './themes';
 import { createStore, store } from '../store';
 import { themePreviewDocument } from './theme-picker';
@@ -391,11 +392,39 @@ test('production stylesheets load in the opaque preview without changing the mai
 });
 
 test('preview keeps Latin attribution on the right of an Arabic passage', () => {
-  document.body.innerHTML = '<blockquote id="quote" lang="ar-AE" dir="rtl" style="direction:rtl;text-align:start"><p>نص عربي</p><cite dir="auto">Moby Dick, Captain Ahab</cite></blockquote>';
+  document.body.innerHTML =
+    '<blockquote id="quote" lang="ar-AE" dir="rtl" style="direction:rtl;text-align:start"><p>نص عربي</p><cite dir="auto">Moby Dick, Captain Ahab</cite></blockquote>';
   const preview = new DOMParser().parseFromString(themePreviewDocument(), 'text/html');
   expect(preview.querySelector('cite')!.style.textAlign).toBe('right');
   expect(preview.querySelector('cite')!.dir).toBe('auto');
   document.getElementById('quote')!.style.textAlign = 'center';
   const centered = new DOMParser().parseFromString(themePreviewDocument(), 'text/html');
   expect(centered.querySelector('cite')!.style.textAlign).toBe('center');
+});
+
+test('groups behavior controls without losing their shared switch state', () => {
+  document.body.innerHTML = page;
+  createStore();
+  initSettingsDialog();
+  const group = document.createElement('span');
+  group.id = 'reading-controls';
+  document.getElementById('settings')!.append(group);
+  const cleanup = initSpeech();
+  try {
+    const sections = [...document.querySelectorAll('#settings-behavior > .settings-behavior-section')];
+    expect(sections).toHaveLength(3);
+    expect(sections[0].querySelector('#hide-book-title')).not.toBeNull();
+    expect(sections[0].querySelector('#work')).not.toBeNull();
+    expect(sections[1].querySelector('#transition-select')).not.toBeNull();
+    expect(sections[1].querySelector('#show-time')).not.toBeNull();
+    expect(sections[1].querySelector('#progressbar')).not.toBeNull();
+    expect(sections[2].querySelector('#auto-read')).not.toBeNull();
+    expect(sections[2].querySelector('#read-attribution')).not.toBeNull();
+    expect(sections[2].querySelector('#speech-help')).not.toBeNull();
+    document.getElementById('hide-book-title')!.click();
+    expect(store.get('hide-book-title')).toBe(true);
+    expect(document.getElementById('hide-book-title')!.getAttribute('aria-checked')).toBe('true');
+  } finally {
+    cleanup?.();
+  }
 });

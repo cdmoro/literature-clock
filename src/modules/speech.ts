@@ -64,7 +64,32 @@ export function initSpeech() {
   attributionRow.append(attributionCaption, attributionToggle);
   row.after(attributionRow);
 
+  const behavior = document.getElementById('settings-behavior');
+  const section = (id: string, controls: string[]) => {
+    const container = document.createElement('section');
+    container.className = 'settings-behavior-section';
+    const heading = document.createElement('h3');
+    heading.id = id;
+    container.setAttribute('aria-labelledby', id);
+    container.append(heading);
+    behavior?.append(container);
+    controls.forEach((control) => {
+      const current = document.getElementById(control)?.closest('.settings-row');
+      if (current) container.append(current);
+    });
+    return { container, heading };
+  };
+  const contentSection = section('behavior-content-title', ['hide-book-title', 'work']);
+  const clockSection = section('behavior-clock-title', ['transition-select', 'show-time', 'progressbar']);
+  const speechSection = section('behavior-speech-title', []);
+  const activate = document.createElement('button');
+  activate.id = 'activate-speech';
+  activate.type = 'button';
+  speechSection.container.append(row, attributionRow, help, activate);
+
   let armed = false;
+  let failure = '';
+  let startTimer: ReturnType<typeof setTimeout> | undefined;
   let utterance: SpeechSynthesisUtterance | undefined;
   const strings = () => STRINGS[getBaseLocale(getInterfaceLocale())];
   const refresh = () => {
@@ -80,11 +105,20 @@ export function initSpeech() {
     attributionToggle.setAttribute('aria-checked', String(store.get('read-attribution')));
     toggle.disabled = !supported;
     toggle.setAttribute('aria-checked', String(store.get('auto-read')));
-    help.textContent = supported ? text.help : text.unsupported;
+    contentSection.heading.textContent = text.contentSection;
+    clockSection.heading.textContent = text.clockSection;
+    speechSection.heading.textContent = text.speechSection;
+    activate.textContent = text.activate;
+    activate.hidden = !supported || !store.get('auto-read') || (armed && !failure);
+    help.textContent = !supported
+      ? text.unsupported
+      : failure || (store.get('auto-read') && !armed ? text.activationNeeded : text.help);
   };
   const stop = () => {
+    const active = !!utterance;
     utterance = undefined;
-    if (supported) synth.cancel();
+    clearTimeout(startTimer);
+    if (supported && active) synth.cancel();
     refresh();
   };
   const read = () => {
@@ -106,40 +140,65 @@ export function initSpeech() {
       voices.find((voice) => voice.lang.toLowerCase() === current.lang.toLowerCase()) ||
       voices.find((voice) => voice.lang.split('-')[0] === current.lang.split('-')[0]) ||
       null;
+    const failed = (message: string) => {
+      if (utterance !== current) return;
+      failure = message;
+      armed = false;
+      stop();
+      showQuoteNotice(message, true);
+    };
+    current.onstart = () => {
+      if (utterance !== current) return;
+      clearTimeout(startTimer);
+      failure = '';
+      refresh();
+    };
     current.onend = () => {
       if (utterance === current) {
+        clearTimeout(startTimer);
         utterance = undefined;
         refresh();
       }
     };
     current.onerror = (event) => {
       if (utterance !== current) return;
-      utterance = undefined;
-      if (event.error !== 'canceled' && event.error !== 'interrupted') showQuoteNotice(strings().error);
-      refresh();
+      if (event.error === 'canceled' || event.error === 'interrupted') {
+        clearTimeout(startTimer);
+        utterance = undefined;
+        refresh();
+      } else failed(event.error === 'not-allowed' ? strings().blocked : strings().error);
     };
     utterance = current;
     refresh();
+    startTimer = setTimeout(() => failed(strings().noStart), 8000);
     try {
+      if (synth.paused) synth.resume();
       synth.speak(current);
     } catch {
-      stop();
-      showQuoteNotice(strings().error);
+      failed(strings().error);
     }
   };
-  button.addEventListener('click', () => {
+  const arm = () => {
     armed = true;
+    failure = '';
+    showQuoteNotice('');
+  };
+  activate.addEventListener('click', () => {
+    arm();
+    read();
+  });
+  button.addEventListener('click', () => {
+    arm();
     if (utterance) stop();
     else read();
   });
   toggle.addEventListener('click', () => {
-    armed = true;
+    arm();
     if (store.toggle('auto-read')) read();
     else stop();
   });
   const unsubscribe = store.subscribe((state, previous) => {
     if (
-      state['active-quote'] !== previous['active-quote'] ||
       (previous['auto-read'] && !state['auto-read']) ||
       state['hide-book-title'] !== previous['hide-book-title'] ||
       state.theme !== previous.theme ||
@@ -148,6 +207,9 @@ export function initSpeech() {
       stop();
     refresh();
   });
+  const changing = (event: Event) => {
+    if (!(event as CustomEvent<{ minuteTick: boolean }>).detail.minuteTick || store.get('auto-read')) stop();
+  };
   const rendered = (event: Event) => {
     if (
       (event as CustomEvent<{ minuteTick: boolean }>).detail.minuteTick &&
@@ -160,6 +222,7 @@ export function initSpeech() {
   const visibility = () => {
     if (document.hidden) stop();
   };
+  document.addEventListener('quote-changing', changing);
   document.addEventListener('quote-rendered', rendered);
   document.addEventListener('visibilitychange', visibility);
   window.addEventListener('pagehide', stop);
@@ -167,6 +230,7 @@ export function initSpeech() {
   return () => {
     stop();
     unsubscribe();
+    document.removeEventListener('quote-changing', changing);
     document.removeEventListener('quote-rendered', rendered);
     document.removeEventListener('visibilitychange', visibility);
     window.removeEventListener('pagehide', stop);

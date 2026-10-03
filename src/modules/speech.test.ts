@@ -9,6 +9,7 @@ const cancel = vi.fn();
 class Utterance {
   lang = '';
   voice = null;
+  onstart?: () => void;
   onend?: () => void;
   onerror?: (event: { error: string }) => void;
   constructor(public text: string) {}
@@ -30,11 +31,13 @@ beforeEach(() => {
   createStore();
   store.set('active-quote', quote);
   vi.clearAllMocks();
+  speak.mockImplementation((utterance: Utterance) => utterance.onstart?.());
 });
 afterEach(() => {
   cleanup?.();
   cleanup = undefined;
   vi.unstubAllGlobals();
+  vi.useRealTimers();
 });
 const click = (id: string) => document.getElementById(id)!.click();
 const minute = (minuteTick = true) =>
@@ -83,6 +86,7 @@ it('cancels an old quote and ignores its delayed completion callback', () => {
   cleanup = initSpeech();
   click('read-quote');
   const old = speak.mock.calls[0][0] as Utterance;
+  document.dispatchEvent(new CustomEvent('quote-changing', { detail: { minuteTick: false } }));
   store.set('active-quote', { ...quote, id: '1201-001' });
   expect(document.getElementById('read-quote')!.getAttribute('aria-pressed')).toBe('false');
   click('read-quote');
@@ -174,4 +178,64 @@ it('stops ongoing narration when attribution visibility changes', () => {
   store.set('hide-book-title', true);
   expect(cancel).toHaveBeenCalledOnce();
   expect(document.getElementById('read-quote')!.getAttribute('aria-pressed')).toBe('false');
+});
+
+it('lets manual speech finish at a clock tick but interrupts intentional quote navigation', () => {
+  cleanup = initSpeech();
+  click('read-quote');
+  cancel.mockClear();
+  document.dispatchEvent(new CustomEvent('quote-changing', { detail: { minuteTick: true } }));
+  store.set('active-quote', { ...quote, time: '12:01' });
+  minute();
+  expect(cancel).not.toHaveBeenCalled();
+  expect(speak).toHaveBeenCalledOnce();
+  expect(document.getElementById('read-quote')!.getAttribute('aria-pressed')).toBe('true');
+  document.dispatchEvent(new CustomEvent('quote-changing', { detail: { minuteTick: false } }));
+  expect(cancel).toHaveBeenCalledOnce();
+});
+it('offers explicit activation for a saved automatic preference', () => {
+  store.set('auto-read', true);
+  cleanup = initSpeech();
+  expect(document.getElementById('activate-speech')!.hidden).toBe(false);
+  click('activate-speech');
+  expect(speak).toHaveBeenCalledOnce();
+  expect(document.getElementById('activate-speech')!.hidden).toBe(true);
+  minute();
+  expect(speak).toHaveBeenCalledTimes(2);
+});
+it('reports a blocked browser and recovers with an explicit activation', () => {
+  store.set('auto-read', true);
+  cleanup = initSpeech();
+  click('activate-speech');
+  const current = speak.mock.calls[0][0] as Utterance;
+  current.onerror!({ error: 'not-allowed' });
+  expect(document.getElementById('speech-help')!.textContent).toContain('blocked');
+  expect(document.getElementById('activate-speech')!.hidden).toBe(false);
+  speak.mockClear();
+  minute();
+  expect(speak).not.toHaveBeenCalled();
+  click('activate-speech');
+  expect(speak).toHaveBeenCalledOnce();
+  expect(document.getElementById('activate-speech')!.hidden).toBe(true);
+});
+it('detects a speech engine that never confirms playback started', () => {
+  vi.useFakeTimers();
+  store.set('auto-read', true);
+  cleanup = initSpeech();
+  speak.mockImplementationOnce(() => {});
+  click('activate-speech');
+  vi.advanceTimersByTime(8000);
+  expect(document.getElementById('speech-help')!.textContent).toContain('did not start');
+  expect(document.getElementById('read-quote')!.getAttribute('aria-pressed')).toBe('false');
+  expect(document.getElementById('activate-speech')!.hidden).toBe(false);
+});
+it('does not cancel the native engine at natural completion or when already idle', () => {
+  cleanup = initSpeech();
+  expect(cancel).not.toHaveBeenCalled();
+  click('read-quote');
+  expect(cancel).not.toHaveBeenCalled();
+  const current = speak.mock.calls[0][0] as Utterance;
+  current.onend!();
+  store.set('theme', 'poster-light');
+  expect(cancel).not.toHaveBeenCalled();
 });

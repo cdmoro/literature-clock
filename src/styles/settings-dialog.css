@@ -638,3 +638,16 @@
 #settings-dialog:dir(rtl) .settings-switch:checked::after {
   transform: translateX(-17px);
 }
+
+.settings-behavior-section + .settings-behavior-section {
+  border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+  margin-top: 1.25rem;
+  padding-top: 0.75rem;
+}
+.settings-behavior-section h3 {
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem;
+}
+#activate-speech[hidden] {
+  display: none;
+}

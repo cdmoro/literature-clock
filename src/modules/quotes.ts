@@ -150,6 +150,7 @@ export async function updateQuote({
         store.get('quote-id') && quote.id !== store.get('quote-id') ? readingStrings().quoteUnavailable : '',
         true,
       );
+      document.dispatchEvent(new CustomEvent('quote-changing', { detail: { minuteTick } }));
       store.set('active-quote', quote);
       updateGHLinks(time, quote, locale);
       if (store.get('theme')?.startsWith('photo')) {
