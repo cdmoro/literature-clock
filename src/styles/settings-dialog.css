@@ -100,6 +100,10 @@
 #settings-dialog .input-group:dir(rtl) > :last-child:not(:only-child) {
   border-radius: 0.35rem 0 0 0.35rem;
 }
+/* The hidden prefix leaves this select as the only visible control. */
+#settings-dialog .input-group:dir(rtl) > .input-group-text:first-child + select:last-child {
+  border-radius: 0.35rem;
+}
 #settings-dialog .settings-row:has(.settings-switch) {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -164,6 +168,9 @@
 }
 #settings-dialog .settings-quote-languages:has(#clear-quote-languages:not([hidden])) summary {
   border-radius: 0.35rem 0 0 0.35rem;
+}
+#settings-dialog .settings-quote-languages:dir(rtl):has(#clear-quote-languages:not([hidden])) summary {
+  border-radius: 0 0.35rem 0.35rem 0;
 }
 #quote-language-picker summary {
   box-sizing: border-box;
