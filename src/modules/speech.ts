@@ -30,6 +30,20 @@ export function initSpeech() {
   row.append(caption, toggle);
   document.getElementById('settings-behavior')?.append(row, help);
   group.append(button);
+  const attributionRow = document.createElement('div');
+  attributionRow.className = 'settings-row';
+  const attributionCaption = document.createElement('label');
+  attributionCaption.htmlFor = 'read-attribution';
+  attributionCaption.id = 'read-attribution-caption';
+  const attributionToggle = document.createElement('button');
+  attributionToggle.id = 'read-attribution';
+  attributionToggle.type = 'button';
+  attributionToggle.className = 'settings-switch';
+  attributionToggle.setAttribute('role', 'switch');
+  attributionToggle.setAttribute('aria-labelledby', attributionCaption.id);
+  attributionToggle.addEventListener('click', () => store.toggle('read-attribution'));
+  attributionRow.append(attributionCaption, attributionToggle);
+  row.after(attributionRow);
 
   let armed = false;
   let utterance: SpeechSynthesisUtterance | undefined;
@@ -42,6 +56,9 @@ export function initSpeech() {
     button.setAttribute('aria-pressed', String(!!utterance));
     button.disabled = !supported || !store.get('active-quote');
     caption.textContent = text.auto;
+    attributionCaption.textContent = text.attribution;
+    attributionToggle.disabled = !supported;
+    attributionToggle.setAttribute('aria-checked', String(store.get('read-attribution')));
     toggle.disabled = !supported;
     toggle.setAttribute('aria-checked', String(store.get('auto-read')));
     help.textContent = supported ? text.help : text.unsupported;
@@ -60,7 +77,10 @@ export function initSpeech() {
     copy.querySelectorAll('br').forEach((br) => br.replaceWith(' '));
     const text = copy.textContent?.trim();
     if (!text) return;
-    const current = new SpeechSynthesisUtterance(text);
+    const attribution = store.get('read-attribution')
+      ? [quote.title, quote.author].filter((part) => part?.trim()).join(', ')
+      : '';
+    const current = new SpeechSynthesisUtterance(attribution ? `${text}\n${attribution}.` : text);
     current.lang = quote.locale.replace(/-draft$/, '');
     const voices = synth.getVoices();
     current.voice =

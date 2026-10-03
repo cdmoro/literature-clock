@@ -13,7 +13,13 @@ class Utterance {
   onerror?: (event: { error: string }) => void;
   constructor(public text: string) {}
 }
-const quote = { id: '1200-001', time: '12:00', locale: 'es-ES' } as ResolvedQuote;
+const quote = {
+  id: '1200-001',
+  time: '12:00',
+  locale: 'es-ES',
+  title: 'El libro',
+  author: 'La autora',
+} as ResolvedQuote;
 beforeEach(() => {
   localStorage.clear();
   history.replaceState({}, '', '/');
@@ -99,4 +105,30 @@ it('disables controls gracefully when speech is unsupported', () => {
   cleanup = initSpeech();
   expect((document.getElementById('read-quote') as HTMLButtonElement).disabled).toBe(true);
   expect((document.getElementById('auto-read') as HTMLButtonElement).disabled).toBe(true);
+});
+
+it('optionally reads attribution even when the book title is hidden, in manual and automatic reading', () => {
+  cleanup = initSpeech();
+  expect(store.get('read-attribution')).toBe(false);
+  store.set('hide-book-title', true);
+  click('read-attribution');
+  expect(document.getElementById('read-attribution')!.getAttribute('aria-checked')).toBe('true');
+  expect(JSON.parse(localStorage.getItem('settings')!)['read-attribution']).toBe(true);
+  expect(location.search).not.toContain('read-attribution');
+  click('read-quote');
+  expect(speak.mock.calls[speak.mock.calls.length - 1][0].text).toBe('Son las doce. Hola.\nEl libro, La autora.');
+  click('auto-read');
+  speak.mockClear();
+  minute();
+  expect(speak.mock.calls[0][0].text).toBe('Son las doce. Hola.\nEl libro, La autora.');
+  click('read-attribution');
+  minute();
+  expect(speak.mock.calls[speak.mock.calls.length - 1][0].text).toBe('Son las doce. Hola.');
+});
+it('omits missing attribution fields without speaking undefined', () => {
+  cleanup = initSpeech();
+  store.set('active-quote', { ...quote, title: '', author: '' });
+  click('read-attribution');
+  click('read-quote');
+  expect(speak.mock.calls[0][0].text).toBe('Son las doce. Hola.');
 });
