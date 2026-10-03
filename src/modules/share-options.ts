@@ -13,15 +13,10 @@ export const selectedCardFormat = () => format;
 export const shareOptionStrings = () => STRINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))];
 
 export function initShareOptions() {
-  const download = document.getElementById('download');
-  if (!download || document.getElementById('share-options')) return;
-  const button = document.createElement('button');
-  button.id = 'share-options';
-  button.type = 'button';
-  button.innerHTML =
-    '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1"/><path d="m3 17 6-6 4 4 3-3 5 5"/></svg>';
+  const button = document.getElementById('share');
+  if (!button || button.dataset.shareDialogBound) return;
+  button.dataset.shareDialogBound = 'true';
   button.setAttribute('aria-haspopup', 'dialog');
-  download.after(button);
   const updateLabel = () => {
     button.title = shareOptionStrings().title;
     button.setAttribute('aria-label', button.title);

@@ -1,6 +1,6 @@
 {
   "en-GB": {
-    "title": "Image settings",
+    "title": "Share quote",
     "format": "Format",
     "square": "Square",
     "portrait": "Vertical",
@@ -20,7 +20,7 @@
     "copyUnavailable": "Image copying is unavailable in this browser. Download the image instead."
   },
   "es-ES": {
-    "title": "Ajustes de imagen",
+    "title": "Compartir cita",
     "format": "Formato",
     "square": "Cuadrado",
     "portrait": "Vertical",
@@ -40,7 +40,7 @@
     "copyUnavailable": "Este navegador no permite copiar imágenes. Podés descargarla."
   },
   "fr-FR": {
-    "title": "Réglages de l’image",
+    "title": "Partager la citation",
     "format": "Format",
     "square": "Carré",
     "portrait": "Vertical",
@@ -60,7 +60,7 @@
     "copyUnavailable": "Ce navigateur ne permet pas de copier les images. Téléchargez l’image."
   },
   "de-DE": {
-    "title": "Bildeinstellungen",
+    "title": "Zitat teilen",
     "format": "Format",
     "square": "Quadratisch",
     "portrait": "Hochformat",
@@ -80,7 +80,7 @@
     "copyUnavailable": "Dieser Browser unterstützt das Kopieren von Bildern nicht. Laden Sie das Bild herunter."
   },
   "it-IT": {
-    "title": "Impostazioni immagine",
+    "title": "Condividi citazione",
     "format": "Formato",
     "square": "Quadrato",
     "portrait": "Verticale",
@@ -100,7 +100,7 @@
     "copyUnavailable": "Questo browser non supporta la copia delle immagini. Scarica l’immagine."
   },
   "pt-PT": {
-    "title": "Definições da imagem",
+    "title": "Partilhar citação",
     "format": "Formato",
     "square": "Quadrado",
     "portrait": "Vertical",
@@ -120,7 +120,7 @@
     "copyUnavailable": "Este navegador não permite copiar imagens. Transfira a imagem."
   },
   "el-GR": {
-    "title": "Ρυθμίσεις εικόνας",
+    "title": "Κοινοποίηση παραθέματος",
     "format": "Μορφή",
     "square": "Τετράγωνη",
     "portrait": "Κάθετη",
@@ -140,7 +140,7 @@
     "copyUnavailable": "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει αντιγραφή εικόνων. Κατεβάστε την εικόνα."
   },
   "zh-CN": {
-    "title": "图片设置",
+    "title": "分享引文",
     "format": "格式",
     "square": "正方形",
     "portrait": "竖版",
@@ -160,7 +160,7 @@
     "copyUnavailable": "此浏览器不支持复制图片，请下载图片。"
   },
   "ru-RU": {
-    "title": "Настройки изображения",
+    "title": "Поделиться цитатой",
     "format": "Формат",
     "square": "Квадратный",
     "portrait": "Вертикальный",
@@ -180,7 +180,7 @@
     "copyUnavailable": "Этот браузер не поддерживает копирование изображений. Скачайте изображение."
   },
   "eo": {
-    "title": "Bildaj agordoj",
+    "title": "Kunhavigi citaĵon",
     "format": "Formato",
     "square": "Kvadrata",
     "portrait": "Vertikala",
@@ -200,7 +200,7 @@
     "copyUnavailable": "Ĉi tiu retumilo ne subtenas kopiadon de bildoj. Elŝutu la bildon."
   },
   "en-US": {
-    "title": "Image settings",
+    "title": "Share quote",
     "format": "Format",
     "square": "Square",
     "portrait": "Vertical",
@@ -220,7 +220,7 @@
     "copyUnavailable": "Image copying is unavailable in this browser. Download the image instead."
   },
   "ar-AE": {
-    "title": "إعدادات الصورة",
+    "title": "مشاركة الاقتباس",
     "format": "التنسيق",
     "square": "مربع",
     "portrait": "عمودي",

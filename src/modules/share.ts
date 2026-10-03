@@ -17,12 +17,6 @@ export function initShare() {
         !!state.quote || !state['active-quote'] || !getQuoteUrl(state['active-quote']);
   });
   if (share) (share as HTMLButtonElement).disabled = true;
-
-  share?.addEventListener('click', () => void shareQuote());
-  if (!('share' in navigator) && share) {
-    share.title = readingStrings().copyLink;
-    share.setAttribute('aria-label', readingStrings().copyLink);
-  }
 }
 
 export async function getCanvas(format: CardFormat = selectedCardFormat(), quote = store.get('active-quote')) {

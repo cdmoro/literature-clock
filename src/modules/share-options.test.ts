@@ -17,7 +17,8 @@ beforeEach(() => {
   state.quote = undefined;
   state['active-quote'] = { id: '1200-001', quote_raw: 'Original quote', locale: 'en-GB', time: '12:00' };
   document.documentElement.dataset.theme = 'base-dark';
-  document.body.innerHTML = '<button id="download"></button>';
+  document.body.innerHTML =
+    '<button id="share"><svg id="existing-share-icon"></svg></button><button id="download"></button>';
   HTMLDialogElement.prototype.showModal = function () {
     this.open = true;
   };
@@ -27,7 +28,7 @@ beforeEach(() => {
   };
   vi.mocked(renderShareCard).mockImplementation(async () => document.createElement('canvas'));
   initShareOptions();
-  document.getElementById('share-options')!.click();
+  document.getElementById('share')!.click();
 });
 const button = (label: string) =>
   [...document.querySelectorAll<HTMLButtonElement>('#share-preview button')].find(
@@ -90,7 +91,7 @@ it.each([false, true])('copies a PNG and reports clipboard denial: %s', async (d
   const blob = new Blob(['png'], { type: 'image/png' });
   vi.spyOn(HTMLCanvasElement.prototype, 'toBlob').mockImplementation((callback) => callback(blob));
   button('Close').click();
-  document.getElementById('share-options')!.click();
+  document.getElementById('share')!.click();
   await vi.waitFor(() => expect(button('Copy image').disabled).toBe(false));
   button('Copy image').click();
   await vi.waitFor(() =>
@@ -100,4 +101,10 @@ it.each([false, true])('copies a PNG and reports clipboard denial: %s', async (d
   );
   expect(write).toHaveBeenCalledOnce();
   expect(await write.mock.calls[0][0][0].data['image/png']).toBe(blob);
+});
+
+it('opens the dialog from Share and preserves its existing icon without an extra toolbar button', () => {
+  expect(document.getElementById('existing-share-icon')?.parentElement?.id).toBe('share');
+  expect(document.getElementById('share-options')).toBeNull();
+  expect(document.getElementById('share-preview-title')?.textContent).toBe('Share quote');
 });
