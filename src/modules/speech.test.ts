@@ -24,7 +24,7 @@ beforeEach(() => {
   localStorage.clear();
   history.replaceState({}, '', '/');
   document.body.innerHTML =
-    '<div id="reading-controls"></div><section id="settings-behavior"></section><blockquote id="quote"><p>Son <em>las doce</em>.<br>Hola.</p><cite>Autor</cite></blockquote>';
+    '<div id="reading-controls"></div><section id="settings-behavior"></section><blockquote id="quote"><p>Son <em>las doce</em>.<br>Hola.</p><cite><span id="title">El libro</span>, <span id="author">La autora</span></cite></blockquote>';
   vi.stubGlobal('speechSynthesis', { speak, cancel, getVoices: () => [] });
   vi.stubGlobal('SpeechSynthesisUtterance', Utterance);
   createStore();
@@ -107,7 +107,7 @@ it('disables controls gracefully when speech is unsupported', () => {
   expect((document.getElementById('auto-read') as HTMLButtonElement).disabled).toBe(true);
 });
 
-it('optionally reads attribution even when the book title is hidden, in manual and automatic reading', () => {
+it('respects the hidden title in manual and automatic attribution reading', () => {
   cleanup = initSpeech();
   expect(store.get('read-attribution')).toBe(false);
   store.set('hide-book-title', true);
@@ -116,19 +116,62 @@ it('optionally reads attribution even when the book title is hidden, in manual a
   expect(JSON.parse(localStorage.getItem('settings')!)['read-attribution']).toBe(true);
   expect(location.search).not.toContain('read-attribution');
   click('read-quote');
-  expect(speak.mock.calls[speak.mock.calls.length - 1][0].text).toBe('Son las doce. Hola.\nEl libro, La autora.');
+  expect(speak.mock.calls[speak.mock.calls.length - 1][0].text).toBe('Son las doce. Hola.\nLa autora.');
   click('auto-read');
   speak.mockClear();
   minute();
-  expect(speak.mock.calls[0][0].text).toBe('Son las doce. Hola.\nEl libro, La autora.');
+  expect(speak.mock.calls[0][0].text).toBe('Son las doce. Hola.\nLa autora.');
   click('read-attribution');
   minute();
   expect(speak.mock.calls[speak.mock.calls.length - 1][0].text).toBe('Son las doce. Hola.');
 });
 it('omits missing attribution fields without speaking undefined', () => {
   cleanup = initSpeech();
+  document.querySelector('#quote > cite')!.replaceChildren();
   store.set('active-quote', { ...quote, title: '', author: '' });
   click('read-attribution');
   click('read-quote');
   expect(speak.mock.calls[0][0].text).toBe('Son las doce. Hola.');
+});
+
+it('reads both visible attribution fields when enabled', () => {
+  cleanup = initSpeech();
+  click('read-attribution');
+  click('read-quote');
+  expect(speak.mock.calls[0][0].text).toBe('Son las doce. Hola.\nEl libro, La autora.');
+});
+it.each(['display: none', 'visibility: hidden', 'opacity: 0'])('omits a title hidden by CSS: %s', (rule) => {
+  document.getElementById('title')!.setAttribute('style', rule);
+  cleanup = initSpeech();
+  click('read-attribution');
+  click('read-quote');
+  expect(speak.mock.calls[0][0].text).toBe('Son las doce. Hola.\nLa autora.');
+});
+it('omits all attribution when its parent is hidden by a theme rule', () => {
+  const style = document.createElement('style');
+  style.textContent = '[data-theme="hidden-citation"] #quote > cite { display: none; }';
+  document.body.append(style);
+  document.documentElement.dataset.theme = 'hidden-citation';
+  cleanup = initSpeech();
+  click('read-attribution');
+  click('auto-read');
+  minute();
+  expect(speak.mock.calls[speak.mock.calls.length - 1][0].text).toBe('Son las doce. Hola.');
+  delete document.documentElement.dataset.theme;
+});
+it('omits a hidden author while keeping the visible title', () => {
+  document.getElementById('author')!.hidden = true;
+  cleanup = initSpeech();
+  click('read-attribution');
+  click('read-quote');
+  expect(speak.mock.calls[0][0].text).toBe('Son las doce. Hola.\nEl libro.');
+});
+it('stops ongoing narration when attribution visibility changes', () => {
+  cleanup = initSpeech();
+  click('read-attribution');
+  click('read-quote');
+  cancel.mockClear();
+  store.set('hide-book-title', true);
+  expect(cancel).toHaveBeenCalledOnce();
+  expect(document.getElementById('read-quote')!.getAttribute('aria-pressed')).toBe('false');
 });

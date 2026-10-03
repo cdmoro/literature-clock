@@ -4,6 +4,25 @@ import { readingIcon } from './reading-icons';
 import { showQuoteNotice } from './reading-ui';
 import STRINGS from '../strings/speech.json';
 
+// Include only attribution that is actually shown, including ancestor CSS rules.
+function visibleAttribution(id: 'title' | 'author') {
+  const element = document.querySelector<HTMLElement>(`#quote > cite #${id}`);
+  if (!element || (id === 'title' && store.get('hide-book-title'))) return '';
+  for (let node: HTMLElement | null = element; node; node = node.parentElement) {
+    const style = getComputedStyle(node);
+    if (
+      node.hidden ||
+      style.display === 'none' ||
+      style.visibility === 'hidden' ||
+      style.visibility === 'collapse' ||
+      style.opacity === '0' ||
+      style.getPropertyValue('content-visibility') === 'hidden'
+    )
+      return '';
+  }
+  return element.textContent?.trim() || '';
+}
+
 export function initSpeech() {
   const group = document.getElementById('reading-controls');
   if (!group || store.get('static')) return;
@@ -78,7 +97,7 @@ export function initSpeech() {
     const text = copy.textContent?.trim();
     if (!text) return;
     const attribution = store.get('read-attribution')
-      ? [quote.title, quote.author].filter((part) => part?.trim()).join(', ')
+      ? [visibleAttribution('title'), visibleAttribution('author')].filter(Boolean).join(', ')
       : '';
     const current = new SpeechSynthesisUtterance(attribution ? `${text}\n${attribution}.` : text);
     current.lang = quote.locale.replace(/-draft$/, '');
@@ -119,7 +138,14 @@ export function initSpeech() {
     else stop();
   });
   const unsubscribe = store.subscribe((state, previous) => {
-    if (state['active-quote'] !== previous['active-quote'] || (previous['auto-read'] && !state['auto-read'])) stop();
+    if (
+      state['active-quote'] !== previous['active-quote'] ||
+      (previous['auto-read'] && !state['auto-read']) ||
+      state['hide-book-title'] !== previous['hide-book-title'] ||
+      state.theme !== previous.theme ||
+      (previous['read-attribution'] && !state['read-attribution'])
+    )
+      stop();
     refresh();
   });
   const rendered = (event: Event) => {
