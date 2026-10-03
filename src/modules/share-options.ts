@@ -2,10 +2,13 @@ import { store } from '../store';
 import { getBaseLocale } from './locales';
 import { readingStrings } from './reading-ui';
 import { closeDialogOnBackdropClick } from '../utils/dialog';
-import { renderShareCard, type CardFormat } from './share-card';
+import { renderShareCard, type CardAppearance, type CardFormat } from './share-card';
+import { downloadQuote, shareQuote } from './share';
 import STRINGS from '../strings/share.json';
 
 let format: CardFormat = 'square';
+let appearance: CardAppearance | undefined;
+export const selectedCardAppearance = () => appearance;
 export const selectedCardFormat = () => format;
 export const shareOptionStrings = () => STRINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))];
 
@@ -36,27 +39,91 @@ export function initShareOptions() {
     const heading = document.createElement('h2');
     heading.id = 'share-preview-title';
     heading.textContent = strings.title;
+    const header = document.createElement('header');
     const close = document.createElement('button');
-    close.textContent = readingStrings().close;
+    close.className = 'dialog-close';
+    close.type = 'button';
+    close.setAttribute('aria-label', readingStrings().close);
+    close.textContent = '×';
     close.addEventListener('click', () => dialog.close());
-    const label = document.createElement('label');
-    label.textContent = strings.format;
-    const select = document.createElement('select');
-    for (const value of ['square', 'portrait', 'landscape'] as const) {
-      const option = document.createElement('option');
-      option.value = value;
-      option.textContent = strings[value];
-      select.append(option);
+    header.append(heading, close);
+    const controls = document.createElement('div');
+    controls.className = 'share-preview-controls';
+    const formatGroup = document.createElement('div');
+    formatGroup.className = 'share-choice-group';
+    formatGroup.setAttribute('role', 'group');
+    formatGroup.setAttribute('aria-label', strings.format);
+    const formatButtons = new Map<CardFormat, HTMLButtonElement>();
+    for (const [value, dimensions] of [
+      ['landscape', [18, 12]],
+      ['portrait', [12, 18]],
+      ['square', [16, 16]],
+    ] as const) {
+      const option = document.createElement('button');
+      option.type = 'button';
+      option.title = strings[value];
+      option.setAttribute('aria-label', strings[value]);
+      const [width, height] = dimensions;
+      option.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="${(24 - width) / 2}" y="${(24 - height) / 2}" width="${width}" height="${height}" rx="2"/></svg>`;
+      option.addEventListener('click', () => {
+        format = value;
+        void refresh();
+      });
+      formatButtons.set(value, option);
+      formatGroup.append(option);
     }
-    select.value = format;
-    label.append(select);
+    const appearanceGroup = document.createElement('div');
+    appearanceGroup.className = 'share-choice-group';
+    appearanceGroup.setAttribute('role', 'group');
+    appearanceGroup.setAttribute('aria-label', strings.appearance);
+    const appearanceButtons = new Map<CardAppearance, HTMLButtonElement>();
+    for (const value of ['light', 'dark'] as const) {
+      const option = document.createElement('button');
+      option.type = 'button';
+      option.textContent = strings[value];
+      option.addEventListener('click', () => {
+        appearance = value;
+        void refresh();
+      });
+      appearanceButtons.set(value, option);
+      appearanceGroup.append(option);
+    }
+    controls.append(formatGroup, appearanceGroup);
     const preview = document.createElement('div');
     preview.className = 'share-preview-image';
+    preview.setAttribute('role', 'group');
+    preview.setAttribute('aria-label', strings.preview);
     const status = document.createElement('p');
     status.setAttribute('role', 'status');
     const hint = document.createElement('p');
     hint.textContent = strings.hint;
-    dialog.append(heading, label, status, preview, hint, close);
+    const previewLabel = document.createElement('div');
+    previewLabel.className = 'share-preview-label';
+    previewLabel.textContent = strings.preview;
+    const imageArea = document.createElement('div');
+    imageArea.className = 'share-preview-area';
+    imageArea.append(previewLabel, preview);
+    const actions = document.createElement('div');
+    actions.className = 'share-preview-actions';
+    for (const [text, action] of [
+      [strings.share, shareQuote],
+      [strings.download, downloadQuote],
+    ] as const) {
+      const actionButton = document.createElement('button');
+      actionButton.type = 'button';
+      actionButton.textContent = text;
+      actionButton.addEventListener('click', async () => {
+        actionButton.disabled = true;
+        try {
+          const notice = await action(snapshot);
+          status.textContent = notice || '';
+        } finally {
+          actionButton.disabled = false;
+        }
+      });
+      actions.append(actionButton);
+    }
+    dialog.append(header, controls, status, imageArea, hint, actions);
     document.body.append(dialog);
     closeDialogOnBackdropClick(dialog);
     let revision = 0;
@@ -67,14 +134,17 @@ export function initShareOptions() {
     });
     const refresh = async () => {
       const current = ++revision;
-      format = select.value as CardFormat;
+      formatButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === format)));
+      const variant = appearance || (document.documentElement.dataset.theme?.endsWith('-dark') ? 'dark' : 'light');
+      appearanceButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === variant)));
       status.textContent = strings.preparing;
       preview.replaceChildren();
       try {
-        const canvas = await renderShareCard(snapshot, format);
+        const canvas = await renderShareCard(snapshot, format, appearance);
         if (current !== revision) return;
-        canvas.style.width = '100%';
+        canvas.style.width = 'auto';
         canvas.style.height = 'auto';
+        canvas.style.objectFit = 'contain';
         canvas.setAttribute('role', 'img');
         canvas.setAttribute('aria-label', snapshot.quote_raw);
         preview.append(canvas);
@@ -83,7 +153,6 @@ export function initShareOptions() {
         if (current === revision) status.textContent = strings.failed;
       }
     };
-    select.addEventListener('change', () => void refresh());
     dialog.showModal();
     void refresh();
   });

@@ -4,13 +4,36 @@ import { quoteMarkup } from '../utils/quote-markup';
 
 export const cardFormats = { square: [1080, 1080], portrait: [1080, 1920], landscape: [1920, 1080] } as const;
 export type CardFormat = keyof typeof cardFormats;
+export type CardAppearance = 'light' | 'dark';
 
 /** Render a snapshot of the quote, without viewport dimensions or clock animation. */
-export async function renderShareCard(quote: ResolvedQuote, format: CardFormat): Promise<HTMLCanvasElement> {
+export async function renderShareCard(
+  quote: ResolvedQuote,
+  format: CardFormat,
+  appearance?: CardAppearance,
+): Promise<HTMLCanvasElement> {
   const [width, height] = cardFormats[format];
   const bodyStyle = getComputedStyle(document.body);
   const quoteStyle = getComputedStyle(document.getElementById('quote') || document.body);
   const card = document.createElement('div');
+  // Resolve the existing theme variant on an isolated element, never changing the clock.
+  const palette = document.createElement('div');
+  palette.hidden = true;
+  palette.dataset.theme = `${(document.documentElement.dataset.theme || 'base-light').replace(/-(light|dark)$/, '')}-${appearance || 'light'}`;
+  palette.classList.toggle('custom-accent', document.documentElement.classList.contains('custom-accent'));
+  palette.style.setProperty(
+    '--accent-color',
+    getComputedStyle(document.documentElement).getPropertyValue('--accent-color'),
+  );
+  palette.style.color = 'var(--font-color)';
+  palette.style.backgroundColor = 'var(--background)';
+  palette.style.backgroundImage = 'var(--background-image, none)';
+  document.body.append(palette);
+  const paletteStyle = getComputedStyle(palette);
+  const color = appearance ? paletteStyle.color : bodyStyle.color;
+  const backgroundColor = appearance ? paletteStyle.backgroundColor : bodyStyle.backgroundColor;
+  const backgroundImage = appearance ? paletteStyle.backgroundImage : bodyStyle.backgroundImage;
+  palette.remove();
   Object.assign(card.style, {
     position: 'fixed',
     left: '-10000px',
@@ -22,9 +45,9 @@ export async function renderShareCard(quote: ResolvedQuote, format: CardFormat):
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    color: bodyStyle.color,
-    backgroundColor: bodyStyle.backgroundColor,
-    backgroundImage: bodyStyle.backgroundImage,
+    color,
+    backgroundColor,
+    backgroundImage,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     fontFamily: quoteStyle.fontFamily,

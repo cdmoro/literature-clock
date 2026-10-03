@@ -633,34 +633,102 @@ select:dir(rtl) {
   color: var(--font-color);
   border: 1px solid var(--font-color);
   border-radius: 12px;
-  width: min(480px, calc(100vw - 64px));
-  max-height: calc(100dvh - 64px);
+  box-sizing: border-box;
+  width: min(640px, calc(100vw - 32px));
+  height: min(760px, calc(100dvh - 32px));
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 32px);
   overflow: auto;
-  padding: 24px;
+  padding: 20px;
+}
+
+#share-preview[open] {
+  display: grid;
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto auto;
+  gap: 12px;
 }
 
 #share-preview::backdrop {
   background: #0008;
 }
-
-#share-preview h2 {
-  margin-top: 0;
+#share-preview h2,
+#share-preview p {
+  margin: 0;
 }
-
-#share-preview label {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.share-preview-image canvas {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-top: 16px;
-  border-radius: 4px;
-}
-
 #share-preview p {
   font-size: 0.85rem;
+}
+#share-preview > button {
+  justify-self: end;
+}
+.share-preview-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+}
+.share-choice-group {
+  display: flex;
+  gap: 4px;
+}
+#share-preview .share-choice-group button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 6px;
+}
+#share-preview button[aria-pressed='true'] {
+  background: var(--accent-color);
+  color: var(--accent-text, var(--background));
+  border-color: var(--accent-color);
+}
+.share-preview-image {
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+.share-preview-image canvas {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+  object-fit: contain;
+}
+#share-preview header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.share-preview-area {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 8px;
+}
+.share-preview-label {
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+.share-preview-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 55%);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--font-color), transparent 94%);
+  padding: 8px;
+}
+.share-preview-image canvas {
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 45%);
+  border-radius: 8px;
+}
+.share-preview-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
 }

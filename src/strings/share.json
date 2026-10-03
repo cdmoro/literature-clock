@@ -7,7 +7,13 @@
     "landscape": "Horizontal",
     "preparing": "Preparing image…",
     "failed": "Could not create the image. Please try again.",
-    "hint": "This format will be used when sharing or downloading. Long quotes may produce a taller image."
+    "hint": "This format will be used when sharing or downloading. Long quotes may produce a taller image.",
+    "appearance": "Appearance",
+    "light": "Light",
+    "dark": "Dark",
+    "preview": "Preview",
+    "share": "Share",
+    "download": "Download"
   },
   "es-ES": {
     "title": "Ajustes de imagen",
@@ -17,7 +23,13 @@
     "landscape": "Horizontal",
     "preparing": "Preparando imagen…",
     "failed": "No se pudo crear la imagen. Intentá de nuevo.",
-    "hint": "Este formato se usará al compartir o descargar. Las citas largas pueden generar una imagen más alta."
+    "hint": "Este formato se usará al compartir o descargar. Las citas largas pueden generar una imagen más alta.",
+    "appearance": "Apariencia",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "preview": "Vista previa",
+    "share": "Compartir",
+    "download": "Descargar"
   },
   "fr-FR": {
     "title": "Réglages de l’image",
@@ -27,7 +39,13 @@
     "landscape": "Horizontal",
     "preparing": "Préparation de l’image…",
     "failed": "Impossible de créer l’image. Réessayez.",
-    "hint": "Ce format sera utilisé pour partager ou télécharger. Les longues citations peuvent produire une image plus haute."
+    "hint": "Ce format sera utilisé pour partager ou télécharger. Les longues citations peuvent produire une image plus haute.",
+    "appearance": "Apparence",
+    "light": "Clair",
+    "dark": "Sombre",
+    "preview": "Aperçu",
+    "share": "Partager",
+    "download": "Télécharger"
   },
   "de-DE": {
     "title": "Bildeinstellungen",
@@ -37,7 +55,13 @@
     "landscape": "Querformat",
     "preparing": "Bild wird vorbereitet…",
     "failed": "Das Bild konnte nicht erstellt werden. Bitte erneut versuchen.",
-    "hint": "Dieses Format wird beim Teilen oder Herunterladen verwendet. Lange Zitate können ein höheres Bild erzeugen."
+    "hint": "Dieses Format wird beim Teilen oder Herunterladen verwendet. Lange Zitate können ein höheres Bild erzeugen.",
+    "appearance": "Darstellung",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "preview": "Vorschau",
+    "share": "Teilen",
+    "download": "Herunterladen"
   },
   "it-IT": {
     "title": "Impostazioni immagine",
@@ -47,7 +71,13 @@
     "landscape": "Orizzontale",
     "preparing": "Preparazione immagine…",
     "failed": "Impossibile creare l’immagine. Riprova.",
-    "hint": "Questo formato verrà usato per condividere o scaricare. Le citazioni lunghe possono produrre un’immagine più alta."
+    "hint": "Questo formato verrà usato per condividere o scaricare. Le citazioni lunghe possono produrre un’immagine più alta.",
+    "appearance": "Aspetto",
+    "light": "Chiaro",
+    "dark": "Scuro",
+    "preview": "Anteprima",
+    "share": "Condividi",
+    "download": "Scarica"
   },
   "pt-PT": {
     "title": "Definições da imagem",
@@ -57,7 +87,13 @@
     "landscape": "Horizontal",
     "preparing": "A preparar imagem…",
     "failed": "Não foi possível criar a imagem. Tente novamente.",
-    "hint": "Este formato será usado ao partilhar ou transferir. Citações longas podem gerar uma imagem mais alta."
+    "hint": "Este formato será usado ao partilhar ou transferir. Citações longas podem gerar uma imagem mais alta.",
+    "appearance": "Aparência",
+    "light": "Claro",
+    "dark": "Escuro",
+    "preview": "Pré-visualização",
+    "share": "Partilhar",
+    "download": "Transferir"
   },
   "el-GR": {
     "title": "Ρυθμίσεις εικόνας",
@@ -67,7 +103,13 @@
     "landscape": "Οριζόντια",
     "preparing": "Προετοιμασία εικόνας…",
     "failed": "Δεν ήταν δυνατή η δημιουργία της εικόνας. Δοκιμάστε ξανά.",
-    "hint": "Αυτή η μορφή θα χρησιμοποιηθεί για κοινοποίηση ή λήψη. Τα μεγάλα παραθέματα μπορεί να δημιουργήσουν ψηλότερη εικόνα."
+    "hint": "Αυτή η μορφή θα χρησιμοποιηθεί για κοινοποίηση ή λήψη. Τα μεγάλα παραθέματα μπορεί να δημιουργήσουν ψηλότερη εικόνα.",
+    "appearance": "Εμφάνιση",
+    "light": "Φωτεινό",
+    "dark": "Σκοτεινό",
+    "preview": "Προεπισκόπηση",
+    "share": "Κοινοποίηση",
+    "download": "Λήψη"
   },
   "zh-CN": {
     "title": "图片设置",
@@ -77,7 +119,13 @@
     "landscape": "横版",
     "preparing": "正在生成图片…",
     "failed": "无法生成图片，请重试。",
-    "hint": "分享或下载时将使用此格式。较长的引文可能生成更高的图片。"
+    "hint": "分享或下载时将使用此格式。较长的引文可能生成更高的图片。",
+    "appearance": "外观",
+    "light": "浅色",
+    "dark": "深色",
+    "preview": "预览",
+    "share": "分享",
+    "download": "下载"
   },
   "ru-RU": {
     "title": "Настройки изображения",
@@ -87,7 +135,13 @@
     "landscape": "Горизонтальный",
     "preparing": "Подготовка изображения…",
     "failed": "Не удалось создать изображение. Попробуйте ещё раз.",
-    "hint": "Этот формат используется при отправке и скачивании. Длинные цитаты могут создавать более высокое изображение."
+    "hint": "Этот формат используется при отправке и скачивании. Длинные цитаты могут создавать более высокое изображение.",
+    "appearance": "Оформление",
+    "light": "Светлое",
+    "dark": "Тёмное",
+    "preview": "Предпросмотр",
+    "share": "Поделиться",
+    "download": "Скачать"
   },
   "eo": {
     "title": "Bildaj agordoj",
@@ -97,7 +151,13 @@
     "landscape": "Horizontala",
     "preparing": "Preparante bildon…",
     "failed": "Ne eblis krei la bildon. Bonvolu reprovi.",
-    "hint": "Ĉi tiu formato estos uzata dum kunhavigo aŭ elŝuto. Longaj citaĵoj povas produkti pli altan bildon."
+    "hint": "Ĉi tiu formato estos uzata dum kunhavigo aŭ elŝuto. Longaj citaĵoj povas produkti pli altan bildon.",
+    "appearance": "Aspekto",
+    "light": "Hela",
+    "dark": "Malhela",
+    "preview": "Antaŭrigardo",
+    "share": "Kunhavigi",
+    "download": "Elŝuti"
   },
   "en-US": {
     "title": "Image settings",
@@ -107,7 +167,13 @@
     "landscape": "Horizontal",
     "preparing": "Preparing image…",
     "failed": "Could not create the image. Please try again.",
-    "hint": "This format will be used when sharing or downloading. Long quotes may produce a taller image."
+    "hint": "This format will be used when sharing or downloading. Long quotes may produce a taller image.",
+    "appearance": "Appearance",
+    "light": "Light",
+    "dark": "Dark",
+    "preview": "Preview",
+    "share": "Share",
+    "download": "Download"
   },
   "ar-AE": {
     "title": "إعدادات الصورة",
@@ -117,6 +183,12 @@
     "landscape": "أفقي",
     "preparing": "جارٍ إعداد الصورة…",
     "failed": "تعذر إنشاء الصورة. حاول مرة أخرى.",
-    "hint": "سيُستخدم هذا التنسيق عند المشاركة أو التنزيل. قد تنتج الاقتباسات الطويلة صورة أطول."
+    "hint": "سيُستخدم هذا التنسيق عند المشاركة أو التنزيل. قد تنتج الاقتباسات الطويلة صورة أطول.",
+    "appearance": "المظهر",
+    "light": "فاتح",
+    "dark": "داكن",
+    "preview": "معاينة",
+    "share": "مشاركة",
+    "download": "تنزيل"
   }
 }
