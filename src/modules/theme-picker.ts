@@ -77,6 +77,16 @@ export function themePreviewDocument() {
     quote.removeAttribute('style');
     if (localeFont) quote.style.setProperty('--locale-quote-font-family', localeFont);
     quote.querySelectorAll('[style]').forEach((element) => element.removeAttribute('style'));
+    // The live attribution is inline; making it a block must not let dir=auto
+    // move a Latin title to the opposite side of an Arabic passage.
+    const originalQuote = document.getElementById('quote')!;
+    const appearance = getComputedStyle(originalQuote);
+    const align = appearance.textAlign || 'start';
+    const rtl = appearance.direction === 'rtl' || originalQuote.dir === 'rtl';
+    const attribution = quote.querySelector<HTMLElement>(':scope > cite');
+    if (attribution) attribution.style.textAlign =
+      align === 'start' ? (rtl ? 'right' : 'left') :
+      align === 'end' ? (rtl ? 'left' : 'right') : align;
     // Clamp only the text, leaving themed bubbles, padding and borders intact.
     for (const [selector, className] of [
       [':scope > p', 'preview-passage'],

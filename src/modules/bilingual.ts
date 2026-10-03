@@ -1,3 +1,4 @@
+import { setTextLocale } from '../utils/text-direction';
 import { applyLocaleThemeFont } from './locale-fonts';
 import { store } from '../store';
 import { getBaseLocale, getInterfaceLocale, getStrings, resolveLocale } from './locales';
@@ -6,17 +7,23 @@ import { Locale, Quote } from '../types';
 import { fitQuote } from '../utils';
 
 const strings = () => SETTINGS[getBaseLocale(getInterfaceLocale())];
+let translationRequest = 0;
+
 const targetLocale = () => getBaseLocale(resolveLocale(store.get('translation-locale') || 'es-ES'));
 
 export async function renderTranslation() {
-  document.getElementById('quote-translation')?.remove();
+  const request = ++translationRequest;
   const quote = store.get('active-quote');
   const blockquote = document.getElementById('quote');
-  if (!store.get('bilingual') || !quote || !blockquote || store.get('quote')) return;
+  if (!store.get('bilingual') || !quote || !blockquote || store.get('quote')) {
+    document.getElementById('quote-translation')?.remove();
+    return;
+  }
 
   const locale = targetLocale();
   const panel = document.createElement('section');
   panel.id = 'quote-translation';
+  setTextLocale(panel, getBaseLocale(getInterfaceLocale()));
   panel.setAttribute('aria-labelledby', 'translation-heading');
   const heading = document.createElement('div');
   heading.id = 'translation-heading';
@@ -34,17 +41,22 @@ export async function renderTranslation() {
   heading.append(select);
   const content = document.createElement('div');
   content.className = 'translation-content';
+  setTextLocale(content, getBaseLocale(getInterfaceLocale()));
   content.setAttribute('role', 'status');
   panel.append(heading, content);
-  blockquote.append(panel);
+  const commit = () => {
+    if (request !== translationRequest || store.get('active-quote') !== quote || !store.get('bilingual')) return;
+    document.getElementById('quote-translation')?.remove();
+    blockquote.append(panel);
+    fitQuote();
+  };
   if (quote.locale.replace(/-draft$/, '') === locale) {
     content.classList.add('translation-notice');
     content.textContent = strings().bilingual_same;
-    fitQuote();
+    commit();
     return;
   }
-  content.textContent = strings().bilingual_loading;
-  fitQuote();
+  // Prepare offscreen so the loading message cannot resize the visible quote.
   try {
     const response = await fetch(`../times/${locale}/${quote.time.replace(':', '_')}.json`);
     if (!response.ok) throw new Error('Translation unavailable');
@@ -53,22 +65,29 @@ export async function renderTranslation() {
       (item) => item.id === quote.id && !item.draft && (!store.get('work') || item.sfw === true),
     );
     if (!translation || quote.fallback) throw new Error('Translation unavailable');
-    if (!panel.isConnected) return;
-    content.lang = locale;
+    if (request !== translationRequest) return;
+    setTextLocale(content, locale);
     applyLocaleThemeFont(content);
     const passage = document.createElement('p');
     passage.innerHTML = `${translation.quote_first}<span class="time">${translation.quote_time_case}</span>${translation.quote_last}`;
     const attribution = document.createElement('cite');
+    attribution.dir = 'auto';
     const title = document.createElement('span');
     title.className = 'translation-book-title';
-    title.textContent = `${translation.title}, `;
-    attribution.append('— ', title, translation.author);
+    title.dir = 'auto';
+    title.textContent = translation.title;
+    const separator = document.createElement('span');
+    separator.className = 'translation-book-title';
+    separator.textContent = ', ';
+    const author = document.createElement('bdi');
+    author.textContent = translation.author;
+    attribution.append('— ', title, separator, author);
     content.replaceChildren(passage, attribution);
   } catch {
-    if (!panel.isConnected) return;
+    if (request !== translationRequest) return;
     content.textContent = strings().bilingual_unavailable;
   }
-  fitQuote();
+  commit();
 }
 
 export function initBilingual() {
@@ -122,8 +141,8 @@ export function initBilingual() {
       state['ui-locale'] !== previous['ui-locale'] ||
       state.work !== previous.work
     ) {
-      renderTranslation();
-      fitQuote();
+      void renderTranslation();
+      if (!state.bilingual) fitQuote();
     }
   });
   refresh();

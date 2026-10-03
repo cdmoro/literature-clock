@@ -240,5 +240,27 @@
       "quote_time_case": "",
       "sfw": true
     }
+  ],
+  "ar-AE": [
+    {
+      "quote_first": "خطأ ",
+      "quote_last": ": لم يُعثر على اقتباس.",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "سجل القبطان:<br>ما زلنا نبحث عن اقتباس للوقت ",
+      "quote_last": ".",
+      "title": "Moby Dick",
+      "author": "Captain Ahab",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
   ]
 }

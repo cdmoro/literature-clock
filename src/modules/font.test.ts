@@ -18,7 +18,7 @@ vi.mock('../utils/google-font', async (original) => ({
 
 beforeEach(() => {
   document.body.innerHTML =
-    '<select id="font-select"><option value="default">Default</option></select><form id="custom-font-form"><input id="custom-font-name"></form><p id="custom-font-status"></p>';
+    '<select id="font-select"><option value="default">Default</option></select><button id="reset-font" hidden></button><form id="custom-font-form"><input id="custom-font-name"></form><p id="custom-font-status"></p>';
   createStore();
   initFont();
 });
@@ -321,4 +321,15 @@ test('regional variants of the same language do not cancel a pending font choice
   finish();
   await pending;
   expect(store.get('font')).toBe('Lora');
+});
+
+test('reset control clears the preference without removing a saved custom font', async () => {
+  vi.mocked(loadGoogleFont).mockResolvedValue();
+  expect(document.getElementById('reset-font')!.hidden).toBe(true);
+  await applyCustomFont('Lora');
+  expect(document.getElementById('reset-font')!.hidden).toBe(false);
+  document.getElementById('reset-font')!.click();
+  expect(store.get('font')).toBe('default');
+  expect(document.getElementById('reset-font')!.hidden).toBe(true);
+  expect(JSON.parse(localStorage.getItem(CUSTOM_FONTS_KEY)!)).toContain('Lora');
 });

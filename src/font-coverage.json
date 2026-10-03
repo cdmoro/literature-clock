@@ -95,7 +95,7 @@
     "sha256": "3ad9af88726d42b40f7f365f0dcac785af73cf20ea6f1d5b44e57cc21150b8f1"
   },
   "Handjet": {
-    "languages": ["en", "es", "pt", "fr", "it", "de", "eo", "ru", "el"],
+    "languages": ["en", "es", "pt", "fr", "it", "de", "eo", "ru", "el", "ar"],
     "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/handjet/Handjet%5BELGR%2CELSH%2Cwght%5D.ttf",
     "sha256": "9262749e8bb0b73ebcae0e20428689c3c59576eebeb6c4e1020300d2d41bdf4d"
   },
@@ -198,5 +198,35 @@
     "languages": ["en", "es", "pt", "fr", "it", "de", "eo", "ru"],
     "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/spectral/Spectral-Regular.ttf",
     "sha256": "c89021dc20720c8d0dcf40b0b2f6e00c13665fa8041717f581396f51b8c78f5d"
+  },
+  "Marhey": {
+    "languages": ["ar"],
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/marhey/Marhey%5Bwght%5D.ttf",
+    "sha256": "19c30686157ec965797fae8c8feb7bb142b082217227562d1a809c067df447e9"
+  },
+  "Lalezar": {
+    "languages": ["ar"],
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/lalezar/Lalezar-Regular.ttf",
+    "sha256": "7b80807bc831f141de0f7dcf6816412bf0c548968d548c5156ca388733390ea9"
+  },
+  "Playpen Sans Arabic": {
+    "languages": ["ar"],
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/playpensansarabic/PlaypenSansArabic%5Bwght%5D.ttf",
+    "sha256": "31122f11b6aa8a36a283f95797663a575afffbe2d52b69e496f3a2440942a226"
+  },
+  "Zain": {
+    "languages": ["ar"],
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/zain/Zain-Regular.ttf",
+    "sha256": "2a2b8af3804039c7f500c43f581a4145012728bc3109ef15d48371700f5e1f63"
+  },
+  "Amiri Quran": {
+    "languages": ["ar"],
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/amiriquran/AmiriQuran-Regular.ttf",
+    "sha256": "e2a47644762d16bdfb6d33e0d8db8c6ff30beae84150ef5a705316bbd829455c"
+  },
+  "Cascadia Code": {
+    "languages": ["ar"],
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/cascadiacode/CascadiaCode%5Bwght%5D.ttf",
+    "sha256": "30f2e14a5c389b346b1fce110c4ddcf0dc5ce8265faf5eca2ab7323f49dba590"
   }
 }

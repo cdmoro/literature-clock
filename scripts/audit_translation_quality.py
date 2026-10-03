@@ -9,6 +9,7 @@ from collections import Counter, defaultdict
 import json
 from pathlib import Path
 import re
+import unicodedata
 
 from quote_sources import source_catalogue, source_language
 from validate_translation import ROOT, read_catalogue, validate
@@ -68,6 +69,9 @@ def clock_phrase(phrase, lang):
     Does not infer AM/PM, approximate times, arithmetic in narrative, or a time
     from an arbitrary number embedded in a sentence.
     """
+    if lang == 'ar':
+        from arabic_time import clock_phrase as arabic_clock_phrase
+        return arabic_clock_phrase(phrase)
     if lang == 'eo':
         from esperanto_time import clock_phrase as esperanto_clock_phrase
         return esperanto_clock_phrase(phrase)
@@ -94,6 +98,21 @@ def clock_phrase(phrase, lang):
         'pt': r' (?:da manhã|da tarde|da noite)$',
     }
     text = re.sub(suffixes[lang], '', text)
+    if lang == 'en':
+        text = re.sub(r" o[’']clock$", '', text)
+        military = re.fullmatch(r'(\d{2})(\d{2})(?:h| hours)?', text)
+        if military:
+            hour, minute = map(int, military.groups())
+            return (hour % 12) * 60 + minute if hour < 24 and minute < 60 else None
+        # Whole clock phrases only: never pick numbers out of prose or ranges.
+        words = text.replace('-', ' ')
+        spoken = re.fullmatch(r'(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve) (.+)', words)
+        if spoken:
+            hour_word, minute_word = spoken.groups()
+            minute_word = re.sub(r'^(?:oh|zero) ', '', minute_word)
+            minute = number(minute_word.replace(' ', '-'), 'en')
+            if minute is not None and 0 <= minute < 60:
+                return (number(hour_word, 'en') % 12) * 60 + minute
     if lang == 'de':
         text = re.sub(r' uhr$', '', text)
     numeric = re.fullmatch(r'(\d{1,2})[:.](\d{2})', text)
@@ -128,7 +147,8 @@ def clock_phrase(phrase, lang):
         if kind == 'half':
             return result(number(parts[0], lang), 30, -1 if lang == 'de' else 1)
         if kind == 'relative':
-            parsed = result(number(parts[2], lang), number(parts[0], lang),
+            hour = 12 if lang == 'en' and parts[2] in ('midnight', 'noon') else number(parts[2], lang)
+            parsed = result(hour, number(parts[0], lang),
                             1 if parts[1] in ('past', 'after', 'nach') else -1)
             if parsed is not None:
                 return parsed
@@ -144,11 +164,24 @@ def plain(text):
     return re.sub(r'<[^>]+>', ' ', text)
 
 
+def digit_tokens(text, lang):
+    """Compare decimal digits across scripts without changing number values.
+
+    Keep leading zeroes and separators as triage candidates; spelling numbers
+    out or changing clock notation still needs separate review.
+    """
+    text = ''.join(str(unicodedata.decimal(c)) if c.isdecimal() else c
+                   for c in plain(text))
+    pattern = r'(?<![0-9])\d+(?![0-9])' if lang == 'zh' else r'\b\d+\b'
+    return Counter(re.findall(pattern, text))
+
+
 def explicit_period(phrase, lang):
     """Only explicit, unambiguous day periods; 'night' alone stays contextual."""
     patterns = {
         'eo': (r'\b(?:noktomez[oaen]*|matene|antaŭtagmeze|a\.?\s*t\.?\s*m\.?|a\.?m\.?)\b',
                r'\b(?:tagmez[oaen]*|posttagmeze|vespere|p\.?\s*t\.?\s*m\.?|p\.?m\.?)\b'),
+        'ar': (r'(?:منتصف الليل|منتصف ليل|صباح[ًاا])', r'(?:الظهيرة|الظهر|منتصف النهار|مساء[ًاا]?)'),
         'zh': (r'(?:午夜|子夜|凌晨|清晨|早晨|早上|上午)', r'(?:正午|中午|下午|傍晚|晚上)'),
         'el': (r'\b(?:μεσάνυχτα|μεσονύχτια|πρωί|ξημερώματα|π\.μ\.)', r'\b(?:μεσημέρι|απόγευμα|βράδυ|μ\.μ\.)'),
         'en': (r'\b(?:midnight|morning|a\.?m\.?)\b', r'\b(?:noon|afternoon|evening|p\.?m\.?)\b'),
@@ -242,8 +275,8 @@ def audit(directory):
                 ratio = len(plain(row['Quote'])) / max(1, len(plain(original['Quote'])))
                 if ratio < (.15 if lang == 'zh' else .60) or ratio > 1.75:
                     reasons.append(('length', f'Target/source character ratio {ratio:.2f}; possible omission or addition'))
-                source_digits = Counter(re.findall(r'\b\d+\b', plain(original['Quote'])))
-                target_digits = Counter(re.findall(r'(?<![0-9])\d+(?![0-9])' if lang == 'zh' else r'\b\d+\b', plain(row['Quote'])))
+                source_digits = digit_tokens(original['Quote'], source_lang)
+                target_digits = digit_tokens(row['Quote'], lang)
                 # Reformatting numbers as words is legitimate: this only queues review.
                 if source_digits and target_digits and source_digits != target_digits:
                     reasons.append(('numbers', 'Digit tokens differ; may be legitimate spelling or time-format localization'))
