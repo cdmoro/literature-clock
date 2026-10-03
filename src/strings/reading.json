@@ -295,5 +295,32 @@
     "historyCleared": "Historio forviŝita",
     "noHistory": "Neniu lastatempa citaĵo. La lastaj 100 citaĵoj, kiujn vi rigardas, aperos ĉi tie.",
     "previousQuote": "Antaŭa citaĵo de ĉi tiu minuto"
+  },
+  "ar-AE": {
+    "copyLink": "نسخ رابط الاقتباس",
+    "linkCopied": "تم نسخ الرابط",
+    "linkFailed": "تعذرت مشاركة الرابط. حاول مرة أخرى.",
+    "quoteUnavailable": "هذا الاقتباس غير متاح بهذه اللغة أو مع مرشح المحتوى الحالي. يُعرض اقتباس آخر.",
+    "pause": "إيقاف القراءة مؤقتًا",
+    "resume": "العودة إلى الساعة المباشرة",
+    "pausedAt": "متوقف عند",
+    "nextQuote": "الاقتباس التالي لهذه الدقيقة",
+    "myQuotes": "اقتباساتي",
+    "favorites": "المفضلة",
+    "saveFavorite": "حفظ في المفضلة",
+    "removeFavorite": "إزالة من المفضلة",
+    "favoriteSaved": "تم حفظ الاقتباس",
+    "favoriteRemoved": "تمت الإزالة من المفضلة",
+    "noFavorites": "لا توجد اقتباسات مفضلة بعد. احفظ اقتباسًا باستخدام زر القلب.",
+    "filteredLibrary": "يخفي مرشح المحتوى الاقتباسات المحفوظة.",
+    "close": "إغلاق",
+    "openQuote": "فتح الاقتباس",
+    "favoritesFull": "المفضلة ممتلئة (500). احذف اقتباسًا لحفظ آخر.",
+    "storageUnavailable": "تعذر حفظ التغييرات على هذا الجهاز. تحقق من أذونات تخزين المتصفح.",
+    "history": "الأخيرة",
+    "clearHistory": "مسح السجل",
+    "historyCleared": "تم مسح السجل",
+    "noHistory": "لا توجد اقتباسات حديثة. ستظهر هنا آخر 100 اقتباس شاهدته.",
+    "previousQuote": "الاقتباس السابق لهذه الدقيقة"
   }
 }
