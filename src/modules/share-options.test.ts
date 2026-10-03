@@ -20,7 +20,7 @@ beforeEach(() => {
   state['active-quote'] = { id: '1200-001', quote_raw: 'Original quote', locale: 'en-GB', time: '12:00' };
   document.documentElement.dataset.theme = 'base-dark';
   document.body.innerHTML =
-    '<button id="share"><svg id="existing-share-icon"></svg></button><button id="download"></button><select id="theme-select"><option value="base">Base</option><option value="book">Book page</option></select>';
+    '<button id="share"><svg id="existing-share-icon"></svg></button><select id="theme-select"><option value="base">Base</option><option value="book">Book page</option></select>';
   HTMLDialogElement.prototype.showModal = function () {
     this.open = true;
   };
