@@ -138,6 +138,33 @@ export function initShareOptions() {
       });
       actions.append(actionButton);
     }
+    const copyImage = document.createElement('button');
+    copyImage.type = 'button';
+    copyImage.textContent = strings.copyImage;
+    const canCopyImage = typeof ClipboardItem !== 'undefined' && typeof navigator.clipboard?.write === 'function';
+    copyImage.disabled = true;
+    if (!canCopyImage) copyImage.title = strings.copyUnavailable;
+    copyImage.addEventListener('click', async () => {
+      const canvas = preview.querySelector('canvas');
+      if (!canvas || !canCopyImage) return;
+      copyImage.disabled = true;
+      try {
+        // Start clipboard.write within the click gesture, before encoding completes.
+        const png = new Promise<Blob>((resolve, reject) =>
+          canvas.toBlob((blob) => {
+            if (blob) resolve(blob);
+            else reject(new Error('Image unavailable'));
+          }, 'image/png'),
+        );
+        await navigator.clipboard.write([new ClipboardItem({ 'image/png': png })]);
+        status.textContent = strings.imageCopied;
+      } catch {
+        status.textContent = strings.copyFailed;
+      } finally {
+        copyImage.disabled = !canCopyImage || !preview.querySelector('canvas');
+      }
+    });
+    actions.prepend(copyImage);
     dialog.append(header, controls, status, imageArea, hint, actions);
     document.body.append(dialog);
     closeDialogOnBackdropClick(dialog);
@@ -154,6 +181,7 @@ export function initShareOptions() {
       appearanceButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === variant)));
       status.textContent = strings.preparing;
       preview.replaceChildren();
+      copyImage.disabled = true;
       try {
         const canvas = await renderShareCard(snapshot, format, appearance);
         if (current !== revision) return;
@@ -163,6 +191,7 @@ export function initShareOptions() {
         canvas.setAttribute('role', 'img');
         canvas.setAttribute('aria-label', snapshot.quote_raw);
         preview.append(canvas);
+        copyImage.disabled = !canCopyImage;
         status.textContent = '';
       } catch {
         if (current === revision) status.textContent = strings.failed;

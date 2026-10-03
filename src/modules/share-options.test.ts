@@ -1,4 +1,4 @@
-import { beforeEach, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { initShareOptions } from './share-options';
 import { renderShareCard } from './share-card';
 import { shareQuote, downloadQuote } from './share';
@@ -12,6 +12,7 @@ vi.mock('./share', () => ({
 vi.mock('./share-card', () => ({ renderShareCard: vi.fn() }));
 beforeEach(() => {
   vi.clearAllMocks();
+  vi.unstubAllGlobals();
   state.locale = 'en-GB';
   state.quote = undefined;
   state['active-quote'] = { id: '1200-001', quote_raw: 'Original quote', locale: 'en-GB', time: '12:00' };
@@ -67,4 +68,36 @@ it('discards a preview render after the dialog closes', async () => {
   await Promise.resolve();
   expect(document.getElementById('share-preview')).toBeNull();
   expect(canvas.isConnected).toBe(false);
+});
+
+afterEach(() => {
+  vi.restoreAllMocks();
+  vi.unstubAllGlobals();
+});
+it('disables image copying when the browser does not support it', () => {
+  expect(button('Copy image').disabled).toBe(true);
+  expect(button('Copy image').title).toContain('unavailable');
+});
+it.each([false, true])('copies a PNG and reports clipboard denial: %s', async (denied) => {
+  const write = denied ? vi.fn().mockRejectedValue(new Error('denied')) : vi.fn().mockResolvedValue(undefined);
+  vi.stubGlobal('navigator', { clipboard: { write } });
+  vi.stubGlobal(
+    'ClipboardItem',
+    class {
+      constructor(public data: Record<string, Promise<Blob>>) {}
+    },
+  );
+  const blob = new Blob(['png'], { type: 'image/png' });
+  vi.spyOn(HTMLCanvasElement.prototype, 'toBlob').mockImplementation((callback) => callback(blob));
+  button('Close').click();
+  document.getElementById('share-options')!.click();
+  await vi.waitFor(() => expect(button('Copy image').disabled).toBe(false));
+  button('Copy image').click();
+  await vi.waitFor(() =>
+    expect(document.querySelector('#share-preview [role="status"]')?.textContent).toBe(
+      denied ? 'Could not copy the image. Please try again.' : 'Image copied',
+    ),
+  );
+  expect(write).toHaveBeenCalledOnce();
+  expect(await write.mock.calls[0][0][0].data['image/png']).toBe(blob);
 });

@@ -665,19 +665,20 @@ select:dir(rtl) {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .share-choice-group {
   display: flex;
-  gap: 4px;
+  gap: 0;
 }
 #share-preview .share-choice-group button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 44px;
-  min-height: 44px;
-  border-radius: 6px;
+  min-width: 32px;
+  min-height: 30px;
+  padding: 5px 8px;
+  border-radius: 0;
 }
 #share-preview button[aria-pressed='true'] {
   background: var(--accent-color);
@@ -718,10 +719,7 @@ select:dir(rtl) {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid color-mix(in srgb, var(--font-color), transparent 55%);
-  border-radius: 8px;
-  background: color-mix(in srgb, var(--font-color), transparent 94%);
-  padding: 8px;
+  padding: 2px;
 }
 .share-preview-image canvas {
   border: 1px solid color-mix(in srgb, var(--font-color), transparent 45%);
@@ -731,4 +729,33 @@ select:dir(rtl) {
   display: flex;
   justify-content: flex-end;
   gap: 8px;
+}
+
+#share-preview .share-choice-group button:first-child {
+  border-radius: 4px 0 0 4px;
+}
+#share-preview .share-choice-group button:last-child {
+  border-radius: 0 4px 4px 0;
+}
+#share-preview .share-choice-group button + button {
+  margin-left: -1px;
+}
+#share-preview .share-choice-group svg {
+  width: 15px;
+  height: 15px;
+}
+#share-preview .share-choice-group button:focus-visible {
+  position: relative;
+  z-index: 1;
+}
+#share-preview .share-preview-actions {
+  flex-wrap: wrap;
+}
+#share-preview .share-preview-actions button {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--accent-text, var(--background));
+}
+#share-preview .share-preview-actions button:disabled {
+  opacity: 0.5;
 }

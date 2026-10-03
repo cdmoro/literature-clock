@@ -13,7 +13,11 @@
     "dark": "Dark",
     "preview": "Preview",
     "share": "Share",
-    "download": "Download"
+    "download": "Download",
+    "copyImage": "Copy image",
+    "imageCopied": "Image copied",
+    "copyFailed": "Could not copy the image. Please try again.",
+    "copyUnavailable": "Image copying is unavailable in this browser. Download the image instead."
   },
   "es-ES": {
     "title": "Ajustes de imagen",
@@ -29,7 +33,11 @@
     "dark": "Oscuro",
     "preview": "Vista previa",
     "share": "Compartir",
-    "download": "Descargar"
+    "download": "Descargar",
+    "copyImage": "Copiar imagen",
+    "imageCopied": "Imagen copiada",
+    "copyFailed": "No se pudo copiar la imagen. Intentá de nuevo.",
+    "copyUnavailable": "Este navegador no permite copiar imágenes. Podés descargarla."
   },
   "fr-FR": {
     "title": "Réglages de l’image",
@@ -45,7 +53,11 @@
     "dark": "Sombre",
     "preview": "Aperçu",
     "share": "Partager",
-    "download": "Télécharger"
+    "download": "Télécharger",
+    "copyImage": "Copier l’image",
+    "imageCopied": "Image copiée",
+    "copyFailed": "Impossible de copier l’image. Réessayez.",
+    "copyUnavailable": "Ce navigateur ne permet pas de copier les images. Téléchargez l’image."
   },
   "de-DE": {
     "title": "Bildeinstellungen",
@@ -61,7 +73,11 @@
     "dark": "Dunkel",
     "preview": "Vorschau",
     "share": "Teilen",
-    "download": "Herunterladen"
+    "download": "Herunterladen",
+    "copyImage": "Bild kopieren",
+    "imageCopied": "Bild kopiert",
+    "copyFailed": "Das Bild konnte nicht kopiert werden. Bitte erneut versuchen.",
+    "copyUnavailable": "Dieser Browser unterstützt das Kopieren von Bildern nicht. Laden Sie das Bild herunter."
   },
   "it-IT": {
     "title": "Impostazioni immagine",
@@ -77,7 +93,11 @@
     "dark": "Scuro",
     "preview": "Anteprima",
     "share": "Condividi",
-    "download": "Scarica"
+    "download": "Scarica",
+    "copyImage": "Copia immagine",
+    "imageCopied": "Immagine copiata",
+    "copyFailed": "Impossibile copiare l’immagine. Riprova.",
+    "copyUnavailable": "Questo browser non supporta la copia delle immagini. Scarica l’immagine."
   },
   "pt-PT": {
     "title": "Definições da imagem",
@@ -93,7 +113,11 @@
     "dark": "Escuro",
     "preview": "Pré-visualização",
     "share": "Partilhar",
-    "download": "Transferir"
+    "download": "Transferir",
+    "copyImage": "Copiar imagem",
+    "imageCopied": "Imagem copiada",
+    "copyFailed": "Não foi possível copiar a imagem. Tente novamente.",
+    "copyUnavailable": "Este navegador não permite copiar imagens. Transfira a imagem."
   },
   "el-GR": {
     "title": "Ρυθμίσεις εικόνας",
@@ -109,7 +133,11 @@
     "dark": "Σκοτεινό",
     "preview": "Προεπισκόπηση",
     "share": "Κοινοποίηση",
-    "download": "Λήψη"
+    "download": "Λήψη",
+    "copyImage": "Αντιγραφή εικόνας",
+    "imageCopied": "Η εικόνα αντιγράφηκε",
+    "copyFailed": "Δεν ήταν δυνατή η αντιγραφή της εικόνας. Δοκιμάστε ξανά.",
+    "copyUnavailable": "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει αντιγραφή εικόνων. Κατεβάστε την εικόνα."
   },
   "zh-CN": {
     "title": "图片设置",
@@ -125,7 +153,11 @@
     "dark": "深色",
     "preview": "预览",
     "share": "分享",
-    "download": "下载"
+    "download": "下载",
+    "copyImage": "复制图片",
+    "imageCopied": "图片已复制",
+    "copyFailed": "无法复制图片，请重试。",
+    "copyUnavailable": "此浏览器不支持复制图片，请下载图片。"
   },
   "ru-RU": {
     "title": "Настройки изображения",
@@ -141,7 +173,11 @@
     "dark": "Тёмное",
     "preview": "Предпросмотр",
     "share": "Поделиться",
-    "download": "Скачать"
+    "download": "Скачать",
+    "copyImage": "Копировать изображение",
+    "imageCopied": "Изображение скопировано",
+    "copyFailed": "Не удалось скопировать изображение. Попробуйте ещё раз.",
+    "copyUnavailable": "Этот браузер не поддерживает копирование изображений. Скачайте изображение."
   },
   "eo": {
     "title": "Bildaj agordoj",
@@ -157,7 +193,11 @@
     "dark": "Malhela",
     "preview": "Antaŭrigardo",
     "share": "Kunhavigi",
-    "download": "Elŝuti"
+    "download": "Elŝuti",
+    "copyImage": "Kopii bildon",
+    "imageCopied": "Bildo kopiita",
+    "copyFailed": "Ne eblis kopii la bildon. Bonvolu reprovi.",
+    "copyUnavailable": "Ĉi tiu retumilo ne subtenas kopiadon de bildoj. Elŝutu la bildon."
   },
   "en-US": {
     "title": "Image settings",
@@ -173,7 +213,11 @@
     "dark": "Dark",
     "preview": "Preview",
     "share": "Share",
-    "download": "Download"
+    "download": "Download",
+    "copyImage": "Copy image",
+    "imageCopied": "Image copied",
+    "copyFailed": "Could not copy the image. Please try again.",
+    "copyUnavailable": "Image copying is unavailable in this browser. Download the image instead."
   },
   "ar-AE": {
     "title": "إعدادات الصورة",
@@ -189,6 +233,10 @@
     "dark": "داكن",
     "preview": "معاينة",
     "share": "مشاركة",
-    "download": "تنزيل"
+    "download": "تنزيل",
+    "copyImage": "نسخ الصورة",
+    "imageCopied": "تم نسخ الصورة",
+    "copyFailed": "تعذر نسخ الصورة. حاول مرة أخرى.",
+    "copyUnavailable": "هذا المتصفح لا يدعم نسخ الصور. نزّل الصورة بدلاً من ذلك."
   }
 }
