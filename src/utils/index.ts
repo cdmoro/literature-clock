@@ -86,8 +86,13 @@ export function doFitQuote() {
   if (quote) {
     quote.style.fontSize = `${fontSize}px`;
     const safeClientHeight = quote.clientHeight - 10;
+    const container = quote.closest<HTMLElement>('#quote');
+    const bilingual = !!container?.querySelector('#quote-translation');
+    const containerOverflows = () =>
+      bilingual && container!.clientHeight > 0 && container!.scrollHeight > container!.clientHeight + 1;
 
-    while (quote.scrollHeight > safeClientHeight) {
+    // The attribution and secondary passage share the bounded bilingual container.
+    while (quote.scrollHeight > safeClientHeight || containerOverflows()) {
       quote.style.fontSize = `${fontSize}px`;
       if (cite) {
         cite.style.fontSize = `${fontSize < 19 ? 10 : fontSize * citeFactor}px`;

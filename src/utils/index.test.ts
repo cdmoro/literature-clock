@@ -40,3 +40,28 @@ test('fits replacement text immediately rather than leaving overflow until the n
     document.body.innerHTML = '';
   }
 });
+
+test('fits the whole bilingual block even when the primary paragraph already fits', () => {
+  vi.useFakeTimers();
+  try {
+    createStore();
+    document.body.innerHTML =
+      '<blockquote id="quote" lang="ar" dir="rtl"><p>نص قصير</p><cite>Book, Author</cite><section id="quote-translation">No translation available</section></blockquote>';
+    const container = document.querySelector<HTMLElement>('#quote')!;
+    const passage = container.querySelector<HTMLElement>('p')!;
+    const cite = container.querySelector<HTMLElement>('cite')!;
+    Object.defineProperty(passage, 'clientHeight', { get: () => 150 });
+    Object.defineProperty(passage, 'scrollHeight', { get: () => parseFloat(passage.style.fontSize) });
+    Object.defineProperty(container, 'clientHeight', { get: () => 120 });
+    Object.defineProperty(container, 'scrollHeight', {
+      get: () => parseFloat(passage.style.fontSize) + parseFloat(cite.style.fontSize || '60') + 60,
+    });
+    fitQuote();
+    expect(container.scrollHeight).toBeLessThanOrEqual(container.clientHeight + 1);
+    expect(parseFloat(passage.style.fontSize)).toBeGreaterThan(10);
+  } finally {
+    vi.clearAllTimers();
+    vi.useRealTimers();
+    document.body.innerHTML = '';
+  }
+});
