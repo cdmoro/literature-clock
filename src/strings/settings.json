@@ -49,7 +49,13 @@
     "settings_font_unverified": "Character coverage for this font has not been verified for the current quote language.",
     "settings_font_unverified_label": "unverified",
     "settings_font_incompatible_label": "incompatible",
-    "settings_font_fallback": "The chosen font does not support this language. The theme’s font is used; your choice remains saved."
+    "settings_font_fallback": "The chosen font does not support this language. The theme’s font is used; your choice remains saved.",
+    "settings_background_pattern": "Background pattern",
+    "settings_pattern_none": "None",
+    "settings_pattern_dots": "Dots",
+    "settings_pattern_diagonal": "Diagonal stripes",
+    "settings_pattern_grid": "Grid",
+    "settings_pattern_zigzag": "Zigzag"
   },
   "en-US": {
     "settings_title": "Settings",
@@ -101,7 +107,13 @@
     "settings_font_unverified": "Character coverage for this font has not been verified for the current quote language.",
     "settings_font_unverified_label": "unverified",
     "settings_font_incompatible_label": "incompatible",
-    "settings_font_fallback": "The chosen font does not support this language. The theme’s font is used; your choice remains saved."
+    "settings_font_fallback": "The chosen font does not support this language. The theme’s font is used; your choice remains saved.",
+    "settings_background_pattern": "Background pattern",
+    "settings_pattern_none": "None",
+    "settings_pattern_dots": "Dots",
+    "settings_pattern_diagonal": "Diagonal stripes",
+    "settings_pattern_grid": "Grid",
+    "settings_pattern_zigzag": "Zigzag"
   },
   "es-ES": {
     "settings_title": "Configuración",
@@ -153,7 +165,13 @@
     "settings_font_unverified": "No se verificó la cobertura de caracteres de esta fuente para el idioma de la cita.",
     "settings_font_unverified_label": "sin verificar",
     "settings_font_incompatible_label": "incompatible",
-    "settings_font_fallback": "La fuente elegida no admite este idioma. Se usa la fuente del tema; tu elección sigue guardada."
+    "settings_font_fallback": "La fuente elegida no admite este idioma. Se usa la fuente del tema; tu elección sigue guardada.",
+    "settings_background_pattern": "Patrón de fondo",
+    "settings_pattern_none": "Sin patrón",
+    "settings_pattern_dots": "Puntos",
+    "settings_pattern_diagonal": "Rayas diagonales",
+    "settings_pattern_grid": "Cuadrícula",
+    "settings_pattern_zigzag": "Zigzag"
   },
   "pt-PT": {
     "settings_title": "Configurações",
@@ -205,7 +223,13 @@
     "settings_font_unverified": "A cobertura de caracteres desta fonte não foi verificada para o idioma da citação.",
     "settings_font_unverified_label": "não verificada",
     "settings_font_incompatible_label": "incompatível",
-    "settings_font_fallback": "A fonte escolhida não suporta este idioma. É usada a fonte do tema; a sua escolha continua guardada."
+    "settings_font_fallback": "A fonte escolhida não suporta este idioma. É usada a fonte do tema; a sua escolha continua guardada.",
+    "settings_background_pattern": "Padrão de fundo",
+    "settings_pattern_none": "Sem padrão",
+    "settings_pattern_dots": "Pontos",
+    "settings_pattern_diagonal": "Riscas diagonais",
+    "settings_pattern_grid": "Grelha",
+    "settings_pattern_zigzag": "Ziguezague"
   },
   "fr-FR": {
     "settings_title": "Paramètres",
@@ -257,7 +281,13 @@
     "settings_font_unverified": "La couverture des caractères de cette police n’a pas été vérifiée pour la langue de la citation.",
     "settings_font_unverified_label": "non vérifiée",
     "settings_font_incompatible_label": "incompatible",
-    "settings_font_fallback": "La police choisie ne prend pas en charge cette langue. La police du thème est utilisée ; votre choix reste enregistré."
+    "settings_font_fallback": "La police choisie ne prend pas en charge cette langue. La police du thème est utilisée ; votre choix reste enregistré.",
+    "settings_background_pattern": "Motif de fond",
+    "settings_pattern_none": "Aucun",
+    "settings_pattern_dots": "Points",
+    "settings_pattern_diagonal": "Rayures diagonales",
+    "settings_pattern_grid": "Quadrillage",
+    "settings_pattern_zigzag": "Zigzag"
   },
   "it-IT": {
     "settings_title": "Impostazioni",
@@ -309,7 +339,13 @@
     "settings_font_unverified": "La copertura dei caratteri di questo font non è stata verificata per la lingua della citazione.",
     "settings_font_unverified_label": "non verificato",
     "settings_font_incompatible_label": "incompatibile",
-    "settings_font_fallback": "Il font scelto non supporta questa lingua. Si usa il font del tema; la tua scelta resta salvata."
+    "settings_font_fallback": "Il font scelto non supporta questa lingua. Si usa il font del tema; la tua scelta resta salvata.",
+    "settings_background_pattern": "Motivo di sfondo",
+    "settings_pattern_none": "Nessuno",
+    "settings_pattern_dots": "Punti",
+    "settings_pattern_diagonal": "Righe diagonali",
+    "settings_pattern_grid": "Griglia",
+    "settings_pattern_zigzag": "Zigzag"
   },
   "de-DE": {
     "settings_title": "Einstellungen",
@@ -361,7 +397,13 @@
     "settings_font_unverified": "Die Zeichenabdeckung dieser Schrift wurde für die Sprache des Zitats nicht geprüft.",
     "settings_font_unverified_label": "nicht geprüft",
     "settings_font_incompatible_label": "nicht kompatibel",
-    "settings_font_fallback": "Die gewählte Schrift unterstützt diese Sprache nicht. Die Schrift des Designs wird verwendet; deine Auswahl bleibt gespeichert."
+    "settings_font_fallback": "Die gewählte Schrift unterstützt diese Sprache nicht. Die Schrift des Designs wird verwendet; deine Auswahl bleibt gespeichert.",
+    "settings_background_pattern": "Hintergrundmuster",
+    "settings_pattern_none": "Keines",
+    "settings_pattern_dots": "Punkte",
+    "settings_pattern_diagonal": "Diagonalstreifen",
+    "settings_pattern_grid": "Raster",
+    "settings_pattern_zigzag": "Zickzack"
   },
   "el-GR": {
     "settings_title": "Ρυθμίσεις",
@@ -413,7 +455,13 @@
     "settings_font_unverified": "Η κάλυψη χαρακτήρων αυτής της γραμματοσειράς δεν έχει επαληθευτεί για τη γλώσσα του αποσπάσματος.",
     "settings_font_unverified_label": "μη επαληθευμένη",
     "settings_font_incompatible_label": "μη συμβατή",
-    "settings_font_fallback": "Η επιλεγμένη γραμματοσειρά δεν υποστηρίζει αυτή τη γλώσσα. Χρησιμοποιείται η γραμματοσειρά του θέματος· η επιλογή σας παραμένει αποθηκευμένη."
+    "settings_font_fallback": "Η επιλεγμένη γραμματοσειρά δεν υποστηρίζει αυτή τη γλώσσα. Χρησιμοποιείται η γραμματοσειρά του θέματος· η επιλογή σας παραμένει αποθηκευμένη.",
+    "settings_background_pattern": "Μοτίβο φόντου",
+    "settings_pattern_none": "Χωρίς μοτίβο",
+    "settings_pattern_dots": "Κουκκίδες",
+    "settings_pattern_diagonal": "Διαγώνιες γραμμές",
+    "settings_pattern_grid": "Πλέγμα",
+    "settings_pattern_zigzag": "Ζιγκ ζαγκ"
   },
   "zh-CN": {
     "settings_title": "设置",
@@ -465,7 +513,13 @@
     "settings_font_unverified": "尚未验证此字体是否支持当前引文语言的字符。",
     "settings_font_unverified_label": "未验证",
     "settings_font_incompatible_label": "不兼容",
-    "settings_font_fallback": "所选字体不支持此语言。当前使用主题字体，您的选择仍已保存。"
+    "settings_font_fallback": "所选字体不支持此语言。当前使用主题字体，您的选择仍已保存。",
+    "settings_background_pattern": "背景图案",
+    "settings_pattern_none": "无图案",
+    "settings_pattern_dots": "圆点",
+    "settings_pattern_diagonal": "斜条纹",
+    "settings_pattern_grid": "网格",
+    "settings_pattern_zigzag": "锯齿"
   },
   "ru-RU": {
     "settings_title": "Настройки",
@@ -517,7 +571,13 @@
     "settings_font_unverified": "Поддержка символов языка текущей цитаты этим шрифтом не проверена.",
     "settings_font_unverified_label": "не проверен",
     "settings_font_incompatible_label": "несовместим",
-    "settings_font_fallback": "Выбранный шрифт не поддерживает этот язык. Используется шрифт темы; ваш выбор остаётся сохранённым."
+    "settings_font_fallback": "Выбранный шрифт не поддерживает этот язык. Используется шрифт темы; ваш выбор остаётся сохранённым.",
+    "settings_background_pattern": "Узор фона",
+    "settings_pattern_none": "Без узора",
+    "settings_pattern_dots": "Точки",
+    "settings_pattern_diagonal": "Диагональные полосы",
+    "settings_pattern_grid": "Сетка",
+    "settings_pattern_zigzag": "Зигзаг"
   },
   "eo": {
     "settings_title": "Agordoj",
@@ -569,6 +629,12 @@
     "settings_font_unverified": "La signokovrado de ĉi tiu tiparo ne estas kontrolita por la lingvo de la citaĵo.",
     "settings_font_unverified_label": "nekontrolita",
     "settings_font_incompatible_label": "nekongrua",
-    "settings_font_fallback": "La elektita tiparo ne subtenas ĉi tiun lingvon. La tiparo de la etoso estas uzata; via elekto restas konservita."
+    "settings_font_fallback": "La elektita tiparo ne subtenas ĉi tiun lingvon. La tiparo de la etoso estas uzata; via elekto restas konservita.",
+    "settings_background_pattern": "Fona ŝablono",
+    "settings_pattern_none": "Sen ŝablono",
+    "settings_pattern_dots": "Punktoj",
+    "settings_pattern_diagonal": "Diagonalaj strioj",
+    "settings_pattern_grid": "Krado",
+    "settings_pattern_zigzag": "Zigzago"
   }
 }
