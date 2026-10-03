@@ -103,6 +103,8 @@ export function doFitQuote() {
 }
 
 export function fitQuote() {
+  // Fit newly inserted text before the browser can paint an overflowing frame.
+  doFitQuote();
   const interval = setInterval(doFitQuote, 1);
   setTimeout(() => {
     clearInterval(interval);

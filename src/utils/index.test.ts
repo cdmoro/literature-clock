@@ -1,5 +1,6 @@
-import { describe, expect, test } from 'vitest';
-import { getFaviconFileName } from '.';
+import { describe, expect, test, vi } from 'vitest';
+import { fitQuote, getFaviconFileName } from '.';
+import { createStore } from '../store';
 
 describe('getFaviconFileName', () => {
   const TIMES = {
@@ -20,4 +21,22 @@ describe('getFaviconFileName', () => {
       expect(getFaviconFileName(time)).toEqual(fileName);
     });
   });
+});
+
+test('fits replacement text immediately rather than leaving overflow until the next timer', () => {
+  vi.useFakeTimers();
+  try {
+    createStore();
+    document.body.innerHTML =
+      '<blockquote id="quote" lang="ar" dir="rtl"><p>نص الاقتباس</p><cite>Author</cite><section id="quote-translation">Translation</section></blockquote>';
+    const passage = document.querySelector<HTMLElement>('#quote > p')!;
+    Object.defineProperty(passage, 'clientHeight', { get: () => 100 });
+    Object.defineProperty(passage, 'scrollHeight', { get: () => parseFloat(passage.style.fontSize) * 4 });
+    fitQuote();
+    expect(passage.scrollHeight).toBeLessThanOrEqual(passage.clientHeight - 10);
+  } finally {
+    vi.clearAllTimers();
+    vi.useRealTimers();
+    document.body.innerHTML = '';
+  }
 });
