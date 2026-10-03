@@ -36,7 +36,7 @@ export async function shareQuote(snapshot?: ResolvedQuote) {
       return readingStrings().linkCopied;
     }
     const text = `${quote.quote_raw} — ${quote.title}, ${quote.author}`;
-    const shareData: ShareData = { text, url };
+    let shareData: ShareData = { text, url };
     const canvas =
       typeof navigator.canShare === 'function'
         ? await getCanvas(selectedCardFormat(), quote).catch(() => undefined)
@@ -44,7 +44,8 @@ export async function shareQuote(snapshot?: ResolvedQuote) {
     const blob = await new Promise<Blob | null>((resolve) => (canvas ? canvas.toBlob(resolve) : resolve(null)));
     if (blob) {
       const files = [new File([blob], `Quote ${quote.time}.png`, { type: 'image/png' })];
-      if (navigator.canShare?.({ ...shareData, files })) shareData.files = files;
+      const imageData: ShareData = { files, url };
+      if (navigator.canShare?.(imageData)) shareData = imageData;
     }
     await navigator.share(shareData);
   } catch (error) {
