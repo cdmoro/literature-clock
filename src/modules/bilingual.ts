@@ -7,13 +7,18 @@ import { Locale, Quote } from '../types';
 import { fitQuote } from '../utils';
 
 const strings = () => SETTINGS[getBaseLocale(getInterfaceLocale())];
+let translationRequest = 0;
+
 const targetLocale = () => getBaseLocale(resolveLocale(store.get('translation-locale') || 'es-ES'));
 
 export async function renderTranslation() {
-  document.getElementById('quote-translation')?.remove();
+  const request = ++translationRequest;
   const quote = store.get('active-quote');
   const blockquote = document.getElementById('quote');
-  if (!store.get('bilingual') || !quote || !blockquote || store.get('quote')) return;
+  if (!store.get('bilingual') || !quote || !blockquote || store.get('quote')) {
+    document.getElementById('quote-translation')?.remove();
+    return;
+  }
 
   const locale = targetLocale();
   const panel = document.createElement('section');
@@ -39,15 +44,19 @@ export async function renderTranslation() {
   setTextLocale(content, getBaseLocale(getInterfaceLocale()));
   content.setAttribute('role', 'status');
   panel.append(heading, content);
-  blockquote.append(panel);
+  const commit = () => {
+    if (request !== translationRequest || store.get('active-quote') !== quote || !store.get('bilingual')) return;
+    document.getElementById('quote-translation')?.remove();
+    blockquote.append(panel);
+    fitQuote();
+  };
   if (quote.locale.replace(/-draft$/, '') === locale) {
     content.classList.add('translation-notice');
     content.textContent = strings().bilingual_same;
-    fitQuote();
+    commit();
     return;
   }
-  content.textContent = strings().bilingual_loading;
-  fitQuote();
+  // Prepare offscreen so the loading message cannot resize the visible quote.
   try {
     const response = await fetch(`../times/${locale}/${quote.time.replace(':', '_')}.json`);
     if (!response.ok) throw new Error('Translation unavailable');
@@ -56,7 +65,7 @@ export async function renderTranslation() {
       (item) => item.id === quote.id && !item.draft && (!store.get('work') || item.sfw === true),
     );
     if (!translation || quote.fallback) throw new Error('Translation unavailable');
-    if (!panel.isConnected) return;
+    if (request !== translationRequest) return;
     setTextLocale(content, locale);
     applyLocaleThemeFont(content);
     const passage = document.createElement('p');
@@ -75,10 +84,10 @@ export async function renderTranslation() {
     attribution.append('— ', title, separator, author);
     content.replaceChildren(passage, attribution);
   } catch {
-    if (!panel.isConnected) return;
+    if (request !== translationRequest) return;
     content.textContent = strings().bilingual_unavailable;
   }
-  fitQuote();
+  commit();
 }
 
 export function initBilingual() {
@@ -132,8 +141,8 @@ export function initBilingual() {
       state['ui-locale'] !== previous['ui-locale'] ||
       state.work !== previous.work
     ) {
-      renderTranslation();
-      fitQuote();
+      void renderTranslation();
+      if (!state.bilingual) fitQuote();
     }
   });
   refresh();
