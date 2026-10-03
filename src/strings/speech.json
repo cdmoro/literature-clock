@@ -1,0 +1,110 @@
+{
+  "en-GB": {
+    "read": "Read quote aloud",
+    "stop": "Stop reading",
+    "auto": "Read the quote at the start of each minute",
+    "help": "Enable this option or press Read after opening the page to activate automatic reading. Reading stops when the tab is hidden.",
+    "unsupported": "Reading aloud is unavailable in this browser.",
+    "error": "Unable to read this quote. Try pressing Read again.",
+    "attribution": "Also read the book title and author"
+  },
+  "es-ES": {
+    "read": "Leer cita en voz alta",
+    "stop": "Detener lectura",
+    "auto": "Leer la cita al comenzar cada minuto",
+    "help": "Activa esta opción o pulsa Leer después de abrir la página para habilitar la lectura automática. La lectura se detiene al ocultar la pestaña.",
+    "unsupported": "Este navegador no admite la lectura en voz alta.",
+    "error": "No se pudo leer la cita. Prueba a pulsar Leer de nuevo.",
+    "attribution": "Leer también el libro y el autor"
+  },
+  "fr-FR": {
+    "read": "Lire la citation",
+    "stop": "Arrêter la lecture",
+    "auto": "Lire la citation au début de chaque minute",
+    "help": "Activez cette option ou appuyez sur Lire après avoir ouvert la page. La lecture s’arrête lorsque l’onglet est masqué.",
+    "unsupported": "La lecture vocale est indisponible dans ce navigateur.",
+    "error": "Impossible de lire la citation. Réessayez.",
+    "attribution": "Lire aussi le titre du livre et l’auteur"
+  },
+  "it-IT": {
+    "read": "Leggi la citazione",
+    "stop": "Interrompi la lettura",
+    "auto": "Leggi la citazione all’inizio di ogni minuto",
+    "help": "Attiva questa opzione o premi Leggi dopo aver aperto la pagina. La lettura si interrompe quando la scheda è nascosta.",
+    "unsupported": "La lettura vocale non è disponibile in questo browser.",
+    "error": "Impossibile leggere la citazione. Riprova.",
+    "attribution": "Leggi anche il titolo del libro e l’autore"
+  },
+  "pt-PT": {
+    "read": "Ler a citação",
+    "stop": "Parar a leitura",
+    "auto": "Ler a citação no início de cada minuto",
+    "help": "Ative esta opção ou prima Ler após abrir a página. A leitura para quando o separador fica oculto.",
+    "unsupported": "A leitura em voz alta não está disponível neste navegador.",
+    "error": "Não foi possível ler a citação. Tente novamente.",
+    "attribution": "Ler também o título do livro e o autor"
+  },
+  "de-DE": {
+    "read": "Zitat vorlesen",
+    "stop": "Vorlesen beenden",
+    "auto": "Zitat zu Beginn jeder Minute vorlesen",
+    "help": "Aktivieren Sie diese Option oder drücken Sie nach dem Öffnen der Seite auf Vorlesen. Das Vorlesen endet, wenn der Tab verborgen ist.",
+    "unsupported": "Vorlesen ist in diesem Browser nicht verfügbar.",
+    "error": "Das Zitat konnte nicht vorgelesen werden. Versuchen Sie es erneut.",
+    "attribution": "Auch Buchtitel und Autor vorlesen"
+  },
+  "el-GR": {
+    "read": "Ανάγνωση αποσπάσματος",
+    "stop": "Διακοπή ανάγνωσης",
+    "auto": "Ανάγνωση στην αρχή κάθε λεπτού",
+    "help": "Ενεργοποιήστε την επιλογή ή πατήστε Ανάγνωση αφού ανοίξετε τη σελίδα. Η ανάγνωση σταματά όταν η καρτέλα είναι κρυφή.",
+    "unsupported": "Η φωνητική ανάγνωση δεν είναι διαθέσιμη σε αυτό το πρόγραμμα περιήγησης.",
+    "error": "Δεν ήταν δυνατή η ανάγνωση. Δοκιμάστε ξανά.",
+    "attribution": "Ανάγνωση και του τίτλου του βιβλίου και του συγγραφέα"
+  },
+  "zh-CN": {
+    "read": "朗读引文",
+    "stop": "停止朗读",
+    "auto": "每分钟开始时朗读引文",
+    "help": "打开页面后启用此选项或点击朗读，以激活自动朗读。标签页隐藏时朗读停止。",
+    "unsupported": "此浏览器不支持朗读。",
+    "error": "无法朗读此引文，请重试。",
+    "attribution": "同时朗读书名和作者"
+  },
+  "ru-RU": {
+    "read": "Прочитать цитату вслух",
+    "stop": "Остановить чтение",
+    "auto": "Читать цитату в начале каждой минуты",
+    "help": "После открытия страницы включите эту настройку или нажмите «Прочитать». Чтение прекращается, когда вкладка скрыта.",
+    "unsupported": "Чтение вслух недоступно в этом браузере.",
+    "error": "Не удалось прочитать цитату. Попробуйте ещё раз.",
+    "attribution": "Читать также название книги и автора"
+  },
+  "eo": {
+    "read": "Voĉlegi la citaĵon",
+    "stop": "Ĉesigi la legadon",
+    "auto": "Voĉlegi la citaĵon komence de ĉiu minuto",
+    "help": "Ŝaltu ĉi tiun opcion aŭ premu Voĉlegi post malfermo de la paĝo. La legado ĉesas kiam la langeto estas kaŝita.",
+    "unsupported": "Voĉlegado ne disponeblas en ĉi tiu retumilo.",
+    "error": "Ne eblis voĉlegi la citaĵon. Provu denove.",
+    "attribution": "Voĉlegi ankaŭ la librotitolon kaj la aŭtoron"
+  },
+  "ar-AE": {
+    "read": "قراءة الاقتباس بصوت عالٍ",
+    "stop": "إيقاف القراءة",
+    "auto": "قراءة الاقتباس في بداية كل دقيقة",
+    "help": "فعّل هذا الخيار أو اضغط على القراءة بعد فتح الصفحة. تتوقف القراءة عند إخفاء علامة التبويب.",
+    "unsupported": "القراءة الصوتية غير متاحة في هذا المتصفح.",
+    "error": "تعذرت قراءة الاقتباس. حاول مرة أخرى.",
+    "attribution": "قراءة عنوان الكتاب والمؤلف أيضًا"
+  },
+  "en-US": {
+    "read": "Read quote aloud",
+    "stop": "Stop reading",
+    "auto": "Read the quote at the start of each minute",
+    "help": "Enable this option or press Read after opening the page to activate automatic reading. Reading stops when the tab is hidden.",
+    "unsupported": "Reading aloud is unavailable in this browser.",
+    "error": "Unable to read this quote. Try pressing Read again.",
+    "attribution": "Also read the book title and author"
+  }
+}
