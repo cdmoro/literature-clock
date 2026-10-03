@@ -1,10 +1,13 @@
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
-import { initShareOptions } from './share-options';
+import { initShareOptions, selectedCardOptions } from './share-options';
 import { renderShareCard } from './share-card';
 import { shareQuote, downloadQuote } from './share';
 const { state } = vi.hoisted(() => ({ state: {} as Record<string, unknown> }));
 vi.mock('../store', () => ({ store: { get: (key: string) => state[key], subscribe: vi.fn() } }));
-vi.mock('./locales', () => ({ getBaseLocale: () => 'en-GB' }));
+vi.mock('./locales', () => ({
+  getBaseLocale: () => 'en-GB',
+  getStrings: () => ({ font: 'Font', default_font: 'Default font' }),
+}));
 vi.mock('./share', () => ({
   shareQuote: vi.fn().mockResolvedValue(undefined),
   downloadQuote: vi.fn().mockResolvedValue(undefined),
@@ -14,11 +17,14 @@ beforeEach(() => {
   vi.clearAllMocks();
   vi.unstubAllGlobals();
   state.locale = 'en-GB';
+  state['background-pattern'] = 'none';
+  state.color = '#d24335';
+  state.font = 'default';
   state.quote = undefined;
   state['active-quote'] = { id: '1200-001', quote_raw: 'Original quote', locale: 'en-GB', time: '12:00' };
   document.documentElement.dataset.theme = 'base-dark';
   document.body.innerHTML =
-    '<button id="share"><svg id="existing-share-icon"></svg></button><button id="download"></button><select id="theme-select"><option value="base">Base</option><option value="book">Book page</option></select>';
+    '<button id="share"><svg id="existing-share-icon"></svg></button><select id="theme-select"><option value="base">Base</option><option value="book">Book page</option></select><select id="font-select"><option value="default">Default font</option><option value="Lora">Lora</option><option value="Special Elite">Special Elite</option><option value="My Custom Font">My Custom Font (custom, unverified)</option></select>';
   HTMLDialogElement.prototype.showModal = function () {
     this.open = true;
   };
@@ -43,6 +49,7 @@ it('changes image format and appearance without changing the live clock', async 
     'portrait',
     'light',
     undefined,
+    { pattern: 'none', color: undefined, font: 'default' },
   );
   expect(button('Vertical').getAttribute('aria-pressed')).toBe('true');
   expect(button('Light').getAttribute('aria-pressed')).toBe('true');
@@ -118,4 +125,94 @@ it('cycles image themes in both directions without changing the live theme', asy
   button('Previous theme').click();
   expect(document.querySelector('.share-theme-carousel span')?.textContent).toBe('Base');
   expect(document.documentElement.dataset.theme).toBe('base-dark');
+});
+
+it('changes the preview colour and pattern without touching clock preferences or the URL', async () => {
+  const originalUrl = location.href;
+  const input = document.getElementById('share-preview-color') as HTMLInputElement;
+  const select = document.getElementById('share-preview-pattern') as HTMLSelectElement;
+  input.value = '#123456';
+  input.dispatchEvent(new Event('input'));
+  select.value = 'dots';
+  select.dispatchEvent(new Event('change'));
+  await Promise.resolve();
+  expect(renderShareCard).toHaveBeenLastCalledWith(
+    expect.anything(),
+    expect.anything(),
+    expect.anything(),
+    expect.anything(),
+    { color: '#123456', pattern: 'dots', font: 'default' },
+  );
+  expect(state.color).toBe('#d24335');
+  expect(state['background-pattern']).toBe('none');
+  expect(location.href).toBe(originalUrl);
+  expect(document.documentElement.dataset.theme).toBe('base-dark');
+  button('Next theme').click();
+  expect(select.disabled).toBe(true);
+  expect(select.closest('label')!.hidden).toBe(true);
+  button('Previous theme').click();
+  expect(select.disabled).toBe(false);
+  expect(select.value).toBe('dots');
+  button('Close').click();
+  expect(selectedCardOptions()).toEqual({ pattern: 'none', color: undefined, font: undefined });
+});
+
+it('starts each popup from the saved clock pattern and clears its temporary colour', () => {
+  button('Close').click();
+  state['background-pattern'] = 'grid';
+  document.getElementById('share')!.click();
+  const input = document.getElementById('share-preview-color') as HTMLInputElement;
+  input.value = '#abcdef';
+  input.dispatchEvent(new Event('input'));
+  button('Close').click();
+  document.getElementById('share')!.click();
+  expect((document.getElementById('share-preview-pattern') as HTMLSelectElement).value).toBe('grid');
+  expect(renderShareCard).toHaveBeenLastCalledWith(
+    expect.anything(),
+    expect.anything(),
+    expect.anything(),
+    expect.anything(),
+    { color: undefined, pattern: 'grid', font: 'default' },
+  );
+});
+
+it('changes fonts only for the image, includes custom families and clears the override on close', async () => {
+  const originalUrl = location.href;
+  const select = document.getElementById('share-preview-font') as HTMLSelectElement;
+  expect([...select.options].some((option) => option.value === 'My Custom Font')).toBe(true);
+  select.value = 'Lora';
+  select.dispatchEvent(new Event('change'));
+  await Promise.resolve();
+  expect(selectedCardOptions().font).toBe('Lora');
+  expect(renderShareCard).toHaveBeenLastCalledWith(
+    expect.anything(),
+    expect.anything(),
+    expect.anything(),
+    expect.anything(),
+    expect.objectContaining({ font: 'Lora' }),
+  );
+  expect(state.font).toBe('default');
+  expect((document.getElementById('font-select') as HTMLSelectElement).value).toBe('default');
+  expect(location.href).toBe(originalUrl);
+  button('Close').click();
+  expect(selectedCardOptions().font).toBeUndefined();
+});
+
+it('starts with the current custom font and disables families incompatible with the quote language', () => {
+  button('Close').click();
+  state.font = 'My Custom Font';
+  state['active-quote'] = { ...(state['active-quote'] as object), locale: 'ar-AE' };
+  document.getElementById('share')!.click();
+  const select = document.getElementById('share-preview-font') as HTMLSelectElement;
+  expect(select.value).toBe('My Custom Font');
+  expect(select.querySelector<HTMLOptionElement>('option[value="Special Elite"]')!.disabled).toBe(true);
+  expect(select.querySelector<HTMLOptionElement>('option[value="My Custom Font"]')!.disabled).toBe(false);
+});
+
+it('offers large circles as an independent image pattern', () => {
+  const select = document.getElementById('share-preview-pattern') as HTMLSelectElement;
+  select.value = 'circles';
+  select.dispatchEvent(new Event('change'));
+  expect(selectedCardOptions().pattern).toBe('circles');
+  expect(state['background-pattern']).toBe('none');
 });

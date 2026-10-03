@@ -1,3 +1,4 @@
+import { refreshBackgroundPattern } from './background-patterns';
 import { refreshLocaleThemeFonts } from './locale-fonts';
 import { THEME_FONTS, refreshDefaultFontLabel } from './font';
 import { doFitQuote, fitQuote, loadFontIfNotExists } from '../utils';
@@ -136,6 +137,7 @@ export function initTheme() {
 }
 
 function applyCustomColor(theme = 'base') {
+  refreshBackgroundPattern();
   const root = document.documentElement;
   root.dataset.variant = store.get('theme').split('-')[1] || 'system';
   const colorPickers = document.querySelectorAll<HTMLInputElement>('#color-picker, #settings-color-picker');

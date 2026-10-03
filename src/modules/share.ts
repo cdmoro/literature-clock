@@ -4,6 +4,7 @@ import {
   selectedCardFormat,
   selectedCardAppearance,
   selectedCardTheme,
+  selectedCardOptions,
   shareOptionStrings,
 } from './share-options';
 import type { ResolvedQuote } from '../types';
@@ -16,7 +17,6 @@ export function initShare() {
   const share = document.getElementById('share');
   initShareOptions();
 
-  document.getElementById('download')?.addEventListener('click', () => void downloadQuote());
   store.subscribe((state) => {
     if (share)
       (share as HTMLButtonElement).disabled =
@@ -27,7 +27,7 @@ export function initShare() {
 
 export async function getCanvas(format: CardFormat = selectedCardFormat(), quote = store.get('active-quote')) {
   if (!quote) return;
-  return renderShareCard({ ...quote }, format, selectedCardAppearance(), selectedCardTheme());
+  return renderShareCard({ ...quote }, format, selectedCardAppearance(), selectedCardTheme(), selectedCardOptions());
 }
 
 export async function shareQuote(snapshot?: ResolvedQuote) {
@@ -71,8 +71,6 @@ export async function downloadQuote(snapshot?: ResolvedQuote) {
     return;
   }
   const time = quote.time || getTime();
-  const button = document.getElementById('download') as HTMLButtonElement | null;
-  if (button) button.disabled = true;
   try {
     const canvas = await getCanvas(selectedCardFormat(), quote);
     if (!canvas) return;
@@ -89,6 +87,5 @@ export async function downloadQuote(snapshot?: ResolvedQuote) {
     return shareOptionStrings().failed;
   } finally {
     downloading = false;
-    if (button) button.disabled = false;
   }
 }

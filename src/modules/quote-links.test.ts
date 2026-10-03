@@ -24,3 +24,10 @@ it('does not link fallback text and keeps saved quote links usable during custom
   settings.quote = 'preview';
   expect(getQuoteUrl(quote)).toContain('quote-id=1200-000');
 });
+
+it('includes the persisted background pattern in quote links without needing a current URL override', () => {
+  settings['background-pattern'] = 'grid';
+  expect(new URL(getQuoteUrl(quote)!).searchParams.get('background-pattern')).toBe('grid');
+  settings['background-pattern'] = 'none';
+  expect(new URL(getQuoteUrl(quote)!).searchParams.has('background-pattern')).toBe(false);
+});

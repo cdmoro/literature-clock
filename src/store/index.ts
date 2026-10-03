@@ -1,3 +1,4 @@
+import { BackgroundPattern, isBackgroundPattern } from '../utils/background-patterns';
 import { resolveTransition, TransitionMode } from '../utils/transition-settings';
 import { resolveLocale } from '../modules/locales';
 import { Locale, ResolvedQuote } from '../types';
@@ -21,6 +22,7 @@ interface Stateful {
   font: string;
   theme: string;
   color: string;
+  'background-pattern': BackgroundPattern;
   progressbar: ProgressbarMode;
   'random-locale': boolean;
 }
@@ -50,6 +52,7 @@ const REMOVE_VALUES_FROM_URL: Partial<State> = {
   font: 'default',
   theme: 'base-system',
   color: '#d24335',
+  'background-pattern': 'none',
 };
 
 const BOOLEAN_KEYS = new Set([
@@ -105,6 +108,9 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
         break;
       case 'transition':
         if (['none', 'fade', 'slide', 'blur', 'zoom'].includes(raw)) result[key] = raw;
+        break;
+      case 'background-pattern':
+        if (isBackgroundPattern(raw)) result[key] = raw;
         break;
       case 'color':
         if (/^#[0-9a-f]{6}$/i.test(raw)) result[key] = raw;
@@ -327,6 +333,7 @@ export function createStore() {
     font: 'default',
     theme: 'base-system',
     color: '#d24335',
+    'background-pattern': 'none',
     progressbar: 'theme',
     'random-locale': false,
   });
