@@ -759,3 +759,21 @@ select:dir(rtl) {
 #share-preview .share-preview-actions button:disabled {
   opacity: 0.5;
 }
+.share-theme-carousel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-inline-start: auto;
+}
+.share-theme-carousel span {
+  min-width: 90px;
+  max-width: 160px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+#share-preview .share-theme-carousel button {
+  min-width: 30px;
+  height: 30px;
+  padding: 0 8px;
+  font-size: 1.25rem;
+}

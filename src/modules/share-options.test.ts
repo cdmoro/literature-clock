@@ -18,7 +18,7 @@ beforeEach(() => {
   state['active-quote'] = { id: '1200-001', quote_raw: 'Original quote', locale: 'en-GB', time: '12:00' };
   document.documentElement.dataset.theme = 'base-dark';
   document.body.innerHTML =
-    '<button id="share"><svg id="existing-share-icon"></svg></button><button id="download"></button>';
+    '<button id="share"><svg id="existing-share-icon"></svg></button><button id="download"></button><select id="theme-select"><option value="base">Base</option><option value="book">Book page</option></select>';
   HTMLDialogElement.prototype.showModal = function () {
     this.open = true;
   };
@@ -42,6 +42,7 @@ it('changes image format and appearance without changing the live clock', async 
     expect.objectContaining({ quote_raw: 'Original quote' }),
     'portrait',
     'light',
+    undefined,
   );
   expect(button('Vertical').getAttribute('aria-pressed')).toBe('true');
   expect(button('Light').getAttribute('aria-pressed')).toBe('true');
@@ -107,4 +108,14 @@ it('opens the dialog from Share and preserves its existing icon without an extra
   expect(document.getElementById('existing-share-icon')?.parentElement?.id).toBe('share');
   expect(document.getElementById('share-options')).toBeNull();
   expect(document.getElementById('share-preview-title')?.textContent).toBe('Share quote');
+});
+
+it('cycles image themes in both directions without changing the live theme', async () => {
+  button('Next theme').click();
+  await Promise.resolve();
+  expect(document.querySelector('.share-theme-carousel span')?.textContent).toBe('Book page');
+  expect(vi.mocked(renderShareCard).mock.calls[vi.mocked(renderShareCard).mock.calls.length - 1]?.[3]).toBe('book');
+  button('Previous theme').click();
+  expect(document.querySelector('.share-theme-carousel span')?.textContent).toBe('Base');
+  expect(document.documentElement.dataset.theme).toBe('base-dark');
 });

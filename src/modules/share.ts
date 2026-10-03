@@ -1,5 +1,11 @@
 import { renderShareCard, type CardFormat } from './share-card';
-import { initShareOptions, selectedCardFormat, selectedCardAppearance, shareOptionStrings } from './share-options';
+import {
+  initShareOptions,
+  selectedCardFormat,
+  selectedCardAppearance,
+  selectedCardTheme,
+  shareOptionStrings,
+} from './share-options';
 import type { ResolvedQuote } from '../types';
 import { getTime } from '../utils';
 import { store } from '../store';
@@ -21,7 +27,7 @@ export function initShare() {
 
 export async function getCanvas(format: CardFormat = selectedCardFormat(), quote = store.get('active-quote')) {
   if (!quote) return;
-  return renderShareCard({ ...quote }, format, selectedCardAppearance());
+  return renderShareCard({ ...quote }, format, selectedCardAppearance(), selectedCardTheme());
 }
 
 export async function shareQuote(snapshot?: ResolvedQuote) {

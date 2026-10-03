@@ -17,7 +17,10 @@
     "copyImage": "Copy image",
     "imageCopied": "Image copied",
     "copyFailed": "Could not copy the image. Please try again.",
-    "copyUnavailable": "Image copying is unavailable in this browser. Download the image instead."
+    "copyUnavailable": "Image copying is unavailable in this browser. Download the image instead.",
+    "theme": "Theme",
+    "previousTheme": "Previous theme",
+    "nextTheme": "Next theme"
   },
   "es-ES": {
     "title": "Compartir cita",
@@ -37,7 +40,10 @@
     "copyImage": "Copiar imagen",
     "imageCopied": "Imagen copiada",
     "copyFailed": "No se pudo copiar la imagen. Intentá de nuevo.",
-    "copyUnavailable": "Este navegador no permite copiar imágenes. Podés descargarla."
+    "copyUnavailable": "Este navegador no permite copiar imágenes. Podés descargarla.",
+    "theme": "Tema",
+    "previousTheme": "Tema anterior",
+    "nextTheme": "Tema siguiente"
   },
   "fr-FR": {
     "title": "Partager la citation",
@@ -57,7 +63,10 @@
     "copyImage": "Copier l’image",
     "imageCopied": "Image copiée",
     "copyFailed": "Impossible de copier l’image. Réessayez.",
-    "copyUnavailable": "Ce navigateur ne permet pas de copier les images. Téléchargez l’image."
+    "copyUnavailable": "Ce navigateur ne permet pas de copier les images. Téléchargez l’image.",
+    "theme": "Thème",
+    "previousTheme": "Thème précédent",
+    "nextTheme": "Thème suivant"
   },
   "de-DE": {
     "title": "Zitat teilen",
@@ -77,7 +86,10 @@
     "copyImage": "Bild kopieren",
     "imageCopied": "Bild kopiert",
     "copyFailed": "Das Bild konnte nicht kopiert werden. Bitte erneut versuchen.",
-    "copyUnavailable": "Dieser Browser unterstützt das Kopieren von Bildern nicht. Laden Sie das Bild herunter."
+    "copyUnavailable": "Dieser Browser unterstützt das Kopieren von Bildern nicht. Laden Sie das Bild herunter.",
+    "theme": "Design",
+    "previousTheme": "Vorheriges Design",
+    "nextTheme": "Nächstes Design"
   },
   "it-IT": {
     "title": "Condividi citazione",
@@ -97,7 +109,10 @@
     "copyImage": "Copia immagine",
     "imageCopied": "Immagine copiata",
     "copyFailed": "Impossibile copiare l’immagine. Riprova.",
-    "copyUnavailable": "Questo browser non supporta la copia delle immagini. Scarica l’immagine."
+    "copyUnavailable": "Questo browser non supporta la copia delle immagini. Scarica l’immagine.",
+    "theme": "Tema",
+    "previousTheme": "Tema precedente",
+    "nextTheme": "Tema successivo"
   },
   "pt-PT": {
     "title": "Partilhar citação",
@@ -117,7 +132,10 @@
     "copyImage": "Copiar imagem",
     "imageCopied": "Imagem copiada",
     "copyFailed": "Não foi possível copiar a imagem. Tente novamente.",
-    "copyUnavailable": "Este navegador não permite copiar imagens. Transfira a imagem."
+    "copyUnavailable": "Este navegador não permite copiar imagens. Transfira a imagem.",
+    "theme": "Tema",
+    "previousTheme": "Tema anterior",
+    "nextTheme": "Tema seguinte"
   },
   "el-GR": {
     "title": "Κοινοποίηση παραθέματος",
@@ -137,7 +155,10 @@
     "copyImage": "Αντιγραφή εικόνας",
     "imageCopied": "Η εικόνα αντιγράφηκε",
     "copyFailed": "Δεν ήταν δυνατή η αντιγραφή της εικόνας. Δοκιμάστε ξανά.",
-    "copyUnavailable": "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει αντιγραφή εικόνων. Κατεβάστε την εικόνα."
+    "copyUnavailable": "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει αντιγραφή εικόνων. Κατεβάστε την εικόνα.",
+    "theme": "Θέμα",
+    "previousTheme": "Προηγούμενο θέμα",
+    "nextTheme": "Επόμενο θέμα"
   },
   "zh-CN": {
     "title": "分享引文",
@@ -157,7 +178,10 @@
     "copyImage": "复制图片",
     "imageCopied": "图片已复制",
     "copyFailed": "无法复制图片，请重试。",
-    "copyUnavailable": "此浏览器不支持复制图片，请下载图片。"
+    "copyUnavailable": "此浏览器不支持复制图片，请下载图片。",
+    "theme": "主题",
+    "previousTheme": "上一个主题",
+    "nextTheme": "下一个主题"
   },
   "ru-RU": {
     "title": "Поделиться цитатой",
@@ -177,7 +201,10 @@
     "copyImage": "Копировать изображение",
     "imageCopied": "Изображение скопировано",
     "copyFailed": "Не удалось скопировать изображение. Попробуйте ещё раз.",
-    "copyUnavailable": "Этот браузер не поддерживает копирование изображений. Скачайте изображение."
+    "copyUnavailable": "Этот браузер не поддерживает копирование изображений. Скачайте изображение.",
+    "theme": "Тема",
+    "previousTheme": "Предыдущая тема",
+    "nextTheme": "Следующая тема"
   },
   "eo": {
     "title": "Kunhavigi citaĵon",
@@ -197,7 +224,10 @@
     "copyImage": "Kopii bildon",
     "imageCopied": "Bildo kopiita",
     "copyFailed": "Ne eblis kopii la bildon. Bonvolu reprovi.",
-    "copyUnavailable": "Ĉi tiu retumilo ne subtenas kopiadon de bildoj. Elŝutu la bildon."
+    "copyUnavailable": "Ĉi tiu retumilo ne subtenas kopiadon de bildoj. Elŝutu la bildon.",
+    "theme": "Temo",
+    "previousTheme": "Antaŭa temo",
+    "nextTheme": "Sekva temo"
   },
   "en-US": {
     "title": "Share quote",
@@ -217,7 +247,10 @@
     "copyImage": "Copy image",
     "imageCopied": "Image copied",
     "copyFailed": "Could not copy the image. Please try again.",
-    "copyUnavailable": "Image copying is unavailable in this browser. Download the image instead."
+    "copyUnavailable": "Image copying is unavailable in this browser. Download the image instead.",
+    "theme": "Theme",
+    "previousTheme": "Previous theme",
+    "nextTheme": "Next theme"
   },
   "ar-AE": {
     "title": "مشاركة الاقتباس",
@@ -237,6 +270,9 @@
     "copyImage": "نسخ الصورة",
     "imageCopied": "تم نسخ الصورة",
     "copyFailed": "تعذر نسخ الصورة. حاول مرة أخرى.",
-    "copyUnavailable": "هذا المتصفح لا يدعم نسخ الصور. نزّل الصورة بدلاً من ذلك."
+    "copyUnavailable": "هذا المتصفح لا يدعم نسخ الصور. نزّل الصورة بدلاً من ذلك.",
+    "theme": "السمة",
+    "previousTheme": "السمة السابقة",
+    "nextTheme": "السمة التالية"
   }
 }

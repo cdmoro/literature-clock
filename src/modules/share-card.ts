@@ -1,16 +1,20 @@
 import html2canvas from 'html2canvas-pro';
 import type { ResolvedQuote } from '../types';
+import { loadGoogleFont } from '../utils/google-font';
+import { getLocaleThemeFont } from './locale-fonts';
 import { quoteMarkup } from '../utils/quote-markup';
 
 export const cardFormats = { square: [1080, 1080], portrait: [1080, 1920], landscape: [1920, 1080] } as const;
 export type CardFormat = keyof typeof cardFormats;
 export type CardAppearance = 'light' | 'dark';
+const themeFontLoads = new Map<string, Promise<void>>();
 
 /** Render a snapshot of the quote, without viewport dimensions or clock animation. */
 export async function renderShareCard(
   quote: ResolvedQuote,
   format: CardFormat,
   appearance?: CardAppearance,
+  theme?: string,
 ): Promise<HTMLCanvasElement> {
   const [width, height] = cardFormats[format];
   const bodyStyle = getComputedStyle(document.body);
@@ -19,20 +23,55 @@ export async function renderShareCard(
   // Resolve the existing theme variant on an isolated element, never changing the clock.
   const palette = document.createElement('div');
   palette.hidden = true;
-  palette.dataset.theme = `${(document.documentElement.dataset.theme || 'base-light').replace(/-(light|dark)$/, '')}-${appearance || 'light'}`;
-  palette.classList.toggle('custom-accent', document.documentElement.classList.contains('custom-accent'));
-  palette.style.setProperty(
-    '--accent-color',
-    getComputedStyle(document.documentElement).getPropertyValue('--accent-color'),
+  const liveTheme = document.documentElement.dataset.theme || 'base-light';
+  const skin = theme || liveTheme.replace(/-(light|dark)$/, '');
+  palette.dataset.theme = `${skin}-${appearance || (liveTheme.endsWith('-dark') ? 'dark' : 'light')}`;
+  palette.classList.toggle(
+    'custom-accent',
+    (!theme || theme === liveTheme.replace(/-(light|dark)$/, '')) &&
+      document.documentElement.classList.contains('custom-accent'),
   );
+  if (!theme || theme === liveTheme.replace(/-(light|dark)$/, '')) {
+    palette.style.setProperty(
+      '--accent-color',
+      getComputedStyle(document.documentElement).getPropertyValue('--accent-color'),
+    );
+  } else {
+    palette.style.setProperty('--background-image', 'none');
+  }
   palette.style.color = 'var(--font-color)';
   palette.style.backgroundColor = 'var(--background)';
   palette.style.backgroundImage = 'var(--background-image, none)';
   document.body.append(palette);
   const paletteStyle = getComputedStyle(palette);
-  const color = appearance ? paletteStyle.color : bodyStyle.color;
-  const backgroundColor = appearance ? paletteStyle.backgroundColor : bodyStyle.backgroundColor;
-  const backgroundImage = appearance ? paletteStyle.backgroundImage : bodyStyle.backgroundImage;
+  const color = appearance || theme ? paletteStyle.color : bodyStyle.color;
+  const backgroundColor = appearance || theme ? paletteStyle.backgroundColor : bodyStyle.backgroundColor;
+  const backgroundImage = appearance || theme ? paletteStyle.backgroundImage : bodyStyle.backgroundImage;
+  const accent =
+    appearance || theme
+      ? paletteStyle.getPropertyValue('--accent-color')
+      : getComputedStyle(document.documentElement).getPropertyValue('--accent-color');
+  const localeFont = theme ? getLocaleThemeFont(theme, quote.locale) : undefined;
+  const fontFamily = theme
+    ? localeFont
+      ? `"${localeFont}", serif`
+      : quote.locale.startsWith('ar')
+        ? 'system-ui, sans-serif'
+        : paletteStyle.getPropertyValue('--quote-font-family')
+    : quoteStyle.fontFamily;
+  let fontLoading: Promise<void> | undefined;
+  if (theme) {
+    const font = localeFont || fontFamily.split(',')[0].replace(/["']/g, '').trim();
+    if (font && !['system-ui', 'serif', 'sans-serif', 'monospace'].includes(font)) {
+      fontLoading = themeFontLoads.get(font);
+      if (!fontLoading) {
+        fontLoading = loadGoogleFont(font).catch(() => {
+          themeFontLoads.delete(font);
+        });
+        themeFontLoads.set(font, fontLoading);
+      }
+    }
+  }
   palette.remove();
   Object.assign(card.style, {
     position: 'fixed',
@@ -50,7 +89,7 @@ export async function renderShareCard(
     backgroundImage,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    fontFamily: quoteStyle.fontFamily,
+    fontFamily,
     lineHeight: quote.locale.startsWith('ar') ? '1.65' : '1.3',
     overflowWrap: 'anywhere',
   });
@@ -60,7 +99,7 @@ export async function renderShareCard(
   time.textContent = quote.time;
   Object.assign(time.style, {
     fontSize: '32px',
-    color: getComputedStyle(document.documentElement).getPropertyValue('--accent-color'),
+    color: accent,
   });
   const content = document.createElement('div');
   const passage = document.createElement('div');
@@ -88,6 +127,7 @@ export async function renderShareCard(
   card.append(time, content, signature);
   document.body.append(card);
   try {
+    await fontLoading;
     await document.fonts?.ready;
     let size = 64;
     passage.style.fontSize = `${size}px`;

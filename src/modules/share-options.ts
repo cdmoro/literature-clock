@@ -8,6 +8,8 @@ import STRINGS from '../strings/share.json';
 
 let format: CardFormat = 'square';
 let appearance: CardAppearance | undefined;
+let theme: string | undefined;
+export const selectedCardTheme = () => theme;
 export const selectedCardAppearance = () => appearance;
 export const selectedCardFormat = () => format;
 export const shareOptionStrings = () => STRINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))];
@@ -99,6 +101,44 @@ export function initShareOptions() {
       appearanceGroup.append(option);
     }
     controls.append(formatGroup, appearanceGroup);
+    const themes = [...document.querySelectorAll<HTMLOptionElement>('#theme-select option')].filter(
+      (option) => option.value !== 'color',
+    );
+    const carousel = document.createElement('div');
+    carousel.className = 'share-theme-carousel';
+    carousel.setAttribute('role', 'group');
+    carousel.setAttribute('aria-label', strings.theme);
+    const themeName = document.createElement('span');
+    themeName.setAttribute('aria-live', 'polite');
+    const currentTheme = () =>
+      theme || (document.documentElement.dataset.theme || 'base-light').replace(/-(light|dark)$/, '');
+    const updateThemeName = () => {
+      themeName.textContent = themes.find((option) => option.value === currentTheme())?.textContent || currentTheme();
+    };
+    for (const [step, label, icon] of [
+      [-1, strings.previousTheme, '‹'],
+      [1, strings.nextTheme, '›'],
+    ] as const) {
+      const arrow = document.createElement('button');
+      arrow.type = 'button';
+      arrow.textContent = icon;
+      arrow.setAttribute('aria-label', label);
+      arrow.title = label;
+      arrow.disabled = themes.length < 2;
+      arrow.addEventListener('click', () => {
+        const index = Math.max(
+          0,
+          themes.findIndex((option) => option.value === currentTheme()),
+        );
+        theme = themes[(index + step + themes.length) % themes.length].value;
+        updateThemeName();
+        void refresh();
+      });
+      carousel.append(arrow);
+      if (step === -1) carousel.append(themeName);
+    }
+    updateThemeName();
+    controls.append(carousel);
     const preview = document.createElement('div');
     preview.className = 'share-preview-image';
     preview.setAttribute('role', 'group');
@@ -178,7 +218,7 @@ export function initShareOptions() {
       preview.replaceChildren();
       copyImage.disabled = true;
       try {
-        const canvas = await renderShareCard(snapshot, format, appearance);
+        const canvas = await renderShareCard(snapshot, format, appearance, theme);
         if (current !== revision) return;
         canvas.style.width = 'auto';
         canvas.style.height = 'auto';
