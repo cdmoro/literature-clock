@@ -762,12 +762,20 @@ select:dir(rtl) {
 .share-theme-carousel {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-inline-start: auto;
+  gap: 0;
+  margin-inline-start: 0;
 }
 .share-theme-carousel span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
   min-width: 90px;
   max-width: 160px;
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
+  margin-inline: -1px;
   text-align: center;
   font-size: 0.85rem;
 }
@@ -776,4 +784,15 @@ select:dir(rtl) {
   height: 30px;
   padding: 0 8px;
   font-size: 1.25rem;
+  border-radius: 0;
+}
+#share-preview .share-theme-carousel button:first-child {
+  border-radius: 4px 0 0 4px;
+}
+#share-preview .share-theme-carousel button:last-child {
+  border-radius: 0 4px 4px 0;
+}
+#share-preview .share-theme-carousel button:focus-visible {
+  position: relative;
+  z-index: 1;
 }
