@@ -1,4 +1,5 @@
-import html2canvas from 'html2canvas-pro';
+import { renderShareCard, type CardFormat } from './share-card';
+import { initShareOptions, selectedCardFormat, shareOptionStrings } from './share-options';
 import { getTime } from '../utils';
 import { store } from '../store';
 import { getQuoteUrl } from './quote-links';
@@ -6,6 +7,7 @@ import { readingStrings, showQuoteNotice } from './reading-ui';
 
 export function initShare() {
   const share = document.getElementById('share');
+  initShareOptions();
 
   document.getElementById('download')?.addEventListener('click', downloadQuote);
   store.subscribe((state) => {
@@ -22,30 +24,10 @@ export function initShare() {
   }
 }
 
-async function getCanvas() {
-  const quote = document.getElementById('quote');
-
-  if (quote) {
-    const canvas = await html2canvas(document.body, {
-      allowTaint: true,
-      useCORS: true,
-      scale: 2,
-      onclone(_document, element) {
-        element.classList.add('share-quote');
-        element.classList.remove('screensaver');
-      },
-    });
-
-    const flashEl = document.createElement('div');
-    flashEl.id = 'flash';
-    document.body.appendChild(flashEl);
-
-    setTimeout(() => {
-      flashEl.remove();
-    }, 500);
-
-    return canvas;
-  }
+export async function getCanvas(format: CardFormat = selectedCardFormat()) {
+  const quote = store.get('active-quote');
+  if (!quote || store.get('quote')) return;
+  return renderShareCard({ ...quote }, format);
 }
 
 export async function shareQuote() {
@@ -61,7 +43,7 @@ export async function shareQuote() {
     }
     const text = `${quote.quote_raw} — ${quote.title}, ${quote.author}`;
     const shareData: ShareData = { text, url };
-    const canvas = await getCanvas();
+    const canvas = typeof navigator.canShare === 'function' ? await getCanvas().catch(() => undefined) : undefined;
     const blob = await new Promise<Blob | null>((resolve) => (canvas ? canvas.toBlob(resolve) : resolve(null)));
     if (blob && store.get('active-quote') === quote) {
       const files = [new File([blob], `Quote ${quote.time}.png`, { type: 'image/png' })];
@@ -74,20 +56,28 @@ export async function shareQuote() {
   }
 }
 
+let downloading = false;
 async function downloadQuote() {
-  const canvas = await getCanvas();
-  const url = canvas?.toDataURL('image/png');
+  if (downloading) return;
+  downloading = true;
   const time = store.get('active-quote')?.time || getTime();
-
-  if (url) {
+  const button = document.getElementById('download') as HTMLButtonElement | null;
+  if (button) button.disabled = true;
+  try {
+    const canvas = await getCanvas();
+    if (!canvas) return;
+    const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve));
+    if (!blob) throw new Error('Image unavailable');
+    const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
-
-    a.style.display = 'none';
-    a.setAttribute('href', url);
-    a.setAttribute('download', `quote_${time.replace(':', '_')}.png`);
-    document.body.appendChild(a);
-
+    a.href = url;
+    a.download = `quote_${time.replace(':', '_')}.png`;
     a.click();
-    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  } catch {
+    showQuoteNotice(shareOptionStrings().failed);
+  } finally {
+    downloading = false;
+    if (button) button.disabled = false;
   }
 }

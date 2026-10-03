@@ -1,0 +1,122 @@
+{
+  "en-GB": {
+    "title": "Image settings",
+    "format": "Format",
+    "square": "Square",
+    "portrait": "Vertical",
+    "landscape": "Horizontal",
+    "preparing": "Preparing image…",
+    "failed": "Could not create the image. Please try again.",
+    "hint": "This format will be used when sharing or downloading. Long quotes may produce a taller image."
+  },
+  "es-ES": {
+    "title": "Ajustes de imagen",
+    "format": "Formato",
+    "square": "Cuadrado",
+    "portrait": "Vertical",
+    "landscape": "Horizontal",
+    "preparing": "Preparando imagen…",
+    "failed": "No se pudo crear la imagen. Intentá de nuevo.",
+    "hint": "Este formato se usará al compartir o descargar. Las citas largas pueden generar una imagen más alta."
+  },
+  "fr-FR": {
+    "title": "Réglages de l’image",
+    "format": "Format",
+    "square": "Carré",
+    "portrait": "Vertical",
+    "landscape": "Horizontal",
+    "preparing": "Préparation de l’image…",
+    "failed": "Impossible de créer l’image. Réessayez.",
+    "hint": "Ce format sera utilisé pour partager ou télécharger. Les longues citations peuvent produire une image plus haute."
+  },
+  "de-DE": {
+    "title": "Bildeinstellungen",
+    "format": "Format",
+    "square": "Quadratisch",
+    "portrait": "Hochformat",
+    "landscape": "Querformat",
+    "preparing": "Bild wird vorbereitet…",
+    "failed": "Das Bild konnte nicht erstellt werden. Bitte erneut versuchen.",
+    "hint": "Dieses Format wird beim Teilen oder Herunterladen verwendet. Lange Zitate können ein höheres Bild erzeugen."
+  },
+  "it-IT": {
+    "title": "Impostazioni immagine",
+    "format": "Formato",
+    "square": "Quadrato",
+    "portrait": "Verticale",
+    "landscape": "Orizzontale",
+    "preparing": "Preparazione immagine…",
+    "failed": "Impossibile creare l’immagine. Riprova.",
+    "hint": "Questo formato verrà usato per condividere o scaricare. Le citazioni lunghe possono produrre un’immagine più alta."
+  },
+  "pt-PT": {
+    "title": "Definições da imagem",
+    "format": "Formato",
+    "square": "Quadrado",
+    "portrait": "Vertical",
+    "landscape": "Horizontal",
+    "preparing": "A preparar imagem…",
+    "failed": "Não foi possível criar a imagem. Tente novamente.",
+    "hint": "Este formato será usado ao partilhar ou transferir. Citações longas podem gerar uma imagem mais alta."
+  },
+  "el-GR": {
+    "title": "Ρυθμίσεις εικόνας",
+    "format": "Μορφή",
+    "square": "Τετράγωνη",
+    "portrait": "Κάθετη",
+    "landscape": "Οριζόντια",
+    "preparing": "Προετοιμασία εικόνας…",
+    "failed": "Δεν ήταν δυνατή η δημιουργία της εικόνας. Δοκιμάστε ξανά.",
+    "hint": "Αυτή η μορφή θα χρησιμοποιηθεί για κοινοποίηση ή λήψη. Τα μεγάλα παραθέματα μπορεί να δημιουργήσουν ψηλότερη εικόνα."
+  },
+  "zh-CN": {
+    "title": "图片设置",
+    "format": "格式",
+    "square": "正方形",
+    "portrait": "竖版",
+    "landscape": "横版",
+    "preparing": "正在生成图片…",
+    "failed": "无法生成图片，请重试。",
+    "hint": "分享或下载时将使用此格式。较长的引文可能生成更高的图片。"
+  },
+  "ru-RU": {
+    "title": "Настройки изображения",
+    "format": "Формат",
+    "square": "Квадратный",
+    "portrait": "Вертикальный",
+    "landscape": "Горизонтальный",
+    "preparing": "Подготовка изображения…",
+    "failed": "Не удалось создать изображение. Попробуйте ещё раз.",
+    "hint": "Этот формат используется при отправке и скачивании. Длинные цитаты могут создавать более высокое изображение."
+  },
+  "eo": {
+    "title": "Bildaj agordoj",
+    "format": "Formato",
+    "square": "Kvadrata",
+    "portrait": "Vertikala",
+    "landscape": "Horizontala",
+    "preparing": "Preparante bildon…",
+    "failed": "Ne eblis krei la bildon. Bonvolu reprovi.",
+    "hint": "Ĉi tiu formato estos uzata dum kunhavigo aŭ elŝuto. Longaj citaĵoj povas produkti pli altan bildon."
+  },
+  "en-US": {
+    "title": "Image settings",
+    "format": "Format",
+    "square": "Square",
+    "portrait": "Vertical",
+    "landscape": "Horizontal",
+    "preparing": "Preparing image…",
+    "failed": "Could not create the image. Please try again.",
+    "hint": "This format will be used when sharing or downloading. Long quotes may produce a taller image."
+  },
+  "ar-AE": {
+    "title": "إعدادات الصورة",
+    "format": "التنسيق",
+    "square": "مربع",
+    "portrait": "عمودي",
+    "landscape": "أفقي",
+    "preparing": "جارٍ إعداد الصورة…",
+    "failed": "تعذر إنشاء الصورة. حاول مرة أخرى.",
+    "hint": "سيُستخدم هذا التنسيق عند المشاركة أو التنزيل. قد تنتج الاقتباسات الطويلة صورة أطول."
+  }
+}
