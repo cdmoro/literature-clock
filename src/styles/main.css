@@ -627,3 +627,172 @@ select:dir(rtl) {
 #quote:lang(ar) > cite {
   font-family: var(--override-quote-font-family, var(--locale-quote-font-family));
 }
+
+#share-preview {
+  background: var(--background);
+  color: var(--font-color);
+  border: 1px solid var(--font-color);
+  border-radius: 12px;
+  box-sizing: border-box;
+  width: min(640px, calc(100vw - 32px));
+  height: min(760px, calc(100dvh - 32px));
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 32px);
+  overflow: auto;
+  padding: 20px;
+}
+
+#share-preview[open] {
+  display: grid;
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto auto;
+  gap: 12px;
+}
+
+#share-preview::backdrop {
+  background: #0008;
+}
+#share-preview h2,
+#share-preview p {
+  margin: 0;
+}
+#share-preview p {
+  font-size: 0.85rem;
+}
+#share-preview > button {
+  justify-self: end;
+}
+.share-preview-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-start;
+}
+.share-choice-group {
+  display: flex;
+  gap: 0;
+}
+#share-preview .share-choice-group button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  min-height: 30px;
+  padding: 5px 8px;
+  border-radius: 0;
+}
+#share-preview button[aria-pressed='true'] {
+  background: var(--accent-color);
+  color: var(--accent-text, var(--background));
+  border-color: var(--accent-color);
+}
+.share-preview-image {
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+.share-preview-image canvas {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+  object-fit: contain;
+}
+#share-preview header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.share-preview-area {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 8px;
+}
+.share-preview-label {
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+.share-preview-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+.share-preview-image canvas {
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 45%);
+  border-radius: 8px;
+}
+.share-preview-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+#share-preview .share-choice-group button:first-child {
+  border-radius: 4px 0 0 4px;
+}
+#share-preview .share-choice-group button:last-child {
+  border-radius: 0 4px 4px 0;
+}
+#share-preview .share-choice-group button + button {
+  margin-left: -1px;
+}
+#share-preview .share-choice-group svg {
+  width: 15px;
+  height: 15px;
+}
+#share-preview .share-choice-group button:focus-visible {
+  position: relative;
+  z-index: 1;
+}
+#share-preview .share-preview-actions {
+  flex-wrap: wrap;
+}
+#share-preview .share-preview-actions button {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--accent-text, var(--background));
+}
+#share-preview .share-preview-actions button:disabled {
+  opacity: 0.5;
+}
+.share-theme-carousel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  margin-inline-start: 0;
+}
+.share-theme-carousel span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 90px;
+  max-width: 160px;
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
+  margin-inline: -1px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+#share-preview .share-theme-carousel button {
+  min-width: 30px;
+  height: 30px;
+  padding: 0 8px;
+  font-size: 1.25rem;
+  border-radius: 0;
+}
+#share-preview .share-theme-carousel button:first-child {
+  border-radius: 4px 0 0 4px;
+}
+#share-preview .share-theme-carousel button:last-child {
+  border-radius: 0 4px 4px 0;
+}
+#share-preview .share-theme-carousel button:focus-visible {
+  position: relative;
+  z-index: 1;
+}
