@@ -1,3 +1,4 @@
+import { setTextLocale } from '../utils/text-direction';
 import { readingIcon } from './reading-icons';
 import { store } from '../store';
 import { getQuoteUrl } from './quote-links';
@@ -151,9 +152,11 @@ export function initQuoteLibrary() {
     for (const quote of visible) {
       const item = document.createElement('li');
       const text = document.createElement('p');
+      setTextLocale(text, quote.locale);
       text.textContent = quote.quote_raw;
       const attribution = document.createElement('p');
       attribution.className = 'saved-attribution';
+      attribution.dir = 'auto';
       attribution.textContent = `${quote.title} — ${quote.author}`;
       const actions = document.createElement('div');
       actions.className = 'saved-actions';

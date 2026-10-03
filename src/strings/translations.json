@@ -72,7 +72,8 @@
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
-    "eo": "Esperanto (eo)"
+    "eo": "Esperanto (eo)",
+    "ar-AE": "العربية (ar-AE)"
   },
   "en-US": {
     "about": "About",
@@ -147,7 +148,8 @@
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
-    "eo": "Esperanto (eo)"
+    "eo": "Esperanto (eo)",
+    "ar-AE": "العربية (ar-AE)"
   },
   "es-ES": {
     "about": "Acerca de",
@@ -222,7 +224,8 @@
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
-    "eo": "Esperanto (eo)"
+    "eo": "Esperanto (eo)",
+    "ar-AE": "العربية (ar-AE)"
   },
   "pt-PT": {
     "about": "Sobre",
@@ -297,7 +300,8 @@
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
-    "eo": "Esperanto (eo)"
+    "eo": "Esperanto (eo)",
+    "ar-AE": "العربية (ar-AE)"
   },
   "fr-FR": {
     "about": "À propos",
@@ -372,7 +376,8 @@
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
-    "eo": "Esperanto (eo)"
+    "eo": "Esperanto (eo)",
+    "ar-AE": "العربية (ar-AE)"
   },
   "it-IT": {
     "about": "Informazioni",
@@ -447,7 +452,8 @@
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
-    "eo": "Esperanto (eo)"
+    "eo": "Esperanto (eo)",
+    "ar-AE": "العربية (ar-AE)"
   },
   "de-DE": {
     "about": "Über",
@@ -522,7 +528,8 @@
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
-    "eo": "Esperanto (eo)"
+    "eo": "Esperanto (eo)",
+    "ar-AE": "العربية (ar-AE)"
   },
   "el-GR": {
     "about": "Σχετικά",
@@ -597,7 +604,8 @@
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
-    "eo": "Esperanto (eo)"
+    "eo": "Esperanto (eo)",
+    "ar-AE": "العربية (ar-AE)"
   },
   "zh-CN": {
     "about": "关于",
@@ -672,7 +680,8 @@
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
-    "eo": "Esperanto (eo)"
+    "eo": "Esperanto (eo)",
+    "ar-AE": "العربية (ar-AE)"
   },
   "ru-RU": {
     "about": "О проекте",
@@ -747,7 +756,8 @@
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
-    "eo": "Esperanto (eo)"
+    "eo": "Esperanto (eo)",
+    "ar-AE": "العربية (ar-AE)"
   },
   "eo": {
     "about": "Pri la projekto",
@@ -822,6 +832,83 @@
     "el-GR": "Ελληνικά (el-GR)",
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
-    "eo": "Esperanto (eo)"
+    "eo": "Esperanto (eo)",
+    "ar-AE": "العربية (ar-AE)"
+  },
+  "ar-AE": {
+    "about": "حول",
+    "about_close": "إغلاق",
+    "add_quote": "إضافة اقتباس",
+    "anaglyph": "أناغليف",
+    "author": "المؤلف",
+    "base": "أساسي",
+    "blue": "أزرق",
+    "bohemian": "بوهيمي",
+    "book": "صفحة كتاب",
+    "color": "ألوان عشوائية",
+    "colors": "الألوان",
+    "copy_mode": "نسخ",
+    "copy_mode_copied": "تم نسخ الاقتباس!",
+    "copy_title": "نسخ إلى الحافظة",
+    "dark": "داكن",
+    "de-DE": "Deutsch (de-DE)",
+    "default_font": "افتراضي",
+    "document_title": "الساعة الأدبية",
+    "download": "تنزيل",
+    "horizon": "الأفق",
+    "elegant": "أنيق",
+    "en-GB": "English (en-GB)",
+    "en-US": "English (en-US)",
+    "es-ES": "Español (es-ES)",
+    "exit_zen_title": "الخروج من وضع التركيز",
+    "transition": "الانتقال",
+    "transition_none": "بلا انتقال",
+    "transition_fade": "تلاشي",
+    "transition_slide": "انزلاق لطيف",
+    "transition_blur": "ضبابية خفيفة",
+    "transition_zoom": "تكبير طفيف",
+    "fade_mode": "تلاشي",
+    "festive": "احتفالي",
+    "font": "الخط",
+    "fr-FR": "Français (fr-FR)",
+    "frame": "إطار",
+    "fullscreen_mode": "ملء الشاشة",
+    "gray": "رمادي",
+    "green": "أخضر",
+    "handwriting": "خط اليد",
+    "it-IT": "Italiano (it-IT)",
+    "kindle": "Kindle",
+    "language": "اللغة",
+    "light": "فاتح",
+    "made_by": "صنعه",
+    "orange": "برتقالي",
+    "photo": "صورة",
+    "pink": "وردي",
+    "poster": "ملصق",
+    "progressbar_mode": "إظهار شريط التقدم",
+    "pt-PT": "Português (pt-PT)",
+    "purple": "أرجواني",
+    "random": "لغة عشوائية",
+    "report_error": "الإبلاغ عن خطأ",
+    "retro": "قديم",
+    "screensaver_mode": "شاشة التوقف",
+    "share": "مشاركة",
+    "subtle": "هادئ",
+    "system": "النظام",
+    "terminal": "طرفية",
+    "theme": "المظهر",
+    "themes": "المظاهر",
+    "time_mode": "إظهار الوقت",
+    "title": "العنوان",
+    "whatsapp": "WhatsApp",
+    "work_mode": "العمل",
+    "work_mode_title": "إظهار الاقتباسات المناسبة للعمل فقط",
+    "zen_mode": "تركيز",
+    "zen_mode_title": "إخفاء كل ما يشتت انتباهك",
+    "el-GR": "Ελληνικά (el-GR)",
+    "zh-CN": "中文（简体） (zh-CN)",
+    "ru-RU": "Русский (ru-RU)",
+    "eo": "Esperanto (eo)",
+    "ar-AE": "العربية (ar-AE)"
   }
 }

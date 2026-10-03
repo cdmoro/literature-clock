@@ -1,5 +1,6 @@
-import { describe, expect, test } from 'vitest';
-import { getFaviconFileName } from '.';
+import { describe, expect, test, vi } from 'vitest';
+import { doFitQuote, fitQuote, getFaviconFileName } from '.';
+import { createStore } from '../store';
 
 describe('getFaviconFileName', () => {
   const TIMES = {
@@ -20,4 +21,66 @@ describe('getFaviconFileName', () => {
       expect(getFaviconFileName(time)).toEqual(fileName);
     });
   });
+});
+
+test('fits replacement text immediately rather than leaving overflow until the next timer', () => {
+  vi.useFakeTimers();
+  try {
+    createStore();
+    document.body.innerHTML =
+      '<blockquote id="quote" lang="ar" dir="rtl"><p>نص الاقتباس</p><cite>Author</cite><section id="quote-translation">Translation</section></blockquote>';
+    const passage = document.querySelector<HTMLElement>('#quote > p')!;
+    Object.defineProperty(passage, 'clientHeight', { get: () => 100 });
+    Object.defineProperty(passage, 'scrollHeight', { get: () => parseFloat(passage.style.fontSize) * 4 });
+    fitQuote();
+    expect(passage.scrollHeight).toBeLessThanOrEqual(passage.clientHeight + 1);
+  } finally {
+    vi.clearAllTimers();
+    vi.useRealTimers();
+    document.body.innerHTML = '';
+  }
+});
+
+test('preserves the size of a short bilingual quote whose height follows its content', () => {
+  createStore();
+  document.body.innerHTML =
+    '<blockquote id="quote" dir="rtl"><p>نص قصير</p><cite>Author</cite><section id="quote-translation">Translation</section></blockquote>';
+  try {
+    const passage = document.querySelector<HTMLElement>('#quote > p')!;
+    const height = () => parseFloat(passage.style.fontSize) * 1.65;
+    Object.defineProperty(passage, 'clientHeight', { get: height });
+    Object.defineProperty(passage, 'scrollHeight', { get: height });
+    doFitQuote();
+    const size = passage.style.fontSize;
+    expect(parseFloat(size)).toBeGreaterThan(10);
+    doFitQuote();
+    expect(passage.style.fontSize).toBe(size);
+  } finally {
+    document.body.innerHTML = '';
+  }
+});
+
+test('fits the whole bilingual block even when the primary paragraph already fits', () => {
+  vi.useFakeTimers();
+  try {
+    createStore();
+    document.body.innerHTML =
+      '<blockquote id="quote" lang="ar" dir="rtl"><p>نص قصير</p><cite>Book, Author</cite><section id="quote-translation">No translation available</section></blockquote>';
+    const container = document.querySelector<HTMLElement>('#quote')!;
+    const passage = container.querySelector<HTMLElement>('p')!;
+    const cite = container.querySelector<HTMLElement>('cite')!;
+    Object.defineProperty(passage, 'clientHeight', { get: () => 150 });
+    Object.defineProperty(passage, 'scrollHeight', { get: () => parseFloat(passage.style.fontSize) });
+    Object.defineProperty(container, 'clientHeight', { get: () => 120 });
+    Object.defineProperty(container, 'scrollHeight', {
+      get: () => parseFloat(passage.style.fontSize) + parseFloat(cite.style.fontSize || '60') + 60,
+    });
+    fitQuote();
+    expect(container.scrollHeight).toBeLessThanOrEqual(container.clientHeight + 1);
+    expect(parseFloat(passage.style.fontSize)).toBeGreaterThan(10);
+  } finally {
+    vi.clearAllTimers();
+    vi.useRealTimers();
+    document.body.innerHTML = '';
+  }
 });

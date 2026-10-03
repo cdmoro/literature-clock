@@ -42,5 +42,9 @@
   "eo": {
     "choose_color": "Elekti propran koloron por ĉi tiu etoso",
     "reset_color": "Restarigi la defaŭltan koloron de ĉi tiu etoso"
+  },
+  "ar-AE": {
+    "choose_color": "اختر لونًا مخصصًا لهذا المظهر",
+    "reset_color": "استعادة اللون الافتراضي لهذا المظهر"
   }
 }

@@ -1,3 +1,4 @@
+import { setTextLocale } from '../utils/text-direction';
 import { refreshDefaultFontLabel } from './font';
 import { applyLocaleThemeFont } from './locale-fonts';
 import { updateQuoteDescription } from './hide-book-title';
@@ -158,7 +159,7 @@ export async function updateQuote({
       }
 
       if (blockquote) {
-        blockquote.lang = locale.replace(/-draft$/, '');
+        setTextLocale(blockquote, locale);
         applyLocaleThemeFont(blockquote);
         refreshDefaultFontLabel();
         blockquote.innerHTML = '';
@@ -175,6 +176,7 @@ export async function updateQuote({
         }
 
         const cite = document.createElement('cite');
+        cite.dir = 'auto';
         for (const [id, text] of [
           ['hyphen', '— '],
           ['title', quote.title],
@@ -183,6 +185,7 @@ export async function updateQuote({
         ]) {
           const span = document.createElement('span');
           span.id = id;
+          if (id === 'title' || id === 'author') span.dir = 'auto';
           span.textContent = text;
           cite.append(span);
         }

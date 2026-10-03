@@ -1,7 +1,7 @@
 import { beforeEach, afterEach, expect, it, vi } from 'vitest';
 import { createStore, store } from '../store';
 import { initBilingual, renderTranslation } from './bilingual';
-vi.mock('../utils', () => ({ fitQuote: vi.fn() }));
+vi.mock('../utils', () => ({ fitQuote: vi.fn(), loadFontIfNotExists: vi.fn() }));
 const quote = {
   id: '1200-000',
   time: '12:00',
@@ -31,14 +31,15 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 async function translationPanel() {
+  await vi.waitFor(() => expect(document.getElementById('quote-translation')).not.toBeNull());
   const panel = document.getElementById('quote-translation')!;
   await vi.waitFor(() => expect(panel.textContent).not.toContain('Loading translation'));
   return panel;
 }
-it('synchronizes both switches and persists the language', () => {
+it('synchronizes both switches and persists the language', async () => {
   document.getElementById('bilingual')!.click();
   expect(document.getElementById('settings-bilingual')!.getAttribute('aria-checked')).toBe('true');
-  expect(document.getElementById('quote-translation')).not.toBeNull();
+  await vi.waitFor(() => expect(document.getElementById('quote-translation')).not.toBeNull());
   const select = document.querySelector('select')!;
   select.value = 'fr-FR';
   select.dispatchEvent(new Event('change'));
@@ -156,6 +157,7 @@ it('uses the interface selector labels and an explicit locale heading', async ()
   store.set('translation-locale', 'it-IT');
   store.set('bilingual', true);
   expect(document.querySelector('option[value="it-IT"]')!.textContent).toBe('Italiano (it-IT)');
+  await translationPanel();
   const clockSelect = document.querySelector<HTMLSelectElement>('#clock-translation-locale')!;
   expect(clockSelect.selectedOptions[0].textContent).toBe('Italian (it-IT)');
   expect(clockSelect.getAttribute('aria-label')).toBe('Translation language');
@@ -164,6 +166,7 @@ it('uses the interface selector labels and an explicit locale heading', async ()
 
 it('changes translation from the clock and synchronizes settings without changing the primary quote', async () => {
   store.set('bilingual', true);
+  await translationPanel();
   const select = document.querySelector<HTMLSelectElement>('#clock-translation-locale')!;
   select.value = 'fr-FR';
   select.dispatchEvent(new Event('change'));
@@ -216,4 +219,77 @@ it('fetches Russian translations and retains the selected locale', async () => {
   expect(fetch).toHaveBeenLastCalledWith('../times/ru-RU/12_00.json');
   await translationPanel();
   expect(document.querySelector<HTMLSelectElement>('#clock-translation-locale')!.value).toBe('ru-RU');
+});
+
+it('keeps Arabic translation direction independent of the English interface', async () => {
+  store.set('ui-locale', 'en-GB');
+  store.set('translation-locale', 'ar-AE');
+  vi.mocked(fetch).mockResolvedValue({
+    ok: true,
+    json: async () => [{ ...quote, quote_first: 'عند ', quote_time_case: 'الظهر', title: 'Book', author: 'Author' }],
+  } as Response);
+  store.set('bilingual', true);
+  await renderTranslation();
+  const panel = document.getElementById('quote-translation')!;
+  const content = panel.querySelector<HTMLElement>('.translation-content')!;
+  expect(panel.dir).toBe('ltr');
+  expect(content.dir).toBe('rtl');
+  expect(content.lang).toBe('ar-AE');
+  expect(content.querySelector('cite')!.dir).toBe('auto');
+  expect(content.querySelector('bdi')!.textContent).toBe('Author');
+});
+
+it('keeps untranslated notices in Arabic when the main passage is English', async () => {
+  store.set('ui-locale', 'ar-AE');
+  store.set('translation-locale', 'ar-AE');
+  store.set('bilingual', true);
+  await renderTranslation();
+  const content = document.querySelector<HTMLElement>('.translation-content')!;
+  expect(content.lang).toBe('ar-AE');
+  expect(content.dir).toBe('rtl');
+  expect(content.textContent).toContain('لا تتوفر ترجمة');
+});
+
+it('keeps the current bilingual layout until the replacement is fully prepared', async () => {
+  vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, json: async () => [quote] }));
+  store.set('bilingual', true);
+  const previous = await translationPanel();
+  let resolve!: (value: unknown) => void;
+  vi.stubGlobal(
+    'fetch',
+    vi.fn(
+      () =>
+        new Promise((done) => {
+          resolve = done;
+        }),
+    ),
+  );
+  store.set('translation-locale', 'fr-FR');
+  expect(document.getElementById('quote-translation')).toBe(previous);
+  expect(previous.textContent).not.toContain('Loading translation');
+  resolve({ ok: true, json: async () => [{ ...quote, quote_first: 'French replacement' }] });
+  await vi.waitFor(() =>
+    expect(document.getElementById('quote-translation')!.textContent).toContain('French replacement'),
+  );
+  expect(document.getElementById('quote-translation')).not.toBe(previous);
+});
+it('does not restore a pending translation after bilingual mode is disabled', async () => {
+  let resolve!: (value: unknown) => void;
+  vi.stubGlobal(
+    'fetch',
+    vi.fn(
+      () =>
+        new Promise((done) => {
+          resolve = done;
+        }),
+    ),
+  );
+  store.set('bilingual', true);
+  expect(document.getElementById('quote-translation')).toBeNull();
+  store.set('bilingual', false);
+  resolve({ ok: true, json: async () => [quote] });
+  await Promise.resolve();
+  await Promise.resolve();
+  await Promise.resolve();
+  expect(document.getElementById('quote-translation')).toBeNull();
 });

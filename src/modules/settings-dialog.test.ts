@@ -389,3 +389,13 @@ test('production stylesheets load in the opaque preview without changing the mai
   expect(document.getElementById('test-theme-styles')!.hasAttribute('crossorigin')).toBe(true);
   expect(preview.documentElement.dataset.theme).toBe('pink-dark');
 });
+
+test('preview keeps Latin attribution on the right of an Arabic passage', () => {
+  document.body.innerHTML = '<blockquote id="quote" lang="ar-AE" dir="rtl" style="direction:rtl;text-align:start"><p>نص عربي</p><cite dir="auto">Moby Dick, Captain Ahab</cite></blockquote>';
+  const preview = new DOMParser().parseFromString(themePreviewDocument(), 'text/html');
+  expect(preview.querySelector('cite')!.style.textAlign).toBe('right');
+  expect(preview.querySelector('cite')!.dir).toBe('auto');
+  document.getElementById('quote')!.style.textAlign = 'center';
+  const centered = new DOMParser().parseFromString(themePreviewDocument(), 'text/html');
+  expect(centered.querySelector('cite')!.style.textAlign).toBe('center');
+});

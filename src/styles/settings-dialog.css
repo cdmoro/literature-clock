@@ -81,7 +81,7 @@
 }
 #settings-dialog .input-group > :first-child {
   border-radius: 0.35rem 0 0 0.35rem;
-  margin-left: 0;
+  margin-inline-start: 0;
 }
 #settings-dialog .input-group > :last-child {
   border-radius: 0 0.35rem 0.35rem 0;
@@ -90,7 +90,18 @@
   border-radius: 0.35rem;
 }
 #settings-dialog .input-group > select:is(:first-child, :last-child) {
-  margin-left: 0;
+  margin-inline-start: 0;
+  border-radius: 0.35rem;
+}
+/* Joined controls follow the group's direction, including mixed-script labels. */
+#settings-dialog .input-group:dir(rtl) > :first-child:not(:only-child) {
+  border-radius: 0 0.35rem 0.35rem 0;
+}
+#settings-dialog .input-group:dir(rtl) > :last-child:not(:only-child) {
+  border-radius: 0.35rem 0 0 0.35rem;
+}
+/* The hidden prefix leaves this select as the only visible control. */
+#settings-dialog .input-group:dir(rtl) > .input-group-text:first-child + select:last-child {
   border-radius: 0.35rem;
 }
 #settings-dialog .settings-row:has(.settings-switch) {
@@ -114,7 +125,7 @@
   content: '';
   position: absolute;
   top: 3px;
-  left: 3px;
+  inset-inline-start: 3px;
   width: 14px;
   height: 14px;
   border-radius: 50%;
@@ -158,6 +169,9 @@
 #settings-dialog .settings-quote-languages:has(#clear-quote-languages:not([hidden])) summary {
   border-radius: 0.35rem 0 0 0.35rem;
 }
+#settings-dialog .settings-quote-languages:dir(rtl):has(#clear-quote-languages:not([hidden])) summary {
+  border-radius: 0 0.35rem 0.35rem 0;
+}
 #quote-language-picker summary {
   box-sizing: border-box;
   height: 2rem;
@@ -199,7 +213,7 @@
 #settings-dialog #quote-language-picker .quote-language-menu {
   box-sizing: border-box;
   width: 100%;
-  margin-left: 0;
+  margin-inline-start: 0;
   margin-top: 0;
   padding: 0.5rem;
   border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
@@ -332,7 +346,7 @@
   margin: 0.35rem 0 0;
 }
 
-#settings-dialog :is(#remove-custom-font, #clear-quote-languages) {
+#settings-dialog :is(#reset-font, #remove-custom-font, #clear-quote-languages) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -344,13 +358,19 @@
   background: var(--accent-color);
   color: var(--accent-text);
 }
-#settings-dialog :is(#remove-custom-font, #clear-quote-languages)[hidden] {
+#settings-dialog :is(#reset-font, #remove-custom-font, #clear-quote-languages)[hidden] {
   display: none;
 }
 #settings-dialog #font-select {
-  border-radius: 0.35rem 0 0 0.35rem;
+  border-radius: 0;
+  border-start-start-radius: 0.35rem;
+  border-end-start-radius: 0.35rem;
 }
-#settings-dialog .input-group:has(#remove-custom-font[hidden]) #font-select {
+#settings-dialog .input-group:has(#remove-custom-font[hidden]) #reset-font {
+  border-start-end-radius: 0.35rem;
+  border-end-end-radius: 0.35rem;
+}
+#settings-dialog .input-group:has(#reset-font[hidden]):has(#remove-custom-font[hidden]) #font-select {
   border-radius: 0.35rem;
 }
 
@@ -472,7 +492,7 @@
   color: inherit;
   font: inherit;
   font-size: 0.8rem;
-  text-align: left;
+  text-align: start;
 }
 #settings-dialog .settings-theme-option:hover {
   background: color-mix(in srgb, var(--font-color), transparent 94%);
@@ -510,7 +530,7 @@
   overflow-wrap: anywhere;
 }
 #settings-dialog .settings-theme-option[aria-pressed='true']::after {
-  margin-left: auto;
+  margin-inline-start: auto;
 }
 
 #settings-dialog .theme-chevron {
@@ -580,7 +600,7 @@
   border-radius: 0.35rem 0 0 0.35rem;
 }
 #settings-dialog .settings-saved-themes select {
-  padding-right: 2rem;
+  padding-inline-end: 2rem;
 }
 #settings-dialog .settings-saved-themes button {
   height: 2rem;
@@ -612,4 +632,9 @@
 }
 #settings-dialog .settings-saved-themes .input-group > select:first-child {
   border-radius: 0.35rem 0 0 0.35rem;
+}
+
+#settings-dialog:dir(rtl) .settings-switch[aria-checked='true']::after,
+#settings-dialog:dir(rtl) .settings-switch:checked::after {
+  transform: translateX(-17px);
 }

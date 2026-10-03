@@ -1,3 +1,4 @@
+import { setTextLocale } from '../utils/text-direction';
 import { refreshDefaultFontLabel } from './font';
 import { initLanguagePreferences } from './language-preferences';
 import { updateQuote } from './quotes';
@@ -21,6 +22,7 @@ export const DOMINANT_LOCALES: Record<string, Locale> = {
   zh: 'zh-CN',
   ru: 'ru-RU',
   eo: 'eo',
+  ar: 'ar-AE',
 } as const;
 
 const DRAFT_SUFFIX = '-draft';
@@ -118,11 +120,11 @@ export function translateStrings(locale: Locale) {
     ...SETTINGS[getBaseLocale(resolveLocale(locale))],
   };
 
-  document.documentElement.lang = getBaseLocale(locale);
+  setTextLocale(document.documentElement, getBaseLocale(resolveLocale(locale)));
   const baseLocale = getBaseLocale(locale);
-  const aboutLocale = baseLocale === 'zh-CN' || baseLocale === 'ru-RU' || baseLocale === 'eo' ? baseLocale : 'en-GB';
+  const aboutLocale = baseLocale === 'zh-CN' || baseLocale === 'ru-RU' || baseLocale === 'eo' || baseLocale === 'ar-AE' ? baseLocale : 'en-GB';
   const aboutTitle = document.getElementById('about-clock-title');
-  if (aboutTitle?.parentElement) aboutTitle.parentElement.lang = aboutLocale;
+  if (aboutTitle?.parentElement) setTextLocale(aboutTitle.parentElement, aboutLocale);
   document.querySelectorAll<HTMLElement>('[data-about-text]').forEach((element) => {
     element.textContent = ABOUT[aboutLocale][element.dataset.aboutText as keyof (typeof ABOUT)['en-GB']];
   });
@@ -146,6 +148,7 @@ export function translateStrings(locale: Locale) {
     'zh-CN': '用文学引文诉说时间',
     'ru-RU': 'Время в цитатах из книг',
     eo: 'La horo per citaĵoj el libroj',
+    'ar-AE': 'الوقت في اقتباسات من الكتب',
   };
   const description = descriptions[getBaseLocale(locale)] || descriptions['en-GB'];
   document.title = `${time} - ${strings.document_title} — ${description}`;
