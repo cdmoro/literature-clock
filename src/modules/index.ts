@@ -1,3 +1,4 @@
+import { initSpeech } from './speech';
 import { initHideBookTitle } from './hide-book-title';
 import { initBilingual } from './bilingual';
 import { initAboutClock } from './about-clock';
@@ -27,6 +28,7 @@ const MODULES = [
   initStaticMode,
   initReadingControls,
   initQuoteLibrary,
+  initSpeech,
   initClock,
   initCopy,
   initTransitions,

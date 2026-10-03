@@ -28,9 +28,11 @@ export function initQuoteLibrary() {
   open.type = 'button';
   open.innerHTML = readingIcon('history');
   open.setAttribute('aria-haspopup', 'dialog');
-  const copy = group.querySelector('#copy');
-  group.insertBefore(favorite, copy);
-  group.insertBefore(open, copy);
+  const library = document.createElement('span');
+  library.id = 'library-controls';
+  library.className = 'input-group';
+  library.append(favorite, open);
+  (document.getElementById('quote-navigation') || group).after(library);
 
   const dialog = document.createElement('dialog');
   dialog.id = 'quote-library';

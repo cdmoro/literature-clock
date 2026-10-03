@@ -119,9 +119,10 @@ export function cancelPendingQuote() {
 export async function updateQuote({
   time = store.get('time') || (store.get('paused') ? store.get('active-quote')?.time : undefined) || getTime(),
   preserveQuote = false,
+  minuteTick = false,
   variantStep = 0,
   locale: requestedLocale,
-}: { time?: string; preserveQuote?: boolean; variantStep?: number; locale?: Locale } = {}) {
+}: { time?: string; preserveQuote?: boolean; variantStep?: number; locale?: Locale; minuteTick?: boolean } = {}) {
   const request = ++latestRequest;
   cancelQuoteTransition();
   const testQuote = store.get('quote');
@@ -205,5 +206,6 @@ export async function updateQuote({
   );
 
   if (request !== latestRequest) return;
+  document.dispatchEvent(new CustomEvent('quote-rendered', { detail: { minuteTick } }));
   prefetchNextQuotes(locale);
 }

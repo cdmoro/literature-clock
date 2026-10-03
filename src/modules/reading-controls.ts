@@ -65,14 +65,14 @@ export function initReadingControls() {
   group.append(pause);
   const shareGroup = document.getElementById('copy')?.parentElement;
   if (shareGroup?.classList.contains('input-group')) {
-    group.append(...Array.from(shareGroup.children));
-    shareGroup.remove();
+    shareGroup.id = 'quote-actions';
   }
   const navigation = document.createElement('span');
   navigation.id = 'quote-navigation';
   navigation.className = 'input-group';
   navigation.append(previous, counter, next);
   document.getElementById('settings')?.prepend(group, navigation);
+  if (shareGroup?.id === 'quote-actions') navigation.after(shareGroup);
 
   const status = document.createElement('div');
   status.id = 'reading-status';
