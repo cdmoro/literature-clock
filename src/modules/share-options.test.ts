@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
-import { initShareOptions } from './share-options';
+import { initShareOptions, selectedCardOptions } from './share-options';
 import { renderShareCard } from './share-card';
 import { shareQuote, downloadQuote } from './share';
 const { state } = vi.hoisted(() => ({ state: {} as Record<string, unknown> }));
@@ -14,6 +14,8 @@ beforeEach(() => {
   vi.clearAllMocks();
   vi.unstubAllGlobals();
   state.locale = 'en-GB';
+  state['background-pattern'] = 'none';
+  state.color = '#d24335';
   state.quote = undefined;
   state['active-quote'] = { id: '1200-001', quote_raw: 'Original quote', locale: 'en-GB', time: '12:00' };
   document.documentElement.dataset.theme = 'base-dark';
@@ -43,6 +45,7 @@ it('changes image format and appearance without changing the live clock', async 
     'portrait',
     'light',
     undefined,
+    { pattern: 'none', color: undefined },
   );
   expect(button('Vertical').getAttribute('aria-pressed')).toBe('true');
   expect(button('Light').getAttribute('aria-pressed')).toBe('true');
@@ -118,4 +121,53 @@ it('cycles image themes in both directions without changing the live theme', asy
   button('Previous theme').click();
   expect(document.querySelector('.share-theme-carousel span')?.textContent).toBe('Base');
   expect(document.documentElement.dataset.theme).toBe('base-dark');
+});
+
+it('changes the preview colour and pattern without touching clock preferences or the URL', async () => {
+  const originalUrl = location.href;
+  const input = document.getElementById('share-preview-color') as HTMLInputElement;
+  const select = document.getElementById('share-preview-pattern') as HTMLSelectElement;
+  input.value = '#123456';
+  input.dispatchEvent(new Event('input'));
+  select.value = 'dots';
+  select.dispatchEvent(new Event('change'));
+  await Promise.resolve();
+  expect(renderShareCard).toHaveBeenLastCalledWith(
+    expect.anything(),
+    expect.anything(),
+    expect.anything(),
+    expect.anything(),
+    { color: '#123456', pattern: 'dots' },
+  );
+  expect(state.color).toBe('#d24335');
+  expect(state['background-pattern']).toBe('none');
+  expect(location.href).toBe(originalUrl);
+  expect(document.documentElement.dataset.theme).toBe('base-dark');
+  button('Next theme').click();
+  expect(select.disabled).toBe(true);
+  expect(select.closest('label')!.hidden).toBe(true);
+  button('Previous theme').click();
+  expect(select.disabled).toBe(false);
+  expect(select.value).toBe('dots');
+  button('Close').click();
+  expect(selectedCardOptions()).toEqual({ pattern: 'none', color: undefined });
+});
+
+it('starts each popup from the saved clock pattern and clears its temporary colour', () => {
+  button('Close').click();
+  state['background-pattern'] = 'grid';
+  document.getElementById('share')!.click();
+  const input = document.getElementById('share-preview-color') as HTMLInputElement;
+  input.value = '#abcdef';
+  input.dispatchEvent(new Event('input'));
+  button('Close').click();
+  document.getElementById('share')!.click();
+  expect((document.getElementById('share-preview-pattern') as HTMLSelectElement).value).toBe('grid');
+  expect(renderShareCard).toHaveBeenLastCalledWith(
+    expect.anything(),
+    expect.anything(),
+    expect.anything(),
+    expect.anything(),
+    { color: undefined, pattern: 'grid' },
+  );
 });

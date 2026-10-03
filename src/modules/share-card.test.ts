@@ -2,6 +2,7 @@ import { beforeEach, expect, it, vi } from 'vitest';
 import html2canvas from 'html2canvas-pro';
 import { renderShareCard } from './share-card';
 import type { ResolvedQuote } from '../types';
+vi.mock('../store', () => ({ store: { get: () => 'none' } }));
 vi.mock('html2canvas-pro', () => ({ default: vi.fn() }));
 const quote = {
   locale: 'es-ES',
@@ -49,4 +50,35 @@ it('grows unusually long quotes instead of clipping their content', async () => 
   await renderShareCard(quote, 'square');
   expect(vi.mocked(html2canvas).mock.calls[0][1]?.height).toBe(2342);
   height.mockRestore();
+});
+
+it('resolves preview colour and pattern on an isolated palette and exports its tile dimensions', async () => {
+  document.documentElement.dataset.theme = 'base-light';
+  const liveStyle = document.documentElement.getAttribute('style');
+  const original = getComputedStyle;
+  const computed = vi.spyOn(window, 'getComputedStyle').mockImplementation((element) => {
+    if (element.classList.contains('background-pattern-surface')) {
+      expect((element as HTMLElement).dataset.backgroundPattern).toBe('grid');
+      expect((element as HTMLElement).style.getPropertyValue('--accent-color')).toBe('#123456');
+      return {
+        color: 'rgb(47, 46, 44)',
+        backgroundColor: 'rgb(240, 240, 240)',
+        backgroundImage: 'url("/pattern.png")',
+        backgroundSize: '24px 24px',
+        backgroundPosition: '0px 0px',
+        getPropertyValue: (name: string) => (name === '--accent-color' ? '#123456' : 'serif'),
+      } as CSSStyleDeclaration;
+    }
+    return original(element);
+  });
+  vi.mocked(html2canvas).mockImplementation(async (element) => {
+    expect(element.style.backgroundSize).toBe('24px 24px');
+    expect(element.style.backgroundImage).toContain('/pattern.png');
+    expect(element.firstElementChild?.getAttribute('style')).toContain('rgb(18, 52, 86)');
+    return document.createElement('canvas');
+  });
+  await renderShareCard(quote, 'square', undefined, undefined, { color: '#123456', pattern: 'grid' });
+  expect(document.documentElement.getAttribute('style')).toBe(liveStyle);
+  expect(document.documentElement.dataset.theme).toBe('base-light');
+  computed.mockRestore();
 });

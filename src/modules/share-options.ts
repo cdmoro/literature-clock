@@ -4,11 +4,16 @@ import { readingStrings } from './reading-ui';
 import { closeDialogOnBackdropClick } from '../utils/dialog';
 import { renderShareCard, type CardAppearance, type CardFormat } from './share-card';
 import { downloadQuote, shareQuote } from './share';
+import { BACKGROUND_PATTERNS, type BackgroundPattern, supportsBackgroundPattern } from '../utils/background-patterns';
+import SETTINGS from '../strings/settings.json';
 import STRINGS from '../strings/share.json';
 
 let format: CardFormat = 'square';
 let appearance: CardAppearance | undefined;
 let theme: string | undefined;
+let pattern: BackgroundPattern | undefined;
+let color: string | undefined;
+export const selectedCardOptions = () => ({ pattern: pattern ?? store.get('background-pattern') ?? 'none', color });
 export const selectedCardTheme = () => theme;
 export const selectedCardAppearance = () => appearance;
 export const selectedCardFormat = () => format;
@@ -30,6 +35,9 @@ export function initShareOptions() {
     if (!quote || store.get('quote')) return;
     const snapshot = { ...quote };
     const strings = shareOptionStrings();
+    const settingsStrings = SETTINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))];
+    pattern = store.get('background-pattern') || 'none';
+    color = undefined;
     const dialog = document.createElement('dialog');
     dialog.id = 'share-preview';
     dialog.setAttribute('aria-labelledby', 'share-preview-title');
@@ -139,6 +147,33 @@ export function initShareOptions() {
     }
     updateThemeName();
     controls.append(carousel);
+    const colorInput = document.createElement('input');
+    colorInput.type = 'color';
+    colorInput.id = 'share-preview-color';
+    colorInput.value = store.get('color') || '#d24335';
+    colorInput.setAttribute('aria-label', settingsStrings.settings_color);
+    colorInput.title = settingsStrings.settings_color;
+    colorInput.addEventListener('input', () => {
+      color = colorInput.value;
+      void refresh();
+    });
+    carousel.append(colorInput);
+    const patternControl = document.createElement('label');
+    patternControl.className = 'share-pattern-control';
+    const patternCaption = document.createElement('span');
+    patternCaption.textContent = settingsStrings.settings_background_pattern;
+    const patternSelect = document.createElement('select');
+    patternSelect.id = 'share-preview-pattern';
+    for (const value of BACKGROUND_PATTERNS) {
+      patternSelect.append(new Option(settingsStrings[`settings_pattern_${value}`], value));
+    }
+    patternSelect.value = pattern;
+    patternSelect.addEventListener('change', () => {
+      pattern = patternSelect.value as BackgroundPattern;
+      void refresh();
+    });
+    patternControl.append(patternCaption, patternSelect);
+    controls.append(patternControl);
     const preview = document.createElement('div');
     preview.className = 'share-preview-image';
     preview.setAttribute('role', 'group');
@@ -206,11 +241,16 @@ export function initShareOptions() {
     let revision = 0;
     dialog.addEventListener('close', () => {
       revision++;
+      pattern = undefined;
+      color = undefined;
       dialog.remove();
       button.focus();
     });
     const refresh = async () => {
       const current = ++revision;
+      const supported = supportsBackgroundPattern(currentTheme());
+      patternControl.hidden = !supported;
+      patternSelect.disabled = !supported;
       formatButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === format)));
       const variant = appearance || (document.documentElement.dataset.theme?.endsWith('-dark') ? 'dark' : 'light');
       appearanceButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === variant)));
@@ -218,7 +258,7 @@ export function initShareOptions() {
       preview.replaceChildren();
       copyImage.disabled = true;
       try {
-        const canvas = await renderShareCard(snapshot, format, appearance, theme);
+        const canvas = await renderShareCard(snapshot, format, appearance, theme, selectedCardOptions());
         if (current !== revision) return;
         canvas.style.width = 'auto';
         canvas.style.height = 'auto';

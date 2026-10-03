@@ -1,10 +1,11 @@
 /* Subtle gradient textures inspired by https://projects.verou.me/css3patterns/.
    Colours follow the active skin, including custom accents and system appearance. */
-html[data-background-pattern]:not([data-background-pattern='none']) {
+[data-background-pattern]:not([data-background-pattern='none']) {
   --pattern-ink: color-mix(in srgb, var(--font-color) 7%, var(--background));
 }
 
-html[data-background-pattern]:not([data-background-pattern='none']) body {
+html[data-background-pattern]:not([data-background-pattern='none']) body,
+.background-pattern-surface[data-background-pattern]:not([data-background-pattern='none']) {
   background-image: var(--pattern-image);
   background-size: var(--pattern-size);
   background-position: var(--pattern-position, 0 0);
@@ -12,33 +13,29 @@ html[data-background-pattern]:not([data-background-pattern='none']) body {
 }
 
 [data-background-pattern='dots'] {
+  --pattern-position: 0 0;
   --pattern-image: radial-gradient(circle, var(--pattern-ink) 1px, transparent 1.5px);
   --pattern-size: 16px 16px;
 }
 
 [data-background-pattern='diagonal'] {
+  --pattern-position: 0 0;
   --pattern-image: repeating-linear-gradient(135deg, var(--pattern-ink) 0 1px, transparent 1px 12px);
   --pattern-size: 17px 17px;
 }
 
 [data-background-pattern='grid'] {
+  --pattern-position: 0 0;
   --pattern-image: linear-gradient(var(--pattern-ink) 1px, transparent 1px),
     linear-gradient(90deg, var(--pattern-ink) 1px, transparent 1px);
   --pattern-size: 24px 24px;
 }
 
 [data-background-pattern='zigzag'] {
+  --pattern-position: -16px 0, -16px 0, 0 0, 0 0;
   --pattern-image: linear-gradient(135deg, var(--pattern-ink) 25%, transparent 25%),
     linear-gradient(225deg, var(--pattern-ink) 25%, transparent 25%),
     linear-gradient(315deg, var(--pattern-ink) 25%, transparent 25%),
     linear-gradient(45deg, var(--pattern-ink) 25%, transparent 25%);
   --pattern-size: 32px 32px;
-}
-
-[data-background-pattern='zigzag'] body {
-  background-position:
-    -16px 0,
-    -16px 0,
-    0 0,
-    0 0;
 }

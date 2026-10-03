@@ -4,6 +4,7 @@ import {
   selectedCardFormat,
   selectedCardAppearance,
   selectedCardTheme,
+  selectedCardOptions,
   shareOptionStrings,
 } from './share-options';
 import type { ResolvedQuote } from '../types';
@@ -27,7 +28,7 @@ export function initShare() {
 
 export async function getCanvas(format: CardFormat = selectedCardFormat(), quote = store.get('active-quote')) {
   if (!quote) return;
-  return renderShareCard({ ...quote }, format, selectedCardAppearance(), selectedCardTheme());
+  return renderShareCard({ ...quote }, format, selectedCardAppearance(), selectedCardTheme(), selectedCardOptions());
 }
 
 export async function shareQuote(snapshot?: ResolvedQuote) {

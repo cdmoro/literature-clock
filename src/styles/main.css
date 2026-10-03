@@ -796,3 +796,20 @@ select:dir(rtl) {
   position: relative;
   z-index: 1;
 }
+
+.share-pattern-control {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.share-pattern-control[hidden] { display: none; }
+#share-preview-color {
+  width: 2.25rem;
+  height: 30px;
+  padding: .25rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
+  border-radius: 0 .25rem .25rem 0;
+  background: var(--background);
+  cursor: pointer;
+}
+.share-theme-carousel:has(#share-preview-color) > button:last-of-type { border-radius: 0; }

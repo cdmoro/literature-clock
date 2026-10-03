@@ -1,3 +1,5 @@
+import { store } from '../store';
+import { type BackgroundPattern, supportsBackgroundPattern } from '../utils/background-patterns';
 import html2canvas from 'html2canvas-pro';
 import type { ResolvedQuote } from '../types';
 import { loadGoogleFont } from '../utils/google-font';
@@ -7,6 +9,10 @@ import { quoteMarkup } from '../utils/quote-markup';
 export const cardFormats = { square: [1080, 1080], portrait: [1080, 1920], landscape: [1920, 1080] } as const;
 export type CardFormat = keyof typeof cardFormats;
 export type CardAppearance = 'light' | 'dark';
+export interface CardOptions {
+  pattern?: BackgroundPattern;
+  color?: string;
+}
 const themeFontLoads = new Map<string, Promise<void>>();
 
 /** Render a snapshot of the quote, without viewport dimensions or clock animation. */
@@ -15,6 +21,7 @@ export async function renderShareCard(
   format: CardFormat,
   appearance?: CardAppearance,
   theme?: string,
+  options: CardOptions = {},
 ): Promise<HTMLCanvasElement> {
   const [width, height] = cardFormats[format];
   const bodyStyle = getComputedStyle(document.body);
@@ -39,18 +46,29 @@ export async function renderShareCard(
   } else {
     palette.style.setProperty('--background-image', 'none');
   }
+  const pattern = supportsBackgroundPattern(skin)
+    ? options.pattern || store.get('background-pattern') || 'none'
+    : 'none';
+  const customColor = options.color && /^#[0-9a-f]{6}$/i.test(options.color) ? options.color : undefined;
+  if (customColor) {
+    palette.classList.add('custom-accent');
+    palette.style.setProperty('--accent-color', customColor);
+  }
+  palette.classList.add('background-pattern-surface');
+  palette.dataset.backgroundPattern = pattern;
   palette.style.color = 'var(--font-color)';
   palette.style.backgroundColor = 'var(--background)';
-  palette.style.backgroundImage = 'var(--background-image, none)';
+  if (pattern === 'none') palette.style.backgroundImage = 'var(--background-image, none)';
   document.body.append(palette);
   const paletteStyle = getComputedStyle(palette);
-  const color = appearance || theme ? paletteStyle.color : bodyStyle.color;
-  const backgroundColor = appearance || theme ? paletteStyle.backgroundColor : bodyStyle.backgroundColor;
-  const backgroundImage = appearance || theme ? paletteStyle.backgroundImage : bodyStyle.backgroundImage;
-  const accent =
-    appearance || theme
-      ? paletteStyle.getPropertyValue('--accent-color')
-      : getComputedStyle(document.documentElement).getPropertyValue('--accent-color');
+  const patternChanged = pattern !== (document.documentElement.dataset.backgroundPattern || 'none');
+  const isolated = appearance || theme || customColor || patternChanged || pattern !== 'none';
+  const color = isolated ? paletteStyle.color : bodyStyle.color;
+  const backgroundColor = isolated ? paletteStyle.backgroundColor : bodyStyle.backgroundColor;
+  const backgroundImage = isolated ? paletteStyle.backgroundImage : bodyStyle.backgroundImage;
+  const accent = isolated
+    ? paletteStyle.getPropertyValue('--accent-color')
+    : getComputedStyle(document.documentElement).getPropertyValue('--accent-color');
   const localeFont = theme ? getLocaleThemeFont(theme, quote.locale) : undefined;
   const fontFamily = theme
     ? localeFont
@@ -72,6 +90,8 @@ export async function renderShareCard(
       }
     }
   }
+  const backgroundSize = pattern !== 'none' ? paletteStyle.backgroundSize : 'cover';
+  const backgroundPosition = pattern !== 'none' ? paletteStyle.backgroundPosition : 'center';
   palette.remove();
   Object.assign(card.style, {
     position: 'fixed',
@@ -87,8 +107,8 @@ export async function renderShareCard(
     color,
     backgroundColor,
     backgroundImage,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    backgroundSize,
+    backgroundPosition,
     fontFamily,
     lineHeight: quote.locale.startsWith('ar') ? '1.65' : '1.3',
     overflowWrap: 'anywhere',
