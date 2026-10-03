@@ -93,6 +93,13 @@
   margin-inline-start: 0;
   border-radius: 0.35rem;
 }
+/* Joined controls follow the group's direction, including mixed-script labels. */
+#settings-dialog .input-group:dir(rtl) > :first-child:not(:only-child) {
+  border-radius: 0 0.35rem 0.35rem 0;
+}
+#settings-dialog .input-group:dir(rtl) > :last-child:not(:only-child) {
+  border-radius: 0.35rem 0 0 0.35rem;
+}
 #settings-dialog .settings-row:has(.settings-switch) {
   display: grid;
   grid-template-columns: 1fr auto;
