@@ -84,9 +84,9 @@ export function themePreviewDocument() {
     const align = appearance.textAlign || 'start';
     const rtl = appearance.direction === 'rtl' || originalQuote.dir === 'rtl';
     const attribution = quote.querySelector<HTMLElement>(':scope > cite');
-    if (attribution) attribution.style.textAlign =
-      align === 'start' ? (rtl ? 'right' : 'left') :
-      align === 'end' ? (rtl ? 'left' : 'right') : align;
+    if (attribution)
+      attribution.style.textAlign =
+        align === 'start' ? (rtl ? 'right' : 'left') : align === 'end' ? (rtl ? 'left' : 'right') : align;
     // Clamp only the text, leaving themed bubbles, padding and borders intact.
     for (const [selector, className] of [
       [':scope > p', 'preview-passage'],
@@ -150,6 +150,9 @@ export function initThemePicker(dialog: HTMLDialogElement) {
     preview.hidden = expanded;
   };
   toggle.addEventListener('click', () => setExpanded(list.hidden));
+  document.addEventListener('click', (event) => {
+    if (!list.hidden && event.target instanceof Node && !picker.contains(event.target)) setExpanded(false);
+  });
   list.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
     event.preventDefault();
