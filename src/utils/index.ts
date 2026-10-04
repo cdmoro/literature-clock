@@ -89,6 +89,7 @@ export function doFitQuote() {
     const container = quote.closest<HTMLElement>('#quote');
     const translation = container?.querySelector<HTMLElement>('#quote-translation');
     const bilingual = !!translation;
+    container?.classList.remove('quote-scroll');
     if (quote.style.maxHeight === 'none') quote.style.removeProperty('max-height');
     const updateTranslationSize = () => {
       if (translation) translation.style.fontSize = `${Math.min(24, Math.max(14, fontSize * 0.55))}px`;
@@ -113,9 +114,25 @@ export function doFitQuote() {
       ? maxHeight + (passageStyle.boxSizing === 'border-box' ? 0 : padding)
       : quote.clientHeight;
 
+    const passageOverflowsWidth = () => {
+      if (quote.scrollWidth <= quote.clientWidth + 1) return false;
+      // RTL scroll dimensions include decorative bubble tails. Measure the
+      // actual text so ornaments cannot force an otherwise fitting quote down.
+      const range = document.createRange();
+      if (typeof range.getBoundingClientRect !== 'function') return true;
+      const box = quote.getBoundingClientRect();
+      const textNodes = document.createTreeWalker(quote, NodeFilter.SHOW_TEXT);
+      for (let node = textNodes.nextNode(); node; node = textNodes.nextNode()) {
+        range.selectNodeContents(node);
+        const text = range.getBoundingClientRect();
+        if (text.width > 0 && (text.left < box.left - 1 || text.right > box.right + 1)) return true;
+      }
+      return false;
+    };
+
     // Also keep the attribution and translation within the bilingual container.
-    while (quote.scrollHeight > heightBudget + 1 || quote.scrollWidth > quote.clientWidth + 1 || containerOverflows()) {
-      if (fontSize <= (bilingual ? 18 : 10)) break;
+    while (quote.scrollHeight > heightBudget + 1 || passageOverflowsWidth() || containerOverflows()) {
+      if (fontSize <= 18) break;
       fontSize -= 1;
       quote.style.fontSize = `${fontSize}px`;
       updateTranslationSize();
@@ -123,8 +140,10 @@ export function doFitQuote() {
         cite.style.fontSize = `${fontSize < 19 ? 10 : fontSize * citeFactor}px`;
       }
     }
-    // Preserve readable text when a long translation needs the scrollport.
-    if (bilingual && quote.scrollHeight > heightBudget + 1) quote.style.maxHeight = 'none';
+    // Long passages stay readable and use the same bounded scrollport as translations.
+    const needsScroll = quote.scrollHeight > heightBudget + 1;
+    if (needsScroll) quote.style.maxHeight = 'none';
+    container?.classList.toggle('quote-scroll', needsScroll);
   }
 }
 

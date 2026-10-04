@@ -157,3 +157,42 @@ test('a long translation cannot shrink the original below a readable size', () =
     document.body.innerHTML = '';
   }
 });
+
+test.each([1, 2])('measures RTL text instead of bubble decorations (text width factor %s)', (factor) => {
+  createStore();
+  store.set('theme', 'base-light', false);
+  document.body.innerHTML = '<blockquote id="quote" dir="rtl"><p style="max-height: 400px">Arabic quote</p><cite>Author</cite></blockquote>';
+  const passage = document.querySelector<HTMLElement>('#quote > p')!;
+  Object.defineProperty(passage, 'clientWidth', { get: () => 100 });
+  Object.defineProperty(passage, 'scrollWidth', { get: () => Math.max(100, parseFloat(passage.style.fontSize) * factor) + 15 });
+  vi.spyOn(passage, 'getBoundingClientRect').mockReturnValue({ left: 0, right: 100 } as DOMRect);
+  vi.spyOn(document, 'createRange').mockReturnValue({
+    selectNodeContents: vi.fn(),
+    getBoundingClientRect: () => ({ left: 0, right: parseFloat(passage.style.fontSize) * factor, width: parseFloat(passage.style.fontSize) * factor }),
+  } as unknown as Range);
+  try {
+    doFitQuote();
+    expect(passage.style.fontSize).toBe(factor === 1 ? '75px' : '50px');
+  } finally {
+    vi.restoreAllMocks();
+    document.body.innerHTML = '';
+    localStorage.clear();
+  }
+});
+
+test('long single-language passages stay readable and scroll instead of overflowing', () => {
+  createStore();
+  document.body.innerHTML = '<blockquote id="quote"><p style="max-height: 30px">Long quote</p><cite>Author</cite></blockquote>';
+  try {
+    const container = document.querySelector<HTMLElement>('#quote')!;
+    const passage = container.querySelector<HTMLElement>('p')!;
+    Object.defineProperty(passage, 'scrollHeight', { get: () => parseFloat(passage.style.fontSize) * 3 });
+    doFitQuote();
+    expect(passage.style.fontSize).toBe('18px');
+    expect(passage.style.maxHeight).toBe('none');
+    expect(container.classList.contains('quote-scroll')).toBe(true);
+  } finally {
+    document.body.innerHTML = '';
+    localStorage.clear();
+  }
+});
