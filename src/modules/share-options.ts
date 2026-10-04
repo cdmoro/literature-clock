@@ -241,9 +241,13 @@ export function initShareOptions() {
     actions.className = 'share-preview-actions';
     const setActionContent = (target: HTMLButtonElement, text: string, icon: string) => {
       target.setAttribute('aria-label', text);
+      target.title = text;
       target.innerHTML = icon;
       target.querySelector('svg')?.setAttribute('aria-hidden', 'true');
-      target.append(document.createTextNode(text));
+      const label = document.createElement('span');
+      label.className = 'share-action-label';
+      label.textContent = text;
+      target.append(label);
     };
     const copyText = document.createElement('button');
     copyText.type = 'button';
