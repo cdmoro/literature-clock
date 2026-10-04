@@ -8,6 +8,9 @@ import { downloadQuote, shareQuote } from './share';
 import { BACKGROUND_PATTERNS, type BackgroundPattern, supportsBackgroundPattern } from '../utils/background-patterns';
 import SETTINGS from '../strings/settings.json';
 import STRINGS from '../strings/share.json';
+import copyIcon from '../assets/copy.svg?raw';
+import shareIcon from '../assets/share.svg?raw';
+import downloadIcon from '../assets/download.svg?raw';
 
 let format: CardFormat = 'square';
 let appearance: CardAppearance | undefined;
@@ -115,7 +118,16 @@ export function initShareOptions() {
       appearanceButtons.set(value, option);
       appearanceGroup.append(option);
     }
-    controls.append(formatGroup, appearanceGroup);
+    const field = (caption: string, control: HTMLElement) => {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'share-control';
+      const label = document.createElement('span');
+      label.className = 'share-control-caption';
+      label.textContent = caption;
+      wrapper.append(label, control);
+      return wrapper;
+    };
+    controls.append(field(strings.format, formatGroup), field(strings.appearance, appearanceGroup));
     const themes = [...document.querySelectorAll<HTMLOptionElement>('#theme-select option')].filter(
       (option) => option.value !== 'color',
     );
@@ -153,7 +165,7 @@ export function initShareOptions() {
       if (step === -1) carousel.append(themeName);
     }
     updateThemeName();
-    controls.append(carousel);
+    controls.append(field(strings.theme, carousel));
     const colorInput = document.createElement('input');
     colorInput.type = 'color';
     colorInput.id = 'share-preview-color';
@@ -164,7 +176,12 @@ export function initShareOptions() {
       color = colorInput.value;
       void refresh();
     });
-    carousel.append(colorInput);
+    const colorControl = document.createElement('label');
+    colorControl.className = 'share-control';
+    const colorCaption = document.createElement('span');
+    colorCaption.textContent = settingsStrings.settings_color;
+    colorControl.append(colorCaption, colorInput);
+    controls.append(colorControl);
     const patternControl = document.createElement('label');
     patternControl.className = 'share-pattern-control';
     const patternCaption = document.createElement('span');
@@ -222,13 +239,32 @@ export function initShareOptions() {
     imageArea.append(previewLabel, preview);
     const actions = document.createElement('div');
     actions.className = 'share-preview-actions';
-    for (const [text, action] of [
-      [strings.share, shareQuote],
-      [strings.download, downloadQuote],
+    const setActionContent = (target: HTMLButtonElement, text: string, icon: string) => {
+      target.setAttribute('aria-label', text);
+      target.innerHTML = icon;
+      target.querySelector('svg')?.setAttribute('aria-hidden', 'true');
+      target.append(document.createTextNode(text));
+    };
+    const copyText = document.createElement('button');
+    copyText.type = 'button';
+    setActionContent(copyText, fontStrings.copy_title, copyIcon);
+    copyText.disabled = typeof navigator.clipboard?.writeText !== 'function';
+    copyText.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(snapshot.quote_raw);
+        status.textContent = fontStrings.copy_mode_copied;
+      } catch {
+        status.textContent = strings.textCopyFailed;
+      }
+    });
+    actions.append(copyText);
+    for (const [text, action, icon] of [
+      [strings.share, shareQuote, shareIcon],
+      [strings.download, downloadQuote, downloadIcon],
     ] as const) {
       const actionButton = document.createElement('button');
       actionButton.type = 'button';
-      actionButton.textContent = text;
+      setActionContent(actionButton, text, icon);
       actionButton.addEventListener('click', async () => {
         actionButton.disabled = true;
         try {
@@ -242,7 +278,11 @@ export function initShareOptions() {
     }
     const copyImage = document.createElement('button');
     copyImage.type = 'button';
-    copyImage.textContent = strings.copyImage;
+    setActionContent(
+      copyImage,
+      strings.copyImage,
+      '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1"/><path d="m3 17 6-6 4 4 3-3 5 5"/></svg>',
+    );
     const canCopyImage = typeof ClipboardItem !== 'undefined' && typeof navigator.clipboard?.write === 'function';
     copyImage.disabled = true;
     if (!canCopyImage) copyImage.title = strings.copyUnavailable;

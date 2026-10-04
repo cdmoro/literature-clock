@@ -270,6 +270,11 @@ test('theme list stays collapsed, supports stepping and closes after choosing or
   expect(list.hidden).toBe(false);
   expect(preview.hidden).toBe(true);
   expect(toggle.getAttribute('aria-expanded')).toBe('true');
+  document.querySelector<HTMLElement>('#settings-dialog h2')?.click();
+  document.body.click();
+  expect(list.hidden).toBe(true);
+  expect(preview.hidden).toBe(false);
+  toggle.click();
   document.querySelector<HTMLButtonElement>('.settings-theme-option[data-value="green"]')!.click();
   await Promise.resolve();
   expect(store.get('theme')).toBe('green-system');

@@ -6,7 +6,12 @@ const { state } = vi.hoisted(() => ({ state: {} as Record<string, unknown> }));
 vi.mock('../store', () => ({ store: { get: (key: string) => state[key], subscribe: vi.fn() } }));
 vi.mock('./locales', () => ({
   getBaseLocale: () => 'en-GB',
-  getStrings: () => ({ font: 'Font', default_font: 'Default font' }),
+  getStrings: () => ({
+    font: 'Font',
+    default_font: 'Default font',
+    copy_title: 'Copy quote',
+    copy_mode_copied: 'Quote copied!',
+  }),
 }));
 vi.mock('./share', () => ({
   shareQuote: vi.fn().mockResolvedValue(undefined),
@@ -215,4 +220,19 @@ it('offers large circles as an independent image pattern', () => {
   select.dispatchEvent(new Event('change'));
   expect(selectedCardOptions().pattern).toBe('circles');
   expect(state['background-pattern']).toBe('none');
+});
+
+it('copies the preview text even after the live quote changes', async () => {
+  const writeText = vi.fn().mockResolvedValue(undefined);
+  vi.stubGlobal('navigator', { clipboard: { writeText } });
+  button('Close').click();
+  document.getElementById('share')!.click();
+  await vi.waitFor(() => expect(document.querySelector('.share-preview-image canvas')).not.toBeNull());
+  state['active-quote'] = { quote_raw: 'New minute' };
+  button('Copy quote').click();
+  await vi.waitFor(() =>
+    expect(document.querySelector('#share-preview [role="status"]')?.textContent).toBe('Quote copied!'),
+  );
+  expect(writeText).toHaveBeenCalledWith('Original quote');
+  expect(document.querySelector('#share-preview [role="status"]')?.textContent).toBe('Quote copied!');
 });
