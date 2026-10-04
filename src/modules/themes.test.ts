@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { createStore, store } from '../store';
-import { initTheme } from './themes';
+import { initTheme, setTheme } from './themes';
 
 vi.mock('../utils', () => ({ doFitQuote: vi.fn(), fitQuote: vi.fn(), loadFontIfNotExists: vi.fn() }));
 vi.mock('./font', () => ({ THEME_FONTS: {}, resetFont: vi.fn(), refreshDefaultFontLabel: vi.fn() }));
@@ -9,10 +9,15 @@ vi.mock('./horizon', () => ({ setDayParameters: vi.fn() }));
 let systemChange: (event: { matches: boolean }) => void;
 
 beforeEach(() => {
-  vi.stubGlobal('matchMedia', vi.fn(() => ({
-    matches: false,
-    addEventListener: (_event: string, callback: typeof systemChange) => { systemChange = callback; },
-  })));
+  vi.stubGlobal(
+    'matchMedia',
+    vi.fn(() => ({
+      matches: false,
+      addEventListener: (_event: string, callback: typeof systemChange) => {
+        systemChange = callback;
+      },
+    })),
+  );
   document.body.innerHTML = `
     <select id="theme-select"><option value="base">Base</option><option value="retro">Retro</option></select>
     <select id="variant-select"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select>
@@ -20,6 +25,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
+  vi.restoreAllMocks();
   vi.unstubAllGlobals();
   localStorage.clear();
   history.replaceState({}, '', '/');
@@ -28,6 +34,60 @@ afterEach(() => {
   document.documentElement.removeAttribute('class');
   delete document.documentElement.dataset.theme;
   delete document.documentElement.dataset.variant;
+});
+
+function addRandomColors() {
+  document.querySelector('#theme-select')!.insertAdjacentHTML(
+    'beforeend',
+    `
+    <optgroup id="colors"><option value="color">Random</option><option value="pink">Pink</option>
+    <option value="green">Green</option><option value="gray">Gray</option></optgroup>`,
+  );
+  document.body.insertAdjacentHTML('beforeend', '<input id="settings-color-picker" type="color">');
+  vi.spyOn(Math, 'random').mockReturnValue(0);
+}
+
+test('random colors ignore custom accents, disable both pickers and never repeat the visible palette', () => {
+  addRandomColors();
+  history.replaceState({}, '', '/?theme=color-light&color=%23123456');
+  createStore();
+  initTheme();
+  expect(document.documentElement.dataset.theme).toBe('pink-light');
+  expect(store.get('color')).toBe('#ff89d8');
+  expect(document.documentElement.style.getPropertyValue('--accent-color')).toBe('');
+  expect(new URLSearchParams(location.search).has('color')).toBe(false);
+  document.querySelectorAll<HTMLInputElement>('#color-picker, #settings-color-picker').forEach((picker) => {
+    expect(picker.disabled).toBe(true);
+    picker.value = '#123456';
+    picker.dispatchEvent(new Event('input'));
+    expect(store.get('color')).toBe('#ff89d8');
+  });
+  setTheme({ syncToUrl: false });
+  expect(document.documentElement.dataset.theme).toBe('green-light');
+  expect(store.get('color')).toBe('#2ecc71');
+  setTheme({ syncToUrl: false });
+  expect(document.documentElement.dataset.theme).toBe('pink-light');
+  expect(store.get('theme')).toBe('color-light');
+  changeTheme();
+  expect(document.querySelector<HTMLInputElement>('#color-picker')!.disabled).toBe(false);
+});
+
+test('selecting random after a custom accent follows the dark palette and retains random system mode', () => {
+  addRandomColors();
+  history.replaceState({}, '', '/?color=%23123456');
+  createStore();
+  initTheme();
+  document.querySelector<HTMLSelectElement>('#theme-select')!.value = 'color';
+  setTheme();
+  expect(store.get('color')).toBe('#ff89d8');
+  systemChange({ matches: true });
+  expect(document.documentElement.dataset.theme).toBe('pink-dark');
+  expect(store.get('theme')).toBe('color-system');
+  vi.spyOn(Math, 'random').mockReturnValue(0.99);
+  document.querySelector<HTMLSelectElement>('#variant-select')!.value = 'dark';
+  setTheme();
+  expect(document.documentElement.dataset.theme).toBe('gray-dark');
+  expect(store.get('color')).toBe('#f1f1f1');
 });
 
 function changeTheme() {
@@ -79,13 +139,22 @@ describe('theme color URLs', () => {
 });
 
 const presets = {
-  pink: '#ff89d8', green: '#2ecc71', orange: '#f39c12', purple: '#9b59b6',
-  blue: '#2c97df', gray: '#808686', anaglyph: '#c53a35', subtle: '#333333',
-  kindle: '#2c2c2e', horizon: '#f5cf8e',
+  pink: '#ff89d8',
+  green: '#2ecc71',
+  orange: '#f39c12',
+  purple: '#9b59b6',
+  blue: '#2c97df',
+  gray: '#808686',
+  anaglyph: '#c53a35',
+  subtle: '#333333',
+  kindle: '#2c2c2e',
+  horizon: '#f5cf8e',
 };
 
 test.each(Object.entries(presets))('%s supports editing and restoring its own preset', (theme, color) => {
-  document.querySelector('#theme-select')!.insertAdjacentHTML('beforeend', `<option value="${theme}">${theme}</option>`);
+  document
+    .querySelector('#theme-select')!
+    .insertAdjacentHTML('beforeend', `<option value="${theme}">${theme}</option>`);
   history.replaceState({}, '', `/?theme=${theme}-light`);
   createStore();
   initTheme();

@@ -1,5 +1,6 @@
 import { beforeEach, expect, it, vi } from 'vitest';
 import { updateQuote } from './quotes';
+import { setTheme } from './themes';
 import type { Quote, ResolvedQuote } from '../types';
 
 const { state } = vi.hoisted(() => ({ state: {} as Record<string, unknown> }));
@@ -40,6 +41,16 @@ const first: Quote = {
 };
 const second = { ...first, id: '1200-001' };
 const active = () => state['active-quote'] as ResolvedQuote;
+
+it('rotates the random color palette on successive minute renders without changing theme preferences', async () => {
+  state.theme = 'color-dark';
+  vi.mocked(setTheme).mockClear();
+  await updateQuote({ time: '12:01', minuteTick: true });
+  await updateQuote({ time: '12:02', minuteTick: true });
+  expect(setTheme).toHaveBeenCalledTimes(2);
+  expect(setTheme).toHaveBeenLastCalledWith({ syncToUrl: false });
+  expect(state.theme).toBe('color-dark');
+});
 
 it.each([false, 'false', 'true', 'sfw', 'nsfw', 'unknown', undefined, null, 1])(
   'work mode excludes non-boolean-true classifications: %s',

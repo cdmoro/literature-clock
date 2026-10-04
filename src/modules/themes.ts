@@ -55,14 +55,12 @@ function defaultColor(theme: string) {
 }
 
 function getRandomThemeColor() {
-  const colors = Array.from(document.querySelectorAll<HTMLOptionElement>('#colors option')).map((op) => op.value);
-  const [theme] = store.get('theme').split('-');
+  const theme = document.documentElement.dataset.theme?.split('-')[0];
+  const colors = Array.from(document.querySelectorAll<HTMLOptionElement>('#colors option'))
+    .map((option) => option.value)
+    .filter((color) => color !== 'color' && color !== theme);
 
-  colors.pop();
-  const currentIndex = colors.indexOf(theme);
-  if (currentIndex >= 0) colors.splice(currentIndex, 1);
-
-  return colors[Math.floor(Math.random() * colors.length)];
+  return colors[Math.floor(Math.random() * colors.length)] || 'base';
 }
 
 export function initTheme() {
@@ -98,9 +96,11 @@ export function initTheme() {
   refreshLocaleThemeFonts();
   const explicitColor = new URLSearchParams(location.search).has('color');
   followsDefaultColor =
+    store.get('theme').startsWith('color-') ||
     store.get('color').toLowerCase() === defaultColor(theme).toLowerCase() ||
     (!explicitColor && store.get('color') === DEFAULT_COLORS.base);
   if (followsDefaultColor) store.set('color', defaultColor(theme), false);
+  if (store.get('theme').startsWith('color-')) store.removeFromUrl('color');
   applyCustomColor(theme);
 
   window.addEventListener('resize', doFitQuote);
@@ -127,6 +127,7 @@ export function initTheme() {
 
   colorPickers.forEach((colorPicker) =>
     colorPicker.addEventListener('input', () => {
+      if (store.get('theme').startsWith('color-')) return;
       const theme = document.documentElement.dataset.theme?.split('-')[0] || 'base';
       followsDefaultColor = colorPicker.value.toLowerCase() === defaultColor(theme).toLowerCase();
       store.set('color', colorPicker.value);
@@ -151,6 +152,7 @@ function applyCustomColor(theme = 'base') {
   root.dataset.variant = store.get('theme').split('-')[1] || 'system';
   const colorPickers = document.querySelectorAll<HTMLInputElement>('#color-picker, #settings-color-picker');
   const resetColors = document.querySelectorAll<HTMLButtonElement>('#reset-color, #settings-reset-color');
+  const randomColor = store.get('theme').startsWith('color-');
   root.classList.toggle('custom-accent', !followsDefaultColor);
   document.querySelectorAll<HTMLElement>('#color-controls, #settings-color-controls').forEach((controls) => {
     controls.hidden = false;
@@ -168,10 +170,10 @@ function applyCustomColor(theme = 'base') {
   colorPickers.forEach((colorPicker) => {
     colorPicker.value = store.get('color');
     colorPicker.hidden = false;
-    colorPicker.disabled = false;
+    colorPicker.disabled = randomColor;
   });
   resetColors.forEach((resetColor) => {
-    resetColor.hidden = followsDefaultColor;
+    resetColor.hidden = randomColor || followsDefaultColor;
   });
 }
 
@@ -194,6 +196,7 @@ export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
   store.set('theme', `${theme}-${variant}`, syncToUrl);
 
   if (theme === 'color') {
+    followsDefaultColor = true;
     theme = getRandomThemeColor();
   }
 
