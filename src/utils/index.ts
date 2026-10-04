@@ -87,21 +87,63 @@ export function doFitQuote() {
     quote.style.fontSize = `${fontSize}px`;
     if (cite) cite.style.fontSize = `${fontSize * citeFactor}px`;
     const container = quote.closest<HTMLElement>('#quote');
-    const bilingual = !!container?.querySelector('#quote-translation');
+    const translation = container?.querySelector<HTMLElement>('#quote-translation');
+    const bilingual = !!translation;
+    container?.classList.remove('quote-scroll');
+    if (quote.style.maxHeight === 'none') quote.style.removeProperty('max-height');
+    const updateTranslationSize = () => {
+      if (translation) translation.style.fontSize = `${Math.min(24, Math.max(14, fontSize * 0.55))}px`;
+    };
+    updateTranslationSize();
+    const containerStyle = bilingual ? getComputedStyle(container!) : undefined;
+    const containerMaxHeight = parseFloat(containerStyle?.maxHeight || '');
+    const containerPadding = (parseFloat(containerStyle?.paddingTop || '') || 0) +
+      (parseFloat(containerStyle?.paddingBottom || '') || 0);
+    const containerBudget = Number.isFinite(containerMaxHeight)
+      ? containerMaxHeight + (containerStyle?.boxSizing === 'border-box' ? 0 : containerPadding)
+      : container?.clientHeight || 0;
     const containerOverflows = () =>
-      bilingual && container!.clientHeight > 0 && container!.scrollHeight > container!.clientHeight + 1;
+      bilingual && containerBudget > 0 && container!.scrollHeight > containerBudget + 1;
 
-    // The attribution and secondary passage share the bounded bilingual container.
-    // An unconstrained paragraph's clientHeight follows its content. Subtracting
-    // a margin from that height makes a short, single-line quote never fit.
-    while (quote.scrollHeight > quote.clientHeight + 1 || containerOverflows()) {
-      if (fontSize <= 10) break;
+    const passageStyle = getComputedStyle(quote);
+    const maxHeight = parseFloat(passageStyle.maxHeight);
+    const padding = (parseFloat(passageStyle.paddingTop) || 0) + (parseFloat(passageStyle.paddingBottom) || 0);
+    // Glyphs can extend beyond a tight line box without exceeding the available
+    // space. Compare to the theme's height budget, not that intrinsic line box.
+    const heightBudget = Number.isFinite(maxHeight)
+      ? maxHeight + (passageStyle.boxSizing === 'border-box' ? 0 : padding)
+      : quote.clientHeight;
+
+    const passageOverflowsWidth = () => {
+      if (quote.scrollWidth <= quote.clientWidth + 1) return false;
+      // RTL scroll dimensions include decorative bubble tails. Measure the
+      // actual text so ornaments cannot force an otherwise fitting quote down.
+      const range = document.createRange();
+      if (typeof range.getBoundingClientRect !== 'function') return true;
+      const box = quote.getBoundingClientRect();
+      const textNodes = document.createTreeWalker(quote, NodeFilter.SHOW_TEXT);
+      for (let node = textNodes.nextNode(); node; node = textNodes.nextNode()) {
+        range.selectNodeContents(node);
+        const text = range.getBoundingClientRect();
+        if (text.width > 0 && (text.left < box.left - 1 || text.right > box.right + 1)) return true;
+      }
+      return false;
+    };
+
+    // Also keep the attribution and translation within the bilingual container.
+    while (quote.scrollHeight > heightBudget + 1 || passageOverflowsWidth() || containerOverflows()) {
+      if (fontSize <= 18) break;
       fontSize -= 1;
       quote.style.fontSize = `${fontSize}px`;
+      updateTranslationSize();
       if (cite) {
         cite.style.fontSize = `${fontSize < 19 ? 10 : fontSize * citeFactor}px`;
       }
     }
+    // Long passages stay readable and use the same bounded scrollport as translations.
+    const needsScroll = quote.scrollHeight > heightBudget + 1;
+    if (needsScroll) quote.style.maxHeight = 'none';
+    container?.classList.toggle('quote-scroll', needsScroll);
   }
 }
 

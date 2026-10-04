@@ -77,3 +77,63 @@ describe('theme color URLs', () => {
     expect(new URLSearchParams(location.search).has('color')).toBe(false);
   });
 });
+
+const presets = {
+  pink: '#ff89d8', green: '#2ecc71', orange: '#f39c12', purple: '#9b59b6',
+  blue: '#2c97df', gray: '#808686', anaglyph: '#c53a35', subtle: '#333333',
+  kindle: '#2c2c2e', horizon: '#f5cf8e',
+};
+
+test.each(Object.entries(presets))('%s supports editing and restoring its own preset', (theme, color) => {
+  document.querySelector('#theme-select')!.insertAdjacentHTML('beforeend', `<option value="${theme}">${theme}</option>`);
+  history.replaceState({}, '', `/?theme=${theme}-light`);
+  createStore();
+  initTheme();
+  const picker = document.querySelector<HTMLInputElement>('#color-picker')!;
+  expect(picker.disabled).toBe(false);
+  expect(picker.value).toBe(color);
+  picker.value = '#123456';
+  picker.dispatchEvent(new Event('input'));
+  expect(document.documentElement.style.getPropertyValue('--accent-color')).toBe('#123456');
+  expect(document.querySelector<HTMLButtonElement>('#reset-color')!.hidden).toBe(false);
+  document.querySelector<HTMLButtonElement>('#reset-color')!.click();
+  expect(picker.value).toBe(color);
+  expect(document.documentElement.style.getPropertyValue('--accent-color')).toBe('');
+  expect(new URLSearchParams(location.search).has('color')).toBe(false);
+});
+
+test('an explicit shared color overrides a locally restored palette', () => {
+  localStorage.setItem('settings', JSON.stringify({ theme: 'retro-light', color: '#daa908' }));
+  history.replaceState({}, '', '/?theme=retro-light&color=%23123456');
+  createStore();
+  initTheme();
+  expect(document.documentElement.style.getPropertyValue('--accent-color')).toBe('#123456');
+});
+
+test('restored palettes survive reload and follow the dark variant', () => {
+  document.querySelector('#theme-select')!.insertAdjacentHTML('beforeend', '<option value="gray">Gray</option>');
+  history.replaceState({}, '', '/?theme=gray-system');
+  createStore();
+  initTheme();
+  document.querySelector<HTMLInputElement>('#color-picker')!.value = '#123456';
+  document.querySelector<HTMLInputElement>('#color-picker')!.dispatchEvent(new Event('input'));
+  document.querySelector<HTMLButtonElement>('#reset-color')!.click();
+  createStore();
+  initTheme();
+  systemChange({ matches: true });
+  expect(store.get('color')).toBe('#f1f1f1');
+  expect(document.documentElement.style.getPropertyValue('--accent-color')).toBe('');
+});
+
+test('choosing the preset color uses the existing default comparison', () => {
+  history.replaceState({}, '', '/?theme=retro-system&color=%23123456');
+  createStore();
+  initTheme();
+  const picker = document.querySelector<HTMLInputElement>('#color-picker')!;
+  picker.value = '#daa908';
+  picker.dispatchEvent(new Event('input'));
+  expect(document.querySelector<HTMLButtonElement>('#reset-color')!.hidden).toBe(true);
+  systemChange({ matches: true });
+  expect(store.get('color')).toBe('#f1ba08');
+  expect(JSON.parse(localStorage.getItem('settings')!)).not.toHaveProperty('color-default');
+});
