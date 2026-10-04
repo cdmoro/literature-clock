@@ -17,6 +17,8 @@ interface Stateful {
   transition: TransitionMode;
   'show-time': boolean;
   'hide-book-title': boolean;
+  'auto-read': boolean;
+  'read-attribution': boolean;
   font: string;
   theme: string;
   color: string;
@@ -43,7 +45,7 @@ type State = Stateful & Stateless;
 
 type Listener = (newState: State, oldState: State) => void;
 
-const IGNORE_FROM_URL: (keyof State)[] = ['custom-font', 'active-quote', 'paused'];
+const IGNORE_FROM_URL: (keyof State)[] = ['custom-font', 'active-quote', 'paused', 'auto-read', 'read-attribution'];
 const REMOVE_VALUES_FROM_URL: Partial<State> = {
   transition: 'fade',
   progressbar: 'theme',
@@ -60,6 +62,8 @@ const BOOLEAN_KEYS = new Set([
   'screensaver',
   'show-time',
   'hide-book-title',
+  'auto-read',
+  'read-attribution',
   'random-locale',
   'static',
   'fade',
@@ -324,6 +328,8 @@ export function createStore() {
     transition: 'fade',
     'show-time': true,
     'hide-book-title': false,
+    'auto-read': false,
+    'read-attribution': false,
     font: 'default',
     theme: 'base-system',
     color: '#d24335',

@@ -33,7 +33,10 @@ async function updateTime() {
       timeEl.textContent = time;
     }
 
-    if (!store.get('paused')) void updateQuote({ time });
+    if (!store.get('paused')) {
+      if (lastTime) void updateQuote({ time, minuteTick: true });
+      else void updateQuote({ time });
+    }
     lastTime = time;
   }
 }
