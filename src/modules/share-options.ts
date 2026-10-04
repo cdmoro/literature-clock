@@ -11,6 +11,7 @@ import STRINGS from '../strings/share.json';
 import copyIcon from '../assets/copy.svg?raw';
 import shareIcon from '../assets/share.svg?raw';
 import downloadIcon from '../assets/download.svg?raw';
+import { fixedThemeColor, themeSupportsCustomColor } from '../utils/theme-colors';
 
 let format: CardFormat = 'square';
 let appearance: CardAppearance | undefined;
@@ -20,7 +21,9 @@ let color: string | undefined;
 let font: string | undefined;
 export const selectedCardOptions = () => ({
   pattern: pattern ?? store.get('background-pattern') ?? 'none',
-  color,
+  color: themeSupportsCustomColor(theme || document.documentElement.dataset.theme?.split('-')[0] || 'base')
+    ? color
+    : undefined,
   font,
 });
 export const selectedCardTheme = () => theme;
@@ -186,6 +189,7 @@ export function initShareOptions() {
     colorInput.setAttribute('aria-label', settingsStrings.settings_color);
     colorInput.title = settingsStrings.settings_color;
     colorInput.addEventListener('input', () => {
+      if (colorInput.disabled) return;
       color = colorInput.value;
       void refresh();
     });
@@ -345,6 +349,10 @@ export function initShareOptions() {
       patternSelect.disabled = !supported;
       formatButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === format)));
       const variant = appearance || (document.documentElement.dataset.theme?.endsWith('-dark') ? 'dark' : 'light');
+      colorInput.disabled = !themeSupportsCustomColor(currentTheme());
+      colorInput.value = colorInput.disabled
+        ? fixedThemeColor(currentTheme(), variant === 'dark')
+        : color || store.get('custom-color') || store.get('color') || '#d24335';
       appearanceButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === variant)));
       status.textContent = strings.preparing;
       preview.replaceChildren();

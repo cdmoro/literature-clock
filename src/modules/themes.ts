@@ -5,6 +5,7 @@ import { doFitQuote, fitQuote, loadFontIfNotExists } from '../utils';
 import { setDayParameters } from './horizon';
 import { store } from '../store';
 import { contrastingText } from '../utils/colors';
+import { themeSupportsCustomColor } from '../utils/theme-colors';
 
 const DEFAULT_COLORS: Record<string, string> = {
   base: '#d24335',
@@ -33,8 +34,7 @@ const DEFAULT_COLORS: Record<string, string> = {
 
 // Remember whether appearance changes should follow the theme palette.
 let followsDefaultColor = true;
-const FIXED_COLORS = new Set(['pink', 'green', 'orange', 'purple', 'blue', 'gray', 'color']);
-const fixedColor = () => FIXED_COLORS.has(store.get('theme').split('-')[0]);
+const fixedColor = () => !themeSupportsCustomColor(store.get('theme').split('-')[0]);
 
 function defaultColor(theme: string) {
   const dark = document.documentElement.dataset.theme?.endsWith('-dark');

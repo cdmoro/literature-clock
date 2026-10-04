@@ -24,6 +24,7 @@ beforeEach(() => {
   state.locale = 'en-GB';
   state['background-pattern'] = 'none';
   state.color = '#d24335';
+  state['custom-color'] = '';
   state.font = 'default';
   state.quote = undefined;
   state['active-quote'] = { id: '1200-001', quote_raw: 'Original quote', locale: 'en-GB', time: '12:00' };
@@ -41,6 +42,7 @@ beforeEach(() => {
   initShareOptions();
   document.getElementById('share')!.click();
 });
+
 const button = (label: string) =>
   [...document.querySelectorAll<HTMLButtonElement>('#share-preview button')].find(
     (el) => el.getAttribute('aria-label') === label || el.textContent === label,
@@ -268,4 +270,54 @@ it('copies the preview text even after the live quote changes', async () => {
   );
   expect(writeText).toHaveBeenCalledWith('Original quote');
   expect(document.querySelector('#share-preview [role="status"]')?.textContent).toBe('Quote copied!');
+});
+
+it.each(
+  Object.entries({
+    pink: '#ff89d8',
+    green: '#2ecc71',
+    orange: '#f39c12',
+    purple: '#9b59b6',
+    blue: '#2c97df',
+    gray: '#f1f1f1',
+  }),
+)('disables the share picker for %s with its palette color', (theme, accent) => {
+  button('Close').click();
+  document.documentElement.dataset.theme = `${theme}-dark`;
+  document
+    .querySelector('#theme-select')!
+    .insertAdjacentHTML('beforeend', `<option value="${theme}">${theme}</option>`);
+  state['custom-color'] = '#123456';
+  document.getElementById('share')!.click();
+  while (document.querySelector('.share-theme-carousel span')!.textContent !== theme) button('Next theme').click();
+  button('Dark').click();
+  const picker = document.getElementById('share-preview-color') as HTMLInputElement;
+  expect(picker.disabled).toBe(true);
+  expect(picker.value).toBe(accent);
+  picker.value = '#abcdef';
+  picker.dispatchEvent(new Event('input'));
+  expect(selectedCardOptions().color).toBeUndefined();
+  if (theme === 'gray') {
+    button('Light').click();
+    expect(picker.value).toBe('#808686');
+  }
+});
+
+it('retains the image custom accent across fixed palettes and restores editing on return', () => {
+  button('Close').click();
+  document.querySelector('#theme-select')!.insertAdjacentHTML('beforeend', '<option value="pink">Pink</option>');
+  document.getElementById('share')!.click();
+  while (document.querySelector('.share-theme-carousel span')!.textContent !== 'Base') button('Next theme').click();
+  const picker = document.getElementById('share-preview-color') as HTMLInputElement;
+  picker.value = '#123456';
+  picker.dispatchEvent(new Event('input'));
+  button('Previous theme').click();
+  expect(picker.disabled).toBe(true);
+  expect(picker.value).toBe('#ff89d8');
+  expect(selectedCardOptions().color).toBeUndefined();
+  button('Next theme').click();
+  expect(picker.disabled).toBe(false);
+  expect(picker.value).toBe('#123456');
+  expect(selectedCardOptions().color).toBe('#123456');
+  expect(state['custom-color']).toBe('');
 });
