@@ -122,6 +122,39 @@ it('opens the dialog from Share and preserves its existing icon without an extra
   expect(document.getElementById('share-preview-title')?.textContent).toBe('Share quote');
 });
 
+it('folds customization on mobile and opens it when switching to desktop', () => {
+  button('Close').click();
+  const listeners = new Set<() => void>();
+  const media = {
+    matches: true,
+    addEventListener: vi.fn((_type: string, listener: () => void) => listeners.add(listener)),
+    removeEventListener: vi.fn((_type: string, listener: () => void) => listeners.delete(listener)),
+  };
+  vi.stubGlobal('matchMedia', vi.fn().mockReturnValue(media));
+  document.getElementById('share')!.click();
+  const customization = document.querySelector<HTMLDetailsElement>('.share-customization')!;
+  expect(customization.open).toBe(false);
+  expect(customization.querySelector('summary')?.textContent).toBe('Theme / Font');
+  expect(customization.contains(document.getElementById('share-preview-font'))).toBe(true);
+  expect(customization.contains(button('Vertical'))).toBe(false);
+  customization.open = true;
+  button('Next theme').click();
+  expect(customization.open).toBe(true);
+  button('Previous theme').click();
+  media.matches = false;
+  listeners.forEach((listener) => listener());
+  expect(customization.open).toBe(true);
+  media.matches = true;
+  listeners.forEach((listener) => listener());
+  expect(customization.open).toBe(false);
+  button('Close').click();
+  expect(listeners.size).toBe(0);
+});
+
+it('keeps customization expanded on desktop', () => {
+  expect(document.querySelector<HTMLDetailsElement>('.share-customization')?.open).toBe(true);
+});
+
 it('cycles image themes in both directions without changing the live theme', async () => {
   button('Next theme').click();
   await Promise.resolve();

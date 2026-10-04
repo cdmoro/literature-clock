@@ -128,6 +128,19 @@ export function initShareOptions() {
       return wrapper;
     };
     controls.append(field(strings.format, formatGroup), field(strings.appearance, appearanceGroup));
+    const customization = document.createElement('details');
+    customization.className = 'share-customization';
+    const customizationSummary = document.createElement('summary');
+    const customizationControls = document.createElement('div');
+    customizationControls.className = 'share-customization-controls';
+    customization.append(customizationSummary, customizationControls);
+    controls.append(customization);
+    const mobileLayout = window.matchMedia?.('(max-width: 600px)');
+    const syncCustomization = () => {
+      customization.open = !mobileLayout?.matches;
+    };
+    syncCustomization();
+    mobileLayout?.addEventListener('change', syncCustomization);
     const themes = [...document.querySelectorAll<HTMLOptionElement>('#theme-select option')].filter(
       (option) => option.value !== 'color',
     );
@@ -165,7 +178,7 @@ export function initShareOptions() {
       if (step === -1) carousel.append(themeName);
     }
     updateThemeName();
-    controls.append(field(strings.theme, carousel));
+    customizationControls.append(field(strings.theme, carousel));
     const colorInput = document.createElement('input');
     colorInput.type = 'color';
     colorInput.id = 'share-preview-color';
@@ -181,7 +194,7 @@ export function initShareOptions() {
     const colorCaption = document.createElement('span');
     colorCaption.textContent = settingsStrings.settings_color;
     colorControl.append(colorCaption, colorInput);
-    controls.append(colorControl);
+    customizationControls.append(colorControl);
     const patternControl = document.createElement('label');
     patternControl.className = 'share-pattern-control';
     const patternCaption = document.createElement('span');
@@ -197,11 +210,12 @@ export function initShareOptions() {
       void refresh();
     });
     patternControl.append(patternCaption, patternSelect);
-    controls.append(patternControl);
+    customizationControls.append(patternControl);
     const fontControl = document.createElement('label');
     fontControl.className = 'share-font-control';
     const fontCaption = document.createElement('span');
     const fontStrings = getStrings(store.get('ui-locale') || store.get('locale'));
+    customizationSummary.textContent = `${strings.theme} / ${fontStrings.font}`;
     fontCaption.textContent = fontStrings.font;
     const fontSelect = document.createElement('select');
     fontSelect.id = 'share-preview-font';
@@ -222,7 +236,7 @@ export function initShareOptions() {
       void refresh();
     });
     fontControl.append(fontCaption, fontSelect);
-    controls.append(fontControl);
+    customizationControls.append(fontControl);
     const preview = document.createElement('div');
     preview.className = 'share-preview-image';
     preview.setAttribute('role', 'group');
@@ -241,9 +255,13 @@ export function initShareOptions() {
     actions.className = 'share-preview-actions';
     const setActionContent = (target: HTMLButtonElement, text: string, icon: string) => {
       target.setAttribute('aria-label', text);
+      target.title = text;
       target.innerHTML = icon;
       target.querySelector('svg')?.setAttribute('aria-hidden', 'true');
-      target.append(document.createTextNode(text));
+      const label = document.createElement('span');
+      label.className = 'share-action-label';
+      label.textContent = text;
+      target.append(label);
     };
     const copyText = document.createElement('button');
     copyText.type = 'button';
@@ -313,6 +331,7 @@ export function initShareOptions() {
     let revision = 0;
     dialog.addEventListener('close', () => {
       revision++;
+      mobileLayout?.removeEventListener('change', syncCustomization);
       pattern = undefined;
       color = undefined;
       font = undefined;
