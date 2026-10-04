@@ -5,3 +5,4 @@ public/times
 scripts/*.csv
 .translation-work/
 __pycache__/
+.netlify/
