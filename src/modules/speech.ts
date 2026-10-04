@@ -3,6 +3,7 @@ import { getBaseLocale, getInterfaceLocale } from './locales';
 import { readingIcon } from './reading-icons';
 import { showQuoteNotice } from './reading-ui';
 import STRINGS from '../strings/speech.json';
+import { createSpeechHighlight, speechText } from './speech-highlight';
 
 // Include only attribution that is actually shown, including ancestor CSS rules.
 function visibleAttribution(id: 'title' | 'author') {
@@ -91,6 +92,7 @@ export function initSpeech() {
   let failure = '';
   let startTimer: ReturnType<typeof setTimeout> | undefined;
   let utterance: SpeechSynthesisUtterance | undefined;
+  let highlighting: ReturnType<typeof createSpeechHighlight> | undefined;
   const strings = () => STRINGS[getBaseLocale(getInterfaceLocale())];
   const refresh = () => {
     const text = strings();
@@ -117,6 +119,8 @@ export function initSpeech() {
   const stop = () => {
     const active = !!utterance;
     utterance = undefined;
+    highlighting?.clear();
+    highlighting = undefined;
     clearTimeout(startTimer);
     if (supported && active) synth.cancel();
     refresh();
@@ -126,14 +130,27 @@ export function initSpeech() {
     const paragraph = document.querySelector('#quote > p');
     if (!supported || !quote || !paragraph || document.hidden) return;
     stop();
-    const copy = paragraph.cloneNode(true) as HTMLElement;
-    copy.querySelectorAll('br').forEach((br) => br.replaceWith(' '));
-    const text = copy.textContent?.trim();
+    const text = speechText(paragraph).text;
     if (!text) return;
     const attribution = store.get('read-attribution')
       ? [visibleAttribution('title'), visibleAttribution('author')].filter(Boolean).join(', ')
       : '';
     const current = new SpeechSynthesisUtterance(attribution ? `${text}\n${attribution}.` : text);
+    const parts = [{ element: paragraph, start: 0, text }];
+    let attributionStart = text.length + 1;
+    if (store.get('read-attribution')) {
+      for (const id of ['title', 'author'] as const) {
+        const value = visibleAttribution(id);
+        const element = document.querySelector(`#quote > cite #${id}`);
+        if (!value || !element) continue;
+        parts.push({ element, start: attributionStart, text: value });
+        attributionStart += value.length + 2;
+      }
+    }
+    highlighting = createSpeechHighlight(parts);
+    current.onboundary = (event) => {
+      if (utterance === current && event.name === 'word') highlighting?.highlight(event.charIndex, event.charLength);
+    };
     current.lang = quote.locale.replace(/-draft$/, '');
     const voices = synth.getVoices();
     current.voice =
@@ -157,6 +174,8 @@ export function initSpeech() {
       if (utterance === current) {
         clearTimeout(startTimer);
         utterance = undefined;
+        highlighting?.clear();
+        highlighting = undefined;
         refresh();
       }
     };
@@ -165,6 +184,8 @@ export function initSpeech() {
       if (event.error === 'canceled' || event.error === 'interrupted') {
         clearTimeout(startTimer);
         utterance = undefined;
+        highlighting?.clear();
+        highlighting = undefined;
         refresh();
       } else failed(event.error === 'not-allowed' ? strings().blocked : strings().error);
     };
@@ -208,6 +229,8 @@ export function initSpeech() {
     refresh();
   });
   const changing = (event: Event) => {
+    highlighting?.clear();
+    highlighting = undefined;
     if (!(event as CustomEvent<{ minuteTick: boolean }>).detail.minuteTick || store.get('auto-read')) stop();
   };
   const rendered = (event: Event) => {

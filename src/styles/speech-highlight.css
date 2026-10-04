@@ -1,0 +1,7 @@
+#quote .speech-word {
+  color: inherit;
+  background-color: color-mix(in srgb, currentColor 22%, transparent);
+  border-radius: 0.12em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}

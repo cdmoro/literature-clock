@@ -12,6 +12,7 @@ class Utterance {
   onstart?: () => void;
   onend?: () => void;
   onerror?: (event: { error: string }) => void;
+  onboundary?: (event: { name: string; charIndex: number; charLength: number }) => void;
   constructor(public text: string) {}
 }
 const quote = {
@@ -42,6 +43,60 @@ afterEach(() => {
 const click = (id: string) => document.getElementById(id)!.click();
 const minute = (minuteTick = true) =>
   document.dispatchEvent(new CustomEvent('quote-rendered', { detail: { minuteTick } }));
+
+it('highlights successive words across emphasis and line breaks, then restores the markup', () => {
+  cleanup = initSpeech();
+  const paragraph = document.querySelector('#quote > p')!;
+  const original = paragraph.innerHTML;
+  click('read-quote');
+  const current = speak.mock.calls[0][0] as Utterance;
+  current.onboundary!({ name: 'word', charIndex: 4, charLength: 3 });
+  expect(paragraph.querySelector('em .speech-word')!.textContent).toBe('las');
+  current.onboundary!({ name: 'word', charIndex: 14, charLength: 0 });
+  expect(paragraph.querySelectorAll('.speech-word')).toHaveLength(1);
+  expect(paragraph.querySelector('.speech-word')!.textContent).toBe('Hola.');
+  expect(current.text).toBe('Son las doce. Hola.');
+  current.onend!();
+  expect(paragraph.innerHTML).toBe(original);
+});
+
+it('maps title and author boundaries and removes highlights on stop', () => {
+  cleanup = initSpeech();
+  click('read-attribution');
+  click('read-quote');
+  const current = speak.mock.calls[0][0] as Utterance;
+  current.onboundary!({ name: 'word', charIndex: current.text.indexOf('libro'), charLength: 5 });
+  expect(document.querySelector('#title .speech-word')!.textContent).toBe('libro');
+  current.onboundary!({ name: 'word', charIndex: current.text.indexOf('autora'), charLength: 6 });
+  expect(document.querySelector('#title .speech-word')).toBeNull();
+  expect(document.querySelector('#author .speech-word')!.textContent).toBe('autora');
+  click('read-quote');
+  expect(document.querySelector('.speech-word')).toBeNull();
+});
+
+it('clears highlights at a manual clock tick and ignores further boundaries from that quote', () => {
+  cleanup = initSpeech();
+  click('read-quote');
+  const current = speak.mock.calls[0][0] as Utterance;
+  current.onboundary!({ name: 'word', charIndex: 0, charLength: 3 });
+  document.dispatchEvent(new CustomEvent('quote-changing', { detail: { minuteTick: true } }));
+  document.querySelector('#quote > p')!.textContent = 'Another quote';
+  current.onboundary!({ name: 'word', charIndex: 4, charLength: 3 });
+  expect(document.querySelector('.speech-word')).toBeNull();
+});
+
+it('handles trimmed whitespace and precise boundaries in text without spaces', () => {
+  document.querySelector('#quote > p')!.innerHTML = '  你好<em>世界</em>  ';
+  cleanup = initSpeech();
+  click('read-quote');
+  const current = speak.mock.calls[0][0] as Utterance;
+  expect(current.text).toBe('你好世界');
+  current.onboundary!({ name: 'word', charIndex: 1, charLength: 2 });
+  expect([...document.querySelectorAll('.speech-word')].map((mark) => mark.textContent).join('')).toBe('好世');
+  current.onerror!({ error: 'interrupted' });
+  expect(document.querySelector('.speech-word')).toBeNull();
+  expect(document.querySelector('#quote > p')!.innerHTML).toBe('  你好<em>世界</em>  ');
+});
 
 it('reads the displayed text in the quote language, then stops with the same button', () => {
   cleanup = initSpeech();
