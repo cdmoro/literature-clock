@@ -6,6 +6,12 @@ import type { ResolvedQuote } from '../types';
 let cleanup: (() => void) | undefined;
 const speak = vi.fn();
 const cancel = vi.fn();
+const highlights = new Map<string, Range[]>();
+const highlightedText = () =>
+  highlights
+    .get('speech-word')
+    ?.map((range) => range.toString())
+    .join('');
 class Utterance {
   lang = '';
   voice = null;
@@ -31,6 +37,16 @@ beforeEach(() => {
   vi.stubGlobal('SpeechSynthesisUtterance', Utterance);
   createStore();
   store.set('active-quote', quote);
+  highlights.clear();
+  vi.stubGlobal('CSS', { highlights });
+  vi.stubGlobal(
+    'Highlight',
+    class extends Array<Range> {
+      constructor(...ranges: Range[]) {
+        super(...ranges);
+      }
+    },
+  );
   vi.clearAllMocks();
   speak.mockImplementation((utterance: Utterance) => utterance.onstart?.());
 });
@@ -51,10 +67,12 @@ it('highlights successive words across emphasis and line breaks, then restores t
   click('read-quote');
   const current = speak.mock.calls[0][0] as Utterance;
   current.onboundary!({ name: 'word', charIndex: 4, charLength: 3 });
-  expect(paragraph.querySelector('em .speech-word')!.textContent).toBe('las');
+  expect(highlightedText()).toBe('las');
+  expect(paragraph.innerHTML).toBe(original);
   current.onboundary!({ name: 'word', charIndex: 14, charLength: 0 });
-  expect(paragraph.querySelectorAll('.speech-word')).toHaveLength(1);
-  expect(paragraph.querySelector('.speech-word')!.textContent).toBe('Hola.');
+  expect(highlights.get('speech-word')).toHaveLength(1);
+  expect(highlightedText()).toBe('Hola.');
+  expect(paragraph.innerHTML).toBe(original);
   expect(current.text).toBe('Son las doce. Hola.');
   current.onend!();
   expect(paragraph.innerHTML).toBe(original);
@@ -66,12 +84,11 @@ it('maps title and author boundaries and removes highlights on stop', () => {
   click('read-quote');
   const current = speak.mock.calls[0][0] as Utterance;
   current.onboundary!({ name: 'word', charIndex: current.text.indexOf('libro'), charLength: 5 });
-  expect(document.querySelector('#title .speech-word')!.textContent).toBe('libro');
+  expect(highlightedText()).toBe('libro');
   current.onboundary!({ name: 'word', charIndex: current.text.indexOf('autora'), charLength: 6 });
-  expect(document.querySelector('#title .speech-word')).toBeNull();
-  expect(document.querySelector('#author .speech-word')!.textContent).toBe('autora');
+  expect(highlightedText()).toBe('autora');
   click('read-quote');
-  expect(document.querySelector('.speech-word')).toBeNull();
+  expect(highlights.has('speech-word')).toBe(false);
 });
 
 it('clears highlights at a manual clock tick and ignores further boundaries from that quote', () => {
@@ -82,7 +99,7 @@ it('clears highlights at a manual clock tick and ignores further boundaries from
   document.dispatchEvent(new CustomEvent('quote-changing', { detail: { minuteTick: true } }));
   document.querySelector('#quote > p')!.textContent = 'Another quote';
   current.onboundary!({ name: 'word', charIndex: 4, charLength: 3 });
-  expect(document.querySelector('.speech-word')).toBeNull();
+  expect(highlights.has('speech-word')).toBe(false);
 });
 
 it('handles trimmed whitespace and precise boundaries in text without spaces', () => {
@@ -92,9 +109,9 @@ it('handles trimmed whitespace and precise boundaries in text without spaces', (
   const current = speak.mock.calls[0][0] as Utterance;
   expect(current.text).toBe('你好世界');
   current.onboundary!({ name: 'word', charIndex: 1, charLength: 2 });
-  expect([...document.querySelectorAll('.speech-word')].map((mark) => mark.textContent).join('')).toBe('好世');
+  expect(highlightedText()).toBe('好世');
   current.onerror!({ error: 'interrupted' });
-  expect(document.querySelector('.speech-word')).toBeNull();
+  expect(highlights.has('speech-word')).toBe(false);
   expect(document.querySelector('#quote > p')!.innerHTML).toBe('  你好<em>世界</em>  ');
 });
 
@@ -235,16 +252,16 @@ it('stops ongoing narration when attribution visibility changes', () => {
   expect(document.getElementById('read-quote')!.getAttribute('aria-pressed')).toBe('false');
 });
 
-it('lets manual speech finish at a clock tick but interrupts intentional quote navigation', () => {
+it('stops manual speech and resets the button at a clock tick without a completion callback', () => {
   cleanup = initSpeech();
   click('read-quote');
   cancel.mockClear();
   document.dispatchEvent(new CustomEvent('quote-changing', { detail: { minuteTick: true } }));
   store.set('active-quote', { ...quote, time: '12:01' });
   minute();
-  expect(cancel).not.toHaveBeenCalled();
+  expect(cancel).toHaveBeenCalledOnce();
   expect(speak).toHaveBeenCalledOnce();
-  expect(document.getElementById('read-quote')!.getAttribute('aria-pressed')).toBe('true');
+  expect(document.getElementById('read-quote')!.getAttribute('aria-pressed')).toBe('false');
   document.dispatchEvent(new CustomEvent('quote-changing', { detail: { minuteTick: false } }));
   expect(cancel).toHaveBeenCalledOnce();
 });
@@ -293,4 +310,17 @@ it('does not cancel the native engine at natural completion or when already idle
   current.onend!();
   store.set('theme', 'poster-light');
   expect(cancel).not.toHaveBeenCalled();
+});
+
+it('keeps the DOM unchanged when the browser cannot paint custom highlights', () => {
+  vi.stubGlobal('Highlight', undefined);
+  const paragraph = document.querySelector('#quote > p')!;
+  const original = paragraph.innerHTML;
+  cleanup = initSpeech();
+  click('read-quote');
+  const current = speak.mock.calls[0][0] as Utterance;
+  current.onboundary!({ name: 'word', charIndex: 4, charLength: 3 });
+  expect(paragraph.innerHTML).toBe(original);
+  expect(highlights.has('speech-word')).toBe(false);
+  expect(document.getElementById('read-quote')!.getAttribute('aria-pressed')).toBe('true');
 });

@@ -228,11 +228,7 @@ export function initSpeech() {
       stop();
     refresh();
   });
-  const changing = (event: Event) => {
-    highlighting?.clear();
-    highlighting = undefined;
-    if (!(event as CustomEvent<{ minuteTick: boolean }>).detail.minuteTick || store.get('auto-read')) stop();
-  };
+  const changing = () => stop();
   const rendered = (event: Event) => {
     if (
       (event as CustomEvent<{ minuteTick: boolean }>).detail.minuteTick &&

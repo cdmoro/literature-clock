@@ -17,17 +17,16 @@ export function speechText(element: Element) {
 }
 
 export function createSpeechHighlight(parts: { element: Element; start: number; text: string }[]) {
-  let marks: HTMLSpanElement[] = [];
-  const clear = () => {
-    for (const mark of marks) {
-      const parent = mark.parentNode;
-      mark.replaceWith(...mark.childNodes);
-      parent?.normalize();
-    }
-    marks = [];
+  // Paint ranges without adding inline elements, which can change font shaping and wrapping.
+  const api = globalThis as typeof globalThis & {
+    Highlight?: new (...ranges: Range[]) => unknown;
+    CSS?: { highlights?: { set(name: string, highlight: unknown): void; delete(name: string): void } };
   };
+  const registry = api.CSS?.highlights;
+  const clear = () => registry?.delete('speech-word');
   const highlight = (index: number, length: number) => {
     clear();
+    if (!registry || !api.Highlight) return;
     const part = parts.find((part) => index >= part.start && index < part.start + part.text.length);
     if (!part || !part.element.isConnected) return;
     const offset = index - part.start;
@@ -36,6 +35,7 @@ export function createSpeechHighlight(parts: { element: Element; start: number; 
     const { nodes, leading } = speechText(part.element);
     const start = offset + leading;
     const end = Math.min(offset + size, part.text.length) + leading;
+    const ranges: Range[] = [];
     for (const entry of nodes) {
       const from = Math.max(start, entry.start) - entry.start;
       const to = Math.min(end, entry.end) - entry.start;
@@ -43,11 +43,9 @@ export function createSpeechHighlight(parts: { element: Element; start: number; 
       const range = document.createRange();
       range.setStart(entry.node, from);
       range.setEnd(entry.node, to);
-      const mark = document.createElement('span');
-      mark.className = 'speech-word';
-      range.surroundContents(mark);
-      marks.push(mark);
+      ranges.push(range);
     }
+    if (ranges.length) registry.set('speech-word', new api.Highlight(...ranges));
   };
   return { highlight, clear };
 }
