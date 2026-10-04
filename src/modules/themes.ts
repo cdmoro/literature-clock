@@ -97,13 +97,10 @@ export function initTheme() {
   refreshDefaultFontLabel();
   refreshLocaleThemeFonts();
   const explicitColor = new URLSearchParams(location.search).has('color');
-  followsDefaultColor = explicitColor
-    ? store.get('color').toLowerCase() === defaultColor(theme).toLowerCase()
-    : store.get('color-default') ??
-      (store.get('color') === DEFAULT_COLORS.base ||
-        store.get('color').toLowerCase() === defaultColor(theme).toLowerCase());
+  followsDefaultColor =
+    store.get('color').toLowerCase() === defaultColor(theme).toLowerCase() ||
+    (!explicitColor && store.get('color') === DEFAULT_COLORS.base);
   if (followsDefaultColor) store.set('color', defaultColor(theme), false);
-  store.set('color-default', followsDefaultColor, false);
   applyCustomColor(theme);
 
   window.addEventListener('resize', doFitQuote);
@@ -130,8 +127,8 @@ export function initTheme() {
 
   colorPickers.forEach((colorPicker) =>
     colorPicker.addEventListener('input', () => {
-      followsDefaultColor = false;
-      store.set('color-default', false, false);
+      const theme = document.documentElement.dataset.theme?.split('-')[0] || 'base';
+      followsDefaultColor = colorPicker.value.toLowerCase() === defaultColor(theme).toLowerCase();
       store.set('color', colorPicker.value);
       applyCustomColor(document.documentElement.dataset.theme?.split('-')[0]);
     }),
@@ -140,7 +137,6 @@ export function initTheme() {
     resetColor.addEventListener('click', () => {
       const theme = document.documentElement.dataset.theme?.split('-')[0] || 'base';
       followsDefaultColor = true;
-      store.set('color-default', true, false);
       const color = defaultColor(theme);
       store.set('color', color, false);
       store.removeFromUrl('color');
@@ -224,7 +220,6 @@ export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
     store.set('color', defaultColor(theme), false);
     store.removeFromUrl('color');
   }
-  store.set('color-default', followsDefaultColor, false);
   applyCustomColor(theme);
   fitQuote();
 

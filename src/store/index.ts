@@ -22,7 +22,6 @@ interface Stateful {
   font: string;
   theme: string;
   color: string;
-  'color-default'?: boolean;
   'background-pattern': BackgroundPattern;
   progressbar: ProgressbarMode;
   'random-locale': boolean;
@@ -46,7 +45,7 @@ type State = Stateful & Stateless;
 
 type Listener = (newState: State, oldState: State) => void;
 
-const IGNORE_FROM_URL: (keyof State)[] = ['color-default', 'custom-font', 'active-quote', 'paused', 'auto-read', 'read-attribution'];
+const IGNORE_FROM_URL: (keyof State)[] = ['custom-font', 'active-quote', 'paused', 'auto-read', 'read-attribution'];
 const REMOVE_VALUES_FROM_URL: Partial<State> = {
   transition: 'fade',
   progressbar: 'theme',
@@ -57,7 +56,6 @@ const REMOVE_VALUES_FROM_URL: Partial<State> = {
 };
 
 const BOOLEAN_KEYS = new Set([
-  'color-default',
   'bilingual',
   'zen',
   'work',
@@ -335,7 +333,6 @@ export function createStore() {
     font: 'default',
     theme: 'base-system',
     color: '#d24335',
-    'color-default': undefined,
     'background-pattern': 'none',
     progressbar: 'theme',
     'random-locale': false,

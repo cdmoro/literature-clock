@@ -103,7 +103,7 @@ test.each(Object.entries(presets))('%s supports editing and restoring its own pr
 });
 
 test('an explicit shared color overrides a locally restored palette', () => {
-  localStorage.setItem('settings', JSON.stringify({ 'color-default': true }));
+  localStorage.setItem('settings', JSON.stringify({ theme: 'retro-light', color: '#daa908' }));
   history.replaceState({}, '', '/?theme=retro-light&color=%23123456');
   createStore();
   initTheme();
@@ -123,4 +123,17 @@ test('restored palettes survive reload and follow the dark variant', () => {
   systemChange({ matches: true });
   expect(store.get('color')).toBe('#f1f1f1');
   expect(document.documentElement.style.getPropertyValue('--accent-color')).toBe('');
+});
+
+test('choosing the preset color uses the existing default comparison', () => {
+  history.replaceState({}, '', '/?theme=retro-system&color=%23123456');
+  createStore();
+  initTheme();
+  const picker = document.querySelector<HTMLInputElement>('#color-picker')!;
+  picker.value = '#daa908';
+  picker.dispatchEvent(new Event('input'));
+  expect(document.querySelector<HTMLButtonElement>('#reset-color')!.hidden).toBe(true);
+  systemChange({ matches: true });
+  expect(store.get('color')).toBe('#f1ba08');
+  expect(JSON.parse(localStorage.getItem('settings')!)).not.toHaveProperty('color-default');
 });
