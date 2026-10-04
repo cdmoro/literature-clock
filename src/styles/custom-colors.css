@@ -77,3 +77,19 @@ footer .input-group { vertical-align: top; }
 [data-theme='whatsapp-dark'].custom-accent .time {
   color: color-mix(in srgb, var(--accent-color) 65%, #fff);
 }
+
+/* Color presets tint their surfaces when the accent is edited. */
+:is([data-theme|='pink'], [data-theme|='green'], [data-theme|='orange'],
+    [data-theme|='purple'], [data-theme|='blue'], [data-theme|='gray']).custom-accent {
+  --background: color-mix(in srgb, var(--accent-color) 15%, #fff);
+}
+:is([data-theme='pink-dark'], [data-theme='green-dark'], [data-theme='orange-dark'],
+    [data-theme='purple-dark'], [data-theme='blue-dark'], [data-theme='gray-dark']).custom-accent {
+  --background: color-mix(in srgb, var(--accent-color) 16%, #101016);
+}
+[data-theme|='anaglyph'].custom-accent {
+  --color-mix: var(--accent-color);
+}
+[data-theme|='horizon'].custom-accent .time {
+  color: var(--accent-color);
+}

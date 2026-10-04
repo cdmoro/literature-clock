@@ -59,11 +59,11 @@
 }
 
 [data-theme='pink-light'] {
-  --accent-color: #ff6b81;
+  --accent-color: #ff89d8;
   --background: #ffdff1;
 }
 
 [data-theme='pink-dark'] {
-  --accent-color: #ff6b81;
+  --accent-color: #ff89d8;
   --background: #301317;
 }
