@@ -1,0 +1,9 @@
+.share-color-input-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+#share-preview-reset-color[hidden] {
+  display: none;
+}

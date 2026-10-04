@@ -293,6 +293,7 @@ it.each(
   button('Dark').click();
   const picker = document.getElementById('share-preview-color') as HTMLInputElement;
   expect(picker.disabled).toBe(true);
+  expect(document.getElementById('share-preview-reset-color')!.hidden).toBe(true);
   expect(picker.value).toBe(accent);
   picker.value = '#abcdef';
   picker.dispatchEvent(new Event('input'));
@@ -301,6 +302,33 @@ it.each(
     button('Light').click();
     expect(picker.value).toBe('#808686');
   }
+});
+
+it('resets the image accent to the selected theme defaults without changing the clock custom color', () => {
+  const originalUrl = location.href;
+  while (document.querySelector('.share-theme-carousel span')!.textContent !== 'Base') button('Next theme').click();
+  state['custom-color'] = '#abcdef';
+  const picker = document.getElementById('share-preview-color') as HTMLInputElement;
+  const reset = document.getElementById('share-preview-reset-color') as HTMLButtonElement;
+  picker.value = '#123456';
+  picker.dispatchEvent(new Event('input'));
+  expect(reset.hidden).toBe(false);
+  reset.click();
+  expect(selectedCardOptions()).toMatchObject({ color: undefined, useDefaultColor: true });
+  expect(reset.hidden).toBe(true);
+  expect(state['custom-color']).toBe('#abcdef');
+  expect(location.href).toBe(originalUrl);
+  // With default mode active, a theme/appearance change follows that palette.
+  while (document.querySelector('.share-theme-carousel span')!.textContent !== 'Book page')
+    button('Next theme').click();
+  button('Dark').click();
+  expect(picker.value).toBe('#214cc6');
+  button('Light').click();
+  expect(picker.value).toBe('#fbf719');
+  picker.value = '#123456';
+  picker.dispatchEvent(new Event('input'));
+  expect(selectedCardOptions().color).toBe('#123456');
+  expect(selectedCardOptions()).not.toHaveProperty('useDefaultColor');
 });
 
 it('retains the image custom accent across fixed palettes and restores editing on return', () => {

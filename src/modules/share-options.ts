@@ -12,12 +12,16 @@ import copyIcon from '../assets/copy.svg?raw';
 import shareIcon from '../assets/share.svg?raw';
 import downloadIcon from '../assets/download.svg?raw';
 import { fixedThemeColor, themeSupportsCustomColor } from '../utils/theme-colors';
+import { defaultColor } from './themes';
+import COLOR_STRINGS from '../strings/colorControls.json';
+import '../styles/share-color-controls.css';
 
 let format: CardFormat = 'square';
 let appearance: CardAppearance | undefined;
 let theme: string | undefined;
 let pattern: BackgroundPattern | undefined;
 let color: string | undefined;
+let useDefaultColor = false;
 let font: string | undefined;
 export const selectedCardOptions = () => ({
   pattern: pattern ?? store.get('background-pattern') ?? 'none',
@@ -25,6 +29,7 @@ export const selectedCardOptions = () => ({
     ? color
     : undefined,
   font,
+  ...(useDefaultColor ? { useDefaultColor: true } : {}),
 });
 export const selectedCardTheme = () => theme;
 export const selectedCardAppearance = () => appearance;
@@ -50,6 +55,7 @@ export function initShareOptions() {
     const settingsStrings = SETTINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))];
     pattern = store.get('background-pattern') || 'none';
     color = undefined;
+    useDefaultColor = false;
     font = store.get('font') || 'default';
     const dialog = document.createElement('dialog');
     dialog.id = 'share-preview';
@@ -191,13 +197,31 @@ export function initShareOptions() {
     colorInput.addEventListener('input', () => {
       if (colorInput.disabled) return;
       color = colorInput.value;
+      useDefaultColor = false;
       void refresh();
     });
-    const colorControl = document.createElement('label');
+    const colorControl = document.createElement('div');
     colorControl.className = 'share-control';
-    const colorCaption = document.createElement('span');
+    const colorCaption = document.createElement('label');
+    colorCaption.htmlFor = colorInput.id;
+    colorCaption.className = 'share-control-caption';
     colorCaption.textContent = settingsStrings.settings_color;
-    colorControl.append(colorCaption, colorInput);
+    const resetColor = document.createElement('button');
+    resetColor.id = 'share-preview-reset-color';
+    resetColor.type = 'button';
+    resetColor.textContent = '↺';
+    resetColor.title = COLOR_STRINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))].reset_color;
+    resetColor.setAttribute('aria-label', resetColor.title);
+    resetColor.addEventListener('click', () => {
+      if (colorInput.disabled) return;
+      color = undefined;
+      useDefaultColor = true;
+      void refresh();
+    });
+    const colorGroup = document.createElement('span');
+    colorGroup.className = 'share-color-input-group';
+    colorGroup.append(colorInput, resetColor);
+    colorControl.append(colorCaption, colorGroup);
     customizationControls.append(colorControl);
     const patternControl = document.createElement('label');
     patternControl.className = 'share-pattern-control';
@@ -338,6 +362,7 @@ export function initShareOptions() {
       mobileLayout?.removeEventListener('change', syncCustomization);
       pattern = undefined;
       color = undefined;
+      useDefaultColor = false;
       font = undefined;
       dialog.remove();
       button.focus();
@@ -352,7 +377,10 @@ export function initShareOptions() {
       colorInput.disabled = !themeSupportsCustomColor(currentTheme());
       colorInput.value = colorInput.disabled
         ? fixedThemeColor(currentTheme(), variant === 'dark')
-        : color || store.get('custom-color') || store.get('color') || '#d24335';
+        : useDefaultColor
+          ? defaultColor(currentTheme(), variant === 'dark')
+          : color || store.get('custom-color') || store.get('color') || '#d24335';
+      resetColor.hidden = colorInput.disabled || colorInput.value === defaultColor(currentTheme(), variant === 'dark');
       appearanceButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === variant)));
       status.textContent = strings.preparing;
       preview.replaceChildren();

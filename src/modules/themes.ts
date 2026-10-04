@@ -36,8 +36,7 @@ const DEFAULT_COLORS: Record<string, string> = {
 let followsDefaultColor = true;
 const fixedColor = () => !themeSupportsCustomColor(store.get('theme').split('-')[0]);
 
-function defaultColor(theme: string) {
-  const dark = document.documentElement.dataset.theme?.endsWith('-dark');
+export function defaultColor(theme: string, dark = document.documentElement.dataset.theme?.endsWith('-dark')) {
   const darkColors: Record<string, string> = {
     retro: '#f1ba08',
     terminal: '#1bec1b',
