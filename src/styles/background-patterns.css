@@ -46,7 +46,7 @@ html[data-background-pattern]:not([data-background-pattern='none']) body,
   --pattern-size: 48px 48px;
 }
 
-[data-theme$='-dark'][data-background-pattern]:not([data-background-pattern='none']) {
+[data-theme$='-dark'][data-background-pattern] {
   --pattern-ink: color-mix(in srgb, var(--font-color) 12%, var(--background));
 }
 
@@ -54,4 +54,8 @@ html[data-background-pattern]:not([data-background-pattern='none']) body,
   --pattern-position: 0 0;
   --pattern-image: repeating-linear-gradient(135deg, var(--pattern-ink) 0 4px, transparent 4px 16px);
   --pattern-size: 23px 23px;
+}
+
+[data-theme$='-dark'][data-background-pattern='dots'] {
+  --pattern-ink: color-mix(in srgb, var(--font-color) 18%, var(--background));
 }
