@@ -56,6 +56,8 @@ test('random colors ignore custom accents, disable both pickers and never repeat
   expect(store.get('color')).toBe('#ff89d8');
   expect(document.documentElement.style.getPropertyValue('--accent-color')).toBe('');
   expect(new URLSearchParams(location.search).has('color')).toBe(false);
+  expect(document.querySelector<HTMLButtonElement>('#reset-color')!.hidden).toBe(false);
+  expect(document.querySelector<HTMLButtonElement>('#reset-color')!.disabled).toBe(true);
   document.querySelectorAll<HTMLInputElement>('#color-picker, #settings-color-picker').forEach((picker) => {
     expect(picker.disabled).toBe(true);
     picker.value = '#123456';
@@ -70,6 +72,7 @@ test('random colors ignore custom accents, disable both pickers and never repeat
   expect(store.get('theme')).toBe('color-light');
   changeTheme();
   expect(document.querySelector<HTMLInputElement>('#color-picker')!.disabled).toBe(false);
+  expect(document.querySelector<HTMLButtonElement>('#reset-color')!.disabled).toBe(false);
 });
 
 test('selecting random after a custom accent follows the dark palette and retains random system mode', () => {
@@ -160,6 +163,9 @@ test.each(Object.entries(presets))('%s supports editing and restoring its own pr
   initTheme();
   const picker = document.querySelector<HTMLInputElement>('#color-picker')!;
   expect(picker.disabled).toBe(false);
+  expect(picker.hidden).toBe(false);
+  expect(document.querySelector<HTMLElement>('#color-controls')!.hidden).toBe(false);
+  expect(document.querySelector<HTMLButtonElement>('#reset-color')!.disabled).toBe(false);
   expect(picker.value).toBe(color);
   picker.value = '#123456';
   picker.dispatchEvent(new Event('input'));

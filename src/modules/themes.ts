@@ -136,6 +136,7 @@ export function initTheme() {
   );
   resetColors.forEach((resetColor) =>
     resetColor.addEventListener('click', () => {
+      if (store.get('theme').startsWith('color-')) return;
       const theme = document.documentElement.dataset.theme?.split('-')[0] || 'base';
       followsDefaultColor = true;
       const color = defaultColor(theme);
@@ -173,7 +174,8 @@ function applyCustomColor(theme = 'base') {
     colorPicker.disabled = randomColor;
   });
   resetColors.forEach((resetColor) => {
-    resetColor.hidden = randomColor || followsDefaultColor;
+    resetColor.hidden = !randomColor && followsDefaultColor;
+    resetColor.disabled = randomColor;
   });
 }
 
