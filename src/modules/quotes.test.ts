@@ -43,13 +43,15 @@ const second = { ...first, id: '1200-001' };
 const active = () => state['active-quote'] as ResolvedQuote;
 
 it('rotates the random color palette on successive minute renders without changing theme preferences', async () => {
-  state.theme = 'color-dark';
+  state.theme = 'base-dark';
+  state.palette = 'random';
   vi.mocked(setTheme).mockClear();
   await updateQuote({ time: '12:01', minuteTick: true });
   await updateQuote({ time: '12:02', minuteTick: true });
   expect(setTheme).toHaveBeenCalledTimes(2);
   expect(setTheme).toHaveBeenLastCalledWith({ syncToUrl: false });
-  expect(state.theme).toBe('color-dark');
+  expect(state.theme).toBe('base-dark');
+  expect(state.palette).toBe('random');
 });
 
 it.each([false, 'false', 'true', 'sfw', 'nsfw', 'unknown', undefined, null, 1])(

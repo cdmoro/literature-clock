@@ -5,13 +5,13 @@ import { readingStrings } from './reading-ui';
 import { closeDialogOnBackdropClick } from '../utils/dialog';
 import { renderShareCard, type CardAppearance, type CardFormat } from './share-card';
 import { downloadQuote, shareQuote } from './share';
-import { BACKGROUND_PATTERNS, type BackgroundPattern, supportsBackgroundPattern } from '../utils/background-patterns';
+import { BACKGROUND_PATTERNS, type BackgroundPattern } from '../utils/background-patterns';
 import SETTINGS from '../strings/settings.json';
 import STRINGS from '../strings/share.json';
 import copyIcon from '../assets/copy.svg?raw';
 import shareIcon from '../assets/share.svg?raw';
 import downloadIcon from '../assets/download.svg?raw';
-import { fixedThemeColor, themeSupportsCustomColor } from '../utils/theme-colors';
+import { COLOR_PRESETS, mountColorPalette } from './color-palette';
 import { defaultColor } from './themes';
 import COLOR_STRINGS from '../strings/colorControls.json';
 import '../styles/share-color-controls.css';
@@ -21,13 +21,13 @@ let appearance: CardAppearance | undefined;
 let theme: string | undefined;
 let pattern: BackgroundPattern | undefined;
 let color: string | undefined;
+let palette: string | undefined;
 let useDefaultColor = false;
 let font: string | undefined;
 export const selectedCardOptions = () => ({
   pattern: pattern ?? store.get('background-pattern') ?? 'none',
-  color: themeSupportsCustomColor(theme || document.documentElement.dataset.theme?.split('-')[0] || 'base')
-    ? color
-    : undefined,
+  color,
+  ...(palette && palette !== 'default' ? { palette } : {}),
   font,
   ...(useDefaultColor ? { useDefaultColor: true } : {}),
 });
@@ -55,6 +55,10 @@ export function initShareOptions() {
     const settingsStrings = SETTINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))];
     pattern = store.get('background-pattern') || 'none';
     color = undefined;
+    palette =
+      store.get('palette') === 'random'
+        ? document.documentElement.dataset.accentPalette || document.documentElement.dataset.palette || 'default'
+        : store.get('palette') || 'default';
     useDefaultColor = false;
     font = store.get('font') || 'default';
     const dialog = document.createElement('dialog');
@@ -162,6 +166,10 @@ export function initShareOptions() {
     themeName.setAttribute('aria-live', 'polite');
     const currentTheme = () =>
       theme || (document.documentElement.dataset.theme || 'base-light').replace(/-(light|dark)$/, '');
+    const imageColors = new Map<
+      string,
+      { palette: string | undefined; color: string | undefined; useDefaultColor: boolean }
+    >();
     const updateThemeName = () => {
       themeName.textContent = themes.find((option) => option.value === currentTheme())?.textContent || currentTheme();
     };
@@ -180,7 +188,12 @@ export function initShareOptions() {
           0,
           themes.findIndex((option) => option.value === currentTheme()),
         );
+        imageColors.set(currentTheme(), { palette, color, useDefaultColor });
         theme = themes[(index + step + themes.length) % themes.length].value;
+        const saved = imageColors.get(theme);
+        palette = saved?.palette || 'default';
+        color = saved?.color;
+        useDefaultColor = saved?.useDefaultColor ?? true;
         updateThemeName();
         void refresh();
       });
@@ -198,11 +211,12 @@ export function initShareOptions() {
     colorInput.addEventListener('input', () => {
       if (colorInput.disabled) return;
       color = colorInput.value;
+      palette = 'default';
       useDefaultColor = false;
       void refresh();
     });
     const colorControl = document.createElement('div');
-    colorControl.className = 'share-control';
+    colorControl.className = 'share-control share-palette-control';
     const colorCaption = document.createElement('label');
     colorCaption.htmlFor = colorInput.id;
     colorCaption.className = 'share-control-caption';
@@ -216,14 +230,50 @@ export function initShareOptions() {
     resetColor.addEventListener('click', () => {
       if (colorInput.disabled) return;
       color = undefined;
+      palette = 'default';
       useDefaultColor = true;
       void refresh();
     });
     const colorGroup = document.createElement('span');
     colorGroup.className = 'share-color-input-group';
     colorGroup.append(colorInput, resetColor);
-    colorControl.append(colorCaption, colorGroup);
-    customizationControls.append(colorControl);
+    const colorDropdown = document.createElement('details');
+    colorDropdown.className = 'share-color-dropdown';
+    const colorToggle = document.createElement('summary');
+    colorToggle.setAttribute('aria-label', settingsStrings.settings_color);
+    const colorIndicator = document.createElement('span');
+    colorIndicator.className = 'toolbar-color-indicator';
+    colorToggle.append(colorIndicator);
+    colorGroup.classList.add('share-color-popover');
+    colorDropdown.append(colorToggle, colorGroup);
+    colorGroup.addEventListener('palette-default-selected', () => {
+      colorDropdown.open = false;
+      colorToggle.focus();
+    });
+    const compactReset = document.createElement('button');
+    compactReset.type = 'button';
+    compactReset.className = 'share-color-reset';
+    compactReset.setAttribute('aria-label', resetColor.title);
+    compactReset.innerHTML =
+      '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></svg>';
+    compactReset.addEventListener('click', () => resetColor.click());
+    const compactGroup = document.createElement('div');
+    compactGroup.className = 'share-color-compact';
+    compactGroup.append(colorDropdown, compactReset);
+    const closeColorOnOutsideClick = (event: MouseEvent) => {
+      if (!event.composedPath().includes(compactGroup)) colorDropdown.open = false;
+    };
+    document.addEventListener('click', closeColorOnOutsideClick);
+    colorDropdown.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && colorDropdown.open) {
+        event.preventDefault();
+        event.stopPropagation();
+        colorDropdown.open = false;
+        colorToggle.focus();
+      }
+    });
+    colorControl.append(colorCaption, compactGroup);
+    controls.insertBefore(colorControl, customization);
     const patternControl = document.createElement('label');
     patternControl.className = 'share-pattern-control';
     const patternCaption = document.createElement('span');
@@ -244,7 +294,7 @@ export function initShareOptions() {
     fontControl.className = 'share-font-control';
     const fontCaption = document.createElement('span');
     const fontStrings = getStrings(store.get('ui-locale') || store.get('locale'));
-    customizationSummary.textContent = `${strings.theme} / ${fontStrings.font}`;
+    customizationSummary.textContent = `${strings.theme} / ${settingsStrings.settings_color} / ${fontStrings.font}`;
     fontCaption.textContent = fontStrings.font;
     const fontSelect = document.createElement('select');
     fontSelect.id = 'share-preview-font';
@@ -363,25 +413,34 @@ export function initShareOptions() {
       mobileLayout?.removeEventListener('change', syncCustomization);
       pattern = undefined;
       color = undefined;
+      palette = undefined;
+      appearance = undefined;
+      theme = undefined;
       useDefaultColor = false;
       font = undefined;
+      document.removeEventListener('click', closeColorOnOutsideClick);
+      imagePalette.dispose();
       dialog.remove();
       button.focus();
     });
     const refresh = async () => {
       const current = ++revision;
-      const supported = supportsBackgroundPattern(currentTheme());
-      patternControl.hidden = !supported;
-      patternSelect.disabled = !supported;
+      patternControl.hidden = false;
+      patternSelect.disabled = false;
       formatButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === format)));
       const variant = appearance || (document.documentElement.dataset.theme?.endsWith('-dark') ? 'dark' : 'light');
-      colorInput.disabled = !themeSupportsCustomColor(currentTheme());
-      colorInput.value = colorInput.disabled
-        ? fixedThemeColor(currentTheme(), variant === 'dark')
+      colorInput.disabled = false;
+      const resolvedPalette = palette === 'random' ? document.documentElement.dataset.palette : palette;
+      const preset = resolvedPalette && resolvedPalette in COLOR_PRESETS ? resolvedPalette : undefined;
+      colorInput.value = preset
+        ? defaultColor(preset, variant === 'dark')
         : useDefaultColor
           ? defaultColor(currentTheme(), variant === 'dark')
           : color || store.get('custom-color') || store.get('color') || '#d24335';
-      resetColor.hidden = colorInput.disabled || colorInput.value === defaultColor(currentTheme(), variant === 'dark');
+      resetColor.hidden = !preset && colorInput.value === defaultColor(currentTheme(), variant === 'dark');
+      colorIndicator.style.background = colorInput.value;
+      compactReset.hidden = resetColor.hidden;
+      imagePalette.refresh();
       appearanceButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === variant)));
       status.textContent = strings.preparing;
       preview.replaceChildren();
@@ -401,6 +460,40 @@ export function initShareOptions() {
         if (current === revision) status.textContent = strings.failed;
       }
     };
+    const imagePalette = mountColorPalette(colorGroup, colorInput, {
+      showRandom: false,
+      randomLabel: getStrings(store.get('ui-locale') || store.get('locale')).color,
+      locale: () => getBaseLocale(store.get('ui-locale') || store.get('locale')),
+      state: () => ({
+        palette: palette || 'default',
+        color: colorInput.value,
+        defaultColor: defaultColor(
+          currentTheme(),
+          (appearance || (document.documentElement.dataset.theme?.endsWith('-dark') ? 'dark' : 'light')) === 'dark',
+        ),
+        defaultSelected:
+          !palette || palette === 'default'
+            ? useDefaultColor ||
+              colorInput.value ===
+                defaultColor(
+                  currentTheme(),
+                  (appearance || (document.documentElement.dataset.theme?.endsWith('-dark') ? 'dark' : 'light')) ===
+                    'dark',
+                )
+            : false,
+      }),
+      choose: (choice) => {
+        if (choice.palette === 'default' && !choice.color) {
+          resetColor.click();
+          return;
+        }
+        const choices = Object.keys(COLOR_PRESETS).filter((name) => name !== palette);
+        palette = choice.palette === 'random' ? choices[Math.floor(Math.random() * choices.length)] : choice.palette;
+        color = choice.palette === 'default' ? choice.color : undefined;
+        useDefaultColor = false;
+        void refresh();
+      },
+    });
     dialog.showModal();
     heading.focus({ preventScroll: true });
     void refresh();

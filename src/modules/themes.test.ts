@@ -34,64 +34,7 @@ afterEach(() => {
   document.documentElement.removeAttribute('class');
   delete document.documentElement.dataset.theme;
   delete document.documentElement.dataset.variant;
-});
-
-function addRandomColors() {
-  document.querySelector('#theme-select')!.insertAdjacentHTML(
-    'beforeend',
-    `
-    <optgroup id="colors"><option value="color">Random</option><option value="pink">Pink</option>
-    <option value="green">Green</option><option value="gray">Gray</option></optgroup>`,
-  );
-  document.body.insertAdjacentHTML('beforeend', '<input id="settings-color-picker" type="color">');
-  vi.spyOn(Math, 'random').mockReturnValue(0);
-}
-
-test('random colors ignore custom accents, disable both pickers and never repeat the visible palette', () => {
-  addRandomColors();
-  history.replaceState({}, '', '/?theme=color-light&color=%23123456');
-  createStore();
-  initTheme();
-  expect(document.documentElement.dataset.theme).toBe('pink-light');
-  expect(store.get('color')).toBe('#ff89d8');
-  expect(document.documentElement.style.getPropertyValue('--accent-color')).toBe('');
-  expect(new URLSearchParams(location.search).has('color')).toBe(false);
-  expect(document.querySelector<HTMLButtonElement>('#reset-color')!.hidden).toBe(true);
-  expect(document.querySelector<HTMLButtonElement>('#reset-color')!.disabled).toBe(true);
-  document.querySelectorAll<HTMLInputElement>('#color-picker, #settings-color-picker').forEach((picker) => {
-    expect(picker.disabled).toBe(true);
-    picker.value = '#123456';
-    picker.dispatchEvent(new Event('input'));
-    expect(store.get('color')).toBe('#ff89d8');
-    expect(store.get('custom-color')).toBe('#123456');
-  });
-  setTheme({ syncToUrl: false });
-  expect(document.documentElement.dataset.theme).toBe('green-light');
-  expect(store.get('color')).toBe('#2ecc71');
-  setTheme({ syncToUrl: false });
-  expect(document.documentElement.dataset.theme).toBe('pink-light');
-  expect(store.get('theme')).toBe('color-light');
-  changeTheme();
-  expect(document.querySelector<HTMLInputElement>('#color-picker')!.disabled).toBe(false);
-  expect(document.querySelector<HTMLButtonElement>('#reset-color')!.disabled).toBe(false);
-});
-
-test('selecting random after a custom accent follows the dark palette and retains random system mode', () => {
-  addRandomColors();
-  history.replaceState({}, '', '/?color=%23123456');
-  createStore();
-  initTheme();
-  document.querySelector<HTMLSelectElement>('#theme-select')!.value = 'color';
-  setTheme();
-  expect(store.get('color')).toBe('#ff89d8');
-  systemChange({ matches: true });
-  expect(document.documentElement.dataset.theme).toBe('pink-dark');
-  expect(store.get('theme')).toBe('color-system');
-  vi.spyOn(Math, 'random').mockReturnValue(0.99);
-  document.querySelector<HTMLSelectElement>('#variant-select')!.value = 'dark';
-  setTheme();
-  expect(document.documentElement.dataset.theme).toBe('gray-dark');
-  expect(store.get('color')).toBe('#f1f1f1');
+  delete document.documentElement.dataset.accentPalette;
 });
 
 function changeTheme() {
@@ -112,11 +55,15 @@ describe('theme color URLs', () => {
     expect(new URLSearchParams(location.search).get('time')).toBe('12:34');
   });
 
-  test('keeps a custom color shareable when switching skins and system appearance', () => {
+  test('custom colors remain selected across skins', () => {
     history.replaceState({}, '', '/?color=%23123456');
     createStore();
     initTheme();
     changeTheme();
+    expect(store.get('color')).toBe('#123456');
+    const select = document.querySelector<HTMLSelectElement>('#theme-select')!;
+    select.value = 'base';
+    select.dispatchEvent(new Event('change'));
     systemChange({ matches: true });
     expect(store.get('color')).toBe('#123456');
     expect(new URLSearchParams(location.search).get('color')).toBe('#123456');
@@ -202,47 +149,138 @@ test.each(
     blue: '#2c97df',
     gray: '#808686',
   }),
-)('%s keeps its preset visible in a disabled picker and restores the custom accent after reload', (theme, color) => {
-  document
-    .querySelector('#theme-select')!
-    .insertAdjacentHTML('beforeend', `<option value="${theme}">${theme}</option>`);
-  history.replaceState({}, '', '/?theme=retro-light&color=%23123456');
+)('migrates the legacy %s URL into a Base palette', (palette, color) => {
+  history.replaceState({}, '', `/?theme=${palette}-light`);
   createStore();
   initTheme();
-  document.querySelector<HTMLSelectElement>('#theme-select')!.value = theme;
-  setTheme();
-  const picker = document.querySelector<HTMLInputElement>('#color-picker')!;
-  expect(picker.hidden).toBe(false);
-  expect(picker.disabled).toBe(true);
-  expect(picker.value).toBe(color);
+  expect(store.get('theme')).toBe('base-light');
+  expect(store.get('palette')).toBe(palette);
+  expect(document.documentElement.dataset.theme).toBe('base-light');
+  expect(document.documentElement.dataset.palette).toBe(palette);
   expect(store.get('color')).toBe(color);
-  expect(store.get('custom-color')).toBe('#123456');
-  expect(document.documentElement.style.getPropertyValue('--accent-color')).toBe('');
-  createStore();
-  initTheme();
-  changeTheme();
-  expect(picker.disabled).toBe(false);
-  expect(picker.value).toBe('#123456');
-  expect(store.get('color')).toBe('#123456');
-  expect(document.querySelector<HTMLButtonElement>('#reset-color')!.hidden).toBe(false);
+  expect(document.querySelector<HTMLInputElement>('#color-picker')!.disabled).toBe(false);
   document.querySelector<HTMLButtonElement>('#reset-color')!.click();
-  expect(store.get('custom-color')).toBe('');
-  expect(store.get('color')).toBe('#daa908');
+  expect(store.get('palette')).toBe('default');
+  expect(store.get('color')).toBe('#d24335');
 });
 
-test('random displays the disabled base swatch while the visible palette rotates and preserves a custom accent', () => {
-  addRandomColors();
-  history.replaceState({}, '', '/?theme=color-light&color=%23123456');
+test('custom swatches persist, survive reset, and can be removed without changing the active color', async () => {
   createStore();
   initTheme();
   const picker = document.querySelector<HTMLInputElement>('#color-picker')!;
-  expect(picker.value).toBe('#d24335');
-  expect(picker.disabled).toBe(true);
-  expect(document.querySelector<HTMLButtonElement>('#reset-color')!.hidden).toBe(true);
-  setTheme({ syncToUrl: false });
-  expect(store.get('color')).toBe('#2ecc71');
-  expect(picker.value).toBe('#d24335');
+  picker.value = '#123456';
+  picker.dispatchEvent(new Event('input'));
+  picker.dispatchEvent(new Event('change'));
+  expect(JSON.parse(localStorage.getItem('custom-colors')!)).toEqual(['#123456']);
+  document.querySelector<HTMLButtonElement>('#reset-color')!.click();
+  await Promise.resolve();
+  const swatch = () => document.querySelector<HTMLButtonElement>('.color-swatch[data-color="#123456"]')!;
+  swatch().click();
+  await Promise.resolve();
+  document.querySelector<HTMLButtonElement>('.color-manage')!.click();
+  swatch().click();
+  expect(JSON.parse(localStorage.getItem('custom-colors')!)).toEqual([]);
+  expect(store.get('color')).toBe('#123456');
+});
+
+test('gray palette adapts to the system scheme while keeping its palette selection', () => {
+  history.replaceState({}, '', '/?theme=gray-system');
+  createStore();
+  initTheme();
+  systemChange({ matches: true });
+  expect(store.get('color')).toBe('#f1f1f1');
+  expect(store.get('palette')).toBe('gray');
+});
+
+test('the toolbar opens a palette, applies presets and closes with Escape or an outside click', async () => {
+  createStore();
+  initTheme();
+  const toggle = document.getElementById('toolbar-color-toggle')!;
+  const panel = document.getElementById('toolbar-color-palette')!;
+  expect(panel.hidden).toBe(true);
+  toggle.click();
+  expect(panel.hidden).toBe(false);
+  expect(toggle.getAttribute('aria-expanded')).toBe('true');
+  panel.querySelector<HTMLButtonElement>('[data-color="#2c97df"]')!.click();
+  await Promise.resolve();
+  expect(store.get('palette')).toBe('blue');
+  expect(store.get('color')).toBe('#2c97df');
+  expect(panel.hidden).toBe(false);
+  panel.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+  expect(panel.hidden).toBe(true);
+  expect(document.activeElement).toBe(toggle);
+  toggle.click();
+  document.body.click();
+  expect(panel.hidden).toBe(true);
+});
+
+test('custom color additions and removals stay synchronized between toolbar and settings', async () => {
+  document.body.insertAdjacentHTML(
+    'beforeend',
+    '<div id="settings-color-controls"><input id="settings-color-picker" type="color"><button id="settings-reset-color">Reset</button></div>',
+  );
+  createStore();
+  initTheme();
+  const picker = document.querySelector<HTMLInputElement>('#color-picker')!;
+  picker.value = '#123456';
+  picker.dispatchEvent(new Event('input'));
+  picker.dispatchEvent(new Event('change'));
+  await Promise.resolve();
+  const selector = '.color-swatch[data-color="#123456"]';
+  expect(document.querySelector('#settings-color-controls')!.querySelector(selector)).not.toBeNull();
+  document.querySelector<HTMLButtonElement>('#settings-color-controls .color-manage')!.click();
+  document.querySelector<HTMLButtonElement>(`#settings-color-controls ${selector}`)!.click();
+  expect(document.querySelector('#toolbar-color-palette')!.querySelector(selector)).toBeNull();
+  expect(store.get('color')).toBe('#123456');
+});
+
+test.each(['base', 'retro'])(
+  'random colors rotate each minute on %s without repeating the previous accent',
+  (theme) => {
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+    history.replaceState({}, '', `/?theme=${theme}-light&palette=random`);
+    createStore();
+    initTheme();
+    expect(store.get('color')).toBe('#d24335');
+    setTheme({ syncToUrl: false });
+    expect(store.get('color')).toBe('#ff89d8');
+    expect(store.get('theme')).toBe(`${theme}-light`);
+    expect(store.get('palette')).toBe('random');
+  },
+);
+
+test('the original Base red remains available on special themes', () => {
+  createStore();
+  initTheme();
   changeTheme();
-  expect(picker.value).toBe('#123456');
-  expect(picker.disabled).toBe(false);
+  document.querySelector<HTMLButtonElement>('.color-swatch[data-palette-key="red"]')!.click();
+  expect(store.get('color')).toBe('#d24335');
+  expect(store.get('palette')).toBe('red');
+});
+
+test('picker slider changes save only the final colour from each opening', () => {
+  createStore();
+  initTheme();
+  const picker = document.querySelector<HTMLInputElement>('#color-picker')!;
+  picker.dispatchEvent(new Event('click'));
+  for (const color of ['#123456', '#123457', '#123458']) {
+    picker.value = color;
+    picker.dispatchEvent(new Event('input'));
+    picker.dispatchEvent(new Event('change'));
+  }
+  expect(JSON.parse(localStorage.getItem('custom-colors')!)).toEqual(['#123458']);
+  picker.dispatchEvent(new Event('click'));
+  picker.value = '#abcdef';
+  picker.dispatchEvent(new Event('change'));
+  expect(JSON.parse(localStorage.getItem('custom-colors')!)).toEqual(['#123458', '#abcdef']);
+});
+
+test('the palette has a fixed red preset and no extra default swatch', () => {
+  createStore();
+  initTheme();
+  expect(document.querySelector('.color-swatch[data-palette-key="default"]')).toBeNull();
+  expect(document.querySelectorAll('.color-swatch[data-color="#d24335"]')).toHaveLength(1);
+  const count = document.querySelectorAll('.color-swatch').length;
+  changeTheme();
+  expect(document.querySelectorAll('.color-swatch')).toHaveLength(count);
 });

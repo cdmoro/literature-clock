@@ -92,7 +92,7 @@ test.each(['photo', 'retro', 'anaglyph', 'festive', 'book', 'terminal', 'whatsap
     expect(select.disabled).toBe(true);
     expect(select.closest<HTMLElement>('.settings-row')!.hidden).toBe(true);
     expect(store.get('background-pattern')).toBe('diagonal');
-    chooseTheme('blue');
+    chooseTheme('base');
     expect(document.documentElement.dataset.backgroundPattern).toBe('diagonal');
     expect(select.disabled).toBe(false);
     expect(select.closest<HTMLElement>('.settings-row')!.hidden).toBe(false);
@@ -102,7 +102,8 @@ test.each(['photo', 'retro', 'anaglyph', 'festive', 'book', 'terminal', 'whatsap
 test('uses the resolved plain skin for random colour themes', () => {
   setup();
   choosePattern('grid');
-  chooseTheme('color');
+  store.set('palette', 'random');
+  chooseTheme('base');
   expect(document.documentElement.dataset.backgroundPattern).toBe('grid');
 });
 

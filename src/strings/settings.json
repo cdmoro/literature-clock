@@ -58,7 +58,15 @@
     "settings_pattern_zigzag": "Zigzag",
     "settings_pattern_circles": "Large circles",
     "settings_pattern_diagonal-wide": "Wide diagonal stripes",
-    "settings_pattern_noise": "Noise"
+    "settings_pattern_noise": "Noise",
+    "settings_color_add": "Add a custom colour",
+    "settings_color_manage": "Manage colours",
+    "settings_color_remove": "Remove colour",
+    "settings_color_customize": "Customise…",
+    "settings_color_save": "Save colour",
+    "settings_color_options": "Colour options",
+    "settings_color_random": "Random colour each minute",
+    "settings_color_done": "Done"
   },
   "en-US": {
     "settings_title": "Settings",
@@ -119,7 +127,15 @@
     "settings_pattern_zigzag": "Zigzag",
     "settings_pattern_circles": "Large circles",
     "settings_pattern_diagonal-wide": "Wide diagonal stripes",
-    "settings_pattern_noise": "Noise"
+    "settings_pattern_noise": "Noise",
+    "settings_color_add": "Add a custom color",
+    "settings_color_manage": "Manage colors",
+    "settings_color_remove": "Remove color",
+    "settings_color_customize": "Customize…",
+    "settings_color_save": "Save color",
+    "settings_color_options": "Color options",
+    "settings_color_random": "Random color each minute",
+    "settings_color_done": "Done"
   },
   "es-ES": {
     "settings_title": "Configuración",
@@ -180,7 +196,15 @@
     "settings_pattern_zigzag": "Zigzag",
     "settings_pattern_circles": "Círculos grandes",
     "settings_pattern_diagonal-wide": "Rayas diagonales gruesas",
-    "settings_pattern_noise": "Ruido"
+    "settings_pattern_noise": "Ruido",
+    "settings_color_add": "Agregar un color personalizado",
+    "settings_color_manage": "Administrar colores",
+    "settings_color_remove": "Eliminar color",
+    "settings_color_customize": "Personalizar…",
+    "settings_color_save": "Guardar color",
+    "settings_color_options": "Opciones de color",
+    "settings_color_random": "Color aleatorio cada minuto",
+    "settings_color_done": "Listo"
   },
   "pt-PT": {
     "settings_title": "Configurações",
@@ -241,7 +265,15 @@
     "settings_pattern_zigzag": "Ziguezague",
     "settings_pattern_circles": "Círculos grandes",
     "settings_pattern_diagonal-wide": "Riscas diagonais grossas",
-    "settings_pattern_noise": "Ruído"
+    "settings_pattern_noise": "Ruído",
+    "settings_color_add": "Adicionar uma cor personalizada",
+    "settings_color_manage": "Gerir cores",
+    "settings_color_remove": "Remover cor",
+    "settings_color_customize": "Personalizar…",
+    "settings_color_save": "Guardar cor",
+    "settings_color_options": "Opções de cor",
+    "settings_color_random": "Cor aleatória a cada minuto",
+    "settings_color_done": "Concluído"
   },
   "fr-FR": {
     "settings_title": "Paramètres",
@@ -302,7 +334,15 @@
     "settings_pattern_zigzag": "Zigzag",
     "settings_pattern_circles": "Grands cercles",
     "settings_pattern_diagonal-wide": "Rayures diagonales épaisses",
-    "settings_pattern_noise": "Bruit"
+    "settings_pattern_noise": "Bruit",
+    "settings_color_add": "Ajouter une couleur personnalisée",
+    "settings_color_manage": "Gérer les couleurs",
+    "settings_color_remove": "Supprimer la couleur",
+    "settings_color_customize": "Personnaliser…",
+    "settings_color_save": "Enregistrer la couleur",
+    "settings_color_options": "Options de couleur",
+    "settings_color_random": "Couleur aléatoire chaque minute",
+    "settings_color_done": "Terminé"
   },
   "it-IT": {
     "settings_title": "Impostazioni",
@@ -363,7 +403,15 @@
     "settings_pattern_zigzag": "Zigzag",
     "settings_pattern_circles": "Cerchi grandi",
     "settings_pattern_diagonal-wide": "Righe diagonali spesse",
-    "settings_pattern_noise": "Rumore"
+    "settings_pattern_noise": "Rumore",
+    "settings_color_add": "Aggiungi un colore personalizzato",
+    "settings_color_manage": "Gestisci colori",
+    "settings_color_remove": "Rimuovi colore",
+    "settings_color_customize": "Personalizza…",
+    "settings_color_save": "Salva colore",
+    "settings_color_options": "Opzioni colore",
+    "settings_color_random": "Colore casuale ogni minuto",
+    "settings_color_done": "Fine"
   },
   "de-DE": {
     "settings_title": "Einstellungen",
@@ -424,7 +472,15 @@
     "settings_pattern_zigzag": "Zickzack",
     "settings_pattern_circles": "Große Kreise",
     "settings_pattern_diagonal-wide": "Breite Diagonalstreifen",
-    "settings_pattern_noise": "Rauschen"
+    "settings_pattern_noise": "Rauschen",
+    "settings_color_add": "Eigene Farbe hinzufügen",
+    "settings_color_manage": "Farben verwalten",
+    "settings_color_remove": "Farbe entfernen",
+    "settings_color_customize": "Anpassen…",
+    "settings_color_save": "Farbe speichern",
+    "settings_color_options": "Farboptionen",
+    "settings_color_random": "Zufällige Farbe jede Minute",
+    "settings_color_done": "Fertig"
   },
   "el-GR": {
     "settings_title": "Ρυθμίσεις",
@@ -485,7 +541,15 @@
     "settings_pattern_zigzag": "Ζιγκ ζαγκ",
     "settings_pattern_circles": "Μεγάλοι κύκλοι",
     "settings_pattern_diagonal-wide": "Παχιές διαγώνιες γραμμές",
-    "settings_pattern_noise": "Θόρυβος"
+    "settings_pattern_noise": "Θόρυβος",
+    "settings_color_add": "Προσθήκη προσαρμοσμένου χρώματος",
+    "settings_color_manage": "Διαχείριση χρωμάτων",
+    "settings_color_remove": "Αφαίρεση χρώματος",
+    "settings_color_customize": "Προσαρμογή…",
+    "settings_color_save": "Αποθήκευση χρώματος",
+    "settings_color_options": "Επιλογές χρώματος",
+    "settings_color_random": "Τυχαίο χρώμα κάθε λεπτό",
+    "settings_color_done": "Τέλος"
   },
   "zh-CN": {
     "settings_title": "设置",
@@ -546,7 +610,15 @@
     "settings_pattern_zigzag": "锯齿",
     "settings_pattern_circles": "大圆点",
     "settings_pattern_diagonal-wide": "粗斜条纹",
-    "settings_pattern_noise": "噪点"
+    "settings_pattern_noise": "噪点",
+    "settings_color_add": "添加自定义颜色",
+    "settings_color_manage": "管理颜色",
+    "settings_color_remove": "删除颜色",
+    "settings_color_customize": "自定义…",
+    "settings_color_save": "保存颜色",
+    "settings_color_options": "颜色选项",
+    "settings_color_random": "每分钟随机颜色",
+    "settings_color_done": "完成"
   },
   "ru-RU": {
     "settings_title": "Настройки",
@@ -607,7 +679,15 @@
     "settings_pattern_zigzag": "Зигзаг",
     "settings_pattern_circles": "Большие круги",
     "settings_pattern_diagonal-wide": "Широкие диагональные полосы",
-    "settings_pattern_noise": "Шум"
+    "settings_pattern_noise": "Шум",
+    "settings_color_add": "Добавить свой цвет",
+    "settings_color_manage": "Управление цветами",
+    "settings_color_remove": "Удалить цвет",
+    "settings_color_customize": "Настроить…",
+    "settings_color_save": "Сохранить цвет",
+    "settings_color_options": "Настройки цвета",
+    "settings_color_random": "Случайный цвет каждую минуту",
+    "settings_color_done": "Готово"
   },
   "eo": {
     "settings_title": "Agordoj",
@@ -668,7 +748,15 @@
     "settings_pattern_zigzag": "Zigzago",
     "settings_pattern_circles": "Grandaj cirkloj",
     "settings_pattern_diagonal-wide": "Larĝaj diagonalaj strioj",
-    "settings_pattern_noise": "Bruo"
+    "settings_pattern_noise": "Bruo",
+    "settings_color_add": "Aldoni propran koloron",
+    "settings_color_manage": "Administri kolorojn",
+    "settings_color_remove": "Forigi koloron",
+    "settings_color_customize": "Agordi…",
+    "settings_color_save": "Konservi koloron",
+    "settings_color_options": "Koloraj opcioj",
+    "settings_color_random": "Hazarda koloro ĉiun minuton",
+    "settings_color_done": "Prete"
   },
   "ar-AE": {
     "settings_title": "الإعدادات",
@@ -729,6 +817,14 @@
     "settings_pattern_zigzag": "متعرج",
     "settings_pattern_circles": "دوائر كبيرة",
     "settings_pattern_diagonal-wide": "خطوط قطرية عريضة",
-    "settings_pattern_noise": "ضوضاء"
+    "settings_pattern_noise": "ضوضاء",
+    "settings_color_add": "إضافة لون مخصص",
+    "settings_color_manage": "إدارة الألوان",
+    "settings_color_remove": "إزالة اللون",
+    "settings_color_customize": "تخصيص…",
+    "settings_color_save": "حفظ اللون",
+    "settings_color_options": "خيارات اللون",
+    "settings_color_random": "لون عشوائي كل دقيقة",
+    "settings_color_done": "تم"
   }
 }

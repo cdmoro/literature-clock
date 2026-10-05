@@ -23,6 +23,9 @@ beforeEach(() => {
   vi.unstubAllGlobals();
   state.locale = 'en-GB';
   state['background-pattern'] = 'none';
+  localStorage.clear();
+  state.palette = 'default';
+  document.documentElement.dataset.palette = 'default';
   state.color = '#d24335';
   state['custom-color'] = '';
   state.font = 'default';
@@ -87,6 +90,8 @@ it('discards a preview render after the dialog closes', async () => {
 });
 
 afterEach(() => {
+  document.querySelector<HTMLDialogElement>('#share-preview')?.close();
+  localStorage.clear();
   vi.restoreAllMocks();
   vi.unstubAllGlobals();
 });
@@ -136,7 +141,7 @@ it('folds customization on mobile and opens it when switching to desktop', () =>
   document.getElementById('share')!.click();
   const customization = document.querySelector<HTMLDetailsElement>('.share-customization')!;
   expect(customization.open).toBe(false);
-  expect(customization.querySelector('summary')?.textContent).toBe('Theme / Font');
+  expect(customization.querySelector('summary')?.textContent).toBe('Theme / Colour / Font');
   expect(customization.contains(document.getElementById('share-preview-font'))).toBe(true);
   expect(customization.contains(button('Vertical'))).toBe(false);
   customization.open = true;
@@ -176,20 +181,18 @@ it('changes the preview colour and pattern without touching clock preferences or
   select.value = 'dots';
   select.dispatchEvent(new Event('change'));
   await Promise.resolve();
-  expect(renderShareCard).toHaveBeenLastCalledWith(
-    expect.anything(),
-    expect.anything(),
-    expect.anything(),
-    expect.anything(),
-    { color: '#123456', pattern: 'dots', font: 'default' },
-  );
+  expect(renderShareCard).toHaveBeenLastCalledWith(expect.anything(), expect.anything(), undefined, undefined, {
+    color: '#123456',
+    pattern: 'dots',
+    font: 'default',
+  });
   expect(state.color).toBe('#d24335');
   expect(state['background-pattern']).toBe('none');
   expect(location.href).toBe(originalUrl);
   expect(document.documentElement.dataset.theme).toBe('base-dark');
   button('Next theme').click();
-  expect(select.disabled).toBe(true);
-  expect(select.closest('label')!.hidden).toBe(true);
+  expect(select.disabled).toBe(false);
+  expect(select.closest('label')!.hidden).toBe(false);
   button('Previous theme').click();
   expect(select.disabled).toBe(false);
   expect(select.value).toBe('dots');
@@ -207,13 +210,11 @@ it('starts each popup from the saved clock pattern and clears its temporary colo
   button('Close').click();
   document.getElementById('share')!.click();
   expect((document.getElementById('share-preview-pattern') as HTMLSelectElement).value).toBe('grid');
-  expect(renderShareCard).toHaveBeenLastCalledWith(
-    expect.anything(),
-    expect.anything(),
-    expect.anything(),
-    expect.anything(),
-    { color: undefined, pattern: 'grid', font: 'default' },
-  );
+  expect(renderShareCard).toHaveBeenLastCalledWith(expect.anything(), expect.anything(), undefined, undefined, {
+    color: undefined,
+    pattern: 'grid',
+    font: 'default',
+  });
 });
 
 it('changes fonts only for the image, includes custom families and clears the override on close', async () => {
@@ -227,8 +228,8 @@ it('changes fonts only for the image, includes custom families and clears the ov
   expect(renderShareCard).toHaveBeenLastCalledWith(
     expect.anything(),
     expect.anything(),
-    expect.anything(),
-    expect.anything(),
+    undefined,
+    undefined,
     expect.objectContaining({ font: 'Lora' }),
   );
   expect(state.font).toBe('default');
@@ -279,29 +280,26 @@ it.each(
     orange: '#f39c12',
     purple: '#9b59b6',
     blue: '#2c97df',
-    gray: '#f1f1f1',
+    gray: '#808686',
   }),
-)('disables the share picker for %s with its palette color', (theme, accent) => {
-  button('Close').click();
-  document.documentElement.dataset.theme = `${theme}-dark`;
-  document
-    .querySelector('#theme-select')!
-    .insertAdjacentHTML('beforeend', `<option value="${theme}">${theme}</option>`);
-  state['custom-color'] = '#123456';
-  document.getElementById('share')!.click();
-  while (document.querySelector('.share-theme-carousel span')!.textContent !== theme) button('Next theme').click();
-  button('Dark').click();
+)('selects the %s palette independently and resolves its dark appearance', (palette, color) => {
+  const originalUrl = location.href;
+  document.querySelector<HTMLButtonElement>(`#share-preview .color-swatch[data-color="${color}"]`)!.click();
   const picker = document.getElementById('share-preview-color') as HTMLInputElement;
-  expect(picker.disabled).toBe(true);
-  expect(document.getElementById('share-preview-reset-color')!.hidden).toBe(true);
-  expect(picker.value).toBe(accent);
-  picker.value = '#abcdef';
-  picker.dispatchEvent(new Event('input'));
-  expect(selectedCardOptions().color).toBeUndefined();
-  if (theme === 'gray') {
+  expect(picker.disabled).toBe(false);
+  expect(picker.value).toBe(palette === 'gray' ? '#f1f1f1' : color);
+  expect(selectedCardOptions()).toMatchObject({ palette, color: undefined });
+  if (palette === 'gray') {
     button('Light').click();
     expect(picker.value).toBe('#808686');
   }
+  expect(state.palette).toBe('default');
+  expect(state.color).toBe('#d24335');
+  expect(location.href).toBe(originalUrl);
+  picker.value = '#abcdef';
+  picker.dispatchEvent(new Event('input'));
+  expect(selectedCardOptions().color).toBe('#abcdef');
+  expect(selectedCardOptions()).not.toHaveProperty('palette');
 });
 
 it('resets the image accent to the selected theme defaults without changing the clock custom color', () => {
@@ -331,22 +329,20 @@ it('resets the image accent to the selected theme defaults without changing the 
   expect(selectedCardOptions()).not.toHaveProperty('useDefaultColor');
 });
 
-it('retains the image custom accent across fixed palettes and restores editing on return', () => {
-  button('Close').click();
-  document.querySelector('#theme-select')!.insertAdjacentHTML('beforeend', '<option value="pink">Pink</option>');
-  document.getElementById('share')!.click();
-  while (document.querySelector('.share-theme-carousel span')!.textContent !== 'Base') button('Next theme').click();
+it('remembers image colors separately for each theme', () => {
   const picker = document.getElementById('share-preview-color') as HTMLInputElement;
   picker.value = '#123456';
   picker.dispatchEvent(new Event('input'));
-  button('Previous theme').click();
-  expect(picker.disabled).toBe(true);
-  expect(picker.value).toBe('#ff89d8');
-  expect(selectedCardOptions().color).toBeUndefined();
   button('Next theme').click();
-  expect(picker.disabled).toBe(false);
+  expect(picker.value).toBe('#214cc6');
+  document.querySelector<HTMLButtonElement>('#share-preview .color-swatch[data-color="#ff89d8"]')!.click();
+  expect(selectedCardOptions()).toMatchObject({ palette: 'pink' });
+  button('Previous theme').click();
   expect(picker.value).toBe('#123456');
   expect(selectedCardOptions().color).toBe('#123456');
+  button('Next theme').click();
+  expect(picker.value).toBe('#ff89d8');
+  expect(selectedCardOptions()).toMatchObject({ palette: 'pink' });
   expect(state['custom-color']).toBe('');
 });
 
@@ -354,4 +350,37 @@ it('opens with title focus and restores the launcher on close', () => {
   expect(document.activeElement).toBe(document.getElementById('share-preview-title'));
   document.querySelector<HTMLDialogElement>('#share-preview')!.close();
   expect(document.activeElement).toBe(document.getElementById('share'));
+});
+
+it('opens from the clock palette, resets it for the image and restores the clock palette on reopening', () => {
+  button('Close').click();
+  state.palette = 'blue';
+  state.color = '#2c97df';
+  document.documentElement.dataset.palette = 'blue';
+  document.getElementById('share')!.click();
+  expect(selectedCardOptions()).toMatchObject({ palette: 'blue' });
+  button('Restore this theme’s default colour').click();
+  expect(selectedCardOptions()).toMatchObject({ useDefaultColor: true });
+  expect(selectedCardOptions()).not.toHaveProperty('palette');
+  expect(state.palette).toBe('blue');
+  button('Close').click();
+  document.getElementById('share')!.click();
+  expect(selectedCardOptions()).toMatchObject({ palette: 'blue' });
+});
+
+it('saves custom colors for other palettes and keeps the image accent when a swatch is deleted', () => {
+  const picker = document.getElementById('share-preview-color') as HTMLInputElement;
+  picker.value = '#123456';
+  picker.dispatchEvent(new Event('input'));
+  picker.dispatchEvent(new Event('change'));
+  expect(JSON.parse(localStorage.getItem('custom-colors')!)).toContain('#123456');
+  button('Close').click();
+  document.getElementById('share')!.click();
+  document.querySelector<HTMLButtonElement>('#share-preview .color-swatch[data-color="#123456"]')!.click();
+  expect(selectedCardOptions().color).toBe('#123456');
+  button('Manage colours').click();
+  button('Remove colour #123456').click();
+  expect(JSON.parse(localStorage.getItem('custom-colors')!)).not.toContain('#123456');
+  expect(selectedCardOptions().color).toBe('#123456');
+  expect(state.color).toBe('#d24335');
 });

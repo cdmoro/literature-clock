@@ -6,7 +6,18 @@ import SETTINGS from '../strings/settings.json';
 
 const ACTIVE_THEME_KEY = 'active-saved-theme';
 export const SAVED_THEMES_KEY = 'saved-themes';
-const KEYS = ['theme', 'color', 'background-pattern', 'font', 'transition', 'work', 'show-time', 'hide-book-title', 'progressbar'] as const;
+const KEYS = [
+  'theme',
+  'color',
+  'palette',
+  'background-pattern',
+  'font',
+  'transition',
+  'work',
+  'show-time',
+  'hide-book-title',
+  'progressbar',
+] as const;
 type Preferences = Pick<ReturnType<typeof validateSettings>, (typeof KEYS)[number]>;
 interface SavedTheme {
   id: string;
@@ -26,6 +37,7 @@ export function readSavedThemes(): SavedTheme[] {
       const validated = validateSettings(settings, false);
       // Existing snapshots predate optional patterns.
       validated['background-pattern'] ??= 'none';
+      validated.palette ??= 'default';
       if (!KEYS.every((key) => validated[key] !== undefined)) return [];
       const snapshot = Object.fromEntries(KEYS.map((key) => [key, validated[key]])) as Preferences;
       seen.add(id);
@@ -43,11 +55,14 @@ export async function applySavedTheme(settings: Preferences) {
   [theme.value, variant.value] = settings.theme!.split('-');
   variant.value ||= 'system';
   setTheme();
+  store.set('palette', settings.palette || 'default');
   store.set('background-pattern', settings['background-pattern'] || 'none');
   const color = document.querySelector<HTMLInputElement>('#settings-color-picker');
   if (color) {
     color.value = settings.color!;
     color.dispatchEvent(new Event('input', { bubbles: true }));
+    store.set('palette', settings.palette || 'default');
+    setTheme({ isVariantChange: true });
   }
   for (const key of ['work', 'show-time', 'hide-book-title'] as const) {
     if (store.get(key) !== settings[key]) document.getElementById(key)?.click();
