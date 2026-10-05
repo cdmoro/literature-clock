@@ -59,3 +59,9 @@ html[data-background-pattern]:not([data-background-pattern='none']) body,
 [data-theme$='-dark'][data-background-pattern='dots'] {
   --pattern-ink: color-mix(in srgb, var(--font-color) 18%, var(--background));
 }
+
+[data-background-pattern='noise'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/noise.png');
+  --pattern-size: 256px 256px;
+}

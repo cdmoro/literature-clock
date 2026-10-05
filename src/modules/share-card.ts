@@ -1,3 +1,4 @@
+import { sharePatternTile } from '../utils/share-pattern';
 import { store } from '../store';
 import { type BackgroundPattern, supportsBackgroundPattern } from '../utils/background-patterns';
 import html2canvas from 'html2canvas-pro';
@@ -107,7 +108,8 @@ export async function renderShareCard(
       card.style.fontFamily = themeFontFamily;
     });
   }
-  const backgroundSize = pattern !== 'none' ? paletteStyle.backgroundSize : 'cover';
+  const patternTile = sharePatternTile(pattern, color, palette.dataset.theme?.endsWith('-dark') || false);
+  const backgroundSize = patternTile?.size || (pattern !== 'none' ? paletteStyle.backgroundSize : 'cover');
   const backgroundPosition = pattern !== 'none' ? paletteStyle.backgroundPosition : 'center';
   palette.remove();
   Object.assign(card.style, {
@@ -123,7 +125,7 @@ export async function renderShareCard(
     justifyContent: 'space-between',
     color,
     backgroundColor,
-    backgroundImage,
+    backgroundImage: patternTile?.image || backgroundImage,
     backgroundSize,
     backgroundPosition,
     fontFamily,
@@ -155,7 +157,17 @@ export async function renderShareCard(
   if (!passage.textContent) passage.textContent = quote.quote_raw;
   const credit = document.createElement('div');
   credit.dir = 'auto';
-  credit.textContent = `${quote.title} — ${quote.author}`;
+  credit.className = 'share-card-credit';
+  credit.append('— ');
+  const attribution = store.get('hide-book-title') ? [quote.author] : [quote.title, quote.author];
+  attribution.forEach((text, index) => {
+    if (index) credit.append(', ');
+    const part = document.createElement('span');
+    part.dir = 'auto';
+    part.style.unicodeBidi = 'isolate';
+    part.textContent = text;
+    credit.append(part);
+  });
   Object.assign(credit.style, { marginTop: '40px', fontSize: '28px' });
   content.append(passage, credit);
   const signature = document.createElement('div');

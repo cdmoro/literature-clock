@@ -91,6 +91,8 @@ export function initSpeech() {
   let armed = false;
   let failure = '';
   let startTimer: ReturnType<typeof setTimeout> | undefined;
+  let speakTimer: ReturnType<typeof setTimeout> | undefined;
+  let cancelledAt = -Infinity;
   let utterance: SpeechSynthesisUtterance | undefined;
   let highlighting: ReturnType<typeof createSpeechHighlight> | undefined;
   const strings = () => STRINGS[getBaseLocale(getInterfaceLocale())];
@@ -122,7 +124,11 @@ export function initSpeech() {
     highlighting?.clear();
     highlighting = undefined;
     clearTimeout(startTimer);
-    if (supported && active) synth.cancel();
+    clearTimeout(speakTimer);
+    if (supported && active) {
+      synth.cancel();
+      cancelledAt = Date.now();
+    }
     refresh();
   };
   const read = () => {
@@ -192,12 +198,20 @@ export function initSpeech() {
     utterance = current;
     refresh();
     startTimer = setTimeout(() => failed(strings().noStart), 8000);
-    try {
-      if (synth.paused) synth.resume();
-      synth.speak(current);
-    } catch {
-      failed(strings().error);
-    }
+    const speak = () => {
+      if (utterance !== current) return;
+      try {
+        // Cancellation may still be reaching the native engine. Wake it even
+        // when its exposed paused flag has not caught up with its actual state.
+        synth.resume();
+        synth.speak(current);
+      } catch {
+        failed(strings().error);
+      }
+    };
+    const cancellationDelay = Math.max(0, 100 - (Date.now() - cancelledAt));
+    if (cancellationDelay) speakTimer = setTimeout(speak, cancellationDelay);
+    else speak();
   };
   const arm = () => {
     armed = true;

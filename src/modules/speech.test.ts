@@ -29,11 +29,13 @@ const quote = {
   author: 'La autora',
 } as ResolvedQuote;
 beforeEach(() => {
+  vi.useFakeTimers();
+  cancel.mockReset();
   localStorage.clear();
   history.replaceState({}, '', '/');
   document.body.innerHTML =
     '<div id="reading-controls"></div><section id="settings-behavior"></section><blockquote id="quote"><p>Son <em>las doce</em>.<br>Hola.</p><cite><span id="title">El libro</span>, <span id="author">La autora</span></cite></blockquote>';
-  vi.stubGlobal('speechSynthesis', { speak, cancel, getVoices: () => [] });
+  vi.stubGlobal('speechSynthesis', { speak, cancel, resume: vi.fn(), getVoices: () => [] });
   vi.stubGlobal('SpeechSynthesisUtterance', Utterance);
   createStore();
   store.set('active-quote', quote);
@@ -56,9 +58,14 @@ afterEach(() => {
   vi.unstubAllGlobals();
   vi.useRealTimers();
 });
-const click = (id: string) => document.getElementById(id)!.click();
-const minute = (minuteTick = true) =>
+const click = (id: string) => {
+  document.getElementById(id)!.click();
+  if (id === 'activate-speech') vi.advanceTimersByTime(100);
+};
+const minute = (minuteTick = true) => {
   document.dispatchEvent(new CustomEvent('quote-rendered', { detail: { minuteTick } }));
+  vi.advanceTimersByTime(100);
+};
 
 it('highlights successive words across emphasis and line breaks, then restores the markup', () => {
   cleanup = initSpeech();
@@ -323,4 +330,47 @@ it('keeps the DOM unchanged when the browser cannot paint custom highlights', ()
   expect(paragraph.innerHTML).toBe(original);
   expect(highlights.has('speech-word')).toBe(false);
   expect(document.getElementById('read-quote')!.getAttribute('aria-pressed')).toBe('true');
+});
+
+it('restarts after stop even when the native engine reports it is not paused', () => {
+  vi.useFakeTimers();
+  const synth = window.speechSynthesis;
+  let cancelling = false;
+  let awake = true;
+  cancel.mockImplementation(() => {
+    cancelling = true;
+    awake = false;
+    setTimeout(() => {
+      cancelling = false;
+    }, 50);
+  });
+  vi.mocked(synth.resume).mockImplementation(() => {
+    awake = true;
+  });
+  speak.mockImplementation((current: Utterance) => {
+    if (!cancelling && awake) current.onstart?.();
+  });
+  cleanup = initSpeech();
+  click('read-quote');
+  click('read-quote');
+  click('read-quote');
+  expect(speak).toHaveBeenCalledOnce();
+  vi.advanceTimersByTime(100);
+  expect(speak).toHaveBeenCalledTimes(2);
+  vi.advanceTimersByTime(8000);
+  expect(document.getElementById('read-quote')!.getAttribute('aria-pressed')).toBe('true');
+  expect(document.getElementById('speech-help')!.textContent).not.toContain('did not start');
+  cancel.mockReset();
+});
+
+it('does not start a delayed restart after another stop', () => {
+  vi.useFakeTimers();
+  cleanup = initSpeech();
+  click('read-quote');
+  click('read-quote');
+  click('read-quote');
+  click('read-quote');
+  vi.advanceTimersByTime(10000);
+  expect(speak).toHaveBeenCalledOnce();
+  expect(document.getElementById('read-quote')!.getAttribute('aria-pressed')).toBe('false');
 });

@@ -57,7 +57,8 @@
     "settings_pattern_grid": "Grid",
     "settings_pattern_zigzag": "Zigzag",
     "settings_pattern_circles": "Large circles",
-    "settings_pattern_diagonal-wide": "Wide diagonal stripes"
+    "settings_pattern_diagonal-wide": "Wide diagonal stripes",
+    "settings_pattern_noise": "Noise"
   },
   "en-US": {
     "settings_title": "Settings",
@@ -117,7 +118,8 @@
     "settings_pattern_grid": "Grid",
     "settings_pattern_zigzag": "Zigzag",
     "settings_pattern_circles": "Large circles",
-    "settings_pattern_diagonal-wide": "Wide diagonal stripes"
+    "settings_pattern_diagonal-wide": "Wide diagonal stripes",
+    "settings_pattern_noise": "Noise"
   },
   "es-ES": {
     "settings_title": "Configuración",
@@ -177,7 +179,8 @@
     "settings_pattern_grid": "Cuadrícula",
     "settings_pattern_zigzag": "Zigzag",
     "settings_pattern_circles": "Círculos grandes",
-    "settings_pattern_diagonal-wide": "Rayas diagonales gruesas"
+    "settings_pattern_diagonal-wide": "Rayas diagonales gruesas",
+    "settings_pattern_noise": "Ruido"
   },
   "pt-PT": {
     "settings_title": "Configurações",
@@ -237,7 +240,8 @@
     "settings_pattern_grid": "Grelha",
     "settings_pattern_zigzag": "Ziguezague",
     "settings_pattern_circles": "Círculos grandes",
-    "settings_pattern_diagonal-wide": "Riscas diagonais grossas"
+    "settings_pattern_diagonal-wide": "Riscas diagonais grossas",
+    "settings_pattern_noise": "Ruído"
   },
   "fr-FR": {
     "settings_title": "Paramètres",
@@ -297,7 +301,8 @@
     "settings_pattern_grid": "Quadrillage",
     "settings_pattern_zigzag": "Zigzag",
     "settings_pattern_circles": "Grands cercles",
-    "settings_pattern_diagonal-wide": "Rayures diagonales épaisses"
+    "settings_pattern_diagonal-wide": "Rayures diagonales épaisses",
+    "settings_pattern_noise": "Bruit"
   },
   "it-IT": {
     "settings_title": "Impostazioni",
@@ -357,7 +362,8 @@
     "settings_pattern_grid": "Griglia",
     "settings_pattern_zigzag": "Zigzag",
     "settings_pattern_circles": "Cerchi grandi",
-    "settings_pattern_diagonal-wide": "Righe diagonali spesse"
+    "settings_pattern_diagonal-wide": "Righe diagonali spesse",
+    "settings_pattern_noise": "Rumore"
   },
   "de-DE": {
     "settings_title": "Einstellungen",
@@ -417,7 +423,8 @@
     "settings_pattern_grid": "Raster",
     "settings_pattern_zigzag": "Zickzack",
     "settings_pattern_circles": "Große Kreise",
-    "settings_pattern_diagonal-wide": "Breite Diagonalstreifen"
+    "settings_pattern_diagonal-wide": "Breite Diagonalstreifen",
+    "settings_pattern_noise": "Rauschen"
   },
   "el-GR": {
     "settings_title": "Ρυθμίσεις",
@@ -477,7 +484,8 @@
     "settings_pattern_grid": "Πλέγμα",
     "settings_pattern_zigzag": "Ζιγκ ζαγκ",
     "settings_pattern_circles": "Μεγάλοι κύκλοι",
-    "settings_pattern_diagonal-wide": "Παχιές διαγώνιες γραμμές"
+    "settings_pattern_diagonal-wide": "Παχιές διαγώνιες γραμμές",
+    "settings_pattern_noise": "Θόρυβος"
   },
   "zh-CN": {
     "settings_title": "设置",
@@ -537,7 +545,8 @@
     "settings_pattern_grid": "网格",
     "settings_pattern_zigzag": "锯齿",
     "settings_pattern_circles": "大圆点",
-    "settings_pattern_diagonal-wide": "粗斜条纹"
+    "settings_pattern_diagonal-wide": "粗斜条纹",
+    "settings_pattern_noise": "噪点"
   },
   "ru-RU": {
     "settings_title": "Настройки",
@@ -597,7 +606,8 @@
     "settings_pattern_grid": "Сетка",
     "settings_pattern_zigzag": "Зигзаг",
     "settings_pattern_circles": "Большие круги",
-    "settings_pattern_diagonal-wide": "Широкие диагональные полосы"
+    "settings_pattern_diagonal-wide": "Широкие диагональные полосы",
+    "settings_pattern_noise": "Шум"
   },
   "eo": {
     "settings_title": "Agordoj",
@@ -657,7 +667,8 @@
     "settings_pattern_grid": "Krado",
     "settings_pattern_zigzag": "Zigzago",
     "settings_pattern_circles": "Grandaj cirkloj",
-    "settings_pattern_diagonal-wide": "Larĝaj diagonalaj strioj"
+    "settings_pattern_diagonal-wide": "Larĝaj diagonalaj strioj",
+    "settings_pattern_noise": "Bruo"
   },
   "ar-AE": {
     "settings_title": "الإعدادات",
@@ -717,6 +728,7 @@
     "settings_pattern_grid": "شبكة",
     "settings_pattern_zigzag": "متعرج",
     "settings_pattern_circles": "دوائر كبيرة",
-    "settings_pattern_diagonal-wide": "خطوط قطرية عريضة"
+    "settings_pattern_diagonal-wide": "خطوط قطرية عريضة",
+    "settings_pattern_noise": "ضوضاء"
   }
 }
