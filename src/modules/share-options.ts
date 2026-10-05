@@ -246,6 +246,10 @@ export function initShareOptions() {
     colorToggle.append(colorIndicator);
     colorGroup.classList.add('share-color-popover');
     colorDropdown.append(colorToggle, colorGroup);
+    colorGroup.addEventListener('palette-default-selected', () => {
+      colorDropdown.open = false;
+      colorToggle.focus();
+    });
     const compactReset = document.createElement('button');
     compactReset.type = 'button';
     compactReset.className = 'share-color-reset';

@@ -139,7 +139,10 @@ export function mountColorPalette(control: HTMLElement, picker: HTMLInputElement
   reset.className = 'palette-reset';
   reset.innerHTML =
     '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></svg>';
-  reset.addEventListener('click', () => options.choose({ palette: 'default' }));
+  reset.addEventListener('click', () => {
+    options.choose({ palette: 'default' });
+    control.dispatchEvent(new Event('palette-default-selected', { bubbles: true }));
+  });
   control.append(random, addControl, manage, reset);
   let signature = '';
   function refresh() {
@@ -276,6 +279,7 @@ function initToolbarPalette(control: HTMLElement) {
     const height = panel.getBoundingClientRect().height;
     panel.style.top = `${Math.max(8, anchor.top >= height + 8 ? anchor.top - height - 8 : Math.min(anchor.bottom + 8, window.innerHeight - height - 8))}px`;
   };
+  panel.addEventListener('palette-default-selected', () => close(true));
   panel.addEventListener('toggle', () => requestAnimationFrame(position), true);
   toggle.addEventListener('click', () => {
     if (!panel.hidden) {
