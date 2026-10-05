@@ -118,3 +118,17 @@ it('rejects a known incompatible font when rendering an Arabic quote', async () 
   await renderShareCard({ ...quote, locale: 'ar-AE' }, 'square', undefined, undefined, { font: 'Special Elite' });
   expect(loadGoogleFont).not.toHaveBeenCalledWith('Special Elite');
 });
+
+it.each(['dots', 'circles', 'diagonal', 'diagonal-wide'] as const)(
+  'uses a repeatable image for %s when rendering the exported card',
+  async (pattern) => {
+    document.documentElement.dataset.theme = 'base-dark';
+    vi.mocked(html2canvas).mockImplementation(async (element) => {
+      expect(element.style.backgroundImage).toContain('data:image/svg+xml,');
+      expect(decodeURIComponent(element.style.backgroundImage)).toContain('opacity="0.12"');
+      expect(element.style.backgroundSize).toMatch(/^\d+px \d+px$/);
+      return document.createElement('canvas');
+    });
+    await renderShareCard(quote, 'square', undefined, undefined, { pattern });
+  },
+);
