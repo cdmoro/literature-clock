@@ -5,6 +5,7 @@ import { doFitQuote, fitQuote, loadFontIfNotExists } from '../utils';
 import { setDayParameters } from './horizon';
 import { store } from '../store';
 import { contrastingText } from '../utils/colors';
+import { themeSupportsCustomColor } from '../utils/theme-colors';
 
 const DEFAULT_COLORS: Record<string, string> = {
   base: '#d24335',
@@ -33,9 +34,9 @@ const DEFAULT_COLORS: Record<string, string> = {
 
 // Remember whether appearance changes should follow the theme palette.
 let followsDefaultColor = true;
+const fixedColor = () => !themeSupportsCustomColor(store.get('theme').split('-')[0]);
 
-function defaultColor(theme: string) {
-  const dark = document.documentElement.dataset.theme?.endsWith('-dark');
+export function defaultColor(theme: string, dark = document.documentElement.dataset.theme?.endsWith('-dark')) {
   const darkColors: Record<string, string> = {
     retro: '#f1ba08',
     terminal: '#1bec1b',
@@ -55,14 +56,12 @@ function defaultColor(theme: string) {
 }
 
 function getRandomThemeColor() {
-  const colors = Array.from(document.querySelectorAll<HTMLOptionElement>('#colors option')).map((op) => op.value);
-  const [theme] = store.get('theme').split('-');
+  const theme = document.documentElement.dataset.theme?.split('-')[0];
+  const colors = Array.from(document.querySelectorAll<HTMLOptionElement>('#colors option'))
+    .map((option) => option.value)
+    .filter((color) => color !== 'color' && color !== theme);
 
-  colors.pop();
-  const currentIndex = colors.indexOf(theme);
-  if (currentIndex >= 0) colors.splice(currentIndex, 1);
-
-  return colors[Math.floor(Math.random() * colors.length)];
+  return colors[Math.floor(Math.random() * colors.length)] || 'base';
 }
 
 export function initTheme() {
@@ -97,10 +96,19 @@ export function initTheme() {
   refreshDefaultFontLabel();
   refreshLocaleThemeFonts();
   const explicitColor = new URLSearchParams(location.search).has('color');
+  const savedCustom = store.get('custom-color');
   followsDefaultColor =
-    store.get('color').toLowerCase() === defaultColor(theme).toLowerCase() ||
-    (!explicitColor && store.get('color') === DEFAULT_COLORS.base);
-  if (followsDefaultColor) store.set('color', defaultColor(theme), false);
+    !savedCustom &&
+    ((fixedColor() && !explicitColor) ||
+      store.get('color').toLowerCase() === defaultColor(theme).toLowerCase() ||
+      (!explicitColor && store.get('color') === DEFAULT_COLORS.base));
+  if (explicitColor && store.get('color').toLowerCase() !== defaultColor(theme).toLowerCase()) {
+    store.set('custom-color', store.get('color'), false);
+    followsDefaultColor = false;
+  } else if (!savedCustom && !followsDefaultColor) store.set('custom-color', store.get('color'), false);
+  if (fixedColor() || followsDefaultColor) store.set('color', defaultColor(theme), false);
+  else if (savedCustom && !explicitColor) store.set('color', savedCustom, false);
+  if (fixedColor()) store.removeFromUrl('color');
   applyCustomColor(theme);
 
   window.addEventListener('resize', doFitQuote);
@@ -117,7 +125,7 @@ export function initTheme() {
       document.documentElement.dataset.theme = `${theme}-${e.matches ? 'dark' : 'light'}`;
       refreshDefaultFontLabel();
       refreshLocaleThemeFonts();
-      if (wasDefault) {
+      if (wasDefault || fixedColor()) {
         store.set('color', defaultColor(theme), false);
         store.removeFromUrl('color');
       }
@@ -127,16 +135,20 @@ export function initTheme() {
 
   colorPickers.forEach((colorPicker) =>
     colorPicker.addEventListener('input', () => {
+      if (fixedColor()) return;
       const theme = document.documentElement.dataset.theme?.split('-')[0] || 'base';
       followsDefaultColor = colorPicker.value.toLowerCase() === defaultColor(theme).toLowerCase();
+      store.set('custom-color', followsDefaultColor ? '' : colorPicker.value, false);
       store.set('color', colorPicker.value);
       applyCustomColor(document.documentElement.dataset.theme?.split('-')[0]);
     }),
   );
   resetColors.forEach((resetColor) =>
     resetColor.addEventListener('click', () => {
+      if (fixedColor()) return;
       const theme = document.documentElement.dataset.theme?.split('-')[0] || 'base';
       followsDefaultColor = true;
+      store.set('custom-color', '', false);
       const color = defaultColor(theme);
       store.set('color', color, false);
       store.removeFromUrl('color');
@@ -151,27 +163,31 @@ function applyCustomColor(theme = 'base') {
   root.dataset.variant = store.get('theme').split('-')[1] || 'system';
   const colorPickers = document.querySelectorAll<HTMLInputElement>('#color-picker, #settings-color-picker');
   const resetColors = document.querySelectorAll<HTMLButtonElement>('#reset-color, #settings-reset-color');
-  root.classList.toggle('custom-accent', !followsDefaultColor);
+  const randomColor = store.get('theme').startsWith('color-');
+  const editable = !fixedColor();
+  const custom = editable && !followsDefaultColor;
+  root.classList.toggle('custom-accent', custom);
   document.querySelectorAll<HTMLElement>('#color-controls, #settings-color-controls').forEach((controls) => {
     controls.hidden = false;
     controls.closest('.settings-row')?.removeAttribute('hidden');
   });
-  if (!followsDefaultColor) root.style.setProperty('--accent-color', store.get('color'));
+  if (custom) root.style.setProperty('--accent-color', store.get('color'));
   else root.style.removeProperty('--accent-color');
   const accent = store.get('color');
   root.style.setProperty('--accent-text', contrastingText(accent));
-  if (theme === 'whatsapp' && !followsDefaultColor) {
+  if (theme === 'whatsapp' && custom) {
     root.style.setProperty('--bubble-text', contrastingText(store.get('color')));
   } else {
     root.style.removeProperty('--bubble-text');
   }
   colorPickers.forEach((colorPicker) => {
-    colorPicker.value = store.get('color');
+    colorPicker.value = randomColor ? DEFAULT_COLORS.base : store.get('color');
     colorPicker.hidden = false;
-    colorPicker.disabled = false;
+    colorPicker.disabled = !editable;
   });
   resetColors.forEach((resetColor) => {
-    resetColor.hidden = followsDefaultColor;
+    resetColor.hidden = !editable || followsDefaultColor;
+    resetColor.disabled = !editable;
   });
 }
 
@@ -216,10 +232,10 @@ export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
   document.documentElement.dataset.theme = `${theme}-${variant}`;
   refreshDefaultFontLabel();
   refreshLocaleThemeFonts();
-  if (followsDefaultColor && theme) {
+  if ((fixedColor() || followsDefaultColor) && theme) {
     store.set('color', defaultColor(theme), false);
     store.removeFromUrl('color');
-  }
+  } else if (store.get('custom-color')) store.set('color', store.get('custom-color'), syncToUrl);
   applyCustomColor(theme);
   fitQuote();
 

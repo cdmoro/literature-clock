@@ -14,6 +14,7 @@ export interface CardOptions {
   pattern?: BackgroundPattern;
   color?: string;
   font?: string;
+  useDefaultColor?: boolean;
 }
 const themeFontLoads = new Map<string, Promise<void>>();
 
@@ -56,6 +57,10 @@ export async function renderShareCard(
     palette.classList.add('custom-accent');
     palette.style.setProperty('--accent-color', customColor);
   }
+  if (options.useDefaultColor) {
+    palette.classList.remove('custom-accent');
+    palette.style.removeProperty('--accent-color');
+  }
   palette.classList.add('background-pattern-surface');
   palette.dataset.backgroundPattern = pattern;
   palette.style.color = 'var(--font-color)';
@@ -64,7 +69,8 @@ export async function renderShareCard(
   document.body.append(palette);
   const paletteStyle = getComputedStyle(palette);
   const patternChanged = pattern !== (document.documentElement.dataset.backgroundPattern || 'none');
-  const isolated = appearance || theme || customColor || patternChanged || pattern !== 'none';
+  const isolated =
+    appearance || theme || customColor || options.useDefaultColor || patternChanged || pattern !== 'none';
   const color = isolated ? paletteStyle.color : bodyStyle.color;
   const backgroundColor = isolated ? paletteStyle.backgroundColor : bodyStyle.backgroundColor;
   const backgroundImage = isolated ? paletteStyle.backgroundImage : bodyStyle.backgroundImage;

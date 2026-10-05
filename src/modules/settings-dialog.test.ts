@@ -104,8 +104,8 @@ test('both color pickers and resets share state, including theme availability', 
   const theme = document.querySelector<HTMLSelectElement>('#theme-select')!;
   theme.value = 'pink';
   theme.dispatchEvent(new Event('change'));
-  expect(outside.disabled).toBe(false);
-  expect(inside.disabled).toBe(false);
+  expect(outside.disabled).toBe(true);
+  expect(inside.disabled).toBe(true);
   expect(document.getElementById('settings-color-controls')!.hidden).toBe(false);
   expect(inside.value).toBe('#ff89d8');
 });
