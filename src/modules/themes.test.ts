@@ -241,10 +241,19 @@ test.each(['base', 'retro'])(
     history.replaceState({}, '', `/?theme=${theme}-light&palette=random`);
     createStore();
     initTheme();
-    expect(store.get('color')).toBe('#ff89d8');
+    expect(store.get('color')).toBe('#d24335');
     setTheme({ syncToUrl: false });
-    expect(store.get('color')).toBe('#2ecc71');
+    expect(store.get('color')).toBe('#ff89d8');
     expect(store.get('theme')).toBe(`${theme}-light`);
     expect(store.get('palette')).toBe('random');
   },
 );
+
+test('the original Base red remains available on special themes', () => {
+  createStore();
+  initTheme();
+  changeTheme();
+  document.querySelector<HTMLButtonElement>('.color-swatch[data-palette-key="red"]')!.click();
+  expect(store.get('color')).toBe('#d24335');
+  expect(store.get('palette')).toBe('red');
+});

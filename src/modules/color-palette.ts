@@ -6,6 +6,7 @@ import SETTINGS from '../strings/settings.json';
 import COLOR_STRINGS from '../strings/colorControls.json';
 
 export const COLOR_PRESETS: Record<string, string> = {
+  red: '#d24335',
   pink: '#ff89d8',
   green: '#2ecc71',
   orange: '#f39c12',
@@ -92,6 +93,9 @@ export function mountColorPalette(control: HTMLElement, picker: HTMLInputElement
   const add = document.createElement('button');
   add.type = 'button';
   add.className = 'color-add';
+  const addControl = document.createElement('span');
+  addControl.className = 'palette-add-control';
+  addControl.append(add, picker);
   picker.classList.remove('palette-editor-picker');
   picker.classList.add('palette-native-picker');
   picker.tabIndex = -1;
@@ -100,6 +104,10 @@ export function mountColorPalette(control: HTMLElement, picker: HTMLInputElement
     refresh();
     if (typeof picker.showPicker === 'function') picker.showPicker();
     else picker.click();
+  });
+  picker.addEventListener('click', () => {
+    manage.setAttribute('aria-pressed', 'false');
+    refresh();
   });
   const saveCustom = () => {
     const color = picker.value.toLowerCase();
@@ -128,7 +136,7 @@ export function mountColorPalette(control: HTMLElement, picker: HTMLInputElement
   reset.innerHTML =
     '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></svg>';
   reset.addEventListener('click', () => options.choose({ palette: 'default' }));
-  control.append(random, add, manage, reset, picker);
+  control.append(random, addControl, manage, reset);
   let signature = '';
   function refresh() {
     const state = options.state();

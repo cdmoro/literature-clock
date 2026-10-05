@@ -117,7 +117,8 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
         if (THEMES.test(raw)) result[key] = raw;
         break;
       case 'palette':
-        if (['default', 'pink', 'green', 'orange', 'purple', 'blue', 'gray', 'random'].includes(raw)) result[key] = raw;
+        if (['default', 'red', 'pink', 'green', 'orange', 'purple', 'blue', 'gray', 'random'].includes(raw))
+          result[key] = raw;
         break;
       case 'transition':
         if (['none', 'fade', 'slide', 'blur', 'zoom'].includes(raw)) result[key] = raw;

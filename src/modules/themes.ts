@@ -9,6 +9,7 @@ import { initColorPalette, rememberThemeColor } from './color-palette';
 
 const DEFAULT_COLORS: Record<string, string> = {
   base: '#d24335',
+  red: '#d24335',
   pink: '#ff89d8',
   green: '#2ecc71',
   orange: '#f39c12',
@@ -154,7 +155,7 @@ function applyCustomColor(theme = 'base') {
   const resetColors = document.querySelectorAll<HTMLButtonElement>('#reset-color, #settings-reset-color');
   const palette = store.get('palette');
   const previous = root.dataset.accentPalette;
-  const presets = ['pink', 'green', 'orange', 'purple', 'blue', 'gray'];
+  const presets = ['red', 'pink', 'green', 'orange', 'purple', 'blue', 'gray'];
   const selected =
     palette === 'random'
       ? previous && presets.includes(previous)
@@ -219,7 +220,7 @@ export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
   }
   store.set('theme', `${theme}-${variant}`, syncToUrl);
   if (store.get('palette') === 'random' && !isVariantChange) {
-    const choices = ['pink', 'green', 'orange', 'purple', 'blue', 'gray'].filter(
+    const choices = ['red', 'pink', 'green', 'orange', 'purple', 'blue', 'gray'].filter(
       (palette) => palette !== document.documentElement.dataset.accentPalette,
     );
     document.documentElement.dataset.accentPalette = choices[Math.floor(Math.random() * choices.length)];
