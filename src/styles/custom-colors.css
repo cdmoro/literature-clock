@@ -536,3 +536,7 @@ input[type='color'].palette-native-picker {
 #toolbar-color-palette.color-palette[hidden] {
   display: none;
 }
+
+.color-palette .palette-reset svg {
+  transform: none;
+}
