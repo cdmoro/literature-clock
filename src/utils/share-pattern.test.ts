@@ -1,3 +1,4 @@
+import noiseTile from '../assets/noise.png';
 import { expect, it } from 'vitest';
 import { sharePatternTile } from './share-pattern';
 
@@ -22,4 +23,12 @@ it.each([
 
 it.each(['none', 'grid', 'zigzag'] as const)('keeps the supported %s background', (pattern) => {
   expect(sharePatternTile(pattern, '#fff', false)).toBeUndefined();
+});
+
+it('uses the same transparent noise image tile as the live clock', () => {
+  const light = sharePatternTile('noise', '#222', false)!;
+  const dark = sharePatternTile('noise', '#fff', true)!;
+  expect(light).toEqual(dark);
+  expect(light.size).toBe('256px 256px');
+  expect(light.image).toBe(`url("${noiseTile}")`);
 });

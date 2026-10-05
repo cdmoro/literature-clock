@@ -163,3 +163,12 @@ it('isolates mixed-script book and author names while preserving punctuation', a
   });
   await renderShareCard({ ...quote, locale: 'ar-AE', title: 'كتاب عربي', author: 'Stanley R. Matthews' }, 'square');
 });
+
+it('exports the shared noise asset at its native tile size', async () => {
+  vi.mocked(html2canvas).mockImplementation(async (element) => {
+    expect(element.style.backgroundImage).toContain('noise.png');
+    expect(element.style.backgroundSize).toBe('256px 256px');
+    return document.createElement('canvas');
+  });
+  await renderShareCard(quote, 'square', undefined, undefined, { pattern: 'noise' });
+});
