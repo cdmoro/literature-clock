@@ -257,3 +257,20 @@ test('the original Base red remains available on special themes', () => {
   expect(store.get('color')).toBe('#d24335');
   expect(store.get('palette')).toBe('red');
 });
+
+test('picker slider changes save only the final colour from each opening', () => {
+  createStore();
+  initTheme();
+  const picker = document.querySelector<HTMLInputElement>('#color-picker')!;
+  picker.dispatchEvent(new Event('click'));
+  for (const color of ['#123456', '#123457', '#123458']) {
+    picker.value = color;
+    picker.dispatchEvent(new Event('input'));
+    picker.dispatchEvent(new Event('change'));
+  }
+  expect(JSON.parse(localStorage.getItem('custom-colors')!)).toEqual(['#123458']);
+  picker.dispatchEvent(new Event('click'));
+  picker.value = '#abcdef';
+  picker.dispatchEvent(new Event('change'));
+  expect(JSON.parse(localStorage.getItem('custom-colors')!)).toEqual(['#123458', '#abcdef']);
+});

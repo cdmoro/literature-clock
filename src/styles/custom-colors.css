@@ -513,3 +513,12 @@ input[type='color'].palette-native-picker {
     cursor: pointer;
   }
 }
+
+#settings-dialog #settings-color-controls.color-palette > .palette-reset,
+#share-preview .color-palette > .palette-reset {
+  border-radius: 50%;
+  width: 1.8rem;
+  min-width: 1.8rem;
+  height: 1.8rem;
+  padding: 0;
+}

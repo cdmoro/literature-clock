@@ -99,20 +99,24 @@ export function mountColorPalette(control: HTMLElement, picker: HTMLInputElement
   picker.classList.remove('palette-editor-picker');
   picker.classList.add('palette-native-picker');
   picker.tabIndex = -1;
+  let pendingSavedColor: string | undefined;
   add.addEventListener('click', () => {
+    pendingSavedColor = undefined;
     manage.setAttribute('aria-pressed', 'false');
     refresh();
     if (typeof picker.showPicker === 'function') picker.showPicker();
     else picker.click();
   });
   picker.addEventListener('click', () => {
+    pendingSavedColor = undefined;
     manage.setAttribute('aria-pressed', 'false');
     refresh();
   });
   const saveCustom = () => {
     const color = picker.value.toLowerCase();
-    const saved = customColors();
-    if (!saved.includes(color)) saveColors([...saved, color]);
+    const saved = customColors().filter((entry) => entry !== pendingSavedColor);
+    pendingSavedColor = saved.includes(color) ? undefined : color;
+    saveColors(pendingSavedColor ? [...saved, color] : saved);
   };
   picker.addEventListener('change', saveCustom);
   const random = document.createElement('button');
