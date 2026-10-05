@@ -62,6 +62,7 @@ export function initShareOptions() {
     dialog.setAttribute('aria-labelledby', 'share-preview-title');
     const heading = document.createElement('h2');
     heading.id = 'share-preview-title';
+    heading.tabIndex = -1;
     heading.textContent = strings.title;
     const header = document.createElement('header');
     const close = document.createElement('button');
@@ -401,6 +402,7 @@ export function initShareOptions() {
       }
     };
     dialog.showModal();
+    heading.focus({ preventScroll: true });
     void refresh();
   });
 }

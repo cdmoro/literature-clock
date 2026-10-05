@@ -349,3 +349,9 @@ it('retains the image custom accent across fixed palettes and restores editing o
   expect(selectedCardOptions().color).toBe('#123456');
   expect(state['custom-color']).toBe('');
 });
+
+it('opens with title focus and restores the launcher on close', () => {
+  expect(document.activeElement).toBe(document.getElementById('share-preview-title'));
+  document.querySelector<HTMLDialogElement>('#share-preview')!.close();
+  expect(document.activeElement).toBe(document.getElementById('share'));
+});

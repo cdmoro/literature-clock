@@ -739,13 +739,15 @@ select:dir(rtl) {
 }
 
 #share-preview .share-choice-group button:first-child {
-  border-radius: 4px 0 0 4px;
+  border-start-start-radius: 4px;
+  border-end-start-radius: 4px;
 }
 #share-preview .share-choice-group button:last-child {
-  border-radius: 0 4px 4px 0;
+  border-start-end-radius: 4px;
+  border-end-end-radius: 4px;
 }
 #share-preview .share-choice-group button + button {
-  margin-left: -1px;
+  margin-inline-start: -1px;
 }
 #share-preview .share-choice-group svg {
   width: 15px;
@@ -794,10 +796,12 @@ select:dir(rtl) {
   border-radius: 0;
 }
 #share-preview .share-theme-carousel button:first-child {
-  border-radius: 4px 0 0 4px;
+  border-start-start-radius: 4px;
+  border-end-start-radius: 4px;
 }
 #share-preview .share-theme-carousel button:last-child {
-  border-radius: 0 4px 4px 0;
+  border-start-end-radius: 4px;
+  border-end-end-radius: 4px;
 }
 #share-preview .share-theme-carousel button:focus-visible {
   position: relative;
@@ -862,9 +866,16 @@ select:dir(rtl) {
   flex-shrink: 0;
 }
 
-.share-customization,
+.share-customization {
+  flex-basis: 100%;
+  min-width: 0;
+}
+
 .share-customization-controls {
-  display: contents;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 12px;
 }
 
 .share-customization > summary {
