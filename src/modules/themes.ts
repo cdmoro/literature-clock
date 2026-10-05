@@ -5,7 +5,7 @@ import { doFitQuote, fitQuote, loadFontIfNotExists } from '../utils';
 import { setDayParameters } from './horizon';
 import { store } from '../store';
 import { contrastingText } from '../utils/colors';
-import { themeSupportsCustomColor } from '../utils/theme-colors';
+import { initColorPalette, rememberThemeColor } from './color-palette';
 
 const DEFAULT_COLORS: Record<string, string> = {
   base: '#d24335',
@@ -34,7 +34,6 @@ const DEFAULT_COLORS: Record<string, string> = {
 
 // Remember whether appearance changes should follow the theme palette.
 let followsDefaultColor = true;
-const fixedColor = () => !themeSupportsCustomColor(store.get('theme').split('-')[0]);
 
 export function defaultColor(theme: string, dark = document.documentElement.dataset.theme?.endsWith('-dark')) {
   const darkColors: Record<string, string> = {
@@ -55,17 +54,9 @@ export function defaultColor(theme: string, dark = document.documentElement.data
   return (dark && darkColors[theme]) || DEFAULT_COLORS[theme] || DEFAULT_COLORS.base;
 }
 
-function getRandomThemeColor() {
-  const theme = document.documentElement.dataset.theme?.split('-')[0];
-  const colors = Array.from(document.querySelectorAll<HTMLOptionElement>('#colors option'))
-    .map((option) => option.value)
-    .filter((color) => color !== 'color' && color !== theme);
-
-  return colors[Math.floor(Math.random() * colors.length)] || 'base';
-}
-
 export function initTheme() {
-  let [theme, variant = 'system'] = store.get('theme').split('-');
+  const [theme, savedVariant = 'system'] = store.get('theme').split('-');
+  let variant = savedVariant;
   const themeSelect = document.querySelector<HTMLSelectElement>('#theme-select');
   const variantSelect = document.querySelector<HTMLSelectElement>('#variant-select');
   const preferDarkThemes = window.matchMedia('(prefers-color-scheme: dark)');
@@ -86,9 +77,6 @@ export function initTheme() {
     picker.value = store.get('color');
   });
 
-  if (theme === 'color') {
-    theme = getRandomThemeColor();
-  }
   if (variant === 'system') {
     variant = preferDarkThemes.matches ? 'dark' : 'light';
   }
@@ -99,17 +87,16 @@ export function initTheme() {
   const savedCustom = store.get('custom-color');
   followsDefaultColor =
     !savedCustom &&
-    ((fixedColor() && !explicitColor) ||
-      store.get('color').toLowerCase() === defaultColor(theme).toLowerCase() ||
+    (store.get('color').toLowerCase() === defaultColor(theme).toLowerCase() ||
       (!explicitColor && store.get('color') === DEFAULT_COLORS.base));
   if (explicitColor && store.get('color').toLowerCase() !== defaultColor(theme).toLowerCase()) {
     store.set('custom-color', store.get('color'), false);
     followsDefaultColor = false;
   } else if (!savedCustom && !followsDefaultColor) store.set('custom-color', store.get('color'), false);
-  if (fixedColor() || followsDefaultColor) store.set('color', defaultColor(theme), false);
+  if (followsDefaultColor) store.set('color', defaultColor(theme), false);
   else if (savedCustom && !explicitColor) store.set('color', savedCustom, false);
-  if (fixedColor()) store.removeFromUrl('color');
   applyCustomColor(theme);
+  initColorPalette();
 
   window.addEventListener('resize', doFitQuote);
   themeSelect?.addEventListener('change', () => setTheme());
@@ -125,7 +112,7 @@ export function initTheme() {
       document.documentElement.dataset.theme = `${theme}-${e.matches ? 'dark' : 'light'}`;
       refreshDefaultFontLabel();
       refreshLocaleThemeFonts();
-      if (wasDefault || fixedColor()) {
+      if (wasDefault) {
         store.set('color', defaultColor(theme), false);
         store.removeFromUrl('color');
       }
@@ -135,23 +122,25 @@ export function initTheme() {
 
   colorPickers.forEach((colorPicker) =>
     colorPicker.addEventListener('input', () => {
-      if (fixedColor()) return;
       const theme = document.documentElement.dataset.theme?.split('-')[0] || 'base';
+      store.set('palette', 'default');
       followsDefaultColor = colorPicker.value.toLowerCase() === defaultColor(theme).toLowerCase();
       store.set('custom-color', followsDefaultColor ? '' : colorPicker.value, false);
       store.set('color', colorPicker.value);
+      rememberThemeColor();
       applyCustomColor(document.documentElement.dataset.theme?.split('-')[0]);
     }),
   );
   resetColors.forEach((resetColor) =>
     resetColor.addEventListener('click', () => {
-      if (fixedColor()) return;
       const theme = document.documentElement.dataset.theme?.split('-')[0] || 'base';
       followsDefaultColor = true;
+      store.set('palette', 'default');
       store.set('custom-color', '', false);
       const color = defaultColor(theme);
       store.set('color', color, false);
       store.removeFromUrl('color');
+      rememberThemeColor();
       applyCustomColor(theme);
     }),
   );
@@ -163,9 +152,25 @@ function applyCustomColor(theme = 'base') {
   root.dataset.variant = store.get('theme').split('-')[1] || 'system';
   const colorPickers = document.querySelectorAll<HTMLInputElement>('#color-picker, #settings-color-picker');
   const resetColors = document.querySelectorAll<HTMLButtonElement>('#reset-color, #settings-reset-color');
-  const randomColor = store.get('theme').startsWith('color-');
-  const editable = !fixedColor();
-  const custom = editable && !followsDefaultColor;
+  const palette = store.get('palette');
+  const previous = root.dataset.accentPalette;
+  const presets = ['pink', 'green', 'orange', 'purple', 'blue', 'gray'];
+  const selected =
+    palette === 'random'
+      ? previous && presets.includes(previous)
+        ? previous
+        : presets[Math.floor(Math.random() * presets.length)]
+      : palette;
+  root.dataset.accentPalette = selected;
+  root.dataset.palette = theme === 'base' ? selected : 'default';
+  if (palette !== 'default') {
+    followsDefaultColor = false;
+    store.set('custom-color', '', false);
+    if (store.get('color') !== defaultColor(selected)) store.set('color', defaultColor(selected), false);
+    store.removeFromUrl('color');
+  }
+  const editable = true;
+  const custom = editable && !followsDefaultColor && !(theme === 'base' && palette !== 'default');
   root.classList.toggle('custom-accent', custom);
   document.querySelectorAll<HTMLElement>('#color-controls, #settings-color-controls').forEach((controls) => {
     controls.hidden = false;
@@ -181,7 +186,7 @@ function applyCustomColor(theme = 'base') {
     root.style.removeProperty('--bubble-text');
   }
   colorPickers.forEach((colorPicker) => {
-    colorPicker.value = randomColor ? DEFAULT_COLORS.base : store.get('color');
+    colorPicker.value = store.get('color');
     colorPicker.hidden = false;
     colorPicker.disabled = !editable;
   });
@@ -192,13 +197,14 @@ function applyCustomColor(theme = 'base') {
 }
 
 export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
+  const previousTheme = store.get('theme').split('-')[0];
   const p = document.querySelector<HTMLParagraphElement>('blockquote p');
 
   if (p) {
     p.style.visibility = 'hidden';
   }
 
-  let theme = document.querySelector<HTMLSelectElement>('#theme-select')?.value;
+  const theme = document.querySelector<HTMLSelectElement>('#theme-select')?.value;
   let variant = document.querySelector<HTMLSelectElement>('#variant-select')?.value;
 
   if (theme && THEME_FONTS[theme]) {
@@ -207,10 +213,16 @@ export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
     });
   }
 
+  if (theme && theme !== previousTheme && !isVariantChange) {
+    rememberThemeColor();
+    followsDefaultColor = !store.get('custom-color') && store.get('palette') === 'default';
+  }
   store.set('theme', `${theme}-${variant}`, syncToUrl);
-
-  if (theme === 'color') {
-    theme = getRandomThemeColor();
+  if (store.get('palette') === 'random' && !isVariantChange) {
+    const choices = ['pink', 'green', 'orange', 'purple', 'blue', 'gray'].filter(
+      (palette) => palette !== document.documentElement.dataset.accentPalette,
+    );
+    document.documentElement.dataset.accentPalette = choices[Math.floor(Math.random() * choices.length)];
   }
 
   if (variant === 'system') {
@@ -232,7 +244,7 @@ export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
   document.documentElement.dataset.theme = `${theme}-${variant}`;
   refreshDefaultFontLabel();
   refreshLocaleThemeFonts();
-  if ((fixedColor() || followsDefaultColor) && theme) {
+  if (followsDefaultColor && theme) {
     store.set('color', defaultColor(theme), false);
     store.removeFromUrl('color');
   } else if (store.get('custom-color')) store.set('color', store.get('custom-color'), syncToUrl);

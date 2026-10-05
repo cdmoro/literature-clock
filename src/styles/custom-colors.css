@@ -7,12 +7,18 @@
   white-space: nowrap;
 }
 
-footer .input-group { vertical-align: top; }
+footer .input-group {
+  vertical-align: top;
+}
 
-[data-variant-icon] { display: none; }
+[data-variant-icon] {
+  display: none;
+}
 [data-variant='light'] [data-variant-icon='light'],
 [data-variant='dark'] [data-variant-icon='dark'],
-[data-variant='system'] [data-variant-icon='system'] { display: initial; }
+[data-variant='system'] [data-variant-icon='system'] {
+  display: initial;
+}
 
 :is(#color-controls, #settings-color-controls)[hidden],
 :is(#reset-color, #settings-reset-color)[hidden] {
@@ -30,9 +36,17 @@ footer .input-group { vertical-align: top; }
   cursor: pointer;
 }
 
-:is(#color-picker, #settings-color-picker)::-webkit-color-swatch-wrapper { padding: 0; }
-:is(#color-picker, #settings-color-picker)::-webkit-color-swatch { border: 0; border-radius: 0.2rem; }
-:is(#color-picker, #settings-color-picker)::-moz-color-swatch { border: 0; border-radius: 0.2rem; }
+:is(#color-picker, #settings-color-picker)::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+:is(#color-picker, #settings-color-picker)::-webkit-color-swatch {
+  border: 0;
+  border-radius: 0.2rem;
+}
+:is(#color-picker, #settings-color-picker)::-moz-color-swatch {
+  border: 0;
+  border-radius: 0.2rem;
+}
 :is(#reset-color, #settings-reset-color) {
   display: inline-flex;
   align-items: center;
@@ -41,13 +55,18 @@ footer .input-group { vertical-align: top; }
   border-radius: 0 0.25rem 0.25rem 0;
 }
 
-:is(#color-controls, #settings-color-controls):has(:is(#reset-color, #settings-reset-color)[hidden]) :is(#color-picker, #settings-color-picker) {
+:is(#color-controls, #settings-color-controls):has(:is(#reset-color, #settings-reset-color)[hidden])
+  :is(#color-picker, #settings-color-picker) {
   border-radius: 0.25rem;
 }
 
 @media only screen and (max-width: 600px) {
-  :is(#color-controls, #settings-color-controls) { height: 26px; }
-  :is(#color-picker, #settings-color-picker) { width: 2rem; }
+  :is(#color-controls, #settings-color-controls) {
+    height: 26px;
+  }
+  :is(#color-picker, #settings-color-picker) {
+    width: 2rem;
+  }
 }
 
 [data-theme='base-light'].custom-accent,
@@ -79,12 +98,24 @@ footer .input-group { vertical-align: top; }
 }
 
 /* Color presets tint their surfaces when the accent is edited. */
-:is([data-theme|='pink'], [data-theme|='green'], [data-theme|='orange'],
-    [data-theme|='purple'], [data-theme|='blue'], [data-theme|='gray']).custom-accent {
+:is(
+    [data-theme|='pink'],
+    [data-theme|='green'],
+    [data-theme|='orange'],
+    [data-theme|='purple'],
+    [data-theme|='blue'],
+    [data-theme|='gray']
+  ).custom-accent {
   --background: color-mix(in srgb, var(--accent-color) 15%, #fff);
 }
-:is([data-theme='pink-dark'], [data-theme='green-dark'], [data-theme='orange-dark'],
-    [data-theme='purple-dark'], [data-theme='blue-dark'], [data-theme='gray-dark']).custom-accent {
+:is(
+    [data-theme='pink-dark'],
+    [data-theme='green-dark'],
+    [data-theme='orange-dark'],
+    [data-theme='purple-dark'],
+    [data-theme='blue-dark'],
+    [data-theme='gray-dark']
+  ).custom-accent {
   --background: color-mix(in srgb, var(--accent-color) 16%, #101016);
 }
 [data-theme|='anaglyph'].custom-accent {
@@ -92,4 +123,369 @@ footer .input-group { vertical-align: top; }
 }
 [data-theme|='horizon'].custom-accent .time {
   color: var(--accent-color);
+}
+
+:is(#color-controls, #settings-color-controls) {
+  height: auto;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: normal;
+}
+.color-swatches {
+  display: contents;
+}
+.color-palette .color-swatch,
+.color-palette .color-add {
+  width: 1.8rem;
+  height: 1.8rem;
+  min-width: 1.8rem;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid #8888;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.color-swatch:focus-visible,
+.color-add:focus-visible {
+  outline: 2px solid var(--font-color);
+  outline-offset: 3px;
+}
+input[type='color'].palette-native-picker {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  padding: 0;
+  border: 0;
+  pointer-events: none;
+}
+.color-manage {
+  font-size: 0.75rem;
+}
+:is(#reset-color, #settings-reset-color) {
+  height: 1.8rem;
+  border-radius: 0.25rem;
+}
+#settings-color-controls {
+  flex: 1;
+}
+
+.settings-palette {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding-top: 0.8rem;
+}
+.settings-palette > span {
+  font-size: 0.85rem;
+  padding-top: 0.3rem;
+}
+.settings-palette #settings-color-controls {
+  justify-content: flex-start;
+}
+@media (max-width: 600px) {
+  .settings-palette {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+}
+
+.color-palette {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+.color-palette .color-manage[hidden] {
+  display: none;
+}
+.color-palette-popover {
+  position: fixed;
+  z-index: 20;
+  width: min(18rem, calc(100vw - 2rem));
+  box-sizing: border-box;
+  padding: 1rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 75%);
+  border-radius: 0.75rem;
+  background: var(--background);
+  color: var(--font-color);
+  max-height: min(24rem, calc(100dvh - 2rem));
+  overflow-y: auto;
+  box-shadow: 0 6px 24px #0003;
+  font:
+    0.85rem system-ui,
+    sans-serif;
+  text-align: start;
+}
+.color-palette-popover[hidden] {
+  display: none;
+}
+#color-controls .toolbar-color-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.4rem;
+  height: 30px;
+}
+.toolbar-color-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  border: 1px solid #8888;
+}
+
+/* Selection uses a check; hover enlarges the painted circle. */
+.color-palette .color-swatch:not(.color-random) {
+  position: relative;
+  background: transparent;
+  border: 0;
+}
+.color-swatch:not(.color-random)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--swatch-color);
+  border: 1px solid #8888;
+  transform: scale(1);
+  transition: transform 0.12s ease;
+}
+@media (hover: hover) {
+  .color-swatch:not(.color-random):hover::before {
+    transform: scale(1.12);
+  }
+  .color-swatch.color-random:hover {
+    transform: scale(1.12);
+  }
+}
+.color-swatch-mark {
+  position: relative;
+  z-index: 1;
+}
+#color-controls > :not(.toolbar-color-toggle):not(.toolbar-color-reset):not(.color-palette-popover) {
+  display: none;
+}
+#color-controls {
+  flex-wrap: nowrap;
+}
+@media (prefers-reduced-motion: reduce) {
+  .color-swatch::before {
+    transition: none;
+  }
+}
+
+#color-controls.input-group > .toolbar-color-toggle {
+  border-radius: 0.25rem;
+  margin: 0;
+}
+#color-controls.input-group > .color-palette-popover {
+  border-radius: 0.75rem;
+  margin: 0;
+}
+.color-palette > button[id$='reset-color'] {
+  display: none !important;
+}
+.palette-editor,
+.palette-more {
+  font:
+    0.85rem system-ui,
+    sans-serif;
+}
+.palette-editor > summary,
+.palette-more > summary {
+  cursor: pointer;
+  list-style: none;
+  border: 1px solid #8888;
+  border-radius: 0.4rem;
+  padding: 0.35rem 0.6rem;
+  line-height: 1.2;
+}
+.palette-editor > summary::-webkit-details-marker,
+.palette-more > summary::-webkit-details-marker {
+  display: none;
+}
+.palette-editor-body {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding-top: 0.6rem;
+}
+.color-palette input.palette-editor-picker {
+  position: static;
+  opacity: 1;
+  pointer-events: auto;
+  width: 3rem;
+  height: 2rem;
+  padding: 0.15rem;
+  border-radius: 0.3rem;
+}
+.palette-more {
+  margin-inline-start: auto;
+}
+.palette-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.25rem;
+  padding-top: 0.5rem;
+}
+.palette-actions button {
+  text-align: start;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.3rem;
+  font-size: 0.8rem;
+}
+.palette-more[open] {
+  flex-basis: 100%;
+}
+.color-swatch::after {
+  content: none !important;
+}
+.color-palette :is(#color-picker, #settings-color-picker, #share-preview-color).palette-editor-picker {
+  position: static;
+  opacity: 1;
+  pointer-events: auto;
+  width: 3rem;
+  height: 2rem;
+  padding: 0.15rem;
+  border-radius: 0.3rem;
+}
+.palette-more {
+  align-self: flex-start;
+}
+.palette-more > summary {
+  width: fit-content;
+  margin-inline-start: auto;
+}
+
+.toolbar-color-indicator.is-random {
+  background: conic-gradient(#e76f9e, #e7ac4b, #83c773, #39b6c9, #8274d9, #e76f9e);
+}
+
+.color-palette .palette-random {
+  background: conic-gradient(#e76f9e, #e7ac4b, #83c773, #39b6c9, #8274d9, #e76f9e);
+  border: 1px solid #8888;
+}
+.palette-editor > summary,
+.color-palette .color-manage {
+  box-sizing: border-box;
+  width: 1.8rem;
+  height: 1.8rem;
+  padding: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.palette-editor > summary {
+  font-size: 1.2rem;
+}
+.color-palette .color-manage[aria-pressed='true'] {
+  background: color-mix(in srgb, var(--font-color) 10%, var(--background));
+}
+.color-swatch.is-removing .color-swatch-mark {
+  position: relative;
+}
+.color-palette .color-manage svg {
+  transform: none;
+}
+#share-preview .color-palette .palette-random {
+  background: conic-gradient(#e76f9e, #e7ac4b, #83c773, #39b6c9, #8274d9, #e76f9e);
+}
+
+/* Keep the add control in the swatch row while its editor spans the next row. */
+.color-palette .palette-editor {
+  flex: 0 0 auto;
+}
+.color-palette .palette-editor-body {
+  order: 1;
+  flex-basis: 100%;
+  padding-top: 0.75rem;
+  margin-top: 0.25rem;
+  border-top: 1px solid #8884;
+}
+.color-palette .palette-editor-body[hidden] {
+  display: none;
+}
+.color-palette .palette-editor[open] > summary {
+  background: color-mix(in srgb, var(--font-color) 8%, var(--background));
+}
+.color-palette .color-save {
+  font-size: 0.8rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.3rem;
+}
+
+.color-swatch-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.color-palette .palette-reset {
+  width: 1.8rem;
+  height: 1.8rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+#color-controls.input-group > .toolbar-color-reset {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 0.25rem 0.4rem;
+  border-radius: 0.25rem;
+  margin: 0;
+}
+
+/* Join the two toolbar buttons while keeping the colour preview circular. */
+#color-controls.input-group {
+  gap: 0;
+}
+#color-controls.input-group > .toolbar-color-toggle {
+  border-radius: 0.25rem 0 0 0.25rem;
+  padding-inline: 0.45rem;
+}
+#color-controls.input-group > .toolbar-color-reset {
+  border-radius: 0 0.25rem 0.25rem 0;
+  margin-inline-start: -1px;
+}
+[dir='rtl'] #color-controls.input-group > .toolbar-color-toggle {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+[dir='rtl'] #color-controls.input-group > .toolbar-color-reset {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+#color-controls .toolbar-color-indicator {
+  margin: 0;
+}
+#color-controls.input-group > .toolbar-color-reset[hidden],
+.color-palette .palette-reset[hidden] {
+  display: none;
+}
+#color-controls.input-group:has(> .toolbar-color-reset[hidden]) > .toolbar-color-toggle {
+  border-radius: 0.25rem;
+}
+.color-palette .color-swatch-mark {
+  margin: 0;
+}
+.color-palette .color-swatch-mark svg {
+  transform: none;
+}
+
+.color-palette .palette-random[hidden] {
+  display: none;
 }

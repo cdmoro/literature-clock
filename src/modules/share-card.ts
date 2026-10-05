@@ -1,12 +1,13 @@
 import { sharePatternTile } from '../utils/share-pattern';
 import { store } from '../store';
-import { type BackgroundPattern, supportsBackgroundPattern } from '../utils/background-patterns';
+import { type BackgroundPattern } from '../utils/background-patterns';
 import html2canvas from 'html2canvas-pro';
 import type { ResolvedQuote } from '../types';
 import { fontSupportsLocale } from './font-preferences';
 import { loadGoogleFont, normalizeFontName } from '../utils/google-font';
 import { getLocaleThemeFont } from './locale-fonts';
 import { quoteMarkup } from '../utils/quote-markup';
+import { defaultColor } from './themes';
 
 export const cardFormats = { square: [1080, 1080], portrait: [1080, 1920], landscape: [1920, 1080] } as const;
 export type CardFormat = keyof typeof cardFormats;
@@ -14,6 +15,7 @@ export type CardAppearance = 'light' | 'dark';
 export interface CardOptions {
   pattern?: BackgroundPattern;
   color?: string;
+  palette?: string;
   font?: string;
   useDefaultColor?: boolean;
 }
@@ -42,17 +44,41 @@ export async function renderShareCard(
     (!theme || theme === liveTheme.replace(/-(light|dark)$/, '')) &&
       document.documentElement.classList.contains('custom-accent'),
   );
-  if (!theme || theme === liveTheme.replace(/-(light|dark)$/, '')) {
+  const selectedPalette =
+    options.palette === 'random'
+      ? document.documentElement.dataset.accentPalette || document.documentElement.dataset.palette
+      : options.palette;
+  if (selectedPalette && selectedPalette !== 'default' && skin === 'base') palette.classList.remove('custom-accent');
+  if (skin === 'base' && !options.color && !options.useDefaultColor) {
+    palette.dataset.palette =
+      selectedPalette ||
+      (liveTheme.startsWith('base-') ? document.documentElement.dataset.palette : undefined) ||
+      'default';
+  }
+  if (
+    selectedPalette &&
+    selectedPalette !== 'default' &&
+    skin !== 'base' &&
+    !options.color &&
+    !options.useDefaultColor
+  ) {
+    palette.classList.add('custom-accent');
+    palette.style.setProperty('--accent-color', defaultColor(selectedPalette, palette.dataset.theme.endsWith('-dark')));
+  }
+  if (
+    !selectedPalette &&
+    (!theme || theme === liveTheme.replace(/-(light|dark)$/, '')) &&
+    (!palette.dataset.palette || palette.dataset.palette === 'default')
+  ) {
     palette.style.setProperty(
       '--accent-color',
       getComputedStyle(document.documentElement).getPropertyValue('--accent-color'),
     );
-  } else {
+  }
+  if (theme && theme !== liveTheme.replace(/-(light|dark)$/, '')) {
     palette.style.setProperty('--background-image', 'none');
   }
-  const pattern = supportsBackgroundPattern(skin)
-    ? options.pattern || store.get('background-pattern') || 'none'
-    : 'none';
+  const pattern = options.pattern || store.get('background-pattern') || 'none';
   const customColor = options.color && /^#[0-9a-f]{6}$/i.test(options.color) ? options.color : undefined;
   if (customColor) {
     palette.classList.add('custom-accent');
@@ -71,7 +97,13 @@ export async function renderShareCard(
   const paletteStyle = getComputedStyle(palette);
   const patternChanged = pattern !== (document.documentElement.dataset.backgroundPattern || 'none');
   const isolated =
-    appearance || theme || customColor || options.useDefaultColor || patternChanged || pattern !== 'none';
+    appearance ||
+    theme ||
+    customColor ||
+    options.palette ||
+    options.useDefaultColor ||
+    patternChanged ||
+    pattern !== 'none';
   const color = isolated ? paletteStyle.color : bodyStyle.color;
   const backgroundColor = isolated ? paletteStyle.backgroundColor : bodyStyle.backgroundColor;
   const backgroundImage = isolated ? paletteStyle.backgroundImage : bodyStyle.backgroundImage;
@@ -173,6 +205,17 @@ export async function renderShareCard(
   const signature = document.createElement('div');
   signature.textContent = 'Literature Clock · literatureclock.netlify.app';
   signature.style.fontSize = '22px';
+  if (pattern === 'noise') {
+    const veil = document.createElement('div');
+    Object.assign(veil.style, {
+      position: 'absolute',
+      inset: '0',
+      backgroundColor: paletteStyle.backgroundColor,
+      opacity: palette.dataset.theme?.endsWith('-dark') ? '0.65' : '0.35',
+    });
+    card.append(veil);
+    for (const element of [time, content, signature]) element.style.position = 'relative';
+  }
   card.append(time, content, signature);
   document.body.append(card);
   try {

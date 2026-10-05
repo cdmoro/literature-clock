@@ -131,7 +131,13 @@ export function initThemePicker(dialog: HTMLDialogElement) {
   const colors = dialog.querySelector<HTMLElement>('#settings-color-controls');
   if (colors) {
     const colorRow = colors.closest('.settings-row');
-    picker.querySelector('.theme-next')!.before(colors);
+    const palette = document.createElement('div');
+    palette.className = 'settings-palette';
+    const label = document.createElement('span');
+    label.dataset.text = 'settings_color';
+    label.textContent = 'Colour';
+    palette.append(label, colors);
+    picker.append(palette);
     colorRow?.remove();
   }
   const list = picker.querySelector<HTMLElement>('#theme-picker-list')!;

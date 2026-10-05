@@ -61,7 +61,6 @@ test('keeps quick actions outside and moves every settings control without repla
   expect([...navigation.children].map((element) => element.id || element.className)).toEqual([
     'theme-previous',
     'theme-picker-toggle',
-    'settings-color-controls',
     'theme-next',
   ]);
   expect(document.querySelector('#settings-color-controls')!.closest('.settings-row')).toBeNull();
@@ -102,12 +101,12 @@ test('both color pickers and resets share state, including theme availability', 
   expect(inside.value).toBe('#d24335');
   expect(outside.value).toBe(inside.value);
   const theme = document.querySelector<HTMLSelectElement>('#theme-select')!;
-  theme.value = 'pink';
+  theme.value = 'base';
   theme.dispatchEvent(new Event('change'));
-  expect(outside.disabled).toBe(true);
-  expect(inside.disabled).toBe(true);
+  expect(outside.disabled).toBe(false);
+  expect(inside.disabled).toBe(false);
   expect(document.getElementById('settings-color-controls')!.hidden).toBe(false);
-  expect(inside.value).toBe('#ff89d8');
+  expect(inside.value).toBe('#d24335');
 });
 
 test('hide book title persists, restores, and allows URL overrides', () => {
@@ -254,16 +253,16 @@ test('theme list stays collapsed, supports stepping and closes after choosing or
   expect(list.parentElement).toBe(preview.parentElement);
   expect(list.hidden).toBe(true);
   expect(preview.hidden).toBe(false);
-  expect(document.querySelectorAll('.settings-theme-swatch')).toHaveLength(23);
+  expect(document.querySelectorAll('.settings-theme-swatch')).toHaveLength(16);
   expect(
     document
-      .querySelector('.settings-theme-option[data-value=green] .settings-theme-swatch')!
+      .querySelector('.settings-theme-option[data-value=base] .settings-theme-swatch')!
       .getAttribute('data-theme'),
-  ).toBe('green-light');
+  ).toBe('base-light');
   expect(document.getElementById('font-preview')).toBeNull();
   document.querySelector<HTMLButtonElement>('.theme-next')!.click();
   await Promise.resolve();
-  expect(store.get('theme')).toBe('pink-system');
+  expect(store.get('theme')).toBe('retro-system');
   document.querySelector<HTMLButtonElement>('.theme-previous')!.click();
   await Promise.resolve();
   expect(store.get('theme')).toBe('base-system');
@@ -276,9 +275,9 @@ test('theme list stays collapsed, supports stepping and closes after choosing or
   expect(list.hidden).toBe(true);
   expect(preview.hidden).toBe(false);
   toggle.click();
-  document.querySelector<HTMLButtonElement>('.settings-theme-option[data-value="green"]')!.click();
+  document.querySelector<HTMLButtonElement>('.settings-theme-option[data-value="elegant"]')!.click();
   await Promise.resolve();
-  expect(store.get('theme')).toBe('green-system');
+  expect(store.get('theme')).toBe('elegant-system');
   expect(list.hidden).toBe(true);
   expect(preview.hidden).toBe(false);
   expect(document.activeElement).toBe(toggle);
@@ -313,7 +312,7 @@ test('isolated preview preserves current scheme, theme CSS, title visibility and
       document.querySelector<HTMLIFrameElement>('#settings-theme-preview')!.srcdoc,
       'text/html',
     );
-  for (const value of ['pink', 'green', 'book', 'terminal']) {
+  for (const value of ['base', 'frame', 'book', 'terminal']) {
     theme.value = value;
     theme.dispatchEvent(new Event('change'));
     scheme.value = 'dark';

@@ -22,6 +22,7 @@ interface Stateful {
   font: string;
   theme: string;
   color: string;
+  palette: string;
   'custom-color': string;
   'background-pattern': BackgroundPattern;
   progressbar: ProgressbarMode;
@@ -61,6 +62,7 @@ const REMOVE_VALUES_FROM_URL: Partial<State> = {
   theme: 'base-system',
   color: '#d24335',
   'background-pattern': 'none',
+  palette: 'default',
 };
 
 const BOOLEAN_KEYS = new Set([
@@ -114,6 +116,9 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
       case 'theme':
         if (THEMES.test(raw)) result[key] = raw;
         break;
+      case 'palette':
+        if (['default', 'pink', 'green', 'orange', 'purple', 'blue', 'gray', 'random'].includes(raw)) result[key] = raw;
+        break;
       case 'transition':
         if (['none', 'fade', 'slide', 'blur', 'zoom'].includes(raw)) result[key] = raw;
         break;
@@ -142,6 +147,24 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
       case 'quote':
         result[key] = raw;
         break;
+    }
+  }
+  if (typeof result.theme === 'string') {
+    const [theme, variant = 'system'] = result.theme.split('-');
+    if (['pink', 'green', 'orange', 'purple', 'blue', 'gray', 'color'].includes(theme)) {
+      result.theme = `base-${variant}`;
+      result.palette = theme === 'color' ? 'random' : theme;
+      const colors: Record<string, string> = {
+        pink: '#ff89d8',
+        green: '#2ecc71',
+        orange: '#f39c12',
+        purple: '#9b59b6',
+        blue: '#2c97df',
+        gray: variant === 'dark' ? '#f1f1f1' : '#808686',
+        color: '#d24335',
+      };
+      result.color = colors[theme];
+      delete result['custom-color'];
     }
   }
   return result as Partial<State>;
@@ -209,6 +232,11 @@ export class Store {
       this.syncToUrl('theme', this.state.theme);
     }
 
+    if (urlParams.has('theme') && /^(pink|green|orange|purple|blue|gray|color)(-|$)/.test(urlParams.get('theme')!)) {
+      this.syncToUrl('theme', this.state.theme);
+      this.syncToUrl('palette', this.state.palette);
+      this.removeFromUrl('color');
+    }
     this.state.locale = resolveLocale(this.state.locale);
     if (this.state['ui-locale']) this.state['ui-locale'] = resolveLocale(this.state['ui-locale']);
     if (urlParams.has('locale') && urlParams.get('locale') !== this.state.locale) {
@@ -342,6 +370,7 @@ export function createStore() {
     font: 'default',
     theme: 'base-system',
     color: '#d24335',
+    palette: 'default',
     'custom-color': '',
     'background-pattern': 'none',
     progressbar: 'theme',
