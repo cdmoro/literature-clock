@@ -147,6 +147,8 @@ export function mountColorPalette(control: HTMLElement, picker: HTMLInputElement
     const locale = options.locale?.() || getBaseLocale(getInterfaceLocale());
     const labels = SETTINGS[locale];
     reset.hidden = state.defaultSelected;
+    reset.style.backgroundColor = state.defaultColor;
+    reset.style.color = contrastingText(state.defaultColor);
     reset.title = COLOR_STRINGS[locale].reset_color;
     reset.setAttribute('aria-label', reset.title);
     const saved = customColors();
