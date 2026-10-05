@@ -157,7 +157,17 @@ export async function renderShareCard(
   if (!passage.textContent) passage.textContent = quote.quote_raw;
   const credit = document.createElement('div');
   credit.dir = 'auto';
-  credit.textContent = `${quote.title} — ${quote.author}`;
+  credit.className = 'share-card-credit';
+  credit.append('— ');
+  const attribution = store.get('hide-book-title') ? [quote.author] : [quote.title, quote.author];
+  attribution.forEach((text, index) => {
+    if (index) credit.append(', ');
+    const part = document.createElement('span');
+    part.dir = 'auto';
+    part.style.unicodeBidi = 'isolate';
+    part.textContent = text;
+    credit.append(part);
+  });
   Object.assign(credit.style, { marginTop: '40px', fontSize: '28px' });
   content.append(passage, credit);
   const signature = document.createElement('div');

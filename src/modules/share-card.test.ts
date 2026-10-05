@@ -3,7 +3,10 @@ import html2canvas from 'html2canvas-pro';
 import { loadGoogleFont } from '../utils/google-font';
 import { renderShareCard } from './share-card';
 import type { ResolvedQuote } from '../types';
-vi.mock('../store', () => ({ store: { get: () => 'none' } }));
+const { state } = vi.hoisted(() => ({ state: { hideBookTitle: false } }));
+vi.mock('../store', () => ({
+  store: { get: (key: string) => (key === 'hide-book-title' ? state.hideBookTitle : 'none') },
+}));
 vi.mock('../utils/google-font', async (importOriginal) => ({
   ...(await importOriginal<typeof import('../utils/google-font')>()),
   loadGoogleFont: vi.fn().mockResolvedValue(undefined),
@@ -20,6 +23,7 @@ const quote = {
   author: 'Writer',
 } as ResolvedQuote;
 beforeEach(() => {
+  state.hideBookTitle = false;
   document.body.innerHTML = '<blockquote id="quote"></blockquote>';
   vi.mocked(html2canvas).mockReset();
   vi.mocked(loadGoogleFont).mockReset().mockResolvedValue(undefined);
@@ -38,7 +42,7 @@ it.each([
       expect(element.querySelector('script')).toBeNull();
       expect(element.querySelector('br')).not.toBeNull();
       expect(element.querySelector('em')?.textContent).toBe('Before');
-      expect(element.textContent).toContain('Book — Writer');
+      expect(element.textContent).toContain('— Book, Writer');
       return canvas;
     });
     expect(await renderShareCard(quote, format)).toBe(canvas);
@@ -132,3 +136,30 @@ it.each(['dots', 'circles', 'diagonal', 'diagonal-wide'] as const)(
     await renderShareCard(quote, 'square', undefined, undefined, { pattern });
   },
 );
+
+it.each([false, true])('matches web attribution when hide book title is %s', async (hidden) => {
+  state.hideBookTitle = hidden;
+  vi.mocked(html2canvas).mockImplementation(async (element) => {
+    const credit = element.querySelector<HTMLElement>('.share-card-credit')!;
+    expect(credit.textContent).toBe(hidden ? '— Writer' : '— Book, Writer');
+    expect([...credit.querySelectorAll('span')].map((part) => part.textContent)).toEqual(
+      hidden ? ['Writer'] : ['Book', 'Writer'],
+    );
+    for (const part of credit.querySelectorAll<HTMLElement>('span')) {
+      expect(part.dir).toBe('auto');
+      expect(part.style.unicodeBidi).toBe('isolate');
+    }
+    return document.createElement('canvas');
+  });
+  await renderShareCard(quote, 'square');
+});
+
+it('isolates mixed-script book and author names while preserving punctuation', async () => {
+  vi.mocked(html2canvas).mockImplementation(async (element) => {
+    const credit = element.querySelector('.share-card-credit')!;
+    expect(credit.textContent).toBe('— كتاب عربي, Stanley R. Matthews');
+    expect(credit.querySelectorAll('[dir="auto"]')).toHaveLength(2);
+    return document.createElement('canvas');
+  });
+  await renderShareCard({ ...quote, locale: 'ar-AE', title: 'كتاب عربي', author: 'Stanley R. Matthews' }, 'square');
+});
