@@ -82,6 +82,7 @@
   font-style: italic;
 }
 /* Keep framed themes and short viewports reachable without clipping content. */
+#quote.quote-scroll,
 #quote:has(#quote-translation) {
   box-sizing: border-box;
   max-height: calc(100dvh - 10rem);
@@ -102,6 +103,7 @@
 [data-theme|='poster'] #clock:has(#quote-translation) {
   max-width: 80vw;
 }
+[data-theme|='poster'] #quote.quote-scroll,
 [data-theme|='poster'] #quote:has(#quote-translation) {
   padding: 1.5rem;
 }
@@ -114,7 +116,14 @@
     max-width: 95vw;
   }
   [data-theme|='poster'] #quote:has(#quote-translation),
+  [data-theme|='frame'] #quote.quote-scroll,
   [data-theme|='frame'] #quote:has(#quote-translation) {
     padding: 1rem;
   }
+}
+
+/* Long single-language quotes need the same reachable layout as bilingual ones. */
+#quote.quote-scroll > p {
+  max-height: none;
+  overflow-wrap: anywhere;
 }

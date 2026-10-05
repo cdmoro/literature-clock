@@ -106,7 +106,8 @@ test('both color pickers and resets share state, including theme availability', 
   theme.dispatchEvent(new Event('change'));
   expect(outside.disabled).toBe(true);
   expect(inside.disabled).toBe(true);
-  expect(document.getElementById('settings-color-controls')!.hidden).toBe(true);
+  expect(document.getElementById('settings-color-controls')!.hidden).toBe(false);
+  expect(inside.value).toBe('#ff89d8');
 });
 
 test('hide book title persists, restores, and allows URL overrides', () => {
@@ -270,6 +271,11 @@ test('theme list stays collapsed, supports stepping and closes after choosing or
   expect(list.hidden).toBe(false);
   expect(preview.hidden).toBe(true);
   expect(toggle.getAttribute('aria-expanded')).toBe('true');
+  document.querySelector<HTMLElement>('#settings-dialog h2')?.click();
+  document.body.click();
+  expect(list.hidden).toBe(true);
+  expect(preview.hidden).toBe(false);
+  toggle.click();
   document.querySelector<HTMLButtonElement>('.settings-theme-option[data-value="green"]')!.click();
   await Promise.resolve();
   expect(store.get('theme')).toBe('green-system');

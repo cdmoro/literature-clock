@@ -5,25 +5,20 @@ import { doFitQuote, fitQuote, loadFontIfNotExists } from '../utils';
 import { setDayParameters } from './horizon';
 import { store } from '../store';
 import { contrastingText } from '../utils/colors';
+import { themeSupportsCustomColor } from '../utils/theme-colors';
 
-// Skins in this list use their colour as part of their visual identity.
-const NON_CUSTOMIZABLE_COLORS = new Set(['pink', 'green', 'orange', 'purple', 'blue', 'gray']);
-const CUSTOMIZABLE_THEMES = new Set([
-  'base',
-  'retro',
-  'elegant',
-  'festive',
-  'bohemian',
-  'book',
-  'handwriting',
-  'terminal',
-  'frame',
-  'poster',
-  'photo',
-  'whatsapp',
-]);
 const DEFAULT_COLORS: Record<string, string> = {
   base: '#d24335',
+  pink: '#ff89d8',
+  green: '#2ecc71',
+  orange: '#f39c12',
+  purple: '#9b59b6',
+  blue: '#2c97df',
+  gray: '#808686',
+  anaglyph: '#c53a35',
+  subtle: '#333333',
+  kindle: '#2c2c2e',
+  horizon: '#f5cf8e',
   retro: '#daa908',
   elegant: '#9f5bd5',
   festive: '#e74c3c',
@@ -37,30 +32,36 @@ const DEFAULT_COLORS: Record<string, string> = {
   whatsapp: '#e1ffc7',
 };
 
-// Non-customizable skins must not reinterpret the last editable skin's color.
+// Remember whether appearance changes should follow the theme palette.
 let followsDefaultColor = true;
+const fixedColor = () => !themeSupportsCustomColor(store.get('theme').split('-')[0]);
 
-function defaultColor(theme: string) {
-  const dark = document.documentElement.dataset.theme?.endsWith('-dark');
+export function defaultColor(theme: string, dark = document.documentElement.dataset.theme?.endsWith('-dark')) {
   const darkColors: Record<string, string> = {
     retro: '#f1ba08',
     terminal: '#1bec1b',
     frame: '#00c4ce',
     photo: '#fd3622',
     whatsapp: '#245247',
-    book: '#566971',
+    book: '#214cc6',
+    gray: '#f1f1f1',
+    anaglyph: '#3987b4',
+    subtle: '#eeeeee',
+    kindle: '#dcd8d0',
   };
+  if (theme === 'horizon') {
+    return document.documentElement.style.getPropertyValue('--sky-highlight').trim() || DEFAULT_COLORS.horizon;
+  }
   return (dark && darkColors[theme]) || DEFAULT_COLORS[theme] || DEFAULT_COLORS.base;
 }
 
 function getRandomThemeColor() {
-  const colors = Array.from(document.querySelectorAll<HTMLOptionElement>('#colors option')).map((op) => op.value);
-  const [theme] = store.get('theme').split('-');
+  const theme = document.documentElement.dataset.theme?.split('-')[0];
+  const colors = Array.from(document.querySelectorAll<HTMLOptionElement>('#colors option'))
+    .map((option) => option.value)
+    .filter((color) => color !== 'color' && color !== theme);
 
-  colors.pop();
-  colors.splice(colors.indexOf(theme), 1);
-
-  return colors[Math.floor(Math.random() * colors.length)];
+  return colors[Math.floor(Math.random() * colors.length)] || 'base';
 }
 
 export function initTheme() {
@@ -94,7 +95,20 @@ export function initTheme() {
   document.documentElement.dataset.theme = `${theme}-${variant}`;
   refreshDefaultFontLabel();
   refreshLocaleThemeFonts();
-  followsDefaultColor = store.get('color').toLowerCase() === defaultColor(theme).toLowerCase();
+  const explicitColor = new URLSearchParams(location.search).has('color');
+  const savedCustom = store.get('custom-color');
+  followsDefaultColor =
+    !savedCustom &&
+    ((fixedColor() && !explicitColor) ||
+      store.get('color').toLowerCase() === defaultColor(theme).toLowerCase() ||
+      (!explicitColor && store.get('color') === DEFAULT_COLORS.base));
+  if (explicitColor && store.get('color').toLowerCase() !== defaultColor(theme).toLowerCase()) {
+    store.set('custom-color', store.get('color'), false);
+    followsDefaultColor = false;
+  } else if (!savedCustom && !followsDefaultColor) store.set('custom-color', store.get('color'), false);
+  if (fixedColor() || followsDefaultColor) store.set('color', defaultColor(theme), false);
+  else if (savedCustom && !explicitColor) store.set('color', savedCustom, false);
+  if (fixedColor()) store.removeFromUrl('color');
   applyCustomColor(theme);
 
   window.addEventListener('resize', doFitQuote);
@@ -104,14 +118,14 @@ export function initTheme() {
     const [_, variant] = store.get('theme').split('-');
 
     if (variant === 'system') {
-      const [theme] = store.get('theme').split('-');
-      const wasDefault = store.get('color').toLowerCase() === defaultColor(theme).toLowerCase();
+      const theme = document.documentElement.dataset.theme!.split('-')[0];
+      const wasDefault = followsDefaultColor;
 
-      store.set('theme', `${theme}-system`);
+      store.set('theme', `${store.get('theme').split('-')[0]}-system`);
       document.documentElement.dataset.theme = `${theme}-${e.matches ? 'dark' : 'light'}`;
       refreshDefaultFontLabel();
       refreshLocaleThemeFonts();
-      if (wasDefault && CUSTOMIZABLE_THEMES.has(theme)) {
+      if (wasDefault || fixedColor()) {
         store.set('color', defaultColor(theme), false);
         store.removeFromUrl('color');
       }
@@ -121,13 +135,20 @@ export function initTheme() {
 
   colorPickers.forEach((colorPicker) =>
     colorPicker.addEventListener('input', () => {
+      if (fixedColor()) return;
+      const theme = document.documentElement.dataset.theme?.split('-')[0] || 'base';
+      followsDefaultColor = colorPicker.value.toLowerCase() === defaultColor(theme).toLowerCase();
+      store.set('custom-color', followsDefaultColor ? '' : colorPicker.value, false);
       store.set('color', colorPicker.value);
-      applyCustomColor(themeSelect?.value || 'base');
+      applyCustomColor(document.documentElement.dataset.theme?.split('-')[0]);
     }),
   );
   resetColors.forEach((resetColor) =>
     resetColor.addEventListener('click', () => {
-      const theme = themeSelect?.value || 'base';
+      if (fixedColor()) return;
+      const theme = document.documentElement.dataset.theme?.split('-')[0] || 'base';
+      followsDefaultColor = true;
+      store.set('custom-color', '', false);
       const color = defaultColor(theme);
       store.set('color', color, false);
       store.removeFromUrl('color');
@@ -142,37 +163,35 @@ function applyCustomColor(theme = 'base') {
   root.dataset.variant = store.get('theme').split('-')[1] || 'system';
   const colorPickers = document.querySelectorAll<HTMLInputElement>('#color-picker, #settings-color-picker');
   const resetColors = document.querySelectorAll<HTMLButtonElement>('#reset-color, #settings-reset-color');
-  const customizable =
-    CUSTOMIZABLE_THEMES.has(theme) && !NON_CUSTOMIZABLE_COLORS.has(theme) && !store.get('theme').startsWith('color-');
-  root.classList.toggle('custom-accent', customizable);
+  const randomColor = store.get('theme').startsWith('color-');
+  const editable = !fixedColor();
+  const custom = editable && !followsDefaultColor;
+  root.classList.toggle('custom-accent', custom);
   document.querySelectorAll<HTMLElement>('#color-controls, #settings-color-controls').forEach((controls) => {
-    controls.hidden = !customizable;
-    controls.closest('.settings-row')?.toggleAttribute('hidden', !customizable);
+    controls.hidden = false;
+    controls.closest('.settings-row')?.removeAttribute('hidden');
   });
-  if (customizable) root.style.setProperty('--accent-color', store.get('color'));
+  if (custom) root.style.setProperty('--accent-color', store.get('color'));
   else root.style.removeProperty('--accent-color');
-  const accent = customizable ? store.get('color') : getComputedStyle(root).getPropertyValue('--accent-color').trim();
+  const accent = store.get('color');
   root.style.setProperty('--accent-text', contrastingText(accent));
-  if (theme === 'whatsapp' && customizable) {
+  if (theme === 'whatsapp' && custom) {
     root.style.setProperty('--bubble-text', contrastingText(store.get('color')));
   } else {
     root.style.removeProperty('--bubble-text');
   }
   colorPickers.forEach((colorPicker) => {
-    colorPicker.value = store.get('color');
-    colorPicker.hidden = !customizable;
-    colorPicker.disabled = !customizable;
+    colorPicker.value = randomColor ? DEFAULT_COLORS.base : store.get('color');
+    colorPicker.hidden = false;
+    colorPicker.disabled = !editable;
   });
   resetColors.forEach((resetColor) => {
-    resetColor.hidden = !customizable || store.get('color') === defaultColor(theme);
+    resetColor.hidden = !editable || followsDefaultColor;
+    resetColor.disabled = !editable;
   });
 }
 
 export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
-  const previousTheme = store.get('theme').split('-')[0];
-  if (CUSTOMIZABLE_THEMES.has(previousTheme)) {
-    followsDefaultColor = store.get('color').toLowerCase() === defaultColor(previousTheme).toLowerCase();
-  }
   const p = document.querySelector<HTMLParagraphElement>('blockquote p');
 
   if (p) {
@@ -213,10 +232,10 @@ export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
   document.documentElement.dataset.theme = `${theme}-${variant}`;
   refreshDefaultFontLabel();
   refreshLocaleThemeFonts();
-  if (followsDefaultColor && theme && CUSTOMIZABLE_THEMES.has(theme) && !store.get('theme').startsWith('color-')) {
+  if ((fixedColor() || followsDefaultColor) && theme) {
     store.set('color', defaultColor(theme), false);
     store.removeFromUrl('color');
-  }
+  } else if (store.get('custom-color')) store.set('color', store.get('custom-color'), syncToUrl);
   applyCustomColor(theme);
   fitQuote();
 

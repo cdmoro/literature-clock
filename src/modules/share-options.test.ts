@@ -6,7 +6,12 @@ const { state } = vi.hoisted(() => ({ state: {} as Record<string, unknown> }));
 vi.mock('../store', () => ({ store: { get: (key: string) => state[key], subscribe: vi.fn() } }));
 vi.mock('./locales', () => ({
   getBaseLocale: () => 'en-GB',
-  getStrings: () => ({ font: 'Font', default_font: 'Default font' }),
+  getStrings: () => ({
+    font: 'Font',
+    default_font: 'Default font',
+    copy_title: 'Copy quote',
+    copy_mode_copied: 'Quote copied!',
+  }),
 }));
 vi.mock('./share', () => ({
   shareQuote: vi.fn().mockResolvedValue(undefined),
@@ -19,6 +24,7 @@ beforeEach(() => {
   state.locale = 'en-GB';
   state['background-pattern'] = 'none';
   state.color = '#d24335';
+  state['custom-color'] = '';
   state.font = 'default';
   state.quote = undefined;
   state['active-quote'] = { id: '1200-001', quote_raw: 'Original quote', locale: 'en-GB', time: '12:00' };
@@ -36,10 +42,16 @@ beforeEach(() => {
   initShareOptions();
   document.getElementById('share')!.click();
 });
+
 const button = (label: string) =>
   [...document.querySelectorAll<HTMLButtonElement>('#share-preview button')].find(
     (el) => el.getAttribute('aria-label') === label || el.textContent === label,
   )!;
+it('focuses the dialog title on opening and restores the share button on closing', () => {
+  expect(document.activeElement).toBe(document.getElementById('share-preview-title'));
+  document.querySelector<HTMLDialogElement>('#share-preview')!.close();
+  expect(document.activeElement).toBe(document.getElementById('share'));
+});
 it('changes image format and appearance without changing the live clock', async () => {
   button('Vertical').click();
   button('Light').click();
@@ -115,6 +127,39 @@ it('opens the dialog from Share and preserves its existing icon without an extra
   expect(document.getElementById('existing-share-icon')?.parentElement?.id).toBe('share');
   expect(document.getElementById('share-options')).toBeNull();
   expect(document.getElementById('share-preview-title')?.textContent).toBe('Share quote');
+});
+
+it('folds customization on mobile and opens it when switching to desktop', () => {
+  button('Close').click();
+  const listeners = new Set<() => void>();
+  const media = {
+    matches: true,
+    addEventListener: vi.fn((_type: string, listener: () => void) => listeners.add(listener)),
+    removeEventListener: vi.fn((_type: string, listener: () => void) => listeners.delete(listener)),
+  };
+  vi.stubGlobal('matchMedia', vi.fn().mockReturnValue(media));
+  document.getElementById('share')!.click();
+  const customization = document.querySelector<HTMLDetailsElement>('.share-customization')!;
+  expect(customization.open).toBe(false);
+  expect(customization.querySelector('summary')?.textContent).toBe('Theme / Font');
+  expect(customization.contains(document.getElementById('share-preview-font'))).toBe(true);
+  expect(customization.contains(button('Vertical'))).toBe(false);
+  customization.open = true;
+  button('Next theme').click();
+  expect(customization.open).toBe(true);
+  button('Previous theme').click();
+  media.matches = false;
+  listeners.forEach((listener) => listener());
+  expect(customization.open).toBe(true);
+  media.matches = true;
+  listeners.forEach((listener) => listener());
+  expect(customization.open).toBe(false);
+  button('Close').click();
+  expect(listeners.size).toBe(0);
+});
+
+it('keeps customization expanded on desktop', () => {
+  expect(document.querySelector<HTMLDetailsElement>('.share-customization')?.open).toBe(true);
 });
 
 it('cycles image themes in both directions without changing the live theme', async () => {
@@ -215,4 +260,97 @@ it('offers large circles as an independent image pattern', () => {
   select.dispatchEvent(new Event('change'));
   expect(selectedCardOptions().pattern).toBe('circles');
   expect(state['background-pattern']).toBe('none');
+});
+
+it('copies the preview text even after the live quote changes', async () => {
+  const writeText = vi.fn().mockResolvedValue(undefined);
+  vi.stubGlobal('navigator', { clipboard: { writeText } });
+  button('Close').click();
+  document.getElementById('share')!.click();
+  await vi.waitFor(() => expect(document.querySelector('.share-preview-image canvas')).not.toBeNull());
+  state['active-quote'] = { quote_raw: 'New minute' };
+  button('Copy quote').click();
+  await vi.waitFor(() =>
+    expect(document.querySelector('#share-preview [role="status"]')?.textContent).toBe('Quote copied!'),
+  );
+  expect(writeText).toHaveBeenCalledWith('Original quote');
+  expect(document.querySelector('#share-preview [role="status"]')?.textContent).toBe('Quote copied!');
+});
+
+it.each(
+  Object.entries({
+    pink: '#ff89d8',
+    green: '#2ecc71',
+    orange: '#f39c12',
+    purple: '#9b59b6',
+    blue: '#2c97df',
+    gray: '#f1f1f1',
+  }),
+)('disables the share picker for %s with its palette color', (theme, accent) => {
+  button('Close').click();
+  document.documentElement.dataset.theme = `${theme}-dark`;
+  document
+    .querySelector('#theme-select')!
+    .insertAdjacentHTML('beforeend', `<option value="${theme}">${theme}</option>`);
+  state['custom-color'] = '#123456';
+  document.getElementById('share')!.click();
+  while (document.querySelector('.share-theme-carousel span')!.textContent !== theme) button('Next theme').click();
+  button('Dark').click();
+  const picker = document.getElementById('share-preview-color') as HTMLInputElement;
+  expect(picker.disabled).toBe(true);
+  expect(document.getElementById('share-preview-reset-color')!.hidden).toBe(true);
+  expect(picker.value).toBe(accent);
+  picker.value = '#abcdef';
+  picker.dispatchEvent(new Event('input'));
+  expect(selectedCardOptions().color).toBeUndefined();
+  if (theme === 'gray') {
+    button('Light').click();
+    expect(picker.value).toBe('#808686');
+  }
+});
+
+it('resets the image accent to the selected theme defaults without changing the clock custom color', () => {
+  const originalUrl = location.href;
+  while (document.querySelector('.share-theme-carousel span')!.textContent !== 'Base') button('Next theme').click();
+  state['custom-color'] = '#abcdef';
+  const picker = document.getElementById('share-preview-color') as HTMLInputElement;
+  const reset = document.getElementById('share-preview-reset-color') as HTMLButtonElement;
+  picker.value = '#123456';
+  picker.dispatchEvent(new Event('input'));
+  expect(reset.hidden).toBe(false);
+  reset.click();
+  expect(selectedCardOptions()).toMatchObject({ color: undefined, useDefaultColor: true });
+  expect(reset.hidden).toBe(true);
+  expect(state['custom-color']).toBe('#abcdef');
+  expect(location.href).toBe(originalUrl);
+  // With default mode active, a theme/appearance change follows that palette.
+  while (document.querySelector('.share-theme-carousel span')!.textContent !== 'Book page')
+    button('Next theme').click();
+  button('Dark').click();
+  expect(picker.value).toBe('#214cc6');
+  button('Light').click();
+  expect(picker.value).toBe('#fbf719');
+  picker.value = '#123456';
+  picker.dispatchEvent(new Event('input'));
+  expect(selectedCardOptions().color).toBe('#123456');
+  expect(selectedCardOptions()).not.toHaveProperty('useDefaultColor');
+});
+
+it('retains the image custom accent across fixed palettes and restores editing on return', () => {
+  button('Close').click();
+  document.querySelector('#theme-select')!.insertAdjacentHTML('beforeend', '<option value="pink">Pink</option>');
+  document.getElementById('share')!.click();
+  while (document.querySelector('.share-theme-carousel span')!.textContent !== 'Base') button('Next theme').click();
+  const picker = document.getElementById('share-preview-color') as HTMLInputElement;
+  picker.value = '#123456';
+  picker.dispatchEvent(new Event('input'));
+  button('Previous theme').click();
+  expect(picker.disabled).toBe(true);
+  expect(picker.value).toBe('#ff89d8');
+  expect(selectedCardOptions().color).toBeUndefined();
+  button('Next theme').click();
+  expect(picker.disabled).toBe(false);
+  expect(picker.value).toBe('#123456');
+  expect(selectedCardOptions().color).toBe('#123456');
+  expect(state['custom-color']).toBe('');
 });

@@ -22,6 +22,7 @@ interface Stateful {
   font: string;
   theme: string;
   color: string;
+  'custom-color': string;
   'background-pattern': BackgroundPattern;
   progressbar: ProgressbarMode;
   'random-locale': boolean;
@@ -45,7 +46,14 @@ type State = Stateful & Stateless;
 
 type Listener = (newState: State, oldState: State) => void;
 
-const IGNORE_FROM_URL: (keyof State)[] = ['custom-font', 'active-quote', 'paused', 'auto-read', 'read-attribution'];
+const IGNORE_FROM_URL: (keyof State)[] = [
+  'custom-color',
+  'custom-font',
+  'active-quote',
+  'paused',
+  'auto-read',
+  'read-attribution',
+];
 const REMOVE_VALUES_FROM_URL: Partial<State> = {
   transition: 'fade',
   progressbar: 'theme',
@@ -112,8 +120,9 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
       case 'background-pattern':
         if (isBackgroundPattern(raw)) result[key] = raw;
         break;
+      case 'custom-color':
       case 'color':
-        if (/^#[0-9a-f]{6}$/i.test(raw)) result[key] = raw;
+        if (/^#[0-9a-f]{6}$/i.test(raw) || (key === 'custom-color' && raw === '')) result[key] = raw;
         break;
       case 'font':
         if (/^[\p{L}\p{N} _-]{1,100}$/u.test(raw)) result[key] = raw;
@@ -333,6 +342,7 @@ export function createStore() {
     font: 'default',
     theme: 'base-system',
     color: '#d24335',
+    'custom-color': '',
     'background-pattern': 'none',
     progressbar: 'theme',
     'random-locale': false,

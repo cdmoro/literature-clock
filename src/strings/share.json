@@ -20,7 +20,8 @@
     "copyUnavailable": "Image copying is unavailable in this browser. Download the image instead.",
     "theme": "Theme",
     "previousTheme": "Previous theme",
-    "nextTheme": "Next theme"
+    "nextTheme": "Next theme",
+    "textCopyFailed": "Could not copy the text. Please try again."
   },
   "es-ES": {
     "title": "Compartir cita",
@@ -43,7 +44,8 @@
     "copyUnavailable": "Este navegador no permite copiar imágenes. Podés descargarla.",
     "theme": "Tema",
     "previousTheme": "Tema anterior",
-    "nextTheme": "Tema siguiente"
+    "nextTheme": "Tema siguiente",
+    "textCopyFailed": "No se pudo copiar el texto. Intentá de nuevo."
   },
   "fr-FR": {
     "title": "Partager la citation",
@@ -66,7 +68,8 @@
     "copyUnavailable": "Ce navigateur ne permet pas de copier les images. Téléchargez l’image.",
     "theme": "Thème",
     "previousTheme": "Thème précédent",
-    "nextTheme": "Thème suivant"
+    "nextTheme": "Thème suivant",
+    "textCopyFailed": "Impossible de copier le texte. Réessayez."
   },
   "de-DE": {
     "title": "Zitat teilen",
@@ -89,7 +92,8 @@
     "copyUnavailable": "Dieser Browser unterstützt das Kopieren von Bildern nicht. Laden Sie das Bild herunter.",
     "theme": "Design",
     "previousTheme": "Vorheriges Design",
-    "nextTheme": "Nächstes Design"
+    "nextTheme": "Nächstes Design",
+    "textCopyFailed": "Der Text konnte nicht kopiert werden. Bitte erneut versuchen."
   },
   "it-IT": {
     "title": "Condividi citazione",
@@ -112,7 +116,8 @@
     "copyUnavailable": "Questo browser non supporta la copia delle immagini. Scarica l’immagine.",
     "theme": "Tema",
     "previousTheme": "Tema precedente",
-    "nextTheme": "Tema successivo"
+    "nextTheme": "Tema successivo",
+    "textCopyFailed": "Impossibile copiare il testo. Riprova."
   },
   "pt-PT": {
     "title": "Partilhar citação",
@@ -135,7 +140,8 @@
     "copyUnavailable": "Este navegador não permite copiar imagens. Transfira a imagem.",
     "theme": "Tema",
     "previousTheme": "Tema anterior",
-    "nextTheme": "Tema seguinte"
+    "nextTheme": "Tema seguinte",
+    "textCopyFailed": "Não foi possível copiar o texto. Tente novamente."
   },
   "el-GR": {
     "title": "Κοινοποίηση παραθέματος",
@@ -158,7 +164,8 @@
     "copyUnavailable": "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει αντιγραφή εικόνων. Κατεβάστε την εικόνα.",
     "theme": "Θέμα",
     "previousTheme": "Προηγούμενο θέμα",
-    "nextTheme": "Επόμενο θέμα"
+    "nextTheme": "Επόμενο θέμα",
+    "textCopyFailed": "Δεν ήταν δυνατή η αντιγραφή του κειμένου. Δοκιμάστε ξανά."
   },
   "zh-CN": {
     "title": "分享引文",
@@ -181,7 +188,8 @@
     "copyUnavailable": "此浏览器不支持复制图片，请下载图片。",
     "theme": "主题",
     "previousTheme": "上一个主题",
-    "nextTheme": "下一个主题"
+    "nextTheme": "下一个主题",
+    "textCopyFailed": "无法复制文本，请重试。"
   },
   "ru-RU": {
     "title": "Поделиться цитатой",
@@ -204,7 +212,8 @@
     "copyUnavailable": "Этот браузер не поддерживает копирование изображений. Скачайте изображение.",
     "theme": "Тема",
     "previousTheme": "Предыдущая тема",
-    "nextTheme": "Следующая тема"
+    "nextTheme": "Следующая тема",
+    "textCopyFailed": "Не удалось скопировать текст. Попробуйте ещё раз."
   },
   "eo": {
     "title": "Kunhavigi citaĵon",
@@ -227,7 +236,8 @@
     "copyUnavailable": "Ĉi tiu retumilo ne subtenas kopiadon de bildoj. Elŝutu la bildon.",
     "theme": "Temo",
     "previousTheme": "Antaŭa temo",
-    "nextTheme": "Sekva temo"
+    "nextTheme": "Sekva temo",
+    "textCopyFailed": "Ne eblis kopii la tekston. Bonvolu reprovi."
   },
   "en-US": {
     "title": "Share quote",
@@ -250,7 +260,8 @@
     "copyUnavailable": "Image copying is unavailable in this browser. Download the image instead.",
     "theme": "Theme",
     "previousTheme": "Previous theme",
-    "nextTheme": "Next theme"
+    "nextTheme": "Next theme",
+    "textCopyFailed": "Could not copy the text. Please try again."
   },
   "ar-AE": {
     "title": "مشاركة الاقتباس",
@@ -273,6 +284,7 @@
     "copyUnavailable": "هذا المتصفح لا يدعم نسخ الصور. نزّل الصورة بدلاً من ذلك.",
     "theme": "السمة",
     "previousTheme": "السمة السابقة",
-    "nextTheme": "السمة التالية"
+    "nextTheme": "السمة التالية",
+    "textCopyFailed": "تعذر نسخ النص. حاول مرة أخرى."
   }
 }

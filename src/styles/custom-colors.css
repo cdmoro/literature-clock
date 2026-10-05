@@ -7,12 +7,18 @@
   white-space: nowrap;
 }
 
-footer .input-group { vertical-align: top; }
+footer .input-group {
+  vertical-align: top;
+}
 
-[data-variant-icon] { display: none; }
+[data-variant-icon] {
+  display: none;
+}
 [data-variant='light'] [data-variant-icon='light'],
 [data-variant='dark'] [data-variant-icon='dark'],
-[data-variant='system'] [data-variant-icon='system'] { display: initial; }
+[data-variant='system'] [data-variant-icon='system'] {
+  display: initial;
+}
 
 :is(#color-controls, #settings-color-controls)[hidden],
 :is(#reset-color, #settings-reset-color)[hidden] {
@@ -30,9 +36,17 @@ footer .input-group { vertical-align: top; }
   cursor: pointer;
 }
 
-:is(#color-picker, #settings-color-picker)::-webkit-color-swatch-wrapper { padding: 0; }
-:is(#color-picker, #settings-color-picker)::-webkit-color-swatch { border: 0; border-radius: 0.2rem; }
-:is(#color-picker, #settings-color-picker)::-moz-color-swatch { border: 0; border-radius: 0.2rem; }
+:is(#color-picker, #settings-color-picker)::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+:is(#color-picker, #settings-color-picker)::-webkit-color-swatch {
+  border: 0;
+  border-radius: 0.2rem;
+}
+:is(#color-picker, #settings-color-picker)::-moz-color-swatch {
+  border: 0;
+  border-radius: 0.2rem;
+}
 :is(#reset-color, #settings-reset-color) {
   display: inline-flex;
   align-items: center;
@@ -41,13 +55,18 @@ footer .input-group { vertical-align: top; }
   border-radius: 0 0.25rem 0.25rem 0;
 }
 
-:is(#color-controls, #settings-color-controls):has(:is(#reset-color, #settings-reset-color)[hidden]) :is(#color-picker, #settings-color-picker) {
+:is(#color-controls, #settings-color-controls):has(:is(#reset-color, #settings-reset-color)[hidden])
+  :is(#color-picker, #settings-color-picker) {
   border-radius: 0.25rem;
 }
 
 @media only screen and (max-width: 600px) {
-  :is(#color-controls, #settings-color-controls) { height: 26px; }
-  :is(#color-picker, #settings-color-picker) { width: 2rem; }
+  :is(#color-controls, #settings-color-controls) {
+    height: 26px;
+  }
+  :is(#color-picker, #settings-color-picker) {
+    width: 2rem;
+  }
 }
 
 [data-theme='base-light'].custom-accent,
@@ -76,4 +95,32 @@ footer .input-group { vertical-align: top; }
 
 [data-theme='whatsapp-dark'].custom-accent .time {
   color: color-mix(in srgb, var(--accent-color) 65%, #fff);
+}
+
+/* Color presets tint their surfaces when the accent is edited. */
+:is(
+    [data-theme|='pink'],
+    [data-theme|='green'],
+    [data-theme|='orange'],
+    [data-theme|='purple'],
+    [data-theme|='blue'],
+    [data-theme|='gray']
+  ).custom-accent {
+  --background: color-mix(in srgb, var(--accent-color) 15%, #fff);
+}
+:is(
+    [data-theme='pink-dark'],
+    [data-theme='green-dark'],
+    [data-theme='orange-dark'],
+    [data-theme='purple-dark'],
+    [data-theme='blue-dark'],
+    [data-theme='gray-dark']
+  ).custom-accent {
+  --background: color-mix(in srgb, var(--accent-color) 16%, #101016);
+}
+[data-theme|='anaglyph'].custom-accent {
+  --color-mix: var(--accent-color);
+}
+[data-theme|='horizon'].custom-accent .time {
+  color: var(--accent-color);
 }

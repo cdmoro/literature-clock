@@ -1,0 +1,7 @@
+::highlight(speech-word) {
+  background-color: color-mix(in srgb, var(--accent-color) 28%, transparent);
+}
+
+[data-theme$='-dark'] ::highlight(speech-word) {
+  background-color: color-mix(in srgb, var(--accent-color) 55%, transparent);
+}

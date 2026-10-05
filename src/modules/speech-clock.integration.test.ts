@@ -34,7 +34,7 @@ it('reads the newly fetched and rendered quote on successive real clock minute c
     '<div id="reading-controls"></div><section id="settings-behavior"></section><blockquote id="quote"></blockquote><div id="time-clock"><span></span></div>';
   const speak = vi.fn((utterance) => utterance.onstart?.());
   const cancel = vi.fn();
-  vi.stubGlobal('speechSynthesis', { speak, cancel, getVoices: () => [] });
+  vi.stubGlobal('speechSynthesis', { speak, cancel, resume: vi.fn(), getVoices: () => [] });
   vi.stubGlobal(
     'SpeechSynthesisUtterance',
     class {
@@ -73,6 +73,7 @@ it('reads the newly fetched and rendered quote on successive real clock minute c
     document.getElementById('auto-read')!.click();
     expect(speak.mock.calls[0][0].text).toBe('It is 12:00.');
     await vi.advanceTimersByTimeAsync(1000);
+    await vi.advanceTimersByTimeAsync(100);
     expect(store.get('active-quote')!.time).toBe('12:01');
     expect(speak.mock.calls[1][0].text).toBe('It is 12:01.');
     await vi.advanceTimersByTimeAsync(60000);

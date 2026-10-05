@@ -6,12 +6,19 @@ import type { ResolvedQuote } from '../types';
 let cleanup: (() => void) | undefined;
 const speak = vi.fn();
 const cancel = vi.fn();
+const highlights = new Map<string, Range[]>();
+const highlightedText = () =>
+  highlights
+    .get('speech-word')
+    ?.map((range) => range.toString())
+    .join('');
 class Utterance {
   lang = '';
   voice = null;
   onstart?: () => void;
   onend?: () => void;
   onerror?: (event: { error: string }) => void;
+  onboundary?: (event: { name: string; charIndex: number; charLength: number }) => void;
   constructor(public text: string) {}
 }
 const quote = {
@@ -22,14 +29,26 @@ const quote = {
   author: 'La autora',
 } as ResolvedQuote;
 beforeEach(() => {
+  vi.useFakeTimers();
+  cancel.mockReset();
   localStorage.clear();
   history.replaceState({}, '', '/');
   document.body.innerHTML =
     '<div id="reading-controls"></div><section id="settings-behavior"></section><blockquote id="quote"><p>Son <em>las doce</em>.<br>Hola.</p><cite><span id="title">El libro</span>, <span id="author">La autora</span></cite></blockquote>';
-  vi.stubGlobal('speechSynthesis', { speak, cancel, getVoices: () => [] });
+  vi.stubGlobal('speechSynthesis', { speak, cancel, resume: vi.fn(), getVoices: () => [] });
   vi.stubGlobal('SpeechSynthesisUtterance', Utterance);
   createStore();
   store.set('active-quote', quote);
+  highlights.clear();
+  vi.stubGlobal('CSS', { highlights });
+  vi.stubGlobal(
+    'Highlight',
+    class extends Array<Range> {
+      constructor(...ranges: Range[]) {
+        super(...ranges);
+      }
+    },
+  );
   vi.clearAllMocks();
   speak.mockImplementation((utterance: Utterance) => utterance.onstart?.());
 });
@@ -39,9 +58,69 @@ afterEach(() => {
   vi.unstubAllGlobals();
   vi.useRealTimers();
 });
-const click = (id: string) => document.getElementById(id)!.click();
-const minute = (minuteTick = true) =>
+const click = (id: string) => {
+  document.getElementById(id)!.click();
+  if (id === 'activate-speech') vi.advanceTimersByTime(100);
+};
+const minute = (minuteTick = true) => {
   document.dispatchEvent(new CustomEvent('quote-rendered', { detail: { minuteTick } }));
+  vi.advanceTimersByTime(100);
+};
+
+it('highlights successive words across emphasis and line breaks, then restores the markup', () => {
+  cleanup = initSpeech();
+  const paragraph = document.querySelector('#quote > p')!;
+  const original = paragraph.innerHTML;
+  click('read-quote');
+  const current = speak.mock.calls[0][0] as Utterance;
+  current.onboundary!({ name: 'word', charIndex: 4, charLength: 3 });
+  expect(highlightedText()).toBe('las');
+  expect(paragraph.innerHTML).toBe(original);
+  current.onboundary!({ name: 'word', charIndex: 14, charLength: 0 });
+  expect(highlights.get('speech-word')).toHaveLength(1);
+  expect(highlightedText()).toBe('Hola.');
+  expect(paragraph.innerHTML).toBe(original);
+  expect(current.text).toBe('Son las doce. Hola.');
+  current.onend!();
+  expect(paragraph.innerHTML).toBe(original);
+});
+
+it('maps title and author boundaries and removes highlights on stop', () => {
+  cleanup = initSpeech();
+  click('read-attribution');
+  click('read-quote');
+  const current = speak.mock.calls[0][0] as Utterance;
+  current.onboundary!({ name: 'word', charIndex: current.text.indexOf('libro'), charLength: 5 });
+  expect(highlightedText()).toBe('libro');
+  current.onboundary!({ name: 'word', charIndex: current.text.indexOf('autora'), charLength: 6 });
+  expect(highlightedText()).toBe('autora');
+  click('read-quote');
+  expect(highlights.has('speech-word')).toBe(false);
+});
+
+it('clears highlights at a manual clock tick and ignores further boundaries from that quote', () => {
+  cleanup = initSpeech();
+  click('read-quote');
+  const current = speak.mock.calls[0][0] as Utterance;
+  current.onboundary!({ name: 'word', charIndex: 0, charLength: 3 });
+  document.dispatchEvent(new CustomEvent('quote-changing', { detail: { minuteTick: true } }));
+  document.querySelector('#quote > p')!.textContent = 'Another quote';
+  current.onboundary!({ name: 'word', charIndex: 4, charLength: 3 });
+  expect(highlights.has('speech-word')).toBe(false);
+});
+
+it('handles trimmed whitespace and precise boundaries in text without spaces', () => {
+  document.querySelector('#quote > p')!.innerHTML = '  你好<em>世界</em>  ';
+  cleanup = initSpeech();
+  click('read-quote');
+  const current = speak.mock.calls[0][0] as Utterance;
+  expect(current.text).toBe('你好世界');
+  current.onboundary!({ name: 'word', charIndex: 1, charLength: 2 });
+  expect(highlightedText()).toBe('好世');
+  current.onerror!({ error: 'interrupted' });
+  expect(highlights.has('speech-word')).toBe(false);
+  expect(document.querySelector('#quote > p')!.innerHTML).toBe('  你好<em>世界</em>  ');
+});
 
 it('reads the displayed text in the quote language, then stops with the same button', () => {
   cleanup = initSpeech();
@@ -180,16 +259,16 @@ it('stops ongoing narration when attribution visibility changes', () => {
   expect(document.getElementById('read-quote')!.getAttribute('aria-pressed')).toBe('false');
 });
 
-it('lets manual speech finish at a clock tick but interrupts intentional quote navigation', () => {
+it('stops manual speech and resets the button at a clock tick without a completion callback', () => {
   cleanup = initSpeech();
   click('read-quote');
   cancel.mockClear();
   document.dispatchEvent(new CustomEvent('quote-changing', { detail: { minuteTick: true } }));
   store.set('active-quote', { ...quote, time: '12:01' });
   minute();
-  expect(cancel).not.toHaveBeenCalled();
+  expect(cancel).toHaveBeenCalledOnce();
   expect(speak).toHaveBeenCalledOnce();
-  expect(document.getElementById('read-quote')!.getAttribute('aria-pressed')).toBe('true');
+  expect(document.getElementById('read-quote')!.getAttribute('aria-pressed')).toBe('false');
   document.dispatchEvent(new CustomEvent('quote-changing', { detail: { minuteTick: false } }));
   expect(cancel).toHaveBeenCalledOnce();
 });
@@ -238,4 +317,60 @@ it('does not cancel the native engine at natural completion or when already idle
   current.onend!();
   store.set('theme', 'poster-light');
   expect(cancel).not.toHaveBeenCalled();
+});
+
+it('keeps the DOM unchanged when the browser cannot paint custom highlights', () => {
+  vi.stubGlobal('Highlight', undefined);
+  const paragraph = document.querySelector('#quote > p')!;
+  const original = paragraph.innerHTML;
+  cleanup = initSpeech();
+  click('read-quote');
+  const current = speak.mock.calls[0][0] as Utterance;
+  current.onboundary!({ name: 'word', charIndex: 4, charLength: 3 });
+  expect(paragraph.innerHTML).toBe(original);
+  expect(highlights.has('speech-word')).toBe(false);
+  expect(document.getElementById('read-quote')!.getAttribute('aria-pressed')).toBe('true');
+});
+
+it('restarts after stop even when the native engine reports it is not paused', () => {
+  vi.useFakeTimers();
+  const synth = window.speechSynthesis;
+  let cancelling = false;
+  let awake = true;
+  cancel.mockImplementation(() => {
+    cancelling = true;
+    awake = false;
+    setTimeout(() => {
+      cancelling = false;
+    }, 50);
+  });
+  vi.mocked(synth.resume).mockImplementation(() => {
+    awake = true;
+  });
+  speak.mockImplementation((current: Utterance) => {
+    if (!cancelling && awake) current.onstart?.();
+  });
+  cleanup = initSpeech();
+  click('read-quote');
+  click('read-quote');
+  click('read-quote');
+  expect(speak).toHaveBeenCalledOnce();
+  vi.advanceTimersByTime(100);
+  expect(speak).toHaveBeenCalledTimes(2);
+  vi.advanceTimersByTime(8000);
+  expect(document.getElementById('read-quote')!.getAttribute('aria-pressed')).toBe('true');
+  expect(document.getElementById('speech-help')!.textContent).not.toContain('did not start');
+  cancel.mockReset();
+});
+
+it('does not start a delayed restart after another stop', () => {
+  vi.useFakeTimers();
+  cleanup = initSpeech();
+  click('read-quote');
+  click('read-quote');
+  click('read-quote');
+  click('read-quote');
+  vi.advanceTimersByTime(10000);
+  expect(speak).toHaveBeenCalledOnce();
+  expect(document.getElementById('read-quote')!.getAttribute('aria-pressed')).toBe('false');
 });

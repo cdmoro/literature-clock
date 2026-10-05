@@ -8,17 +8,28 @@ import { downloadQuote, shareQuote } from './share';
 import { BACKGROUND_PATTERNS, type BackgroundPattern, supportsBackgroundPattern } from '../utils/background-patterns';
 import SETTINGS from '../strings/settings.json';
 import STRINGS from '../strings/share.json';
+import copyIcon from '../assets/copy.svg?raw';
+import shareIcon from '../assets/share.svg?raw';
+import downloadIcon from '../assets/download.svg?raw';
+import { fixedThemeColor, themeSupportsCustomColor } from '../utils/theme-colors';
+import { defaultColor } from './themes';
+import COLOR_STRINGS from '../strings/colorControls.json';
+import '../styles/share-color-controls.css';
 
 let format: CardFormat = 'square';
 let appearance: CardAppearance | undefined;
 let theme: string | undefined;
 let pattern: BackgroundPattern | undefined;
 let color: string | undefined;
+let useDefaultColor = false;
 let font: string | undefined;
 export const selectedCardOptions = () => ({
   pattern: pattern ?? store.get('background-pattern') ?? 'none',
-  color,
+  color: themeSupportsCustomColor(theme || document.documentElement.dataset.theme?.split('-')[0] || 'base')
+    ? color
+    : undefined,
   font,
+  ...(useDefaultColor ? { useDefaultColor: true } : {}),
 });
 export const selectedCardTheme = () => theme;
 export const selectedCardAppearance = () => appearance;
@@ -44,12 +55,14 @@ export function initShareOptions() {
     const settingsStrings = SETTINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))];
     pattern = store.get('background-pattern') || 'none';
     color = undefined;
+    useDefaultColor = false;
     font = store.get('font') || 'default';
     const dialog = document.createElement('dialog');
     dialog.id = 'share-preview';
     dialog.setAttribute('aria-labelledby', 'share-preview-title');
     const heading = document.createElement('h2');
     heading.id = 'share-preview-title';
+    heading.tabIndex = -1;
     heading.textContent = strings.title;
     const header = document.createElement('header');
     const close = document.createElement('button');
@@ -115,7 +128,29 @@ export function initShareOptions() {
       appearanceButtons.set(value, option);
       appearanceGroup.append(option);
     }
-    controls.append(formatGroup, appearanceGroup);
+    const field = (caption: string, control: HTMLElement) => {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'share-control';
+      const label = document.createElement('span');
+      label.className = 'share-control-caption';
+      label.textContent = caption;
+      wrapper.append(label, control);
+      return wrapper;
+    };
+    controls.append(field(strings.format, formatGroup), field(strings.appearance, appearanceGroup));
+    const customization = document.createElement('details');
+    customization.className = 'share-customization';
+    const customizationSummary = document.createElement('summary');
+    const customizationControls = document.createElement('div');
+    customizationControls.className = 'share-customization-controls';
+    customization.append(customizationSummary, customizationControls);
+    controls.append(customization);
+    const mobileLayout = window.matchMedia?.('(max-width: 600px)');
+    const syncCustomization = () => {
+      customization.open = !mobileLayout?.matches;
+    };
+    syncCustomization();
+    mobileLayout?.addEventListener('change', syncCustomization);
     const themes = [...document.querySelectorAll<HTMLOptionElement>('#theme-select option')].filter(
       (option) => option.value !== 'color',
     );
@@ -153,7 +188,7 @@ export function initShareOptions() {
       if (step === -1) carousel.append(themeName);
     }
     updateThemeName();
-    controls.append(carousel);
+    customizationControls.append(field(strings.theme, carousel));
     const colorInput = document.createElement('input');
     colorInput.type = 'color';
     colorInput.id = 'share-preview-color';
@@ -161,10 +196,34 @@ export function initShareOptions() {
     colorInput.setAttribute('aria-label', settingsStrings.settings_color);
     colorInput.title = settingsStrings.settings_color;
     colorInput.addEventListener('input', () => {
+      if (colorInput.disabled) return;
       color = colorInput.value;
+      useDefaultColor = false;
       void refresh();
     });
-    carousel.append(colorInput);
+    const colorControl = document.createElement('div');
+    colorControl.className = 'share-control';
+    const colorCaption = document.createElement('label');
+    colorCaption.htmlFor = colorInput.id;
+    colorCaption.className = 'share-control-caption';
+    colorCaption.textContent = settingsStrings.settings_color;
+    const resetColor = document.createElement('button');
+    resetColor.id = 'share-preview-reset-color';
+    resetColor.type = 'button';
+    resetColor.textContent = '↺';
+    resetColor.title = COLOR_STRINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))].reset_color;
+    resetColor.setAttribute('aria-label', resetColor.title);
+    resetColor.addEventListener('click', () => {
+      if (colorInput.disabled) return;
+      color = undefined;
+      useDefaultColor = true;
+      void refresh();
+    });
+    const colorGroup = document.createElement('span');
+    colorGroup.className = 'share-color-input-group';
+    colorGroup.append(colorInput, resetColor);
+    colorControl.append(colorCaption, colorGroup);
+    customizationControls.append(colorControl);
     const patternControl = document.createElement('label');
     patternControl.className = 'share-pattern-control';
     const patternCaption = document.createElement('span');
@@ -180,11 +239,12 @@ export function initShareOptions() {
       void refresh();
     });
     patternControl.append(patternCaption, patternSelect);
-    controls.append(patternControl);
+    customizationControls.append(patternControl);
     const fontControl = document.createElement('label');
     fontControl.className = 'share-font-control';
     const fontCaption = document.createElement('span');
     const fontStrings = getStrings(store.get('ui-locale') || store.get('locale'));
+    customizationSummary.textContent = `${strings.theme} / ${fontStrings.font}`;
     fontCaption.textContent = fontStrings.font;
     const fontSelect = document.createElement('select');
     fontSelect.id = 'share-preview-font';
@@ -205,7 +265,7 @@ export function initShareOptions() {
       void refresh();
     });
     fontControl.append(fontCaption, fontSelect);
-    controls.append(fontControl);
+    customizationControls.append(fontControl);
     const preview = document.createElement('div');
     preview.className = 'share-preview-image';
     preview.setAttribute('role', 'group');
@@ -222,13 +282,36 @@ export function initShareOptions() {
     imageArea.append(previewLabel, preview);
     const actions = document.createElement('div');
     actions.className = 'share-preview-actions';
-    for (const [text, action] of [
-      [strings.share, shareQuote],
-      [strings.download, downloadQuote],
+    const setActionContent = (target: HTMLButtonElement, text: string, icon: string) => {
+      target.setAttribute('aria-label', text);
+      target.title = text;
+      target.innerHTML = icon;
+      target.querySelector('svg')?.setAttribute('aria-hidden', 'true');
+      const label = document.createElement('span');
+      label.className = 'share-action-label';
+      label.textContent = text;
+      target.append(label);
+    };
+    const copyText = document.createElement('button');
+    copyText.type = 'button';
+    setActionContent(copyText, fontStrings.copy_title, copyIcon);
+    copyText.disabled = typeof navigator.clipboard?.writeText !== 'function';
+    copyText.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(snapshot.quote_raw);
+        status.textContent = fontStrings.copy_mode_copied;
+      } catch {
+        status.textContent = strings.textCopyFailed;
+      }
+    });
+    actions.append(copyText);
+    for (const [text, action, icon] of [
+      [strings.share, shareQuote, shareIcon],
+      [strings.download, downloadQuote, downloadIcon],
     ] as const) {
       const actionButton = document.createElement('button');
       actionButton.type = 'button';
-      actionButton.textContent = text;
+      setActionContent(actionButton, text, icon);
       actionButton.addEventListener('click', async () => {
         actionButton.disabled = true;
         try {
@@ -242,7 +325,11 @@ export function initShareOptions() {
     }
     const copyImage = document.createElement('button');
     copyImage.type = 'button';
-    copyImage.textContent = strings.copyImage;
+    setActionContent(
+      copyImage,
+      strings.copyImage,
+      '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1"/><path d="m3 17 6-6 4 4 3-3 5 5"/></svg>',
+    );
     const canCopyImage = typeof ClipboardItem !== 'undefined' && typeof navigator.clipboard?.write === 'function';
     copyImage.disabled = true;
     if (!canCopyImage) copyImage.title = strings.copyUnavailable;
@@ -273,8 +360,10 @@ export function initShareOptions() {
     let revision = 0;
     dialog.addEventListener('close', () => {
       revision++;
+      mobileLayout?.removeEventListener('change', syncCustomization);
       pattern = undefined;
       color = undefined;
+      useDefaultColor = false;
       font = undefined;
       dialog.remove();
       button.focus();
@@ -286,6 +375,13 @@ export function initShareOptions() {
       patternSelect.disabled = !supported;
       formatButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === format)));
       const variant = appearance || (document.documentElement.dataset.theme?.endsWith('-dark') ? 'dark' : 'light');
+      colorInput.disabled = !themeSupportsCustomColor(currentTheme());
+      colorInput.value = colorInput.disabled
+        ? fixedThemeColor(currentTheme(), variant === 'dark')
+        : useDefaultColor
+          ? defaultColor(currentTheme(), variant === 'dark')
+          : color || store.get('custom-color') || store.get('color') || '#d24335';
+      resetColor.hidden = colorInput.disabled || colorInput.value === defaultColor(currentTheme(), variant === 'dark');
       appearanceButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === variant)));
       status.textContent = strings.preparing;
       preview.replaceChildren();
@@ -306,6 +402,7 @@ export function initShareOptions() {
       }
     };
     dialog.showModal();
+    heading.focus({ preventScroll: true });
     void refresh();
   });
 }
