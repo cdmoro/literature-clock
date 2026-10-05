@@ -196,14 +196,11 @@ export function mountColorPalette(control: HTMLElement, picker: HTMLInputElement
       swatches.append(button);
       return button;
     };
-    createSwatch('default', state.defaultColor, COLOR_STRINGS[locale].reset_color, state.defaultSelected, () =>
-      options.choose({ palette: 'default' }),
-    );
     for (const [name, color] of [...Object.entries(COLOR_PRESETS), ...saved.map((color) => [color, color])]) {
       const isCustom = name.startsWith('#');
       const selected = isCustom
         ? state.palette === 'default' && !state.defaultSelected && state.color.toLowerCase() === color
-        : state.palette === name;
+        : state.palette === name || (state.defaultSelected && state.defaultColor.toLowerCase() === color);
       const label = managing && isCustom ? `${labels.settings_color_remove} ${color}` : color;
       const button = createSwatch(name, color, label, selected, () => {
         if (managing && isCustom) {

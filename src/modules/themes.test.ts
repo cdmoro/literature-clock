@@ -274,3 +274,13 @@ test('picker slider changes save only the final colour from each opening', () =>
   picker.dispatchEvent(new Event('change'));
   expect(JSON.parse(localStorage.getItem('custom-colors')!)).toEqual(['#123458', '#abcdef']);
 });
+
+test('the palette has a fixed red preset and no extra default swatch', () => {
+  createStore();
+  initTheme();
+  expect(document.querySelector('.color-swatch[data-palette-key="default"]')).toBeNull();
+  expect(document.querySelectorAll('.color-swatch[data-color="#d24335"]')).toHaveLength(1);
+  const count = document.querySelectorAll('.color-swatch').length;
+  changeTheme();
+  expect(document.querySelectorAll('.color-swatch')).toHaveLength(count);
+});
