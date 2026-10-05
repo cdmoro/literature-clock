@@ -522,3 +522,17 @@ input[type='color'].palette-native-picker {
   height: 1.8rem;
   padding: 0;
 }
+
+/* Palette popovers use four equal columns, including their action circles. */
+#toolbar-color-palette.color-palette,
+#share-preview .share-color-popover.color-palette {
+  display: grid;
+  grid-template-columns: repeat(4, 1.8rem);
+  justify-content: center;
+  gap: 0.5rem;
+  width: max-content;
+  max-width: calc(100vw - 2rem);
+}
+#toolbar-color-palette.color-palette[hidden] {
+  display: none;
+}
