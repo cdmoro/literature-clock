@@ -1,7 +1,7 @@
 :root {
   --accent-color: #d24335;
-  --background: #12121a;
-  --font-color: #a3a29a;
+  --font-color: #2f2e2c;
+  --background: #eaeaec;
   --quote-font-family: 'Special Elite', cursive;
 }
 
@@ -15,7 +15,7 @@
 }
 
 [data-theme$='dark'] {
-  --font-color: #a3a29a;
+  --font-color: #c9c9c5;
   --background: #12121a;
 }
 
