@@ -90,11 +90,13 @@ test.each(['photo', 'retro', 'anaglyph', 'festive', 'book', 'terminal', 'whatsap
     const select = document.querySelector<HTMLSelectElement>('#background-pattern')!;
     expect(document.documentElement.dataset.backgroundPattern).toBe('none');
     expect(select.disabled).toBe(true);
-    expect(select.closest<HTMLElement>('.settings-row')!.hidden).toBe(true);
+    expect(select.closest<HTMLElement>('.settings-row')!.hidden).toBe(false);
+    expect(document.querySelector<HTMLButtonElement>('#pattern-picker-toggle')!.disabled).toBe(true);
     expect(store.get('background-pattern')).toBe('diagonal');
     chooseTheme('base');
     expect(document.documentElement.dataset.backgroundPattern).toBe('diagonal');
     expect(select.disabled).toBe(false);
+    expect(document.querySelector<HTMLButtonElement>('#pattern-picker-toggle')!.disabled).toBe(false);
     expect(select.closest<HTMLElement>('.settings-row')!.hidden).toBe(false);
   },
 );

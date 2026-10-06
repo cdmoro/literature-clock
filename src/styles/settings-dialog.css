@@ -967,3 +967,16 @@
 .font-picker-options button[aria-pressed='true'] .font-selected-icon {
   opacity: 1;
 }
+
+#settings-dialog .settings-theme-font-label {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+#settings-dialog .settings-theme-option[data-preview-font='Borel'] .settings-theme-font-label {
+  line-height: 2.2;
+  padding-block: 0.3em 0.15em;
+}
+#settings-dialog #pattern-picker-toggle:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
