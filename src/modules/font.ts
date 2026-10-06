@@ -1,5 +1,6 @@
 import { fitQuote, loadFontIfNotExists } from '../utils';
 import { store } from '../store';
+import { initFontPicker } from './font-picker';
 import { loadGoogleFont, normalizeFontName } from '../utils/google-font';
 import { getBaseLocale, getInterfaceLocale, getStrings } from './locales';
 import { getLocaleThemeFont, refreshLocaleThemeFonts } from './locale-fonts';
@@ -181,14 +182,15 @@ export function initFont() {
   });
   document.getElementById('reset-font')?.addEventListener('click', () => {
     resetFont();
-    document.getElementById('font-select')?.focus();
+    document.getElementById('font-picker-trigger')?.focus();
   });
   document.getElementById('remove-custom-font')?.addEventListener('click', (event) => {
     event.preventDefault();
     removeCustomFont();
-    document.getElementById('font-select')?.focus();
+    document.getElementById('font-picker-trigger')?.focus();
   });
   refreshRemovalButton();
+  if (select) initFontPicker(select);
 }
 
 function fontStatus(
