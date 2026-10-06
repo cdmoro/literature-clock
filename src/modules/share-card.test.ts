@@ -172,3 +172,50 @@ it('exports the shared noise asset at its native tile size', async () => {
   });
   await renderShareCard(quote, 'square', undefined, undefined, { pattern: 'noise' });
 });
+
+it.each(['square', 'portrait', 'landscape'] as const)(
+  'keeps the Festive gradient underneath the exported pattern in %s',
+  async (format) => {
+    document.documentElement.dataset.theme = 'base-light';
+    const original = getComputedStyle;
+    const gradient = 'linear-gradient(to right top, rgb(250, 208, 196), rgb(255, 209, 255))';
+    const computed = vi.spyOn(window, 'getComputedStyle').mockImplementation((element) => {
+      if (element.classList.contains('background-pattern-surface')) {
+        expect((element as HTMLElement).style.getPropertyValue('--background-image')).toBe('');
+        return {
+          color: 'rgb(47, 46, 44)',
+          backgroundColor: 'rgb(250, 208, 196)',
+          backgroundPosition: '0px 0px, 0px 0px',
+          getPropertyValue: (name: string) => (name === '--background-image' ? gradient : ''),
+        } as CSSStyleDeclaration;
+      }
+      return original(element);
+    });
+    // jsdom rejects combined URL/gradient values; capture what the browser renderer receives.
+    const images: string[] = [];
+    const repeats: string[] = [];
+    const repeatSetter = vi
+      .spyOn(CSSStyleDeclaration.prototype, 'backgroundRepeat', 'set')
+      .mockImplementation((value) => {
+        repeats.push(value);
+      });
+    const imageSetter = vi
+      .spyOn(CSSStyleDeclaration.prototype, 'backgroundImage', 'set')
+      .mockImplementation(function (value) {
+        images.push(value);
+      });
+    vi.mocked(html2canvas).mockImplementation(async (element) => {
+      expect(images.some((image) => image.includes('data:image/svg+xml,') && image.includes(gradient))).toBe(true);
+      expect(element.style.backgroundSize).toBe('16px 16px, 100% 100%');
+      expect(repeats).toContain('repeat, no-repeat');
+      return document.createElement('canvas');
+    });
+    try {
+      await renderShareCard(quote, format, 'light', 'festive', { pattern: 'dots' });
+    } finally {
+      computed.mockRestore();
+      imageSetter.mockRestore();
+      repeatSetter.mockRestore();
+    }
+  },
+);
