@@ -350,3 +350,28 @@ test('the toolbar scheme button cycles system, light and dark and syncs settings
   button.click();
   expect(select.value).toBe('system');
 });
+
+test('opening the palette with a pointer keeps focus on its toggle', () => {
+  createStore();
+  initTheme();
+  const toggle = document.getElementById('toolbar-color-toggle')!;
+  toggle.dispatchEvent(new MouseEvent('click', { bubbles: true, detail: 1 }));
+  expect(document.getElementById('toolbar-color-palette')!.hidden).toBe(false);
+  expect(document.activeElement).toBe(toggle);
+});
+
+test.each(['default', 'blue'])('opening the palette with the keyboard focuses the selected %s option', (palette) => {
+  createStore();
+  store.set('palette', palette);
+  initTheme();
+  const toggle = document.getElementById('toolbar-color-toggle')!;
+  toggle.focus();
+  toggle.click();
+  const selector = palette === 'default' ? '.palette-reset' : '[data-palette-key="blue"]';
+  const selected = document.querySelector(`#toolbar-color-palette ${selector}`)!;
+  expect(selected.getAttribute('aria-pressed')).toBe('true');
+  expect(document.activeElement).toBe(selected);
+  selected.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+  expect(document.getElementById('toolbar-color-palette')!.hidden).toBe(true);
+  expect(document.activeElement).toBe(toggle);
+});

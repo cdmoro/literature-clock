@@ -281,7 +281,7 @@ function initToolbarPalette(control: HTMLElement) {
   };
   panel.addEventListener('palette-default-selected', () => close(true));
   panel.addEventListener('toggle', () => requestAnimationFrame(position), true);
-  toggle.addEventListener('click', () => {
+  toggle.addEventListener('click', (event) => {
     if (!panel.hidden) {
       close();
       return;
@@ -289,10 +289,13 @@ function initToolbarPalette(control: HTMLElement) {
     panel.hidden = false;
     toggle.setAttribute('aria-expanded', 'true');
     position();
-    (
-      panel.querySelector<HTMLButtonElement>('.color-swatch[aria-pressed="true"]') ||
-      panel.querySelector<HTMLButtonElement>('.color-swatch')
-    )?.focus();
+    if (event.detail === 0) {
+      (
+        panel.querySelector<HTMLButtonElement>(
+          '.color-swatch[aria-pressed="true"], .palette-reset[aria-pressed="true"]',
+        ) || panel.querySelector<HTMLButtonElement>('.color-swatch')
+      )?.focus();
+    } else toggle.focus({ preventScroll: true });
   });
   document.addEventListener('click', (event) => {
     if (!event.composedPath().includes(control)) close();
