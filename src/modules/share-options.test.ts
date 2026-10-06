@@ -284,14 +284,17 @@ it.each(
   }),
 )('selects the %s palette independently and resolves its dark appearance', (palette, color) => {
   const originalUrl = location.href;
-  document.querySelector<HTMLButtonElement>(`#share-preview .color-swatch[data-color="${color}"]`)!.click();
+  document.querySelector<HTMLButtonElement>(`#share-preview .color-swatch[data-palette-key="${palette}"]`)!.click();
   const picker = document.getElementById('share-preview-color') as HTMLInputElement;
   expect(picker.disabled).toBe(false);
-  expect(picker.value).toBe(palette === 'gray' ? '#f1f1f1' : color);
+  expect(picker.value).toBe(color);
   expect(selectedCardOptions()).toMatchObject({ palette, color: undefined });
   if (palette === 'gray') {
     button('Light').click();
     expect(picker.value).toBe('#808686');
+    expect(document.querySelector<HTMLButtonElement>('#share-preview [data-palette-key="gray"]')!.dataset.color).toBe(
+      picker.value,
+    );
   }
   expect(state.palette).toBe('default');
   expect(state.color).toBe('#d24335');

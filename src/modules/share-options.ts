@@ -437,7 +437,7 @@ export function initShareOptions() {
         : useDefaultColor
           ? defaultColor(currentTheme(), variant === 'dark')
           : color || store.get('custom-color') || store.get('color') || '#d24335';
-      resetColor.hidden = !preset && colorInput.value === defaultColor(currentTheme(), variant === 'dark');
+      resetColor.hidden = !preset && useDefaultColor;
       colorIndicator.style.background = colorInput.value;
       compactReset.hidden = resetColor.hidden;
       imagePalette.refresh();
@@ -471,16 +471,7 @@ export function initShareOptions() {
           currentTheme(),
           (appearance || (document.documentElement.dataset.theme?.endsWith('-dark') ? 'dark' : 'light')) === 'dark',
         ),
-        defaultSelected:
-          !palette || palette === 'default'
-            ? useDefaultColor ||
-              colorInput.value ===
-                defaultColor(
-                  currentTheme(),
-                  (appearance || (document.documentElement.dataset.theme?.endsWith('-dark') ? 'dark' : 'light')) ===
-                    'dark',
-                )
-            : false,
+        defaultSelected: (!palette || palette === 'default') && useDefaultColor,
       }),
       choose: (choice) => {
         if (choice.palette === 'default' && !choice.color) {

@@ -5,6 +5,9 @@ import { doFitQuote, fitQuote, loadFontIfNotExists } from '../utils';
 import { setDayParameters } from './horizon';
 import { store } from '../store';
 import { contrastingText } from '../utils/colors';
+import { getStrings, getInterfaceLocale } from './locales';
+import SETTINGS from '../strings/settings.json';
+import { getBaseLocale } from './locales';
 import { initColorPalette, rememberThemeColor } from './color-palette';
 
 const DEFAULT_COLORS: Record<string, string> = {
@@ -44,7 +47,6 @@ export function defaultColor(theme: string, dark = document.documentElement.data
     photo: '#fd3622',
     whatsapp: '#245247',
     book: '#214cc6',
-    gray: '#f1f1f1',
     anaglyph: '#3987b4',
     subtle: '#eeeeee',
     kindle: '#dcd8d0',
@@ -61,6 +63,24 @@ export function initTheme() {
   const themeSelect = document.querySelector<HTMLSelectElement>('#theme-select');
   const variantSelect = document.querySelector<HTMLSelectElement>('#variant-select');
   const preferDarkThemes = window.matchMedia('(prefers-color-scheme: dark)');
+  const schemeToggle = document.getElementById('scheme-toggle');
+  const updateSchemeToggle = () => {
+    if (!schemeToggle) return;
+    const scheme = store.get('theme').split('-')[1] || 'system';
+    const locale = getInterfaceLocale();
+    const label = `${SETTINGS[getBaseLocale(locale)].settings_scheme}: ${getStrings(locale)[scheme as 'system' | 'light' | 'dark']}`;
+    schemeToggle.title = label;
+    schemeToggle.setAttribute('aria-label', label);
+  };
+  schemeToggle?.addEventListener('click', () => {
+    if (!variantSelect) return;
+    const schemes = ['system', 'light', 'dark'];
+    variantSelect.value = schemes[(schemes.indexOf(store.get('theme').split('-')[1] || 'system') + 1) % schemes.length];
+    variantSelect.dispatchEvent(new Event('change', { bubbles: true }));
+  });
+  store.subscribe(updateSchemeToggle);
+  updateSchemeToggle();
+
   const colorPickers = document.querySelectorAll<HTMLInputElement>('#color-picker, #settings-color-picker');
   const resetColors = document.querySelectorAll<HTMLButtonElement>('#reset-color, #settings-reset-color');
 
@@ -123,10 +143,9 @@ export function initTheme() {
 
   colorPickers.forEach((colorPicker) =>
     colorPicker.addEventListener('input', () => {
-      const theme = document.documentElement.dataset.theme?.split('-')[0] || 'base';
       store.set('palette', 'default');
-      followsDefaultColor = colorPicker.value.toLowerCase() === defaultColor(theme).toLowerCase();
-      store.set('custom-color', followsDefaultColor ? '' : colorPicker.value, false);
+      followsDefaultColor = false;
+      store.set('custom-color', colorPicker.value, false);
       store.set('color', colorPicker.value);
       rememberThemeColor();
       applyCustomColor(document.documentElement.dataset.theme?.split('-')[0]);

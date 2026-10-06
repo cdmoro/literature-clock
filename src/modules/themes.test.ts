@@ -127,17 +127,20 @@ test('an explicit shared color overrides a locally restored palette', () => {
   expect(document.documentElement.style.getPropertyValue('--accent-color')).toBe('#123456');
 });
 
-test('choosing the preset color uses the existing default comparison', () => {
+test('a custom color matching the theme default stays explicit until reset', () => {
   history.replaceState({}, '', '/?theme=retro-system&color=%23123456');
   createStore();
   initTheme();
   const picker = document.querySelector<HTMLInputElement>('#color-picker')!;
   picker.value = '#daa908';
   picker.dispatchEvent(new Event('input'));
-  expect(document.querySelector<HTMLButtonElement>('#reset-color')!.hidden).toBe(true);
+  expect(store.get('custom-color')).toBe('#daa908');
+  expect(document.querySelector<HTMLButtonElement>('#reset-color')!.hidden).toBe(false);
   systemChange({ matches: true });
+  expect(store.get('color')).toBe('#daa908');
+  document.querySelector<HTMLButtonElement>('#reset-color')!.click();
+  expect(store.get('custom-color')).toBe('');
   expect(store.get('color')).toBe('#f1ba08');
-  expect(JSON.parse(localStorage.getItem('settings')!)).not.toHaveProperty('color-default');
 });
 
 test.each(
@@ -188,7 +191,7 @@ test('gray palette adapts to the system scheme while keeping its palette selecti
   createStore();
   initTheme();
   systemChange({ matches: true });
-  expect(store.get('color')).toBe('#f1f1f1');
+  expect(store.get('color')).toBe('#808686');
   expect(store.get('palette')).toBe('gray');
 });
 
@@ -295,4 +298,55 @@ test.each([true, false])('restoring a custom color reuses or saves its swatch (a
   expect(selected.querySelector('.color-swatch-mark svg')).not.toBeNull();
   expect(document.querySelectorAll('.color-swatch[data-color="#e5ef68"]')).toHaveLength(1);
   expect(JSON.parse(localStorage.getItem('custom-colors')!)).toEqual(['#f3c565', '#e5ef68']);
+});
+
+test('a saved custom color matching the default keeps its own check after reload', () => {
+  localStorage.setItem(
+    'settings',
+    JSON.stringify({ theme: 'retro-light', color: '#daa908', 'custom-color': '#daa908' }),
+  );
+  localStorage.setItem('custom-colors', JSON.stringify(['#daa908']));
+  history.replaceState({}, '', '/?theme=retro-light&color=%23daa908');
+  createStore();
+  initTheme();
+  expect(store.get('custom-color')).toBe('#daa908');
+  expect(document.querySelector('.color-swatch[data-color="#daa908"]')!.getAttribute('aria-pressed')).toBe('true');
+  expect(document.querySelector('.palette-reset')!.getAttribute('aria-pressed')).toBe('false');
+});
+
+test('the gray swatch matches the applied color when appearance changes', async () => {
+  history.replaceState({}, '', '/?theme=base-system&palette=gray');
+  createStore();
+  initTheme();
+  const swatch = () => document.querySelector<HTMLButtonElement>('[data-palette-key="gray"]')!;
+  expect(swatch().dataset.color).toBe(store.get('color'));
+  systemChange({ matches: true });
+  await Promise.resolve();
+  expect(swatch().dataset.color).toBe('#808686');
+  expect(swatch().dataset.color).toBe(store.get('color'));
+  expect(swatch().getAttribute('aria-pressed')).toBe('true');
+  systemChange({ matches: false });
+  await Promise.resolve();
+  expect(swatch().dataset.color).toBe('#808686');
+  expect(swatch().dataset.color).toBe(store.get('color'));
+});
+
+test('the toolbar scheme button cycles system, light and dark and syncs settings', () => {
+  document.body.insertAdjacentHTML('beforeend', '<button id="scheme-toggle" type="button"></button>');
+  createStore();
+  initTheme();
+  const button = document.getElementById('scheme-toggle')!;
+  const select = document.querySelector<HTMLSelectElement>('#variant-select')!;
+  for (const scheme of ['light', 'dark', 'system']) {
+    button.click();
+    expect(store.get('theme')).toBe(`base-${scheme}`);
+    expect(select.value).toBe(scheme);
+    expect(document.documentElement.dataset.variant).toBe(scheme);
+    expect(JSON.parse(localStorage.getItem('settings')!).theme).toBe(`base-${scheme}`);
+  }
+  select.value = 'dark';
+  select.dispatchEvent(new Event('change'));
+  expect(button.getAttribute('aria-label')).toContain('Dark');
+  button.click();
+  expect(select.value).toBe('system');
 });
