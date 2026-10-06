@@ -1,3 +1,4 @@
+import { getCurrentBackgroundPattern } from './background-patterns';
 import { sharePatternTile } from '../utils/share-pattern';
 import { store } from '../store';
 import { type BackgroundPattern } from '../utils/background-patterns';
@@ -78,7 +79,7 @@ export async function renderShareCard(
   if (theme && theme !== liveTheme.replace(/-(light|dark)$/, '')) {
     palette.style.setProperty('--background-image', 'none');
   }
-  const pattern = options.pattern || store.get('background-pattern') || 'none';
+  const pattern = getCurrentBackgroundPattern(options.pattern || store.get('background-pattern') || 'none');
   const customColor = options.color && /^#[0-9a-f]{6}$/i.test(options.color) ? options.color : undefined;
   if (customColor) {
     palette.classList.add('custom-accent');

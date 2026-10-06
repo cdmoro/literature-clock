@@ -40,6 +40,7 @@ test('language choices start empty and interface changes update the quote langua
   expect(document.getElementById('clear-languages-action')!.hidden).toBe(true);
   selectUi('es-ES');
   expect(store.get('locale')).toBe('es-ES');
+  expect(document.getElementById('quote-language-summary')!.textContent).toBe('Igual que la interfaz');
   expect(document.querySelectorAll('#quote-language-options input:checked')).toHaveLength(0);
 });
 
@@ -49,9 +50,7 @@ test('collapsed picker summarizes selected languages and closes on Escape or dia
   const summary = picker.querySelector('summary')!;
   const caption = document.getElementById('quote-language-summary')!;
   expect(picker.open).toBe(false);
-  expect(caption.textContent).toBe(
-    document.querySelector<HTMLSelectElement>('#ui-locale-select')!.selectedOptions[0].textContent,
-  );
+  expect(caption.textContent).toBe('Same as the interface');
   picker.open = true;
   language('fr-FR').click();
   language('el-GR').click();

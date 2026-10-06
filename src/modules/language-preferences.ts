@@ -1,3 +1,4 @@
+import SETTINGS from '../strings/settings.json';
 import { store } from '../store';
 import { getBaseLocale, getInterfaceLocale, getQuoteLocales, translateStrings } from './locales';
 import { updateQuote } from './quotes';
@@ -33,7 +34,7 @@ export function initLanguagePreferences() {
     const chosen = inputs.filter((input) => input.checked);
     document.getElementById('quote-language-summary')!.textContent = chosen.length
       ? chosen.map((input) => input.nextElementSibling!.textContent).join(', ')
-      : select.selectedOptions[0]?.textContent || select.value;
+      : SETTINGS[getBaseLocale(getInterfaceLocale())].settings_languages_follow_interface;
   };
   const changeQuoteLanguages = (languages: Locale[]) => {
     // Keep the current UI language when choosing a different quote catalogue.

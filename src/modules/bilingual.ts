@@ -9,7 +9,10 @@ import { fitQuote } from '../utils';
 const strings = () => SETTINGS[getBaseLocale(getInterfaceLocale())];
 let translationRequest = 0;
 
-const targetLocale = () => getBaseLocale(resolveLocale(store.get('translation-locale') || 'es-ES'));
+const targetLocale = () => {
+  const locale = store.get('translation-locale');
+  return locale ? getBaseLocale(resolveLocale(locale)) : '';
+};
 
 export async function renderTranslation() {
   const request = ++translationRequest;
@@ -30,6 +33,7 @@ export async function renderTranslation() {
   const select = document.createElement('select');
   select.id = 'clock-translation-locale';
   select.setAttribute('aria-label', strings().bilingual_language);
+  select.add(new Option(strings().bilingual_select_language, ''));
   const names = new Intl.DisplayNames([getBaseLocale(getInterfaceLocale())], { type: 'language' });
   for (const language of Object.keys(SETTINGS)) {
     select.add(
@@ -37,7 +41,7 @@ export async function renderTranslation() {
     );
   }
   select.value = locale;
-  select.addEventListener('change', () => store.set('translation-locale', select.value as Locale));
+  select.addEventListener('change', () => store.set('translation-locale', select.value as Locale | ''));
   heading.append(select);
   const content = document.createElement('div');
   content.className = 'translation-content';
@@ -50,6 +54,12 @@ export async function renderTranslation() {
     blockquote.append(panel);
     fitQuote();
   };
+  if (!locale) {
+    content.classList.add('translation-notice');
+    content.textContent = strings().bilingual_select_prompt;
+    commit();
+    return;
+  }
   if (quote.locale.replace(/-draft$/, '') === locale) {
     content.classList.add('translation-notice');
     content.textContent = strings().bilingual_same;
@@ -116,13 +126,16 @@ export function initBilingual() {
   const switchButton = row.querySelector('button')!;
   const select = languageRow.querySelector('select')!;
   select.setAttribute('aria-describedby', notice.id);
+  const placeholder = new Option(strings().bilingual_select_language, '');
+  placeholder.dataset.text = 'bilingual_select_language';
+  select.add(placeholder);
   for (const locale of Object.keys(SETTINGS)) {
     const option = new Option(locale, locale);
     option.dataset.text = locale;
     select.add(option);
   }
   for (const button of [toolbarButton, switchButton]) button.addEventListener('click', () => store.toggle('bilingual'));
-  select.addEventListener('change', () => store.set('translation-locale', select.value as Locale));
+  select.addEventListener('change', () => store.set('translation-locale', select.value as Locale | ''));
   const refresh = () => {
     const enabled = !!store.get('bilingual');
     toolbarButton.classList.toggle('active', enabled);
@@ -131,7 +144,10 @@ export function initBilingual() {
     select.value = targetLocale();
     notice.textContent = strings().bilingual_language_notice;
     const labels = getStrings(getInterfaceLocale());
-    for (const option of select.options) option.textContent = labels[getBaseLocale(option.value as Locale)];
+    for (const option of select.options)
+      option.textContent = option.value
+        ? labels[getBaseLocale(option.value as Locale)]
+        : strings().bilingual_select_language;
   };
   store.subscribe((state, previous) => {
     refresh();
