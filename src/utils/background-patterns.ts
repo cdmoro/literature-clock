@@ -29,7 +29,7 @@ export const BACKGROUND_PATTERNS = [
 ] as const;
 export type BackgroundPattern = (typeof BACKGROUND_PATTERNS)[number];
 
-// These skins have a plain page background in both colour schemes.
+// These skins can replace their page background with a pattern in either colour scheme.
 const PLAIN_THEMES = new Set([
   'base',
   'pink',
@@ -45,6 +45,7 @@ const PLAIN_THEMES = new Set([
   'poster',
   'subtle',
   'kindle',
+  'festive',
 ]);
 
 export function supportsBackgroundPattern(theme: string) {
