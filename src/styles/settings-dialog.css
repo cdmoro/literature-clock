@@ -935,3 +935,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* Borel's ascenders extend beyond the usual line box; keep them inside the ellipsis clip. */
+:is(#settings-dialog, #share-preview) .font-picker-options button[data-preview-font='Borel'] {
+  height: 4.5rem;
+}
+.font-picker-options button[data-preview-font='Borel'] > span {
+  line-height: 2.2;
+  padding-block: 0.35em 0.15em;
+  flex-shrink: 0;
+}

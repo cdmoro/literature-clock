@@ -126,6 +126,7 @@ export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelEle
       button.addEventListener('click', () => choose(option.value));
       panel.append(button);
       const previewFont = option.value === 'default' ? option.dataset.previewFont : option.value;
+      if (previewFont) button.dataset.previewFont = previewFont;
       if (previewFont === 'system-ui') sample.style.fontFamily = 'system-ui, sans-serif';
       else if (previewFont && !option.disabled) {
         previewSamples.push(() => {

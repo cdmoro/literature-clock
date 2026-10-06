@@ -4,6 +4,9 @@ import { store } from '../store';
 /** Render the actual theme CSS in an isolated, script-free document. */
 export function themePreviewDocument() {
   const root = document.documentElement.cloneNode(false) as HTMLElement;
+  const liveQuote = document.getElementById('quote');
+  const previewFont = liveQuote ? getComputedStyle(liveQuote).fontFamily.split(',')[0].replace(/["']/g, '').trim() : '';
+  root.dataset.previewFont = previewFont;
   const head = document.createElement('head');
   const base = document.createElement('base');
   const baseUrl = new URL(document.baseURI);
@@ -39,6 +42,11 @@ export function themePreviewDocument() {
     [data-theme|='festive'] #quote p { line-height: 1.8; padding-top: .4rem; }
     [data-theme|='festive'] #quote cite { font-size: .8rem; line-height: 1.8; }
     [data-theme|='festive'] .preview-attribution { -webkit-line-clamp: 1; }
+    [data-preview-font='Borel'] #quote p { padding-top: 0; }
+    [data-preview-font='Borel'] .preview-passage,
+    [data-preview-font='Borel'] .preview-attribution { line-height: 2.4; }
+    [data-preview-font='Borel'] .preview-passage { -webkit-line-clamp: 2; }
+    [data-preview-font='Borel'] .preview-attribution { -webkit-line-clamp: 1; }
     [data-theme|='anaglyph'] #quote { word-spacing: .08rem; }
     [data-theme='anaglyph-light'] #quote .time { text-shadow: 1px 0 #e60c05, -1px 0 #4be4e2; }
     [data-theme='anaglyph-dark'] #quote .time { text-shadow: 1px 0 #f50d3f, -1px 0 #41ceee; }
