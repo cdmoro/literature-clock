@@ -254,7 +254,8 @@ export function mountColorPalette(control: HTMLElement, picker: HTMLInputElement
 
 function initToolbarPalette(control: HTMLElement) {
   const panel = document.createElement('div');
-  panel.id = 'toolbar-color-palette';
+  const settings = control.id === 'settings-color-controls';
+  panel.id = settings ? 'settings-color-palette' : 'toolbar-color-palette';
   panel.className = 'color-palette-popover';
   panel.hidden = true;
   panel.setAttribute('role', 'dialog');
@@ -262,7 +263,7 @@ function initToolbarPalette(control: HTMLElement) {
   panel.append(...control.childNodes);
   const toggle = document.createElement('button');
   toggle.type = 'button';
-  toggle.id = 'toolbar-color-toggle';
+  toggle.id = settings ? 'settings-color-toggle' : 'toolbar-color-toggle';
   toggle.className = 'toolbar-color-toggle';
   toggle.setAttribute('aria-expanded', 'false');
   toggle.setAttribute('aria-haspopup', 'dialog');
@@ -321,6 +322,8 @@ function initToolbarPalette(control: HTMLElement) {
     if (event.relatedTarget instanceof Node && !control.contains(event.relatedTarget)) close();
   });
   window.addEventListener('resize', () => close());
+  control.closest('dialog')?.addEventListener('close', () => close());
+  control.closest('dialog')?.addEventListener('scroll', () => close(), true);
   const update = () => {
     const label = SETTINGS[getBaseLocale(getInterfaceLocale())].settings_color;
     toolbarReset.title = COLOR_STRINGS[getBaseLocale(getInterfaceLocale())].reset_color;
@@ -352,7 +355,7 @@ export function initColorPalette() {
   for (const control of document.querySelectorAll<HTMLElement>('#color-controls, #settings-color-controls')) {
     const picker = control.querySelector<HTMLInputElement>('input[type=color]');
     if (!picker) continue;
-    const host = control.id === 'color-controls' ? initToolbarPalette(control) : control;
+    const host = initToolbarPalette(control);
     const palette = mountColorPalette(host, picker, {
       state: () => ({
         palette: store.get('palette'),

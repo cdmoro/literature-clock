@@ -522,7 +522,7 @@ input[type='color'].palette-native-picker {
 }
 
 /* Palette popovers use four equal columns, including their action circles. */
-#toolbar-color-palette.color-palette,
+:is(#toolbar-color-palette, #settings-color-palette).color-palette,
 #share-preview .share-color-popover.color-palette {
   display: grid;
   grid-template-columns: repeat(4, 1.8rem);
@@ -532,7 +532,7 @@ input[type='color'].palette-native-picker {
   width: max-content;
   max-width: calc(100vw - 2rem);
 }
-#toolbar-color-palette.color-palette[hidden] {
+:is(#toolbar-color-palette, #settings-color-palette).color-palette[hidden] {
   display: none;
 }
 
@@ -569,7 +569,8 @@ input[type='color'].palette-native-picker {
   background: transparent;
   border: 0;
 }
-:is(#toolbar-color-palette, #share-preview .share-color-popover).color-palette > .palette-default-row {
+:is(#toolbar-color-palette, #settings-color-palette, #share-preview .share-color-popover).color-palette
+  > .palette-default-row {
   grid-column: 1 / -1;
   width: calc(100% + 2rem);
   min-width: 0;
@@ -638,4 +639,61 @@ input[type='color'].palette-native-picker {
 }
 #share-preview .share-color-reset[hidden] {
   display: none;
+}
+
+#settings-dialog .settings-theme-navigation #settings-color-controls {
+  width: auto;
+  flex-wrap: nowrap;
+  gap: 0;
+}
+#settings-dialog #settings-color-controls > .toolbar-color-toggle,
+#settings-dialog #settings-color-controls > .toolbar-color-reset {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  max-height: none;
+  padding: 0.4rem 0.55rem;
+}
+#settings-dialog #settings-color-controls > .toolbar-color-toggle {
+  border-radius: 0.45rem 0 0 0.45rem;
+}
+#settings-dialog #settings-color-controls > .toolbar-color-reset {
+  border-radius: 0 0.45rem 0.45rem 0;
+  margin-inline-start: -1px;
+}
+#settings-dialog #settings-color-controls > .toolbar-color-reset[hidden] {
+  display: none;
+}
+#settings-dialog #settings-color-controls:has(> .toolbar-color-reset[hidden]) > .toolbar-color-toggle {
+  border-radius: 0.45rem;
+}
+#settings-dialog #settings-color-palette {
+  border-radius: 0.75rem;
+  margin: 0;
+}
+#settings-dialog #settings-color-palette :is(.color-swatch, .color-add, .color-manage) {
+  width: 1.8rem;
+  height: 1.8rem;
+  padding: 0;
+  border: 1px solid #8888;
+  border-radius: 50%;
+}
+#settings-dialog #settings-color-palette > .palette-default-row {
+  max-height: none;
+  font:
+    400 0.8rem / 1.4 system-ui,
+    sans-serif;
+  padding: 0.75rem 1rem;
+  border: 0;
+  border-top: 1px solid #8884;
+  border-radius: 0 0 0.7rem 0.7rem;
+}
+
+#settings-dialog #settings-color-palette .color-swatch:not(.color-random) {
+  border: 0;
+  background: transparent;
+}
+#settings-dialog #settings-color-palette .color-random {
+  background: conic-gradient(#e76f9e, #e7ac4b, #83c773, #39b6c9, #8274d9, #e76f9e);
 }
