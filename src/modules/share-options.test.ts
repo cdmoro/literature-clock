@@ -452,3 +452,26 @@ it.each([0, 1])('consumes the font tap compatibility click in the sharing popup 
   underlying.dispatchEvent(new MouseEvent('click', { bubbles: true, detail: 1 }));
   expect(underlying.getAttribute('aria-pressed')).toBe('true');
 });
+
+it('renders the image only when the selected font changes', () => {
+  vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('Offline')));
+  const choose = (value: string) => {
+    document.getElementById('share-preview-font-trigger')!.click();
+    document
+      .querySelector<HTMLButtonElement>(`#share-preview .font-picker-options button[data-value="${value}"]`)!
+      .click();
+    expect(document.getElementById('share-preview-font-trigger')!.getAttribute('aria-expanded')).toBe('false');
+  };
+  vi.mocked(renderShareCard).mockClear();
+  choose('default');
+  expect(renderShareCard).not.toHaveBeenCalled();
+  choose('Lora');
+  expect(renderShareCard).toHaveBeenCalledTimes(1);
+  choose('Lora');
+  choose('Lora');
+  expect(renderShareCard).toHaveBeenCalledTimes(1);
+  choose('Special Elite');
+  expect(renderShareCard).toHaveBeenCalledTimes(2);
+  choose('Lora');
+  expect(renderShareCard).toHaveBeenCalledTimes(3);
+});

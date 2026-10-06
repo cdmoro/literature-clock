@@ -81,9 +81,10 @@ export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelEle
   };
   const choose = (value: string) => {
     if (panel.hidden || ![...select.options].some((option) => option.value === value && !option.disabled)) return;
+    const changed = select.value !== value;
     select.value = value;
     close();
-    select.dispatchEvent(new Event('change', { bubbles: true }));
+    if (changed) select.dispatchEvent(new Event('change', { bubbles: true }));
     render();
     trigger.focus({ preventScroll: true });
   };
