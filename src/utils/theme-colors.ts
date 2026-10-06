@@ -8,8 +8,8 @@ const PALETTE_COLORS: Record<string, string> = {
   color: '#d24335',
 };
 
-export function fixedThemeColor(theme: string, dark = false) {
-  return theme === 'gray' && dark ? '#f1f1f1' : PALETTE_COLORS[theme];
+export function fixedThemeColor(theme: string) {
+  return PALETTE_COLORS[theme];
 }
 
 export const themeSupportsCustomColor = (theme: string) => !(theme in PALETTE_COLORS);

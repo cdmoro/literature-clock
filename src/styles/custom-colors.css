@@ -69,12 +69,10 @@ footer .input-group {
   }
 }
 
-[data-theme='base-light'].custom-accent,
 [data-theme='frame-light'].custom-accent {
   --background: color-mix(in srgb, var(--accent-color) 15%, #fff);
 }
 
-[data-theme='base-dark'].custom-accent,
 [data-theme='frame-dark'].custom-accent {
   --background: color-mix(in srgb, var(--accent-color) 16%, #101016);
 }

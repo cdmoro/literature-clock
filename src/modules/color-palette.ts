@@ -269,6 +269,7 @@ function initToolbarPalette(control: HTMLElement) {
   const close = (focus = false) => {
     panel.hidden = true;
     toggle.setAttribute('aria-expanded', 'false');
+    panel.querySelector<HTMLButtonElement>('.color-manage[aria-pressed="true"]')?.click();
     if (focus) toggle.focus();
   };
   const position = () => {
@@ -281,7 +282,7 @@ function initToolbarPalette(control: HTMLElement) {
   };
   panel.addEventListener('palette-default-selected', () => close(true));
   panel.addEventListener('toggle', () => requestAnimationFrame(position), true);
-  toggle.addEventListener('click', () => {
+  toggle.addEventListener('click', (event) => {
     if (!panel.hidden) {
       close();
       return;
@@ -289,10 +290,13 @@ function initToolbarPalette(control: HTMLElement) {
     panel.hidden = false;
     toggle.setAttribute('aria-expanded', 'true');
     position();
-    (
-      panel.querySelector<HTMLButtonElement>('.color-swatch[aria-pressed="true"]') ||
-      panel.querySelector<HTMLButtonElement>('.color-swatch')
-    )?.focus();
+    if (event.detail === 0) {
+      (
+        panel.querySelector<HTMLButtonElement>(
+          '.color-swatch[aria-pressed="true"], .palette-reset[aria-pressed="true"]',
+        ) || panel.querySelector<HTMLButtonElement>('.color-swatch')
+      )?.focus();
+    } else toggle.focus({ preventScroll: true });
   });
   document.addEventListener('click', (event) => {
     if (!event.composedPath().includes(control)) close();
@@ -331,6 +335,11 @@ function initToolbarPalette(control: HTMLElement) {
 
 export function initColorPalette() {
   sessionColors = [];
+  const activeCustomColor = store.get('custom-color').toLowerCase();
+  if (store.get('palette') === 'default' && /^#[0-9a-f]{6}$/.test(activeCustomColor)) {
+    const saved = customColors();
+    if (!saved.includes(activeCustomColor)) saveColors([...saved, activeCustomColor]);
+  }
   for (const control of document.querySelectorAll<HTMLElement>('#color-controls, #settings-color-controls')) {
     const picker = control.querySelector<HTMLInputElement>('input[type=color]');
     if (!picker) continue;

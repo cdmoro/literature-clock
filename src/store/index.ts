@@ -161,7 +161,7 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
         orange: '#f39c12',
         purple: '#9b59b6',
         blue: '#2c97df',
-        gray: variant === 'dark' ? '#f1f1f1' : '#808686',
+        gray: '#808686',
         color: '#d24335',
       };
       result.color = colors[theme];
