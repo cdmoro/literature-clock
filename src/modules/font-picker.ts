@@ -1,4 +1,5 @@
 import { normalizeFontName } from '../utils/google-font';
+import { readingIcon } from './reading-icons';
 
 const previews = new Map<string, Promise<string>>();
 
@@ -118,6 +119,8 @@ export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelEle
       const sample = document.createElement('span');
       sample.textContent = option.value === 'default' ? option.textContent : option.value;
       button.append(sample);
+      button.insertAdjacentHTML('beforeend', readingIcon('check'));
+      button.querySelector('svg')!.classList.add('font-selected-icon');
       if (option.dataset.customFont !== undefined) {
         const annotation = document.createElement('small');
         annotation.textContent = option.textContent?.slice(option.value.length) || '';

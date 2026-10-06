@@ -917,7 +917,7 @@
   display: block;
   font: 0.75rem sans-serif;
 }
-:is(#settings-dialog, #share-preview) .font-picker-options button:is(:focus-visible, :hover, [aria-pressed='true']) {
+:is(#settings-dialog, #share-preview) .font-picker-options button:is(:focus-visible, :hover) {
   background: color-mix(in srgb, var(--font-color), transparent 85%);
 }
 :is(#settings-dialog, #share-preview) .font-picker-options button:disabled {
@@ -944,4 +944,26 @@
   line-height: 2.2;
   padding-block: 0.35em 0.15em;
   flex-shrink: 0;
+}
+
+:is(#settings-dialog, #share-preview) .font-picker-options button {
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 0.35rem;
+  padding-inline-end: 2.25rem;
+}
+.font-picker-options .font-selected-icon {
+  position: absolute;
+  inset-inline-end: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  color: var(--accent-color);
+}
+:is(#settings-dialog, #share-preview) .font-picker-options button[aria-pressed='true'] {
+  border-color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+}
+.font-picker-options button[aria-pressed='true'] .font-selected-icon {
+  opacity: 1;
 }
