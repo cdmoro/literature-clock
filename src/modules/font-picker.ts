@@ -53,6 +53,29 @@ export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelEle
   };
   const buttons = () => [...panel.querySelectorAll<HTMLButtonElement>('button:not(:disabled)')];
   let touch: { id: number; value: string; x: number; y: number; scroll: number } | undefined;
+  let compatibilityClick: { x: number; y: number } | undefined;
+  let compatibilityTimeout: ReturnType<typeof setTimeout> | undefined;
+  const clearCompatibilityClick = () => {
+    compatibilityClick = undefined;
+    clearTimeout(compatibilityTimeout);
+    document.removeEventListener('click', swallowCompatibilityClick, true);
+    document.removeEventListener('pointerdown', clearCompatibilityClick, true);
+  };
+  const swallowCompatibilityClick = (event: MouseEvent) => {
+    if (!compatibilityClick || event.detail === 0) return;
+    if (Math.hypot(event.clientX - compatibilityClick.x, event.clientY - compatibilityClick.y) > 25) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    clearCompatibilityClick();
+  };
+  const suppressCompatibilityClick = (event: PointerEvent) => {
+    clearCompatibilityClick();
+    compatibilityClick = { x: event.clientX, y: event.clientY };
+    // Safari may retarget its compatibility click to a control exposed by closing the popup.
+    document.addEventListener('click', swallowCompatibilityClick, true);
+    document.addEventListener('pointerdown', clearCompatibilityClick, true);
+    compatibilityTimeout = setTimeout(clearCompatibilityClick, 1000);
+  };
   const choose = (value: string) => {
     if (panel.hidden || ![...select.options].some((option) => option.value === value && !option.disabled)) return;
     select.value = value;
@@ -180,6 +203,9 @@ export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelEle
       Math.hypot(event.clientX - pressed.x, event.clientY - pressed.y) <= 10 &&
       Math.abs(panel.scrollTop - pressed.scroll) <= 2
     ) {
+      event.preventDefault();
+      event.stopPropagation();
+      suppressCompatibilityClick(event);
       choose(pressed.value);
     } else render();
   });
@@ -206,6 +232,7 @@ export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelEle
   select.addEventListener('change', render);
   render();
   return () => {
+    clearCompatibilityClick();
     observer.disconnect();
     document.removeEventListener('pointerdown', closeOutside);
     select.removeEventListener('change', render);

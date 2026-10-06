@@ -192,3 +192,52 @@ test('scrolling or cancelling a touch gesture does not choose a font', () => {
   expect(change).not.toHaveBeenCalled();
   dispose();
 });
+
+test('swallows a Safari compatibility click retargeted to the theme control underneath', () => {
+  vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('Offline')));
+  document.body.innerHTML =
+    '<button id="theme">Theme</button><select id="font-select"><option value="default">Default</option><option>Tap Choice</option></select>';
+  const select = document.querySelector('select')!;
+  const dispose = initFontPicker(select);
+  const theme = document.getElementById('theme')!;
+  const opened = vi.fn();
+  theme.addEventListener('click', opened);
+  document.getElementById('font-picker-trigger')!.click();
+  const target = document.querySelector<HTMLButtonElement>('.font-picker-options button[data-value="Tap Choice"]')!;
+  target.dispatchEvent(touchEvent('pointerdown'));
+  target.dispatchEvent(touchEvent('pointerup'));
+  const compatibilityClick = new MouseEvent('click', {
+    bubbles: true,
+    cancelable: true,
+    detail: 1,
+    clientX: 10,
+    clientY: 10,
+  });
+  theme.dispatchEvent(compatibilityClick);
+  expect(select.value).toBe('Tap Choice');
+  expect(compatibilityClick.defaultPrevented).toBe(true);
+  expect(opened).not.toHaveBeenCalled();
+  // A fresh gesture at the same point still works normally.
+  theme.dispatchEvent(touchEvent('pointerdown'));
+  theme.dispatchEvent(new MouseEvent('click', { bubbles: true, detail: 1, clientX: 10, clientY: 10 }));
+  expect(opened).toHaveBeenCalledTimes(1);
+  dispose();
+});
+
+test('a fresh pointer gesture clears an unreceived compatibility click', () => {
+  vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('Offline')));
+  document.body.innerHTML =
+    '<button id="theme">Theme</button><select id="font-select"><option value="default">Default</option><option>New Tap Choice</option></select>';
+  const dispose = initFontPicker(document.querySelector('select')!);
+  const theme = document.getElementById('theme')!;
+  const opened = vi.fn();
+  theme.addEventListener('click', opened);
+  document.getElementById('font-picker-trigger')!.click();
+  const target = document.querySelector<HTMLButtonElement>('.font-picker-options button[data-value="New Tap Choice"]')!;
+  target.dispatchEvent(touchEvent('pointerdown'));
+  target.dispatchEvent(touchEvent('pointerup'));
+  theme.dispatchEvent(touchEvent('pointerdown'));
+  theme.dispatchEvent(new MouseEvent('click', { bubbles: true, detail: 1, clientX: 10, clientY: 10 }));
+  expect(opened).toHaveBeenCalledTimes(1);
+  dispose();
+});
