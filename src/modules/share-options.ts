@@ -456,7 +456,7 @@ export function initShareOptions() {
       imagePalette.refresh();
       appearanceButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === variant)));
       status.textContent = strings.preparing;
-      preview.replaceChildren();
+      preview.setAttribute('aria-busy', 'true');
       copyImage.disabled = true;
       try {
         const canvas = await renderShareCard(snapshot, format, appearance, theme, selectedCardOptions());
@@ -466,11 +466,15 @@ export function initShareOptions() {
         canvas.style.objectFit = 'contain';
         canvas.setAttribute('role', 'img');
         canvas.setAttribute('aria-label', snapshot.quote_raw);
-        preview.append(canvas);
+        preview.replaceChildren(canvas);
+        preview.setAttribute('aria-busy', 'false');
         copyImage.disabled = !canCopyImage;
         status.textContent = '';
       } catch {
-        if (current === revision) status.textContent = strings.failed;
+        if (current === revision) {
+          preview.setAttribute('aria-busy', 'false');
+          status.textContent = strings.failed;
+        }
       }
     };
     const imagePalette = mountColorPalette(colorGroup, colorInput, {

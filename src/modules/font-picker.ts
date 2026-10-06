@@ -60,6 +60,7 @@ export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelEle
     compatibilityClick = false;
     clearTimeout(compatibilityTimeout);
     document.removeEventListener('click', swallowCompatibilityClick, true);
+    document.removeEventListener('touchend', swallowTouchEnd, true);
     document.removeEventListener('pointerdown', clearCompatibilityClick, true);
     document.removeEventListener('keydown', clearCompatibilityClick, true);
   };
@@ -67,7 +68,12 @@ export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelEle
     if (!compatibilityClick) return;
     event.preventDefault();
     event.stopImmediatePropagation();
-    clearCompatibilityClick();
+  };
+  const swallowTouchEnd = (event: TouchEvent) => {
+    if (!compatibilityClick) return;
+    // Cancel Safari's synthesized click before it can hit a newly exposed control.
+    event.preventDefault();
+    event.stopImmediatePropagation();
   };
   const suppressCompatibilityClick = () => {
     clearCompatibilityClick();
@@ -75,6 +81,7 @@ export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelEle
     // Popup layout/focus changes can retarget a touch click and change its coordinates or detail.
     // A fresh pointer or keyboard gesture clears the guard before any deliberate activation.
     document.addEventListener('click', swallowCompatibilityClick, true);
+    document.addEventListener('touchend', swallowTouchEnd, { capture: true, passive: false });
     document.addEventListener('pointerdown', clearCompatibilityClick, true);
     document.addEventListener('keydown', clearCompatibilityClick, true);
     compatibilityTimeout = setTimeout(clearCompatibilityClick, 1000);

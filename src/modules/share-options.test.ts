@@ -475,3 +475,49 @@ it('renders the image only when the selected font changes', () => {
   choose('Lora');
   expect(renderShareCard).toHaveBeenCalledTimes(3);
 });
+
+it('cancels touchend and all follow-up clicks until the next gesture in the sharing font menu', () => {
+  vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('Offline')));
+  document.getElementById('share-preview-font-trigger')!.click();
+  const option = document.querySelector<HTMLButtonElement>(
+    '#share-preview .font-picker-options button[data-value="Lora"]',
+  )!;
+  for (const type of ['pointerdown', 'pointerup']) {
+    const event = new MouseEvent(type, { bubbles: true, cancelable: true });
+    Object.defineProperties(event, { pointerType: { value: 'touch' }, pointerId: { value: 1 } });
+    option.dispatchEvent(event);
+  }
+  const underlying = button('Light');
+  const end = new Event('touchend', { bubbles: true, cancelable: true });
+  underlying.dispatchEvent(end);
+  expect(end.defaultPrevented).toBe(true);
+  for (let i = 0; i < 2; i++) {
+    const click = new MouseEvent('click', { bubbles: true, cancelable: true });
+    underlying.dispatchEvent(click);
+    expect(click.defaultPrevented).toBe(true);
+  }
+  expect(underlying.getAttribute('aria-pressed')).toBe('false');
+  underlying.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, key: 'Enter' }));
+  underlying.click();
+  expect(underlying.getAttribute('aria-pressed')).toBe('true');
+});
+
+it('keeps the previous canvas visible while a new preview is rendering', async () => {
+  await vi.waitFor(() => expect(document.querySelector('.share-preview-image canvas')).not.toBeNull());
+  const preview = document.querySelector<HTMLElement>('.share-preview-image')!;
+  const previous = preview.querySelector('canvas')!;
+  let finish!: (canvas: HTMLCanvasElement) => void;
+  vi.mocked(renderShareCard).mockReturnValueOnce(
+    new Promise((resolve) => {
+      finish = resolve;
+    }),
+  );
+  button('Light').click();
+  expect(preview.querySelector('canvas')).toBe(previous);
+  expect(preview.getAttribute('aria-busy')).toBe('true');
+  const next = document.createElement('canvas');
+  finish(next);
+  await vi.waitFor(() => expect(preview.querySelector('canvas')).toBe(next));
+  expect(preview.getAttribute('aria-busy')).toBe('false');
+  expect(preview.children).toHaveLength(1);
+});

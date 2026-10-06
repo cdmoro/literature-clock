@@ -696,7 +696,7 @@ select:dir(rtl),
   border-color: var(--accent-color);
 }
 .share-preview-image {
-  min-height: 0;
+  min-height: min(240px, 30dvh);
   min-width: 0;
   overflow: hidden;
 }
