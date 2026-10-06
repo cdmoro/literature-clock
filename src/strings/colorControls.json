@@ -1,50 +1,62 @@
 {
   "en-GB": {
     "choose_color": "Choose a custom colour for this theme",
-    "reset_color": "Restore this theme’s default colour"
+    "reset_color": "Restore this theme’s default colour",
+    "default_color": "Default colour"
   },
   "en-US": {
     "choose_color": "Choose a custom color for this theme",
-    "reset_color": "Restore this theme’s default color"
+    "reset_color": "Restore this theme’s default color",
+    "default_color": "Default color"
   },
   "es-ES": {
     "choose_color": "Elegir un color personalizado para este tema",
-    "reset_color": "Restaurar el color predeterminado de este tema"
+    "reset_color": "Restaurar el color predeterminado de este tema",
+    "default_color": "Color predeterminado"
   },
   "pt-PT": {
     "choose_color": "Escolher uma cor personalizada para este tema",
-    "reset_color": "Restaurar a cor predefinida deste tema"
+    "reset_color": "Restaurar a cor predefinida deste tema",
+    "default_color": "Cor predefinida"
   },
   "fr-FR": {
     "choose_color": "Choisir une couleur personnalisée pour ce thème",
-    "reset_color": "Rétablir la couleur par défaut de ce thème"
+    "reset_color": "Rétablir la couleur par défaut de ce thème",
+    "default_color": "Couleur par défaut"
   },
   "it-IT": {
     "choose_color": "Scegli un colore personalizzato per questo tema",
-    "reset_color": "Ripristina il colore predefinito di questo tema"
+    "reset_color": "Ripristina il colore predefinito di questo tema",
+    "default_color": "Colore predefinito"
   },
   "de-DE": {
     "choose_color": "Eine eigene Farbe für dieses Design wählen",
-    "reset_color": "Die Standardfarbe dieses Designs wiederherstellen"
+    "reset_color": "Die Standardfarbe dieses Designs wiederherstellen",
+    "default_color": "Standardfarbe"
   },
   "el-GR": {
     "choose_color": "Επιλέξτε ένα προσαρμοσμένο χρώμα για αυτό το θέμα",
-    "reset_color": "Επαναφέρετε το προεπιλεγμένο χρώμα αυτού του θέματος"
+    "reset_color": "Επαναφέρετε το προεπιλεγμένο χρώμα αυτού του θέματος",
+    "default_color": "Προεπιλεγμένο χρώμα"
   },
   "zh-CN": {
     "choose_color": "为此主题选择自定义颜色",
-    "reset_color": "恢复此主题的默认颜色"
+    "reset_color": "恢复此主题的默认颜色",
+    "default_color": "默认颜色"
   },
   "ru-RU": {
     "choose_color": "Выбрать свой цвет для этой темы",
-    "reset_color": "Восстановить цвет этой темы по умолчанию"
+    "reset_color": "Восстановить цвет этой темы по умолчанию",
+    "default_color": "Цвет по умолчанию"
   },
   "eo": {
     "choose_color": "Elekti propran koloron por ĉi tiu etoso",
-    "reset_color": "Restarigi la defaŭltan koloron de ĉi tiu etoso"
+    "reset_color": "Restarigi la defaŭltan koloron de ĉi tiu etoso",
+    "default_color": "Defaŭlta koloro"
   },
   "ar-AE": {
     "choose_color": "اختر لونًا مخصصًا لهذا المظهر",
-    "reset_color": "استعادة اللون الافتراضي لهذا المظهر"
+    "reset_color": "استعادة اللون الافتراضي لهذا المظهر",
+    "default_color": "اللون الافتراضي"
   }
 }

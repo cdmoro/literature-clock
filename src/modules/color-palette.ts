@@ -137,8 +137,15 @@ export function mountColorPalette(control: HTMLElement, picker: HTMLInputElement
   const reset = document.createElement('button');
   reset.type = 'button';
   reset.className = 'palette-reset';
-  reset.innerHTML =
-    '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></svg>';
+  const defaultRow = control.matches('.color-palette-popover, .share-color-popover');
+  reset.classList.toggle('palette-default-row', defaultRow);
+  const defaultSwatch = document.createElement('span');
+  defaultSwatch.className = 'palette-default-swatch';
+  defaultSwatch.setAttribute('aria-hidden', 'true');
+  const defaultLabel = document.createElement('span');
+  defaultLabel.className = 'palette-default-label';
+  reset.append(defaultSwatch);
+  if (defaultRow) reset.append(defaultLabel);
   reset.addEventListener('click', () => {
     options.choose({ palette: 'default' });
     control.dispatchEvent(new Event('palette-default-selected', { bubbles: true }));
@@ -151,11 +158,12 @@ export function mountColorPalette(control: HTMLElement, picker: HTMLInputElement
     const labels = SETTINGS[locale];
     reset.hidden = false;
     reset.setAttribute('aria-pressed', String(state.defaultSelected));
-    reset.innerHTML = state.defaultSelected
+    defaultSwatch.innerHTML = state.defaultSelected
       ? '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg>'
       : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></svg>';
-    reset.style.backgroundColor = state.defaultColor;
-    reset.style.color = contrastingText(state.defaultColor);
+    defaultSwatch.style.backgroundColor = state.defaultColor;
+    defaultSwatch.style.color = contrastingText(state.defaultColor);
+    defaultLabel.textContent = COLOR_STRINGS[locale].default_color;
     reset.title = COLOR_STRINGS[locale].reset_color;
     reset.setAttribute('aria-label', reset.title);
     const saved = customColors();

@@ -1,8 +1,10 @@
+import wavesTile from '../assets/waves.svg';
 import noiseTile from '../assets/noise.png';
 import type { BackgroundPattern } from './background-patterns';
 
 // Use image tiles for gradients that the export renderer cannot reproduce.
 export function sharePatternTile(pattern: BackgroundPattern, color: string, dark: boolean) {
+  if (pattern === 'waves') return { image: `url("${wavesTile}")`, size: '64px 24px' };
   if (pattern === 'noise') return { image: `url("${noiseTile}")`, size: '256px 256px' };
   if (!['dots', 'circles', 'diagonal', 'diagonal-wide'].includes(pattern)) return undefined;
   const circular = pattern === 'dots' || pattern === 'circles';

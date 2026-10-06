@@ -66,7 +66,8 @@
     "settings_color_save": "Save colour",
     "settings_color_options": "Colour options",
     "settings_color_random": "Random colour each minute",
-    "settings_color_done": "Done"
+    "settings_color_done": "Done",
+    "settings_pattern_waves": "Fine waves"
   },
   "en-US": {
     "settings_title": "Settings",
@@ -135,7 +136,8 @@
     "settings_color_save": "Save color",
     "settings_color_options": "Color options",
     "settings_color_random": "Random color each minute",
-    "settings_color_done": "Done"
+    "settings_color_done": "Done",
+    "settings_pattern_waves": "Fine waves"
   },
   "es-ES": {
     "settings_title": "Configuración",
@@ -204,7 +206,8 @@
     "settings_color_save": "Guardar color",
     "settings_color_options": "Opciones de color",
     "settings_color_random": "Color aleatorio cada minuto",
-    "settings_color_done": "Listo"
+    "settings_color_done": "Listo",
+    "settings_pattern_waves": "Ondas finas"
   },
   "pt-PT": {
     "settings_title": "Configurações",
@@ -273,7 +276,8 @@
     "settings_color_save": "Guardar cor",
     "settings_color_options": "Opções de cor",
     "settings_color_random": "Cor aleatória a cada minuto",
-    "settings_color_done": "Concluído"
+    "settings_color_done": "Concluído",
+    "settings_pattern_waves": "Ondas finas"
   },
   "fr-FR": {
     "settings_title": "Paramètres",
@@ -342,7 +346,8 @@
     "settings_color_save": "Enregistrer la couleur",
     "settings_color_options": "Options de couleur",
     "settings_color_random": "Couleur aléatoire chaque minute",
-    "settings_color_done": "Terminé"
+    "settings_color_done": "Terminé",
+    "settings_pattern_waves": "Ondulations fines"
   },
   "it-IT": {
     "settings_title": "Impostazioni",
@@ -411,7 +416,8 @@
     "settings_color_save": "Salva colore",
     "settings_color_options": "Opzioni colore",
     "settings_color_random": "Colore casuale ogni minuto",
-    "settings_color_done": "Fine"
+    "settings_color_done": "Fine",
+    "settings_pattern_waves": "Onde sottili"
   },
   "de-DE": {
     "settings_title": "Einstellungen",
@@ -480,7 +486,8 @@
     "settings_color_save": "Farbe speichern",
     "settings_color_options": "Farboptionen",
     "settings_color_random": "Zufällige Farbe jede Minute",
-    "settings_color_done": "Fertig"
+    "settings_color_done": "Fertig",
+    "settings_pattern_waves": "Feine Wellen"
   },
   "el-GR": {
     "settings_title": "Ρυθμίσεις",
@@ -549,7 +556,8 @@
     "settings_color_save": "Αποθήκευση χρώματος",
     "settings_color_options": "Επιλογές χρώματος",
     "settings_color_random": "Τυχαίο χρώμα κάθε λεπτό",
-    "settings_color_done": "Τέλος"
+    "settings_color_done": "Τέλος",
+    "settings_pattern_waves": "Λεπτά κύματα"
   },
   "zh-CN": {
     "settings_title": "设置",
@@ -618,7 +626,8 @@
     "settings_color_save": "保存颜色",
     "settings_color_options": "颜色选项",
     "settings_color_random": "每分钟随机颜色",
-    "settings_color_done": "完成"
+    "settings_color_done": "完成",
+    "settings_pattern_waves": "细波纹"
   },
   "ru-RU": {
     "settings_title": "Настройки",
@@ -687,7 +696,8 @@
     "settings_color_save": "Сохранить цвет",
     "settings_color_options": "Настройки цвета",
     "settings_color_random": "Случайный цвет каждую минуту",
-    "settings_color_done": "Готово"
+    "settings_color_done": "Готово",
+    "settings_pattern_waves": "Тонкие волны"
   },
   "eo": {
     "settings_title": "Agordoj",
@@ -756,7 +766,8 @@
     "settings_color_save": "Konservi koloron",
     "settings_color_options": "Koloraj opcioj",
     "settings_color_random": "Hazarda koloro ĉiun minuton",
-    "settings_color_done": "Prete"
+    "settings_color_done": "Prete",
+    "settings_pattern_waves": "Fajnaj ondoj"
   },
   "ar-AE": {
     "settings_title": "الإعدادات",
@@ -825,6 +836,7 @@
     "settings_color_save": "حفظ اللون",
     "settings_color_options": "خيارات اللون",
     "settings_color_random": "لون عشوائي كل دقيقة",
-    "settings_color_done": "تم"
+    "settings_color_done": "تم",
+    "settings_pattern_waves": "موجات رفيعة"
   }
 }
