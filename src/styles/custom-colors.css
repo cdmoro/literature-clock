@@ -625,3 +625,17 @@ input[type='color'].palette-native-picker {
   display: block;
   transform: none;
 }
+
+:is(.toolbar-color-reset, .share-color-reset) svg {
+  display: block;
+  transform: none;
+}
+
+#share-preview .share-color-reset {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+#share-preview .share-color-reset[hidden] {
+  display: none;
+}
