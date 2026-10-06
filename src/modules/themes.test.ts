@@ -284,3 +284,15 @@ test('the palette has a fixed red preset and no extra default swatch', () => {
   changeTheme();
   expect(document.querySelectorAll('.color-swatch')).toHaveLength(count);
 });
+
+test.each([true, false])('restoring a custom color reuses or saves its swatch (already saved: %s)', (alreadySaved) => {
+  localStorage.setItem('settings', JSON.stringify({ palette: 'default', color: '#E5EF68', 'custom-color': '#E5EF68' }));
+  localStorage.setItem('custom-colors', JSON.stringify(alreadySaved ? ['#f3c565', '#e5ef68'] : ['#f3c565']));
+  createStore();
+  initTheme();
+  const selected = document.querySelector<HTMLButtonElement>('.color-swatch[data-color="#e5ef68"]')!;
+  expect(selected.getAttribute('aria-pressed')).toBe('true');
+  expect(selected.querySelector('.color-swatch-mark svg')).not.toBeNull();
+  expect(document.querySelectorAll('.color-swatch[data-color="#e5ef68"]')).toHaveLength(1);
+  expect(JSON.parse(localStorage.getItem('custom-colors')!)).toEqual(['#f3c565', '#e5ef68']);
+});

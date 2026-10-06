@@ -331,6 +331,11 @@ function initToolbarPalette(control: HTMLElement) {
 
 export function initColorPalette() {
   sessionColors = [];
+  const activeCustomColor = store.get('custom-color').toLowerCase();
+  if (store.get('palette') === 'default' && /^#[0-9a-f]{6}$/.test(activeCustomColor)) {
+    const saved = customColors();
+    if (!saved.includes(activeCustomColor)) saveColors([...saved, activeCustomColor]);
+  }
   for (const control of document.querySelectorAll<HTMLElement>('#color-controls, #settings-color-controls')) {
     const picker = control.querySelector<HTMLInputElement>('input[type=color]');
     if (!picker) continue;
