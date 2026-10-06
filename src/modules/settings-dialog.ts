@@ -74,6 +74,54 @@ export function initSettingsDialog() {
     dialog.querySelector(`#settings-${section}`)!.append(row);
   };
   move('variant-select', 'appearance', 'settings_scheme', true);
+  const variantSelect = dialog.querySelector<HTMLSelectElement>('#variant-select');
+  if (variantSelect) {
+    variantSelect.hidden = true;
+    variantSelect.setAttribute('aria-hidden', 'true');
+    variantSelect.tabIndex = -1;
+    const caption = variantSelect.closest('.settings-row')!.querySelector('label')!;
+    caption.removeAttribute('for');
+    caption.id = 'settings-scheme-label';
+    const buttons = document.createElement('div');
+    buttons.id = 'settings-scheme-buttons';
+    buttons.setAttribute('role', 'group');
+    buttons.setAttribute('aria-labelledby', caption.id);
+    for (const scheme of ['system', 'light', 'dark']) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.dataset.scheme = scheme;
+      button.dataset.ariaLabel = scheme;
+      button.dataset.title = scheme;
+      const source = document.querySelector(`#scheme-toggle [data-variant-icon="${scheme}"]`);
+      if (source) {
+        const icon = source.closest('svg')!.cloneNode(false) as SVGElement;
+        icon.setAttribute('aria-hidden', 'true');
+        icon.setAttribute('focusable', 'false');
+        const shape = source.cloneNode(true) as Element;
+        shape.removeAttribute('data-variant-icon');
+        icon.append(shape);
+        button.append(icon);
+      }
+      const text = document.createElement('span');
+      text.dataset.text = scheme;
+      text.textContent = variantSelect.querySelector(`option[value="${scheme}"]`)?.textContent || scheme;
+      button.append(text);
+      button.addEventListener('click', () => {
+        variantSelect.value = scheme;
+        variantSelect.dispatchEvent(new Event('change', { bubbles: true }));
+      });
+      buttons.append(button);
+    }
+    variantSelect.after(buttons);
+    const refresh = () => {
+      const selected = store.get('theme').split('-')[1] || 'system';
+      buttons.querySelectorAll<HTMLButtonElement>('button').forEach((button) => {
+        button.setAttribute('aria-pressed', String(button.dataset.scheme === selected));
+      });
+    };
+    store.subscribe(refresh);
+    refresh();
+  }
   move('theme-select', 'appearance', 'theme', true);
   move('font-select', 'appearance', 'font', true);
   move('transition-select', 'behavior', 'transition', true);

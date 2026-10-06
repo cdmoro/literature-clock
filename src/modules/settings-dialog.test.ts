@@ -434,3 +434,27 @@ test('groups behavior controls without losing their shared switch state', () => 
     cleanup?.();
   }
 });
+
+test('scheme buttons reuse toolbar icons and synchronize with the saved theme and quick toggle', () => {
+  document.body.innerHTML = page;
+  vi.stubGlobal(
+    'matchMedia',
+    vi.fn(() => ({ matches: false, addEventListener: vi.fn() })),
+  );
+  createStore();
+  initSettingsDialog();
+  initTheme();
+  const select = document.querySelector<HTMLSelectElement>('#variant-select')!;
+  const buttons = document.getElementById('settings-scheme-buttons')!;
+  expect(select.hidden).toBe(true);
+  expect(buttons.querySelectorAll('button')).toHaveLength(3);
+  expect(buttons.querySelectorAll('button svg')).toHaveLength(3);
+  expect(buttons.querySelector('[data-scheme="system"]')!.getAttribute('aria-pressed')).toBe('true');
+  buttons.querySelector<HTMLButtonElement>('[data-scheme="dark"]')!.click();
+  expect(store.get('theme')).toBe('base-dark');
+  expect(select.value).toBe('dark');
+  expect(buttons.querySelector('[data-scheme="dark"]')!.getAttribute('aria-pressed')).toBe('true');
+  document.getElementById('scheme-toggle')!.click();
+  expect(store.get('theme')).toBe('base-system');
+  expect(buttons.querySelector('[data-scheme="system"]')!.getAttribute('aria-pressed')).toBe('true');
+});

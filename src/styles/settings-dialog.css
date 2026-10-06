@@ -794,3 +794,51 @@
 .pattern-option .pattern-swatch[data-background-pattern='random'] {
   --pattern-image: none;
 }
+
+#settings-dialog #settings-scheme-buttons {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+}
+#settings-dialog #settings-scheme-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 2rem;
+  padding: 0.25rem 0.4rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
+  border-radius: 0;
+  background: var(--background);
+  color: var(--font-color);
+  font: inherit;
+  font-size: 0.85rem;
+}
+#settings-dialog #settings-scheme-buttons button:first-child {
+  border-start-start-radius: 0.35rem;
+  border-end-start-radius: 0.35rem;
+}
+#settings-dialog #settings-scheme-buttons button:last-child {
+  border-start-end-radius: 0.35rem;
+  border-end-end-radius: 0.35rem;
+}
+#settings-dialog #settings-scheme-buttons button + button {
+  margin-inline-start: -1px;
+}
+#settings-dialog #settings-scheme-buttons button[aria-pressed='true'] {
+  position: relative;
+  border-color: var(--accent-color);
+  background: var(--accent-color);
+  color: var(--accent-text);
+}
+#settings-dialog #settings-scheme-buttons svg {
+  flex-shrink: 0;
+  transform: none;
+}
+@media (max-width: 480px) {
+  #settings-scheme-buttons button span {
+    display: none;
+  }
+}
