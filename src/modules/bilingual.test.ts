@@ -26,6 +26,7 @@ beforeEach(() => {
   createStore();
   store.set('active-quote', quote);
   initBilingual();
+  store.set('translation-locale', 'es-ES');
 });
 afterEach(() => {
   vi.unstubAllGlobals();
@@ -292,4 +293,23 @@ it('does not restore a pending translation after bilingual mode is disabled', as
   await Promise.resolve();
   await Promise.resolve();
   expect(document.getElementById('quote-translation')).toBeNull();
+});
+
+it('starts with no translation language and prompts without fetching', async () => {
+  localStorage.clear();
+  history.replaceState({}, '', '/');
+  createStore();
+  expect(store.get('translation-locale')).toBe('');
+  document.body.innerHTML =
+    '<button id="screensaver"></button><section id="settings-content"></section><blockquote id="quote"></blockquote>';
+  initBilingual();
+  store.set('active-quote', quote);
+  store.set('translation-locale', '');
+  store.set('bilingual', true);
+  expect(document.querySelector<HTMLSelectElement>('#translation-locale')!.value).toBe('');
+  expect((await translationPanel()).textContent).toContain('Please select a language');
+  expect(fetch).not.toHaveBeenCalled();
+  history.replaceState({}, '', '/');
+  createStore();
+  expect(store.get('translation-locale')).toBe('');
 });

@@ -124,7 +124,27 @@ test('saved themes capture patterns and migrate older snapshots', async () => {
   expect(document.documentElement.dataset.backgroundPattern).toBe('none');
 });
 
-test.each(['circles', 'waves'])('persists and restores %s through its own URL parameter', (pattern) => {
+test.each([
+  'circles',
+  'waves',
+  'mixed-stripes',
+  'checkerboard',
+  'cubes',
+  'fans',
+  'leaves',
+  'vines',
+  'contours',
+  'woven',
+  'zigzag-fine',
+  'rain',
+  'christmas',
+  'hearts',
+  'reading',
+  'space',
+  'garden',
+  'clouds',
+  'constellations',
+])('persists and restores %s through its own URL parameter', (pattern) => {
   setup();
   choosePattern(pattern);
   expect(document.documentElement.dataset.backgroundPattern).toBe(pattern);
@@ -132,4 +152,60 @@ test.each(['circles', 'waves'])('persists and restores %s through its own URL pa
   createStore();
   expect(store.get('background-pattern')).toBe(pattern);
   expect(validateSettings({ 'background-pattern': pattern }, false)).toEqual({ 'background-pattern': pattern });
+});
+
+test('visual picker chooses a pattern, marks it and closes with focus on the trigger', () => {
+  setup();
+  const toggle = document.getElementById('pattern-picker-toggle')!;
+  const menu = document.getElementById('pattern-picker-menu')!;
+  toggle.click();
+  expect(menu.hidden).toBe(false);
+  expect(toggle.getAttribute('aria-expanded')).toBe('true');
+  expect(document.activeElement?.getAttribute('data-pattern')).toBe('none');
+  const leaves = menu.querySelector<HTMLButtonElement>('[data-pattern="leaves"]')!;
+  leaves.click();
+  expect(store.get('background-pattern')).toBe('leaves');
+  expect(leaves.getAttribute('aria-pressed')).toBe('true');
+  expect(menu.hidden).toBe(true);
+  expect(document.activeElement).toBe(toggle);
+  expect(document.getElementById('pattern-picker-swatch')!.dataset.backgroundPattern).toBe('leaves');
+  toggle.click();
+  expect(document.activeElement).toBe(leaves);
+  leaves.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+  expect(menu.hidden).toBe(true);
+  expect(document.activeElement).toBe(toggle);
+});
+
+test('visual picker supports arrow navigation and dismisses outside or on dialog close', () => {
+  setup();
+  const toggle = document.getElementById('pattern-picker-toggle')!;
+  const menu = document.getElementById('pattern-picker-menu')!;
+  const buttons = [...menu.querySelectorAll<HTMLButtonElement>('button')];
+  toggle.click();
+  buttons[0].dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowDown', bubbles: true }));
+  expect(document.activeElement).toBe(buttons[3]);
+  document.getElementById('settings-title')!.click();
+  expect(menu.hidden).toBe(true);
+  toggle.click();
+  document.getElementById('settings-dialog')!.dispatchEvent(new Event('close'));
+  expect(menu.hidden).toBe(true);
+  expect(toggle.getAttribute('aria-expanded')).toBe('false');
+});
+
+test('random patterns persist the mode and keep a concrete pattern until the quote minute changes', () => {
+  setup();
+  choosePattern('random');
+  const first = document.documentElement.dataset.backgroundPattern;
+  expect(first).not.toBe('random');
+  expect(first).not.toBe('none');
+  expect(store.get('background-pattern')).toBe('random');
+  expect(new URLSearchParams(location.search).get('background-pattern')).toBe('random');
+  expect(JSON.parse(localStorage.getItem('settings')!)['background-pattern']).toBe('random');
+  store.set('show-time', !store.get('show-time'));
+  expect(document.documentElement.dataset.backgroundPattern).toBe(first);
+  store.set('time', '01:23');
+  expect(document.documentElement.dataset.backgroundPattern).not.toBe(first);
+  expect(themePreviewDocument()).toContain(
+    `data-background-pattern="${document.documentElement.dataset.backgroundPattern}"`,
+  );
 });

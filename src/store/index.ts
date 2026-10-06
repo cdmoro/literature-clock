@@ -10,7 +10,7 @@ interface Stateful {
   'ui-locale'?: Locale;
   'quote-locales'?: string;
   bilingual?: boolean;
-  'translation-locale'?: Locale;
+  'translation-locale'?: Locale | '';
   zen: boolean;
   work: boolean;
   screensaver: boolean;
@@ -101,8 +101,10 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
     }
     if (typeof raw !== 'string') continue;
     switch (key) {
-      case 'ui-locale':
       case 'translation-locale':
+        result[key] = raw === '' ? '' : resolveLocale(raw);
+        break;
+      case 'ui-locale':
       case 'locale':
         result[key] = resolveLocale(raw);
         break;
@@ -359,7 +361,7 @@ export function createStore() {
     'ui-locale': undefined,
     'quote-locales': undefined,
     bilingual: false,
-    'translation-locale': 'es-ES',
+    'translation-locale': '',
     screensaver: false,
     work: false,
     zen: false,

@@ -1,3 +1,4 @@
+import { readingIcon } from './reading-icons';
 import { store } from '../store';
 
 /** Render the actual theme CSS in an isolated, script-free document. */
@@ -191,7 +192,10 @@ export function initThemePicker(dialog: HTMLDialogElement) {
       const label = document.createElement('span');
       label.dataset.text = option.dataset.text;
       label.textContent = option.textContent;
-      button.append(swatch, label);
+      const check = document.createElement('span');
+      check.className = 'theme-selected-icon';
+      check.innerHTML = readingIcon('check');
+      button.append(swatch, label, check);
       button.addEventListener('click', () => {
         choose(option.value);
         toggle.focus();

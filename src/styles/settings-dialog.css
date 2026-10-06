@@ -50,6 +50,7 @@
   max-width: 65%;
 }
 #settings-dialog select {
+  font-family: inherit;
   box-sizing: border-box;
   height: 2rem;
   min-width: 0;
@@ -501,9 +502,6 @@
   border-color: var(--accent-color);
   background: color-mix(in srgb, var(--accent-color), transparent 92%);
 }
-#settings-dialog .settings-theme-option[aria-pressed='true']::after {
-  content: '✓';
-}
 
 /* Reset inherited theme tokens before applying each swatch's own theme selectors. */
 :where(.settings-theme-swatch) {
@@ -529,8 +527,13 @@
   min-width: 0;
   overflow-wrap: anywhere;
 }
-#settings-dialog .settings-theme-option[aria-pressed='true']::after {
+.theme-selected-icon {
+  display: none;
   margin-inline-start: auto;
+  flex: 0 0 15px;
+}
+#settings-dialog .settings-theme-option[aria-pressed='true'] .theme-selected-icon {
+  display: flex;
 }
 
 #settings-dialog .theme-chevron {
@@ -650,4 +653,192 @@
 }
 #activate-speech[hidden] {
   display: none;
+}
+
+#settings-dialog .settings-pattern-row {
+  position: relative;
+}
+#settings-dialog #pattern-picker-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  height: 2rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0.25rem 2rem 0.25rem 0.5rem;
+  position: relative;
+  background: var(--background);
+  color: inherit;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
+  border-radius: 0.35rem;
+}
+#pattern-picker-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#settings-dialog .pattern-picker-arrow {
+  position: absolute;
+  inset-inline-end: 0.5rem;
+  top: 50%;
+  width: 16px;
+  height: 12px;
+  transform: translateY(-50%);
+  color: #2f2e2c;
+}
+#settings-dialog:where([data-theme*='dark']) .pattern-picker-arrow,
+[data-theme*='dark'] #settings-dialog .pattern-picker-arrow {
+  color: #a3a29a;
+}
+#settings-dialog #pattern-picker-toggle[aria-expanded='true'] .pattern-picker-arrow {
+  transform: translateY(-50%) rotate(180deg);
+}
+.pattern-swatch {
+  box-sizing: border-box;
+  display: block;
+  background-color: var(--background);
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 85%);
+  border-radius: 0.3rem;
+}
+#pattern-picker-swatch {
+  flex: 0 0 2rem;
+  height: 1.3rem;
+}
+#settings-dialog #pattern-picker-menu {
+  box-sizing: border-box;
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  inset-inline: 0;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.4rem;
+  max-height: 16rem;
+  overflow-y: auto;
+  padding: 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 75%);
+  border-radius: 0.5rem;
+  background: var(--background);
+  box-shadow: 0 0.5rem 1.5rem #0003;
+}
+#settings-dialog #pattern-picker-menu[hidden] {
+  display: none;
+}
+#settings-dialog .pattern-option {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  white-space: normal;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.35rem;
+  min-width: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  border: 1px solid transparent;
+  border-radius: 0.35rem;
+}
+.pattern-option .pattern-swatch {
+  width: min(100%, 8rem);
+  height: 3.25rem;
+  flex-shrink: 0;
+}
+#settings-dialog .pattern-option:is(:hover, [aria-pressed='true']) {
+  border-color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+}
+.pattern-option .pattern-swatch {
+  position: relative;
+}
+.pattern-selected-icon {
+  display: none;
+  position: absolute;
+  top: 0.2rem;
+  inset-inline-end: 0.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--accent-color);
+  color: var(--accent-text);
+}
+#settings-dialog .pattern-option[aria-pressed='true'] .pattern-selected-icon {
+  display: flex;
+}
+#settings-dialog :is(.pattern-selected-icon, .theme-selected-icon) svg {
+  display: block;
+  flex-shrink: 0;
+  transform: none;
+}
+
+.pattern-option .pattern-swatch[data-background-pattern='random'] {
+  display: grid;
+  place-items: center;
+}
+#settings-dialog .pattern-swatch[data-background-pattern='random'] > svg {
+  width: 24px;
+  height: 24px;
+  transform: none;
+  opacity: 0.65;
+}
+.pattern-option .pattern-swatch[data-background-pattern='random'] {
+  --pattern-image: none;
+}
+
+#settings-dialog #settings-scheme-buttons {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+}
+#settings-dialog #settings-scheme-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 2rem;
+  padding: 0.25rem 0.4rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
+  border-radius: 0;
+  background: var(--background);
+  color: var(--font-color);
+  font: inherit;
+  font-size: 0.85rem;
+}
+#settings-dialog #settings-scheme-buttons button:first-child {
+  border-start-start-radius: 0.35rem;
+  border-end-start-radius: 0.35rem;
+}
+#settings-dialog #settings-scheme-buttons button:last-child {
+  border-start-end-radius: 0.35rem;
+  border-end-end-radius: 0.35rem;
+}
+#settings-dialog #settings-scheme-buttons button + button {
+  margin-inline-start: -1px;
+}
+#settings-dialog #settings-scheme-buttons button[aria-pressed='true'] {
+  position: relative;
+  border-color: var(--accent-color);
+  background: var(--accent-color);
+  color: var(--accent-text);
+}
+#settings-dialog #settings-scheme-buttons svg {
+  flex-shrink: 0;
+  transform: none;
+}
+@media (max-width: 480px) {
+  #settings-scheme-buttons button span {
+    display: none;
+  }
 }

@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 import wavesTile from '../assets/waves.svg';
 import noiseTile from '../assets/noise.png';
 import { expect, it } from 'vitest';
@@ -40,5 +41,32 @@ it('exports the same thin wave tile used by the clock', () => {
       image: `url("${wavesTile}")`,
       size: '64px 24px',
     });
+  }
+});
+
+it.each([
+  ['mixed-stripes', '64px 64px'],
+  ['checkerboard', '48px 48px'],
+  ['cubes', '80px 138.564px'],
+  ['fans', '128px 64px'],
+  ['leaves', '160px 168px'],
+  ['vines', '160px 144px'],
+  ['contours', '320px 256px'],
+  ['woven', '48px 48px'],
+  ['zigzag-fine', '48px 32px'],
+  ['rain', '240px 240px'],
+  ['christmas', '320px 320px'],
+  ['hearts', '320px 320px'],
+  ['reading', '320px 320px'],
+  ['space', '320px 320px'],
+  ['garden', '320px 320px'],
+  ['clouds', '960px 768px'],
+  ['constellations', '960px 768px'],
+] as const)('exports %s as an image tile in both colour schemes', (pattern, size) => {
+  for (const dark of [false, true]) {
+    const tile = sharePatternTile(pattern, '#222', dark)!;
+    expect(tile.size).toBe(size);
+    expect(tile.image).toContain(`/patterns/${pattern}.svg`);
+    expect(tile.image).not.toContain('gradient');
   }
 });

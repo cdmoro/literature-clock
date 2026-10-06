@@ -1,5 +1,4 @@
-/* Subtle gradient textures inspired by https://projects.verou.me/css3patterns/.
-   Colours follow the active skin, including custom accents and system appearance. */
+/* Subtle textures: transparent image tiles blend with the active theme. */
 [data-background-pattern]:not([data-background-pattern='none']) {
   --pattern-ink: color-mix(in srgb, var(--font-color) 7%, var(--background));
 }
@@ -83,4 +82,106 @@ html[data-background-pattern]:not([data-background-pattern='none']) body,
   --pattern-position: 0 0;
   --pattern-image: url('../assets/waves.svg');
   --pattern-size: 64px 24px;
+}
+
+[data-background-pattern='mixed-stripes'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/mixed-stripes.svg');
+  --pattern-size: 64px 64px;
+}
+
+[data-background-pattern='checkerboard'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/checkerboard.svg');
+  --pattern-size: 48px 48px;
+}
+
+[data-background-pattern='cubes'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/cubes.svg');
+  --pattern-size: 80px 138.564px;
+}
+
+[data-background-pattern='fans'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/fans.svg');
+  --pattern-size: 128px 64px;
+}
+
+[data-background-pattern='leaves'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/leaves.svg');
+  --pattern-size: 160px 168px;
+}
+
+[data-background-pattern='vines'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/vines.svg');
+  --pattern-size: 160px 144px;
+}
+
+[data-background-pattern='contours'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/contours.svg');
+  --pattern-size: 320px 256px;
+}
+
+[data-background-pattern='woven'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/woven.svg');
+  --pattern-size: 48px 48px;
+}
+
+[data-background-pattern='zigzag-fine'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/zigzag-fine.svg');
+  --pattern-size: 48px 32px;
+}
+
+[data-background-pattern='rain'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/rain.svg');
+  --pattern-size: 240px 240px;
+}
+
+[data-background-pattern='christmas'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/christmas.svg');
+  --pattern-size: 320px 320px;
+}
+
+[data-background-pattern='hearts'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/hearts.svg');
+  --pattern-size: 320px 320px;
+}
+
+[data-background-pattern='reading'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/reading.svg');
+  --pattern-size: 320px 320px;
+}
+
+[data-background-pattern='space'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/space.svg');
+  --pattern-size: 320px 320px;
+}
+
+[data-background-pattern='garden'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/garden.svg');
+  --pattern-size: 320px 320px;
+}
+
+[data-background-pattern='clouds'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/clouds.svg');
+  --pattern-size: 960px 768px;
+}
+
+[data-background-pattern='constellations'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/constellations.svg');
+  --pattern-size: 960px 768px;
 }

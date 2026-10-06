@@ -1,4 +1,6 @@
 const paths = {
+  shuffle: '<path d="M3 6h3c5 0 7 12 12 12h3M3 18h3c2 0 4-3 6-6s4-6 6-6h3M18 3l3 3-3 3M18 15l3 3-3 3"/>',
+  check: '<path d="m5 12 4 4L19 6"/>',
   speaker: '<path d="M11 5 6 9H3v6h3l5 4V5ZM15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/>',
   stop: '<rect x="6" y="6" width="12" height="12" fill="currentColor" stroke="none"/>',
   'hide-title': '<path d="M3 3l18 18M10 5h10v14M6 5H4v14h12M8 9h8M12 9v6"/>',
