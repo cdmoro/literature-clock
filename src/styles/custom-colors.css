@@ -525,11 +525,11 @@ input[type='color'].palette-native-picker {
 #toolbar-color-palette.color-palette,
 #share-preview .share-color-popover.color-palette {
   display: grid;
-  grid-template-columns: repeat(4, minmax(1.8rem, 1fr));
+  grid-template-columns: repeat(4, 1.8rem);
   justify-items: center;
   justify-content: center;
   gap: 0.5rem;
-  width: 15rem;
+  width: max-content;
   max-width: calc(100vw - 2rem);
 }
 #toolbar-color-palette.color-palette[hidden] {
@@ -609,4 +609,10 @@ input[type='color'].palette-native-picker {
 }
 .color-palette .palette-default-swatch {
   margin: 0;
+}
+
+.color-palette .palette-default-swatch svg {
+  display: block;
+  flex-shrink: 0;
+  transform: none;
 }

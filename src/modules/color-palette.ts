@@ -159,7 +159,7 @@ export function mountColorPalette(control: HTMLElement, picker: HTMLInputElement
     reset.hidden = false;
     reset.setAttribute('aria-pressed', String(state.defaultSelected));
     defaultSwatch.innerHTML = state.defaultSelected
-      ? '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg>'
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4 10-10"/></svg>'
       : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></svg>';
     defaultSwatch.style.backgroundColor = state.defaultColor;
     defaultSwatch.style.color = contrastingText(state.defaultColor);
