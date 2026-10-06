@@ -23,16 +23,17 @@ export function loadFontPreview(name: string): Promise<string> {
   return request;
 }
 
-export function initFontPicker(select: HTMLSelectElement) {
+export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelElement) {
   const picker = document.createElement('div');
   picker.className = 'font-picker';
   const trigger = document.createElement('button');
   trigger.type = 'button';
-  trigger.id = 'font-picker-trigger';
+  trigger.id = select.id === 'font-select' ? 'font-picker-trigger' : `${select.id}-trigger`;
+  trigger.className = 'font-picker-trigger';
   trigger.setAttribute('aria-haspopup', 'dialog');
   trigger.setAttribute('aria-expanded', 'false');
   const panel = document.createElement('div');
-  panel.id = 'font-picker-options';
+  panel.id = `${trigger.id}-options`;
   panel.className = 'font-picker-options';
   panel.hidden = true;
   panel.setAttribute('role', 'dialog');
@@ -40,7 +41,8 @@ export function initFontPicker(select: HTMLSelectElement) {
   picker.append(trigger, panel);
   select.after(picker);
   select.hidden = true;
-  const label = document.querySelector<HTMLLabelElement>('label[for="font-select"]');
+  const label =
+    caption || [...document.querySelectorAll<HTMLLabelElement>('label')].find((item) => item.htmlFor === select.id);
   if (label) label.htmlFor = trigger.id;
 
   const close = () => {
@@ -48,10 +50,28 @@ export function initFontPicker(select: HTMLSelectElement) {
     trigger.setAttribute('aria-expanded', 'false');
   };
   const buttons = () => [...panel.querySelectorAll<HTMLButtonElement>('button:not(:disabled)')];
+  let signature = '';
+  let previewSamples: (() => void)[] = [];
   const render = () => {
     trigger.textContent = select.selectedOptions[0]?.textContent || '';
     panel.setAttribute('aria-label', label?.textContent || trigger.textContent);
+    const nextSignature = JSON.stringify(
+      [...select.options].map((option) => [
+        option.value,
+        option.textContent,
+        option.disabled,
+        option.dataset.customFont,
+      ]),
+    );
+    if (signature === nextSignature && panel.childElementCount) {
+      panel.querySelectorAll<HTMLButtonElement>('button').forEach((button) => {
+        button.setAttribute('aria-pressed', String(button.dataset.value === select.value));
+      });
+      return;
+    }
+    signature = nextSignature;
     panel.replaceChildren();
+    previewSamples = [];
     for (const option of select.options) {
       const button = document.createElement('button');
       button.type = 'button';
@@ -74,21 +94,25 @@ export function initFontPicker(select: HTMLSelectElement) {
         trigger.focus();
       });
       panel.append(button);
-      if (!panel.hidden && option.value !== 'default' && !option.disabled) {
-        void loadFontPreview(option.value)
-          .then((family) => {
-            sample.style.fontFamily = `"${family}", sans-serif`;
-          })
-          .catch(() => {
-            /* Names remain usable when previews cannot load. */
-          });
+      if (option.value !== 'default' && !option.disabled) {
+        previewSamples.push(() => {
+          void loadFontPreview(option.value)
+            .then((family) => {
+              sample.style.fontFamily = `"${family}", sans-serif`;
+            })
+            .catch(() => {
+              /* Names remain usable when previews cannot load. */
+            });
+        });
       }
     }
+    if (!panel.hidden) previewSamples.forEach((load) => load());
   };
   const open = () => {
     panel.hidden = false;
     trigger.setAttribute('aria-expanded', 'true');
     render();
+    previewSamples.forEach((load) => load());
     (panel.querySelector<HTMLButtonElement>('button[aria-pressed="true"]:not(:disabled)') || buttons()[0])?.focus();
   };
   trigger.addEventListener('click', () => (panel.hidden ? open() : close()));
@@ -119,12 +143,15 @@ export function initFontPicker(select: HTMLSelectElement) {
     }
   });
   picker.addEventListener('focusout', (event) => {
-    if (!picker.contains(event.relatedTarget as Node | null)) close();
+    // Mobile browsers can blur with no next focus target before delivering the tap's click.
+    if (event.relatedTarget && !picker.contains(event.relatedTarget as Node)) close();
   });
-  document.addEventListener('click', (event) => {
+  const closeOutside = (event: Event) => {
     if (!picker.contains(event.target as Node)) close();
-  });
-  new MutationObserver(render).observe(select, {
+  };
+  document.addEventListener('pointerdown', closeOutside);
+  const observer = new MutationObserver(render);
+  observer.observe(select, {
     childList: true,
     subtree: true,
     characterData: true,
@@ -132,4 +159,12 @@ export function initFontPicker(select: HTMLSelectElement) {
   });
   select.addEventListener('change', render);
   render();
+  return () => {
+    observer.disconnect();
+    document.removeEventListener('pointerdown', closeOutside);
+    select.removeEventListener('change', render);
+    select.hidden = false;
+    if (label) label.htmlFor = select.id;
+    picker.remove();
+  };
 }

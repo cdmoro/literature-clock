@@ -1,4 +1,5 @@
 import { store } from '../store';
+import { initFontPicker } from './font-picker';
 import { fontSupportsLocale } from './font-preferences';
 import { getBaseLocale, getStrings } from './locales';
 import { readingStrings } from './reading-ui';
@@ -290,9 +291,10 @@ export function initShareOptions() {
     });
     patternControl.append(patternCaption, patternSelect);
     customizationControls.append(patternControl);
-    const fontControl = document.createElement('label');
+    const fontControl = document.createElement('div');
     fontControl.className = 'share-font-control';
-    const fontCaption = document.createElement('span');
+    const fontCaption = document.createElement('label');
+    fontCaption.htmlFor = 'share-preview-font';
     const fontStrings = getStrings(store.get('ui-locale') || store.get('locale'));
     customizationSummary.textContent = `${strings.theme} / ${settingsStrings.settings_color} / ${fontStrings.font}`;
     fontCaption.textContent = fontStrings.font;
@@ -316,6 +318,7 @@ export function initShareOptions() {
     });
     fontControl.append(fontCaption, fontSelect);
     customizationControls.append(fontControl);
+    const disposeFontPicker = initFontPicker(fontSelect, fontCaption);
     const preview = document.createElement('div');
     preview.className = 'share-preview-image';
     preview.setAttribute('role', 'group');
@@ -420,6 +423,7 @@ export function initShareOptions() {
       font = undefined;
       document.removeEventListener('click', closeColorOnOutsideClick);
       imagePalette.dispose();
+      disposeFontPicker();
       dialog.remove();
       button.focus();
     });

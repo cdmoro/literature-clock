@@ -387,3 +387,18 @@ it('saves custom colors for other palettes and keeps the image accent when a swa
   expect(selectedCardOptions().color).toBe('#123456');
   expect(state.color).toBe('#d24335');
 });
+
+it('selects an image font through the preview picker without changing the clock font', () => {
+  vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('Offline')));
+  const customization = document.querySelector<HTMLDetailsElement>('.share-customization')!;
+  customization.open = true;
+  document.getElementById('share-preview-font-trigger')!.click();
+  document.querySelector<HTMLButtonElement>('#share-preview .font-picker-options button[data-value="Lora"]')!.click();
+  expect(selectedCardOptions().font).toBe('Lora');
+  expect(state.font).toBe('default');
+  expect(document.querySelector<HTMLSelectElement>('#font-select')!.value).toBe('default');
+  expect(document.getElementById('share-preview-font-trigger')!.textContent).toBe('Lora');
+  document.querySelector<HTMLDialogElement>('#share-preview')!.close();
+  expect(document.getElementById('share-preview-font-trigger')).toBeNull();
+  vi.unstubAllGlobals();
+});

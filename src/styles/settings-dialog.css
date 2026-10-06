@@ -843,7 +843,7 @@
   }
 }
 
-#settings-dialog #font-select[hidden] {
+:is(#font-select, #share-preview-font)[hidden] {
   display: none;
 }
 .font-picker {
@@ -851,7 +851,7 @@
   flex: 1;
   min-width: 0;
 }
-#settings-dialog #font-picker-trigger {
+:is(#settings-dialog, #share-preview) .font-picker-trigger {
   width: 100%;
   height: 2rem;
   padding: 0.25rem 0.5rem;
@@ -868,7 +868,7 @@
 #settings-dialog .input-group:has(#reset-font[hidden]):has(#remove-custom-font[hidden]) #font-picker-trigger {
   border-radius: 0.35rem;
 }
-#font-picker-trigger::after {
+.font-picker-trigger::after {
   content: ' ▾';
 }
 .font-picker-options {
@@ -884,7 +884,7 @@
   border-radius: 0.35rem;
   padding: 0.25rem;
 }
-#settings-dialog .font-picker-options button {
+:is(#settings-dialog, #share-preview) .font-picker-options button {
   display: block;
   width: 100%;
   text-align: start;
@@ -898,9 +898,16 @@
   display: block;
   font: 0.75rem sans-serif;
 }
-#settings-dialog .font-picker-options button:is(:focus-visible, :hover, [aria-pressed='true']) {
+:is(#settings-dialog, #share-preview) .font-picker-options button:is(:focus-visible, :hover, [aria-pressed='true']) {
   background: color-mix(in srgb, var(--font-color), transparent 85%);
 }
-#settings-dialog .font-picker-options button:disabled {
+:is(#settings-dialog, #share-preview) .font-picker-options button:disabled {
   opacity: 0.5;
+}
+
+#share-preview .font-picker {
+  width: min(220px, 60vw);
+}
+#share-preview .font-picker-trigger {
+  border-radius: 0.35rem;
 }

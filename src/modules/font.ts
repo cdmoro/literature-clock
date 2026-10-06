@@ -1,4 +1,4 @@
-import { fitQuote, loadFontIfNotExists } from '../utils';
+import { fitQuote } from '../utils';
 import { store } from '../store';
 import { initFontPicker } from './font-picker';
 import { loadGoogleFont, normalizeFontName } from '../utils/google-font';
@@ -241,8 +241,21 @@ export async function applyCustomFont(value: string, restoreDefaultOnError = fal
       customFonts.push(name);
       saveCustomFonts();
     }
-    loadFontIfNotExists(name);
     selectFont(name);
+    if (!loadedFonts.has(name)) {
+      fontStatus('settings_font_loading');
+      try {
+        await loadGoogleFont(name);
+        loadedFonts.add(name);
+        if (request === fontRequest) {
+          fontStatus();
+          fitQuote();
+        }
+      } catch {
+        if (request === fontRequest) fail();
+        return;
+      }
+    }
     return true;
   }
   if (loadedFonts.has(name)) {

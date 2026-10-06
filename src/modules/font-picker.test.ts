@@ -52,3 +52,45 @@ test('rejects invalid font names before requesting a preview', async () => {
   await expect(loadFontPreview('Lora&family=Roboto')).rejects.toThrow();
   expect(fetch).not.toHaveBeenCalled();
 });
+
+test('keeps touch targets alive across blur and equivalent option refreshes', async () => {
+  vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('Offline')));
+  document.body.innerHTML =
+    '<select id="font-select"><option value="default">Default</option><option>Touch Test</option></select>';
+  const select = document.querySelector('select')!;
+  const dispose = initFontPicker(select);
+  const trigger = document.getElementById('font-picker-trigger')!;
+  trigger.click();
+  const target = document.querySelector<HTMLButtonElement>('.font-picker-options button[data-value="Touch Test"]')!;
+  // A clock/locale refresh recreates the same source options during a touch gesture.
+  select.replaceChildren(...[...select.options].map((option) => option.cloneNode(true)));
+  await Promise.resolve();
+  expect(document.querySelector('.font-picker-options button[data-value="Touch Test"]')).toBe(target);
+  target.dispatchEvent(new FocusEvent('focusout', { bubbles: true, relatedTarget: null }));
+  expect(trigger.getAttribute('aria-expanded')).toBe('true');
+  target.click();
+  expect(select.value).toBe('Touch Test');
+  expect(trigger.textContent).toBe('Touch Test');
+  expect(trigger.getAttribute('aria-expanded')).toBe('false');
+  dispose();
+});
+
+test('uses separate controls per instance and cleans up when a dialog closes', () => {
+  document.body.innerHTML =
+    '<select id="font-select"><option>Default</option></select><label for="share-preview-font">Image font</label><select id="share-preview-font"><option>Default</option></select>';
+  const disposeSettings = initFontPicker(document.getElementById('font-select') as HTMLSelectElement);
+  const shareSelect = document.getElementById('share-preview-font') as HTMLSelectElement;
+  const disposeShare = initFontPicker(shareSelect);
+  expect(document.querySelector('label')?.htmlFor).toBe('share-preview-font-trigger');
+  expect(document.querySelectorAll('.font-picker-trigger')).toHaveLength(2);
+  const trigger = document.getElementById('share-preview-font-trigger')!;
+  trigger.click();
+  expect(trigger.getAttribute('aria-expanded')).toBe('true');
+  document.getElementById('font-picker-trigger')!.dispatchEvent(new Event('pointerdown', { bubbles: true }));
+  expect(trigger.getAttribute('aria-expanded')).toBe('false');
+  disposeShare();
+  expect(document.getElementById('share-preview-font-trigger')).toBeNull();
+  expect(shareSelect.hidden).toBe(false);
+  expect(document.querySelector('label')?.htmlFor).toBe('share-preview-font');
+  disposeSettings();
+});
