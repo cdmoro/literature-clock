@@ -175,7 +175,8 @@ export function mountColorPalette(control: HTMLElement, picker: HTMLInputElement
       ? (document.activeElement as HTMLElement)?.dataset.paletteKey
       : undefined;
     swatches.replaceChildren();
-    add.textContent = '+';
+    add.innerHTML =
+      '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>';
     add.title = labels.settings_color_customize;
     add.setAttribute('aria-label', add.title);
     random.title = options.randomLabel || labels.settings_color_random;

@@ -616,3 +616,12 @@ input[type='color'].palette-native-picker {
   flex-shrink: 0;
   transform: none;
 }
+
+.color-palette :is(.color-add, .color-manage) {
+  border: 1px solid #8888;
+  background: transparent;
+}
+.color-palette :is(.color-add, .color-manage) svg {
+  display: block;
+  transform: none;
+}
