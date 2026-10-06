@@ -1,5 +1,6 @@
 import { store } from '../store';
 import { initFontPicker } from './font-picker';
+import { getDefaultFontName } from './locale-fonts';
 import { fontSupportsLocale } from './font-preferences';
 import { getBaseLocale, getStrings } from './locales';
 import { readingStrings } from './reading-ui';
@@ -308,7 +309,14 @@ export function initShareOptions() {
       fontSelect.append(option);
     }
     if (!fontSelect.querySelector('option[value="default"]')) fontSelect.prepend(new Option('', 'default'));
-    fontSelect.querySelector<HTMLOptionElement>('option[value="default"]')!.textContent = fontStrings.default_font;
+    const updateDefaultFontLabel = () => {
+      const name = getDefaultFontName(currentTheme(), snapshot.locale);
+      const option = fontSelect.querySelector<HTMLOptionElement>('option[value="default"]')!;
+      const label = `${fontStrings.default_font} (${name})`;
+      if (option.textContent !== label) option.textContent = label;
+      if (option.dataset.previewFont !== name) option.dataset.previewFont = name;
+    };
+    updateDefaultFontLabel();
     if (fontSupportsLocale(font, snapshot.locale) === false) font = 'default';
     if (![...fontSelect.options].some((option) => option.value === font)) font = 'default';
     fontSelect.value = font;
@@ -428,6 +436,7 @@ export function initShareOptions() {
       button.focus();
     });
     const refresh = async () => {
+      updateDefaultFontLabel();
       const current = ++revision;
       patternControl.hidden = false;
       patternSelect.disabled = false;

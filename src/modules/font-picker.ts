@@ -3,14 +3,15 @@ import { normalizeFontName } from '../utils/google-font';
 const previews = new Map<string, Promise<string>>();
 
 /** Keep name-only subsets separate from the fonts used to render passages. */
-export function loadFontPreview(name: string): Promise<string> {
+export function loadFontPreview(name: string, text = name): Promise<string> {
   if (normalizeFontName(name) !== name) return Promise.reject(new Error('Invalid font name'));
-  const existing = previews.get(name);
+  const key = JSON.stringify([name, text]);
+  const existing = previews.get(key);
   if (existing) return existing;
   const family = `ClockFontPreview${previews.size}`;
   const request = (async () => {
     const response = await fetch(
-      `https://fonts.googleapis.com/css2?family=${encodeURIComponent(name)}&text=${encodeURIComponent(name)}&display=swap`,
+      `https://fonts.googleapis.com/css2?family=${encodeURIComponent(name)}&text=${encodeURIComponent(text)}&display=swap`,
     );
     if (!response.ok) throw new Error('Font preview unavailable');
     const css = await response.text();
@@ -19,7 +20,7 @@ export function loadFontPreview(name: string): Promise<string> {
     document.head.append(style);
     return family;
   })();
-  previews.set(name, request);
+  previews.set(key, request);
   return request;
 }
 
@@ -61,6 +62,7 @@ export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelEle
         option.textContent,
         option.disabled,
         option.dataset.customFont,
+        option.dataset.previewFont,
       ]),
     );
     if (signature === nextSignature && panel.childElementCount) {
@@ -94,9 +96,11 @@ export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelEle
         trigger.focus();
       });
       panel.append(button);
-      if (option.value !== 'default' && !option.disabled) {
+      const previewFont = option.value === 'default' ? option.dataset.previewFont : option.value;
+      if (previewFont === 'system-ui') sample.style.fontFamily = 'system-ui, sans-serif';
+      else if (previewFont && !option.disabled) {
         previewSamples.push(() => {
-          void loadFontPreview(option.value)
+          void loadFontPreview(previewFont, sample.textContent || previewFont)
             .then((family) => {
               sample.style.fontFamily = `"${family}", sans-serif`;
             })
@@ -109,6 +113,14 @@ export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelEle
     if (!panel.hidden) previewSamples.forEach((load) => load());
   };
   const open = () => {
+    const bounds = picker.getBoundingClientRect();
+    const dialog = picker.closest('dialog')?.getBoundingClientRect();
+    const above = bounds.top - Math.max(0, dialog?.top || 0) - 16;
+    const below = Math.min(window.innerHeight, dialog?.bottom || window.innerHeight) - bounds.bottom - 16;
+    const upwards = above >= below;
+    panel.style.top = upwards ? 'auto' : '100%';
+    panel.style.bottom = upwards ? '100%' : 'auto';
+    panel.style.maxHeight = `${Math.max(0, Math.min(240, (upwards ? above : below) - 8))}px`;
     panel.hidden = false;
     trigger.setAttribute('aria-expanded', 'true');
     render();

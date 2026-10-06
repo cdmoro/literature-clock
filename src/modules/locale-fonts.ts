@@ -24,6 +24,16 @@ export function getLocaleThemeFont(theme: string, locale: string) {
   return undefined;
 }
 
+/** The automatic face for this theme and passage, independent of a manual font override. */
+export function getDefaultFontName(theme: string, locale: string) {
+  return (
+    getLocaleThemeFont(theme, locale) ||
+    (locale.split('-')[0].toLowerCase() === 'ar'
+      ? 'system-ui'
+      : THEME_FONTS[theme.split('-')[0]]?.[0] || 'Special Elite')
+  );
+}
+
 export function applyLocaleThemeFont(element: HTMLElement, locale = element.lang) {
   const theme = document.documentElement.dataset.theme || 'base';
   const font = getLocaleThemeFont(theme, locale);
@@ -34,7 +44,10 @@ export function applyLocaleThemeFont(element: HTMLElement, locale = element.lang
   );
   if (selected !== 'default') loadFontIfNotExists(selected);
   // Block inheritance when secondary reading content uses another language.
-  element.style.setProperty('--locale-quote-font-family', locale.split('-')[0] === 'ar' && !font ? 'system-ui, sans-serif' : font ? `"${font}", monospace` : 'initial');
+  element.style.setProperty(
+    '--locale-quote-font-family',
+    locale.split('-')[0] === 'ar' && !font ? 'system-ui, sans-serif' : font ? `"${font}", monospace` : 'initial',
+  );
   if (font) loadFontIfNotExists(font);
 }
 

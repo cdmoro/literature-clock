@@ -94,3 +94,52 @@ test('uses separate controls per instance and cleans up when a dialog closes', (
   expect(document.querySelector('label')?.htmlFor).toBe('share-preview-font');
   disposeSettings();
 });
+
+test('previews the full automatic label with its resolved font and keeps the closed control neutral', async () => {
+  const fetch = vi
+    .fn()
+    .mockResolvedValue({ ok: true, text: async () => '@font-face { font-family: "Automatic Test"; }' });
+  vi.stubGlobal('fetch', fetch);
+  document.body.innerHTML =
+    '<select id="font-select"><option value="default" data-preview-font="Automatic Test">Default (Automatic Test)</option><option>Automatic Test</option></select>';
+  const select = document.querySelector('select')!;
+  const dispose = initFontPicker(select);
+  const trigger = document.getElementById('font-picker-trigger')!;
+  expect(fetch).not.toHaveBeenCalled();
+  trigger.click();
+  const sample = document.querySelector<HTMLElement>('.font-picker-options button[data-value="default"] span')!;
+  await vi.waitFor(() => expect(sample.style.fontFamily).toContain('ClockFontPreview'));
+  const requests = fetch.mock.calls.map(([url]) => new URL(url));
+  expect(
+    requests.some(
+      (url) =>
+        url.searchParams.get('family') === 'Automatic Test' &&
+        url.searchParams.get('text') === 'Default (Automatic Test)',
+    ),
+  ).toBe(true);
+  expect(requests.some((url) => url.searchParams.get('text') === 'Automatic Test')).toBe(true);
+  expect(trigger.style.fontFamily).toBe('');
+  select.options[0].textContent = 'Default (New Automatic Test)';
+  select.options[0].dataset.previewFont = 'New Automatic Test';
+  await vi.waitFor(() =>
+    expect(fetch.mock.calls.some(([url]) => new URL(url).searchParams.get('family') === 'New Automatic Test')).toBe(
+      true,
+    ),
+  );
+  expect(trigger.textContent).toBe('Default (New Automatic Test)');
+  dispose();
+});
+
+test('uses the system font directly when automatic Arabic text has no theme face', () => {
+  const fetch = vi.fn();
+  vi.stubGlobal('fetch', fetch);
+  document.body.innerHTML =
+    '<select id="font-select"><option value="default" data-preview-font="system-ui">Default (system-ui)</option></select>';
+  const dispose = initFontPicker(document.querySelector('select')!);
+  document.getElementById('font-picker-trigger')!.click();
+  expect(document.querySelector<HTMLElement>('.font-picker-options span')!.style.fontFamily).toBe(
+    'system-ui, sans-serif',
+  );
+  expect(fetch).not.toHaveBeenCalled();
+  dispose();
+});

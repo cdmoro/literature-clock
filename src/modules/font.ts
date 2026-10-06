@@ -3,7 +3,7 @@ import { store } from '../store';
 import { initFontPicker } from './font-picker';
 import { loadGoogleFont, normalizeFontName } from '../utils/google-font';
 import { getBaseLocale, getInterfaceLocale, getStrings } from './locales';
-import { getLocaleThemeFont, refreshLocaleThemeFonts } from './locale-fonts';
+import { getDefaultFontName, refreshLocaleThemeFonts } from './locale-fonts';
 import SETTINGS from '../strings/settings.json';
 import {
   effectiveFont,
@@ -122,7 +122,8 @@ export function refreshDefaultFontLabel() {
     fontRequest++;
     fontStatus();
   }
-  const name = getLocaleThemeFont(theme, locale) || THEME_FONTS[theme]?.[0] || 'Special Elite';
+  const name = getDefaultFontName(theme, locale);
+  option.dataset.previewFont = name;
   option.textContent = `${getStrings(getInterfaceLocale()).default_font} (${name})`;
   select.querySelectorAll('option:not([value="default"])').forEach((item) => item.remove());
   const suggestions = suggestedFonts(locale);

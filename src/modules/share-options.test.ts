@@ -402,3 +402,28 @@ it('selects an image font through the preview picker without changing the clock 
   expect(document.getElementById('share-preview-font-trigger')).toBeNull();
   vi.unstubAllGlobals();
 });
+
+it('names the default font for the image theme and keeps it updated when changing themes', async () => {
+  const option = () => document.querySelector<HTMLOptionElement>('#share-preview-font option[value="default"]')!;
+  expect(option().textContent).toBe('Default font (Special Elite)');
+  expect(option().dataset.previewFont).toBe('Special Elite');
+  button('Next theme').click();
+  expect(option().textContent).toBe('Default font (Libre Baskerville)');
+  expect(option().dataset.previewFont).toBe('Libre Baskerville');
+  await Promise.resolve();
+  expect(document.getElementById('share-preview-font-trigger')!.textContent).toBe('Default font (Libre Baskerville)');
+  expect(selectedCardOptions().font).toBe('default');
+  expect(state.font).toBe('default');
+});
+
+it('resolves the default image font from the passage language rather than the interface language', () => {
+  button('Close').click();
+  state['active-quote'] = { id: '1200-002', quote_raw: 'Russian quote', locale: 'ru-RU', time: '12:00' };
+  document.getElementById('share')!.click();
+  const option = document.querySelector<HTMLOptionElement>('#share-preview-font option[value="default"]')!;
+  expect(option.textContent).toBe('Default font (Pangolin)');
+  expect(option.dataset.previewFont).toBe('Pangolin');
+  button('Next theme').click();
+  expect(option.textContent).toBe('Default font (Literata)');
+  expect(option.dataset.previewFont).toBe('Literata');
+});
