@@ -369,3 +369,19 @@ test('a suggested font finishing late does not clear a newer loading status', as
   await pending;
   expect(document.getElementById('custom-font-status')!.dataset.text).toBe('settings_font_loading');
 });
+
+test('a touch release in the font picker immediately updates the clock selection', () => {
+  vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('Offline')));
+  vi.mocked(loadGoogleFont).mockImplementation(() => new Promise<void>(() => {}));
+  document.getElementById('font-picker-trigger')!.click();
+  const option = document.querySelector<HTMLButtonElement>('.font-picker-options button[data-value="Roboto"]')!;
+  for (const type of ['pointerdown', 'pointerup']) {
+    const event = new MouseEvent(type, { bubbles: true, clientX: 10, clientY: 10 });
+    Object.defineProperties(event, { pointerType: { value: 'touch' }, pointerId: { value: 1 } });
+    option.dispatchEvent(event);
+  }
+  expect(store.get('font')).toBe('Roboto');
+  expect(document.documentElement.style.getPropertyValue('--override-quote-font-family')).toContain('"Roboto"');
+  expect(document.getElementById('font-picker-trigger')!.textContent).toBe('Roboto');
+  vi.unstubAllGlobals();
+});

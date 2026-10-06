@@ -854,11 +854,11 @@
 :is(#settings-dialog, #share-preview) .font-picker-trigger {
   width: 100%;
   height: 2rem;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 2rem 0.25rem 0.5rem;
   text-align: start;
   font: inherit;
   color: var(--font-color);
-  background: var(--background);
+  background-color: var(--background);
   border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
   border-radius: 0;
   border-start-start-radius: 0.35rem;
@@ -868,9 +868,7 @@
 #settings-dialog .input-group:has(#reset-font[hidden]):has(#remove-custom-font[hidden]) #font-picker-trigger {
   border-radius: 0.35rem;
 }
-.font-picker-trigger::after {
-  content: ' ▾';
-}
+
 .font-picker-options {
   position: absolute;
   inset-inline: 0;
@@ -885,14 +883,32 @@
   padding: 0.25rem;
 }
 :is(#settings-dialog, #share-preview) .font-picker-options button {
-  display: block;
   width: 100%;
   text-align: start;
-  padding: 0.5rem;
   background: transparent;
   color: inherit;
   border: 0;
   font-size: 1.15rem;
+  box-sizing: border-box;
+  height: 3rem;
+  min-height: 3rem;
+  max-height: none;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0.5rem 0.75rem;
+}
+:is(#settings-dialog, #share-preview) .font-picker-options button:has(small) {
+  height: 4.25rem;
+}
+.font-picker-options button > span {
+  display: block;
+  margin-inline-start: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .font-picker-options small {
   display: block;
@@ -910,4 +926,9 @@
 }
 #share-preview .font-picker-trigger {
   border-radius: 0.35rem;
+}
+
+.font-picker-trigger {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

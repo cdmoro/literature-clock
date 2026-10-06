@@ -47,15 +47,27 @@ export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelEle
   if (label) label.htmlFor = trigger.id;
 
   const close = () => {
+    touch = undefined;
     panel.hidden = true;
     trigger.setAttribute('aria-expanded', 'false');
   };
   const buttons = () => [...panel.querySelectorAll<HTMLButtonElement>('button:not(:disabled)')];
+  let touch: { id: number; value: string; x: number; y: number; scroll: number } | undefined;
+  const choose = (value: string) => {
+    if (panel.hidden || ![...select.options].some((option) => option.value === value && !option.disabled)) return;
+    select.value = value;
+    close();
+    select.dispatchEvent(new Event('change', { bubbles: true }));
+    render();
+    trigger.focus({ preventScroll: true });
+  };
   let signature = '';
   let previewSamples: (() => void)[] = [];
   const render = () => {
     trigger.textContent = select.selectedOptions[0]?.textContent || '';
     panel.setAttribute('aria-label', label?.textContent || trigger.textContent);
+    // Keep a pressed touch target intact until the gesture completes.
+    if (touch) return;
     const nextSignature = JSON.stringify(
       [...select.options].map((option) => [
         option.value,
@@ -88,13 +100,7 @@ export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelEle
         annotation.textContent = option.textContent?.slice(option.value.length) || '';
         button.append(annotation);
       }
-      button.addEventListener('click', () => {
-        select.value = option.value;
-        select.dispatchEvent(new Event('change', { bubbles: true }));
-        render();
-        close();
-        trigger.focus();
-      });
+      button.addEventListener('click', () => choose(option.value));
       panel.append(button);
       const previewFont = option.value === 'default' ? option.dataset.previewFont : option.value;
       if (previewFont === 'system-ui') sample.style.fontFamily = 'system-ui, sans-serif';
@@ -154,7 +160,35 @@ export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelEle
       choices[next]?.focus();
     }
   });
+  panel.addEventListener('pointerdown', (event) => {
+    if (event.pointerType !== 'touch' && event.pointerType !== 'pen') return;
+    const button = (event.target as Element).closest<HTMLButtonElement>('button[data-value]');
+    if (!button || button.disabled) return;
+    touch = {
+      id: event.pointerId,
+      value: button.dataset.value!,
+      x: event.clientX,
+      y: event.clientY,
+      scroll: panel.scrollTop,
+    };
+  });
+  panel.addEventListener('pointerup', (event) => {
+    if (!touch || touch.id !== event.pointerId) return;
+    const pressed = touch;
+    touch = undefined;
+    if (
+      Math.hypot(event.clientX - pressed.x, event.clientY - pressed.y) <= 10 &&
+      Math.abs(panel.scrollTop - pressed.scroll) <= 2
+    ) {
+      choose(pressed.value);
+    } else render();
+  });
+  panel.addEventListener('pointercancel', () => {
+    touch = undefined;
+    render();
+  });
   picker.addEventListener('focusout', (event) => {
+    if (touch) return;
     // Mobile browsers can blur with no next focus target before delivering the tap's click.
     if (event.relatedTarget && !picker.contains(event.relatedTarget as Node)) close();
   });

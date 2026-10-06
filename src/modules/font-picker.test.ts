@@ -143,3 +143,52 @@ test('uses the system font directly when automatic Arabic text has no theme face
   expect(fetch).not.toHaveBeenCalled();
   dispose();
 });
+
+function touchEvent(type: string, y = 10) {
+  const event = new MouseEvent(type, { bubbles: true, clientX: 10, clientY: y });
+  Object.defineProperties(event, { pointerType: { value: 'touch' }, pointerId: { value: 1 } });
+  return event;
+}
+
+test('commits one touch selection on pointerup despite blur and an option update before click', async () => {
+  vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('Offline')));
+  document.body.innerHTML =
+    '<select id="font-select"><option value="default">Default</option><option>Mobile Choice</option></select>';
+  const select = document.querySelector('select')!;
+  const dispose = initFontPicker(select);
+  const change = vi.fn();
+  select.addEventListener('change', change);
+  document.getElementById('font-picker-trigger')!.click();
+  const target = document.querySelector<HTMLButtonElement>('.font-picker-options button[data-value="Mobile Choice"]')!;
+  target.dispatchEvent(touchEvent('pointerdown'));
+  target.dispatchEvent(new FocusEvent('focusout', { bubbles: true, relatedTarget: document.body }));
+  select.options[0].textContent = 'Default (Updated)';
+  await Promise.resolve();
+  expect(target.isConnected).toBe(true);
+  target.dispatchEvent(touchEvent('pointerup'));
+  expect(select.value).toBe('Mobile Choice');
+  expect(change).toHaveBeenCalledTimes(1);
+  target.click(); // The compatibility click after a touch must not select a second time.
+  expect(change).toHaveBeenCalledTimes(1);
+  dispose();
+});
+
+test('scrolling or cancelling a touch gesture does not choose a font', () => {
+  vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('Offline')));
+  document.body.innerHTML =
+    '<select id="font-select"><option value="default">Default</option><option>Scroll Choice</option></select>';
+  const select = document.querySelector('select')!;
+  const dispose = initFontPicker(select);
+  const change = vi.fn();
+  select.addEventListener('change', change);
+  document.getElementById('font-picker-trigger')!.click();
+  const target = document.querySelector<HTMLButtonElement>('.font-picker-options button[data-value="Scroll Choice"]')!;
+  target.dispatchEvent(touchEvent('pointerdown'));
+  target.dispatchEvent(touchEvent('pointerup', 60));
+  expect(select.value).toBe('default');
+  target.dispatchEvent(touchEvent('pointerdown'));
+  target.dispatchEvent(touchEvent('pointercancel'));
+  target.dispatchEvent(touchEvent('pointerup'));
+  expect(change).not.toHaveBeenCalled();
+  dispose();
+});
