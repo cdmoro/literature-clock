@@ -137,8 +137,15 @@ export function mountColorPalette(control: HTMLElement, picker: HTMLInputElement
   const reset = document.createElement('button');
   reset.type = 'button';
   reset.className = 'palette-reset';
-  reset.innerHTML =
-    '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></svg>';
+  const defaultRow = control.matches('.color-palette-popover, .share-color-popover');
+  reset.classList.toggle('palette-default-row', defaultRow);
+  const defaultSwatch = document.createElement('span');
+  defaultSwatch.className = 'palette-default-swatch';
+  defaultSwatch.setAttribute('aria-hidden', 'true');
+  const defaultLabel = document.createElement('span');
+  defaultLabel.className = 'palette-default-label';
+  reset.append(defaultSwatch);
+  if (defaultRow) reset.append(defaultLabel);
   reset.addEventListener('click', () => {
     options.choose({ palette: 'default' });
     control.dispatchEvent(new Event('palette-default-selected', { bubbles: true }));
@@ -151,11 +158,12 @@ export function mountColorPalette(control: HTMLElement, picker: HTMLInputElement
     const labels = SETTINGS[locale];
     reset.hidden = false;
     reset.setAttribute('aria-pressed', String(state.defaultSelected));
-    reset.innerHTML = state.defaultSelected
-      ? '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 3 3 7-7"/></svg>'
+    defaultSwatch.innerHTML = state.defaultSelected
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4 10-10"/></svg>'
       : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></svg>';
-    reset.style.backgroundColor = state.defaultColor;
-    reset.style.color = contrastingText(state.defaultColor);
+    defaultSwatch.style.backgroundColor = state.defaultColor;
+    defaultSwatch.style.color = contrastingText(state.defaultColor);
+    defaultLabel.textContent = COLOR_STRINGS[locale].default_color;
     reset.title = COLOR_STRINGS[locale].reset_color;
     reset.setAttribute('aria-label', reset.title);
     const saved = customColors();
@@ -167,7 +175,8 @@ export function mountColorPalette(control: HTMLElement, picker: HTMLInputElement
       ? (document.activeElement as HTMLElement)?.dataset.paletteKey
       : undefined;
     swatches.replaceChildren();
-    add.textContent = '+';
+    add.innerHTML =
+      '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>';
     add.title = labels.settings_color_customize;
     add.setAttribute('aria-label', add.title);
     random.title = options.randomLabel || labels.settings_color_random;
@@ -245,7 +254,8 @@ export function mountColorPalette(control: HTMLElement, picker: HTMLInputElement
 
 function initToolbarPalette(control: HTMLElement) {
   const panel = document.createElement('div');
-  panel.id = 'toolbar-color-palette';
+  const settings = control.id === 'settings-color-controls';
+  panel.id = settings ? 'settings-color-palette' : 'toolbar-color-palette';
   panel.className = 'color-palette-popover';
   panel.hidden = true;
   panel.setAttribute('role', 'dialog');
@@ -253,7 +263,7 @@ function initToolbarPalette(control: HTMLElement) {
   panel.append(...control.childNodes);
   const toggle = document.createElement('button');
   toggle.type = 'button';
-  toggle.id = 'toolbar-color-toggle';
+  toggle.id = settings ? 'settings-color-toggle' : 'toolbar-color-toggle';
   toggle.className = 'toolbar-color-toggle';
   toggle.setAttribute('aria-expanded', 'false');
   toggle.setAttribute('aria-haspopup', 'dialog');
@@ -312,6 +322,8 @@ function initToolbarPalette(control: HTMLElement) {
     if (event.relatedTarget instanceof Node && !control.contains(event.relatedTarget)) close();
   });
   window.addEventListener('resize', () => close());
+  control.closest('dialog')?.addEventListener('close', () => close());
+  control.closest('dialog')?.addEventListener('scroll', () => close(), true);
   const update = () => {
     const label = SETTINGS[getBaseLocale(getInterfaceLocale())].settings_color;
     toolbarReset.title = COLOR_STRINGS[getBaseLocale(getInterfaceLocale())].reset_color;
@@ -343,7 +355,7 @@ export function initColorPalette() {
   for (const control of document.querySelectorAll<HTMLElement>('#color-controls, #settings-color-controls')) {
     const picker = control.querySelector<HTMLInputElement>('input[type=color]');
     if (!picker) continue;
-    const host = control.id === 'color-controls' ? initToolbarPalette(control) : control;
+    const host = initToolbarPalette(control);
     const palette = mountColorPalette(host, picker, {
       state: () => ({
         palette: store.get('palette'),

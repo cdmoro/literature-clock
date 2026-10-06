@@ -1,3 +1,4 @@
+import wavesTile from '../assets/waves.svg';
 import noiseTile from '../assets/noise.png';
 import { expect, it } from 'vitest';
 import { sharePatternTile } from './share-pattern';
@@ -31,4 +32,13 @@ it('uses the same transparent noise image tile as the live clock', () => {
   expect(light).toEqual(dark);
   expect(light.size).toBe('256px 256px');
   expect(light.image).toBe(`url("${noiseTile}")`);
+});
+
+it('exports the same thin wave tile used by the clock', () => {
+  for (const dark of [false, true]) {
+    expect(sharePatternTile('waves', '#222', dark)).toEqual({
+      image: `url("${wavesTile}")`,
+      size: '64px 24px',
+    });
+  }
 });

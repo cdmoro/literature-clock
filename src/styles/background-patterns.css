@@ -70,3 +70,17 @@ html[data-background-pattern]:not([data-background-pattern='none']) body,
 [data-theme$='-dark'][data-background-pattern='noise'] {
   --noise-veil: color-mix(in srgb, var(--background) 65%, transparent);
 }
+
+/* Broad chevrons need less ink than the finer line patterns. */
+[data-background-pattern='zigzag'] {
+  --pattern-ink: color-mix(in srgb, var(--font-color) 5%, var(--background));
+}
+[data-theme$='-dark'][data-background-pattern='zigzag'] {
+  --pattern-ink: color-mix(in srgb, var(--font-color) 8%, var(--background));
+}
+
+[data-background-pattern='waves'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/waves.svg');
+  --pattern-size: 64px 24px;
+}

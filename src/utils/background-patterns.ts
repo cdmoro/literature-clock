@@ -6,6 +6,7 @@ export const BACKGROUND_PATTERNS = [
   'diagonal-wide',
   'grid',
   'zigzag',
+  'waves',
   'noise',
 ] as const;
 export type BackgroundPattern = (typeof BACKGROUND_PATTERNS)[number];

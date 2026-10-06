@@ -61,6 +61,7 @@ test('keeps quick actions outside and moves every settings control without repla
   expect([...navigation.children].map((element) => element.id || element.className)).toEqual([
     'theme-previous',
     'theme-picker-toggle',
+    'settings-color-controls',
     'theme-next',
   ]);
   expect(document.querySelector('#settings-color-controls')!.closest('.settings-row')).toBeNull();
