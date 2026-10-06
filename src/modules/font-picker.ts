@@ -54,27 +54,29 @@ export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelEle
   };
   const buttons = () => [...panel.querySelectorAll<HTMLButtonElement>('button:not(:disabled)')];
   let touch: { id: number; value: string; x: number; y: number; scroll: number } | undefined;
-  let compatibilityClick: { x: number; y: number } | undefined;
+  let compatibilityClick = false;
   let compatibilityTimeout: ReturnType<typeof setTimeout> | undefined;
   const clearCompatibilityClick = () => {
-    compatibilityClick = undefined;
+    compatibilityClick = false;
     clearTimeout(compatibilityTimeout);
     document.removeEventListener('click', swallowCompatibilityClick, true);
     document.removeEventListener('pointerdown', clearCompatibilityClick, true);
+    document.removeEventListener('keydown', clearCompatibilityClick, true);
   };
   const swallowCompatibilityClick = (event: MouseEvent) => {
-    if (!compatibilityClick || event.detail === 0) return;
-    if (Math.hypot(event.clientX - compatibilityClick.x, event.clientY - compatibilityClick.y) > 25) return;
+    if (!compatibilityClick) return;
     event.preventDefault();
     event.stopImmediatePropagation();
     clearCompatibilityClick();
   };
-  const suppressCompatibilityClick = (event: PointerEvent) => {
+  const suppressCompatibilityClick = () => {
     clearCompatibilityClick();
-    compatibilityClick = { x: event.clientX, y: event.clientY };
-    // Safari may retarget its compatibility click to a control exposed by closing the popup.
+    compatibilityClick = true;
+    // Popup layout/focus changes can retarget a touch click and change its coordinates or detail.
+    // A fresh pointer or keyboard gesture clears the guard before any deliberate activation.
     document.addEventListener('click', swallowCompatibilityClick, true);
     document.addEventListener('pointerdown', clearCompatibilityClick, true);
+    document.addEventListener('keydown', clearCompatibilityClick, true);
     compatibilityTimeout = setTimeout(clearCompatibilityClick, 1000);
   };
   const choose = (value: string) => {
@@ -126,7 +128,11 @@ export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelEle
         annotation.textContent = option.textContent?.slice(option.value.length) || '';
         button.append(annotation);
       }
-      button.addEventListener('click', () => choose(option.value));
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        choose(option.value);
+      });
       panel.append(button);
       const previewFont = option.value === 'default' ? option.dataset.previewFont : option.value;
       if (previewFont) button.dataset.previewFont = previewFont;
@@ -209,7 +215,7 @@ export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelEle
     ) {
       event.preventDefault();
       event.stopPropagation();
-      suppressCompatibilityClick(event);
+      suppressCompatibilityClick();
       choose(pressed.value);
     } else render();
   });

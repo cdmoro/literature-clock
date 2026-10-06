@@ -427,3 +427,28 @@ it('resolves the default image font from the passage language rather than the in
   expect(option.textContent).toBe('Default font (Literata)');
   expect(option.dataset.previewFont).toBe('Literata');
 });
+
+it.each([0, 1])('consumes the font tap compatibility click in the sharing popup (detail %s)', (detail) => {
+  vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('Offline')));
+  document.getElementById('share-preview-font-trigger')!.click();
+  const option = document.querySelector<HTMLButtonElement>(
+    '#share-preview .font-picker-options button[data-value="Lora"]',
+  )!;
+  const pointer = (type: string) => {
+    const event = new MouseEvent(type, { bubbles: true, cancelable: true, clientX: 50, clientY: 100 });
+    Object.defineProperties(event, { pointerType: { value: 'touch' }, pointerId: { value: 1 } });
+    return event;
+  };
+  option.dispatchEvent(pointer('pointerdown'));
+  option.dispatchEvent(pointer('pointerup'));
+  expect(selectedCardOptions().font).toBe('Lora');
+  // Closing the menu and rendering the preview can move the underlying control.
+  const underlying = button('Light');
+  const ghost = new MouseEvent('click', { bubbles: true, cancelable: true, detail, clientX: 50, clientY: 200 });
+  underlying.dispatchEvent(ghost);
+  expect(ghost.defaultPrevented).toBe(true);
+  expect(underlying.getAttribute('aria-pressed')).toBe('false');
+  underlying.dispatchEvent(pointer('pointerdown'));
+  underlying.dispatchEvent(new MouseEvent('click', { bubbles: true, detail: 1 }));
+  expect(underlying.getAttribute('aria-pressed')).toBe('true');
+});
