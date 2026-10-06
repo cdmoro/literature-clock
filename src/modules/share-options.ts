@@ -1,4 +1,6 @@
 import { store } from '../store';
+import { initFontPicker } from './font-picker';
+import { getDefaultFontName } from './locale-fonts';
 import { fontSupportsLocale } from './font-preferences';
 import { getBaseLocale, getStrings } from './locales';
 import { readingStrings } from './reading-ui';
@@ -290,9 +292,10 @@ export function initShareOptions() {
     });
     patternControl.append(patternCaption, patternSelect);
     customizationControls.append(patternControl);
-    const fontControl = document.createElement('label');
+    const fontControl = document.createElement('div');
     fontControl.className = 'share-font-control';
-    const fontCaption = document.createElement('span');
+    const fontCaption = document.createElement('label');
+    fontCaption.htmlFor = 'share-preview-font';
     const fontStrings = getStrings(store.get('ui-locale') || store.get('locale'));
     customizationSummary.textContent = `${strings.theme} / ${settingsStrings.settings_color} / ${fontStrings.font}`;
     fontCaption.textContent = fontStrings.font;
@@ -306,7 +309,14 @@ export function initShareOptions() {
       fontSelect.append(option);
     }
     if (!fontSelect.querySelector('option[value="default"]')) fontSelect.prepend(new Option('', 'default'));
-    fontSelect.querySelector<HTMLOptionElement>('option[value="default"]')!.textContent = fontStrings.default_font;
+    const updateDefaultFontLabel = () => {
+      const name = getDefaultFontName(currentTheme(), snapshot.locale);
+      const option = fontSelect.querySelector<HTMLOptionElement>('option[value="default"]')!;
+      const label = `${fontStrings.default_font} (${name})`;
+      if (option.textContent !== label) option.textContent = label;
+      if (option.dataset.previewFont !== name) option.dataset.previewFont = name;
+    };
+    updateDefaultFontLabel();
     if (fontSupportsLocale(font, snapshot.locale) === false) font = 'default';
     if (![...fontSelect.options].some((option) => option.value === font)) font = 'default';
     fontSelect.value = font;
@@ -316,6 +326,7 @@ export function initShareOptions() {
     });
     fontControl.append(fontCaption, fontSelect);
     customizationControls.append(fontControl);
+    const disposeFontPicker = initFontPicker(fontSelect, fontCaption);
     const preview = document.createElement('div');
     preview.className = 'share-preview-image';
     preview.setAttribute('role', 'group');
@@ -420,10 +431,12 @@ export function initShareOptions() {
       font = undefined;
       document.removeEventListener('click', closeColorOnOutsideClick);
       imagePalette.dispose();
+      disposeFontPicker();
       dialog.remove();
       button.focus();
     });
     const refresh = async () => {
+      updateDefaultFontLabel();
       const current = ++revision;
       patternControl.hidden = false;
       patternSelect.disabled = false;
@@ -443,7 +456,7 @@ export function initShareOptions() {
       imagePalette.refresh();
       appearanceButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === variant)));
       status.textContent = strings.preparing;
-      preview.replaceChildren();
+      preview.setAttribute('aria-busy', 'true');
       copyImage.disabled = true;
       try {
         const canvas = await renderShareCard(snapshot, format, appearance, theme, selectedCardOptions());
@@ -453,11 +466,15 @@ export function initShareOptions() {
         canvas.style.objectFit = 'contain';
         canvas.setAttribute('role', 'img');
         canvas.setAttribute('aria-label', snapshot.quote_raw);
-        preview.append(canvas);
+        preview.replaceChildren(canvas);
+        preview.setAttribute('aria-busy', 'false');
         copyImage.disabled = !canCopyImage;
         status.textContent = '';
       } catch {
-        if (current === revision) status.textContent = strings.failed;
+        if (current === revision) {
+          preview.setAttribute('aria-busy', 'false');
+          status.textContent = strings.failed;
+        }
       }
     };
     const imagePalette = mountColorPalette(colorGroup, colorInput, {

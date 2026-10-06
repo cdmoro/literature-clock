@@ -25,8 +25,10 @@ export function refreshBackgroundPattern() {
   if (select) {
     select.value = pattern;
     select.disabled = !supported;
-    select.closest<HTMLElement>('.settings-row')!.hidden = !supported;
+    select.closest<HTMLElement>('.settings-row')!.hidden = false;
   }
+  const toggle = document.querySelector<HTMLButtonElement>('#pattern-picker-toggle');
+  if (toggle) toggle.disabled = !supported;
   const caption = document.getElementById('pattern-picker-name');
   if (caption) {
     const key = `settings_pattern_${pattern}` as keyof (typeof SETTINGS)['en-GB'];
@@ -69,12 +71,14 @@ export function initBackgroundPatterns(dialog: HTMLDialogElement) {
     if (focus) toggle.focus();
   };
   toggle.addEventListener('click', () => {
+    if (toggle.disabled) return;
     menu.hidden = !menu.hidden;
     toggle.setAttribute('aria-expanded', String(!menu.hidden));
     if (!menu.hidden) buttons.find((button) => button.dataset.pattern === store.get('background-pattern'))?.focus();
   });
   buttons.forEach((button, index) => {
     button.addEventListener('click', () => {
+      if (toggle.disabled) return;
       const pattern = button.dataset.pattern!;
       if (isBackgroundPattern(pattern)) store.set('background-pattern', pattern);
       close(true);

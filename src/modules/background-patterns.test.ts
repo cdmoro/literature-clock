@@ -81,7 +81,7 @@ test('URL pattern overrides the saved preference', () => {
   expect(document.documentElement.dataset.backgroundPattern).toBe('grid');
 });
 
-test.each(['photo', 'retro', 'anaglyph', 'festive', 'book', 'terminal', 'whatsapp', 'horizon'])(
+test.each(['photo', 'retro', 'anaglyph', 'book', 'terminal', 'whatsapp', 'horizon'])(
   'suspends patterns on %s and restores them on a plain theme',
   (theme) => {
     setup();
@@ -90,11 +90,13 @@ test.each(['photo', 'retro', 'anaglyph', 'festive', 'book', 'terminal', 'whatsap
     const select = document.querySelector<HTMLSelectElement>('#background-pattern')!;
     expect(document.documentElement.dataset.backgroundPattern).toBe('none');
     expect(select.disabled).toBe(true);
-    expect(select.closest<HTMLElement>('.settings-row')!.hidden).toBe(true);
+    expect(select.closest<HTMLElement>('.settings-row')!.hidden).toBe(false);
+    expect(document.querySelector<HTMLButtonElement>('#pattern-picker-toggle')!.disabled).toBe(true);
     expect(store.get('background-pattern')).toBe('diagonal');
     chooseTheme('base');
     expect(document.documentElement.dataset.backgroundPattern).toBe('diagonal');
     expect(select.disabled).toBe(false);
+    expect(document.querySelector<HTMLButtonElement>('#pattern-picker-toggle')!.disabled).toBe(false);
     expect(select.closest<HTMLElement>('.settings-row')!.hidden).toBe(false);
   },
 );
@@ -208,4 +210,18 @@ test('random patterns persist the mode and keep a concrete pattern until the quo
   expect(themePreviewDocument()).toContain(
     `data-background-pattern="${document.documentElement.dataset.backgroundPattern}"`,
   );
+});
+
+test('allows choosing patterns in Festive and returns to its default background with none', () => {
+  setup();
+  chooseTheme('festive');
+  const toggle = document.querySelector<HTMLButtonElement>('#pattern-picker-toggle')!;
+  expect(toggle.disabled).toBe(false);
+  toggle.click();
+  document.querySelector<HTMLButtonElement>('.pattern-option[data-pattern="dots"]')!.click();
+  expect(document.documentElement.dataset.backgroundPattern).toBe('dots');
+  expect(store.get('background-pattern')).toBe('dots');
+  choosePattern('none');
+  expect(document.documentElement.dataset.backgroundPattern).toBe('none');
+  expect(toggle.disabled).toBe(false);
 });

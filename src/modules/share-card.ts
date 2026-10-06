@@ -76,7 +76,7 @@ export async function renderShareCard(
       getComputedStyle(document.documentElement).getPropertyValue('--accent-color'),
     );
   }
-  if (theme && theme !== liveTheme.replace(/-(light|dark)$/, '')) {
+  if (theme && skin !== 'festive' && theme !== liveTheme.replace(/-(light|dark)$/, '')) {
     palette.style.setProperty('--background-image', 'none');
   }
   const pattern = getCurrentBackgroundPattern(options.pattern || store.get('background-pattern') || 'none');
@@ -142,7 +142,19 @@ export async function renderShareCard(
     });
   }
   const patternTile = sharePatternTile(pattern, color, palette.dataset.theme?.endsWith('-dark') || false);
-  const backgroundSize = patternTile?.size || (pattern !== 'none' ? paletteStyle.backgroundSize : 'cover');
+  const festivePattern = skin === 'festive' && pattern !== 'none';
+  const tileImage = patternTile
+    ? festivePattern
+      ? `${patternTile.image}, ${paletteStyle.getPropertyValue('--background-image').trim()}`
+      : patternTile.image
+    : backgroundImage;
+  const backgroundSize = patternTile
+    ? festivePattern
+      ? `${patternTile.size}, 100% 100%`
+      : patternTile.size
+    : pattern !== 'none'
+      ? paletteStyle.backgroundSize
+      : 'cover';
   const backgroundPosition = pattern !== 'none' ? paletteStyle.backgroundPosition : 'center';
   palette.remove();
   Object.assign(card.style, {
@@ -158,7 +170,8 @@ export async function renderShareCard(
     justifyContent: 'space-between',
     color,
     backgroundColor,
-    backgroundImage: patternTile?.image || backgroundImage,
+    backgroundImage: tileImage,
+    backgroundRepeat: patternTile && festivePattern ? 'repeat, no-repeat' : paletteStyle.backgroundRepeat,
     backgroundSize,
     backgroundPosition,
     fontFamily,

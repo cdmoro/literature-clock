@@ -1,8 +1,9 @@
-import { fitQuote, loadFontIfNotExists } from '../utils';
+import { fitQuote } from '../utils';
 import { store } from '../store';
+import { initFontPicker } from './font-picker';
 import { loadGoogleFont, normalizeFontName } from '../utils/google-font';
 import { getBaseLocale, getInterfaceLocale, getStrings } from './locales';
-import { getLocaleThemeFont, refreshLocaleThemeFonts } from './locale-fonts';
+import { getDefaultFontName, refreshLocaleThemeFonts } from './locale-fonts';
 import SETTINGS from '../strings/settings.json';
 import {
   effectiveFont,
@@ -121,7 +122,8 @@ export function refreshDefaultFontLabel() {
     fontRequest++;
     fontStatus();
   }
-  const name = getLocaleThemeFont(theme, locale) || THEME_FONTS[theme]?.[0] || 'Special Elite';
+  const name = getDefaultFontName(theme, locale);
+  option.dataset.previewFont = name;
   option.textContent = `${getStrings(getInterfaceLocale()).default_font} (${name})`;
   select.querySelectorAll('option:not([value="default"])').forEach((item) => item.remove());
   const suggestions = suggestedFonts(locale);
@@ -181,14 +183,15 @@ export function initFont() {
   });
   document.getElementById('reset-font')?.addEventListener('click', () => {
     resetFont();
-    document.getElementById('font-select')?.focus();
+    document.getElementById('font-picker-trigger')?.focus();
   });
   document.getElementById('remove-custom-font')?.addEventListener('click', (event) => {
     event.preventDefault();
     removeCustomFont();
-    document.getElementById('font-select')?.focus();
+    document.getElementById('font-picker-trigger')?.focus();
   });
   refreshRemovalButton();
+  if (select) initFontPicker(select);
 }
 
 function fontStatus(
@@ -239,8 +242,21 @@ export async function applyCustomFont(value: string, restoreDefaultOnError = fal
       customFonts.push(name);
       saveCustomFonts();
     }
-    loadFontIfNotExists(name);
     selectFont(name);
+    if (!loadedFonts.has(name)) {
+      fontStatus('settings_font_loading');
+      try {
+        await loadGoogleFont(name);
+        loadedFonts.add(name);
+        if (request === fontRequest) {
+          fontStatus();
+          fitQuote();
+        }
+      } catch {
+        if (request === fontRequest) fail();
+        return;
+      }
+    }
     return true;
   }
   if (loadedFonts.has(name)) {

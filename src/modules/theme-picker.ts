@@ -1,9 +1,14 @@
 import { readingIcon } from './reading-icons';
 import { store } from '../store';
+import { getDefaultFontName } from './locale-fonts';
+import { loadFontPreview } from './font-picker';
 
 /** Render the actual theme CSS in an isolated, script-free document. */
 export function themePreviewDocument() {
   const root = document.documentElement.cloneNode(false) as HTMLElement;
+  const liveQuote = document.getElementById('quote');
+  const previewFont = liveQuote ? getComputedStyle(liveQuote).fontFamily.split(',')[0].replace(/["']/g, '').trim() : '';
+  root.dataset.previewFont = previewFont;
   const head = document.createElement('head');
   const base = document.createElement('base');
   const baseUrl = new URL(document.baseURI);
@@ -39,6 +44,11 @@ export function themePreviewDocument() {
     [data-theme|='festive'] #quote p { line-height: 1.8; padding-top: .4rem; }
     [data-theme|='festive'] #quote cite { font-size: .8rem; line-height: 1.8; }
     [data-theme|='festive'] .preview-attribution { -webkit-line-clamp: 1; }
+    [data-preview-font='Borel'] #quote p { padding-top: 0; }
+    [data-preview-font='Borel'] .preview-passage,
+    [data-preview-font='Borel'] .preview-attribution { line-height: 2.4; }
+    [data-preview-font='Borel'] .preview-passage { -webkit-line-clamp: 2; }
+    [data-preview-font='Borel'] .preview-attribution { -webkit-line-clamp: 1; }
     [data-theme|='anaglyph'] #quote { word-spacing: .08rem; }
     [data-theme='anaglyph-light'] #quote .time { text-shadow: 1px 0 #e60c05, -1px 0 #4be4e2; }
     [data-theme='anaglyph-dark'] #quote .time { text-shadow: 1px 0 #f50d3f, -1px 0 #41ceee; }
@@ -145,10 +155,33 @@ export function initThemePicker(dialog: HTMLDialogElement) {
     preview.style.visibility = 'visible';
   });
   const toggle = picker.querySelector<HTMLButtonElement>('#theme-picker-toggle')!;
+  const loadThemePreviews = () => {
+    const locale = document.getElementById('quote')?.lang || store.get('locale');
+    list.querySelectorAll<HTMLButtonElement>('.settings-theme-option').forEach((button) => {
+      const label = button.querySelector<HTMLElement>('.settings-theme-font-label')!;
+      const name = getDefaultFontName(button.dataset.value!, locale);
+      const text = label.textContent || '';
+      const key = JSON.stringify([name, text]);
+      if (label.dataset.previewKey === key) return;
+      label.dataset.previewKey = key;
+      button.dataset.previewFont = name;
+      label.style.removeProperty('font-family');
+      if (name === 'system-ui') label.style.fontFamily = 'system-ui, sans-serif';
+      else
+        void loadFontPreview(name, text)
+          .then((family) => {
+            if (label.dataset.previewKey === key) label.style.fontFamily = `"${family}", sans-serif`;
+          })
+          .catch(() => {
+            /* Keep theme names readable if a sample cannot load. */
+          });
+    });
+  };
   const setExpanded = (expanded: boolean) => {
     toggle.setAttribute('aria-expanded', String(expanded));
     list.hidden = !expanded;
     preview.hidden = expanded;
+    if (expanded) loadThemePreviews();
   };
   toggle.addEventListener('click', () => setExpanded(list.hidden));
   document.addEventListener('click', (event) => {
@@ -190,6 +223,7 @@ export function initThemePicker(dialog: HTMLDialogElement) {
       swatch.className = 'settings-theme-swatch';
       swatch.setAttribute('aria-hidden', 'true');
       const label = document.createElement('span');
+      label.className = 'settings-theme-font-label';
       label.dataset.text = option.dataset.text;
       label.textContent = option.textContent;
       const check = document.createElement('span');
@@ -224,6 +258,7 @@ export function initThemePicker(dialog: HTMLDialogElement) {
         .querySelector('[role="group"]')!
         .setAttribute('aria-label', select.querySelectorAll('optgroup')[index].label);
     });
+    if (!list.hidden) loadThemePreviews();
     if (!dialog.open) return;
     const source = themePreviewDocument();
     if (preview.srcdoc !== source) {

@@ -6,12 +6,15 @@ import { initSpeech } from './speech';
 import { initTheme } from './themes';
 import { createStore, store } from '../store';
 import { themePreviewDocument } from './theme-picker';
+import { loadFontPreview } from './font-picker';
 
 vi.mock('../utils', () => ({ doFitQuote: vi.fn(), fitQuote: vi.fn(), loadFontIfNotExists: vi.fn() }));
 vi.mock('./font', () => ({ THEME_FONTS: {}, resetFont: vi.fn(), refreshDefaultFontLabel: vi.fn() }));
+vi.mock('./font-picker', () => ({ loadFontPreview: vi.fn().mockResolvedValue('ThemeSample') }));
 vi.mock('./horizon', () => ({ setDayParameters: vi.fn() }));
 
 afterEach(() => {
+  vi.mocked(loadFontPreview).mockClear();
   document.body.innerHTML = '';
   document.head.querySelector('#test-theme-styles')?.remove();
   localStorage.clear();
@@ -457,4 +460,30 @@ test('scheme buttons reuse toolbar icons and synchronize with the saved theme an
   document.getElementById('scheme-toggle')!.click();
   expect(store.get('theme')).toBe('base-system');
   expect(buttons.querySelector('[data-scheme="system"]')!.getAttribute('aria-pressed')).toBe('true');
+});
+
+test('theme names load default font subsets only when the theme menu opens', async () => {
+  document.body.innerHTML = page;
+  createStore();
+  document.getElementById('quote')!.lang = 'en-GB';
+  document.getElementById('quote')!.style.fontFamily = 'Roboto';
+  initSettingsDialog();
+  expect(loadFontPreview).not.toHaveBeenCalled();
+  document.getElementById('theme-picker-toggle')!.click();
+  expect(loadFontPreview).toHaveBeenCalledWith('Special Elite', expect.any(String));
+  expect(loadFontPreview).toHaveBeenCalledWith('Borel', expect.any(String));
+  expect(loadFontPreview).toHaveBeenCalledWith('VT323', expect.any(String));
+  await Promise.resolve();
+  const label = document.querySelector<HTMLElement>(
+    '.settings-theme-option[data-value="festive"] .settings-theme-font-label',
+  )!;
+  await vi.waitFor(() => expect(label.style.fontFamily).toContain('ThemeSample'));
+  const count = vi.mocked(loadFontPreview).mock.calls.length;
+  document.getElementById('theme-picker-toggle')!.click();
+  document.getElementById('theme-picker-toggle')!.click();
+  expect(loadFontPreview).toHaveBeenCalledTimes(count);
+  document.getElementById('quote')!.lang = 'ru-RU';
+  document.querySelector('#settings-dialog')!.dispatchEvent(new Event('settings-preview'));
+  expect(loadFontPreview).toHaveBeenCalledWith('Pacifico', expect.any(String));
+  expect(loadFontPreview).toHaveBeenCalledWith('DotGothic16', expect.any(String));
 });

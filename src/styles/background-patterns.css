@@ -185,3 +185,29 @@ html[data-background-pattern]:not([data-background-pattern='none']) body,
   --pattern-image: url('../assets/patterns/constellations.svg');
   --pattern-size: 960px 768px;
 }
+
+/* Keep the Festive gradient full-size underneath every pattern layer. */
+[data-background-pattern] {
+  --pattern-layer-sizes: var(--pattern-size);
+  --pattern-layer-repeats: repeat;
+}
+[data-background-pattern='grid'],
+[data-background-pattern='noise'] {
+  --pattern-layer-sizes: var(--pattern-size), var(--pattern-size);
+  --pattern-layer-repeats: repeat, repeat;
+}
+[data-background-pattern='zigzag'] {
+  --pattern-layer-sizes: var(--pattern-size), var(--pattern-size), var(--pattern-size), var(--pattern-size);
+  --pattern-layer-repeats: repeat, repeat, repeat, repeat;
+}
+html[data-theme|='festive'][data-background-pattern]:not([data-background-pattern='none']) body,
+.background-pattern-surface[data-theme|='festive'][data-background-pattern]:not([data-background-pattern='none']) {
+  background-image: var(--pattern-image), var(--background-image);
+  background-size:
+    var(--pattern-layer-sizes),
+    100% 100%;
+  background-position:
+    var(--pattern-position, 0 0),
+    0 0;
+  background-repeat: var(--pattern-layer-repeats), no-repeat;
+}

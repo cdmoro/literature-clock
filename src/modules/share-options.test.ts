@@ -387,3 +387,137 @@ it('saves custom colors for other palettes and keeps the image accent when a swa
   expect(selectedCardOptions().color).toBe('#123456');
   expect(state.color).toBe('#d24335');
 });
+
+it('selects an image font through the preview picker without changing the clock font', () => {
+  vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('Offline')));
+  const customization = document.querySelector<HTMLDetailsElement>('.share-customization')!;
+  customization.open = true;
+  document.getElementById('share-preview-font-trigger')!.click();
+  document.querySelector<HTMLButtonElement>('#share-preview .font-picker-options button[data-value="Lora"]')!.click();
+  expect(selectedCardOptions().font).toBe('Lora');
+  expect(state.font).toBe('default');
+  expect(document.querySelector<HTMLSelectElement>('#font-select')!.value).toBe('default');
+  expect(document.getElementById('share-preview-font-trigger')!.textContent).toBe('Lora');
+  document.querySelector<HTMLDialogElement>('#share-preview')!.close();
+  expect(document.getElementById('share-preview-font-trigger')).toBeNull();
+  vi.unstubAllGlobals();
+});
+
+it('names the default font for the image theme and keeps it updated when changing themes', async () => {
+  const option = () => document.querySelector<HTMLOptionElement>('#share-preview-font option[value="default"]')!;
+  expect(option().textContent).toBe('Default font (Special Elite)');
+  expect(option().dataset.previewFont).toBe('Special Elite');
+  button('Next theme').click();
+  expect(option().textContent).toBe('Default font (Libre Baskerville)');
+  expect(option().dataset.previewFont).toBe('Libre Baskerville');
+  await Promise.resolve();
+  expect(document.getElementById('share-preview-font-trigger')!.textContent).toBe('Default font (Libre Baskerville)');
+  expect(selectedCardOptions().font).toBe('default');
+  expect(state.font).toBe('default');
+});
+
+it('resolves the default image font from the passage language rather than the interface language', () => {
+  button('Close').click();
+  state['active-quote'] = { id: '1200-002', quote_raw: 'Russian quote', locale: 'ru-RU', time: '12:00' };
+  document.getElementById('share')!.click();
+  const option = document.querySelector<HTMLOptionElement>('#share-preview-font option[value="default"]')!;
+  expect(option.textContent).toBe('Default font (Pangolin)');
+  expect(option.dataset.previewFont).toBe('Pangolin');
+  button('Next theme').click();
+  expect(option.textContent).toBe('Default font (Literata)');
+  expect(option.dataset.previewFont).toBe('Literata');
+});
+
+it.each([0, 1])('consumes the font tap compatibility click in the sharing popup (detail %s)', (detail) => {
+  vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('Offline')));
+  document.getElementById('share-preview-font-trigger')!.click();
+  const option = document.querySelector<HTMLButtonElement>(
+    '#share-preview .font-picker-options button[data-value="Lora"]',
+  )!;
+  const pointer = (type: string) => {
+    const event = new MouseEvent(type, { bubbles: true, cancelable: true, clientX: 50, clientY: 100 });
+    Object.defineProperties(event, { pointerType: { value: 'touch' }, pointerId: { value: 1 } });
+    return event;
+  };
+  option.dispatchEvent(pointer('pointerdown'));
+  option.dispatchEvent(pointer('pointerup'));
+  expect(selectedCardOptions().font).toBe('Lora');
+  // Closing the menu and rendering the preview can move the underlying control.
+  const underlying = button('Light');
+  const ghost = new MouseEvent('click', { bubbles: true, cancelable: true, detail, clientX: 50, clientY: 200 });
+  underlying.dispatchEvent(ghost);
+  expect(ghost.defaultPrevented).toBe(true);
+  expect(underlying.getAttribute('aria-pressed')).toBe('false');
+  underlying.dispatchEvent(pointer('pointerdown'));
+  underlying.dispatchEvent(new MouseEvent('click', { bubbles: true, detail: 1 }));
+  expect(underlying.getAttribute('aria-pressed')).toBe('true');
+});
+
+it('renders the image only when the selected font changes', () => {
+  vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('Offline')));
+  const choose = (value: string) => {
+    document.getElementById('share-preview-font-trigger')!.click();
+    document
+      .querySelector<HTMLButtonElement>(`#share-preview .font-picker-options button[data-value="${value}"]`)!
+      .click();
+    expect(document.getElementById('share-preview-font-trigger')!.getAttribute('aria-expanded')).toBe('false');
+  };
+  vi.mocked(renderShareCard).mockClear();
+  choose('default');
+  expect(renderShareCard).not.toHaveBeenCalled();
+  choose('Lora');
+  expect(renderShareCard).toHaveBeenCalledTimes(1);
+  choose('Lora');
+  choose('Lora');
+  expect(renderShareCard).toHaveBeenCalledTimes(1);
+  choose('Special Elite');
+  expect(renderShareCard).toHaveBeenCalledTimes(2);
+  choose('Lora');
+  expect(renderShareCard).toHaveBeenCalledTimes(3);
+});
+
+it('cancels touchend and all follow-up clicks until the next gesture in the sharing font menu', () => {
+  vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('Offline')));
+  document.getElementById('share-preview-font-trigger')!.click();
+  const option = document.querySelector<HTMLButtonElement>(
+    '#share-preview .font-picker-options button[data-value="Lora"]',
+  )!;
+  for (const type of ['pointerdown', 'pointerup']) {
+    const event = new MouseEvent(type, { bubbles: true, cancelable: true });
+    Object.defineProperties(event, { pointerType: { value: 'touch' }, pointerId: { value: 1 } });
+    option.dispatchEvent(event);
+  }
+  const underlying = button('Light');
+  const end = new Event('touchend', { bubbles: true, cancelable: true });
+  underlying.dispatchEvent(end);
+  expect(end.defaultPrevented).toBe(true);
+  for (let i = 0; i < 2; i++) {
+    const click = new MouseEvent('click', { bubbles: true, cancelable: true });
+    underlying.dispatchEvent(click);
+    expect(click.defaultPrevented).toBe(true);
+  }
+  expect(underlying.getAttribute('aria-pressed')).toBe('false');
+  underlying.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, key: 'Enter' }));
+  underlying.click();
+  expect(underlying.getAttribute('aria-pressed')).toBe('true');
+});
+
+it('keeps the previous canvas visible while a new preview is rendering', async () => {
+  await vi.waitFor(() => expect(document.querySelector('.share-preview-image canvas')).not.toBeNull());
+  const preview = document.querySelector<HTMLElement>('.share-preview-image')!;
+  const previous = preview.querySelector('canvas')!;
+  let finish!: (canvas: HTMLCanvasElement) => void;
+  vi.mocked(renderShareCard).mockReturnValueOnce(
+    new Promise((resolve) => {
+      finish = resolve;
+    }),
+  );
+  button('Light').click();
+  expect(preview.querySelector('canvas')).toBe(previous);
+  expect(preview.getAttribute('aria-busy')).toBe('true');
+  const next = document.createElement('canvas');
+  finish(next);
+  await vi.waitFor(() => expect(preview.querySelector('canvas')).toBe(next));
+  expect(preview.getAttribute('aria-busy')).toBe('false');
+  expect(preview.children).toHaveLength(1);
+});
