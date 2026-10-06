@@ -269,6 +269,7 @@ function initToolbarPalette(control: HTMLElement) {
   const close = (focus = false) => {
     panel.hidden = true;
     toggle.setAttribute('aria-expanded', 'false');
+    panel.querySelector<HTMLButtonElement>('.color-manage[aria-pressed="true"]')?.click();
     if (focus) toggle.focus();
   };
   const position = () => {

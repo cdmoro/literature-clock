@@ -375,3 +375,31 @@ test.each(['default', 'blue'])('opening the palette with the keyboard focuses th
   expect(document.getElementById('toolbar-color-palette')!.hidden).toBe(true);
   expect(document.activeElement).toBe(toggle);
 });
+
+test.each(['toggle', 'outside', 'escape', 'resize', 'focusout', 'default'])(
+  'closing the palette via %s cancels editing before reopening',
+  (method) => {
+    localStorage.setItem('custom-colors', JSON.stringify(['#123456']));
+    createStore();
+    initTheme();
+    const toggle = document.getElementById('toolbar-color-toggle')!;
+    const panel = document.getElementById('toolbar-color-palette')!;
+    toggle.click();
+    const manage = panel.querySelector<HTMLButtonElement>('.color-manage')!;
+    manage.click();
+    expect(manage.getAttribute('aria-pressed')).toBe('true');
+    expect(panel.querySelector('.is-removing')).not.toBeNull();
+    if (method === 'toggle') toggle.click();
+    if (method === 'outside') document.body.click();
+    if (method === 'escape') panel.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+    if (method === 'resize') window.dispatchEvent(new Event('resize'));
+    if (method === 'focusout')
+      panel.dispatchEvent(new FocusEvent('focusout', { relatedTarget: document.body, bubbles: true }));
+    if (method === 'default') panel.querySelector<HTMLButtonElement>('.palette-reset')!.click();
+    expect(panel.hidden).toBe(true);
+    toggle.click();
+    expect(manage.getAttribute('aria-pressed')).toBe('false');
+    expect(panel.querySelector('.is-removing')).toBeNull();
+    expect(JSON.parse(localStorage.getItem('custom-colors')!)).toEqual(['#123456']);
+  },
+);
