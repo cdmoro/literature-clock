@@ -1,6 +1,7 @@
 import AppKit
 import ScreenSaver
 import WebKit
+import os
 
 enum ClockLocale {
     static func resolve(_ identifier: String, supported: [String]) -> String {
@@ -48,6 +49,7 @@ final class LiteratureClockView: ScreenSaverView, WKNavigationDelegate {
     private var active = false
     private var recoveryAttempts = 0
     private var loadedSettings: String?
+    private let diagnosticLog = OSLog(subsystem: "net.literatureclock.saver", category: "renderer")
     private static let settingsChanged = Notification.Name("net.literatureclock.web-saver.settingsChanged")
     private var web: WKWebView?
     private var sheet: NSWindow?
@@ -118,7 +120,18 @@ final class LiteratureClockView: ScreenSaverView, WKNavigationDelegate {
         loadedSettings = settings
         let config = WKWebViewConfiguration()
         config.websiteDataStore = .nonPersistent()
+        // The system hosts remote saver surfaces in windows whose visibility
+        // does not reliably match the surface displayed in System Settings.
+        if #available(macOS 14.0, *) {
+            config.preferences.inactiveSchedulingPolicy = .none
+        }
         config.setURLSchemeHandler(BundledClock(root: resources.appendingPathComponent("Web")), forURLScheme: "literature")
+        // The web view is created on host start and destroyed on host stop.
+        // Its lifetime, rather than document.hidden in the remote window,
+        // controls clock updates and motion. Browser tabs retain normal behavior.
+        config.userContentController.addUserScript(WKUserScript(
+            source: "Object.defineProperty(window,'__literatureClockNativeHost',{value:true});",
+            injectionTime: .atDocumentStart, forMainFrameOnly: true))
         let style = "document.addEventListener('DOMContentLoaded',()=>{const s=document.createElement('style');s.textContent='footer, #exit-zen, .reading-notice {display:none !important}';document.head.append(s)});"
         config.userContentController.addUserScript(WKUserScript(source: style, injectionTime: .atDocumentStart, forMainFrameOnly: true))
         let view = WKWebView(frame: bounds, configuration: config)
@@ -126,6 +139,12 @@ final class LiteratureClockView: ScreenSaverView, WKNavigationDelegate {
         view.navigationDelegate = self
         addSubview(view)
         web = view
+        let diagnostic = resources.appendingPathComponent("Diagnostic.html")
+        if let html = try? String(contentsOf: diagnostic, encoding: .utf8) {
+            os_log("Starting minimal renderer page", log: diagnosticLog, type: .default)
+            view.loadHTMLString(html, baseURL: nil)
+            return
+        }
         var url = URLComponents(string: "literature://clock/index.html")!
         url.queryItems = keys.map { URLQueryItem(name: $0, value: String(describing: preferences.object(forKey: $0)!)) }
         // NSNumber booleans stringify as 0/1; the web clock requires true/false.
@@ -143,7 +162,27 @@ final class LiteratureClockView: ScreenSaverView, WKNavigationDelegate {
         }
         url.queryItems?.append(URLQueryItem(name: "ui-locale", value: systemLocale))
         url.queryItems?.append(URLQueryItem(name: "random-locale", value: selected.split(separator: ",").count > 1 ? "true" : "false"))
-        view.load(URLRequest(url: url.url!))
+        os_log("Loading clock settings: %{public}@", log: diagnosticLog, type: .default, url.percentEncodedQuery ?? "")
+        if FileManager.default.fileExists(atPath: resources.appendingPathComponent("StaticClock").path) {
+            os_log("Starting clock with animations disabled for diagnosis", log: diagnosticLog, type: .default)
+            for (key, value) in [("screensaver", "false"), ("transition", "none"), ("progressbar", "none")] {
+                url.queryItems?.removeAll { $0.name == key }
+                url.queryItems?.append(URLQueryItem(name: key, value: value))
+            }
+        }
+        // Load the initial document directly, as with the minimal renderer test.
+        // Keep the custom origin for bundled assets/catalogues and preserve URL
+        // settings before the module script initializes the clock.
+        do {
+            let file = resources.appendingPathComponent("Web/index.html")
+            let html = try String(contentsOf: file, encoding: .utf8)
+            let data = try JSONSerialization.data(withJSONObject: [url.url!.absoluteString])
+            let encoded = String(data: data, encoding: .utf8)!
+            let bootstrap = "<script>history.replaceState(null,'',\(encoded)[0]);</script>"
+            view.loadHTMLString(html.replacingOccurrences(of: "<head>", with: "<head>" + bootstrap), baseURL: url.url!)
+        } catch {
+            os_log("Cannot load bundled document: %{public}@", log: diagnosticLog, type: .error, String(describing: error))
+        }
     }
     private func releaseWebView() {
         web?.stopLoading()
@@ -171,9 +210,27 @@ final class LiteratureClockView: ScreenSaverView, WKNavigationDelegate {
         releaseWebView()
         startAnimation()
     }
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        os_log("Page loaded; preview=%{public}d windowVisible=%{public}d", log: diagnosticLog, type: .default,
+               isPreview ? 1 : 0, window?.isVisible == true ? 1 : 0)
+        for seconds in [2, 5, 10, 20, 65, 90] {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(seconds)) { [weak self, weak webView] in
+                guard let self, let webView, self.active, self.web === webView else { return }
+                webView.evaluateJavaScript("JSON.stringify({hidden:document.hidden,native:window.__literatureClockNativeHost,url:location.href,theme:document.documentElement.dataset.theme,variant:document.documentElement.dataset.variant,palette:document.documentElement.dataset.palette,progress:document.documentElement.dataset.progressbar,progressWidth:document.querySelector('#progress-bar')?.style.width,w:innerWidth,h:innerHeight,time:Date.now(),counter:document.querySelector('#counter')?.textContent,quote:document.querySelector('#quote p')?.textContent?.slice(0,80),background:getComputedStyle(document.body).backgroundColor,pOpacity:document.querySelector('#quote p')?getComputedStyle(document.querySelector('#quote p')).opacity:null,opacity:document.querySelector('#quote')?getComputedStyle(document.querySelector('#quote')).opacity:null,clock:document.querySelector('#clock')?document.querySelector('#clock').getBoundingClientRect().toJSON():null})") { result, error in
+                    os_log("Renderer sample %{public}d seconds: %{public}@ error=%{public}@", log: self.diagnosticLog,
+                           type: .default, seconds, String(describing: result), String(describing: error))
+                }
+                if #available(macOS 26.0, *) {
+                    os_log("Screen Time blocked=%{public}d", log: self.diagnosticLog, type: .default,
+                           webView.isBlockedByScreenTime ? 1 : 0)
+                }
+            }
+        }
+    }
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction,
                  decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        decisionHandler(navigationAction.request.url?.scheme == "literature" ? .allow : .cancel)
+        let url = navigationAction.request.url
+        decisionHandler(url?.scheme == "literature" || url?.absoluteString == "about:blank" ? .allow : .cancel)
     }
     override var hasConfigureSheet: Bool { true }
     override var configureSheet: NSWindow? {
@@ -304,6 +361,8 @@ final class LiteratureClockView: ScreenSaverView, WKNavigationDelegate {
             else if let button = control as? NSButton { preferences.set(button.state == .on, forKey: key) }
         }
         preferences.synchronize()
+        os_log("Saved clock settings: theme=%{public}@ languages=%{public}@", log: diagnosticLog, type: .default,
+               preferences.string(forKey: "theme") ?? "", preferences.string(forKey: "quote-locales") ?? "")
         closeOptions()
         DistributedNotificationCenter.default().postNotificationName(Self.settingsChanged, object: nil,
             userInfo: nil, deliverImmediately: true)

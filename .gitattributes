@@ -1,0 +1,3 @@
+# Preserve upstream font-license bytes for manifest checksum verification.
+screensavers/macos-native/Assets/Fonts/**/OFL.txt -text -whitespace
+screensavers/macos-native/Assets/Fonts/**/LICENSE.txt -text -whitespace

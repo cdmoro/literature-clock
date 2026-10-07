@@ -1,6 +1,7 @@
 import { store } from '../store';
 import { doFitQuote } from '../utils';
 import { resolveTransition } from '../utils/transition-settings';
+import { isClockVisible } from '../utils/visibility';
 
 let animations: Animation[] = [];
 let reducedMotion: MediaQueryList | undefined;
@@ -11,7 +12,7 @@ export function cancelQuoteTransition() {
 }
 
 function mode() {
-  return document.hidden || reducedMotion?.matches ? 'none' : resolveTransition(store.get('transition'));
+  return !isClockVisible() || reducedMotion?.matches ? 'none' : resolveTransition(store.get('transition'));
 }
 
 async function animateQuote(entering: boolean) {
@@ -54,7 +55,9 @@ export async function transitionQuote(render: () => void, isCurrent: () => boole
 export function initTransitions() {
   reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   reducedMotion.addEventListener('change', cancelQuoteTransition);
-  document.addEventListener('visibilitychange', cancelQuoteTransition);
+  document.addEventListener('visibilitychange', () => {
+    if (!isClockVisible()) cancelQuoteTransition();
+  });
   const select = document.querySelector<HTMLSelectElement>('#transition-select');
   if (select) select.value = store.get('transition');
   select?.addEventListener('change', () => {

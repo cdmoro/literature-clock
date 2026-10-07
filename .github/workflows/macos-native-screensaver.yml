@@ -1,10 +1,12 @@
-name: macOS web screensaver (paused)
+name: macOS native screensaver
 
 on:
+  release:
+    types: [published]
   workflow_dispatch:
     inputs:
       release_tag:
-        description: 'Existing release tag to build and attach to (empty = preview artifact only)'
+        description: 'Existing macos-native-vX.Y.Z release tag (empty = preview artifact only)'
         required: false
         type: string
 
@@ -12,38 +14,44 @@ permissions:
   contents: read
 
 concurrency:
-  group: macos-screensaver-${{ github.event.release.tag_name || inputs.release_tag || github.ref }}
+  group: macos-native-screensaver-${{ github.event.release.tag_name || inputs.release_tag || github.ref }}
   cancel-in-progress: false
 
 jobs:
   build:
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.release.tag_name, 'macos-native-v')
     runs-on: macos-15
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.release.tag_name || inputs.release_tag || github.ref }}
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: npm
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Install web dependencies
-        run: npm ci
-      - name: Build universal saver and package
+      - name: Validate independent screensaver version
         env:
           RELEASE_TAG: ${{ github.event.release.tag_name || inputs.release_tag }}
         run: |
-          version="${RELEASE_TAG:-0.1.0}"
-          python3 screensavers/macos/build.py --universal --version "$version"
+          python3 - <<'PYTHON'
+          import os
+          import re
+          tag = os.environ['RELEASE_TAG']
+          if tag and not re.fullmatch(r'macos-native-v\d+\.\d+\.\d+', tag):
+              raise SystemExit('Use a macos-native-vX.Y.Z release tag; web releases have separate versions.')
+          PYTHON
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name || inputs.release_tag || github.ref }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build universal native saver and package
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name || inputs.release_tag }}
+        run: |
+          version="${RELEASE_TAG#macos-native-v}"
+          python3 screensavers/macos-native/build.py --universal --version "${version:-0.1.0}"
       - uses: actions/upload-artifact@v4
         with:
-          name: Literature-Clock-Web-macOS-universal
+          name: Literature-Clock-Native-macOS-universal
           path: |
-            screensavers/macos/build/Literature-Clock-Web-macOS-universal.zip
-            screensavers/macos/build/Literature-Clock-Web-macOS-universal.zip.sha256
+            screensavers/macos-native/build/Literature-Clock-Native-macOS.zip
+            screensavers/macos-native/build/Literature-Clock-Native-macOS.zip.sha256
           if-no-files-found: error
           retention-days: 30
 
@@ -56,7 +64,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: Literature-Clock-Web-macOS-universal
+          name: Literature-Clock-Native-macOS-universal
           path: package
       - name: Attach downloads to existing release
         env:
@@ -74,9 +82,11 @@ jobs:
                                   check=True, capture_output=True, text=True)
           existing = {asset['name'] for asset in json.loads(result.stdout)['assets']}
           files = sorted(Path('package').glob('*'))
-          missing = [str(file) for file in files if file.name not in existing]
-          if missing:
-              subprocess.run(['gh', 'release', 'upload', tag, *missing], check=True)
+          attached = [file for file in files if file.name in existing]
+          if attached and len(attached) != len(files):
+              raise SystemExit('Release has a partial ZIP/checksum pair; refusing to attach a newly built checksum to an older ZIP.')
+          if not attached:
+              subprocess.run(['gh', 'release', 'upload', tag, *[str(file) for file in files]], check=True)
           else:
               print('Downloads already attached; leaving existing assets unchanged.')
           PYTHON

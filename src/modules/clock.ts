@@ -2,6 +2,7 @@ import { updateQuote } from './quotes';
 import { getLiveTime, updateFavicon } from '../utils';
 import { setDayParameters } from './horizon';
 import { store } from '../store';
+import { isClockVisible } from '../utils/visibility';
 
 let lastTime: string;
 
@@ -58,7 +59,7 @@ export function initClock() {
       clearInterval(clockTimer);
       if (progressFrame !== undefined) cancelAnimationFrame(progressFrame);
       progressFrame = undefined;
-      if (document.hidden) return;
+      if (!isClockVisible()) return;
       void updateTime();
       clockTimer = setInterval(updateTime, 1000);
       if (store.get('progressbar') !== 'none') {

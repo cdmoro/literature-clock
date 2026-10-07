@@ -18,12 +18,22 @@ def run(*args):
     subprocess.run(args, cwd=ROOT, check=True)
 
 
-def bundle(name, extension, sources, architectures, version, library=False, reuse_resources=False):
+def bundle(name, extension, sources, architectures, version, library=False, reuse_resources=False, minimal_page=False, static_clock=False):
     contents = OUTPUT / f'{name}.{extension}' / 'Contents'
     resources = contents / 'Resources'
     binary = contents / 'MacOS' / name
     binary.parent.mkdir(parents=True, exist_ok=True)
     resources.mkdir(parents=True, exist_ok=True)
+    diagnostic = resources / 'Diagnostic.html'
+    static_marker = resources / 'StaticClock'
+    if static_clock:
+        static_marker.write_text('Diagnostic: disable clock animations')
+    elif static_marker.exists():
+        static_marker.unlink()
+    if minimal_page:
+        diagnostic.write_text('''<!doctype html><html><meta name="viewport" content="width=device-width"><style>body{background:#123354;color:white;font:48px system-ui;margin:0;display:grid;place-content:center;height:100vh}#counter{font-size:90px}</style><body>Renderer test<div id="counter">0</div><script>let n=0;setInterval(()=>document.querySelector('#counter').textContent=++n,1000)</script></body></html>''')
+    elif diagnostic.exists():
+        diagnostic.unlink()
     web = resources / 'Web'
     if not reuse_resources:
         if web.exists():
@@ -77,6 +87,8 @@ def main():
     parser.add_argument('--universal', action='store_true', help='Build Apple Silicon and Intel slices')
     parser.add_argument('--skip-web', action='store_true', help='Reuse an existing dist build')
     parser.add_argument('--reuse-resources', action='store_true', help='For Swift-only iteration: reuse existing bundled web files (requires --skip-web)')
+    parser.add_argument('--minimal-page', action='store_true', help='Diagnostic build: show a plain counter instead of the clock')
+    parser.add_argument('--static-clock', action='store_true', help='Diagnostic build: disable clock animations without changing saved options')
     parser.add_argument('--version', default='0.1.0', help='Numeric release version, optionally prefixed with v')
     args = parser.parse_args()
     if args.reuse_resources and not args.skip_web:
@@ -91,8 +103,8 @@ def main():
         parser.error('dist must contain the built clock and generated catalogues')
     OUTPUT.mkdir(exist_ok=True)
     architectures = ['arm64', 'x86_64'] if args.universal else ['arm64']
-    saver = bundle('Literature Clock Web', 'saver', ['LiteratureClockView.swift'], architectures, version, library=True, reuse_resources=args.reuse_resources)
-    preview = bundle('Literature Clock Preview', 'app', ['LiteratureClockView.swift', 'Preview.swift'], architectures, version, reuse_resources=args.reuse_resources)
+    saver = bundle('Literature Clock Web', 'saver', ['LiteratureClockView.swift'], architectures, version, library=True, reuse_resources=args.reuse_resources, minimal_page=args.minimal_page, static_clock=args.static_clock)
+    preview = bundle('Literature Clock Preview', 'app', ['LiteratureClockView.swift', 'Preview.swift'], architectures, version, reuse_resources=args.reuse_resources, minimal_page=args.minimal_page, static_clock=args.static_clock)
     package = OUTPUT / f'Literature-Clock-Web-macOS-{"universal" if args.universal else "arm64"}.zip'
     run('ditto', '-c', '-k', '--sequesterRsrc', '--keepParent', str(saver), str(package))
     digest = hashlib.sha256(package.read_bytes()).hexdigest()
