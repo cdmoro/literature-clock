@@ -17,7 +17,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     static let settingsChanged = Notification.Name("net.literatureclock.native-saver.settingsChanged")
     var preferences: UserDefaults = ScreenSaverDefaults(forModuleWithName: "net.literatureclock.native-saver")!
     var resources: URL { Bundle(for: NativeClockView.self).resourceURL! }
-    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background-pattern", "locale"]
+    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background-pattern", "locale", "photo-provider", "photo-category"]
     var photoDownloadsEnabled = true
     private lazy var photoBackground = NativePhotoBackground()
     var active = false
@@ -69,7 +69,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     private func setup() {
         preferences.register(defaults: ["theme": "base-dark", "screensaver": true, "show-time": true,
                                        "hide-book-title": false, "work": true, "progressbar": "background", "quote-locales": "", "palette": "default",
-                                       "custom-color": "#d24335", "background-pattern": "none"])
+                                       "custom-color": "#d24335", "background-pattern": "none", "photo-provider": "picsum", "photo-category": "all"])
         _ = Self.bundledFonts
         animationTimeInterval = 1.0 / 60.0
         Self.instances.add(self)
@@ -114,6 +114,14 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let notice = fallbacks[quoteLocale] ?? fallbacks["en-GB"]
         quote = NativeQuote(first: notice?.first ?? "", time: minute, last: notice?.last ?? "", title: "", author: "", sfw: true)
     }
+    static func timeInset(viewFrame: NSRect, screenFrame: NSRect, safeTop: CGFloat) -> CGFloat {
+        8 + max(0, min(viewFrame.height, viewFrame.maxY - (screenFrame.maxY - safeTop)))
+    }
+    private var timeTopInset: CGFloat {
+        guard !isPreview, let window, let screen = window.screen else { return 8 }
+        let frame = window.convertToScreen(convert(bounds, to: nil))
+        return Self.timeInset(viewFrame: frame, screenFrame: screen.frame, safeTop: screen.safeAreaInsets.top)
+    }
     override func draw(_ dirtyRect: NSRect) {
         let now = Date()
         refreshQuote(now)
@@ -124,7 +132,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         background.setFill(); bounds.fill()
         NativeAppearance.drawThemeBackground(theme: theme, dark: dark, bounds: bounds, resources: resources)
         if theme == "photo" {
-            if photoDownloadsEnabled { photoBackground.update(now: now, size: bounds.size) { [weak self] in self?.needsDisplay = true } }
+            if photoDownloadsEnabled { photoBackground.update(now: now, size: bounds.size, provider: preferences.string(forKey: "photo-provider") ?? "picsum", category: preferences.string(forKey: "photo-category") ?? "all") { [weak self] in self?.needsDisplay = true } }
             photoBackground.draw(in: bounds, dark: dark)
         }
         let colors = NativeAppearance.presetColors
@@ -158,7 +166,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         if preferences.bool(forKey: "show-time") {
             let timeStyle = NSMutableParagraphStyle(); timeStyle.alignment = .center
             let font = NSFont.systemFont(ofSize: max(10, min(20, bounds.width * 0.013)), weight: .bold)
-            (lastMinute as NSString).draw(in: NSRect(x: 0, y: (NSGraphicsContext.current?.isFlipped ?? isFlipped) ? 8 : bounds.height - font.pointSize * 1.5 - 8, width: bounds.width, height: font.pointSize * 1.5),
+            (lastMinute as NSString).draw(in: NSRect(x: 0, y: (NSGraphicsContext.current?.isFlipped ?? isFlipped) ? timeTopInset : bounds.height - font.pointSize * 1.5 - timeTopInset, width: bounds.width, height: font.pointSize * 1.5),
                                         withAttributes: [.font: font, .foregroundColor: foreground, .paragraphStyle: timeStyle])
         }
         let width = bounds.width * 0.76
@@ -289,6 +297,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         for (key, label, values) in [
             ("theme-base", "theme", NativeAppearance.themes),
             ("theme-mode", "settings_scheme", ["light", "dark", "system"]),
+            ("photo-provider", "settings_photo_provider", ["picsum", "nasa"]),
+            ("photo-category", "settings_photo_category", ["all", "galaxies", "nebulae", "earth", "moon"]),
             ("palette", "settings_color", ["default", "red", "pink", "green", "orange", "purple", "blue", "gray", "random", "custom"]),
             ("background-pattern", "settings_background_pattern", NativeAppearance.patterns),
             ("progressbar", "progressbar_mode", ["none", "top", "bottom", "background"])
@@ -297,14 +307,15 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             let menu = NSPopUpButton()
             let value = key == "theme-base" ? parts.first : key == "theme-mode" ? parts.last : preferences.string(forKey: key)
             for raw in values {
-                let labelKey = key == "background-pattern" ? "settings_pattern_" + raw : key == "progressbar" ? "settings_progress_" + raw :
+                let labelKey = key == "photo-category" ? "settings_photo_" + raw : key == "background-pattern" ? "settings_pattern_" + raw : key == "progressbar" ? "settings_progress_" + raw :
                     raw == "custom" ? "settings_color_customize" : raw == "default" ? "default_font" : raw == "random" ? "settings_color_random" : raw
-                let label = text(labelKey)
+                let label = key == "photo-provider" ? (raw == "nasa" ? "NASA" : "Picsum") : text(labelKey)
                 let item = NSMenuItem(title: label, action: nil, keyEquivalent: "")
                 item.representedObject = raw
                 menu.menu?.addItem(item)
                 if raw == value { menu.select(item) }
             }
+            if key == "theme-base" || key == "photo-provider" { menu.target = self; menu.action = #selector(photoControlsChanged) }
             controls[key] = menu
             let title = NSTextField(labelWithString: text(label))
             title.widthAnchor.constraint(equalToConstant: 180).isActive = true
@@ -354,6 +365,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 stack.addArrangedSubview(channels)
             }
         }
+        photoControlsChanged()
         section("settings_behavior")
         for (key, label) in [("screensaver", "movement"), ("show-time", "time_mode"), ("hide-book-title", "settings_hide_book_title"), ("work", "work_mode_title")] {
             let check = NSButton(checkboxWithTitle: text(label), target: nil, action: nil)
@@ -465,6 +477,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         if let well = controls["custom-color"] as? NSColorWell {
             (controls["color-hex"] as? NSTextField)?.stringValue = NativeAppearance.hex(well.color)
         }
+    }
+    @objc private func photoControlsChanged() {
+        controls["photo-provider"]?.isEnabled = menuValue("theme-base") == "photo"
+        controls["photo-category"]?.isEnabled = menuValue("theme-base") == "photo" && menuValue("photo-provider") == "nasa"
     }
     func applyOptions(_ values: [String: Any]) {
         for key in Self.optionKeys {

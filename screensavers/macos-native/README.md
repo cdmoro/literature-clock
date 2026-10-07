@@ -1,6 +1,6 @@
 # Literature Clock Native — macOS prototype
 
-This experimental saver draws quotes with AppKit inside `ScreenSaverView`. It has no WebKit, JavaScript, browser or local server. Only the optional Photo theme downloads images; all quotes and fonts remain offline. It uses its own native settings domain.
+This experimental saver draws quotes with AppKit inside `ScreenSaverView`. It has no WebKit, JavaScript, browser or local server. Only the optional Photo theme downloads images and, for NASA, catalogue metadata; all quotes and fonts remain offline. It uses its own native settings domain.
 
 The prototype supports the 12 published quote languages, rotating selected languages each minute. No selected language follows the first preferred system language, with en-GB fallback. It includes light/dark/system appearance, accent colours, optional time, explicit-passage filtering, minute progress and movement starting at the centre. The native panel reuses the existing translations.
 
@@ -37,3 +37,11 @@ The web clock and native saver keep independent versions while sharing catalogue
 `.github/workflows/macos-native-screensaver.yml` builds universal bundles after a matching release is published, then attaches the ZIP and checksum to that existing release. It does not create or publish releases. Manual dispatch with an empty tag builds an Actions artifact from the selected branch; with an existing matching release tag it checks out that exact tag and attaches the ZIP/checksum pair without replacing existing files. A partial pair causes an explicit failure rather than attaching a newly built checksum to an older ZIP. The workflow must be on the default branch before manual dispatch is available. It requires no npm dependencies or font downloads.
 
 For immutable releases, create an **existing draft release**, run manual dispatch against its tag, wait for the assets and then publish the draft. Assets cannot be added to an immutable release after publication; a failed upload still leaves the build artifact in Actions. Release automation has not yet been run on GitHub.
+
+## Photo providers and safe screen area
+
+Choose Photo, then Picsum or NASA in Options. NASA needs no account or API key. Category queries come from `src/photo-providers.json`, shared with the web app. Each category search retrieves up to 100 results automatically and is cached in memory for an hour; images rotate each minute. All alternates between the four categories. NASA source credits are drawn over the background. Entries whose description identifies copyright protection are excluded; NASA occasionally includes third-party material, so this filter does not constitute a complete rights audit. No image list is maintained by hand.
+
+Downloads preserve the last successful image and its credit if NASA, Picsum or the internet is unavailable. The native saver stores that image and credit on disk for offline activation. The web app preserves the last loaded background during the current session. See [NASA media usage guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/).
+
+The time label uses the current screen's `safeAreaInsets.top` and the view's screen coordinates to avoid a camera housing. It keeps its normal margin on external screens, miniature previews, and windows that macOS has already positioned below the notch. Synthetic geometry checks cover these cases; actual full-screen placement on a Mac with a notch still needs verification.

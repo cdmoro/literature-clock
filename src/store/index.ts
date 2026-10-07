@@ -25,6 +25,8 @@ interface Stateful {
   palette: string;
   'custom-color': string;
   'background-pattern': BackgroundPattern;
+  'photo-provider': 'picsum' | 'nasa';
+  'photo-category': 'all' | 'galaxies' | 'nebulae' | 'earth' | 'moon';
   progressbar: ProgressbarMode;
   'random-locale': boolean;
 }
@@ -124,6 +126,12 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
         break;
       case 'transition':
         if (['none', 'fade', 'slide', 'blur', 'zoom'].includes(raw)) result[key] = raw;
+        break;
+      case 'photo-provider':
+        if (['picsum', 'nasa'].includes(raw)) result[key] = raw;
+        break;
+      case 'photo-category':
+        if (['all', 'galaxies', 'nebulae', 'earth', 'moon'].includes(raw)) result[key] = raw;
         break;
       case 'background-pattern':
         if (isBackgroundPattern(raw)) result[key] = raw;
@@ -376,6 +384,8 @@ export function createStore() {
     palette: 'default',
     'custom-color': '',
     'background-pattern': 'none',
+    'photo-provider': 'picsum',
+    'photo-category': 'all',
     progressbar: 'theme',
     'random-locale': false,
   });

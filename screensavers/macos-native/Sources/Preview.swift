@@ -4,13 +4,15 @@ final class PhotoCheckProtocol: URLProtocol {
     static var count = 0
     static var status = 200
     static var imageData = Data()
+    static var catalogueData = Data()
     override class func canInit(with request: URLRequest) -> Bool { true }
     override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
     override func startLoading() {
         Self.count += 1
-        let response = HTTPURLResponse(url: request.url!, statusCode: Self.status, httpVersion: "HTTP/1.1", headerFields: ["Content-Type": "image/png"])!
+        let isCatalogue = request.url?.host == "images-api.nasa.gov"
+        let response = HTTPURLResponse(url: request.url!, statusCode: Self.status, httpVersion: "HTTP/1.1", headerFields: ["Content-Type": isCatalogue ? "application/json" : "image/png"])!
         client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
-        client?.urlProtocol(self, didLoad: Self.imageData)
+        client?.urlProtocol(self, didLoad: isCatalogue ? Self.catalogueData : Self.imageData)
         client?.urlProtocolDidFinishLoading(self)
     }
     override func stopLoading() {}
@@ -119,12 +121,19 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             (clock.controls["hide-book-title"] as! NSButton).state = .on
             clock.perform(NSSelectorFromString("saveOptions"))
             precondition(clock.preferences.bool(forKey: "hide-book-title") && other.preferences.bool(forKey: "hide-book-title"), "Hide title did not reach other views")
+            _ = clock.configureSheet
+            for (key, value) in [("theme-base", "photo"), ("photo-provider", "nasa"), ("photo-category", "moon")] {
+                let menu = clock.controls[key] as! NSPopUpButton
+                menu.select(menu.itemArray.first { $0.representedObject as? String == value }!)
+            }
+            clock.perform(NSSelectorFromString("saveOptions"))
+            precondition(clock.preferences.string(forKey: "photo-provider") == "nasa" && other.preferences.string(forKey: "photo-category") == "moon", "Photo settings did not persist across views")
             let fixture = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: 4, pixelsHigh: 3, bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0)!
             PhotoCheckProtocol.imageData = fixture.representation(using: .png, properties: [:])!
             let config = URLSessionConfiguration.ephemeral
             config.protocolClasses = [PhotoCheckProtocol.self]
             let photoCache = output.appendingPathComponent(UUID().uuidString + ".jpg")
-            defer { try? FileManager.default.removeItem(at: photoCache) }
+            defer { try? FileManager.default.removeItem(at: photoCache); try? FileManager.default.removeItem(at: photoCache.appendingPathExtension("json")) }
             let photo = NativePhotoBackground(cacheURL: photoCache, session: URLSession(configuration: config))
             var loaded = false
             let now = Date()
@@ -143,7 +152,25 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             RunLoop.current.run(until: Date().addingTimeInterval(0.1))
             precondition(PhotoCheckProtocol.count == 2 && offline.image != nil && !unexpectedChange, "A failed download replaced the cached photo")
             photo.cancel(); offline.cancel()
-            print("PASS: 12 catalogues, 84 theme/locale font combinations, light/dark rendering, missing quote notice, reopening options custom colour save, preset restoration, hiding book titles, photo download throttling, caching and offline failure")
+            PhotoCheckProtocol.status = 200
+            PhotoCheckProtocol.catalogueData = Data(#"{"collection":{"items":[{"data":[{"nasa_id":"test","title":"Nebula","secondary_creator":"NASA/ESA"}],"links":[{"href":"https://images-assets.nasa.gov/image/test/test~medium.jpg","render":"image"}]}]}}"#.utf8)
+            let nasa = NativePhotoBackground(cacheURL: nil, session: URLSession(configuration: config))
+            var nasaLoaded = false
+            nasa.update(now: now, size: clock.bounds.size, provider: "nasa", category: "nebulae") { nasaLoaded = true }
+            let nasaDeadline = Date().addingTimeInterval(3)
+            while !nasaLoaded && Date() < nasaDeadline { RunLoop.current.run(until: Date().addingTimeInterval(0.01)) }
+            precondition(nasaLoaded && PhotoCheckProtocol.count == 4 && nasa.credit == "NASA/ESA", "NASA catalogue/image/credit failed")
+            nasaLoaded = false
+            nasa.update(now: now.addingTimeInterval(60), size: clock.bounds.size, provider: "nasa", category: "nebulae") { nasaLoaded = true }
+            let nextDeadline = Date().addingTimeInterval(3)
+            while !nasaLoaded && Date() < nextDeadline { RunLoop.current.run(until: Date().addingTimeInterval(0.01)) }
+            precondition(nasaLoaded && PhotoCheckProtocol.count == 5, "NASA catalogue was not cached")
+            nasa.cancel()
+            let screenFrame = NSRect(x: 0, y: 0, width: 1512, height: 982)
+            precondition(NativeClockView.timeInset(viewFrame: screenFrame, screenFrame: screenFrame, safeTop: 32) == 40)
+            precondition(NativeClockView.timeInset(viewFrame: NSRect(x: 0, y: 0, width: 1512, height: 950), screenFrame: screenFrame, safeTop: 32) == 8)
+            precondition(NativeClockView.timeInset(viewFrame: screenFrame, screenFrame: screenFrame, safeTop: 0) == 8)
+            print("PASS: 12 catalogues, 84 theme/locale font combinations, light/dark rendering, missing quote notice, reopening options custom colour save, preset restoration, hiding book titles, photo download throttling, caching and offline failure, automatic NASA catalogue/credits/cache, notch safe area")
             clock.stopAnimation(); NSApp.terminate(nil)
         }
     }

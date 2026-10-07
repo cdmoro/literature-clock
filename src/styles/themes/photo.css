@@ -68,3 +68,19 @@
 [data-theme='photo-dark'] body:not(.zen) footer {
   background: #00000093;
 }
+
+#photo-credit {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  max-width: min(70vw, 500px);
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #000a;
+  color: #fff;
+  font:
+    11px/1.4 system-ui,
+    sans-serif;
+  text-decoration: none;
+  z-index: 2;
+}

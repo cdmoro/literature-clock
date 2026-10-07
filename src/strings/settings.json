@@ -88,7 +88,14 @@
     "settings_pattern_garden": "Garden",
     "settings_pattern_clouds": "Clouds",
     "settings_pattern_constellations": "Constellations",
-    "settings_pattern_random": "Random each minute"
+    "settings_pattern_random": "Random each minute",
+    "settings_photo_provider": "Photo provider",
+    "settings_photo_category": "Photo category",
+    "settings_photo_all": "All",
+    "settings_photo_galaxies": "Galaxies",
+    "settings_photo_nebulae": "Nebulae",
+    "settings_photo_earth": "Earth",
+    "settings_photo_moon": "Moon"
   },
   "en-US": {
     "settings_title": "Settings",
@@ -179,7 +186,14 @@
     "settings_pattern_garden": "Garden",
     "settings_pattern_clouds": "Clouds",
     "settings_pattern_constellations": "Constellations",
-    "settings_pattern_random": "Random each minute"
+    "settings_pattern_random": "Random each minute",
+    "settings_photo_provider": "Photo provider",
+    "settings_photo_category": "Photo category",
+    "settings_photo_all": "All",
+    "settings_photo_galaxies": "Galaxies",
+    "settings_photo_nebulae": "Nebulae",
+    "settings_photo_earth": "Earth",
+    "settings_photo_moon": "Moon"
   },
   "es-ES": {
     "settings_title": "Configuración",
@@ -270,7 +284,14 @@
     "settings_pattern_garden": "Jardín",
     "settings_pattern_clouds": "Nubes",
     "settings_pattern_constellations": "Constelaciones",
-    "settings_pattern_random": "Aleatorio cada minuto"
+    "settings_pattern_random": "Aleatorio cada minuto",
+    "settings_photo_provider": "Proveedor de fotos",
+    "settings_photo_category": "Categoría de fotos",
+    "settings_photo_all": "Todas",
+    "settings_photo_galaxies": "Galaxias",
+    "settings_photo_nebulae": "Nebulosas",
+    "settings_photo_earth": "Tierra",
+    "settings_photo_moon": "Luna"
   },
   "pt-PT": {
     "settings_title": "Configurações",
@@ -361,7 +382,14 @@
     "settings_pattern_garden": "Jardim",
     "settings_pattern_clouds": "Nuvens",
     "settings_pattern_constellations": "Constelações",
-    "settings_pattern_random": "Aleatório a cada minuto"
+    "settings_pattern_random": "Aleatório a cada minuto",
+    "settings_photo_provider": "Fornecedor de fotografias",
+    "settings_photo_category": "Categoria de fotografias",
+    "settings_photo_all": "Todas",
+    "settings_photo_galaxies": "Galáxias",
+    "settings_photo_nebulae": "Nebulosas",
+    "settings_photo_earth": "Terra",
+    "settings_photo_moon": "Lua"
   },
   "fr-FR": {
     "settings_title": "Paramètres",
@@ -452,7 +480,14 @@
     "settings_pattern_garden": "Jardin",
     "settings_pattern_clouds": "Nuages",
     "settings_pattern_constellations": "Constellations",
-    "settings_pattern_random": "Aléatoire chaque minute"
+    "settings_pattern_random": "Aléatoire chaque minute",
+    "settings_photo_provider": "Fournisseur de photos",
+    "settings_photo_category": "Catégorie de photos",
+    "settings_photo_all": "Toutes",
+    "settings_photo_galaxies": "Galaxies",
+    "settings_photo_nebulae": "Nébuleuses",
+    "settings_photo_earth": "Terre",
+    "settings_photo_moon": "Lune"
   },
   "it-IT": {
     "settings_title": "Impostazioni",
@@ -543,7 +578,14 @@
     "settings_pattern_garden": "Giardino",
     "settings_pattern_clouds": "Nuvole",
     "settings_pattern_constellations": "Costellazioni",
-    "settings_pattern_random": "Casuale ogni minuto"
+    "settings_pattern_random": "Casuale ogni minuto",
+    "settings_photo_provider": "Fornitore di foto",
+    "settings_photo_category": "Categoria di foto",
+    "settings_photo_all": "Tutte",
+    "settings_photo_galaxies": "Galassie",
+    "settings_photo_nebulae": "Nebulose",
+    "settings_photo_earth": "Terra",
+    "settings_photo_moon": "Luna"
   },
   "de-DE": {
     "settings_title": "Einstellungen",
@@ -634,7 +676,14 @@
     "settings_pattern_garden": "Garten",
     "settings_pattern_clouds": "Wolken",
     "settings_pattern_constellations": "Sternbilder",
-    "settings_pattern_random": "Zufällig jede Minute"
+    "settings_pattern_random": "Zufällig jede Minute",
+    "settings_photo_provider": "Fotoanbieter",
+    "settings_photo_category": "Fotokategorie",
+    "settings_photo_all": "Alle",
+    "settings_photo_galaxies": "Galaxien",
+    "settings_photo_nebulae": "Nebel",
+    "settings_photo_earth": "Erde",
+    "settings_photo_moon": "Mond"
   },
   "el-GR": {
     "settings_title": "Ρυθμίσεις",
@@ -725,7 +774,14 @@
     "settings_pattern_garden": "Κήπος",
     "settings_pattern_clouds": "Σύννεφα",
     "settings_pattern_constellations": "Αστερισμοί",
-    "settings_pattern_random": "Τυχαίο κάθε λεπτό"
+    "settings_pattern_random": "Τυχαίο κάθε λεπτό",
+    "settings_photo_provider": "Πάροχος φωτογραφιών",
+    "settings_photo_category": "Κατηγορία φωτογραφιών",
+    "settings_photo_all": "Όλες",
+    "settings_photo_galaxies": "Γαλαξίες",
+    "settings_photo_nebulae": "Νεφελώματα",
+    "settings_photo_earth": "Γη",
+    "settings_photo_moon": "Σελήνη"
   },
   "zh-CN": {
     "settings_title": "设置",
@@ -816,7 +872,14 @@
     "settings_pattern_garden": "花园",
     "settings_pattern_clouds": "云朵",
     "settings_pattern_constellations": "星座",
-    "settings_pattern_random": "每分钟随机"
+    "settings_pattern_random": "每分钟随机",
+    "settings_photo_provider": "照片来源",
+    "settings_photo_category": "照片分类",
+    "settings_photo_all": "全部",
+    "settings_photo_galaxies": "星系",
+    "settings_photo_nebulae": "星云",
+    "settings_photo_earth": "地球",
+    "settings_photo_moon": "月球"
   },
   "ru-RU": {
     "settings_title": "Настройки",
@@ -907,7 +970,14 @@
     "settings_pattern_garden": "Сад",
     "settings_pattern_clouds": "Облака",
     "settings_pattern_constellations": "Созвездия",
-    "settings_pattern_random": "Случайный каждую минуту"
+    "settings_pattern_random": "Случайный каждую минуту",
+    "settings_photo_provider": "Источник фотографий",
+    "settings_photo_category": "Категория фотографий",
+    "settings_photo_all": "Все",
+    "settings_photo_galaxies": "Галактики",
+    "settings_photo_nebulae": "Туманности",
+    "settings_photo_earth": "Земля",
+    "settings_photo_moon": "Луна"
   },
   "eo": {
     "settings_title": "Agordoj",
@@ -998,7 +1068,14 @@
     "settings_pattern_garden": "Ĝardeno",
     "settings_pattern_clouds": "Nuboj",
     "settings_pattern_constellations": "Konstelacioj",
-    "settings_pattern_random": "Hazarda ĉiuminute"
+    "settings_pattern_random": "Hazarda ĉiuminute",
+    "settings_photo_provider": "Fotoprovizanto",
+    "settings_photo_category": "Fotokategorio",
+    "settings_photo_all": "Ĉiuj",
+    "settings_photo_galaxies": "Galaksioj",
+    "settings_photo_nebulae": "Nebulozoj",
+    "settings_photo_earth": "Tero",
+    "settings_photo_moon": "Luno"
   },
   "ar-AE": {
     "settings_title": "الإعدادات",
@@ -1089,6 +1166,13 @@
     "settings_pattern_garden": "الحديقة",
     "settings_pattern_clouds": "السحب",
     "settings_pattern_constellations": "كوكبات النجوم",
-    "settings_pattern_random": "عشوائي كل دقيقة"
+    "settings_pattern_random": "عشوائي كل دقيقة",
+    "settings_photo_provider": "مصدر الصور",
+    "settings_photo_category": "فئة الصور",
+    "settings_photo_all": "الكل",
+    "settings_photo_galaxies": "المجرات",
+    "settings_photo_nebulae": "السدم",
+    "settings_photo_earth": "الأرض",
+    "settings_photo_moon": "القمر"
   }
 }
