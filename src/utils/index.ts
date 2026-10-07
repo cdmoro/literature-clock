@@ -147,7 +147,18 @@ export function doFitQuote() {
   }
 }
 
+const observedFontSets = new WeakSet<FontFaceSet>();
+
 export function fitQuote() {
+  // Locale fonts can finish loading after the initial 500 ms fitting window.
+  // Re-measure the current quote with the actual glyph metrics, including when
+  // a language changes or a remote font falls back after a loading error.
+  const fonts = document.fonts;
+  if (fonts && !observedFontSets.has(fonts)) {
+    fonts.addEventListener('loadingdone', doFitQuote);
+    fonts.addEventListener('loadingerror', doFitQuote);
+    observedFontSets.add(fonts);
+  }
   // Fit newly inserted text before the browser can paint an overflowing frame.
   doFitQuote();
   const interval = setInterval(doFitQuote, 1);

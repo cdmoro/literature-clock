@@ -23,6 +23,36 @@ describe('getFaviconFileName', () => {
   });
 });
 
+test('refits Greek text when its font loads after the initial fitting window', () => {
+  vi.useFakeTimers();
+  const previous = Object.getOwnPropertyDescriptor(document, 'fonts');
+  const fonts = new EventTarget();
+  Object.defineProperty(document, 'fonts', { configurable: true, value: fonts });
+  let loaded = false;
+  try {
+    createStore();
+    store.set('screensaver', false, false);
+    document.body.innerHTML = '<blockquote id="quote" lang="el"><p style="max-height: 200px">Ελληνικό απόσπασμα</p><cite>Author</cite></blockquote>';
+    const passage = document.querySelector<HTMLElement>('#quote > p')!;
+    Object.defineProperty(passage, 'clientHeight', { get: () => 200 });
+    Object.defineProperty(passage, 'scrollHeight', { get: () => parseFloat(passage.style.fontSize) * (loaded ? 6 : 2) });
+    fitQuote();
+    vi.advanceTimersByTime(1000);
+    const initial = parseFloat(passage.style.fontSize);
+    loaded = true;
+    expect(passage.scrollHeight).toBeGreaterThan(201);
+    fonts.dispatchEvent(new Event('loadingdone'));
+    expect(parseFloat(passage.style.fontSize)).toBeLessThan(initial);
+    expect(passage.scrollHeight).toBeLessThanOrEqual(201);
+  } finally {
+    if (previous) Object.defineProperty(document, 'fonts', previous);
+    else Reflect.deleteProperty(document, 'fonts');
+    vi.clearAllTimers();
+    vi.useRealTimers();
+    document.body.innerHTML = '';
+  }
+});
+
 test('fits replacement text immediately rather than leaving overflow until the next timer', () => {
   vi.useFakeTimers();
   try {
