@@ -1,0 +1,84 @@
+name: macOS screensaver
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Existing release tag to build and attach to (empty = preview artifact only)'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: macos-screensaver-${{ github.event.release.tag_name || inputs.release_tag || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name || inputs.release_tag || github.ref }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install web dependencies
+        run: npm ci
+      - name: Build universal saver and package
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name || inputs.release_tag }}
+        run: |
+          version="${RELEASE_TAG:-0.1.0}"
+          python3 screensavers/macos/build.py --universal --version "$version"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Literature-Clock-Web-macOS-universal
+          path: |
+            screensavers/macos/build/Literature-Clock-Web-macOS-universal.zip
+            screensavers/macos/build/Literature-Clock-Web-macOS-universal.zip.sha256
+          if-no-files-found: error
+          retention-days: 30
+
+  attach-to-release:
+    if: github.event_name == 'release' || inputs.release_tag != ''
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: Literature-Clock-Web-macOS-universal
+          path: package
+      - name: Attach downloads to existing release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.event.release.tag_name || inputs.release_tag }}
+        run: |
+          python3 - <<'PYTHON'
+          import json
+          import os
+          import subprocess
+          from pathlib import Path
+          tag = os.environ['RELEASE_TAG']
+          result = subprocess.run(['gh', 'release', 'view', tag, '--json', 'assets'],
+                                  check=True, capture_output=True, text=True)
+          existing = {asset['name'] for asset in json.loads(result.stdout)['assets']}
+          files = sorted(Path('package').glob('*'))
+          missing = [str(file) for file in files if file.name not in existing]
+          if missing:
+              subprocess.run(['gh', 'release', 'upload', tag, *missing], check=True)
+          else:
+              print('Downloads already attached; leaving existing assets unchanged.')
+          PYTHON

@@ -128,6 +128,12 @@ Older `fade=true` / `fade=false` links remain supported. Prefer `transition` for
 
 ## Screensaver
 
+This repository includes an **experimental macOS screensaver** built with Swift and WKWebView. It bundles the web clock and quotes, with native settings for quote languages, appearance, transitions and gentle movement. The options panel follows the system language in all 12 supported locales. With no quote languages selected, the clock uses the system language or falls back to English (UK).
+
+**This is a test version, not a stable release.** Full-screen rendering and animation have worked in a local test, but macOS Preview can become dark after a few seconds, and Options may require fully quitting and reopening System Settings. The catalogue thumbnail may remain macOS's default image. Builds currently use ad-hoc signing, so downloaded packages may require explicit approval from macOS. Intel runtime behavior and compatibility across macOS versions remain unverified.
+
+See [build, installation and testing instructions](screensavers/macos/README.md). Universal builds include Apple Silicon and Intel; a GitHub Actions workflow prepares a ZIP and checksum for release downloads. Native rendering and our own Windows/Linux versions are future work.
+
 [Enable screensaver mode](https://literatureclock.netlify.app/?screensaver=true) to move the quote gently around the screen. For an operating-system screensaver or desktop display, these external guides and tools offer possible setups:
 
 - [macOS: WebViewScreenSaver](https://github.com/liquidx/webviewscreensaver)

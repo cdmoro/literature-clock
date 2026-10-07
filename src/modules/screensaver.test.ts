@@ -29,7 +29,7 @@ describe('screensaver movement bounds', () => {
 describe('screensaver entry and return', () => {
   let pose: string;
   let frame: FrameRequestCallback | undefined;
-  let motions: { frames: Keyframe[]; finish: () => void; cancel: () => void }[];
+  let motions: { duration: number; frames: Keyframe[]; finish: () => void; cancel: () => void }[];
 
   beforeEach(() => {
     pose = 'none';
@@ -41,12 +41,12 @@ describe('screensaver entry and return', () => {
     vi.spyOn(window, 'requestAnimationFrame').mockImplementation((callback) => { frame = callback; return 1; });
     vi.spyOn(window, 'cancelAnimationFrame').mockImplementation(() => { frame = undefined; });
     vi.stubGlobal('DOMMatrixReadOnly', class { m41 = 0; m42 = 0; });
-    document.getElementById('clock')!.animate = vi.fn((frames) => {
+    document.getElementById('clock')!.animate = vi.fn((frames, options) => {
       let finish!: () => void;
       let reject!: () => void;
       const finished = new Promise<void>((resolve, fail) => { finish = resolve; reject = fail; });
       const cancel = vi.fn(reject);
-      motions.push({ frames: frames as Keyframe[], finish, cancel });
+      motions.push({ duration: (options as KeyframeAnimationOptions).duration as number, frames: frames as Keyframe[], finish, cancel });
       return { finished, cancel } as unknown as Animation;
     });
   });
@@ -63,6 +63,8 @@ describe('screensaver entry and return', () => {
     startScreensaver();
     frame!(0);
     expect(motions[0].frames[0].transform).toBe('none');
+    expect(motions[0].duration).toBeGreaterThanOrEqual(18000);
+    expect(motions[0].duration).toBeLessThanOrEqual(24000);
     expect(motions[0].frames[1].transform).toContain('scale(0.94)');
   });
 

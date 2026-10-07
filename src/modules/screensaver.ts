@@ -23,7 +23,6 @@ let frame: number | undefined;
 let generation = 0;
 let reducedMotion: MediaQueryList | undefined;
 let phase: 'idle' | 'entering' | 'drifting' | 'returning' = 'idle';
-const ENTER_DURATION = 1200;
 const RETURN_DURATION = 800;
 const clamp = (value: number, min: number, max: number) => Math.max(min, Math.min(max, value));
 
@@ -63,7 +62,7 @@ function move() {
     { transform: entering ? currentTransform : transform(fromX, fromY) },
     { transform: transform(x, y) },
   ], {
-    duration: entering ? ENTER_DURATION : 18000 + Math.random() * 6000,
+    duration: 18000 + Math.random() * 6000,
     easing: 'ease-in-out',
     fill: 'forwards',
   });

@@ -1,0 +1,86 @@
+{
+  "en-GB": {
+    "cancel": "Cancel",
+    "save": "Save",
+    "movement": "Move the quote gently",
+    "languages_help": "Choose one or more languages to rotate quotes each minute. Leave all unchecked to use the system language; if unsupported, English (UK) is used.",
+    "red": "Red"
+  },
+  "en-US": {
+    "cancel": "Cancel",
+    "save": "Save",
+    "movement": "Move the quote gently",
+    "languages_help": "Choose one or more languages to rotate quotes each minute. Leave all unchecked to use the system language; if unsupported, English (UK) is used.",
+    "red": "Red"
+  },
+  "es-ES": {
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "movement": "Mover la cita suavemente",
+    "languages_help": "Elegí uno o varios idiomas para alternar las citas cada minuto. Si no seleccionás ninguno, se usará el idioma del sistema; si no está disponible, inglés (Reino Unido).",
+    "red": "Rojo"
+  },
+  "fr-FR": {
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "movement": "Déplacer doucement la citation",
+    "languages_help": "Choisissez une ou plusieurs langues pour alterner les citations chaque minute. Sans sélection, la langue du système est utilisée ; si elle est indisponible, l’anglais (Royaume-Uni) est utilisé.",
+    "red": "Rouge"
+  },
+  "de-DE": {
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "movement": "Zitat sanft bewegen",
+    "languages_help": "Wählen Sie eine oder mehrere Sprachen, um Zitate jede Minute abzuwechseln. Ohne Auswahl wird die Systemsprache verwendet; falls nicht verfügbar, Englisch (Vereinigtes Königreich).",
+    "red": "Rot"
+  },
+  "it-IT": {
+    "cancel": "Annulla",
+    "save": "Salva",
+    "movement": "Spostare delicatamente la citazione",
+    "languages_help": "Scegli una o più lingue per alternare le citazioni ogni minuto. Senza selezione viene usata la lingua del sistema; se non disponibile, l’inglese (Regno Unito).",
+    "red": "Rosso"
+  },
+  "pt-PT": {
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "movement": "Mover a citação suavemente",
+    "languages_help": "Escolha um ou mais idiomas para alternar as citações a cada minuto. Sem seleção, usa-se o idioma do sistema; se não estiver disponível, inglês (Reino Unido).",
+    "red": "Vermelho"
+  },
+  "ru-RU": {
+    "cancel": "Отмена",
+    "save": "Сохранить",
+    "movement": "Плавно перемещать цитату",
+    "languages_help": "Выберите один или несколько языков для смены цитат каждую минуту. Если ничего не выбрано, используется язык системы; если он недоступен — английский (Великобритания).",
+    "red": "Красный"
+  },
+  "zh-CN": {
+    "cancel": "取消",
+    "save": "保存",
+    "movement": "缓慢移动引文",
+    "languages_help": "选择一种或多种语言，每分钟轮换引文。若未选择任何语言，则使用系统语言；若不支持该语言，则使用英语（英国）。",
+    "red": "红色"
+  },
+  "el-GR": {
+    "cancel": "Ακύρωση",
+    "save": "Αποθήκευση",
+    "movement": "Απαλή μετακίνηση του αποσπάσματος",
+    "languages_help": "Επιλέξτε μία ή περισσότερες γλώσσες για εναλλαγή αποσπασμάτων κάθε λεπτό. Χωρίς επιλογή χρησιμοποιείται η γλώσσα του συστήματος· αν δεν υποστηρίζεται, χρησιμοποιούνται αγγλικά (Ηνωμένου Βασιλείου).",
+    "red": "Κόκκινο"
+  },
+  "eo": {
+    "cancel": "Nuligi",
+    "save": "Konservi",
+    "movement": "Movi la citaĵon malrapide",
+    "languages_help": "Elektu unu aŭ plurajn lingvojn por alternigi citaĵojn ĉiuminute. Sen elekto, la sistema lingvo estas uzata; se ĝi ne estas subtenata, la angla (Britio) estas uzata.",
+    "red": "Ruĝa"
+  },
+  "ar-AE": {
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "movement": "تحريك الاقتباس ببطء",
+    "languages_help": "اختر لغة واحدة أو أكثر لتبديل الاقتباسات كل دقيقة. إذا لم تحدد أي لغة، تُستخدم لغة النظام؛ وإذا لم تكن مدعومة، تُستخدم الإنجليزية (المملكة المتحدة).",
+    "red": "أحمر"
+  }
+}
