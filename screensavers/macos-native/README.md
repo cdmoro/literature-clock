@@ -1,6 +1,6 @@
 # Literature Clock Native — macOS prototype
 
-This experimental saver draws quotes with AppKit inside `ScreenSaverView`. It has no WebKit, JavaScript, browser or local server. Only the optional Photo theme downloads images; all quotes and fonts remain offline. It is separate from the web prototype and uses its own settings domain.
+This experimental saver draws quotes with AppKit inside `ScreenSaverView`. It has no WebKit, JavaScript, browser or local server. Only the optional Photo theme downloads images; all quotes and fonts remain offline. It uses its own native settings domain.
 
 The prototype supports the 12 published quote languages, rotating selected languages each minute. No selected language follows the first preferred system language, with en-GB fallback. It includes light/dark/system appearance, accent colours, optional time, explicit-passage filtering, minute progress and movement starting at the centre. The native panel reuses the existing translations.
 
@@ -20,7 +20,7 @@ Build on macOS:
 python3 screensavers/macos-native/build.py --universal
 ```
 
-Output: `build/Literature Clock Native.saver`, a standalone preview app, and `Literature-Clock-Native-macOS.zip` with a SHA-256 checksum. Signing is ad-hoc; these are local test builds, not notarized public releases. The native release workflow builds this saver independently; the paused web prototype has manual builds only.
+Output: `build/Literature Clock Native.saver`, a standalone preview app, and `Literature-Clock-Native-macOS.zip` with a SHA-256 checksum. Signing is ad-hoc; these are local test builds, not notarized public releases. The native release workflow builds this saver independently of web releases.
 
 Open the preview app to inspect drawing and its Settings menu. Run its executable with `--check-render` to render all catalogues and theme variants to `/private/tmp/literature-clock-native-checks`, check bundled font selection, minute changes, a filtered gap, reopening a dismissed options sheet, and custom-colour saving. This checks native drawing, not sustained system-host behavior. The user confirmed native rendering and animations. Photo downloads, preset/default colour persistence, repeated options opening and title hiding were subsequently checked in System Settings Preview. Earlier intermittent Options failures and mixed web/native full-screen monitors still warrant repeated testing. System Settings showed Native selected for both displays during investigation; the mixed-monitor cause is not confirmed. Repeated Preview/options, automatic activation, multiple displays and sleep/wake remain required before publication. Intel compilation is not Intel runtime validation.
 

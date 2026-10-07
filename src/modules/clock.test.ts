@@ -18,26 +18,17 @@ beforeEach(() => {
   vi.setSystemTime(new Date('2026-10-07T17:00:00Z'));
   vi.mocked(updateQuote).mockClear();
   vi.spyOn(document, 'hidden', 'get').mockReturnValue(true);
-  delete window.__literatureClockNativeHost;
 });
 afterEach(() => {
   vi.clearAllTimers();
   vi.useRealTimers();
   vi.restoreAllMocks();
-  delete window.__literatureClockNativeHost;
 });
 
-describe('clock in remote native saver windows', () => {
+describe('clock visibility', () => {
   it('keeps ordinary hidden browser tabs paused', () => {
     initClock();
     vi.advanceTimersByTime(60_000);
     expect(updateQuote).toHaveBeenCalledTimes(1);
-  });
-  it('advances the quote in an active native host even when WebKit reports hidden', () => {
-    window.__literatureClockNativeHost = true;
-    initClock();
-    vi.advanceTimersByTime(60_000);
-    expect(updateQuote).toHaveBeenLastCalledWith({ time: '17:01', minuteTick: true });
-    expect(updateQuote).toHaveBeenCalledTimes(2);
   });
 });

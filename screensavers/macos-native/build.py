@@ -64,7 +64,7 @@ def bundle(name, extension, architecture, data, version):
     shutil.copytree(font_root, resources / 'Fonts', dirs_exist_ok=True)
     labels = json.loads((ROOT / 'src/strings/translations.json').read_text())
     settings = json.loads((ROOT / 'src/strings/settings.json').read_text())
-    native = json.loads((ROOT / 'screensavers/macos/Assets/settings.json').read_text())
+    native = json.loads((SOURCE / 'Assets/settings.json').read_text())
     (resources / 'settings.json').write_text(json.dumps({key: {**value, **settings[key], **native[key]} for key, value in labels.items()}, ensure_ascii=False))
     for name_notice in ['LICENSE', 'THIRD_PARTY_NOTICES.md']:
         shutil.copy2(ROOT / name_notice, resources / name_notice)

@@ -136,7 +136,7 @@ This repository includes an **experimental native macOS screensaver** that draws
 
 See [native build, installation and testing instructions](screensavers/macos-native/README.md). The [native release workflow](.github/workflows/macos-native-screensaver.yml) builds Apple Silicon/Intel bundles and attaches the ZIP/checksum only to releases tagged `macos-native-vX.Y.Z`. Web and screensaver versions are independent in this shared repository. Check [Releases](https://github.com/cdmoro/literature-clock/releases), including experimental prereleases, for `Literature-Clock-Native-macOS.zip`; a web release may have no screensaver asset. [Feedback and bug reports](https://github.com/cdmoro/literature-clock/issues/new/choose) are welcome.
 
-The [WKWebView prototype](screensavers/macos/README.md) is retained for investigation. Its dark-screen/frozen-animation problems remain unresolved, and automatic release builds are disabled. Our own Windows/Linux screensavers remain future work.
+Our own Windows/Linux screensavers remain future work.
 
 [Enable screensaver mode](https://literatureclock.netlify.app/?screensaver=true) to move the quote gently around the screen. For an operating-system screensaver or desktop display, these external guides and tools offer possible setups:
 

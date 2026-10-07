@@ -56,16 +56,6 @@ describe('screensaver entry and return', () => {
     exitScreensaverMode();
     vi.restoreAllMocks();
     vi.unstubAllGlobals();
-    delete window.__literatureClockNativeHost;
-  });
-
-  it('starts native host motion even when its remote window reports hidden', () => {
-    vi.spyOn(document, 'hidden', 'get').mockReturnValue(true);
-    window.__literatureClockNativeHost = true;
-    store.set('screensaver', true);
-    startScreensaver();
-    frame!(0);
-    expect(motions).toHaveLength(1);
   });
 
   it('enters from rest without applying the target scale immediately', () => {

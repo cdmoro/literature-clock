@@ -1,5 +1,4 @@
 import { store } from '../store';
-import { isClockVisible } from '../utils/visibility';
 
 interface Box { left: number; top: number; width: number; height: number }
 interface Viewport { left: number; top: number; width: number; height: number }
@@ -39,7 +38,7 @@ function stopMovement() {
 function move() {
   frame = undefined;
   const clock = document.getElementById('clock');
-  if (!clock || !store.get('screensaver') || !isClockVisible() || reducedMotion?.matches) {
+  if (!clock || !store.get('screensaver') || document.hidden || reducedMotion?.matches) {
     stopMovement();
     return;
   }
@@ -90,7 +89,7 @@ export function startScreensaver() {
 export function initScreensaverMode() {
   reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const refresh = () => {
-    if (!isClockVisible() || reducedMotion?.matches) stopMovement();
+    if (document.hidden || reducedMotion?.matches) stopMovement();
     else if (store.get('screensaver')) startScreensaver();
     else if (phase !== 'returning') stopMovement();
   };
@@ -113,12 +112,12 @@ export function initScreensaverMode() {
 export function exitScreensaverMode() {
   store.set('screensaver', false);
   document.querySelector('footer')?.classList.remove('hidden');
-  if (phase === 'returning' && isClockVisible() && !reducedMotion?.matches) return;
+  if (phase === 'returning' && !document.hidden && !reducedMotion?.matches) return;
 
   const clock = document.getElementById('clock');
   const currentTransform = clock ? getComputedStyle(clock).transform : 'none';
   stopMovement();
-  if (!clock || currentTransform === 'none' || !isClockVisible() || reducedMotion?.matches) return;
+  if (!clock || currentTransform === 'none' || document.hidden || reducedMotion?.matches) return;
 
   phase = 'returning';
   const token = generation;
