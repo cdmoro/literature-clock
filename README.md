@@ -6,7 +6,9 @@ Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) (
 
 ![Literature Clock displaying a literary quote with the time highlighted](https://github.com/user-attachments/assets/15fedb98-8d39-418a-86fa-a7fd9d0077d2)
 
-**[Open Literature Clock](https://literatureclock.netlify.app/)** · [Themes](#themes) · [Settings](#settings) · [Language incubator](#language-incubator) · [Contributing](#contributing) · [Development](#development)
+**[Open Literature Clock](https://literatureclock.netlify.app/)** · [Themes](#themes) · [Settings](#settings) · [Screensaver](#screensaver) · [Language incubator](#language-incubator) · [Contributing](#contributing) · [Development](#development)
+
+> **Help test the experimental macOS screensaver!** Bring Literature Clock to your Mac with configurable quote languages, themes and gentle movement. Check the [latest release](https://github.com/cdmoro/literature-clock/releases/latest) or [all releases, including prereleases](https://github.com/cdmoro/literature-clock/releases), for `Literature-Clock-Web-macOS-universal.zip`. Read the [installation instructions and known limitations](screensavers/macos/README.md), then [share feedback or report a problem](https://github.com/cdmoro/literature-clock/issues/new/choose). Please include your macOS version, Apple Silicon/Intel model, and whether you tested Preview or the automatic screensaver. If the ZIP is not attached yet, you can build the prototype from source.
 
 ## Features
 
@@ -133,6 +135,8 @@ This repository includes an **experimental macOS screensaver** built with Swift 
 **This is a test version, not a stable release.** Full-screen rendering and animation have worked in a local test, but macOS Preview can become dark after a few seconds, and Options may require fully quitting and reopening System Settings. The catalogue thumbnail may remain macOS's default image. Builds currently use ad-hoc signing, so downloaded packages may require explicit approval from macOS. Intel runtime behavior and compatibility across macOS versions remain unverified.
 
 See [build, installation and testing instructions](screensavers/macos/README.md). Universal builds include Apple Silicon and Intel; a GitHub Actions workflow prepares a ZIP and checksum for release downloads. Native rendering and our own Windows/Linux versions are future work.
+
+Find the download in the [latest release](https://github.com/cdmoro/literature-clock/releases/latest) or the [release list](https://github.com/cdmoro/literature-clock/releases), which also includes experimental prereleases. Look for `Literature-Clock-Web-macOS-universal.zip` under **Assets**. [Feedback and bug reports](https://github.com/cdmoro/literature-clock/issues/new/choose) help improve compatibility; include your macOS version, hardware and steps to reproduce the issue.
 
 [Enable screensaver mode](https://literatureclock.netlify.app/?screensaver=true) to move the quote gently around the screen. For an operating-system screensaver or desktop display, these external guides and tools offer possible setups:
 
