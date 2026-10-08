@@ -103,7 +103,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     static let settingsChanged = Notification.Name("net.literatureclock.native-saver.settingsChanged")
     var preferences: UserDefaults = ScreenSaverDefaults(forModuleWithName: "net.literatureclock.native-saver")!
     var resources: URL { Bundle(for: NativeClockView.self).resourceURL! }
-    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background-pattern", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale", "time-glass"]
+    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background-pattern", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale", "time-glass", "glass-fusion"]
     var photoDownloadsEnabled = true
     var fusionPreviewEnabled = false
     var interactionPreviewSweep = false
@@ -196,7 +196,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     private func setup() {
         preferences.register(defaults: ["theme": "base-dark", "screensaver": true, "show-time": true,
                                        "hide-book-title": false, "work": true, "progressbar": "background", "quote-locales": "", "palette": "default",
-                                       "custom-color": "#d24335", "background-pattern": "none", "photo-provider": "picsum", "photo-category": "all", "bilingual": false, "translation-locale": "", "time-glass": false])
+                                       "custom-color": "#d24335", "background-pattern": "none", "photo-provider": "picsum", "photo-category": "all", "bilingual": false, "translation-locale": "", "time-glass": false, "glass-fusion": true])
         _ = Self.bundledFonts
         animationTimeInterval = 1.0 / 60.0
         Self.instances.add(self)
@@ -401,7 +401,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let glassTime = updateGlassTime(font: timeFont, dark: dark)
         fusionPreviewView?.isHidden = true
         (glassProgressView as? OpticalGlassView)?.fusionExclusion = nil
-        if fusionPreviewEnabled, glassTime, glassProgress,
+        if (interactionPreviewSweep ? fusionPreviewEnabled : preferences.bool(forKey: "glass-fusion")), glassTime, glassProgress,
            let source = opticalSource, let capsule = glassTimeView as? OpticalGlassView,
            let pane = glassProgressView as? OpticalGlassView,
            let image = OpticalGlassView.fusionImage(source: source, capsule: capsule.frame, radius: capsule.cornerRadius, pane: pane.frame, tint: pane.tint) {
@@ -745,7 +745,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         }
         photoControlsChanged()
         section("settings_behavior")
-        for (key, label) in [("screensaver", "movement"), ("show-time", "time_mode"), ("time-glass", "time_glass"), ("hide-book-title", "settings_hide_book_title"), ("work", "work_mode_title")] {
+        for (key, label) in [("screensaver", "movement"), ("show-time", "time_mode"), ("time-glass", "time_glass"), ("glass-fusion", "glass_fusion"), ("hide-book-title", "settings_hide_book_title"), ("work", "work_mode_title")] {
             let check = NSButton(checkboxWithTitle: text(label), target: nil, action: nil)
             check.state = preferences.bool(forKey: key) ? .on : .off
             if key == "show-time" { check.target = self; check.action = #selector(timeControlsChanged) }

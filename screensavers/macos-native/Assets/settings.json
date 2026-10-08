@@ -11,7 +11,8 @@
     "color_edit": "Edit colour…",
     "color_fixed": "Fixed colour",
     "time_glass": "Liquid Glass for the time (macOS 26+)",
-    "settings_progress_glass-background": "Liquid Glass Background"
+    "settings_progress_glass-background": "Liquid Glass Background",
+    "glass_fusion": "Fuse the time glass with background progress"
   },
   "en-US": {
     "cancel": "Cancel",
@@ -25,7 +26,8 @@
     "color_edit": "Edit color…",
     "color_fixed": "Fixed color",
     "time_glass": "Liquid Glass for the time (macOS 26+)",
-    "settings_progress_glass-background": "Liquid Glass Background"
+    "settings_progress_glass-background": "Liquid Glass Background",
+    "glass_fusion": "Fuse the time glass with background progress"
   },
   "es-ES": {
     "cancel": "Cancelar",
@@ -39,7 +41,8 @@
     "color_edit": "Editar color…",
     "color_fixed": "Color fijo",
     "time_glass": "Liquid Glass en la hora (macOS 26+)",
-    "settings_progress_glass-background": "Fondo con Liquid Glass"
+    "settings_progress_glass-background": "Fondo con Liquid Glass",
+    "glass_fusion": "Fusionar el vidrio del reloj con el progreso de fondo"
   },
   "fr-FR": {
     "cancel": "Annuler",
@@ -53,7 +56,8 @@
     "color_edit": "Modifier la couleur…",
     "color_fixed": "Couleur fixe",
     "time_glass": "Liquid Glass pour l’heure (macOS 26+)",
-    "settings_progress_glass-background": "Arrière-plan Liquid Glass"
+    "settings_progress_glass-background": "Arrière-plan Liquid Glass",
+    "glass_fusion": "Fusionner le verre de l’horloge avec la progression en arrière-plan"
   },
   "de-DE": {
     "cancel": "Abbrechen",
@@ -67,7 +71,8 @@
     "color_edit": "Farbe bearbeiten…",
     "color_fixed": "Feste Farbe",
     "time_glass": "Liquid Glass für die Uhrzeit (macOS 26+)",
-    "settings_progress_glass-background": "Liquid-Glass-Hintergrund"
+    "settings_progress_glass-background": "Liquid-Glass-Hintergrund",
+    "glass_fusion": "Uhrglas mit dem Hintergrundfortschritt verschmelzen"
   },
   "it-IT": {
     "cancel": "Annulla",
@@ -81,7 +86,8 @@
     "color_edit": "Modifica colore…",
     "color_fixed": "Colore fisso",
     "time_glass": "Liquid Glass per l’ora (macOS 26+)",
-    "settings_progress_glass-background": "Sfondo Liquid Glass"
+    "settings_progress_glass-background": "Sfondo Liquid Glass",
+    "glass_fusion": "Fondere il vetro dell’orologio con il progresso sullo sfondo"
   },
   "pt-PT": {
     "cancel": "Cancelar",
@@ -95,7 +101,8 @@
     "color_edit": "Editar cor…",
     "color_fixed": "Cor fixa",
     "time_glass": "Liquid Glass na hora (macOS 26+)",
-    "settings_progress_glass-background": "Fundo com Liquid Glass"
+    "settings_progress_glass-background": "Fundo com Liquid Glass",
+    "glass_fusion": "Fundir o vidro do relógio com o progresso de fundo"
   },
   "ru-RU": {
     "cancel": "Отмена",
@@ -109,7 +116,8 @@
     "color_edit": "Изменить цвет…",
     "color_fixed": "Постоянный цвет",
     "time_glass": "Liquid Glass для времени (macOS 26+)",
-    "settings_progress_glass-background": "Фон Liquid Glass"
+    "settings_progress_glass-background": "Фон Liquid Glass",
+    "glass_fusion": "Объединять стекло часов с фоновым прогрессом"
   },
   "zh-CN": {
     "cancel": "取消",
@@ -123,7 +131,8 @@
     "color_edit": "编辑颜色…",
     "color_fixed": "固定颜色",
     "time_glass": "时间使用 Liquid Glass（macOS 26+）",
-    "settings_progress_glass-background": "Liquid Glass 背景"
+    "settings_progress_glass-background": "Liquid Glass 背景",
+    "glass_fusion": "将时钟玻璃与背景进度融合"
   },
   "el-GR": {
     "cancel": "Ακύρωση",
@@ -137,7 +146,8 @@
     "color_edit": "Επεξεργασία χρώματος…",
     "color_fixed": "Σταθερό χρώμα",
     "time_glass": "Liquid Glass στην ώρα (macOS 26+)",
-    "settings_progress_glass-background": "Φόντο Liquid Glass"
+    "settings_progress_glass-background": "Φόντο Liquid Glass",
+    "glass_fusion": "Συγχώνευση του γυαλιού του ρολογιού με την πρόοδο φόντου"
   },
   "eo": {
     "cancel": "Nuligi",
@@ -151,7 +161,8 @@
     "color_edit": "Redakti koloron…",
     "color_fixed": "Fiksa koloro",
     "time_glass": "Liquid Glass por la horo (macOS 26+)",
-    "settings_progress_glass-background": "Fono kun Liquid Glass"
+    "settings_progress_glass-background": "Fono kun Liquid Glass",
+    "glass_fusion": "Kunfandi la horloĝan vitron kun la fona progreso"
   },
   "ar-AE": {
     "cancel": "إلغاء",
@@ -165,6 +176,7 @@
     "color_edit": "تعديل اللون…",
     "color_fixed": "لون ثابت",
     "time_glass": "Liquid Glass للوقت (macOS 26+)",
-    "settings_progress_glass-background": "خلفية Liquid Glass"
+    "settings_progress_glass-background": "خلفية Liquid Glass",
+    "glass_fusion": "دمج زجاج الساعة مع تقدم الخلفية"
   }
 }
