@@ -136,6 +136,19 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             clock.cache["es-ES"] = originalSpanish
             clock.preferences.set(false, forKey: "bilingual")
             precondition(clock.bilingualContent().notice == nil, "Disabled bilingual mode must remove its content")
+            clock.preferences.set(true, forKey: "show-time")
+            clock.preferences.set(true, forKey: "time-glass")
+            let glassShown = clock.updateGlassTime(font: .boldSystemFont(ofSize: 20), dark: false)
+            if #available(macOS 26.0, *) {
+                precondition(glassShown, "Supported systems must use real glass for the time")
+                let glass = clock.subviews.first { $0 is NSGlassEffectView }!
+                precondition(abs(glass.frame.midX - clock.bounds.midX) < 0.01, "Glass time must remain centred")
+                precondition(glass.frame.maxY <= clock.bounds.maxY - 8, "Glass time must retain its safe top margin")
+            } else { precondition(!glassShown, "Older systems must retain the plain clock") }
+            clock.preferences.set(false, forKey: "show-time")
+            precondition(!clock.updateGlassTime(font: .boldSystemFont(ofSize: 20), dark: false), "Glass must disappear when time is hidden")
+            clock.preferences.set(true, forKey: "show-time")
+            clock.preferences.set(false, forKey: "time-glass")
             let first = clock.configureSheet!
             first.orderOut(nil)
             let second = clock.configureSheet!
@@ -144,6 +157,7 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             (clock.controls["bilingual"] as! NSButton).state = .on
             clock.perform(NSSelectorFromString("bilingualControlsChanged"))
             precondition((clock.controls["translation-locale"] as! NSPopUpButton).isEnabled, "Translation menu should be enabled in bilingual mode")
+            (clock.controls["time-glass"] as! NSButton).state = .on
             let well = clock.controls["custom-color"] as! NSColorWell
             well.color = NativeAppearance.color("#123456")!
             clock.perform(NSSelectorFromString("customColorChanged"))
@@ -164,6 +178,8 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             precondition(other.preferences.string(forKey: "custom-color") == "#123456", "Custom colour did not reach another view")
             precondition(clock.preferences.string(forKey: "custom-color") == "#123456", "Custom colour was not saved")
             precondition(clock.preferences.bool(forKey: "bilingual") && other.preferences.bool(forKey: "bilingual"), "Bilingual setting must save and reach other displays")
+            precondition(clock.preferences.bool(forKey: "time-glass") && other.preferences.bool(forKey: "time-glass"), "Glass time setting must reach other displays")
+            clock.preferences.set(false, forKey: "time-glass")
             precondition(other.preferences.string(forKey: "translation-locale") == "es-ES", "Translation language must reach other displays")
             clock.preferences.set(false, forKey: "bilingual")
             for palette in ["default", "pink", "green", "random"] {

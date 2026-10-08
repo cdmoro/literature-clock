@@ -9,7 +9,8 @@
     "color_mode_fixed": "Fixed",
     "color_mode_random": "Change every minute",
     "color_edit": "Edit colour…",
-    "color_fixed": "Fixed colour"
+    "color_fixed": "Fixed colour",
+    "time_glass": "Liquid Glass for the time (macOS 26+)"
   },
   "en-US": {
     "cancel": "Cancel",
@@ -21,7 +22,8 @@
     "color_mode_fixed": "Fixed",
     "color_mode_random": "Change every minute",
     "color_edit": "Edit color…",
-    "color_fixed": "Fixed color"
+    "color_fixed": "Fixed color",
+    "time_glass": "Liquid Glass for the time (macOS 26+)"
   },
   "es-ES": {
     "cancel": "Cancelar",
@@ -33,7 +35,8 @@
     "color_mode_fixed": "Fijo",
     "color_mode_random": "Cambiar cada minuto",
     "color_edit": "Editar color…",
-    "color_fixed": "Color fijo"
+    "color_fixed": "Color fijo",
+    "time_glass": "Liquid Glass en la hora (macOS 26+)"
   },
   "fr-FR": {
     "cancel": "Annuler",
@@ -45,7 +48,8 @@
     "color_mode_fixed": "Fixe",
     "color_mode_random": "Changer chaque minute",
     "color_edit": "Modifier la couleur…",
-    "color_fixed": "Couleur fixe"
+    "color_fixed": "Couleur fixe",
+    "time_glass": "Liquid Glass pour l’heure (macOS 26+)"
   },
   "de-DE": {
     "cancel": "Abbrechen",
@@ -57,7 +61,8 @@
     "color_mode_fixed": "Fest",
     "color_mode_random": "Jede Minute ändern",
     "color_edit": "Farbe bearbeiten…",
-    "color_fixed": "Feste Farbe"
+    "color_fixed": "Feste Farbe",
+    "time_glass": "Liquid Glass für die Uhrzeit (macOS 26+)"
   },
   "it-IT": {
     "cancel": "Annulla",
@@ -69,7 +74,8 @@
     "color_mode_fixed": "Fisso",
     "color_mode_random": "Cambia ogni minuto",
     "color_edit": "Modifica colore…",
-    "color_fixed": "Colore fisso"
+    "color_fixed": "Colore fisso",
+    "time_glass": "Liquid Glass per l’ora (macOS 26+)"
   },
   "pt-PT": {
     "cancel": "Cancelar",
@@ -81,7 +87,8 @@
     "color_mode_fixed": "Fixa",
     "color_mode_random": "Mudar a cada minuto",
     "color_edit": "Editar cor…",
-    "color_fixed": "Cor fixa"
+    "color_fixed": "Cor fixa",
+    "time_glass": "Liquid Glass na hora (macOS 26+)"
   },
   "ru-RU": {
     "cancel": "Отмена",
@@ -93,7 +100,8 @@
     "color_mode_fixed": "Постоянный",
     "color_mode_random": "Менять каждую минуту",
     "color_edit": "Изменить цвет…",
-    "color_fixed": "Постоянный цвет"
+    "color_fixed": "Постоянный цвет",
+    "time_glass": "Liquid Glass для времени (macOS 26+)"
   },
   "zh-CN": {
     "cancel": "取消",
@@ -105,7 +113,8 @@
     "color_mode_fixed": "固定",
     "color_mode_random": "每分钟更换",
     "color_edit": "编辑颜色…",
-    "color_fixed": "固定颜色"
+    "color_fixed": "固定颜色",
+    "time_glass": "时间使用 Liquid Glass（macOS 26+）"
   },
   "el-GR": {
     "cancel": "Ακύρωση",
@@ -117,7 +126,8 @@
     "color_mode_fixed": "Σταθερό",
     "color_mode_random": "Αλλαγή κάθε λεπτό",
     "color_edit": "Επεξεργασία χρώματος…",
-    "color_fixed": "Σταθερό χρώμα"
+    "color_fixed": "Σταθερό χρώμα",
+    "time_glass": "Liquid Glass στην ώρα (macOS 26+)"
   },
   "eo": {
     "cancel": "Nuligi",
@@ -129,7 +139,8 @@
     "color_mode_fixed": "Fiksa",
     "color_mode_random": "Ŝanĝi ĉiuminute",
     "color_edit": "Redakti koloron…",
-    "color_fixed": "Fiksa koloro"
+    "color_fixed": "Fiksa koloro",
+    "time_glass": "Liquid Glass por la horo (macOS 26+)"
   },
   "ar-AE": {
     "cancel": "إلغاء",
@@ -141,6 +152,7 @@
     "color_mode_fixed": "ثابت",
     "color_mode_random": "تغيير كل دقيقة",
     "color_edit": "تعديل اللون…",
-    "color_fixed": "لون ثابت"
+    "color_fixed": "لون ثابت",
+    "time_glass": "Liquid Glass للوقت (macOS 26+)"
   }
 }

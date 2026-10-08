@@ -31,7 +31,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     static let settingsChanged = Notification.Name("net.literatureclock.native-saver.settingsChanged")
     var preferences: UserDefaults = ScreenSaverDefaults(forModuleWithName: "net.literatureclock.native-saver")!
     var resources: URL { Bundle(for: NativeClockView.self).resourceURL! }
-    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background-pattern", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
+    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background-pattern", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale", "time-glass"]
     var photoDownloadsEnabled = true
     private var photoScreen: NSScreen? { window?.screen ?? NSScreen.screens.first }
     private var photoDisplayID: String { (photoScreen?.deviceDescription[NSDeviceDescriptionKey(rawValue: "NSScreenNumber")] as? NSNumber)?.stringValue ?? "0" }
@@ -77,6 +77,9 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     private var layoutText: NSAttributedString?
     private var layoutHeight: CGFloat = 0
     private var passageImage: NSImage?
+    private var glassTimeView: NSView?
+    private var glassTimeLabel: NSTextField?
+    private var glassTimeKey = ""
     private var patternKey = ""
     private var patternImage: NSImage?
     var themeName: String { (preferences.string(forKey: "theme") ?? "base-dark").split(separator: "-").first.map(String.init) ?? "base" }
@@ -113,7 +116,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     private func setup() {
         preferences.register(defaults: ["theme": "base-dark", "screensaver": true, "show-time": true,
                                        "hide-book-title": false, "work": true, "progressbar": "background", "quote-locales": "", "palette": "default",
-                                       "custom-color": "#d24335", "background-pattern": "none", "photo-provider": "picsum", "photo-category": "all", "bilingual": false, "translation-locale": ""])
+                                       "custom-color": "#d24335", "background-pattern": "none", "photo-provider": "picsum", "photo-category": "all", "bilingual": false, "translation-locale": "", "time-glass": false])
         _ = Self.bundledFonts
         animationTimeInterval = 1.0 / 60.0
         Self.instances.add(self)
@@ -182,6 +185,45 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let frame = window.convertToScreen(convert(bounds, to: nil))
         return Self.timeInset(viewFrame: frame, screenFrame: screen.frame, safeTop: screen.safeAreaInsets.top)
     }
+    @discardableResult
+    func updateGlassTime(font: NSFont, dark: Bool) -> Bool {
+        let requested = preferences.bool(forKey: "show-time") && preferences.bool(forKey: "time-glass")
+        guard requested else { glassTimeView?.isHidden = true; glassTimeKey = ""; return false }
+        if #available(macOS 26.0, *) {
+            let glass: NSGlassEffectView
+            if let existing = glassTimeView as? NSGlassEffectView { glass = existing }
+            else {
+                glass = NSGlassEffectView()
+                glass.style = .regular
+                let content = NSView()
+                let label = NSTextField(labelWithString: "")
+                label.alignment = .center
+                label.textColor = .labelColor
+                content.addSubview(label)
+                glass.contentView = content
+                addSubview(glass)
+                glassTimeView = glass; glassTimeLabel = label
+            }
+            let key = "\(lastMinute)|\(bounds.size)|\(font.pointSize)|\(dark)|\(timeTopInset)"
+            if key == glassTimeKey { return true }
+            glassTimeKey = key
+            let size = NSSize(width: ceil((lastMinute as NSString).size(withAttributes: [.font: font]).width) + 28,
+                              height: ceil(font.pointSize * 1.5) + 12)
+            glass.frame = NSRect(x: (bounds.width - size.width) / 2,
+                                 y: isFlipped ? timeTopInset : bounds.height - timeTopInset - size.height,
+                                 width: size.width, height: size.height)
+            glass.cornerRadius = size.height / 2
+            glass.appearance = NSAppearance(named: dark ? .darkAqua : .aqua)
+            glass.contentView?.frame = NSRect(origin: .zero, size: size)
+            glassTimeLabel?.frame = NSRect(x: 14, y: 6, width: size.width - 28, height: size.height - 12)
+            glassTimeLabel?.font = font
+            glassTimeLabel?.stringValue = lastMinute
+            glass.isHidden = false
+            return true
+        }
+        glassTimeView?.isHidden = true
+        return false
+    }
     override func draw(_ dirtyRect: NSRect) {
         let now = Date()
         refreshQuote(now)
@@ -223,9 +265,11 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         }
         guard bounds.width > 0, bounds.height > 0, let quote else { return }
         let foreground = theme == "terminal" ? accent.withAlphaComponent(0.8) : dark ? NSColor(calibratedWhite: 0.9, alpha: 1) : NSColor(calibratedWhite: 0.13, alpha: 1)
-        if preferences.bool(forKey: "show-time") {
+        let timeFont = NSFont.systemFont(ofSize: max(10, min(20, bounds.width * 0.013)), weight: .bold)
+        let glassTime = updateGlassTime(font: timeFont, dark: dark)
+        if preferences.bool(forKey: "show-time") && !glassTime {
             let timeStyle = NSMutableParagraphStyle(); timeStyle.alignment = .center
-            let font = NSFont.systemFont(ofSize: max(10, min(20, bounds.width * 0.013)), weight: .bold)
+            let font = timeFont
             (lastMinute as NSString).draw(in: NSRect(x: 0, y: (NSGraphicsContext.current?.isFlipped ?? isFlipped) ? timeTopInset : bounds.height - font.pointSize * 1.5 - timeTopInset, width: bounds.width, height: font.pointSize * 1.5),
                                         withAttributes: [.font: font, .foregroundColor: foreground, .paragraphStyle: timeStyle])
         }
@@ -529,12 +573,14 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         }
         photoControlsChanged()
         section("settings_behavior")
-        for (key, label) in [("screensaver", "movement"), ("show-time", "time_mode"), ("hide-book-title", "settings_hide_book_title"), ("work", "work_mode_title")] {
+        for (key, label) in [("screensaver", "movement"), ("show-time", "time_mode"), ("time-glass", "time_glass"), ("hide-book-title", "settings_hide_book_title"), ("work", "work_mode_title")] {
             let check = NSButton(checkboxWithTitle: text(label), target: nil, action: nil)
             check.state = preferences.bool(forKey: key) ? .on : .off
+            if key == "show-time" { check.target = self; check.action = #selector(timeControlsChanged) }
             controls[key] = check
             stack.addArrangedSubview(check)
         }
+        timeControlsChanged()
         let cancel = NSButton(title: text("cancel"), target: self, action: #selector(cancelOptions))
         cancel.keyEquivalent = "\u{1b}"
         let save = NSButton(title: "OK", target: self, action: #selector(saveOptions))
@@ -603,6 +649,11 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
               let item = menu.itemArray.first(where: { $0.representedObject as? String == sender.value }) else { return }
         menu.select(item)
         updateSwatches()
+    }
+    @objc private func timeControlsChanged() {
+        if #available(macOS 26.0, *) {
+            controls["time-glass"]?.isEnabled = (controls["show-time"] as? NSButton)?.state == .on
+        } else { controls["time-glass"]?.isEnabled = false }
     }
     @objc private func bilingualControlsChanged() {
         controls["translation-locale"]?.isEnabled = (controls["bilingual"] as? NSButton)?.state == .on
