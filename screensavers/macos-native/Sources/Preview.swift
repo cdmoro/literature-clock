@@ -104,10 +104,46 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
                 clock.cacheDisplay(in: clock.bounds, to: bitmap)
                 try! bitmap.representation(using: .png, properties: [:])!.write(to: output.appendingPathComponent("book-highlight-" + locale + ".png"))
             }
+            clock.quoteLocale = "en-GB"
+            clock.lastMinute = minute
+            clock.quote = clock.catalogue("en-GB")["16:00"]!.first { $0.id == "1600-017" }!
+            clock.preferences.set(true, forKey: "bilingual")
+            for locale in ["es-ES", "ar-AE"] {
+                let catalogue = clock.catalogue(locale)
+                let translated = catalogue["16:00"]!.first { $0.id == clock.quote!.id }!
+                var fixture = catalogue
+                // Use the current minute so the drawing diagnostic retains the
+                // fixed Carroll passage rather than advancing the live clock.
+                fixture[minute] = [NativeQuote(first: "Unrelated", time: "", last: "", title: "", author: "", sfw: true), translated]
+                clock.cache[locale] = fixture
+                clock.preferences.set(locale, forKey: "translation-locale")
+                precondition(clock.bilingualContent().quote?.id == "1600-017", "Bilingual mode must match the exact quote ID")
+                let bitmap = clock.bitmapImageRepForCachingDisplay(in: clock.bounds)!
+                clock.cacheDisplay(in: clock.bounds, to: bitmap)
+                try! bitmap.representation(using: .png, properties: [:])!.write(to: output.appendingPathComponent("bilingual-" + locale + ".png"))
+                clock.cache[locale] = catalogue
+            }
+            clock.preferences.set("en-GB", forKey: "translation-locale")
+            precondition(clock.bilingualContent().notice == clock.text("bilingual_same"), "Same language must show a notice")
+            clock.preferences.set("", forKey: "translation-locale")
+            precondition(clock.bilingualContent().notice == clock.text("bilingual_select_prompt"), "Unset translation language must show a prompt")
+            clock.preferences.set("es-ES", forKey: "translation-locale")
+            let originalSpanish = clock.catalogue("es-ES")
+            var filtered = originalSpanish
+            filtered[minute] = [NativeQuote(id: "1600-017", first: "Filtered diagnostic", time: "", last: "", title: "", author: "", sfw: false)]
+            clock.cache["es-ES"] = filtered
+            precondition(clock.bilingualContent().quote == nil && clock.bilingualContent().notice != nil, "SFW filtering must apply to translations")
+            clock.cache["es-ES"] = originalSpanish
+            clock.preferences.set(false, forKey: "bilingual")
+            precondition(clock.bilingualContent().notice == nil, "Disabled bilingual mode must remove its content")
             let first = clock.configureSheet!
             first.orderOut(nil)
             let second = clock.configureSheet!
             precondition(first !== second, "Closed options sheet was reused")
+            precondition(!(clock.controls["translation-locale"] as! NSPopUpButton).isEnabled, "Translation menu should be disabled without bilingual mode")
+            (clock.controls["bilingual"] as! NSButton).state = .on
+            clock.perform(NSSelectorFromString("bilingualControlsChanged"))
+            precondition((clock.controls["translation-locale"] as! NSPopUpButton).isEnabled, "Translation menu should be enabled in bilingual mode")
             let well = clock.controls["custom-color"] as! NSColorWell
             well.color = NativeAppearance.color("#123456")!
             clock.perform(NSSelectorFromString("customColorChanged"))
@@ -127,6 +163,9 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             precondition(other.preferences.string(forKey: "palette") == "custom", "Custom palette did not reach another view")
             precondition(other.preferences.string(forKey: "custom-color") == "#123456", "Custom colour did not reach another view")
             precondition(clock.preferences.string(forKey: "custom-color") == "#123456", "Custom colour was not saved")
+            precondition(clock.preferences.bool(forKey: "bilingual") && other.preferences.bool(forKey: "bilingual"), "Bilingual setting must save and reach other displays")
+            precondition(other.preferences.string(forKey: "translation-locale") == "es-ES", "Translation language must reach other displays")
+            clock.preferences.set(false, forKey: "bilingual")
             for palette in ["default", "pink", "green", "random"] {
                 _ = clock.configureSheet
                 if palette == "default" || palette == "random" {

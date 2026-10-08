@@ -16,6 +16,7 @@ final class BookHighlightLayoutManager: NSLayoutManager {
 }
 
 struct NativeQuote: Codable {
+    var id: String? = nil
     let first: String
     let time: String
     let last: String
@@ -30,7 +31,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     static let settingsChanged = Notification.Name("net.literatureclock.native-saver.settingsChanged")
     var preferences: UserDefaults = ScreenSaverDefaults(forModuleWithName: "net.literatureclock.native-saver")!
     var resources: URL { Bundle(for: NativeClockView.self).resourceURL! }
-    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background-pattern", "locale", "photo-provider", "photo-category"]
+    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background-pattern", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
     var photoDownloadsEnabled = true
     private var photoScreen: NSScreen? { window?.screen ?? NSScreen.screens.first }
     private var photoDisplayID: String { (photoScreen?.deviceDescription[NSDeviceDescriptionKey(rawValue: "NSScreenNumber")] as? NSNumber)?.stringValue ?? "0" }
@@ -94,8 +95,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         }
         return names
     }()
-    func quoteFont(_ size: CGFloat) -> NSFont {
-        let family = NativeAppearance.fontFamily(theme: themeName, locale: quoteLocale)
+    func quoteFont(_ size: CGFloat, locale: String? = nil) -> NSFont {
+        let family = NativeAppearance.fontFamily(theme: themeName, locale: locale ?? quoteLocale)
         return Self.bundledFonts[family].flatMap { NSFont(name: $0, size: size) } ?? NSFont.systemFont(ofSize: size)
     }
     var localeNames: [String] {
@@ -112,7 +113,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     private func setup() {
         preferences.register(defaults: ["theme": "base-dark", "screensaver": true, "show-time": true,
                                        "hide-book-title": false, "work": true, "progressbar": "background", "quote-locales": "", "palette": "default",
-                                       "custom-color": "#d24335", "background-pattern": "none", "photo-provider": "picsum", "photo-category": "all"])
+                                       "custom-color": "#d24335", "background-pattern": "none", "photo-provider": "picsum", "photo-category": "all", "bilingual": false, "translation-locale": ""])
         _ = Self.bundledFonts
         animationTimeInterval = 1.0 / 60.0
         Self.instances.add(self)
@@ -161,6 +162,17 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let fallbacks = (try? JSONDecoder().decode([String: NativeQuote].self, from: Data(contentsOf: resources.appendingPathComponent("fallback.json")))) ?? [:]
         let notice = fallbacks[quoteLocale] ?? fallbacks["en-GB"]
         quote = NativeQuote(first: notice?.first ?? "", time: minute, last: notice?.last ?? "", title: "", author: "", sfw: true)
+    }
+    func bilingualContent() -> (quote: NativeQuote?, locale: String, notice: String?) {
+        guard preferences.bool(forKey: "bilingual") else { return (nil, "", nil) }
+        let locale = preferences.string(forKey: "translation-locale") ?? ""
+        guard localeNames.contains(locale) else { return (nil, systemLocale, text("bilingual_select_prompt")) }
+        guard locale != quoteLocale else { return (nil, systemLocale, text("bilingual_same")) }
+        guard let id = quote?.id,
+              let translated = catalogue(locale)[lastMinute]?.first(where: { $0.id == id && (!preferences.bool(forKey: "work") || $0.sfw) }) else {
+            return (nil, systemLocale, text("bilingual_unavailable"))
+        }
+        return (translated, locale, nil)
     }
     static func timeInset(viewFrame: NSRect, screenFrame: NSRect, safeTop: CGFloat) -> CGFloat {
         8 + max(0, min(viewFrame.height, viewFrame.maxY - (screenFrame.maxY - safeTop)))
@@ -224,25 +236,65 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         paragraph.lineBreakMode = .byWordWrapping
         paragraph.lineHeightMultiple = theme == "book" ? 1.35 : theme == "festive" ? 1.25 : theme == "terminal" ? 1.15 : 1
         paragraph.baseWritingDirection = quoteLocale.hasPrefix("ar") ? .rightToLeft : .natural
+        let translation = bilingualContent()
         func passage(_ size: CGFloat) -> NSAttributedString {
-            let font = quoteFont(size)
-            let result = NSMutableAttributedString(string: quote.first + quote.time + quote.last,
-                attributes: [.font: font, .foregroundColor: foreground, .paragraphStyle: paragraph])
-            let timeRange = NSRange(location: (quote.first as NSString).length, length: (quote.time as NSString).length)
-            if theme == "book" {
-                result.addAttribute(.backgroundColor, value: accent, range: timeRange)
-            } else { result.addAttribute(.foregroundColor, value: accent, range: timeRange) }
-            let attribution = preferences.bool(forKey: "hide-book-title") ? quote.author : [quote.title, quote.author].filter { !$0.isEmpty }.joined(separator: ", ")
-            if !attribution.isEmpty {
-                result.append(NSAttributedString(string: "\n", attributes: [.font: font, .paragraphStyle: paragraph]))
-                let citationStyle = paragraph.mutableCopy() as! NSMutableParagraphStyle
-                citationStyle.paragraphSpacingBefore = theme == "book" ? (bounds.width <= 750 ? 16 : 24) : size * 0.35
-                result.append(NSAttributedString(string: (theme == "terminal" ? "> " : "— ") + attribution, attributes: [.font: quoteFont(size * 0.55), .foregroundColor: foreground, .paragraphStyle: citationStyle]))
+            let result = NSMutableAttributedString()
+            func append(_ item: NativeQuote, locale: String, size: CGFloat, gap: CGFloat) {
+                let style = paragraph.mutableCopy() as! NSMutableParagraphStyle
+                style.alignment = locale.hasPrefix("ar") ? .right : .left
+                style.baseWritingDirection = locale.hasPrefix("ar") ? .rightToLeft : .natural
+                style.paragraphSpacingBefore = gap
+                let font = quoteFont(size, locale: locale)
+                let text = NSMutableAttributedString(string: item.first + item.time + item.last,
+                    attributes: [.font: font, .foregroundColor: foreground, .paragraphStyle: style])
+                let range = NSRange(location: (item.first as NSString).length, length: (item.time as NSString).length)
+                text.addAttribute(theme == "book" ? .backgroundColor : .foregroundColor, value: accent, range: range)
+                result.append(text)
+                let attribution = preferences.bool(forKey: "hide-book-title") ? item.author : [item.title, item.author].filter { !$0.isEmpty }.joined(separator: ", ")
+                if !attribution.isEmpty {
+                    result.append(NSAttributedString(string: "\n", attributes: [.font: font, .paragraphStyle: style]))
+                    let citationStyle = style.mutableCopy() as! NSMutableParagraphStyle
+                    citationStyle.paragraphSpacingBefore = theme == "book" ? (bounds.width <= 750 ? 16 : 24) : size * 0.35
+                    result.append(NSAttributedString(string: (theme == "terminal" ? "> " : "— ") + attribution,
+                        attributes: [.font: quoteFont(size * 0.55, locale: locale), .foregroundColor: foreground, .paragraphStyle: citationStyle]))
+                }
+            }
+            append(quote, locale: quoteLocale, size: size, gap: 0)
+            if let translated = translation.quote {
+                let separatorStyle = NSMutableParagraphStyle()
+                separatorStyle.paragraphSpacingBefore = 18
+                separatorStyle.paragraphSpacing = 12
+                let separator = NSImage(size: NSSize(width: width - 12, height: 1), flipped: false) { rect in
+                    foreground.withAlphaComponent(0.25).setFill(); rect.fill(); return true
+                }
+                let attachment = NSTextAttachment()
+                attachment.image = separator
+                attachment.bounds = NSRect(x: 0, y: 0, width: width - 12, height: 1)
+                result.append(NSAttributedString(string: "\n"))
+                let line = NSMutableAttributedString(attachment: attachment)
+                line.addAttributes([.paragraphStyle: separatorStyle, .font: NSFont.systemFont(ofSize: 1)], range: NSRange(location: 0, length: line.length))
+                result.append(line)
+                result.append(NSAttributedString(string: "\n", attributes: [.paragraphStyle: separatorStyle, .font: NSFont.systemFont(ofSize: 1)]))
+                let headingStyle = NSMutableParagraphStyle()
+                headingStyle.alignment = systemLocale.hasPrefix("ar") ? .right : .left
+                headingStyle.baseWritingDirection = systemLocale.hasPrefix("ar") ? .rightToLeft : .natural
+                headingStyle.paragraphSpacing = 8
+                let name = Locale(identifier: systemLocale).localizedString(forIdentifier: translation.locale) ?? translation.locale
+                result.append(NSAttributedString(string: name + "\n", attributes: [.font: NSFont.systemFont(ofSize: max(10, size * 0.35), weight: .medium), .foregroundColor: foreground.withAlphaComponent(0.75), .paragraphStyle: headingStyle]))
+                append(translated, locale: translation.locale, size: size * 0.8, gap: 0)
+            } else if let notice = translation.notice {
+                let style = paragraph.mutableCopy() as! NSMutableParagraphStyle
+                style.alignment = translation.locale.hasPrefix("ar") ? .right : .left
+                style.baseWritingDirection = translation.locale.hasPrefix("ar") ? .rightToLeft : .natural
+                style.paragraphSpacingBefore = 24
+                result.append(NSAttributedString(string: "\n"))
+                result.append(NSAttributedString(string: notice, attributes: [.font: NSFont.systemFont(ofSize: size * 0.5), .foregroundColor: foreground.withAlphaComponent(0.75), .paragraphStyle: style]))
             }
             return result
         }
         let key = "\(quote.first)\(quote.time)\(quote.last)\(quote.title)\(quote.author)|\(theme)|\(quoteLocale)|\(width)|\(limit)|\(scale)|\(dark)|\(accent)|\(lastMinute)|\(preferences.bool(forKey: "hide-book-title"))"
-        if key != layoutKey {
+        let bilingualKey = key + "|\(quote.id ?? "")|\(preferences.bool(forKey: "bilingual"))|\(preferences.string(forKey: "translation-locale") ?? "")|\(preferences.bool(forKey: "work"))"
+        if bilingualKey != layoutKey {
             var low: CGFloat = 1, high = min(bounds.width * 0.043, bounds.height * 0.12)
             for _ in 0..<16 {
                 let size = (low + high) / 2
@@ -284,7 +336,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             let image = NSImage(size: size)
             image.addRepresentation(bitmap)
             passageImage = image
-            layoutKey = key
+            layoutKey = bilingualKey
         }
         guard let image = passageImage else { return }
         let elapsed = max(0, now.timeIntervalSince(started)) * (1 + Double(photoDisplayIndex) * 0.12)
@@ -361,6 +413,22 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         help.font = .systemFont(ofSize: NSFont.smallSystemFontSize)
         stack.addArrangedSubview(help)
         stack.setCustomSpacing(20, after: help)
+        let bilingual = NSButton(checkboxWithTitle: text("bilingual_mode"), target: self, action: #selector(bilingualControlsChanged))
+        bilingual.state = preferences.bool(forKey: "bilingual") ? .on : .off
+        controls["bilingual"] = bilingual
+        bilingual.widthAnchor.constraint(equalToConstant: 180).isActive = true
+        let translationMenu = NSPopUpButton()
+        for locale in [""] + localeNames {
+            let name = locale.isEmpty ? text("bilingual_select_language") : Locale(identifier: systemLocale).localizedString(forIdentifier: locale) ?? locale
+            let item = NSMenuItem(title: name, action: nil, keyEquivalent: "")
+            item.representedObject = locale; translationMenu.menu?.addItem(item)
+            if locale == (preferences.string(forKey: "translation-locale") ?? "") { translationMenu.select(item) }
+        }
+        translationMenu.widthAnchor.constraint(equalToConstant: 260).isActive = true
+        translationMenu.setAccessibilityLabel(text("bilingual_language"))
+        controls["translation-locale"] = translationMenu
+        stack.addArrangedSubview(NSStackView(views: [bilingual, translationMenu]))
+        bilingualControlsChanged()
         section("settings_appearance")
         let theme = preferences.string(forKey: "theme") ?? "base-dark"
         let parts = theme.split(separator: "-").map(String.init)
@@ -535,6 +603,9 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
               let item = menu.itemArray.first(where: { $0.representedObject as? String == sender.value }) else { return }
         menu.select(item)
         updateSwatches()
+    }
+    @objc private func bilingualControlsChanged() {
+        controls["translation-locale"]?.isEnabled = (controls["bilingual"] as? NSButton)?.state == .on
     }
     @objc private func colorModeChanged() {
         sheet?.makeFirstResponder(nil)

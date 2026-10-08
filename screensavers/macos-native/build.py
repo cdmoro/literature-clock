@@ -34,7 +34,7 @@ def catalogues():
             if not phrase or phrase not in row['Quote']:
                 raise ValueError(f'{locale}: missing highlighted phrase in {row["Id"]}')
             first, last = row['Quote'].split(phrase, 1)
-            grouped[row['Time']].append(dict(first=plain(first), time=plain(phrase), last=plain(last),
+            grouped[row['Time']].append(dict(id=row['Id'], first=plain(first), time=plain(phrase), last=plain(last),
                                            title=plain(row['Title']), author=plain(row['Author']),
                                            sfw=parse_sfw(row['SFW'], row['Id'])))
         result[locale] = grouped
