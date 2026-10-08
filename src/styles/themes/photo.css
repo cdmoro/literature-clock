@@ -76,7 +76,8 @@
   max-width: min(70vw, 500px);
   padding: 4px 8px;
   border-radius: 4px;
-  background: #000a;
+  background: transparent;
+  text-shadow: 0 1px 3px #000c, 0 0 8px #0008;
   color: #fff;
   font:
     11px/1.4 system-ui,
