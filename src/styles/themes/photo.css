@@ -42,10 +42,6 @@
   color: #111111;
 }
 
-[data-theme='photo-light'] body:not(.zen) footer {
-  background: #ffffff60;
-}
-
 [data-theme='photo-dark'] #time-clock {
   color: #eeeeee;
 }
@@ -63,10 +59,6 @@
 [data-theme='photo-dark'] #quote {
   text-shadow: 0px 0px 25px #1c1c1c;
   color: #eeeeee;
-}
-
-[data-theme='photo-dark'] body:not(.zen) footer {
-  background: #00000093;
 }
 
 #photo-credit {
