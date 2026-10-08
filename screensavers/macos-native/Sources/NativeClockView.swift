@@ -65,6 +65,9 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     var sheet: NSWindow?
     var controls: [String: NSControl] = [:]
     var swatches: [NativeColorSwatch] = []
+    private var fixedPalette = "red"
+    var colorSwatchesRow: NSStackView?
+    var colorEditor: NSStackView?
     var quote: NativeQuote?
     var quoteLocale = "en-GB"
     var started = Date()
@@ -390,7 +393,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             if key == "photo-category" { menu.setAccessibilityLabel(text("settings_photo_category")) }
             if key == "palette" {
                 let row = NSStackView(); row.spacing = 8
-                for raw in values {
+                for raw in values where raw != "default" && raw != "random" {
                     let button = NativeColorSwatch(frame: .zero)
                     button.value = raw
                     button.swatchColor = NativeAppearance.presetColors[raw] ?? (raw == "custom" ? NativeAppearance.color(preferences.string(forKey: "custom-color") ?? "")! : .labelColor)
@@ -401,8 +404,23 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                     button.heightAnchor.constraint(equalToConstant: 28).isActive = true
                     swatches.append(button); row.addArrangedSubview(button)
                 }
-                stack.addArrangedSubview(NSStackView(views: [title, row]))
-                updateSwatches()
+                let mode = NSPopUpButton()
+                for raw in ["default", "fixed", "random"] {
+                    let item = NSMenuItem(title: text("color_mode_" + raw), action: nil, keyEquivalent: "")
+                    item.representedObject = raw; mode.menu?.addItem(item)
+                }
+                mode.target = self; mode.action = #selector(colorModeChanged)
+                mode.widthAnchor.constraint(equalToConstant: 260).isActive = true
+                controls["color-mode"] = mode
+                stack.addArrangedSubview(NSStackView(views: [title, mode]))
+                let edit = NSButton(title: text("color_edit"), target: self, action: #selector(toggleColorEditor))
+                controls["color-edit"] = edit
+                row.addArrangedSubview(edit)
+                let fixedLabel = NSTextField(labelWithString: text("color_fixed"))
+                fixedLabel.widthAnchor.constraint(equalToConstant: 180).isActive = true
+                let fixedRow = NSStackView(views: [fixedLabel, row])
+                colorSwatchesRow = fixedRow
+                stack.addArrangedSubview(fixedRow)
             } else if key == "photo-category", let row = controls["photo-provider"]?.superview as? NSStackView {
                 row.addArrangedSubview(menu)
             } else { stack.addArrangedSubview(NSStackView(views: [title, menu])) }
@@ -420,7 +438,12 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 hex.widthAnchor.constraint(equalToConstant: 100).isActive = true
                 hex.target = self; hex.action = #selector(customHexChanged); hex.delegate = self
                 controls["color-hex"] = hex
-                stack.addArrangedSubview(NSStackView(views: [title, well, hex]))
+                let editor = NSStackView()
+                editor.orientation = .vertical; editor.alignment = .leading; editor.spacing = 8
+                editor.addArrangedSubview(NSStackView(views: [title, well, hex]))
+                colorEditor = editor
+                editor.isHidden = true
+                stack.addArrangedSubview(editor)
                 let rgb = well.color.usingColorSpace(.sRGB)!
                 let channels = NSStackView()
                 channels.spacing = 8
@@ -432,7 +455,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                     controls["color-" + channel] = slider
                     channels.addArrangedSubview(slider)
                 }
-                stack.addArrangedSubview(channels)
+                editor.addArrangedSubview(channels)
+                updateSwatches()
             }
         }
         photoControlsChanged()
@@ -512,7 +536,37 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         menu.select(item)
         updateSwatches()
     }
+    @objc private func colorModeChanged() {
+        sheet?.makeFirstResponder(nil)
+        let mode = menuValue("color-mode") ?? "default"
+        let value = mode == "fixed" ? fixedPalette : mode
+        if let menu = controls["palette"] as? NSPopUpButton {
+            menu.select(menu.itemArray.first { $0.representedObject as? String == value })
+        }
+        updateSwatches()
+    }
+    @objc private func toggleColorEditor() {
+        guard let editor = colorEditor else { return }
+        editor.isHidden.toggle()
+        resizeOptions()
+    }
+    private func resizeOptions() {
+        guard let panel = sheet, let content = panel.contentView,
+              let stack = content.subviews.first as? NSStackView else { return }
+        content.layoutSubtreeIfNeeded()
+        panel.setContentSize(NSSize(width: 700, height: max(470, stack.fittingSize.height + 48)))
+    }
     private func updateSwatches() {
+        let palette = menuValue("palette") ?? "default"
+        let fixed = palette != "default" && palette != "random"
+        if fixed { fixedPalette = palette }
+        if let mode = controls["color-mode"] as? NSPopUpButton {
+            mode.select(mode.itemArray.first { $0.representedObject as? String == (fixed ? "fixed" : palette) })
+        }
+        colorSwatchesRow?.isHidden = !fixed
+        controls["color-edit"]?.isHidden = palette != "custom"
+        if palette != "custom" { colorEditor?.isHidden = true }
+        resizeOptions()
         for button in swatches {
             button.state = button.value == menuValue("palette") ? .on : .off
             if button.value == "custom", let well = controls["custom-color"] as? NSColorWell { button.swatchColor = well.color }

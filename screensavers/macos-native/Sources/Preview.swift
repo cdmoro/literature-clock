@@ -112,6 +112,10 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             well.color = NativeAppearance.color("#123456")!
             clock.perform(NSSelectorFromString("customColorChanged"))
             precondition(clock.menuValue("palette") == "custom", "Colour picker did not select custom colour")
+            precondition(clock.menuValue("color-mode") == "fixed", "Custom colour must select Fixed mode")
+            precondition(clock.colorEditor!.isHidden, "Editor must be collapsed initially")
+            (clock.controls["color-edit"] as! NSButton).performClick(nil)
+            precondition(!clock.colorEditor!.isHidden, "Edit colour must reveal the editor")
             let themeMenu = clock.controls["theme-base"] as! NSPopUpButton
             themeMenu.select(themeMenu.itemArray.first { $0.representedObject as? String == "book" }!)
             let other = NativeClockView(frame: clock.bounds, isPreview: true)!
@@ -125,11 +129,24 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             precondition(clock.preferences.string(forKey: "custom-color") == "#123456", "Custom colour was not saved")
             for palette in ["default", "pink", "green", "random"] {
                 _ = clock.configureSheet
-                let button = clock.swatches.first { $0.value == palette }!
-                clock.perform(NSSelectorFromString("selectSwatch:"), with: button)
+                if palette == "default" || palette == "random" {
+                    let mode = clock.controls["color-mode"] as! NSPopUpButton
+                    mode.select(mode.itemArray.first { $0.representedObject as? String == palette }!)
+                    clock.perform(NSSelectorFromString("colorModeChanged"))
+                    precondition(clock.colorSwatchesRow!.isHidden, "Fixed colours should be hidden outside Fixed mode")
+                } else {
+                    let mode = clock.controls["color-mode"] as! NSPopUpButton
+                    mode.select(mode.itemArray.first { $0.representedObject as? String == "fixed" }!)
+                    clock.perform(NSSelectorFromString("colorModeChanged"))
+                    let button = clock.swatches.first { $0.value == palette }!
+                    clock.perform(NSSelectorFromString("selectSwatch:"), with: button)
+                    precondition(!clock.colorSwatchesRow!.isHidden, "Fixed colours should be visible")
+                }
+                precondition(clock.colorEditor!.isHidden, "Custom editor should remain hidden")
                 precondition(clock.menuValue("palette") == palette, "Swatch did not select \(palette)")
                 clock.perform(NSSelectorFromString("saveOptions"))
                 precondition(clock.preferences.string(forKey: "palette") == palette, "Custom colour overrode \(palette) on Save")
+                precondition(clock.preferences.string(forKey: "custom-color") == "#123456", "Switching modes must preserve the custom colour")
             }
             _ = clock.configureSheet
             (clock.controls["hide-book-title"] as! NSButton).state = .on
