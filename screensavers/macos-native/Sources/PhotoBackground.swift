@@ -54,28 +54,34 @@ final class NativePhotoBackground {
     }
     deinit { task?.cancel(); session.invalidateAndCancel() }
 
-    static func photoURL(minute: Int, size: NSSize) -> URL {
+    static func cacheURL(displayID: String) -> URL? {
+        FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first?.appendingPathComponent("net.literatureclock.native-saver/last-photo-" + displayID + ".jpg")
+    }
+    static func photoPosition(minute: Int, categoryCount: Int, allCategories: Bool, displayIndex: Int) -> Int {
+        (allCategories ? minute / max(1, categoryCount) : minute) + max(0, displayIndex)
+    }
+    static func photoURL(minute: Int, size: NSSize, displayID: String = "0") -> URL {
         // Bound download size even on very large or Retina displays.
         let factor = min(1, 2560 / max(1, size.width), 1440 / max(1, size.height))
         let width = max(320, Int(size.width * factor))
         let height = max(240, Int(size.height * factor))
-        return URL(string: "https://picsum.photos/seed/literature-clock-\(minute)/\(width)/\(height)?blur=1")!
+        return URL(string: "https://picsum.photos/seed/literature-clock-\(minute)-\(displayID)/\(width)/\(height)?blur=1")!
     }
-    func update(now: Date, size: NSSize, provider: String = "picsum", category: String = "all", onChange: @escaping () -> Void) {
+    func update(now: Date, size: NSSize, provider: String = "picsum", category: String = "all", displayID: String = "0", displayIndex: Int = 0, onChange: @escaping () -> Void) {
         let minute = Int(now.timeIntervalSince1970 / 60)
-        let key = "\(provider)/\(category)/\(minute)"
+        let key = "\(provider)/\(category)/\(minute)/\(displayID)/\(displayIndex)"
         guard key != requestedKey, size.width > 0, size.height > 0 else { return }
         requestedKey = key
         task?.cancel()
         if provider != "nasa" && provider != "commons" {
-            download(Photo(url: Self.photoURL(minute: minute, size: size).absoluteString, credit: "", title: ""), key: key, onChange: onChange)
+            download(Photo(url: Self.photoURL(minute: minute, size: size, displayID: displayID).absoluteString, credit: "", title: ""), key: key, onChange: onChange)
             return
         }
         let queries = Self.queries[provider] ?? [:]
         let topics = queries.keys.sorted()
         guard !topics.isEmpty else { return }
         let topic = queries[category] != nil ? category : topics[abs(minute % topics.count)]
-        let position = queries[category] != nil ? minute : minute / topics.count
+        let position = Self.photoPosition(minute: minute, categoryCount: topics.count, allCategories: queries[category] == nil, displayIndex: displayIndex)
         let catalogueKey = provider + "/" + topic
         if let cached = catalogues[catalogueKey], cached.expires > now {
             let photo = cached.photos[abs(position % cached.photos.count)]
@@ -100,10 +106,11 @@ final class NativePhotoBackground {
                 return Photo(url: url, credit: author.contains("NASA") ? author : "NASA / " + author, title: metadata["title"] as? String ?? id)
             }
             guard !photos.isEmpty else { return }
+            let orderedPhotos = photos.sorted { $0.url < $1.url }
             DispatchQueue.main.async {
                 guard let self, self.requestedKey == key else { return }
-                self.catalogues[catalogueKey] = (now.addingTimeInterval(3600), photos)
-                self.download(photos[abs(position % photos.count)], key: key, onChange: onChange)
+                self.catalogues[catalogueKey] = (now.addingTimeInterval(3600), orderedPhotos)
+                self.download(orderedPhotos[abs(position % orderedPhotos.count)], key: key, onChange: onChange)
             }
         }
         task?.resume()

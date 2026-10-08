@@ -19,7 +19,34 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     var resources: URL { Bundle(for: NativeClockView.self).resourceURL! }
     static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background-pattern", "locale", "photo-provider", "photo-category"]
     var photoDownloadsEnabled = true
-    private lazy var photoBackground = NativePhotoBackground()
+    private var photoScreen: NSScreen? { window?.screen ?? NSScreen.screens.first }
+    private var photoDisplayID: String { (photoScreen?.deviceDescription[NSDeviceDescriptionKey(rawValue: "NSScreenNumber")] as? NSNumber)?.stringValue ?? "0" }
+    // Synthetic display ordinals are used only by the standalone diagnostic.
+    var displayIndexOverride: Int?
+    private var photoDisplayIndex: Int {
+        if let index = displayIndexOverride { return index }
+        let id = photoDisplayID
+        return NSScreen.screens.firstIndex { ($0.deviceDescription[NSDeviceDescriptionKey(rawValue: "NSScreenNumber")] as? NSNumber)?.stringValue == id } ?? 0
+    }
+    private var lastDisplayIndex: Int?
+    static func variantIndex(count: Int, minute: Int, displayIndex: Int) -> Int {
+        let count = max(1, count)
+        return ((minute + max(0, displayIndex)) % count + count) % count
+    }
+    func randomValue(_ values: [String], at now: Date) -> String {
+        values[Self.variantIndex(count: values.count, minute: Int(now.timeIntervalSince1970 / 60), displayIndex: photoDisplayIndex)]
+    }
+    private var photoCacheDisplayID = ""
+    private var photoBackgroundStorage: NativePhotoBackground?
+    private var photoBackground: NativePhotoBackground {
+        let id = photoDisplayID
+        if photoBackgroundStorage == nil || photoCacheDisplayID != id {
+            photoBackgroundStorage?.cancel()
+            photoBackgroundStorage = NativePhotoBackground(cacheURL: NativePhotoBackground.cacheURL(displayID: id))
+            photoCacheDisplayID = id
+        }
+        return photoBackgroundStorage!
+    }
     var active = false
     var lastMinute = ""
     var sheet: NSWindow?
@@ -84,7 +111,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         super.startAnimation()
         needsDisplay = true
     }
-    override func stopAnimation() { active = false; photoBackground.cancel(); super.stopAnimation() }
+    override func stopAnimation() { active = false; photoBackgroundStorage?.cancel(); super.stopAnimation() }
     override func animateOneFrame() { needsDisplay = true }
     override func acceptsFirstMouse(for event: NSEvent?) -> Bool { false }
     override func hitTest(_ point: NSPoint) -> NSView? { self }
@@ -98,15 +125,20 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     func refreshQuote(_ now: Date) {
         let components = Calendar.current.dateComponents([.hour, .minute], from: now)
         let minute = String(format: "%02d:%02d", components.hour ?? 0, components.minute ?? 0)
-        guard minute != lastMinute else { return }
+        let displayIndex = photoDisplayIndex
+        guard minute != lastMinute || (lastDisplayIndex != nil && lastDisplayIndex != displayIndex) else { return }
         lastMinute = minute
+        lastDisplayIndex = displayIndex
         let selected = (preferences.string(forKey: "quote-locales") ?? "").split(separator: ",").map(String.init).filter { localeNames.contains($0) }
         let languages = selected.isEmpty ? [systemLocale] : selected
         let ordinal = (components.hour ?? 0) * 60 + (components.minute ?? 0)
-        quoteLocale = languages[ordinal % languages.count]
+        quoteLocale = languages[Self.variantIndex(count: languages.count, minute: ordinal, displayIndex: displayIndex)]
         for locale in [quoteLocale, "en-GB"] {
             let available = (catalogue(locale)[minute] ?? []).filter { !preferences.bool(forKey: "work") || $0.sfw }
-            if let chosen = available.randomElement() { quote = chosen; quoteLocale = locale; return }
+            if !available.isEmpty {
+                quote = available[Self.variantIndex(count: available.count, minute: Int(now.timeIntervalSince1970 / 60), displayIndex: displayIndex)]
+                quoteLocale = locale; return
+            }
         }
         // Explain missing/filtered minutes in the requested language; never
         // invent a literary quote or silently display a bare time.
@@ -132,7 +164,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         background.setFill(); bounds.fill()
         NativeAppearance.drawThemeBackground(theme: theme, dark: dark, bounds: bounds, resources: resources)
         if theme == "photo" {
-            if photoDownloadsEnabled { photoBackground.update(now: now, size: bounds.size, provider: preferences.string(forKey: "photo-provider") ?? "picsum", category: preferences.string(forKey: "photo-category") ?? "all") { [weak self] in self?.needsDisplay = true } }
+            if photoDownloadsEnabled { photoBackground.update(now: now, size: bounds.size, provider: preferences.string(forKey: "photo-provider") ?? "picsum", category: preferences.string(forKey: "photo-category") ?? "all", displayID: photoDisplayID, displayIndex: photoDisplayIndex) { [weak self] in self?.needsDisplay = true } }
             photoBackground.draw(in: bounds, dark: dark)
         }
         let colors = NativeAppearance.presetColors
@@ -142,12 +174,12 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         else if palette == "default" { accent = NativeAppearance.defaultAccent(theme: theme, dark: dark) }
         else if palette == "random" {
             let ordered = ["red", "pink", "green", "orange", "purple", "blue", "gray"]
-            accent = colors[ordered[Int(now.timeIntervalSince1970 / 60) % ordered.count]]!
+            accent = colors[randomValue(ordered, at: now)]!
         }
         else { accent = colors[palette] ?? .systemRed }
         let scale = window?.backingScaleFactor ?? 1
         var pattern = preferences.string(forKey: "background-pattern") ?? "none"
-        if pattern == "random" { pattern = ["dots", "diagonal", "grid"][Int(now.timeIntervalSince1970 / 60) % 3] }
+        if pattern == "random" { pattern = randomValue(["dots", "diagonal", "grid"], at: now) }
         let newPatternKey = "\(pattern)|\(bounds.size)|\(scale)|\(accent)"
         if newPatternKey != patternKey {
             patternImage = NativeAppearance.patternImage(pattern: pattern, size: bounds.size, scale: scale, color: accent)
@@ -217,7 +249,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             layoutKey = key
         }
         guard let image = passageImage else { return }
-        let elapsed = max(0, now.timeIntervalSince(started))
+        let elapsed = max(0, now.timeIntervalSince(started)) * (1 + Double(photoDisplayIndex) * 0.12)
         let moving = preferences.bool(forKey: "screensaver")
         let dx = moving ? sin(elapsed / 12) * bounds.width * 0.045 : 0
         let dy = moving ? sin(elapsed / 17) * bounds.height * 0.055 : 0
@@ -502,7 +534,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             if let value = values[key] { preferences.set(value, forKey: key) }
         }
         preferences.synchronize()
-        if themeName != "photo" { photoBackground.cancel() }
+        if themeName != "photo" { photoBackgroundStorage?.cancel() }
         lastMinute = ""
         layoutKey = ""
         patternKey = ""

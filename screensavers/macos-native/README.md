@@ -54,3 +54,7 @@ The time label uses the current screen's `safeAreaInsets.top` and the view's scr
 | Wikimedia Commons | Nature, landscapes, animals, architecture, oceans, mountains, forests, flowers, birds, waterfalls, cities, castles, bridges, art, beaches, sunsets |
 
 These are shared search topics, rather than a fixed official category taxonomy. The providers select images automatically; Commons may also return paintings and other artwork. The web validates saved categories directly against the shared configuration, and both interfaces translate their labels in all 12 supported languages.
+
+### Multiple displays
+
+Displays share the same settings but vary their quotes, selected languages, photos and random colour/pattern choices independently. Selected languages rotate with a different starting position per display; with one language, displays select different passages for that minute when enough exist. Fixed colours and patterns stay fixed. Movement starts at rest, with a slightly different speed per display. Picsum seeds include the current minute and display identifier. NASA/Commons image lists are sorted by URL, and each display chooses a different position when enough images are available. Each display has its own cached offline photo. Picsum can still return the same underlying image for different seeds; a catalogue with fewer images than displays also permits repeats. Actual simultaneous multi-display activation remains a manual verification step.

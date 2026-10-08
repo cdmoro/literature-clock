@@ -184,11 +184,41 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             categoryMenu.select(categoryMenu.itemArray.first { $0.representedObject as? String == "animals" }!)
             clock.perform(NSSelectorFromString("saveOptions"))
             precondition(other.preferences.string(forKey: "photo-provider") == "commons" && other.preferences.string(forKey: "photo-category") == "animals", "Commons options were not saved")
+            let left = NativeClockView(frame: clock.bounds, isPreview: false)!
+            let right = NativeClockView(frame: clock.bounds, isPreview: false)!
+            left.preferences = clock.preferences; right.preferences = clock.preferences
+            left.photoDownloadsEnabled = false; right.photoDownloadsEnabled = false
+            left.displayIndexOverride = 0; right.displayIndexOverride = 1
+            var testParts = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+            testParts.hour = 12; testParts.minute = 0; testParts.second = 0
+            let displayDate = Calendar.current.date(from: testParts)!
+            let entries = ["First passage", "Second passage"].map { NativeQuote(first: $0, time: "noon", last: "", title: "Test", author: "Test", sfw: true) }
+            for view in [left, right] { view.cache = ["en-GB": ["12:00": entries], "es-ES": ["12:00": entries]] }
+            clock.preferences.set("en-GB", forKey: "quote-locales")
+            left.refreshQuote(displayDate); right.refreshQuote(displayDate)
+            precondition(left.quote?.first != right.quote?.first, "Same-language displays chose the same available passage")
+            clock.preferences.set("en-GB,es-ES", forKey: "quote-locales")
+            left.lastMinute = ""; right.lastMinute = ""
+            left.refreshQuote(displayDate); right.refreshQuote(displayDate)
+            precondition(left.quoteLocale == "en-GB" && right.quoteLocale == "es-ES", "Selected languages were not distributed across displays")
+            precondition(left.randomValue(["red", "green", "blue"], at: displayDate) != right.randomValue(["red", "green", "blue"], at: displayDate), "Random variants coincide across displays")
+            right.displayIndexOverride = 0
+            right.refreshQuote(displayDate)
+            precondition(right.quoteLocale == left.quoteLocale, "Moving an instance to another display did not refresh its selection")
+            let primaryURL = NativePhotoBackground.photoURL(minute: 100, size: clock.bounds.size, displayID: "primary")
+            let secondaryURL = NativePhotoBackground.photoURL(minute: 100, size: clock.bounds.size, displayID: "secondary")
+            precondition(primaryURL != secondaryURL, "Picsum seed did not vary by display")
+            for all in [false, true] {
+                let first = NativePhotoBackground.photoPosition(minute: 100, categoryCount: 14, allCategories: all, displayIndex: 0)
+                let second = NativePhotoBackground.photoPosition(minute: 100, categoryCount: 14, allCategories: all, displayIndex: 1)
+                precondition(first % 50 != second % 50, "Catalogue images coincide across displays")
+            }
+            precondition(NativePhotoBackground.cacheURL(displayID: "primary") != NativePhotoBackground.cacheURL(displayID: "secondary"), "Offline photo cache was shared across displays")
             let screenFrame = NSRect(x: 0, y: 0, width: 1512, height: 982)
             precondition(NativeClockView.timeInset(viewFrame: screenFrame, screenFrame: screenFrame, safeTop: 32) == 40)
             precondition(NativeClockView.timeInset(viewFrame: NSRect(x: 0, y: 0, width: 1512, height: 950), screenFrame: screenFrame, safeTop: 32) == 8)
             precondition(NativeClockView.timeInset(viewFrame: screenFrame, screenFrame: screenFrame, safeTop: 0) == 8)
-            print("PASS: 12 catalogues, 84 theme/locale font combinations, light/dark rendering, missing quote notice, reopening options custom colour save, preset restoration, hiding book titles, photo download throttling, caching and offline failure, automatic NASA and Commons catalogues/credits/cache, joined selectors, notch safe area")
+            print("PASS: 12 catalogues, 84 theme/locale font combinations, light/dark rendering, missing quote notice, reopening options custom colour save, preset restoration, hiding book titles, photo download throttling, caching and offline failure, automatic NASA and Commons catalogues/credits/cache, joined selectors, distinct display quotes/languages/random variants/seeds/catalogue selections/caches, notch safe area")
             clock.stopAnimation(); NSApp.terminate(nil)
         }
     }
