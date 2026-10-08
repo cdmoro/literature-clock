@@ -37,7 +37,18 @@ enum NativeAppearance {
                         }
                     }
                     NSGraphicsContext.restoreGraphicsState()
-                } else { image.draw(in: bounds) }
+                } else {
+                    // The web asset is a 1 × 3 pixel scanline tile. Stretching
+                    // it across a display erases the repeating CRT texture.
+                    NSGraphicsContext.saveGraphicsState()
+                    NSGraphicsContext.current?.imageInterpolation = .none
+                    // JPEG's 300 dpi metadata would otherwise make the tile
+                    // smaller than one point and flatten it during sampling.
+                    image.size = NSSize(width: 1, height: 3)
+                    NSColor(patternImage: image).setFill()
+                    bounds.fill()
+                    NSGraphicsContext.restoreGraphicsState()
+                }
             }
         }
         if theme == "terminal" {

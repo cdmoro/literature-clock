@@ -366,7 +366,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let parts = theme.split(separator: "-").map(String.init)
         for (key, label, values) in [
             ("theme-base", "theme", NativeAppearance.themes),
-            ("theme-mode", "settings_scheme", ["light", "dark", "system"]),
+            ("theme-mode", "settings_scheme", ["system", "light", "dark"]),
             ("photo-provider", "settings_photo_provider", ["picsum", "nasa", "commons"]),
             ("photo-category", "settings_photo_category", NativePhotoBackground.categories(provider: preferences.string(forKey: "photo-provider") ?? "picsum")),
             ("palette", "settings_color", ["default", "red", "pink", "green", "orange", "purple", "blue", "gray", "random", "custom"]),
