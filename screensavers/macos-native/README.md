@@ -40,8 +40,17 @@ For immutable releases, create an **existing draft release**, run manual dispatc
 
 ## Photo providers and safe screen area
 
-Choose Photo, then Picsum, NASA or Wikimedia Commons in Options. Provider and category sit side by side; the category selector is hidden for Picsum. NASA and Commons need no account or API key. Category queries come from `src/photo-providers.json`, shared with the web app. Each category search retrieves up to 100 NASA results or 50 Commons results automatically and is cached in memory for an hour; images rotate each minute. All alternates between the four categories. Source credits are drawn over the background. Commons offers nature, landscapes, animals and architecture, and accepts only bitmap images whose metadata identifies a CC0 licence without required attribution. Artist HTML is converted to plain text; the image source is retained with the cached metadata. Entries whose description identifies copyright protection are excluded; NASA occasionally includes third-party material, so this filter does not constitute a complete rights audit. No image list is maintained by hand.
+Choose Photo, then Picsum, NASA or Wikimedia Commons in Options. Provider and category sit side by side; the category selector is hidden for Picsum. NASA and Commons need no account or API key. Category queries come from `src/photo-providers.json`, shared with the web app. Each category search retrieves up to 100 NASA results or 50 Commons results automatically and is cached in memory for an hour; images rotate each minute. All alternates between the provider’s available categories. Source credits are drawn over the background. Commons accepts only bitmap images whose metadata identifies a CC0 licence without required attribution. Artist HTML is converted to plain text; the image source is retained with the cached metadata. Entries whose description identifies copyright protection are excluded; NASA occasionally includes third-party material, so this filter does not constitute a complete rights audit. No image list is maintained by hand.
 
 Downloads preserve the last successful image and its credit if NASA, Commons, Picsum or the internet is unavailable. The native saver stores that image and credit on disk for offline activation. The web app preserves the last loaded background during the current session. See [NASA media usage guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/).
 
 The time label uses the current screen's `safeAreaInsets.top` and the view's screen coordinates to avoid a camera housing. It keeps its normal margin on external screens, miniature previews, and windows that macOS has already positioned below the notch. Synthetic geometry checks cover these cases; actual full-screen placement on a Mac with a notch still needs verification.
+
+### Available photo topics
+
+| Provider | Topics (plus All) |
+| --- | --- |
+| NASA | Galaxies, nebulae, Earth, Moon, stars, planets, Mars, Jupiter, Saturn, Sun, auroras, space stations, rockets, astronauts |
+| Wikimedia Commons | Nature, landscapes, animals, architecture, oceans, mountains, forests, flowers, birds, waterfalls, cities, castles, bridges, art, beaches, sunsets |
+
+These are shared search topics, rather than a fixed official category taxonomy. The providers select images automatically; Commons may also return paintings and other artwork. The web validates saved categories directly against the shared configuration, and both interfaces translate their labels in all 12 supported languages.

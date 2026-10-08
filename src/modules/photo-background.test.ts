@@ -1,4 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import QUERIES from '../photo-providers.json';
 import { createStore, store } from '../store';
 import {
   clearPhotoBackground,
@@ -67,12 +68,12 @@ describe('NASA backgrounds', () => {
     const fetch = vi.fn().mockResolvedValue({ ok: true, json: async () => catalogue });
     vi.stubGlobal('fetch', fetch);
     const first = await nasaPhoto('all', 0);
-    const next = await nasaPhoto('all', 4);
+    const next = await nasaPhoto('all', Object.keys(QUERIES.nasa).length);
     expect(first.url).not.toBe(next.url);
     expect(fetch).toHaveBeenCalledTimes(1);
     const later = Date.now() + 3600001;
     vi.spyOn(Date, 'now').mockReturnValue(later);
-    await nasaPhoto('all', 8);
+    await nasaPhoto('all', Object.keys(QUERIES.nasa).length * 2);
     expect(fetch).toHaveBeenCalledTimes(2);
   });
   it('retains the last successful image and credit on download failure', async () => {
@@ -170,13 +171,7 @@ describe('Commons backgrounds and joined selectors', () => {
     provider.value = 'commons';
     provider.dispatchEvent(new Event('change'));
     expect(category.hidden).toBe(false);
-    expect([...category.options].map((option) => option.value)).toEqual([
-      'all',
-      'nature',
-      'landscapes',
-      'animals',
-      'architecture',
-    ]);
+    expect([...category.options].map((option) => option.value)).toEqual(['all', ...Object.keys(QUERIES.commons)]);
     category.value = 'animals';
     category.dispatchEvent(new Event('change'));
     expect(store.get('photo-category')).toBe('animals');

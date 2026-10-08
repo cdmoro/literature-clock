@@ -3,12 +3,34 @@
     "galaxies": "galaxy",
     "nebulae": "nebula",
     "earth": "earth blue marble",
-    "moon": "moon surface"
+    "moon": "moon surface",
+    "stars": "star cluster",
+    "planets": "planet",
+    "mars": "mars landscape",
+    "jupiter": "jupiter",
+    "saturn": "saturn",
+    "sun": "sun solar",
+    "auroras": "aurora",
+    "space-stations": "international space station",
+    "rockets": "rocket launch",
+    "astronauts": "astronaut spacewalk"
   },
   "commons": {
     "nature": "nature incategory:\"CC-Zero\" filetype:bitmap",
     "landscapes": "landscape incategory:\"CC-Zero\" filetype:bitmap",
     "animals": "animal incategory:\"CC-Zero\" filetype:bitmap",
-    "architecture": "architecture incategory:\"CC-Zero\" filetype:bitmap"
+    "architecture": "architecture incategory:\"CC-Zero\" filetype:bitmap",
+    "oceans": "ocean incategory:\"CC-Zero\" filetype:bitmap",
+    "mountains": "mountain incategory:\"CC-Zero\" filetype:bitmap",
+    "forests": "forest incategory:\"CC-Zero\" filetype:bitmap",
+    "flowers": "flower incategory:\"CC-Zero\" filetype:bitmap",
+    "birds": "bird incategory:\"CC-Zero\" filetype:bitmap",
+    "waterfalls": "waterfall incategory:\"CC-Zero\" filetype:bitmap",
+    "cities": "city incategory:\"CC-Zero\" filetype:bitmap",
+    "castles": "castle incategory:\"CC-Zero\" filetype:bitmap",
+    "bridges": "bridge incategory:\"CC-Zero\" filetype:bitmap",
+    "art": "art incategory:\"CC-Zero\" filetype:bitmap",
+    "beaches": "beach incategory:\"CC-Zero\" filetype:bitmap",
+    "sunsets": "sunset incategory:\"CC-Zero\" filetype:bitmap"
   }
 }

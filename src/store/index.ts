@@ -1,3 +1,4 @@
+import PHOTO_PROVIDERS from '../photo-providers.json';
 import { BackgroundPattern, isBackgroundPattern } from '../utils/background-patterns';
 import { resolveTransition, TransitionMode } from '../utils/transition-settings';
 import { resolveLocale } from '../modules/locales';
@@ -26,16 +27,7 @@ interface Stateful {
   'custom-color': string;
   'background-pattern': BackgroundPattern;
   'photo-provider': 'picsum' | 'nasa' | 'commons';
-  'photo-category':
-    | 'all'
-    | 'galaxies'
-    | 'nebulae'
-    | 'earth'
-    | 'moon'
-    | 'nature'
-    | 'landscapes'
-    | 'animals'
-    | 'architecture';
+  'photo-category': 'all' | keyof typeof PHOTO_PROVIDERS.nasa | keyof typeof PHOTO_PROVIDERS.commons;
   progressbar: ProgressbarMode;
   'random-locale': boolean;
 }
@@ -140,11 +132,7 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
         if (['picsum', 'nasa', 'commons'].includes(raw)) result[key] = raw;
         break;
       case 'photo-category':
-        if (
-          ['all', 'galaxies', 'nebulae', 'earth', 'moon', 'nature', 'landscapes', 'animals', 'architecture'].includes(
-            raw,
-          )
-        )
+        if (['all', ...Object.keys(PHOTO_PROVIDERS.nasa), ...Object.keys(PHOTO_PROVIDERS.commons)].includes(raw))
           result[key] = raw;
         break;
       case 'background-pattern':
