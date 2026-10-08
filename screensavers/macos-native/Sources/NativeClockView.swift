@@ -103,7 +103,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     static let settingsChanged = Notification.Name("net.literatureclock.native-saver.settingsChanged")
     var preferences: UserDefaults = ScreenSaverDefaults(forModuleWithName: "net.literatureclock.native-saver")!
     var resources: URL { Bundle(for: NativeClockView.self).resourceURL! }
-    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background-pattern", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale", "time-glass", "glass-fusion"]
+    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background-pattern", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale", "time-glass"]
     var photoDownloadsEnabled = true
     var fusionPreviewEnabled = false
     var interactionPreviewSweep = false
@@ -154,6 +154,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     private var passageImage: NSImage?
     private var glassTimeView: NSView?
     private var glassTimeLabel: NSTextField?
+    private var plainTimeImage: NSImage?
+    private var plainTimeImageKey = ""
     private var glassTimeKey = ""
     private var glassProgressView: NSView?
     private var passageView: NSImageView?
@@ -196,7 +198,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     private func setup() {
         preferences.register(defaults: ["theme": "base-dark", "screensaver": true, "show-time": true,
                                        "hide-book-title": false, "work": true, "progressbar": "background", "quote-locales": "", "palette": "default",
-                                       "custom-color": "#d24335", "background-pattern": "none", "photo-provider": "picsum", "photo-category": "all", "bilingual": false, "translation-locale": "", "time-glass": false, "glass-fusion": true])
+                                       "custom-color": "#d24335", "background-pattern": "none", "photo-provider": "picsum", "photo-category": "all", "bilingual": false, "translation-locale": "", "time-glass": false])
         _ = Self.bundledFonts
         animationTimeInterval = 1.0 / 60.0
         Self.instances.add(self)
@@ -258,10 +260,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         return (translated, locale, nil)
     }
     static func timeInset(viewFrame: NSRect, screenFrame: NSRect, safeTop: CGFloat) -> CGFloat {
-        8 + max(0, min(viewFrame.height, viewFrame.maxY - (screenFrame.maxY - safeTop)))
+        18 + max(0, min(viewFrame.height, viewFrame.maxY - (screenFrame.maxY - safeTop)))
     }
     private var timeTopInset: CGFloat {
-        guard !isPreview, let window, let screen = window.screen else { return 8 }
+        guard !isPreview, let window, let screen = window.screen else { return 18 }
         let frame = window.convertToScreen(convert(bounds, to: nil))
         return Self.timeInset(viewFrame: frame, screenFrame: screen.frame, safeTop: screen.safeAreaInsets.top)
     }
@@ -274,7 +276,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             if let existing = glassTimeView as? OpticalGlassView { glass = existing }
             else {
                 glass = OpticalGlassView()
-                let label = NSTextField(labelWithString: "")
+                let label = glassTimeLabel ?? NSTextField(labelWithString: "")
                 label.alignment = .center
                 label.textColor = .labelColor
                 addSubview(glass)
@@ -380,10 +382,46 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             opticalSource = backgroundImage.tiffRepresentation.flatMap { CIImage(data: $0) }
             opticalSourceKey = opticalKey
         }
+        let timeFont = NSFont.systemFont(ofSize: max(10, min(20, bounds.width * 0.013)), weight: .bold)
+        let glassTime = updateGlassTime(font: timeFont, dark: dark)
+        var progressSource = opticalSource
+        if preferences.bool(forKey: "show-time") && !glassTime {
+            if glassTimeLabel == nil {
+                let label = NSTextField(labelWithString: "")
+                label.alignment = .center
+                addSubview(label)
+                glassTimeLabel = label
+            }
+            let label = glassTimeLabel!
+            label.font = NSFont.monospacedDigitSystemFont(ofSize: timeFont.pointSize, weight: .bold)
+            label.stringValue = lastMinute
+            label.textColor = foreground
+            label.sizeToFit()
+            label.frame.origin = NSPoint(x: bounds.midX - label.frame.width / 2,
+                                         y: isFlipped ? timeTopInset + 8 : bounds.maxY - timeTopInset - 8 - label.frame.height)
+            let key = "\(lastMinute)|\(label.font!.pointSize)|\(foreground)|\(scale)"
+            if key != plainTimeImageKey {
+                label.isHidden = false
+                let bitmap = label.bitmapImageRepForCachingDisplay(in: label.bounds)!
+                label.cacheDisplay(in: label.bounds, to: bitmap)
+                let image = NSImage(size: label.bounds.size)
+                image.addRepresentation(bitmap)
+                plainTimeImage = image
+                plainTimeImageKey = key
+            }
+            label.isHidden = true
+            plainTimeImage?.draw(in: label.frame)
+            if let image = plainTimeImage, let data = image.tiffRepresentation, let clock = CIImage(data: data), let background = opticalSource {
+                let positioned = clock.transformed(by: CGAffineTransform(scaleX: label.frame.width / clock.extent.width, y: label.frame.height / clock.extent.height))
+                    .transformed(by: CGAffineTransform(translationX: label.frame.minX, y: label.frame.minY))
+                progressSource = positioned.composited(over: background)
+            }
+        }
         let progress = interactionPreviewSweep ? 0.5 + sin(now.timeIntervalSince(started) / 3) * 0.13 : now.timeIntervalSince1970.truncatingRemainder(dividingBy: 60) / 60
         let progressMode = preferences.string(forKey: "progressbar") ?? "none"
         let progressColor = NativeAppearance.progressForeground(theme: theme, dark: dark, accent: accent)
         let glassProgress = updateGlassProgress(mode: progressMode, progress: progress, dark: dark, tint: progressColor.withAlphaComponent(0.1))
+        (glassProgressView as? OpticalGlassView)?.source = progressSource
         timeOpticalSource = opticalSource
         if glassProgress {
             // Core Image evaluates this lazy composition only where the clock samples it.
@@ -397,11 +435,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             if let source = opticalSource { timeOpticalSource = OpticalGlassView.tinted(source, rect: rect, color: fill) }
         }
         guard bounds.width > 0, bounds.height > 0, let quote else { passageView?.isHidden = true; return }
-        let timeFont = NSFont.systemFont(ofSize: max(10, min(20, bounds.width * 0.013)), weight: .bold)
-        let glassTime = updateGlassTime(font: timeFont, dark: dark)
+        if glassTime { updateGlassTime(font: timeFont, dark: dark) }
         fusionPreviewView?.isHidden = true
         (glassProgressView as? OpticalGlassView)?.fusionExclusion = nil
-        if (interactionPreviewSweep ? fusionPreviewEnabled : preferences.bool(forKey: "glass-fusion")), glassTime, glassProgress,
+        if (interactionPreviewSweep ? fusionPreviewEnabled : true), glassTime, glassProgress,
            let source = opticalSource, let capsule = glassTimeView as? OpticalGlassView,
            let pane = glassProgressView as? OpticalGlassView,
            let image = OpticalGlassView.fusionImage(source: source, capsule: capsule.frame, radius: capsule.cornerRadius, pane: pane.frame, tint: pane.tint) {
@@ -417,12 +454,6 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             fusionPreviewView?.image = image
             fusionPreviewView?.isHidden = false
             capsule.isHidden = true
-        }
-        if preferences.bool(forKey: "show-time") && !glassTime {
-            let timeStyle = NSMutableParagraphStyle(); timeStyle.alignment = .center
-            let font = timeFont
-            (lastMinute as NSString).draw(in: NSRect(x: 0, y: (NSGraphicsContext.current?.isFlipped ?? isFlipped) ? timeTopInset : bounds.height - font.pointSize * 1.5 - timeTopInset, width: bounds.width, height: font.pointSize * 1.5),
-                                        withAttributes: [.font: font, .foregroundColor: foreground, .paragraphStyle: timeStyle])
         }
         let width = bounds.width * 0.76
         let limit = bounds.height * 0.65
@@ -745,7 +776,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         }
         photoControlsChanged()
         section("settings_behavior")
-        for (key, label) in [("screensaver", "movement"), ("show-time", "time_mode"), ("time-glass", "time_glass"), ("glass-fusion", "glass_fusion"), ("hide-book-title", "settings_hide_book_title"), ("work", "work_mode_title")] {
+        for (key, label) in [("screensaver", "movement"), ("show-time", "time_mode"), ("time-glass", "time_glass"), ("hide-book-title", "settings_hide_book_title"), ("work", "work_mode_title")] {
             let check = NSButton(checkboxWithTitle: text(label), target: nil, action: nil)
             check.state = preferences.bool(forKey: key) ? .on : .off
             if key == "show-time" { check.target = self; check.action = #selector(timeControlsChanged) }

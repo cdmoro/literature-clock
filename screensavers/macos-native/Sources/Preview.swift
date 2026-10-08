@@ -386,9 +386,9 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             }
             precondition(NativePhotoBackground.cacheURL(displayID: "primary") != NativePhotoBackground.cacheURL(displayID: "secondary"), "Offline photo cache was shared across displays")
             let screenFrame = NSRect(x: 0, y: 0, width: 1512, height: 982)
-            precondition(NativeClockView.timeInset(viewFrame: screenFrame, screenFrame: screenFrame, safeTop: 32) == 40)
-            precondition(NativeClockView.timeInset(viewFrame: NSRect(x: 0, y: 0, width: 1512, height: 950), screenFrame: screenFrame, safeTop: 32) == 8)
-            precondition(NativeClockView.timeInset(viewFrame: screenFrame, screenFrame: screenFrame, safeTop: 0) == 8)
+            precondition(NativeClockView.timeInset(viewFrame: screenFrame, screenFrame: screenFrame, safeTop: 32) == 50)
+            precondition(NativeClockView.timeInset(viewFrame: NSRect(x: 0, y: 0, width: 1512, height: 950), screenFrame: screenFrame, safeTop: 32) == 18)
+            precondition(NativeClockView.timeInset(viewFrame: screenFrame, screenFrame: screenFrame, safeTop: 0) == 18)
             print("PASS: 12 catalogues, 84 theme/locale font combinations, light/dark rendering, missing quote notice, reopening options custom colour save, preset restoration, hiding book titles, photo download throttling, caching and offline failure, automatic NASA and Commons catalogues/credits/cache, joined selectors, distinct display quotes/languages/random variants/seeds/catalogue selections/caches, notch safe area")
             clock.stopAnimation(); NSApp.terminate(nil)
         }
