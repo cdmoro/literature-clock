@@ -996,6 +996,7 @@
   border-end-end-radius: 0;
 }
 #settings-dialog .photo-selectors.has-category > #photo-category {
+  margin-inline-start: -1px;
   border-start-start-radius: 0;
   border-end-start-radius: 0;
 }
