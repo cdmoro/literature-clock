@@ -1,6 +1,12 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { createStore, store } from '../store';
-import { clearPhotoBackground, nasaPhoto, updatePhotoBackground } from './photo-background';
+import {
+  clearPhotoBackground,
+  nasaPhoto,
+  commonsPhoto,
+  initPhotoSettings,
+  updatePhotoBackground,
+} from './photo-background';
 
 const body = (id = 'test') => ({
   collection: {
@@ -102,5 +108,83 @@ describe('NASA backgrounds', () => {
     await loading;
     expect(images).toHaveLength(0);
     expect(document.getElementById('photo-credit')).toBeNull();
+  });
+});
+
+const commonsBody = () => ({
+  query: {
+    pages: [
+      {
+        title: 'File:Landscape.jpg',
+        imageinfo: [
+          {
+            mime: 'image/jpeg',
+            thumburl: 'https://thumb.wikimedia.org/landscape.jpg',
+            descriptionurl: 'https://commons.wikimedia.org/wiki/File:Landscape.jpg',
+            extmetadata: {
+              LicenseShortName: { value: 'CC0' },
+              AttributionRequired: { value: 'false' },
+              Artist: { value: '<a href="https://example.org">A &amp; B</a>' },
+            },
+          },
+        ],
+      },
+      {
+        title: 'File:Restricted.jpg',
+        imageinfo: [
+          {
+            mime: 'image/jpeg',
+            thumburl: 'https://thumb.wikimedia.org/restricted.jpg',
+            descriptionurl: 'https://commons.wikimedia.org/wiki/File:Restricted.jpg',
+            extmetadata: { LicenseShortName: { value: 'CC BY-SA 4.0' }, Artist: { value: 'Someone' } },
+          },
+        ],
+      },
+    ],
+  },
+});
+describe('Commons backgrounds and joined selectors', () => {
+  it('searches automatically, retains plain credits and accepts only CC0 images', async () => {
+    const fetch = vi.fn().mockResolvedValue({ ok: true, json: async () => commonsBody() });
+    vi.stubGlobal('fetch', fetch);
+    const first = await commonsPhoto('landscapes', 1);
+    const second = await commonsPhoto('landscapes', 2);
+    expect(first.url).toBe('https://thumb.wikimedia.org/landscape.jpg');
+    expect(first.credit).toBe('A & B / Wikimedia Commons / CC0');
+    expect(second).toEqual(first);
+    expect(fetch).toHaveBeenCalledTimes(1);
+    const params = new URL(fetch.mock.calls[0][0]).searchParams;
+    expect(params.get('gsrsearch')).toContain('landscape');
+    expect(params.get('origin')).toBe('*');
+  });
+  it('joins provider/category and shows only the active provider categories', () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: false }));
+    const dialog = document.createElement('dialog');
+    dialog.innerHTML = '<div class="settings-theme-picker"></div>';
+    document.body.append(dialog);
+    initPhotoSettings(dialog);
+    const provider = dialog.querySelector<HTMLSelectElement>('#photo-provider')!;
+    const category = dialog.querySelector<HTMLSelectElement>('#photo-category')!;
+    expect(category.parentElement).toBe(provider.parentElement);
+    expect(category.hidden).toBe(true);
+    provider.value = 'commons';
+    provider.dispatchEvent(new Event('change'));
+    expect(category.hidden).toBe(false);
+    expect([...category.options].map((option) => option.value)).toEqual([
+      'all',
+      'nature',
+      'landscapes',
+      'animals',
+      'architecture',
+    ]);
+    category.value = 'animals';
+    category.dispatchEvent(new Event('change'));
+    expect(store.get('photo-category')).toBe('animals');
+    provider.value = 'nasa';
+    provider.dispatchEvent(new Event('change'));
+    expect(category.value).toBe('all');
+    expect([...category.options].some((option) => option.value === 'moon')).toBe(true);
+    expect(category.getAttribute('aria-label')).toBe('Photo category');
+    dialog.remove();
   });
 });

@@ -7,12 +7,34 @@ final class NativePhotoBackground {
     private(set) var image: NSImage?
     private var requestedKey: String?
     private(set) var credit = ""
-    private struct Photo: Codable { let url: String; let credit: String; let title: String }
+    private struct Photo: Codable { let url: String; let credit: String; let title: String; var source: String? = nil }
     private var catalogues: [String: (expires: Date, photos: [Photo])] = [:]
-    private static let queries: [String: String] = {
+    private static let queries: [String: [String: String]] = {
         let url = Bundle(for: NativeClockView.self).resourceURL!.appendingPathComponent("photo-providers.json")
-        return (try? JSONDecoder().decode([String: String].self, from: Data(contentsOf: url))) ?? [:]
+        return (try? JSONDecoder().decode([String: [String: String]].self, from: Data(contentsOf: url))) ?? [:]
     }()
+    static func categories(provider: String) -> [String] { ["all"] + (queries[provider] ?? [:]).keys.sorted() }
+    private static func plainText(_ html: String) -> String {
+        var text = html.replacingOccurrences(of: "<[^>]*>", with: "", options: .regularExpression)
+        for (entity, value) in [("&amp;", "&"), ("&quot;", "\""), ("&#39;", "'"), ("&lt;", "<"), ("&gt;", ">"), ("&nbsp;", " ")] { text = text.replacingOccurrences(of: entity, with: value) }
+        return text.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    private static func commonsPhotos(_ body: [String: Any]) -> [Photo] {
+        guard let query = body["query"] as? [String: Any], let pages = query["pages"] as? [[String: Any]] else { return [] }
+        return pages.compactMap { page in
+            guard let info = (page["imageinfo"] as? [[String: Any]])?.first,
+                  let metadata = info["extmetadata"] as? [String: [String: Any]],
+                  let license = metadata["LicenseShortName"]?["value"] as? String,
+                  ["cc0", "cc0 1.0", "cc0 1.0 universal"].contains(license.lowercased()),
+                  (metadata["AttributionRequired"]?["value"] as? String) != "true",
+                  ["image/jpeg", "image/png", "image/webp"].contains(info["mime"] as? String ?? ""),
+                  let url = info["thumburl"] as? String, let parsed = URL(string: url), parsed.scheme == "https",
+                  ["upload.wikimedia.org", "thumb.wikimedia.org"].contains(parsed.host ?? ""),
+                  let source = info["descriptionurl"] as? String, source.hasPrefix("https://commons.wikimedia.org/") else { return nil }
+            let author = plainText(metadata["Artist"]?["value"] as? String ?? "Wikimedia Commons")
+            return Photo(url: url, credit: "\(author) / Wikimedia Commons / \(license)", title: page["title"] as? String ?? "", source: source)
+        }
+    }
     private var task: URLSessionDataTask?
     private let cacheURL: URL?
     private let session: URLSession
@@ -20,6 +42,7 @@ final class NativePhotoBackground {
     init(cacheURL: URL? = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first?.appendingPathComponent("net.literatureclock.native-saver/last-photo.jpg"), session: URLSession? = nil) {
         self.cacheURL = cacheURL
         let config = URLSessionConfiguration.ephemeral
+        config.httpAdditionalHeaders = ["User-Agent": "LiteratureClock/0.1 (https://github.com/cdmoro/literature-clock)"]
         config.timeoutIntervalForRequest = 10
         config.timeoutIntervalForResource = 15
         self.session = session ?? URLSession(configuration: config)
@@ -44,26 +67,30 @@ final class NativePhotoBackground {
         guard key != requestedKey, size.width > 0, size.height > 0 else { return }
         requestedKey = key
         task?.cancel()
-        if provider != "nasa" {
+        if provider != "nasa" && provider != "commons" {
             download(Photo(url: Self.photoURL(minute: minute, size: size).absoluteString, credit: "", title: ""), key: key, onChange: onChange)
             return
         }
-        let topics = Self.queries.keys.sorted()
+        let queries = Self.queries[provider] ?? [:]
+        let topics = queries.keys.sorted()
         guard !topics.isEmpty else { return }
-        let topic = Self.queries[category] != nil ? category : topics[abs(minute % topics.count)]
-        let position = Self.queries[category] != nil ? minute : minute / topics.count
-        if let cached = catalogues[topic], cached.expires > now {
+        let topic = queries[category] != nil ? category : topics[abs(minute % topics.count)]
+        let position = queries[category] != nil ? minute : minute / topics.count
+        let catalogueKey = provider + "/" + topic
+        if let cached = catalogues[catalogueKey], cached.expires > now {
             let photo = cached.photos[abs(position % cached.photos.count)]
             download(photo, key: key, onChange: onChange)
             return
         }
-        var components = URLComponents(string: "https://images-api.nasa.gov/search")!
-        components.queryItems = [URLQueryItem(name: "q", value: Self.queries[topic]), URLQueryItem(name: "media_type", value: "image"), URLQueryItem(name: "page_size", value: "100")]
+        var components = URLComponents(string: provider == "commons" ? "https://commons.wikimedia.org/w/api.php" : "https://images-api.nasa.gov/search")!
+        let parameters = provider == "commons" ? ["action": "query", "format": "json", "formatversion": "2", "generator": "search", "gsrsearch": queries[topic]!, "gsrnamespace": "6", "gsrlimit": "50", "prop": "imageinfo", "iiprop": "url|extmetadata|mime", "iiurlwidth": "1280"] : ["q": queries[topic]!, "media_type": "image", "page_size": "100"]
+        components.queryItems = parameters.map { URLQueryItem(name: $0.key, value: $0.value) }
         task = session.dataTask(with: components.url!) { [weak self] data, response, error in
             guard error == nil, (response as? HTTPURLResponse)?.statusCode == 200, let data,
-                  let body = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-                  let collection = body["collection"] as? [String: Any], let items = collection["items"] as? [[String: Any]] else { return }
-            let photos: [Photo] = items.compactMap { item in
+                  let body = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { return }
+            let collection = body["collection"] as? [String: Any]
+            let items = collection?["items"] as? [[String: Any]] ?? []
+            let photos: [Photo] = provider == "commons" ? Self.commonsPhotos(body) : items.compactMap { item in
                 guard let metadata = (item["data"] as? [[String: Any]])?.first, let id = metadata["nasa_id"] as? String,
                       !(metadata["description"] as? String ?? "").lowercased().contains("copyright"),
                       let links = item["links"] as? [[String: Any]] else { return nil }
@@ -75,7 +102,7 @@ final class NativePhotoBackground {
             guard !photos.isEmpty else { return }
             DispatchQueue.main.async {
                 guard let self, self.requestedKey == key else { return }
-                self.catalogues[topic] = (now.addingTimeInterval(3600), photos)
+                self.catalogues[catalogueKey] = (now.addingTimeInterval(3600), photos)
                 self.download(photos[abs(position % photos.count)], key: key, onChange: onChange)
             }
         }

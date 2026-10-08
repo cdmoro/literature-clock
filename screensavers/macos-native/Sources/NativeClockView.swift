@@ -297,8 +297,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         for (key, label, values) in [
             ("theme-base", "theme", NativeAppearance.themes),
             ("theme-mode", "settings_scheme", ["light", "dark", "system"]),
-            ("photo-provider", "settings_photo_provider", ["picsum", "nasa"]),
-            ("photo-category", "settings_photo_category", ["all", "galaxies", "nebulae", "earth", "moon"]),
+            ("photo-provider", "settings_photo_provider", ["picsum", "nasa", "commons"]),
+            ("photo-category", "settings_photo_category", NativePhotoBackground.categories(provider: preferences.string(forKey: "photo-provider") ?? "picsum")),
             ("palette", "settings_color", ["default", "red", "pink", "green", "orange", "purple", "blue", "gray", "random", "custom"]),
             ("background-pattern", "settings_background_pattern", NativeAppearance.patterns),
             ("progressbar", "progressbar_mode", ["none", "top", "bottom", "background"])
@@ -309,7 +309,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             for raw in values {
                 let labelKey = key == "photo-category" ? "settings_photo_" + raw : key == "background-pattern" ? "settings_pattern_" + raw : key == "progressbar" ? "settings_progress_" + raw :
                     raw == "custom" ? "settings_color_customize" : raw == "default" ? "default_font" : raw == "random" ? "settings_color_random" : raw
-                let label = key == "photo-provider" ? (raw == "nasa" ? "NASA" : "Picsum") : text(labelKey)
+                let label = key == "photo-provider" ? (raw == "commons" ? "Wikimedia Commons" : raw == "nasa" ? "NASA" : "Picsum") : text(labelKey)
                 let item = NSMenuItem(title: label, action: nil, keyEquivalent: "")
                 item.representedObject = raw
                 menu.menu?.addItem(item)
@@ -319,7 +319,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             controls[key] = menu
             let title = NSTextField(labelWithString: text(label))
             title.widthAnchor.constraint(equalToConstant: 180).isActive = true
-            menu.widthAnchor.constraint(equalToConstant: 260).isActive = true
+            menu.widthAnchor.constraint(equalToConstant: key.hasPrefix("photo-") ? 180 : 260).isActive = true
+            if key == "photo-category" { menu.setAccessibilityLabel(text("settings_photo_category")) }
             if key == "palette" {
                 let row = NSStackView(); row.spacing = 8
                 for raw in values {
@@ -335,6 +336,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 }
                 stack.addArrangedSubview(NSStackView(views: [title, row]))
                 updateSwatches()
+            } else if key == "photo-category", let row = controls["photo-provider"]?.superview as? NSStackView {
+                row.addArrangedSubview(menu)
             } else { stack.addArrangedSubview(NSStackView(views: [title, menu])) }
             if key == "palette" {
                 let well = NSColorWell()
@@ -479,8 +482,20 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         }
     }
     @objc private func photoControlsChanged() {
+        let provider = menuValue("photo-provider") ?? "picsum"
+        let categories = NativePhotoBackground.categories(provider: provider)
+        if let menu = controls["photo-category"] as? NSPopUpButton {
+            let selected = menuValue("photo-category") ?? "all"
+            menu.removeAllItems()
+            for category in categories {
+                let item = NSMenuItem(title: text("settings_photo_" + category), action: nil, keyEquivalent: "")
+                item.representedObject = category; menu.menu?.addItem(item)
+                if selected == category { menu.select(item) }
+            }
+            menu.isHidden = provider == "picsum"
+            menu.isEnabled = menuValue("theme-base") == "photo"
+        }
         controls["photo-provider"]?.isEnabled = menuValue("theme-base") == "photo"
-        controls["photo-category"]?.isEnabled = menuValue("theme-base") == "photo" && menuValue("photo-provider") == "nasa"
     }
     func applyOptions(_ values: [String: Any]) {
         for key in Self.optionKeys {

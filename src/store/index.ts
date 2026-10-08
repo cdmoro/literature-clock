@@ -25,8 +25,17 @@ interface Stateful {
   palette: string;
   'custom-color': string;
   'background-pattern': BackgroundPattern;
-  'photo-provider': 'picsum' | 'nasa';
-  'photo-category': 'all' | 'galaxies' | 'nebulae' | 'earth' | 'moon';
+  'photo-provider': 'picsum' | 'nasa' | 'commons';
+  'photo-category':
+    | 'all'
+    | 'galaxies'
+    | 'nebulae'
+    | 'earth'
+    | 'moon'
+    | 'nature'
+    | 'landscapes'
+    | 'animals'
+    | 'architecture';
   progressbar: ProgressbarMode;
   'random-locale': boolean;
 }
@@ -128,10 +137,15 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
         if (['none', 'fade', 'slide', 'blur', 'zoom'].includes(raw)) result[key] = raw;
         break;
       case 'photo-provider':
-        if (['picsum', 'nasa'].includes(raw)) result[key] = raw;
+        if (['picsum', 'nasa', 'commons'].includes(raw)) result[key] = raw;
         break;
       case 'photo-category':
-        if (['all', 'galaxies', 'nebulae', 'earth', 'moon'].includes(raw)) result[key] = raw;
+        if (
+          ['all', 'galaxies', 'nebulae', 'earth', 'moon', 'nature', 'landscapes', 'animals', 'architecture'].includes(
+            raw,
+          )
+        )
+          result[key] = raw;
         break;
       case 'background-pattern':
         if (isBackgroundPattern(raw)) result[key] = raw;

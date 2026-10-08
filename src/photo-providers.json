@@ -1,6 +1,14 @@
 {
-  "galaxies": "galaxy",
-  "nebulae": "nebula",
-  "earth": "earth blue marble",
-  "moon": "moon surface"
+  "nasa": {
+    "galaxies": "galaxy",
+    "nebulae": "nebula",
+    "earth": "earth blue marble",
+    "moon": "moon surface"
+  },
+  "commons": {
+    "nature": "nature incategory:\"CC-Zero\" filetype:bitmap",
+    "landscapes": "landscape incategory:\"CC-Zero\" filetype:bitmap",
+    "animals": "animal incategory:\"CC-Zero\" filetype:bitmap",
+    "architecture": "architecture incategory:\"CC-Zero\" filetype:bitmap"
+  }
 }

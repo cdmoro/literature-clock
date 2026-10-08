@@ -980,3 +980,25 @@
   cursor: default;
   opacity: 0.5;
 }
+
+/* Provider/category are a single joined control, including RTL layouts. */
+#settings-dialog .photo-selectors {
+  display: flex;
+  gap: 0;
+}
+#settings-dialog .photo-selectors > select {
+  flex: 1 1 0;
+  width: 0;
+  margin: 0;
+}
+#settings-dialog .photo-selectors.has-category > #photo-provider {
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+#settings-dialog .photo-selectors.has-category > #photo-category {
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+}
+#settings-dialog .photo-selectors > select[hidden] {
+  display: none;
+}

@@ -95,7 +95,11 @@
     "settings_photo_galaxies": "Galaxies",
     "settings_photo_nebulae": "Nebulae",
     "settings_photo_earth": "Earth",
-    "settings_photo_moon": "Moon"
+    "settings_photo_moon": "Moon",
+    "settings_photo_nature": "Nature",
+    "settings_photo_landscapes": "Landscapes",
+    "settings_photo_animals": "Animals",
+    "settings_photo_architecture": "Architecture"
   },
   "en-US": {
     "settings_title": "Settings",
@@ -193,7 +197,11 @@
     "settings_photo_galaxies": "Galaxies",
     "settings_photo_nebulae": "Nebulae",
     "settings_photo_earth": "Earth",
-    "settings_photo_moon": "Moon"
+    "settings_photo_moon": "Moon",
+    "settings_photo_nature": "Nature",
+    "settings_photo_landscapes": "Landscapes",
+    "settings_photo_animals": "Animals",
+    "settings_photo_architecture": "Architecture"
   },
   "es-ES": {
     "settings_title": "Configuración",
@@ -291,7 +299,11 @@
     "settings_photo_galaxies": "Galaxias",
     "settings_photo_nebulae": "Nebulosas",
     "settings_photo_earth": "Tierra",
-    "settings_photo_moon": "Luna"
+    "settings_photo_moon": "Luna",
+    "settings_photo_nature": "Naturaleza",
+    "settings_photo_landscapes": "Paisajes",
+    "settings_photo_animals": "Animales",
+    "settings_photo_architecture": "Arquitectura"
   },
   "pt-PT": {
     "settings_title": "Configurações",
@@ -389,7 +401,11 @@
     "settings_photo_galaxies": "Galáxias",
     "settings_photo_nebulae": "Nebulosas",
     "settings_photo_earth": "Terra",
-    "settings_photo_moon": "Lua"
+    "settings_photo_moon": "Lua",
+    "settings_photo_nature": "Natureza",
+    "settings_photo_landscapes": "Paisagens",
+    "settings_photo_animals": "Animais",
+    "settings_photo_architecture": "Arquitetura"
   },
   "fr-FR": {
     "settings_title": "Paramètres",
@@ -487,7 +503,11 @@
     "settings_photo_galaxies": "Galaxies",
     "settings_photo_nebulae": "Nébuleuses",
     "settings_photo_earth": "Terre",
-    "settings_photo_moon": "Lune"
+    "settings_photo_moon": "Lune",
+    "settings_photo_nature": "Nature",
+    "settings_photo_landscapes": "Paysages",
+    "settings_photo_animals": "Animaux",
+    "settings_photo_architecture": "Architecture"
   },
   "it-IT": {
     "settings_title": "Impostazioni",
@@ -585,7 +605,11 @@
     "settings_photo_galaxies": "Galassie",
     "settings_photo_nebulae": "Nebulose",
     "settings_photo_earth": "Terra",
-    "settings_photo_moon": "Luna"
+    "settings_photo_moon": "Luna",
+    "settings_photo_nature": "Natura",
+    "settings_photo_landscapes": "Paesaggi",
+    "settings_photo_animals": "Animali",
+    "settings_photo_architecture": "Architettura"
   },
   "de-DE": {
     "settings_title": "Einstellungen",
@@ -683,7 +707,11 @@
     "settings_photo_galaxies": "Galaxien",
     "settings_photo_nebulae": "Nebel",
     "settings_photo_earth": "Erde",
-    "settings_photo_moon": "Mond"
+    "settings_photo_moon": "Mond",
+    "settings_photo_nature": "Natur",
+    "settings_photo_landscapes": "Landschaften",
+    "settings_photo_animals": "Tiere",
+    "settings_photo_architecture": "Architektur"
   },
   "el-GR": {
     "settings_title": "Ρυθμίσεις",
@@ -781,7 +809,11 @@
     "settings_photo_galaxies": "Γαλαξίες",
     "settings_photo_nebulae": "Νεφελώματα",
     "settings_photo_earth": "Γη",
-    "settings_photo_moon": "Σελήνη"
+    "settings_photo_moon": "Σελήνη",
+    "settings_photo_nature": "Φύση",
+    "settings_photo_landscapes": "Τοπία",
+    "settings_photo_animals": "Ζώα",
+    "settings_photo_architecture": "Αρχιτεκτονική"
   },
   "zh-CN": {
     "settings_title": "设置",
@@ -879,7 +911,11 @@
     "settings_photo_galaxies": "星系",
     "settings_photo_nebulae": "星云",
     "settings_photo_earth": "地球",
-    "settings_photo_moon": "月球"
+    "settings_photo_moon": "月球",
+    "settings_photo_nature": "自然",
+    "settings_photo_landscapes": "风景",
+    "settings_photo_animals": "动物",
+    "settings_photo_architecture": "建筑"
   },
   "ru-RU": {
     "settings_title": "Настройки",
@@ -977,7 +1013,11 @@
     "settings_photo_galaxies": "Галактики",
     "settings_photo_nebulae": "Туманности",
     "settings_photo_earth": "Земля",
-    "settings_photo_moon": "Луна"
+    "settings_photo_moon": "Луна",
+    "settings_photo_nature": "Природа",
+    "settings_photo_landscapes": "Пейзажи",
+    "settings_photo_animals": "Животные",
+    "settings_photo_architecture": "Архитектура"
   },
   "eo": {
     "settings_title": "Agordoj",
@@ -1075,7 +1115,11 @@
     "settings_photo_galaxies": "Galaksioj",
     "settings_photo_nebulae": "Nebulozoj",
     "settings_photo_earth": "Tero",
-    "settings_photo_moon": "Luno"
+    "settings_photo_moon": "Luno",
+    "settings_photo_nature": "Naturo",
+    "settings_photo_landscapes": "Pejzaĝoj",
+    "settings_photo_animals": "Bestoj",
+    "settings_photo_architecture": "Arkitekturo"
   },
   "ar-AE": {
     "settings_title": "الإعدادات",
@@ -1173,6 +1217,10 @@
     "settings_photo_galaxies": "المجرات",
     "settings_photo_nebulae": "السدم",
     "settings_photo_earth": "الأرض",
-    "settings_photo_moon": "القمر"
+    "settings_photo_moon": "القمر",
+    "settings_photo_nature": "الطبيعة",
+    "settings_photo_landscapes": "المناظر الطبيعية",
+    "settings_photo_animals": "الحيوانات",
+    "settings_photo_architecture": "العمارة"
   }
 }

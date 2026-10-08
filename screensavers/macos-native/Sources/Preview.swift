@@ -9,7 +9,7 @@ final class PhotoCheckProtocol: URLProtocol {
     override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
     override func startLoading() {
         Self.count += 1
-        let isCatalogue = request.url?.host == "images-api.nasa.gov"
+        let isCatalogue = request.url?.host == "images-api.nasa.gov" || request.url?.host == "commons.wikimedia.org"
         let response = HTTPURLResponse(url: request.url!, statusCode: Self.status, httpVersion: "HTTP/1.1", headerFields: ["Content-Type": isCatalogue ? "application/json" : "image/png"])!
         client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
         client?.urlProtocol(self, didLoad: isCatalogue ? Self.catalogueData : Self.imageData)
@@ -125,6 +125,7 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             for (key, value) in [("theme-base", "photo"), ("photo-provider", "nasa"), ("photo-category", "moon")] {
                 let menu = clock.controls[key] as! NSPopUpButton
                 menu.select(menu.itemArray.first { $0.representedObject as? String == value }!)
+                if key == "photo-provider" { clock.perform(NSSelectorFromString("photoControlsChanged")) }
             }
             clock.perform(NSSelectorFromString("saveOptions"))
             precondition(clock.preferences.string(forKey: "photo-provider") == "nasa" && other.preferences.string(forKey: "photo-category") == "moon", "Photo settings did not persist across views")
@@ -166,11 +167,28 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             while !nasaLoaded && Date() < nextDeadline { RunLoop.current.run(until: Date().addingTimeInterval(0.01)) }
             precondition(nasaLoaded && PhotoCheckProtocol.count == 5, "NASA catalogue was not cached")
             nasa.cancel()
+            PhotoCheckProtocol.catalogueData = Data(#"{"query":{"pages":[{"title":"File:Landscape.jpg","imageinfo":[{"mime":"image/jpeg","thumburl":"https://thumb.wikimedia.org/landscape.jpg","descriptionurl":"https://commons.wikimedia.org/wiki/File:Landscape.jpg","extmetadata":{"LicenseShortName":{"value":"CC0"},"AttributionRequired":{"value":"false"},"Artist":{"value":"<a>A &amp; B</a>"}}}]}]}}"#.utf8)
+            let commons = NativePhotoBackground(cacheURL: nil, session: URLSession(configuration: config))
+            var commonsLoaded = false
+            commons.update(now: now, size: clock.bounds.size, provider: "commons", category: "landscapes") { commonsLoaded = true }
+            let commonsDeadline = Date().addingTimeInterval(3)
+            while !commonsLoaded && Date() < commonsDeadline { RunLoop.current.run(until: Date().addingTimeInterval(0.01)) }
+            precondition(commonsLoaded && PhotoCheckProtocol.count == 7 && commons.credit == "A & B / Wikimedia Commons / CC0", "Commons catalogue/credits failed")
+            commons.cancel()
+            _ = clock.configureSheet
+            let providerMenu = clock.controls["photo-provider"] as! NSPopUpButton
+            providerMenu.select(providerMenu.itemArray.first { $0.representedObject as? String == "commons" }!)
+            clock.perform(NSSelectorFromString("photoControlsChanged"))
+            let categoryMenu = clock.controls["photo-category"] as! NSPopUpButton
+            precondition(categoryMenu.superview === providerMenu.superview && !categoryMenu.isHidden, "Photo selectors are not joined")
+            categoryMenu.select(categoryMenu.itemArray.first { $0.representedObject as? String == "animals" }!)
+            clock.perform(NSSelectorFromString("saveOptions"))
+            precondition(other.preferences.string(forKey: "photo-provider") == "commons" && other.preferences.string(forKey: "photo-category") == "animals", "Commons options were not saved")
             let screenFrame = NSRect(x: 0, y: 0, width: 1512, height: 982)
             precondition(NativeClockView.timeInset(viewFrame: screenFrame, screenFrame: screenFrame, safeTop: 32) == 40)
             precondition(NativeClockView.timeInset(viewFrame: NSRect(x: 0, y: 0, width: 1512, height: 950), screenFrame: screenFrame, safeTop: 32) == 8)
             precondition(NativeClockView.timeInset(viewFrame: screenFrame, screenFrame: screenFrame, safeTop: 0) == 8)
-            print("PASS: 12 catalogues, 84 theme/locale font combinations, light/dark rendering, missing quote notice, reopening options custom colour save, preset restoration, hiding book titles, photo download throttling, caching and offline failure, automatic NASA catalogue/credits/cache, notch safe area")
+            print("PASS: 12 catalogues, 84 theme/locale font combinations, light/dark rendering, missing quote notice, reopening options custom colour save, preset restoration, hiding book titles, photo download throttling, caching and offline failure, automatic NASA and Commons catalogues/credits/cache, joined selectors, notch safe area")
             clock.stopAnimation(); NSApp.terminate(nil)
         }
     }
