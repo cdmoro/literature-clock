@@ -63,6 +63,6 @@ Foreground Liquid Glass places the progress lens over the quote and clock, with 
 
 Merging a change to `screensavers/macos-native/VERSION` into main builds and publishes the corresponding native prerelease automatically. The initial version is 0.1.0. Assets are attached to a draft before publication; increase VERSION for subsequent native releases.
 
-Options show the installed native bundle version with a link to its release. The Font selector includes the web font catalogue, bundled for offline use; Default follows the theme and quote language. All 25 web patterns are bundled as cached native tiles, plus None and per-minute Random.
+Options show the installed native bundle version with a link to its release. Fonts are selected automatically for the theme and quote language; there is no font selector. All 25 web patterns are bundled as cached native tiles, plus None and per-minute Random.
 
 The committed pattern PNGs are generated from the web SVGs with `scripts/render-native-patterns.cjs` and @resvg/resvg-js. The release build copies these assets directly and does not require Node or SVG rendering dependencies.

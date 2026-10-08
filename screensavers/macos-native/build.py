@@ -62,7 +62,10 @@ def bundle(name, extension, architecture, data, version):
         file = font_root / asset['path']
         if hashlib.sha256(file.read_bytes()).hexdigest() != asset['sha256']:
             raise ValueError(f'Bundled font checksum mismatch: {file}')
-    shutil.copytree(font_root, resources / 'Fonts', dirs_exist_ok=True)
+    if (resources / 'Fonts').exists():
+        shutil.rmtree(resources / 'Fonts')
+    (resources / 'font-options.json').unlink(missing_ok=True)
+    shutil.copytree(font_root, resources / 'Fonts')
     labels = json.loads((ROOT / 'src/strings/translations.json').read_text())
     settings = json.loads((ROOT / 'src/strings/settings.json').read_text())
     native = json.loads((SOURCE / 'Assets/settings.json').read_text())
@@ -72,7 +75,6 @@ def bundle(name, extension, architecture, data, version):
     (resources / 'Backgrounds').mkdir(exist_ok=True)
     for asset in ['scanlines-bg-dark.jpg', 'scanlines-bg-light.jpg', 'book-paper-seamless.webp']:
         shutil.copy2(ROOT / 'public/assets' / asset, resources / 'Backgrounds' / asset)
-    shutil.copy2(SOURCE / 'Assets/font-options.json', resources / 'font-options.json')
     shutil.copytree(SOURCE / 'Assets/Patterns', resources / 'Patterns', dirs_exist_ok=True)
     shutil.copy2(ROOT / 'src/photo-providers.json', resources / 'photo-providers.json')
     library = extension == 'saver'

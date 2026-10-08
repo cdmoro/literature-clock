@@ -212,15 +212,6 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             for pattern in NativeAppearance.patterns.dropFirst(2) {
                 precondition(NativeAppearance.patternImage(pattern: pattern, size: NSSize(width: 320, height: 256), scale: 2, color: .systemRed, resources: clock.resources) != nil, "Missing native pattern: " + pattern)
             }
-            for (name, family) in clock.fontOptions {
-                clock.preferences.set(name, forKey: "font")
-                let directory = clock.resources.appendingPathComponent("Fonts/" + family)
-                let file = try! FileManager.default.contentsOfDirectory(at: directory, includingPropertiesForKeys: nil).first { $0.pathExtension == "ttf" }!
-                let descriptors = CTFontManagerCreateFontDescriptorsFromURL(file as CFURL) as! [CTFontDescriptor]
-                let expected = CTFontDescriptorCopyAttribute(descriptors[0], kCTFontNameAttribute) as! String
-                precondition(clock.quoteFont(24).fontName == expected, "Missing selected font: " + name)
-            }
-            clock.preferences.set("default", forKey: "font")
             let first = clock.configureSheet!
             let progressMenu = clock.controls["progressbar"] as! NSPopUpButton
             let modes = progressMenu.itemArray.compactMap { $0.representedObject as? String }
