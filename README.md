@@ -130,7 +130,7 @@ Older `fade=true` / `fade=false` links remain supported. Prefer `transition` for
 
 ## Screensaver
 
-This repository includes an **experimental native macOS screensaver** that draws directly with AppKit, without WebKit. Quotes and fonts are bundled. It supports all 12 quote languages, Base, Book, Terminal, Festive, Bohemian, Retro and Photo themes, light/dark/system appearance, colour presets and a custom RGB picker, background patterns, minute progress, gentle movement and optional time/book title. Its settings panel follows the system language; an empty quote-language selection uses the system language with English (UK) fallback. Only Photo needs internet to download new backgrounds; it caches the last successful photo.
+This repository includes an **experimental native macOS screensaver** that draws directly with AppKit, without WebKit. Quotes and fonts are bundled. It supports all 12 quote languages, Base, Book, Terminal, Festive, Bohemian, Retro and Photo themes, light/dark/system appearance, theme/fixed/per-minute colour modes, presets and a remembered custom colour with an expandable RGB/hex editor, background patterns, minute progress, gentle movement and optional time/book title. Its settings panel follows the system language; an empty quote-language selection uses the system language with English (UK) fallback. Only Photo needs internet to download new backgrounds; it caches the last successful photo.
 
 **This is a test version.** Native rendering has worked in user tests, and Photo downloads, colour presets and title hiding have been checked in System Settings Preview. Sustained automatic activation, multiple monitors, sleep/wake and Intel runtime compatibility still need broader testing. Downloads use ad-hoc signing and are not notarized.
 
@@ -140,9 +140,8 @@ The Photo theme supports Picsum, the public NASA Image and Video Library, or Wik
 
 Our own Windows/Linux screensavers remain future work.
 
-[Enable screensaver mode](https://literatureclock.netlify.app/?screensaver=true) to move the quote gently around the screen. For an operating-system screensaver or desktop display, these external guides and tools offer possible setups:
+[Enable screensaver mode](https://literatureclock.netlify.app/?screensaver=true) to move the quote gently around the screen. For Windows and Linux, these external guides offer possible webpage-based setups:
 
-- [macOS: WebViewScreenSaver](https://github.com/liquidx/webviewscreensaver)
 - [Windows: webpage screensaver setup guide](https://www.youtube.com/watch?v=UovZwUlwwEs)
 - [Linux / KDE: webpage wallpaper setup guide](https://www.youtube.com/watch?v=_v1sJhBu25o)
 
