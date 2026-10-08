@@ -231,7 +231,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             } else { result.addAttribute(.foregroundColor, value: accent, range: timeRange) }
             let attribution = preferences.bool(forKey: "hide-book-title") ? quote.author : [quote.title, quote.author].filter { !$0.isEmpty }.joined(separator: ", ")
             if !attribution.isEmpty {
-                result.append(NSAttributedString(string: "\n" + (theme == "terminal" ? "> " : "— ") + attribution, attributes: [.font: quoteFont(size * 0.55), .foregroundColor: foreground, .paragraphStyle: paragraph]))
+                result.append(NSAttributedString(string: "\n", attributes: [.font: font, .paragraphStyle: paragraph]))
+                let citationStyle = paragraph.mutableCopy() as! NSMutableParagraphStyle
+                citationStyle.paragraphSpacingBefore = theme == "book" ? (bounds.width <= 750 ? 16 : 24) : size * 0.35
+                result.append(NSAttributedString(string: (theme == "terminal" ? "> " : "— ") + attribution, attributes: [.font: quoteFont(size * 0.55), .foregroundColor: foreground, .paragraphStyle: citationStyle]))
             }
             return result
         }
