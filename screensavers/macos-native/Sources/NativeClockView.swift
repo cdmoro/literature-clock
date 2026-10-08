@@ -78,7 +78,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     static let settingsChanged = Notification.Name("net.literatureclock.native-saver.settingsChanged")
     var preferences: UserDefaults = ScreenSaverDefaults(forModuleWithName: "net.literatureclock.native-saver")!
     var resources: URL { Bundle(for: NativeClockView.self).resourceURL! }
-    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background-pattern", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
+    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background-pattern", "font", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
     var photoDownloadsEnabled = true
     var interactionPreviewSweep = false
     private var photoScreen: NSScreen? { window?.screen ?? NSScreen.screens.first }
@@ -151,9 +151,12 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         }
         return names
     }()
+    lazy var fontOptions: [String: String] = (try? JSONDecoder().decode([String: String].self, from: Data(contentsOf: resources.appendingPathComponent("font-options.json")))) ?? [:]
     func quoteFont(_ size: CGFloat, locale: String? = nil) -> NSFont {
         let family = NativeAppearance.fontFamily(theme: themeName, locale: locale ?? quoteLocale)
-        return Self.bundledFonts[family].flatMap { NSFont(name: $0, size: size) } ?? NSFont.systemFont(ofSize: size)
+        let selected = preferences.string(forKey: "font") ?? "default"
+        let chosen = fontOptions[selected] ?? family
+        return Self.bundledFonts[chosen].flatMap { NSFont(name: $0, size: size) } ?? NSFont.systemFont(ofSize: size)
     }
     var localeNames: [String] {
         (try? JSONDecoder().decode([String].self, from: Data(contentsOf: resources.appendingPathComponent("locales.json")))) ?? ["en-GB"]
@@ -290,10 +293,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let foreground = NativeAppearance.foreground(theme: theme, dark: dark, accent: accent)
         let scale = window?.backingScaleFactor ?? 1
         var pattern = preferences.string(forKey: "background-pattern") ?? "none"
-        if pattern == "random" { pattern = randomValue(["dots", "diagonal", "grid"], at: now) }
+        if pattern == "random" { pattern = randomValue(Array(NativeAppearance.patterns.dropFirst(2)), at: now) }
         let newPatternKey = "\(pattern)|\(bounds.size)|\(scale)|\(accent)"
         if newPatternKey != patternKey {
-            patternImage = NativeAppearance.patternImage(pattern: pattern, size: bounds.size, scale: scale, color: accent)
+            patternImage = NativeAppearance.patternImage(pattern: pattern, size: bounds.size, scale: scale, color: accent, resources: resources)
             patternKey = newPatternKey
         }
         patternImage?.draw(in: bounds)
@@ -423,7 +426,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             return result
         }
         let key = "\(quote.first)\(quote.time)\(quote.last)\(quote.title)\(quote.author)|\(theme)|\(quoteLocale)|\(width)|\(limit)|\(scale)|\(dark)|\(accent)|\(lastMinute)|\(preferences.bool(forKey: "hide-book-title"))"
-        let bilingualKey = key + "|\(quote.id ?? "")|\(preferences.bool(forKey: "bilingual"))|\(preferences.string(forKey: "translation-locale") ?? "")|\(preferences.bool(forKey: "work"))"
+        let bilingualKey = key + "|\(preferences.string(forKey: "font") ?? "default")" + "|\(quote.id ?? "")|\(preferences.bool(forKey: "bilingual"))|\(preferences.string(forKey: "translation-locale") ?? "")|\(preferences.bool(forKey: "work"))"
         if bilingualKey != layoutKey {
             var low: CGFloat = 1, high = min(bounds.width * 0.043, bounds.height * 0.12)
             for _ in 0..<16 {
@@ -599,6 +602,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             ("photo-category", "settings_photo_category", NativePhotoBackground.categories(provider: preferences.string(forKey: "photo-provider") ?? "picsum")),
             ("palette", "settings_color", ["default", "red", "pink", "green", "orange", "purple", "blue", "gray", "random", "custom"]),
             ("background-pattern", "settings_background_pattern", NativeAppearance.patterns),
+            ("font", "font", ["default"] + fontOptions.keys.sorted()),
             ("progressbar", "progressbar_mode", ["none", "top", "bottom", "background", "glass-background", "glass-foreground"])
         ] {
             if key == "transition" { section("settings_behavior") }
@@ -698,6 +702,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             controls[key] = check
             stack.addArrangedSubview(check)
         }
+        let version = Bundle(for: Self.self).object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "development"
+        let versionLink = NSButton(title: "Literature Clock for macOS · v" + version, target: self, action: #selector(openVersionRelease))
+        versionLink.isBordered = false
+        stack.addArrangedSubview(versionLink)
         let cancel = NSButton(title: text("cancel"), target: self, action: #selector(cancelOptions))
         cancel.keyEquivalent = "\u{1b}"
         let save = NSButton(title: "OK", target: self, action: #selector(saveOptions))
@@ -711,6 +719,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         window.setContentSize(NSSize(width: 700, height: max(470, stack.fittingSize.height + 48)))
         sheet = window
         return window
+    }
+    @objc private func openVersionRelease() {
+        let version = Bundle(for: Self.self).object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "0.1.0"
+        if let url = URL(string: "https://github.com/cdmoro/literature-clock/releases/tag/macos-native-v" + version) { NSWorkspace.shared.open(url) }
     }
     @objc private func cancelOptions() {
         closeOptions()

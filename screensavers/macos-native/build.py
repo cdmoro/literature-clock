@@ -72,6 +72,8 @@ def bundle(name, extension, architecture, data, version):
     (resources / 'Backgrounds').mkdir(exist_ok=True)
     for asset in ['scanlines-bg-dark.jpg', 'scanlines-bg-light.jpg', 'book-paper-seamless.webp']:
         shutil.copy2(ROOT / 'public/assets' / asset, resources / 'Backgrounds' / asset)
+    shutil.copy2(SOURCE / 'Assets/font-options.json', resources / 'font-options.json')
+    shutil.copytree(SOURCE / 'Assets/Patterns', resources / 'Patterns', dirs_exist_ok=True)
     shutil.copy2(ROOT / 'src/photo-providers.json', resources / 'photo-providers.json')
     library = extension == 'saver'
     info = dict(CFBundleIdentifier=f'net.literatureclock.native-{extension}', CFBundleName=name,

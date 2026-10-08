@@ -57,7 +57,7 @@ enum NativeAppearance {
         }
     }
     static let themes = ["base", "book", "terminal", "festive", "bohemian", "retro", "photo"]
-    static let patterns = ["none", "random", "dots", "diagonal", "grid"]
+    static let patterns = ["none", "random", "dots", "circles", "diagonal", "diagonal-wide", "grid", "zigzag", "waves", "noise", "mixed-stripes", "checkerboard", "cubes", "fans", "leaves", "vines", "contours", "woven", "zigzag-fine", "rain", "christmas", "hearts", "reading", "space", "garden", "clouds", "constellations"]
     static func fontFamily(theme: String, locale: String) -> String {
         let language = locale.split(separator: "-").first.map(String.init) ?? "en"
         let main = ["base": "specialelite", "book": "librebaskerville", "terminal": "b612mono",
@@ -112,28 +112,16 @@ enum NativeAppearance {
                       "festive": "#e74c3c", "bohemian": "#1abc9c", "retro": dark ? "#f1ba08" : "#966a00"]
         return color(colors[theme] ?? "#d24335")!
     }
-    static func patternImage(pattern: String, size: NSSize, scale: CGFloat, color: NSColor) -> NSImage? {
-        guard pattern != "none", size.width > 0, size.height > 0 else { return nil }
-        let bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(ceil(size.width * scale)), pixelsHigh: Int(ceil(size.height * scale)), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0)!
-        bitmap.size = size
-        NSGraphicsContext.saveGraphicsState(); NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: bitmap)
-        NSColor.clear.setFill(); NSRect(origin: .zero, size: size).fill(using: .copy)
-        color.withAlphaComponent(0.22).setFill(); color.withAlphaComponent(0.22).setStroke()
-        if pattern == "dots" {
-            for x in stride(from: CGFloat(12), through: size.width, by: 24) {
-                for y in stride(from: CGFloat(12), through: size.height, by: 24) { NSBezierPath(ovalIn: NSRect(x: x, y: y, width: 3, height: 3)).fill() }
-            }
-        } else {
-            let path = NSBezierPath(); path.lineWidth = 1
-            if pattern == "grid" {
-                for x in stride(from: CGFloat(0), through: size.width, by: 32) { path.move(to: NSPoint(x: x, y: 0)); path.line(to: NSPoint(x: x, y: size.height)) }
-                for y in stride(from: CGFloat(0), through: size.height, by: 32) { path.move(to: NSPoint(x: 0, y: y)); path.line(to: NSPoint(x: size.width, y: y)) }
-            } else {
-                for x in stride(from: -size.height, through: size.width, by: 24) { path.move(to: NSPoint(x: x, y: 0)); path.line(to: NSPoint(x: x + size.height, y: size.height)) }
-            }
-            path.stroke()
+    static func patternImage(pattern: String, size: NSSize, scale: CGFloat, color: NSColor, resources: URL) -> NSImage? {
+        guard pattern != "none", size.width > 0, size.height > 0,
+              let tile = NSImage(contentsOf: resources.appendingPathComponent("Patterns/" + pattern + ".png")),
+              let data = try? Data(contentsOf: resources.appendingPathComponent("Patterns/tiles.json")),
+              let sizes = try? JSONDecoder().decode([String: [CGFloat]].self, from: data), let dimensions = sizes[pattern] else { return nil }
+        tile.size = NSSize(width: dimensions[0], height: dimensions[1])
+        return NSImage(size: size, flipped: false) { rect in
+            NSColor(patternImage: tile).setFill()
+            rect.fill()
+            return true
         }
-        NSGraphicsContext.restoreGraphicsState()
-        let image = NSImage(size: size); image.addRepresentation(bitmap); return image
     }
 }
