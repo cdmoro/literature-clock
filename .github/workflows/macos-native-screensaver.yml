@@ -1,6 +1,10 @@
 name: macOS native screensaver
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'screensavers/macos-native/VERSION'
   release:
     types: [published]
   workflow_dispatch:
@@ -19,7 +23,7 @@ concurrency:
 
 jobs:
   build:
-    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.release.tag_name, 'macos-native-v')
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch' || startsWith(github.event.release.tag_name, 'macos-native-v')
     runs-on: macos-15
     timeout-minutes: 30
     steps:
@@ -51,7 +55,10 @@ jobs:
           RELEASE_TAG: ${{ github.event.release.tag_name || inputs.release_tag }}
         run: |
           version="${RELEASE_TAG#macos-native-v}"
-          python3 screensavers/macos-native/build.py --universal --version "${version:-0.1.0}"
+          if [ -z "$version" ]; then
+            version="$(cat screensavers/macos-native/VERSION)"
+          fi
+          python3 screensavers/macos-native/build.py --universal --version "$version"
       - uses: actions/upload-artifact@v4
         with:
           name: Literature-Clock-Native-macOS-universal
@@ -95,4 +102,54 @@ jobs:
               subprocess.run(['gh', 'release', 'upload', tag, *[str(file) for file in files]], check=True)
           else:
               print('Downloads already attached; leaving existing assets unchanged.')
+          PYTHON
+
+  publish-on-merge:
+    if: github.event_name == 'push'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: Literature-Clock-Native-macOS-universal
+          path: package
+      - name: Publish versioned screensaver downloads
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          python3 - <<'PYTHON'
+          import json
+          import os
+          import re
+          import subprocess
+          from pathlib import Path
+          version = Path('screensavers/macos-native/VERSION').read_text().strip()
+          if not re.fullmatch(r'\d+\.\d+\.\d+', version):
+              raise SystemExit('Invalid screensaver version')
+          tag = 'macos-native-v' + version
+          files = sorted(Path('package').glob('*'))
+          expected = {'Literature-Clock-Native-macOS.zip', 'Literature-Clock-Native-macOS.zip.sha256'}
+          if {file.name for file in files} != expected:
+              raise SystemExit('Missing ZIP/checksum pair')
+          releases = json.loads(subprocess.run(['gh', 'api', '--paginate', '--slurp', 'repos/' + os.environ['GH_REPO'] + '/releases'], check=True, capture_output=True, text=True).stdout)
+          release = next((item for page in releases for item in page if item['tag_name'] == tag), None)
+          if release:
+              if release['target_commitish'] != os.environ['GITHUB_SHA']:
+                  raise SystemExit('Version already belongs to another commit; bump VERSION')
+              existing = {asset['name'] for asset in release['assets']}
+              attached = existing & expected
+              if attached and attached != expected:
+                  raise SystemExit('Partial ZIP/checksum pair; refusing to mix builds')
+              if not attached:
+                  subprocess.run(['gh', 'release', 'upload', tag, *map(str, files)], check=True)
+          else:
+              notes = 'Download the ZIP, unzip it, and install Literature Clock.saver in ~/Library/Screen Savers. Select Literature Clock in System Settings. Universal binary for Apple Silicon and Intel; Liquid Glass progress requires macOS 26+.'
+              subprocess.run(['gh', 'release', 'create', tag, *map(str, files), '--target', os.environ['GITHUB_SHA'], '--title', 'Literature Clock for macOS ' + version, '--notes', notes, '--draft', '--prerelease'], check=True)
+          subprocess.run(['gh', 'release', 'edit', tag, '--draft=false'], check=True)
           PYTHON
