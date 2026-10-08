@@ -1,4 +1,5 @@
 import AppKit
+import CoreImage
 
 final class PhotoCheckProtocol: URLProtocol {
     static var count = 0
@@ -26,9 +27,10 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
         clock = NativeClockView(frame: window.contentView!.bounds, isPreview: false)!
         clock.autoresizingMask = [.width, .height]
         window.contentView = clock
-        window.title = "Literature Clock — Native Prototype"
+        window.title = "Literature Clock — Window Preview"
         let menu = NSMenu(), item = NSMenuItem(), submenu = NSMenu()
         submenu.addItem(withTitle: "Settings…", action: #selector(settings), keyEquivalent: ",").target = self
+        submenu.addItem(withTitle: "Compare Fusion / Superposition", action: #selector(compareFusion), keyEquivalent: "f").target = self
         submenu.addItem(withTitle: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         item.submenu = submenu; menu.addItem(item); NSApp.mainMenu = menu
         window.center(); window.makeKeyAndOrderFront(nil); NSApp.activate(ignoringOtherApps: true)
@@ -40,6 +42,18 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             defaults.register(defaults: ["theme": "base-dark", "background-pattern": "none", "palette": "default", "custom-color": "#d24335", "show-time": true, "hide-book-title": false, "quote-locales": "", "work": true, "screensaver": true, "progressbar": "background"])
             clock.preferences = defaults
             clock.photoDownloadsEnabled = false
+        }
+        if CommandLine.arguments.contains("--glass-preview") || CommandLine.arguments.contains("--photo-glass-preview") || CommandLine.arguments.contains("--fusion-preview") {
+            // A disposable visual workspace; keep installed saver preferences intact.
+            let defaults = UserDefaults(suiteName: "net.literatureclock.window-preview." + UUID().uuidString)!
+            defaults.register(defaults: ["theme": (CommandLine.arguments.contains("--photo-glass-preview") || CommandLine.arguments.contains("--fusion-preview")) ? "photo-dark" : "book-light", "background-pattern": "none", "palette": "default", "custom-color": "#d24335", "photo-provider": "picsum", "photo-category": "all", "show-time": true, "time-glass": true, "quote-locales": "en-GB", "work": true, "screensaver": false, "progressbar": "glass-background"])
+            clock.preferences = defaults
+            clock.photoDownloadsEnabled = true
+        }
+        if CommandLine.arguments.contains("--fusion-preview") {
+            clock.fusionPreviewEnabled = true
+            clock.interactionPreviewSweep = true
+            window.title = "Literature Clock — Fusion test (⌘F to compare)"
         }
         clock.startAnimation()
         if CommandLine.arguments.contains("--check-render") {
@@ -53,6 +67,47 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             clock.preferences.set("base-dark", forKey: "theme")
             let output = URL(fileURLWithPath: "/private/tmp/literature-clock-native-checks", isDirectory: true)
             try! FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
+            precondition(NativeAppearance.hex(NativePhotoBackground.overlayColor(dark: false)) == "#dddddd" && NativePhotoBackground.overlayColor(dark: false).alphaComponent == 0.4, "Photo light must match the web overlay")
+            precondition(NativeAppearance.hex(NativePhotoBackground.overlayColor(dark: true)) == "#111111" && NativePhotoBackground.overlayColor(dark: true).alphaComponent == 0.5, "Photo dark must match the web overlay")
+            let red = NativeAppearance.color("#d24335")!
+            precondition(NativeAppearance.hex(NativeAppearance.background(theme: "base", dark: false, accent: red)) == "#f8e3e1", "Base light must match the web's 15% sRGB tint")
+            precondition(NativeAppearance.hex(NativeAppearance.background(theme: "base", dark: true, accent: red)) == "#2f181b", "Base dark must match the web's 16% sRGB tint")
+            let blue = NativeAppearance.color("#2c97df")!
+            precondition(NativeAppearance.hex(NativeAppearance.background(theme: "base", dark: false, accent: blue)) == "#dfeffa", "Base tint must follow the chosen accent")
+            let checker = CIFilter(name: "CICheckerboardGenerator", parameters: ["inputColor0": CIColor.black, "inputColor1": CIColor.white, "inputWidth": 8.0, "inputSharpness": 1.0])!.outputImage!
+            let area = CGRect(x: 0, y: 0, width: 120, height: 80)
+            guard let kernel = OpticalGlassView.kernel,
+                  let lens = kernel.apply(extent: area, roiCallback: { _, rect in rect.insetBy(dx: -16, dy: -16) }, arguments: [checker, CIVector(x: 0, y: 0, z: 120, w: 80), 32.0]) else { fatalError("Optical lens shader failed to load") }
+            let context = CIContext()
+            var pixels = [UInt8](repeating: 0, count: 120 * 80 * 4)
+            context.render(lens, toBitmap: &pixels, rowBytes: 120 * 4, bounds: area, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
+            let fringes = stride(from: 0, to: pixels.count, by: 4).filter { pixels[$0 + 3] > 250 && abs(Int(pixels[$0]) - Int(pixels[$0 + 2])) > 20 }
+            precondition(!fringes.isEmpty, "Lens must disperse a neutral background into real colour fringes")
+            let interior = CGRect(x: 55, y: 35, width: 10, height: 10)
+            var original = [UInt8](repeating: 0, count: 400), refracted = original
+            context.render(checker, toBitmap: &original, rowBytes: 40, bounds: interior, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
+            context.render(lens, toBitmap: &refracted, rowBytes: 40, bounds: interior, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
+            precondition(zip(original, refracted).allSatisfy { abs(Int($0) - Int($1)) < 5 }, "Lens interior must preserve a sharp, untinted background")
+            let pane = OpticalGlassView(frame: CGRect(x: 0, y: 0, width: 60, height: 80))
+            pane.source = checker
+            pane.tint = NSColor.red.withAlphaComponent(0.1)
+            let stacked = pane.compositedBackground()!
+            let sampleArea = CGRect(x: 16, y: 32, width: 1, height: 1)
+            var rawSample = [UInt8](repeating: 0, count: 4), stackedSample = rawSample
+            context.render(checker, toBitmap: &rawSample, rowBytes: 4, bounds: sampleArea, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
+            context.render(stacked, toBitmap: &stackedSample, rowBytes: 4, bounds: sampleArea, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
+            precondition(rawSample != stackedSample, "Clock backdrop must include the pane tint in covered areas")
+            let uncovered = CGRect(x: 90, y: 32, width: 1, height: 1)
+            context.render(checker, toBitmap: &rawSample, rowBytes: 4, bounds: uncovered, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
+            context.render(stacked, toBitmap: &stackedSample, rowBytes: 4, bounds: uncovered, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
+            precondition(rawSample == stackedSample, "Clock backdrop must keep uncovered areas unchanged")
+            pane.frame.size.width = 0
+            let reset = pane.compositedBackground()!
+            context.render(reset, toBitmap: &stackedSample, rowBytes: 4, bounds: uncovered, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
+            precondition(rawSample == stackedSample, "Minute reset must remove the progress from the clock backdrop")
+            let opticalImage = context.createCGImage(lens, from: area)!
+            let opticalBitmap = NSBitmapImageRep(cgImage: opticalImage)
+            try! opticalBitmap.representation(using: .png, properties: [:])!.write(to: output.appendingPathComponent("optical-dispersion.png"))
             let parts = Calendar.current.dateComponents([.hour, .minute], from: Date())
             let minute = String(format: "%02d:%02d", parts.hour ?? 0, parts.minute ?? 0)
             for locale in clock.localeNames {
@@ -141,15 +196,45 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             let glassShown = clock.updateGlassTime(font: .boldSystemFont(ofSize: 20), dark: false)
             if #available(macOS 26.0, *) {
                 precondition(glassShown, "Supported systems must use real glass for the time")
-                let glass = clock.subviews.first { $0 is NSGlassEffectView }!
+                let glass = clock.subviews.compactMap { $0 as? OpticalGlassView }.first { $0.cornerRadius > 0 }!
+                precondition(OpticalGlassView.kernel != nil, "Optical lens shader must compile")
                 precondition(abs(glass.frame.midX - clock.bounds.midX) < 0.01, "Glass time must remain centred")
                 precondition(glass.frame.maxY <= clock.bounds.maxY - 8, "Glass time must retain its safe top margin")
+                let savedMinute = clock.lastMinute
+                for minute in ["11:11", "08:08", "23:59"] {
+                    clock.lastMinute = minute
+                    clock.updateGlassTime(font: .boldSystemFont(ofSize: 20), dark: false)
+                    let label = clock.subviews.compactMap { $0 as? NSTextField }.first { $0.stringValue == minute }!
+                    let required = label.attributedStringValue.size()
+                    precondition(label.frame.width >= required.width && label.frame.height >= required.height, "Every clock digit must fit without clipping")
+                    precondition(label.alphaValue == 1 && glass.alphaValue == 1, "Glass intensity must not fade the clock digits")
+                }
+                clock.lastMinute = savedMinute
             } else { precondition(!glassShown, "Older systems must retain the plain clock") }
+            let progressGlassShown = clock.updateGlassProgress(mode: "glass-background", progress: 0.5, dark: false, tint: red.withAlphaComponent(0.1))
+            if #available(macOS 26.0, *) {
+                precondition(progressGlassShown, "Background progress must use native glass")
+                let surface = clock.subviews.compactMap { $0 as? OpticalGlassView }.first { $0.cornerRadius == 0 }!
+                precondition(surface.frame.width == clock.bounds.width / 2 && surface.frame.height == clock.bounds.height, "Glass must cover the elapsed part of the background")
+                precondition(surface.tint?.alphaComponent == 0.1, "Glass progress must retain its full-pane tint")
+                let passage = clock.subviews.first { $0 is NSImageView }!
+                precondition(clock.subviews.firstIndex(of: surface)! < clock.subviews.firstIndex(of: passage)!, "Background glass must stay below the sharp passage")
+                clock.updateGlassProgress(mode: "glass-background", progress: 0, dark: true)
+                precondition(surface.isHidden, "New minutes must reset the glass surface")
+                clock.updateGlassProgress(mode: "glass-background", progress: 1, dark: true)
+                precondition(surface.frame == clock.bounds && !surface.isHidden, "Completed minutes must fill the background")
+                for mode in ["none", "top", "bottom", "background"] {
+                    precondition(!clock.updateGlassProgress(mode: mode, progress: 0.5, dark: false) && surface.isHidden, "Other progress modes must hide glass")
+                }
+            } else { precondition(!progressGlassShown, "Older systems must retain the flat progress") }
             clock.preferences.set(false, forKey: "show-time")
             precondition(!clock.updateGlassTime(font: .boldSystemFont(ofSize: 20), dark: false), "Glass must disappear when time is hidden")
             clock.preferences.set(true, forKey: "show-time")
             clock.preferences.set(false, forKey: "time-glass")
             let first = clock.configureSheet!
+            let progressMenu = clock.controls["progressbar"] as! NSPopUpButton
+            let modes = progressMenu.itemArray.compactMap { $0.representedObject as? String }
+            precondition(modes.contains("background") && modes.contains("glass-background"), "Flat and glass backgrounds must be independent options")
             first.orderOut(nil)
             let second = clock.configureSheet!
             precondition(first !== second, "Closed options sheet was reused")
@@ -307,6 +392,11 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             print("PASS: 12 catalogues, 84 theme/locale font combinations, light/dark rendering, missing quote notice, reopening options custom colour save, preset restoration, hiding book titles, photo download throttling, caching and offline failure, automatic NASA and Commons catalogues/credits/cache, joined selectors, distinct display quotes/languages/random variants/seeds/catalogue selections/caches, notch safe area")
             clock.stopAnimation(); NSApp.terminate(nil)
         }
+    }
+    @objc func compareFusion() {
+        clock.fusionPreviewEnabled.toggle()
+        window.title = clock.fusionPreviewEnabled ? "Literature Clock — Fusion test (⌘F to compare)" : "Literature Clock — Superposition test (⌘F to compare)"
+        clock.needsDisplay = true
     }
     @objc func settings() { if let sheet = clock.configureSheet { window.beginSheet(sheet) } }
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { true }

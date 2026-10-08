@@ -55,6 +55,7 @@ def bundle(name, extension, architecture, data, version):
     (resources / 'locales.json').write_text(json.dumps(sorted(data)))
     fallback = json.loads((ROOT / 'src/strings/fallbackQuotes.json').read_text())
     (resources / 'fallback.json').write_text(json.dumps({locale: dict(first=plain(rows[0]['quote_first']), time='', last=plain(rows[0]['quote_last']), title='', author='', sfw=True) for locale, rows in fallback.items()}, ensure_ascii=False))
+    shutil.copy2(OUTPUT / 'OpticalGlass.metallib', resources / 'OpticalGlass.metallib')
     font_root = SOURCE / 'Assets/Fonts'
     manifest = json.loads((font_root / 'manifest.json').read_text())
     for asset in manifest['files']:
@@ -112,6 +113,8 @@ def main():
     if not re.fullmatch(r'\d+\.\d+\.\d+', args.version):
         parser.error('--version must be numeric major.minor.patch (for example 0.1.0)')
     OUTPUT.mkdir(parents=True, exist_ok=True)
+    run('xcrun', 'metal', '-fcikernel', '-c', str(SOURCE / 'Sources/OpticalGlass.metal'), '-o', str(OUTPUT / 'OpticalGlass.air'))
+    run('xcrun', 'metallib', '-cikernel', str(OUTPUT / 'OpticalGlass.air'), '-o', str(OUTPUT / 'OpticalGlass.metallib'))
     data = catalogues()
     architectures = ['arm64', 'x86_64'] if args.universal else ['arm64']
     saver = bundle('Literature Clock', 'saver', architectures, data, args.version)

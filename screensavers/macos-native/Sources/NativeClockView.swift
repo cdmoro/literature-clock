@@ -1,6 +1,78 @@
 import AppKit
 import ScreenSaver
 import CoreText
+import CoreImage
+
+
+/// Transparent optical lens: sample the actual background separately for RGB.
+/// Only the bevel refracts; the interior stays sharp and untinted.
+final class OpticalGlassView: NSView {
+    var cornerRadius: CGFloat = 0
+    var fusionExclusion: CGRect? { didSet { needsDisplay = true } }
+    var tint: NSColor? { didSet { needsDisplay = true } }
+    var source: CIImage? { didSet { needsDisplay = true } }
+    private static let context = CIContext(options: [.cacheIntermediates: false])
+    static let kernel: CIKernel? = {
+        let url = Bundle(for: NativeClockView.self).url(forResource: "OpticalGlass", withExtension: "metallib")
+        guard let url, let data = try? Data(contentsOf: url) else { return nil }
+        return try? CIKernel(functionName: "lens", fromMetalLibraryData: data)
+    }()
+    static let fusionKernel: CIKernel? = {
+        guard let url = Bundle(for: NativeClockView.self).url(forResource: "OpticalGlass", withExtension: "metallib"),
+              let data = try? Data(contentsOf: url) else { return nil }
+        return try? CIKernel(functionName: "fusedLens", fromMetalLibraryData: data)
+    }()
+    static func fusionRegion(source: CIImage, capsule: CGRect, pane: CGRect) -> CGRect {
+        let strip = CGRect(x: max(pane.minX, pane.maxX - 36), y: pane.minY, width: min(36, pane.width), height: pane.height)
+        return capsule.insetBy(dx: -28, dy: -28).union(strip).intersection(source.extent)
+    }
+    static func fusionImage(source: CIImage, capsule: CGRect, radius: CGFloat, pane: CGRect, tint: NSColor?) -> NSImage? {
+        let region = fusionRegion(source: source, capsule: capsule, pane: pane)
+        let tintedSource = tinted(source, rect: pane, color: tint)
+        guard let kernel = fusionKernel,
+              let output = kernel.apply(extent: region, roiCallback: { _, rect in rect.insetBy(dx: -16, dy: -16) },
+                                        arguments: [tintedSource.clampedToExtent(), CIVector(x: capsule.minX, y: capsule.minY, z: capsule.width, w: capsule.height), radius, pane.maxX]),
+              let cg = context.createCGImage(output, from: region) else { return nil }
+        return NSImage(cgImage: cg, size: region.size)
+    }
+    static func tinted(_ source: CIImage, rect: CGRect, color: NSColor?) -> CIImage {
+        guard let color, let ciColor = CIColor(color: color), rect.width > 0, rect.height > 0 else { return source }
+        return CIImage(color: ciColor).cropped(to: rect).composited(over: source).cropped(to: source.extent)
+    }
+    func compositedBackground() -> CIImage? {
+        guard let source, let output = refractedBand() else { return source }
+        return Self.tinted(output.composited(over: source), rect: frame, color: tint)
+    }
+    private func refractedBand() -> CIImage? {
+        guard let source, let kernel = Self.kernel, frame.width > 0 else { return nil }
+        // A full-height pane only changes a narrow band at its moving edge.
+        let region = cornerRadius == 0 ? NSRect(x: max(frame.minX, frame.maxX - 36), y: frame.minY,
+                                               width: min(36, frame.width), height: frame.height) : frame
+        let rect = CIVector(x: frame.minX, y: frame.minY, z: frame.width, w: frame.height)
+        return kernel.apply(extent: region, roiCallback: { _, area in area.insetBy(dx: -16, dy: -16) }, arguments: [source.clampedToExtent(), rect, cornerRadius])
+    }
+    override func draw(_ dirtyRect: NSRect) {
+        // Paint the tint once, keeping the undistorted interior on the original backdrop.
+        if let tint { tint.setFill(); bounds.fill() }
+        guard let output = refractedBand(), let cg = Self.context.createCGImage(output, from: output.extent) else { return }
+        let region = output.extent
+        NSGraphicsContext.saveGraphicsState()
+        if let exclusion = fusionExclusion {
+            let clip = NSBezierPath(rect: bounds)
+            clip.appendRect(exclusion.offsetBy(dx: -frame.minX, dy: -frame.minY))
+            clip.windingRule = .evenOdd
+            clip.addClip()
+        }
+        let image = NSImage(cgImage: cg, size: region.size)
+        image.draw(in: NSRect(x: region.minX - frame.minX, y: region.minY - frame.minY, width: region.width, height: region.height))
+        // The refracted band samples the untinted source, so apply its tint locally.
+        if let tint {
+            tint.setFill()
+            NSRect(x: region.minX - frame.minX, y: region.minY - frame.minY, width: region.width, height: region.height).fill()
+        }
+        NSGraphicsContext.restoreGraphicsState()
+    }
+}
 
 // Match Book's web highlighter: opaque colour, horizontal padding and
 // rounded corners on each wrapped fragment, without changing text spacing.
@@ -33,6 +105,9 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     var resources: URL { Bundle(for: NativeClockView.self).resourceURL! }
     static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background-pattern", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale", "time-glass"]
     var photoDownloadsEnabled = true
+    var fusionPreviewEnabled = false
+    var interactionPreviewSweep = false
+    private var fusionPreviewView: NSImageView?
     private var photoScreen: NSScreen? { window?.screen ?? NSScreen.screens.first }
     private var photoDisplayID: String { (photoScreen?.deviceDescription[NSDeviceDescriptionKey(rawValue: "NSScreenNumber")] as? NSNumber)?.stringValue ?? "0" }
     // Synthetic display ordinals are used only by the standalone diagnostic.
@@ -80,6 +155,11 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     private var glassTimeView: NSView?
     private var glassTimeLabel: NSTextField?
     private var glassTimeKey = ""
+    private var glassProgressView: NSView?
+    private var passageView: NSImageView?
+    private var timeOpticalSource: CIImage?
+    private var opticalSource: CIImage?
+    private var opticalSourceKey = ""
     private var patternKey = ""
     private var patternImage: NSImage?
     var themeName: String { (preferences.string(forKey: "theme") ?? "base-dark").split(separator: "-").first.map(String.init) ?? "base" }
@@ -188,40 +268,70 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     @discardableResult
     func updateGlassTime(font: NSFont, dark: Bool) -> Bool {
         let requested = preferences.bool(forKey: "show-time") && preferences.bool(forKey: "time-glass")
-        guard requested else { glassTimeView?.isHidden = true; glassTimeKey = ""; return false }
+        guard requested else { glassTimeView?.isHidden = true; glassTimeLabel?.isHidden = true; glassTimeKey = ""; return false }
         if #available(macOS 26.0, *) {
-            let glass: NSGlassEffectView
-            if let existing = glassTimeView as? NSGlassEffectView { glass = existing }
+            let glass: OpticalGlassView
+            if let existing = glassTimeView as? OpticalGlassView { glass = existing }
             else {
-                glass = NSGlassEffectView()
-                glass.style = .regular
-                let content = NSView()
+                glass = OpticalGlassView()
                 let label = NSTextField(labelWithString: "")
                 label.alignment = .center
                 label.textColor = .labelColor
-                content.addSubview(label)
-                glass.contentView = content
                 addSubview(glass)
+                // Keep glyphs outside the material’s automatic content insets.
+                addSubview(label)
                 glassTimeView = glass; glassTimeLabel = label
             }
             let key = "\(lastMinute)|\(bounds.size)|\(font.pointSize)|\(dark)|\(timeTopInset)"
-            if key == glassTimeKey { return true }
+            glass.source = timeOpticalSource ?? opticalSource
+            if key == glassTimeKey { glass.isHidden = false; return true }
             glassTimeKey = key
-            let size = NSSize(width: ceil((lastMinute as NSString).size(withAttributes: [.font: font]).width) + 28,
-                              height: ceil(font.pointSize * 1.5) + 12)
+            let labelFont = NSFont.monospacedDigitSystemFont(ofSize: font.pointSize, weight: .bold)
+            glassTimeLabel?.font = labelFont
+            glassTimeLabel?.stringValue = lastMinute
+            glassTimeLabel?.sizeToFit()
+            let labelSize = glassTimeLabel!.frame.size
+            let size = NSSize(width: ceil(labelSize.width) + 32, height: ceil(labelSize.height) + 16)
             glass.frame = NSRect(x: (bounds.width - size.width) / 2,
                                  y: isFlipped ? timeTopInset : bounds.height - timeTopInset - size.height,
                                  width: size.width, height: size.height)
             glass.cornerRadius = size.height / 2
             glass.appearance = NSAppearance(named: dark ? .darkAqua : .aqua)
-            glass.contentView?.frame = NSRect(origin: .zero, size: size)
-            glassTimeLabel?.frame = NSRect(x: 14, y: 6, width: size.width - 28, height: size.height - 12)
-            glassTimeLabel?.font = font
-            glassTimeLabel?.stringValue = lastMinute
+            glass.source = timeOpticalSource ?? opticalSource
+            glassTimeLabel?.frame = glass.frame.insetBy(dx: 16, dy: 8)
+            glassTimeLabel?.textColor = dark ? NSColor(calibratedWhite: 0.9, alpha: 1) : NSColor(calibratedWhite: 0.13, alpha: 1)
+            glassTimeLabel?.isHidden = false
             glass.isHidden = false
             return true
         }
         glassTimeView?.isHidden = true
+        glassTimeLabel?.isHidden = true
+        return false
+    }
+    @discardableResult
+    func updateGlassProgress(mode: String, progress: Double, dark: Bool, tint: NSColor? = nil) -> Bool {
+        guard mode == "glass-background" else { glassProgressView?.isHidden = true; return false }
+        if #available(macOS 26.0, *) {
+            let glass: OpticalGlassView
+            if let existing = glassProgressView as? OpticalGlassView { glass = existing }
+            else {
+                glass = OpticalGlassView()
+                glass.cornerRadius = 0
+                // Keep the time capsule above the moving glass surface.
+                addSubview(glass, positioned: .below, relativeTo: nil)
+                glassProgressView = glass
+            }
+            // Reuse one surface and move its leading edge continuously each frame.
+            glass.tint = tint
+            glass.frame = NSRect(x: bounds.minX, y: bounds.minY,
+                                 width: bounds.width * min(1, max(0, progress)), height: bounds.height)
+            glass.source = opticalSource
+            glass.needsDisplay = true
+            glass.appearance = NSAppearance(named: dark ? .darkAqua : .aqua)
+            glass.isHidden = glass.frame.width <= 0
+            return true
+        }
+        glassProgressView?.isHidden = true
         return false
     }
     override func draw(_ dirtyRect: NSRect) {
@@ -230,13 +340,6 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let mode = (preferences.string(forKey: "theme") ?? "base-dark").split(separator: "-").last ?? "dark"
         let dark = mode == "dark" || (mode == "system" && effectiveAppearance.bestMatch(from: [.darkAqua, .aqua]) == .darkAqua)
         let theme = themeName
-        let background = NativeAppearance.background(theme: theme, dark: dark)
-        background.setFill(); bounds.fill()
-        NativeAppearance.drawThemeBackground(theme: theme, dark: dark, bounds: bounds, resources: resources)
-        if theme == "photo" {
-            if photoDownloadsEnabled { photoBackground.update(now: now, size: bounds.size, provider: preferences.string(forKey: "photo-provider") ?? "picsum", category: preferences.string(forKey: "photo-category") ?? "all", displayID: photoDisplayID, displayIndex: photoDisplayIndex) { [weak self] in self?.needsDisplay = true } }
-            photoBackground.draw(in: bounds, dark: dark)
-        }
         let colors = NativeAppearance.presetColors
         let palette = preferences.string(forKey: "palette") ?? "default"
         let accent: NSColor
@@ -247,6 +350,14 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             accent = colors[randomValue(ordered, at: now)]!
         }
         else { accent = colors[palette] ?? .systemRed }
+        let background = NativeAppearance.background(theme: theme, dark: dark, accent: accent)
+        background.setFill(); bounds.fill()
+        NativeAppearance.drawThemeBackground(theme: theme, dark: dark, bounds: bounds, resources: resources)
+        if theme == "photo" {
+            if photoDownloadsEnabled { photoBackground.update(now: now, size: bounds.size, provider: preferences.string(forKey: "photo-provider") ?? "picsum", category: preferences.string(forKey: "photo-category") ?? "all", displayID: photoDisplayID, displayIndex: photoDisplayIndex) { [weak self] in self?.needsDisplay = true } }
+            photoBackground.draw(in: bounds, dark: dark)
+        }
+        let foreground = NativeAppearance.foreground(theme: theme, dark: dark, accent: accent)
         let scale = window?.backingScaleFactor ?? 1
         var pattern = preferences.string(forKey: "background-pattern") ?? "none"
         if pattern == "random" { pattern = randomValue(["dots", "diagonal", "grid"], at: now) }
@@ -256,17 +367,57 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             patternKey = newPatternKey
         }
         patternImage?.draw(in: bounds)
-        let progress = now.timeIntervalSince1970.truncatingRemainder(dividingBy: 60) / 60
-        let progressMode = preferences.string(forKey: "progressbar") ?? "none"
-        if progressMode != "none" {
-            accent.withAlphaComponent(progressMode == "background" ? 0.12 : 0.7).setFill()
-            NSRect(x: bounds.minX, y: progressMode == "top" ? bounds.maxY - 3 : bounds.minY,
-                   width: bounds.width * progress, height: progressMode == "background" ? bounds.height : 3).fill()
+        let photoKey = theme == "photo" ? photoBackground.image.map { String(describing: ObjectIdentifier($0)) } ?? "none" : "none"
+        let opticalKey = "\(theme)|\(dark)|\(bounds.size)|\(newPatternKey)|\(photoKey)"
+        if opticalKey != opticalSourceKey && bounds.width > 0 && bounds.height > 0 {
+            let backgroundImage = NSImage(size: bounds.size, flipped: false) { [self] rect in
+                background.setFill(); rect.fill()
+                NativeAppearance.drawThemeBackground(theme: theme, dark: dark, bounds: rect, resources: resources)
+                if theme == "photo" { photoBackground.draw(in: rect, dark: dark) }
+                patternImage?.draw(in: rect)
+                return true
+            }
+            opticalSource = backgroundImage.tiffRepresentation.flatMap { CIImage(data: $0) }
+            opticalSourceKey = opticalKey
         }
-        guard bounds.width > 0, bounds.height > 0, let quote else { return }
-        let foreground = theme == "terminal" ? accent.withAlphaComponent(0.8) : dark ? NSColor(calibratedWhite: 0.9, alpha: 1) : NSColor(calibratedWhite: 0.13, alpha: 1)
+        let progress = interactionPreviewSweep ? 0.5 + sin(now.timeIntervalSince(started) / 3) * 0.13 : now.timeIntervalSince1970.truncatingRemainder(dividingBy: 60) / 60
+        let progressMode = preferences.string(forKey: "progressbar") ?? "none"
+        let progressColor = NativeAppearance.progressForeground(theme: theme, dark: dark, accent: accent)
+        let glassProgress = updateGlassProgress(mode: progressMode, progress: progress, dark: dark, tint: progressColor.withAlphaComponent(0.1))
+        timeOpticalSource = opticalSource
+        if glassProgress {
+            // Core Image evaluates this lazy composition only where the clock samples it.
+            timeOpticalSource = (glassProgressView as? OpticalGlassView)?.compositedBackground() ?? opticalSource
+        } else if progressMode != "none" {
+            let backgroundProgress = progressMode == "background" || progressMode == "glass-background"
+            let fill = backgroundProgress ? progressColor.withAlphaComponent(0.1) : accent.withAlphaComponent(0.7)
+            let rect = NSRect(x: bounds.minX, y: progressMode == "top" ? bounds.maxY - 3 : bounds.minY,
+                              width: bounds.width * progress, height: backgroundProgress ? bounds.height : 3)
+            fill.setFill(); rect.fill()
+            if let source = opticalSource { timeOpticalSource = OpticalGlassView.tinted(source, rect: rect, color: fill) }
+        }
+        guard bounds.width > 0, bounds.height > 0, let quote else { passageView?.isHidden = true; return }
         let timeFont = NSFont.systemFont(ofSize: max(10, min(20, bounds.width * 0.013)), weight: .bold)
         let glassTime = updateGlassTime(font: timeFont, dark: dark)
+        fusionPreviewView?.isHidden = true
+        (glassProgressView as? OpticalGlassView)?.fusionExclusion = nil
+        if fusionPreviewEnabled, glassTime, glassProgress,
+           let source = opticalSource, let capsule = glassTimeView as? OpticalGlassView,
+           let pane = glassProgressView as? OpticalGlassView,
+           let image = OpticalGlassView.fusionImage(source: source, capsule: capsule.frame, radius: capsule.cornerRadius, pane: pane.frame, tint: pane.tint) {
+            if fusionPreviewView == nil {
+                let view = NSImageView()
+                view.imageScaling = .scaleNone
+                addSubview(view, positioned: .below, relativeTo: glassTimeLabel)
+                fusionPreviewView = view
+            }
+            fusionPreviewView?.frame = OpticalGlassView.fusionRegion(source: source, capsule: capsule.frame, pane: pane.frame)
+            // One union renderer owns the entire edge. Never splice two filters across a rectangular patch.
+            pane.fusionExclusion = pane.frame
+            fusionPreviewView?.image = image
+            fusionPreviewView?.isHidden = false
+            capsule.isHidden = true
+        }
         if preferences.bool(forKey: "show-time") && !glassTime {
             let timeStyle = NSMutableParagraphStyle(); timeStyle.alignment = .center
             let font = timeFont
@@ -351,7 +502,9 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             // Translating this image keeps all glyphs together; drawing text at
             // a new fractional origin every frame independently snaps glyphs.
             let highlightPadding = theme == "book" ? low * 0.2 : 0
-            let size = NSSize(width: ceil(width + highlightPadding * 2), height: layoutHeight + 4)
+            // Leave room for the 25-point Photo halo on every side of the cache.
+            let shadowPadding: CGFloat = theme == "photo" ? 50 : 0
+            let size = NSSize(width: ceil(width + highlightPadding * 2 + shadowPadding * 2), height: layoutHeight + 4 + shadowPadding * 2)
             let bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(ceil(size.width * scale)), pixelsHigh: Int(ceil(size.height * scale)), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0)!
             bitmap.size = size
             NSGraphicsContext.saveGraphicsState()
@@ -374,7 +527,14 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 manager.drawBackground(forGlyphRange: glyphs, at: .zero)
                 manager.drawGlyphs(forGlyphRange: glyphs, at: .zero)
             } else {
-                layoutText!.draw(with: NSRect(x: 0, y: 2, width: width, height: layoutHeight + 2), options: [.usesLineFragmentOrigin, .usesFontLeading])
+                if theme == "photo" {
+                    let shadow = NSShadow()
+                    shadow.shadowOffset = .zero
+                    shadow.shadowBlurRadius = 25
+                    shadow.shadowColor = NativeAppearance.color(dark ? "#1c1c1c" : "#dfdfdf")
+                    shadow.set()
+                }
+                layoutText!.draw(with: NSRect(x: shadowPadding, y: 2 + shadowPadding, width: width, height: layoutHeight + 2), options: [.usesLineFragmentOrigin, .usesFontLeading])
             }
             NSGraphicsContext.restoreGraphicsState()
             let image = NSImage(size: size)
@@ -387,9 +547,18 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let moving = preferences.bool(forKey: "screensaver")
         let dx = moving ? sin(elapsed / 12) * bounds.width * 0.045 : 0
         let dy = moving ? sin(elapsed / 17) * bounds.height * 0.055 : 0
-        NSGraphicsContext.current?.imageInterpolation = .high
-        image.draw(in: NSRect(x: (bounds.width - image.size.width) / 2 + dx, y: (bounds.height - image.size.height) / 2 + dy,
-                              width: image.size.width, height: image.size.height), from: .zero, operation: .sourceOver, fraction: 1)
+        // Keep the cached passage above the glass so only the background refracts.
+        if passageView == nil {
+            let view = NSImageView()
+            view.imageScaling = .scaleNone
+            addSubview(view)
+            passageView = view
+        }
+        passageView?.image = image
+        passageView?.frame = NSRect(x: (bounds.width - image.size.width) / 2 + dx,
+                                    y: (bounds.height - image.size.height) / 2 + dy,
+                                    width: image.size.width, height: image.size.height)
+        passageView?.isHidden = false
     }
     override var hasConfigureSheet: Bool { true }
     override var configureSheet: NSWindow? {
@@ -483,7 +652,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             ("photo-category", "settings_photo_category", NativePhotoBackground.categories(provider: preferences.string(forKey: "photo-provider") ?? "picsum")),
             ("palette", "settings_color", ["default", "red", "pink", "green", "orange", "purple", "blue", "gray", "random", "custom"]),
             ("background-pattern", "settings_background_pattern", NativeAppearance.patterns),
-            ("progressbar", "progressbar_mode", ["none", "top", "bottom", "background"])
+            ("progressbar", "progressbar_mode", ["none", "top", "bottom", "background", "glass-background"])
         ] {
             if key == "transition" { section("settings_behavior") }
             let menu = NSPopUpButton()
@@ -494,6 +663,9 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 let label = key == "photo-provider" ? (raw == "commons" ? "Wikimedia Commons" : raw == "nasa" ? "NASA" : "Picsum") : text(labelKey)
                 let item = NSMenuItem(title: label, action: nil, keyEquivalent: "")
                 item.representedObject = raw
+                if key == "progressbar" && raw == "glass-background" {
+                    if #available(macOS 26.0, *) {} else { item.isEnabled = false }
+                }
                 menu.menu?.addItem(item)
                 if raw == value { menu.select(item) }
             }
@@ -508,7 +680,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 for raw in values where raw != "default" && raw != "random" {
                     let button = NativeColorSwatch(frame: .zero)
                     button.value = raw
-                    button.swatchColor = NativeAppearance.presetColors[raw] ?? (raw == "custom" ? NativeAppearance.color(preferences.string(forKey: "custom-color") ?? "")! : .labelColor)
+                    button.swatchColor = NativeAppearance.presetColors[raw] ?? (raw == "custom" ? (NativeAppearance.color(preferences.string(forKey: "custom-color") ?? "") ?? .systemRed) : .labelColor)
                     button.toolTip = menu.itemArray.first { $0.representedObject as? String == raw }?.title
                     button.setAccessibilityLabel(button.toolTip ?? raw)
                     button.target = self; button.action = #selector(selectSwatch(_:))

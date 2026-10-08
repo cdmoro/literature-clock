@@ -82,11 +82,30 @@ enum NativeAppearance {
         let rgb = color.usingColorSpace(.sRGB) ?? .systemRed
         return String(format: "#%02x%02x%02x", Int(round(rgb.redComponent * 255)), Int(round(rgb.greenComponent * 255)), Int(round(rgb.blueComponent * 255)))
     }
-    static func background(theme: String, dark: Bool) -> NSColor {
+    static func background(theme: String, dark: Bool, accent: NSColor? = nil) -> NSColor {
+        if theme == "base" {
+            let accent = (accent ?? defaultAccent(theme: theme, dark: dark)).usingColorSpace(.sRGB)!
+            let neutral = color(dark ? "#101016" : "#ffffff")!.usingColorSpace(.sRGB)!
+            let fraction: CGFloat = dark ? 0.16 : 0.15
+            // Match CSS color-mix(in srgb), rather than blending in linear light.
+            return NSColor(srgbRed: accent.redComponent * fraction + neutral.redComponent * (1 - fraction),
+                           green: accent.greenComponent * fraction + neutral.greenComponent * (1 - fraction),
+                           blue: accent.blueComponent * fraction + neutral.blueComponent * (1 - fraction), alpha: 1)
+        }
         let colors = ["photo": dark ? "#111111" : "#dddddd", "book": dark ? "#292621" : "#f5edd9", "terminal": dark ? "#07120c" : "#edf5eb",
                       "festive": dark ? "#211323" : "#fff1f5", "bohemian": dark ? "#142323" : "#eaf4ee",
                       "retro": dark ? "#17120b" : "#f4e8ce"]
         return color(colors[theme] ?? (dark ? "#121212" : "#f2f2f2"))!
+    }
+    static func foreground(theme: String, dark: Bool, accent: NSColor) -> NSColor {
+        if theme == "terminal" { return accent.withAlphaComponent(0.8) }
+        if theme == "photo" { return color(dark ? "#eeeeee" : "#111111")! }
+        if theme == "base" { return color(dark ? "#c9c9c5" : "#2f2e2c")! }
+        return dark ? NSColor(calibratedWhite: 0.9, alpha: 1) : NSColor(calibratedWhite: 0.13, alpha: 1)
+    }
+    static func progressForeground(theme: String, dark: Bool, accent: NSColor) -> NSColor {
+        if theme == "photo" { return color(dark ? "#d7d7d7" : "#282826")! }
+        return foreground(theme: theme, dark: dark, accent: accent)
     }
     static func defaultAccent(theme: String, dark: Bool) -> NSColor {
         let colors = ["photo": dark ? "#fd3622" : "#e33725", "book": dark ? "#214cc6" : "#fbf719", "terminal": dark ? "#1bec1b" : "#27702b",

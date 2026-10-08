@@ -136,6 +136,9 @@ final class NativePhotoBackground {
         task?.resume()
     }
     func cancel() { task?.cancel(); task = nil; requestedKey = nil }
+    static func overlayColor(dark: Bool) -> NSColor {
+        NativeAppearance.color(dark ? "#111111" : "#dddddd")!.withAlphaComponent(dark ? 0.5 : 0.4)
+    }
     func draw(in bounds: NSRect, dark: Bool) {
         if let image, image.size.width > 0, image.size.height > 0 {
             let factor = max(bounds.width / image.size.width, bounds.height / image.size.height)
@@ -145,7 +148,7 @@ final class NativePhotoBackground {
             image.draw(in: NSRect(x: bounds.midX - size.width / 2, y: bounds.midY - size.height / 2, width: size.width, height: size.height))
             NSGraphicsContext.restoreGraphicsState()
         }
-        (dark ? NSColor.black : NSColor.white).withAlphaComponent(dark ? 0.55 : 0.6).setFill()
+        Self.overlayColor(dark: dark).setFill()
         bounds.fill()
         if !credit.isEmpty {
             let style = NSMutableParagraphStyle(); style.alignment = .right
