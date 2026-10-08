@@ -18,6 +18,7 @@ Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) (
 - **Take your time.** Pause a quote, browse other quotes for the same minute, then return to the live clock whenever you're ready.
 - **Keep the passages you love.** Save favourites and revisit recently displayed quotes in **My quotes**, without an account.
 - **Share the exact quote.** Send a direct link to the displayed passage, copy it when native sharing isn't available, or download an image.
+- **Read with a view.** Photo backgrounds change each minute: choose Picsum, NASA or Wikimedia Commons, without an account or API key. NASA and Commons offer translated topic selectors and image source credits.
 - **Set the mood.** Use Zen mode, fullscreen or a gently moving screensaver. Choose fade, slide, blur or zoom transitions—or no animation—and toggle the time and progress bar.
 - **Filter explicit passages.** Work mode shows only quotes whose `SFW` classification is `true`.
 
@@ -33,9 +34,12 @@ A few places to start:
 | Horizon | A sky that changes with the time of day | [Open Horizon](https://literatureclock.netlify.app/?theme=horizon-system) |
 | Poster | Bold typography in a decorative frame | [Open Poster](https://literatureclock.netlify.app/?theme=poster-system) |
 | Terminal | A terminal-inspired reading display | [Open Terminal](https://literatureclock.netlify.app/?theme=terminal-dark) |
+| Photo | Changing photographs and artwork from Picsum, NASA or Wikimedia Commons | [Open Photo](https://literatureclock.netlify.app/?theme=photo-dark) |
 | Random colours | A different colour theme each minute | [Try random colours](https://literatureclock.netlify.app/?theme=color-system) |
 
 Explore the full selection in **Settings**: Base, colour themes, Retro, Elegant, Festive, Bohemian, Book Page, Handwriting, Anaglyph, WhatsApp, Terminal, Frame, Subtle, Poster, Horizon, Photo and Kindle. Themes offer light, dark and system variants; supported themes also let you choose an accent colour and reset it to the theme default.
+
+In **Photo**, choose a provider and, for NASA or Wikimedia Commons, a topic beside it. NASA searches 14 topics, including nebulae, planets and auroras; Commons searches CC0 images across 16 topics, including landscapes, architecture and art. **All** rotates between topics. Images are selected automatically, with source credits; the previous loaded background stays visible if a request fails. Topic search results are cached for an hour, while backgrounds change each minute—refreshing results does not guarantee new images. These choices are saved and included in shared settings links.
 
 ## Reading and collecting quotes
 
