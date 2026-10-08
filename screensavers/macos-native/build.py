@@ -74,6 +74,7 @@ def bundle(name, extension, architecture, data, version):
     shutil.copy2(ROOT / 'src/photo-providers.json', resources / 'photo-providers.json')
     library = extension == 'saver'
     info = dict(CFBundleIdentifier=f'net.literatureclock.native-{extension}', CFBundleName=name,
+                CFBundleDisplayName='Literature Clock' if extension == 'saver' else name,
                 CFBundleExecutable=name, CFBundleVersion=version, CFBundleShortVersionString=version,
                 CFBundlePackageType='BNDL' if library else 'APPL', LSMinimumSystemVersion='12.0',
                 NSPrincipalClass='NativeClockView' if library else 'NSApplication', NSHighResolutionCapable=True)
@@ -113,7 +114,7 @@ def main():
     OUTPUT.mkdir(parents=True, exist_ok=True)
     data = catalogues()
     architectures = ['arm64', 'x86_64'] if args.universal else ['arm64']
-    saver = bundle('Literature Clock Native', 'saver', architectures, data, args.version)
+    saver = bundle('Literature Clock', 'saver', architectures, data, args.version)
     bundle('Literature Clock Native Preview', 'app', architectures, data, args.version)
     package = OUTPUT / 'Literature-Clock-Native-macOS.zip'
     run('ditto', '-c', '-k', '--sequesterRsrc', '--keepParent', str(saver), str(package))

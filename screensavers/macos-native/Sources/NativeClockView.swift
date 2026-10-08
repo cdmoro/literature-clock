@@ -469,7 +469,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         }
         let cancel = NSButton(title: text("cancel"), target: self, action: #selector(cancelOptions))
         cancel.keyEquivalent = "\u{1b}"
-        let save = NSButton(title: text("save"), target: self, action: #selector(saveOptions))
+        let save = NSButton(title: "OK", target: self, action: #selector(saveOptions))
         save.keyEquivalent = "\r"
         let spacer = NSView()
         let buttons = NSStackView(views: [spacer, cancel, save])
