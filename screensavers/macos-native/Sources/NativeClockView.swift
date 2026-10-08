@@ -2,6 +2,19 @@ import AppKit
 import ScreenSaver
 import CoreText
 
+// Match Book's web highlighter: opaque colour, horizontal padding and
+// rounded corners on each wrapped fragment, without changing text spacing.
+final class BookHighlightLayoutManager: NSLayoutManager {
+    override func fillBackgroundRectArray(_ rectArray: UnsafePointer<NSRect>, count rectCount: Int, forCharacterRange charRange: NSRange, color: NSColor) {
+        let font = textStorage?.attribute(.font, at: charRange.location, effectiveRange: nil) as? NSFont
+        let padding = (font?.pointSize ?? 0) * 0.2
+        for index in 0..<rectCount {
+            let rect = rectArray[index].insetBy(dx: -padding, dy: 0)
+            NSBezierPath(roundedRect: rect, xRadius: 3, yRadius: 3).fill()
+        }
+    }
+}
+
 struct NativeQuote: Codable {
     let first: String
     let time: String
@@ -214,7 +227,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 attributes: [.font: font, .foregroundColor: foreground, .paragraphStyle: paragraph])
             let timeRange = NSRange(location: (quote.first as NSString).length, length: (quote.time as NSString).length)
             if theme == "book" {
-                result.addAttribute(.backgroundColor, value: accent.withAlphaComponent(0.65), range: timeRange)
+                result.addAttribute(.backgroundColor, value: accent, range: timeRange)
             } else { result.addAttribute(.foregroundColor, value: accent, range: timeRange) }
             let attribution = preferences.bool(forKey: "hide-book-title") ? quote.author : [quote.title, quote.author].filter { !$0.isEmpty }.joined(separator: ", ")
             if !attribution.isEmpty {
@@ -235,13 +248,32 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             // Rasterize the entire passage once at the display's pixel density.
             // Translating this image keeps all glyphs together; drawing text at
             // a new fractional origin every frame independently snaps glyphs.
-            let size = NSSize(width: ceil(width), height: layoutHeight + 4)
+            let highlightPadding = theme == "book" ? low * 0.2 : 0
+            let size = NSSize(width: ceil(width + highlightPadding * 2), height: layoutHeight + 4)
             let bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(ceil(size.width * scale)), pixelsHigh: Int(ceil(size.height * scale)), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0)!
             bitmap.size = size
             NSGraphicsContext.saveGraphicsState()
             NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: bitmap)
             NSColor.clear.setFill(); NSRect(origin: .zero, size: size).fill(using: .copy)
-            layoutText!.draw(with: NSRect(x: 0, y: 2, width: width, height: layoutHeight + 2), options: [.usesLineFragmentOrigin, .usesFontLeading])
+            if theme == "book" {
+                let storage = NSTextStorage(attributedString: layoutText!)
+                let manager = BookHighlightLayoutManager()
+                let container = NSTextContainer(containerSize: NSSize(width: width, height: .greatestFiniteMagnitude))
+                container.lineFragmentPadding = 0
+                storage.addLayoutManager(manager)
+                manager.addTextContainer(container)
+                let glyphs = manager.glyphRange(for: container)
+                // TextKit draws in a flipped coordinate system; the cached
+                // bitmap itself is drawn by ScreenSaverView as a normal image.
+                let context = NSGraphicsContext.current!.cgContext
+                context.translateBy(x: highlightPadding, y: size.height - 2)
+                context.scaleBy(x: 1, y: -1)
+                NSGraphicsContext.current = NSGraphicsContext(cgContext: context, flipped: true)
+                manager.drawBackground(forGlyphRange: glyphs, at: .zero)
+                manager.drawGlyphs(forGlyphRange: glyphs, at: .zero)
+            } else {
+                layoutText!.draw(with: NSRect(x: 0, y: 2, width: width, height: layoutHeight + 2), options: [.usesLineFragmentOrigin, .usesFontLeading])
+            }
             NSGraphicsContext.restoreGraphicsState()
             let image = NSImage(size: size)
             image.addRepresentation(bitmap)

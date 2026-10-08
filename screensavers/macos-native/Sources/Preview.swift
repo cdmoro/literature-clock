@@ -90,6 +90,20 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
                     try! bitmap.representation(using: .png, properties: [:])!.write(to: output.appendingPathComponent(theme + "-" + mode + ".png"))
                 }
             }
+            // Inspect wrapped highlighter fragments in both writing directions.
+            clock.preferences.set("book-light", forKey: "theme")
+            clock.preferences.set("none", forKey: "background-pattern")
+            clock.preferences.set("default", forKey: "palette")
+            clock.preferences.set(false, forKey: "screensaver")
+            for locale in ["en-GB", "ar-AE"] {
+                clock.quoteLocale = locale
+                let rows = clock.catalogue(locale)
+                clock.quote = locale == "en-GB" ? rows["16:00"]?.first { $0.title == "Through the Looking Glass" } : rows.values.flatMap { $0 }.first { $0.time.count > 25 && $0.first.count > 30 }
+                precondition(clock.quote != nil, "Missing Book highlight diagnostic passage")
+                let bitmap = clock.bitmapImageRepForCachingDisplay(in: clock.bounds)!
+                clock.cacheDisplay(in: clock.bounds, to: bitmap)
+                try! bitmap.representation(using: .png, properties: [:])!.write(to: output.appendingPathComponent("book-highlight-" + locale + ".png"))
+            }
             let first = clock.configureSheet!
             first.orderOut(nil)
             let second = clock.configureSheet!

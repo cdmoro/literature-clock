@@ -78,7 +78,7 @@ enum NativeAppearance {
         return color(colors[theme] ?? (dark ? "#121212" : "#f2f2f2"))!
     }
     static func defaultAccent(theme: String, dark: Bool) -> NSColor {
-        let colors = ["photo": dark ? "#fd3622" : "#e33725", "book": dark ? "#729cf5" : "#214cc6", "terminal": dark ? "#1bec1b" : "#27702b",
+        let colors = ["photo": dark ? "#fd3622" : "#e33725", "book": dark ? "#214cc6" : "#fbf719", "terminal": dark ? "#1bec1b" : "#27702b",
                       "festive": "#e74c3c", "bohemian": "#1abc9c", "retro": dark ? "#f1ba08" : "#966a00"]
         return color(colors[theme] ?? "#d24335")!
     }
