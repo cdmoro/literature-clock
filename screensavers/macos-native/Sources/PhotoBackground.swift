@@ -153,8 +153,8 @@ final class NativePhotoBackground {
         if !credit.isEmpty {
             let style = NSMutableParagraphStyle(); style.alignment = .right
             let font = NSFont.systemFont(ofSize: max(8, min(11, bounds.width * 0.01)))
-            (credit as NSString).draw(in: NSRect(x: 12, y: (NSGraphicsContext.current?.isFlipped ?? false) ? bounds.height - 30 : 12,
-                width: max(0, bounds.width - 24), height: 18), withAttributes: [.font: font, .foregroundColor: dark ? NSColor.white : NSColor.black, .paragraphStyle: style])
+            (credit as NSString).draw(in: NSRect(x: 20, y: (NSGraphicsContext.current?.isFlipped ?? false) ? bounds.height - 34 : 16,
+                width: max(0, bounds.width - 40), height: 18), withAttributes: [.font: font, .foregroundColor: dark ? NSColor.white : NSColor.black, .paragraphStyle: style])
         }
     }
 }

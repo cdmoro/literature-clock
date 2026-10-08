@@ -10,7 +10,6 @@
     "color_mode_random": "Change every minute",
     "color_edit": "Edit colour…",
     "color_fixed": "Fixed colour",
-    "time_glass": "Liquid Glass for the time (macOS 26+)",
     "settings_progress_glass-background": "Background Liquid Glass",
     "settings_progress_glass-foreground": "Foreground Liquid Glass"
   },
@@ -25,7 +24,6 @@
     "color_mode_random": "Change every minute",
     "color_edit": "Edit color…",
     "color_fixed": "Fixed color",
-    "time_glass": "Liquid Glass for the time (macOS 26+)",
     "settings_progress_glass-background": "Background Liquid Glass",
     "settings_progress_glass-foreground": "Foreground Liquid Glass"
   },
@@ -40,7 +38,6 @@
     "color_mode_random": "Cambiar cada minuto",
     "color_edit": "Editar color…",
     "color_fixed": "Color fijo",
-    "time_glass": "Liquid Glass en la hora (macOS 26+)",
     "settings_progress_glass-background": "Fondo con Liquid Glass",
     "settings_progress_glass-foreground": "Primer plano con Liquid Glass"
   },
@@ -55,7 +52,6 @@
     "color_mode_random": "Changer chaque minute",
     "color_edit": "Modifier la couleur…",
     "color_fixed": "Couleur fixe",
-    "time_glass": "Liquid Glass pour l’heure (macOS 26+)",
     "settings_progress_glass-background": "Arrière-plan Liquid Glass",
     "settings_progress_glass-foreground": "Premier plan Liquid Glass"
   },
@@ -70,7 +66,6 @@
     "color_mode_random": "Jede Minute ändern",
     "color_edit": "Farbe bearbeiten…",
     "color_fixed": "Feste Farbe",
-    "time_glass": "Liquid Glass für die Uhrzeit (macOS 26+)",
     "settings_progress_glass-background": "Liquid-Glass-Hintergrund",
     "settings_progress_glass-foreground": "Liquid Glass im Vordergrund"
   },
@@ -85,7 +80,6 @@
     "color_mode_random": "Cambia ogni minuto",
     "color_edit": "Modifica colore…",
     "color_fixed": "Colore fisso",
-    "time_glass": "Liquid Glass per l’ora (macOS 26+)",
     "settings_progress_glass-background": "Sfondo Liquid Glass",
     "settings_progress_glass-foreground": "Primo piano Liquid Glass"
   },
@@ -100,7 +94,6 @@
     "color_mode_random": "Mudar a cada minuto",
     "color_edit": "Editar cor…",
     "color_fixed": "Cor fixa",
-    "time_glass": "Liquid Glass na hora (macOS 26+)",
     "settings_progress_glass-background": "Fundo com Liquid Glass",
     "settings_progress_glass-foreground": "Primeiro plano com Liquid Glass"
   },
@@ -115,7 +108,6 @@
     "color_mode_random": "Менять каждую минуту",
     "color_edit": "Изменить цвет…",
     "color_fixed": "Постоянный цвет",
-    "time_glass": "Liquid Glass для времени (macOS 26+)",
     "settings_progress_glass-background": "Фон Liquid Glass",
     "settings_progress_glass-foreground": "Передний план Liquid Glass"
   },
@@ -130,7 +122,6 @@
     "color_mode_random": "每分钟更换",
     "color_edit": "编辑颜色…",
     "color_fixed": "固定颜色",
-    "time_glass": "时间使用 Liquid Glass（macOS 26+）",
     "settings_progress_glass-background": "Liquid Glass 背景",
     "settings_progress_glass-foreground": "Liquid Glass 前景"
   },
@@ -145,7 +136,6 @@
     "color_mode_random": "Αλλαγή κάθε λεπτό",
     "color_edit": "Επεξεργασία χρώματος…",
     "color_fixed": "Σταθερό χρώμα",
-    "time_glass": "Liquid Glass στην ώρα (macOS 26+)",
     "settings_progress_glass-background": "Φόντο Liquid Glass",
     "settings_progress_glass-foreground": "Προσκήνιο Liquid Glass"
   },
@@ -160,7 +150,6 @@
     "color_mode_random": "Ŝanĝi ĉiuminute",
     "color_edit": "Redakti koloron…",
     "color_fixed": "Fiksa koloro",
-    "time_glass": "Liquid Glass por la horo (macOS 26+)",
     "settings_progress_glass-background": "Fono kun Liquid Glass",
     "settings_progress_glass-foreground": "Malfono kun Liquid Glass"
   },
@@ -175,7 +164,6 @@
     "color_mode_random": "تغيير كل دقيقة",
     "color_edit": "تعديل اللون…",
     "color_fixed": "لون ثابت",
-    "time_glass": "Liquid Glass للوقت (macOS 26+)",
     "settings_progress_glass-background": "خلفية Liquid Glass",
     "settings_progress_glass-foreground": "مقدمة Liquid Glass"
   }

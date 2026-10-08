@@ -8,7 +8,6 @@ import CoreImage
 /// Only the bevel refracts; the interior stays sharp and untinted.
 final class OpticalGlassView: NSView {
     var cornerRadius: CGFloat = 0
-    var fusionExclusion: CGRect? { didSet { needsDisplay = true } }
     var tint: NSColor? { didSet { needsDisplay = true } }
     var source: CIImage? { didSet { needsDisplay = true } }
     private static let context = CIContext(options: [.cacheIntermediates: false])
@@ -17,35 +16,6 @@ final class OpticalGlassView: NSView {
         guard let url, let data = try? Data(contentsOf: url) else { return nil }
         return try? CIKernel(functionName: "lens", fromMetalLibraryData: data)
     }()
-    static let fusionKernel: CIKernel? = {
-        guard let url = Bundle(for: NativeClockView.self).url(forResource: "OpticalGlass", withExtension: "metallib"),
-              let data = try? Data(contentsOf: url) else { return nil }
-        return try? CIKernel(functionName: "fusedLens", fromMetalLibraryData: data)
-    }()
-    static let reflectionKernel: CIKernel? = {
-        guard let url = Bundle(for: NativeClockView.self).url(forResource: "OpticalGlass", withExtension: "metallib"),
-              let data = try? Data(contentsOf: url) else { return nil }
-        return try? CIKernel(functionName: "quoteReflection", fromMetalLibraryData: data)
-    }()
-    static func reflectionImage(quote: CIImage, edge: CGFloat, region: CGRect) -> NSImage? {
-        guard !region.isEmpty, let kernel = reflectionKernel,
-              let output = kernel.apply(extent: region, roiCallback: { _, rect in rect.insetBy(dx: -38, dy: -2) }, arguments: [quote, edge]),
-              let cg = context.createCGImage(output, from: region) else { return nil }
-        return NSImage(cgImage: cg, size: region.size)
-    }
-    static func fusionRegion(source: CIImage, capsule: CGRect, pane: CGRect) -> CGRect {
-        let strip = CGRect(x: max(pane.minX, pane.maxX - 36), y: pane.minY, width: min(36, pane.width), height: pane.height)
-        return capsule.insetBy(dx: -28, dy: -28).union(strip).intersection(source.extent)
-    }
-    static func fusionImage(source: CIImage, capsule: CGRect, radius: CGFloat, pane: CGRect, tint: NSColor?) -> NSImage? {
-        let region = fusionRegion(source: source, capsule: capsule, pane: pane)
-        let tintedSource = tinted(source, rect: pane, color: tint)
-        guard let kernel = fusionKernel,
-              let output = kernel.apply(extent: region, roiCallback: { _, rect in rect.insetBy(dx: -20, dy: -20) },
-                                        arguments: [tintedSource.clampedToExtent(), CIVector(x: capsule.minX, y: capsule.minY, z: capsule.width, w: capsule.height), radius, pane.maxX]),
-              let cg = context.createCGImage(output, from: region) else { return nil }
-        return NSImage(cgImage: cg, size: region.size)
-    }
     static func tinted(_ source: CIImage, rect: CGRect, color: NSColor?) -> CIImage {
         guard let color, let ciColor = CIColor(color: color), rect.width > 0, rect.height > 0 else { return source }
         return CIImage(color: ciColor).cropped(to: rect).composited(over: source).cropped(to: source.extent)
@@ -68,12 +38,6 @@ final class OpticalGlassView: NSView {
         guard let output = refractedBand(), let cg = Self.context.createCGImage(output, from: output.extent) else { return }
         let region = output.extent
         NSGraphicsContext.saveGraphicsState()
-        if let exclusion = fusionExclusion {
-            let clip = NSBezierPath(rect: bounds)
-            clip.appendRect(exclusion.offsetBy(dx: -frame.minX, dy: -frame.minY))
-            clip.windingRule = .evenOdd
-            clip.addClip()
-        }
         let image = NSImage(cgImage: cg, size: region.size)
         image.draw(in: NSRect(x: region.minX - frame.minX, y: region.minY - frame.minY, width: region.width, height: region.height))
         // The refracted band samples the untinted source, so apply its tint locally.
@@ -114,12 +78,9 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     static let settingsChanged = Notification.Name("net.literatureclock.native-saver.settingsChanged")
     var preferences: UserDefaults = ScreenSaverDefaults(forModuleWithName: "net.literatureclock.native-saver")!
     var resources: URL { Bundle(for: NativeClockView.self).resourceURL! }
-    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background-pattern", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale", "time-glass"]
+    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background-pattern", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
     var photoDownloadsEnabled = true
-    var quoteReflectionPreviewEnabled = false
-    var fusionPreviewEnabled = false
     var interactionPreviewSweep = false
-    private var fusionPreviewView: NSImageView?
     private var photoScreen: NSScreen? { window?.screen ?? NSScreen.screens.first }
     private var photoDisplayID: String { (photoScreen?.deviceDescription[NSDeviceDescriptionKey(rawValue: "NSScreenNumber")] as? NSNumber)?.stringValue ?? "0" }
     // Synthetic display ordinals are used only by the standalone diagnostic.
@@ -165,15 +126,11 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     private var layoutHeight: CGFloat = 0
     private var passageImage: NSImage?
     private var passageOpticalSource: CIImage?
-    private var quoteReflectionView: NSImageView?
-    private var glassTimeView: NSView?
-    private var glassTimeLabel: NSTextField?
+    private var timeLabel: NSTextField?
     private var plainTimeImage: NSImage?
     private var plainTimeImageKey = ""
-    private var glassTimeKey = ""
     private var glassProgressView: NSView?
     private var passageView: NSImageView?
-    private var timeOpticalSource: CIImage?
     private var opticalSource: CIImage?
     private var opticalSourceKey = ""
     private var patternKey = ""
@@ -212,7 +169,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     private func setup() {
         preferences.register(defaults: ["theme": "base-dark", "screensaver": true, "show-time": true,
                                        "hide-book-title": false, "work": true, "progressbar": "background", "quote-locales": "", "palette": "default",
-                                       "custom-color": "#d24335", "background-pattern": "none", "photo-provider": "picsum", "photo-category": "all", "bilingual": false, "translation-locale": "", "time-glass": false])
+                                       "custom-color": "#d24335", "background-pattern": "none", "photo-provider": "picsum", "photo-category": "all", "bilingual": false, "translation-locale": ""])
         _ = Self.bundledFonts
         animationTimeInterval = 1.0 / 60.0
         Self.instances.add(self)
@@ -280,49 +237,6 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         guard !isPreview, let window, let screen = window.screen else { return 18 }
         let frame = window.convertToScreen(convert(bounds, to: nil))
         return Self.timeInset(viewFrame: frame, screenFrame: screen.frame, safeTop: screen.safeAreaInsets.top)
-    }
-    @discardableResult
-    func updateGlassTime(font: NSFont, dark: Bool) -> Bool {
-        let requested = preferences.bool(forKey: "show-time") && preferences.bool(forKey: "time-glass")
-        guard requested else { glassTimeView?.isHidden = true; glassTimeLabel?.isHidden = true; glassTimeKey = ""; return false }
-        if #available(macOS 26.0, *) {
-            let glass: OpticalGlassView
-            if let existing = glassTimeView as? OpticalGlassView { glass = existing }
-            else {
-                glass = OpticalGlassView()
-                let label = glassTimeLabel ?? NSTextField(labelWithString: "")
-                label.alignment = .center
-                label.textColor = .labelColor
-                addSubview(glass)
-                // Keep glyphs outside the material’s automatic content insets.
-                addSubview(label)
-                glassTimeView = glass; glassTimeLabel = label
-            }
-            let key = "\(lastMinute)|\(bounds.size)|\(font.pointSize)|\(dark)|\(timeTopInset)"
-            glass.source = timeOpticalSource ?? opticalSource
-            if key == glassTimeKey { glass.isHidden = false; return true }
-            glassTimeKey = key
-            let labelFont = NSFont.monospacedDigitSystemFont(ofSize: font.pointSize, weight: .bold)
-            glassTimeLabel?.font = labelFont
-            glassTimeLabel?.stringValue = lastMinute
-            glassTimeLabel?.sizeToFit()
-            let labelSize = glassTimeLabel!.frame.size
-            let size = NSSize(width: ceil(labelSize.width) + 32, height: ceil(labelSize.height) + 16)
-            glass.frame = NSRect(x: (bounds.width - size.width) / 2,
-                                 y: isFlipped ? timeTopInset : bounds.height - timeTopInset - size.height,
-                                 width: size.width, height: size.height)
-            glass.cornerRadius = size.height / 2
-            glass.appearance = NSAppearance(named: dark ? .darkAqua : .aqua)
-            glass.source = timeOpticalSource ?? opticalSource
-            glassTimeLabel?.frame = glass.frame.insetBy(dx: 16, dy: 8)
-            glassTimeLabel?.textColor = dark ? NSColor(calibratedWhite: 0.9, alpha: 1) : NSColor(calibratedWhite: 0.13, alpha: 1)
-            glassTimeLabel?.isHidden = false
-            glass.isHidden = false
-            return true
-        }
-        glassTimeView?.isHidden = true
-        glassTimeLabel?.isHidden = true
-        return false
     }
     @discardableResult
     func updateGlassProgress(mode: String, progress: Double, dark: Bool, tint: NSColor? = nil) -> Bool {
@@ -397,16 +311,15 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             opticalSourceKey = opticalKey
         }
         let timeFont = NSFont.systemFont(ofSize: max(10, min(20, bounds.width * 0.013)), weight: .bold)
-        let glassTime = updateGlassTime(font: timeFont, dark: dark)
         var progressSource = opticalSource
-        if preferences.bool(forKey: "show-time") && !glassTime {
-            if glassTimeLabel == nil {
+        if preferences.bool(forKey: "show-time") {
+            if timeLabel == nil {
                 let label = NSTextField(labelWithString: "")
                 label.alignment = .center
                 addSubview(label)
-                glassTimeLabel = label
+                timeLabel = label
             }
-            let label = glassTimeLabel!
+            let label = timeLabel!
             label.font = NSFont.monospacedDigitSystemFont(ofSize: timeFont.pointSize, weight: .bold)
             label.stringValue = lastMinute
             label.textColor = foreground
@@ -438,40 +351,14 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let progressColor = NativeAppearance.progressForeground(theme: theme, dark: dark, accent: accent)
         let glassProgress = updateGlassProgress(mode: progressMode, progress: progress, dark: dark, tint: progressColor.withAlphaComponent(foregroundGlass ? 0.025 : 0.1))
         (glassProgressView as? OpticalGlassView)?.source = progressSource
-        timeOpticalSource = opticalSource
-        if glassProgress && !foregroundGlass {
-            // Core Image evaluates this lazy composition only where the clock samples it.
-            timeOpticalSource = (glassProgressView as? OpticalGlassView)?.compositedBackground() ?? opticalSource
-        } else if !glassProgress && progressMode != "none" {
+        if !glassProgress && progressMode != "none" {
             let backgroundProgress = progressMode == "background" || progressMode == "glass-background" || progressMode == "glass-foreground"
             let fill = backgroundProgress ? progressColor.withAlphaComponent(0.1) : accent.withAlphaComponent(0.7)
             let rect = NSRect(x: bounds.minX, y: progressMode == "top" ? bounds.maxY - 3 : bounds.minY,
                               width: bounds.width * progress, height: backgroundProgress ? bounds.height : 3)
             fill.setFill(); rect.fill()
-            if let source = opticalSource { timeOpticalSource = OpticalGlassView.tinted(source, rect: rect, color: fill) }
         }
         guard bounds.width > 0, bounds.height > 0, let quote else { passageView?.isHidden = true; return }
-        if glassTime { updateGlassTime(font: timeFont, dark: dark) }
-        fusionPreviewView?.isHidden = true
-        (glassProgressView as? OpticalGlassView)?.fusionExclusion = nil
-        if !foregroundGlass, (interactionPreviewSweep ? fusionPreviewEnabled : true), glassTime, glassProgress,
-           let source = opticalSource, let capsule = glassTimeView as? OpticalGlassView,
-           let pane = glassProgressView as? OpticalGlassView,
-           let image = OpticalGlassView.fusionImage(source: source, capsule: capsule.frame, radius: capsule.cornerRadius, pane: pane.frame, tint: pane.tint) {
-            if fusionPreviewView == nil {
-                let view = NSImageView()
-                view.imageScaling = .scaleNone
-                addSubview(view, positioned: .below, relativeTo: glassTimeLabel)
-                fusionPreviewView = view
-            }
-            if let view = fusionPreviewView { addSubview(view, positioned: .below, relativeTo: passageView ?? glassTimeLabel) }
-            fusionPreviewView?.frame = OpticalGlassView.fusionRegion(source: source, capsule: capsule.frame, pane: pane.frame)
-            // One union renderer owns the entire edge. Never splice two filters across a rectangular patch.
-            pane.fusionExclusion = pane.frame
-            fusionPreviewView?.image = image
-            fusionPreviewView?.isHidden = false
-            capsule.isHidden = true
-        }
         let width = bounds.width * 0.76
         let limit = bounds.height * 0.65
         let paragraph = NSMutableParagraphStyle()
@@ -616,46 +503,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             scene = positionedQuote.composited(over: scene)
             pane.source = scene
             addSubview(pane, positioned: .above, relativeTo: nil)
-            if glassTime, let capsule = glassTimeView as? OpticalGlassView,
-               let merged = OpticalGlassView.fusionImage(source: scene, capsule: capsule.frame, radius: capsule.cornerRadius, pane: pane.frame, tint: pane.tint) {
-                if fusionPreviewView == nil {
-                    let view = NSImageView()
-                    view.imageScaling = .scaleNone
-                    fusionPreviewView = view
-                }
-                let view = fusionPreviewView!
-                view.image = merged
-                view.frame = OpticalGlassView.fusionRegion(source: scene, capsule: capsule.frame, pane: pane.frame)
-                addSubview(view, positioned: .above, relativeTo: pane)
-                view.isHidden = false
-                pane.fusionExclusion = pane.frame
-                capsule.isHidden = true
-                // Keep clock glyphs crisp above the fused material; sampling
-                // them here creates displaced colour copies at both capsule rims.
-                if let label = glassTimeLabel { addSubview(label, positioned: .above, relativeTo: view) }
-            }
-        }
-        quoteReflectionView?.isHidden = true
-        if quoteReflectionPreviewEnabled, glassProgress, let texture = passageOpticalSource,
-           let frame = passageView?.frame, let pane = glassProgressView {
-            let edge = pane.frame.maxX
-            let region = CGRect(x: edge - 12, y: frame.minY, width: 12, height: frame.height)
-                .intersection(frame).intersection(pane.frame)
-            if !region.isEmpty {
-                let quoteSource = texture.transformed(by: CGAffineTransform(scaleX: frame.width / texture.extent.width, y: frame.height / texture.extent.height))
-                    .transformed(by: CGAffineTransform(translationX: frame.minX, y: frame.minY))
-                if let reflected = OpticalGlassView.reflectionImage(quote: quoteSource, edge: edge, region: region) {
-                    if quoteReflectionView == nil {
-                        let view = NSImageView()
-                        view.imageScaling = .scaleNone
-                        addSubview(view, positioned: .below, relativeTo: passageView)
-                        quoteReflectionView = view
-                    }
-                    quoteReflectionView?.image = reflected
-                    quoteReflectionView?.frame = region
-                    quoteReflectionView?.isHidden = false
-                }
-            }
+
         }
 
     }
@@ -844,14 +692,12 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         }
         photoControlsChanged()
         section("settings_behavior")
-        for (key, label) in [("screensaver", "movement"), ("show-time", "time_mode"), ("time-glass", "time_glass"), ("hide-book-title", "settings_hide_book_title"), ("work", "work_mode_title")] {
+        for (key, label) in [("screensaver", "movement"), ("show-time", "time_mode"), ("hide-book-title", "settings_hide_book_title"), ("work", "work_mode_title")] {
             let check = NSButton(checkboxWithTitle: text(label), target: nil, action: nil)
             check.state = preferences.bool(forKey: key) ? .on : .off
-            if key == "show-time" { check.target = self; check.action = #selector(timeControlsChanged) }
             controls[key] = check
             stack.addArrangedSubview(check)
         }
-        timeControlsChanged()
         let cancel = NSButton(title: text("cancel"), target: self, action: #selector(cancelOptions))
         cancel.keyEquivalent = "\u{1b}"
         let save = NSButton(title: "OK", target: self, action: #selector(saveOptions))
@@ -920,11 +766,6 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
               let item = menu.itemArray.first(where: { $0.representedObject as? String == sender.value }) else { return }
         menu.select(item)
         updateSwatches()
-    }
-    @objc private func timeControlsChanged() {
-        if #available(macOS 26.0, *) {
-            controls["time-glass"]?.isEnabled = (controls["show-time"] as? NSButton)?.state == .on
-        } else { controls["time-glass"]?.isEnabled = false }
     }
     @objc private func bilingualControlsChanged() {
         controls["translation-locale"]?.isEnabled = (controls["bilingual"] as? NSButton)?.state == .on
