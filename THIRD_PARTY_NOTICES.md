@@ -26,7 +26,7 @@ When redistributing or adapting inherited material, preserve the relevant credit
 
 ## Native screensaver fonts
 
-The native macOS screensaver bundles unmodified Google Fonts for Base, Book, Terminal, Festive, Bohemian and Retro, including language-specific variants. Special Elite uses Apache License 2.0; the remaining bundled fonts include their SIL Open Font License 1.1 texts. The complete font inventory, source revision, file URLs and SHA-256 checksums are recorded in `screensavers/macos-native/Assets/Fonts/manifest.json`. Each license is included alongside its font files in that directory and in the compiled bundle. Font licensing is independent of the repository's MIT software license.
+The native macOS screensaver bundles unmodified Google Fonts for Base, Book, Terminal, Festive, Bohemian, Retro and Photo, including language-specific variants. Special Elite uses Apache License 2.0; the remaining bundled fonts include their SIL Open Font License 1.1 texts. The complete font inventory, source revision, file URLs and SHA-256 checksums are recorded in `screensavers/macos-native/Assets/Fonts/manifest.json`. Each license is included alongside its font files in that directory and in the compiled bundle. Font licensing is independent of the repository's MIT software license.
 
 ## Bootstrap Icons
 

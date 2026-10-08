@@ -50,14 +50,14 @@ enum NativeAppearance {
     static func fontFamily(theme: String, locale: String) -> String {
         let language = locale.split(separator: "-").first.map(String.init) ?? "en"
         let main = ["base": "specialelite", "book": "librebaskerville", "terminal": "b612mono",
-                    "festive": "borel", "bohemian": "comfortaa", "retro": "vt323", "photo": "librebaskerville"]
+                    "festive": "borel", "bohemian": "comfortaa", "retro": "vt323", "photo": "abrilfatface"]
         let variants = [
             "base": ["ar": "marhey", "ru": "pangolin", "el": "sansation", "zh": "zcoolkuaile"],
             "book": ["ru": "literata", "el": "literata", "ar": "marhey", "zh": "zcoolkuaile"],
             "terminal": ["ar": "cascadiacode", "eo": "lxgwwenkaimonotc", "ru": "jetbrainsmono", "el": "victormono", "zh": "zcoolqingkehuangyou"],
             "festive": ["ar": "playpensansarabic", "eo": "playwritear", "ru": "pacifico", "el": "comicrelief", "zh": "zcoolkuaile"],
             "bohemian": ["ar": "zain", "el": "sansation", "zh": "zcoolkuaile"],
-            "photo": ["ar": "marhey", "ru": "literata", "el": "literata", "zh": "zcoolkuaile"],
+            "photo": ["ar": "lalezar", "ru": "russoone", "el": "delagothicone", "zh": "zcoolkuaile"],
             "retro": ["ar": "handjet", "ru": "dotgothic16", "el": "handjet", "zh": "zcoolqingkehuangyou"]
         ]
         return variants[theme]?[language] ?? main[theme] ?? "specialelite"
