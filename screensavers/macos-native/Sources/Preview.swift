@@ -42,25 +42,21 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             clock.preferences = defaults
             clock.photoDownloadsEnabled = false
         }
-        if CommandLine.arguments.contains("--glass-preview") || CommandLine.arguments.contains("--photo-glass-preview") || (CommandLine.arguments.contains("--foreground-glass-preview") || (CommandLine.arguments.contains("--rounded-glass-preview") || CommandLine.arguments.contains("--full-edge-glass-preview"))) {
+        if CommandLine.arguments.contains("--glass-preview") || CommandLine.arguments.contains("--photo-glass-preview") || (CommandLine.arguments.contains("--foreground-glass-preview") || CommandLine.arguments.contains("--rounded-glass-preview")) {
             // A disposable visual workspace; keep installed saver preferences intact.
             let defaults = UserDefaults(suiteName: "net.literatureclock.window-preview." + UUID().uuidString)!
-            defaults.register(defaults: ["theme": (CommandLine.arguments.contains("--photo-glass-preview") || (CommandLine.arguments.contains("--foreground-glass-preview") || (CommandLine.arguments.contains("--rounded-glass-preview") || CommandLine.arguments.contains("--full-edge-glass-preview")))) ? "photo-dark" : "book-light", "background-pattern": "none", "palette": "default", "custom-color": "#d24335", "photo-provider": "picsum", "photo-category": "all", "show-time": true, "quote-locales": "en-GB", "work": true, "screensaver": false, "progressbar": "glass-background"])
+            defaults.register(defaults: ["theme": (CommandLine.arguments.contains("--photo-glass-preview") || (CommandLine.arguments.contains("--foreground-glass-preview") || CommandLine.arguments.contains("--rounded-glass-preview"))) ? "photo-dark" : "book-light", "background-pattern": "none", "palette": "default", "custom-color": "#d24335", "photo-provider": "picsum", "photo-category": "all", "show-time": true, "quote-locales": "en-GB", "work": true, "screensaver": false, "progressbar": "glass-background"])
             clock.preferences = defaults
             clock.photoDownloadsEnabled = true
         }
-        if (CommandLine.arguments.contains("--foreground-glass-preview") || (CommandLine.arguments.contains("--rounded-glass-preview") || CommandLine.arguments.contains("--full-edge-glass-preview"))) {
+        if (CommandLine.arguments.contains("--foreground-glass-preview") || CommandLine.arguments.contains("--rounded-glass-preview")) {
             clock.preferences.set("glass-foreground", forKey: "progressbar")
             clock.interactionPreviewSweep = true
             window.title = "Literature Clock — Glass over full scene"
         }
-        if (CommandLine.arguments.contains("--rounded-glass-preview") || CommandLine.arguments.contains("--full-edge-glass-preview")) {
+        if CommandLine.arguments.contains("--rounded-glass-preview") {
             clock.fullProgressPreviewSweep = true
             window.title = "Literature Clock — Rounded progress test"
-        }
-        if CommandLine.arguments.contains("--full-edge-glass-preview") {
-            clock.fullEdgePreview = true
-            window.title = "Literature Clock — Full edge bevel test"
         }
         clock.startAnimation()
         if CommandLine.arguments.contains("--check-render") {
@@ -84,7 +80,7 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             let checker = CIFilter(name: "CICheckerboardGenerator", parameters: ["inputColor0": CIColor.black, "inputColor1": CIColor.white, "inputWidth": 8.0, "inputSharpness": 1.0])!.outputImage!
             let area = CGRect(x: 0, y: 0, width: 120, height: 80)
             guard let kernel = OpticalGlassView.kernel,
-                  let lens = kernel.apply(extent: area, roiCallback: { _, rect in rect.insetBy(dx: -16, dy: -16) }, arguments: [checker, CIVector(x: 0, y: 0, z: 120, w: 80), 32.0, 0.0]) else { fatalError("Optical lens shader failed to load") }
+                  let lens = kernel.apply(extent: area, roiCallback: { _, rect in rect.insetBy(dx: -16, dy: -16) }, arguments: [checker, CIVector(x: 0, y: 0, z: 120, w: 80), 32.0]) else { fatalError("Optical lens shader failed to load") }
             let context = CIContext()
             var pixels = [UInt8](repeating: 0, count: 120 * 80 * 4)
             context.render(lens, toBitmap: &pixels, rowBytes: 120 * 4, bounds: area, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
