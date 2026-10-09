@@ -66,3 +66,5 @@ Merging a change to `screensavers/macos-native/VERSION` into main builds and pub
 Options show the installed native bundle version with a link to its release. Fonts are selected automatically for the theme and quote language; there is no font selector. All 25 web patterns are bundled as cached native tiles, plus None and per-minute Random.
 
 The committed pattern PNGs are generated from the web SVGs with `scripts/render-native-patterns.cjs` and @resvg/resvg-js. The release build copies these assets directly and does not require Node or SVG rendering dependencies.
+
+Glass progress has 28-point rounded leading corners, shrinking smoothly to zero during the last 8% of the minute. Its bevel fades softly where the curve meets the screen edges. `--rounded-glass-preview` sweeps a full cycle in 12 seconds. `--full-edge-glass-preview` additionally tests refraction along the entire top and bottom edges; this experiment is disabled in the installed saver.

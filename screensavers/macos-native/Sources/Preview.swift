@@ -42,17 +42,25 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             clock.preferences = defaults
             clock.photoDownloadsEnabled = false
         }
-        if CommandLine.arguments.contains("--glass-preview") || CommandLine.arguments.contains("--photo-glass-preview") || CommandLine.arguments.contains("--foreground-glass-preview") {
+        if CommandLine.arguments.contains("--glass-preview") || CommandLine.arguments.contains("--photo-glass-preview") || (CommandLine.arguments.contains("--foreground-glass-preview") || (CommandLine.arguments.contains("--rounded-glass-preview") || CommandLine.arguments.contains("--full-edge-glass-preview"))) {
             // A disposable visual workspace; keep installed saver preferences intact.
             let defaults = UserDefaults(suiteName: "net.literatureclock.window-preview." + UUID().uuidString)!
-            defaults.register(defaults: ["theme": (CommandLine.arguments.contains("--photo-glass-preview") || CommandLine.arguments.contains("--foreground-glass-preview")) ? "photo-dark" : "book-light", "background-pattern": "none", "palette": "default", "custom-color": "#d24335", "photo-provider": "picsum", "photo-category": "all", "show-time": true, "quote-locales": "en-GB", "work": true, "screensaver": false, "progressbar": "glass-background"])
+            defaults.register(defaults: ["theme": (CommandLine.arguments.contains("--photo-glass-preview") || (CommandLine.arguments.contains("--foreground-glass-preview") || (CommandLine.arguments.contains("--rounded-glass-preview") || CommandLine.arguments.contains("--full-edge-glass-preview")))) ? "photo-dark" : "book-light", "background-pattern": "none", "palette": "default", "custom-color": "#d24335", "photo-provider": "picsum", "photo-category": "all", "show-time": true, "quote-locales": "en-GB", "work": true, "screensaver": false, "progressbar": "glass-background"])
             clock.preferences = defaults
             clock.photoDownloadsEnabled = true
         }
-        if CommandLine.arguments.contains("--foreground-glass-preview") {
+        if (CommandLine.arguments.contains("--foreground-glass-preview") || (CommandLine.arguments.contains("--rounded-glass-preview") || CommandLine.arguments.contains("--full-edge-glass-preview"))) {
             clock.preferences.set("glass-foreground", forKey: "progressbar")
             clock.interactionPreviewSweep = true
             window.title = "Literature Clock — Glass over full scene"
+        }
+        if (CommandLine.arguments.contains("--rounded-glass-preview") || CommandLine.arguments.contains("--full-edge-glass-preview")) {
+            clock.fullProgressPreviewSweep = true
+            window.title = "Literature Clock — Rounded progress test"
+        }
+        if CommandLine.arguments.contains("--full-edge-glass-preview") {
+            clock.fullEdgePreview = true
+            window.title = "Literature Clock — Full edge bevel test"
         }
         clock.startAnimation()
         if CommandLine.arguments.contains("--check-render") {
@@ -76,7 +84,7 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             let checker = CIFilter(name: "CICheckerboardGenerator", parameters: ["inputColor0": CIColor.black, "inputColor1": CIColor.white, "inputWidth": 8.0, "inputSharpness": 1.0])!.outputImage!
             let area = CGRect(x: 0, y: 0, width: 120, height: 80)
             guard let kernel = OpticalGlassView.kernel,
-                  let lens = kernel.apply(extent: area, roiCallback: { _, rect in rect.insetBy(dx: -16, dy: -16) }, arguments: [checker, CIVector(x: 0, y: 0, z: 120, w: 80), 32.0]) else { fatalError("Optical lens shader failed to load") }
+                  let lens = kernel.apply(extent: area, roiCallback: { _, rect in rect.insetBy(dx: -16, dy: -16) }, arguments: [checker, CIVector(x: 0, y: 0, z: 120, w: 80), 32.0, 0.0]) else { fatalError("Optical lens shader failed to load") }
             let context = CIContext()
             var pixels = [UInt8](repeating: 0, count: 120 * 80 * 4)
             context.render(lens, toBitmap: &pixels, rowBytes: 120 * 4, bounds: area, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
@@ -85,7 +93,7 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             let interior = CGRect(x: 55, y: 35, width: 10, height: 10)
             var original = [UInt8](repeating: 0, count: 400), refracted = original
             context.render(checker, toBitmap: &original, rowBytes: 40, bounds: interior, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
-            context.render(lens, toBitmap: &refracted, rowBytes: 40, bounds: interior, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
+            context.render(lens.composited(over: checker), toBitmap: &refracted, rowBytes: 40, bounds: interior, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
             precondition(zip(original, refracted).allSatisfy { abs(Int($0) - Int($1)) < 5 }, "Lens interior must preserve a sharp, untinted background")
             let pane = OpticalGlassView(frame: CGRect(x: 0, y: 0, width: 60, height: 80))
             pane.source = checker
@@ -191,10 +199,15 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             clock.preferences.set(false, forKey: "bilingual")
             precondition(clock.bilingualContent().notice == nil, "Disabled bilingual mode must remove its content")
             clock.preferences.set(true, forKey: "show-time")
+            let cornerSize = NSSize(width: 1100, height: 720)
+            precondition(NativeClockView.progressCornerRadius(progress: 0, size: cornerSize) == 0, "Empty progress must have no corners")
+            precondition(NativeClockView.progressCornerRadius(progress: 0.5, size: cornerSize) == 28, "Moving edge must retain its rounded corners")
+            precondition(NativeClockView.progressCornerRadius(progress: 0.96, size: cornerSize) < 28, "Corners must shrink approaching completion")
+            precondition(NativeClockView.progressCornerRadius(progress: 1, size: cornerSize) == 0, "Completed progress must fill every screen corner")
             let progressGlassShown = clock.updateGlassProgress(mode: "glass-background", progress: 0.5, dark: false, tint: red.withAlphaComponent(0.1))
             if #available(macOS 26.0, *) {
                 precondition(progressGlassShown, "Background progress must use native glass")
-                let surface = clock.subviews.compactMap { $0 as? OpticalGlassView }.first { $0.cornerRadius == 0 }!
+                let surface = clock.subviews.compactMap { $0 as? OpticalGlassView }.first!
                 precondition(surface.frame.width == clock.bounds.width / 2 && surface.frame.height == clock.bounds.height, "Glass must cover the elapsed part of the background")
                 precondition(surface.tint?.alphaComponent == 0.1, "Glass progress must retain its full-pane tint")
                 let passage = clock.subviews.first { $0 is NSImageView }!

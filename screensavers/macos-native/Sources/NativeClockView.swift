@@ -8,6 +8,7 @@ import CoreImage
 /// Only the bevel refracts; the interior stays sharp and untinted.
 final class OpticalGlassView: NSView {
     var cornerRadius: CGFloat = 0
+    var fullEdgePreview = false
     var tint: NSColor? { didSet { needsDisplay = true } }
     var source: CIImage? { didSet { needsDisplay = true } }
     private static let context = CIContext(options: [.cacheIntermediates: false])
@@ -21,31 +22,40 @@ final class OpticalGlassView: NSView {
         return CIImage(color: ciColor).cropped(to: rect).composited(over: source).cropped(to: source.extent)
     }
     func compositedBackground() -> CIImage? {
-        guard let source, let output = refractedBand() else { return source }
-        return Self.tinted(output.composited(over: source), rect: frame, color: tint)
+        guard let source else { return nil }
+        return refractedBands().reduce(Self.tinted(source, rect: frame, color: tint)) { $1.composited(over: $0) }
     }
-    private func refractedBand() -> CIImage? {
-        guard let source, let kernel = Self.kernel, frame.width > 0 else { return nil }
+    private func refractedBands() -> [CIImage] {
+        guard let source, let kernel = Self.kernel, frame.width > 0 else { return [] }
         // A full-height pane only changes a narrow band at its moving edge.
-        let region = cornerRadius == 0 ? NSRect(x: max(frame.minX, frame.maxX - 36), y: frame.minY,
-                                               width: min(36, frame.width), height: frame.height) : frame
+        let region = NSRect(x: max(frame.minX, frame.maxX - max(36, cornerRadius + 18)), y: frame.minY,
+                                               width: min(max(36, cornerRadius + 18), frame.width), height: frame.height)
         let rect = CIVector(x: frame.minX, y: frame.minY, z: frame.width, w: frame.height)
-        return kernel.apply(extent: region, roiCallback: { _, area in area.insetBy(dx: -20, dy: -20) }, arguments: [source.clampedToExtent(), rect, cornerRadius])
+        var regions = [region]
+        if fullEdgePreview, region.minX > frame.minX {
+            let height = min(18, frame.height / 2)
+            regions.append(CGRect(x: frame.minX, y: frame.minY, width: region.minX - frame.minX, height: height))
+            regions.append(CGRect(x: frame.minX, y: frame.maxY - height, width: region.minX - frame.minX, height: height))
+        }
+        return regions.compactMap { region in
+            kernel.apply(extent: region, roiCallback: { _, area in area.insetBy(dx: -20, dy: -20) }, arguments: [Self.tinted(source, rect: frame, color: tint).clampedToExtent(), rect, cornerRadius, fullEdgePreview ? 1.0 : 0.0])
+        }
     }
     override func draw(_ dirtyRect: NSRect) {
         // Paint the tint once, keeping the undistorted interior on the original backdrop.
-        if let tint { tint.setFill(); bounds.fill() }
-        guard let output = refractedBand(), let cg = Self.context.createCGImage(output, from: output.extent) else { return }
-        let region = output.extent
         NSGraphicsContext.saveGraphicsState()
-        let image = NSImage(cgImage: cg, size: region.size)
-        image.draw(in: NSRect(x: region.minX - frame.minX, y: region.minY - frame.minY, width: region.width, height: region.height))
-        // The refracted band samples the untinted source, so apply its tint locally.
-        if let tint {
-            tint.setFill()
-            NSRect(x: region.minX - frame.minX, y: region.minY - frame.minY, width: region.width, height: region.height).fill()
+        defer { NSGraphicsContext.restoreGraphicsState() }
+        if cornerRadius > 0 {
+            let clip = NSBezierPath(roundedRect: bounds, xRadius: cornerRadius, yRadius: cornerRadius)
+            clip.appendRect(NSRect(x: 0, y: 0, width: max(0, bounds.width - cornerRadius), height: bounds.height))
+            clip.addClip()
         }
-        NSGraphicsContext.restoreGraphicsState()
+        if let tint { tint.setFill(); bounds.fill() }
+        for output in refractedBands() {
+            guard let cg = Self.context.createCGImage(output, from: output.extent) else { continue }
+            let region = output.extent
+            NSImage(cgImage: cg, size: region.size).draw(in: NSRect(x: region.minX - frame.minX, y: region.minY - frame.minY, width: region.width, height: region.height))
+        }
     }
 }
 
@@ -81,6 +91,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background-pattern", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
     var photoDownloadsEnabled = true
     var interactionPreviewSweep = false
+    var fullProgressPreviewSweep = false
+    var fullEdgePreview = false
     private var photoScreen: NSScreen? { window?.screen ?? NSScreen.screens.first }
     private var photoDisplayID: String { (photoScreen?.deviceDescription[NSDeviceDescriptionKey(rawValue: "NSScreenNumber")] as? NSNumber)?.stringValue ?? "0" }
     // Synthetic display ordinals are used only by the standalone diagnostic.
@@ -238,6 +250,12 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let frame = window.convertToScreen(convert(bounds, to: nil))
         return Self.timeInset(viewFrame: frame, screenFrame: screen.frame, safeTop: screen.safeAreaInsets.top)
     }
+    static func progressCornerRadius(progress: Double, size: NSSize) -> CGFloat {
+        let p = min(1, max(0, progress))
+        let t = min(1, max(0, (p - 0.92) / 0.08))
+        let fade = 1 - t * t * (3 - 2 * t)
+        return min(28, size.height / 2, size.width * p / 2) * fade
+    }
     @discardableResult
     func updateGlassProgress(mode: String, progress: Double, dark: Bool, tint: NSColor? = nil) -> Bool {
         guard mode == "glass-background" || mode == "glass-foreground" else { glassProgressView?.isHidden = true; return false }
@@ -252,9 +270,11 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 glassProgressView = glass
             }
             // Reuse one surface and move its leading edge continuously each frame.
+            glass.fullEdgePreview = fullEdgePreview
             glass.tint = tint
             glass.frame = NSRect(x: bounds.minX, y: bounds.minY,
                                  width: bounds.width * min(1, max(0, progress)), height: bounds.height)
+            glass.cornerRadius = Self.progressCornerRadius(progress: progress, size: bounds.size)
             glass.source = opticalSource
             glass.needsDisplay = true
             glass.appearance = NSAppearance(named: dark ? .darkAqua : .aqua)
@@ -346,7 +366,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         }
         let foregroundGlass = preferences.string(forKey: "progressbar") == "glass-foreground"
         if !foregroundGlass, let pane = glassProgressView { addSubview(pane, positioned: .below, relativeTo: nil) }
-        let progress = interactionPreviewSweep ? 0.5 + sin(now.timeIntervalSince(started) / 3) * 0.13 : now.timeIntervalSince1970.truncatingRemainder(dividingBy: 60) / 60
+        let progress = fullProgressPreviewSweep ? now.timeIntervalSince(started).truncatingRemainder(dividingBy: 12) / 12 : interactionPreviewSweep ? 0.5 + sin(now.timeIntervalSince(started) / 3) * 0.13 : now.timeIntervalSince1970.truncatingRemainder(dividingBy: 60) / 60
         let progressMode = preferences.string(forKey: "progressbar") ?? "none"
         let progressColor = NativeAppearance.progressForeground(theme: theme, dark: dark, accent: accent)
         let glassProgress = updateGlassProgress(mode: progressMode, progress: progress, dark: dark, tint: progressColor.withAlphaComponent(foregroundGlass ? 0.025 : 0.1))
