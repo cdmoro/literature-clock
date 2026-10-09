@@ -42,10 +42,6 @@
   color: #111111;
 }
 
-[data-theme='photo-light'] body:not(.zen) footer {
-  background: #ffffff60;
-}
-
 [data-theme='photo-dark'] #time-clock {
   color: #eeeeee;
 }
@@ -65,6 +61,19 @@
   color: #eeeeee;
 }
 
-[data-theme='photo-dark'] body:not(.zen) footer {
-  background: #00000093;
+#photo-credit {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  max-width: min(70vw, 500px);
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: transparent;
+  text-shadow: 0 1px 3px #000c, 0 0 8px #0008;
+  color: #fff;
+  font:
+    11px/1.4 system-ui,
+    sans-serif;
+  text-decoration: none;
+  z-index: 2;
 }

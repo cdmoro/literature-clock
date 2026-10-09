@@ -22,7 +22,12 @@
     "check-quotes": "python ./scripts/check_quotes.py",
     "translate": "python3 scripts/translation_manager.py",
     "admin": "python3 scripts/translation_admin.py",
-    "admin:build": "tsc -p admin/tsconfig.json && vite build --config admin/vite.config.mjs"
+    "admin:build": "tsc -p admin/tsconfig.json && vite build --config admin/vite.config.mjs",
+    "prebuild": "node scripts/write-web-version.mjs",
+    "predev": "node scripts/write-web-version.mjs",
+    "pretest": "node scripts/write-web-version.mjs",
+    "pretest:ci": "node scripts/write-web-version.mjs",
+    "pretypecheck": "node scripts/write-web-version.mjs"
   },
   "repository": {
     "type": "git",

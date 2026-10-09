@@ -37,8 +37,8 @@ body[data-loading] {
   display: none;
 }
 
-body.zen:not(.screensaver) #progress-bar,
-body.zen:not(.screensaver) #time-clock,
+body.zen #progress-bar,
+body.zen #time-clock,
 body.zen:not(.screensaver) footer #menu,
 body.zen:not(.screensaver) .github-corner {
   display: none !important;
@@ -563,7 +563,7 @@ body.share-quote #clock {
   margin-inline-start: 0.5rem;
   font: inherit;
 }
-body.paused #time-clock {
+body.paused:not(.zen) #time-clock {
   display: block !important;
 }
 body.paused #quote-notice {

@@ -11,6 +11,8 @@ const KEYS = [
   'color',
   'palette',
   'background-pattern',
+  'photo-provider',
+  'photo-category',
   'font',
   'transition',
   'work',
@@ -38,6 +40,8 @@ export function readSavedThemes(): SavedTheme[] {
       // Existing snapshots predate optional patterns.
       validated['background-pattern'] ??= 'none';
       validated.palette ??= 'default';
+      validated['photo-provider'] ??= 'picsum';
+      validated['photo-category'] ??= 'all';
       if (!KEYS.every((key) => validated[key] !== undefined)) return [];
       const snapshot = Object.fromEntries(KEYS.map((key) => [key, validated[key]])) as Preferences;
       seen.add(id);
@@ -54,6 +58,8 @@ export async function applySavedTheme(settings: Preferences) {
   if (!theme || !variant) return;
   [theme.value, variant.value] = settings.theme!.split('-');
   variant.value ||= 'system';
+  store.set('photo-provider', settings['photo-provider'] || 'picsum');
+  store.set('photo-category', settings['photo-category'] || 'all');
   setTheme();
   store.set('palette', settings.palette || 'default');
   store.set('background-pattern', settings['background-pattern'] || 'none');

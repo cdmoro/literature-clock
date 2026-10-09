@@ -1,3 +1,4 @@
+import { initPhotoSettings } from './photo-background';
 import { initBackgroundPatterns } from './background-patterns';
 import { store } from '../store';
 import { initSavedThemes } from './saved-themes';
@@ -230,6 +231,7 @@ export function initSettingsDialog() {
   }
 
   initThemePicker(dialog);
+  initPhotoSettings(dialog);
   initBackgroundPatterns(dialog);
   initSavedThemes(dialog);
 

@@ -1,3 +1,4 @@
+import webVersion from '../web-version.json';
 /** Wire up interactivity for the About panel.
  *
  * The <summary>/<section> markup stays in the initial HTML so it is
@@ -16,6 +17,15 @@ export function initAboutClock() {
   const details = document.getElementById('about-clock');
   const section = details?.querySelector('section');
   if (!(details instanceof HTMLDetailsElement) || !section) return;
+
+  const version = document.createElement('p');
+  const link = document.createElement('a');
+  link.textContent = `Web · ${webVersion.version}`;
+  link.href = /^v\d+\.\d+\.\d+$/.test(webVersion.version)
+    ? `https://github.com/cdmoro/literature-clock/releases/tag/${webVersion.version}`
+    : 'https://github.com/cdmoro/literature-clock/releases';
+  version.append(link);
+  section.append(version);
 
   const overlay = document.createElement('div');
   overlay.id = 'about-clock-overlay';

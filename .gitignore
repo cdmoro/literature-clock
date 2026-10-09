@@ -6,3 +6,5 @@ scripts/*.csv
 .translation-work/
 __pycache__/
 .netlify/
+
+/src/web-version.json

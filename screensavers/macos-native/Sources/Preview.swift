@@ -1,0 +1,525 @@
+import AppKit
+import CoreImage
+
+final class PhotoCheckProtocol: URLProtocol {
+    static var count = 0
+    static var status = 200
+    static var delay: TimeInterval = 0
+    private var cancelled = false
+    static var imageData = Data()
+    static var catalogueData = Data()
+    override class func canInit(with request: URLRequest) -> Bool { true }
+    override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
+    override func startLoading() {
+        Self.count += 1
+        let isCatalogue = request.url?.host == "images-api.nasa.gov" || request.url?.host == "commons.wikimedia.org"
+        let response = HTTPURLResponse(url: request.url!, statusCode: Self.status, httpVersion: "HTTP/1.1", headerFields: ["Content-Type": isCatalogue ? "application/json" : "image/png"])!
+        let payload = isCatalogue ? Self.catalogueData : Self.imageData
+        let deliver = { [self] in
+            guard !cancelled else { return }
+            client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+            client?.urlProtocol(self, didLoad: payload)
+            client?.urlProtocolDidFinishLoading(self)
+        }
+        if Self.delay > 0 { DispatchQueue.global().asyncAfter(deadline: .now() + Self.delay, execute: deliver) }
+        else { deliver() }
+    }
+    override func stopLoading() { cancelled = true }
+}
+
+final class PreviewDelegate: NSObject, NSApplicationDelegate {
+    var window: NSWindow!
+    var clock: NativeClockView!
+    private var showcaseTimer: Timer?
+    private var showcaseStep = 0
+    private var showcasePlan: [(locale: String, theme: String, palette: String, pattern: String, time: Bool, progress: String)] = []
+
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 1100, height: 720), styleMask: [.titled, .closable, .resizable], backing: .buffered, defer: false)
+        clock = NativeClockView(frame: window.contentView!.bounds, isPreview: false)!
+        clock.autoresizingMask = [.width, .height]
+        window.contentView = clock
+        window.title = "Literature Clock — Window Preview"
+        let menu = NSMenu(), item = NSMenuItem(), submenu = NSMenu()
+        submenu.addItem(withTitle: "Settings…", action: #selector(settings), keyEquivalent: ",").target = self
+        submenu.addItem(withTitle: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+        item.submenu = submenu; menu.addItem(item); NSApp.mainMenu = menu
+        window.center(); window.makeKeyAndOrderFront(nil); NSApp.activate(ignoringOtherApps: true)
+        var checkSuite: String?
+        if CommandLine.arguments.contains("--check-render") {
+            let suite = "net.literatureclock.native-check." + UUID().uuidString
+            checkSuite = suite
+            let defaults = UserDefaults(suiteName: suite)!
+            defaults.register(defaults: ["theme": "base-dark", "background-pattern": "none", "palette": "default", "custom-color": "#d24335", "show-time": true, "hide-book-title": false, "quote-locales": "", "work": true, "screensaver": true, "progressbar": "background"])
+            clock.preferences = defaults
+            clock.photoDownloadsEnabled = false
+        }
+        if CommandLine.arguments.contains("--glass-preview") || CommandLine.arguments.contains("--photo-glass-preview") || (CommandLine.arguments.contains("--foreground-glass-preview") || (CommandLine.arguments.contains("--rounded-glass-preview") || CommandLine.arguments.contains("--full-edge-glass-preview"))) {
+            // A disposable visual workspace; keep installed saver preferences intact.
+            let defaults = UserDefaults(suiteName: "net.literatureclock.window-preview." + UUID().uuidString)!
+            defaults.register(defaults: ["theme": (CommandLine.arguments.contains("--photo-glass-preview") || (CommandLine.arguments.contains("--foreground-glass-preview") || (CommandLine.arguments.contains("--rounded-glass-preview") || CommandLine.arguments.contains("--full-edge-glass-preview")))) ? "photo-dark" : "book-light", "background-pattern": "none", "palette": "default", "custom-color": "#d24335", "photo-provider": "picsum", "photo-category": "all", "show-time": true, "quote-locales": "en-GB", "work": true, "screensaver": false, "progressbar": "glass-background"])
+            clock.preferences = defaults
+            clock.photoDownloadsEnabled = true
+        }
+        if (CommandLine.arguments.contains("--foreground-glass-preview") || (CommandLine.arguments.contains("--rounded-glass-preview") || CommandLine.arguments.contains("--full-edge-glass-preview"))) {
+            clock.preferences.set("glass-foreground", forKey: "progressbar")
+            clock.interactionPreviewSweep = true
+            window.title = "Literature Clock — Glass over full scene"
+        }
+        if (CommandLine.arguments.contains("--rounded-glass-preview") || CommandLine.arguments.contains("--full-edge-glass-preview")) {
+            clock.fullProgressPreviewSweep = true
+            window.title = "Literature Clock — Rounded progress test"
+        }
+        if CommandLine.arguments.contains("--full-edge-glass-preview") {
+            clock.fullEdgeEnabled = true
+            window.title = "Literature Clock — Rounded glass progress"
+        }
+        clock.startAnimation()
+        if CommandLine.arguments.contains("--showcase-preview") {
+            submenu.insertItem(withTitle: "Restart showcase", action: #selector(restartShowcase), keyEquivalent: "r", at: 1).target = self
+            submenu.insertItem(withTitle: "Pause / resume showcase", action: #selector(toggleShowcase), keyEquivalent: "p", at: 2).target = self
+            prepareShowcase()
+            restartShowcase()
+        }
+        if CommandLine.arguments.contains("--check-render") {
+            let keys = ["theme", "background-pattern", "palette", "custom-color", "show-time", "hide-book-title", "quote-locales", "work", "locale", "screensaver", "progressbar"]
+            let saved = keys.map { ($0, clock.preferences.object(forKey: $0)) }
+            defer {
+                for (key, value) in saved { clock.preferences.set(value, forKey: key) }
+                if let suite = checkSuite { clock.preferences.removePersistentDomain(forName: suite) }
+                clock.preferences.synchronize()
+            }
+            clock.preferences.set("base-dark", forKey: "theme")
+            let output = URL(fileURLWithPath: "/private/tmp/literature-clock-native-checks", isDirectory: true)
+            try! FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
+            precondition(NativeAppearance.hex(NativePhotoBackground.overlayColor(dark: false)) == "#dddddd" && NativePhotoBackground.overlayColor(dark: false).alphaComponent == 0.4, "Photo light must match the web overlay")
+            precondition(NativeAppearance.hex(NativePhotoBackground.overlayColor(dark: true)) == "#111111" && NativePhotoBackground.overlayColor(dark: true).alphaComponent == 0.5, "Photo dark must match the web overlay")
+            let red = NativeAppearance.color("#d24335")!
+            precondition(NativeAppearance.hex(NativeAppearance.background(theme: "base", dark: false, accent: red)) == "#f8e3e1", "Base light must match the web's 15% sRGB tint")
+            precondition(NativeAppearance.hex(NativeAppearance.background(theme: "base", dark: true, accent: red)) == "#2f181b", "Base dark must match the web's 16% sRGB tint")
+            let blue = NativeAppearance.color("#2c97df")!
+            precondition(NativeAppearance.hex(NativeAppearance.background(theme: "base", dark: false, accent: blue)) == "#dfeffa", "Base tint must follow the chosen accent")
+            let checker = CIFilter(name: "CICheckerboardGenerator", parameters: ["inputColor0": CIColor.black, "inputColor1": CIColor.white, "inputWidth": 8.0, "inputSharpness": 1.0])!.outputImage!
+            let area = CGRect(x: 0, y: 0, width: 120, height: 80)
+            guard let kernel = OpticalGlassView.kernel,
+                  let lens = kernel.apply(extent: area, roiCallback: { _, rect in rect.insetBy(dx: -16, dy: -16) }, arguments: [checker, CIVector(x: 0, y: 0, z: 120, w: 80), 32.0, 0.0]) else { fatalError("Optical lens shader failed to load") }
+            let context = CIContext()
+            var pixels = [UInt8](repeating: 0, count: 120 * 80 * 4)
+            context.render(lens, toBitmap: &pixels, rowBytes: 120 * 4, bounds: area, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
+            let fringes = stride(from: 0, to: pixels.count, by: 4).filter { pixels[$0 + 3] > 250 && abs(Int(pixels[$0]) - Int(pixels[$0 + 2])) > 20 }
+            precondition(!fringes.isEmpty, "Lens must disperse a neutral background into real colour fringes")
+            let interior = CGRect(x: 55, y: 35, width: 10, height: 10)
+            var original = [UInt8](repeating: 0, count: 400), refracted = original
+            context.render(checker, toBitmap: &original, rowBytes: 40, bounds: interior, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
+            context.render(lens.composited(over: checker), toBitmap: &refracted, rowBytes: 40, bounds: interior, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
+            precondition(zip(original, refracted).allSatisfy { abs(Int($0) - Int($1)) < 5 }, "Lens interior must preserve a sharp, untinted background")
+            let pane = OpticalGlassView(frame: CGRect(x: 0, y: 0, width: 60, height: 80))
+            pane.source = checker
+            pane.tint = NSColor.red.withAlphaComponent(0.1)
+            let stacked = pane.compositedBackground()!
+            let sampleArea = CGRect(x: 16, y: 32, width: 1, height: 1)
+            var rawSample = [UInt8](repeating: 0, count: 4), stackedSample = rawSample
+            context.render(checker, toBitmap: &rawSample, rowBytes: 4, bounds: sampleArea, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
+            context.render(stacked, toBitmap: &stackedSample, rowBytes: 4, bounds: sampleArea, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
+            precondition(rawSample != stackedSample, "Clock backdrop must include the pane tint in covered areas")
+            let uncovered = CGRect(x: 90, y: 32, width: 1, height: 1)
+            context.render(checker, toBitmap: &rawSample, rowBytes: 4, bounds: uncovered, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
+            context.render(stacked, toBitmap: &stackedSample, rowBytes: 4, bounds: uncovered, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
+            precondition(rawSample == stackedSample, "Clock backdrop must keep uncovered areas unchanged")
+            pane.frame.size.width = 0
+            let reset = pane.compositedBackground()!
+            context.render(reset, toBitmap: &stackedSample, rowBytes: 4, bounds: uncovered, format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
+            precondition(rawSample == stackedSample, "Minute reset must remove the progress from the clock backdrop")
+            let opticalImage = context.createCGImage(lens, from: area)!
+            let opticalBitmap = NSBitmapImageRep(cgImage: opticalImage)
+            try! opticalBitmap.representation(using: .png, properties: [:])!.write(to: output.appendingPathComponent("optical-dispersion.png"))
+            let parts = Calendar.current.dateComponents([.hour, .minute], from: Date())
+            let minute = String(format: "%02d:%02d", parts.hour ?? 0, parts.minute ?? 0)
+            for locale in clock.localeNames {
+                guard let quote = clock.catalogue(locale).values.first?.first else { fatalError("Empty catalogue: \(locale)") }
+                clock.quote = quote; clock.quoteLocale = locale; clock.lastMinute = minute
+                let expected = ["ar": "Marhey", "ru": "Pangolin", "el": "Sansation", "zh": "ZCOOLKuaiLe"][locale.split(separator: "-").first.map(String.init) ?? "en"] ?? "SpecialElite"
+                precondition(clock.quoteFont(24).fontName.contains(expected), "Bundled font missing for \(locale)")
+                let bitmap = clock.bitmapImageRepForCachingDisplay(in: clock.bounds)!
+                clock.cacheDisplay(in: clock.bounds, to: bitmap)
+                try! bitmap.representation(using: .png, properties: [:])!.write(to: output.appendingPathComponent(locale + ".png"))
+            }
+            clock.refreshQuote(Date().addingTimeInterval(60))
+            precondition(clock.lastMinute != minute, "Minute change did not update the native clock")
+            clock.preferences.set("el-GR", forKey: "quote-locales")
+            clock.preferences.set(true, forKey: "work")
+            var gap = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+            gap.hour = 12; gap.minute = 34
+            clock.lastMinute = ""; clock.refreshQuote(Calendar.current.date(from: gap)!)
+            precondition(clock.quote?.last.isEmpty == false, "Missing minute must explain the missing quote")
+            for theme in NativeAppearance.themes {
+                clock.preferences.set(theme + "-dark", forKey: "theme")
+                for locale in clock.localeNames {
+                    clock.quoteLocale = locale
+                    let family = NativeAppearance.fontFamily(theme: theme, locale: locale)
+                    precondition(clock.quoteFont(24).fontName.lowercased().contains(family), "Missing font: \(theme)/\(locale)/\(family)")
+                }
+                for mode in ["light", "dark"] {
+                    clock.preferences.set(theme + "-" + mode, forKey: "theme")
+                    clock.preferences.set(theme == "book" ? "dots" : "grid", forKey: "background-pattern")
+                    clock.quoteLocale = "el-GR"
+                    clock.quote = clock.catalogue("el-GR").values.first!.first!
+                    clock.lastMinute = minute
+                    let bitmap = clock.bitmapImageRepForCachingDisplay(in: clock.bounds)!
+                    clock.cacheDisplay(in: clock.bounds, to: bitmap)
+                    try! bitmap.representation(using: .png, properties: [:])!.write(to: output.appendingPathComponent(theme + "-" + mode + ".png"))
+                }
+            }
+            // Inspect wrapped highlighter fragments in both writing directions.
+            clock.preferences.set("book-light", forKey: "theme")
+            clock.preferences.set("none", forKey: "background-pattern")
+            clock.preferences.set("default", forKey: "palette")
+            clock.preferences.set(false, forKey: "screensaver")
+            for locale in ["en-GB", "ar-AE"] {
+                clock.quoteLocale = locale
+                let rows = clock.catalogue(locale)
+                clock.quote = locale == "en-GB" ? rows["16:00"]?.first { $0.title == "Through the Looking Glass" } : rows.values.flatMap { $0 }.first { $0.time.count > 25 && $0.first.count > 30 }
+                precondition(clock.quote != nil, "Missing Book highlight diagnostic passage")
+                let bitmap = clock.bitmapImageRepForCachingDisplay(in: clock.bounds)!
+                clock.cacheDisplay(in: clock.bounds, to: bitmap)
+                try! bitmap.representation(using: .png, properties: [:])!.write(to: output.appendingPathComponent("book-highlight-" + locale + ".png"))
+            }
+            clock.quoteLocale = "en-GB"
+            clock.lastMinute = minute
+            clock.quote = clock.catalogue("en-GB")["16:00"]!.first { $0.id == "1600-017" }!
+            clock.preferences.set(true, forKey: "bilingual")
+            for locale in ["es-ES", "ar-AE"] {
+                let catalogue = clock.catalogue(locale)
+                let translated = catalogue["16:00"]!.first { $0.id == clock.quote!.id }!
+                var fixture = catalogue
+                // Use the current minute so the drawing diagnostic retains the
+                // fixed Carroll passage rather than advancing the live clock.
+                fixture[minute] = [NativeQuote(first: "Unrelated", time: "", last: "", title: "", author: "", sfw: true), translated]
+                clock.cache[locale] = fixture
+                clock.preferences.set(locale, forKey: "translation-locale")
+                precondition(clock.bilingualContent().quote?.id == "1600-017", "Bilingual mode must match the exact quote ID")
+                let bitmap = clock.bitmapImageRepForCachingDisplay(in: clock.bounds)!
+                clock.cacheDisplay(in: clock.bounds, to: bitmap)
+                try! bitmap.representation(using: .png, properties: [:])!.write(to: output.appendingPathComponent("bilingual-" + locale + ".png"))
+                clock.cache[locale] = catalogue
+            }
+            clock.preferences.set("en-GB", forKey: "translation-locale")
+            precondition(clock.bilingualContent().notice == clock.text("bilingual_same"), "Same language must show a notice")
+            clock.preferences.set("", forKey: "translation-locale")
+            precondition(clock.bilingualContent().notice == clock.text("bilingual_select_prompt"), "Unset translation language must show a prompt")
+            clock.preferences.set("es-ES", forKey: "translation-locale")
+            let originalSpanish = clock.catalogue("es-ES")
+            var filtered = originalSpanish
+            filtered[minute] = [NativeQuote(id: "1600-017", first: "Filtered diagnostic", time: "", last: "", title: "", author: "", sfw: false)]
+            clock.cache["es-ES"] = filtered
+            precondition(clock.bilingualContent().quote == nil && clock.bilingualContent().notice != nil, "SFW filtering must apply to translations")
+            clock.cache["es-ES"] = originalSpanish
+            clock.preferences.set(false, forKey: "bilingual")
+            precondition(clock.bilingualContent().notice == nil, "Disabled bilingual mode must remove its content")
+            clock.preferences.set(true, forKey: "show-time")
+            let cornerSize = NSSize(width: 1100, height: 720)
+            precondition(NativeClockView.progressCornerRadius(progress: 0, size: cornerSize) == 0, "Empty progress must have no corners")
+            precondition(NativeClockView.progressCornerRadius(progress: 0.5, size: cornerSize) == 28, "Moving edge must retain its rounded corners")
+            precondition(NativeClockView.progressCornerRadius(progress: 0.96, size: cornerSize) < 28, "Corners must shrink approaching completion")
+            precondition(NativeClockView.progressCornerRadius(progress: 1, size: cornerSize) == 0, "Completed progress must fill every screen corner")
+            let progressGlassShown = clock.updateGlassProgress(mode: "glass-background", progress: 0.5, dark: false, tint: red.withAlphaComponent(0.1))
+            if #available(macOS 26.0, *) {
+                precondition(progressGlassShown, "Background progress must use native glass")
+                let surface = clock.subviews.compactMap { $0 as? OpticalGlassView }.first!
+                precondition(surface.frame.width == clock.bounds.width / 2 && surface.frame.height == clock.bounds.height, "Glass must cover the elapsed part of the background")
+                precondition(surface.tint?.alphaComponent == 0.1, "Glass progress must retain its full-pane tint")
+                let passage = clock.subviews.first { $0 is NSImageView }!
+                precondition(clock.subviews.firstIndex(of: surface)! < clock.subviews.firstIndex(of: passage)!, "Background glass must stay below the sharp passage")
+                clock.updateGlassProgress(mode: "glass-background", progress: 0, dark: true)
+                precondition(surface.isHidden, "New minutes must reset the glass surface")
+                clock.updateGlassProgress(mode: "glass-background", progress: 1, dark: true)
+                precondition(surface.frame == clock.bounds && !surface.isHidden, "Completed minutes must fill the background")
+                for mode in ["none", "top", "bottom", "background"] {
+                    precondition(!clock.updateGlassProgress(mode: mode, progress: 0.5, dark: false) && surface.isHidden, "Other progress modes must hide glass")
+                }
+            } else { precondition(!progressGlassShown, "Older systems must retain the flat progress") }
+            clock.preferences.set(false, forKey: "show-time")
+            clock.preferences.set(true, forKey: "show-time")
+            for pattern in NativeAppearance.patterns.dropFirst(2) {
+                precondition(NativeAppearance.patternImage(pattern: pattern, size: NSSize(width: 320, height: 256), scale: 2, color: .systemRed, resources: clock.resources) != nil, "Missing native pattern: " + pattern)
+            }
+            let first = clock.configureSheet!
+            let progressMenu = clock.controls["progressbar"] as! NSPopUpButton
+            let modes = progressMenu.itemArray.compactMap { $0.representedObject as? String }
+            precondition(modes.contains("background") && modes.contains("glass-background") && modes.contains("glass-foreground"), "Flat and glass backgrounds must be independent options")
+            first.orderOut(nil)
+            let second = clock.configureSheet!
+            precondition(first !== second, "Closed options sheet was reused")
+            precondition(!(clock.controls["translation-locale"] as! NSPopUpButton).isEnabled, "Translation menu should be disabled without bilingual mode")
+            (clock.controls["bilingual"] as! NSButton).state = .on
+            clock.perform(NSSelectorFromString("bilingualControlsChanged"))
+            precondition((clock.controls["translation-locale"] as! NSPopUpButton).isEnabled, "Translation menu should be enabled in bilingual mode")
+            let well = clock.controls["custom-color"] as! NSColorWell
+            well.color = NativeAppearance.color("#123456")!
+            clock.perform(NSSelectorFromString("customColorChanged"))
+            precondition(clock.menuValue("palette") == "custom", "Colour picker did not select custom colour")
+            precondition(clock.menuValue("color-mode") == "fixed", "Custom colour must select Fixed mode")
+            precondition(clock.colorEditor!.isHidden, "Editor must be collapsed initially")
+            (clock.controls["color-edit"] as! NSButton).performClick(nil)
+            precondition(!clock.colorEditor!.isHidden, "Edit colour must reveal the editor")
+            let themeMenu = clock.controls["theme-base"] as! NSPopUpButton
+            themeMenu.select(themeMenu.itemArray.first { $0.representedObject as? String == "book" }!)
+            let other = NativeClockView(frame: clock.bounds, isPreview: true)!
+            let otherSuite = "net.literatureclock.native-check." + UUID().uuidString
+            other.preferences = UserDefaults(suiteName: otherSuite)!
+            defer { other.preferences.removePersistentDomain(forName: otherSuite) }
+            clock.perform(NSSelectorFromString("saveOptions"))
+            precondition(other.preferences.string(forKey: "theme") == "book-dark" || other.preferences.string(forKey: "theme") == "book-light", "Theme did not reach another view")
+            precondition(other.preferences.string(forKey: "palette") == "custom", "Custom palette did not reach another view")
+            precondition(other.preferences.string(forKey: "custom-color") == "#123456", "Custom colour did not reach another view")
+            precondition(clock.preferences.string(forKey: "custom-color") == "#123456", "Custom colour was not saved")
+            precondition(clock.preferences.bool(forKey: "bilingual") && other.preferences.bool(forKey: "bilingual"), "Bilingual setting must save and reach other displays")
+            precondition(other.preferences.string(forKey: "translation-locale") == "es-ES", "Translation language must reach other displays")
+            clock.preferences.set(false, forKey: "bilingual")
+            for palette in ["default", "pink", "green", "random"] {
+                _ = clock.configureSheet
+                if palette == "default" || palette == "random" {
+                    let mode = clock.controls["color-mode"] as! NSPopUpButton
+                    mode.select(mode.itemArray.first { $0.representedObject as? String == palette }!)
+                    clock.perform(NSSelectorFromString("colorModeChanged"))
+                    precondition(clock.colorSwatchesRow!.isHidden, "Fixed colours should be hidden outside Fixed mode")
+                } else {
+                    let mode = clock.controls["color-mode"] as! NSPopUpButton
+                    mode.select(mode.itemArray.first { $0.representedObject as? String == "fixed" }!)
+                    clock.perform(NSSelectorFromString("colorModeChanged"))
+                    let button = clock.swatches.first { $0.value == palette }!
+                    clock.perform(NSSelectorFromString("selectSwatch:"), with: button)
+                    precondition(!clock.colorSwatchesRow!.isHidden, "Fixed colours should be visible")
+                }
+                precondition(clock.colorEditor!.isHidden, "Custom editor should remain hidden")
+                precondition(clock.menuValue("palette") == palette, "Swatch did not select \(palette)")
+                clock.perform(NSSelectorFromString("saveOptions"))
+                precondition(clock.preferences.string(forKey: "palette") == palette, "Custom colour overrode \(palette) on Save")
+                precondition(clock.preferences.string(forKey: "custom-color") == "#123456", "Switching modes must preserve the custom colour")
+            }
+            _ = clock.configureSheet
+            (clock.controls["hide-book-title"] as! NSButton).state = .on
+            clock.perform(NSSelectorFromString("saveOptions"))
+            precondition(clock.preferences.bool(forKey: "hide-book-title") && other.preferences.bool(forKey: "hide-book-title"), "Hide title did not reach other views")
+            _ = clock.configureSheet
+            for (key, value) in [("theme-base", "photo"), ("photo-provider", "nasa"), ("photo-category", "moon")] {
+                let menu = clock.controls[key] as! NSPopUpButton
+                menu.select(menu.itemArray.first { $0.representedObject as? String == value }!)
+                if key == "photo-provider" { clock.perform(NSSelectorFromString("photoControlsChanged")) }
+            }
+            clock.perform(NSSelectorFromString("saveOptions"))
+            precondition(clock.preferences.string(forKey: "photo-provider") == "nasa" && other.preferences.string(forKey: "photo-category") == "moon", "Photo settings did not persist across views")
+            let fixture = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: 4, pixelsHigh: 3, bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0)!
+            PhotoCheckProtocol.imageData = fixture.representation(using: .png, properties: [:])!
+            let config = URLSessionConfiguration.ephemeral
+            config.protocolClasses = [PhotoCheckProtocol.self]
+            let photoCache = output.appendingPathComponent(UUID().uuidString + ".jpg")
+            defer { try? FileManager.default.removeItem(at: photoCache); try? FileManager.default.removeItem(at: photoCache.appendingPathExtension("json")) }
+            let photo = NativePhotoBackground(cacheURL: photoCache, session: URLSession(configuration: config))
+            var loaded = false
+            let now = Date(timeIntervalSince1970: floor(Date().timeIntervalSince1970 / 60) * 60 + 10)
+            for _ in 0..<60 { photo.update(now: now, size: NSSize(width: 1100, height: 720)) { loaded = true } }
+            let deadline = Date().addingTimeInterval(3)
+            while !loaded && Date() < deadline { RunLoop.current.run(until: Date().addingTimeInterval(0.01)) }
+            precondition(loaded && PhotoCheckProtocol.count == 1 && photo.image != nil, "Photo did not load once per minute")
+            precondition(FileManager.default.fileExists(atPath: photoCache.path), "Photo was not cached")
+            let offline = NativePhotoBackground(cacheURL: photoCache, session: URLSession(configuration: config))
+            precondition(offline.image != nil, "Offline activation lost the cached photo")
+            PhotoCheckProtocol.status = 503
+            var unexpectedChange = false
+            offline.update(now: now.addingTimeInterval(60), size: NSSize(width: 1100, height: 720)) { unexpectedChange = true }
+            let failureDeadline = Date().addingTimeInterval(3)
+            while PhotoCheckProtocol.count < 2 && Date() < failureDeadline { RunLoop.current.run(until: Date().addingTimeInterval(0.01)) }
+            RunLoop.current.run(until: Date().addingTimeInterval(0.1))
+            precondition(PhotoCheckProtocol.count == 2 && offline.image != nil && !unexpectedChange, "A failed download replaced the cached photo")
+            photo.cancel(); offline.cancel()
+            PhotoCheckProtocol.status = 200
+            PhotoCheckProtocol.catalogueData = Data(#"{"collection":{"items":[{"data":[{"nasa_id":"test","title":"Nebula","secondary_creator":"NASA/ESA"}],"links":[{"href":"https://images-assets.nasa.gov/image/test/test~medium.jpg","render":"image"}]}]}}"#.utf8)
+            let nasa = NativePhotoBackground(cacheURL: nil, session: URLSession(configuration: config))
+            var nasaLoaded = false
+            nasa.update(now: now, size: clock.bounds.size, provider: "nasa", category: "nebulae") { nasaLoaded = true }
+            let nasaDeadline = Date().addingTimeInterval(3)
+            while !nasaLoaded && Date() < nasaDeadline { RunLoop.current.run(until: Date().addingTimeInterval(0.01)) }
+            precondition(nasaLoaded && PhotoCheckProtocol.count == 4 && nasa.credit == "NASA/ESA", "NASA catalogue/image/credit failed")
+            nasaLoaded = false
+            nasa.update(now: now.addingTimeInterval(60), size: clock.bounds.size, provider: "nasa", category: "nebulae") { nasaLoaded = true }
+            let nextDeadline = Date().addingTimeInterval(3)
+            while !nasaLoaded && Date() < nextDeadline { RunLoop.current.run(until: Date().addingTimeInterval(0.01)) }
+            precondition(nasaLoaded && PhotoCheckProtocol.count == 5, "NASA catalogue was not cached")
+            nasa.cancel()
+            PhotoCheckProtocol.catalogueData = Data(#"{"query":{"pages":[{"title":"File:Landscape.jpg","imageinfo":[{"mime":"image/jpeg","thumburl":"https://thumb.wikimedia.org/landscape.jpg","descriptionurl":"https://commons.wikimedia.org/wiki/File:Landscape.jpg","extmetadata":{"LicenseShortName":{"value":"CC0"},"AttributionRequired":{"value":"false"},"Artist":{"value":"<a>A &amp; B</a>"}}}]}]}}"#.utf8)
+            let commons = NativePhotoBackground(cacheURL: nil, session: URLSession(configuration: config))
+            var commonsLoaded = false
+            commons.update(now: now, size: clock.bounds.size, provider: "commons", category: "landscapes") { commonsLoaded = true }
+            let commonsDeadline = Date().addingTimeInterval(3)
+            while !commonsLoaded && Date() < commonsDeadline { RunLoop.current.run(until: Date().addingTimeInterval(0.01)) }
+            precondition(commonsLoaded && PhotoCheckProtocol.count == 7 && commons.credit == "A & B / Wikimedia Commons / CC0", "Commons catalogue/credits failed")
+            let staged = NativePhotoBackground(cacheURL: photoCache, session: URLSession(configuration: config))
+            staged.update(now: now, size: NSSize(width: 1100, height: 720)) {}
+            let stagedInitialDeadline = Date().addingTimeInterval(0.2)
+            while Date() < stagedInitialDeadline { RunLoop.current.run(until: Date().addingTimeInterval(0.01)) }
+            let oldImage = staged.image!
+            let early = now.addingTimeInterval(36)
+            var changed = false
+            staged.update(now: early, size: NSSize(width: 1100, height: 720)) { changed = true }
+            let readyDeadline = Date().addingTimeInterval(1)
+            while Date() < readyDeadline { RunLoop.current.run(until: Date().addingTimeInterval(0.01)) }
+            precondition(staged.image === oldImage, "Prefetch must not change the visible photo early")
+            changed = false
+            staged.update(now: now.addingTimeInterval(50), size: NSSize(width: 1100, height: 720)) { changed = true }
+            precondition(changed && staged.image !== oldImage && staged.isTransitioning, "Ready prefetch must start fading at the minute boundary")
+            let late = NativePhotoBackground(cacheURL: photoCache, session: URLSession(configuration: config))
+            // Finish the current-minute load before starting a delayed prefetch.
+            late.update(now: now, size: NSSize(width: 1100, height: 720)) {}
+            let initialDeadline = Date().addingTimeInterval(0.2)
+            while Date() < initialDeadline { RunLoop.current.run(until: Date().addingTimeInterval(0.01)) }
+            PhotoCheckProtocol.delay = 0.2
+            let lateOld = late.image!
+            late.update(now: early, size: NSSize(width: 1100, height: 720)) {}
+            late.update(now: now.addingTimeInterval(50), size: NSSize(width: 1100, height: 720)) {}
+            precondition(late.image === lateOld, "Late prefetch must retain the current image while waiting")
+            let lateDeadline = Date().addingTimeInterval(2)
+            while late.image === lateOld && Date() < lateDeadline { RunLoop.current.run(until: Date().addingTimeInterval(0.01)) }
+            precondition(late.image !== lateOld && late.isTransitioning, "Late prefetch must fade when its download finishes")
+            PhotoCheckProtocol.delay = 0
+            staged.cancel(); late.cancel()
+
+            commons.cancel()
+            _ = clock.configureSheet
+            let providerMenu = clock.controls["photo-provider"] as! NSPopUpButton
+            providerMenu.select(providerMenu.itemArray.first { $0.representedObject as? String == "commons" }!)
+            clock.perform(NSSelectorFromString("photoControlsChanged"))
+            let categoryMenu = clock.controls["photo-category"] as! NSPopUpButton
+            precondition(categoryMenu.superview === providerMenu.superview && !categoryMenu.isHidden, "Photo selectors are not joined")
+            categoryMenu.select(categoryMenu.itemArray.first { $0.representedObject as? String == "animals" }!)
+            clock.perform(NSSelectorFromString("saveOptions"))
+            precondition(other.preferences.string(forKey: "photo-provider") == "commons" && other.preferences.string(forKey: "photo-category") == "animals", "Commons options were not saved")
+            let left = NativeClockView(frame: clock.bounds, isPreview: false)!
+            let right = NativeClockView(frame: clock.bounds, isPreview: false)!
+            left.preferences = clock.preferences; right.preferences = clock.preferences
+            left.photoDownloadsEnabled = false; right.photoDownloadsEnabled = false
+            let screenRects = [CGRect(x: 0, y: 0, width: 1920, height: 1080), CGRect(x: 1920, y: 0, width: 3440, height: 1440)]
+            precondition(NativeClockView.displayIndex(viewRect: CGRect(x: 1920, y: 0, width: 3440, height: 1440), screens: screenRects, fallback: 0) == 1, "Preview subview on the second monitor must override the window screen")
+            precondition(NativeClockView.displayIndex(viewRect: CGRect(x: 0, y: 0, width: 1920, height: 1080), screens: screenRects, fallback: 1) == 0, "Primary monitor must resolve from actual view geometry")
+            left.displayIndexOverride = 0; right.displayIndexOverride = 1
+            var testParts = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+            testParts.hour = 12; testParts.minute = 0; testParts.second = 0
+            let displayDate = Calendar.current.date(from: testParts)!
+            let entries = ["First passage", "Second passage"].map { NativeQuote(first: $0, time: "noon", last: "", title: "Test", author: "Test", sfw: true) }
+            for view in [left, right] { view.cache = ["en-GB": ["12:00": entries], "es-ES": ["12:00": entries]] }
+            clock.preferences.set("en-GB", forKey: "quote-locales")
+            left.refreshQuote(displayDate); right.refreshQuote(displayDate)
+            precondition(left.quote?.first != right.quote?.first, "Same-language displays chose the same available passage")
+            clock.preferences.set("en-GB,es-ES", forKey: "quote-locales")
+            left.lastMinute = ""; right.lastMinute = ""
+            left.refreshQuote(displayDate); right.refreshQuote(displayDate)
+            precondition(left.quoteLocale == "en-GB" && right.quoteLocale == "es-ES", "Selected languages were not distributed across displays")
+            precondition(left.randomValue(["red", "green", "blue"], at: displayDate) != right.randomValue(["red", "green", "blue"], at: displayDate), "Random variants coincide across displays")
+            right.displayIndexOverride = 0
+            right.refreshQuote(displayDate)
+            precondition(right.quoteLocale == left.quoteLocale, "Moving an instance to another display did not refresh its selection")
+            let primaryURL = NativePhotoBackground.photoURL(minute: 100, size: clock.bounds.size, displayID: "primary")
+            let secondaryURL = NativePhotoBackground.photoURL(minute: 100, size: clock.bounds.size, displayID: "secondary")
+            precondition(primaryURL != secondaryURL, "Picsum seed did not vary by display")
+            for all in [false, true] {
+                let first = NativePhotoBackground.photoPosition(minute: 100, categoryCount: 14, allCategories: all, displayIndex: 0)
+                let second = NativePhotoBackground.photoPosition(minute: 100, categoryCount: 14, allCategories: all, displayIndex: 1)
+                precondition(first % 50 != second % 50, "Catalogue images coincide across displays")
+            }
+            precondition(NativePhotoBackground.cacheURL(displayID: "primary") != NativePhotoBackground.cacheURL(displayID: "secondary"), "Offline photo cache was shared across displays")
+            let screenFrame = NSRect(x: 0, y: 0, width: 1512, height: 982)
+            let clockFrame = NSRect(x: 720, y: 932, width: 72, height: 24)
+            let passageArea = NativeClockView.passageArea(bounds: screenFrame, clockFrame: clockFrame)
+            precondition(passageArea.maxY == clockFrame.minY - 16, "Passages must leave a gap below the clock")
+            precondition(NativeClockView.passageArea(bounds: screenFrame, clockFrame: nil) == screenFrame, "Hidden clock must not reserve space")
+            precondition(NativeClockView.timeInset(viewFrame: screenFrame, screenFrame: screenFrame, safeTop: 32) == 50)
+            precondition(NativeClockView.timeInset(viewFrame: NSRect(x: 0, y: 0, width: 1512, height: 950), screenFrame: screenFrame, safeTop: 32) == 18)
+            precondition(NativeClockView.timeInset(viewFrame: screenFrame, screenFrame: screenFrame, safeTop: 0) == 18)
+            print("PASS: 12 catalogues, 84 theme/locale font combinations, light/dark rendering, missing quote notice, reopening options custom colour save, preset restoration, hiding book titles, photo download throttling, caching and offline failure, automatic NASA and Commons catalogues/credits/cache, joined selectors, distinct display quotes/languages/random variants/seeds/catalogue selections/caches, notch safe area")
+            clock.stopAnimation(); NSApp.terminate(nil)
+        }
+    }
+    private func prepareShowcase() {
+        let locales = ["en-GB", "es-ES", "zh-CN", "fr-FR"]
+        let actualLocales = locales.map { locale in clock.localeNames.first { $0.hasPrefix(locale.split(separator: "-").first! + "-") } ?? locale }
+        let catalogues = actualLocales.map { clock.catalogue($0) }
+        let common = catalogues.reduce(Set(catalogues[0].keys)) { $0.intersection($1.keys) }
+        let minute = common.filter { minute in catalogues.allSatisfy { ($0[minute] ?? []).contains { $0.sfw } } }.min { a, b in
+            func score(_ minute: String) -> Int { catalogues.enumerated().reduce(0) { total, item in total + (item.element[minute]!.filter { $0.sfw }.map { abs($0.first.count + $0.time.count + $0.last.count - (actualLocales[item.offset].hasPrefix("zh") ? 110 : 220)) }.min() ?? 10000) } }
+            return score(a) < score(b)
+        } ?? "16:00"
+        let parts = minute.split(separator: ":").compactMap { Int($0) }
+        clock.previewQuoteDate = Calendar.current.date(bySettingHour: parts[0], minute: parts[1], second: 0, of: Date())
+        for locale in actualLocales {
+            let choices = clock.catalogue(locale)[minute]!.filter { $0.sfw }
+            if let quote = choices.min(by: { abs($0.first.count + $0.time.count + $0.last.count - (locale.hasPrefix("zh") ? 110 : 220)) < abs($1.first.count + $1.time.count + $1.last.count - (locale.hasPrefix("zh") ? 110 : 220)) }) {
+                clock.cache[locale]?[minute] = [quote]
+            }
+        }
+        let defaults = UserDefaults(suiteName: "net.literatureclock.showcase." + UUID().uuidString)!
+        defaults.register(defaults: ["theme": "photo-dark", "progressbar": "glass-foreground", "photo-provider": "picsum", "photo-category": "all", "screensaver": false, "work": true, "show-time": true, "bilingual": false, "hide-book-title": false, "palette": "default", "background-pattern": "none"])
+        clock.preferences = defaults
+        clock.photoDownloadsEnabled = true
+        clock.interactionPreviewSweep = false
+        clock.previewProgressDuration = 24
+        for (index, locale) in actualLocales.enumerated() {
+            // Each language gets Photo plus two different native themes.
+            let plain = ["base", "bohemian", "festive"].randomElement()!
+            let other = ["book", "terminal", "retro"].randomElement()!
+            let themes = ["photo", plain, other].shuffled()
+            for (slot, theme) in themes.enumerated() {
+                let dark = (index + slot) % 2 == 0
+                showcasePlan.append((locale, theme + (dark ? "-dark" : "-light"), ["red", "blue", "green", "purple", "orange", "pink"].randomElement()!, theme == plain ? ["contours", "waves", "dots", "garden", "constellations"].randomElement()! : "none", slot != 1, ["bottom", "background", "glass-foreground"][slot]))
+            }
+        }
+        precondition(showcasePlan.count == 12 && stride(from: 0, to: 12, by: 3).allSatisfy { start in
+            let block = showcasePlan[start..<start + 3]
+            return Set(block.map { $0.locale }).count == 1 && block.contains { $0.theme.hasPrefix("photo-") }
+        })
+    }
+    private func applyShowcaseStep() {
+        if showcaseStep == 0 { clock.started = Date() }
+        let step = showcasePlan[showcaseStep % showcasePlan.count]
+        clock.preferences.set(step.locale, forKey: "quote-locales")
+        clock.preferences.set(step.theme, forKey: "theme")
+        clock.preferences.set(step.palette, forKey: "palette")
+        clock.preferences.set(step.pattern, forKey: "background-pattern")
+        clock.preferences.set(step.time, forKey: "show-time")
+        clock.preferences.set(step.progress, forKey: "progressbar")
+        clock.lastMinute = ""
+        clock.needsDisplay = true
+        window.title = "Literature Clock — Showcase · " + step.locale + " · " + String(showcaseStep % 3 + 1) + "/3"
+        showcaseStep = (showcaseStep + 1) % showcasePlan.count
+    }
+    private func runShowcaseTimer() {
+        showcaseTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak self] _ in self?.applyShowcaseStep() }
+    }
+    @objc private func restartShowcase() {
+        showcaseTimer?.invalidate()
+        showcaseStep = 0
+        clock.previewProgressPausedElapsed = nil
+        applyShowcaseStep()
+        runShowcaseTimer()
+    }
+    @objc private func toggleShowcase() {
+        if let timer = showcaseTimer {
+            timer.invalidate(); showcaseTimer = nil
+            clock.previewProgressPausedElapsed = Date().timeIntervalSince(clock.started)
+        } else {
+            if let elapsed = clock.previewProgressPausedElapsed { clock.started = Date().addingTimeInterval(-elapsed) }
+            clock.previewProgressPausedElapsed = nil
+            runShowcaseTimer()
+        }
+    }
+    @objc func settings() { if let sheet = clock.configureSheet { window.beginSheet(sheet) } }
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { true }
+    func applicationWillTerminate(_ notification: Notification) { showcaseTimer?.invalidate(); clock.stopAnimation() }
+}
+
+@main enum PreviewMain {
+    static func main() {
+        let app = NSApplication.shared, delegate = PreviewDelegate()
+        app.delegate = delegate; app.setActivationPolicy(.regular)
+        withExtendedLifetime(delegate) { app.run() }
+    }
+}

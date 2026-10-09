@@ -3,6 +3,7 @@ import { afterEach, expect, test } from 'vitest';
 
 afterEach(() => {
   document.body.innerHTML = '';
+  document.body.className = '';
   delete document.documentElement.dataset.progressbar;
   delete document.documentElement.dataset.theme;
   document.getElementById('progress-test-styles')?.remove();
@@ -41,6 +42,35 @@ test('explicit positions override theme backgrounds and theme mode restores thei
       }
       if (mode === 'theme' && !theme.startsWith('base'))
         expect(computed.getPropertyValue('--progress-height').trim()).toBe('100vh');
+    }
+  }
+});
+
+test('Zen hides progress and the separate time even when screensaver mode is also active', () => {
+  const base = readFileSync('src/styles/main.css', 'utf8');
+  const styles = document.createElement('style');
+  styles.id = 'progress-test-styles';
+  styles.textContent = [
+    base.match(/#progress-bar \{[^}]+\}/)[0],
+    base.match(/body\.zen #progress-bar,[\s\S]*?\n\}/)[0],
+    base.match(/body\.paused:not\(\.zen\) #time-clock \{[^}]+\}/)[0],
+    readFileSync('src/styles/themes/retro.css', 'utf8'),
+    readFileSync('src/styles/progressbar.css', 'utf8'),
+  ].join('\n');
+  document.head.append(styles);
+  document.documentElement.dataset.theme = 'retro-dark';
+  for (const mode of ['theme', 'top', 'bottom', 'background']) {
+    document.documentElement.dataset.progressbar = mode;
+    for (const screensaver of [false, true]) {
+      document.body.className = `show-time zen paused${screensaver ? ' screensaver' : ''}`;
+      document.body.innerHTML = '<div id="progress-bar"></div><div id="time-clock"></div>';
+      for (const id of ['progress-bar', 'time-clock'])
+        expect(getComputedStyle(document.getElementById(id)).display).toBe('none');
+      document.body.classList.remove('zen');
+      document.body.innerHTML = '<div id="progress-bar"></div><div id="time-clock"></div>';
+      for (const id of ['progress-bar', 'time-clock'])
+        expect(getComputedStyle(document.getElementById(id)).display).not.toBe('none');
+      expect(document.documentElement.dataset.progressbar).toBe(mode);
     }
   }
 });

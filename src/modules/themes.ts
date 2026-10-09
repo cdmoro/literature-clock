@@ -1,3 +1,4 @@
+import { updatePhotoBackground, clearPhotoBackground } from './photo-background';
 import { refreshBackgroundPattern } from './background-patterns';
 import { refreshLocaleThemeFonts } from './locale-fonts';
 import { THEME_FONTS, refreshDefaultFontLabel } from './font';
@@ -277,36 +278,9 @@ export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
 }
 
 export function setDynamicBackgroundPicture() {
-  const photoOverlay = document.getElementById('photo-overlay');
-  const now = new Date();
-  const quote = store.get('active-quote');
-  const seed = `${now.getFullYear()}${now.getMonth() + 1}${now.getDay()}${quote?.id}${quote?.locale}`;
-  let innerHeight = window.innerHeight;
-  let innerWidth = window.innerWidth;
-
-  if (innerHeight > 5000) {
-    innerHeight = 5000;
-  }
-
-  if (innerWidth > 5000) {
-    innerWidth = 5000;
-  }
-
-  if (photoOverlay && !document.body.style.backgroundImage.includes(seed)) {
-    photoOverlay.style.opacity = '1';
-
-    setTimeout(() => {
-      if (store.get('theme').includes('photo-')) {
-        photoOverlay.style.removeProperty('opacity');
-        document.documentElement.style.setProperty(
-          '--background-image',
-          `url(https://picsum.photos/seed/${seed}/${innerWidth}/${innerHeight}?blur=1)`,
-        );
-      }
-    }, 1000);
-  }
+  updatePhotoBackground();
 }
 
 export function removeBackgroundImage() {
-  document.documentElement.style.removeProperty('--background-image');
+  clearPhotoBackground();
 }
