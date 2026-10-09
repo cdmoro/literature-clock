@@ -68,3 +68,5 @@ Options show the installed native bundle version with a link to its release. Fon
 The committed pattern PNGs are generated from the web SVGs with `scripts/render-native-patterns.cjs` and @resvg/resvg-js. The release build copies these assets directly and does not require Node or SVG rendering dependencies.
 
 Glass progress has 28-point rounded leading corners, shrinking smoothly to zero during the last 8% of the minute. Its bevel fades softly where the curve meets the screen edges. `--rounded-glass-preview` sweeps a full cycle in 12 seconds.
+
+Both glass progress modes refract the moving edge and the full top/bottom edges. Horizontal highlights use 12% of the vertical highlight strength to keep the rim subtle. Narrow strips are rendered rather than processing the whole pane.

@@ -3,7 +3,7 @@
 using namespace metal;
 
 extern "C" { namespace coreimage {
-        float4 lens(coreimage::sampler image, float4 rect, float radius, coreimage::destination dest) {
+        float4 lens(coreimage::sampler image, float4 rect, float radius, float fullEdge, coreimage::destination dest) {
             float2 p = dest.coord();
             float2 c = rect.xy + rect.zw * 0.5;
             float2 n;
@@ -18,6 +18,14 @@ extern "C" { namespace coreimage {
             } else {
                 n = normalize(float2(outside.x, outside.y * sign(p.y - c.y)) + float2(0.0001));
             }
+            if (fullEdge > 0.5) {
+                float horizontal = min(p.y - rect.y, rect.y + rect.w - p.y);
+                float topBottom = -horizontal;
+                if (q.x < 0.0 || radius < 0.001) {
+                    float vertical = p.x - (rect.x + rect.z);
+                    if (topBottom > vertical) { d = topBottom; n = float2(0.0, sign(p.y - c.y)); }
+                }
+            }
             float inside = 1.0 - smoothstep(-0.8, 0.6, d);
             float bevel = exp(-abs(d + 3.8) / 4.7) * smoothstep(-16.8, -9.4, d);
             float2 bend = n * bevel * 9.4;
@@ -26,13 +34,15 @@ extern "C" { namespace coreimage {
             float blue = image.sample(image.transform(p - bend * 0.55)).b;
             float rim = exp(-abs(d + 0.8) / 0.65);
             float light = 0.12 + 0.16 * max(0.0, dot(n, normalize(float2(-0.6, 0.8))));
-            float3 rgb = mix(float3(red, green, blue), float3(1.0), rim * light);
+            // Keep the vertical highlight; reduce the horizontal rim to 12%.
+            float rimStrength = fullEdge > 0.5 ? mix(1.0, 0.12, abs(n.y)) : 1.0;
+            float3 rgb = mix(float3(red, green, blue), float3(1.0), rim * light * rimStrength);
             // The horizontal part of a corner extends beyond the sampling strip.
             // Fade it toward its tangent instead of cutting it at the strip boundary.
             float cornerWeight = radius > 0.001 ? smoothstep(0.0, min(radius, 16.8), q.y) : 0.0;
             float tangentFade = smoothstep(-17.0, 0.0, q.x);
             float coverage = inside * smoothstep(-16.8, -9.4, d)
-                * mix(1.0, tangentFade, cornerWeight);
+                * mix(1.0, tangentFade, fullEdge > 0.5 ? 0.0 : cornerWeight);
             return float4(rgb * coverage, coverage);
         }
         

@@ -8,6 +8,7 @@ import CoreImage
 /// Only the bevel refracts; the interior stays sharp and untinted.
 final class OpticalGlassView: NSView {
     var cornerRadius: CGFloat = 0
+    var fullEdgeEnabled = true
     var tint: NSColor? { didSet { needsDisplay = true } }
     var source: CIImage? { didSet { needsDisplay = true } }
     private static let context = CIContext(options: [.cacheIntermediates: false])
@@ -30,8 +31,15 @@ final class OpticalGlassView: NSView {
         let region = NSRect(x: max(frame.minX, frame.maxX - max(36, cornerRadius + 18)), y: frame.minY,
                                                width: min(max(36, cornerRadius + 18), frame.width), height: frame.height)
         let rect = CIVector(x: frame.minX, y: frame.minY, z: frame.width, w: frame.height)
-        return [kernel.apply(extent: region, roiCallback: { _, area in area.insetBy(dx: -20, dy: -20) }, arguments: [Self.tinted(source, rect: frame, color: tint).clampedToExtent(), rect, cornerRadius])].compactMap { $0 }
-
+        var regions = [region]
+        if fullEdgeEnabled, region.minX > frame.minX {
+            let height = min(18, frame.height / 2)
+            regions.append(CGRect(x: frame.minX, y: frame.minY, width: region.minX - frame.minX, height: height))
+            regions.append(CGRect(x: frame.minX, y: frame.maxY - height, width: region.minX - frame.minX, height: height))
+        }
+        return regions.compactMap { region in
+            kernel.apply(extent: region, roiCallback: { _, area in area.insetBy(dx: -20, dy: -20) }, arguments: [Self.tinted(source, rect: frame, color: tint).clampedToExtent(), rect, cornerRadius, fullEdgeEnabled ? 1.0 : 0.0])
+        }
     }
     override func draw(_ dirtyRect: NSRect) {
         // Paint the tint once, keeping the undistorted interior on the original backdrop.
@@ -84,6 +92,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     var photoDownloadsEnabled = true
     var interactionPreviewSweep = false
     var fullProgressPreviewSweep = false
+    var fullEdgeEnabled = true
     private var photoScreen: NSScreen? { window?.screen ?? NSScreen.screens.first }
     private var photoDisplayID: String { (photoScreen?.deviceDescription[NSDeviceDescriptionKey(rawValue: "NSScreenNumber")] as? NSNumber)?.stringValue ?? "0" }
     // Synthetic display ordinals are used only by the standalone diagnostic.
@@ -261,6 +270,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 glassProgressView = glass
             }
             // Reuse one surface and move its leading edge continuously each frame.
+            glass.fullEdgeEnabled = fullEdgeEnabled
             glass.tint = tint
             glass.frame = NSRect(x: bounds.minX, y: bounds.minY,
                                  width: bounds.width * min(1, max(0, progress)), height: bounds.height)
