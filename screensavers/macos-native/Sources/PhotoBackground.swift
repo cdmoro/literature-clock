@@ -1,11 +1,28 @@
 import AppKit
 import Foundation
+import CoreImage
 
 /// Downloads are independent of the animation loop. Keep one last successful
 /// image on disk so an offline activation still has a photo to display.
 final class NativePhotoBackground {
     private(set) var image: NSImage?
     private var requestedKey: String?
+    private var loadedPhoto: Photo?
+    private var loadedData: Data?
+    private var previousImage: NSImage?
+    private var transitionStarted: Date?
+    private let prefetchEnabled: Bool
+    private var preloader: NativePhotoBackground?
+    private var preloadMinute: Int?
+    private var activeMinute = 0
+    private var activeConfiguration = ""
+    var transitionFraction: CGFloat {
+        guard let started = transitionStarted else { return 1 }
+        let t = min(1, max(0, Date().timeIntervalSince(started) / 0.65))
+        return CGFloat(t * t * (3 - 2 * t))
+    }
+    var isTransitioning: Bool { transitionFraction < 1 }
+
     private(set) var credit = ""
     private struct Photo: Codable { let url: String; let credit: String; let title: String; var source: String? = nil }
     private var catalogues: [String: (expires: Date, photos: [Photo])] = [:]
@@ -38,13 +55,16 @@ final class NativePhotoBackground {
     private var task: URLSessionDataTask?
     private let cacheURL: URL?
     private let session: URLSession
+    private let ownsSession: Bool
 
-    init(cacheURL: URL? = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first?.appendingPathComponent("net.literatureclock.native-saver/last-photo.jpg"), session: URLSession? = nil) {
+    init(cacheURL: URL? = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first?.appendingPathComponent("net.literatureclock.native-saver/last-photo.jpg"), session: URLSession? = nil, prefetchEnabled: Bool = true) {
+        self.prefetchEnabled = prefetchEnabled
         self.cacheURL = cacheURL
         let config = URLSessionConfiguration.ephemeral
         config.httpAdditionalHeaders = ["User-Agent": "LiteratureClock/0.1 (https://github.com/cdmoro/literature-clock)"]
         config.timeoutIntervalForRequest = 10
         config.timeoutIntervalForResource = 15
+        self.ownsSession = session == nil
         self.session = session ?? URLSession(configuration: config)
         if let url = cacheURL, let data = try? Data(contentsOf: url) {
             image = NSImage(data: data)
@@ -52,7 +72,7 @@ final class NativePhotoBackground {
                let photo = try? JSONDecoder().decode(Photo.self, from: metadata) { credit = photo.credit }
         }
     }
-    deinit { task?.cancel(); session.invalidateAndCancel() }
+    deinit { task?.cancel(); if ownsSession { session.invalidateAndCancel() } }
 
     static func cacheURL(displayID: String) -> URL? {
         FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first?.appendingPathComponent("net.literatureclock.native-saver/last-photo-" + displayID + ".jpg")
@@ -68,6 +88,51 @@ final class NativePhotoBackground {
         return URL(string: "https://picsum.photos/seed/literature-clock-\(minute)-\(displayID)/\(width)/\(height)?blur=1")!
     }
     func update(now: Date, size: NSSize, provider: String = "picsum", category: String = "all", displayID: String = "0", displayIndex: Int = 0, onChange: @escaping () -> Void) {
+        let minute = Int(now.timeIntervalSince1970 / 60)
+        let configuration = "\(provider)/\(category)/\(displayID)/\(displayIndex)"
+        activeMinute = minute
+        if configuration != activeConfiguration {
+            preloader?.cancel(); preloader = nil; preloadMinute = nil
+            activeConfiguration = configuration
+        }
+        if let target = preloadMinute, target < minute {
+            preloader?.cancel(); preloader = nil; preloadMinute = nil
+        }
+        if preloadMinute == minute, let loader = preloader {
+            task?.cancel()
+            requestedKey = "\(provider)/\(category)/\(minute)/\(displayID)/\(displayIndex)"
+            if let photo = loader.loadedPhoto, let data = loader.loadedData, let image = loader.image {
+                task?.cancel()
+                requestedKey = "\(provider)/\(category)/\(minute)/\(displayID)/\(displayIndex)"
+                catalogues.merge(loader.catalogues) { _, new in new }
+                accept(photo: photo, data: data, image: image)
+                preloader = nil; preloadMinute = nil
+                onChange()
+            }
+            // Otherwise keep the previous photo until this same request finishes.
+        } else {
+            request(now: now, size: size, provider: provider, category: category, displayID: displayID, displayIndex: displayIndex, onChange: onChange)
+        }
+        if prefetchEnabled, now.timeIntervalSince1970.truncatingRemainder(dividingBy: 60) >= 45,
+           image != nil, preloadMinute == nil {
+            let target = minute + 1
+            let loader = NativePhotoBackground(cacheURL: nil, session: session, prefetchEnabled: false)
+            loader.catalogues = catalogues
+            preloader = loader; preloadMinute = target
+            loader.request(now: Date(timeIntervalSince1970: Double(target * 60)), size: size, provider: provider, category: category, displayID: displayID, displayIndex: displayIndex) { [weak self, weak loader] in
+                guard let self, let loader, self.preloader === loader, self.activeConfiguration == configuration,
+                      self.activeMinute == target, let photo = loader.loadedPhoto, let data = loader.loadedData, let image = loader.image else { return }
+                self.task?.cancel()
+                self.requestedKey = "\(provider)/\(category)/\(target)/\(displayID)/\(displayIndex)"
+                self.catalogues.merge(loader.catalogues) { _, new in new }
+                self.accept(photo: photo, data: data, image: image)
+                self.preloader = nil; self.preloadMinute = nil
+                onChange()
+            }
+        }
+        if transitionFraction >= 1 { previousImage = nil; transitionStarted = nil }
+    }
+    private func request(now: Date, size: NSSize, provider: String = "picsum", category: String = "all", displayID: String = "0", displayIndex: Int = 0, onChange: @escaping () -> Void) {
         let minute = Int(now.timeIntervalSince1970 / 60)
         let key = "\(provider)/\(category)/\(minute)/\(displayID)/\(displayIndex)"
         guard key != requestedKey, size.width > 0, size.height > 0 else { return }
@@ -123,31 +188,42 @@ final class NativePhotoBackground {
                   let data, data.count <= 12 * 1024 * 1024, let image = NSImage(data: data), image.isValid else { return }
             DispatchQueue.main.async {
                 guard let self, self.requestedKey == key else { return }
-                self.image = image
-                self.credit = photo.credit
-                if let url = self.cacheURL {
-                    try? FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
-                    try? data.write(to: url, options: .atomic)
-                    if let metadata = try? JSONEncoder().encode(photo) { try? metadata.write(to: url.appendingPathExtension("json"), options: .atomic) }
-                }
+                self.accept(photo: photo, data: data, image: image)
                 onChange()
             }
         }
         task?.resume()
     }
-    func cancel() { task?.cancel(); task = nil; requestedKey = nil }
+    private func accept(photo: Photo, data: Data, image: NSImage) {
+        previousImage = self.image
+        transitionStarted = previousImage == nil ? nil : Date()
+        self.image = image; credit = photo.credit
+        loadedPhoto = photo; loadedData = data
+        if let url = cacheURL {
+            try? FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
+            try? data.write(to: url, options: .atomic)
+            if let metadata = try? JSONEncoder().encode(photo) { try? metadata.write(to: url.appendingPathExtension("json"), options: .atomic) }
+        }
+    }
+    func cancel() {
+        task?.cancel(); task = nil; requestedKey = nil
+        preloader?.cancel(); preloader = nil; preloadMinute = nil
+    }
     static func overlayColor(dark: Bool) -> NSColor {
         NativeAppearance.color(dark ? "#111111" : "#dddddd")!.withAlphaComponent(dark ? 0.5 : 0.4)
     }
-    func draw(in bounds: NSRect, dark: Bool) {
-        if let image, image.size.width > 0, image.size.height > 0 {
+    func draw(in bounds: NSRect, dark: Bool, finalOnly: Bool = false) {
+        func drawImage(_ image: NSImage, fraction: CGFloat) {
+            guard image.size.width > 0, image.size.height > 0 else { return }
             let factor = max(bounds.width / image.size.width, bounds.height / image.size.height)
             let size = NSSize(width: image.size.width * factor, height: image.size.height * factor)
             NSGraphicsContext.saveGraphicsState()
             NSBezierPath(rect: bounds).addClip()
-            image.draw(in: NSRect(x: bounds.midX - size.width / 2, y: bounds.midY - size.height / 2, width: size.width, height: size.height))
+            image.draw(in: NSRect(x: bounds.midX - size.width / 2, y: bounds.midY - size.height / 2, width: size.width, height: size.height), from: .zero, operation: .sourceOver, fraction: fraction)
             NSGraphicsContext.restoreGraphicsState()
         }
+        if let previousImage, isTransitioning, !finalOnly { drawImage(previousImage, fraction: 1) }
+        if let image { drawImage(image, fraction: finalOnly ? 1 : transitionFraction) }
         Self.overlayColor(dark: dark).setFill()
         bounds.fill()
         if !credit.isEmpty {

@@ -70,3 +70,7 @@ The committed pattern PNGs are generated from the web SVGs with `scripts/render-
 Glass progress has 28-point rounded leading corners, shrinking smoothly to zero during the last 8% of the minute. Its bevel fades softly where the curve meets the screen edges. `--rounded-glass-preview` sweeps a full cycle in 12 seconds.
 
 Both glass progress modes refract the moving edge and the full top/bottom edges. Horizontal highlights use 12% of the vertical highlight strength to keep the rim subtle. Narrow strips are rendered rather than processing the whole pane.
+
+`--showcase-preview` opens an isolated recording workspace: English, Spanish, Chinese and French each retain one frozen passage across three two-second styles (24 seconds per loop). Every language includes Photo and two other themes, with colour/pattern changes and clock visibility variations, cycling through Bottom, flat Background and Foreground Liquid Glass. Cmd-R restarts at English; Cmd-P pauses/resumes the demonstration. Progress advances continuously from left to right across the entire 24-second loop. Settings are separate from the installed saver.
+
+Photo prefetches the next minute during the final 15 seconds. A ready photo crossfades for 650 ms at the minute boundary; a late download crossfades on completion. Failed downloads preserve the current photo. Glass samples the same animated blend, reusing cached background snapshots and processing only its bevel strips.

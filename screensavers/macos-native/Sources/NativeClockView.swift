@@ -132,6 +132,9 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     var quote: NativeQuote?
     var quoteLocale = "en-GB"
     var started = Date()
+    var previewQuoteDate: Date?
+    var previewProgressDuration: TimeInterval?
+    var previewProgressPausedElapsed: TimeInterval?
     var cache: [String: [String: [NativeQuote]]] = [:]
     private var layoutKey = ""
     private var layoutText: NSAttributedString?
@@ -145,6 +148,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     private var passageView: NSImageView?
     private var opticalSource: CIImage?
     private var opticalSourceKey = ""
+    private var previousPhotoOpticalSource: CIImage?
+    private var finalPhotoOpticalSource: CIImage?
     private var patternKey = ""
     private var patternImage: NSImage?
     var themeName: String { (preferences.string(forKey: "theme") ?? "base-dark").split(separator: "-").first.map(String.init) ?? "base" }
@@ -208,6 +213,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         return result
     }
     func refreshQuote(_ now: Date) {
+        let now = previewQuoteDate ?? now
         let components = Calendar.current.dateComponents([.hour, .minute], from: now)
         let minute = String(format: "%02d:%02d", components.hour ?? 0, components.minute ?? 0)
         let displayIndex = photoDisplayIndex
@@ -323,12 +329,19 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             let backgroundImage = NSImage(size: bounds.size, flipped: false) { [self] rect in
                 background.setFill(); rect.fill()
                 NativeAppearance.drawThemeBackground(theme: theme, dark: dark, bounds: rect, resources: resources)
-                if theme == "photo" { photoBackground.draw(in: rect, dark: dark) }
+                if theme == "photo" { photoBackground.draw(in: rect, dark: dark, finalOnly: true) }
                 patternImage?.draw(in: rect)
                 return true
             }
+            previousPhotoOpticalSource = theme == "photo" && photoBackground.isTransitioning ? opticalSource : nil
             opticalSource = backgroundImage.tiffRepresentation.flatMap { CIImage(data: $0) }
+            finalPhotoOpticalSource = opticalSource
             opticalSourceKey = opticalKey
+        }
+        if theme == "photo", let final = finalPhotoOpticalSource {
+            if photoBackground.isTransitioning, let previous = previousPhotoOpticalSource {
+                opticalSource = previous.applyingFilter("CIDissolveTransition", parameters: ["inputTargetImage": final, "inputTime": photoBackground.transitionFraction])
+            } else { opticalSource = final; previousPhotoOpticalSource = nil }
         }
         let timeFont = NSFont.systemFont(ofSize: max(10, min(20, bounds.width * 0.013)), weight: .bold)
         var progressSource = opticalSource
@@ -366,7 +379,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         }
         let foregroundGlass = preferences.string(forKey: "progressbar") == "glass-foreground"
         if !foregroundGlass, let pane = glassProgressView { addSubview(pane, positioned: .below, relativeTo: nil) }
-        let progress = fullProgressPreviewSweep ? now.timeIntervalSince(started).truncatingRemainder(dividingBy: 12) / 12 : interactionPreviewSweep ? 0.5 + sin(now.timeIntervalSince(started) / 3) * 0.13 : now.timeIntervalSince1970.truncatingRemainder(dividingBy: 60) / 60
+        let progress = previewProgressDuration.map { min(1, max(0, (previewProgressPausedElapsed ?? now.timeIntervalSince(started)) / $0)) } ?? (fullProgressPreviewSweep ? now.timeIntervalSince(started).truncatingRemainder(dividingBy: 12) / 12 : interactionPreviewSweep ? 0.5 + sin(now.timeIntervalSince(started) / 3) * 0.13 : now.timeIntervalSince1970.truncatingRemainder(dividingBy: 60) / 60)
         let progressMode = preferences.string(forKey: "progressbar") ?? "none"
         let progressColor = NativeAppearance.progressForeground(theme: theme, dark: dark, accent: accent)
         let glassProgress = updateGlassProgress(mode: progressMode, progress: progress, dark: dark, tint: progressColor.withAlphaComponent(foregroundGlass ? 0.025 : 0.1))

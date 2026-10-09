@@ -4,6 +4,8 @@ import CoreImage
 final class PhotoCheckProtocol: URLProtocol {
     static var count = 0
     static var status = 200
+    static var delay: TimeInterval = 0
+    private var cancelled = false
     static var imageData = Data()
     static var catalogueData = Data()
     override class func canInit(with request: URLRequest) -> Bool { true }
@@ -12,16 +14,26 @@ final class PhotoCheckProtocol: URLProtocol {
         Self.count += 1
         let isCatalogue = request.url?.host == "images-api.nasa.gov" || request.url?.host == "commons.wikimedia.org"
         let response = HTTPURLResponse(url: request.url!, statusCode: Self.status, httpVersion: "HTTP/1.1", headerFields: ["Content-Type": isCatalogue ? "application/json" : "image/png"])!
-        client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
-        client?.urlProtocol(self, didLoad: isCatalogue ? Self.catalogueData : Self.imageData)
-        client?.urlProtocolDidFinishLoading(self)
+        let payload = isCatalogue ? Self.catalogueData : Self.imageData
+        let deliver = { [self] in
+            guard !cancelled else { return }
+            client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+            client?.urlProtocol(self, didLoad: payload)
+            client?.urlProtocolDidFinishLoading(self)
+        }
+        if Self.delay > 0 { DispatchQueue.global().asyncAfter(deadline: .now() + Self.delay, execute: deliver) }
+        else { deliver() }
     }
-    override func stopLoading() {}
+    override func stopLoading() { cancelled = true }
 }
 
 final class PreviewDelegate: NSObject, NSApplicationDelegate {
     var window: NSWindow!
     var clock: NativeClockView!
+    private var showcaseTimer: Timer?
+    private var showcaseStep = 0
+    private var showcasePlan: [(locale: String, theme: String, palette: String, pattern: String, time: Bool, progress: String)] = []
+
     func applicationDidFinishLaunching(_ notification: Notification) {
         window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 1100, height: 720), styleMask: [.titled, .closable, .resizable], backing: .buffered, defer: false)
         clock = NativeClockView(frame: window.contentView!.bounds, isPreview: false)!
@@ -63,6 +75,12 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             window.title = "Literature Clock — Rounded glass progress"
         }
         clock.startAnimation()
+        if CommandLine.arguments.contains("--showcase-preview") {
+            submenu.insertItem(withTitle: "Restart showcase", action: #selector(restartShowcase), keyEquivalent: "r", at: 1).target = self
+            submenu.insertItem(withTitle: "Pause / resume showcase", action: #selector(toggleShowcase), keyEquivalent: "p", at: 2).target = self
+            prepareShowcase()
+            restartShowcase()
+        }
         if CommandLine.arguments.contains("--check-render") {
             let keys = ["theme", "background-pattern", "palette", "custom-color", "show-time", "hide-book-title", "quote-locales", "work", "locale", "screensaver", "progressbar"]
             let saved = keys.map { ($0, clock.preferences.object(forKey: $0)) }
@@ -299,7 +317,7 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             defer { try? FileManager.default.removeItem(at: photoCache); try? FileManager.default.removeItem(at: photoCache.appendingPathExtension("json")) }
             let photo = NativePhotoBackground(cacheURL: photoCache, session: URLSession(configuration: config))
             var loaded = false
-            let now = Date()
+            let now = Date(timeIntervalSince1970: floor(Date().timeIntervalSince1970 / 60) * 60 + 10)
             for _ in 0..<60 { photo.update(now: now, size: NSSize(width: 1100, height: 720)) { loaded = true } }
             let deadline = Date().addingTimeInterval(3)
             while !loaded && Date() < deadline { RunLoop.current.run(until: Date().addingTimeInterval(0.01)) }
@@ -336,6 +354,36 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             let commonsDeadline = Date().addingTimeInterval(3)
             while !commonsLoaded && Date() < commonsDeadline { RunLoop.current.run(until: Date().addingTimeInterval(0.01)) }
             precondition(commonsLoaded && PhotoCheckProtocol.count == 7 && commons.credit == "A & B / Wikimedia Commons / CC0", "Commons catalogue/credits failed")
+            let staged = NativePhotoBackground(cacheURL: photoCache, session: URLSession(configuration: config))
+            staged.update(now: now, size: NSSize(width: 1100, height: 720)) {}
+            let stagedInitialDeadline = Date().addingTimeInterval(0.2)
+            while Date() < stagedInitialDeadline { RunLoop.current.run(until: Date().addingTimeInterval(0.01)) }
+            let oldImage = staged.image!
+            let early = now.addingTimeInterval(36)
+            var changed = false
+            staged.update(now: early, size: NSSize(width: 1100, height: 720)) { changed = true }
+            let readyDeadline = Date().addingTimeInterval(1)
+            while Date() < readyDeadline { RunLoop.current.run(until: Date().addingTimeInterval(0.01)) }
+            precondition(staged.image === oldImage, "Prefetch must not change the visible photo early")
+            changed = false
+            staged.update(now: now.addingTimeInterval(50), size: NSSize(width: 1100, height: 720)) { changed = true }
+            precondition(changed && staged.image !== oldImage && staged.isTransitioning, "Ready prefetch must start fading at the minute boundary")
+            let late = NativePhotoBackground(cacheURL: photoCache, session: URLSession(configuration: config))
+            // Finish the current-minute load before starting a delayed prefetch.
+            late.update(now: now, size: NSSize(width: 1100, height: 720)) {}
+            let initialDeadline = Date().addingTimeInterval(0.2)
+            while Date() < initialDeadline { RunLoop.current.run(until: Date().addingTimeInterval(0.01)) }
+            PhotoCheckProtocol.delay = 0.2
+            let lateOld = late.image!
+            late.update(now: early, size: NSSize(width: 1100, height: 720)) {}
+            late.update(now: now.addingTimeInterval(50), size: NSSize(width: 1100, height: 720)) {}
+            precondition(late.image === lateOld, "Late prefetch must retain the current image while waiting")
+            let lateDeadline = Date().addingTimeInterval(2)
+            while late.image === lateOld && Date() < lateDeadline { RunLoop.current.run(until: Date().addingTimeInterval(0.01)) }
+            precondition(late.image !== lateOld && late.isTransitioning, "Late prefetch must fade when its download finishes")
+            PhotoCheckProtocol.delay = 0
+            staged.cancel(); late.cancel()
+
             commons.cancel()
             _ = clock.configureSheet
             let providerMenu = clock.controls["photo-provider"] as! NSPopUpButton
@@ -384,9 +432,81 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             clock.stopAnimation(); NSApp.terminate(nil)
         }
     }
+    private func prepareShowcase() {
+        let locales = ["en-GB", "es-ES", "zh-CN", "fr-FR"]
+        let actualLocales = locales.map { locale in clock.localeNames.first { $0.hasPrefix(locale.split(separator: "-").first! + "-") } ?? locale }
+        let catalogues = actualLocales.map { clock.catalogue($0) }
+        let common = catalogues.reduce(Set(catalogues[0].keys)) { $0.intersection($1.keys) }
+        let minute = common.filter { minute in catalogues.allSatisfy { ($0[minute] ?? []).contains { $0.sfw } } }.min { a, b in
+            func score(_ minute: String) -> Int { catalogues.enumerated().reduce(0) { total, item in total + (item.element[minute]!.filter { $0.sfw }.map { abs($0.first.count + $0.time.count + $0.last.count - (actualLocales[item.offset].hasPrefix("zh") ? 110 : 220)) }.min() ?? 10000) } }
+            return score(a) < score(b)
+        } ?? "16:00"
+        let parts = minute.split(separator: ":").compactMap { Int($0) }
+        clock.previewQuoteDate = Calendar.current.date(bySettingHour: parts[0], minute: parts[1], second: 0, of: Date())
+        for locale in actualLocales {
+            let choices = clock.catalogue(locale)[minute]!.filter { $0.sfw }
+            if let quote = choices.min(by: { abs($0.first.count + $0.time.count + $0.last.count - (locale.hasPrefix("zh") ? 110 : 220)) < abs($1.first.count + $1.time.count + $1.last.count - (locale.hasPrefix("zh") ? 110 : 220)) }) {
+                clock.cache[locale]?[minute] = [quote]
+            }
+        }
+        let defaults = UserDefaults(suiteName: "net.literatureclock.showcase." + UUID().uuidString)!
+        defaults.register(defaults: ["theme": "photo-dark", "progressbar": "glass-foreground", "photo-provider": "picsum", "photo-category": "all", "screensaver": false, "work": true, "show-time": true, "bilingual": false, "hide-book-title": false, "palette": "default", "background-pattern": "none"])
+        clock.preferences = defaults
+        clock.photoDownloadsEnabled = true
+        clock.interactionPreviewSweep = false
+        clock.previewProgressDuration = 24
+        for (index, locale) in actualLocales.enumerated() {
+            // Each language gets Photo plus two different native themes.
+            let plain = ["base", "bohemian", "festive"].randomElement()!
+            let other = ["book", "terminal", "retro"].randomElement()!
+            let themes = ["photo", plain, other].shuffled()
+            for (slot, theme) in themes.enumerated() {
+                let dark = (index + slot) % 2 == 0
+                showcasePlan.append((locale, theme + (dark ? "-dark" : "-light"), ["red", "blue", "green", "purple", "orange", "pink"].randomElement()!, theme == plain ? ["contours", "waves", "dots", "garden", "constellations"].randomElement()! : "none", slot != 1, ["bottom", "background", "glass-foreground"][slot]))
+            }
+        }
+        precondition(showcasePlan.count == 12 && stride(from: 0, to: 12, by: 3).allSatisfy { start in
+            let block = showcasePlan[start..<start + 3]
+            return Set(block.map { $0.locale }).count == 1 && block.contains { $0.theme.hasPrefix("photo-") }
+        })
+    }
+    private func applyShowcaseStep() {
+        if showcaseStep == 0 { clock.started = Date() }
+        let step = showcasePlan[showcaseStep % showcasePlan.count]
+        clock.preferences.set(step.locale, forKey: "quote-locales")
+        clock.preferences.set(step.theme, forKey: "theme")
+        clock.preferences.set(step.palette, forKey: "palette")
+        clock.preferences.set(step.pattern, forKey: "background-pattern")
+        clock.preferences.set(step.time, forKey: "show-time")
+        clock.preferences.set(step.progress, forKey: "progressbar")
+        clock.lastMinute = ""
+        clock.needsDisplay = true
+        window.title = "Literature Clock — Showcase · " + step.locale + " · " + String(showcaseStep % 3 + 1) + "/3"
+        showcaseStep = (showcaseStep + 1) % showcasePlan.count
+    }
+    private func runShowcaseTimer() {
+        showcaseTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak self] _ in self?.applyShowcaseStep() }
+    }
+    @objc private func restartShowcase() {
+        showcaseTimer?.invalidate()
+        showcaseStep = 0
+        clock.previewProgressPausedElapsed = nil
+        applyShowcaseStep()
+        runShowcaseTimer()
+    }
+    @objc private func toggleShowcase() {
+        if let timer = showcaseTimer {
+            timer.invalidate(); showcaseTimer = nil
+            clock.previewProgressPausedElapsed = Date().timeIntervalSince(clock.started)
+        } else {
+            if let elapsed = clock.previewProgressPausedElapsed { clock.started = Date().addingTimeInterval(-elapsed) }
+            clock.previewProgressPausedElapsed = nil
+            runShowcaseTimer()
+        }
+    }
     @objc func settings() { if let sheet = clock.configureSheet { window.beginSheet(sheet) } }
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { true }
-    func applicationWillTerminate(_ notification: Notification) { clock.stopAnimation() }
+    func applicationWillTerminate(_ notification: Notification) { showcaseTimer?.invalidate(); clock.stopAnimation() }
 }
 
 @main enum PreviewMain {
