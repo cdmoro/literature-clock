@@ -6,6 +6,12 @@ Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) (
 
 ![Literature Clock displaying a literary quote with the time highlighted](https://github.com/user-attachments/assets/15fedb98-8d39-418a-86fa-a7fd9d0077d2)
 
+Literature Clock is now available as a macOS screen saver! Customize your clock with 12 quote languages, multiple themes, photo backgrounds, and Liquid Glass progress.
+
+Download the macOS screen saver
+
+https://github.com/user-attachments/assets/626ca478-d170-4176-90d9-c46580fcfa91
+
 **[Open Literature Clock](https://literatureclock.netlify.app/)** · [Themes](#themes) · [Settings](#settings) · [Screensaver](#screensaver) · [Language incubator](#language-incubator) · [Contributing](#contributing) · [Development](#development)
 
 > **Literature Clock for macOS** — Download the native screensaver from [Releases](https://github.com/cdmoro/literature-clock/releases), under `macos-native-vX.Y.Z` → **Assets** → `Literature-Clock-Native-macOS.zip`. It includes 12 quote languages, seven themes, 25 background patterns and optical Liquid Glass progress. Unzip and install `Literature Clock.saver`; see [installation instructions](screensavers/macos-native/README.md). Web and screensaver releases have independent versions.
