@@ -428,6 +428,10 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             }
             precondition(NativePhotoBackground.cacheURL(displayID: "primary") != NativePhotoBackground.cacheURL(displayID: "secondary"), "Offline photo cache was shared across displays")
             let screenFrame = NSRect(x: 0, y: 0, width: 1512, height: 982)
+            let clockFrame = NSRect(x: 720, y: 932, width: 72, height: 24)
+            let passageArea = NativeClockView.passageArea(bounds: screenFrame, clockFrame: clockFrame)
+            precondition(passageArea.maxY == clockFrame.minY - 16, "Passages must leave a gap below the clock")
+            precondition(NativeClockView.passageArea(bounds: screenFrame, clockFrame: nil) == screenFrame, "Hidden clock must not reserve space")
             precondition(NativeClockView.timeInset(viewFrame: screenFrame, screenFrame: screenFrame, safeTop: 32) == 50)
             precondition(NativeClockView.timeInset(viewFrame: NSRect(x: 0, y: 0, width: 1512, height: 950), screenFrame: screenFrame, safeTop: 32) == 18)
             precondition(NativeClockView.timeInset(viewFrame: screenFrame, screenFrame: screenFrame, safeTop: 0) == 18)

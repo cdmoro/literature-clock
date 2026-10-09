@@ -271,6 +271,11 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     static func timeInset(viewFrame: NSRect, screenFrame: NSRect, safeTop: CGFloat) -> CGFloat {
         18 + max(0, min(viewFrame.height, viewFrame.maxY - (screenFrame.maxY - safeTop)))
     }
+    static func passageArea(bounds: NSRect, clockFrame: NSRect?) -> NSRect {
+        guard let clockFrame else { return bounds }
+        return NSRect(x: bounds.minX, y: bounds.minY, width: bounds.width,
+                      height: max(0, min(bounds.maxY, clockFrame.minY - 16) - bounds.minY))
+    }
     private var timeTopInset: CGFloat {
         guard !isPreview, let window, let screen = window.screen else { return 18 }
         let frame = window.convertToScreen(convert(bounds, to: nil))
@@ -413,7 +418,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         }
         guard bounds.width > 0, bounds.height > 0, let quote else { passageView?.isHidden = true; return }
         let width = bounds.width * 0.76
-        let limit = bounds.height * 0.65
+        // Reserve the clock and a gap, including the Photo shadow's cache padding.
+        let area = Self.passageArea(bounds: bounds, clockFrame: preferences.bool(forKey: "show-time") ? timeLabel?.frame : nil)
+        let passagePadding: CGFloat = theme == "photo" ? 50 : 0
+        let limit = min(bounds.height * 0.65, max(1, area.height - passagePadding * 2 - 4))
         let paragraph = NSMutableParagraphStyle()
         paragraph.alignment = quoteLocale.hasPrefix("ar") ? .right : .left
         paragraph.lineBreakMode = .byWordWrapping
@@ -535,7 +543,12 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let elapsed = max(0, now.timeIntervalSince(started)) * (1 + Double(photoDisplayIndex) * 0.12)
         let moving = preferences.bool(forKey: "screensaver")
         let dx = moving ? sin(elapsed / 12) * bounds.width * 0.045 : 0
-        let dy = moving ? sin(elapsed / 17) * bounds.height * 0.055 : 0
+        let minY = area.minY
+        let maxY = max(minY, area.maxY - image.size.height)
+        let centreY = min(maxY, max(minY, bounds.midY - image.size.height / 2))
+        // Reduce the travel smoothly instead of clipping the moving text at a limit.
+        let travelY = min(bounds.height * 0.055, max(0, min(centreY - minY, maxY - centreY)))
+        let dy = moving ? sin(elapsed / 17) * travelY : 0
         // Keep the cached passage above the glass so only the background refracts.
         if passageView == nil {
             let view = NSImageView()
@@ -545,7 +558,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         }
         passageView?.image = image
         passageView?.frame = NSRect(x: (bounds.width - image.size.width) / 2 + dx,
-                                    y: (bounds.height - image.size.height) / 2 + dy,
+                                    y: centreY + dy,
                                     width: image.size.width, height: image.size.height)
         passageView?.isHidden = false
         if foregroundGlass, glassProgress, let pane = glassProgressView as? OpticalGlassView,
