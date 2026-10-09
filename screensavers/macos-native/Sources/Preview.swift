@@ -398,6 +398,9 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             let right = NativeClockView(frame: clock.bounds, isPreview: false)!
             left.preferences = clock.preferences; right.preferences = clock.preferences
             left.photoDownloadsEnabled = false; right.photoDownloadsEnabled = false
+            let screenRects = [CGRect(x: 0, y: 0, width: 1920, height: 1080), CGRect(x: 1920, y: 0, width: 3440, height: 1440)]
+            precondition(NativeClockView.displayIndex(viewRect: CGRect(x: 1920, y: 0, width: 3440, height: 1440), screens: screenRects, fallback: 0) == 1, "Preview subview on the second monitor must override the window screen")
+            precondition(NativeClockView.displayIndex(viewRect: CGRect(x: 0, y: 0, width: 1920, height: 1080), screens: screenRects, fallback: 1) == 0, "Primary monitor must resolve from actual view geometry")
             left.displayIndexOverride = 0; right.displayIndexOverride = 1
             var testParts = Calendar.current.dateComponents([.year, .month, .day], from: Date())
             testParts.hour = 12; testParts.minute = 0; testParts.second = 0

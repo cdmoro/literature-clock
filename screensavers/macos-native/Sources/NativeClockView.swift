@@ -93,7 +93,23 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     var interactionPreviewSweep = false
     var fullProgressPreviewSweep = false
     var fullEdgeEnabled = true
-    private var photoScreen: NSScreen? { window?.screen ?? NSScreen.screens.first }
+    static func displayIndex(viewRect: CGRect, screens: [CGRect], fallback: Int) -> Int {
+        let areas = screens.map { screen -> CGFloat in
+            let intersection = viewRect.intersection(screen)
+            return intersection.isNull ? 0 : intersection.width * intersection.height
+        }
+        guard let largest = areas.max(), largest > 0 else { return fallback }
+        if areas.indices.contains(fallback), areas[fallback] == largest { return fallback }
+        return areas.firstIndex(of: largest) ?? fallback
+    }
+    private var photoScreen: NSScreen? {
+        let screens = NSScreen.screens
+        guard let window else { return screens.first }
+        let rect = window.convertToScreen(convert(bounds, to: nil))
+        let fallback = screens.firstIndex { $0 == window.screen } ?? 0
+        let index = Self.displayIndex(viewRect: rect, screens: screens.map { $0.frame }, fallback: fallback)
+        return screens.indices.contains(index) ? screens[index] : window.screen
+    }
     private var photoDisplayID: String { (photoScreen?.deviceDescription[NSDeviceDescriptionKey(rawValue: "NSScreenNumber")] as? NSNumber)?.stringValue ?? "0" }
     // Synthetic display ordinals are used only by the standalone diagnostic.
     var displayIndexOverride: Int?
@@ -221,7 +237,11 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         lastMinute = minute
         lastDisplayIndex = displayIndex
         let selected = (preferences.string(forKey: "quote-locales") ?? "").split(separator: ",").map(String.init).filter { localeNames.contains($0) }
-        let languages = selected.isEmpty ? [systemLocale] : selected
+        let candidates = selected.isEmpty ? [systemLocale] : selected
+        let availableLanguages = candidates.filter { locale in
+            (catalogue(locale)[minute] ?? []).contains { !preferences.bool(forKey: "work") || $0.sfw }
+        }
+        let languages = availableLanguages.isEmpty ? candidates : availableLanguages
         let ordinal = (components.hour ?? 0) * 60 + (components.minute ?? 0)
         quoteLocale = languages[Self.variantIndex(count: languages.count, minute: ordinal, displayIndex: displayIndex)]
         for locale in [quoteLocale, "en-GB"] {
