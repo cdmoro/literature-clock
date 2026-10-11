@@ -449,7 +449,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let width = bounds.width * 0.76
         // Reserve the clock and a gap, including the Photo shadow's cache padding.
         let area = Self.passageArea(bounds: bounds, clockFrame: preferences.bool(forKey: "show-time") ? timeLabel?.frame : nil)
-        let passagePadding: CGFloat = theme == "photo" ? 50 : 0
+        let passagePadding: CGFloat = usesPhoto ? 50 : 0
         let limit = min(bounds.height * 0.65, max(1, area.height - passagePadding * 2 - 4))
         let paragraph = NSMutableParagraphStyle()
         paragraph.alignment = quoteLocale.hasPrefix("ar") ? .right : .left
@@ -512,7 +512,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             }
             return result
         }
-        let key = "\(quote.first)\(quote.time)\(quote.last)\(quote.title)\(quote.author)|\(theme)|\(quoteLocale)|\(width)|\(limit)|\(scale)|\(dark)|\(accent)|\(lastMinute)|\(preferences.bool(forKey: "hide-book-title"))"
+        let key = "\(quote.first)\(quote.time)\(quote.last)\(quote.title)\(quote.author)|\(theme)|\(backgroundMode)|\(quoteLocale)|\(width)|\(limit)|\(scale)|\(dark)|\(accent)|\(lastMinute)|\(preferences.bool(forKey: "hide-book-title"))"
         let bilingualKey = key + "|\(quote.id ?? "")|\(preferences.bool(forKey: "bilingual"))|\(preferences.string(forKey: "translation-locale") ?? "")|\(preferences.bool(forKey: "work"))"
         if bilingualKey != layoutKey {
             var low: CGFloat = 1, high = min(bounds.width * 0.043, bounds.height * 0.12)
@@ -528,7 +528,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             // a new fractional origin every frame independently snaps glyphs.
             let highlightPadding = theme == "book" ? low * 0.2 : 0
             // Leave room for the 25-point Photo halo on every side of the cache.
-            let shadowPadding: CGFloat = theme == "photo" ? 50 : 0
+            let shadowPadding: CGFloat = usesPhoto ? 50 : 0
             let size = NSSize(width: ceil(width + highlightPadding * 2 + shadowPadding * 2), height: layoutHeight + 4 + shadowPadding * 2)
             let bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(ceil(size.width * scale)), pixelsHigh: Int(ceil(size.height * scale)), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0)!
             bitmap.size = size
@@ -552,7 +552,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 manager.drawBackground(forGlyphRange: glyphs, at: .zero)
                 manager.drawGlyphs(forGlyphRange: glyphs, at: .zero)
             } else {
-                if theme == "photo" {
+                if usesPhoto {
                     let shadow = NSShadow()
                     shadow.shadowOffset = .zero
                     shadow.shadowBlurRadius = 25

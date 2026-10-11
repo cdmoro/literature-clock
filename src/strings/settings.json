@@ -126,7 +126,7 @@
     "settings_background_default": "Default theme",
     "settings_background_tinted": "Tinted",
     "settings_background_photo": "Photo",
-    "settings_background_plain": "Plain / None"
+    "settings_background_plain": "Plain"
   },
   "en-US": {
     "settings_title": "Settings",
@@ -255,7 +255,7 @@
     "settings_background_default": "Default theme",
     "settings_background_tinted": "Tinted",
     "settings_background_photo": "Photo",
-    "settings_background_plain": "Plain / None"
+    "settings_background_plain": "Plain"
   },
   "es-ES": {
     "settings_title": "Configuración",
@@ -384,7 +384,7 @@
     "settings_background_default": "Predeterminado del tema",
     "settings_background_tinted": "Teñido",
     "settings_background_photo": "Foto",
-    "settings_background_plain": "Liso / Ninguno"
+    "settings_background_plain": "Liso"
   },
   "pt-PT": {
     "settings_title": "Configurações",
@@ -513,7 +513,7 @@
     "settings_background_default": "Predefinição do tema",
     "settings_background_tinted": "Tingido",
     "settings_background_photo": "Fotografia",
-    "settings_background_plain": "Liso / Nenhum"
+    "settings_background_plain": "Liso"
   },
   "fr-FR": {
     "settings_title": "Paramètres",
@@ -642,7 +642,7 @@
     "settings_background_default": "Par défaut du thème",
     "settings_background_tinted": "Teinté",
     "settings_background_photo": "Photo",
-    "settings_background_plain": "Uni / Aucun"
+    "settings_background_plain": "Uni"
   },
   "it-IT": {
     "settings_title": "Impostazioni",
@@ -771,7 +771,7 @@
     "settings_background_default": "Predefinito del tema",
     "settings_background_tinted": "Colorato",
     "settings_background_photo": "Foto",
-    "settings_background_plain": "Uniforme / Nessuno"
+    "settings_background_plain": "Uniforme"
   },
   "de-DE": {
     "settings_title": "Einstellungen",
@@ -900,7 +900,7 @@
     "settings_background_default": "Theme-Standard",
     "settings_background_tinted": "Getönt",
     "settings_background_photo": "Foto",
-    "settings_background_plain": "Einfarbig / Keiner"
+    "settings_background_plain": "Einfarbig"
   },
   "el-GR": {
     "settings_title": "Ρυθμίσεις",
@@ -1029,7 +1029,7 @@
     "settings_background_default": "Προεπιλογή θέματος",
     "settings_background_tinted": "Χρωματισμένο",
     "settings_background_photo": "Φωτογραφία",
-    "settings_background_plain": "Απλό / Κανένα"
+    "settings_background_plain": "Απλό"
   },
   "zh-CN": {
     "settings_title": "设置",
@@ -1158,7 +1158,7 @@
     "settings_background_default": "主题默认",
     "settings_background_tinted": "着色",
     "settings_background_photo": "照片",
-    "settings_background_plain": "纯色 / 无"
+    "settings_background_plain": "纯色"
   },
   "ru-RU": {
     "settings_title": "Настройки",
@@ -1287,7 +1287,7 @@
     "settings_background_default": "По умолчанию для темы",
     "settings_background_tinted": "Тонированный",
     "settings_background_photo": "Фото",
-    "settings_background_plain": "Однотонный / Нет"
+    "settings_background_plain": "Однотонный"
   },
   "eo": {
     "settings_title": "Agordoj",
@@ -1416,7 +1416,7 @@
     "settings_background_default": "Defaŭlto de la etoso",
     "settings_background_tinted": "Nuancita",
     "settings_background_photo": "Foto",
-    "settings_background_plain": "Unukolora / Neniu"
+    "settings_background_plain": "Unukolora"
   },
   "ar-AE": {
     "settings_title": "الإعدادات",
@@ -1545,6 +1545,6 @@
     "settings_background_default": "الخلفية الافتراضية للسمة",
     "settings_background_tinted": "ملوّنة",
     "settings_background_photo": "صورة",
-    "settings_background_plain": "سادة / بدون"
+    "settings_background_plain": "سادة"
   }
 }

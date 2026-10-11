@@ -199,6 +199,11 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
                         clock.preferences.set("dots", forKey: "background-pattern")
                         let bitmap = clock.bitmapImageRepForCachingDisplay(in: clock.bounds)!
                         clock.cacheDisplay(in: clock.bounds, to: bitmap)
+                        if NativeAppearance.supportsBackground(theme: theme) {
+                            let passage = clock.subviews.compactMap { $0 as? NSImageView }.first!
+                            let expectedWidth = ceil(clock.bounds.width * 0.76 + (effective == "photo" ? 100 : 0))
+                            precondition(passage.image?.size.width == expectedWidth, "Photo halo must reserve raster padding in every theme and clear it when switching backgrounds")
+                        }
                         try! bitmap.representation(using: .png, properties: [:])!.write(to: output.appendingPathComponent(theme + "-" + mode + "-background-" + selected + ".png"))
                     }
                 }

@@ -79,3 +79,24 @@ html[data-background='photo'][data-background-pattern]:not([data-background-patt
   background-repeat: repeat;
   opacity: 0.35;
 }
+
+/* The Photo theme's diffuse halo follows the effective background. */
+html[data-background='photo'][data-theme$='light'] {
+  --photo-text-shadow: 0 0 25px #dfdfdf;
+}
+html[data-background='photo'][data-theme$='dark'] {
+  --photo-text-shadow: 0 0 25px #1c1c1c;
+}
+html[data-background='photo'] #quote {
+  text-shadow: var(--photo-text-shadow);
+}
+/* Retain the themes' characteristic shadows alongside the readability halo. */
+html[data-background='photo'][data-theme|='terminal'] #quote {
+  text-shadow: var(--photo-text-shadow), var(--terminal-text-shadow);
+}
+html[data-background='photo'][data-theme='terminal-light'] #quote cite {
+  text-shadow: var(--photo-text-shadow), var(--terminal-cite-shadow);
+}
+html[data-background='photo'][data-theme|='anaglyph'] #quote .time {
+  text-shadow: var(--photo-text-shadow), var(--shadow);
+}

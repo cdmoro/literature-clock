@@ -46,11 +46,9 @@
 
 [data-theme|='terminal'] blockquote {
   font-weight: bold;
-  text-shadow:
-    rgba(0, 24, 204, 0.5) 2px 0px 1px,
-    rgba(204, 0, 64, 0.3) -2px 0px 1px,
-    0px 0px 3px,
+  --terminal-text-shadow: rgba(0, 24, 204, 0.5) 2px 0px 1px, rgba(204, 0, 64, 0.3) -2px 0px 1px, 0px 0px 3px,
     color-mix(in srgb, var(--accent-color), transparent 70%) 0px 0px 15px;
+  text-shadow: var(--terminal-text-shadow);
 }
 
 [data-theme|='terminal'] blockquote:before,
@@ -102,10 +100,8 @@
 }
 
 [data-theme='terminal-light'] cite {
-  text-shadow:
-    rgba(0, 24, 204, 0.5) 1.5px 0px 1px,
-    rgba(204, 0, 64, 0.3) -1.5px 0px 1px,
-    0px 0px 3px;
+  --terminal-cite-shadow: rgba(0, 24, 204, 0.5) 1.5px 0px 1px, rgba(204, 0, 64, 0.3) -1.5px 0px 1px, 0px 0px 3px;
+  text-shadow: var(--terminal-cite-shadow);
 }
 
 [data-theme='terminal-dark'] {
