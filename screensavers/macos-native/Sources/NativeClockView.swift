@@ -814,7 +814,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         return window
     }
     @objc private func openVersionRelease() {
-        let version = Bundle(for: Self.self).object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "0.1.0"
+        let version = Bundle(for: Self.self).object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "0.2.0"
         if let url = URL(string: "https://github.com/cdmoro/literature-clock/releases/tag/macos-native-v" + version) { NSWorkspace.shared.open(url) }
     }
     @objc private func cancelOptions() {
