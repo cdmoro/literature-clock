@@ -15,7 +15,7 @@ dotnet publish "$source/LiteratureClock.csproj" -c Release -r $Runtime --self-co
 Check-Exit
 # Keep the native apphost and all runtime/resources together; a .scr is a Windows executable.
 Move-Item "$output/Literature Clock.exe" "$output/Literature Clock.scr" -Force
-Copy-Item "$source/Install.ps1", "$source/Uninstall.ps1", "$source/README.md" $output
+Copy-Item "$source/Install.ps1", "$source/Uninstall.ps1", "$source/Preview.ps1", "$source/README.md" $output
 if (!$SkipChecks -and $Runtime -eq 'win-x64') {
     $start = [System.Diagnostics.ProcessStartInfo]::new("$output/Literature Clock.scr", '--check')
     $start.UseShellExecute = $false # Bypass Windows' .scr file association (/s).

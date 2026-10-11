@@ -16,7 +16,7 @@ The complete folder must stay together: the `.scr` needs its DLLs and `Resources
 Windows execution-policy or download approval prompts may require your explicit approval.
 These are unsigned development builds, not signed public releases.
 
-For a manual portable preview, run `"Literature Clock.scr" --preview`; press **F2** for
+For a manual portable preview, run `Preview.ps1`; press **F2** for
 settings. `/c` opens settings, `/s` covers all monitors, and `/p HWND` embeds the Windows
 Settings thumbnail. Full-screen exits on keyboard, click or significant mouse movement;
 the window preview and embedded thumbnail remain open. Windows controls secure resume
