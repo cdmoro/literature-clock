@@ -52,7 +52,10 @@ public static class Appearance
         if (!fonts.TryGetValue(key, out var font))
         {
             var folder = Path.Combine(Catalogues.Root, "Fonts", key);
-            font = Fonts.GetFontFamilies(folder).FirstOrDefault() ?? new FontFamily("Segoe UI");
+            var directory = new Uri(folder + Path.DirectorySeparatorChar, UriKind.Absolute);
+            var discovered = Fonts.GetFontFamilies(directory).FirstOrDefault() ?? throw new InvalidDataException("Missing bundled font: " + key);
+            var familyName = discovered.FamilyNames.Values.First();
+            font = new FontFamily(directory.AbsoluteUri + "#" + familyName);
             fonts[key] = font;
         }
         return font;

@@ -26,7 +26,13 @@ public static class Checks
         {
             var rows=data.Get(locale); Assert(rows.Count>0,"Empty catalogue: "+locale);
             foreach(var pair in rows) Assert(pair.Value.All(q=>q.first!=null && q.time.Length>0 && q.last!=null),"Invalid highlights: "+locale);
-            foreach(var theme in Appearance.Themes) Assert(Appearance.Font(theme,locale).Source.Length>0,"Missing font");
+            foreach(var theme in Appearance.Themes)
+            {
+                var family=Appearance.Font(theme,locale);
+                var face=new Typeface(family,FontStyles.Normal,FontWeights.Normal,FontStretches.Normal);
+                Assert(face.TryGetGlyphTypeface(out var glyph),"Missing font typeface: "+theme+"/"+locale);
+                Assert(glyph.FontUri.IsFile && glyph.FontUri.LocalPath.StartsWith(Catalogues.Root,StringComparison.OrdinalIgnoreCase),"System fallback instead of bundled font: "+theme+"/"+locale);
+            }
         }
         var time=new DateTimeOffset(2026,10,11,12,0,0,TimeSpan.Zero);
         var (quote,language)=data.Select(time,p,0); Assert(quote.sfw,"Safe filter");
