@@ -32,6 +32,7 @@ public sealed class BookText : Decorator
         base.OnRender(drawingContext);
         void Paint(Rect rect)
         {
+            rect=text.TransformToAncestor(this).TransformBounds(rect);
             rect.Inflate(text.FontSize*.2,0);
             drawingContext.DrawRoundedRectangle(HighlightBrush,null,rect,text.FontSize*.12,text.FontSize*.12);
         }

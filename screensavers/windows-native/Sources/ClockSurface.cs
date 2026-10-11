@@ -153,7 +153,7 @@ public sealed class ClockSurface : Canvas
         void Append(Quote item,string language,double fontSize)
         {
             var flow=language.StartsWith("ar")?FlowDirection.RightToLeft:FlowDirection.LeftToRight;
-            var text=new TextBlock { TextWrapping=TextWrapping.Wrap, FontFamily=Appearance.Font(p.Theme,language), FontSize=fontSize, Foreground=Appearance.Brush(foreground,p.Theme=="terminal"?.8:1), FlowDirection=flow, LineHeight=fontSize*(p.Theme=="book"?1.35:p.Theme=="festive"?1.25:p.Theme=="terminal"?1.15:1.2), LineStackingStrategy=LineStackingStrategy.BlockLineHeight };
+            var text=new TextBlock { TextWrapping=TextWrapping.Wrap, FontFamily=Appearance.Font(p.Theme,language), FontSize=fontSize, Foreground=Appearance.Brush(foreground,p.Theme=="terminal"?.8:1), FlowDirection=flow, LineHeight=fontSize*Appearance.Font(p.Theme,language).LineSpacing*(p.Theme=="book"?1.35:p.Theme=="festive"?1.25:p.Theme=="terminal"?1.15:1), LineStackingStrategy=LineStackingStrategy.BlockLineHeight };
             text.Inlines.Add(new Run(item.first));
             var highlight=new Run(item.time);
             if(p.Theme!="book") highlight.Foreground=Appearance.Brush(accent);
