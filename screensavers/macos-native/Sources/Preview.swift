@@ -133,7 +133,9 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             let opticalImage = context.createCGImage(lens, from: area)!
             let opticalBitmap = NSBitmapImageRep(cgImage: opticalImage)
             try! opticalBitmap.representation(using: .png, properties: [:])!.write(to: output.appendingPathComponent("optical-dispersion.png"))
-            let parts = Calendar.current.dateComponents([.hour, .minute], from: Date())
+            let renderDate = Date()
+            clock.previewQuoteDate = renderDate
+            let parts = Calendar.current.dateComponents([.hour, .minute], from: renderDate)
             let minute = String(format: "%02d:%02d", parts.hour ?? 0, parts.minute ?? 0)
             for locale in clock.localeNames {
                 guard let quote = clock.catalogue(locale).values.first?.first else { fatalError("Empty catalogue: \(locale)") }
@@ -154,7 +156,8 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             unavailable.catalogueRetryAfter = unavailable.catalogueRetryAfter.mapValues { _ in Date.distantPast }
             unavailable.refreshQuote(Date())
             precondition(!unavailable.cache.isEmpty && unavailable.quote?.first.contains("Quote resources are unavailable") == false, "Recovered resources must reload during the same minute")
-            clock.refreshQuote(Date().addingTimeInterval(60))
+            clock.previewQuoteDate = nil
+            clock.refreshQuote(renderDate.addingTimeInterval(60))
             precondition(clock.lastMinute != minute, "Minute change did not update the native clock")
             clock.preferences.set("el-GR", forKey: "quote-locales")
             clock.preferences.set(true, forKey: "work")
@@ -162,6 +165,8 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             gap.hour = 12; gap.minute = 34
             clock.lastMinute = ""; clock.refreshQuote(Calendar.current.date(from: gap)!)
             precondition(clock.quote?.last.isEmpty == false, "Missing minute must explain the missing quote")
+            // Rendering can span a minute boundary; keep diagnostic quotes stable.
+            clock.previewQuoteDate = renderDate
             for theme in NativeAppearance.themes {
                 clock.preferences.set(theme + "-dark", forKey: "theme")
                 for locale in clock.localeNames {
