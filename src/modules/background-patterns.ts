@@ -60,7 +60,7 @@ export function initBackgroundPatterns(dialog: HTMLDialogElement) {
         `<button type="button" class="pattern-option" data-pattern="${pattern}" aria-pressed="false"><span class="pattern-swatch background-pattern-surface" data-background-pattern="${pattern}" aria-hidden="true">${pattern === 'random' ? readingIcon('shuffle') : ''}<span class="pattern-selected-icon">${readingIcon('check')}</span></span><span data-text="settings_pattern_${pattern}">${pattern}</span></button>`,
     ).join('')}</div>`;
   const picker = dialog.querySelector('.settings-theme-picker');
-  if (picker) picker.after(row);
+  if (picker) (dialog.querySelector('#photo-settings') || picker).after(row);
   else dialog.querySelector('#settings-appearance')!.append(row);
   const toggle = row.querySelector<HTMLButtonElement>('#pattern-picker-toggle')!;
   const menu = row.querySelector<HTMLElement>('#pattern-picker-menu')!;

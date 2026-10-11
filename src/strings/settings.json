@@ -121,7 +121,12 @@
     "settings_photo_bridges": "Bridges",
     "settings_photo_art": "Art",
     "settings_photo_beaches": "Beaches",
-    "settings_photo_sunsets": "Sunsets"
+    "settings_photo_sunsets": "Sunsets",
+    "settings_background": "Background",
+    "settings_background_default": "Default theme",
+    "settings_background_tinted": "Tinted",
+    "settings_background_photo": "Photo",
+    "settings_background_plain": "Plain / None"
   },
   "en-US": {
     "settings_title": "Settings",
@@ -245,7 +250,12 @@
     "settings_photo_bridges": "Bridges",
     "settings_photo_art": "Art",
     "settings_photo_beaches": "Beaches",
-    "settings_photo_sunsets": "Sunsets"
+    "settings_photo_sunsets": "Sunsets",
+    "settings_background": "Background",
+    "settings_background_default": "Default theme",
+    "settings_background_tinted": "Tinted",
+    "settings_background_photo": "Photo",
+    "settings_background_plain": "Plain / None"
   },
   "es-ES": {
     "settings_title": "Configuración",
@@ -369,7 +379,12 @@
     "settings_photo_bridges": "Puentes",
     "settings_photo_art": "Arte",
     "settings_photo_beaches": "Playas",
-    "settings_photo_sunsets": "Atardeceres"
+    "settings_photo_sunsets": "Atardeceres",
+    "settings_background": "Fondo",
+    "settings_background_default": "Predeterminado del tema",
+    "settings_background_tinted": "Teñido",
+    "settings_background_photo": "Foto",
+    "settings_background_plain": "Liso / Ninguno"
   },
   "pt-PT": {
     "settings_title": "Configurações",
@@ -493,7 +508,12 @@
     "settings_photo_bridges": "Pontes",
     "settings_photo_art": "Arte",
     "settings_photo_beaches": "Praias",
-    "settings_photo_sunsets": "Pôr do sol"
+    "settings_photo_sunsets": "Pôr do sol",
+    "settings_background": "Fundo",
+    "settings_background_default": "Predefinição do tema",
+    "settings_background_tinted": "Tingido",
+    "settings_background_photo": "Fotografia",
+    "settings_background_plain": "Liso / Nenhum"
   },
   "fr-FR": {
     "settings_title": "Paramètres",
@@ -617,7 +637,12 @@
     "settings_photo_bridges": "Ponts",
     "settings_photo_art": "Art",
     "settings_photo_beaches": "Plages",
-    "settings_photo_sunsets": "Couchers de soleil"
+    "settings_photo_sunsets": "Couchers de soleil",
+    "settings_background": "Fond",
+    "settings_background_default": "Par défaut du thème",
+    "settings_background_tinted": "Teinté",
+    "settings_background_photo": "Photo",
+    "settings_background_plain": "Uni / Aucun"
   },
   "it-IT": {
     "settings_title": "Impostazioni",
@@ -741,7 +766,12 @@
     "settings_photo_bridges": "Ponti",
     "settings_photo_art": "Arte",
     "settings_photo_beaches": "Spiagge",
-    "settings_photo_sunsets": "Tramonti"
+    "settings_photo_sunsets": "Tramonti",
+    "settings_background": "Sfondo",
+    "settings_background_default": "Predefinito del tema",
+    "settings_background_tinted": "Colorato",
+    "settings_background_photo": "Foto",
+    "settings_background_plain": "Uniforme / Nessuno"
   },
   "de-DE": {
     "settings_title": "Einstellungen",
@@ -865,7 +895,12 @@
     "settings_photo_bridges": "Brücken",
     "settings_photo_art": "Kunst",
     "settings_photo_beaches": "Strände",
-    "settings_photo_sunsets": "Sonnenuntergänge"
+    "settings_photo_sunsets": "Sonnenuntergänge",
+    "settings_background": "Hintergrund",
+    "settings_background_default": "Theme-Standard",
+    "settings_background_tinted": "Getönt",
+    "settings_background_photo": "Foto",
+    "settings_background_plain": "Einfarbig / Keiner"
   },
   "el-GR": {
     "settings_title": "Ρυθμίσεις",
@@ -989,7 +1024,12 @@
     "settings_photo_bridges": "Γέφυρες",
     "settings_photo_art": "Τέχνη",
     "settings_photo_beaches": "Παραλίες",
-    "settings_photo_sunsets": "Ηλιοβασιλέματα"
+    "settings_photo_sunsets": "Ηλιοβασιλέματα",
+    "settings_background": "Φόντο",
+    "settings_background_default": "Προεπιλογή θέματος",
+    "settings_background_tinted": "Χρωματισμένο",
+    "settings_background_photo": "Φωτογραφία",
+    "settings_background_plain": "Απλό / Κανένα"
   },
   "zh-CN": {
     "settings_title": "设置",
@@ -1113,7 +1153,12 @@
     "settings_photo_bridges": "桥梁",
     "settings_photo_art": "艺术",
     "settings_photo_beaches": "海滩",
-    "settings_photo_sunsets": "日落"
+    "settings_photo_sunsets": "日落",
+    "settings_background": "背景",
+    "settings_background_default": "主题默认",
+    "settings_background_tinted": "着色",
+    "settings_background_photo": "照片",
+    "settings_background_plain": "纯色 / 无"
   },
   "ru-RU": {
     "settings_title": "Настройки",
@@ -1237,7 +1282,12 @@
     "settings_photo_bridges": "Мосты",
     "settings_photo_art": "Искусство",
     "settings_photo_beaches": "Пляжи",
-    "settings_photo_sunsets": "Закаты"
+    "settings_photo_sunsets": "Закаты",
+    "settings_background": "Фон",
+    "settings_background_default": "По умолчанию для темы",
+    "settings_background_tinted": "Тонированный",
+    "settings_background_photo": "Фото",
+    "settings_background_plain": "Однотонный / Нет"
   },
   "eo": {
     "settings_title": "Agordoj",
@@ -1361,7 +1411,12 @@
     "settings_photo_bridges": "Pontoj",
     "settings_photo_art": "Arto",
     "settings_photo_beaches": "Strandoj",
-    "settings_photo_sunsets": "Sunsubiroj"
+    "settings_photo_sunsets": "Sunsubiroj",
+    "settings_background": "Fono",
+    "settings_background_default": "Defaŭlto de la etoso",
+    "settings_background_tinted": "Nuancita",
+    "settings_background_photo": "Foto",
+    "settings_background_plain": "Unukolora / Neniu"
   },
   "ar-AE": {
     "settings_title": "الإعدادات",
@@ -1485,6 +1540,11 @@
     "settings_photo_bridges": "الجسور",
     "settings_photo_art": "الفن",
     "settings_photo_beaches": "الشواطئ",
-    "settings_photo_sunsets": "غروب الشمس"
+    "settings_photo_sunsets": "غروب الشمس",
+    "settings_background": "الخلفية",
+    "settings_background_default": "الخلفية الافتراضية للسمة",
+    "settings_background_tinted": "ملوّنة",
+    "settings_background_photo": "صورة",
+    "settings_background_plain": "سادة / بدون"
   }
 }

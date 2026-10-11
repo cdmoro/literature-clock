@@ -1,3 +1,4 @@
+import { refreshBackground } from './background';
 import { updatePhotoBackground, clearPhotoBackground } from './photo-background';
 import { refreshBackgroundPattern } from './background-patterns';
 import { refreshLocaleThemeFonts } from './locale-fonts';
@@ -168,6 +169,7 @@ export function initTheme() {
 }
 
 function applyCustomColor(theme = 'base') {
+  refreshBackground();
   refreshBackgroundPattern();
   const root = document.documentElement;
   root.dataset.variant = store.get('theme').split('-')[1] || 'system';
@@ -252,14 +254,6 @@ export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
 
   if (theme === 'horizon') {
     setDayParameters();
-  }
-
-  if (theme === 'photo' && !isVariantChange) {
-    setDynamicBackgroundPicture();
-  }
-
-  if (theme !== 'photo') {
-    removeBackgroundImage();
   }
 
   document.documentElement.dataset.theme = `${theme}-${variant}`;

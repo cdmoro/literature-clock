@@ -9,6 +9,7 @@ export function themePreviewDocument() {
   const liveQuote = document.getElementById('quote');
   const previewFont = liveQuote ? getComputedStyle(liveQuote).fontFamily.split(',')[0].replace(/["']/g, '').trim() : '';
   root.dataset.previewFont = previewFont;
+  root.dataset.background = root.dataset.theme?.startsWith('photo') ? 'photo' : 'default';
   const head = document.createElement('head');
   const base = document.createElement('base');
   const baseUrl = new URL(document.baseURI);

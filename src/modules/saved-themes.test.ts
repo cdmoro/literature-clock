@@ -36,6 +36,7 @@ function setup() {
 test('saves independent snapshots with automatic and optional user names', () => {
   setup();
   const form = document.getElementById('save-theme-form')!;
+  store.set('background', 'tinted');
   store.set('photo-provider', 'nasa');
   store.set('photo-category', 'moon');
   store.set('color', '#123456');
@@ -43,6 +44,7 @@ test('saves independent snapshots with automatic and optional user names', () =>
   store.set('color', '#654321');
   form.dispatchEvent(new Event('submit', { cancelable: true }));
   expect(readSavedThemes().map((entry) => entry.name)).toEqual(['Base (custom) 1', 'Base (custom) 2']);
+  expect(readSavedThemes()[0].settings.background).toBe('tinted');
   expect(readSavedThemes()[0].settings.color).toBe('#123456');
   expect(readSavedThemes()[0].settings['photo-provider']).toBe('nasa');
   expect(readSavedThemes()[0].settings['photo-category']).toBe('moon');

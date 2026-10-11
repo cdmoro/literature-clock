@@ -1,3 +1,4 @@
+import { resolveBackground } from '../utils/background';
 import { setTextLocale } from '../utils/text-direction';
 import { refreshDefaultFontLabel } from './font';
 import { applyLocaleThemeFont } from './locale-fonts';
@@ -153,7 +154,7 @@ export async function updateQuote({
       document.dispatchEvent(new CustomEvent('quote-changing', { detail: { minuteTick } }));
       store.set('active-quote', quote);
       updateGHLinks(time, quote, locale);
-      if (store.get('theme')?.startsWith('photo')) {
+      if (resolveBackground(store.get('theme'), store.get('background')) === 'photo') {
         setDynamicBackgroundPicture();
       } else {
         removeBackgroundImage();

@@ -1,3 +1,4 @@
+import { resolveBackground } from '../utils/background';
 import QUERIES from '../photo-providers.json';
 import { store } from '../store';
 import SETTINGS from '../strings/settings.json';
@@ -128,12 +129,12 @@ export function clearPhotoBackground() {
     pending.src = '';
     pending = undefined;
   }
-  document.documentElement.style.removeProperty('--background-image');
+  document.documentElement.style.removeProperty('--photo-image');
   document.getElementById('photo-credit')?.remove();
 }
 
 export async function updatePhotoBackground() {
-  if (store.get('theme').split('-')[0] !== 'photo') return;
+  if (resolveBackground(store.get('theme'), store.get('background')) !== 'photo') return;
   const minute = Math.floor(Date.now() / 60000);
   const provider = store.get('photo-provider') || 'picsum';
   const category = store.get('photo-category') || 'all';
@@ -154,7 +155,7 @@ export async function updatePhotoBackground() {
   } catch {
     return;
   }
-  if (token !== request || store.get('theme').split('-')[0] !== 'photo') return;
+  if (token !== request || resolveBackground(store.get('theme'), store.get('background')) !== 'photo') return;
   const width = Math.max(320, Math.min(2560, window.innerWidth));
   const height = Math.max(240, Math.min(1440, window.innerHeight));
   const url = photo?.url || `https://picsum.photos/seed/literature-clock-${minute}/${width}/${height}?blur=1`;
@@ -168,9 +169,9 @@ export async function updatePhotoBackground() {
     image.onerror = null;
   };
   image.onload = () => {
-    if (token !== request || store.get('theme').split('-')[0] !== 'photo') return;
+    if (token !== request || resolveBackground(store.get('theme'), store.get('background')) !== 'photo') return;
     finish();
-    document.documentElement.style.setProperty('--background-image', `url("${url}")`);
+    document.documentElement.style.setProperty('--photo-image', `url("${url}")`);
     document.getElementById('photo-credit')?.remove();
     if (photo) {
       const credit = document.createElement('a');
@@ -197,7 +198,7 @@ export function initPhotoSettings(dialog: HTMLDialogElement) {
   rows.className = 'settings-row';
   rows.innerHTML = `<label for="photo-provider" data-text="settings_photo_provider"></label>
     <div class="input-group photo-selectors"><select id="photo-provider"><option value="picsum">Picsum</option><option value="nasa">NASA</option><option value="commons">Wikimedia Commons</option></select><select id="photo-category"></select></div>`;
-  dialog.querySelector('.settings-theme-picker')!.after(rows);
+  (dialog.querySelector('.settings-background-row') || dialog.querySelector('.settings-theme-picker'))!.after(rows);
   const provider = rows.querySelector<HTMLSelectElement>('#photo-provider')!;
   const category = rows.querySelector<HTMLSelectElement>('#photo-category')!;
   provider.addEventListener('change', () =>
@@ -211,7 +212,7 @@ export function initPhotoSettings(dialog: HTMLDialogElement) {
     rows.querySelectorAll<HTMLElement>('[data-text]').forEach((element) => {
       element.textContent = labels[element.dataset.text as keyof typeof labels];
     });
-    rows.hidden = store.get('theme').split('-')[0] !== 'photo';
+    rows.hidden = resolveBackground(store.get('theme'), store.get('background')) !== 'photo';
     provider.value = store.get('photo-provider');
     const categories = photoCategories(provider.value);
     if (category.dataset.provider !== provider.value) {
@@ -235,10 +236,11 @@ export function initPhotoSettings(dialog: HTMLDialogElement) {
     refresh();
     if (
       state.theme !== old.theme ||
+      state.background !== old.background ||
       state['photo-provider'] !== old['photo-provider'] ||
       state['photo-category'] !== old['photo-category']
     ) {
-      if (state.theme.split('-')[0] !== 'photo') clearPhotoBackground();
+      if (resolveBackground(state.theme, state.background) !== 'photo') clearPhotoBackground();
       else updatePhotoBackground();
     }
   });

@@ -212,7 +212,7 @@ final class NativePhotoBackground {
     static func overlayColor(dark: Bool) -> NSColor {
         NativeAppearance.color(dark ? "#111111" : "#dddddd")!.withAlphaComponent(dark ? 0.5 : 0.4)
     }
-    func draw(in bounds: NSRect, dark: Bool, finalOnly: Bool = false) {
+    func draw(in bounds: NSRect, dark: Bool, finalOnly: Bool = false, overlay: NSColor? = nil) {
         func drawImage(_ image: NSImage, fraction: CGFloat) {
             guard image.size.width > 0, image.size.height > 0 else { return }
             let factor = max(bounds.width / image.size.width, bounds.height / image.size.height)
@@ -224,7 +224,7 @@ final class NativePhotoBackground {
         }
         if let previousImage, isTransitioning, !finalOnly { drawImage(previousImage, fraction: 1) }
         if let image { drawImage(image, fraction: finalOnly ? 1 : transitionFraction) }
-        Self.overlayColor(dark: dark).setFill()
+        (overlay ?? Self.overlayColor(dark: dark)).setFill()
         bounds.fill()
         if !credit.isEmpty {
             let style = NSMutableParagraphStyle(); style.alignment = .right

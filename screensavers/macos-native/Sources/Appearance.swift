@@ -20,11 +20,30 @@ final class NativeColorSwatch: NSButton {
 enum NativeAppearance {
     static let presetColors: [String: NSColor] = ["red": .systemRed, "pink": .systemPink, "green": .systemGreen, "orange": .systemOrange, "purple": .systemPurple, "blue": .systemBlue, "gray": .systemGray]
     private static var textures: [String: NSImage] = [:]
-    static func drawThemeBackground(theme: String, dark: Bool, bounds: NSRect, resources: URL) {
-        if theme == "festive" {
-            NSGradient(starting: color(dark ? "#011b1b" : "#fad0c4")!, ending: color(dark ? "#43162c" : "#ffd1ff")!)!.draw(in: bounds, angle: 45)
+    static let backgrounds = ["default", "tinted", "photo", "plain"]
+    static func supportsBackground(theme: String) -> Bool { !["book", "horizon", "photo"].contains(theme) }
+    static func resolvedBackground(theme: String, selected: String?) -> String {
+        if theme == "photo" { return "photo" }
+        guard supportsBackground(theme: theme), let selected, backgrounds.contains(selected) else { return "default" }
+        return selected
+    }
+    static func supportsPattern(theme: String) -> Bool { !["book", "horizon", "photo"].contains(theme) }
+    static func background(theme: String, dark: Bool, accent: NSColor, selected: String) -> NSColor {
+        switch resolvedBackground(theme: theme, selected: selected) {
+        case "plain": return color(dark ? "#000000" : "#ffffff")!
+        case "tinted": return background(theme: "base", dark: dark, accent: accent)
+        default: return background(theme: theme, dark: dark, accent: accent)
         }
-        let name = theme == "retro" ? "scanlines-bg-" + (dark ? "dark" : "light") + ".jpg" : theme == "book" ? "book-paper-seamless.webp" : ""
+    }
+    static func drawThemeBackground(theme: String, dark: Bool, bounds: NSRect, resources: URL, overPhoto: Bool = false) {
+        if theme == "festive" {
+            NSGradient(starting: color(dark ? "#011b1b" : "#fad0c4")!.withAlphaComponent(overPhoto ? 0.4 : 1), ending: color(dark ? "#43162c" : "#ffd1ff")!.withAlphaComponent(overPhoto ? 0.4 : 1))!.draw(in: bounds, angle: 45)
+        }
+        if theme == "retro" && overPhoto {
+            NSColor.black.withAlphaComponent(0.2).setFill()
+            for y in stride(from: bounds.minY, through: bounds.maxY, by: 3) { NSRect(x: bounds.minX, y: y, width: bounds.width, height: 1).fill() }
+        }
+        let name = theme == "retro" && !overPhoto ? "scanlines-bg-" + (dark ? "dark" : "light") + ".jpg" : theme == "book" ? "book-paper-seamless.webp" : ""
         if !name.isEmpty {
             if textures[name] == nil { textures[name] = NSImage(contentsOf: resources.appendingPathComponent("Backgrounds/" + name)) }
             if let image = textures[name] {

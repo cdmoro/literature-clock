@@ -82,7 +82,7 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             restartShowcase()
         }
         if CommandLine.arguments.contains("--check-render") {
-            let keys = ["theme", "background-pattern", "palette", "custom-color", "show-time", "hide-book-title", "quote-locales", "work", "locale", "screensaver", "progressbar"]
+            let keys = ["theme", "background", "background-pattern", "palette", "custom-color", "show-time", "hide-book-title", "quote-locales", "work", "locale", "screensaver", "progressbar"]
             let saved = keys.map { ($0, clock.preferences.object(forKey: $0)) }
             defer {
                 for (key, value) in saved { clock.preferences.set(value, forKey: key) }
@@ -144,6 +144,16 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
                 clock.cacheDisplay(in: clock.bounds, to: bitmap)
                 try! bitmap.representation(using: .png, properties: [:])!.write(to: output.appendingPathComponent(locale + ".png"))
             }
+            let unavailable = NativeClockView(frame: clock.bounds, isPreview: true)!
+            unavailable.preferences = clock.preferences
+            unavailable.resourceURLOverride = output.appendingPathComponent("missing-resources")
+            unavailable.refreshQuote(Date())
+            precondition(unavailable.cache.isEmpty && !unavailable.catalogueRetryAfter.isEmpty, "Failed catalogue reads must not be cached as empty catalogues")
+            precondition(unavailable.quote?.first.contains("Quote resources are unavailable") == true, "Unavailable resources must explain the failure instead of showing only time")
+            unavailable.resourceURLOverride = nil
+            unavailable.catalogueRetryAfter = unavailable.catalogueRetryAfter.mapValues { _ in Date.distantPast }
+            unavailable.refreshQuote(Date())
+            precondition(!unavailable.cache.isEmpty && unavailable.quote?.first.contains("Quote resources are unavailable") == false, "Recovered resources must reload during the same minute")
             clock.refreshQuote(Date().addingTimeInterval(60))
             precondition(clock.lastMinute != minute, "Minute change did not update the native clock")
             clock.preferences.set("el-GR", forKey: "quote-locales")
@@ -170,6 +180,30 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
                     try! bitmap.representation(using: .png, properties: [:])!.write(to: output.appendingPathComponent(theme + "-" + mode + ".png"))
                 }
             }
+            // Exercise each independent background and confirm neutral surfaces keep patterns.
+            for theme in NativeAppearance.themes {
+                for selected in NativeAppearance.backgrounds {
+                    clock.preferences.set(selected, forKey: "background")
+                    for mode in ["light", "dark"] {
+                        let dark = mode == "dark"
+                        clock.preferences.set(theme + "-" + mode, forKey: "theme")
+                        let effective = NativeAppearance.resolvedBackground(theme: theme, selected: selected)
+                        precondition(clock.backgroundName == effective, "Background preference did not resolve")
+                        if NativeAppearance.supportsBackground(theme: theme) && selected == "plain" {
+                            let neutral = NativeAppearance.background(theme: theme, dark: dark, accent: red, selected: selected)
+                            precondition(NativeAppearance.hex(neutral) == (dark ? "#000000" : "#ffffff"), "Plain must be pure black or white")
+                        }
+                        if NativeAppearance.supportsBackground(theme: theme) && selected == "tinted" {
+                            precondition(NativeAppearance.hex(NativeAppearance.background(theme: theme, dark: dark, accent: red, selected: selected)) == NativeAppearance.hex(NativeAppearance.background(theme: "base", dark: dark, accent: red)), "Tinted must match Base")
+                        }
+                        clock.preferences.set("dots", forKey: "background-pattern")
+                        let bitmap = clock.bitmapImageRepForCachingDisplay(in: clock.bounds)!
+                        clock.cacheDisplay(in: clock.bounds, to: bitmap)
+                        try! bitmap.representation(using: .png, properties: [:])!.write(to: output.appendingPathComponent(theme + "-" + mode + "-background-" + selected + ".png"))
+                    }
+                }
+            }
+            clock.preferences.set("default", forKey: "background")
             // Inspect wrapped highlighter fragments in both writing directions.
             clock.preferences.set("book-light", forKey: "theme")
             clock.preferences.set("none", forKey: "background-pattern")
@@ -262,14 +296,36 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             precondition(clock.colorEditor!.isHidden, "Editor must be collapsed initially")
             (clock.controls["color-edit"] as! NSButton).performClick(nil)
             precondition(!clock.colorEditor!.isHidden, "Edit colour must reveal the editor")
+            let backgroundMenu = clock.controls["background"] as! NSPopUpButton
+            let backgroundTheme = clock.controls["theme-base"] as! NSPopUpButton
+            backgroundTheme.select(backgroundTheme.itemArray.first { $0.representedObject as? String == "base" }!)
+            clock.perform(NSSelectorFromString("photoControlsChanged"))
+            backgroundMenu.select(backgroundMenu.itemArray.first { $0.representedObject as? String == "photo" }!)
+            clock.perform(NSSelectorFromString("photoControlsChanged"))
+            precondition((clock.controls["photo-provider"] as! NSPopUpButton).isEnabled, "Photo provider must work outside the Photo theme")
+            backgroundTheme.select(backgroundTheme.itemArray.first { $0.representedObject as? String == "book" }!)
+            clock.perform(NSSelectorFromString("photoControlsChanged"))
+            precondition(!backgroundMenu.isEnabled && clock.menuValue("background") == "default", "Book must lock Background at Default")
+            precondition(!(clock.controls["photo-provider"] as! NSPopUpButton).isEnabled, "Book cannot download photos")
+            backgroundTheme.select(backgroundTheme.itemArray.first { $0.representedObject as? String == "photo" }!)
+            clock.perform(NSSelectorFromString("photoControlsChanged"))
+            precondition(!backgroundMenu.isEnabled && clock.menuValue("background") == "photo", "Photo must lock its own background")
+            backgroundTheme.select(backgroundTheme.itemArray.first { $0.representedObject as? String == "base" }!)
+            clock.perform(NSSelectorFromString("photoControlsChanged"))
+            precondition(backgroundMenu.isEnabled && clock.menuValue("background") == "photo", "Returning to Base must restore the chosen background")
+            backgroundMenu.select(backgroundMenu.itemArray.first { $0.representedObject as? String == "plain" }!)
+            clock.perform(NSSelectorFromString("photoControlsChanged"))
+            precondition((clock.controls["background-pattern"] as! NSPopUpButton).isEnabled, "Plain must keep patterns available")
             let themeMenu = clock.controls["theme-base"] as! NSPopUpButton
             themeMenu.select(themeMenu.itemArray.first { $0.representedObject as? String == "book" }!)
+            clock.perform(NSSelectorFromString("photoControlsChanged"))
             let other = NativeClockView(frame: clock.bounds, isPreview: true)!
             let otherSuite = "net.literatureclock.native-check." + UUID().uuidString
             other.preferences = UserDefaults(suiteName: otherSuite)!
             defer { other.preferences.removePersistentDomain(forName: otherSuite) }
             clock.perform(NSSelectorFromString("saveOptions"))
             precondition(other.preferences.string(forKey: "theme") == "book-dark" || other.preferences.string(forKey: "theme") == "book-light", "Theme did not reach another view")
+            precondition(other.preferences.string(forKey: "background") == "plain", "Chosen background must reach other displays even when Book owns its background")
             precondition(other.preferences.string(forKey: "palette") == "custom", "Custom palette did not reach another view")
             precondition(other.preferences.string(forKey: "custom-color") == "#123456", "Custom colour did not reach another view")
             precondition(clock.preferences.string(forKey: "custom-color") == "#123456", "Custom colour was not saved")

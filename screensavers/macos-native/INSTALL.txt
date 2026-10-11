@@ -1,0 +1,38 @@
+Literature Clock for macOS
+
+RECOMMENDED INSTALLATION AND UPDATES
+
+1. Extract the entire ZIP.
+2. Open Install Literature Clock.app.
+3. Save or cancel any open screen saver options, then click Install or Update.
+4. Confirm replacement if the installer finds duplicate copies.
+5. Click Open Screen Saver Settings, select Literature Clock, and try the preview.
+
+The installer uses your user account's Screen Savers folder. It does not need
+an administrator password or change your Literature Clock preferences.
+It closes System Settings and restarts the screen saver preview before
+replacement so macOS does not keep an old bundle loaded.
+
+Previous copies are preserved in:
+~/Library/Application Support/Literature Clock/Installation Backups/
+Use Show Previous Copies after installation to open the backup folder.
+If replacement fails, the installer attempts to restore the previous copies.
+
+MANUAL INSTALLATION
+
+Literature Clock.saver is also provided for manual installation. Double-click
+it and install for the current user. Fully quit System Settings before updating;
+macOS can retain an earlier screen saver in memory. If quotes disappear after
+manual replacement, log out and back in, or use the installer instead.
+An installation for all users requires administrator access and is not managed
+by this installer. The installer leaves other screen savers untouched.
+
+TEST BUILD SIGNING
+
+These builds are signed locally, not notarized with an Apple Developer ID.
+macOS may block opening them. Review the source and use the system's explicit
+approval flow only if you choose to trust the download. The installer does not
+remove quarantine or bypass macOS security checks.
+
+Source, license and feedback:
+https://github.com/cdmoro/literature-clock
