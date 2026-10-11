@@ -92,8 +92,8 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             clock.preferences.set("base-dark", forKey: "theme")
             let output = URL(fileURLWithPath: "/private/tmp/literature-clock-native-checks", isDirectory: true)
             try! FileManager.default.createDirectory(at: output, withIntermediateDirectories: true)
-            precondition(NativeAppearance.hex(NativePhotoBackground.overlayColor(dark: false)) == "#dddddd" && NativePhotoBackground.overlayColor(dark: false).alphaComponent == 0.4, "Photo light must match the web overlay")
-            precondition(NativeAppearance.hex(NativePhotoBackground.overlayColor(dark: true)) == "#111111" && NativePhotoBackground.overlayColor(dark: true).alphaComponent == 0.5, "Photo dark must match the web overlay")
+            precondition(NativeAppearance.hex(NativePhotoBackground.overlayColor(dark: false)) == "#ffffff" && NativePhotoBackground.overlayColor(dark: false).alphaComponent == 64.0 / 255.0, "Photo light must match the web overlay")
+            precondition(NativeAppearance.hex(NativePhotoBackground.overlayColor(dark: true)) == "#000000" && NativePhotoBackground.overlayColor(dark: true).alphaComponent == 64.0 / 255.0, "Photo dark must match the web overlay")
             let red = NativeAppearance.color("#d24335")!
             precondition(NativeAppearance.hex(NativeAppearance.background(theme: "base", dark: false, accent: red)) == "#f8e3e1", "Base light must match the web's 15% sRGB tint")
             precondition(NativeAppearance.hex(NativeAppearance.background(theme: "base", dark: true, accent: red)) == "#2f181b", "Base dark must match the web's 16% sRGB tint")

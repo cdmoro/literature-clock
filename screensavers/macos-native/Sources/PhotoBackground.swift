@@ -210,7 +210,7 @@ final class NativePhotoBackground {
         preloader?.cancel(); preloader = nil; preloadMinute = nil
     }
     static func overlayColor(dark: Bool) -> NSColor {
-        NativeAppearance.color(dark ? "#111111" : "#dddddd")!.withAlphaComponent(dark ? 0.5 : 0.4)
+        NativeAppearance.color(dark ? "#000000" : "#ffffff")!.withAlphaComponent(64.0 / 255.0)
     }
     func draw(in bounds: NSRect, dark: Bool, finalOnly: Bool = false, overlay: NSColor? = nil) {
         func drawImage(_ image: NSImage, fraction: CGFloat) {

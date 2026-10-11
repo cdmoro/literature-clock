@@ -359,7 +359,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         if usesPhoto && photoDownloadsEnabled {
             photoBackground.update(now: now, size: bounds.size, provider: preferences.string(forKey: "photo-provider") ?? "picsum", category: preferences.string(forKey: "photo-category") ?? "all", displayID: photoDisplayID, displayIndex: photoDisplayIndex) { [weak self] in self?.needsDisplay = true }
         }
-        let photoOverlay = theme == "photo" ? NativePhotoBackground.overlayColor(dark: dark) : background.withAlphaComponent(0.65)
+        let photoOverlay = NativePhotoBackground.overlayColor(dark: dark)
         func drawBackdrop(in rect: NSRect, finalOnly: Bool = false) {
             background.setFill(); rect.fill()
             if usesPhoto { photoBackground.draw(in: rect, dark: dark, finalOnly: finalOnly, overlay: photoOverlay) }
