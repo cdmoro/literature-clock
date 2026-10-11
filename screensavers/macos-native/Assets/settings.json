@@ -11,7 +11,9 @@
     "color_edit": "Edit colour…",
     "color_fixed": "Fixed colour",
     "settings_progress_glass-background": "Background Liquid Glass",
-    "settings_progress_glass-foreground": "Foreground Liquid Glass"
+    "settings_progress_glass-foreground": "Foreground Liquid Glass",
+    "native_resources_unavailable": "Quote resources are unavailable. Reinstall Literature Clock using the installer.",
+    "native_github_project": "View project on GitHub"
   },
   "en-US": {
     "cancel": "Cancel",
@@ -25,7 +27,9 @@
     "color_edit": "Edit color…",
     "color_fixed": "Fixed color",
     "settings_progress_glass-background": "Background Liquid Glass",
-    "settings_progress_glass-foreground": "Foreground Liquid Glass"
+    "settings_progress_glass-foreground": "Foreground Liquid Glass",
+    "native_resources_unavailable": "Quote resources are unavailable. Reinstall Literature Clock using the installer.",
+    "native_github_project": "View project on GitHub"
   },
   "es-ES": {
     "cancel": "Cancelar",
@@ -39,7 +43,9 @@
     "color_edit": "Editar color…",
     "color_fixed": "Color fijo",
     "settings_progress_glass-background": "Fondo con Liquid Glass",
-    "settings_progress_glass-foreground": "Primer plano con Liquid Glass"
+    "settings_progress_glass-foreground": "Primer plano con Liquid Glass",
+    "native_resources_unavailable": "No se pueden cargar las citas. Reinstalá Literature Clock con el instalador.",
+    "native_github_project": "Ver proyecto en GitHub"
   },
   "fr-FR": {
     "cancel": "Annuler",
@@ -53,7 +59,9 @@
     "color_edit": "Modifier la couleur…",
     "color_fixed": "Couleur fixe",
     "settings_progress_glass-background": "Arrière-plan Liquid Glass",
-    "settings_progress_glass-foreground": "Premier plan Liquid Glass"
+    "settings_progress_glass-foreground": "Premier plan Liquid Glass",
+    "native_resources_unavailable": "Les citations sont indisponibles. Réinstallez Literature Clock avec le programme d’installation.",
+    "native_github_project": "Voir le projet sur GitHub"
   },
   "de-DE": {
     "cancel": "Abbrechen",
@@ -67,7 +75,9 @@
     "color_edit": "Farbe bearbeiten…",
     "color_fixed": "Feste Farbe",
     "settings_progress_glass-background": "Liquid-Glass-Hintergrund",
-    "settings_progress_glass-foreground": "Liquid Glass im Vordergrund"
+    "settings_progress_glass-foreground": "Liquid Glass im Vordergrund",
+    "native_resources_unavailable": "Die Zitate sind nicht verfügbar. Installiere Literature Clock mit dem Installationsprogramm erneut.",
+    "native_github_project": "Projekt auf GitHub ansehen"
   },
   "it-IT": {
     "cancel": "Annulla",
@@ -81,7 +91,9 @@
     "color_edit": "Modifica colore…",
     "color_fixed": "Colore fisso",
     "settings_progress_glass-background": "Sfondo Liquid Glass",
-    "settings_progress_glass-foreground": "Primo piano Liquid Glass"
+    "settings_progress_glass-foreground": "Primo piano Liquid Glass",
+    "native_resources_unavailable": "Le citazioni non sono disponibili. Reinstalla Literature Clock con il programma di installazione.",
+    "native_github_project": "Vedi il progetto su GitHub"
   },
   "pt-PT": {
     "cancel": "Cancelar",
@@ -95,7 +107,9 @@
     "color_edit": "Editar cor…",
     "color_fixed": "Cor fixa",
     "settings_progress_glass-background": "Fundo com Liquid Glass",
-    "settings_progress_glass-foreground": "Primeiro plano com Liquid Glass"
+    "settings_progress_glass-foreground": "Primeiro plano com Liquid Glass",
+    "native_resources_unavailable": "Não é possível carregar as citações. Reinstale o Literature Clock com o instalador.",
+    "native_github_project": "Ver projeto no GitHub"
   },
   "ru-RU": {
     "cancel": "Отмена",
@@ -109,7 +123,9 @@
     "color_edit": "Изменить цвет…",
     "color_fixed": "Постоянный цвет",
     "settings_progress_glass-background": "Фон Liquid Glass",
-    "settings_progress_glass-foreground": "Передний план Liquid Glass"
+    "settings_progress_glass-foreground": "Передний план Liquid Glass",
+    "native_resources_unavailable": "Цитаты недоступны. Переустановите Literature Clock с помощью установщика.",
+    "native_github_project": "Посмотреть проект на GitHub"
   },
   "zh-CN": {
     "cancel": "取消",
@@ -123,7 +139,9 @@
     "color_edit": "编辑颜色…",
     "color_fixed": "固定颜色",
     "settings_progress_glass-background": "Liquid Glass 背景",
-    "settings_progress_glass-foreground": "Liquid Glass 前景"
+    "settings_progress_glass-foreground": "Liquid Glass 前景",
+    "native_resources_unavailable": "无法加载引文。请使用安装程序重新安装 Literature Clock。",
+    "native_github_project": "在 GitHub 上查看项目"
   },
   "el-GR": {
     "cancel": "Ακύρωση",
@@ -137,7 +155,9 @@
     "color_edit": "Επεξεργασία χρώματος…",
     "color_fixed": "Σταθερό χρώμα",
     "settings_progress_glass-background": "Φόντο Liquid Glass",
-    "settings_progress_glass-foreground": "Προσκήνιο Liquid Glass"
+    "settings_progress_glass-foreground": "Προσκήνιο Liquid Glass",
+    "native_resources_unavailable": "Οι παραθέσεις δεν είναι διαθέσιμες. Εγκαταστήστε ξανά το Literature Clock με το πρόγραμμα εγκατάστασης.",
+    "native_github_project": "Δείτε το έργο στο GitHub"
   },
   "eo": {
     "cancel": "Nuligi",
@@ -151,7 +171,9 @@
     "color_edit": "Redakti koloron…",
     "color_fixed": "Fiksa koloro",
     "settings_progress_glass-background": "Fono kun Liquid Glass",
-    "settings_progress_glass-foreground": "Malfono kun Liquid Glass"
+    "settings_progress_glass-foreground": "Malfono kun Liquid Glass",
+    "native_resources_unavailable": "La citaĵoj ne disponeblas. Reinstalu Literature Clock per la instalilo.",
+    "native_github_project": "Vidi la projekton ĉe GitHub"
   },
   "ar-AE": {
     "cancel": "إلغاء",
@@ -165,6 +187,8 @@
     "color_edit": "تعديل اللون…",
     "color_fixed": "لون ثابت",
     "settings_progress_glass-background": "خلفية Liquid Glass",
-    "settings_progress_glass-foreground": "مقدمة Liquid Glass"
+    "settings_progress_glass-foreground": "مقدمة Liquid Glass",
+    "native_resources_unavailable": "الاقتباسات غير متاحة. أعد تثبيت Literature Clock باستخدام برنامج التثبيت.",
+    "native_github_project": "عرض المشروع على GitHub"
   }
 }

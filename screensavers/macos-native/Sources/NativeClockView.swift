@@ -87,8 +87,9 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     static let instances = NSHashTable<NativeClockView>.weakObjects()
     static let settingsChanged = Notification.Name("net.literatureclock.native-saver.settingsChanged")
     var preferences: UserDefaults = ScreenSaverDefaults(forModuleWithName: "net.literatureclock.native-saver")!
-    var resources: URL { Bundle(for: NativeClockView.self).resourceURL! }
-    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background-pattern", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
+    var resourceURLOverride: URL? // Isolated render diagnostics only.
+    var resources: URL { resourceURLOverride ?? Bundle(for: NativeClockView.self).resourceURL! }
+    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background", "background-pattern", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
     var photoDownloadsEnabled = true
     var interactionPreviewSweep = false
     var fullProgressPreviewSweep = false
@@ -141,6 +142,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     var lastMinute = ""
     var sheet: NSWindow?
     var controls: [String: NSControl] = [:]
+    private var selectedBackground = "default"
     var swatches: [NativeColorSwatch] = []
     private var fixedPalette = "red"
     var colorSwatchesRow: NSStackView?
@@ -152,6 +154,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     var previewProgressDuration: TimeInterval?
     var previewProgressPausedElapsed: TimeInterval?
     var cache: [String: [String: [NativeQuote]]] = [:]
+    var catalogueRetryAfter: [String: Date] = [:]
     private var layoutKey = ""
     private var layoutText: NSAttributedString?
     private var layoutHeight: CGFloat = 0
@@ -169,6 +172,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     private var patternKey = ""
     private var patternImage: NSImage?
     var themeName: String { (preferences.string(forKey: "theme") ?? "base-dark").split(separator: "-").first.map(String.init) ?? "base" }
+    var backgroundName: String { NativeAppearance.resolvedBackground(theme: themeName, selected: preferences.string(forKey: "background")) }
     private static let bundledFonts: [String: String] = {
         let root = Bundle(for: NativeClockView.self).resourceURL!.appendingPathComponent("Fonts")
         var names: [String: String] = [:]
@@ -202,7 +206,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     private func setup() {
         preferences.register(defaults: ["theme": "base-dark", "screensaver": true, "show-time": true,
                                        "hide-book-title": false, "work": true, "progressbar": "background", "quote-locales": "", "palette": "default",
-                                       "custom-color": "#d24335", "background-pattern": "none", "photo-provider": "picsum", "photo-category": "all", "bilingual": false, "translation-locale": ""])
+                                       "custom-color": "#d24335", "background": "default", "background-pattern": "none", "photo-provider": "picsum", "photo-category": "all", "bilingual": false, "translation-locale": ""])
         _ = Self.bundledFonts
         animationTimeInterval = 1.0 / 60.0
         Self.instances.add(self)
@@ -224,16 +228,29 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     override var acceptsFirstResponder: Bool { false }
     func catalogue(_ locale: String) -> [String: [NativeQuote]] {
         if let saved = cache[locale] { return saved }
-        let result = (try? JSONDecoder().decode([String: [NativeQuote]].self, from: Data(contentsOf: resources.appendingPathComponent("Quotes/\(locale).json")))) ?? [:]
-        cache[locale] = result
-        return result
+        if let retry = catalogueRetryAfter[locale], retry > Date() { return [:] }
+        do {
+            let data = try Data(contentsOf: resources.appendingPathComponent("Quotes/\(locale).json"))
+            let result = try JSONDecoder().decode([String: [NativeQuote]].self, from: data)
+            guard !result.isEmpty else { throw CocoaError(.fileReadCorruptFile) }
+            cache[locale] = result
+            catalogueRetryAfter.removeValue(forKey: locale)
+            return result
+        } catch {
+            // A removed/replaced bundle must not poison this process's catalogue cache.
+            catalogueRetryAfter[locale] = Date().addingTimeInterval(5)
+            NSLog("Literature Clock: could not read catalogue %@ at %@: %@", locale, resources.path, error.localizedDescription)
+            return [:]
+        }
     }
     func refreshQuote(_ now: Date) {
         let now = previewQuoteDate ?? now
         let components = Calendar.current.dateComponents([.hour, .minute], from: now)
         let minute = String(format: "%02d:%02d", components.hour ?? 0, components.minute ?? 0)
         let displayIndex = photoDisplayIndex
-        guard minute != lastMinute || (lastDisplayIndex != nil && lastDisplayIndex != displayIndex) else { return }
+        let retryDue = catalogueRetryAfter.values.contains { $0 <= Date() }
+        guard minute != lastMinute || retryDue || (lastDisplayIndex != nil && lastDisplayIndex != displayIndex) else { return }
+        if retryDue { catalogueRetryAfter = catalogueRetryAfter.filter { $0.value > Date() } }
         lastMinute = minute
         lastDisplayIndex = displayIndex
         let selected = (preferences.string(forKey: "quote-locales") ?? "").split(separator: ",").map(String.init).filter { localeNames.contains($0) }
@@ -250,6 +267,11 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 quote = available[Self.variantIndex(count: available.count, minute: Int(now.timeIntervalSince1970 / 60), displayIndex: displayIndex)]
                 quoteLocale = locale; return
             }
+        }
+        if !catalogueRetryAfter.isEmpty {
+            let notice = text("native_resources_unavailable")
+            quote = NativeQuote(first: notice == "native_resources_unavailable" ? "Quote resources are unavailable. Reinstall Literature Clock using the installer." : notice, time: "", last: "", title: "", author: "", sfw: true)
+            return
         }
         // Explain missing/filtered minutes in the requested language; never
         // invent a literary quote or silently display a bare time.
@@ -331,16 +353,25 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             accent = colors[randomValue(ordered, at: now)]!
         }
         else { accent = colors[palette] ?? .systemRed }
-        let background = NativeAppearance.background(theme: theme, dark: dark, accent: accent)
-        background.setFill(); bounds.fill()
-        NativeAppearance.drawThemeBackground(theme: theme, dark: dark, bounds: bounds, resources: resources)
-        if theme == "photo" {
-            if photoDownloadsEnabled { photoBackground.update(now: now, size: bounds.size, provider: preferences.string(forKey: "photo-provider") ?? "picsum", category: preferences.string(forKey: "photo-category") ?? "all", displayID: photoDisplayID, displayIndex: photoDisplayIndex) { [weak self] in self?.needsDisplay = true } }
-            photoBackground.draw(in: bounds, dark: dark)
+        let backgroundMode = backgroundName
+        let usesPhoto = backgroundMode == "photo"
+        let background = NativeAppearance.background(theme: theme, dark: dark, accent: accent, selected: backgroundMode)
+        if usesPhoto && photoDownloadsEnabled {
+            photoBackground.update(now: now, size: bounds.size, provider: preferences.string(forKey: "photo-provider") ?? "picsum", category: preferences.string(forKey: "photo-category") ?? "all", displayID: photoDisplayID, displayIndex: photoDisplayIndex) { [weak self] in self?.needsDisplay = true }
         }
+        let photoOverlay = NativePhotoBackground.overlayColor(dark: dark)
+        func drawBackdrop(in rect: NSRect, finalOnly: Bool = false) {
+            background.setFill(); rect.fill()
+            if usesPhoto { photoBackground.draw(in: rect, dark: dark, finalOnly: finalOnly, overlay: photoOverlay) }
+            if backgroundMode == "default" || usesPhoto {
+                NativeAppearance.drawThemeBackground(theme: theme, dark: dark, bounds: rect, resources: resources, overPhoto: usesPhoto)
+            }
+        }
+        drawBackdrop(in: bounds)
         let foreground = NativeAppearance.foreground(theme: theme, dark: dark, accent: accent)
         let scale = window?.backingScaleFactor ?? 1
         var pattern = preferences.string(forKey: "background-pattern") ?? "none"
+        if !NativeAppearance.supportsPattern(theme: theme) { pattern = "none" }
         if pattern == "random" { pattern = randomValue(Array(NativeAppearance.patterns.dropFirst(2)), at: now) }
         let newPatternKey = "\(pattern)|\(bounds.size)|\(scale)|\(accent)"
         if newPatternKey != patternKey {
@@ -348,22 +379,20 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             patternKey = newPatternKey
         }
         patternImage?.draw(in: bounds)
-        let photoKey = theme == "photo" ? photoBackground.image.map { String(describing: ObjectIdentifier($0)) } ?? "none" : "none"
-        let opticalKey = "\(theme)|\(dark)|\(bounds.size)|\(newPatternKey)|\(photoKey)"
+        let photoKey = usesPhoto ? photoBackground.image.map { String(describing: ObjectIdentifier($0)) } ?? "none" : "none"
+        let opticalKey = "\(theme)|\(backgroundMode)|\(accent)|\(dark)|\(bounds.size)|\(newPatternKey)|\(photoKey)"
         if opticalKey != opticalSourceKey && bounds.width > 0 && bounds.height > 0 {
             let backgroundImage = NSImage(size: bounds.size, flipped: false) { [self] rect in
-                background.setFill(); rect.fill()
-                NativeAppearance.drawThemeBackground(theme: theme, dark: dark, bounds: rect, resources: resources)
-                if theme == "photo" { photoBackground.draw(in: rect, dark: dark, finalOnly: true) }
+                drawBackdrop(in: rect, finalOnly: true)
                 patternImage?.draw(in: rect)
                 return true
             }
-            previousPhotoOpticalSource = theme == "photo" && photoBackground.isTransitioning ? opticalSource : nil
+            previousPhotoOpticalSource = usesPhoto && photoBackground.isTransitioning ? opticalSource : nil
             opticalSource = backgroundImage.tiffRepresentation.flatMap { CIImage(data: $0) }
             finalPhotoOpticalSource = opticalSource
             opticalSourceKey = opticalKey
         }
-        if theme == "photo", let final = finalPhotoOpticalSource {
+        if usesPhoto, let final = finalPhotoOpticalSource {
             if photoBackground.isTransitioning, let previous = previousPhotoOpticalSource {
                 opticalSource = previous.applyingFilter("CIDissolveTransition", parameters: ["inputTargetImage": final, "inputTime": photoBackground.transitionFraction])
             } else { opticalSource = final; previousPhotoOpticalSource = nil }
@@ -420,7 +449,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let width = bounds.width * 0.76
         // Reserve the clock and a gap, including the Photo shadow's cache padding.
         let area = Self.passageArea(bounds: bounds, clockFrame: preferences.bool(forKey: "show-time") ? timeLabel?.frame : nil)
-        let passagePadding: CGFloat = theme == "photo" ? 50 : 0
+        let passagePadding: CGFloat = usesPhoto ? 50 : 0
         let limit = min(bounds.height * 0.65, max(1, area.height - passagePadding * 2 - 4))
         let paragraph = NSMutableParagraphStyle()
         paragraph.alignment = quoteLocale.hasPrefix("ar") ? .right : .left
@@ -483,7 +512,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             }
             return result
         }
-        let key = "\(quote.first)\(quote.time)\(quote.last)\(quote.title)\(quote.author)|\(theme)|\(quoteLocale)|\(width)|\(limit)|\(scale)|\(dark)|\(accent)|\(lastMinute)|\(preferences.bool(forKey: "hide-book-title"))"
+        let key = "\(quote.first)\(quote.time)\(quote.last)\(quote.title)\(quote.author)|\(theme)|\(backgroundMode)|\(quoteLocale)|\(width)|\(limit)|\(scale)|\(dark)|\(accent)|\(lastMinute)|\(preferences.bool(forKey: "hide-book-title"))"
         let bilingualKey = key + "|\(quote.id ?? "")|\(preferences.bool(forKey: "bilingual"))|\(preferences.string(forKey: "translation-locale") ?? "")|\(preferences.bool(forKey: "work"))"
         if bilingualKey != layoutKey {
             var low: CGFloat = 1, high = min(bounds.width * 0.043, bounds.height * 0.12)
@@ -499,7 +528,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             // a new fractional origin every frame independently snaps glyphs.
             let highlightPadding = theme == "book" ? low * 0.2 : 0
             // Leave room for the 25-point Photo halo on every side of the cache.
-            let shadowPadding: CGFloat = theme == "photo" ? 50 : 0
+            let shadowPadding: CGFloat = usesPhoto ? 50 : 0
             let size = NSSize(width: ceil(width + highlightPadding * 2 + shadowPadding * 2), height: layoutHeight + 4 + shadowPadding * 2)
             let bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(ceil(size.width * scale)), pixelsHigh: Int(ceil(size.height * scale)), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0)!
             bitmap.size = size
@@ -523,7 +552,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 manager.drawBackground(forGlyphRange: glyphs, at: .zero)
                 manager.drawGlyphs(forGlyphRange: glyphs, at: .zero)
             } else {
-                if theme == "photo" {
+                if usesPhoto {
                     let shadow = NSShadow()
                     shadow.shadowOffset = .zero
                     shadow.shadowBlurRadius = 25
@@ -581,6 +610,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         // Recreate closed sheets instead of returning their stale window.
         sheet = nil
         controls.removeAll()
+        selectedBackground = preferences.string(forKey: "background") ?? "default"
         swatches.removeAll()
         preferences.synchronize()
         let window = NSPanel(contentRect: NSRect(x: 0, y: 0, width: 700, height: 470),
@@ -661,6 +691,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         for (key, label, values) in [
             ("theme-base", "theme", NativeAppearance.themes),
             ("theme-mode", "settings_scheme", ["system", "light", "dark"]),
+            ("background", "settings_background", NativeAppearance.backgrounds),
             ("photo-provider", "settings_photo_provider", ["picsum", "nasa", "commons"]),
             ("photo-category", "settings_photo_category", NativePhotoBackground.categories(provider: preferences.string(forKey: "photo-provider") ?? "picsum")),
             ("palette", "settings_color", ["default", "red", "pink", "green", "orange", "purple", "blue", "gray", "random", "custom"]),
@@ -671,7 +702,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             let menu = NSPopUpButton()
             let value = key == "theme-base" ? parts.first : key == "theme-mode" ? parts.last : preferences.string(forKey: key)
             for raw in values {
-                let labelKey = key == "photo-category" ? "settings_photo_" + raw : key == "background-pattern" ? "settings_pattern_" + raw : key == "progressbar" ? "settings_progress_" + raw :
+                let labelKey = key == "background" ? "settings_background_" + raw : key == "photo-category" ? "settings_photo_" + raw : key == "background-pattern" ? "settings_pattern_" + raw : key == "progressbar" ? "settings_progress_" + raw :
                     raw == "custom" ? "settings_color_customize" : raw == "default" ? "default_font" : raw == "random" ? "settings_color_random" : raw
                 let label = key == "photo-provider" ? (raw == "commons" ? "Wikimedia Commons" : raw == "nasa" ? "NASA" : "Picsum") : text(labelKey)
                 let item = NSMenuItem(title: label, action: nil, keyEquivalent: "")
@@ -682,7 +713,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 menu.menu?.addItem(item)
                 if raw == value { menu.select(item) }
             }
-            if key == "theme-base" || key == "photo-provider" { menu.target = self; menu.action = #selector(photoControlsChanged) }
+            if key == "theme-base" || key == "background" || key == "photo-provider" { menu.target = self; menu.action = #selector(photoControlsChanged) }
             controls[key] = menu
             let title = NSTextField(labelWithString: text(label))
             title.widthAnchor.constraint(equalToConstant: 180).isActive = true
@@ -765,9 +796,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             stack.addArrangedSubview(check)
         }
         let version = Bundle(for: Self.self).object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "development"
-        let versionLink = NSButton(title: "Literature Clock for macOS · v" + version, target: self, action: #selector(openVersionRelease))
-        versionLink.isBordered = false
-        stack.addArrangedSubview(versionLink)
+        stack.addArrangedSubview(NSTextField(labelWithString: "Literature Clock for macOS · v" + version))
+        stack.addArrangedSubview(ProjectLink(title: text("native_github_project")))
         let cancel = NSButton(title: text("cancel"), target: self, action: #selector(cancelOptions))
         cancel.keyEquivalent = "\u{1b}"
         let save = NSButton(title: "OK", target: self, action: #selector(saveOptions))
@@ -781,10 +811,6 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         window.setContentSize(NSSize(width: 700, height: max(470, stack.fittingSize.height + 48)))
         sheet = window
         return window
-    }
-    @objc private func openVersionRelease() {
-        let version = Bundle(for: Self.self).object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "0.1.0"
-        if let url = URL(string: "https://github.com/cdmoro/literature-clock/releases/tag/macos-native-v" + version) { NSWorkspace.shared.open(url) }
     }
     @objc private func cancelOptions() {
         closeOptions()
@@ -806,8 +832,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let base = menuValue("theme-base") ?? "base"
         let mode = menuValue("theme-mode") ?? "dark"
         preferences.set(base + "-" + mode, forKey: "theme")
+        if controls["background"]?.isEnabled == true { selectedBackground = menuValue("background") ?? "default" }
+        preferences.set(selectedBackground, forKey: "background")
         for (key, control) in controls {
-            if key.hasPrefix("quote-locale:") || key.hasPrefix("theme-") || key.hasPrefix("color-") { continue }
+            if key == "background" || key.hasPrefix("quote-locale:") || key.hasPrefix("theme-") || key.hasPrefix("color-") { continue }
             if control is NSPopUpButton { preferences.set(menuValue(key), forKey: key) }
             else if let well = control as? NSColorWell { preferences.set(NativeAppearance.hex(well.color), forKey: key) }
             else if let button = control as? NSButton { preferences.set(button.state == .on, forKey: key) }
@@ -911,6 +939,15 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         }
     }
     @objc private func photoControlsChanged() {
+        let theme = menuValue("theme-base") ?? "base"
+        if let menu = controls["background"] as? NSPopUpButton {
+            if menu.isEnabled { selectedBackground = menuValue("background") ?? "default" }
+            menu.isEnabled = NativeAppearance.supportsBackground(theme: theme)
+            let visible = menu.isEnabled ? selectedBackground : NativeAppearance.resolvedBackground(theme: theme, selected: selectedBackground)
+            if let item = menu.itemArray.first(where: { $0.representedObject as? String == visible }) { menu.select(item) }
+        }
+        let usesPhoto = NativeAppearance.resolvedBackground(theme: theme, selected: selectedBackground) == "photo"
+        controls["background-pattern"]?.isEnabled = NativeAppearance.supportsPattern(theme: theme)
         let provider = menuValue("photo-provider") ?? "picsum"
         let categories = NativePhotoBackground.categories(provider: provider)
         if let menu = controls["photo-category"] as? NSPopUpButton {
@@ -922,19 +959,23 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 if selected == category { menu.select(item) }
             }
             menu.isHidden = provider == "picsum"
-            menu.isEnabled = menuValue("theme-base") == "photo"
+            menu.isEnabled = usesPhoto
         }
-        controls["photo-provider"]?.isEnabled = menuValue("theme-base") == "photo"
+        controls["photo-provider"]?.isEnabled = usesPhoto
+        controls["photo-provider"]?.superview?.isHidden = !usesPhoto
     }
     func applyOptions(_ values: [String: Any]) {
         for key in Self.optionKeys {
             if let value = values[key] { preferences.set(value, forKey: key) }
         }
         preferences.synchronize()
-        if themeName != "photo" { photoBackgroundStorage?.cancel() }
+        if backgroundName != "photo" { photoBackgroundStorage?.cancel() }
         lastMinute = ""
+        catalogueRetryAfter.removeAll()
         layoutKey = ""
         patternKey = ""
+        opticalSourceKey = ""
+        previousPhotoOpticalSource = nil
         needsDisplay = true
     }
     @objc private func settingsDidChange(_ notification: Notification) {

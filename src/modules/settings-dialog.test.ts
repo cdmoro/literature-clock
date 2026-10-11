@@ -487,3 +487,17 @@ test('theme names load default font subsets only when the theme menu opens', asy
   expect(loadFontPreview).toHaveBeenCalledWith('Pacifico', expect.any(String));
   expect(loadFontPreview).toHaveBeenCalledWith('DotGothic16', expect.any(String));
 });
+
+test('theme preview follows the selected background and retains the loaded photo', () => {
+  document.body.innerHTML = '<blockquote id="quote"><p>Preview</p></blockquote>';
+  document.documentElement.dataset.theme = 'base-dark';
+  document.documentElement.style.setProperty('--photo-image', 'url("https://example.com/photo.jpg")');
+  for (const background of ['photo', 'plain', 'tinted', 'default']) {
+    document.documentElement.dataset.background = background;
+    const preview = new DOMParser().parseFromString(themePreviewDocument(), 'text/html');
+    expect(preview.documentElement.dataset.background).toBe(background);
+    expect(preview.documentElement.style.getPropertyValue('--photo-image')).toContain('photo.jpg');
+  }
+  document.documentElement.style.removeProperty('--photo-image');
+  delete document.documentElement.dataset.background;
+});

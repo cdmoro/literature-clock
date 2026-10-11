@@ -90,7 +90,7 @@ def bundle(name, extension, architecture, data, version):
     (contents / 'Info.plist').write_bytes(plistlib.dumps(info))
     binary = contents / 'MacOS' / name
     binary.parent.mkdir(exist_ok=True)
-    sources = ['Options.swift', 'Appearance.swift', 'PhotoBackground.swift', 'NativeClockView.swift'] + ([] if library else ['Preview.swift'])
+    sources = ['ProjectLink.swift', 'Options.swift', 'Appearance.swift', 'PhotoBackground.swift', 'NativeClockView.swift'] + ([] if library else ['Preview.swift'])
     slices = []
     for arch in architecture:
         thin = OUTPUT / f'{name}-{arch}'
@@ -109,10 +109,46 @@ def bundle(name, extension, architecture, data, version):
     return contents.parent
 
 
+
+def installer(saver, architectures, version):
+    name = 'Install Literature Clock'
+    app = OUTPUT / f'{name}.app'
+    contents = app / 'Contents'
+    resources = contents / 'Resources'
+    resources.mkdir(parents=True, exist_ok=True)
+    payload = resources / saver.name
+    if payload.exists():
+        shutil.rmtree(payload)
+    shutil.copytree(saver, payload)
+    info = dict(CFBundleIdentifier='net.literatureclock.native-installer', CFBundleName=name,
+                CFBundleDisplayName=name, CFBundleExecutable=name, CFBundleVersion=version,
+                CFBundleShortVersionString=version, CFBundlePackageType='APPL',
+                LSMinimumSystemVersion='12.0', NSPrincipalClass='NSApplication', NSHighResolutionCapable=True)
+    (contents / 'Info.plist').write_bytes(plistlib.dumps(info))
+    binary = contents / 'MacOS' / name
+    binary.parent.mkdir(exist_ok=True)
+    slices = []
+    for arch in architectures:
+        thin = OUTPUT / f'{name}-{arch}'
+        run('xcrun', 'swiftc', '-module-name', 'LiteratureClockInstaller', '-swift-version', '5',
+            '-module-cache-path', str(OUTPUT / 'module-cache'), '-target', f'{arch}-apple-macosx12.0',
+            '-framework', 'AppKit', '-parse-as-library',
+            *[str(SOURCE / 'Sources' / source) for source in ['ProjectLink.swift', 'Installation.swift', 'InstallationChecks.swift', 'Installer.swift']],
+            '-o', str(thin))
+        slices.append(str(thin))
+    run('xcrun', 'lipo', '-create', *slices, '-output', str(binary))
+    actual = subprocess.check_output(['xcrun', 'lipo', '-archs', str(binary)], text=True).split()
+    if set(actual) != set(architectures):
+        raise RuntimeError(f'Unexpected installer architectures: {actual}')
+    run('codesign', '--force', '--sign', '-', str(app))
+    run('codesign', '--verify', '--deep', '--strict', str(app))
+    return app
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--universal', action='store_true')
-    parser.add_argument('--version', default='0.1.0', help='Numeric major.minor.patch screensaver version')
+    parser.add_argument('--version', default=(SOURCE / 'VERSION').read_text().strip(), help='Numeric major.minor.patch screensaver version')
     args = parser.parse_args()
     if not re.fullmatch(r'\d+\.\d+\.\d+', args.version):
         parser.error('--version must be numeric major.minor.patch (for example 0.1.0)')
@@ -123,8 +159,16 @@ def main():
     architectures = ['arm64', 'x86_64'] if args.universal else ['arm64']
     saver = bundle('Literature Clock', 'saver', architectures, data, args.version)
     bundle('Literature Clock Native Preview', 'app', architectures, data, args.version)
+    install_app = installer(saver, architectures, args.version)
+    distribution = OUTPUT / 'Literature Clock for macOS'
+    if distribution.exists():
+        shutil.rmtree(distribution)
+    distribution.mkdir()
+    shutil.copytree(saver, distribution / saver.name)
+    shutil.copytree(install_app, distribution / install_app.name)
+    shutil.copy2(SOURCE / 'INSTALL.txt', distribution / 'README.txt')
     package = OUTPUT / 'Literature-Clock-Native-macOS.zip'
-    run('ditto', '-c', '-k', '--sequesterRsrc', '--keepParent', str(saver), str(package))
+    run('ditto', '-c', '-k', '--sequesterRsrc', '--keepParent', str(distribution), str(package))
     package.with_suffix('.zip.sha256').write_text(hashlib.sha256(package.read_bytes()).hexdigest() + '  ' + package.name + '\n')
     print(f'Built native saver with {len(data)} languages: {saver}')
 

@@ -1,6 +1,12 @@
 name: macOS native screensaver
 
 on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'screensavers/macos-native/**'
+      - 'src/strings/**'
+      - '.github/workflows/macos-native-screensaver.yml'
   push:
     branches: [main]
     paths:
@@ -23,7 +29,7 @@ concurrency:
 
 jobs:
   build:
-    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch' || startsWith(github.event.release.tag_name, 'macos-native-v')
+    if: github.event_name == 'pull_request' || github.event_name == 'push' || github.event_name == 'workflow_dispatch' || startsWith(github.event.release.tag_name, 'macos-native-v')
     runs-on: macos-15
     timeout-minutes: 30
     steps:
@@ -59,6 +65,8 @@ jobs:
             version="$(cat screensavers/macos-native/VERSION)"
           fi
           python3 screensavers/macos-native/build.py --universal --version "$version"
+      - name: Check installer transactions in an isolated directory
+        run: '"screensavers/macos-native/build/Install Literature Clock.app/Contents/MacOS/Install Literature Clock" --check-install'
       - uses: actions/upload-artifact@v4
         with:
           name: Literature-Clock-Native-macOS-universal
@@ -149,7 +157,7 @@ jobs:
               if not attached:
                   subprocess.run(['gh', 'release', 'upload', tag, *map(str, files)], check=True)
           else:
-              notes = 'Download the ZIP, unzip it, and install Literature Clock.saver in ~/Library/Screen Savers. Select Literature Clock in System Settings. Universal binary for Apple Silicon and Intel; Liquid Glass progress requires macOS 26+.'
+              notes = 'Download and unzip the ZIP, then open Install Literature Clock.app. The installer preserves preferences, backs up previous copies and reloads the screen saver host. A standalone Literature Clock.saver is also included for manual installation. Select Literature Clock in System Settings. Universal binary for Apple Silicon and Intel; Liquid Glass progress requires macOS 26+.'
               subprocess.run(['gh', 'release', 'create', tag, *map(str, files), '--target', os.environ['GITHUB_SHA'], '--title', 'Literature Clock for macOS ' + version, '--notes', notes, '--draft', '--prerelease'], check=True)
           subprocess.run(['gh', 'release', 'edit', tag, '--draft=false'], check=True)
           PYTHON

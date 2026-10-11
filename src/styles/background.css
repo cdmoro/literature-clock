@@ -1,0 +1,113 @@
+/* Background choice is independent of typography and accent colours. */
+html[data-background='tinted'][data-theme$='light'] {
+  --background: color-mix(in srgb, var(--accent-color) 15%, #fff);
+}
+html[data-background='tinted'][data-theme$='dark'] {
+  --background: color-mix(in srgb, var(--accent-color) 16%, #101016);
+}
+html[data-background='tinted'] body {
+  background-image: none;
+}
+html[data-background='plain'][data-theme$='light'] {
+  --background: #fff;
+}
+html[data-background='plain'][data-theme$='dark'] {
+  --background: #000;
+}
+html[data-background='plain'][data-theme][data-background-pattern] body {
+  background-image: none;
+  box-shadow: none;
+}
+/* A neutral base can still carry an independently selected pattern. */
+html:is([data-background='plain'], [data-background='tinted'])[data-theme][data-background-pattern]:not(
+    [data-background-pattern='none']
+  )
+  body {
+  background-image: var(--pattern-image);
+  background-size: var(--pattern-size);
+  background-position: var(--pattern-position, 0 0);
+  background-repeat: repeat;
+}
+html[data-background='plain'] body::before,
+html[data-background='plain'] body::after {
+  display: none;
+}
+
+html[data-background='photo'] {
+  --photo-shade: #ffffff40;
+  --photo-effect: linear-gradient(transparent, transparent);
+  --photo-effect-size: 100% 100%;
+}
+html[data-background='photo'][data-theme$='dark'] {
+  --photo-shade: #00000040;
+}
+html[data-background='photo'][data-theme][data-background-pattern] body {
+  background-image: var(--photo-effect), linear-gradient(var(--photo-shade), var(--photo-shade)),
+    var(--photo-image, none);
+  background-size: var(--photo-effect-size), cover, cover;
+  background-position: center;
+  background-repeat: repeat, no-repeat, no-repeat;
+  background-blend-mode: normal;
+}
+html[data-background='photo']:is([data-theme|='retro'], [data-theme|='anaglyph']) {
+  --photo-effect: repeating-linear-gradient(to bottom, transparent 0 2px, #0003 2px 3px);
+  --photo-effect-size: 100% 3px;
+}
+html[data-background='photo'][data-theme='festive-light'] {
+  --photo-effect: linear-gradient(to top right, #fad0c455, #ffd1ff55);
+}
+html[data-background='photo'][data-theme='festive-dark'] {
+  --photo-effect: linear-gradient(to top right, #011b1b66, #43162c66);
+}
+/* Patterns get a separate layer so multi-image patterns keep their tile sizes. */
+#photo-overlay {
+  display: none;
+  pointer-events: none;
+}
+html[data-background='photo'][data-background-pattern]:not([data-background-pattern='none']) #photo-overlay {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background-color: transparent;
+  background-image: var(--pattern-image);
+  background-size: var(--pattern-size);
+  background-position: var(--pattern-position, 0 0);
+  background-repeat: repeat;
+  opacity: 0.35;
+}
+
+/* The Photo theme's diffuse halo follows the effective background. */
+html[data-background='photo'][data-theme$='light'] {
+  --photo-text-shadow: 0 0 25px #dfdfdf;
+}
+html[data-background='photo'][data-theme$='dark'] {
+  --photo-text-shadow: 0 0 25px #1c1c1c;
+}
+html[data-background='photo'] #quote {
+  text-shadow: var(--photo-text-shadow);
+}
+/* Retain the themes' characteristic shadows alongside the readability halo. */
+html[data-background='photo'][data-theme|='terminal'] #quote {
+  text-shadow: var(--photo-text-shadow), var(--terminal-text-shadow);
+}
+html[data-background='photo'][data-theme='terminal-light'] #quote cite {
+  text-shadow: var(--photo-text-shadow), var(--terminal-cite-shadow);
+}
+html[data-background='photo'][data-theme|='anaglyph'] #quote .time {
+  text-shadow: var(--photo-text-shadow), var(--shadow);
+}
+
+/* Let the halo extend beyond the passage. Scrollable quotes retain their
+   scrollport, with room inside it for the blur at each edge. */
+html[data-background='photo'] #quote:not(.quote-scroll):not(:has(#quote-translation)) {
+  overflow: visible;
+}
+html[data-background='photo'] #quote.quote-scroll,
+html[data-background='photo'] #quote:has(#quote-translation) {
+  padding: 25px;
+}
+html[data-background='photo'] #quote #quote-translation,
+html[data-background='photo'] #quote #quote-translation :is(p, cite, .time) {
+  text-shadow: var(--photo-text-shadow);
+}

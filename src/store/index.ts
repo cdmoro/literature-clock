@@ -1,3 +1,4 @@
+import { Background, BACKGROUNDS } from '../utils/background';
 import PHOTO_PROVIDERS from '../photo-providers.json';
 import { BackgroundPattern, isBackgroundPattern } from '../utils/background-patterns';
 import { resolveTransition, TransitionMode } from '../utils/transition-settings';
@@ -25,6 +26,7 @@ interface Stateful {
   color: string;
   palette: string;
   'custom-color': string;
+  background: Background;
   'background-pattern': BackgroundPattern;
   'photo-provider': 'picsum' | 'nasa' | 'commons';
   'photo-category': 'all' | keyof typeof PHOTO_PROVIDERS.nasa | keyof typeof PHOTO_PROVIDERS.commons;
@@ -64,6 +66,7 @@ const REMOVE_VALUES_FROM_URL: Partial<State> = {
   font: 'default',
   theme: 'base-system',
   color: '#d24335',
+  background: 'default',
   'background-pattern': 'none',
   palette: 'default',
 };
@@ -134,6 +137,9 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
       case 'photo-category':
         if (['all', ...Object.keys(PHOTO_PROVIDERS.nasa), ...Object.keys(PHOTO_PROVIDERS.commons)].includes(raw))
           result[key] = raw;
+        break;
+      case 'background':
+        if (BACKGROUNDS.some((value) => value === raw)) result[key] = raw;
         break;
       case 'background-pattern':
         if (isBackgroundPattern(raw)) result[key] = raw;
@@ -385,6 +391,7 @@ export function createStore() {
     color: '#d24335',
     palette: 'default',
     'custom-color': '',
+    background: 'default',
     'background-pattern': 'none',
     'photo-provider': 'picsum',
     'photo-category': 'all',

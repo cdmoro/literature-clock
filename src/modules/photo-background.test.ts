@@ -82,12 +82,12 @@ describe('NASA backgrounds', () => {
     store.set('photo-category', 'galaxies');
     await updatePhotoBackground();
     images[0].onload!(new Event('load'));
-    const background = document.documentElement.style.getPropertyValue('--background-image');
+    const background = document.documentElement.style.getPropertyValue('--photo-image');
     expect(document.getElementById('photo-credit')?.textContent).toBe('NASA/ESA');
     store.set('photo-provider', 'picsum');
     await updatePhotoBackground();
     images[1].onerror!(new Event('error'));
-    expect(document.documentElement.style.getPropertyValue('--background-image')).toBe(background);
+    expect(document.documentElement.style.getPropertyValue('--photo-image')).toBe(background);
     expect(document.getElementById('photo-credit')?.textContent).toBe('NASA/ESA');
   });
   it('ignores an older NASA response after leaving Photo', async () => {
@@ -180,6 +180,36 @@ describe('Commons backgrounds and joined selectors', () => {
     expect(category.value).toBe('all');
     expect([...category.options].some((option) => option.value === 'moon')).toBe(true);
     expect(category.getAttribute('aria-label')).toBe('Photo category');
+    dialog.remove();
+  });
+});
+
+describe('photos outside the Photo theme', () => {
+  it('loads a photo for a decorated theme and ignores a pending image after changing background', async () => {
+    store.set('theme', 'retro-dark');
+    store.set('background', 'photo');
+    await updatePhotoBackground();
+    expect(images).toHaveLength(1);
+    images[0].onload!(new Event('load'));
+    expect(document.documentElement.style.getPropertyValue('--photo-image')).toContain('picsum.photos');
+    clearPhotoBackground();
+    await updatePhotoBackground();
+    const onload = images[1].onload!;
+    store.set('background', 'plain');
+    onload.call(images[1], new Event('load'));
+    expect(document.documentElement.style.getPropertyValue('--photo-image')).toBe('');
+  });
+  it('shows photo controls for compatible themes using Photo and hides them for owned backgrounds', () => {
+    const dialog = document.createElement('dialog');
+    dialog.innerHTML = '<div class="settings-theme-picker"></div>';
+    document.body.append(dialog);
+    store.set('theme', 'base-dark');
+    store.set('background', 'photo');
+    initPhotoSettings(dialog);
+    expect(dialog.querySelector<HTMLElement>('#photo-settings')!.hidden).toBe(false);
+    store.set('theme', 'horizon-dark');
+    expect(dialog.querySelector<HTMLElement>('#photo-settings')!.hidden).toBe(true);
+    expect(document.documentElement.style.getPropertyValue('--photo-image')).toBe('');
     dialog.remove();
   });
 });
