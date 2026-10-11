@@ -118,12 +118,13 @@ public sealed class SaverWindow : Window
         }
         else if (!embedded)
         {
+            var currentPreferences=p;
             PreviewKeyDown += (_, e) =>
             {
                 if (e.Key == System.Windows.Input.Key.F2)
                 {
-                    var dialog = new SettingsWindow(data, p) { Owner = this };
-                    if (dialog.ShowDialog() == true) Content = new ClockSurface(data, Preferences.Load(), display);
+                    var dialog = new SettingsWindow(data, currentPreferences) { Owner = this };
+                    if (dialog.ShowDialog() == true) { currentPreferences=Preferences.Load(); Content = new ClockSurface(data, currentPreferences, display); }
                 }
             };
         }

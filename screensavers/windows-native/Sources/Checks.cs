@@ -47,6 +47,10 @@ public static class Checks
             window.Show(); window.UpdateLayout(); surface.Refresh(); window.UpdateLayout();
             System.Windows.Threading.Dispatcher.CurrentDispatcher.Invoke(()=>{},System.Windows.Threading.DispatcherPriority.Render);
             var bitmap=new RenderTargetBitmap(960,640,96,96,PixelFormats.Pbgra32); bitmap.Render(surface);
+            var pixels=new byte[960*640*4]; bitmap.CopyPixels(pixels,960*4,0);
+            var colours=new System.Collections.Generic.HashSet<int>();
+            for(int i=0;i<pixels.Length;i+=64) colours.Add(BitConverter.ToInt32(pixels,i));
+            Assert(colours.Count>4,"Blank or missing passage render: "+theme+"/"+locale);
             var encoder=new PngBitmapEncoder(); encoder.Frames.Add(BitmapFrame.Create(bitmap));
             using(var stream=File.Create(Path.Combine(output,theme+"-"+locale+".png"))) encoder.Save(stream);
             window.Close();
