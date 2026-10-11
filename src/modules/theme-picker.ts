@@ -9,7 +9,6 @@ export function themePreviewDocument() {
   const liveQuote = document.getElementById('quote');
   const previewFont = liveQuote ? getComputedStyle(liveQuote).fontFamily.split(',')[0].replace(/["']/g, '').trim() : '';
   root.dataset.previewFont = previewFont;
-  root.dataset.background = root.dataset.theme?.startsWith('photo') ? 'photo' : 'default';
   const head = document.createElement('head');
   const base = document.createElement('base');
   const baseUrl = new URL(document.baseURI);
@@ -39,6 +38,9 @@ export function themePreviewDocument() {
     #quote cite { display: block; font-size: .8rem; line-height: 1.4; margin-top: .5rem; overflow: visible; }
     .preview-passage, .preview-attribution { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; }
     .preview-passage { -webkit-line-clamp: 3; }
+    [data-background="photo"] :is(.preview-passage, .preview-attribution) {
+      padding: 25px; margin: -25px;
+    }
     .preview-attribution { -webkit-line-clamp: 2; }
     #quote::before, #quote::after, #quote p::before, #quote p::after, #quote cite::after { content: none; }
     [data-theme|='frame'] #quote { border: 2px solid; padding: .75rem; border-radius: 1rem 0; }
@@ -281,7 +283,10 @@ export function initThemePicker(dialog: HTMLDialogElement) {
   const observer = new MutationObserver(scheduleRefresh);
   const quote = document.getElementById('quote');
   if (quote) observer.observe(quote, { childList: true, subtree: true, characterData: true });
-  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'class', 'style'] });
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-theme', 'data-background', 'data-background-pattern', 'class', 'style'],
+  });
   observer.observe(document.body, { attributes: true, attributeFilter: ['class'], childList: true });
   observer.observe(document.head, { childList: true, subtree: true, characterData: true });
   observer.observe(select, {

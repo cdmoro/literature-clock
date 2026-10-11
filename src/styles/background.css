@@ -97,3 +97,17 @@ html[data-background='photo'][data-theme='terminal-light'] #quote cite {
 html[data-background='photo'][data-theme|='anaglyph'] #quote .time {
   text-shadow: var(--photo-text-shadow), var(--shadow);
 }
+
+/* Let the halo extend beyond the passage. Scrollable quotes retain their
+   scrollport, with room inside it for the blur at each edge. */
+html[data-background='photo'] #quote:not(.quote-scroll):not(:has(#quote-translation)) {
+  overflow: visible;
+}
+html[data-background='photo'] #quote.quote-scroll,
+html[data-background='photo'] #quote:has(#quote-translation) {
+  padding: 25px;
+}
+html[data-background='photo'] #quote #quote-translation,
+html[data-background='photo'] #quote #quote-translation :is(p, cite, .time) {
+  text-shadow: var(--photo-text-shadow);
+}
