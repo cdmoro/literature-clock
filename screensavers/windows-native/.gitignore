@@ -1,0 +1,5 @@
+bin/
+obj/
+build/
+Resources/
+Shaders/*.ps

@@ -197,3 +197,7 @@ The MIT license does not relicense third-party material or the literary quotatio
 Hi! I'm Carlos. Find me on [Twitter](https://twitter.com/CarlosBonadeo) or [LinkedIn](https://www.linkedin.com/in/cdbonadeo/).
 
 If you enjoy Literature Clock, you can support the project with a [coffee](https://buymeacoffee.com/cdmoro), a [cafecito](http://cafecito.app/cdmoro) or through [Patreon](https://patreon.com/cdmoro).
+
+### Native Windows screen saver
+
+The Windows port shares the macOS native catalogues, fonts and patterns and includes an HLSL optical-glass shader. Build instructions, installation and current validation limits are in [screensavers/windows-native/README.md](screensavers/windows-native/README.md). Development ZIPs for x64 and ARM64 are produced by the Windows native screensaver workflow.
