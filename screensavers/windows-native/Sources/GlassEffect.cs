@@ -8,10 +8,10 @@ public sealed class GlassEffect : ShaderEffect
 {
     public static readonly DependencyProperty InputProperty = RegisterPixelShaderSamplerProperty("Input", typeof(GlassEffect), 0);
     public static readonly DependencyProperty GeometryProperty = DependencyProperty.Register("Geometry", typeof(Point4D), typeof(GlassEffect), new UIPropertyMetadata(new Point4D(1,1,0,0), PixelShaderConstantCallback(0)));
-    public static readonly DependencyProperty TintProperty = DependencyProperty.Register("Tint", typeof(Color), typeof(GlassEffect), new UIPropertyMetadata(Colors.Transparent, PixelShaderConstantCallback(1)));
+    public static readonly DependencyProperty TintProperty = DependencyProperty.Register("Tint", typeof(Point4D), typeof(GlassEffect), new UIPropertyMetadata(new Point4D(0,0,0,0), PixelShaderConstantCallback(1)));
     public Brush Input { get => (Brush)GetValue(InputProperty); set => SetValue(InputProperty, value); }
     public Point4D Geometry { get => (Point4D)GetValue(GeometryProperty); set => SetValue(GeometryProperty,value); }
-    public Color Tint { get => (Color)GetValue(TintProperty); set => SetValue(TintProperty,value); }
+    public Point4D Tint { get => (Point4D)GetValue(TintProperty); set => SetValue(TintProperty,value); }
     public static double Radius(double progress, double width, double height)
     {
         var t=Math.Clamp((progress-.92)/.08,0,1);

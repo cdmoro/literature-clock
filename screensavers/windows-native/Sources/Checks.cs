@@ -14,6 +14,7 @@ public static class Checks
     {
         var app=new Application { ShutdownMode=ShutdownMode.OnExplicitShutdown };
         var data=new Catalogues();
+        _ = new GlassEffect(); // Also validate the embedded compiled shader on software runners.
         Assert(data.Locales.Length==12,"Expected all twelve published native languages");
         Assert(Catalogues.Resolve("en-US",data.Locales)=="en-US","Exact locale resolution");
         Assert(Catalogues.Resolve("zh-Hant",data.Locales)=="zh-CN","Language fallback");

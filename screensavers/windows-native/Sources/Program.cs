@@ -70,6 +70,11 @@ public static class Program
         catch (Exception e)
         {
             System.Diagnostics.Trace.WriteLine(e);
+            if (args.Length > 0 && args[0] == "--check")
+            {
+                System.IO.File.WriteAllText(System.IO.Path.Combine(AppContext.BaseDirectory,"check-error.txt"),e.ToString());
+                return 1;
+            }
             // A broken payload must produce an actionable error, including in Settings.
             MessageBox.Show("Literature Clock could not load its resources. Reinstall the complete package.\n\n" + e.Message, "Literature Clock", MessageBoxButton.OK, MessageBoxImage.Error);
             return 1;

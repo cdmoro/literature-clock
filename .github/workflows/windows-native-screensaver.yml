@@ -44,5 +44,7 @@ jobs:
         if: always() && matrix.runtime == 'win-x64'
         with:
           name: Windows-render-checks
-          path: screensavers/windows-native/build/win-x64/render-checks/*.png
+          path: |
+            screensavers/windows-native/build/win-x64/render-checks/*.png
+            screensavers/windows-native/build/win-x64/check-error.txt
           if-no-files-found: warn

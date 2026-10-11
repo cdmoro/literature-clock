@@ -25,7 +25,7 @@ def plain(value):
 
 def catalogues():
     result = {}
-    for locale in json.loads((ROOT / 'src/strings/translations.json').read_text()):
+    for locale in json.loads((ROOT / 'src/strings/translations.json').read_text(encoding='utf-8')):
         grouped = defaultdict(list)
         for row in read_catalogue(ROOT / f'quotes/quotes.{locale}.csv'):
             phrase = row['Quote time']
@@ -66,7 +66,7 @@ def bundle(name, extension, architecture, data, version):
         shutil.rmtree(resources / 'Fonts')
     (resources / 'font-options.json').unlink(missing_ok=True)
     shutil.copytree(font_root, resources / 'Fonts')
-    labels = json.loads((ROOT / 'src/strings/translations.json').read_text())
+    labels = json.loads((ROOT / 'src/strings/translations.json').read_text(encoding='utf-8'))
     settings = json.loads((ROOT / 'src/strings/settings.json').read_text())
     native = json.loads((SOURCE / 'Assets/settings.json').read_text())
     (resources / 'settings.json').write_text(json.dumps({key: {**value, **settings[key], **native[key]} for key, value in labels.items()}, ensure_ascii=False))

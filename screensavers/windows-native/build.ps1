@@ -18,7 +18,7 @@ Move-Item "$output/Literature Clock.exe" "$output/Literature Clock.scr" -Force
 Copy-Item "$source/Install.ps1", "$source/Uninstall.ps1", "$source/README.md" $output
 if (!$SkipChecks -and $Runtime -eq 'win-x64') {
     $check = Start-Process "$output/Literature Clock.scr" -ArgumentList '--check' -Wait -PassThru
-    if ($check.ExitCode -ne 0) { throw 'Native checks failed' }
+    if ($check.ExitCode -ne 0) { if (Test-Path "$output/check-error.txt") { Get-Content "$output/check-error.txt" }; throw 'Native checks failed' }
 }
 $zip = "$source/build/Literature-Clock-Native-Windows-$Runtime.zip"
 # Diagnostics are Actions artifacts, never part of the user download.

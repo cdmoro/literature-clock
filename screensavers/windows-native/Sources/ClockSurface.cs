@@ -136,7 +136,7 @@ public sealed class ClockSurface : Canvas
             progress.Width=ActualWidth; progress.Height=ActualHeight; SetTop(progress,0);
             progress.Fill=new VisualBrush(scene) { Stretch=Stretch.Fill, ViewboxUnits=BrushMappingMode.Absolute, Viewbox=new Rect(0,0,ActualWidth,ActualHeight) };
             glass.Geometry=new Point4D(ActualWidth,ActualHeight,fraction,GlassEffect.Radius(fraction,ActualWidth,ActualHeight));
-            progressColor.A=(byte)Math.Round(255*(p.Progress=="glass-foreground"?.025:.1)); glass.Tint=progressColor;
+            glass.Tint=new Point4D(progressColor.R/255.0,progressColor.G/255.0,progressColor.B/255.0,p.Progress=="glass-foreground"?.025:.1);
         }
         else
         {
