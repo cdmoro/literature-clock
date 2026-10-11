@@ -265,8 +265,7 @@ button:disabled {
   top: 0;
   width: 100%;
   text-align: center;
-  padding: 0.5rem 0;
-  font-size: 0.85rem;
+  padding: 1rem 0;
   color: var(--font-color);
   font-weight: bold;
   left: 0;
