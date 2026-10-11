@@ -17,7 +17,10 @@ Check-Exit
 Move-Item "$output/Literature Clock.exe" "$output/Literature Clock.scr" -Force
 Copy-Item "$source/Install.ps1", "$source/Uninstall.ps1", "$source/README.md" $output
 if (!$SkipChecks -and $Runtime -eq 'win-x64') {
-    $check = Start-Process "$output/Literature Clock.scr" -ArgumentList '--check' -Wait -PassThru
+    $start = [System.Diagnostics.ProcessStartInfo]::new("$output/Literature Clock.scr", '--check')
+    $start.UseShellExecute = $false # Bypass Windows' .scr file association (/s).
+    $check = [System.Diagnostics.Process]::Start($start)
+    if (!$check.WaitForExit(180000)) { $check.Kill(); throw 'Native checks timed out' }
     if ($check.ExitCode -ne 0) { if (Test-Path "$output/check-error.txt") { Get-Content "$output/check-error.txt" }; throw 'Native checks failed' }
 }
 $zip = "$source/build/Literature-Clock-Native-Windows-$Runtime.zip"

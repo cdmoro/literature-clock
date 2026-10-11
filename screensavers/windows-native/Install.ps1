@@ -11,7 +11,10 @@ if ((Test-Path $destination) -and !(Test-Path "$destination/Literature Clock.scr
 New-Item -ItemType Directory -Path $staging -Force | Out-Null
 try {
     Get-ChildItem $source | Where-Object Name -ne 'render-checks' | Copy-Item -Destination $staging -Recurse
-    $check = Start-Process "$staging/Literature Clock.scr" -ArgumentList '--check' -Wait -PassThru
+    $start = [System.Diagnostics.ProcessStartInfo]::new("$staging/Literature Clock.scr", '--check')
+    $start.UseShellExecute = $false # Bypass Windows' .scr file association (/s).
+    $check = [System.Diagnostics.Process]::Start($start)
+    if (!$check.WaitForExit(180000)) { $check.Kill(); throw 'Native checks timed out' }
     if ($check.ExitCode -ne 0) { throw 'The downloaded resources failed validation.' }
     # Stop only our own installed executable before moving its runtime directory.
     Get-Process -ErrorAction SilentlyContinue | Where-Object { $_.Path -eq "$destination/Literature Clock.scr" } | Stop-Process
