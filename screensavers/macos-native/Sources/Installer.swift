@@ -27,7 +27,7 @@ final class Installer: NSObject, NSApplicationDelegate {
         let menu = NSMenu(), entry = NSMenuItem(), applicationMenu = NSMenu()
         applicationMenu.addItem(withTitle: "Quit Installer", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         entry.submenu = applicationMenu; menu.addItem(entry); NSApp.mainMenu = menu
-        window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 520, height: 330), styleMask: [.titled, .closable], backing: .buffered, defer: false)
+        window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 520, height: 365), styleMask: [.titled, .closable], backing: .buffered, defer: false)
         window.title = "Install Literature Clock"; window.isReleasedWhenClosed = false
         let stack = NSStackView(); stack.orientation = .vertical; stack.alignment = .leading; stack.spacing = 18
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -48,6 +48,7 @@ final class Installer: NSObject, NSApplicationDelegate {
         settingsButton = NSButton(title: "Open Screen Saver Settings", target: self, action: #selector(openSettings)); settingsButton.isHidden = true
         backupButton = NSButton(title: "Show Previous Copies", target: self, action: #selector(openBackup)); backupButton.isHidden = true
         stack.addArrangedSubview(NSStackView(views: [installButton, settingsButton, backupButton]))
+        stack.addArrangedSubview(ProjectLink(title: "View project on GitHub"))
         window.center(); window.makeKeyAndOrderFront(nil); NSApp.activate(ignoringOtherApps: true)
     }
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { true }

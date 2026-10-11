@@ -90,7 +90,7 @@ def bundle(name, extension, architecture, data, version):
     (contents / 'Info.plist').write_bytes(plistlib.dumps(info))
     binary = contents / 'MacOS' / name
     binary.parent.mkdir(exist_ok=True)
-    sources = ['Options.swift', 'Appearance.swift', 'PhotoBackground.swift', 'NativeClockView.swift'] + ([] if library else ['Preview.swift'])
+    sources = ['ProjectLink.swift', 'Options.swift', 'Appearance.swift', 'PhotoBackground.swift', 'NativeClockView.swift'] + ([] if library else ['Preview.swift'])
     slices = []
     for arch in architecture:
         thin = OUTPUT / f'{name}-{arch}'
@@ -133,7 +133,7 @@ def installer(saver, architectures, version):
         run('xcrun', 'swiftc', '-module-name', 'LiteratureClockInstaller', '-swift-version', '5',
             '-module-cache-path', str(OUTPUT / 'module-cache'), '-target', f'{arch}-apple-macosx12.0',
             '-framework', 'AppKit', '-parse-as-library',
-            *[str(SOURCE / 'Sources' / source) for source in ['Installation.swift', 'InstallationChecks.swift', 'Installer.swift']],
+            *[str(SOURCE / 'Sources' / source) for source in ['ProjectLink.swift', 'Installation.swift', 'InstallationChecks.swift', 'Installer.swift']],
             '-o', str(thin))
         slices.append(str(thin))
     run('xcrun', 'lipo', '-create', *slices, '-output', str(binary))

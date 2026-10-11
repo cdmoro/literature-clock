@@ -796,9 +796,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             stack.addArrangedSubview(check)
         }
         let version = Bundle(for: Self.self).object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "development"
-        let versionLink = NSButton(title: "Literature Clock for macOS · v" + version, target: self, action: #selector(openVersionRelease))
-        versionLink.isBordered = false
-        stack.addArrangedSubview(versionLink)
+        stack.addArrangedSubview(NSTextField(labelWithString: "Literature Clock for macOS · v" + version))
+        stack.addArrangedSubview(ProjectLink(title: text("native_github_project")))
         let cancel = NSButton(title: text("cancel"), target: self, action: #selector(cancelOptions))
         cancel.keyEquivalent = "\u{1b}"
         let save = NSButton(title: "OK", target: self, action: #selector(saveOptions))
@@ -812,10 +811,6 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         window.setContentSize(NSSize(width: 700, height: max(470, stack.fittingSize.height + 48)))
         sheet = window
         return window
-    }
-    @objc private func openVersionRelease() {
-        let version = Bundle(for: Self.self).object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "0.2.0"
-        if let url = URL(string: "https://github.com/cdmoro/literature-clock/releases/tag/macos-native-v" + version) { NSWorkspace.shared.open(url) }
     }
     @objc private func cancelOptions() {
         closeOptions()
