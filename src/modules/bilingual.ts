@@ -5,9 +5,55 @@ import { getBaseLocale, getInterfaceLocale, getStrings, resolveLocale } from './
 import SETTINGS from '../strings/settings.json';
 import { Locale, Quote } from '../types';
 import { fitQuote } from '../utils';
+import { quoteMarkup } from '../utils/quote-markup';
 
 const strings = () => SETTINGS[getBaseLocale(getInterfaceLocale())];
 let translationRequest = 0;
+
+// Chrome 128 introduced line breaking within ruby base/annotation pairs.
+// Chromium browsers expose the same Blink engine version in their Chrome token;
+// iOS Chrome uses CriOS and is intentionally excluded because it uses WebKit.
+export function supportsLineBreakableRuby(userAgent = navigator.userAgent): boolean {
+  const version = userAgent.match(/(?:Chrome|Chromium)\/(\d+)/)?.[1];
+  return !!version && Number(version) >= 128 && !/CriOS\//.test(userAgent);
+}
+
+function clearRubyTranslation() {
+  const blockquote = document.getElementById('quote');
+  const original = blockquote?.querySelector<HTMLElement>(':scope > p');
+  const ruby = original?.querySelector<HTMLElement>(':scope > ruby');
+  if (ruby) {
+    const base = [...ruby.childNodes].filter((node) => !(node instanceof HTMLElement && node.tagName === 'RT'));
+    ruby.replaceWith(...base);
+  }
+  blockquote?.classList.remove('has-ruby-translation');
+}
+
+function applyRubyTranslation(passage: HTMLElement, locale: string) {
+  if (!supportsLineBreakableRuby()) return false;
+  const blockquote = document.getElementById('quote');
+  const original = blockquote?.querySelector<HTMLElement>(':scope > p');
+  if (!original) return false;
+
+  // A locale change replaces the previous annotation while keeping the original
+  // passage and its inline formatting intact.
+  const previousRuby = original.querySelector<HTMLElement>(':scope > ruby');
+  if (previousRuby) {
+    const base = [...previousRuby.childNodes].filter((node) => !(node instanceof HTMLElement && node.tagName === 'RT'));
+    previousRuby.replaceWith(...base);
+  }
+
+  const ruby = document.createElement('ruby');
+  ruby.className = 'bilingual-ruby-text';
+  while (original.firstChild) ruby.append(original.firstChild);
+  const annotation = document.createElement('rt');
+  setTextLocale(annotation, locale);
+  annotation.append(...[...passage.childNodes]);
+  ruby.append(annotation);
+  original.append(ruby);
+  blockquote?.classList.add('has-ruby-translation');
+  return true;
+}
 
 const targetLocale = () => {
   const locale = store.get('translation-locale');
@@ -20,6 +66,7 @@ export async function renderTranslation() {
   const blockquote = document.getElementById('quote');
   if (!store.get('bilingual') || !quote || !blockquote || store.get('quote')) {
     document.getElementById('quote-translation')?.remove();
+    clearRubyTranslation();
     return;
   }
 
@@ -27,27 +74,13 @@ export async function renderTranslation() {
   const panel = document.createElement('section');
   panel.id = 'quote-translation';
   setTextLocale(panel, getBaseLocale(getInterfaceLocale()));
-  panel.setAttribute('aria-labelledby', 'translation-heading');
-  const heading = document.createElement('div');
-  heading.id = 'translation-heading';
-  const select = document.createElement('select');
-  select.id = 'clock-translation-locale';
-  select.setAttribute('aria-label', strings().bilingual_language);
-  select.add(new Option(strings().bilingual_select_language, ''));
-  const names = new Intl.DisplayNames([getBaseLocale(getInterfaceLocale())], { type: 'language' });
-  for (const language of Object.keys(SETTINGS)) {
-    select.add(
-      new Option(`${names.of(language === 'zh-CN' ? 'zh-Hans' : language.split('-')[0])} (${language})`, language),
-    );
-  }
-  select.value = locale;
-  select.addEventListener('change', () => store.set('translation-locale', select.value as Locale | ''));
-  heading.append(select);
+  panel.setAttribute('aria-label', strings().bilingual_language);
   const content = document.createElement('div');
   content.className = 'translation-content';
   setTextLocale(content, getBaseLocale(getInterfaceLocale()));
   content.setAttribute('role', 'status');
-  panel.append(heading, content);
+  panel.append(content);
+  let renderedAsRuby = false;
   const commit = () => {
     if (request !== translationRequest || store.get('active-quote') !== quote || !store.get('bilingual')) return;
     document.getElementById('quote-translation')?.remove();
@@ -55,12 +88,14 @@ export async function renderTranslation() {
     fitQuote();
   };
   if (!locale) {
+    clearRubyTranslation();
     content.classList.add('translation-notice');
     content.textContent = strings().bilingual_select_prompt;
     commit();
     return;
   }
   if (quote.locale.replace(/-draft$/, '') === locale) {
+    clearRubyTranslation();
     content.classList.add('translation-notice');
     content.textContent = strings().bilingual_same;
     commit();
@@ -79,7 +114,16 @@ export async function renderTranslation() {
     setTextLocale(content, locale);
     applyLocaleThemeFont(content);
     const passage = document.createElement('p');
-    passage.innerHTML = `${translation.quote_first}<span class="time">${translation.quote_time_case}</span>${translation.quote_last}`;
+    passage.append(quoteMarkup(translation.quote_first));
+    const translatedTime = document.createElement('span');
+    translatedTime.className = 'time';
+    translatedTime.append(quoteMarkup(translation.quote_time_case));
+    passage.append(translatedTime, quoteMarkup(translation.quote_last));
+    if (store.get('bilingual-ruby') && supportsLineBreakableRuby()) {
+      renderedAsRuby = applyRubyTranslation(passage, locale);
+    } else {
+      clearRubyTranslation();
+    }
     const attribution = document.createElement('cite');
     attribution.dir = 'auto';
     const title = document.createElement('span');
@@ -92,9 +136,10 @@ export async function renderTranslation() {
     const author = document.createElement('bdi');
     author.textContent = translation.author;
     attribution.append('— ', title, separator, author);
-    content.replaceChildren(passage, attribution);
+    content.replaceChildren(...(renderedAsRuby ? [] : [passage, attribution]));
   } catch {
     if (request !== translationRequest) return;
+    clearRubyTranslation();
     content.textContent = strings().bilingual_unavailable;
   }
   commit();
@@ -109,7 +154,10 @@ export function initBilingual() {
   const icon =
     '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h12M9 3v2M5 5c0 5 4 9 8 10M13 5c-1 5-5 9-10 11M13 21l4-10 4 10M14.5 17h5"/></svg>';
   toolbarButton.innerHTML = icon;
-  document.getElementById('screensaver')?.after(toolbarButton);
+  const controls = document.createElement('span');
+  controls.id = 'bilingual-toolbar-control';
+  controls.className = 'input-group';
+  controls.append(toolbarButton);
   const row = document.createElement('div');
   row.className = 'settings-row';
   row.innerHTML =
@@ -123,6 +171,48 @@ export function initBilingual() {
   notice.id = 'translation-language-notice';
   notice.className = 'settings-help';
   document.getElementById('settings-content')?.append(row, languageRow, notice);
+  const rubySection = document.createElement('section');
+  rubySection.className = 'settings-behavior-section bilingual-ruby-section';
+  const rubyRow = document.createElement('div');
+  rubyRow.className = 'settings-row';
+  const rubyLabel = document.createElement('label');
+  rubyLabel.htmlFor = 'bilingual-ruby';
+  rubyLabel.dataset.text = 'bilingual_line_by_line';
+  const rubySwitch = document.createElement('button');
+  rubySwitch.id = 'bilingual-ruby';
+  rubySwitch.type = 'button';
+  rubySwitch.className = 'settings-switch';
+  rubySwitch.setAttribute('role', 'switch');
+  rubySwitch.setAttribute('aria-describedby', 'bilingual-ruby-help');
+  const rubyHelp = document.createElement('p');
+  rubyHelp.id = 'bilingual-ruby-help';
+  rubyHelp.className = 'settings-help';
+  rubyHelp.dataset.text = 'bilingual_ruby_requirement';
+  rubyRow.append(rubyLabel, rubySwitch);
+  rubySection.append(rubyRow, rubyHelp);
+  document.getElementById('settings-behavior')?.append(rubySection);
+  rubySwitch.addEventListener('click', () => store.toggle('bilingual-ruby'));
+  const menuSelect = document.createElement('select');
+  menuSelect.id = 'clock-translation-locale';
+  menuSelect.setAttribute('aria-label', strings().bilingual_translate_quote);
+  menuSelect.add(new Option(strings().bilingual_select_language, ''));
+  const names = new Intl.DisplayNames([getBaseLocale(getInterfaceLocale())], { type: 'language' });
+  for (const locale of Object.keys(SETTINGS)) {
+    menuSelect.add(
+      new Option(`${names.of(locale === 'zh-CN' ? 'zh-Hans' : locale.split('-')[0])} (${locale})`, locale),
+    );
+  }
+  const menuControl = document.createElement('span');
+  menuControl.id = 'bilingual-menu-control';
+  menuControl.className = 'input-group';
+  const menuIcon = document.createElement('span');
+  menuIcon.className = 'input-group-text bilingual-menu-icon';
+  menuIcon.setAttribute('aria-hidden', 'true');
+  menuIcon.innerHTML = icon;
+  menuControl.append(menuIcon, menuSelect);
+  document.getElementById('screensaver')?.after(controls);
+  document.getElementById('settings')?.before(menuControl);
+  menuSelect.addEventListener('change', () => store.set('translation-locale', menuSelect.value as Locale | ''));
   const switchButton = row.querySelector('button')!;
   const select = languageRow.querySelector('select')!;
   select.setAttribute('aria-describedby', notice.id);
@@ -138,10 +228,24 @@ export function initBilingual() {
   select.addEventListener('change', () => store.set('translation-locale', select.value as Locale | ''));
   const refresh = () => {
     const enabled = !!store.get('bilingual');
+    const rubyEnabled = !!store.get('bilingual-ruby');
+    const rubySupported = supportsLineBreakableRuby();
     toolbarButton.classList.toggle('active', enabled);
     toolbarButton.setAttribute('aria-pressed', String(enabled));
     switchButton.setAttribute('aria-checked', String(enabled));
     select.value = targetLocale();
+    menuSelect.value = targetLocale();
+    menuControl.hidden = !enabled;
+    rubySwitch.disabled = !rubySupported;
+    rubySwitch.setAttribute('aria-checked', String(rubyEnabled && rubySupported));
+    rubySwitch.setAttribute('aria-disabled', String(!rubySupported));
+    menuSelect.setAttribute('aria-label', strings().bilingual_translate_quote);
+    const menuNames = new Intl.DisplayNames([getBaseLocale(getInterfaceLocale())], { type: 'language' });
+    for (const option of [...menuSelect.options]) {
+      option.textContent = option.value
+        ? `${menuNames.of(option.value === 'zh-CN' ? 'zh-Hans' : option.value.split('-')[0])} (${option.value})`
+        : strings().bilingual_select_language;
+    }
     notice.textContent = strings().bilingual_language_notice;
     const labels = getStrings(getInterfaceLocale());
     for (const option of select.options)
@@ -153,6 +257,7 @@ export function initBilingual() {
     refresh();
     if (
       state.bilingual !== previous.bilingual ||
+      state['bilingual-ruby'] !== previous['bilingual-ruby'] ||
       state['translation-locale'] !== previous['translation-locale'] ||
       state['ui-locale'] !== previous['ui-locale'] ||
       state.work !== previous.work
