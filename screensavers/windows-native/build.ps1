@@ -25,7 +25,7 @@ if (!$SkipChecks -and $Runtime -eq 'win-x64') {
 }
 $zip = "$source/build/Literature-Clock-Native-Windows-$Runtime.zip"
 # Diagnostics are Actions artifacts, never part of the user download.
-$files = Get-ChildItem $output | Where-Object Name -ne 'render-checks'
+$files = Get-ChildItem $output
 Compress-Archive -Path $files.FullName -DestinationPath $zip -Force
 $hash = (Get-FileHash $zip -Algorithm SHA256).Hash.ToLowerInvariant()
 Set-Content "$zip.sha256" "$hash  $(Split-Path $zip -Leaf)" -Encoding ascii

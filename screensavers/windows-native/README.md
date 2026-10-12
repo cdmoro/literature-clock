@@ -68,12 +68,12 @@ The build compiles the HLSL shader to PS 3.0, verifies bundled font SHA-256 hash
 generates offline catalogues, publishes a self-contained apphost renamed `.scr`, and
 packages a ZIP with SHA-256 checksum. x64 builds run `--check`: all catalogues/fonts,
 locale fallback, monitor variant arithmetic, safe filtering, bilingual ID matching,
-Commons licence rejection, glass corner fade, and 84 native render captures.
-Checks use no photo downloads or saved-preference writes.
+Commons licence rejection and glass corner fade. Checks use no photo downloads or
+saved-preference writes.
 The GitHub workflow builds both architectures on pull requests and manual dispatch;
-ZIPs and render captures are retained as Actions artifacts. Windows releases have
-independent `VERSION`; no automatic public release is enabled yet.
+ZIPs are retained as Actions artifacts. Windows releases have independent `VERSION`;
+no automatic public release is enabled yet.
 
 On macOS, `python3 screensavers/windows-native/prepare.py` plus
 `dotnet build screensavers/windows-native/LiteratureClock.csproj` validates C# against
-Windows reference assemblies. The HLSL compiler, runtime and visual checks require Windows.
+Windows reference assemblies. The HLSL compiler and runtime checks require Windows.
