@@ -11,6 +11,10 @@ on:
       - 'src/photo-providers.json'
       - 'public/assets/**'
       - '.github/workflows/windows-native-screensaver.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'screensavers/windows-native/VERSION'
   workflow_dispatch:
 permissions:
   contents: read
@@ -40,3 +44,65 @@ jobs:
             screensavers/windows-native/build/*.zip
             screensavers/windows-native/build/*.sha256
           if-no-files-found: error
+
+  publish-on-merge:
+    if: github.event_name == 'push'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: Literature-Clock-Native-Windows-*
+          path: package
+          merge-multiple: true
+      - name: Publish versioned Windows screensaver downloads
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          python3 - <<'PYTHON'
+          import json
+          import os
+          import re
+          import subprocess
+          from pathlib import Path
+
+          version = Path('screensavers/windows-native/VERSION').read_text().strip()
+          if not re.fullmatch(r'\d+\.\d+\.\d+', version):
+              raise SystemExit('Invalid Windows screensaver version')
+          tag = 'windows-native-v' + version
+          files = sorted(Path('package').glob('*'))
+          expected = {
+              f'Literature-Clock-Native-Windows-{runtime}.{extension}'
+              for runtime in ('win-x64', 'win-arm64')
+              for extension in ('zip', 'zip.sha256')
+          }
+          if {file.name for file in files} != expected:
+              raise SystemExit('Missing Windows ZIP/checksum pair for one or both architectures')
+          releases = json.loads(subprocess.run(
+              ['gh', 'api', '--paginate', '--slurp', 'repos/' + os.environ['GH_REPO'] + '/releases'],
+              check=True, capture_output=True, text=True).stdout)
+          release = next((item for page in releases for item in page if item['tag_name'] == tag), None)
+          if release:
+              if release['target_commitish'] != os.environ['GITHUB_SHA']:
+                  raise SystemExit('Version already belongs to another commit; bump VERSION')
+              existing = {asset['name'] for asset in release['assets']}
+              attached = existing & expected
+              if attached and attached != expected:
+                  raise SystemExit('Partial Windows ZIP/checksum set; refusing to mix builds')
+              if not attached:
+                  subprocess.run(['gh', 'release', 'upload', tag, *map(str, files)], check=True)
+          else:
+              notes = 'Download the ZIP for your Windows architecture, extract it, and run Install.ps1. The installer configures Literature Clock for your Windows account and opens Screen Saver settings.'
+              subprocess.run([
+                  'gh', 'release', 'create', tag, *map(str, files),
+                  '--target', os.environ['GITHUB_SHA'],
+                  '--title', 'Literature Clock for Windows ' + version,
+                  '--notes', notes, '--draft', '--prerelease'], check=True)
+          subprocess.run(['gh', 'release', 'edit', tag, '--draft=false'], check=True)
+          PYTHON
