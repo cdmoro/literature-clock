@@ -10,7 +10,7 @@ if ((Test-Path $destination) -and (Get-Item $destination).Attributes.HasFlag([IO
 if ((Test-Path $destination) -and !(Test-Path "$destination/Literature Clock.scr")) { throw 'The destination contains an unrelated installation.' }
 New-Item -ItemType Directory -Path $staging -Force | Out-Null
 try {
-    Get-ChildItem $source | Where-Object Name -ne 'render-checks' | Copy-Item -Destination $staging -Recurse
+    Get-ChildItem $source | Copy-Item -Destination $staging -Recurse
     $start = [System.Diagnostics.ProcessStartInfo]::new("$staging/Literature Clock.scr", '--check')
     $start.UseShellExecute = $false # Bypass Windows' .scr file association (/s).
     $check = [System.Diagnostics.Process]::Start($start)

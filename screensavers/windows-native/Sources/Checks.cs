@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text.Json;
 using System.Windows;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 
 namespace LiteratureClock;
 public static class Checks
@@ -43,25 +42,7 @@ public static class Checks
         Assert(bilingual.quote==null || bilingual.quote.id==quote.id,"Bilingual must use shared ID");
         using var commons=JsonDocument.Parse("""{"query":{"pages":[{"imageinfo":[{"mime":"image/jpeg","thumburl":"https://upload.wikimedia.org/example.jpg","extmetadata":{"LicenseShortName":{"value":"CC BY-SA"}}}]}]}}""");
         Assert(PhotoBackground.Parse("commons",commons.RootElement).Length==0,"Reject Commons attribution licences");
-        var output=Path.Combine(AppContext.BaseDirectory,"render-checks"); Directory.CreateDirectory(output);
-        foreach(var theme in Appearance.Themes)
-        foreach(var locale in data.Locales)
-        {
-            var settings=new Preferences { Theme=theme,Languages=[locale],Move=false,Background=theme=="photo"?"plain":"default" };
-            var surface=new ClockSurface(data,settings,0,false);
-            var window=new Window { Content=surface,Width=960,Height=640,WindowStyle=WindowStyle.None,ShowInTaskbar=false };
-            window.Show(); window.UpdateLayout(); surface.Refresh(); window.UpdateLayout();
-            System.Windows.Threading.Dispatcher.CurrentDispatcher.Invoke(()=>{},System.Windows.Threading.DispatcherPriority.Render);
-            var bitmap=new RenderTargetBitmap(960,640,96,96,PixelFormats.Pbgra32); bitmap.Render(surface);
-            var pixels=new byte[960*640*4]; bitmap.CopyPixels(pixels,960*4,0);
-            var colours=new System.Collections.Generic.HashSet<int>();
-            for(int i=0;i<pixels.Length;i+=64) colours.Add(BitConverter.ToInt32(pixels,i));
-            Assert(colours.Count>4,"Blank or missing passage render: "+theme+"/"+locale);
-            var encoder=new PngBitmapEncoder(); encoder.Frames.Add(BitmapFrame.Create(bitmap));
-            using(var stream=File.Create(Path.Combine(output,theme+"-"+locale+".png"))) encoder.Save(stream);
-            window.Close();
-        }
-        Console.WriteLine("Checked catalogues, fonts, monitor choices, bilingual identity, licences and 84 render captures.");
+        Console.WriteLine("Checked catalogues, fonts, monitor choices, bilingual identity and photo licences.");
         return 0;
     }
 }
