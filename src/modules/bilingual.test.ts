@@ -104,6 +104,11 @@ it('automatically loads the matching ID when enabled', async () => {
 it('detects line-breakable ruby from Chromium 128 engine tokens', () => {
   expect(supportsLineBreakableRuby('Mozilla/5.0 Chrome/127.0.0.0 Safari/537.36')).toBe(false);
   expect(supportsLineBreakableRuby('Mozilla/5.0 Chrome/128.0.0.0 Safari/537.36')).toBe(true);
+  expect(
+    supportsLineBreakableRuby(
+      'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Mobile Safari/537.36',
+    ),
+  ).toBe(true);
   expect(supportsLineBreakableRuby('Mozilla/5.0 Edg/128.0.0.0 Chrome/128.0.0.0 Safari/537.36')).toBe(true);
   expect(supportsLineBreakableRuby('Mozilla/5.0 Chrome/128.0.0.0 CriOS/128.0.0.0 Mobile')).toBe(false);
   expect(supportsLineBreakableRuby('Mozilla/5.0 Firefox/130.0')).toBe(false);
