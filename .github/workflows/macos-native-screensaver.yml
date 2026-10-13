@@ -71,8 +71,6 @@ jobs:
         with:
           name: Literature-Clock-Native-macOS-universal
           path: |
-            screensavers/macos-native/build/Literature-Clock-Native-macOS.zip
-            screensavers/macos-native/build/Literature-Clock-Native-macOS.zip.sha256
             screensavers/macos-native/build/Literature-Clock-Native-macOS.saver.zip
             screensavers/macos-native/build/Literature-Clock-Native-macOS.saver.zip.sha256
           if-no-files-found: error
@@ -145,11 +143,10 @@ jobs:
           tag = 'macos-native-v' + version
           files = sorted(Path('package').glob('*'))
           expected = {
-              'Literature-Clock-Native-macOS.zip', 'Literature-Clock-Native-macOS.zip.sha256',
               'Literature-Clock-Native-macOS.saver.zip', 'Literature-Clock-Native-macOS.saver.zip.sha256',
           }
           if {file.name for file in files} != expected:
-              raise SystemExit('Missing macOS installer and standalone saver downloads/checksums')
+              raise SystemExit('Missing standalone macOS saver/checksum pair')
           releases = json.loads(subprocess.run(['gh', 'api', '--paginate', '--slurp', 'repos/' + os.environ['GH_REPO'] + '/releases'], check=True, capture_output=True, text=True).stdout)
           release = next((item for page in releases for item in page if item['tag_name'] == tag), None)
           if release:
@@ -162,7 +159,7 @@ jobs:
               if not attached:
                   subprocess.run(['gh', 'release', 'upload', tag, *map(str, files)], check=True)
           else:
-              notes = 'Download Literature-Clock-Native-macOS.saver.zip and extract the single Literature Clock.saver bundle, then double-click it to install for your account. This experimental build is ad-hoc signed and not notarized, so Gatekeeper may block it. If you trust the source, open System Settings > Privacy & Security > Security > Open Anyway for Literature Clock, confirm the prompt and open the saver again. The full Literature-Clock-Native-macOS.zip is also available and includes the account installer. Select Literature Clock in System Settings. Universal binary for Apple Silicon and Intel; Liquid Glass progress requires macOS 26+.'
+              notes = 'Download Literature-Clock-Native-macOS.saver.zip and extract the single Literature Clock.saver bundle, then double-click it to install for your account. This experimental build is ad-hoc signed and not notarized, so Gatekeeper may block it. If you trust the source, open System Settings > Privacy & Security > Security > Open Anyway for Literature Clock, confirm the prompt and open the saver again. Select Literature Clock in System Settings. Universal binary for Apple Silicon and Intel; Liquid Glass progress requires macOS 26+.'
               subprocess.run(['gh', 'release', 'create', tag, *map(str, files), '--target', os.environ['GITHUB_SHA'], '--title', 'Literature Clock for macOS ' + version, '--notes', notes, '--draft', '--prerelease'], check=True)
           subprocess.run(['gh', 'release', 'edit', tag, '--draft=false'], check=True)
           PYTHON
