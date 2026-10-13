@@ -14,7 +14,7 @@ https://github.com/user-attachments/assets/626ca478-d170-4176-90d9-c46580fcfa91
 
 **[Open Literature Clock](https://literatureclock.netlify.app/)** · [Themes](#themes) · [Settings](#settings) · [Screensaver](#screensaver) · [Language incubator](#language-incubator) · [Contributing](#contributing) · [Development](#development)
 
-> **Literature Clock for macOS** — Download `Literature-Clock-Native-macOS.saver.zip` from [Releases](https://github.com/cdmoro/literature-clock/releases), extract the single `Literature Clock.saver` bundle and double-click it to install. The full installer package is also available. It includes 12 quote languages, seven themes and 25 background patterns. See [installation instructions](screensavers/macos-native/README.md). Web and screensaver releases have independent versions.
+> **Literature Clock for macOS** — Download `Literature-Clock-Native-macOS.saver.zip` from [Releases](https://github.com/cdmoro/literature-clock/releases), extract the single `Literature Clock.saver` bundle and double-click it to install. This experimental build is ad-hoc signed and not notarized, so macOS may block it; see [how to approve it](screensavers/macos-native/README.md#install-and-give-feedback). The full installer package is also available. It includes 12 quote languages, seven themes and 25 background patterns. Web and screensaver releases have independent versions.
 
 ## Features
 

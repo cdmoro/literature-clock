@@ -29,10 +29,18 @@ by this installer. The installer leaves other screen savers untouched.
 
 TEST BUILD SIGNING
 
-These builds are signed locally, not notarized with an Apple Developer ID.
-macOS may block opening them. Review the source and use the system's explicit
-approval flow only if you choose to trust the download. The installer does not
-remove quarantine or bypass macOS security checks.
+These builds are signed locally (ad hoc), not notarized with an Apple Developer ID.
+macOS may block the saver with “Apple could not verify … is free of malware”. This
+is Gatekeeper reporting that it could not verify the developer or notarization; it
+does not by itself mean malware was detected.
+
+Only continue if you trust the source and have verified you downloaded this build
+from the Literature Clock project. After macOS blocks the saver, open System
+Settings → Privacy & Security, scroll to Security and click “Open Anyway” for
+Literature Clock.saver. Confirm the next prompt, then open the .saver again and
+choose whether to install it for this user. The “Open Anyway” option is available
+for about an hour after the blocked attempt. This approval does not remove
+quarantine or disable Gatekeeper globally.
 
 Source, license and feedback:
 https://github.com/cdmoro/literature-clock
