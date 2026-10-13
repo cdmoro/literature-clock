@@ -172,7 +172,11 @@ export function initBilingual() {
   notice.className = 'settings-help';
   document.getElementById('settings-content')?.append(row, languageRow, notice);
   const rubySection = document.createElement('section');
-  rubySection.className = 'settings-behavior-section bilingual-ruby-section';
+  rubySection.className = 'bilingual-ruby-section';
+  const rubyHeading = document.createElement('h3');
+  rubyHeading.id = 'bilingual-ruby-heading';
+  rubyHeading.dataset.text = 'bilingual_display_section';
+  rubySection.setAttribute('aria-labelledby', rubyHeading.id);
   const rubyRow = document.createElement('div');
   rubyRow.className = 'settings-row';
   const rubyLabel = document.createElement('label');
@@ -189,8 +193,8 @@ export function initBilingual() {
   rubyHelp.className = 'settings-help';
   rubyHelp.dataset.text = 'bilingual_ruby_requirement';
   rubyRow.append(rubyLabel, rubySwitch);
-  rubySection.append(rubyRow, rubyHelp);
-  document.getElementById('settings-behavior')?.append(rubySection);
+  rubySection.append(rubyHeading, rubyRow, rubyHelp);
+  document.getElementById('settings-content')?.append(rubySection);
   rubySwitch.addEventListener('click', () => store.toggle('bilingual-ruby'));
   const menuSelect = document.createElement('select');
   menuSelect.id = 'clock-translation-locale';

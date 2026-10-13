@@ -652,6 +652,10 @@
   margin-top: 1.25rem;
   padding-top: 0.75rem;
 }
+.bilingual-ruby-section h3 {
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem;
+}
 .settings-behavior-section h3 {
   font-size: 0.9rem;
   margin: 0 0 0.75rem;
