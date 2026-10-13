@@ -162,7 +162,7 @@ export function initBilingual() {
   row.className = 'settings-row';
   row.innerHTML =
     icon +
-    '<label for="settings-bilingual" data-text="bilingual_mode"></label><button type="button" id="settings-bilingual" class="settings-switch" role="switch" data-aria-label="bilingual_mode"></button>';
+    '<label for="settings-bilingual" data-text="bilingual_activate"></label><button type="button" id="settings-bilingual" class="settings-switch" role="switch" data-aria-label="bilingual_mode"></button>';
   const languageRow = document.createElement('div');
   languageRow.className = 'settings-row';
   languageRow.innerHTML =
@@ -170,12 +170,11 @@ export function initBilingual() {
   const notice = document.createElement('p');
   notice.id = 'translation-language-notice';
   notice.className = 'settings-help';
-  document.getElementById('settings-content')?.append(row, languageRow, notice);
   const rubySection = document.createElement('section');
-  rubySection.className = 'bilingual-ruby-section';
+  rubySection.className = 'bilingual-settings-section';
   const rubyHeading = document.createElement('h3');
-  rubyHeading.id = 'bilingual-ruby-heading';
-  rubyHeading.dataset.text = 'bilingual_display_section';
+  rubyHeading.id = 'bilingual-settings-heading';
+  rubyHeading.dataset.text = 'bilingual_mode';
   rubySection.setAttribute('aria-labelledby', rubyHeading.id);
   const rubyRow = document.createElement('div');
   rubyRow.className = 'settings-row';
@@ -193,7 +192,7 @@ export function initBilingual() {
   rubyHelp.className = 'settings-help';
   rubyHelp.dataset.text = 'bilingual_ruby_requirement';
   rubyRow.append(rubyLabel, rubySwitch);
-  rubySection.append(rubyHeading, rubyRow, rubyHelp);
+  rubySection.append(rubyHeading, row, languageRow, notice, rubyRow, rubyHelp);
   document.getElementById('settings-content')?.append(rubySection);
   rubySwitch.addEventListener('click', () => store.toggle('bilingual-ruby'));
   const menuSelect = document.createElement('select');

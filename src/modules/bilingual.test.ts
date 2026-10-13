@@ -156,8 +156,11 @@ it('keeps normal bilingual paragraphs by default and disables line-by-line mode 
   }));
   const option = document.getElementById('bilingual-ruby') as HTMLButtonElement;
   expect(option.disabled).toBe(true);
-  expect(option.closest('.bilingual-ruby-section')?.parentElement?.id).toBe('settings-content');
-  expect(document.getElementById('bilingual-ruby-heading')!.dataset.text).toBe('bilingual_display_section');
+  const section = option.closest('.bilingual-settings-section')!;
+  expect(section.parentElement?.id).toBe('settings-content');
+  expect(document.getElementById('bilingual-settings-heading')!.dataset.text).toBe('bilingual_mode');
+  expect(section.querySelector('#settings-bilingual')).not.toBeNull();
+  expect(section.querySelector('#translation-locale')).not.toBeNull();
   store.set('bilingual', true);
   const panel = await translationPanel();
   expect(panel.querySelector('.translation-content p')!.textContent).toContain('Una frase');
