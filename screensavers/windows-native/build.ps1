@@ -11,22 +11,21 @@ if (!$compiler) { throw 'Windows SDK fxc.exe is required to build optical glass.
 & $compiler.FullName /nologo /T ps_3_0 /E main /Fo "$source/Shaders/OpticalGlass.ps" "$source/Shaders/OpticalGlass.hlsl"
 Check-Exit
 $output = "$source/build/$Runtime"
-dotnet publish "$source/LiteratureClock.csproj" -c Release -r $Runtime --self-contained true -p:Version=$version -o $output
+dotnet publish "$source/LiteratureClock.csproj" -c Release -r $Runtime --self-contained true -p:Version=$version -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:IncludeAllContentForSelfExtract=true -p:EnableCompressionInSingleFile=true -o $output
 Check-Exit
-# Keep the native apphost and all runtime/resources together; a .scr is a Windows executable.
+# Publish the complete saver as one executable .scr; all managed resources and runtime
+# components are embedded in it. Windows can still launch it via its .scr association.
 Move-Item "$output/Literature Clock.exe" "$output/Literature Clock.scr" -Force
-Copy-Item "$source/Install.ps1", "$source/Uninstall.ps1", "$source/Preview.ps1", "$source/README.md" $output
 if (!$SkipChecks -and $Runtime -eq 'win-x64') {
     $start = [System.Diagnostics.ProcessStartInfo]::new("$output/Literature Clock.scr", '--check')
     $start.UseShellExecute = $false # Bypass Windows' .scr file association (/s).
     $check = [System.Diagnostics.Process]::Start($start)
     if (!$check.WaitForExit(180000)) { $check.Kill(); throw 'Native checks timed out' }
-    if ($check.ExitCode -ne 0) { if (Test-Path "$output/check-error.txt") { Get-Content "$output/check-error.txt" }; throw 'Native checks failed' }
+    if ($check.ExitCode -ne 0) { if (Test-Path "$env:TEMP/literature-clock-check-error.txt") { Get-Content "$env:TEMP/literature-clock-check-error.txt" }; throw 'Native checks failed' }
 }
-$zip = "$source/build/Literature-Clock-Native-Windows-$Runtime.zip"
-# Diagnostics are Actions artifacts, never part of the user download.
-$files = Get-ChildItem $output
-Compress-Archive -Path $files.FullName -DestinationPath $zip -Force
-$hash = (Get-FileHash $zip -Algorithm SHA256).Hash.ToLowerInvariant()
-Set-Content "$zip.sha256" "$hash  $(Split-Path $zip -Leaf)" -Encoding ascii
-Write-Host "Built $zip"
+$scr = "$output/Literature Clock.scr"
+$releaseScr = "$source/build/Literature-Clock-Native-Windows-$Runtime.scr"
+Copy-Item $scr $releaseScr -Force
+$hash = (Get-FileHash $releaseScr -Algorithm SHA256).Hash.ToLowerInvariant()
+Set-Content "$releaseScr.sha256" "$hash  $(Split-Path $releaseScr -Leaf)" -Encoding ascii
+Write-Host "Built $releaseScr"

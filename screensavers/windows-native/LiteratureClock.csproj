@@ -11,7 +11,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="Resources/**/*" CopyToOutputDirectory="PreserveNewest" />
+    <EmbeddedResource Include="Resources/**/*" />
     <Resource Include="Shaders/OpticalGlass.ps" Condition="Exists('Shaders/OpticalGlass.ps')" />
   </ItemGroup>
 </Project>

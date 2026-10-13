@@ -34,15 +34,15 @@ jobs:
         with:
           dotnet-version: '10.0.x'
       - run: python -m pip install Pillow==11.3.0
-      - name: Build native saver, shader and ZIP
+      - name: Build standalone native screensaver
         shell: pwsh
         run: ./screensavers/windows-native/build.ps1 -Runtime '${{ matrix.runtime }}'
       - uses: actions/upload-artifact@v4
         with:
           name: Literature-Clock-Native-Windows-${{ matrix.runtime }}
           path: |
-            screensavers/windows-native/build/*.zip
-            screensavers/windows-native/build/*.sha256
+            screensavers/windows-native/build/Literature-Clock-Native-Windows-${{ matrix.runtime }}.scr
+            screensavers/windows-native/build/Literature-Clock-Native-Windows-${{ matrix.runtime }}.scr.sha256
           if-no-files-found: error
 
   publish-on-merge:
@@ -80,10 +80,10 @@ jobs:
           expected = {
               f'Literature-Clock-Native-Windows-{runtime}.{extension}'
               for runtime in ('win-x64', 'win-arm64')
-              for extension in ('zip', 'zip.sha256')
+              for extension in ('scr', 'scr.sha256')
           }
           if {file.name for file in files} != expected:
-              raise SystemExit('Missing Windows ZIP/checksum pair for one or both architectures')
+              raise SystemExit('Missing standalone Windows SCR/checksum pair for one or both architectures')
           releases = json.loads(subprocess.run(
               ['gh', 'api', '--paginate', '--slurp', 'repos/' + os.environ['GH_REPO'] + '/releases'],
               check=True, capture_output=True, text=True).stdout)
@@ -94,11 +94,11 @@ jobs:
               existing = {asset['name'] for asset in release['assets']}
               attached = existing & expected
               if attached and attached != expected:
-                  raise SystemExit('Partial Windows ZIP/checksum set; refusing to mix builds')
+                  raise SystemExit('Partial Windows SCR/checksum set; refusing to mix builds')
               if not attached:
                   subprocess.run(['gh', 'release', 'upload', tag, *map(str, files)], check=True)
           else:
-              notes = 'Download the ZIP for your Windows architecture, extract it, and run Install.ps1. The installer configures Literature Clock for your Windows account and opens Screen Saver settings.'
+              notes = 'Download the standalone Literature Clock.scr for your Windows architecture. In Windows Screen Saver settings, use Browse to select the downloaded file. The .scr contains the app, runtime, fonts, quotes and artwork in one file.'
               subprocess.run([
                   'gh', 'release', 'create', tag, *map(str, files),
                   '--target', os.environ['GITHUB_SHA'],

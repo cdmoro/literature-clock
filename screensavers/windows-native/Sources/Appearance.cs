@@ -51,8 +51,11 @@ public static class Appearance
         };
         if (!fonts.TryGetValue(key, out var font))
         {
-            var folder = Path.Combine(Catalogues.Root, "Fonts", key);
-            var directory = new Uri(folder + Path.DirectorySeparatorChar, UriKind.Absolute);
+            var bytes = Catalogues.Open("Fonts/" + key + "/" + FontFiles[key]);
+            var path = Path.Combine(Path.GetTempPath(), "LiteratureClock", key + ".ttf");
+            Directory.CreateDirectory(Path.GetDirectoryName(path)!);
+            using (bytes) using (var output = File.Create(path)) bytes.CopyTo(output);
+            var directory = new Uri(Path.GetDirectoryName(path)! + Path.DirectorySeparatorChar, UriKind.Absolute);
             var discovered = Fonts.GetFontFamilies(directory).FirstOrDefault() ?? throw new InvalidDataException("Missing bundled font: " + key);
             var familyName = discovered.FamilyNames.Values.First();
             font = new FontFamily(directory.AbsoluteUri + "#" + familyName);
@@ -60,4 +63,8 @@ public static class Appearance
         }
         return font;
     }
+    static readonly Dictionary<string, string> FontFiles = new()
+    {
+        ["abrilfatface"]="AbrilFatface-Regular.ttf", ["b612mono"]="B612Mono-Regular.ttf", ["borel"]="Borel-Regular.ttf", ["cascadiacode"]="CascadiaCode[wght].ttf", ["comfortaa"]="Comfortaa[wght].ttf", ["comicrelief"]="ComicRelief-Regular.ttf", ["delagothicone"]="DelaGothicOne-Regular.ttf", ["dotgothic16"]="DotGothic16-Regular.ttf", ["handjet"]="Handjet[ELGR,ELSH,wght].ttf", ["jetbrainsmono"]="JetBrainsMono[wght].ttf", ["lalezar"]="Lalezar-Regular.ttf", ["librebaskerville"]="LibreBaskerville[wght].ttf", ["literata"]="Literata[opsz,wght].ttf", ["lxgwwenkaimonotc"]="LXGWWenKaiMonoTC-Regular.ttf", ["marhey"]="Marhey[wght].ttf", ["pacifico"]="Pacifico-Regular.ttf", ["pangolin"]="Pangolin-Regular.ttf", ["playpensansarabic"]="PlaypenSansArabic[wght].ttf", ["playwritear"]="PlaywriteAR[wght].ttf", ["russoone"]="RussoOne-Regular.ttf", ["sansation"]="Sansation-Regular.ttf", ["specialelite"]="SpecialElite-Regular.ttf", ["victormono"]="VictorMono[wght].ttf", ["vt323"]="VT323-Regular.ttf", ["zain"]="Zain-Regular.ttf", ["zcoolkuaile"]="ZCOOLKuaiLe-Regular.ttf", ["zcoolqingkehuangyou"]="ZCOOLQingKeHuangYou-Regular.ttf"
+    };
 }

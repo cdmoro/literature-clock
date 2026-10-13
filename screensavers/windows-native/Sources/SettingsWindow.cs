@@ -73,7 +73,9 @@ public sealed class SettingsWindow : Window
         var cancel=new Button { Content=data.Text("cancel"),MinWidth=90,Margin=new Thickness(8),IsCancel=true };
         cancel.Click+=(_,_)=>Close(); buttons.Children.Add(cancel);
         var save=new Button { Content=data.Text("save"),MinWidth=90,Margin=new Thickness(8),IsDefault=true }; save.Click+=(_,_)=>Save(); buttons.Children.Add(save); stack.Children.Add(buttons);
-        var version=System.IO.File.ReadAllText(System.IO.Path.Combine(Catalogues.Root,"version.txt")).Trim();
+        using var versionStream=Catalogues.Open("version.txt");
+        using var versionReader=new System.IO.StreamReader(versionStream);
+        var version=versionReader.ReadToEnd().Trim();
         var project=new Button { Content="Literature Clock "+version+" · GitHub",Margin=new Thickness(0,12,0,0) };
         project.Click+=(_,_)=>Process.Start(new ProcessStartInfo("https://github.com/cdmoro/literature-clock") { UseShellExecute=true }); stack.Children.Add(project);
     }

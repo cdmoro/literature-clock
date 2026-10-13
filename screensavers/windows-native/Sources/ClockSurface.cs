@@ -51,7 +51,7 @@ public sealed class ClockSurface : Canvas
     {
         if (!images.TryGetValue(file,out var image))
         {
-            image=new BitmapImage(); image.BeginInit(); image.UriSource=new Uri(System.IO.Path.Combine(Catalogues.Root,file)); image.CacheOption=BitmapCacheOption.OnLoad; image.EndInit(); image.Freeze(); images[file]=image;
+            image=new BitmapImage(); image.BeginInit(); using(var stream=Catalogues.Open(file)) { image.StreamSource=stream; image.CacheOption=BitmapCacheOption.OnLoad; image.EndInit(); } image.Freeze(); images[file]=image;
         }
         return image;
     }
