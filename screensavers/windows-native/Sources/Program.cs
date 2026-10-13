@@ -72,7 +72,7 @@ public static class Program
             System.Diagnostics.Trace.WriteLine(e);
             if (args.Length > 0 && args[0] == "--check")
             {
-                System.IO.File.WriteAllText(System.IO.Path.Combine(AppContext.BaseDirectory,"check-error.txt"),e.ToString());
+                System.IO.File.WriteAllText(System.IO.Path.Combine(System.IO.Path.GetTempPath(),"literature-clock-check-error.txt"),e.ToString());
                 return 1;
             }
             // A broken payload must produce an actionable error, including in Settings.

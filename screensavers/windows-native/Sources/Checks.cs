@@ -30,7 +30,7 @@ public static class Checks
                 var family=Appearance.Font(theme,locale);
                 var face=new Typeface(family,FontStyles.Normal,FontWeights.Normal,FontStretches.Normal);
                 Assert(face.TryGetGlyphTypeface(out var glyph),"Missing font typeface: "+theme+"/"+locale);
-                Assert(glyph.FontUri.IsFile && glyph.FontUri.LocalPath.StartsWith(Catalogues.Root,StringComparison.OrdinalIgnoreCase),"System fallback instead of bundled font: "+theme+"/"+locale);
+                Assert(glyph.FontUri.IsFile && glyph.FontUri.LocalPath.StartsWith(Path.Combine(Path.GetTempPath(),"LiteratureClock"),StringComparison.OrdinalIgnoreCase),"System fallback instead of bundled font: "+theme+"/"+locale);
             }
         }
         var time=new DateTimeOffset(2026,10,11,12,0,0,TimeSpan.Zero);

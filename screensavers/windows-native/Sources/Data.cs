@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text.Json;
 
 namespace LiteratureClock;
@@ -42,8 +43,14 @@ public sealed class Preferences
 }
 public sealed class Catalogues
 {
-    public static string Root => Path.Combine(AppContext.BaseDirectory, "Resources");
-    public static T Read<T>(string name) => JsonSerializer.Deserialize<T>(File.ReadAllText(Path.Combine(Root, name))) ?? throw new InvalidDataException(name);
+    static readonly Assembly Assembly = typeof(Catalogues).Assembly;
+    static readonly string ResourcePrefix = Assembly.GetManifestResourceNames().First(x => x.EndsWith(".Resources.locales.json", StringComparison.Ordinal));
+    public static Stream Open(string name)
+    {
+        var resource = ResourcePrefix[..^"locales.json".Length] + name.Replace('/', '.').Replace('\\', '.');
+        return Assembly.GetManifestResourceStream(resource) ?? throw new InvalidDataException(name);
+    }
+    public static T Read<T>(string name) => JsonSerializer.Deserialize<T>(Open(name)) ?? throw new InvalidDataException(name);
     public readonly string[] Locales = Read<string[]>("locales.json");
     readonly Dictionary<string, Dictionary<string, string>> labels = Read<Dictionary<string, Dictionary<string, string>>>("settings.json");
     readonly Dictionary<string, Dictionary<string, Quote[]>> cache = new();

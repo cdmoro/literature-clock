@@ -170,6 +170,9 @@ def main():
     package = OUTPUT / 'Literature-Clock-Native-macOS.zip'
     run('ditto', '-c', '-k', '--sequesterRsrc', '--keepParent', str(distribution), str(package))
     package.with_suffix('.zip.sha256').write_text(hashlib.sha256(package.read_bytes()).hexdigest() + '  ' + package.name + '\n')
+    standalone_archive = OUTPUT / 'Literature-Clock-Native-macOS.saver.zip'
+    run('ditto', '-c', '-k', '--sequesterRsrc', '--keepParent', str(saver), str(standalone_archive))
+    standalone_archive.with_suffix('.zip.sha256').write_text(hashlib.sha256(standalone_archive.read_bytes()).hexdigest() + '  ' + standalone_archive.name + '\n')
     print(f'Built native saver with {len(data)} languages: {saver}')
 
 

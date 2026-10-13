@@ -73,6 +73,8 @@ jobs:
           path: |
             screensavers/macos-native/build/Literature-Clock-Native-macOS.zip
             screensavers/macos-native/build/Literature-Clock-Native-macOS.zip.sha256
+            screensavers/macos-native/build/Literature-Clock-Native-macOS.saver.zip
+            screensavers/macos-native/build/Literature-Clock-Native-macOS.saver.zip.sha256
           if-no-files-found: error
           retention-days: 30
 
@@ -105,7 +107,7 @@ jobs:
           files = sorted(Path('package').glob('*'))
           attached = [file for file in files if file.name in existing]
           if attached and len(attached) != len(files):
-              raise SystemExit('Release has a partial ZIP/checksum pair; refusing to attach a newly built checksum to an older ZIP.')
+              raise SystemExit('Release has a partial screensaver download set; refusing to attach checksums to older files.')
           if not attached:
               subprocess.run(['gh', 'release', 'upload', tag, *[str(file) for file in files]], check=True)
           else:
@@ -142,9 +144,12 @@ jobs:
               raise SystemExit('Invalid screensaver version')
           tag = 'macos-native-v' + version
           files = sorted(Path('package').glob('*'))
-          expected = {'Literature-Clock-Native-macOS.zip', 'Literature-Clock-Native-macOS.zip.sha256'}
+          expected = {
+              'Literature-Clock-Native-macOS.zip', 'Literature-Clock-Native-macOS.zip.sha256',
+              'Literature-Clock-Native-macOS.saver.zip', 'Literature-Clock-Native-macOS.saver.zip.sha256',
+          }
           if {file.name for file in files} != expected:
-              raise SystemExit('Missing ZIP/checksum pair')
+              raise SystemExit('Missing macOS installer and standalone saver downloads/checksums')
           releases = json.loads(subprocess.run(['gh', 'api', '--paginate', '--slurp', 'repos/' + os.environ['GH_REPO'] + '/releases'], check=True, capture_output=True, text=True).stdout)
           release = next((item for page in releases for item in page if item['tag_name'] == tag), None)
           if release:
@@ -153,11 +158,11 @@ jobs:
               existing = {asset['name'] for asset in release['assets']}
               attached = existing & expected
               if attached and attached != expected:
-                  raise SystemExit('Partial ZIP/checksum pair; refusing to mix builds')
+                  raise SystemExit('Partial screensaver download set; refusing to mix builds')
               if not attached:
                   subprocess.run(['gh', 'release', 'upload', tag, *map(str, files)], check=True)
           else:
-              notes = 'Download and unzip the ZIP, then open Install Literature Clock.app. The installer preserves preferences, backs up previous copies and reloads the screen saver host. A standalone Literature Clock.saver is also included for manual installation. Select Literature Clock in System Settings. Universal binary for Apple Silicon and Intel; Liquid Glass progress requires macOS 26+.'
+              notes = 'Download Literature-Clock-Native-macOS.saver.zip and extract the single Literature Clock.saver bundle, then double-click it to install for your account. The full Literature-Clock-Native-macOS.zip is also available and includes the account installer. Select Literature Clock in System Settings. Universal binary for Apple Silicon and Intel; Liquid Glass progress requires macOS 26+.'
               subprocess.run(['gh', 'release', 'create', tag, *map(str, files), '--target', os.environ['GITHUB_SHA'], '--title', 'Literature Clock for macOS ' + version, '--notes', notes, '--draft', '--prerelease'], check=True)
           subprocess.run(['gh', 'release', 'edit', tag, '--draft=false'], check=True)
           PYTHON

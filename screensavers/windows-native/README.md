@@ -8,12 +8,10 @@ Settings and per-display photo caches live in `%LOCALAPPDATA%\Literature Clock`.
 
 ## Install
 
-Extract the **entire** ZIP to a folder, then run `Install.ps1` in PowerShell. The installer
-validates the resources, installs in your user profile, retains old copies in Installation
-Backups, selects the saver and opens Windows Screen Saver Settings. No administrator
-rights are required. Use **Settings** to configure it and **Preview** to run it.
-The complete folder must stay together: the `.scr` needs its DLLs and `Resources` folder.
-Windows execution-policy or download approval prompts may require your explicit approval.
+Download the standalone `Literature Clock.scr` for your architecture. It contains the .NET
+runtime, managed dependencies, quote catalogues, fonts, themes and patterns. In Windows
+Screen Saver settings, use **Browse** to select the downloaded file, then use **Settings**
+to configure it and **Preview** to run it. No administrator rights or extraction are needed.
 These are unsigned development builds, not signed public releases.
 
 For a manual portable preview, run `Preview.ps1`; press **F2** for
@@ -65,14 +63,13 @@ python -m pip install Pillow==11.3.0
 ```
 
 The build compiles the HLSL shader to PS 3.0, verifies bundled font SHA-256 hashes,
-generates offline catalogues, publishes a self-contained apphost renamed `.scr`, and
-packages a ZIP with SHA-256 checksum. x64 builds run `--check`: all catalogues/fonts,
+generates offline catalogues, embeds resources and publishes a self-contained single-file
+apphost with the `.scr` extension and a SHA-256 checksum. x64 builds run `--check`: all catalogues/fonts,
 locale fallback, monitor variant arithmetic, safe filtering, bilingual ID matching,
 Commons licence rejection and glass corner fade. Checks use no photo downloads or
 saved-preference writes.
 The GitHub workflow builds both architectures on pull requests and manual dispatch;
-ZIPs are retained as Actions artifacts. Windows releases have independent `VERSION`;
-no automatic public release is enabled yet.
+standalone `.scr` files are retained as Actions artifacts and published on version bumps.
 
 On macOS, `python3 screensavers/windows-native/prepare.py` plus
 `dotnet build screensavers/windows-native/LiteratureClock.csproj` validates C# against
