@@ -34,6 +34,18 @@ test('theme preview preserves locale fonts while removing live quote sizing', ()
   expect(preview.lang).toBe('el-GR');
 });
 
+test('theme preview removes the translated ruby annotation but keeps the original passage', () => {
+  document.body.innerHTML =
+    '<blockquote id="quote" class="has-ruby-translation"><p><ruby>Original passage<rt lang="es-ES">Traducción</rt></ruby></p><cite>Author</cite><section id="quote-translation">Translation panel</section></blockquote>';
+  const source = new DOMParser().parseFromString(themePreviewDocument(), 'text/html');
+  const preview = source.getElementById('quote')!;
+  expect(preview.textContent).toContain('Original passage');
+  expect(preview.textContent).not.toContain('Traducción');
+  expect(preview.textContent).not.toContain('Translation panel');
+  expect(preview.querySelector('ruby, rt, #quote-translation')).toBeNull();
+  expect(preview.classList.contains('has-ruby-translation')).toBe(false);
+});
+
 test('keeps quick actions outside and moves every settings control without replacing it', () => {
   document.body.innerHTML = page;
   const theme = document.getElementById('theme-select');

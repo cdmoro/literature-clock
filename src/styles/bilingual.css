@@ -1,24 +1,38 @@
 /* Secondary reading content inherits the theme's palette and typeface, but not
    its primary quote's bubbles, oversized ornaments or attribution layout. */
-#quote #clock-translation-locale {
+#bilingual-menu-control[hidden] {
+  display: none;
+}
+#bilingual-menu-control .bilingual-menu-icon {
+  padding-inline: 0.5rem;
+  background-color: var(--font-color);
+  color: var(--background);
+}
+#bilingual-menu-control .bilingual-menu-icon svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+#bilingual-menu-control select {
   width: auto;
-  max-width: 100%;
+  max-width: min(11rem, 40vw);
   box-sizing: border-box;
-  margin: 0;
-  border: 0;
-  background-color: color-mix(in srgb, var(--font-color), transparent 94%);
-  box-shadow: none;
+  margin-inline-start: -1px;
+  background-color: var(--background);
   color: inherit;
   font: inherit;
   letter-spacing: inherit;
   cursor: pointer;
   appearance: none;
-  padding-inline: 0.5rem 2rem;
+  padding: 0.25rem 1.75rem 0.25rem 0.5rem;
 }
-#quote #clock-translation-locale:focus {
-  /* Keep the focus ring inside the control so the quote's scrollport cannot clip it. */
-  box-shadow: inset 0 0 0 2px var(--accent-color) !important;
+#bilingual-menu-control select:focus {
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent-color), transparent 75%) !important;
   outline: 0;
+  z-index: 1;
+}
+#bilingual-toolbar-control > #bilingual {
+  border-radius: 0;
 }
 #quote #quote-translation {
   min-width: 0;
@@ -81,6 +95,35 @@
     sans-serif;
   font-style: italic;
 }
+
+/* Chrome 128+ and compatible Chromium builds can wrap ruby base/annotation
+   pairs together, keeping each line of the translation below the quote. */
+#quote.has-ruby-translation > p {
+  max-height: none;
+  /* The general quote style balances paragraph lines; let Chromium's ruby
+     algorithm choose paired base/annotation line breaks instead. */
+  text-wrap: wrap;
+}
+#quote .bilingual-ruby-text {
+  ruby-align: start;
+  ruby-position: under;
+  line-height: 2.3;
+}
+#quote .bilingual-ruby-text > rt {
+  font-size: 75%;
+  font-weight: normal;
+  line-height: normal;
+  opacity: 0.5;
+  margin-top: 0.1rem;
+  margin-bottom: 0.5rem;
+  text-align: start;
+}
+#quote .bilingual-ruby-text > rt .time {
+  color: var(--accent-color);
+}
+#quote.has-ruby-translation > #quote-translation {
+  display: none;
+}
 /* Keep framed themes and short viewports reachable without clipping content. */
 #quote.quote-scroll,
 #quote:has(#quote-translation) {
@@ -91,6 +134,9 @@
 }
 #quote:has(#quote-translation) > p {
   max-height: 30vh;
+}
+#quote.has-ruby-translation > p {
+  max-height: none;
 }
 #quote #quote-translation .translation-content {
   max-height: none;
@@ -119,6 +165,27 @@
   [data-theme|='frame'] #quote.quote-scroll,
   [data-theme|='frame'] #quote:has(#quote-translation) {
     padding: 1rem;
+  }
+}
+
+/* At the smallest breakpoint the general layout removes #clock's width cap.
+   Ruby annotations can then contribute an oversized intrinsic width, so keep
+   bilingual passages inside the viewport and let the paired text wrap there. */
+@media (max-width: 450px) {
+  #clock:has(#quote.has-ruby-translation) {
+    width: 90vw;
+    max-width: 90vw;
+    min-width: 0;
+  }
+  #quote.has-ruby-translation {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  #quote.has-ruby-translation > p,
+  #quote.has-ruby-translation .bilingual-ruby-text {
+    max-width: 100%;
   }
 }
 

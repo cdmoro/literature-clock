@@ -87,6 +87,11 @@ export function themePreviewDocument() {
   if (quote) {
     // Remove secondary content so bilingual :has() layout rules cannot affect the preview.
     quote.querySelector('#quote-translation')?.remove();
+    quote.classList.remove('has-ruby-translation');
+    quote.querySelectorAll('ruby').forEach((ruby) => {
+      const base = [...ruby.childNodes].filter((node) => !(node instanceof HTMLElement && node.tagName === 'RT'));
+      ruby.replaceWith(...base);
+    });
     const localeFont = quote.style.getPropertyValue('--locale-quote-font-family');
     quote.removeAttribute('style');
     if (localeFont) quote.style.setProperty('--locale-quote-font-family', localeFont);

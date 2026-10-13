@@ -12,6 +12,7 @@ interface Stateful {
   'ui-locale'?: Locale;
   'quote-locales'?: string;
   bilingual?: boolean;
+  'bilingual-ruby'?: boolean;
   'translation-locale'?: Locale | '';
   zen: boolean;
   work: boolean;
@@ -73,6 +74,7 @@ const REMOVE_VALUES_FROM_URL: Partial<State> = {
 
 const BOOLEAN_KEYS = new Set([
   'bilingual',
+  'bilingual-ruby',
   'zen',
   'work',
   'screensaver',
@@ -377,6 +379,7 @@ export function createStore() {
     'ui-locale': undefined,
     'quote-locales': undefined,
     bilingual: false,
+    'bilingual-ruby': false,
     'translation-locale': '',
     screensaver: false,
     work: false,

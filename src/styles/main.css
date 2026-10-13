@@ -576,14 +576,6 @@ body.paused #quote-notice {
   font-size: clamp(14px, 1.8vw, 24px);
   line-height: 1.4;
 }
-#translation-heading {
-  font:
-    0.85rem/1.5 system-ui,
-    sans-serif;
-}
-#translation-heading:first-letter {
-  text-transform: capitalize;
-}
 #quote-translation .translation-content {
   margin-top: 0.7em;
   max-height: 25vh;

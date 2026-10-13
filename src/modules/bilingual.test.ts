@@ -1,6 +1,6 @@
 import { beforeEach, afterEach, expect, it, vi } from 'vitest';
 import { createStore, store } from '../store';
-import { initBilingual, renderTranslation } from './bilingual';
+import { initBilingual, renderTranslation, supportsLineBreakableRuby } from './bilingual';
 vi.mock('../utils', () => ({ fitQuote: vi.fn(), loadFontIfNotExists: vi.fn() }));
 const quote = {
   id: '1200-000',
@@ -22,7 +22,7 @@ beforeEach(() => {
   localStorage.clear();
   history.replaceState({}, '', '/');
   document.body.innerHTML =
-    '<button id="screensaver"></button><section id="settings-content"></section><blockquote id="quote"></blockquote>';
+    '<div id="menu"><div id="settings"></div></div><button id="screensaver"></button><section id="settings-content"></section><section id="settings-behavior"></section><blockquote id="quote"></blockquote>';
   createStore();
   store.set('active-quote', quote);
   initBilingual();
@@ -41,13 +41,14 @@ it('synchronizes both switches and persists the language', async () => {
   document.getElementById('bilingual')!.click();
   expect(document.getElementById('settings-bilingual')!.getAttribute('aria-checked')).toBe('true');
   await vi.waitFor(() => expect(document.getElementById('quote-translation')).not.toBeNull());
-  const select = document.querySelector('select')!;
+  const select = document.querySelector<HTMLSelectElement>('#translation-locale')!;
   select.value = 'fr-FR';
   select.dispatchEvent(new Event('change'));
   expect(JSON.parse(localStorage.getItem('settings')!)['translation-locale']).toBe('fr-FR');
   document.getElementById('settings-bilingual')!.click();
   expect(document.getElementById('quote-translation')).toBeNull();
   expect(document.getElementById('bilingual')!.getAttribute('aria-pressed')).toBe('false');
+  expect(document.getElementById('bilingual-menu-control')!.hidden).toBe(true);
 });
 it.each([true, false])('restores bilingual preferences after reload (keep URL: %s)', (keepUrl) => {
   document.getElementById('settings-bilingual')!.click();
@@ -57,13 +58,15 @@ it.each([true, false])('restores bilingual preferences after reload (keep URL: %
 
   if (!keepUrl) history.replaceState({}, '', '/');
   document.body.innerHTML =
-    '<button id="screensaver"></button><section id="settings-content"></section><blockquote id="quote"></blockquote>';
+    '<div id="menu"><div id="settings"></div></div><button id="screensaver"></button><section id="settings-content"></section><section id="settings-behavior"></section><blockquote id="quote"></blockquote>';
   createStore();
   initBilingual();
 
   expect(store.get('bilingual')).toBe(true);
   expect(store.get('translation-locale')).toBe('fr-FR');
   expect(document.getElementById('settings-bilingual')!.getAttribute('aria-checked')).toBe('true');
+  expect(document.getElementById('clock-translation-locale')!.hidden).toBe(false);
+  expect(document.getElementById('clock-translation-locale')!.getAttribute('aria-label')).toBe('Translate quote to');
   expect(document.getElementById('bilingual')!.getAttribute('aria-pressed')).toBe('true');
   expect(document.querySelector<HTMLSelectElement>('#translation-locale')!.value).toBe('fr-FR');
   expect(JSON.parse(localStorage.getItem('settings')!)).toMatchObject({
@@ -96,6 +99,72 @@ it('automatically loads the matching ID when enabled', async () => {
   expect(details.textContent).toContain('Al mediodía');
   expect(details.textContent).not.toContain('Wrong');
   expect(details.querySelector('[lang]')!.getAttribute('lang')).toBe('es-ES');
+});
+
+it('detects line-breakable ruby from Chromium 128 engine tokens', () => {
+  expect(supportsLineBreakableRuby('Mozilla/5.0 Chrome/127.0.0.0 Safari/537.36')).toBe(false);
+  expect(supportsLineBreakableRuby('Mozilla/5.0 Chrome/128.0.0.0 Safari/537.36')).toBe(true);
+  expect(
+    supportsLineBreakableRuby(
+      'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Mobile Safari/537.36',
+    ),
+  ).toBe(true);
+  expect(supportsLineBreakableRuby('Mozilla/5.0 Edg/128.0.0.0 Chrome/128.0.0.0 Safari/537.36')).toBe(true);
+  expect(supportsLineBreakableRuby('Mozilla/5.0 Chrome/128.0.0.0 CriOS/128.0.0.0 Mobile')).toBe(false);
+  expect(supportsLineBreakableRuby('Mozilla/5.0 Firefox/130.0')).toBe(false);
+});
+
+it('renders the translated passage as ruby in Chromium 128 and keeps its HTML time markup', async () => {
+  vi.stubGlobal('navigator', { userAgent: 'Mozilla/5.0 Chrome/128.0.0.0 Safari/537.36' });
+  vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+    ok: true,
+    json: async () => [{
+      ...quote,
+      quote_first: '<em>Una frase</em> ',
+      quote_time_case: 'mediodía',
+      quote_last: '<br>Otra línea.',
+    }],
+  }));
+  document.getElementById('quote')!.innerHTML = '<p>Original quote.</p><cite>Original attribution</cite>';
+  store.set('bilingual-ruby', true);
+  store.set('bilingual', true);
+  await translationPanel();
+  const ruby = document.querySelector<HTMLElement>('#quote ruby')!;
+  expect(ruby).not.toBeNull();
+  expect(ruby.querySelector('rt')!.lang).toBe('es-ES');
+  expect(ruby.querySelector('rt em')!.textContent).toBe('Una frase');
+  expect(ruby.querySelector('rt .time')!.textContent).toBe('mediodía');
+  expect(ruby.querySelector('rt br')).not.toBeNull();
+  expect(document.querySelector('#bilingual-toolbar-control > #bilingual')).not.toBeNull();
+  expect(document.querySelector('#bilingual-menu-control > .bilingual-menu-icon')).not.toBeNull();
+  expect(document.querySelector('#bilingual-menu-control > #clock-translation-locale')).not.toBeNull();
+  expect(document.querySelector('#bilingual-menu-control #bilingual')).toBeNull();
+  expect(document.querySelector('#quote-translation #clock-translation-locale')).toBeNull();
+  expect(document.querySelector('#quote-translation .translation-content p')).toBeNull();
+  expect(document.querySelector('#quote')!.classList.contains('has-ruby-translation')).toBe(true);
+  store.set('bilingual', false);
+  expect((document.getElementById('bilingual-menu-control') as HTMLElement).hidden).toBe(true);
+  expect(document.querySelector('#quote > p')!.textContent).toBe('Original quote.');
+  expect(document.querySelector('#quote rt')).toBeNull();
+  expect(document.querySelector('#quote')!.classList.contains('has-ruby-translation')).toBe(false);
+});
+it('keeps normal bilingual paragraphs by default and disables line-by-line mode outside supported Chromium', async () => {
+  vi.stubGlobal('navigator', { userAgent: 'Mozilla/5.0 Firefox/130.0' });
+  vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+    ok: true,
+    json: async () => [{ ...quote, quote_first: 'Una frase', quote_time_case: '', quote_last: ' traducida.' }],
+  }));
+  const option = document.getElementById('bilingual-ruby') as HTMLButtonElement;
+  expect(option.disabled).toBe(true);
+  const section = option.closest('.bilingual-settings-section')!;
+  expect(section.parentElement?.id).toBe('settings-content');
+  expect(document.getElementById('bilingual-settings-heading')!.dataset.text).toBe('bilingual_mode');
+  expect(section.querySelector('#settings-bilingual')).not.toBeNull();
+  expect(section.querySelector('#translation-locale')).not.toBeNull();
+  store.set('bilingual', true);
+  const panel = await translationPanel();
+  expect(panel.querySelector('.translation-content p')!.textContent).toContain('Una frase');
+  expect(document.querySelector('#quote ruby')).toBeNull();
 });
 it('reports missing translations without using another quote', async () => {
   vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: true, json: async () => [{ ...quote, id: 'other' }] }));
@@ -157,11 +226,11 @@ it('discards a response after the quote changes', async () => {
 it('uses the interface selector labels and an explicit locale heading', async () => {
   store.set('translation-locale', 'it-IT');
   store.set('bilingual', true);
-  expect(document.querySelector('option[value="it-IT"]')!.textContent).toBe('Italiano (it-IT)');
+  expect(document.querySelector('#translation-locale option[value="it-IT"]')!.textContent).toBe('Italiano (it-IT)');
   await translationPanel();
   const clockSelect = document.querySelector<HTMLSelectElement>('#clock-translation-locale')!;
   expect(clockSelect.selectedOptions[0].textContent).toBe('Italian (it-IT)');
-  expect(clockSelect.getAttribute('aria-label')).toBe('Translation language');
+  expect(clockSelect.getAttribute('aria-label')).toBe('Translate quote to');
   expect(document.querySelector('#bilingual svg')!.getAttribute('width')).toBe('16');
 });
 
@@ -301,7 +370,7 @@ it('starts with no translation language and prompts without fetching', async () 
   createStore();
   expect(store.get('translation-locale')).toBe('');
   document.body.innerHTML =
-    '<button id="screensaver"></button><section id="settings-content"></section><blockquote id="quote"></blockquote>';
+    '<div id="menu"><div id="settings"></div></div><button id="screensaver"></button><section id="settings-content"></section><blockquote id="quote"></blockquote>';
   initBilingual();
   store.set('active-quote', quote);
   store.set('translation-locale', '');
