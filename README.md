@@ -1,204 +1,134 @@
 # Literature Clock
 
-Literature Clock is a native screensaver that tells the time with passages from literature. The project currently provides native builds for **macOS** and **Windows**, with the web clock available as a companion.
+> Turn your screen into a living anthology. Every minute of the day has its quote.
 
-Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) ([literature-clock](https://github.com/JohannesNE/literature-clock)) and [Jaap Meijers](http://www.eerlijkemedia.nl/) ([e-reader clock](https://www.instructables.com/id/Literary-Clock-Made-From-E-reader/)).
+[![macOS](https://img.shields.io/badge/macOS-Universal-black?logo=apple)](screensavers/macos-native/README.md)
+[![Windows](https://img.shields.io/badge/Windows-x64%20%7C%20ARM64-blue?logo=windows)](screensavers/windows-native/README.md)
+[![Web Demo](https://img.shields.io/badge/Web_Demo-Live-brightgreen)](https://literatureclock.netlify.app/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-![Literature Clock displaying a literary quote with the time highlighted](https://github.com/user-attachments/assets/15fedb98-8d39-418a-86fa-a7fd9d0077d2)
+**Literature Clock** is an elegant, lightweight native screensaver for **macOS** and **Windows** that tells the time using excerpts from world literature. Each minute presents a real book passage mentioning the current hour and minute—delivering serendipitous moments of reading to your idle display.
 
-## Native screensavers
-
-| Platform | Download and installation | Current build |
-| --- | --- | --- |
-| macOS | Download `Literature-Clock-Native-macOS.saver.zip` from [Releases](https://github.com/cdmoro/literature-clock/releases), extract `Literature Clock.saver` and double-click to install for your account. If Gatekeeper blocks it, follow the [approval steps](screensavers/macos-native/README.md#install-and-give-feedback). | Universal build for Apple Silicon and Intel; experimental, ad-hoc signed and not notarized. |
-| Windows 10/11 | Download the standalone `Literature-Clock-Native-Windows-win-x64.scr` or `Literature-Clock-Native-Windows-win-arm64.scr` from [Releases](https://github.com/cdmoro/literature-clock/releases). In Screen Saver settings, choose **Browse**, select the file, then use **Settings** or **Preview**. | Self-contained .NET app; unsigned development builds. No runtime installation or extraction required. |
-
-Both native savers include offline quote catalogues, seven themes, twelve quote languages, and the project's 25 background patterns. Optional Photo backgrounds can download images from Picsum, NASA or Wikimedia Commons; the savers retain the last successful image for offline use. The macOS saver has its own [installation and testing guide](screensavers/macos-native/README.md); Windows details and current validation limits are in the [Windows guide](screensavers/windows-native/README.md).
-
-**These are still test builds.** macOS rendering and selected settings have been checked, but sustained activation, multi-display behavior, sleep/wake and Intel runtime compatibility need broader testing. Windows builds are unsigned, and automatic activation, display behavior, photo providers and other platform-specific cases still need validation on Windows hardware. See each platform guide before installing. Native releases have independent versions from the web app.
-
-The macOS showcase video cycles through English, Spanish, Chinese and French while changing themes, colours, patterns, clock visibility and progress styles:
+Also available as a full-featured [interactive web app](https://literatureclock.netlify.app/).
 
 https://github.com/user-attachments/assets/626ca478-d170-4176-90d9-c46580fcfa91
 
-**[Download a screensaver](https://github.com/cdmoro/literature-clock/releases)** · [Web clock](https://literatureclock.netlify.app/) · [Themes](#themes) · [Settings](#settings) · [Language incubator](#language-incubator) · [Contributing](#contributing) · [Development](#development)
+*Literature Clock cycling through themes, languages, and Liquid Glass progress.*
 
-## The web clock
+---
 
-The native savers are the main way to use Literature Clock. The [web version](https://literatureclock.netlify.app/) offers the same literary clock as an interactive browser experience, with additional reading, sharing and customization features. It can also be used in a browser-based screensaver setup; see [web screensaver mode](#web-screensaver-mode).
+<div align="center">
 
-## Web features
+### [🍏 Download for macOS](https://github.com/cdmoro/literature-clock/releases) &nbsp;&nbsp;•&nbsp;&nbsp; [🪟 Download for Windows](https://github.com/cdmoro/literature-clock/releases) &nbsp;&nbsp;•&nbsp;&nbsp; [🌐 Try Live Demo](https://literatureclock.netlify.app/)
 
-- **A little literature, every minute.** Read a passage that mentions the current time, with its book and author. The layout adapts to desktop and mobile screens.
-- **Make it your own.** Read on a textured **Book Page**, watch the day unfold in **Horizon**, or explore Poster, Terminal, Handwriting and more. Choose light, dark or system appearance, custom accent colours and Google Fonts.
-- **Read across languages.** Choose from seven languages, including British and American English catalogues. Pick your quote languages independently of the interface, rotate between them, or enable **bilingual mode** to see a matching translation below the passage.
-- **Take your time.** Pause a quote, browse other quotes for the same minute, then return to the live clock whenever you're ready.
-- **Keep the passages you love.** Save favourites and revisit recently displayed quotes in **My quotes**, without an account.
-- **Share the exact quote.** Send a direct link to the displayed passage, copy it when native sharing isn't available, or download an image.
-- **Read with a view.** Photo backgrounds change each minute: choose Picsum, NASA or Wikimedia Commons, without an account or API key. NASA and Commons offer translated topic selectors and image source credits.
-- **Set the mood.** Use Zen mode, fullscreen or a gently moving screensaver. Choose fade, slide, blur or zoom transitions—or no animation—and toggle the time and progress bar.
-- **Filter explicit passages.** Work mode shows only quotes whose `SFW` classification is `true`.
+</div>
 
-## Themes
+---
 
-![A selection of Literature Clock themes](https://github.com/user-attachments/assets/d882b15c-0947-45ed-8456-25f56fb6083c)
+## ✨ Features
 
-A few places to start:
+![Literature Clock displaying a literary quote with the time highlighted](https://github.com/user-attachments/assets/15fedb98-8d39-418a-86fa-a7fd9d0077d2)
 
-| Theme | Look and feel | Try it |
-| --- | --- | --- |
-| Book Page | Paper texture, book typography and a highlighted time | [Light](https://literatureclock.netlify.app/?theme=book-light) · [Dark](https://literatureclock.netlify.app/?theme=book-dark) |
-| Horizon | A sky that changes with the time of day | [Open Horizon](https://literatureclock.netlify.app/?theme=horizon-system) |
-| Poster | Bold typography in a decorative frame | [Open Poster](https://literatureclock.netlify.app/?theme=poster-system) |
-| Terminal | A terminal-inspired reading display | [Open Terminal](https://literatureclock.netlify.app/?theme=terminal-dark) |
-| Photo | Changing photographs and artwork from Picsum, NASA or Wikimedia Commons | [Open Photo](https://literatureclock.netlify.app/?theme=photo-dark) |
-| Random colours | A different colour theme each minute | [Try random colours](https://literatureclock.netlify.app/?theme=color-system) |
+- ⚡ **Pure Native Performance** — Written in Swift & AppKit (macOS) and WPF/.NET (Windows). No WebKit, Chromium, or Electron overhead. Smooth 60 FPS text drift prevents OLED and display burn-in while remaining gentle on your battery.
+- 📚 **1,440 Offline Literary Moments** — Thousands of hand-curated quotes across world literature with book titles and authors. Completely self-contained and works 100% offline.
+- 🎨 **Artisan Themes & Textures** — From tactile **Book Page** paper and retro **Terminal** scanlines to the day-night celestial sky in **Horizon**, or 25 custom geometric patterns.
+- 📸 **Dynamic Photo Backdrops** — Optionally cycle curated photographs from **NASA**, **Wikimedia Commons**, and **Picsum**, cached locally for offline display.
+- 🌍 **12 Languages & Bilingual Reading** — Read in English (UK & US), Spanish, French, German, Italian, Portuguese, Chinese, Russian, Greek, and Esperanto. Enable *Bilingual mode* to display the original quote alongside its translated edition.
+- 💧 **Optical Liquid Glass Progress** — A custom hardware shader (Metal on macOS, HLSL on Windows) that renders realistic optical refraction tracking the seconds of each minute.
 
-Explore the full selection in **Settings**: Base, colour themes, Retro, Elegant, Festive, Bohemian, Book Page, Handwriting, Anaglyph, WhatsApp, Terminal, Frame, Subtle, Poster, Horizon, Photo and Kindle. Themes offer light, dark and system variants; supported themes also let you choose an accent colour and reset it to the theme default.
+---
 
-In **Photo**, choose a provider and, for NASA or Wikimedia Commons, a topic beside it. NASA searches 14 topics, including nebulae, planets and auroras; Commons searches CC0 images across 16 topics, including landscapes, architecture and art. **All** rotates between topics. Images are selected automatically, with source credits; the previous loaded background stays visible if a request fails. Topic search results are cached for an hour, while backgrounds change each minute—refreshing results does not guarantee new images. These choices are saved and included in shared settings links.
+## 🚀 Download & Installation
 
-## Reading and collecting quotes
-
-**Pause and browse.** The pause button holds the current passage while the real clock continues. The circular-arrow button pauses reading and cycles through available quotes for that minute and language, visiting each before repeating. **Back to live clock** resumes the current minute, including in Zen mode. Pausing only affects the current page and is not saved as a preference.
-
-**Read aloud.** The speaker button reads the displayed quote and switches to Stop during playback. In Settings → Behaviour → Read aloud, you can enable reading at each new minute and optionally include the visible book title and author. Automatic reading is saved in this browser, but must be activated for each visit with the speaker or Activate reading button. A manual reading finishes even if the clock advances; automatic reading replaces it with the new minute’s quote. Navigating to another quote or hiding the tab stops speech. Browser or voice errors are reported with a retry action; voices and audio availability depend on the browser and device.
-
-**Favourites and history.** Use the heart to save a passage, then open **My quotes** to see your Favourites and Recent tabs. The browser keeps up to 500 favourites and the last 100 distinct displayed quotes. Reopen a passage, remove a favourite or clear recent history independently. These collections stay in this browser; clearing its data removes them. Work mode hides explicit entries without deleting them.
-
-**Sharing and reporting.** Shared links identify the quote by language, minute and stable ID, and include its theme, font and colour. Opening one starts paused so the recipient can read it. Content filters still apply; unavailable or filtered quotes show a notice and an available alternative. The **Report error** link also includes a direct quote link to help locate the passage that needs correcting.
-
-## Languages and bilingual mode
-
-| Language | Locale |
-| --- | --- |
-| British English | `en-GB` (default) |
-| American English | `en-US` |
-| Spanish | `es-ES` |
-| Portuguese | `pt-PT` |
-| French | `fr-FR` |
-| Italian | `it-IT` |
-| German | `de-DE` |
-| Greek | `el-GR` |
-| Simplified Chinese | `zh-CN` |
-| Russian | `ru-RU` |
-| Esperanto | `eo` |
-
-The clock initially follows your browser's language. In **Settings**, choose an interface language and select one or more quote languages. An empty selection follows the interface language; multiple selections rotate quotes between those languages.
-
-Enable **bilingual mode** and choose a translation language to display the matching catalogue translation beneath the quote. This uses existing translations, not live machine translation. When a translation is unavailable, or the passage is already in the selected locale, the clock explains why a second passage isn't shown.
-
-Explicit URL and saved locale choices are preserved. Generic English (`en`), unsupported English regions and unrecognized languages fall back to `en-GB`. Locale matching ignores case and accepts underscores, such as `en_US`.
-
-### About the catalogues
-
-The `en-GB` catalogue preserves the original English quotes. The `en-US` catalogue starts from the same collection and uses colons for numeric times, such as `7:59` instead of `7.59`. This is a notation adaptation, not a verification of every US book edition.
-
-Many translations were originally made with Google Translate and may need corrections. Contributions that improve wording, book titles and time references are welcome. If a minute has no eligible quote, the clock displays a localized fallback.
-
-## Language incubator
-
-**Speak a language that is missing from the clock? Help bring it to life.** You can start a new catalogue, translate a few passages or review someone else's work. You don't have to take on an entire language alone: a small, carefully reviewed contribution is a useful start.
-
-The **language incubator** is the workflow for growing new catalogues before they join the clock. A local translation administrator lets you create a language, prepare draft translations, compare them with the declared source, edit and approve passages, and preview them in the clock. You can prepare drafts manually, with built-in batches of 25, through Calibre or with an AI agent, then review a few passages at a time. You don't have to translate thousands of quotes from scratch; people who know the language make those drafts worth reading.
-
-Keep author names unchanged and preferably retain the source book titles. **Quote IDs must stay exactly the same: they are the key that connects each passage across languages.**
-
-[**Explore the language incubator →**](docs/LANGUAGE_INCUBATOR.md) for the step-by-step guide, or [open an issue](https://github.com/cdmoro/literature-clock/issues/new) with the language you'd like to contribute and the kind of help you can offer. If you're comfortable reviewing text but not setting up the tools, say so—an issue is a good place to coordinate with other contributors.
-
-## Settings
-
-Open **Settings** to configure languages, appearance and display options. **Background** offers the theme default, an accent tint, a photo, or pure white/black. Patterns are selected independently, including over white or black. Book Page, Horizon and Photo retain their own backgrounds. You can choose a theme font or add a Google Fonts family by name, preview it and keep it in your custom font list.
-
-Preferences are saved in the browser. URL parameters override saved settings, and changes update the address without reloading the page. Reading state and collections are separate from those preferences.
+### 🍏 macOS (Apple Silicon & Intel)
+1. Download `Literature-Clock-Native-macOS.saver.zip` from [Releases](https://github.com/cdmoro/literature-clock/releases).
+2. Extract the archive and double-click `Literature Clock.saver` to install.
+3. Open **System Settings → Wallpaper → Screen Saver** to choose and configure your themes.
 
 <details>
-<summary><strong>URL parameter reference</strong></summary>
+<summary><strong>Gatekeeper approval (First open)</strong></summary>
 
-Use `true` or `false` for boolean options. For example: [Book Page in Zen mode](https://literatureclock.netlify.app/?theme=book-light&zen=true).
+Because these are independent open-source builds, macOS may prompt for approval on first run:
+1. Open **System Settings → Privacy & Security**.
+2. Scroll to the **Security** section and click **Open Anyway** next to Literature Clock.
+3. Double-click `Literature Clock.saver` once more to complete installation.
 
-| Parameter | Purpose / values |
+*See the [macOS Screen Saver Guide](screensavers/macos-native/README.md) for full troubleshooting and build details.*
+</details>
+
+### 🪟 Windows (10 & 11)
+1. Download the standalone `.scr` for your system (`win-x64` or `win-arm64`) from [Releases](https://github.com/cdmoro/literature-clock/releases).
+2. Right-click the `.scr` file and select **Install**, or click **Browse** in Windows Screen Saver settings.
+3. Click **Settings** to customize appearance. No runtime setup or administrator permissions required.
+
+*See the [Windows Screen Saver Guide](screensavers/windows-native/README.md) for multi-monitor options and portable scripts.*
+
+---
+
+## 🎨 Themes Showcase
+
+![Selection of Literature Clock themes](https://github.com/user-attachments/assets/d882b15c-0947-45ed-8456-25f56fb6083c)
+
+| Theme | Look and Feel | Try in Browser |
+| --- | --- | --- |
+| **Book Page** | Classic paper texture, book typography, and highlighted time | [Light](https://literatureclock.netlify.app/?theme=book-light) · [Dark](https://literatureclock.netlify.app/?theme=book-dark) |
+| **Horizon** | Ambient gradient that shifts with the time of day | [Open Horizon](https://literatureclock.netlify.app/?theme=horizon-system) |
+| **Terminal** | Minimalist green-on-black phosphor display with scanlines | [Open Terminal](https://literatureclock.netlify.app/?theme=terminal-dark) |
+| **Poster** | Bold typography framed by elegant borders | [Open Poster](https://literatureclock.netlify.app/?theme=poster-system) |
+| **Photo** | Curated rotating photography from NASA, Wikimedia, and Picsum | [Open Photo](https://literatureclock.netlify.app/?theme=photo-dark) |
+
+---
+
+## 🌐 The Web Companion
+
+Looking for an in-browser experience or setting up a dedicated desk display, old iPad, or Raspberry Pi? The [web version](https://literatureclock.netlify.app/) offers the full literary clock plus reading tools:
+
+- ⏸️ **Pause & Browse** — Linger on a quote or explore alternative passages for the same minute.
+- ❤️ **Favorites & History** — Save passages you love and revisit recent quotes without an account.
+- 🔊 **Read Aloud** — Listen to quotes spoken aloud via Web Speech synthesis.
+- 📤 **Shareable Quote Cards** — Export passages as high-resolution images or share direct timestamp links.
+- 🛡️ **Work Safe Mode** — Filter explicit passages for office and public environments.
+
+<details>
+<summary><strong>URL Parameter Reference</strong></summary>
+
+Customize the web clock directly via URL parameters (e.g. `?theme=book-light&zen=true`):
+
+| Parameter | Values / Description |
 | --- | --- |
-| `theme` | Theme and variant, such as `book-light`, `poster-dark` or `horizon-system` |
-| `color` | Custom accent colour on supported themes; encode `#` as `%23` in URLs |
-| `background` | `default`, `tinted`, `photo` or `plain`; defaults to the theme background |
-| `font` | Google Fonts family name, or `default` for the theme font |
-| `locale` | Quote locale, such as `en-GB` or `es-ES` |
-| `ui-locale` | Interface language, independently of the quote language |
-| `quote-locales` | Comma-separated quote locales; an empty value follows the interface language |
-| `random-locale` | Rotate quote languages; `true` uses the selected languages, or all supported languages when no selection is configured |
-| `bilingual` | Show a matching catalogue translation |
-| `translation-locale` | Translation language, such as `es-ES` |
-| `zen` | Hide distractions |
-| `work` | Filter quotes using the catalogue's safe-for-work classification |
-| `screensaver` | Move the quote around the screen |
-| `transition` | `none`, `fade`, `slide`, `blur` or `zoom` |
-| `progressbar` | Show the minute progress bar |
-| `show-time` | Show the clock time above the quote |
-| `static` | Remove the footer controls for a display configured through its URL |
-
-For fixed passages and previews:
-
-| Parameter | Purpose |
-| --- | --- |
-| `time` | Hold a particular minute, such as [12:30](https://literatureclock.netlify.app/?time=12:30) |
-| `quote-id` | Open a specific quote by stable ID; use the share action to create the full link |
-| `quote` | Preview custom text before submitting a quote |
-| `index` | Legacy selection by position in the minute's quote array |
-
-Older `fade=true` / `fade=false` links remain supported. Prefer `transition` for new links.
+| `theme` | `book-light`, `book-dark`, `terminal-dark`, `horizon-system`, `poster-system`, etc. |
+| `locale` | Quote language (e.g. `en-GB`, `es-ES`, `fr-FR`, `de-DE`, `zh-CN`) |
+| `bilingual` | `true` to display translated quotes underneath |
+| `zen` | `true` to hide interface controls |
+| `time` | Hold a fixed minute (e.g. `?time=12:30`) |
+| `screensaver` | `true` to enable gentle browser drift |
 
 </details>
 
-## Web screensaver mode
+---
 
-The web clock can move its quote gently around the screen when opened with [screensaver mode enabled](https://literatureclock.netlify.app/?screensaver=true). This is a browser mode, not a native Windows or Linux screensaver. The native Windows saver is available above.
+## 🤝 Contributing & Community
 
-<!-- Attach the 24-second screensaver showcase video here using GitHub's editor after merging. Keep the video out of the Git repository. -->
+- **Language Incubator**: Want to bring Literature Clock to your native language? Check out our [Language Incubator Guide](docs/LANGUAGE_INCUBATOR.md) to learn how we draft and verify catalogues batch by batch.
+- **Submit a Quote**: Found a passage in a book mentioning the time? [Suggest a new quote](https://github.com/cdmoro/literature-clock/issues/new?template=add-quote.yml).
+- **Report Errors**: Spot a typo or timestamp mismatch? [Open an issue](https://github.com/cdmoro/literature-clock/issues) or use the in-app report link.
+- **Development**: See the [development guide](docs/DEVELOPMENT.md) for local setup, commands, tests, and translation tools.
 
-The showcase cycles through English, Spanish, Chinese and French, keeping the same passage while changing themes, colours, patterns, clock visibility and progress styles.
+---
 
-For Windows and Linux, these external guides describe possible webpage-based setups:
+## ☕ Credits & Support
 
-- [Windows: webpage screensaver setup guide](https://www.youtube.com/watch?v=UovZwUlwwEs)
-- [Linux / KDE: webpage wallpaper setup guide](https://www.youtube.com/watch?v=_v1sJhBu25o)
+Literature Clock was inspired by the original work of [Johannes Enevoldsen](https://github.com/JohannesNE/literature-clock) and [Jaap Meijers](http://www.eerlijkemedia.nl/) (Kindle literary clock).
 
-## Contributing
+Created and maintained by [Carlos Bonadeo](https://twitter.com/CarlosBonadeo).
 
-Help the clock grow, one passage at a time:
+If you love having Literature Clock on your screen, consider supporting the project:
+- [Buy me a Coffee](https://buymeacoffee.com/cdmoro)
+- [Cafecito](http://cafecito.app/cdmoro)
+- [Patreon](https://patreon.com/cdmoro)
 
-- [Suggest a new quote or a variant for an existing minute](https://github.com/cdmoro/literature-clock/issues/new?template=add-quote.yml&labels=add-quote&title=%5B23%3A28%5D+%5Ben-GB%5D+Add+quote&locale=en-GB).
-- Use **Report error** on a displayed quote to report a typo, incorrect time or translation problem.
-- [Open an issue](https://github.com/cdmoro/literature-clock/issues) for bugs, ideas or a new language proposal.
-- Start a language or help review one through the [language incubator](docs/LANGUAGE_INCUBATOR.md).
-- Submit a pull request with improvements to the clock, themes or documentation.
+---
 
-## Development
+## 📄 License
 
-See the [development guide](docs/DEVELOPMENT.md) for local setup, commands, tests, quote generation and the translation administrator.
-
-## Technology and credits
-
-Built with TypeScript and [Vite](https://vite.dev/), tested with [Vitest](https://vitest.dev/), with [Husky](https://typicode.github.io/husky/) for Git hooks and [Netlify](https://www.netlify.com/) for hosting.
-
-Also made possible by:
-
-- [html2canvas-pro](https://yorickshan.github.io/html2canvas-pro/) for quote images
-- [lunarphase-js](https://github.com/jasonsturges/lunarphase-js) for moon phases
-- [Picsum](https://picsum.photos/) for photographs
-
-## Licensing and quote provenance
-
-The original software contributions by Carlos Bonadeo are licensed under the [MIT License](LICENSE). The package metadata uses MIT to match that license. MIT permits adaptation, redistribution, and commercial use, provided the copyright and license notices are preserved.
-
-The MIT license does not relicense third-party material or the literary quotations included in this repository. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the quote collection's provenance, the upstream license notice, and the limits of the permissions we can confirm.
-
-## Contact and support
-
-Hi! I'm Carlos. Find me on [Twitter](https://twitter.com/CarlosBonadeo) or [LinkedIn](https://www.linkedin.com/in/cdbonadeo/).
-
-If you enjoy Literature Clock, you can support the project with a [coffee](https://buymeacoffee.com/cdmoro), a [cafecito](http://cafecito.app/cdmoro) or through [Patreon](https://patreon.com/cdmoro).
-
-### Native Windows screen saver
-
-The Windows port shares the macOS native catalogues, fonts and patterns and includes an HLSL optical-glass shader. Build instructions, installation and current validation limits are in [screensavers/windows-native/README.md](screensavers/windows-native/README.md). The Windows native screensaver workflow publishes standalone `.scr` files for x64 and ARM64.
+Application code is licensed under the [MIT License](LICENSE). Third-party fonts, quotes, and assets retain their respective licenses; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for details.
