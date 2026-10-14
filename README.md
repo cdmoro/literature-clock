@@ -1,22 +1,33 @@
 # Literature Clock
 
-A clock for book lovers that tells the time using quotes from literature. Support for multiple languages, themes, and more!
+Literature Clock is a native screensaver that tells the time with passages from literature. The project currently provides native builds for **macOS** and **Windows**, with the web clock available as a companion.
 
 Based on the work of [Johannes Enevoldsen](https://twitter.com/JohsEnevoldsen) ([literature-clock](https://github.com/JohannesNE/literature-clock)) and [Jaap Meijers](http://www.eerlijkemedia.nl/) ([e-reader clock](https://www.instructables.com/id/Literary-Clock-Made-From-E-reader/)).
 
 ![Literature Clock displaying a literary quote with the time highlighted](https://github.com/user-attachments/assets/15fedb98-8d39-418a-86fa-a7fd9d0077d2)
 
-Literature Clock is now available as a macOS screen saver! Customize your clock with 12 quote languages, multiple themes, photo backgrounds, and Liquid Glass progress.
+## Native screensavers
 
-Download the macOS screen saver
+| Platform | Download and installation | Current build |
+| --- | --- | --- |
+| macOS | Download `Literature-Clock-Native-macOS.saver.zip` from [Releases](https://github.com/cdmoro/literature-clock/releases), extract `Literature Clock.saver` and double-click to install for your account. If Gatekeeper blocks it, follow the [approval steps](screensavers/macos-native/README.md#install-and-give-feedback). | Universal build for Apple Silicon and Intel; experimental, ad-hoc signed and not notarized. |
+| Windows 10/11 | Download the standalone `Literature-Clock-Native-Windows-win-x64.scr` or `Literature-Clock-Native-Windows-win-arm64.scr` from [Releases](https://github.com/cdmoro/literature-clock/releases). In Screen Saver settings, choose **Browse**, select the file, then use **Settings** or **Preview**. | Self-contained .NET app; unsigned development builds. No runtime installation or extraction required. |
+
+Both native savers include offline quote catalogues, seven themes, twelve quote languages, and the project's 25 background patterns. Optional Photo backgrounds can download images from Picsum, NASA or Wikimedia Commons; the savers retain the last successful image for offline use. The macOS saver has its own [installation and testing guide](screensavers/macos-native/README.md); Windows details and current validation limits are in the [Windows guide](screensavers/windows-native/README.md).
+
+**These are still test builds.** macOS rendering and selected settings have been checked, but sustained activation, multi-display behavior, sleep/wake and Intel runtime compatibility need broader testing. Windows builds are unsigned, and automatic activation, display behavior, photo providers and other platform-specific cases still need validation on Windows hardware. See each platform guide before installing. Native releases have independent versions from the web app.
+
+The macOS showcase video cycles through English, Spanish, Chinese and French while changing themes, colours, patterns, clock visibility and progress styles:
 
 https://github.com/user-attachments/assets/626ca478-d170-4176-90d9-c46580fcfa91
 
-**[Open Literature Clock](https://literatureclock.netlify.app/)** · [Themes](#themes) · [Settings](#settings) · [Screensaver](#screensaver) · [Language incubator](#language-incubator) · [Contributing](#contributing) · [Development](#development)
+**[Download a screensaver](https://github.com/cdmoro/literature-clock/releases)** · [Web clock](https://literatureclock.netlify.app/) · [Themes](#themes) · [Settings](#settings) · [Language incubator](#language-incubator) · [Contributing](#contributing) · [Development](#development)
 
-> **Literature Clock for macOS** — Download `Literature-Clock-Native-macOS.saver.zip` from [Releases](https://github.com/cdmoro/literature-clock/releases), extract the single `Literature Clock.saver` bundle and double-click it to install. This experimental build is ad-hoc signed and not notarized, so macOS may block it; see [how to approve it](screensavers/macos-native/README.md#install-and-give-feedback). It includes 12 quote languages, seven themes and 25 background patterns. Web and screensaver releases have independent versions.
+## The web clock
 
-## Features
+The native savers are the main way to use Literature Clock. The [web version](https://literatureclock.netlify.app/) offers the same literary clock as an interactive browser experience, with additional reading, sharing and customization features. It can also be used in a browser-based screensaver setup; see [web screensaver mode](#web-screensaver-mode).
+
+## Web features
 
 - **A little literature, every minute.** Read a passage that mentions the current time, with its book and author. The layout adapts to desktop and mobile screens.
 - **Make it your own.** Read on a textured **Book Page**, watch the day unfold in **Horizon**, or explore Poster, Terminal, Handwriting and more. Choose light, dark or system appearance, custom accent colours and Google Fonts.
@@ -139,25 +150,15 @@ Older `fade=true` / `fade=false` links remain supported. Prefer `transition` for
 
 </details>
 
-## Screensaver
+## Web screensaver mode
 
-A literary clock for your Mac, with offline quotes and fonts, configurable themes, photo backgrounds and optical glass progress.
+The web clock can move its quote gently around the screen when opened with [screensaver mode enabled](https://literatureclock.netlify.app/?screensaver=true). This is a browser mode, not a native Windows or Linux screensaver. The native Windows saver is available above.
 
 <!-- Attach the 24-second screensaver showcase video here using GitHub's editor after merging. Keep the video out of the Git repository. -->
 
 The showcase cycles through English, Spanish, Chinese and French, keeping the same passage while changing themes, colours, patterns, clock visibility and progress styles.
 
-This repository includes an **experimental native macOS screensaver** that draws directly with AppKit, without WebKit. Quotes and fonts are bundled. It supports all 12 quote languages, Base, Book, Terminal, Festive, Bohemian, Retro and Photo themes, light/dark/system appearance, theme/fixed/per-minute colour modes, presets and a remembered custom colour with an expandable RGB/hex editor, all 25 web background patterns, classic and optical Liquid Glass minute progress, gentle movement and optional time/book title. Bilingual mode can show a matching published translation below the passage using the bundled catalogues. Its settings panel follows the system language; an empty quote-language selection uses the system language with English (UK) fallback. Only Photo backgrounds need internet to download new backgrounds; it caches the last successful photo, preloads the next minute and crossfades to the new image, including delayed downloads.
-
-**This is a test version.** Native rendering has worked in user tests, and Photo downloads, colour presets and title hiding have been checked in System Settings Preview. Sustained automatic activation, multiple monitors, sleep/wake and Intel runtime compatibility still need broader testing. Downloads use ad-hoc signing and are not notarized.
-
-See [native build, installation and testing instructions](screensavers/macos-native/README.md). The [native release workflow](.github/workflows/macos-native-screensaver.yml) builds Apple Silicon/Intel bundles and publishes the standalone `.saver.zip` with its checksum when the native VERSION file changes on main. Native tags use `macos-native-vX.Y.Z`. Web and screensaver versions are independent in this shared repository. The `.saver.zip` contains one installable `Literature Clock.saver` bundle; double-click it to install for your account. [Feedback and bug reports](https://github.com/cdmoro/literature-clock/issues/new/choose) are welcome.
-
-The Photo theme supports Picsum, the public NASA Image and Video Library, or Wikimedia Commons, without accounts or API keys. NASA images are selected automatically from 14 topics, including galaxies, planets, auroras and space missions, with source credits. Commons searches automatically for CC0 images across 16 topics, including nature, landscapes, architecture and art. Each provider also offers All. Provider and category share a single row; Picsum hides the category selector. Both the web app and native saver reuse the same category queries. The native clock places its time display below the camera housing on screens with a notch.
-
-Our own Windows/Linux screensavers remain future work.
-
-[Enable screensaver mode](https://literatureclock.netlify.app/?screensaver=true) to move the quote gently around the screen. For Windows and Linux, these external guides offer possible webpage-based setups:
+For Windows and Linux, these external guides describe possible webpage-based setups:
 
 - [Windows: webpage screensaver setup guide](https://www.youtube.com/watch?v=UovZwUlwwEs)
 - [Linux / KDE: webpage wallpaper setup guide](https://www.youtube.com/watch?v=_v1sJhBu25o)
