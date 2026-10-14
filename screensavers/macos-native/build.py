@@ -159,17 +159,7 @@ def main():
     architectures = ['arm64', 'x86_64'] if args.universal else ['arm64']
     saver = bundle('Literature Clock', 'saver', architectures, data, args.version)
     bundle('Literature Clock Native Preview', 'app', architectures, data, args.version)
-    install_app = installer(saver, architectures, args.version)
-    distribution = OUTPUT / 'Literature Clock for macOS'
-    if distribution.exists():
-        shutil.rmtree(distribution)
-    distribution.mkdir()
-    shutil.copytree(saver, distribution / saver.name)
-    shutil.copytree(install_app, distribution / install_app.name)
-    shutil.copy2(SOURCE / 'INSTALL.txt', distribution / 'README.txt')
-    package = OUTPUT / 'Literature-Clock-Native-macOS.zip'
-    run('ditto', '-c', '-k', '--sequesterRsrc', '--keepParent', str(distribution), str(package))
-    package.with_suffix('.zip.sha256').write_text(hashlib.sha256(package.read_bytes()).hexdigest() + '  ' + package.name + '\n')
+    installer(saver, architectures, args.version)
     standalone_archive = OUTPUT / 'Literature-Clock-Native-macOS.saver.zip'
     run('ditto', '-c', '-k', '--sequesterRsrc', '--keepParent', str(saver), str(standalone_archive))
     standalone_archive.with_suffix('.zip.sha256').write_text(hashlib.sha256(standalone_archive.read_bytes()).hexdigest() + '  ' + standalone_archive.name + '\n')

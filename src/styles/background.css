@@ -77,37 +77,69 @@ html[data-background='photo'][data-background-pattern]:not([data-background-patt
   opacity: 0.35;
 }
 
-/* The Photo theme's diffuse halo follows the effective background. */
+/* A crisp outline keeps text readable over photos and selected patterns. */
+html[data-theme|='photo'][data-background='photo'],
+html:is([data-background='plain'], [data-background='tinted'])[data-background-pattern]:not([data-background-pattern='none']) {
+  --text-outline-color: var(--background);
+}
+/* A restrained halo softens the outline over photographic backgrounds. */
 html[data-background='photo'][data-theme$='light'] {
-  --photo-text-shadow: 0 0 25px #dfdfdf;
+  --photo-text-halo: 0 0 0.75rem #dfdfdf;
 }
 html[data-background='photo'][data-theme$='dark'] {
-  --photo-text-shadow: 0 0 25px #1c1c1c;
+  --photo-text-halo: 0 0 0.75rem #1c1c1c;
+}
+html[data-theme|='photo'][data-background='photo'] #quote {
+  paint-order: stroke;
+  -webkit-text-stroke: 0.1em var(--text-outline-color, var(--background));
+}
+html[data-background-pattern]:not([data-background-pattern='none']) #quote {
+  paint-order: stroke;
+  -webkit-text-stroke: 0.18em var(--text-outline-color, var(--background));
+}
+html[data-background='photo']:not([data-background-pattern]:not([data-background-pattern='none'])) #quote {
+  paint-order: stroke;
+  -webkit-text-stroke: 0.1em var(--text-outline-color, var(--background));
+}
+/* Keep patterns stronger than the Photo theme's base outline. */
+html[data-theme|='photo'][data-background='photo'][data-background-pattern]:not([data-background-pattern='none']) #quote {
+  -webkit-text-stroke-width: 0.18em;
 }
 html[data-background='photo'] #quote {
-  text-shadow: var(--photo-text-shadow);
+  text-shadow: var(--photo-text-halo);
 }
-/* Retain the themes' characteristic shadows alongside the readability halo. */
+html[data-theme|='photo'][data-background='photo'] #time-clock,
+html[data-background-pattern]:not([data-background-pattern='none']) #time-clock {
+  paint-order: stroke;
+  -webkit-text-stroke: 0.1rem var(--text-outline-color, var(--background));
+}
+html[data-background='photo'] #time-clock {
+  text-shadow: var(--photo-text-halo);
+}
+html[data-theme|='photo'][data-background='photo'] #quote #quote-translation,
+html[data-background-pattern]:not([data-background-pattern='none']) #quote #quote-translation {
+  -webkit-text-stroke-width: 0.1rem;
+}
+html[data-background='photo'] #quote #quote-translation,
+html[data-background='photo'] #quote #quote-translation :is(p, cite, .time) {
+  text-shadow: var(--photo-text-halo);
+}
 html[data-background='photo'][data-theme|='terminal'] #quote {
-  text-shadow: var(--photo-text-shadow), var(--terminal-text-shadow);
+  text-shadow: var(--photo-text-halo), var(--terminal-text-shadow);
 }
 html[data-background='photo'][data-theme='terminal-light'] #quote cite {
-  text-shadow: var(--photo-text-shadow), var(--terminal-cite-shadow);
+  text-shadow: var(--photo-text-halo), var(--terminal-cite-shadow);
 }
 html[data-background='photo'][data-theme|='anaglyph'] #quote .time {
-  text-shadow: var(--photo-text-shadow), var(--shadow);
+  text-shadow: var(--photo-text-halo), var(--shadow);
 }
 
 /* Let the halo extend beyond the passage. Scrollable quotes retain their
    scrollport, with room inside it for the blur at each edge. */
-html[data-background='photo'] #quote:not(.quote-scroll):not(:has(#quote-translation)) {
+html[data-theme|='photo'][data-background='photo'] #quote:not(.quote-scroll):not(:has(#quote-translation)) {
   overflow: visible;
 }
-html[data-background='photo'] #quote.quote-scroll,
-html[data-background='photo'] #quote:has(#quote-translation) {
+html[data-theme|='photo'][data-background='photo'] #quote.quote-scroll,
+html[data-theme|='photo'][data-background='photo'] #quote:has(#quote-translation) {
   padding: 25px;
-}
-html[data-background='photo'] #quote #quote-translation,
-html[data-background='photo'] #quote #quote-translation :is(p, cite, .time) {
-  text-shadow: var(--photo-text-shadow);
 }
