@@ -541,22 +541,20 @@ body.share-quote #clock {
     sans-serif;
   z-index: 10;
 }
-
 #reading-status {
-  position: fixed;
-  top: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: max-content;
-  max-width: 95vw;
-  z-index: 5;
-  font:
-    0.75rem/1.5 system-ui,
-    sans-serif;
-  color: var(--font-color);
-  background: var(--background);
-  border-radius: 0.4rem;
-  padding: 0.2rem 0.5rem;
+	position: fixed;
+	top: 3rem;
+	left: 50%;
+	transform: translate(-50%);
+	width: max-content;
+	max-width: 95vw;
+	z-index: 5;
+	font: .75rem/1.5 system-ui,sans-serif;
+	color: var(--font-color);
+	background: var(--background);
+	border-radius: .4rem;
+	padding: .2rem .2rem .2rem .6rem;
+	border: solid 2px color-mix(in srgb,var(--accent-color),transparent 10%);
 }
 #reading-status button {
   margin-inline-start: 0.5rem;
