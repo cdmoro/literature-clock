@@ -373,6 +373,9 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         var pattern = preferences.string(forKey: "background-pattern") ?? "none"
         if !NativeAppearance.supportsPattern(theme: theme) { pattern = "none" }
         if pattern == "random" { pattern = randomValue(Array(NativeAppearance.patterns.dropFirst(2)), at: now) }
+        let hasPattern = pattern != "none"
+        let outlineColor = NativeAppearance.background(theme: theme, dark: dark, accent: accent, selected: backgroundMode)
+        let outlineWidth = hasPattern ? -18.0 : -10.0
         let newPatternKey = "\(pattern)|\(bounds.size)|\(scale)|\(accent)"
         if newPatternKey != patternKey {
             patternImage = NativeAppearance.patternImage(pattern: pattern, size: bounds.size, scale: scale, color: accent, resources: resources)
@@ -408,12 +411,24 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             }
             let label = timeLabel!
             label.font = NSFont.monospacedDigitSystemFont(ofSize: timeFont.pointSize, weight: .bold)
-            label.stringValue = lastMinute
-            label.textColor = foreground
+            var clockAttributes: [NSAttributedString.Key: Any] = [.font: label.font!, .foregroundColor: foreground]
+            if usesPhoto || hasPattern {
+                clockAttributes[.strokeWidth] = outlineWidth
+                clockAttributes[.strokeColor] = outlineColor
+            }
+            if usesPhoto {
+                let shadow = NSShadow()
+                shadow.shadowOffset = .zero
+                shadow.shadowBlurRadius = 12
+                shadow.shadowColor = NativeAppearance.color(dark ? "#1c1c1c" : "#dfdfdf")
+                clockAttributes[.shadow] = shadow
+            }
+            label.attributedStringValue = NSAttributedString(string: lastMinute, attributes: clockAttributes)
             label.sizeToFit()
+            if usesPhoto { label.setFrameSize(NSSize(width: label.frame.width + 48, height: label.frame.height + 48)) }
             label.frame.origin = NSPoint(x: bounds.midX - label.frame.width / 2,
-                                         y: isFlipped ? timeTopInset + 8 : bounds.maxY - timeTopInset - 8 - label.frame.height)
-            let key = "\(lastMinute)|\(label.font!.pointSize)|\(foreground)|\(scale)"
+                                         y: (isFlipped ? timeTopInset + 8 : bounds.maxY - timeTopInset - 8 - label.frame.height) - (usesPhoto ? 24 : 0))
+            let key = "\(lastMinute)|\(label.font!.pointSize)|\(foreground)|\(outlineColor)|\(outlineWidth)|\(usesPhoto)|\(dark)|\(scale)"
             if key != plainTimeImageKey {
                 label.isHidden = false
                 let bitmap = label.bitmapImageRepForCachingDisplay(in: label.bounds)!
@@ -449,7 +464,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let width = bounds.width * 0.76
         // Reserve the clock and a gap, including the Photo shadow's cache padding.
         let area = Self.passageArea(bounds: bounds, clockFrame: preferences.bool(forKey: "show-time") ? timeLabel?.frame : nil)
-        let passagePadding: CGFloat = usesPhoto ? 50 : 0
+        let passagePadding: CGFloat = usesPhoto ? 24 : 0
         let limit = min(bounds.height * 0.65, max(1, area.height - passagePadding * 2 - 4))
         let paragraph = NSMutableParagraphStyle()
         paragraph.alignment = quoteLocale.hasPrefix("ar") ? .right : .left
@@ -512,7 +527,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             }
             return result
         }
-        let key = "\(quote.first)\(quote.time)\(quote.last)\(quote.title)\(quote.author)|\(theme)|\(backgroundMode)|\(quoteLocale)|\(width)|\(limit)|\(scale)|\(dark)|\(accent)|\(lastMinute)|\(preferences.bool(forKey: "hide-book-title"))"
+        let key = "\(quote.first)\(quote.time)\(quote.last)\(quote.title)\(quote.author)|\(theme)|\(backgroundMode)|\(pattern)|\(quoteLocale)|\(width)|\(limit)|\(scale)|\(dark)|\(accent)|\(lastMinute)|\(preferences.bool(forKey: "hide-book-title"))"
         let bilingualKey = key + "|\(quote.id ?? "")|\(preferences.bool(forKey: "bilingual"))|\(preferences.string(forKey: "translation-locale") ?? "")|\(preferences.bool(forKey: "work"))"
         if bilingualKey != layoutKey {
             var low: CGFloat = 1, high = min(bounds.width * 0.043, bounds.height * 0.12)
@@ -522,13 +537,18 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 if measured.height <= limit && measured.width <= width { low = size } else { high = size }
             }
             layoutText = passage(low)
+            if theme != "book" && (usesPhoto || hasPattern) && layoutText!.length > 0 {
+                (layoutText as! NSMutableAttributedString).addAttributes([
+                    .strokeWidth: outlineWidth, .strokeColor: outlineColor
+                ], range: NSRange(location: 0, length: layoutText!.length))
+            }
             layoutHeight = ceil(layoutText!.boundingRect(with: NSSize(width: width, height: .greatestFiniteMagnitude), options: [.usesLineFragmentOrigin, .usesFontLeading]).height)
             // Rasterize the entire passage once at the display's pixel density.
             // Translating this image keeps all glyphs together; drawing text at
             // a new fractional origin every frame independently snaps glyphs.
             let highlightPadding = theme == "book" ? low * 0.2 : 0
-            // Leave room for the 25-point Photo halo on every side of the cache.
-            let shadowPadding: CGFloat = usesPhoto ? 50 : 0
+            // Leave room for the Photo halo on every side of the cache.
+            let shadowPadding: CGFloat = usesPhoto ? 24 : 0
             let size = NSSize(width: ceil(width + highlightPadding * 2 + shadowPadding * 2), height: layoutHeight + 4 + shadowPadding * 2)
             let bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(ceil(size.width * scale)), pixelsHigh: Int(ceil(size.height * scale)), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0)!
             bitmap.size = size
@@ -555,7 +575,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 if usesPhoto {
                     let shadow = NSShadow()
                     shadow.shadowOffset = .zero
-                    shadow.shadowBlurRadius = 25
+                    shadow.shadowBlurRadius = 12
                     shadow.shadowColor = NativeAppearance.color(dark ? "#1c1c1c" : "#dfdfdf")
                     shadow.set()
                 }

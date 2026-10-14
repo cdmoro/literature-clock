@@ -37,6 +37,10 @@ caches, next-minute prefetch and 650 ms crossfades. Commons accepts only CC0 met
 without required attribution; JPEG/PNG only, since Windows has no built-in WebP decoder.
 The bundled Book WebP is losslessly converted to PNG during the build.
 
+Text over Photo backgrounds uses a fine background-coloured outline and a soft 12-DIP
+halo. Selected patterns use a stronger outline. WPF renders the outline with zero-offset
+shadow effects, so edge softness can differ slightly from the web and macOS renderers.
+
 Liquid Glass uses an HLSL port of `macos-native/Sources/OpticalGlass.metal`, with the same
 36-DIP bevel, RGB dispersion, 28-DIP leading corners, last-8% corner fade, subtle horizontal
 rim and 10% background / 2.5% foreground tint. Background glass keeps the passage above
