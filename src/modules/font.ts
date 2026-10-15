@@ -125,22 +125,50 @@ export function refreshDefaultFontLabel() {
   const name = getDefaultFontName(theme, locale);
   option.dataset.previewFont = name;
   option.textContent = `${getStrings(getInterfaceLocale()).default_font} (${name})`;
-  select.querySelectorAll('option:not([value="default"])').forEach((item) => item.remove());
-  const suggestions = suggestedFonts(locale);
-  [
+
+  const font = preferredFont(locale);
+  const fontList = [
     ...new Set([
-      ...FONTS.filter((font) => suggestions.has(font) && fontSupportsLocale(font, locale) === true),
+      'Special Elite',
+      ...Object.values(THEME_FONTS).flat(),
+      ...suggestedFonts(locale),
       ...customFonts,
     ]),
-  ].forEach((font) => {
-    const item = createOption(font);
-    item.disabled = fontSupportsLocale(font, locale) === false;
-    select.append(item);
-  });
-  const font = effectiveFont(locale);
-  if (font !== 'default' && !select.querySelector<HTMLOptionElement>(`option[value="${font}"]`)) {
-    select.append(createOption(font));
+  ];
+  if (font !== 'default' && !fontList.includes(font)) {
+    fontList.push(font);
   }
+
+  const currentValues = Array.from(
+    select.querySelectorAll<HTMLOptionElement>('option:not([value="default"])'),
+    (item) => item.value,
+  );
+  const needsRebuild =
+    currentValues.length !== fontList.length ||
+    currentValues.some((val, i) => val !== fontList[i]) ||
+    select.querySelectorAll('option[data-custom-font]').length !== customFonts.length;
+
+  if (needsRebuild) {
+    select.querySelectorAll('option:not([value="default"])').forEach((item) => item.remove());
+    fontList.forEach((itemFont) => {
+      select.append(createOption(itemFont));
+    });
+  } else {
+    for (const opt of select.options) {
+      if (opt.value !== 'default' && customFonts.includes(opt.value)) {
+        const strings = SETTINGS[getBaseLocale(getInterfaceLocale())];
+        const support = fontSupportsLocale(opt.value, locale);
+        const coverage =
+          support === undefined
+            ? `, ${strings.settings_font_unverified_label}`
+            : support === false
+              ? `, ${strings.settings_font_incompatible_label}`
+              : '';
+        opt.textContent = `${opt.value} (${strings.settings_font_custom_label}${coverage})`;
+      }
+    }
+  }
+
   select.value = font;
   if (font === 'default') document.documentElement.style.removeProperty(CSS_FONT_VARIABLE);
   else document.documentElement.style.setProperty(CSS_FONT_VARIABLE, `"${font}", var(--quote-font-family)`);
@@ -148,7 +176,7 @@ export function refreshDefaultFontLabel() {
   refreshLocaleThemeFonts();
   refreshRemovalButton();
   if (font !== 'default' && fontSupportsLocale(font, locale) === undefined) fontStatus('settings_font_unverified');
-  else if (preferredFont(locale) !== 'default' && font === 'default') fontStatus('settings_font_fallback');
+  else if (font !== 'default' && effectiveFont(locale) === 'default') fontStatus('settings_font_fallback');
   else if (
     ['settings_font_unverified', 'settings_font_fallback'].includes(
       document.getElementById('custom-font-status')?.dataset.text || '',
@@ -266,7 +294,7 @@ export async function applyCustomFont(value: string, restoreDefaultOnError = fal
   fontStatus('settings_font_loading');
   try {
     await loadGoogleFont(name);
-    if (request !== fontRequest || passageLocale().split('-')[0].toLowerCase() !== locale.split('-')[0].toLowerCase())
+    if (request !== fontRequest)
       return;
     loadedFonts.add(name);
     if (!customFonts.includes(name)) {

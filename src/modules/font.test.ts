@@ -179,7 +179,7 @@ test.each([
   expect(document.querySelector('option[value="default"]')!.textContent).not.toContain('Sansation');
 });
 
-test('rotation filters the selector, falls back for Chinese and restores the Spanish choice', async () => {
+test('rotation preserves the selected font in the selector, falls back for Chinese and restores the Spanish style', async () => {
   const quote = document.createElement('blockquote');
   quote.id = 'quote';
   quote.lang = 'es-ES';
@@ -188,16 +188,18 @@ test('rotation filters the selector, falls back for Chinese and restores the Spa
   await applyCustomFont('B612 Mono');
   quote.lang = 'zh-CN';
   refreshDefaultFontLabel();
-  expect(store.get('font')).toBe('default');
-  expect(document.querySelector('option[value="B612 Mono"]')).toBeNull();
+  expect(store.get('font')).toBe('B612 Mono');
+  expect(document.querySelector('option[value="B612 Mono"]')).not.toBeNull();
   expect(document.querySelector('option[value="ZCOOL KuaiLe"]')).not.toBeNull();
-  expect(document.querySelector<HTMLSelectElement>('#font-select')!.value).toBe('default');
+  expect(document.querySelector<HTMLSelectElement>('#font-select')!.value).toBe('B612 Mono');
   expect(document.querySelector('option[value="default"]')!.textContent).toContain('ZCOOL QingKe HuangYou');
   expect(quote.style.getPropertyValue('--override-quote-font-family')).toBe('initial');
+  expect(document.getElementById('custom-font-status')!.dataset.text).toBe('settings_font_fallback');
   quote.lang = 'es-ES';
   refreshDefaultFontLabel();
   expect(store.get('font')).toBe('B612 Mono');
   expect(quote.style.getPropertyValue('--override-quote-font-family')).toContain('B612 Mono');
+  expect(document.getElementById('custom-font-status')!.dataset.text).toBeUndefined();
 });
 
 test('compatible choices survive language and theme changes, while explicit choices stay per language', async () => {
@@ -275,7 +277,7 @@ test('a custom font response for the previous language cannot replace the new la
   expect(document.querySelector('option[value="Lora"]')).toBeNull();
 });
 
-test('the curated list excludes other-language additions and incompatible saved fonts remain removable', async () => {
+test('the curated list excludes other-language additions and incompatible saved fonts remain removable and selectable', async () => {
   const quote = document.createElement('blockquote');
   quote.id = 'quote';
   quote.lang = 'es-ES';
@@ -289,18 +291,43 @@ test('the curated list excludes other-language additions and incompatible saved 
   quote.lang = 'zh-CN';
   refreshDefaultFontLabel();
   const saved = document.querySelector<HTMLOptionElement>('option[value="Give You Glory"]')!;
-  expect(saved.disabled).toBe(true);
+  expect(saved.disabled).toBe(false);
   expect(saved.textContent).toContain('incompatible');
   expect(document.getElementById('remove-custom-font')!.hidden).toBe(false);
   expect(document.getElementById('remove-custom-font')!.getAttribute('aria-label')).toContain('Give You Glory');
   expect(document.getElementById('custom-font-status')!.textContent).toContain('choice remains saved');
   initFont();
-  expect(document.querySelector<HTMLOptionElement>('option[value="Give You Glory"]')!.disabled).toBe(true);
+  expect(document.querySelector<HTMLOptionElement>('option[value="Give You Glory"]')!.disabled).toBe(false);
   removeCustomFont();
   expect(document.querySelector('option[value="Give You Glory"]')).toBeNull();
   quote.lang = 'es-ES';
   refreshDefaultFontLabel();
   expect(store.get('font')).toBe('default');
+});
+
+test('Special Elite remains selected when passage rotates to Chinese, with fallback status and theme font rendering', async () => {
+  const quote = document.createElement('blockquote');
+  quote.id = 'quote';
+  quote.lang = 'en-GB';
+  document.body.append(quote);
+  document.documentElement.dataset.theme = 'base-dark';
+  await applyCustomFont('Special Elite');
+  expect(store.get('font')).toBe('Special Elite');
+  expect(quote.style.getPropertyValue('--override-quote-font-family')).toContain('Special Elite');
+
+  quote.lang = 'zh-CN';
+  refreshDefaultFontLabel();
+
+  expect(store.get('font')).toBe('Special Elite');
+  expect(document.querySelector<HTMLSelectElement>('#font-select')!.value).toBe('Special Elite');
+  expect(document.querySelector('option[value="Special Elite"]')).not.toBeNull();
+  expect(quote.style.getPropertyValue('--override-quote-font-family')).toBe('initial');
+  expect(document.getElementById('custom-font-status')!.dataset.text).toBe('settings_font_fallback');
+
+  // Can still change font while viewing Chinese passage
+  await applyCustomFont('Roboto');
+  expect(store.get('font')).toBe('Roboto');
+  expect(document.querySelector<HTMLSelectElement>('#font-select')!.value).toBe('Roboto');
 });
 
 test('regional variants of the same language do not cancel a pending font choice', async () => {
