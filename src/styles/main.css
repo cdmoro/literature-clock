@@ -269,6 +269,7 @@ button:disabled {
   color: var(--font-color);
   font-weight: bold;
   left: 0;
+  z-index: 1;
 }
 
 #progress-bar {
@@ -345,6 +346,14 @@ footer {
   gap: 5px;
   text-align: center;
   opacity: 1;
+  padding: .5rem;
+  border-radius: .25rem;
+  z-index: 1;
+}
+
+[data-background='photo'] #menu,
+[data-background-pattern] #menu {
+  background: color-mix(in srgb, var(--background) 85%, transparent);
 }
 
 #settings {
