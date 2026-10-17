@@ -114,14 +114,14 @@ html[data-background='photo'] #quote {
 html[data-theme|='photo'][data-background='photo'] #time-clock,
 html[data-background-pattern]:not([data-background-pattern='none']) #time-clock {
   paint-order: stroke;
-  -webkit-text-stroke: 0.04rem var(--text-outline-color, var(--background));
+  -webkit-text-stroke: 0.07rem var(--text-outline-color, var(--background));
 }
 html[data-background='photo'] #time-clock {
   text-shadow: var(--photo-text-halo);
 }
 html[data-theme|='photo'][data-background='photo'] #quote #quote-translation,
 html[data-background-pattern]:not([data-background-pattern='none']) #quote #quote-translation {
-  -webkit-text-stroke-width: 0.02rem;
+  -webkit-text-stroke-width: 0.04rem;
 }
 html[data-background='photo'] #quote #quote-translation,
 html[data-background='photo'] #quote #quote-translation :is(p, cite, .time) {
