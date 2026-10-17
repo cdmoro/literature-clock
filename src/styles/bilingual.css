@@ -113,10 +113,11 @@
   font-size: 75%;
   font-weight: normal;
   line-height: normal;
-  opacity: 0.5;
   margin-top: 0.1rem;
   margin-bottom: 0.5rem;
   text-align: start;
+  color: color-mix(in srgb, var(--font-color) 70%, var(--background));
+  -webkit-text-stroke-width: 0.02rem;
 }
 #quote .bilingual-ruby-text > rt .time {
   color: var(--accent-color);
@@ -129,7 +130,7 @@
 #quote:has(#quote-translation) {
   box-sizing: border-box;
   max-height: calc(100dvh - 10rem);
-  overflow-y: auto;
+  /* overflow-y: auto; */
   scrollbar-width: thin;
 }
 #quote:has(#quote-translation) > p {
@@ -145,6 +146,17 @@
 [data-theme|='frame'] #quote:has(#quote-translation) > p::before {
   height: 60px;
   font-size: 5rem;
+}
+[data-theme|='frame'] #quote #quote-translation p,
+[data-theme|='frame'] #quote #quote-translation cite,
+[data-theme|='subtle'] #quote #quote-translation p,
+[data-theme|='subtle'] #quote #quote-translation cite {
+  text-align: center;
+}
+[data-theme|='subtle'] #quote #quote-translation p {
+  background: var(--linear-gradient);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 [data-theme|='poster'] #clock:has(#quote-translation) {
   max-width: 80vw;

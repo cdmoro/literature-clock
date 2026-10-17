@@ -269,6 +269,7 @@ button:disabled {
   color: var(--font-color);
   font-weight: bold;
   left: 0;
+  z-index: 1;
 }
 
 #progress-bar {
@@ -345,6 +346,14 @@ footer {
   gap: 5px;
   text-align: center;
   opacity: 1;
+  padding: .5rem;
+  border-radius: .25rem;
+  z-index: 1;
+}
+
+[data-background='photo'] #menu,
+[data-background-pattern] #menu {
+  background: color-mix(in srgb, var(--background) 85%, transparent);
 }
 
 #settings {
@@ -543,7 +552,7 @@ body.share-quote #clock {
 }
 #reading-status {
 	position: fixed;
-	top: 3rem;
+	top: 1rem;
 	left: 50%;
 	transform: translate(-50%);
 	width: max-content;
@@ -555,13 +564,14 @@ body.share-quote #clock {
 	border-radius: .4rem;
 	padding: .2rem .2rem .2rem .6rem;
 	border: solid 2px color-mix(in srgb,var(--accent-color),transparent 10%);
+  transition: top .5s ease;
+}
+body.show-time #reading-status {
+  top: 3rem;
 }
 #reading-status button {
   margin-inline-start: 0.5rem;
   font: inherit;
-}
-body.paused:not(.zen) #time-clock {
-  display: block !important;
 }
 body.paused #quote-notice {
   top: 4.5rem;

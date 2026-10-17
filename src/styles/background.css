@@ -84,10 +84,10 @@ html:is([data-background='plain'], [data-background='tinted'])[data-background-p
 }
 /* A restrained halo softens the outline over photographic backgrounds. */
 html[data-background='photo'][data-theme$='light'] {
-  --photo-text-halo: 0 0 0.75rem #dfdfdf;
+  --photo-text-halo: 0 0 0.75rem #ffffff70;
 }
 html[data-background='photo'][data-theme$='dark'] {
-  --photo-text-halo: 0 0 0.75rem #1c1c1c;
+  --photo-text-halo: 0 0 0.65rem #1c1c1c;
 }
 html[data-theme|='photo'][data-background='photo'] #quote {
   paint-order: stroke;
@@ -96,6 +96,9 @@ html[data-theme|='photo'][data-background='photo'] #quote {
 html[data-background-pattern]:not([data-background-pattern='none']) #quote {
   paint-order: stroke;
   -webkit-text-stroke: 0.18em var(--text-outline-color, var(--background));
+}
+html[data-theme$='-light'][data-background-pattern]:not([data-background-pattern='none']) #quote {
+  -webkit-text-stroke: 0.06em var(--text-outline-color, var(--background));
 }
 html[data-background='photo']:not([data-background-pattern]:not([data-background-pattern='none'])) #quote {
   paint-order: stroke;
@@ -111,14 +114,14 @@ html[data-background='photo'] #quote {
 html[data-theme|='photo'][data-background='photo'] #time-clock,
 html[data-background-pattern]:not([data-background-pattern='none']) #time-clock {
   paint-order: stroke;
-  -webkit-text-stroke: 0.1rem var(--text-outline-color, var(--background));
+  -webkit-text-stroke: 0.07rem var(--text-outline-color, var(--background));
 }
 html[data-background='photo'] #time-clock {
   text-shadow: var(--photo-text-halo);
 }
 html[data-theme|='photo'][data-background='photo'] #quote #quote-translation,
 html[data-background-pattern]:not([data-background-pattern='none']) #quote #quote-translation {
-  -webkit-text-stroke-width: 0.1rem;
+  -webkit-text-stroke-width: 0.04rem;
 }
 html[data-background='photo'] #quote #quote-translation,
 html[data-background='photo'] #quote #quote-translation :is(p, cite, .time) {
