@@ -25,6 +25,8 @@ public sealed class Preferences
     public string CustomColor { get; set; } = "#d24335";
     public string Background { get; set; } = "default";
     public string Pattern { get; set; } = "none";
+    public string PatternSize { get; set; } = "1";
+    public string Effect { get; set; } = "none";
     public string Provider { get; set; } = "picsum";
     public string Category { get; set; } = "all";
     public static string Folder => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Literature Clock");

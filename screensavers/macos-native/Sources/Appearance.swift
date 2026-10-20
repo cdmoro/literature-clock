@@ -131,12 +131,12 @@ enum NativeAppearance {
                       "festive": "#e74c3c", "bohemian": "#1abc9c", "retro": dark ? "#f1ba08" : "#966a00"]
         return color(colors[theme] ?? "#d24335")!
     }
-    static func patternImage(pattern: String, size: NSSize, scale: CGFloat, color: NSColor, resources: URL) -> NSImage? {
+    static func patternImage(pattern: String, size: NSSize, scale: CGFloat, color: NSColor, resources: URL, tileScale: CGFloat = 1) -> NSImage? {
         guard pattern != "none", size.width > 0, size.height > 0,
               let tile = NSImage(contentsOf: resources.appendingPathComponent("Patterns/" + pattern + ".png")),
               let data = try? Data(contentsOf: resources.appendingPathComponent("Patterns/tiles.json")),
               let sizes = try? JSONDecoder().decode([String: [CGFloat]].self, from: data), let dimensions = sizes[pattern] else { return nil }
-        tile.size = NSSize(width: dimensions[0], height: dimensions[1])
+        tile.size = NSSize(width: dimensions[0] * tileScale, height: dimensions[1] * tileScale)
         return NSImage(size: size, flipped: false) { rect in
             NSColor(patternImage: tile).setFill()
             rect.fill()

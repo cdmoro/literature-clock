@@ -89,7 +89,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     var preferences: UserDefaults = ScreenSaverDefaults(forModuleWithName: "net.literatureclock.native-saver")!
     var resourceURLOverride: URL? // Isolated render diagnostics only.
     var resources: URL { resourceURLOverride ?? Bundle(for: NativeClockView.self).resourceURL! }
-    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background", "background-pattern", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
+    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background", "background-pattern", "pattern-size", "background-effect", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
     var photoDownloadsEnabled = true
     var interactionPreviewSweep = false
     var fullProgressPreviewSweep = false
@@ -171,6 +171,9 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     private var finalPhotoOpticalSource: CIImage?
     private var patternKey = ""
     private var patternImage: NSImage?
+    private var effectImage: NSImage?
+    private var effectImageKey = ""
+    private var effectStarted = Date()
     var themeName: String { (preferences.string(forKey: "theme") ?? "base-dark").split(separator: "-").first.map(String.init) ?? "base" }
     var backgroundName: String { NativeAppearance.resolvedBackground(theme: themeName, selected: preferences.string(forKey: "background")) }
     private static let bundledFonts: [String: String] = {
@@ -206,7 +209,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     private func setup() {
         preferences.register(defaults: ["theme": "base-dark", "screensaver": true, "show-time": true,
                                        "hide-book-title": false, "work": true, "progressbar": "background", "quote-locales": "", "palette": "default",
-                                       "custom-color": "#d24335", "background": "default", "background-pattern": "none", "photo-provider": "picsum", "photo-category": "all", "bilingual": false, "translation-locale": ""])
+                                       "custom-color": "#d24335", "background": "default", "background-pattern": "none", "pattern-size": 1.0, "background-effect": "none", "photo-provider": "picsum", "photo-category": "all", "bilingual": false, "translation-locale": ""])
         _ = Self.bundledFonts
         animationTimeInterval = 1.0 / 60.0
         Self.instances.add(self)
@@ -223,6 +226,46 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     }
     override func stopAnimation() { active = false; photoBackgroundStorage?.cancel(); super.stopAnimation() }
     override func animateOneFrame() { needsDisplay = true }
+    private func drawAnimatedEffect(name: String, dark: Bool, accent: NSColor) {
+        guard ["rain", "snow", "dust", "dust-v2", "stars"].contains(name),
+              NativeAppearance.supportsPattern(theme: themeName), backgroundName != "photo" else { effectImage = nil; effectImageKey = ""; return }
+        let size = bounds.size
+        let count = min(220, max(24, Int(size.width * size.height / (name == "stars" ? 8000 : name == "dust-v2" ? 6500 : 8500))))
+        let tint = (name == "snow" || name == "stars") ? NativeAppearance.foreground(theme: themeName, dark: dark, accent: accent) : NSColor(calibratedRed: 1, green: 0.78, blue: 0.53, alpha: 1)
+        let effectKey = "\(name)|\(size)|\(tint)"
+        if effectImageKey != effectKey {
+            effectImage = NSImage(size: size, flipped: false) { rect in
+                let color = tint.withAlphaComponent(name == "stars" ? 0.52 : 0.16)
+                for index in 0..<count {
+                var seed = UInt64(index + 1) &* 0x9e3779b97f4a7c15
+                func random(_ limit: Double) -> Double { seed = seed &* 6364136223846793005 &+ 1442695040888963407; return Double(seed >> 33) / Double(UInt32.max) * limit }
+                let r = name == "snow" ? 1 + random(2) : name == "dust-v2" ? 0.5 + random(4.5) : name == "stars" ? 0.5 + random(3) : 0.6 + random(1.1)
+                let x = random(Double(max(1, size.width))), y = random(Double(max(1, size.height)))
+                let dot = NSBezierPath(ovalIn: CGRect(x: x, y: y, width: r * 2, height: r * 2))
+                color.setFill(); dot.fill()
+                if name == "dust-v2" || name == "stars" { tint.withAlphaComponent(0.2).setStroke(); dot.lineWidth = r * 0.8; dot.stroke() }
+                if name == "rain" { tint.withAlphaComponent(0.18).setStroke(); let streak=NSBezierPath(); streak.move(to: CGPoint(x:x,y:y)); streak.line(to: CGPoint(x:x-2,y:y+12)); streak.lineWidth=max(0.5,r); streak.stroke() }
+                if name == "snow" { let arms=NSBezierPath(); arms.move(to: CGPoint(x:x-r,y:y+r)); arms.line(to: CGPoint(x:x+r,y:y+r)); arms.move(to: CGPoint(x:x+r,y:y)); arms.line(to: CGPoint(x:x+r,y:y+2*r)); color.setStroke(); arms.lineWidth=0.5; arms.stroke() }
+                }
+                return true
+            }
+            effectImageKey = effectKey
+            effectStarted = Date()
+        }
+        guard let effectImage else { return }
+        let elapsed = Date().timeIntervalSince(effectStarted)
+        let duration = name == "rain" ? 1.8 : name == "snow" ? 15 : 8
+        let fraction = CGFloat(elapsed.truncatingRemainder(dividingBy: duration) / duration)
+        NSGraphicsContext.saveGraphicsState()
+        defer { NSGraphicsContext.restoreGraphicsState() }
+        if name == "rain" || name == "snow" {
+            let offset = bounds.height * fraction
+            effectImage.draw(in: bounds.offsetBy(dx: 0, dy: -offset))
+            effectImage.draw(in: bounds.offsetBy(dx: 0, dy: bounds.height - offset))
+        } else {
+            effectImage.draw(in: bounds.offsetBy(dx: sin(elapsed * 0.08) * 8, dy: cos(elapsed * 0.12) * 8), from: .zero, operation: .sourceOver, fraction: 0.8)
+        }
+    }
     override func acceptsFirstMouse(for event: NSEvent?) -> Bool { false }
     override func hitTest(_ point: NSPoint) -> NSView? { self }
     override var acceptsFirstResponder: Bool { false }
@@ -376,12 +419,16 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let hasPattern = pattern != "none"
         let outlineColor = NativeAppearance.background(theme: theme, dark: dark, accent: accent, selected: backgroundMode)
         let outlineWidth = hasPattern ? -18.0 : -10.0
-        let newPatternKey = "\(pattern)|\(bounds.size)|\(scale)|\(accent)"
+        let allowedSizes: [CGFloat] = [0.5, 1, 1.5, 2, 3]
+        let savedSize = CGFloat(preferences.double(forKey: "pattern-size"))
+        let patternScale = allowedSizes.contains(savedSize) ? savedSize : 1
+        let newPatternKey = "\(pattern)|\(bounds.size)|\(scale)|\(accent)|\(patternScale)"
         if newPatternKey != patternKey {
-            patternImage = NativeAppearance.patternImage(pattern: pattern, size: bounds.size, scale: scale, color: accent, resources: resources)
+            patternImage = NativeAppearance.patternImage(pattern: pattern, size: bounds.size, scale: scale, color: accent, resources: resources, tileScale: patternScale)
             patternKey = newPatternKey
         }
         patternImage?.draw(in: bounds)
+        if preferences.string(forKey: "background-effect") != (effectImageKey.split(separator: "|").first.map(String.init) ?? "") || !NativeAppearance.supportsPattern(theme: theme) || backgroundMode == "photo" { effectImageKey = "" }
         let photoKey = usesPhoto ? photoBackground.image.map { String(describing: ObjectIdentifier($0)) } ?? "none" : "none"
         let opticalKey = "\(theme)|\(backgroundMode)|\(accent)|\(dark)|\(bounds.size)|\(newPatternKey)|\(photoKey)"
         if opticalKey != opticalSourceKey && bounds.width > 0 && bounds.height > 0 {
@@ -395,6 +442,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             finalPhotoOpticalSource = opticalSource
             opticalSourceKey = opticalKey
         }
+        drawAnimatedEffect(name: preferences.string(forKey: "background-effect") ?? "none", dark: dark, accent: accent)
         if usesPhoto, let final = finalPhotoOpticalSource {
             if photoBackground.isTransitioning, let previous = previousPhotoOpticalSource {
                 opticalSource = previous.applyingFilter("CIDissolveTransition", parameters: ["inputTargetImage": final, "inputTime": photoBackground.transitionFraction])
@@ -716,6 +764,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             ("photo-category", "settings_photo_category", NativePhotoBackground.categories(provider: preferences.string(forKey: "photo-provider") ?? "picsum")),
             ("palette", "settings_color", ["default", "red", "pink", "green", "orange", "purple", "blue", "gray", "random", "custom"]),
             ("background-pattern", "settings_background_pattern", NativeAppearance.patterns),
+            ("pattern-size", "settings_pattern_size", ["0.5", "1", "1.5", "2", "3"]),
+            ("background-effect", "settings_background_effect", ["none", "rain", "snow", "dust", "dust-v2", "stars"]),
             ("progressbar", "progressbar_mode", ["none", "top", "bottom", "background", "glass-background", "glass-foreground"])
         ] {
             if key == "transition" { section("settings_behavior") }
@@ -733,8 +783,11 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 menu.menu?.addItem(item)
                 if raw == value { menu.select(item) }
             }
+            if key == "pattern-size" { menu.target = self; menu.action = #selector(patternSizeChanged) }
+            if key == "background-effect" { menu.target = self; menu.action = #selector(effectChanged) }
             if key == "theme-base" || key == "background" || key == "photo-provider" { menu.target = self; menu.action = #selector(photoControlsChanged) }
             controls[key] = menu
+            if key == "background-pattern" { menu.target = self; menu.action = #selector(patternChanged) }
             let title = NSTextField(labelWithString: text(label))
             title.widthAnchor.constraint(equalToConstant: 180).isActive = true
             menu.widthAnchor.constraint(equalToConstant: key.hasPrefix("photo-") ? 180 : 260).isActive = true
@@ -808,6 +861,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             }
         }
         photoControlsChanged()
+        patternChanged(controls["background-pattern"] as! NSPopUpButton)
+        effectChanged(controls["background-effect"] as! NSPopUpButton)
         section("settings_behavior")
         for (key, label) in [("screensaver", "movement"), ("show-time", "time_mode"), ("hide-book-title", "settings_hide_book_title"), ("work", "work_mode_title")] {
             let check = NSButton(checkboxWithTitle: text(label), target: nil, action: nil)
@@ -831,6 +886,22 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         window.setContentSize(NSSize(width: 700, height: max(470, stack.fittingSize.height + 48)))
         sheet = window
         return window
+    }
+    @objc private func patternSizeChanged(_ sender: NSPopUpButton) {
+        guard let value = sender.selectedItem?.representedObject as? String, ["0.5", "1", "1.5", "2", "3"].contains(value), let number = Double(value) else { return }
+        preferences.set(number, forKey: "pattern-size")
+        patternKey = ""
+        needsDisplay = true
+    }
+    @objc private func patternChanged(_ sender: NSPopUpButton) {
+        let pattern = sender.selectedItem?.representedObject as? String ?? "none"
+        let sizeControl = controls["pattern-size"] as? NSPopUpButton
+        sizeControl?.isEnabled = !["none", "random"].contains(pattern) && NativeAppearance.supportsPattern(theme: themeName)
+        sizeControl?.superview?.isHidden = !(sizeControl?.isEnabled ?? false)
+    }
+    @objc private func effectChanged(_ sender: NSPopUpButton) {
+        preferences.set(sender.selectedItem?.representedObject as? String ?? "none", forKey: "background-effect")
+        needsDisplay = true
     }
     @objc private func cancelOptions() {
         closeOptions()

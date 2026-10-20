@@ -8,6 +8,7 @@ using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Media3D;
 using System.Windows.Shapes;
 
@@ -26,6 +27,9 @@ public sealed class ClockSurface : Canvas
     readonly TextBlock clockHalo = new() { FontFamily = new FontFamily("Segoe UI"), FontWeight = FontWeights.Bold };
     readonly TextBlock credit = new() { FontSize = 11 };
     readonly Rectangle progress = new();
+    readonly Canvas effects = new();
+    readonly Random effectRandom = new();
+    string effectKey = "";
     readonly PhotoBackground photo;
     GlassEffect? glass;
     string minute = "", layoutKey = "", backgroundKey = "";
@@ -39,11 +43,11 @@ public sealed class ClockSurface : Canvas
     {
         this.data=data; this.p=p; this.display=display; this.downloads=downloads;
         ClipToBounds=true;
-        scene.Children.Add(backdrop); scene.Children.Add(clockHalo); scene.Children.Add(clock); scene.Children.Add(passage); scene.Children.Add(credit);
+        scene.Children.Add(backdrop); scene.Children.Add(effects); scene.Children.Add(clockHalo); scene.Children.Add(clock); scene.Children.Add(passage); scene.Children.Add(credit);
         Children.Add(scene); Children.Add(progress);
         photo=new PhotoBackground(display);
         Loaded += (_, _) => CompositionTarget.Rendering += Frame;
-        Unloaded += (_, _) => { CompositionTarget.Rendering -= Frame; photo.Dispose(); };
+        Unloaded += (_, _) => { CompositionTarget.Rendering -= Frame; effects.Children.Clear(); photo.Dispose(); };
         if (p.Progress.StartsWith("glass-") && (RenderCapability.Tier >> 16) >= 2 && RenderCapability.IsPixelShaderVersionSupported(3,0))
         {
             try { glass=new GlassEffect(); progress.Effect=glass; }
@@ -79,7 +83,8 @@ public sealed class ClockSurface : Canvas
         if(pattern=="random") pattern=Appearance.Patterns[2+Catalogues.Index(Appearance.Patterns.Length-2,absoluteMinute,display)];
         outlineForPattern=pattern!="none";
         outlineColor=Appearance.Backdrop(p,dark,accent);
-        var key=$"{ActualWidth}|{ActualHeight}|{dark}|{accent}|{pattern}|{photo.Revision}";
+        var patternSize = new[]{"0.5","1","1.5","2","3"}.Contains(p.PatternSize) ? double.Parse(p.PatternSize,CultureInfo.InvariantCulture) : 1;
+        var key=$"{ActualWidth}|{ActualHeight}|{dark}|{accent}|{pattern}|{patternSize}|{photo.Revision}";
         if(key!=backgroundKey || photo.Transitioning)
         {
             backdrop.Children.Clear(); Fill(Appearance.Brush(Appearance.Backdrop(p,dark,accent)));
@@ -97,9 +102,12 @@ public sealed class ClockSurface : Canvas
                     for(double y=0;y<ActualHeight;y+=p.Theme=="terminal"?4:3)
                     { var line=new Rectangle { Width=ActualWidth,Height=1,Fill=Brushes.Black,Opacity=p.Theme=="terminal"?.13:.2 }; SetTop(line,y); backdrop.Children.Add(line); }
             }
-            if(tiles.TryGetValue(pattern,out var dimensions)) Fill(Tile("Patterns/"+pattern+".png",dimensions[0],dimensions[1]));
+            if(tiles.TryGetValue(pattern,out var dimensions)) Fill(Tile("Patterns/"+pattern+".png",dimensions[0]*patternSize,dimensions[1]*patternSize));
             backgroundKey=key;
         }
+        effects.Width=ActualWidth; effects.Height=ActualHeight;
+        var currentEffectKey=$"{ActualWidth}|{ActualHeight}|{p.Effect}|{dark}|{accent}|{mode}";
+        if(effectKey!=currentEffectKey) { BuildEffects(dark,accent); effectKey=currentEffectKey; }
         scene.Width=backdrop.Width=ActualWidth; scene.Height=backdrop.Height=ActualHeight;
         var outlineActive=outlineForPhoto || outlineForPattern;
         clock.Text=minute; clock.FontSize=Math.Max(10,Math.Min(20,ActualWidth*.013)); clock.Foreground=Appearance.Brush(foreground);
@@ -157,6 +165,38 @@ public sealed class ClockSurface : Canvas
             progress.Fill=Appearance.Brush(background?progressColor:accent,background?.1:.7);
             SetTop(progress,p.Progress=="top"||background?0:ActualHeight-3);
             if(background && scene.Children.Contains(passage)) { scene.Children.Remove(passage); Children.Add(passage); SetZIndex(passage,2); }
+        }
+    }
+    void BuildEffects(bool dark,Color accent)
+    {
+        effects.Children.Clear();
+        animatedEffects.Clear();
+        if(p.Theme is "book" or "photo" || p.Effect=="none" || Appearance.Background(p)=="photo") return;
+        var count=Math.Min(220,Math.Max(24,(int)(ActualWidth*ActualHeight/(p.Effect=="stars"?8000:p.Effect=="dust-v2"?6500:8500))));
+        var color=p.Effect is "snow" or "stars"?Appearance.Foreground(p.Theme,dark,accent):Appearance.Color("#ffd391");
+        for(var i=0;i<count;i++)
+        {
+            var size=p.Effect=="snow"?1+effectRandom.NextDouble()*2.5:p.Effect=="dust-v2"?.7+effectRandom.NextDouble()*5:p.Effect=="stars"?.5+effectRandom.NextDouble()*3.5:.8+effectRandom.NextDouble()*1.4;
+            var dot=new Ellipse { Width=size*2,Height=size*2,Fill=new SolidColorBrush(color),Opacity=p.Effect=="snow"?.12+effectRandom.NextDouble()*.18:p.Effect=="stars"?.35+effectRandom.NextDouble()*.5:.08+effectRandom.NextDouble()*.2 };
+            SetLeft(dot,effectRandom.NextDouble()*ActualWidth); SetTop(dot,effectRandom.NextDouble()*ActualHeight); effects.Children.Add(dot);
+            if(p.Effect is "dust" or "dust-v2" or "stars")
+            {
+                var dx=effectRandom.Next(-30,31); var dy=effectRandom.Next(-30,31);
+                var move=new TranslateTransform(); dot.RenderTransform=move;
+                var duration=TimeSpan.FromSeconds(4+effectRandom.NextDouble()*8);
+                move.BeginAnimation(TranslateTransform.XProperty,new DoubleAnimation(-dx,dx,new Duration(duration)){AutoReverse=true,RepeatBehavior=RepeatBehavior.Forever});
+                move.BeginAnimation(TranslateTransform.YProperty,new DoubleAnimation(-dy,dy,new Duration(duration)){AutoReverse=true,RepeatBehavior=RepeatBehavior.Forever});
+                if(p.Effect=="stars") dot.BeginAnimation(OpacityProperty,new DoubleAnimation(.25,.95,new Duration(TimeSpan.FromSeconds(2+effectRandom.NextDouble()*4)){AutoReverse=true,RepeatBehavior=RepeatBehavior.Forever});
+            }
+            else
+            {
+                var dy=p.Effect=="snow"?ActualHeight+20:ActualHeight+20;
+                var drift=p.Effect=="snow"?effectRandom.Next(-40,41):effectRandom.Next(-20,21);
+                dot.RenderTransform=new TranslateTransform(); var move=(TranslateTransform)dot.RenderTransform;
+                var duration=TimeSpan.FromSeconds(p.Effect=="snow"?8+effectRandom.NextDouble()*14:1.2+effectRandom.NextDouble()*1.5);
+                move.BeginAnimation(TranslateTransform.YProperty,new DoubleAnimation(-ActualHeight,dy,new Duration(duration)){RepeatBehavior=RepeatBehavior.Forever});
+                move.BeginAnimation(TranslateTransform.XProperty,new DoubleAnimation(drift,-drift,new Duration(duration)){RepeatBehavior=RepeatBehavior.Forever});
+            }
         }
     }
     void BuildPassage(Quote q,double width,double size,Color foreground,Color accent)
