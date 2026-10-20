@@ -685,7 +685,7 @@
 #settings-dialog .settings-pattern-row .pattern-size-group::before {
   content: '';
   position: absolute;
-  inset-block: 0.35rem;
+  inset-block: 0;
   inset-inline-start: 0;
   width: 1px;
   background: color-mix(in srgb, var(--font-color), transparent 20%);
