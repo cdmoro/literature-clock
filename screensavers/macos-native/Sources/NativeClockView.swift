@@ -418,7 +418,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         if pattern == "random" { pattern = randomValue(Array(NativeAppearance.patterns.dropFirst(2)), at: now) }
         let hasPattern = pattern != "none"
         let outlineColor = NativeAppearance.background(theme: theme, dark: dark, accent: accent, selected: backgroundMode)
-        let outlineWidth = hasPattern ? -18.0 : -10.0
+        let outlineWidth = hasPattern ? -1.5 : -1.0
         let allowedSizes: [CGFloat] = [0.5, 1, 1.5, 2, 3]
         let savedSize = CGFloat(preferences.double(forKey: "pattern-size"))
         let patternScale = allowedSizes.contains(savedSize) ? savedSize : 1
@@ -467,15 +467,15 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             if usesPhoto {
                 let shadow = NSShadow()
                 shadow.shadowOffset = .zero
-                shadow.shadowBlurRadius = 12
+                shadow.shadowBlurRadius = 1.5
                 shadow.shadowColor = NativeAppearance.color(dark ? "#1c1c1c" : "#dfdfdf")
                 clockAttributes[.shadow] = shadow
             }
             label.attributedStringValue = NSAttributedString(string: lastMinute, attributes: clockAttributes)
             label.sizeToFit()
-            if usesPhoto { label.setFrameSize(NSSize(width: label.frame.width + 48, height: label.frame.height + 48)) }
+            if usesPhoto { label.setFrameSize(NSSize(width: label.frame.width + 24, height: label.frame.height + 24)) }
             label.frame.origin = NSPoint(x: bounds.midX - label.frame.width / 2,
-                                         y: (isFlipped ? timeTopInset + 8 : bounds.maxY - timeTopInset - 8 - label.frame.height) - (usesPhoto ? 24 : 0))
+                                         y: (isFlipped ? timeTopInset + 8 : bounds.maxY - timeTopInset - 8 - label.frame.height) - (usesPhoto ? 12 : 0))
             let key = "\(lastMinute)|\(label.font!.pointSize)|\(foreground)|\(outlineColor)|\(outlineWidth)|\(usesPhoto)|\(dark)|\(scale)"
             if key != plainTimeImageKey {
                 label.isHidden = false
@@ -596,7 +596,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             // a new fractional origin every frame independently snaps glyphs.
             let highlightPadding = theme == "book" ? low * 0.2 : 0
             // Leave room for the Photo halo on every side of the cache.
-            let shadowPadding: CGFloat = usesPhoto ? 24 : 0
+            let shadowPadding: CGFloat = usesPhoto ? 12 : 0
             let size = NSSize(width: ceil(width + highlightPadding * 2 + shadowPadding * 2), height: layoutHeight + 4 + shadowPadding * 2)
             let bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(ceil(size.width * scale)), pixelsHigh: Int(ceil(size.height * scale)), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0)!
             bitmap.size = size
@@ -623,7 +623,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 if usesPhoto {
                     let shadow = NSShadow()
                     shadow.shadowOffset = .zero
-                    shadow.shadowBlurRadius = 12
+                    shadow.shadowBlurRadius = 1.5
                     shadow.shadowColor = NativeAppearance.color(dark ? "#1c1c1c" : "#dfdfdf")
                     shadow.set()
                 }
@@ -772,7 +772,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             let menu = NSPopUpButton()
             let value = key == "theme-base" ? parts.first : key == "theme-mode" ? parts.last : preferences.string(forKey: key)
             for raw in values {
-                let labelKey = key == "background" ? "settings_background_" + raw : key == "photo-category" ? "settings_photo_" + raw : key == "background-pattern" ? "settings_pattern_" + raw : key == "progressbar" ? "settings_progress_" + raw :
+                let labelKey = key == "background" ? "settings_background_" + raw : key == "photo-category" ? "settings_photo_" + raw : key == "background-pattern" ? "settings_pattern_" + raw : key == "background-effect" ? "settings_effect_" + raw : key == "progressbar" ? "settings_progress_" + raw :
                     raw == "custom" ? "settings_color_customize" : raw == "default" ? "default_font" : raw == "random" ? "settings_color_random" : raw
                 let label = key == "photo-provider" ? (raw == "commons" ? "Wikimedia Commons" : raw == "nasa" ? "NASA" : "Picsum") : text(labelKey)
                 let item = NSMenuItem(title: label, action: nil, keyEquivalent: "")

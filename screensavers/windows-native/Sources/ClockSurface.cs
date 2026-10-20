@@ -113,7 +113,7 @@ public sealed class ClockSurface : Canvas
         clock.Text=minute; clock.FontSize=Math.Max(10,Math.Min(20,ActualWidth*.013)); clock.Foreground=Appearance.Brush(foreground);
         clock.Effect=outlineActive?new DropShadowEffect { Color=outlineColor,BlurRadius=1,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance }:null;
         clockHalo.Text=minute; clockHalo.FontSize=clock.FontSize; clockHalo.Foreground=clock.Foreground;
-        clockHalo.Effect=mode=="photo"?new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=12,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance }:null;
+        clockHalo.Effect=mode=="photo"?new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=2,ShadowDepth=0,Opacity=.75,RenderingBias=RenderingBias.Performance }:null;
         clock.Visibility=p.ShowTime?Visibility.Visible:Visibility.Hidden; clock.Measure(new Size(ActualWidth,100));
         clockHalo.Visibility=p.ShowTime && mode=="photo"?Visibility.Visible:Visibility.Hidden; clockHalo.Measure(new Size(ActualWidth,100));
         SetLeft(clock,(ActualWidth-clock.DesiredSize.Width)/2); SetTop(clock,26);
@@ -133,7 +133,7 @@ public sealed class ClockSurface : Canvas
             }
             BuildPassage(quote,width,low,foreground,accent); passage.Measure(new Size(width,double.PositiveInfinity));
             passage.CacheMode=new BitmapCache { RenderAtScale=VisualTreeHelper.GetDpi(this).DpiScaleX };
-            passage.Effect=mode=="photo"?new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=12,ShadowDepth=0,Opacity=1 }:null;
+            passage.Effect=mode=="photo"?new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=2,ShadowDepth=0,Opacity=.75 }:null;
             layoutKey=layout;
         }
         var elapsed=(now-started).TotalSeconds*(1+display*.12);
@@ -205,15 +205,15 @@ public sealed class ClockSurface : Canvas
         {
             var flow=language.StartsWith("ar")?FlowDirection.RightToLeft:FlowDirection.LeftToRight;
             var outlineActive=outlineForPhoto || outlineForPattern;
-            var outlineRadius=Math.Max(1,fontSize*(outlineForPattern?.09:.05));
+            var outlineRadius=Math.Max(.5,fontSize*(outlineForPattern?.012:.007));
             var text=new TextBlock { TextWrapping=TextWrapping.Wrap, FontFamily=Appearance.Font(p.Theme,language), FontSize=fontSize, Foreground=Appearance.Brush(foreground,p.Theme=="terminal"?.8:1), FlowDirection=flow, LineHeight=fontSize*Appearance.Font(p.Theme,language).LineSpacing*(p.Theme=="book"?1.35:p.Theme=="festive"?1.25:p.Theme=="terminal"?1.15:1), LineStackingStrategy=LineStackingStrategy.BlockLineHeight };
-            if(outlineActive) text.Effect=new DropShadowEffect { Color=outlineColor,BlurRadius=outlineRadius,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance };
+            if(outlineActive) text.Effect=new DropShadowEffect { Color=outlineColor,BlurRadius=outlineRadius,ShadowDepth=0,Opacity=.8,RenderingBias=RenderingBias.Performance };
             text.Inlines.Add(new Run(item.first));
             var highlight=new Run(item.time);
             if(p.Theme!="book") highlight.Foreground=Appearance.Brush(accent);
             text.Inlines.Add(highlight); text.Inlines.Add(new Run(item.last)); passage.Children.Add(p.Theme=="book"?new BookText(text,highlight,Appearance.Brush(accent)):text);
             var attribution=p.HideTitle?item.author:string.Join(", ",new[]{item.title,item.author}.WhereNonEmpty());
-            if(attribution.Length>0) passage.Children.Add(new TextBlock { Text=(p.Theme=="terminal"?"> ":"— ")+attribution,FontFamily=text.FontFamily,FontSize=fontSize*.55,TextWrapping=TextWrapping.Wrap,FlowDirection=flow,Foreground=Appearance.Brush(foreground),Margin=new Thickness(0,p.Theme=="book"?(ActualWidth<=750?16:24):fontSize*.35,0,0),Effect=outlineActive?new DropShadowEffect { Color=outlineColor,BlurRadius=Math.Max(1,fontSize*.55*(outlineForPattern?.09:.05)),ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance }:null });
+            if(attribution.Length>0) passage.Children.Add(new TextBlock { Text=(p.Theme=="terminal"?"> ":"— ")+attribution,FontFamily=text.FontFamily,FontSize=fontSize*.55,TextWrapping=TextWrapping.Wrap,FlowDirection=flow,Foreground=Appearance.Brush(foreground),Margin=new Thickness(0,p.Theme=="book"?(ActualWidth<=750?16:24):fontSize*.35,0,0),Effect=outlineActive?new DropShadowEffect { Color=outlineColor,BlurRadius=Math.Max(.5,fontSize*.55*(outlineForPattern?.012:.007)),ShadowDepth=0,Opacity=.75,RenderingBias=RenderingBias.Performance }:null });
         }
         Append(q,locale,size);
         var (translation,notice)=data.Translate(q,locale,minute,p);
@@ -221,14 +221,14 @@ public sealed class ClockSurface : Canvas
         {
             passage.Children.Add(new Border { Height=1,Background=Appearance.Brush(foreground,.25),Margin=new Thickness(0,18,0,12) });
             var heading=new TextBlock { Text=LanguageName(p.Translation),FontSize=Math.Max(10,size*.35),Foreground=Appearance.Brush(foreground,.75),Margin=new Thickness(0,0,0,8) };
-            if(outlineForPhoto || outlineForPattern) heading.Effect=new DropShadowEffect { Color=outlineColor,BlurRadius=Math.Max(1,heading.FontSize*(outlineForPattern?.09:.05)),ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance };
+            if(outlineForPhoto || outlineForPattern) heading.Effect=new DropShadowEffect { Color=outlineColor,BlurRadius=Math.Max(.5,heading.FontSize*(outlineForPattern?.012:.007)),ShadowDepth=0,Opacity=.75,RenderingBias=RenderingBias.Performance };
             passage.Children.Add(heading);
             Append(translation,p.Translation,size*.8);
         }
         else if(notice.Length>0)
         {
             var message=new TextBlock { Text=notice,FontSize=size*.5,TextWrapping=TextWrapping.Wrap,Foreground=Appearance.Brush(foreground,.75),Margin=new Thickness(0,24,0,0) };
-            if(outlineForPhoto || outlineForPattern) message.Effect=new DropShadowEffect { Color=outlineColor,BlurRadius=Math.Max(1,message.FontSize*(outlineForPattern?.09:.05)),ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance };
+            if(outlineForPhoto || outlineForPattern) message.Effect=new DropShadowEffect { Color=outlineColor,BlurRadius=Math.Max(.5,message.FontSize*(outlineForPattern?.012:.007)),ShadowDepth=0,Opacity=.75,RenderingBias=RenderingBias.Performance };
             passage.Children.Add(message);
         }
     }
