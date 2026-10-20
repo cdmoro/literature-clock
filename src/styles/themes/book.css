@@ -26,7 +26,7 @@
   color: var(--font-color);
   letter-spacing: -0.015em;
   text-align: start;
-  text-shadow: 0 0 2px var(--font-color);
+  text-shadow: 0 0 1px var(--font-color);
   hyphens: auto;
 }
 

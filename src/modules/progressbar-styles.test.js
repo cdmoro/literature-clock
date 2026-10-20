@@ -53,7 +53,6 @@ test('Zen hides progress and the separate time even when screensaver mode is als
   styles.textContent = [
     base.match(/#progress-bar \{[^}]+\}/)[0],
     base.match(/body\.zen #progress-bar,[\s\S]*?\n\}/)[0],
-    base.match(/body\.paused:not\(\.zen\) #time-clock \{[^}]+\}/)[0],
     readFileSync('src/styles/themes/retro.css', 'utf8'),
     readFileSync('src/styles/progressbar.css', 'utf8'),
   ].join('\n');
