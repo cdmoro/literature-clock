@@ -13,13 +13,8 @@ html[data-background-pattern]:not([data-background-pattern='none']) body,
 
 /* Keep pattern density within a small, explicit set of safe tile scales. */
 [data-background-pattern]:not([data-background-pattern='none']) {
-  --pattern-scale: 1;
+  --pattern-scale: var(--background-pattern-scale, 1);
 }
-[data-pattern-size='0.5'] { --pattern-scale: 0.5; }
-[data-pattern-size='1'] { --pattern-scale: 1; }
-[data-pattern-size='1.5'] { --pattern-scale: 1.5; }
-[data-pattern-size='2'] { --pattern-scale: 2; }
-[data-pattern-size='3'] { --pattern-scale: 3; }
 
 [data-background-pattern='dots'] {
   --pattern-position: 0 0;

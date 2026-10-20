@@ -22,7 +22,7 @@ export function refreshBackgroundPattern() {
   const patternSize = store.get('pattern-size');
   const activePattern = getCurrentBackgroundPattern();
   root.dataset.backgroundPattern = supported ? activePattern : 'none';
-  root.dataset.patternSize = patternSize;
+  root.style.setProperty('--background-pattern-scale', patternSize);
   const select = document.querySelector<HTMLSelectElement>('#background-pattern');
   const sizeSelect = document.querySelector<HTMLSelectElement>('#pattern-size');
   if (select) {
