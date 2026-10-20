@@ -418,7 +418,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         if pattern == "random" { pattern = randomValue(Array(NativeAppearance.patterns.dropFirst(2)), at: now) }
         let hasPattern = pattern != "none"
         let outlineColor = NativeAppearance.background(theme: theme, dark: dark, accent: accent, selected: backgroundMode)
-        let outlineWidth = hasPattern ? -1.5 : -1.0
+        let outlineWidth: CGFloat = 0
         let allowedSizes: [CGFloat] = [0.5, 1, 1.5, 2, 3]
         let savedSize = CGFloat(preferences.double(forKey: "pattern-size"))
         let patternScale = allowedSizes.contains(savedSize) ? savedSize : 1
@@ -467,7 +467,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             if usesPhoto {
                 let shadow = NSShadow()
                 shadow.shadowOffset = .zero
-                shadow.shadowBlurRadius = 1.5
+                shadow.shadowBlurRadius = 12
                 shadow.shadowColor = NativeAppearance.color(dark ? "#1c1c1c" : "#dfdfdf")
                 clockAttributes[.shadow] = shadow
             }
@@ -596,7 +596,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             // a new fractional origin every frame independently snaps glyphs.
             let highlightPadding = theme == "book" ? low * 0.2 : 0
             // Leave room for the Photo halo on every side of the cache.
-            let shadowPadding: CGFloat = usesPhoto ? 12 : 0
+            let shadowPadding: CGFloat = usesPhoto ? 24 : 0
             let size = NSSize(width: ceil(width + highlightPadding * 2 + shadowPadding * 2), height: layoutHeight + 4 + shadowPadding * 2)
             let bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(ceil(size.width * scale)), pixelsHigh: Int(ceil(size.height * scale)), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0)!
             bitmap.size = size
@@ -623,7 +623,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 if usesPhoto {
                     let shadow = NSShadow()
                     shadow.shadowOffset = .zero
-                    shadow.shadowBlurRadius = 1.5
+                    shadow.shadowBlurRadius = 12
                     shadow.shadowColor = NativeAppearance.color(dark ? "#1c1c1c" : "#dfdfdf")
                     shadow.set()
                 }
