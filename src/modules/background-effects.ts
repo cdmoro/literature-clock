@@ -4,7 +4,7 @@ import { readingIcon } from './reading-icons';
 import { getBaseLocale, getInterfaceLocale } from './locales';
 import SETTINGS from '../strings/settings.json';
 
-const EFFECTS = ['none', 'rain', 'snow', 'dust', 'dust-v2'] as const;
+const EFFECTS = ['none', 'rain', 'snow', 'dust', 'dust-v2', 'stars'] as const;
 type Effect = (typeof EFFECTS)[number];
 interface Particle { x: number; y: number; size: number; speed: number; drift: number; opacity: number; phase: number }
 
@@ -110,6 +110,8 @@ export function initBackgroundEffects() {
     const effect = store.get('background-effect');
     const count = effect === 'dust-v2'
       ? Math.min(260, Math.round((width * height) / 6500))
+      : effect === 'stars'
+        ? Math.min(220, Math.round((width * height) / 8000))
       : effect === 'dust'
         ? Math.min(180, Math.round((width * height) / 9000))
         : Math.min(190, Math.round((width * height) / 8500));
@@ -122,18 +124,22 @@ export function initBackgroundEffects() {
       size: effect === 'snow' ? 1.1 + Math.random() * 1.9
         : effect === 'dust' ? 0.9 + Math.random() * 2
           : effect === 'dust-v2' ? 0.6 + Math.random() ** 2 * 7
+            : effect === 'stars' ? 0.55 + Math.random() ** 2.5 * 3.8
             : 0.7 + Math.random() * 0.8,
       speed: effect === 'snow' ? 18 + Math.random() * 38
         : effect === 'dust' ? Math.random() * 22 - 11
           : effect === 'dust-v2' ? Math.random() * 28 - 14
+            : effect === 'stars' ? 0.5 + Math.random() * 2
             : 260 + Math.random() * 360,
       drift: effect === 'snow' ? Math.random() * 36 - 18
         : effect === 'dust' ? Math.random() * 70 - 35
           : effect === 'dust-v2' ? Math.random() * 40 - 20
+            : effect === 'stars' ? Math.random() * 4 - 2
             : (260 + Math.random() * 360) * 0.12,
       opacity: effect === 'snow' ? 0.08 + Math.random() * 0.12
         : effect === 'dust' ? 0.1 + Math.random() * 0.18
           : effect === 'dust-v2' ? 0.06 + Math.random() * 0.2
+            : effect === 'stars' ? 0.35 + Math.random() * 0.55
             : 0.12 + Math.random() * 0.24,
       phase: Math.random() * Math.PI * 2,
     };
@@ -142,7 +148,7 @@ export function initBackgroundEffects() {
     frame = 0;
     const effect = document.documentElement.dataset.backgroundEffect || 'none';
     const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!['rain', 'snow', 'dust', 'dust-v2'].includes(effect) || document.hidden || isReduced) {
+    if (!['rain', 'snow', 'dust', 'dust-v2', 'stars'].includes(effect) || document.hidden || isReduced) {
       context.clearRect(0, 0, canvas.width, canvas.height);
       previous = 0;
       return;
@@ -153,12 +159,12 @@ export function initBackgroundEffects() {
     previous = now;
     context.clearRect(0, 0, width, height);
     context.lineCap = 'round';
-    const particleColor = effect === 'snow'
+    const particleColor = effect === 'snow' || effect === 'stars'
       ? getComputedStyle(document.documentElement).getPropertyValue('--font-color').trim() || '#fff'
       : '';
     for (const particle of particles) {
-      particle.y += particle.speed * delta + (effect === 'dust-v2' ? Math.sin(now / 1100 + particle.phase) * 7 * delta : 0);
-      particle.x += particle.drift * delta + (effect === 'dust' ? Math.sin(now / 1300 + particle.phase) * 12 * delta : effect === 'dust-v2' ? Math.sin(now / 1700 + particle.phase) * 20 * delta : 0);
+      particle.y += particle.speed * delta + (effect === 'dust-v2' ? Math.sin(now / 1100 + particle.phase) * 7 * delta : effect === 'stars' ? Math.sin(now / 2100 + particle.phase) * 1.5 * delta : 0);
+      particle.x += particle.drift * delta + (effect === 'dust' ? Math.sin(now / 1300 + particle.phase) * 12 * delta : effect === 'dust-v2' ? Math.sin(now / 1700 + particle.phase) * 20 * delta : effect === 'stars' ? Math.sin(now / 1700 + particle.phase) * 2 * delta : 0);
       if (effect === 'rain') {
         context.strokeStyle = `rgba(150, 190, 220, ${particle.opacity})`;
         context.lineWidth = particle.size * 0.65;
@@ -167,21 +173,34 @@ export function initBackgroundEffects() {
         context.lineTo(particle.x - particle.size * 2, particle.y - particle.size * 12);
         context.stroke();
       } else {
-        context.fillStyle = effect === 'snow' ? particleColor : 'rgb(255, 211, 145)';
+        context.fillStyle = effect === 'snow' || effect === 'stars' ? particleColor : 'rgb(255, 211, 145)';
         context.globalAlpha = effect === 'snow'
           ? particle.opacity + 0.08
+          : effect === 'stars'
+            ? particle.opacity * (0.35 + 0.65 * (Math.sin(now / 650 + particle.phase) + 1) / 2)
           : particle.opacity * (effect === 'dust-v2'
             ? 0.45 + 0.55 * (Math.sin(now / 1100 + particle.phase) + 1) / 2
             : 0.65 + 0.35 * (Math.sin(now / 850 + particle.phase) + 1) / 2);
-        context.shadowColor = 'rgb(255, 211, 145)';
-        context.shadowBlur = effect === 'dust-v2' ? Math.max(0, particle.size - 1.5) * 1.8 : 0;
+        context.shadowColor = effect === 'stars' ? particleColor : 'rgb(255, 211, 145)';
+        context.shadowBlur = effect === 'dust-v2' ? Math.max(0, particle.size - 1.5) * 1.8 : effect === 'stars' ? particle.size * 2.4 : 0;
         context.beginPath();
         context.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         context.fill();
+        if (effect === 'stars' && particle.size > 2.1) {
+          context.globalAlpha *= 0.65;
+          context.lineWidth = Math.max(0.35, particle.size * 0.16);
+          context.beginPath();
+          context.moveTo(particle.x - particle.size * 1.8, particle.y);
+          context.lineTo(particle.x + particle.size * 1.8, particle.y);
+          context.moveTo(particle.x, particle.y - particle.size * 1.8);
+          context.lineTo(particle.x, particle.y + particle.size * 1.8);
+          context.strokeStyle = particleColor;
+          context.stroke();
+        }
         context.globalAlpha = 1;
         context.shadowBlur = 0;
       }
-      if (effect === 'dust' || effect === 'dust-v2') {
+      if (effect === 'dust' || effect === 'dust-v2' || effect === 'stars') {
         particle.x = (particle.x + width) % width;
         particle.y = (particle.y + height) % height;
       } else if (particle.y > height + 20 || particle.x < -30 || particle.x > width + 30) {

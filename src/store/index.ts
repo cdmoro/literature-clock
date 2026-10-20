@@ -6,7 +6,7 @@ import { resolveLocale } from '../modules/locales';
 import { Locale, ResolvedQuote } from '../types';
 
 export type ProgressbarMode = 'theme' | 'bottom' | 'top' | 'background' | 'none';
-export type BackgroundEffect = 'none' | 'rain' | 'snow' | 'dust' | 'dust-v2';
+export type BackgroundEffect = 'none' | 'rain' | 'snow' | 'dust' | 'dust-v2' | 'stars';
 
 interface Stateful {
   locale: Locale;
@@ -152,7 +152,7 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
         if (isBackgroundPattern(raw)) result[key] = raw;
         break;
       case 'background-effect':
-        if (raw === 'none' || raw === 'rain' || raw === 'snow' || raw === 'dust' || raw === 'dust-v2') result[key] = raw;
+        if (raw === 'none' || raw === 'rain' || raw === 'snow' || raw === 'dust' || raw === 'dust-v2' || raw === 'stars') result[key] = raw;
         break;
       case 'pattern-size':
         if (['0.5', '1', '1.5', '2', '3'].includes(raw)) result[key] = raw;

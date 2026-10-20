@@ -39,6 +39,17 @@
     radial-gradient(circle at 78% 62%, #ffe4b95c 0 4px, #ffe4b91f 9px, transparent 15px),
     radial-gradient(circle at 91% 35%, #ffe4b94d 0 2px, #ffe4b922 6px, transparent 10px);
 }
+.animated-effect-swatch[data-effect='stars']::before,
+.animated-effect-preview[data-effect='stars']::before {
+  background-image:
+    radial-gradient(circle at 8% 22%, color-mix(in srgb, var(--font-color), transparent 12%) 0 1px, color-mix(in srgb, var(--font-color), transparent 72%) 1.5px 3px, transparent 4px),
+    radial-gradient(circle at 22% 68%, color-mix(in srgb, var(--font-color), transparent 16%) 0 1.7px, color-mix(in srgb, var(--font-color), transparent 78%) 2.5px 5px, transparent 6px),
+    radial-gradient(circle at 39% 38%, color-mix(in srgb, var(--font-color), transparent 25%) 0 0.7px, color-mix(in srgb, var(--font-color), transparent 82%) 1.4px 3px, transparent 4px),
+    radial-gradient(circle at 56% 81%, color-mix(in srgb, var(--font-color), transparent 18%) 0 1.3px, color-mix(in srgb, var(--font-color), transparent 78%) 2px 4px, transparent 5px),
+    radial-gradient(circle at 72% 18%, color-mix(in srgb, var(--font-color), transparent 8%) 0 2px, color-mix(in srgb, var(--font-color), transparent 72%) 3px 6px, transparent 7px),
+    radial-gradient(circle at 88% 53%, color-mix(in srgb, var(--font-color), transparent 20%) 0 0.8px, color-mix(in srgb, var(--font-color), transparent 78%) 1.5px 3.5px, transparent 4.5px),
+    radial-gradient(circle at 96% 88%, color-mix(in srgb, var(--font-color), transparent 15%) 0 1.5px, color-mix(in srgb, var(--font-color), transparent 76%) 2.5px 4.5px, transparent 5.5px);
+}
 .animated-effect-preview {
   position: fixed;
   inset: 0;
