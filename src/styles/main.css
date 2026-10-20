@@ -376,24 +376,20 @@ footer {
   display: inline-block;
 }
 
-/* The footer's secondary links (Add quote, Report error, GitHub, About, Made by).
- * Flex + a generated separator keeps each "| Label" pair glued together, so
- * wrapping on narrow screens breaks between items rather than leaving a
- * stray "|" stranded at the start of a line. */
 #footer-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: baseline;
-  gap: 0.4rem;
+  gap: 0.1rem 1rem;
 }
 
-#footer-links > * + *::before {
-  content: '|';
-  margin-inline-end: 0.4rem;
-  color: var(--font-color);
+#footer-links a {
   text-decoration: none;
-  opacity: 0.6;
+}
+
+#footer-links a:hover {
+  text-decoration: underline;
 }
 
 #flash {
