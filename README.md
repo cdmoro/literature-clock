@@ -40,7 +40,7 @@ https://github.com/user-attachments/assets/626ca478-d170-4176-90d9-c46580fcfa91
 
 ## 🚀 Download & Installation
 
-### 🍏 macOS (Apple Silicon & Intel)
+### 🍎 macOS (Apple Silicon & Intel)
 1. Download `Literature-Clock-Native-macOS.saver.zip` from [Releases](https://github.com/cdmoro/literature-clock/releases).
 2. Extract the archive and double-click `Literature Clock.saver` to install.
 3. Open **System Settings → Wallpaper → Screen Saver** to choose and configure your themes.
@@ -79,7 +79,7 @@ Because these are independent open-source builds, macOS may prompt for approval 
 
 ---
 
-## 🌐 The Web Companion
+## 🌎 The Web Companion
 
 Looking for an in-browser experience or setting up a dedicated desk display, old iPad, or Raspberry Pi? The [web version](https://literatureclock.netlify.app/) offers the full literary clock plus reading tools:
 
