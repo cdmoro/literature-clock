@@ -170,7 +170,6 @@ public sealed class ClockSurface : Canvas
     void BuildEffects(bool dark,Color accent)
     {
         effects.Children.Clear();
-        animatedEffects.Clear();
         if(p.Theme is "book" or "photo" || p.Effect=="none" || Appearance.Background(p)=="photo") return;
         var count=Math.Min(220,Math.Max(24,(int)(ActualWidth*ActualHeight/(p.Effect=="stars"?8000:p.Effect=="dust-v2"?6500:8500))));
         var color=p.Effect is "snow" or "stars"?Appearance.Foreground(p.Theme,dark,accent):Appearance.Color("#ffd391");
