@@ -11,6 +11,9 @@
   background-image: url('./rain-preview.svg');
   background-size: 200px 240px;
 }
+.animated-effect-swatch[data-effect='rain']::before {
+  background-size: 130px 156px;
+}
 .animated-effect-swatch[data-effect='snow']::before,
 .animated-effect-preview[data-effect='snow']::before {
   background-image:
