@@ -8,13 +8,8 @@
 }
 .animated-effect-swatch[data-effect='rain']::before,
 .animated-effect-preview[data-effect='rain']::before {
-  inset: -15%;
-  transform: rotate(10deg);
-  background-image:
-    radial-gradient(ellipse 0.8px 9px at center, color-mix(in srgb, #96beda 30%, transparent) 0 58%, transparent 100%),
-    radial-gradient(ellipse 0.65px 6px at center, color-mix(in srgb, #96beda 24%, transparent) 0 58%, transparent 100%);
-  background-size: 87px 93px, 119px 137px;
-  background-position: 5px 8px, 44px 52px;
+  background-image: url('./rain-preview.svg');
+  background-size: 200px 240px;
 }
 .animated-effect-swatch[data-effect='snow']::before,
 .animated-effect-preview[data-effect='snow']::before {
