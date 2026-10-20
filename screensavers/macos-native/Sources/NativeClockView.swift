@@ -228,42 +228,32 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     override func animateOneFrame() { needsDisplay = true }
     private func drawAnimatedEffect(name: String, dark: Bool, accent: NSColor) {
         guard ["rain", "snow", "dust", "dust-v2", "stars"].contains(name),
-              NativeAppearance.supportsPattern(theme: themeName), backgroundName != "photo" else { effectImage = nil; effectImageKey = ""; return }
-        let size = bounds.size
-        let count = min(220, max(24, Int(size.width * size.height / (name == "stars" ? 8000 : name == "dust-v2" ? 6500 : 8500))))
-        let tint = (name == "snow" || name == "stars") ? NativeAppearance.foreground(theme: themeName, dark: dark, accent: accent) : NSColor(calibratedRed: 1, green: 0.78, blue: 0.53, alpha: 1)
-        let effectKey = "\(name)|\(size)|\(tint)"
-        if effectImageKey != effectKey {
-            effectImage = NSImage(size: size, flipped: false) { rect in
-                let color = tint.withAlphaComponent(name == "stars" ? 0.52 : 0.16)
-                for index in 0..<count {
-                var seed = UInt64(index + 1) &* 0x9e3779b97f4a7c15
-                func random(_ limit: Double) -> Double { seed = seed &* 6364136223846793005 &+ 1442695040888963407; return Double(seed >> 33) / Double(UInt32.max) * limit }
-                let r = name == "snow" ? 1 + random(2) : name == "dust-v2" ? 0.5 + random(4.5) : name == "stars" ? 0.5 + random(3) : 0.6 + random(1.1)
-                let x = random(Double(max(1, size.width))), y = random(Double(max(1, size.height)))
-                let dot = NSBezierPath(ovalIn: CGRect(x: x, y: y, width: r * 2, height: r * 2))
-                color.setFill(); dot.fill()
-                if name == "dust-v2" || name == "stars" { tint.withAlphaComponent(0.2).setStroke(); dot.lineWidth = r * 0.8; dot.stroke() }
-                if name == "rain" { tint.withAlphaComponent(0.18).setStroke(); let streak=NSBezierPath(); streak.move(to: CGPoint(x:x,y:y)); streak.line(to: CGPoint(x:x-2,y:y+12)); streak.lineWidth=max(0.5,r); streak.stroke() }
-                if name == "snow" { let arms=NSBezierPath(); arms.move(to: CGPoint(x:x-r,y:y+r)); arms.line(to: CGPoint(x:x+r,y:y+r)); arms.move(to: CGPoint(x:x+r,y:y)); arms.line(to: CGPoint(x:x+r,y:y+2*r)); color.setStroke(); arms.lineWidth=0.5; arms.stroke() }
-                }
-                return true
-            }
-            effectImageKey = effectKey
-            effectStarted = Date()
-        }
-        guard let effectImage else { return }
+              NativeAppearance.supportsPattern(theme: themeName), backgroundName != "photo" else { return }
+        let width = bounds.width, height = bounds.height
+        guard width > 0, height > 0 else { return }
         let elapsed = Date().timeIntervalSince(effectStarted)
-        let duration = name == "rain" ? 1.8 : name == "snow" ? 15 : 8
-        let fraction = CGFloat(elapsed.truncatingRemainder(dividingBy: duration) / duration)
-        NSGraphicsContext.saveGraphicsState()
-        defer { NSGraphicsContext.restoreGraphicsState() }
-        if name == "rain" || name == "snow" {
-            let offset = bounds.height * fraction
-            effectImage.draw(in: bounds.offsetBy(dx: 0, dy: -offset))
-            effectImage.draw(in: bounds.offsetBy(dx: 0, dy: bounds.height - offset))
-        } else {
-            effectImage.draw(in: bounds.offsetBy(dx: sin(elapsed * 0.08) * 8, dy: cos(elapsed * 0.12) * 8), from: .zero, operation: .sourceOver, fraction: 0.8)
+        let count = min(260, max(24, Int(width * height / (name == "stars" ? 8000 : name == "dust-v2" ? 6500 : name == "dust" ? 9000 : 8500))))
+        let particleColor = (name == "snow" || name == "stars") ? NativeAppearance.foreground(theme: themeName, dark: dark, accent: accent) : NSColor(calibratedRed: 1, green: 0.827, blue: 0.569, alpha: 1)
+        for index in 0..<count {
+            var seed = UInt64(index + 1) &* 0x9e3779b97f4a7c15
+            func random(_ limit: Double) -> Double { seed = seed &* 6364136223846793005 &+ 1442695040888963407; return Double(seed >> 33) / Double(UInt32.max) * limit }
+            let x0 = random(width), y0 = random(height), phase = random(Double.pi * 2)
+            let size = name == "snow" ? 1.1 + random(1.9) : name == "dust" ? 0.9 + random(2) : name == "dust-v2" ? 0.6 + pow(random(1), 2) * 7 : name == "stars" ? 0.55 + pow(random(1), 2.5) * 3.8 : 0.7 + random(0.8)
+            let speed = name == "snow" ? 18 + random(38) : name == "dust" ? random(22) - 11 : name == "dust-v2" ? random(28) - 14 : name == "stars" ? 0.03 + random(0.12) : 260 + random(360)
+            let drift = name == "snow" ? random(36) - 18 : name == "dust" ? random(70) - 35 : name == "dust-v2" ? random(40) - 20 : name == "stars" ? random(0.2) - 0.1 : speed * 0.12
+            let opacity = name == "snow" ? 0.16 : name == "stars" ? 0.35 + random(0.55) : name == "dust" ? 0.1 + random(0.18) : name == "dust-v2" ? 0.06 + random(0.2) : 0.12 + random(0.24)
+            let x = (x0 + drift * elapsed + (name == "dust" ? sin(elapsed * 0.77 + phase) * 12 : name == "dust-v2" ? sin(elapsed * 0.59 + phase) * 20 : name == "stars" ? sin(elapsed * 0.59 + phase) * 0.25 : 0)).truncatingRemainder(dividingBy: width)
+            var y = (y0 + speed * elapsed + (name == "dust-v2" ? sin(elapsed * 0.91 + phase) * 7 : name == "stars" ? sin(elapsed * 0.48 + phase) * 0.18 : 0)).truncatingRemainder(dividingBy: height)
+            if y < 0 { y += height }
+            if name == "rain" {
+                particleColor.withAlphaComponent(opacity).setStroke()
+                let streak = NSBezierPath(); streak.move(to: CGPoint(x: x, y: height - y)); streak.line(to: CGPoint(x: x - size * 2, y: height - y + size * 12)); streak.lineWidth = max(0.5, size * 0.65); streak.lineCapStyle = .round; streak.stroke()
+            } else {
+                let twinkle = name == "stars" ? 0.35 + 0.65 * (sin(elapsed * 1.54 + phase) + 1) / 2 : name == "snow" ? opacity + 0.08 : opacity
+                particleColor.withAlphaComponent(twinkle).setFill()
+                let dot = NSBezierPath(ovalIn: CGRect(x: x, y: height - y, width: size * 2, height: size * 2)); dot.fill()
+                if name == "dust-v2" || name == "stars" { NSGraphicsContext.saveGraphicsState(); let shadow = NSShadow(); shadow.shadowBlurRadius = name == "stars" ? size * 2.4 : max(0, size - 1.5) * 1.8; shadow.shadowColor = particleColor.withAlphaComponent(0.55); shadow.set(); dot.fill(); NSGraphicsContext.restoreGraphicsState() }
+            }
         }
     }
     override func acceptsFirstMouse(for event: NSEvent?) -> Bool { false }
