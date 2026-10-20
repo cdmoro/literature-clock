@@ -11,16 +11,32 @@ html[data-background-pattern]:not([data-background-pattern='none']) body,
   background-repeat: repeat;
 }
 
+/* Keep pattern density within a small, explicit set of safe tile scales. */
+[data-background-pattern]:not([data-background-pattern='none']) {
+  --pattern-scale: 1;
+  --pattern-size: calc(var(--pattern-base-width, 16) * var(--pattern-scale) * 1px)
+    calc(var(--pattern-base-height, 16) * var(--pattern-scale) * 1px);
+}
+[data-pattern-size='0.5'] { --pattern-scale: 0.5; }
+[data-pattern-size='1'] { --pattern-scale: 1; }
+[data-pattern-size='1.5'] { --pattern-scale: 1.5; }
+[data-pattern-size='2'] { --pattern-scale: 2; }
+[data-pattern-size='3'] { --pattern-scale: 3; }
+
 [data-background-pattern='dots'] {
   --pattern-position: 0 0;
   --pattern-image: radial-gradient(circle, var(--pattern-ink) 1px, transparent 1.5px);
   --pattern-size: 16px 16px;
+  --pattern-base-width: 16;
+  --pattern-base-height: 16;
 }
 
 [data-background-pattern='diagonal'] {
   --pattern-position: 0 0;
   --pattern-image: repeating-linear-gradient(135deg, var(--pattern-ink) 0 1px, transparent 1px 12px);
   --pattern-size: 17px 17px;
+  --pattern-base-width: 17;
+  --pattern-base-height: 17;
 }
 
 [data-background-pattern='grid'] {
@@ -28,6 +44,8 @@ html[data-background-pattern]:not([data-background-pattern='none']) body,
   --pattern-image: linear-gradient(var(--pattern-ink) 1px, transparent 1px),
     linear-gradient(90deg, var(--pattern-ink) 1px, transparent 1px);
   --pattern-size: 24px 24px;
+  --pattern-base-width: 24;
+  --pattern-base-height: 24;
 }
 
 [data-background-pattern='zigzag'] {
@@ -37,12 +55,16 @@ html[data-background-pattern]:not([data-background-pattern='none']) body,
     linear-gradient(315deg, var(--pattern-ink) 25%, transparent 25%),
     linear-gradient(45deg, var(--pattern-ink) 25%, transparent 25%);
   --pattern-size: 32px 32px;
+  --pattern-base-width: 32;
+  --pattern-base-height: 32;
 }
 
 [data-background-pattern='circles'] {
   --pattern-position: 0 0;
   --pattern-image: radial-gradient(circle, var(--pattern-ink) 10px, transparent 10.5px);
   --pattern-size: 48px 48px;
+  --pattern-base-width: 48;
+  --pattern-base-height: 48;
 }
 
 [data-theme$='-dark'][data-background-pattern] {
@@ -53,6 +75,8 @@ html[data-background-pattern]:not([data-background-pattern='none']) body,
   --pattern-position: 0 0;
   --pattern-image: repeating-linear-gradient(135deg, var(--pattern-ink) 0 4px, transparent 4px 16px);
   --pattern-size: 23px 23px;
+  --pattern-base-width: 23;
+  --pattern-base-height: 23;
 }
 
 [data-theme$='-dark'][data-background-pattern='dots'] {
@@ -64,6 +88,8 @@ html[data-background-pattern]:not([data-background-pattern='none']) body,
   --noise-veil: color-mix(in srgb, var(--background) 35%, transparent);
   --pattern-image: linear-gradient(var(--noise-veil), var(--noise-veil)), url('../assets/noise.png');
   --pattern-size: 256px 256px;
+  --pattern-base-width: 256;
+  --pattern-base-height: 256;
 }
 
 [data-theme$='-dark'][data-background-pattern='noise'] {
@@ -82,108 +108,144 @@ html[data-background-pattern]:not([data-background-pattern='none']) body,
   --pattern-position: 0 0;
   --pattern-image: url('../assets/waves.svg');
   --pattern-size: 64px 24px;
+  --pattern-base-width: 64;
+  --pattern-base-height: 24;
 }
 
 [data-background-pattern='mixed-stripes'] {
   --pattern-position: 0 0;
   --pattern-image: url('../assets/patterns/mixed-stripes.svg');
   --pattern-size: 64px 64px;
+  --pattern-base-width: 64;
+  --pattern-base-height: 64;
 }
 
 [data-background-pattern='checkerboard'] {
   --pattern-position: 0 0;
   --pattern-image: url('../assets/patterns/checkerboard.svg');
   --pattern-size: 48px 48px;
+  --pattern-base-width: 48;
+  --pattern-base-height: 48;
 }
 
 [data-background-pattern='cubes'] {
   --pattern-position: 0 0;
   --pattern-image: url('../assets/patterns/cubes.svg');
   --pattern-size: 80px 138.564px;
+  --pattern-base-width: 80;
+  --pattern-base-height: 138.564;
 }
 
 [data-background-pattern='fans'] {
   --pattern-position: 0 0;
   --pattern-image: url('../assets/patterns/fans.svg');
   --pattern-size: 128px 64px;
+  --pattern-base-width: 128;
+  --pattern-base-height: 64;
 }
 
 [data-background-pattern='leaves'] {
   --pattern-position: 0 0;
   --pattern-image: url('../assets/patterns/leaves.svg');
   --pattern-size: 160px 168px;
+  --pattern-base-width: 160;
+  --pattern-base-height: 168;
 }
 
 [data-background-pattern='vines'] {
   --pattern-position: 0 0;
   --pattern-image: url('../assets/patterns/vines.svg');
   --pattern-size: 160px 144px;
+  --pattern-base-width: 160;
+  --pattern-base-height: 144;
 }
 
 [data-background-pattern='contours'] {
   --pattern-position: 0 0;
   --pattern-image: url('../assets/patterns/contours.svg');
   --pattern-size: 320px 256px;
+  --pattern-base-width: 320;
+  --pattern-base-height: 256;
 }
 
 [data-background-pattern='woven'] {
   --pattern-position: 0 0;
   --pattern-image: url('../assets/patterns/woven.svg');
   --pattern-size: 48px 48px;
+  --pattern-base-width: 48;
+  --pattern-base-height: 48;
 }
 
 [data-background-pattern='zigzag-fine'] {
   --pattern-position: 0 0;
   --pattern-image: url('../assets/patterns/zigzag-fine.svg');
   --pattern-size: 48px 32px;
+  --pattern-base-width: 48;
+  --pattern-base-height: 32;
 }
 
 [data-background-pattern='rain'] {
   --pattern-position: 0 0;
   --pattern-image: url('../assets/patterns/rain.svg');
   --pattern-size: 240px 240px;
+  --pattern-base-width: 240;
+  --pattern-base-height: 240;
 }
 
 [data-background-pattern='christmas'] {
   --pattern-position: 0 0;
   --pattern-image: url('../assets/patterns/christmas.svg');
   --pattern-size: 320px 320px;
+  --pattern-base-width: 320;
+  --pattern-base-height: 320;
 }
 
 [data-background-pattern='hearts'] {
   --pattern-position: 0 0;
   --pattern-image: url('../assets/patterns/hearts.svg');
   --pattern-size: 320px 320px;
+  --pattern-base-width: 320;
+  --pattern-base-height: 320;
 }
 
 [data-background-pattern='reading'] {
   --pattern-position: 0 0;
   --pattern-image: url('../assets/patterns/reading.svg');
   --pattern-size: 320px 320px;
+  --pattern-base-width: 320;
+  --pattern-base-height: 320;
 }
 
 [data-background-pattern='space'] {
   --pattern-position: 0 0;
   --pattern-image: url('../assets/patterns/space.svg');
   --pattern-size: 320px 320px;
+  --pattern-base-width: 320;
+  --pattern-base-height: 320;
 }
 
 [data-background-pattern='garden'] {
   --pattern-position: 0 0;
   --pattern-image: url('../assets/patterns/garden.svg');
   --pattern-size: 320px 320px;
+  --pattern-base-width: 320;
+  --pattern-base-height: 320;
 }
 
 [data-background-pattern='clouds'] {
   --pattern-position: 0 0;
   --pattern-image: url('../assets/patterns/clouds.svg');
   --pattern-size: 960px 768px;
+  --pattern-base-width: 960;
+  --pattern-base-height: 768;
 }
 
 [data-background-pattern='constellations'] {
   --pattern-position: 0 0;
   --pattern-image: url('../assets/patterns/constellations.svg');
   --pattern-size: 960px 768px;
+  --pattern-base-width: 960;
+  --pattern-base-height: 768;
 }
 
 /* Keep the Festive gradient full-size underneath every pattern layer. */

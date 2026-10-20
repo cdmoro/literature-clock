@@ -19,13 +19,22 @@ export function refreshBackgroundPattern() {
   const root = document.documentElement;
   const supported = supportsBackgroundPattern(root.dataset.theme || store.get('theme'));
   const pattern = store.get('background-pattern');
+  const patternSize = store.get('pattern-size');
   const activePattern = getCurrentBackgroundPattern();
   root.dataset.backgroundPattern = supported ? activePattern : 'none';
+  root.dataset.patternSize = patternSize;
   const select = document.querySelector<HTMLSelectElement>('#background-pattern');
   if (select) {
     select.value = pattern;
     select.disabled = !supported;
     select.closest<HTMLElement>('.settings-row')!.hidden = false;
+  }
+  const sizeSelect = document.querySelector<HTMLSelectElement>('#pattern-size');
+  if (sizeSelect) {
+    sizeSelect.value = patternSize;
+    const available = supported && pattern !== 'none' && pattern !== 'random';
+    sizeSelect.disabled = !available;
+    sizeSelect.closest<HTMLElement>('.settings-row')!.hidden = !available;
   }
   const toggle = document.querySelector<HTMLButtonElement>('#pattern-picker-toggle');
   if (toggle) toggle.disabled = !supported;
@@ -114,5 +123,13 @@ export function initBackgroundPatterns(dialog: HTMLDialogElement) {
     if (isBackgroundPattern(value)) store.set('background-pattern', value);
   });
   store.subscribe(refreshBackgroundPattern);
+  const sizeRow = document.createElement('div');
+  sizeRow.className = 'settings-row settings-pattern-size-row';
+  sizeRow.innerHTML = `<label for="pattern-size" data-text="settings_pattern_size">Pattern size</label><div class="input-group"><select id="pattern-size" aria-label="Pattern size">${['0.5', '1', '1.5', '2', '3'].map((size) => `<option value="${size}">${size}×</option>`).join('')}</select></div>`;
+  row.after(sizeRow);
+  sizeRow.querySelector<HTMLSelectElement>('#pattern-size')!.addEventListener('change', (event) => {
+    const value = (event.target as HTMLSelectElement).value;
+    if (['0.5', '1', '1.5', '2', '3'].includes(value)) store.set('pattern-size', value as '0.5' | '1' | '1.5' | '2' | '3');
+  });
   refreshBackgroundPattern();
 }

@@ -58,6 +58,9 @@ test('defaults to no pattern and validates URL and stored preferences', () => {
   expect(document.documentElement.dataset.backgroundPattern).toBe('none');
   expect(validateSettings({ 'background-pattern': 'invalid' }, true)).toEqual({});
   expect(validateSettings({ 'background-pattern': 'grid' }, false)).toEqual({ 'background-pattern': 'grid' });
+  expect(validateSettings({ 'pattern-size': '3' }, true)).toEqual({ 'pattern-size': '3' });
+  expect(validateSettings({ 'pattern-size': '999999' }, true)).toEqual({});
+  expect(validateSettings({ 'pattern-size': '1.25' }, false)).toEqual({});
 });
 
 test('shares, persists and previews a pattern, and removes the default from links', () => {
