@@ -101,7 +101,7 @@ async function getQuote(
   quote.quote_raw = `${quote.quote_first}${quote.quote_time_case}${quote.quote_last}`.replace(/<br>/g, '\n');
 
   if (!quote.quote_time_case) {
-    quote.quote_time_case = time;
+    quote.quote_time_case = quote.id === 'F-001' ? time.replace(':', '') : time;
     quote.fallback = true;
   }
 

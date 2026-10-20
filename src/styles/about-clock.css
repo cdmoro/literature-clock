@@ -10,8 +10,12 @@
   display: inline;
   list-style: none;
   color: var(--accent-color);
-  text-decoration: underline;
   cursor: pointer;
+}
+
+
+#about-clock summary:hover {
+  text-decoration: underline;
 }
 
 #about-clock summary::-webkit-details-marker {
