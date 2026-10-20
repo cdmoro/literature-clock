@@ -6,6 +6,7 @@ import { resolveLocale } from '../modules/locales';
 import { Locale, ResolvedQuote } from '../types';
 
 export type ProgressbarMode = 'theme' | 'bottom' | 'top' | 'background' | 'none';
+export type BackgroundEffect = 'none' | 'rain' | 'snow' | 'dust' | 'dust-v2';
 
 interface Stateful {
   locale: Locale;
@@ -29,6 +30,7 @@ interface Stateful {
   'custom-color': string;
   background: Background;
   'background-pattern': BackgroundPattern;
+  'background-effect': BackgroundEffect;
   'photo-provider': 'picsum' | 'nasa' | 'commons';
   'photo-category': 'all' | keyof typeof PHOTO_PROVIDERS.nasa | keyof typeof PHOTO_PROVIDERS.commons;
   progressbar: ProgressbarMode;
@@ -69,6 +71,7 @@ const REMOVE_VALUES_FROM_URL: Partial<State> = {
   color: '#d24335',
   background: 'default',
   'background-pattern': 'none',
+  'background-effect': 'none',
   palette: 'default',
 };
 
@@ -145,6 +148,9 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
         break;
       case 'background-pattern':
         if (isBackgroundPattern(raw)) result[key] = raw;
+        break;
+      case 'background-effect':
+        if (raw === 'none' || raw === 'rain' || raw === 'snow' || raw === 'dust' || raw === 'dust-v2') result[key] = raw;
         break;
       case 'custom-color':
       case 'color':
@@ -396,6 +402,7 @@ export function createStore() {
     'custom-color': '',
     background: 'default',
     'background-pattern': 'none',
+    'background-effect': 'none',
     'photo-provider': 'picsum',
     'photo-category': 'all',
     progressbar: 'theme',

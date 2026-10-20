@@ -12,6 +12,7 @@ const KEYS = [
   'palette',
   'background',
   'background-pattern',
+  'background-effect',
   'photo-provider',
   'photo-category',
   'font',
@@ -41,6 +42,7 @@ export function readSavedThemes(): SavedTheme[] {
       // Existing snapshots predate optional patterns.
       validated.background ??= 'default';
       validated['background-pattern'] ??= 'none';
+      validated['background-effect'] ??= 'none';
       validated.palette ??= 'default';
       validated['photo-provider'] ??= 'picsum';
       validated['photo-category'] ??= 'all';
@@ -66,6 +68,7 @@ export async function applySavedTheme(settings: Preferences) {
   setTheme();
   store.set('palette', settings.palette || 'default');
   store.set('background-pattern', settings['background-pattern'] || 'none');
+  store.set('background-effect', settings['background-effect'] || 'none');
   const color = document.querySelector<HTMLInputElement>('#settings-color-picker');
   if (color) {
     color.value = settings.color!;
