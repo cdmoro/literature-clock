@@ -81,6 +81,14 @@ export function themePreviewDocument() {
     copy.removeAttribute('style');
     body.append(copy);
   }
+  const effect = document.documentElement.dataset.backgroundEffect;
+  if (effect && effect !== 'none') {
+    const effectPreview = document.createElement('div');
+    effectPreview.className = 'animated-effect-preview';
+    effectPreview.dataset.effect = effect;
+    effectPreview.setAttribute('aria-hidden', 'true');
+    body.append(effectPreview);
+  }
   const clock = document.createElement('div');
   clock.id = 'clock';
   const quote = document.getElementById('quote')?.cloneNode(true) as HTMLElement | undefined;
@@ -290,7 +298,7 @@ export function initThemePicker(dialog: HTMLDialogElement) {
   if (quote) observer.observe(quote, { childList: true, subtree: true, characterData: true });
   observer.observe(document.documentElement, {
     attributes: true,
-    attributeFilter: ['data-theme', 'data-background', 'data-background-pattern', 'class', 'style'],
+    attributeFilter: ['data-theme', 'data-background', 'data-background-pattern', 'data-background-effect', 'class', 'style'],
   });
   observer.observe(document.body, { attributes: true, attributeFilter: ['class'], childList: true });
   observer.observe(document.head, { childList: true, subtree: true, characterData: true });

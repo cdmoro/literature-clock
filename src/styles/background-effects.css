@@ -1,0 +1,48 @@
+/* Frozen effect samples are used in the settings picker and theme preview. */
+.animated-effect-swatch::before,
+.animated-effect-preview::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.animated-effect-swatch[data-effect='rain']::before,
+.animated-effect-preview[data-effect='rain']::before {
+  background-image: repeating-linear-gradient(78deg, transparent 0 17px, color-mix(in srgb, #96beda 28%, transparent) 17.5px 18.2px, transparent 18.8px 37px);
+  background-size: 100% 100%;
+}
+.animated-effect-swatch[data-effect='snow']::before,
+.animated-effect-preview[data-effect='snow']::before {
+  background-image:
+    radial-gradient(circle at 9% 22%, color-mix(in srgb, var(--font-color), transparent 62%) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 25% 74%, color-mix(in srgb, var(--font-color), transparent 58%) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 43% 39%, color-mix(in srgb, var(--font-color), transparent 68%) 0 2px, transparent 2.7px),
+    radial-gradient(circle at 61% 82%, color-mix(in srgb, var(--font-color), transparent 60%) 0 1.5px, transparent 2.2px),
+    radial-gradient(circle at 83% 23%, color-mix(in srgb, var(--font-color), transparent 66%) 0 2px, transparent 2.7px),
+    radial-gradient(circle at 94% 61%, color-mix(in srgb, var(--font-color), transparent 58%) 0 1px, transparent 1.7px);
+}
+.animated-effect-swatch[data-effect='dust']::before,
+.animated-effect-preview[data-effect='dust']::before {
+  background-image:
+    radial-gradient(circle at 12% 24%, #ffd39170 0 1px, transparent 2px),
+    radial-gradient(circle at 37% 73%, #ffd39190 0 1.5px, transparent 3px),
+    radial-gradient(circle at 55% 19%, #ffd39160 0 1px, transparent 2.5px),
+    radial-gradient(circle at 78% 62%, #ffd39180 0 2px, transparent 3.5px),
+    radial-gradient(circle at 91% 35%, #ffd39160 0 1px, transparent 2px);
+}
+.animated-effect-swatch[data-effect='dust-v2']::before,
+.animated-effect-preview[data-effect='dust-v2']::before {
+  background-image:
+    radial-gradient(circle at 12% 24%, #ffe4b94d 0 2px, #ffe4b926 4px, transparent 7px),
+    radial-gradient(circle at 32% 73%, #ffe4b966 0 3px, #ffe4b922 7px, transparent 12px),
+    radial-gradient(circle at 55% 19%, #ffe4b94d 0 1.5px, #ffe4b922 5px, transparent 9px),
+    radial-gradient(circle at 78% 62%, #ffe4b95c 0 4px, #ffe4b91f 9px, transparent 15px),
+    radial-gradient(circle at 91% 35%, #ffe4b94d 0 2px, #ffe4b922 6px, transparent 10px);
+}
+.animated-effect-preview {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}

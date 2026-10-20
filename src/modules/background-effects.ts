@@ -1,5 +1,6 @@
 import { store } from '../store';
 import { supportsBackgroundPattern } from '../utils/background-patterns';
+import { readingIcon } from './reading-icons';
 import { getBaseLocale, getInterfaceLocale } from './locales';
 import SETTINGS from '../strings/settings.json';
 
@@ -14,24 +15,84 @@ export function initBackgroundEffects() {
   if (dialog) {
     const row = document.createElement('div');
     row.className = 'settings-row settings-effect-row';
-    row.innerHTML = `<label for="background-effect" data-text="settings_background_effect"></label>
-      <div class="input-group"><select id="background-effect">${EFFECTS.map((effect) => `<option value="${effect}" data-text="settings_effect_${effect}"></option>`).join('')}</select></div>`;
+    row.innerHTML = `<label id="effect-picker-label" for="effect-picker-toggle" data-text="settings_background_effect"></label>
+      <select id="background-effect" hidden aria-hidden="true" tabindex="-1">${EFFECTS.map((effect) => `<option value="${effect}" data-text="settings_effect_${effect}"></option>`).join('')}</select>
+      <div class="input-group"><button type="button" id="effect-picker-toggle" aria-expanded="false" aria-controls="effect-picker-menu" aria-labelledby="effect-picker-label effect-picker-name">
+        <span id="effect-picker-swatch" class="animated-effect-swatch" data-effect="none" aria-hidden="true"></span><span id="effect-picker-name"></span><svg class="effect-picker-arrow" width="16" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 5l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button></div>
+      <div id="effect-picker-menu" role="group" aria-labelledby="effect-picker-label" hidden>${EFFECTS.map(
+        (effect) => `<button type="button" class="effect-option" data-effect="${effect}" aria-pressed="false"><span class="animated-effect-swatch" data-effect="${effect}" aria-hidden="true"><span class="effect-selected-icon">${readingIcon('check')}</span></span><span data-text="settings_effect_${effect}"></span></button>`,
+      ).join('')}</div>`;
     const patternRow = dialog.querySelector('.settings-pattern-row');
     if (patternRow) patternRow.after(row);
     else dialog.querySelector('#settings-appearance')?.append(row);
-    row.querySelector('select')!.addEventListener('change', (event) => {
+    const toggle = row.querySelector<HTMLButtonElement>('#effect-picker-toggle')!;
+    const menu = row.querySelector<HTMLElement>('#effect-picker-menu')!;
+    const buttons = [...menu.querySelectorAll<HTMLButtonElement>('.effect-option')];
+    const close = (focus = false) => {
+      menu.hidden = true;
+      toggle.setAttribute('aria-expanded', 'false');
+      if (focus) toggle.focus();
+    };
+    toggle.addEventListener('click', () => {
+      if (toggle.disabled) return;
+      menu.hidden = !menu.hidden;
+      toggle.setAttribute('aria-expanded', String(!menu.hidden));
+      if (!menu.hidden) buttons.find((button) => button.dataset.effect === store.get('background-effect'))?.focus();
+    });
+    buttons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        if (toggle.disabled) return;
+        store.set('background-effect', button.dataset.effect as Effect);
+        close(true);
+      });
+      button.addEventListener('keydown', (event) => {
+        const step = { ArrowRight: 1, ArrowLeft: -1, ArrowDown: 3, ArrowUp: -3 }[event.key];
+        if (step !== undefined || event.key === 'Home' || event.key === 'End') {
+          event.preventDefault();
+          const next = event.key === 'Home' ? 0 : event.key === 'End' ? buttons.length - 1 : (index + step! + buttons.length) % buttons.length;
+          buttons[next].focus();
+        }
+      });
+    });
+    row.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !menu.hidden) {
+        event.preventDefault();
+        event.stopPropagation();
+        close(true);
+      }
+    });
+    document.addEventListener('click', (event) => {
+      if (event.target instanceof Node && !row.contains(event.target)) close();
+    });
+    dialog.addEventListener('close', () => close());
+    dialog.querySelectorAll('[role="tab"]').forEach((tab) => tab.addEventListener('click', () => close()));
+    row.querySelector<HTMLSelectElement>('#background-effect')!.addEventListener('change', (event) => {
       store.set('background-effect', (event.target as HTMLSelectElement).value as Effect);
     });
     const updateLabel = () => {
       const labels = SETTINGS[getBaseLocale(getInterfaceLocale())];
       row.querySelectorAll<HTMLElement>('[data-text]').forEach((element) => {
-        element.textContent = labels[element.dataset.text as keyof typeof labels];
+        const label = labels[element.dataset.text as keyof typeof labels];
+        if (label) element.textContent = label;
       });
+      refreshPicker();
     };
     store.subscribe((state, old) => {
       if (state['ui-locale'] !== old['ui-locale'] || state.locale !== old.locale) updateLabel();
     });
     updateLabel();
+  }
+
+  function refreshPicker() {
+    const selected = store.get('background-effect');
+    const caption = document.getElementById('effect-picker-name');
+    if (caption) caption.textContent = SETTINGS[getBaseLocale(getInterfaceLocale())][`settings_effect_${selected}` as keyof (typeof SETTINGS)['en-GB']];
+    const swatch = document.getElementById('effect-picker-swatch');
+    if (swatch) swatch.dataset.effect = selected;
+    document.querySelectorAll<HTMLButtonElement>('.effect-option').forEach((button) => {
+      button.setAttribute('aria-pressed', String(button.dataset.effect === selected));
+    });
   }
 
   const context = canvas.getContext('2d');
@@ -139,6 +200,13 @@ export function initBackgroundEffects() {
       select.value = selected;
       select.disabled = !supported;
     }
+    const toggle = document.getElementById('effect-picker-toggle') as HTMLButtonElement | null;
+    if (toggle) toggle.disabled = !supported;
+    refreshPicker();
+    if (!supported) {
+      document.getElementById('effect-picker-menu')?.setAttribute('hidden', '');
+      toggle?.setAttribute('aria-expanded', 'false');
+    }
     if (effect !== 'none' && !document.hidden && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       if (!canvas.width) resize();
       if (!frame) frame = requestAnimationFrame(draw);
@@ -155,6 +223,7 @@ export function initBackgroundEffects() {
   window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', refresh);
   store.subscribe((state, old) => {
     if (state['background-effect'] !== old['background-effect']) resize();
+    if (state['background-effect'] !== old['background-effect']) refreshPicker();
     if (state['background-effect'] !== old['background-effect'] || state.theme !== old.theme) refresh();
   });
   refresh();
