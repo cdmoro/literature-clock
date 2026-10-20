@@ -792,6 +792,7 @@
   border-radius: 0.35rem;
 }
 .pattern-option .pattern-swatch {
+  --pattern-scale: 1 !important;
   width: min(100%, 8rem);
   height: 3.25rem;
   flex-shrink: 0;
