@@ -679,7 +679,17 @@
 #settings-dialog .settings-pattern-row .pattern-size-group {
   flex: 0 0 5rem;
   max-width: 5rem;
-  border-inline-start: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
+  position: relative;
+  border-inline-start: 0;
+}
+#settings-dialog .settings-pattern-row .pattern-size-group::before {
+  content: '';
+  position: absolute;
+  inset-block: 0.35rem;
+  inset-inline-start: 0;
+  width: 1px;
+  background: color-mix(in srgb, var(--font-color), transparent 20%);
+  pointer-events: none;
 }
 #settings-dialog .settings-pattern-row .pattern-size-group[hidden] {
   display: none;
