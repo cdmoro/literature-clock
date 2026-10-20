@@ -24,17 +24,17 @@ export function refreshBackgroundPattern() {
   root.dataset.backgroundPattern = supported ? activePattern : 'none';
   root.dataset.patternSize = patternSize;
   const select = document.querySelector<HTMLSelectElement>('#background-pattern');
+  const sizeSelect = document.querySelector<HTMLSelectElement>('#pattern-size');
   if (select) {
     select.value = pattern;
     select.disabled = !supported;
     select.closest<HTMLElement>('.settings-row')!.hidden = false;
   }
-  const sizeSelect = document.querySelector<HTMLSelectElement>('#pattern-size');
   if (sizeSelect) {
     sizeSelect.value = patternSize;
     const available = supported && pattern !== 'none' && pattern !== 'random';
     sizeSelect.disabled = !available;
-    sizeSelect.closest<HTMLElement>('.settings-row')!.hidden = !available;
+    sizeSelect.closest<HTMLElement>('.input-group')!.hidden = !available;
   }
   const toggle = document.querySelector<HTMLButtonElement>('#pattern-picker-toggle');
   if (toggle) toggle.disabled = !supported;
@@ -122,14 +122,15 @@ export function initBackgroundPatterns(dialog: HTMLDialogElement) {
     const value = (event.target as HTMLSelectElement).value;
     if (isBackgroundPattern(value)) store.set('background-pattern', value);
   });
-  store.subscribe(refreshBackgroundPattern);
-  const sizeRow = document.createElement('div');
-  sizeRow.className = 'settings-row settings-pattern-size-row';
-  sizeRow.innerHTML = `<label for="pattern-size" data-text="settings_pattern_size">Pattern size</label><div class="input-group"><select id="pattern-size" aria-label="Pattern size">${['0.5', '1', '1.5', '2', '3'].map((size) => `<option value="${size}">${size}×</option>`).join('')}</select></div>`;
-  row.after(sizeRow);
-  sizeRow.querySelector<HTMLSelectElement>('#pattern-size')!.addEventListener('change', (event) => {
+  const patternGroup = row.querySelector<HTMLElement>('.input-group')!;
+  const sizeGroup = document.createElement('div');
+  sizeGroup.className = 'input-group pattern-size-group';
+  sizeGroup.innerHTML = `<select id="pattern-size" aria-label="Pattern size">${['0.5', '1', '1.5', '2', '3'].map((size) => `<option value="${size}">${size}×</option>`).join('')}</select>`;
+  patternGroup.append(sizeGroup);
+  sizeGroup.querySelector<HTMLSelectElement>('#pattern-size')!.addEventListener('change', (event) => {
     const value = (event.target as HTMLSelectElement).value;
     if (['0.5', '1', '1.5', '2', '3'].includes(value)) store.set('pattern-size', value as '0.5' | '1' | '1.5' | '2' | '3');
   });
+  store.subscribe(refreshBackgroundPattern);
   refreshBackgroundPattern();
 }

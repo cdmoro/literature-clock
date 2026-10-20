@@ -667,6 +667,22 @@
 #settings-dialog .settings-pattern-row {
   position: relative;
 }
+#settings-dialog .settings-pattern-row > .input-group {
+  display: flex;
+  flex: 0 1 62%;
+  max-width: 62%;
+  gap: 0.35rem;
+}
+#settings-dialog .settings-pattern-row .pattern-size-group {
+  flex: 0 0 5rem;
+  max-width: 5rem;
+}
+#settings-dialog .settings-pattern-row .pattern-size-group[hidden] {
+  display: none;
+}
+#settings-dialog .settings-pattern-row .pattern-size-group select {
+  border-radius: 0.35rem;
+}
 #settings-dialog #pattern-picker-toggle {
   display: flex;
   align-items: center;
