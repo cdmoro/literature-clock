@@ -667,6 +667,41 @@
 #settings-dialog .settings-pattern-row {
   position: relative;
 }
+#settings-dialog .settings-pattern-row > .input-group {
+  display: flex;
+  flex: 0 1 62%;
+  max-width: 62%;
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 20%);
+  border-radius: 0.35rem;
+}
+#settings-dialog .settings-pattern-row .pattern-size-group {
+  flex: 0 0 5rem;
+  max-width: 5rem;
+  position: relative;
+  border-inline-start: 0;
+}
+#settings-dialog .settings-pattern-row .pattern-size-group::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 1px;
+  background: color-mix(in srgb, var(--font-color), transparent 20%);
+  pointer-events: none;
+}
+#settings-dialog .settings-pattern-row .pattern-size-group[hidden] {
+  display: none;
+}
+#settings-dialog .settings-pattern-row .pattern-size-group select {
+  border: 0;
+  border-radius: 0;
+}
+#settings-dialog .settings-pattern-row #pattern-picker-toggle {
+  border: 0;
+  border-radius: 0;
+}
 #settings-dialog #pattern-picker-toggle {
   display: flex;
   align-items: center;
@@ -757,6 +792,7 @@
   border-radius: 0.35rem;
 }
 .pattern-option .pattern-swatch {
+  --pattern-scale: 1 !important;
   width: min(100%, 8rem);
   height: 3.25rem;
   flex-shrink: 0;

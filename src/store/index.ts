@@ -31,6 +31,7 @@ interface Stateful {
   background: Background;
   'background-pattern': BackgroundPattern;
   'background-effect': BackgroundEffect;
+  'pattern-size': '0.5' | '1' | '1.5' | '2' | '3';
   'photo-provider': 'picsum' | 'nasa' | 'commons';
   'photo-category': 'all' | keyof typeof PHOTO_PROVIDERS.nasa | keyof typeof PHOTO_PROVIDERS.commons;
   progressbar: ProgressbarMode;
@@ -72,6 +73,7 @@ const REMOVE_VALUES_FROM_URL: Partial<State> = {
   background: 'default',
   'background-pattern': 'none',
   'background-effect': 'none',
+  'pattern-size': '1',
   palette: 'default',
 };
 
@@ -151,6 +153,9 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
         break;
       case 'background-effect':
         if (raw === 'none' || raw === 'rain' || raw === 'snow' || raw === 'dust' || raw === 'dust-v2') result[key] = raw;
+        break;
+      case 'pattern-size':
+        if (['0.5', '1', '1.5', '2', '3'].includes(raw)) result[key] = raw;
         break;
       case 'custom-color':
       case 'color':
@@ -403,6 +408,7 @@ export function createStore() {
     background: 'default',
     'background-pattern': 'none',
     'background-effect': 'none',
+    'pattern-size': '1',
     'photo-provider': 'picsum',
     'photo-category': 'all',
     progressbar: 'theme',
