@@ -186,7 +186,7 @@ public sealed class ClockSurface : Canvas
                 var duration=TimeSpan.FromSeconds(4+effectRandom.NextDouble()*8);
                 move.BeginAnimation(TranslateTransform.XProperty,new DoubleAnimation(-dx,dx,new Duration(duration)){AutoReverse=true,RepeatBehavior=RepeatBehavior.Forever});
                 move.BeginAnimation(TranslateTransform.YProperty,new DoubleAnimation(-dy,dy,new Duration(duration)){AutoReverse=true,RepeatBehavior=RepeatBehavior.Forever});
-                if(p.Effect=="stars") dot.BeginAnimation(OpacityProperty,new DoubleAnimation(.25,.95,new Duration(TimeSpan.FromSeconds(2+effectRandom.NextDouble()*4)){AutoReverse=true,RepeatBehavior=RepeatBehavior.Forever});
+                if(p.Effect=="stars") dot.BeginAnimation(UIElement.OpacityProperty,new DoubleAnimation(.25,.95,new Duration(TimeSpan.FromSeconds(2+effectRandom.NextDouble()*4))){AutoReverse=true,RepeatBehavior=RepeatBehavior.Forever});
             }
             else
             {
