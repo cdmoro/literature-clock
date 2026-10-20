@@ -14,6 +14,8 @@ export function getQuoteUrl(quote: ResolvedQuote): string | undefined {
   }
   const pattern = store.get('background-pattern');
   if (pattern && pattern !== 'none') url.searchParams.set('background-pattern', pattern);
+  const effect = store.get('background-effect');
+  if (effect && effect !== 'none') url.searchParams.set('background-effect', effect);
   if (store.get('hide-book-title')) url.searchParams.set('hide-book-title', 'true');
   const color = new URLSearchParams(window.location.search).get('color');
   if (color) url.searchParams.set('color', color);

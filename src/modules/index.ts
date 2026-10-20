@@ -19,10 +19,12 @@ import { initShowTimeMode } from './show-time';
 import { initWorkMode } from './work';
 import { initZenMode } from './zen';
 import { initProgressbarMode } from './progressbar';
+import { initBackgroundEffects } from './background-effects';
 
 const MODULES = [
   initAboutClock,
   initSettingsDialog,
+  initBackgroundEffects,
   initHideBookTitle,
   initBilingual,
   initStaticMode,

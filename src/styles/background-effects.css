@@ -1,0 +1,62 @@
+/* Frozen effect samples are used in the settings picker and theme preview. */
+.animated-effect-swatch::before,
+.animated-effect-preview::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.animated-effect-swatch[data-effect='rain']::before,
+.animated-effect-preview[data-effect='rain']::before {
+  background-image: url('./rain-preview.svg');
+  background-size: 200px 240px;
+}
+.animated-effect-swatch[data-effect='rain']::before {
+  background-size: 130px 156px;
+}
+.animated-effect-swatch[data-effect='snow']::before,
+.animated-effect-preview[data-effect='snow']::before {
+  background-image:
+    radial-gradient(circle at 9% 22%, color-mix(in srgb, var(--font-color), transparent 62%) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 25% 74%, color-mix(in srgb, var(--font-color), transparent 58%) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 43% 39%, color-mix(in srgb, var(--font-color), transparent 68%) 0 2px, transparent 2.7px),
+    radial-gradient(circle at 61% 82%, color-mix(in srgb, var(--font-color), transparent 60%) 0 1.5px, transparent 2.2px),
+    radial-gradient(circle at 83% 23%, color-mix(in srgb, var(--font-color), transparent 66%) 0 2px, transparent 2.7px),
+    radial-gradient(circle at 94% 61%, color-mix(in srgb, var(--font-color), transparent 58%) 0 1px, transparent 1.7px);
+}
+.animated-effect-swatch[data-effect='dust']::before,
+.animated-effect-preview[data-effect='dust']::before {
+  background-image:
+    radial-gradient(circle at 12% 24%, #ffd39170 0 1px, transparent 2px),
+    radial-gradient(circle at 37% 73%, #ffd39190 0 1.5px, transparent 3px),
+    radial-gradient(circle at 55% 19%, #ffd39160 0 1px, transparent 2.5px),
+    radial-gradient(circle at 78% 62%, #ffd39180 0 2px, transparent 3.5px),
+    radial-gradient(circle at 91% 35%, #ffd39160 0 1px, transparent 2px);
+}
+.animated-effect-swatch[data-effect='dust-v2']::before,
+.animated-effect-preview[data-effect='dust-v2']::before {
+  background-image:
+    radial-gradient(circle at 12% 24%, #ffe4b94d 0 2px, #ffe4b926 4px, transparent 7px),
+    radial-gradient(circle at 32% 73%, #ffe4b966 0 3px, #ffe4b922 7px, transparent 12px),
+    radial-gradient(circle at 55% 19%, #ffe4b94d 0 1.5px, #ffe4b922 5px, transparent 9px),
+    radial-gradient(circle at 78% 62%, #ffe4b95c 0 4px, #ffe4b91f 9px, transparent 15px),
+    radial-gradient(circle at 91% 35%, #ffe4b94d 0 2px, #ffe4b922 6px, transparent 10px);
+}
+.animated-effect-swatch[data-effect='stars']::before,
+.animated-effect-preview[data-effect='stars']::before {
+  background-image:
+    radial-gradient(circle at 8% 22%, color-mix(in srgb, var(--font-color), transparent 12%) 0 1px, color-mix(in srgb, var(--font-color), transparent 72%) 1.5px 3px, transparent 4px),
+    radial-gradient(circle at 22% 68%, color-mix(in srgb, var(--font-color), transparent 16%) 0 1.7px, color-mix(in srgb, var(--font-color), transparent 78%) 2.5px 5px, transparent 6px),
+    radial-gradient(circle at 39% 38%, color-mix(in srgb, var(--font-color), transparent 25%) 0 0.7px, color-mix(in srgb, var(--font-color), transparent 82%) 1.4px 3px, transparent 4px),
+    radial-gradient(circle at 56% 81%, color-mix(in srgb, var(--font-color), transparent 18%) 0 1.3px, color-mix(in srgb, var(--font-color), transparent 78%) 2px 4px, transparent 5px),
+    radial-gradient(circle at 72% 18%, color-mix(in srgb, var(--font-color), transparent 8%) 0 2px, color-mix(in srgb, var(--font-color), transparent 72%) 3px 6px, transparent 7px),
+    radial-gradient(circle at 88% 53%, color-mix(in srgb, var(--font-color), transparent 20%) 0 0.8px, color-mix(in srgb, var(--font-color), transparent 78%) 1.5px 3.5px, transparent 4.5px),
+    radial-gradient(circle at 96% 88%, color-mix(in srgb, var(--font-color), transparent 15%) 0 1.5px, color-mix(in srgb, var(--font-color), transparent 76%) 2.5px 4.5px, transparent 5.5px);
+}
+.animated-effect-preview {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}

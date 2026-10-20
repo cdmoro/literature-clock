@@ -6,6 +6,7 @@ import { resolveLocale } from '../modules/locales';
 import { Locale, ResolvedQuote } from '../types';
 
 export type ProgressbarMode = 'theme' | 'bottom' | 'top' | 'background' | 'none';
+export type BackgroundEffect = 'none' | 'rain' | 'snow' | 'dust' | 'dust-v2' | 'stars';
 
 interface Stateful {
   locale: Locale;
@@ -29,6 +30,7 @@ interface Stateful {
   'custom-color': string;
   background: Background;
   'background-pattern': BackgroundPattern;
+  'background-effect': BackgroundEffect;
   'pattern-size': '0.5' | '1' | '1.5' | '2' | '3';
   'photo-provider': 'picsum' | 'nasa' | 'commons';
   'photo-category': 'all' | keyof typeof PHOTO_PROVIDERS.nasa | keyof typeof PHOTO_PROVIDERS.commons;
@@ -70,6 +72,7 @@ const REMOVE_VALUES_FROM_URL: Partial<State> = {
   color: '#d24335',
   background: 'default',
   'background-pattern': 'none',
+  'background-effect': 'none',
   'pattern-size': '1',
   palette: 'default',
 };
@@ -147,6 +150,9 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
         break;
       case 'background-pattern':
         if (isBackgroundPattern(raw)) result[key] = raw;
+        break;
+      case 'background-effect':
+        if (raw === 'none' || raw === 'rain' || raw === 'snow' || raw === 'dust' || raw === 'dust-v2' || raw === 'stars') result[key] = raw;
         break;
       case 'pattern-size':
         if (['0.5', '1', '1.5', '2', '3'].includes(raw)) result[key] = raw;
@@ -401,6 +407,7 @@ export function createStore() {
     'custom-color': '',
     background: 'default',
     'background-pattern': 'none',
+    'background-effect': 'none',
     'pattern-size': '1',
     'photo-provider': 'picsum',
     'photo-category': 'all',
