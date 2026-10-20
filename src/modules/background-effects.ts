@@ -129,12 +129,12 @@ export function initBackgroundEffects() {
       speed: effect === 'snow' ? 18 + Math.random() * 38
         : effect === 'dust' ? Math.random() * 22 - 11
           : effect === 'dust-v2' ? Math.random() * 28 - 14
-            : effect === 'stars' ? 0.5 + Math.random() * 2
+            : effect === 'stars' ? 0.03 + Math.random() * 0.12
             : 260 + Math.random() * 360,
       drift: effect === 'snow' ? Math.random() * 36 - 18
         : effect === 'dust' ? Math.random() * 70 - 35
           : effect === 'dust-v2' ? Math.random() * 40 - 20
-            : effect === 'stars' ? Math.random() * 4 - 2
+            : effect === 'stars' ? Math.random() * 0.2 - 0.1
             : (260 + Math.random() * 360) * 0.12,
       opacity: effect === 'snow' ? 0.08 + Math.random() * 0.12
         : effect === 'dust' ? 0.1 + Math.random() * 0.18
@@ -163,8 +163,8 @@ export function initBackgroundEffects() {
       ? getComputedStyle(document.documentElement).getPropertyValue('--font-color').trim() || '#fff'
       : '';
     for (const particle of particles) {
-      particle.y += particle.speed * delta + (effect === 'dust-v2' ? Math.sin(now / 1100 + particle.phase) * 7 * delta : effect === 'stars' ? Math.sin(now / 2100 + particle.phase) * 1.5 * delta : 0);
-      particle.x += particle.drift * delta + (effect === 'dust' ? Math.sin(now / 1300 + particle.phase) * 12 * delta : effect === 'dust-v2' ? Math.sin(now / 1700 + particle.phase) * 20 * delta : effect === 'stars' ? Math.sin(now / 1700 + particle.phase) * 2 * delta : 0);
+      particle.y += particle.speed * delta + (effect === 'dust-v2' ? Math.sin(now / 1100 + particle.phase) * 7 * delta : effect === 'stars' ? Math.sin(now / 2100 + particle.phase) * 0.18 * delta : 0);
+      particle.x += particle.drift * delta + (effect === 'dust' ? Math.sin(now / 1300 + particle.phase) * 12 * delta : effect === 'dust-v2' ? Math.sin(now / 1700 + particle.phase) * 20 * delta : effect === 'stars' ? Math.sin(now / 1700 + particle.phase) * 0.25 * delta : 0);
       if (effect === 'rain') {
         context.strokeStyle = `rgba(150, 190, 220, ${particle.opacity})`;
         context.lineWidth = particle.size * 0.65;
