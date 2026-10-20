@@ -46,6 +46,11 @@ function choosePattern(value: string) {
   select.value = value;
   select.dispatchEvent(new Event('change'));
 }
+function choosePatternSize(value: string) {
+  const select = document.querySelector<HTMLSelectElement>('#pattern-size')!;
+  select.value = value;
+  select.dispatchEvent(new Event('change'));
+}
 function chooseTheme(value: string) {
   const select = document.querySelector<HTMLSelectElement>('#theme-select')!;
   select.value = value;
@@ -58,6 +63,9 @@ test('defaults to no pattern and validates URL and stored preferences', () => {
   expect(document.documentElement.dataset.backgroundPattern).toBe('none');
   expect(validateSettings({ 'background-pattern': 'invalid' }, true)).toEqual({});
   expect(validateSettings({ 'background-pattern': 'grid' }, false)).toEqual({ 'background-pattern': 'grid' });
+  expect(validateSettings({ 'pattern-size': '3' }, true)).toEqual({ 'pattern-size': '3' });
+  expect(validateSettings({ 'pattern-size': '999999' }, true)).toEqual({});
+  expect(validateSettings({ 'pattern-size': '1.25' }, false)).toEqual({});
 });
 
 test('shares, persists and previews a pattern, and removes the default from links', () => {
@@ -79,6 +87,14 @@ test('URL pattern overrides the saved preference', () => {
   setup();
   expect(store.get('background-pattern')).toBe('grid');
   expect(document.documentElement.dataset.backgroundPattern).toBe('grid');
+});
+
+test('updates the inherited pattern scale and keeps both controls in one row', () => {
+  setup();
+  choosePattern('dots');
+  choosePatternSize('3');
+  expect(document.documentElement.style.getPropertyValue('--background-pattern-scale')).toBe('3');
+  expect(document.querySelector('#pattern-picker-toggle')!.closest('.settings-row')?.querySelector('#pattern-size')).not.toBeNull();
 });
 
 test.each(['photo', 'retro', 'anaglyph', 'book', 'terminal', 'whatsapp', 'horizon'])(
