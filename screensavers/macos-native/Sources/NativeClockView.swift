@@ -246,6 +246,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 return Double(value >> 11) / 9007199254740992.0 * limit
             }
             let x0 = random(width), y0 = random(height), phase = random(Double.pi * 2)
+            let flickerSpeed = 2.2 + random(2.4)
             let size = name == "snow" ? 1.1 + random(1.9) : name == "dust" ? 0.9 + random(2) : name == "dust-v2" ? 0.6 + pow(random(1), 2) * 7 : name == "stars" ? 0.55 + pow(random(1), 2.5) * 3.8 : 0.7 + random(0.8)
             let speed = name == "snow" ? 18 + random(38) : name == "dust" ? random(22) - 11 : name == "dust-v2" ? random(28) - 14 : name == "stars" ? 0.03 + random(0.12) : 260 + random(360)
             let drift = name == "snow" ? random(36) - 18 : name == "dust" ? random(70) - 35 : name == "dust-v2" ? random(40) - 20 : name == "stars" ? random(0.2) - 0.1 : speed * 0.12
@@ -258,7 +259,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 particleColor.withAlphaComponent(opacity).setStroke()
                 let streak = NSBezierPath(); streak.move(to: CGPoint(x: x, y: height - y)); streak.line(to: CGPoint(x: x - size * 2, y: height - y + size * 12)); streak.lineWidth = max(0.5, size * 0.65); streak.lineCapStyle = .round; streak.stroke()
             } else {
-                let twinkle = name == "stars" ? 0.35 + 0.65 * (sin(elapsed * 1.54 + phase) + 1) / 2 : name == "snow" ? opacity + 0.08 : opacity
+                let twinkle = name == "stars" ? 0.12 + 0.88 * (sin(elapsed * flickerSpeed + phase) + 1) / 2 : name == "snow" ? opacity + 0.08 : opacity
                 particleColor.withAlphaComponent(twinkle).setFill()
                 let dot = NSBezierPath(ovalIn: CGRect(x: x, y: height - y, width: size * 2, height: size * 2)); dot.fill()
                 if name == "dust-v2" || name == "stars" { NSGraphicsContext.saveGraphicsState(); let shadow = NSShadow(); shadow.shadowBlurRadius = name == "stars" ? size * 2.4 : max(0, size - 1.5) * 1.8; shadow.shadowColor = particleColor.withAlphaComponent(0.55); shadow.set(); dot.fill(); NSGraphicsContext.restoreGraphicsState() }
@@ -406,6 +407,12 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             photoBackground.update(now: now, size: bounds.size, provider: preferences.string(forKey: "photo-provider") ?? "picsum", category: preferences.string(forKey: "photo-category") ?? "all", displayID: photoDisplayID, displayIndex: photoDisplayIndex) { [weak self] in self?.needsDisplay = true }
         }
         let photoOverlay = NativePhotoBackground.overlayColor(dark: dark)
+        let effectName = preferences.string(forKey: "background-effect") ?? "none"
+        let effectImageForFrame: NSImage? = ["rain", "snow", "dust", "dust-v2", "stars"].contains(effectName) ? NSImage(size: bounds.size, flipped: false) { [weak self] _ in
+            guard let self else { return false }
+            self.drawAnimatedEffect(name: effectName, dark: dark, accent: accent)
+            return true
+        } : nil
         func drawBackdrop(in rect: NSRect, finalOnly: Bool = false) {
             background.setFill(); rect.fill()
             if usesPhoto { photoBackground.draw(in: rect, dark: dark, finalOnly: finalOnly, overlay: photoOverlay) }
@@ -433,11 +440,14 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         patternImage?.draw(in: bounds)
         if preferences.string(forKey: "background-effect") != (effectImageKey.split(separator: "|").first.map(String.init) ?? "") || !NativeAppearance.supportsPattern(theme: theme) || backgroundMode == "photo" { effectImageKey = "" }
         let photoKey = usesPhoto ? photoBackground.image.map { String(describing: ObjectIdentifier($0)) } ?? "none" : "none"
-        let opticalKey = "\(theme)|\(backgroundMode)|\(accent)|\(dark)|\(bounds.size)|\(newPatternKey)|\(photoKey)"
+        let progressMode = preferences.string(forKey: "progressbar") ?? "none"
+        let glassNeedsAnimatedSource = effectImageForFrame != nil && (progressMode == "glass-foreground" || progressMode == "glass-background")
+        let opticalKey = "\(theme)|\(backgroundMode)|\(accent)|\(dark)|\(bounds.size)|\(newPatternKey)|\(photoKey)|\(glassNeedsAnimatedSource ? Int(now.timeIntervalSince1970 * 30) : 0)"
         if opticalKey != opticalSourceKey && bounds.width > 0 && bounds.height > 0 {
             let backgroundImage = NSImage(size: bounds.size, flipped: false) { [self] rect in
                 drawBackdrop(in: rect, finalOnly: true)
                 patternImage?.draw(in: rect)
+                if glassNeedsAnimatedSource { effectImageForFrame?.draw(in: rect) }
                 return true
             }
             previousPhotoOpticalSource = usesPhoto && photoBackground.isTransitioning ? opticalSource : nil
@@ -445,7 +455,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             finalPhotoOpticalSource = opticalSource
             opticalSourceKey = opticalKey
         }
-        drawAnimatedEffect(name: preferences.string(forKey: "background-effect") ?? "none", dark: dark, accent: accent)
+        effectImageForFrame?.draw(in: bounds)
         if usesPhoto, let final = finalPhotoOpticalSource {
             if photoBackground.isTransitioning, let previous = previousPhotoOpticalSource {
                 opticalSource = previous.applyingFilter("CIDissolveTransition", parameters: ["inputTargetImage": final, "inputTime": photoBackground.transitionFraction])
@@ -500,7 +510,6 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let foregroundGlass = preferences.string(forKey: "progressbar") == "glass-foreground"
         if !foregroundGlass, let pane = glassProgressView { addSubview(pane, positioned: .below, relativeTo: nil) }
         let progress = previewProgressDuration.map { min(1, max(0, (previewProgressPausedElapsed ?? now.timeIntervalSince(started)) / $0)) } ?? (fullProgressPreviewSweep ? now.timeIntervalSince(started).truncatingRemainder(dividingBy: 12) / 12 : interactionPreviewSweep ? 0.5 + sin(now.timeIntervalSince(started) / 3) * 0.13 : now.timeIntervalSince1970.truncatingRemainder(dividingBy: 60) / 60)
-        let progressMode = preferences.string(forKey: "progressbar") ?? "none"
         let progressColor = NativeAppearance.progressForeground(theme: theme, dark: dark, accent: accent)
         let glassProgress = updateGlassProgress(mode: progressMode, progress: progress, dark: dark, tint: progressColor.withAlphaComponent(foregroundGlass ? 0.025 : 0.1))
         (glassProgressView as? OpticalGlassView)?.source = progressSource
@@ -903,7 +912,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let pattern = sender.selectedItem?.representedObject as? String ?? "none"
         let sizeControl = controls["pattern-size"] as? NSPopUpButton
         sizeControl?.isEnabled = !["none", "random"].contains(pattern) && NativeAppearance.supportsPattern(theme: themeName)
-        sizeControl?.superview?.isHidden = !(sizeControl?.isEnabled ?? false)
+        sizeControl?.isHidden = !(sizeControl?.isEnabled ?? false)
     }
     @objc private func effectChanged(_ sender: NSPopUpButton) {
         preferences.set(sender.selectedItem?.representedObject as? String ?? "none", forKey: "background-effect")
