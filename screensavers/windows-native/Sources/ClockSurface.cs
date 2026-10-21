@@ -220,6 +220,7 @@ public sealed class ClockSurface : Canvas
     void BuildPassage(Quote q,double width,double size,Color foreground,Color accent)
     {
         passage.Children.Clear(); passage.Width=width;
+        var dark=Appearance.Dark(p);
         void Append(Quote item,string language,double fontSize)
         {
             var flow=language.StartsWith("ar")?FlowDirection.RightToLeft:FlowDirection.LeftToRight;
