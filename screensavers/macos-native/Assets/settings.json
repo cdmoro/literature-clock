@@ -12,8 +12,16 @@
     "color_fixed": "Fixed colour",
     "settings_progress_glass-background": "Background Liquid Glass",
     "settings_progress_glass-foreground": "Foreground Liquid Glass",
-    "native_resources_unavailable": "Quote resources are unavailable. Reinstall Literature Clock using the installer.",
-    "native_github_project": "View project on GitHub"
+    "native_resources_unavailable": "Quote resources could not be loaded. Reinstall Literature Clock from its .saver file.",
+    "native_github_project": "View project on GitHub",
+    "settings_pattern_size": "Pattern size",
+    "settings_background_effect": "Animated background",
+    "settings_effect_none": "None",
+    "settings_effect_rain": "Rain",
+    "settings_effect_snow": "Snow",
+    "settings_effect_dust": "Dust",
+    "settings_effect_dust-v2": "Bokeh dust",
+    "settings_effect_stars": "Stars"
   },
   "en-US": {
     "cancel": "Cancel",
@@ -28,8 +36,16 @@
     "color_fixed": "Fixed color",
     "settings_progress_glass-background": "Background Liquid Glass",
     "settings_progress_glass-foreground": "Foreground Liquid Glass",
-    "native_resources_unavailable": "Quote resources are unavailable. Reinstall Literature Clock using the installer.",
-    "native_github_project": "View project on GitHub"
+    "native_resources_unavailable": "Quote resources could not be loaded. Reinstall Literature Clock from its .saver file.",
+    "native_github_project": "View project on GitHub",
+    "settings_pattern_size": "Pattern size",
+    "settings_background_effect": "Animated background",
+    "settings_effect_none": "None",
+    "settings_effect_rain": "Rain",
+    "settings_effect_snow": "Snow",
+    "settings_effect_dust": "Dust",
+    "settings_effect_dust-v2": "Bokeh dust",
+    "settings_effect_stars": "Stars"
   },
   "es-ES": {
     "cancel": "Cancelar",
@@ -44,8 +60,16 @@
     "color_fixed": "Color fijo",
     "settings_progress_glass-background": "Fondo con Liquid Glass",
     "settings_progress_glass-foreground": "Primer plano con Liquid Glass",
-    "native_resources_unavailable": "No se pueden cargar las citas. Reinstalá Literature Clock con el instalador.",
-    "native_github_project": "Ver proyecto en GitHub"
+    "native_resources_unavailable": "No se pudieron cargar las citas. Reinstalá Literature Clock desde el archivo .saver.",
+    "native_github_project": "Ver proyecto en GitHub",
+    "settings_pattern_size": "Tamaño del patrón",
+    "settings_background_effect": "Fondo animado",
+    "settings_effect_none": "Ninguno",
+    "settings_effect_rain": "Lluvia",
+    "settings_effect_snow": "Nieve",
+    "settings_effect_dust": "Polvo",
+    "settings_effect_dust-v2": "Polvo luminoso",
+    "settings_effect_stars": "Estrellas"
   },
   "fr-FR": {
     "cancel": "Annuler",
@@ -60,8 +84,16 @@
     "color_fixed": "Couleur fixe",
     "settings_progress_glass-background": "Arrière-plan Liquid Glass",
     "settings_progress_glass-foreground": "Premier plan Liquid Glass",
-    "native_resources_unavailable": "Les citations sont indisponibles. Réinstallez Literature Clock avec le programme d’installation.",
-    "native_github_project": "Voir le projet sur GitHub"
+    "native_resources_unavailable": "Impossible de charger les citations. Réinstallez Literature Clock depuis son fichier .saver.",
+    "native_github_project": "Voir le projet sur GitHub",
+    "settings_pattern_size": "Taille du motif",
+    "settings_background_effect": "Fond animé",
+    "settings_effect_none": "Aucun",
+    "settings_effect_rain": "Pluie",
+    "settings_effect_snow": "Neige",
+    "settings_effect_dust": "Poussière",
+    "settings_effect_dust-v2": "Poussière lumineuse",
+    "settings_effect_stars": "Étoiles"
   },
   "de-DE": {
     "cancel": "Abbrechen",
@@ -76,8 +108,16 @@
     "color_fixed": "Feste Farbe",
     "settings_progress_glass-background": "Liquid-Glass-Hintergrund",
     "settings_progress_glass-foreground": "Liquid Glass im Vordergrund",
-    "native_resources_unavailable": "Die Zitate sind nicht verfügbar. Installiere Literature Clock mit dem Installationsprogramm erneut.",
-    "native_github_project": "Projekt auf GitHub ansehen"
+    "native_resources_unavailable": "Die Zitate konnten nicht geladen werden. Installiere Literature Clock über die .saver-Datei erneut.",
+    "native_github_project": "Projekt auf GitHub ansehen",
+    "settings_pattern_size": "Mustergröße",
+    "settings_background_effect": "Animierter Hintergrund",
+    "settings_effect_none": "Keiner",
+    "settings_effect_rain": "Regen",
+    "settings_effect_snow": "Schnee",
+    "settings_effect_dust": "Staub",
+    "settings_effect_dust-v2": "Leuchtender Staub",
+    "settings_effect_stars": "Sterne"
   },
   "it-IT": {
     "cancel": "Annulla",
@@ -92,8 +132,16 @@
     "color_fixed": "Colore fisso",
     "settings_progress_glass-background": "Sfondo Liquid Glass",
     "settings_progress_glass-foreground": "Primo piano Liquid Glass",
-    "native_resources_unavailable": "Le citazioni non sono disponibili. Reinstalla Literature Clock con il programma di installazione.",
-    "native_github_project": "Vedi il progetto su GitHub"
+    "native_resources_unavailable": "Impossibile caricare le citazioni. Reinstalla Literature Clock dal file .saver.",
+    "native_github_project": "Vedi il progetto su GitHub",
+    "settings_pattern_size": "Dimensione del motivo",
+    "settings_background_effect": "Sfondo animato",
+    "settings_effect_none": "Nessuno",
+    "settings_effect_rain": "Pioggia",
+    "settings_effect_snow": "Neve",
+    "settings_effect_dust": "Polvere",
+    "settings_effect_dust-v2": "Polvere luminosa",
+    "settings_effect_stars": "Stelle"
   },
   "pt-PT": {
     "cancel": "Cancelar",
@@ -108,8 +156,16 @@
     "color_fixed": "Cor fixa",
     "settings_progress_glass-background": "Fundo com Liquid Glass",
     "settings_progress_glass-foreground": "Primeiro plano com Liquid Glass",
-    "native_resources_unavailable": "Não é possível carregar as citações. Reinstale o Literature Clock com o instalador.",
-    "native_github_project": "Ver projeto no GitHub"
+    "native_resources_unavailable": "Não foi possível carregar as citações. Reinstale o Literature Clock pelo ficheiro .saver.",
+    "native_github_project": "Ver projeto no GitHub",
+    "settings_pattern_size": "Tamanho do padrão",
+    "settings_background_effect": "Fundo animado",
+    "settings_effect_none": "Nenhum",
+    "settings_effect_rain": "Chuva",
+    "settings_effect_snow": "Neve",
+    "settings_effect_dust": "Poeira",
+    "settings_effect_dust-v2": "Poeira luminosa",
+    "settings_effect_stars": "Estrelas"
   },
   "ru-RU": {
     "cancel": "Отмена",
@@ -124,8 +180,16 @@
     "color_fixed": "Постоянный цвет",
     "settings_progress_glass-background": "Фон Liquid Glass",
     "settings_progress_glass-foreground": "Передний план Liquid Glass",
-    "native_resources_unavailable": "Цитаты недоступны. Переустановите Literature Clock с помощью установщика.",
-    "native_github_project": "Посмотреть проект на GitHub"
+    "native_resources_unavailable": "Не удалось загрузить цитаты. Переустановите Literature Clock из файла .saver.",
+    "native_github_project": "Посмотреть проект на GitHub",
+    "settings_pattern_size": "Размер узора",
+    "settings_background_effect": "Анимированный фон",
+    "settings_effect_none": "Нет",
+    "settings_effect_rain": "Дождь",
+    "settings_effect_snow": "Снег",
+    "settings_effect_dust": "Пыль",
+    "settings_effect_dust-v2": "Светящаяся пыль",
+    "settings_effect_stars": "Звёзды"
   },
   "zh-CN": {
     "cancel": "取消",
@@ -140,8 +204,16 @@
     "color_fixed": "固定颜色",
     "settings_progress_glass-background": "Liquid Glass 背景",
     "settings_progress_glass-foreground": "Liquid Glass 前景",
-    "native_resources_unavailable": "无法加载引文。请使用安装程序重新安装 Literature Clock。",
-    "native_github_project": "在 GitHub 上查看项目"
+    "native_resources_unavailable": "无法加载引文。请从 .saver 文件重新安装 Literature Clock。",
+    "native_github_project": "在 GitHub 上查看项目",
+    "settings_pattern_size": "图案大小",
+    "settings_background_effect": "动态背景",
+    "settings_effect_none": "无",
+    "settings_effect_rain": "雨",
+    "settings_effect_snow": "雪",
+    "settings_effect_dust": "尘埃",
+    "settings_effect_dust-v2": "光斑尘埃",
+    "settings_effect_stars": "星星"
   },
   "el-GR": {
     "cancel": "Ακύρωση",
@@ -156,8 +228,16 @@
     "color_fixed": "Σταθερό χρώμα",
     "settings_progress_glass-background": "Φόντο Liquid Glass",
     "settings_progress_glass-foreground": "Προσκήνιο Liquid Glass",
-    "native_resources_unavailable": "Οι παραθέσεις δεν είναι διαθέσιμες. Εγκαταστήστε ξανά το Literature Clock με το πρόγραμμα εγκατάστασης.",
-    "native_github_project": "Δείτε το έργο στο GitHub"
+    "native_resources_unavailable": "Δεν ήταν δυνατή η φόρτωση των παραθεμάτων. Εγκαταστήστε ξανά το Literature Clock από το αρχείο .saver.",
+    "native_github_project": "Δείτε το έργο στο GitHub",
+    "settings_pattern_size": "Μέγεθος μοτίβου",
+    "settings_background_effect": "Κινούμενο φόντο",
+    "settings_effect_none": "Κανένα",
+    "settings_effect_rain": "Βροχή",
+    "settings_effect_snow": "Χιόνι",
+    "settings_effect_dust": "Σκόνη",
+    "settings_effect_dust-v2": "Φωτεινή σκόνη",
+    "settings_effect_stars": "Αστέρια"
   },
   "eo": {
     "cancel": "Nuligi",
@@ -172,8 +252,16 @@
     "color_fixed": "Fiksa koloro",
     "settings_progress_glass-background": "Fono kun Liquid Glass",
     "settings_progress_glass-foreground": "Malfono kun Liquid Glass",
-    "native_resources_unavailable": "La citaĵoj ne disponeblas. Reinstalu Literature Clock per la instalilo.",
-    "native_github_project": "Vidi la projekton ĉe GitHub"
+    "native_resources_unavailable": "La citaĵoj ne ŝargiĝis. Reinstalu Literature Clock per ĝia .saver-dosiero.",
+    "native_github_project": "Vidi la projekton ĉe GitHub",
+    "settings_pattern_size": "Ŝablona grandeco",
+    "settings_background_effect": "Animita fono",
+    "settings_effect_none": "Neniu",
+    "settings_effect_rain": "Pluvo",
+    "settings_effect_snow": "Neĝo",
+    "settings_effect_dust": "Polvo",
+    "settings_effect_dust-v2": "Lumeca polvo",
+    "settings_effect_stars": "Steloj"
   },
   "ar-AE": {
     "cancel": "إلغاء",
@@ -188,7 +276,15 @@
     "color_fixed": "لون ثابت",
     "settings_progress_glass-background": "خلفية Liquid Glass",
     "settings_progress_glass-foreground": "مقدمة Liquid Glass",
-    "native_resources_unavailable": "الاقتباسات غير متاحة. أعد تثبيت Literature Clock باستخدام برنامج التثبيت.",
-    "native_github_project": "عرض المشروع على GitHub"
+    "native_resources_unavailable": "تعذّر تحميل الاقتباسات. أعد تثبيت Literature Clock من ملف .saver.",
+    "native_github_project": "عرض المشروع على GitHub",
+    "settings_pattern_size": "حجم النمط",
+    "settings_background_effect": "خلفية متحركة",
+    "settings_effect_none": "بدون",
+    "settings_effect_rain": "مطر",
+    "settings_effect_snow": "ثلج",
+    "settings_effect_dust": "غبار",
+    "settings_effect_dust-v2": "غبار متوهج",
+    "settings_effect_stars": "نجوم"
   }
 }

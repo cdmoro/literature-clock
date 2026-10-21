@@ -8,6 +8,7 @@ using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Media3D;
 using System.Windows.Shapes;
 
@@ -21,11 +22,15 @@ public sealed class ClockSurface : Canvas
     readonly DateTimeOffset started = DateTimeOffset.Now;
     readonly Canvas scene = new();
     readonly Canvas backdrop = new();
+    readonly Canvas patternLayer = new();
     readonly StackPanel passage = new();
     readonly TextBlock clock = new() { FontFamily = new FontFamily("Segoe UI"), FontWeight = FontWeights.Bold };
     readonly TextBlock clockHalo = new() { FontFamily = new FontFamily("Segoe UI"), FontWeight = FontWeights.Bold };
     readonly TextBlock credit = new() { FontSize = 11 };
     readonly Rectangle progress = new();
+    readonly Canvas effects = new();
+    readonly Random effectRandom = new();
+    string effectKey = "";
     readonly PhotoBackground photo;
     GlassEffect? glass;
     string minute = "", layoutKey = "", backgroundKey = "";
@@ -39,11 +44,11 @@ public sealed class ClockSurface : Canvas
     {
         this.data=data; this.p=p; this.display=display; this.downloads=downloads;
         ClipToBounds=true;
-        scene.Children.Add(backdrop); scene.Children.Add(clockHalo); scene.Children.Add(clock); scene.Children.Add(passage); scene.Children.Add(credit);
+        scene.Children.Add(backdrop); scene.Children.Add(patternLayer); scene.Children.Add(effects); scene.Children.Add(clockHalo); scene.Children.Add(clock); scene.Children.Add(passage); scene.Children.Add(credit);
         Children.Add(scene); Children.Add(progress);
         photo=new PhotoBackground(display);
         Loaded += (_, _) => CompositionTarget.Rendering += Frame;
-        Unloaded += (_, _) => { CompositionTarget.Rendering -= Frame; photo.Dispose(); };
+        Unloaded += (_, _) => { CompositionTarget.Rendering -= Frame; effects.Children.Clear(); patternLayer.Children.Clear(); photo.Dispose(); };
         if (p.Progress.StartsWith("glass-") && (RenderCapability.Tier >> 16) >= 2 && RenderCapability.IsPixelShaderVersionSupported(3,0))
         {
             try { glass=new GlassEffect(); progress.Effect=glass; }
@@ -75,14 +80,15 @@ public sealed class ClockSurface : Canvas
         var mode=Appearance.Background(p);
         outlineForPhoto=mode=="photo";
         if(mode=="photo" && downloads) photo.Update(now,p,ActualWidth,ActualHeight);
-        var pattern=p.Theme is "book" or "photo" ? "none" : p.Pattern;
+        var pattern=p.Theme == "book" ? "none" : p.Pattern;
         if(pattern=="random") pattern=Appearance.Patterns[2+Catalogues.Index(Appearance.Patterns.Length-2,absoluteMinute,display)];
         outlineForPattern=pattern!="none";
         outlineColor=Appearance.Backdrop(p,dark,accent);
-        var key=$"{ActualWidth}|{ActualHeight}|{dark}|{accent}|{pattern}|{photo.Revision}";
+        var patternSize = new[]{"0.5","1","1.5","2","3"}.Contains(p.PatternSize) ? double.Parse(p.PatternSize,CultureInfo.InvariantCulture) : 1;
+        var key=$"{ActualWidth}|{ActualHeight}|{dark}|{accent}|{pattern}|{patternSize}|{photo.Revision}";
         if(key!=backgroundKey || photo.Transitioning)
         {
-            backdrop.Children.Clear(); Fill(Appearance.Brush(Appearance.Backdrop(p,dark,accent)));
+            backdrop.Children.Clear(); patternLayer.Children.Clear(); Fill(Appearance.Brush(Appearance.Backdrop(p,dark,accent)));
             if(mode=="photo")
             {
                 photo.Draw(backdrop,ActualWidth,ActualHeight);
@@ -97,13 +103,16 @@ public sealed class ClockSurface : Canvas
                     for(double y=0;y<ActualHeight;y+=p.Theme=="terminal"?4:3)
                     { var line=new Rectangle { Width=ActualWidth,Height=1,Fill=Brushes.Black,Opacity=p.Theme=="terminal"?.13:.2 }; SetTop(line,y); backdrop.Children.Add(line); }
             }
-            if(tiles.TryGetValue(pattern,out var dimensions)) Fill(Tile("Patterns/"+pattern+".png",dimensions[0],dimensions[1]));
+            if(tiles.TryGetValue(pattern,out var dimensions)) patternLayer.Children.Add(new Rectangle { Width=ActualWidth,Height=ActualHeight,Fill=Tile("Patterns/"+pattern+".png",dimensions[0]*patternSize,dimensions[1]*patternSize) });
             backgroundKey=key;
         }
-        scene.Width=backdrop.Width=ActualWidth; scene.Height=backdrop.Height=ActualHeight;
+        effects.Width=ActualWidth; effects.Height=ActualHeight;
+        var currentEffectKey=$"{ActualWidth}|{ActualHeight}|{p.Effect}|{dark}|{accent}|{mode}";
+        if(effectKey!=currentEffectKey) { BuildEffects(dark,accent); effectKey=currentEffectKey; }
+        scene.Width=backdrop.Width=patternLayer.Width=ActualWidth; scene.Height=backdrop.Height=patternLayer.Height=ActualHeight;
         var outlineActive=outlineForPhoto || outlineForPattern;
         clock.Text=minute; clock.FontSize=Math.Max(10,Math.Min(20,ActualWidth*.013)); clock.Foreground=Appearance.Brush(foreground);
-        clock.Effect=outlineActive?new DropShadowEffect { Color=outlineColor,BlurRadius=1,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance }:null;
+        clock.Effect=null;
         clockHalo.Text=minute; clockHalo.FontSize=clock.FontSize; clockHalo.Foreground=clock.Foreground;
         clockHalo.Effect=mode=="photo"?new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=12,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance }:null;
         clock.Visibility=p.ShowTime?Visibility.Visible:Visibility.Hidden; clock.Measure(new Size(ActualWidth,100));
@@ -138,7 +147,7 @@ public sealed class ClockSurface : Canvas
         progress.Visibility=p.Progress=="none"?Visibility.Hidden:Visibility.Visible;
         if(glass!=null)
         {
-            // VisualBrush samples the same live composition, including the photo crossfade.
+            // Glass samples the base backdrop; fixed patterns and animated particles remain outside it.
             // For background glass the passage stays above the progress; clock is refracted.
             if(p.Progress=="glass-background")
             {
@@ -146,7 +155,7 @@ public sealed class ClockSurface : Canvas
                 SetZIndex(passage,2);
             }
             progress.Width=ActualWidth; progress.Height=ActualHeight; SetTop(progress,0);
-            progress.Fill=new VisualBrush(scene) { Stretch=Stretch.Fill, ViewboxUnits=BrushMappingMode.Absolute, Viewbox=new Rect(0,0,ActualWidth,ActualHeight) };
+            progress.Fill=new VisualBrush(backdrop) { Stretch=Stretch.Fill, ViewboxUnits=BrushMappingMode.Absolute, Viewbox=new Rect(0,0,ActualWidth,ActualHeight) };
             glass.Geometry=new Point4D(ActualWidth,ActualHeight,fraction,GlassEffect.Radius(fraction,ActualWidth,ActualHeight));
             glass.Tint=new Point4D(progressColor.R/255.0,progressColor.G/255.0,progressColor.B/255.0,p.Progress=="glass-foreground"?.025:.1);
         }
@@ -159,22 +168,72 @@ public sealed class ClockSurface : Canvas
             if(background && scene.Children.Contains(passage)) { scene.Children.Remove(passage); Children.Add(passage); SetZIndex(passage,2); }
         }
     }
+    void BuildEffects(bool dark,Color accent)
+    {
+        effects.Children.Clear();
+        if(p.Theme=="book" || p.Effect=="none") return;
+        var density=p.Effect=="rain"?6800.0:p.Effect=="snow"?3500.0:p.Effect=="dust"?6000.0:4500.0;
+        var count=Math.Min(360,Math.Max(24,(int)(ActualWidth*ActualHeight/density)));
+        var color=p.Effect is "snow" or "stars"?Appearance.Foreground(p.Theme,dark,accent):Appearance.Color("#ffd391");
+        for(var i=0;i<count;i++)
+        {
+            var size=p.Effect=="snow"?1.1+effectRandom.NextDouble()*1.9:p.Effect=="dust"?.9+effectRandom.NextDouble()*2:p.Effect=="dust-v2"?.6+Math.Pow(effectRandom.NextDouble(),2)*7:p.Effect=="stars"?.55+Math.Pow(effectRandom.NextDouble(),2.5)*3.8:.7+effectRandom.NextDouble()*.8;
+            Shape dot;
+            if(p.Effect=="rain") dot=new Rectangle { Width=Math.Max(.6,size*.65),Height=size*12,Fill=new SolidColorBrush(Color.FromArgb(75,150,190,220)),RadiusX=.4,RadiusY=.4,RenderTransform=new RotateTransform(8) };
+            else if(p.Effect=="stars" && size>2.1)
+            {
+                var star=new GeometryGroup(); star.Children.Add(new EllipseGeometry(new Point(size,size),size,size));
+                star.Children.Add(new LineGeometry(new Point(size*.1,size),new Point(size*1.9,size)));
+                star.Children.Add(new LineGeometry(new Point(size,size*.1),new Point(size,size*1.9)));
+                dot=new System.Windows.Shapes.Path { Data=star,Fill=new SolidColorBrush(color),Stroke=new SolidColorBrush(color),StrokeThickness=Math.Max(.35,size*.16),Opacity=.48+effectRandom.NextDouble()*.48 };
+            }
+            else dot=new Ellipse { Width=size*2,Height=size*2,Fill=new SolidColorBrush(color),Opacity=p.Effect=="snow"?.26:p.Effect=="stars"?.48+effectRandom.NextDouble()*.48:p.Effect=="dust"?.18+effectRandom.NextDouble()*.2:p.Effect=="dust-v2"?.12+effectRandom.NextDouble()*.22:.12+effectRandom.NextDouble()*.24 };
+            if(p.Effect=="dust-v2" || p.Effect=="stars") dot.Effect=new DropShadowEffect { Color=color,BlurRadius=p.Effect=="stars"?size*2.4:Math.Max(0,size-1.5)*1.8,ShadowDepth=0,Opacity=.65,RenderingBias=RenderingBias.Performance };
+            var orbit=p.Effect=="stars"?Math.Max(12,size*2.5):p.Effect=="dust" || p.Effect=="dust-v2"?30:0;
+            var baseX=orbit>0?Math.Clamp(effectRandom.NextDouble()*ActualWidth,orbit,Math.Max(orbit,ActualWidth-orbit)):effectRandom.NextDouble()*ActualWidth;
+            var baseY=orbit>0?Math.Clamp(effectRandom.NextDouble()*ActualHeight,orbit,Math.Max(orbit,ActualHeight-orbit)):effectRandom.NextDouble()*ActualHeight;
+            SetLeft(dot,baseX); SetTop(dot,baseY); effects.Children.Add(dot);
+            if(p.Effect is "dust" or "dust-v2" or "stars")
+            {
+                var range=p.Effect=="stars"?8:30;
+                var dx=effectRandom.Next(-range,range+1); var dy=effectRandom.Next(-range,range+1);
+                var move=new TranslateTransform(); dot.RenderTransform=move;
+                var duration=TimeSpan.FromSeconds(p.Effect=="stars"?12+effectRandom.NextDouble()*16:4+effectRandom.NextDouble()*8);
+                move.BeginAnimation(TranslateTransform.XProperty,new DoubleAnimation(-dx,dx,new Duration(duration)){AutoReverse=true,RepeatBehavior=RepeatBehavior.Forever});
+                move.BeginAnimation(TranslateTransform.YProperty,new DoubleAnimation(-dy,dy,new Duration(duration)){AutoReverse=true,RepeatBehavior=RepeatBehavior.Forever});
+                if(p.Effect=="stars") dot.BeginAnimation(UIElement.OpacityProperty,new DoubleAnimation(.25,.95,new Duration(TimeSpan.FromSeconds(2+effectRandom.NextDouble()*4))){AutoReverse=true,RepeatBehavior=RepeatBehavior.Forever});
+            }
+            else
+            {
+                var dy=p.Effect=="snow"?ActualHeight+20:ActualHeight+20;
+                var drift=p.Effect=="snow"?effectRandom.Next(-40,41):effectRandom.Next(-20,21);
+                dot.RenderTransform=new TranslateTransform(); var move=(TranslateTransform)dot.RenderTransform;
+                var snowSpeed=18+effectRandom.NextDouble()*38;
+                var duration=TimeSpan.FromSeconds(p.Effect=="snow"?Math.Max((ActualHeight+size*4)/snowSpeed,8):Math.Max(ActualHeight/(260+effectRandom.NextDouble()*360),1.2));
+                var fromY=p.Effect=="snow"?-baseY-size*2:-ActualHeight;
+                var toY=p.Effect=="snow"?ActualHeight-baseY+size*2:dy;
+                move.BeginAnimation(TranslateTransform.YProperty,new DoubleAnimation(fromY,toY,new Duration(duration)){RepeatBehavior=RepeatBehavior.Forever});
+                move.BeginAnimation(TranslateTransform.XProperty,new DoubleAnimation(drift,-drift,new Duration(duration)){RepeatBehavior=RepeatBehavior.Forever});
+            }
+        }
+    }
     void BuildPassage(Quote q,double width,double size,Color foreground,Color accent)
     {
         passage.Children.Clear(); passage.Width=width;
+        var dark=Appearance.Dark(p);
         void Append(Quote item,string language,double fontSize)
         {
             var flow=language.StartsWith("ar")?FlowDirection.RightToLeft:FlowDirection.LeftToRight;
             var outlineActive=outlineForPhoto || outlineForPattern;
-            var outlineRadius=Math.Max(1,fontSize*(outlineForPattern?.09:.05));
+            var outlineRadius=12.0;
             var text=new TextBlock { TextWrapping=TextWrapping.Wrap, FontFamily=Appearance.Font(p.Theme,language), FontSize=fontSize, Foreground=Appearance.Brush(foreground,p.Theme=="terminal"?.8:1), FlowDirection=flow, LineHeight=fontSize*Appearance.Font(p.Theme,language).LineSpacing*(p.Theme=="book"?1.35:p.Theme=="festive"?1.25:p.Theme=="terminal"?1.15:1), LineStackingStrategy=LineStackingStrategy.BlockLineHeight };
-            if(outlineActive) text.Effect=new DropShadowEffect { Color=outlineColor,BlurRadius=outlineRadius,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance };
+            if(outlineActive) text.Effect=new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=outlineRadius,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance };
             text.Inlines.Add(new Run(item.first));
             var highlight=new Run(item.time);
             if(p.Theme!="book") highlight.Foreground=Appearance.Brush(accent);
             text.Inlines.Add(highlight); text.Inlines.Add(new Run(item.last)); passage.Children.Add(p.Theme=="book"?new BookText(text,highlight,Appearance.Brush(accent)):text);
             var attribution=p.HideTitle?item.author:string.Join(", ",new[]{item.title,item.author}.WhereNonEmpty());
-            if(attribution.Length>0) passage.Children.Add(new TextBlock { Text=(p.Theme=="terminal"?"> ":"— ")+attribution,FontFamily=text.FontFamily,FontSize=fontSize*.55,TextWrapping=TextWrapping.Wrap,FlowDirection=flow,Foreground=Appearance.Brush(foreground),Margin=new Thickness(0,p.Theme=="book"?(ActualWidth<=750?16:24):fontSize*.35,0,0),Effect=outlineActive?new DropShadowEffect { Color=outlineColor,BlurRadius=Math.Max(1,fontSize*.55*(outlineForPattern?.09:.05)),ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance }:null });
+            if(attribution.Length>0) passage.Children.Add(new TextBlock { Text=(p.Theme=="terminal"?"> ":"— ")+attribution,FontFamily=text.FontFamily,FontSize=fontSize*.55,TextWrapping=TextWrapping.Wrap,FlowDirection=flow,Foreground=Appearance.Brush(foreground),Margin=new Thickness(0,p.Theme=="book"?(ActualWidth<=750?16:24):fontSize*.35,0,0),Effect=outlineActive?new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=12,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance }:null });
         }
         Append(q,locale,size);
         var (translation,notice)=data.Translate(q,locale,minute,p);
@@ -182,14 +241,14 @@ public sealed class ClockSurface : Canvas
         {
             passage.Children.Add(new Border { Height=1,Background=Appearance.Brush(foreground,.25),Margin=new Thickness(0,18,0,12) });
             var heading=new TextBlock { Text=LanguageName(p.Translation),FontSize=Math.Max(10,size*.35),Foreground=Appearance.Brush(foreground,.75),Margin=new Thickness(0,0,0,8) };
-            if(outlineForPhoto || outlineForPattern) heading.Effect=new DropShadowEffect { Color=outlineColor,BlurRadius=Math.Max(1,heading.FontSize*(outlineForPattern?.09:.05)),ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance };
+            if(outlineForPhoto || outlineForPattern) heading.Effect=new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=12,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance };
             passage.Children.Add(heading);
             Append(translation,p.Translation,size*.8);
         }
         else if(notice.Length>0)
         {
             var message=new TextBlock { Text=notice,FontSize=size*.5,TextWrapping=TextWrapping.Wrap,Foreground=Appearance.Brush(foreground,.75),Margin=new Thickness(0,24,0,0) };
-            if(outlineForPhoto || outlineForPattern) message.Effect=new DropShadowEffect { Color=outlineColor,BlurRadius=Math.Max(1,message.FontSize*(outlineForPattern?.09:.05)),ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance };
+            if(outlineForPhoto || outlineForPattern) message.Effect=new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=12,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance };
             passage.Children.Add(message);
         }
     }

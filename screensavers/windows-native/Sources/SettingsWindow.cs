@@ -44,6 +44,8 @@ public sealed class SettingsWindow : Window
         Menu("settings_color","palette",Appearance.Palettes,p.Palette,raw=>data.Text(raw=="custom"?"settings_color_customize":raw=="default"?"color_mode_default":raw=="random"?"color_mode_random":raw));
         custom.Text=p.CustomColor; custom.Margin=new Thickness(0,5,0,10); custom.MaxLength=7; custom.ToolTip=data.Text("color_edit"); stack.Children.Add(custom);
         Menu("settings_background_pattern","pattern",Appearance.Patterns,p.Pattern,raw=>data.Text("settings_pattern_"+raw));
+        Menu("settings_pattern_size","patternSize",["0.5","1","1.5","2","3"],p.PatternSize,raw=>raw+"×");
+        Menu("settings_background_effect","effect",["none","rain","snow","dust","dust-v2","stars"],p.Effect,raw=>data.Text("settings_effect_"+raw));
         Menu("progressbar_mode","progress",["none","top","bottom","background","glass-background","glass-foreground"],p.Progress,raw=>data.Text("settings_progress_"+raw));
         Section("settings_behavior");
         Check("movement","move",p.Move); Check("time_mode","time",p.ShowTime); Check("settings_hide_book_title","hideTitle",p.HideTitle); Check("work_mode_title","safe",p.Safe);
@@ -59,13 +61,18 @@ public sealed class SettingsWindow : Window
             menus["background"].IsEnabled=theme is not "photo" and not "book";
             menus["provider"].Visibility=background=="photo"?Visibility.Visible:Visibility.Collapsed;
             menus["category"].Visibility=background=="photo" && Value("provider")!="picsum"?Visibility.Visible:Visibility.Collapsed;
-            menus["pattern"].IsEnabled=theme is not "photo" and not "book";
+            var supportsPattern=theme is not "book";
+            ((StackPanel)menus["pattern"].Parent).Visibility=supportsPattern?Visibility.Visible:Visibility.Collapsed;
+            menus["patternSize"].IsEnabled=supportsPattern && Value("pattern") is not "none" and not "random";
+            ((StackPanel)menus["patternSize"].Parent).Visibility=supportsPattern && Value("pattern") is not "none" and not "random"?Visibility.Visible:Visibility.Collapsed;
+            menus["effect"].IsEnabled=supportsPattern;
+            ((StackPanel)menus["effect"].Parent).Visibility=supportsPattern?Visibility.Visible:Visibility.Collapsed;
             custom.Visibility=Value("palette")=="custom"?Visibility.Visible:Visibility.Collapsed;
             menus["translation"].IsEnabled=checks["bilingual"].IsChecked==true;
             foreach(var key in new[]{"provider","category"}) ((StackPanel)menus[key].Parent).Visibility=menus[key].Visibility;
         }
         menus["provider"].SelectionChanged+=(_,_)=>{ Categories(); Update(); };
-        foreach(var key in new[]{"theme","background","palette"}) menus[key].SelectionChanged+=(_,_)=>Update();
+        foreach(var key in new[]{"theme","background","palette","pattern"}) menus[key].SelectionChanged+=(_,_)=>Update();
         checks["bilingual"].Checked+=(_,_)=>Update(); checks["bilingual"].Unchecked+=(_,_)=>Update();
         Categories(); menus["category"].SelectedValue=p.Category; if(menus["category"].SelectedIndex<0) menus["category"].SelectedIndex=0; Update();
         stack.Children.Add(error);
@@ -95,7 +102,7 @@ public sealed class SettingsWindow : Window
         if(Value("palette")=="custom" && !Regex.IsMatch(custom.Text,"^#[0-9a-fA-F]{6}$")) { error.Text=data.Text("color_edit")+" (#RRGGBB)"; return; }
         var p=new Preferences
         {
-            Languages=languages.Where(x=>x.Value.IsChecked==true).Select(x=>x.Key).ToArray(),Theme=Value("theme"),Scheme=Value("scheme"),Background=Value("background"),Pattern=Value("pattern"),Palette=Value("palette"),CustomColor=Regex.IsMatch(custom.Text,"^#[0-9a-fA-F]{6}$")?custom.Text:original.CustomColor,Progress=Value("progress"),Provider=Value("provider"),Category=Value("category"),Translation=Value("translation"),Bilingual=checks["bilingual"].IsChecked==true,Move=checks["move"].IsChecked==true,ShowTime=checks["time"].IsChecked==true,HideTitle=checks["hideTitle"].IsChecked==true,Safe=checks["safe"].IsChecked==true
+            Languages=languages.Where(x=>x.Value.IsChecked==true).Select(x=>x.Key).ToArray(),Theme=Value("theme"),Scheme=Value("scheme"),Background=Value("background"),Pattern=Value("pattern"),PatternSize=Value("patternSize") is "0.5" or "1" or "1.5" or "2" or "3" ? Value("patternSize") : "1",Effect=new[]{"none","rain","snow","dust","dust-v2","stars"}.Contains(Value("effect"))?Value("effect"):"none",Palette=Value("palette"),CustomColor=Regex.IsMatch(custom.Text,"^#[0-9a-fA-F]{6}$")?custom.Text:original.CustomColor,Progress=Value("progress"),Provider=Value("provider"),Category=Value("category"),Translation=Value("translation"),Bilingual=checks["bilingual"].IsChecked==true,Move=checks["move"].IsChecked==true,ShowTime=checks["time"].IsChecked==true,HideTitle=checks["hideTitle"].IsChecked==true,Safe=checks["safe"].IsChecked==true
         };
         try { p.Save(); }
         catch(Exception e) when(e is System.IO.IOException or UnauthorizedAccessException) { error.Text=e.Message; return; }

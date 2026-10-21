@@ -89,7 +89,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     var preferences: UserDefaults = ScreenSaverDefaults(forModuleWithName: "net.literatureclock.native-saver")!
     var resourceURLOverride: URL? // Isolated render diagnostics only.
     var resources: URL { resourceURLOverride ?? Bundle(for: NativeClockView.self).resourceURL! }
-    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background", "background-pattern", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
+    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background", "background-pattern", "pattern-size", "background-effect", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
     var photoDownloadsEnabled = true
     var interactionPreviewSweep = false
     var fullProgressPreviewSweep = false
@@ -171,6 +171,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     private var finalPhotoOpticalSource: CIImage?
     private var patternKey = ""
     private var patternImage: NSImage?
+    private var effectStarted = Date()
     var themeName: String { (preferences.string(forKey: "theme") ?? "base-dark").split(separator: "-").first.map(String.init) ?? "base" }
     var backgroundName: String { NativeAppearance.resolvedBackground(theme: themeName, selected: preferences.string(forKey: "background")) }
     private static let bundledFonts: [String: String] = {
@@ -203,12 +204,18 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     func menuValue(_ key: String) -> String? { (controls[key] as? NSPopUpButton)?.selectedItem?.representedObject as? String }
     override init?(frame: NSRect, isPreview: Bool) { super.init(frame: frame, isPreview: isPreview); setup() }
     required init?(coder: NSCoder) { super.init(coder: coder); setup() }
+    private func updateAnimationTimeInterval() {
+        let effect = preferences.string(forKey: "background-effect") ?? "none"
+        let needsLowerRate = ["snow", "dust", "dust-v2", "stars"].contains(effect)
+            && NativeAppearance.supportsPattern(theme: themeName)
+        animationTimeInterval = needsLowerRate ? 1.0 / 30.0 : 1.0 / 60.0
+    }
     private func setup() {
         preferences.register(defaults: ["theme": "base-dark", "screensaver": true, "show-time": true,
                                        "hide-book-title": false, "work": true, "progressbar": "background", "quote-locales": "", "palette": "default",
-                                       "custom-color": "#d24335", "background": "default", "background-pattern": "none", "photo-provider": "picsum", "photo-category": "all", "bilingual": false, "translation-locale": ""])
+                                       "custom-color": "#d24335", "background": "default", "background-pattern": "none", "pattern-size": 1.0, "background-effect": "none", "photo-provider": "picsum", "photo-category": "all", "bilingual": false, "translation-locale": ""])
         _ = Self.bundledFonts
-        animationTimeInterval = 1.0 / 60.0
+        updateAnimationTimeInterval()
         Self.instances.add(self)
         DistributedNotificationCenter.default().addObserver(self, selector: #selector(settingsDidChange), name: Self.settingsChanged, object: nil)
     }
@@ -223,6 +230,50 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     }
     override func stopAnimation() { active = false; photoBackgroundStorage?.cancel(); super.stopAnimation() }
     override func animateOneFrame() { needsDisplay = true }
+    private func drawAnimatedEffect(name: String, dark: Bool, accent: NSColor) {
+        guard ["rain", "snow", "dust", "dust-v2", "stars"].contains(name),
+              NativeAppearance.supportsPattern(theme: themeName) else { return }
+        let width = bounds.width, height = bounds.height
+        guard width > 0, height > 0 else { return }
+        let elapsed = Date().timeIntervalSince(effectStarted)
+        let density = name == "rain" ? 6800.0 : name == "snow" ? 3500.0 : name == "dust" ? 6000.0 : 4500.0
+        let count = min(360, max(24, Int(width * height / density)))
+        let particleColor = (name == "snow" || name == "stars") ? NativeAppearance.foreground(theme: themeName, dark: dark, accent: accent) : NSColor(calibratedRed: 1, green: 0.827, blue: 0.569, alpha: 1)
+        for index in 0..<count {
+            var seed = UInt64(index + 1) &* 0x9e3779b97f4a7c15
+            func random(_ limit: Double) -> Double {
+                seed = seed &+ 0x9e3779b97f4a7c15
+                var value = seed
+                value = (value ^ (value >> 30)) &* 0xbf58476d1ce4e5b9
+                value = (value ^ (value >> 27)) &* 0x94d049bb133111eb
+                value ^= value >> 31
+                return Double(value >> 11) / 9007199254740992.0 * limit
+            }
+            let x0 = random(width), y0 = random(height), phase = random(Double.pi * 2)
+            let flickerSpeed = 2.2 + random(2.4)
+            let size = name == "snow" ? 1.1 + random(1.9) : name == "dust" ? 0.9 + random(2) : name == "dust-v2" ? 0.6 + pow(random(1), 2) * 7 : name == "stars" ? 0.55 + pow(random(1), 2.5) * 3.8 : 0.7 + random(0.8)
+            let speed = name == "snow" ? 18 + random(38) : name == "dust" ? random(22) - 11 : name == "dust-v2" ? random(28) - 14 : name == "stars" ? 0.03 + random(0.12) : 260 + random(360)
+            let drift = name == "snow" ? random(36) - 18 : name == "dust" ? random(70) - 35 : name == "dust-v2" ? random(40) - 20 : name == "stars" ? random(0.2) - 0.1 : speed * 0.12
+            let opacity = name == "snow" ? 0.28 : name == "stars" ? 0.48 + random(0.48) : name == "dust" ? 0.18 + random(0.2) : name == "dust-v2" ? 0.12 + random(0.22) : 0.12 + random(0.24)
+            let rawX = x0 + drift * elapsed + (name == "dust" ? sin(elapsed * 0.77 + phase) * 12 : name == "dust-v2" ? sin(elapsed * 0.59 + phase) * 20 : name == "stars" ? sin(elapsed * 0.59 + phase) * 0.25 : 0)
+            let x = (rawX.truncatingRemainder(dividingBy: width) + width).truncatingRemainder(dividingBy: width)
+            let rawY = y0 + speed * elapsed + (name == "dust-v2" ? sin(elapsed * 0.91 + phase) * 7 : name == "stars" ? sin(elapsed * 0.48 + phase) * 0.18 : 0)
+            let y = (rawY.truncatingRemainder(dividingBy: height) + height).truncatingRemainder(dividingBy: height)
+            if name == "rain" {
+                particleColor.withAlphaComponent(opacity).setStroke()
+                let streak = NSBezierPath(); streak.move(to: CGPoint(x: x, y: height - y)); streak.line(to: CGPoint(x: x - size * 2, y: height - y + size * 12)); streak.lineWidth = max(0.5, size * 0.65); streak.lineCapStyle = .round; streak.stroke()
+            } else {
+                let twinkle = name == "stars" ? 0.12 + 0.88 * (sin(elapsed * flickerSpeed + phase) + 1) / 2 : name == "snow" ? opacity + 0.08 : opacity
+                particleColor.withAlphaComponent(twinkle).setFill()
+                let dot = NSBezierPath(ovalIn: CGRect(x: x, y: height - y, width: size * 2, height: size * 2)); dot.fill()
+                if name == "dust-v2" || name == "stars" { NSGraphicsContext.saveGraphicsState(); let shadow = NSShadow(); shadow.shadowBlurRadius = name == "stars" ? size * 2.4 : max(0, size - 1.5) * 1.8; shadow.shadowColor = particleColor.withAlphaComponent(0.55); shadow.set(); dot.fill(); NSGraphicsContext.restoreGraphicsState() }
+                if name == "stars" && size > 2.1 {
+                    particleColor.withAlphaComponent(twinkle * 0.65).setStroke()
+                    let glint = NSBezierPath(); glint.move(to: CGPoint(x: x + size * 0.1, y: height - y + size)); glint.line(to: CGPoint(x: x + size * 1.9, y: height - y + size)); glint.move(to: CGPoint(x: x + size, y: height - y + size * 0.1)); glint.line(to: CGPoint(x: x + size, y: height - y + size * 1.9)); glint.lineWidth = max(0.35, size * 0.16); glint.stroke()
+                }
+            }
+        }
+    }
     override func acceptsFirstMouse(for event: NSEvent?) -> Bool { false }
     override func hitTest(_ point: NSPoint) -> NSView? { self }
     override var acceptsFirstResponder: Bool { false }
@@ -270,7 +321,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         }
         if !catalogueRetryAfter.isEmpty {
             let notice = text("native_resources_unavailable")
-            quote = NativeQuote(first: notice == "native_resources_unavailable" ? "Quote resources are unavailable. Reinstall Literature Clock using the installer." : notice, time: "", last: "", title: "", author: "", sfw: true)
+            quote = NativeQuote(first: notice == "native_resources_unavailable" ? "Quote resources could not be loaded. Reinstall Literature Clock from its .saver file." : notice, time: "", last: "", title: "", author: "", sfw: true)
             return
         }
         // Explain missing/filtered minutes in the requested language; never
@@ -375,19 +426,22 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         if pattern == "random" { pattern = randomValue(Array(NativeAppearance.patterns.dropFirst(2)), at: now) }
         let hasPattern = pattern != "none"
         let outlineColor = NativeAppearance.background(theme: theme, dark: dark, accent: accent, selected: backgroundMode)
-        let outlineWidth = hasPattern ? -18.0 : -10.0
-        let newPatternKey = "\(pattern)|\(bounds.size)|\(scale)|\(accent)"
+        let outlineWidth: CGFloat = 0
+        let allowedSizes: [CGFloat] = [0.5, 1, 1.5, 2, 3]
+        let savedSize = CGFloat(preferences.double(forKey: "pattern-size"))
+        let patternScale = allowedSizes.contains(savedSize) ? savedSize : 1
+        let newPatternKey = "\(pattern)|\(bounds.size)|\(scale)|\(accent)|\(patternScale)"
         if newPatternKey != patternKey {
-            patternImage = NativeAppearance.patternImage(pattern: pattern, size: bounds.size, scale: scale, color: accent, resources: resources)
+            patternImage = NativeAppearance.patternImage(pattern: pattern, size: bounds.size, scale: scale, color: accent, resources: resources, tileScale: patternScale)
             patternKey = newPatternKey
         }
         patternImage?.draw(in: bounds)
         let photoKey = usesPhoto ? photoBackground.image.map { String(describing: ObjectIdentifier($0)) } ?? "none" : "none"
-        let opticalKey = "\(theme)|\(backgroundMode)|\(accent)|\(dark)|\(bounds.size)|\(newPatternKey)|\(photoKey)"
+        let progressMode = preferences.string(forKey: "progressbar") ?? "none"
+        let opticalKey = "\(theme)|\(backgroundMode)|\(accent)|\(dark)|\(bounds.size)|\(photoKey)"
         if opticalKey != opticalSourceKey && bounds.width > 0 && bounds.height > 0 {
-            let backgroundImage = NSImage(size: bounds.size, flipped: false) { [self] rect in
+            let backgroundImage = NSImage(size: bounds.size, flipped: false) { rect in
                 drawBackdrop(in: rect, finalOnly: true)
-                patternImage?.draw(in: rect)
                 return true
             }
             previousPhotoOpticalSource = usesPhoto && photoBackground.isTransitioning ? opticalSource : nil
@@ -395,6 +449,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             finalPhotoOpticalSource = opticalSource
             opticalSourceKey = opticalKey
         }
+        drawAnimatedEffect(name: preferences.string(forKey: "background-effect") ?? "none", dark: dark, accent: accent)
         if usesPhoto, let final = finalPhotoOpticalSource {
             if photoBackground.isTransitioning, let previous = previousPhotoOpticalSource {
                 opticalSource = previous.applyingFilter("CIDissolveTransition", parameters: ["inputTargetImage": final, "inputTime": photoBackground.transitionFraction])
@@ -425,9 +480,9 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             }
             label.attributedStringValue = NSAttributedString(string: lastMinute, attributes: clockAttributes)
             label.sizeToFit()
-            if usesPhoto { label.setFrameSize(NSSize(width: label.frame.width + 48, height: label.frame.height + 48)) }
+            if usesPhoto { label.setFrameSize(NSSize(width: label.frame.width + 24, height: label.frame.height + 24)) }
             label.frame.origin = NSPoint(x: bounds.midX - label.frame.width / 2,
-                                         y: (isFlipped ? timeTopInset + 8 : bounds.maxY - timeTopInset - 8 - label.frame.height) - (usesPhoto ? 24 : 0))
+                                         y: (isFlipped ? timeTopInset + 8 : bounds.maxY - timeTopInset - 8 - label.frame.height) - (usesPhoto ? 12 : 0))
             let key = "\(lastMinute)|\(label.font!.pointSize)|\(foreground)|\(outlineColor)|\(outlineWidth)|\(usesPhoto)|\(dark)|\(scale)"
             if key != plainTimeImageKey {
                 label.isHidden = false
@@ -449,7 +504,6 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let foregroundGlass = preferences.string(forKey: "progressbar") == "glass-foreground"
         if !foregroundGlass, let pane = glassProgressView { addSubview(pane, positioned: .below, relativeTo: nil) }
         let progress = previewProgressDuration.map { min(1, max(0, (previewProgressPausedElapsed ?? now.timeIntervalSince(started)) / $0)) } ?? (fullProgressPreviewSweep ? now.timeIntervalSince(started).truncatingRemainder(dividingBy: 12) / 12 : interactionPreviewSweep ? 0.5 + sin(now.timeIntervalSince(started) / 3) * 0.13 : now.timeIntervalSince1970.truncatingRemainder(dividingBy: 60) / 60)
-        let progressMode = preferences.string(forKey: "progressbar") ?? "none"
         let progressColor = NativeAppearance.progressForeground(theme: theme, dark: dark, accent: accent)
         let glassProgress = updateGlassProgress(mode: progressMode, progress: progress, dark: dark, tint: progressColor.withAlphaComponent(foregroundGlass ? 0.025 : 0.1))
         (glassProgressView as? OpticalGlassView)?.source = progressSource
@@ -716,13 +770,15 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             ("photo-category", "settings_photo_category", NativePhotoBackground.categories(provider: preferences.string(forKey: "photo-provider") ?? "picsum")),
             ("palette", "settings_color", ["default", "red", "pink", "green", "orange", "purple", "blue", "gray", "random", "custom"]),
             ("background-pattern", "settings_background_pattern", NativeAppearance.patterns),
+            ("pattern-size", "settings_pattern_size", ["0.5", "1", "1.5", "2", "3"]),
+            ("background-effect", "settings_background_effect", ["none", "rain", "snow", "dust", "dust-v2", "stars"]),
             ("progressbar", "progressbar_mode", ["none", "top", "bottom", "background", "glass-background", "glass-foreground"])
         ] {
             if key == "transition" { section("settings_behavior") }
             let menu = NSPopUpButton()
             let value = key == "theme-base" ? parts.first : key == "theme-mode" ? parts.last : preferences.string(forKey: key)
             for raw in values {
-                let labelKey = key == "background" ? "settings_background_" + raw : key == "photo-category" ? "settings_photo_" + raw : key == "background-pattern" ? "settings_pattern_" + raw : key == "progressbar" ? "settings_progress_" + raw :
+                let labelKey = key == "background" ? "settings_background_" + raw : key == "photo-category" ? "settings_photo_" + raw : key == "background-pattern" ? "settings_pattern_" + raw : key == "background-effect" ? "settings_effect_" + raw : key == "progressbar" ? "settings_progress_" + raw :
                     raw == "custom" ? "settings_color_customize" : raw == "default" ? "default_font" : raw == "random" ? "settings_color_random" : raw
                 let label = key == "photo-provider" ? (raw == "commons" ? "Wikimedia Commons" : raw == "nasa" ? "NASA" : "Picsum") : text(labelKey)
                 let item = NSMenuItem(title: label, action: nil, keyEquivalent: "")
@@ -733,11 +789,14 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 menu.menu?.addItem(item)
                 if raw == value { menu.select(item) }
             }
+            if key == "pattern-size" { menu.target = self; menu.action = #selector(patternSizeChanged) }
+            if key == "background-effect" { menu.target = self; menu.action = #selector(effectChanged) }
             if key == "theme-base" || key == "background" || key == "photo-provider" { menu.target = self; menu.action = #selector(photoControlsChanged) }
             controls[key] = menu
+            if key == "background-pattern" { menu.target = self; menu.action = #selector(patternChanged) }
             let title = NSTextField(labelWithString: text(label))
             title.widthAnchor.constraint(equalToConstant: 180).isActive = true
-            menu.widthAnchor.constraint(equalToConstant: key.hasPrefix("photo-") ? 180 : 260).isActive = true
+            menu.widthAnchor.constraint(equalToConstant: key.hasPrefix("photo-") || key == "background-pattern" ? 180 : key == "pattern-size" ? 100 : 260).isActive = true
             if key == "photo-category" { menu.setAccessibilityLabel(text("settings_photo_category")) }
             if key == "palette" {
                 let row = NSStackView(); row.spacing = 8
@@ -770,6 +829,9 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 colorSwatchesRow = fixedRow
                 stack.addArrangedSubview(fixedRow)
             } else if key == "photo-category", let row = controls["photo-provider"]?.superview as? NSStackView {
+                row.addArrangedSubview(menu)
+            } else if key == "pattern-size", let row = controls["background-pattern"]?.superview as? NSStackView {
+                menu.setAccessibilityLabel(text("settings_pattern_size"))
                 row.addArrangedSubview(menu)
             } else { stack.addArrangedSubview(NSStackView(views: [title, menu])) }
             if key == "palette" {
@@ -808,6 +870,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             }
         }
         photoControlsChanged()
+        patternChanged(controls["background-pattern"] as! NSPopUpButton)
+        effectChanged(controls["background-effect"] as! NSPopUpButton)
         section("settings_behavior")
         for (key, label) in [("screensaver", "movement"), ("show-time", "time_mode"), ("hide-book-title", "settings_hide_book_title"), ("work", "work_mode_title")] {
             let check = NSButton(checkboxWithTitle: text(label), target: nil, action: nil)
@@ -831,6 +895,23 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         window.setContentSize(NSSize(width: 700, height: max(470, stack.fittingSize.height + 48)))
         sheet = window
         return window
+    }
+    @objc private func patternSizeChanged(_ sender: NSPopUpButton) {
+        guard let value = sender.selectedItem?.representedObject as? String, ["0.5", "1", "1.5", "2", "3"].contains(value), let number = Double(value) else { return }
+        preferences.set(number, forKey: "pattern-size")
+        patternKey = ""
+        needsDisplay = true
+    }
+    @objc private func patternChanged(_ sender: NSPopUpButton) {
+        let pattern = sender.selectedItem?.representedObject as? String ?? "none"
+        let sizeControl = controls["pattern-size"] as? NSPopUpButton
+        sizeControl?.isEnabled = !["none", "random"].contains(pattern) && NativeAppearance.supportsPattern(theme: themeName)
+        sizeControl?.isHidden = !(sizeControl?.isEnabled ?? false)
+    }
+    @objc private func effectChanged(_ sender: NSPopUpButton) {
+        preferences.set(sender.selectedItem?.representedObject as? String ?? "none", forKey: "background-effect")
+        updateAnimationTimeInterval()
+        needsDisplay = true
     }
     @objc private func cancelOptions() {
         closeOptions()
@@ -988,6 +1069,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         for key in Self.optionKeys {
             if let value = values[key] { preferences.set(value, forKey: key) }
         }
+        updateAnimationTimeInterval()
         preferences.synchronize()
         if backgroundName != "photo" { photoBackgroundStorage?.cancel() }
         lastMinute = ""

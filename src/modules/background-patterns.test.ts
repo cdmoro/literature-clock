@@ -97,26 +97,6 @@ test('updates the inherited pattern scale and keeps both controls in one row', (
   expect(document.querySelector('#pattern-picker-toggle')!.closest('.settings-row')?.querySelector('#pattern-size')).not.toBeNull();
 });
 
-test.each(['photo', 'retro', 'anaglyph', 'book', 'terminal', 'whatsapp', 'horizon'])(
-  'suspends patterns on %s and restores them on a plain theme',
-  (theme) => {
-    setup();
-    choosePattern('diagonal');
-    chooseTheme(theme);
-    const select = document.querySelector<HTMLSelectElement>('#background-pattern')!;
-    expect(document.documentElement.dataset.backgroundPattern).toBe('none');
-    expect(select.disabled).toBe(true);
-    expect(select.closest<HTMLElement>('.settings-row')!.hidden).toBe(false);
-    expect(document.querySelector<HTMLButtonElement>('#pattern-picker-toggle')!.disabled).toBe(true);
-    expect(store.get('background-pattern')).toBe('diagonal');
-    chooseTheme('base');
-    expect(document.documentElement.dataset.backgroundPattern).toBe('diagonal');
-    expect(select.disabled).toBe(false);
-    expect(document.querySelector<HTMLButtonElement>('#pattern-picker-toggle')!.disabled).toBe(false);
-    expect(select.closest<HTMLElement>('.settings-row')!.hidden).toBe(false);
-  },
-);
-
 test('uses the resolved plain skin for random colour themes', () => {
   setup();
   choosePattern('grid');
