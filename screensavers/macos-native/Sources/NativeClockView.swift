@@ -321,7 +321,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         }
         if !catalogueRetryAfter.isEmpty {
             let notice = text("native_resources_unavailable")
-            quote = NativeQuote(first: notice == "native_resources_unavailable" ? "Quote resources are unavailable. Reinstall Literature Clock using the installer." : notice, time: "", last: "", title: "", author: "", sfw: true)
+            quote = NativeQuote(first: notice == "native_resources_unavailable" ? "Quote resources could not be loaded. Reinstall Literature Clock from its .saver file." : notice, time: "", last: "", title: "", author: "", sfw: true)
             return
         }
         // Explain missing/filtered minutes in the requested language; never
