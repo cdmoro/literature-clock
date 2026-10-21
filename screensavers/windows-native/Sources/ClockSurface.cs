@@ -22,6 +22,7 @@ public sealed class ClockSurface : Canvas
     readonly DateTimeOffset started = DateTimeOffset.Now;
     readonly Canvas scene = new();
     readonly Canvas backdrop = new();
+    readonly Canvas patternLayer = new();
     readonly StackPanel passage = new();
     readonly TextBlock clock = new() { FontFamily = new FontFamily("Segoe UI"), FontWeight = FontWeights.Bold };
     readonly TextBlock clockHalo = new() { FontFamily = new FontFamily("Segoe UI"), FontWeight = FontWeights.Bold };
@@ -43,11 +44,11 @@ public sealed class ClockSurface : Canvas
     {
         this.data=data; this.p=p; this.display=display; this.downloads=downloads;
         ClipToBounds=true;
-        scene.Children.Add(backdrop); scene.Children.Add(effects); scene.Children.Add(clockHalo); scene.Children.Add(clock); scene.Children.Add(passage); scene.Children.Add(credit);
+        scene.Children.Add(backdrop); scene.Children.Add(patternLayer); scene.Children.Add(effects); scene.Children.Add(clockHalo); scene.Children.Add(clock); scene.Children.Add(passage); scene.Children.Add(credit);
         Children.Add(scene); Children.Add(progress);
         photo=new PhotoBackground(display);
         Loaded += (_, _) => CompositionTarget.Rendering += Frame;
-        Unloaded += (_, _) => { CompositionTarget.Rendering -= Frame; effects.Children.Clear(); photo.Dispose(); };
+        Unloaded += (_, _) => { CompositionTarget.Rendering -= Frame; effects.Children.Clear(); patternLayer.Children.Clear(); photo.Dispose(); };
         if (p.Progress.StartsWith("glass-") && (RenderCapability.Tier >> 16) >= 2 && RenderCapability.IsPixelShaderVersionSupported(3,0))
         {
             try { glass=new GlassEffect(); progress.Effect=glass; }
@@ -87,7 +88,7 @@ public sealed class ClockSurface : Canvas
         var key=$"{ActualWidth}|{ActualHeight}|{dark}|{accent}|{pattern}|{patternSize}|{photo.Revision}";
         if(key!=backgroundKey || photo.Transitioning)
         {
-            backdrop.Children.Clear(); Fill(Appearance.Brush(Appearance.Backdrop(p,dark,accent)));
+            backdrop.Children.Clear(); patternLayer.Children.Clear(); Fill(Appearance.Brush(Appearance.Backdrop(p,dark,accent)));
             if(mode=="photo")
             {
                 photo.Draw(backdrop,ActualWidth,ActualHeight);
@@ -102,13 +103,13 @@ public sealed class ClockSurface : Canvas
                     for(double y=0;y<ActualHeight;y+=p.Theme=="terminal"?4:3)
                     { var line=new Rectangle { Width=ActualWidth,Height=1,Fill=Brushes.Black,Opacity=p.Theme=="terminal"?.13:.2 }; SetTop(line,y); backdrop.Children.Add(line); }
             }
-            if(tiles.TryGetValue(pattern,out var dimensions)) Fill(Tile("Patterns/"+pattern+".png",dimensions[0]*patternSize,dimensions[1]*patternSize));
+            if(tiles.TryGetValue(pattern,out var dimensions)) patternLayer.Children.Add(new Rectangle { Width=ActualWidth,Height=ActualHeight,Fill=Tile("Patterns/"+pattern+".png",dimensions[0]*patternSize,dimensions[1]*patternSize) });
             backgroundKey=key;
         }
         effects.Width=ActualWidth; effects.Height=ActualHeight;
         var currentEffectKey=$"{ActualWidth}|{ActualHeight}|{p.Effect}|{dark}|{accent}|{mode}";
         if(effectKey!=currentEffectKey) { BuildEffects(dark,accent); effectKey=currentEffectKey; }
-        scene.Width=backdrop.Width=ActualWidth; scene.Height=backdrop.Height=ActualHeight;
+        scene.Width=backdrop.Width=patternLayer.Width=ActualWidth; scene.Height=backdrop.Height=patternLayer.Height=ActualHeight;
         var outlineActive=outlineForPhoto || outlineForPattern;
         clock.Text=minute; clock.FontSize=Math.Max(10,Math.Min(20,ActualWidth*.013)); clock.Foreground=Appearance.Brush(foreground);
         clock.Effect=null;
@@ -146,7 +147,7 @@ public sealed class ClockSurface : Canvas
         progress.Visibility=p.Progress=="none"?Visibility.Hidden:Visibility.Visible;
         if(glass!=null)
         {
-            // VisualBrush samples the same live composition, including the photo crossfade.
+            // Glass samples the base backdrop; fixed patterns and animated particles remain outside it.
             // For background glass the passage stays above the progress; clock is refracted.
             if(p.Progress=="glass-background")
             {
@@ -154,7 +155,7 @@ public sealed class ClockSurface : Canvas
                 SetZIndex(passage,2);
             }
             progress.Width=ActualWidth; progress.Height=ActualHeight; SetTop(progress,0);
-            progress.Fill=new VisualBrush(scene) { Stretch=Stretch.Fill, ViewboxUnits=BrushMappingMode.Absolute, Viewbox=new Rect(0,0,ActualWidth,ActualHeight) };
+            progress.Fill=new VisualBrush(backdrop) { Stretch=Stretch.Fill, ViewboxUnits=BrushMappingMode.Absolute, Viewbox=new Rect(0,0,ActualWidth,ActualHeight) };
             glass.Geometry=new Point4D(ActualWidth,ActualHeight,fraction,GlassEffect.Radius(fraction,ActualWidth,ActualHeight));
             glass.Tint=new Point4D(progressColor.R/255.0,progressColor.G/255.0,progressColor.B/255.0,p.Progress=="glass-foreground"?.025:.1);
         }
