@@ -179,9 +179,19 @@ public sealed class ClockSurface : Canvas
             var size=p.Effect=="snow"?1.1+effectRandom.NextDouble()*1.9:p.Effect=="dust"?.9+effectRandom.NextDouble()*2:p.Effect=="dust-v2"?.6+Math.Pow(effectRandom.NextDouble(),2)*7:p.Effect=="stars"?.55+Math.Pow(effectRandom.NextDouble(),2.5)*3.8:.7+effectRandom.NextDouble()*.8;
             Shape dot;
             if(p.Effect=="rain") dot=new Rectangle { Width=Math.Max(.6,size*.65),Height=size*12,Fill=new SolidColorBrush(Color.FromArgb(75,150,190,220)),RadiusX=.4,RadiusY=.4,RenderTransform=new RotateTransform(8) };
-            else dot=new Ellipse { Width=size*2,Height=size*2,Fill=new SolidColorBrush(color),Opacity=p.Effect=="snow"?.16:p.Effect=="stars"?.35+effectRandom.NextDouble()*.55:p.Effect=="dust"?.1+effectRandom.NextDouble()*.18:p.Effect=="dust-v2"?.06+effectRandom.NextDouble()*.2:.12+effectRandom.NextDouble()*.24 };
+            else if(p.Effect=="stars" && size>2.1)
+            {
+                var star=new GeometryGroup(); star.Children.Add(new EllipseGeometry(new Point(size,size),size,size));
+                star.Children.Add(new LineGeometry(new Point(size*.1,size),new Point(size*1.9,size)));
+                star.Children.Add(new LineGeometry(new Point(size,size*.1),new Point(size,size*1.9)));
+                dot=new System.Windows.Shapes.Path { Data=star,Fill=new SolidColorBrush(color),Stroke=new SolidColorBrush(color),StrokeThickness=Math.Max(.35,size*.16),Opacity=.48+effectRandom.NextDouble()*.48 };
+            }
+            else dot=new Ellipse { Width=size*2,Height=size*2,Fill=new SolidColorBrush(color),Opacity=p.Effect=="snow"?.26:p.Effect=="stars"?.48+effectRandom.NextDouble()*.48:p.Effect=="dust"?.18+effectRandom.NextDouble()*.2:p.Effect=="dust-v2"?.12+effectRandom.NextDouble()*.22:.12+effectRandom.NextDouble()*.24 };
             if(p.Effect=="dust-v2" || p.Effect=="stars") dot.Effect=new DropShadowEffect { Color=color,BlurRadius=p.Effect=="stars"?size*2.4:Math.Max(0,size-1.5)*1.8,ShadowDepth=0,Opacity=.65,RenderingBias=RenderingBias.Performance };
-            SetLeft(dot,effectRandom.NextDouble()*ActualWidth); SetTop(dot,effectRandom.NextDouble()*ActualHeight); effects.Children.Add(dot);
+            var orbit=p.Effect=="stars"?Math.Max(12,size*2.5):p.Effect=="dust" || p.Effect=="dust-v2"?30:0;
+            var baseX=orbit>0?Math.Clamp(effectRandom.NextDouble()*ActualWidth,orbit,Math.Max(orbit,ActualWidth-orbit)):effectRandom.NextDouble()*ActualWidth;
+            var baseY=orbit>0?Math.Clamp(effectRandom.NextDouble()*ActualHeight,orbit,Math.Max(orbit,ActualHeight-orbit)):effectRandom.NextDouble()*ActualHeight;
+            SetLeft(dot,baseX); SetTop(dot,baseY); effects.Children.Add(dot);
             if(p.Effect is "dust" or "dust-v2" or "stars")
             {
                 var range=p.Effect=="stars"?8:30;
@@ -197,8 +207,11 @@ public sealed class ClockSurface : Canvas
                 var dy=p.Effect=="snow"?ActualHeight+20:ActualHeight+20;
                 var drift=p.Effect=="snow"?effectRandom.Next(-40,41):effectRandom.Next(-20,21);
                 dot.RenderTransform=new TranslateTransform(); var move=(TranslateTransform)dot.RenderTransform;
-                var duration=TimeSpan.FromSeconds(p.Effect=="snow"?Math.Max(ActualHeight/(18+effectRandom.NextDouble()*38),8):Math.Max(ActualHeight/(260+effectRandom.NextDouble()*360),1.2));
-                move.BeginAnimation(TranslateTransform.YProperty,new DoubleAnimation(-ActualHeight,dy,new Duration(duration)){RepeatBehavior=RepeatBehavior.Forever});
+                var snowSpeed=18+effectRandom.NextDouble()*38;
+                var duration=TimeSpan.FromSeconds(p.Effect=="snow"?Math.Max((ActualHeight+size*4)/snowSpeed,8):Math.Max(ActualHeight/(260+effectRandom.NextDouble()*360),1.2));
+                var fromY=p.Effect=="snow"?-baseY-size*2:-ActualHeight;
+                var toY=p.Effect=="snow"?ActualHeight-baseY+size*2:dy;
+                move.BeginAnimation(TranslateTransform.YProperty,new DoubleAnimation(fromY,toY,new Duration(duration)){RepeatBehavior=RepeatBehavior.Forever});
                 move.BeginAnimation(TranslateTransform.XProperty,new DoubleAnimation(drift,-drift,new Duration(duration)){RepeatBehavior=RepeatBehavior.Forever});
             }
         }
