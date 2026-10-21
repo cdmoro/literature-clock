@@ -207,7 +207,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     private func updateAnimationTimeInterval() {
         let effect = preferences.string(forKey: "background-effect") ?? "none"
         let needsLowerRate = ["snow", "dust", "dust-v2", "stars"].contains(effect)
-            && NativeAppearance.supportsPattern(theme: themeName) && backgroundName != "photo"
+            && NativeAppearance.supportsPattern(theme: themeName)
         animationTimeInterval = needsLowerRate ? 1.0 / 30.0 : 1.0 / 60.0
     }
     private func setup() {
@@ -232,11 +232,11 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     override func animateOneFrame() { needsDisplay = true }
     private func drawAnimatedEffect(name: String, dark: Bool, accent: NSColor) {
         guard ["rain", "snow", "dust", "dust-v2", "stars"].contains(name),
-              NativeAppearance.supportsPattern(theme: themeName), backgroundName != "photo" else { return }
+              NativeAppearance.supportsPattern(theme: themeName) else { return }
         let width = bounds.width, height = bounds.height
         guard width > 0, height > 0 else { return }
         let elapsed = Date().timeIntervalSince(effectStarted)
-        let density = name == "rain" ? 8500.0 : name == "snow" ? 3500.0 : name == "dust" ? 6000.0 : 4500.0
+        let density = name == "rain" ? 6800.0 : name == "snow" ? 3500.0 : name == "dust" ? 6000.0 : 4500.0
         let count = min(360, max(24, Int(width * height / density)))
         let particleColor = (name == "snow" || name == "stars") ? NativeAppearance.foreground(theme: themeName, dark: dark, accent: accent) : NSColor(calibratedRed: 1, green: 0.827, blue: 0.569, alpha: 1)
         for index in 0..<count {

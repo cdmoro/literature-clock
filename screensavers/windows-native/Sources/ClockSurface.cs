@@ -171,8 +171,8 @@ public sealed class ClockSurface : Canvas
     void BuildEffects(bool dark,Color accent)
     {
         effects.Children.Clear();
-        if(p.Theme is "book" or "photo" || p.Effect=="none" || Appearance.Background(p)=="photo") return;
-        var density=p.Effect=="rain"?8500.0:p.Effect=="snow"?3500.0:p.Effect=="dust"?6000.0:4500.0;
+        if(p.Theme is "book" or "photo" || p.Effect=="none") return;
+        var density=p.Effect=="rain"?6800.0:p.Effect=="snow"?3500.0:p.Effect=="dust"?6000.0:4500.0;
         var count=Math.Min(360,Math.Max(24,(int)(ActualWidth*ActualHeight/density)));
         var color=p.Effect is "snow" or "stars"?Appearance.Foreground(p.Theme,dark,accent):Appearance.Color("#ffd391");
         for(var i=0;i<count;i++)
