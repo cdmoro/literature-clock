@@ -237,7 +237,14 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let particleColor = (name == "snow" || name == "stars") ? NativeAppearance.foreground(theme: themeName, dark: dark, accent: accent) : NSColor(calibratedRed: 1, green: 0.827, blue: 0.569, alpha: 1)
         for index in 0..<count {
             var seed = UInt64(index + 1) &* 0x9e3779b97f4a7c15
-            func random(_ limit: Double) -> Double { seed = seed &* 6364136223846793005 &+ 1442695040888963407; return Double(seed >> 33) / 2147483647 * limit }
+            func random(_ limit: Double) -> Double {
+                seed = seed &+ 0x9e3779b97f4a7c15
+                var value = seed
+                value = (value ^ (value >> 30)) &* 0xbf58476d1ce4e5b9
+                value = (value ^ (value >> 27)) &* 0x94d049bb133111eb
+                value ^= value >> 31
+                return Double(value >> 11) / 9007199254740992.0 * limit
+            }
             let x0 = random(width), y0 = random(height), phase = random(Double.pi * 2)
             let size = name == "snow" ? 1.1 + random(1.9) : name == "dust" ? 0.9 + random(2) : name == "dust-v2" ? 0.6 + pow(random(1), 2) * 7 : name == "stars" ? 0.55 + pow(random(1), 2.5) * 3.8 : 0.7 + random(0.8)
             let speed = name == "snow" ? 18 + random(38) : name == "dust" ? random(22) - 11 : name == "dust-v2" ? random(28) - 14 : name == "stars" ? 0.03 + random(0.12) : 260 + random(360)
