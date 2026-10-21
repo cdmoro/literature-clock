@@ -232,19 +232,21 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let width = bounds.width, height = bounds.height
         guard width > 0, height > 0 else { return }
         let elapsed = Date().timeIntervalSince(effectStarted)
-        let count = min(260, max(24, Int(width * height / (name == "stars" ? 8000 : name == "dust-v2" ? 6500 : name == "dust" ? 9000 : 8500))))
+        let density = name == "rain" ? 8500.0 : name == "snow" ? 3500.0 : name == "dust" ? 6000.0 : 4500.0
+        let count = min(360, max(24, Int(width * height / density)))
         let particleColor = (name == "snow" || name == "stars") ? NativeAppearance.foreground(theme: themeName, dark: dark, accent: accent) : NSColor(calibratedRed: 1, green: 0.827, blue: 0.569, alpha: 1)
         for index in 0..<count {
             var seed = UInt64(index + 1) &* 0x9e3779b97f4a7c15
-            func random(_ limit: Double) -> Double { seed = seed &* 6364136223846793005 &+ 1442695040888963407; return Double(seed >> 33) / Double(UInt32.max) * limit }
+            func random(_ limit: Double) -> Double { seed = seed &* 6364136223846793005 &+ 1442695040888963407; return Double(seed >> 33) / 2147483647 * limit }
             let x0 = random(width), y0 = random(height), phase = random(Double.pi * 2)
             let size = name == "snow" ? 1.1 + random(1.9) : name == "dust" ? 0.9 + random(2) : name == "dust-v2" ? 0.6 + pow(random(1), 2) * 7 : name == "stars" ? 0.55 + pow(random(1), 2.5) * 3.8 : 0.7 + random(0.8)
             let speed = name == "snow" ? 18 + random(38) : name == "dust" ? random(22) - 11 : name == "dust-v2" ? random(28) - 14 : name == "stars" ? 0.03 + random(0.12) : 260 + random(360)
             let drift = name == "snow" ? random(36) - 18 : name == "dust" ? random(70) - 35 : name == "dust-v2" ? random(40) - 20 : name == "stars" ? random(0.2) - 0.1 : speed * 0.12
-            let opacity = name == "snow" ? 0.16 : name == "stars" ? 0.35 + random(0.55) : name == "dust" ? 0.1 + random(0.18) : name == "dust-v2" ? 0.06 + random(0.2) : 0.12 + random(0.24)
-            let x = (x0 + drift * elapsed + (name == "dust" ? sin(elapsed * 0.77 + phase) * 12 : name == "dust-v2" ? sin(elapsed * 0.59 + phase) * 20 : name == "stars" ? sin(elapsed * 0.59 + phase) * 0.25 : 0)).truncatingRemainder(dividingBy: width)
-            var y = (y0 + speed * elapsed + (name == "dust-v2" ? sin(elapsed * 0.91 + phase) * 7 : name == "stars" ? sin(elapsed * 0.48 + phase) * 0.18 : 0)).truncatingRemainder(dividingBy: height)
-            if y < 0 { y += height }
+            let opacity = name == "snow" ? 0.28 : name == "stars" ? 0.48 + random(0.48) : name == "dust" ? 0.18 + random(0.2) : name == "dust-v2" ? 0.12 + random(0.22) : 0.12 + random(0.24)
+            let rawX = x0 + drift * elapsed + (name == "dust" ? sin(elapsed * 0.77 + phase) * 12 : name == "dust-v2" ? sin(elapsed * 0.59 + phase) * 20 : name == "stars" ? sin(elapsed * 0.59 + phase) * 0.25 : 0)
+            let x = (rawX.truncatingRemainder(dividingBy: width) + width).truncatingRemainder(dividingBy: width)
+            let rawY = y0 + speed * elapsed + (name == "dust-v2" ? sin(elapsed * 0.91 + phase) * 7 : name == "stars" ? sin(elapsed * 0.48 + phase) * 0.18 : 0)
+            let y = (rawY.truncatingRemainder(dividingBy: height) + height).truncatingRemainder(dividingBy: height)
             if name == "rain" {
                 particleColor.withAlphaComponent(opacity).setStroke()
                 let streak = NSBezierPath(); streak.move(to: CGPoint(x: x, y: height - y)); streak.line(to: CGPoint(x: x - size * 2, y: height - y + size * 12)); streak.lineWidth = max(0.5, size * 0.65); streak.lineCapStyle = .round; streak.stroke()
@@ -253,6 +255,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 particleColor.withAlphaComponent(twinkle).setFill()
                 let dot = NSBezierPath(ovalIn: CGRect(x: x, y: height - y, width: size * 2, height: size * 2)); dot.fill()
                 if name == "dust-v2" || name == "stars" { NSGraphicsContext.saveGraphicsState(); let shadow = NSShadow(); shadow.shadowBlurRadius = name == "stars" ? size * 2.4 : max(0, size - 1.5) * 1.8; shadow.shadowColor = particleColor.withAlphaComponent(0.55); shadow.set(); dot.fill(); NSGraphicsContext.restoreGraphicsState() }
+                if name == "stars" && size > 2.1 {
+                    particleColor.withAlphaComponent(twinkle * 0.65).setStroke()
+                    let glint = NSBezierPath(); glint.move(to: CGPoint(x: x + size * 0.1, y: height - y + size)); glint.line(to: CGPoint(x: x + size * 1.9, y: height - y + size)); glint.move(to: CGPoint(x: x + size, y: height - y + size * 0.1)); glint.line(to: CGPoint(x: x + size, y: height - y + size * 1.9)); glint.lineWidth = max(0.35, size * 0.16); glint.stroke()
+                }
             }
         }
     }
@@ -780,7 +786,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             if key == "background-pattern" { menu.target = self; menu.action = #selector(patternChanged) }
             let title = NSTextField(labelWithString: text(label))
             title.widthAnchor.constraint(equalToConstant: 180).isActive = true
-            menu.widthAnchor.constraint(equalToConstant: key.hasPrefix("photo-") ? 180 : 260).isActive = true
+            menu.widthAnchor.constraint(equalToConstant: key.hasPrefix("photo-") || key == "background-pattern" ? 180 : key == "pattern-size" ? 100 : 260).isActive = true
             if key == "photo-category" { menu.setAccessibilityLabel(text("settings_photo_category")) }
             if key == "palette" {
                 let row = NSStackView(); row.spacing = 8
@@ -813,6 +819,9 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 colorSwatchesRow = fixedRow
                 stack.addArrangedSubview(fixedRow)
             } else if key == "photo-category", let row = controls["photo-provider"]?.superview as? NSStackView {
+                row.addArrangedSubview(menu)
+            } else if key == "pattern-size", let row = controls["background-pattern"]?.superview as? NSStackView {
+                menu.setAccessibilityLabel(text("settings_pattern_size"))
                 row.addArrangedSubview(menu)
             } else { stack.addArrangedSubview(NSStackView(views: [title, menu])) }
             if key == "palette" {

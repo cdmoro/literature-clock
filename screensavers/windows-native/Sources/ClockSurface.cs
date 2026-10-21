@@ -171,7 +171,8 @@ public sealed class ClockSurface : Canvas
     {
         effects.Children.Clear();
         if(p.Theme is "book" or "photo" || p.Effect=="none" || Appearance.Background(p)=="photo") return;
-        var count=Math.Min(260,Math.Max(24,(int)(ActualWidth*ActualHeight/(p.Effect=="stars"?8000:p.Effect=="dust-v2"?6500:p.Effect=="dust"?9000:8500))));
+        var density=p.Effect=="rain"?8500.0:p.Effect=="snow"?3500.0:p.Effect=="dust"?6000.0:4500.0;
+        var count=Math.Min(360,Math.Max(24,(int)(ActualWidth*ActualHeight/density)));
         var color=p.Effect is "snow" or "stars"?Appearance.Foreground(p.Theme,dark,accent):Appearance.Color("#ffd391");
         for(var i=0;i<count;i++)
         {
@@ -183,9 +184,10 @@ public sealed class ClockSurface : Canvas
             SetLeft(dot,effectRandom.NextDouble()*ActualWidth); SetTop(dot,effectRandom.NextDouble()*ActualHeight); effects.Children.Add(dot);
             if(p.Effect is "dust" or "dust-v2" or "stars")
             {
-                var dx=effectRandom.Next(-30,31); var dy=effectRandom.Next(-30,31);
+                var range=p.Effect=="stars"?8:30;
+                var dx=effectRandom.Next(-range,range+1); var dy=effectRandom.Next(-range,range+1);
                 var move=new TranslateTransform(); dot.RenderTransform=move;
-                var duration=TimeSpan.FromSeconds(4+effectRandom.NextDouble()*8);
+                var duration=TimeSpan.FromSeconds(p.Effect=="stars"?12+effectRandom.NextDouble()*16:4+effectRandom.NextDouble()*8);
                 move.BeginAnimation(TranslateTransform.XProperty,new DoubleAnimation(-dx,dx,new Duration(duration)){AutoReverse=true,RepeatBehavior=RepeatBehavior.Forever});
                 move.BeginAnimation(TranslateTransform.YProperty,new DoubleAnimation(-dy,dy,new Duration(duration)){AutoReverse=true,RepeatBehavior=RepeatBehavior.Forever});
                 if(p.Effect=="stars") dot.BeginAnimation(UIElement.OpacityProperty,new DoubleAnimation(.25,.95,new Duration(TimeSpan.FromSeconds(2+effectRandom.NextDouble()*4))){AutoReverse=true,RepeatBehavior=RepeatBehavior.Forever});
