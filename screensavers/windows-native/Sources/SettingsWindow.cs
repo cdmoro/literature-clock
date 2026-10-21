@@ -61,7 +61,7 @@ public sealed class SettingsWindow : Window
             menus["background"].IsEnabled=theme is not "photo" and not "book";
             menus["provider"].Visibility=background=="photo"?Visibility.Visible:Visibility.Collapsed;
             menus["category"].Visibility=background=="photo" && Value("provider")!="picsum"?Visibility.Visible:Visibility.Collapsed;
-            var supportsPattern=theme is not "photo" and not "book";
+            var supportsPattern=theme is not "book";
             ((StackPanel)menus["pattern"].Parent).Visibility=supportsPattern?Visibility.Visible:Visibility.Collapsed;
             menus["patternSize"].IsEnabled=supportsPattern && Value("pattern") is not "none" and not "random";
             ((StackPanel)menus["patternSize"].Parent).Visibility=supportsPattern && Value("pattern") is not "none" and not "random"?Visibility.Visible:Visibility.Collapsed;

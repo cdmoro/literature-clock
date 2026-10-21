@@ -51,6 +51,9 @@ describe('independent backgrounds', () => {
     store.set('background', 'plain');
     expect(pattern.disabled).toBe(false);
     expect(document.documentElement.dataset.backgroundPattern).toBe('dots');
+    store.set('theme', 'photo-dark');
+    expect(pattern.disabled).toBe(false);
+    expect(document.documentElement.dataset.backgroundPattern).toBe('dots');
     store.set('background-pattern', 'none');
     expect(document.documentElement.dataset.backgroundPattern).toBe('none');
     store.set('background-pattern', 'dots');

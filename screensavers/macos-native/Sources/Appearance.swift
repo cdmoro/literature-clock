@@ -27,7 +27,7 @@ enum NativeAppearance {
         guard supportsBackground(theme: theme), let selected, backgrounds.contains(selected) else { return "default" }
         return selected
     }
-    static func supportsPattern(theme: String) -> Bool { !["book", "horizon", "photo"].contains(theme) }
+    static func supportsPattern(theme: String) -> Bool { !["book", "horizon"].contains(theme) }
     static func background(theme: String, dark: Bool, accent: NSColor, selected: String) -> NSColor {
         switch resolvedBackground(theme: theme, selected: selected) {
         case "plain": return color(dark ? "#000000" : "#ffffff")!
