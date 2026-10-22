@@ -590,6 +590,10 @@ body.share-quote #clock {
   left: auto;
 }
 
+#photo-credit:hover {
+  text-decoration: underline;
+}
+
 #reading-status {
   position: fixed;
   top: 1rem;
