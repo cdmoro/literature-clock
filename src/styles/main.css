@@ -355,7 +355,7 @@ footer {
   gap: 5px;
   text-align: center;
   opacity: 1;
-  padding: .5rem;
+  padding: .3rem .3rem .4rem;
   border-radius: .25rem;
   z-index: 1;
 }
