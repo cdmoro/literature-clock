@@ -221,7 +221,7 @@ export async function updateQuote({
         
 
 
-        fitQuote();
+
 
         if (store.get('palette') === 'random') {
           setTheme({
