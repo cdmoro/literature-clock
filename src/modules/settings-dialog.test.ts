@@ -63,6 +63,7 @@ test('keeps quick actions outside and moves every settings control without repla
     'work',
     'show-time',
     'hide-book-title',
+    'fuzzy-clock',
     'progressbar',
     'settings-color-picker',
   ]) {
@@ -143,6 +144,26 @@ test('hide book title persists, restores, and allows URL overrides', () => {
   createStore();
   expect(store.get('hide-book-title')).toBe(false);
   expect(document.body.classList.contains('hide-book-title')).toBe(false);
+});
+
+test('fuzzy clock switch synchronizes with store, url and storage', () => {
+  document.body.innerHTML = page;
+  createStore();
+  initSettingsDialog();
+  const button = document.getElementById('fuzzy-clock')!;
+  expect(button.getAttribute('aria-checked')).toBe('false');
+  button.click();
+  expect(button.getAttribute('aria-checked')).toBe('true');
+  expect(document.body.classList.contains('fuzzy-clock')).toBe(true);
+  expect(JSON.parse(localStorage.getItem('settings')!)['fuzzy-clock']).toBe(true);
+  expect(new URLSearchParams(location.search).get('fuzzy-clock')).toBe('true');
+  history.replaceState({}, '', '/');
+  createStore();
+  expect(store.get('fuzzy-clock')).toBe(true);
+  history.replaceState({}, '', '/?fuzzy-clock=false');
+  createStore();
+  expect(store.get('fuzzy-clock')).toBe(false);
+  expect(document.body.classList.contains('fuzzy-clock')).toBe(false);
 });
 
 test('tabs show one panel and support keyboard navigation with roving focus', () => {

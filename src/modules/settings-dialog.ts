@@ -151,6 +151,14 @@ export function initSettingsDialog() {
   toolbar.append(hideTitle);
   hideTitle.addEventListener('click', () => store.toggle('hide-book-title'));
   move('hide-book-title', 'behavior', 'settings_hide_book_title');
+
+  const fuzzyClock = document.createElement('button');
+  fuzzyClock.id = 'fuzzy-clock';
+  fuzzyClock.type = 'button';
+  fuzzyClock.innerHTML = readingIcon('fuzzy-clock');
+  toolbar.append(fuzzyClock);
+  fuzzyClock.addEventListener('click', () => store.toggle('fuzzy-clock'));
+  move('fuzzy-clock', 'behavior', 'settings_fuzzy_clock');
   move('work', 'behavior', 'settings_work_help');
 
   move('show-time', 'behavior', 'time_mode');
@@ -166,7 +174,7 @@ export function initSettingsDialog() {
     move('progressbar', 'behavior', 'progressbar_mode', true);
   }
 
-  for (const key of ['work', 'show-time', 'hide-book-title'] as const) {
+  for (const key of ['work', 'show-time', 'hide-book-title', 'fuzzy-clock'] as const) {
     const button = document.getElementById(key);
     if (!button) continue;
     button.classList.add('settings-switch');

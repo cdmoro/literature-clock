@@ -169,6 +169,11 @@ export async function updateQuote({
         const p = document.createElement('p');
         if (testQuote) {
           p.textContent = testQuote;
+        } else if (store.get('fuzzy-clock') === true) {
+          const timeSpan = document.createElement('span');
+          timeSpan.className = timeClass;
+          timeSpan.append(quoteMarkup(quote.quote_time_case));
+          p.append(timeSpan);
         } else {
           p.append(quoteMarkup(quote.quote_first));
           const timeSpan = document.createElement('span');

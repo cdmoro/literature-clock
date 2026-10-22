@@ -83,6 +83,8 @@
   content: none;
 }
 #quote #quote-translation .time {
+  color: var(--accent-color);
+  -webkit-text-fill-color: var(--accent-color);
   text-shadow: none;
 }
 #quote #quote-translation .translation-content {

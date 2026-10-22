@@ -17,6 +17,7 @@ export function getQuoteUrl(quote: ResolvedQuote): string | undefined {
   const effect = store.get('background-effect');
   if (effect && effect !== 'none') url.searchParams.set('background-effect', effect);
   if (store.get('hide-book-title')) url.searchParams.set('hide-book-title', 'true');
+  if (store.get('fuzzy-clock')) url.searchParams.set('fuzzy-clock', 'true');
   const color = new URLSearchParams(window.location.search).get('color');
   if (color) url.searchParams.set('color', color);
   return url.toString();

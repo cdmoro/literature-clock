@@ -1,5 +1,6 @@
 import { initSpeech } from './speech';
 import { initHideBookTitle } from './hide-book-title';
+import { initFuzzyClock } from './fuzzy-clock';
 import { initBilingual } from './bilingual';
 import { initAboutClock } from './about-clock';
 import { initSettingsDialog } from './settings-dialog';
@@ -26,6 +27,7 @@ const MODULES = [
   initSettingsDialog,
   initBackgroundEffects,
   initHideBookTitle,
+  initFuzzyClock,
   initBilingual,
   initStaticMode,
   initReadingControls,

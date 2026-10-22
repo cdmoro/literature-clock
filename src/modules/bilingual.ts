@@ -113,12 +113,20 @@ export async function renderTranslation() {
     if (request !== translationRequest) return;
     setTextLocale(content, locale);
     applyLocaleThemeFont(content);
+    const isFuzzy = store.get('fuzzy-clock') === true;
     const passage = document.createElement('p');
-    passage.append(quoteMarkup(translation.quote_first));
-    const translatedTime = document.createElement('span');
-    translatedTime.className = 'time';
-    translatedTime.append(quoteMarkup(translation.quote_time_case));
-    passage.append(translatedTime, quoteMarkup(translation.quote_last));
+    if (isFuzzy) {
+      const translatedTime = document.createElement('span');
+      translatedTime.className = 'time';
+      translatedTime.append(quoteMarkup(translation.quote_time_case));
+      passage.append(translatedTime);
+    } else {
+      passage.append(quoteMarkup(translation.quote_first));
+      const translatedTime = document.createElement('span');
+      translatedTime.className = 'time';
+      translatedTime.append(quoteMarkup(translation.quote_time_case));
+      passage.append(translatedTime, quoteMarkup(translation.quote_last));
+    }
     if (store.get('bilingual-ruby') && supportsLineBreakableRuby()) {
       renderedAsRuby = applyRubyTranslation(passage, locale);
     } else {
@@ -136,7 +144,7 @@ export async function renderTranslation() {
     const author = document.createElement('bdi');
     author.textContent = translation.author;
     attribution.append('— ', title, separator, author);
-    content.replaceChildren(...(renderedAsRuby ? [] : [passage, attribution]));
+    content.replaceChildren(...(renderedAsRuby ? [] : isFuzzy ? [passage] : [passage, attribution]));
   } catch {
     if (request !== translationRequest) return;
     clearRubyTranslation();

@@ -355,8 +355,8 @@ footer {
   gap: 5px;
   text-align: center;
   opacity: 1;
-  padding: .5rem;
-  border-radius: .25rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
   z-index: 1;
 }
 
@@ -556,20 +556,22 @@ body.share-quote #clock {
   z-index: 10;
 }
 #reading-status {
-	position: fixed;
-	top: 1rem;
-	left: 50%;
-	transform: translate(-50%);
-	width: max-content;
-	max-width: 95vw;
-	z-index: 5;
-	font: .75rem/1.5 system-ui,sans-serif;
-	color: var(--font-color);
-	background: var(--background);
-	border-radius: .4rem;
-	padding: .2rem .2rem .2rem .6rem;
-	border: solid 2px color-mix(in srgb,var(--accent-color),transparent 10%);
-  transition: top .5s ease;
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translate(-50%);
+  width: max-content;
+  max-width: 95vw;
+  z-index: 5;
+  font:
+    0.75rem/1.5 system-ui,
+    sans-serif;
+  color: var(--font-color);
+  background: var(--background);
+  border-radius: 0.4rem;
+  padding: 0.2rem 0.2rem 0.2rem 0.6rem;
+  border: solid 2px color-mix(in srgb, var(--accent-color), transparent 10%);
+  transition: top 0.5s ease;
 }
 body.show-time #reading-status {
   top: 3rem;
@@ -583,21 +585,22 @@ body.paused #quote-notice {
 }
 
 #quote-translation {
-  margin-top: 1.2em;
-  padding-top: 0.65em;
+  margin: 0.8em 0; /* balanced vertical spacing */
+  padding: 0; /* remove extra padding */
   border-top: 1px solid color-mix(in srgb, var(--font-color), transparent 75%);
   font-size: clamp(14px, 1.8vw, 24px);
   line-height: 1.4;
 }
 #quote-translation .translation-content {
-  margin-top: 0.7em;
+  margin-top: 0.5em; /* tighter spacing */
   max-height: 25vh;
   overflow-y: auto;
 }
 #quote-translation p {
-  margin: 0 0 0.5em;
+  margin: 0; /* no extra bottom margin */
   font-size: inherit;
   max-height: none;
+  text-wrap: balance; /* ensure balanced line breaks */
 }
 #quote-translation cite {
   font-size: 0.75em;
@@ -611,6 +614,48 @@ body.hide-book-title #quote #title,
 body.hide-book-title #quote #comma,
 body.hide-book-title #quote .translation-book-title {
   display: none;
+}
+
+body.fuzzy-clock #quote,
+body.fuzzy-clock #quote p,
+body.fuzzy-clock #quote #quote-translation,
+body.fuzzy-clock #quote #quote-translation p,
+body.fuzzy-clock #quote .bilingual-ruby-text,
+body.fuzzy-clock #quote .bilingual-ruby-text > rt {
+  text-align: center;
+  text-wrap: balance;
+  ruby-align: center;
+}
+
+body.fuzzy-clock #quote p {
+  margin: 0;
+  max-height: 80vh;
+}
+
+body.fuzzy-clock #quote:has(#quote-translation) > p {
+  max-height: 40vh;
+  margin-bottom: 0.5rem;
+}
+
+body.fuzzy-clock #quote #quote-translation {
+  margin: 0.5rem 0; /* symmetric vertical spacing */
+  opacity: 0.85;
+}
+
+body.fuzzy-clock #quote #quote-translation p {
+  max-height: 40vh;
+  margin: 0;
+  text-wrap: balance; /* balanced line breaks */
+}
+
+body.fuzzy-clock #quote cite,
+body.fuzzy-clock #quote #quote-translation cite,
+body.fuzzy-clock blockquote:before,
+body.fuzzy-clock blockquote:after,
+body.fuzzy-clock blockquote[aria-label]:before,
+body.fuzzy-clock blockquote[aria-label]:after {
+  display: none !important;
+  content: none !important;
 }
 
 /* Isolate mixed scripts without reversing numbers or passage text. */

@@ -21,6 +21,7 @@ interface Stateful {
   transition: TransitionMode;
   'show-time': boolean;
   'hide-book-title': boolean;
+  'fuzzy-clock': boolean;
   'auto-read': boolean;
   'read-attribution': boolean;
   font: string;
@@ -40,6 +41,7 @@ interface Stateful {
 
 export interface Stateless {
   fade?: boolean; // Legacy shared links and saved settings.
+  fuzzy?: boolean;
   'custom-font'?: string;
   time?: string;
   'quote-id'?: string;
@@ -85,6 +87,8 @@ const BOOLEAN_KEYS = new Set([
   'screensaver',
   'show-time',
   'hide-book-title',
+  'fuzzy-clock',
+  'fuzzy',
   'auto-read',
   'read-attribution',
   'random-locale',
@@ -152,7 +156,15 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
         if (isBackgroundPattern(raw)) result[key] = raw;
         break;
       case 'background-effect':
-        if (raw === 'none' || raw === 'rain' || raw === 'snow' || raw === 'dust' || raw === 'dust-v2' || raw === 'stars') result[key] = raw;
+        if (
+          raw === 'none' ||
+          raw === 'rain' ||
+          raw === 'snow' ||
+          raw === 'dust' ||
+          raw === 'dust-v2' ||
+          raw === 'stars'
+        )
+          result[key] = raw;
         break;
       case 'pattern-size':
         if (['0.5', '1', '1.5', '2', '3'].includes(raw)) result[key] = raw;
@@ -198,6 +210,10 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
       result.color = colors[theme];
       delete result['custom-color'];
     }
+  }
+  if (result.fuzzy !== undefined) {
+    result['fuzzy-clock'] ??= result.fuzzy;
+    delete result.fuzzy;
   }
   return result as Partial<State>;
 }
@@ -252,6 +268,7 @@ export class Store {
         ? resolveTransition(stateFromUrl.transition, stateFromUrl.fade)
         : resolveTransition(saved.transition, saved.fade);
     delete this.state.fade;
+    delete this.state.fuzzy;
     if (urlParams.has('fade')) {
       this.syncToUrl('fade', false);
       this.syncToUrl('transition', this.state.transition);
@@ -398,6 +415,7 @@ export function createStore() {
     transition: 'fade',
     'show-time': true,
     'hide-book-title': false,
+    'fuzzy-clock': false,
     'auto-read': false,
     'read-attribution': false,
     font: 'default',
