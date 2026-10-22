@@ -219,26 +219,9 @@ export async function updateQuote({
 
           fitQuote();
         
-        for (const [id, text] of [
-          ['hyphen', '— '],
-          ['title', quote.title],
-          ['comma', ', '],
-          ['author', quote.author],
-        ]) {
-          const span = document.createElement('span');
-          span.id = id;
-          if (id === 'title' || id === 'author') span.dir = 'auto';
-          span.textContent = text;
-          cite.append(span);
-        }
 
-        blockquote.appendChild(p);
-        blockquote.appendChild(cite);
-        renderTranslation();
-        blockquote.setAttribute('aria-label', time);
-        updateQuoteDescription();
 
-        fitQuote();
+
 
         if (store.get('palette') === 'random') {
           setTheme({
