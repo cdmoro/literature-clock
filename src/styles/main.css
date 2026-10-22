@@ -292,15 +292,15 @@ button:disabled {
 }
 
 #exit-zen {
-  background: transparent;
-  border-color: transparent;
-  color: var(--accent-color);
-  display: none;
-  font-size: 2rem;
-  line-height: 0.5;
-  max-height: none;
-  opacity: 0.4;
-  padding: 0.4rem;
+	border-color: transparent;
+	display: none;
+	max-height: none;
+	opacity: .4;
+	padding: .2rem;
+	background-color: var(--accent-color);
+	border-radius: 50%;
+	margin-bottom: .5rem;
+	transition: opacity .5s;
 }
 
 #exit-zen:hover {
@@ -361,7 +361,7 @@ footer {
 }
 
 [data-background='photo'] #menu,
-[data-background-pattern] #menu {
+html:not([data-background-pattern='none']) #menu {
   background: color-mix(in srgb, var(--background) 85%, transparent);
 }
 
@@ -510,6 +510,17 @@ html[data-progressbar='none'] #progress-bar {
   }
 }
 
+@media only screen and (max-width: 550px) {
+  footer {
+    padding: 0;
+  }
+
+  footer #menu {
+    border-radius: 0;
+    padding: 1rem;
+  }
+}
+
 @media only screen and (max-width: 450px) {
   #clock {
     max-width: initial;
@@ -555,6 +566,32 @@ body.share-quote #clock {
     sans-serif;
   z-index: 10;
 }
+
+#quote-credit,
+#photo-credit {
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  max-width: min(70vw, 500px);
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: transparent;
+  text-shadow:
+    0 1px 3px #000c,
+    0 0 8px #0008;
+  color: #fff;
+  font:
+    11px/1.4 system-ui,
+    sans-serif;
+  text-decoration: none;
+  z-index: 1;
+}
+
+#photo-credit {
+  right: 12px;
+  left: auto;
+}
+
 #reading-status {
   position: fixed;
   top: 1rem;
@@ -590,6 +627,9 @@ body.paused #quote-notice {
   border-top: 1px solid color-mix(in srgb, var(--font-color), transparent 75%);
   font-size: clamp(14px, 1.8vw, 24px);
   line-height: 1.4;
+}
+body.fuzzy-clock #quote-translation {
+  border-top: none;
 }
 #quote-translation .translation-content {
   margin-top: 0.5em; /* tighter spacing */
