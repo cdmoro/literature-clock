@@ -81,6 +81,10 @@ export function doFitQuote() {
   const quote = document.querySelector<HTMLElement>('blockquote p');
   const cite = document.querySelector<HTMLElement>('blockquote cite');
   let fontSize: number = INITIAL_THEME_FONT_SIZE[theme as keyof typeof INITIAL_THEME_FONT_SIZE] || 75;
+  if (store.get('fuzzy-clock') === true) {
+    const hasTranslation = !!document.querySelector('#quote #quote-translation');
+    fontSize = Math.round(fontSize * (hasTranslation ? 1.25 : 1.5));
+  }
   const citeFactor: number = CITE_FACTOR[theme as keyof typeof CITE_FACTOR] || 0.7;
 
   if (quote) {
@@ -92,18 +96,23 @@ export function doFitQuote() {
     container?.classList.remove('quote-scroll');
     if (quote.style.maxHeight === 'none') quote.style.removeProperty('max-height');
     const updateTranslationSize = () => {
-      if (translation) translation.style.fontSize = `${Math.min(24, Math.max(14, fontSize * 0.55))}px`;
+      if (translation) {
+        if (store.get('fuzzy-clock') === true) {
+          translation.style.fontSize = `${Math.round(fontSize * 0.65)}px`;
+        } else {
+          translation.style.fontSize = `${Math.min(24, Math.max(14, fontSize * 0.55))}px`;
+        }
+      }
     };
     updateTranslationSize();
     const containerStyle = bilingual ? getComputedStyle(container!) : undefined;
     const containerMaxHeight = parseFloat(containerStyle?.maxHeight || '');
-    const containerPadding = (parseFloat(containerStyle?.paddingTop || '') || 0) +
-      (parseFloat(containerStyle?.paddingBottom || '') || 0);
+    const containerPadding =
+      (parseFloat(containerStyle?.paddingTop || '') || 0) + (parseFloat(containerStyle?.paddingBottom || '') || 0);
     const containerBudget = Number.isFinite(containerMaxHeight)
       ? containerMaxHeight + (containerStyle?.boxSizing === 'border-box' ? 0 : containerPadding)
       : container?.clientHeight || 0;
-    const containerOverflows = () =>
-      bilingual && containerBudget > 0 && container!.scrollHeight > containerBudget + 1;
+    const containerOverflows = () => bilingual && containerBudget > 0 && container!.scrollHeight > containerBudget + 1;
 
     const passageStyle = getComputedStyle(quote);
     const maxHeight = parseFloat(passageStyle.maxHeight);

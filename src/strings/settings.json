@@ -138,7 +138,8 @@
     "settings_background_default": "Default theme",
     "settings_background_tinted": "Tinted",
     "settings_background_photo": "Photo",
-    "settings_background_plain": "Plain"
+    "settings_background_plain": "Plain",
+    "settings_fuzzy_clock": "Fuzzy clock"
   },
   "en-US": {
     "settings_title": "Settings",
@@ -279,7 +280,8 @@
     "settings_background_default": "Default theme",
     "settings_background_tinted": "Tinted",
     "settings_background_photo": "Photo",
-    "settings_background_plain": "Plain"
+    "settings_background_plain": "Plain",
+    "settings_fuzzy_clock": "Fuzzy clock"
   },
   "es-ES": {
     "settings_title": "Configuración",
@@ -420,7 +422,8 @@
     "settings_background_default": "Predeterminado del tema",
     "settings_background_tinted": "Teñido",
     "settings_background_photo": "Foto",
-    "settings_background_plain": "Liso"
+    "settings_background_plain": "Liso",
+    "settings_fuzzy_clock": "Reloj difuso (solo hora)"
   },
   "pt-PT": {
     "settings_title": "Configurações",
@@ -561,7 +564,8 @@
     "settings_background_default": "Predefinição do tema",
     "settings_background_tinted": "Tingido",
     "settings_background_photo": "Fotografia",
-    "settings_background_plain": "Liso"
+    "settings_background_plain": "Liso",
+    "settings_fuzzy_clock": "Relógio difuso (apenas hora)"
   },
   "fr-FR": {
     "settings_title": "Paramètres",
@@ -702,7 +706,8 @@
     "settings_background_default": "Par défaut du thème",
     "settings_background_tinted": "Teinté",
     "settings_background_photo": "Photo",
-    "settings_background_plain": "Uni"
+    "settings_background_plain": "Uni",
+    "settings_fuzzy_clock": "Horloge floue (heure uniquement)"
   },
   "it-IT": {
     "settings_title": "Impostazioni",
@@ -843,7 +848,8 @@
     "settings_background_default": "Predefinito del tema",
     "settings_background_tinted": "Colorato",
     "settings_background_photo": "Foto",
-    "settings_background_plain": "Uniforme"
+    "settings_background_plain": "Uniforme",
+    "settings_fuzzy_clock": "Orologio sfocato (solo ora)"
   },
   "de-DE": {
     "settings_title": "Einstellungen",
@@ -984,7 +990,8 @@
     "settings_background_default": "Theme-Standard",
     "settings_background_tinted": "Getönt",
     "settings_background_photo": "Foto",
-    "settings_background_plain": "Einfarbig"
+    "settings_background_plain": "Einfarbig",
+    "settings_fuzzy_clock": "Fuzzy Clock (nur Uhrzeit)"
   },
   "el-GR": {
     "settings_title": "Ρυθμίσεις",
@@ -1125,7 +1132,8 @@
     "settings_effect_snow": "Χιόνι",
     "settings_effect_dust": "Σκόνη",
     "settings_effect_dust-v2": "Φωτεινή σκόνη",
-    "settings_effect_stars": "Αστέρια"
+    "settings_effect_stars": "Αστέρια",
+    "settings_fuzzy_clock": "Ασαφές ρολόι (μόνο ώρα)"
   },
   "zh-CN": {
     "settings_title": "设置",
@@ -1266,7 +1274,8 @@
     "settings_effect_snow": "雪",
     "settings_effect_dust": "尘埃",
     "settings_effect_dust-v2": "光斑尘埃",
-    "settings_effect_stars": "星星"
+    "settings_effect_stars": "星星",
+    "settings_fuzzy_clock": "模糊时钟（仅显示时间）"
   },
   "ru-RU": {
     "settings_title": "Настройки",
@@ -1407,7 +1416,8 @@
     "settings_effect_snow": "Снег",
     "settings_effect_dust": "Пыль",
     "settings_effect_dust-v2": "Светящаяся пыль",
-    "settings_effect_stars": "Звёзды"
+    "settings_effect_stars": "Звёзды",
+    "settings_fuzzy_clock": "Нечёткие часы (только время)"
   },
   "eo": {
     "settings_title": "Agordoj",
@@ -1548,7 +1558,8 @@
     "settings_effect_snow": "Neĝo",
     "settings_effect_dust": "Polvo",
     "settings_effect_dust-v2": "Lumeca polvo",
-    "settings_effect_stars": "Steloj"
+    "settings_effect_stars": "Steloj",
+    "settings_fuzzy_clock": "Neklara horloĝo (nur tempo)"
   },
   "ar-AE": {
     "settings_title": "الإعدادات",
@@ -1689,6 +1700,7 @@
     "settings_effect_snow": "ثلج",
     "settings_effect_dust": "غبار",
     "settings_effect_dust-v2": "غبار متوهج",
-    "settings_effect_stars": "نجوم"
+    "settings_effect_stars": "نجوم",
+    "settings_fuzzy_clock": "الساعة الضبابية (الوقت فقط)"
   }
 }

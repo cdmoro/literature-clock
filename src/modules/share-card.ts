@@ -190,17 +190,25 @@ export async function renderShareCard(
   const passage = document.createElement('div');
   passage.dir = 'auto';
   passage.style.whiteSpace = 'pre-wrap';
-  for (const [text, highlighted] of [
-    [quote.quote_first, false],
-    [quote.quote_time_case, true],
-    [quote.quote_last, false],
-  ] as const) {
+  const isFuzzy = store.get('fuzzy-clock') === true;
+  const passageParts = isFuzzy
+    ? ([[quote.quote_time_case, true]] as const)
+    : ([
+        [quote.quote_first, false],
+        [quote.quote_time_case, true],
+        [quote.quote_last, false],
+      ] as const);
+  for (const [text, highlighted] of passageParts) {
     const span = document.createElement('span');
     span.append(quoteMarkup(text || ''));
     if (highlighted) span.style.color = time.style.color;
     passage.append(span);
   }
-  if (!passage.textContent) passage.textContent = quote.quote_raw;
+  if (!passage.textContent) passage.textContent = isFuzzy ? quote.quote_time_case : quote.quote_raw;
+  if (isFuzzy) {
+    passage.style.textAlign = 'center';
+    passage.style.textWrap = 'balance';
+  }
   const credit = document.createElement('div');
   credit.dir = 'auto';
   credit.className = 'share-card-credit';
@@ -215,7 +223,11 @@ export async function renderShareCard(
     credit.append(part);
   });
   Object.assign(credit.style, { marginTop: '40px', fontSize: '28px' });
-  content.append(passage, credit);
+  if (isFuzzy) {
+    content.append(passage);
+  } else {
+    content.append(passage, credit);
+  }
   const signature = document.createElement('div');
   signature.textContent = 'Literature Clock · literatureclock.netlify.app';
   signature.style.fontSize = '22px';

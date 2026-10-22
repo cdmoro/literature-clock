@@ -160,3 +160,11 @@ it('moves sequentially and wraps in both directions', async () => {
   await updateQuote({ variantStep: 1 });
   expect(active().id).toBe(second.id);
 });
+
+it('renders only the time expression in fuzzy-clock mode', async () => {
+  state['fuzzy-clock'] = true;
+  await updateQuote();
+  const quoteParagraph = document.querySelector('#quote p')!;
+  expect(quoteParagraph.textContent).toBe('noon');
+  expect(quoteParagraph.querySelector('.time')?.textContent).toBe('noon');
+});

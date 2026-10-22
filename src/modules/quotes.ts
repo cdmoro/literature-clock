@@ -169,6 +169,11 @@ export async function updateQuote({
         const p = document.createElement('p');
         if (testQuote) {
           p.textContent = testQuote;
+        } else if (store.get('fuzzy-clock') === true) {
+          const timeSpan = document.createElement('span');
+          timeSpan.className = timeClass;
+          timeSpan.append(quoteMarkup(quote.quote_time_case));
+          p.append(timeSpan);
         } else {
           p.append(quoteMarkup(quote.quote_first));
           const timeSpan = document.createElement('span');
@@ -177,8 +182,43 @@ export async function updateQuote({
           p.append(timeSpan, quoteMarkup(quote.quote_last));
         }
 
-        const cite = document.createElement('cite');
-        cite.dir = 'auto';
+                  const cite = document.createElement('cite');
+          cite.dir = 'auto';
+          for (const [id, text] of [
+            ['hyphen', '— '],
+            ['title', quote.title],
+            ['comma', ', '],
+            ['author', quote.author],
+          ]) {
+            const span = document.createElement('span');
+            span.id = id;
+            if (id === 'title' || id === 'author') span.dir = 'auto';
+            span.textContent = text;
+            cite.append(span);
+          }
+
+          blockquote.appendChild(p);
+          blockquote.appendChild(cite);
+          renderTranslation();
+          blockquote.setAttribute('aria-label', time);
+          updateQuoteDescription();
+
+          // Add or remove credit element for fuzzy‑clock mode
+          let credit = document.getElementById('quote-credit');
+          if (store.get('fuzzy-clock') === true) {
+            if (!credit) {
+              credit = document.createElement('div');
+              credit.id = 'quote-credit';
+              document.body.appendChild(credit);
+            }
+            credit.innerHTML = `${quote.title}<br>${quote.author}`;
+            credit.hidden = false;
+          } else if (credit) {
+            credit.remove();
+          }
+
+          fitQuote();
+        
         for (const [id, text] of [
           ['hyphen', '— '],
           ['title', quote.title],

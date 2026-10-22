@@ -12,6 +12,7 @@ const paths = {
     '<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>',
   history: '<path d="M3 11a9 9 0 1 1 2.6 7.4M3 4v7h7M12 7v5l3 2"/>',
   close: '<path d="m6 6 12 12M6 18 18 6"/>',
+  'fuzzy-clock': '<circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/>',
 };
 
 export function readingIcon(name: keyof typeof paths) {

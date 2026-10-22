@@ -20,6 +20,7 @@ const KEYS = [
   'work',
   'show-time',
   'hide-book-title',
+  'fuzzy-clock',
   'progressbar',
 ] as const;
 type Preferences = Pick<ReturnType<typeof validateSettings>, (typeof KEYS)[number]>;
@@ -76,8 +77,8 @@ export async function applySavedTheme(settings: Preferences) {
     store.set('palette', settings.palette || 'default');
     setTheme({ isVariantChange: true });
   }
-  for (const key of ['work', 'show-time', 'hide-book-title'] as const) {
-    if (store.get(key) !== settings[key]) document.getElementById(key)?.click();
+  for (const key of ['work', 'show-time', 'hide-book-title', 'fuzzy-clock'] as const) {
+    if (settings[key] !== undefined && store.get(key) !== settings[key]) document.getElementById(key)?.click();
   }
   for (const [key, id] of [
     ['transition', 'transition-select'],
