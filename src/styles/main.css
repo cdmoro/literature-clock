@@ -337,11 +337,9 @@ footer {
   display: flex;
   font-size: 0.85rem;
   justify-content: center;
-  left: 0;
   line-height: 1.5;
   padding: 1rem;
   position: fixed;
-  right: 0;
   z-index: 2;
   transition:
     opacity 0.5s,
