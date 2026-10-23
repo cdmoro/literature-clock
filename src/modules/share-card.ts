@@ -19,6 +19,7 @@ export interface CardOptions {
   palette?: string;
   font?: string;
   useDefaultColor?: boolean;
+  photoImage?: string;
 }
 const themeFontLoads = new Map<string, Promise<void>>();
 
@@ -33,6 +34,7 @@ export async function renderShareCard(
   const [width, height] = cardFormats[format];
   const bodyStyle = getComputedStyle(document.body);
   const quoteStyle = getComputedStyle(document.getElementById('quote') || document.body);
+  const timeStyle = getComputedStyle(document.getElementById('time-clock') || document.body);
   const card = document.createElement('div');
   // Resolve the existing theme variant on an isolated element, never changing the clock.
   const palette = document.createElement('div');
@@ -103,6 +105,7 @@ export async function renderShareCard(
     customColor ||
     options.palette ||
     options.useDefaultColor ||
+    options.photoImage !== undefined ||
     patternChanged ||
     pattern !== 'none';
   const color = isolated ? paletteStyle.color : bodyStyle.color;
@@ -156,6 +159,17 @@ export async function renderShareCard(
       ? paletteStyle.backgroundSize
       : 'cover';
   const backgroundPosition = pattern !== 'none' ? paletteStyle.backgroundPosition : 'center';
+  const cardBackgroundImage =
+    options.photoImage === ''
+      ? patternTile?.image || 'none'
+      : options.photoImage
+        ? patternTile
+          ? 'none'
+          : tileImage
+        : tileImage;
+  const cardBackgroundSize = patternTile ? patternTile.size : backgroundSize;
+  const cardBackgroundRepeat = patternTile ? 'repeat' : paletteStyle.backgroundRepeat;
+  const cardBackgroundPosition = backgroundPosition;
   palette.remove();
   Object.assign(card.style, {
     position: 'fixed',
@@ -170,14 +184,65 @@ export async function renderShareCard(
     justifyContent: 'space-between',
     color,
     backgroundColor,
-    backgroundImage: tileImage,
-    backgroundRepeat: patternTile && festivePattern ? 'repeat, no-repeat' : paletteStyle.backgroundRepeat,
-    backgroundSize,
-    backgroundPosition,
+    backgroundImage: cardBackgroundImage,
+    backgroundRepeat: cardBackgroundRepeat,
+    backgroundSize: cardBackgroundSize,
+    backgroundPosition: cardBackgroundPosition,
     fontFamily,
     lineHeight: quote.locale.startsWith('ar') ? '1.65' : '1.3',
     overflowWrap: 'anywhere',
   });
+  let photo: HTMLImageElement | undefined;
+  if (options.photoImage) {
+    const source = options.photoImage.match(/^url\(["']?(.*?)["']?\)$/)?.[1];
+    if (source) {
+      photo = document.createElement('img');
+      photo.crossOrigin = 'anonymous';
+      photo.src = source;
+      Object.assign(photo.style, {
+        position: 'absolute',
+        inset: '0',
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        zIndex: '0',
+      });
+      card.append(photo);
+      const shade = document.createElement('div');
+      const dark = (appearance || (liveTheme.endsWith('-dark') ? 'dark' : 'light')) === 'dark';
+      Object.assign(shade.style, {
+        position: 'absolute',
+        inset: '0',
+        background: dark ? '#00000040' : '#ffffff40',
+        zIndex: '1',
+      });
+      card.append(shade);
+      const photoEffect = paletteStyle.getPropertyValue('--photo-effect').trim();
+      if (photoEffect && photoEffect !== 'linear-gradient(transparent, transparent)') {
+        const effectLayer = document.createElement('div');
+        Object.assign(effectLayer.style, {
+          position: 'absolute',
+          inset: '0',
+          backgroundImage: photoEffect,
+          backgroundSize: paletteStyle.getPropertyValue('--photo-effect-size').trim() || '100% 100%',
+          zIndex: '2',
+        });
+        card.append(effectLayer);
+      }
+      if (patternTile) {
+        const patternLayer = document.createElement('div');
+        Object.assign(patternLayer.style, {
+          position: 'absolute',
+          inset: '0',
+          backgroundImage: patternTile.image,
+          backgroundSize: patternTile.size,
+          backgroundRepeat: 'repeat',
+          zIndex: '3',
+        });
+        card.append(patternLayer);
+      }
+    }
+  }
   card.lang = quote.locale;
   card.setAttribute('aria-hidden', 'true');
   const time = document.createElement('div');
@@ -185,8 +250,10 @@ export async function renderShareCard(
   Object.assign(time.style, {
     fontSize: '32px',
     color: accent,
+    textShadow: timeStyle.textShadow,
   });
   const content = document.createElement('div');
+  content.style.textShadow = quoteStyle.textShadow;
   const passage = document.createElement('div');
   passage.dir = 'auto';
   passage.style.whiteSpace = 'pre-wrap';
@@ -231,6 +298,12 @@ export async function renderShareCard(
   const signature = document.createElement('div');
   signature.textContent = 'Literature Clock · literatureclock.netlify.app';
   signature.style.fontSize = '22px';
+  if (photo) {
+    for (const element of [time, content, signature]) {
+      element.style.position = 'relative';
+      element.style.zIndex = '4';
+    }
+  }
   if (pattern === 'noise') {
     const veil = document.createElement('div');
     Object.assign(veil.style, {
@@ -245,6 +318,7 @@ export async function renderShareCard(
   card.append(time, content, signature);
   document.body.append(card);
   try {
+    if (photo) await photo.decode().catch(() => undefined);
     await fontLoading;
     await document.fonts?.ready;
     let size = 64;
