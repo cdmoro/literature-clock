@@ -309,6 +309,7 @@ button:disabled {
 
 .hidden {
   opacity: 0;
+  pointer-events: none;
 }
 
 #exit-zen svg {
@@ -637,7 +638,7 @@ body.fuzzy-clock #quote-translation {
   border-top: none;
 }
 #quote-translation .translation-content {
-  margin-top: 0.5em; /* tighter spacing */
+  margin-top: 0.9em; /* tighter spacing */
   max-height: 25vh;
   overflow-y: auto;
 }
