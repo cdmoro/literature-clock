@@ -3,6 +3,12 @@ import constellationsTile from '../assets/patterns/constellations.svg';
 import zigzagfineTile from '../assets/patterns/zigzag-fine.svg';
 import rainTile from '../assets/patterns/rain.svg';
 import christmasTile from '../assets/patterns/christmas.svg';
+import winterTile from '../assets/patterns/winter.svg';
+import halloweenTile from '../assets/patterns/halloween.svg';
+import newYearTile from '../assets/patterns/new-year.svg';
+import autumnTile from '../assets/patterns/autumn.svg';
+import summerTile from '../assets/patterns/summer.svg';
+import springTile from '../assets/patterns/spring.svg';
 import heartsTile from '../assets/patterns/hearts.svg';
 import readingTile from '../assets/patterns/reading.svg';
 import spaceTile from '../assets/patterns/space.svg';
@@ -26,6 +32,12 @@ const IMAGE_PATTERN_TILES = {
   'zigzag-fine': { image: `url("${zigzagfineTile}")`, size: '48px 32px' },
   rain: { image: `url("${rainTile}")`, size: '240px 240px' },
   christmas: { image: `url("${christmasTile}")`, size: '320px 320px' },
+  winter: { image: `url("${winterTile}")`, size: '320px 320px' },
+  halloween: { image: `url("${halloweenTile}")`, size: '320px 320px' },
+  'new-year': { image: `url("${newYearTile}")`, size: '320px 320px' },
+  autumn: { image: `url("${autumnTile}")`, size: '320px 320px' },
+  summer: { image: `url("${summerTile}")`, size: '320px 320px' },
+  spring: { image: `url("${springTile}")`, size: '320px 320px' },
   hearts: { image: `url("${heartsTile}")`, size: '320px 320px' },
   reading: { image: `url("${readingTile}")`, size: '320px 320px' },
   space: { image: `url("${spaceTile}")`, size: '320px 320px' },

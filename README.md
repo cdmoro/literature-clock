@@ -31,7 +31,7 @@ https://github.com/user-attachments/assets/626ca478-d170-4176-90d9-c46580fcfa91
 
 - ⚡ **Pure Native Performance** — Written in Swift & AppKit (macOS) and WPF/.NET (Windows). No WebKit, Chromium, or Electron overhead. Smooth 60 FPS text drift prevents OLED and display burn-in while remaining gentle on your battery.
 - 📚 **1,440 Offline Literary Moments** — Thousands of hand-curated quotes across world literature with book titles and authors. Completely self-contained and works 100% offline.
-- 🎨 **Artisan Themes & Textures** — From tactile **Book Page** paper and retro **Terminal** scanlines to the day-night celestial sky in **Horizon**, or 25 custom geometric patterns.
+- 🎨 **Artisan Themes & Textures** — From tactile **Book Page** paper and retro **Terminal** scanlines to the day-night celestial sky in **Horizon**, or 31 custom patterns.
 - 📸 **Dynamic Photo Backdrops** — Optionally cycle curated photographs from **NASA**, **Wikimedia Commons**, and **Picsum**, cached locally for offline display.
 - 🌍 **12 Languages & Bilingual Reading** — Read in English (UK & US), Spanish, French, German, Italian, Portuguese, Chinese, Russian, Greek, and Esperanto. Enable *Bilingual mode* to display the original quote alongside its translated edition.
 - 💧 **Optical Liquid Glass Progress** — A custom hardware shader (Metal on macOS, HLSL on Windows) that renders realistic optical refraction tracking the seconds of each minute.

@@ -76,7 +76,7 @@ enum NativeAppearance {
         }
     }
     static let themes = ["base", "book", "terminal", "festive", "bohemian", "retro", "photo"]
-    static let patterns = ["none", "random", "dots", "circles", "diagonal", "diagonal-wide", "grid", "zigzag", "waves", "noise", "mixed-stripes", "checkerboard", "cubes", "fans", "leaves", "vines", "contours", "woven", "zigzag-fine", "rain", "christmas", "hearts", "reading", "space", "garden", "clouds", "constellations"]
+    static let patterns = ["none", "random", "dots", "circles", "diagonal", "diagonal-wide", "grid", "zigzag", "waves", "noise", "mixed-stripes", "checkerboard", "cubes", "fans", "leaves", "vines", "contours", "woven", "zigzag-fine", "rain", "christmas", "winter", "halloween", "new-year", "autumn", "summer", "spring", "hearts", "reading", "space", "garden", "clouds", "constellations"]
     static func fontFamily(theme: String, locale: String) -> String {
         let language = locale.split(separator: "-").first.map(String.init) ?? "en"
         let main = ["base": "specialelite", "book": "librebaskerville", "terminal": "b612mono",

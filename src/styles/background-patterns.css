@@ -155,6 +155,37 @@ html[data-background-pattern]:not([data-background-pattern='none']) body,
   --pattern-size: calc(320px * var(--pattern-scale)) calc(320px * var(--pattern-scale));
 }
 
+[data-background-pattern='winter'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/winter.svg');
+  --pattern-size: calc(320px * var(--pattern-scale)) calc(320px * var(--pattern-scale));
+}
+[data-background-pattern='halloween'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/halloween.svg');
+  --pattern-size: calc(320px * var(--pattern-scale)) calc(320px * var(--pattern-scale));
+}
+[data-background-pattern='new-year'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/new-year.svg');
+  --pattern-size: calc(320px * var(--pattern-scale)) calc(320px * var(--pattern-scale));
+}
+[data-background-pattern='autumn'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/autumn.svg');
+  --pattern-size: calc(320px * var(--pattern-scale)) calc(320px * var(--pattern-scale));
+}
+[data-background-pattern='summer'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/summer.svg');
+  --pattern-size: calc(320px * var(--pattern-scale)) calc(320px * var(--pattern-scale));
+}
+[data-background-pattern='spring'] {
+  --pattern-position: 0 0;
+  --pattern-image: url('../assets/patterns/spring.svg');
+  --pattern-size: calc(320px * var(--pattern-scale)) calc(320px * var(--pattern-scale));
+}
+
 [data-background-pattern='hearts'] {
   --pattern-position: 0 0;
   --pattern-image: url('../assets/patterns/hearts.svg');
