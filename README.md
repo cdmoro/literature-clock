@@ -19,7 +19,7 @@ https://github.com/user-attachments/assets/626ca478-d170-4176-90d9-c46580fcfa91
 
 <div align="center">
 
-### [🍎 Download for macOS](https://github.com/cdmoro/literature-clock/releases) &nbsp;&nbsp;•&nbsp;&nbsp; [🪟 Download for Windows](https://github.com/cdmoro/literature-clock/releases) &nbsp;&nbsp;•&nbsp;&nbsp; [🌎 Try Live Demo](https://literatureclock.netlify.app/)
+### [🍎 Download for macOS](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-macOS.saver.zip) &nbsp;&nbsp;•&nbsp;&nbsp; [🪟 Download for Windows](https://github.com/cdmoro/literature-clock/releases/latest) &nbsp;&nbsp;•&nbsp;&nbsp; [🌎 Try Live Demo](https://literatureclock.netlify.app/)
 
 Each project release includes the web build and native downloads. Release notes list each component version. The release workflow checks changes against the previous consolidated release and stops if a changed platform's version was not increased.
 
@@ -43,7 +43,7 @@ Each project release includes the web build and native downloads. Release notes 
 ## 🚀 Download & Installation
 
 ### 🍎 macOS (Apple Silicon & Intel)
-1. Download `Literature-Clock-Native-macOS.saver.zip` from [Releases](https://github.com/cdmoro/literature-clock/releases).
+1. Download [`Literature-Clock-Native-macOS.saver.zip`](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-macOS.saver.zip).
 2. Extract the archive and double-click `Literature Clock.saver` to install.
 3. Open **System Settings → Wallpaper → Screen Saver** to choose and configure your themes.
 
@@ -59,7 +59,7 @@ Because these are independent open-source builds, macOS may prompt for approval 
 </details>
 
 ### 🪟 Windows (10 & 11)
-1. Download the standalone `.scr` for your system (`win-x64` or `win-arm64`) from [Releases](https://github.com/cdmoro/literature-clock/releases).
+1. Download the standalone `.scr` for your system (`win-x64` or `win-arm64`) from the [latest release](https://github.com/cdmoro/literature-clock/releases/latest).
 2. Right-click the `.scr` file and select **Install**, or click **Browse** in Windows Screen Saver settings.
 3. Click **Settings** to customize appearance. No runtime setup or administrator permissions required.
 

@@ -21,7 +21,7 @@ export function initAboutClock() {
   const version = document.createElement('p');
   const link = document.createElement('a');
   link.textContent = `Web · ${webVersion.version}`;
-  link.href = 'https://github.com/cdmoro/literature-clock/releases';
+  link.href = 'https://github.com/cdmoro/literature-clock/releases/latest';
   version.append(link);
   section.append(version);
 
