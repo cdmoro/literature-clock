@@ -23,7 +23,7 @@ https://github.com/user-attachments/assets/626ca478-d170-4176-90d9-c46580fcfa91
 
 Turn your display into a literary clock. Choose your platform to get the native screensaver, or try the web app.
 
-| <img src="https://cdn.simpleicons.org/apple/ffffff" alt="Apple" width="20" /> **macOS** | <svg role="img" aria-label="Windows" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#0078D4" d="M1 4.5 10 3.3v8.2H1zm10.2-1.35L23 1.5v10H11.2zM1 12.5h9v8.2L1 19.5zm10.2 0H23v10l-11.8-1.65z"/></svg> **Windows** |
+| <img src="https://cdn.simpleicons.org/apple/ffffff" alt="Apple" width="20" /> **macOS** | <img src="docs/windows.svg" alt="Windows" width="20" /> **Windows** |
 |:---:|:---:|
 | [Apple Silicon & Intel](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-macOS.saver.zip) | [x64](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-Windows-win-x64.scr) · [ARM64](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-Windows-win-arm64.scr) |
 | [Installation guide](screensavers/macos-native/README.md) | [Installation guide](screensavers/windows-native/README.md) |
@@ -51,7 +51,7 @@ Each consolidated release includes native downloads for macOS and Windows. Relea
 
 ## 🚀 Download & Installation
 
-### 🍎 macOS (Apple Silicon & Intel)
+### <img src="https://cdn.simpleicons.org/apple/ffffff" alt="Apple" width="20" /> macOS (Apple Silicon & Intel)
 1. Download [`Literature-Clock-Native-macOS.saver.zip`](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-macOS.saver.zip).
 2. Extract the archive and double-click `Literature Clock.saver` to install.
 3. Open **System Settings → Wallpaper → Screen Saver** to choose and configure your themes.
@@ -67,8 +67,8 @@ Because these are independent open-source builds, macOS may prompt for approval 
 *See the [macOS Screen Saver Guide](screensavers/macos-native/README.md) for full troubleshooting and build details.*
 </details>
 
-### 🪟 Windows (10 & 11)
-1. Download the standalone `.scr` for your system (`win-x64` or `win-arm64`) from the [latest release](https://github.com/cdmoro/literature-clock/releases/latest).
+### <img src="docs/windows.svg" alt="Windows" width="20" /> Windows (10 & 11)
+1. Download the standalone `.scr` for your system: [x64](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-Windows-win-x64.scr) or [ARM64](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-Windows-win-arm64.scr).
 2. Right-click the `.scr` file and select **Install**, or click **Browse** in Windows Screen Saver settings.
 3. Click **Settings** to customize appearance. No runtime setup or administrator permissions required.
 
