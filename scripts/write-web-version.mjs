@@ -1,8 +1,5 @@
-import { execFileSync } from 'node:child_process';
-import { writeFileSync } from 'node:fs';
-let version = process.env.WEB_RELEASE_TAG || '';
-if (!/^v\d+\.\d+\.\d+$/.test(version)) {
-  try { version = execFileSync('git', ['describe', '--tags', '--match', 'v[0-9]*', '--abbrev=0'], { encoding: 'utf8' }).trim(); }
-  catch { version = 'development'; }
-}
+import { readFileSync, writeFileSync } from 'node:fs';
+const { version: packageVersion } = JSON.parse(readFileSync('package.json', 'utf8'));
+const version = `v${packageVersion}`;
+if (!/^v\d+\.\d+\.\d+$/.test(version)) throw new Error(`Invalid package version: ${packageVersion}`);
 writeFileSync('src/web-version.json', JSON.stringify({ version }) + '\n');

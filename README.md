@@ -21,6 +21,8 @@ https://github.com/user-attachments/assets/626ca478-d170-4176-90d9-c46580fcfa91
 
 ### [🍎 Download for macOS](https://github.com/cdmoro/literature-clock/releases) &nbsp;&nbsp;•&nbsp;&nbsp; [🪟 Download for Windows](https://github.com/cdmoro/literature-clock/releases) &nbsp;&nbsp;•&nbsp;&nbsp; [🌎 Try Live Demo](https://literatureclock.netlify.app/)
 
+Each project release includes the web build and available native downloads. Release notes list the independent component version for each platform.
+
 </div>
 
 ---

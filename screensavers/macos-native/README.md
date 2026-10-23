@@ -30,17 +30,15 @@ Open the preview app to inspect drawing and its Settings menu. This is a normal 
 
 The release build is signed ad hoc and is not notarized, so Gatekeeper may block it on first open. Only approve it if you trust the project source and verified the download. After the block, open **System Settings → Privacy & Security**, scroll to **Security**, choose **Open Anyway** for Literature Clock, and confirm the next prompt. Then double-click `Literature Clock.saver` again and choose **Install for This User Only**. The approval button is available for about an hour after the blocked attempt. See [INSTALL.txt](INSTALL.txt).
 
-Download `Literature-Clock-Native-macOS.saver.zip` from a `macos-native-vX.Y.Z` release, extract the single `Literature Clock.saver` bundle and double-click it to install for this user. Follow the Gatekeeper approval steps above if macOS blocks the unnotarized build. Save or cancel any open Options sheet first. Select Literature Clock in System Settings → Wallpaper → Screen Saver, then open Options and save your settings. If macOS retains an old version or thumbnail, quit and reopen System Settings and restart the legacy Screen Saver host.
+Download `Literature-Clock-Native-macOS.saver.zip` from the latest [Literature Clock release](https://github.com/cdmoro/literature-clock/releases), extract the single `Literature Clock.saver` bundle and double-click it to install for this user. Follow the Gatekeeper approval steps above if macOS blocks the unnotarized build. Save or cancel any open Options sheet first. Select Literature Clock in System Settings → Wallpaper → Screen Saver, then open Options and save your settings. If macOS retains an old version or thumbnail, quit and reopen System Settings and restart the legacy Screen Saver host.
 
 Please report your macOS version, hardware, selected theme/languages and whether a problem occurs in the small preview, full-screen Preview or automatic activation in [GitHub issues](https://github.com/cdmoro/literature-clock/issues/new/choose). Include whether one or several displays are connected.
 
-## Independent releases in this repository
+## Project releases
 
-The web clock and native saver keep independent versions while sharing catalogues, translations and assets. Screensaver releases use `macos-native-vX.Y.Z` tags (for example `macos-native-v0.1.0`). Mark initial releases as **prereleases** on GitHub; the bundle itself uses the numeric version. Ordinary web release tags do not build or attach this saver.
+The web app and native savers keep their own component versions. A project release combines the web, macOS and Windows downloads under one `literature-clock-vX.Y.Z` tag; its notes list each component version. When any platform is ready to publish, increase `release/VERSION` in the same change. Merging that change to `main` builds all three platforms and publishes one GitHub release. The native component versions come from their respective `VERSION` files, and the web version comes from `package.json`.
 
-`.github/workflows/macos-native-screensaver.yml` builds universal bundles after a matching release is published, then attaches the ZIP and checksum to that existing release. The push trigger creates and publishes a native prerelease when VERSION changes on main. Manual dispatch with an empty tag builds an Actions artifact from the selected branch; with an existing matching release tag it checks out that exact tag and attaches the ZIP/checksum pair without replacing existing files. A partial pair causes an explicit failure rather than attaching a newly built checksum to an older ZIP. The workflow must be on the default branch before manual dispatch is available. It requires no npm dependencies or font downloads.
-
-For immutable releases, create an **existing draft release**, run manual dispatch against its tag, wait for the assets and then publish the draft. Assets cannot be added to an immutable release after publication; a failed upload still leaves the build artifact in Actions. Release automation has not yet been run on GitHub.
+The standalone macOS workflow remains available for pull request checks and manual preview builds. It does not publish releases.
 
 ## Photo providers and safe screen area
 
@@ -65,7 +63,7 @@ Displays share the same settings but vary their quotes, selected languages, phot
 
 Foreground Liquid Glass places the progress lens over the quote and clock, with a 2.5% tint and the plain clock beneath it. Background Liquid Glass retains its 10% tint and keeps quotes above the lens. Use `--foreground-glass-preview` to preview the foreground mode in a window.
 
-Merging a change to `screensavers/macos-native/VERSION` into main builds and publishes the corresponding native prerelease automatically. The initial version is 0.1.0. Assets are attached to a draft before publication; increase VERSION for subsequent native releases.
+The macOS component version is recorded in `screensavers/macos-native/VERSION`. When any platform is ready for a project release, update `release/VERSION`; the consolidated workflow builds the web app and both native savers and publishes them together. Component versions are listed in the release notes.
 
 Options show the installed native bundle version with a link to its release. Fonts are selected automatically for the theme and quote language; there is no font selector. All 25 web patterns are bundled as cached native tiles, plus None and per-minute Random.
 

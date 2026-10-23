@@ -523,6 +523,11 @@ html[data-progressbar='none'] #progress-bar {
   #clock {
     max-width: initial;
   }
+
+  /* Keep the fuzzy passage inside the viewport so doFitQuote can detect overflow. */
+  body.fuzzy-clock #clock {
+    max-width: 90vw;
+  }
 }
 
 /* Export the quote in its centered position, independent of screensaver motion. */

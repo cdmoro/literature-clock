@@ -131,6 +131,7 @@ export function clearPhotoBackground() {
   }
   document.documentElement.style.removeProperty('--photo-image');
   document.getElementById('photo-credit')?.remove();
+  document.documentElement.removeAttribute('data-photo-credit');
 }
 
 export async function updatePhotoBackground() {
@@ -173,6 +174,7 @@ export async function updatePhotoBackground() {
     finish();
     document.documentElement.style.setProperty('--photo-image', `url("${url}")`);
     document.getElementById('photo-credit')?.remove();
+    document.documentElement.toggleAttribute('data-photo-credit', !!photo);
     if (photo) {
       const credit = document.createElement('a');
       credit.id = 'photo-credit';

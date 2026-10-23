@@ -1,0 +1,149 @@
+name: Literature Clock release
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'release/VERSION'
+      - '.github/workflows/release.yml'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'src/**'
+      - 'public/**'
+      - 'quotes/**'
+      - 'times/**'
+      - 'screensavers/macos-native/**'
+      - 'screensavers/windows-native/**'
+  push:
+    branches: [main]
+    paths:
+      - 'release/VERSION'
+
+permissions:
+  contents: read
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Package web build
+        run: |
+          version="$(node -p "JSON.parse(require('fs').readFileSync('package.json', 'utf8')).version")"
+          cd dist
+          zip -qr "../Literature-Clock-Web-${version}.zip" .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Literature-Clock-Web
+          path: Literature-Clock-Web-*.zip
+
+  macos:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Ensure the Metal compiler is available
+        run: |
+          if ! xcrun metal --version; then
+            xcodebuild -downloadComponent MetalToolchain
+            xcrun metal --version
+          fi
+      - name: Build universal native saver
+        run: python3 screensavers/macos-native/build.py --universal
+      - name: Check installer transactions
+        run: '"screensavers/macos-native/build/Install Literature Clock.app/Contents/MacOS/Install Literature Clock" --check-install'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Literature-Clock-macOS
+          path: |
+            screensavers/macos-native/build/Literature-Clock-Native-macOS.saver.zip
+            screensavers/macos-native/build/Literature-Clock-Native-macOS.saver.zip.sha256
+
+  windows:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        runtime: [win-x64, win-arm64]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - run: python -m pip install Pillow==11.3.0
+      - name: Build standalone native screensaver
+        shell: pwsh
+        run: ./screensavers/windows-native/build.ps1 -Runtime '${{ matrix.runtime }}'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Literature-Clock-Windows-${{ matrix.runtime }}
+          path: |
+            screensavers/windows-native/build/Literature-Clock-Native-Windows-${{ matrix.runtime }}.scr
+            screensavers/windows-native/build/Literature-Clock-Native-Windows-${{ matrix.runtime }}.scr.sha256
+
+  publish:
+    if: github.event_name == 'push'
+    needs: [web, macos, windows]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: Literature-Clock-*
+          path: package
+          merge-multiple: true
+      - name: Create the consolidated release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PYTHON'
+          import json
+          import os
+          import re
+          import subprocess
+          import textwrap
+          from pathlib import Path
+          version = Path('release/VERSION').read_text().strip()
+          if not re.fullmatch(r'\d+\.\d+\.\d+', version):
+              raise SystemExit('Invalid release/VERSION; expected major.minor.patch')
+          package = json.loads(Path('package.json').read_text())['version']
+          macos = Path('screensavers/macos-native/VERSION').read_text().strip()
+          windows = Path('screensavers/windows-native/VERSION').read_text().strip()
+          files = sorted(Path('package').glob('*'))
+          expected = {
+              f'Literature-Clock-Web-{package}.zip',
+              'Literature-Clock-Native-macOS.saver.zip',
+              'Literature-Clock-Native-macOS.saver.zip.sha256',
+              'Literature-Clock-Native-Windows-win-x64.scr',
+              'Literature-Clock-Native-Windows-win-x64.scr.sha256',
+              'Literature-Clock-Native-Windows-win-arm64.scr',
+              'Literature-Clock-Native-Windows-win-arm64.scr.sha256',
+          }
+          if {file.name for file in files} != expected:
+              raise SystemExit('Release artifact set is incomplete or contains unexpected files')
+          tag = 'literature-clock-v' + version
+          notes = textwrap.dedent(f'''\
+          ## Component versions
+
+          - Web: {package}
+          - macOS screensaver: {macos}
+          - Windows screensaver: {windows}
+
+          This consolidated release includes all platform downloads for this project release.
+          ''')
+          subprocess.run(['gh', 'release', 'create', tag, *map(str, files), '--target', os.environ['GITHUB_SHA'], '--title', 'Literature Clock ' + version, '--notes', notes, '--latest'], check=True)
+          PYTHON
