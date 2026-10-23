@@ -82,7 +82,7 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             restartShowcase()
         }
         if CommandLine.arguments.contains("--check-render") {
-            let keys = ["theme", "background", "background-pattern", "palette", "custom-color", "show-time", "hide-book-title", "quote-locales", "work", "locale", "screensaver", "progressbar"]
+            let keys = ["theme", "background", "background-pattern", "palette", "custom-color", "show-time", "fuzzy-clock", "hide-book-title", "quote-locales", "work", "locale", "screensaver", "progressbar"]
             let saved = keys.map { ($0, clock.preferences.object(forKey: $0)) }
             defer {
                 for (key, value) in saved { clock.preferences.set(value, forKey: key) }

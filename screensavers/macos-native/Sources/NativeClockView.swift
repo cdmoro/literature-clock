@@ -89,7 +89,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     var preferences: UserDefaults = ScreenSaverDefaults(forModuleWithName: "net.literatureclock.native-saver")!
     var resourceURLOverride: URL? // Isolated render diagnostics only.
     var resources: URL { resourceURLOverride ?? Bundle(for: NativeClockView.self).resourceURL! }
-    static let optionKeys = ["theme", "screensaver", "show-time", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background", "background-pattern", "pattern-size", "background-effect", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
+    static let optionKeys = ["theme", "screensaver", "show-time", "fuzzy-clock", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background", "background-pattern", "pattern-size", "background-effect", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
     var photoDownloadsEnabled = true
     var interactionPreviewSweep = false
     var fullProgressPreviewSweep = false
@@ -156,13 +156,18 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     var cache: [String: [String: [NativeQuote]]] = [:]
     var catalogueRetryAfter: [String: Date] = [:]
     private var layoutKey = ""
+    private var fuzzyClock: Bool { preferences.bool(forKey: "fuzzy-clock") }
     private var layoutText: NSAttributedString?
     private var layoutHeight: CGFloat = 0
     private var passageImage: NSImage?
     private var passageOpticalSource: CIImage?
+    private var fuzzyCreditOpticalSource: CIImage?
+    private var fuzzyCreditOpticalKey = ""
     private var timeLabel: NSTextField?
     private var plainTimeImage: NSImage?
     private var plainTimeImageKey = ""
+    private var fuzzyCreditLabel: NSTextField?
+    private var fuzzyCreditKey = ""
     private var glassProgressView: NSView?
     private var passageView: NSImageView?
     private var opticalSource: CIImage?
@@ -211,7 +216,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         animationTimeInterval = needsLowerRate ? 1.0 / 30.0 : 1.0 / 60.0
     }
     private func setup() {
-        preferences.register(defaults: ["theme": "base-dark", "screensaver": true, "show-time": true,
+        preferences.register(defaults: ["theme": "base-dark", "screensaver": true, "show-time": true, "fuzzy-clock": false,
                                        "hide-book-title": false, "work": true, "progressbar": "background", "quote-locales": "", "palette": "default",
                                        "custom-color": "#d24335", "background": "default", "background-pattern": "none", "pattern-size": 1.0, "background-effect": "none", "photo-provider": "picsum", "photo-category": "all", "bilingual": false, "translation-locale": ""])
         _ = Self.bundledFonts
@@ -348,6 +353,42 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         guard let clockFrame else { return bounds }
         return NSRect(x: bounds.minX, y: bounds.minY, width: bounds.width,
                       height: max(0, min(bounds.maxY, clockFrame.minY - 16) - bounds.minY))
+    }
+    static func balancedLines(_ value: String, font: NSFont, width: CGFloat) -> String {
+        let words = value.split(whereSeparator: \.isWhitespace).map(String.init)
+        guard words.count > 2, width > 0 else { return value }
+        func measured(_ start: Int, _ end: Int) -> CGFloat {
+            words[start..<end].joined(separator: " ").size(withAttributes: [.font: font]).width
+        }
+        let total = measured(0, words.count)
+        guard total > width else { return value }
+        for lineCount in 2...words.count {
+            let target = total / CGFloat(lineCount)
+            var memo: [String: (CGFloat, [String])?] = [:]
+            func best(_ start: Int, _ remaining: Int) -> (CGFloat, [String])? {
+                if remaining == 1 {
+                    let lineWidth = measured(start, words.count)
+                    return lineWidth <= width ? (pow(lineWidth - target, 2), [words[start...].joined(separator: " ")]) : nil
+                }
+                let key = "\(start):\(remaining)"
+                if let cached = memo[key] { return cached }
+                var result: (CGFloat, [String])?
+                let lastEnd = words.count - remaining + 1
+                if start < lastEnd {
+                    for end in (start + 1)...lastEnd {
+                        let lineWidth = measured(start, end)
+                        if lineWidth > width { break }
+                        guard let tail = best(end, remaining - 1) else { continue }
+                        let cost = pow(lineWidth - target, 2) + tail.0
+                        if result == nil || cost < result!.0 { result = (cost, [words[start..<end].joined(separator: " ")] + tail.1) }
+                    }
+                }
+                memo[key] = result
+                return result
+            }
+            if let lines = best(0, lineCount)?.1 { return lines.joined(separator: "\n") }
+        }
+        return value
     }
     private var timeTopInset: CGFloat {
         guard !isPreview, let window, let screen = window.screen else { return 18 }
@@ -515,13 +556,61 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             fill.setFill(); rect.fill()
         }
         guard bounds.width > 0, bounds.height > 0, let quote else { passageView?.isHidden = true; return }
+        if fuzzyCreditLabel == nil {
+            let label = NSTextField(wrappingLabelWithString: "")
+            label.isBordered = false
+            label.drawsBackground = false
+            label.isEditable = false
+            label.isSelectable = false
+            addSubview(label)
+            fuzzyCreditLabel = label
+        }
+        let creditParts = [preferences.bool(forKey: "hide-book-title") ? "" : quote.title, quote.author].filter { !$0.isEmpty }
+        let creditText = fuzzyClock ? creditParts.joined(separator: "\n") : ""
+        let creditKey = "\(creditText)|\(bounds.width)"
+        if creditKey != fuzzyCreditKey {
+            let label = fuzzyCreditLabel!
+            let style = NSMutableParagraphStyle()
+            style.alignment = .left
+            style.lineSpacing = 2
+            let shadow = NSShadow()
+            shadow.shadowOffset = .zero
+            shadow.shadowBlurRadius = 8
+            shadow.shadowColor = NSColor.black.withAlphaComponent(0.65)
+            label.attributedStringValue = NSAttributedString(string: creditText, attributes: [
+                .font: NSFont.systemFont(ofSize: 11), .foregroundColor: NSColor.white,
+                .paragraphStyle: style, .shadow: shadow,
+            ])
+            fuzzyCreditKey = creditKey
+        }
+        let creditLabel = fuzzyCreditLabel!
+        let creditWidth = min(500, max(140, bounds.width * 0.38))
+        creditLabel.frame = NSRect(x: 20, y: isFlipped ? bounds.height - 52 : 14, width: creditWidth, height: 38)
+        creditLabel.isHidden = !fuzzyClock || creditText.isEmpty
+        addSubview(creditLabel, positioned: .above, relativeTo: nil)
+        let creditTextureKey = "\(creditKey)|\(creditLabel.frame.size)"
+        if fuzzyClock && !creditText.isEmpty {
+            if creditTextureKey != fuzzyCreditOpticalKey {
+                let wasHidden = creditLabel.isHidden
+                creditLabel.isHidden = false
+                if let bitmap = creditLabel.bitmapImageRepForCachingDisplay(in: creditLabel.bounds) {
+                    creditLabel.cacheDisplay(in: creditLabel.bounds, to: bitmap)
+                    fuzzyCreditOpticalSource = bitmap.cgImage.map { CIImage(cgImage: $0) }
+                }
+                creditLabel.isHidden = wasHidden
+                fuzzyCreditOpticalKey = creditTextureKey
+            }
+        } else {
+            fuzzyCreditOpticalSource = nil
+            fuzzyCreditOpticalKey = ""
+        }
         let width = bounds.width * 0.76
         // Reserve the clock and a gap, including the Photo shadow's cache padding.
         let area = Self.passageArea(bounds: bounds, clockFrame: preferences.bool(forKey: "show-time") ? timeLabel?.frame : nil)
         let passagePadding: CGFloat = usesPhoto ? 24 : 0
         let limit = min(bounds.height * 0.65, max(1, area.height - passagePadding * 2 - 4))
         let paragraph = NSMutableParagraphStyle()
-        paragraph.alignment = quoteLocale.hasPrefix("ar") ? .right : .left
+        paragraph.alignment = fuzzyClock ? .center : (quoteLocale.hasPrefix("ar") ? .right : .left)
         paragraph.lineBreakMode = .byWordWrapping
         paragraph.lineHeightMultiple = theme == "book" ? 1.35 : theme == "festive" ? 1.25 : theme == "terminal" ? 1.15 : 1
         paragraph.baseWritingDirection = quoteLocale.hasPrefix("ar") ? .rightToLeft : .natural
@@ -529,47 +618,62 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         func passage(_ size: CGFloat) -> NSAttributedString {
             let result = NSMutableAttributedString()
             func append(_ item: NativeQuote, locale: String, size: CGFloat, gap: CGFloat) {
+                let fuzzy = fuzzyClock
                 let style = paragraph.mutableCopy() as! NSMutableParagraphStyle
-                style.alignment = locale.hasPrefix("ar") ? .right : .left
+                style.alignment = fuzzy ? .center : (locale.hasPrefix("ar") ? .right : .left)
                 style.baseWritingDirection = locale.hasPrefix("ar") ? .rightToLeft : .natural
                 style.paragraphSpacingBefore = gap
                 let font = quoteFont(size, locale: locale)
-                let text = NSMutableAttributedString(string: item.first + item.time + item.last,
+                let rawText: String
+                if fuzzy {
+                    rawText = item.time.isEmpty ? lastMinute : item.time
+                } else {
+                    rawText = item.first + item.time + item.last
+                }
+                let textString = fuzzy ? Self.balancedLines(rawText, font: font, width: width) : rawText
+                let text = NSMutableAttributedString(string: textString,
                     attributes: [.font: font, .foregroundColor: foreground, .paragraphStyle: style])
-                let range = NSRange(location: (item.first as NSString).length, length: (item.time as NSString).length)
+                // Apply highlight to the time portion (or full string when fuzzy)
+                let range = NSRange(location: 0, length: (textString as NSString).length)
                 text.addAttribute(theme == "book" ? .backgroundColor : .foregroundColor, value: accent, range: range)
                 result.append(text)
-                let attribution = preferences.bool(forKey: "hide-book-title") ? item.author : [item.title, item.author].filter { !$0.isEmpty }.joined(separator: ", ")
-                if !attribution.isEmpty {
-                    result.append(NSAttributedString(string: "\n", attributes: [.font: font, .paragraphStyle: style]))
-                    let citationStyle = style.mutableCopy() as! NSMutableParagraphStyle
-                    citationStyle.paragraphSpacingBefore = theme == "book" ? (bounds.width <= 750 ? 16 : 24) : size * 0.35
-                    result.append(NSAttributedString(string: (theme == "terminal" ? "> " : "— ") + attribution,
-                        attributes: [.font: quoteFont(size * 0.55, locale: locale), .foregroundColor: foreground, .paragraphStyle: citationStyle]))
+                if !fuzzyClock {
+                    let attribution = preferences.bool(forKey: "hide-book-title") ? item.author : [item.title, item.author].filter { !$0.isEmpty }.joined(separator: ", ")
+                    if !attribution.isEmpty {
+                        result.append(NSAttributedString(string: "\n", attributes: [.font: font, .paragraphStyle: style]))
+                        let citationStyle = style.mutableCopy() as! NSMutableParagraphStyle
+                        citationStyle.paragraphSpacingBefore = theme == "book" ? (bounds.width <= 750 ? 16 : 24) : size * 0.35
+                        result.append(NSAttributedString(string: (theme == "terminal" ? "> " : "— ") + attribution,
+                            attributes: [.font: quoteFont(size * 0.55, locale: locale), .foregroundColor: foreground, .paragraphStyle: citationStyle]))
+                    }
                 }
             }
             append(quote, locale: quoteLocale, size: size, gap: 0)
             if let translated = translation.quote {
-                let separatorStyle = NSMutableParagraphStyle()
-                separatorStyle.paragraphSpacingBefore = 18
-                separatorStyle.paragraphSpacing = 12
-                let separator = NSImage(size: NSSize(width: width - 12, height: 1), flipped: false) { rect in
-                    foreground.withAlphaComponent(0.25).setFill(); rect.fill(); return true
+                if !fuzzyClock {
+                    let separatorStyle = NSMutableParagraphStyle()
+                    separatorStyle.paragraphSpacingBefore = 18
+                    separatorStyle.paragraphSpacing = 12
+                    let separator = NSImage(size: NSSize(width: width - 12, height: 1), flipped: false) { rect in
+                        foreground.withAlphaComponent(0.25).setFill(); rect.fill(); return true
+                    }
+                    let attachment = NSTextAttachment()
+                    attachment.image = separator
+                    attachment.bounds = NSRect(x: 0, y: 0, width: width - 12, height: 1)
+                    result.append(NSAttributedString(string: "\n"))
+                    let line = NSMutableAttributedString(attachment: attachment)
+                    line.addAttributes([.paragraphStyle: separatorStyle, .font: NSFont.systemFont(ofSize: 1)], range: NSRange(location: 0, length: line.length))
+                    result.append(line)
+                    result.append(NSAttributedString(string: "\n", attributes: [.paragraphStyle: separatorStyle, .font: NSFont.systemFont(ofSize: 1)]))
+                    let headingStyle = NSMutableParagraphStyle()
+                    headingStyle.alignment = systemLocale.hasPrefix("ar") ? .right : .left
+                    headingStyle.baseWritingDirection = systemLocale.hasPrefix("ar") ? .rightToLeft : .natural
+                    headingStyle.paragraphSpacing = 8
+                    let name = Locale(identifier: systemLocale).localizedString(forIdentifier: translation.locale) ?? translation.locale
+                    result.append(NSAttributedString(string: name + "\n", attributes: [.font: NSFont.systemFont(ofSize: max(10, size * 0.35), weight: .medium), .foregroundColor: foreground.withAlphaComponent(0.75), .paragraphStyle: headingStyle]))
+                } else {
+                    result.append(NSAttributedString(string: "\n\n"))
                 }
-                let attachment = NSTextAttachment()
-                attachment.image = separator
-                attachment.bounds = NSRect(x: 0, y: 0, width: width - 12, height: 1)
-                result.append(NSAttributedString(string: "\n"))
-                let line = NSMutableAttributedString(attachment: attachment)
-                line.addAttributes([.paragraphStyle: separatorStyle, .font: NSFont.systemFont(ofSize: 1)], range: NSRange(location: 0, length: line.length))
-                result.append(line)
-                result.append(NSAttributedString(string: "\n", attributes: [.paragraphStyle: separatorStyle, .font: NSFont.systemFont(ofSize: 1)]))
-                let headingStyle = NSMutableParagraphStyle()
-                headingStyle.alignment = systemLocale.hasPrefix("ar") ? .right : .left
-                headingStyle.baseWritingDirection = systemLocale.hasPrefix("ar") ? .rightToLeft : .natural
-                headingStyle.paragraphSpacing = 8
-                let name = Locale(identifier: systemLocale).localizedString(forIdentifier: translation.locale) ?? translation.locale
-                result.append(NSAttributedString(string: name + "\n", attributes: [.font: NSFont.systemFont(ofSize: max(10, size * 0.35), weight: .medium), .foregroundColor: foreground.withAlphaComponent(0.75), .paragraphStyle: headingStyle]))
                 append(translated, locale: translation.locale, size: size * 0.8, gap: 0)
             } else if let notice = translation.notice {
                 let style = paragraph.mutableCopy() as! NSMutableParagraphStyle
@@ -581,7 +685,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             }
             return result
         }
-        let key = "\(quote.first)\(quote.time)\(quote.last)\(quote.title)\(quote.author)|\(theme)|\(backgroundMode)|\(pattern)|\(quoteLocale)|\(width)|\(limit)|\(scale)|\(dark)|\(accent)|\(lastMinute)|\(preferences.bool(forKey: "hide-book-title"))"
+        let key = "\(quote.first)\(quote.time)\(quote.last)\(quote.title)\(quote.author)|\(theme)|\(backgroundMode)|\(pattern)|\(quoteLocale)|\(width)|\(limit)|\(scale)|\(dark)|\(accent)|\(lastMinute)|\(preferences.bool(forKey: "hide-book-title"))|\(fuzzyClock)"
         let bilingualKey = key + "|\(quote.id ?? "")|\(preferences.bool(forKey: "bilingual"))|\(preferences.string(forKey: "translation-locale") ?? "")|\(preferences.bool(forKey: "work"))"
         if bilingualKey != layoutKey {
             var low: CGFloat = 1, high = min(bounds.width * 0.043, bounds.height * 0.12)
@@ -670,6 +774,12 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             let positionedQuote = texture.transformed(by: CGAffineTransform(scaleX: frame.width / texture.extent.width, y: frame.height / texture.extent.height))
                 .transformed(by: CGAffineTransform(translationX: frame.minX, y: frame.minY))
             scene = positionedQuote.composited(over: scene)
+            if fuzzyClock, let creditTexture = fuzzyCreditOpticalSource, let label = fuzzyCreditLabel {
+                let creditFrame = label.frame
+                let positionedCredit = creditTexture.transformed(by: CGAffineTransform(scaleX: creditFrame.width / creditTexture.extent.width, y: creditFrame.height / creditTexture.extent.height))
+                    .transformed(by: CGAffineTransform(translationX: creditFrame.minX, y: creditFrame.minY))
+                scene = positionedCredit.composited(over: scene)
+            }
             pane.source = scene
             addSubview(pane, positioned: .above, relativeTo: nil)
 
@@ -873,7 +983,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         patternChanged(controls["background-pattern"] as! NSPopUpButton)
         effectChanged(controls["background-effect"] as! NSPopUpButton)
         section("settings_behavior")
-        for (key, label) in [("screensaver", "movement"), ("show-time", "time_mode"), ("hide-book-title", "settings_hide_book_title"), ("work", "work_mode_title")] {
+        for (key, label) in [("screensaver", "movement"), ("show-time", "time_mode"), ("fuzzy-clock", "settings_fuzzy_clock"), ("hide-book-title", "settings_hide_book_title"), ("work", "work_mode_title")] {
             let check = NSButton(checkboxWithTitle: text(label), target: nil, action: nil)
             check.state = preferences.bool(forKey: key) ? .on : .off
             controls[key] = check

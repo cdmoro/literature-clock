@@ -16,6 +16,7 @@ public sealed class Preferences
     public string[] Languages { get; set; } = [];
     public bool Move { get; set; } = true;
     public bool ShowTime { get; set; } = true;
+    public bool FuzzyClock { get; set; } = false;
     public bool HideTitle { get; set; }
     public bool Safe { get; set; } = true;
     public bool Bilingual { get; set; }
