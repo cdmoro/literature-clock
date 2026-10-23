@@ -116,6 +116,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.sha }}
+          fetch-depth: 0
       - uses: actions/download-artifact@v4
         with:
           pattern: Literature-Clock-*
@@ -151,6 +152,23 @@ jobs:
           if {file.name for file in files} != expected:
               raise SystemExit('Release artifact set is incomplete or contains unexpected files')
           tag = 'literature-clock-v' + version
+          version_tuple = tuple(map(int, version.split('.')))
+          mother_tags = []
+          for candidate in subprocess.run(['git', 'tag', '--list', 'literature-clock-v*'], check=True, capture_output=True, text=True).stdout.splitlines():
+              match = re.fullmatch(r'literature-clock-v(\d+)\.(\d+)\.(\d+)', candidate)
+              if match:
+                  candidate_version = tuple(map(int, match.groups()))
+                  if candidate_version < version_tuple:
+                      mother_tags.append((candidate_version, candidate))
+          if mother_tags:
+              previous_tag = max(mother_tags)[1]
+          else:
+              web_tags = []
+              for candidate in subprocess.run(['git', 'tag', '--list', 'v[0-9]*'], check=True, capture_output=True, text=True).stdout.splitlines():
+                  match = re.fullmatch(r'v(\d+)\.(\d+)\.(\d+)', candidate)
+                  if match:
+                      web_tags.append((tuple(map(int, match.groups())), candidate))
+              previous_tag = max(web_tags)[1] if web_tags else ''
           notes = textwrap.dedent(f'''\
           ## Component versions
 
@@ -160,5 +178,8 @@ jobs:
 
           This consolidated release includes all platform downloads for this project release.
           ''')
-          subprocess.run(['gh', 'release', 'create', tag, *map(str, files), '--target', os.environ['GITHUB_SHA'], '--title', 'Literature Clock ' + version, '--notes', notes, '--latest'], check=True)
+          command = ['gh', 'release', 'create', tag, *map(str, files), '--target', os.environ['GITHUB_SHA'], '--title', 'Literature Clock ' + version, '--notes', notes, '--generate-notes', '--latest']
+          if previous_tag:
+              command.extend(['--notes-start-tag', previous_tag])
+          subprocess.run(command, check=True)
           PYTHON

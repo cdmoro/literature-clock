@@ -21,7 +21,7 @@ https://github.com/user-attachments/assets/626ca478-d170-4176-90d9-c46580fcfa91
 
 ### [🍎 Download for macOS](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-macOS.saver.zip) &nbsp;&nbsp;•&nbsp;&nbsp; [🪟 Download for Windows](https://github.com/cdmoro/literature-clock/releases/latest) &nbsp;&nbsp;•&nbsp;&nbsp; [🌎 Try Live Demo](https://literatureclock.netlify.app/)
 
-Each project release includes the web build and native downloads. Release notes list each component version. The release workflow checks changes against the previous consolidated release and stops if a changed platform's version was not increased.
+Each project release includes the web build and native downloads. Release notes list each component version, generated changes and a full changelog link. The release workflow checks changes against the previous consolidated release and stops if a changed platform's version was not increased.
 
 </div>
 
