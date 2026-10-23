@@ -1,0 +1,11 @@
+# Instructions for coding agents
+
+- Read `docs/DEVELOPMENT.md` for setup and project workflows. Read the relevant feature or platform guide before changing translation/catalogue or native screensaver code.
+- Keep changes focused and preserve existing user changes in the working tree.
+- Treat files under `public/times/` and generated catalogue statistics as generated output. After editing quote CSV files, run `npm run generate-times`; do not hand-edit generated quote JSON.
+- Add or update UI text in `src/strings/` for every supported locale, following the existing keys and structure.
+- For web changes, use the relevant checks: `npm run typecheck`, `npm run test:ci`, and `npm run build`. `npm run build` creates `dist/`; do not commit generated build output unless the task explicitly requires it.
+- Native screensaver builds and release version rules are documented in `screensavers/macos-native/README.md`, `screensavers/windows-native/README.md`, and the release workflow. Follow those instructions when changing native code or component versions.
+- Inspect the changed paths and estimate the user-visible scope, not just the number of files or lines changed. Use `scripts/validate_release_versions.py` as the source of truth for component mapping: web changes use `package.json`; macOS changes use `screensavers/macos-native/VERSION`; Windows changes use `screensavers/windows-native/VERSION`. Shared quote/translation data can affect both native components.
+- For a clear bug fix, apply a patch bump to the affected component version. For a clear backward-compatible feature, apply a minor bump. For a breaking change, apply a major bump only when that impact is clear. If the scope or compatibility impact is ambiguous, explain the recommendation and ask before changing versions. Do not bump versions for docs/tests-only changes or unrelated internal work. `release/VERSION` is the separate consolidated release number and should change only when preparing that release.
+- Do not publish, deploy, push, or create a release unless the user explicitly asks.

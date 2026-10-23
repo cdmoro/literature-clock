@@ -167,8 +167,14 @@ export async function renderShareCard(
           ? 'none'
           : tileImage
         : tileImage;
-  const cardBackgroundSize = patternTile ? patternTile.size : backgroundSize;
-  const cardBackgroundRepeat = patternTile ? 'repeat' : paletteStyle.backgroundRepeat;
+  const cardBackgroundSize =
+    options.photoImage === '' && patternTile ? patternTile.size : backgroundSize;
+  const cardBackgroundRepeat =
+    options.photoImage === '' && patternTile
+      ? 'repeat'
+      : patternTile && festivePattern
+        ? 'repeat, no-repeat'
+        : paletteStyle.backgroundRepeat;
   const cardBackgroundPosition = backgroundPosition;
   palette.remove();
   Object.assign(card.style, {
