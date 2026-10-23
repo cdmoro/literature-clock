@@ -136,12 +136,10 @@ jobs:
           version = Path('release/VERSION').read_text().strip()
           if not re.fullmatch(r'\d+\.\d+\.\d+', version):
               raise SystemExit('Invalid release/VERSION; expected major.minor.patch')
-          package = json.loads(Path('package.json').read_text())['version']
           macos = Path('screensavers/macos-native/VERSION').read_text().strip()
           windows = Path('screensavers/windows-native/VERSION').read_text().strip()
           files = sorted(Path('package').glob('*'))
           expected = {
-              f'Literature-Clock-Web-{package}.zip',
               'Literature-Clock-Native-macOS.saver.zip',
               'Literature-Clock-Native-macOS.saver.zip.sha256',
               'Literature-Clock-Native-Windows-win-x64.scr',
@@ -176,7 +174,7 @@ jobs:
           - macOS screensaver: {macos}
           - Windows screensaver: {windows}
 
-          This consolidated release includes all platform downloads for this project release.
+          This consolidated release includes the native macOS and Windows downloads for this project release. The web app is hosted at https://literatureclock.netlify.app/.
           ''')
           command = ['gh', 'release', 'create', tag, *map(str, files), '--target', os.environ['GITHUB_SHA'], '--title', 'Literature Clock ' + version, '--notes', notes, '--generate-notes', '--latest']
           if previous_tag:
