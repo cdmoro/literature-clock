@@ -24,37 +24,34 @@ Run `Uninstall.ps1` to deselect this installation and move it into recoverable b
 Preferences and cached photos are retained. Neither installer changes the secure-resume
 preference or manages other users' installations.
 
-## macOS parity
+## Features
 
-Includes all seven native themes, system/light/dark appearance, the same automatic font
-mapping for all twelve languages, per-minute language rotation and distinct monitor
-choices, highlighted time phrases, title hiding, safe-passage filtering, bilingual
-shared-ID translations, gently moving text, fixed/custom/per-minute colours, background
-selection, patterns, time display and all six progress modes. Book uses rounded highlight
-fragments and its paper tile. Retro and Terminal retain repeating scanlines. Photo uses
-Picsum, NASA or Commons, shared category queries, source credits, offline per-display
-caches, next-minute prefetch and 650 ms crossfades. Commons accepts only CC0 metadata
-without required attribution; JPEG/PNG only, since Windows has no built-in WebP decoder.
-The bundled Book WebP is losslessly converted to PNG during the build.
+Includes seven themes, system/light/dark appearance, automatic font selection for all
+twelve languages, per-minute language rotation, distinct monitor choices, highlighted
+time phrases, title hiding, safe-passage filtering, bilingual translations by shared
+quote ID, moving text, fixed/custom/per-minute colours, background selection, patterns,
+time display and six progress modes. Book uses rounded highlight fragments and its paper
+tile. Retro and Terminal use repeating scanlines. Photo supports Picsum, NASA and
+Wikimedia Commons, with category queries, source credits, per-display offline caches,
+next-minute prefetch and 650 ms crossfades. Commons accepts only CC0 metadata without
+required attribution. Windows has no built-in WebP decoder, so the bundled Book WebP is
+converted to PNG during the build.
 
 Text over Photo backgrounds uses a fine background-coloured outline and a soft 12-DIP
 halo. Selected patterns use a stronger outline. WPF renders the outline with zero-offset
 shadow effects, so edge softness can differ slightly from the web and macOS renderers.
 
-Liquid Glass uses an HLSL port of `macos-native/Sources/OpticalGlass.metal`, with the same
-36-DIP bevel, RGB dispersion, 28-DIP leading corners, last-8% corner fade, subtle horizontal
-rim and 10% background / 2.5% foreground tint. Background glass keeps the passage above
+Liquid Glass uses an HLSL implementation based on `macos-native/Sources/OpticalGlass.metal`,
+with a 36-DIP bevel, RGB dispersion, 28-DIP leading corners, last-8% corner fade, subtle
+horizontal rim and 10% background / 2.5% foreground tint. Background glass keeps the passage above
 the lens; foreground glass samples the passage and clock. WPF samples the live photo
 crossfade. A GPU supporting pixel shader 3.0 and WPF rendering tier 2 is required; on
 unsupported hardware glass falls back to classic 10% background progress.
 This is the project's optical shader, rather than Apple's system Liquid Glass API.
 
-Platform text shaping/rasterization, system colours and native settings controls differ
-from AppKit. Pixel-identical output has not been established. Windows Settings embedding,
-automatic activation, multi-monitor DPI changes, Arabic wrapping, photo providers,
-GPU glass, keyboard dismissal, secure resume, sleep/wake and installer update/rollback
-must be tested on actual Windows hardware before declaring release readiness. ARM64
-cross-compilation does not validate ARM64 execution.
+Text shaping, rasterization, system colours and settings controls use Windows-native
+behavior, so rendering can differ from other platforms. Pixel-identical output is not
+promised. The project shader is not Apple's system Liquid Glass API.
 
 ## Build and checks
 
