@@ -1,97 +1,53 @@
-# Literature Clock Native — macOS prototype
+# Literature Clock for macOS
 
-This experimental saver draws quotes with AppKit inside `ScreenSaverView`. It has no WebKit, JavaScript, browser or local server. Only the optional Photo background downloads images and, for NASA/Commons, catalogue metadata; all quotes and fonts remain offline. It uses its own native settings domain.
+The native screen saver renders the clock with AppKit. It does not use a browser, WebKit or a local server. Quote catalogues, fonts, themes and patterns are bundled; the optional Photo background downloads images and, for NASA and Wikimedia Commons, search metadata.
 
-The prototype supports the 12 published quote languages, rotating selected languages each minute. No selected language follows the first preferred system language, with en-GB fallback. It includes light/dark/system appearance, accent colours, optional time, explicit-passage filtering, minute progress and movement starting at the centre. The native panel reuses the existing translations. Bilingual mode displays the same passage in a chosen second language below the original, using the shared quote ID. A subtle divider and a localized language heading separate the translation from the original. It works offline with the bundled catalogues, applies explicit-passage filtering to both texts and fits their combined layout. Missing translations, an unset target language and an already matching language show translated notices rather than unrelated passages.
+It supports the 12 published quote languages, language rotation, bilingual display, light/dark/system appearance, themes, accent and custom colours, optional time and minute progress, passage filtering, and per-minute background patterns. Photo backgrounds work with the supported themes and can use Picsum, NASA or Wikimedia Commons. NASA and Commons topics are shared with the web app through `src/photo-providers.json`. Photos rotate automatically; the last successful image and its credit are saved for offline use.
 
-Base fonts are bundled and registered only within the saver process: Special Elite, Sansation (Greek), Pangolin (Russian), Marhey (Arabic) and ZCOOL KuaiLe (Chinese). Book, Terminal, Festive, Bohemian and Retro add their theme fonts and language-specific variants. These are native interpretations of the web themes, with distinct typography, background and accent colours; they do not reproduce every CSS effect. Greek Bohemian uses the already bundled Sansation. Native font fallback supplies any missing glyphs. Font files and their licenses are vendored from a pinned Google Fonts revision; `Assets/Fonts/manifest.json` records source URLs and checksums, verified at build time. Builds and rendering require no font downloads.
+The native app has its own settings. Per-display choices such as quotes, selected languages, photos and random colours or patterns can vary independently, while fixed settings are shared. Glass progress requires macOS 26 or later; other themes and progress styles remain available on older supported systems.
 
-Base matches the web’s accent-tinted surfaces: 15% of the selected accent mixed with white in light mode, and 16% mixed with #101016 in dark mode, in sRGB. Its foreground colours also match the web. Colour offers three modes: From the theme, Fixed and Change every minute. Fixed reveals preset swatches and one remembered custom colour. Edit colour opens the inline RGB/hex editor only when the custom swatch is selected; switching modes preserves that custom colour. The editor stays inside the settings sheet because the system colour panel is not reliably displayed by the remote Settings host. Editing a custom colour never overrides a subsequently selected preset on OK. Book titles can be hidden independently while keeping the author. Background patterns include dots, diagonal lines and grid, with optional rotation each minute. Patterns have stronger contrast and are rendered once per appearance/size change. Retro repeats the web scanline texture at its original 1 × 3 point size. Book bundles its paper texture, aligns text to the start of the writing direction and highlights the time with opaque rounded fragments, Festive has its diagonal gradient, and Terminal has scanlines. The optional time sits above the passage, centred independently of text motion. On macOS 26 or later, Background Liquid Glass applies a bundled Metal/Core Image lens at the progress edge with a 10% tint, keeping the quote above it. Foreground Liquid Glass uses the same wide bevel with a 2.5% tint and refracts the cached passage beneath it. Both sample the plain clock underneath the progress. There is no clock glass or fusion. The optical shader samples RGB channels separately for chromatic dispersion, keeps the interior sharp, and processes a 36-point band at the moving edge. Classic Background remains the default at 10% opacity; saved settings are not migrated. Glass progress is disabled on older macOS versions. Closed option sheets are recreated instead of reusing a dismissed window.
+## Build
 
-The Background selector offers Default theme, Tinted, Photo and Plain. Default preserves the theme background; Tinted uses Base’s accent mix; Plain uses pure white or black and still permits an independently selected pattern. Book and Photo lock the selector to their own backgrounds, preserving the previous choice when returning to a compatible theme. Photo can be used with every other native theme: Retro keeps transparent scanlines, Festive keeps a translucent gradient and Terminal keeps its scanlines. Both glass progress modes sample the complete composition. Provider/category controls appear only when the effective background is Photo. The preference is saved and synchronized across native displays; old settings default to the theme background.
-
-Photo downloads a seeded Picsum background at most once per minute, asynchronously, with bounded image dimensions and request timeouts. Its light/dark overlay matches the web: #dddddd at 40% in light mode and #111111 at 50% in dark mode, with matching quote and progress colours. Text over any Photo background uses a fine background-coloured outline and a 12-point, zero-offset diffuse halo; selected patterns use a stronger outline. Both effects are cached with the passage rather than recomputed per animation frame, with padded raster bounds to prevent clipping. The last successful photo is cached; a failed download leaves it visible, and an initial offline launch uses the theme background. Photo bundles the same fonts as the web theme: Abril Fatface, Lalezar for Arabic, Russo One for Russian, Dela Gothic One for Greek and ZCOOL KuaiLe for Chinese. These fonts work offline. Switching away from a Photo background or stopping cancels the request. A real Picsum download was verified in the System Settings preview. Sustained full-screen activation and offline recovery in that host still require verification.
-
-The passage is rasterized only when its content, appearance or display scale changes, then moved as a single image at up to 60 frames per second. This avoids rerasterizing glyphs at each fractional position. Motion is faster than the initial prototype while staying within generous text margins. The bundled thumbnail is used only in the saver catalogue. `Assets/generate-thumbnail.swift` can generate an alternative book-and-clock illustration; it is not run by the build, which preserves the supplied thumbnail assets.
-
-The build reads the CSVs through the existing validation helpers, excludes draft rows, validates the highlighted time and SFW flag, converts markup to plain text, and creates one compact JSON catalogue per language. A missing minute uses the en-GB catalogue; if no eligible quote exists, it displays the existing translated quote-not-found notice and current time without inventing a passage. With explicit passages filtered, 29 minutes currently have no eligible quote in either Greek or English; this can explain a bare-time display in earlier builds, but is not proof of the user's particular occurrence.
-
-Build on macOS with the Xcode Metal Toolchain component installed:
+Build on macOS with Xcode and its Metal Toolchain installed:
 
 ```sh
 python3 screensavers/macos-native/build.py --universal
 ```
 
-Output: `build/Literature Clock.saver`, a standalone preview app, `build/Install Literature Clock.app` (used by CI installation checks), and `Literature-Clock-Native-macOS.saver.zip` with its SHA-256 checksum. The downloadable archive contains only the installable saver bundle. Signing is ad-hoc; these test builds are not notarized.
+The build creates the saver, a standalone preview app, the installer app, and a ZIP archive with a SHA-256 checksum under `screensavers/macos-native/build/`. Builds are universal for Apple silicon and Intel and are ad-hoc signed, not notarized. The installer checks can be run with:
 
-Open the preview app to inspect drawing and its Settings menu. This is a normal resizable window: mouse movement and screenshot shortcuts do not dismiss it. Launch its executable with --photo-glass-preview for a disposable Photo/dark workspace, or --glass-preview for Book/light, with the clock and background progress enabled; its Settings menu changes only that workspace. This preview does not modify the installed saver’s preferences. The clock is plain text beneath progress, with an 18-point top margin beyond the safe screen area and matching label padding. Both optical progress modes use the same wide bevel; there is no clock glass or fusion. The Photo workspace permits downloads and supports the same provider/category controls as the saver. The optical shader is compiled into the bundle; users do not need Xcode or Metal developer tools to run it. Run its executable with `--check-render` to render all catalogues and theme variants to `/private/tmp/literature-clock-native-checks`, check bundled font selection, minute changes, a filtered gap, reopening a dismissed options sheet, and custom-colour saving. This checks native drawing, not sustained system-host behavior. The user confirmed native rendering and animations. Photo downloads, preset/default colour persistence, repeated options opening and title hiding were subsequently checked in System Settings Preview. Earlier intermittent Options failures and mixed web/native full-screen monitors still warrant repeated testing. System Settings showed Native selected for both displays during investigation; the mixed-monitor cause is not confirmed. Repeated Preview/options, automatic activation, multiple displays and sleep/wake remain required before publication. Intel compilation is not Intel runtime validation.
+```sh
+"screensavers/macos-native/build/Install Literature Clock.app/Contents/MacOS/Install Literature Clock" --check-install
+```
 
-## Install and give feedback
+This check uses temporary directories and does not alter installed savers or user preferences.
 
-The release build is signed ad hoc and is not notarized, so Gatekeeper may block it on first open. Only approve it if you trust the project source and verified the download. After the block, open **System Settings → Privacy & Security**, scroll to **Security**, choose **Open Anyway** for Literature Clock, and confirm the next prompt. Then double-click `Literature Clock.saver` again and choose **Install for This User Only**. The approval button is available for about an hour after the blocked attempt. See [INSTALL.txt](INSTALL.txt).
+## Preview and diagnostics
 
-Download [`Literature-Clock-Native-macOS.saver.zip`](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-macOS.saver.zip), extract the single `Literature Clock.saver` bundle and double-click it to install for this user. Follow the Gatekeeper approval steps above if macOS blocks the unnotarized build. Save or cancel any open Options sheet first. Select Literature Clock in System Settings → Wallpaper → Screen Saver, then open Options and save your settings. If macOS retains an old version or thumbnail, quit and reopen System Settings and restart the legacy Screen Saver host.
+Open the standalone preview app to inspect rendering and settings without changing the installed saver's preferences. Its executable supports these preview modes:
 
-Please report your macOS version, hardware, selected theme/languages and whether a problem occurs in the small preview, full-screen Preview or automatic activation in [GitHub issues](https://github.com/cdmoro/literature-clock/issues/new/choose). Include whether one or several displays are connected.
+- `--glass-preview` for Book/light with clock and background progress
+- `--photo-glass-preview` for Photo/dark
+- `--foreground-glass-preview` for foreground Liquid Glass
+- `--rounded-glass-preview` for a 12-second progress cycle
+- `--showcase-preview` for a looping theme and language demonstration
+
+Run the executable with `--check-render` to render catalogues and theme variants and check native rendering behavior. Output is written to `/private/tmp/literature-clock-native-checks`.
+
+## Install
+
+For installation and updates, use the installer included in the downloaded ZIP. It backs up replaced copies and can restore them if installation fails. See [INSTALL.txt](INSTALL.txt) for installer details, manual installation, and Gatekeeper instructions for ad-hoc signed builds.
+
+Download the latest macOS build from [GitHub Releases](https://github.com/cdmoro/literature-clock/releases/latest).
 
 ## Project releases
 
-The web app and native savers keep their own component versions. A project release combines the web, macOS and Windows downloads under one `literature-clock-vX.Y.Z` tag; its notes list each component version. When any platform is ready to publish, increase `release/VERSION` in the same change. Merging that change to `main` builds all three platforms and publishes one GitHub release. The native component versions come from their respective `VERSION` files, and the web version comes from `package.json`.
+The macOS component version is recorded in `VERSION`. The web app and each native saver have separate component versions; the consolidated release workflow publishes them together. See the repository's release workflow for when to update `release/VERSION` and component versions.
 
-The standalone macOS workflow remains available for pull request checks and manual preview builds. It does not publish releases.
+## Photo sources and attribution
 
-## Photo providers and safe screen area
+Picsum, NASA and Wikimedia Commons are available as photo providers. NASA and Commons use the shared topics configured in `src/photo-providers.json`; Picsum has no topic selector. Commons results are restricted to bitmap images whose metadata identifies a CC0 licence. NASA can include third-party material, so its results are not a complete rights audit. Source credits are shown with the image. See [NASA media usage guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/).
 
-Choose Photo, then Picsum, NASA or Wikimedia Commons in Options. Provider and category sit side by side; the category selector is hidden for Picsum. NASA and Commons need no account or API key. Category queries come from `src/photo-providers.json`, shared with the web app. Each category search retrieves up to 100 NASA results or 50 Commons results automatically and is cached in memory for an hour; images rotate each minute. All alternates between the provider’s available categories. Source credits are drawn over the background. Commons accepts only bitmap images whose metadata identifies a CC0 licence without required attribution. Artist HTML is converted to plain text; the image source is retained with the cached metadata. Entries whose description identifies copyright protection are excluded; NASA occasionally includes third-party material, so this filter does not constitute a complete rights audit. No image list is maintained by hand.
+## Feedback
 
-Downloads preserve the last successful image and its credit if NASA, Commons, Picsum or the internet is unavailable. The native saver stores that image and credit on disk for offline activation. The web app preserves the last loaded background during the current session. See [NASA media usage guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/).
-
-The time label uses the current screen's `safeAreaInsets.top` and the view's screen coordinates to avoid a camera housing. It keeps its normal margin on external screens, miniature previews, and windows that macOS has already positioned below the notch. Synthetic geometry checks cover these cases; actual full-screen placement on a Mac with a notch still needs verification.
-
-### Available photo topics
-
-| Provider | Topics (plus All) |
-| --- | --- |
-| NASA | Galaxies, nebulae, Earth, Moon, stars, planets, Mars, Jupiter, Saturn, Sun, auroras, space stations, rockets, astronauts |
-| Wikimedia Commons | Nature, landscapes, animals, architecture, oceans, mountains, forests, flowers, birds, waterfalls, cities, castles, bridges, art, beaches, sunsets |
-
-These are shared search topics, rather than a fixed official category taxonomy. The providers select images automatically; Commons may also return paintings and other artwork. The web validates saved categories directly against the shared configuration, and both interfaces translate their labels in all 12 supported languages.
-
-### Multiple displays
-
-Displays share the same settings but vary their quotes, selected languages, photos and random colour/pattern choices independently. Selected languages rotate with a different starting position per display; with one language, displays select different passages for that minute when enough exist. Fixed colours and patterns stay fixed. Movement starts at rest, with a slightly different speed per display. Picsum seeds include the current minute and display identifier. NASA/Commons image lists are sorted by URL, and each display chooses a different position when enough images are available. Each display has its own cached offline photo. Picsum can still return the same underlying image for different seeds; a catalogue with fewer images than displays also permits repeats. Actual simultaneous multi-display activation remains a manual verification step.
-
-Foreground Liquid Glass places the progress lens over the quote and clock, with a 2.5% tint and the plain clock beneath it. Background Liquid Glass retains its 10% tint and keeps quotes above the lens. Use `--foreground-glass-preview` to preview the foreground mode in a window.
-
-The macOS component version is recorded in `screensavers/macos-native/VERSION`. When any platform is ready for a project release, update `release/VERSION`; the consolidated workflow builds the web app and both native savers and publishes them together. If macOS code or shared native resources changed since the last consolidated release, the workflow requires a higher macOS component version. Component versions are listed in the release notes.
-
-Options show the installed native bundle version with a link to its release. Fonts are selected automatically for the theme and quote language; there is no font selector. All 25 web patterns are bundled as cached native tiles, plus None and per-minute Random.
-
-The committed pattern PNGs are generated from the web SVGs with `scripts/render-native-patterns.cjs` and @resvg/resvg-js. The release build copies these assets directly and does not require Node or SVG rendering dependencies.
-
-Glass progress has 28-point rounded leading corners, shrinking smoothly to zero during the last 8% of the minute. Its bevel fades softly where the curve meets the screen edges. `--rounded-glass-preview` sweeps a full cycle in 12 seconds.
-
-Both glass progress modes refract the moving edge and the full top/bottom edges. Horizontal highlights use 12% of the vertical highlight strength to keep the rim subtle. Narrow strips are rendered rather than processing the whole pane.
-
-`--showcase-preview` opens an isolated recording workspace: English, Spanish, Chinese and French each retain one frozen passage across three two-second styles (24 seconds per loop). Every language includes Photo and two other themes, with colour/pattern changes and clock visibility variations, cycling through Bottom, flat Background and Foreground Liquid Glass. Cmd-R restarts at English; Cmd-P pauses/resumes the demonstration. Progress advances continuously from left to right across the entire 24-second loop. Settings are separate from the installed saver.
-
-Photo prefetches the next minute during the final 15 seconds. A ready photo crossfades for 650 ms at the minute boundary; a late download crossfades on completion. Failed downloads preserve the current photo. Glass samples the same animated blend, reusing cached background snapshots and processing only its bevel strips.
-
-Per-monitor choices resolve the display from each saver view’s screen-space rectangle, including Preview views whose hosting window reports another screen. Available selected languages, quote variants, random colours and random patterns use distinct display ordinals; fixed settings remain shared. If there are fewer available languages or quote variants than displays, repetition is unavoidable.
-
-
-## Installer checks
-
-Run `build/Install Literature Clock.app/Contents/MacOS/Install Literature Clock --check-install`
-(quote the full executable path in a shell). This uses temporary directories only and never
-changes installed savers, user preferences or running applications. It covers fresh installation,
-updates, duplicate confirmation, recoverable backups, unrelated files, rollback after an
-interrupted replacement, symlinks and corrupt payloads. The native release and PR workflow
-runs these checks before uploading the ZIP. Both the installer and its embedded saver are
-universal and ad-hoc signed; Developer ID signing and notarization remain release work.
-
-Catalogue read errors are throttled and retried after five seconds, including within the same
-minute. Failed reads are never stored as empty catalogues. If both the requested language
-and English fallback are unavailable, the saver shows a localized resource error with an
-installer recovery instruction instead of only the time. The native render diagnostics exercise
-failure and recovery with an isolated resource directory.
+Report issues at [GitHub Issues](https://github.com/cdmoro/literature-clock/issues/new/choose). Include your macOS version, Mac model, selected theme and languages, display setup, and whether the issue occurs in the small preview, full-screen preview or automatic activation.
