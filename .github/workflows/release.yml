@@ -23,7 +23,20 @@ permissions:
   contents: read
 
 jobs:
+  validate-versions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check component versions against the previous consolidated release
+        run: python3 scripts/validate_release_versions.py
+
   web:
+    needs: validate-versions
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -44,6 +57,7 @@ jobs:
           path: Literature-Clock-Web-*.zip
 
   macos:
+    needs: validate-versions
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
@@ -68,6 +82,7 @@ jobs:
             screensavers/macos-native/build/Literature-Clock-Native-macOS.saver.zip.sha256
 
   windows:
+    needs: validate-versions
     runs-on: windows-latest
     strategy:
       matrix:
@@ -93,7 +108,7 @@ jobs:
 
   publish:
     if: github.event_name == 'push'
-    needs: [web, macos, windows]
+    needs: [validate-versions, web, macos, windows]
     runs-on: ubuntu-latest
     permissions:
       contents: write

@@ -63,7 +63,7 @@ Displays share the same settings but vary their quotes, selected languages, phot
 
 Foreground Liquid Glass places the progress lens over the quote and clock, with a 2.5% tint and the plain clock beneath it. Background Liquid Glass retains its 10% tint and keeps quotes above the lens. Use `--foreground-glass-preview` to preview the foreground mode in a window.
 
-The macOS component version is recorded in `screensavers/macos-native/VERSION`. When any platform is ready for a project release, update `release/VERSION`; the consolidated workflow builds the web app and both native savers and publishes them together. Component versions are listed in the release notes.
+The macOS component version is recorded in `screensavers/macos-native/VERSION`. When any platform is ready for a project release, update `release/VERSION`; the consolidated workflow builds the web app and both native savers and publishes them together. If macOS code or shared native resources changed since the last consolidated release, the workflow requires a higher macOS component version. Component versions are listed in the release notes.
 
 Options show the installed native bundle version with a link to its release. Fonts are selected automatically for the theme and quote language; there is no font selector. All 25 web patterns are bundled as cached native tiles, plus None and per-minute Random.
 
