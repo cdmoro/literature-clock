@@ -19,9 +19,18 @@ https://github.com/user-attachments/assets/626ca478-d170-4176-90d9-c46580fcfa91
 
 <div align="center">
 
-### [🍎 Download for macOS](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-macOS.saver.zip) &nbsp;&nbsp;•&nbsp;&nbsp; 🪟 Download for Windows [x64](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-Windows-win-x64.scr) / [ARM64](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-Windows-win-arm64.scr) &nbsp;&nbsp;•&nbsp;&nbsp; [🌎 Try Live Demo](https://literatureclock.netlify.app/)
+### Download Literature Clock
 
-Each project release includes the web build and native downloads. Release notes list each component version, generated changes and a full changelog link. The release workflow checks changes against the previous consolidated release and stops if a changed platform's version was not increased.
+Turn your display into a literary clock. Choose your platform to get the native screensaver, or try the web app.
+
+| <img src="https://cdn.simpleicons.org/apple/ffffff" alt="Apple" width="20" /> **macOS** | <svg role="img" aria-label="Windows" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#0078D4" d="M1 4.5 10 3.3v8.2H1zm10.2-1.35L23 1.5v10H11.2zM1 12.5h9v8.2L1 19.5zm10.2 0H23v10l-11.8-1.65z"/></svg> **Windows** |
+|:---:|:---:|
+| [Apple Silicon & Intel](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-macOS.saver.zip) | [x64](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-Windows-win-x64.scr) · [ARM64](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-Windows-win-arm64.scr) |
+| [Installation guide](screensavers/macos-native/README.md) | [Installation guide](screensavers/windows-native/README.md) |
+
+[🌎 Open the live web app](https://literatureclock.netlify.app/) · [All releases and version notes](https://github.com/cdmoro/literature-clock/releases/latest)
+
+Each consolidated release includes native downloads for macOS and Windows. Release notes list each component version and generated changes. The web app is hosted separately. The release workflow checks changes against the previous consolidated release and stops if a changed platform's version was not increased.
 
 </div>
 
@@ -111,10 +120,11 @@ Customize the web clock directly via URL parameters (e.g. `?theme=book-light&zen
 
 ## 🤝 Contributing & Community
 
+- **Contributing guide**: Start with [CONTRIBUTING.md](CONTRIBUTING.md) for contribution types, review expectations, and links to the detailed guides.
 - **Language Incubator**: Want to bring Literature Clock to your native language? Check out our [Language Incubator Guide](docs/LANGUAGE_INCUBATOR.md) to learn how we draft and verify catalogues batch by batch.
 - **Submit a Quote**: Found a passage in a book mentioning the time? [Suggest a new quote](https://github.com/cdmoro/literature-clock/issues/new?template=add-quote.yml).
 - **Report Errors**: Spot a typo or timestamp mismatch? [Open an issue](https://github.com/cdmoro/literature-clock/issues) or use the in-app report link.
-- **Development**: See the [development guide](docs/DEVELOPMENT.md) for local setup, commands, tests, and translation tools.
+- **Development**: See the [development guide](docs/DEVELOPMENT.md) for local setup, commands, and project structure.
 
 ---
 
