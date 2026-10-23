@@ -508,14 +508,11 @@ html[data-progressbar='none'] #progress-bar {
   }
 }
 
-@media only screen and (max-width: 550px) {
-  footer {
-    padding: 0;
-  }
-
-  footer #menu {
-    border-radius: 0;
-    padding: 1rem;
+@media only screen and (max-width: 900px) {
+  [data-photo-credit] footer,
+  body.fuzzy-clock footer {
+    bottom: 3.5rem;
+    padding-bottom: 0;
   }
 }
 
@@ -575,7 +572,7 @@ body.share-quote #clock {
   position: fixed;
   left: 12px;
   bottom: 12px;
-  max-width: min(70vw, 500px);
+  max-width: min(50vw, 500px);
   padding: 4px 8px;
   border-radius: 4px;
   background: transparent;
@@ -593,6 +590,7 @@ body.share-quote #clock {
 #photo-credit {
   right: 12px;
   left: auto;
+  text-align: end;
 }
 
 #photo-credit:hover {
