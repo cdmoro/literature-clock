@@ -26,8 +26,26 @@ let color: string | undefined;
 let palette: string | undefined;
 let useDefaultColor = false;
 let font: string | undefined;
+let popupPhotoImage: string | null | undefined;
+let includePhoto = true;
 export const selectedCardOptions = () => ({
   pattern: pattern ?? store.get('background-pattern') ?? 'none',
+  ...(() => {
+    const photoImage =
+      popupPhotoImage === undefined
+        ? document.documentElement.dataset.background === 'photo'
+          ? document.documentElement.style.getPropertyValue('--share-photo-image') ||
+            document.documentElement.style.getPropertyValue('--photo-image')
+          : ''
+        : includePhoto
+          ? popupPhotoImage
+          : '';
+    return popupPhotoImage !== undefined && popupPhotoImage !== null
+      ? { photoImage: includePhoto ? popupPhotoImage : '' }
+      : photoImage
+        ? { photoImage }
+        : {};
+  })(),
   color,
   ...(palette && palette !== 'default' ? { palette } : {}),
   font,
@@ -55,6 +73,13 @@ export function initShareOptions() {
     const snapshot = { ...quote };
     const strings = shareOptionStrings();
     const settingsStrings = SETTINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))];
+    popupPhotoImage =
+      document.documentElement.dataset.background === 'photo'
+        ? document.documentElement.style.getPropertyValue('--share-photo-image') ||
+          document.documentElement.style.getPropertyValue('--photo-image') ||
+          null
+        : null;
+    includePhoto = !!popupPhotoImage;
     pattern = store.get('background-pattern') || 'none';
     color = undefined;
     palette =
@@ -144,6 +169,26 @@ export function initShareOptions() {
       return wrapper;
     };
     controls.append(field(strings.format, formatGroup), field(strings.appearance, appearanceGroup));
+    const includePhotoButton = document.createElement('button');
+    includePhotoButton.type = 'button';
+    includePhotoButton.className = 'share-image-toggle';
+    includePhotoButton.setAttribute('aria-label', strings.includeImage);
+    includePhotoButton.setAttribute('aria-pressed', String(includePhoto));
+    includePhotoButton.hidden = !popupPhotoImage;
+    const updateIncludePhotoButton = () => {
+      includePhotoButton.innerHTML =
+        '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1"/><path d="m3 17 6-6 4 4 3-3 5 5"/></svg>';
+      includePhotoButton.setAttribute('aria-pressed', String(includePhoto));
+      includePhotoButton.title = strings.includeImage;
+    };
+    updateIncludePhotoButton();
+    includePhotoButton.addEventListener('click', () => {
+      includePhoto = !includePhoto;
+      updateIncludePhotoButton();
+      void refresh();
+    });
+    const includePhotoControl = field(strings.includeImage, includePhotoButton);
+    includePhotoControl.classList.add('share-include-photo-control');
     const customization = document.createElement('details');
     customization.className = 'share-customization';
     const customizationSummary = document.createElement('summary');
@@ -276,6 +321,7 @@ export function initShareOptions() {
     });
     colorControl.append(colorCaption, compactGroup);
     controls.insertBefore(colorControl, customization);
+    controls.insertBefore(includePhotoControl, customization);
     const patternControl = document.createElement('label');
     patternControl.className = 'share-pattern-control';
     const patternCaption = document.createElement('span');
@@ -333,6 +379,17 @@ export function initShareOptions() {
     preview.setAttribute('aria-label', strings.preview);
     const status = document.createElement('p');
     status.setAttribute('role', 'status');
+    const loading = document.createElement('div');
+    loading.className = 'share-preview-loading';
+    loading.hidden = true;
+    loading.setAttribute('role', 'status');
+    const spinner = document.createElement('span');
+    spinner.className = 'share-preview-spinner';
+    spinner.setAttribute('aria-hidden', 'true');
+    const loadingText = document.createElement('span');
+    loadingText.textContent = strings.preparing;
+    loading.append(spinner, loadingText);
+    preview.append(loading);
     const hint = document.createElement('p');
     hint.textContent = strings.hint;
     const previewLabel = document.createElement('div');
@@ -429,6 +486,8 @@ export function initShareOptions() {
       theme = undefined;
       useDefaultColor = false;
       font = undefined;
+      popupPhotoImage = undefined;
+      includePhoto = true;
       document.removeEventListener('click', closeColorOnOutsideClick);
       imagePalette.dispose();
       disposeFontPicker();
@@ -455,8 +514,8 @@ export function initShareOptions() {
       compactReset.hidden = resetColor.hidden;
       imagePalette.refresh();
       appearanceButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === variant)));
-      status.textContent = strings.preparing;
       preview.setAttribute('aria-busy', 'true');
+      loading.hidden = false;
       copyImage.disabled = true;
       try {
         const canvas = await renderShareCard(snapshot, format, appearance, theme, selectedCardOptions());
@@ -466,13 +525,17 @@ export function initShareOptions() {
         canvas.style.objectFit = 'contain';
         canvas.setAttribute('role', 'img');
         canvas.setAttribute('aria-label', snapshot.quote_raw);
-        preview.replaceChildren(canvas);
+        const previousCanvas = preview.querySelector('canvas');
+        if (previousCanvas) previousCanvas.replaceWith(canvas);
+        else preview.insertBefore(canvas, loading);
         preview.setAttribute('aria-busy', 'false');
+        loading.hidden = true;
         copyImage.disabled = !canCopyImage;
         status.textContent = '';
       } catch {
         if (current === revision) {
           preview.setAttribute('aria-busy', 'false');
+          loading.hidden = true;
           status.textContent = strings.failed;
         }
       }

@@ -35,27 +35,6 @@ jobs:
       - name: Check component versions against the previous consolidated release
         run: python3 scripts/validate_release_versions.py
 
-  web:
-    needs: validate-versions
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: npm
-      - run: npm ci
-      - run: npm run build
-      - name: Package web build
-        run: |
-          version="$(node -p "JSON.parse(require('fs').readFileSync('package.json', 'utf8')).version")"
-          cd dist
-          zip -qr "../Literature-Clock-Web-${version}.zip" .
-      - uses: actions/upload-artifact@v4
-        with:
-          name: Literature-Clock-Web
-          path: Literature-Clock-Web-*.zip
-
   macos:
     needs: validate-versions
     runs-on: macos-15
@@ -108,7 +87,7 @@ jobs:
 
   publish:
     if: github.event_name == 'push'
-    needs: [validate-versions, web, macos, windows]
+    needs: [validate-versions, macos, windows]
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -170,7 +149,7 @@ jobs:
           notes = textwrap.dedent(f'''\
           ## Component versions
 
-          - Web: {package}
+          - Web: hosted at https://literatureclock.netlify.app/
           - macOS screensaver: {macos}
           - Windows screensaver: {windows}
 

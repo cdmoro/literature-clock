@@ -130,6 +130,7 @@ export function clearPhotoBackground() {
     pending = undefined;
   }
   document.documentElement.style.removeProperty('--photo-image');
+  document.documentElement.style.removeProperty('--share-photo-image');
   document.getElementById('photo-credit')?.remove();
   document.documentElement.removeAttribute('data-photo-credit');
 }
@@ -173,6 +174,11 @@ export async function updatePhotoBackground() {
     if (token !== request || resolveBackground(store.get('theme'), store.get('background')) !== 'photo') return;
     finish();
     document.documentElement.style.setProperty('--photo-image', `url("${url}")`);
+    const shareUrl =
+      provider === 'nasa'
+        ? `/.netlify/functions/nasa-image?url=${encodeURIComponent(url)}`
+        : url;
+    document.documentElement.style.setProperty('--share-photo-image', `url("${shareUrl}")`);
     document.getElementById('photo-credit')?.remove();
     document.documentElement.toggleAttribute('data-photo-credit', !!photo);
     if (photo) {

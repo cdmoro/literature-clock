@@ -519,5 +519,6 @@ it('keeps the previous canvas visible while a new preview is rendering', async (
   finish(next);
   await vi.waitFor(() => expect(preview.querySelector('canvas')).toBe(next));
   expect(preview.getAttribute('aria-busy')).toBe('false');
-  expect(preview.children).toHaveLength(1);
+  expect(preview.children).toHaveLength(2);
+  expect(preview.querySelector<HTMLElement>('.share-preview-loading')?.hidden).toBe(true);
 });
