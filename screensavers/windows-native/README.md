@@ -8,7 +8,7 @@ Settings and per-display photo caches live in `%LOCALAPPDATA%\Literature Clock`.
 
 ## Install
 
-Download the standalone `Literature Clock.scr` for your architecture. It contains the .NET
+Download the standalone `Literature-Clock-Native-Windows-win-x64.scr` or `Literature-Clock-Native-Windows-win-arm64.scr` for your architecture from the latest [Literature Clock release](https://github.com/cdmoro/literature-clock/releases). It contains the .NET
 runtime, managed dependencies, quote catalogues, fonts, themes and patterns. In Windows
 Screen Saver settings, use **Browse** to select the downloaded file, then use **Settings**
 to configure it and **Preview** to run it. No administrator rights or extraction are needed.
@@ -72,8 +72,7 @@ apphost with the `.scr` extension and a SHA-256 checksum. x64 builds run `--chec
 locale fallback, monitor variant arithmetic, safe filtering, bilingual ID matching,
 Commons licence rejection and glass corner fade. Checks use no photo downloads or
 saved-preference writes.
-The GitHub workflow builds both architectures on pull requests and manual dispatch;
-standalone `.scr` files are retained as Actions artifacts and published on version bumps.
+The GitHub release workflow builds both architectures and publishes them with the web and macOS downloads in one consolidated project release. The Windows component version remains in `screensavers/windows-native/VERSION`.
 
 On macOS, `python3 screensavers/windows-native/prepare.py` plus
 `dotnet build screensavers/windows-native/LiteratureClock.csproj` validates C# against
