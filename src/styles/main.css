@@ -526,6 +526,12 @@ html[data-progressbar='none'] #progress-bar {
   body.fuzzy-clock #clock {
     max-width: 90vw;
   }
+
+  [data-photo-credit] #quote-credit,
+  [data-quote-attribution='bottom-left'] #photo-credit,
+  body.fuzzy-clock:not([data-quote-attribution='hidden']) #photo-credit {
+    max-width: 50vw;
+  }
 }
 
 /* Export the quote in its centered position, independent of screensaver motion. */
