@@ -1041,7 +1041,24 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         guard let value = sender.selectedItem?.representedObject as? String, ["0.5", "1", "1.5", "2", "3"].contains(value), let number = Double(value) else { return }
         preferences.set(number, forKey: "pattern-size")
         patternKey = ""
+        updateAppearancePresetSelection()
         needsDisplay = true
+    }
+    private func updateAppearancePresetSelection() {
+        guard let presetMenu = controls["appearance-preset"] as? NSPopUpButton,
+              let background = menuValue("background"), let palette = menuValue("palette"),
+              let pattern = menuValue("background-pattern"), let size = menuValue("pattern-size"),
+              let effect = menuValue("background-effect") else { return }
+        let theme = menuValue("theme-base") ?? "base"
+        let presets: [(String, String, String, String)] = [
+            ("christmas", "green", "christmas", "snow"),
+            ("halloween", "purple", "halloween", "dust-v2"),
+            ("valentine", "pink", "valentine", "stars")
+        ]
+        let match = theme == "base" && background == "default" && size == "2"
+            ? presets.first { $0.1 == palette && $0.2 == pattern && $0.3 == effect }?.0
+            : nil
+        presetMenu.select(presetMenu.itemArray.first { ($0.representedObject as? String) == (match ?? "none") })
     }
     @objc private func applyAppearancePreset(_ sender: NSPopUpButton) {
         guard let preset = sender.selectedItem?.representedObject as? String, preset != "none" else { return }
@@ -1062,6 +1079,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         photoControlsChanged()
         patternChanged(controls["background-pattern"] as! NSPopUpButton)
         updateSwatches()
+        updateAppearancePresetSelection()
         for view in Self.instances.allObjects where view.window != nil { view.effectStarted = Date(); view.lastMinute = ""; view.needsDisplay = true }
     }
     @objc private func patternChanged(_ sender: NSPopUpButton) {
@@ -1069,10 +1087,12 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let sizeControl = controls["pattern-size"] as? NSPopUpButton
         sizeControl?.isEnabled = !["none", "random"].contains(pattern) && NativeAppearance.supportsPattern(theme: themeName)
         sizeControl?.isHidden = !(sizeControl?.isEnabled ?? false)
+        updateAppearancePresetSelection()
     }
     @objc private func effectChanged(_ sender: NSPopUpButton) {
         preferences.set(sender.selectedItem?.representedObject as? String ?? "none", forKey: "background-effect")
         updateAnimationTimeInterval()
+        updateAppearancePresetSelection()
         needsDisplay = true
     }
     @objc private func cancelOptions() {
@@ -1171,6 +1191,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             if button.value == "custom", let well = controls["custom-color"] as? NSColorWell { button.swatchColor = well.color }
             button.needsDisplay = true
         }
+        updateAppearancePresetSelection()
     }
     func controlTextDidChange(_ notification: Notification) {
         if notification.object as? NSTextField === controls["color-hex"] as? NSTextField,
@@ -1226,6 +1247,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         }
         controls["photo-provider"]?.isEnabled = usesPhoto
         controls["photo-provider"]?.superview?.isHidden = !usesPhoto
+        updateAppearancePresetSelection()
     }
     func applyOptions(_ values: [String: Any]) {
         for key in Self.optionKeys {

@@ -301,6 +301,10 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             }
             let attributionMenuCheck = clock.controls["quote-attribution"] as! NSPopUpButton
             precondition(attributionMenuCheck.itemArray.first { $0.representedObject as? String == "bottom-left" }?.title == clock.text("settings_attribution_bottom_left"), "Bottom-left attribution label must be localized")
+            let presetMenuCheck = clock.controls["appearance-preset"] as! NSPopUpButton
+            (clock.controls["background-pattern"] as! NSPopUpButton).select((clock.controls["background-pattern"] as! NSPopUpButton).itemArray.first { $0.representedObject as? String == "dots" })
+            clock.perform(NSSelectorFromString("patternChanged:"), with: clock.controls["background-pattern"])
+            precondition(presetMenuCheck.selectedItem?.representedObject as? String == "none", "Changing a preset setting must clear its selection")
             let first = clock.configureSheet!
             let progressMenu = clock.controls["progressbar"] as! NSPopUpButton
             let modes = progressMenu.itemArray.compactMap { $0.representedObject as? String }
