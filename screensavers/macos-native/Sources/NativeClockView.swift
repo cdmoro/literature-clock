@@ -475,10 +475,9 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let allowedSizes: [CGFloat] = [0.5, 1, 1.5, 2, 3]
         let savedSize = CGFloat(preferences.double(forKey: "pattern-size"))
         let patternScale = allowedSizes.contains(savedSize) ? savedSize : 1
-        let patternColor = pattern == "halloween" && dark ? NSColor.white : accent
-        let newPatternKey = "\(pattern)|\(bounds.size)|\(scale)|\(patternColor)|\(patternScale)"
+        let newPatternKey = "\(pattern)|\(bounds.size)|\(scale)|\(accent)|\(patternScale)"
         if newPatternKey != patternKey {
-            patternImage = NativeAppearance.patternImage(pattern: pattern, size: bounds.size, scale: scale, color: patternColor, resources: resources, tileScale: patternScale)
+            patternImage = NativeAppearance.patternImage(pattern: pattern, size: bounds.size, scale: scale, color: accent, resources: resources, tileScale: patternScale)
             patternKey = newPatternKey
         }
         patternImage?.draw(in: bounds)
