@@ -121,6 +121,7 @@ jobs:
               raise SystemExit('Invalid release/VERSION; expected major.minor.patch')
           macos = Path('screensavers/macos-native/VERSION').read_text().strip()
           windows = Path('screensavers/windows-native/VERSION').read_text().strip()
+          web = json.loads(Path('package.json').read_text())['version']
           files = sorted(Path('package').glob('*'))
           expected = {
               'Literature-Clock-Native-macOS.saver.zip',
@@ -153,9 +154,9 @@ jobs:
           notes = textwrap.dedent(f'''\
           ## Component versions
 
-          - Web: hosted at https://literatureclock.netlify.app/
           - macOS screensaver: {macos}
           - Windows screensaver: {windows}
+          - Web app: {web}
 
           This consolidated release includes the native macOS and Windows downloads for this project release. The web app is hosted at https://literatureclock.netlify.app/.
           ''')
