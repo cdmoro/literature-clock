@@ -45,8 +45,9 @@ shadow effects, so edge softness can differ slightly from the web and macOS rend
 Liquid Glass uses an HLSL implementation based on `macos-native/Sources/OpticalGlass.metal`,
 with a 36-DIP bevel, RGB dispersion, 28-DIP leading corners, last-8% corner fade, subtle
 horizontal rim and 10% background / 2.5% foreground tint. Background glass keeps the passage above
-the lens; foreground glass samples the passage and clock. WPF samples the live photo
-crossfade. A GPU supporting pixel shader 3.0 and WPF rendering tier 2 is required; on
+the lens; foreground glass samples the passage and clock. Both modes sample the live photo
+crossfade and fixed background pattern; animated particles stay outside the sampled surface.
+A GPU supporting pixel shader 3.0 and WPF rendering tier 2 is required; on
 unsupported hardware glass falls back to classic 10% background progress.
 This is the project's optical shader, rather than Apple's system Liquid Glass API.
 

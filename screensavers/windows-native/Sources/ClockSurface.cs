@@ -21,6 +21,7 @@ public sealed class ClockSurface : Canvas
     readonly bool downloads;
     readonly DateTimeOffset started = DateTimeOffset.Now;
     readonly Canvas scene = new();
+    readonly Canvas opticalBackdrop = new();
     readonly Canvas backdrop = new();
     readonly Canvas patternLayer = new();
     readonly StackPanel passage = new();
@@ -46,7 +47,8 @@ public sealed class ClockSurface : Canvas
     {
         this.data=data; this.p=p; this.display=display; this.downloads=downloads;
         ClipToBounds=true;
-        scene.Children.Add(backdrop); scene.Children.Add(patternLayer); scene.Children.Add(effects); scene.Children.Add(clockHalo); scene.Children.Add(clock); scene.Children.Add(passage); scene.Children.Add(credit); scene.Children.Add(attributionCredit); scene.Children.Add(bookCredit);
+        opticalBackdrop.Children.Add(backdrop); opticalBackdrop.Children.Add(patternLayer);
+        scene.Children.Add(opticalBackdrop); scene.Children.Add(effects); scene.Children.Add(clockHalo); scene.Children.Add(clock); scene.Children.Add(passage); scene.Children.Add(credit); scene.Children.Add(attributionCredit); scene.Children.Add(bookCredit);
         Children.Add(scene); Children.Add(progress);
         photo=new PhotoBackground(display);
         Loaded += (_, _) => CompositionTarget.Rendering += Frame;
@@ -111,7 +113,7 @@ public sealed class ClockSurface : Canvas
         effects.Width=ActualWidth; effects.Height=ActualHeight;
         var currentEffectKey=$"{ActualWidth}|{ActualHeight}|{p.Effect}|{dark}|{accent}|{mode}";
         if(effectKey!=currentEffectKey) { BuildEffects(dark,accent); effectKey=currentEffectKey; }
-        scene.Width=backdrop.Width=patternLayer.Width=ActualWidth; scene.Height=backdrop.Height=patternLayer.Height=ActualHeight;
+        scene.Width=opticalBackdrop.Width=backdrop.Width=patternLayer.Width=ActualWidth; scene.Height=opticalBackdrop.Height=backdrop.Height=patternLayer.Height=ActualHeight;
         var outlineActive=outlineForPhoto || outlineForPattern;
         clock.Text=minute; clock.FontSize=Math.Max(10,Math.Min(20,ActualWidth*.013)); clock.Foreground=Appearance.Brush(foreground);
         clock.Effect=null;
@@ -157,7 +159,7 @@ public sealed class ClockSurface : Canvas
         progress.Visibility=p.Progress=="none"?Visibility.Hidden:Visibility.Visible;
         if(glass!=null)
         {
-            // Glass samples the base backdrop; fixed patterns and animated particles remain outside it.
+            // Glass samples the backdrop and fixed pattern; animated particles remain outside it.
             // For background glass the passage stays above the progress; clock is refracted.
             if(p.Progress=="glass-background")
             {
@@ -165,7 +167,7 @@ public sealed class ClockSurface : Canvas
                 SetZIndex(passage,2);
             }
             progress.Width=ActualWidth; progress.Height=ActualHeight; SetTop(progress,0);
-            progress.Fill=new VisualBrush(backdrop) { Stretch=Stretch.Fill, ViewboxUnits=BrushMappingMode.Absolute, Viewbox=new Rect(0,0,ActualWidth,ActualHeight) };
+            progress.Fill=new VisualBrush(opticalBackdrop) { Stretch=Stretch.Fill, ViewboxUnits=BrushMappingMode.Absolute, Viewbox=new Rect(0,0,ActualWidth,ActualHeight) };
             glass.Geometry=new Point4D(ActualWidth,ActualHeight,fraction,GlassEffect.Radius(fraction,ActualWidth,ActualHeight));
             glass.Tint=new Point4D(progressColor.R/255.0,progressColor.G/255.0,progressColor.B/255.0,p.Progress=="glass-foreground"?.025:.1);
         }
