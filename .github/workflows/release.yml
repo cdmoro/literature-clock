@@ -170,12 +170,48 @@ jobs:
     needs: [validate-versions, macos, windows]
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger the Netlify production deploy
+      - name: Publish the matching Netlify deploy
         env:
-          NETLIFY_DEPLOY_HOOK: ${{ secrets.NETLIFY_PRODUCTION_DEPLOY_HOOK }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          GITHUB_SHA: ${{ github.sha }}
         run: |
-          if [ -n "$NETLIFY_DEPLOY_HOOK" ]; then
-            curl --fail --silent --show-error --request POST "$NETLIFY_DEPLOY_HOOK"
-          else
-            echo "Netlify deploy hook is not configured; skipping web deploy."
-          fi
+          python3 - <<'PYTHON'
+          import json
+          import os
+          import time
+          import urllib.error
+          import urllib.request
+
+          token = os.environ['NETLIFY_AUTH_TOKEN']
+          site_id = os.environ['NETLIFY_SITE_ID']
+          commit = os.environ['GITHUB_SHA']
+          base = f'https://api.netlify.com/api/v1/sites/{site_id}'
+          headers = {'Authorization': f'Bearer {token}'}
+
+          deploy = None
+          for attempt in range(60):
+              request = urllib.request.Request(f'{base}/deploys?per_page=100', headers=headers)
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  deploys = json.load(response)
+              matches = [item for item in deploys
+                         if item.get('commit_ref') == commit
+                         and item.get('state') in {'ready', 'enqueued', 'building'}]
+              ready = next((item for item in matches if item.get('state') == 'ready'), None)
+              if ready:
+                  deploy = ready
+                  break
+              time.sleep(10)
+
+          if not deploy:
+              raise SystemExit(f'No ready Netlify deploy found for commit {commit} after 10 minutes')
+
+          request = urllib.request.Request(
+              f"{base}/deploys/{deploy['id']}/restore",
+              data=b'{}',
+              headers={**headers, 'Content-Type': 'application/json'},
+              method='POST',
+          )
+          with urllib.request.urlopen(request, timeout=30) as response:
+              print(f"Published Netlify deploy {deploy['id']} for commit {commit} (HTTP {response.status})")
+          PYTHON
