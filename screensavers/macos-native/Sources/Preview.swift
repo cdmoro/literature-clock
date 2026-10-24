@@ -287,6 +287,17 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             for pattern in NativeAppearance.patterns.dropFirst(2) {
                 precondition(NativeAppearance.patternImage(pattern: pattern, size: NSSize(width: 320, height: 256), scale: 2, color: .systemRed, resources: clock.resources) != nil, "Missing native pattern: " + pattern)
             }
+            for (preset, palette, pattern, effect) in [("christmas", "green", "christmas", "snow"), ("halloween", "purple", "halloween", "dust-v2"), ("valentine", "pink", "valentine", "stars")] {
+                let menu = clock.controls["appearance-preset"] as! NSPopUpButton
+                menu.select(menu.itemArray.first { $0.representedObject as? String == preset })
+                clock.perform(NSSelectorFromString("applyAppearancePreset:"), with: menu)
+                precondition(clock.menuValue("theme-base") == "base", "Seasonal presets must use the Base theme")
+                precondition(clock.menuValue("palette") == palette, "Seasonal preset colour did not apply: " + preset)
+                precondition(clock.menuValue("background-pattern") == pattern, "Seasonal preset pattern did not apply: " + preset)
+                precondition(clock.menuValue("pattern-size") == "2", "Seasonal preset pattern size did not apply: " + preset)
+                precondition(clock.menuValue("background-effect") == effect, "Seasonal preset effect did not apply: " + preset)
+                precondition(NativeAppearance.patternImage(pattern: pattern, size: NSSize(width: 320, height: 256), scale: 2, color: .systemRed, resources: clock.resources) != nil, "Seasonal preset pattern is missing: " + preset)
+            }
             let first = clock.configureSheet!
             let progressMenu = clock.controls["progressbar"] as! NSPopUpButton
             let modes = progressMenu.itemArray.compactMap { $0.representedObject as? String }

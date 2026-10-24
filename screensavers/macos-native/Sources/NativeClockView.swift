@@ -870,6 +870,21 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         stack.addArrangedSubview(NSStackView(views: [bilingual, translationMenu]))
         bilingualControlsChanged()
         section("settings_appearance")
+        let presetsTitle = NSTextField(labelWithString: text("settings_presets_title"))
+        presetsTitle.font = .boldSystemFont(ofSize: NSFont.systemFontSize)
+        presetsTitle.widthAnchor.constraint(equalToConstant: 180).isActive = true
+        let presetMenu = NSPopUpButton()
+        for (preset, label) in [("none", "settings_presets_choose"), ("christmas", "settings_preset_christmas"), ("halloween", "settings_preset_halloween"), ("valentine", "settings_preset_valentine")] {
+            let item = NSMenuItem(title: text(label), action: nil, keyEquivalent: "")
+            item.representedObject = preset
+            presetMenu.menu?.addItem(item)
+        }
+        presetMenu.select(presetMenu.itemArray.first { $0.representedObject as? String == "none" })
+        presetMenu.target = self
+        presetMenu.action = #selector(applyAppearancePreset(_:))
+        presetMenu.widthAnchor.constraint(equalToConstant: 260).isActive = true
+        controls["appearance-preset"] = presetMenu
+        stack.addArrangedSubview(NSStackView(views: [presetsTitle, presetMenu]))
         let theme = preferences.string(forKey: "theme") ?? "base-dark"
         let parts = theme.split(separator: "-").map(String.init)
         for (key, label, values) in [
@@ -1011,6 +1026,25 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         preferences.set(number, forKey: "pattern-size")
         patternKey = ""
         needsDisplay = true
+    }
+    @objc private func applyAppearancePreset(_ sender: NSPopUpButton) {
+        guard let preset = sender.selectedItem?.representedObject as? String, preset != "none" else { return }
+        guard let palette = ["christmas": "green", "halloween": "purple", "valentine": "pink"][preset],
+              let pattern = ["christmas": "christmas", "halloween": "halloween", "valentine": "valentine"][preset],
+              let effect = ["christmas": "snow", "halloween": "dust-v2", "valentine": "stars"][preset] else { return }
+        func select(_ key: String, _ value: String) {
+            guard let menu = controls[key] as? NSPopUpButton else { return }
+            menu.select(menu.itemArray.first { $0.representedObject as? String == value })
+        }
+        select("theme-base", "base")
+        select("palette", palette)
+        select("background-pattern", pattern)
+        select("pattern-size", "2")
+        select("background-effect", effect)
+        photoControlsChanged()
+        patternChanged(controls["background-pattern"] as! NSPopUpButton)
+        updateSwatches()
+        for view in Self.instances.allObjects where view.window != nil { view.effectStarted = Date(); view.lastMinute = ""; view.needsDisplay = true }
     }
     @objc private func patternChanged(_ sender: NSPopUpButton) {
         let pattern = sender.selectedItem?.representedObject as? String ?? "none"
