@@ -358,16 +358,6 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         if fuzzy { return NSRange(location: 0, length: (text as NSString).length) }
         return NSRange(location: (quote.first as NSString).length, length: (quote.time as NSString).length)
     }
-    static func opticalSource(_ source: CIImage?, compositing image: NSImage?) -> CIImage? {
-        guard let source, let image, let data = image.tiffRepresentation,
-              let overlay = CIImage(data: data), overlay.extent.width > 0, overlay.extent.height > 0 else { return source }
-        let target = source.extent
-        let aligned = overlay
-            .transformed(by: CGAffineTransform(translationX: -overlay.extent.minX, y: -overlay.extent.minY))
-            .transformed(by: CGAffineTransform(scaleX: target.width / overlay.extent.width, y: target.height / overlay.extent.height))
-            .transformed(by: CGAffineTransform(translationX: target.minX, y: target.minY))
-        return aligned.composited(over: source).cropped(to: target)
-    }
     static func balancedLines(_ value: String, font: NSFont, width: CGFloat) -> String {
         let words = value.split(whereSeparator: \.isWhitespace).map(String.init)
         guard words.count > 2, width > 0 else { return value }
@@ -493,10 +483,11 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         patternImage?.draw(in: bounds)
         let photoKey = usesPhoto ? photoBackground.image.map { String(describing: ObjectIdentifier($0)) } ?? "none" : "none"
         let progressMode = preferences.string(forKey: "progressbar") ?? "none"
-        let opticalKey = "\(theme)|\(backgroundMode)|\(accent)|\(dark)|\(bounds.size)|\(photoKey)"
+        let opticalKey = "\(theme)|\(backgroundMode)|\(accent)|\(dark)|\(bounds.size)|\(newPatternKey)|\(photoKey)"
         if opticalKey != opticalSourceKey && bounds.width > 0 && bounds.height > 0 {
-            let backgroundImage = NSImage(size: bounds.size, flipped: false) { rect in
+            let backgroundImage = NSImage(size: bounds.size, flipped: false) { [self] rect in
                 drawBackdrop(in: rect, finalOnly: true)
+                patternImage?.draw(in: rect)
                 return true
             }
             previousPhotoOpticalSource = usesPhoto && photoBackground.isTransitioning ? opticalSource : nil
@@ -511,8 +502,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             } else { opticalSource = final; previousPhotoOpticalSource = nil }
         }
         let timeFont = NSFont.systemFont(ofSize: max(10, min(20, bounds.width * 0.013)), weight: .bold)
-        let usesGlassProgress = progressMode == "glass-background" || progressMode == "glass-foreground"
-        var progressSource = usesGlassProgress ? Self.opticalSource(opticalSource, compositing: patternImage) : opticalSource
+        var progressSource = opticalSource
         if preferences.bool(forKey: "show-time") {
             if timeLabel == nil {
                 let label = NSTextField(labelWithString: "")
