@@ -82,7 +82,7 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             restartShowcase()
         }
         if CommandLine.arguments.contains("--check-render") {
-            let keys = ["theme", "background", "background-pattern", "palette", "custom-color", "show-time", "fuzzy-clock", "hide-book-title", "quote-locales", "work", "locale", "screensaver", "progressbar"]
+            let keys = ["theme", "background", "background-pattern", "palette", "custom-color", "show-time", "fuzzy-clock", "hide-book-title", "quote-attribution", "quote-locales", "work", "locale", "screensaver", "progressbar"]
             let saved = keys.map { ($0, clock.preferences.object(forKey: $0)) }
             defer {
                 for (key, value) in saved { clock.preferences.set(value, forKey: key) }
@@ -379,6 +379,31 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             clock.perform(NSSelectorFromString("saveOptions"))
             precondition(clock.preferences.bool(forKey: "hide-book-title") && other.preferences.bool(forKey: "hide-book-title"), "Hide title did not reach other views")
             _ = clock.configureSheet
+            let attributionMenu = clock.controls["quote-attribution"] as! NSPopUpButton
+            for mode in ["below", "bottom-left", "hidden"] {
+                attributionMenu.select(attributionMenu.itemArray.first { $0.representedObject as? String == mode })
+                clock.perform(NSSelectorFromString("saveOptions"))
+                precondition(clock.preferences.string(forKey: "quote-attribution") == mode && other.preferences.string(forKey: "quote-attribution") == mode, "Quote attribution setting did not persist across displays")
+                _ = clock.configureSheet
+            }
+            clock.preferences.set(true, forKey: "fuzzy-clock")
+            let fuzzyQuote = NativeQuote(first: "", time: "Time", last: "", title: "Book", author: "Author", sfw: true)
+            clock.quote = fuzzyQuote
+            clock.lastMinute = "Time"
+            clock.preferences.set(false, forKey: "hide-book-title")
+            clock.preferences.set("below", forKey: "quote-attribution")
+            clock.draw(clock.bounds)
+            let fuzzyCredit = clock.subviews.compactMap { $0 as? NSTextField }.first { $0.attributedStringValue.string.contains("Book") }
+            precondition(fuzzyCredit?.attributedStringValue.string.contains("Author") == true, "Fuzzy attribution must show book and author by default")
+            clock.preferences.set(true, forKey: "hide-book-title")
+            clock.draw(clock.bounds)
+            let hiddenTitleCredit = clock.subviews.compactMap { $0 as? NSTextField }.first { $0.attributedStringValue.string.contains("Author") }
+            precondition(hiddenTitleCredit?.attributedStringValue.string.contains("Book") == false, "Hide book title must apply in fuzzy mode")
+            clock.preferences.set("hidden", forKey: "quote-attribution")
+            clock.draw(clock.bounds)
+            precondition(hiddenTitleCredit?.isHidden == true, "Hidden attribution must apply in fuzzy mode")
+            clock.preferences.set(false, forKey: "fuzzy-clock")
+            _ = clock.configureSheet
             for (key, value) in [("theme-base", "photo"), ("photo-provider", "nasa"), ("photo-category", "moon")] {
                 let menu = clock.controls[key] as! NSPopUpButton
                 menu.select(menu.itemArray.first { $0.representedObject as? String == value }!)
@@ -534,7 +559,7 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             }
         }
         let defaults = UserDefaults(suiteName: "net.literatureclock.showcase." + UUID().uuidString)!
-        defaults.register(defaults: ["theme": "photo-dark", "progressbar": "glass-foreground", "photo-provider": "picsum", "photo-category": "all", "screensaver": false, "work": true, "show-time": true, "bilingual": false, "hide-book-title": false, "palette": "default", "background-pattern": "none"])
+        defaults.register(defaults: ["theme": "photo-dark", "progressbar": "glass-foreground", "photo-provider": "picsum", "photo-category": "all", "screensaver": false, "work": true, "show-time": true, "bilingual": false, "hide-book-title": false, "quote-attribution": "below", "palette": "default", "background-pattern": "none"])
         clock.preferences = defaults
         clock.photoDownloadsEnabled = true
         clock.interactionPreviewSweep = false

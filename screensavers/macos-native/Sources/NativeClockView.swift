@@ -89,7 +89,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     var preferences: UserDefaults = ScreenSaverDefaults(forModuleWithName: "net.literatureclock.native-saver")!
     var resourceURLOverride: URL? // Isolated render diagnostics only.
     var resources: URL { resourceURLOverride ?? Bundle(for: NativeClockView.self).resourceURL! }
-    static let optionKeys = ["theme", "screensaver", "show-time", "fuzzy-clock", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background", "background-pattern", "pattern-size", "background-effect", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
+    static let optionKeys = ["theme", "screensaver", "show-time", "fuzzy-clock", "hide-book-title", "quote-attribution", "work", "progressbar", "quote-locales", "palette", "custom-color", "background", "background-pattern", "pattern-size", "background-effect", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
     var photoDownloadsEnabled = true
     var interactionPreviewSweep = false
     var fullProgressPreviewSweep = false
@@ -217,7 +217,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     }
     private func setup() {
         preferences.register(defaults: ["theme": "base-dark", "screensaver": true, "show-time": true, "fuzzy-clock": false,
-                                       "hide-book-title": false, "work": true, "progressbar": "background", "quote-locales": "", "palette": "default",
+                                       "hide-book-title": false, "quote-attribution": "below", "work": true, "progressbar": "background", "quote-locales": "", "palette": "default",
                                        "custom-color": "#d24335", "background": "default", "background-pattern": "none", "pattern-size": 1.0, "background-effect": "none", "photo-provider": "picsum", "photo-category": "all", "bilingual": false, "translation-locale": ""])
         _ = Self.bundledFonts
         updateAnimationTimeInterval()
@@ -565,8 +565,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             addSubview(label)
             fuzzyCreditLabel = label
         }
-        let creditParts = [preferences.bool(forKey: "hide-book-title") ? "" : quote.title, quote.author].filter { !$0.isEmpty }
-        let creditText = fuzzyClock ? creditParts.joined(separator: "\n") : ""
+        let attributionHidden = preferences.string(forKey: "quote-attribution") == "hidden"
+        let hideTitle = preferences.bool(forKey: "hide-book-title")
+        let creditParts = [hideTitle ? "" : quote.title, quote.author].filter { !$0.isEmpty }
+        let creditText = !attributionHidden && (fuzzyClock || preferences.string(forKey: "quote-attribution") == "bottom-left") ? creditParts.joined(separator: "\n") : ""
         let creditKey = "\(creditText)|\(bounds.width)"
         if creditKey != fuzzyCreditKey {
             let label = fuzzyCreditLabel!
@@ -586,10 +588,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let creditLabel = fuzzyCreditLabel!
         let creditWidth = min(500, max(140, bounds.width * 0.38))
         creditLabel.frame = NSRect(x: 20, y: isFlipped ? bounds.height - 52 : 14, width: creditWidth, height: 38)
-        creditLabel.isHidden = !fuzzyClock || creditText.isEmpty
+        creditLabel.isHidden = (fuzzyClock ? attributionHidden : preferences.string(forKey: "quote-attribution") != "bottom-left") || creditText.isEmpty
         addSubview(creditLabel, positioned: .above, relativeTo: nil)
         let creditTextureKey = "\(creditKey)|\(creditLabel.frame.size)"
-        if fuzzyClock && !creditText.isEmpty {
+        if (fuzzyClock || preferences.string(forKey: "quote-attribution") == "bottom-left") && !creditText.isEmpty {
             if creditTextureKey != fuzzyCreditOpticalKey {
                 let wasHidden = creditLabel.isHidden
                 creditLabel.isHidden = false
@@ -638,7 +640,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 text.addAttribute(theme == "book" ? .backgroundColor : .foregroundColor, value: accent, range: range)
                 result.append(text)
                 if !fuzzyClock {
-                    let attribution = preferences.bool(forKey: "hide-book-title") ? item.author : [item.title, item.author].filter { !$0.isEmpty }.joined(separator: ", ")
+                    let attributionMode = preferences.string(forKey: "quote-attribution") ?? "below"
+                    let attribution = attributionMode == "hidden" || attributionMode == "bottom-left" ? "" : preferences.bool(forKey: "hide-book-title") ? item.author : [item.title, item.author].filter { !$0.isEmpty }.joined(separator: ", ")
                     if !attribution.isEmpty {
                         result.append(NSAttributedString(string: "\n", attributes: [.font: font, .paragraphStyle: style]))
                         let citationStyle = style.mutableCopy() as! NSMutableParagraphStyle
@@ -1004,6 +1007,19 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             controls[key] = check
             stack.addArrangedSubview(check)
         }
+        let attributionLabel = NSTextField(labelWithString: text("settings_attribution_position"))
+        attributionLabel.widthAnchor.constraint(equalToConstant: 180).isActive = true
+        let attributionMenu = NSPopUpButton()
+        for value in ["below", "bottom-left", "hidden"] {
+            let item = NSMenuItem(title: text("settings_attribution_" + value), action: nil, keyEquivalent: "")
+            item.representedObject = value
+            attributionMenu.menu?.addItem(item)
+        }
+        attributionMenu.select(attributionMenu.itemArray.first { $0.representedObject as? String == (preferences.string(forKey: "quote-attribution") ?? "below") })
+        attributionMenu.widthAnchor.constraint(equalToConstant: 260).isActive = true
+        attributionMenu.setAccessibilityLabel(text("settings_attribution_position"))
+        controls["quote-attribution"] = attributionMenu
+        stack.addArrangedSubview(NSStackView(views: [attributionLabel, attributionMenu]))
         let version = Bundle(for: Self.self).object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "development"
         stack.addArrangedSubview(NSTextField(labelWithString: "Literature Clock for macOS · v" + version))
         stack.addArrangedSubview(ProjectLink(title: text("native_github_project")))
