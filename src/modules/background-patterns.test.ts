@@ -136,6 +136,8 @@ test.each([
   'zigzag-fine',
   'rain',
   'christmas',
+  'halloween',
+  'valentine',
   'hearts',
   'reading',
   'space',

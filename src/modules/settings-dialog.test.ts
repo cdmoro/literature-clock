@@ -63,6 +63,7 @@ test('keeps quick actions outside and moves every settings control without repla
     'work',
     'show-time',
     'hide-book-title',
+    'quote-attribution',
     'fuzzy-clock',
     'progressbar',
     'settings-color-picker',
@@ -124,6 +125,30 @@ test('both color pickers and resets share state, including theme availability', 
   expect(inside.disabled).toBe(false);
   expect(document.getElementById('settings-color-controls')!.hidden).toBe(false);
   expect(inside.value).toBe('#d24335');
+});
+
+test.each([
+  ['christmas', 'green', 'christmas', 'snow', '2'],
+  ['halloween', 'purple', 'halloween', 'dust-v2', '2'],
+  ['valentine', 'pink', 'valentine', 'stars', '2'],
+])('%s preset applies its coordinated appearance', (id, palette, pattern, effect, size) => {
+  document.body.innerHTML = page;
+  vi.stubGlobal(
+    'matchMedia',
+    vi.fn(() => ({ matches: false, addEventListener: vi.fn() })),
+  );
+  createStore();
+  initSettingsDialog();
+  initTheme();
+
+  document.querySelector<HTMLButtonElement>(`.settings-preset[data-preset="${id}"]`)!.click();
+
+  expect(store.get('theme').split('-')[0]).toBe('base');
+  expect(store.get('palette')).toBe(palette);
+  expect(store.get('background-pattern')).toBe(pattern);
+  expect(store.get('background-effect')).toBe(effect);
+  expect(store.get('pattern-size')).toBe(size);
+  expect(document.querySelector<HTMLButtonElement>(`.settings-preset[data-preset="${id}"]`)!.getAttribute('aria-pressed')).toBe('true');
 });
 
 test('hide book title persists, restores, and allows URL overrides', () => {
@@ -456,6 +481,7 @@ test('groups behavior controls without losing their shared switch state', () => 
     const sections = [...document.querySelectorAll('#settings-behavior > .settings-behavior-section')];
     expect(sections).toHaveLength(3);
     expect(sections[0].querySelector('#hide-book-title')).not.toBeNull();
+    expect(sections[0].querySelector('#quote-attribution')).not.toBeNull();
     expect(sections[0].querySelector('#work')).not.toBeNull();
     expect(sections[1].querySelector('#transition-select')).not.toBeNull();
     expect(sections[1].querySelector('#show-time')).not.toBeNull();

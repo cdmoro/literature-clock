@@ -321,7 +321,7 @@ export function initShareOptions() {
     });
     colorControl.append(colorCaption, compactGroup);
     controls.insertBefore(colorControl, customization);
-    controls.insertBefore(includePhotoControl, customization);
+    if (popupPhotoImage) controls.insertBefore(includePhotoControl, customization);
     const patternControl = document.createElement('label');
     patternControl.className = 'share-pattern-control';
     const patternCaption = document.createElement('span');

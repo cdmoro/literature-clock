@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Require component version bumps when their release payload changes."""
 
+import argparse
 import re
 import subprocess
 import sys
@@ -86,6 +87,13 @@ def changed_components(paths: list[str]) -> set[str]:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--pull-request",
+        action="store_true",
+        help="validate component versions without requiring a new consolidated release number",
+    )
+    args = parser.parse_args()
     current_release = Path("release/VERSION").read_text().strip()
     if not SEMVER.fullmatch(current_release):
         raise SystemExit("release/VERSION must be major.minor.patch")
@@ -95,11 +103,14 @@ def main() -> None:
                 for tag in tags if (match := RELEASE_TAG.fullmatch(tag))]
     releases.sort()
     current_tuple = parse_version(current_release)
-    if any(version == current_tuple for version, _ in releases):
-        raise SystemExit(f"Consolidated release {current_release} already has a tag")
-    previous = next(((version, tag) for version, tag in reversed(releases) if version < current_tuple), None)
-    if releases and current_tuple <= releases[-1][0]:
-        raise SystemExit(f"release/VERSION must be greater than the latest release {releases[-1][1]}")
+    if args.pull_request:
+        previous = next(((version, tag) for version, tag in reversed(releases) if version <= current_tuple), None)
+    else:
+        if any(version == current_tuple for version, _ in releases):
+            raise SystemExit(f"Consolidated release {current_release} already has a tag")
+        previous = next(((version, tag) for version, tag in reversed(releases) if version < current_tuple), None)
+        if releases and current_tuple <= releases[-1][0]:
+            raise SystemExit(f"release/VERSION must be greater than the latest release {releases[-1][1]}")
     if previous is None:
         print(f"First consolidated release {current_release}: no prior release baseline to compare")
         return

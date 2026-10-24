@@ -32,6 +32,8 @@ Turn your display into a literary clock. Choose your platform to get the native 
 
 Each consolidated release includes native downloads for macOS and Windows. Release notes list each component version and generated changes. The web app is hosted separately. The release workflow checks changes against the previous consolidated release and stops if a changed platform's version was not increased.
 
+The production web app deploys when a consolidated release is prepared. Configure a Netlify production deploy hook for the `main` branch and save its URL as the `NETLIFY_PRODUCTION_DEPLOY_HOOK` Actions secret in the GitHub repository. The release workflow triggers that hook only after the release validation and native builds succeed. Until the secret is configured, the workflow skips the web deploy.
+
 </div>
 
 ---
@@ -42,7 +44,7 @@ Each consolidated release includes native downloads for macOS and Windows. Relea
 
 - ⚡ **Pure Native Performance** — Written in Swift & AppKit (macOS) and WPF/.NET (Windows). No WebKit, Chromium, or Electron overhead. Smooth 60 FPS text drift prevents OLED and display burn-in while remaining gentle on your battery.
 - 📚 **1,440 Offline Literary Moments** — Thousands of hand-curated quotes across world literature with book titles and authors. Completely self-contained and works 100% offline.
-- 🎨 **Artisan Themes & Textures** — From tactile **Book Page** paper and retro **Terminal** scanlines to the day-night celestial sky in **Horizon**, or 25 custom geometric patterns.
+- 🎨 **Artisan Themes & Textures** — From tactile **Book Page** paper and retro **Terminal** scanlines to the day-night celestial sky in **Horizon**, with 26 repeating patterns.
 - 📸 **Dynamic Photo Backdrops** — Optionally cycle curated photographs from **NASA**, **Wikimedia Commons**, and **Picsum**, cached locally for offline display.
 - 🌍 **12 Languages & Bilingual Reading** — Read in English (UK & US), Spanish, French, German, Italian, Portuguese, Chinese, Russian, Greek, and Esperanto. Enable *Bilingual mode* to display the original quote alongside its translated edition.
 - 💧 **Optical Liquid Glass Progress** — A custom hardware shader (Metal on macOS, HLSL on Windows) that renders realistic optical refraction tracking the seconds of each minute.
@@ -87,6 +89,17 @@ Because these are independent open-source builds, macOS may prompt for approval 
 | **Terminal** | Minimalist green-on-black phosphor display with scanlines | [Open Terminal](https://literatureclock.netlify.app/?theme=terminal-dark) |
 | **Poster** | Bold typography framed by elegant borders | [Open Poster](https://literatureclock.netlify.app/?theme=poster-system) |
 | **Photo** | Curated rotating photography from NASA, Wikimedia, and Picsum | [Open Photo](https://literatureclock.netlify.app/?theme=photo-dark) |
+
+## Image and pattern credits
+
+- **Christmas pattern:** seamless SVG tile exported from Pattern Monster’s [Christmas collection](https://pattern.monster/collections/christmas).
+- **Halloween pattern:** seamless SVG tile exported from Pattern Monster’s [Halloween collection](https://pattern.monster/collections/halloween).
+- **Valentine pattern:** seamless SVG tile exported from Pattern Monster’s [Valentine’s Day collection](https://pattern.monster/collections).
+- Pattern Monster’s [generator source](https://github.com/catchspider2002/svelte-svg-patterns) is MIT-licensed; these links credit the design source.
+- **Other background patterns:** original patterns drawn for Literature Clock.
+- **Lorem Picsum:** random photos are served by [Lorem Picsum](https://picsum.photos/), which identifies its photo collection as coming from [Unsplash](https://unsplash.com/). A specific author's name and source can be looked up through Picsum's `/seed/{seed}/info` or `/id/{id}/info` endpoint; the app currently uses seeded Picsum photos and does not show a per-photo credit.
+- **NASA:** NASA imagery is credited to NASA and to the photographer or source when supplied in the NASA metadata. NASA notes that some material is third-party copyrighted content and separately marked; its use on NASA's site does not itself grant reuse rights. See [NASA's media usage guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/).
+- **Wikimedia Commons:** the app filters for bitmap files identified as **CC0** and displays the creator, Wikimedia Commons, and licence alongside the photo. Always consult the individual [file description and licence](https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia/licenses) when reusing a Commons image.
 
 ---
 

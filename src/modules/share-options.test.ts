@@ -91,6 +91,9 @@ it('discards a preview render after the dialog closes', async () => {
 
 afterEach(() => {
   document.querySelector<HTMLDialogElement>('#share-preview')?.close();
+  delete document.documentElement.dataset.background;
+  document.documentElement.style.removeProperty('--share-photo-image');
+  document.documentElement.style.removeProperty('--photo-image');
   localStorage.clear();
   vi.restoreAllMocks();
   vi.unstubAllGlobals();
@@ -127,6 +130,17 @@ it('opens the dialog from Share and preserves its existing icon without an extra
   expect(document.getElementById('existing-share-icon')?.parentElement?.id).toBe('share');
   expect(document.getElementById('share-options')).toBeNull();
   expect(document.getElementById('share-preview-title')?.textContent).toBe('Share quote');
+});
+it('only shows the include-image control when a photo background is available', () => {
+  expect(document.querySelector('.share-include-photo-control')).toBeNull();
+  document.querySelector<HTMLDialogElement>('#share-preview')!.close();
+  document.documentElement.dataset.background = 'photo';
+  document.documentElement.style.setProperty('--share-photo-image', 'url("https://example.test/photo.jpg")');
+
+  document.getElementById('share')!.click();
+
+  expect(document.querySelector('.share-include-photo-control')).not.toBeNull();
+  expect(document.querySelector<HTMLButtonElement>('.share-include-photo-control button')!.hidden).toBe(false);
 });
 
 it('folds customization on mobile and opens it when switching to desktop', () => {

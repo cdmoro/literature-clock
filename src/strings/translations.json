@@ -73,7 +73,13 @@
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
     "eo": "Esperanto (eo)",
-    "ar-AE": "العربية (ar-AE)"
+    "ar-AE": "العربية (ar-AE)",
+    "settings_presets_title": "Presets",
+    "settings_presets_help": "Apply a seasonal look. You can adjust each setting afterwards.",
+    "settings_preset_christmas": "Christmas",
+    "settings_preset_halloween": "Halloween",
+    "settings_pattern_valentine": "Valentine’s Day",
+    "settings_preset_valentine": "Valentine’s Day"
   },
   "en-US": {
     "about": "About",
@@ -149,7 +155,13 @@
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
     "eo": "Esperanto (eo)",
-    "ar-AE": "العربية (ar-AE)"
+    "ar-AE": "العربية (ar-AE)",
+    "settings_presets_title": "Presets",
+    "settings_presets_help": "Apply a seasonal look. You can adjust each setting afterward.",
+    "settings_preset_christmas": "Christmas",
+    "settings_preset_halloween": "Halloween",
+    "settings_pattern_valentine": "Valentine’s Day",
+    "settings_preset_valentine": "Valentine’s Day"
   },
   "es-ES": {
     "about": "Acerca de",
@@ -225,7 +237,13 @@
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
     "eo": "Esperanto (eo)",
-    "ar-AE": "العربية (ar-AE)"
+    "ar-AE": "العربية (ar-AE)",
+    "settings_presets_title": "Preajustes",
+    "settings_presets_help": "Aplica una ambientación estacional. Después puedes ajustar cada opción.",
+    "settings_preset_christmas": "Navidad",
+    "settings_preset_halloween": "Halloween",
+    "settings_pattern_valentine": "San Valentín",
+    "settings_preset_valentine": "San Valentín"
   },
   "pt-PT": {
     "about": "Sobre",
@@ -301,7 +319,13 @@
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
     "eo": "Esperanto (eo)",
-    "ar-AE": "العربية (ar-AE)"
+    "ar-AE": "العربية (ar-AE)",
+    "settings_presets_title": "Predefinições",
+    "settings_presets_help": "Aplica um ambiente sazonal. Podes ajustar cada opção depois.",
+    "settings_preset_christmas": "Natal",
+    "settings_preset_halloween": "Halloween",
+    "settings_pattern_valentine": "Dia dos Namorados",
+    "settings_preset_valentine": "Dia dos Namorados"
   },
   "fr-FR": {
     "about": "À propos",
@@ -377,7 +401,13 @@
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
     "eo": "Esperanto (eo)",
-    "ar-AE": "العربية (ar-AE)"
+    "ar-AE": "العربية (ar-AE)",
+    "settings_presets_title": "Ambiances",
+    "settings_presets_help": "Applique une ambiance saisonnière. Tu peux ajuster chaque option ensuite.",
+    "settings_preset_christmas": "Noël",
+    "settings_preset_halloween": "Halloween",
+    "settings_pattern_valentine": "Saint-Valentin",
+    "settings_preset_valentine": "Saint-Valentin"
   },
   "it-IT": {
     "about": "Informazioni",
@@ -453,7 +483,13 @@
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
     "eo": "Esperanto (eo)",
-    "ar-AE": "العربية (ar-AE)"
+    "ar-AE": "العربية (ar-AE)",
+    "settings_presets_title": "Preset",
+    "settings_presets_help": "Applica un’atmosfera stagionale. Puoi modificare ogni opzione in seguito.",
+    "settings_preset_christmas": "Natale",
+    "settings_preset_halloween": "Halloween",
+    "settings_pattern_valentine": "San Valentino",
+    "settings_preset_valentine": "San Valentino"
   },
   "de-DE": {
     "about": "Über",
@@ -529,7 +565,13 @@
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
     "eo": "Esperanto (eo)",
-    "ar-AE": "العربية (ar-AE)"
+    "ar-AE": "العربية (ar-AE)",
+    "settings_presets_title": "Voreinstellungen",
+    "settings_presets_help": "Wende eine saisonale Stimmung an. Du kannst jede Option danach anpassen.",
+    "settings_preset_christmas": "Weihnachten",
+    "settings_preset_halloween": "Halloween",
+    "settings_pattern_valentine": "Valentinstag",
+    "settings_preset_valentine": "Valentinstag"
   },
   "el-GR": {
     "about": "Σχετικά",
@@ -605,7 +647,13 @@
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
     "eo": "Esperanto (eo)",
-    "ar-AE": "العربية (ar-AE)"
+    "ar-AE": "العربية (ar-AE)",
+    "settings_presets_title": "Προεπιλογές",
+    "settings_presets_help": "Εφάρμοσε μια εποχική ατμόσφαιρα. Μπορείς να προσαρμόσεις κάθε επιλογή μετά.",
+    "settings_preset_christmas": "Χριστούγεννα",
+    "settings_preset_halloween": "Απόκριες",
+    "settings_pattern_valentine": "Ημέρα του Αγίου Βαλεντίνου",
+    "settings_preset_valentine": "Άγιος Βαλεντίνος"
   },
   "zh-CN": {
     "about": "关于",
@@ -681,7 +729,13 @@
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
     "eo": "Esperanto (eo)",
-    "ar-AE": "العربية (ar-AE)"
+    "ar-AE": "العربية (ar-AE)",
+    "settings_presets_title": "预设",
+    "settings_presets_help": "应用季节主题，之后仍可单独调整各项设置。",
+    "settings_preset_christmas": "圣诞节",
+    "settings_preset_halloween": "万圣节",
+    "settings_pattern_valentine": "情人节",
+    "settings_preset_valentine": "情人节"
   },
   "ru-RU": {
     "about": "О проекте",
@@ -757,7 +811,13 @@
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
     "eo": "Esperanto (eo)",
-    "ar-AE": "العربية (ar-AE)"
+    "ar-AE": "العربية (ar-AE)",
+    "settings_presets_title": "Готовые темы",
+    "settings_presets_help": "Примените сезонное оформление. После этого можно изменить любую настройку.",
+    "settings_preset_christmas": "Рождество",
+    "settings_preset_halloween": "Хэллоуин",
+    "settings_pattern_valentine": "День святого Валентина",
+    "settings_preset_valentine": "День святого Валентина"
   },
   "eo": {
     "about": "Pri la projekto",
@@ -833,7 +893,13 @@
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
     "eo": "Esperanto (eo)",
-    "ar-AE": "العربية (ar-AE)"
+    "ar-AE": "العربية (ar-AE)",
+    "settings_presets_title": "Antaŭagordoj",
+    "settings_presets_help": "Apliku laŭsezonan etoson. Vi povas poste ŝanĝi ĉiun agordon.",
+    "settings_preset_christmas": "Kristnasko",
+    "settings_preset_halloween": "Haloveno",
+    "settings_pattern_valentine": "Sankta Valenteno",
+    "settings_preset_valentine": "Sankta Valenteno"
   },
   "ar-AE": {
     "about": "حول",
@@ -909,6 +975,12 @@
     "zh-CN": "中文（简体） (zh-CN)",
     "ru-RU": "Русский (ru-RU)",
     "eo": "Esperanto (eo)",
-    "ar-AE": "العربية (ar-AE)"
+    "ar-AE": "العربية (ar-AE)",
+    "settings_presets_title": "إعدادات مسبقة",
+    "settings_presets_help": "طبّق أجواءً موسمية، ويمكنك تعديل كل خيار بعدها.",
+    "settings_preset_christmas": "عيد الميلاد",
+    "settings_preset_halloween": "الهالوين",
+    "settings_pattern_valentine": "عيد الحب",
+    "settings_preset_valentine": "عيد الحب"
   }
 }

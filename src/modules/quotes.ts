@@ -203,16 +203,23 @@ export async function updateQuote({
           blockquote.setAttribute('aria-label', time);
           updateQuoteDescription();
 
-          // Add or remove credit element for fuzzy‑clock mode
+          // Render attribution separately when it belongs in the lower-left corner.
           let credit = document.getElementById('quote-credit');
-          if (store.get('fuzzy-clock') === true) {
+          const attributionPosition = store.get('quote-attribution');
+          const creditVisible = attributionPosition !== 'hidden';
+          if (store.get('fuzzy-clock') === true || attributionPosition === 'bottom-left') {
             if (!credit) {
               credit = document.createElement('div');
               credit.id = 'quote-credit';
               document.body.appendChild(credit);
             }
-            credit.innerHTML = `${quote.title}<br>${quote.author}`;
-            credit.hidden = false;
+            credit.replaceChildren();
+            if (!store.get('hide-book-title')) {
+              credit.append(document.createTextNode(quote.title));
+              credit.append(document.createElement('br'));
+            }
+            credit.append(document.createTextNode(quote.author));
+            credit.hidden = !creditVisible;
           } else if (credit) {
             credit.remove();
           }
