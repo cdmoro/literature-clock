@@ -171,7 +171,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger the Netlify production deploy
-        if: ${{ secrets.NETLIFY_PRODUCTION_DEPLOY_HOOK != '' }}
         env:
           NETLIFY_DEPLOY_HOOK: ${{ secrets.NETLIFY_PRODUCTION_DEPLOY_HOOK }}
-        run: curl --fail --silent --show-error --request POST "$NETLIFY_DEPLOY_HOOK"
+        run: |
+          if [ -n "$NETLIFY_DEPLOY_HOOK" ]; then
+            curl --fail --silent --show-error --request POST "$NETLIFY_DEPLOY_HOOK"
+          else
+            echo "Netlify deploy hook is not configured; skipping web deploy."
+          fi
