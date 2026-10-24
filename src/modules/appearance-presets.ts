@@ -7,15 +7,16 @@ import SETTINGS from '../strings/settings.json';
 interface AppearancePreset {
   id: 'christmas' | 'halloween' | 'valentine';
   palette?: 'green' | 'purple' | 'pink';
+  background?: 'default';
   pattern?: 'christmas' | 'halloween' | 'valentine';
   effect?: 'snow' | 'dust-v2' | 'stars';
   size?: '2';
 }
 
 const PRESETS: AppearancePreset[] = [
-  { id: 'christmas', palette: 'green', pattern: 'christmas', effect: 'snow', size: '2' },
-  { id: 'halloween', palette: 'purple', pattern: 'halloween', effect: 'dust-v2', size: '2' },
-  { id: 'valentine', palette: 'pink', pattern: 'valentine', effect: 'stars', size: '2' },
+  { id: 'christmas', palette: 'green', background: 'default', pattern: 'christmas', effect: 'snow', size: '2' },
+  { id: 'halloween', palette: 'purple', background: 'default', pattern: 'halloween', effect: 'dust-v2', size: '2' },
+  { id: 'valentine', palette: 'pink', background: 'default', pattern: 'valentine', effect: 'stars', size: '2' },
 ];
 
 export function initAppearancePresets(dialog: HTMLDialogElement) {
@@ -52,6 +53,7 @@ export function initAppearancePresets(dialog: HTMLDialogElement) {
       (preset) =>
         (!preset.palette || theme === 'base') &&
         (!preset.palette || store.get('palette') === preset.palette) &&
+        (!preset.background || store.get('background') === preset.background) &&
         (!preset.pattern || store.get('background-pattern') === preset.pattern) &&
         (!preset.effect || store.get('background-effect') === preset.effect) &&
         (!preset.size || store.get('pattern-size') === preset.size),
@@ -76,6 +78,7 @@ export function initAppearancePresets(dialog: HTMLDialogElement) {
         store.set('palette', preset.palette);
         setTheme({ isVariantChange: true });
       }
+      if (preset.background) store.set('background', preset.background);
       if (preset.pattern) store.set('background-pattern', preset.pattern);
       if (preset.effect) store.set('background-effect', preset.effect);
       if (preset.size) store.set('pattern-size', preset.size);

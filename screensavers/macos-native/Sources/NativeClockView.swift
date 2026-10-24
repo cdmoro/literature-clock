@@ -89,7 +89,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     var preferences: UserDefaults = ScreenSaverDefaults(forModuleWithName: "net.literatureclock.native-saver")!
     var resourceURLOverride: URL? // Isolated render diagnostics only.
     var resources: URL { resourceURLOverride ?? Bundle(for: NativeClockView.self).resourceURL! }
-    static let optionKeys = ["theme", "screensaver", "show-time", "fuzzy-clock", "hide-book-title", "work", "progressbar", "quote-locales", "palette", "custom-color", "background", "background-pattern", "pattern-size", "background-effect", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
+    static let optionKeys = ["theme", "screensaver", "show-time", "fuzzy-clock", "hide-book-title", "quote-attribution", "work", "progressbar", "quote-locales", "palette", "custom-color", "background", "background-pattern", "pattern-size", "background-effect", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
     var photoDownloadsEnabled = true
     var interactionPreviewSweep = false
     var fullProgressPreviewSweep = false
@@ -217,7 +217,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     }
     private func setup() {
         preferences.register(defaults: ["theme": "base-dark", "screensaver": true, "show-time": true, "fuzzy-clock": false,
-                                       "hide-book-title": false, "work": true, "progressbar": "background", "quote-locales": "", "palette": "default",
+                                       "hide-book-title": false, "quote-attribution": "below", "work": true, "progressbar": "background", "quote-locales": "", "palette": "default",
                                        "custom-color": "#d24335", "background": "default", "background-pattern": "none", "pattern-size": 1.0, "background-effect": "none", "photo-provider": "picsum", "photo-category": "all", "bilingual": false, "translation-locale": ""])
         _ = Self.bundledFonts
         updateAnimationTimeInterval()
@@ -354,6 +354,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         return NSRect(x: bounds.minX, y: bounds.minY, width: bounds.width,
                       height: max(0, min(bounds.maxY, clockFrame.minY - 16) - bounds.minY))
     }
+    static func highlightedRange(for quote: NativeQuote, text: String, fuzzy: Bool) -> NSRange {
+        if fuzzy { return NSRange(location: 0, length: (text as NSString).length) }
+        return NSRange(location: (quote.first as NSString).length, length: (quote.time as NSString).length)
+    }
     static func balancedLines(_ value: String, font: NSFont, width: CGFloat) -> String {
         let words = value.split(whereSeparator: \.isWhitespace).map(String.init)
         guard words.count > 2, width > 0 else { return value }
@@ -479,10 +483,11 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         patternImage?.draw(in: bounds)
         let photoKey = usesPhoto ? photoBackground.image.map { String(describing: ObjectIdentifier($0)) } ?? "none" : "none"
         let progressMode = preferences.string(forKey: "progressbar") ?? "none"
-        let opticalKey = "\(theme)|\(backgroundMode)|\(accent)|\(dark)|\(bounds.size)|\(photoKey)"
+        let opticalKey = "\(theme)|\(backgroundMode)|\(accent)|\(dark)|\(bounds.size)|\(newPatternKey)|\(photoKey)"
         if opticalKey != opticalSourceKey && bounds.width > 0 && bounds.height > 0 {
-            let backgroundImage = NSImage(size: bounds.size, flipped: false) { rect in
+            let backgroundImage = NSImage(size: bounds.size, flipped: false) { [self] rect in
                 drawBackdrop(in: rect, finalOnly: true)
+                patternImage?.draw(in: rect)
                 return true
             }
             previousPhotoOpticalSource = usesPhoto && photoBackground.isTransitioning ? opticalSource : nil
@@ -565,8 +570,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             addSubview(label)
             fuzzyCreditLabel = label
         }
-        let creditParts = [preferences.bool(forKey: "hide-book-title") ? "" : quote.title, quote.author].filter { !$0.isEmpty }
-        let creditText = fuzzyClock ? creditParts.joined(separator: "\n") : ""
+        let attributionHidden = preferences.string(forKey: "quote-attribution") == "hidden"
+        let hideTitle = preferences.bool(forKey: "hide-book-title")
+        let creditParts = [hideTitle ? "" : quote.title, quote.author].filter { !$0.isEmpty }
+        let creditText = !attributionHidden && (fuzzyClock || preferences.string(forKey: "quote-attribution") == "bottom-left") ? creditParts.joined(separator: "\n") : ""
         let creditKey = "\(creditText)|\(bounds.width)"
         if creditKey != fuzzyCreditKey {
             let label = fuzzyCreditLabel!
@@ -586,10 +593,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let creditLabel = fuzzyCreditLabel!
         let creditWidth = min(500, max(140, bounds.width * 0.38))
         creditLabel.frame = NSRect(x: 20, y: isFlipped ? bounds.height - 52 : 14, width: creditWidth, height: 38)
-        creditLabel.isHidden = !fuzzyClock || creditText.isEmpty
+        creditLabel.isHidden = (fuzzyClock ? attributionHidden : preferences.string(forKey: "quote-attribution") != "bottom-left") || creditText.isEmpty
         addSubview(creditLabel, positioned: .above, relativeTo: nil)
         let creditTextureKey = "\(creditKey)|\(creditLabel.frame.size)"
-        if fuzzyClock && !creditText.isEmpty {
+        if !attributionHidden && (fuzzyClock || preferences.string(forKey: "quote-attribution") == "bottom-left") && !creditText.isEmpty {
             if creditTextureKey != fuzzyCreditOpticalKey {
                 let wasHidden = creditLabel.isHidden
                 creditLabel.isHidden = false
@@ -633,12 +640,15 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 let textString = fuzzy ? Self.balancedLines(rawText, font: font, width: width) : rawText
                 let text = NSMutableAttributedString(string: textString,
                     attributes: [.font: font, .foregroundColor: foreground, .paragraphStyle: style])
-                // Apply highlight to the time portion (or full string when fuzzy)
-                let range = NSRange(location: 0, length: (textString as NSString).length)
-                text.addAttribute(theme == "book" ? .backgroundColor : .foregroundColor, value: accent, range: range)
+                // Highlight only the time in a quote; fuzzy mode displays just the time.
+                let range = Self.highlightedRange(for: item, text: textString, fuzzy: fuzzy)
+                if range.length > 0 {
+                    text.addAttribute(theme == "book" ? .backgroundColor : .foregroundColor, value: accent, range: range)
+                }
                 result.append(text)
                 if !fuzzyClock {
-                    let attribution = preferences.bool(forKey: "hide-book-title") ? item.author : [item.title, item.author].filter { !$0.isEmpty }.joined(separator: ", ")
+                    let attributionMode = preferences.string(forKey: "quote-attribution") ?? "below"
+                    let attribution = attributionMode == "hidden" || attributionMode == "bottom-left" ? "" : preferences.bool(forKey: "hide-book-title") ? item.author : [item.title, item.author].filter { !$0.isEmpty }.joined(separator: ", ")
                     if !attribution.isEmpty {
                         result.append(NSAttributedString(string: "\n", attributes: [.font: font, .paragraphStyle: style]))
                         let citationStyle = style.mutableCopy() as! NSMutableParagraphStyle
@@ -774,7 +784,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             let positionedQuote = texture.transformed(by: CGAffineTransform(scaleX: frame.width / texture.extent.width, y: frame.height / texture.extent.height))
                 .transformed(by: CGAffineTransform(translationX: frame.minX, y: frame.minY))
             scene = positionedQuote.composited(over: scene)
-            if fuzzyClock, let creditTexture = fuzzyCreditOpticalSource, let label = fuzzyCreditLabel {
+            if !attributionHidden, (fuzzyClock || preferences.string(forKey: "quote-attribution") == "bottom-left"), let creditTexture = fuzzyCreditOpticalSource, let label = fuzzyCreditLabel {
                 let creditFrame = label.frame
                 let positionedCredit = creditTexture.transformed(by: CGAffineTransform(scaleX: creditFrame.width / creditTexture.extent.width, y: creditFrame.height / creditTexture.extent.height))
                     .transformed(by: CGAffineTransform(translationX: creditFrame.minX, y: creditFrame.minY))
@@ -870,6 +880,21 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         stack.addArrangedSubview(NSStackView(views: [bilingual, translationMenu]))
         bilingualControlsChanged()
         section("settings_appearance")
+        let presetsTitle = NSTextField(labelWithString: text("settings_presets_title"))
+        presetsTitle.font = .boldSystemFont(ofSize: NSFont.systemFontSize)
+        presetsTitle.widthAnchor.constraint(equalToConstant: 180).isActive = true
+        let presetMenu = NSPopUpButton()
+        for (preset, label) in [("none", "settings_presets_choose"), ("christmas", "settings_preset_christmas"), ("halloween", "settings_preset_halloween"), ("valentine", "settings_preset_valentine")] {
+            let item = NSMenuItem(title: text(label), action: nil, keyEquivalent: "")
+            item.representedObject = preset
+            presetMenu.menu?.addItem(item)
+        }
+        presetMenu.select(presetMenu.itemArray.first { $0.representedObject as? String == "none" })
+        presetMenu.target = self
+        presetMenu.action = #selector(applyAppearancePreset(_:))
+        presetMenu.widthAnchor.constraint(equalToConstant: 260).isActive = true
+        controls["appearance-preset"] = presetMenu
+        stack.addArrangedSubview(NSStackView(views: [presetsTitle, presetMenu]))
         let theme = preferences.string(forKey: "theme") ?? "base-dark"
         let parts = theme.split(separator: "-").map(String.init)
         for (key, label, values) in [
@@ -989,6 +1014,19 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             controls[key] = check
             stack.addArrangedSubview(check)
         }
+        let attributionLabel = NSTextField(labelWithString: text("settings_attribution_position"))
+        attributionLabel.widthAnchor.constraint(equalToConstant: 180).isActive = true
+        let attributionMenu = NSPopUpButton()
+        for (value, labelKey) in [("below", "settings_attribution_below"), ("bottom-left", "settings_attribution_bottom_left"), ("hidden", "settings_attribution_hidden")] {
+            let item = NSMenuItem(title: text(labelKey), action: nil, keyEquivalent: "")
+            item.representedObject = value
+            attributionMenu.menu?.addItem(item)
+        }
+        attributionMenu.select(attributionMenu.itemArray.first { $0.representedObject as? String == (preferences.string(forKey: "quote-attribution") ?? "below") })
+        attributionMenu.widthAnchor.constraint(equalToConstant: 260).isActive = true
+        attributionMenu.setAccessibilityLabel(text("settings_attribution_position"))
+        controls["quote-attribution"] = attributionMenu
+        stack.addArrangedSubview(NSStackView(views: [attributionLabel, attributionMenu]))
         let version = Bundle(for: Self.self).object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "development"
         stack.addArrangedSubview(NSTextField(labelWithString: "Literature Clock for macOS · v" + version))
         stack.addArrangedSubview(ProjectLink(title: text("native_github_project")))
@@ -1010,17 +1048,58 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         guard let value = sender.selectedItem?.representedObject as? String, ["0.5", "1", "1.5", "2", "3"].contains(value), let number = Double(value) else { return }
         preferences.set(number, forKey: "pattern-size")
         patternKey = ""
+        updateAppearancePresetSelection()
         needsDisplay = true
+    }
+    private func updateAppearancePresetSelection() {
+        guard let presetMenu = controls["appearance-preset"] as? NSPopUpButton,
+              let background = menuValue("background"), let palette = menuValue("palette"),
+              let pattern = menuValue("background-pattern"), let size = menuValue("pattern-size"),
+              let effect = menuValue("background-effect") else { return }
+        let theme = menuValue("theme-base") ?? "base"
+        let presets: [(String, String, String, String)] = [
+            ("christmas", "green", "christmas", "snow"),
+            ("halloween", "purple", "halloween", "dust-v2"),
+            ("valentine", "pink", "valentine", "stars")
+        ]
+        let match = theme == "base" && background == "default" && size == "2"
+            ? presets.first { $0.1 == palette && $0.2 == pattern && $0.3 == effect }?.0
+            : nil
+        presetMenu.select(presetMenu.itemArray.first { ($0.representedObject as? String) == (match ?? "none") })
+    }
+    @objc private func applyAppearancePreset(_ sender: NSPopUpButton) {
+        guard let preset = sender.selectedItem?.representedObject as? String, preset != "none" else { return }
+        guard let palette = ["christmas": "green", "halloween": "purple", "valentine": "pink"][preset],
+              let pattern = ["christmas": "christmas", "halloween": "halloween", "valentine": "valentine"][preset],
+              let effect = ["christmas": "snow", "halloween": "dust-v2", "valentine": "stars"][preset] else { return }
+        func select(_ key: String, _ value: String) {
+            guard let menu = controls[key] as? NSPopUpButton else { return }
+            menu.select(menu.itemArray.first { $0.representedObject as? String == value })
+        }
+        select("theme-base", "base")
+        select("background", "default")
+        selectedBackground = "default"
+        select("palette", palette)
+        select("background-pattern", pattern)
+        select("pattern-size", "2")
+        select("background-effect", effect)
+        photoControlsChanged()
+        patternChanged(controls["background-pattern"] as! NSPopUpButton)
+        updateSwatches()
+        updateAppearancePresetSelection()
+        for view in Self.instances.allObjects where view.window != nil { view.effectStarted = Date(); view.lastMinute = ""; view.needsDisplay = true }
     }
     @objc private func patternChanged(_ sender: NSPopUpButton) {
         let pattern = sender.selectedItem?.representedObject as? String ?? "none"
         let sizeControl = controls["pattern-size"] as? NSPopUpButton
         sizeControl?.isEnabled = !["none", "random"].contains(pattern) && NativeAppearance.supportsPattern(theme: themeName)
         sizeControl?.isHidden = !(sizeControl?.isEnabled ?? false)
+        updateAppearancePresetSelection()
     }
     @objc private func effectChanged(_ sender: NSPopUpButton) {
         preferences.set(sender.selectedItem?.representedObject as? String ?? "none", forKey: "background-effect")
         updateAnimationTimeInterval()
+        updateAppearancePresetSelection()
         needsDisplay = true
     }
     @objc private func cancelOptions() {
@@ -1119,6 +1198,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             if button.value == "custom", let well = controls["custom-color"] as? NSColorWell { button.swatchColor = well.color }
             button.needsDisplay = true
         }
+        updateAppearancePresetSelection()
     }
     func controlTextDidChange(_ notification: Notification) {
         if notification.object as? NSTextField === controls["color-hex"] as? NSTextField,
@@ -1174,6 +1254,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         }
         controls["photo-provider"]?.isEnabled = usesPhoto
         controls["photo-provider"]?.superview?.isHidden = !usesPhoto
+        updateAppearancePresetSelection()
     }
     func applyOptions(_ values: [String: Any]) {
         for key in Self.optionKeys {

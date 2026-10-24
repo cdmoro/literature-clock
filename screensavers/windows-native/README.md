@@ -28,7 +28,8 @@ preference or manages other users' installations.
 
 Includes seven themes, system/light/dark appearance, automatic font selection for all
 twelve languages, per-minute language rotation, distinct monitor choices, highlighted
-time phrases, title hiding, safe-passage filtering, bilingual translations by shared
+time phrases, title hiding and quote attribution below the passage, at bottom left, or
+hidden, safe-passage filtering, bilingual translations by shared
 quote ID, moving text, fixed/custom/per-minute colours, background selection, patterns,
 time display and six progress modes. Book uses rounded highlight fragments and its paper
 tile. Retro and Terminal use repeating scanlines. Photo supports Picsum, NASA and
@@ -44,8 +45,9 @@ shadow effects, so edge softness can differ slightly from the web and macOS rend
 Liquid Glass uses an HLSL implementation based on `macos-native/Sources/OpticalGlass.metal`,
 with a 36-DIP bevel, RGB dispersion, 28-DIP leading corners, last-8% corner fade, subtle
 horizontal rim and 10% background / 2.5% foreground tint. Background glass keeps the passage above
-the lens; foreground glass samples the passage and clock. WPF samples the live photo
-crossfade. A GPU supporting pixel shader 3.0 and WPF rendering tier 2 is required; on
+the lens; foreground glass samples the passage and clock. Both modes sample the live photo
+crossfade and fixed background pattern; animated particles stay outside the sampled surface.
+A GPU supporting pixel shader 3.0 and WPF rendering tier 2 is required; on
 unsupported hardware glass falls back to classic 10% background progress.
 This is the project's optical shader, rather than Apple's system Liquid Glass API.
 
