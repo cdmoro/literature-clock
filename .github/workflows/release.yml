@@ -154,9 +154,9 @@ jobs:
           notes = textwrap.dedent(f'''\
           ## Component versions
 
-          - macOS screensaver: {macos}
-          - Windows screensaver: {windows}
-          - Web app: {web}
+          - <img src="https://cdn.simpleicons.org/apple/ffffff" alt="Apple" width="20" /> macOS screensaver: {macos}
+          - <img src="https://raw.githubusercontent.com/cdmoro/literature-clock/main/docs/windows.svg" alt="Windows" width="20" /> Windows screensaver: {windows}
+          - 🌎 Web app: {web}
 
           This consolidated release includes the native macOS and Windows downloads for this project release. The web app is hosted at https://literatureclock.netlify.app/.
           ''')
