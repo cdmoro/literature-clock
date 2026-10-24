@@ -87,8 +87,8 @@ def bundle(name, extension, architecture, data, version):
     rasterizer = OUTPUT / 'PatternRasterizer'
     run('xcrun', 'swiftc', '-swift-version', '5', '-module-cache-path', str(OUTPUT / 'module-cache'),
         '-framework', 'AppKit', str(SOURCE / 'Sources/PatternRasterizer.swift'), '-o', str(rasterizer))
-    for name, width, height in [('christmas', 150, 150), ('halloween', 150, 150), ('valentine', 70, 61.96)]:
-        run(str(rasterizer), str(patterns / f'{name}.svg'), str(patterns / f'{name}.png'), str(width), str(height))
+    for pattern_name, width, height in [('christmas', 150, 150), ('halloween', 150, 150), ('valentine', 70, 61.96)]:
+        run(str(rasterizer), str(patterns / f'{pattern_name}.svg'), str(patterns / f'{pattern_name}.png'), str(width), str(height))
     shutil.copy2(ROOT / 'src/photo-providers.json', resources / 'photo-providers.json')
     library = extension == 'saver'
     info = dict(CFBundleIdentifier=f'net.literatureclock.native-{extension}', CFBundleName=name,
