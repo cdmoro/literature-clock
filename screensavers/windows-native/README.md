@@ -28,7 +28,8 @@ preference or manages other users' installations.
 
 Includes seven themes, system/light/dark appearance, automatic font selection for all
 twelve languages, per-minute language rotation, distinct monitor choices, highlighted
-time phrases, title hiding, safe-passage filtering, bilingual translations by shared
+time phrases, title hiding and quote attribution below the passage, at bottom left, or
+hidden, safe-passage filtering, bilingual translations by shared
 quote ID, moving text, fixed/custom/per-minute colours, background selection, patterns,
 time display and six progress modes. Book uses rounded highlight fragments and its paper
 tile. Retro and Terminal use repeating scanlines. Photo supports Picsum, NASA and

@@ -27,6 +27,7 @@ public sealed class ClockSurface : Canvas
     readonly TextBlock clock = new() { FontFamily = new FontFamily("Segoe UI"), FontWeight = FontWeights.Bold };
     readonly TextBlock clockHalo = new() { FontFamily = new FontFamily("Segoe UI"), FontWeight = FontWeights.Bold };
     readonly TextBlock credit = new() { FontSize = 11 };
+    readonly TextBlock attributionCredit = new() { FontFamily = new FontFamily("Segoe UI"), FontSize = 11, TextWrapping = TextWrapping.Wrap, TextAlignment = TextAlignment.Left, Foreground = Brushes.White };
     readonly TextBlock bookCredit = new() { FontFamily = new FontFamily("Segoe UI"), FontSize = 11, TextWrapping = TextWrapping.Wrap, TextAlignment = TextAlignment.Left, Foreground = Brushes.White };
     readonly Rectangle progress = new();
     readonly Canvas effects = new();
@@ -45,7 +46,7 @@ public sealed class ClockSurface : Canvas
     {
         this.data=data; this.p=p; this.display=display; this.downloads=downloads;
         ClipToBounds=true;
-        scene.Children.Add(backdrop); scene.Children.Add(patternLayer); scene.Children.Add(effects); scene.Children.Add(clockHalo); scene.Children.Add(clock); scene.Children.Add(passage); scene.Children.Add(credit); scene.Children.Add(bookCredit);
+        scene.Children.Add(backdrop); scene.Children.Add(patternLayer); scene.Children.Add(effects); scene.Children.Add(clockHalo); scene.Children.Add(clock); scene.Children.Add(passage); scene.Children.Add(credit); scene.Children.Add(attributionCredit); scene.Children.Add(bookCredit);
         Children.Add(scene); Children.Add(progress);
         photo=new PhotoBackground(display);
         Loaded += (_, _) => CompositionTarget.Rendering += Frame;
@@ -121,12 +122,16 @@ public sealed class ClockSurface : Canvas
         SetLeft(clock,(ActualWidth-clock.DesiredSize.Width)/2); SetTop(clock,26);
         SetLeft(clockHalo,(ActualWidth-clockHalo.DesiredSize.Width)/2); SetTop(clockHalo,26);
         credit.Text=mode=="photo"?photo.Credit:""; credit.Foreground=Appearance.Brush(foreground,.75); credit.TextAlignment=TextAlignment.Right; credit.TextWrapping=TextWrapping.Wrap; credit.MaxWidth=Math.Min(500,ActualWidth*.7); credit.Measure(new Size(credit.MaxWidth,double.PositiveInfinity)); SetLeft(credit,ActualWidth-credit.DesiredSize.Width-16); SetTop(credit,ActualHeight-credit.DesiredSize.Height-16);
+        var attributionHidden=p.QuoteAttribution=="hidden";
         var title=p.HideTitle?"":quote?.title??""; var author=quote?.author??"";
-        bookCredit.Text=p.FuzzyClock?string.Join("\n",new[]{title,author}.WhereNonEmpty()):""; bookCredit.MaxWidth=Math.Min(500,Math.Max(140,ActualWidth*.38)); bookCredit.Measure(new Size(bookCredit.MaxWidth,double.PositiveInfinity));
+        attributionCredit.Text=!attributionHidden && !p.FuzzyClock && p.QuoteAttribution=="bottom-left"?string.Join("\n",new[]{title,author}.WhereNonEmpty()):""; attributionCredit.MaxWidth=Math.Min(500,Math.Max(140,ActualWidth*.38)); attributionCredit.Measure(new Size(attributionCredit.MaxWidth,double.PositiveInfinity));
+        attributionCredit.Effect=new DropShadowEffect { Color=Colors.Black,BlurRadius=8,ShadowDepth=0,Opacity=.65,RenderingBias=RenderingBias.Performance };
+        attributionCredit.Visibility=attributionCredit.Text.Length>0?Visibility.Visible:Visibility.Hidden; SetLeft(attributionCredit,20); SetTop(attributionCredit,ActualHeight-attributionCredit.DesiredSize.Height-14);
+        bookCredit.Text=!attributionHidden && p.FuzzyClock?string.Join("\n",new[]{title,author}.WhereNonEmpty()):""; bookCredit.MaxWidth=Math.Min(500,Math.Max(140,ActualWidth*.38)); bookCredit.Measure(new Size(bookCredit.MaxWidth,double.PositiveInfinity));
         bookCredit.Effect=new DropShadowEffect { Color=Colors.Black,BlurRadius=8,ShadowDepth=0,Opacity=.65,RenderingBias=RenderingBias.Performance };
-        bookCredit.Visibility=p.FuzzyClock&&bookCredit.Text.Length>0?Visibility.Visible:Visibility.Hidden; SetLeft(bookCredit,20); SetTop(bookCredit,ActualHeight-bookCredit.DesiredSize.Height-14);
+        bookCredit.Visibility=!attributionHidden && (p.FuzzyClock || p.QuoteAttribution=="bottom-left") && bookCredit.Text.Length>0?Visibility.Visible:Visibility.Hidden; SetLeft(bookCredit,20); SetTop(bookCredit,ActualHeight-bookCredit.DesiredSize.Height-14);
         var areaTop=p.ShowTime?26+clock.DesiredSize.Height+16:0;
-        var layout=$"{ActualWidth}|{ActualHeight}|{dark}|{accent}|{minute}|{locale}|{p.Theme}|{mode}|{pattern}|{p.FuzzyClock}|{p.HideTitle}|{p.Bilingual}|{p.Translation}";
+        var layout=$"{ActualWidth}|{ActualHeight}|{dark}|{accent}|{minute}|{locale}|{p.Theme}|{mode}|{pattern}|{p.FuzzyClock}|{p.HideTitle}|{p.QuoteAttribution}|{p.Bilingual}|{p.Translation}";
         if(quote!=null && layoutKey!=layout)
         {
             var width=ActualWidth*.76; var limit=Math.Min(ActualHeight*.65,Math.Max(1,ActualHeight-areaTop-(mode=="photo"?48:4)));
@@ -241,7 +246,7 @@ public sealed class ClockSurface : Canvas
                 text.Inlines.Add(highlight);
                 text.Inlines.Add(new Run(item.last));
                 passage.Children.Add(p.Theme=="book"?new BookText(text,highlight,Appearance.Brush(accent)):text);
-                var attribution=p.HideTitle?item.author:string.Join(", ",new[]{item.title,item.author}.WhereNonEmpty());
+                var attribution=!fuzzy && p.QuoteAttribution=="below"?p.HideTitle?item.author:string.Join(", ",new[]{item.title,item.author}.WhereNonEmpty()):"";
                 if(attribution.Length>0) passage.Children.Add(new TextBlock { Text=(p.Theme=="terminal"?"> ":"— ")+attribution,FontFamily=text.FontFamily,FontSize=fontSize*.55,TextWrapping=TextWrapping.Wrap,FlowDirection=flow,Foreground=Appearance.Brush(foreground),Margin=new Thickness(0,p.Theme=="book"?(ActualWidth<=750?16:24):fontSize*.35,0,0),Effect=outlineActive?new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=12,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance }:null });
             } else {
                 var highlight=new Run(string.IsNullOrEmpty(item.time)?minute:item.time);

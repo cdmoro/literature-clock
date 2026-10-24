@@ -21,6 +21,13 @@ public static class Checks
         Assert(Catalogues.Index(3,10,0)!=Catalogues.Index(3,10,1),"Distinct monitor variants");
         Assert(GlassEffect.Radius(1,1920,1080)==0 && GlassEffect.Radius(.5,1920,1080)==28,"Glass corner fade");
         var p=new Preferences { Languages=["en-GB"],Safe=true,Move=false };
+        Assert(p.QuoteAttribution=="below","Default quote attribution mode");
+        foreach(var mode in new[]{"below","bottom-left","hidden"})
+        {
+            p.QuoteAttribution=mode;
+            var json=JsonSerializer.Serialize(p);
+            Assert(JsonSerializer.Deserialize<Preferences>(json)?.QuoteAttribution==mode,"Quote attribution preference roundtrip: "+mode);
+        }
         foreach(var locale in data.Locales)
         {
             var rows=data.Get(locale); Assert(rows.Count>0,"Empty catalogue: "+locale);
