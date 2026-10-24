@@ -21,7 +21,16 @@
     "settings_effect_snow": "Snow",
     "settings_effect_dust": "Dust",
     "settings_effect_dust-v2": "Bokeh dust",
-    "settings_effect_stars": "Stars"
+    "settings_effect_stars": "Stars",
+    "settings_presets_title": "Seasonal presets",
+    "settings_presets_choose": "Choose a preset",
+    "settings_preset_christmas": "Christmas",
+    "settings_preset_halloween": "Halloween",
+    "settings_preset_valentine": "Valentine’s Day",
+    "settings_attribution_position": "Quote details",
+    "settings_attribution_below": "Below the quote",
+    "settings_attribution_bottom_left": "Bottom left",
+    "settings_attribution_hidden": "Hidden"
   },
   "en-US": {
     "cancel": "Cancel",
@@ -45,7 +54,16 @@
     "settings_effect_snow": "Snow",
     "settings_effect_dust": "Dust",
     "settings_effect_dust-v2": "Bokeh dust",
-    "settings_effect_stars": "Stars"
+    "settings_effect_stars": "Stars",
+    "settings_presets_title": "Seasonal presets",
+    "settings_presets_choose": "Choose a preset",
+    "settings_preset_christmas": "Christmas",
+    "settings_preset_halloween": "Halloween",
+    "settings_preset_valentine": "Valentine’s Day",
+    "settings_attribution_position": "Quote details",
+    "settings_attribution_below": "Below the quote",
+    "settings_attribution_bottom_left": "Bottom left",
+    "settings_attribution_hidden": "Hidden"
   },
   "es-ES": {
     "cancel": "Cancelar",
@@ -69,7 +87,16 @@
     "settings_effect_snow": "Nieve",
     "settings_effect_dust": "Polvo",
     "settings_effect_dust-v2": "Polvo luminoso",
-    "settings_effect_stars": "Estrellas"
+    "settings_effect_stars": "Estrellas",
+    "settings_presets_title": "Estilos de temporada",
+    "settings_presets_choose": "Elegí un estilo",
+    "settings_preset_christmas": "Navidad",
+    "settings_preset_halloween": "Halloween",
+    "settings_preset_valentine": "San Valentín",
+    "settings_attribution_position": "Datos de la cita",
+    "settings_attribution_below": "Debajo de la cita",
+    "settings_attribution_bottom_left": "Esquina inferior izquierda",
+    "settings_attribution_hidden": "Ocultos"
   },
   "fr-FR": {
     "cancel": "Annuler",
@@ -93,7 +120,16 @@
     "settings_effect_snow": "Neige",
     "settings_effect_dust": "Poussière",
     "settings_effect_dust-v2": "Poussière lumineuse",
-    "settings_effect_stars": "Étoiles"
+    "settings_effect_stars": "Étoiles",
+    "settings_presets_title": "Thèmes saisonniers",
+    "settings_presets_choose": "Choisir un thème",
+    "settings_preset_christmas": "Noël",
+    "settings_preset_halloween": "Halloween",
+    "settings_preset_valentine": "Saint-Valentin",
+    "settings_attribution_position": "Informations de la citation",
+    "settings_attribution_below": "Sous la citation",
+    "settings_attribution_bottom_left": "En bas à gauche",
+    "settings_attribution_hidden": "Masquées"
   },
   "de-DE": {
     "cancel": "Abbrechen",
@@ -117,7 +153,16 @@
     "settings_effect_snow": "Schnee",
     "settings_effect_dust": "Staub",
     "settings_effect_dust-v2": "Leuchtender Staub",
-    "settings_effect_stars": "Sterne"
+    "settings_effect_stars": "Sterne",
+    "settings_presets_title": "Saisonale Designs",
+    "settings_presets_choose": "Design auswählen",
+    "settings_preset_christmas": "Weihnachten",
+    "settings_preset_halloween": "Halloween",
+    "settings_preset_valentine": "Valentinstag",
+    "settings_attribution_position": "Angaben zum Zitat",
+    "settings_attribution_below": "Unter dem Zitat",
+    "settings_attribution_bottom_left": "Unten links",
+    "settings_attribution_hidden": "Ausgeblendet"
   },
   "it-IT": {
     "cancel": "Annulla",
@@ -141,7 +186,16 @@
     "settings_effect_snow": "Neve",
     "settings_effect_dust": "Polvere",
     "settings_effect_dust-v2": "Polvere luminosa",
-    "settings_effect_stars": "Stelle"
+    "settings_effect_stars": "Stelle",
+    "settings_presets_title": "Temi stagionali",
+    "settings_presets_choose": "Scegli un tema",
+    "settings_preset_christmas": "Natale",
+    "settings_preset_halloween": "Halloween",
+    "settings_preset_valentine": "San Valentino",
+    "settings_attribution_position": "Dati della citazione",
+    "settings_attribution_below": "Sotto la citazione",
+    "settings_attribution_bottom_left": "In basso a sinistra",
+    "settings_attribution_hidden": "Nascosti"
   },
   "pt-PT": {
     "cancel": "Cancelar",
@@ -165,7 +219,16 @@
     "settings_effect_snow": "Neve",
     "settings_effect_dust": "Poeira",
     "settings_effect_dust-v2": "Poeira luminosa",
-    "settings_effect_stars": "Estrelas"
+    "settings_effect_stars": "Estrelas",
+    "settings_presets_title": "Temas sazonais",
+    "settings_presets_choose": "Escolha um tema",
+    "settings_preset_christmas": "Natal",
+    "settings_preset_halloween": "Halloween",
+    "settings_preset_valentine": "Dia dos Namorados",
+    "settings_attribution_position": "Dados da citação",
+    "settings_attribution_below": "Abaixo da citação",
+    "settings_attribution_bottom_left": "Canto inferior esquerdo",
+    "settings_attribution_hidden": "Ocultos"
   },
   "ru-RU": {
     "cancel": "Отмена",
@@ -189,7 +252,16 @@
     "settings_effect_snow": "Снег",
     "settings_effect_dust": "Пыль",
     "settings_effect_dust-v2": "Светящаяся пыль",
-    "settings_effect_stars": "Звёзды"
+    "settings_effect_stars": "Звёзды",
+    "settings_presets_title": "Сезонные темы",
+    "settings_presets_choose": "Выберите тему",
+    "settings_preset_christmas": "Рождество",
+    "settings_preset_halloween": "Хэллоуин",
+    "settings_preset_valentine": "День святого Валентина",
+    "settings_attribution_position": "Данные цитаты",
+    "settings_attribution_below": "Под цитатой",
+    "settings_attribution_bottom_left": "В левом нижнем углу",
+    "settings_attribution_hidden": "Скрыты"
   },
   "zh-CN": {
     "cancel": "取消",
@@ -213,7 +285,16 @@
     "settings_effect_snow": "雪",
     "settings_effect_dust": "尘埃",
     "settings_effect_dust-v2": "光斑尘埃",
-    "settings_effect_stars": "星星"
+    "settings_effect_stars": "星星",
+    "settings_presets_title": "季节主题",
+    "settings_presets_choose": "选择主题",
+    "settings_preset_christmas": "圣诞节",
+    "settings_preset_halloween": "万圣节",
+    "settings_preset_valentine": "情人节",
+    "settings_attribution_position": "引文信息",
+    "settings_attribution_below": "引文下方",
+    "settings_attribution_bottom_left": "左下角",
+    "settings_attribution_hidden": "隐藏"
   },
   "el-GR": {
     "cancel": "Ακύρωση",
@@ -237,7 +318,16 @@
     "settings_effect_snow": "Χιόνι",
     "settings_effect_dust": "Σκόνη",
     "settings_effect_dust-v2": "Φωτεινή σκόνη",
-    "settings_effect_stars": "Αστέρια"
+    "settings_effect_stars": "Αστέρια",
+    "settings_presets_title": "Εποχικά θέματα",
+    "settings_presets_choose": "Επιλέξτε θέμα",
+    "settings_preset_christmas": "Χριστούγεννα",
+    "settings_preset_halloween": "Χάλογουιν",
+    "settings_preset_valentine": "Αγίου Βαλεντίνου",
+    "settings_attribution_position": "Στοιχεία αποσπάσματος",
+    "settings_attribution_below": "Κάτω από το απόσπασμα",
+    "settings_attribution_bottom_left": "Κάτω αριστερά",
+    "settings_attribution_hidden": "Κρυφά"
   },
   "eo": {
     "cancel": "Nuligi",
@@ -261,7 +351,16 @@
     "settings_effect_snow": "Neĝo",
     "settings_effect_dust": "Polvo",
     "settings_effect_dust-v2": "Lumeca polvo",
-    "settings_effect_stars": "Steloj"
+    "settings_effect_stars": "Steloj",
+    "settings_presets_title": "Sezonaj etosoj",
+    "settings_presets_choose": "Elektu etoson",
+    "settings_preset_christmas": "Kristnasko",
+    "settings_preset_halloween": "Haloveno",
+    "settings_preset_valentine": "Valentena Tago",
+    "settings_attribution_position": "Detaloj de la citaĵo",
+    "settings_attribution_below": "Sub la citaĵo",
+    "settings_attribution_bottom_left": "Malsupre maldekstre",
+    "settings_attribution_hidden": "Kaŝitaj"
   },
   "ar-AE": {
     "cancel": "إلغاء",
@@ -285,6 +384,15 @@
     "settings_effect_snow": "ثلج",
     "settings_effect_dust": "غبار",
     "settings_effect_dust-v2": "غبار متوهج",
-    "settings_effect_stars": "نجوم"
+    "settings_effect_stars": "نجوم",
+    "settings_presets_title": "سمات موسمية",
+    "settings_presets_choose": "اختر سمة",
+    "settings_preset_christmas": "عيد الميلاد",
+    "settings_preset_halloween": "الهالوين",
+    "settings_preset_valentine": "عيد الحب",
+    "settings_attribution_position": "بيانات الاقتباس",
+    "settings_attribution_below": "أسفل الاقتباس",
+    "settings_attribution_bottom_left": "أسفل اليسار",
+    "settings_attribution_hidden": "مخفية"
   }
 }

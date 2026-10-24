@@ -48,7 +48,7 @@ public sealed class SettingsWindow : Window
         Menu("settings_background_effect","effect",["none","rain","snow","dust","dust-v2","stars"],p.Effect,raw=>data.Text("settings_effect_"+raw));
         Menu("progressbar_mode","progress",["none","top","bottom","background","glass-background","glass-foreground"],p.Progress,raw=>data.Text("settings_progress_"+raw));
         Section("settings_behavior");
-        Check("movement","move",p.Move); Check("time_mode","time",p.ShowTime); Check("settings_fuzzy_clock","fuzzyClock",p.FuzzyClock); Check("settings_hide_book_title","hideTitle",p.HideTitle); Check("work_mode_title","safe",p.Safe);
+        Check("movement","move",p.Move); Check("time_mode","time",p.ShowTime); Check("settings_fuzzy_clock","fuzzyClock",p.FuzzyClock); Check("settings_hide_book_title","hideTitle",p.HideTitle); Menu("settings_attribution_position","quoteAttribution",["below","bottom-left","hidden"],p.QuoteAttribution,raw=>data.Text("settings_attribution_"+raw)); Check("work_mode_title","safe",p.Safe);
         void Categories()
         {
             var provider=Value("provider"); var menu=menus["category"]; var saved=Value("category");
@@ -102,7 +102,7 @@ public sealed class SettingsWindow : Window
         if(Value("palette")=="custom" && !Regex.IsMatch(custom.Text,"^#[0-9a-fA-F]{6}$")) { error.Text=data.Text("color_edit")+" (#RRGGBB)"; return; }
         var p=new Preferences
         {
-            Languages=languages.Where(x=>x.Value.IsChecked==true).Select(x=>x.Key).ToArray(),Theme=Value("theme"),Scheme=Value("scheme"),Background=Value("background"),Pattern=Value("pattern"),PatternSize=Value("patternSize") is "0.5" or "1" or "1.5" or "2" or "3" ? Value("patternSize") : "1",Effect=new[]{"none","rain","snow","dust","dust-v2","stars"}.Contains(Value("effect"))?Value("effect"):"none",Palette=Value("palette"),CustomColor=Regex.IsMatch(custom.Text,"^#[0-9a-fA-F]{6}$")?custom.Text:original.CustomColor,Progress=Value("progress"),Provider=Value("provider"),Category=Value("category"),Translation=Value("translation"),Bilingual=checks["bilingual"].IsChecked==true,Move=checks["move"].IsChecked==true,ShowTime=checks["time"].IsChecked==true,FuzzyClock=checks["fuzzyClock"].IsChecked==true,HideTitle=checks["hideTitle"].IsChecked==true,Safe=checks["safe"].IsChecked==true
+            Languages=languages.Where(x=>x.Value.IsChecked==true).Select(x=>x.Key).ToArray(),Theme=Value("theme"),Scheme=Value("scheme"),Background=Value("background"),Pattern=Value("pattern"),PatternSize=Value("patternSize") is "0.5" or "1" or "1.5" or "2" or "3" ? Value("patternSize") : "1",Effect=new[]{"none","rain","snow","dust","dust-v2","stars"}.Contains(Value("effect"))?Value("effect"):"none",Palette=Value("palette"),CustomColor=Regex.IsMatch(custom.Text,"^#[0-9a-fA-F]{6}$")?custom.Text:original.CustomColor,Progress=Value("progress"),Provider=Value("provider"),Category=Value("category"),Translation=Value("translation"),Bilingual=checks["bilingual"].IsChecked==true,Move=checks["move"].IsChecked==true,ShowTime=checks["time"].IsChecked==true,FuzzyClock=checks["fuzzyClock"].IsChecked==true,HideTitle=checks["hideTitle"].IsChecked==true,QuoteAttribution=new[]{"below","bottom-left","hidden"}.Contains(Value("quoteAttribution"))?Value("quoteAttribution"):"below",Safe=checks["safe"].IsChecked==true
         };
         try { p.Save(); }
         catch(Exception e) when(e is System.IO.IOException or UnauthorizedAccessException) { error.Text=e.Message; return; }

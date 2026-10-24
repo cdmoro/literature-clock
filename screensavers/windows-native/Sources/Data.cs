@@ -18,6 +18,7 @@ public sealed class Preferences
     public bool ShowTime { get; set; } = true;
     public bool FuzzyClock { get; set; } = false;
     public bool HideTitle { get; set; }
+    public string QuoteAttribution { get; set; } = "below";
     public bool Safe { get; set; } = true;
     public bool Bilingual { get; set; }
     public string Translation { get; set; } = "";
