@@ -582,6 +582,71 @@
   gap: 0.75rem;
   margin-top: 1rem;
 }
+.settings-appearance-presets {
+  margin-bottom: 1.25rem;
+}
+#settings-dialog .settings-appearance-presets h3 {
+  margin: 0 0 0.25rem;
+}
+.settings-presets-help {
+  margin: 0 0 0.75rem;
+  color: color-mix(in srgb, var(--font-color), transparent 25%);
+  font-size: 0.82rem;
+}
+.settings-preset-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+#settings-dialog .settings-preset {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+  padding: 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--font-color), transparent 78%);
+  border-radius: 0.5rem;
+  background: color-mix(in srgb, var(--font-color), transparent 96%);
+  color: inherit;
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+#settings-dialog .settings-preset:hover,
+#settings-dialog .settings-preset[aria-pressed='true'] {
+  border-color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+}
+.settings-preset-preview {
+  display: block;
+  flex: 0 0 2.5rem;
+  width: 2.5rem;
+  height: 2rem;
+  overflow: hidden;
+  border-radius: 0.3rem;
+  box-shadow: inset 0 0 0 1px #fff2;
+}
+.settings-preset-preview[data-preset='christmas'] {
+  background-color: #173c2c;
+  --preset-pattern-tint: rgb(23 60 44 / 55%);
+}
+.settings-preset-preview[data-preset='halloween'] {
+  background-color: #261a38;
+  --preset-pattern-tint: rgb(38 26 56 / 55%);
+}
+.settings-preset-preview[data-preset='valentine'] {
+  background-color: #3b1d36;
+  --preset-pattern-tint: rgb(86 32 67 / 55%);
+}
+#settings-dialog .settings-preset-preview.background-pattern-surface {
+  background-image: linear-gradient(var(--preset-pattern-tint), var(--preset-pattern-tint)), var(--pattern-image);
+  background-size: 100% 100%, 100% 100%;
+}
+@media (max-width: 360px) {
+  .settings-preset-options {
+    grid-template-columns: 1fr;
+  }
+}
 #settings-dialog .settings-saved-themes .input-group {
   display: flex;
   flex-wrap: nowrap;

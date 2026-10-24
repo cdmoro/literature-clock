@@ -73,4 +73,10 @@ export type Translations = {
   'ru-RU': string;
   eo: string;
   'ar-AE': string;
+  settings_presets_title: string;
+  settings_presets_help: string;
+  settings_preset_christmas: string;
+  settings_preset_halloween: string;
+  settings_pattern_valentine: string;
+  settings_preset_valentine: string;
 };

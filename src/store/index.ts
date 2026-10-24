@@ -21,6 +21,7 @@ interface Stateful {
   transition: TransitionMode;
   'show-time': boolean;
   'hide-book-title': boolean;
+  'quote-attribution': 'below' | 'bottom-left' | 'hidden';
   'fuzzy-clock': boolean;
   'auto-read': boolean;
   'read-attribution': boolean;
@@ -152,6 +153,9 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
       case 'background':
         if (BACKGROUNDS.some((value) => value === raw)) result[key] = raw;
         break;
+      case 'quote-attribution':
+        if (['below', 'bottom-left', 'hidden'].includes(raw)) result[key] = raw;
+        break;
       case 'background-pattern':
         if (isBackgroundPattern(raw)) result[key] = raw;
         break;
@@ -239,6 +243,10 @@ export function updateBooleanSettingStatus(key: string, value: boolean) {
   document.getElementById(key)?.classList.toggle('active', value);
 }
 
+function updateQuoteAttributionStatus(value: string) {
+  document.body.dataset.quoteAttribution = value;
+}
+
 export class Store {
   private state: State;
   private listeners: Listener[] = [];
@@ -297,6 +305,7 @@ export class Store {
         updateBooleanSettingStatus(key, value);
       }
     });
+    updateQuoteAttributionStatus(this.state['quote-attribution']);
 
     // Sync the final merged state to localStorage (without touching the URL yet)
     this.syncToLocalStorage();
@@ -322,6 +331,7 @@ export class Store {
     if (typeof value === 'boolean') {
       updateBooleanSettingStatus(key, value);
     }
+    if (key === 'quote-attribution') updateQuoteAttributionStatus(value as string);
 
     return value;
   }
@@ -415,6 +425,7 @@ export function createStore() {
     transition: 'fade',
     'show-time': true,
     'hide-book-title': false,
+    'quote-attribution': 'below',
     'fuzzy-clock': false,
     'auto-read': false,
     'read-attribution': false,

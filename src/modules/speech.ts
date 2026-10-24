@@ -80,7 +80,7 @@ export function initSpeech() {
     });
     return { container, heading };
   };
-  const contentSection = section('behavior-content-title', ['hide-book-title', 'work']);
+  const contentSection = section('behavior-content-title', ['hide-book-title', 'quote-attribution', 'work']);
   const clockSection = section('behavior-clock-title', [
     'transition-select',
     'show-time',

@@ -4,6 +4,7 @@ import { initBackgroundPatterns } from './background-patterns';
 import { store } from '../store';
 import { initSavedThemes } from './saved-themes';
 import { initThemePicker } from './theme-picker';
+import { initAppearancePresets } from './appearance-presets';
 import { readingIcon } from './reading-icons';
 import { closeDialogOnBackdropClick } from '../utils/dialog';
 
@@ -152,6 +153,23 @@ export function initSettingsDialog() {
   hideTitle.addEventListener('click', () => store.toggle('hide-book-title'));
   move('hide-book-title', 'behavior', 'settings_hide_book_title');
 
+  const attributionPosition = document.createElement('select');
+  attributionPosition.id = 'quote-attribution';
+  attributionPosition.innerHTML = `
+    <option value="below" data-text="settings_attribution_below">Below the quote</option>
+    <option value="bottom-left" data-text="settings_attribution_bottom_left">Bottom left</option>
+    <option value="hidden" data-text="settings_attribution_hidden">Hidden</option>`;
+  attributionPosition.value = store.get('quote-attribution');
+  attributionPosition.addEventListener('change', () =>
+    store.set('quote-attribution', attributionPosition.value as 'below' | 'bottom-left' | 'hidden'),
+  );
+  store.subscribe((state) => (attributionPosition.value = state['quote-attribution']));
+  const attributionPositionGroup = document.createElement('div');
+  attributionPositionGroup.className = 'input-group';
+  attributionPositionGroup.append(attributionPosition);
+  toolbar.append(attributionPositionGroup);
+  move('quote-attribution', 'behavior', 'settings_attribution_position', true);
+
   const fuzzyClock = document.createElement('button');
   fuzzyClock.id = 'fuzzy-clock';
   fuzzyClock.type = 'button';
@@ -243,6 +261,7 @@ export function initSettingsDialog() {
   initBackground(dialog);
   initPhotoSettings(dialog);
   initBackgroundPatterns(dialog);
+  initAppearancePresets(dialog);
   initSavedThemes(dialog);
 
   // Moving controls leaves whitespace-only wrappers that still occupy a flex gap.

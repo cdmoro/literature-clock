@@ -1,6 +1,9 @@
 /// <reference types="vite/client" />
 import wavesTile from '../assets/waves.svg';
 import noiseTile from '../assets/noise.png';
+import christmasTile from '../assets/patterns/christmas-pattern-monster.svg';
+import halloweenTile from '../assets/patterns/halloween-pattern-monster.svg';
+import valentineTile from '../assets/patterns/valentine.svg';
 import { expect, it } from 'vitest';
 import { sharePatternTile } from './share-pattern';
 
@@ -44,6 +47,27 @@ it('exports the same thin wave tile used by the clock', () => {
   }
 });
 
+it('uses the Pattern Monster Christmas tile in the share card', () => {
+  expect(sharePatternTile('christmas', '#222', true)).toEqual({
+    image: `url("${christmasTile}")`,
+    size: '150px 150px',
+  });
+});
+
+it('uses the Pattern Monster Halloween tile in the share card', () => {
+  expect(sharePatternTile('halloween', '#222', true)).toEqual({
+    image: `url("${halloweenTile}")`,
+    size: '150px 150px',
+  });
+});
+
+it('uses the Pattern Monster Valentine tile in the share card', () => {
+  expect(sharePatternTile('valentine', '#222', true)).toEqual({
+    image: `url("${valentineTile}")`,
+    size: '70px 61.96px',
+  });
+});
+
 it.each([
   ['mixed-stripes', '64px 64px'],
   ['checkerboard', '48px 48px'],
@@ -55,7 +79,6 @@ it.each([
   ['woven', '48px 48px'],
   ['zigzag-fine', '48px 32px'],
   ['rain', '240px 240px'],
-  ['christmas', '320px 320px'],
   ['hearts', '320px 320px'],
   ['reading', '320px 320px'],
   ['space', '320px 320px'],

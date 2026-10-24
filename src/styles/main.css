@@ -282,7 +282,7 @@ button:disabled {
 }
 
 #progress-bar {
-  background-color: var(--font-color);
+  background-color: var(--accent-color);
   bottom: 0;
   height: var(--progress-height, 4px);
   left: 0;
@@ -659,6 +659,15 @@ blockquote:has(#quote-translation) > p {
 body.hide-book-title #quote #title,
 body.hide-book-title #quote #comma,
 body.hide-book-title #quote .translation-book-title {
+  display: none;
+}
+
+body[data-quote-attribution='hidden'] #quote cite,
+body[data-quote-attribution='bottom-left']:not(.fuzzy-clock) #quote cite {
+  display: none;
+}
+
+body[data-quote-attribution='hidden'] #quote-credit {
   display: none;
 }
 

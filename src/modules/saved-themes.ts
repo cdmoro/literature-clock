@@ -20,6 +20,7 @@ const KEYS = [
   'work',
   'show-time',
   'hide-book-title',
+  'quote-attribution',
   'fuzzy-clock',
   'progressbar',
 ] as const;
@@ -47,6 +48,7 @@ export function readSavedThemes(): SavedTheme[] {
       validated.palette ??= 'default';
       validated['photo-provider'] ??= 'picsum';
       validated['photo-category'] ??= 'all';
+      validated['quote-attribution'] ??= 'below';
       if (!KEYS.every((key) => validated[key] !== undefined)) return [];
       const snapshot = Object.fromEntries(KEYS.map((key) => [key, validated[key]])) as Preferences;
       seen.add(id);
@@ -79,6 +81,11 @@ export async function applySavedTheme(settings: Preferences) {
   }
   for (const key of ['work', 'show-time', 'hide-book-title', 'fuzzy-clock'] as const) {
     if (settings[key] !== undefined && store.get(key) !== settings[key]) document.getElementById(key)?.click();
+  }
+  const attributionPosition = document.querySelector<HTMLSelectElement>('#quote-attribution');
+  if (attributionPosition) {
+    attributionPosition.value = settings['quote-attribution']!;
+    attributionPosition.dispatchEvent(new Event('change', { bubbles: true }));
   }
   for (const [key, id] of [
     ['transition', 'transition-select'],
