@@ -224,6 +224,10 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
                 let rows = clock.catalogue(locale)
                 clock.quote = locale == "en-GB" ? rows["16:00"]?.first { $0.title == "Through the Looking Glass" } : rows.values.flatMap { $0 }.first { $0.time.count > 25 && $0.first.count > 30 }
                 precondition(clock.quote != nil, "Missing Book highlight diagnostic passage")
+                let quoteText = clock.quote!.first + clock.quote!.time + clock.quote!.last
+                let expectedTimeRange = NSRange(location: (clock.quote!.first as NSString).length, length: (clock.quote!.time as NSString).length)
+                precondition(NativeClockView.highlightedRange(for: clock.quote!, text: quoteText, fuzzy: false) == expectedTimeRange, "Quote highlight must cover only the time")
+                precondition(NativeClockView.highlightedRange(for: clock.quote!, text: clock.quote!.time, fuzzy: true) == NSRange(location: 0, length: (clock.quote!.time as NSString).length), "Fuzzy highlight must cover the displayed time")
                 let bitmap = clock.bitmapImageRepForCachingDisplay(in: clock.bounds)!
                 clock.cacheDisplay(in: clock.bounds, to: bitmap)
                 try! bitmap.representation(using: .png, properties: [:])!.write(to: output.appendingPathComponent("book-highlight-" + locale + ".png"))

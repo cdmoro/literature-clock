@@ -137,8 +137,22 @@ enum NativeAppearance {
               let data = try? Data(contentsOf: resources.appendingPathComponent("Patterns/tiles.json")),
               let sizes = try? JSONDecoder().decode([String: [CGFloat]].self, from: data), let dimensions = sizes[pattern] else { return nil }
         tile.size = NSSize(width: dimensions[0] * tileScale, height: dimensions[1] * tileScale)
+        let renderedTile: NSImage
+        if pattern == "halloween" {
+            renderedTile = NSImage(size: tile.size, flipped: false) { rect in
+                tile.draw(in: rect)
+                color.setFill()
+                let context = NSGraphicsContext.current
+                context?.compositingOperation = .sourceAtop
+                rect.fill()
+                context?.compositingOperation = .sourceOver
+                return true
+            }
+        } else {
+            renderedTile = tile
+        }
         return NSImage(size: size, flipped: false) { rect in
-            NSColor(patternImage: tile).setFill()
+            NSColor(patternImage: renderedTile).setFill()
             rect.fill()
             return true
         }

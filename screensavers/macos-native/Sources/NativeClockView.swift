@@ -354,6 +354,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         return NSRect(x: bounds.minX, y: bounds.minY, width: bounds.width,
                       height: max(0, min(bounds.maxY, clockFrame.minY - 16) - bounds.minY))
     }
+    static func highlightedRange(for quote: NativeQuote, text: String, fuzzy: Bool) -> NSRange {
+        if fuzzy { return NSRange(location: 0, length: (text as NSString).length) }
+        return NSRange(location: (quote.first as NSString).length, length: (quote.time as NSString).length)
+    }
     static func balancedLines(_ value: String, font: NSFont, width: CGFloat) -> String {
         let words = value.split(whereSeparator: \.isWhitespace).map(String.init)
         guard words.count > 2, width > 0 else { return value }
@@ -471,9 +475,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let allowedSizes: [CGFloat] = [0.5, 1, 1.5, 2, 3]
         let savedSize = CGFloat(preferences.double(forKey: "pattern-size"))
         let patternScale = allowedSizes.contains(savedSize) ? savedSize : 1
-        let newPatternKey = "\(pattern)|\(bounds.size)|\(scale)|\(accent)|\(patternScale)"
+        let patternColor = pattern == "halloween" && dark ? NSColor.white : accent
+        let newPatternKey = "\(pattern)|\(bounds.size)|\(scale)|\(patternColor)|\(patternScale)"
         if newPatternKey != patternKey {
-            patternImage = NativeAppearance.patternImage(pattern: pattern, size: bounds.size, scale: scale, color: accent, resources: resources, tileScale: patternScale)
+            patternImage = NativeAppearance.patternImage(pattern: pattern, size: bounds.size, scale: scale, color: patternColor, resources: resources, tileScale: patternScale)
             patternKey = newPatternKey
         }
         patternImage?.draw(in: bounds)
@@ -635,9 +640,11 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 let textString = fuzzy ? Self.balancedLines(rawText, font: font, width: width) : rawText
                 let text = NSMutableAttributedString(string: textString,
                     attributes: [.font: font, .foregroundColor: foreground, .paragraphStyle: style])
-                // Apply highlight to the time portion (or full string when fuzzy)
-                let range = NSRange(location: 0, length: (textString as NSString).length)
-                text.addAttribute(theme == "book" ? .backgroundColor : .foregroundColor, value: accent, range: range)
+                // Highlight only the time in a quote; fuzzy mode displays just the time.
+                let range = Self.highlightedRange(for: item, text: textString, fuzzy: fuzzy)
+                if range.length > 0 {
+                    text.addAttribute(theme == "book" ? .backgroundColor : .foregroundColor, value: accent, range: range)
+                }
                 result.append(text)
                 if !fuzzyClock {
                     let attributionMode = preferences.string(forKey: "quote-attribution") ?? "below"
