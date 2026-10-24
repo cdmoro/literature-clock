@@ -591,7 +591,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         creditLabel.isHidden = (fuzzyClock ? attributionHidden : preferences.string(forKey: "quote-attribution") != "bottom-left") || creditText.isEmpty
         addSubview(creditLabel, positioned: .above, relativeTo: nil)
         let creditTextureKey = "\(creditKey)|\(creditLabel.frame.size)"
-        if (fuzzyClock || preferences.string(forKey: "quote-attribution") == "bottom-left") && !creditText.isEmpty {
+        if !attributionHidden && (fuzzyClock || preferences.string(forKey: "quote-attribution") == "bottom-left") && !creditText.isEmpty {
             if creditTextureKey != fuzzyCreditOpticalKey {
                 let wasHidden = creditLabel.isHidden
                 creditLabel.isHidden = false
@@ -777,7 +777,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             let positionedQuote = texture.transformed(by: CGAffineTransform(scaleX: frame.width / texture.extent.width, y: frame.height / texture.extent.height))
                 .transformed(by: CGAffineTransform(translationX: frame.minX, y: frame.minY))
             scene = positionedQuote.composited(over: scene)
-            if fuzzyClock, let creditTexture = fuzzyCreditOpticalSource, let label = fuzzyCreditLabel {
+            if !attributionHidden, (fuzzyClock || preferences.string(forKey: "quote-attribution") == "bottom-left"), let creditTexture = fuzzyCreditOpticalSource, let label = fuzzyCreditLabel {
                 let creditFrame = label.frame
                 let positionedCredit = creditTexture.transformed(by: CGAffineTransform(scaleX: creditFrame.width / creditTexture.extent.width, y: creditFrame.height / creditTexture.extent.height))
                     .transformed(by: CGAffineTransform(translationX: creditFrame.minX, y: creditFrame.minY))
@@ -1010,8 +1010,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let attributionLabel = NSTextField(labelWithString: text("settings_attribution_position"))
         attributionLabel.widthAnchor.constraint(equalToConstant: 180).isActive = true
         let attributionMenu = NSPopUpButton()
-        for value in ["below", "bottom-left", "hidden"] {
-            let item = NSMenuItem(title: text("settings_attribution_" + value), action: nil, keyEquivalent: "")
+        for (value, labelKey) in [("below", "settings_attribution_below"), ("bottom-left", "settings_attribution_bottom_left"), ("hidden", "settings_attribution_hidden")] {
+            let item = NSMenuItem(title: text(labelKey), action: nil, keyEquivalent: "")
             item.representedObject = value
             attributionMenu.menu?.addItem(item)
         }
@@ -1053,6 +1053,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             menu.select(menu.itemArray.first { $0.representedObject as? String == value })
         }
         select("theme-base", "base")
+        select("background", "default")
+        selectedBackground = "default"
         select("palette", palette)
         select("background-pattern", pattern)
         select("pattern-size", "2")

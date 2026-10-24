@@ -292,12 +292,15 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
                 menu.select(menu.itemArray.first { $0.representedObject as? String == preset })
                 clock.perform(NSSelectorFromString("applyAppearancePreset:"), with: menu)
                 precondition(clock.menuValue("theme-base") == "base", "Seasonal presets must use the Base theme")
+                precondition(clock.menuValue("background") == "default", "Seasonal presets must restore the default theme background")
                 precondition(clock.menuValue("palette") == palette, "Seasonal preset colour did not apply: " + preset)
                 precondition(clock.menuValue("background-pattern") == pattern, "Seasonal preset pattern did not apply: " + preset)
                 precondition(clock.menuValue("pattern-size") == "2", "Seasonal preset pattern size did not apply: " + preset)
                 precondition(clock.menuValue("background-effect") == effect, "Seasonal preset effect did not apply: " + preset)
                 precondition(NativeAppearance.patternImage(pattern: pattern, size: NSSize(width: 320, height: 256), scale: 2, color: .systemRed, resources: clock.resources) != nil, "Seasonal preset pattern is missing: " + preset)
             }
+            let attributionMenuCheck = clock.controls["quote-attribution"] as! NSPopUpButton
+            precondition(attributionMenuCheck.itemArray.first { $0.representedObject as? String == "bottom-left" }?.title == clock.text("settings_attribution_bottom_left"), "Bottom-left attribution label must be localized")
             let first = clock.configureSheet!
             let progressMenu = clock.controls["progressbar"] as! NSPopUpButton
             let modes = progressMenu.itemArray.compactMap { $0.representedObject as? String }

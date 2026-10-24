@@ -49,6 +49,9 @@ def bundle(name, extension, architecture, data, version):
     contents = OUTPUT / f'{name}.{extension}' / 'Contents'
     resources = contents / 'Resources'
     resources.mkdir(parents=True, exist_ok=True)
+    binary_dir = contents / 'MacOS'
+    if binary_dir.exists():
+        shutil.rmtree(binary_dir)
     (resources / 'Quotes').mkdir(exist_ok=True)
     for locale, quotes in data.items():
         (resources / f'Quotes/{locale}.json').write_text(json.dumps(quotes, ensure_ascii=False), encoding='utf-8')
@@ -76,6 +79,14 @@ def bundle(name, extension, architecture, data, version):
     for asset in ['scanlines-bg-dark.jpg', 'scanlines-bg-light.jpg', 'book-paper-seamless.webp']:
         shutil.copy2(ROOT / 'public/assets' / asset, resources / 'Backgrounds' / asset)
     shutil.copytree(SOURCE / 'Assets/Patterns', resources / 'Patterns', dirs_exist_ok=True)
+    # Keep seasonal tiles in sync with the current web artwork.
+    patterns = resources / 'Patterns'
+    for name in ['christmas', 'halloween']:
+        shutil.copy2(ROOT / f'src/assets/patterns/{name}-pattern-monster.png', patterns / f'{name}.png')
+    sizes_path = patterns / 'tiles.json'
+    sizes = json.loads(sizes_path.read_text())
+    sizes.update({'christmas': [150, 150], 'halloween': [150, 150], 'valentine': [70, 61.96]})
+    sizes_path.write_text(json.dumps(sizes, indent=2) + '\n')
     shutil.copy2(ROOT / 'src/photo-providers.json', resources / 'photo-providers.json')
     library = extension == 'saver'
     info = dict(CFBundleIdentifier=f'net.literatureclock.native-{extension}', CFBundleName=name,
