@@ -6,7 +6,7 @@ import { effectiveFont, fontSupportsLocale } from './font-preferences';
 // Alternatives belong to the passage language, including unregistered draft
 // catalogues; the interface language can be different.
 
-const BASE_FONT_THEMES = new Set(['base', 'pink', 'green', 'orange', 'purple', 'blue', 'gray']);
+const BASE_FONT_THEMES = new Set(['base', 'pink', 'green', 'orange', 'purple', 'blue', 'gray', 'pine']);
 
 export function getLocaleThemeFont(theme: string, locale: string) {
   const name = theme.split('-')[0];

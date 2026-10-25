@@ -79,7 +79,8 @@
     "settings_preset_christmas": "Christmas",
     "settings_preset_halloween": "Halloween",
     "settings_pattern_valentine": "Valentine’s Day",
-    "settings_preset_valentine": "Valentine’s Day"
+    "settings_preset_valentine": "Valentine’s Day",
+    "pine": "Pine green"
   },
   "en-US": {
     "about": "About",
@@ -161,7 +162,8 @@
     "settings_preset_christmas": "Christmas",
     "settings_preset_halloween": "Halloween",
     "settings_pattern_valentine": "Valentine’s Day",
-    "settings_preset_valentine": "Valentine’s Day"
+    "settings_preset_valentine": "Valentine’s Day",
+    "pine": "Pine green"
   },
   "es-ES": {
     "about": "Acerca de",
@@ -243,7 +245,8 @@
     "settings_preset_christmas": "Navidad",
     "settings_preset_halloween": "Halloween",
     "settings_pattern_valentine": "San Valentín",
-    "settings_preset_valentine": "San Valentín"
+    "settings_preset_valentine": "San Valentín",
+    "pine": "Verde pino"
   },
   "pt-PT": {
     "about": "Sobre",
@@ -325,7 +328,8 @@
     "settings_preset_christmas": "Natal",
     "settings_preset_halloween": "Halloween",
     "settings_pattern_valentine": "Dia dos Namorados",
-    "settings_preset_valentine": "Dia dos Namorados"
+    "settings_preset_valentine": "Dia dos Namorados",
+    "pine": "Verde-pinheiro"
   },
   "fr-FR": {
     "about": "À propos",
@@ -407,7 +411,8 @@
     "settings_preset_christmas": "Noël",
     "settings_preset_halloween": "Halloween",
     "settings_pattern_valentine": "Saint-Valentin",
-    "settings_preset_valentine": "Saint-Valentin"
+    "settings_preset_valentine": "Saint-Valentin",
+    "pine": "Vert pin"
   },
   "it-IT": {
     "about": "Informazioni",
@@ -489,7 +494,8 @@
     "settings_preset_christmas": "Natale",
     "settings_preset_halloween": "Halloween",
     "settings_pattern_valentine": "San Valentino",
-    "settings_preset_valentine": "San Valentino"
+    "settings_preset_valentine": "San Valentino",
+    "pine": "Verde pino"
   },
   "de-DE": {
     "about": "Über",
@@ -571,7 +577,8 @@
     "settings_preset_christmas": "Weihnachten",
     "settings_preset_halloween": "Halloween",
     "settings_pattern_valentine": "Valentinstag",
-    "settings_preset_valentine": "Valentinstag"
+    "settings_preset_valentine": "Valentinstag",
+    "pine": "Tannengrün"
   },
   "el-GR": {
     "about": "Σχετικά",
@@ -653,7 +660,8 @@
     "settings_preset_christmas": "Χριστούγεννα",
     "settings_preset_halloween": "Απόκριες",
     "settings_pattern_valentine": "Ημέρα του Αγίου Βαλεντίνου",
-    "settings_preset_valentine": "Άγιος Βαλεντίνος"
+    "settings_preset_valentine": "Άγιος Βαλεντίνος",
+    "pine": "Πευκοπράσινο"
   },
   "zh-CN": {
     "about": "关于",
@@ -735,7 +743,8 @@
     "settings_preset_christmas": "圣诞节",
     "settings_preset_halloween": "万圣节",
     "settings_pattern_valentine": "情人节",
-    "settings_preset_valentine": "情人节"
+    "settings_preset_valentine": "情人节",
+    "pine": "松绿色"
   },
   "ru-RU": {
     "about": "О проекте",
@@ -817,7 +826,8 @@
     "settings_preset_christmas": "Рождество",
     "settings_preset_halloween": "Хэллоуин",
     "settings_pattern_valentine": "День святого Валентина",
-    "settings_preset_valentine": "День святого Валентина"
+    "settings_preset_valentine": "День святого Валентина",
+    "pine": "Сосновый"
   },
   "eo": {
     "about": "Pri la projekto",
@@ -899,7 +909,8 @@
     "settings_preset_christmas": "Kristnasko",
     "settings_preset_halloween": "Haloveno",
     "settings_pattern_valentine": "Sankta Valenteno",
-    "settings_preset_valentine": "Sankta Valenteno"
+    "settings_preset_valentine": "Sankta Valenteno",
+    "pine": "Pine green"
   },
   "ar-AE": {
     "about": "حول",
@@ -981,6 +992,7 @@
     "settings_preset_christmas": "عيد الميلاد",
     "settings_preset_halloween": "الهالوين",
     "settings_pattern_valentine": "عيد الحب",
-    "settings_preset_valentine": "عيد الحب"
+    "settings_preset_valentine": "عيد الحب",
+    "pine": "أخضر صنوبر"
   }
 }

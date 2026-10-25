@@ -6,7 +6,7 @@ import SETTINGS from '../strings/settings.json';
 
 interface AppearancePreset {
   id: 'christmas' | 'halloween' | 'valentine';
-  palette?: 'green' | 'purple' | 'pink';
+  palette?: 'pine' | 'purple' | 'pink';
   background?: 'default';
   pattern?: 'christmas' | 'halloween' | 'valentine';
   effect?: 'snow' | 'dust-v2' | 'stars';
@@ -14,7 +14,7 @@ interface AppearancePreset {
 }
 
 const PRESETS: AppearancePreset[] = [
-  { id: 'christmas', palette: 'green', background: 'default', pattern: 'christmas', effect: 'snow', size: '2' },
+  { id: 'christmas', palette: 'pine', background: 'default', pattern: 'christmas', effect: 'snow', size: '2' },
   { id: 'halloween', palette: 'purple', background: 'default', pattern: 'halloween', effect: 'dust-v2', size: '2' },
   { id: 'valentine', palette: 'pink', background: 'default', pattern: 'valentine', effect: 'stars', size: '2' },
 ];
@@ -33,7 +33,7 @@ export function initAppearancePresets(dialog: HTMLDialogElement) {
     <div class="settings-preset-options" role="group" aria-labelledby="appearance-presets-title">
       ${PRESETS.map(
         ({ id }) => `<button type="button" class="settings-preset" data-preset="${id}" aria-pressed="false">
-          <span class="settings-preset-preview background-pattern-surface" data-preset="${id}" data-theme="base-dark" data-background-pattern="${id}" aria-hidden="true"></span>
+          <span class="settings-preset-preview background-pattern-surface" data-preset="${id}" data-background-pattern="${id}" aria-hidden="true"></span>
           <span data-text="settings_preset_${id}"></span>
         </button>`,
       ).join('')}
@@ -62,6 +62,13 @@ export function initAppearancePresets(dialog: HTMLDialogElement) {
       button.setAttribute('aria-pressed', String(button.dataset.preset === current?.id));
     });
   };
+  const updatePreviewScheme = () => {
+    const variant = store.get('theme').split('-')[1] || 'system';
+    const dark = variant === 'dark' || (variant === 'system' && window.matchMedia?.('(prefers-color-scheme: dark)').matches);
+    section.querySelectorAll<HTMLElement>('.settings-preset-preview').forEach((preview) => {
+      preview.dataset.scheme = dark ? 'dark' : 'light';
+    });
+  };
 
   section.querySelectorAll<HTMLButtonElement>('.settings-preset').forEach((button) => {
     button.addEventListener('click', () => {
@@ -87,8 +94,10 @@ export function initAppearancePresets(dialog: HTMLDialogElement) {
 
   store.subscribe((state, old) => {
     updateSelection();
+    updatePreviewScheme();
     if (state['ui-locale'] !== old['ui-locale'] || state.locale !== old.locale) updateLabels();
   });
   updateLabels();
   updateSelection();
+  updatePreviewScheme();
 }
