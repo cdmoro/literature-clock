@@ -295,6 +295,7 @@ it.each(
     purple: '#9b59b6',
     blue: '#2c97df',
     gray: '#808686',
+    pine: '#159d3e',
   }),
 )('selects the %s palette independently and resolves its dark appearance', (palette, color) => {
   const originalUrl = location.href;

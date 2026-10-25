@@ -21,6 +21,7 @@ const DEFAULT_COLORS: Record<string, string> = {
   purple: '#9b59b6',
   blue: '#2c97df',
   gray: '#808686',
+  pine: '#159d3e',
   anaglyph: '#c53a35',
   subtle: '#333333',
   kindle: '#2c2c2e',
@@ -177,7 +178,7 @@ function applyCustomColor(theme = 'base') {
   const resetColors = document.querySelectorAll<HTMLButtonElement>('#reset-color, #settings-reset-color');
   const palette = store.get('palette');
   const previous = root.dataset.accentPalette;
-  const presets = ['red', 'pink', 'green', 'orange', 'purple', 'blue', 'gray'];
+  const presets = ['red', 'pink', 'green', 'orange', 'purple', 'blue', 'gray', 'pine'];
   const selected =
     palette === 'random'
       ? previous && presets.includes(previous)
@@ -242,7 +243,7 @@ export function setTheme({ isVariantChange = false, syncToUrl = true } = {}) {
   }
   store.set('theme', `${theme}-${variant}`, syncToUrl);
   if (store.get('palette') === 'random' && !isVariantChange) {
-    const choices = ['red', 'pink', 'green', 'orange', 'purple', 'blue', 'gray'].filter(
+    const choices = ['red', 'pink', 'green', 'orange', 'purple', 'blue', 'gray', 'pine'].filter(
       (palette) => palette !== document.documentElement.dataset.accentPalette,
     );
     document.documentElement.dataset.accentPalette = choices[Math.floor(Math.random() * choices.length)];

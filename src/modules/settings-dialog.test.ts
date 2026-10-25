@@ -128,7 +128,7 @@ test('both color pickers and resets share state, including theme availability', 
 });
 
 test.each([
-  ['christmas', 'green', 'christmas', 'snow', '2'],
+  ['christmas', 'pine', 'christmas', 'snow', '2'],
   ['halloween', 'purple', 'halloween', 'dust-v2', '2'],
   ['valentine', 'pink', 'valentine', 'stars', '2'],
 ])('%s preset applies its coordinated appearance', (id, palette, pattern, effect, size) => {
