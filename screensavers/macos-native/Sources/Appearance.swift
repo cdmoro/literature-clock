@@ -18,7 +18,7 @@ final class NativeColorSwatch: NSButton {
 }
 
 enum NativeAppearance {
-    static let presetColors: [String: NSColor] = ["red": .systemRed, "pink": .systemPink, "green": .systemGreen, "orange": .systemOrange, "purple": .systemPurple, "blue": .systemBlue, "gray": .systemGray]
+    static let presetColors: [String: NSColor] = ["red": .systemRed, "pink": .systemPink, "green": .systemGreen, "pine": color("#159d3e")!, "orange": .systemOrange, "purple": .systemPurple, "blue": .systemBlue, "gray": .systemGray]
     private static var textures: [String: NSImage] = [:]
     static let backgrounds = ["default", "tinted", "photo", "plain"]
     static func supportsBackground(theme: String) -> Bool { !["book", "horizon", "photo"].contains(theme) }

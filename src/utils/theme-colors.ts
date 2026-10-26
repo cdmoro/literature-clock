@@ -5,6 +5,7 @@ const PALETTE_COLORS: Record<string, string> = {
   purple: '#9b59b6',
   blue: '#2c97df',
   gray: '#808686',
+  pine: '#159d3e',
   color: '#d24335',
 };
 

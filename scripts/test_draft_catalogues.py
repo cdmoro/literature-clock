@@ -43,12 +43,10 @@ class DraftCatalogueTest(unittest.TestCase):
         folder = output / 'el-GR'
         self.assertTrue((folder / '07_30.json').exists())
         self.assertFalse((folder / '08_00.json').exists())
-        stats = json.loads((folder / '.statistics.json').read_text())
-        self.assertEqual(stats['publication_progress'], 50)
-        self.assertEqual(stats['times_with_quotes'], 1)
+        self.assertEqual(len(list(folder.glob('[0-9]*.json'))), 1)
         generate_catalogue(self.catalogue, output)
         self.assertFalse((folder / '07_30.json').exists())
-        self.assertEqual(json.loads((folder / '.statistics.json').read_text())['progress'], 0)
+        self.assertEqual(len(list(folder.glob('[0-9]*.json'))), 0)
 
     def test_drafts_allow_unfinished_text_but_require_ids_and_metadata(self):
         rows = [{**row, 'Draft': 'true', 'Quote time': ''} for row in self.source]

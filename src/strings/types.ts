@@ -79,4 +79,5 @@ export type Translations = {
   settings_preset_halloween: string;
   settings_pattern_valentine: string;
   settings_preset_valentine: string;
+  pine: string;
 };
