@@ -20,6 +20,16 @@ public static class Checks
         Assert(Catalogues.Resolve("ja-JP",data.Locales)=="en-GB","Unsupported locale fallback");
         Assert(Catalogues.Index(3,10,0)!=Catalogues.Index(3,10,1),"Distinct monitor variants");
         Assert(GlassEffect.Radius(1,1920,1080)==0 && GlassEffect.Radius(.5,1920,1080)==28,"Glass corner fade");
+        var tiles=Catalogues.Read<System.Collections.Generic.Dictionary<string,double[]>>("Patterns/tiles.json");
+        foreach(var name in new[]{"christmas","halloween","valentine"})
+        {
+            Assert(Appearance.Patterns.Contains(name),"Seasonal pattern selectable: "+name);
+            Assert(tiles.ContainsKey(name),"Seasonal tile dimensions: "+name);
+            using var tile=Catalogues.Open("Patterns/"+name+".png");
+            var bitmap=System.Windows.Media.Imaging.BitmapFrame.Create(tile,
+                System.Windows.Media.Imaging.BitmapCreateOptions.None,System.Windows.Media.Imaging.BitmapCacheOption.OnLoad);
+            Assert(bitmap.PixelWidth>0 && bitmap.PixelHeight>0,"Seasonal PNG decodes: "+name);
+        }
         var p=new Preferences { Languages=["en-GB"],Safe=true,Move=false };
         Assert(p.QuoteAttribution=="below","Default quote attribution mode");
         foreach(var mode in new[]{"below","bottom-left","hidden"})

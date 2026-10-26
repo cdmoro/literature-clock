@@ -10,7 +10,7 @@ public static class Appearance
 {
     public static readonly string[] Themes = ["base", "book", "terminal", "festive", "bohemian", "retro", "photo"];
     public static readonly string[] Palettes = ["default", "red", "pink", "green", "orange", "purple", "blue", "gray", "pine", "random", "custom"];
-    public static readonly string[] Patterns = ["none", "random", "dots", "circles", "diagonal", "diagonal-wide", "grid", "zigzag", "waves", "noise", "mixed-stripes", "checkerboard", "cubes", "fans", "leaves", "vines", "contours", "woven", "zigzag-fine", "rain", "christmas", "hearts", "reading", "space", "garden", "clouds", "constellations"];
+    public static readonly string[] Patterns = ["none", "random", "dots", "circles", "diagonal", "diagonal-wide", "grid", "zigzag", "waves", "noise", "mixed-stripes", "checkerboard", "cubes", "fans", "leaves", "vines", "contours", "woven", "zigzag-fine", "rain", "christmas", "halloween", "valentine", "hearts", "reading", "space", "garden", "clouds", "constellations"];
     public static Color Color(string value) => (Color)ColorConverter.ConvertFromString(value);
     public static SolidColorBrush Brush(string value) => new(Color(value));
     public static SolidColorBrush Brush(Color color, double opacity = 1) => new(color) { Opacity = opacity };

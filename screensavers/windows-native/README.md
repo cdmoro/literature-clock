@@ -76,3 +76,15 @@ The GitHub release workflow builds both architectures and publishes them with th
 On macOS, `python3 screensavers/windows-native/prepare.py` plus
 `dotnet build screensavers/windows-native/LiteratureClock.csproj` validates C# against
 Windows reference assemblies. The HLSL compiler and runtime checks require Windows.
+
+## Seasonal presets
+
+Christmas, Halloween and Valentine’s Day presets match macOS: Base theme, default
+background, 2× pattern size, and respectively green/Christmas/snow,
+purple/Halloween/bokeh dust, and pink/Valentine/stars. Changing these settings clears
+the preset selection; matching saved settings restores it when reopening Settings.
+
+Seasonal PNGs in `Assets/Patterns` are rasterized from the macOS SVG sources with
+`macos-native/Sources/PatternRasterizer.swift`. Regenerate them on macOS after editing
+those SVGs, using logical sizes from `Assets/Patterns/tiles.json`. `prepare.py` copies
+these tiles and merges their dimensions over the shared pattern metadata.

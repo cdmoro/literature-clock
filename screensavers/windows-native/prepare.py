@@ -33,6 +33,14 @@ def prepare(destination=SOURCE / 'Resources'):
             raise ValueError(f'Font checksum mismatch: {asset["path"]}')
     for folder in ['Fonts', 'Patterns']:
         shutil.copytree(MAC / 'Assets' / folder, destination / folder, dirs_exist_ok=True)
+    # Generated from the same SVGs and logical tile sizes as the macOS build.
+    seasonal = SOURCE / 'Assets/Patterns'
+    sizes = json.loads((destination / 'Patterns/tiles.json').read_text())
+    overrides = json.loads((seasonal / 'tiles.json').read_text())
+    sizes.update(overrides)
+    for name in overrides:
+        shutil.copy2(seasonal / f'{name}.png', destination / 'Patterns' / f'{name}.png')
+    (destination / 'Patterns/tiles.json').write_text(json.dumps(sizes, indent=2) + '\n')
     (destination / 'Backgrounds').mkdir(exist_ok=True)
     for asset in ['scanlines-bg-dark.jpg', 'scanlines-bg-light.jpg', 'book-paper-seamless.webp']:
         shutil.copy2(ROOT / 'public/assets' / asset, destination / 'Backgrounds' / asset)
