@@ -82,7 +82,7 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             restartShowcase()
         }
         if CommandLine.arguments.contains("--check-render") {
-            let keys = ["theme", "background", "background-pattern", "palette", "custom-color", "show-time", "fuzzy-clock", "hide-book-title", "quote-locales", "work", "locale", "screensaver", "progressbar"]
+            let keys = ["theme", "background", "background-pattern", "palette", "custom-color", "show-time", "fuzzy-clock", "hide-book-title", "quote-attribution", "quote-locales", "work", "locale", "screensaver", "progressbar"]
             let saved = keys.map { ($0, clock.preferences.object(forKey: $0)) }
             defer {
                 for (key, value) in saved { clock.preferences.set(value, forKey: key) }
@@ -224,6 +224,10 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
                 let rows = clock.catalogue(locale)
                 clock.quote = locale == "en-GB" ? rows["16:00"]?.first { $0.title == "Through the Looking Glass" } : rows.values.flatMap { $0 }.first { $0.time.count > 25 && $0.first.count > 30 }
                 precondition(clock.quote != nil, "Missing Book highlight diagnostic passage")
+                let quoteText = clock.quote!.first + clock.quote!.time + clock.quote!.last
+                let expectedTimeRange = NSRange(location: (clock.quote!.first as NSString).length, length: (clock.quote!.time as NSString).length)
+                precondition(NativeClockView.highlightedRange(for: clock.quote!, text: quoteText, fuzzy: false) == expectedTimeRange, "Quote highlight must cover only the time")
+                precondition(NativeClockView.highlightedRange(for: clock.quote!, text: clock.quote!.time, fuzzy: true) == NSRange(location: 0, length: (clock.quote!.time as NSString).length), "Fuzzy highlight must cover the displayed time")
                 let bitmap = clock.bitmapImageRepForCachingDisplay(in: clock.bounds)!
                 clock.cacheDisplay(in: clock.bounds, to: bitmap)
                 try! bitmap.representation(using: .png, properties: [:])!.write(to: output.appendingPathComponent("book-highlight-" + locale + ".png"))
@@ -287,6 +291,24 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             for pattern in NativeAppearance.patterns.dropFirst(2) {
                 precondition(NativeAppearance.patternImage(pattern: pattern, size: NSSize(width: 320, height: 256), scale: 2, color: .systemRed, resources: clock.resources) != nil, "Missing native pattern: " + pattern)
             }
+            for (preset, palette, pattern, effect) in [("christmas", "pine", "christmas", "snow"), ("halloween", "purple", "halloween", "dust-v2"), ("valentine", "pink", "valentine", "stars")] {
+                let menu = clock.controls["appearance-preset"] as! NSPopUpButton
+                menu.select(menu.itemArray.first { $0.representedObject as? String == preset })
+                clock.perform(NSSelectorFromString("applyAppearancePreset:"), with: menu)
+                precondition(clock.menuValue("theme-base") == "base", "Seasonal presets must use the Base theme")
+                precondition(clock.menuValue("background") == "default", "Seasonal presets must restore the default theme background")
+                precondition(clock.menuValue("palette") == palette, "Seasonal preset colour did not apply: " + preset)
+                precondition(clock.menuValue("background-pattern") == pattern, "Seasonal preset pattern did not apply: " + preset)
+                precondition(clock.menuValue("pattern-size") == "2", "Seasonal preset pattern size did not apply: " + preset)
+                precondition(clock.menuValue("background-effect") == effect, "Seasonal preset effect did not apply: " + preset)
+                precondition(NativeAppearance.patternImage(pattern: pattern, size: NSSize(width: 320, height: 256), scale: 2, color: .systemRed, resources: clock.resources) != nil, "Seasonal preset pattern is missing: " + preset)
+            }
+            let attributionMenuCheck = clock.controls["quote-attribution"] as! NSPopUpButton
+            precondition(attributionMenuCheck.itemArray.first { $0.representedObject as? String == "bottom-left" }?.title == clock.text("settings_attribution_bottom_left"), "Bottom-left attribution label must be localized")
+            let presetMenuCheck = clock.controls["appearance-preset"] as! NSPopUpButton
+            (clock.controls["background-pattern"] as! NSPopUpButton).select((clock.controls["background-pattern"] as! NSPopUpButton).itemArray.first { $0.representedObject as? String == "dots" })
+            clock.perform(NSSelectorFromString("patternChanged:"), with: clock.controls["background-pattern"])
+            precondition(presetMenuCheck.selectedItem?.representedObject as? String == "none", "Changing a preset setting must clear its selection")
             let first = clock.configureSheet!
             let progressMenu = clock.controls["progressbar"] as! NSPopUpButton
             let modes = progressMenu.itemArray.compactMap { $0.representedObject as? String }
@@ -367,6 +389,31 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             (clock.controls["hide-book-title"] as! NSButton).state = .on
             clock.perform(NSSelectorFromString("saveOptions"))
             precondition(clock.preferences.bool(forKey: "hide-book-title") && other.preferences.bool(forKey: "hide-book-title"), "Hide title did not reach other views")
+            _ = clock.configureSheet
+            let attributionMenu = clock.controls["quote-attribution"] as! NSPopUpButton
+            for mode in ["below", "bottom-left", "hidden"] {
+                attributionMenu.select(attributionMenu.itemArray.first { $0.representedObject as? String == mode })
+                clock.perform(NSSelectorFromString("saveOptions"))
+                precondition(clock.preferences.string(forKey: "quote-attribution") == mode && other.preferences.string(forKey: "quote-attribution") == mode, "Quote attribution setting did not persist across displays")
+                _ = clock.configureSheet
+            }
+            clock.preferences.set(true, forKey: "fuzzy-clock")
+            let fuzzyQuote = NativeQuote(first: "", time: "Time", last: "", title: "Book", author: "Author", sfw: true)
+            clock.quote = fuzzyQuote
+            clock.lastMinute = "Time"
+            clock.preferences.set(false, forKey: "hide-book-title")
+            clock.preferences.set("below", forKey: "quote-attribution")
+            clock.draw(clock.bounds)
+            let fuzzyCredit = clock.subviews.compactMap { $0 as? NSTextField }.first { $0.attributedStringValue.string.contains("Book") }
+            precondition(fuzzyCredit?.attributedStringValue.string.contains("Author") == true, "Fuzzy attribution must show book and author by default")
+            clock.preferences.set(true, forKey: "hide-book-title")
+            clock.draw(clock.bounds)
+            let hiddenTitleCredit = clock.subviews.compactMap { $0 as? NSTextField }.first { $0.attributedStringValue.string.contains("Author") }
+            precondition(hiddenTitleCredit?.attributedStringValue.string.contains("Book") == false, "Hide book title must apply in fuzzy mode")
+            clock.preferences.set("hidden", forKey: "quote-attribution")
+            clock.draw(clock.bounds)
+            precondition(hiddenTitleCredit?.isHidden == true, "Hidden attribution must apply in fuzzy mode")
+            clock.preferences.set(false, forKey: "fuzzy-clock")
             _ = clock.configureSheet
             for (key, value) in [("theme-base", "photo"), ("photo-provider", "nasa"), ("photo-category", "moon")] {
                 let menu = clock.controls[key] as! NSPopUpButton
@@ -523,7 +570,7 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             }
         }
         let defaults = UserDefaults(suiteName: "net.literatureclock.showcase." + UUID().uuidString)!
-        defaults.register(defaults: ["theme": "photo-dark", "progressbar": "glass-foreground", "photo-provider": "picsum", "photo-category": "all", "screensaver": false, "work": true, "show-time": true, "bilingual": false, "hide-book-title": false, "palette": "default", "background-pattern": "none"])
+        defaults.register(defaults: ["theme": "photo-dark", "progressbar": "glass-foreground", "photo-provider": "picsum", "photo-category": "all", "screensaver": false, "work": true, "show-time": true, "bilingual": false, "hide-book-title": false, "quote-attribution": "below", "palette": "default", "background-pattern": "none"])
         clock.preferences = defaults
         clock.photoDownloadsEnabled = true
         clock.interactionPreviewSweep = false

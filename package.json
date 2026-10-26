@@ -1,6 +1,6 @@
 {
   "name": "literature-clock",
-  "version": "3.12.2",
+  "version": "3.13.1",
   "description": "A clock that tells the time using quotes from literature. Support for multiple languages, themes, and more!",
   "type": "module",
   "scripts": {

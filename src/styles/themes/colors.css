@@ -32,6 +32,11 @@
   --accent-color: #2ecc71;
 }
 
+[data-theme='base-light'][data-palette='pine'],
+[data-theme='base-dark'][data-palette='pine'] {
+  --accent-color: #159d3e;
+}
+
 [data-theme='base-light'][data-palette='blue'] {
   --accent-color: #2c97df;
 }

@@ -128,7 +128,7 @@ test('both color pickers and resets share state, including theme availability', 
 });
 
 test.each([
-  ['christmas', 'green', 'christmas', 'snow', '2'],
+  ['christmas', 'pine', 'christmas', 'snow', '2'],
   ['halloween', 'purple', 'halloween', 'dust-v2', '2'],
   ['valentine', 'pink', 'valentine', 'stars', '2'],
 ])('%s preset applies its coordinated appearance', (id, palette, pattern, effect, size) => {
@@ -144,11 +144,31 @@ test.each([
   document.querySelector<HTMLButtonElement>(`.settings-preset[data-preset="${id}"]`)!.click();
 
   expect(store.get('theme').split('-')[0]).toBe('base');
+  expect(store.get('background')).toBe('default');
   expect(store.get('palette')).toBe(palette);
   expect(store.get('background-pattern')).toBe(pattern);
   expect(store.get('background-effect')).toBe(effect);
   expect(store.get('pattern-size')).toBe(size);
   expect(document.querySelector<HTMLButtonElement>(`.settings-preset[data-preset="${id}"]`)!.getAttribute('aria-pressed')).toBe('true');
+});
+
+test('deselects the active appearance preset when one of its coordinated settings changes', () => {
+  document.body.innerHTML = page;
+  vi.stubGlobal(
+    'matchMedia',
+    vi.fn(() => ({ matches: false, addEventListener: vi.fn() })),
+  );
+  createStore();
+  initSettingsDialog();
+  initTheme();
+
+  const preset = document.querySelector<HTMLButtonElement>('.settings-preset[data-preset="christmas"]')!;
+  preset.click();
+  expect(preset.getAttribute('aria-pressed')).toBe('true');
+
+  store.set('background-pattern', 'dots');
+
+  expect(preset.getAttribute('aria-pressed')).toBe('false');
 });
 
 test('hide book title persists, restores, and allows URL overrides', () => {

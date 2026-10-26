@@ -18,7 +18,7 @@ final class NativeColorSwatch: NSButton {
 }
 
 enum NativeAppearance {
-    static let presetColors: [String: NSColor] = ["red": .systemRed, "pink": .systemPink, "green": .systemGreen, "orange": .systemOrange, "purple": .systemPurple, "blue": .systemBlue, "gray": .systemGray]
+    static let presetColors: [String: NSColor] = ["red": .systemRed, "pink": .systemPink, "green": .systemGreen, "pine": color("#159d3e")!, "orange": .systemOrange, "purple": .systemPurple, "blue": .systemBlue, "gray": .systemGray]
     private static var textures: [String: NSImage] = [:]
     static let backgrounds = ["default", "tinted", "photo", "plain"]
     static func supportsBackground(theme: String) -> Bool { !["book", "horizon", "photo"].contains(theme) }
@@ -76,7 +76,7 @@ enum NativeAppearance {
         }
     }
     static let themes = ["base", "book", "terminal", "festive", "bohemian", "retro", "photo"]
-    static let patterns = ["none", "random", "dots", "circles", "diagonal", "diagonal-wide", "grid", "zigzag", "waves", "noise", "mixed-stripes", "checkerboard", "cubes", "fans", "leaves", "vines", "contours", "woven", "zigzag-fine", "rain", "christmas", "hearts", "reading", "space", "garden", "clouds", "constellations"]
+    static let patterns = ["none", "random", "dots", "circles", "diagonal", "diagonal-wide", "grid", "zigzag", "waves", "noise", "mixed-stripes", "checkerboard", "cubes", "fans", "leaves", "vines", "contours", "woven", "zigzag-fine", "rain", "christmas", "halloween", "valentine", "hearts", "reading", "space", "garden", "clouds", "constellations"]
     static func fontFamily(theme: String, locale: String) -> String {
         let language = locale.split(separator: "-").first.map(String.init) ?? "en"
         let main = ["base": "specialelite", "book": "librebaskerville", "terminal": "b612mono",
