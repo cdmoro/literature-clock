@@ -35,6 +35,7 @@ public sealed class SettingsWindow : Window
         Check("bilingual_mode","bilingual",p.Bilingual);
         Menu("bilingual_language","translation",new[]{""}.Concat(data.Locales).ToArray(),p.Translation,raw=>raw.Length==0?data.Text("bilingual_select_language"):ClockSurface.LanguageName(raw));
         Section("settings_appearance");
+        Menu("settings_presets_title","preset",["none","christmas","halloween","valentine"],"none",raw=>data.Text(raw=="none"?"settings_presets_choose":"settings_preset_"+raw));
         Menu("theme","theme",Appearance.Themes,p.Theme);
         Menu("settings_scheme","scheme",["system","light","dark"],p.Scheme);
         Menu("settings_background","background",["default","tinted","photo","plain"],p.Background,raw=>data.Text("settings_background_"+raw));
@@ -71,6 +72,37 @@ public sealed class SettingsWindow : Window
             menus["translation"].IsEnabled=checks["bilingual"].IsChecked==true;
             foreach(var key in new[]{"provider","category"}) ((StackPanel)menus[key].Parent).Visibility=menus[key].Visibility;
         }
+        bool applyingPreset=false;
+        var presets=new[] {
+            (Name:"christmas",Palette:"green",Pattern:"christmas",Effect:"snow"),
+            (Name:"halloween",Palette:"purple",Pattern:"halloween",Effect:"dust-v2"),
+            (Name:"valentine",Palette:"pink",Pattern:"valentine",Effect:"stars")
+        };
+        void UpdatePreset()
+        {
+            if(applyingPreset) return;
+            var match=Value("theme")=="base" && Value("background")=="default" && Value("patternSize")=="2"
+                ? presets.FirstOrDefault(x=>x.Palette==Value("palette") && x.Pattern==Value("pattern") && x.Effect==Value("effect")).Name : null;
+            applyingPreset=true;
+            menus["preset"].SelectedValue=match ?? "none";
+            applyingPreset=false;
+        }
+        menus["preset"].SelectionChanged+=(_,_)=> {
+            if(applyingPreset || Value("preset")=="none") return;
+            var preset=presets.First(x=>x.Name==Value("preset"));
+            applyingPreset=true;
+            menus["theme"].SelectedValue="base";
+            menus["background"].SelectedValue="default";
+            menus["palette"].SelectedValue=preset.Palette;
+            menus["pattern"].SelectedValue=preset.Pattern;
+            menus["patternSize"].SelectedValue="2";
+            menus["effect"].SelectedValue=preset.Effect;
+            applyingPreset=false;
+            Update(); UpdatePreset();
+        };
+        foreach(var key in new[]{"theme","background","palette","pattern","patternSize","effect"})
+            menus[key].SelectionChanged+=(_,_)=>UpdatePreset();
+        UpdatePreset();
         menus["provider"].SelectionChanged+=(_,_)=>{ Categories(); Update(); };
         foreach(var key in new[]{"theme","background","palette","pattern"}) menus[key].SelectionChanged+=(_,_)=>Update();
         checks["bilingual"].Checked+=(_,_)=>Update(); checks["bilingual"].Unchecked+=(_,_)=>Update();
