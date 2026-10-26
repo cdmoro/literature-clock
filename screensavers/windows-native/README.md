@@ -88,3 +88,7 @@ Seasonal PNGs in `Assets/Patterns` are rasterized from the macOS SVG sources wit
 `macos-native/Sources/PatternRasterizer.swift`. Regenerate them on macOS after editing
 those SVGs, using logical sizes from `Assets/Patterns/tiles.json`. `prepare.py` copies
 these tiles and merges their dimensions over the shared pattern metadata.
+
+Fuzzy Clock supports bilingual time phrases and translation notices, balanced line
+breaks, and Book theme highlights, matching macOS. Custom accent colors can be
+edited with a HEX field or RGB sliders, with a synchronized color swatch.

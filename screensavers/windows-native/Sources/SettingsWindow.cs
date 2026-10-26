@@ -16,6 +16,10 @@ public sealed class SettingsWindow : Window
     readonly Catalogues data;
     readonly StackPanel stack=new() { Margin=new Thickness(24) };
     readonly TextBox custom=new();
+    readonly StackPanel colorEditor=new();
+    readonly System.Windows.Controls.Border colorSwatch=new() { Width=48,Height=28,BorderThickness=new Thickness(1),BorderBrush=System.Windows.Media.Brushes.Gray,Margin=new Thickness(0,0,8,0) };
+    readonly Slider[] colorChannels=new Slider[3];
+    bool syncingColor;
     readonly Preferences original;
     readonly TextBlock error=new() { Foreground=System.Windows.Media.Brushes.Firebrick, TextWrapping=TextWrapping.Wrap };
     public SettingsWindow(Catalogues data,Preferences p)
@@ -43,7 +47,25 @@ public sealed class SettingsWindow : Window
         var queries=Catalogues.Read<Dictionary<string,Dictionary<string,string>>>("photo-providers.json");
         Menu("settings_photo_category","category",["all"],p.Category,raw=>data.Text("settings_photo_"+raw));
         Menu("settings_color","palette",Appearance.Palettes,p.Palette,raw=>data.Text(raw=="custom"?"settings_color_customize":raw=="default"?"color_mode_default":raw=="random"?"color_mode_random":raw));
-        custom.Text=p.CustomColor; custom.Margin=new Thickness(0,5,0,10); custom.MaxLength=7; custom.ToolTip=data.Text("color_edit"); stack.Children.Add(custom);
+        var colorRow=new StackPanel { Orientation=Orientation.Horizontal };
+        custom.Text=p.CustomColor; custom.Width=100; custom.MaxLength=7; custom.ToolTip=data.Text("color_edit");
+        System.Windows.Automation.AutomationProperties.SetName(custom,data.Text("color_edit")+" HEX");
+        colorRow.Children.Add(colorSwatch); colorRow.Children.Add(custom); colorEditor.Children.Add(colorRow);
+        for(var channel=0;channel<3;channel++)
+        {
+            var row=new StackPanel { Orientation=Orientation.Horizontal,Margin=new Thickness(0,5,0,0) };
+            var label=new[]{"R","G","B"}[channel];
+            row.Children.Add(new TextBlock { Text=label,Width=24 });
+            var slider=new Slider { Minimum=0,Maximum=255,TickFrequency=1,IsSnapToTickEnabled=true,Width=240 };
+            System.Windows.Automation.AutomationProperties.SetName(slider,label);
+            colorChannels[channel]=slider; row.Children.Add(slider); colorEditor.Children.Add(row);
+            slider.ValueChanged+=(_,_)=> {
+                if(syncingColor) return;
+                custom.Text=$"#{(int)colorChannels[0].Value:X2}{(int)colorChannels[1].Value:X2}{(int)colorChannels[2].Value:X2}";
+            };
+        }
+        custom.TextChanged+=(_,_)=>UpdateCustomColor();
+        UpdateCustomColor(); stack.Children.Add(colorEditor);
         Menu("settings_background_pattern","pattern",Appearance.Patterns,p.Pattern,raw=>data.Text("settings_pattern_"+raw));
         Menu("settings_pattern_size","patternSize",["0.5","1","1.5","2","3"],p.PatternSize,raw=>raw+"×");
         Menu("settings_background_effect","effect",["none","rain","snow","dust","dust-v2","stars"],p.Effect,raw=>data.Text("settings_effect_"+raw));
@@ -68,7 +90,7 @@ public sealed class SettingsWindow : Window
             ((StackPanel)menus["patternSize"].Parent).Visibility=supportsPattern && Value("pattern") is not "none" and not "random"?Visibility.Visible:Visibility.Collapsed;
             menus["effect"].IsEnabled=supportsPattern;
             ((StackPanel)menus["effect"].Parent).Visibility=supportsPattern?Visibility.Visible:Visibility.Collapsed;
-            custom.Visibility=Value("palette")=="custom"?Visibility.Visible:Visibility.Collapsed;
+            colorEditor.Visibility=Value("palette")=="custom"?Visibility.Visible:Visibility.Collapsed;
             menus["translation"].IsEnabled=checks["bilingual"].IsChecked==true;
             foreach(var key in new[]{"provider","category"}) ((StackPanel)menus[key].Parent).Visibility=menus[key].Visibility;
         }
@@ -117,6 +139,16 @@ public sealed class SettingsWindow : Window
         var version=versionReader.ReadToEnd().Trim();
         var project=new Button { Content="Literature Clock "+version+" · GitHub",Margin=new Thickness(0,12,0,0) };
         project.Click+=(_,_)=>Process.Start(new ProcessStartInfo("https://github.com/cdmoro/literature-clock") { UseShellExecute=true }); stack.Children.Add(project);
+    }
+    void UpdateCustomColor()
+    {
+        if(syncingColor || !Regex.IsMatch(custom.Text,"^#[0-9a-fA-F]{6}$")) return;
+        var color=Appearance.Color(custom.Text);
+        syncingColor=true;
+        colorSwatch.Background=Appearance.Brush(color);
+        var channels=new[]{color.R,color.G,color.B};
+        for(var i=0;i<3;i++) colorChannels[i].Value=channels[i];
+        syncingColor=false;
     }
     string Value(string key)=>menus[key].SelectedValue as string ?? "";
     void Section(string key)=>stack.Children.Add(new TextBlock { Text=data.Text(key),FontWeight=FontWeights.Bold,FontSize=16,Margin=new Thickness(0,16,0,10) });
