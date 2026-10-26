@@ -297,7 +297,7 @@ export async function renderShareCard(
     credit.append(part);
   });
   Object.assign(credit.style, { marginTop: '40px', fontSize: '28px' });
-  if (isFuzzy) {
+  if (isFuzzy || store.get('quote-attribution') === 'hidden') {
     content.append(passage);
   } else {
     content.append(passage, credit);
