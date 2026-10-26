@@ -140,11 +140,11 @@ public sealed class ClockSurface : Canvas
             double low=1,high=Math.Min(ActualWidth*.043,ActualHeight*.12);
             for(int i=0;i<16;i++)
             {
-                var size=(low+high)/2; BuildPassage(quote,width,size,foreground,accent);
+                var size=(low+high)/2; BuildPassage(quote,locale,minute,width,size,foreground,accent);
                 passage.Measure(new Size(width,double.PositiveInfinity));
                 if(passage.DesiredSize.Height<=limit) low=size; else high=size;
             }
-            BuildPassage(quote,width,low,foreground,accent); passage.Measure(new Size(width,double.PositiveInfinity));
+            BuildPassage(quote,locale,minute,width,low,foreground,accent); passage.Measure(new Size(width,double.PositiveInfinity));
             passage.CacheMode=new BitmapCache { RenderAtScale=VisualTreeHelper.GetDpi(this).DpiScaleX };
             passage.Effect=mode=="photo"?new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=12,ShadowDepth=0,Opacity=1 }:null;
             layoutKey=layout;
@@ -229,7 +229,51 @@ public sealed class ClockSurface : Canvas
             }
         }
     }
-    void BuildPassage(Quote q,double width,double size,Color foreground,Color accent)
+    internal static string BalancedLines(string value,TextBlock style,double width)
+    {
+        var words=value.Split((char[]?)null,StringSplitOptions.RemoveEmptyEntries);
+        if(words.Length<=2 || width<=0) return value;
+        double Measure(int start,int end)
+        {
+            var text=new FormattedText(string.Join(" ",words,start,end-start),CultureInfo.CurrentCulture,
+                style.FlowDirection,new Typeface(style.FontFamily,style.FontStyle,style.FontWeight,style.FontStretch),
+                style.FontSize,Brushes.Black,1);
+            return text.WidthIncludingTrailingWhitespace;
+        }
+        var total=Measure(0,words.Length);
+        if(total<=width) return value;
+        for(var count=2;count<=words.Length;count++)
+        {
+            var target=total/count;
+            var memo=new Dictionary<(int,int),(double Cost,string Text)?>();
+            (double Cost,string Text)? Best(int start,int remaining)
+            {
+                if(remaining==1)
+                {
+                    var measured=Measure(start,words.Length);
+                    return measured<=width?(Math.Pow(measured-target,2),string.Join(" ",words,start,words.Length-start)):null;
+                }
+                if(memo.TryGetValue((start,remaining),out var cached)) return cached;
+                (double Cost,string Text)? best=null;
+                for(var end=start+1;end<=words.Length-remaining+1;end++)
+                {
+                    var measured=Measure(start,end);
+                    if(measured>width) break;
+                    var tail=Best(end,remaining-1);
+                    if(tail==null) continue;
+                    var cost=Math.Pow(measured-target,2)+tail.Value.Cost;
+                    if(best==null || cost<best.Value.Cost)
+                        best=(cost,string.Join(" ",words,start,end-start)+"\n"+tail.Value.Text);
+                }
+                memo[(start,remaining)]=best;
+                return best;
+            }
+            var result=Best(0,count);
+            if(result!=null) return result.Value.Text;
+        }
+        return value;
+    }
+    internal StackPanel BuildPassage(Quote q,string quoteLocale,string quoteMinute,double width,double size,Color foreground,Color accent)
     {
         passage.Children.Clear(); passage.Width=width;
         var dark=Appearance.Dark(p);
@@ -243,7 +287,7 @@ public sealed class ClockSurface : Canvas
             if(outlineActive) text.Effect=new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=outlineRadius,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance };
             if (!fuzzy) {
                 text.Inlines.Add(new Run(item.first));
-                var highlight=new Run(string.IsNullOrEmpty(item.time)?minute:item.time);
+                var highlight=new Run(string.IsNullOrEmpty(item.time)?quoteMinute:item.time);
                 if(p.Theme!="book") highlight.Foreground=Appearance.Brush(accent);
                 text.Inlines.Add(highlight);
                 text.Inlines.Add(new Run(item.last));
@@ -251,28 +295,34 @@ public sealed class ClockSurface : Canvas
                 var attribution=!fuzzy && p.QuoteAttribution=="below"?p.HideTitle?item.author:string.Join(", ",new[]{item.title,item.author}.WhereNonEmpty()):"";
                 if(attribution.Length>0) passage.Children.Add(new TextBlock { Text=(p.Theme=="terminal"?"> ":"— ")+attribution,FontFamily=text.FontFamily,FontSize=fontSize*.55,TextWrapping=TextWrapping.Wrap,FlowDirection=flow,Foreground=Appearance.Brush(foreground),Margin=new Thickness(0,p.Theme=="book"?(ActualWidth<=750?16:24):fontSize*.35,0,0),Effect=outlineActive?new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=12,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance }:null });
             } else {
-                var highlight=new Run(string.IsNullOrEmpty(item.time)?minute:item.time);
+                var phrase=string.IsNullOrEmpty(item.time)?quoteMinute:item.time;
+                var highlight=new Run(BalancedLines(phrase,text,width));
                 if(p.Theme!="book") highlight.Foreground=Appearance.Brush(accent);
                 text.Inlines.Add(highlight);
-                passage.Children.Add(text);
+                passage.Children.Add(p.Theme=="book"?new BookText(text,highlight,Appearance.Brush(accent)):text);
             }
         }
-        Append(q,locale,size);
-        var (translation,notice)=data.Translate(q,locale,minute,p);
-        if(!p.FuzzyClock && translation!=null)
+        Append(q,quoteLocale,size);
+        var (translation,notice)=data.Translate(q,quoteLocale,quoteMinute,p);
+        if(translation!=null)
         {
-            passage.Children.Add(new Border { Height=1,Background=Appearance.Brush(foreground,.25),Margin=new Thickness(0,18,0,12) });
-            var heading=new TextBlock { Text=LanguageName(p.Translation),FontSize=Math.Max(10,size*.35),Foreground=Appearance.Brush(foreground,.75),Margin=new Thickness(0,0,0,8) };
-            if(outlineForPhoto || outlineForPattern) heading.Effect=new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=12,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance };
-            passage.Children.Add(heading);
+            if(!p.FuzzyClock)
+            {
+                passage.Children.Add(new Border { Height=1,Background=Appearance.Brush(foreground,.25),Margin=new Thickness(0,18,0,12) });
+                var heading=new TextBlock { Text=LanguageName(p.Translation),FontSize=Math.Max(10,size*.35),Foreground=Appearance.Brush(foreground,.75),Margin=new Thickness(0,0,0,8) };
+                if(outlineForPhoto || outlineForPattern) heading.Effect=new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=12,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance };
+                passage.Children.Add(heading);
+            }
+            else passage.Children.Add(new Border { Height=size*.6 });
             Append(translation,p.Translation,size*.8);
         }
-        else if(!p.FuzzyClock && notice.Length>0)
+        else if(notice.Length>0)
         {
             var message=new TextBlock { Text=notice,FontSize=size*.5,TextWrapping=TextWrapping.Wrap,Foreground=Appearance.Brush(foreground,.75),Margin=new Thickness(0,24,0,0) };
             if(outlineForPhoto || outlineForPattern) message.Effect=new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=12,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance };
             passage.Children.Add(message);
         }
+        return passage;
     }
     public static string LanguageName(string locale) { try { return CultureInfo.GetCultureInfo(locale).NativeName; } catch(CultureNotFoundException) { return locale; } }
 }
