@@ -1063,8 +1063,8 @@ select:dir(rtl),
   }
 
   .share-preview-controls {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .share-customization {

@@ -9,7 +9,7 @@ namespace LiteratureClock;
 public static class Appearance
 {
     public static readonly string[] Themes = ["base", "book", "terminal", "festive", "bohemian", "retro", "photo"];
-    public static readonly string[] Palettes = ["default", "red", "pink", "green", "orange", "purple", "blue", "gray", "random", "custom"];
+    public static readonly string[] Palettes = ["default", "red", "pink", "green", "orange", "purple", "blue", "gray", "pine", "random", "custom"];
     public static readonly string[] Patterns = ["none", "random", "dots", "circles", "diagonal", "diagonal-wide", "grid", "zigzag", "waves", "noise", "mixed-stripes", "checkerboard", "cubes", "fans", "leaves", "vines", "contours", "woven", "zigzag-fine", "rain", "christmas", "halloween", "valentine", "hearts", "reading", "space", "garden", "clouds", "constellations"];
     public static Color Color(string value) => (Color)ColorConverter.ConvertFromString(value);
     public static SolidColorBrush Brush(string value) => new(Color(value));
@@ -18,8 +18,8 @@ public static class Appearance
     public static string Background(Preferences p) => p.Theme == "photo" ? "photo" : p.Theme == "book" ? "default" : p.Background;
     public static Color Accent(Preferences p, bool dark, long minute, int display)
     {
-        var colors = new Dictionary<string, string> { ["red"]="#ff3b30", ["pink"]="#ff2d55", ["green"]="#34c759", ["orange"]="#ff9500", ["purple"]="#af52de", ["blue"]="#007aff", ["gray"]="#8e8e93" };
-        var palette = p.Palette == "random" ? Palettes[1 + Catalogues.Index(7, minute, display)] : p.Palette;
+        var colors = new Dictionary<string, string> { ["red"]="#ff3b30", ["pink"]="#ff2d55", ["green"]="#34c759", ["pine"]="#159d3e", ["orange"]="#ff9500", ["purple"]="#af52de", ["blue"]="#007aff", ["gray"]="#8e8e93" };
+        var palette = p.Palette == "random" ? Palettes[1 + Catalogues.Index(8, minute, display)] : p.Palette;
         if (palette == "custom") { try { return Color(p.CustomColor); } catch (FormatException) { return Color("#d24335"); } }
         if (colors.TryGetValue(palette, out var preset)) return Color(preset);
         return Color(p.Theme switch { "photo" => dark ? "#fd3622" : "#e33725", "book" => dark ? "#214cc6" : "#fbf719", "terminal" => dark ? "#1bec1b" : "#27702b", "festive" => "#e74c3c", "bohemian" => "#1abc9c", "retro" => dark ? "#f1ba08" : "#966a00", _ => "#d24335" });

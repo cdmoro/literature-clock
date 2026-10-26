@@ -445,7 +445,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         if palette == "custom" { accent = NativeAppearance.color(preferences.string(forKey: "custom-color") ?? "") ?? .systemRed }
         else if palette == "default" { accent = NativeAppearance.defaultAccent(theme: theme, dark: dark) }
         else if palette == "random" {
-            let ordered = ["red", "pink", "green", "orange", "purple", "blue", "gray"]
+            let ordered = ["red", "pink", "green", "orange", "purple", "blue", "gray", "pine"]
             accent = colors[randomValue(ordered, at: now)]!
         }
         else { accent = colors[palette] ?? .systemRed }
@@ -903,7 +903,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             ("background", "settings_background", NativeAppearance.backgrounds),
             ("photo-provider", "settings_photo_provider", ["picsum", "nasa", "commons"]),
             ("photo-category", "settings_photo_category", NativePhotoBackground.categories(provider: preferences.string(forKey: "photo-provider") ?? "picsum")),
-            ("palette", "settings_color", ["default", "red", "pink", "green", "orange", "purple", "blue", "gray", "random", "custom"]),
+            ("palette", "settings_color", ["default", "red", "pink", "green", "orange", "purple", "blue", "gray", "pine", "random", "custom"]),
             ("background-pattern", "settings_background_pattern", NativeAppearance.patterns),
             ("pattern-size", "settings_pattern_size", ["0.5", "1", "1.5", "2", "3"]),
             ("background-effect", "settings_background_effect", ["none", "rain", "snow", "dust", "dust-v2", "stars"]),
@@ -1058,7 +1058,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
               let effect = menuValue("background-effect") else { return }
         let theme = menuValue("theme-base") ?? "base"
         let presets: [(String, String, String, String)] = [
-            ("christmas", "green", "christmas", "snow"),
+            ("christmas", "pine", "christmas", "snow"),
             ("halloween", "purple", "halloween", "dust-v2"),
             ("valentine", "pink", "valentine", "stars")
         ]
@@ -1069,7 +1069,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     }
     @objc private func applyAppearancePreset(_ sender: NSPopUpButton) {
         guard let preset = sender.selectedItem?.representedObject as? String, preset != "none" else { return }
-        guard let palette = ["christmas": "green", "halloween": "purple", "valentine": "pink"][preset],
+        guard let palette = ["christmas": "pine", "halloween": "purple", "valentine": "pink"][preset],
               let pattern = ["christmas": "christmas", "halloween": "halloween", "valentine": "valentine"][preset],
               let effect = ["christmas": "snow", "halloween": "dust-v2", "valentine": "stars"][preset] else { return }
         func select(_ key: String, _ value: String) {

@@ -97,7 +97,7 @@ const BOOLEAN_KEYS = new Set([
   'fade',
 ]);
 const THEMES =
-  /^(base|pink|green|orange|purple|blue|gray|color|retro|elegant|festive|bohemian|book|handwriting|anaglyph|whatsapp|terminal|frame|subtle|poster|horizon|dynamic|photo|kindle)(-(system|light|dark))?$/;
+  /^(base|pink|green|orange|purple|blue|gray|pine|color|retro|elegant|festive|bohemian|book|handwriting|anaglyph|whatsapp|terminal|frame|subtle|poster|horizon|dynamic|photo|kindle)(-(system|light|dark))?$/;
 const TEMPORARY_KEYS = new Set(['time', 'quote', 'quote-id', 'scene', 'progress', 'index', 'static']);
 
 export function validateSettings(input: unknown, fromUrl: boolean): Partial<State> {
@@ -137,7 +137,7 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
         if (THEMES.test(raw)) result[key] = raw;
         break;
       case 'palette':
-        if (['default', 'red', 'pink', 'green', 'orange', 'purple', 'blue', 'gray', 'random'].includes(raw))
+        if (['default', 'red', 'pink', 'green', 'orange', 'purple', 'blue', 'gray', 'pine', 'random'].includes(raw))
           result[key] = raw;
         break;
       case 'transition':
@@ -199,7 +199,7 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
   }
   if (typeof result.theme === 'string') {
     const [theme, variant = 'system'] = result.theme.split('-');
-    if (['pink', 'green', 'orange', 'purple', 'blue', 'gray', 'color'].includes(theme)) {
+    if (['pink', 'green', 'orange', 'purple', 'blue', 'gray', 'pine', 'color'].includes(theme)) {
       result.theme = `base-${variant}`;
       result.palette = theme === 'color' ? 'random' : theme;
       const colors: Record<string, string> = {
@@ -209,6 +209,7 @@ export function validateSettings(input: unknown, fromUrl: boolean): Partial<Stat
         purple: '#9b59b6',
         blue: '#2c97df',
         gray: '#808686',
+        pine: '#159d3e',
         color: '#d24335',
       };
       result.color = colors[theme];

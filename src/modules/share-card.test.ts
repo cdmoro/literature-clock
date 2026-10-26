@@ -3,9 +3,12 @@ import html2canvas from 'html2canvas-pro';
 import { loadGoogleFont } from '../utils/google-font';
 import { renderShareCard } from './share-card';
 import type { ResolvedQuote } from '../types';
-const { state } = vi.hoisted(() => ({ state: { hideBookTitle: false } }));
+const { state } = vi.hoisted(() => ({ state: { hideBookTitle: false, attribution: 'below' } }));
 vi.mock('../store', () => ({
-  store: { get: (key: string) => (key === 'hide-book-title' ? state.hideBookTitle : 'none') },
+  store: {
+    get: (key: string) =>
+      key === 'hide-book-title' ? state.hideBookTitle : key === 'quote-attribution' ? state.attribution : 'none',
+  },
 }));
 vi.mock('../utils/google-font', async (importOriginal) => ({
   ...(await importOriginal<typeof import('../utils/google-font')>()),
@@ -24,6 +27,7 @@ const quote = {
 } as ResolvedQuote;
 beforeEach(() => {
   state.hideBookTitle = false;
+  state.attribution = 'below';
   document.body.innerHTML = '<blockquote id="quote"></blockquote>';
   vi.mocked(html2canvas).mockReset();
   vi.mocked(loadGoogleFont).mockReset().mockResolvedValue(undefined);
@@ -219,3 +223,26 @@ it.each(['square', 'portrait', 'landscape'] as const)(
     }
   },
 );
+
+it.each([false, true])('omits hidden attribution when hide book title is %s', async (hidden) => {
+  state.hideBookTitle = hidden;
+  state.attribution = 'hidden';
+  vi.mocked(html2canvas).mockImplementation(async (element) => {
+    expect(element.querySelector('.share-card-credit')).toBeNull();
+    expect(element.textContent).not.toContain('Writer');
+    expect(element.textContent).not.toContain('Book');
+    expect(element.textContent).toContain('noon');
+    return document.createElement('canvas');
+  });
+  await renderShareCard(quote, 'square');
+});
+
+it.each([true, false])('renders time highlighting as %s without changing the passage', async (highlightTime) => {
+  vi.mocked(html2canvas).mockImplementation(async (element) => {
+    const timeSpan = [...element.querySelectorAll('span')].find((span) => span.textContent === 'noon')!;
+    expect(Boolean(timeSpan.style.color)).toBe(highlightTime);
+    expect(element.textContent).toContain('<script>Beforenoon arrived');
+    return document.createElement('canvas');
+  });
+  await renderShareCard(quote, 'square', undefined, undefined, { highlightTime, color: '#d24335' });
+});

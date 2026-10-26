@@ -2,10 +2,10 @@
 import json
 import shutil
 import sys
-from collections import Counter, defaultdict
+from collections import defaultdict
 from pathlib import Path
 
-from validate_translation import read_catalogue, is_draft, catalogue_progress, parse_sfw
+from validate_translation import read_catalogue, is_draft, parse_sfw
 
 
 def generate_catalogue(path, output, include_drafts=False):
@@ -41,20 +41,7 @@ def generate_catalogue(path, output, include_drafts=False):
     for minute, quotes in grouped.items():
         (folder / f"{minute.replace(':', '_')}.json").write_text(
             json.dumps(quotes, indent=4, ensure_ascii=False), encoding='utf-8')
-    counts = Counter({minute: len(quotes) for minute, quotes in grouped.items()})
-    authors = Counter(row['Author'] for row in published)
-    stats = {
-        **catalogue_progress(rows), 'times_with_quotes': len(grouped),
-        'times_without_quotes': 1440 - len(grouped), 'total': 1440,
-        'progress': round(len(grouped) * 100 / 1440, 2),
-        'authors': sum(len({q['author'] for q in quotes}) for quotes in grouped.values()),
-        'books': sum(len({q['title'] for q in quotes}) for quotes in grouped.values()),
-        'top_author_quotes': dict(sorted(authors.items(), key=lambda item: (-item[1], item[0]))[:5]),
-        'bottom_time_quotes': dict(sorted(counts.items(), key=lambda item: (item[1], item[0]))[:5]),
-        'top_time_quotes': dict(sorted(counts.items(), key=lambda item: (-item[1], item[0]))[:5]),
-    }
-    (folder / '.statistics.json').write_text(json.dumps(stats, indent=4), encoding='utf-8')
-    print(f'{path.name}: {stats["quotes_published"]}/{len(rows)} published, {len(grouped)} minutes')
+    print(f'{path.name}: {len(published)}/{len(rows)} published, {len(grouped)} minutes')
 
 
 def main():

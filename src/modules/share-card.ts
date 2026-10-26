@@ -20,6 +20,7 @@ export interface CardOptions {
   font?: string;
   useDefaultColor?: boolean;
   photoImage?: string;
+  highlightTime?: boolean;
 }
 const themeFontLoads = new Map<string, Promise<void>>();
 
@@ -274,7 +275,7 @@ export async function renderShareCard(
   for (const [text, highlighted] of passageParts) {
     const span = document.createElement('span');
     span.append(quoteMarkup(text || ''));
-    if (highlighted) span.style.color = time.style.color;
+    if (highlighted && options.highlightTime !== false) span.style.color = time.style.color;
     passage.append(span);
   }
   if (!passage.textContent) passage.textContent = isFuzzy ? quote.quote_time_case : quote.quote_raw;
@@ -296,7 +297,7 @@ export async function renderShareCard(
     credit.append(part);
   });
   Object.assign(credit.style, { marginTop: '40px', fontSize: '28px' });
-  if (isFuzzy) {
+  if (isFuzzy || store.get('quote-attribution') === 'hidden') {
     content.append(passage);
   } else {
     content.append(passage, credit);

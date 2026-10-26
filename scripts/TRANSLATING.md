@@ -255,8 +255,8 @@ Validation requires every source ID exactly once and preserved metadata even for
 drafts, but permits unfinished text in draft rows. It reports published/total quotes
 and the draft count. The time generator excludes drafts and removes stale generated
 files; minutes with no published quotes use the existing localized fallback.
-Generated `.statistics.json` files distinguish `publication_progress` (quotes)
-from `progress` (minutes covered), and include published, draft and total counts.
+The time generator writes quote JSON only; translation validation reports published,
+draft and total quote counts separately.
 
 Once a language is complete and reviewed, explicitly add its interface strings,
 color-control strings, fallback quotes, selector option and locale mapping.

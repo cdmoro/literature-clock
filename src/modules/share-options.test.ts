@@ -295,6 +295,7 @@ it.each(
     purple: '#9b59b6',
     blue: '#2c97df',
     gray: '#808686',
+    pine: '#159d3e',
   }),
 )('selects the %s palette independently and resolves its dark appearance', (palette, color) => {
   const originalUrl = location.href;
@@ -535,4 +536,32 @@ it('keeps the previous canvas visible while a new preview is rendering', async (
   expect(preview.getAttribute('aria-busy')).toBe('false');
   expect(preview.children).toHaveLength(2);
   expect(preview.querySelector<HTMLElement>('.share-preview-loading')?.hidden).toBe(true);
+});
+
+it('toggles time highlighting after Color, before the optional image, and remembers it', async () => {
+  const toggle = button('Highlight time');
+  expect(toggle.getAttribute('aria-pressed')).toBe('true');
+  const control = toggle.closest('.share-control')!;
+  expect(control.previousElementSibling?.classList.contains('share-palette-control')).toBe(true);
+  toggle.click();
+  await Promise.resolve();
+  expect(selectedCardOptions()).toMatchObject({ highlightTime: false });
+  expect(renderShareCard).toHaveBeenLastCalledWith(
+    expect.anything(),
+    expect.anything(),
+    undefined,
+    undefined,
+    expect.objectContaining({ highlightTime: false }),
+  );
+  expect(localStorage.getItem('share-highlight-time')).toBe('false');
+  button('Close').click();
+  document.documentElement.dataset.background = 'photo';
+  document.documentElement.style.setProperty('--photo-image', 'url("photo.jpg")');
+  document.getElementById('share')!.click();
+  expect(button('Highlight time').getAttribute('aria-pressed')).toBe('false');
+  expect(button('Highlight time').closest('.share-control')!.nextElementSibling).toBe(
+    button('Include image').closest('.share-control'),
+  );
+  button('Highlight time').click();
+  expect(selectedCardOptions().highlightTime).toBeUndefined();
 });
