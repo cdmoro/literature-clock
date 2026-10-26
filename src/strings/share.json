@@ -22,7 +22,8 @@
     "theme": "Theme",
     "previousTheme": "Previous theme",
     "nextTheme": "Next theme",
-    "textCopyFailed": "Could not copy the text. Please try again."
+    "textCopyFailed": "Could not copy the text. Please try again.",
+    "highlightTime": "Highlight time"
   },
   "es-ES": {
     "title": "Compartir cita",
@@ -47,7 +48,8 @@
     "theme": "Tema",
     "previousTheme": "Tema anterior",
     "nextTheme": "Tema siguiente",
-    "textCopyFailed": "No se pudo copiar el texto. Intentá de nuevo."
+    "textCopyFailed": "No se pudo copiar el texto. Intentá de nuevo.",
+    "highlightTime": "Resaltar la hora"
   },
   "fr-FR": {
     "title": "Partager la citation",
@@ -72,7 +74,8 @@
     "theme": "Thème",
     "previousTheme": "Thème précédent",
     "nextTheme": "Thème suivant",
-    "textCopyFailed": "Impossible de copier le texte. Réessayez."
+    "textCopyFailed": "Impossible de copier le texte. Réessayez.",
+    "highlightTime": "Surligner l’heure"
   },
   "de-DE": {
     "title": "Zitat teilen",
@@ -97,7 +100,8 @@
     "theme": "Design",
     "previousTheme": "Vorheriges Design",
     "nextTheme": "Nächstes Design",
-    "textCopyFailed": "Der Text konnte nicht kopiert werden. Bitte erneut versuchen."
+    "textCopyFailed": "Der Text konnte nicht kopiert werden. Bitte erneut versuchen.",
+    "highlightTime": "Uhrzeit hervorheben"
   },
   "it-IT": {
     "title": "Condividi citazione",
@@ -122,7 +126,8 @@
     "theme": "Tema",
     "previousTheme": "Tema precedente",
     "nextTheme": "Tema successivo",
-    "textCopyFailed": "Impossibile copiare il testo. Riprova."
+    "textCopyFailed": "Impossibile copiare il testo. Riprova.",
+    "highlightTime": "Evidenzia l’ora"
   },
   "pt-PT": {
     "title": "Partilhar citação",
@@ -147,7 +152,8 @@
     "theme": "Tema",
     "previousTheme": "Tema anterior",
     "nextTheme": "Tema seguinte",
-    "textCopyFailed": "Não foi possível copiar o texto. Tente novamente."
+    "textCopyFailed": "Não foi possível copiar o texto. Tente novamente.",
+    "highlightTime": "Realçar a hora"
   },
   "el-GR": {
     "title": "Κοινοποίηση παραθέματος",
@@ -172,7 +178,8 @@
     "theme": "Θέμα",
     "previousTheme": "Προηγούμενο θέμα",
     "nextTheme": "Επόμενο θέμα",
-    "textCopyFailed": "Δεν ήταν δυνατή η αντιγραφή του κειμένου. Δοκιμάστε ξανά."
+    "textCopyFailed": "Δεν ήταν δυνατή η αντιγραφή του κειμένου. Δοκιμάστε ξανά.",
+    "highlightTime": "Επισήμανση ώρας"
   },
   "zh-CN": {
     "title": "分享引文",
@@ -197,7 +204,8 @@
     "theme": "主题",
     "previousTheme": "上一个主题",
     "nextTheme": "下一个主题",
-    "textCopyFailed": "无法复制文本，请重试。"
+    "textCopyFailed": "无法复制文本，请重试。",
+    "highlightTime": "突出显示时间"
   },
   "ru-RU": {
     "title": "Поделиться цитатой",
@@ -222,7 +230,8 @@
     "theme": "Тема",
     "previousTheme": "Предыдущая тема",
     "nextTheme": "Следующая тема",
-    "textCopyFailed": "Не удалось скопировать текст. Попробуйте ещё раз."
+    "textCopyFailed": "Не удалось скопировать текст. Попробуйте ещё раз.",
+    "highlightTime": "Выделить время"
   },
   "eo": {
     "title": "Kunhavigi citaĵon",
@@ -247,7 +256,8 @@
     "theme": "Temo",
     "previousTheme": "Antaŭa temo",
     "nextTheme": "Sekva temo",
-    "textCopyFailed": "Ne eblis kopii la tekston. Bonvolu reprovi."
+    "textCopyFailed": "Ne eblis kopii la tekston. Bonvolu reprovi.",
+    "highlightTime": "Emfazi la horon"
   },
   "en-US": {
     "title": "Share quote",
@@ -272,7 +282,8 @@
     "theme": "Theme",
     "previousTheme": "Previous theme",
     "nextTheme": "Next theme",
-    "textCopyFailed": "Could not copy the text. Please try again."
+    "textCopyFailed": "Could not copy the text. Please try again.",
+    "highlightTime": "Highlight time"
   },
   "ar-AE": {
     "title": "مشاركة الاقتباس",
@@ -297,6 +308,7 @@
     "theme": "السمة",
     "previousTheme": "السمة السابقة",
     "nextTheme": "السمة التالية",
-    "textCopyFailed": "تعذر نسخ النص. حاول مرة أخرى."
+    "textCopyFailed": "تعذر نسخ النص. حاول مرة أخرى.",
+    "highlightTime": "إبراز الوقت"
   }
 }

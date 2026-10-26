@@ -28,6 +28,7 @@ let useDefaultColor = false;
 let font: string | undefined;
 let popupPhotoImage: string | null | undefined;
 let includePhoto = true;
+let highlightTime = true;
 export const selectedCardOptions = () => ({
   pattern: pattern ?? store.get('background-pattern') ?? 'none',
   ...(() => {
@@ -47,6 +48,7 @@ export const selectedCardOptions = () => ({
         : {};
   })(),
   color,
+  ...(!highlightTime ? { highlightTime: false } : {}),
   ...(palette && palette !== 'default' ? { palette } : {}),
   font,
   ...(useDefaultColor ? { useDefaultColor: true } : {}),
@@ -71,6 +73,11 @@ export function initShareOptions() {
     const quote = store.get('active-quote');
     if (!quote || store.get('quote')) return;
     const snapshot = { ...quote };
+    try {
+      highlightTime = localStorage.getItem('share-highlight-time') !== 'false';
+    } catch {
+      highlightTime = true;
+    }
     const strings = shareOptionStrings();
     const settingsStrings = SETTINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))];
     popupPhotoImage =
@@ -321,6 +328,25 @@ export function initShareOptions() {
     });
     colorControl.append(colorCaption, compactGroup);
     controls.insertBefore(colorControl, customization);
+    const highlightButton = document.createElement('button');
+    highlightButton.type = 'button';
+    highlightButton.className = 'share-image-toggle';
+    highlightButton.setAttribute('aria-label', strings.highlightTime);
+    highlightButton.title = strings.highlightTime;
+    highlightButton.setAttribute('aria-pressed', String(highlightTime));
+    highlightButton.innerHTML =
+      '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+    highlightButton.addEventListener('click', () => {
+      highlightTime = !highlightTime;
+      highlightButton.setAttribute('aria-pressed', String(highlightTime));
+      try {
+        localStorage.setItem('share-highlight-time', String(highlightTime));
+      } catch {
+        // The option still works when browser storage is unavailable.
+      }
+      void refresh();
+    });
+    controls.insertBefore(field(strings.highlightTime, highlightButton), customization);
     if (popupPhotoImage) controls.insertBefore(includePhotoControl, customization);
     const patternControl = document.createElement('label');
     patternControl.className = 'share-pattern-control';

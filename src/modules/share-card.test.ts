@@ -219,3 +219,13 @@ it.each(['square', 'portrait', 'landscape'] as const)(
     }
   },
 );
+
+it.each([true, false])('renders time highlighting as %s without changing the passage', async (highlightTime) => {
+  vi.mocked(html2canvas).mockImplementation(async (element) => {
+    const timeSpan = [...element.querySelectorAll('span')].find((span) => span.textContent === 'noon')!;
+    expect(Boolean(timeSpan.style.color)).toBe(highlightTime);
+    expect(element.textContent).toContain('<script>Beforenoon arrived');
+    return document.createElement('canvas');
+  });
+  await renderShareCard(quote, 'square', undefined, undefined, { highlightTime, color: '#d24335' });
+});
