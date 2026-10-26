@@ -22,7 +22,7 @@ The development server opens the clock in your browser.
 
 | Command | Purpose |
 | --- | --- |
-| `npm run generate-times` | Generate quote JSON files and catalogue statistics from the CSV files |
+| `npm run generate-times` | Generate quote JSON files from the CSV files |
 | `npm run dev` | Start the local clock development server |
 | `npm run typecheck` | Check TypeScript types |
 | `npm run lint` | Run ESLint |
@@ -37,7 +37,7 @@ For Python tooling tests, run `python3 -m unittest discover -s scripts -p 'test_
 
 ## Quote data
 
-The source catalogues live in `quotes/` as pipe-delimited CSV files. The generator writes one JSON file per available minute and locale under `public/times/`, along with catalogue statistics. Regenerate these files after changing quotes. To generate a single locale, run:
+The source catalogues live in `quotes/` as pipe-delimited CSV files. The generator writes one JSON file per available minute and locale under `public/times/`. Regenerate these files after changing quotes. To generate a single locale, run:
 
 ```sh
 npm run generate-times -- en-US
