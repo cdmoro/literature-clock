@@ -1,0 +1,38 @@
+{
+  "en-GB": {
+    "hint": "Zen mode · Press Esc or tap the stones to exit"
+  },
+  "en-US": {
+    "hint": "Zen mode · Press Esc or tap the stones to exit"
+  },
+  "es-ES": {
+    "hint": "Modo Zen · Pulsa Esc o toca las piedras para salir"
+  },
+  "pt-PT": {
+    "hint": "Modo Zen · Prima Esc ou toque nas pedras para sair"
+  },
+  "fr-FR": {
+    "hint": "Mode Zen · Appuyez sur Échap ou touchez les pierres pour quitter"
+  },
+  "it-IT": {
+    "hint": "Modalità Zen · Premi Esc o tocca le pietre per uscire"
+  },
+  "de-DE": {
+    "hint": "Zen-Modus · Esc drücken oder die Steine antippen zum Beenden"
+  },
+  "el-GR": {
+    "hint": "Λειτουργία Ζεν · Πατήστε Esc ή αγγίξτε τις πέτρες για έξοδο"
+  },
+  "zh-CN": {
+    "hint": "禅模式 · 按 Esc 或轻点石头退出"
+  },
+  "ru-RU": {
+    "hint": "Режим дзен · Нажмите Esc или коснитесь камней для выхода"
+  },
+  "eo": {
+    "hint": "Zena reĝimo · Premu Esc aŭ tuŝu la ŝtonojn por eliri"
+  },
+  "ar-AE": {
+    "hint": "وضع التركيز · اضغط Esc أو المس الحجارة للخروج"
+  }
+}
