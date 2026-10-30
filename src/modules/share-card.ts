@@ -5,7 +5,7 @@ import { type BackgroundPattern } from '../utils/background-patterns';
 import html2canvas from 'html2canvas-pro';
 import type { ResolvedQuote } from '../types';
 import { fontSupportsLocale } from './font-preferences';
-import { loadGoogleFont, normalizeFontName } from '../utils/google-font';
+import { loadGoogleFont, normalizeFontName, fontFamilyOverride } from '../utils/google-font';
 import { getLocaleThemeFont } from './locale-fonts';
 import { quoteMarkup } from '../utils/quote-markup';
 import { defaultColor } from './themes';
@@ -124,7 +124,7 @@ export async function renderShareCard(
   const candidate = options.font && options.font !== 'default' ? normalizeFontName(options.font) : undefined;
   const customFont = candidate && fontSupportsLocale(candidate, quote.locale) !== false ? candidate : undefined;
   const fontFamily = customFont
-    ? `"${customFont}", ${themeFontFamily}`
+    ? fontFamilyOverride(customFont, themeFontFamily)
     : theme || options.font !== undefined
       ? themeFontFamily
       : quoteStyle.fontFamily;
@@ -168,8 +168,7 @@ export async function renderShareCard(
           ? 'none'
           : tileImage
         : tileImage;
-  const cardBackgroundSize =
-    options.photoImage === '' && patternTile ? patternTile.size : backgroundSize;
+  const cardBackgroundSize = options.photoImage === '' && patternTile ? patternTile.size : backgroundSize;
   const cardBackgroundRepeat =
     options.photoImage === '' && patternTile
       ? 'repeat'

@@ -89,7 +89,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     var preferences: UserDefaults = ScreenSaverDefaults(forModuleWithName: "net.literatureclock.native-saver")!
     var resourceURLOverride: URL? // Isolated render diagnostics only.
     var resources: URL { resourceURLOverride ?? Bundle(for: NativeClockView.self).resourceURL! }
-    static let optionKeys = ["theme", "screensaver", "show-time", "fuzzy-clock", "hide-book-title", "quote-attribution", "work", "progressbar", "quote-locales", "palette", "custom-color", "background", "background-pattern", "pattern-size", "background-effect", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
+    static let optionKeys = ["font", "theme", "screensaver", "show-time", "fuzzy-clock", "hide-book-title", "quote-attribution", "work", "progressbar", "quote-locales", "palette", "custom-color", "background", "background-pattern", "pattern-size", "background-effect", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
     var photoDownloadsEnabled = true
     var interactionPreviewSweep = false
     var fullProgressPreviewSweep = false
@@ -195,6 +195,14 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         return names
     }()
     func quoteFont(_ size: CGFloat, locale: String? = nil) -> NSFont {
+        switch preferences.string(forKey: "font") ?? "default" {
+        case "serif":
+            let descriptor = NSFont.systemFont(ofSize: size).fontDescriptor.withDesign(.serif)
+            return descriptor.flatMap { NSFont(descriptor: $0, size: size) } ?? NSFont(name: "Times New Roman", size: size) ?? .systemFont(ofSize: size)
+        case "sans-serif": return .systemFont(ofSize: size)
+        case "monospace": return .monospacedSystemFont(ofSize: size, weight: .regular)
+        default: break
+        }
         let family = NativeAppearance.fontFamily(theme: themeName, locale: locale ?? quoteLocale)
         return Self.bundledFonts[family].flatMap { NSFont(name: $0, size: size) } ?? NSFont.systemFont(ofSize: size)
     }
@@ -216,7 +224,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         animationTimeInterval = needsLowerRate ? 1.0 / 30.0 : 1.0 / 60.0
     }
     private func setup() {
-        preferences.register(defaults: ["theme": "base-dark", "screensaver": true, "show-time": true, "fuzzy-clock": false,
+        preferences.register(defaults: ["font": "default", "theme": "base-dark", "screensaver": true, "show-time": true, "fuzzy-clock": false,
                                        "hide-book-title": false, "quote-attribution": "below", "work": true, "progressbar": "background", "quote-locales": "", "palette": "default",
                                        "custom-color": "#d24335", "background": "default", "background-pattern": "none", "pattern-size": 1.0, "background-effect": "none", "photo-provider": "picsum", "photo-category": "all", "bilingual": false, "translation-locale": ""])
         _ = Self.bundledFonts
@@ -695,7 +703,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             }
             return result
         }
-        let key = "\(quote.first)\(quote.time)\(quote.last)\(quote.title)\(quote.author)|\(theme)|\(backgroundMode)|\(pattern)|\(quoteLocale)|\(width)|\(limit)|\(scale)|\(dark)|\(accent)|\(lastMinute)|\(preferences.bool(forKey: "hide-book-title"))|\(fuzzyClock)"
+        let key = "\(preferences.string(forKey: "font") ?? "default")|\(quote.first)\(quote.time)\(quote.last)\(quote.title)\(quote.author)|\(theme)|\(backgroundMode)|\(pattern)|\(quoteLocale)|\(width)|\(limit)|\(scale)|\(dark)|\(accent)|\(lastMinute)|\(preferences.bool(forKey: "hide-book-title"))|\(fuzzyClock)"
         let bilingualKey = key + "|\(quote.id ?? "")|\(preferences.bool(forKey: "bilingual"))|\(preferences.string(forKey: "translation-locale") ?? "")|\(preferences.bool(forKey: "work"))"
         if bilingualKey != layoutKey {
             var low: CGFloat = 1, high = min(bounds.width * 0.043, bounds.height * 0.12)
@@ -850,7 +858,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             row.spacing = 16
             for locale in languages[offset..<min(offset + 3, languages.count)] {
                 let name = Locale(identifier: systemLocale).localizedString(forIdentifier: locale) ?? locale
-                let check = NSButton(checkboxWithTitle: name, target: nil, action: nil)
+                let check = NSButton(checkboxWithTitle: name, target: self, action: #selector(fontLanguageChanged))
                 check.state = selected.contains(locale) ? .on : .off
                 controls["quote-locale:" + locale] = check
                 row.addArrangedSubview(check)
@@ -899,6 +907,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let parts = theme.split(separator: "-").map(String.init)
         for (key, label, values) in [
             ("theme-base", "theme", NativeAppearance.themes),
+            ("font", "font", ["default", "serif", "sans-serif", "monospace"]),
             ("theme-mode", "settings_scheme", ["system", "light", "dark"]),
             ("background", "settings_background", NativeAppearance.backgrounds),
             ("photo-provider", "settings_photo_provider", ["picsum", "nasa", "commons"]),
@@ -913,7 +922,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             let menu = NSPopUpButton()
             let value = key == "theme-base" ? parts.first : key == "theme-mode" ? parts.last : preferences.string(forKey: key)
             for raw in values {
-                let labelKey = key == "background" ? "settings_background_" + raw : key == "photo-category" ? "settings_photo_" + raw : key == "background-pattern" ? "settings_pattern_" + raw : key == "background-effect" ? "settings_effect_" + raw : key == "progressbar" ? "settings_progress_" + raw :
+                let labelKey = key == "font" && raw != "default" ? "settings_font_" + raw : key == "background" ? "settings_background_" + raw : key == "photo-category" ? "settings_photo_" + raw : key == "background-pattern" ? "settings_pattern_" + raw : key == "background-effect" ? "settings_effect_" + raw : key == "progressbar" ? "settings_progress_" + raw :
                     raw == "custom" ? "settings_color_customize" : raw == "default" ? "default_font" : raw == "random" ? "settings_color_random" : raw
                 let label = key == "photo-provider" ? (raw == "commons" ? "Wikimedia Commons" : raw == "nasa" ? "NASA" : "Picsum") : text(labelKey)
                 let item = NSMenuItem(title: label, action: nil, keyEquivalent: "")
@@ -1229,7 +1238,18 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             (controls["color-hex"] as? NSTextField)?.stringValue = NativeAppearance.hex(well.color)
         }
     }
+    @objc private func fontLanguageChanged() { updateDefaultFontLabel() }
+    private func updateDefaultFontLabel() {
+        guard let menu = controls["font"] as? NSPopUpButton,
+              let item = menu.itemArray.first(where: { $0.representedObject as? String == "default" }) else { return }
+        let theme = menuValue("theme-base") ?? themeName
+        let locale = localeNames.first { (controls["quote-locale:" + $0] as? NSButton)?.state == .on } ?? systemLocale
+        let key = NativeAppearance.fontFamily(theme: theme, locale: locale)
+        let name = Self.bundledFonts[key].flatMap { NSFont(name: $0, size: 14)?.familyName } ?? key
+        item.title = "\(text("default_font")) (\(name))"
+    }
     @objc private func photoControlsChanged() {
+        updateDefaultFontLabel()
         let theme = menuValue("theme-base") ?? "base"
         if let menu = controls["background"] as? NSPopUpButton {
             if menu.isEnabled { selectedBackground = menuValue("background") ?? "default" }

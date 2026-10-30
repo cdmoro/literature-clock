@@ -1,7 +1,13 @@
 import { fitQuote } from '../utils';
 import { store } from '../store';
 import { initFontPicker } from './font-picker';
-import { loadGoogleFont, normalizeFontName } from '../utils/google-font';
+import {
+  loadGoogleFont,
+  normalizeFontName,
+  GENERIC_FONTS,
+  isGenericFont,
+  fontFamilyOverride,
+} from '../utils/google-font';
 import { getBaseLocale, getInterfaceLocale, getStrings } from './locales';
 import { getDefaultFontName, refreshLocaleThemeFonts } from './locale-fonts';
 import SETTINGS from '../strings/settings.json';
@@ -44,15 +50,6 @@ let activeLanguage = '';
 const passageLocale = () => document.getElementById('quote')?.lang || store.get('locale');
 const loadedFonts = new Set<string>();
 
-function suggestedFonts(locale: string) {
-  const language = locale.split('-')[0].toLowerCase();
-  return new Set([
-    'Special Elite',
-    ...Object.values(THEME_FONTS).flat(),
-    ...Object.values(LOCALE_THEME_FONTS).flatMap((fonts) => (fonts[language] ? [fonts[language]] : [])),
-  ]);
-}
-
 function readCustomFonts(): string[] {
   try {
     const value: unknown = JSON.parse(localStorage.getItem(CUSTOM_FONTS_KEY) || '[]');
@@ -75,9 +72,11 @@ function saveCustomFonts() {
 function createOption(value: string) {
   const option = document.createElement('option');
   option.value = value;
-  if (customFonts.includes(value)) {
+  const strings = SETTINGS[getBaseLocale(getInterfaceLocale())];
+  if (GENERIC_FONTS.includes(value as (typeof GENERIC_FONTS)[number])) {
+    option.textContent = strings[`settings_font_${value as (typeof GENERIC_FONTS)[number]}`];
+  } else if (customFonts.includes(value)) {
     option.dataset.customFont = '';
-    const strings = SETTINGS[getBaseLocale(getInterfaceLocale())];
     const support = fontSupportsLocale(value, passageLocale());
     const coverage =
       support === undefined
@@ -126,13 +125,7 @@ export function refreshDefaultFontLabel() {
   option.dataset.previewFont = name;
   option.textContent = `${getStrings(getInterfaceLocale()).default_font} (${name})`;
   select.querySelectorAll('option:not([value="default"])').forEach((item) => item.remove());
-  const suggestions = suggestedFonts(locale);
-  [
-    ...new Set([
-      ...FONTS.filter((font) => suggestions.has(font) && fontSupportsLocale(font, locale) === true),
-      ...customFonts,
-    ]),
-  ].forEach((font) => {
+  [...new Set([...GENERIC_FONTS, ...customFonts])].forEach((font) => {
     const item = createOption(font);
     item.disabled = fontSupportsLocale(font, locale) === false;
     select.append(item);
@@ -143,7 +136,8 @@ export function refreshDefaultFontLabel() {
   }
   select.value = font;
   if (font === 'default') document.documentElement.style.removeProperty(CSS_FONT_VARIABLE);
-  else document.documentElement.style.setProperty(CSS_FONT_VARIABLE, `"${font}", var(--quote-font-family)`);
+  else
+    document.documentElement.style.setProperty(CSS_FONT_VARIABLE, fontFamilyOverride(font, 'var(--quote-font-family)'));
   if (store.get('font') !== font) store.set('font', font);
   refreshLocaleThemeFonts();
   refreshRemovalButton();
@@ -236,9 +230,13 @@ export async function applyCustomFont(value: string, restoreDefaultOnError = fal
     fail();
     return;
   }
+  if (isGenericFont(normalized)) {
+    selectFont(normalized);
+    return true;
+  }
   const name = [...FONTS, ...customFonts].find((item) => item.toLowerCase() === normalized.toLowerCase()) || normalized;
   if (FONTS.includes(name)) {
-    if (!restoreDefaultOnError && !suggestedFonts(locale).has(name) && !customFonts.includes(name)) {
+    if (!restoreDefaultOnError && !customFonts.includes(name)) {
       customFonts.push(name);
       saveCustomFonts();
     }
