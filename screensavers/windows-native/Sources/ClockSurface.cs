@@ -283,7 +283,7 @@ public sealed class ClockSurface : Canvas
             var flow=language.StartsWith("ar")?FlowDirection.RightToLeft:FlowDirection.LeftToRight;
             var outlineActive=outlineForPhoto || outlineForPattern;
             var outlineRadius=12.0;
-            var text=new TextBlock { TextWrapping=TextWrapping.Wrap, TextAlignment=fuzzy?TextAlignment.Center:TextAlignment.Left, FontFamily=Appearance.Font(p.Theme,language), FontSize=fontSize, Foreground=Appearance.Brush(foreground,p.Theme=="terminal"?.8:1), FlowDirection=flow, LineHeight=fontSize*Appearance.Font(p.Theme,language).LineSpacing*(p.Theme=="book"?1.35:p.Theme=="festive"?1.25:p.Theme=="terminal"?1.15:1), LineStackingStrategy=LineStackingStrategy.BlockLineHeight };
+            var text=new TextBlock { TextWrapping=TextWrapping.Wrap, TextAlignment=fuzzy?TextAlignment.Center:TextAlignment.Left, FontFamily=Appearance.Font(p.Theme,language,p.Font), FontSize=fontSize, Foreground=Appearance.Brush(foreground,p.Theme=="terminal"?.8:1), FlowDirection=flow, LineHeight=fontSize*Appearance.Font(p.Theme,language,p.Font).LineSpacing*(p.Theme=="book"?1.35:p.Theme=="festive"?1.25:p.Theme=="terminal"?1.15:1), LineStackingStrategy=LineStackingStrategy.BlockLineHeight };
             if(outlineActive) text.Effect=new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=outlineRadius,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance };
             if (!fuzzy) {
                 text.Inlines.Add(new Run(item.first));
