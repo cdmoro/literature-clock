@@ -1,0 +1,47 @@
+{
+  "fill": {
+    "solid": "extended-srgb:0.02353,0.09412,0.19216,1.00000"
+  },
+  "groups": [
+    {
+      "name": "01 Pages",
+      "layers": [
+        {
+          "name": "01 Pages",
+          "image-name": "01-Pages.svg"
+        }
+      ],
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0.04
+      },
+      "translucency": {
+        "enabled": true,
+        "value": 0.02
+      }
+    },
+    {
+      "name": "02 Clock hands",
+      "layers": [
+        {
+          "name": "02 Clock hands",
+          "image-name": "02-Hands.svg"
+        }
+      ],
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0.0
+      },
+      "translucency": {
+        "enabled": true,
+        "value": 0.02
+      }
+    }
+  ],
+  "supported-platforms": {
+    "circles": [
+      "watchOS"
+    ],
+    "squares": "shared"
+  }
+}
