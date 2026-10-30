@@ -44,6 +44,16 @@ public static class Checks
             var json=JsonSerializer.Serialize(p);
             Assert(JsonSerializer.Deserialize<Preferences>(json)?.QuoteAttribution==mode,"Quote attribution preference roundtrip: "+mode);
         }
+        Assert(p.Font=="default","Existing settings must retain the theme font");
+        foreach(var choice in new[]{"default","serif","sans-serif","monospace"})
+        {
+            p.Font=choice;
+            Assert(JsonSerializer.Deserialize<Preferences>(JsonSerializer.Serialize(p))?.Font==choice,"Font preference roundtrip: "+choice);
+            if(choice=="default") continue;
+            foreach(var locale in data.Locales)
+                Assert(Appearance.Font("base",locale,choice).Source.StartsWith("Global "),"System composite font: "+choice+"/"+locale);
+        }
+        p.Font="default";
         foreach(var locale in data.Locales)
         {
             var rows=data.Get(locale); Assert(rows.Count>0,"Empty catalogue: "+locale);

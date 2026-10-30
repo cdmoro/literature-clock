@@ -246,3 +246,15 @@ it.each([true, false])('renders time highlighting as %s without changing the pas
   });
   await renderShareCard(quote, 'square', undefined, undefined, { highlightTime, color: '#d24335' });
 });
+
+it.each(['serif', 'sans-serif', 'monospace'])(
+  'sharing uses the system %s family without downloading it',
+  async (font) => {
+    vi.mocked(html2canvas).mockImplementation(async (element) => {
+      expect(element.style.fontFamily).toBe(font);
+      return document.createElement('canvas');
+    });
+    await renderShareCard(quote, 'square', undefined, undefined, { font });
+    expect(loadGoogleFont).not.toHaveBeenCalledWith(font);
+  },
+);
