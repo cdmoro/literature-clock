@@ -1,9 +1,25 @@
 import Foundation
 import SwiftUI
+#if os(macOS)
+import AppKit
+import CoreText
+#else
 import UIKit
+#endif
 
 enum ClockSettings {
-    static let defaults = UserDefaults(suiteName: "group.net.literatureclock.app")!
+    static let appGroup = Bundle.main.object(forInfoDictionaryKey: "ClockAppGroup") as? String
+        ?? "group.net.literatureclock.app"
+    static let defaults = UserDefaults(suiteName: appGroup)!
+
+    // macOS does not register fonts from UIAppFonts.
+    private static let bundledFontRegistration: Void = {
+        #if os(macOS)
+        if let url = Bundle.main.url(forResource: "SpecialElite-Regular", withExtension: "ttf") {
+            CTFontManagerRegisterFontsForURL(url as CFURL, .process, nil)
+        }
+        #endif
+    }()
     static let localeKey = "quote-locale"
     static let localesKey = "quote-locales"
     static let appearanceKey = "appearance"
@@ -19,14 +35,20 @@ enum ClockSettings {
     static let progressKey = "seconds-progress"
 
     static var dyslexicFontName: String? {
+        #if os(macOS)
+        let names = NSFontManager.shared.availableFonts
+            .filter { $0.lowercased().filter(\.isLetter).contains("opendyslexic") }
+        #else
         let names = UIFont.familyNames
             .filter { $0.lowercased().filter(\.isLetter).contains("opendyslexic") }
             .flatMap { UIFont.fontNames(forFamilyName: $0) }
+        #endif
         return names.first { $0.lowercased().contains("regular") } ?? names.first
     }
 
     static func quoteFont(_ name: String, size: CGFloat, weight: Font.Weight = .regular) -> Font {
-        switch name {
+        let _ = bundledFontRegistration
+        return switch name {
         case "rounded": .system(size: size, weight: weight, design: .rounded)
         case "monospaced": .system(size: size, weight: weight, design: .monospaced)
         case "specialElite": .custom("SpecialElite-Regular", size: size, relativeTo: .body)
@@ -62,12 +84,7 @@ enum ClockSettings {
     }
 
     static func hex(from color: Color) -> String {
-        let uiColor = UIColor(color)
-        var red: CGFloat = 0
-        var green: CGFloat = 0
-        var blue: CGFloat = 0
-        var alpha: CGFloat = 0
-        guard uiColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else { return "#F7F5F1" }
+        guard let (red, green, blue) = components(color) else { return "#F7F5F1" }
         return String(format: "#%02X%02X%02X", Int((red * 255).rounded()), Int((green * 255).rounded()), Int((blue * 255).rounded()))
     }
 
@@ -93,25 +110,28 @@ enum ClockSettings {
     }
 
     private static func mix(_ base: Color, _ tint: Color, amount: Double) -> Color {
-        let base = UIColor(base), tint = UIColor(tint)
-        var br: CGFloat = 0, bg: CGFloat = 0, bb: CGFloat = 0, ba: CGFloat = 0
-        var tr: CGFloat = 0, tg: CGFloat = 0, tb: CGFloat = 0, ta: CGFloat = 0
-        guard base.getRed(&br, green: &bg, blue: &bb, alpha: &ba),
-              tint.getRed(&tr, green: &tg, blue: &tb, alpha: &ta) else { return Color(tint) }
+        guard let (br, bg, bb) = components(base),
+              let (tr, tg, tb) = components(tint) else { return tint }
         return Color(red: Double(br) * (1 - amount) + Double(tr) * amount,
                      green: Double(bg) * (1 - amount) + Double(tg) * amount,
                      blue: Double(bb) * (1 - amount) + Double(tb) * amount)
     }
 
     static func foreground(for background: Color) -> Color {
-        let uiColor = UIColor(background)
-        var red: CGFloat = 0
-        var green: CGFloat = 0
-        var blue: CGFloat = 0
-        var alpha: CGFloat = 0
-        guard uiColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else { return .white }
+        guard let (red, green, blue) = components(background) else { return .white }
         let luminance = (0.2126 * red) + (0.7152 * green) + (0.0722 * blue)
         return luminance > 0.52 ? Color(red: 0.12, green: 0.12, blue: 0.12) : .white
+    }
+
+    private static func components(_ color: Color) -> (CGFloat, CGFloat, CGFloat)? {
+        #if os(macOS)
+        guard let rgb = NSColor(color).usingColorSpace(.sRGB) else { return nil }
+        return (rgb.redComponent, rgb.greenComponent, rgb.blueComponent)
+        #else
+        var red: CGFloat = 0, green: CGFloat = 0, blue: CGFloat = 0, alpha: CGFloat = 0
+        guard UIColor(color).getRed(&red, green: &green, blue: &blue, alpha: &alpha) else { return nil }
+        return (red, green, blue)
+        #endif
     }
 
     static var locale: String {

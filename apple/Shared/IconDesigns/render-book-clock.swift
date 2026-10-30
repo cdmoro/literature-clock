@@ -1,6 +1,6 @@
 #!/usr/bin/swift
 // Run from the repository root:
-// swift ios/IconDesigns/render-book-clock.swift
+// swift apple/Shared/IconDesigns/render-book-clock.swift
 // SVG layers are the source of truth; this exports the opaque PNG fallback.
 import AppKit
 import Foundation
@@ -46,7 +46,7 @@ let output = NSBitmapImageRep(cgImage: flattened)
 guard let png = output.representation(using: .png, properties: [:]) else {
     fatalError("Unable to encode icon PNG")
 }
-for path in ["BookClock.xcassets/AppIconBookClock.appiconset/Icon-1024.png", "Previews/BookClock-Vector.png"] {
+for path in ["../../iOS/BookClock.xcassets/AppIconBookClock.appiconset/Icon-1024.png", "Previews/BookClock-Vector.png"] {
     let url = directory.appendingPathComponent(path)
     try FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
     try png.write(to: url)

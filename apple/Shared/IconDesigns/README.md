@@ -1,4 +1,4 @@
-# iOS icons
+# Apple app icon artwork
 
 ## Selected design: book and clock
 
@@ -13,7 +13,7 @@ The hands have zero group shadow; the page group has a restrained 4% shadow. Bot
 
 ## App integration and validation
 
-Debug and Release select `AppIconBookClock`. The app currently compiles the opaque 1024 × 1024 PNG from `BookClock.xcassets`. That catalogue successfully compiled with Apple's `actool` after the vector update.
+Debug and Release select `AppIconBookClock`. The app currently compiles the opaque 1024 × 1024 PNG from `../../iOS/BookClock.xcassets`. That catalogue successfully compiled with Apple's `actool` after the vector update.
 
 The `.icon` document is visible in the Xcode project but excluded from Resources: `ictool` still reports that the document could not be opened, including with the new SVG layers. Native Liquid Glass export and appearance testing therefore remain pending. The app currently uses the matching flattened vector artwork. Add the `.icon` document to the app's Resources only after confirming successful export in Icon Composer/Xcode.
 
@@ -24,7 +24,7 @@ The full app build previously failed in SwiftUI macro expansion in this environm
 From the repository root on macOS:
 
 ```sh
-swift ios/IconDesigns/render-book-clock.swift
+swift apple/Shared/IconDesigns/render-book-clock.swift
 ```
 
 This composes the two source SVG layers, writes the SVG preview and exports opaque PNGs using AppKit and Core Graphics. It does not change the layers or invent new artwork.

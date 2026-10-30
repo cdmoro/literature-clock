@@ -1,0 +1,849 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D00000000000000000000001 /* ClockWidgetConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00000000000000000000003 /* ClockWidgetConfiguration.swift */; };
+		D00000000000000000000002 /* ClockWidgetConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00000000000000000000003 /* ClockWidgetConfiguration.swift */; };
+		A00000000000000000000062 /* LiteratureClockWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A00000000000000000000015 /* LiteratureClockWidgetExtension.appex */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A00000000000000000000101 /* Shared/App/LiteratureClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000071 /* Shared/App/LiteratureClockApp.swift */; };
+		A00000000000000000000102 /* Shared/Models/Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000072 /* Shared/Models/Quote.swift */; };
+		A00000000000000000000103 /* Shared/App/ClockHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000073 /* Shared/App/ClockHomeView.swift */; };
+		A00000000000000000000104 /* Shared/Models/Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000072 /* Shared/Models/Quote.swift */; };
+		A00000000000000000000105 /* Shared/Widgets/LiteratureClockWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000074 /* Shared/Widgets/LiteratureClockWidget.swift */; };
+		A00000000000000000000111 /* Shared/Catalogues in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000075 /* Shared/Catalogues */; };
+		A00000000000000000000112 /* Shared/Models/ClockSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000076 /* Shared/Models/ClockSettings.swift */; };
+		A00000000000000000000113 /* Shared/Models/ClockSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000076 /* Shared/Models/ClockSettings.swift */; };
+		A00000000000000115 /* Shared/Catalogues in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000075 /* Shared/Catalogues */; };
+		A00000000000000116 /* Shared/Models/CycleQuoteIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000077 /* Shared/Models/CycleQuoteIntent.swift */; };
+		A00000000000000117 /* Shared/Models/CycleQuoteIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000077 /* Shared/Models/CycleQuoteIntent.swift */; };
+		A00000000000000118 /* Shared/Fonts/SpecialElite-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000119 /* Shared/Fonts/SpecialElite-Regular.ttf */; };
+		A00000000000000120 /* Shared/Fonts/SpecialElite-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000119 /* Shared/Fonts/SpecialElite-Regular.ttf */; };
+		B00000000000000000000003 /* iOS/BookClock.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000004 /* iOS/BookClock.xcassets */; };
+F00000000000000000000002 = {isa = PBXBuildFile; fileRef = F00000000000000000000001; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+        C00000000000000000000001 = {
+            isa = PBXContainerItemProxy;
+            containerPortal = A00000000000000000000001;
+            proxyType = 1;
+            remoteGlobalIDString = A00000000000000000000003;
+            remoteInfo = LiteratureClockWidgetExtension;
+        };
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXTargetDependency section */
+        C00000000000000000000002 = {
+            isa = PBXTargetDependency;
+            target = A00000000000000000000003;
+            targetProxy = C00000000000000000000001;
+        };
+/* End PBXTargetDependency section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A00000000000000000000063 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A00000000000000000000062 /* LiteratureClockWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D00000000000000000000003 /* ClockWidgetConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/Models/ClockWidgetConfiguration.swift; sourceTree = "<group>"; };
+		A00000000000000000000014 /* LiteratureClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiteratureClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00000000000000000000015 /* LiteratureClockWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LiteratureClockWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00000000000000000000071 /* Shared/App/LiteratureClockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/App/LiteratureClockApp.swift; sourceTree = "<group>"; };
+		A00000000000000000000072 /* Shared/Models/Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/Models/Quote.swift; sourceTree = "<group>"; };
+		A00000000000000000000073 /* Shared/App/ClockHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/App/ClockHomeView.swift; sourceTree = "<group>"; };
+		A00000000000000000000074 /* Shared/Widgets/LiteratureClockWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/Widgets/LiteratureClockWidget.swift; sourceTree = "<group>"; };
+		A00000000000000000000075 /* Shared/Catalogues */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shared/Catalogues; sourceTree = "<group>"; };
+		A00000000000000000000076 /* Shared/Models/ClockSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/Models/ClockSettings.swift; sourceTree = "<group>"; };
+		A00000000000000000000077 /* Shared/Models/CycleQuoteIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/Models/CycleQuoteIntent.swift; sourceTree = "<group>"; };
+		A00000000000000119 /* Shared/Fonts/SpecialElite-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shared/Fonts/SpecialElite-Regular.ttf"; sourceTree = "<group>"; };
+		B00000000000000000000002 /* Shared/IconDesigns/AppIconBookClock.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Shared/IconDesigns/AppIconBookClock.icon; sourceTree = "<group>"; };
+		B00000000000000000000004 /* iOS/BookClock.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = iOS/BookClock.xcassets; sourceTree = "<group>"; };
+F00000000000000000000001 = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = macOS/Assets.xcassets; sourceTree = "<group>"; };
+		F10000000000000000000008 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "text.plist.xml";
+			path = "iOS/Info.plist";
+			sourceTree = "<group>";
+		};
+		F10000000000000000000009 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "text.plist.xml";
+			path = "iOS/WidgetInfo.plist";
+			sourceTree = "<group>";
+		};
+		F1000000000000000000000A = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "text.plist.entitlements";
+			path = "iOS/LiteratureClock.entitlements";
+			sourceTree = "<group>";
+		};
+		F1000000000000000000000C = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "text.plist.xml";
+			path = "macOS/Info.plist";
+			sourceTree = "<group>";
+		};
+		F1000000000000000000000D = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "text.plist.xml";
+			path = "macOS/WidgetInfo.plist";
+			sourceTree = "<group>";
+		};
+		F1000000000000000000000E = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "text.plist.entitlements";
+			path = "macOS/LiteratureClock.entitlements";
+			sourceTree = "<group>";
+		};
+		F10000000000000000000010 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "net.daringfireball.markdown";
+			path = "README.md";
+			sourceTree = "<group>";
+		};
+		F10000000000000000000011 = {
+			isa = "PBXFileReference";
+			lastKnownFileType = "text.script.python";
+			path = "sync-catalogues.py";
+			sourceTree = "<group>";
+		};
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A00000000000000000000041 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000000000000000000042 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F10000000000000000000001 = {
+			isa = "PBXGroup";
+			children = (
+				"A00000000000000000000071",
+				"A00000000000000000000073",
+			);
+			name = "App";
+			sourceTree = "<group>";
+		};
+		F10000000000000000000002 = {
+			isa = "PBXGroup";
+			children = (
+				"A00000000000000000000072",
+				"A00000000000000000000077",
+				"A00000000000000000000076",
+				"D00000000000000000000003",
+			);
+			name = "Models";
+			sourceTree = "<group>";
+		};
+		F10000000000000000000003 = {
+			isa = "PBXGroup";
+			children = (
+				"A00000000000000000000074",
+			);
+			name = "Widgets";
+			sourceTree = "<group>";
+		};
+		F10000000000000000000004 = {
+			isa = "PBXGroup";
+			children = (
+				"A00000000000000000000075",
+			);
+			name = "Catalogues";
+			sourceTree = "<group>";
+		};
+		F10000000000000000000005 = {
+			isa = "PBXGroup";
+			children = (
+				"A00000000000000119",
+			);
+			name = "Fonts";
+			sourceTree = "<group>";
+		};
+		F10000000000000000000006 = {
+			isa = "PBXGroup";
+			children = (
+				"B00000000000000000000002",
+			);
+			name = "IconDesigns";
+			sourceTree = "<group>";
+		};
+		F10000000000000000000007 = {
+			isa = "PBXGroup";
+			children = (
+				"F10000000000000000000001",
+				"F10000000000000000000002",
+				"F10000000000000000000003",
+				"F10000000000000000000004",
+				"F10000000000000000000005",
+				"F10000000000000000000006",
+			);
+			name = "Shared";
+			sourceTree = "<group>";
+		};
+		F1000000000000000000000B = {
+			isa = "PBXGroup";
+			children = (
+				"B00000000000000000000004",
+				"F10000000000000000000008",
+				"F10000000000000000000009",
+				"F1000000000000000000000A",
+			);
+			name = "iOS";
+			sourceTree = "<group>";
+		};
+		F1000000000000000000000F = {
+			isa = "PBXGroup";
+			children = (
+				"F00000000000000000000001",
+				"F1000000000000000000000C",
+				"F1000000000000000000000D",
+				"F1000000000000000000000E",
+			);
+			name = "macOS";
+			sourceTree = "<group>";
+		};
+		A00000000000000000000013 = {
+			isa = "PBXGroup";
+			children = (
+				"A00000000000000000000014",
+				"E00000000000000000000005",
+				"E00000000000000000000014",
+				"A00000000000000000000015",
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+		A00000000000000000000012 = {
+			isa = "PBXGroup";
+			children = (
+				"F10000000000000000000007",
+				"F1000000000000000000000B",
+				"F1000000000000000000000F",
+				"F10000000000000000000010",
+				"F10000000000000000000011",
+				"A00000000000000000000013",
+			);
+			name = "Literature Clock";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A00000000000000000000002 /* LiteratureClock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00000000000000000000021 /* Build configuration list for PBXNativeTarget "LiteratureClock" */;
+			buildPhases = (
+				A00000000000000000000031 /* Sources */,
+				A00000000000000000000041 /* Frameworks */,
+				A00000000000000000000051 /* Resources */,
+				A00000000000000000000063 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+                C00000000000000000000002 /* LiteratureClockWidgetExtension */,
+			);
+			name = LiteratureClock;
+			productName = LiteratureClock;
+			productReference = A00000000000000000000014 /* LiteratureClock.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A00000000000000000000003 /* LiteratureClockWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00000000000000000000022 /* Build configuration list for PBXNativeTarget "LiteratureClockWidgetExtension" */;
+			buildPhases = (
+				A00000000000000000000032 /* Sources */,
+				A00000000000000000000042 /* Frameworks */,
+				A00000000000000000000052 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LiteratureClockWidgetExtension;
+			productName = LiteratureClockWidgetExtension;
+			productReference = A00000000000000000000015 /* LiteratureClockWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+E00000000000000000000001 = {
+	buildConfigurationList = "E00000000000000000000002";
+	productReference = "E00000000000000000000005";
+	productType = "com.apple.product-type.application";
+	productName = "LiteratureClockMac";
+	isa = "PBXNativeTarget";
+	buildPhases = ("E00000000000000000000006", "E0000000000000000000000D", "E0000000000000000000000E", "E00000000000000000000012", );
+	dependencies = ("E00000000000000000000015", );
+	name = "LiteratureClockMac";
+	buildRules = ();
+};
+E00000000000000000000002 = {
+	isa = "XCConfigurationList";
+	defaultConfigurationIsVisible = "0";
+	defaultConfigurationName = "Release";
+	buildConfigurations = ("E00000000000000000000003", "E00000000000000000000004", );
+};
+E00000000000000000000003 = {
+	isa = "XCBuildConfiguration";
+	buildSettings = {
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+	PRODUCT_BUNDLE_IDENTIFIER = "net.literatureclock.mac";
+	CURRENT_PROJECT_VERSION = "1";
+	DEVELOPMENT_TEAM = "JTNBVS8ZJ3";
+	SDKROOT = "macosx";
+	SWIFT_VERSION = "5.0";
+	INFOPLIST_FILE = "macOS/Info.plist";
+	GENERATE_INFOPLIST_FILE = "NO";
+	ALWAYS_SEARCH_USER_PATHS = "NO";
+	CODE_SIGN_ENTITLEMENTS = "macOS/LiteratureClock.entitlements";
+	CODE_SIGN_STYLE = "Automatic";
+	PRODUCT_NAME = "$(TARGET_NAME)";
+	CLANG_ENABLE_OBJC_WEAK = "YES";
+	COPY_PHASE_STRIP = "NO";
+	SUPPORTED_PLATFORMS = "macosx";
+	MACOSX_DEPLOYMENT_TARGET = "14.0";
+	ENABLE_APP_SANDBOX = "YES";
+};
+	name = "Debug";
+};
+E00000000000000000000004 = {
+	isa = "XCBuildConfiguration";
+	buildSettings = {
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+	PRODUCT_BUNDLE_IDENTIFIER = "net.literatureclock.mac";
+	CURRENT_PROJECT_VERSION = "1";
+	DEVELOPMENT_TEAM = "JTNBVS8ZJ3";
+	SDKROOT = "macosx";
+	SWIFT_VERSION = "5.0";
+	INFOPLIST_FILE = "macOS/Info.plist";
+	GENERATE_INFOPLIST_FILE = "NO";
+	ALWAYS_SEARCH_USER_PATHS = "NO";
+	CODE_SIGN_ENTITLEMENTS = "macOS/LiteratureClock.entitlements";
+	CODE_SIGN_STYLE = "Automatic";
+	PRODUCT_NAME = "$(TARGET_NAME)";
+	CLANG_ENABLE_OBJC_WEAK = "YES";
+	COPY_PHASE_STRIP = "NO";
+	SUPPORTED_PLATFORMS = "macosx";
+	MACOSX_DEPLOYMENT_TARGET = "14.0";
+	ENABLE_APP_SANDBOX = "YES";
+};
+	name = "Release";
+};
+E00000000000000000000005 = {
+	path = "LiteratureClockMac.app";
+	isa = "PBXFileReference";
+	includeInIndex = "0";
+	explicitFileType = "wrapper.application";
+	sourceTree = "BUILT_PRODUCTS_DIR";
+};
+E00000000000000000000006 = {
+	isa = "PBXSourcesBuildPhase";
+	buildActionMask = "2147483647";
+	files = ("E00000000000000000000007", "E00000000000000000000008", "E00000000000000000000009", "E0000000000000000000000A", "E0000000000000000000000B", "E0000000000000000000000C", );
+	runOnlyForDeploymentPostprocessing = "0";
+};
+E00000000000000000000007 = {
+	isa = "PBXBuildFile";
+	fileRef = "D00000000000000000000003";
+};
+E00000000000000000000008 = {
+	isa = "PBXBuildFile";
+	fileRef = "A00000000000000000000071";
+};
+E00000000000000000000009 = {
+	isa = "PBXBuildFile";
+	fileRef = "A00000000000000000000072";
+};
+E0000000000000000000000A = {
+	isa = "PBXBuildFile";
+	fileRef = "A00000000000000000000073";
+};
+E0000000000000000000000B = {
+	isa = "PBXBuildFile";
+	fileRef = "A00000000000000000000076";
+};
+E0000000000000000000000C = {
+	isa = "PBXBuildFile";
+	fileRef = "A00000000000000000000077";
+};
+E0000000000000000000000D = {
+	isa = "PBXFrameworksBuildPhase";
+	buildActionMask = "2147483647";
+	files = ();
+	runOnlyForDeploymentPostprocessing = "0";
+};
+E0000000000000000000000E = {
+	isa = "PBXResourcesBuildPhase";
+	buildActionMask = "2147483647";
+	files = (F00000000000000000000002, "E0000000000000000000000F", "E00000000000000000000010", );
+	runOnlyForDeploymentPostprocessing = "0";
+};
+E0000000000000000000000F = {
+	isa = "PBXBuildFile";
+	fileRef = "A00000000000000000000075";
+};
+E00000000000000000000010 = {
+	isa = "PBXBuildFile";
+	fileRef = "A00000000000000119";
+};
+E00000000000000000000011 = {
+	isa = "PBXBuildFile";
+	fileRef = "B00000000000000000000004";
+};
+E00000000000000000000012 = {
+	buildActionMask = "2147483647";
+	dstSubfolderSpec = "13";
+	isa = "PBXCopyFilesBuildPhase";
+	runOnlyForDeploymentPostprocessing = "0";
+	dstPath = "";
+	files = ("E00000000000000000000013", );
+	name = "Embed Foundation Extensions";
+};
+E00000000000000000000013 = {
+	isa = "PBXBuildFile";
+	fileRef = "E00000000000000000000014";
+	settings = {
+	ATTRIBUTES = ("CodeSignOnCopy", "RemoveHeadersOnCopy", );
+};
+};
+E00000000000000000000014 = {
+	path = "LiteratureClockMacWidgetExtension.appex";
+	isa = "PBXFileReference";
+	includeInIndex = "0";
+	explicitFileType = "wrapper.app-extension";
+	sourceTree = "BUILT_PRODUCTS_DIR";
+};
+E00000000000000000000015 = {
+	isa = "PBXTargetDependency";
+	target = "E00000000000000000000016";
+	targetProxy = "E00000000000000000000024";
+};
+E00000000000000000000016 = {
+	buildConfigurationList = "E00000000000000000000017";
+	productReference = "E00000000000000000000014";
+	productType = "com.apple.product-type.app-extension";
+	productName = "LiteratureClockMacWidgetExtension";
+	isa = "PBXNativeTarget";
+	buildPhases = ("E0000000000000000000001A", "E00000000000000000000020", "E00000000000000000000021", );
+	dependencies = ();
+	name = "LiteratureClockMacWidgetExtension";
+	buildRules = ();
+};
+E00000000000000000000017 = {
+	isa = "XCConfigurationList";
+	defaultConfigurationIsVisible = "0";
+	defaultConfigurationName = "Release";
+	buildConfigurations = ("E00000000000000000000018", "E00000000000000000000019", );
+};
+E00000000000000000000018 = {
+	isa = "XCBuildConfiguration";
+	buildSettings = {
+	PRODUCT_BUNDLE_IDENTIFIER = "net.literatureclock.mac.widget";
+	APPLICATION_EXTENSION_API_ONLY = "YES";
+	DEVELOPMENT_TEAM = "JTNBVS8ZJ3";
+	SWIFT_VERSION = "5.0";
+	INFOPLIST_FILE = "macOS/WidgetInfo.plist";
+	SKIP_INSTALL = "YES";
+	GENERATE_INFOPLIST_FILE = "NO";
+	ALWAYS_SEARCH_USER_PATHS = "NO";
+	CODE_SIGN_ENTITLEMENTS = "macOS/LiteratureClock.entitlements";
+	PRODUCT_NAME = "$(TARGET_NAME)";
+	CODE_SIGN_STYLE = "Automatic";
+	SDKROOT = "macosx";
+	CURRENT_PROJECT_VERSION = "1";
+	CLANG_ENABLE_OBJC_WEAK = "YES";
+	SUPPORTED_PLATFORMS = "macosx";
+	MACOSX_DEPLOYMENT_TARGET = "14.0";
+	ENABLE_APP_SANDBOX = "YES";
+};
+	name = "Debug";
+};
+E00000000000000000000019 = {
+	isa = "XCBuildConfiguration";
+	buildSettings = {
+	PRODUCT_BUNDLE_IDENTIFIER = "net.literatureclock.mac.widget";
+	APPLICATION_EXTENSION_API_ONLY = "YES";
+	DEVELOPMENT_TEAM = "JTNBVS8ZJ3";
+	SWIFT_VERSION = "5.0";
+	INFOPLIST_FILE = "macOS/WidgetInfo.plist";
+	SKIP_INSTALL = "YES";
+	GENERATE_INFOPLIST_FILE = "NO";
+	ALWAYS_SEARCH_USER_PATHS = "NO";
+	CODE_SIGN_ENTITLEMENTS = "macOS/LiteratureClock.entitlements";
+	PRODUCT_NAME = "$(TARGET_NAME)";
+	CODE_SIGN_STYLE = "Automatic";
+	SDKROOT = "macosx";
+	CURRENT_PROJECT_VERSION = "1";
+	CLANG_ENABLE_OBJC_WEAK = "YES";
+	SUPPORTED_PLATFORMS = "macosx";
+	MACOSX_DEPLOYMENT_TARGET = "14.0";
+	ENABLE_APP_SANDBOX = "YES";
+};
+	name = "Release";
+};
+E0000000000000000000001A = {
+	isa = "PBXSourcesBuildPhase";
+	buildActionMask = "2147483647";
+	files = ("E0000000000000000000001B", "E0000000000000000000001C", "E0000000000000000000001D", "E0000000000000000000001E", "E0000000000000000000001F", );
+	runOnlyForDeploymentPostprocessing = "0";
+};
+E0000000000000000000001B = {
+	isa = "PBXBuildFile";
+	fileRef = "A00000000000000000000072";
+};
+E0000000000000000000001C = {
+	isa = "PBXBuildFile";
+	fileRef = "D00000000000000000000003";
+};
+E0000000000000000000001D = {
+	isa = "PBXBuildFile";
+	fileRef = "A00000000000000000000074";
+};
+E0000000000000000000001E = {
+	isa = "PBXBuildFile";
+	fileRef = "A00000000000000000000076";
+};
+E0000000000000000000001F = {
+	isa = "PBXBuildFile";
+	fileRef = "A00000000000000000000077";
+};
+E00000000000000000000020 = {
+	isa = "PBXFrameworksBuildPhase";
+	buildActionMask = "2147483647";
+	files = ();
+	runOnlyForDeploymentPostprocessing = "0";
+};
+E00000000000000000000021 = {
+	isa = "PBXResourcesBuildPhase";
+	buildActionMask = "2147483647";
+	files = ("E00000000000000000000022", "E00000000000000000000023", );
+	runOnlyForDeploymentPostprocessing = "0";
+};
+E00000000000000000000022 = {
+	isa = "PBXBuildFile";
+	fileRef = "A00000000000000000000075";
+};
+E00000000000000000000023 = {
+	isa = "PBXBuildFile";
+	fileRef = "A00000000000000119";
+};
+E00000000000000000000024 = {
+	isa = "PBXContainerItemProxy";
+	containerPortal = "A00000000000000000000001";
+	remoteGlobalIDString = "E00000000000000000000016";
+	remoteInfo = "LiteratureClockMacWidgetExtension";
+	proxyType = "1";
+};
+
+
+/* Begin PBXProject section */
+		A00000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2710;
+				TargetAttributes = {
+					A00000000000000000000002 = {
+						CreatedOnToolsVersion = 27.1;
+					};
+					A00000000000000000000003 = {
+						CreatedOnToolsVersion = 27.1;
+					};
+				};
+			};
+			buildConfigurationList = A00000000000000000000011 /* Build configuration list for PBXProject "LiteratureClock" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A00000000000000000000012;
+			productRefGroup = A00000000000000000000013 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+E00000000000000000000001,
+E00000000000000000000016,
+				A00000000000000000000002 /* LiteratureClock */,
+				A00000000000000000000003 /* LiteratureClockWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A00000000000000000000051 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00000000000000000000111 /* Shared/Catalogues in Resources */,
+				A00000000000000118 /* Shared/Fonts/SpecialElite-Regular.ttf in Resources */,
+				B00000000000000000000003 /* iOS/BookClock.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000000000000000000052 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00000000000000115 /* Shared/Catalogues in Resources */,
+				A00000000000000120 /* Shared/Fonts/SpecialElite-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A00000000000000000000031 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D00000000000000000000001 /* ClockWidgetConfiguration.swift in Sources */,
+				A00000000000000000000101 /* Shared/App/LiteratureClockApp.swift in Sources */,
+				A00000000000000000000102 /* Shared/Models/Quote.swift in Sources */,
+				A00000000000000000000103 /* Shared/App/ClockHomeView.swift in Sources */,
+				A00000000000000000000112 /* Shared/Models/ClockSettings.swift in Sources */,
+				A00000000000000117 /* Shared/Models/CycleQuoteIntent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000000000000000000032 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00000000000000000000104 /* Shared/Models/Quote.swift in Sources */,
+				D00000000000000000000002 /* ClockWidgetConfiguration.swift in Sources */,
+				A00000000000000000000105 /* Shared/Widgets/LiteratureClockWidget.swift in Sources */,
+				A00000000000000000000113 /* Shared/Models/ClockSettings.swift in Sources */,
+				A00000000000000116 /* Shared/Models/CycleQuoteIntent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A00000000000000000000081 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconBookClock;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = iOS/LiteratureClock.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = JTNBVS8ZJ3;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.literatureclock.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A00000000000000000000082 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconBookClock;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = iOS/LiteratureClock.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = JTNBVS8ZJ3;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.literatureclock.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A00000000000000000000083 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = iOS/LiteratureClock.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = JTNBVS8ZJ3;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = iOS/WidgetInfo.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.literatureclock.app.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A00000000000000000000084 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = iOS/LiteratureClock.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = JTNBVS8ZJ3;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = iOS/WidgetInfo.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.literatureclock.app.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A00000000000000000000085 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LastUpgradeCheck = 2700;
+				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+			};
+			name = Debug;
+		};
+		A00000000000000000000086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LastUpgradeCheck = 2700;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A00000000000000000000011 /* Build configuration list for PBXProject "LiteratureClock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000000000000000000085 /* Debug */,
+				A00000000000000000000086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00000000000000000000021 /* Build configuration list for PBXNativeTarget "LiteratureClock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000000000000000000081 /* Debug */,
+				A00000000000000000000082 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00000000000000000000022 /* Build configuration list for PBXNativeTarget "LiteratureClockWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000000000000000000083 /* Debug */,
+				A00000000000000000000084 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A00000000000000000000001 /* Project object */;
+}

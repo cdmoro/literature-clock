@@ -1,5 +1,9 @@
 import SwiftUI
+#if os(macOS)
+import AppKit
+#else
 import UIKit
+#endif
 import WidgetKit
 
 struct ClockHomeView: View {
@@ -15,8 +19,8 @@ struct ClockHomeView: View {
     @AppStorage(ClockSettings.safeOnlyKey, store: ClockSettings.defaults) private var safeOnly = false
     @AppStorage(ClockSettings.attributionKey, store: ClockSettings.defaults) private var attribution = "book-author"
     @AppStorage(ClockSettings.quoteRevisionKey, store: ClockSettings.defaults) private var quoteRevision = 0
-    @State private var widgetQuote: WidgetQuoteDestination?
-    @State private var shareDestination: WidgetQuoteDestination?
+    @State private var presentedSheet: ClockSheet?
+    @State private var pendingSheet: ClockSheet?
 
     private var isDark: Bool { appearance == "dark" || (appearance == "system" && systemColorScheme == .dark) }
     private var selectedLocales: [String] { ClockCatalogue.selectedLocales(languageSelection, fallback: quoteLocale) }
@@ -75,6 +79,7 @@ struct ClockHomeView: View {
                             quoteNavigationButtons(count: quotes.count, index: quoteIndex, date: timeline.date, locale: primaryLocale)
                         }
                     }
+                    #if os(iOS)
                     Text("Add a medium or large widget\nfrom the Home Screen’s edit menu.")
                         .font(.footnote)
                         .foregroundStyle(foreground.opacity(0.6))
@@ -83,6 +88,7 @@ struct ClockHomeView: View {
                         .frame(maxWidth: 280)
                         .frame(maxWidth: .infinity)
                         .fixedSize(horizontal: false, vertical: true)
+                    #endif
                 }
                 .padding(.horizontal, 24)
                 .padding(.top, 24)
@@ -99,11 +105,10 @@ struct ClockHomeView: View {
                 }
                 .background(background.ignoresSafeArea())
                 .navigationTitle("Literature Clock")
-                .toolbarColorScheme(isDark ? .dark : .light, for: .navigationBar)
-                .toolbarBackground(background, for: .navigationBar)
+                .clockNavigationAppearance(background: background, dark: isDark)
                 .toolbar {
                     if let quote {
-                        ToolbarItem(placement: .topBarLeading) {
+                        ToolbarItem(placement: .clockLeading) {
                             Button {
                                 presentShareOptions(quote, locale: primaryLocale, palette: palette,
                                                    accentHex: palette == "custom" ? customAccentHex : "",
@@ -114,16 +119,18 @@ struct ClockHomeView: View {
                             }
                         }
                     }
-                    ToolbarItem(placement: .topBarTrailing) {
+                    ToolbarItem(placement: .clockTrailing) {
                         NavigationLink(destination: SettingsView()) { Label("Settings", systemImage: "gearshape") }
                     }
                 }
             }
-            .onOpenURL(perform: handleShareURL)
-            .sheet(item: $widgetQuote) { destination in
+        }
+        .onOpenURL(perform: handleShareURL)
+        .sheet(item: $presentedSheet, onDismiss: presentPendingSheet) { sheet in
+            switch sheet {
+            case .quote(let destination):
                 WidgetQuoteDetail(destination: destination)
-            }
-            .sheet(item: $shareDestination) { destination in
+            case .share(let destination):
                 QuoteShareOptions(quote: destination.quote, locale: destination.locale,
                                   palette: destination.palette, fontName: destination.font,
                                   highlight: destination.highlight, dark: destination.dark,
@@ -190,7 +197,7 @@ struct ClockHomeView: View {
             item.value.map { (item.name, $0) }
         }, uniquingKeysWith: { first, _ in first })
         if url.host == "quote" {
-            widgetQuote = WidgetQuoteDestination(quote: quote, locale: locale, values: values)
+            presentSheet(.quote(WidgetQuoteDestination(quote: quote, locale: locale, values: values)))
             return
         }
         presentShareOptions(quote, locale: locale, palette: values["palette"] ?? "red",
@@ -204,13 +211,42 @@ struct ClockHomeView: View {
                                      dark: Bool, fuzzy: Bool, attribution: String) {
         // Present the quote and its style atomically. Separate @State values can
         // leave the sheet capturing the previous widget's appearance.
-        shareDestination = WidgetQuoteDestination(quote: quote, locale: locale, values: [
+        presentSheet(.share(WidgetQuoteDestination(quote: quote, locale: locale, values: [
             "palette": palette, "accent": accentHex, "font": font,
             "highlight": highlight ? "1" : "0", "dark": dark ? "1" : "0",
             "fuzzy": fuzzy ? "1" : "0", "attribution": attribution
-        ])
+        ])))
     }
 
+    private func presentSheet(_ sheet: ClockSheet) {
+        guard presentedSheet?.id != sheet.id else { return }
+        if presentedSheet == nil, pendingSheet == nil {
+            presentedSheet = sheet
+        } else {
+            // Wait for the active presentation to dismiss before opening a deep link.
+            pendingSheet = sheet
+            presentedSheet = nil
+        }
+    }
+
+    private func presentPendingSheet() {
+        guard let next = pendingSheet else { return }
+        pendingSheet = nil
+        presentedSheet = next
+    }
+
+}
+
+private enum ClockSheet: Identifiable {
+    case quote(WidgetQuoteDestination)
+    case share(WidgetQuoteDestination)
+
+    var id: String {
+        switch self {
+        case .quote(let destination): "quote|" + destination.id
+        case .share(let destination): "share|" + destination.id
+        }
+    }
 }
 
 private struct WidgetQuoteDestination: Identifiable {
@@ -283,14 +319,14 @@ private struct WidgetQuoteDetail: View {
                 .foregroundStyle(foreground)
                 .padding(24)
                 .environment(\.locale, Locale(identifier: destination.locale))
-                .environment(\.layoutDirection, Locale.characterDirection(forLanguage: Locale(identifier: destination.locale).language.languageCode?.identifier ?? "en") == .rightToLeft ? .rightToLeft : .leftToRight)
+                .environment(\.layoutDirection, Locale.Language(identifier: destination.locale).characterDirection == .rightToLeft ? .rightToLeft : .leftToRight)
             }
             .background(destination.background)
             .navigationTitle(detailTitle)
-            .navigationBarTitleDisplayMode(.inline)
+            .clockInlineTitle()
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) { Button("Done") { dismiss() } }
-                ToolbarItem(placement: .topBarLeading) {
+                ToolbarItem(placement: .clockLeading) {
                     Button { sharing = true } label: { Label("Share", systemImage: "square.and.arrow.up") }
                 }
             }
@@ -302,6 +338,9 @@ private struct WidgetQuoteDetail: View {
                                   attribution: destination.values["attribution"] ?? "book-author")
             }
         }
+        #if os(macOS)
+        .frame(minWidth: 500, idealWidth: 600, minHeight: 500, idealHeight: 650)
+        #endif
         .preferredColorScheme(destination.dark ? .dark : .light)
     }
 }
@@ -323,7 +362,11 @@ private struct QuoteShareOptions: View {
     @State private var shareFontRaw: String
     @AppStorage("quote-share-alignment") private var alignmentRaw = QuoteShareAlignment.center.rawValue
     @State private var customAccentHex = "#B36E26"
+    #if os(macOS)
+    @State private var imageToShare: NSImage?
+    #else
     @State private var imageToShare: UIImage?
+    #endif
     @State private var showingActivity = false
     @State private var copied = false
     @State private var shareHighlight = true
@@ -414,7 +457,11 @@ private struct QuoteShareOptions: View {
                             accent: effectiveAccent, background: effectiveBackground, font: shareFont,
                             alignment: alignment, highlight: shareHighlight, fuzzy: fuzzy, format: format))
                         renderer.scale = 3
+                        #if os(macOS)
+                        imageToShare = renderer.nsImage
+                        #else
                         imageToShare = renderer.uiImage
+                        #endif
                         showingActivity = imageToShare != nil
                     } label: {
                         shareActionLabel(title: "Share quote", symbol: "square.and.arrow.up")
@@ -422,7 +469,7 @@ private struct QuoteShareOptions: View {
                     .accessibilityLabel("Share quote")
 
                     Button {
-                        UIPasteboard.general.string = quote.text(for: Locale(identifier: locale))
+                        copyQuoteText(quote.text(for: Locale(identifier: locale)))
                         copied = true
                     } label: {
                         shareActionLabel(title: copied ? "Copied" : "Copy text",
@@ -436,15 +483,30 @@ private struct QuoteShareOptions: View {
                 .background(.bar)
             }
             .navigationTitle("Share quote")
-            .navigationBarTitleDisplayMode(.inline)
+            .clockInlineTitle()
             .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Done") { dismiss() } } }
             .sheet(isPresented: $showingActivity) {
                 if let imageToShare {
+                    #if os(macOS)
+                    VStack(spacing: 20) {
+                        ShareLink(item: Image(nsImage: imageToShare),
+                                  preview: SharePreview("Literature Clock", image: Image(nsImage: imageToShare))) {
+                            Label("Share quote", systemImage: "square.and.arrow.up")
+                        }
+                        Button("Copy quote text") { copyQuoteText(quote.text(for: Locale(identifier: locale))) }
+                        Button("Done") { showingActivity = false }
+                    }.padding(32)
+                    #else
                     ActivityView(activityItems: [imageToShare], copyText: quote.text(for: Locale(identifier: locale)))
+                    #endif
                 }
             }
         }
+        #if os(macOS)
+        .frame(minWidth: 520, idealWidth: 580, minHeight: 700, idealHeight: 800)
+        #else
         .presentationDetents([.large])
+        #endif
     }
 
     init(quote: Quote, locale: String, palette: String, fontName: String,
@@ -774,6 +836,7 @@ private enum QuoteShareBrand {
     }
 }
 
+#if os(iOS)
 private struct ActivityView: UIViewControllerRepresentable {
     let activityItems: [Any]
     let copyText: String
@@ -805,7 +868,9 @@ private final class CopyQuoteActivity: UIActivity {
     }
 }
 
-private struct SettingsView: View {
+#endif
+
+struct SettingsView: View {
     @Environment(\.colorScheme) private var systemColorScheme
     @AppStorage(ClockSettings.localeKey, store: ClockSettings.defaults) private var quoteLocale = "en-US"
     @AppStorage(ClockSettings.localesKey, store: ClockSettings.defaults) private var languageSelection = ""
@@ -906,6 +971,9 @@ private struct SettingsView: View {
         .onChange(of: customAccentHex) { _, _ in
             WidgetCenter.shared.reloadAllTimelines()
         }
+        #if os(macOS)
+        .formStyle(.grouped)
+        #endif
         .navigationTitle("Settings")
     }
 
@@ -1032,7 +1100,7 @@ private struct QuoteLanguageSelectionView: View {
             .foregroundStyle(.primary)
         }
         .navigationTitle("Quote languages")
-        .navigationBarTitleDisplayMode(.inline)
+        .clockInlineTitle()
         .safeAreaInset(edge: .bottom) {
             Text("Select one or more. One quote is chosen at random each minute.")
                 .font(.footnote).foregroundStyle(.secondary)
@@ -1051,5 +1119,50 @@ private struct QuoteLanguageSelectionView: View {
         }
         languageSelection = locales.joined(separator: ",")
         quoteLocale = locales.first ?? quoteLocale
+    }
+}
+
+// Keep platform adaptations here so the clock, settings and share composition stay shared.
+private func copyQuoteText(_ text: String) {
+    #if os(macOS)
+    NSPasteboard.general.clearContents()
+    NSPasteboard.general.setString(text, forType: .string)
+    #else
+    UIPasteboard.general.string = text
+    #endif
+}
+
+private extension ToolbarItemPlacement {
+    static var clockLeading: Self {
+        #if os(macOS)
+        .automatic
+        #else
+        .topBarLeading
+        #endif
+    }
+    static var clockTrailing: Self {
+        #if os(macOS)
+        .primaryAction
+        #else
+        .topBarTrailing
+        #endif
+    }
+}
+
+private extension View {
+    @ViewBuilder func clockInlineTitle() -> some View {
+        #if os(macOS)
+        self
+        #else
+        navigationBarTitleDisplayMode(.inline)
+        #endif
+    }
+    @ViewBuilder func clockNavigationAppearance(background: Color, dark: Bool) -> some View {
+        #if os(macOS)
+        self
+        #else
+        toolbarColorScheme(dark ? .dark : .light, for: .navigationBar)
+            .toolbarBackground(background, for: .navigationBar)
+        #endif
     }
 }

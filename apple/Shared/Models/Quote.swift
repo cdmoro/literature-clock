@@ -87,7 +87,7 @@ enum ClockCatalogue {
         catalogueLock.lock()
         defer { catalogueLock.unlock() }
         if let cached = catalogueCache[locale] { return cached }
-        let sharedURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.net.literatureclock.app")?
+        let sharedURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: ClockSettings.appGroup)?
             .appendingPathComponent("Catalogues/\(locale).json")
         let bundleURL = Bundle.main.url(forResource: locale, withExtension: "json", subdirectory: "Catalogues")
         // Prefer the catalogues packaged with this app/extension. The shared
@@ -104,7 +104,7 @@ enum ClockCatalogue {
 
     static func installSharedCatalogues() {
         guard let source = Bundle.main.resourceURL?.appendingPathComponent("Catalogues"),
-              let shared = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.net.literatureclock.app")?
+              let shared = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: ClockSettings.appGroup)?
                 .appendingPathComponent("Catalogues"),
               !FileManager.default.fileExists(atPath: shared.appendingPathComponent("en-US.json").path) else { return }
         try? FileManager.default.removeItem(at: shared)
