@@ -1,7 +1,6 @@
 import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 import { createStore, store } from '../store';
 import { initZenMode } from './zen';
-import ZEN from '../strings/zen.json';
 import TRANSLATIONS from '../strings/translations.json';
 
 vi.mock('./screensaver', () => ({ exitScreensaverMode: vi.fn() }));
@@ -79,10 +78,10 @@ test('reveals exit on pointer interaction after the hint expires and supports to
 });
 
 test('provides hints in every interface locale and an accessible exit label', () => {
-  expect(Object.keys(ZEN).sort()).toEqual(Object.keys(TRANSLATIONS).sort());
+  for (const labels of Object.values(TRANSLATIONS)) expect(labels.zen_mode_hint).toBeTruthy();
   click('zen');
   store.set('ui-locale', 'ar-AE');
-  expect(document.getElementById('zen-hint')!.textContent).toBe(ZEN['ar-AE'].hint);
+  expect(document.getElementById('zen-hint')!.textContent).toBe(TRANSLATIONS['ar-AE'].zen_mode_hint);
   expect(document.getElementById('exit-zen')!.getAttribute('aria-label')).toBe(TRANSLATIONS['ar-AE'].exit_zen_title);
 });
 

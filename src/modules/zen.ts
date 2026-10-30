@@ -1,7 +1,6 @@
 import { exitScreensaverMode } from './screensaver';
 import { store } from '../store';
-import { getBaseLocale, getInterfaceLocale, getStrings } from './locales';
-import ZEN from '../strings/zen.json';
+import { getInterfaceLocale, getStrings } from './locales';
 
 export function initZenMode() {
   const trigger = document.getElementById('zen');
@@ -27,7 +26,7 @@ export function initZenMode() {
       exit.setAttribute('aria-label', exit.title);
     }
     if (hint) {
-      hint.textContent = active ? ZEN[getBaseLocale(getInterfaceLocale())].hint : '';
+      hint.textContent = active ? getStrings(getInterfaceLocale()).zen_mode_hint : '';
       hint.classList.remove('zen-hint-fading');
       hint.hidden = !active;
     }
@@ -74,7 +73,7 @@ export function initZenMode() {
         exit.title = getStrings(getInterfaceLocale()).exit_zen_title;
         exit.setAttribute('aria-label', exit.title);
       }
-      if (hint) hint.textContent = state.zen ? ZEN[getBaseLocale(getInterfaceLocale())].hint : '';
+      if (hint) hint.textContent = state.zen ? getStrings(getInterfaceLocale()).zen_mode_hint : '';
     }
   });
   refresh();
