@@ -82,7 +82,7 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             restartShowcase()
         }
         if CommandLine.arguments.contains("--check-render") {
-            let keys = ["theme", "background", "background-pattern", "palette", "custom-color", "show-time", "fuzzy-clock", "hide-book-title", "quote-attribution", "quote-locales", "work", "locale", "screensaver", "progressbar"]
+            let keys = ["font", "theme", "background", "background-pattern", "palette", "custom-color", "show-time", "fuzzy-clock", "hide-book-title", "quote-attribution", "quote-locales", "work", "locale", "screensaver", "progressbar"]
             let saved = keys.map { ($0, clock.preferences.object(forKey: $0)) }
             defer {
                 for (key, value) in saved { clock.preferences.set(value, forKey: key) }
@@ -146,6 +146,15 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
                 clock.cacheDisplay(in: clock.bounds, to: bitmap)
                 try! bitmap.representation(using: .png, properties: [:])!.write(to: output.appendingPathComponent(locale + ".png"))
             }
+            for choice in ["serif", "sans-serif", "monospace"] {
+                clock.preferences.set(choice, forKey: "font")
+                let expected = clock.quoteFont(24, locale: "en-GB").fontName
+                for locale in clock.localeNames {
+                    precondition(clock.quoteFont(24, locale: locale).fontName == expected, "System family must apply to both passage languages")
+                }
+                precondition(!expected.contains("SpecialElite"), "System family must override the theme")
+            }
+            clock.preferences.set("default", forKey: "font")
             let unavailable = NativeClockView(frame: clock.bounds, isPreview: true)!
             unavailable.preferences = clock.preferences
             unavailable.resourceURLOverride = output.appendingPathComponent("missing-resources")
