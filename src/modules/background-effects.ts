@@ -212,7 +212,7 @@ export function initBackgroundEffects() {
   const refresh = () => {
     const selected = store.get('background-effect');
     const supported = supportsBackgroundPattern(store.get('theme'));
-    const effect = supported ? selected : 'none';
+    const effect = supported && !store.get('zen') ? selected : 'none';
     document.documentElement.dataset.backgroundEffect = effect;
     const select = document.getElementById('background-effect') as HTMLSelectElement | null;
     if (select) {
@@ -243,7 +243,7 @@ export function initBackgroundEffects() {
   store.subscribe((state, old) => {
     if (state['background-effect'] !== old['background-effect']) resize();
     if (state['background-effect'] !== old['background-effect']) refreshPicker();
-    if (state['background-effect'] !== old['background-effect'] || state.theme !== old.theme) refresh();
+    if (state['background-effect'] !== old['background-effect'] || state.theme !== old.theme || state.zen !== old.zen) refresh();
   });
   refresh();
 }
