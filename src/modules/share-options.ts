@@ -29,7 +29,7 @@ let useDefaultColor = false;
 let font: string | undefined;
 let popupPhotoImage: string | null | undefined;
 let includePhoto = true;
-let highlightTime = true;
+let highlightTime = false;
 let uppercaseText = false;
 let alignment: 'start' | 'center' | 'end' = 'start';
 export const selectedCardOptions = () => ({
@@ -51,7 +51,7 @@ export const selectedCardOptions = () => ({
         : {};
   })(),
   color,
-  ...(!highlightTime ? { highlightTime: false } : {}),
+  ...(highlightTime ? { highlightTime: true } : {}),
   ...(uppercaseText ? { uppercase: true } : {}),
   ...(alignment !== 'start' ? { alignment } : {}),
   ...(palette && palette !== 'default' ? { palette } : {}),
@@ -79,9 +79,9 @@ export function initShareOptions() {
     if (!quote || store.get('quote')) return;
     const snapshot = { ...quote };
     try {
-      highlightTime = localStorage.getItem('share-highlight-time') !== 'false';
+      highlightTime = localStorage.getItem('share-highlight-time') === 'true';
     } catch {
-      highlightTime = true;
+      highlightTime = false;
     }
     uppercaseText = false;
     alignment = 'start';

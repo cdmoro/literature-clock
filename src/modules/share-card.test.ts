@@ -43,10 +43,11 @@ it.each([
     vi.mocked(html2canvas).mockImplementation(async (element, options) => {
       expect(options).toMatchObject({ width, height, scale: 1 });
       expect(element.textContent).toContain('<script>Beforenoon arrived');
+      expect(element.textContent).not.toContain(quote.time);
       expect(element.querySelector('script')).toBeNull();
       expect(element.querySelector('br')).not.toBeNull();
       expect(element.querySelector('em')?.textContent).toBe('Before');
-      expect(element.textContent).toContain('— Book,Writer');
+      expect(element.textContent).toContain('— Book, Writer');
       expect((element as HTMLElement).dir).toBe('ltr');
       expect(element.lastElementChild?.textContent).toBe('Reloj literario · literatureclock.netlify.app');
       expect((element.lastElementChild as HTMLElement).dir).toBe('ltr');
@@ -91,10 +92,17 @@ it('resolves preview colour and pattern on an isolated palette and exports its t
   vi.mocked(html2canvas).mockImplementation(async (element) => {
     expect(element.style.backgroundSize).toBe('24px 24px');
     expect(element.style.backgroundImage).toContain('/pattern.png');
-    expect(element.firstElementChild?.getAttribute('style')).toContain('rgb(18, 52, 86)');
+    const highlighted = [...element.querySelectorAll<HTMLElement>('div[dir="auto"] > span')].find(
+      (span) => span.style.color,
+    );
+    expect(highlighted?.style.color).toBe('rgb(18, 52, 86)');
     return document.createElement('canvas');
   });
-  await renderShareCard(quote, 'square', undefined, undefined, { color: '#123456', pattern: 'grid' });
+  await renderShareCard(quote, 'square', undefined, undefined, {
+    color: '#123456',
+    pattern: 'grid',
+    highlightTime: true,
+  });
   expect(document.documentElement.getAttribute('style')).toBe(liveStyle);
   expect(document.documentElement.dataset.theme).toBe('base-light');
   computed.mockRestore();
@@ -145,32 +153,29 @@ it.each(['dots', 'circles', 'diagonal', 'diagonal-wide'] as const)(
 );
 
 it.each([
-  ['es-ES', 'start', 'start', 'flex-start', '— Book,Writer'],
-  ['es-ES', 'center', 'center', 'center', 'BookWriter'],
-  ['es-ES', 'end', 'end', 'flex-end', '— Book,Writer'],
-  ['ar-AE', 'start', 'start', 'flex-start', '— Book,Writer'],
-  ['ar-AE', 'center', 'center', 'center', 'BookWriter'],
-  ['ar-AE', 'end', 'end', 'flex-end', '— Book,Writer'],
-] as const)(
-  'aligns %s attribution with %s quote alignment',
-  async (locale, quoteAlignment, textAlignment, flexAlignment, text) => {
-    vi.mocked(html2canvas).mockImplementation(async (element) => {
-      const credit = element.querySelector<HTMLElement>('.share-card-credit')!;
-      expect(credit.textContent).toBe(text);
-      expect(credit.style.textAlign).toBe(textAlignment);
-      expect(credit.style.alignItems).toBe(flexAlignment);
-      expect(credit.style.flexDirection).toBe('column');
-      expect(credit.dir).toBe(locale === 'ar-AE' ? 'rtl' : 'ltr');
-      return document.createElement('canvas');
-    });
-    await renderShareCard({ ...quote, locale }, 'square', undefined, undefined, { alignment: quoteAlignment });
-  },
-);
+  ['es-ES', 'start', 'start', '— Book, Writer'],
+  ['es-ES', 'center', 'center', 'Book Writer'],
+  ['es-ES', 'end', 'end', '— Book, Writer'],
+  ['ar-AE', 'start', 'start', '— Book, Writer'],
+  ['ar-AE', 'center', 'center', 'Book Writer'],
+  ['ar-AE', 'end', 'end', '— Book, Writer'],
+] as const)('aligns %s attribution with %s quote alignment', async (locale, quoteAlignment, textAlignment, text) => {
+  vi.mocked(html2canvas).mockImplementation(async (element) => {
+    const credit = element.querySelector<HTMLElement>('.share-card-credit')!;
+    expect(credit.textContent).toBe(text);
+    expect(credit.style.textAlign).toBe(textAlignment);
+    expect(credit.querySelectorAll('[dir="auto"]')).toHaveLength(2);
+    expect(credit.style.display).toBe('');
+    expect(credit.dir).toBe(locale === 'ar-AE' ? 'rtl' : 'ltr');
+    return document.createElement('canvas');
+  });
+  await renderShareCard({ ...quote, locale }, 'square', undefined, undefined, { alignment: quoteAlignment });
+});
 
 it('isolates mixed-script book and author names and defaults RTL text to the right', async () => {
   vi.mocked(html2canvas).mockImplementation(async (element) => {
     const credit = element.querySelector('.share-card-credit')!;
-    expect(credit.textContent).toBe('— كتاب عربي,Stanley R. Matthews');
+    expect(credit.textContent).toBe('— كتاب عربي, Stanley R. Matthews');
     expect(element.querySelector<HTMLElement>('div[dir="auto"]')?.style.textAlign).toBe('start');
     expect((element as HTMLElement).dir).toBe('rtl');
     expect(credit.getAttribute('dir')).toBe('rtl');

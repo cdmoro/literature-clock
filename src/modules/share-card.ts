@@ -39,7 +39,6 @@ export async function renderShareCard(
   const [width, height] = cardFormats[format];
   const bodyStyle = getComputedStyle(document.body);
   const quoteStyle = getComputedStyle(document.getElementById('quote') || document.body);
-  const timeStyle = getComputedStyle(document.getElementById('time-clock') || document.body);
   const card = document.createElement('div');
   // Resolve the existing theme variant on an isolated element, never changing the clock.
   const palette = document.createElement('div');
@@ -256,13 +255,6 @@ export async function renderShareCard(
   card.lang = quote.locale;
   card.dir = textDirection(quote.locale);
   card.setAttribute('aria-hidden', 'true');
-  const time = document.createElement('div');
-  time.textContent = quote.time;
-  Object.assign(time.style, {
-    fontSize: '32px',
-    color: accent,
-    textShadow: timeStyle.textShadow,
-  });
   const content = document.createElement('div');
   content.style.textShadow = quoteStyle.textShadow;
   const passage = document.createElement('div');
@@ -281,7 +273,7 @@ export async function renderShareCard(
   for (const [text, highlighted] of passageParts) {
     const span = document.createElement('span');
     span.append(quoteMarkup(text || ''));
-    if (highlighted && options.highlightTime !== false) span.style.color = time.style.color;
+    if (highlighted && options.highlightTime) span.style.color = accent;
     passage.append(span);
   }
   if (!passage.textContent) passage.textContent = isFuzzy ? quote.quote_time_case : quote.quote_raw;
@@ -295,22 +287,17 @@ export async function renderShareCard(
   const centered = options.alignment === 'center';
   const attribution = store.get('hide-book-title') ? [quote.author] : [quote.title, quote.author];
   attribution.forEach((text, index) => {
-    const row = document.createElement('span');
-    if (index === 0 && !centered) row.append('— ');
+    if (index === 0 && !centered) credit.append('— ');
+    if (index > 0) credit.append(centered ? ' ' : ', ');
     const part = document.createElement('span');
     part.dir = 'auto';
     part.style.unicodeBidi = 'isolate';
     part.textContent = text;
-    row.append(part);
-    if (index < attribution.length - 1 && !centered) row.append(',');
-    credit.append(row);
+    credit.append(part);
   });
   Object.assign(credit.style, {
     marginTop: '40px',
     fontSize: '28px',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: centered ? 'center' : options.alignment === 'end' ? 'flex-end' : 'flex-start',
     textAlign: options.alignment || 'start',
   });
   if (isFuzzy || store.get('quote-attribution') === 'hidden') {
@@ -325,7 +312,7 @@ export async function renderShareCard(
     STRINGS[quote.locale.replace(/-draft$/, '') as keyof typeof STRINGS]?.signature || STRINGS['en-GB'].signature;
   signature.style.fontSize = '22px';
   if (photo) {
-    for (const element of [time, content, signature]) {
+    for (const element of [content, signature]) {
       element.style.position = 'relative';
       element.style.zIndex = '4';
     }
@@ -339,9 +326,9 @@ export async function renderShareCard(
       opacity: palette.dataset.theme?.endsWith('-dark') ? '0.65' : '0.35',
     });
     card.append(veil);
-    for (const element of [time, content, signature]) element.style.position = 'relative';
+    for (const element of [content, signature]) element.style.position = 'relative';
   }
-  card.append(time, content, signature);
+  card.append(content, signature);
   document.body.append(card);
   try {
     if (photo) await photo.decode().catch(() => undefined);

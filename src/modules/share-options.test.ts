@@ -544,25 +544,25 @@ it('keeps the previous canvas visible while a new preview is rendering', async (
 
 it('toggles time highlighting after Color, before the optional image, and remembers it', async () => {
   const toggle = button('Highlight time');
-  expect(toggle.getAttribute('aria-pressed')).toBe('true');
+  expect(toggle.getAttribute('aria-pressed')).toBe('false');
   const control = toggle.closest('.share-control')!;
   expect(control.previousElementSibling?.classList.contains('share-palette-control')).toBe(true);
   toggle.click();
   await Promise.resolve();
-  expect(selectedCardOptions()).toMatchObject({ highlightTime: false });
+  expect(selectedCardOptions()).toMatchObject({ highlightTime: true });
   expect(renderShareCard).toHaveBeenLastCalledWith(
     expect.anything(),
     expect.anything(),
     undefined,
     undefined,
-    expect.objectContaining({ highlightTime: false }),
+    expect.objectContaining({ highlightTime: true }),
   );
-  expect(localStorage.getItem('share-highlight-time')).toBe('false');
+  expect(localStorage.getItem('share-highlight-time')).toBe('true');
   button('Close').click();
   document.documentElement.dataset.background = 'photo';
   document.documentElement.style.setProperty('--photo-image', 'url("photo.jpg")');
   document.getElementById('share')!.click();
-  expect(button('Highlight time').getAttribute('aria-pressed')).toBe('false');
+  expect(button('Highlight time').getAttribute('aria-pressed')).toBe('true');
   const highlightControl = button('Highlight time').closest('.share-control')!;
   const uppercaseControl = highlightControl.nextElementSibling!;
   expect(uppercaseControl.querySelector('.share-uppercase-toggle')).not.toBeNull();
@@ -571,6 +571,7 @@ it('toggles time highlighting after Color, before the optional image, and rememb
   expect(alignmentControl.nextElementSibling).toBe(button('Include image').closest('.share-control'));
   button('Highlight time').click();
   expect(selectedCardOptions().highlightTime).toBeUndefined();
+  expect(localStorage.getItem('share-highlight-time')).toBe('false');
 });
 
 it('toggles uppercase text for the share card and starts disabled each time', async () => {
