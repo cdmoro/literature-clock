@@ -65,6 +65,10 @@ it('changes image format and appearance without changing the live clock', async 
   expect(button('Light').getAttribute('aria-pressed')).toBe('true');
   expect(document.documentElement.dataset.theme).toBe('base-dark');
 });
+it('hides the color reset control when the image uses the theme default', () => {
+  expect((document.getElementById('share-preview-reset-color') as HTMLButtonElement).hidden).toBe(true);
+  expect((document.querySelector('.share-color-reset') as HTMLButtonElement).hidden).toBe(true);
+});
 it('shares and downloads the preview quote even when the live quote changes', async () => {
   state['active-quote'] = { quote_raw: 'New minute' };
   button('Share').click();
@@ -571,6 +575,7 @@ it('toggles time highlighting after Color, before the optional image, and rememb
 
 it('toggles uppercase text for the share card and starts disabled each time', async () => {
   const toggle = button('Uppercase text');
+  expect(toggle.textContent).toBe('Aa');
   expect(toggle.getAttribute('aria-pressed')).toBe('false');
   toggle.click();
   await Promise.resolve();

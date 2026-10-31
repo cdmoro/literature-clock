@@ -360,7 +360,7 @@ export function initShareOptions() {
     uppercaseButton.setAttribute('aria-label', strings.uppercase);
     uppercaseButton.title = strings.uppercase;
     uppercaseButton.setAttribute('aria-pressed', 'false');
-    uppercaseButton.innerHTML = '<span aria-hidden="true">aA</span>';
+    uppercaseButton.innerHTML = '<span aria-hidden="true">Aa</span>';
     uppercaseButton.addEventListener('click', () => {
       uppercaseText = !uppercaseText;
       uppercaseButton.setAttribute('aria-pressed', String(uppercaseText));
@@ -604,7 +604,9 @@ export function initShareOptions() {
         : useDefaultColor
           ? defaultColor(currentTheme(), variant === 'dark')
           : color || store.get('custom-color') || store.get('color') || '#d24335';
-      resetColor.hidden = !preset && useDefaultColor;
+      const themeDefault = defaultColor(currentTheme(), variant === 'dark').toLowerCase();
+      const selectedDefault = colorInput.value.toLowerCase() === themeDefault;
+      resetColor.hidden = !preset && (useDefaultColor || selectedDefault);
       colorIndicator.style.background = colorInput.value;
       compactReset.hidden = resetColor.hidden;
       imagePalette.refresh();
