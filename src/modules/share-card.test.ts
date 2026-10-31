@@ -159,13 +159,14 @@ it.each([
   await renderShareCard({ ...quote, locale }, 'square');
 });
 
-it('isolates mixed-script book and author names while preserving punctuation', async () => {
+it('isolates mixed-script book and author names and defaults RTL text to the right', async () => {
   vi.mocked(html2canvas).mockImplementation(async (element) => {
     const credit = element.querySelector('.share-card-credit')!;
     expect(credit.textContent).toBe('كتاب عربيStanley R. Matthews');
-    expect(element.querySelector<HTMLElement>('div[dir="auto"]')?.style.textAlign).toBe('right');
+    expect(element.querySelector<HTMLElement>('div[dir="auto"]')?.style.textAlign).toBe('start');
     expect((element as HTMLElement).dir).toBe('rtl');
     expect(credit.getAttribute('dir')).toBe('rtl');
+    expect((credit as HTMLElement).style.textAlign).toBe('right');
     const signature = element.lastElementChild as HTMLElement;
     expect(signature.textContent).toBe('الساعة الأدبية · literatureclock.netlify.app');
     expect(signature.getAttribute('dir')).toBe('rtl');

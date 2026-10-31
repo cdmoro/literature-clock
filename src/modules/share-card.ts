@@ -24,7 +24,7 @@ export interface CardOptions {
   photoImage?: string;
   highlightTime?: boolean;
   uppercase?: boolean;
-  alignment?: 'start' | 'center';
+  alignment?: 'start' | 'center' | 'end';
 }
 const themeFontLoads = new Map<string, Promise<void>>();
 
@@ -269,8 +269,7 @@ export async function renderShareCard(
   passage.dir = 'auto';
   passage.style.whiteSpace = 'pre-wrap';
   passage.style.textTransform = options.uppercase ? 'uppercase' : 'none';
-  passage.style.textAlign =
-    options.alignment === 'center' ? 'center' : textDirection(quote.locale) === 'rtl' ? 'right' : 'left';
+  passage.style.textAlign = options.alignment || 'start';
   const isFuzzy = store.get('fuzzy-clock') === true;
   const passageParts = isFuzzy
     ? ([[quote.quote_time_case, true]] as const)

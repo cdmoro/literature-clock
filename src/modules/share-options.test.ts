@@ -563,7 +563,7 @@ it('toggles time highlighting after Color, before the optional image, and rememb
   const uppercaseControl = highlightControl.nextElementSibling!;
   expect(uppercaseControl.querySelector('.share-uppercase-toggle')).not.toBeNull();
   const alignmentControl = uppercaseControl.nextElementSibling!;
-  expect(alignmentControl.querySelector('.share-alignment-group')).not.toBeNull();
+  expect(alignmentControl.querySelector('.share-alignment-toggle')).not.toBeNull();
   expect(alignmentControl.nextElementSibling).toBe(button('Include image').closest('.share-control'));
   button('Highlight time').click();
   expect(selectedCardOptions().highlightTime).toBeUndefined();
@@ -589,17 +589,32 @@ it('toggles uppercase text for the share card and starts disabled each time', as
 });
 
 it.each([
-  ['en-GB', 'Left'],
-  ['ar-AE', 'Right'],
-] as const)('offers %s-direction alignment choices', async (locale, startLabel) => {
+  ['en-GB', 'Left', 'Right'],
+  ['ar-AE', 'Right', 'Left'],
+] as const)('cycles %s alignment in visual order', async (locale, startLabel, endLabel) => {
   button('Close').click();
   state['active-quote'] = { quote_raw: 'Original quote', locale, time: '12:00' };
   document.getElementById('share')!.click();
-  button('Center').click();
+  const toggle = document.querySelector<HTMLButtonElement>('.share-alignment-toggle')!;
+  expect(toggle.getAttribute('aria-label')).toBe(`Alignment: ${startLabel}`);
+  expect(toggle.dataset.alignment).toBe('start');
+  expect(selectedCardOptions().alignment).toBeUndefined();
+
+  toggle.click();
   await Promise.resolve();
-  expect(button(startLabel)).toBeTruthy();
+  expect(toggle.getAttribute('aria-label')).toBe('Alignment: Center');
+  expect(toggle.dataset.alignment).toBe('center');
   expect(selectedCardOptions()).toMatchObject({ alignment: 'center' });
-  expect(renderShareCard).toHaveBeenLastCalledWith(
-    expect.anything(), expect.anything(), undefined, undefined, expect.objectContaining({ alignment: 'center' }),
-  );
+
+  toggle.click();
+  await Promise.resolve();
+  expect(toggle.getAttribute('aria-label')).toBe(`Alignment: ${endLabel}`);
+  expect(toggle.dataset.alignment).toBe('end');
+  expect(selectedCardOptions()).toMatchObject({ alignment: 'end' });
+
+  toggle.click();
+  await Promise.resolve();
+  expect(toggle.getAttribute('aria-label')).toBe(`Alignment: ${startLabel}`);
+  expect(toggle.dataset.alignment).toBe('start');
+  expect(selectedCardOptions().alignment).toBeUndefined();
 });
