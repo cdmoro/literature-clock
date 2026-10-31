@@ -559,9 +559,12 @@ it('toggles time highlighting after Color, before the optional image, and rememb
   document.documentElement.style.setProperty('--photo-image', 'url("photo.jpg")');
   document.getElementById('share')!.click();
   expect(button('Highlight time').getAttribute('aria-pressed')).toBe('false');
-  expect(button('Highlight time').closest('.share-control')!.nextElementSibling).toBe(
-    button('Include image').closest('.share-control'),
-  );
+  const highlightControl = button('Highlight time').closest('.share-control')!;
+  const uppercaseControl = highlightControl.nextElementSibling!;
+  expect(uppercaseControl.querySelector('.share-uppercase-toggle')).not.toBeNull();
+  const alignmentControl = uppercaseControl.nextElementSibling!;
+  expect(alignmentControl.querySelector('.share-alignment-group')).not.toBeNull();
+  expect(alignmentControl.nextElementSibling).toBe(button('Include image').closest('.share-control'));
   button('Highlight time').click();
   expect(selectedCardOptions().highlightTime).toBeUndefined();
 });

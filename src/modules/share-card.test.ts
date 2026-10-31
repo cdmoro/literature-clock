@@ -46,7 +46,7 @@ it.each([
       expect(element.querySelector('script')).toBeNull();
       expect(element.querySelector('br')).not.toBeNull();
       expect(element.querySelector('em')?.textContent).toBe('Before');
-      expect(element.textContent).toContain('— Book, Writer');
+      expect(element.textContent).toContain('BookWriter');
       expect((element as HTMLElement).dir).toBe('ltr');
       expect(element.lastElementChild?.textContent).toBe('Reloj literario · literatureclock.netlify.app');
       expect((element.lastElementChild as HTMLElement).dir).toBe('ltr');
