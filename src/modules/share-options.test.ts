@@ -596,25 +596,28 @@ it.each([
   state['active-quote'] = { quote_raw: 'Original quote', locale, time: '12:00' };
   document.getElementById('share')!.click();
   const toggle = document.querySelector<HTMLButtonElement>('.share-alignment-toggle')!;
-  expect(toggle.getAttribute('aria-label')).toBe(`Alignment: ${startLabel}`);
-  expect(toggle.dataset.alignment).toBe('start');
-  expect(selectedCardOptions().alignment).toBeUndefined();
-
-  toggle.click();
-  await Promise.resolve();
-  expect(toggle.getAttribute('aria-label')).toBe('Alignment: Center');
-  expect(toggle.dataset.alignment).toBe('center');
-  expect(selectedCardOptions()).toMatchObject({ alignment: 'center' });
-
-  toggle.click();
-  await Promise.resolve();
-  expect(toggle.getAttribute('aria-label')).toBe(`Alignment: ${endLabel}`);
-  expect(toggle.dataset.alignment).toBe('end');
-  expect(selectedCardOptions()).toMatchObject({ alignment: 'end' });
-
-  toggle.click();
-  await Promise.resolve();
-  expect(toggle.getAttribute('aria-label')).toBe(`Alignment: ${startLabel}`);
-  expect(toggle.dataset.alignment).toBe('start');
-  expect(selectedCardOptions().alignment).toBeUndefined();
+  const cycle =
+    locale === 'ar-AE'
+      ? [
+          [startLabel, 'start'],
+          [endLabel, 'end'],
+          ['Center', 'center'],
+          [startLabel, 'start'],
+        ]
+      : [
+          [startLabel, 'start'],
+          ['Center', 'center'],
+          [endLabel, 'end'],
+          [startLabel, 'start'],
+        ];
+  for (const [index, [label, value]] of cycle.entries()) {
+    expect(toggle.getAttribute('aria-label')).toBe(`Alignment: ${label}`);
+    expect(toggle.dataset.alignment).toBe(value);
+    if (value === 'start') expect(selectedCardOptions().alignment).toBeUndefined();
+    else expect(selectedCardOptions()).toMatchObject({ alignment: value });
+    if (index < cycle.length - 1) {
+      toggle.click();
+      await Promise.resolve();
+    }
+  }
 });

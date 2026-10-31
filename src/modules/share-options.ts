@@ -392,7 +392,17 @@ export function initShareOptions() {
     };
     updateAlignmentButton();
     alignmentButton.addEventListener('click', () => {
-      alignment = alignment === 'start' ? 'center' : alignment === 'center' ? 'end' : 'start';
+      alignment = rtl
+        ? alignment === 'start'
+          ? 'end'
+          : alignment === 'end'
+            ? 'center'
+            : 'start'
+        : alignment === 'start'
+          ? 'center'
+          : alignment === 'center'
+            ? 'end'
+            : 'start';
       updateAlignmentButton();
       void refresh();
     });
