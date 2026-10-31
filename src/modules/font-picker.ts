@@ -1,4 +1,4 @@
-import { normalizeFontName } from '../utils/google-font';
+import { normalizeFontName, isGenericFont } from '../utils/google-font';
 import { readingIcon } from './reading-icons';
 
 const previews = new Map<string, Promise<string>>();
@@ -127,7 +127,8 @@ export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelEle
       button.dataset.value = option.value;
       button.setAttribute('aria-pressed', String(option.selected));
       const sample = document.createElement('span');
-      sample.textContent = option.value === 'default' ? option.textContent : option.value;
+      sample.textContent =
+        option.value === 'default' || isGenericFont(option.value) ? option.textContent : option.value;
       button.append(sample);
       button.insertAdjacentHTML('beforeend', readingIcon('check'));
       button.querySelector('svg')!.classList.add('font-selected-icon');
@@ -144,7 +145,8 @@ export function initFontPicker(select: HTMLSelectElement, caption?: HTMLLabelEle
       panel.append(button);
       const previewFont = option.value === 'default' ? option.dataset.previewFont : option.value;
       if (previewFont) button.dataset.previewFont = previewFont;
-      if (previewFont === 'system-ui') sample.style.fontFamily = 'system-ui, sans-serif';
+      if (previewFont && isGenericFont(previewFont))
+        sample.style.fontFamily = previewFont === 'system-ui' ? 'system-ui, sans-serif' : previewFont;
       else if (previewFont && !option.disabled) {
         previewSamples.push(() => {
           void loadFontPreview(previewFont, sample.textContent || previewFont)

@@ -1,5 +1,8 @@
 {
   "en-GB": {
+    "settings_font_serif": "Serif",
+    "settings_font_sans-serif": "Sans serif",
+    "settings_font_monospace": "Monospace",
     "settings_title": "Settings",
     "settings_close": "Close settings",
     "settings_appearance": "Appearance",
@@ -153,6 +156,9 @@
     "settings_preset_valentine": "Valentine’s Day"
   },
   "en-US": {
+    "settings_font_serif": "Serif",
+    "settings_font_sans-serif": "Sans serif",
+    "settings_font_monospace": "Monospace",
     "settings_title": "Settings",
     "settings_close": "Close settings",
     "settings_appearance": "Appearance",
@@ -306,6 +312,9 @@
     "settings_preset_valentine": "Valentine’s Day"
   },
   "es-ES": {
+    "settings_font_serif": "Serif",
+    "settings_font_sans-serif": "Sans serif",
+    "settings_font_monospace": "Monoespaciada",
     "settings_title": "Configuración",
     "settings_close": "Cerrar configuración",
     "settings_appearance": "Apariencia",
@@ -459,6 +468,9 @@
     "settings_preset_valentine": "San Valentín"
   },
   "pt-PT": {
+    "settings_font_serif": "Serifada",
+    "settings_font_sans-serif": "Sem serifa",
+    "settings_font_monospace": "Monoespaçada",
     "settings_title": "Configurações",
     "settings_close": "Fechar configurações",
     "settings_appearance": "Aparência",
@@ -612,6 +624,9 @@
     "settings_preset_valentine": "Dia dos Namorados"
   },
   "fr-FR": {
+    "settings_font_serif": "Avec empattements",
+    "settings_font_sans-serif": "Sans empattements",
+    "settings_font_monospace": "À chasse fixe",
     "settings_title": "Paramètres",
     "settings_close": "Fermer les paramètres",
     "settings_appearance": "Apparence",
@@ -765,6 +780,9 @@
     "settings_preset_valentine": "Saint-Valentin"
   },
   "it-IT": {
+    "settings_font_serif": "Con grazie",
+    "settings_font_sans-serif": "Senza grazie",
+    "settings_font_monospace": "Monospaziato",
     "settings_title": "Impostazioni",
     "settings_close": "Chiudi impostazioni",
     "settings_appearance": "Aspetto",
@@ -918,6 +936,9 @@
     "settings_preset_valentine": "San Valentino"
   },
   "de-DE": {
+    "settings_font_serif": "Mit Serifen",
+    "settings_font_sans-serif": "Ohne Serifen",
+    "settings_font_monospace": "Nichtproportional",
     "settings_title": "Einstellungen",
     "settings_close": "Einstellungen schließen",
     "settings_appearance": "Darstellung",
@@ -1071,6 +1092,9 @@
     "settings_preset_valentine": "Valentinstag"
   },
   "el-GR": {
+    "settings_font_serif": "Με πατούρες",
+    "settings_font_sans-serif": "Χωρίς πατούρες",
+    "settings_font_monospace": "Σταθερού πλάτους",
     "settings_title": "Ρυθμίσεις",
     "settings_close": "Κλείσιμο ρυθμίσεων",
     "settings_appearance": "Εμφάνιση",
@@ -1224,6 +1248,9 @@
     "settings_preset_valentine": "Άγιος Βαλεντίνος"
   },
   "zh-CN": {
+    "settings_font_serif": "衬线体",
+    "settings_font_sans-serif": "无衬线体",
+    "settings_font_monospace": "等宽体",
     "settings_title": "设置",
     "settings_close": "关闭设置",
     "settings_appearance": "外观",
@@ -1377,6 +1404,9 @@
     "settings_preset_valentine": "情人节"
   },
   "ru-RU": {
+    "settings_font_serif": "С засечками",
+    "settings_font_sans-serif": "Без засечек",
+    "settings_font_monospace": "Моноширинный",
     "settings_title": "Настройки",
     "settings_close": "Закрыть настройки",
     "settings_appearance": "Оформление",
@@ -1530,6 +1560,9 @@
     "settings_preset_valentine": "День святого Валентина"
   },
   "eo": {
+    "settings_font_serif": "Kun serifoj",
+    "settings_font_sans-serif": "Sen serifoj",
+    "settings_font_monospace": "Egallarĝa",
     "settings_title": "Agordoj",
     "settings_close": "Fermi la agordojn",
     "settings_appearance": "Aspekto",
@@ -1683,6 +1716,9 @@
     "settings_preset_valentine": "Sankta Valenteno"
   },
   "ar-AE": {
+    "settings_font_serif": "بزوائد",
+    "settings_font_sans-serif": "بلا زوائد",
+    "settings_font_monospace": "أحادي المسافة",
     "settings_title": "الإعدادات",
     "settings_close": "إغلاق الإعدادات",
     "settings_appearance": "المظهر",

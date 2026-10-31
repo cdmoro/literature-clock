@@ -1,0 +1,104 @@
+/* Presentation overrides only: theme variables and saved choices remain intact. */
+html[data-theme] body.zen {
+  background: var(--background) !important;
+  box-shadow: none !important;
+  transition: none;
+}
+
+body.zen::before,
+body.zen::after,
+body.zen #photo-overlay,
+body.zen #photo-credit,
+body.zen .living-sky,
+body.zen #background-effect-canvas {
+  display: none !important;
+}
+
+body.zen .living-sky * {
+  animation-play-state: paused !important;
+}
+
+html[data-theme] body.zen #quote {
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+}
+
+/* Independent of the footer's inactivity handling, including on touch screens. */
+body.zen #exit-zen {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset-block-end: max(var(--clock-controls-offset, 1rem), env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  padding: 10px;
+  line-height: 1;
+  margin: 0;
+  max-height: none;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--font-color);
+  text-shadow: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+body.zen #exit-zen svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+body.zen.zen-controls-visible #exit-zen,
+body.zen #exit-zen:hover,
+body.zen #exit-zen:focus-visible {
+  opacity: 0.85;
+}
+
+body.zen #exit-zen:focus-visible {
+  outline: 2px solid var(--font-color);
+  outline-offset: 2px;
+}
+
+#zen-hint {
+  position: fixed;
+  inset-block-end: calc(max(var(--clock-controls-offset, 1rem), env(safe-area-inset-bottom)) + 3.5rem);
+  inset-inline: 1rem;
+  z-index: 10;
+  margin: 0 auto;
+  width: fit-content;
+  max-width: calc(100% - 4rem);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  background: var(--background);
+  color: var(--font-color);
+  font-size: 0.875rem;
+  text-align: center;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+#zen-hint.zen-hint-fading {
+  opacity: 0;
+}
+
+/* Touch users always have a visible way out, without hover or a keyboard. */
+@media (hover: none), (pointer: coarse) {
+  body.zen #exit-zen {
+    opacity: 0.65;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.zen #exit-zen,
+  #zen-hint {
+    transition: none;
+  }
+}

@@ -1,3 +1,4 @@
+import { isGenericFont, fontFamilyOverride } from '../utils/google-font';
 import { loadFontIfNotExists } from '../utils';
 import { THEME_FONTS, LOCALE_THEME_FONTS } from './font-catalogue';
 export { LOCALE_THEME_FONTS } from './font-catalogue';
@@ -40,9 +41,11 @@ export function applyLocaleThemeFont(element: HTMLElement, locale = element.lang
   const selected = effectiveFont(locale);
   element.style.setProperty(
     '--override-quote-font-family',
-    selected === 'default' ? 'initial' : `"${selected}", var(--locale-quote-font-family, var(--quote-font-family))`,
+    selected === 'default'
+      ? 'initial'
+      : fontFamilyOverride(selected, 'var(--locale-quote-font-family, var(--quote-font-family))'),
   );
-  if (selected !== 'default') loadFontIfNotExists(selected);
+  if (selected !== 'default' && !isGenericFont(selected)) loadFontIfNotExists(selected);
   // Block inheritance when secondary reading content uses another language.
   element.style.setProperty(
     '--locale-quote-font-family',
