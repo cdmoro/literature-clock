@@ -292,21 +292,26 @@ export async function renderShareCard(
   const credit = document.createElement('div');
   credit.dir = textDirection(quote.locale);
   credit.className = 'share-card-credit';
+  const centered = options.alignment === 'center';
   const attribution = store.get('hide-book-title') ? [quote.author] : [quote.title, quote.author];
-  attribution.forEach((text) => {
+  attribution.forEach((text, index) => {
+    const row = document.createElement('span');
+    if (index === 0 && !centered) row.append('— ');
     const part = document.createElement('span');
     part.dir = 'auto';
     part.style.unicodeBidi = 'isolate';
     part.textContent = text;
-    credit.append(part);
+    row.append(part);
+    if (index < attribution.length - 1 && !centered) row.append(',');
+    credit.append(row);
   });
   Object.assign(credit.style, {
     marginTop: '40px',
     fontSize: '28px',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'flex-start',
-    textAlign: textDirection(quote.locale) === 'rtl' ? 'right' : 'left',
+    alignItems: centered ? 'center' : options.alignment === 'end' ? 'flex-end' : 'flex-start',
+    textAlign: options.alignment || 'start',
   });
   if (isFuzzy || store.get('quote-attribution') === 'hidden') {
     content.append(passage);

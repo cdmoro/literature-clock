@@ -46,7 +46,7 @@ it.each([
       expect(element.querySelector('script')).toBeNull();
       expect(element.querySelector('br')).not.toBeNull();
       expect(element.querySelector('em')?.textContent).toBe('Before');
-      expect(element.textContent).toContain('BookWriter');
+      expect(element.textContent).toContain('— Book,Writer');
       expect((element as HTMLElement).dir).toBe('ltr');
       expect(element.lastElementChild?.textContent).toBe('Reloj literario · literatureclock.netlify.app');
       expect((element.lastElementChild as HTMLElement).dir).toBe('ltr');
@@ -145,28 +145,36 @@ it.each(['dots', 'circles', 'diagonal', 'diagonal-wide'] as const)(
 );
 
 it.each([
-  ['es-ES', 'left'],
-  ['ar-AE', 'right'],
-] as const)('aligns %s attribution to the quote direction', async (locale, alignment) => {
-  vi.mocked(html2canvas).mockImplementation(async (element) => {
-    const credit = element.querySelector<HTMLElement>('.share-card-credit')!;
-    expect(credit.style.textAlign).toBe(alignment);
-    expect(credit.style.alignItems).toBe('flex-start');
-    expect(credit.style.flexDirection).toBe('column');
-    expect(credit.dir).toBe(locale === 'ar-AE' ? 'rtl' : 'ltr');
-    return document.createElement('canvas');
-  });
-  await renderShareCard({ ...quote, locale }, 'square');
-});
+  ['es-ES', 'start', 'start', 'flex-start', '— Book,Writer'],
+  ['es-ES', 'center', 'center', 'center', 'BookWriter'],
+  ['es-ES', 'end', 'end', 'flex-end', '— Book,Writer'],
+  ['ar-AE', 'start', 'start', 'flex-start', '— Book,Writer'],
+  ['ar-AE', 'center', 'center', 'center', 'BookWriter'],
+  ['ar-AE', 'end', 'end', 'flex-end', '— Book,Writer'],
+] as const)(
+  'aligns %s attribution with %s quote alignment',
+  async (locale, quoteAlignment, textAlignment, flexAlignment, text) => {
+    vi.mocked(html2canvas).mockImplementation(async (element) => {
+      const credit = element.querySelector<HTMLElement>('.share-card-credit')!;
+      expect(credit.textContent).toBe(text);
+      expect(credit.style.textAlign).toBe(textAlignment);
+      expect(credit.style.alignItems).toBe(flexAlignment);
+      expect(credit.style.flexDirection).toBe('column');
+      expect(credit.dir).toBe(locale === 'ar-AE' ? 'rtl' : 'ltr');
+      return document.createElement('canvas');
+    });
+    await renderShareCard({ ...quote, locale }, 'square', undefined, undefined, { alignment: quoteAlignment });
+  },
+);
 
 it('isolates mixed-script book and author names and defaults RTL text to the right', async () => {
   vi.mocked(html2canvas).mockImplementation(async (element) => {
     const credit = element.querySelector('.share-card-credit')!;
-    expect(credit.textContent).toBe('كتاب عربيStanley R. Matthews');
+    expect(credit.textContent).toBe('— كتاب عربي,Stanley R. Matthews');
     expect(element.querySelector<HTMLElement>('div[dir="auto"]')?.style.textAlign).toBe('start');
     expect((element as HTMLElement).dir).toBe('rtl');
     expect(credit.getAttribute('dir')).toBe('rtl');
-    expect((credit as HTMLElement).style.textAlign).toBe('right');
+    expect((credit as HTMLElement).style.textAlign).toBe('start');
     const signature = element.lastElementChild as HTMLElement;
     expect(signature.textContent).toBe('الساعة الأدبية · literatureclock.netlify.app');
     expect(signature.getAttribute('dir')).toBe('rtl');
