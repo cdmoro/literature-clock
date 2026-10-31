@@ -269,9 +269,8 @@ export async function renderShareCard(
   passage.dir = 'auto';
   passage.style.whiteSpace = 'pre-wrap';
   passage.style.textTransform = options.uppercase ? 'uppercase' : 'none';
-  passage.style.textAlign = options.alignment === 'center'
-    ? 'center'
-    : textDirection(quote.locale) === 'rtl' ? 'right' : 'left';
+  passage.style.textAlign =
+    options.alignment === 'center' ? 'center' : textDirection(quote.locale) === 'rtl' ? 'right' : 'left';
   const isFuzzy = store.get('fuzzy-clock') === true;
   const passageParts = isFuzzy
     ? ([[quote.quote_time_case, true]] as const)
@@ -307,8 +306,8 @@ export async function renderShareCard(
     fontSize: '28px',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
-    textAlign: 'center',
+    alignItems: 'flex-start',
+    textAlign: textDirection(quote.locale) === 'rtl' ? 'right' : 'left',
   });
   if (isFuzzy || store.get('quote-attribution') === 'hidden') {
     content.append(passage);

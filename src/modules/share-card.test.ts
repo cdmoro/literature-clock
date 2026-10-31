@@ -144,23 +144,19 @@ it.each(['dots', 'circles', 'diagonal', 'diagonal-wide'] as const)(
   },
 );
 
-it.each([false, true])('centres web attribution without punctuation when hide book title is %s', async (hidden) => {
-  state.hideBookTitle = hidden;
+it.each([
+  ['es-ES', 'left'],
+  ['ar-AE', 'right'],
+] as const)('aligns %s attribution to the quote direction', async (locale, alignment) => {
   vi.mocked(html2canvas).mockImplementation(async (element) => {
     const credit = element.querySelector<HTMLElement>('.share-card-credit')!;
-    expect(credit.textContent).toBe(hidden ? 'Writer' : 'BookWriter');
-    expect(credit.style.textAlign).toBe('center');
+    expect(credit.style.textAlign).toBe(alignment);
+    expect(credit.style.alignItems).toBe('flex-start');
     expect(credit.style.flexDirection).toBe('column');
-    expect([...credit.querySelectorAll('span')].map((part) => part.textContent)).toEqual(
-      hidden ? ['Writer'] : ['Book', 'Writer'],
-    );
-    for (const part of credit.querySelectorAll<HTMLElement>('span')) {
-      expect(part.dir).toBe('auto');
-      expect(part.style.unicodeBidi).toBe('isolate');
-    }
+    expect(credit.dir).toBe(locale === 'ar-AE' ? 'rtl' : 'ltr');
     return document.createElement('canvas');
   });
-  await renderShareCard(quote, 'square');
+  await renderShareCard({ ...quote, locale }, 'square');
 });
 
 it('isolates mixed-script book and author names while preserving punctuation', async () => {
