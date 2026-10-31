@@ -47,6 +47,9 @@ it.each([
       expect(element.querySelector('br')).not.toBeNull();
       expect(element.querySelector('em')?.textContent).toBe('Before');
       expect(element.textContent).toContain('— Book, Writer');
+      expect((element as HTMLElement).dir).toBe('ltr');
+      expect(element.lastElementChild?.textContent).toBe('Reloj literario · literatureclock.netlify.app');
+      expect((element.lastElementChild as HTMLElement).dir).toBe('ltr');
       return canvas;
     });
     expect(await renderShareCard(quote, format)).toBe(canvas);
@@ -162,6 +165,12 @@ it('isolates mixed-script book and author names while preserving punctuation', a
   vi.mocked(html2canvas).mockImplementation(async (element) => {
     const credit = element.querySelector('.share-card-credit')!;
     expect(credit.textContent).toBe('— كتاب عربي, Stanley R. Matthews');
+    expect((element as HTMLElement).dir).toBe('rtl');
+    expect(credit.getAttribute('dir')).toBe('rtl');
+    const signature = element.lastElementChild as HTMLElement;
+    expect(signature.textContent).toBe('الساعة الأدبية · literatureclock.netlify.app');
+    expect(signature.getAttribute('dir')).toBe('rtl');
+    expect(signature.lang).toBe('ar-AE');
     expect(credit.querySelectorAll('[dir="auto"]')).toHaveLength(2);
     return document.createElement('canvas');
   });

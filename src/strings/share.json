@@ -23,7 +23,8 @@
     "previousTheme": "Previous theme",
     "nextTheme": "Next theme",
     "textCopyFailed": "Could not copy the text. Please try again.",
-    "highlightTime": "Highlight time"
+    "highlightTime": "Highlight time",
+    "signature": "Literature Clock · literatureclock.netlify.app"
   },
   "es-ES": {
     "title": "Compartir cita",
@@ -49,7 +50,8 @@
     "previousTheme": "Tema anterior",
     "nextTheme": "Tema siguiente",
     "textCopyFailed": "No se pudo copiar el texto. Intentá de nuevo.",
-    "highlightTime": "Resaltar la hora"
+    "highlightTime": "Resaltar la hora",
+    "signature": "Reloj literario · literatureclock.netlify.app"
   },
   "fr-FR": {
     "title": "Partager la citation",
@@ -75,7 +77,8 @@
     "previousTheme": "Thème précédent",
     "nextTheme": "Thème suivant",
     "textCopyFailed": "Impossible de copier le texte. Réessayez.",
-    "highlightTime": "Surligner l’heure"
+    "highlightTime": "Surligner l’heure",
+    "signature": "Horloge littéraire · literatureclock.netlify.app"
   },
   "de-DE": {
     "title": "Zitat teilen",
@@ -101,7 +104,8 @@
     "previousTheme": "Vorheriges Design",
     "nextTheme": "Nächstes Design",
     "textCopyFailed": "Der Text konnte nicht kopiert werden. Bitte erneut versuchen.",
-    "highlightTime": "Uhrzeit hervorheben"
+    "highlightTime": "Uhrzeit hervorheben",
+    "signature": "Literatur-Uhr · literatureclock.netlify.app"
   },
   "it-IT": {
     "title": "Condividi citazione",
@@ -127,7 +131,8 @@
     "previousTheme": "Tema precedente",
     "nextTheme": "Tema successivo",
     "textCopyFailed": "Impossibile copiare il testo. Riprova.",
-    "highlightTime": "Evidenzia l’ora"
+    "highlightTime": "Evidenzia l’ora",
+    "signature": "Orologio letterario · literatureclock.netlify.app"
   },
   "pt-PT": {
     "title": "Partilhar citação",
@@ -153,7 +158,8 @@
     "previousTheme": "Tema anterior",
     "nextTheme": "Tema seguinte",
     "textCopyFailed": "Não foi possível copiar o texto. Tente novamente.",
-    "highlightTime": "Realçar a hora"
+    "highlightTime": "Realçar a hora",
+    "signature": "Relógio literário · literatureclock.netlify.app"
   },
   "el-GR": {
     "title": "Κοινοποίηση παραθέματος",
@@ -179,7 +185,8 @@
     "previousTheme": "Προηγούμενο θέμα",
     "nextTheme": "Επόμενο θέμα",
     "textCopyFailed": "Δεν ήταν δυνατή η αντιγραφή του κειμένου. Δοκιμάστε ξανά.",
-    "highlightTime": "Επισήμανση ώρας"
+    "highlightTime": "Επισήμανση ώρας",
+    "signature": "Λογοτεχνικό ρολόι · literatureclock.netlify.app"
   },
   "zh-CN": {
     "title": "分享引文",
@@ -205,7 +212,8 @@
     "previousTheme": "上一个主题",
     "nextTheme": "下一个主题",
     "textCopyFailed": "无法复制文本，请重试。",
-    "highlightTime": "突出显示时间"
+    "highlightTime": "突出显示时间",
+    "signature": "文学时钟 · literatureclock.netlify.app"
   },
   "ru-RU": {
     "title": "Поделиться цитатой",
@@ -231,7 +239,8 @@
     "previousTheme": "Предыдущая тема",
     "nextTheme": "Следующая тема",
     "textCopyFailed": "Не удалось скопировать текст. Попробуйте ещё раз.",
-    "highlightTime": "Выделить время"
+    "highlightTime": "Выделить время",
+    "signature": "Литературные часы · literatureclock.netlify.app"
   },
   "eo": {
     "title": "Kunhavigi citaĵon",
@@ -257,7 +266,8 @@
     "previousTheme": "Antaŭa temo",
     "nextTheme": "Sekva temo",
     "textCopyFailed": "Ne eblis kopii la tekston. Bonvolu reprovi.",
-    "highlightTime": "Emfazi la horon"
+    "highlightTime": "Emfazi la horon",
+    "signature": "Literatura Horloĝo · literatureclock.netlify.app"
   },
   "en-US": {
     "title": "Share quote",
@@ -283,7 +293,8 @@
     "previousTheme": "Previous theme",
     "nextTheme": "Next theme",
     "textCopyFailed": "Could not copy the text. Please try again.",
-    "highlightTime": "Highlight time"
+    "highlightTime": "Highlight time",
+    "signature": "Literature Clock · literatureclock.netlify.app"
   },
   "ar-AE": {
     "title": "مشاركة الاقتباس",
@@ -309,6 +320,7 @@
     "previousTheme": "السمة السابقة",
     "nextTheme": "السمة التالية",
     "textCopyFailed": "تعذر نسخ النص. حاول مرة أخرى.",
-    "highlightTime": "إبراز الوقت"
+    "highlightTime": "إبراز الوقت",
+    "signature": "الساعة الأدبية · literatureclock.netlify.app"
   }
 }

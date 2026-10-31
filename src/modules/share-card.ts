@@ -9,6 +9,8 @@ import { loadGoogleFont, normalizeFontName, fontFamilyOverride } from '../utils/
 import { getLocaleThemeFont } from './locale-fonts';
 import { quoteMarkup } from '../utils/quote-markup';
 import { defaultColor } from './themes';
+import { textDirection } from '../utils/text-direction';
+import STRINGS from '../strings/share.json';
 
 export const cardFormats = { square: [1080, 1080], portrait: [1080, 1920], landscape: [1920, 1080] } as const;
 export type CardFormat = keyof typeof cardFormats;
@@ -250,6 +252,7 @@ export async function renderShareCard(
     }
   }
   card.lang = quote.locale;
+  card.dir = textDirection(quote.locale);
   card.setAttribute('aria-hidden', 'true');
   const time = document.createElement('div');
   time.textContent = quote.time;
@@ -283,7 +286,7 @@ export async function renderShareCard(
     passage.style.textWrap = 'balance';
   }
   const credit = document.createElement('div');
-  credit.dir = 'auto';
+  credit.dir = textDirection(quote.locale);
   credit.className = 'share-card-credit';
   credit.append('— ');
   const attribution = store.get('hide-book-title') ? [quote.author] : [quote.title, quote.author];
@@ -302,7 +305,10 @@ export async function renderShareCard(
     content.append(passage, credit);
   }
   const signature = document.createElement('div');
-  signature.textContent = 'Literature Clock · literatureclock.netlify.app';
+  signature.lang = quote.locale.replace(/-draft$/, '');
+  signature.dir = textDirection(quote.locale);
+  signature.textContent =
+    STRINGS[quote.locale.replace(/-draft$/, '') as keyof typeof STRINGS]?.signature || STRINGS['en-GB'].signature;
   signature.style.fontSize = '22px';
   if (photo) {
     for (const element of [time, content, signature]) {
