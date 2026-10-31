@@ -54,3 +54,12 @@ Complete translations from Calibre or other tools can be imported with `scripts/
 New languages start from the union of quote IDs and their declared sources with `Draft=true` and stay out of the language selector until explicitly enabled. After generating the quote data, a URL such as `?locale=el-GR-draft` previews pending quotes without enabling the language. Draft URLs are unlisted, not private.
 
 See the [translation workflow](../scripts/TRANSLATING.md) for requirements, importing, review, backups and language publication.
+
+
+## Apple apps
+
+The macOS app and desktop widget use `apple/LiteratureClock.xcodeproj` and the `LiteratureClockMac` scheme. Shared code and resources live in `apple/Shared`; Mac-specific integration lives in `apple/macOS`.
+
+The iOS app is paused in the separate `feat/ios-app` branch, based on the macOS work. Keep common improvements in Shared and bring them into the iOS branch when development resumes. iPhone widget issues do not block macOS delivery.
+
+See the [Apple apps guide](../apple/README.md) for building, catalogue synchronization and widget verification. The native screensavers are separate components under `screensavers/`.
