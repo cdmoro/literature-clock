@@ -576,6 +576,7 @@ it('toggles time highlighting after Color, before the optional image, and rememb
 it('toggles uppercase text for the share card and starts disabled each time', async () => {
   const toggle = button('Uppercase text');
   expect(toggle.textContent).toBe('Aa');
+  expect(toggle.querySelector('span')).toBeNull();
   expect(toggle.getAttribute('aria-pressed')).toBe('false');
   toggle.click();
   await Promise.resolve();

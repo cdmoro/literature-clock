@@ -360,7 +360,7 @@ export function initShareOptions() {
     uppercaseButton.setAttribute('aria-label', strings.uppercase);
     uppercaseButton.title = strings.uppercase;
     uppercaseButton.setAttribute('aria-pressed', 'false');
-    uppercaseButton.innerHTML = '<span aria-hidden="true">Aa</span>';
+    uppercaseButton.textContent = 'Aa';
     uppercaseButton.addEventListener('click', () => {
       uppercaseText = !uppercaseText;
       uppercaseButton.setAttribute('aria-pressed', String(uppercaseText));
