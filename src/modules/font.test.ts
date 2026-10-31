@@ -421,3 +421,25 @@ test('generic labels follow the interface language while preserving CSS values',
   expect(sample.textContent).toBe('Monoespaciada');
   expect(sample.style.fontFamily).toBe('monospace');
 });
+
+test('automatic font follows theme changes without saving the previous theme font as an override', async () => {
+  const quote = document.createElement('blockquote');
+  quote.id = 'quote';
+  quote.lang = 'en-GB';
+  document.body.append(quote);
+  resetFont();
+  for (const theme of ['base-dark', 'book-light', 'photo-dark', 'terminal-light', 'base-dark']) {
+    store.set('theme', theme);
+    document.documentElement.dataset.theme = theme;
+    refreshDefaultFontLabel();
+    await Promise.resolve();
+    expect(store.get('font')).toBe('default');
+    expect(document.querySelector<HTMLSelectElement>('#font-select')!.value).toBe('default');
+    expect(document.getElementById('font-picker-trigger')!.textContent).toBe(
+      document.querySelector('option[value="default"]')!.textContent,
+    );
+    expect(document.documentElement.style.getPropertyValue('--override-quote-font-family')).toBe('');
+    expect(quote.style.getPropertyValue('--override-quote-font-family')).toBe('initial');
+    expect(localStorage.getItem(CUSTOM_FONTS_KEY)).toBeNull();
+  }
+});
