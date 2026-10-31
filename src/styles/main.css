@@ -864,6 +864,15 @@ select:dir(rtl),
   height: 16px;
   transform: none;
 }
+.share-uppercase-toggle span {
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  font-size: 0.9rem;
+}
+.share-uppercase-toggle[aria-pressed="false"] span {
+  font-weight: 400;
+  opacity: 0.7;
+}
 @media (prefers-reduced-motion: reduce) {
   .share-preview-spinner { animation-duration: 2s; }
 }

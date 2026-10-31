@@ -565,3 +565,38 @@ it('toggles time highlighting after Color, before the optional image, and rememb
   button('Highlight time').click();
   expect(selectedCardOptions().highlightTime).toBeUndefined();
 });
+
+it('toggles uppercase text for the share card and starts disabled each time', async () => {
+  const toggle = button('Uppercase text');
+  expect(toggle.getAttribute('aria-pressed')).toBe('false');
+  toggle.click();
+  await Promise.resolve();
+  expect(selectedCardOptions()).toMatchObject({ uppercase: true });
+  expect(renderShareCard).toHaveBeenLastCalledWith(
+    expect.anything(),
+    expect.anything(),
+    undefined,
+    undefined,
+    expect.objectContaining({ uppercase: true }),
+  );
+  button('Close').click();
+  document.getElementById('share')!.click();
+  expect(button('Uppercase text').getAttribute('aria-pressed')).toBe('false');
+  expect(selectedCardOptions().uppercase).toBeUndefined();
+});
+
+it.each([
+  ['en-GB', 'Left'],
+  ['ar-AE', 'Right'],
+] as const)('offers %s-direction alignment choices', async (locale, startLabel) => {
+  button('Close').click();
+  state['active-quote'] = { quote_raw: 'Original quote', locale, time: '12:00' };
+  document.getElementById('share')!.click();
+  button('Center').click();
+  await Promise.resolve();
+  expect(button(startLabel)).toBeTruthy();
+  expect(selectedCardOptions()).toMatchObject({ alignment: 'center' });
+  expect(renderShareCard).toHaveBeenLastCalledWith(
+    expect.anything(), expect.anything(), undefined, undefined, expect.objectContaining({ alignment: 'center' }),
+  );
+});

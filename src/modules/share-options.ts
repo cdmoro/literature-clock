@@ -16,6 +16,7 @@ import downloadIcon from '../assets/download.svg?raw';
 import { COLOR_PRESETS, mountColorPalette } from './color-palette';
 import { defaultColor } from './themes';
 import COLOR_STRINGS from '../strings/colorControls.json';
+import { textDirection } from '../utils/text-direction';
 import '../styles/share-color-controls.css';
 
 let format: CardFormat = 'square';
@@ -29,6 +30,8 @@ let font: string | undefined;
 let popupPhotoImage: string | null | undefined;
 let includePhoto = true;
 let highlightTime = true;
+let uppercaseText = false;
+let alignment: 'start' | 'center' = 'start';
 export const selectedCardOptions = () => ({
   pattern: pattern ?? store.get('background-pattern') ?? 'none',
   ...(() => {
@@ -49,6 +52,8 @@ export const selectedCardOptions = () => ({
   })(),
   color,
   ...(!highlightTime ? { highlightTime: false } : {}),
+  ...(uppercaseText ? { uppercase: true } : {}),
+  ...(alignment === 'center' ? { alignment } : {}),
   ...(palette && palette !== 'default' ? { palette } : {}),
   font,
   ...(useDefaultColor ? { useDefaultColor: true } : {}),
@@ -78,6 +83,8 @@ export function initShareOptions() {
     } catch {
       highlightTime = true;
     }
+    uppercaseText = false;
+    alignment = 'start';
     const strings = shareOptionStrings();
     const settingsStrings = SETTINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))];
     popupPhotoImage =
@@ -347,6 +354,44 @@ export function initShareOptions() {
       void refresh();
     });
     controls.insertBefore(field(strings.highlightTime, highlightButton), customization);
+    const uppercaseButton = document.createElement('button');
+    uppercaseButton.type = 'button';
+    uppercaseButton.className = 'share-image-toggle share-uppercase-toggle';
+    uppercaseButton.setAttribute('aria-label', strings.uppercase);
+    uppercaseButton.title = strings.uppercase;
+    uppercaseButton.setAttribute('aria-pressed', 'false');
+    uppercaseButton.innerHTML = '<span aria-hidden="true">aA</span>';
+    uppercaseButton.addEventListener('click', () => {
+      uppercaseText = !uppercaseText;
+      uppercaseButton.setAttribute('aria-pressed', String(uppercaseText));
+      void refresh();
+    });
+    controls.insertBefore(field(strings.uppercase, uppercaseButton), customization);
+    const alignmentGroup = document.createElement('div');
+    alignmentGroup.className = 'share-choice-group share-alignment-group';
+    alignmentGroup.setAttribute('role', 'group');
+    alignmentGroup.setAttribute('aria-label', strings.alignment);
+    const rtl = textDirection(snapshot.locale) === 'rtl';
+    const alignmentButtons = new Map<'start' | 'center', HTMLButtonElement>();
+    for (const value of ['start', 'center'] as const) {
+      const option = document.createElement('button');
+      option.type = 'button';
+      const label = value === 'center' ? strings.center : rtl ? strings.right : strings.left;
+      option.title = label;
+      option.setAttribute('aria-label', label);
+      const start = rtl ? 20 : 4;
+      const direction = rtl ? -1 : 1;
+      option.innerHTML = value === 'center'
+        ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M7 10h10M4 14h16M7 18h10"/></svg>'
+        : `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M${start} 6h${16 * direction}M${rtl ? 14 : 4} 10h${10 * direction}M${start} 14h${16 * direction}M${rtl ? 14 : 4} 18h${10 * direction}"/></svg>`;
+      option.addEventListener('click', () => {
+        alignment = value;
+        void refresh();
+      });
+      alignmentButtons.set(value, option);
+      alignmentGroup.append(option);
+    }
+    controls.insertBefore(field(strings.alignment, alignmentGroup), customization);
     if (popupPhotoImage) controls.insertBefore(includePhotoControl, customization);
     const patternControl = document.createElement('label');
     patternControl.className = 'share-pattern-control';
@@ -442,7 +487,10 @@ export function initShareOptions() {
     copyText.disabled = typeof navigator.clipboard?.writeText !== 'function';
     copyText.addEventListener('click', async () => {
       try {
-        await navigator.clipboard.writeText(snapshot.quote_raw);
+        const text = uppercaseText
+          ? snapshot.quote_raw.toLocaleUpperCase(snapshot.locale.replace(/-draft$/, ''))
+          : snapshot.quote_raw;
+        await navigator.clipboard.writeText(text);
         status.textContent = fontStrings.copy_mode_copied;
       } catch {
         status.textContent = strings.textCopyFailed;
@@ -459,7 +507,13 @@ export function initShareOptions() {
       actionButton.addEventListener('click', async () => {
         actionButton.disabled = true;
         try {
-          const notice = await action(snapshot);
+          const shareSnapshot = uppercaseText
+            ? {
+                ...snapshot,
+                quote_raw: snapshot.quote_raw.toLocaleUpperCase(snapshot.locale.replace(/-draft$/, '')),
+              }
+            : snapshot;
+          const notice = await action(shareSnapshot);
           status.textContent = notice || '';
         } finally {
           actionButton.disabled = false;
@@ -526,6 +580,7 @@ export function initShareOptions() {
       patternControl.hidden = false;
       patternSelect.disabled = false;
       formatButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === format)));
+      alignmentButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === alignment)));
       const variant = appearance || (document.documentElement.dataset.theme?.endsWith('-dark') ? 'dark' : 'light');
       colorInput.disabled = false;
       const resolvedPalette = palette === 'random' ? document.documentElement.dataset.palette : palette;

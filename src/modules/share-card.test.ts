@@ -144,11 +144,13 @@ it.each(['dots', 'circles', 'diagonal', 'diagonal-wide'] as const)(
   },
 );
 
-it.each([false, true])('matches web attribution when hide book title is %s', async (hidden) => {
+it.each([false, true])('centres web attribution without punctuation when hide book title is %s', async (hidden) => {
   state.hideBookTitle = hidden;
   vi.mocked(html2canvas).mockImplementation(async (element) => {
     const credit = element.querySelector<HTMLElement>('.share-card-credit')!;
-    expect(credit.textContent).toBe(hidden ? '— Writer' : '— Book, Writer');
+    expect(credit.textContent).toBe(hidden ? 'Writer' : 'BookWriter');
+    expect(credit.style.textAlign).toBe('center');
+    expect(credit.style.flexDirection).toBe('column');
     expect([...credit.querySelectorAll('span')].map((part) => part.textContent)).toEqual(
       hidden ? ['Writer'] : ['Book', 'Writer'],
     );
@@ -164,7 +166,8 @@ it.each([false, true])('matches web attribution when hide book title is %s', asy
 it('isolates mixed-script book and author names while preserving punctuation', async () => {
   vi.mocked(html2canvas).mockImplementation(async (element) => {
     const credit = element.querySelector('.share-card-credit')!;
-    expect(credit.textContent).toBe('— كتاب عربي, Stanley R. Matthews');
+    expect(credit.textContent).toBe('كتاب عربيStanley R. Matthews');
+    expect(element.querySelector<HTMLElement>('div[dir="auto"]')?.style.textAlign).toBe('right');
     expect((element as HTMLElement).dir).toBe('rtl');
     expect(credit.getAttribute('dir')).toBe('rtl');
     const signature = element.lastElementChild as HTMLElement;
@@ -254,6 +257,15 @@ it.each([true, false])('renders time highlighting as %s without changing the pas
     return document.createElement('canvas');
   });
   await renderShareCard(quote, 'square', undefined, undefined, { highlightTime, color: '#d24335' });
+});
+
+it('renders passage text in uppercase when requested', async () => {
+  vi.mocked(html2canvas).mockImplementation(async (element) => {
+    const passage = element.querySelector<HTMLElement>('div[dir="auto"]')!;
+    expect(passage.style.textTransform).toBe('uppercase');
+    return document.createElement('canvas');
+  });
+  await renderShareCard(quote, 'square', undefined, undefined, { uppercase: true });
 });
 
 it.each(['serif', 'sans-serif', 'monospace'])(

@@ -23,6 +23,8 @@ export interface CardOptions {
   useDefaultColor?: boolean;
   photoImage?: string;
   highlightTime?: boolean;
+  uppercase?: boolean;
+  alignment?: 'start' | 'center';
 }
 const themeFontLoads = new Map<string, Promise<void>>();
 
@@ -266,6 +268,10 @@ export async function renderShareCard(
   const passage = document.createElement('div');
   passage.dir = 'auto';
   passage.style.whiteSpace = 'pre-wrap';
+  passage.style.textTransform = options.uppercase ? 'uppercase' : 'none';
+  passage.style.textAlign = options.alignment === 'center'
+    ? 'center'
+    : textDirection(quote.locale) === 'rtl' ? 'right' : 'left';
   const isFuzzy = store.get('fuzzy-clock') === true;
   const passageParts = isFuzzy
     ? ([[quote.quote_time_case, true]] as const)
@@ -288,17 +294,22 @@ export async function renderShareCard(
   const credit = document.createElement('div');
   credit.dir = textDirection(quote.locale);
   credit.className = 'share-card-credit';
-  credit.append('— ');
   const attribution = store.get('hide-book-title') ? [quote.author] : [quote.title, quote.author];
-  attribution.forEach((text, index) => {
-    if (index) credit.append(', ');
+  attribution.forEach((text) => {
     const part = document.createElement('span');
     part.dir = 'auto';
     part.style.unicodeBidi = 'isolate';
     part.textContent = text;
     credit.append(part);
   });
-  Object.assign(credit.style, { marginTop: '40px', fontSize: '28px' });
+  Object.assign(credit.style, {
+    marginTop: '40px',
+    fontSize: '28px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    textAlign: 'center',
+  });
   if (isFuzzy || store.get('quote-attribution') === 'hidden') {
     content.append(passage);
   } else {
