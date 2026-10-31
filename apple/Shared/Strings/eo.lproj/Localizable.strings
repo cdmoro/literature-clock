@@ -1,0 +1,13 @@
+/* Quote library */
+"myQuotes" = "Miaj citaĵoj";
+"favorites" = "Ŝatataj";
+"history" = "Lastatempaj";
+"noFavorites" = "Ankoraŭ neniu ŝatata citaĵo. Konservu citaĵon per la korbutono.";
+"noHistory" = "Neniu lastatempa citaĵo. La lastaj 100 citaĵoj, kiujn vi rigardas, aperos ĉi tie.";
+"clearHistory" = "Forviŝi la historion";
+"saveFavorite" = "Konservi kiel ŝatatan";
+"removeFavorite" = "Forigi el la ŝatataj";
+"openQuote" = "Malfermi la citaĵon";
+"close" = "Fermi";
+"noRecentQuotes" = "Neniu lastatempa citaĵo. La lastaj 100 citaĵoj, kiujn vi rigardas, aperos ĉi tie.";
+"saveQuoteHint" = "Ankoraŭ neniu ŝatata citaĵo. Konservu citaĵon per la korbutono.";

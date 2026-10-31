@@ -1,0 +1,13 @@
+/* Quote library */
+"myQuotes" = "Mis citas";
+"favorites" = "Favoritos";
+"history" = "Recientes";
+"noFavorites" = "Todavía no hay favoritos. Guardá una cita con el corazón.";
+"noHistory" = "No hay citas recientes. Acá aparecerán las últimas 100 citas que veas.";
+"clearHistory" = "Borrar historial";
+"saveFavorite" = "Guardar favorito";
+"removeFavorite" = "Quitar favorito";
+"openQuote" = "Abrir cita";
+"close" = "Cerrar";
+"noRecentQuotes" = "No hay citas recientes. Acá aparecerán las últimas 100 citas que veas.";
+"saveQuoteHint" = "Todavía no hay favoritos. Guardá una cita con el corazón.";

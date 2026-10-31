@@ -1,0 +1,13 @@
+/* Quote library */
+"myQuotes" = "My quotes";
+"favorites" = "Favorites";
+"history" = "Recent";
+"noFavorites" = "No favorites yet. Save a quote with the heart button.";
+"noHistory" = "No recent quotes. The last 100 quotes you view will appear here.";
+"clearHistory" = "Clear history";
+"saveFavorite" = "Save favorite";
+"removeFavorite" = "Remove favorite";
+"openQuote" = "Open quote";
+"close" = "Close";
+"noRecentQuotes" = "No recent quotes. The last 100 quotes you view will appear here.";
+"saveQuoteHint" = "No favorites yet. Save a quote with the heart button.";
