@@ -2,7 +2,7 @@ import { store } from '../store';
 import { BACKGROUNDS, Background, resolveBackground, supportsBackground } from '../utils/background';
 import { updatePhotoBackground, clearPhotoBackground } from './photo-background';
 import { getBaseLocale, getInterfaceLocale } from './locales';
-import SETTINGS from '../strings/settings.json';
+import SETTINGS from './settings-strings';
 
 export function refreshBackground() {
   const theme = store.get('theme');

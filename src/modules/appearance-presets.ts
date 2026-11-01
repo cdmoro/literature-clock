@@ -2,7 +2,7 @@ import { store } from '../store';
 import { getBaseLocale, getInterfaceLocale } from './locales';
 import { setTheme } from './themes';
 import { supportsBackgroundPattern } from '../utils/background-patterns';
-import SETTINGS from '../strings/settings.json';
+import SETTINGS from './settings-strings';
 
 interface AppearancePreset {
   id: 'christmas' | 'halloween' | 'valentine';

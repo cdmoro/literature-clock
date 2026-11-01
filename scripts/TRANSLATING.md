@@ -11,6 +11,18 @@ interactive tool for adding a single quote. Adding the new language to the
 website is a separate, explicit step after the language is complete and reviewed.
 Unlisted draft URLs are available earlier for previewing work in progress.
 
+## UI translation bundle ownership
+
+Organize interface strings by artifact first and feature second. Web-only UI
+strings live under `src/strings/web/`; strings shared by the macOS and Windows
+screensavers live under `src/strings/screensaver/`; strings with the same key
+and value consumed by Web and native savers live under `src/strings/common/`.
+The settings bundle is split into common and Web-only keys, then merged by the
+Web runtime. Keep those key sets disjoint. Before adding a translation, search
+the existing JSON bundles for an equivalent string and reuse or move it when
+that matches the consumers. Update `scripts/component_ownership.py` and native
+workflow path filters whenever bundle ownership changes.
+
 ## Preserve quote identity and attribution
 
 **The source `Id` is the only reliable key for tracking the same quote across languages. Never change it.** Keep it attached to its original passage: do not translate, renumber, regenerate or reformat IDs, and preserve leading zeros and punctuation by treating them as text. Every complete catalogue must contain every source ID exactly once. Matching text, titles, row order or clock times cannot replace this identity; bilingual lookup and catalogue imports depend on it. Checking the ID set alone cannot detect translated passages accidentally assigned to the wrong IDs.
@@ -258,8 +270,9 @@ files; minutes with no published quotes use the existing localized fallback.
 The time generator writes quote JSON only; translation validation reports published,
 draft and total quote counts separately.
 
-Once a language is complete and reviewed, explicitly add its interface strings,
-color-control strings, fallback quotes, selector option and locale mapping.
+Once a language is complete and reviewed, add its strings to the appropriate
+artifact bundle under `src/strings/` (Web, screensaver or common), add fallback
+quotes when needed, and update the selector and locale registry.
 The CSV alone does not register a new language. No new language is enabled by
 these commands.
 

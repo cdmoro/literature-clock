@@ -2,7 +2,7 @@ import { store } from '../store';
 import { supportsBackgroundPattern } from '../utils/background-patterns';
 import { readingIcon } from './reading-icons';
 import { getBaseLocale, getInterfaceLocale } from './locales';
-import SETTINGS from '../strings/settings.json';
+import SETTINGS from './settings-strings';
 
 const EFFECTS = ['none', 'rain', 'snow', 'dust', 'dust-v2', 'stars'] as const;
 type Effect = (typeof EFFECTS)[number];

@@ -1,4 +1,4 @@
-import SETTINGS from '../strings/settings.json';
+import SETTINGS from './settings-strings';
 import { store } from '../store';
 import { getBaseLocale, getInterfaceLocale, getQuoteLocales, translateStrings } from './locales';
 import { updateQuote } from './quotes';

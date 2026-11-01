@@ -25,7 +25,7 @@ def plain(value):
 
 def catalogues():
     result = {}
-    for locale in json.loads((ROOT / 'src/strings/translations.json').read_text(encoding='utf-8')):
+    for locale in json.loads((ROOT / 'src/strings/common/translations.json').read_text(encoding='utf-8')):
         grouped = defaultdict(list)
         for row in read_catalogue(ROOT / f'quotes/quotes.{locale}.csv'):
             phrase = row['Quote time']
@@ -56,7 +56,7 @@ def bundle(name, extension, architecture, data, version):
     for locale, quotes in data.items():
         (resources / f'Quotes/{locale}.json').write_text(json.dumps(quotes, ensure_ascii=False), encoding='utf-8')
     (resources / 'locales.json').write_text(json.dumps(sorted(data)))
-    fallback = json.loads((ROOT / 'src/strings/fallbackQuotes.json').read_text())
+    fallback = json.loads((ROOT / 'src/strings/common/fallbackQuotes.json').read_text())
     (resources / 'fallback.json').write_text(json.dumps({locale: dict(first=plain(rows[0]['quote_first']), time='', last=plain(rows[0]['quote_last']), title='', author='', sfw=True) for locale, rows in fallback.items()}, ensure_ascii=False))
     shutil.copy2(OUTPUT / 'OpticalGlass.metallib', resources / 'OpticalGlass.metallib')
     font_root = SOURCE / 'Assets/Fonts'
@@ -69,9 +69,9 @@ def bundle(name, extension, architecture, data, version):
         shutil.rmtree(resources / 'Fonts')
     (resources / 'font-options.json').unlink(missing_ok=True)
     shutil.copytree(font_root, resources / 'Fonts')
-    labels = json.loads((ROOT / 'src/strings/translations.json').read_text(encoding='utf-8'))
-    settings = json.loads((ROOT / 'src/strings/settings.json').read_text())
-    native = json.loads((SOURCE / 'Assets/settings.json').read_text())
+    labels = json.loads((ROOT / 'src/strings/common/translations.json').read_text(encoding='utf-8'))
+    settings = json.loads((ROOT / 'src/strings/common/settings.json').read_text())
+    native = json.loads((ROOT / 'src/strings/screensaver/native-settings.json').read_text())
     (resources / 'settings.json').write_text(json.dumps({key: {**value, **settings[key], **native[key]} for key, value in labels.items()}, ensure_ascii=False))
     for name_notice in ['LICENSE', 'THIRD_PARTY_NOTICES.md']:
         shutil.copy2(ROOT / name_notice, resources / name_notice)

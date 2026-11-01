@@ -1,6 +1,6 @@
 import json
 
-with open('src/strings/translations.json', 'r', encoding='utf-8') as file:
+with open('src/strings/common/translations.json', 'r', encoding='utf-8') as file:
     languages = json.load(file)
 
 def check_keys_consistency(languages):

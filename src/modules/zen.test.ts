@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 import { createStore, store } from '../store';
 import { initZenMode } from './zen';
-import TRANSLATIONS from '../strings/translations.json';
+import TRANSLATIONS from '../strings/common/translations.json';
 
 vi.mock('./screensaver', () => ({ exitScreensaverMode: vi.fn() }));
 vi.mock('./locales', () => ({

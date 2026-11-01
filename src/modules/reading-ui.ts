@@ -1,6 +1,6 @@
 import { store } from '../store';
 import { getBaseLocale } from './locales';
-import STRINGS from '../strings/reading.json';
+import STRINGS from '../strings/web/reading.json';
 
 export function readingStrings() {
   return STRINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))];

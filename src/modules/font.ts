@@ -10,7 +10,7 @@ import {
 } from '../utils/google-font';
 import { getBaseLocale, getInterfaceLocale, getStrings } from './locales';
 import { getDefaultFontName, refreshLocaleThemeFonts } from './locale-fonts';
-import SETTINGS from '../strings/settings.json';
+import SETTINGS from './settings-strings';
 import {
   effectiveFont,
   preferredFont,
