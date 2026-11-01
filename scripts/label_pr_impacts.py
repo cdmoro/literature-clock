@@ -30,7 +30,8 @@ def request(method, url, token, body=None):
         # GitHub returns 422 when a label already exists; the following add call is idempotent.
         if method == "POST" and error.code == 422:
             return None
-        raise
+        detail = error.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"GitHub API {method} {url} returned {error.code}: {detail}") from error
 
 
 def main():
