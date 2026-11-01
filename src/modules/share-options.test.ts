@@ -65,6 +65,10 @@ it('changes image format and appearance without changing the live clock', async 
   expect(button('Light').getAttribute('aria-pressed')).toBe('true');
   expect(document.documentElement.dataset.theme).toBe('base-dark');
 });
+it('hides the color reset control when the image uses the theme default', () => {
+  expect((document.getElementById('share-preview-reset-color') as HTMLButtonElement).hidden).toBe(true);
+  expect((document.querySelector('.share-color-reset') as HTMLButtonElement).hidden).toBe(true);
+});
 it('shares and downloads the preview quote even when the live quote changes', async () => {
   state['active-quote'] = { quote_raw: 'New minute' };
   button('Share').click();
@@ -540,28 +544,87 @@ it('keeps the previous canvas visible while a new preview is rendering', async (
 
 it('toggles time highlighting after Color, before the optional image, and remembers it', async () => {
   const toggle = button('Highlight time');
-  expect(toggle.getAttribute('aria-pressed')).toBe('true');
+  expect(toggle.getAttribute('aria-pressed')).toBe('false');
   const control = toggle.closest('.share-control')!;
   expect(control.previousElementSibling?.classList.contains('share-palette-control')).toBe(true);
   toggle.click();
   await Promise.resolve();
-  expect(selectedCardOptions()).toMatchObject({ highlightTime: false });
+  expect(selectedCardOptions()).toMatchObject({ highlightTime: true });
   expect(renderShareCard).toHaveBeenLastCalledWith(
     expect.anything(),
     expect.anything(),
     undefined,
     undefined,
-    expect.objectContaining({ highlightTime: false }),
+    expect.objectContaining({ highlightTime: true }),
   );
-  expect(localStorage.getItem('share-highlight-time')).toBe('false');
+  expect(localStorage.getItem('share-highlight-time')).toBe('true');
   button('Close').click();
   document.documentElement.dataset.background = 'photo';
   document.documentElement.style.setProperty('--photo-image', 'url("photo.jpg")');
   document.getElementById('share')!.click();
-  expect(button('Highlight time').getAttribute('aria-pressed')).toBe('false');
-  expect(button('Highlight time').closest('.share-control')!.nextElementSibling).toBe(
-    button('Include image').closest('.share-control'),
-  );
+  expect(button('Highlight time').getAttribute('aria-pressed')).toBe('true');
+  const highlightControl = button('Highlight time').closest('.share-control')!;
+  const uppercaseControl = highlightControl.nextElementSibling!;
+  expect(uppercaseControl.querySelector('.share-uppercase-toggle')).not.toBeNull();
+  const alignmentControl = uppercaseControl.nextElementSibling!;
+  expect(alignmentControl.querySelector('.share-alignment-toggle')).not.toBeNull();
+  expect(alignmentControl.nextElementSibling).toBe(button('Include image').closest('.share-control'));
   button('Highlight time').click();
   expect(selectedCardOptions().highlightTime).toBeUndefined();
+  expect(localStorage.getItem('share-highlight-time')).toBe('false');
+});
+
+it('toggles uppercase text for the share card and starts disabled each time', async () => {
+  const toggle = button('Uppercase text');
+  expect(toggle.textContent).toBe('Aa');
+  expect(toggle.querySelector('span')).toBeNull();
+  expect(toggle.getAttribute('aria-pressed')).toBe('false');
+  toggle.click();
+  await Promise.resolve();
+  expect(selectedCardOptions()).toMatchObject({ uppercase: true });
+  expect(renderShareCard).toHaveBeenLastCalledWith(
+    expect.anything(),
+    expect.anything(),
+    undefined,
+    undefined,
+    expect.objectContaining({ uppercase: true }),
+  );
+  button('Close').click();
+  document.getElementById('share')!.click();
+  expect(button('Uppercase text').getAttribute('aria-pressed')).toBe('false');
+  expect(selectedCardOptions()).not.toHaveProperty('uppercase');
+});
+
+it.each([
+  ['en-GB', 'Left', 'Right'],
+  ['ar-AE', 'Right', 'Left'],
+] as const)('cycles %s alignment in visual order', async (locale, startLabel, endLabel) => {
+  button('Close').click();
+  state['active-quote'] = { quote_raw: 'Original quote', locale, time: '12:00' };
+  document.getElementById('share')!.click();
+  const toggle = document.querySelector<HTMLButtonElement>('.share-alignment-toggle')!;
+  const cycle =
+    locale === 'ar-AE'
+      ? [
+          [startLabel, 'start'],
+          [endLabel, 'end'],
+          ['Center', 'center'],
+          [startLabel, 'start'],
+        ]
+      : [
+          [startLabel, 'start'],
+          ['Center', 'center'],
+          [endLabel, 'end'],
+          [startLabel, 'start'],
+        ];
+  for (const [index, [label, value]] of cycle.entries()) {
+    expect(toggle.getAttribute('aria-label')).toBe(`Alignment: ${label}`);
+    expect(toggle.dataset.alignment).toBe(value);
+    if (value === 'start') expect(selectedCardOptions()).not.toHaveProperty('alignment');
+    else expect(selectedCardOptions()).toMatchObject({ alignment: value });
+    if (index < cycle.length - 1) {
+      toggle.click();
+      await Promise.resolve();
+    }
+  }
 });

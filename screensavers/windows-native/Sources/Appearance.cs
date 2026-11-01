@@ -37,8 +37,12 @@ public static class Appearance
     }
     public static Color Foreground(string theme, bool dark, Color accent) => theme switch { "terminal" => accent, "base" => Color(dark ? "#c9c9c5" : "#2f2e2c"), "photo" => Color(dark ? "#eeeeee" : "#111111"), _ => Color(dark ? "#e6e6e6" : "#212121") };
     static readonly Dictionary<string, FontFamily> fonts = new();
-    public static FontFamily Font(string theme, string locale)
+    public static FontFamily Font(string theme, string locale, string selected = "default")
     {
+        // WPF composite families include language-specific system fallback faces.
+        if (selected == "serif") return new FontFamily("Global Serif");
+        if (selected == "sans-serif") return new FontFamily("Global Sans Serif");
+        if (selected == "monospace") return new FontFamily("Global Monospace");
         var language = locale.Split('-')[0];
         var key = theme switch { "book" => "librebaskerville", "terminal" => "b612mono", "festive" => "borel", "bohemian" => "comfortaa", "retro" => "vt323", "photo" => "abrilfatface", _ => "specialelite" };
         key = (theme, language) switch

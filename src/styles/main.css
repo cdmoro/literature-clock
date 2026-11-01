@@ -48,13 +48,9 @@ body[data-loading] {
 
 body.zen #progress-bar,
 body.zen #time-clock,
-body.zen:not(.screensaver) footer #menu,
-body.zen:not(.screensaver) .github-corner {
+body.zen footer #menu,
+body.zen .github-corner {
   display: none !important;
-}
-
-body.zen:not(.screensaver) #exit-zen {
-  display: block;
 }
 
 body:not(.show-time) #time-clock {
@@ -474,10 +470,6 @@ html[data-progressbar='none'] #progress-bar {
     font-size: 1rem;
   }
 
-  #exit-zen {
-    font-size: 1.7rem;
-  }
-
   #share-signature {
     font-size: 0.8rem;
   }
@@ -510,10 +502,17 @@ html[data-progressbar='none'] #progress-bar {
 }
 
 @media only screen and (max-width: 900px) {
-  [data-photo-credit] footer,
-  body.fuzzy-clock footer {
-    bottom: 3.5rem;
-    padding-bottom: 0;
+  /* Reserve the same credit area for the menu and the Zen exit control. */
+  [data-photo-credit] body:not(.zen),
+  body[data-quote-attribution='bottom-left'],
+  body.fuzzy-clock:not([data-quote-attribution='hidden']) {
+    --clock-controls-offset: 3.5rem;
+    --clock-controls-padding-bottom: 0;
+  }
+
+  footer {
+    bottom: max(var(--clock-controls-offset, 0rem), env(safe-area-inset-bottom));
+    padding-bottom: var(--clock-controls-padding-bottom, 1rem);
   }
 }
 
@@ -864,6 +863,15 @@ select:dir(rtl),
   width: 16px;
   height: 16px;
   transform: none;
+}
+.share-uppercase-toggle {
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  font-size: 0.9rem;
+}
+.share-uppercase-toggle[aria-pressed='false'] {
+  font-weight: 400;
+  opacity: 0.7;
 }
 @media (prefers-reduced-motion: reduce) {
   .share-preview-spinner { animation-duration: 2s; }
