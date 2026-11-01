@@ -1,0 +1,13 @@
+/* Quote library */
+"myQuotes" = "Le mie citazioni";
+"favorites" = "Preferiti";
+"history" = "Recenti";
+"noFavorites" = "Nessun preferito. Salva una citazione con il cuore.";
+"noHistory" = "Nessuna citazione recente. Qui appariranno le ultime 100 citazioni visualizzate.";
+"clearHistory" = "Cancella cronologia";
+"saveFavorite" = "Salva nei preferiti";
+"removeFavorite" = "Rimuovi dai preferiti";
+"openQuote" = "Apri citazione";
+"close" = "Chiudi";
+"noRecentQuotes" = "Nessuna citazione recente. Qui appariranno le ultime 100 citazioni visualizzate.";
+"saveQuoteHint" = "Nessun preferito. Salva una citazione con il cuore.";

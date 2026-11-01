@@ -1,0 +1,13 @@
+/* Quote library */
+"myQuotes" = "我的引文";
+"favorites" = "收藏";
+"history" = "最近阅读";
+"noFavorites" = "暂无收藏。点击爱心按钮收藏引文。";
+"noHistory" = "暂无最近阅读记录。最近查看的100条引文将显示在这里。";
+"clearHistory" = "清除历史记录";
+"saveFavorite" = "收藏引文";
+"removeFavorite" = "取消收藏";
+"openQuote" = "打开引文";
+"close" = "关闭";
+"noRecentQuotes" = "暂无最近阅读记录。最近查看的100条引文将显示在这里。";
+"saveQuoteHint" = "暂无收藏。点击爱心按钮收藏引文。";
