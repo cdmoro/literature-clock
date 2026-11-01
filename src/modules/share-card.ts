@@ -9,6 +9,8 @@ import { loadGoogleFont, normalizeFontName, fontFamilyOverride } from '../utils/
 import { getLocaleThemeFont } from './locale-fonts';
 import { quoteMarkup } from '../utils/quote-markup';
 import { defaultColor } from './themes';
+import { textDirection } from '../utils/text-direction';
+import STRINGS from '../strings/share.json';
 
 export const cardFormats = { square: [1080, 1080], portrait: [1080, 1920], landscape: [1920, 1080] } as const;
 export type CardFormat = keyof typeof cardFormats;
@@ -21,6 +23,8 @@ export interface CardOptions {
   useDefaultColor?: boolean;
   photoImage?: string;
   highlightTime?: boolean;
+  uppercase?: boolean;
+  alignment?: 'start' | 'center' | 'end';
 }
 const themeFontLoads = new Map<string, Promise<void>>();
 
@@ -35,7 +39,6 @@ export async function renderShareCard(
   const [width, height] = cardFormats[format];
   const bodyStyle = getComputedStyle(document.body);
   const quoteStyle = getComputedStyle(document.getElementById('quote') || document.body);
-  const timeStyle = getComputedStyle(document.getElementById('time-clock') || document.body);
   const card = document.createElement('div');
   // Resolve the existing theme variant on an isolated element, never changing the clock.
   const palette = document.createElement('div');
@@ -250,19 +253,15 @@ export async function renderShareCard(
     }
   }
   card.lang = quote.locale;
+  card.dir = textDirection(quote.locale);
   card.setAttribute('aria-hidden', 'true');
-  const time = document.createElement('div');
-  time.textContent = quote.time;
-  Object.assign(time.style, {
-    fontSize: '32px',
-    color: accent,
-    textShadow: timeStyle.textShadow,
-  });
   const content = document.createElement('div');
   content.style.textShadow = quoteStyle.textShadow;
   const passage = document.createElement('div');
   passage.dir = 'auto';
   passage.style.whiteSpace = 'pre-wrap';
+  passage.style.textTransform = options.uppercase ? 'uppercase' : 'none';
+  passage.style.textAlign = options.alignment || 'start';
   const isFuzzy = store.get('fuzzy-clock') === true;
   const passageParts = isFuzzy
     ? ([[quote.quote_time_case, true]] as const)
@@ -274,7 +273,7 @@ export async function renderShareCard(
   for (const [text, highlighted] of passageParts) {
     const span = document.createElement('span');
     span.append(quoteMarkup(text || ''));
-    if (highlighted && options.highlightTime !== false) span.style.color = time.style.color;
+    if (highlighted && options.highlightTime) span.style.color = accent;
     passage.append(span);
   }
   if (!passage.textContent) passage.textContent = isFuzzy ? quote.quote_time_case : quote.quote_raw;
@@ -283,29 +282,37 @@ export async function renderShareCard(
     passage.style.textWrap = 'balance';
   }
   const credit = document.createElement('div');
-  credit.dir = 'auto';
+  credit.dir = textDirection(quote.locale);
   credit.className = 'share-card-credit';
-  credit.append('— ');
+  const centered = options.alignment === 'center';
   const attribution = store.get('hide-book-title') ? [quote.author] : [quote.title, quote.author];
   attribution.forEach((text, index) => {
-    if (index) credit.append(', ');
+    if (index === 0 && !centered) credit.append('— ');
+    if (index > 0) credit.append(centered ? ' ' : ', ');
     const part = document.createElement('span');
     part.dir = 'auto';
     part.style.unicodeBidi = 'isolate';
     part.textContent = text;
     credit.append(part);
   });
-  Object.assign(credit.style, { marginTop: '40px', fontSize: '28px' });
+  Object.assign(credit.style, {
+    marginTop: '40px',
+    fontSize: '28px',
+    textAlign: options.alignment || 'start',
+  });
   if (isFuzzy || store.get('quote-attribution') === 'hidden') {
     content.append(passage);
   } else {
     content.append(passage, credit);
   }
   const signature = document.createElement('div');
-  signature.textContent = 'Literature Clock · literatureclock.netlify.app';
+  signature.lang = quote.locale.replace(/-draft$/, '');
+  signature.dir = textDirection(quote.locale);
+  signature.textContent =
+    STRINGS[quote.locale.replace(/-draft$/, '') as keyof typeof STRINGS]?.signature || STRINGS['en-GB'].signature;
   signature.style.fontSize = '22px';
   if (photo) {
-    for (const element of [time, content, signature]) {
+    for (const element of [content, signature]) {
       element.style.position = 'relative';
       element.style.zIndex = '4';
     }
@@ -319,9 +326,9 @@ export async function renderShareCard(
       opacity: palette.dataset.theme?.endsWith('-dark') ? '0.65' : '0.35',
     });
     card.append(veil);
-    for (const element of [time, content, signature]) element.style.position = 'relative';
+    for (const element of [content, signature]) element.style.position = 'relative';
   }
-  card.append(time, content, signature);
+  card.append(content, signature);
   document.body.append(card);
   try {
     if (photo) await photo.decode().catch(() => undefined);

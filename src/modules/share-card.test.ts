@@ -43,10 +43,14 @@ it.each([
     vi.mocked(html2canvas).mockImplementation(async (element, options) => {
       expect(options).toMatchObject({ width, height, scale: 1 });
       expect(element.textContent).toContain('<script>Beforenoon arrived');
+      expect(element.textContent).not.toContain(quote.time);
       expect(element.querySelector('script')).toBeNull();
       expect(element.querySelector('br')).not.toBeNull();
       expect(element.querySelector('em')?.textContent).toBe('Before');
       expect(element.textContent).toContain('— Book, Writer');
+      expect((element as HTMLElement).dir).toBe('ltr');
+      expect(element.lastElementChild?.textContent).toBe('Reloj literario · literatureclock.netlify.app');
+      expect((element.lastElementChild as HTMLElement).dir).toBe('ltr');
       return canvas;
     });
     expect(await renderShareCard(quote, format)).toBe(canvas);
@@ -88,10 +92,17 @@ it('resolves preview colour and pattern on an isolated palette and exports its t
   vi.mocked(html2canvas).mockImplementation(async (element) => {
     expect(element.style.backgroundSize).toBe('24px 24px');
     expect(element.style.backgroundImage).toContain('/pattern.png');
-    expect(element.firstElementChild?.getAttribute('style')).toContain('rgb(18, 52, 86)');
+    const highlighted = [...element.querySelectorAll<HTMLElement>('div[dir="auto"] > span')].find(
+      (span) => span.style.color,
+    );
+    expect(highlighted?.style.color).toBe('rgb(18, 52, 86)');
     return document.createElement('canvas');
   });
-  await renderShareCard(quote, 'square', undefined, undefined, { color: '#123456', pattern: 'grid' });
+  await renderShareCard(quote, 'square', undefined, undefined, {
+    color: '#123456',
+    pattern: 'grid',
+    highlightTime: true,
+  });
   expect(document.documentElement.getAttribute('style')).toBe(liveStyle);
   expect(document.documentElement.dataset.theme).toBe('base-light');
   computed.mockRestore();
@@ -141,27 +152,38 @@ it.each(['dots', 'circles', 'diagonal', 'diagonal-wide'] as const)(
   },
 );
 
-it.each([false, true])('matches web attribution when hide book title is %s', async (hidden) => {
-  state.hideBookTitle = hidden;
+it.each([
+  ['es-ES', 'start', 'start', '— Book, Writer'],
+  ['es-ES', 'center', 'center', 'Book Writer'],
+  ['es-ES', 'end', 'end', '— Book, Writer'],
+  ['ar-AE', 'start', 'start', '— Book, Writer'],
+  ['ar-AE', 'center', 'center', 'Book Writer'],
+  ['ar-AE', 'end', 'end', '— Book, Writer'],
+] as const)('aligns %s attribution with %s quote alignment', async (locale, quoteAlignment, textAlignment, text) => {
   vi.mocked(html2canvas).mockImplementation(async (element) => {
     const credit = element.querySelector<HTMLElement>('.share-card-credit')!;
-    expect(credit.textContent).toBe(hidden ? '— Writer' : '— Book, Writer');
-    expect([...credit.querySelectorAll('span')].map((part) => part.textContent)).toEqual(
-      hidden ? ['Writer'] : ['Book', 'Writer'],
-    );
-    for (const part of credit.querySelectorAll<HTMLElement>('span')) {
-      expect(part.dir).toBe('auto');
-      expect(part.style.unicodeBidi).toBe('isolate');
-    }
+    expect(credit.textContent).toBe(text);
+    expect(credit.style.textAlign).toBe(textAlignment);
+    expect(credit.querySelectorAll('[dir="auto"]')).toHaveLength(2);
+    expect(credit.style.display).toBe('');
+    expect(credit.dir).toBe(locale === 'ar-AE' ? 'rtl' : 'ltr');
     return document.createElement('canvas');
   });
-  await renderShareCard(quote, 'square');
+  await renderShareCard({ ...quote, locale }, 'square', undefined, undefined, { alignment: quoteAlignment });
 });
 
-it('isolates mixed-script book and author names while preserving punctuation', async () => {
+it('isolates mixed-script book and author names and defaults RTL text to the right', async () => {
   vi.mocked(html2canvas).mockImplementation(async (element) => {
     const credit = element.querySelector('.share-card-credit')!;
     expect(credit.textContent).toBe('— كتاب عربي, Stanley R. Matthews');
+    expect(element.querySelector<HTMLElement>('div[dir="auto"]')?.style.textAlign).toBe('start');
+    expect((element as HTMLElement).dir).toBe('rtl');
+    expect(credit.getAttribute('dir')).toBe('rtl');
+    expect((credit as HTMLElement).style.textAlign).toBe('start');
+    const signature = element.lastElementChild as HTMLElement;
+    expect(signature.textContent).toBe('الساعة الأدبية · literatureclock.netlify.app');
+    expect(signature.getAttribute('dir')).toBe('rtl');
+    expect(signature.lang).toBe('ar-AE');
     expect(credit.querySelectorAll('[dir="auto"]')).toHaveLength(2);
     return document.createElement('canvas');
   });
@@ -245,6 +267,15 @@ it.each([true, false])('renders time highlighting as %s without changing the pas
     return document.createElement('canvas');
   });
   await renderShareCard(quote, 'square', undefined, undefined, { highlightTime, color: '#d24335' });
+});
+
+it('renders passage text in uppercase when requested', async () => {
+  vi.mocked(html2canvas).mockImplementation(async (element) => {
+    const passage = element.querySelector<HTMLElement>('div[dir="auto"]')!;
+    expect(passage.style.textTransform).toBe('uppercase');
+    return document.createElement('canvas');
+  });
+  await renderShareCard(quote, 'square', undefined, undefined, { uppercase: true });
 });
 
 it.each(['serif', 'sans-serif', 'monospace'])(
