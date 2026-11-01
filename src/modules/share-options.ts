@@ -16,6 +16,7 @@ import downloadIcon from '../assets/download.svg?raw';
 import { COLOR_PRESETS, mountColorPalette } from './color-palette';
 import { defaultColor } from './themes';
 import COLOR_STRINGS from '../strings/web/colorControls.json';
+import { textDirection } from '../utils/text-direction';
 import '../styles/share-color-controls.css';
 
 let format: CardFormat = 'square';
@@ -28,7 +29,9 @@ let useDefaultColor = false;
 let font: string | undefined;
 let popupPhotoImage: string | null | undefined;
 let includePhoto = true;
-let highlightTime = true;
+let highlightTime = false;
+let uppercaseText = false;
+let alignment: 'start' | 'center' | 'end' = 'start';
 export const selectedCardOptions = () => ({
   pattern: pattern ?? store.get('background-pattern') ?? 'none',
   ...(() => {
@@ -48,7 +51,9 @@ export const selectedCardOptions = () => ({
         : {};
   })(),
   color,
-  ...(!highlightTime ? { highlightTime: false } : {}),
+  ...(highlightTime ? { highlightTime: true } : {}),
+  ...(uppercaseText ? { uppercase: true } : {}),
+  ...(alignment !== 'start' ? { alignment } : {}),
   ...(palette && palette !== 'default' ? { palette } : {}),
   font,
   ...(useDefaultColor ? { useDefaultColor: true } : {}),
@@ -74,10 +79,12 @@ export function initShareOptions() {
     if (!quote || store.get('quote')) return;
     const snapshot = { ...quote };
     try {
-      highlightTime = localStorage.getItem('share-highlight-time') !== 'false';
+      highlightTime = localStorage.getItem('share-highlight-time') === 'true';
     } catch {
-      highlightTime = true;
+      highlightTime = false;
     }
+    uppercaseText = false;
+    alignment = 'start';
     const strings = shareOptionStrings();
     const settingsStrings = SETTINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))];
     popupPhotoImage =
@@ -347,6 +354,59 @@ export function initShareOptions() {
       void refresh();
     });
     controls.insertBefore(field(strings.highlightTime, highlightButton), customization);
+    const uppercaseButton = document.createElement('button');
+    uppercaseButton.type = 'button';
+    uppercaseButton.className = 'share-image-toggle share-uppercase-toggle';
+    uppercaseButton.setAttribute('aria-label', strings.uppercase);
+    uppercaseButton.title = strings.uppercase;
+    uppercaseButton.setAttribute('aria-pressed', 'false');
+    uppercaseButton.textContent = 'Aa';
+    uppercaseButton.addEventListener('click', () => {
+      uppercaseText = !uppercaseText;
+      uppercaseButton.setAttribute('aria-pressed', String(uppercaseText));
+      void refresh();
+    });
+    controls.insertBefore(field(strings.uppercase, uppercaseButton), customization);
+    const rtl = textDirection(snapshot.locale) === 'rtl';
+    const alignmentButton = document.createElement('button');
+    alignmentButton.type = 'button';
+    alignmentButton.className = 'share-image-toggle share-alignment-toggle';
+    const alignmentLabel = () => {
+      if (alignment === 'center') return strings.center;
+      const isRight = alignment === 'start' ? rtl : !rtl;
+      return isRight ? strings.right : strings.left;
+    };
+    const updateAlignmentButton = () => {
+      const label = alignmentLabel();
+      const position = alignment === 'center' ? 'center' : label === strings.right ? 'right' : 'left';
+      const path =
+        position === 'center'
+          ? 'M4 6h16M7 10h10M4 14h16M7 18h10'
+          : position === 'right'
+            ? 'M20 6H4M20 10H10M20 14H4M20 18H10'
+            : 'M4 6h16M4 10h10M4 14h16M4 18h10';
+      alignmentButton.title = `${strings.alignment}: ${label}`;
+      alignmentButton.setAttribute('aria-label', `${strings.alignment}: ${label}`);
+      alignmentButton.dataset.alignment = alignment;
+      alignmentButton.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="${path}"/></svg>`;
+    };
+    updateAlignmentButton();
+    alignmentButton.addEventListener('click', () => {
+      alignment = rtl
+        ? alignment === 'start'
+          ? 'end'
+          : alignment === 'end'
+            ? 'center'
+            : 'start'
+        : alignment === 'start'
+          ? 'center'
+          : alignment === 'center'
+            ? 'end'
+            : 'start';
+      updateAlignmentButton();
+      void refresh();
+    });
+    controls.insertBefore(field(strings.alignment, alignmentButton), customization);
     if (popupPhotoImage) controls.insertBefore(includePhotoControl, customization);
     const patternControl = document.createElement('label');
     patternControl.className = 'share-pattern-control';
@@ -442,7 +502,10 @@ export function initShareOptions() {
     copyText.disabled = typeof navigator.clipboard?.writeText !== 'function';
     copyText.addEventListener('click', async () => {
       try {
-        await navigator.clipboard.writeText(snapshot.quote_raw);
+        const text = uppercaseText
+          ? snapshot.quote_raw.toLocaleUpperCase(snapshot.locale.replace(/-draft$/, ''))
+          : snapshot.quote_raw;
+        await navigator.clipboard.writeText(text);
         status.textContent = fontStrings.copy_mode_copied;
       } catch {
         status.textContent = strings.textCopyFailed;
@@ -459,7 +522,13 @@ export function initShareOptions() {
       actionButton.addEventListener('click', async () => {
         actionButton.disabled = true;
         try {
-          const notice = await action(snapshot);
+          const shareSnapshot = uppercaseText
+            ? {
+                ...snapshot,
+                quote_raw: snapshot.quote_raw.toLocaleUpperCase(snapshot.locale.replace(/-draft$/, '')),
+              }
+            : snapshot;
+          const notice = await action(shareSnapshot);
           status.textContent = notice || '';
         } finally {
           actionButton.disabled = false;
@@ -535,7 +604,9 @@ export function initShareOptions() {
         : useDefaultColor
           ? defaultColor(currentTheme(), variant === 'dark')
           : color || store.get('custom-color') || store.get('color') || '#d24335';
-      resetColor.hidden = !preset && useDefaultColor;
+      const themeDefault = defaultColor(currentTheme(), variant === 'dark').toLowerCase();
+      const selectedDefault = colorInput.value.toLowerCase() === themeDefault;
+      resetColor.hidden = !preset && (useDefaultColor || selectedDefault);
       colorIndicator.style.background = colorInput.value;
       compactReset.hidden = resetColor.hidden;
       imagePalette.refresh();

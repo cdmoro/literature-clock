@@ -113,9 +113,7 @@
     "settings_preset_valentine": "Valentine’s Day",
     "settings_font_serif": "Serif",
     "settings_font_sans-serif": "Sans serif",
-    "settings_font_monospace": "Monospace",
-    "settings_title": "Settings",
-    "settings_close": "Close settings"
+    "settings_font_monospace": "Monospace"
   },
   "en-US": {
     "settings_appearance": "Appearance",
@@ -231,9 +229,7 @@
     "settings_preset_valentine": "Valentine’s Day",
     "settings_font_serif": "Serif",
     "settings_font_sans-serif": "Sans serif",
-    "settings_font_monospace": "Monospace",
-    "settings_title": "Settings",
-    "settings_close": "Close settings"
+    "settings_font_monospace": "Monospace"
   },
   "es-ES": {
     "settings_appearance": "Apariencia",
@@ -349,9 +345,7 @@
     "settings_preset_valentine": "San Valentín",
     "settings_font_serif": "Serif",
     "settings_font_sans-serif": "Sans serif",
-    "settings_font_monospace": "Monoespaciada",
-    "settings_title": "Configuración",
-    "settings_close": "Cerrar configuración"
+    "settings_font_monospace": "Monoespaciada"
   },
   "pt-PT": {
     "settings_appearance": "Aparência",
@@ -467,9 +461,7 @@
     "settings_preset_valentine": "Dia dos Namorados",
     "settings_font_serif": "Serifada",
     "settings_font_sans-serif": "Sem serifa",
-    "settings_font_monospace": "Monoespaçada",
-    "settings_title": "Configurações",
-    "settings_close": "Fechar configurações"
+    "settings_font_monospace": "Monoespaçada"
   },
   "fr-FR": {
     "settings_appearance": "Apparence",
@@ -585,9 +577,7 @@
     "settings_preset_valentine": "Saint-Valentin",
     "settings_font_serif": "Avec empattements",
     "settings_font_sans-serif": "Sans empattements",
-    "settings_font_monospace": "À chasse fixe",
-    "settings_title": "Paramètres",
-    "settings_close": "Fermer les paramètres"
+    "settings_font_monospace": "À chasse fixe"
   },
   "it-IT": {
     "settings_appearance": "Aspetto",
@@ -703,9 +693,7 @@
     "settings_preset_valentine": "San Valentino",
     "settings_font_serif": "Con grazie",
     "settings_font_sans-serif": "Senza grazie",
-    "settings_font_monospace": "Monospaziato",
-    "settings_title": "Impostazioni",
-    "settings_close": "Chiudi impostazioni"
+    "settings_font_monospace": "Monospaziato"
   },
   "de-DE": {
     "settings_appearance": "Darstellung",
@@ -821,9 +809,7 @@
     "settings_preset_valentine": "Valentinstag",
     "settings_font_serif": "Mit Serifen",
     "settings_font_sans-serif": "Ohne Serifen",
-    "settings_font_monospace": "Nichtproportional",
-    "settings_title": "Einstellungen",
-    "settings_close": "Einstellungen schließen"
+    "settings_font_monospace": "Nichtproportional"
   },
   "el-GR": {
     "settings_appearance": "Εμφάνιση",
@@ -939,9 +925,7 @@
     "settings_preset_valentine": "Άγιος Βαλεντίνος",
     "settings_font_serif": "Με πατούρες",
     "settings_font_sans-serif": "Χωρίς πατούρες",
-    "settings_font_monospace": "Σταθερού πλάτους",
-    "settings_title": "Ρυθμίσεις",
-    "settings_close": "Κλείσιμο ρυθμίσεων"
+    "settings_font_monospace": "Σταθερού πλάτους"
   },
   "zh-CN": {
     "settings_appearance": "外观",
@@ -1057,9 +1041,7 @@
     "settings_preset_valentine": "情人节",
     "settings_font_serif": "衬线体",
     "settings_font_sans-serif": "无衬线体",
-    "settings_font_monospace": "等宽体",
-    "settings_title": "设置",
-    "settings_close": "关闭设置"
+    "settings_font_monospace": "等宽体"
   },
   "ru-RU": {
     "settings_appearance": "Оформление",
@@ -1175,9 +1157,7 @@
     "settings_preset_valentine": "День святого Валентина",
     "settings_font_serif": "С засечками",
     "settings_font_sans-serif": "Без засечек",
-    "settings_font_monospace": "Моноширинный",
-    "settings_title": "Настройки",
-    "settings_close": "Закрыть настройки"
+    "settings_font_monospace": "Моноширинный"
   },
   "eo": {
     "settings_appearance": "Aspekto",
@@ -1293,9 +1273,7 @@
     "settings_preset_valentine": "Sankta Valenteno",
     "settings_font_serif": "Kun serifoj",
     "settings_font_sans-serif": "Sen serifoj",
-    "settings_font_monospace": "Egallarĝa",
-    "settings_title": "Agordoj",
-    "settings_close": "Fermi la agordojn"
+    "settings_font_monospace": "Egallarĝa"
   },
   "ar-AE": {
     "settings_appearance": "المظهر",
@@ -1411,8 +1389,6 @@
     "settings_preset_valentine": "عيد الحب",
     "settings_font_serif": "بزوائد",
     "settings_font_sans-serif": "بلا زوائد",
-    "settings_font_monospace": "أحادي المسافة",
-    "settings_title": "الإعدادات",
-    "settings_close": "إغلاق الإعدادات"
+    "settings_font_monospace": "أحادي المسافة"
   }
 }
