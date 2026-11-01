@@ -7,6 +7,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+from component_ownership import changed_components
+
 VERSION_FILES = {
     "Web": "package.json",
     "macOS": "screensavers/macos-native/VERSION",
@@ -14,26 +16,6 @@ VERSION_FILES = {
 }
 RELEASE_TAG = re.compile(r"^literature-clock-v(\d+)\.(\d+)\.(\d+)$")
 SEMVER = re.compile(r"^\d+\.\d+\.\d+$")
-
-WEB_PATHS = (
-    "src/",
-    "public/",
-    "quotes/",
-    "times/",
-    "plugins/",
-    "admin/",
-)
-WEB_FILES = {
-    "index.html",
-    "package.json",
-    "package-lock.json",
-    "netlify.toml",
-    "vite.config.ts",
-    "tsconfig.json",
-}
-SHARED_NATIVE_PATHS = ("quotes/", "src/strings/")
-SHARED_NATIVE_FILES = {"src/photo-providers.json"}
-
 
 def run(*command: str) -> str:
     return subprocess.run(command, check=True, capture_output=True, text=True).stdout.strip()
@@ -53,37 +35,6 @@ def component_version(component: str, ref: str | None = None) -> str:
 
 def parse_version(value: str) -> tuple[int, int, int]:
     return tuple(map(int, value.split(".")))
-
-
-def changed_components(paths: list[str]) -> set[str]:
-    changed: set[str] = set()
-    for path in paths:
-        if (
-            path in WEB_FILES
-            or path.startswith(WEB_PATHS)
-            or path.startswith("scripts/") and path != "scripts/validate_release_versions.py"
-        ):
-            changed.add("Web")
-        if (
-            path.startswith("screensavers/macos-native/Sources/")
-            or path.startswith("screensavers/macos-native/Assets/")
-            or path == "screensavers/macos-native/build.py"
-            or path.startswith(SHARED_NATIVE_PATHS)
-            or path in SHARED_NATIVE_FILES
-        ):
-            changed.add("macOS")
-        if (
-            path.startswith("screensavers/windows-native/Sources/")
-            or path.startswith("screensavers/windows-native/")
-            and path not in {"screensavers/windows-native/README.md", "screensavers/windows-native/VERSION"}
-            or path.startswith("screensavers/macos-native/Assets/")
-            or path.startswith("public/assets/")
-            or path == "screensavers/macos-native/build.py"
-            or path.startswith(SHARED_NATIVE_PATHS)
-            or path in SHARED_NATIVE_FILES
-        ):
-            changed.add("Windows")
-    return changed
 
 
 def main() -> None:

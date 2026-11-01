@@ -8,14 +8,14 @@ import { closeDialogOnBackdropClick } from '../utils/dialog';
 import { renderShareCard, type CardAppearance, type CardFormat } from './share-card';
 import { downloadQuote, shareQuote } from './share';
 import { BACKGROUND_PATTERNS, type BackgroundPattern } from '../utils/background-patterns';
-import SETTINGS from '../strings/settings.json';
-import STRINGS from '../strings/share.json';
+import SETTINGS from './settings-strings';
+import STRINGS from '../strings/web/share.json';
 import copyIcon from '../assets/copy.svg?raw';
 import shareIcon from '../assets/share.svg?raw';
 import downloadIcon from '../assets/download.svg?raw';
 import { COLOR_PRESETS, mountColorPalette } from './color-palette';
 import { defaultColor } from './themes';
-import COLOR_STRINGS from '../strings/colorControls.json';
+import COLOR_STRINGS from '../strings/web/colorControls.json';
 import '../styles/share-color-controls.css';
 
 let format: CardFormat = 'square';

@@ -23,9 +23,9 @@ def prepare(destination=SOURCE / 'Resources'):
     def write(name, data):
         (destination / name).write_text(json.dumps(data, ensure_ascii=False), encoding='utf-8')
     write('locales.json', sorted(quotes))
-    fallback = json.loads((ROOT / 'src/strings/fallbackQuotes.json').read_text(encoding='utf-8'))
+    fallback = json.loads((ROOT / 'src/strings/common/fallbackQuotes.json').read_text(encoding='utf-8'))
     write('fallback.json', {locale: dict(first=mac.plain(rows[0]['quote_first']), time='', last=mac.plain(rows[0]['quote_last']), title='', author='', sfw=True) for locale, rows in fallback.items()})
-    labels, settings, native = [json.loads(path.read_text(encoding='utf-8')) for path in [ROOT / 'src/strings/translations.json', ROOT / 'src/strings/settings.json', MAC / 'Assets/settings.json']]
+    labels, settings, native = [json.loads(path.read_text(encoding='utf-8')) for path in [ROOT / 'src/strings/common/translations.json', ROOT / 'src/strings/common/settings.json', ROOT / 'src/strings/screensaver/native-settings.json']]
     write('settings.json', {key: {**value, **settings[key], **native[key]} for key, value in labels.items()})
     fonts = MAC / 'Assets/Fonts'
     for asset in json.loads((fonts / 'manifest.json').read_text(encoding='utf-8'))['files']:

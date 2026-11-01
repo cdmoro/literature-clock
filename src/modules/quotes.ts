@@ -8,7 +8,7 @@ import { getBaseLocale, getRandomLocale, getStrings } from './locales';
 import { removeBackgroundImage, setDynamicBackgroundPicture, setTheme } from './themes';
 import { Locale, ResolvedQuote, Quote } from '../types';
 import { fitQuote, getTime, updateGHLinks } from '../utils';
-import FALLBACK_QUOTES from '../strings/fallbackQuotes.json';
+import FALLBACK_QUOTES from '../strings/common/fallbackQuotes.json';
 import { cancelQuoteTransition, transitionQuote } from './transitions';
 
 let latestRequest = 0;
