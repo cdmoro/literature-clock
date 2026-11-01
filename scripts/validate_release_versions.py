@@ -7,7 +7,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from component_ownership import changed_components
+from component_ownership import changed_components as changed_components_from_ownership
 
 VERSION_FILES = {
     "Web": "package.json",
@@ -17,6 +17,8 @@ VERSION_FILES = {
 }
 RELEASE_TAG = re.compile(r"^literature-clock-v(\d+)\.(\d+)\.(\d+)$")
 SEMVER = re.compile(r"^\d+\.\d+\.\d+$")
+MACOS_APP_PATHS = ("apple/Shared/", "apple/macOS/", "apple/LiteratureClock.xcodeproj/")
+MACOS_APP_FILES = {"apple/build.py", "apple/Version.xcconfig"}
 
 def run(*command: str) -> str:
     return subprocess.run(command, check=True, capture_output=True, text=True).stdout.strip()
@@ -39,6 +41,13 @@ def component_version(component: str, ref: str | None = None) -> str:
 
 def parse_version(value: str) -> tuple[int, int, int]:
     return tuple(map(int, value.split(".")))
+
+
+def changed_components(paths: list[str]) -> set[str]:
+    changed = globals()["changed_components_from_ownership"](paths)
+    if any(path.startswith(MACOS_APP_PATHS) or path in MACOS_APP_FILES for path in paths):
+        changed.add("macOS app")
+    return changed
 
 
 def main() -> None:
@@ -73,9 +82,6 @@ def main() -> None:
     _, previous_tag = previous
     changed_paths = run("git", "diff", "--name-only", f"{previous_tag}..HEAD").splitlines()
     changed = changed_components(changed_paths)
-    if any(path.startswith(("apple/Shared/", "apple/macOS/", "apple/LiteratureClock.xcodeproj/"))
-           or path in {"apple/build.py", "apple/Version.xcconfig"} for path in changed_paths):
-        changed.add("macOS app")
     errors = []
     for component in VERSION_FILES:
         current = component_version(component)
