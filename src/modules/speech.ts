@@ -2,7 +2,7 @@ import { store } from '../store';
 import { getBaseLocale, getInterfaceLocale } from './locales';
 import { readingIcon } from './reading-icons';
 import { showQuoteNotice } from './reading-ui';
-import STRINGS from '../strings/speech.json';
+import STRINGS from '../strings/web/speech.json';
 import { createSpeechHighlight, speechText } from './speech-highlight';
 
 // Include only attribution that is actually shown, including ancestor CSS rules.

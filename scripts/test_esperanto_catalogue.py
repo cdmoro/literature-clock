@@ -17,7 +17,7 @@ class EsperantoCatalogueTests(unittest.TestCase):
     def test_enabled_catalogue_is_fully_reviewed(self):
         rows = read_catalogue(ROOT / 'quotes/quotes.eo.csv')
         self.assertTrue(all(not is_draft(row) for row in rows))
-        enabled = json.loads((ROOT / 'src/strings/translations.json').read_text())
+        enabled = json.loads((ROOT / 'src/strings/common/translations.json').read_text())
         self.assertIn('eo', enabled)
 
     def test_highlights_do_not_cut_off_numeric_seconds(self):

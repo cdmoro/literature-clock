@@ -7,7 +7,7 @@ import {
   supportsBackgroundPattern,
 } from '../utils/background-patterns';
 import { getBaseLocale, getInterfaceLocale } from './locales';
-import SETTINGS from '../strings/settings.json';
+import SETTINGS from './settings-strings';
 
 export function getCurrentBackgroundPattern(pattern = store.get('background-pattern')) {
   const now = new Date();

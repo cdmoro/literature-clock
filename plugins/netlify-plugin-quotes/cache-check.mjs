@@ -11,7 +11,7 @@ test('restore generated quotes and invalidate changed inputs or missing output',
   const original = process.cwd();
   const temp = await mkdtemp(join(tmpdir(), 'quote-cache-test-'));
   try {
-    for (const dir of ['scripts', 'quotes', 'src/strings', 'plugins']) {
+    for (const dir of ['scripts', 'quotes', 'src/strings/common', 'plugins']) {
       await mkdir(join(temp, dir), { recursive: true });
     }
     await cp(join(original, 'plugins/netlify-plugin-quotes'), join(temp, 'plugins/netlify-plugin-quotes'), {
@@ -23,7 +23,7 @@ test('restore generated quotes and invalidate changed inputs or missing output',
     process.chdir(temp);
     const csv = 'Time|Id|Quote time|Quote|Title|Author|SFW\n07:30|1|seven thirty|At seven thirty.|Book|Author|true\n';
     await writeFile('quotes/quotes.en-GB.csv', csv);
-    await writeFile('src/strings/translations.json', '{"en-GB":{}}');
+    await writeFile('src/strings/common/translations.json', '{"en-GB":{}}');
     let generations = 0;
     const utils = {
       cache: {
@@ -62,7 +62,7 @@ test('restore generated quotes and invalidate changed inputs or missing output',
     await rm('public/times', { recursive: true });
     await onPreBuild({ utils });
     assert.equal(generations, 4);
-    await writeFile('src/strings/translations.json', '{}');
+    await writeFile('src/strings/common/translations.json', '{}');
     await onPreBuild({ utils });
     assert.equal(generations, 5);
     await assert.rejects(readFile('public/times/en-GB/07_30.json'));

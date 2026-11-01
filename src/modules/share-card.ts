@@ -10,7 +10,7 @@ import { getLocaleThemeFont } from './locale-fonts';
 import { quoteMarkup } from '../utils/quote-markup';
 import { defaultColor } from './themes';
 import { textDirection } from '../utils/text-direction';
-import STRINGS from '../strings/share.json';
+import STRINGS from '../strings/web/share.json';
 
 export const cardFormats = { square: [1080, 1080], portrait: [1080, 1920], landscape: [1920, 1080] } as const;
 export type CardFormat = keyof typeof cardFormats;

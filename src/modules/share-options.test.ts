@@ -592,7 +592,7 @@ it('toggles uppercase text for the share card and starts disabled each time', as
   button('Close').click();
   document.getElementById('share')!.click();
   expect(button('Uppercase text').getAttribute('aria-pressed')).toBe('false');
-  expect(selectedCardOptions().uppercase).toBeUndefined();
+  expect(selectedCardOptions()).not.toHaveProperty('uppercase');
 });
 
 it.each([
@@ -620,7 +620,7 @@ it.each([
   for (const [index, [label, value]] of cycle.entries()) {
     expect(toggle.getAttribute('aria-label')).toBe(`Alignment: ${label}`);
     expect(toggle.dataset.alignment).toBe(value);
-    if (value === 'start') expect(selectedCardOptions().alignment).toBeUndefined();
+    if (value === 'start') expect(selectedCardOptions()).not.toHaveProperty('alignment');
     else expect(selectedCardOptions()).toMatchObject({ alignment: value });
     if (index < cycle.length - 1) {
       toggle.click();

@@ -12,6 +12,11 @@ on:
       - 'public/**'
       - 'quotes/**'
       - 'times/**'
+      - 'scripts/validate_release_versions.py'
+      - 'scripts/component_ownership.py'
+      - 'scripts/label_pr_impacts.py'
+      - 'scripts/test_component_ownership.py'
+      - '.github/workflows/label-merged-pr.yml'
       - 'screensavers/macos-native/**'
       - 'screensavers/windows-native/**'
   push:
@@ -32,6 +37,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Test release component mapping
+        run: python3 -m unittest discover -s scripts -p 'test_component_ownership.py'
       - name: Check component versions against the previous consolidated release
         if: github.event_name == 'push'
         run: python3 scripts/validate_release_versions.py
@@ -95,6 +102,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      issues: read
+      pull-requests: read
     steps:
       - uses: actions/checkout@v4
         with:
@@ -151,18 +160,49 @@ jobs:
                   if match:
                       web_tags.append((tuple(map(int, match.groups())), candidate))
               previous_tag = max(web_tags)[1] if web_tags else ''
+          def component_changed(path, current):
+              if not previous_tag:
+                  return True
+              try:
+                  previous = subprocess.run(['git', 'show', f'{previous_tag}:{path}'], check=True,
+                                            capture_output=True, text=True).stdout.strip()
+              except subprocess.CalledProcessError:
+                  return True
+              if path == 'package.json':
+                  previous = json.loads(previous)['version']
+              return previous != current
+          macos_updated = component_changed('screensavers/macos-native/VERSION', macos)
+          windows_updated = component_changed('screensavers/windows-native/VERSION', windows)
+          web_updated = component_changed('package.json', web)
+          def marker(updated):
+              return ' **🆕 updated**' if updated else ''
           notes = textwrap.dedent(f'''\
           ## Component versions
 
-          - <img src="https://cdn.simpleicons.org/apple/ffffff" alt="Apple" width="20" /> macOS screensaver: {macos}
-          - <img src="https://raw.githubusercontent.com/cdmoro/literature-clock/main/docs/windows.svg" alt="Windows" width="20" /> Windows screensaver: {windows}
-          - 🌎 Web app: {web}
+          - <img src="https://cdn.simpleicons.org/apple/ffffff" alt="Apple" width="20" /> macOS screensaver: {macos}{marker(macos_updated)}
+          - <img src="https://raw.githubusercontent.com/cdmoro/literature-clock/main/docs/windows.svg" alt="Windows" width="20" /> Windows screensaver: {windows}{marker(windows_updated)}
+          - 🌎 Web app: {web}{marker(web_updated)}
 
           This consolidated release includes the native macOS and Windows downloads for this project release. The web app is hosted at https://literatureclock.netlify.app/.
           ''')
-          command = ['gh', 'release', 'create', tag, *map(str, files), '--target', os.environ['GITHUB_SHA'], '--title', 'Literature Clock ' + version, '--notes', notes, '--generate-notes', '--latest']
+          repository = os.environ['GITHUB_REPOSITORY']
+          generated_command = ['gh', 'api', f'repos/{repository}/releases/generate-notes', '-f', f'tag_name={tag}', '-f', f'target_commitish={os.environ["GITHUB_SHA"]}']
           if previous_tag:
-              command.extend(['--notes-start-tag', previous_tag])
+              generated_command.extend(['-f', f'previous_tag_name={previous_tag}'])
+          generated = json.loads(subprocess.run(generated_command, check=True, capture_output=True, text=True).stdout)['body']
+          impact_names = {'affects:web': 'Web', 'affects:macos-screensaver': 'macOS screensaver', 'affects:windows-screensaver': 'Windows screensaver'}
+          decorated = []
+          for line in generated.splitlines():
+              match = re.search(r'#(\d+)', line)
+              if match:
+                  labels = json.loads(subprocess.run(['gh', 'api', f'repos/{repository}/issues/{match.group(1)}/labels'], check=True, capture_output=True, text=True).stdout)
+                  impacts = [impact_names[label['name']] for label in labels if label['name'] in impact_names]
+                  if impacts:
+                      line += ' — **Affected artifacts:** ' + ', '.join(impacts)
+              decorated.append(line)
+          if decorated:
+              notes += '\n\n' + '\n'.join(decorated)
+          command = ['gh', 'release', 'create', tag, *map(str, files), '--target', os.environ['GITHUB_SHA'], '--title', 'Literature Clock ' + version, '--notes', notes, '--latest']
           subprocess.run(command, check=True)
           PYTHON
 
