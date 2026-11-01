@@ -11,6 +11,7 @@ VERSION_FILES = {
     "Web": "package.json",
     "macOS": "screensavers/macos-native/VERSION",
     "Windows": "screensavers/windows-native/VERSION",
+    "macOS app": "apple/Version.xcconfig",
 }
 RELEASE_TAG = re.compile(r"^literature-clock-v(\d+)\.(\d+)\.(\d+)$")
 SEMVER = re.compile(r"^\d+\.\d+\.\d+$")
@@ -46,6 +47,9 @@ def component_version(component: str, ref: str | None = None) -> str:
         import json
 
         content = json.loads(content)["version"]
+    if component == "macOS app":
+        match = re.search(r"^MARKETING_VERSION\s*=\s*(\d+\.\d+\.\d+)\s*$", content, re.M)
+        content = match.group(1) if match else ""
     if not SEMVER.fullmatch(content):
         raise SystemExit(f"{component} version in {path} must be major.minor.patch; got {content!r}")
     return content
@@ -58,6 +62,10 @@ def parse_version(value: str) -> tuple[int, int, int]:
 def changed_components(paths: list[str]) -> set[str]:
     changed: set[str] = set()
     for path in paths:
+        if path.startswith(("apple/Shared/", "apple/macOS/", "apple/LiteratureClock.xcodeproj/")) or path in {
+            "apple/build.py", "apple/Version.xcconfig"
+        }:
+            changed.add("macOS app")
         if (
             path in WEB_FILES
             or path.startswith(WEB_PATHS)
@@ -121,6 +129,9 @@ def main() -> None:
     errors = []
     for component in VERSION_FILES:
         current = component_version(component)
+        if run("git", "ls-tree", "--name-only", previous_tag, VERSION_FILES[component]) == "":
+            print(f"New component {component}: {current}")
+            continue
         previous_version = component_version(component, previous_tag)
         if parse_version(current) < parse_version(previous_version):
             errors.append(f"{component} version went backwards ({previous_version} -> {current})")
