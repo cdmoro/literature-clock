@@ -1,0 +1,79 @@
+name: Publish screensaver builds to pull requests
+
+on:
+  workflow_run:
+    workflows:
+      - macOS native screensaver
+      - Windows native screensaver
+    types: [completed]
+
+permissions:
+  actions: read
+  pull-requests: write
+
+jobs:
+  publish-links:
+    if: github.event.workflow_run.event == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const run = context.payload.workflow_run;
+            let associatedPulls = run.pull_requests || [];
+            if (associatedPulls.length === 0) {
+              const response = await github.rest.repos.listPullRequestsAssociatedWithCommit({
+                owner,
+                repo,
+                commit_sha: run.head_sha,
+              });
+              associatedPulls = response.data;
+            }
+            if (associatedPulls.length === 0) {
+              core.info('No pull request is associated with this screensaver build.');
+              return;
+            }
+
+            const pull = associatedPulls[0];
+            const issue_number = pull.number;
+            const currentPull = await github.rest.pulls.get({ owner, repo, pull_number: issue_number });
+            if (pull.head?.sha && currentPull.data.head.sha !== pull.head.sha) {
+              core.info('Skipping an artifact link for an outdated pull request revision.');
+              return;
+            }
+
+            const { data } = await github.rest.actions.listWorkflowRunArtifacts({ owner, repo, run_id: run.id });
+            const isMac = run.name === 'macOS native screensaver';
+            const marker = isMac
+              ? '<!-- literature-clock-screensaver-artifact:macos -->'
+              : '<!-- literature-clock-screensaver-artifact:windows -->';
+            const artifacts = isMac
+              ? data.artifacts.filter(item => item.name === 'Literature-Clock-Native-macOS-universal' && !item.expired)
+              : data.artifacts.filter(item => item.name.startsWith('Literature-Clock-Native-Windows-') && !item.expired)
+                  .sort((a, b) => a.name.localeCompare(b.name));
+            const links = artifacts.map(item => {
+              const label = isMac
+                ? 'Download the universal macOS screensaver'
+                : `Download Windows screensaver (${item.name.replace('Literature-Clock-Native-Windows-', '')})`;
+              const url = `https://github.com/${owner}/${repo}/actions/runs/${run.id}/artifacts/${item.id}`;
+              return `- [${label}](${url})`;
+            });
+            const platform = isMac ? 'macOS' : 'Windows';
+            const heading = isMac ? 'macOS screensaver build' : 'Windows screensaver builds';
+            const status = run.conclusion === 'success'
+              ? `Latest ${platform} screensaver build for this PR. Download links expire after 30 days.`
+              : `The latest ${platform} screensaver workflow completed with status **${run.conclusion}**. These are any artifacts produced before it failed; see [the workflow run](${run.html_url}) for details.`;
+            const body = `${marker}\n## ${heading}\n\n${links.length ? links.join('\n') : 'No downloadable artifact was produced for this run.'}\n\n${status}`;
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner,
+              repo,
+              issue_number,
+              per_page: 100,
+            });
+            const existing = comments.find(comment => comment.user?.type === 'Bot' && comment.body?.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+            } else {
+              await github.rest.issues.createComment({ owner, repo, issue_number, body });
+            }

@@ -11,12 +11,14 @@ interface AppearancePreset {
   pattern?: 'christmas' | 'halloween' | 'valentine';
   effect?: 'snow' | 'dust-v2' | 'stars';
   size?: '2';
+  font: 'serif' | 'sans-serif' | 'default';
+  progress: 'bottom' | 'top' | 'background';
 }
 
 const PRESETS: AppearancePreset[] = [
-  { id: 'christmas', palette: 'pine', background: 'default', pattern: 'christmas', effect: 'snow', size: '2' },
-  { id: 'halloween', palette: 'purple', background: 'default', pattern: 'halloween', effect: 'dust-v2', size: '2' },
-  { id: 'valentine', palette: 'pink', background: 'default', pattern: 'valentine', effect: 'stars', size: '2' },
+  { id: 'christmas', palette: 'pine', background: 'default', pattern: 'christmas', effect: 'snow', size: '2', font: 'serif', progress: 'bottom' },
+  { id: 'halloween', palette: 'purple', background: 'default', pattern: 'halloween', effect: 'dust-v2', size: '2', font: 'default', progress: 'top' },
+  { id: 'valentine', palette: 'pink', background: 'default', pattern: 'valentine', effect: 'stars', size: '2', font: 'sans-serif', progress: 'background' },
 ];
 
 export function initAppearancePresets(dialog: HTMLDialogElement) {
@@ -56,7 +58,9 @@ export function initAppearancePresets(dialog: HTMLDialogElement) {
         (!preset.background || store.get('background') === preset.background) &&
         (!preset.pattern || store.get('background-pattern') === preset.pattern) &&
         (!preset.effect || store.get('background-effect') === preset.effect) &&
-        (!preset.size || store.get('pattern-size') === preset.size),
+        (!preset.size || store.get('pattern-size') === preset.size) &&
+        store.get('font') === preset.font &&
+        store.get('progressbar') === preset.progress,
     );
     section.querySelectorAll<HTMLButtonElement>('.settings-preset').forEach((button) => {
       button.setAttribute('aria-pressed', String(button.dataset.preset === current?.id));
@@ -89,6 +93,13 @@ export function initAppearancePresets(dialog: HTMLDialogElement) {
       if (preset.pattern) store.set('background-pattern', preset.pattern);
       if (preset.effect) store.set('background-effect', preset.effect);
       if (preset.size) store.set('pattern-size', preset.size);
+      store.set('progressbar', preset.progress);
+      const font = dialog.querySelector<HTMLSelectElement>('#font-select');
+      if (font) {
+        font.value = preset.font;
+        font.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+      store.set('font', preset.font);
     });
   });
 
