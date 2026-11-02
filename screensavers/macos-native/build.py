@@ -166,7 +166,8 @@ def main():
     if not re.fullmatch(r'\d+\.\d+\.\d+', args.version):
         parser.error('--version must be numeric major.minor.patch (for example 0.1.0)')
     OUTPUT.mkdir(parents=True, exist_ok=True)
-    run('xcrun', 'metal', '-fcikernel', '-c', str(SOURCE / 'Sources/OpticalGlass.metal'), '-o', str(OUTPUT / 'OpticalGlass.air'))
+    run('xcrun', 'metal', '-fmodules-cache-path=' + str(OUTPUT / 'module-cache'), '-fcikernel',
+        '-c', str(SOURCE / 'Sources/OpticalGlass.metal'), '-o', str(OUTPUT / 'OpticalGlass.air'))
     run('xcrun', 'metallib', '-cikernel', str(OUTPUT / 'OpticalGlass.air'), '-o', str(OUTPUT / 'OpticalGlass.metallib'))
     data = catalogues()
     architectures = ['arm64', 'x86_64'] if args.universal else ['arm64']
