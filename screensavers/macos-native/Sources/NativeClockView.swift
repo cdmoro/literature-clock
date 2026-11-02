@@ -593,7 +593,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             shadow.shadowBlurRadius = 8
             shadow.shadowColor = NSColor.black.withAlphaComponent(0.65)
             label.attributedStringValue = NSAttributedString(string: creditText, attributes: [
-                .font: NSFont.systemFont(ofSize: 11), .foregroundColor: NSColor.white,
+                .font: NSFont.systemFont(ofSize: 11), .foregroundColor: NSColor.white.withAlphaComponent(0.8),
                 .paragraphStyle: style, .shadow: shadow,
             ])
             fuzzyCreditKey = creditKey
@@ -662,7 +662,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                         let citationStyle = style.mutableCopy() as! NSMutableParagraphStyle
                         citationStyle.paragraphSpacingBefore = theme == "book" ? (bounds.width <= 750 ? 16 : 24) : size * 0.35
                         result.append(NSAttributedString(string: (theme == "terminal" ? "> " : "— ") + attribution,
-                            attributes: [.font: quoteFont(size * 0.55, locale: locale), .foregroundColor: foreground, .paragraphStyle: citationStyle]))
+                            attributes: [.font: quoteFont(size * 0.55, locale: locale), .foregroundColor: foreground.withAlphaComponent(0.8), .paragraphStyle: citationStyle]))
                     }
                 }
             }
@@ -1060,11 +1060,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         cancel.keyEquivalent = "\u{1b}"
         let save = NSButton(title: "OK", target: self, action: #selector(saveOptions))
         save.keyEquivalent = "\r"
-        let spacer = NSView()
-        let buttons = NSStackView(views: [spacer, cancel, save])
+        let buttons = NSStackView(views: [cancel, save])
         buttons.spacing = 12
+        buttons.alignment = .trailing
         stack.addArrangedSubview(buttons)
-        buttons.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
         window.contentView!.layoutSubtreeIfNeeded()
         sheet = window
         return window
