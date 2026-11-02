@@ -1080,16 +1080,16 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         guard let presetMenu = controls["appearance-preset"] as? NSPopUpButton,
               let background = menuValue("background"), let palette = menuValue("palette"),
               let pattern = menuValue("background-pattern"), let size = menuValue("pattern-size"),
-              let effect = menuValue("background-effect") else { return }
+              let effect = menuValue("background-effect"), let progress = menuValue("progressbar") else { return }
         let theme = menuValue("theme-base") ?? "base"
         let font = menuValue("font") ?? "default"
-        let presets: [(String, String, String, String, String)] = [
-            ("christmas", "pine", "christmas", "snow", "serif"),
-            ("halloween", "purple", "halloween", "dust-v2", "default"),
-            ("valentine", "pink", "valentine", "stars", "default")
+        let presets: [(String, String, String, String, String, String)] = [
+            ("christmas", "pine", "christmas", "snow", "serif", "bottom"),
+            ("halloween", "purple", "halloween", "dust-v2", "default", "top"),
+            ("valentine", "pink", "valentine", "stars", "sans-serif", "background")
         ]
         let match = theme == "base" && background == "default" && size == "2"
-            ? presets.first { $0.1 == palette && $0.2 == pattern && $0.3 == effect && $0.4 == font }?.0
+            ? presets.first { $0.1 == palette && $0.2 == pattern && $0.3 == effect && $0.4 == font && $0.5 == progress }?.0
             : nil
         presetMenu.select(presetMenu.itemArray.first { ($0.representedObject as? String) == (match ?? "none") })
     }
@@ -1098,7 +1098,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         guard let palette = ["christmas": "pine", "halloween": "purple", "valentine": "pink"][preset],
               let pattern = ["christmas": "christmas", "halloween": "halloween", "valentine": "valentine"][preset],
               let effect = ["christmas": "snow", "halloween": "dust-v2", "valentine": "stars"][preset],
-              let font = ["christmas": "serif", "halloween": "default", "valentine": "default"][preset] else { return }
+              let font = ["christmas": "serif", "halloween": "default", "valentine": "sans-serif"][preset],
+              let progress = ["christmas": "bottom", "halloween": "top", "valentine": "background"][preset] else { return }
         func select(_ key: String, _ value: String) {
             guard let menu = controls[key] as? NSPopUpButton else { return }
             menu.select(menu.itemArray.first { $0.representedObject as? String == value })
@@ -1111,6 +1112,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         select("pattern-size", "2")
         select("background-effect", effect)
         select("font", font)
+        select("progressbar", progress)
         photoControlsChanged()
         patternChanged(controls["background-pattern"] as! NSPopUpButton)
         updateSwatches()

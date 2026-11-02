@@ -80,12 +80,8 @@ Windows reference assemblies. The HLSL compiler and runtime checks require Windo
 
 ## Seasonal presets
 
-Christmas, Halloween and Valentine’s Day presets match macOS: Base theme, default
-background, 2× pattern size, and respectively green/Christmas/snow,
-purple/Halloween/bokeh dust, and pink/Valentine/stars. Christmas selects the serif
-font; Halloween and Valentine’s Day restore the Base theme’s default font. Changing
-these settings clears the preset selection; matching saved settings restores it when
-reopening Settings.
+Christmas, Halloween and Valentine’s Day presets apply coordinated seasonal
+appearance settings.
 
 Seasonal PNGs in `Assets/Patterns` are rasterized from the macOS SVG sources with
 `macos-native/Sources/PatternRasterizer.swift`. Regenerate them on macOS after editing
@@ -93,5 +89,5 @@ those SVGs, using logical sizes from `Assets/Patterns/tiles.json`. `prepare.py` 
 these tiles and merges their dimensions over the shared pattern metadata.
 
 Fuzzy Clock supports bilingual time phrases and translation notices, balanced line
-breaks, and Book theme highlights, matching macOS. Custom accent colors can be
-edited with a HEX field or RGB sliders, with a synchronized color swatch.
+breaks, and Book theme highlights. Custom accent colors can be edited with a HEX
+field or RGB sliders, with a synchronized color swatch.
