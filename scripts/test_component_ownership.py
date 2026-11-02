@@ -15,14 +15,14 @@ class ComponentOwnershipTests(unittest.TestCase):
         self.assertEqual(components_for_path("quotes/quotes.es-ES.csv"), {"Web", "macOS", "Windows"})
 
     def test_currently_shared_strings_are_shared(self):
-        self.assertEqual(components_for_path("src/strings/common/settings.json"), {"Web", "macOS", "Windows", "macOS app"})
+        self.assertEqual(components_for_path("src/strings/common/settings.json"), {"Web", "macOS", "Windows"})
         self.assertEqual(
             components_for_translation_key("src/strings/common/settings.json", "settings_attribution_position"),
             {"Web", "macOS", "Windows", "macOS app"},
         )
         self.assertEqual(
             components_for_translation_key("src/strings/common/settings.json", "settings_show_seconds"),
-            {"Web", "macOS", "Windows", "macOS app"},
+            {"Web", "macOS", "Windows"},
         )
         self.assertEqual(components_for_path("src/strings/screensaver/native-settings.json"), {"macOS", "Windows"})
         self.assertEqual(components_for_path("src/strings/web/settings.json"), {"Web"})

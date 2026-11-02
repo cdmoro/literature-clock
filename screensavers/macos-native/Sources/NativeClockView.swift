@@ -593,7 +593,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             shadow.shadowBlurRadius = 8
             shadow.shadowColor = NSColor.black.withAlphaComponent(0.65)
             label.attributedStringValue = NSAttributedString(string: creditText, attributes: [
-                .font: NSFont.systemFont(ofSize: 11), .foregroundColor: NSColor.white.withAlphaComponent(0.8),
+                .font: NSFont.systemFont(ofSize: 11), .foregroundColor: NSColor.white,
                 .paragraphStyle: style, .shadow: shadow,
             ])
             fuzzyCreditKey = creditKey
@@ -662,7 +662,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                         let citationStyle = style.mutableCopy() as! NSMutableParagraphStyle
                         citationStyle.paragraphSpacingBefore = theme == "book" ? (bounds.width <= 750 ? 16 : 24) : size * 0.35
                         result.append(NSAttributedString(string: (theme == "terminal" ? "> " : "— ") + attribution,
-                            attributes: [.font: quoteFont(size * 0.55, locale: locale), .foregroundColor: foreground.withAlphaComponent(0.8), .paragraphStyle: citationStyle]))
+                            attributes: [.font: quoteFont(size * 0.55, locale: locale), .foregroundColor: foreground, .paragraphStyle: citationStyle]))
                     }
                 }
             }
@@ -826,6 +826,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         background.autoresizingMask = [.width, .height]
         window.contentView = background
         let scroll = NSScrollView()
+        scroll.identifier = NSUserInterfaceItemIdentifier("settings-scroll")
         scroll.hasVerticalScroller = true
         scroll.drawsBackground = false
         scroll.translatesAutoresizingMaskIntoConstraints = false
@@ -836,6 +837,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         stack.spacing = 10
         stack.translatesAutoresizingMaskIntoConstraints = false
         scroll.documentView = stack
+        stack.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        stack.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         NSLayoutConstraint.activate([scroll.leadingAnchor.constraint(equalTo: background.leadingAnchor),
                                      scroll.trailingAnchor.constraint(equalTo: background.trailingAnchor),
                                      scroll.topAnchor.constraint(equalTo: background.topAnchor),
@@ -931,9 +934,9 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             let menu = NSPopUpButton()
             let value = key == "theme-base" ? parts.first : key == "theme-mode" ? parts.last : preferences.string(forKey: key)
             for raw in values {
-            let labelKey = key == "font" && raw != "default" ? "settings_font_" + raw : key == "pattern-size" ? "pattern_size_" + raw : key == "background" ? "settings_background_" + raw : key == "photo-category" ? "settings_photo_" + raw : key == "background-pattern" ? "settings_pattern_" + raw : key == "background-effect" ? "settings_effect_" + raw : key == "progressbar" ? "settings_progress_" + raw :
+                let labelKey = key == "font" && raw != "default" ? "settings_font_" + raw : key == "pattern-size" ? "pattern_size_" + raw : key == "background" ? "settings_background_" + raw : key == "photo-category" ? "settings_photo_" + raw : key == "background-pattern" ? "settings_pattern_" + raw : key == "background-effect" ? "settings_effect_" + raw : key == "progressbar" ? "settings_progress_" + raw :
                     raw == "custom" ? "settings_color_customize" : raw == "default" ? "default_font" : raw == "random" ? "settings_color_random" : raw
-                let label = key == "photo-provider" ? (raw == "commons" ? "Wikimedia Commons" : raw == "nasa" ? "NASA" : "Picsum") : key == "pattern-size" ? raw + "×" : text(labelKey)
+                let label = key == "photo-provider" ? (raw == "commons" ? "Wikimedia Commons" : raw == "nasa" ? "NASA" : "Picsum") : text(labelKey)
                 let item = NSMenuItem(title: label, action: nil, keyEquivalent: "")
                 item.representedObject = raw
                 if key == "progressbar" && (raw == "glass-background" || raw == "glass-foreground") {
@@ -1057,10 +1060,11 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         cancel.keyEquivalent = "\u{1b}"
         let save = NSButton(title: "OK", target: self, action: #selector(saveOptions))
         save.keyEquivalent = "\r"
-        let buttons = NSStackView(views: [cancel, save])
+        let spacer = NSView()
+        let buttons = NSStackView(views: [spacer, cancel, save])
         buttons.spacing = 12
         stack.addArrangedSubview(buttons)
-        buttons.alignment = .trailing
+        buttons.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
         window.contentView!.layoutSubtreeIfNeeded()
         sheet = window
         return window
@@ -1201,9 +1205,9 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     }
     private func resizeOptions() {
         guard let panel = sheet, let content = panel.contentView,
-              let stack = content.subviews.first as? NSStackView else { return }
+              let scroll = content.subviews.first(where: { $0.identifier?.rawValue == "settings-scroll" }) as? NSScrollView else { return }
         content.layoutSubtreeIfNeeded()
-        panel.setContentSize(NSSize(width: 700, height: max(470, stack.fittingSize.height + 48)))
+        scroll.documentView?.layoutSubtreeIfNeeded()
     }
     private func updateSwatches() {
         let palette = menuValue("palette") ?? "default"

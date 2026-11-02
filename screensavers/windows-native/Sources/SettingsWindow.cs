@@ -87,7 +87,7 @@ public sealed class SettingsWindow : Window
         custom.TextChanged+=(_,_)=>UpdateCustomColor();
         UpdateCustomColor(); stack.Children.Add(colorEditor);
         Menu("settings_background_pattern","pattern",Appearance.Patterns,p.Pattern,raw=>data.Text("settings_pattern_"+raw));
-        Menu("settings_pattern_size","patternSize",["0.5","1","1.5","2","3"],p.PatternSize,raw=>raw+"×");
+        Menu("settings_pattern_size","patternSize",["0.5","1","1.5","2","3"],p.PatternSize,raw=>data.Text("pattern_size_"+raw));
         Menu("settings_background_effect","effect",["none","rain","snow","dust","dust-v2","stars"],p.Effect,raw=>data.Text("settings_effect_"+raw));
         Menu("progressbar_mode","progress",["none","top","bottom","background","glass-background","glass-foreground"],p.Progress,raw=>data.Text("settings_progress_"+raw));
         Section("settings_behavior");

@@ -1,14 +1,6 @@
 import { store } from '../store';
 import { getBaseLocale } from './locales';
-import COMMON_STRINGS from '../strings/common/translations.json';
-import WEB_STRINGS from '../strings/web/reading.json';
-
-const STRINGS = Object.fromEntries(
-  Object.entries(COMMON_STRINGS).map(([locale, strings]) => [
-    locale,
-    { ...WEB_STRINGS[locale as keyof typeof WEB_STRINGS], ...strings },
-  ]),
-);
+import STRINGS from '../strings/web/reading.json';
 
 export function readingStrings() {
   return STRINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))];
