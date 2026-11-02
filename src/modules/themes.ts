@@ -8,7 +8,7 @@ import { setDayParameters } from './horizon';
 import { store } from '../store';
 import { contrastingText } from '../utils/colors';
 import { getStrings, getInterfaceLocale } from './locales';
-import SETTINGS from '../strings/settings.json';
+import SETTINGS from './settings-strings';
 import { getBaseLocale } from './locales';
 import { initColorPalette, rememberThemeColor } from './color-palette';
 

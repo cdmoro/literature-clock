@@ -2,8 +2,8 @@ import { store } from '../store';
 import { defaultColor, setTheme } from './themes';
 import { contrastingText } from '../utils/colors';
 import { getBaseLocale, getInterfaceLocale } from './locales';
-import SETTINGS from '../strings/settings.json';
-import COLOR_STRINGS from '../strings/colorControls.json';
+import SETTINGS from './settings-strings';
+import COLOR_STRINGS from '../strings/web/colorControls.json';
 
 export const COLOR_PRESETS: Record<string, string> = {
   red: '#d24335',

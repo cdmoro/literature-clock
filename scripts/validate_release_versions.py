@@ -1,39 +1,26 @@
 #!/usr/bin/env python3
 """Require component version bumps when their release payload changes."""
 
+from __future__ import annotations
+
 import argparse
 import re
 import subprocess
 import sys
 from pathlib import Path
 
+from component_ownership import changed_components as changed_components_from_ownership
+
 VERSION_FILES = {
     "Web": "package.json",
     "macOS": "screensavers/macos-native/VERSION",
     "Windows": "screensavers/windows-native/VERSION",
+    "macOS app": "apple/Version.xcconfig",
 }
 RELEASE_TAG = re.compile(r"^literature-clock-v(\d+)\.(\d+)\.(\d+)$")
 SEMVER = re.compile(r"^\d+\.\d+\.\d+$")
-
-WEB_PATHS = (
-    "src/",
-    "public/",
-    "quotes/",
-    "times/",
-    "plugins/",
-    "admin/",
-)
-WEB_FILES = {
-    "index.html",
-    "package.json",
-    "package-lock.json",
-    "netlify.toml",
-    "vite.config.ts",
-    "tsconfig.json",
-}
-SHARED_NATIVE_PATHS = ("quotes/", "src/strings/")
-SHARED_NATIVE_FILES = {"src/photo-providers.json"}
-
+MACOS_APP_PATHS = ("apple/Shared/", "apple/macOS/", "apple/LiteratureClock.xcodeproj/")
+MACOS_APP_FILES = {"apple/build.py", "apple/Version.xcconfig"}
 
 def run(*command: str) -> str:
     return subprocess.run(command, check=True, capture_output=True, text=True).stdout.strip()
@@ -46,6 +33,9 @@ def component_version(component: str, ref: str | None = None) -> str:
         import json
 
         content = json.loads(content)["version"]
+    if component == "macOS app":
+        match = re.search(r"^MARKETING_VERSION\s*=\s*(\d+\.\d+\.\d+)\s*$", content, re.M)
+        content = match.group(1) if match else ""
     if not SEMVER.fullmatch(content):
         raise SystemExit(f"{component} version in {path} must be major.minor.patch; got {content!r}")
     return content
@@ -56,33 +46,9 @@ def parse_version(value: str) -> tuple[int, int, int]:
 
 
 def changed_components(paths: list[str]) -> set[str]:
-    changed: set[str] = set()
-    for path in paths:
-        if (
-            path in WEB_FILES
-            or path.startswith(WEB_PATHS)
-            or path.startswith("scripts/") and path != "scripts/validate_release_versions.py"
-        ):
-            changed.add("Web")
-        if (
-            path.startswith("screensavers/macos-native/Sources/")
-            or path.startswith("screensavers/macos-native/Assets/")
-            or path == "screensavers/macos-native/build.py"
-            or path.startswith(SHARED_NATIVE_PATHS)
-            or path in SHARED_NATIVE_FILES
-        ):
-            changed.add("macOS")
-        if (
-            path.startswith("screensavers/windows-native/Sources/")
-            or path.startswith("screensavers/windows-native/")
-            and path not in {"screensavers/windows-native/README.md", "screensavers/windows-native/VERSION"}
-            or path.startswith("screensavers/macos-native/Assets/")
-            or path.startswith("public/assets/")
-            or path == "screensavers/macos-native/build.py"
-            or path.startswith(SHARED_NATIVE_PATHS)
-            or path in SHARED_NATIVE_FILES
-        ):
-            changed.add("Windows")
+    changed = globals()["changed_components_from_ownership"](paths)
+    if any(path.startswith(MACOS_APP_PATHS) or path in MACOS_APP_FILES for path in paths):
+        changed.add("macOS app")
     return changed
 
 
@@ -121,6 +87,9 @@ def main() -> None:
     errors = []
     for component in VERSION_FILES:
         current = component_version(component)
+        if run("git", "ls-tree", "--name-only", previous_tag, VERSION_FILES[component]) == "":
+            print(f"New component {component}: {current}")
+            continue
         previous_version = component_version(component, previous_tag)
         if parse_version(current) < parse_version(previous_version):
             errors.append(f"{component} version went backwards ({previous_version} -> {current})")

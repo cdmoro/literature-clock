@@ -1,5 +1,5 @@
 import COVERAGE from '../font-coverage.json';
-import { normalizeFontName } from '../utils/google-font';
+import { normalizeFontName, isGenericFont } from '../utils/google-font';
 
 export const FONT_PREFERENCES_KEY = 'font-preferences';
 let choices: Record<string, string> = {};
@@ -9,6 +9,7 @@ const language = (locale: string) => locale.split('-')[0].toLowerCase();
 // Verified alphabet coverage, not a guarantee for every character in a book.
 // User-supplied families without coverage records remain explicitly unverified.
 export function fontSupportsLocale(font: string, locale: string): boolean | undefined {
+  if (isGenericFont(font)) return true;
   if (!Object.prototype.hasOwnProperty.call(COVERAGE, font)) return undefined;
   const record = (COVERAGE as Record<string, { languages: string[] }>)[font];
   return record ? record.languages.includes(language(locale)) : undefined;

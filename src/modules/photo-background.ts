@@ -1,7 +1,7 @@
 import { resolveBackground } from '../utils/background';
 import QUERIES from '../photo-providers.json';
 import { store } from '../store';
-import SETTINGS from '../strings/settings.json';
+import SETTINGS from './settings-strings';
 import { getBaseLocale, getInterfaceLocale } from './locales';
 
 export function photoCategories(provider: string) {

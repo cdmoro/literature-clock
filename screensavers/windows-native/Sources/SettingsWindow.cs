@@ -41,6 +41,26 @@ public sealed class SettingsWindow : Window
         Section("settings_appearance");
         Menu("settings_presets_title","preset",["none","christmas","halloween","valentine"],"none",raw=>data.Text(raw=="none"?"settings_presets_choose":"settings_preset_"+raw));
         Menu("theme","theme",Appearance.Themes,p.Theme);
+        string DefaultFontLabel()
+        {
+            var locale=languages.FirstOrDefault(x=>x.Value.IsChecked==true).Key ?? data.SystemLocale;
+            var family=Appearance.Font(Value("theme"),locale);
+            var name=family.FamilyNames.Values.FirstOrDefault() ?? family.Source.Split('#').Last();
+            return data.Text("default_font")+" ("+name+")";
+        }
+        Menu("font","font",["default","serif","sans-serif","monospace"],p.Font,
+            raw=>raw=="default"?DefaultFontLabel():data.Text("settings_font_"+raw));
+        void UpdateFontLabel()
+        {
+            var selected=Value("font");
+            menus["font"].ItemsSource=new[]{"default","serif","sans-serif","monospace"}
+                .Select(raw=>new Choice(raw,raw=="default"?DefaultFontLabel():data.Text("settings_font_"+raw))).ToArray();
+            menus["font"].SelectedValue=selected;
+        }
+        menus["theme"].SelectionChanged+=(_,_)=>UpdateFontLabel();
+        foreach(var check in languages.Values) {
+            check.Checked+=(_,_)=>UpdateFontLabel(); check.Unchecked+=(_,_)=>UpdateFontLabel();
+        }
         Menu("settings_scheme","scheme",["system","light","dark"],p.Scheme);
         Menu("settings_background","background",["default","tinted","photo","plain"],p.Background,raw=>data.Text("settings_background_"+raw));
         Menu("settings_photo_provider","provider",["picsum","nasa","commons"],p.Provider,raw=>raw=="commons"?"Wikimedia Commons":raw=="nasa"?"NASA":"Picsum");
@@ -104,7 +124,7 @@ public sealed class SettingsWindow : Window
         {
             if(applyingPreset) return;
             var match=Value("theme")=="base" && Value("background")=="default" && Value("patternSize")=="2"
-                ? presets.FirstOrDefault(x=>x.Palette==Value("palette") && x.Pattern==Value("pattern") && x.Effect==Value("effect")).Name : null;
+                ? presets.FirstOrDefault(x=>x.Palette==Value("palette") && x.Pattern==Value("pattern") && x.Effect==Value("effect") && (x.Name!="christmas" || Value("font")=="serif")).Name : null;
             applyingPreset=true;
             menus["preset"].SelectedValue=match ?? "none";
             applyingPreset=false;
@@ -114,6 +134,7 @@ public sealed class SettingsWindow : Window
             var preset=presets.First(x=>x.Name==Value("preset"));
             applyingPreset=true;
             menus["theme"].SelectedValue="base";
+            if(preset.Name=="christmas") menus["font"].SelectedValue="serif";
             menus["background"].SelectedValue="default";
             menus["palette"].SelectedValue=preset.Palette;
             menus["pattern"].SelectedValue=preset.Pattern;
@@ -122,7 +143,7 @@ public sealed class SettingsWindow : Window
             applyingPreset=false;
             Update(); UpdatePreset();
         };
-        foreach(var key in new[]{"theme","background","palette","pattern","patternSize","effect"})
+        foreach(var key in new[]{"theme","background","palette","pattern","patternSize","effect","font"})
             menus[key].SelectionChanged+=(_,_)=>UpdatePreset();
         UpdatePreset();
         menus["provider"].SelectionChanged+=(_,_)=>{ Categories(); Update(); };
@@ -137,8 +158,11 @@ public sealed class SettingsWindow : Window
         using var versionStream=Catalogues.Open("version.txt");
         using var versionReader=new System.IO.StreamReader(versionStream);
         var version=versionReader.ReadToEnd().Trim();
-        var project=new Button { Content="Literature Clock "+version+" · GitHub",Margin=new Thickness(0,12,0,0) };
-        project.Click+=(_,_)=>Process.Start(new ProcessStartInfo("https://github.com/cdmoro/literature-clock") { UseShellExecute=true }); stack.Children.Add(project);
+        var footer=new StackPanel { Orientation=Orientation.Horizontal,HorizontalAlignment=HorizontalAlignment.Left,Margin=new Thickness(0,12,0,0) };
+        footer.Children.Add(new TextBlock { Text="Literature Clock "+version+" · ",VerticalAlignment=VerticalAlignment.Center });
+        var project=new Button { Content="GitHub",Padding=new Thickness(2,0,2,0),Background=System.Windows.Media.Brushes.Transparent,BorderThickness=new Thickness(0) };
+        project.Click+=(_,_)=>Process.Start(new ProcessStartInfo("https://github.com/cdmoro/literature-clock") { UseShellExecute=true });
+        footer.Children.Add(project); stack.Children.Add(footer);
     }
     void UpdateCustomColor()
     {
@@ -166,7 +190,7 @@ public sealed class SettingsWindow : Window
         if(Value("palette")=="custom" && !Regex.IsMatch(custom.Text,"^#[0-9a-fA-F]{6}$")) { error.Text=data.Text("color_edit")+" (#RRGGBB)"; return; }
         var p=new Preferences
         {
-            Languages=languages.Where(x=>x.Value.IsChecked==true).Select(x=>x.Key).ToArray(),Theme=Value("theme"),Scheme=Value("scheme"),Background=Value("background"),Pattern=Value("pattern"),PatternSize=Value("patternSize") is "0.5" or "1" or "1.5" or "2" or "3" ? Value("patternSize") : "1",Effect=new[]{"none","rain","snow","dust","dust-v2","stars"}.Contains(Value("effect"))?Value("effect"):"none",Palette=Value("palette"),CustomColor=Regex.IsMatch(custom.Text,"^#[0-9a-fA-F]{6}$")?custom.Text:original.CustomColor,Progress=Value("progress"),Provider=Value("provider"),Category=Value("category"),Translation=Value("translation"),Bilingual=checks["bilingual"].IsChecked==true,Move=checks["move"].IsChecked==true,ShowTime=checks["time"].IsChecked==true,FuzzyClock=checks["fuzzyClock"].IsChecked==true,HideTitle=checks["hideTitle"].IsChecked==true,QuoteAttribution=new[]{"below","bottom-left","hidden"}.Contains(Value("quoteAttribution"))?Value("quoteAttribution"):"below",Safe=checks["safe"].IsChecked==true
+            Font=Value("font"),Languages=languages.Where(x=>x.Value.IsChecked==true).Select(x=>x.Key).ToArray(),Theme=Value("theme"),Scheme=Value("scheme"),Background=Value("background"),Pattern=Value("pattern"),PatternSize=Value("patternSize") is "0.5" or "1" or "1.5" or "2" or "3" ? Value("patternSize") : "1",Effect=new[]{"none","rain","snow","dust","dust-v2","stars"}.Contains(Value("effect"))?Value("effect"):"none",Palette=Value("palette"),CustomColor=Regex.IsMatch(custom.Text,"^#[0-9a-fA-F]{6}$")?custom.Text:original.CustomColor,Progress=Value("progress"),Provider=Value("provider"),Category=Value("category"),Translation=Value("translation"),Bilingual=checks["bilingual"].IsChecked==true,Move=checks["move"].IsChecked==true,ShowTime=checks["time"].IsChecked==true,FuzzyClock=checks["fuzzyClock"].IsChecked==true,HideTitle=checks["hideTitle"].IsChecked==true,QuoteAttribution=new[]{"below","bottom-left","hidden"}.Contains(Value("quoteAttribution"))?Value("quoteAttribution"):"below",Safe=checks["safe"].IsChecked==true
         };
         try { p.Save(); }
         catch(Exception e) when(e is System.IO.IOException or UnauthorizedAccessException) { error.Text=e.Message; return; }

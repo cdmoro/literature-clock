@@ -1,4 +1,4 @@
-import TRANSLATIONS from './strings/translations.json';
+import TRANSLATIONS from './strings/common/translations.json';
 
 export type { Translations } from './strings/types';
 

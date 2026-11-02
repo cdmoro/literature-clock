@@ -37,7 +37,7 @@ class Admin:
         return project
 
     def enabled(self):
-        return json.loads((self.root / 'src/strings/translations.json').read_text(encoding='utf-8'))
+        return json.loads((self.root / 'src/strings/common/translations.json').read_text(encoding='utf-8'))
 
     def revision(self, project):
         return hashlib.sha256(project.catalogue.read_bytes()).hexdigest()

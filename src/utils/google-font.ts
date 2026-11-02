@@ -1,3 +1,10 @@
+export const GENERIC_FONTS = ['serif', 'sans-serif', 'monospace'] as const;
+export const isGenericFont = (name: string) => [...GENERIC_FONTS, 'system-ui'].includes(name);
+
+/** Generic CSS families must remain unquoted to use the browser's language-aware defaults. */
+export const fontFamilyOverride = (name: string, fallback: string) =>
+  isGenericFont(name) ? name : `"${name}", ${fallback}`;
+
 /** Accept family names, never CSS declarations or URLs. */
 export function normalizeFontName(value: string): string | undefined {
   const name = value.trim().replace(/\s+/g, ' ');
@@ -5,6 +12,7 @@ export function normalizeFontName(value: string): string | undefined {
 }
 
 export function loadGoogleFont(name: string): Promise<void> {
+  if (isGenericFont(name)) return Promise.resolve();
   if (normalizeFontName(name) !== name) return Promise.reject(new Error('Invalid font name'));
   return new Promise((resolve, reject) => {
     const link = document.createElement('link');

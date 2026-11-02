@@ -2,7 +2,7 @@ import { store, validateSettings } from '../store';
 import { applyCustomFont, resetFont } from './font';
 import { setTheme } from './themes';
 import { getBaseLocale, getInterfaceLocale } from './locales';
-import SETTINGS from '../strings/settings.json';
+import SETTINGS from './settings-strings';
 
 const ACTIVE_THEME_KEY = 'active-saved-theme';
 export const SAVED_THEMES_KEY = 'saved-themes';

@@ -79,7 +79,7 @@ test('custom fonts survive reloads, switching and case-insensitive duplicate add
   await applyCustomFont('roboto');
   expect(store.get('font')).toBe('Roboto');
   expect(document.querySelectorAll('option[value="Roboto"]')).toHaveLength(1);
-  expect(JSON.parse(localStorage.getItem(CUSTOM_FONTS_KEY)!)).toEqual(['Lora', 'Nunito']);
+  expect(JSON.parse(localStorage.getItem(CUSTOM_FONTS_KEY)!)).toEqual(['Lora', 'Nunito', 'Roboto']);
   initFont();
   expect(document.querySelector('option[value="Lora"]')).not.toBeNull();
   expect(document.querySelector('option[value="Nunito"]')).not.toBeNull();
@@ -98,7 +98,7 @@ test('removing a custom font preserves other fonts and resets only the active cu
   expect(document.querySelector('option[value="Nunito"]')).toBeNull();
   await applyCustomFont('Roboto');
   removeCustomFont();
-  expect(store.get('font')).toBe('Roboto');
+  expect(store.get('font')).toBe('default');
   expect(JSON.parse(localStorage.getItem(CUSTOM_FONTS_KEY)!)).toEqual(['Lora']);
   await applyCustomFont('Lora');
   removeCustomFont();
@@ -189,8 +189,8 @@ test('rotation filters the selector, falls back for Chinese and restores the Spa
   quote.lang = 'zh-CN';
   refreshDefaultFontLabel();
   expect(store.get('font')).toBe('default');
-  expect(document.querySelector('option[value="B612 Mono"]')).toBeNull();
-  expect(document.querySelector('option[value="ZCOOL KuaiLe"]')).not.toBeNull();
+  expect(document.querySelector<HTMLOptionElement>('option[value="B612 Mono"]')!.disabled).toBe(true);
+  expect(document.querySelector('option[value="ZCOOL KuaiLe"]')).toBeNull();
   expect(document.querySelector<HTMLSelectElement>('#font-select')!.value).toBe('default');
   expect(document.querySelector('option[value="default"]')!.textContent).toContain('ZCOOL QingKe HuangYou');
   expect(quote.style.getPropertyValue('--override-quote-font-family')).toBe('initial');
@@ -374,14 +374,72 @@ test('a touch release in the font picker immediately updates the clock selection
   vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('Offline')));
   vi.mocked(loadGoogleFont).mockImplementation(() => new Promise<void>(() => {}));
   document.getElementById('font-picker-trigger')!.click();
-  const option = document.querySelector<HTMLButtonElement>('.font-picker-options button[data-value="Roboto"]')!;
+  const option = document.querySelector<HTMLButtonElement>('.font-picker-options button[data-value="monospace"]')!;
   for (const type of ['pointerdown', 'pointerup']) {
     const event = new MouseEvent(type, { bubbles: true, clientX: 10, clientY: 10 });
     Object.defineProperties(event, { pointerType: { value: 'touch' }, pointerId: { value: 1 } });
     option.dispatchEvent(event);
   }
-  expect(store.get('font')).toBe('Roboto');
-  expect(document.documentElement.style.getPropertyValue('--override-quote-font-family')).toContain('"Roboto"');
-  expect(document.getElementById('font-picker-trigger')!.textContent).toBe('Roboto');
+  expect(store.get('font')).toBe('monospace');
+  expect(document.documentElement.style.getPropertyValue('--override-quote-font-family')).toBe('monospace');
+  expect(document.getElementById('font-picker-trigger')!.textContent).toBe('Monospace');
   vi.unstubAllGlobals();
+});
+
+test.each(['serif', 'sans-serif', 'monospace'])('generic %s works across scripts without downloads', async (font) => {
+  expect(
+    [...document.querySelectorAll<HTMLOptionElement>('#font-select option')].map((option) => option.value),
+  ).toEqual(['default', 'serif', 'sans-serif', 'monospace']);
+  await applyCustomFont(font, true);
+  const quote = document.createElement('blockquote');
+  quote.id = 'quote';
+  document.body.append(quote);
+  for (const locale of ['en-GB', 'zh-CN', 'ar-AE', 'el-GR']) {
+    quote.lang = locale;
+    document.documentElement.dataset.theme = 'book-light';
+    refreshDefaultFontLabel();
+    expect(store.get('font')).toBe(font);
+    expect(quote.style.getPropertyValue('--override-quote-font-family')).toBe(font);
+  }
+  expect(loadGoogleFont).not.toHaveBeenCalled();
+  initFont();
+  expect(document.querySelector<HTMLSelectElement>('#font-select')!.value).toBe(font);
+});
+
+test('generic labels follow the interface language while preserving CSS values', async () => {
+  store.set('ui-locale', 'es-ES');
+  refreshDefaultFontLabel();
+  const select = document.querySelector<HTMLSelectElement>('#font-select')!;
+  expect([...select.options].slice(1).map((option) => [option.value, option.textContent])).toEqual([
+    ['serif', 'Serif'],
+    ['sans-serif', 'Sans serif'],
+    ['monospace', 'Monoespaciada'],
+  ]);
+  await Promise.resolve();
+  document.getElementById('font-picker-trigger')!.click();
+  const sample = document.querySelector<HTMLElement>('.font-picker-options button[data-value="monospace"] span')!;
+  expect(sample.textContent).toBe('Monoespaciada');
+  expect(sample.style.fontFamily).toBe('monospace');
+});
+
+test('automatic font follows theme changes without saving the previous theme font as an override', async () => {
+  const quote = document.createElement('blockquote');
+  quote.id = 'quote';
+  quote.lang = 'en-GB';
+  document.body.append(quote);
+  resetFont();
+  for (const theme of ['base-dark', 'book-light', 'photo-dark', 'terminal-light', 'base-dark']) {
+    store.set('theme', theme);
+    document.documentElement.dataset.theme = theme;
+    refreshDefaultFontLabel();
+    await Promise.resolve();
+    expect(store.get('font')).toBe('default');
+    expect(document.querySelector<HTMLSelectElement>('#font-select')!.value).toBe('default');
+    expect(document.getElementById('font-picker-trigger')!.textContent).toBe(
+      document.querySelector('option[value="default"]')!.textContent,
+    );
+    expect(document.documentElement.style.getPropertyValue('--override-quote-font-family')).toBe('');
+    expect(quote.style.getPropertyValue('--override-quote-font-family')).toBe('initial');
+    expect(localStorage.getItem(CUSTOM_FONTS_KEY)).toBeNull();
+  }
 });

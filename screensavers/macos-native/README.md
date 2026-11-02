@@ -4,6 +4,8 @@ The native screen saver renders the clock with AppKit. It does not use a browser
 
 It supports the 12 published quote languages, language rotation, bilingual display, light/dark/system appearance, themes, accent and custom colours, optional time and minute progress, passage filtering, and per-minute background patterns. Photo backgrounds work with the supported themes and can use Picsum, NASA or Wikimedia Commons. NASA and Commons topics are shared with the web app through `src/photo-providers.json`. Photos rotate automatically; the last successful image and its credit are saved for offline use.
 
+Font settings offer the theme default (with its family name), system serif, sans serif and monospace. The choice persists across themes and applies to both passage languages; system fallback supplies characters outside the chosen face.
+
 The native app has its own settings. Per-display choices such as quotes, selected languages, photos and random colours or patterns can vary independently, while fixed settings are shared. Glass progress requires macOS 26 or later; other themes and progress styles remain available on older supported systems.
 
 ## Build

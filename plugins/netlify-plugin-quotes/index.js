@@ -11,7 +11,7 @@ async function fingerprint() {
       .filter((name) => name.endsWith('.csv'))
       .sort()
       .map((name) => `quotes/${name}`),
-    'src/strings/translations.json',
+    'src/strings/common/translations.json',
     'scripts/generate_times.py',
     'scripts/validate_translation.py',
     'scripts/quote_sources.py',

@@ -11,6 +11,7 @@ namespace LiteratureClock;
 public record Quote(string? id, string first, string time, string last, string title, string author, bool sfw);
 public sealed class Preferences
 {
+    public string Font { get; set; } = "default";
     public string Theme { get; set; } = "base";
     public string Scheme { get; set; } = "dark";
     public string[] Languages { get; set; } = [];

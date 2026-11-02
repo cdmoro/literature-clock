@@ -146,3 +146,11 @@ html[data-theme|='photo'][data-background='photo'] #quote.quote-scroll,
 html[data-theme|='photo'][data-background='photo'] #quote:has(#quote-translation) {
   padding: 25px;
 }
+
+/* Zen hides photos and patterns, so their readability effects must disappear too.
+   Override the more specific photo/pattern rules, including bilingual passages. */
+html[data-theme] body.zen #quote,
+html[data-theme] body.zen #quote * {
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}

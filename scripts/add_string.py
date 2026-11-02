@@ -4,7 +4,7 @@ from googletrans import Translator
 from collections import OrderedDict
 
 # Path to your JSON file
-json_path = "src/strings/translations.json"
+json_path = "src/strings/common/translations.json"
 
 def translate_text(text, target_lang):
     translator = Translator()

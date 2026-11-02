@@ -27,7 +27,8 @@ preference or manages other users' installations.
 ## Features
 
 Includes seven themes, system/light/dark appearance, automatic font selection for all
-twelve languages, per-minute language rotation, distinct monitor choices, highlighted
+twelve languages, an optional system serif/sans serif/monospace override shared by both
+passage languages, per-minute language rotation, distinct monitor choices, highlighted
 time phrases, title hiding and quote attribution below the passage, at bottom left, or
 hidden, safe-passage filtering, bilingual translations by shared
 quote ID, moving text, fixed/custom/per-minute colours, background selection, patterns,

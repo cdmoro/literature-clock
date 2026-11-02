@@ -50,7 +50,7 @@ def main():
     if len(sys.argv) == 1 and output.exists():
         shutil.rmtree(output)
     generate_catalogues(Path('quotes'), output,
-                        Path('src/strings/translations.json'), suffix)
+                        Path('src/strings/common/translations.json'), suffix)
 
 
 def generate_catalogues(quotes, output, translations, suffix='.csv'):

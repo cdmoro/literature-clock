@@ -28,8 +28,8 @@ public sealed class ClockSurface : Canvas
     readonly TextBlock clock = new() { FontFamily = new FontFamily("Segoe UI"), FontWeight = FontWeights.Bold };
     readonly TextBlock clockHalo = new() { FontFamily = new FontFamily("Segoe UI"), FontWeight = FontWeights.Bold };
     readonly TextBlock credit = new() { FontSize = 11 };
-    readonly TextBlock attributionCredit = new() { FontFamily = new FontFamily("Segoe UI"), FontSize = 11, TextWrapping = TextWrapping.Wrap, TextAlignment = TextAlignment.Left, Foreground = Brushes.White };
-    readonly TextBlock bookCredit = new() { FontFamily = new FontFamily("Segoe UI"), FontSize = 11, TextWrapping = TextWrapping.Wrap, TextAlignment = TextAlignment.Left, Foreground = Brushes.White };
+    readonly TextBlock attributionCredit = new() { FontFamily = new FontFamily("Segoe UI"), FontSize = 11, TextWrapping = TextWrapping.Wrap, TextAlignment = TextAlignment.Left, Foreground = Appearance.Brush(Colors.White,.8) };
+    readonly TextBlock bookCredit = new() { FontFamily = new FontFamily("Segoe UI"), FontSize = 11, TextWrapping = TextWrapping.Wrap, TextAlignment = TextAlignment.Left, Foreground = Appearance.Brush(Colors.White,.8) };
     readonly Rectangle progress = new();
     readonly Canvas effects = new();
     readonly Random effectRandom = new();
@@ -283,7 +283,7 @@ public sealed class ClockSurface : Canvas
             var flow=language.StartsWith("ar")?FlowDirection.RightToLeft:FlowDirection.LeftToRight;
             var outlineActive=outlineForPhoto || outlineForPattern;
             var outlineRadius=12.0;
-            var text=new TextBlock { TextWrapping=TextWrapping.Wrap, TextAlignment=fuzzy?TextAlignment.Center:TextAlignment.Left, FontFamily=Appearance.Font(p.Theme,language), FontSize=fontSize, Foreground=Appearance.Brush(foreground,p.Theme=="terminal"?.8:1), FlowDirection=flow, LineHeight=fontSize*Appearance.Font(p.Theme,language).LineSpacing*(p.Theme=="book"?1.35:p.Theme=="festive"?1.25:p.Theme=="terminal"?1.15:1), LineStackingStrategy=LineStackingStrategy.BlockLineHeight };
+            var text=new TextBlock { TextWrapping=TextWrapping.Wrap, TextAlignment=fuzzy?TextAlignment.Center:TextAlignment.Left, FontFamily=Appearance.Font(p.Theme,language,p.Font), FontSize=fontSize, Foreground=Appearance.Brush(foreground,p.Theme=="terminal"?.8:1), FlowDirection=flow, LineHeight=fontSize*Appearance.Font(p.Theme,language,p.Font).LineSpacing*(p.Theme=="book"?1.35:p.Theme=="festive"?1.25:p.Theme=="terminal"?1.15:1), LineStackingStrategy=LineStackingStrategy.BlockLineHeight };
             if(outlineActive) text.Effect=new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=outlineRadius,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance };
             if (!fuzzy) {
                 text.Inlines.Add(new Run(item.first));
@@ -293,7 +293,7 @@ public sealed class ClockSurface : Canvas
                 text.Inlines.Add(new Run(item.last));
                 passage.Children.Add(p.Theme=="book"?new BookText(text,highlight,Appearance.Brush(accent)):text);
                 var attribution=!fuzzy && p.QuoteAttribution=="below"?p.HideTitle?item.author:string.Join(", ",new[]{item.title,item.author}.WhereNonEmpty()):"";
-                if(attribution.Length>0) passage.Children.Add(new TextBlock { Text=(p.Theme=="terminal"?"> ":"— ")+attribution,FontFamily=text.FontFamily,FontSize=fontSize*.55,TextWrapping=TextWrapping.Wrap,FlowDirection=flow,Foreground=Appearance.Brush(foreground),Margin=new Thickness(0,p.Theme=="book"?(ActualWidth<=750?16:24):fontSize*.35,0,0),Effect=outlineActive?new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=12,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance }:null });
+                if(attribution.Length>0) passage.Children.Add(new TextBlock { Text=(p.Theme=="terminal"?"> ":"— ")+attribution,FontFamily=text.FontFamily,FontSize=fontSize*.55,TextWrapping=TextWrapping.Wrap,FlowDirection=flow,Foreground=Appearance.Brush(foreground,.8),Margin=new Thickness(0,p.Theme=="book"?(ActualWidth<=750?16:24):fontSize*.35,0,0),Effect=outlineActive?new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=12,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance }:null });
             } else {
                 var phrase=string.IsNullOrEmpty(item.time)?quoteMinute:item.time;
                 var highlight=new Run(BalancedLines(phrase,text,width));

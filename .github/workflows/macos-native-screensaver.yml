@@ -5,7 +5,10 @@ on:
     branches: [main]
     paths:
       - 'screensavers/macos-native/**'
-      - 'src/strings/**'
+      - 'quotes/**'
+      - 'src/strings/common/**'
+      - 'src/strings/screensaver/**'
+      - 'scripts/component_ownership.py'
       - '.github/workflows/macos-native-screensaver.yml'
   workflow_dispatch:
 

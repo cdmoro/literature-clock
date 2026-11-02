@@ -14,8 +14,8 @@ class AdminTest(unittest.TestCase):
         fixture.setUp()
         self.addCleanup(fixture.temp.cleanup)
         self.root, self.project, self.rows = fixture.root, fixture.project, fixture.rows
-        (self.root / 'src/strings').mkdir(parents=True)
-        (self.root / 'src/strings/translations.json').write_text('{"en-GB":{}}')
+        (self.root / 'src/strings/common').mkdir(parents=True)
+        (self.root / 'src/strings/common/translations.json').write_text('{"en-GB":{}}')
         self.admin = Admin(self.root)
 
     def test_new_language_is_hidden_and_web_approval_updates_csv(self):

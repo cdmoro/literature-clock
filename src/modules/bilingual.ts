@@ -2,7 +2,7 @@ import { setTextLocale } from '../utils/text-direction';
 import { applyLocaleThemeFont } from './locale-fonts';
 import { store } from '../store';
 import { getBaseLocale, getInterfaceLocale, getStrings, resolveLocale } from './locales';
-import SETTINGS from '../strings/settings.json';
+import SETTINGS from './settings-strings';
 import { Locale, Quote } from '../types';
 import { fitQuote } from '../utils';
 import { quoteMarkup } from '../utils/quote-markup';

@@ -1,0 +1,266 @@
+{
+  "en-GB": [
+    {
+      "quote_first": "Error ",
+      "quote_last": ": quote not found.",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "F-001",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "Captain's log:<br>We are still looking for a quote for ",
+      "quote_last": ".",
+      "title": "Moby Dick",
+      "author": "Captain Ahab",
+      "id": "F-002",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
+  ],
+  "en-US": [
+    {
+      "quote_first": "Error ",
+      "quote_last": ": quote not found.",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "F-001",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "Captain's log:<br>We are still looking for a quote for ",
+      "quote_last": ".",
+      "title": "Moby Dick",
+      "author": "Captain Ahab",
+      "id": "F-002",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
+  ],
+  "es-ES": [
+    {
+      "quote_first": "Error ",
+      "quote_last": ": quote not found.",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "F-001",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "Bitácora del Capitán:<br>Seguimos buscando una cita para las ",
+      "quote_last": ".",
+      "title": "Moby Dick",
+      "author": "Captain Ahab",
+      "id": "F-002",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
+  ],
+  "pt-PT": [
+    {
+      "quote_first": "Erro ",
+      "quote_last": ": citação não encontrada.",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "F-001",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "Registro do capitão:<br>Ainda estamos procurando uma data para o ",
+      "quote_last": ".",
+      "title": "Moby Dick",
+      "author": "Capitão Ahab",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
+  ],
+  "fr-FR": [
+    {
+      "quote_first": "Erreur ",
+      "quote_last": ": citation non trouvée.",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "F-001",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "Journal du capitaine:<br>Nous sommes toujours à la recherche d'una citation pour ",
+      "quote_last": ".",
+      "title": "Moby Dick",
+      "author": "Capitaine Achab",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
+  ],
+  "it-IT": [
+    {
+      "quote_first": "Errore ",
+      "quote_last": ": citazione non trovata.",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "F-001",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "Diario del capitano:<br>Stiamo ancora cercando una data per il ",
+      "quote_last": ".",
+      "title": "Moby Dick",
+      "author": "Capitano Achab",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
+  ],
+  "de-DE": [
+    {
+      "quote_first": "Fehler ",
+      "quote_last": ": Zitat nicht gefunden.",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "F-001",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "Logbuch des Kapitäns:<br>Wir suchen noch nach einem Angebot für ",
+      "quote_last": ".",
+      "title": "Moby Dick",
+      "author": "Kapitän Ahab",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
+  ],
+  "el-GR": [
+    {
+      "quote_first": "Σφάλμα ",
+      "quote_last": ": δεν βρέθηκε παράθεμα.",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "F-001",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "Ημερολόγιο πλοίου:<br>Αναζητούμε ακόμη ένα παράθεμα για τις ",
+      "quote_last": ".",
+      "title": "Μόμπι Ντικ",
+      "author": "Καπετάνιος Άχαμπ",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
+  ],
+  "zh-CN": [
+    {
+      "quote_first": "错误 ",
+      "quote_last": "：未找到引文。",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "F-001",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "船长日志：<br>我们仍在寻找对应以下时间的引文：",
+      "quote_last": "。",
+      "title": "白鲸",
+      "author": "亚哈船长",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
+  ],
+  "ru-RU": [
+    {
+      "quote_first": "Ошибка ",
+      "quote_last": ": цитата не найдена.",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "F-001",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "Судовой журнал:<br>Мы всё ещё ищем цитату для ",
+      "quote_last": ".",
+      "title": "Моби Дик",
+      "author": "Капитан Ахав",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
+  ],
+  "eo": [
+    {
+      "quote_first": "Eraro ",
+      "quote_last": ": citaĵo ne trovita.",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "F-001",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "Taglibro de la kapitano:<br>Ni ankoraŭ serĉas citaĵon por ",
+      "quote_last": ".",
+      "title": "Moby Dick",
+      "author": "Kapitano Ahab",
+      "id": "",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
+  ],
+  "ar-AE": [
+    {
+      "quote_first": "خطأ ",
+      "quote_last": ": لم يُعثر على اقتباس.",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "F-001",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "سجل القبطان:<br>ما زلنا نبحث عن اقتباس للوقت ",
+      "quote_last": ".",
+      "title": "Moby Dick",
+      "author": "Captain Ahab",
+      "id": "F-002",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
+  ]
+}
