@@ -30,7 +30,12 @@
     "settings_attribution_position": "Quote details",
     "settings_attribution_below": "Below the quote",
     "settings_attribution_bottom_left": "Bottom left",
-    "settings_attribution_hidden": "Hidden"
+    "settings_attribution_hidden": "Hidden",
+    "pattern_size_0.5": "0.5×",
+    "pattern_size_1": "1×",
+    "pattern_size_1.5": "1.5×",
+    "pattern_size_2": "2×",
+    "pattern_size_3": "3×"
   },
   "en-US": {
     "cancel": "Cancel",
@@ -63,7 +68,12 @@
     "settings_attribution_position": "Quote details",
     "settings_attribution_below": "Below the quote",
     "settings_attribution_bottom_left": "Bottom left",
-    "settings_attribution_hidden": "Hidden"
+    "settings_attribution_hidden": "Hidden",
+    "pattern_size_0.5": "0.5×",
+    "pattern_size_1": "1×",
+    "pattern_size_1.5": "1.5×",
+    "pattern_size_2": "2×",
+    "pattern_size_3": "3×"
   },
   "es-ES": {
     "cancel": "Cancelar",
@@ -96,7 +106,12 @@
     "settings_attribution_position": "Datos de la cita",
     "settings_attribution_below": "Debajo de la cita",
     "settings_attribution_bottom_left": "Esquina inferior izquierda",
-    "settings_attribution_hidden": "Ocultos"
+    "settings_attribution_hidden": "Ocultos",
+    "pattern_size_0.5": "0.5×",
+    "pattern_size_1": "1×",
+    "pattern_size_1.5": "1.5×",
+    "pattern_size_2": "2×",
+    "pattern_size_3": "3×"
   },
   "fr-FR": {
     "cancel": "Annuler",
@@ -129,7 +144,12 @@
     "settings_attribution_position": "Informations de la citation",
     "settings_attribution_below": "Sous la citation",
     "settings_attribution_bottom_left": "En bas à gauche",
-    "settings_attribution_hidden": "Masquées"
+    "settings_attribution_hidden": "Masquées",
+    "pattern_size_0.5": "0.5×",
+    "pattern_size_1": "1×",
+    "pattern_size_1.5": "1.5×",
+    "pattern_size_2": "2×",
+    "pattern_size_3": "3×"
   },
   "de-DE": {
     "cancel": "Abbrechen",
@@ -162,7 +182,12 @@
     "settings_attribution_position": "Angaben zum Zitat",
     "settings_attribution_below": "Unter dem Zitat",
     "settings_attribution_bottom_left": "Unten links",
-    "settings_attribution_hidden": "Ausgeblendet"
+    "settings_attribution_hidden": "Ausgeblendet",
+    "pattern_size_0.5": "0.5×",
+    "pattern_size_1": "1×",
+    "pattern_size_1.5": "1.5×",
+    "pattern_size_2": "2×",
+    "pattern_size_3": "3×"
   },
   "it-IT": {
     "cancel": "Annulla",
@@ -195,7 +220,12 @@
     "settings_attribution_position": "Dati della citazione",
     "settings_attribution_below": "Sotto la citazione",
     "settings_attribution_bottom_left": "In basso a sinistra",
-    "settings_attribution_hidden": "Nascosti"
+    "settings_attribution_hidden": "Nascosti",
+    "pattern_size_0.5": "0.5×",
+    "pattern_size_1": "1×",
+    "pattern_size_1.5": "1.5×",
+    "pattern_size_2": "2×",
+    "pattern_size_3": "3×"
   },
   "pt-PT": {
     "cancel": "Cancelar",
@@ -228,7 +258,12 @@
     "settings_attribution_position": "Dados da citação",
     "settings_attribution_below": "Abaixo da citação",
     "settings_attribution_bottom_left": "Canto inferior esquerdo",
-    "settings_attribution_hidden": "Ocultos"
+    "settings_attribution_hidden": "Ocultos",
+    "pattern_size_0.5": "0.5×",
+    "pattern_size_1": "1×",
+    "pattern_size_1.5": "1.5×",
+    "pattern_size_2": "2×",
+    "pattern_size_3": "3×"
   },
   "ru-RU": {
     "cancel": "Отмена",
@@ -261,7 +296,12 @@
     "settings_attribution_position": "Данные цитаты",
     "settings_attribution_below": "Под цитатой",
     "settings_attribution_bottom_left": "В левом нижнем углу",
-    "settings_attribution_hidden": "Скрыты"
+    "settings_attribution_hidden": "Скрыты",
+    "pattern_size_0.5": "0.5×",
+    "pattern_size_1": "1×",
+    "pattern_size_1.5": "1.5×",
+    "pattern_size_2": "2×",
+    "pattern_size_3": "3×"
   },
   "zh-CN": {
     "cancel": "取消",
@@ -294,7 +334,12 @@
     "settings_attribution_position": "引文信息",
     "settings_attribution_below": "引文下方",
     "settings_attribution_bottom_left": "左下角",
-    "settings_attribution_hidden": "隐藏"
+    "settings_attribution_hidden": "隐藏",
+    "pattern_size_0.5": "0.5×",
+    "pattern_size_1": "1×",
+    "pattern_size_1.5": "1.5×",
+    "pattern_size_2": "2×",
+    "pattern_size_3": "3×"
   },
   "el-GR": {
     "cancel": "Ακύρωση",
@@ -327,7 +372,12 @@
     "settings_attribution_position": "Στοιχεία αποσπάσματος",
     "settings_attribution_below": "Κάτω από το απόσπασμα",
     "settings_attribution_bottom_left": "Κάτω αριστερά",
-    "settings_attribution_hidden": "Κρυφά"
+    "settings_attribution_hidden": "Κρυφά",
+    "pattern_size_0.5": "0.5×",
+    "pattern_size_1": "1×",
+    "pattern_size_1.5": "1.5×",
+    "pattern_size_2": "2×",
+    "pattern_size_3": "3×"
   },
   "eo": {
     "cancel": "Nuligi",
@@ -360,7 +410,12 @@
     "settings_attribution_position": "Detaloj de la citaĵo",
     "settings_attribution_below": "Sub la citaĵo",
     "settings_attribution_bottom_left": "Malsupre maldekstre",
-    "settings_attribution_hidden": "Kaŝitaj"
+    "settings_attribution_hidden": "Kaŝitaj",
+    "pattern_size_0.5": "0.5×",
+    "pattern_size_1": "1×",
+    "pattern_size_1.5": "1.5×",
+    "pattern_size_2": "2×",
+    "pattern_size_3": "3×"
   },
   "ar-AE": {
     "cancel": "إلغاء",
@@ -393,6 +448,11 @@
     "settings_attribution_position": "بيانات الاقتباس",
     "settings_attribution_below": "أسفل الاقتباس",
     "settings_attribution_bottom_left": "أسفل اليسار",
-    "settings_attribution_hidden": "مخفية"
+    "settings_attribution_hidden": "مخفية",
+    "pattern_size_0.5": "0.5×",
+    "pattern_size_1": "1×",
+    "pattern_size_1.5": "1.5×",
+    "pattern_size_2": "2×",
+    "pattern_size_3": "3×"
   }
 }

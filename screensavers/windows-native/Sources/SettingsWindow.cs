@@ -87,7 +87,7 @@ public sealed class SettingsWindow : Window
         custom.TextChanged+=(_,_)=>UpdateCustomColor();
         UpdateCustomColor(); stack.Children.Add(colorEditor);
         Menu("settings_background_pattern","pattern",Appearance.Patterns,p.Pattern,raw=>data.Text("settings_pattern_"+raw));
-        Menu("settings_pattern_size","patternSize",["0.5","1","1.5","2","3"],p.PatternSize,raw=>raw+"×");
+        Menu("settings_pattern_size","patternSize",["0.5","1","1.5","2","3"],p.PatternSize,raw=>data.Text("pattern_size_"+raw));
         Menu("settings_background_effect","effect",["none","rain","snow","dust","dust-v2","stars"],p.Effect,raw=>data.Text("settings_effect_"+raw));
         Menu("progressbar_mode","progress",["none","top","bottom","background","glass-background","glass-foreground"],p.Progress,raw=>data.Text("settings_progress_"+raw));
         Section("settings_behavior");
@@ -116,15 +116,15 @@ public sealed class SettingsWindow : Window
         }
         bool applyingPreset=false;
         var presets=new[] {
-            (Name:"christmas",Palette:"green",Pattern:"christmas",Effect:"snow"),
-            (Name:"halloween",Palette:"purple",Pattern:"halloween",Effect:"dust-v2"),
-            (Name:"valentine",Palette:"pink",Pattern:"valentine",Effect:"stars")
+            (Name:"christmas",Palette:"green",Pattern:"christmas",Effect:"snow",Font:"serif",Progress:"bottom"),
+            (Name:"halloween",Palette:"purple",Pattern:"halloween",Effect:"dust-v2",Font:"default",Progress:"top"),
+            (Name:"valentine",Palette:"pink",Pattern:"valentine",Effect:"stars",Font:"sans-serif",Progress:"background")
         };
         void UpdatePreset()
         {
             if(applyingPreset) return;
             var match=Value("theme")=="base" && Value("background")=="default" && Value("patternSize")=="2"
-                ? presets.FirstOrDefault(x=>x.Palette==Value("palette") && x.Pattern==Value("pattern") && x.Effect==Value("effect")).Name : null;
+                ? presets.FirstOrDefault(x=>x.Palette==Value("palette") && x.Pattern==Value("pattern") && x.Effect==Value("effect") && x.Font==Value("font") && x.Progress==Value("progress")).Name : null;
             applyingPreset=true;
             menus["preset"].SelectedValue=match ?? "none";
             applyingPreset=false;
@@ -134,15 +134,17 @@ public sealed class SettingsWindow : Window
             var preset=presets.First(x=>x.Name==Value("preset"));
             applyingPreset=true;
             menus["theme"].SelectedValue="base";
+            menus["font"].SelectedValue=preset.Font;
             menus["background"].SelectedValue="default";
             menus["palette"].SelectedValue=preset.Palette;
             menus["pattern"].SelectedValue=preset.Pattern;
             menus["patternSize"].SelectedValue="2";
             menus["effect"].SelectedValue=preset.Effect;
+            menus["progress"].SelectedValue=preset.Progress;
             applyingPreset=false;
             Update(); UpdatePreset();
         };
-        foreach(var key in new[]{"theme","background","palette","pattern","patternSize","effect"})
+        foreach(var key in new[]{"theme","background","palette","pattern","patternSize","effect","font"})
             menus[key].SelectionChanged+=(_,_)=>UpdatePreset();
         UpdatePreset();
         menus["provider"].SelectionChanged+=(_,_)=>{ Categories(); Update(); };
@@ -157,8 +159,11 @@ public sealed class SettingsWindow : Window
         using var versionStream=Catalogues.Open("version.txt");
         using var versionReader=new System.IO.StreamReader(versionStream);
         var version=versionReader.ReadToEnd().Trim();
-        var project=new Button { Content="Literature Clock "+version+" · GitHub",Margin=new Thickness(0,12,0,0) };
-        project.Click+=(_,_)=>Process.Start(new ProcessStartInfo("https://github.com/cdmoro/literature-clock") { UseShellExecute=true }); stack.Children.Add(project);
+        var footer=new StackPanel { Orientation=Orientation.Horizontal,HorizontalAlignment=HorizontalAlignment.Left,Margin=new Thickness(0,12,0,0) };
+        footer.Children.Add(new TextBlock { Text="Literature Clock "+version+" · ",VerticalAlignment=VerticalAlignment.Center });
+        var project=new Button { Content="GitHub",Padding=new Thickness(2,0,2,0),Background=System.Windows.Media.Brushes.Transparent,BorderThickness=new Thickness(0) };
+        project.Click+=(_,_)=>Process.Start(new ProcessStartInfo("https://github.com/cdmoro/literature-clock") { UseShellExecute=true });
+        footer.Children.Add(project); stack.Children.Add(footer);
     }
     void UpdateCustomColor()
     {
