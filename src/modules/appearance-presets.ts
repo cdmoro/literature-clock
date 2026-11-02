@@ -11,13 +11,13 @@ interface AppearancePreset {
   pattern?: 'christmas' | 'halloween' | 'valentine';
   effect?: 'snow' | 'dust-v2' | 'stars';
   size?: '2';
-  font?: 'serif';
+  font: 'serif' | 'default';
 }
 
 const PRESETS: AppearancePreset[] = [
   { id: 'christmas', palette: 'pine', background: 'default', pattern: 'christmas', effect: 'snow', size: '2', font: 'serif' },
-  { id: 'halloween', palette: 'purple', background: 'default', pattern: 'halloween', effect: 'dust-v2', size: '2' },
-  { id: 'valentine', palette: 'pink', background: 'default', pattern: 'valentine', effect: 'stars', size: '2' },
+  { id: 'halloween', palette: 'purple', background: 'default', pattern: 'halloween', effect: 'dust-v2', size: '2', font: 'default' },
+  { id: 'valentine', palette: 'pink', background: 'default', pattern: 'valentine', effect: 'stars', size: '2', font: 'default' },
 ];
 
 export function initAppearancePresets(dialog: HTMLDialogElement) {
@@ -91,13 +91,12 @@ export function initAppearancePresets(dialog: HTMLDialogElement) {
       if (preset.pattern) store.set('background-pattern', preset.pattern);
       if (preset.effect) store.set('background-effect', preset.effect);
       if (preset.size) store.set('pattern-size', preset.size);
-      if (preset.font) {
-        const font = dialog.querySelector<HTMLSelectElement>('#font-select');
-        if (font) {
-          font.value = preset.font;
-          font.dispatchEvent(new Event('change', { bubbles: true }));
-        } else store.set('font', preset.font);
+      const font = dialog.querySelector<HTMLSelectElement>('#font-select');
+      if (font) {
+        font.value = preset.font;
+        font.dispatchEvent(new Event('change', { bubbles: true }));
       }
+      store.set('font', preset.font);
     });
   });
 

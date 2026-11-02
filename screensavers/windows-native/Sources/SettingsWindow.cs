@@ -116,15 +116,15 @@ public sealed class SettingsWindow : Window
         }
         bool applyingPreset=false;
         var presets=new[] {
-            (Name:"christmas",Palette:"green",Pattern:"christmas",Effect:"snow"),
-            (Name:"halloween",Palette:"purple",Pattern:"halloween",Effect:"dust-v2"),
-            (Name:"valentine",Palette:"pink",Pattern:"valentine",Effect:"stars")
+            (Name:"christmas",Palette:"green",Pattern:"christmas",Effect:"snow",Font:"serif"),
+            (Name:"halloween",Palette:"purple",Pattern:"halloween",Effect:"dust-v2",Font:"default"),
+            (Name:"valentine",Palette:"pink",Pattern:"valentine",Effect:"stars",Font:"default")
         };
         void UpdatePreset()
         {
             if(applyingPreset) return;
             var match=Value("theme")=="base" && Value("background")=="default" && Value("patternSize")=="2"
-                ? presets.FirstOrDefault(x=>x.Palette==Value("palette") && x.Pattern==Value("pattern") && x.Effect==Value("effect") && (x.Name!="christmas" || Value("font")=="serif")).Name : null;
+                ? presets.FirstOrDefault(x=>x.Palette==Value("palette") && x.Pattern==Value("pattern") && x.Effect==Value("effect") && x.Font==Value("font")).Name : null;
             applyingPreset=true;
             menus["preset"].SelectedValue=match ?? "none";
             applyingPreset=false;
@@ -134,7 +134,7 @@ public sealed class SettingsWindow : Window
             var preset=presets.First(x=>x.Name==Value("preset"));
             applyingPreset=true;
             menus["theme"].SelectedValue="base";
-            if(preset.Name=="christmas") menus["font"].SelectedValue="serif";
+            menus["font"].SelectedValue=preset.Font;
             menus["background"].SelectedValue="default";
             menus["palette"].SelectedValue=preset.Palette;
             menus["pattern"].SelectedValue=preset.Pattern;
