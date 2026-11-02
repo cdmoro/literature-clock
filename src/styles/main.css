@@ -100,6 +100,7 @@ blockquote .time {
 }
 
 cite {
+  opacity: 0.68;
   font-family: var(
     --cite-font-family,
     var(--override-quote-font-family, var(--locale-quote-font-family, var(--quote-font-family)))
@@ -591,6 +592,10 @@ body.share-quote #clock {
     sans-serif;
   text-decoration: none;
   z-index: 1;
+}
+
+#quote-credit {
+  opacity: 0.68;
 }
 
 #photo-credit {

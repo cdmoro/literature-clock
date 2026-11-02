@@ -35,16 +35,16 @@ struct ClockProvider: AppIntentTimelineProvider {
                                 quoteLast: " in a book.", title: "Literature Clock", author: "", sfw: true))
     }
     func snapshot(for configuration: ClockWidgetConfiguration, in context: Context) async -> ClockEntry {
-        widgetLogger.notice("Snapshot requested; preview: \(context.isPreview)")
+        widgetLogger.debug("Snapshot requested; preview: \(context.isPreview)")
         let now = Date()
         let locales = configuration.languages.isEmpty ? ["en-US"] : configuration.languages.map(\.rawValue)
         let window = ClockCatalogue.window(at: [now], locales: locales)
         let result = entry(at: now, configuration: configuration, family: context.family, window: window)
-        widgetLogger.notice("Snapshot ready; quote available: \(result.quote != nil)")
+        widgetLogger.debug("Snapshot ready; quote available: \(result.quote != nil)")
         return result
     }
     func timeline(for configuration: ClockWidgetConfiguration, in context: Context) async -> Timeline<ClockEntry> {
-        widgetLogger.notice("Timeline requested")
+        widgetLogger.debug("Timeline requested")
         return makeTimeline(at: .now, configuration: configuration, family: context.family)
     }
 
@@ -53,7 +53,7 @@ struct ClockProvider: AppIntentTimelineProvider {
         let requestID = UUID().uuidString
         let minuteStart = Calendar.current.dateInterval(of: .minute, for: now)?.start ?? now
         let reloadDate = minuteStart.addingTimeInterval(30 * 60)
-        widgetLogger.notice("Building timeline \(requestID, privacy: .public); family: \(String(describing: family), privacy: .public); languages: \(configuration.languages.map(\.rawValue).joined(separator: ","), privacy: .public); start: \(minuteStart.timeIntervalSince1970)")
+        widgetLogger.debug("Building timeline \(requestID, privacy: .public); family: \(String(describing: family), privacy: .public); languages: \(configuration.languages.map(\.rawValue).joined(separator: ","), privacy: .public); start: \(minuteStart.timeIntervalSince1970)")
         // Timeline entries don't require launching the extension every minute.
         // Keep an hour ready and request a replacement halfway through, leaving
         // another half hour of entries if WidgetKit defers the budgeted reload.
@@ -63,7 +63,7 @@ struct ClockProvider: AppIntentTimelineProvider {
         let entries = dates.map { date in
             entry(at: date, configuration: configuration, family: family, window: window)
         }
-        widgetLogger.notice("Timeline ready \(requestID, privacy: .public); entries: \(entries.count); with quotes: \(entries.filter { $0.quote != nil }.count); last: \(entries.last!.date.timeIntervalSince1970); reload after: \(reloadDate.timeIntervalSince1970); seconds: \(Date().timeIntervalSince(started))")
+        widgetLogger.debug("Timeline ready \(requestID, privacy: .public); entries: \(entries.count); with quotes: \(entries.filter { $0.quote != nil }.count); last: \(entries.last!.date.timeIntervalSince1970); reload after: \(reloadDate.timeIntervalSince1970); seconds: \(Date().timeIntervalSince(started))")
         return Timeline(entries: entries, policy: .after(reloadDate))
     }
 
@@ -82,27 +82,31 @@ struct ClockProvider: AppIntentTimelineProvider {
                                                 identity: widgetID, safeOnly: configuration.safeOnly, lookup: lookup)
         let allQuotes = lookup(locale)
         let quotes = configuration.safeOnly ? allQuotes.filter(\.sfw) : allQuotes
+        let displayedQuotes = quotes.isEmpty ? [ClockCatalogue.fallbackQuote(at: date, locale: locale)] : quotes
         let key = ClockCatalogue.quoteIndexKey(at: date, locale: locale, widgetID: widgetID)
         let index = (ClockSettings.defaults.object(forKey: key) as? Int)
-            ?? ClockCatalogue.defaultQuoteIndex(at: date, count: quotes.count)
+            ?? ClockCatalogue.defaultQuoteIndex(at: date, count: displayedQuotes.count)
         return ClockEntry(date: date, minuteID: Int(date.timeIntervalSince1970 / 60), widgetID: widgetID, locale: locale,
                           appearance: configuration.appearance.rawValue, font: configuration.font.rawValue,
-                          palette: configuration.palette.rawValue,
-                          customAccentHex: ClockSettings.validAccentHex(configuration.customAccent ?? "")
+                          palette: configuration.resolvedPalette.rawValue,
+                          customAccentHex: ClockSettings.validAccentHex(
+                            ClockSettings.defaults.string(forKey: ClockSettings.customAccentKey) ?? ""
+                          )
                             ?? ClockSettings.defaults.string(forKey: ClockSettings.customAccentKey) ?? "#B36E26",
                           highlight: configuration.highlight, fuzzy: family == .systemSmall || configuration.fuzzy,
                           safeOnly: configuration.safeOnly,
                           attribution: configuration.attribution.rawValue,
-                          progressMode: ClockSettings.progressMode,
-                          variantCount: quotes.count,
-                          quote: quotes.isEmpty ? nil : quotes[index % quotes.count])
+                          progressMode: configuration.showProgress ? "bottom" : "hidden",
+                          variantCount: displayedQuotes.count,
+                          quote: displayedQuotes[index % displayedQuotes.count])
     }
 }
 
 private extension ClockWidgetConfiguration {
     func stateIdentity(family: WidgetFamily) -> String {
-        [String(describing: family), appearance.rawValue, font.rawValue, palette.rawValue,
-         palette == .custom ? (customAccent ?? "") : "",
+        [String(describing: family), appearance.rawValue, font.rawValue, resolvedPalette.rawValue,
+         resolvedPalette == .custom
+            ? (ClockSettings.defaults.string(forKey: ClockSettings.customAccentKey) ?? "") : "",
          highlight ? "highlight" : "plain", (family == .systemSmall || fuzzy) ? "fuzzy" : "full",
          safeOnly ? "safe" : "all", attribution.rawValue,
          languages.map(\.rawValue).sorted().joined(separator: ",")]
@@ -164,7 +168,7 @@ struct ClockWidgetView: View {
                 translationText(quote, locale: entry.locale)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             } else {
-                Text("No quote available").foregroundStyle(secondaryForegroundColor)
+                Text("app_no_quote").foregroundStyle(secondaryForegroundColor)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             }
             if entry.quote != nil && (entry.attribution != "hidden" || (family != .systemSmall && entry.variantCount > 1)) {
@@ -192,7 +196,7 @@ struct ClockWidgetView: View {
                                     .background(foregroundColor.opacity(0.10), in: Circle())
                                     .foregroundStyle(accentColor)
                             }
-                            .accessibilityLabel("Previous quote")
+                            .accessibilityLabel(Text("app_previous_quote"))
                             .buttonStyle(.plain)
                             Button(intent: CycleQuoteIntent(step: 1, widgetID: entry.widgetID, locale: entry.locale, minuteID: entry.minuteID, safeOnly: entry.safeOnly)) {
                                 Image(systemName: "chevron.right").font(.system(size: 11, weight: .semibold))
@@ -200,7 +204,7 @@ struct ClockWidgetView: View {
                                     .background(foregroundColor.opacity(0.10), in: Circle())
                                     .foregroundStyle(accentColor)
                             }
-                            .accessibilityLabel("Next quote")
+                            .accessibilityLabel(Text("app_next_quote"))
                             .buttonStyle(.plain)
                         }
                         .tint(accentColor)
@@ -220,18 +224,16 @@ struct ClockWidgetView: View {
             backgroundColor
         }
         .overlay(alignment: .bottom) {
-            if entry.progressMode != "hidden" {
+            if entry.progressMode == "bottom" {
                 ProgressView(timerInterval: entry.date...entry.date.addingTimeInterval(60),
                              countsDown: false,
                              label: { EmptyView() },
                              currentValueLabel: { EmptyView() })
-                    .progressViewStyle(.linear)
-                    .tint(entry.progressMode == "background" ? accentColor.opacity(0.24) : accentColor)
-                    .padding(.horizontal, entry.progressMode == "background" ? 0 : horizontalPadding)
+                    .progressViewStyle(ClockSecondsProgressStyle(accent: accentColor))
                     .frame(maxWidth: .infinity)
-                    .frame(height: 3)
+                    .frame(height: 4)
                     .padding(.bottom, 0)
-                    .accessibilityLabel("Seconds progress")
+                    .accessibilityLabel(Text("app_seconds_progress"))
                     .allowsHitTesting(false)
             }
         }
@@ -242,7 +244,7 @@ struct ClockWidgetView: View {
         let parts = quote.timeParts()
         if isFuzzy {
             Text(parts.time)
-                .font(ClockSettings.quoteFont(entry.font, size: fuzzyQuoteSize, weight: entry.highlight ? .bold : .regular))
+                .font(ClockSettings.quoteFont(entry.font, size: fuzzyQuoteSize))
                 .foregroundColor(entry.highlight ? accentColor : foregroundColor)
                 .widgetAccentable(entry.highlight)
                 .multilineTextAlignment(.center)
@@ -274,6 +276,18 @@ struct ClockWidgetView: View {
             URLQueryItem(name: "fuzzy", value: isFuzzy ? "1" : "0")
         ]
         return components.url
+    }
+}
+
+private struct ClockSecondsProgressStyle: ProgressViewStyle {
+    let accent: Color
+
+    func makeBody(configuration: Configuration) -> some View {
+        GeometryReader { geometry in
+            Rectangle()
+                .fill(accent)
+                .frame(width: geometry.size.width * CGFloat(configuration.fractionCompleted ?? 0))
+        }
     }
 }
 

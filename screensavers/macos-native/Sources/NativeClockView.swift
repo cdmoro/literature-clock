@@ -593,7 +593,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             shadow.shadowBlurRadius = 8
             shadow.shadowColor = NSColor.black.withAlphaComponent(0.65)
             label.attributedStringValue = NSAttributedString(string: creditText, attributes: [
-                .font: NSFont.systemFont(ofSize: 11), .foregroundColor: NSColor.white,
+                .font: NSFont.systemFont(ofSize: 11), .foregroundColor: NSColor.white.withAlphaComponent(0.8),
                 .paragraphStyle: style, .shadow: shadow,
             ])
             fuzzyCreditKey = creditKey
@@ -662,7 +662,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                         let citationStyle = style.mutableCopy() as! NSMutableParagraphStyle
                         citationStyle.paragraphSpacingBefore = theme == "book" ? (bounds.width <= 750 ? 16 : 24) : size * 0.35
                         result.append(NSAttributedString(string: (theme == "terminal" ? "> " : "— ") + attribution,
-                            attributes: [.font: quoteFont(size * 0.55, locale: locale), .foregroundColor: foreground, .paragraphStyle: citationStyle]))
+                            attributes: [.font: quoteFont(size * 0.55, locale: locale), .foregroundColor: foreground.withAlphaComponent(0.8), .paragraphStyle: citationStyle]))
                     }
                 }
             }
@@ -825,16 +825,28 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         background.state = .active
         background.autoresizingMask = [.width, .height]
         window.contentView = background
+        let scroll = NSScrollView()
+        scroll.identifier = NSUserInterfaceItemIdentifier("settings-scroll")
+        scroll.hasVerticalScroller = true
+        scroll.drawsBackground = false
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        background.addSubview(scroll)
         let stack = NSStackView()
         stack.orientation = .vertical
         stack.alignment = .leading
         stack.spacing = 10
         stack.translatesAutoresizingMaskIntoConstraints = false
-        window.contentView!.addSubview(stack)
-        NSLayoutConstraint.activate([stack.leadingAnchor.constraint(equalTo: window.contentView!.leadingAnchor, constant: 24),
-                                     stack.trailingAnchor.constraint(equalTo: window.contentView!.trailingAnchor, constant: -24),
-                                     stack.topAnchor.constraint(equalTo: window.contentView!.topAnchor, constant: 24),
-                                     stack.bottomAnchor.constraint(equalTo: window.contentView!.bottomAnchor, constant: -24)])
+        scroll.documentView = stack
+        stack.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        stack.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        NSLayoutConstraint.activate([scroll.leadingAnchor.constraint(equalTo: background.leadingAnchor),
+                                     scroll.trailingAnchor.constraint(equalTo: background.trailingAnchor),
+                                     scroll.topAnchor.constraint(equalTo: background.topAnchor),
+                                     scroll.bottomAnchor.constraint(equalTo: background.bottomAnchor),
+                                     stack.leadingAnchor.constraint(equalTo: scroll.contentView.leadingAnchor, constant: 24),
+                                     stack.trailingAnchor.constraint(equalTo: scroll.contentView.trailingAnchor, constant: -24),
+                                     stack.topAnchor.constraint(equalTo: scroll.contentView.topAnchor, constant: 24),
+                                     stack.widthAnchor.constraint(equalTo: scroll.contentView.widthAnchor, constant: -48)])
         func section(_ key: String, first: Bool = false) {
             if !first {
                 let divider = NSBox()
@@ -922,7 +934,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             let menu = NSPopUpButton()
             let value = key == "theme-base" ? parts.first : key == "theme-mode" ? parts.last : preferences.string(forKey: key)
             for raw in values {
-                let labelKey = key == "font" && raw != "default" ? "settings_font_" + raw : key == "background" ? "settings_background_" + raw : key == "photo-category" ? "settings_photo_" + raw : key == "background-pattern" ? "settings_pattern_" + raw : key == "background-effect" ? "settings_effect_" + raw : key == "progressbar" ? "settings_progress_" + raw :
+                let labelKey = key == "font" && raw != "default" ? "settings_font_" + raw : key == "pattern-size" ? "pattern_size_" + raw : key == "background" ? "settings_background_" + raw : key == "photo-category" ? "settings_photo_" + raw : key == "background-pattern" ? "settings_pattern_" + raw : key == "background-effect" ? "settings_effect_" + raw : key == "progressbar" ? "settings_progress_" + raw :
                     raw == "custom" ? "settings_color_customize" : raw == "default" ? "default_font" : raw == "random" ? "settings_color_random" : raw
                 let label = key == "photo-provider" ? (raw == "commons" ? "Wikimedia Commons" : raw == "nasa" ? "NASA" : "Picsum") : text(labelKey)
                 let item = NSMenuItem(title: label, action: nil, keyEquivalent: "")
@@ -1037,19 +1049,22 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         controls["quote-attribution"] = attributionMenu
         stack.addArrangedSubview(NSStackView(views: [attributionLabel, attributionMenu]))
         let version = Bundle(for: Self.self).object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "development"
-        stack.addArrangedSubview(NSTextField(labelWithString: "Literature Clock for macOS · v" + version))
-        stack.addArrangedSubview(ProjectLink(title: text("native_github_project")))
+        let footer = NSStackView()
+        footer.orientation = .horizontal
+        footer.alignment = .centerY
+        footer.spacing = 6
+        footer.addArrangedSubview(NSTextField(labelWithString: "Literature Clock for macOS · v" + version))
+        footer.addArrangedSubview(ProjectLink(title: text("native_github_project")))
+        stack.addArrangedSubview(footer)
         let cancel = NSButton(title: text("cancel"), target: self, action: #selector(cancelOptions))
         cancel.keyEquivalent = "\u{1b}"
         let save = NSButton(title: "OK", target: self, action: #selector(saveOptions))
         save.keyEquivalent = "\r"
-        let spacer = NSView()
-        let buttons = NSStackView(views: [spacer, cancel, save])
+        let buttons = NSStackView(views: [cancel, save])
         buttons.spacing = 12
+        buttons.alignment = .trailing
         stack.addArrangedSubview(buttons)
-        buttons.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
         window.contentView!.layoutSubtreeIfNeeded()
-        window.setContentSize(NSSize(width: 700, height: max(470, stack.fittingSize.height + 48)))
         sheet = window
         return window
     }
@@ -1064,15 +1079,16 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         guard let presetMenu = controls["appearance-preset"] as? NSPopUpButton,
               let background = menuValue("background"), let palette = menuValue("palette"),
               let pattern = menuValue("background-pattern"), let size = menuValue("pattern-size"),
-              let effect = menuValue("background-effect") else { return }
+              let effect = menuValue("background-effect"), let progress = menuValue("progressbar") else { return }
         let theme = menuValue("theme-base") ?? "base"
-        let presets: [(String, String, String, String)] = [
-            ("christmas", "pine", "christmas", "snow"),
-            ("halloween", "purple", "halloween", "dust-v2"),
-            ("valentine", "pink", "valentine", "stars")
+        let font = menuValue("font") ?? "default"
+        let presets: [(String, String, String, String, String, String)] = [
+            ("christmas", "pine", "christmas", "snow", "serif", "bottom"),
+            ("halloween", "purple", "halloween", "dust-v2", "default", "top"),
+            ("valentine", "pink", "valentine", "stars", "sans-serif", "background")
         ]
         let match = theme == "base" && background == "default" && size == "2"
-            ? presets.first { $0.1 == palette && $0.2 == pattern && $0.3 == effect }?.0
+            ? presets.first { $0.1 == palette && $0.2 == pattern && $0.3 == effect && $0.4 == font && $0.5 == progress }?.0
             : nil
         presetMenu.select(presetMenu.itemArray.first { ($0.representedObject as? String) == (match ?? "none") })
     }
@@ -1080,7 +1096,9 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         guard let preset = sender.selectedItem?.representedObject as? String, preset != "none" else { return }
         guard let palette = ["christmas": "pine", "halloween": "purple", "valentine": "pink"][preset],
               let pattern = ["christmas": "christmas", "halloween": "halloween", "valentine": "valentine"][preset],
-              let effect = ["christmas": "snow", "halloween": "dust-v2", "valentine": "stars"][preset] else { return }
+              let effect = ["christmas": "snow", "halloween": "dust-v2", "valentine": "stars"][preset],
+              let font = ["christmas": "serif", "halloween": "default", "valentine": "sans-serif"][preset],
+              let progress = ["christmas": "bottom", "halloween": "top", "valentine": "background"][preset] else { return }
         func select(_ key: String, _ value: String) {
             guard let menu = controls[key] as? NSPopUpButton else { return }
             menu.select(menu.itemArray.first { $0.representedObject as? String == value })
@@ -1092,6 +1110,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         select("background-pattern", pattern)
         select("pattern-size", "2")
         select("background-effect", effect)
+        select("font", font)
+        select("progressbar", progress)
         photoControlsChanged()
         patternChanged(controls["background-pattern"] as! NSPopUpButton)
         updateSwatches()
@@ -1187,9 +1207,9 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     }
     private func resizeOptions() {
         guard let panel = sheet, let content = panel.contentView,
-              let stack = content.subviews.first as? NSStackView else { return }
+              let scroll = content.subviews.first(where: { $0.identifier?.rawValue == "settings-scroll" }) as? NSScrollView else { return }
         content.layoutSubtreeIfNeeded()
-        panel.setContentSize(NSSize(width: 700, height: max(470, stack.fittingSize.height + 48)))
+        scroll.documentView?.layoutSubtreeIfNeeded()
     }
     private func updateSwatches() {
         let palette = menuValue("palette") ?? "default"

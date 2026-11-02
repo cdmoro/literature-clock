@@ -3,9 +3,17 @@ import SwiftUI
 
 enum QuoteLibraryText {
     static func value(_ key: String, locale: String) -> String {
-        let bundle = Bundle.main.path(forResource: locale, ofType: "lproj")
+        let requested = locale.replacingOccurrences(of: "_", with: "-")
+        let available = Bundle.main.localizations
+        let language = Locale(identifier: requested).language.languageCode?.identifier
+        let resolved = available.first { $0.caseInsensitiveCompare(requested) == .orderedSame }
+            ?? available.first { Locale(identifier: $0).language.languageCode?.identifier == language }
+            ?? "en-US"
+        let bundle = Bundle.main.path(forResource: resolved, ofType: "lproj")
             .flatMap(Bundle.init(path:)) ?? .main
-        return bundle.localizedString(forKey: key, value: nil, table: nil)
+        let fallback = Bundle.main.path(forResource: "en-US", ofType: "lproj")
+            .flatMap(Bundle.init(path:))?.localizedString(forKey: key, value: key, table: nil) ?? key
+        return bundle.localizedString(forKey: key, value: fallback, table: nil)
     }
 }
 

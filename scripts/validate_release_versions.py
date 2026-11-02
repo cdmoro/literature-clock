@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Require component version bumps when their release payload changes."""
 
+from __future__ import annotations
+
 import argparse
 import re
 import subprocess

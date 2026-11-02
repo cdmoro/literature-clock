@@ -72,8 +72,9 @@ def main():
     (staging / 'READ-ME.txt').write_text(
         f'Literature Clock {version}\n\nDrag Literature Clock to Applications. Requires macOS 14 or later.\n'
         'This build is ad-hoc signed, not Developer ID signed or notarized.\n'
-        'Gatekeeper may block it. Desktop widget registration and shared app-group access\n'
-        'are not validated for this distribution build.\n', encoding='utf-8')
+        'On first launch, macOS may block it. Control-click the app, choose Open, and confirm.\n'
+        'Desktop widget registration and shared app-group access must be verified for this build.\n',
+        encoding='utf-8')
     dmg = OUTPUT / 'Literature-Clock-App-macOS.dmg'
     run('hdiutil', 'create', '-volname', f'Literature Clock {version}', '-srcfolder', staging,
         '-ov', '-format', 'UDZO', dmg)

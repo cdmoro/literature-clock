@@ -62,6 +62,21 @@ enum ClockCatalogue {
         return catalogue[formatter.string(from: date)] ?? []
     }
 
+    static func fallbackQuote(at date: Date, locale: String) -> Quote {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_GB")
+        formatter.dateFormat = "HHmm"
+        return Quote(
+            id: "F-001",
+            quoteTimeCase: formatter.string(from: date),
+            quoteFirst: QuoteLibraryText.value("app_fallback_error_prefix", locale: locale),
+            quoteLast: QuoteLibraryText.value("app_fallback_error_suffix", locale: locale),
+            title: QuoteLibraryText.value("app_fallback_error_title", locale: locale),
+            author: QuoteLibraryText.value("app_fallback_error_author", locale: locale),
+            sfw: true
+        )
+    }
+
     // Widget timelines need only their minute window, not every quote in every
     // language. Decode one language at a time without populating the app cache.
     static func window(at dates: [Date], locales: [String]) -> [String: [String: [Quote]]] {
@@ -137,7 +152,7 @@ enum ClockCatalogue {
                     logger.error("Empty catalogue: \(locale, privacy: .public)")
                     continue
                 }
-                logger.notice("Decoded catalogue: \(locale, privacy: .public); bytes: \(data.count); minutes: \(catalogue.count); retained locales: \(catalogueCache.count); seconds: \(Date().timeIntervalSince(started))")
+                logger.debug("Decoded catalogue: \(locale, privacy: .public); bytes: \(data.count); minutes: \(catalogue.count); retained locales: \(catalogueCache.count); seconds: \(Date().timeIntervalSince(started))")
                 return catalogue
             } catch {
                 logger.error("Catalogue read/decode failed: \(locale, privacy: .public); source: \(url.lastPathComponent, privacy: .public); error: \(String(describing: error), privacy: .public)")

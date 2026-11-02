@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E00000000000000210 /* Shared/Models/QuoteLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000211 /* Shared/Models/QuoteLibrary.swift */; };
+		E00000000000000000000234 /* Widget Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000221 /* Localizable.strings */; };
+		E00000000000000000000210 /* Shared/Models/QuoteLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000211 /* Shared/Models/QuoteLibrary.swift */; };
 		E00000000000000220 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000221 /* Localizable.strings */; };
 		E00000000000000000000007 /* Shared/Models/ClockWidgetConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00000000000000000000003 /* Shared/Models/ClockWidgetConfiguration.swift */; };
 		E00000000000000000000008 /* Shared/App/LiteratureClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000071 /* Shared/App/LiteratureClockApp.swift */; };
@@ -23,9 +24,10 @@
 		E0000000000000000000001D /* Shared/Widgets/LiteratureClockWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000074 /* Shared/Widgets/LiteratureClockWidget.swift */; };
 		E0000000000000000000001E /* Shared/Models/ClockSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000076 /* Shared/Models/ClockSettings.swift */; };
 		E0000000000000000000001F /* Shared/Models/CycleQuoteIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000077 /* Shared/Models/CycleQuoteIntent.swift */; };
+		E00000000000000000000235 /* Shared/Models/QuoteLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000211 /* Shared/Models/QuoteLibrary.swift */; };
 		E00000000000000000000022 /* Shared/Catalogues in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000075 /* Shared/Catalogues */; };
 		E00000000000000000000023 /* Shared/Fonts/SpecialElite-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000119 /* Shared/Fonts/SpecialElite-Regular.ttf */; };
-		F00000000000000000000002 /* macOS/Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000001 /* macOS/Assets.xcassets */; };
+		B00000000000000000000003 /* AppIconBookClock.icon in Resources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000002 /* Shared/IconDesigns/AppIconBookClock.icon */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +63,7 @@
 		A00000000000000000000076 /* Shared/Models/ClockSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/Models/ClockSettings.swift; sourceTree = "<group>"; };
 		A00000000000000000000077 /* Shared/Models/CycleQuoteIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/Models/CycleQuoteIntent.swift; sourceTree = "<group>"; };
 		A00000000000000119 /* Shared/Fonts/SpecialElite-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shared/Fonts/SpecialElite-Regular.ttf"; sourceTree = "<group>"; };
-		A00000000000000211 /* Shared/Models/QuoteLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/Models/QuoteLibrary.swift; sourceTree = "<group>"; };
+		A00000000000000000000211 /* Shared/Models/QuoteLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/Models/QuoteLibrary.swift; sourceTree = "<group>"; };
 		A00000000000000222 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text; name = "en-GB"; path = "en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A00000000000000223 /* en-US */ = {isa = PBXFileReference; lastKnownFileType = text; name = "en-US"; path = "en-US.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A00000000000000224 /* es-ES */ = {isa = PBXFileReference; lastKnownFileType = text; name = "es-ES"; path = "es-ES.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -78,12 +80,12 @@
 		D00000000000000000000003 /* Shared/Models/ClockWidgetConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/Models/ClockWidgetConfiguration.swift; sourceTree = "<group>"; };
 		E00000000000000000000005 /* LiteratureClockMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiteratureClockMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E00000000000000000000014 /* LiteratureClockMacWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LiteratureClockMacWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		F00000000000000000000001 /* macOS/Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = macOS/Assets.xcassets; sourceTree = "<group>"; };
 		F1000000000000000000000C /* macOS/Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = macOS/Info.plist; sourceTree = "<group>"; };
 		F1000000000000000000000D /* macOS/WidgetInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = macOS/WidgetInfo.plist; sourceTree = "<group>"; };
 		F1000000000000000000000E /* macOS/LiteratureClock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS/LiteratureClock.entitlements; sourceTree = "<group>"; };
 		F10000000000000000000010 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F10000000000000000000011 /* sync-catalogues.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "sync-catalogues.py"; sourceTree = "<group>"; };
+		F10000000000000000000012 /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +113,8 @@
 				F1000000000000000000000F /* macOS */,
 				F10000000000000000000010 /* README.md */,
 				F10000000000000000000011 /* sync-catalogues.py */,
+				F10000000000000000000012 /* Version.xcconfig */,
 				A00000000000000000000013 /* Products */,
-				BA107B2D30955C9A005380F2 /* Recovered References */,
 			);
 			name = "Literature Clock";
 			sourceTree = "<group>";
@@ -126,14 +128,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BA107B2D30955C9A005380F2 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				A00000000000000211 /* Shared/Models/QuoteLibrary.swift */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
+
 		F10000000000000000000001 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				A00000000000000000000072 /* Shared/Models/Quote.swift */,
+				A00000000000000000000211 /* Shared/Models/QuoteLibrary.swift */,
 				A00000000000000000000077 /* Shared/Models/CycleQuoteIntent.swift */,
 				A00000000000000000000076 /* Shared/Models/ClockSettings.swift */,
 				D00000000000000000000003 /* Shared/Models/ClockWidgetConfiguration.swift */,
@@ -203,7 +199,6 @@
 		F1000000000000000000000F /* macOS */ = {
 			isa = PBXGroup;
 			children = (
-				F00000000000000000000001 /* macOS/Assets.xcassets */,
 				F1000000000000000000000C /* macOS/Info.plist */,
 				F1000000000000000000000D /* macOS/WidgetInfo.plist */,
 				F1000000000000000000000E /* macOS/LiteratureClock.entitlements */,
@@ -296,10 +291,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F00000000000000000000002 /* macOS/Assets.xcassets in Resources */,
 				E0000000000000000000000F /* Shared/Catalogues in Resources */,
 				E00000000000000000000010 /* Shared/Fonts/SpecialElite-Regular.ttf in Resources */,
 				E00000000000000220 /* Localizable.strings in Resources */,
+				B00000000000000000000003 /* AppIconBookClock.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +304,7 @@
 			files = (
 				E00000000000000000000022 /* Shared/Catalogues in Resources */,
 				E00000000000000000000023 /* Shared/Fonts/SpecialElite-Regular.ttf in Resources */,
+				E00000000000000000000234 /* Widget Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,7 +318,7 @@
 				E00000000000000000000007 /* Shared/Models/ClockWidgetConfiguration.swift in Sources */,
 				E00000000000000000000008 /* Shared/App/LiteratureClockApp.swift in Sources */,
 				E00000000000000000000009 /* Shared/Models/Quote.swift in Sources */,
-				E00000000000000210 /* Shared/Models/QuoteLibrary.swift in Sources */,
+				E00000000000000000000210 /* Shared/Models/QuoteLibrary.swift in Sources */,
 				E0000000000000000000000A /* Shared/App/ClockHomeView.swift in Sources */,
 				E0000000000000000000000B /* Shared/Models/ClockSettings.swift in Sources */,
 				E0000000000000000000000C /* Shared/Models/CycleQuoteIntent.swift in Sources */,
@@ -334,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0000000000000000000001B /* Shared/Models/Quote.swift in Sources */,
+				E00000000000000000000235 /* Shared/Models/QuoteLibrary.swift in Sources */,
 				E0000000000000000000001C /* Shared/Models/ClockWidgetConfiguration.swift in Sources */,
 				E0000000000000000000001D /* Shared/Widgets/LiteratureClockWidget.swift in Sources */,
 				E0000000000000000000001E /* Shared/Models/ClockSettings.swift in Sources */,
@@ -454,12 +451,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconBookClock;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = macOS/LiteratureClock.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JTNBVS8ZJ3;
 				ENABLE_APP_SANDBOX = YES;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -471,18 +467,18 @@
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_VERSION = 5.0;
 			};
+			baseConfigurationReference = F10000000000000000000012 /* Version.xcconfig */;
 			name = Debug;
 		};
 		E00000000000000000000004 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconBookClock;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = macOS/LiteratureClock.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JTNBVS8ZJ3;
 				ENABLE_APP_SANDBOX = YES;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -494,6 +490,7 @@
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_VERSION = 5.0;
 			};
+			baseConfigurationReference = F10000000000000000000012 /* Version.xcconfig */;
 			name = Release;
 		};
 		E00000000000000000000018 /* Debug */ = {
@@ -504,7 +501,6 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = macOS/LiteratureClock.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JTNBVS8ZJ3;
 				ENABLE_APP_SANDBOX = YES;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -517,6 +513,7 @@
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_VERSION = 5.0;
 			};
+			baseConfigurationReference = F10000000000000000000012 /* Version.xcconfig */;
 			name = Debug;
 		};
 		E00000000000000000000019 /* Release */ = {
@@ -527,7 +524,6 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = macOS/LiteratureClock.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JTNBVS8ZJ3;
 				ENABLE_APP_SANDBOX = YES;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -540,6 +536,7 @@
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_VERSION = 5.0;
 			};
+			baseConfigurationReference = F10000000000000000000012 /* Version.xcconfig */;
 			name = Release;
 		};
 /* End XCBuildConfiguration section */

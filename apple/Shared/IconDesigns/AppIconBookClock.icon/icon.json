@@ -1,47 +1,120 @@
 {
-  "fill": {
-    "solid": "extended-srgb:0.02353,0.09412,0.19216,1.00000"
+  "fill" : {
+    "linear-gradient" : [
+      "extended-srgb:1.00000,0.21961,0.23529,1.00000",
+      "extended-srgb:1.00000,0.61569,0.11373,1.00000"
+    ]
   },
-  "groups": [
+  "groups" : [
     {
-      "name": "01 Pages",
-      "layers": [
+      "layers" : [
         {
-          "name": "01 Pages",
-          "image-name": "01-Pages.svg"
+          "fill-specializations" : [
+            {
+              "value" : "none"
+            },
+            {
+              "appearance" : "tinted",
+              "value" : "system-dark"
+            }
+          ],
+          "hidden" : false,
+          "image-name" : "04-Clock-Hands.png",
+          "name" : "04 Clock Hands",
+          "opacity-specializations" : [
+            {
+              "value" : 1
+            },
+            {
+              "appearance" : "dark",
+              "value" : 0.95
+            }
+          ],
+          "position" : {
+            "scale" : 0.75,
+            "translation-in-points" : [
+              0,
+              13
+            ]
+          }
         }
       ],
-      "shadow": {
-        "kind": "neutral",
-        "opacity": 0.04
+      "name" : "04 Clock Hands",
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0
       },
-      "translucency": {
-        "enabled": true,
-        "value": 0.02
+      "translucency" : {
+        "enabled" : false,
+        "value" : 0
       }
     },
     {
-      "name": "02 Clock hands",
-      "layers": [
+      "layers" : [
         {
-          "name": "02 Clock hands",
-          "image-name": "02-Hands.svg"
+          "hidden" : false,
+          "image-name" : "03-Book-Front.png",
+          "name" : "03 Book Front",
+          "opacity" : 0.95
         }
       ],
-      "shadow": {
-        "kind": "neutral",
-        "opacity": 0.0
+      "name" : "03 Book Front",
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0
       },
-      "translucency": {
-        "enabled": true,
-        "value": 0.02
+      "translucency" : {
+        "enabled" : false,
+        "value" : 0
+      }
+    },
+    {
+      "blur-material" : null,
+      "layers" : [
+        {
+          "fill-specializations" : [
+            {
+              "value" : "none"
+            },
+            {
+              "appearance" : "dark",
+              "value" : {
+                "linear-gradient" : [
+                  "display-p3:1.00000,0.22870,0.00000,1.00000",
+                  "display-p3:0.96783,0.68892,0.00000,1.00000"
+                ]
+              }
+            }
+          ],
+          "glass" : true,
+          "hidden" : false,
+          "image-name" : "02-Book-Back.png",
+          "name" : "02 Book Back",
+          "opacity" : 1,
+          "position" : {
+            "scale" : 1,
+            "translation-in-points" : [
+              0,
+              29
+            ]
+          }
+        }
+      ],
+      "name" : "02 Book Back",
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0
+      },
+      "translucency" : {
+        "enabled" : false,
+        "value" : 0
       }
     }
   ],
-  "supported-platforms": {
-    "circles": [
+  "supported-platforms" : {
+    "circles" : [
       "watchOS"
     ],
-    "squares": "shared"
+    "squares" : "shared"
   }
 }

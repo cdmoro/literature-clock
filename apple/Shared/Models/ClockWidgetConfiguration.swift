@@ -14,10 +14,29 @@ enum ClockWidgetFont: String, AppEnum {
 
 enum ClockWidgetPalette: String, AppEnum {
     case red, pink, green, orange, purple, blue, gray, custom
-    static var typeDisplayRepresentation = TypeDisplayRepresentation(name: "Accent color")
+    static var typeDisplayRepresentation = TypeDisplayRepresentation(name: "Highlight color")
     static var caseDisplayRepresentations: [Self: DisplayRepresentation] = [
         .red: "Red", .pink: "Pink", .green: "Green", .orange: "Orange", .purple: "Purple", .blue: "Blue", .gray: "Gray", .custom: "Custom"
     ]
+}
+
+// Stable IDs preserve widget color selections.
+struct ClockWidgetColor: AppEntity {
+    let id: String
+    static var typeDisplayRepresentation = TypeDisplayRepresentation(name: "Highlight color")
+    static var defaultQuery = ClockWidgetColorQuery()
+    var displayRepresentation: DisplayRepresentation {
+        return ClockWidgetPalette.caseDisplayRepresentations[ClockWidgetPalette(rawValue: id) ?? .red]!
+    }
+}
+
+struct ClockWidgetColorQuery: EntityQuery {
+    func entities(for identifiers: [String]) async throws -> [ClockWidgetColor] {
+        identifiers.filter { ClockWidgetPalette(rawValue: $0) != nil }.map { ClockWidgetColor(id: $0) }
+    }
+    func suggestedEntities() async throws -> [ClockWidgetColor] {
+        ClockWidgetPalette.allCases.map { ClockWidgetColor(id: $0.rawValue) }
+    }
 }
 
 enum ClockWidgetAttribution: String, AppEnum {
@@ -51,9 +70,11 @@ struct ClockWidgetConfiguration: WidgetConfigurationIntent {
     @Parameter(title: "Appearance", default: .system) var appearance: ClockWidgetAppearance
     @Parameter(title: "Quote font", default: .serif) var font: ClockWidgetFont
     @Parameter(title: "Accent color", default: .red) var palette: ClockWidgetPalette
-    @Parameter(title: "Custom accent (#RRGGBB)", description: "Leave empty to use the custom accent selected in the app.") var customAccent: String?
+    @Parameter(title: "Highlight color", description: "Used in full-color widgets. Clear and Tinted styles use system colors. Change the custom color in the app.") var highlightColor: ClockWidgetColor?
+    var resolvedPalette: ClockWidgetPalette { ClockWidgetPalette(rawValue: highlightColor?.id ?? "") ?? palette }
     @Parameter(title: "Highlight the time", default: true) var highlight: Bool
-    @Parameter(title: "Fuzzy mode", default: false) var fuzzy: Bool
+    @Parameter(title: "Time fragment only", description: "Show only the part of the quote that tells the time.", default: false) var fuzzy: Bool
+    @Parameter(title: "Progress bar", default: true) var showProgress: Bool
     @Parameter(title: "Safe for work quotes only", default: false) var safeOnly: Bool
     @Parameter(title: "Attribution", default: .bookAuthor) var attribution: ClockWidgetAttribution
     @Parameter(title: "Quote languages", default: [.englishUS])
@@ -62,27 +83,27 @@ struct ClockWidgetConfiguration: WidgetConfigurationIntent {
         Switch(.widgetFamily) {
             Case(.systemSmall) {
                 Summary("Customize this widget") {
-                    \.$appearance
-                    \.$font
-                    \.$palette
-                    \.$customAccent
-                    \.$highlight
+                    \.$languages
                     \.$safeOnly
                     \.$attribution
-                    \.$languages
+                    \.$appearance
+                    \.$highlightColor
+                    \.$font
+                    \.$highlight
+                    \.$showProgress
                 }
             }
             DefaultCase {
                 Summary("Customize this widget") {
-                    \.$appearance
-                    \.$font
-                    \.$palette
-                    \.$customAccent
-                    \.$highlight
-                    \.$fuzzy
+                    \.$languages
                     \.$safeOnly
                     \.$attribution
-                    \.$languages
+                    \.$fuzzy
+                    \.$appearance
+                    \.$highlightColor
+                    \.$font
+                    \.$highlight
+                    \.$showProgress
                 }
             }
         }

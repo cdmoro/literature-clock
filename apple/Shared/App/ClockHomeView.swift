@@ -8,6 +8,7 @@ import WidgetKit
 
 struct ClockHomeView: View {
     @Environment(\.colorScheme) private var systemColorScheme
+    @Environment(\.locale) private var interfaceLocale
     @AppStorage(ClockSettings.localeKey, store: ClockSettings.defaults) private var quoteLocale = "en-US"
     @AppStorage(ClockSettings.localesKey, store: ClockSettings.defaults) private var languageSelection = ""
     @AppStorage(ClockSettings.appearanceKey, store: ClockSettings.defaults) private var appearance = "system"
@@ -19,11 +20,12 @@ struct ClockHomeView: View {
     @AppStorage(ClockSettings.safeOnlyKey, store: ClockSettings.defaults) private var safeOnly = false
     @AppStorage(ClockSettings.attributionKey, store: ClockSettings.defaults) private var attribution = "book-author"
     @AppStorage(ClockSettings.quoteRevisionKey, store: ClockSettings.defaults) private var quoteRevision = 0
+    @AppStorage(ClockSettings.progressKey, store: ClockSettings.defaults) private var progressMode = "bottom"
+    @State private var pausedQuoteDate: Date?
     @State private var presentedSheet: ClockSheet?
     @State private var pendingSheet: ClockSheet?
     @StateObject private var quoteLibrary = QuoteLibrary.shared
     @State private var libraryPresented = false
-    @State private var selectedSavedQuote: SavedQuote?
 
     private var isDark: Bool { appearance == "dark" || (appearance == "system" && systemColorScheme == .dark) }
     private var selectedLocales: [String] { ClockCatalogue.selectedLocales(languageSelection, fallback: quoteLocale) }
@@ -36,54 +38,105 @@ struct ClockHomeView: View {
         palette == "custom" ? ClockSettings.color(fromHex: customAccentHex) : ClockSettings.paletteAccent(palette)
     }
     private var foreground: Color { ClockSettings.foreground(for: background) }
-
+    private var visibleAttribution: String { appAttributionMode(attribution) }
     var body: some View {
         TimelineView(.periodic(from: .now, by: 1)) { timeline in
             let _ = quoteRevision
-            let primaryLocale = ClockCatalogue.randomLocale(at: timeline.date, from: selectedLocales,
+            let quoteDate = pausedQuoteDate ?? timeline.date
+            let primaryLocale = ClockCatalogue.randomLocale(at: quoteDate, from: selectedLocales,
                 defaults: ClockSettings.defaults, safeOnly: safeOnly)
-            let allQuotes = ClockCatalogue.quotes(at: timeline.date, locale: primaryLocale)
+            let allQuotes = ClockCatalogue.quotes(at: quoteDate, locale: primaryLocale)
             let quotes = safeOnly ? allQuotes.filter(\.sfw) : allQuotes
-            let quoteIndex = ClockCatalogue.quoteIndex(at: timeline.date, locale: primaryLocale, count: quotes.count, defaults: ClockSettings.defaults)
-            let quote = quotes.isEmpty ? nil : quotes[quoteIndex]
+            let quoteIndex = ClockCatalogue.quoteIndex(at: quoteDate, locale: primaryLocale, count: quotes.count, defaults: ClockSettings.defaults)
+            let quote: Quote? = quotes.isEmpty
+                ? ClockCatalogue.fallbackQuote(at: quoteDate, locale: primaryLocale)
+                : quotes[quoteIndex]
+            let displayedQuoteCount = max(quotes.count, 1)
+            let quoteDirection: LayoutDirection = Locale.Language(identifier: primaryLocale).characterDirection == .rightToLeft ? .rightToLeft : .leftToRight
             NavigationStack {
-                VStack(spacing: 22) {
-                    Spacer(minLength: 0)
+                VStack(spacing: 16) {
                     if let quote {
-                        quoteView(quote)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .frame(maxHeight: .infinity, alignment: .center)
+                        VStack(alignment: quoteDirection == .rightToLeft ? .trailing : .leading, spacing: 10) {
+                            quoteView(quote)
+                            if !fuzzy {
+                                attributionView(quote)
+                                    .foregroundStyle(foreground.opacity(0.68))
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.75)
+                                    .fixedSize(horizontal: false, vertical: true)
+                            }
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                        .environment(\.layoutDirection, quoteDirection)
                     } else {
                         ContentUnavailableView("No quote for this minute", systemImage: "text.quote")
                             .frame(maxHeight: .infinity)
                     }
-                    HStack(spacing: 10) {
-                        if !fuzzy, let quote, attribution != "hidden" {
-                            if attribution == "author" {
-                                Text(quote.author)
-                                    .font(.caption)
-                                    .foregroundStyle(foreground.opacity(0.68))
-                                    .lineLimit(1)
-                                    .minimumScaleFactor(0.75)
-                            } else {
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text(quote.title)
-                                    Text(quote.author)
-                                }
-                                .font(.caption)
-                                .foregroundStyle(foreground.opacity(0.68))
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.75)
-                                .fixedSize(horizontal: false, vertical: true)
+                    HStack(spacing: 0) {
+                        HStack(spacing: 12) {
+                            Button { pausedQuoteDate = pausedQuoteDate == nil ? timeline.date : nil } label: {
+                                Image(systemName: pausedQuoteDate == nil ? "pause.fill" : "play.fill")
+                                    .frame(width: 44, height: 44)
+                                    .foregroundStyle(foreground)
                             }
+                            .buttonStyle(.plain)
+                            .disabled(quote == nil)
+                            .accessibilityLabel(QuoteLibraryText.value(pausedQuoteDate == nil ? "pause" : "resume", locale: interfaceLocale.identifier))
+                            .help(QuoteLibraryText.value(pausedQuoteDate == nil ? "pause" : "resume", locale: interfaceLocale.identifier))
+                            if let quote, quote.id != "F-001" {
+                                let quoteTime = ClockCatalogue.timeString(quoteDate, locale: primaryLocale)
+                                let favorite = quoteLibrary.isFavorite(quote, locale: primaryLocale, time: quoteTime)
+                                Button {
+                                    quoteLibrary.toggle(quote, locale: primaryLocale, time: quoteTime)
+                                } label: {
+                                    Image(systemName: favorite ? "heart.fill" : "heart")
+                                        .frame(width: 44, height: 44)
+                                }
+                                .buttonStyle(.plain)
+                                .foregroundStyle(favorite ? accent : foreground)
+                                .accessibilityLabel(QuoteLibraryText.value(favorite ? "removeFavorite" : "saveFavorite", locale: interfaceLocale.identifier))
+                                .help(QuoteLibraryText.value(favorite ? "removeFavorite" : "saveFavorite", locale: interfaceLocale.identifier))
+                            }
+                            Button { libraryPresented = true } label: {
+                                Image(systemName: "books.vertical")
+                                    .frame(width: 44, height: 44)
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel(QuoteLibraryText.value("myQuotes", locale: interfaceLocale.identifier))
+                            .help(QuoteLibraryText.value("myQuotes", locale: interfaceLocale.identifier))
+                            if let quote {
+                                Button {
+                                    presentShareOptions(quote, locale: primaryLocale, palette: palette,
+                                                       accentHex: palette == "custom" ? customAccentHex : "",
+                                                       font: quoteFont, highlight: highlight, dark: isDark, fuzzy: fuzzy,
+                                                       attribution: visibleAttribution)
+                                } label: {
+                                    Image(systemName: "square.and.arrow.up")
+                                        .frame(width: 44, height: 44)
+                                }
+                                .buttonStyle(.plain)
+                                .accessibilityLabel(Text("app_share_accessibility"))
+                                .help(Text("app_share_accessibility"))
+                            }
+                            NavigationLink(destination: SettingsView()) {
+                                Image(systemName: "gearshape")
+                                    .frame(width: 44, height: 44)
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel(Text("app_settings"))
+                            .help(Text("app_settings"))
                         }
+                        .font(.system(size: 22, weight: .regular))
                         Spacer(minLength: 4)
-                        if quotes.count > 1 {
-                            quoteNavigationButtons(count: quotes.count, index: quoteIndex, date: timeline.date, locale: primaryLocale)
+                        if quote != nil {
+                            quoteNavigationButtons(count: displayedQuoteCount, index: quoteIndex, date: quoteDate, locale: primaryLocale)
                         }
                     }
+                    #if os(macOS)
+                    .padding(.bottom, 14)
+                    #endif
                     #if os(iOS)
-                    Text("Add a medium or large widget\nfrom the Home Screen’s edit menu.")
+                    Text("app_help_add_widget")
                         .font(.footnote)
                         .foregroundStyle(foreground.opacity(0.6))
                         .multilineTextAlignment(.center)
@@ -97,16 +150,23 @@ struct ClockHomeView: View {
                 .padding(.top, 24)
                 .foregroundStyle(foreground)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .safeAreaInset(edge: .bottom, spacing: 16) {
-                    if ClockSettings.progressMode != "hidden" {
-                        TimelineView(.animation(minimumInterval: 1.0 / 30)) { frame in
-                            SecondsProgressBar(progress: frame.date.timeIntervalSince(ClockCatalogue.minuteInterval(at: frame.date).lowerBound) / 60,
-                                               accent: accent, background: background,
-                                               mode: ClockSettings.progressMode)
-                        }
+                .overlay(alignment: .bottom) {
+                    secondsProgressIndicator
+                }
+                .overlay(alignment: quoteDirection == .rightToLeft ? .bottomTrailing : .bottomLeading) {
+                    if fuzzy, let quote {
+                        attributionView(quote)
+                            .padding(.horizontal, 24)
+                            .padding(.bottom, 76)
+                            .environment(\.layoutDirection, quoteDirection)
                     }
                 }
-                .background(background.ignoresSafeArea())
+                .background { clockBackground }
+                .overlay(alignment: .top) {
+                    if pausedQuoteDate != nil {
+                        pausedStatusBanner(date: quoteDate, locale: primaryLocale)
+                    }
+                }
                 .navigationTitle("Literature Clock")
                 .clockNavigationAppearance(background: background, dark: isDark)
                 .toolbar {
@@ -116,64 +176,36 @@ struct ClockHomeView: View {
                                 presentShareOptions(quote, locale: primaryLocale, palette: palette,
                                                    accentHex: palette == "custom" ? customAccentHex : "",
                                                    font: quoteFont, highlight: highlight, dark: isDark, fuzzy: fuzzy,
-                                                   attribution: attribution)
+                                                   attribution: visibleAttribution)
                             } label: {
-                                Label("Share", systemImage: "square.and.arrow.up")
+                                Label("share", systemImage: "square.and.arrow.up")
                             }
                             .labelStyle(.iconOnly)
-                            .help("Share quote")
+                            .help(Text("app_share_accessibility"))
                         }
-                    }
-                    if let quote {
-                        ToolbarItem(placement: .clockTrailing) {
-                            Button {
-                                quoteLibrary.toggle(quote, locale: primaryLocale,
-                                                    time: ClockCatalogue.timeString(timeline.date, locale: primaryLocale))
-                            } label: {
-                                Image(systemName: quoteLibrary.isFavorite(quote, locale: primaryLocale,
-                                    time: ClockCatalogue.timeString(timeline.date, locale: primaryLocale)) ? "heart.fill" : "heart")
-                            }
-                            .accessibilityLabel(QuoteLibraryText.value(quoteLibrary.isFavorite(quote, locale: primaryLocale,
-                                time: ClockCatalogue.timeString(timeline.date, locale: primaryLocale)) ? "removeFavorite" : "saveFavorite",
-                                locale: selectedLocales.first ?? "en-US"))
-                            .help(QuoteLibraryText.value(quoteLibrary.isFavorite(quote, locale: primaryLocale,
-                                time: ClockCatalogue.timeString(timeline.date, locale: primaryLocale)) ? "removeFavorite" : "saveFavorite",
-                                locale: selectedLocales.first ?? "en-US"))
-                        }
-                    }
-                    ToolbarItem(placement: .clockTrailing) {
-                        Button { libraryPresented = true } label: {
-                            Label(QuoteLibraryText.value("myQuotes", locale: selectedLocales.first ?? "en-US"), systemImage: "books.vertical")
-                                .labelStyle(.iconOnly)
-                        }
-                        .help(QuoteLibraryText.value("myQuotes", locale: selectedLocales.first ?? "en-US"))
                     }
                     ToolbarItem(placement: .clockTrailing) {
                         NavigationLink(destination: SettingsView()) {
-                            Label("Settings", systemImage: "gearshape").labelStyle(.iconOnly)
+                            Label("settings_title", systemImage: "gearshape").labelStyle(.iconOnly)
                         }
-                        .help("Settings")
+                        .help(Text("app_settings"))
                     }
                 }
             }
             .onChange(of: quote.map { "\(primaryLocale)/\($0.id)" }, initial: true) { _, _ in
                 if let quote {
-                    quoteLibrary.record(quote, locale: primaryLocale,
-                                        time: ClockCatalogue.timeString(timeline.date, locale: primaryLocale))
+                    if quote.id != "F-001" {
+                        quoteLibrary.record(quote, locale: primaryLocale,
+                                            time: ClockCatalogue.timeString(quoteDate, locale: primaryLocale))
+                    }
                 }
             }
         }
         .onOpenURL(perform: handleShareURL)
         .sheet(isPresented: $libraryPresented) {
-            QuoteLibraryView(library: quoteLibrary, locale: selectedLocales.first ?? "en-US") { item in
-                selectedSavedQuote = item
-            }
-        }
-        .sheet(item: $selectedSavedQuote) { item in
-            SavedQuoteDetail(item: item, library: quoteLibrary, palette: palette,
-                             accentHex: palette == "custom" ? customAccentHex : "",
-                             font: quoteFont, highlight: highlight, dark: isDark,
-                             attribution: attribution)
+            QuoteLibraryView(library: quoteLibrary, locale: interfaceLocale.identifier,
+                             palette: palette, accentHex: palette == "custom" ? customAccentHex : "",
+                             font: quoteFont, highlight: highlight, dark: isDark, attribution: visibleAttribution)
         }
         .sheet(item: $presentedSheet, onDismiss: presentPendingSheet) { sheet in
             switch sheet {
@@ -184,7 +216,7 @@ struct ClockHomeView: View {
                                   palette: destination.palette, fontName: destination.font,
                                   highlight: destination.highlight, dark: destination.dark,
                                   fuzzy: destination.values["fuzzy"] == "1", accentHex: destination.accentHex,
-                                  attribution: destination.values["attribution"] ?? "book-author")
+                                  attribution: appAttributionMode(destination.values["attribution"] ?? "book-author"))
             }
         }
         .preferredColorScheme(appearance == "system" ? nil : (appearance == "dark" ? .dark : .light))
@@ -195,7 +227,7 @@ struct ClockHomeView: View {
         let parts = quote.timeParts()
         if fuzzy {
             Text(parts.time)
-                .font(ClockSettings.quoteFont(quoteFont, size: 34, weight: highlight ? .bold : .regular))
+                .font(ClockSettings.quoteFont(quoteFont, size: 34))
                 .foregroundColor(highlight ? accent : foreground)
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity, alignment: .center)
@@ -205,26 +237,100 @@ struct ClockHomeView: View {
         }
     }
 
+    @ViewBuilder
+    private func attributionView(_ quote: Quote) -> some View {
+        if fuzzy {
+            VStack(alignment: .leading, spacing: 2) {
+                if visibleAttribution == "book-author", !quote.title.isEmpty {
+                    Text(quote.title)
+                }
+                if !quote.author.isEmpty {
+                    Text(quote.author)
+                }
+            }
+            .font(.system(size: 13))
+            .foregroundStyle(foreground.opacity(0.68))
+            .lineLimit(1)
+            .minimumScaleFactor(0.75)
+            .frame(maxWidth: .infinity, alignment: .leading)
+        } else if let credit = quoteAttributionText(quote, mode: visibleAttribution) {
+            credit
+                .font(ClockSettings.quoteFont(quoteFont, size: 21))
+                .foregroundStyle(foreground.opacity(0.68))
+                .lineLimit(1)
+                .minimumScaleFactor(0.6)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+    }
+
+    @ViewBuilder
+    private var secondsProgressIndicator: some View {
+        let mode = progressMode
+        if mode != "hidden" {
+            TimelineView(.animation(minimumInterval: 1.0 / 30)) { frame in
+                let progressDate = pausedQuoteDate ?? frame.date
+                let minuteStart = ClockCatalogue.minuteInterval(at: progressDate).lowerBound
+                let progress = progressDate.timeIntervalSince(minuteStart) / 60
+                SecondsProgressBar(progress: progress, accent: accent)
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var clockBackground: some View {
+        background
+        .ignoresSafeArea()
+    }
+
+    private func pausedStatusBanner(date: Date, locale: String) -> some View {
+        HStack(spacing: 12) {
+            Text("\(QuoteLibraryText.value("pausedAt", locale: interfaceLocale.identifier)) \(ClockCatalogue.timeString(date, locale: locale))")
+                .font(.caption.weight(.medium))
+                .monospacedDigit()
+            Spacer(minLength: 4)
+            Button(QuoteLibraryText.value("resume", locale: interfaceLocale.identifier)) {
+                pausedQuoteDate = nil
+            }
+            .buttonStyle(.bordered)
+            .controlSize(.small)
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
+        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 10))
+        .overlay(RoundedRectangle(cornerRadius: 10).strokeBorder(accent.opacity(0.55), lineWidth: 1))
+        .padding(.horizontal, 16)
+        .padding(.top, 10)
+    }
+
     private func quoteNavigationButtons(count: Int, index: Int, date: Date, locale: String) -> some View {
         HStack(spacing: 5) {
             Button {
                 cycleQuote(step: -1, date: date, locale: locale, count: count, index: index)
             } label: {
-                Image(systemName: "chevron.left").font(.system(size: 10, weight: .bold))
-                    .frame(width: 24, height: 24)
+                    Image(systemName: "chevron.left").font(.system(size: 16, weight: .bold))
+                    .frame(width: 40, height: 40)
                     .background(accent.opacity(0.14), in: Circle())
             }
             .buttonStyle(.plain)
-            .accessibilityLabel("Previous quote")
+            .accessibilityLabel(Text("app_previous_quote"))
+            .help(Text("app_previous_quote"))
+            .disabled(count < 2)
+            Text("\(index + 1)/\(count)")
+                .font(.body.monospacedDigit())
+                .foregroundStyle(foreground.opacity(0.72))
+                .frame(minWidth: 32)
+                .accessibilityLabel(Text("\(index + 1)/\(count)"))
             Button {
                 cycleQuote(step: 1, date: date, locale: locale, count: count, index: index)
             } label: {
-                Image(systemName: "chevron.right").font(.system(size: 10, weight: .bold))
-                    .frame(width: 24, height: 24)
+                Image(systemName: "chevron.right").font(.system(size: 16, weight: .bold))
+                    .frame(width: 40, height: 40)
                     .background(accent.opacity(0.14), in: Circle())
             }
             .buttonStyle(.plain)
-            .accessibilityLabel("Next quote")
+            .accessibilityLabel(Text("app_next_quote"))
+            .help(Text("app_next_quote"))
+            .disabled(count < 2)
         }
         .tint(accent)
     }
@@ -252,7 +358,8 @@ struct ClockHomeView: View {
         presentShareOptions(quote, locale: locale, palette: values["palette"] ?? "red",
                            accentHex: values["accent"] ?? "", font: values["font"] ?? "serif",
                            highlight: values["highlight"] != "0", dark: values["dark"] == "1",
-                           fuzzy: values["fuzzy"] == "1", attribution: values["attribution"] ?? "book-author")
+                           fuzzy: values["fuzzy"] == "1",
+                           attribution: appAttributionMode(values["attribution"] ?? "book-author"))
     }
 
     private func presentShareOptions(_ quote: Quote, locale: String, palette: String,
@@ -290,65 +397,179 @@ private struct QuoteLibraryView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject var library: QuoteLibrary
     let locale: String
-    let open: (SavedQuote) -> Void
+    let palette: String
+    let accentHex: String
+    let font: String
+    let highlight: Bool
+    let dark: Bool
+    let attribution: String
+    @State private var selectedQuote: SavedQuote?
     @State private var showingRecent = false
+    @State private var searchText = ""
 
     private var items: [SavedQuote] { showingRecent ? library.recent : library.favorites }
+    private var searchQuery: String { searchText.trimmingCharacters(in: .whitespacesAndNewlines) }
+    private var filteredItems: [SavedQuote] {
+        guard !searchQuery.isEmpty else { return items }
+        return items.filter { item in
+            let itemLocale = Locale(identifier: item.locale)
+            let language = Locale(identifier: locale).localizedString(forIdentifier: item.locale) ?? item.locale
+            let searchableText = [
+                item.quote.text(for: itemLocale), item.quote.title, item.quote.author,
+                item.time, language, item.locale
+            ].joined(separator: " ")
+            return searchableText.range(of: searchQuery, options: [.caseInsensitive, .diacriticInsensitive]) != nil
+        }
+    }
+
+    private var searchField: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "magnifyingglass")
+                .foregroundStyle(.secondary)
+            TextField(QuoteLibraryText.value("app_search_quotes", locale: locale), text: $searchText)
+                .textFieldStyle(.plain)
+                .accessibilityLabel(Text(QuoteLibraryText.value("app_search_quotes", locale: locale)))
+            if !searchText.isEmpty {
+                Button {
+                    searchText = ""
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundStyle(.secondary)
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel(Text(QuoteLibraryText.value("app_clear_search", locale: locale)))
+            }
+        }
+        .padding(.horizontal, 10)
+        .frame(height: 36)
+        .background(.quaternary.opacity(0.35), in: RoundedRectangle(cornerRadius: 10))
+        .padding(.horizontal, 20)
+        .padding(.bottom, 12)
+    }
+
+    private var libraryTabs: some View {
+        HStack(spacing: 2) {
+            ForEach([false, true], id: \.self) { recent in
+                let isSelected = showingRecent == recent
+                let title = QuoteLibraryText.value(recent ? "history" : "favorites", locale: locale)
+                Button {
+                    showingRecent = recent
+                } label: {
+                    Text(title)
+                        .font(.system(size: 13, weight: .medium))
+                        .frame(maxWidth: .infinity, minHeight: 30)
+                        .foregroundStyle(isSelected ? Color.white : Color.primary.opacity(0.78))
+                        .background(isSelected ? Color.accentColor : Color.clear,
+                                    in: RoundedRectangle(cornerRadius: 7))
+                        .contentShape(RoundedRectangle(cornerRadius: 7))
+                }
+                .buttonStyle(.plain)
+                .accessibilityAddTraits(isSelected ? .isSelected : [])
+            }
+        }
+        .padding(3)
+        .frame(width: 160)
+        .background(Color.primary.opacity(0.08), in: RoundedRectangle(cornerRadius: 10))
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel(Text(QuoteLibraryText.value("myQuotes", locale: locale)))
+        .accessibilityValue(Text(QuoteLibraryText.value(showingRecent ? "history" : "favorites", locale: locale)))
+    }
 
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                Picker("Collection", selection: $showingRecent) {
-                    Text(QuoteLibraryText.value("favorites", locale: locale)).tag(false)
-                    Text(QuoteLibraryText.value("history", locale: locale)).tag(true)
-                }
-                .pickerStyle(.segmented)
-                .padding()
-                if items.isEmpty {
-                    ContentUnavailableView(showingRecent ? QuoteLibraryText.value("noRecentQuotes", locale: locale) : QuoteLibraryText.value("noFavorites", locale: locale),
-                                           systemImage: showingRecent ? "clock" : "heart",
-                                           description: Text(QuoteLibraryText.value(showingRecent ? "noHistory" : "saveQuoteHint", locale: locale)))
+                Text(QuoteLibraryText.value("myQuotes", locale: locale))
+                    .font(.title2.weight(.bold))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 20)
+                    .padding(.top, 16)
+                libraryTabs
+                    .padding(20)
+                searchField
+                if filteredItems.isEmpty {
+                    if searchQuery.isEmpty {
+                        ContentUnavailableView(
+                            QuoteLibraryText.value(showingRecent ? "noHistory" : "noFavorites", locale: locale),
+                            systemImage: showingRecent ? "clock" : "heart",
+                            description: Text("")
+                        )
+                    } else {
+                        ContentUnavailableView.search(text: searchQuery)
+                    }
                     Spacer()
                 } else {
-                    List {
-                        ForEach(items) { item in
-                            Button { open(item) } label: {
-                                VStack(alignment: .leading, spacing: 6) {
-                                    Text(item.quote.text(for: Locale(identifier: item.locale)))
-                                        .font(.body)
-                                        .lineLimit(4)
+                    ScrollView {
+                        LazyVStack(spacing: 12) {
+                            ForEach(filteredItems) { item in
+                                HStack(alignment: .top, spacing: 16) {
+                                    Button { selectedQuote = item } label: {
+                                        VStack(alignment: .leading, spacing: 10) {
+                                            HStack {
+                                                Text(item.time).monospacedDigit()
+                                                Spacer()
+                                                Text(Locale(identifier: locale).localizedString(forIdentifier: item.locale) ?? item.locale)
+                                            }
+                                            .font(.caption)
+                                            .foregroundStyle(.secondary)
+                                            Text(item.quote.text(for: Locale(identifier: item.locale)))
+                                                .font(.system(.body, design: .serif))
+                                                .lineSpacing(4)
+                                                .lineLimit(4)
+                                                .foregroundStyle(.primary)
+                                            VStack(alignment: .leading, spacing: 3) {
+                                                Text(item.quote.title).font(.subheadline).italic()
+                                                Text(item.quote.author).font(.caption)
+                                            }
+                                            .foregroundStyle(.secondary)
+                                        }
                                         .multilineTextAlignment(.leading)
-                                    Text("\(item.quote.title) — \(item.quote.author) · \(item.time) · \(item.locale)")
-                                        .font(.caption)
-                                        .foregroundStyle(.secondary)
-                                        .lineLimit(1)
-                                }
-                                .padding(.vertical, 4)
-                            }
-                            .buttonStyle(.plain)
-                            .swipeActions {
-                                if showingRecent {
-                                    Button(QuoteLibraryText.value("saveFavorite", locale: locale), systemImage: "heart") {
-                                        library.toggle(item.quote, locale: item.locale, time: item.time)
-                                    }.tint(.pink)
-                                } else {
-                                    Button(QuoteLibraryText.value("removeFavorite", locale: locale), systemImage: "heart.slash", role: .destructive) {
-                                        library.toggle(item.quote, locale: item.locale, time: item.time)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .contentShape(Rectangle())
+                                        .environment(\.locale, Locale(identifier: item.locale))
+                                        .environment(\.layoutDirection, Locale.Language(identifier: item.locale).characterDirection == .rightToLeft ? .rightToLeft : .leftToRight)
                                     }
+                                    .buttonStyle(.plain)
+                                    .help(QuoteLibraryText.value("openQuote", locale: locale))
+
+                                    let favorite = library.isFavorite(item.quote, locale: item.locale, time: item.time)
+                                    Button {
+                                        library.toggle(item.quote, locale: item.locale, time: item.time)
+                                    } label: {
+                                        Image(systemName: showingRecent ? (favorite ? "heart.fill" : "heart") : "trash")
+                                            .font(.system(size: 17))
+                                            .foregroundStyle(showingRecent && favorite ? Color.pink : Color.secondary)
+                                            .frame(width: 32, height: 32)
+                                            .contentShape(Rectangle())
+                                    }
+                                    .buttonStyle(.plain)
+                                    .accessibilityLabel(QuoteLibraryText.value(showingRecent && !favorite ? "saveFavorite" : "removeFavorite", locale: locale))
+                                    .help(QuoteLibraryText.value(showingRecent && !favorite ? "saveFavorite" : "removeFavorite", locale: locale))
                                 }
+                                .padding(16)
+                                .background(.quaternary.opacity(0.35), in: RoundedRectangle(cornerRadius: 12))
+                                .overlay(RoundedRectangle(cornerRadius: 12).stroke(.quaternary, lineWidth: 1))
                             }
                         }
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 20)
                     }
-                    .listStyle(.plain)
                 }
             }
-            .navigationTitle(QuoteLibraryText.value("myQuotes", locale: locale))
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) { Button(QuoteLibraryText.value("close", locale: locale)) { dismiss() } }
+                ToolbarItem(placement: .cancellationAction) {
+                    Button(QuoteLibraryText.value("close", locale: locale)) { dismiss() }
+                }
                 if showingRecent && !library.recent.isEmpty {
-                    ToolbarItem(placement: .primaryAction) { Button(QuoteLibraryText.value("clearHistory", locale: locale)) { library.clearRecent() } }
+                    ToolbarItem(placement: .primaryAction) {
+                        Button(QuoteLibraryText.value("clearHistory", locale: locale)) { library.clearRecent() }
+                    }
                 }
             }
+        }
+        .sheet(item: $selectedQuote) { item in
+            SavedQuoteDetail(item: item, locale: locale, library: library,
+                             palette: palette, accentHex: accentHex, font: font,
+                             highlight: highlight, dark: dark, attribution: attribution)
         }
         #if os(macOS)
         .frame(minWidth: 450, idealWidth: 560, minHeight: 450, idealHeight: 600)
@@ -359,6 +580,7 @@ private struct QuoteLibraryView: View {
 private struct SavedQuoteDetail: View {
     @Environment(\.dismiss) private var dismiss
     let item: SavedQuote
+    let locale: String
     @ObservedObject var library: QuoteLibrary
     let palette: String
     let accentHex: String
@@ -370,47 +592,53 @@ private struct SavedQuoteDetail: View {
     private var accent: Color { palette == "custom" ? ClockSettings.color(fromHex: accentHex) : ClockSettings.paletteAccent(palette) }
     private var background: Color { ClockSettings.background(for: accent, dark: dark) }
     private var foreground: Color { ClockSettings.foreground(for: background) }
+    private var favorite: Bool { library.isFavorite(item.quote, locale: item.locale, time: item.time) }
+
     var body: some View {
         NavigationStack {
             ScrollView {
                 let parts = item.quote.timeParts()
                 VStack(alignment: .leading, spacing: 24) {
                     (Text(parts.before).foregroundColor(foreground) +
-                     Text(parts.time).fontWeight(highlight ? .bold : .regular)
-                        .foregroundColor(highlight ? accent : foreground) +
+                     Text(parts.time).foregroundColor(highlight ? accent : foreground) +
                      Text(parts.after).foregroundColor(foreground))
                         .font(ClockSettings.quoteFont(font, size: 28))
-                    VStack(alignment: .leading, spacing: 6) {
-                        if attribution != "hidden" {
-                            if attribution != "author" { Text(item.quote.title) }
-                            Text(item.quote.author).foregroundStyle(foreground.opacity(0.68))
-                        }
+                    if let credit = quoteAttributionText(item.quote, mode: appAttributionMode(attribution)) {
+                        credit
+                            .font(ClockSettings.quoteFont(font, size: 21))
+                            .foregroundStyle(foreground.opacity(0.68))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.6)
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(24)
                 .environment(\.locale, Locale(identifier: item.locale))
+                .environment(\.layoutDirection, Locale.Language(identifier: item.locale).characterDirection == .rightToLeft ? .rightToLeft : .leftToRight)
             }
             .background(background)
-            .navigationTitle("Quote")
+            .navigationTitle(QuoteLibraryText.value("app_quote_detail_title", locale: locale))
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
-                    Button {
-                        library.toggle(item.quote, locale: item.locale, time: item.time)
-                    } label: {
-                    Image(systemName: library.isFavorite(item.quote, locale: item.locale, time: item.time) ? "heart.fill" : "heart")
+                    Button { library.toggle(item.quote, locale: item.locale, time: item.time) } label: {
+                        Image(systemName: favorite ? "heart.fill" : "heart")
                     }
-                    .accessibilityLabel(QuoteLibraryText.value(library.isFavorite(item.quote, locale: item.locale, time: item.time) ? "removeFavorite" : "saveFavorite", locale: item.locale))
+                    .accessibilityLabel(QuoteLibraryText.value(favorite ? "removeFavorite" : "saveFavorite", locale: locale))
                 }
                 ToolbarItem(placement: .clockLeading) {
-                    Button { sharing = true } label: { Label("Share", systemImage: "square.and.arrow.up") }
+                    Button { sharing = true } label: {
+                        Label(QuoteLibraryText.value("app_share_quote", locale: locale), systemImage: "square.and.arrow.up")
+                    }
                 }
-                ToolbarItem(placement: .confirmationAction) { Button("Done") { dismiss() } }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button(QuoteLibraryText.value("close", locale: locale)) { dismiss() }
+                }
             }
             .sheet(isPresented: $sharing) {
                 QuoteShareOptions(quote: item.quote, locale: item.locale,
                                   palette: palette, fontName: font, highlight: highlight,
-                                  dark: dark, fuzzy: false, accentHex: accentHex, attribution: attribution)
+                                  dark: dark, fuzzy: false, accentHex: accentHex,
+                                  attribution: appAttributionMode(attribution))
             }
         }
         #if os(macOS)
@@ -455,28 +683,12 @@ private struct WidgetQuoteDetail: View {
     @Environment(\.locale) private var interfaceLocale
     @State private var sharing = false
     let destination: WidgetQuoteDestination
+    private var attribution: String {
+        appAttributionMode(destination.values["attribution"] ?? "book-author")
+    }
 
-    // Existing settings_attribution_position labels from src/strings/settings.json.
     private var detailTitle: String {
-        let titles = [
-            "en-GB": "Quote details",
-            "en-US": "Quote details",
-            "es-ES": "Datos de la cita",
-            "pt-PT": "Dados da citação",
-            "fr-FR": "Informations de la citation",
-            "it-IT": "Dati della citazione",
-            "de-DE": "Angaben zum Zitat",
-            "el-GR": "Στοιχεία αποσπάσματος",
-            "zh-CN": "引文信息",
-            "ru-RU": "Данные цитаты",
-            "eo": "Detaloj de la citaĵo",
-            "ar-AE": "بيانات الاقتباس"
-        ]
-        let language = interfaceLocale.language.languageCode?.identifier ?? "en"
-        let matchingLocale = titles.keys.sorted().first {
-            Locale(identifier: $0).language.languageCode?.identifier == language
-        }
-        return matchingLocale.flatMap { titles[$0] } ?? "Quote details"
+        QuoteLibraryText.value("settings_attribution_position", locale: interfaceLocale.identifier)
     }
 
     var body: some View {
@@ -486,18 +698,16 @@ private struct WidgetQuoteDetail: View {
                 let foreground = ClockSettings.foreground(for: destination.background)
                 VStack(alignment: .leading, spacing: 24) {
                     (Text(parts.before) +
-                     Text(parts.time).fontWeight(destination.highlight ? .bold : .regular)
+                     Text(parts.time)
                         .foregroundColor(destination.highlight ? destination.accent : foreground) +
                      Text(parts.after))
                         .font(ClockSettings.quoteFont(destination.font, size: 28))
                         .lineSpacing(destination.font == "specialElite" ? 28 * 0.18 : 0)
-                    if destination.values["attribution"] != "hidden" {
-                        VStack(alignment: .leading, spacing: 6) {
-                            if destination.values["attribution"] != "author" { Text(destination.quote.title) }
-                            Text(destination.quote.author)
-                        }
-                        .font(.subheadline)
+                    VStack(alignment: .leading, spacing: 6) {
+                        if attribution != "author" { Text(destination.quote.title) }
+                        Text(destination.quote.author)
                     }
+                    .font(.subheadline)
                 }
                 .foregroundStyle(foreground)
                 .padding(24)
@@ -508,9 +718,9 @@ private struct WidgetQuoteDetail: View {
             .navigationTitle(detailTitle)
             .clockInlineTitle()
             .toolbar {
-                ToolbarItem(placement: .confirmationAction) { Button("Done") { dismiss() } }
+                ToolbarItem(placement: .confirmationAction) { Button("app_done") { dismiss() } }
                 ToolbarItem(placement: .clockLeading) {
-                    Button { sharing = true } label: { Label("Share", systemImage: "square.and.arrow.up") }
+                    Button { sharing = true } label: { Label("share", systemImage: "square.and.arrow.up") }
                 }
             }
             .sheet(isPresented: $sharing) {
@@ -518,7 +728,7 @@ private struct WidgetQuoteDetail: View {
                                   palette: destination.palette, fontName: destination.font,
                                   highlight: destination.highlight, dark: destination.dark,
                                   fuzzy: false, accentHex: destination.accentHex,
-                                  attribution: destination.values["attribution"] ?? "book-author")
+                                  attribution: attribution)
             }
         }
         #if os(macOS)
@@ -539,7 +749,6 @@ private struct QuoteShareOptions: View {
     let dark: Bool
     let fuzzy: Bool
     let accentHex: String
-    @AppStorage("quote-share-format") private var formatRaw = QuoteShareFormat.portrait.rawValue
     @State private var shareAppearanceRaw = QuoteShareAppearance.source.rawValue
     @State private var sharePalette: String
     @State private var shareFontRaw: String
@@ -553,10 +762,12 @@ private struct QuoteShareOptions: View {
     @State private var showingActivity = false
     @State private var copied = false
     @State private var shareHighlight = true
+    #if os(macOS)
+    @State private var desktopTool = ShareEditorTool.colour
+    #endif
     @State private var editingStyle = false
     @State private var colourOptionsExpanded = false
     @State private var textOptionsExpanded = false
-    @State private var formatOptionsExpanded = false
 
     private var accent: Color {
         sharePalette == "custom"
@@ -564,7 +775,7 @@ private struct QuoteShareOptions: View {
             : ClockSettings.paletteAccent(sharePalette)
     }
     private var background: Color { ClockSettings.background(for: accent, dark: dark) }
-    private var format: QuoteShareFormat { QuoteShareFormat(rawValue: formatRaw) ?? .portrait }
+    private var format: QuoteShareFormat { .square }
     private var shareAppearance: QuoteShareAppearance {
         QuoteShareAppearance(rawValue: shareAppearanceRaw) ?? .source
     }
@@ -576,6 +787,10 @@ private struct QuoteShareOptions: View {
     private var effectiveAccent: Color { cardAccent }
 
     var body: some View {
+        Group {
+        #if os(macOS)
+        desktopEditor
+        #else
         NavigationStack {
             GeometryReader { geometry in
                 let previewHeight = min(
@@ -599,7 +814,7 @@ private struct QuoteShareOptions: View {
                         Form {
                             Section {
                                 DisclosureGroup(isExpanded: $colourOptionsExpanded) {
-                                    Picker("Style", selection: $shareAppearanceRaw) {
+                                    Picker("app_style", selection: $shareAppearanceRaw) {
                                         ForEach(QuoteShareAppearance.allCases) { option in
                                             Text(option.label).tag(option.rawValue)
                                         }
@@ -608,7 +823,7 @@ private struct QuoteShareOptions: View {
 
                                     AccentPalettePicker(selection: $sharePalette, customAccentHex: customAccentHex)
                                     if sharePalette == "custom" {
-                                        ColorPicker("Custom accent color", selection: Binding(
+                                        ColorPicker("app_custom_accent_color", selection: Binding(
                                             get: { ClockSettings.color(fromHex: customAccentHex) },
                                             set: { customAccentHex = ClockSettings.hex(from: $0) }
                                         ), supportsOpacity: false)
@@ -619,29 +834,20 @@ private struct QuoteShareOptions: View {
                                 }
 
                                 DisclosureGroup(isExpanded: $textOptionsExpanded) {
-                                    Picker("Quote font", selection: $shareFontRaw) {
+                                    Picker("app_quote_font", selection: $shareFontRaw) {
                                         ForEach(QuoteShareFont.allCases.filter { $0 != .dyslexic || ClockSettings.dyslexicFontName != nil }) { font in
                                             Text(font.label).tag(font.rawValue)
                                         }
                                     }
-                                    Picker("Alignment", selection: $alignmentRaw) {
-                                        Text("Left").tag(QuoteShareAlignment.leading.rawValue)
-                                        Text("Center").tag(QuoteShareAlignment.center.rawValue)
+                                    Picker("app_alignment", selection: $alignmentRaw) {
+                                        Text("app_left").tag(QuoteShareAlignment.leading.rawValue)
+                                        Text("app_center").tag(QuoteShareAlignment.center.rawValue)
                                     }
                                     .pickerStyle(.segmented)
                                 } label: {
                                     shareSectionHeader("Text", summary: "\(shareFont.label) · \(alignment == .center ? "Centered" : "Left")")
                                 }
 
-                                DisclosureGroup(isExpanded: $formatOptionsExpanded) {
-                                    Picker("Image format", selection: $formatRaw) {
-                                        Text("Square").tag(QuoteShareFormat.square.rawValue)
-                                        Text("Portrait").tag(QuoteShareFormat.portrait.rawValue)
-                                    }
-                                    .pickerStyle(.segmented)
-                                } label: {
-                                    shareSectionHeader("Image format", summary: format.label)
-                                }
                             }
                         }
                         .formStyle(.grouped)
@@ -651,7 +857,7 @@ private struct QuoteShareOptions: View {
                         Button {
                             withAnimation(.easeInOut(duration: 0.2)) { editingStyle = true }
                         } label: {
-                            Label("Edit quote", systemImage: "pencil")
+                            Label("app_edit_quote", systemImage: "pencil")
                                 .font(.headline)
                                 .padding(.horizontal, 18)
                                 .padding(.vertical, 8)
@@ -664,7 +870,7 @@ private struct QuoteShareOptions: View {
             }
             .safeAreaInset(edge: .bottom, spacing: 0) {
                 if editingStyle {
-                    Button("Done") {
+                    Button("app_done") {
                         withAnimation(.easeInOut(duration: 0.2)) { editingStyle = false }
                     }
                     .font(.headline)
@@ -690,7 +896,7 @@ private struct QuoteShareOptions: View {
                         } label: {
                             shareActionLabel(title: "Share quote", symbol: "square.and.arrow.up")
                         }
-                        .accessibilityLabel("Share quote")
+                        .accessibilityLabel(Text("app_share_quote"))
 
                         Button {
                             copyQuoteText(quote.text(for: Locale(identifier: locale)))
@@ -709,17 +915,22 @@ private struct QuoteShareOptions: View {
             }
             .navigationTitle(editingStyle ? "Edit quote" : "Share quote")
             .clockInlineTitle()
-            .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Done") { dismiss() } } }
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button { dismiss() } label: { Image(systemName: "xmark") }
+                        .accessibilityLabel(Text("close"))
+                }
+            }
             .sheet(isPresented: $showingActivity) {
                 if let imageToShare {
                     #if os(macOS)
                     VStack(spacing: 20) {
                         ShareLink(item: Image(nsImage: imageToShare),
                                   preview: SharePreview("Literature Clock", image: Image(nsImage: imageToShare))) {
-                            Label("Share quote", systemImage: "square.and.arrow.up")
+                            Label("app_share_quote", systemImage: "square.and.arrow.up")
                         }
-                        Button("Copy quote text") { copyQuoteText(quote.text(for: Locale(identifier: locale))) }
-                        Button("Done") { showingActivity = false }
+                        Button("app_copy_quote_text") { copyQuoteText(quote.text(for: Locale(identifier: locale))) }
+                        Button("app_done") { showingActivity = false }
                     }.padding(32)
                     #else
                     ActivityView(activityItems: [imageToShare], copyText: quote.text(for: Locale(identifier: locale)))
@@ -727,8 +938,10 @@ private struct QuoteShareOptions: View {
                 }
             }
         }
+        #endif
+        }
         #if os(macOS)
-        .frame(minWidth: 520, idealWidth: 580, minHeight: 700, idealHeight: 800)
+        .frame(minWidth: 820, idealWidth: 940, minHeight: 580, idealHeight: 700)
         #else
         .presentationDetents([.large])
         #endif
@@ -777,6 +990,195 @@ private struct QuoteShareOptions: View {
             Text(summary).foregroundStyle(.secondary).textCase(nil)
         }
     }
+
+    #if os(macOS)
+    private enum ShareEditorTool: String, CaseIterable, Identifiable {
+        case colour, text
+        var id: Self { self }
+        var title: LocalizedStringKey {
+            switch self {
+            case .colour: "app_color"
+            case .text: "app_text"
+            }
+        }
+    }
+
+    private var shareEditorTabs: some View {
+        HStack(spacing: 2) {
+            ForEach(ShareEditorTool.allCases) { tool in
+                let isSelected = desktopTool == tool
+                Button {
+                    desktopTool = tool
+                } label: {
+                    Text(tool.title)
+                        .font(.system(size: 13, weight: .medium))
+                        .frame(maxWidth: .infinity, minHeight: 30)
+                        .foregroundStyle(isSelected ? Color.white : Color.primary.opacity(0.78))
+                        .background(isSelected ? Color.accentColor : Color.clear,
+                                    in: RoundedRectangle(cornerRadius: 7))
+                        .contentShape(RoundedRectangle(cornerRadius: 7))
+                }
+                .buttonStyle(.plain)
+                .accessibilityAddTraits(isSelected ? .isSelected : [])
+            }
+        }
+        .padding(3)
+        .frame(width: 160)
+        .background(Color.primary.opacity(0.08), in: RoundedRectangle(cornerRadius: 10))
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel(Text("app_edit_quote"))
+        .accessibilityValue(Text(desktopTool.title))
+    }
+
+    private var fontChips: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("app_quote_font").font(.subheadline.weight(.medium))
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 125))], spacing: 8) {
+                ForEach(QuoteShareFont.allCases.filter { $0 != .dyslexic || ClockSettings.dyslexicFontName != nil }) { option in
+                    Button { shareFontRaw = option.rawValue } label: {
+                        HStack(spacing: 6) {
+                            Text(option.label).font(option.font(size: 16))
+                                .lineLimit(1).minimumScaleFactor(0.75)
+                            if shareFont == option {
+                                Image(systemName: "checkmark").font(.caption.weight(.bold))
+                            }
+                        }
+                        .frame(maxWidth: .infinity, minHeight: 44, maxHeight: 44)
+                        .padding(.horizontal, 8)
+                        .background(shareFont == option ? Color.accentColor.opacity(0.16) : Color.primary.opacity(0.05),
+                                    in: RoundedRectangle(cornerRadius: 12))
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 12)
+                                .strokeBorder(shareFont == option ? Color.accentColor : Color.clear, lineWidth: 2)
+                        }
+                        .contentShape(RoundedRectangle(cornerRadius: 12))
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityAddTraits(shareFont == option ? .isSelected : [])
+                }
+            }
+        }
+    }
+
+    private var desktopEditor: some View {
+        VStack(spacing: 0) {
+            HStack {
+                Text("app_share_quote").font(.title2.weight(.bold))
+                Spacer()
+                Button { dismiss() } label: {
+                    Image(systemName: "xmark")
+                        .font(.system(size: 12, weight: .semibold))
+                        .frame(width: 28, height: 28)
+                        .background(Color.primary.opacity(0.08), in: Circle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel(Text("close"))
+                .keyboardShortcut(.cancelAction)
+            }
+            .padding(.horizontal, 24)
+            .padding(.vertical, 16)
+            Divider()
+            HStack(spacing: 24) {
+                GeometryReader { geometry in
+                    let width = max(0, min(geometry.size.width, geometry.size.height * format.aspectRatio))
+                    ShareQuotePreview(attribution: attribution, quote: quote, locale: locale,
+                                      accent: effectiveAccent, background: effectiveBackground,
+                                      font: shareFont, alignment: alignment, highlight: shareHighlight,
+                                      fuzzy: fuzzy, format: format, displayWidth: width)
+                        .frame(width: width, height: width / format.aspectRatio)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+
+                VStack(alignment: .leading, spacing: 20) {
+                    shareEditorTabs
+                    ScrollView {
+                        VStack(alignment: .leading, spacing: 24) {
+                            switch desktopTool {
+                            case .colour:
+                                VStack(alignment: .leading, spacing: 10) {
+                                    Text("app_appearance").font(.subheadline.weight(.medium))
+                                    Picker("app_appearance", selection: $shareAppearanceRaw) {
+                                        ForEach(QuoteShareAppearance.allCases) { option in
+                                            Text(option.label).tag(option.rawValue)
+                                        }
+                                    }
+                                    .labelsHidden()
+                                    .pickerStyle(.segmented)
+                                }
+                                AccentPalettePicker(selection: $sharePalette, customAccentHex: customAccentHex)
+                                if sharePalette == "custom" {
+                                    ColorPicker("app_custom_accent_color", selection: Binding(
+                                        get: { ClockSettings.color(fromHex: customAccentHex) },
+                                        set: { customAccentHex = ClockSettings.hex(from: $0) }
+                                    ), supportsOpacity: false)
+                                }
+                                Divider()
+                                HStack {
+                                    Text("app_highlight_quote")
+                                    Spacer()
+                                    Toggle("app_highlight_quote", isOn: $shareHighlight)
+                                        .labelsHidden()
+                                        .toggleStyle(.switch)
+                                        .accessibilityLabel(Text("app_highlight_quote"))
+                                }
+                            case .text:
+                                fontChips
+                                Divider()
+                                VStack(alignment: .leading, spacing: 10) {
+                                    Text("app_alignment").font(.subheadline.weight(.medium))
+                                    Picker("app_alignment", selection: $alignmentRaw) {
+                                        Text("app_left").tag(QuoteShareAlignment.leading.rawValue)
+                                        Text("app_center").tag(QuoteShareAlignment.center.rawValue)
+                                    }
+                                    .labelsHidden()
+                                    .pickerStyle(.segmented)
+                                }
+                            }
+                        }
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                        .padding(2)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                }
+                .padding(20)
+                .frame(width: 320)
+                .frame(maxHeight: .infinity, alignment: .topLeading)
+                .background(Color.primary.opacity(0.035), in: RoundedRectangle(cornerRadius: 18))
+            }
+            .padding(24)
+            Divider()
+            HStack(spacing: 12) {
+                Spacer()
+                Button {
+                    copyQuoteText(quote.text(for: Locale(identifier: locale)))
+                    copied = true
+                } label: {
+                    Label(copied ? "app_quote_text_copied" : "app_copy_quote_text",
+                          systemImage: copied ? "checkmark" : "doc.on.doc")
+                }
+                .buttonStyle(.bordered)
+                if let imageToShare {
+                    ShareLink(item: Image(nsImage: imageToShare),
+                              preview: SharePreview("Literature Clock", image: Image(nsImage: imageToShare))) {
+                        Label("app_share_quote", systemImage: "square.and.arrow.up")
+                    }
+                    .buttonStyle(.borderedProminent)
+                }
+            }
+            .controlSize(.large)
+            .padding(16)
+        }
+        .onChange(of: [shareAppearanceRaw, sharePalette, shareFontRaw, alignmentRaw,
+                       customAccentHex, String(shareHighlight)], initial: true) { _, _ in
+            let renderer = ImageRenderer(content: QuoteShareCard(attribution: attribution, quote: quote, locale: locale,
+                accent: effectiveAccent, background: effectiveBackground, font: shareFont,
+                alignment: alignment, highlight: shareHighlight, fuzzy: fuzzy, format: format))
+            renderer.scale = 3
+            imageToShare = renderer.nsImage
+        }
+    }
+    #endif
 }
 
 private struct AccentPalettePicker: View {
@@ -785,41 +1187,39 @@ private struct AccentPalettePicker: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Accent color").font(.subheadline)
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 6) {
-                    ForEach(ClockPalette.allCases) { option in
-                        let color = option == .custom
-                            ? ClockSettings.color(fromHex: customAccentHex)
-                            : ClockSettings.paletteAccent(option.rawValue)
-                        Button { selection = option.rawValue } label: {
-                            Circle()
-                                .fill(color)
-                                .frame(width: 30, height: 30)
-                                .overlay {
-                                    if selection == option.rawValue {
-                                        Image(systemName: "checkmark")
-                                            .font(.system(size: 13, weight: .bold))
-                                            .foregroundStyle(ClockSettings.foreground(for: color))
-                                    } else if option == .custom {
-                                        Image(systemName: "slider.horizontal.3")
-                                            .font(.system(size: 13, weight: .semibold))
-                                            .foregroundStyle(ClockSettings.foreground(for: color))
-                                    }
+            Text("app_accent_color").font(.subheadline)
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 44), spacing: 8)], alignment: .leading, spacing: 8) {
+                ForEach(ClockPalette.allCases) { option in
+                    let color = option == .custom
+                        ? ClockSettings.color(fromHex: customAccentHex)
+                        : ClockSettings.paletteAccent(option.rawValue)
+                    Button { selection = option.rawValue } label: {
+                        Circle()
+                            .fill(color)
+                            .frame(width: 30, height: 30)
+                            .overlay {
+                                if selection == option.rawValue {
+                                    Image(systemName: "checkmark")
+                                        .font(.system(size: 13, weight: .bold))
+                                        .foregroundStyle(ClockSettings.foreground(for: color))
+                                } else if option == .custom {
+                                    Image(systemName: "slider.horizontal.3")
+                                        .font(.system(size: 13, weight: .semibold))
+                                        .foregroundStyle(ClockSettings.foreground(for: color))
                                 }
-                                .padding(4)
-                                .overlay { Circle().strokeBorder(selection == option.rawValue ? Color.primary : Color.clear, lineWidth: 2) }
-                                .frame(width: 44, height: 44)
-                                .contentShape(Rectangle())
-                        }
-                        .buttonStyle(.plain)
-                        .accessibilityLabel(Text(option.label))
-                        .accessibilityAddTraits(selection == option.rawValue ? .isSelected : [])
-                        .id(option.rawValue)
+                            }
+                            .padding(4)
+                            .overlay { Circle().strokeBorder(selection == option.rawValue ? Color.primary : Color.clear, lineWidth: 2) }
+                            .frame(width: 44, height: 44)
+                            .contentShape(Rectangle())
                     }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel(Text(option.label))
+                    .accessibilityAddTraits(selection == option.rawValue ? .isSelected : [])
+                    .id(option.rawValue)
                 }
-                .padding(.horizontal, 2)
             }
+            .padding(.horizontal, 2)
         }
     }
 }
@@ -894,31 +1294,15 @@ private enum QuoteShareAlignment: String {
     var frame: Alignment { self == .center ? .center : .leading }
 }
 
-private enum QuoteShareFormat: String {
-    case square, portrait
+private enum QuoteShareFormat {
+    case square
 
     var canvas: CGSize {
-        switch self {
-        case .square: CGSize(width: 360, height: 360)
-        case .portrait: CGSize(width: 360, height: 450)
-        }
+        CGSize(width: 360, height: 360)
     }
 
     var aspectRatio: CGFloat { canvas.width / canvas.height }
 
-    var label: String {
-        switch self {
-        case .square: "Square · 1:1"
-        case .portrait: "Portrait · 4:5"
-        }
-    }
-
-    var symbolName: String {
-        switch self {
-        case .square: "square"
-        case .portrait: "rectangle.portrait"
-        }
-    }
 }
 
 private struct ShareQuotePreview: View {
@@ -935,24 +1319,20 @@ private struct ShareQuotePreview: View {
     let displayWidth: CGFloat
 
     private var foreground: Color { ClockSettings.foreground(for: background) }
+    private var quoteDirection: LayoutDirection {
+        Locale.Language(identifier: locale).characterDirection == .rightToLeft ? .rightToLeft : .leftToRight
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            HStack {
-                Text(QuoteShareBrand.title(for: locale)).font(.caption.weight(.semibold))
-                Spacer()
-                HStack(spacing: 5) {
-                    Image(systemName: format.symbolName)
-                        .font(.system(size: 11, weight: .semibold))
-                    Text(format.label).font(.caption2.weight(.medium))
-                }
-            }
+            Text(QuoteShareBrand.title(for: locale)).font(.caption.weight(.semibold))
             .foregroundStyle(foreground.opacity(0.65))
             ShareQuoteComposition(attribution: attribution, quote: quote, foreground: foreground, accent: accent,
                                   font: font, alignment: alignment, highlight: highlight,
                                   fuzzy: fuzzy,
                                   textSize: min(format.canvas.width, format.canvas.height) * 0.085
                                       * displayWidth / format.canvas.width)
+                .environment(\.layoutDirection, quoteDirection)
                 .frame(maxHeight: .infinity, alignment: .center)
         }
         .padding(14)
@@ -985,6 +1365,7 @@ private struct QuoteShareCard: View {
                                   font: font, alignment: alignment, highlight: highlight,
                                   fuzzy: fuzzy,
                                   textSize: min(format.canvas.width, format.canvas.height) * 0.085)
+                .environment(\.layoutDirection, Locale.Language(identifier: locale).characterDirection == .rightToLeft ? .rightToLeft : .leftToRight)
                 .frame(maxHeight: .infinity, alignment: .center)
         }
         .padding(inset)
@@ -994,6 +1375,23 @@ private struct QuoteShareCard: View {
 }
 
 // Keep the passage and its attribution together in both preview and export.
+// Keep the same punctuation and visibility rules in the clock and quote details.
+private func quoteAttributionText(_ quote: Quote, mode: String) -> Text? {
+    guard mode != "hidden" else { return nil }
+    if mode == "author" || quote.title.isEmpty {
+        return quote.author.isEmpty ? nil : Text("— \(quote.author)")
+    }
+    let prefix = Text("— ")
+    let title = Text(quote.title).italic()
+    if quote.author.isEmpty { return prefix + title }
+    let suffix = Text(", \(quote.author)")
+    return prefix + title + suffix
+}
+
+private func appAttributionMode(_ mode: String) -> String {
+    mode == "author" ? "author" : "book-author"
+}
+
 private struct ShareQuoteComposition: View {
     let attribution: String
     let quote: Quote
@@ -1007,10 +1405,11 @@ private struct ShareQuoteComposition: View {
 
     var body: some View {
         let parts = quote.timeParts()
+        let attributionFont: Font = font.font(size: textSize * 0.5)
         VStack(spacing: textSize * 0.55) {
             if fuzzy {
                 Text(parts.time)
-                    .font(font.font(size: textSize, weight: highlight ? .bold : .regular))
+                    .font(font.font(size: textSize))
                     .lineSpacing(font == .specialElite ? textSize * 0.18 : 0)
                     .foregroundStyle(highlight ? accent : foreground)
                     .frame(maxWidth: .infinity, alignment: alignment.frame)
@@ -1021,11 +1420,8 @@ private struct ShareQuoteComposition: View {
                                alignment: alignment, highlight: highlight, maximumSize: textSize)
             }
             if attribution != "hidden" {
-                VStack(spacing: textSize * 0.12) {
-                    if attribution != "author" { Text(quote.title) }
-                    Text(quote.author)
-                }
-                .font(font.font(size: textSize * 0.5))
+                attributionView
+                .font(attributionFont)
                 .lineSpacing(font == .specialElite ? textSize * 0.5 * 0.18 : 0)
                 .foregroundStyle(foreground.opacity(0.75))
                 .multilineTextAlignment(alignment.text)
@@ -1033,6 +1429,20 @@ private struct ShareQuoteComposition: View {
                 .fixedSize(horizontal: false, vertical: true)
                 .layoutPriority(1)
             }
+        }
+    }
+
+    @ViewBuilder
+    private var attributionView: some View {
+        if alignment == .center {
+            VStack(spacing: textSize * 0.12) {
+                if attribution != "author" { Text(quote.title) }
+                Text(quote.author)
+            }
+        } else if attribution == "author" {
+            Text("— \(quote.author)")
+        } else {
+            Text("— \(quote.title), \(quote.author)")
         }
     }
 }
@@ -1107,7 +1517,6 @@ private final class CopyQuoteActivity: UIActivity {
 #endif
 
 struct SettingsView: View {
-    @Environment(\.colorScheme) private var systemColorScheme
     @AppStorage(ClockSettings.localeKey, store: ClockSettings.defaults) private var quoteLocale = "en-US"
     @AppStorage(ClockSettings.localesKey, store: ClockSettings.defaults) private var languageSelection = ""
     @AppStorage(ClockSettings.appearanceKey, store: ClockSettings.defaults) private var appearance = "system"
@@ -1120,19 +1529,6 @@ struct SettingsView: View {
     @AppStorage(ClockSettings.customAccentKey, store: ClockSettings.defaults) private var customAccentHex = "#B36E26"
     @AppStorage(ClockSettings.progressKey, store: ClockSettings.defaults) private var progressMode = "bottom"
 
-    private var isDark: Bool {
-        appearance == "dark" || (appearance == "system" && systemColorScheme == .dark)
-    }
-    private var previewBackground: Color {
-        palette == "custom"
-            ? ClockSettings.background(for: previewAccent, dark: isDark)
-            : ClockSettings.paletteBackground(palette, dark: isDark)
-    }
-    private var previewAccent: Color {
-        palette == "custom"
-            ? ClockSettings.color(fromHex: customAccentHex)
-            : ClockSettings.paletteAccent(palette)
-    }
     private var accentPicker: Binding<Color> {
         Binding(
             get: { ClockSettings.color(fromHex: customAccentHex) },
@@ -1142,67 +1538,66 @@ struct SettingsView: View {
 
     var body: some View {
         Form {
-            Section("Quotes") {
+            Section("app_quotes") {
                 NavigationLink(destination: QuoteLanguageSelectionView()) {
                     HStack {
-                        Text("Quote languages")
+                        Text("app_select_languages")
                         Spacer()
                         Text(languageSummary).foregroundStyle(.secondary)
                     }
                 }
-                Text("One quote is chosen at random from these languages each minute.")
+                Text("app_random_language_help")
                     .font(.footnote).foregroundStyle(.secondary)
-                Toggle("Safe for work quotes only", isOn: $safeOnly)
+                Toggle("app_safe_quotes", isOn: $safeOnly)
             }
-            Section("Appearance") {
-                Picker("Style", selection: $appearance) {
-                    Text("System").tag("system")
-                    Text("Light").tag("light")
-                    Text("Dark").tag("dark")
+            Section("app_appearance") {
+                Picker("app_style", selection: $appearance) {
+                    Text("system").tag("system")
+                    Text("light").tag("light")
+                    Text("dark").tag("dark")
                 }.pickerStyle(.segmented)
-                Picker("Quote font", selection: $quoteFont) {
-                    Text("Serif").tag("serif")
-                    Text("Rounded").tag("rounded")
-                    Text("Monospaced").tag("monospaced")
-                    Text("Special Elite").tag("specialElite")
+                Picker("app_quote_font", selection: $quoteFont) {
+                    Text("app_font_serif").tag("serif")
+                    Text("app_font_rounded").tag("rounded")
+                    Text("app_font_monospaced").tag("monospaced")
+                    Text("app_font_special_elite").tag("specialElite")
                     if ClockSettings.dyslexicFontName != nil {
-                        Text("OpenDyslexic").tag("dyslexic")
+                        Text("app_font_open_dyslexic").tag("dyslexic")
                     }
                 }
                 AccentPalettePicker(selection: $palette, customAccentHex: customAccentHex)
                 if palette == "custom" {
-                    ColorPicker("Custom accent color", selection: accentPicker, supportsOpacity: false)
+                    ColorPicker("app_custom_accent_color", selection: accentPicker, supportsOpacity: false)
                 }
-                Toggle("Highlight quote", isOn: $highlight)
-                Toggle("Fuzzy mode", isOn: $fuzzy)
-                Picker("Seconds progress", selection: $progressMode) {
-                    Text("Bottom").tag("bottom")
-                    Text("Background").tag("background")
-                    Text("Hidden").tag("hidden")
-                }
-                .pickerStyle(.segmented)
+                Toggle("app_highlight_quote", isOn: $highlight)
+                Toggle("app_fuzzy_mode", isOn: $fuzzy)
+                Toggle("app_seconds_progress", isOn: Binding(
+                    get: { progressMode != "hidden" },
+                    set: { progressMode = $0 ? "bottom" : "hidden" }
+                ))
                 .onChange(of: progressMode) { _, _ in
                     WidgetCenter.shared.reloadAllTimelines()
                 }
 
-                palettePreview
             }
-            Section("Attribution") {
-                Picker("Show", selection: $attribution) {
-                    Text("Show book and author").tag("book-author")
-                    Text("Show author only").tag("author")
-                    Text("Hide").tag("hidden")
+            Section("app_attribution") {
+                Picker("settings_attribution_position", selection: $attribution) {
+                    Text("app_show_book_author").tag("book-author")
+                    Text("app_show_author").tag("author")
                 }
             }
-            Section("About") {
-                LabeledContent("Version", value: appVersion)
+            Section("app_about") {
+                LabeledContent("app_version", value: appVersion)
                 Link(destination: URL(string: "https://github.com/cdmoro/literature-clock")!) {
-                    Label("GitHub project", systemImage: "chevron.left.forwardslash.chevron.right")
+                    Label("app_github_project", systemImage: "chevron.left.forwardslash.chevron.right")
                 }
-                Link(destination: URL(string: "https://literature-clock.com")!) {
-                    Label("Project website", systemImage: "globe")
+                Link(destination: URL(string: "https://literatureclock.netlify.app/")!) {
+                    Label("app_project_website", systemImage: "globe")
                 }
             }
+        }
+        .onAppear {
+            attribution = appAttributionMode(attribution)
         }
         .onChange(of: customAccentHex) { _, _ in
             WidgetCenter.shared.reloadAllTimelines()
@@ -1210,56 +1605,13 @@ struct SettingsView: View {
         #if os(macOS)
         .formStyle(.grouped)
         #endif
-        .navigationTitle("Settings")
+        .navigationTitle("app_settings")
     }
 
     private var appVersion: String {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "—"
         let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
         return build.map { "\(version) (\($0))" } ?? version
-    }
-
-    private var palettePreview: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            if fuzzy {
-                Text("soul")
-                    .font(ClockSettings.quoteFont(quoteFont, size: 22, weight: highlight ? .bold : .regular))
-                    .foregroundColor(highlight ? previewAccent : previewForeground)
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: .infinity, alignment: .center)
-            } else {
-                (Text("A room without books is like a body without a ") +
-                 Text("soul").fontWeight(highlight ? .bold : .regular).foregroundColor(highlight ? previewAccent : previewForeground) +
-                 Text("."))
-                    .font(ClockSettings.quoteFont(quoteFont, size: 17))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-            }
-                    if !fuzzy {
-                        HStack {
-                            Text("13:16")
-                            Spacer()
-                            if attribution == "book-author" {
-                                Text("Book · Cicero")
-                            } else if attribution == "author" {
-                                Text("Cicero")
-                            }
-                        }
-                        .font(.caption)
-                        .foregroundStyle(previewForeground.opacity(0.7))
-            }
-        }
-        .padding(14)
-        .foregroundStyle(previewForeground)
-        .background(previewBackground, in: RoundedRectangle(cornerRadius: 16))
-        .overlay(alignment: .bottom) {
-            if progressMode != "hidden" {
-                SecondsProgressBar(progress: 0.42, accent: previewAccent,
-                                   background: previewBackground, mode: progressMode)
-                    .clipShape(RoundedRectangle(cornerRadius: 16))
-            }
-        }
-        .listRowInsets(EdgeInsets())
-        .listRowBackground(Color.clear)
     }
 
     private var selectedLocales: [String] { ClockCatalogue.selectedLocales(languageSelection, fallback: quoteLocale) }
@@ -1279,34 +1631,22 @@ struct SettingsView: View {
         quoteLocale = locales.first ?? quoteLocale
     }
 
-    private var previewForeground: Color { ClockSettings.foreground(for: previewBackground) }
 }
 
 private struct SecondsProgressBar: View {
     let progress: Double
     let accent: Color
-    let background: Color
-    let mode: String
 
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
-                if mode == "background" {
-                    accent.opacity(0.12)
-                    accent.opacity(0.24)
-                        .frame(width: geometry.size.width * min(1, max(0, progress)))
-                } else {
-                    Capsule().fill(accent.opacity(0.18))
-                    Capsule().fill(accent)
-                        .frame(width: geometry.size.width * min(1, max(0, progress)))
-                }
+                Rectangle().fill(accent)
+                    .frame(width: geometry.size.width * min(1, max(0, progress)))
             }
         }
-        .frame(height: mode == "background" ? 5 : 3)
-        .padding(.horizontal, mode == "background" ? 0 : 24)
-        .padding(.bottom, mode == "background" ? 0 : 8)
+        .frame(height: 4)
         .allowsHitTesting(false)
-        .accessibilityLabel("Seconds progress")
+        .accessibilityLabel(Text("app_seconds_progress"))
         .accessibilityValue("\(Int(progress * 60)) of 60 seconds")
     }
 }
@@ -1331,14 +1671,25 @@ private struct QuoteLanguageSelectionView: View {
                         Image(systemName: "checkmark").foregroundStyle(.tint)
                     }
                 }
+#if os(macOS)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(Color.primary.opacity(0.08), in: RoundedRectangle(cornerRadius: 8))
+#endif
                 .contentShape(Rectangle())
             }
             .foregroundStyle(.primary)
+            .buttonStyle(.plain)
+#if os(macOS)
+            .listRowInsets(EdgeInsets(top: 3, leading: 16, bottom: 3, trailing: 16))
+            .listRowSeparator(.hidden)
+            .listRowBackground(Color.clear)
+#endif
         }
-        .navigationTitle("Quote languages")
+        .navigationTitle("app_quote_languages_title")
         .clockInlineTitle()
         .safeAreaInset(edge: .bottom) {
-            Text("Select one or more. One quote is chosen at random each minute.")
+            Text("app_select_one_or_more")
                 .font(.footnote).foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity).padding()
                 .background(.bar)

@@ -63,11 +63,6 @@ enum ClockSettings {
         }
     }
 
-    static var progressMode: String {
-        let value = defaults.string(forKey: progressKey) ?? "bottom"
-        return ["bottom", "background", "hidden"].contains(value) ? value : "bottom"
-    }
-
     static func validAccentHex(_ value: String) -> String? {
         let hex = value.trimmingCharacters(in: .whitespacesAndNewlines)
             .trimmingCharacters(in: CharacterSet(charactersIn: "#"))
@@ -193,7 +188,7 @@ struct ReadableQuoteText: View {
         let quoteText: Text
         if #available(iOS 18.0, macOS 15.0, *) {
             let highlightedTime = Text(value.time)
-                .font(ClockSettings.quoteFont(fontName, size: size, weight: highlight ? .bold : .regular))
+                .font(ClockSettings.quoteFont(fontName, size: size))
                 .foregroundColor(highlight ? accent : foreground)
                 .customAttribute(ClockTimeHighlightAttribute())
             quoteText = Text(value.before).foregroundColor(foreground) +
@@ -201,7 +196,6 @@ struct ReadableQuoteText: View {
         } else {
             quoteText = Text(value.before).foregroundColor(foreground) +
                 Text(value.time)
-                    .fontWeight(highlight ? .bold : .regular)
                     .foregroundColor(highlight ? accent : foreground) +
                 Text(value.after).foregroundColor(foreground)
         }

@@ -8,6 +8,16 @@ Font settings offer the theme default (with its family name), system serif, sans
 
 The native app has its own settings. Per-display choices such as quotes, selected languages, photos and random colours or patterns can vary independently, while fixed settings are shared. Glass progress requires macOS 26 or later; other themes and progress styles remain available on older supported systems.
 
+## Install
+
+Download the latest ZIP from [GitHub Releases](https://github.com/cdmoro/literature-clock/releases/latest), open it, and launch **Install Literature Clock.app**. Click **Install** or **Update**, then choose **Open Screen Saver Settings** and select Literature Clock.
+
+### If macOS blocks the installer
+
+These builds are signed locally but are not notarized with an Apple Developer ID, so macOS may ask you to approve them. After macOS blocks the installer, click **Done**, then open **Apple menu → System Settings → Privacy & Security**. Scroll to **Security**, click **Open Anyway** for **Install Literature Clock.app**, confirm **Open**, and retry the installer. You may need your Mac login password or Touch ID. If macOS later blocks **Literature Clock.saver** when you preview it, repeat these steps for the screen saver.
+
+The **Open Anyway** option is available for about an hour after the blocked attempt. Only approve a copy downloaded from the project's official releases. This approval does not disable Gatekeeper. See [INSTALL.txt](INSTALL.txt) for manual installation, updates and recovery details.
+
 ## Build
 
 Build on macOS with Xcode and its Metal Toolchain installed:
@@ -35,12 +45,6 @@ Open the standalone preview app to inspect rendering and settings without changi
 - `--showcase-preview` for a looping theme and language demonstration
 
 Run the executable with `--check-render` to render catalogues and theme variants and check native rendering behavior. Output is written to `/private/tmp/literature-clock-native-checks`.
-
-## Install
-
-For installation and updates, use the installer included in the downloaded ZIP. It backs up replaced copies and can restore them if installation fails. See [INSTALL.txt](INSTALL.txt) for installer details, manual installation, and Gatekeeper instructions for ad-hoc signed builds.
-
-Download the latest macOS build from [GitHub Releases](https://github.com/cdmoro/literature-clock/releases/latest).
 
 ## Project releases
 

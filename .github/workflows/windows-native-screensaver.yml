@@ -42,3 +42,4 @@ jobs:
             screensavers/windows-native/build/Literature-Clock-Native-Windows-${{ matrix.runtime }}.scr
             screensavers/windows-native/build/Literature-Clock-Native-Windows-${{ matrix.runtime }}.scr.sha256
           if-no-files-found: error
+          retention-days: 30

@@ -299,6 +299,7 @@ export async function renderShareCard(
     marginTop: '40px',
     fontSize: '28px',
     textAlign: options.alignment || 'start',
+    opacity: '0.8',
   });
   if (isFuzzy || store.get('quote-attribution') === 'hidden') {
     content.append(passage);
