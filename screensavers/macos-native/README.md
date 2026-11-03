@@ -10,13 +10,13 @@ The native app has its own settings. Per-display choices such as quotes, selecte
 
 ## Install
 
-Download the latest ZIP from [GitHub Releases](https://github.com/cdmoro/literature-clock/releases/latest), open it, and launch **Install Literature Clock.app**. Click **Install** or **Update**, then choose **Open Screen Saver Settings** and select Literature Clock.
+Download and extract the latest ZIP from [GitHub Releases](https://github.com/cdmoro/literature-clock/releases/latest). Drag **Literature Clock.saver** into `~/Library/Screen Savers` (create the folder if it does not exist), then select **Literature Clock** in **System Settings → Wallpaper → Screen Saver** (macOS 13+) or **System Preferences → Desktop & Screen Saver** (macOS 12). To update it, quit System Settings or System Preferences, replace the existing bundle, and reopen settings. To remove it, delete `~/Library/Screen Savers/Literature Clock.saver`.
 
-### If macOS blocks the installer
+### If macOS blocks the screen saver
 
-These builds are signed locally but are not notarized with an Apple Developer ID, so macOS may ask you to approve them. After macOS blocks the installer, click **Done**, then open **Apple menu → System Settings → Privacy & Security**. Scroll to **Security**, click **Open Anyway** for **Install Literature Clock.app**, confirm **Open**, and retry the installer. You may need your Mac login password or Touch ID. If macOS later blocks **Literature Clock.saver** when you preview it, repeat these steps for the screen saver.
+These builds are signed locally but are not notarized with an Apple Developer ID, so macOS may ask you to approve the screen saver. After macOS blocks **Literature Clock.saver**, open **Apple menu → System Settings → Privacy & Security**. Scroll to **Security**, click **Open Anyway** for the screen saver, and confirm. You may need your Mac login password or Touch ID.
 
-The **Open Anyway** option is available for about an hour after the blocked attempt. Only approve a copy downloaded from the project's official releases. This approval does not disable Gatekeeper. See [INSTALL.txt](INSTALL.txt) for manual installation, updates and recovery details.
+The **Open Anyway** option is available for about an hour after the blocked attempt. Only approve a copy downloaded from the project's official releases. This approval does not disable Gatekeeper. See [INSTALL.txt](INSTALL.txt) for manual installation details.
 
 ## Build
 
@@ -26,23 +26,31 @@ Build on macOS with Xcode and its Metal Toolchain installed:
 python3 screensavers/macos-native/build.py --universal
 ```
 
-The build creates the saver, a standalone preview app, the installer app, and a ZIP archive with a SHA-256 checksum under `screensavers/macos-native/build/`. Builds are universal for Apple silicon and Intel and are ad-hoc signed, not notarized. The installer checks can be run with:
-
-```sh
-"screensavers/macos-native/build/Install Literature Clock.app/Contents/MacOS/Install Literature Clock" --check-install
-```
-
-This check uses temporary directories and does not alter installed savers or user preferences.
+The default build creates only the saver and a ZIP archive with its SHA-256 checksum under `screensavers/macos-native/build/`. Builds are universal for Apple silicon and Intel and are ad-hoc signed, not notarized.
 
 ## Preview and diagnostics
 
-Open the standalone preview app to inspect rendering and settings without changing the installed saver's preferences. Its executable supports these preview modes:
+Build the standalone rendering preview app with `--preview` when needed:
+
+```sh
+python3 screensavers/macos-native/build.py --universal --preview
+```
+
+Open it to inspect rendering without changing the installed saver's preferences. Its executable supports these preview modes:
 
 - `--glass-preview` for Book/light with clock and background progress
 - `--photo-glass-preview` for Photo/dark
 - `--foreground-glass-preview` for foreground Liquid Glass
 - `--rounded-glass-preview` for a 12-second progress cycle
 - `--showcase-preview` for a looping theme and language demonstration
+
+To build a separate app that opens the screen saver settings panel for occasional UI checks, run:
+
+```sh
+python3 screensavers/macos-native/build.py --universal --options-preview
+```
+
+The regular build and CI omit both preview apps. Pass both flags to build both apps at once.
 
 Run the executable with `--check-render` to render catalogues and theme variants and check native rendering behavior. Output is written to `/private/tmp/literature-clock-native-checks`.
 

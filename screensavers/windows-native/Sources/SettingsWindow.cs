@@ -14,7 +14,7 @@ public sealed class SettingsWindow : Window
     readonly Dictionary<string,CheckBox> checks=new();
     readonly Dictionary<string,CheckBox> languages=new();
     readonly Catalogues data;
-    readonly StackPanel stack=new() { Margin=new Thickness(24) };
+    StackPanel stack=null!;
     readonly TextBox custom=new();
     readonly StackPanel colorEditor=new();
     readonly System.Windows.Controls.Border colorSwatch=new() { Width=48,Height=28,BorderThickness=new Thickness(1),BorderBrush=System.Windows.Media.Brushes.Gray,Margin=new Thickness(0,0,8,0) };
@@ -25,20 +25,30 @@ public sealed class SettingsWindow : Window
     public SettingsWindow(Catalogues data,Preferences p)
     {
         this.data=data; original=p;
-        Title="Literature Clock"; Width=620; Height=760; MinWidth=480; MinHeight=500;
+        Title="Literature Clock"; Width=620; Height=680; MinWidth=480; MinHeight=500;
         WindowStartupLocation=WindowStartupLocation.CenterScreen;
-        Content=new ScrollViewer { Content=stack,VerticalScrollBarVisibility=ScrollBarVisibility.Auto };
-        Section("settings_content"); Label("settings_quote_languages");
+        var contentPage=new StackPanel { Margin=new Thickness(24) };
+        var appearancePage=new StackPanel { Margin=new Thickness(24) };
+        var behaviorPage=new StackPanel { Margin=new Thickness(24) };
+        var tabs=new TabControl();
+        tabs.Items.Add(new TabItem { Header=data.Text("settings_content"),Content=new ScrollViewer { Content=contentPage,VerticalScrollBarVisibility=ScrollBarVisibility.Auto } });
+        tabs.Items.Add(new TabItem { Header=data.Text("settings_appearance"),Content=new ScrollViewer { Content=appearancePage,VerticalScrollBarVisibility=ScrollBarVisibility.Auto } });
+        tabs.Items.Add(new TabItem { Header=data.Text("settings_behavior"),Content=new ScrollViewer { Content=behaviorPage,VerticalScrollBarVisibility=ScrollBarVisibility.Auto } });
+        var root=new DockPanel { LastChildFill=true };
+        var footerPanel=new StackPanel { Margin=new Thickness(16,8,16,12) };
+        DockPanel.SetDock(footerPanel,Dock.Bottom); root.Children.Add(footerPanel); root.Children.Add(tabs); Content=root;
+        stack=contentPage;
+        Label("settings_quote_languages");
         var languageGrid=new System.Windows.Controls.Primitives.UniformGrid { Columns=3 };
         foreach(var locale in data.Locales)
         {
-            var check=new CheckBox { Content=ClockSurface.LanguageName(locale), IsChecked=p.Languages.Contains(locale),Margin=new Thickness(0,5,8,5) };
+            var check=new CheckBox { Content=ClockSurface.LanguageOptionName(locale), IsChecked=p.Languages.Contains(locale),Margin=new Thickness(0,5,8,5) };
             languages[locale]=check; languageGrid.Children.Add(check);
         }
         stack.Children.Add(languageGrid); Label("languages_help");
         Check("bilingual_mode","bilingual",p.Bilingual);
         Menu("bilingual_language","translation",new[]{""}.Concat(data.Locales).ToArray(),p.Translation,raw=>raw.Length==0?data.Text("bilingual_select_language"):ClockSurface.LanguageName(raw));
-        Section("settings_appearance");
+        stack=appearancePage;
         Menu("settings_presets_title","preset",["none","christmas","halloween","valentine"],"none",raw=>data.Text(raw=="none"?"settings_presets_choose":"settings_preset_"+raw));
         Menu("theme","theme",Appearance.Themes,p.Theme);
         string DefaultFontLabel()
@@ -90,7 +100,7 @@ public sealed class SettingsWindow : Window
         Menu("settings_pattern_size","patternSize",["0.5","1","1.5","2","3"],p.PatternSize,raw=>data.Text("pattern_size_"+raw));
         Menu("settings_background_effect","effect",["none","rain","snow","dust","dust-v2","stars"],p.Effect,raw=>data.Text("settings_effect_"+raw));
         Menu("progressbar_mode","progress",["none","top","bottom","background","glass-background","glass-foreground"],p.Progress,raw=>data.Text("settings_progress_"+raw));
-        Section("settings_behavior");
+        stack=behaviorPage;
         Check("movement","move",p.Move); Check("time_mode","time",p.ShowTime); Check("settings_fuzzy_clock","fuzzyClock",p.FuzzyClock); Check("settings_hide_book_title","hideTitle",p.HideTitle); Menu("settings_attribution_position","quoteAttribution",["below","bottom-left","hidden"],p.QuoteAttribution,raw=>data.Text("settings_attribution_"+raw)); Check("work_mode_title","safe",p.Safe);
         void Categories()
         {
@@ -151,19 +161,27 @@ public sealed class SettingsWindow : Window
         foreach(var key in new[]{"theme","background","palette","pattern"}) menus[key].SelectionChanged+=(_,_)=>Update();
         checks["bilingual"].Checked+=(_,_)=>Update(); checks["bilingual"].Unchecked+=(_,_)=>Update();
         Categories(); menus["category"].SelectedValue=p.Category; if(menus["category"].SelectedIndex<0) menus["category"].SelectedIndex=0; Update();
-        stack.Children.Add(error);
-        var buttons=new StackPanel { Orientation=Orientation.Horizontal,HorizontalAlignment=HorizontalAlignment.Right,Margin=new Thickness(0,20,0,0) };
-        var cancel=new Button { Content=data.Text("cancel"),MinWidth=90,Margin=new Thickness(8),IsCancel=true };
-        cancel.Click+=(_,_)=>Close(); buttons.Children.Add(cancel);
-        var save=new Button { Content=data.Text("save"),MinWidth=90,Margin=new Thickness(8),IsDefault=true }; save.Click+=(_,_)=>Save(); buttons.Children.Add(save); stack.Children.Add(buttons);
+        footerPanel.Children.Add(error);
         using var versionStream=Catalogues.Open("version.txt");
         using var versionReader=new System.IO.StreamReader(versionStream);
         var version=versionReader.ReadToEnd().Trim();
-        var footer=new StackPanel { Orientation=Orientation.Horizontal,HorizontalAlignment=HorizontalAlignment.Left,Margin=new Thickness(0,12,0,0) };
-        footer.Children.Add(new TextBlock { Text="Literature Clock "+version+" · ",VerticalAlignment=VerticalAlignment.Center });
+        var actions=new Grid { Margin=new Thickness(0,20,0,0) };
+        actions.ColumnDefinitions.Add(new ColumnDefinition { Width=GridLength.Auto });
+        actions.ColumnDefinitions.Add(new ColumnDefinition { Width=new GridLength(1,GridUnitType.Star) });
+        actions.ColumnDefinitions.Add(new ColumnDefinition { Width=GridLength.Auto });
+        var metadata=new StackPanel { Orientation=Orientation.Horizontal,VerticalAlignment=VerticalAlignment.Center };
+        metadata.Children.Add(new TextBlock { Text="v"+version+" · ",VerticalAlignment=VerticalAlignment.Center });
         var project=new Button { Content="GitHub",Padding=new Thickness(2,0,2,0),Background=System.Windows.Media.Brushes.Transparent,BorderThickness=new Thickness(0) };
         project.Click+=(_,_)=>Process.Start(new ProcessStartInfo("https://github.com/cdmoro/literature-clock") { UseShellExecute=true });
-        footer.Children.Add(project); stack.Children.Add(footer);
+        metadata.Children.Add(project);
+        actions.Children.Add(metadata);
+        var cancel=new Button { Content=data.Text("cancel"),MinWidth=90,Margin=new Thickness(8),IsCancel=true };
+        cancel.Click+=(_,_)=>Close();
+        var save=new Button { Content=data.Text("save"),MinWidth=90,Margin=new Thickness(8),IsDefault=true }; save.Click+=(_,_)=>Save();
+        var buttons=new StackPanel { Orientation=Orientation.Horizontal,HorizontalAlignment=HorizontalAlignment.Right };
+        buttons.Children.Add(cancel); buttons.Children.Add(save);
+        Grid.SetColumn(buttons,2); actions.Children.Add(buttons);
+        footerPanel.Children.Add(actions);
     }
     void UpdateCustomColor()
     {
@@ -176,7 +194,6 @@ public sealed class SettingsWindow : Window
         syncingColor=false;
     }
     string Value(string key)=>menus[key].SelectedValue as string ?? "";
-    void Section(string key)=>stack.Children.Add(new TextBlock { Text=data.Text(key),FontWeight=FontWeights.Bold,FontSize=16,Margin=new Thickness(0,16,0,10) });
     void Label(string key)=>stack.Children.Add(new TextBlock { Text=data.Text(key),TextWrapping=TextWrapping.Wrap,Margin=new Thickness(0,4,0,8) });
     void Check(string label,string key,bool value)
     { var check=new CheckBox { Content=data.Text(label),IsChecked=value,Margin=new Thickness(0,5,0,5) }; checks[key]=check; stack.Children.Add(check); }

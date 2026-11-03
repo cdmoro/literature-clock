@@ -325,6 +325,17 @@ public sealed class ClockSurface : Canvas
         return passage;
     }
     public static string LanguageName(string locale) { try { return CultureInfo.GetCultureInfo(locale).NativeName; } catch(CultureNotFoundException) { return locale; } }
+    public static string LanguageOptionName(string locale)
+    {
+        try
+        {
+            var displayName = CultureInfo.GetCultureInfo(locale).DisplayName;
+            var regionStart = displayName.IndexOf(" (", StringComparison.Ordinal);
+            var languageName = regionStart > 0 ? displayName[..regionStart] : displayName;
+            return locale.Contains('-') ? $"{languageName} ({locale})" : languageName;
+        }
+        catch(CultureNotFoundException) { return locale == "eo" ? "Esperanto" : locale; }
+    }
 }
 internal static class TextExtensions
 {

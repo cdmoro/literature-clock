@@ -17,7 +17,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: macos-15
+    runs-on: macos-15-intel
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
@@ -32,13 +32,9 @@ jobs:
           fi
       - name: Build universal native saver and package
         run: python3 screensavers/macos-native/build.py --universal
-      - name: Check installer transactions in an isolated directory
-        run: '"screensavers/macos-native/build/Install Literature Clock.app/Contents/MacOS/Install Literature Clock" --check-install'
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
-          name: Literature-Clock-Native-macOS-universal
-          path: |
-            screensavers/macos-native/build/Literature-Clock-Native-macOS.saver.zip
-            screensavers/macos-native/build/Literature-Clock-Native-macOS.saver.zip.sha256
+          path: screensavers/macos-native/build/Literature-Clock-Native-macOS.saver.zip
+          archive: false
           if-no-files-found: error
           retention-days: 30
