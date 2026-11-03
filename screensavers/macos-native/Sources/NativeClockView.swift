@@ -142,6 +142,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     var lastMinute = ""
     var sheet: NSWindow?
     var controls: [String: NSControl] = [:]
+    private var optionPages: [NSScrollView] = []
+    private weak var optionsSectionControl: NSSegmentedControl?
     private var selectedBackground = "default"
     var swatches: [NativeColorSwatch] = []
     private var fixedPalette = "red"
@@ -807,6 +809,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     override var hasConfigureSheet: Bool { true }
     override var configureSheet: NSWindow? {
         NSLog("Literature Clock: configureSheet requested")
+        guard Thread.isMainThread else {
+            NSLog("Literature Clock: configureSheet requested off the main thread")
+            return nil
+        }
         if let sheet, sheet.isVisible { return sheet }
         // macOS can dismiss a transported sheet without invoking our buttons.
         // Recreate closed sheets instead of returning their stale window.
@@ -819,6 +825,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                               styleMask: [.titled], backing: .buffered, defer: false)
         window.isReleasedWhenClosed = false
         window.title = "Literature Clock"
+        NSLog("Literature Clock: creating options panel on %@", ProcessInfo.processInfo.operatingSystemVersionString)
         let background = NSVisualEffectView(frame: window.contentView!.bounds)
         background.material = .sheet
         background.blendingMode = .behindWindow
@@ -831,17 +838,30 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         root.spacing = 10
         root.translatesAutoresizingMaskIntoConstraints = false
         background.addSubview(root)
-        let tabs = NSTabView()
-        tabs.translatesAutoresizingMaskIntoConstraints = false
-        root.addArrangedSubview(tabs)
-        tabs.widthAnchor.constraint(equalTo: root.widthAnchor).isActive = true
-        tabs.heightAnchor.constraint(greaterThanOrEqualToConstant: 300).isActive = true
+        let sectionControl = NSSegmentedControl(labels: [text("settings_content"), text("settings_appearance"), text("settings_behavior")], trackingMode: .selectOne, target: self, action: #selector(optionsSectionChanged(_:)))
+        sectionControl.controlSize = .regular
+        sectionControl.selectedSegment = 0
+        sectionControl.segmentDistribution = .fillEqually
+        sectionControl.translatesAutoresizingMaskIntoConstraints = false
+        optionsSectionControl = sectionControl
+        root.addArrangedSubview(sectionControl)
+        sectionControl.widthAnchor.constraint(lessThanOrEqualTo: root.widthAnchor).isActive = true
+        sectionControl.centerXAnchor.constraint(equalTo: root.centerXAnchor).isActive = true
+        let pageHost = NSView()
+        pageHost.translatesAutoresizingMaskIntoConstraints = false
+        root.addArrangedSubview(pageHost)
+        pageHost.widthAnchor.constraint(equalTo: root.widthAnchor).isActive = true
+        pageHost.heightAnchor.constraint(greaterThanOrEqualToConstant: 300).isActive = true
+        pageHost.setContentHuggingPriority(.defaultLow, for: .vertical)
+        pageHost.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
+        optionPages.removeAll()
         func makeSettingsPage(_ identifier: String) -> (NSStackView, NSScrollView) {
             let page = NSStackView()
             page.orientation = .vertical
             page.alignment = .leading
-            page.spacing = 10
-            page.translatesAutoresizingMaskIntoConstraints = false
+            page.spacing = 8
+            page.translatesAutoresizingMaskIntoConstraints = true
+            page.edgeInsets = NSEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
             let scroll = NSScrollView()
             scroll.identifier = NSUserInterfaceItemIdentifier("settings-scroll-" + identifier)
             scroll.hasVerticalScroller = true
@@ -849,62 +869,64 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             scroll.autohidesScrollers = true
             scroll.borderType = .noBorder
             scroll.translatesAutoresizingMaskIntoConstraints = false
-            let document = NSView()
-            document.translatesAutoresizingMaskIntoConstraints = false
-            scroll.documentView = document
-            document.addSubview(page)
-            NSLayoutConstraint.activate([
-                document.leadingAnchor.constraint(equalTo: scroll.contentView.leadingAnchor),
-                document.trailingAnchor.constraint(equalTo: scroll.contentView.trailingAnchor),
-                document.topAnchor.constraint(equalTo: scroll.contentView.topAnchor),
-                document.widthAnchor.constraint(equalTo: scroll.contentView.widthAnchor),
-                page.leadingAnchor.constraint(equalTo: document.leadingAnchor, constant: 24),
-                page.trailingAnchor.constraint(equalTo: document.trailingAnchor, constant: -24),
-                page.topAnchor.constraint(equalTo: document.topAnchor, constant: 24),
-                page.bottomAnchor.constraint(equalTo: document.bottomAnchor, constant: -24),
-                document.heightAnchor.constraint(greaterThanOrEqualTo: scroll.contentView.heightAnchor)
-            ])
+            page.frame = NSRect(x: 0, y: 0, width: scroll.contentSize.width, height: 0)
+            scroll.documentView = page
             return (page, scroll)
         }
         let (contentStack, contentScroll) = makeSettingsPage("content")
         let (appearanceStack, appearanceScroll) = makeSettingsPage("appearance")
         let (behaviorStack, behaviorScroll) = makeSettingsPage("behavior")
-        for (key, title, view) in [("content", "settings_content", contentScroll),
-                                   ("appearance", "settings_appearance", appearanceScroll),
-                                   ("behavior", "settings_behavior", behaviorScroll)] {
-            let item = NSTabViewItem(identifier: key)
-            item.label = text(title)
-            item.view = view
-            tabs.addTabViewItem(item)
+        optionPages = [contentScroll, appearanceScroll, behaviorScroll]
+        for (index, scroll) in [contentScroll, appearanceScroll, behaviorScroll].enumerated() {
+            scroll.translatesAutoresizingMaskIntoConstraints = false
+            scroll.isHidden = index != 0
+            pageHost.addSubview(scroll)
+            NSLayoutConstraint.activate([
+                scroll.leadingAnchor.constraint(equalTo: pageHost.leadingAnchor),
+                scroll.trailingAnchor.constraint(equalTo: pageHost.trailingAnchor),
+                scroll.topAnchor.constraint(equalTo: pageHost.topAnchor),
+                scroll.bottomAnchor.constraint(equalTo: pageHost.bottomAnchor)
+            ])
         }
         var stack = contentStack
-        NSLayoutConstraint.activate([root.leadingAnchor.constraint(equalTo: background.leadingAnchor, constant: 12),
-                                     root.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: -12),
-                                     root.topAnchor.constraint(equalTo: background.topAnchor, constant: 12),
-                                     root.bottomAnchor.constraint(equalTo: background.bottomAnchor, constant: -12)])
+        NSLayoutConstraint.activate([root.leadingAnchor.constraint(equalTo: background.leadingAnchor, constant: 20),
+                                     root.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: -20),
+                                     root.topAnchor.constraint(equalTo: background.topAnchor, constant: 20),
+                                     root.bottomAnchor.constraint(equalTo: background.bottomAnchor, constant: -20)])
         stack.addArrangedSubview(NSTextField(labelWithString: text("settings_quote_languages")))
         let saved = preferences.string(forKey: "quote-locales") ?? ""
         let selected = Set(saved.split(separator: ",").map(String.init))
         let languages = localeNames
-        for offset in stride(from: 0, to: languages.count, by: 3) {
-            let row = NSStackView()
-            row.distribution = .fillEqually
-            row.spacing = 16
-            for locale in languages[offset..<min(offset + 3, languages.count)] {
-                let name = Locale(identifier: systemLocale).localizedString(forIdentifier: locale) ?? locale
-                let check = NSButton(checkboxWithTitle: name, target: self, action: #selector(fontLanguageChanged))
+        let languageColumns = NSStackView()
+        languageColumns.orientation = .horizontal
+        languageColumns.alignment = .top
+        languageColumns.distribution = .fillEqually
+        languageColumns.spacing = 24
+        languageColumns.setContentHuggingPriority(.required, for: .vertical)
+        languageColumns.setContentCompressionResistancePriority(.required, for: .vertical)
+        for columnIndex in 0..<3 {
+            let column = NSStackView()
+            column.orientation = .vertical
+            column.alignment = .leading
+            column.spacing = 8
+            for (index, locale) in languages.enumerated() where index % 3 == columnIndex {
+                let languageCode = String(locale.split(separator: "-").first ?? Substring(locale))
+                let name = Locale(identifier: systemLocale).localizedString(forLanguageCode: languageCode) ?? locale
+                let title = locale.contains("-") ? "\(name) (\(locale))" : name
+                let check = NSButton(checkboxWithTitle: title, target: self, action: #selector(fontLanguageChanged))
                 check.state = selected.contains(locale) ? .on : .off
                 controls["quote-locale:" + locale] = check
-                row.addArrangedSubview(check)
+                column.addArrangedSubview(check)
             }
-            stack.addArrangedSubview(row)
-            row.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
+            languageColumns.addArrangedSubview(column)
         }
+        stack.addArrangedSubview(languageColumns)
+        languageColumns.widthAnchor.constraint(equalTo: stack.widthAnchor).isActive = true
         let help = NSTextField(wrappingLabelWithString: text("languages_help"))
         help.textColor = .secondaryLabelColor
         help.font = .systemFont(ofSize: NSFont.smallSystemFontSize)
         stack.addArrangedSubview(help)
-        stack.setCustomSpacing(20, after: help)
+        stack.setCustomSpacing(12, after: help)
         let bilingual = NSButton(checkboxWithTitle: text("bilingual_mode"), target: self, action: #selector(bilingualControlsChanged))
         bilingual.state = preferences.bool(forKey: "bilingual") ? .on : .off
         controls["bilingual"] = bilingual
@@ -1069,27 +1091,39 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         attributionMenu.setAccessibilityLabel(text("settings_attribution_position"))
         controls["quote-attribution"] = attributionMenu
         stack.addArrangedSubview(NSStackView(views: [attributionLabel, attributionMenu]))
-        let version = Bundle(for: Self.self).object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "development"
-        let footer = NSStackView()
-        footer.orientation = .horizontal
-        footer.alignment = .centerY
-        footer.spacing = 6
-        footer.widthAnchor.constraint(equalTo: root.widthAnchor).isActive = true
-        footer.addArrangedSubview(NSTextField(labelWithString: "Literature Clock for macOS · v" + version))
-        footer.addArrangedSubview(ProjectLink(title: text("native_github_project")))
-        root.addArrangedSubview(footer)
         let cancel = NSButton(title: text("cancel"), target: self, action: #selector(cancelOptions))
         cancel.keyEquivalent = "\u{1b}"
         let save = NSButton(title: "OK", target: self, action: #selector(saveOptions))
         save.keyEquivalent = "\r"
-        let buttons = NSStackView(views: [cancel, save])
-        buttons.spacing = 12
-        buttons.alignment = .trailing
-        buttons.widthAnchor.constraint(equalTo: root.widthAnchor).isActive = true
-        root.addArrangedSubview(buttons)
+        let version = Bundle(for: Self.self).object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "development"
+        let actions = NSStackView()
+        actions.orientation = .horizontal
+        actions.alignment = .centerY
+        actions.spacing = 12
+        actions.addArrangedSubview(ProjectLink(title: "GitHub", prefix: "v" + version + " · "))
+        let spacer = NSView()
+        spacer.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        spacer.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        actions.addArrangedSubview(spacer)
+        actions.addArrangedSubview(cancel)
+        actions.addArrangedSubview(save)
+        root.addArrangedSubview(actions)
+        actions.widthAnchor.constraint(equalTo: root.widthAnchor).isActive = true
         window.contentView!.layoutSubtreeIfNeeded()
         sheet = window
+        resizeOptions()
         return window
+    }
+    @objc private func optionsSectionChanged(_ sender: NSSegmentedControl) {
+        guard optionPages.indices.contains(sender.selectedSegment) else { return }
+        for (index, page) in optionPages.enumerated() {
+            page.isHidden = index != sender.selectedSegment
+        }
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            self.sheet?.contentView?.layoutSubtreeIfNeeded()
+            self.resizeOptions()
+        }
     }
     @objc private func patternSizeChanged(_ sender: NSPopUpButton) {
         guard let value = sender.selectedItem?.representedObject as? String, ["0.5", "1", "1.5", "2", "3"].contains(value), let number = Double(value) else { return }
@@ -1155,7 +1189,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         needsDisplay = true
     }
     @objc private func cancelOptions() {
-        closeOptions()
+        closeOptions(returnCode: .cancel)
         DispatchQueue.main.async {
             for view in Self.instances.allObjects where !view.active && view.isPreview && view.window != nil {
                 view.startAnimation()
@@ -1183,7 +1217,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             else if let button = control as? NSButton { preferences.set(button.state == .on, forKey: key) }
         }
         preferences.synchronize()
-        closeOptions()
+        closeOptions(returnCode: .OK)
         let values = Dictionary(uniqueKeysWithValues: Self.optionKeys.compactMap { key in
             preferences.object(forKey: key).map { (key, $0) }
         })
@@ -1231,6 +1265,15 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     private func resizeOptions() {
         guard let content = sheet?.contentView else { return }
         content.layoutSubtreeIfNeeded()
+        for scroll in optionPages {
+            guard let document = scroll.documentView else { continue }
+            let width = scroll.contentView.bounds.width
+            document.setFrameSize(NSSize(width: width, height: scroll.contentView.bounds.height))
+            document.layoutSubtreeIfNeeded()
+            let height = max(scroll.contentView.bounds.height, document.fittingSize.height)
+            document.frame = NSRect(x: 0, y: 0, width: width, height: height)
+            document.layoutSubtreeIfNeeded()
+        }
         func layout(_ view: NSView) {
             view.layoutSubtreeIfNeeded()
             for child in view.subviews { layout(child) }
@@ -1348,12 +1391,18 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             self.needsDisplay = true
         }
     }
-    private func closeOptions() {
+    private func closeOptions(returnCode: NSApplication.ModalResponse) {
         guard let sheet else { return }
         (controls["custom-color"] as? NSColorWell)?.deactivate()
-        if let parent = sheet.sheetParent { parent.endSheet(sheet) }
-        else { sheet.orderOut(nil) }
+        if let parent = sheet.sheetParent {
+            parent.endSheet(sheet, returnCode: returnCode)
+        } else {
+            // ScreenSaverView sheets have no document parent; the framework
+            // requires ending their application modal session directly.
+            NSApp.endSheet(sheet, returnCode: returnCode.rawValue)
+        }
         self.sheet = nil
+        optionPages.removeAll()
         controls.removeAll()
     }
 }

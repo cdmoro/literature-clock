@@ -1,50 +1,24 @@
 Literature Clock for macOS
 
-RECOMMENDED INSTALLATION AND UPDATES
+Install for the current user:
 
-1. Extract the entire ZIP.
-2. Open Install Literature Clock.app.
-3. Save or cancel any open screen saver options, then click Install or Update.
-4. Confirm replacement if the installer finds duplicate copies.
-5. Click Open Screen Saver Settings, select Literature Clock, and try the preview.
+1. Extract the downloaded ZIP.
+2. In Finder, choose Go > Go to Folder and enter ~/Library/Screen Savers.
+   Create the Screen Savers folder if it does not exist.
+3. Drag Literature Clock.saver into that folder. Replace the existing copy when
+   updating.
+4. Quit and reopen settings, then select Literature Clock in System Settings >
+   Wallpaper > Screen Saver (macOS 13+) or System Preferences > Desktop &
+   Screen Saver (macOS 12).
 
-The installer uses your user account's Screen Savers folder. It does not need
-an administrator password or change your Literature Clock preferences.
-It closes System Settings and restarts the screen saver preview before
-replacement so macOS does not keep an old bundle loaded.
+Remove the screen saver by deleting ~/Library/Screen Savers/Literature Clock.saver.
+This does not remove your saved screen saver preferences.
 
-IF MACOS BLOCKS THE INSTALLER OR SCREEN SAVER
-
-These project builds are signed locally but are not notarized with an Apple
-Developer ID. macOS may show a message that it cannot verify the installer or
-screen saver. This is Gatekeeper; it does not by itself mean malware was found.
-
-1. First try opening Install Literature Clock.app. If macOS blocks it, click Done.
-2. Open Apple menu > System Settings > Privacy & Security.
-3. Scroll down to Security and click Open Anyway for the item macOS blocked.
-   Depending on your macOS version, you may first need to click Open.
-4. Confirm Open in the next prompt. Enter your Mac login password or use Touch ID
-   if asked, then try the installer again.
-5. If macOS later blocks Literature Clock.saver when you preview it, repeat these
-   steps for the screen saver.
-
-Open Anyway is available for about an hour after the blocked attempt. Only
-approve a copy downloaded from the project's official GitHub Releases page.
-This approval applies to that item; it does not turn off Gatekeeper globally.
-
-Previous copies are preserved in:
-~/Library/Application Support/Literature Clock/Installation Backups/
-Use Show Previous Copies after installation to open the backup folder.
-If replacement fails, the installer attempts to restore the previous copies.
-
-MANUAL INSTALLATION
-
-Literature Clock.saver is also provided for manual installation. Double-click
-it and install for the current user. Fully quit System Settings before updating;
-macOS can retain an earlier screen saver in memory. If quotes disappear after
-manual replacement, log out and back in, or use the installer instead.
-An installation for all users requires administrator access and is not managed
-by this installer. The installer leaves other screen savers untouched.
+These builds are signed locally but are not notarized with an Apple Developer
+ID. If macOS blocks the screen saver, open Apple menu > System Settings >
+Privacy & Security, scroll to Security, and click Open Anyway for Literature
+Clock.saver. Only approve a copy downloaded from the project's official
+releases. This approval does not disable Gatekeeper.
 
 Source, license and feedback:
 https://github.com/cdmoro/literature-clock

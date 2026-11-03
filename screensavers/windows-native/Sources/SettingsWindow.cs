@@ -42,7 +42,7 @@ public sealed class SettingsWindow : Window
         var languageGrid=new System.Windows.Controls.Primitives.UniformGrid { Columns=3 };
         foreach(var locale in data.Locales)
         {
-            var check=new CheckBox { Content=ClockSurface.LanguageName(locale), IsChecked=p.Languages.Contains(locale),Margin=new Thickness(0,5,8,5) };
+            var check=new CheckBox { Content=ClockSurface.LanguageOptionName(locale), IsChecked=p.Languages.Contains(locale),Margin=new Thickness(0,5,8,5) };
             languages[locale]=check; languageGrid.Children.Add(check);
         }
         stack.Children.Add(languageGrid); Label("languages_help");
@@ -162,18 +162,26 @@ public sealed class SettingsWindow : Window
         checks["bilingual"].Checked+=(_,_)=>Update(); checks["bilingual"].Unchecked+=(_,_)=>Update();
         Categories(); menus["category"].SelectedValue=p.Category; if(menus["category"].SelectedIndex<0) menus["category"].SelectedIndex=0; Update();
         footerPanel.Children.Add(error);
-        var buttons=new StackPanel { Orientation=Orientation.Horizontal,HorizontalAlignment=HorizontalAlignment.Right,Margin=new Thickness(0,20,0,0) };
-        var cancel=new Button { Content=data.Text("cancel"),MinWidth=90,Margin=new Thickness(8),IsCancel=true };
-        cancel.Click+=(_,_)=>Close(); buttons.Children.Add(cancel);
-        var save=new Button { Content=data.Text("save"),MinWidth=90,Margin=new Thickness(8),IsDefault=true }; save.Click+=(_,_)=>Save(); buttons.Children.Add(save); footerPanel.Children.Add(buttons);
         using var versionStream=Catalogues.Open("version.txt");
         using var versionReader=new System.IO.StreamReader(versionStream);
         var version=versionReader.ReadToEnd().Trim();
-        var footer=new StackPanel { Orientation=Orientation.Horizontal,HorizontalAlignment=HorizontalAlignment.Left,Margin=new Thickness(0,12,0,0) };
-        footer.Children.Add(new TextBlock { Text="Literature Clock "+version+" · ",VerticalAlignment=VerticalAlignment.Center });
+        var actions=new Grid { Margin=new Thickness(0,20,0,0) };
+        actions.ColumnDefinitions.Add(new ColumnDefinition { Width=GridLength.Auto });
+        actions.ColumnDefinitions.Add(new ColumnDefinition { Width=new GridLength(1,GridUnitType.Star) });
+        actions.ColumnDefinitions.Add(new ColumnDefinition { Width=GridLength.Auto });
+        var metadata=new StackPanel { Orientation=Orientation.Horizontal,VerticalAlignment=VerticalAlignment.Center };
+        metadata.Children.Add(new TextBlock { Text="v"+version+" · ",VerticalAlignment=VerticalAlignment.Center });
         var project=new Button { Content="GitHub",Padding=new Thickness(2,0,2,0),Background=System.Windows.Media.Brushes.Transparent,BorderThickness=new Thickness(0) };
         project.Click+=(_,_)=>Process.Start(new ProcessStartInfo("https://github.com/cdmoro/literature-clock") { UseShellExecute=true });
-        footer.Children.Add(project); footerPanel.Children.Add(footer);
+        metadata.Children.Add(project);
+        actions.Children.Add(metadata);
+        var cancel=new Button { Content=data.Text("cancel"),MinWidth=90,Margin=new Thickness(8),IsCancel=true };
+        cancel.Click+=(_,_)=>Close();
+        var save=new Button { Content=data.Text("save"),MinWidth=90,Margin=new Thickness(8),IsDefault=true }; save.Click+=(_,_)=>Save();
+        var buttons=new StackPanel { Orientation=Orientation.Horizontal,HorizontalAlignment=HorizontalAlignment.Right };
+        buttons.Children.Add(cancel); buttons.Children.Add(save);
+        Grid.SetColumn(buttons,2); actions.Children.Add(buttons);
+        footerPanel.Children.Add(actions);
     }
     void UpdateCustomColor()
     {
