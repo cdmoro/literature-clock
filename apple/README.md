@@ -40,7 +40,7 @@ This updates the 12 `Localizable.strings` resources used by the app and widget.
 
 Select the **LiteratureClockMac** scheme in the same Xcode project, select **My Mac**, then Run. The native Mac app requires macOS 14 or later. It is separate from the screensaver and does not require an iPhone. Its widget extension is embedded automatically. Use the same signing team for `LiteratureClockMac` and `LiteratureClockMacWidgetExtension`.
 
-After running the signed app, Control-click the desktop, choose **Edit Widgets**, search for **Literature Clock**, and drag a widget onto the desktop. Small, medium, large and extra-large widgets use the shared design. Control-click a widget and select **Edit Literature Clock** to configure its languages and style independently. Click its quote to open the full passage in the Mac app, where sharing is available. The small widget shows the time phrase and configured book/author credits. All widget sizes reserve their space for the quote and attribution; quote navigation is available in the app.
+After running the signed app, Control-click the desktop, choose **Edit Widgets**, search for **Literature Clock**, and drag a widget onto the desktop. Small, medium, large and extra-large widgets use the shared design. Control-click a widget and select **Edit Literature Clock** to configure its languages and style independently. Clicking its quote opens the unified quote and sharing dialog with the full passage and book/author credit. Copy the quote, edit its style and attribution, or share it from that dialog. The small widget shows the time phrase and configured book/author credits. All widget sizes reserve their space for the quote and attribution; quote navigation is available in the app.
 
 The app has a resizable clock window, the same settings available through its toolbar, and a native Settings window (`⌘,`). The Mac sharing editor keeps a large card preview beside Colour and Text tools, with the image format selector in the bottom action bar. Font chips preview each typeface directly. Copy and Share remain available below, and the close button dismisses the editor. Sharing uses the macOS share menu; copying text uses the Mac pasteboard. Special Elite is registered from the bundled font in both Mac processes.
 
@@ -85,9 +85,10 @@ timeline/catalogue behavior, diagnostic logs and physical-device checks, see
 The app and each widget have an independent **Progress bar** switch, enabled by
 default. The bar fills along the bottom edge during the current minute. Existing
 app preferences for Bottom and Background both use this bottom bar; Hidden stays
-off. Widget progress uses the system date-based progress view rather than
-per-second extension reloads. Verify it advances within a minute and resets when
-the next quote appears, including after sleep/wake and in Clear/Tinted styles.
+off. Widget progress is drawn as a transparent, time-based fill in each size;
+it does not request per-second extension reloads. In Clear/Tinted rendering it
+uses a softer translucent stroke. Verify it advances within a minute and resets
+when the next quote appears, including after sleep/wake.
 
 The clock keeps its attribution directly below the passage as “— Book, Author”
 (or “— Author”, according to settings). In time-fragment-only mode, attribution

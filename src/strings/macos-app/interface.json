@@ -65,7 +65,11 @@
     "quoteDetail": "Quote detail",
     "Pause clock": "Pause clock",
     "app_search_quotes": "Search quotes",
-    "app_clear_search": "Clear search"
+    "app_clear_search": "Clear search",
+    "app_attribution_full": "Full",
+    "app_attribution_author_short": "Author",
+    "app_copy_quote": "Copy quote",
+    "app_quote_copied": "Quote copied"
   },
   "en-US": {
     "app_collection": "Collection",
@@ -133,7 +137,11 @@
     "quoteDetail": "Quote detail",
     "Pause clock": "Pause clock",
     "app_search_quotes": "Search quotes",
-    "app_clear_search": "Clear search"
+    "app_clear_search": "Clear search",
+    "app_attribution_full": "Full",
+    "app_attribution_author_short": "Author",
+    "app_copy_quote": "Copy quote",
+    "app_quote_copied": "Quote copied"
   },
   "es-ES": {
     "app_collection": "Colección",
@@ -201,7 +209,11 @@
     "quoteDetail": "Detalle de la cita",
     "Pause clock": "Pausar reloj",
     "app_search_quotes": "Buscar citas",
-    "app_clear_search": "Borrar búsqueda"
+    "app_clear_search": "Borrar búsqueda",
+    "app_attribution_full": "Completa",
+    "app_attribution_author_short": "Autor",
+    "app_copy_quote": "Copiar cita",
+    "app_quote_copied": "Cita copiada"
   },
   "pt-PT": {
     "app_collection": "Coleção",
@@ -269,7 +281,11 @@
     "quoteDetail": "Detalhes da citação",
     "Pause clock": "Pausar relógio",
     "app_search_quotes": "Pesquisar citações",
-    "app_clear_search": "Limpar pesquisa"
+    "app_clear_search": "Limpar pesquisa",
+    "app_attribution_full": "Completa",
+    "app_attribution_author_short": "Autor",
+    "app_copy_quote": "Copiar citação",
+    "app_quote_copied": "Citação copiada"
   },
   "fr-FR": {
     "app_collection": "Collection",
@@ -337,7 +353,11 @@
     "quoteDetail": "Détail de la citation",
     "Pause clock": "Mettre l’horloge en pause",
     "app_search_quotes": "Rechercher des citations",
-    "app_clear_search": "Effacer la recherche"
+    "app_clear_search": "Effacer la recherche",
+    "app_attribution_full": "Complet",
+    "app_attribution_author_short": "Auteur",
+    "app_copy_quote": "Copier la citation",
+    "app_quote_copied": "Citation copiée"
   },
   "it-IT": {
     "app_collection": "Raccolta",
@@ -405,7 +425,11 @@
     "quoteDetail": "Dettaglio della citazione",
     "Pause clock": "Metti in pausa l’orologio",
     "app_search_quotes": "Cerca citazioni",
-    "app_clear_search": "Cancella ricerca"
+    "app_clear_search": "Cancella ricerca",
+    "app_attribution_full": "Completa",
+    "app_attribution_author_short": "Autore",
+    "app_copy_quote": "Copia citazione",
+    "app_quote_copied": "Citazione copiata"
   },
   "de-DE": {
     "app_collection": "Sammlung",
@@ -473,7 +497,11 @@
     "quoteDetail": "Zitatdetails",
     "Pause clock": "Uhr pausieren",
     "app_search_quotes": "Zitate suchen",
-    "app_clear_search": "Suche löschen"
+    "app_clear_search": "Suche löschen",
+    "app_attribution_full": "Voll",
+    "app_attribution_author_short": "Autor",
+    "app_copy_quote": "Zitat kopieren",
+    "app_quote_copied": "Zitat kopiert"
   },
   "el-GR": {
     "app_collection": "Συλλογή",
@@ -541,7 +569,11 @@
     "quoteDetail": "Λεπτομέρειες αποσπάσματος",
     "Pause clock": "Παύση ρολογιού",
     "app_search_quotes": "Αναζήτηση παραθεμάτων",
-    "app_clear_search": "Εκκαθάριση αναζήτησης"
+    "app_clear_search": "Εκκαθάριση αναζήτησης",
+    "app_attribution_full": "Πλήρης",
+    "app_attribution_author_short": "Συγγραφέας",
+    "app_copy_quote": "Αντιγραφή αποσπάσματος",
+    "app_quote_copied": "Αντιγράφηκε"
   },
   "zh-CN": {
     "app_collection": "收藏集",
@@ -609,7 +641,11 @@
     "quoteDetail": "引文详情",
     "Pause clock": "暂停时钟",
     "app_search_quotes": "搜索引文",
-    "app_clear_search": "清除搜索"
+    "app_clear_search": "清除搜索",
+    "app_attribution_full": "完整",
+    "app_attribution_author_short": "作者",
+    "app_copy_quote": "复制引文",
+    "app_quote_copied": "已复制引文"
   },
   "ru-RU": {
     "app_collection": "Коллекция",
@@ -677,7 +713,11 @@
     "quoteDetail": "Подробности цитаты",
     "Pause clock": "Приостановить часы",
     "app_search_quotes": "Поиск цитат",
-    "app_clear_search": "Очистить поиск"
+    "app_clear_search": "Очистить поиск",
+    "app_attribution_full": "Полная",
+    "app_attribution_author_short": "Автор",
+    "app_copy_quote": "Копировать цитату",
+    "app_quote_copied": "Цитата скопирована"
   },
   "eo": {
     "app_collection": "Kolekto",
@@ -745,7 +785,11 @@
     "quoteDetail": "Detaloj de la citaĵo",
     "Pause clock": "Paŭzigi la horloĝon",
     "app_search_quotes": "Serĉi citaĵojn",
-    "app_clear_search": "Forigi serĉon"
+    "app_clear_search": "Forigi serĉon",
+    "app_attribution_full": "Plena",
+    "app_attribution_author_short": "Aŭtoro",
+    "app_copy_quote": "Kopii citaĵon",
+    "app_quote_copied": "Citaĵo kopiita"
   },
   "ar-AE": {
     "app_collection": "المجموعة",
@@ -813,6 +857,10 @@
     "quoteDetail": "تفاصيل الاقتباس",
     "Pause clock": "إيقاف الساعة مؤقتًا",
     "app_search_quotes": "البحث عن اقتباسات",
-    "app_clear_search": "مسح البحث"
+    "app_clear_search": "مسح البحث",
+    "app_attribution_full": "كامل",
+    "app_attribution_author_short": "المؤلف",
+    "app_copy_quote": "نسخ الاقتباس",
+    "app_quote_copied": "تم نسخ الاقتباس"
   }
 }

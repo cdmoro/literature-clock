@@ -20,13 +20,16 @@
 "app_alignment" = "Alignment";
 "app_appearance" = "Appearance";
 "app_attribution" = "Attribution";
+"app_attribution_author_short" = "Author";
 "app_attribution_background" = "Background";
 "app_attribution_bottom" = "Bottom";
+"app_attribution_full" = "Full";
 "app_attribution_hidden" = "Hidden";
 "app_center" = "Center";
 "app_clear_search" = "Clear search";
 "app_collection" = "Collection";
 "app_color" = "Color";
+"app_copy_quote" = "Copy quote";
 "app_copy_quote_text" = "Copy quote text";
 "app_custom_accent_color" = "Custom accent color";
 "app_done" = "Done";
@@ -51,6 +54,7 @@
 "app_no_quote" = "No quote available";
 "app_previous_quote" = "Previous quote";
 "app_project_website" = "Web version";
+"app_quote_copied" = "Quote copied";
 "app_quote_detail_title" = "Quote detail";
 "app_quote_font" = "Quote font";
 "app_quote_languages_title" = "Quote languages";

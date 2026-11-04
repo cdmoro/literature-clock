@@ -20,25 +20,6 @@ enum ClockWidgetPalette: String, AppEnum {
     ]
 }
 
-// Stable IDs preserve widget color selections.
-struct ClockWidgetColor: AppEntity {
-    let id: String
-    static var typeDisplayRepresentation = TypeDisplayRepresentation(name: "Highlight color")
-    static var defaultQuery = ClockWidgetColorQuery()
-    var displayRepresentation: DisplayRepresentation {
-        return ClockWidgetPalette.caseDisplayRepresentations[ClockWidgetPalette(rawValue: id) ?? .red]!
-    }
-}
-
-struct ClockWidgetColorQuery: EntityQuery {
-    func entities(for identifiers: [String]) async throws -> [ClockWidgetColor] {
-        identifiers.filter { ClockWidgetPalette(rawValue: $0) != nil }.map { ClockWidgetColor(id: $0) }
-    }
-    func suggestedEntities() async throws -> [ClockWidgetColor] {
-        ClockWidgetPalette.allCases.map { ClockWidgetColor(id: $0.rawValue) }
-    }
-}
-
 enum ClockWidgetAttribution: String, AppEnum {
     case bookAuthor = "book-author"
     case author
@@ -61,6 +42,29 @@ enum ClockWidgetLanguage: String, AppEnum {
         .esperanto: "Esperanto", .russian: "Русский (Россия)", .chinese: "中文（中国大陆）",
         .arabic: "العربية (الإمارات العربية المتحدة)"
     ]
+
+    static var systemDefaults: [Self] {
+        let preferred = Locale.preferredLanguages.compactMap { identifier -> Self? in
+            let language = Locale(identifier: identifier).language.languageCode?.identifier
+            switch language {
+            case "en":
+                let region = Locale(identifier: identifier).region?.identifier
+                return region == "GB" ? .englishGB : .englishUS
+            case "es": return .spanish
+            case "fr": return .french
+            case "de": return .german
+            case "it": return .italian
+            case "pt": return .portuguese
+            case "el": return .greek
+            case "eo": return .esperanto
+            case "ru": return .russian
+            case "zh": return .chinese
+            case "ar": return .arabic
+            default: return nil
+            }
+        }
+        return preferred.first.map { [$0] } ?? [.englishGB]
+    }
 }
 
 struct ClockWidgetConfiguration: WidgetConfigurationIntent {
@@ -69,9 +73,9 @@ struct ClockWidgetConfiguration: WidgetConfigurationIntent {
 
     @Parameter(title: "Appearance", default: .system) var appearance: ClockWidgetAppearance
     @Parameter(title: "Quote font", default: .serif) var font: ClockWidgetFont
-    @Parameter(title: "Accent color", default: .red) var palette: ClockWidgetPalette
-    @Parameter(title: "Highlight color", description: "Used in full-color widgets. Clear and Tinted styles use system colors. Change the custom color in the app.") var highlightColor: ClockWidgetColor?
-    var resolvedPalette: ClockWidgetPalette { ClockWidgetPalette(rawValue: highlightColor?.id ?? "") ?? palette }
+    @Parameter(title: "Highlight color", description: "Clear and Tinted styles use system colors. Change the custom color in the app.", default: .red)
+    var palette: ClockWidgetPalette
+    var resolvedPalette: ClockWidgetPalette { palette }
     @Parameter(title: "Highlight the time", default: true) var highlight: Bool
     @Parameter(title: "Time fragment only", description: "Show only the part of the quote that tells the time.", default: false) var fuzzy: Bool
     @Parameter(title: "Progress bar", default: true) var showProgress: Bool
@@ -87,9 +91,8 @@ struct ClockWidgetConfiguration: WidgetConfigurationIntent {
                     \.$safeOnly
                     \.$attribution
                     \.$appearance
-                    \.$highlightColor
+                    \.$palette
                     \.$font
-                    \.$highlight
                     \.$showProgress
                 }
             }
@@ -100,7 +103,7 @@ struct ClockWidgetConfiguration: WidgetConfigurationIntent {
                     \.$attribution
                     \.$fuzzy
                     \.$appearance
-                    \.$highlightColor
+                    \.$palette
                     \.$font
                     \.$highlight
                     \.$showProgress

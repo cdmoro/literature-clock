@@ -20,13 +20,16 @@
 "app_alignment" = "Ĝisrandigo";
 "app_appearance" = "Aspekto";
 "app_attribution" = "Atribuo";
+"app_attribution_author_short" = "Aŭtoro";
 "app_attribution_background" = "Fono";
 "app_attribution_bottom" = "Malsupre";
+"app_attribution_full" = "Plena";
 "app_attribution_hidden" = "Kaŝita";
 "app_center" = "Centre";
 "app_clear_search" = "Forigi serĉon";
 "app_collection" = "Kolekto";
 "app_color" = "Koloro";
+"app_copy_quote" = "Kopii citaĵon";
 "app_copy_quote_text" = "Kopii citaĵan tekston";
 "app_custom_accent_color" = "Propra emfaza koloro";
 "app_done" = "Farita";
@@ -51,6 +54,7 @@
 "app_no_quote" = "Neniu citaĵo disponebla";
 "app_previous_quote" = "Antaŭa citaĵo";
 "app_project_website" = "Reta versio";
+"app_quote_copied" = "Citaĵo kopiita";
 "app_quote_detail_title" = "Detaloj de la citaĵo";
 "app_quote_font" = "Tiparo de citaĵoj";
 "app_quote_languages_title" = "Lingvoj de citaĵoj";

@@ -20,13 +20,16 @@
 "app_alignment" = "Στοίχιση";
 "app_appearance" = "Εμφάνιση";
 "app_attribution" = "Αναφορά";
+"app_attribution_author_short" = "Συγγραφέας";
 "app_attribution_background" = "Φόντο";
 "app_attribution_bottom" = "Κάτω";
+"app_attribution_full" = "Πλήρης";
 "app_attribution_hidden" = "Κρυφό";
 "app_center" = "Κέντρο";
 "app_clear_search" = "Εκκαθάριση αναζήτησης";
 "app_collection" = "Συλλογή";
 "app_color" = "Χρώμα";
+"app_copy_quote" = "Αντιγραφή αποσπάσματος";
 "app_copy_quote_text" = "Αντιγραφή κειμένου παραθέματος";
 "app_custom_accent_color" = "Προσαρμοσμένο χρώμα έμφασης";
 "app_done" = "Τέλος";
@@ -51,6 +54,7 @@
 "app_no_quote" = "Δεν υπάρχει διαθέσιμο παράθεμα";
 "app_previous_quote" = "Προηγούμενο παράθεμα";
 "app_project_website" = "Έκδοση ιστού";
+"app_quote_copied" = "Αντιγράφηκε";
 "app_quote_detail_title" = "Στοιχεία αποσπάσματος";
 "app_quote_font" = "Γραμματοσειρά παραθεμάτων";
 "app_quote_languages_title" = "Γλώσσες παραθεμάτων";

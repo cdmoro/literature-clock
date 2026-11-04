@@ -56,6 +56,7 @@ final class QuoteLibrary: ObservableObject {
     private let defaults = ClockSettings.defaults
     private let favoritesKey = "literature-clock.favorites.v1"
     private let historyKey = "literature-clock.history.v1"
+    private let obsoletePreferencesCleanupKey = "literature-clock.obsolete-preferences-cleaned.v1"
     private struct CollectionEnvelope: Codable {
         let version: Int
         let items: [SavedQuote]
@@ -63,6 +64,7 @@ final class QuoteLibrary: ObservableObject {
     private init() {
         favorites = load(favoritesKey, limit: 500)
         recent = load(historyKey, limit: 100)
+        removeObsoleteTimelinePreferences()
     }
 
     func isFavorite(_ quote: Quote, locale: String, time: String? = nil) -> Bool {
@@ -90,19 +92,77 @@ final class QuoteLibrary: ObservableObject {
 
     func clearRecent() {
         recent = []
+        try? FileManager.default.removeItem(at: fileURL(for: historyKey))
         defaults.removeObject(forKey: historyKey)
     }
 
     private func load(_ key: String, limit: Int) -> [SavedQuote] {
-        guard let data = defaults.data(forKey: key),
-              let envelope = try? JSONDecoder().decode(CollectionEnvelope.self, from: data),
-              envelope.version == 1 else { return [] }
+        let url = fileURL(for: key)
+        if let data = try? Data(contentsOf: url),
+           let items = decodedItems(from: data, limit: limit) {
+            return items
+        }
+        guard let legacyData = defaults.data(forKey: key),
+              let items = decodedItems(from: legacyData, limit: limit) else { return [] }
+        save(items, key: key, removeLegacyPreference: false)
+        return items
+    }
+
+    private func decodedItems(from data: Data, limit: Int) -> [SavedQuote]? {
+        guard let envelope = try? JSONDecoder().decode(CollectionEnvelope.self, from: data),
+              envelope.version == 1 else { return nil }
         var seen = Set<String>()
         return envelope.items.filter { seen.insert($0.id).inserted }.prefix(limit).map { $0 }
     }
 
-    private func save(_ items: [SavedQuote], key: String) {
-        guard let data = try? JSONEncoder().encode(CollectionEnvelope(version: 1, items: items)) else { return }
-        defaults.set(data, forKey: key)
+    @discardableResult
+    private func save(_ items: [SavedQuote], key: String, removeLegacyPreference: Bool = true) -> Bool {
+        guard let data = try? JSONEncoder().encode(CollectionEnvelope(version: 1, items: items)) else {
+            return false
+        }
+        let url = fileURL(for: key)
+        do {
+            try FileManager.default.createDirectory(
+                at: url.deletingLastPathComponent(), withIntermediateDirectories: true
+            )
+            try data.write(to: url, options: .atomic)
+            if removeLegacyPreference { defaults.removeObject(forKey: key) }
+            return true
+        } catch {
+            NSLog("Could not save quote collection %@: %@", key, error.localizedDescription)
+            return false
+        }
+    }
+
+    private func fileURL(for key: String) -> URL {
+        let supportDirectory = FileManager.default.urls(
+            for: .applicationSupportDirectory, in: .userDomainMask
+        )[0]
+        return supportDirectory
+            .appendingPathComponent("LiteratureClock", isDirectory: true)
+            .appendingPathComponent("\(key).json", isDirectory: false)
+    }
+
+    private func removeObsoleteTimelinePreferences() {
+        guard !defaults.bool(forKey: obsoletePreferencesCleanupKey),
+              var domain = defaults.persistentDomain(forName: ClockSettings.appGroup) else { return }
+        let obsoletePrefixes = ["random-quote-locale", "quote-index-widget-"]
+        var keysToRemove = domain.keys.filter { key in
+            obsoletePrefixes.contains { key.hasPrefix($0) }
+        }
+        for (key, limit) in [(favoritesKey, 500), (historyKey, 100)]
+        where FileManager.default.fileExists(atPath: fileURL(for: key).path) {
+            if let data = try? Data(contentsOf: fileURL(for: key)),
+               decodedItems(from: data, limit: limit) != nil {
+                keysToRemove.append(key)
+            }
+        }
+        guard !keysToRemove.isEmpty else {
+            defaults.set(true, forKey: obsoletePreferencesCleanupKey)
+            return
+        }
+        keysToRemove.forEach { domain.removeValue(forKey: $0) }
+        defaults.setPersistentDomain(domain, forName: ClockSettings.appGroup)
+        defaults.set(true, forKey: obsoletePreferencesCleanupKey)
     }
 }

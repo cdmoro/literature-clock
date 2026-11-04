@@ -1,39 +1,45 @@
-# macOS app distribution checklist
+# macOS app: first public release checklist
 
-This checklist tracks the work required before the app is advertised as a public download from the repository.
+This checklist is for the first public macOS app release, distributed as a direct download from GitHub Releases. The release must not depend on Apple Developer Program membership, Developer ID certificates, provisioning profiles, or notarization. The app supports macOS 14 and later and is distributed as a universal Apple silicon and Intel DMG.
 
-## Repository work
+## Release approach
 
-- [x] Keep the established app and widget bundle identifiers and app-group identifier so development installs retain their identity.
-- [x] Read the app and widget marketing/build versions from `Version.xcconfig`.
-- [x] Set the first unpublished preview version to `0.0.1`; keep the build number as a separate counter.
-- [x] Build the app and widget as a universal Release configuration locally with Xcode 27.1.
-- [x] Add a pull-request workflow that validates the macOS app component version, builds the universal app and widget, checks bundle metadata, and uploads a short-lived CI artifact.
-- [x] Keep the app CI artifact separate from consolidated public Releases.
-- [x] Connect the approved Icon Composer `.icon` directly as the macOS app icon source and remove the raster app-icon catalogue.
-- [ ] Build in Xcode and confirm it compiles the `.icon`, generates the expected icon variants, and displays the approved design in the built app.
-- [x] Rename the Icon Composer layers and assets in English.
-- [ ] Make the app DMG build reproducible on a clean macOS runner and verify app/widget signatures, bundle metadata, architectures, and checksums.
-- [ ] Add the app to the public release workflow, release notes, download links, and installation instructions after the distribution path and package are validated.
+- [x] Distribute a DMG directly from GitHub Releases.
+- [x] Use an ad-hoc code signature; no Developer ID signing or notarization.
+- [x] Keep the app and widget bundle identifiers and app-group identifier stable.
+- [ ] Document that Gatekeeper may block the downloaded app and provide tested first-open instructions.
+- [ ] Confirm that an ad-hoc signed app and widget can use their shared App Group on a clean Mac. This is a release gate because preferences and quote data use the shared container. If macOS denies access, change the app/widget data flow so the first release works without it; do not make release depend on paid signing.
 
-## Mac validation
+## Build and package
 
-- [ ] Install a CI or locally archived build on a clean Mac and launch the app from `/Applications`.
-- [ ] Add each widget size and verify configuration, timeline updates, quote links, sharing, and persistence after quitting the app or sleeping the Mac.
-- [ ] Confirm the app and widget can access the same app-group container in the installed ad-hoc distribution build. If they cannot, choose between changing the signing approach and removing/documenting features that rely on shared app-group state.
-- [ ] Test first launch and upgrade from an older development build without losing widget configuration.
+- [x] Keep marketing version and build number in `Version.xcconfig` (`0.0.1` / `1` for the first release candidate).
+- [x] Build a universal Release app and embedded widget in CI for pull requests.
+- [x] Check the CI build's app/widget versions, App Group metadata, and `arm64` / `x86_64` architectures.
+- [x] Provide a local DMG builder that ad-hoc signs both bundles and creates a SHA-256 checksum.
+- [ ] Build the `.icon` source in Xcode and inspect the app's generated icon at normal and small sizes.
+- [ ] Run the DMG builder successfully on a clean macOS machine or runner; verify the DMG, checksum, contents, architectures, bundle metadata, and ad-hoc signatures.
+- [ ] Ensure the DMG contains `Literature Clock.app`, an Applications shortcut, and concise install/first-open instructions.
 
-## Distribution decision and credentials
+## Clean Mac acceptance
 
-- [x] Distribute directly from GitHub Releases as an ad-hoc signed DMG; do not join the paid Apple Developer Program for this release.
-- [x] Skip Developer ID signing and notarization. Gatekeeper may block the first launch; users can Control-click the app, choose **Open**, and confirm.
-- [ ] Build the DMG reproducibly on a clean Mac and verify its checksum and contents.
-- [ ] Install the quarantined download on a clean Mac and confirm the first-launch instructions with Gatekeeper enabled.
-- [ ] Resolve and verify widget/App Group behavior for the ad-hoc distribution before promising that widgets share app preferences and data.
-- [ ] Add the validated DMG and checksum to the public release workflow and document installation.
+- [ ] Install the quarantined DMG downloaded from GitHub on a clean Mac with Gatekeeper enabled; follow the documented first-open steps and launch the app from `/Applications`.
+- [ ] Confirm the app opens on macOS 14 or later on Apple silicon and Intel, using a real Mac or suitable separate test machines.
+- [ ] Add small, medium, large, and extra-large widgets; configure languages and appearance; verify each renders correctly.
+- [ ] Verify quote changes over time and after sleep/wake, and verify widgets continue working after quitting the app.
+- [ ] Verify opening a widget quote opens the matching passage in the app, and test sharing and quote navigation.
+- [ ] Verify app and widget preferences and quote data are shared as intended under the ad-hoc signature.
+- [ ] Test an upgrade over an existing development install and confirm widget configuration and preferences remain usable.
 
-The existing builder produces an ad-hoc signed, non-notarized DMG. This allows direct distribution without a paid membership, but does not provide the low-friction Gatekeeper experience of a Developer ID signed and notarized app.
+## GitHub release integration
 
-The app and widget share the macOS-style App Group `$(DEVELOPMENT_TEAM).net.literatureclock.app`. macOS authorizes this group by comparing the Team ID in each process's code signature to the group identifier. The current packaging script uses an ad-hoc signature, which has no Team ID; therefore app-group access and shared app/widget preferences are a release blocker to verify. See Apple's [App Group container documentation](https://developer.apple.com/documentation/xcode/accessing-app-group-containers).
+- [ ] Add the macOS app DMG and matching `.sha256` file to the consolidated release workflow, with checks that reject missing or unexpected app artifacts.
+- [ ] Add the app version to generated release notes and include a direct download link and checksum instructions.
+- [ ] Update the app README/install instructions with macOS requirements, drag-to-Applications steps, the tested Gatekeeper flow, and the fact that the build is ad-hoc signed and not notarized.
+- [ ] Bump the macOS app version in `Version.xcconfig` for the first public build as needed; keep `CURRENT_PROJECT_VERSION` a positive build counter. Do not change the consolidated `release/VERSION` except when preparing the consolidated release.
+- [ ] Confirm the release workflow artifacts and notes are complete on a draft/rehearsal run before creating the public GitHub Release.
 
-Local result on 1 November 2026: the unsigned universal Release app and widget build succeeded with Xcode 27.1. Both bundles report version `0.0.1` / build `1`, use the expected app group, and contain `arm64` plus `x86_64`. The local DMG step failed at `hdiutil create` with `Device not configured`; repeat packaging on CI or a clean Mac.
+## Definition of ready
+
+The first release is ready when the clean-Mac acceptance checks pass, the ad-hoc app/widget shared-data behavior is resolved, and the GitHub release contains the verified universal DMG and checksum with accurate install instructions. Apple Developer credentials and notarization are not prerequisites.
+
+The local unsigned universal Release build succeeded on 1 November 2026 with Xcode 27.1; app and widget reported version `0.0.1` / build `1` and contained `arm64` plus `x86_64`. Local DMG creation failed at `hdiutil create` with `Device not configured`, so the DMG and its installation path still need a successful clean-machine build and acceptance run.

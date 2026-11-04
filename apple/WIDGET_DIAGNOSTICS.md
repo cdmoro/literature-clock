@@ -221,3 +221,34 @@ A new-widget gallery test could not be completed: computer control reported
 that the Mac was locked and automatic unlock was paused by physical input.
 No app data was deleted, no widget kind/intent identity was renamed, and no
 unverified replacement configuration was introduced.
+
+## Follow-up: macOS options refresh cost (2026-11-03)
+
+When a widget option changes, WidgetKit requests a replacement timeline. The
+provider previously re-read and decoded every selected catalogue for each such
+request, created a date formatter and recomputed the widget identity for each
+of 61 entries, and read a saved widget quote index even though widget quote
+cycling controls had been removed. Locale choices also used to be stored in
+UserDefaults for each minute and configuration.
+
+The provider now keeps a bounded, per-locale cache of the filtered 61-minute
+window, reuses configuration-derived values across entries, and uses one date
+formatter per request. Widget quote indices and per-minute random locale
+preferences are no longer read or written. This reduces repeated synchronous
+work on option changes; it does not guarantee an immediate WidgetKit redraw.
+Measure refresh latency again on a successfully installed build.
+
+## App Group preferences size fault (2026-11-03)
+
+The Mac app reported CoreFoundation's 4 MiB UserDefaults write limit for its
+team-prefixed App Group domain. The app wrote favorites and recent quotes as
+encoded collections under single `Data` keys; each saved item includes the full
+quote passage. Earlier widget timelines also persisted random-locale and
+per-widget quote-index keys without expiry. The timeline no longer creates
+those keys, but installations can still retain the old values.
+
+Favorites and recent quotes now live as atomic JSON files in the app's
+Application Support directory. Existing UserDefaults collections are migrated
+on first launch and their old keys are removed only after a successful file
+write. Startup also removes the obsolete timeline key prefixes from the App
+Group domain while preserving current settings and app quote selections.

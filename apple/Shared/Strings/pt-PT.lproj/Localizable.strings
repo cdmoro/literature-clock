@@ -20,13 +20,16 @@
 "app_alignment" = "Alinhamento";
 "app_appearance" = "Aspeto";
 "app_attribution" = "Atribuição";
+"app_attribution_author_short" = "Autor";
 "app_attribution_background" = "Fundo";
 "app_attribution_bottom" = "Em baixo";
+"app_attribution_full" = "Completa";
 "app_attribution_hidden" = "Oculto";
 "app_center" = "Centro";
 "app_clear_search" = "Limpar pesquisa";
 "app_collection" = "Coleção";
 "app_color" = "Cor";
+"app_copy_quote" = "Copiar citação";
 "app_copy_quote_text" = "Copiar texto da citação";
 "app_custom_accent_color" = "Cor de destaque personalizada";
 "app_done" = "Concluído";
@@ -51,6 +54,7 @@
 "app_no_quote" = "Nenhuma citação disponível";
 "app_previous_quote" = "Citação anterior";
 "app_project_website" = "Versão web";
+"app_quote_copied" = "Citação copiada";
 "app_quote_detail_title" = "Detalhe da citação";
 "app_quote_font" = "Tipo de letra das citações";
 "app_quote_languages_title" = "Idiomas das citações";

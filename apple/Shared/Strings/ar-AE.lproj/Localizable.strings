@@ -20,13 +20,16 @@
 "app_alignment" = "المحاذاة";
 "app_appearance" = "المظهر";
 "app_attribution" = "النسبة";
+"app_attribution_author_short" = "المؤلف";
 "app_attribution_background" = "الخلفية";
 "app_attribution_bottom" = "أسفل";
+"app_attribution_full" = "كامل";
 "app_attribution_hidden" = "مخفي";
 "app_center" = "وسط";
 "app_clear_search" = "مسح البحث";
 "app_collection" = "المجموعة";
 "app_color" = "اللون";
+"app_copy_quote" = "نسخ الاقتباس";
 "app_copy_quote_text" = "نسخ نص الاقتباس";
 "app_custom_accent_color" = "لون تمييز مخصص";
 "app_done" = "تم";
@@ -51,6 +54,7 @@
 "app_no_quote" = "لا يوجد اقتباس متاح";
 "app_previous_quote" = "الاقتباس السابق";
 "app_project_website" = "نسخة الويب";
+"app_quote_copied" = "تم نسخ الاقتباس";
 "app_quote_detail_title" = "تفاصيل الاقتباس";
 "app_quote_font" = "خط الاقتباس";
 "app_quote_languages_title" = "لغات الاقتباسات";

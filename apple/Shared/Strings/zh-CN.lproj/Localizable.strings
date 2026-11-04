@@ -20,13 +20,16 @@
 "app_alignment" = "对齐方式";
 "app_appearance" = "外观";
 "app_attribution" = "署名";
+"app_attribution_author_short" = "作者";
 "app_attribution_background" = "背景";
 "app_attribution_bottom" = "底部";
+"app_attribution_full" = "完整";
 "app_attribution_hidden" = "隐藏";
 "app_center" = "居中";
 "app_clear_search" = "清除搜索";
 "app_collection" = "收藏集";
 "app_color" = "颜色";
+"app_copy_quote" = "复制引文";
 "app_copy_quote_text" = "复制引文文本";
 "app_custom_accent_color" = "自定义强调色";
 "app_done" = "完成";
@@ -51,6 +54,7 @@
 "app_no_quote" = "没有可用的引文";
 "app_previous_quote" = "上一条引文";
 "app_project_website" = "网页版";
+"app_quote_copied" = "已复制引文";
 "app_quote_detail_title" = "引文详情";
 "app_quote_font" = "引文字体";
 "app_quote_languages_title" = "引文语言";

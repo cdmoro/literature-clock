@@ -134,7 +134,7 @@ enum ClockSettings {
         let storedLocales = defaults.string(forKey: localesKey) ?? ""
         let fallback = defaults.string(forKey: localeKey) ?? Locale.current.identifier
         let candidates = ClockCatalogue.selectedLocales(storedLocales, fallback: fallback)
-        return ClockCatalogue.randomLocale(at: .now, from: candidates, defaults: defaults,
+        return ClockCatalogue.randomLocale(at: .now, from: candidates,
                                            safeOnly: defaults.bool(forKey: safeOnlyKey))
     }
 
@@ -176,19 +176,32 @@ struct ReadableQuoteText: View {
     }
 
     private func excerpt(context: Int) -> (before: String, time: String, after: String) {
-        let beforeCount = min(parts.before.count, context / 2)
-        let afterCount = min(parts.after.count, context - beforeCount)
-        let expandedBefore = min(parts.before.count, context - afterCount)
+        let beforeCount = wordBoundaryCount(in: parts.before, limit: context / 2, fromEnd: true)
+        let afterCount = wordBoundaryCount(in: parts.after, limit: context - beforeCount, fromEnd: false)
+        let expandedBefore = wordBoundaryCount(in: parts.before, limit: context - afterCount, fromEnd: true)
         return ((expandedBefore < parts.before.count ? "…" : "") + String(parts.before.suffix(expandedBefore)),
                 parts.time,
                 String(parts.after.prefix(afterCount)) + (afterCount < parts.after.count ? "…" : ""))
+    }
+
+    private func wordBoundaryCount(in text: String, limit: Int, fromEnd: Bool) -> Int {
+        guard limit > 0, text.count > limit else { return min(text.count, max(limit, 0)) }
+        let boundary = fromEnd
+            ? text.index(text.endIndex, offsetBy: -limit)
+            : text.index(text.startIndex, offsetBy: limit)
+        let range = fromEnd ? text.startIndex..<boundary : boundary..<text.endIndex
+        guard let whitespace = text.rangeOfCharacter(from: .whitespacesAndNewlines,
+                                                      options: fromEnd ? .backwards : [],
+                                                      range: range) else { return 0 }
+        return fromEnd ? text.distance(from: whitespace.upperBound, to: text.endIndex)
+                       : text.distance(from: text.startIndex, to: whitespace.lowerBound)
     }
 
     private func line(_ value: (before: String, time: String, after: String), size: CGFloat) -> some View {
         let quoteText: Text
         if #available(iOS 18.0, macOS 15.0, *) {
             let highlightedTime = Text(value.time)
-                .font(ClockSettings.quoteFont(fontName, size: size))
+                .font(ClockSettings.quoteFont(fontName, size: size, weight: .regular))
                 .foregroundColor(highlight ? accent : foreground)
                 .customAttribute(ClockTimeHighlightAttribute())
             quoteText = Text(value.before).foregroundColor(foreground) +
@@ -196,6 +209,7 @@ struct ReadableQuoteText: View {
         } else {
             quoteText = Text(value.before).foregroundColor(foreground) +
                 Text(value.time)
+                    .font(ClockSettings.quoteFont(fontName, size: size, weight: .regular))
                     .foregroundColor(highlight ? accent : foreground) +
                 Text(value.after).foregroundColor(foreground)
         }
@@ -210,6 +224,7 @@ struct ReadableQuoteText: View {
             }
         }
             .font(ClockSettings.quoteFont(fontName, size: size))
+            .fontWeight(.regular)
             .lineSpacing(fontName == "specialElite" ? size * 0.18 : 0)
             .multilineTextAlignment(alignment)
             .frame(maxWidth: .infinity, alignment: alignment == .center ? .center : (alignment == .trailing ? .trailing : .leading))

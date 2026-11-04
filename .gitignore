@@ -1,6 +1,7 @@
 .vscode
 node_modules
 dist
+**/.DS_Store
 public/times
 scripts/*.csv
 .translation-work/

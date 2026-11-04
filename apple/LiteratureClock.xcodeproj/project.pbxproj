@@ -15,7 +15,6 @@
 		E00000000000000000000009 /* Shared/Models/Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000072 /* Shared/Models/Quote.swift */; };
 		E0000000000000000000000A /* Shared/App/ClockHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000073 /* Shared/App/ClockHomeView.swift */; };
 		E0000000000000000000000B /* Shared/Models/ClockSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000076 /* Shared/Models/ClockSettings.swift */; };
-		E0000000000000000000000C /* Shared/Models/CycleQuoteIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000077 /* Shared/Models/CycleQuoteIntent.swift */; };
 		E0000000000000000000000F /* Shared/Catalogues in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000075 /* Shared/Catalogues */; };
 		E00000000000000000000010 /* Shared/Fonts/SpecialElite-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000119 /* Shared/Fonts/SpecialElite-Regular.ttf */; };
 		E00000000000000000000013 /* LiteratureClockMacWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E00000000000000000000014 /* LiteratureClockMacWidgetExtension.appex */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -23,7 +22,6 @@
 		E0000000000000000000001C /* Shared/Models/ClockWidgetConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00000000000000000000003 /* Shared/Models/ClockWidgetConfiguration.swift */; };
 		E0000000000000000000001D /* Shared/Widgets/LiteratureClockWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000074 /* Shared/Widgets/LiteratureClockWidget.swift */; };
 		E0000000000000000000001E /* Shared/Models/ClockSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000076 /* Shared/Models/ClockSettings.swift */; };
-		E0000000000000000000001F /* Shared/Models/CycleQuoteIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000077 /* Shared/Models/CycleQuoteIntent.swift */; };
 		E00000000000000000000235 /* Shared/Models/QuoteLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000211 /* Shared/Models/QuoteLibrary.swift */; };
 		E00000000000000000000022 /* Shared/Catalogues in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000075 /* Shared/Catalogues */; };
 		E00000000000000000000023 /* Shared/Fonts/SpecialElite-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000119 /* Shared/Fonts/SpecialElite-Regular.ttf */; };
@@ -61,7 +59,6 @@
 		A00000000000000000000074 /* Shared/Widgets/LiteratureClockWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/Widgets/LiteratureClockWidget.swift; sourceTree = "<group>"; };
 		A00000000000000000000075 /* Shared/Catalogues */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shared/Catalogues; sourceTree = "<group>"; };
 		A00000000000000000000076 /* Shared/Models/ClockSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/Models/ClockSettings.swift; sourceTree = "<group>"; };
-		A00000000000000000000077 /* Shared/Models/CycleQuoteIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/Models/CycleQuoteIntent.swift; sourceTree = "<group>"; };
 		A00000000000000119 /* Shared/Fonts/SpecialElite-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shared/Fonts/SpecialElite-Regular.ttf"; sourceTree = "<group>"; };
 		A00000000000000000000211 /* Shared/Models/QuoteLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/Models/QuoteLibrary.swift; sourceTree = "<group>"; };
 		A00000000000000222 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text; name = "en-GB"; path = "en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -143,7 +140,6 @@
 			children = (
 				A00000000000000000000072 /* Shared/Models/Quote.swift */,
 				A00000000000000000000211 /* Shared/Models/QuoteLibrary.swift */,
-				A00000000000000000000077 /* Shared/Models/CycleQuoteIntent.swift */,
 				A00000000000000000000076 /* Shared/Models/ClockSettings.swift */,
 				D00000000000000000000003 /* Shared/Models/ClockWidgetConfiguration.swift */,
 			);
@@ -252,7 +248,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 2710;
+				LastUpgradeCheck = 2720;
 
 			};
 			buildConfigurationList = A00000000000000000000011 /* Build configuration list for PBXProject "LiteratureClock" */;
@@ -321,7 +317,6 @@
 				E00000000000000000000210 /* Shared/Models/QuoteLibrary.swift in Sources */,
 				E0000000000000000000000A /* Shared/App/ClockHomeView.swift in Sources */,
 				E0000000000000000000000B /* Shared/Models/ClockSettings.swift in Sources */,
-				E0000000000000000000000C /* Shared/Models/CycleQuoteIntent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +329,6 @@
 				E0000000000000000000001C /* Shared/Models/ClockWidgetConfiguration.swift in Sources */,
 				E0000000000000000000001D /* Shared/Widgets/LiteratureClockWidget.swift in Sources */,
 				E0000000000000000000001E /* Shared/Models/ClockSettings.swift in Sources */,
-				E0000000000000000000001F /* Shared/Models/CycleQuoteIntent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +369,7 @@
 		A00000000000000000000085 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -394,6 +389,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = JTNBVS8ZJ3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -413,6 +409,7 @@
 		A00000000000000000000086 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -432,6 +429,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = JTNBVS8ZJ3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -456,7 +454,6 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/LiteratureClock.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = JTNBVS8ZJ3;
 				ENABLE_APP_SANDBOX = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -479,7 +476,6 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/LiteratureClock.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = JTNBVS8ZJ3;
 				ENABLE_APP_SANDBOX = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -501,7 +497,6 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = macOS/LiteratureClock.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JTNBVS8ZJ3;
 				ENABLE_APP_SANDBOX = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = macOS/WidgetInfo.plist;
@@ -524,7 +519,6 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = macOS/LiteratureClock.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JTNBVS8ZJ3;
 				ENABLE_APP_SANDBOX = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = macOS/WidgetInfo.plist;

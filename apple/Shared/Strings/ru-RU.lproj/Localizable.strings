@@ -20,13 +20,16 @@
 "app_alignment" = "Выравнивание";
 "app_appearance" = "Оформление";
 "app_attribution" = "Атрибуция";
+"app_attribution_author_short" = "Автор";
 "app_attribution_background" = "Фон";
 "app_attribution_bottom" = "Снизу";
+"app_attribution_full" = "Полная";
 "app_attribution_hidden" = "Скрыто";
 "app_center" = "По центру";
 "app_clear_search" = "Очистить поиск";
 "app_collection" = "Коллекция";
 "app_color" = "Цвет";
+"app_copy_quote" = "Копировать цитату";
 "app_copy_quote_text" = "Копировать текст цитаты";
 "app_custom_accent_color" = "Пользовательский цвет акцента";
 "app_done" = "Готово";
@@ -51,6 +54,7 @@
 "app_no_quote" = "Цитата недоступна";
 "app_previous_quote" = "Предыдущая цитата";
 "app_project_website" = "Веб-версия";
+"app_quote_copied" = "Цитата скопирована";
 "app_quote_detail_title" = "Сведения о цитате";
 "app_quote_font" = "Шрифт цитат";
 "app_quote_languages_title" = "Языки цитат";

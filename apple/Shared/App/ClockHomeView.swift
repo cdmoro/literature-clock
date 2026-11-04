@@ -44,14 +44,19 @@ struct ClockHomeView: View {
             let _ = quoteRevision
             let quoteDate = pausedQuoteDate ?? timeline.date
             let primaryLocale = ClockCatalogue.randomLocale(at: quoteDate, from: selectedLocales,
-                defaults: ClockSettings.defaults, safeOnly: safeOnly)
+                safeOnly: safeOnly)
             let allQuotes = ClockCatalogue.quotes(at: quoteDate, locale: primaryLocale)
             let quotes = safeOnly ? allQuotes.filter(\.sfw) : allQuotes
-            let quoteIndex = ClockCatalogue.quoteIndex(at: quoteDate, locale: primaryLocale, count: quotes.count, defaults: ClockSettings.defaults)
-            let quote: Quote? = quotes.isEmpty
+            let phraseQuotes = fuzzy
+                ? quotes.filter { $0.quoteTimeCase.rangeOfCharacter(from: .decimalDigits) == nil }
+                : []
+            let selectionPool = phraseQuotes.isEmpty ? quotes : phraseQuotes
+            let quoteIndex = ClockCatalogue.quoteIndex(at: quoteDate, locale: primaryLocale,
+                count: selectionPool.count, defaults: ClockSettings.defaults, fuzzy: fuzzy)
+            let quote: Quote? = selectionPool.isEmpty
                 ? ClockCatalogue.fallbackQuote(at: quoteDate, locale: primaryLocale)
-                : quotes[quoteIndex]
-            let displayedQuoteCount = max(quotes.count, 1)
+                : selectionPool[quoteIndex]
+            let displayedQuoteCount = max(selectionPool.count, 1)
             let quoteDirection: LayoutDirection = Locale.Language(identifier: primaryLocale).characterDirection == .rightToLeft ? .rightToLeft : .leftToRight
             NavigationStack {
                 VStack(spacing: 16) {
@@ -129,7 +134,8 @@ struct ClockHomeView: View {
                         .font(.system(size: 22, weight: .regular))
                         Spacer(minLength: 4)
                         if quote != nil {
-                            quoteNavigationButtons(count: displayedQuoteCount, index: quoteIndex, date: quoteDate, locale: primaryLocale)
+                            quoteNavigationButtons(count: displayedQuoteCount, index: quoteIndex,
+                                                   date: quoteDate, locale: primaryLocale, fuzzy: fuzzy)
                         }
                     }
                     #if os(macOS)
@@ -209,14 +215,8 @@ struct ClockHomeView: View {
         }
         .sheet(item: $presentedSheet, onDismiss: presentPendingSheet) { sheet in
             switch sheet {
-            case .quote(let destination):
-                WidgetQuoteDetail(destination: destination)
-            case .share(let destination):
-                QuoteShareOptions(quote: destination.quote, locale: destination.locale,
-                                  palette: destination.palette, fontName: destination.font,
-                                  highlight: destination.highlight, dark: destination.dark,
-                                  fuzzy: destination.values["fuzzy"] == "1", accentHex: destination.accentHex,
-                                  attribution: appAttributionMode(destination.values["attribution"] ?? "book-author"))
+            case .quote(let destination), .share(let destination):
+                QuoteShareOptions(destination: destination)
             }
         }
         .preferredColorScheme(appearance == "system" ? nil : (appearance == "dark" ? .dark : .light))
@@ -242,7 +242,7 @@ struct ClockHomeView: View {
         if fuzzy {
             VStack(alignment: .leading, spacing: 2) {
                 if visibleAttribution == "book-author", !quote.title.isEmpty {
-                    Text(quote.title)
+                    Text(quote.title).italic()
                 }
                 if !quote.author.isEmpty {
                     Text(quote.author)
@@ -302,10 +302,11 @@ struct ClockHomeView: View {
         .padding(.top, 10)
     }
 
-    private func quoteNavigationButtons(count: Int, index: Int, date: Date, locale: String) -> some View {
+    private func quoteNavigationButtons(count: Int, index: Int, date: Date, locale: String,
+                                        fuzzy: Bool) -> some View {
         HStack(spacing: 5) {
             Button {
-                cycleQuote(step: -1, date: date, locale: locale, count: count, index: index)
+                cycleQuote(step: -1, date: date, locale: locale, count: count, index: index, fuzzy: fuzzy)
             } label: {
                     Image(systemName: "chevron.left").font(.system(size: 16, weight: .bold))
                     .frame(width: 40, height: 40)
@@ -321,7 +322,7 @@ struct ClockHomeView: View {
                 .frame(minWidth: 32)
                 .accessibilityLabel(Text("\(index + 1)/\(count)"))
             Button {
-                cycleQuote(step: 1, date: date, locale: locale, count: count, index: index)
+                cycleQuote(step: 1, date: date, locale: locale, count: count, index: index, fuzzy: fuzzy)
             } label: {
                 Image(systemName: "chevron.right").font(.system(size: 16, weight: .bold))
                     .frame(width: 40, height: 40)
@@ -335,10 +336,10 @@ struct ClockHomeView: View {
         .tint(accent)
     }
 
-    private func cycleQuote(step: Int, date: Date, locale: String, count: Int, index: Int) {
+    private func cycleQuote(step: Int, date: Date, locale: String, count: Int, index: Int, fuzzy: Bool) {
         guard count > 1 else { return }
         let next = (index + step + count) % count
-        ClockSettings.defaults.set(next, forKey: ClockCatalogue.quoteIndexKey(at: date, locale: locale))
+        ClockSettings.defaults.set(next, forKey: ClockCatalogue.quoteIndexKey(at: date, locale: locale, fuzzy: fuzzy))
         quoteRevision += 1
     }
 
@@ -637,8 +638,7 @@ private struct SavedQuoteDetail: View {
             .sheet(isPresented: $sharing) {
                 QuoteShareOptions(quote: item.quote, locale: item.locale,
                                   palette: palette, fontName: font, highlight: highlight,
-                                  dark: dark, fuzzy: false, accentHex: accentHex,
-                                  attribution: appAttributionMode(attribution))
+                                  dark: dark, accentHex: accentHex)
             }
         }
         #if os(macOS)
@@ -678,77 +678,17 @@ private struct WidgetQuoteDestination: Identifiable {
     var background: Color { ClockSettings.background(for: accent, dark: dark) }
 }
 
-private struct WidgetQuoteDetail: View {
-    @Environment(\.dismiss) private var dismiss
-    @Environment(\.locale) private var interfaceLocale
-    @State private var sharing = false
-    let destination: WidgetQuoteDestination
-    private var attribution: String {
-        appAttributionMode(destination.values["attribution"] ?? "book-author")
-    }
-
-    private var detailTitle: String {
-        QuoteLibraryText.value("settings_attribution_position", locale: interfaceLocale.identifier)
-    }
-
-    var body: some View {
-        NavigationStack {
-            ScrollView {
-                let parts = destination.quote.timeParts()
-                let foreground = ClockSettings.foreground(for: destination.background)
-                VStack(alignment: .leading, spacing: 24) {
-                    (Text(parts.before) +
-                     Text(parts.time)
-                        .foregroundColor(destination.highlight ? destination.accent : foreground) +
-                     Text(parts.after))
-                        .font(ClockSettings.quoteFont(destination.font, size: 28))
-                        .lineSpacing(destination.font == "specialElite" ? 28 * 0.18 : 0)
-                    VStack(alignment: .leading, spacing: 6) {
-                        if attribution != "author" { Text(destination.quote.title) }
-                        Text(destination.quote.author)
-                    }
-                    .font(.subheadline)
-                }
-                .foregroundStyle(foreground)
-                .padding(24)
-                .environment(\.locale, Locale(identifier: destination.locale))
-                .environment(\.layoutDirection, Locale.Language(identifier: destination.locale).characterDirection == .rightToLeft ? .rightToLeft : .leftToRight)
-            }
-            .background(destination.background)
-            .navigationTitle(detailTitle)
-            .clockInlineTitle()
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) { Button("app_done") { dismiss() } }
-                ToolbarItem(placement: .clockLeading) {
-                    Button { sharing = true } label: { Label("share", systemImage: "square.and.arrow.up") }
-                }
-            }
-            .sheet(isPresented: $sharing) {
-                QuoteShareOptions(quote: destination.quote, locale: destination.locale,
-                                  palette: destination.palette, fontName: destination.font,
-                                  highlight: destination.highlight, dark: destination.dark,
-                                  fuzzy: false, accentHex: destination.accentHex,
-                                  attribution: attribution)
-            }
-        }
-        #if os(macOS)
-        .frame(minWidth: 500, idealWidth: 600, minHeight: 500, idealHeight: 650)
-        #endif
-        .preferredColorScheme(destination.dark ? .dark : .light)
-    }
-}
-
 private struct QuoteShareOptions: View {
     @Environment(\.dismiss) private var dismiss
-    let attribution: String
     let quote: Quote
     let locale: String
     let palette: String
     let fontName: String
     let highlight: Bool
     let dark: Bool
-    let fuzzy: Bool
+    private let fuzzy = false
     let accentHex: String
+    @State private var attribution = "book-author"
     @State private var shareAppearanceRaw = QuoteShareAppearance.source.rawValue
     @State private var sharePalette: String
     @State private var shareFontRaw: String
@@ -785,6 +725,32 @@ private struct QuoteShareOptions: View {
     private var cardAccent: Color { accent }
     private var effectiveBackground: Color { cardBackground }
     private var effectiveAccent: Color { cardAccent }
+    private var quoteCopyText: String {
+        let credit: String
+        switch attribution {
+        case "author": credit = quote.author
+        case "hidden": credit = ""
+        default:
+            if quote.title.isEmpty { credit = quote.author }
+            else if quote.author.isEmpty { credit = quote.title }
+            else { credit = "\(quote.title), \(quote.author)" }
+        }
+        let passage = quote.text(for: Locale(identifier: locale))
+        return credit.isEmpty ? passage : "\(passage)\n\n— \(credit)"
+    }
+
+    private var attributionPicker: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("app_attribution").font(.subheadline.weight(.medium))
+            Picker("app_attribution", selection: $attribution) {
+                Text("app_attribution_full").tag("book-author")
+                Text("app_attribution_author_short").tag("author")
+                Text("app_attribution_hidden").tag("hidden")
+            }
+            .labelsHidden()
+            .pickerStyle(.segmented)
+        }
+    }
 
     var body: some View {
         Group {
@@ -844,6 +810,7 @@ private struct QuoteShareOptions: View {
                                         Text("app_center").tag(QuoteShareAlignment.center.rawValue)
                                     }
                                     .pickerStyle(.segmented)
+                                    attributionPicker
                                 } label: {
                                     shareSectionHeader("Text", summary: "\(shareFont.label) · \(alignment == .center ? "Centered" : "Left")")
                                 }
@@ -854,17 +821,6 @@ private struct QuoteShareOptions: View {
                         .frame(maxHeight: .infinity)
                     } else {
                         Spacer(minLength: 8)
-                        Button {
-                            withAnimation(.easeInOut(duration: 0.2)) { editingStyle = true }
-                        } label: {
-                            Label("app_edit_quote", systemImage: "pencil")
-                                .font(.headline)
-                                .padding(.horizontal, 18)
-                                .padding(.vertical, 8)
-                        }
-                        .buttonStyle(.borderedProminent)
-                        .clipShape(Capsule())
-                        .padding(.bottom, 24)
                     }
                 }
             }
@@ -881,7 +837,23 @@ private struct QuoteShareOptions: View {
                     .padding(.vertical, 12)
                     .background(.bar)
                 } else {
-                    HStack(spacing: 44) {
+                    HStack(spacing: 16) {
+                        Button {
+                            copyQuoteText(quoteCopyText)
+                            copied = true
+                        } label: {
+                            shareActionLabel(title: copied ? "app_quote_copied" : "app_copy_quote",
+                                             symbol: copied ? "checkmark" : "doc.on.doc")
+                        }
+                        .accessibilityLabel(Text(copied ? "app_quote_copied" : "app_copy_quote"))
+
+                        Button {
+                            withAnimation(.easeInOut(duration: 0.2)) { editingStyle = true }
+                        } label: {
+                            shareActionLabel(title: "app_edit_quote", symbol: "pencil")
+                        }
+                        .accessibilityLabel(Text("app_edit_quote"))
+
                         Button {
                             let renderer = ImageRenderer(content: QuoteShareCard(attribution: attribution, quote: quote, locale: locale,
                                 accent: effectiveAccent, background: effectiveBackground, font: shareFont,
@@ -894,18 +866,9 @@ private struct QuoteShareOptions: View {
                             #endif
                             showingActivity = imageToShare != nil
                         } label: {
-                            shareActionLabel(title: "Share quote", symbol: "square.and.arrow.up")
+                            shareActionLabel(title: "app_share_quote", symbol: "square.and.arrow.up")
                         }
                         .accessibilityLabel(Text("app_share_quote"))
-
-                        Button {
-                            copyQuoteText(quote.text(for: Locale(identifier: locale)))
-                            copied = true
-                        } label: {
-                            shareActionLabel(title: copied ? "Copied" : "Copy text",
-                                             symbol: copied ? "checkmark" : "doc.on.doc")
-                        }
-                        .accessibilityLabel(copied ? "Quote text copied" : "Copy quote text")
                     }
                     .buttonStyle(.plain)
                     .frame(maxWidth: .infinity)
@@ -929,11 +892,11 @@ private struct QuoteShareOptions: View {
                                   preview: SharePreview("Literature Clock", image: Image(nsImage: imageToShare))) {
                             Label("app_share_quote", systemImage: "square.and.arrow.up")
                         }
-                        Button("app_copy_quote_text") { copyQuoteText(quote.text(for: Locale(identifier: locale))) }
+                        Button("app_copy_quote") { copyQuoteText(quoteCopyText) }
                         Button("app_done") { showingActivity = false }
                     }.padding(32)
                     #else
-                    ActivityView(activityItems: [imageToShare], copyText: quote.text(for: Locale(identifier: locale)))
+                    ActivityView(activityItems: [imageToShare], copyText: quoteCopyText)
                     #endif
                 }
             }
@@ -945,30 +908,36 @@ private struct QuoteShareOptions: View {
         #else
         .presentationDetents([.large])
         #endif
+        .preferredColorScheme(dark ? .dark : .light)
+    }
+
+    init(destination: WidgetQuoteDestination) {
+        self.init(quote: destination.quote, locale: destination.locale, palette: destination.palette,
+                  fontName: destination.font, highlight: destination.highlight, dark: destination.dark,
+                  accentHex: destination.accentHex)
     }
 
     init(quote: Quote, locale: String, palette: String, fontName: String,
-         highlight: Bool, dark: Bool, fuzzy: Bool, accentHex: String, attribution: String) {
+         highlight: Bool, dark: Bool, accentHex: String) {
         self.quote = quote
         self.locale = locale
         self.palette = palette
         self.fontName = fontName
         self.highlight = highlight
         self.dark = dark
-        self.fuzzy = fuzzy
-        self.attribution = attribution
         self.accentHex = accentHex
         _sharePalette = State(initialValue: palette)
         _customAccentHex = State(initialValue: ClockSettings.validAccentHex(accentHex)
             ?? ClockSettings.defaults.string(forKey: ClockSettings.customAccentKey) ?? "#B36E26")
         _shareHighlight = State(initialValue: highlight)
+        _attribution = State(initialValue: "book-author")
         let requestedFont = fontName == "sans" ? QuoteShareFont.rounded.rawValue : fontName
         let supported = QuoteShareFont(rawValue: requestedFont) != nil
             && (requestedFont != QuoteShareFont.dyslexic.rawValue || ClockSettings.dyslexicFontName != nil)
         _shareFontRaw = State(initialValue: supported ? requestedFont : QuoteShareFont.serif.rawValue)
     }
 
-    private func shareActionLabel(title: String, symbol: String) -> some View {
+    private func shareActionLabel(title: LocalizedStringKey, symbol: String) -> some View {
         VStack(spacing: 8) {
             Image(systemName: symbol)
                 .font(.system(size: 23, weight: .semibold))
@@ -1033,25 +1002,25 @@ private struct QuoteShareOptions: View {
     private var fontChips: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("app_quote_font").font(.subheadline.weight(.medium))
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 125))], spacing: 8) {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 110))], spacing: 7) {
                 ForEach(QuoteShareFont.allCases.filter { $0 != .dyslexic || ClockSettings.dyslexicFontName != nil }) { option in
                     Button { shareFontRaw = option.rawValue } label: {
                         HStack(spacing: 6) {
-                            Text(option.label).font(option.font(size: 16))
+                            Text(option.label).font(option.font(size: 14))
                                 .lineLimit(1).minimumScaleFactor(0.75)
                             if shareFont == option {
                                 Image(systemName: "checkmark").font(.caption.weight(.bold))
                             }
                         }
-                        .frame(maxWidth: .infinity, minHeight: 44, maxHeight: 44)
-                        .padding(.horizontal, 8)
+                        .frame(maxWidth: .infinity, minHeight: 38, maxHeight: 38)
+                        .padding(.horizontal, 6)
                         .background(shareFont == option ? Color.accentColor.opacity(0.16) : Color.primary.opacity(0.05),
-                                    in: RoundedRectangle(cornerRadius: 12))
+                                    in: RoundedRectangle(cornerRadius: 10))
                         .overlay {
-                            RoundedRectangle(cornerRadius: 12)
+                            RoundedRectangle(cornerRadius: 10)
                                 .strokeBorder(shareFont == option ? Color.accentColor : Color.clear, lineWidth: 2)
                         }
-                        .contentShape(RoundedRectangle(cornerRadius: 12))
+                        .contentShape(RoundedRectangle(cornerRadius: 10))
                     }
                     .buttonStyle(.plain)
                     .accessibilityAddTraits(shareFont == option ? .isSelected : [])
@@ -1079,17 +1048,33 @@ private struct QuoteShareOptions: View {
             .padding(.vertical, 16)
             Divider()
             HStack(spacing: 24) {
-                GeometryReader { geometry in
-                    let width = max(0, min(geometry.size.width, geometry.size.height * format.aspectRatio))
-                    ShareQuotePreview(attribution: attribution, quote: quote, locale: locale,
-                                      accent: effectiveAccent, background: effectiveBackground,
-                                      font: shareFont, alignment: alignment, highlight: shareHighlight,
-                                      fuzzy: fuzzy, format: format, displayWidth: width)
-                        .frame(width: width, height: width / format.aspectRatio)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                VStack(spacing: 10) {
+                    GeometryReader { geometry in
+                        let width = max(0, min(geometry.size.width, geometry.size.height * format.aspectRatio))
+                        ShareQuotePreview(attribution: attribution, quote: quote, locale: locale,
+                                          accent: effectiveAccent, background: effectiveBackground,
+                                          font: shareFont, alignment: alignment, highlight: shareHighlight,
+                                          fuzzy: fuzzy, format: format, displayWidth: width)
+                            .frame(width: width, height: width / format.aspectRatio)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    }
+                    if !editingStyle {
+                        Button {
+                            withAnimation(.easeInOut(duration: 0.2)) { editingStyle = true }
+                        } label: {
+                            Label("app_edit_quote", systemImage: "pencil")
+                                .font(.system(size: 13, weight: .medium))
+                                .padding(.horizontal, 14)
+                                .padding(.vertical, 7)
+                                .background(Color.primary.opacity(0.08), in: RoundedRectangle(cornerRadius: 9))
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel(Text("app_edit_quote"))
+                    }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
 
+                if editingStyle {
                 VStack(alignment: .leading, spacing: 20) {
                     shareEditorTabs
                     ScrollView {
@@ -1134,6 +1119,8 @@ private struct QuoteShareOptions: View {
                                     .labelsHidden()
                                     .pickerStyle(.segmented)
                                 }
+                                Divider()
+                                attributionPicker
                             }
                         }
                         .frame(maxWidth: .infinity, alignment: .topLeading)
@@ -1145,32 +1132,36 @@ private struct QuoteShareOptions: View {
                 .frame(width: 320)
                 .frame(maxHeight: .infinity, alignment: .topLeading)
                 .background(Color.primary.opacity(0.035), in: RoundedRectangle(cornerRadius: 18))
+                .transition(.move(edge: .trailing).combined(with: .opacity))
+                }
             }
             .padding(24)
             Divider()
             HStack(spacing: 12) {
                 Spacer()
                 Button {
-                    copyQuoteText(quote.text(for: Locale(identifier: locale)))
+                    copyQuoteText(quoteCopyText)
                     copied = true
                 } label: {
-                    Label(copied ? "app_quote_text_copied" : "app_copy_quote_text",
+                    Label(copied ? "app_quote_copied" : "app_copy_quote",
                           systemImage: copied ? "checkmark" : "doc.on.doc")
                 }
                 .buttonStyle(.bordered)
+                .buttonBorderShape(.roundedRectangle(radius: 8))
                 if let imageToShare {
                     ShareLink(item: Image(nsImage: imageToShare),
                               preview: SharePreview("Literature Clock", image: Image(nsImage: imageToShare))) {
                         Label("app_share_quote", systemImage: "square.and.arrow.up")
                     }
                     .buttonStyle(.borderedProminent)
+                    .buttonBorderShape(.roundedRectangle(radius: 8))
                 }
             }
-            .controlSize(.large)
+            .controlSize(.regular)
             .padding(16)
         }
         .onChange(of: [shareAppearanceRaw, sharePalette, shareFontRaw, alignmentRaw,
-                       customAccentHex, String(shareHighlight)], initial: true) { _, _ in
+                       customAccentHex, String(shareHighlight), attribution], initial: true) { _, _ in
             let renderer = ImageRenderer(content: QuoteShareCard(attribution: attribution, quote: quote, locale: locale,
                 accent: effectiveAccent, background: effectiveBackground, font: shareFont,
                 alignment: alignment, highlight: shareHighlight, fuzzy: fuzzy, format: format))
@@ -1324,9 +1315,7 @@ private struct ShareQuotePreview: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(QuoteShareBrand.title(for: locale)).font(.caption.weight(.semibold))
-            .foregroundStyle(foreground.opacity(0.65))
+        VStack(alignment: .leading, spacing: 0) {
             ShareQuoteComposition(attribution: attribution, quote: quote, foreground: foreground, accent: accent,
                                   font: font, alignment: alignment, highlight: highlight,
                                   fuzzy: fuzzy,
@@ -1334,6 +1323,8 @@ private struct ShareQuotePreview: View {
                                       * displayWidth / format.canvas.width)
                 .environment(\.layoutDirection, quoteDirection)
                 .frame(maxHeight: .infinity, alignment: .center)
+            QuoteShareBrand.signature(locale: locale, iconSize: 19, font: .caption.weight(.semibold))
+                .padding(.top, 8)
         }
         .padding(14)
         .foregroundStyle(foreground)
@@ -1358,15 +1349,19 @@ private struct QuoteShareCard: View {
         let inset = min(format.canvas.width, format.canvas.height) * 0.065
         let textColor = ClockSettings.foreground(for: background)
         VStack(alignment: .leading, spacing: 0) {
-            Text(QuoteShareBrand.title(for: locale))
-                .font(.system(size: min(format.canvas.width, format.canvas.height) * 0.047, weight: .semibold))
-                .foregroundStyle(textColor.opacity(0.82))
             ShareQuoteComposition(attribution: attribution, quote: quote, foreground: textColor, accent: accent,
                                   font: font, alignment: alignment, highlight: highlight,
                                   fuzzy: fuzzy,
                                   textSize: min(format.canvas.width, format.canvas.height) * 0.085)
                 .environment(\.layoutDirection, Locale.Language(identifier: locale).characterDirection == .rightToLeft ? .rightToLeft : .leftToRight)
                 .frame(maxHeight: .infinity, alignment: .center)
+            QuoteShareBrand.signature(
+                locale: locale,
+                iconSize: min(format.canvas.width, format.canvas.height) * 0.075,
+                font: .system(size: min(format.canvas.width, format.canvas.height) * 0.047, weight: .semibold)
+            )
+            .foregroundStyle(textColor.opacity(0.82))
+            .padding(.top, 8)
         }
         .padding(inset)
         .frame(width: format.canvas.width, height: format.canvas.height)
@@ -1389,7 +1384,7 @@ private func quoteAttributionText(_ quote: Quote, mode: String) -> Text? {
 }
 
 private func appAttributionMode(_ mode: String) -> String {
-    mode == "author" ? "author" : "book-author"
+    mode == "author" || mode == "hidden" ? mode : "book-author"
 }
 
 private struct ShareQuoteComposition: View {
@@ -1436,13 +1431,13 @@ private struct ShareQuoteComposition: View {
     private var attributionView: some View {
         if alignment == .center {
             VStack(spacing: textSize * 0.12) {
-                if attribution != "author" { Text(quote.title) }
+                if attribution != "author" { Text(quote.title).italic() }
                 Text(quote.author)
             }
         } else if attribution == "author" {
             Text("— \(quote.author)")
         } else {
-            Text("— \(quote.title), \(quote.author)")
+            Text("— ") + Text(quote.title).italic() + Text(", \(quote.author)")
         }
     }
 }
@@ -1465,6 +1460,25 @@ private struct ShareQuoteText: View {
 }
 
 private enum QuoteShareBrand {
+    static var icon: Image {
+        #if os(macOS)
+        return Image(nsImage: NSApp.applicationIconImage)
+        #else
+        return Image(systemName: "book.closed.fill")
+        #endif
+    }
+
+    static func signature(locale: String, iconSize: CGFloat, font: Font) -> some View {
+        HStack(spacing: iconSize * 0.35) {
+            icon
+                .resizable()
+                .scaledToFit()
+                .frame(width: iconSize, height: iconSize)
+            Text(title(for: locale))
+                .font(font)
+        }
+    }
+
     static func title(for locale: String) -> String {
         switch Locale(identifier: locale).language.languageCode?.identifier {
         case "es": "Reloj literario"
@@ -1584,6 +1598,7 @@ struct SettingsView: View {
                 Picker("settings_attribution_position", selection: $attribution) {
                     Text("app_show_book_author").tag("book-author")
                     Text("app_show_author").tag("author")
+                    Text("app_attribution_hidden").tag("hidden")
                 }
             }
             Section("app_about") {

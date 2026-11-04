@@ -69,26 +69,55 @@ enum ClockCatalogue {
         return Quote(
             id: "F-001",
             quoteTimeCase: formatter.string(from: date),
-            quoteFirst: QuoteLibraryText.value("app_fallback_error_prefix", locale: locale),
-            quoteLast: QuoteLibraryText.value("app_fallback_error_suffix", locale: locale),
-            title: QuoteLibraryText.value("app_fallback_error_title", locale: locale),
-            author: QuoteLibraryText.value("app_fallback_error_author", locale: locale),
+            quoteFirst: localizedValue("app_fallback_error_prefix", locale: locale),
+            quoteLast: localizedValue("app_fallback_error_suffix", locale: locale),
+            title: localizedValue("app_fallback_error_title", locale: locale),
+            author: localizedValue("app_fallback_error_author", locale: locale),
             sfw: true
         )
+    }
+
+    private static func localizedValue(_ key: String, locale: String) -> String {
+        let requested = locale.replacingOccurrences(of: "_", with: "-")
+        let available = Bundle.main.localizations
+        let language = Locale(identifier: requested).language.languageCode?.identifier
+        let resolved = available.first { $0.caseInsensitiveCompare(requested) == .orderedSame }
+            ?? available.first { Locale(identifier: $0).language.languageCode?.identifier == language }
+            ?? "en-US"
+        let bundle = Bundle.main.path(forResource: resolved, ofType: "lproj")
+            .flatMap(Bundle.init(path:)) ?? .main
+        let fallback = Bundle.main.path(forResource: "en-US", ofType: "lproj")
+            .flatMap(Bundle.init(path:))?.localizedString(forKey: key, value: key, table: nil) ?? key
+        return bundle.localizedString(forKey: key, value: fallback, table: nil)
     }
 
     // Widget timelines need only their minute window, not every quote in every
     // language. Decode one language at a time without populating the app cache.
     static func window(at dates: [Date], locales: [String]) -> [String: [String: [Quote]]] {
+        guard let firstDate = dates.first, let lastDate = dates.last else { return [:] }
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_GB")
         formatter.dateFormat = "HH_mm"
         let minutes = Set(dates.map { formatter.string(from: $0) })
+        let startMinute = Int64(firstDate.timeIntervalSince1970 / 60)
+        let endMinute = Int64(lastDate.timeIntervalSince1970 / 60)
+        let timeZone = TimeZone.current.identifier
+
+        windowCacheLock.lock()
+        defer { windowCacheLock.unlock() }
         var result: [String: [String: [Quote]]] = [:]
         for locale in Set(locales) {
-            result[locale] = autoreleasepool {
+            if let cached = windowCache[locale], cached.startMinute == startMinute,
+               cached.endMinute == endMinute, cached.timeZone == timeZone {
+                result[locale] = cached.quotesByMinute
+                continue
+            }
+            let quotesByMinute = autoreleasepool {
                 loadCatalogue(for: locale).filter { minutes.contains($0.key) }
             }
+            windowCache[locale] = WindowCache(startMinute: startMinute, endMinute: endMinute,
+                                              timeZone: timeZone, quotesByMinute: quotesByMinute)
+            result[locale] = quotesByMinute
         }
         return result
     }
@@ -102,7 +131,7 @@ enum ClockCatalogue {
         return selected.isEmpty ? [locales.contains(fallback) ? fallback : "en-US"] : selected
     }
 
-    static func randomLocale(at date: Date, from candidates: [String], defaults: UserDefaults,
+    static func randomLocale(at date: Date, from candidates: [String],
                              identity: String? = nil, safeOnly: Bool = false,
                              lookup: ((String) -> [Quote])? = nil) -> String {
         let pool = candidates.isEmpty ? ["en-US"] : candidates
@@ -111,14 +140,16 @@ enum ClockCatalogue {
             return safeOnly ? quotes.contains(where: \.sfw) : !quotes.isEmpty
         }
         let choices = available.isEmpty ? pool : available
-        let minute = Int(date.timeIntervalSince1970 / 60)
-        let identityKey = identity.map { "-\($0)" } ?? ""
-        let safeKey = safeOnly ? "-safe" : ""
-        let key = "random-quote-locale\(identityKey)\(safeKey)-\(minute)-\(choices.joined(separator: "_"))"
-        if let saved = defaults.string(forKey: key), choices.contains(saved) { return saved }
-        let locale = choices.randomElement() ?? "en-US"
-        defaults.set(locale, forKey: key)
-        return locale
+        // Keep the selection stable for each minute without writing one
+        // UserDefaults key per timeline entry. Widget timelines can contain
+        // more than an hour of future entries, and those keys otherwise grow
+        // without bound in the shared app-group preferences domain.
+        let minute = Int64(date.timeIntervalSince1970 / 60)
+        let seed = "\(identity ?? "")|\(safeOnly)|\(minute)|\(choices.joined(separator: "_"))"
+        let hash = seed.utf8.reduce(UInt64(14_695_981_039_346_656_037)) { value, byte in
+            (value ^ UInt64(byte)) &* 1_099_511_628_211
+        }
+        return choices[Int(hash % UInt64(choices.count))]
     }
 
     static func languageName(_ locale: String) -> String {
@@ -127,6 +158,14 @@ enum ClockCatalogue {
 
     private static var catalogueCache: [String: [String: [Quote]]] = [:]
     private static let catalogueLock = NSLock()
+    private struct WindowCache {
+        let startMinute: Int64
+        let endMinute: Int64
+        let timeZone: String
+        let quotesByMinute: [String: [Quote]]
+    }
+    private static var windowCache: [String: WindowCache] = [:]
+    private static let windowCacheLock = NSLock()
 
     private static func catalogue(for locale: String) -> [String: [Quote]] {
         catalogueLock.lock()
@@ -179,18 +218,24 @@ enum ClockCatalogue {
         return formatter.string(from: date)
     }
 
-    static func quoteIndexKey(at date: Date, locale: String, widgetID: String? = nil) -> String {
+    static func quoteIndexKey(at date: Date, locale: String, widgetID: String? = nil,
+                              fuzzy: Bool = false) -> String {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_GB")
         formatter.dateFormat = "HH_mm"
         let widgetKey = widgetID.map { "widget-\($0)-" } ?? ""
-        return "quote-index-\(widgetKey)\(locale)-\(formatter.string(from: date))"
+        let modeKey = fuzzy ? "fuzzy-" : ""
+        return "quote-index-\(widgetKey)\(modeKey)\(locale)-\(formatter.string(from: date))"
     }
 
-    static func quoteIndex(at date: Date, locale: String, count: Int, defaults: UserDefaults) -> Int {
+    static func quoteIndex(at date: Date, locale: String, count: Int, defaults: UserDefaults,
+                           fuzzy: Bool = false) -> Int {
         guard count > 0 else { return 0 }
-        let saved = defaults.object(forKey: quoteIndexKey(at: date, locale: locale)) as? Int
-            ?? defaultQuoteIndex(at: date, count: count)
+        let defaultIndex = fuzzy
+            ? stableRandomIndex(at: date, count: count, identity: "app-fuzzy|\(locale)")
+            : defaultQuoteIndex(at: date, count: count)
+        let saved = defaults.object(forKey: quoteIndexKey(at: date, locale: locale, fuzzy: fuzzy)) as? Int
+            ?? defaultIndex
         return saved % count
     }
 
@@ -203,5 +248,15 @@ enum ClockCatalogue {
     static func defaultQuoteIndex(at date: Date, count: Int) -> Int {
         guard count > 0 else { return 0 }
         return Calendar.current.component(.minute, from: date) % count
+    }
+
+    static func stableRandomIndex(at date: Date, count: Int, identity: String) -> Int {
+        guard count > 0 else { return 0 }
+        let minute = Int64(date.timeIntervalSince1970 / 60)
+        let seed = "\(identity)|\(minute)|quote"
+        let hash = seed.utf8.reduce(UInt64(14_695_981_039_346_656_037)) { value, byte in
+            (value ^ UInt64(byte)) &* 1_099_511_628_211
+        }
+        return Int(hash % UInt64(count))
     }
 }
