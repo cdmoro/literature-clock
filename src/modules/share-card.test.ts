@@ -49,8 +49,11 @@ it.each([
       expect(element.querySelector('em')?.textContent).toBe('Before');
       expect(element.textContent).toContain('— Book, Writer');
       expect((element as HTMLElement).dir).toBe('ltr');
-      expect(element.lastElementChild?.textContent).toBe('Reloj literario · literatureclock.netlify.app');
+      expect(element.lastElementChild?.textContent).toBe('Reloj literario');
+      expect(element.querySelector('.share-card-signature img')?.getAttribute('src')).toBe('/assets/app-icon-dark.png');
+      expect((element.lastElementChild as HTMLElement).style.display).toBe('flex');
       expect((element.lastElementChild as HTMLElement).dir).toBe('ltr');
+      expect((element.querySelector('div') as HTMLElement).style.justifyContent).toBe('center');
       return canvas;
     });
     expect(await renderShareCard(quote, format)).toBe(canvas);
@@ -62,11 +65,26 @@ it('removes the temporary card when rendering fails', async () => {
   await expect(renderShareCard(quote, 'square')).rejects.toThrow('render failed');
   expect(document.body.children).toHaveLength(1);
 });
-it('grows unusually long quotes instead of clipping their content', async () => {
-  const height = vi.spyOn(HTMLElement.prototype, 'scrollHeight', 'get').mockReturnValue(2000);
+it.each([
+  ['light', '/assets/app-icon-dark.png'],
+  ['dark', '/assets/app-icon-light.png'],
+] as const)('uses the %s card icon for the matching appearance', async (appearance, iconPath) => {
+  vi.mocked(html2canvas).mockImplementation(async (element) => {
+    expect(element.querySelector('.share-card-signature img')?.getAttribute('src')).toBe(iconPath);
+    return document.createElement('canvas');
+  });
+  await renderShareCard(quote, 'square', appearance);
+});
+it('reduces the passage font until long content fits instead of clipping or growing the card', async () => {
+  const height = vi.spyOn(HTMLElement.prototype, 'scrollHeight', 'get').mockImplementation(function (this: HTMLElement) {
+    return this.classList.contains('share-card-credit') ? 100 : 2000;
+  });
   vi.mocked(html2canvas).mockResolvedValue(document.createElement('canvas'));
   await renderShareCard(quote, 'square');
-  expect(vi.mocked(html2canvas).mock.calls[0][1]?.height).toBe(2342);
+  const card = vi.mocked(html2canvas).mock.calls[0][0] as HTMLElement;
+  expect(card.style.height).toBe('1080px');
+  expect(card.querySelector<HTMLElement>('div[dir="auto"]')!.style.fontSize).toBe('1px');
+  expect(vi.mocked(html2canvas).mock.calls[0][1]?.height).toBe(1080);
   height.mockRestore();
 });
 
@@ -181,7 +199,8 @@ it('isolates mixed-script book and author names and defaults RTL text to the rig
     expect(credit.getAttribute('dir')).toBe('rtl');
     expect((credit as HTMLElement).style.textAlign).toBe('start');
     const signature = element.lastElementChild as HTMLElement;
-    expect(signature.textContent).toBe('الساعة الأدبية · literatureclock.netlify.app');
+    expect(signature.textContent).toBe('الساعة الأدبية');
+    expect(signature.querySelector('img')?.getAttribute('src')).toBe('/assets/app-icon-dark.png');
     expect(signature.getAttribute('dir')).toBe('rtl');
     expect(signature.lang).toBe('ar-AE');
     expect(credit.querySelectorAll('[dir="auto"]')).toHaveLength(2);

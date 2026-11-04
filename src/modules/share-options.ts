@@ -31,7 +31,12 @@ let popupPhotoImage: string | null | undefined;
 let includePhoto = true;
 let highlightTime = false;
 let uppercaseText = false;
-let alignment: 'start' | 'center' | 'end' = 'start';
+let alignment: 'left' | 'center' | 'right' = 'left';
+const selectedLogicalAlignment = () => {
+  if (alignment === 'center') return 'center' as const;
+  const rtl = textDirection(store.get('active-quote')?.locale || store.get('locale')) === 'rtl';
+  return ((alignment === 'left') !== rtl ? 'start' : 'end') as 'start' | 'end';
+};
 export const selectedCardOptions = () => ({
   pattern: pattern ?? store.get('background-pattern') ?? 'none',
   ...(() => {
@@ -53,7 +58,7 @@ export const selectedCardOptions = () => ({
   color,
   ...(highlightTime ? { highlightTime: true } : {}),
   ...(uppercaseText ? { uppercase: true } : {}),
-  ...(alignment !== 'start' ? { alignment } : {}),
+  ...(selectedLogicalAlignment() !== 'start' ? { alignment: selectedLogicalAlignment() } : {}),
   ...(palette && palette !== 'default' ? { palette } : {}),
   font,
   ...(useDefaultColor ? { useDefaultColor: true } : {}),
@@ -84,7 +89,7 @@ export function initShareOptions() {
       highlightTime = false;
     }
     uppercaseText = false;
-    alignment = 'start';
+    alignment = textDirection(snapshot.locale) === 'rtl' ? 'right' : 'left';
     const strings = shareOptionStrings();
     const settingsStrings = SETTINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))];
     popupPhotoImage =
@@ -367,46 +372,25 @@ export function initShareOptions() {
       void refresh();
     });
     controls.insertBefore(field(strings.uppercase, uppercaseButton), customization);
-    const rtl = textDirection(snapshot.locale) === 'rtl';
-    const alignmentButton = document.createElement('button');
-    alignmentButton.type = 'button';
-    alignmentButton.className = 'share-image-toggle share-alignment-toggle';
-    const alignmentLabel = () => {
-      if (alignment === 'center') return strings.center;
-      const isRight = alignment === 'start' ? rtl : !rtl;
-      return isRight ? strings.right : strings.left;
-    };
-    const updateAlignmentButton = () => {
-      const label = alignmentLabel();
-      const position = alignment === 'center' ? 'center' : label === strings.right ? 'right' : 'left';
-      const path =
-        position === 'center'
-          ? 'M4 6h16M7 10h10M4 14h16M7 18h10'
-          : position === 'right'
-            ? 'M20 6H4M20 10H10M20 14H4M20 18H10'
-            : 'M4 6h16M4 10h10M4 14h16M4 18h10';
-      alignmentButton.title = `${strings.alignment}: ${label}`;
-      alignmentButton.setAttribute('aria-label', `${strings.alignment}: ${label}`);
-      alignmentButton.dataset.alignment = alignment;
-      alignmentButton.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="${path}"/></svg>`;
-    };
-    updateAlignmentButton();
-    alignmentButton.addEventListener('click', () => {
-      alignment = rtl
-        ? alignment === 'start'
-          ? 'end'
-          : alignment === 'end'
-            ? 'center'
-            : 'start'
-        : alignment === 'start'
-          ? 'center'
-          : alignment === 'center'
-            ? 'end'
-            : 'start';
-      updateAlignmentButton();
-      void refresh();
+    const alignmentGroup = document.createElement('div');
+    alignmentGroup.className = 'share-choice-group share-alignment-toggle';
+    alignmentGroup.setAttribute('role', 'group');
+    alignmentGroup.setAttribute('aria-label', strings.alignment);
+    const alignmentButtons = (['left', 'center', 'right'] as const).map((position) => {
+      const alignmentButton = document.createElement('button');
+      alignmentButton.type = 'button';
+      alignmentButton.textContent = strings[position];
+      alignmentButton.dataset.alignment = position;
+      alignmentButton.setAttribute('aria-pressed', String(alignment === position));
+      alignmentButton.addEventListener('click', () => {
+        alignment = position;
+        for (const button of alignmentButtons) button.setAttribute('aria-pressed', String(button === alignmentButton));
+        void refresh();
+      });
+      alignmentGroup.append(alignmentButton);
+      return alignmentButton;
     });
-    controls.insertBefore(field(strings.alignment, alignmentButton), customization);
+    controls.insertBefore(field(strings.alignment, alignmentGroup), customization);
     if (popupPhotoImage) controls.insertBefore(includePhotoControl, customization);
     const patternControl = document.createElement('label');
     patternControl.className = 'share-pattern-control';

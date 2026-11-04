@@ -596,35 +596,25 @@ it('toggles uppercase text for the share card and starts disabled each time', as
 });
 
 it.each([
-  ['en-GB', 'Left', 'Right'],
-  ['ar-AE', 'Right', 'Left'],
-] as const)('cycles %s alignment in visual order', async (locale, startLabel, endLabel) => {
+  ['en-GB', 'left', 'start', 'end'],
+  ['ar-AE', 'right', 'end', undefined],
+] as const)('shows physical alignment controls for %s', async (locale, initial, leftLogical, rightLogical) => {
   button('Close').click();
   state['active-quote'] = { quote_raw: 'Original quote', locale, time: '12:00' };
   document.getElementById('share')!.click();
-  const toggle = document.querySelector<HTMLButtonElement>('.share-alignment-toggle')!;
-  const cycle =
-    locale === 'ar-AE'
-      ? [
-          [startLabel, 'start'],
-          [endLabel, 'end'],
-          ['Center', 'center'],
-          [startLabel, 'start'],
-        ]
-      : [
-          [startLabel, 'start'],
-          ['Center', 'center'],
-          [endLabel, 'end'],
-          [startLabel, 'start'],
-        ];
-  for (const [index, [label, value]] of cycle.entries()) {
-    expect(toggle.getAttribute('aria-label')).toBe(`Alignment: ${label}`);
-    expect(toggle.dataset.alignment).toBe(value);
-    if (value === 'start') expect(selectedCardOptions()).not.toHaveProperty('alignment');
-    else expect(selectedCardOptions()).toMatchObject({ alignment: value });
-    if (index < cycle.length - 1) {
-      toggle.click();
-      await Promise.resolve();
-    }
-  }
+  const group = document.querySelector<HTMLElement>('.share-alignment-toggle')!;
+  const buttons = [...group.querySelectorAll<HTMLButtonElement>('button')];
+  expect(buttons.map((button) => button.textContent)).toEqual(['Left', 'Center', 'Right']);
+  expect(buttons.find((button) => button.getAttribute('aria-pressed') === 'true')?.dataset.alignment).toBe(initial);
+  buttons[0].click();
+  await Promise.resolve();
+  if (leftLogical === 'start') expect(selectedCardOptions()).not.toHaveProperty('alignment');
+  else expect(selectedCardOptions()).toMatchObject({ alignment: leftLogical });
+  buttons[2].click();
+  await Promise.resolve();
+  if (rightLogical) expect(selectedCardOptions()).toMatchObject({ alignment: rightLogical });
+  else expect(selectedCardOptions()).not.toHaveProperty('alignment');
+  buttons[1].click();
+  await Promise.resolve();
+  expect(selectedCardOptions()).toMatchObject({ alignment: 'center' });
 });

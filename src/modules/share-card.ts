@@ -256,7 +256,13 @@ export async function renderShareCard(
   card.dir = textDirection(quote.locale);
   card.setAttribute('aria-hidden', 'true');
   const content = document.createElement('div');
-  content.style.textShadow = quoteStyle.textShadow;
+  Object.assign(content.style, {
+    textShadow: quoteStyle.textShadow,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    flex: '1 1 auto',
+  });
   const passage = document.createElement('div');
   passage.dir = 'auto';
   passage.style.whiteSpace = 'pre-wrap';
@@ -307,11 +313,27 @@ export async function renderShareCard(
     content.append(passage, credit);
   }
   const signature = document.createElement('div');
+  signature.className = 'share-card-signature';
   signature.lang = quote.locale.replace(/-draft$/, '');
   signature.dir = textDirection(quote.locale);
-  signature.textContent =
+  const productName =
     STRINGS[quote.locale.replace(/-draft$/, '') as keyof typeof STRINGS]?.signature || STRINGS['en-GB'].signature;
-  signature.style.fontSize = '22px';
+  const appIcon = document.createElement('img');
+  const darkAppearance = appearance ? appearance === 'dark' : liveTheme.endsWith('-dark');
+  appIcon.src = darkAppearance ? '/assets/app-icon-light.png' : '/assets/app-icon-dark.png';
+  appIcon.alt = '';
+  appIcon.width = 32;
+  appIcon.height = 32;
+  appIcon.style.objectFit = 'contain';
+  const signatureName = document.createElement('span');
+  signatureName.textContent = productName;
+  Object.assign(signature.style, {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '12px',
+    fontSize: '22px',
+  });
+  signature.append(appIcon, signatureName);
   if (photo) {
     for (const element of [content, signature]) {
       element.style.position = 'relative';
@@ -338,9 +360,13 @@ export async function renderShareCard(
     let size = 64;
     passage.style.fontSize = `${size}px`;
     const available = height - 192 - 150;
-    while (content.scrollHeight > available && size > 28) passage.style.fontSize = `${--size}px`;
-    // Exceptionally long passages grow the card rather than becoming unreadable or clipped.
-    const finalHeight = Math.max(height, content.scrollHeight + 192 + 150);
+    const fits = () =>
+      content.scrollHeight <= available &&
+      passage.scrollWidth <= passage.clientWidth &&
+      content.scrollWidth <= content.clientWidth;
+    while (!fits() && size > 1) passage.style.fontSize = `${--size}px`;
+    // Preserve the requested card dimensions; the full quote takes priority over font size.
+    const finalHeight = height;
     card.style.height = `${finalHeight}px`;
     return await html2canvas(card, { useCORS: true, scale: 1, width, height: finalHeight, logging: false });
   } finally {
