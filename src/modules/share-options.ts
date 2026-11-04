@@ -5,7 +5,7 @@ import { fontSupportsLocale } from './font-preferences';
 import { getBaseLocale, getStrings } from './locales';
 import { readingStrings } from './reading-ui';
 import { closeDialogOnBackdropClick } from '../utils/dialog';
-import { renderShareCard, type CardAppearance, type CardFormat } from './share-card';
+import { renderShareCard, type CardAppearance } from './share-card';
 import { downloadQuote, shareQuote } from './share';
 import { BACKGROUND_PATTERNS, type BackgroundPattern } from '../utils/background-patterns';
 import SETTINGS from './settings-strings';
@@ -19,7 +19,6 @@ import COLOR_STRINGS from '../strings/web/colorControls.json';
 import { textDirection } from '../utils/text-direction';
 import '../styles/share-color-controls.css';
 
-let format: CardFormat = 'square';
 let appearance: CardAppearance | undefined;
 let theme: string | undefined;
 let pattern: BackgroundPattern | undefined;
@@ -65,7 +64,6 @@ export const selectedCardOptions = () => ({
 });
 export const selectedCardTheme = () => theme;
 export const selectedCardAppearance = () => appearance;
-export const selectedCardFormat = () => format;
 export const shareOptionStrings = () => STRINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))];
 
 export function initShareOptions() {
@@ -124,29 +122,6 @@ export function initShareOptions() {
     header.append(heading, close);
     const controls = document.createElement('div');
     controls.className = 'share-preview-controls';
-    const formatGroup = document.createElement('div');
-    formatGroup.className = 'share-choice-group';
-    formatGroup.setAttribute('role', 'group');
-    formatGroup.setAttribute('aria-label', strings.format);
-    const formatButtons = new Map<CardFormat, HTMLButtonElement>();
-    for (const [value, dimensions] of [
-      ['landscape', [18, 12]],
-      ['portrait', [12, 18]],
-      ['square', [16, 16]],
-    ] as const) {
-      const option = document.createElement('button');
-      option.type = 'button';
-      option.title = strings[value];
-      option.setAttribute('aria-label', strings[value]);
-      const [width, height] = dimensions;
-      option.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="${(24 - width) / 2}" y="${(24 - height) / 2}" width="${width}" height="${height}" rx="2"/></svg>`;
-      option.addEventListener('click', () => {
-        format = value;
-        void refresh();
-      });
-      formatButtons.set(value, option);
-      formatGroup.append(option);
-    }
     const appearanceGroup = document.createElement('div');
     appearanceGroup.className = 'share-choice-group';
     appearanceGroup.setAttribute('role', 'group');
@@ -187,7 +162,7 @@ export function initShareOptions() {
       wrapper.append(label, control);
       return wrapper;
     };
-    controls.append(field(strings.format, formatGroup), field(strings.appearance, appearanceGroup));
+    controls.append(field(strings.appearance, appearanceGroup));
     const includePhotoButton = document.createElement('button');
     includePhotoButton.type = 'button';
     includePhotoButton.className = 'share-image-toggle';
@@ -578,7 +553,6 @@ export function initShareOptions() {
       const current = ++revision;
       patternControl.hidden = false;
       patternSelect.disabled = false;
-      formatButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === format)));
       const variant = appearance || (document.documentElement.dataset.theme?.endsWith('-dark') ? 'dark' : 'light');
       colorInput.disabled = false;
       const resolvedPalette = palette === 'random' ? document.documentElement.dataset.palette : palette;
@@ -599,7 +573,7 @@ export function initShareOptions() {
       loading.hidden = false;
       copyImage.disabled = true;
       try {
-        const canvas = await renderShareCard(snapshot, format, appearance, theme, selectedCardOptions());
+        const canvas = await renderShareCard(snapshot, appearance, theme, selectedCardOptions());
         if (current !== revision) return;
         canvas.style.width = 'auto';
         canvas.style.height = 'auto';

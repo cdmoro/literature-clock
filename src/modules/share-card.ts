@@ -12,8 +12,6 @@ import { defaultColor } from './themes';
 import { textDirection } from '../utils/text-direction';
 import STRINGS from '../strings/web/share.json';
 
-export const cardFormats = { square: [1080, 1080], portrait: [1080, 1920], landscape: [1920, 1080] } as const;
-export type CardFormat = keyof typeof cardFormats;
 export type CardAppearance = 'light' | 'dark';
 export interface CardOptions {
   pattern?: BackgroundPattern;
@@ -31,12 +29,12 @@ const themeFontLoads = new Map<string, Promise<void>>();
 /** Render a snapshot of the quote, without viewport dimensions or clock animation. */
 export async function renderShareCard(
   quote: ResolvedQuote,
-  format: CardFormat,
   appearance?: CardAppearance,
   theme?: string,
   options: CardOptions = {},
 ): Promise<HTMLCanvasElement> {
-  const [width, height] = cardFormats[format];
+  const width = 1080;
+  const height = 1080;
   const bodyStyle = getComputedStyle(document.body);
   const quoteStyle = getComputedStyle(document.getElementById('quote') || document.body);
   const card = document.createElement('div');
@@ -331,7 +329,7 @@ export async function renderShareCard(
     display: 'flex',
     alignItems: 'center',
     gap: '12px',
-    fontSize: '22px',
+    fontSize: '28px',
   });
   signature.append(appIcon, signatureName);
   if (photo) {
@@ -357,15 +355,15 @@ export async function renderShareCard(
     if (photo) await photo.decode().catch(() => undefined);
     await fontLoading;
     await document.fonts?.ready;
-    let size = 64;
+    let size = 84;
     passage.style.fontSize = `${size}px`;
     const available = height - 192 - 150;
     const fits = () =>
       content.scrollHeight <= available &&
       passage.scrollWidth <= passage.clientWidth &&
       content.scrollWidth <= content.clientWidth;
-    while (!fits() && size > 1) passage.style.fontSize = `${--size}px`;
-    // Preserve the requested card dimensions; the full quote takes priority over font size.
+    while (!fits() && size > 36) passage.style.fontSize = `${--size}px`;
+    // Keep the square card and readable type, even when exceptionally long quotes need to overflow.
     const finalHeight = height;
     card.style.height = `${finalHeight}px`;
     return await html2canvas(card, { useCORS: true, scale: 1, width, height: finalHeight, logging: false });

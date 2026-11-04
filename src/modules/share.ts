@@ -1,7 +1,6 @@
-import { renderShareCard, type CardFormat } from './share-card';
+import { renderShareCard } from './share-card';
 import {
   initShareOptions,
-  selectedCardFormat,
   selectedCardAppearance,
   selectedCardTheme,
   selectedCardOptions,
@@ -25,9 +24,9 @@ export function initShare() {
   if (share) (share as HTMLButtonElement).disabled = true;
 }
 
-export async function getCanvas(format: CardFormat = selectedCardFormat(), quote = store.get('active-quote')) {
+export async function getCanvas(quote = store.get('active-quote')) {
   if (!quote) return;
-  return renderShareCard({ ...quote }, format, selectedCardAppearance(), selectedCardTheme(), selectedCardOptions());
+  return renderShareCard({ ...quote }, selectedCardAppearance(), selectedCardTheme(), selectedCardOptions());
 }
 
 export async function shareQuote(snapshot?: ResolvedQuote) {
@@ -45,7 +44,7 @@ export async function shareQuote(snapshot?: ResolvedQuote) {
     let shareData: ShareData = { text, url };
     const canvas =
       typeof navigator.canShare === 'function'
-        ? await getCanvas(selectedCardFormat(), quote).catch(() => undefined)
+        ? await getCanvas(quote).catch(() => undefined)
         : undefined;
     const blob = await new Promise<Blob | null>((resolve) => (canvas ? canvas.toBlob(resolve) : resolve(null)));
     if (blob) {
@@ -72,7 +71,7 @@ export async function downloadQuote(snapshot?: ResolvedQuote) {
   }
   const time = quote.time || getTime();
   try {
-    const canvas = await getCanvas(selectedCardFormat(), quote);
+    const canvas = await getCanvas(quote);
     if (!canvas) return;
     const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve));
     if (!blob) throw new Error('Image unavailable');

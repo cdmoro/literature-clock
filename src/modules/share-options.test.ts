@@ -50,20 +50,21 @@ const button = (label: string) =>
   [...document.querySelectorAll<HTMLButtonElement>('#share-preview button')].find(
     (el) => el.getAttribute('aria-label') === label || el.textContent === label,
   )!;
-it('changes image format and appearance without changing the live clock', async () => {
-  button('Vertical').click();
+it('uses a square image and changes appearance without changing the live clock', async () => {
   button('Light').click();
   await Promise.resolve();
   expect(renderShareCard).toHaveBeenLastCalledWith(
     expect.objectContaining({ quote_raw: 'Original quote' }),
-    'portrait',
     'light',
     undefined,
     { pattern: 'none', color: undefined, font: 'default' },
   );
-  expect(button('Vertical').getAttribute('aria-pressed')).toBe('true');
+  expect(button('Vertical')).toBeUndefined();
   expect(button('Light').getAttribute('aria-pressed')).toBe('true');
   expect(document.documentElement.dataset.theme).toBe('base-dark');
+});
+it('does not expose a format selector', () => {
+  expect(button('Formato')).toBeUndefined();
 });
 it('hides the color reset control when the image uses the theme default', () => {
   expect((document.getElementById('share-preview-reset-color') as HTMLButtonElement).hidden).toBe(true);
@@ -85,7 +86,6 @@ it('discards a preview render after the dialog closes', async () => {
       finish = resolve;
     }),
   );
-  button('Horizontal').click();
   button('Close').click();
   finish(canvas);
   await Promise.resolve();
@@ -184,7 +184,7 @@ it('cycles image themes in both directions without changing the live theme', asy
   button('Next theme').click();
   await Promise.resolve();
   expect(document.querySelector('.share-theme-carousel span')?.textContent).toBe('Book page');
-  expect(vi.mocked(renderShareCard).mock.calls[vi.mocked(renderShareCard).mock.calls.length - 1]?.[3]).toBe('book');
+  expect(vi.mocked(renderShareCard).mock.calls[vi.mocked(renderShareCard).mock.calls.length - 1]?.[2]).toBe('book');
   button('Previous theme').click();
   expect(document.querySelector('.share-theme-carousel span')?.textContent).toBe('Base');
   expect(document.documentElement.dataset.theme).toBe('base-dark');
@@ -199,7 +199,7 @@ it('changes the preview colour and pattern without touching clock preferences or
   select.value = 'dots';
   select.dispatchEvent(new Event('change'));
   await Promise.resolve();
-  expect(renderShareCard).toHaveBeenLastCalledWith(expect.anything(), expect.anything(), undefined, undefined, {
+  expect(renderShareCard).toHaveBeenLastCalledWith(expect.anything(), undefined, undefined, {
     color: '#123456',
     pattern: 'dots',
     font: 'default',
@@ -228,7 +228,7 @@ it('starts each popup from the saved clock pattern and clears its temporary colo
   button('Close').click();
   document.getElementById('share')!.click();
   expect((document.getElementById('share-preview-pattern') as HTMLSelectElement).value).toBe('grid');
-  expect(renderShareCard).toHaveBeenLastCalledWith(expect.anything(), expect.anything(), undefined, undefined, {
+  expect(renderShareCard).toHaveBeenLastCalledWith(expect.anything(), undefined, undefined, {
     color: undefined,
     pattern: 'grid',
     font: 'default',
@@ -244,7 +244,6 @@ it('changes fonts only for the image, includes custom families and clears the ov
   await Promise.resolve();
   expect(selectedCardOptions().font).toBe('Lora');
   expect(renderShareCard).toHaveBeenLastCalledWith(
-    expect.anything(),
     expect.anything(),
     undefined,
     undefined,
@@ -552,7 +551,6 @@ it('toggles time highlighting after Color, before the optional image, and rememb
   expect(selectedCardOptions()).toMatchObject({ highlightTime: true });
   expect(renderShareCard).toHaveBeenLastCalledWith(
     expect.anything(),
-    expect.anything(),
     undefined,
     undefined,
     expect.objectContaining({ highlightTime: true }),
@@ -583,7 +581,6 @@ it('toggles uppercase text for the share card and starts disabled each time', as
   await Promise.resolve();
   expect(selectedCardOptions()).toMatchObject({ uppercase: true });
   expect(renderShareCard).toHaveBeenLastCalledWith(
-    expect.anything(),
     expect.anything(),
     undefined,
     undefined,
