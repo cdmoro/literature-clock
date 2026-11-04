@@ -62,8 +62,6 @@ jobs:
           fi
       - name: Build universal native saver
         run: python3 screensavers/macos-native/build.py --universal
-      - name: Check installer transactions
-        run: '"screensavers/macos-native/build/Install Literature Clock.app/Contents/MacOS/Install Literature Clock" --check-install'
       - uses: actions/upload-artifact@v4
         with:
           name: Literature-Clock-macOS

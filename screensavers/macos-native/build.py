@@ -46,7 +46,8 @@ def run(*args):
 
 
 def bundle(name, extension, architecture, data, version):
-    contents = OUTPUT / f'{name}.{extension}' / 'Contents'
+    bundle_extension = 'saver' if extension == 'saver' else 'app'
+    contents = OUTPUT / f'{name}.{bundle_extension}' / 'Contents'
     resources = contents / 'Resources'
     resources.mkdir(parents=True, exist_ok=True)
     binary_dir = contents / 'MacOS'
@@ -91,9 +92,10 @@ def bundle(name, extension, architecture, data, version):
         run(str(rasterizer), str(patterns / f'{pattern_name}.svg'), str(patterns / f'{pattern_name}.png'), str(width), str(height))
     shutil.copy2(ROOT / 'src/photo-providers.json', resources / 'photo-providers.json')
     library = extension == 'saver'
+    executable = name if library else 'LiteratureClockOptionsPreview' if extension == 'app-options' else 'LiteratureClockPreview'
     info = dict(CFBundleIdentifier=f'net.literatureclock.native-{extension}', CFBundleName=name,
                 CFBundleDisplayName='Literature Clock' if extension == 'saver' else name,
-                CFBundleExecutable=name, CFBundleVersion=version, CFBundleShortVersionString=version,
+                CFBundleExecutable=executable, CFBundleVersion=version, CFBundleShortVersionString=version,
                 CFBundlePackageType='BNDL' if library else 'APPL', LSMinimumSystemVersion='12.0',
                 NSPrincipalClass='NativeClockView' if library else 'NSApplication', NSHighResolutionCapable=True)
     if library:
@@ -101,17 +103,26 @@ def bundle(name, extension, architecture, data, version):
         for asset in ['thumbnail.png', 'thumbnail@2x.png', 'thumbnail.tiff']:
             shutil.copy2(SOURCE / 'Assets' / asset, resources / asset)
     (contents / 'Info.plist').write_bytes(plistlib.dumps(info))
-    binary = contents / 'MacOS' / name
+    if not library:
+        (contents / 'PkgInfo').write_text('APPL????')
+    binary = contents / 'MacOS' / executable
     binary.parent.mkdir(exist_ok=True)
-    sources = ['ProjectLink.swift', 'Options.swift', 'Appearance.swift', 'PhotoBackground.swift', 'NativeClockView.swift'] + ([] if library else ['Preview.swift'])
+    shared_sources = ['ProjectLink.swift', 'Options.swift', 'Appearance.swift', 'PhotoBackground.swift', 'NativeClockView.swift']
+    sources = shared_sources if library else shared_sources + ['OptionsPreview.swift'] if extension == 'app-options' else shared_sources + ['Preview.swift']
     slices = []
     for arch in architecture:
-        thin = OUTPUT / f'{name}-{arch}'
+        thin = OUTPUT / f'{executable}-{arch}'
+        exception_object = None
+        if extension == 'app-options':
+            exception_object = OUTPUT / f'OptionsExceptionCatcher-{arch}.o'
+            run('xcrun', 'clang', '-target', f'{arch}-apple-macosx12.0', '-fobjc-arc', '-c',
+                str(SOURCE / 'Sources/OptionsExceptionCatcher.m'), '-o', str(exception_object))
         run('xcrun', 'swiftc', '-module-name', 'LiteratureClockNative', '-swift-version', '5',
             '-module-cache-path', str(OUTPUT / 'module-cache'), '-target', f'{arch}-apple-macosx12.0',
             '-framework', 'AppKit', '-framework', 'ScreenSaver',
             *(['-emit-library'] if library else ['-parse-as-library']),
-            *[str(SOURCE / 'Sources' / source) for source in sources], '-o', str(thin))
+            *[str(SOURCE / 'Sources' / source) for source in sources],
+            *([str(exception_object)] if exception_object else []), '-o', str(thin))
         slices.append(str(thin))
     run('xcrun', 'lipo', '-create', *slices, '-output', str(binary))
     actual = subprocess.check_output(['xcrun', 'lipo', '-archs', str(binary)], text=True).split()
@@ -121,58 +132,37 @@ def bundle(name, extension, architecture, data, version):
     run('codesign', '--verify', '--strict', str(contents.parent))
     return contents.parent
 
-
-
-def installer(saver, architectures, version):
-    name = 'Install Literature Clock'
-    app = OUTPUT / f'{name}.app'
-    contents = app / 'Contents'
-    resources = contents / 'Resources'
-    resources.mkdir(parents=True, exist_ok=True)
-    payload = resources / saver.name
-    if payload.exists():
-        shutil.rmtree(payload)
-    shutil.copytree(saver, payload)
-    info = dict(CFBundleIdentifier='net.literatureclock.native-installer', CFBundleName=name,
-                CFBundleDisplayName=name, CFBundleExecutable=name, CFBundleVersion=version,
-                CFBundleShortVersionString=version, CFBundlePackageType='APPL',
-                LSMinimumSystemVersion='12.0', NSPrincipalClass='NSApplication', NSHighResolutionCapable=True)
-    (contents / 'Info.plist').write_bytes(plistlib.dumps(info))
-    binary = contents / 'MacOS' / name
-    binary.parent.mkdir(exist_ok=True)
-    slices = []
-    for arch in architectures:
-        thin = OUTPUT / f'{name}-{arch}'
-        run('xcrun', 'swiftc', '-module-name', 'LiteratureClockInstaller', '-swift-version', '5',
-            '-module-cache-path', str(OUTPUT / 'module-cache'), '-target', f'{arch}-apple-macosx12.0',
-            '-framework', 'AppKit', '-parse-as-library',
-            *[str(SOURCE / 'Sources' / source) for source in ['ProjectLink.swift', 'Installation.swift', 'InstallationChecks.swift', 'Installer.swift']],
-            '-o', str(thin))
-        slices.append(str(thin))
-    run('xcrun', 'lipo', '-create', *slices, '-output', str(binary))
-    actual = subprocess.check_output(['xcrun', 'lipo', '-archs', str(binary)], text=True).split()
-    if set(actual) != set(architectures):
-        raise RuntimeError(f'Unexpected installer architectures: {actual}')
-    run('codesign', '--force', '--sign', '-', str(app))
-    run('codesign', '--verify', '--deep', '--strict', str(app))
-    return app
-
-
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--universal', action='store_true')
+    parser.add_argument('--preview', action='store_true', help='also build the standalone rendering preview app')
+    parser.add_argument('--options-preview', action='store_true', help='also build the standalone settings-panel preview app')
     parser.add_argument('--version', default=(SOURCE / 'VERSION').read_text().strip(), help='Numeric major.minor.patch screensaver version')
     args = parser.parse_args()
     if not re.fullmatch(r'\d+\.\d+\.\d+', args.version):
         parser.error('--version must be numeric major.minor.patch (for example 0.1.0)')
     OUTPUT.mkdir(parents=True, exist_ok=True)
-    run('xcrun', 'metal', '-fcikernel', '-c', str(SOURCE / 'Sources/OpticalGlass.metal'), '-o', str(OUTPUT / 'OpticalGlass.air'))
+    obsolete_installer = OUTPUT / 'Install Literature Clock.app'
+    if obsolete_installer.exists():
+        shutil.rmtree(obsolete_installer)
+    obsolete_distribution = OUTPUT / 'Literature Clock for macOS'
+    if obsolete_distribution.exists():
+        shutil.rmtree(obsolete_distribution)
+    for obsolete_archive in [OUTPUT / 'Literature-Clock-Native-macOS.zip', OUTPUT / 'Literature-Clock-Native-macOS.zip.sha256']:
+        obsolete_archive.unlink(missing_ok=True)
+    for obsolete_binary in OUTPUT.glob('Install Literature Clock-*'):
+        if obsolete_binary.is_file():
+            obsolete_binary.unlink()
+    run('xcrun', 'metal', '-fmodules-cache-path=' + str(OUTPUT / 'module-cache'), '-fcikernel',
+        '-c', str(SOURCE / 'Sources/OpticalGlass.metal'), '-o', str(OUTPUT / 'OpticalGlass.air'))
     run('xcrun', 'metallib', '-cikernel', str(OUTPUT / 'OpticalGlass.air'), '-o', str(OUTPUT / 'OpticalGlass.metallib'))
     data = catalogues()
     architectures = ['arm64', 'x86_64'] if args.universal else ['arm64']
     saver = bundle('Literature Clock', 'saver', architectures, data, args.version)
-    bundle('Literature Clock Native Preview', 'app', architectures, data, args.version)
-    installer(saver, architectures, args.version)
+    if args.preview:
+        bundle('Literature Clock Native Preview', 'app', architectures, data, args.version)
+    if args.options_preview:
+        bundle('Literature Clock Options Preview', 'app-options', architectures, data, args.version)
     standalone_archive = OUTPUT / 'Literature-Clock-Native-macOS.saver.zip'
     run('ditto', '-c', '-k', '--sequesterRsrc', '--keepParent', str(saver), str(standalone_archive))
     standalone_archive.with_suffix('.zip.sha256').write_text(hashlib.sha256(standalone_archive.read_bytes()).hexdigest() + '  ' + standalone_archive.name + '\n')

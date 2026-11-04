@@ -16,7 +16,24 @@ jobs:
     if: github.event.workflow_run.event == 'pull_request'
     runs-on: ubuntu-latest
     steps:
+      - name: Download macOS saver archive
+        if: github.event.workflow_run.name == 'macOS native screensaver' && github.event.workflow_run.conclusion == 'success'
+        uses: actions/download-artifact@v8
+        with:
+          name: Literature-Clock-Native-macOS.saver.zip
+          path: ${{ runner.temp }}/macos-native-saver
+          github-token: ${{ github.token }}
+          run-id: ${{ github.event.workflow_run.id }}
+          skip-decompress: true
+      - name: Calculate macOS saver archive checksum
+        id: macos-checksum
+        if: github.event.workflow_run.name == 'macOS native screensaver' && github.event.workflow_run.conclusion == 'success'
+        run: |
+          digest=$(sha256sum "$RUNNER_TEMP/macos-native-saver/Literature-Clock-Native-macOS.saver.zip" | cut -d ' ' -f 1)
+          echo "sha256=$digest" >> "$GITHUB_OUTPUT"
       - uses: actions/github-script@v7
+        env:
+          MACOS_SAVER_SHA256: ${{ steps.macos-checksum.outputs.sha256 }}
         with:
           script: |
             const { owner, repo } = context.repo;
@@ -49,22 +66,26 @@ jobs:
               ? '<!-- literature-clock-screensaver-artifact:macos -->'
               : '<!-- literature-clock-screensaver-artifact:windows -->';
             const artifacts = isMac
-              ? data.artifacts.filter(item => item.name === 'Literature-Clock-Native-macOS-universal' && !item.expired)
+              ? data.artifacts.filter(item => item.name === 'Literature-Clock-Native-macOS.saver.zip' && !item.expired)
               : data.artifacts.filter(item => item.name.startsWith('Literature-Clock-Native-Windows-') && !item.expired)
                   .sort((a, b) => a.name.localeCompare(b.name));
             const links = artifacts.map(item => {
               const label = isMac
-                ? 'Download the universal macOS screensaver'
+                ? 'Download universal macOS screensaver (.zip)'
                 : `Download Windows screensaver (${item.name.replace('Literature-Clock-Native-Windows-', '')})`;
               const url = `https://github.com/${owner}/${repo}/actions/runs/${run.id}/artifacts/${item.id}`;
               return `- [${label}](${url})`;
             });
             const platform = isMac ? 'macOS' : 'Windows';
             const heading = isMac ? 'macOS screensaver build' : 'Windows screensaver builds';
+            const checksum = process.env.MACOS_SAVER_SHA256 || '';
+            const checksumNote = checksum
+              ? `SHA-256: \`${checksum}\`. The link downloads the .zip directly; extract it once to get the .saver bundle.`
+              : '';
             const status = run.conclusion === 'success'
               ? `Latest ${platform} screensaver build for this PR. Download links expire after 30 days.`
               : `The latest ${platform} screensaver workflow completed with status **${run.conclusion}**. These are any artifacts produced before it failed; see [the workflow run](${run.html_url}) for details.`;
-            const body = `${marker}\n## ${heading}\n\n${links.length ? links.join('\n') : 'No downloadable artifact was produced for this run.'}\n\n${status}`;
+            const body = `${marker}\n## ${heading}\n\n${links.length ? links.join('\n') : 'No downloadable artifact was produced for this run.'}\n\n${checksumNote ? `${checksumNote}\n\n` : ''}${status}`;
             const comments = await github.paginate(github.rest.issues.listComments, {
               owner,
               repo,
