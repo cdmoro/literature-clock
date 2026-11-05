@@ -77,16 +77,16 @@ it.each([
   });
   await renderShareCard(quote, appearance);
 });
-it('keeps long passages readable and expands the card height', async () => {
+it('keeps long passages in a square card and lowers the font to its minimum', async () => {
   const height = vi.spyOn(HTMLElement.prototype, 'scrollHeight', 'get').mockImplementation(function (this: HTMLElement) {
     return this.classList.contains('share-card-credit') ? 100 : 2000;
   });
   vi.mocked(html2canvas).mockResolvedValue(document.createElement('canvas'));
   await renderShareCard(quote);
   const card = vi.mocked(html2canvas).mock.calls[0][0] as HTMLElement;
-  expect(card.style.height).toBe('2280px');
-  expect(Number.parseInt(card.querySelector<HTMLElement>('div[dir="auto"]')!.style.fontSize)).toBe(84);
-  expect(vi.mocked(html2canvas).mock.calls[0][1]?.height).toBe(2280);
+  expect(card.style.height).toBe('1080px');
+  expect(Number.parseInt(card.querySelector<HTMLElement>('div[dir="auto"]')!.style.fontSize)).toBe(12);
+  expect(vi.mocked(html2canvas).mock.calls[0][1]?.height).toBe(1080);
   height.mockRestore();
 });
 
@@ -96,7 +96,7 @@ it.each(['start', 'center', 'end'] as const)(
     vi.mocked(html2canvas).mockImplementation(async (element) => {
       const card = element as HTMLElement;
       const passage = card.querySelector<HTMLElement>('div[dir="auto"]')!;
-      expect(passage.style.fontSize).toBe('84px');
+      expect(passage.style.fontSize).toBe('120px');
       expect(passage.style.textAlign).toBe(alignment);
       expect(card.querySelector('.share-card-credit')?.textContent).toContain('— Book');
       return document.createElement('canvas');

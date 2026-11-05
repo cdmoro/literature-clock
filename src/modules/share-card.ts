@@ -360,17 +360,24 @@ export async function renderShareCard(
     if (photo) await photo.decode().catch(() => undefined);
     await fontLoading;
     await document.fonts?.ready;
-    // Keep the passage at a comfortable size. Long quotes use a taller card
-    // instead of being squeezed into a square until the text becomes tiny.
-    const passageFontSize = 84;
-    passage.style.fontSize = `${passageFontSize}px`;
-    const contentHeight = passage.scrollHeight + (isFuzzy || store.get('quote-attribution') === 'hidden'
+    // Keep every exported image square. Measure wrapped passage height only;
+    // scrollWidth changes with text alignment and must not affect type size.
+    const minimumSize = 12;
+    const maximumSize = 120;
+    const availableHeight = height - 192 - signature.getBoundingClientRect().height - 48;
+    const creditHeight = isFuzzy || store.get('quote-attribution') === 'hidden'
       ? 0
-      : credit.getBoundingClientRect().height + 40);
-    const signatureHeight = signature.getBoundingClientRect().height;
-    const finalHeight = Math.max(height, Math.ceil(192 + contentHeight + signatureHeight + 48));
-    card.style.height = `${finalHeight}px`;
-    return await html2canvas(card, { useCORS: true, scale: 1, width, height: finalHeight, logging: false });
+      : credit.getBoundingClientRect().height + 40;
+    let low = minimumSize;
+    let high = maximumSize;
+    for (let attempt = 0; attempt < 12; attempt++) {
+      const candidate = Math.ceil((low + high) / 2);
+      passage.style.fontSize = `${candidate}px`;
+      if (passage.scrollHeight + creditHeight <= availableHeight) low = candidate;
+      else high = candidate - 1;
+    }
+    passage.style.fontSize = `${low}px`;
+    return await html2canvas(card, { useCORS: true, scale: 1, width, height, logging: false });
   } finally {
     card.remove();
   }
