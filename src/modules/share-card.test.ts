@@ -98,7 +98,9 @@ it.each(['start', 'center', 'end'] as const)(
       const passage = card.querySelector<HTMLElement>('div[dir="auto"]')!;
       expect(passage.style.fontSize).toBe('120px');
       expect(passage.style.textAlign).toBe(alignment);
-      expect(card.querySelector('.share-card-credit')?.textContent).toContain(alignment === 'center' ? 'Book\nWriter' : '— Book, Writer');
+      const credit = card.querySelector<HTMLElement>('.share-card-credit')!;
+      expect(credit.textContent).toContain(alignment === 'center' ? 'Book\nWriter' : '— Book, Writer');
+      expect(credit.style.fontSize).toBe('84px');
       expect((card.children[0] as HTMLElement).style.marginBottom).toBe('48px');
       return document.createElement('canvas');
     });

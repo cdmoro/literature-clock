@@ -9,6 +9,7 @@ import { loadGoogleFont, normalizeFontName, fontFamilyOverride } from '../utils/
 import { getLocaleThemeFont } from './locale-fonts';
 import { quoteMarkup } from '../utils/quote-markup';
 import { defaultColor } from './themes';
+import { CITE_FACTOR } from './font';
 import { textDirection } from '../utils/text-direction';
 import { getBaseLocale } from './locales';
 import STRINGS from '../strings/web/share.json';
@@ -302,9 +303,10 @@ export async function renderShareCard(
     part.textContent = text;
     credit.append(part);
   });
+  const citeFactor = CITE_FACTOR[skin as keyof typeof CITE_FACTOR] || 0.7;
   Object.assign(credit.style, {
     marginTop: '40px',
-    fontSize: '28px',
+    fontSize: `${84 * citeFactor}px`,
     textAlign: options.alignment || 'start',
     whiteSpace: centered ? 'pre-line' : 'normal',
     opacity: '0.8',
@@ -367,18 +369,19 @@ export async function renderShareCard(
     const minimumSize = 12;
     const maximumSize = 120;
     const availableHeight = height - 192 - signature.getBoundingClientRect().height - 48;
-    const creditHeight = isFuzzy || store.get('quote-attribution') === 'hidden'
-      ? 0
-      : credit.getBoundingClientRect().height + 40;
+    const includesCredit = !isFuzzy && store.get('quote-attribution') !== 'hidden';
     let low = minimumSize;
     let high = maximumSize;
     for (let attempt = 0; attempt < 12; attempt++) {
       const candidate = Math.ceil((low + high) / 2);
       passage.style.fontSize = `${candidate}px`;
+      if (includesCredit) credit.style.fontSize = `${candidate * citeFactor}px`;
+      const creditHeight = includesCredit ? credit.getBoundingClientRect().height + 40 : 0;
       if (passage.scrollHeight + creditHeight <= availableHeight) low = candidate;
       else high = candidate - 1;
     }
     passage.style.fontSize = `${low}px`;
+    if (includesCredit) credit.style.fontSize = `${low * citeFactor}px`;
     return await html2canvas(card, { useCORS: true, scale: 1, width, height, logging: false });
   } finally {
     card.remove();
