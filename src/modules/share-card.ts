@@ -339,7 +339,9 @@ export async function renderShareCard(
     fontSize: '28px',
     lineHeight: '36px',
   });
-  Object.assign(appIcon.style, { width: '36px', height: '36px', flex: '0 0 36px', display: 'block' });
+  Object.assign(appIcon.style, {
+    width: '36px', height: '36px', flex: '0 0 36px', display: 'block', transform: 'translateY(4px)',
+  });
   signature.append(appIcon, signatureName);
   if (photo) {
     for (const element of [content, signature]) {

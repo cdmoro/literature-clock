@@ -237,6 +237,7 @@ it('translates the signature using the interface locale instead of the quote loc
     expect(signature.lang).toBe('pt-PT');
     expect(signature.dir).toBe('ltr');
     expect(signature.querySelector('img')?.style.flex).toBe('0 0 36px');
+    expect(signature.querySelector('img')?.style.transform).toBe('translateY(4px)');
     return document.createElement('canvas');
   });
   await renderShareCard({ ...quote, locale: 'es-ES' });
