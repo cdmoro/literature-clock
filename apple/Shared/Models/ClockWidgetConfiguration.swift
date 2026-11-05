@@ -13,10 +13,10 @@ enum ClockWidgetFont: String, AppEnum {
 }
 
 enum ClockWidgetPalette: String, AppEnum {
-    case red, pink, green, orange, purple, blue, gray, custom
+    case red, pink, green, pine, orange, purple, blue, gray, custom
     static var typeDisplayRepresentation = TypeDisplayRepresentation(name: "Highlight color")
     static var caseDisplayRepresentations: [Self: DisplayRepresentation] = [
-        .red: "Red", .pink: "Pink", .green: "Green", .orange: "Orange", .purple: "Purple", .blue: "Blue", .gray: "Gray", .custom: "Custom"
+        .red: "Red", .pink: "Pink", .green: "Green", .pine: "Pine", .orange: "Orange", .purple: "Purple", .blue: "Blue", .gray: "Gray", .custom: "Custom"
     ]
 }
 

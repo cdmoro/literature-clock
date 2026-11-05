@@ -30,6 +30,7 @@
 "app_collection" = "Коллекция";
 "app_color" = "Цвет";
 "app_copy_quote" = "Копировать цитату";
+"app_copy_quote_image" = "Копировать изображение";
 "app_copy_quote_text" = "Копировать текст цитаты";
 "app_custom_accent_color" = "Пользовательский цвет акцента";
 "app_done" = "Готово";
@@ -57,10 +58,12 @@
 "app_quote_copied" = "Цитата скопирована";
 "app_quote_detail_title" = "Сведения о цитате";
 "app_quote_font" = "Шрифт цитат";
+"app_quote_image_copied" = "Изображение скопировано";
 "app_quote_languages_title" = "Языки цитат";
 "app_quote_text_copied" = "Текст цитаты скопирован";
 "app_quotes" = "Цитаты";
 "app_random_language_help" = "Каждую минуту случайным образом выбирается цитата на одном из этих языков.";
+"app_right" = "Справа";
 "app_safe_quotes" = "Только цитаты для всех возрастов";
 "app_search_quotes" = "Поиск цитат";
 "app_seconds_progress" = "Ход секунд";

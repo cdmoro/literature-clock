@@ -30,6 +30,7 @@
 "app_collection" = "المجموعة";
 "app_color" = "اللون";
 "app_copy_quote" = "نسخ الاقتباس";
+"app_copy_quote_image" = "نسخ الصورة";
 "app_copy_quote_text" = "نسخ نص الاقتباس";
 "app_custom_accent_color" = "لون تمييز مخصص";
 "app_done" = "تم";
@@ -57,10 +58,12 @@
 "app_quote_copied" = "تم نسخ الاقتباس";
 "app_quote_detail_title" = "تفاصيل الاقتباس";
 "app_quote_font" = "خط الاقتباس";
+"app_quote_image_copied" = "تم نسخ الصورة";
 "app_quote_languages_title" = "لغات الاقتباسات";
 "app_quote_text_copied" = "تم نسخ نص الاقتباس";
 "app_quotes" = "الاقتباسات";
 "app_random_language_help" = "يُختار اقتباس عشوائي من هذه اللغات كل دقيقة.";
+"app_right" = "يمين";
 "app_safe_quotes" = "الاقتباسات المناسبة للجميع فقط";
 "app_search_quotes" = "البحث عن اقتباسات";
 "app_seconds_progress" = "تقدم الثواني";

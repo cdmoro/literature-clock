@@ -30,6 +30,7 @@
 "app_collection" = "Raccolta";
 "app_color" = "Colore";
 "app_copy_quote" = "Copia citazione";
+"app_copy_quote_image" = "Copia immagine";
 "app_copy_quote_text" = "Copia testo della citazione";
 "app_custom_accent_color" = "Colore di accento personalizzato";
 "app_done" = "Fine";
@@ -57,10 +58,12 @@
 "app_quote_copied" = "Citazione copiata";
 "app_quote_detail_title" = "Dettaglio della citazione";
 "app_quote_font" = "Carattere delle citazioni";
+"app_quote_image_copied" = "Immagine copiata";
 "app_quote_languages_title" = "Lingue delle citazioni";
 "app_quote_text_copied" = "Testo della citazione copiato";
 "app_quotes" = "Citazioni";
 "app_random_language_help" = "Ogni minuto viene scelta a caso una citazione da queste lingue.";
+"app_right" = "Destra";
 "app_safe_quotes" = "Solo citazioni adatte a tutti";
 "app_search_quotes" = "Cerca citazioni";
 "app_seconds_progress" = "Avanzamento dei secondi";

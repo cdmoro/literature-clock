@@ -97,6 +97,7 @@ enum ClockSettings {
         switch palette {
         case "pink": Color(red: 1.0, green: 0x89 / 255, blue: 0xD8 / 255)
         case "green": Color(red: 0x2E / 255, green: 0xCC / 255, blue: 0x71 / 255)
+        case "pine": Color(red: 0x15 / 255, green: 0x9D / 255, blue: 0x3E / 255)
         case "orange": Color(red: 0xF3 / 255, green: 0x9C / 255, blue: 0x12 / 255)
         case "purple": Color(red: 0x9B / 255, green: 0x59 / 255, blue: 0xB6 / 255)
         case "blue": Color(red: 0x2C / 255, green: 0x97 / 255, blue: 0xDF / 255)
@@ -152,6 +153,7 @@ struct ReadableQuoteText: View {
     let highlight: Bool
     let maximumSize: CGFloat
     let minimumSize: CGFloat
+    var emphasizeHighlight = false
     var alignment: TextAlignment = .leading
 
     private var usesAccentedRendering: Bool {
@@ -202,22 +204,26 @@ struct ReadableQuoteText: View {
         if #available(iOS 18.0, macOS 15.0, *) {
             let highlightedTime = Text(value.time)
                 .font(ClockSettings.quoteFont(fontName, size: size, weight: .regular))
-                .foregroundColor(highlight ? accent : foreground)
+                .foregroundColor(highlight ? (emphasizeHighlight ? foreground : accent) : foreground)
                 .customAttribute(ClockTimeHighlightAttribute())
-            quoteText = Text(value.before).foregroundColor(foreground) +
-                highlightedTime + Text(value.after).foregroundColor(foreground)
+            let before = Text(value.before).foregroundColor(foreground)
+                .customAttribute(ClockQuoteContextAttribute())
+            let after = Text(value.after).foregroundColor(foreground)
+                .customAttribute(ClockQuoteContextAttribute())
+            quoteText = before + highlightedTime + after
         } else {
             quoteText = Text(value.before).foregroundColor(foreground) +
                 Text(value.time)
                     .font(ClockSettings.quoteFont(fontName, size: size, weight: .regular))
-                    .foregroundColor(highlight ? accent : foreground) +
+                    .foregroundColor(highlight ? (emphasizeHighlight ? foreground : accent) : foreground) +
                 Text(value.after).foregroundColor(foreground)
         }
 
         return Group {
             if #available(iOS 18.0, macOS 15.0, *) {
                 quoteText.textRenderer(ClockQuoteTextRenderer(
-                    dimsContext: highlight && usesAccentedRendering
+                    dimsContext: highlight && usesAccentedRendering,
+                    emphasizesTime: emphasizeHighlight && highlight
                 ))
             } else {
                 quoteText
@@ -234,17 +240,20 @@ struct ReadableQuoteText: View {
 
 @available(iOS 18.0, macOS 15.0, *)
 private struct ClockTimeHighlightAttribute: TextAttribute {}
+@available(iOS 18.0, macOS 15.0, *)
+private struct ClockQuoteContextAttribute: TextAttribute {}
 
 @available(iOS 18.0, macOS 15.0, *)
 private struct ClockQuoteTextRenderer: TextRenderer {
     let dimsContext: Bool
+    let emphasizesTime: Bool
 
     func draw(layout: Text.Layout, in context: inout GraphicsContext) {
         for line in layout {
             for run in line {
                 var runContext = context
-                if dimsContext && run[ClockTimeHighlightAttribute.self] == nil {
-                    runContext.opacity *= 0.78
+                if dimsContext && run[ClockQuoteContextAttribute.self] != nil {
+                    runContext.opacity *= 0.58
                 }
                 runContext.draw(run)
             }

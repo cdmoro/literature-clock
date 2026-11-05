@@ -30,6 +30,7 @@
 "app_collection" = "收藏集";
 "app_color" = "颜色";
 "app_copy_quote" = "复制引文";
+"app_copy_quote_image" = "复制图片";
 "app_copy_quote_text" = "复制引文文本";
 "app_custom_accent_color" = "自定义强调色";
 "app_done" = "完成";
@@ -57,10 +58,12 @@
 "app_quote_copied" = "已复制引文";
 "app_quote_detail_title" = "引文详情";
 "app_quote_font" = "引文字体";
+"app_quote_image_copied" = "图片已复制";
 "app_quote_languages_title" = "引文语言";
 "app_quote_text_copied" = "已复制引文文本";
 "app_quotes" = "引文";
 "app_random_language_help" = "每分钟会从这些语言中随机选择一条引文。";
+"app_right" = "右侧";
 "app_safe_quotes" = "仅显示适合所有人的引文";
 "app_search_quotes" = "搜索引文";
 "app_seconds_progress" = "秒数进度";

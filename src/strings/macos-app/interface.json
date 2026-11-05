@@ -69,7 +69,10 @@
     "app_attribution_full": "Full",
     "app_attribution_author_short": "Author",
     "app_copy_quote": "Copy quote",
-    "app_quote_copied": "Quote copied"
+    "app_quote_copied": "Quote copied",
+    "app_copy_quote_image": "Copy image",
+    "app_quote_image_copied": "Image copied",
+    "app_right": "Right"
   },
   "en-US": {
     "app_collection": "Collection",
@@ -141,7 +144,10 @@
     "app_attribution_full": "Full",
     "app_attribution_author_short": "Author",
     "app_copy_quote": "Copy quote",
-    "app_quote_copied": "Quote copied"
+    "app_quote_copied": "Quote copied",
+    "app_copy_quote_image": "Copy image",
+    "app_quote_image_copied": "Image copied",
+    "app_right": "Right"
   },
   "es-ES": {
     "app_collection": "Colección",
@@ -213,7 +219,10 @@
     "app_attribution_full": "Completa",
     "app_attribution_author_short": "Autor",
     "app_copy_quote": "Copiar cita",
-    "app_quote_copied": "Cita copiada"
+    "app_quote_copied": "Cita copiada",
+    "app_copy_quote_image": "Copiar imagen",
+    "app_quote_image_copied": "Imagen copiada",
+    "app_right": "Derecha"
   },
   "pt-PT": {
     "app_collection": "Coleção",
@@ -285,7 +294,10 @@
     "app_attribution_full": "Completa",
     "app_attribution_author_short": "Autor",
     "app_copy_quote": "Copiar citação",
-    "app_quote_copied": "Citação copiada"
+    "app_quote_copied": "Citação copiada",
+    "app_copy_quote_image": "Copiar imagem",
+    "app_quote_image_copied": "Imagem copiada",
+    "app_right": "Direita"
   },
   "fr-FR": {
     "app_collection": "Collection",
@@ -357,7 +369,10 @@
     "app_attribution_full": "Complet",
     "app_attribution_author_short": "Auteur",
     "app_copy_quote": "Copier la citation",
-    "app_quote_copied": "Citation copiée"
+    "app_quote_copied": "Citation copiée",
+    "app_copy_quote_image": "Copier l’image",
+    "app_quote_image_copied": "Image copiée",
+    "app_right": "Droite"
   },
   "it-IT": {
     "app_collection": "Raccolta",
@@ -429,7 +444,10 @@
     "app_attribution_full": "Completa",
     "app_attribution_author_short": "Autore",
     "app_copy_quote": "Copia citazione",
-    "app_quote_copied": "Citazione copiata"
+    "app_quote_copied": "Citazione copiata",
+    "app_copy_quote_image": "Copia immagine",
+    "app_quote_image_copied": "Immagine copiata",
+    "app_right": "Destra"
   },
   "de-DE": {
     "app_collection": "Sammlung",
@@ -501,7 +519,10 @@
     "app_attribution_full": "Voll",
     "app_attribution_author_short": "Autor",
     "app_copy_quote": "Zitat kopieren",
-    "app_quote_copied": "Zitat kopiert"
+    "app_quote_copied": "Zitat kopiert",
+    "app_copy_quote_image": "Bild kopieren",
+    "app_quote_image_copied": "Bild kopiert",
+    "app_right": "Rechts"
   },
   "el-GR": {
     "app_collection": "Συλλογή",
@@ -573,7 +594,10 @@
     "app_attribution_full": "Πλήρης",
     "app_attribution_author_short": "Συγγραφέας",
     "app_copy_quote": "Αντιγραφή αποσπάσματος",
-    "app_quote_copied": "Αντιγράφηκε"
+    "app_quote_copied": "Αντιγράφηκε",
+    "app_copy_quote_image": "Αντιγραφή εικόνας",
+    "app_quote_image_copied": "Η εικόνα αντιγράφηκε",
+    "app_right": "Δεξιά"
   },
   "zh-CN": {
     "app_collection": "收藏集",
@@ -645,7 +669,10 @@
     "app_attribution_full": "完整",
     "app_attribution_author_short": "作者",
     "app_copy_quote": "复制引文",
-    "app_quote_copied": "已复制引文"
+    "app_quote_copied": "已复制引文",
+    "app_copy_quote_image": "复制图片",
+    "app_quote_image_copied": "图片已复制",
+    "app_right": "右侧"
   },
   "ru-RU": {
     "app_collection": "Коллекция",
@@ -717,7 +744,10 @@
     "app_attribution_full": "Полная",
     "app_attribution_author_short": "Автор",
     "app_copy_quote": "Копировать цитату",
-    "app_quote_copied": "Цитата скопирована"
+    "app_quote_copied": "Цитата скопирована",
+    "app_copy_quote_image": "Копировать изображение",
+    "app_quote_image_copied": "Изображение скопировано",
+    "app_right": "Справа"
   },
   "eo": {
     "app_collection": "Kolekto",
@@ -789,7 +819,10 @@
     "app_attribution_full": "Plena",
     "app_attribution_author_short": "Aŭtoro",
     "app_copy_quote": "Kopii citaĵon",
-    "app_quote_copied": "Citaĵo kopiita"
+    "app_quote_copied": "Citaĵo kopiita",
+    "app_copy_quote_image": "Kopii bildon",
+    "app_quote_image_copied": "Bildo kopiita",
+    "app_right": "Dekstren"
   },
   "ar-AE": {
     "app_collection": "المجموعة",
@@ -861,6 +894,9 @@
     "app_attribution_full": "كامل",
     "app_attribution_author_short": "المؤلف",
     "app_copy_quote": "نسخ الاقتباس",
-    "app_quote_copied": "تم نسخ الاقتباس"
+    "app_quote_copied": "تم نسخ الاقتباس",
+    "app_copy_quote_image": "نسخ الصورة",
+    "app_quote_image_copied": "تم نسخ الصورة",
+    "app_right": "يمين"
   }
 }

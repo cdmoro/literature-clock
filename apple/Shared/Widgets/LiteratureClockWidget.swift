@@ -7,8 +7,47 @@ private let widgetLogger = Logger(subsystem: "net.literatureclock.app.widget", c
 
 private func configuredLocales(_ languages: [ClockWidgetLanguage]) -> [String] {
     let selected = languages.map(\.rawValue)
-    guard selected == ["en-US"] else { return selected.isEmpty ? ["en-US"] : selected }
+    guard selected == ["en-US"] else { return selected.isEmpty ? ClockWidgetLanguage.systemDefaults.map(\.rawValue) : selected }
     return ClockWidgetLanguage.systemDefaults.map(\.rawValue)
+}
+
+private func appDefaultedConfiguration(_ configuration: ClockWidgetConfiguration) -> ClockWidgetConfiguration {
+    let result = configuration
+    let defaults = ClockSettings.defaults
+    // AppIntent requires literal parameter defaults. Resolve app preferences
+    // here, while retaining every non-default value explicitly chosen by the user.
+    if configuration.appearance == .system,
+       let value = defaults.string(forKey: ClockSettings.appearanceKey),
+       let appearance = ClockWidgetAppearance(rawValue: value) {
+        result.appearance = appearance
+    }
+    if configuration.font == .serif,
+       let value = defaults.string(forKey: ClockSettings.fontKey),
+       let font = ClockWidgetFont(rawValue: value) {
+        result.font = font
+    }
+    if configuration.resolvedPalette == .red,
+       let value = defaults.string(forKey: ClockSettings.paletteKey),
+       let palette = ClockWidgetPalette(rawValue: value) {
+        result.palette = palette
+    }
+    if configuration.highlight == true,
+       let value = defaults.object(forKey: ClockSettings.highlightKey) as? Bool {
+        result.highlight = value
+    }
+    if configuration.showProgress == true,
+       defaults.string(forKey: ClockSettings.progressKey) == "hidden" {
+        result.showProgress = false
+    }
+    if configuration.attribution == .bookAuthor,
+       let value = defaults.string(forKey: ClockSettings.attributionKey),
+       let attribution = ClockWidgetAttribution(rawValue: value) {
+        result.attribution = attribution
+    }
+    if configuration.languages.map(\.rawValue) == ["en-US"] {
+        result.languages = ClockWidgetLanguage.systemDefaults
+    }
+    return result
 }
 
 struct ClockEntry: TimelineEntry {
@@ -55,7 +94,11 @@ struct ClockProvider: AppIntentTimelineProvider {
     }
     func snapshot(for configuration: ClockWidgetConfiguration, in context: Context) async -> ClockEntry {
         widgetLogger.debug("Snapshot requested; preview: \(context.isPreview)")
+        let configuration = appDefaultedConfiguration(configuration)
         let now = Date()
+        // Widget galleries request a snapshot and expect it to contain useful
+        // content immediately. Apply the same default-language expansion used
+        // by timelines, including when WidgetKit supplies the intent default.
         let locales = configuredLocales(configuration.languages)
         let window = ClockCatalogue.window(at: [now], locales: locales)
         let result = entry(at: now, minuteKey: minuteKeyFormatter.string(from: now),
@@ -72,6 +115,7 @@ struct ClockProvider: AppIntentTimelineProvider {
     }
 
     func makeTimeline(at now: Date, configuration: ClockWidgetConfiguration, family: WidgetFamily) -> Timeline<ClockEntry> {
+        let configuration = appDefaultedConfiguration(configuration)
         let started = Date()
         let requestID = UUID().uuidString
         let minuteStart = Calendar.current.dateInterval(of: .minute, for: now)?.start ?? now
@@ -251,15 +295,13 @@ struct ClockWidgetView: View {
         }
         .overlay(alignment: .bottom) {
             if entry.progressMode == "bottom" {
-                GeometryReader { geometry in
-                    let elapsed = Date().timeIntervalSince(entry.date)
-                    let fraction = min(max(elapsed / 60, 0), 1)
-                    Rectangle()
-                        .fill(progressColor)
-                        .frame(width: geometry.size.width * fraction)
-                }
-                .frame(maxWidth: .infinity)
-                .frame(height: 4)
+                ProgressView(timerInterval: entry.date...entry.date.addingTimeInterval(60), countsDown: false)
+                    .progressViewStyle(.linear)
+                    .tint(progressColor)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 4)
+                    .scaleEffect(x: 1, y: 2, anchor: .center)
+                    .clipped()
                 .widgetAccentable(false)
                 .accessibilityLabel(Text("app_seconds_progress"))
                 .allowsHitTesting(false)
@@ -287,6 +329,7 @@ struct ClockWidgetView: View {
                               accent: accentColor, highlight: entry.highlight,
                               maximumSize: maximumQuoteSize,
                               minimumSize: minimumQuoteSize,
+                              emphasizeHighlight: isMonochromeRendering,
                               alignment: Locale.Language(identifier: locale).characterDirection == .rightToLeft ? .trailing : .leading)
                 .widgetURL(quoteURL(for: quote))
         }
@@ -326,7 +369,7 @@ struct LiteratureClockWidget: Widget {
         AppIntentConfiguration(kind: kind, intent: ClockWidgetConfiguration.self, provider: ClockProvider()) { entry in
             if entry.widgetID == "placeholder" {
                 ClockWidgetView(entry: entry)
-                    .redacted(reason: .placeholder)
+                    .unredacted()
             } else {
                 ClockWidgetView(entry: entry)
                     .unredacted()

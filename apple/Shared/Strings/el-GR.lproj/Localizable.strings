@@ -30,6 +30,7 @@
 "app_collection" = "Συλλογή";
 "app_color" = "Χρώμα";
 "app_copy_quote" = "Αντιγραφή αποσπάσματος";
+"app_copy_quote_image" = "Αντιγραφή εικόνας";
 "app_copy_quote_text" = "Αντιγραφή κειμένου παραθέματος";
 "app_custom_accent_color" = "Προσαρμοσμένο χρώμα έμφασης";
 "app_done" = "Τέλος";
@@ -57,10 +58,12 @@
 "app_quote_copied" = "Αντιγράφηκε";
 "app_quote_detail_title" = "Στοιχεία αποσπάσματος";
 "app_quote_font" = "Γραμματοσειρά παραθεμάτων";
+"app_quote_image_copied" = "Η εικόνα αντιγράφηκε";
 "app_quote_languages_title" = "Γλώσσες παραθεμάτων";
 "app_quote_text_copied" = "Το κείμενο αντιγράφηκε";
 "app_quotes" = "Παραθέματα";
 "app_random_language_help" = "Κάθε λεπτό επιλέγεται τυχαία ένα παράθεμα από αυτές τις γλώσσες.";
+"app_right" = "Δεξιά";
 "app_safe_quotes" = "Μόνο κατάλληλα για όλους παραθέματα";
 "app_search_quotes" = "Αναζήτηση παραθεμάτων";
 "app_seconds_progress" = "Πρόοδος δευτερολέπτων";

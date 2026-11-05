@@ -153,7 +153,9 @@ enum ClockCatalogue {
     }
 
     static func languageName(_ locale: String) -> String {
-        Locale(identifier: locale).localizedString(forIdentifier: locale)?.capitalized ?? locale
+        let languageCode = Locale(identifier: locale).language.languageCode?.identifier ?? locale
+        let name = Locale(identifier: locale).localizedString(forLanguageCode: languageCode)?.capitalized ?? languageCode
+        return "\(name) (\(locale))"
     }
 
     private static var catalogueCache: [String: [String: [Quote]]] = [:]

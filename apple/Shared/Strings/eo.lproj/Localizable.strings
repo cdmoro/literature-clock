@@ -30,6 +30,7 @@
 "app_collection" = "Kolekto";
 "app_color" = "Koloro";
 "app_copy_quote" = "Kopii citaĵon";
+"app_copy_quote_image" = "Kopii bildon";
 "app_copy_quote_text" = "Kopii citaĵan tekston";
 "app_custom_accent_color" = "Propra emfaza koloro";
 "app_done" = "Farita";
@@ -57,10 +58,12 @@
 "app_quote_copied" = "Citaĵo kopiita";
 "app_quote_detail_title" = "Detaloj de la citaĵo";
 "app_quote_font" = "Tiparo de citaĵoj";
+"app_quote_image_copied" = "Bildo kopiita";
 "app_quote_languages_title" = "Lingvoj de citaĵoj";
 "app_quote_text_copied" = "Citaĵa teksto kopiita";
 "app_quotes" = "Citaĵoj";
 "app_random_language_help" = "Ĉiuminute hazarde elektiĝas citaĵo el ĉi tiuj lingvoj.";
+"app_right" = "Dekstren";
 "app_safe_quotes" = "Nur citaĵoj taŭgaj por ĉiuj";
 "app_search_quotes" = "Serĉi citaĵojn";
 "app_seconds_progress" = "Progreso de sekundoj";
