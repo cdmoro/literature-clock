@@ -5,14 +5,18 @@ from pathlib import PurePosixPath
 WEB_FILES = {"index.html", "package.json", "package-lock.json", "netlify.toml", "vite.config.ts", "tsconfig.json"}
 SHARED = {"Web", "macOS", "Windows"}
 
-# This key is duplicated in the current macOS app's ClockHomeView.swift
-# (WidgetQuoteDetail.detailTitle). Keep it listed separately from file-level
-# ownership so changes to it also flag the app until that consumer loads a
-# shared catalogue directly.
-KEY_CONSUMERS = {
-    "src/strings/common/settings.json": {
-        "settings_attribution_position": SHARED | {"macOS app"},
+MACOS_APP_SHARED_KEYS = {
+    "src/strings/common/translations.json": {
+        "share", "dark", "light", "system",
     },
+    "src/strings/common/settings.json": {
+        "settings_attribution_position", "settings_color_done",
+    },
+    "src/strings/web/settings.json": {"settings_title"},
+}
+KEY_CONSUMERS = {
+    path: {key: SHARED | {"macOS app"} for key in keys}
+    for path, keys in MACOS_APP_SHARED_KEYS.items()
 }
 
 
@@ -48,7 +52,7 @@ def components_for_path(value: str) -> set[str]:
     if path.startswith("src/strings/web/"):
         return {"Web"}
     if path.startswith("src/strings/common/"):
-        return SHARED
+        return SHARED | {"macOS app"}
     if path.startswith("src/strings/screensaver/"):
         return {"macOS", "Windows"}
     if path.startswith(("src/strings/apple-app/", "src/strings/macos-app/")):

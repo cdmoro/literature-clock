@@ -2,6 +2,7 @@
 node_modules
 **/.DS_Store
 dist
+**/.DS_Store
 public/times
 scripts/*.csv
 .translation-work/
