@@ -263,7 +263,7 @@ export async function renderShareCard(
     flexDirection: 'column',
     justifyContent: 'center',
     flex: '1 1 auto',
-    marginBottom: '48px',
+    marginBottom: '72px',
   });
   const passage = document.createElement('div');
   passage.dir = 'auto';
@@ -327,8 +327,8 @@ export async function renderShareCard(
   const darkAppearance = appearance ? appearance === 'dark' : liveTheme.endsWith('-dark');
   appIcon.src = darkAppearance ? '/assets/app-icon-light.png' : '/assets/app-icon-dark.png';
   appIcon.alt = '';
-  appIcon.width = 32;
-  appIcon.height = 32;
+  appIcon.width = 36;
+  appIcon.height = 36;
   appIcon.style.objectFit = 'contain';
   const signatureName = document.createElement('span');
   signatureName.textContent = productName;
@@ -337,9 +337,9 @@ export async function renderShareCard(
     alignItems: 'center',
     gap: '12px',
     fontSize: '28px',
-    lineHeight: '32px',
+    lineHeight: '36px',
   });
-  Object.assign(appIcon.style, { width: '32px', height: '32px', flex: '0 0 32px', display: 'block' });
+  Object.assign(appIcon.style, { width: '36px', height: '36px', flex: '0 0 36px', display: 'block' });
   signature.append(appIcon, signatureName);
   if (photo) {
     for (const element of [content, signature]) {
@@ -368,7 +368,7 @@ export async function renderShareCard(
     // scrollWidth changes with text alignment and must not affect type size.
     const minimumSize = 12;
     const maximumSize = 120;
-    const availableHeight = height - 192 - signature.getBoundingClientRect().height - 48;
+    const availableHeight = height - 192 - signature.getBoundingClientRect().height - 72;
     const includesCredit = !isFuzzy && store.get('quote-attribution') !== 'hidden';
     let low = minimumSize;
     let high = maximumSize;

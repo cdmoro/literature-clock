@@ -101,7 +101,7 @@ it.each(['start', 'center', 'end'] as const)(
       const credit = card.querySelector<HTMLElement>('.share-card-credit')!;
       expect(credit.textContent).toContain(alignment === 'center' ? 'Book\nWriter' : '— Book, Writer');
       expect(credit.style.fontSize).toBe('84px');
-      expect((card.children[0] as HTMLElement).style.marginBottom).toBe('48px');
+      expect((card.children[0] as HTMLElement).style.marginBottom).toBe('72px');
       return document.createElement('canvas');
     });
     await renderShareCard(quote, undefined, undefined, { alignment });
@@ -236,7 +236,7 @@ it('translates the signature using the interface locale instead of the quote loc
     expect(signature.textContent).toBe('Relógio literário');
     expect(signature.lang).toBe('pt-PT');
     expect(signature.dir).toBe('ltr');
-    expect(signature.querySelector('img')?.style.flex).toBe('0 0 32px');
+    expect(signature.querySelector('img')?.style.flex).toBe('0 0 36px');
     return document.createElement('canvas');
   });
   await renderShareCard({ ...quote, locale: 'es-ES' });
