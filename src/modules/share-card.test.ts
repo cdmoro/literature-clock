@@ -85,7 +85,7 @@ it('fits long passages at the smallest size in the square card', async () => {
   await renderShareCard(quote);
   const card = vi.mocked(html2canvas).mock.calls[0][0] as HTMLElement;
   expect(card.style.height).toBe('1080px');
-  expect(Number.parseInt(card.querySelector<HTMLElement>('div[dir="auto"]')!.style.fontSize)).toBe(1);
+  expect(Number.parseInt(card.querySelector<HTMLElement>('div[dir="auto"]')!.style.fontSize)).toBe(24);
   expect(vi.mocked(html2canvas).mock.calls[0][1]?.height).toBe(1080);
   height.mockRestore();
 });
