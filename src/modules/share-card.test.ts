@@ -77,7 +77,7 @@ it.each([
   });
   await renderShareCard(quote, appearance);
 });
-it('keeps long passages at a readable minimum size in the square card', async () => {
+it('fits long passages at the smallest size in the square card', async () => {
   const height = vi.spyOn(HTMLElement.prototype, 'scrollHeight', 'get').mockImplementation(function (this: HTMLElement) {
     return this.classList.contains('share-card-credit') ? 100 : 2000;
   });
@@ -85,7 +85,7 @@ it('keeps long passages at a readable minimum size in the square card', async ()
   await renderShareCard(quote);
   const card = vi.mocked(html2canvas).mock.calls[0][0] as HTMLElement;
   expect(card.style.height).toBe('1080px');
-  expect(Number.parseInt(card.querySelector<HTMLElement>('div[dir="auto"]')!.style.fontSize)).toBe(12);
+  expect(Number.parseInt(card.querySelector<HTMLElement>('div[dir="auto"]')!.style.fontSize)).toBe(1);
   expect(vi.mocked(html2canvas).mock.calls[0][1]?.height).toBe(1080);
   height.mockRestore();
 });

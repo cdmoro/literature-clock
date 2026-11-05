@@ -360,14 +360,14 @@ export async function renderShareCard(
     if (photo) await photo.decode().catch(() => undefined);
     await fontLoading;
     await document.fonts?.ready;
-    let size = 84;
+    let size = 120;
     passage.style.fontSize = `${size}px`;
     const available = height - 192 - 170;
     const fits = () =>
       content.scrollHeight <= available &&
       passage.scrollWidth <= passage.clientWidth &&
       content.scrollWidth <= content.clientWidth;
-    while (!fits() && size > 12) passage.style.fontSize = `${--size}px`;
+    while (!fits() && size > 1) passage.style.fontSize = `${--size}px`;
     // Use the largest type size that fits the passage and its attribution in the square card.
     const finalHeight = height;
     card.style.height = `${finalHeight}px`;

@@ -350,21 +350,27 @@ export function initShareOptions() {
     const alignmentGroup = document.createElement('div');
     alignmentGroup.className = 'share-choice-group share-alignment-toggle';
     alignmentGroup.setAttribute('role', 'group');
-    alignmentGroup.setAttribute('aria-label', strings.alignment);
-    const alignmentButtons = (['left', 'center', 'right'] as const).map((position) => {
-      const alignmentButton = document.createElement('button');
-      alignmentButton.type = 'button';
-      alignmentButton.textContent = strings[position];
-      alignmentButton.dataset.alignment = position;
-      alignmentButton.setAttribute('aria-pressed', String(alignment === position));
-      alignmentButton.addEventListener('click', () => {
-        alignment = position;
-        for (const button of alignmentButtons) button.setAttribute('aria-pressed', String(button === alignmentButton));
-        void refresh();
-      });
-      alignmentGroup.append(alignmentButton);
-      return alignmentButton;
+    const alignmentButton = document.createElement('button');
+    alignmentButton.type = 'button';
+    alignmentButton.className = 'share-alignment-button';
+    const alignmentIcons = {
+      left: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 9h11M4 13h16M4 17h11M4 21h16"/></svg>',
+      center: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M7 9h10M4 13h16M7 17h10M4 21h16"/></svg>',
+      right: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M9 9h11M4 13h16M9 17h11M4 21h16"/></svg>',
+    };
+    const updateAlignmentButton = () => {
+      alignmentButton.dataset.alignment = alignment;
+      alignmentButton.innerHTML = alignmentIcons[alignment];
+      alignmentButton.setAttribute('aria-label', `${strings.alignment}: ${strings[alignment]}`);
+      alignmentButton.title = `${strings.alignment}: ${strings[alignment]}`;
+    };
+    alignmentButton.addEventListener('click', () => {
+      alignment = alignment === 'left' ? 'center' : alignment === 'center' ? 'right' : 'left';
+      updateAlignmentButton();
+      void refresh();
     });
+    updateAlignmentButton();
+    alignmentGroup.append(alignmentButton);
     controls.insertBefore(field(strings.alignment, alignmentGroup), customization);
     if (popupPhotoImage) controls.insertBefore(includePhotoControl, customization);
     const patternControl = document.createElement('label');

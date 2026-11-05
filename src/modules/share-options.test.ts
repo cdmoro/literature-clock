@@ -605,17 +605,19 @@ it.each([
   document.getElementById('share')!.click();
   const group = document.querySelector<HTMLElement>('.share-alignment-toggle')!;
   const buttons = [...group.querySelectorAll<HTMLButtonElement>('button')];
-  expect(buttons.map((button) => button.textContent)).toEqual(['Left', 'Center', 'Right']);
-  expect(buttons.find((button) => button.getAttribute('aria-pressed') === 'true')?.dataset.alignment).toBe(initial);
+  expect(buttons).toHaveLength(1);
+  expect(buttons[0].dataset.alignment).toBe(initial);
+  expect(buttons[0].querySelector('svg')).not.toBeNull();
   buttons[0].click();
   await Promise.resolve();
-  if (leftLogical === 'start') expect(selectedCardOptions()).not.toHaveProperty('alignment');
-  else expect(selectedCardOptions()).toMatchObject({ alignment: leftLogical });
-  buttons[2].click();
-  await Promise.resolve();
-  if (rightLogical) expect(selectedCardOptions()).toMatchObject({ alignment: rightLogical });
-  else expect(selectedCardOptions()).not.toHaveProperty('alignment');
-  buttons[1].click();
-  await Promise.resolve();
-  expect(selectedCardOptions()).toMatchObject({ alignment: 'center' });
+  const next: 'left' | 'center' | 'right' = ({ left: 'center', center: 'right', right: 'left' } as const)[initial];
+  expect(buttons[0].dataset.alignment).toBe(next);
+  if (next === 'center') expect(selectedCardOptions()).toMatchObject({ alignment: 'center' });
+  else if (next === 'left' && leftLogical === 'start') expect(selectedCardOptions()).not.toHaveProperty('alignment');
+  else expect(selectedCardOptions()).toMatchObject({ alignment: next === 'left' ? leftLogical : rightLogical });
+  for (let step = 0; step < 2; step++) {
+    buttons[0].click();
+    await Promise.resolve();
+  }
+  expect(buttons[0].dataset.alignment).toBe(initial);
 });
