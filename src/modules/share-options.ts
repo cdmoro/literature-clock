@@ -573,7 +573,13 @@ export function initShareOptions() {
       loading.hidden = false;
       copyImage.disabled = true;
       try {
-        const canvas = await renderShareCard(snapshot, appearance, theme, selectedCardOptions());
+        const canvas = await renderShareCard(
+          snapshot,
+          appearance,
+          theme,
+          selectedCardOptions(),
+          store.get('ui-locale') || store.get('locale'),
+        );
         if (current !== revision) return;
         canvas.style.width = 'auto';
         canvas.style.height = 'auto';

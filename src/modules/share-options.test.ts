@@ -58,6 +58,7 @@ it('uses a square image and changes appearance without changing the live clock',
     'light',
     undefined,
     { pattern: 'none', color: undefined, font: 'default' },
+    'en-GB',
   );
   expect(button('Vertical')).toBeUndefined();
   expect(button('Light').getAttribute('aria-pressed')).toBe('true');
@@ -203,7 +204,7 @@ it('changes the preview colour and pattern without touching clock preferences or
     color: '#123456',
     pattern: 'dots',
     font: 'default',
-  });
+  }, 'en-GB');
   expect(state.color).toBe('#d24335');
   expect(state['background-pattern']).toBe('none');
   expect(location.href).toBe(originalUrl);
@@ -232,7 +233,7 @@ it('starts each popup from the saved clock pattern and clears its temporary colo
     color: undefined,
     pattern: 'grid',
     font: 'default',
-  });
+  }, 'en-GB');
 });
 
 it('changes fonts only for the image, includes custom families and clears the override on close', async () => {
@@ -248,6 +249,7 @@ it('changes fonts only for the image, includes custom families and clears the ov
     undefined,
     undefined,
     expect.objectContaining({ font: 'Lora' }),
+    'en-GB',
   );
   expect(state.font).toBe('default');
   expect((document.getElementById('font-select') as HTMLSelectElement).value).toBe('default');
@@ -554,6 +556,7 @@ it('toggles time highlighting after Color, before the optional image, and rememb
     undefined,
     undefined,
     expect.objectContaining({ highlightTime: true }),
+    'en-GB',
   );
   expect(localStorage.getItem('share-highlight-time')).toBe('true');
   button('Close').click();
@@ -585,6 +588,7 @@ it('toggles uppercase text for the share card and starts disabled each time', as
     undefined,
     undefined,
     expect.objectContaining({ uppercase: true }),
+    'en-GB',
   );
   button('Close').click();
   document.getElementById('share')!.click();

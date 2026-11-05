@@ -26,7 +26,13 @@ export function initShare() {
 
 export async function getCanvas(quote = store.get('active-quote')) {
   if (!quote) return;
-  return renderShareCard({ ...quote }, selectedCardAppearance(), selectedCardTheme(), selectedCardOptions());
+  return renderShareCard(
+    { ...quote },
+    selectedCardAppearance(),
+    selectedCardTheme(),
+    selectedCardOptions(),
+    store.get('ui-locale') || store.get('locale'),
+  );
 }
 
 export async function shareQuote(snapshot?: ResolvedQuote) {

@@ -10,6 +10,7 @@ import { getLocaleThemeFont } from './locale-fonts';
 import { quoteMarkup } from '../utils/quote-markup';
 import { defaultColor } from './themes';
 import { textDirection } from '../utils/text-direction';
+import { getBaseLocale } from './locales';
 import STRINGS from '../strings/web/share.json';
 
 export type CardAppearance = 'light' | 'dark';
@@ -32,6 +33,7 @@ export async function renderShareCard(
   appearance?: CardAppearance,
   theme?: string,
   options: CardOptions = {},
+  interfaceLocale = store.get('ui-locale') || store.get('locale'),
 ): Promise<HTMLCanvasElement> {
   const width = 1080;
   const height = 1080;
@@ -312,10 +314,11 @@ export async function renderShareCard(
   }
   const signature = document.createElement('div');
   signature.className = 'share-card-signature';
-  signature.lang = quote.locale.replace(/-draft$/, '');
-  signature.dir = textDirection(quote.locale);
+  const signatureLocale = getBaseLocale(interfaceLocale || 'en-GB');
+  signature.lang = signatureLocale;
+  signature.dir = textDirection(signatureLocale);
   const productName =
-    STRINGS[quote.locale.replace(/-draft$/, '') as keyof typeof STRINGS]?.signature || STRINGS['en-GB'].signature;
+    STRINGS[signatureLocale]?.signature || STRINGS['en-GB'].signature;
   const appIcon = document.createElement('img');
   const darkAppearance = appearance ? appearance === 'dark' : liveTheme.endsWith('-dark');
   appIcon.src = darkAppearance ? '/assets/app-icon-light.png' : '/assets/app-icon-dark.png';
@@ -330,7 +333,9 @@ export async function renderShareCard(
     alignItems: 'center',
     gap: '12px',
     fontSize: '28px',
+    lineHeight: '32px',
   });
+  Object.assign(appIcon.style, { width: '32px', height: '32px', flex: '0 0 32px', display: 'block' });
   signature.append(appIcon, signatureName);
   if (photo) {
     for (const element of [content, signature]) {
@@ -357,13 +362,13 @@ export async function renderShareCard(
     await document.fonts?.ready;
     let size = 84;
     passage.style.fontSize = `${size}px`;
-    const available = height - 192 - 150;
+    const available = height - 192 - 170;
     const fits = () =>
       content.scrollHeight <= available &&
       passage.scrollWidth <= passage.clientWidth &&
       content.scrollWidth <= content.clientWidth;
-    while (!fits() && size > 36) passage.style.fontSize = `${--size}px`;
-    // Keep the square card and readable type, even when exceptionally long quotes need to overflow.
+    while (!fits() && size > 12) passage.style.fontSize = `${--size}px`;
+    // Use the largest type size that fits the passage and its attribution in the square card.
     const finalHeight = height;
     card.style.height = `${finalHeight}px`;
     return await html2canvas(card, { useCORS: true, scale: 1, width, height: finalHeight, logging: false });

@@ -3,11 +3,17 @@ import html2canvas from 'html2canvas-pro';
 import { loadGoogleFont } from '../utils/google-font';
 import { renderShareCard } from './share-card';
 import type { ResolvedQuote } from '../types';
-const { state } = vi.hoisted(() => ({ state: { hideBookTitle: false, attribution: 'below' } }));
+const { state } = vi.hoisted(() => ({ state: { hideBookTitle: false, attribution: 'below', interfaceLocale: 'en-GB' } }));
 vi.mock('../store', () => ({
   store: {
     get: (key: string) =>
-      key === 'hide-book-title' ? state.hideBookTitle : key === 'quote-attribution' ? state.attribution : 'none',
+      key === 'hide-book-title'
+        ? state.hideBookTitle
+        : key === 'quote-attribution'
+          ? state.attribution
+          : key === 'ui-locale' || key === 'locale'
+            ? state.interfaceLocale
+            : 'none',
   },
 }));
 vi.mock('../utils/google-font', async (importOriginal) => ({
@@ -28,6 +34,7 @@ const quote = {
 beforeEach(() => {
   state.hideBookTitle = false;
   state.attribution = 'below';
+  state.interfaceLocale = 'en-GB';
   document.body.innerHTML = '<blockquote id="quote"></blockquote>';
   vi.mocked(html2canvas).mockReset();
   vi.mocked(loadGoogleFont).mockReset().mockResolvedValue(undefined);
@@ -45,7 +52,7 @@ it('exports a square independently of the viewport and safely preserves quote te
       expect(element.querySelector('em')?.textContent).toBe('Before');
       expect(element.textContent).toContain('— Book, Writer');
       expect((element as HTMLElement).dir).toBe('ltr');
-      expect(element.lastElementChild?.textContent).toBe('Reloj literario');
+      expect(element.lastElementChild?.textContent).toBe('Literature Clock');
       expect(element.querySelector('.share-card-signature img')?.getAttribute('src')).toBe('/assets/app-icon-dark.png');
       expect((element.lastElementChild as HTMLElement).style.display).toBe('flex');
       expect((element.lastElementChild as HTMLElement).dir).toBe('ltr');
@@ -78,7 +85,7 @@ it('keeps long passages at a readable minimum size in the square card', async ()
   await renderShareCard(quote);
   const card = vi.mocked(html2canvas).mock.calls[0][0] as HTMLElement;
   expect(card.style.height).toBe('1080px');
-  expect(Number.parseInt(card.querySelector<HTMLElement>('div[dir="auto"]')!.style.fontSize)).toBeGreaterThanOrEqual(36);
+  expect(Number.parseInt(card.querySelector<HTMLElement>('div[dir="auto"]')!.style.fontSize)).toBe(12);
   expect(vi.mocked(html2canvas).mock.calls[0][1]?.height).toBe(1080);
   height.mockRestore();
 });
@@ -194,14 +201,27 @@ it('isolates mixed-script book and author names and defaults RTL text to the rig
     expect(credit.getAttribute('dir')).toBe('rtl');
     expect((credit as HTMLElement).style.textAlign).toBe('start');
     const signature = element.lastElementChild as HTMLElement;
-    expect(signature.textContent).toBe('الساعة الأدبية');
+    expect(signature.textContent).toBe('Literature Clock');
     expect(signature.querySelector('img')?.getAttribute('src')).toBe('/assets/app-icon-light.png');
-    expect(signature.getAttribute('dir')).toBe('rtl');
-    expect(signature.lang).toBe('ar-AE');
+    expect(signature.getAttribute('dir')).toBe('ltr');
+    expect(signature.lang).toBe('en-GB');
     expect(credit.querySelectorAll('[dir="auto"]')).toHaveLength(2);
     return document.createElement('canvas');
   });
   await renderShareCard({ ...quote, locale: 'ar-AE', title: 'كتاب عربي', author: 'Stanley R. Matthews' });
+});
+
+it('translates the signature using the interface locale instead of the quote locale', async () => {
+  state.interfaceLocale = 'pt-PT';
+  vi.mocked(html2canvas).mockImplementation(async (element) => {
+    const signature = element.querySelector<HTMLElement>('.share-card-signature')!;
+    expect(signature.textContent).toBe('Relógio literário');
+    expect(signature.lang).toBe('pt-PT');
+    expect(signature.dir).toBe('ltr');
+    expect(signature.querySelector('img')?.style.flex).toBe('0 0 32px');
+    return document.createElement('canvas');
+  });
+  await renderShareCard({ ...quote, locale: 'es-ES' });
 });
 
 it('exports the shared noise asset at its native tile size', async () => {
