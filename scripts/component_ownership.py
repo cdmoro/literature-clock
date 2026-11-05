@@ -61,6 +61,8 @@ def components_for_path(value: str) -> set[str]:
         return {"macOS", "Windows"} if "/Assets/" in path else {"macOS"}
     if path.startswith("screensavers/windows-native/"):
         return {"Windows"} if path not in {"screensavers/windows-native/README.md", "screensavers/windows-native/VERSION"} else set()
+    if path in {"public/assets/app-icon-dark.png", "public/assets/app-icon-light.png"}:
+        return {"Web"}
     if path.startswith("public/assets/"):
         return {"Web", "Windows"}
     if path.startswith(("src/", "public/", "times/", "plugins/", "admin/")):
