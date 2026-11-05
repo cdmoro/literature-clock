@@ -451,6 +451,9 @@ export function initShareOptions() {
     imageArea.append(previewLabel, preview);
     const actions = document.createElement('div');
     actions.className = 'share-preview-actions';
+    const shareActions: HTMLButtonElement[] = [];
+    const busyActions = new Set<HTMLButtonElement>();
+    let previewUpdating = true;
     const setActionContent = (target: HTMLButtonElement, text: string, icon: string) => {
       target.setAttribute('aria-label', text);
       target.title = text;
@@ -485,7 +488,8 @@ export function initShareOptions() {
       actionButton.type = 'button';
       setActionContent(actionButton, text, icon);
       actionButton.addEventListener('click', async () => {
-        actionButton.disabled = true;
+        busyActions.add(actionButton);
+        updateActionState();
         try {
           const shareSnapshot = uppercaseText
             ? {
@@ -496,9 +500,11 @@ export function initShareOptions() {
           const notice = await action(shareSnapshot);
           status.textContent = notice || '';
         } finally {
-          actionButton.disabled = false;
+          busyActions.delete(actionButton);
+          updateActionState();
         }
       });
+      shareActions.push(actionButton);
       actions.append(actionButton);
     }
     const copyImage = document.createElement('button');
@@ -509,12 +515,14 @@ export function initShareOptions() {
       '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1"/><path d="m3 17 6-6 4 4 3-3 5 5"/></svg>',
     );
     const canCopyImage = typeof ClipboardItem !== 'undefined' && typeof navigator.clipboard?.write === 'function';
+    const canCopyText = typeof navigator.clipboard?.writeText === 'function';
     copyImage.disabled = true;
     if (!canCopyImage) copyImage.title = strings.copyUnavailable;
     copyImage.addEventListener('click', async () => {
       const canvas = preview.querySelector('canvas');
       if (!canvas || !canCopyImage) return;
-      copyImage.disabled = true;
+      busyActions.add(copyImage);
+      updateActionState();
       try {
         // Start clipboard.write within the click gesture, before encoding completes.
         const png = new Promise<Blob>((resolve, reject) =>
@@ -528,10 +536,19 @@ export function initShareOptions() {
       } catch {
         status.textContent = strings.copyFailed;
       } finally {
-        copyImage.disabled = !canCopyImage || !preview.querySelector('canvas');
+        busyActions.delete(copyImage);
+        updateActionState();
       }
     });
     actions.prepend(copyImage);
+    const updateActionState = () => {
+      copyText.disabled = previewUpdating || busyActions.has(copyText) || !canCopyText;
+      copyImage.disabled = previewUpdating || busyActions.has(copyImage) || !canCopyImage || !preview.querySelector('canvas');
+      for (const actionButton of shareActions) {
+        actionButton.disabled = previewUpdating || busyActions.has(actionButton);
+      }
+    };
+    updateActionState();
     dialog.append(header, controls, status, imageArea, hint, actions);
     document.body.append(dialog);
     closeDialogOnBackdropClick(dialog);
@@ -577,7 +594,8 @@ export function initShareOptions() {
       appearanceButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === variant)));
       preview.setAttribute('aria-busy', 'true');
       loading.hidden = false;
-      copyImage.disabled = true;
+      previewUpdating = true;
+      updateActionState();
       try {
         const canvas = await renderShareCard(
           snapshot,
@@ -597,12 +615,15 @@ export function initShareOptions() {
         else preview.insertBefore(canvas, loading);
         preview.setAttribute('aria-busy', 'false');
         loading.hidden = true;
-        copyImage.disabled = !canCopyImage;
+        previewUpdating = false;
+        updateActionState();
         status.textContent = '';
       } catch {
         if (current === revision) {
           preview.setAttribute('aria-busy', 'false');
           loading.hidden = true;
+          previewUpdating = false;
+          updateActionState();
           status.textContent = strings.failed;
         }
       }

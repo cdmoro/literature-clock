@@ -98,7 +98,8 @@ it.each(['start', 'center', 'end'] as const)(
       const passage = card.querySelector<HTMLElement>('div[dir="auto"]')!;
       expect(passage.style.fontSize).toBe('120px');
       expect(passage.style.textAlign).toBe(alignment);
-      expect(card.querySelector('.share-card-credit')?.textContent).toContain('— Book');
+      expect(card.querySelector('.share-card-credit')?.textContent).toContain(alignment === 'center' ? 'Book\nWriter' : '— Book, Writer');
+      expect((card.children[0] as HTMLElement).style.marginBottom).toBe('48px');
       return document.createElement('canvas');
     });
     await renderShareCard(quote, undefined, undefined, { alignment });
@@ -189,10 +190,10 @@ it.each(['dots', 'circles', 'diagonal', 'diagonal-wide'] as const)(
 
 it.each([
   ['es-ES', 'start', 'start', '— Book, Writer'],
-  ['es-ES', 'center', 'center', '— Book Writer'],
+  ['es-ES', 'center', 'center', 'Book\nWriter'],
   ['es-ES', 'end', 'end', '— Book, Writer'],
   ['ar-AE', 'start', 'start', '— Book, Writer'],
-  ['ar-AE', 'center', 'center', '— Book Writer'],
+  ['ar-AE', 'center', 'center', 'Book\nWriter'],
   ['ar-AE', 'end', 'end', '— Book, Writer'],
 ] as const)('aligns %s attribution with %s quote alignment', async (locale, quoteAlignment, textAlignment, text) => {
   vi.mocked(html2canvas).mockImplementation(async (element) => {

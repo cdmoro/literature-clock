@@ -535,10 +535,14 @@ it('keeps the previous canvas visible while a new preview is rendering', async (
   button('Light').click();
   expect(preview.querySelector('canvas')).toBe(previous);
   expect(preview.getAttribute('aria-busy')).toBe('true');
+  expect(['Copy image', 'Copy quote', 'Share', 'Download'].every((label) => button(label).disabled)).toBe(true);
   const next = document.createElement('canvas');
   finish(next);
   await vi.waitFor(() => expect(preview.querySelector('canvas')).toBe(next));
   expect(preview.getAttribute('aria-busy')).toBe('false');
+  expect(button('Copy quote').disabled).toBe(true);
+  expect(button('Share').disabled).toBe(false);
+  expect(button('Download').disabled).toBe(false);
   expect(preview.children).toHaveLength(2);
   expect(preview.querySelector<HTMLElement>('.share-preview-loading')?.hidden).toBe(true);
 });

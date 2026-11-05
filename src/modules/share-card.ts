@@ -262,6 +262,7 @@ export async function renderShareCard(
     flexDirection: 'column',
     justifyContent: 'center',
     flex: '1 1 auto',
+    marginBottom: '48px',
   });
   const passage = document.createElement('div');
   passage.dir = 'auto';
@@ -293,8 +294,8 @@ export async function renderShareCard(
   const centered = options.alignment === 'center';
   const attribution = store.get('hide-book-title') ? [quote.author] : [quote.title, quote.author];
   attribution.forEach((text, index) => {
-    if (index === 0) credit.append('— ');
-    if (index > 0) credit.append(centered ? ' ' : ', ');
+    if (index === 0 && !centered) credit.append('— ');
+    if (index > 0) credit.append(centered ? '\n' : ', ');
     const part = document.createElement('span');
     part.dir = 'auto';
     part.style.unicodeBidi = 'isolate';
@@ -305,6 +306,7 @@ export async function renderShareCard(
     marginTop: '40px',
     fontSize: '28px',
     textAlign: options.alignment || 'start',
+    whiteSpace: centered ? 'pre-line' : 'normal',
     opacity: '0.8',
   });
   if (isFuzzy || store.get('quote-attribution') === 'hidden') {
