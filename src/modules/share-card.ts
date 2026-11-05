@@ -293,7 +293,7 @@ export async function renderShareCard(
   const centered = options.alignment === 'center';
   const attribution = store.get('hide-book-title') ? [quote.author] : [quote.title, quote.author];
   attribution.forEach((text, index) => {
-    if (index === 0 && !centered) credit.append('— ');
+    if (index === 0) credit.append('— ');
     if (index > 0) credit.append(centered ? ' ' : ', ');
     const part = document.createElement('span');
     part.dir = 'auto';
@@ -360,26 +360,15 @@ export async function renderShareCard(
     if (photo) await photo.decode().catch(() => undefined);
     await fontLoading;
     await document.fonts?.ready;
-    const minimumSize = 24;
-    const maximumSize = 120;
-    const availableHeight = height - 192 - signature.getBoundingClientRect().height - 48;
-    const includesCredit = !isFuzzy && store.get('quote-attribution') !== 'hidden';
-    const fits = (size: number) => {
-      passage.style.fontSize = `${size}px`;
-      const passageFits = passage.scrollWidth <= passage.clientWidth && passage.scrollHeight <= availableHeight;
-      const creditHeight = includesCredit ? credit.getBoundingClientRect().height + 40 : 0;
-      return passageFits && passage.scrollHeight + creditHeight <= availableHeight;
-    };
-    let low = minimumSize;
-    let high = maximumSize;
-    for (let attempt = 0; attempt < 12; attempt++) {
-      const candidate = Math.ceil((low + high) / 2);
-      if (fits(candidate)) low = candidate;
-      else high = candidate - 1;
-    }
-    passage.style.fontSize = `${low}px`;
-    // Use the largest type size that fits the passage and its attribution in the square card.
-    const finalHeight = height;
+    // Keep the passage at a comfortable size. Long quotes use a taller card
+    // instead of being squeezed into a square until the text becomes tiny.
+    const passageFontSize = 84;
+    passage.style.fontSize = `${passageFontSize}px`;
+    const contentHeight = passage.scrollHeight + (isFuzzy || store.get('quote-attribution') === 'hidden'
+      ? 0
+      : credit.getBoundingClientRect().height + 40);
+    const signatureHeight = signature.getBoundingClientRect().height;
+    const finalHeight = Math.max(height, Math.ceil(192 + contentHeight + signatureHeight + 48));
     card.style.height = `${finalHeight}px`;
     return await html2canvas(card, { useCORS: true, scale: 1, width, height: finalHeight, logging: false });
   } finally {
