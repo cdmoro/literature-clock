@@ -28,6 +28,10 @@ def components_for_translation_key(path: str, key: str) -> set[str]:
 
 def components_for_path(value: str) -> set[str]:
     path = str(PurePosixPath(value))
+    if path.startswith(("apple/Shared/", "apple/macOS/", "apple/LiteratureClock.xcodeproj/")) or path in {
+        "apple/build.py", "apple/Version.xcconfig"
+    }:
+        return {"macOS app"}
     if path in WEB_FILES:
         return {"Web"}
     exact = {

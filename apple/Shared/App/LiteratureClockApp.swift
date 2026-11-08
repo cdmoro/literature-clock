@@ -5,6 +5,7 @@ import WidgetKit
 struct LiteratureClockApp: App {
     init() {
         ClockCatalogue.installSharedCatalogues()
+        ClockSettings.recordAppSharingProbe()
         // Running a new app build doesn't invalidate an already displayed
         // widget timeline. Ask WidgetKit to rebuild it with the installed code.
         WidgetCenter.shared.reloadTimelines(ofKind: "net.literatureclock.app.configurable-clock")

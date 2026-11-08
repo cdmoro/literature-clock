@@ -72,8 +72,12 @@ def main():
     (staging / 'READ-ME.txt').write_text(
         f'Literature Clock {version}\n\nDrag Literature Clock to Applications. Requires macOS 14 or later.\n'
         'This build is ad-hoc signed, not Developer ID signed or notarized.\n'
-        'On first launch, macOS may block it. Control-click the app, choose Open, and confirm.\n'
-        'Desktop widget registration and shared app-group access must be verified for this build.\n',
+        'If macOS blocks the first launch, open System Settings > Privacy & Security,\n'
+        'choose Open Anyway for Literature Clock, and confirm the next dialog.\n\n'
+        'Open the installed app once, then Control-click the desktop > Edit Widgets.\n'
+        'Search for Literature Clock. Widget progress bars are omitted in this beta.\n'
+        'Installation help: https://github.com/cdmoro/literature-clock/blob/main/apple/INSTALL.md\n'
+        'Report beta issues: https://github.com/cdmoro/literature-clock/issues\n',
         encoding='utf-8')
     dmg = OUTPUT / 'Literature-Clock-App-macOS.dmg'
     run('hdiutil', 'create', '-volname', f'Literature Clock {version}', '-srcfolder', staging,

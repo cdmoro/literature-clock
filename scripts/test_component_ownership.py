@@ -41,6 +41,11 @@ class ComponentOwnershipTests(unittest.TestCase):
         self.assertEqual(components_for_path("src/strings/screensaver/native-settings.json"), {"macOS", "Windows"})
         self.assertEqual(components_for_path("src/strings/apple-app/localizable.json"), {"macOS app"})
 
+    def test_macos_app_runtime_is_labeled_without_documentation(self):
+        self.assertEqual(components_for_path("apple/Shared/Widgets/LiteratureClockWidget.swift"), {"macOS app"})
+        self.assertEqual(components_for_path("apple/build.py"), {"macOS app"})
+        self.assertEqual(components_for_path("apple/INSTALL.md"), set())
+
     def test_unknown_translation_path_fails(self):
         with self.assertRaisesRegex(ValueError, "no ownership mapping"):
             components_for_path("src/strings/new-platform/es.json")

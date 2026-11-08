@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import WidgetKit
+import OSLog
 #if os(macOS)
 import AppKit
 import CoreText
@@ -34,6 +35,41 @@ enum ClockSettings {
     static let customBackgroundKey = "widget-custom-background"
     static let customAccentKey = "widget-custom-accent"
     static let progressKey = "seconds-progress"
+    private static let sharingProbeKey = "widget-sharing-probe"
+    private static let sharingLogger = Logger(subsystem: "net.literatureclock.app.sharing", category: "Preferences")
+
+    // Compare values observed by the actual app and WidgetKit processes. A
+    // successful build or a defaults read from Terminal cannot establish this.
+    static func recordAppSharingProbe(palette: String? = nil, accent: String? = nil) {
+        let token = UUID().uuidString
+        defaults.set(token, forKey: sharingProbeKey)
+        recordSharingEvent("SHARING_APP", token: token,
+                           palette: palette ?? defaults.string(forKey: paletteKey) ?? "red",
+                           accent: accent ?? defaults.string(forKey: customAccentKey) ?? "#B36E26")
+    }
+
+    static func recordWidgetSharingProbe(selection: String, appliedPalette: String) {
+        recordSharingEvent("SHARING_WIDGET", token: defaults.string(forKey: sharingProbeKey) ?? "missing",
+                           palette: defaults.string(forKey: paletteKey) ?? "missing",
+                           accent: defaults.string(forKey: customAccentKey) ?? "#B36E26",
+                           selection: selection, appliedPalette: appliedPalette)
+    }
+
+    private static func recordSharingEvent(_ event: String, token: String, palette: String, accent: String,
+                                           selection: String? = nil, appliedPalette: String? = nil) {
+        var values: [String: String] = [
+            "token": token, "palette": palette, "accent": accent,
+            "group": appGroup,
+            "version": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "unknown",
+            "build": Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "unknown",
+            "container": FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroup) == nil ? "unavailable" : "available"
+        ]
+        values["selection"] = selection
+        values["appliedPalette"] = appliedPalette
+        guard let data = try? JSONSerialization.data(withJSONObject: values, options: .sortedKeys),
+              let json = String(data: data, encoding: .utf8) else { return }
+        sharingLogger.notice("\(event, privacy: .public) \(json, privacy: .public)")
+    }
 
     static var dyslexicFontName: String? {
         #if os(macOS)
@@ -200,63 +236,22 @@ struct ReadableQuoteText: View {
     }
 
     private func line(_ value: (before: String, time: String, after: String), size: CGFloat) -> some View {
-        let quoteText: Text
-        if #available(iOS 18.0, macOS 15.0, *) {
-            let highlightedTime = Text(value.time)
-                .font(ClockSettings.quoteFont(fontName, size: size, weight: .regular))
-                .foregroundColor(highlight ? (emphasizeHighlight ? foreground : accent) : foreground)
-                .customAttribute(ClockTimeHighlightAttribute())
-            let before = Text(value.before).foregroundColor(foreground)
-                .customAttribute(ClockQuoteContextAttribute())
-            let after = Text(value.after).foregroundColor(foreground)
-                .customAttribute(ClockQuoteContextAttribute())
-            quoteText = before + highlightedTime + after
-        } else {
-            quoteText = Text(value.before).foregroundColor(foreground) +
-                Text(value.time)
-                    .font(ClockSettings.quoteFont(fontName, size: size, weight: .regular))
-                    .foregroundColor(highlight ? (emphasizeHighlight ? foreground : accent) : foreground) +
-                Text(value.after).foregroundColor(foreground)
-        }
+        // Use standard Text runs so WidgetKit can archive the view, including
+        // medium-size gallery snapshots, without a custom drawing renderer.
+        let contextColor = foreground.opacity(highlight && usesAccentedRendering ? 0.70 : 1)
+        let time = Text(value.time)
+            .font(ClockSettings.quoteFont(fontName, size: size,
+                                         weight: emphasizeHighlight && highlight ? .bold : .regular))
+            .foregroundColor(highlight ? (emphasizeHighlight ? foreground : accent) : foreground)
+        let quoteText = Text(value.before).foregroundColor(contextColor) + time +
+            Text(value.after).foregroundColor(contextColor)
 
-        return Group {
-            if #available(iOS 18.0, macOS 15.0, *) {
-                quoteText.textRenderer(ClockQuoteTextRenderer(
-                    dimsContext: highlight && usesAccentedRendering,
-                    emphasizesTime: emphasizeHighlight && highlight
-                ))
-            } else {
-                quoteText
-            }
-        }
+        return quoteText
             .font(ClockSettings.quoteFont(fontName, size: size))
             .fontWeight(.regular)
             .lineSpacing(fontName == "specialElite" ? size * 0.18 : 0)
             .multilineTextAlignment(alignment)
             .frame(maxWidth: .infinity, alignment: alignment == .center ? .center : (alignment == .trailing ? .trailing : .leading))
             .fixedSize(horizontal: false, vertical: true)
-    }
-}
-
-@available(iOS 18.0, macOS 15.0, *)
-private struct ClockTimeHighlightAttribute: TextAttribute {}
-@available(iOS 18.0, macOS 15.0, *)
-private struct ClockQuoteContextAttribute: TextAttribute {}
-
-@available(iOS 18.0, macOS 15.0, *)
-private struct ClockQuoteTextRenderer: TextRenderer {
-    let dimsContext: Bool
-    let emphasizesTime: Bool
-
-    func draw(layout: Text.Layout, in context: inout GraphicsContext) {
-        for line in layout {
-            for run in line {
-                var runContext = context
-                if dimsContext && run[ClockQuoteContextAttribute.self] != nil {
-                    runContext.opacity *= 0.58
-                }
-                runContext.draw(run)
-            }
-        }
     }
 }

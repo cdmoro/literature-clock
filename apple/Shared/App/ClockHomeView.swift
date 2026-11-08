@@ -107,13 +107,6 @@ struct ClockHomeView: View {
                                 .accessibilityLabel(QuoteLibraryText.value(favorite ? "removeFavorite" : "saveFavorite", locale: interfaceLocale.identifier))
                                 .help(QuoteLibraryText.value(favorite ? "removeFavorite" : "saveFavorite", locale: interfaceLocale.identifier))
                             }
-                            Button { libraryPresented = true } label: {
-                                Image(systemName: "books.vertical")
-                                    .frame(width: 44, height: 44)
-                            }
-                            .buttonStyle(.plain)
-                            .accessibilityLabel(QuoteLibraryText.value("myQuotes", locale: interfaceLocale.identifier))
-                            .help(QuoteLibraryText.value("myQuotes", locale: interfaceLocale.identifier))
                             if let quote {
                                 Button {
                                     presentShareOptions(quote, locale: primaryLocale, palette: palette,
@@ -128,6 +121,15 @@ struct ClockHomeView: View {
                                 .accessibilityLabel(Text("app_share_accessibility"))
                                 .help(Text("app_share_accessibility"))
                             }
+                            Spacer()
+                                .frame(width: 12)
+                            Button { libraryPresented = true } label: {
+                                Image(systemName: "books.vertical")
+                                    .frame(width: 44, height: 44)
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel(QuoteLibraryText.value("myQuotes", locale: interfaceLocale.identifier))
+                            .help(QuoteLibraryText.value("myQuotes", locale: interfaceLocale.identifier))
                             NavigationLink(destination: SettingsView()) {
                                 Image(systemName: "gearshape")
                                     .frame(width: 44, height: 44)
@@ -1627,6 +1629,11 @@ struct SettingsView: View {
             attribution = appAttributionMode(attribution)
         }
         .onChange(of: customAccentHex) { _, _ in
+            ClockSettings.recordAppSharingProbe(palette: palette, accent: customAccentHex)
+            WidgetCenter.shared.reloadAllTimelines()
+        }
+        .onChange(of: palette) { _, _ in
+            ClockSettings.recordAppSharingProbe(palette: palette, accent: customAccentHex)
             WidgetCenter.shared.reloadAllTimelines()
         }
         #if os(macOS)
@@ -1687,6 +1694,17 @@ private struct QuoteLanguageSelectionView: View {
     }
 
     var body: some View {
+        Group {
+            #if os(macOS)
+            ScrollView {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 190), spacing: 12)], spacing: 12) {
+                    ForEach(ClockCatalogue.locales, id: \.self) { locale in
+                        languageCard(locale)
+                    }
+                }
+                .padding(20)
+            }
+            #else
         List(ClockCatalogue.locales, id: \.self) { locale in
             Button {
                 toggleLocale(locale)
@@ -1713,6 +1731,8 @@ private struct QuoteLanguageSelectionView: View {
             .listRowBackground(Color.clear)
 #endif
         }
+            #endif
+        }
         .navigationTitle("app_quote_languages_title")
         .clockInlineTitle()
         .safeAreaInset(edge: .bottom) {
@@ -1722,6 +1742,58 @@ private struct QuoteLanguageSelectionView: View {
                 .background(.bar)
         }
     }
+
+    #if os(macOS)
+    private func languageCard(_ identifier: String) -> some View {
+        let locale = Locale(identifier: identifier)
+        let code = locale.language.languageCode?.identifier ?? identifier
+        let name = locale.localizedString(forLanguageCode: code)?.capitalized ?? code
+        let flag = locale.region.map { region in
+            String(String.UnicodeScalarView(region.identifier.uppercased().unicodeScalars.compactMap {
+                UnicodeScalar(127397 + $0.value)
+            }))
+        } ?? "🌐"
+        let selected = selectedLocales.contains(identifier)
+
+        return Button {
+            toggleLocale(identifier)
+        } label: {
+            VStack(spacing: 8) {
+                Text(verbatim: flag)
+                    .font(.system(size: 36))
+                    .accessibilityHidden(true)
+                Text(verbatim: name)
+                    .font(.headline)
+                    .foregroundStyle(.primary)
+                Text(verbatim: identifier)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+            .multilineTextAlignment(.center)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 20)
+            .frame(maxWidth: .infinity, minHeight: 140)
+            .overlay(alignment: .topTrailing) {
+                Image(systemName: selected ? "checkmark.circle.fill" : "circle")
+                    .font(.title3)
+                    .foregroundStyle(selected ? Color.accentColor : Color.secondary.opacity(0.5))
+                    .padding(12)
+                    .accessibilityHidden(true)
+            }
+            .background(selected ? Color.accentColor.opacity(0.12) : Color.primary.opacity(0.04),
+                        in: RoundedRectangle(cornerRadius: 12))
+            .overlay {
+                RoundedRectangle(cornerRadius: 12)
+                    .strokeBorder(selected ? Color.accentColor : Color.primary.opacity(0.12),
+                                  lineWidth: selected ? 2 : 1)
+            }
+            .contentShape(RoundedRectangle(cornerRadius: 12))
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(Text(verbatim: ClockCatalogue.languageName(identifier)))
+        .accessibilityAddTraits(selected ? [.isSelected] : [])
+    }
+    #endif
 
     private func toggleLocale(_ locale: String) {
         var locales = selectedLocales

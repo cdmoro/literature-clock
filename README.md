@@ -11,6 +11,8 @@
 
 Also available as a full-featured [interactive web app](https://literatureclock.netlify.app/).
 
+A native **macOS app with desktop widgets** is being prepared as a public beta. See the [Mac installation guide](apple/INSTALL.md) and [beta notes](apple/RELEASE_NOTES.md). The DMG will be included in the next consolidated release.
+
 https://github.com/user-attachments/assets/626ca478-d170-4176-90d9-c46580fcfa91
 
 *Literature Clock cycling through themes, languages, and Liquid Glass progress.*

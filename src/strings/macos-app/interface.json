@@ -72,7 +72,8 @@
     "app_quote_copied": "Quote copied",
     "app_copy_quote_image": "Copy image",
     "app_quote_image_copied": "Image copied",
-    "app_right": "Right"
+    "app_right": "Right",
+    "widget_palette_follow_app": "Follow app"
   },
   "en-US": {
     "app_collection": "Collection",
@@ -147,7 +148,8 @@
     "app_quote_copied": "Quote copied",
     "app_copy_quote_image": "Copy image",
     "app_quote_image_copied": "Image copied",
-    "app_right": "Right"
+    "app_right": "Right",
+    "widget_palette_follow_app": "Follow app"
   },
   "es-ES": {
     "app_collection": "Colección",
@@ -222,7 +224,8 @@
     "app_quote_copied": "Cita copiada",
     "app_copy_quote_image": "Copiar imagen",
     "app_quote_image_copied": "Imagen copiada",
-    "app_right": "Derecha"
+    "app_right": "Derecha",
+    "widget_palette_follow_app": "Seguir la app"
   },
   "pt-PT": {
     "app_collection": "Coleção",
@@ -297,7 +300,8 @@
     "app_quote_copied": "Citação copiada",
     "app_copy_quote_image": "Copiar imagem",
     "app_quote_image_copied": "Imagem copiada",
-    "app_right": "Direita"
+    "app_right": "Direita",
+    "widget_palette_follow_app": "Seguir a aplicação"
   },
   "fr-FR": {
     "app_collection": "Collection",
@@ -372,7 +376,8 @@
     "app_quote_copied": "Citation copiée",
     "app_copy_quote_image": "Copier l’image",
     "app_quote_image_copied": "Image copiée",
-    "app_right": "Droite"
+    "app_right": "Droite",
+    "widget_palette_follow_app": "Suivre l’app"
   },
   "it-IT": {
     "app_collection": "Raccolta",
@@ -447,7 +452,8 @@
     "app_quote_copied": "Citazione copiata",
     "app_copy_quote_image": "Copia immagine",
     "app_quote_image_copied": "Immagine copiata",
-    "app_right": "Destra"
+    "app_right": "Destra",
+    "widget_palette_follow_app": "Segui l’app"
   },
   "de-DE": {
     "app_collection": "Sammlung",
@@ -522,7 +528,8 @@
     "app_quote_copied": "Zitat kopiert",
     "app_copy_quote_image": "Bild kopieren",
     "app_quote_image_copied": "Bild kopiert",
-    "app_right": "Rechts"
+    "app_right": "Rechts",
+    "widget_palette_follow_app": "App folgen"
   },
   "el-GR": {
     "app_collection": "Συλλογή",
@@ -597,7 +604,8 @@
     "app_quote_copied": "Αντιγράφηκε",
     "app_copy_quote_image": "Αντιγραφή εικόνας",
     "app_quote_image_copied": "Η εικόνα αντιγράφηκε",
-    "app_right": "Δεξιά"
+    "app_right": "Δεξιά",
+    "widget_palette_follow_app": "Ακολουθία εφαρμογής"
   },
   "zh-CN": {
     "app_collection": "收藏集",
@@ -672,7 +680,8 @@
     "app_quote_copied": "已复制引文",
     "app_copy_quote_image": "复制图片",
     "app_quote_image_copied": "图片已复制",
-    "app_right": "右侧"
+    "app_right": "右侧",
+    "widget_palette_follow_app": "跟随应用"
   },
   "ru-RU": {
     "app_collection": "Коллекция",
@@ -747,7 +756,8 @@
     "app_quote_copied": "Цитата скопирована",
     "app_copy_quote_image": "Копировать изображение",
     "app_quote_image_copied": "Изображение скопировано",
-    "app_right": "Справа"
+    "app_right": "Справа",
+    "widget_palette_follow_app": "Как в приложении"
   },
   "eo": {
     "app_collection": "Kolekto",
@@ -822,7 +832,8 @@
     "app_quote_copied": "Citaĵo kopiita",
     "app_copy_quote_image": "Kopii bildon",
     "app_quote_image_copied": "Bildo kopiita",
-    "app_right": "Dekstren"
+    "app_right": "Dekstren",
+    "widget_palette_follow_app": "Sekvi la aplikaĵon"
   },
   "ar-AE": {
     "app_collection": "المجموعة",
@@ -897,6 +908,7 @@
     "app_quote_copied": "تم نسخ الاقتباس",
     "app_copy_quote_image": "نسخ الصورة",
     "app_quote_image_copied": "تم نسخ الصورة",
-    "app_right": "يمين"
+    "app_right": "يمين",
+    "widget_palette_follow_app": "اتباع التطبيق"
   }
 }

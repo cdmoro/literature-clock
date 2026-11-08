@@ -46,11 +46,21 @@ The app has a resizable clock window, the same settings available through its to
 
 ## Build and distribution status
 
-See the [macOS app distribution checklist](DISTRIBUTION_CHECKLIST.md) for the remaining release work. The shared `LiteratureClockMac` scheme has a CI build that creates a universal app bundle for review. It is not a public installer. `apple/build.py` can produce an ad-hoc signed DMG for local experiments; it is not Developer ID signed or notarized, and Gatekeeper may block it.
+For installation and updates, see the [installation guide](INSTALL.md). The
+[first public beta notes](RELEASE_NOTES.md) describe the shipped features and
+limitations. See the [distribution checklist](DISTRIBUTION_CHECKLIST.md) for
+remaining acceptance work.
+
+`apple/build.py` creates a universal, ad-hoc signed DMG and SHA-256 checksum.
+The reusable macOS app workflow builds and verifies that same package on the
+Xcode 27 runner. The consolidated release workflow requires the app DMG plus
+both screensavers and all checksums. Pull requests and manual workflow runs
+rehearse packaging and upload review artifacts without publishing or deploying.
+Only the existing push trigger for `release/VERSION` publishes a release.
 
 The app and widget bundle versions come from `Version.xcconfig`; increment `MARKETING_VERSION` for a user-visible app release and `CURRENT_PROJECT_VERSION` for each submitted build. Keep the existing bundle identifiers and team-scoped app group stable so development installs retain their identity and shared widget data.
 
-The first public release is planned as a direct GitHub download with an ad-hoc signature, without paid Apple Developer Program membership, Developer ID signing, or notarization. Users may need to Control-click the app, choose **Open**, and confirm on first launch. Before adding it to a GitHub Release, verify this flow on a clean Mac and test app/widget App Group access: macOS authorizes the team-prefixed group by checking the Team ID in the code signature, while the current ad-hoc package has no Team ID. See the [distribution checklist](DISTRIBUTION_CHECKLIST.md) for this unresolved widget requirement. The macOS target uses the editable [Icon Composer source](Shared/IconDesigns/AppIconBookClock.icon) directly; build and inspect the app in Xcode to confirm generated variants before release.
+The first public release is planned as a direct GitHub download with an ad-hoc signature, without paid Apple Developer Program membership, Developer ID signing, or notarization. Users may need to approve the first launch in **System Settings → Privacy & Security → Open Anyway**. Before adding it to a GitHub Release, verify this flow on a clean Mac and test app/widget App Group access: macOS authorizes the team-prefixed group by checking the Team ID in the code signature, while the current ad-hoc package has no Team ID. See the [distribution checklist](DISTRIBUTION_CHECKLIST.md) for this unresolved widget requirement. The macOS target uses the editable [Icon Composer source](Shared/IconDesigns/AppIconBookClock.icon) directly; build and inspect the app in Xcode to confirm generated variants before release.
 
 Sources live under `Shared/App`, `Shared/Models`, and `Shared/Widgets` so improvements apply to both platforms. `iOS` and `macOS` contain each platform’s bundle metadata, entitlements and app icon. The Mac app group is `$(DEVELOPMENT_TEAM).net.literatureclock.app`, used by both Mac targets; iOS retains `group.net.literatureclock.app`. Preferences are shared locally with each platform's widget, not synced between devices.
 
@@ -82,13 +92,18 @@ For the investigation of a widget that freezes after its first quote, confirmed
 timeline/catalogue behavior, diagnostic logs and physical-device checks, see
 [Widget diagnostics](WIDGET_DIAGNOSTICS.md).
 
-The app and each widget have an independent **Progress bar** switch, enabled by
-default. The bar fills along the bottom edge during the current minute. Existing
-app preferences for Bottom and Background both use this bottom bar; Hidden stays
-off. Widget progress is drawn as a transparent, time-based fill in each size;
-it does not request per-second extension reloads. In Clear/Tinted rendering it
-uses a softer translucent stroke. Verify it advances within a minute and resets
-when the next quote appears, including after sleep/wake.
+The **Progress bar** switch is available in the app. Desktop widgets omit the
+bar and its configuration option for the first release, because host-rendered
+progress did not update reliably in installed builds.
+
+Widget highlight color defaults to **Follow app**, including gallery previews.
+Choosing a named color explicitly keeps that color independent of the app;
+existing widgets with Red selected now render red instead of silently inheriting
+the app palette. Select Follow app on those widgets to inherit it. Clear/Tinted
+styles use system colors, with stronger time text and context at 70% opacity.
+Widget quote text uses standard SwiftUI Text runs for host-rendered snapshots;
+verify all sizes in the gallery and after configuration changes on the installed
+DMG. Shared-preference access under ad-hoc signing remains an acceptance check.
 
 The clock keeps its attribution directly below the passage as “— Book, Author”
 (or “— Author”, according to settings). In time-fragment-only mode, attribution

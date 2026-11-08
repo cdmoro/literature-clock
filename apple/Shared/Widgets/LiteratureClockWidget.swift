@@ -26,18 +26,9 @@ private func appDefaultedConfiguration(_ configuration: ClockWidgetConfiguration
        let font = ClockWidgetFont(rawValue: value) {
         result.font = font
     }
-    if configuration.resolvedPalette == .red,
-       let value = defaults.string(forKey: ClockSettings.paletteKey),
-       let palette = ClockWidgetPalette(rawValue: value) {
-        result.palette = palette
-    }
     if configuration.highlight == true,
        let value = defaults.object(forKey: ClockSettings.highlightKey) as? Bool {
         result.highlight = value
-    }
-    if configuration.showProgress == true,
-       defaults.string(forKey: ClockSettings.progressKey) == "hidden" {
-        result.showProgress = false
     }
     if configuration.attribution == .bookAuthor,
        let value = defaults.string(forKey: ClockSettings.attributionKey),
@@ -62,14 +53,14 @@ struct ClockEntry: TimelineEntry {
     let fuzzy: Bool
     let safeOnly: Bool
     let attribution: String
-    let progressMode: String
     let quote: Quote?
 }
 
 struct ClockProvider: AppIntentTimelineProvider {
     func placeholder(in context: Context) -> ClockEntry {
         // WidgetKit may request this synchronously while registering/editing.
-        // Never read catalogues or shared preferences on this path.
+        // Keep this synchronous path independent of AppIntents and shared storage.
+        // The asynchronous snapshot below applies app preferences to gallery previews.
         let sampleQuote: Quote
         if context.family == .systemSmall {
             sampleQuote = Quote(id: "placeholder", quoteTimeCase: "just after\nhalf past four",
@@ -87,14 +78,17 @@ struct ClockProvider: AppIntentTimelineProvider {
                                 title: "The Book Title", author: "Author Name", sfw: true)
         }
         return ClockEntry(date: .now, widgetID: "placeholder", locale: "en-US",
-                   appearance: "system", font: "serif", palette: "red", customAccentHex: "#B36E26",
+                   appearance: "system", font: "serif", palette: "gray",
+                   customAccentHex: "#B36E26",
                    highlight: true, fuzzy: context.family == .systemSmall, safeOnly: false,
-                   attribution: "book-author", progressMode: "hidden",
+                   attribution: "book-author",
                    quote: sampleQuote)
     }
     func snapshot(for configuration: ClockWidgetConfiguration, in context: Context) async -> ClockEntry {
-        widgetLogger.debug("Snapshot requested; preview: \(context.isPreview)")
+        widgetLogger.notice("Snapshot requested; preview: \(context.isPreview), family: \(String(describing: context.family), privacy: .public)")
         let configuration = appDefaultedConfiguration(configuration)
+        ClockSettings.recordWidgetSharingProbe(selection: configuration.palette.rawValue,
+                                              appliedPalette: configuration.resolvedPalette.rawValue)
         let now = Date()
         // Widget galleries request a snapshot and expect it to contain useful
         // content immediately. Apply the same default-language expansion used
@@ -106,16 +100,22 @@ struct ClockProvider: AppIntentTimelineProvider {
                            widgetID: configuration.stateIdentity(family: context.family),
                            customAccentValue: ClockSettings.defaults.string(forKey: ClockSettings.customAccentKey) ?? "#B36E26",
                            window: window)
-        widgetLogger.debug("Snapshot ready; quote available: \(result.quote != nil)")
+        widgetLogger.notice("Snapshot ready; family: \(String(describing: context.family), privacy: .public), quote available: \(result.quote != nil), palette: \(result.palette, privacy: .public)")
         return result
     }
     func timeline(for configuration: ClockWidgetConfiguration, in context: Context) async -> Timeline<ClockEntry> {
-        widgetLogger.debug("Timeline requested")
+        widgetLogger.notice("Timeline requested; family: \(String(describing: context.family), privacy: .public)")
         return makeTimeline(at: .now, configuration: configuration, family: context.family)
     }
 
     func makeTimeline(at now: Date, configuration: ClockWidgetConfiguration, family: WidgetFamily) -> Timeline<ClockEntry> {
+        let storedPalette = ClockSettings.defaults.string(forKey: ClockSettings.paletteKey) ?? "unset"
+        let sharedContainerAvailable = FileManager.default.containerURL(
+            forSecurityApplicationGroupIdentifier: ClockSettings.appGroup) != nil
         let configuration = appDefaultedConfiguration(configuration)
+        ClockSettings.recordWidgetSharingProbe(selection: configuration.palette.rawValue,
+                                              appliedPalette: configuration.resolvedPalette.rawValue)
+        widgetLogger.notice("Widget preferences: stored palette=\(storedPalette, privacy: .public), resolved palette=\(configuration.resolvedPalette.rawValue, privacy: .public), shared container available=\(sharedContainerAvailable)")
         let started = Date()
         let requestID = UUID().uuidString
         let minuteStart = Calendar.current.dateInterval(of: .minute, for: now)?.start ?? now
@@ -134,7 +134,7 @@ struct ClockProvider: AppIntentTimelineProvider {
             entry(at: date, minuteKey: formatter.string(from: date), configuration: configuration,
                   family: family, widgetID: widgetID, customAccentValue: customAccentValue, window: window)
         }
-        widgetLogger.debug("Timeline ready \(requestID, privacy: .public); entries: \(entries.count); with quotes: \(entries.filter { $0.quote != nil }.count); last: \(entries.last!.date.timeIntervalSince1970); reload after: \(reloadDate.timeIntervalSince1970); seconds: \(Date().timeIntervalSince(started))")
+        widgetLogger.notice("Timeline ready \(requestID, privacy: .public); entries: \(entries.count); with quotes: \(entries.filter { $0.quote != nil }.count); last: \(entries.last!.date.timeIntervalSince1970); reload after: \(reloadDate.timeIntervalSince1970); seconds: \(Date().timeIntervalSince(started))")
         return Timeline(entries: entries, policy: .after(reloadDate))
     }
 
@@ -177,7 +177,6 @@ struct ClockProvider: AppIntentTimelineProvider {
                           highlight: configuration.highlight, fuzzy: fuzzyMode,
                           safeOnly: configuration.safeOnly,
                           attribution: configuration.attribution.rawValue,
-                          progressMode: configuration.showProgress ? "bottom" : "hidden",
                           quote: selectionPool[index % selectionPool.count])
     }
 }
@@ -239,9 +238,6 @@ struct ClockWidgetView: View {
     private var isMonochromeRendering: Bool {
         widgetRenderingMode == .accented || widgetRenderingMode == .vibrant
     }
-    private var progressColor: Color {
-        isMonochromeRendering ? foregroundColor.opacity(0.88) : accentColor
-    }
     private var backgroundColor: Color {
         ClockSettings.background(for: accentColor, dark: colorScheme == .dark)
     }
@@ -293,20 +289,7 @@ struct ClockWidgetView: View {
         .containerBackground(for: .widget) {
             backgroundColor
         }
-        .overlay(alignment: .bottom) {
-            if entry.progressMode == "bottom" {
-                ProgressView(timerInterval: entry.date...entry.date.addingTimeInterval(60), countsDown: false)
-                    .progressViewStyle(.linear)
-                    .tint(progressColor)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 4)
-                    .scaleEffect(x: 1, y: 2, anchor: .center)
-                    .clipped()
-                .widgetAccentable(false)
-                .accessibilityLabel(Text("app_seconds_progress"))
-                .allowsHitTesting(false)
-            }
-        }
+
     }
 
     @ViewBuilder
@@ -367,13 +350,8 @@ struct LiteratureClockWidget: Widget {
 
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: kind, intent: ClockWidgetConfiguration.self, provider: ClockProvider()) { entry in
-            if entry.widgetID == "placeholder" {
-                ClockWidgetView(entry: entry)
-                    .unredacted()
-            } else {
-                ClockWidgetView(entry: entry)
-                    .unredacted()
-            }
+            ClockWidgetView(entry: entry)
+                .unredacted()
         }
             .contentMarginsDisabled()
             .configurationDisplayName("Literature Clock")

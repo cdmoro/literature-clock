@@ -7,13 +7,14 @@ on:
       - 'apple/**'
       - '.github/workflows/macos-app.yml'
   workflow_dispatch:
+  workflow_call:
 
 permissions:
   contents: read
 
 jobs:
   build:
-    runs-on: macos-15
+    runs-on: xcode-27
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
@@ -24,19 +25,11 @@ jobs:
           python-version: '3.12'
       - name: Validate app component version
         run: python3 scripts/validate_release_versions.py --pull-request
-      - name: Build universal macOS app and widget
-        run: |
-          xcodebuild \
-            -project apple/LiteratureClock.xcodeproj \
-            -scheme LiteratureClockMac \
-            -configuration Release \
-            -destination 'generic/platform=macOS' \
-            -derivedDataPath "$RUNNER_TEMP/LiteratureClockDerivedData" \
-            ARCHS='arm64 x86_64' ONLY_ACTIVE_ARCH=NO \
-            CODE_SIGNING_ALLOWED=NO build
+      - name: Build and verify universal ad-hoc signed DMG
+        run: python3 apple/build.py
       - name: Verify app bundle metadata and embedded widget
         run: |
-          APP="$RUNNER_TEMP/LiteratureClockDerivedData/Build/Products/Release/LiteratureClockMac.app"
+          APP="$GITHUB_WORKSPACE/apple/build/dmg/Literature Clock.app"
           test -d "$APP"
           python3 - "$APP" <<'PYTHON'
           import plistlib
@@ -67,14 +60,11 @@ jobs:
             [[ "$ARCHS" == *arm64* && "$ARCHS" == *x86_64* ]] || { echo "Missing universal architectures: $ARCHS"; exit 1; }
             echo "$BINARY: $ARCHS"
           done
-      - name: Package app for CI review
-        run: |
-          ditto -c -k --sequesterRsrc --keepParent \
-            "$RUNNER_TEMP/LiteratureClockDerivedData/Build/Products/Release/LiteratureClockMac.app" \
-            "$RUNNER_TEMP/Literature-Clock-macOS-CI.zip"
       - uses: actions/upload-artifact@v4
         with:
-          name: Literature-Clock-macOS-CI
-          path: ${{ runner.temp }}/Literature-Clock-macOS-CI.zip
+          name: Literature-Clock-macOS-App
+          path: |
+            apple/build/Literature-Clock-App-macOS.dmg
+            apple/build/Literature-Clock-App-macOS.dmg.sha256
           if-no-files-found: error
           retention-days: 14

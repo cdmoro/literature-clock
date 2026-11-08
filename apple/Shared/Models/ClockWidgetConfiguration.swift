@@ -13,10 +13,10 @@ enum ClockWidgetFont: String, AppEnum {
 }
 
 enum ClockWidgetPalette: String, AppEnum {
-    case red, pink, green, pine, orange, purple, blue, gray, custom
+    case app, red, pink, green, pine, orange, purple, blue, gray, custom
     static var typeDisplayRepresentation = TypeDisplayRepresentation(name: "Highlight color")
     static var caseDisplayRepresentations: [Self: DisplayRepresentation] = [
-        .red: "Red", .pink: "Pink", .green: "Green", .pine: "Pine", .orange: "Orange", .purple: "Purple", .blue: "Blue", .gray: "Gray", .custom: "Custom"
+        .app: DisplayRepresentation(title: LocalizedStringResource("widget_palette_follow_app", defaultValue: "Follow app")), .red: "Red", .pink: "Pink", .green: "Green", .pine: "Pine", .orange: "Orange", .purple: "Purple", .blue: "Blue", .gray: "Gray", .custom: "Custom"
     ]
 }
 
@@ -71,42 +71,47 @@ struct ClockWidgetConfiguration: WidgetConfigurationIntent {
     static var title: LocalizedStringResource = "Literature Clock Options"
     static var description = IntentDescription("Choose how this Literature Clock widget looks and which quotes it shows.")
 
-    @Parameter(title: "Appearance", default: .system) var appearance: ClockWidgetAppearance
-    @Parameter(title: "Quote font", default: .serif) var font: ClockWidgetFont
-    @Parameter(title: "Highlight color", description: "Clear and Tinted styles use system colors. Change the custom color in the app.", default: .red)
-    var palette: ClockWidgetPalette
-    var resolvedPalette: ClockWidgetPalette { palette }
-    @Parameter(title: "Highlight the time", default: true) var highlight: Bool
-    @Parameter(title: "Time fragment only", description: "Show only the part of the quote that tells the time.", default: false) var fuzzy: Bool
-    @Parameter(title: "Progress bar", default: true) var showProgress: Bool
-    @Parameter(title: "Safe for work quotes only", default: false) var safeOnly: Bool
-    @Parameter(title: "Attribution", default: .bookAuthor) var attribution: ClockWidgetAttribution
+    // Match declaration order to ParameterSummary: the macOS editor may use
+    // the extracted parameter list rather than the family-specific summary.
     @Parameter(title: "Quote languages", default: [.englishUS])
     var languages: [ClockWidgetLanguage]
+    @Parameter(title: "Safe for work quotes only", default: false) var safeOnly: Bool
+    @Parameter(title: "Appearance", default: .system) var appearance: ClockWidgetAppearance
+    @Parameter(title: "Highlight color", description: "Clear and Tinted styles use system colors. Change the custom color in the app.", default: .app)
+    var palette: ClockWidgetPalette
+    @Parameter(title: "Quote font", default: .serif) var font: ClockWidgetFont
+    @Parameter(title: "Attribution", default: .bookAuthor) var attribution: ClockWidgetAttribution
+    @Parameter(title: "Time fragment only", description: "Show only the part of the quote that tells the time.", default: false) var fuzzy: Bool
+    @Parameter(title: "Highlight the time", default: true) var highlight: Bool
+
+    var resolvedPalette: ClockWidgetPalette {
+        guard palette == .app else { return palette }
+        let stored = ClockSettings.defaults.string(forKey: ClockSettings.paletteKey) ?? "red"
+        let resolved = ClockWidgetPalette(rawValue: stored) ?? .red
+        return resolved == .app ? .red : resolved
+    }
     static var parameterSummary: some ParameterSummary {
         Switch(.widgetFamily) {
             Case(.systemSmall) {
                 Summary("Customize this widget") {
                     \.$languages
                     \.$safeOnly
-                    \.$attribution
                     \.$appearance
                     \.$palette
                     \.$font
-                    \.$showProgress
+                    \.$attribution
                 }
             }
             DefaultCase {
                 Summary("Customize this widget") {
                     \.$languages
                     \.$safeOnly
-                    \.$attribution
-                    \.$fuzzy
                     \.$appearance
                     \.$palette
                     \.$font
+                    \.$attribution
+                    \.$fuzzy
                     \.$highlight
-                    \.$showProgress
                 }
             }
         }
