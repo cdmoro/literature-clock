@@ -81,7 +81,8 @@
     "settings_preset_halloween": "Halloween",
     "settings_pattern_valentine": "Valentine’s Day",
     "settings_preset_valentine": "Valentine’s Day",
-    "pine": "Pine green"
+    "pine": "Pine green",
+    "ja-JP": "日本語 (ja-JP)"
   },
   "en-US": {
     "about": "About",
@@ -165,7 +166,8 @@
     "settings_preset_halloween": "Halloween",
     "settings_pattern_valentine": "Valentine’s Day",
     "settings_preset_valentine": "Valentine’s Day",
-    "pine": "Pine green"
+    "pine": "Pine green",
+    "ja-JP": "日本語 (ja-JP)"
   },
   "es-ES": {
     "about": "Acerca de",
@@ -249,7 +251,8 @@
     "settings_preset_halloween": "Halloween",
     "settings_pattern_valentine": "San Valentín",
     "settings_preset_valentine": "San Valentín",
-    "pine": "Verde pino"
+    "pine": "Verde pino",
+    "ja-JP": "日本語 (ja-JP)"
   },
   "pt-PT": {
     "about": "Sobre",
@@ -333,7 +336,8 @@
     "settings_preset_halloween": "Halloween",
     "settings_pattern_valentine": "Dia dos Namorados",
     "settings_preset_valentine": "Dia dos Namorados",
-    "pine": "Verde-pinheiro"
+    "pine": "Verde-pinheiro",
+    "ja-JP": "日本語 (ja-JP)"
   },
   "fr-FR": {
     "about": "À propos",
@@ -417,7 +421,8 @@
     "settings_preset_halloween": "Halloween",
     "settings_pattern_valentine": "Saint-Valentin",
     "settings_preset_valentine": "Saint-Valentin",
-    "pine": "Vert pin"
+    "pine": "Vert pin",
+    "ja-JP": "日本語 (ja-JP)"
   },
   "it-IT": {
     "about": "Informazioni",
@@ -501,7 +506,8 @@
     "settings_preset_halloween": "Halloween",
     "settings_pattern_valentine": "San Valentino",
     "settings_preset_valentine": "San Valentino",
-    "pine": "Verde pino"
+    "pine": "Verde pino",
+    "ja-JP": "日本語 (ja-JP)"
   },
   "de-DE": {
     "about": "Über",
@@ -585,7 +591,8 @@
     "settings_preset_halloween": "Halloween",
     "settings_pattern_valentine": "Valentinstag",
     "settings_preset_valentine": "Valentinstag",
-    "pine": "Tannengrün"
+    "pine": "Tannengrün",
+    "ja-JP": "日本語 (ja-JP)"
   },
   "el-GR": {
     "about": "Σχετικά",
@@ -669,7 +676,8 @@
     "settings_preset_halloween": "Απόκριες",
     "settings_pattern_valentine": "Ημέρα του Αγίου Βαλεντίνου",
     "settings_preset_valentine": "Άγιος Βαλεντίνος",
-    "pine": "Πευκοπράσινο"
+    "pine": "Πευκοπράσινο",
+    "ja-JP": "日本語 (ja-JP)"
   },
   "zh-CN": {
     "about": "关于",
@@ -753,7 +761,8 @@
     "settings_preset_halloween": "万圣节",
     "settings_pattern_valentine": "情人节",
     "settings_preset_valentine": "情人节",
-    "pine": "松绿色"
+    "pine": "松绿色",
+    "ja-JP": "日本語 (ja-JP)"
   },
   "ru-RU": {
     "about": "О проекте",
@@ -837,7 +846,8 @@
     "settings_preset_halloween": "Хэллоуин",
     "settings_pattern_valentine": "День святого Валентина",
     "settings_preset_valentine": "День святого Валентина",
-    "pine": "Сосновый"
+    "pine": "Сосновый",
+    "ja-JP": "日本語 (ja-JP)"
   },
   "eo": {
     "about": "Pri la projekto",
@@ -921,7 +931,8 @@
     "settings_preset_halloween": "Haloveno",
     "settings_pattern_valentine": "Sankta Valenteno",
     "settings_preset_valentine": "Sankta Valenteno",
-    "pine": "Pine green"
+    "pine": "Pine green",
+    "ja-JP": "日本語 (ja-JP)"
   },
   "ar-AE": {
     "about": "حول",
@@ -1005,6 +1016,92 @@
     "settings_preset_halloween": "الهالوين",
     "settings_pattern_valentine": "عيد الحب",
     "settings_preset_valentine": "عيد الحب",
-    "pine": "أخضر صنوبر"
+    "pine": "أخضر صنوبر",
+    "ja-JP": "日本語 (ja-JP)"
+  },
+  "ja-JP": {
+    "about": "このサイトについて",
+    "about_close": "閉じる",
+    "add_quote": "引用文を追加",
+    "anaglyph": "アナグリフ",
+    "author": "著者",
+    "base": "ベーシック",
+    "blue": "青",
+    "bohemian": "ボヘミアン",
+    "book": "本のページ",
+    "color": "ランダムな色",
+    "colors": "色",
+    "copy_mode": "コピー",
+    "copy_mode_copied": "引用文をコピーしました！",
+    "copy_title": "クリップボードにコピー",
+    "dark": "ダーク",
+    "de-DE": "Deutsch (de-DE)",
+    "default_font": "デフォルト",
+    "document_title": "Literature Clock",
+    "download": "ダウンロード",
+    "horizon": "ホライズン",
+    "elegant": "エレガント",
+    "en-GB": "English (en-GB)",
+    "en-US": "English (en-US)",
+    "es-ES": "Español (es-ES)",
+    "exit_zen_title": "禅モードを終了",
+    "transition": "切り替え効果",
+    "transition_none": "効果なし",
+    "transition_fade": "フェード",
+    "transition_slide": "ゆるやかなスライド",
+    "transition_blur": "やわらかなぼかし",
+    "transition_zoom": "控えめなズーム",
+    "fade_mode": "フェード",
+    "festive": "フェスティブ",
+    "font": "フォント",
+    "fr-FR": "Français (fr-FR)",
+    "frame": "フレーム",
+    "fullscreen_mode": "全画面表示",
+    "gray": "グレー",
+    "green": "緑",
+    "handwriting": "手書き",
+    "it-IT": "Italiano (it-IT)",
+    "kindle": "Kindle",
+    "language": "言語",
+    "light": "ライト",
+    "made_by": "制作",
+    "orange": "オレンジ",
+    "photo": "写真",
+    "pink": "ピンク",
+    "poster": "ポスター",
+    "progressbar_mode": "進行バーを表示",
+    "pt-PT": "Português (pt-PT)",
+    "purple": "紫",
+    "random": "ランダムな言語",
+    "report_error": "誤りを報告",
+    "retro": "レトロ",
+    "screensaver_mode": "スクリーンセーバー",
+    "share": "共有",
+    "subtle": "シンプル",
+    "system": "システム設定",
+    "terminal": "ターミナル",
+    "theme": "テーマ",
+    "themes": "テーマ",
+    "time_mode": "時刻を表示",
+    "title": "書名",
+    "whatsapp": "WhatsApp",
+    "work_mode": "職場向け",
+    "work_mode_title": "職場でも閲覧しやすい引用文だけを表示",
+    "zen_mode": "禅モード",
+    "zen_mode_title": "読書に集中できる表示に切り替え",
+    "zen_mode_hint": "禅モード · Escキーを押すか石のアイコンをタップして終了",
+    "el-GR": "Ελληνικά (el-GR)",
+    "zh-CN": "中文（简体） (zh-CN)",
+    "ru-RU": "Русский (ru-RU)",
+    "eo": "Esperanto (eo)",
+    "settings_presets_title": "プリセット",
+    "settings_presets_help": "季節に合わせた外観を適用します。適用後も設定を調整できます。",
+    "settings_preset_christmas": "クリスマス",
+    "settings_preset_halloween": "ハロウィン",
+    "settings_pattern_valentine": "バレンタインデー",
+    "settings_preset_valentine": "バレンタインデー",
+    "pine": "松葉色",
+    "ar-AE": "العربية (ar-AE)",
+    "ja-JP": "日本語 (ja-JP)"
   }
 }

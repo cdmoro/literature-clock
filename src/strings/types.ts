@@ -71,6 +71,7 @@ export type Translations = {
   zen_mode_hint: string;
   'el-GR': string;
   'zh-CN': string;
+  'ja-JP': string;
   'ru-RU': string;
   eo: string;
   'ar-AE': string;

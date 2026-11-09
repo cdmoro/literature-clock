@@ -20,6 +20,7 @@ export const DOMINANT_LOCALES: Record<string, Locale> = {
   de: 'de-DE',
   el: 'el-GR',
   zh: 'zh-CN',
+  ja: 'ja-JP',
   ru: 'ru-RU',
   eo: 'eo',
   ar: 'ar-AE',
@@ -122,7 +123,7 @@ export function translateStrings(locale: Locale) {
 
   setTextLocale(document.documentElement, getBaseLocale(resolveLocale(locale)));
   const baseLocale = getBaseLocale(locale);
-  const aboutLocale = baseLocale === 'zh-CN' || baseLocale === 'ru-RU' || baseLocale === 'eo' || baseLocale === 'ar-AE' ? baseLocale : 'en-GB';
+  const aboutLocale = baseLocale in ABOUT ? (baseLocale as keyof typeof ABOUT) : 'en-GB';
   const aboutTitle = document.getElementById('about-clock-title');
   if (aboutTitle?.parentElement) setTextLocale(aboutTitle.parentElement, aboutLocale);
   document.querySelectorAll<HTMLElement>('[data-about-text]').forEach((element) => {
@@ -146,6 +147,7 @@ export function translateStrings(locale: Locale) {
     'it-IT': 'L’ora nelle citazioni dei libri',
     'de-DE': 'Die Uhrzeit in Buchzitaten',
     'zh-CN': '用文学引文诉说时间',
+    'ja-JP': '本の引用文で時を告げる時計',
     'ru-RU': 'Время в цитатах из книг',
     eo: 'La horo per citaĵoj el libroj',
     'ar-AE': 'الوقت في اقتباسات من الكتب',
