@@ -14,7 +14,7 @@ export function getLocaleThemeFont(theme: string, locale: string) {
   const language = locale.split('-')[0].toLowerCase();
   const alternative =
     LOCALE_THEME_FONTS[BASE_FONT_THEMES.has(name) ? 'base' : name]?.[language] ||
-    (language === 'zh' ? LOCALE_THEME_FONTS.base.zh : undefined);
+    (language === 'ja' || language === 'zh' ? LOCALE_THEME_FONTS.base[language] : undefined);
   if (alternative) return alternative;
   // Unassigned themes use the system Arabic face.
   if (language === 'ar') return undefined;

@@ -322,5 +322,32 @@
     "historyCleared": "تم مسح السجل",
     "noHistory": "لا توجد اقتباسات حديثة. ستظهر هنا آخر 100 اقتباس شاهدته.",
     "previousQuote": "الاقتباس السابق لهذه الدقيقة"
+  },
+  "ja-JP": {
+    "copyLink": "引用文のリンクをコピー",
+    "linkCopied": "リンクをコピーしました",
+    "linkFailed": "リンクを共有できませんでした。もう一度お試しください。",
+    "quoteUnavailable": "この言語またはコンテンツフィルターでは、この引用文を表示できません。別の引用文を表示します。",
+    "pause": "読書を一時停止",
+    "resume": "現在時刻の表示に戻る",
+    "pausedAt": "一時停止中",
+    "nextQuote": "同じ分の次の引用文",
+    "myQuotes": "マイ引用文",
+    "favorites": "お気に入り",
+    "saveFavorite": "お気に入りに保存",
+    "removeFavorite": "お気に入りから削除",
+    "favoriteSaved": "引用文を保存しました",
+    "favoriteRemoved": "お気に入りから削除しました",
+    "noFavorites": "お気に入りはまだありません。ハートボタンで引用文を保存できます。",
+    "filteredLibrary": "保存済みの引用文はコンテンツフィルターによって非表示になっています。",
+    "close": "閉じる",
+    "openQuote": "引用文を開く",
+    "favoritesFull": "お気に入りが上限（500件）に達しました。新しく保存するには1件削除してください。",
+    "storageUnavailable": "この端末に変更を保存できませんでした。ブラウザーの保存権限を確認してください。",
+    "history": "最近見た引用文",
+    "clearHistory": "履歴を消去",
+    "historyCleared": "履歴を消去しました",
+    "noHistory": "最近見た引用文はありません。閲覧した最新100件がここに表示されます。",
+    "previousQuote": "同じ分の前の引用文"
   }
 }

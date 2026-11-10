@@ -17,17 +17,17 @@ export const THEME_FONTS: Record<string, string[]> = {
 };
 
 export const LOCALE_THEME_FONTS: Record<string, Record<string, string>> = {
-  base: { ar: 'Marhey', ru: 'Pangolin', el: 'Sansation', zh: 'ZCOOL KuaiLe' },
-  retro: { ar: 'Handjet', ru: 'DotGothic16', el: 'Handjet', zh: 'ZCOOL QingKe HuangYou' },
-  handwriting: { ar: 'Amiri Quran', eo: 'Give You Glory', ru: 'Shantell Sans', el: 'Mansalva', zh: 'Long Cang' },
+  base: { ja: 'BIZ UDPGothic', ar: 'Marhey', ru: 'Pangolin', el: 'Sansation', zh: 'ZCOOL KuaiLe' },
+  retro: { ja: 'DotGothic16', ar: 'Handjet', ru: 'DotGothic16', el: 'Handjet', zh: 'ZCOOL QingKe HuangYou' },
+  handwriting: { ja: 'Yuji Boku', ar: 'Amiri Quran', eo: 'Give You Glory', ru: 'Shantell Sans', el: 'Mansalva', zh: 'Long Cang' },
   subtle: { eo: 'Literata', ru: 'Literata' },
   horizon: { eo: 'Literata', ru: 'Literata' },
   book: { ru: 'Literata' },
   anaglyph: { ru: 'Russo One' },
-  elegant: { ru: 'Poiret One', zh: 'ZCOOL XiaoWei' },
-  poster: { eo: 'Spectral', ru: 'Rubik Mono One', zh: 'Liu Jian Mao Cao' },
+  elegant: { ja: 'M PLUS 1p', ru: 'Poiret One', zh: 'ZCOOL XiaoWei' },
+  poster: { ja: 'Potta One', eo: 'Spectral', ru: 'Rubik Mono One', zh: 'Liu Jian Mao Cao' },
   festive: { ar: 'Playpen Sans Arabic', eo: 'Playwrite AR', ru: 'Pacifico', el: 'Comic Relief' },
-  terminal: { ar: 'Cascadia Code', eo: 'LXGW WenKai Mono TC', ru: 'JetBrains Mono', el: 'Victor Mono', zh: 'ZCOOL QingKe HuangYou' },
-  bohemian: { ar: 'Zain', ru: 'Comfortaa', el: 'M PLUS Rounded 1c' },
-  photo: { ar: 'Lalezar', ru: 'Russo One', el: 'Dela Gothic One', zh: 'ZCOOL KuaiLe' },
+  terminal: { ja: 'WDXL Lubrifont JP N', ar: 'Cascadia Code', eo: 'LXGW WenKai Mono TC', ru: 'JetBrains Mono', el: 'Victor Mono', zh: 'ZCOOL QingKe HuangYou' },
+  bohemian: { ja: 'Zen Maru Gothic', ar: 'Zain', ru: 'Comfortaa', el: 'M PLUS Rounded 1c' },
+  photo: { ja: 'Mochiy Pop One', ar: 'Lalezar', ru: 'Russo One', el: 'Dela Gothic One', zh: 'ZCOOL KuaiLe' },
 };

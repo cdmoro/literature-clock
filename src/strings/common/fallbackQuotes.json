@@ -262,5 +262,27 @@
       "quote_time_case": "",
       "sfw": true
     }
+  ],
+  "ja-JP": [
+    {
+      "quote_first": "エラー ",
+      "quote_last": "：引用文が見つかりません。",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "F-001",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "航海日誌：<br>",
+      "quote_last": "の引用文を探しています。",
+      "title": "Moby Dick",
+      "author": "Captain Ahab",
+      "id": "F-002",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
   ]
 }

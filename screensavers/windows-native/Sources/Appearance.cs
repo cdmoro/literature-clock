@@ -51,12 +51,14 @@ public static class Appearance
             ("book", "ru" or "el") => "literata", ("terminal", "ar") => "cascadiacode", ("terminal", "eo") => "lxgwwenkaimonotc", ("terminal", "ru") => "jetbrainsmono", ("terminal", "el") => "victormono",
             ("festive", "ar") => "playpensansarabic", ("festive", "eo") => "playwritear", ("festive", "ru") => "pacifico", ("festive", "el") => "comicrelief",
             ("bohemian", "ar") => "zain", ("photo", "ar") => "lalezar", ("photo", "ru") => "russoone", ("photo", "el") => "delagothicone",
+            ("retro", "ja") => "dotgothic16", ("photo", "ja") => "mochiypopone",
+            ("terminal", "ja") => "wdxllubrifontjpn", ("bohemian", "ja") => "zenmarugothic", (_, "ja") => "bizudpgothic",
             ("retro", "ar" or "el") => "handjet", ("retro", "ru") => "dotgothic16", ("terminal" or "retro", "zh") => "zcoolqingkehuangyou", (_, "zh") => "zcoolkuaile", _ => key
         };
         if (!fonts.TryGetValue(key, out var font))
         {
             var bytes = Catalogues.Open("Fonts/" + key + "/" + FontFiles[key]);
-            var path = Path.Combine(Path.GetTempPath(), "LiteratureClock", key + ".ttf");
+            var path = Path.Combine(Path.GetTempPath(), "LiteratureClock", key, FontFiles[key]);
             Directory.CreateDirectory(Path.GetDirectoryName(path)!);
             using (bytes) using (var output = File.Create(path)) bytes.CopyTo(output);
             var directory = new Uri(Path.GetDirectoryName(path)! + Path.DirectorySeparatorChar, UriKind.Absolute);
@@ -69,6 +71,10 @@ public static class Appearance
     }
     static readonly Dictionary<string, string> FontFiles = new()
     {
+        ["bizudpgothic"]="BIZUDPGothic-Regular.ttf",
+        ["mochiypopone"]="MochiyPopOne-Regular.ttf",
+        ["wdxllubrifontjpn"]="WDXLLubrifontJPN-Regular.ttf",
+        ["zenmarugothic"]="ZenMaruGothic-Regular.ttf",
         ["abrilfatface"]="AbrilFatface-Regular.ttf", ["b612mono"]="B612Mono-Regular.ttf", ["borel"]="Borel-Regular.ttf", ["cascadiacode"]="CascadiaCode[wght].ttf", ["comfortaa"]="Comfortaa[wght].ttf", ["comicrelief"]="ComicRelief-Regular.ttf", ["delagothicone"]="DelaGothicOne-Regular.ttf", ["dotgothic16"]="DotGothic16-Regular.ttf", ["handjet"]="Handjet[ELGR,ELSH,wght].ttf", ["jetbrainsmono"]="JetBrainsMono[wght].ttf", ["lalezar"]="Lalezar-Regular.ttf", ["librebaskerville"]="LibreBaskerville[wght].ttf", ["literata"]="Literata[opsz,wght].ttf", ["lxgwwenkaimonotc"]="LXGWWenKaiMonoTC-Regular.ttf", ["marhey"]="Marhey[wght].ttf", ["pacifico"]="Pacifico-Regular.ttf", ["pangolin"]="Pangolin-Regular.ttf", ["playpensansarabic"]="PlaypenSansArabic[wght].ttf", ["playwritear"]="PlaywriteAR[wght].ttf", ["russoone"]="RussoOne-Regular.ttf", ["sansation"]="Sansation-Regular.ttf", ["specialelite"]="SpecialElite-Regular.ttf", ["victormono"]="VictorMono[wght].ttf", ["vt323"]="VT323-Regular.ttf", ["zain"]="Zain-Regular.ttf", ["zcoolkuaile"]="ZCOOLKuaiLe-Regular.ttf", ["zcoolqingkehuangyou"]="ZCOOLQingKeHuangYou-Regular.ttf"
     };
 }

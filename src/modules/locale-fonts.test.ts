@@ -187,3 +187,17 @@ test('Arabic uses a system face for themes without an assigned font', () => {
   applyLocaleThemeFont(quote);
   expect(quote.style.getPropertyValue('--locale-quote-font-family')).toBe('initial');
 });
+
+test('Japanese passages switch between a theme font and the Japanese default', () => {
+  const quote = document.createElement('blockquote');
+  quote.lang = 'ja-JP';
+  document.documentElement.dataset.theme = 'terminal-dark';
+  applyLocaleThemeFont(quote);
+  expect(quote.style.getPropertyValue('--locale-quote-font-family')).toContain('WDXL Lubrifont JP N');
+  expect(loadFontIfNotExists).toHaveBeenCalledWith('WDXL Lubrifont JP N');
+
+  document.documentElement.dataset.theme = 'kindle-light';
+  applyLocaleThemeFont(quote);
+  expect(quote.style.getPropertyValue('--locale-quote-font-family')).toContain('BIZ UDPGothic');
+  expect(loadFontIfNotExists).toHaveBeenCalledWith('BIZ UDPGothic');
+});
