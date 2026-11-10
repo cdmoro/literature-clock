@@ -90,7 +90,7 @@
     "sha256": "812a6fc1fe54b6d73a419245c32dfeba8aa33104d5be90d1cf6af082007cb71d"
   },
   "DotGothic16": {
-    "languages": ["en", "es", "pt", "fr", "it", "ru"],
+    "languages": ["en", "es", "pt", "fr", "it", "ru", "ja"],
     "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/dotgothic16/DotGothic16-Regular.ttf",
     "sha256": "3ad9af88726d42b40f7f365f0dcac785af73cf20ea6f1d5b44e57cc21150b8f1"
   },
@@ -228,5 +228,40 @@
     "languages": ["ar"],
     "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/cascadiacode/CascadiaCode%5Bwght%5D.ttf",
     "sha256": "30f2e14a5c389b346b1fce110c4ddcf0dc5ce8265faf5eca2ab7323f49dba590"
+  },
+  "BIZ UDPGothic": {
+    "languages": ["ja"],
+    "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/bizudpgothic/BIZUDPGothic-Regular.ttf",
+    "sha256": "258d7156c165f2ff774b6efee637c22c3b950de0d8a10e501137061bc8085d01"
+  },
+  "Mochiy Pop One": {
+    "languages": ["ja"],
+    "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/mochiypopone/MochiyPopOne-Regular.ttf",
+    "sha256": "9e009430e1316c271a5f34759c6b65fc343c4e806f193042528887e7235a92c6"
+  },
+  "Yuji Boku": {
+    "languages": ["ja"],
+    "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/yujiboku/YujiBoku-Regular.ttf",
+    "sha256": "94fda16384f3bdac24376a000c57e99abfa314961bd89ef27badfb7410322003"
+  },
+  "M PLUS 1p": {
+    "languages": ["ja"],
+    "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/mplus1p/MPLUS1p-Regular.ttf",
+    "sha256": "2f294ad496432b1608f070d310e3aa2adcf1de4af429f4901df97ec4bd361ed1"
+  },
+  "WDXL Lubrifont JP N": {
+    "languages": ["ja"],
+    "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/wdxllubrifontjpn/WDXLLubrifontJPN-Regular.ttf",
+    "sha256": "f7a95e761a2d2c2ee6a90f8536e42ea9e50bae8840695f01704986e2bce34869"
+  },
+  "Potta One": {
+    "languages": ["ja"],
+    "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/pottaone/PottaOne-Regular.ttf",
+    "sha256": "bde843868b56e429e1c863da2efa76df533162b226d990efcb96d533b0ca2a93"
+  },
+  "Zen Maru Gothic": {
+    "languages": ["ja"],
+    "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/zenmarugothic/ZenMaruGothic-Regular.ttf",
+    "sha256": "a0c0b53543e0993ae2225e629c833f3d51495ad31720694ff112ce4ce11111ef"
   }
 }

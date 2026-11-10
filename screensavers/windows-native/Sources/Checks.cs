@@ -24,7 +24,7 @@ public static class Checks
         Assert(Catalogues.Resolve("en-US",data.Locales)=="en-US","Exact locale resolution");
         Assert(Catalogues.Resolve("zh-Hant",data.Locales)=="zh-CN","Language fallback");
         Assert(Catalogues.Resolve("ja",data.Locales)=="ja-JP","Japanese language fallback");
-        Assert(Catalogues.Resolve("ja-JP",data.Locales)=="en-GB","Unsupported locale fallback");
+        Assert(Catalogues.Resolve("ko-KR",data.Locales)=="en-GB","Unsupported locale fallback");
         Assert(Catalogues.Index(3,10,0)!=Catalogues.Index(3,10,1),"Distinct monitor variants");
         Assert(GlassEffect.Radius(1,1920,1080)==0 && GlassEffect.Radius(.5,1920,1080)==28,"Glass corner fade");
         var tiles=Catalogues.Read<System.Collections.Generic.Dictionary<string,double[]>>("Patterns/tiles.json");
