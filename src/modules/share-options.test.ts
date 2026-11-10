@@ -50,20 +50,22 @@ const button = (label: string) =>
   [...document.querySelectorAll<HTMLButtonElement>('#share-preview button')].find(
     (el) => el.getAttribute('aria-label') === label || el.textContent === label,
   )!;
-it('changes image format and appearance without changing the live clock', async () => {
-  button('Vertical').click();
+it('uses a square image and changes appearance without changing the live clock', async () => {
   button('Light').click();
   await Promise.resolve();
   expect(renderShareCard).toHaveBeenLastCalledWith(
     expect.objectContaining({ quote_raw: 'Original quote' }),
-    'portrait',
     'light',
     undefined,
     { pattern: 'none', color: undefined, font: 'default' },
+    'en-GB',
   );
-  expect(button('Vertical').getAttribute('aria-pressed')).toBe('true');
+  expect(button('Vertical')).toBeUndefined();
   expect(button('Light').getAttribute('aria-pressed')).toBe('true');
   expect(document.documentElement.dataset.theme).toBe('base-dark');
+});
+it('does not expose a format selector', () => {
+  expect(button('Formato')).toBeUndefined();
 });
 it('hides the color reset control when the image uses the theme default', () => {
   expect((document.getElementById('share-preview-reset-color') as HTMLButtonElement).hidden).toBe(true);
@@ -85,7 +87,6 @@ it('discards a preview render after the dialog closes', async () => {
       finish = resolve;
     }),
   );
-  button('Horizontal').click();
   button('Close').click();
   finish(canvas);
   await Promise.resolve();
@@ -184,7 +185,7 @@ it('cycles image themes in both directions without changing the live theme', asy
   button('Next theme').click();
   await Promise.resolve();
   expect(document.querySelector('.share-theme-carousel span')?.textContent).toBe('Book page');
-  expect(vi.mocked(renderShareCard).mock.calls[vi.mocked(renderShareCard).mock.calls.length - 1]?.[3]).toBe('book');
+  expect(vi.mocked(renderShareCard).mock.calls[vi.mocked(renderShareCard).mock.calls.length - 1]?.[2]).toBe('book');
   button('Previous theme').click();
   expect(document.querySelector('.share-theme-carousel span')?.textContent).toBe('Base');
   expect(document.documentElement.dataset.theme).toBe('base-dark');
@@ -199,11 +200,11 @@ it('changes the preview colour and pattern without touching clock preferences or
   select.value = 'dots';
   select.dispatchEvent(new Event('change'));
   await Promise.resolve();
-  expect(renderShareCard).toHaveBeenLastCalledWith(expect.anything(), expect.anything(), undefined, undefined, {
+  expect(renderShareCard).toHaveBeenLastCalledWith(expect.anything(), undefined, undefined, {
     color: '#123456',
     pattern: 'dots',
     font: 'default',
-  });
+  }, 'en-GB');
   expect(state.color).toBe('#d24335');
   expect(state['background-pattern']).toBe('none');
   expect(location.href).toBe(originalUrl);
@@ -228,11 +229,11 @@ it('starts each popup from the saved clock pattern and clears its temporary colo
   button('Close').click();
   document.getElementById('share')!.click();
   expect((document.getElementById('share-preview-pattern') as HTMLSelectElement).value).toBe('grid');
-  expect(renderShareCard).toHaveBeenLastCalledWith(expect.anything(), expect.anything(), undefined, undefined, {
+  expect(renderShareCard).toHaveBeenLastCalledWith(expect.anything(), undefined, undefined, {
     color: undefined,
     pattern: 'grid',
     font: 'default',
-  });
+  }, 'en-GB');
 });
 
 it('changes fonts only for the image, includes custom families and clears the override on close', async () => {
@@ -245,10 +246,10 @@ it('changes fonts only for the image, includes custom families and clears the ov
   expect(selectedCardOptions().font).toBe('Lora');
   expect(renderShareCard).toHaveBeenLastCalledWith(
     expect.anything(),
-    expect.anything(),
     undefined,
     undefined,
     expect.objectContaining({ font: 'Lora' }),
+    'en-GB',
   );
   expect(state.font).toBe('default');
   expect((document.getElementById('font-select') as HTMLSelectElement).value).toBe('default');
@@ -534,10 +535,14 @@ it('keeps the previous canvas visible while a new preview is rendering', async (
   button('Light').click();
   expect(preview.querySelector('canvas')).toBe(previous);
   expect(preview.getAttribute('aria-busy')).toBe('true');
+  expect(['Copy image', 'Copy quote', 'Share', 'Download'].every((label) => button(label).disabled)).toBe(true);
   const next = document.createElement('canvas');
   finish(next);
   await vi.waitFor(() => expect(preview.querySelector('canvas')).toBe(next));
   expect(preview.getAttribute('aria-busy')).toBe('false');
+  expect(button('Copy quote').disabled).toBe(true);
+  expect(button('Share').disabled).toBe(false);
+  expect(button('Download').disabled).toBe(false);
   expect(preview.children).toHaveLength(2);
   expect(preview.querySelector<HTMLElement>('.share-preview-loading')?.hidden).toBe(true);
 });
@@ -552,10 +557,10 @@ it('toggles time highlighting after Color, before the optional image, and rememb
   expect(selectedCardOptions()).toMatchObject({ highlightTime: true });
   expect(renderShareCard).toHaveBeenLastCalledWith(
     expect.anything(),
-    expect.anything(),
     undefined,
     undefined,
     expect.objectContaining({ highlightTime: true }),
+    'en-GB',
   );
   expect(localStorage.getItem('share-highlight-time')).toBe('true');
   button('Close').click();
@@ -584,10 +589,10 @@ it('toggles uppercase text for the share card and starts disabled each time', as
   expect(selectedCardOptions()).toMatchObject({ uppercase: true });
   expect(renderShareCard).toHaveBeenLastCalledWith(
     expect.anything(),
-    expect.anything(),
     undefined,
     undefined,
     expect.objectContaining({ uppercase: true }),
+    'en-GB',
   );
   button('Close').click();
   document.getElementById('share')!.click();
@@ -596,35 +601,27 @@ it('toggles uppercase text for the share card and starts disabled each time', as
 });
 
 it.each([
-  ['en-GB', 'Left', 'Right'],
-  ['ar-AE', 'Right', 'Left'],
-] as const)('cycles %s alignment in visual order', async (locale, startLabel, endLabel) => {
+  ['en-GB', 'left', 'start', 'end'],
+  ['ar-AE', 'right', 'end', undefined],
+] as const)('shows physical alignment controls for %s', async (locale, initial, leftLogical, rightLogical) => {
   button('Close').click();
   state['active-quote'] = { quote_raw: 'Original quote', locale, time: '12:00' };
   document.getElementById('share')!.click();
-  const toggle = document.querySelector<HTMLButtonElement>('.share-alignment-toggle')!;
-  const cycle =
-    locale === 'ar-AE'
-      ? [
-          [startLabel, 'start'],
-          [endLabel, 'end'],
-          ['Center', 'center'],
-          [startLabel, 'start'],
-        ]
-      : [
-          [startLabel, 'start'],
-          ['Center', 'center'],
-          [endLabel, 'end'],
-          [startLabel, 'start'],
-        ];
-  for (const [index, [label, value]] of cycle.entries()) {
-    expect(toggle.getAttribute('aria-label')).toBe(`Alignment: ${label}`);
-    expect(toggle.dataset.alignment).toBe(value);
-    if (value === 'start') expect(selectedCardOptions()).not.toHaveProperty('alignment');
-    else expect(selectedCardOptions()).toMatchObject({ alignment: value });
-    if (index < cycle.length - 1) {
-      toggle.click();
-      await Promise.resolve();
-    }
+  const group = document.querySelector<HTMLElement>('.share-alignment-toggle')!;
+  const buttons = [...group.querySelectorAll<HTMLButtonElement>('button')];
+  expect(buttons).toHaveLength(1);
+  expect(buttons[0].dataset.alignment).toBe(initial);
+  expect(buttons[0].querySelector('svg')).not.toBeNull();
+  buttons[0].click();
+  await Promise.resolve();
+  const next: 'left' | 'center' | 'right' = ({ left: 'center', center: 'right', right: 'left' } as const)[initial];
+  expect(buttons[0].dataset.alignment).toBe(next);
+  if (next === 'center') expect(selectedCardOptions()).toMatchObject({ alignment: 'center' });
+  else if (next === 'left' && leftLogical === 'start') expect(selectedCardOptions()).not.toHaveProperty('alignment');
+  else expect(selectedCardOptions()).toMatchObject({ alignment: next === 'left' ? leftLogical : rightLogical });
+  for (let step = 0; step < 2; step++) {
+    buttons[0].click();
+    await Promise.resolve();
   }
+  expect(buttons[0].dataset.alignment).toBe(initial);
 });

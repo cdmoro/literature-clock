@@ -5,7 +5,7 @@ import { fontSupportsLocale } from './font-preferences';
 import { getBaseLocale, getStrings } from './locales';
 import { readingStrings } from './reading-ui';
 import { closeDialogOnBackdropClick } from '../utils/dialog';
-import { renderShareCard, type CardAppearance, type CardFormat } from './share-card';
+import { renderShareCard, type CardAppearance } from './share-card';
 import { downloadQuote, shareQuote } from './share';
 import { BACKGROUND_PATTERNS, type BackgroundPattern } from '../utils/background-patterns';
 import SETTINGS from './settings-strings';
@@ -19,7 +19,6 @@ import COLOR_STRINGS from '../strings/web/colorControls.json';
 import { textDirection } from '../utils/text-direction';
 import '../styles/share-color-controls.css';
 
-let format: CardFormat = 'square';
 let appearance: CardAppearance | undefined;
 let theme: string | undefined;
 let pattern: BackgroundPattern | undefined;
@@ -31,7 +30,12 @@ let popupPhotoImage: string | null | undefined;
 let includePhoto = true;
 let highlightTime = false;
 let uppercaseText = false;
-let alignment: 'start' | 'center' | 'end' = 'start';
+let alignment: 'left' | 'center' | 'right' = 'left';
+const selectedLogicalAlignment = () => {
+  if (alignment === 'center') return 'center' as const;
+  const rtl = textDirection(store.get('active-quote')?.locale || store.get('locale')) === 'rtl';
+  return ((alignment === 'left') !== rtl ? 'start' : 'end') as 'start' | 'end';
+};
 export const selectedCardOptions = () => ({
   pattern: pattern ?? store.get('background-pattern') ?? 'none',
   ...(() => {
@@ -53,14 +57,13 @@ export const selectedCardOptions = () => ({
   color,
   ...(highlightTime ? { highlightTime: true } : {}),
   ...(uppercaseText ? { uppercase: true } : {}),
-  ...(alignment !== 'start' ? { alignment } : {}),
+  ...(selectedLogicalAlignment() !== 'start' ? { alignment: selectedLogicalAlignment() } : {}),
   ...(palette && palette !== 'default' ? { palette } : {}),
   font,
   ...(useDefaultColor ? { useDefaultColor: true } : {}),
 });
 export const selectedCardTheme = () => theme;
 export const selectedCardAppearance = () => appearance;
-export const selectedCardFormat = () => format;
 export const shareOptionStrings = () => STRINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))];
 
 export function initShareOptions() {
@@ -84,7 +87,7 @@ export function initShareOptions() {
       highlightTime = false;
     }
     uppercaseText = false;
-    alignment = 'start';
+    alignment = textDirection(snapshot.locale) === 'rtl' ? 'right' : 'left';
     const strings = shareOptionStrings();
     const settingsStrings = SETTINGS[getBaseLocale(store.get('ui-locale') || store.get('locale'))];
     popupPhotoImage =
@@ -119,29 +122,6 @@ export function initShareOptions() {
     header.append(heading, close);
     const controls = document.createElement('div');
     controls.className = 'share-preview-controls';
-    const formatGroup = document.createElement('div');
-    formatGroup.className = 'share-choice-group';
-    formatGroup.setAttribute('role', 'group');
-    formatGroup.setAttribute('aria-label', strings.format);
-    const formatButtons = new Map<CardFormat, HTMLButtonElement>();
-    for (const [value, dimensions] of [
-      ['landscape', [18, 12]],
-      ['portrait', [12, 18]],
-      ['square', [16, 16]],
-    ] as const) {
-      const option = document.createElement('button');
-      option.type = 'button';
-      option.title = strings[value];
-      option.setAttribute('aria-label', strings[value]);
-      const [width, height] = dimensions;
-      option.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="${(24 - width) / 2}" y="${(24 - height) / 2}" width="${width}" height="${height}" rx="2"/></svg>`;
-      option.addEventListener('click', () => {
-        format = value;
-        void refresh();
-      });
-      formatButtons.set(value, option);
-      formatGroup.append(option);
-    }
     const appearanceGroup = document.createElement('div');
     appearanceGroup.className = 'share-choice-group';
     appearanceGroup.setAttribute('role', 'group');
@@ -182,7 +162,7 @@ export function initShareOptions() {
       wrapper.append(label, control);
       return wrapper;
     };
-    controls.append(field(strings.format, formatGroup), field(strings.appearance, appearanceGroup));
+    controls.append(field(strings.appearance, appearanceGroup));
     const includePhotoButton = document.createElement('button');
     includePhotoButton.type = 'button';
     includePhotoButton.className = 'share-image-toggle';
@@ -367,46 +347,31 @@ export function initShareOptions() {
       void refresh();
     });
     controls.insertBefore(field(strings.uppercase, uppercaseButton), customization);
-    const rtl = textDirection(snapshot.locale) === 'rtl';
+    const alignmentGroup = document.createElement('div');
+    alignmentGroup.className = 'share-choice-group share-alignment-toggle';
+    alignmentGroup.setAttribute('role', 'group');
     const alignmentButton = document.createElement('button');
     alignmentButton.type = 'button';
-    alignmentButton.className = 'share-image-toggle share-alignment-toggle';
-    const alignmentLabel = () => {
-      if (alignment === 'center') return strings.center;
-      const isRight = alignment === 'start' ? rtl : !rtl;
-      return isRight ? strings.right : strings.left;
+    alignmentButton.className = 'share-alignment-button';
+    const alignmentIcons = {
+      left: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 9h11M4 13h16M4 17h11M4 21h16"/></svg>',
+      center: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M7 9h10M4 13h16M7 17h10M4 21h16"/></svg>',
+      right: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M9 9h11M4 13h16M9 17h11M4 21h16"/></svg>',
     };
     const updateAlignmentButton = () => {
-      const label = alignmentLabel();
-      const position = alignment === 'center' ? 'center' : label === strings.right ? 'right' : 'left';
-      const path =
-        position === 'center'
-          ? 'M4 6h16M7 10h10M4 14h16M7 18h10'
-          : position === 'right'
-            ? 'M20 6H4M20 10H10M20 14H4M20 18H10'
-            : 'M4 6h16M4 10h10M4 14h16M4 18h10';
-      alignmentButton.title = `${strings.alignment}: ${label}`;
-      alignmentButton.setAttribute('aria-label', `${strings.alignment}: ${label}`);
       alignmentButton.dataset.alignment = alignment;
-      alignmentButton.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="${path}"/></svg>`;
+      alignmentButton.innerHTML = alignmentIcons[alignment];
+      alignmentButton.setAttribute('aria-label', `${strings.alignment}: ${strings[alignment]}`);
+      alignmentButton.title = `${strings.alignment}: ${strings[alignment]}`;
     };
-    updateAlignmentButton();
     alignmentButton.addEventListener('click', () => {
-      alignment = rtl
-        ? alignment === 'start'
-          ? 'end'
-          : alignment === 'end'
-            ? 'center'
-            : 'start'
-        : alignment === 'start'
-          ? 'center'
-          : alignment === 'center'
-            ? 'end'
-            : 'start';
+      alignment = alignment === 'left' ? 'center' : alignment === 'center' ? 'right' : 'left';
       updateAlignmentButton();
       void refresh();
     });
-    controls.insertBefore(field(strings.alignment, alignmentButton), customization);
+    updateAlignmentButton();
+    alignmentGroup.append(alignmentButton);
+    controls.insertBefore(field(strings.alignment, alignmentGroup), customization);
     if (popupPhotoImage) controls.insertBefore(includePhotoControl, customization);
     const patternControl = document.createElement('label');
     patternControl.className = 'share-pattern-control';
@@ -486,6 +451,9 @@ export function initShareOptions() {
     imageArea.append(previewLabel, preview);
     const actions = document.createElement('div');
     actions.className = 'share-preview-actions';
+    const shareActions: HTMLButtonElement[] = [];
+    const busyActions = new Set<HTMLButtonElement>();
+    let previewUpdating = true;
     const setActionContent = (target: HTMLButtonElement, text: string, icon: string) => {
       target.setAttribute('aria-label', text);
       target.title = text;
@@ -520,7 +488,8 @@ export function initShareOptions() {
       actionButton.type = 'button';
       setActionContent(actionButton, text, icon);
       actionButton.addEventListener('click', async () => {
-        actionButton.disabled = true;
+        busyActions.add(actionButton);
+        updateActionState();
         try {
           const shareSnapshot = uppercaseText
             ? {
@@ -531,9 +500,11 @@ export function initShareOptions() {
           const notice = await action(shareSnapshot);
           status.textContent = notice || '';
         } finally {
-          actionButton.disabled = false;
+          busyActions.delete(actionButton);
+          updateActionState();
         }
       });
+      shareActions.push(actionButton);
       actions.append(actionButton);
     }
     const copyImage = document.createElement('button');
@@ -544,12 +515,14 @@ export function initShareOptions() {
       '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1"/><path d="m3 17 6-6 4 4 3-3 5 5"/></svg>',
     );
     const canCopyImage = typeof ClipboardItem !== 'undefined' && typeof navigator.clipboard?.write === 'function';
+    const canCopyText = typeof navigator.clipboard?.writeText === 'function';
     copyImage.disabled = true;
     if (!canCopyImage) copyImage.title = strings.copyUnavailable;
     copyImage.addEventListener('click', async () => {
       const canvas = preview.querySelector('canvas');
       if (!canvas || !canCopyImage) return;
-      copyImage.disabled = true;
+      busyActions.add(copyImage);
+      updateActionState();
       try {
         // Start clipboard.write within the click gesture, before encoding completes.
         const png = new Promise<Blob>((resolve, reject) =>
@@ -563,10 +536,19 @@ export function initShareOptions() {
       } catch {
         status.textContent = strings.copyFailed;
       } finally {
-        copyImage.disabled = !canCopyImage || !preview.querySelector('canvas');
+        busyActions.delete(copyImage);
+        updateActionState();
       }
     });
     actions.prepend(copyImage);
+    const updateActionState = () => {
+      copyText.disabled = previewUpdating || busyActions.has(copyText) || !canCopyText;
+      copyImage.disabled = previewUpdating || busyActions.has(copyImage) || !canCopyImage || !preview.querySelector('canvas');
+      for (const actionButton of shareActions) {
+        actionButton.disabled = previewUpdating || busyActions.has(actionButton);
+      }
+    };
+    updateActionState();
     dialog.append(header, controls, status, imageArea, hint, actions);
     document.body.append(dialog);
     closeDialogOnBackdropClick(dialog);
@@ -594,7 +576,6 @@ export function initShareOptions() {
       const current = ++revision;
       patternControl.hidden = false;
       patternSelect.disabled = false;
-      formatButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === format)));
       const variant = appearance || (document.documentElement.dataset.theme?.endsWith('-dark') ? 'dark' : 'light');
       colorInput.disabled = false;
       const resolvedPalette = palette === 'random' ? document.documentElement.dataset.palette : palette;
@@ -613,9 +594,16 @@ export function initShareOptions() {
       appearanceButtons.forEach((option, value) => option.setAttribute('aria-pressed', String(value === variant)));
       preview.setAttribute('aria-busy', 'true');
       loading.hidden = false;
-      copyImage.disabled = true;
+      previewUpdating = true;
+      updateActionState();
       try {
-        const canvas = await renderShareCard(snapshot, format, appearance, theme, selectedCardOptions());
+        const canvas = await renderShareCard(
+          snapshot,
+          appearance,
+          theme,
+          selectedCardOptions(),
+          store.get('ui-locale') || store.get('locale'),
+        );
         if (current !== revision) return;
         canvas.style.width = 'auto';
         canvas.style.height = 'auto';
@@ -627,12 +615,15 @@ export function initShareOptions() {
         else preview.insertBefore(canvas, loading);
         preview.setAttribute('aria-busy', 'false');
         loading.hidden = true;
-        copyImage.disabled = !canCopyImage;
+        previewUpdating = false;
+        updateActionState();
         status.textContent = '';
       } catch {
         if (current === revision) {
           preview.setAttribute('aria-busy', 'false');
           loading.hidden = true;
+          previewUpdating = false;
+          updateActionState();
           status.textContent = strings.failed;
         }
       }

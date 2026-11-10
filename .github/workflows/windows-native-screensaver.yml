@@ -11,7 +11,9 @@ on:
       - 'src/strings/screensaver/**'
       - 'scripts/component_ownership.py'
       - 'src/photo-providers.json'
-      - 'public/assets/**'
+      - 'public/assets/scanlines-bg-dark.jpg'
+      - 'public/assets/scanlines-bg-light.jpg'
+      - 'public/assets/book-paper-seamless.webp'
       - '.github/workflows/windows-native-screensaver.yml'
   workflow_dispatch:
 permissions:
