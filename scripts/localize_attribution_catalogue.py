@@ -4,6 +4,7 @@ Google is used only by this maintenance command. Generated JSON and runtime
 consumers use the checked-in static catalogue and never call a translation API.
 """
 import argparse
+from collections import Counter
 import json
 import time
 import urllib.error
@@ -45,12 +46,18 @@ def translate_batch(texts, target):
     return outputs
 
 
-def localize(quotes, catalog_path, locales=None, delay=0.15, checkpoint_every=100):
+def localize(quotes, catalog_path, locales=None, delay=0.15, checkpoint_every=100,
+             top_entities=None):
     quotes, catalog_path = Path(quotes), Path(catalog_path)
     catalog = read_attribution_localizations(catalog_path)
     source_rows = source_catalogue(quotes)
     authors = sorted({row['Author'] for row in source_rows})
     works = sorted({(row['Author'], row['Title']) for row in source_rows})
+    if top_entities is not None:
+        author_counts = Counter(row['Author'] for row in source_rows)
+        work_counts = Counter((row['Author'], row['Title']) for row in source_rows)
+        authors = sorted(authors, key=lambda value: (-author_counts[value], value))[:top_entities]
+        works = sorted(works, key=lambda value: (-work_counts[value], value))[:top_entities]
     selected = [locale for locale in TARGETS if locales is None or locale in locales]
     done = 0
     for locale in selected:
@@ -122,11 +129,16 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--locale', action='append', choices=TARGETS)
     parser.add_argument('--delay', type=float, default=0.2)
+    parser.add_argument('--top-entities', type=int,
+                        help='Translate only the highest quote-impact N authors and works per locale')
     parser.add_argument('--quotes', type=Path, default=ROOT / 'quotes')
     parser.add_argument('--catalog', type=Path, default=ROOT / 'quotes/attribution-localizations.json')
     args = parser.parse_args()
+    if args.top_entities is not None and args.top_entities < 1:
+        parser.error('--top-entities must be positive')
     try:
-        count = localize(args.quotes, args.catalog, set(args.locale) if args.locale else None, args.delay)
+        count = localize(args.quotes, args.catalog, set(args.locale) if args.locale else None,
+                         args.delay, top_entities=args.top_entities)
         print(f'Added {count} static attribution forms.')
     except (OSError, ValueError, urllib.error.URLError) as error:
         parser.exit(1, f'{error}\n')
