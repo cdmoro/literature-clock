@@ -13,6 +13,13 @@ class ComponentOwnershipTests(unittest.TestCase):
 
     def test_quotes_reach_both_screensavers_and_web(self):
         self.assertEqual(components_for_path("quotes/quotes.es-ES.csv"), {"Web", "macOS", "Windows"})
+        self.assertEqual(components_for_path("quotes/attribution-localizations.json"), {"Web", "macOS", "Windows"})
+        self.assertEqual(components_for_path("scripts/generate_times.py"), {"Web", "macOS", "Windows"})
+        self.assertEqual(components_for_path("screensavers/macos-native/build.py"), {"macOS", "Windows"})
+        self.assertEqual(components_for_path("scripts/validate_attributions.py"), {"Web", "macOS", "Windows"})
+        self.assertEqual(components_for_path("scripts/attribution_localizations.py"), {"Web", "macOS", "Windows"})
+        self.assertEqual(components_for_path("scripts/native_quote_catalogues.py"), {"macOS", "Windows"})
+        self.assertEqual(components_for_path("scripts/attribution_priorities.py"), set())
 
     def test_web_app_icons_are_not_native_screensaver_payload(self):
         for icon in ("app-icon-dark.png", "app-icon-light.png"):

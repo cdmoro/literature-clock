@@ -89,7 +89,7 @@ public sealed class ClockSurface : Canvas
         outlineForPattern=pattern!="none";
         outlineColor=Appearance.Backdrop(p,dark,accent);
         var patternSize = new[]{"0.5","1","1.5","2","3"}.Contains(p.PatternSize) ? double.Parse(p.PatternSize,CultureInfo.InvariantCulture) : 1;
-        var key=$"{ActualWidth}|{ActualHeight}|{dark}|{accent}|{pattern}|{patternSize}|{photo.Revision}";
+        var key=$"{ActualWidth}|{ActualHeight}|{dark}|{accent}|{pattern}|{patternSize}|{photo.Revision}|{p.ShowOriginalAttributions}";
         if(key!=backgroundKey || photo.Transitioning)
         {
             backdrop.Children.Clear(); patternLayer.Children.Clear(); Fill(Appearance.Brush(Appearance.Backdrop(p,dark,accent)));
@@ -125,7 +125,10 @@ public sealed class ClockSurface : Canvas
         SetLeft(clockHalo,(ActualWidth-clockHalo.DesiredSize.Width)/2); SetTop(clockHalo,26);
         credit.Text=mode=="photo"?photo.Credit:""; credit.Foreground=Appearance.Brush(foreground,.75); credit.TextAlignment=TextAlignment.Right; credit.TextWrapping=TextWrapping.Wrap; credit.MaxWidth=Math.Min(500,ActualWidth*.7); credit.Measure(new Size(credit.MaxWidth,double.PositiveInfinity)); SetLeft(credit,ActualWidth-credit.DesiredSize.Width-16); SetTop(credit,ActualHeight-credit.DesiredSize.Height-16);
         var attributionHidden=p.QuoteAttribution=="hidden";
-        var title=p.HideTitle?"":quote?.title??""; var author=quote?.author??"";
+        var localizedTitle=quote?.title??""; var localizedAuthor=quote?.author??"";
+        var titleValue=p.ShowOriginalAttributions?quote?.title_original??localizedTitle:localizedTitle;
+        var author=p.ShowOriginalAttributions?quote?.author_original??localizedAuthor:localizedAuthor;
+        var title=p.HideTitle?"":titleValue;
         attributionCredit.Text=!attributionHidden && !p.FuzzyClock && p.QuoteAttribution=="bottom-left"?string.Join("\n",new[]{title,author}.WhereNonEmpty()):""; attributionCredit.MaxWidth=Math.Min(500,Math.Max(140,ActualWidth*.38)); attributionCredit.Measure(new Size(attributionCredit.MaxWidth,double.PositiveInfinity));
         attributionCredit.Effect=new DropShadowEffect { Color=Colors.Black,BlurRadius=8,ShadowDepth=0,Opacity=.65,RenderingBias=RenderingBias.Performance };
         attributionCredit.Visibility=attributionCredit.Text.Length>0?Visibility.Visible:Visibility.Hidden; SetLeft(attributionCredit,20); SetTop(attributionCredit,ActualHeight-attributionCredit.DesiredSize.Height-14);
@@ -133,7 +136,7 @@ public sealed class ClockSurface : Canvas
         bookCredit.Effect=new DropShadowEffect { Color=Colors.Black,BlurRadius=8,ShadowDepth=0,Opacity=.65,RenderingBias=RenderingBias.Performance };
         bookCredit.Visibility=!attributionHidden && (p.FuzzyClock || p.QuoteAttribution=="bottom-left") && bookCredit.Text.Length>0?Visibility.Visible:Visibility.Hidden; SetLeft(bookCredit,20); SetTop(bookCredit,ActualHeight-bookCredit.DesiredSize.Height-14);
         var areaTop=p.ShowTime?26+clock.DesiredSize.Height+16:0;
-        var layout=$"{ActualWidth}|{ActualHeight}|{dark}|{accent}|{minute}|{locale}|{p.Theme}|{mode}|{pattern}|{p.FuzzyClock}|{p.HideTitle}|{p.QuoteAttribution}|{p.Bilingual}|{p.Translation}";
+        var layout=$"{ActualWidth}|{ActualHeight}|{dark}|{accent}|{minute}|{locale}|{p.Theme}|{mode}|{pattern}|{p.FuzzyClock}|{p.HideTitle}|{p.ShowOriginalAttributions}|{p.QuoteAttribution}|{p.Bilingual}|{p.Translation}";
         if(quote!=null && layoutKey!=layout)
         {
             var width=ActualWidth*.76; var limit=Math.Min(ActualHeight*.65,Math.Max(1,ActualHeight-areaTop-(mode=="photo"?48:4)));
@@ -292,7 +295,9 @@ public sealed class ClockSurface : Canvas
                 text.Inlines.Add(highlight);
                 text.Inlines.Add(new Run(item.last));
                 passage.Children.Add(p.Theme=="book"?new BookText(text,highlight,Appearance.Brush(accent)):text);
-                var attribution=!fuzzy && p.QuoteAttribution=="below"?p.HideTitle?item.author:string.Join(", ",new[]{item.title,item.author}.WhereNonEmpty()):"";
+                var title=p.ShowOriginalAttributions?item.title_original??item.title:item.title;
+                var author=p.ShowOriginalAttributions?item.author_original??item.author:item.author;
+                var attribution=!fuzzy && p.QuoteAttribution=="below"?p.HideTitle?author:string.Join(", ",new[]{title,author}.WhereNonEmpty()):"";
                 if(attribution.Length>0) passage.Children.Add(new TextBlock { Text=(p.Theme=="terminal"?"> ":"— ")+attribution,FontFamily=text.FontFamily,FontSize=fontSize*.55,TextWrapping=TextWrapping.Wrap,FlowDirection=flow,Foreground=Appearance.Brush(foreground,.8),Margin=new Thickness(0,p.Theme=="book"?(ActualWidth<=750?16:24):fontSize*.35,0,0),Effect=outlineActive?new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=12,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance }:null });
             } else {
                 var phrase=string.IsNullOrEmpty(item.time)?quoteMinute:item.time;

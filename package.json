@@ -1,6 +1,6 @@
 {
   "name": "literature-clock",
-  "version": "3.18.0",
+  "version": "3.20.0",
   "description": "A clock that tells the time using quotes from literature. Support for multiple languages, themes, and more!",
   "type": "module",
   "scripts": {
@@ -18,6 +18,9 @@
     "prepare": "husky install",
     "add-string": "python ./scripts/add_string.py",
     "generate-times": "python3 ./scripts/generate_times.py",
+    "validate-attributions": "python3 ./scripts/validate_attributions.py",
+    "complete-attributions": "python3 ./scripts/validate_attributions.py --require-complete",
+    "attribution-priorities": "python3 ./scripts/attribution_priorities.py",
     "generate-strings-type": "python ./scripts/generate_strings_type.py",
     "check-quotes": "python ./scripts/check_quotes.py",
     "translate": "python3 scripts/translation_manager.py",

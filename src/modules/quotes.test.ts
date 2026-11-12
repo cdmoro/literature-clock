@@ -22,6 +22,7 @@ vi.mock('./themes', () => ({
   setDynamicBackgroundPicture: vi.fn(),
   setTheme: vi.fn(),
 }));
+vi.mock('./locale-fonts', () => ({ applyLocaleThemeFont: vi.fn() }));
 vi.mock('../utils', () => ({ fitQuote: vi.fn(), getTime: () => '12:00', updateGHLinks: vi.fn() }));
 vi.mock('./transitions', () => ({
   cancelQuoteTransition: vi.fn(),
@@ -101,6 +102,47 @@ it('keeps legacy index=0 links working', async () => {
   state.index = '0';
   await updateQuote();
   expect(active().id).toBe(first.id);
+});
+
+it('uses original attribution forms when requested and falls back per field', async () => {
+  const localized = {
+    ...first,
+    title: '高慢と偏見',
+    author: 'ジェイン・オースティン',
+    title_original: 'Pride and Prejudice',
+    author_original: 'Jane Austen',
+  };
+  vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => [localized] } as Response);
+  state['show-original-attributions'] = true;
+  await updateQuote();
+  expect(active().title).toBe('Pride and Prejudice');
+  expect(active().author).toBe('Jane Austen');
+
+  vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => [{ ...localized, author_original: undefined }] } as Response);
+  await updateQuote({ preserveQuote: true });
+  expect(active().title).toBe('Pride and Prejudice');
+  expect(active().author).toBe('ジェイン・オースティン');
+});
+
+it('keeps localized attributions by default', async () => {
+  const localized = { ...first, title: '高慢と偏見', title_original: 'Pride and Prejudice' };
+  vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => [localized] } as Response);
+  state['show-original-attributions'] = false;
+  await updateQuote();
+  expect(active().title).toBe('高慢と偏見');
+});
+
+it('sets Arabic attribution flow explicitly so title and author order with the passage direction', async () => {
+  state.locale = 'ar-AE';
+  vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => [{
+    ...first, title: 'ليلة الجنزالات', author: 'هانز هيلموت كيرست',
+  }] } as Response);
+  await updateQuote();
+  const cite = document.querySelector('#quote cite')!;
+  expect(cite.getAttribute('dir')).toBe('rtl');
+  expect([...cite.children].map((item) => item.textContent)).toEqual([
+    '— ', 'ليلة الجنزالات', ', ', 'هانز هيلموت كيرست',
+  ]);
 });
 
 it('does not let a slower earlier request replace the current quote', async () => {

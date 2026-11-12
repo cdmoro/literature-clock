@@ -83,7 +83,7 @@ class QuoteSourcesTest(unittest.TestCase):
         translator = PacedTranslator(state, path, 'fr', delay=0, request=request)
         translator.translate('Libro')
         translate_rows([self.spanish], state, path, translator, 1)
-        self.assertEqual([call[2] for call in calls], ['en', 'es', 'es', 'es'])
+        self.assertEqual([call[2] for call in calls], ['en', 'es', 'es'])
         self.assertEqual(state['rows']['0730-000']['source'], self.spanish)
         translator.translate('Libro')
         self.assertEqual(len(calls), 4)
@@ -102,7 +102,7 @@ class QuoteSourcesTest(unittest.TestCase):
     def test_reference_edit_remains_reviewable_and_cannot_unpublish_source(self):
         self.write('es-ES', [self.spanish])
         project = Project(self.root, 'es-ES', 'es')
-        fields = {'Quote': 'Son las siete y media.', 'Quote time': 'siete y media', 'Title': 'Libro'}
+        fields = {'Quote': 'Son las siete y media.', 'Quote time': 'siete y media'}
         with self.assertRaisesRegex(ValueError, 'must stay published'):
             project.edit_quote('0730-000', fields, False)
         project.edit_quote('0730-000', fields, True)

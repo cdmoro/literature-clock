@@ -17,11 +17,22 @@ test('restore generated quotes and invalidate changed inputs or missing output',
     await cp(join(original, 'plugins/netlify-plugin-quotes'), join(temp, 'plugins/netlify-plugin-quotes'), {
       recursive: true,
     });
-    for (const name of ['generate_times.py', 'validate_translation.py', 'quote_sources.py']) {
+    for (const name of [
+      'generate_times.py',
+      'validate_translation.py',
+      'quote_sources.py',
+      'attribution_localizations.py',
+      'validate_attributions.py',
+    ]) {
       await cp(join(original, 'scripts', name), join(temp, 'scripts', name));
     }
     process.chdir(temp);
-    const csv = 'Time|Id|Quote time|Quote|Title|Author|SFW\n07:30|1|seven thirty|At seven thirty.|Book|Author|true\n';
+    await writeFile('quotes/attribution-localizations.json', '{"authors":{},"works":{}}');
+    const csv = [
+      'Time|Id|Quote time|Quote|Title|Author|SFW|Source locale',
+      '07:30|1|seven thirty|At seven thirty.|Book|Author|true|en',
+      '',
+    ].join('\n');
     await writeFile('quotes/quotes.en-GB.csv', csv);
     await writeFile('src/strings/common/translations.json', '{"en-GB":{}}');
     let generations = 0;

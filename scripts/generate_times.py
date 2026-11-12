@@ -6,14 +6,19 @@ from collections import defaultdict
 from pathlib import Path
 
 from validate_translation import read_catalogue, is_draft, parse_sfw
+from quote_sources import source_catalogue
+from attribution_localizations import read_attribution_localizations, resolve_attribution
 
 
-def generate_catalogue(path, output, include_drafts=False):
+def generate_catalogue(path, output, include_drafts=False, source_rows=None,
+                       localizations=None):
     rows = read_catalogue(path)
     locale = path.name.split('.')[1]
     include_drafts = include_drafts or path.name.endswith('.draft.csv')
     if include_drafts:
         locale += '-draft'
+    source_rows = source_rows or {}
+    localizations = localizations or {'authors': {}, 'works': {}}
     folder = output / locale
     if folder.exists():
         shutil.rmtree(folder)
@@ -23,6 +28,8 @@ def generate_catalogue(path, output, include_drafts=False):
     for row in rows:
         if (is_draft(row) and not include_drafts) or row['Quote time'].startswith('*'):
             continue
+        if source_rows and row['Id'] not in source_rows:
+            raise ValueError(f"{path}: {row['Id']}: no canonical source attribution exists")
         phrase = row['Quote time']
         if not phrase or phrase not in row['Quote']:
             if include_drafts:
@@ -31,10 +38,13 @@ def generate_catalogue(path, output, include_drafts=False):
                 continue
             raise ValueError(f"{path}: {row['Id']}: published time phrase is missing from quote")
         first, last = row['Quote'].split(phrase, 1)
+        title, author, original_title, original_author = resolve_attribution(
+            row, locale.removesuffix('-draft'), source_rows, localizations)
         grouped[row['Time']].append({
             **({'draft': is_draft(row)} if include_drafts else {}),
             'id': row['Id'], 'quote_time_case': phrase, 'quote_first': first,
-            'quote_last': last, 'title': row['Title'], 'author': row['Author'],
+            'quote_last': last, 'title': title, 'author': author,
+            'title_original': original_title, 'author_original': original_author,
             'sfw': parse_sfw(row['SFW'], row['Id']),
         })
         published.append(row)
@@ -53,21 +63,49 @@ def main():
                         Path('src/strings/common/translations.json'), suffix)
 
 
-def generate_catalogues(quotes, output, translations, suffix='.csv'):
+def generate_catalogues(quotes, output, translations, suffix='.csv', source_rows=None):
     enabled = json.loads(translations.read_text(encoding='utf-8'))
+    localizations_path = Path(__file__).resolve().parents[1] / 'quotes/attribution-localizations.json'
+    localizations = read_attribution_localizations(localizations_path)
+    validate_entire_registry = source_rows is None
+    if source_rows is None:
+        source_rows = ({row['Id']: row for row in source_catalogue(quotes)}
+                       if Path(quotes).resolve() == Path(__file__).resolve().parents[1] / 'quotes'
+                       else {})
+    if source_rows:
+        from validate_attributions import validate
+        validation_localizations = localizations
+        if not validate_entire_registry:
+            authors = {row['Author'] for row in source_rows.values()}
+            works = {(row['Author'], row['Title']) for row in source_rows.values()}
+            validation_localizations = {
+                'authors': {author: forms for author, forms in localizations['authors'].items()
+                            if author in authors},
+                'works': {author: {title: forms for title, forms in titles.items()
+                                   if (author, title) in works}
+                          for author, titles in localizations['works'].items()
+                          if any((author, title) in works for title in titles)},
+            }
+        validation = validate(validation_localizations, list(source_rows.values()), set(enabled))
+        errors = validation if isinstance(validation, list) else validation[0]
+        if errors:
+            raise ValueError('Invalid attribution localizations:\n' + '\n'.join(errors))
     for path in sorted(quotes.glob(f'*{suffix}')):
         locale = path.name.split('.')[1]
         if path.name.endswith('.draft.csv'):
             # A full catalogue takes precedence over legacy preview-only files.
             if not (quotes / f'quotes.{locale}.csv').exists():
-                generate_catalogue(path, output, include_drafts=True)
+                generate_catalogue(path, output, include_drafts=True,
+                                   source_rows=source_rows, localizations=localizations)
             continue
         if locale in enabled:
-            generate_catalogue(path, output)
+            generate_catalogue(path, output, source_rows=source_rows,
+                               localizations=localizations)
         elif (output / locale).exists():
             shutil.rmtree(output / locale)
         if any(is_draft(row) for row in read_catalogue(path)):
-            generate_catalogue(path, output, include_drafts=True)
+            generate_catalogue(path, output, include_drafts=True,
+                               source_rows=source_rows, localizations=localizations)
         elif (output / f'{locale}-draft').exists():
             shutil.rmtree(output / f'{locale}-draft')
 

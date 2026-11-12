@@ -146,8 +146,8 @@ class Project:
                 break
 
     def edit_quote(self, identifier, fields, approved):
-        if type(approved) is not bool or set(fields) != {'Quote', 'Title', 'Quote time'}:
-            raise ValueError('Provide quote, title, time phrase and a boolean approval.')
+        if type(approved) is not bool or set(fields) != {'Quote', 'Quote time'}:
+            raise ValueError('Provide quote, time phrase and a boolean approval.')
         if any(not isinstance(value, str) for value in fields.values()):
             raise ValueError('Translation fields must be text.')
         rows = read_catalogue(self.catalogue)
@@ -244,7 +244,7 @@ def review_drafts(project):
         row = entry['translation']
         while True:
             print(f"\n{row['Id']} · {row['Time']}\nOriginal: {entry['source']['Quote']}\n"
-                  f"Translation: {row['Quote']}\nTitle: {row['Title']}\nHighlighted time: {row['Quote time']}\n"
+                  f"Translation: {row['Quote']}\nSource title: {row['Title']}\nHighlighted time: {row['Quote time']}\n"
                   f"Suggested time: {entry.get('time_candidate', '')}")
             errors = validate([entry['source']], [{**row, 'Draft': 'false'}])
             if errors:
@@ -258,15 +258,15 @@ def review_drafts(project):
                     print('Correct the issues before approving.')
                     continue
                 entry['approved'] = True
-                project.edit_quote(row['Id'], {field: row[field] for field in ('Quote', 'Title', 'Quote time')}, True)
+                project.edit_quote(row['Id'], {field: row[field] for field in ('Quote', 'Quote time')}, True)
                 break
             if choice == 2:
                 project.backup(project.review_path)
-                for field in ('Quote', 'Title', 'Quote time'):
+                for field in ('Quote', 'Quote time'):
                     value = input(f'{field} (Enter keeps current; use <br> for line breaks): ')
                     if value:
                         row[field] = value
-                project.edit_quote(row['Id'], {field: row[field] for field in ('Quote', 'Title', 'Quote time')}, False)
+                project.edit_quote(row['Id'], {field: row[field] for field in ('Quote', 'Quote time')}, False)
             if choice == 3:
                 break
 

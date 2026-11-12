@@ -157,7 +157,9 @@ export function initQuoteLibrary() {
       const attribution = document.createElement('p');
       attribution.className = 'saved-attribution';
       attribution.dir = 'auto';
-      attribution.textContent = `${quote.title} — ${quote.author}`;
+      const title = store.get('show-original-attributions') ? quote.title_original || quote.title : quote.title;
+      const author = store.get('show-original-attributions') ? quote.author_original || quote.author : quote.author;
+      attribution.textContent = `${title} — ${author}`;
       const actions = document.createElement('div');
       actions.className = 'saved-actions';
       const link = document.createElement('a');
@@ -216,7 +218,8 @@ export function initQuoteLibrary() {
     if (
       state.locale !== previous.locale ||
       state['ui-locale'] !== previous['ui-locale'] ||
-      state.work !== previous.work
+      state.work !== previous.work ||
+      state['show-original-attributions'] !== previous['show-original-attributions']
     )
       refresh();
     else if (state['active-quote'] !== previous['active-quote']) refresh(false);

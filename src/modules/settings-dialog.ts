@@ -7,6 +7,7 @@ import { initThemePicker } from './theme-picker';
 import { initAppearancePresets } from './appearance-presets';
 import { readingIcon } from './reading-icons';
 import { closeDialogOnBackdropClick } from '../utils/dialog';
+import { updateQuote } from './quotes';
 
 /** Move the existing controls so their state and event handlers remain shared. */
 export function initSettingsDialog() {
@@ -153,6 +154,16 @@ export function initSettingsDialog() {
   hideTitle.addEventListener('click', () => store.toggle('hide-book-title'));
   move('hide-book-title', 'behavior', 'settings_hide_book_title');
 
+  const originalAttributions = document.createElement('button');
+  originalAttributions.id = 'show-original-attributions';
+  originalAttributions.type = 'button';
+  originalAttributions.addEventListener('click', () => {
+    store.toggle('show-original-attributions');
+    void updateQuote({ preserveQuote: true });
+  });
+  toolbar.append(originalAttributions);
+  move('show-original-attributions', 'behavior', 'settings_original_attributions');
+
   const attributionPosition = document.createElement('select');
   attributionPosition.id = 'quote-attribution';
   attributionPosition.innerHTML = `
@@ -192,7 +203,7 @@ export function initSettingsDialog() {
     move('progressbar', 'behavior', 'progressbar_mode', true);
   }
 
-  for (const key of ['work', 'show-time', 'hide-book-title', 'fuzzy-clock'] as const) {
+  for (const key of ['work', 'show-time', 'hide-book-title', 'show-original-attributions', 'fuzzy-clock'] as const) {
     const button = document.getElementById(key);
     if (!button) continue;
     button.classList.add('settings-switch');

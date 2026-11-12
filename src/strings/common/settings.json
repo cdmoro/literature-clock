@@ -113,7 +113,8 @@
     "settings_preset_valentine": "Valentine’s Day",
     "settings_font_serif": "Serif",
     "settings_font_sans-serif": "Sans serif",
-    "settings_font_monospace": "Monospace"
+    "settings_font_monospace": "Monospace",
+    "settings_original_attributions": "Show original author and title"
   },
   "en-US": {
     "settings_appearance": "Appearance",
@@ -229,7 +230,8 @@
     "settings_preset_valentine": "Valentine’s Day",
     "settings_font_serif": "Serif",
     "settings_font_sans-serif": "Sans serif",
-    "settings_font_monospace": "Monospace"
+    "settings_font_monospace": "Monospace",
+    "settings_original_attributions": "Show original author and title"
   },
   "es-ES": {
     "settings_appearance": "Apariencia",
@@ -345,7 +347,8 @@
     "settings_preset_valentine": "San Valentín",
     "settings_font_serif": "Serif",
     "settings_font_sans-serif": "Sans serif",
-    "settings_font_monospace": "Monoespaciada"
+    "settings_font_monospace": "Monoespaciada",
+    "settings_original_attributions": "Mostrar autor y título originales"
   },
   "pt-PT": {
     "settings_appearance": "Aparência",
@@ -461,7 +464,8 @@
     "settings_preset_valentine": "Dia dos Namorados",
     "settings_font_serif": "Serifada",
     "settings_font_sans-serif": "Sem serifa",
-    "settings_font_monospace": "Monoespaçada"
+    "settings_font_monospace": "Monoespaçada",
+    "settings_original_attributions": "Mostrar autor e título originais"
   },
   "fr-FR": {
     "settings_appearance": "Apparence",
@@ -577,7 +581,8 @@
     "settings_preset_valentine": "Saint-Valentin",
     "settings_font_serif": "Avec empattements",
     "settings_font_sans-serif": "Sans empattements",
-    "settings_font_monospace": "À chasse fixe"
+    "settings_font_monospace": "À chasse fixe",
+    "settings_original_attributions": "Afficher l’auteur et le titre d’origine"
   },
   "it-IT": {
     "settings_appearance": "Aspetto",
@@ -693,7 +698,8 @@
     "settings_preset_valentine": "San Valentino",
     "settings_font_serif": "Con grazie",
     "settings_font_sans-serif": "Senza grazie",
-    "settings_font_monospace": "Monospaziato"
+    "settings_font_monospace": "Monospaziato",
+    "settings_original_attributions": "Mostra autore e titolo originali"
   },
   "de-DE": {
     "settings_appearance": "Darstellung",
@@ -809,7 +815,8 @@
     "settings_preset_valentine": "Valentinstag",
     "settings_font_serif": "Mit Serifen",
     "settings_font_sans-serif": "Ohne Serifen",
-    "settings_font_monospace": "Nichtproportional"
+    "settings_font_monospace": "Nichtproportional",
+    "settings_original_attributions": "Originalautor und -titel anzeigen"
   },
   "el-GR": {
     "settings_appearance": "Εμφάνιση",
@@ -925,7 +932,8 @@
     "settings_preset_valentine": "Άγιος Βαλεντίνος",
     "settings_font_serif": "Με πατούρες",
     "settings_font_sans-serif": "Χωρίς πατούρες",
-    "settings_font_monospace": "Σταθερού πλάτους"
+    "settings_font_monospace": "Σταθερού πλάτους",
+    "settings_original_attributions": "Εμφάνιση του αρχικού συγγραφέα και τίτλου"
   },
   "zh-CN": {
     "settings_appearance": "外观",
@@ -1041,7 +1049,8 @@
     "settings_preset_valentine": "情人节",
     "settings_font_serif": "衬线体",
     "settings_font_sans-serif": "无衬线体",
-    "settings_font_monospace": "等宽体"
+    "settings_font_monospace": "等宽体",
+    "settings_original_attributions": "显示原作者和原书名"
   },
   "ru-RU": {
     "settings_appearance": "Оформление",
@@ -1157,7 +1166,8 @@
     "settings_preset_valentine": "День святого Валентина",
     "settings_font_serif": "С засечками",
     "settings_font_sans-serif": "Без засечек",
-    "settings_font_monospace": "Моноширинный"
+    "settings_font_monospace": "Моноширинный",
+    "settings_original_attributions": "Показывать имя автора и название в оригинале"
   },
   "eo": {
     "settings_appearance": "Aspekto",
@@ -1273,7 +1283,8 @@
     "settings_preset_valentine": "Sankta Valenteno",
     "settings_font_serif": "Kun serifoj",
     "settings_font_sans-serif": "Sen serifoj",
-    "settings_font_monospace": "Egallarĝa"
+    "settings_font_monospace": "Egallarĝa",
+    "settings_original_attributions": "Montri la originalan aŭtoron kaj titolon"
   },
   "ar-AE": {
     "settings_appearance": "المظهر",
@@ -1389,7 +1400,8 @@
     "settings_preset_valentine": "عيد الحب",
     "settings_font_serif": "بزوائد",
     "settings_font_sans-serif": "بلا زوائد",
-    "settings_font_monospace": "أحادي المسافة"
+    "settings_font_monospace": "أحادي المسافة",
+    "settings_original_attributions": "إظهار اسم المؤلف والعنوان الأصليين"
   },
   "ja-JP": {
     "settings_appearance": "外観",
@@ -1505,6 +1517,7 @@
     "settings_preset_valentine": "バレンタインデー",
     "settings_font_serif": "セリフ体",
     "settings_font_sans-serif": "サンセリフ体",
-    "settings_font_monospace": "等幅"
+    "settings_font_monospace": "等幅",
+    "settings_original_attributions": "著者名と書名を原文で表示"
   }
 }

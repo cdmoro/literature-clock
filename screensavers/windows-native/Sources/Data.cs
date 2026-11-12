@@ -8,7 +8,11 @@ using System.Text.Json;
 
 namespace LiteratureClock;
 
-public record Quote(string? id, string first, string time, string last, string title, string author, bool sfw);
+public record Quote(string? id, string first, string time, string last, string title, string author, bool sfw)
+{
+    public string? title_original { get; init; }
+    public string? author_original { get; init; }
+}
 public sealed class Preferences
 {
     public string Font { get; set; } = "default";
@@ -19,6 +23,7 @@ public sealed class Preferences
     public bool ShowTime { get; set; } = true;
     public bool FuzzyClock { get; set; } = false;
     public bool HideTitle { get; set; }
+    public bool ShowOriginalAttributions { get; set; }
     public string QuoteAttribution { get; set; } = "below";
     public bool Safe { get; set; } = true;
     public bool Bilingual { get; set; }

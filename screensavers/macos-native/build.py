@@ -2,44 +2,23 @@
 """Build a native, offline macOS saver directly from published CSV catalogues."""
 import argparse
 import hashlib
-import html
 import json
 import plistlib
 import re
 import shutil
 import subprocess
 import sys
-from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = Path(__file__).resolve().parent
 OUTPUT = SOURCE / 'build'
 sys.path.insert(0, str(ROOT / 'scripts'))
-from validate_translation import read_catalogue, is_draft, parse_sfw
-
-
-def plain(value):
-    return html.unescape(re.sub(r'<[^>]+>', '', re.sub(r'<br\s*/?>', '\n', value, flags=re.I)))
+from native_quote_catalogues import build_native_catalogues, plain
 
 
 def catalogues():
-    result = {}
-    for locale in json.loads((ROOT / 'src/strings/common/translations.json').read_text(encoding='utf-8')):
-        grouped = defaultdict(list)
-        for row in read_catalogue(ROOT / f'quotes/quotes.{locale}.csv'):
-            phrase = row['Quote time']
-            if is_draft(row) or phrase.startswith('*'):
-                continue
-            if not phrase or phrase not in row['Quote']:
-                raise ValueError(f'{locale}: missing highlighted phrase in {row["Id"]}')
-            first, last = row['Quote'].split(phrase, 1)
-            grouped[row['Time']].append(dict(id=row['Id'], first=plain(first), time=plain(phrase), last=plain(last),
-                                           title=plain(row['Title']), author=plain(row['Author']),
-                                           sfw=parse_sfw(row['SFW'], row['Id'])))
-        result[locale] = grouped
-    return result
-
+    return build_native_catalogues(ROOT)
 
 def run(*args):
     subprocess.run(args, check=True, cwd=ROOT)
