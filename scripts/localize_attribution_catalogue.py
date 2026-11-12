@@ -72,9 +72,9 @@ def localize(quotes, catalog_path, locales=None, delay=0.15, checkpoint_every=10
             if locale in {'de-DE', 'el-GR', 'es-ES', 'fr-FR', 'it-IT', 'pt-PT'} and all(ord(c) < 128 for c in text):
                 value = text
                 if kind == 'author':
-                    author_forms.setdefault(author, {})[locale] = {'value': value, 'sources': []}
+                    author_forms.setdefault(author, {})[locale] = value
                 else:
-                    work_forms.setdefault(author, {}).setdefault(title, {})[locale] = {'value': value, 'sources': []}
+                    work_forms.setdefault(author, {}).setdefault(title, {})[locale] = value
                 done += 1
             else:
                 pending.append((kind, author, title, text))
@@ -104,9 +104,9 @@ def localize(quotes, catalog_path, locales=None, delay=0.15, checkpoint_every=10
                 values = [value]
             for (kind, author, title, _), value in zip(batch, values):
                 if kind == 'author':
-                    author_forms.setdefault(author, {})[locale] = {'value': value, 'sources': []}
+                    author_forms.setdefault(author, {})[locale] = value
                 else:
-                    work_forms.setdefault(author, {}).setdefault(title, {})[locale] = {'value': value, 'sources': []}
+                    work_forms.setdefault(author, {}).setdefault(title, {})[locale] = value
                 done += 1
             catalog_path.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
             print(f'{locale}: translated {offset + len(batch)}/{len(pending)} missing forms', flush=True)

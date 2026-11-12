@@ -7,7 +7,7 @@ import unittest
 from pathlib import Path
 
 from generate_times import generate_catalogue, generate_catalogues
-from attribution_localizations import read_attribution_localizations
+from attribution_localizations import read_attribution_localizations, resolve_attribution
 from attribution_priorities import priorities
 from validate_attributions import validate
 from validate_translation import ROOT
@@ -224,11 +224,26 @@ class AttributionLocalizationTest(unittest.TestCase):
 
     def test_reviewed_descriptive_form_can_have_no_external_source(self):
         localizations = {
-            'authors': {'Jane Austen': {'ja-JP': {'value': 'ジェイン・オースティン', 'sources': []}}},
+            'authors': {'Jane Austen': {'ja-JP': 'ジェイン・オースティン'}},
             'works': {},
         }
         errors, _, _ = validate(localizations, [self.source], {'ja-JP'})
         self.assertEqual(errors, [])
+
+    def test_plain_string_and_sourced_object_are_both_valid_and_resolve(self):
+        forms = [
+            'ジェイン・オースティン',
+            {'value': 'ジェイン・オースティン', 'sources': ['https://example.org/author']},
+        ]
+        for form in forms:
+            with self.subTest(form=form):
+                catalog = {'authors': {'Jane Austen': {'ja-JP': form}}, 'works': {}}
+                errors, author_coverage, _ = validate(catalog, [self.source], {'ja-JP'})
+                self.assertEqual(errors, [])
+                self.assertIn('ja-JP', author_coverage['Jane Austen'])
+                self.assertEqual(resolve_attribution(
+                    self.target, 'ja-JP', {self.source['Id']: self.source}, catalog)[1],
+                    'ジェイン・オースティン')
 
     def test_priority_report_orders_by_quote_coverage_and_locale_gaps(self):
         rows = [

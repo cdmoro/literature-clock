@@ -39,8 +39,13 @@ def validate(localizations, source_rows, supported_locales):
         for locale, entry in forms.items():
             if locale not in supported_locales:
                 errors.append(f'{label}: unsupported locale {locale}')
+            if isinstance(entry, str):
+                if not entry.strip():
+                    errors.append(f'{label} ({locale}): localized value must be non-empty')
+                found.add(locale)
+                continue
             if not isinstance(entry, dict) or set(entry) != {'value', 'sources'}:
-                errors.append(f'{label} ({locale}): expected value and sources')
+                errors.append(f'{label} ({locale}): expected a string or value and sources')
                 continue
             if not isinstance(entry['value'], str) or not entry['value'].strip():
                 errors.append(f'{label} ({locale}): localized value must be non-empty')

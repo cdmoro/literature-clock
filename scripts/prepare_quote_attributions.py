@@ -40,10 +40,7 @@ def harvest_csv_titles(quotes, catalog_path, supported_locales):
             continue
         # Ties are resolved by lexical order, so repeated runs select the same form.
         selected, count = sorted(forms.items(), key=lambda pair: (-pair[1], pair[0]))[0]
-        catalog['works'].setdefault(author, {}).setdefault(title, {})[locale] = {
-            'value': selected,
-            'sources': [],
-        }
+        catalog['works'].setdefault(author, {}).setdefault(title, {})[locale] = selected
         added += 1
         if len(forms) > 1:
             conflicts.append((locale, author, title, selected, count, forms))
