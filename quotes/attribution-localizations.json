@@ -19445,10 +19445,7 @@
         "value": "Karen Hancock",
         "sources": []
       },
-      "el-GR": {
-        "value": "Karen Hancock",
-        "sources": []
-      },
+      "el-GR": "Κάρεν Χάνκοκ",
       "eo": {
         "value": "Karen Hancock",
         "sources": []
@@ -46875,7 +46872,7 @@
         "ru-RU": "Анклав",
         "zh-CN": "飞地",
         "ar-AE": "الجيب",
-        "el-GR": "The Enclave",
+        "el-GR": "Ο Θύλακας",
         "eo": "La Enklavo",
         "ja-JP": "エンクレイブ"
       }
