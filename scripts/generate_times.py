@@ -38,8 +38,9 @@ def generate_catalogue(path, output, include_drafts=False, source_rows=None,
                 continue
             raise ValueError(f"{path}: {row['Id']}: published time phrase is missing from quote")
         first, last = row['Quote'].split(phrase, 1)
+        display_locale = locale[:-6] if locale.endswith('-draft') else locale
         title, author, original_title, original_author = resolve_attribution(
-            row, locale.removesuffix('-draft'), source_rows, localizations)
+            row, display_locale, source_rows, localizations)
         grouped[row['Time']].append({
             **({'draft': is_draft(row)} if include_drafts else {}),
             'id': row['Id'], 'quote_time_case': phrase, 'quote_first': first,
