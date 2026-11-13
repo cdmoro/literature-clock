@@ -10469,10 +10469,7 @@
         "value": "Emma Donoghue",
         "sources": []
       },
-      "el-GR": {
-        "value": "Emma Donoghue",
-        "sources": []
-      },
+      "el-GR": "Έμα Ντόναχιου",
       "eo": {
         "value": "Emma Donoghue",
         "sources": []
@@ -41072,7 +41069,7 @@
     "Emma Donoghue": {
       "Room": {
         "de-DE": "Zimmer",
-        "el-GR": "Δωμάτιο",
+        "el-GR": "Το δωμάτιο",
         "es-ES": "Habitación",
         "fr-FR": "Chambre",
         "it-IT": "Camera",
