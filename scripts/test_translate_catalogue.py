@@ -94,7 +94,7 @@ class BatchTranslationTest(unittest.TestCase):
         self.assertFalse(self.state['rows']['0730-000']['approved'])
         self.assertEqual(self.state['rows']['0730-000']['issues'], [])
         self.assertEqual(translate_rows(self.rows, self.state, self.path, translator, 25), 0)
-        self.assertEqual(len(self.calls), 3)
+        self.assertEqual(len(self.calls), 2)
 
     def test_missing_time_is_pending_not_inserted_into_quote(self):
         def request(text, target):
@@ -116,7 +116,7 @@ class BatchTranslationTest(unittest.TestCase):
         self.state = load_state(self.path, self.rows, 'el')
         translate_rows(self.rows, self.state, self.path, self.translator(self.request), 1)
         self.assertEqual([text for text, _ in self.calls],
-                         ['It was half past seven.', 'Book', 'half past seven'])
+                         ['It was half past seven.', 'half past seven'])
 
     def test_changed_source_only_invalidates_affected_ids(self):
         translate_rows(self.rows, self.state, self.path, self.translator(self.request), 1)
@@ -125,7 +125,7 @@ class BatchTranslationTest(unittest.TestCase):
         reconciled = load_state(self.path, changed, 'el')
         self.assertEqual(reconciled['rows'], {})
         self.assertEqual(len(reconciled['obsolete_rows']), 1)
-        self.assertIn('Book', reconciled['cache'])
+        self.assertNotIn('Book', reconciled['cache'])
         self.assertEqual(progress(changed, reconciled)['pending_ids'], ['0730-000'])
         with self.assertRaises(ValueError):
             load_state(self.path, self.rows, 'ja')
@@ -145,18 +145,18 @@ class BatchTranslationTest(unittest.TestCase):
                                      batch_size=2, until_complete=True, batch_pause=15,
                                      sleep=pauses.append), 5)
         self.assertEqual(pauses, [15, 15])
-        self.assertEqual(len(self.calls), 3)
+        self.assertEqual(len(self.calls), 2)
         self.assertTrue(progress(rows, self.state)['translation_complete'])
         self.assertEqual(run_batches(rows, self.state, self.path, translator,
                                      until_complete=True, sleep=pauses.append), 0)
-        self.assertEqual(len(self.calls), 3)
+        self.assertEqual(len(self.calls), 2)
         saved = json.loads(self.path.with_name('progress.json').read_text())
         self.assertEqual(saved['pending_ids'], [])
         self.assertTrue(saved['review_required'])
 
     def test_blocked_run_saves_partial_progress_and_missing_ids(self):
         def blocked(text, target):
-            if text == 'Book':
+            if text == 'half past seven':
                 raise urllib.error.HTTPError('test', 429, 'Limited', {}, None)
             return self.request(text, target)
         with self.assertRaises(TranslationStopped):

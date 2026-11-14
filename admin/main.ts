@@ -200,7 +200,7 @@ function renderEditor() {
   el('editor').innerHTML =
     `<div class="editor-heading"><span class="eyebrow">${escape(quote.Id)} · ${escape(quote.Time)}</span><span class="tag">${quote.Draft?.toLowerCase() === 'true' ? 'Draft' : 'Approved'}</span></div>
   <h3>Original · ${escape(entry.source?.['Source locale'] || 'en')}</h3><blockquote lang="${escape(entry.source?.['Source locale'] || 'en')}">${entry.source ? highlight(entry.source) : 'Source unavailable'}</blockquote><p class="credit">${escape(entry.source?.Title || '')} — ${escape(quote.Author)}</p>
-  <form id="edit-form"><h3>Translation · ${escape(locale)}</h3><label>Quote<textarea id="quote-text" rows="6" required>${escape(quote.Quote)}</textarea></label><div class="field-pair"><label>Book title<input id="quote-title" value="${escape(quote.Title)}" required></label><label>Exact time phrase<input id="quote-time" value="${escape(quote['Quote time'])}"></label></div><p class="hint">Use &lt;br&gt; for line breaks and &lt;em&gt; for emphasis. Check that the time keeps its original meaning.</p><div id="translation-preview" class="translation-preview" lang="${escape(locale)}">${highlight(quote)}</div>
+  <form id="edit-form"><h3>Translation · ${escape(locale)}</h3><label>Quote<textarea id="quote-text" rows="6" required>${escape(quote.Quote)}</textarea></label><div class="field-pair"><label>Source book title<input value="${escape(quote.Title)}" disabled></label><label>Exact time phrase<input id="quote-time" value="${escape(quote['Quote time'])}"></label></div><p class="hint">Book titles and authors stay canonical in quote CSVs; localized attribution forms are maintained in the shared attribution catalogue. Use &lt;br&gt; for line breaks and &lt;em&gt; for emphasis. Check that the time keeps its original meaning.</p><div id="translation-preview" class="translation-preview" lang="${escape(locale)}">${highlight(quote)}</div>
   ${entry.issues.length ? `<p class="validation">${entry.issues.map(escape).join('<br>')}</p>` : ''}
   <div class="editor-actions"><button type="button" id="save-draft" class="secondary">Save as draft</button><button class="primary" id="approve">Approve translation ✓</button></div></form>`;
   el('edit-form').oninput = () => {
@@ -227,7 +227,6 @@ function renderEditor() {
 function fields() {
   return {
     Quote: el<HTMLTextAreaElement>('quote-text').value,
-    Title: el<HTMLInputElement>('quote-title').value,
     'Quote time': el<HTMLInputElement>('quote-time').value,
   };
 }

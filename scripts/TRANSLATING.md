@@ -27,7 +27,9 @@ workflow path filters whenever bundle ownership changes.
 
 **The source `Id` is the only reliable key for tracking the same quote across languages. Never change it.** Keep it attached to its original passage: do not translate, renumber, regenerate or reformat IDs, and preserve leading zeros and punctuation by treating them as text. Every complete catalogue must contain every source ID exactly once. Matching text, titles, row order or clock times cannot replace this identity; bilingual lookup and catalogue imports depend on it. Checking the ID set alone cannot detect translated passages accidentally assigned to the wrong IDs.
 
-Keep `Author` exactly as in the source, without translation or transliteration. Prefer keeping `Title` unchanged too, so contributors can focus on `Quote` and `Quote time`. A verified published title in the target language may be used deliberately and reviewed, but translating book titles is not required. The batch tools currently generate title translations as drafts; prefer restoring the source title during review unless using a verified localized title. Keep `Time` and `SFW` unchanged. `SFW` must be the canonical CSV boolean `true` or `false`, shared by all translations of the same ID.
+Every localized quote CSV stores the same canonical source `Author` and `Title`; do not translate these columns. The generator resolves canonical author and title from the source quote, then applies independently reviewed display forms from `quotes/attribution-localizations.json`. Use a plain string for a localized form; add an object with `value` and `sources` when editorial references are useful. Use conventional author forms and recognized or natural translated titles; review forms before adding them. Generated JSON preserves canonical source values so readers can choose original attribution. Quote import and translation tools restore these canonical columns automatically. New authors or works need catalogue entries; existing entities reuse their mappings. Keep `Time` and `SFW` unchanged. `SFW` must be the canonical CSV boolean `true` or `false`, shared by all translations of the same ID.
+
+To check progress, run `npm run validate-attributions -- --locale ja-JP --show-missing`; to rank unresolved names by quote impact, run `npm run attribution-priorities -- --locale ja-JP`. `npm run complete-attributions` checks that every supported locale has an explicit form for every source author and work. The shared source forms are already English for this repository, so English locales use the canonical values by design.
 
 ## Import a complete translation from Calibre or another tool
 
@@ -55,8 +57,8 @@ row initially marked `Draft=true`**, which the administrator discovers automatic
 A `.draft.csv` file alone is a legacy clock preview, not an administrator catalogue.
 If both files exist, clock generation uses the regular catalogue.
 
-Import copies `Quote`, `Quote time` and `Title` from the translated file, restores
-`Time`, `Author` and `SFW` from the declared source by ID, and sets `Draft=true`
+Import copies `Quote` and `Quote time` from the translated file, restores
+`Time`, `Title`, `Author` and `SFW` from the declared source by ID, and sets `Draft=true`
 regardless of input approval flags. It refuses missing, duplicate or unknown IDs
 and never overwrites an existing output. The original input is left untouched.
 
@@ -193,7 +195,7 @@ initializes the full draft CSV or adopts an existing full catalogue without rewr
 Inside a language, the menu offers:
 
 1. Translate the next batch with Google (25 quotes by default).
-2. Review/edit pending translations: compare the original, correct quote/title/time,
+2. Review/edit pending translations: compare the original, correct quote/time,
    then explicitly approve or skip each quote. Structural errors block approval.
 3. Open a local browser preview with original and translation side by side,
    highlighted time, review status, search and pagination.
@@ -286,7 +288,7 @@ This runs batches of at most 25 new drafts with a 60-second pause between batche
 It stops when every source ID has a draft, on a service error/block, or when you
 interrupt it. Run the **same command** again to resume from the missing IDs.
 No review is required between batches; translation and review are separate stages.
-Completeness means every ID has received quote, title and time-candidate responses,
+Completeness means every ID has received quote and time-candidate responses,
 not that those translations are correct or that every time highlight is resolved.
 
 Without `--all`, each invocation processes at most one batch. To start with a
@@ -354,7 +356,8 @@ For every quote:
 
 - Read the entire source and translation for omissions, unnatural language and
   changes in meaning. Preserve author names exactly and preferably keep source book
-  titles. Any deliberately localized title should be verified and flagged for review.
+  titles in CSV. Put reviewed display forms in `quotes/attribution-localizations.json`;
+  choose an established title when known, otherwise use a descriptive translation.
 - Find the exact expression of time within the translated quote. Set `Quote time`
   to that exact substring. A separately translated candidate is only a suggestion;
   if it does not occur in the quote, the field is deliberately left empty.

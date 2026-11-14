@@ -31,3 +31,8 @@ it('includes the persisted background pattern in quote links without needing a c
   settings['background-pattern'] = 'none';
   expect(new URL(getQuoteUrl(quote)!).searchParams.has('background-pattern')).toBe(false);
 });
+
+it('preserves original attribution preference in a quote link', () => {
+  settings['show-original-attributions'] = true;
+  expect(new URL(getQuoteUrl(quote)!).searchParams.get('show-original-attributions')).toBe('true');
+});

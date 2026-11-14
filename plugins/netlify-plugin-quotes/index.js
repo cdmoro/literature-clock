@@ -15,6 +15,9 @@ async function fingerprint() {
     'scripts/generate_times.py',
     'scripts/validate_translation.py',
     'scripts/quote_sources.py',
+    'scripts/attribution_localizations.py',
+    'scripts/validate_attributions.py',
+    'quotes/attribution-localizations.json',
     'plugins/netlify-plugin-quotes/index.js',
   ];
   const hash = createHash('sha256');

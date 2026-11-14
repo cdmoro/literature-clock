@@ -27,6 +27,7 @@ def components_for_path(value: str) -> set[str]:
     if path in WEB_FILES:
         return {"Web"}
     exact = {
+        "scripts/attribution_priorities.py": set(),
         "src/strings/translations.json": SHARED,
         "src/strings/settings.json": SHARED,
         "src/strings/fallbackQuotes.json": SHARED,
@@ -42,6 +43,10 @@ def components_for_path(value: str) -> set[str]:
         "src/strings/types.ts": {"Web"},
         "src/photo-providers.json": SHARED,
         "screensavers/macos-native/build.py": {"macOS", "Windows"},
+        "scripts/generate_times.py": SHARED,
+        "scripts/validate_attributions.py": SHARED,
+        "scripts/attribution_localizations.py": SHARED,
+        "scripts/native_quote_catalogues.py": {"macOS", "Windows"},
     }
     if path in exact:
         return set(exact[path])

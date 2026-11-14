@@ -22,7 +22,7 @@ class AdminTest(unittest.TestCase):
         self.assertFalse(next(row for row in self.admin.languages()['languages'] if row['locale'] == 'fr-FR')['enabled'])
         result = self.admin.quotes('fr-FR')
         self.admin.mutate('edit', {'locale': 'fr-FR', 'id': self.rows[0]['Id'],
-                                 'fields': {field: self.rows[0][field] for field in ('Quote', 'Title', 'Quote time')},
+                                 'fields': {field: self.rows[0][field] for field in ('Quote', 'Quote time')},
                                  'approved': True, 'revision': result['revision']})
         self.assertFalse(is_draft(read_catalogue(self.project.catalogue)[0]))
         self.assertEqual(self.admin.quotes('fr-FR', status='approved')['total'], 1)
@@ -30,10 +30,10 @@ class AdminTest(unittest.TestCase):
 
     def test_stale_web_form_cannot_overwrite_another_edit(self):
         data = {'locale': 'fr-FR', 'id': self.rows[0]['Id'],
-                'fields': {field: self.rows[0][field] for field in ('Quote', 'Title', 'Quote time')},
+                'fields': {field: self.rows[0][field] for field in ('Quote', 'Quote time')},
                 'approved': True, 'revision': self.admin.quotes('fr-FR')['revision']}
         self.admin.mutate('edit', data)
-        data['fields']['Title'] = 'Stale title'
+        data['fields']['Quote'] = 'Stale correction'
         with self.assertRaisesRegex(ValueError, 'catalogue changed'):
             self.admin.mutate('edit', data)
         self.assertEqual(read_catalogue(self.project.catalogue)[0]['Title'], 'Book')
@@ -51,7 +51,7 @@ class AdminTest(unittest.TestCase):
         result = self.admin.quotes('eo')
         self.assertEqual(result['total'], 2)
         self.admin.mutate('edit', {'locale': 'eo', 'id': self.rows[0]['Id'],
-                                 'fields': {field: self.rows[0][field] for field in ('Quote', 'Title', 'Quote time')},
+                                 'fields': {field: self.rows[0][field] for field in ('Quote', 'Quote time')},
                                  'approved': True, 'revision': result['revision']})
         self.assertEqual(self.admin.quotes('eo', status='approved')['total'], 1)
         self.admin.mutate('preview', {'locale': 'eo'})
@@ -100,7 +100,7 @@ class AdminTest(unittest.TestCase):
         self.assertTrue(is_draft(read_catalogue(self.project.catalogue)[0]))
 
     def test_approval_rejects_missing_time_and_can_be_revoked(self):
-        fields = {field: self.rows[0][field] for field in ('Quote', 'Title', 'Quote time')}
+        fields = {field: self.rows[0][field] for field in ('Quote', 'Quote time')}
         fields['Quote time'] = 'missing'
         with self.assertRaises(ValueError):
             self.project.edit_quote(self.rows[0]['Id'], fields, True)
@@ -129,8 +129,7 @@ class CataloguePRTest(unittest.TestCase):
             remote = self.root / 'remote.git'
             run(['git', 'clone', '--bare', str(self.root), str(remote)])
             run(['git', 'remote', 'add', 'origin', str(remote)])
-            fields = {field: self.rows[0][field] for field in ('Quote', 'Title', 'Quote time')}
-            fields['Title'] = 'Reviewed title'
+            fields = {field: self.rows[0][field] for field in ('Quote', 'Quote time')}
             self.project.edit_quote(self.rows[0]['Id'], fields, True)
             before = self.project.catalogue.read_bytes()
             branch_before = run(['git', 'branch', '--show-current'])

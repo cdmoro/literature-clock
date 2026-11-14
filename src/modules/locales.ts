@@ -94,7 +94,7 @@ export function initLocale() {
     translateStrings(getInterfaceLocale());
 
     if (!store.get('random-locale')) {
-      updateQuote({ preserveQuote: true });
+      updateQuote({ preserveQuote: true, locale });
     }
   });
   document.querySelector('#random-locale')?.addEventListener('click', () => {
@@ -102,6 +102,7 @@ export function initLocale() {
     if (!isRandomLocale && store.get('locale') !== store.get('active-quote')?.locale) {
       updateQuote({
         preserveQuote: true,
+        locale: store.get('locale'),
       });
     }
   });

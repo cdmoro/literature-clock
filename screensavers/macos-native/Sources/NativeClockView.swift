@@ -79,6 +79,8 @@ struct NativeQuote: Codable {
     let last: String
     let title: String
     let author: String
+    var title_original: String?
+    var author_original: String?
     let sfw: Bool
 }
 
@@ -89,7 +91,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     var preferences: UserDefaults = ScreenSaverDefaults(forModuleWithName: "net.literatureclock.native-saver")!
     var resourceURLOverride: URL? // Isolated render diagnostics only.
     var resources: URL { resourceURLOverride ?? Bundle(for: NativeClockView.self).resourceURL! }
-    static let optionKeys = ["font", "theme", "screensaver", "show-time", "fuzzy-clock", "hide-book-title", "quote-attribution", "work", "progressbar", "quote-locales", "palette", "custom-color", "background", "background-pattern", "pattern-size", "background-effect", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
+    static let optionKeys = ["font", "theme", "screensaver", "show-time", "fuzzy-clock", "hide-book-title", "show-original-attributions", "quote-attribution", "work", "progressbar", "quote-locales", "palette", "custom-color", "background", "background-pattern", "pattern-size", "background-effect", "locale", "photo-provider", "photo-category", "bilingual", "translation-locale"]
     var photoDownloadsEnabled = true
     var interactionPreviewSweep = false
     var fullProgressPreviewSweep = false
@@ -227,7 +229,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
     }
     private func setup() {
         preferences.register(defaults: ["font": "default", "theme": "base-dark", "screensaver": true, "show-time": true, "fuzzy-clock": false,
-                                       "hide-book-title": false, "quote-attribution": "below", "work": true, "progressbar": "background", "quote-locales": "", "palette": "default",
+                                       "hide-book-title": false, "show-original-attributions": false, "quote-attribution": "below", "work": true, "progressbar": "background", "quote-locales": "", "palette": "default",
                                        "custom-color": "#d24335", "background": "default", "background-pattern": "none", "pattern-size": 1.0, "background-effect": "none", "photo-provider": "picsum", "photo-category": "all", "bilingual": false, "translation-locale": ""])
         _ = Self.bundledFonts
         updateAnimationTimeInterval()
@@ -582,7 +584,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         }
         let attributionHidden = preferences.string(forKey: "quote-attribution") == "hidden"
         let hideTitle = preferences.bool(forKey: "hide-book-title")
-        let creditParts = [hideTitle ? "" : quote.title, quote.author].filter { !$0.isEmpty }
+        let original = preferences.bool(forKey: "show-original-attributions")
+        let title = original ? (quote.title_original ?? quote.title) : quote.title
+        let author = original ? (quote.author_original ?? quote.author) : quote.author
+        let creditParts = [hideTitle ? "" : title, author].filter { !$0.isEmpty }
         let creditText = !attributionHidden && (fuzzyClock || preferences.string(forKey: "quote-attribution") == "bottom-left") ? creditParts.joined(separator: "\n") : ""
         let creditKey = "\(creditText)|\(bounds.width)"
         if creditKey != fuzzyCreditKey {
@@ -658,7 +663,9 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 result.append(text)
                 if !fuzzyClock {
                     let attributionMode = preferences.string(forKey: "quote-attribution") ?? "below"
-                    let attribution = attributionMode == "hidden" || attributionMode == "bottom-left" ? "" : preferences.bool(forKey: "hide-book-title") ? item.author : [item.title, item.author].filter { !$0.isEmpty }.joined(separator: ", ")
+                    let title = preferences.bool(forKey: "show-original-attributions") ? (item.title_original ?? item.title) : item.title
+                    let author = preferences.bool(forKey: "show-original-attributions") ? (item.author_original ?? item.author) : item.author
+                    let attribution = attributionMode == "hidden" || attributionMode == "bottom-left" ? "" : preferences.bool(forKey: "hide-book-title") ? author : [title, author].filter { !$0.isEmpty }.joined(separator: ", ")
                     if !attribution.isEmpty {
                         result.append(NSAttributedString(string: "\n", attributes: [.font: font, .paragraphStyle: style]))
                         let citationStyle = style.mutableCopy() as! NSMutableParagraphStyle
@@ -705,7 +712,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             }
             return result
         }
-        let key = "\(preferences.string(forKey: "font") ?? "default")|\(quote.first)\(quote.time)\(quote.last)\(quote.title)\(quote.author)|\(theme)|\(backgroundMode)|\(pattern)|\(quoteLocale)|\(width)|\(limit)|\(scale)|\(dark)|\(accent)|\(lastMinute)|\(preferences.bool(forKey: "hide-book-title"))|\(fuzzyClock)"
+        let key = "\(preferences.string(forKey: "font") ?? "default")|\(quote.first)\(quote.time)\(quote.last)\(quote.title)\(quote.author)|\(theme)|\(backgroundMode)|\(pattern)|\(quoteLocale)|\(width)|\(limit)|\(scale)|\(dark)|\(accent)|\(lastMinute)|\(preferences.bool(forKey: "hide-book-title"))|\(preferences.bool(forKey: "show-original-attributions"))|\(fuzzyClock)"
         let bilingualKey = key + "|\(quote.id ?? "")|\(preferences.bool(forKey: "bilingual"))|\(preferences.string(forKey: "translation-locale") ?? "")|\(preferences.bool(forKey: "work"))"
         if bilingualKey != layoutKey {
             var low: CGFloat = 1, high = min(bounds.width * 0.043, bounds.height * 0.12)
@@ -1072,7 +1079,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         patternChanged(controls["background-pattern"] as! NSPopUpButton)
         effectChanged(controls["background-effect"] as! NSPopUpButton)
         stack = behaviorStack
-        for (key, label) in [("screensaver", "movement"), ("show-time", "time_mode"), ("fuzzy-clock", "settings_fuzzy_clock"), ("hide-book-title", "settings_hide_book_title"), ("work", "work_mode_title")] {
+        for (key, label) in [("screensaver", "movement"), ("show-time", "time_mode"), ("fuzzy-clock", "settings_fuzzy_clock"), ("hide-book-title", "settings_hide_book_title"), ("show-original-attributions", "settings_original_attributions"), ("work", "work_mode_title")] {
             let check = NSButton(checkboxWithTitle: text(label), target: nil, action: nil)
             check.state = preferences.bool(forKey: key) ? .on : .off
             controls[key] = check

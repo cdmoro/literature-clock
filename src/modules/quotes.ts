@@ -110,6 +110,11 @@ async function getQuote(
     quote.author = strings.author;
   }
 
+  if (store.get('show-original-attributions')) {
+    quote.title = quote.title_original || quote.title;
+    quote.author = quote.author_original || quote.author;
+  }
+
   return quote;
 }
 
@@ -135,6 +140,8 @@ export async function updateQuote({
   }
 
   if (variantStep && store.get('active-quote')) {
+    locale = store.get('active-quote')!.locale;
+  } else if (!requestedLocale && preserveQuote && store.get('active-quote')?.locale) {
     locale = store.get('active-quote')!.locale;
   } else if (!requestedLocale && store.get('random-locale') && !store.get('quote-id')) {
     locale = getRandomLocale();
@@ -182,8 +189,8 @@ export async function updateQuote({
           p.append(timeSpan, quoteMarkup(quote.quote_last));
         }
 
-                  const cite = document.createElement('cite');
-          cite.dir = 'auto';
+          const cite = document.createElement('cite');
+          cite.dir = locale.startsWith('ar') ? 'rtl' : 'ltr';
           for (const [id, text] of [
             ['hyphen', '— '],
             ['title', quote.title],

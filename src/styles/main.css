@@ -729,6 +729,12 @@ body.fuzzy-clock blockquote[aria-label]:after {
 cite [dir='auto'] {
   unicode-bidi: isolate;
 }
+#quote cite:dir(rtl) {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  direction: rtl;
+}
 #quote:lang(ar),
 .translation-content:lang(ar) {
   --quote-line-height: 1.65;

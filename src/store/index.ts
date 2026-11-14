@@ -21,6 +21,7 @@ interface Stateful {
   transition: TransitionMode;
   'show-time': boolean;
   'hide-book-title': boolean;
+  'show-original-attributions': boolean;
   'quote-attribution': 'below' | 'bottom-left' | 'hidden';
   'fuzzy-clock': boolean;
   'auto-read': boolean;
@@ -88,6 +89,7 @@ const BOOLEAN_KEYS = new Set([
   'screensaver',
   'show-time',
   'hide-book-title',
+  'show-original-attributions',
   'fuzzy-clock',
   'fuzzy',
   'auto-read',
@@ -426,6 +428,7 @@ export function createStore() {
     transition: 'fade',
     'show-time': true,
     'hide-book-title': false,
+    'show-original-attributions': false,
     'quote-attribution': 'below',
     'fuzzy-clock': false,
     'auto-read': false,

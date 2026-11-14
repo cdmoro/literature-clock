@@ -76,12 +76,14 @@ def validate(source, translated):
             continue
         if row.get('Source locale') != original.get('Source locale'):
             errors.append(f'{label}: Source locale differs from the source')
-        for field in ('Time', 'Author', 'SFW'):
+        # Attribution names are canonical source data in every quote CSV.
+        # Localized display forms live in attribution-localizations.json.
+        for field in ('Time', 'Title', 'Author', 'SFW'):
             if row[field] != original[field]:
                 errors.append(f'{label}: {field} differs from the source')
         if is_draft(row):
             continue
-        for field in ('Quote', 'Title', 'Quote time'):
+        for field in ('Quote', 'Quote time'):
             if not row[field].strip():
                 errors.append(f'{label}: empty {field}')
         phrase = row['Quote time']
