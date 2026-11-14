@@ -141,6 +141,8 @@ export async function updateQuote({
 
   if (variantStep && store.get('active-quote')) {
     locale = store.get('active-quote')!.locale;
+  } else if (!requestedLocale && preserveQuote && store.get('active-quote')?.locale) {
+    locale = store.get('active-quote')!.locale;
   } else if (!requestedLocale && store.get('random-locale') && !store.get('quote-id')) {
     locale = getRandomLocale();
   }

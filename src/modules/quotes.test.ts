@@ -190,6 +190,15 @@ it('keeps the displayed language when exploring in random-language mode', async 
   expect(active().variants).toBe(2);
 });
 
+it('keeps the active quote language when refreshing its attribution in random-language mode', async () => {
+  state['random-locale'] = true;
+  state.locale = 'fr-FR';
+  state['active-quote'] = { ...first, locale: 'el-GR', time: '18:08' };
+  await updateQuote({ preserveQuote: true });
+  expect(active().locale).toBe('el-GR');
+  expect(vi.mocked(fetch)).toHaveBeenCalledWith('../times/el-GR/12_00.json');
+});
+
 it('moves sequentially and wraps in both directions', async () => {
   const third = { ...first, id: '1200-002' };
   vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => [first, second, third] } as Response);
