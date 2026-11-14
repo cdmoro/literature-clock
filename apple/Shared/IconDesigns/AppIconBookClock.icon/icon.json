@@ -1,0 +1,70 @@
+{
+  "fill" : {
+    "linear-gradient" : [
+      "display-p3:0.16809,0.27881,0.15930,1.00000",
+      "display-p3:0.10986,0.18273,0.10543,1.00000"
+    ]
+  },
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "fill" : "none",
+          "glass" : false,
+          "image-name" : "03-clock-hands.png",
+          "name" : "03-clock-hands",
+          "position" : {
+            "scale" : 0.56,
+            "translation-in-points" : [
+              -57,
+              -63
+            ]
+          }
+        },
+        {
+          "blend-mode" : "normal",
+          "fill" : "none",
+          "glass" : false,
+          "image-name" : "02-lines.png",
+          "name" : "02-lines",
+          "opacity" : 1,
+          "position" : {
+            "scale" : 0.56,
+            "translation-in-points" : [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "blend-mode" : "normal",
+          "fill" : "none",
+          "glass" : true,
+          "image-name" : "01-book.png",
+          "name" : "01-book",
+          "position" : {
+            "scale" : 0.56,
+            "translation-in-points" : [
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.3
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}

@@ -28,14 +28,14 @@ class ComponentOwnershipTests(unittest.TestCase):
         self.assertEqual(components_for_path("public/assets/book-paper-seamless.webp"), {"Web", "Windows"})
 
     def test_currently_shared_strings_are_shared(self):
-        self.assertEqual(components_for_path("src/strings/common/settings.json"), {"Web", "macOS", "Windows"})
+        self.assertEqual(components_for_path("src/strings/common/settings.json"), {"Web", "macOS", "Windows", "macOS app"})
         self.assertEqual(
             components_for_translation_key("src/strings/common/settings.json", "settings_attribution_position"),
             {"Web", "macOS", "Windows", "macOS app"},
         )
         self.assertEqual(
             components_for_translation_key("src/strings/common/settings.json", "settings_show_seconds"),
-            {"Web", "macOS", "Windows"},
+            {"Web", "macOS", "Windows", "macOS app"},
         )
         self.assertEqual(components_for_path("src/strings/screensaver/native-settings.json"), {"macOS", "Windows"})
         self.assertEqual(components_for_path("src/strings/web/settings.json"), {"Web"})
@@ -53,6 +53,11 @@ class ComponentOwnershipTests(unittest.TestCase):
     def test_artifact_roots(self):
         self.assertEqual(components_for_path("src/strings/screensaver/native-settings.json"), {"macOS", "Windows"})
         self.assertEqual(components_for_path("src/strings/apple-app/localizable.json"), {"macOS app"})
+
+    def test_macos_app_runtime_is_labeled_without_documentation(self):
+        self.assertEqual(components_for_path("apple/Shared/Widgets/LiteratureClockWidget.swift"), {"macOS app"})
+        self.assertEqual(components_for_path("apple/build.py"), {"macOS app"})
+        self.assertEqual(components_for_path("apple/INSTALL.md"), set())
 
     def test_unknown_translation_path_fails(self):
         with self.assertRaisesRegex(ValueError, "no ownership mapping"):
