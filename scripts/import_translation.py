@@ -17,7 +17,7 @@ def import_translation(source_path, translated_path, output):
         raise ValueError('Translation must contain every source ID exactly once.')
     by_id = {row['Id']: row for row in translated}
     rows = [{**original,
-             **{field: by_id[original['Id']][field] for field in ('Quote', 'Quote time', 'Title')},
+             **{field: by_id[original['Id']][field] for field in ('Quote', 'Quote time')},
              'Draft': 'true'} for original in source]
     errors = validate(source, rows)
     if errors:

@@ -1,22 +1,25 @@
 #!/usr/bin/env python3
-"""Bundle the macOS saver's exact offline catalogues, fonts, labels and tiles."""
+"""Bundle Windows resources from the shared quote catalogue and source assets."""
 import hashlib
-import importlib.util
 import json
 import shutil
+import sys
 from pathlib import Path
 
 SOURCE = Path(__file__).resolve().parent
 ROOT = SOURCE.parents[1]
 MAC = ROOT / 'screensavers/macos-native'
-spec = importlib.util.spec_from_file_location('mac_native_build', MAC / 'build.py')
-mac = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(mac)
+sys.path.insert(0, str(ROOT / 'scripts'))
+from native_quote_catalogues import build_native_catalogues, plain
+
+
+def catalogues():
+    return build_native_catalogues(ROOT)
 
 
 def prepare(destination=SOURCE / 'Resources'):
     destination.mkdir(parents=True, exist_ok=True)
-    quotes = mac.catalogues()
+    quotes = catalogues()
     (destination / 'Quotes').mkdir(exist_ok=True)
     for locale, rows in quotes.items():
         (destination / 'Quotes' / f'{locale}.json').write_text(json.dumps(rows, ensure_ascii=False), encoding='utf-8')
@@ -24,7 +27,7 @@ def prepare(destination=SOURCE / 'Resources'):
         (destination / name).write_text(json.dumps(data, ensure_ascii=False), encoding='utf-8')
     write('locales.json', sorted(quotes))
     fallback = json.loads((ROOT / 'src/strings/common/fallbackQuotes.json').read_text(encoding='utf-8'))
-    write('fallback.json', {locale: dict(first=mac.plain(rows[0]['quote_first']), time='', last=mac.plain(rows[0]['quote_last']), title='', author='', sfw=True) for locale, rows in fallback.items()})
+    write('fallback.json', {locale: dict(first=plain(rows[0]['quote_first']), time='', last=plain(rows[0]['quote_last']), title='', author='', sfw=True) for locale, rows in fallback.items()})
     labels, settings, native = [json.loads(path.read_text(encoding='utf-8')) for path in [ROOT / 'src/strings/common/translations.json', ROOT / 'src/strings/common/settings.json', ROOT / 'src/strings/screensaver/native-settings.json']]
     write('settings.json', {key: {**value, **settings[key], **native[key]} for key, value in labels.items()})
     fonts = MAC / 'Assets/Fonts'

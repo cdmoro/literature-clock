@@ -9,11 +9,11 @@ import { loadGoogleFont, normalizeFontName, fontFamilyOverride } from '../utils/
 import { getLocaleThemeFont } from './locale-fonts';
 import { quoteMarkup } from '../utils/quote-markup';
 import { defaultColor } from './themes';
+import { CITE_FACTOR } from './font';
 import { textDirection } from '../utils/text-direction';
+import { getBaseLocale } from './locales';
 import STRINGS from '../strings/web/share.json';
 
-export const cardFormats = { square: [1080, 1080], portrait: [1080, 1920], landscape: [1920, 1080] } as const;
-export type CardFormat = keyof typeof cardFormats;
 export type CardAppearance = 'light' | 'dark';
 export interface CardOptions {
   pattern?: BackgroundPattern;
@@ -31,12 +31,13 @@ const themeFontLoads = new Map<string, Promise<void>>();
 /** Render a snapshot of the quote, without viewport dimensions or clock animation. */
 export async function renderShareCard(
   quote: ResolvedQuote,
-  format: CardFormat,
   appearance?: CardAppearance,
   theme?: string,
   options: CardOptions = {},
+  interfaceLocale = store.get('ui-locale') || store.get('locale'),
 ): Promise<HTMLCanvasElement> {
-  const [width, height] = cardFormats[format];
+  const width = 1080;
+  const height = 1080;
   const bodyStyle = getComputedStyle(document.body);
   const quoteStyle = getComputedStyle(document.getElementById('quote') || document.body);
   const card = document.createElement('div');
@@ -256,7 +257,14 @@ export async function renderShareCard(
   card.dir = textDirection(quote.locale);
   card.setAttribute('aria-hidden', 'true');
   const content = document.createElement('div');
-  content.style.textShadow = quoteStyle.textShadow;
+  Object.assign(content.style, {
+    textShadow: quoteStyle.textShadow,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    flex: '1 1 auto',
+    marginBottom: '72px',
+  });
   const passage = document.createElement('div');
   passage.dir = 'auto';
   passage.style.whiteSpace = 'pre-wrap';
@@ -288,17 +296,19 @@ export async function renderShareCard(
   const attribution = store.get('hide-book-title') ? [quote.author] : [quote.title, quote.author];
   attribution.forEach((text, index) => {
     if (index === 0 && !centered) credit.append('— ');
-    if (index > 0) credit.append(centered ? ' ' : ', ');
+    if (index > 0) credit.append(centered ? '\n' : ', ');
     const part = document.createElement('span');
     part.dir = 'auto';
     part.style.unicodeBidi = 'isolate';
     part.textContent = text;
     credit.append(part);
   });
+  const citeFactor = CITE_FACTOR[skin as keyof typeof CITE_FACTOR] || 0.7;
   Object.assign(credit.style, {
     marginTop: '40px',
-    fontSize: '28px',
+    fontSize: `${84 * citeFactor}px`,
     textAlign: options.alignment || 'start',
+    whiteSpace: centered ? 'pre-line' : 'normal',
     opacity: '0.8',
   });
   if (isFuzzy || store.get('quote-attribution') === 'hidden') {
@@ -307,11 +317,32 @@ export async function renderShareCard(
     content.append(passage, credit);
   }
   const signature = document.createElement('div');
-  signature.lang = quote.locale.replace(/-draft$/, '');
-  signature.dir = textDirection(quote.locale);
-  signature.textContent =
-    STRINGS[quote.locale.replace(/-draft$/, '') as keyof typeof STRINGS]?.signature || STRINGS['en-GB'].signature;
-  signature.style.fontSize = '22px';
+  signature.className = 'share-card-signature';
+  const signatureLocale = getBaseLocale(interfaceLocale || 'en-GB');
+  signature.lang = signatureLocale;
+  signature.dir = textDirection(signatureLocale);
+  const productName =
+    STRINGS[signatureLocale]?.signature || STRINGS['en-GB'].signature;
+  const appIcon = document.createElement('img');
+  const darkAppearance = appearance ? appearance === 'dark' : liveTheme.endsWith('-dark');
+  appIcon.src = darkAppearance ? '/assets/app-icon-light.png' : '/assets/app-icon-dark.png';
+  appIcon.alt = '';
+  appIcon.width = 36;
+  appIcon.height = 36;
+  appIcon.style.objectFit = 'contain';
+  const signatureName = document.createElement('span');
+  signatureName.textContent = productName;
+  Object.assign(signature.style, {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '12px',
+    fontSize: '28px',
+    lineHeight: '36px',
+  });
+  Object.assign(appIcon.style, {
+    width: '36px', height: '36px', flex: '0 0 36px', display: 'block', transform: 'translateY(4px)',
+  });
+  signature.append(appIcon, signatureName);
   if (photo) {
     for (const element of [content, signature]) {
       element.style.position = 'relative';
@@ -335,14 +366,25 @@ export async function renderShareCard(
     if (photo) await photo.decode().catch(() => undefined);
     await fontLoading;
     await document.fonts?.ready;
-    let size = 64;
-    passage.style.fontSize = `${size}px`;
-    const available = height - 192 - 150;
-    while (content.scrollHeight > available && size > 28) passage.style.fontSize = `${--size}px`;
-    // Exceptionally long passages grow the card rather than becoming unreadable or clipped.
-    const finalHeight = Math.max(height, content.scrollHeight + 192 + 150);
-    card.style.height = `${finalHeight}px`;
-    return await html2canvas(card, { useCORS: true, scale: 1, width, height: finalHeight, logging: false });
+    // Keep every exported image square. Measure wrapped passage height only;
+    // scrollWidth changes with text alignment and must not affect type size.
+    const minimumSize = 12;
+    const maximumSize = 120;
+    const availableHeight = height - 192 - signature.getBoundingClientRect().height - 72;
+    const includesCredit = !isFuzzy && store.get('quote-attribution') !== 'hidden';
+    let low = minimumSize;
+    let high = maximumSize;
+    for (let attempt = 0; attempt < 12; attempt++) {
+      const candidate = Math.ceil((low + high) / 2);
+      passage.style.fontSize = `${candidate}px`;
+      if (includesCredit) credit.style.fontSize = `${candidate * citeFactor}px`;
+      const creditHeight = includesCredit ? credit.getBoundingClientRect().height + 40 : 0;
+      if (passage.scrollHeight + creditHeight <= availableHeight) low = candidate;
+      else high = candidate - 1;
+    }
+    passage.style.fontSize = `${low}px`;
+    if (includesCredit) credit.style.fontSize = `${low * citeFactor}px`;
+    return await html2canvas(card, { useCORS: true, scale: 1, width, height, logging: false });
   } finally {
     card.remove();
   }

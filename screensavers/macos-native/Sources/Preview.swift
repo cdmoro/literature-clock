@@ -50,7 +50,7 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             let suite = "net.literatureclock.native-check." + UUID().uuidString
             checkSuite = suite
             let defaults = UserDefaults(suiteName: suite)!
-            defaults.register(defaults: ["theme": "base-dark", "background-pattern": "none", "palette": "default", "custom-color": "#d24335", "show-time": true, "hide-book-title": false, "quote-locales": "", "work": true, "screensaver": true, "progressbar": "background"])
+            defaults.register(defaults: ["theme": "base-dark", "background-pattern": "none", "palette": "default", "custom-color": "#d24335", "show-time": true, "hide-book-title": false, "show-original-attributions": false, "quote-locales": "", "work": true, "screensaver": true, "progressbar": "background"])
             clock.preferences = defaults
             clock.photoDownloadsEnabled = false
         }
@@ -82,7 +82,7 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             restartShowcase()
         }
         if CommandLine.arguments.contains("--check-render") {
-            let keys = ["font", "theme", "background", "background-pattern", "palette", "custom-color", "show-time", "fuzzy-clock", "hide-book-title", "quote-attribution", "quote-locales", "work", "locale", "screensaver", "progressbar"]
+            let keys = ["font", "theme", "background", "background-pattern", "palette", "custom-color", "show-time", "fuzzy-clock", "hide-book-title", "show-original-attributions", "quote-attribution", "quote-locales", "work", "locale", "screensaver", "progressbar"]
             let saved = keys.map { ($0, clock.preferences.object(forKey: $0)) }
             defer {
                 for (key, value) in saved { clock.preferences.set(value, forKey: key) }
@@ -399,6 +399,10 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             clock.perform(NSSelectorFromString("saveOptions"))
             precondition(clock.preferences.bool(forKey: "hide-book-title") && other.preferences.bool(forKey: "hide-book-title"), "Hide title did not reach other views")
             _ = clock.configureSheet
+            (clock.controls["show-original-attributions"] as! NSButton).state = .on
+            clock.perform(NSSelectorFromString("saveOptions"))
+            precondition(clock.preferences.bool(forKey: "show-original-attributions") && other.preferences.bool(forKey: "show-original-attributions"), "Original attribution preference did not reach other views")
+            _ = clock.configureSheet
             let attributionMenu = clock.controls["quote-attribution"] as! NSPopUpButton
             for mode in ["below", "bottom-left", "hidden"] {
                 attributionMenu.select(attributionMenu.itemArray.first { $0.representedObject as? String == mode })
@@ -579,7 +583,7 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
             }
         }
         let defaults = UserDefaults(suiteName: "net.literatureclock.showcase." + UUID().uuidString)!
-        defaults.register(defaults: ["theme": "photo-dark", "progressbar": "glass-foreground", "photo-provider": "picsum", "photo-category": "all", "screensaver": false, "work": true, "show-time": true, "bilingual": false, "hide-book-title": false, "quote-attribution": "below", "palette": "default", "background-pattern": "none"])
+        defaults.register(defaults: ["theme": "photo-dark", "progressbar": "glass-foreground", "photo-provider": "picsum", "photo-category": "all", "screensaver": false, "work": true, "show-time": true, "bilingual": false, "hide-book-title": false, "show-original-attributions": false, "quote-attribution": "below", "palette": "default", "background-pattern": "none"])
         clock.preferences = defaults
         clock.photoDownloadsEnabled = true
         clock.interactionPreviewSweep = false

@@ -63,6 +63,7 @@ test('keeps quick actions outside and moves every settings control without repla
     'work',
     'show-time',
     'hide-book-title',
+    'show-original-attributions',
     'quote-attribution',
     'fuzzy-clock',
     'progressbar',
@@ -501,6 +502,7 @@ test('groups behavior controls without losing their shared switch state', () => 
     const sections = [...document.querySelectorAll('#settings-behavior > .settings-behavior-section')];
     expect(sections).toHaveLength(3);
     expect(sections[0].querySelector('#hide-book-title')).not.toBeNull();
+    expect(sections[0].querySelector('#show-original-attributions')).not.toBeNull();
     expect(sections[0].querySelector('#quote-attribution')).not.toBeNull();
     expect(sections[0].querySelector('#work')).not.toBeNull();
     expect(sections[1].querySelector('#transition-select')).not.toBeNull();
@@ -512,6 +514,9 @@ test('groups behavior controls without losing their shared switch state', () => 
     document.getElementById('hide-book-title')!.click();
     expect(store.get('hide-book-title')).toBe(true);
     expect(document.getElementById('hide-book-title')!.getAttribute('aria-checked')).toBe('true');
+    store.toggle('show-original-attributions');
+    expect(store.get('show-original-attributions')).toBe(true);
+    expect(document.getElementById('show-original-attributions')!.getAttribute('aria-checked')).toBe('true');
   } finally {
     cleanup?.();
   }

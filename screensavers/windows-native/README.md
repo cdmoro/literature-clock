@@ -2,8 +2,10 @@
 
 Native WPF/.NET 10 screen saver for Windows 10/11 x64 and ARM64, without a browser,
 WebView or local server. The self-contained download requires no installed .NET runtime.
-Quotes, settings translations, fonts (including licences), theme textures and all 25
-pattern tiles are generated directly from the macOS native saver's resources.
+Quote files are built from the shared source CSVs through
+`scripts/native_quote_catalogues.py`, independently of either platform's packager.
+Settings translations, fonts (including licences), theme textures and pattern tiles
+use shared project resources.
 Settings and per-display photo caches live in `%LOCALAPPDATA%\Literature Clock`.
 
 ## Install
@@ -27,10 +29,10 @@ preference or manages other users' installations.
 ## Features
 
 Includes seven themes, system/light/dark appearance, automatic font selection for all
-twelve languages, an optional system serif/sans serif/monospace override shared by both
+thirteen locales, an optional system serif/sans serif/monospace override shared by both
 passage languages, per-minute language rotation, distinct monitor choices, highlighted
-time phrases, title hiding and quote attribution below the passage, at bottom left, or
-hidden, safe-passage filtering, bilingual translations by shared
+time phrases, title hiding, the option to show original author/title forms, and quote
+attribution below the passage, at bottom left, or hidden. It also supports safe-passage filtering, bilingual translations by shared
 quote ID, moving text, fixed/custom/per-minute colours, background selection, patterns,
 time display and six progress modes. Book uses rounded highlight fragments and its paper
 tile. Retro and Terminal use repeating scanlines. Photo supports Picsum, NASA and

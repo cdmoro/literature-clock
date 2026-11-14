@@ -90,6 +90,11 @@ enum NativeAppearance {
             "photo": ["ar": "lalezar", "ru": "russoone", "el": "delagothicone", "zh": "zcoolkuaile"],
             "retro": ["ar": "handjet", "ru": "dotgothic16", "el": "handjet", "zh": "zcoolqingkehuangyou"]
         ]
+        if language == "ja" {
+            let japanese = ["retro": "dotgothic16", "photo": "mochiypopone",
+                            "terminal": "wdxllubrifontjpn", "bohemian": "zenmarugothic"]
+            return japanese[theme] ?? "bizudpgothic"
+        }
         return variants[theme]?[language] ?? main[theme] ?? "specialelite"
     }
     static func color(_ hex: String) -> NSColor? {

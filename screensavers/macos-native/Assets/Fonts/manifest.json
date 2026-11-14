@@ -271,6 +271,46 @@
       "path": "delagothicone/OFL.txt",
       "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/delagothicone/OFL.txt",
       "sha256": "c0014792d4f4abc0508c295b277f2b17ae44465c8dc88d12af9cea48279b5fda"
+    },
+    {
+      "path": "bizudpgothic/BIZUDPGothic-Regular.ttf",
+      "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/bizudpgothic/BIZUDPGothic-Regular.ttf",
+      "sha256": "258d7156c165f2ff774b6efee637c22c3b950de0d8a10e501137061bc8085d01"
+    },
+    {
+      "path": "bizudpgothic/OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/bizudpgothic/OFL.txt",
+      "sha256": "e753d7155d53c747d037a445e584c8ecfca6dd79846db610417e282a736b28bc"
+    },
+    {
+      "path": "mochiypopone/MochiyPopOne-Regular.ttf",
+      "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/mochiypopone/MochiyPopOne-Regular.ttf",
+      "sha256": "9e009430e1316c271a5f34759c6b65fc343c4e806f193042528887e7235a92c6"
+    },
+    {
+      "path": "mochiypopone/OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/mochiypopone/OFL.txt",
+      "sha256": "76be26178f13ef82866cf6a5c54272191bb583c203ad7035021c7681c9043558"
+    },
+    {
+      "path": "wdxllubrifontjpn/WDXLLubrifontJPN-Regular.ttf",
+      "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/wdxllubrifontjpn/WDXLLubrifontJPN-Regular.ttf",
+      "sha256": "f7a95e761a2d2c2ee6a90f8536e42ea9e50bae8840695f01704986e2bce34869"
+    },
+    {
+      "path": "wdxllubrifontjpn/OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/wdxllubrifontjpn/OFL.txt",
+      "sha256": "048eba87d28b5d74c432cfa38ca44737e86a5508cf912c1b2cc211c45944e1d9"
+    },
+    {
+      "path": "zenmarugothic/ZenMaruGothic-Regular.ttf",
+      "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/zenmarugothic/ZenMaruGothic-Regular.ttf",
+      "sha256": "a0c0b53543e0993ae2225e629c833f3d51495ad31720694ff112ce4ce11111ef"
+    },
+    {
+      "path": "zenmarugothic/OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/zenmarugothic/OFL.txt",
+      "sha256": "2a20cf7ce1909d8ee1e949095d340f7d7656705f7c810a2d6faf56800ad0cb3d"
     }
   ]
 }

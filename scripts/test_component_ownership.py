@@ -13,6 +13,19 @@ class ComponentOwnershipTests(unittest.TestCase):
 
     def test_quotes_reach_both_screensavers_and_web(self):
         self.assertEqual(components_for_path("quotes/quotes.es-ES.csv"), {"Web", "macOS", "Windows"})
+        self.assertEqual(components_for_path("quotes/attribution-localizations.json"), {"Web", "macOS", "Windows"})
+        self.assertEqual(components_for_path("scripts/generate_times.py"), {"Web", "macOS", "Windows"})
+        self.assertEqual(components_for_path("screensavers/macos-native/build.py"), {"macOS", "Windows"})
+        self.assertEqual(components_for_path("scripts/validate_attributions.py"), {"Web", "macOS", "Windows"})
+        self.assertEqual(components_for_path("scripts/attribution_localizations.py"), {"Web", "macOS", "Windows"})
+        self.assertEqual(components_for_path("scripts/native_quote_catalogues.py"), {"macOS", "Windows"})
+        self.assertEqual(components_for_path("scripts/attribution_priorities.py"), set())
+
+    def test_web_app_icons_are_not_native_screensaver_payload(self):
+        for icon in ("app-icon-dark.png", "app-icon-light.png"):
+            with self.subTest(icon=icon):
+                self.assertEqual(components_for_path(f"public/assets/{icon}"), {"Web"})
+        self.assertEqual(components_for_path("public/assets/book-paper-seamless.webp"), {"Web", "Windows"})
 
     def test_currently_shared_strings_are_shared(self):
         self.assertEqual(components_for_path("src/strings/common/settings.json"), {"Web", "macOS", "Windows", "macOS app"})

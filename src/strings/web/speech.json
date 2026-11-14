@@ -190,5 +190,21 @@
     "activationNeeded": "Automatic reading is saved. Activate it for this visit.",
     "blocked": "The browser blocked reading. Press Activate reading to retry.",
     "noStart": "Reading did not start. Check the volume and available voices, then try again."
+  },
+  "ja-JP": {
+    "read": "引用文を読み上げる",
+    "stop": "読み上げを停止",
+    "auto": "毎分のはじめに引用文を読み上げる",
+    "help": "ページを開いた後、この設定をオンにするか、読み上げボタンを押すと自動読み上げが有効になります。タブが非表示になると停止します。",
+    "unsupported": "このブラウザーでは読み上げを利用できません。",
+    "error": "引用文を読み上げられませんでした。読み上げボタンをもう一度押してください。",
+    "attribution": "書名と著者名も読み上げる",
+    "contentSection": "コンテンツ",
+    "clockSection": "時計と表示",
+    "speechSection": "読み上げ",
+    "activate": "読み上げを有効にする",
+    "activationNeeded": "自動読み上げの設定は保存されています。今回の閲覧で読み上げを有効にしてください。",
+    "blocked": "ブラウザーが読み上げをブロックしました。「読み上げを有効にする」を押して再試行してください。",
+    "noStart": "読み上げを開始できませんでした。音量と利用可能な音声を確認して、もう一度お試しください。"
   }
 }

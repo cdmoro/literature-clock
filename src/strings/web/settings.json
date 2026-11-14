@@ -1,5 +1,6 @@
 {
   "en-GB": {
+    "settings_title": "Settings",
     "settings_close": "Close settings",
     "settings_ui_language": "Interface language",
     "settings_languages_help": "Choose languages to rotate through. If none are selected, quotes use the interface language.",
@@ -38,10 +39,10 @@
     "settings_font_incompatible_label": "incompatible",
     "settings_font_fallback": "The chosen font does not support this language. The theme’s font is used; your choice remains saved.",
     "settings_languages_follow_interface": "Same as the interface",
-    "settings_presets_help": "Apply a seasonal look. You can adjust each setting afterwards.",
-    "settings_title": "Settings"
+    "settings_presets_help": "Apply a seasonal look. You can adjust each setting afterwards."
   },
   "en-US": {
+    "settings_title": "Settings",
     "settings_close": "Close settings",
     "settings_ui_language": "Interface language",
     "settings_languages_help": "Choose languages to rotate through. If none are selected, quotes use the interface language.",
@@ -80,10 +81,10 @@
     "settings_font_incompatible_label": "incompatible",
     "settings_font_fallback": "The chosen font does not support this language. The theme’s font is used; your choice remains saved.",
     "settings_languages_follow_interface": "Same as the interface",
-    "settings_presets_help": "Apply a seasonal look. You can adjust each setting afterward.",
-    "settings_title": "Settings"
+    "settings_presets_help": "Apply a seasonal look. You can adjust each setting afterward."
   },
   "es-ES": {
+    "settings_title": "Configuración",
     "settings_close": "Cerrar configuración",
     "settings_ui_language": "Idioma de la interfaz",
     "settings_languages_help": "Elegí los idiomas para alternar las citas. Si no seleccionás ninguno, se usará el idioma de la interfaz.",
@@ -122,10 +123,10 @@
     "settings_font_incompatible_label": "incompatible",
     "settings_font_fallback": "La fuente elegida no admite este idioma. Se usa la fuente del tema; tu elección sigue guardada.",
     "settings_languages_follow_interface": "Igual que la interfaz",
-    "settings_presets_help": "Aplica una ambientación estacional. Después puedes ajustar cada opción.",
-    "settings_title": "Configuración"
+    "settings_presets_help": "Aplica una ambientación estacional. Después puedes ajustar cada opción."
   },
   "pt-PT": {
+    "settings_title": "Configurações",
     "settings_close": "Fechar configurações",
     "settings_ui_language": "Idioma da interface",
     "settings_languages_help": "Escolha os idiomas para alternar as citações. Sem seleção, é usado o idioma da interface.",
@@ -164,10 +165,10 @@
     "settings_font_incompatible_label": "incompatível",
     "settings_font_fallback": "A fonte escolhida não suporta este idioma. É usada a fonte do tema; a sua escolha continua guardada.",
     "settings_languages_follow_interface": "Igual ao idioma da interface",
-    "settings_presets_help": "Aplica um ambiente sazonal. Podes ajustar cada opção depois.",
-    "settings_title": "Configurações"
+    "settings_presets_help": "Aplica um ambiente sazonal. Podes ajustar cada opção depois."
   },
   "fr-FR": {
+    "settings_title": "Paramètres",
     "settings_close": "Fermer les paramètres",
     "settings_ui_language": "Langue de l’interface",
     "settings_languages_help": "Choisissez les langues à alterner. Sans sélection, les citations utilisent la langue de l’interface.",
@@ -206,10 +207,10 @@
     "settings_font_incompatible_label": "incompatible",
     "settings_font_fallback": "La police choisie ne prend pas en charge cette langue. La police du thème est utilisée ; votre choix reste enregistré.",
     "settings_languages_follow_interface": "Comme l’interface",
-    "settings_presets_help": "Applique une ambiance saisonnière. Tu peux ajuster chaque option ensuite.",
-    "settings_title": "Paramètres"
+    "settings_presets_help": "Applique une ambiance saisonnière. Tu peux ajuster chaque option ensuite."
   },
   "it-IT": {
+    "settings_title": "Impostazioni",
     "settings_close": "Chiudi impostazioni",
     "settings_ui_language": "Lingua dell’interfaccia",
     "settings_languages_help": "Scegli le lingue da alternare. Se non ne selezioni nessuna, viene usata la lingua dell’interfaccia.",
@@ -248,10 +249,10 @@
     "settings_font_incompatible_label": "incompatibile",
     "settings_font_fallback": "Il font scelto non supporta questa lingua. Si usa il font del tema; la tua scelta resta salvata.",
     "settings_languages_follow_interface": "Come l’interfaccia",
-    "settings_presets_help": "Applica un’atmosfera stagionale. Puoi modificare ogni opzione in seguito.",
-    "settings_title": "Impostazioni"
+    "settings_presets_help": "Applica un’atmosfera stagionale. Puoi modificare ogni opzione in seguito."
   },
   "de-DE": {
+    "settings_title": "Einstellungen",
     "settings_close": "Einstellungen schließen",
     "settings_ui_language": "Sprache der Oberfläche",
     "settings_languages_help": "Sprachen zum Abwechseln auswählen. Ohne Auswahl wird die Sprache der Oberfläche verwendet.",
@@ -290,10 +291,10 @@
     "settings_font_incompatible_label": "nicht kompatibel",
     "settings_font_fallback": "Die gewählte Schrift unterstützt diese Sprache nicht. Die Schrift des Designs wird verwendet; deine Auswahl bleibt gespeichert.",
     "settings_languages_follow_interface": "Wie die Benutzeroberfläche",
-    "settings_presets_help": "Wende eine saisonale Stimmung an. Du kannst jede Option danach anpassen.",
-    "settings_title": "Einstellungen"
+    "settings_presets_help": "Wende eine saisonale Stimmung an. Du kannst jede Option danach anpassen."
   },
   "el-GR": {
+    "settings_title": "Ρυθμίσεις",
     "settings_close": "Κλείσιμο ρυθμίσεων",
     "settings_ui_language": "Γλώσσα διεπαφής",
     "settings_languages_help": "Επιλέξτε γλώσσες για εναλλαγή. Χωρίς επιλογή, χρησιμοποιείται η γλώσσα της διεπαφής.",
@@ -332,10 +333,10 @@
     "settings_font_incompatible_label": "μη συμβατή",
     "settings_font_fallback": "Η επιλεγμένη γραμματοσειρά δεν υποστηρίζει αυτή τη γλώσσα. Χρησιμοποιείται η γραμματοσειρά του θέματος· η επιλογή σας παραμένει αποθηκευμένη.",
     "settings_languages_follow_interface": "Ίδια με τη γλώσσα της διεπαφής",
-    "settings_presets_help": "Εφάρμοσε μια εποχική ατμόσφαιρα. Μπορείς να προσαρμόσεις κάθε επιλογή μετά.",
-    "settings_title": "Ρυθμίσεις"
+    "settings_presets_help": "Εφάρμοσε μια εποχική ατμόσφαιρα. Μπορείς να προσαρμόσεις κάθε επιλογή μετά."
   },
   "zh-CN": {
+    "settings_title": "设置",
     "settings_close": "关闭设置",
     "settings_ui_language": "界面语言",
     "settings_languages_help": "选择轮换显示的语言。如果未选择任何语言，引文将使用界面语言。",
@@ -374,10 +375,10 @@
     "settings_font_incompatible_label": "不兼容",
     "settings_font_fallback": "所选字体不支持此语言。当前使用主题字体，您的选择仍已保存。",
     "settings_languages_follow_interface": "与界面语言相同",
-    "settings_presets_help": "应用季节主题，之后仍可单独调整各项设置。",
-    "settings_title": "设置"
+    "settings_presets_help": "应用季节主题，之后仍可单独调整各项设置。"
   },
   "ru-RU": {
+    "settings_title": "Настройки",
     "settings_close": "Закрыть настройки",
     "settings_ui_language": "Язык интерфейса",
     "settings_languages_help": "Выберите языки для чередования. Если ничего не выбрано, используется язык интерфейса.",
@@ -416,10 +417,10 @@
     "settings_font_incompatible_label": "несовместим",
     "settings_font_fallback": "Выбранный шрифт не поддерживает этот язык. Используется шрифт темы; ваш выбор остаётся сохранённым.",
     "settings_languages_follow_interface": "Как в интерфейсе",
-    "settings_presets_help": "Примените сезонное оформление. После этого можно изменить любую настройку.",
-    "settings_title": "Настройки"
+    "settings_presets_help": "Примените сезонное оформление. После этого можно изменить любую настройку."
   },
   "eo": {
+    "settings_title": "Agordoj",
     "settings_close": "Fermi la agordojn",
     "settings_ui_language": "Lingvo de la interfaco",
     "settings_languages_help": "Elektu lingvojn por alternigi. Se neniu estas elektita, la citaĵoj uzas la lingvon de la interfaco.",
@@ -458,10 +459,10 @@
     "settings_font_incompatible_label": "nekongrua",
     "settings_font_fallback": "La elektita tiparo ne subtenas ĉi tiun lingvon. La tiparo de la etoso estas uzata; via elekto restas konservita.",
     "settings_languages_follow_interface": "Sama kiel la interfaco",
-    "settings_presets_help": "Apliku laŭsezonan etoson. Vi povas poste ŝanĝi ĉiun agordon.",
-    "settings_title": "Agordoj"
+    "settings_presets_help": "Apliku laŭsezonan etoson. Vi povas poste ŝanĝi ĉiun agordon."
   },
   "ar-AE": {
+    "settings_title": "الإعدادات",
     "settings_close": "إغلاق الإعدادات",
     "settings_ui_language": "لغة الواجهة",
     "settings_languages_help": "اختر اللغات للتناوب بينها. إذا لم تختر أي لغة، تُعرض الاقتباسات بلغة الواجهة.",
@@ -500,7 +501,48 @@
     "settings_font_incompatible_label": "غير متوافق",
     "settings_font_fallback": "الخط المختار لا يدعم هذه اللغة. يُستخدم خط المظهر؛ يبقى اختيارك محفوظًا.",
     "settings_languages_follow_interface": "نفس لغة الواجهة",
-    "settings_presets_help": "طبّق أجواءً موسمية، ويمكنك تعديل كل خيار بعدها.",
-    "settings_title": "الإعدادات"
+    "settings_presets_help": "طبّق أجواءً موسمية، ويمكنك تعديل كل خيار بعدها."
+  },
+  "ja-JP": {
+    "settings_title": "設定",
+    "settings_close": "設定を閉じる",
+    "settings_ui_language": "表示言語",
+    "settings_languages_help": "順番に表示する言語を選んでください。何も選ばない場合、引用文は表示言語で表示されます。",
+    "settings_work_help": "職場でも閲覧しやすい引用文を表示",
+    "settings_font_preview": "良い本を読むのに、時を選ぶ必要はありません。",
+    "settings_select_all": "すべて選択",
+    "settings_custom_font": "Google Fonts",
+    "settings_font_name": "フォントファミリー名",
+    "settings_font_apply": "フォントを追加",
+    "settings_font_loading": "フォントを読み込み中…",
+    "settings_font_error": "フォントを利用できないため、テーマの既定フォントを使用します。",
+    "settings_font_help": "Google Fontsのフォントファミリー名を貼り付けて追加できます。保存したフォントは再読み込み後も使えます。",
+    "settings_clear_selection": "選択を解除",
+    "settings_font_add_error": "利用できないフォントです。現在のフォントが引き続き使われます。",
+    "settings_font_remove": "このフォントを削除",
+    "settings_font_custom_label": "カスタム",
+    "bilingual_translate_quote": "引用文の翻訳先",
+    "bilingual_show": "翻訳を表示",
+    "bilingual_loading": "翻訳を読み込み中…",
+    "bilingual_language_notice": "引用文がすでに翻訳先の言語で表示されている場合は、お知らせが表示されます。",
+    "bilingual_line_by_line": "行ごとに翻訳を表示",
+    "bilingual_ruby_requirement": "ChromeまたはChromium 128以降が必要です",
+    "bilingual_activate": "二言語表示をオンにする",
+    "settings_previous_theme": "前のテーマ",
+    "settings_next_theme": "次のテーマ",
+    "settings_saved_themes": "保存済みテーマ",
+    "settings_saved_delete": "削除",
+    "settings_saved_name": "名前（任意）",
+    "settings_saved_save": "現在の設定を保存",
+    "settings_saved_help": "このブラウザーにのみ保存されます。色、フォント、切り替え効果、職場向けフィルター、時刻・書名・進行バーの表示設定が含まれます。",
+    "settings_saved_choose": "保存済みテーマを選択",
+    "settings_saved_error": "保存できませんでした。ブラウザーの保存領域が利用できないか、空き容量がありません。",
+    "settings_saved_update": "更新",
+    "settings_font_unverified": "この引用文の言語に対応しているか未確認のフォントです。",
+    "settings_font_unverified_label": "未確認",
+    "settings_font_incompatible_label": "非対応",
+    "settings_font_fallback": "このフォントは現在の言語に対応していません。テーマのフォントで表示し、選択内容は保存されます。",
+    "settings_languages_follow_interface": "表示言語と同じ",
+    "settings_presets_help": "季節に合わせた外観を適用します。適用後も設定を調整できます。"
   }
 }

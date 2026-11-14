@@ -48,7 +48,7 @@ The production web app deploys when a consolidated release is prepared. Configur
 - 📚 **1,440 Offline Literary Moments** — Thousands of hand-curated quotes across world literature with book titles and authors. Completely self-contained and works 100% offline.
 - 🎨 **Artisan Themes & Textures** — From tactile **Book Page** paper and retro **Terminal** scanlines to the day-night celestial sky in **Horizon**, with 26 repeating patterns.
 - 📸 **Dynamic Photo Backdrops** — Optionally cycle curated photographs from **NASA**, **Wikimedia Commons**, and **Picsum**, cached locally for offline display.
-- 🌍 **12 Languages & Bilingual Reading** — Read in English (UK & US), Spanish, French, German, Italian, Portuguese, Chinese, Russian, Greek, and Esperanto. Enable *Bilingual mode* to display the original quote alongside its translated edition.
+- 🌍 **13 Locales & Bilingual Reading** — Read in English (UK & US), Spanish, French, German, Italian, Portuguese, Simplified Chinese, Japanese, Russian, Greek, Esperanto, and Arabic. Enable *Bilingual mode* to display the original quote alongside its translated edition.
 - 💧 **Optical Liquid Glass Progress** — A custom hardware shader (Metal on macOS, HLSL on Windows) that renders realistic optical refraction tracking the seconds of each minute.
 
 ---

@@ -13,6 +13,8 @@ export interface Quote {
   quote_last: string;
   title: string;
   author: string;
+  title_original?: string;
+  author_original?: string;
   sfw: boolean;
 }
 

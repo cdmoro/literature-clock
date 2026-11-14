@@ -1,7 +1,7 @@
 {
   "en-GB": {
     "title": "Literature Clock — a clock told through book quotes",
-    "description": "Literature Clock is a free online clock that matches your local time to a passage from a book mentioning that time, updating every minute — in English, Spanish, Portuguese, French, Italian, German, Greek, Simplified Chinese, Russian or Esperanto.",
+    "description": "Literature Clock is a free online clock that matches your local time to a passage from a book mentioning that time, updating every minute — in English, Spanish, Portuguese, French, Italian, German, Greek, Simplified Chinese, Japanese, Russian, Esperanto or Arabic.",
     "features": "Personalise it with light or dark themes, custom fonts and colours, a distraction-free zen mode, or a screensaver that moves the quote around the screen. Save favourite passages, revisit recent quotes, and share or download them as an image — all stored locally in your browser, with no account needed.",
     "project": "About the project",
     "credits": "Created by Carlos Bonadeo, building on the literary clock work of",
@@ -53,5 +53,16 @@
     "visit": "زر",
     "source": "المشروع مفتوح المصدر",
     "contribute": "لاقتراح تحسينات أو المساهمة باقتباسات."
+  },
+  "ja-JP": {
+    "title": "Literature Clock — 本の引用文で時を告げる時計",
+    "description": "Literature Clockは、今の時刻が登場する本の一節を毎分表示する無料のオンライン時計です。日本語、英語（英国・米国）、スペイン語、ポルトガル語、フランス語、イタリア語、ドイツ語、ギリシャ語、中国語（簡体字）、ロシア語、エスペラント、アラビア語に対応しています。",
+    "features": "ライト・ダークテーマや好みのフォントと色で外観を変えられます。読書に集中できる禅モードや、引用文が画面を移動するスクリーンセーバーも使えます。好きな一節を保存したり、最近読んだ引用文を見返したり、画像として共有・ダウンロードしたりできます。データはブラウザーに保存され、アカウント登録は不要です。",
+    "project": "プロジェクトについて",
+    "credits": "Carlos Bonadeoが制作しました。元になった文学時計の制作者は",
+    "and": "と",
+    "visit": "改善の提案や引用文の投稿は",
+    "source": "オープンソースプロジェクト",
+    "contribute": "で受け付けています。"
   }
 }

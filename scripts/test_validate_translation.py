@@ -12,7 +12,7 @@ class TranslationValidationTest(unittest.TestCase):
                         'Quote': 'It was half past seven.<br>He waited.', 'Title': 'Book',
                         'Author': 'Author', 'SFW': 'true', 'Source locale': 'en'}]
         self.target = [{**self.source[0], 'Quote time': 'επτά και μισή',
-                        'Quote': 'Ήταν επτά και μισή.<br>Περίμενε.', 'Title': 'Βιβλίο'}]
+                        'Quote': 'Ήταν επτά και μισή.<br>Περίμενε.', 'Title': 'Book'}]
 
     def test_accepts_translation_without_mutating_it(self):
         before = copy.deepcopy(self.target)

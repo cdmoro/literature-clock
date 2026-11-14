@@ -729,6 +729,12 @@ body.fuzzy-clock blockquote[aria-label]:after {
 cite [dir='auto'] {
   unicode-bidi: isolate;
 }
+#quote cite:dir(rtl) {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  direction: rtl;
+}
 #quote:lang(ar),
 .translation-content:lang(ar) {
   --quote-line-height: 1.65;
@@ -920,6 +926,18 @@ select:dir(rtl),
 #share-preview .share-choice-group button:last-child {
   border-start-end-radius: 4px;
   border-end-end-radius: 4px;
+}
+#share-preview .share-alignment-button {
+  width: 36px;
+  padding: 5px;
+}
+#share-preview .share-alignment-button svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
 }
 #share-preview .share-choice-group button + button {
   margin-inline-start: -1px;

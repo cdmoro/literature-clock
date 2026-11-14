@@ -49,7 +49,7 @@ def entry_complete(entry, original):
     translated = entry.get('translation', {})
     if not isinstance(translated, dict):
         return False
-    required = (translated.get('Quote'), translated.get('Title'), entry.get('time_candidate'))
+    required = (translated.get('Quote'), entry.get('time_candidate'))
     return (all(isinstance(value, str) and value.strip() and value != 'NO TRANSLATED'
                 for value in required)
             and all(isinstance(translated.get(field), str) for field in (FIELDS if "Source locale" in original else LEGACY_FIELDS))
@@ -244,9 +244,8 @@ def translate_rows(rows, state, path, translator, limit, on_saved=None):
         translator.source = source_language(original.get('Source locale', 'en'))
         # Translate the complete quote first, preserving sentence context.
         quote = translator.translate(original['Quote'])
-        title = translator.translate(original['Title'])
         candidate = translator.translate(original['Quote time'])
-        draft = {**original, 'Quote': quote, 'Title': title,
+        draft = {**original, 'Quote': quote, 'Title': original['Title'],
                  'Quote time': candidate if candidate and candidate in quote else ''}
         state['rows'][original['Id']] = {
             'source': original, 'translation': draft, 'time_candidate': candidate,

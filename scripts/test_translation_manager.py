@@ -67,7 +67,7 @@ class TranslationManagerTest(unittest.TestCase):
 
     def test_sync_does_not_replace_human_corrections_or_approval(self):
         edited = copy.deepcopy(self.entries[0])
-        edited['translation']['Title'] = 'Corrected book title'
+        edited['translation']['Quote'] = 'Vers seven thirty.'
         edited['approved'] = True
         save(self.project.review_path, [edited])
         synced = self.project.sync_reviews({'rows': {entry['source']['Id']: entry for entry in self.entries}})
@@ -133,7 +133,7 @@ class TranslationManagerTest(unittest.TestCase):
             self.project.translate(1)
             self.assertEqual(len(self.project.reviews()), 2)
             self.project.translate(1)
-            self.assertEqual(factory.return_value.translate.call_count, 6)
+            self.assertEqual(factory.return_value.translate.call_count, 4)
         self.assertNotEqual(self.project.catalogue.read_bytes(), before)
         self.assertTrue(all(is_draft(row) for row in read_catalogue(self.project.catalogue)))
 
@@ -151,17 +151,17 @@ class TranslationManagerTest(unittest.TestCase):
 
     def test_direct_csv_edits_are_preserved_when_translating_next_batch(self):
         rows = read_catalogue(self.project.catalogue)
-        rows[0]['Title'] = 'Manually corrected title'
+        rows[0]['Quote'] = 'Manually corrected quote.'
         self.project.write_catalogue(rows)
         with patch('translation_manager.PacedTranslator') as factory:
             factory.return_value.translate.side_effect = lambda text: 'Translated ' + text
             self.project.translate(2)
-            self.assertEqual(factory.return_value.translate.call_count, 3)
-        self.assertEqual(read_catalogue(self.project.catalogue)[0]['Title'], 'Manually corrected title')
+            self.assertEqual(factory.return_value.translate.call_count, 2)
+        self.assertEqual(read_catalogue(self.project.catalogue)[0]['Quote'], 'Manually corrected quote.')
 
     def test_interruption_keeps_completed_translations_for_review(self):
         with patch('translation_manager.PacedTranslator') as factory:
-            factory.return_value.translate.side_effect = ['At seven thirty.', 'Livre', 'seven thirty', KeyboardInterrupt()]
+            factory.return_value.translate.side_effect = ['At seven thirty.', 'seven thirty', KeyboardInterrupt()]
             with self.assertRaises(KeyboardInterrupt):
                 self.project.translate(2)
         self.assertEqual(len(self.project.reviews()), 1)

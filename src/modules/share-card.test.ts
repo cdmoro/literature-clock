@@ -3,11 +3,17 @@ import html2canvas from 'html2canvas-pro';
 import { loadGoogleFont } from '../utils/google-font';
 import { renderShareCard } from './share-card';
 import type { ResolvedQuote } from '../types';
-const { state } = vi.hoisted(() => ({ state: { hideBookTitle: false, attribution: 'below' } }));
+const { state } = vi.hoisted(() => ({ state: { hideBookTitle: false, attribution: 'below', interfaceLocale: 'en-GB' } }));
 vi.mock('../store', () => ({
   store: {
     get: (key: string) =>
-      key === 'hide-book-title' ? state.hideBookTitle : key === 'quote-attribution' ? state.attribution : 'none',
+      key === 'hide-book-title'
+        ? state.hideBookTitle
+        : key === 'quote-attribution'
+          ? state.attribution
+          : key === 'ui-locale' || key === 'locale'
+            ? state.interfaceLocale
+            : 'none',
   },
 }));
 vi.mock('../utils/google-font', async (importOriginal) => ({
@@ -28,17 +34,14 @@ const quote = {
 beforeEach(() => {
   state.hideBookTitle = false;
   state.attribution = 'below';
+  state.interfaceLocale = 'en-GB';
   document.body.innerHTML = '<blockquote id="quote"></blockquote>';
   vi.mocked(html2canvas).mockReset();
   vi.mocked(loadGoogleFont).mockReset().mockResolvedValue(undefined);
 });
-it.each([
-  ['square', 1080, 1080],
-  ['portrait', 1080, 1920],
-  ['landscape', 1920, 1080],
-] as const)(
-  'exports %s independently of the viewport and safely preserves quote text',
-  async (format, width, height) => {
+it('exports a square independently of the viewport and safely preserves quote text', async () => {
+    const width = 1080;
+    const height = 1080;
     const canvas = document.createElement('canvas');
     vi.mocked(html2canvas).mockImplementation(async (element, options) => {
       expect(options).toMatchObject({ width, height, scale: 1 });
@@ -49,26 +52,61 @@ it.each([
       expect(element.querySelector('em')?.textContent).toBe('Before');
       expect(element.textContent).toContain('— Book, Writer');
       expect((element as HTMLElement).dir).toBe('ltr');
-      expect(element.lastElementChild?.textContent).toBe('Reloj literario · literatureclock.netlify.app');
+      expect(element.lastElementChild?.textContent).toBe('Literature Clock');
+      expect(element.querySelector('.share-card-signature img')?.getAttribute('src')).toBe('/assets/app-icon-dark.png');
+      expect((element.lastElementChild as HTMLElement).style.display).toBe('flex');
       expect((element.lastElementChild as HTMLElement).dir).toBe('ltr');
+      expect((element.querySelector('div') as HTMLElement).style.justifyContent).toBe('center');
       return canvas;
     });
-    expect(await renderShareCard(quote, format)).toBe(canvas);
+    expect(await renderShareCard(quote)).toBe(canvas);
     expect(document.body.children).toHaveLength(1);
-  },
-);
+});
 it('removes the temporary card when rendering fails', async () => {
   vi.mocked(html2canvas).mockRejectedValue(new Error('render failed'));
-  await expect(renderShareCard(quote, 'square')).rejects.toThrow('render failed');
+  await expect(renderShareCard(quote)).rejects.toThrow('render failed');
   expect(document.body.children).toHaveLength(1);
 });
-it('grows unusually long quotes instead of clipping their content', async () => {
-  const height = vi.spyOn(HTMLElement.prototype, 'scrollHeight', 'get').mockReturnValue(2000);
+it.each([
+  ['light', '/assets/app-icon-dark.png'],
+  ['dark', '/assets/app-icon-light.png'],
+] as const)('uses the %s card icon for the matching appearance', async (appearance, iconPath) => {
+  vi.mocked(html2canvas).mockImplementation(async (element) => {
+    expect(element.querySelector('.share-card-signature img')?.getAttribute('src')).toBe(iconPath);
+    return document.createElement('canvas');
+  });
+  await renderShareCard(quote, appearance);
+});
+it('keeps long passages in a square card and lowers the font to its minimum', async () => {
+  const height = vi.spyOn(HTMLElement.prototype, 'scrollHeight', 'get').mockImplementation(function (this: HTMLElement) {
+    return this.classList.contains('share-card-credit') ? 100 : 2000;
+  });
   vi.mocked(html2canvas).mockResolvedValue(document.createElement('canvas'));
-  await renderShareCard(quote, 'square');
-  expect(vi.mocked(html2canvas).mock.calls[0][1]?.height).toBe(2342);
+  await renderShareCard(quote);
+  const card = vi.mocked(html2canvas).mock.calls[0][0] as HTMLElement;
+  expect(card.style.height).toBe('1080px');
+  expect(Number.parseInt(card.querySelector<HTMLElement>('div[dir="auto"]')!.style.fontSize)).toBe(12);
+  expect(vi.mocked(html2canvas).mock.calls[0][1]?.height).toBe(1080);
   height.mockRestore();
 });
+
+it.each(['start', 'center', 'end'] as const)(
+  'keeps the same passage size with %s alignment',
+  async (alignment) => {
+    vi.mocked(html2canvas).mockImplementation(async (element) => {
+      const card = element as HTMLElement;
+      const passage = card.querySelector<HTMLElement>('div[dir="auto"]')!;
+      expect(passage.style.fontSize).toBe('120px');
+      expect(passage.style.textAlign).toBe(alignment);
+      const credit = card.querySelector<HTMLElement>('.share-card-credit')!;
+      expect(credit.textContent).toContain(alignment === 'center' ? 'Book\nWriter' : '— Book, Writer');
+      expect(credit.style.fontSize).toBe('84px');
+      expect((card.children[0] as HTMLElement).style.marginBottom).toBe('72px');
+      return document.createElement('canvas');
+    });
+    await renderShareCard(quote, undefined, undefined, { alignment });
+  },
+);
 
 it('resolves preview colour and pattern on an isolated palette and exports its tile dimensions', async () => {
   document.documentElement.dataset.theme = 'base-light';
@@ -98,7 +136,7 @@ it('resolves preview colour and pattern on an isolated palette and exports its t
     expect(highlighted?.style.color).toBe('rgb(18, 52, 86)');
     return document.createElement('canvas');
   });
-  await renderShareCard(quote, 'square', undefined, undefined, {
+  await renderShareCard(quote, undefined, undefined, {
     color: '#123456',
     pattern: 'grid',
     highlightTime: true,
@@ -114,7 +152,7 @@ it('loads the chosen image font and exports it without changing the live font', 
     expect(element.style.fontFamily).toContain('Lora');
     return document.createElement('canvas');
   });
-  await renderShareCard(quote, 'square', undefined, undefined, { font: 'Lora' });
+  await renderShareCard(quote, undefined, undefined, { font: 'Lora' });
   expect(loadGoogleFont).toHaveBeenCalledWith('Lora');
   expect(document.getElementById('quote')!.style.fontFamily).toBe(liveFamily);
 });
@@ -125,7 +163,7 @@ it('uses the theme fallback when a custom image font cannot load', async () => {
     expect(element.style.fontFamily).not.toContain('Unavailable Family');
     return document.createElement('canvas');
   });
-  await renderShareCard(quote, 'square', undefined, undefined, { font: 'Unavailable Family' });
+  await renderShareCard(quote, undefined, undefined, { font: 'Unavailable Family' });
   expect(loadGoogleFont).toHaveBeenCalledWith('Unavailable Family');
 });
 
@@ -134,7 +172,7 @@ it('rejects a known incompatible font when rendering an Arabic quote', async () 
     expect(element.style.fontFamily).not.toContain('Special Elite');
     return document.createElement('canvas');
   });
-  await renderShareCard({ ...quote, locale: 'ar-AE' }, 'square', undefined, undefined, { font: 'Special Elite' });
+  await renderShareCard({ ...quote, locale: 'ar-AE' }, undefined, undefined, { font: 'Special Elite' });
   expect(loadGoogleFont).not.toHaveBeenCalledWith('Special Elite');
 });
 
@@ -148,16 +186,16 @@ it.each(['dots', 'circles', 'diagonal', 'diagonal-wide'] as const)(
       expect(element.style.backgroundSize).toMatch(/^\d+px \d+px$/);
       return document.createElement('canvas');
     });
-    await renderShareCard(quote, 'square', undefined, undefined, { pattern });
+    await renderShareCard(quote, undefined, undefined, { pattern });
   },
 );
 
 it.each([
   ['es-ES', 'start', 'start', '— Book, Writer'],
-  ['es-ES', 'center', 'center', 'Book Writer'],
+  ['es-ES', 'center', 'center', 'Book\nWriter'],
   ['es-ES', 'end', 'end', '— Book, Writer'],
   ['ar-AE', 'start', 'start', '— Book, Writer'],
-  ['ar-AE', 'center', 'center', 'Book Writer'],
+  ['ar-AE', 'center', 'center', 'Book\nWriter'],
   ['ar-AE', 'end', 'end', '— Book, Writer'],
 ] as const)('aligns %s attribution with %s quote alignment', async (locale, quoteAlignment, textAlignment, text) => {
   vi.mocked(html2canvas).mockImplementation(async (element) => {
@@ -169,7 +207,7 @@ it.each([
     expect(credit.dir).toBe(locale === 'ar-AE' ? 'rtl' : 'ltr');
     return document.createElement('canvas');
   });
-  await renderShareCard({ ...quote, locale }, 'square', undefined, undefined, { alignment: quoteAlignment });
+  await renderShareCard({ ...quote, locale }, undefined, undefined, { alignment: quoteAlignment });
 });
 
 it('isolates mixed-script book and author names and defaults RTL text to the right', async () => {
@@ -181,13 +219,28 @@ it('isolates mixed-script book and author names and defaults RTL text to the rig
     expect(credit.getAttribute('dir')).toBe('rtl');
     expect((credit as HTMLElement).style.textAlign).toBe('start');
     const signature = element.lastElementChild as HTMLElement;
-    expect(signature.textContent).toBe('الساعة الأدبية · literatureclock.netlify.app');
-    expect(signature.getAttribute('dir')).toBe('rtl');
-    expect(signature.lang).toBe('ar-AE');
+    expect(signature.textContent).toBe('Literature Clock');
+    expect(signature.querySelector('img')?.getAttribute('src')).toBe('/assets/app-icon-light.png');
+    expect(signature.getAttribute('dir')).toBe('ltr');
+    expect(signature.lang).toBe('en-GB');
     expect(credit.querySelectorAll('[dir="auto"]')).toHaveLength(2);
     return document.createElement('canvas');
   });
-  await renderShareCard({ ...quote, locale: 'ar-AE', title: 'كتاب عربي', author: 'Stanley R. Matthews' }, 'square');
+  await renderShareCard({ ...quote, locale: 'ar-AE', title: 'كتاب عربي', author: 'Stanley R. Matthews' });
+});
+
+it('translates the signature using the interface locale instead of the quote locale', async () => {
+  state.interfaceLocale = 'pt-PT';
+  vi.mocked(html2canvas).mockImplementation(async (element) => {
+    const signature = element.querySelector<HTMLElement>('.share-card-signature')!;
+    expect(signature.textContent).toBe('Relógio literário');
+    expect(signature.lang).toBe('pt-PT');
+    expect(signature.dir).toBe('ltr');
+    expect(signature.querySelector('img')?.style.flex).toBe('0 0 36px');
+    expect(signature.querySelector('img')?.style.transform).toBe('translateY(4px)');
+    return document.createElement('canvas');
+  });
+  await renderShareCard({ ...quote, locale: 'es-ES' });
 });
 
 it('exports the shared noise asset at its native tile size', async () => {
@@ -196,12 +249,10 @@ it('exports the shared noise asset at its native tile size', async () => {
     expect(element.style.backgroundSize).toBe('256px 256px');
     return document.createElement('canvas');
   });
-  await renderShareCard(quote, 'square', undefined, undefined, { pattern: 'noise' });
+  await renderShareCard(quote, undefined, undefined, { pattern: 'noise' });
 });
 
-it.each(['square', 'portrait', 'landscape'] as const)(
-  'keeps the Festive gradient underneath the exported pattern in %s',
-  async (format) => {
+it('keeps the Festive gradient underneath the exported pattern in the square card', async () => {
     document.documentElement.dataset.theme = 'base-light';
     const original = getComputedStyle;
     const gradient = 'linear-gradient(to right top, rgb(250, 208, 196), rgb(255, 209, 255))';
@@ -237,14 +288,13 @@ it.each(['square', 'portrait', 'landscape'] as const)(
       return document.createElement('canvas');
     });
     try {
-      await renderShareCard(quote, format, 'light', 'festive', { pattern: 'dots' });
+      await renderShareCard(quote, 'light', 'festive', { pattern: 'dots' });
     } finally {
       computed.mockRestore();
       imageSetter.mockRestore();
       repeatSetter.mockRestore();
     }
-  },
-);
+});
 
 it.each([false, true])('omits hidden attribution when hide book title is %s', async (hidden) => {
   state.hideBookTitle = hidden;
@@ -256,7 +306,7 @@ it.each([false, true])('omits hidden attribution when hide book title is %s', as
     expect(element.textContent).toContain('noon');
     return document.createElement('canvas');
   });
-  await renderShareCard(quote, 'square');
+  await renderShareCard(quote);
 });
 
 it.each([true, false])('renders time highlighting as %s without changing the passage', async (highlightTime) => {
@@ -266,7 +316,7 @@ it.each([true, false])('renders time highlighting as %s without changing the pas
     expect(element.textContent).toContain('<script>Beforenoon arrived');
     return document.createElement('canvas');
   });
-  await renderShareCard(quote, 'square', undefined, undefined, { highlightTime, color: '#d24335' });
+  await renderShareCard(quote, undefined, undefined, { highlightTime, color: '#d24335' });
 });
 
 it('renders passage text in uppercase when requested', async () => {
@@ -275,7 +325,7 @@ it('renders passage text in uppercase when requested', async () => {
     expect(passage.style.textTransform).toBe('uppercase');
     return document.createElement('canvas');
   });
-  await renderShareCard(quote, 'square', undefined, undefined, { uppercase: true });
+  await renderShareCard(quote, undefined, undefined, { uppercase: true });
 });
 
 it.each(['serif', 'sans-serif', 'monospace'])(
@@ -285,7 +335,7 @@ it.each(['serif', 'sans-serif', 'monospace'])(
       expect(element.style.fontFamily).toBe(font);
       return document.createElement('canvas');
     });
-    await renderShareCard(quote, 'square', undefined, undefined, { font });
+    await renderShareCard(quote, undefined, undefined, { font });
     expect(loadGoogleFont).not.toHaveBeenCalledWith(font);
   },
 );
