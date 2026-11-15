@@ -14,6 +14,7 @@
 		E00000000000000000000009 /* Shared/Models/Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000072 /* Shared/Models/Quote.swift */; };
 		E0000000000000000000000A /* Shared/App/ClockHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000073 /* Shared/App/ClockHomeView.swift */; };
 		E0000000000000000000000B /* Shared/Models/ClockSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000076 /* Shared/Models/ClockSettings.swift */; };
+		E00000000000000000000081 /* Shared/Models/CompactQuoteTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000083 /* Shared/Models/CompactQuoteTime.swift */; };
 		E0000000000000000000000F /* Shared/Catalogues in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000075 /* Shared/Catalogues */; };
 		E00000000000000000000010 /* Shared/Fonts/SpecialElite-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000119 /* Shared/Fonts/SpecialElite-Regular.ttf */; };
 		E00000000000000000000013 /* LiteratureClockMacWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E00000000000000000000014 /* LiteratureClockMacWidgetExtension.appex */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -21,6 +22,7 @@
 		E0000000000000000000001C /* Shared/Models/ClockWidgetConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00000000000000000000003 /* Shared/Models/ClockWidgetConfiguration.swift */; };
 		E0000000000000000000001D /* Shared/Widgets/LiteratureClockWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000074 /* Shared/Widgets/LiteratureClockWidget.swift */; };
 		E0000000000000000000001E /* Shared/Models/ClockSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000076 /* Shared/Models/ClockSettings.swift */; };
+		E00000000000000000000082 /* Shared/Models/CompactQuoteTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000083 /* Shared/Models/CompactQuoteTime.swift */; };
 		E00000000000000000000235 /* Shared/Models/QuoteLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000211 /* Shared/Models/QuoteLibrary.swift */; };
 		E00000000000000000000022 /* Shared/Catalogues in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000075 /* Shared/Catalogues */; };
 		E00000000000000000000023 /* Shared/Fonts/SpecialElite-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000119 /* Shared/Fonts/SpecialElite-Regular.ttf */; };
@@ -58,6 +60,7 @@
 		A00000000000000000000074 /* Shared/Widgets/LiteratureClockWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/Widgets/LiteratureClockWidget.swift; sourceTree = "<group>"; };
 		A00000000000000000000075 /* Shared/Catalogues */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shared/Catalogues; sourceTree = "<group>"; };
 		A00000000000000000000076 /* Shared/Models/ClockSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/Models/ClockSettings.swift; sourceTree = "<group>"; };
+		A00000000000000000000083 /* Shared/Models/CompactQuoteTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/Models/CompactQuoteTime.swift; sourceTree = "<group>"; };
 		A00000000000000119 /* Shared/Fonts/SpecialElite-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shared/Fonts/SpecialElite-Regular.ttf"; sourceTree = "<group>"; };
 		A00000000000000000000211 /* Shared/Models/QuoteLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/Models/QuoteLibrary.swift; sourceTree = "<group>"; };
 		A00000000000000222 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text; name = "en-GB"; path = "en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -141,6 +144,7 @@
 				A00000000000000000000072 /* Shared/Models/Quote.swift */,
 				A00000000000000000000211 /* Shared/Models/QuoteLibrary.swift */,
 				A00000000000000000000076 /* Shared/Models/ClockSettings.swift */,
+				A00000000000000000000083 /* Shared/Models/CompactQuoteTime.swift */,
 				D00000000000000000000003 /* Shared/Models/ClockWidgetConfiguration.swift */,
 			);
 			name = Models;
@@ -317,6 +321,7 @@
 				E00000000000000000000210 /* Shared/Models/QuoteLibrary.swift in Sources */,
 				E0000000000000000000000A /* Shared/App/ClockHomeView.swift in Sources */,
 				E0000000000000000000000B /* Shared/Models/ClockSettings.swift in Sources */,
+				E00000000000000000000081 /* Shared/Models/CompactQuoteTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +334,7 @@
 				E0000000000000000000001C /* Shared/Models/ClockWidgetConfiguration.swift in Sources */,
 				E0000000000000000000001D /* Shared/Widgets/LiteratureClockWidget.swift in Sources */,
 				E0000000000000000000001E /* Shared/Models/ClockSettings.swift in Sources */,
+				E00000000000000000000082 /* Shared/Models/CompactQuoteTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

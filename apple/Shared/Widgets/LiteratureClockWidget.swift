@@ -268,17 +268,18 @@ struct ClockWidgetView: View {
     private func translationText(_ quote: Quote, locale: String) -> some View {
         let parts = quote.timeParts()
         if isFuzzy {
-            Text(parts.time.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-                 ? ClockCatalogue.timeString(entry.date, locale: entry.locale) : parts.time)
+            let time = parts.time.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+                ? ClockCatalogue.timeString(entry.date, locale: entry.locale) : parts.time
+            compactTimeText(time, locale: locale, foreground: foregroundColor,
+                            highlight: entry.highlight && !isMonochromeRendering ? accentColor : foregroundColor)
                 .font(ClockSettings.quoteFont(entry.font, size: fuzzyQuoteSize))
                 .fontWeight(.regular)
-                .foregroundColor(entry.highlight && !isMonochromeRendering ? accentColor : foregroundColor)
                 .multilineTextAlignment(.center)
                 .lineLimit(family == .systemSmall ? 4 : 3)
                 .minimumScaleFactor(family == .systemSmall ? 0.5 : 0.75)
                 .frame(maxWidth: .infinity, alignment: .center)
         } else {
-            ReadableQuoteText(parts: parts, fontName: entry.font, foreground: foregroundColor,
+            ReadableQuoteText(parts: parts, locale: locale, fontName: entry.font, foreground: foregroundColor,
                               accent: accentColor, highlight: entry.highlight,
                               maximumSize: maximumQuoteSize,
                               minimumSize: minimumQuoteSize,

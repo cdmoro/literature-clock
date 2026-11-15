@@ -67,6 +67,15 @@ public static class Checks
                 Assert(glyph.FontUri.IsFile && glyph.FontUri.LocalPath.StartsWith(Path.Combine(Path.GetTempPath(),"LiteratureClock"),StringComparison.OrdinalIgnoreCase),"System fallback instead of bundled font: "+theme+"/"+locale);
             }
         }
+        var compact = CompactQuoteTime.Parse("Il a écrit « ", "6 h 55", " » !", "fr-FR");
+        Assert(compact?.Text == "« 6 h 55 » !", "French guillemets, spaces and punctuation stay with the time");
+        var compactParts = compact!.DisplayParts(keepTogether: true);
+        Assert(compactParts.Time.Replace("\u2060", "") == "6 h 55" && compactParts.Time.Contains('\u2060'),
+            "Only the time is highlighted and its spaces cannot break");
+        Assert(compact.DisplayParts(keepTogether: false) == ("Il a écrit « ", "6 h 55", " » !"),
+            "The time can wrap at narrow widths");
+        Assert(CompactQuoteTime.Parse("At ", "six in the evening", ".", "en-GB") == null,
+            "Time phrases in words keep their normal line breaks");
         var time=new DateTimeOffset(2026,10,11,12,0,0,TimeSpan.Zero);
         var (quote,language)=data.Select(time,p,0); Assert(quote.sfw,"Safe filter");
         p.Bilingual=true; p.Translation=language;
@@ -80,7 +89,7 @@ public static class Checks
         var translated=data.Translate(original,"en-GB","12:00",fuzzyPreferences).quote!;
         var fuzzyPassage=fuzzySurface.BuildPassage(original,"en-GB","12:00",1000,30,Colors.White,Colors.Red);
         var fuzzyTexts=Descendants<System.Windows.Controls.TextBlock>(fuzzyPassage)
-            .Select(t=>new System.Windows.Documents.TextRange(t.ContentStart,t.ContentEnd).Text.Trim()).ToArray();
+            .Select(t=>new System.Windows.Documents.TextRange(t.ContentStart,t.ContentEnd).Text.Replace("\u2060", "").Trim()).ToArray();
         Assert(fuzzyTexts.Length==2 && fuzzyTexts[0]==original.time && fuzzyTexts[1]==translated.time,"Fuzzy bilingual renders both time phrases without headings");
         fuzzyPreferences.Theme="book";
         fuzzyPassage=fuzzySurface.BuildPassage(original,"en-GB","12:00",1000,30,Colors.Black,Colors.Red);

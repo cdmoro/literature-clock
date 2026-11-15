@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'screensavers/macos-native/**'
+      - 'apple/Shared/Models/CompactQuoteTime.swift'
       - 'quotes/**'
       - 'src/strings/common/**'
       - 'src/strings/screensaver/**'

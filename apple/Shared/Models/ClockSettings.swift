@@ -143,11 +143,19 @@ enum ClockSettings {
     static var appearance: String { defaults.string(forKey: appearanceKey) ?? "system" }
 }
 
+func compactTimeText(_ time: String, locale: String, foreground: Color, highlight: Color) -> Text {
+    let parts = CompactQuoteTime.display((before: "", time: time, after: ""), locale: locale)
+    return Text(parts.before).foregroundColor(foreground) +
+        Text(parts.time).foregroundColor(highlight) +
+        Text(parts.after).foregroundColor(foreground)
+}
+
 // Try the complete quote at readable sizes, then progressively remove context.
 // Every candidate retains the complete time phrase, including the final fallback.
 struct ReadableQuoteText: View {
     @Environment(\.widgetRenderingMode) private var widgetRenderingMode
-    let parts: (before: String, time: String, after: String)
+    let parts: CompactQuoteTime.Parts
+    let locale: String
     let fontName: String
     let foreground: Color
     let accent: Color
@@ -185,12 +193,15 @@ struct ReadableQuoteText: View {
     }
 
     private func excerpt(context: Int) -> (before: String, time: String, after: String) {
+        let compact = CompactQuoteTime(parts, locale: locale)
         let beforeCount = wordBoundaryCount(in: parts.before, limit: context / 2, fromEnd: true)
         let afterCount = wordBoundaryCount(in: parts.after, limit: context - beforeCount, fromEnd: false)
         let expandedBefore = wordBoundaryCount(in: parts.before, limit: context - afterCount, fromEnd: true)
-        return ((expandedBefore < parts.before.count ? "…" : "") + String(parts.before.suffix(expandedBefore)),
+        let keptBefore = max(expandedBefore, compact.map { parts.before.count - $0.before.count } ?? 0)
+        let keptAfter = max(afterCount, compact.map { parts.after.count - $0.after.count } ?? 0)
+        return ((keptBefore < parts.before.count ? "…" : "") + String(parts.before.suffix(keptBefore)),
                 parts.time,
-                String(parts.after.prefix(afterCount)) + (afterCount < parts.after.count ? "…" : ""))
+                String(parts.after.prefix(keptAfter)) + (keptAfter < parts.after.count ? "…" : ""))
     }
 
     private func wordBoundaryCount(in text: String, limit: Int, fromEnd: Bool) -> Int {
@@ -213,7 +224,8 @@ struct ReadableQuoteText: View {
         return usesBoundedContext && count == 0 ? limit : count
     }
 
-    private func line(_ value: (before: String, time: String, after: String), size: CGFloat) -> some View {
+    private func line(_ parts: CompactQuoteTime.Parts, size: CGFloat) -> some View {
+        let value = CompactQuoteTime.display(parts, locale: locale)
         // Use standard Text runs so WidgetKit can archive the view, including
         // medium-size gallery snapshots, without a custom drawing renderer.
         let contextColor = foreground.opacity(highlight && usesAccentedRendering ? 0.70 : 1)
