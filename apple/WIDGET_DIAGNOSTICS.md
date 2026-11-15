@@ -252,3 +252,56 @@ Application Support directory. Existing UserDefaults collections are migrated
 on first launch and their old keys are removed only after a successful file
 write. Startup also removes the obsolete timeline key prefixes from the App
 Group domain while preserving current settings and app quote selections.
+
+## macOS installed-DMG preference-sharing acceptance (build 6)
+
+Historical investigation for build 6. Build 7 uses independent widget settings
+and bundled catalogues. The sharing probe below applies to build 6 only.
+
+Status on build 6: **unconfirmed**. A Team ID/signature inspection, successful compilation,
+or a preferences read by Terminal does not prove that the actual app and
+WidgetKit extension share current settings.
+
+The app writes a unique diagnostic marker at launch and each palette/custom
+color change. App and widget log the marker, stored color, group, build and
+container availability under `net.literatureclock.app.sharing`. The widget also
+logs its selected mode and resolved palette. Logs contain settings only, not
+quote content or other personal files. A reported available container alone
+is not considered proof of sharing.
+
+1. Build the DMG, replace the Applications app, eject the DMG, and open the
+   installed build 6.
+2. Change the app's highlight color to another preset, such as Orange.
+3. On one widget choose **Follow app**, change another option if necessary to
+   request a new snapshot/timeline, and press Done. Observe the widget.
+4. From the repository root in the user's Terminal, run:
+
+   ```sh
+   python3 apple/diagnose_widget_sharing.py
+   ```
+
+`PASS` requires the actual widget to read the latest app marker and matching
+palette (plus custom hex for Custom), and to resolve Follow app to that palette.
+`FAIL` records a mismatch on the latest observed widget read; it does not prove
+sharing can never work. `INCONCLUSIVE` means no current-build event pair or the
+widget has a fixed color. Old successful reads before a later app change cannot
+pass. Successful data sharing still requires visual confirmation of rendering
+and a clean-Mac test before making a distribution claim.
+
+## macOS build 7 acceptance
+
+Build 6 Console logs showed a missing small-widget timeline archive and a failed
+catalogue read at a stale Xcode bundle path. These are observations from the
+affected installation. Build 7 uses the catalogues embedded in the extension
+and keeps the ad-hoc extension sandboxed without an App Group entitlement.
+
+1. Install the new DMG and launch the Applications copy. If the gallery lists
+   multiple copies, follow the [installation guide](INSTALL.md#previous-xcode-builds).
+2. Add all four sizes. Verify Red in full-color mode and actual quotes with
+   book and author. At a minute without eligible quotes, the widget shows the time.
+3. Quit the app and observe at least three minute boundaries. Confirm that
+   opening a widget's quote shows the same passage in the app.
+4. If any size stays blank or only shows the time, check Console for
+   `Timeline requested`, `Timeline ready`, catalogue errors, and the launched
+   extension path. A completed provider call and a timeline visible in the
+   desktop host are separate checks.

@@ -13,10 +13,12 @@ enum ClockWidgetFont: String, AppEnum {
 }
 
 enum ClockWidgetPalette: String, AppEnum {
-    case app, red, pink, green, pine, orange, purple, blue, gray, custom
+    case red, pink, green, pine, orange, purple, blue, gray
+
     static var typeDisplayRepresentation = TypeDisplayRepresentation(name: "Highlight color")
     static var caseDisplayRepresentations: [Self: DisplayRepresentation] = [
-        .app: DisplayRepresentation(title: LocalizedStringResource("widget_palette_follow_app", defaultValue: "Follow app")), .red: "Red", .pink: "Pink", .green: "Green", .pine: "Pine", .orange: "Orange", .purple: "Purple", .blue: "Blue", .gray: "Gray", .custom: "Custom"
+        .red: "Red", .pink: "Pink", .green: "Green", .pine: "Pine",
+        .orange: "Orange", .purple: "Purple", .blue: "Blue", .gray: "Gray"
     ]
 }
 
@@ -33,14 +35,14 @@ enum ClockWidgetAttribution: String, AppEnum {
 enum ClockWidgetLanguage: String, AppEnum {
     case englishUS = "en-US", englishGB = "en-GB", spanish = "es-ES", french = "fr-FR"
     case german = "de-DE", italian = "it-IT", portuguese = "pt-PT", greek = "el-GR"
-    case esperanto = "eo", russian = "ru-RU", chinese = "zh-CN", arabic = "ar-AE"
+    case esperanto = "eo", russian = "ru-RU", chinese = "zh-CN", arabic = "ar-AE", japanese = "ja-JP"
     static var typeDisplayRepresentation = TypeDisplayRepresentation(name: "Quote languages")
     static var caseDisplayRepresentations: [Self: DisplayRepresentation] = [
         .englishUS: "English (United States)", .englishGB: "English (United Kingdom)",
         .spanish: "Español (España)", .french: "Français (France)", .german: "Deutsch (Deutschland)",
         .italian: "Italiano (Italia)", .portuguese: "Português (Portugal)", .greek: "Ελληνικά (Ελλάδα)",
         .esperanto: "Esperanto", .russian: "Русский (Россия)", .chinese: "中文（中国大陆）",
-        .arabic: "العربية (الإمارات العربية المتحدة)"
+        .arabic: "العربية (الإمارات العربية المتحدة)", .japanese: "日本語 (日本)"
     ]
 
     static var systemDefaults: [Self] {
@@ -60,6 +62,7 @@ enum ClockWidgetLanguage: String, AppEnum {
             case "ru": return .russian
             case "zh": return .chinese
             case "ar": return .arabic
+            case "ja": return .japanese
             default: return nil
             }
         }
@@ -73,23 +76,18 @@ struct ClockWidgetConfiguration: WidgetConfigurationIntent {
 
     // Match declaration order to ParameterSummary: the macOS editor may use
     // the extracted parameter list rather than the family-specific summary.
-    @Parameter(title: "Quote languages", default: [.englishUS])
+    @Parameter(title: "Quote languages", default: [])
     var languages: [ClockWidgetLanguage]
     @Parameter(title: "Safe for work quotes only", default: false) var safeOnly: Bool
     @Parameter(title: "Appearance", default: .system) var appearance: ClockWidgetAppearance
-    @Parameter(title: "Highlight color", description: "Clear and Tinted styles use system colors. Change the custom color in the app.", default: .app)
-    var palette: ClockWidgetPalette
+    @Parameter(title: "Highlight color", description: "Clear and Tinted styles use system colors.", default: .red)
+    var palette: ClockWidgetPalette?
     @Parameter(title: "Quote font", default: .serif) var font: ClockWidgetFont
     @Parameter(title: "Attribution", default: .bookAuthor) var attribution: ClockWidgetAttribution
+    @Parameter(title: "settings_original_attributions", default: false) var showOriginalAttribution: Bool
     @Parameter(title: "Time fragment only", description: "Show only the part of the quote that tells the time.", default: false) var fuzzy: Bool
     @Parameter(title: "Highlight the time", default: true) var highlight: Bool
 
-    var resolvedPalette: ClockWidgetPalette {
-        guard palette == .app else { return palette }
-        let stored = ClockSettings.defaults.string(forKey: ClockSettings.paletteKey) ?? "red"
-        let resolved = ClockWidgetPalette(rawValue: stored) ?? .red
-        return resolved == .app ? .red : resolved
-    }
     static var parameterSummary: some ParameterSummary {
         Switch(.widgetFamily) {
             Case(.systemSmall) {
@@ -100,6 +98,7 @@ struct ClockWidgetConfiguration: WidgetConfigurationIntent {
                     \.$palette
                     \.$font
                     \.$attribution
+                    \.$showOriginalAttribution
                 }
             }
             DefaultCase {
@@ -110,6 +109,7 @@ struct ClockWidgetConfiguration: WidgetConfigurationIntent {
                     \.$palette
                     \.$font
                     \.$attribution
+                    \.$showOriginalAttribution
                     \.$fuzzy
                     \.$highlight
                 }

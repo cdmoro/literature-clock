@@ -9,9 +9,12 @@ struct Quote: Decodable, Identifiable {
     let title: String
     let author: String
     let sfw: Bool
+    let originalTitle: String?
+    let originalAuthor: String?
 
     init(id: String, quoteTimeCase: String, quoteFirst: String, quoteLast: String,
-         title: String, author: String, sfw: Bool) {
+         title: String, author: String, sfw: Bool,
+         originalTitle: String? = nil, originalAuthor: String? = nil) {
         self.id = id
         self.quoteTimeCase = quoteTimeCase
         self.quoteFirst = quoteFirst
@@ -19,13 +22,24 @@ struct Quote: Decodable, Identifiable {
         self.title = title
         self.author = author
         self.sfw = sfw
+        self.originalTitle = originalTitle
+        self.originalAuthor = originalAuthor
     }
 
     enum CodingKeys: String, CodingKey {
         case id, title, author, sfw
+        case originalTitle = "title_original"
+        case originalAuthor = "author_original"
         case quoteTimeCase = "quote_time_case"
         case quoteFirst = "quote_first"
         case quoteLast = "quote_last"
+    }
+
+    func displayingAttribution(original: Bool) -> Quote {
+        guard original else { return self }
+        return Quote(id: id, quoteTimeCase: quoteTimeCase, quoteFirst: quoteFirst, quoteLast: quoteLast,
+                     title: originalTitle.flatMap { $0.isEmpty ? nil : $0 } ?? title,
+                     author: originalAuthor.flatMap { $0.isEmpty ? nil : $0 } ?? author, sfw: sfw)
     }
 
     func text(for locale: Locale) -> String {
@@ -52,7 +66,7 @@ struct Quote: Decodable, Identifiable {
 
 enum ClockCatalogue {
     private static let logger = Logger(subsystem: "net.literatureclock.app.widget", category: "Catalogue")
-    static let locales = ["en-US", "en-GB", "es-ES", "fr-FR", "de-DE", "it-IT", "pt-PT", "el-GR", "eo", "ru-RU", "zh-CN", "ar-AE"]
+    static let locales = ["en-US", "en-GB", "es-ES", "fr-FR", "de-DE", "it-IT", "pt-PT", "el-GR", "eo", "ru-RU", "zh-CN", "ar-AE", "ja-JP"]
 
     static func quotes(at date: Date, locale: String) -> [Quote] {
         let catalogue = catalogue(for: locale)
@@ -179,12 +193,15 @@ enum ClockCatalogue {
     }
 
     private static func loadCatalogue(for locale: String) -> [String: [Quote]] {
+        let bundleURL = Bundle.main.url(forResource: locale, withExtension: "json", subdirectory: "Catalogues")
+        #if os(macOS)
+        let candidateURLs = [bundleURL]
+        #else
         let sharedURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: ClockSettings.appGroup)?
             .appendingPathComponent("Catalogues/\(locale).json")
-        let bundleURL = Bundle.main.url(forResource: locale, withExtension: "json", subdirectory: "Catalogues")
-        // Prefer the catalogues packaged with this app/extension. The shared
-        // container can survive reinstalls and contain an older catalogue.
-        for url in [bundleURL, sharedURL].compactMap({ $0 }) {
+        let candidateURLs = [bundleURL, sharedURL]
+        #endif
+        for url in candidateURLs.compactMap({ $0 }) {
             let started = Date()
             do {
                 let data = try Data(contentsOf: url)
@@ -193,13 +210,13 @@ enum ClockCatalogue {
                     logger.error("Empty catalogue: \(locale, privacy: .public)")
                     continue
                 }
-                logger.debug("Decoded catalogue: \(locale, privacy: .public); bytes: \(data.count); minutes: \(catalogue.count); retained locales: \(catalogueCache.count); seconds: \(Date().timeIntervalSince(started))")
+                logger.debug("Decoded catalogue: \(locale, privacy: .public); bytes: \(data.count); minutes: \(catalogue.count); seconds: \(Date().timeIntervalSince(started))")
                 return catalogue
             } catch {
                 logger.error("Catalogue read/decode failed: \(locale, privacy: .public); source: \(url.lastPathComponent, privacy: .public); error: \(String(describing: error), privacy: .public)")
             }
         }
-        logger.error("No usable catalogue: \(locale, privacy: .public); bundled resource found: \(bundleURL != nil); shared URL available: \(sharedURL != nil)")
+        logger.error("No usable catalogue: \(locale, privacy: .public); bundled resource found: \(bundleURL != nil)")
         return [:]
     }
 

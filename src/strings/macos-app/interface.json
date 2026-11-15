@@ -72,8 +72,7 @@
     "app_quote_copied": "Quote copied",
     "app_copy_quote_image": "Copy image",
     "app_quote_image_copied": "Image copied",
-    "app_right": "Right",
-    "widget_palette_follow_app": "Follow app"
+    "app_right": "Right"
   },
   "en-US": {
     "app_collection": "Collection",
@@ -148,8 +147,7 @@
     "app_quote_copied": "Quote copied",
     "app_copy_quote_image": "Copy image",
     "app_quote_image_copied": "Image copied",
-    "app_right": "Right",
-    "widget_palette_follow_app": "Follow app"
+    "app_right": "Right"
   },
   "es-ES": {
     "app_collection": "Colección",
@@ -224,8 +222,7 @@
     "app_quote_copied": "Cita copiada",
     "app_copy_quote_image": "Copiar imagen",
     "app_quote_image_copied": "Imagen copiada",
-    "app_right": "Derecha",
-    "widget_palette_follow_app": "Seguir la app"
+    "app_right": "Derecha"
   },
   "pt-PT": {
     "app_collection": "Coleção",
@@ -300,8 +297,7 @@
     "app_quote_copied": "Citação copiada",
     "app_copy_quote_image": "Copiar imagem",
     "app_quote_image_copied": "Imagem copiada",
-    "app_right": "Direita",
-    "widget_palette_follow_app": "Seguir a aplicação"
+    "app_right": "Direita"
   },
   "fr-FR": {
     "app_collection": "Collection",
@@ -376,8 +372,7 @@
     "app_quote_copied": "Citation copiée",
     "app_copy_quote_image": "Copier l’image",
     "app_quote_image_copied": "Image copiée",
-    "app_right": "Droite",
-    "widget_palette_follow_app": "Suivre l’app"
+    "app_right": "Droite"
   },
   "it-IT": {
     "app_collection": "Raccolta",
@@ -452,8 +447,7 @@
     "app_quote_copied": "Citazione copiata",
     "app_copy_quote_image": "Copia immagine",
     "app_quote_image_copied": "Immagine copiata",
-    "app_right": "Destra",
-    "widget_palette_follow_app": "Segui l’app"
+    "app_right": "Destra"
   },
   "de-DE": {
     "app_collection": "Sammlung",
@@ -528,8 +522,7 @@
     "app_quote_copied": "Zitat kopiert",
     "app_copy_quote_image": "Bild kopieren",
     "app_quote_image_copied": "Bild kopiert",
-    "app_right": "Rechts",
-    "widget_palette_follow_app": "App folgen"
+    "app_right": "Rechts"
   },
   "el-GR": {
     "app_collection": "Συλλογή",
@@ -604,8 +597,7 @@
     "app_quote_copied": "Αντιγράφηκε",
     "app_copy_quote_image": "Αντιγραφή εικόνας",
     "app_quote_image_copied": "Η εικόνα αντιγράφηκε",
-    "app_right": "Δεξιά",
-    "widget_palette_follow_app": "Ακολουθία εφαρμογής"
+    "app_right": "Δεξιά"
   },
   "zh-CN": {
     "app_collection": "收藏集",
@@ -680,8 +672,7 @@
     "app_quote_copied": "已复制引文",
     "app_copy_quote_image": "复制图片",
     "app_quote_image_copied": "图片已复制",
-    "app_right": "右侧",
-    "widget_palette_follow_app": "跟随应用"
+    "app_right": "右侧"
   },
   "ru-RU": {
     "app_collection": "Коллекция",
@@ -756,8 +747,7 @@
     "app_quote_copied": "Цитата скопирована",
     "app_copy_quote_image": "Копировать изображение",
     "app_quote_image_copied": "Изображение скопировано",
-    "app_right": "Справа",
-    "widget_palette_follow_app": "Как в приложении"
+    "app_right": "Справа"
   },
   "eo": {
     "app_collection": "Kolekto",
@@ -832,8 +822,7 @@
     "app_quote_copied": "Citaĵo kopiita",
     "app_copy_quote_image": "Kopii bildon",
     "app_quote_image_copied": "Bildo kopiita",
-    "app_right": "Dekstren",
-    "widget_palette_follow_app": "Sekvi la aplikaĵon"
+    "app_right": "Dekstren"
   },
   "ar-AE": {
     "app_collection": "المجموعة",
@@ -908,7 +897,81 @@
     "app_quote_copied": "تم نسخ الاقتباس",
     "app_copy_quote_image": "نسخ الصورة",
     "app_quote_image_copied": "تم نسخ الصورة",
-    "app_right": "يمين",
-    "widget_palette_follow_app": "اتباع التطبيق"
+    "app_right": "يمين"
+  },
+  "ja-JP": {
+    "app_collection": "コレクション",
+    "app_empty_library": "保存した引用文はありません",
+    "app_no_quote": "表示できる引用文がありません",
+    "app_previous_quote": "前の引用文",
+    "app_next_quote": "次の引用文",
+    "app_seconds_progress": "秒の進行状況",
+    "app_select_languages": "引用文の言語",
+    "app_random_language_help": "毎分、選択した言語からランダムに引用文を表示します。",
+    "app_font_serif": "セリフ",
+    "app_font_rounded": "丸ゴシック",
+    "app_font_monospaced": "等幅",
+    "app_font_special_elite": "Special Elite",
+    "app_font_open_dyslexic": "OpenDyslexic",
+    "app_attribution_bottom": "下部",
+    "app_attribution_background": "背景",
+    "app_attribution_hidden": "非表示",
+    "app_show_book_author": "書名と著者名を表示",
+    "app_show_author": "著者名のみ表示",
+    "app_hide": "非表示",
+    "app_left": "左",
+    "app_center": "中央",
+    "app_edit_quote": "引用文を編集",
+    "app_share_quote": "引用文を共有",
+    "app_copy_quote_text": "引用文のテキストをコピー",
+    "app_quote_text_copied": "引用文のテキストをコピーしました",
+    "app_accent_color": "アクセントカラー",
+    "app_github_project": "GitHub プロジェクト",
+    "app_project_website": "ウェブ版",
+    "app_select_one_or_more": "言語を1つ以上選択してください。毎分ランダムに引用文が選ばれます。",
+    "app_done": "完了",
+    "app_settings": "設定",
+    "app_help_add_widget": "デスクトップのウィジェットギャラリーから中または大サイズのウィジェットを追加してください。",
+    "app_safe_quotes": "職場でも閲覧しやすい引用文のみ",
+    "app_highlight_quote": "時刻を強調",
+    "app_fuzzy_mode": "時刻の部分のみ",
+    "app_style": "スタイル",
+    "app_quote_font": "引用文のフォント",
+    "app_alignment": "配置",
+    "app_quotes": "引用文",
+    "app_appearance": "外観",
+    "app_share_accessibility": "引用文を共有",
+    "app_custom_accent_color": "カスタムアクセントカラー",
+    "app_version": "バージョン",
+    "app_attribution": "著者名と書名",
+    "app_about": "このアプリについて",
+    "app_quote_languages_title": "引用文の言語",
+    "app_color": "色",
+    "app_text": "テキスト",
+    "app_quote_detail_title": "引用文の詳細",
+    "Custom": "カスタム",
+    "Progress bar": "進行状況バー",
+    "Clock paused at %@": "%@ で一時停止中",
+    "shareQuote": "共有",
+    "Next quote": "次の引用文",
+    "Show only the part of the quote that tells the time.": "引用文の時刻を示す部分だけを表示します。",
+    "Time fragment only": "時刻の部分のみ",
+    "Highlight color": "強調色",
+    "Resume clock": "時計を再開",
+    "Used in full-color widgets. Clear and Tinted styles use system colors. Change the custom color in the app.": "フルカラーのウィジェットに適用されます。クリアと色合い調整のスタイルではシステムカラーが使われます。カスタムカラーはアプリで変更できます。",
+    "shareHighlightExplanation": "引用文の時刻を示す部分を強調します。",
+    "Previous quote": "前の引用文",
+    "Web version": "ウェブ版",
+    "quoteDetail": "引用文の詳細",
+    "Pause clock": "時計を一時停止",
+    "app_search_quotes": "引用文を検索",
+    "app_clear_search": "検索をクリア",
+    "app_attribution_full": "書名と著者名",
+    "app_attribution_author_short": "著者名のみ",
+    "app_copy_quote": "引用文をコピー",
+    "app_quote_copied": "引用文をコピーしました",
+    "app_copy_quote_image": "画像をコピー",
+    "app_quote_image_copied": "画像をコピーしました",
+    "app_right": "右"
   }
 }

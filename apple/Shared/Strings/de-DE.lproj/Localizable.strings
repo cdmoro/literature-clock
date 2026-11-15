@@ -128,6 +128,7 @@
 "history" = "Zuletzt gesehen";
 "horizon" = "Horizont";
 "it-IT" = "Italiano (it-IT)";
+"ja-JP" = "日本語 (ja-JP)";
 "kindle" = "Kindle";
 "language" = "Sprache";
 "light" = "Licht";
@@ -210,6 +211,7 @@
 "settings_languages_follow_interface" = "Wie die Benutzeroberfläche";
 "settings_languages_help" = "Sprachen zum Abwechseln auswählen. Ohne Auswahl wird die Sprache der Oberfläche verwendet.";
 "settings_next_theme" = "Nächstes Design";
+"settings_original_attributions" = "Originalautor und -titel anzeigen";
 "settings_pattern_checkerboard" = "Schachbrett";
 "settings_pattern_christmas" = "Weihnachten";
 "settings_pattern_circles" = "Große Kreise";
@@ -315,7 +317,6 @@
 "transition_slide" = "Sanftes Gleiten";
 "transition_zoom" = "Dezenter Zoom";
 "whatsapp" = "Whatsapp";
-"widget_palette_follow_app" = "App folgen";
 "work_mode" = "Arbeit";
 "work_mode_title" = "Nur sichere Zitate für die Arbeit anzeigen";
 "zen_mode" = "Zen";

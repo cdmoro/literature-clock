@@ -128,6 +128,7 @@
 "history" = "Πρόσφατα";
 "horizon" = "Ορίζοντας";
 "it-IT" = "Italiano (it-IT)";
+"ja-JP" = "日本語 (ja-JP)";
 "kindle" = "Kindle";
 "language" = "Γλώσσα";
 "light" = "Φωτεινό";
@@ -210,6 +211,7 @@
 "settings_languages_follow_interface" = "Ίδια με τη γλώσσα της διεπαφής";
 "settings_languages_help" = "Επιλέξτε γλώσσες για εναλλαγή. Χωρίς επιλογή, χρησιμοποιείται η γλώσσα της διεπαφής.";
 "settings_next_theme" = "Επόμενο θέμα";
+"settings_original_attributions" = "Εμφάνιση του αρχικού συγγραφέα και τίτλου";
 "settings_pattern_checkerboard" = "Σκακιέρα";
 "settings_pattern_christmas" = "Χριστούγεννα";
 "settings_pattern_circles" = "Μεγάλοι κύκλοι";
@@ -315,7 +317,6 @@
 "transition_slide" = "Απαλή ολίσθηση";
 "transition_zoom" = "Διακριτικό ζουμ";
 "whatsapp" = "WhatsApp";
-"widget_palette_follow_app" = "Ακολουθία εφαρμογής";
 "work_mode" = "Εργασία";
 "work_mode_title" = "Εμφάνιση μόνο παραθεμάτων κατάλληλων για τον χώρο εργασίας";
 "zen_mode" = "Ζεν";

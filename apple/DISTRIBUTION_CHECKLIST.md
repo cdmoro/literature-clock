@@ -1,45 +1,66 @@
-# macOS app: first public release checklist
+# macOS app: first public beta checklist
 
-This checklist is for the first public macOS app release, distributed as a direct download from GitHub Releases. The release must not depend on Apple Developer Program membership, Developer ID certificates, provisioning profiles, or notarization. The app supports macOS 14 and later and is distributed as a universal Apple silicon and Intel DMG.
+Target: **0.2.0**, build **12**, direct GitHub DMG, macOS 14+, Intel and
+Apple silicon. The app uses an ad-hoc signature, without notarization or paid
+Apple Developer credentials. Consolidated `release/VERSION` is unchanged.
 
-## Release approach
+## Current release blocker
 
-- [x] Distribute a DMG directly from GitHub Releases.
-- [x] Use an ad-hoc code signature; no Developer ID signing or notarization.
-- [x] Keep the app and widget bundle identifiers and app-group identifier stable.
-- [ ] Document that Gatekeeper may block the downloaded app and provide tested first-open instructions.
-- [ ] Confirm that an ad-hoc signed app and widget can use their shared App Group on a clean Mac. This is a release gate because preferences and quote data use the shared container. If macOS denies access, change the app/widget data flow so the first release works without it; do not make release depend on paid signing.
+- [ ] Verify all four sizes show live catalogue quotes on the installed build
+  and advance through successive minute changes.
+- Build 7 uses bundled catalogues and independent widget settings. Its loading
+  view shows the time. Console on build 6 showed a missing small-widget timeline
+  file and a catalogue read from a stale Xcode bundle path. Verify the installed
+  build with a single registered copy of the app.
 
-## Build and package
+## Confirmed locally
 
-- [x] Keep marketing version and build number in `Version.xcconfig` (`0.0.1` / `1` for the first release candidate).
-- [x] Build a universal Release app and embedded widget in CI for pull requests.
-- [x] Check the CI build's app/widget versions, App Group metadata, and `arm64` / `x86_64` architectures.
-- [x] Provide a local DMG builder that ad-hoc signs both bundles and creates a SHA-256 checksum.
-- [ ] Build the `.icon` source in Xcode and inspect the app's generated icon at normal and small sizes.
-- [ ] Run the DMG builder successfully on a clean macOS machine or runner; verify the DMG, checksum, contents, architectures, bundle metadata, and ad-hoc signatures.
-- [ ] Ensure the DMG contains `Literature Clock.app`, an Applications shortcut, and concise install/first-open instructions.
+- [x] Build 7 app and extension compile for both architectures, verify with
+  strict signature checks, and each contain all 12 catalogues.
+- [x] Build 7 provider tests return matching catalogue quotes in all four
+  families with the expected minute dates, language filtering and palettes.
+- [ ] Generate the build 7 DMG in an unrestricted Terminal or CI. The managed
+  local build staged the signed app but `hdiutil create` failed with
+  `Device not configured`.
+- [x] User built and verified an ad-hoc universal DMG from Terminal.
+- [x] User installed the DMG and launched the app from Applications.
+- [x] Widgets changed quotes by minute in the earlier installed build.
+- [x] Build checks versions, architectures and nested signatures; DMG is verified
+  and a SHA-256 file is generated.
+- [x] DMG includes the app, an Applications shortcut and first-open instructions.
+- [x] Widget progress and its option are removed; app progress remains.
+- [x] Widgets default to Red and expose independent named colors.
 
-## Clean Mac acceptance
+## Release preparation implemented, CI rehearsal pending
 
-- [ ] Install the quarantined DMG downloaded from GitHub on a clean Mac with Gatekeeper enabled; follow the documented first-open steps and launch the app from `/Applications`.
-- [ ] Confirm the app opens on macOS 14 or later on Apple silicon and Intel, using a real Mac or suitable separate test machines.
-- [ ] Add small, medium, large, and extra-large widgets; configure languages and appearance; verify each renders correctly.
-- [ ] Verify quote changes over time and after sleep/wake, and verify widgets continue working after quitting the app.
-- [ ] Verify opening a widget quote opens the matching passage in the app, and test sharing and quote navigation.
-- [ ] Verify app and widget preferences and quote data are shared as intended under the ad-hoc signature.
-- [ ] Test an upgrade over an existing development install and confirm widget configuration and preferences remain usable.
+- [x] Reusable app workflow creates the DMG on the Xcode 27 runner.
+- [x] Consolidated workflow includes the DMG and checksum and gates publishing
+  on an exact artifact-set/checksum validation.
+- [x] PRs and manual runs build review artifacts without publishing or deploying.
+- [x] App beta version, notes and download link are included in release notes.
+- [x] Installation/update instructions and beta limitations are written.
+- [x] Release-validator failure cases and component mapping pass local tests.
+- [ ] Run the actual GitHub workflow rehearsal and inspect its DMG and notes.
+- [ ] Review the final icon for visual distinction and inspect generated sizes.
+- [ ] Review/commit changes and integrate the PR before preparing publication.
 
-## GitHub release integration
+## Installed acceptance still required
 
-- [ ] Add the macOS app DMG and matching `.sha256` file to the consolidated release workflow, with checks that reject missing or unexpected app artifacts.
-- [ ] Add the app version to generated release notes and include a direct download link and checksum instructions.
-- [ ] Update the app README/install instructions with macOS requirements, drag-to-Applications steps, the tested Gatekeeper flow, and the fact that the build is ad-hoc signed and not notarized.
-- [ ] Bump the macOS app version in `Version.xcconfig` for the first public build as needed; keep `CURRENT_PROJECT_VERSION` a positive build counter. Do not change the consolidated `release/VERSION` except when preparing the consolidated release.
-- [ ] Confirm the release workflow artifacts and notes are complete on a draft/rehearsal run before creating the public GitHub Release.
+- [ ] Test snapshots and live quotes on the current build in all four sizes, including after
+  changing options, quitting the app, and sleep/wake.
+- [ ] On the installed DMG, change an existing widget's language, appearance and
+  color in Edit Widget. Verify that the replacement timeline logs the selected
+  configuration and the desktop widget applies it.
+- [ ] Verify Red on newly added widgets and test an explicit color change. Check
+  Clear/Tinted contrast and gallery previews.
+- [ ] Verify widget links, favorites, sharing, settings and upgrades.
+- [ ] On a separate clean Mac, download the DMG with quarantine/Gatekeeper active
+  and verify the documented Privacy & Security approval flow.
+- [ ] Verify actual runtime on macOS 14+ and Intel as well as Apple silicon;
+  universal binaries alone do not establish runtime compatibility.
 
-## Definition of ready
+## Publication
 
-The first release is ready when the clean-Mac acceptance checks pass, the ad-hoc app/widget shared-data behavior is resolved, and the GitHub release contains the verified universal DMG and checksum with accurate install instructions. Apple Developer credentials and notarization are not prerequisites.
-
-The local unsigned universal Release build succeeded on 1 November 2026 with Xcode 27.1; app and widget reported version `0.0.1` / build `1` and contained `arm64` plus `x86_64`. Local DMG creation failed at `hdiutil create` with `Device not configured`, so the DMG and its installation path still need a successful clean-machine build and acceptance run.
+No push, deployment, tag or release has been performed during this preparation.
+Only a later explicit publication request should prepare the consolidated
+release version and trigger the existing release push workflow.

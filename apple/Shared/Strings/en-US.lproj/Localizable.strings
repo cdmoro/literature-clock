@@ -128,6 +128,7 @@
 "history" = "Recent";
 "horizon" = "Horizon";
 "it-IT" = "Italiano (it-IT)";
+"ja-JP" = "日本語 (ja-JP)";
 "kindle" = "Kindle";
 "language" = "Language";
 "light" = "Light";
@@ -210,6 +211,7 @@
 "settings_languages_follow_interface" = "Same as the interface";
 "settings_languages_help" = "Choose languages to rotate through. If none are selected, quotes use the interface language.";
 "settings_next_theme" = "Next theme";
+"settings_original_attributions" = "Show original author and title";
 "settings_pattern_checkerboard" = "Checkerboard";
 "settings_pattern_christmas" = "Christmas";
 "settings_pattern_circles" = "Large circles";
@@ -315,7 +317,6 @@
 "transition_slide" = "Gentle slide";
 "transition_zoom" = "Subtle zoom";
 "whatsapp" = "Whatsapp";
-"widget_palette_follow_app" = "Follow app";
 "work_mode" = "Work";
 "work_mode_title" = "Show only safe for work quotes";
 "zen_mode" = "Zen";

@@ -1,7 +1,6 @@
 import Foundation
 import SwiftUI
 import WidgetKit
-import OSLog
 #if os(macOS)
 import AppKit
 import CoreText
@@ -30,46 +29,12 @@ enum ClockSettings {
     static let highlightKey = "quote-highlight"
     static let fuzzyKey = "fuzzy-clock"
     static let safeOnlyKey = "safe-quotes-only"
+    static let originalAttributionKey = "show-original-attributions"
     static let attributionKey = "widget-attribution"
     static let quoteRevisionKey = "quote-revision"
     static let customBackgroundKey = "widget-custom-background"
     static let customAccentKey = "widget-custom-accent"
     static let progressKey = "seconds-progress"
-    private static let sharingProbeKey = "widget-sharing-probe"
-    private static let sharingLogger = Logger(subsystem: "net.literatureclock.app.sharing", category: "Preferences")
-
-    // Compare values observed by the actual app and WidgetKit processes. A
-    // successful build or a defaults read from Terminal cannot establish this.
-    static func recordAppSharingProbe(palette: String? = nil, accent: String? = nil) {
-        let token = UUID().uuidString
-        defaults.set(token, forKey: sharingProbeKey)
-        recordSharingEvent("SHARING_APP", token: token,
-                           palette: palette ?? defaults.string(forKey: paletteKey) ?? "red",
-                           accent: accent ?? defaults.string(forKey: customAccentKey) ?? "#B36E26")
-    }
-
-    static func recordWidgetSharingProbe(selection: String, appliedPalette: String) {
-        recordSharingEvent("SHARING_WIDGET", token: defaults.string(forKey: sharingProbeKey) ?? "missing",
-                           palette: defaults.string(forKey: paletteKey) ?? "missing",
-                           accent: defaults.string(forKey: customAccentKey) ?? "#B36E26",
-                           selection: selection, appliedPalette: appliedPalette)
-    }
-
-    private static func recordSharingEvent(_ event: String, token: String, palette: String, accent: String,
-                                           selection: String? = nil, appliedPalette: String? = nil) {
-        var values: [String: String] = [
-            "token": token, "palette": palette, "accent": accent,
-            "group": appGroup,
-            "version": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "unknown",
-            "build": Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "unknown",
-            "container": FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroup) == nil ? "unavailable" : "available"
-        ]
-        values["selection"] = selection
-        values["appliedPalette"] = appliedPalette
-        guard let data = try? JSONSerialization.data(withJSONObject: values, options: .sortedKeys),
-              let json = String(data: data, encoding: .utf8) else { return }
-        sharingLogger.notice("\(event, privacy: .public) \(json, privacy: .public)")
-    }
 
     static var dyslexicFontName: String? {
         #if os(macOS)
@@ -191,25 +156,31 @@ struct ReadableQuoteText: View {
     let minimumSize: CGFloat
     var emphasizeHighlight = false
     var alignment: TextAlignment = .leading
+    var excerptLimits: (context: Int, lines: Int)?
 
     private var usesAccentedRendering: Bool {
         widgetRenderingMode == .accented || widgetRenderingMode == .vibrant
     }
 
+    @ViewBuilder
     var body: some View {
         // The parent supplies the wrapping width. Checking both axes measures
         // Text's unwrapped ideal width and can reject even a short quote.
-        ViewThatFits(in: .vertical) {
-            line(parts, size: maximumSize)
-            line(parts, size: (maximumSize + minimumSize) / 2)
-            line(parts, size: minimumSize)
-            line(excerpt(context: 240), size: minimumSize)
-            line(excerpt(context: 160), size: minimumSize)
-            line(excerpt(context: 100), size: minimumSize)
-            line(excerpt(context: 60), size: minimumSize)
-            line(excerpt(context: 30), size: minimumSize)
-            line(excerpt(context: 12), size: minimumSize)
-            line(excerpt(context: 0), size: minimumSize)
+        if let excerptLimits {
+            line(excerpt(context: excerptLimits.context), size: minimumSize)
+        } else {
+            ViewThatFits(in: .vertical) {
+                line(parts, size: maximumSize)
+                line(parts, size: (maximumSize + minimumSize) / 2)
+                line(parts, size: minimumSize)
+                line(excerpt(context: 240), size: minimumSize)
+                line(excerpt(context: 160), size: minimumSize)
+                line(excerpt(context: 100), size: minimumSize)
+                line(excerpt(context: 60), size: minimumSize)
+                line(excerpt(context: 30), size: minimumSize)
+                line(excerpt(context: 12), size: minimumSize)
+                line(excerpt(context: 0), size: minimumSize)
+            }
         }
     }
 
@@ -227,12 +198,19 @@ struct ReadableQuoteText: View {
         let boundary = fromEnd
             ? text.index(text.endIndex, offsetBy: -limit)
             : text.index(text.startIndex, offsetBy: limit)
-        let range = fromEnd ? text.startIndex..<boundary : boundary..<text.endIndex
+        let usesBoundedContext = excerptLimits != nil
+        let range: Range<String.Index>
+        if usesBoundedContext {
+            range = fromEnd ? boundary..<text.endIndex : text.startIndex..<boundary
+        } else {
+            range = fromEnd ? text.startIndex..<boundary : boundary..<text.endIndex
+        }
         guard let whitespace = text.rangeOfCharacter(from: .whitespacesAndNewlines,
-                                                      options: fromEnd ? .backwards : [],
-                                                      range: range) else { return 0 }
-        return fromEnd ? text.distance(from: whitespace.upperBound, to: text.endIndex)
-                       : text.distance(from: text.startIndex, to: whitespace.lowerBound)
+                                                      options: fromEnd != usesBoundedContext ? .backwards : [],
+                                                      range: range) else { return usesBoundedContext ? limit : 0 }
+        let count = fromEnd ? text.distance(from: whitespace.upperBound, to: text.endIndex)
+                            : text.distance(from: text.startIndex, to: whitespace.lowerBound)
+        return usesBoundedContext && count == 0 ? limit : count
     }
 
     private func line(_ value: (before: String, time: String, after: String), size: CGFloat) -> some View {
@@ -251,6 +229,8 @@ struct ReadableQuoteText: View {
             .fontWeight(.regular)
             .lineSpacing(fontName == "specialElite" ? size * 0.18 : 0)
             .multilineTextAlignment(alignment)
+            .lineLimit(excerptLimits?.lines)
+            .minimumScaleFactor(excerptLimits == nil ? 1 : 0.8)
             .frame(maxWidth: .infinity, alignment: alignment == .center ? .center : (alignment == .trailing ? .trailing : .leading))
             .fixedSize(horizontal: false, vertical: true)
     }

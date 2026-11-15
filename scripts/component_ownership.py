@@ -10,7 +10,7 @@ MACOS_APP_SHARED_KEYS = {
         "share", "dark", "light", "system",
     },
     "src/strings/common/settings.json": {
-        "settings_attribution_position", "settings_color_done",
+        "settings_attribution_position", "settings_color_done", "settings_original_attributions",
     },
     "src/strings/web/settings.json": {"settings_title"},
 }

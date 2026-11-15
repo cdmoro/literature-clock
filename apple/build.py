@@ -58,16 +58,20 @@ def main():
             ['lipo', str(bundle / 'Contents/MacOS' / info['CFBundleExecutable']), '-archs'], text=True).split()
         if not {'arm64', 'x86_64'}.issubset(architectures):
             raise SystemExit(f'{bundle.name}: missing universal architectures: {architectures}')
-        # Preserve sandbox/group entitlements, but make no Developer ID claim.
-        entitlements = {
-            'com.apple.security.app-sandbox': True,
-            'com.apple.security.application-groups': [info['ClockAppGroup']],
-        }
+        entitlements = {'com.apple.security.app-sandbox': True}
+        if bundle == app:
+            # Keep the existing app preferences domain available on upgrade.
+            entitlements['com.apple.security.application-groups'] = [info['ClockAppGroup']]
         entitlements_path = OUTPUT / (bundle.stem + '.entitlements')
         with entitlements_path.open('wb') as stream:
             plistlib.dump(entitlements, stream)
         run('codesign', '--force', '--sign', '-', '--entitlements', entitlements_path, bundle)
     run('codesign', '--verify', '--deep', '--strict', app)
+    for bundle in bundles:
+        resources = bundle / 'Contents/Resources/Catalogues'
+        expected = {path.name for path in (APPLE / 'Shared/Catalogues').glob('*.json')}
+        if not expected or {path.name for path in resources.glob('*.json')} != expected:
+            raise SystemExit(f'{bundle.name}: missing bundled quote catalogues')
     (staging / 'Applications').symlink_to('/Applications')
     (staging / 'READ-ME.txt').write_text(
         f'Literature Clock {version}\n\nDrag Literature Clock to Applications. Requires macOS 14 or later.\n'

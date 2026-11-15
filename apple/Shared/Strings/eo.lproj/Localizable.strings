@@ -128,6 +128,7 @@
 "history" = "Lastatempaj";
 "horizon" = "Horizonto";
 "it-IT" = "Italiano (it-IT)";
+"ja-JP" = "日本語 (ja-JP)";
 "kindle" = "Kindle";
 "language" = "Lingvo";
 "light" = "Hela";
@@ -210,6 +211,7 @@
 "settings_languages_follow_interface" = "Sama kiel la interfaco";
 "settings_languages_help" = "Elektu lingvojn por alternigi. Se neniu estas elektita, la citaĵoj uzas la lingvon de la interfaco.";
 "settings_next_theme" = "Sekva etoso";
+"settings_original_attributions" = "Montri la originalan aŭtoron kaj titolon";
 "settings_pattern_checkerboard" = "Ŝaktabulo";
 "settings_pattern_christmas" = "Kristnasko";
 "settings_pattern_circles" = "Grandaj cirkloj";
@@ -315,7 +317,6 @@
 "transition_slide" = "Milda glitado";
 "transition_zoom" = "Eta zomado";
 "whatsapp" = "WhatsApp";
-"widget_palette_follow_app" = "Sekvi la aplikaĵon";
 "work_mode" = "Laboro";
 "work_mode_title" = "Montri nur citaĵojn taŭgajn por la laborejo";
 "zen_mode" = "Zeno";

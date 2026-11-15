@@ -10,7 +10,6 @@
 		E00000000000000000000234 /* Widget Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000221 /* Localizable.strings */; };
 		E00000000000000000000210 /* Shared/Models/QuoteLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000211 /* Shared/Models/QuoteLibrary.swift */; };
 		E00000000000000220 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000221 /* Localizable.strings */; };
-		E00000000000000000000007 /* Shared/Models/ClockWidgetConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00000000000000000000003 /* Shared/Models/ClockWidgetConfiguration.swift */; };
 		E00000000000000000000008 /* Shared/App/LiteratureClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000071 /* Shared/App/LiteratureClockApp.swift */; };
 		E00000000000000000000009 /* Shared/Models/Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000072 /* Shared/Models/Quote.swift */; };
 		E0000000000000000000000A /* Shared/App/ClockHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000073 /* Shared/App/ClockHomeView.swift */; };
@@ -83,6 +82,7 @@
 		F10000000000000000000010 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F10000000000000000000011 /* sync-catalogues.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "sync-catalogues.py"; sourceTree = "<group>"; };
 		F10000000000000000000012 /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
+		A00000000000000235 /* ja-JP */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ja-JP"; path = "ja-JP.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +270,7 @@
 				"ru-RU",
 				eo,
 				"ar-AE",
+				"ja-JP",
 			);
 			mainGroup = A00000000000000000000012 /* Literature Clock */;
 			productRefGroup = A00000000000000000000013 /* Products */;
@@ -311,7 +312,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E00000000000000000000007 /* Shared/Models/ClockWidgetConfiguration.swift in Sources */,
 				E00000000000000000000008 /* Shared/App/LiteratureClockApp.swift in Sources */,
 				E00000000000000000000009 /* Shared/Models/Quote.swift in Sources */,
 				E00000000000000000000210 /* Shared/Models/QuoteLibrary.swift in Sources */,
@@ -358,6 +358,7 @@
 				A00000000000000231 /* ru-RU */,
 				A00000000000000232 /* eo */,
 				A00000000000000233 /* ar-AE */,
+				A00000000000000235 /* ja-JP */,
 			);
 			name = Localizable.strings;
 			path = Shared/Strings;

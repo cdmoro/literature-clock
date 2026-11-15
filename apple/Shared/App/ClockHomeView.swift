@@ -4,7 +4,6 @@ import AppKit
 #else
 import UIKit
 #endif
-import WidgetKit
 
 struct ClockHomeView: View {
     @Environment(\.colorScheme) private var systemColorScheme
@@ -18,6 +17,7 @@ struct ClockHomeView: View {
     @AppStorage(ClockSettings.highlightKey, store: ClockSettings.defaults) private var highlight = true
     @AppStorage(ClockSettings.fuzzyKey, store: ClockSettings.defaults) private var fuzzy = false
     @AppStorage(ClockSettings.safeOnlyKey, store: ClockSettings.defaults) private var safeOnly = false
+    @AppStorage(ClockSettings.originalAttributionKey, store: ClockSettings.defaults) private var showOriginalAttribution = false
     @AppStorage(ClockSettings.attributionKey, store: ClockSettings.defaults) private var attribution = "book-author"
     @AppStorage(ClockSettings.quoteRevisionKey, store: ClockSettings.defaults) private var quoteRevision = 0
     @AppStorage(ClockSettings.progressKey, store: ClockSettings.defaults) private var progressMode = "bottom"
@@ -66,7 +66,7 @@ struct ClockHomeView: View {
                             VStack(alignment: quoteDirection == .rightToLeft ? .trailing : .leading, spacing: 12) {
                                 quoteView(quote, maximumSize: quoteSize)
                                 if !fuzzy {
-                                    attributionView(quote, size: quoteSize * 0.72)
+                                    attributionView(quote.displayingAttribution(original: showOriginalAttribution), size: quoteSize * 0.72)
                                         .foregroundStyle(foreground.opacity(0.68))
                                         .lineLimit(1)
                                         .minimumScaleFactor(0.75)
@@ -112,7 +112,7 @@ struct ClockHomeView: View {
                                     presentShareOptions(quote, locale: primaryLocale, palette: palette,
                                                        accentHex: palette == "custom" ? customAccentHex : "",
                                                        font: quoteFont, highlight: highlight, dark: isDark, fuzzy: fuzzy,
-                                                       attribution: visibleAttribution)
+                                                       attribution: visibleAttribution, showOriginalAttribution: showOriginalAttribution)
                                 } label: {
                                     Image(systemName: "square.and.arrow.up")
                                         .frame(width: 44, height: 44)
@@ -168,7 +168,7 @@ struct ClockHomeView: View {
                 }
                 .overlay(alignment: quoteDirection == .rightToLeft ? .bottomTrailing : .bottomLeading) {
                     if fuzzy, let quote {
-                        attributionView(quote)
+                        attributionView(quote.displayingAttribution(original: showOriginalAttribution))
                             .padding(.horizontal, 24)
                             .padding(.bottom, 76)
                             .environment(\.layoutDirection, quoteDirection)
@@ -199,7 +199,7 @@ struct ClockHomeView: View {
         .sheet(isPresented: $libraryPresented) {
             QuoteLibraryView(library: quoteLibrary, locale: interfaceLocale.identifier,
                              palette: palette, accentHex: palette == "custom" ? customAccentHex : "",
-                             font: quoteFont, highlight: highlight, dark: isDark, attribution: visibleAttribution)
+                             font: quoteFont, highlight: highlight, dark: isDark, attribution: visibleAttribution, showOriginalAttribution: showOriginalAttribution)
         }
         .sheet(item: $presentedSheet, onDismiss: presentPendingSheet) { sheet in
             switch sheet {
@@ -350,19 +350,21 @@ struct ClockHomeView: View {
                            accentHex: values["accent"] ?? "", font: values["font"] ?? "serif",
                            highlight: values["highlight"] != "0", dark: values["dark"] == "1",
                            fuzzy: values["fuzzy"] == "1",
-                           attribution: appAttributionMode(values["attribution"] ?? "book-author"))
+                           attribution: appAttributionMode(values["attribution"] ?? "book-author"),
+                           showOriginalAttribution: values["originalAttribution"] == "1")
     }
 
     private func presentShareOptions(_ quote: Quote, locale: String, palette: String,
                                      accentHex: String, font: String, highlight: Bool,
-                                     dark: Bool, fuzzy: Bool, attribution: String) {
+                                     dark: Bool, fuzzy: Bool, attribution: String, showOriginalAttribution: Bool) {
         // Present the quote and its style atomically. Separate @State values can
         // leave the sheet capturing the previous widget's appearance.
         libraryPresented = false
         presentSheet(.share(WidgetQuoteDestination(quote: quote, locale: locale, values: [
             "palette": palette, "accent": accentHex, "font": font,
             "highlight": highlight ? "1" : "0", "dark": dark ? "1" : "0",
-            "fuzzy": fuzzy ? "1" : "0", "attribution": attribution
+            "fuzzy": fuzzy ? "1" : "0", "attribution": attribution,
+            "originalAttribution": showOriginalAttribution ? "1" : "0"
         ])))
     }
 
@@ -395,6 +397,7 @@ private struct QuoteLibraryView: View {
     let highlight: Bool
     let dark: Bool
     let attribution: String
+    let showOriginalAttribution: Bool
     @State private var selectedQuote: SavedQuote?
     @State private var showingRecent = false
     @State private var searchText = ""
@@ -406,8 +409,9 @@ private struct QuoteLibraryView: View {
         return items.filter { item in
             let itemLocale = Locale(identifier: item.locale)
             let language = ClockCatalogue.languageName(item.locale)
+            let quote = item.quote.displayingAttribution(original: showOriginalAttribution)
             let searchableText = [
-                item.quote.text(for: itemLocale), item.quote.title, item.quote.author,
+                quote.text(for: itemLocale), quote.title, quote.author,
                 item.time, language, item.locale
             ].joined(separator: " ")
             return searchableText.range(of: searchQuery, options: [.caseInsensitive, .diacriticInsensitive]) != nil
@@ -509,8 +513,9 @@ private struct QuoteLibraryView: View {
                                                 .lineLimit(4)
                                                 .foregroundStyle(.primary)
                                             VStack(alignment: .leading, spacing: 3) {
-                                                Text(item.quote.title).font(.subheadline).italic()
-                                                Text(item.quote.author).font(.caption)
+                                                let quote = item.quote.displayingAttribution(original: showOriginalAttribution)
+                                                Text(quote.title).font(.subheadline).italic()
+                                                Text(quote.author).font(.caption)
                                             }
                                             .foregroundStyle(.secondary)
                                         }
@@ -568,7 +573,8 @@ private struct QuoteLibraryView: View {
                     "font": font,
                     "highlight": highlight ? "1" : "0",
                     "dark": dark ? "1" : "0",
-                    "attribution": attribution
+                    "attribution": attribution,
+                    "originalAttribution": showOriginalAttribution ? "1" : "0"
                 ]
             ))
         }
@@ -651,6 +657,13 @@ private struct QuoteShareOptions: View {
     private var shareAppearance: QuoteShareAppearance {
         QuoteShareAppearance(rawValue: shareAppearanceRaw) ?? .source
     }
+    private var signatureIconScheme: ColorScheme {
+        switch shareAppearance {
+        case .source: dark ? .light : .dark
+        case .light: .dark
+        case .dark: .light
+        }
+    }
     private var shareFont: QuoteShareFont { QuoteShareFont(rawValue: shareFontRaw) ?? .serif }
     private var alignment: QuoteShareAlignment { QuoteShareAlignment(rawValue: alignmentRaw) ?? .center }
     private var cardBackground: Color { shareAppearance.background(source: background, accent: accent) }
@@ -700,7 +713,7 @@ private struct QuoteShareOptions: View {
                         ShareQuotePreview(attribution: attribution, quote: quote, locale: locale, accent: effectiveAccent, background: effectiveBackground,
                                           font: shareFont, alignment: alignment, highlight: shareHighlight, fuzzy: fuzzy,
                                           format: format, displayWidth: previewWidth,
-                                          signatureLocale: interfaceLocale.identifier)
+                                          signatureLocale: interfaceLocale.identifier, signatureIconScheme: signatureIconScheme)
                             .frame(width: previewWidth, height: previewWidth)
                             .frame(maxWidth: .infinity)
                             .padding(.horizontal, 8)
@@ -792,7 +805,7 @@ private struct QuoteShareOptions: View {
                             let renderer = ImageRenderer(content: QuoteShareCard(attribution: attribution, quote: quote, locale: locale,
                                 accent: effectiveAccent, background: effectiveBackground, font: shareFont,
                                 alignment: alignment, highlight: shareHighlight, fuzzy: fuzzy, format: format,
-                                signatureLocale: interfaceLocale.identifier))
+                                signatureLocale: interfaceLocale.identifier, signatureIconScheme: signatureIconScheme))
                             renderer.scale = 3
                             #if os(macOS)
                             imageToShare = renderer.nsImage
@@ -847,7 +860,8 @@ private struct QuoteShareOptions: View {
     }
 
     init(destination: WidgetQuoteDestination) {
-        self.init(quote: destination.quote, locale: destination.locale, palette: destination.palette,
+        self.init(quote: destination.quote.displayingAttribution(original: destination.values["originalAttribution"] == "1"),
+                  locale: destination.locale, palette: destination.palette,
                   fontName: destination.font, highlight: destination.highlight, dark: destination.dark,
                   accentHex: destination.accentHex)
     }
@@ -998,7 +1012,7 @@ private struct QuoteShareOptions: View {
                                           accent: effectiveAccent, background: effectiveBackground,
                                           font: shareFont, alignment: alignment, highlight: shareHighlight,
                                           fuzzy: fuzzy, format: format, displayWidth: width,
-                                          signatureLocale: interfaceLocale.identifier)
+                                          signatureLocale: interfaceLocale.identifier, signatureIconScheme: signatureIconScheme)
                             .frame(width: width, height: width / format.aspectRatio)
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
@@ -1049,7 +1063,6 @@ private struct QuoteShareOptions: View {
                                     Toggle("app_highlight_quote", isOn: $shareHighlight)
                                         .labelsHidden()
                                         .toggleStyle(.switch)
-                                        .disabled(true)
                                         .accessibilityLabel(Text("app_highlight_quote"))
                                 }
                             case .text:
@@ -1121,7 +1134,7 @@ private struct QuoteShareOptions: View {
             let renderer = ImageRenderer(content: QuoteShareCard(attribution: attribution, quote: quote, locale: locale,
                 accent: effectiveAccent, background: effectiveBackground, font: shareFont,
                 alignment: alignment, highlight: shareHighlight, fuzzy: fuzzy, format: format,
-                signatureLocale: interfaceLocale.identifier))
+                signatureLocale: interfaceLocale.identifier, signatureIconScheme: signatureIconScheme))
             renderer.scale = 3
             imageToShare = renderer.nsImage
         }
@@ -1279,11 +1292,9 @@ private struct ShareQuotePreview: View {
     let format: QuoteShareFormat
     let displayWidth: CGFloat
     let signatureLocale: String
+    let signatureIconScheme: ColorScheme
 
     private var foreground: Color { ClockSettings.foreground(for: background) }
-    private var iconColorScheme: ColorScheme {
-        ClockSettings.hex(from: ClockSettings.foreground(for: background)) == "#1F1F1F" ? .dark : .light
-    }
     private var quoteDirection: LayoutDirection {
         Locale.Language(identifier: locale).characterDirection == .rightToLeft ? .rightToLeft : .leftToRight
     }
@@ -1298,8 +1309,8 @@ private struct ShareQuotePreview: View {
                                       width: displayWidth, height: displayWidth / format.aspectRatio))
                 .environment(\.layoutDirection, quoteDirection)
                 .frame(maxHeight: .infinity, alignment: .center)
-            QuoteShareBrand.signature(locale: signatureLocale, iconSize: 24, font: .system(size: 12, weight: .semibold))
-                .environment(\.colorScheme, iconColorScheme)
+            QuoteShareBrand.signature(locale: signatureLocale, iconScheme: signatureIconScheme,
+                                     iconSize: 24, font: .system(size: 12, weight: .semibold))
                 .padding(.top, 8)
         }
         .padding(14)
@@ -1321,10 +1332,7 @@ private struct QuoteShareCard: View {
     let fuzzy: Bool
     let format: QuoteShareFormat
     let signatureLocale: String
-
-    private var iconColorScheme: ColorScheme {
-        ClockSettings.hex(from: ClockSettings.foreground(for: background)) == "#1F1F1F" ? .dark : .light
-    }
+    let signatureIconScheme: ColorScheme
 
     var body: some View {
         let inset = min(format.canvas.width, format.canvas.height) * 0.065
@@ -1340,10 +1348,10 @@ private struct QuoteShareCard: View {
                 .frame(maxHeight: .infinity, alignment: .center)
             QuoteShareBrand.signature(
                 locale: signatureLocale,
+                iconScheme: signatureIconScheme,
                 iconSize: min(format.canvas.width, format.canvas.height) * 0.075,
                 font: .system(size: min(format.canvas.width, format.canvas.height) * 0.047, weight: .semibold)
             )
-            .environment(\.colorScheme, iconColorScheme)
             .foregroundStyle(textColor.opacity(0.82))
             .padding(.top, 8)
         }
@@ -1474,17 +1482,22 @@ private struct ShareQuoteText: View {
 }
 
 private enum QuoteShareBrand {
-    static var icon: Image {
+    static func icon(for scheme: ColorScheme) -> Image {
         #if os(macOS)
+        if scheme == .light,
+           let iconName = Bundle.main.object(forInfoDictionaryKey: "CFBundleIconName") as? String,
+           let defaultIcon = Bundle.main.image(forResource: NSImage.Name(iconName)) {
+            return Image(nsImage: defaultIcon)
+        }
         return Image(nsImage: NSApp.applicationIconImage)
         #else
         return Image(systemName: "book.closed.fill")
         #endif
     }
 
-    static func signature(locale: String, iconSize: CGFloat, font: Font) -> some View {
+    static func signature(locale: String, iconScheme: ColorScheme, iconSize: CGFloat, font: Font) -> some View {
         HStack(spacing: iconSize * 0.35) {
-            icon
+            icon(for: iconScheme)
                 .resizable()
                 .scaledToFit()
                 .frame(width: iconSize, height: iconSize)
@@ -1553,6 +1566,7 @@ struct SettingsView: View {
     @AppStorage(ClockSettings.highlightKey, store: ClockSettings.defaults) private var highlight = true
     @AppStorage(ClockSettings.fuzzyKey, store: ClockSettings.defaults) private var fuzzy = false
     @AppStorage(ClockSettings.safeOnlyKey, store: ClockSettings.defaults) private var safeOnly = false
+    @AppStorage(ClockSettings.originalAttributionKey, store: ClockSettings.defaults) private var showOriginalAttribution = false
     @AppStorage(ClockSettings.attributionKey, store: ClockSettings.defaults) private var attribution = "book-author"
     @AppStorage(ClockSettings.customAccentKey, store: ClockSettings.defaults) private var customAccentHex = "#B36E26"
     @AppStorage(ClockSettings.progressKey, store: ClockSettings.defaults) private var progressMode = "bottom"
@@ -1603,12 +1617,9 @@ struct SettingsView: View {
                     get: { progressMode != "hidden" },
                     set: { progressMode = $0 ? "bottom" : "hidden" }
                 ))
-                .onChange(of: progressMode) { _, _ in
-                    WidgetCenter.shared.reloadAllTimelines()
-                }
-
             }
             Section("app_attribution") {
+                Toggle("settings_original_attributions", isOn: $showOriginalAttribution)
                 Picker("settings_attribution_position", selection: $attribution) {
                     Text("app_show_book_author").tag("book-author")
                     Text("app_show_author").tag("author")
@@ -1627,14 +1638,6 @@ struct SettingsView: View {
         }
         .onAppear {
             attribution = appAttributionMode(attribution)
-        }
-        .onChange(of: customAccentHex) { _, _ in
-            ClockSettings.recordAppSharingProbe(palette: palette, accent: customAccentHex)
-            WidgetCenter.shared.reloadAllTimelines()
-        }
-        .onChange(of: palette) { _, _ in
-            ClockSettings.recordAppSharingProbe(palette: palette, accent: customAccentHex)
-            WidgetCenter.shared.reloadAllTimelines()
         }
         #if os(macOS)
         .formStyle(.grouped)

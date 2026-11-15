@@ -28,6 +28,8 @@ struct SavedQuote: Codable, Identifiable, Equatable {
     let title: String
     let author: String
     let sfw: Bool
+    let originalTitle: String?
+    let originalAuthor: String?
 
     init(quote: Quote, locale: String, time: String? = nil) {
         self.time = time ?? String(quote.id.prefix(5))
@@ -40,11 +42,17 @@ struct SavedQuote: Codable, Identifiable, Equatable {
         title = quote.title
         author = quote.author
         sfw = quote.sfw
+        originalTitle = quote.originalTitle
+        originalAuthor = quote.originalAuthor
     }
 
     var quote: Quote {
-        Quote(id: quoteID, quoteTimeCase: quoteTimeCase, quoteFirst: quoteFirst,
-              quoteLast: quoteLast, title: title, author: author, sfw: sfw)
+        let current = originalTitle == nil && originalAuthor == nil
+            ? ClockCatalogue.quote(id: quoteID, locale: locale) : nil
+        return Quote(id: quoteID, quoteTimeCase: quoteTimeCase, quoteFirst: quoteFirst,
+                     quoteLast: quoteLast, title: current?.title ?? title, author: current?.author ?? author,
+                     sfw: sfw, originalTitle: current?.originalTitle ?? originalTitle,
+                     originalAuthor: current?.originalAuthor ?? originalAuthor)
     }
 }
 

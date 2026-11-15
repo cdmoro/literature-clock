@@ -128,6 +128,7 @@
 "history" = "Recenti";
 "horizon" = "Orizzonte";
 "it-IT" = "Italiano (it-IT)";
+"ja-JP" = "日本語 (ja-JP)";
 "kindle" = "Kindle";
 "language" = "Lingua";
 "light" = "Chiaro";
@@ -210,6 +211,7 @@
 "settings_languages_follow_interface" = "Come l’interfaccia";
 "settings_languages_help" = "Scegli le lingue da alternare. Se non ne selezioni nessuna, viene usata la lingua dell’interfaccia.";
 "settings_next_theme" = "Tema successivo";
+"settings_original_attributions" = "Mostra autore e titolo originali";
 "settings_pattern_checkerboard" = "Scacchiera";
 "settings_pattern_christmas" = "Natale";
 "settings_pattern_circles" = "Cerchi grandi";
@@ -315,7 +317,6 @@
 "transition_slide" = "Scorrimento dolce";
 "transition_zoom" = "Zoom delicato";
 "whatsapp" = "Whatsapp";
-"widget_palette_follow_app" = "Segui l’app";
 "work_mode" = "Lavoro";
 "work_mode_title" = "Mostra solo citazioni appropriate per il lavoro";
 "zen_mode" = "Zen";

@@ -28,8 +28,7 @@ The downloaded/quarantined first-open flow still needs independent beta testing.
 
 Open the installed app once. Control-click the desktop, choose **Edit Widgets**,
 search for Literature Clock, and add a size. Control-click a widget to edit its
-options. **Follow app** uses the app's highlight color; a named color applies to
-that widget independently. Clear/Tinted styles use system colors.
+options. New widgets start with **Red**. Choose a named highlight color per widget. Clear/Tinted styles use system colors.
 
 Widgets change quotes by minute and have independent language/style options.
 WidgetKit schedules updates, so delivery may vary after sleep or under system
