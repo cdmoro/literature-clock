@@ -68,6 +68,14 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
                 self.assertEqual(rows[identifier]['Quote time'], expected)
         self.assertIn('분당 132회, 131회, 130회', rows['1511-001']['Quote'])
 
+    def test_korean_distinguishes_clock_times_from_recording_offsets(self):
+        rows = self.catalogues['ko-KR']
+        self.assertEqual(rows['1053-003']['Quote time'], '10분 53초')
+        self.assertEqual(rows['1057-001']['Quote time'], '10분 57초')
+        self.assertEqual(rows['1504-002']['Quote time'], '15시 4분')
+        self.assertIn('16시 54분', rows['1654-003']['Quote time'])
+        self.assertIn('태어나려면 아직 400년은 더 남았는데', rows['1601-001']['Quote'])
+
     def test_korean_train_passage_uses_departure_and_arrival_times(self):
         rows = self.catalogues['ko-KR']
         departure = rows['1722-000']
