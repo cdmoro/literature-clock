@@ -54,6 +54,28 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
         self.assertIn('5시 2분이 지나자', rows['1658-000']['Quote'])
         self.assertIn('5시 2분 전에는', rows['1658-000']['Quote'])
 
+    def test_korean_times_preserve_hours_minutes_and_duration(self):
+        rows = self.catalogues['ko-KR']
+        highlights = {
+            '0305-000': '3시 5분쯤',
+            '0744-001': '7시 44분',
+            '1558-001': '3시 58분',
+            '1942-003': '7시간 42분',
+            '2027-000': '8시 27분',
+        }
+        for identifier, expected in highlights.items():
+            with self.subTest(identifier=identifier):
+                self.assertEqual(rows[identifier]['Quote time'], expected)
+        self.assertIn('분당 132회, 131회, 130회', rows['1511-001']['Quote'])
+
+    def test_korean_train_passage_uses_departure_and_arrival_times(self):
+        rows = self.catalogues['ko-KR']
+        departure = rows['1722-000']
+        arrival = rows['1929-000']
+        self.assertEqual(departure['Quote'], arrival['Quote'])
+        self.assertEqual(departure['Quote time'], '17시 22분')
+        self.assertEqual(arrival['Quote time'], '19시 29분')
+
     def test_known_time_regressions_match_source_meaning(self):
         examples = {
             'de-DE': ['0130-003', '0330-002', '1930-010'],
