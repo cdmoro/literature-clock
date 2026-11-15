@@ -366,9 +366,14 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         return NSRect(x: bounds.minX, y: bounds.minY, width: bounds.width,
                       height: max(0, min(bounds.maxY, clockFrame.minY - 16) - bounds.minY))
     }
-    static func highlightedRange(for quote: NativeQuote, text: String, fuzzy: Bool) -> NSRange {
-        if fuzzy { return NSRange(location: 0, length: (text as NSString).length) }
-        return NSRange(location: (quote.first as NSString).length, length: (quote.time as NSString).length)
+    static func displayedPassage(_ quote: NativeQuote, fallbackTime: String, fuzzy: Bool,
+                                 locale: String, font: NSFont, width: CGFloat) -> CompactQuoteTime.Parts {
+        let time = quote.time.isEmpty ? fallbackTime : quote.time
+        let raw = (before: fuzzy ? "" : quote.first, time: time, after: fuzzy ? "" : quote.last)
+        if let compact = CompactQuoteTime(raw, locale: locale) {
+            return compact.displayParts(keepTogether: compact.text.size(withAttributes: [.font: font]).width <= width)
+        }
+        return fuzzy ? ("", balancedLines(time, font: font, width: width), "") : raw
     }
     static func balancedLines(_ value: String, font: NSFont, width: CGFloat) -> String {
         let words = value.split(whereSeparator: \.isWhitespace).map(String.init)
@@ -646,17 +651,11 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 style.baseWritingDirection = locale.hasPrefix("ar") ? .rightToLeft : .natural
                 style.paragraphSpacingBefore = gap
                 let font = quoteFont(size, locale: locale)
-                let rawText: String
-                if fuzzy {
-                    rawText = item.time.isEmpty ? lastMinute : item.time
-                } else {
-                    rawText = item.first + item.time + item.last
-                }
-                let textString = fuzzy ? Self.balancedLines(rawText, font: font, width: width) : rawText
-                let text = NSMutableAttributedString(string: textString,
+                let parts = Self.displayedPassage(item, fallbackTime: lastMinute, fuzzy: fuzzy,
+                                                  locale: locale, font: font, width: width)
+                let text = NSMutableAttributedString(string: parts.before + parts.time + parts.after,
                     attributes: [.font: font, .foregroundColor: foreground, .paragraphStyle: style])
-                // Highlight only the time in a quote; fuzzy mode displays just the time.
-                let range = Self.highlightedRange(for: item, text: textString, fuzzy: fuzzy)
+                let range = NSRange(location: parts.before.utf16.count, length: parts.time.utf16.count)
                 if range.length > 0 {
                     text.addAttribute(theme == "book" ? .backgroundColor : .foregroundColor, value: accent, range: range)
                 }

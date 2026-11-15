@@ -7,7 +7,7 @@ import type { ResolvedQuote } from '../types';
 import { fontSupportsLocale } from './font-preferences';
 import { loadGoogleFont, normalizeFontName, fontFamilyOverride } from '../utils/google-font';
 import { getLocaleThemeFont } from './locale-fonts';
-import { quoteMarkup } from '../utils/quote-markup';
+import { appendQuotePassage } from '../utils/quote-markup';
 import { defaultColor } from './themes';
 import { CITE_FACTOR } from './font';
 import { textDirection } from '../utils/text-direction';
@@ -271,19 +271,9 @@ export async function renderShareCard(
   passage.style.textTransform = options.uppercase ? 'uppercase' : 'none';
   passage.style.textAlign = options.alignment || 'start';
   const isFuzzy = store.get('fuzzy-clock') === true;
-  const passageParts = isFuzzy
-    ? ([[quote.quote_time_case, true]] as const)
-    : ([
-        [quote.quote_first, false],
-        [quote.quote_time_case, true],
-        [quote.quote_last, false],
-      ] as const);
-  for (const [text, highlighted] of passageParts) {
-    const span = document.createElement('span');
-    span.append(quoteMarkup(text || ''));
-    if (highlighted && options.highlightTime) span.style.color = accent;
-    passage.append(span);
-  }
+  appendQuotePassage(passage, quote, quote.locale, isFuzzy, (time) => {
+    if (options.highlightTime) time.style.color = accent;
+  });
   if (!passage.textContent) passage.textContent = isFuzzy ? quote.quote_time_case : quote.quote_raw;
   if (isFuzzy) {
     passage.style.textAlign = 'center';

@@ -233,14 +233,26 @@ final class PreviewDelegate: NSObject, NSApplicationDelegate {
                 let rows = clock.catalogue(locale)
                 clock.quote = locale == "en-GB" ? rows["16:00"]?.first { $0.title == "Through the Looking Glass" } : rows.values.flatMap { $0 }.first { $0.time.count > 25 && $0.first.count > 30 }
                 precondition(clock.quote != nil, "Missing Book highlight diagnostic passage")
-                let quoteText = clock.quote!.first + clock.quote!.time + clock.quote!.last
-                let expectedTimeRange = NSRange(location: (clock.quote!.first as NSString).length, length: (clock.quote!.time as NSString).length)
-                precondition(NativeClockView.highlightedRange(for: clock.quote!, text: quoteText, fuzzy: false) == expectedTimeRange, "Quote highlight must cover only the time")
-                precondition(NativeClockView.highlightedRange(for: clock.quote!, text: clock.quote!.time, fuzzy: true) == NSRange(location: 0, length: (clock.quote!.time as NSString).length), "Fuzzy highlight must cover the displayed time")
+                let displayed = NativeClockView.displayedPassage(clock.quote!, fallbackTime: minute, fuzzy: false,
+                    locale: locale, font: .systemFont(ofSize: 30), width: 400)
+                precondition(displayed.time == clock.quote!.time, "Time phrases in words retain their original highlight")
                 let bitmap = clock.bitmapImageRepForCachingDisplay(in: clock.bounds)!
                 clock.cacheDisplay(in: clock.bounds, to: bitmap)
                 try! bitmap.representation(using: .png, properties: [:])!.write(to: output.appendingPathComponent("book-highlight-" + locale + ".png"))
             }
+            let compact = NativeQuote(first: "Il a écrit « ", time: "6 h 55", last: " » !",
+                                      title: "", author: "", sfw: true)
+            let grouped = NativeClockView.displayedPassage(compact, fallbackTime: minute, fuzzy: false,
+                locale: "fr-FR", font: .systemFont(ofSize: 30), width: 400)
+            let ungrouped = NativeClockView.displayedPassage(compact, fallbackTime: minute, fuzzy: false,
+                locale: "fr-FR", font: .systemFont(ofSize: 30), width: 30)
+            let joiner = "\u{2060}"
+            precondition(grouped.before.hasSuffix(joiner) && grouped.after.hasPrefix(joiner),
+                         "French guillemets and spaces stay with the time")
+            precondition(grouped.time.replacingOccurrences(of: joiner, with: "") == compact.time,
+                         "The highlight covers only the time")
+            precondition(ungrouped.before == compact.first && ungrouped.time == compact.time && ungrouped.after == compact.last,
+                         "The time can wrap at narrow widths")
             clock.quoteLocale = "en-GB"
             clock.lastMinute = minute
             clock.quote = clock.catalogue("en-GB")["16:00"]!.first { $0.id == "1600-017" }!

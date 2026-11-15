@@ -13,7 +13,7 @@ import { cancelQuoteTransition, transitionQuote } from './transitions';
 
 let latestRequest = 0;
 import { store } from '../store';
-import { quoteMarkup } from '../utils/quote-markup';
+import { appendQuotePassage } from '../utils/quote-markup';
 import { readingStrings, showQuoteNotice } from './reading-ui';
 
 function prefetchNextQuotes(locale: string) {
@@ -149,7 +149,6 @@ export async function updateQuote({
 
   const quote = await getQuote(time, locale, preserveQuote, variantStep);
   if (request !== latestRequest) return;
-  const timeClass = quote.quote_time_case.replace(/<[^>]*>/g, '').length <= 11 ? 'time text-nowrap' : 'time';
   const blockquote = document.getElementById('quote');
 
   await transitionQuote(
@@ -176,17 +175,10 @@ export async function updateQuote({
         const p = document.createElement('p');
         if (testQuote) {
           p.textContent = testQuote;
-        } else if (store.get('fuzzy-clock') === true) {
-          const timeSpan = document.createElement('span');
-          timeSpan.className = timeClass;
-          timeSpan.append(quoteMarkup(quote.quote_time_case));
-          p.append(timeSpan);
         } else {
-          p.append(quoteMarkup(quote.quote_first));
-          const timeSpan = document.createElement('span');
-          timeSpan.className = timeClass;
-          timeSpan.append(quoteMarkup(quote.quote_time_case));
-          p.append(timeSpan, quoteMarkup(quote.quote_last));
+          appendQuotePassage(p, quote, locale, store.get('fuzzy-clock') === true, (time) => {
+            time.className = 'time';
+          });
         }
 
           const cite = document.createElement('cite');

@@ -64,7 +64,7 @@ struct ClockHomeView: View {
                         GeometryReader { geometry in
                             let quoteSize = min(44, max(28, geometry.size.width / 28))
                             VStack(alignment: quoteDirection == .rightToLeft ? .trailing : .leading, spacing: 12) {
-                                quoteView(quote, maximumSize: quoteSize)
+                                quoteView(quote, locale: primaryLocale, maximumSize: quoteSize)
                                 if !fuzzy {
                                     attributionView(quote.displayingAttribution(original: showOriginalAttribution), size: quoteSize * 0.72)
                                         .foregroundStyle(foreground.opacity(0.68))
@@ -211,16 +211,16 @@ struct ClockHomeView: View {
     }
 
     @ViewBuilder
-    private func quoteView(_ quote: Quote, maximumSize: CGFloat = 28) -> some View {
+    private func quoteView(_ quote: Quote, locale: String, maximumSize: CGFloat = 28) -> some View {
         let parts = quote.timeParts()
         if fuzzy {
-            Text(parts.time)
+            compactTimeText(parts.time, locale: locale, foreground: foreground,
+                            highlight: highlight ? accent : foreground)
                 .font(ClockSettings.quoteFont(quoteFont, size: 34))
-                .foregroundColor(highlight ? accent : foreground)
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity, alignment: .center)
         } else {
-            ReadableQuoteText(parts: parts, fontName: quoteFont, foreground: foreground,
+            ReadableQuoteText(parts: parts, locale: locale, fontName: quoteFont, foreground: foreground,
                               accent: accent, highlight: highlight, maximumSize: maximumSize,
                               minimumSize: 22)
         }
@@ -1301,7 +1301,7 @@ private struct ShareQuotePreview: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            ShareQuoteComposition(attribution: attribution, quote: quote, foreground: foreground, accent: accent,
+            ShareQuoteComposition(attribution: attribution, quote: quote, locale: locale, foreground: foreground, accent: accent,
                                   font: font, alignment: alignment, highlight: highlight,
                                   fuzzy: fuzzy,
                                   textSize: shareQuoteTextSize(quote: quote, locale: locale,
@@ -1338,7 +1338,7 @@ private struct QuoteShareCard: View {
         let inset = min(format.canvas.width, format.canvas.height) * 0.065
         let textColor = ClockSettings.foreground(for: background)
         VStack(alignment: .leading, spacing: 0) {
-            ShareQuoteComposition(attribution: attribution, quote: quote, foreground: textColor, accent: accent,
+            ShareQuoteComposition(attribution: attribution, quote: quote, locale: locale, foreground: textColor, accent: accent,
                                   font: font, alignment: alignment, highlight: highlight,
                                   fuzzy: fuzzy,
                                   textSize: shareQuoteTextSize(quote: quote, locale: locale,
@@ -1396,6 +1396,7 @@ private func appAttributionMode(_ mode: String) -> String {
 private struct ShareQuoteComposition: View {
     let attribution: String
     let quote: Quote
+    let locale: String
     let foreground: Color
     let accent: Color
     let font: QuoteShareFont
@@ -1409,15 +1410,15 @@ private struct ShareQuoteComposition: View {
         let attributionFont: Font = font.font(size: textSize * 0.5)
         VStack(spacing: textSize * 0.55) {
             if fuzzy {
-                Text(parts.time)
+                compactTimeText(parts.time, locale: locale, foreground: foreground,
+                                highlight: highlight ? accent : foreground)
                     .font(font.font(size: textSize))
                     .lineSpacing(font == .specialElite ? textSize * 0.18 : 0)
-                    .foregroundStyle(highlight ? accent : foreground)
                     .frame(maxWidth: .infinity, alignment: alignment.frame)
                     .multilineTextAlignment(alignment.text)
                     .minimumScaleFactor(0.55)
             } else {
-                ShareQuoteText(parts: parts, foreground: foreground, accent: accent, font: font,
+                ShareQuoteText(parts: parts, locale: locale, foreground: foreground, accent: accent, font: font,
                                alignment: alignment, highlight: highlight, maximumSize: textSize)
             }
             if attribution != "hidden" {
@@ -1449,7 +1450,8 @@ private struct ShareQuoteComposition: View {
 }
 
 private struct ShareQuoteText: View {
-    let parts: (before: String, time: String, after: String)
+    let parts: CompactQuoteTime.Parts
+    let locale: String
     let foreground: Color
     let accent: Color
     let font: QuoteShareFont
@@ -1468,9 +1470,10 @@ private struct ShareQuoteText: View {
     }
 
     private func line(at size: CGFloat) -> some View {
-        (Text(parts.before).foregroundColor(foreground) +
-         Text(parts.time).foregroundColor(highlight ? accent : foreground) +
-         Text(parts.after).foregroundColor(foreground))
+        let value = CompactQuoteTime.display(parts, locale: locale)
+        return (Text(value.before).foregroundColor(foreground) +
+                Text(value.time).foregroundColor(highlight ? accent : foreground) +
+                Text(value.after).foregroundColor(foreground))
             .font(font.font(size: size))
             .lineSpacing(font == .specialElite ? size * 0.18 : 0)
             .multilineTextAlignment(alignment.text)

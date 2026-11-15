@@ -101,6 +101,7 @@ def bundle(name, extension, architecture, data, version):
             '-framework', 'AppKit', '-framework', 'ScreenSaver',
             *(['-emit-library'] if library else ['-parse-as-library']),
             *[str(SOURCE / 'Sources' / source) for source in sources],
+            str(ROOT / 'apple/Shared/Models/CompactQuoteTime.swift'),
             *([str(exception_object)] if exception_object else []), '-o', str(thin))
         slices.append(str(thin))
     run('xcrun', 'lipo', '-create', *slices, '-output', str(binary))

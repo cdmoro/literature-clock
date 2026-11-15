@@ -5,7 +5,7 @@ import { getBaseLocale, getInterfaceLocale, getStrings, resolveLocale } from './
 import SETTINGS from './settings-strings';
 import { Locale, Quote } from '../types';
 import { fitQuote } from '../utils';
-import { quoteMarkup } from '../utils/quote-markup';
+import { appendQuotePassage } from '../utils/quote-markup';
 
 const strings = () => SETTINGS[getBaseLocale(getInterfaceLocale())];
 let translationRequest = 0;
@@ -115,18 +115,9 @@ export async function renderTranslation() {
     applyLocaleThemeFont(content);
     const isFuzzy = store.get('fuzzy-clock') === true;
     const passage = document.createElement('p');
-    if (isFuzzy) {
-      const translatedTime = document.createElement('span');
-      translatedTime.className = 'time';
-      translatedTime.append(quoteMarkup(translation.quote_time_case));
-      passage.append(translatedTime);
-    } else {
-      passage.append(quoteMarkup(translation.quote_first));
-      const translatedTime = document.createElement('span');
-      translatedTime.className = 'time';
-      translatedTime.append(quoteMarkup(translation.quote_time_case));
-      passage.append(translatedTime, quoteMarkup(translation.quote_last));
-    }
+    appendQuotePassage(passage, translation, locale, isFuzzy, (time) => {
+      time.className = 'time';
+    });
     if (store.get('bilingual-ruby') && supportsLineBreakableRuby()) {
       renderedAsRuby = applyRubyTranslation(passage, locale);
     } else {

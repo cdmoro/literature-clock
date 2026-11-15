@@ -288,23 +288,31 @@ public sealed class ClockSurface : Canvas
             var outlineRadius=12.0;
             var text=new TextBlock { TextWrapping=TextWrapping.Wrap, TextAlignment=fuzzy?TextAlignment.Center:TextAlignment.Left, FontFamily=Appearance.Font(p.Theme,language,p.Font), FontSize=fontSize, Foreground=Appearance.Brush(foreground,p.Theme=="terminal"?.8:1), FlowDirection=flow, LineHeight=fontSize*Appearance.Font(p.Theme,language,p.Font).LineSpacing*(p.Theme=="book"?1.35:p.Theme=="festive"?1.25:p.Theme=="terminal"?1.15:1), LineStackingStrategy=LineStackingStrategy.BlockLineHeight };
             if(outlineActive) text.Effect=new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=outlineRadius,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance };
+            var phrase = string.IsNullOrEmpty(item.time) ? quoteMinute : item.time;
+            var parts = (Before: fuzzy ? "" : item.first, Time: phrase, After: fuzzy ? "" : item.last);
+            var compact = CompactQuoteTime.Parse(parts.Before, parts.Time, parts.After, language);
+            if (compact != null)
+            {
+                var measure = new FormattedText(compact.Text, CultureInfo.CurrentCulture, flow,
+                    new Typeface(text.FontFamily, text.FontStyle, text.FontWeight, text.FontStretch),
+                    fontSize, Brushes.Black, VisualTreeHelper.GetDpi(this).PixelsPerDip);
+                parts = compact.DisplayParts(measure.WidthIncludingTrailingWhitespace <= width);
+            }
+            else if (fuzzy)
+            {
+                parts.Time = BalancedLines(phrase, text, width);
+            }
+            if (parts.Before.Length > 0) text.Inlines.Add(new Run(parts.Before));
+            var highlight = new Run(parts.Time);
+            if (p.Theme != "book") highlight.Foreground = Appearance.Brush(accent);
+            text.Inlines.Add(highlight);
+            if (parts.After.Length > 0) text.Inlines.Add(new Run(parts.After));
+            passage.Children.Add(p.Theme == "book" ? new BookText(text, highlight, Appearance.Brush(accent)) : text);
             if (!fuzzy) {
-                text.Inlines.Add(new Run(item.first));
-                var highlight=new Run(string.IsNullOrEmpty(item.time)?quoteMinute:item.time);
-                if(p.Theme!="book") highlight.Foreground=Appearance.Brush(accent);
-                text.Inlines.Add(highlight);
-                text.Inlines.Add(new Run(item.last));
-                passage.Children.Add(p.Theme=="book"?new BookText(text,highlight,Appearance.Brush(accent)):text);
                 var title=p.ShowOriginalAttributions?item.title_original??item.title:item.title;
                 var author=p.ShowOriginalAttributions?item.author_original??item.author:item.author;
                 var attribution=!fuzzy && p.QuoteAttribution=="below"?p.HideTitle?author:string.Join(", ",new[]{title,author}.WhereNonEmpty()):"";
                 if(attribution.Length>0) passage.Children.Add(new TextBlock { Text=(p.Theme=="terminal"?"> ":"— ")+attribution,FontFamily=text.FontFamily,FontSize=fontSize*.55,TextWrapping=TextWrapping.Wrap,FlowDirection=flow,Foreground=Appearance.Brush(foreground,.8),Margin=new Thickness(0,p.Theme=="book"?(ActualWidth<=750?16:24):fontSize*.35,0,0),Effect=outlineActive?new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=12,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance }:null });
-            } else {
-                var phrase=string.IsNullOrEmpty(item.time)?quoteMinute:item.time;
-                var highlight=new Run(BalancedLines(phrase,text,width));
-                if(p.Theme!="book") highlight.Foreground=Appearance.Brush(accent);
-                text.Inlines.Add(highlight);
-                passage.Children.Add(p.Theme=="book"?new BookText(text,highlight,Appearance.Brush(accent)):text);
             }
         }
         Append(q,quoteLocale,size);
