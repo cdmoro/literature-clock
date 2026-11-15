@@ -37,6 +37,23 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
                 tags = lambda text: Counter(re.findall(r'</?[^>]+>', text))
                 self.assertEqual(tags(row['Quote']), tags(source['Quote']))
 
+    def test_korean_reused_passage_preserves_both_times(self):
+        rows = self.catalogues['ko-KR']
+        first, second = (rows[identifier] for identifier in ('0954-002', '0958-000'))
+        self.assertEqual(first['Quote'], second['Quote'])
+        self.assertIn('10시 6분 전에', first['Quote'])
+        self.assertIn('10시 2분 전이었다', first['Quote'])
+        self.assertEqual(first['Quote time'], '10시 6분 전')
+        self.assertEqual(second['Quote time'], '10시 2분 전')
+
+    def test_korean_time_corrections_keep_source_precision(self):
+        rows = self.catalogues['ko-KR']
+        self.assertEqual(rows['0742-001']['Quote time'], '7시간 42분')
+        self.assertEqual(rows['0729-001']['Quote time'], '7시 30분이 되기 약 30초 전')
+        self.assertEqual(rows['1528-001']['Quote time'], '3시 30분이 다 됐네')
+        self.assertIn('5시 2분이 지나자', rows['1658-000']['Quote'])
+        self.assertIn('5시 2분 전에는', rows['1658-000']['Quote'])
+
     def test_known_time_regressions_match_source_meaning(self):
         examples = {
             'de-DE': ['0130-003', '0330-002', '1930-010'],
