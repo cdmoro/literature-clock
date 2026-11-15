@@ -7,6 +7,7 @@ import re
 import shutil
 import subprocess
 import tempfile
+import time
 from pathlib import Path
 
 APPLE = Path(__file__).resolve().parent
@@ -15,6 +16,23 @@ OUTPUT = APPLE / 'build'
 
 def run(*args):
     subprocess.run(list(map(str, args)), check=True)
+
+
+def create_disk_image(source, destination, volume_name):
+    command = ('diskutil', 'image', 'create', 'from', '--format', 'UDZO',
+               '--volumeName', volume_name, source, destination)
+    for attempt in range(3):
+        try:
+            run(*command)
+            return
+        except subprocess.CalledProcessError:
+            if attempt == 2:
+                raise
+            Path(destination).unlink(missing_ok=True)
+            delay = 5 * (attempt + 1)
+            print(f'Disk image creation failed; retrying in {delay}s '
+                  f'(attempt {attempt + 2}/3)', flush=True)
+            time.sleep(delay)
 
 
 def main():
@@ -87,8 +105,7 @@ def main():
     dmg = OUTPUT / 'Literature-Clock-App-macOS.dmg'
     if dmg.exists():
         dmg.unlink()
-    run('diskutil', 'image', 'create', 'from', '--format', 'UDZO',
-        '--volumeName', f'Literature Clock {version}', staging, dmg)
+    create_disk_image(staging, dmg, f'Literature Clock {version}')
     mountpoint = Path(tempfile.mkdtemp(prefix='literature-clock-dmg-', dir=OUTPUT))
     attached = False
     try:
