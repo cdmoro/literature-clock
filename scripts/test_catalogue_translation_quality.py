@@ -37,6 +37,14 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
                 tags = lambda text: Counter(re.findall(r'</?[^>]+>', text))
                 self.assertEqual(tags(row['Quote']), tags(source['Quote']))
 
+    def test_korean_catacombs_passage_preserves_the_noon_return(self):
+        rows = self.catalogues['ko-KR']
+        outbound, returning = rows['0500-013'], rows['1200-024']
+        self.assertEqual(outbound['Quote'], returning['Quote'])
+        self.assertEqual(outbound['Quote time'], '새벽 다섯 시')
+        self.assertEqual(returning['Quote time'], '정오')
+        self.assertIn('정오가 되어서야 지상으로 나오겠네', returning['Quote'])
+
     def test_korean_tide_passage_keeps_all_four_stages(self):
         rows = self.catalogues['ko-KR']
         stages = {'0321-002': '3시 21분', '0933-001': '9시 33분', '1239-000': '12시 39분'}
