@@ -6,6 +6,7 @@ import plistlib
 import re
 import shutil
 import subprocess
+import tempfile
 from pathlib import Path
 
 APPLE = Path(__file__).resolve().parent
@@ -84,9 +85,27 @@ def main():
         'Report beta issues: https://github.com/cdmoro/literature-clock/issues\n',
         encoding='utf-8')
     dmg = OUTPUT / 'Literature-Clock-App-macOS.dmg'
-    run('hdiutil', 'create', '-volname', f'Literature Clock {version}', '-srcfolder', staging,
-        '-ov', '-format', 'UDZO', dmg)
-    run('hdiutil', 'verify', dmg)
+    if dmg.exists():
+        dmg.unlink()
+    run('diskutil', 'image', 'create', 'from', '--format', 'UDZO',
+        '--volumeName', f'Literature Clock {version}', staging, dmg)
+    mountpoint = Path(tempfile.mkdtemp(prefix='literature-clock-dmg-', dir=OUTPUT))
+    attached = False
+    try:
+        run('diskutil', 'image', 'attach', '--readOnly', '--nobrowse',
+            '--mountPoint', mountpoint, dmg)
+        attached = True
+        packaged_app = mountpoint / app.name
+        if not packaged_app.is_dir() or not (mountpoint / 'READ-ME.txt').is_file():
+            raise SystemExit('DMG is missing the app or installation instructions')
+        applications_link = mountpoint / 'Applications'
+        if not applications_link.is_symlink() or applications_link.resolve() != Path('/Applications'):
+            raise SystemExit('DMG is missing the Applications shortcut')
+        run('codesign', '--verify', '--deep', '--strict', packaged_app)
+    finally:
+        if attached:
+            run('diskutil', 'eject', mountpoint)
+        shutil.rmtree(mountpoint, ignore_errors=True)
     digest = hashlib.sha256(dmg.read_bytes()).hexdigest()
     dmg.with_suffix('.dmg.sha256').write_text(f'{digest}  {dmg.name}\n')
     print(f'Created {dmg} (app {version}; universal; not notarized)')

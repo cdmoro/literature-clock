@@ -1,6 +1,6 @@
 # macOS app: first public beta checklist
 
-Target: **0.2.0**, build **12**, direct GitHub DMG, macOS 14+, Intel and
+Target: **0.2.0**, build **13**, direct GitHub DMG, macOS 14+, Intel and
 Apple silicon. The app uses an ad-hoc signature, without notarization or paid
 Apple Developer credentials. Consolidated `release/VERSION` is unchanged.
 
@@ -19,9 +19,8 @@ Apple Developer credentials. Consolidated `release/VERSION` is unchanged.
   strict signature checks, and each contain all 12 catalogues.
 - [x] Build 7 provider tests return matching catalogue quotes in all four
   families with the expected minute dates, language filtering and palettes.
-- [ ] Generate the build 7 DMG in an unrestricted Terminal or CI. The managed
-  local build staged the signed app but `hdiutil create` failed with
-  `Device not configured`.
+- [ ] Generate the build 13 DMG in CI and inspect the packaged app, widget,
+  Applications shortcut, installation instructions and checksum.
 - [x] User built and verified an ad-hoc universal DMG from Terminal.
 - [x] User installed the DMG and launched the app from Applications.
 - [x] Widgets changed quotes by minute in the earlier installed build.
