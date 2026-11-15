@@ -69,6 +69,9 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
         rows = self.catalogues['ko-KR']
         highlights = {
             '0008-000': '자정이 지난 지 8분',
+            '0136-000': '새벽 1시 36분쯤',
+            '0535-004': '5시 35분',
+            '1735-000': '5시 35분',
             '0220-000': '2시 20분',
             '0234-000': '2시 34분',
             '0235-001': '2시 35분',
@@ -86,6 +89,8 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
             with self.subTest(identifier=identifier):
                 self.assertEqual(rows[identifier]['Quote time'], expected)
         self.assertIn('분당 132회, 131회, 130회', rows['1511-001']['Quote'])
+        self.assertEqual(rows['0606-000']['Quote'], rows['1806-000']['Quote'])
+        self.assertEqual(rows['1806-000']['Quote time'], '6시 6분')
 
     def test_korean_distinguishes_clock_times_from_recording_offsets(self):
         rows = self.catalogues['ko-KR']
