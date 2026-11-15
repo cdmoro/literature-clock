@@ -9,6 +9,7 @@ import urllib.request
 from component_ownership import changed_components
 
 LABELS = {
+    "macOS app": ("affects:macos-app", "A34BDD"),
     "Web": ("affects:web", "2496ED"),
     "macOS": ("affects:macos-screensaver", "555555"),
     "Windows": ("affects:windows-screensaver", "0078D4"),

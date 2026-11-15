@@ -3,13 +3,16 @@
 > Turn your screen into a living anthology. Every minute of the day has its quote.
 
 [![macOS](https://img.shields.io/badge/macOS-Universal-black?logo=apple)](screensavers/macos-native/README.md)
+[![macOS App](https://img.shields.io/badge/macOS_App-public_beta-black?logo=apple)](apple/README.md)
 [![Windows](https://img.shields.io/badge/Windows-x64%20%7C%20ARM64-blue?logo=windows)](screensavers/windows-native/README.md)
 [![Web Demo](https://img.shields.io/badge/Web_Demo-Live-brightgreen)](https://literatureclock.netlify.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**Literature Clock** is an elegant, lightweight native screensaver for **macOS** and **Windows** that tells the time using excerpts from world literature. Each minute presents a real book passage mentioning the current hour and minute—delivering serendipitous moments of reading to your idle display.
+**Literature Clock** is an elegant, lightweight native screensaver for **macOS** and **Windows**, plus a native **macOS app with desktop widgets**. Each minute presents a real book passage mentioning the current hour and minute—bringing serendipitous moments of reading to your desktop or idle display.
 
 Also available as a full-featured [interactive web app](https://literatureclock.netlify.app/).
+
+The macOS app is in public beta. It requires macOS 14 or later and includes small, medium, large, and extra-large desktop widgets. The universal DMG supports Apple silicon and Intel. See the [Mac installation guide](apple/INSTALL.md), [app guide](apple/README.md), and [beta notes](apple/RELEASE_NOTES.md).
 
 https://github.com/user-attachments/assets/626ca478-d170-4176-90d9-c46580fcfa91
 
@@ -21,18 +24,18 @@ https://github.com/user-attachments/assets/626ca478-d170-4176-90d9-c46580fcfa91
 
 ### Download Literature Clock
 
-Turn your display into a literary clock. Choose your platform to get the native screensaver, or try the web app.
+Turn your display into a literary clock. Download a native screensaver or the macOS app, or try the web app.
 
-| <img src="https://cdn.simpleicons.org/apple/ffffff" alt="Apple" width="20" /> **macOS** | <img src="docs/windows.svg" alt="Windows" width="20" /> **Windows** |
-|:---:|:---:|
-| [Apple Silicon & Intel](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-macOS.saver.zip) | [x64](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-Windows-win-x64.scr) · [ARM64](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-Windows-win-arm64.scr) |
-| [Installation guide](screensavers/macos-native/README.md) | [Installation guide](screensavers/windows-native/README.md) |
+| <img src="https://cdn.simpleicons.org/apple/ffffff" alt="Apple" width="20" /> **macOS Screen Saver** | <img src="docs/windows.svg" alt="Windows" width="20" /> **Windows Screen Saver** | <img src="https://cdn.simpleicons.org/apple/ffffff" alt="Apple" width="20" /> **macOS App (beta)** |
+|:---:|:---:|:---:|
+| [Apple silicon & Intel](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-macOS.saver.zip) | [x64](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-Windows-win-x64.scr) · [ARM64](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-Windows-win-arm64.scr) | [Universal DMG](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-App-macOS.dmg) |
+| [Installation guide](screensavers/macos-native/README.md) | [Installation guide](screensavers/windows-native/README.md) | [Install the app and widgets](apple/INSTALL.md) |
 
 [🌎 Open the live web app](https://literatureclock.netlify.app/) · [All releases and version notes](https://github.com/cdmoro/literature-clock/releases/latest)
 
-Each consolidated release includes native downloads for macOS and Windows. Release notes list each component version and generated changes. The web app is hosted separately. The release workflow checks changes against the previous consolidated release and stops if a changed platform's version was not increased.
+Each consolidated release includes the macOS and Windows screensavers and the macOS app DMG. Release notes list each component version, app beta notes, and generated changes. The web app is hosted separately. The release workflow checks changes against the previous consolidated release and stops if a changed component's version was not increased.
 
-The production web app deploys when a consolidated release is prepared. Configure a Netlify production deploy hook for the `main` branch and save its URL as the `NETLIFY_PRODUCTION_DEPLOY_HOOK` Actions secret in the GitHub repository. The release workflow triggers that hook only after the release validation and native builds succeed. Until the secret is configured, the workflow skips the web deploy.
+The release workflow restores the matching ready Netlify deploy after release validation and all native builds succeed. Configure the `NETLIFY_AUTH_TOKEN` and `NETLIFY_SITE_ID` GitHub Actions secrets for the production Netlify site.
 
 </div>
 
@@ -52,6 +55,14 @@ The production web app deploys when a consolidated release is prepared. Configur
 ---
 
 ## 🚀 Download & Installation
+
+### macOS app and desktop widgets (public beta)
+
+1. Download the universal [`Literature-Clock-App-macOS.dmg`](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-App-macOS.dmg) from the latest GitHub release. It supports Apple silicon and Intel and requires macOS 14 or later.
+2. Open the DMG and drag **Literature Clock.app** to **Applications**. Open the app once to make its widgets available.
+3. To add a widget, Control-click the desktop, choose **Edit Widgets**, search for **Literature Clock**, then drag a size onto the desktop. Control-click a widget to configure its language and appearance.
+
+The beta is ad-hoc signed and not notarized. If Gatekeeper blocks the first launch, open **System Settings → Privacy & Security**, choose **Open Anyway** for Literature Clock, and confirm. See the [full Mac app installation guide](apple/INSTALL.md) for checksum instructions, updates, widget details, and troubleshooting.
 
 ### <img src="https://cdn.simpleicons.org/apple/ffffff" alt="Apple" width="20" /> macOS (Apple Silicon & Intel)
 1. Download [`Literature-Clock-Native-macOS.saver.zip`](https://github.com/cdmoro/literature-clock/releases/latest/download/Literature-Clock-Native-macOS.saver.zip).

@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - 'release/VERSION'
+      - 'apple/**'
+      - '.github/workflows/macos-app.yml'
       - '.github/workflows/release.yml'
       - 'package.json'
       - 'package-lock.json'
@@ -23,6 +25,8 @@ on:
     branches: [main]
     paths:
       - 'release/VERSION'
+
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -43,7 +47,7 @@ jobs:
         if: github.event_name == 'push'
         run: python3 scripts/validate_release_versions.py
       - name: Check component versions for pull requests
-        if: github.event_name == 'pull_request'
+        if: github.event_name != 'push'
         run: python3 scripts/validate_release_versions.py --pull-request
 
   macos:
@@ -68,6 +72,10 @@ jobs:
           path: |
             screensavers/macos-native/build/Literature-Clock-Native-macOS.saver.zip
             screensavers/macos-native/build/Literature-Clock-Native-macOS.saver.zip.sha256
+
+  macos-app:
+    needs: validate-versions
+    uses: ./.github/workflows/macos-app.yml
 
   windows:
     needs: validate-versions
@@ -94,9 +102,42 @@ jobs:
             screensavers/windows-native/build/Literature-Clock-Native-Windows-${{ matrix.runtime }}.scr
             screensavers/windows-native/build/Literature-Clock-Native-Windows-${{ matrix.runtime }}.scr.sha256
 
+  verify-artifacts:
+    needs: [macos, macos-app, windows]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test release artifact validation
+        run: python3 -m unittest discover -s apple -p 'test_release_artifacts.py'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: Literature-Clock-*
+          path: package
+          merge-multiple: true
+      - name: Verify complete artifact set and checksums
+        run: python3 apple/release_artifacts.py package
+      - name: Prepare macOS beta notes for review
+        run: |
+          python3 - <<'PYTHON'
+          import re
+          from pathlib import Path
+          config = Path('apple/Version.xcconfig').read_text()
+          version = re.search(r'^MARKETING_VERSION\s*=\s*(\S+)', config, re.M).group(1)
+          notes = Path('apple/RELEASE_NOTES.md').read_text().replace('{{APP_VERSION}}', version)
+          Path('macOS-beta-notes.md').write_text(notes)
+          PYTHON
+      - uses: actions/upload-artifact@v4
+        with:
+          name: macOS-beta-release-notes
+          path: macOS-beta-notes.md
+          if-no-files-found: error
+
   publish:
     if: github.event_name == 'push'
-    needs: [validate-versions, macos, windows]
+    needs: [validate-versions, macos, macos-app, windows, verify-artifacts]
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -128,18 +169,11 @@ jobs:
               raise SystemExit('Invalid release/VERSION; expected major.minor.patch')
           macos = Path('screensavers/macos-native/VERSION').read_text().strip()
           windows = Path('screensavers/windows-native/VERSION').read_text().strip()
+          app_config = Path('apple/Version.xcconfig').read_text()
+          app = re.search(r'^MARKETING_VERSION\s*=\s*(\S+)', app_config, re.M).group(1)
           web = json.loads(Path('package.json').read_text())['version']
           files = sorted(Path('package').glob('*'))
-          expected = {
-              'Literature-Clock-Native-macOS.saver.zip',
-              'Literature-Clock-Native-macOS.saver.zip.sha256',
-              'Literature-Clock-Native-Windows-win-x64.scr',
-              'Literature-Clock-Native-Windows-win-x64.scr.sha256',
-              'Literature-Clock-Native-Windows-win-arm64.scr',
-              'Literature-Clock-Native-Windows-win-arm64.scr.sha256',
-          }
-          if {file.name for file in files} != expected:
-              raise SystemExit('Release artifact set is incomplete or contains unexpected files')
+          subprocess.run(['python3', 'apple/release_artifacts.py', 'package'], check=True)
           tag = 'literature-clock-v' + version
           version_tuple = tuple(map(int, version.split('.')))
           mother_tags = []
@@ -168,7 +202,10 @@ jobs:
                   return True
               if path == 'package.json':
                   previous = json.loads(previous)['version']
+              elif path == 'apple/Version.xcconfig':
+                  previous = re.search(r'^MARKETING_VERSION\s*=\s*(\S+)', previous, re.M).group(1)
               return previous != current
+          app_updated = component_changed('apple/Version.xcconfig', app)
           macos_updated = component_changed('screensavers/macos-native/VERSION', macos)
           windows_updated = component_changed('screensavers/windows-native/VERSION', windows)
           web_updated = component_changed('package.json', web)
@@ -179,16 +216,20 @@ jobs:
 
           - <img src="https://cdn.simpleicons.org/apple/ffffff" alt="Apple" width="20" /> macOS screensaver: {macos}{marker(macos_updated)}
           - <img src="https://raw.githubusercontent.com/cdmoro/literature-clock/main/docs/windows.svg" alt="Windows" width="20" /> Windows screensaver: {windows}{marker(windows_updated)}
+          - 📖 macOS app (beta): {app}{marker(app_updated)}
           - 🌎 Web app: {web}{marker(web_updated)}
 
           This consolidated release includes the native macOS and Windows downloads for this project release. The web app is hosted at https://literatureclock.netlify.app/.
           ''')
           repository = os.environ['GITHUB_REPOSITORY']
+          app_notes = Path('apple/RELEASE_NOTES.md').read_text().replace('{{APP_VERSION}}', app)
+          download_url = f'https://github.com/{repository}/releases/download/{tag}/Literature-Clock-App-macOS.dmg'
+          notes += '\n' + app_notes + f'\n[Download the macOS app DMG]({download_url})\n'
           generated_command = ['gh', 'api', f'repos/{repository}/releases/generate-notes', '-f', f'tag_name={tag}', '-f', f'target_commitish={os.environ["GITHUB_SHA"]}']
           if previous_tag:
               generated_command.extend(['-f', f'previous_tag_name={previous_tag}'])
           generated = json.loads(subprocess.run(generated_command, check=True, capture_output=True, text=True).stdout)['body']
-          impact_names = {'affects:web': 'Web', 'affects:macos-screensaver': 'macOS screensaver', 'affects:windows-screensaver': 'Windows screensaver'}
+          impact_names = {'affects:macos-app': 'macOS app', 'affects:web': 'Web', 'affects:macos-screensaver': 'macOS screensaver', 'affects:windows-screensaver': 'Windows screensaver'}
           decorated = []
           for line in generated.splitlines():
               match = re.search(r'#(\d+)', line)
@@ -206,7 +247,7 @@ jobs:
 
   deploy-web:
     if: github.event_name == 'push'
-    needs: [validate-versions, macos, windows]
+    needs: [validate-versions, macos, macos-app, windows, verify-artifacts]
     runs-on: ubuntu-latest
     steps:
       - name: Publish the matching Netlify deploy
