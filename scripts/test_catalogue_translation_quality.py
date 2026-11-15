@@ -68,7 +68,10 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
     def test_korean_times_preserve_hours_minutes_and_duration(self):
         rows = self.catalogues['ko-KR']
         highlights = {
+            '0008-000': '자정이 지난 지 8분',
             '0305-000': '3시 5분쯤',
+            '1436-001': '두 시 삼십육 분',
+            '1857-000': '일곱 시 3분 전',
             '0744-001': '7시 44분',
             '1558-001': '3시 58분',
             '1942-003': '7시간 42분',
