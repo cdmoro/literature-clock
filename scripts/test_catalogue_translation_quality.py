@@ -37,6 +37,17 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
                 tags = lambda text: Counter(re.findall(r'</?[^>]+>', text))
                 self.assertEqual(tags(row['Quote']), tags(source['Quote']))
 
+    def test_korean_tide_passage_keeps_all_four_stages(self):
+        rows = self.catalogues['ko-KR']
+        stages = {'0321-002': '3시 21분', '0933-001': '9시 33분', '1239-000': '12시 39분'}
+        passage = rows['0321-002']['Quote']
+        for identifier, highlight in stages.items():
+            with self.subTest(identifier=identifier):
+                self.assertEqual(rows[identifier]['Quote'], passage)
+                self.assertEqual(rows[identifier]['Quote time'], highlight)
+        self.assertIn('썰물의 중간은 7시 15분', passage)
+        self.assertIn('밀물의 중간은 12시 39분', passage)
+
     def test_korean_reused_passage_preserves_both_times(self):
         rows = self.catalogues['ko-KR']
         first, second = (rows[identifier] for identifier in ('0954-002', '0958-000'))
