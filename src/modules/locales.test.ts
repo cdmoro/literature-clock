@@ -39,6 +39,8 @@ describe('resolveLocale', () => {
     ['ru-RU-u-hc-h23', 'ru-RU'],
     ['ru-RU-draft', 'ru-RU-draft'],
     ['ja', 'ja-JP'],
+    ['ko', 'ko-KR'],
+    ['ko-KR-u-hc-h23', 'ko-KR'],
     ['JA_jp', 'ja-JP'],
     ['ja-JP-u-hc-h23', 'ja-JP'],
     ['zh', 'zh-CN'],

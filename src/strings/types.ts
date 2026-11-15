@@ -72,6 +72,7 @@ export type Translations = {
   'el-GR': string;
   'zh-CN': string;
   'ja-JP': string;
+  'ko-KR': string;
   'ru-RU': string;
   eo: string;
   'ar-AE': string;

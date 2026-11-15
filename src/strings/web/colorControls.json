@@ -63,5 +63,10 @@
     "choose_color": "このテーマのカスタムカラーを選択",
     "reset_color": "このテーマの既定色に戻す",
     "default_color": "既定の色"
+  },
+  "ko-KR": {
+    "choose_color": "이 테마의 사용자 지정 색상 선택",
+    "reset_color": "이 테마의 기본 색상으로 복원",
+    "default_color": "기본 색상"
   }
 }

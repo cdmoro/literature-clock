@@ -53,7 +53,8 @@
         "value": "Jane Austen",
         "sources": []
       },
-      "pt-PT": "Jane Austen"
+      "pt-PT": "Jane Austen",
+      "ko-KR": "제인 오스틴"
     },
     "Mark Haddon": {
       "el-GR": {
@@ -99,7 +100,8 @@
         "sources": []
       },
       "pt-PT": "Mark Haddon",
-      "ru-RU": "Марк Хэддон"
+      "ru-RU": "Марк Хэддон",
+      "ko-KR": "마크 해던"
     },
     "Jeffrey Archer": {
       "ja-JP": {
@@ -146,7 +148,8 @@
         "value": "Jeffrey Archer",
         "sources": []
       },
-      "pt-PT": "Jeffrey Archer"
+      "pt-PT": "Jeffrey Archer",
+      "ko-KR": "제프리 아처"
     },
     "Stephen King": {
       "ja-JP": {
@@ -187,7 +190,8 @@
         "sources": []
       },
       "pt-PT": "Stephen King",
-      "ru-RU": "Стивен Кинг"
+      "ru-RU": "Стивен Кинг",
+      "ko-KR": "스티븐 킹"
     },
     "P.D. James": {
       "ja-JP": {
@@ -223,7 +227,8 @@
       },
       "pt-PT": "P.D. James",
       "ru-RU": "П.Д. Джеймс",
-      "zh-CN": "P.D.詹姆斯"
+      "zh-CN": "P.D.詹姆斯",
+      "ko-KR": "P. D. 제임스"
     },
     "Haruki Murakami": {
       "ja-JP": {
@@ -264,7 +269,8 @@
         "sources": []
       },
       "pt-PT": "Haruki Murakami",
-      "ru-RU": "Харуки Мураками"
+      "ru-RU": "Харуки Мураками",
+      "ko-KR": "무라카미 하루키"
     },
     "Ken Kesey": {
       "ja-JP": {
@@ -311,7 +317,8 @@
         "value": "Ken Kesey",
         "sources": []
       },
-      "pt-PT": "Ken Kesey"
+      "pt-PT": "Ken Kesey",
+      "ko-KR": "켄 키지"
     },
     "Thomas Hoover": {
       "el-GR": {
@@ -354,7 +361,8 @@
         "value": "Thomas Hoover",
         "sources": []
       },
-      "pt-PT": "Thomas Hoover"
+      "pt-PT": "Thomas Hoover",
+      "ko-KR": "토머스 후버"
     },
     "A.A. Milne": {
       "ar-AE": {
@@ -388,7 +396,8 @@
       },
       "pt-PT": "A.A. Milne",
       "ru-RU": "А.А. Милн",
-      "zh-CN": "A.A.米尔恩"
+      "zh-CN": "A.A.米尔恩",
+      "ko-KR": "A. A. 밀른"
     },
     "A.E. Housman": {
       "ar-AE": {
@@ -762,7 +771,8 @@
       },
       "pt-PT": "Agatha Christie",
       "ru-RU": "Агата Кристи",
-      "zh-CN": "阿加莎克里斯蒂"
+      "zh-CN": "阿加莎克里斯蒂",
+      "ko-KR": "애거사 크리스티"
     },
     "Akhil Sharma": {
       "ar-AE": {
@@ -1238,7 +1248,8 @@
       },
       "pt-PT": "Alexandre Dumas",
       "ru-RU": "Александр Дюма",
-      "zh-CN": "大仲马"
+      "zh-CN": "大仲马",
+      "ko-KR": "알렉상드르 뒤마"
     },
     "Alexsander S. Pushkin": {
       "ar-AE": {
@@ -3859,7 +3870,8 @@
       },
       "pt-PT": "Bo Giertz",
       "ru-RU": "Бо Гирц",
-      "zh-CN": "博·吉尔兹"
+      "zh-CN": "博·吉尔兹",
+      "ko-KR": "보 예르츠"
     },
     "Bob Goddard": {
       "ar-AE": {
@@ -4437,7 +4449,8 @@
       },
       "pt-PT": "C.S. Lewis",
       "ru-RU": "К.С. Льюис",
-      "zh-CN": "C.S.刘易斯"
+      "zh-CN": "C.S.刘易斯",
+      "ko-KR": "C. S. 루이스"
     },
     "Captain William Bligh": {
       "ar-AE": {
@@ -5222,7 +5235,8 @@
       },
       "pt-PT": "Charles Dickens",
       "ru-RU": "Чарльз Диккенс",
-      "zh-CN": "查尔斯·狄更斯"
+      "zh-CN": "查尔斯·狄更斯",
+      "ko-KR": "찰스 디킨스"
     },
     "Charles James Lever": {
       "ar-AE": {
@@ -5732,7 +5746,8 @@
       },
       "pt-PT": "Chris Walley",
       "ru-RU": "Крис Уолли",
-      "zh-CN": "克里斯·沃利"
+      "zh-CN": "克里斯·沃利",
+      "ko-KR": "크리스 월리"
     },
     "Christina Skye": {
       "ar-AE": {
@@ -6514,7 +6529,8 @@
       },
       "pt-PT": "Cormac McCarthy",
       "ru-RU": "Кормак МакКарти",
-      "zh-CN": "科马克·麦卡锡"
+      "zh-CN": "科马克·麦卡锡",
+      "ko-KR": "코맥 매카시"
     },
     "Craig Johnson": {
       "ar-AE": {
@@ -7330,7 +7346,8 @@
       },
       "pt-PT": "David Foster Wallace",
       "ru-RU": "Дэвид Фостер Уоллес",
-      "zh-CN": "大卫·福斯特·华莱士"
+      "zh-CN": "大卫·福斯特·华莱士",
+      "ko-KR": "데이비드 포스터 월리스"
     },
     "David Graham Phillips": {
       "ar-AE": {
@@ -7534,7 +7551,8 @@
       },
       "pt-PT": "David Mitchell",
       "ru-RU": "Дэвид Митчелл",
-      "zh-CN": "大卫·米切尔"
+      "zh-CN": "大卫·米切尔",
+      "ko-KR": "데이비드 미첼"
     },
     "David Nobbs": {
       "ar-AE": {
@@ -7942,7 +7960,8 @@
       },
       "pt-PT": "Dodie Smith",
       "ru-RU": "Доди Смит",
-      "zh-CN": "多迪·史密斯"
+      "zh-CN": "多迪·史密斯",
+      "ko-KR": "도디 스미스"
     },
     "Doma Mahmoud": {
       "ar-AE": {
@@ -8282,7 +8301,8 @@
       },
       "pt-PT": "Douglas Adams",
       "ru-RU": "Дуглас Адамс",
-      "zh-CN": "道格拉斯·亚当斯"
+      "zh-CN": "道格拉斯·亚当斯",
+      "ko-KR": "더글러스 애덤스"
     },
     "Douglas Coupland": {
       "ar-AE": {
@@ -9878,7 +9898,8 @@
       "pt-PT": "Ernest Hemingway",
       "ja-JP": "アーネストヘミングウェイ",
       "ru-RU": "Эрнест Хемингуэй",
-      "zh-CN": "欧内斯特·海明威"
+      "zh-CN": "欧内斯特·海明威",
+      "ko-KR": "어니스트 헤밍웨이"
     },
     "Ernest Shackleton": {
       "ar-AE": {
@@ -10098,7 +10119,8 @@
       "pt-PT": "F. Scott Fitzgerald",
       "ja-JP": "F.スコット・フィッツジェラルド",
       "ru-RU": "Ф. Скотт Фицджеральд",
-      "zh-CN": "F.斯科特·菲茨杰拉德"
+      "zh-CN": "F.斯科特·菲茨杰拉德",
+      "ko-KR": "F. 스콧 피츠제럴드"
     },
     "Fay Weldon": {
       "ar-AE": {
@@ -10414,7 +10436,8 @@
       "pt-PT": "Franz Kafka",
       "ja-JP": "フランツ・カフカ",
       "ru-RU": "Франц Кафка",
-      "zh-CN": "弗朗茨·卡夫卡"
+      "zh-CN": "弗朗茨·卡夫卡",
+      "ko-KR": "프란츠 카프카"
     },
     "Fred Sheehan": {
       "ar-AE": {
@@ -10786,7 +10809,8 @@
       "pt-PT": "Gabriel García Márquez",
       "ja-JP": "ガブリエル・ガルシア・マルケス",
       "ru-RU": "Габриэль Гарсиа Маркес",
-      "zh-CN": "加布里埃尔·加西亚·马尔克斯"
+      "zh-CN": "加布里埃尔·加西亚·马尔克斯",
+      "ko-KR": "가브리엘 가르시아 마르케스"
     },
     "Gail Carson Levine": {
       "ar-AE": {
@@ -11344,7 +11368,8 @@
       "pt-PT": "George Orwell",
       "ja-JP": "ジョージ・オーウェル",
       "ru-RU": "Джордж Оруэлл",
-      "zh-CN": "乔治·奥威尔"
+      "zh-CN": "乔治·奥威尔",
+      "ko-KR": "조지 오웰"
     },
     "George and Weedon Grossmith": {
       "ar-AE": {
@@ -12212,7 +12237,8 @@
       "pt-PT": "Gustave Flaubert",
       "ja-JP": "ギュスターヴ・フローベール",
       "ru-RU": "Гюстав Флобер",
-      "zh-CN": "古斯塔夫·福楼拜"
+      "zh-CN": "古斯塔夫·福楼拜",
+      "ko-KR": "귀스타브 플로베르"
     },
     "Guy Thorne": {
       "ar-AE": {
@@ -12832,7 +12858,8 @@
       "pt-PT": "Helen Fielding",
       "ja-JP": "ヘレン・フィールディング",
       "ru-RU": "Хелен Филдинг",
-      "zh-CN": "海伦·菲尔丁"
+      "zh-CN": "海伦·菲尔丁",
+      "ko-KR": "헬렌 필딩"
     },
     "Henning Mankell": {
       "ar-AE": {
@@ -13018,7 +13045,8 @@
       "pt-PT": "Henry Miller",
       "ja-JP": "ヘンリーミラー",
       "ru-RU": "Генри Миллер",
-      "zh-CN": "亨利·米勒"
+      "zh-CN": "亨利·米勒",
+      "ko-KR": "헨리 밀러"
     },
     "Herbert Asbury": {
       "ar-AE": {
@@ -13111,7 +13139,8 @@
       "pt-PT": "Herman Melville",
       "ja-JP": "ハーマン・メルヴィル",
       "ru-RU": "Герман Мелвилл",
-      "zh-CN": "赫尔曼·梅尔维尔"
+      "zh-CN": "赫尔曼·梅尔维尔",
+      "ko-KR": "허먼 멜빌"
     },
     "Herman Wouk": {
       "ar-AE": {
@@ -13511,7 +13540,8 @@
       "pt-PT": "Ian Fleming",
       "ja-JP": "イアン・フレミング",
       "ru-RU": "Иэн Флеминг",
-      "zh-CN": "伊恩·弗莱明"
+      "zh-CN": "伊恩·弗莱明",
+      "ko-KR": "이언 플레밍"
     },
     "Ian McEwan": {
       "ar-AE": {
@@ -13821,7 +13851,8 @@
       "pt-PT": "J. Ryan Stradal",
       "ja-JP": "J.ライアン・ストラダル",
       "ru-RU": "Дж. Райан Страдал",
-      "zh-CN": "J。瑞安·斯特拉达尔"
+      "zh-CN": "J。瑞安·斯特拉达尔",
+      "ko-KR": "J. 라이언 스트라달"
     },
     "J. Storer Clouston": {
       "ar-AE": {
@@ -14007,7 +14038,8 @@
       "pt-PT": "J.K. Rowling",
       "ja-JP": "JKローリング",
       "ru-RU": "Дж.К. Роулинг",
-      "zh-CN": "J.K.罗琳"
+      "zh-CN": "J.K.罗琳",
+      "ko-KR": "J. K. 롤링"
     },
     "J.L. Carr": {
       "ar-AE": {
@@ -14069,7 +14101,8 @@
       "pt-PT": "J.R.R. Tolkien",
       "ja-JP": "J.R.R.トールキン",
       "ru-RU": "Дж.Р.Р. Толкиен",
-      "zh-CN": "J.R.R.托尔金"
+      "zh-CN": "J.R.R.托尔金",
+      "ko-KR": "J. R. R. 톨킨"
     },
     "J.S. Fletcher": {
       "ar-AE": {
@@ -14689,7 +14722,8 @@
       "pt-PT": "James Joyce",
       "ja-JP": "ジェームズ・ジョイス",
       "ru-RU": "Джеймс Джойс",
-      "zh-CN": "詹姆斯乔伊斯"
+      "zh-CN": "詹姆斯乔伊斯",
+      "ko-KR": "제임스 조이스"
     },
     "James Pascoe": {
       "ar-AE": {
@@ -15526,7 +15560,8 @@
       "pt-PT": "Jim Butcher",
       "ja-JP": "ジム・ブッチャー",
       "ru-RU": "Джим Батчер",
-      "zh-CN": "吉姆·布彻"
+      "zh-CN": "吉姆·布彻",
+      "ko-KR": "짐 버처"
     },
     "Jim Thompson": {
       "ar-AE": {
@@ -16614,7 +16649,8 @@
       "pt-PT": "John Steinbeck",
       "ja-JP": "ジョン・スタインベック",
       "ru-RU": "Джон Стейнбек",
-      "zh-CN": "约翰·斯坦贝克"
+      "zh-CN": "约翰·斯坦贝克",
+      "ko-KR": "존 스타인벡"
     },
     "John Updike": {
       "ar-AE": {
@@ -17513,7 +17549,8 @@
       "pt-PT": "Jules Verne",
       "ja-JP": "ジュール・ヴェルヌ",
       "ru-RU": "Жюль Верн",
-      "zh-CN": "儒勒·凡尔纳"
+      "zh-CN": "儒勒·凡尔纳",
+      "ko-KR": "쥘 베른"
     },
     "Julia Kent": {
       "ar-AE": {
@@ -19159,7 +19196,8 @@
       "pt-PT": "Leo Tolstoy",
       "ja-JP": "レオ・トルストイ",
       "ru-RU": "Лев Толстой",
-      "zh-CN": "列夫·托尔斯泰"
+      "zh-CN": "列夫·托尔斯泰",
+      "ko-KR": "레프 톨스토이"
     },
     "Leonardo Sciascia": {
       "ar-AE": {
@@ -19221,7 +19259,8 @@
       "pt-PT": "Lew Wallace",
       "ja-JP": "ルー・ウォレス",
       "ru-RU": "Лью Уоллес",
-      "zh-CN": "卢·华莱士"
+      "zh-CN": "卢·华莱士",
+      "ko-KR": "루 월리스"
     },
     "Lewis Anselm da Costa Ritchie": {
       "ar-AE": {
@@ -19283,7 +19322,8 @@
       "pt-PT": "Lewis Carroll",
       "ja-JP": "ルイス・キャロル",
       "ru-RU": "Льюис Кэрролл",
-      "zh-CN": "刘易斯·卡罗尔"
+      "zh-CN": "刘易斯·卡罗尔",
+      "ko-KR": "루이스 캐럴"
     },
     "Liane Moriarty": {
       "ar-AE": {
@@ -20219,7 +20259,8 @@
       "pt-PT": "Marcel Aymé",
       "ja-JP": "マルセルエイメ",
       "ru-RU": "Марсель Эме",
-      "zh-CN": "马塞尔艾梅"
+      "zh-CN": "马塞尔艾梅",
+      "ko-KR": "마르셀 에메"
     },
     "Marcel Proust": {
       "ar-AE": {
@@ -20343,7 +20384,8 @@
       "pt-PT": "Margaret Atwood",
       "ja-JP": "マーガレット・アトウッド",
       "ru-RU": "Маргарет Этвуд",
-      "zh-CN": "玛格丽特·阿特伍德"
+      "zh-CN": "玛格丽特·阿特伍德",
+      "ko-KR": "마거릿 애트우드"
     },
     "Margaret Dickinson": {
       "ar-AE": {
@@ -20808,7 +20850,8 @@
       "pt-PT": "Mark Twain",
       "ja-JP": "マーク・トウェイン",
       "ru-RU": "Марк Твен",
-      "zh-CN": "马克·吐温"
+      "zh-CN": "马克·吐温",
+      "ko-KR": "마크 트웨인"
     },
     "Mark Z. Danielewski": {
       "ar-AE": {
@@ -21676,7 +21719,8 @@
       "pt-PT": "Michael Crichton",
       "ja-JP": "マイケル・クライトン",
       "ru-RU": "Майкл Крайтон",
-      "zh-CN": "迈克尔·克莱顿"
+      "zh-CN": "迈克尔·克莱顿",
+      "ko-KR": "마이클 크라이튼"
     },
     "Michael Cunningham": {
       "ar-AE": {
@@ -22141,7 +22185,8 @@
       "pt-PT": "Miguel de Cervantes",
       "ja-JP": "ミゲル・デ・セルバンテス",
       "ru-RU": "Мигель де Сервантес",
-      "zh-CN": "米格尔·德·塞万提斯"
+      "zh-CN": "米格尔·德·塞万提斯",
+      "ko-KR": "미겔 데 세르반테스"
     },
     "Miha Mazzini": {
       "ar-AE": {
@@ -23443,7 +23488,8 @@
       "pt-PT": "Oscar Wilde",
       "ja-JP": "オスカー・ワイルド",
       "ru-RU": "Оскар Уайльд",
-      "zh-CN": "奥斯卡·王尔德"
+      "zh-CN": "奥斯卡·王尔德",
+      "ko-KR": "오스카 와일드"
     },
     "Ottessa Moshfegh": {
       "ar-AE": {
@@ -23474,7 +23520,8 @@
       "pt-PT": "Ottessa Moshfegh",
       "ja-JP": "オテッサ・モシュフェグ",
       "ru-RU": "Оттесса Мошфег",
-      "zh-CN": "奥特莎·莫什菲"
+      "zh-CN": "奥特莎·莫什菲",
+      "ko-KR": "오테사 모시페그"
     },
     "Oyinkan Braithwaite": {
       "ar-AE": {
@@ -24875,7 +24922,8 @@
       "pt-PT": "Ray Bradbury",
       "ja-JP": "レイ・ブラッドベリ",
       "ru-RU": "Рэй Брэдбери",
-      "zh-CN": "雷·布拉德伯里"
+      "zh-CN": "雷·布拉德伯里",
+      "ko-KR": "레이 브래드버리"
     },
     "Ray Keating": {
       "ar-AE": {
@@ -24906,7 +24954,8 @@
       "pt-PT": "Ray Keating",
       "ja-JP": "レイ・キーティング",
       "ru-RU": "Рэй Китинг",
-      "zh-CN": "雷·基廷"
+      "zh-CN": "雷·基廷",
+      "ko-KR": "레이 키팅"
     },
     "Raymon Queneau": {
       "ar-AE": {
@@ -27699,7 +27748,8 @@
       "pt-PT": "Sir Arthur Conan Doyle",
       "ja-JP": "アーサー・コナン・ドイル卿",
       "ru-RU": "Сэр Артур Конан Дойл",
-      "zh-CN": "亚瑟柯南道尔爵士"
+      "zh-CN": "亚瑟柯南道尔爵士",
+      "ko-KR": "아서 코넌 도일"
     },
     "Sir Hall Caine": {
       "ar-AE": {
@@ -27761,7 +27811,8 @@
       "pt-PT": "Sophie Kinsella",
       "ja-JP": "ソフィー・キンセラ",
       "ru-RU": "Софи Кинселла",
-      "zh-CN": "苏菲金塞拉"
+      "zh-CN": "苏菲金塞拉",
+      "ko-KR": "소피 킨셀라"
     },
     "Sophie McKenzie": {
       "ar-AE": {
@@ -28350,7 +28401,8 @@
       "pt-PT": "Steve Toltz",
       "ja-JP": "スティーブ・トルツ",
       "ru-RU": "Стив Тольц",
-      "zh-CN": "史蒂夫·托尔茨"
+      "zh-CN": "史蒂夫·托尔茨",
+      "ko-KR": "스티브 톨츠"
     },
     "Steven Galloway": {
       "ar-AE": {
@@ -30182,7 +30234,8 @@
       "pt-PT": "Victor Hugo",
       "ja-JP": "ヴィクター・ヒューゴ",
       "ru-RU": "Виктор Гюго",
-      "zh-CN": "维克多·雨果"
+      "zh-CN": "维克多·雨果",
+      "ko-KR": "빅토르 위고"
     },
     "Virginia Woolf": {
       "ar-AE": {
@@ -30213,7 +30266,8 @@
       "pt-PT": "Virginia Woolf",
       "ja-JP": "ヴァージニア・ウルフ",
       "ru-RU": "Вирджиния Вульф",
-      "zh-CN": "弗吉尼亚·伍尔夫"
+      "zh-CN": "弗吉尼亚·伍尔夫",
+      "ko-KR": "버지니아 울프"
     },
     "Vladimir Nabokov": {
       "ar-AE": {
@@ -30957,7 +31011,8 @@
       "pt-PT": "William Kent Krueger",
       "ja-JP": "ウィリアム・ケント・クルーガー",
       "ru-RU": "Уильям Кент Крюгер",
-      "zh-CN": "威廉·肯特·克鲁格"
+      "zh-CN": "威廉·肯特·克鲁格",
+      "ko-KR": "윌리엄 켄트 크루거"
     },
     "William Le Quex": {
       "ar-AE": {
@@ -31174,7 +31229,8 @@
       "pt-PT": "William Shakespeare",
       "ja-JP": "ウィリアム・シェイクスピア",
       "ru-RU": "Уильям Шекспир",
-      "zh-CN": "威廉·莎士比亚"
+      "zh-CN": "威廉·莎士比亚",
+      "ko-KR": "윌리엄 셰익스피어"
     },
     "William Trevor": {
       "ar-AE": {
@@ -31586,7 +31642,8 @@
           "sources": [
             "https://azbooka.ru/books/gordost-i-predybezhdenie"
           ]
-        }
+        },
+        "ko-KR": "오만과 편견"
       },
       "Emma": {
         "el-GR": "Έμμα",
@@ -31675,7 +31732,8 @@
             "https://www.jarir.com/arabic-books-669070.html"
           ]
         },
-        "eo": "La Scivolema Okazaĵo de la Hundo en la Nokta Tempo"
+        "eo": "La Scivolema Okazaĵo de la Hundo en la Nokta Tempo",
+        "ko-KR": "한밤중에 개에게 일어난 의문의 사건"
       }
     },
     "Ken Kesey": {
@@ -31705,7 +31763,8 @@
         "zh-CN": "飞越疯人院",
         "ru-RU": "Пролетая над гнездом кукушки",
         "pt-PT": "Um voou sobre o ninho do cuco",
-        "eo": "Unu flugis super la kukolan neston"
+        "eo": "Unu flugis super la kukolan neston",
+        "ko-KR": "뻐꾸기 둥지 위로 날아간 새"
       },
       "Sometimes a Great Notion": {
         "de-DE": "Manchmal eine tolle Idee",
@@ -31738,7 +31797,8 @@
         "pt-PT": "Honra entre ladrões",
         "eo": "Honoro inter ŝtelistoj",
         "ar-AE": "شرف بين اللصوص",
-        "ja-JP": "盗まれた独立宣言"
+        "ja-JP": "盗まれた独立宣言",
+        "ko-KR": "도둑들의 명예"
       },
       "A Matter of Honor": {
         "de-DE": "Eine Frage der Ehre",
@@ -32270,7 +32330,8 @@
         "ru-RU": "Слепая ива, Спящая женщина",
         "zh-CN": "盲柳，睡女",
         "ar-AE": "صفصافة عمياء، امرأة نائمة",
-        "eo": "Blinda Saliko, Dormanta Virino"
+        "eo": "Blinda Saliko, Dormanta Virino",
+        "ko-KR": "눈먼 버드나무와 잠자는 여자"
       },
       "1Q84": {
         "es-ES": "1T84",
@@ -32348,7 +32409,8 @@
         "zh-CN": "《奇鸟行状录与世界尽头》",
         "ar-AE": "أرض العجائب المسلوقة ونهاية العالم",
         "eo": "Malmola Boligita Mirlando kaj la Fino de la Mondo",
-        "ja-JP": "ハードボイルド・ワンダーランドと世界の終わり"
+        "ja-JP": "ハードボイルド・ワンダーランドと世界の終わり",
+        "ko-KR": "세계의 끝과 하드보일드 원더랜드"
       },
       "Kafka on the Shore": {
         "de-DE": "Kafka am Ufer",
@@ -32430,7 +32492,8 @@
         "ru-RU": "Доктор Сон",
         "zh-CN": "睡梦医生",
         "ar-AE": "دكتور سليب",
-        "eo": "Doktoro Dormo"
+        "eo": "Doktoro Dormo",
+        "ko-KR": "닥터 슬립"
       },
       "11/22/63": {
         "de-DE": "22.11.63",
@@ -32461,7 +32524,8 @@
         "es-ES": "Billy Summers",
         "it-IT": "Billy Summers",
         "eo": "Billy Summers",
-        "ja-JP": "ビリー・サマーズ"
+        "ja-JP": "ビリー・サマーズ",
+        "ko-KR": "빌리 서머스"
       },
       "Carrie": {
         "el-GR": "Κάρι",
@@ -32578,7 +32642,8 @@
         "de-DE": "Joyland",
         "pt-PT": "Joyland",
         "eo": "Ĝojlando",
-        "ja-JP": "ジョイランド"
+        "ja-JP": "ジョイランド",
+        "ko-KR": "조이랜드"
       },
       "Salem’s Lot": {
         "de-DE": "Salems Grundstück",
@@ -32630,7 +32695,8 @@
         "zh-CN": "《闪灵》",
         "ar-AE": "ساطع",
         "eo": "La Brilo",
-        "ja-JP": "ザ・シャイニング"
+        "ja-JP": "ザ・シャイニング",
+        "ko-KR": "샤이닝"
       },
       "The Stand": {
         "de-DE": "Der Stand",
@@ -32656,7 +32722,8 @@
         "zh-CN": "《汤米诺克》",
         "ar-AE": "The Tommyknockers",
         "eo": "La Tommyknockers",
-        "ja-JP": "トミーノッカーズ"
+        "ja-JP": "トミーノッカーズ",
+        "ko-KR": "토미노커스"
       }
     },
     "Thomas Hoover": {
@@ -32671,7 +32738,8 @@
         "pt-PT": "Projeto Ciclope",
         "eo": "Projekto Ciklopo",
         "ar-AE": "مشروع سايكلوبس",
-        "ja-JP": "サイクロプス計画"
+        "ja-JP": "サイクロプス計画",
+        "ko-KR": "프로젝트 사이클롭스"
       },
       "Project Daedalus": {
         "de-DE": "Projekt Daedalus",
@@ -32942,7 +33010,8 @@
         "zh-CN": "《无人生还》",
         "ar-AE": "ثم لم يكن هناك شيء",
         "eo": "Kaj Tiam Estis Neniuj",
-        "ja-JP": "そして誰もいなくなった"
+        "ja-JP": "そして誰もいなくなった",
+        "ko-KR": "그리고 아무도 없었다"
       },
       "Death on the Nile": {
         "de-DE": "Tod auf dem Nil",
@@ -34835,7 +34904,8 @@
         "eo": "Drakulo",
         "fr-FR": "Dracula",
         "it-IT": "Dracula",
-        "ja-JP": "ドラキュラ"
+        "ja-JP": "ドラキュラ",
+        "ko-KR": "드라큘라"
       }
     },
     "Brandon Taylor": {
@@ -35097,7 +35167,8 @@
         "zh-CN": "银椅",
         "ar-AE": "الكرسي الفضي",
         "eo": "La Arĝenta Seĝo",
-        "ja-JP": "銀の椅子"
+        "ja-JP": "銀の椅子",
+        "ko-KR": "은의자"
       },
       "The Voyage of the Dawn Treader": {
         "de-DE": "Die Reise der Morgenröte",
@@ -35507,7 +35578,8 @@
         "zh-CN": "《远大前程》",
         "ar-AE": "رائع التوقعات",
         "eo": "Grandaj Atendoj",
-        "ja-JP": "大きな期待"
+        "ja-JP": "大きな期待",
+        "ko-KR": "위대한 유산"
       },
       "Oliver Twist": {
         "el-GR": "Όλιβερ Τουίστ",
@@ -35705,7 +35777,8 @@
         "fr-FR": "Jane Eyre",
         "it-IT": "Jane Eyre",
         "pt-PT": "Jane Eyre",
-        "ja-JP": "ジェーン・エア"
+        "ja-JP": "ジェーン・エア",
+        "ko-KR": "제인 에어"
       },
       "The Professor": {
         "de-DE": "Der Professor",
@@ -36272,7 +36345,8 @@
         "zh-CN": "《老无所依》",
         "ar-AE": "لا يوجد بلد لكبار السن",
         "eo": "Neniu Lando por Maljunuloj",
-        "ja-JP": "老人には国はない"
+        "ja-JP": "老人には国はない",
+        "ko-KR": "노인을 위한 나라는 없다"
       },
       "The Road": {
         "de-DE": "Die Straße",
@@ -36810,7 +36884,8 @@
         "zh-CN": "云图",
         "ar-AE": "أطلس السحاب",
         "eo": "Nuba Atlaso",
-        "ja-JP": "クラウド・アトラス"
+        "ja-JP": "クラウド・アトラス",
+        "ko-KR": "클라우드 아틀라스"
       },
       "Ghostwritten": {
         "de-DE": "Ghostwriter",
@@ -37185,7 +37260,8 @@
         "zh-CN": "《101斑点狗》",
         "ar-AE": "الـ101 كلب مرقش",
         "eo": "La 101 Dalmatoj",
-        "ja-JP": "101匹わんちゃん"
+        "ja-JP": "101匹わんちゃん",
+        "ko-KR": "101마리 달마시안"
       }
     },
     "Doma Mahmoud": {
@@ -37340,7 +37416,8 @@
         "zh-CN": "《秘史》",
         "ar-AE": "التاريخ السري",
         "eo": "La Sekreta Historio",
-        "ja-JP": "秘密の歴史"
+        "ja-JP": "秘密の歴史",
+        "ko-KR": "비밀의 계절"
       }
     },
     "Dornford Yates": {
@@ -37478,7 +37555,8 @@
         "zh-CN": "《灵魂漫长的黑暗下午茶》",
         "ar-AE": "وقت الشاي الداكن الطويل في الروح",
         "eo": "La Longa Malhela Te-Tempo de la Animo",
-        "ja-JP": "魂の長く暗いティータイム"
+        "ja-JP": "魂の長く暗いティータイム",
+        "ko-KR": "영혼의 길고 어두운 티타임"
       }
     },
     "Douglas Coupland": {
@@ -38130,7 +38208,8 @@
         "ar-AE": "مرتفعات ويذرينج",
         "de-DE": "Wuthering Heights",
         "eo": "Vuthering Heights",
-        "ja-JP": "嵐が丘"
+        "ja-JP": "嵐が丘",
+        "ko-KR": "폭풍의 언덕"
       }
     },
     "Emily Dickinson": {
@@ -38509,7 +38588,8 @@
         "zh-CN": "《了不起的盖茨比》",
         "ar-AE": "غاتسبي العظيم",
         "eo": "La Granda Gatsby",
-        "ja-JP": "華麗なるギャツビー"
+        "ja-JP": "華麗なるギャツビー",
+        "ko-KR": "위대한 개츠비"
       },
       "This Side of Paradise": {
         "de-DE": "Diese Seite des Paradieses",
@@ -38522,7 +38602,8 @@
         "zh-CN": "人间天堂",
         "ar-AE": "هذا الجانب من الجنة",
         "eo": "Tiu Flanko de Paradizo",
-        "ja-JP": ">楽園のこちら側"
+        "ja-JP": ">楽園のこちら側",
+        "ko-KR": "낙원의 이쪽"
       }
     },
     "Fay Weldon": {
@@ -38761,7 +38842,8 @@
         "zh-CN": "审判",
         "ar-AE": "المحاكمة",
         "eo": "La Testo",
-        "ja-JP": "試練"
+        "ja-JP": "試練",
+        "ko-KR": "소송"
       }
     },
     "Fred Sheehan": {
@@ -38864,7 +38946,8 @@
         "zh-CN": "罪与罚",
         "ar-AE": "الجريمة والعقاب",
         "eo": "Krimo kaj Puno",
-        "ja-JP": "罪と罰"
+        "ja-JP": "罪と罰",
+        "ko-KR": "죄와 벌"
       },
       "Notes from the Underground": {
         "de-DE": "Notizen aus dem Untergrund",
@@ -39325,7 +39408,8 @@
         "zh-CN": "《金枝》",
         "ar-AE": "الغصن الذهبي",
         "eo": "La Ora Branĉo",
-        "ja-JP": "金の枝"
+        "ja-JP": "金の枝",
+        "ko-KR": "황금가지"
       }
     },
     "George Herbert Fosdike Nichols": {
@@ -39437,7 +39521,8 @@
         "eo": "1984",
         "ja-JP": "一九八四年",
         "ru-RU": "1984",
-        "zh-CN": "一九八四"
+        "zh-CN": "一九八四",
+        "ko-KR": "1984"
       }
     },
     "George and Weedon Grossmith": {
@@ -39974,7 +40059,8 @@
         "de-DE": "Madame Bovary",
         "fr-FR": "Madame Bovary",
         "eo": "Madame Bovary",
-        "ja-JP": "ボヴァリー夫人"
+        "ja-JP": "ボヴァリー夫人",
+        "ko-KR": "보바리 부인"
       }
     },
     "Guy Thorne": {
@@ -40062,7 +40148,8 @@
         "zh-CN": "时间机器",
         "ar-AE": "الزمن الآلة",
         "eo": "La Tempomaŝino",
-        "ja-JP": "タイムマシン"
+        "ja-JP": "タイムマシン",
+        "ko-KR": "타임머신"
       },
       "The Wheels of Chance: A Bicycling Idyll": {
         "de-DE": "Die Räder des Zufalls: Eine Fahrradidylle",
@@ -40284,7 +40371,8 @@
         "zh-CN": "《杀死一只知更鸟》",
         "ar-AE": "قتل الطائر المحاكي",
         "eo": "Mortigi Mokbirdon",
-        "ja-JP": "モッキンバードを殺すには"
+        "ja-JP": "モッキンバードを殺すには",
+        "ko-KR": "앵무새 죽이기"
       }
     },
     "Harry Leon Wilson": {
@@ -40417,7 +40505,8 @@
         "zh-CN": "BJ单身日记",
         "ar-AE": "مذكرات بريدجيت جونز",
         "eo": "La Taglibro de Bridget Jones",
-        "ja-JP": "ブリジット・ジョーンズの日記"
+        "ja-JP": "ブリジット・ジョーンズの日記",
+        "ko-KR": "브리짓 존스의 일기"
       }
     },
     "Henning Mankell": {
@@ -40598,7 +40687,8 @@
         "zh-CN": "北回归线",
         "ar-AE": "مدار السرطان",
         "eo": "Tropiko de Kankro",
-        "ja-JP": "北回帰線"
+        "ja-JP": "北回帰線",
+        "ko-KR": "북회귀선"
       }
     },
     "Herbert Asbury": {
@@ -40837,7 +40927,8 @@
         "zh-CN": "《朗姆酒日记》",
         "ar-AE": "الرم يوميات",
         "eo": "La Ruma Taglibro",
-        "ja-JP": "ラム日記"
+        "ja-JP": "ラム日記",
+        "ko-KR": "럼 다이어리"
       }
     },
     "Iain Banks": {
@@ -40901,7 +40992,8 @@
         },
         "fr-FR": "Casino Royale",
         "eo": "Casino Royale",
-        "ja-JP": "カジノ・ロワイヤル"
+        "ja-JP": "カジノ・ロワイヤル",
+        "ko-KR": "카지노 로얄"
       },
       "On Her Majesty’s Secret Service": {
         "de-DE": "Im Geheimdienst Ihrer Majestät",
@@ -41341,7 +41433,8 @@
         "zh-CN": "哈利·波特与魔法石",
         "ar-AE": "هاري بوتر وحجر الساحر",
         "eo": "Harry Potter kaj la Sorĉŝtono",
-        "ja-JP": "ハリー・ポッターと賢者の石"
+        "ja-JP": "ハリー・ポッターと賢者の石",
+        "ko-KR": "해리 포터와 마법사의 돌"
       }
     },
     "J.L. Carr": {
@@ -41371,7 +41464,8 @@
         "zh-CN": "《指环王：护戒使者》",
         "ar-AE": "زمالة الخاتم",
         "eo": "La Kunularo de la Ringo",
-        "ja-JP": "指輪の仲間"
+        "ja-JP": "指輪の仲間",
+        "ko-KR": "반지 원정대"
       },
       "The Hobbit": {
         "de-DE": "Der Hobbit",
@@ -41762,7 +41856,8 @@
         "zh-CN": "都柏林人",
         "ar-AE": "دبلن",
         "eo": "Dublinistoj",
-        "ja-JP": "ダブリナーズ"
+        "ja-JP": "ダブリナーズ",
+        "ko-KR": "더블린 사람들"
       },
       "Finnegans Wake": {
         "es-ES": "Estela de Finnegans",
@@ -43032,7 +43127,8 @@
         "zh-CN": "盖普眼中的世界",
         "ar-AE": "العالم وفقًا لغارب",
         "eo": "La Mondo Laŭ Garp",
-        "ja-JP": "ガープの世界"
+        "ja-JP": "ガープの世界",
+        "ko-KR": "가프가 본 세상"
       }
     },
     "John Kennedy Toole": {
@@ -44927,7 +45023,8 @@
         "de-DE": "Anna Karenina",
         "it-IT": "Anna Karenina",
         "eo": "Anna Karenina",
-        "ja-JP": "アンナ・カレーニナ"
+        "ja-JP": "アンナ・カレーニナ",
+        "ko-KR": "안나 카레니나"
       },
       "War and Peace": {
         "de-DE": "Krieg und Frieden",
@@ -44940,7 +45037,8 @@
         "zh-CN": "战争与和平",
         "ar-AE": "الحرب والسلام",
         "eo": "Milito kaj Paco",
-        "ja-JP": "戦争と平和"
+        "ja-JP": "戦争と平和",
+        "ko-KR": "전쟁과 평화"
       }
     },
     "Leonardo Sciascia": {
@@ -45000,7 +45098,8 @@
         "zh-CN": "《爱丽丝梦游仙境》",
         "ar-AE": "مغامرات أليس في بلاد العجائب",
         "eo": "La Aventuroj de Alicio en Mirlando",
-        "ja-JP": "不思議の国のアリス"
+        "ja-JP": "不思議の国のアリス",
+        "ko-KR": "이상한 나라의 앨리스"
       },
       "Crundle Castle": {
         "el-GR": "Καστλ Κραντλ",
@@ -45525,7 +45624,8 @@
         "zh-CN": "穿墙人",
         "ar-AE": "الرجل الذي سار عبر الجدران",
         "eo": "La Homo kiu Promenis Tra Muroj",
-        "ja-JP": "壁を通り抜けた男"
+        "ja-JP": "壁を通り抜けた男",
+        "ko-KR": "벽으로 드나드는 남자"
       }
     },
     "Marcel Proust": {
@@ -46255,7 +46355,8 @@
         "it-IT": "Frankenstein",
         "pt-PT": "Frankenstein",
         "eo": "Frankenstein",
-        "ja-JP": "フランケンシュタイン"
+        "ja-JP": "フランケンシュタイン",
+        "ko-KR": "프랑켄슈타인"
       }
     },
     "Matt Coyle": {
@@ -46573,7 +46674,8 @@
         "de-DE": "Jurassic Park",
         "it-IT": "Jurassic Park",
         "eo": "Ĵurasa Parko",
-        "ja-JP": "ジュラシック・パーク"
+        "ja-JP": "ジュラシック・パーク",
+        "ko-KR": "쥬라기 공원"
       },
       "The Andromeda Strain": {
         "de-DE": "Der Andromeda-Stamm",
@@ -46850,7 +46952,8 @@
         "ar-AE": "دون كيجوت دي لا مانشا",
         "es-ES": "Don Quijote de la Mancha",
         "eo": "Don Quijote de la Mancha",
-        "ja-JP": "ドン・キホーテ・デ・ラ・マンチャ"
+        "ja-JP": "ドン・キホーテ・デ・ラ・マンチャ",
+        "ko-KR": "돈키호테"
       }
     },
     "Miha Mazzini": {
@@ -47589,7 +47692,8 @@
         "zh-CN": "《道林·格雷的画像》",
         "ar-AE": "صورة دوريان رمادي",
         "eo": "La Bildo de Dorian Gray",
-        "ja-JP": "ドリアン・グレイの肖像"
+        "ja-JP": "ドリアン・グレイの肖像",
+        "ko-KR": "도리언 그레이의 초상"
       }
     },
     "Ottessa Moshfegh": {
@@ -49481,7 +49585,8 @@
         "zh-CN": "革命之路",
         "ar-AE": "الطريق الثوري",
         "eo": "Revolucia Vojo",
-        "ja-JP": "革命の道"
+        "ja-JP": "革命の道",
+        "ko-KR": "레볼루셔너리 로드"
       }
     },
     "Rick Raphael": {
@@ -50862,7 +50967,8 @@
         "zh-CN": "血字的研究",
         "ar-AE": "دراسة في اللون القرمزي",
         "eo": "Studo en Skarlata",
-        "ja-JP": "スカーレットの研究"
+        "ja-JP": "スカーレットの研究",
+        "ko-KR": "주홍색 연구"
       },
       "His Last Bow An Epilogue of Sherlock Holmes": {
         "de-DE": "Seine letzte Verbeugung Ein Epilog von Sherlock Holmes",
@@ -50927,7 +51033,8 @@
         "zh-CN": "《福尔摩斯探案集》",
         "ar-AE": "مغامرات شيرلوك هولمز",
         "eo": "La Aventuroj de Ŝerloko Holmso",
-        "ja-JP": "シャーロック・ホームズの冒険"
+        "ja-JP": "シャーロック・ホームズの冒険",
+        "ko-KR": "셜록 홈스의 모험"
       },
       "The Empty House": {
         "de-DE": "Das leere Haus",
@@ -50979,7 +51086,8 @@
         "zh-CN": "《四签名》",
         "ar-AE": "العلامة الأربعة",
         "eo": "La Signo de Kvar",
-        "ja-JP": "ザ・サイン・オブ・フォー"
+        "ja-JP": "ザ・サイン・オブ・フォー",
+        "ko-KR": "네 개의 서명"
       },
       "The Valley of Fear": {
         "de-DE": "Das Tal der Angst",
@@ -52567,7 +52675,8 @@
         "ar-AE": "البؤساء",
         "de-DE": "Les Misérables",
         "eo": "Les Misérables",
-        "ja-JP": "レ・ミゼラブル"
+        "ja-JP": "レ・ミゼラブル",
+        "ko-KR": "레 미제라블"
       },
       "The Toilers of the Sea": {
         "de-DE": "Die Werktätigen des Meeres",
@@ -52621,7 +52730,8 @@
         "zh-CN": "《达洛维夫人》",
         "ar-AE": "السيدة. دالواي",
         "eo": "Sinjorino. Dalloway",
-        "ja-JP": "夫人。ダロウェイ"
+        "ja-JP": "夫人。ダロウェイ",
+        "ko-KR": "댈러웨이 부인"
       },
       "Orlando": {
         "el-GR": "Ορλάντο",
@@ -53351,7 +53461,8 @@
         "zh-CN": "仲夏夜之梦",
         "ar-AE": "حلم ليلة منتصف الصيف",
         "eo": "Somernokta sonĝo",
-        "ja-JP": "真夏の夜の夢"
+        "ja-JP": "真夏の夜の夢",
+        "ko-KR": "한여름 밤의 꿈"
       },
       "As You Like It": {
         "de-DE": "Wie es Ihnen gefällt",
@@ -53377,7 +53488,8 @@
         "it-IT": "Hamlet",
         "pt-PT": "Hamlet",
         "eo": "Vilaĝeto",
-        "ja-JP": "ハムレット"
+        "ja-JP": "ハムレット",
+        "ko-KR": "햄릿"
       },
       "Henry IV": {
         "de-DE": "Heinrich IV",

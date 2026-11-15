@@ -8,7 +8,7 @@ enum ClockLocale {
         let language = normalized.split(separator: "-").first.map(String.init) ?? ""
         let dominant = ["en": "en-GB", "es": "es-ES", "fr": "fr-FR", "it": "it-IT",
                         "pt": "pt-PT", "de": "de-DE", "el": "el-GR", "zh": "zh-CN",
-                        "ru": "ru-RU", "eo": "eo", "ar": "ar-AE", "ja": "ja-JP"]
+                        "ru": "ru-RU", "eo": "eo", "ar": "ar-AE", "ja": "ja-JP", "ko": "ko-KR"]
         if let match = dominant[language], supported.contains(match) { return match }
         return "en-GB"
     }

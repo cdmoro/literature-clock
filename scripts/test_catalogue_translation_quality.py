@@ -209,6 +209,12 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
                         self.assertIn(localized[identifier], rows[identifier]['Quote'])
                         if identifier == '1430-008':
                             self.assertIn('釘', rows[identifier]['Quote'])
+                    elif locale == 'ko-KR':
+                        localized = {'1400-029': '레메디오스', '1900-026': '아우렐리아노 트리스테',
+                                     '0600-019': '타르데프스키', '1430-008': '트래블러'}
+                        self.assertIn(localized[identifier], rows[identifier]['Quote'])
+                        if identifier == '1430-008':
+                            self.assertIn('못을', rows[identifier]['Quote'])
                     elif locale == 'zh-CN':
                         # Chinese transliteration is legitimate; Traveler is retained as a name.
                         if identifier == '1430-008':

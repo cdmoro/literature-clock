@@ -193,5 +193,20 @@
     "favoritesFull": "お気に入りが上限（500件）に達しました。新しく保存するには1件削除してください。",
     "storageUnavailable": "この端末に変更を保存できませんでした。ブラウザーの保存権限を確認してください。",
     "historyCleared": "履歴を消去しました"
+  },
+  "ko-KR": {
+    "copyLink": "인용문 링크 복사",
+    "linkCopied": "링크를 복사했습니다",
+    "linkFailed": "링크를 공유할 수 없습니다. 다시 시도해 주세요.",
+    "quoteUnavailable": "선택한 언어 또는 콘텐츠 필터에서 이 인용문을 표시할 수 없어 다른 인용문을 표시합니다.",
+    "pause": "읽기 일시 정지",
+    "resume": "현재 시각으로 돌아가기",
+    "pausedAt": "일시 정지 시각",
+    "favoriteSaved": "인용문을 저장했습니다",
+    "favoriteRemoved": "즐겨찾기에서 제거했습니다",
+    "filteredLibrary": "콘텐츠 필터로 인해 일부 저장된 인용문이 숨겨져 있습니다.",
+    "favoritesFull": "즐겨찾기가 가득 찼습니다(500개). 새로 저장하려면 하나를 삭제하세요.",
+    "storageUnavailable": "이 기기에 변경 사항을 저장할 수 없습니다. 브라우저의 저장소 권한을 확인하세요.",
+    "historyCleared": "기록을 지웠습니다"
   }
 }
