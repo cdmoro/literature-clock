@@ -31771,7 +31771,13 @@
         "ar-AE": "Northanger دير",
         "de-DE": "Northanger Abbey",
         "eo": "Northanger Abbey",
-        "ja-JP": "ノーザンガー修道院"
+        "ja-JP": "ノーザンガー修道院",
+        "pl-PL": {
+          "value": "Opactwo Northanger",
+          "sources": [
+            "https://wydawnictwoakcent.pl/ksiazka/opactwo-northanger/"
+          ]
+        }
       },
       "Sense and Sensibility": {
         "de-DE": "Sinn und Sinnlichkeit",
@@ -32622,7 +32628,13 @@
         "eo": "1Q84",
         "ja-JP": "1Q84",
         "ru-RU": "1Q84",
-        "zh-CN": "1Q84"
+        "zh-CN": "1Q84",
+        "pl-PL": {
+          "value": "1Q84",
+          "sources": [
+            "https://www.bn.org.pl/download/document/1730301777.pdf"
+          ]
+        }
       },
       "1Q84, Book One": {
         "de-DE": "1Q84, Buch Eins",
@@ -32882,7 +32894,13 @@
         "it-IT": "Carrie",
         "pt-PT": "Carrie",
         "eo": "Carrie",
-        "ja-JP": "キャリー"
+        "ja-JP": "キャリー",
+        "pl-PL": {
+          "value": "Carrie",
+          "sources": [
+            "https://www.proszynski.pl/product/carrie-15"
+          ]
+        }
       },
       "Dreamcatcher": {
         "de-DE": "Traumfänger",
@@ -36156,7 +36174,13 @@
         "ar-AE": "رائع التوقعات",
         "eo": "Grandaj Atendoj",
         "ja-JP": "大きな期待",
-        "ko-KR": "위대한 유산"
+        "ko-KR": "위대한 유산",
+        "pl-PL": {
+          "value": "Wielkie nadzieje",
+          "sources": [
+            "https://wydawnictwomg.pl/wielkie-nadzieje/"
+          ]
+        }
       },
       "Oliver Twist": {
         "el-GR": "Όλιβερ Τουίστ",
@@ -36881,7 +36905,8 @@
         "zh-CN": "险恶街",
         "ar-AE": "الشارع الشرير",
         "eo": "Sinister Street",
-        "ja-JP": "邪悪な街路"
+        "ja-JP": "邪悪な街路",
+        "pl-PL": "Złowroga ulica"
       }
     },
     "Connie Willis": {
@@ -37419,7 +37444,13 @@
         "zh-CN": "聋哑句子",
         "ar-AE": "جملة صماء",
         "eo": "Surda Frazo",
-        "ja-JP": "聾唖刑"
+        "ja-JP": "聾唖刑",
+        "pl-PL": {
+          "value": "Skazani na ciszę",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/30425/skazani-na-cisze"
+          ]
+        }
       }
     },
     "David Mack": {
@@ -37515,7 +37546,13 @@
         "zh-CN": "骨钟",
         "ar-AE": "الساعات العظمية",
         "eo": "La Ostaj Horloĝoj",
-        "ja-JP": "骨時計"
+        "ja-JP": "骨時計",
+        "pl-PL": {
+          "value": "Czasomierze",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/237974/czasomierze"
+          ]
+        }
       },
       "The Thousand Autumns of Jacob de Zoet": {
         "de-DE": "Die tausend Herbste von Jacob de Zoet",
@@ -38019,7 +38056,13 @@
         "zh-CN": "金翅雀",
         "ar-AE": "الحسون",
         "eo": "La Kardelo",
-        "ja-JP": "ゴシキヒワ"
+        "ja-JP": "ゴシキヒワ",
+        "pl-PL": {
+          "value": "Szczygieł",
+          "sources": [
+            "https://mail.wydawnictwoznak.pl/proza/szczygiel-barwione-brzegi-wyd-2025"
+          ]
+        }
       },
       "The Secret History": {
         "de-DE": "Die geheime Geschichte",
@@ -38549,7 +38592,8 @@
         "zh-CN": "《倾城之恋》",
         "ar-AE": "الحب في السقوط المدينة",
         "eo": "Amo en Falinta Urbo",
-        "ja-JP": "崩壊した街の愛"
+        "ja-JP": "崩壊した街の愛",
+        "pl-PL": "Miłość w upadającym mieście"
       }
     },
     "Eleanor M. Ingram": {
@@ -38594,7 +38638,13 @@
         "zh-CN": "《失踪的树木之岛》",
         "ar-AE": "جزيرة الأشجار المفقودة",
         "eo": "La Insulo de Mankintaj Arboj",
-        "ja-JP": "消えた木の島"
+        "ja-JP": "消えた木の島",
+        "pl-PL": {
+          "value": "Wyspa zaginionych drzew",
+          "sources": [
+            "https://wydawnictwopoznanskie.pl/produkt/wyspa-zaginionych-drzew-wyd-3/"
+          ]
+        }
       }
     },
     "Elin Hilderbrand": {
@@ -38863,7 +38913,13 @@
         "de-DE": "Wuthering Heights",
         "eo": "Vuthering Heights",
         "ja-JP": "嵐が丘",
-        "ko-KR": "폭풍의 언덕"
+        "ko-KR": "폭풍의 언덕",
+        "pl-PL": {
+          "value": "Wichrowe Wzgórza",
+          "sources": [
+            "https://wydawnictwomg.pl/wichrowe-wzgorza/"
+          ]
+        }
       }
     },
     "Emily Dickinson": {
@@ -39523,7 +39579,13 @@
         "ar-AE": "المحاكمة",
         "eo": "La Testo",
         "ja-JP": "試練",
-        "ko-KR": "소송"
+        "ko-KR": "소송",
+        "pl-PL": {
+          "value": "Proces",
+          "sources": [
+            "https://wolnelektury.pl/katalog/lektura/kafka-proces/"
+          ]
+        }
       }
     },
     "Fred Sheehan": {
@@ -40567,7 +40629,13 @@
         "zh-CN": "罗西计划",
         "ar-AE": "مشروع روزي",
         "eo": "La Rosie Projekto",
-        "ja-JP": "ロージープロジェクト"
+        "ja-JP": "ロージープロジェクト",
+        "pl-PL": {
+          "value": "Projekt „Rosie”",
+          "sources": [
+            "https://www.mediarodzina.pl/produkt/projekt-rosie/"
+          ]
+        }
       }
     },
     "Graham Greene": {
@@ -40971,7 +41039,13 @@
         "de-DE": "101 Reykjavik",
         "it-IT": "101 Reykjavik",
         "eo": "101 Rejkjaviko",
-        "ja-JP": "101 レイキャビク"
+        "ja-JP": "101 レイキャビク",
+        "pl-PL": {
+          "value": "101 Reykjavik",
+          "sources": [
+            "https://wydawnictwo.artrage.pl/products/101-reykjavik"
+          ]
+        }
       }
     },
     "Hammond Innes": {
@@ -41180,7 +41254,13 @@
         "zh-CN": "卡塔琳娜·布鲁姆的失落荣誉",
         "ar-AE": "الشرف المفقود كاثرينا بلوم",
         "eo": "La Perdita Honoro de Katharina Blum",
-        "ja-JP": "カタリーナ・ブルムの失われた名誉"
+        "ja-JP": "カタリーナ・ブルムの失われた名誉",
+        "pl-PL": {
+          "value": "Utracona cześć Katarzyny Blum",
+          "sources": [
+            "https://integro.ciniba.edu.pl/integro/191901474995/boll-heinrich/utracona-czesc-katarzyny-blum-albo-jak-powstaje-przemoc-i-do-czego-moze-doprowadzic"
+          ]
+        }
       }
     },
     "Helen DeWitt": {
@@ -41717,7 +41797,13 @@
         "fr-FR": "Casino Royale",
         "eo": "Casino Royale",
         "ja-JP": "カジノ・ロワイヤル",
-        "ko-KR": "카지노 로얄"
+        "ko-KR": "카지노 로얄",
+        "pl-PL": {
+          "value": "Casino Royale",
+          "sources": [
+            "https://www.wydawnictwoznak.pl/ksiazka/Casino-Royale/47"
+          ]
+        }
       },
       "On Her Majesty’s Secret Service": {
         "de-DE": "Im Geheimdienst Ihrer Majestät",
@@ -41833,6 +41919,12 @@
           "value": "Магия крови",
           "sources": [
             "https://fantlab.ru/work274614"
+          ]
+        },
+        "pl-PL": {
+          "value": "Magia krwawi",
+          "sources": [
+            "https://rcin.org.pl/ibl/Content/232096/PDF/WA248_268801_2020-2021_PBL-2020-21-recepcja_o.pdf"
           ]
         }
       }
@@ -42107,7 +42199,13 @@
         "zh-CN": "哈利·波特与死亡圣器",
         "ar-AE": "هاري بوتر والأقداس المهلكة",
         "eo": "Harry Potter kaj la Relikvoj de la Morto",
-        "ja-JP": "ハリー・ポッターと死の秘宝"
+        "ja-JP": "ハリー・ポッターと死の秘宝",
+        "pl-PL": {
+          "value": "Harry Potter i Insygnia Śmierci",
+          "sources": [
+            "https://www.mediarodzina.pl/produkt/harry-potter-i-insygnia-smierci-2/"
+          ]
+        }
       },
       "Harry Potter and the Half-Blood Prince": {
         "de-DE": "Harry Potter und der Halbblutprinz",
@@ -42321,7 +42419,8 @@
         "zh-CN": "夜行者",
         "ar-AE": "أهل الليل",
         "eo": "La Noktaj Homoj",
-        "ja-JP": "ザ・ナイト・ピープル"
+        "ja-JP": "ザ・ナイト・ピープル",
+        "pl-PL": "Ludzie nocy"
       }
     },
     "Jack Heath": {
@@ -42366,7 +42465,8 @@
         "zh-CN": "小号",
         "ar-AE": "البوق",
         "eo": "Trumpeto",
-        "ja-JP": "トランペット"
+        "ja-JP": "トランペット",
+        "pl-PL": "Trąbka"
       }
     },
     "Jacqueline Wilson": {
@@ -42714,7 +42814,8 @@
         "zh-CN": "致命十字",
         "ar-AE": "الصليب القاتل",
         "eo": "Deadly Cross",
-        "ja-JP": "デッドリー・クロス"
+        "ja-JP": "デッドリー・クロス",
+        "pl-PL": "Śmiertelna przeprawa"
       },
       "NYPD Red 3": {
         "de-DE": "NYPD Rot 3",
@@ -43589,7 +43690,13 @@
         "zh-CN": "生人勿进",
         "ar-AE": "دع الشخص الصحيح يدخل",
         "eo": "Lasu la Ĝustan Unu",
-        "ja-JP": "正しい人を入れてください"
+        "ja-JP": "正しい人を入れてください",
+        "pl-PL": {
+          "value": "Pozwól mi wejść",
+          "sources": [
+            "https://sklep.zysk.com.pl/pozwol-mi-wejsc.html"
+          ]
+        }
       }
     },
     "John Barnes": {
@@ -44215,7 +44322,13 @@
         "zh-CN": "自由",
         "ar-AE": "الحرية",
         "eo": "Liberecon",
-        "ja-JP": "自由"
+        "ja-JP": "自由",
+        "pl-PL": {
+          "value": "Wolność",
+          "sources": [
+            "https://w.bibliotece.pl/6586027/Wolno%C5%9B%C4%87"
+          ]
+        }
       },
       "The Corrections": {
         "de-DE": "Die Korrekturen",
@@ -44866,7 +44979,13 @@
         "zh-CN": "亚瑟和乔治",
         "ar-AE": "آرثر وجورج",
         "eo": "Arturo kaj Georgo",
-        "ja-JP": "アーサーとジョージ"
+        "ja-JP": "アーサーとジョージ",
+        "pl-PL": {
+          "value": "Arthur & George",
+          "sources": [
+            "https://e-isbn.pl/IsbnWeb/onix/summary.html?record_id=7401072"
+          ]
+        }
       }
     },
     "Julian May": {
@@ -48163,7 +48282,13 @@
         "zh-CN": "权力",
         "ar-AE": "القوة",
         "eo": "La Potenco",
-        "ja-JP": "ザ・パワー"
+        "ja-JP": "ザ・パワー",
+        "pl-PL": {
+          "value": "Siła",
+          "sources": [
+            "https://www.marginesy.com.pl/sklep/produkt/133150/sila?idcat=0"
+          ]
+        }
       }
     },
     "Natasha Solomons": {
@@ -48223,7 +48348,13 @@
         "zh-CN": "美国众神",
         "ar-AE": "أمريكي الآلهة",
         "eo": "Usonaj Dioj",
-        "ja-JP": "アメリカン・ゴッズ"
+        "ja-JP": "アメリカン・ゴッズ",
+        "pl-PL": {
+          "value": "Amerykańscy bogowie",
+          "sources": [
+            "https://mag.com.pl/amerykanscy-bogowie-wyd-7/"
+          ]
+        }
       },
       "The Comical Tragedy or Tragical Comedy of Mr. Punch": {
         "de-DE": "Die komische Tragödie oder tragische Komödie von Mr. Punch",
@@ -48634,7 +48765,13 @@
         "ar-AE": "صورة دوريان رمادي",
         "eo": "La Bildo de Dorian Gray",
         "ja-JP": "ドリアン・グレイの肖像",
-        "ko-KR": "도리언 그레이의 초상"
+        "ko-KR": "도리언 그레이의 초상",
+        "pl-PL": {
+          "value": "Portret Doriana Graya",
+          "sources": [
+            "https://wolnelektury.pl/katalog/lektura/wilde-portret-doriana-graya/"
+          ]
+        }
       }
     },
     "Ottessa Moshfegh": {
@@ -48789,7 +48926,13 @@
         "zh-CN": "无辜之血",
         "ar-AE": "دماء بريئة",
         "eo": "Senkulpa Sango",
-        "ja-JP": "イノセント・ブラッド"
+        "ja-JP": "イノセント・ブラッド",
+        "pl-PL": {
+          "value": "Niewinna krew",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/181225/niewinna-krew"
+          ]
+        }
       },
       "Original Sin": {
         "de-DE": "Erbsünde",
@@ -48947,7 +49090,8 @@
         "zh-CN": "《皮囊之下》",
         "ar-AE": "الجمجمة تحت الجلد",
         "eo": "La Kranio Sub la Haŭto",
-        "ja-JP": "皮膚の下の頭蓋骨"
+        "ja-JP": "皮膚の下の頭蓋骨",
+        "pl-PL": "Czaszka pod skórą"
       },
       "Unnatural Causes": {
         "de-DE": "Unnatürliche Ursachen",
@@ -49688,7 +49832,8 @@
         "zh-CN": "蓝泉",
         "ar-AE": "Blue Springs",
         "eo": "Bluaj Fontoj",
-        "ja-JP": "ブルー・スプリングス"
+        "ja-JP": "ブルー・スプリングス",
+        "pl-PL": "Blue Springs"
       },
       "French Creek": {
         "de-DE": "Französischer Bach",
@@ -50150,7 +50295,8 @@
         "ar-AE": "قلوب الأسد",
         "eo": "Leonkoroj",
         "ja-JP": "ライオンハート",
-        "ru-RU": "Lionhearts"
+        "ru-RU": "Lionhearts",
+        "pl-PL": "Lwie serca"
       },
       "Murderer’s Row": {
         "de-DE": "Mörderreihe",
@@ -50272,7 +50418,8 @@
         "zh-CN": "《我打电话的地方》",
         "ar-AE": "أين أتصل من",
         "eo": "De kie mi vokas",
-        "ja-JP": "どこから電話してます"
+        "ja-JP": "どこから電話してます",
+        "pl-PL": "Skąd dzwonię"
       },
       "Whoever Was Using This Bed": {
         "de-DE": "Wer auch immer dieses Bett benutzt hat",
@@ -50313,7 +50460,13 @@
         "zh-CN": "《夜长梦多》",
         "ar-AE": "النوم الكبير",
         "eo": "La Granda Dormo",
-        "ja-JP": "大きな眠り"
+        "ja-JP": "大きな眠り",
+        "pl-PL": {
+          "value": "Głęboki sen",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/213214/gleboki-sen"
+          ]
+        }
       },
       "The High Window": {
         "de-DE": "Das hohe Fenster",
@@ -51514,7 +51667,13 @@
         "zh-CN": "午夜之子",
         "ar-AE": "أطفال منتصف الليل",
         "eo": "Midnight’s Children",
-        "ja-JP": "ミッドナイト・チルドレン"
+        "ja-JP": "ミッドナイト・チルドレン",
+        "pl-PL": {
+          "value": "Dzieci północy",
+          "sources": [
+            "https://www.rebis.com.pl/pl/products/dzieci-polnocy-10618.html"
+          ]
+        }
       },
       "Satanic Verses": {
         "de-DE": "Satanische Verse",
@@ -52585,7 +52744,13 @@
         "zh-CN": "《龙纹身的女孩》",
         "ar-AE": "الفتاة ذات وشم التنين",
         "eo": "La Knabino kun la Drako-Tatuo",
-        "ja-JP": "ドラゴン・タトゥーの女"
+        "ja-JP": "ドラゴン・タトゥーの女",
+        "pl-PL": {
+          "value": "Mężczyźni, którzy nienawidzą kobiet",
+          "sources": [
+            "https://www.czarnaowca.pl/kategorie/kryminal-thriller-sensacja/mezczyzni-ktorzy-nienawidza-kobiet%2Cp1614693149"
+          ]
+        }
       }
     },
     "Stuart M. Kaminsky": {
@@ -54270,7 +54435,13 @@
         "zh-CN": "神经漫游者",
         "ar-AE": "الرجل العصبي",
         "eo": "Neŭromantino",
-        "ja-JP": "ニューロマンサー"
+        "ja-JP": "ニューロマンサー",
+        "pl-PL": {
+          "value": "Neuromancer",
+          "sources": [
+            "https://abc.uw.edu.pl/katalog/ksiazka/6865"
+          ]
+        }
       }
     },
     "William Goldman": {
@@ -54285,7 +54456,13 @@
         "zh-CN": "《公主新娘》",
         "ar-AE": "العروس الأميرة",
         "eo": "La Princino-Novedzino",
-        "ja-JP": "プリンセス・ブライド"
+        "ja-JP": "プリンセス・ブライド",
+        "pl-PL": {
+          "value": "Narzeczona księcia",
+          "sources": [
+            "https://ws.wydawnictwo-jaguar.pl/sklep/produkt/676/narzeczona-ksiecia"
+          ]
+        }
       }
     },
     "William Hertling": {
@@ -54356,7 +54533,8 @@
         "zh-CN": "铜河",
         "ar-AE": "نهر النحاس",
         "eo": "Kopra Rivero",
-        "ja-JP": "コッパーリバー"
+        "ja-JP": "コッパーリバー",
+        "pl-PL": "Copper River"
       },
       "Corpus Delicti": {
         "es-ES": "Cuerpo del Delito",
@@ -54369,7 +54547,8 @@
         "fr-FR": "Corpus Delicti",
         "pt-PT": "Corpus Delicti",
         "eo": "Corpus Delikto",
-        "ja-JP": "コーパス・デリクティ"
+        "ja-JP": "コーパス・デリクティ",
+        "pl-PL": "Dowód zbrodni"
       },
       "Iron Lake": {
         "de-DE": "Eisensee",
@@ -54382,7 +54561,13 @@
         "zh-CN": "铁湖",
         "ar-AE": "بحيرة الحديد",
         "eo": "Fera Lago",
-        "ja-JP": "アイアン・レイク"
+        "ja-JP": "アイアン・レイク",
+        "pl-PL": {
+          "value": "Zło nad Jeziorem Iron",
+          "sources": [
+            "https://wydawnictwoswiatksiazki.pl/tworca/william-kent-krueger/"
+          ]
+        }
       },
       "Mercy Falls": {
         "el-GR": "Μέρσι Φολς",
@@ -54599,7 +54784,13 @@
         "pt-PT": "Hamlet",
         "eo": "Vilaĝeto",
         "ja-JP": "ハムレット",
-        "ko-KR": "햄릿"
+        "ko-KR": "햄릿",
+        "pl-PL": {
+          "value": "Hamlet",
+          "sources": [
+            "https://wolnelektury.pl/katalog/lektura/hamlet/"
+          ]
+        }
       },
       "Henry IV": {
         "de-DE": "Heinrich IV",
@@ -54827,7 +55018,13 @@
         "zh-CN": "暗示",
         "ar-AE": "تنويهات",
         "eo": "Indigoj",
-        "ja-JP": "暗示"
+        "ja-JP": "暗示",
+        "pl-PL": {
+          "value": "Przebłyski",
+          "sources": [
+            "https://www.wydawnictwoznak.pl/ksiazka/Przeblyski/9180"
+          ]
+        }
       },
       "White Teeth": {
         "de-DE": "Weiße Zähne",
