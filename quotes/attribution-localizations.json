@@ -30364,7 +30364,13 @@
       "pt-PT": "Vladimir Nabokov",
       "ja-JP": "ウラジーミル・ナボコフ",
       "ru-RU": "Владимир Набоков",
-      "zh-CN": "弗拉基米尔·纳博科夫"
+      "zh-CN": "弗拉基米尔·纳博科夫",
+      "pl-PL": {
+        "value": "Władimir Nabokow",
+        "sources": [
+          "https://sensualnosc.bn.org.pl/ekwiwalecja-sensoryczna-218/"
+        ]
+      }
     },
     "W. G. Sebald": {
       "ar-AE": {
@@ -31746,7 +31752,13 @@
         "fr-FR": "Emma",
         "it-IT": "Emma",
         "eo": "Emma",
-        "ja-JP": "エマ"
+        "ja-JP": "エマ",
+        "pl-PL": {
+          "value": "Emma",
+          "sources": [
+            "https://bn.org.pl/download/document/1774423396.pdf"
+          ]
+        }
       },
       "Northanger Abbey": {
         "el-GR": "Αβαείο Νορθάνγκερ",
@@ -32046,7 +32058,8 @@
         "zh-CN": "打破常规",
         "ar-AE": "الروتين المكسور",
         "eo": "Rompita Rutino",
-        "ja-JP": "壊れた日常"
+        "ja-JP": "壊れた日常",
+        "pl-PL": "Przerwany rytuał"
       },
       "Cat O’ Nine Tales": {
         "el-GR": "Ιστορίες της Γάτας των Εννέα",
@@ -32459,7 +32472,8 @@
         "zh-CN": "《草总是更绿》",
         "ar-AE": "العشب دائمًا Greener",
         "eo": "La Herbo Ĉiam Estas Pli Verda",
-        "ja-JP": "草はいつも青い"
+        "ja-JP": "草はいつも青い",
+        "pl-PL": "Trawa po drugiej stronie jest zawsze bardziej zielona"
       },
       "The Queen’s Birthday Telegram": {
         "de-DE": "Das Telegramm zum Geburtstag der Königin",
@@ -32849,7 +32863,13 @@
         "it-IT": "Billy Summers",
         "eo": "Billy Summers",
         "ja-JP": "ビリー・サマーズ",
-        "ko-KR": "빌리 서머스"
+        "ko-KR": "빌리 서머스",
+        "pl-PL": {
+          "value": "Billy Summers",
+          "sources": [
+            "https://www.proszynski.pl/product/billy-summers"
+          ]
+        }
       },
       "Carrie": {
         "el-GR": "Κάρι",
@@ -33009,7 +33029,13 @@
         "pt-PT": "Joyland",
         "eo": "Ĝojlando",
         "ja-JP": "ジョイランド",
-        "ko-KR": "조이랜드"
+        "ko-KR": "조이랜드",
+        "pl-PL": {
+          "value": "Joyland",
+          "sources": [
+            "https://www.proszynski.pl/product/joyland-5-2"
+          ]
+        }
       },
       "Salem’s Lot": {
         "de-DE": "Salems Grundstück",
@@ -33149,7 +33175,8 @@
         "zh-CN": "代达罗斯计划",
         "ar-AE": "ديدالوس",
         "eo": "Projekto Daedalus",
-        "ja-JP": "プロジェクト・ダイダロス"
+        "ja-JP": "プロジェクト・ダイダロス",
+        "pl-PL": "Projekt Dedal"
       },
       "Syndrome": {
         "de-DE": "Syndrom",
@@ -33162,7 +33189,8 @@
         "ar-AE": "متلازمة",
         "fr-FR": "Syndrome",
         "eo": "Sindromo",
-        "ja-JP": "シンドローム"
+        "ja-JP": "シンドローム",
+        "pl-PL": "Syndrom"
       }
     },
     "A.A. Milne": {
@@ -33381,7 +33409,13 @@
         "zh-CN": "4:50从帕丁顿出发",
         "ar-AE": "4.50 من بادينغتون",
         "eo": "4.50 el Paddington",
-        "ja-JP": "パディントン発 4.50"
+        "ja-JP": "パディントン発 4.50",
+        "pl-PL": {
+          "value": "4.50 z Paddington",
+          "sources": [
+            "https://www.bn.org.pl/download/document/1617789138.pdf"
+          ]
+        }
       },
       "A Pocket Full of Rye": {
         "de-DE": "Eine Tasche voller Roggen",
@@ -33394,7 +33428,13 @@
         "zh-CN": "《黑麦口袋》",
         "ar-AE": "جيب مليء بالجاودار",
         "eo": "Poŝo Plena de Sekalo",
-        "ja-JP": "ポケットいっぱいのライ麦"
+        "ja-JP": "ポケットいっぱいのライ麦",
+        "pl-PL": {
+          "value": "Kieszeń pełna żyta",
+          "sources": [
+            "https://bn.org.pl/download/document/1467299264.pdf"
+          ]
+        }
       },
       "And Then There Were None": {
         "de-DE": "Und dann gab es keine mehr",
@@ -33427,7 +33467,13 @@
         "zh-CN": "《尼罗河上的惨案》",
         "ar-AE": "موت على النيل",
         "eo": "Morto sur Nilo",
-        "ja-JP": "ナイルに死す"
+        "ja-JP": "ナイルに死す",
+        "pl-PL": {
+          "value": "Śmierć na Nilu",
+          "sources": [
+            "https://www.proszynski.pl/product/smierc-na-nilu"
+          ]
+        }
       },
       "Evil Under the Sun": {
         "de-DE": "Das Böse unter der Sonne",
@@ -33440,7 +33486,13 @@
         "zh-CN": "《阳光下的罪恶》",
         "ar-AE": "شر تحت الشمس",
         "eo": "Malbono Sub la Suno",
-        "ja-JP": "太陽の下の悪"
+        "ja-JP": "太陽の下の悪",
+        "pl-PL": {
+          "value": "Zło czai się wszędzie",
+          "sources": [
+            "https://www.bn.org.pl/download/document/1480945081.pdf"
+          ]
+        }
       },
       "Murder on the Orient Express": {
         "de-DE": "Mord im Orientexpress",
@@ -33511,7 +33563,13 @@
         "zh-CN": "四大侦探",
         "ar-AE": "الأربعة الكبار",
         "eo": "La Grandaj Kvar",
-        "ja-JP": "ビッグ 4"
+        "ja-JP": "ビッグ 4",
+        "pl-PL": {
+          "value": "Wielka czwórka",
+          "sources": [
+            "https://www.proszynski.pl/product/wielka-czworka"
+          ]
+        }
       },
       "The Clocks": {
         "de-DE": "Die Uhren",
@@ -33524,7 +33582,13 @@
         "zh-CN": "时钟",
         "ar-AE": "الساعات",
         "eo": "La Horloĝoj",
-        "ja-JP": "時計"
+        "ja-JP": "時計",
+        "pl-PL": {
+          "value": "Przyjdź i zgiń",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/51953/przyjdz-i-zgin"
+          ]
+        }
       },
       "The Cornish Mystery": {
         "de-DE": "Das kornische Geheimnis",
@@ -33550,7 +33614,13 @@
         "zh-CN": "利斯特戴尔之谜",
         "ar-AE": "لغز ليسترديل",
         "eo": "La Listerdale-Mistero",
-        "ja-JP": "リスターデールの謎"
+        "ja-JP": "リスターデールの謎",
+        "pl-PL": {
+          "value": "Tajemnica lorda Listerdale’a",
+          "sources": [
+            "https://www.katalog.bibliotekabielany.waw.pl/katalog/detail.php?PozycjaOpisy=20120602171059014029"
+          ]
+        }
       },
       "The Murder at the Vicarage": {
         "de-DE": "Der Mord im Pfarrhaus",
@@ -33563,7 +33633,13 @@
         "zh-CN": "牧师住宅谋杀案",
         "ar-AE": "جريمة القتل في مقر الكاهن",
         "eo": "La Murdo ĉe la Pastrejo",
-        "ja-JP": "牧師館の殺人"
+        "ja-JP": "牧師館の殺人",
+        "pl-PL": {
+          "value": "Morderstwo na plebanii",
+          "sources": [
+            "https://www.proszynski.pl/product/morderstwo-na-plebanii"
+          ]
+        }
       },
       "The Murder of Roger Ackroyd": {
         "de-DE": "Der Mord an Roger Ackroyd",
@@ -34491,7 +34567,8 @@
         "zh-CN": "婚礼官",
         "ar-AE": "ضابط الزفاف",
         "eo": "La Geedziĝa Oficiro",
-        "ja-JP": "結婚式担当者"
+        "ja-JP": "結婚式担当者",
+        "pl-PL": "Oficer do spraw małżeństw"
       }
     },
     "Anthony Doerr": {
@@ -34519,7 +34596,13 @@
         "zh-CN": "《云中奇缘》",
         "ar-AE": "أرض الوقواق السحابية",
         "eo": "Cloud Cuckoo Land",
-        "ja-JP": "クラウドカッコーランド"
+        "ja-JP": "クラウドカッコーランド",
+        "pl-PL": {
+          "value": "Miasto w chmurach",
+          "sources": [
+            "https://ksiegarnia.pwn.pl/Miasto-w-chmurach%2C963470035%2Cp.html"
+          ]
+        }
       }
     },
     "Anthony Quayle": {
@@ -34636,7 +34719,8 @@
         "zh-CN": "《聚会及其他故事》",
         "ar-AE": "الحفلة وقصص أخرى",
         "eo": "La Partio kaj Aliaj Rakontoj",
-        "ja-JP": "パーティーとその他の物語"
+        "ja-JP": "パーティーとその他の物語",
+        "pl-PL": "Imieniny i inne opowiadania"
       }
     },
     "Antonio Tabucchi": {
@@ -35374,7 +35458,13 @@
         "fr-FR": "Dracula",
         "it-IT": "Dracula",
         "ja-JP": "ドラキュラ",
-        "ko-KR": "드라큘라"
+        "ko-KR": "드라큘라",
+        "pl-PL": {
+          "value": "Drakula",
+          "sources": [
+            "https://wydawnictwoswiatksiazki.pl/tytul/drakula/"
+          ]
+        }
       }
     },
     "Brandon Taylor": {
@@ -36284,7 +36374,13 @@
         "zh-CN": "教授",
         "ar-AE": "البروفيسور",
         "eo": "La Profesoro",
-        "ja-JP": "教授"
+        "ja-JP": "教授",
+        "pl-PL": {
+          "value": "Profesor",
+          "sources": [
+            "https://wydawnictwomg.pl/profesor-2/"
+          ]
+        }
       }
     },
     "Chris Cole": {
@@ -36415,7 +36511,8 @@
         "zh-CN": "黑暗的根基",
         "ar-AE": "الأساسات المظلمة",
         "eo": "La Malhelaj Fundamentoj",
-        "ja-JP": "闇の財団"
+        "ja-JP": "闇の財団",
+        "pl-PL": "Mroczne fundamenty"
       },
       "The Infinite Day": {
         "de-DE": "Der unendliche Tag",
@@ -36428,7 +36525,8 @@
         "zh-CN": "无限之日",
         "ar-AE": "اليوم اللانهائي",
         "eo": "La Senfina Tago",
-        "ja-JP": "無限の日"
+        "ja-JP": "無限の日",
+        "pl-PL": "Nieskończony dzień"
       },
       "The Shadow and Night": {
         "de-DE": "Der Schatten und die Nacht",
@@ -36441,7 +36539,8 @@
         "zh-CN": "《暗影与黑夜》",
         "ar-AE": "الظل والليل",
         "eo": "La Ombro kaj Nokto",
-        "ja-JP": "影と夜"
+        "ja-JP": "影と夜",
+        "pl-PL": "Cień i noc"
       }
     },
     "Christina Skye": {
@@ -37983,7 +38082,8 @@
         "zh-CN": "五条红鲱鱼",
         "ar-AE": "خمسة رنجة حمراء",
         "eo": "Kvin Ruĝaj Haringoj",
-        "ja-JP": "5 つのレッド ニシン"
+        "ja-JP": "5 つのレッド ニシン",
+        "pl-PL": "Pięć fałszywych tropów"
       },
       "The Unpleasantness at the Bellona Club": {
         "de-DE": "Die Unannehmlichkeit im Bellona Club",
@@ -38097,7 +38197,13 @@
         "ar-AE": "وقت الشاي الداكن الطويل في الروح",
         "eo": "La Longa Malhela Te-Tempo de la Animo",
         "ja-JP": "魂の長く暗いティータイム",
-        "ko-KR": "영혼의 길고 어두운 티타임"
+        "ko-KR": "영혼의 길고 어두운 티타임",
+        "pl-PL": {
+          "value": "Długi mroczny podwieczorek dusz",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/49465/dlugi-mroczny-podwieczorek-dusz"
+          ]
+        }
       }
     },
     "Douglas Coupland": {
@@ -38412,7 +38518,8 @@
         "zh-CN": "爱的明亮山谷",
         "ar-AE": "وادي الحب المشرق",
         "eo": "Brila Valo de Amo",
-        "ja-JP": "明るい愛の谷"
+        "ja-JP": "明るい愛の谷",
+        "pl-PL": "Jasna dolina miłości"
       }
     },
     "Edward P. Jones": {
@@ -38827,7 +38934,8 @@
         "zh-CN": "谎言背后",
         "ar-AE": "خلف الكذبة",
         "eo": "Malantaŭ la Mensogo",
-        "ja-JP": "嘘の裏側"
+        "ja-JP": "嘘の裏側",
+        "pl-PL": "Za zasłoną kłamstwa"
       }
     },
     "Emma Donoghue": {
@@ -39253,7 +39361,8 @@
         "zh-CN": "《哈希什食客》",
         "ar-AE": "آكل الحشيش",
         "eo": "La Haŝiŝo-Manĝanto",
-        "ja-JP": "ハシーシュ・イーター"
+        "ja-JP": "ハシーシュ・イーター",
+        "pl-PL": "Zjadacz haszyszu"
       }
     },
     "Flannery O’Connor": {
@@ -40120,7 +40229,8 @@
         "zh-CN": "《一个无名小卒的日记》",
         "ar-AE": "يوميات لا أحد",
         "eo": "La Taglibro de Neniu",
-        "ja-JP": "何者でもない日記"
+        "ja-JP": "何者でもない日記",
+        "pl-PL": "Dziennik nikogo"
       }
     },
     "Georges Perec": {
@@ -40511,7 +40621,13 @@
         "zh-CN": "《安静的美国人》",
         "ar-AE": "الأمريكي الهادئ",
         "eo": "La Trankvila Usonano",
-        "ja-JP": "静かなアメリカ人"
+        "ja-JP": "静かなアメリカ人",
+        "pl-PL": {
+          "value": "Spokojny Amerykanin",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/137617/spokojny-amerykanin"
+          ]
+        }
       }
     },
     "Graham Hurley": {
@@ -40924,7 +41040,13 @@
         "zh-CN": "将军之夜",
         "ar-AE": "ليلة الجنرالات",
         "eo": "La Nokto de la Generaloj",
-        "ja-JP": "将軍の夜"
+        "ja-JP": "将軍の夜",
+        "pl-PL": {
+          "value": "Noc generałów",
+          "sources": [
+            "https://www.bn.org.pl/download/document/1700754671.pdf"
+          ]
+        }
       }
     },
     "Harold F.B. Wheeler": {
@@ -41149,7 +41271,13 @@
         "zh-CN": "《里加之犬》",
         "ar-AE": "كلاب ريجا",
         "eo": "La Hundoj de Rigo",
-        "ja-JP": "リガの犬たち"
+        "ja-JP": "リガの犬たち",
+        "pl-PL": {
+          "value": "Psy z Rygi",
+          "sources": [
+            "https://www.bpzoliborz.pl/katalog/detail.php?PozycjaOpisy=20120308102322004535"
+          ]
+        }
       },
       "The Pyramid": {
         "de-DE": "Die Pyramide",
@@ -41491,7 +41619,8 @@
         "zh-CN": "《恐惧与厌恶：1972年竞选之路》",
         "ar-AE": "الخوف والاشمئزاز: في مسار الحملة الانتخابية 72",
         "eo": "Timo kaj Abomeno: Sur la Kampanjo-Migrovojo ’72",
-        "ja-JP": "恐怖と嫌悪: 選挙運動の軌跡 '72"
+        "ja-JP": "恐怖と嫌悪: 選挙運動の軌跡 '72",
+        "pl-PL": "Lęk i odraza na szlaku kampanii ’72"
       },
       "Hell’s Angel": {
         "es-ES": "El ángel del infierno",
@@ -41808,7 +41937,8 @@
         "zh-CN": "大中西部厨房",
         "ar-AE": "مطابخ الغرب الأوسط العظيم",
         "eo": "Kuirejoj de la Granda Mezokcidento",
-        "ja-JP": "中西部の台所"
+        "ja-JP": "中西部の台所",
+        "pl-PL": "Kuchnie amerykańskiego Środkowego Zachodu"
       }
     },
     "J. Storer Clouston": {
@@ -41948,7 +42078,8 @@
         "zh-CN": "时间之声",
         "ar-AE": "أصوات الوقت",
         "eo": "La Voĉoj de Tempo",
-        "ja-JP": "時の声"
+        "ja-JP": "時の声",
+        "pl-PL": "Głosy czasu"
       }
     },
     "J.K. Rowling": {
@@ -42029,7 +42160,13 @@
         "ar-AE": "هاري بوتر وحجر الساحر",
         "eo": "Harry Potter kaj la Sorĉŝtono",
         "ja-JP": "ハリー・ポッターと賢者の石",
-        "ko-KR": "해리 포터와 마법사의 돌"
+        "ko-KR": "해리 포터와 마법사의 돌",
+        "pl-PL": {
+          "value": "Harry Potter i Kamień Filozoficzny",
+          "sources": [
+            "https://mediarodzina.pl/produkt/harry-potter-i-kamien-filozoficzny/"
+          ]
+        }
       }
     },
     "J.L. Carr": {
@@ -42392,7 +42529,8 @@
         "zh-CN": "缓刑",
         "ar-AE": "إرجاء",
         "eo": "Malliberigo",
-        "ja-JP": "救済"
+        "ja-JP": "救済",
+        "pl-PL": "Odroczenie wyroku"
       }
     },
     "James Herriot": {
@@ -42999,7 +43137,8 @@
         "zh-CN": "地下墓穴",
         "ar-AE": "سراديب الموتى",
         "eo": "La Katakomboj",
-        "ja-JP": "地下墓地"
+        "ja-JP": "地下墓地",
+        "pl-PL": "Katakumby"
       }
     },
     "Jerome K. Jerome": {
@@ -43014,7 +43153,13 @@
         "zh-CN": "《三个男人一艘船》",
         "ar-AE": "ثلاثة رجال في قارب",
         "eo": "Tri Viroj en Boato",
-        "ja-JP": "ボートに乗った三人の男"
+        "ja-JP": "ボートに乗った三人の男",
+        "pl-PL": {
+          "value": "Trzech panów w łódce (nie licząc psa)",
+          "sources": [
+            "https://www.biblioteka.waw.pl/polecane/trzech-panow-w-lodce-nie-liczac-psa"
+          ]
+        }
       }
     },
     "Jerome Weidman": {
@@ -43236,7 +43381,8 @@
         "zh-CN": "《身体的谎言》",
         "ar-AE": "الجسد يكذب",
         "eo": "La Korpo Mensogoj",
-        "ja-JP": "身体は嘘をつく"
+        "ja-JP": "身体は嘘をつく",
+        "pl-PL": "Ciało kłamie"
       }
     },
     "Jo Nesbø": {
@@ -43563,7 +43709,8 @@
         "zh-CN": "无名氏",
         "ar-AE": "الأشياء التي لا اسم لها",
         "eo": "La Sennomaj",
-        "ja-JP": "ネームレス・ワンズ"
+        "ja-JP": "ネームレス・ワンズ",
+        "pl-PL": "Bezimienni"
       }
     },
     "John D. MacDonald": {
@@ -43768,7 +43915,13 @@
         "zh-CN": "《傻瓜联盟》",
         "ar-AE": "اتحاد الأغبياء",
         "eo": "Konfederacio de Dunces",
-        "ja-JP": "劣等生連合"
+        "ja-JP": "劣等生連合",
+        "pl-PL": {
+          "value": "Sprzysiężenie głupców",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/88954/sprzysiezenie-glupcow"
+          ]
+        }
       }
     },
     "John McNally": {
@@ -44154,7 +44307,8 @@
         "zh-CN": "特别响，非常近",
         "ar-AE": "صاخب للغاية وقريب بشكل لا يصدق",
         "eo": "Ege Laŭta kaj Nekredeble Proksime",
-        "ja-JP": "非常にうるさく、信じられないほど近くにある"
+        "ja-JP": "非常にうるさく、信じられないほど近くにある",
+        "pl-PL": "Strasznie głośno, niesamowicie blisko"
       }
     },
     "Jonathan Trigell": {
@@ -44571,7 +44725,13 @@
         "zh-CN": "《绕月而行》",
         "ar-AE": "حول القمر",
         "eo": "Ĉirkaŭ la Luno",
-        "ja-JP": "月の周り"
+        "ja-JP": "月の周り",
+        "pl-PL": {
+          "value": "Wokół Księżyca",
+          "sources": [
+            "https://w.bibliotece.pl/7239307/WOK%C3%93%C5%81%2BKSI%C4%98%C5%BBYCA"
+          ]
+        }
       },
       "Around the World in Eighty Days": {
         "de-DE": "In achtzig Tagen um die Welt",
@@ -44616,7 +44776,13 @@
         "zh-CN": "《地心游记》",
         "ar-AE": "رحلة إلى مركز الأرض",
         "eo": "Vojaĝo al la Centro de la Tero",
-        "ja-JP": "地球の中心への旅"
+        "ja-JP": "地球の中心への旅",
+        "pl-PL": {
+          "value": "Podróż do wnętrza Ziemi",
+          "sources": [
+            "https://ksiegarnia.pwn.pl/Podroz-do-wnetrza-Ziemi%2C1063252771%2Cp.html"
+          ]
+        }
       },
       "Michel Strogoff": {
         "el-GR": "Μισέλ Στρογκόφ",
@@ -44730,7 +44896,13 @@
         "ar-AE": "رايويلا",
         "es-ES": "Rayuela",
         "eo": "Rayuela",
-        "ja-JP": "ラユエラ"
+        "ja-JP": "ラユエラ",
+        "pl-PL": {
+          "value": "Gra w klasy",
+          "sources": [
+            "https://abc.uw.edu.pl/katalog/ksiazka/6322"
+          ]
+        }
       }
     },
     "Justin Cartwright": {
@@ -44833,7 +45005,8 @@
         "ar-AE": "الجيب",
         "el-GR": "Ο Θύλακας",
         "eo": "La Enklavo",
-        "ja-JP": "エンクレイブ"
+        "ja-JP": "エンクレイブ",
+        "pl-PL": "Enklawa"
       }
     },
     "Karen Karbo": {
@@ -45020,7 +45193,8 @@
         "zh-CN": "永远的琥珀",
         "ar-AE": "العنبر الدائم",
         "eo": "Eterne Sukceno",
-        "ja-JP": "永遠の琥珀"
+        "ja-JP": "永遠の琥珀",
+        "pl-PL": "Amber na zawsze"
       }
     },
     "Kathy Reichs": {
@@ -45613,7 +45787,8 @@
         "ar-AE": "الطموح",
         "eo": "Ambicio",
         "ja-JP": "野望",
-        "ru-RU": "Амбиции"
+        "ru-RU": "Амбиции",
+        "pl-PL": "Ambicja"
       }
     },
     "Leif GW Persson": {
@@ -45669,7 +45844,8 @@
         "zh-CN": "伊普克雷斯档案",
         "ar-AE": "ملف Ipcress",
         "eo": "La Ipcress Dosiero",
-        "ja-JP": "Ipcress ファイル"
+        "ja-JP": "Ipcress ファイル",
+        "pl-PL": "Akta IPCRESS"
       }
     },
     "Leo Tolstoy": {
@@ -45685,7 +45861,13 @@
         "it-IT": "Anna Karenina",
         "eo": "Anna Karenina",
         "ja-JP": "アンナ・カレーニナ",
-        "ko-KR": "안나 카레니나"
+        "ko-KR": "안나 카레니나",
+        "pl-PL": {
+          "value": "Anna Karenina",
+          "sources": [
+            "https://www.bn.org.pl/download/document/1763554855.pdf"
+          ]
+        }
       },
       "War and Peace": {
         "de-DE": "Krieg und Frieden",
@@ -45899,7 +46081,13 @@
         "zh-CN": "魔鬼桥下",
         "ar-AE": "تحت الشيطان الجسر",
         "eo": "Sub la Ponto de Diablo",
-        "ja-JP": "悪魔の橋の下で"
+        "ja-JP": "悪魔の橋の下で",
+        "pl-PL": {
+          "value": "Miasteczko Twin Falls",
+          "sources": [
+            "https://www.bn.org.pl/download/document/1766500282.pdf"
+          ]
+        }
       }
     },
     "Lorrie Moore": {
@@ -46383,7 +46571,13 @@
         "zh-CN": "《人之前的生活》",
         "ar-AE": "الحياة قبل الإنسان",
         "eo": "Vivo Antaŭ Homo",
-        "ja-JP": "人類以前の生涯"
+        "ja-JP": "人類以前の生涯",
+        "pl-PL": {
+          "value": "Życie przed mężczyzną",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/86370/zycie-przed-mezczyzna"
+          ]
+        }
       },
       "Oryx and Crake": {
         "de-DE": "Oryx und Crake",
@@ -47409,7 +47603,13 @@
         "zh-CN": "《仙女座病毒》",
         "ar-AE": "سلالة المرأة المسلسلة",
         "eo": "La Andromeda Trostreĉiĝo",
-        "ja-JP": "アンドロメダ株"
+        "ja-JP": "アンドロメダ株",
+        "pl-PL": {
+          "value": "„Andromeda” znaczy śmierć",
+          "sources": [
+            "https://rcin.org.pl/Content/232091/PDF/WA248_268796_2019_PBL-2019-recepcja_o.pdf"
+          ]
+        }
       },
       "The Great Train Robbery": {
         "de-DE": "Der große Zugraub",
@@ -47636,7 +47836,13 @@
         "zh-CN": "原子化",
         "ar-AE": "مفتتة",
         "eo": "Atomigita",
-        "ja-JP": "霧化"
+        "ja-JP": "霧化",
+        "pl-PL": {
+          "value": "Cząstki elementarne",
+          "sources": [
+            "https://wip.pbp.poznan.pl/3155296/Cz%C4%85stki%2Belementarne"
+          ]
+        }
       },
       "Platform": {
         "de-DE": "Plattform",
@@ -48116,7 +48322,8 @@
         "zh-CN": "一具尸体",
         "ar-AE": "رجل يرقد ميتًا",
         "eo": "Viro Lay Morta",
-        "ja-JP": "男性が横たわって死亡"
+        "ja-JP": "男性が横たわって死亡",
+        "pl-PL": "Leżał martwy mężczyzna"
       }
     },
     "Nicci French": {
@@ -48339,7 +48546,8 @@
         "zh-CN": "《四百万》",
         "ar-AE": "الملايين الأربعة",
         "eo": "La Kvar Milionoj",
-        "ja-JP": "400万人"
+        "ja-JP": "400万人",
+        "pl-PL": "Cztery miliony"
       }
     },
     "Ogden Nash": {
@@ -48534,7 +48742,8 @@
         "zh-CN": "圣职人员之死",
         "ar-AE": "الموت في القدس أوامر",
         "eo": "Morto en Sanktaj Ordoj",
-        "ja-JP": "聖なる命令による死"
+        "ja-JP": "聖なる命令による死",
+        "pl-PL": "Śmierć w seminarium"
       },
       "Death of an Expert Witness": {
         "de-DE": "Tod eines Sachverständigen",
@@ -48547,7 +48756,8 @@
         "zh-CN": "专家证人之死",
         "ar-AE": "موت شاهد خبير",
         "eo": "Morto de Eksperto-Atestanto",
-        "ja-JP": "専門証人の死"
+        "ja-JP": "専門証人の死",
+        "pl-PL": "Śmierć biegłego"
       },
       "Devices and Desires": {
         "de-DE": "Geräte und Wünsche",
@@ -48560,7 +48770,13 @@
         "zh-CN": "《诡计与欲望》",
         "ar-AE": "أجهزة ورغبات",
         "eo": "Aparatoj kaj Deziroj",
-        "ja-JP": "装置と欲望"
+        "ja-JP": "装置と欲望",
+        "pl-PL": {
+          "value": "Intrygi i żądze",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/157654/intrygi-i-zadze"
+          ]
+        }
       },
       "Innocent Blood": {
         "de-DE": "Unschuldiges Blut",
@@ -48662,7 +48878,8 @@
         "zh-CN": "灯塔",
         "ar-AE": "المنارة",
         "eo": "La Lumturo",
-        "ja-JP": "灯台"
+        "ja-JP": "灯台",
+        "pl-PL": "Latarnia morska"
       },
       "The Mistletoe Murder": {
         "de-DE": "Der Mistelmord",
@@ -48675,7 +48892,8 @@
         "zh-CN": "槲寄生谋杀案",
         "ar-AE": "جريمة قتل الهدال",
         "eo": "La Murdo de Visko",
-        "ja-JP": "ヤドリギ殺人事件"
+        "ja-JP": "ヤドリギ殺人事件",
+        "pl-PL": "Morderstwo pod jemiołą"
       },
       "The Murder Room": {
         "de-DE": "Das Mordzimmer",
@@ -48688,7 +48906,8 @@
         "zh-CN": "谋杀室",
         "ar-AE": "غرفة القتل",
         "eo": "La Murdĉambro",
-        "ja-JP": "殺人室"
+        "ja-JP": "殺人室",
+        "pl-PL": "Pokój morderstwa"
       },
       "The Murder of Santa Claus": {
         "de-DE": "Der Mord am Weihnachtsmann",
@@ -48714,7 +48933,8 @@
         "zh-CN": "私人病人",
         "ar-AE": "المريض الخاص",
         "eo": "La Privata Paciento",
-        "ja-JP": "民間患者"
+        "ja-JP": "民間患者",
+        "pl-PL": "Prywatna pacjentka"
       },
       "The Skull Beneath the Skin": {
         "de-DE": "Der Schädel unter der Haut",
@@ -48874,7 +49094,8 @@
         "ar-AE": "باث هاوس",
         "eo": "Bath Haus",
         "ja-JP": "バースハウス",
-        "ru-RU": "Bath Haus"
+        "ru-RU": "Bath Haus",
+        "pl-PL": "Łaźnia"
       }
     },
     "P.L. Travers": {
@@ -50020,7 +50241,8 @@
         "ar-AE": "الراهب المحارب",
         "eo": "Militisma Monaĥo",
         "ja-JP": "戦士の僧侶",
-        "ru-RU": "Воин-монах"
+        "ru-RU": "Воин-монах",
+        "pl-PL": "Mnich wojownik"
       }
     },
     "Raymon Queneau": {
@@ -50841,7 +51063,8 @@
         "zh-CN": "《衣衫褴褛的慈善家》",
         "ar-AE": "البنطلون الممزق المحسنون",
         "eo": "La Ĉifonaj Pantalonaj Filantropoj",
-        "ja-JP": "ぼろぼろのズボンを着た慈善家"
+        "ja-JP": "ぼろぼろのズボンを着た慈善家",
+        "pl-PL": "Filantropi w podartych spodniach"
       }
     },
     "Robert Walser": {
@@ -50871,7 +51094,8 @@
         "ar-AE": "اللعبة الرابية",
         "es-ES": "El juguete rabioso",
         "eo": "El juguete rabioso",
-        "ja-JP": "エル・ジュゲテ・ラビオソ"
+        "ja-JP": "エル・ジュゲテ・ラビオソ",
+        "pl-PL": "Wściekła zabawka"
       },
       "Los siete locos": {
         "de-DE": "Die sieben Verrückten",
@@ -51173,7 +51397,8 @@
         "zh-CN": "离开的梦想",
         "ar-AE": "أحلام الرحيل",
         "eo": "Sonĝoj de Foriro",
-        "ja-JP": "離れる夢"
+        "ja-JP": "離れる夢",
+        "pl-PL": "Marzenia o wyjeździe"
       }
     },
     "Russell Hoban": {
@@ -51922,7 +52147,13 @@
         "ar-AE": "العلامة الأربعة",
         "eo": "La Signo de Kvar",
         "ja-JP": "ザ・サイン・オブ・フォー",
-        "ko-KR": "네 개의 서명"
+        "ko-KR": "네 개의 서명",
+        "pl-PL": {
+          "value": "Znak czterech",
+          "sources": [
+            "https://www.znak.com.pl/p/znak-czterech-the-sign-of-the-four-wyd-dwujezyczne-arthur-conan-doyle-502633"
+          ]
+        }
       },
       "The Valley of Fear": {
         "de-DE": "Das Tal der Angst",
@@ -52282,7 +52513,8 @@
         "zh-CN": "整体的一部分",
         "ar-AE": "جزء من كامل",
         "eo": "Frakcio de la Tuto",
-        "ja-JP": "全編"
+        "ja-JP": "全編",
+        "pl-PL": "Ułamek całości"
       }
     },
     "Steven Galloway": {
@@ -53282,7 +53514,13 @@
         "zh-CN": "猎杀红色十月",
         "ar-AE": "البحث عن أكتوبر الأحمر",
         "eo": "The Hunt for Red October",
-        "ja-JP": "レッドオクトーバーを追え"
+        "ja-JP": "レッドオクトーバーを追え",
+        "pl-PL": {
+          "value": "Polowanie na Czerwony Październik",
+          "sources": [
+            "https://bpzoliborz.pl/katalog/detail.php?PozycjaOpisy=20071208205443090113"
+          ]
+        }
       }
     },
     "Tom Clancy, Steve Pieczenik, and Jeff Rovin": {
@@ -53590,7 +53828,13 @@
         "ar-AE": "السيدة. دالواي",
         "eo": "Sinjorino. Dalloway",
         "ja-JP": "夫人。ダロウェイ",
-        "ko-KR": "댈러웨이 부인"
+        "ko-KR": "댈러웨이 부인",
+        "pl-PL": {
+          "value": "Pani Dalloway",
+          "sources": [
+            "https://www.biblioteka.waw.pl/polecane/pani-dalloway"
+          ]
+        }
       },
       "Orlando": {
         "el-GR": "Ορλάντο",
@@ -53818,7 +54062,13 @@
         "zh-CN": "《月亮宝石》",
         "ar-AE": "حجر القمر",
         "eo": "La Lunŝtono",
-        "ja-JP": "ムーンストーン"
+        "ja-JP": "ムーンストーン",
+        "pl-PL": {
+          "value": "Kamień księżycowy",
+          "sources": [
+            "https://polyglot-publishing.com/pl/catalogue/the-moonstone-en-pl"
+          ]
+        }
       },
       "The Woman in White": {
         "de-DE": "Die Frau in Weiß",
@@ -54171,7 +54421,8 @@
         "zh-CN": "炼狱岭",
         "ar-AE": "المطهر ريدج",
         "eo": "Purgatory Ridge",
-        "ja-JP": "煉獄の尾根"
+        "ja-JP": "煉獄の尾根",
+        "pl-PL": "Grań Czyśćca"
       },
       "Vermillion Drift": {
         "el-GR": "Βέρμιλιον Ντριφτ",
@@ -54466,7 +54717,8 @@
         "zh-CN": "佩蒂格鲁小姐的一天",
         "ar-AE": "الآنسة بيتيجرو تعيش ليوم واحد",
         "eo": "Fraŭlino Pettigrew Vivas por Tago",
-        "ja-JP": "ミス・ペティグリューは一日生きる"
+        "ja-JP": "ミス・ペティグリューは一日生きる",
+        "pl-PL": "Panna Pettigrew żyje przez jeden dzień"
       }
     },
     "Winn Schwartau": {
