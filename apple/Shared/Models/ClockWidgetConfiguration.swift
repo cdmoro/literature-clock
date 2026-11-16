@@ -37,13 +37,15 @@ enum ClockWidgetLanguage: String, AppEnum {
     case german = "de-DE", italian = "it-IT", portuguese = "pt-PT", greek = "el-GR"
     case esperanto = "eo", russian = "ru-RU", chinese = "zh-CN", arabic = "ar-AE", japanese = "ja-JP"
     case korean = "ko-KR"
+    case polish = "pl-PL"
     static var typeDisplayRepresentation = TypeDisplayRepresentation(name: "Quote languages")
     static var caseDisplayRepresentations: [Self: DisplayRepresentation] = [
         .englishUS: "English (United States)", .englishGB: "English (United Kingdom)",
         .spanish: "Español (España)", .french: "Français (France)", .german: "Deutsch (Deutschland)",
         .italian: "Italiano (Italia)", .portuguese: "Português (Portugal)", .greek: "Ελληνικά (Ελλάδα)",
         .esperanto: "Esperanto", .russian: "Русский (Россия)", .chinese: "中文（中国大陆）",
-        .arabic: "العربية (الإمارات العربية المتحدة)", .japanese: "日本語 (日本)", .korean: "한국어 (대한민국)"
+        .arabic: "العربية (الإمارات العربية المتحدة)", .japanese: "日本語 (日本)", .korean: "한국어 (대한민국)",
+        .polish: "Polski (Polska)"
     ]
 
     static var systemDefaults: [Self] {
@@ -65,6 +67,7 @@ enum ClockWidgetLanguage: String, AppEnum {
             case "ar": return .arabic
             case "ja": return .japanese
             case "ko": return .korean
+            case "pl": return .polish
             default: return nil
             }
         }

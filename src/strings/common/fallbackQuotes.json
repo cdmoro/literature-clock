@@ -306,5 +306,27 @@
       "quote_time_case": "",
       "sfw": true
     }
+  ],
+  "pl-PL": [
+    {
+      "quote_first": "Błąd ",
+      "quote_last": ": nie znaleziono cytatu.",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "F-001",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "Dziennik pokładowy:<br>Wciąż szukamy cytatu na godzinę ",
+      "quote_last": ".",
+      "title": "Moby Dick",
+      "author": "Kapitan Achab",
+      "id": "F-002",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
   ]
 }

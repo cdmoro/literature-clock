@@ -29,7 +29,7 @@ preference or manages other users' installations.
 ## Features
 
 Includes seven themes, system/light/dark appearance, automatic font selection for all
-fourteen locales, an optional system serif/sans serif/monospace override shared by both
+fifteen locales, an optional system serif/sans serif/monospace override shared by both
 passage languages, per-minute language rotation, distinct monitor choices, highlighted
 time phrases, title hiding, the option to show original author/title forms, and quote
 attribution below the passage, at bottom left, or hidden. It also supports safe-passage filtering, bilingual translations by shared

@@ -95,7 +95,8 @@
     "history": "Recent",
     "clearHistory": "Clear history",
     "noHistory": "No recent quotes. The last 100 quotes you view will appear here.",
-    "previousQuote": "Previous quote from this minute"
+    "previousQuote": "Previous quote from this minute",
+    "pl-PL": "Polski (pl-PL)"
   },
   "en-US": {
     "about": "About",
@@ -193,7 +194,8 @@
     "history": "Recent",
     "clearHistory": "Clear history",
     "noHistory": "No recent quotes. The last 100 quotes you view will appear here.",
-    "previousQuote": "Previous quote from this minute"
+    "previousQuote": "Previous quote from this minute",
+    "pl-PL": "Polski (pl-PL)"
   },
   "es-ES": {
     "about": "Acerca de",
@@ -291,7 +293,8 @@
     "history": "Recientes",
     "clearHistory": "Borrar historial",
     "noHistory": "No hay citas recientes. Acá aparecerán las últimas 100 citas que veas.",
-    "previousQuote": "Cita anterior de este minuto"
+    "previousQuote": "Cita anterior de este minuto",
+    "pl-PL": "Polski (pl-PL)"
   },
   "pt-PT": {
     "about": "Sobre",
@@ -389,7 +392,8 @@
     "history": "Recentes",
     "clearHistory": "Limpar histórico",
     "noHistory": "Sem citações recentes. As últimas 100 citações vistas aparecerão aqui.",
-    "previousQuote": "Citação anterior deste minuto"
+    "previousQuote": "Citação anterior deste minuto",
+    "pl-PL": "Polski (pl-PL)"
   },
   "fr-FR": {
     "about": "À propos",
@@ -487,7 +491,8 @@
     "history": "Récentes",
     "clearHistory": "Effacer l’historique",
     "noHistory": "Aucune citation récente. Les 100 dernières citations vues apparaîtront ici.",
-    "previousQuote": "Citation précédente de cette minute"
+    "previousQuote": "Citation précédente de cette minute",
+    "pl-PL": "Polski (pl-PL)"
   },
   "it-IT": {
     "about": "Informazioni",
@@ -585,7 +590,8 @@
     "history": "Recenti",
     "clearHistory": "Cancella cronologia",
     "noHistory": "Nessuna citazione recente. Qui appariranno le ultime 100 citazioni visualizzate.",
-    "previousQuote": "Citazione precedente di questo minuto"
+    "previousQuote": "Citazione precedente di questo minuto",
+    "pl-PL": "Polski (pl-PL)"
   },
   "de-DE": {
     "about": "Über",
@@ -683,7 +689,8 @@
     "history": "Zuletzt gesehen",
     "clearHistory": "Verlauf löschen",
     "noHistory": "Noch keine Zitate. Hier erscheinen die letzten 100 angesehenen Zitate.",
-    "previousQuote": "Vorheriges Zitat dieser Minute"
+    "previousQuote": "Vorheriges Zitat dieser Minute",
+    "pl-PL": "Polski (pl-PL)"
   },
   "el-GR": {
     "about": "Σχετικά",
@@ -781,7 +788,8 @@
     "history": "Πρόσφατα",
     "clearHistory": "Διαγραφή ιστορικού",
     "noHistory": "Δεν υπάρχουν πρόσφατα παραθέματα. Εδώ θα εμφανίζονται τα τελευταία 100 παραθέματα που βλέπετε.",
-    "previousQuote": "Προηγούμενο παράθεμα αυτού του λεπτού"
+    "previousQuote": "Προηγούμενο παράθεμα αυτού του λεπτού",
+    "pl-PL": "Polski (pl-PL)"
   },
   "zh-CN": {
     "about": "关于",
@@ -879,7 +887,8 @@
     "history": "最近阅读",
     "clearHistory": "清除历史记录",
     "noHistory": "暂无最近阅读记录。最近查看的100条引文将显示在这里。",
-    "previousQuote": "此分钟的上一条引文"
+    "previousQuote": "此分钟的上一条引文",
+    "pl-PL": "Polski (pl-PL)"
   },
   "ru-RU": {
     "about": "О проекте",
@@ -977,7 +986,8 @@
     "history": "Недавние",
     "clearHistory": "Очистить историю",
     "noHistory": "Недавних цитат пока нет. Здесь появятся последние 100 просмотренных цитат.",
-    "previousQuote": "Предыдущая цитата этой минуты"
+    "previousQuote": "Предыдущая цитата этой минуты",
+    "pl-PL": "Polski (pl-PL)"
   },
   "eo": {
     "about": "Pri la projekto",
@@ -1075,7 +1085,8 @@
     "history": "Lastatempaj",
     "clearHistory": "Forviŝi la historion",
     "noHistory": "Neniu lastatempa citaĵo. La lastaj 100 citaĵoj, kiujn vi rigardas, aperos ĉi tie.",
-    "previousQuote": "Antaŭa citaĵo de ĉi tiu minuto"
+    "previousQuote": "Antaŭa citaĵo de ĉi tiu minuto",
+    "pl-PL": "Polski (pl-PL)"
   },
   "ar-AE": {
     "about": "حول",
@@ -1173,7 +1184,8 @@
     "history": "الأخيرة",
     "clearHistory": "مسح السجل",
     "noHistory": "لا توجد اقتباسات حديثة. ستظهر هنا آخر 100 اقتباس شاهدته.",
-    "previousQuote": "الاقتباس السابق لهذه الدقيقة"
+    "previousQuote": "الاقتباس السابق لهذه الدقيقة",
+    "pl-PL": "Polski (pl-PL)"
   },
   "ja-JP": {
     "about": "このサイトについて",
@@ -1271,7 +1283,8 @@
     "history": "最近見た引用文",
     "clearHistory": "履歴を消去",
     "noHistory": "最近見た引用文はありません。閲覧した最新100件がここに表示されます。",
-    "previousQuote": "同じ分の前の引用文"
+    "previousQuote": "同じ分の前の引用文",
+    "pl-PL": "Polski (pl-PL)"
   },
   "ko-KR": {
     "about": "앱 정보",
@@ -1369,6 +1382,106 @@
     "history": "최근 본 항목",
     "clearHistory": "기록 지우기",
     "noHistory": "기록이 없습니다. 최근에 본 인용문이 최대 100개까지 여기에 표시됩니다.",
-    "previousQuote": "이 분의 이전 인용문"
+    "previousQuote": "이 분의 이전 인용문",
+    "pl-PL": "Polski (pl-PL)"
+  },
+  "pl-PL": {
+    "about": "O aplikacji",
+    "about_close": "Zamknij",
+    "add_quote": "Dodaj cytat",
+    "anaglyph": "Anaglif",
+    "author": "Autor",
+    "base": "Podstawowy",
+    "blue": "Niebieski",
+    "bohemian": "Artystyczny",
+    "book": "Strona książki",
+    "color": "Losowe kolory",
+    "colors": "Kolory",
+    "copy_mode": "Kopiuj",
+    "copy_mode_copied": "Skopiowano cytat!",
+    "copy_title": "Kopiuj do schowka",
+    "dark": "Ciemny",
+    "de-DE": "Deutsch (de-DE)",
+    "default_font": "Domyślny",
+    "document_title": "Zegar literacki",
+    "download": "Pobierz",
+    "horizon": "Horyzont",
+    "elegant": "Elegancki",
+    "en-GB": "English (en-GB)",
+    "en-US": "English (en-US)",
+    "es-ES": "Español (es-ES)",
+    "exit_zen_title": "Wyjdź z trybu Zen",
+    "transition": "Przejście",
+    "transition_none": "Bez przejścia",
+    "transition_fade": "Przenikanie",
+    "transition_slide": "Łagodne przesunięcie",
+    "transition_blur": "Delikatne rozmycie",
+    "transition_zoom": "Subtelne zbliżenie",
+    "fade_mode": "Przenikanie",
+    "festive": "Świąteczny",
+    "font": "Krój pisma",
+    "fr-FR": "Français (fr-FR)",
+    "frame": "Ramka",
+    "fullscreen_mode": "Pełny ekran",
+    "gray": "Szary",
+    "green": "Zielony",
+    "handwriting": "Pismo odręczne",
+    "it-IT": "Italiano (it-IT)",
+    "kindle": "Kindle",
+    "language": "Język",
+    "light": "Jasny",
+    "made_by": "Autor projektu",
+    "orange": "Pomarańczowy",
+    "photo": "Zdjęcie",
+    "pink": "Różowy",
+    "poster": "Plakat",
+    "progressbar_mode": "Pokaż pasek postępu",
+    "pt-PT": "Português (pt-PT)",
+    "purple": "Fioletowy",
+    "random": "Losowy język",
+    "report_error": "Zgłoś błąd",
+    "retro": "Retro",
+    "screensaver_mode": "Wygaszacz ekranu",
+    "share": "Udostępnij",
+    "subtle": "Subtelny",
+    "system": "Systemowy",
+    "terminal": "Terminal",
+    "theme": "Motyw",
+    "themes": "Motywy",
+    "time_mode": "Pokaż godzinę",
+    "title": "Tytuł",
+    "whatsapp": "WhatsApp",
+    "work_mode": "Tryb pracy",
+    "work_mode_title": "Pokazuj tylko cytaty odpowiednie do wyświetlania w pracy",
+    "zen_mode": "Zen",
+    "zen_mode_title": "Ukryj elementy, które rozpraszają",
+    "zen_mode_hint": "Tryb Zen · Naciśnij Esc lub dotknij kamieni, aby wyjść",
+    "el-GR": "Ελληνικά (el-GR)",
+    "zh-CN": "中文（简体） (zh-CN)",
+    "ru-RU": "Русский (ru-RU)",
+    "eo": "Esperanto (eo)",
+    "ar-AE": "العربية (ar-AE)",
+    "settings_presets_title": "Gotowe ustawienia",
+    "settings_presets_help": "Wybierz sezonowy wygląd. Każde ustawienie możesz potem zmienić.",
+    "settings_preset_christmas": "Boże Narodzenie",
+    "settings_preset_halloween": "Halloween",
+    "settings_pattern_valentine": "Walentynki",
+    "settings_preset_valentine": "Walentynki",
+    "pine": "Sosnowa zieleń",
+    "ja-JP": "日本語 (ja-JP)",
+    "ko-KR": "한국어 (ko-KR)",
+    "nextQuote": "Następny cytat z tej minuty",
+    "myQuotes": "Moje cytaty",
+    "favorites": "Ulubione",
+    "saveFavorite": "Dodaj do ulubionych",
+    "removeFavorite": "Usuń z ulubionych",
+    "noFavorites": "Brak ulubionych cytatów. Aby zapisać cytat, kliknij serce.",
+    "close": "Zamknij",
+    "openQuote": "Otwórz cytat",
+    "history": "Ostatnie",
+    "clearHistory": "Wyczyść historię",
+    "noHistory": "Brak ostatnich cytatów. Pojawi się tu 100 ostatnio wyświetlonych cytatów.",
+    "previousQuote": "Poprzedni cytat z tej minuty",
+    "pl-PL": "Polski (pl-PL)"
   }
 }

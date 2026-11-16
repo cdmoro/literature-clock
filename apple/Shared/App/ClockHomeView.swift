@@ -1520,6 +1520,7 @@ private enum QuoteShareBrand {
         case "ru": "Литературные часы"
         case "zh": "文学时钟"
         case "ko": "문학 시계"
+        case "pl": "Zegar literacki"
         case "ar": "ساعة أدبية"
         case "eo": "Literatura Horloĝo"
         default: "Literature Clock"

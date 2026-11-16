@@ -1146,7 +1146,13 @@
       },
       "pt-PT": "Aleksandr Solzhenitsyn",
       "ru-RU": "Александр Солженицын",
-      "zh-CN": "亚历山大·索尔仁尼琴"
+      "zh-CN": "亚历山大·索尔仁尼琴",
+      "pl-PL": {
+        "value": "Aleksandr Sołżenicyn",
+        "sources": [
+          "https://abc.uw.edu.pl/katalog/ksiazka/14160"
+        ]
+      }
     },
     "Alex Michaelides": {
       "ar-AE": {
@@ -2578,7 +2584,13 @@
       },
       "pt-PT": "Anton Pavlovich Chekhov",
       "ru-RU": "Антон Павлович Чехов",
-      "zh-CN": "安东·帕夫洛维奇·契诃夫"
+      "zh-CN": "安东·帕夫洛维奇·契诃夫",
+      "pl-PL": {
+        "value": "Anton Czechow",
+        "sources": [
+          "https://wolnelektury.pl/katalog/lektura/czechow-zemsta.html"
+        ]
+      }
     },
     "Antonio Tabucchi": {
       "ar-AE": {
@@ -10623,7 +10635,13 @@
       "pt-PT": "Fyodor Dostoyevsky",
       "ja-JP": "フョードル・ドストエフスキー",
       "ru-RU": "Федор Достоевский",
-      "zh-CN": "费奥多尔·陀思妥耶夫斯基"
+      "zh-CN": "费奥多尔·陀思妥耶夫斯基",
+      "pl-PL": {
+        "value": "Fiodor Dostojewski",
+        "sources": [
+          "https://www.wydawnictwosbm.pl/ksiazka/zbrodnia-i-kara/"
+        ]
+      }
     },
     "Félicien de Saulcy": {
       "ar-AE": {
@@ -17550,7 +17568,13 @@
       "ja-JP": "ジュール・ヴェルヌ",
       "ru-RU": "Жюль Верн",
       "zh-CN": "儒勒·凡尔纳",
-      "ko-KR": "쥘 베른"
+      "ko-KR": "쥘 베른",
+      "pl-PL": {
+        "value": "Juliusz Verne",
+        "sources": [
+          "https://lubimyczytac.pl/ksiazka/4986952/w-osiemdziesiat-dni-dookola-swiata"
+        ]
+      }
     },
     "Julia Kent": {
       "ar-AE": {
@@ -19197,7 +19221,13 @@
       "ja-JP": "レオ・トルストイ",
       "ru-RU": "Лев Толстой",
       "zh-CN": "列夫·托尔斯泰",
-      "ko-KR": "레프 톨스토이"
+      "ko-KR": "레프 톨스토이",
+      "pl-PL": {
+        "value": "Lew Tołstoj",
+        "sources": [
+          "https://wydawnictwomg.pl/wojna-i-pokoj-czesc-1/"
+        ]
+      }
     },
     "Leonardo Sciascia": {
       "ar-AE": {
@@ -22279,7 +22309,13 @@
       "pt-PT": "Mikhail Bulgakov",
       "ja-JP": "ミハイル・ブルガーコフ",
       "ru-RU": "Михаил Булгаков",
-      "zh-CN": "米哈伊尔·布尔加科夫"
+      "zh-CN": "米哈伊尔·布尔加科夫",
+      "pl-PL": {
+        "value": "Michaił Bułhakow",
+        "sources": [
+          "https://akrusze.greg.pl/lektury/9%2C780_Mistrz-i-Malgorzata.html"
+        ]
+      }
     },
     "Mini Nair": {
       "ar-AE": {
@@ -27404,7 +27440,13 @@
       "pt-PT": "Sergei Lukyanenko",
       "ja-JP": "セルゲイ・ルキャネンコ",
       "ru-RU": "Сергей Лукьяненко",
-      "zh-CN": "谢尔盖·卢基亚年科"
+      "zh-CN": "谢尔盖·卢基亚年科",
+      "pl-PL": {
+        "value": "Siergiej Łukjanienko",
+        "sources": [
+          "https://czytam.pl/nocny-patrol-lukjanienko-siergiej-33459"
+        ]
+      }
     },
     "Sergio De La Pava": {
       "ar-AE": {
@@ -31230,7 +31272,13 @@
       "ja-JP": "ウィリアム・シェイクスピア",
       "ru-RU": "Уильям Шекспир",
       "zh-CN": "威廉·莎士比亚",
-      "ko-KR": "윌리엄 셰익스피어"
+      "ko-KR": "윌리엄 셰익스피어",
+      "pl-PL": {
+        "value": "William Szekspir",
+        "sources": [
+          "https://wolnelektury.pl/katalog/lektura/makbet/"
+        ]
+      }
     },
     "William Trevor": {
       "ar-AE": {
@@ -31447,7 +31495,13 @@
       "pt-PT": "Wislawa Szymborska",
       "ja-JP": "ヴィスワヴァ・シンボルスカ",
       "ru-RU": "Вислава Шимборска",
-      "zh-CN": "维斯瓦瓦·辛波斯卡"
+      "zh-CN": "维斯瓦瓦·辛波斯卡",
+      "pl-PL": {
+        "value": "Wisława Szymborska",
+        "sources": [
+          "https://www.pap.pl/aktualnosci/news%2C791163%2Cpiec-lat-temu-zmarla-wislawa-szymborska.html"
+        ]
+      }
     },
     "Yasunari Kawabata": {
       "ar-AE": {
@@ -31509,7 +31563,13 @@
       "pt-PT": "Yevgeny Zamyatin",
       "ja-JP": "エフゲニー・ザミャチン",
       "ru-RU": "Евгений Замятин",
-      "zh-CN": "叶夫根尼·扎米亚金"
+      "zh-CN": "叶夫根尼·扎米亚金",
+      "pl-PL": {
+        "value": "Jewgienij Zamiatin",
+        "sources": [
+          "https://e-isbn.pl/IsbnWeb/onix/summary.html?record_id=7651724"
+        ]
+      }
     },
     "Zadie Smith": {
       "ar-AE": {
@@ -31643,7 +31703,13 @@
             "https://azbooka.ru/books/gordost-i-predybezhdenie"
           ]
         },
-        "ko-KR": "오만과 편견"
+        "ko-KR": "오만과 편견",
+        "pl-PL": {
+          "value": "Duma i uprzedzenie",
+          "sources": [
+            "https://www.proszynski.pl/product/duma-i-uprzedzenie-7"
+          ]
+        }
       },
       "Emma": {
         "el-GR": "Έμμα",
@@ -31733,7 +31799,13 @@
           ]
         },
         "eo": "La Scivolema Okazaĵo de la Hundo en la Nokta Tempo",
-        "ko-KR": "한밤중에 개에게 일어난 의문의 사건"
+        "ko-KR": "한밤중에 개에게 일어난 의문의 사건",
+        "pl-PL": {
+          "value": "Dziwny przypadek psa nocną porą",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/138286/dziwny-przypadek-psa-nocna-pora"
+          ]
+        }
       }
     },
     "Ken Kesey": {
@@ -31764,7 +31836,13 @@
         "ru-RU": "Пролетая над гнездом кукушки",
         "pt-PT": "Um voou sobre o ninho do cuco",
         "eo": "Unu flugis super la kukolan neston",
-        "ko-KR": "뻐꾸기 둥지 위로 날아간 새"
+        "ko-KR": "뻐꾸기 둥지 위로 날아간 새",
+        "pl-PL": {
+          "value": "Lot nad kukułczym gniazdem",
+          "sources": [
+            "https://abc.uw.edu.pl/katalog/ksiazka/7291"
+          ]
+        }
       },
       "Sometimes a Great Notion": {
         "de-DE": "Manchmal eine tolle Idee",
@@ -31798,7 +31876,13 @@
         "eo": "Honoro inter ŝtelistoj",
         "ar-AE": "شرف بين اللصوص",
         "ja-JP": "盗まれた独立宣言",
-        "ko-KR": "도둑들의 명예"
+        "ko-KR": "도둑들의 명예",
+        "pl-PL": {
+          "value": "Złodziejski honor",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/149960/zlodziejski-honor"
+          ]
+        }
       },
       "A Matter of Honor": {
         "de-DE": "Eine Frage der Ehre",
@@ -31811,7 +31895,13 @@
         "zh-CN": "荣誉之战",
         "ar-AE": "مسألة شرف",
         "eo": "Afero de Honoro",
-        "ja-JP": "名誉の問題"
+        "ja-JP": "名誉の問題",
+        "pl-PL": {
+          "value": "Sprawa honoru",
+          "sources": [
+            "https://e-isbn.pl/IsbnWeb/onix/summary.html?record_id=7651747"
+          ]
+        }
       },
       "A Matter of Principle": {
         "de-DE": "Eine Grundsatzfrage",
@@ -31837,7 +31927,13 @@
         "zh-CN": "《生而囚徒》",
         "ar-AE": "سجين الحب الميلاد",
         "eo": "Kaptito de Naskiĝo",
-        "ja-JP": "誕生の囚人"
+        "ja-JP": "誕生の囚人",
+        "pl-PL": {
+          "value": "Więzień urodzenia",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/29984/wiezien-urodzenia"
+          ]
+        }
       },
       "An Eye for an Eye": {
         "de-DE": "Auge um Auge",
@@ -31863,7 +31959,13 @@
         "zh-CN": "直线距离",
         "ar-AE": "كما يطير الغراب",
         "eo": "Laŭ la Korvo flugas",
-        "ja-JP": "カラスの飛ぶように"
+        "ja-JP": "カラスの飛ぶように",
+        "pl-PL": {
+          "value": "Prosto jak strzelił",
+          "sources": [
+            "https://www.proszynski.pl/product/prosto-jak-strzelil"
+          ]
+        }
       },
       "Be Careful What You Wish For": {
         "de-DE": "Seien Sie vorsichtig, was Sie sich wünschen",
@@ -32037,7 +32139,13 @@
         "zh-CN": "《比剑更强大》",
         "ar-AE": "أقوى من سيف",
         "eo": "Pli potenca ol la glavo",
-        "ja-JP": "剣よりも強い"
+        "ja-JP": "剣よりも強い",
+        "pl-PL": {
+          "value": "Potężniejszy od miecza",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/263177/potezniejszy-od-miecza"
+          ]
+        }
       },
       "Never Stop on the Motorway": {
         "de-DE": "Halten Sie niemals auf der Autobahn an",
@@ -32076,7 +32184,13 @@
         "zh-CN": "一分钱也不多，一分钱也不少",
         "ar-AE": "ليس بنسًا أكثر، وليس بنسًا أقل",
         "eo": "Ne Eĉ Penco Pli, Ne Eĉ Penco Malpli",
-        "ja-JP": "一銭も増えず、一銭も減らなかった"
+        "ja-JP": "一銭も増えず、一銭も減らなかった",
+        "pl-PL": {
+          "value": "Co do grosza",
+          "sources": [
+            "https://www.proszynski.pl/product/co-do-grosza"
+          ]
+        }
       },
       "Nothing Ventured": {
         "de-DE": "Nichts gewagt",
@@ -32089,7 +32203,13 @@
         "zh-CN": "无所畏惧",
         "ar-AE": "لا يوجد شيء مغامر",
         "eo": "Nenio Aventurita",
-        "ja-JP": "何も冒険はなかった"
+        "ja-JP": "何も冒険はなかった",
+        "pl-PL": {
+          "value": "Nic bez ryzyka",
+          "sources": [
+            "https://e-isbn.pl/IsbnWeb/onix/summary.html?record_id=7651689"
+          ]
+        }
       },
       "Old Love": {
         "de-DE": "Alte Liebe",
@@ -32141,7 +32261,13 @@
         "zh-CN": "荣耀之路",
         "ar-AE": "دروب المجد",
         "eo": "Vojoj de Gloro",
-        "ja-JP": "栄光の道"
+        "ja-JP": "栄光の道",
+        "pl-PL": {
+          "value": "Ścieżki chwały",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/52246/sciezki-chwaly"
+          ]
+        }
       },
       "Shall We Tell the President?": {
         "de-DE": "Sollen wir es dem Präsidenten sagen?",
@@ -32154,7 +32280,13 @@
         "zh-CN": "我们该告诉总统吗？",
         "ar-AE": "هل سنخبر الرئيس؟",
         "eo": "Ĉu Ni Diros al la Prezidanto?",
-        "ja-JP": "大統領に伝えましょうか?"
+        "ja-JP": "大統領に伝えましょうか?",
+        "pl-PL": {
+          "value": "Czy powiemy prezydentowi?",
+          "sources": [
+            "https://w.bibliotece.pl/10211/Czy%2Bpowiemy%2Bprezydentowi"
+          ]
+        }
       },
       "Shoeshine Boy": {
         "de-DE": "Schuhputzer",
@@ -32180,7 +32312,13 @@
         "zh-CN": "财富之子",
         "ar-AE": "أبناء الحظ",
         "eo": "Sons of Fortune",
-        "ja-JP": "サンズ・オブ・フォーチュン"
+        "ja-JP": "サンズ・オブ・フォーチュン",
+        "pl-PL": {
+          "value": "Synowie fortuny",
+          "sources": [
+            "https://books.apple.com/pl/book/synowie-fortuny/id6760626603"
+          ]
+        }
       },
       "The Chinese Statue": {
         "de-DE": "Die chinesische Statue",
@@ -32245,7 +32383,13 @@
         "zh-CN": "父辈的罪孽",
         "ar-AE": "خطايا الأب",
         "eo": "La Pekoj de la Patro",
-        "ja-JP": "父の罪"
+        "ja-JP": "父の罪",
+        "pl-PL": {
+          "value": "Za grzechy ojca",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/4839223/za-grzechy-ojca"
+          ]
+        }
       },
       "The Undiplomatic Diplomat": {
         "de-DE": "Der undiplomatische Diplomat",
@@ -32271,7 +32415,13 @@
         "zh-CN": "这是一个人",
         "ar-AE": "كان هذا رجلاً",
         "eo": "Ĉi tio Estis Viro",
-        "ja-JP": "これは男だった"
+        "ja-JP": "これは男だった",
+        "pl-PL": {
+          "value": "To był człowiek!",
+          "sources": [
+            "https://www.katalog.bibliotekabielany.waw.pl/katalog/detail.php?PozycjaOpisy=20171010105629087145"
+          ]
+        }
       },
       "Trial and Error": {
         "de-DE": "Versuch und Irrtum",
@@ -32331,7 +32481,13 @@
         "zh-CN": "盲柳，睡女",
         "ar-AE": "صفصافة عمياء، امرأة نائمة",
         "eo": "Blinda Saliko, Dormanta Virino",
-        "ko-KR": "눈먼 버드나무와 잠자는 여자"
+        "ko-KR": "눈먼 버드나무와 잠자는 여자",
+        "pl-PL": {
+          "value": "Ślepa wierzba i śpiąca kobieta",
+          "sources": [
+            "https://www.katalog.bibliotekabielany.waw.pl/katalog/detail.php?PozycjaOpisy=20120602171225088199"
+          ]
+        }
       },
       "1Q84": {
         "es-ES": "1T84",
@@ -32410,7 +32566,13 @@
         "ar-AE": "أرض العجائب المسلوقة ونهاية العالم",
         "eo": "Malmola Boligita Mirlando kaj la Fino de la Mondo",
         "ja-JP": "ハードボイルド・ワンダーランドと世界の終わり",
-        "ko-KR": "세계의 끝과 하드보일드 원더랜드"
+        "ko-KR": "세계의 끝과 하드보일드 원더랜드",
+        "pl-PL": {
+          "value": "Koniec Świata i Hard-boiled Wonderland",
+          "sources": [
+            "https://www.znak.com.pl/p/koniec-swiata-i-hard-boiled-wonderland-haruki-murakami-3736"
+          ]
+        }
       },
       "Kafka on the Shore": {
         "de-DE": "Kafka am Ufer",
@@ -32493,7 +32655,13 @@
         "zh-CN": "睡梦医生",
         "ar-AE": "دكتور سليب",
         "eo": "Doktoro Dormo",
-        "ko-KR": "닥터 슬립"
+        "ko-KR": "닥터 슬립",
+        "pl-PL": {
+          "value": "Doktor Sen",
+          "sources": [
+            "https://ateneum.net.pl/pozycja.php?id=715758"
+          ]
+        }
       },
       "11/22/63": {
         "de-DE": "22.11.63",
@@ -32511,7 +32679,13 @@
         },
         "eo": "11/22/63",
         "ja-JP": "11/22/63",
-        "ru-RU": "22.11.63"
+        "ru-RU": "22.11.63",
+        "pl-PL": {
+          "value": "Dallas ’63",
+          "sources": [
+            "https://www.proszynski.pl/product/dallas-63-6"
+          ]
+        }
       },
       "Billy Summers": {
         "el-GR": "Μπίλι Σάμερς",
@@ -32577,7 +32751,13 @@
         "zh-CN": "《漆黑一片，没有星星》",
         "ar-AE": "ظلام دامس، بلا نجوم",
         "eo": "Plena Mallumo, Sen Steloj",
-        "ja-JP": "真っ暗、スターなし"
+        "ja-JP": "真っ暗、スターなし",
+        "pl-PL": {
+          "value": "Czarna bezgwiezdna noc",
+          "sources": [
+            "https://www.wydawnictwoalbatros.com/ksiazki/czarna-bezgwiezdna-noc-2/"
+          ]
+        }
       },
       "Gerald’s Game": {
         "de-DE": "Geralds Spiel",
@@ -32603,7 +32783,13 @@
         "zh-CN": "《如果它流血》",
         "ar-AE": "إذا كان الأمر كذلك ينزف",
         "eo": "Se Ĝi Sangas",
-        "ja-JP": "血が流れるなら"
+        "ja-JP": "血が流れるなら",
+        "pl-PL": {
+          "value": "Jest krew…",
+          "sources": [
+            "https://www.proszynski.pl/product/jest-krew-5"
+          ]
+        }
       },
       "Insomnia": {
         "de-DE": "Schlaflosigkeit",
@@ -32696,7 +32882,13 @@
         "ar-AE": "ساطع",
         "eo": "La Brilo",
         "ja-JP": "ザ・シャイニング",
-        "ko-KR": "샤이닝"
+        "ko-KR": "샤이닝",
+        "pl-PL": {
+          "value": "Lśnienie",
+          "sources": [
+            "https://stephenking.pl/ksiazka/lsnienie/"
+          ]
+        }
       },
       "The Stand": {
         "de-DE": "Der Stand",
@@ -32723,7 +32915,13 @@
         "ar-AE": "The Tommyknockers",
         "eo": "La Tommyknockers",
         "ja-JP": "トミーノッカーズ",
-        "ko-KR": "토미노커스"
+        "ko-KR": "토미노커스",
+        "pl-PL": {
+          "value": "Stukostrachy",
+          "sources": [
+            "https://stephenking.pl/ksiazka/stukostrachy/"
+          ]
+        }
       }
     },
     "Thomas Hoover": {
@@ -32739,7 +32937,8 @@
         "eo": "Projekto Ciklopo",
         "ar-AE": "مشروع سايكلوبس",
         "ja-JP": "サイクロプス計画",
-        "ko-KR": "프로젝트 사이클롭스"
+        "ko-KR": "프로젝트 사이클롭스",
+        "pl-PL": "Projekt Cyklop"
       },
       "Project Daedalus": {
         "de-DE": "Projekt Daedalus",
@@ -33011,7 +33210,13 @@
         "ar-AE": "ثم لم يكن هناك شيء",
         "eo": "Kaj Tiam Estis Neniuj",
         "ja-JP": "そして誰もいなくなった",
-        "ko-KR": "그리고 아무도 없었다"
+        "ko-KR": "그리고 아무도 없었다",
+        "pl-PL": {
+          "value": "I nie było już nikogo",
+          "sources": [
+            "https://www.proszynski.pl/product/i-nie-bylo-juz-nikogo"
+          ]
+        }
       },
       "Death on the Nile": {
         "de-DE": "Tod auf dem Nil",
@@ -33394,7 +33599,13 @@
         "zh-CN": "伊万·杰诺索维奇的一天",
         "ar-AE": "يوم في حياة إيفان دينوسوفيتش",
         "eo": "Unu Tago en la Vivo de Ivan Denosovich",
-        "ja-JP": "イワン・デノソヴィッチの一日"
+        "ja-JP": "イワン・デノソヴィッチの一日",
+        "pl-PL": {
+          "value": "Jeden dzień Iwana Denisowicza",
+          "sources": [
+            "https://abc.uw.edu.pl/katalog/ksiazka/14160"
+          ]
+        }
       }
     },
     "Alex Michaelides": {
@@ -33718,7 +33929,13 @@
         "zh-CN": "《莫斯科绅士》",
         "ar-AE": "رجل نبيل في موسكو",
         "eo": "Ĝentlemano en Moskvo",
-        "ja-JP": "モスクワの紳士"
+        "ja-JP": "モスクワの紳士",
+        "pl-PL": {
+          "value": "Dżentelmen w Moskwie",
+          "sources": [
+            "https://ksiegarnia.pwn.pl/Dzentelmen-w-Moskwie%2C1094924296%2Cp.html"
+          ]
+        }
       },
       "The Lincoln Highway": {
         "de-DE": "Der Lincoln Highway",
@@ -33731,7 +33948,13 @@
         "zh-CN": "林肯公路",
         "ar-AE": "طريق لينكولن السريع",
         "eo": "La Lincoln Highway",
-        "ja-JP": "リンカーン・ハイウェイ"
+        "ja-JP": "リンカーン・ハイウェイ",
+        "pl-PL": {
+          "value": "Lincoln Highway",
+          "sources": [
+            "https://www.wydawnictwoznak.pl/ksiazka/Lincoln-Highway/10054"
+          ]
+        }
       }
     },
     "Ananth": {
@@ -33879,7 +34102,13 @@
         "zh-CN": "《火星救援》",
         "ar-AE": "المريخي",
         "eo": "La Marsano",
-        "ja-JP": "火星人"
+        "ja-JP": "火星人",
+        "pl-PL": {
+          "value": "Marsjanin",
+          "sources": [
+            "https://www.znak.com.pl/p/marsjanin-andy-weir-159349"
+          ]
+        }
       }
     },
     "Angela Carter": {
@@ -35154,7 +35383,13 @@
         "zh-CN": "《马和男孩》",
         "ar-AE": "الحصان وصبيه",
         "eo": "La Ĉevalo kaj Lia Knabo",
-        "ja-JP": "馬と少年"
+        "ja-JP": "馬と少年",
+        "pl-PL": {
+          "value": "Koń i jego chłopiec",
+          "sources": [
+            "https://www.bn.org.pl/download/document/1253022325.pdf"
+          ]
+        }
       },
       "The Silver Chair": {
         "de-DE": "Der silberne Stuhl",
@@ -35168,7 +35403,13 @@
         "ar-AE": "الكرسي الفضي",
         "eo": "La Arĝenta Seĝo",
         "ja-JP": "銀の椅子",
-        "ko-KR": "은의자"
+        "ko-KR": "은의자",
+        "pl-PL": {
+          "value": "Srebrne krzesło",
+          "sources": [
+            "https://bibliotekabialoleka.online/opac/detail.php?PozycjaOpisy=20080509223814002263"
+          ]
+        }
       },
       "The Voyage of the Dawn Treader": {
         "de-DE": "Die Reise der Morgenröte",
@@ -36763,7 +37004,13 @@
         "zh-CN": "无尽的玩笑",
         "ar-AE": "النكتة اللانهائية",
         "eo": "Senfina Ŝerco",
-        "ja-JP": "無限の冗談"
+        "ja-JP": "無限の冗談",
+        "pl-PL": {
+          "value": "Niewyczerpany żart",
+          "sources": [
+            "https://www.bn.org.pl/download/document/1695806902.pdf"
+          ]
+        }
       },
       "Oblivion": {
         "de-DE": "Vergessenheit",
@@ -36885,7 +37132,13 @@
         "ar-AE": "أطلس السحاب",
         "eo": "Nuba Atlaso",
         "ja-JP": "クラウド・アトラス",
-        "ko-KR": "클라우드 아틀라스"
+        "ko-KR": "클라우드 아틀라스",
+        "pl-PL": {
+          "value": "Atlas chmur",
+          "sources": [
+            "https://www.ateneum.pl/pozycja.php?id=787838"
+          ]
+        }
       },
       "Ghostwritten": {
         "de-DE": "Ghostwriter",
@@ -37088,7 +37341,13 @@
         "zh-CN": "守望者",
         "ar-AE": "المراقبون",
         "eo": "Gardantoj",
-        "ja-JP": "ウォッチャー"
+        "ja-JP": "ウォッチャー",
+        "pl-PL": {
+          "value": "Opiekunowie",
+          "sources": [
+            "https://www.wydawnictwoalbatros.com/ksiazki/opiekunowie/"
+          ]
+        }
       }
     },
     "Deborah Harkness": {
@@ -37261,7 +37520,13 @@
         "ar-AE": "الـ101 كلب مرقش",
         "eo": "La 101 Dalmatoj",
         "ja-JP": "101匹わんちゃん",
-        "ko-KR": "101마리 달마시안"
+        "ko-KR": "101마리 달마시안",
+        "pl-PL": {
+          "value": "101 dalmatyńczyków",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/49179/101-dalmatynczykow"
+          ]
+        }
       }
     },
     "Doma Mahmoud": {
@@ -37417,7 +37682,13 @@
         "ar-AE": "التاريخ السري",
         "eo": "La Sekreta Historio",
         "ja-JP": "秘密の歴史",
-        "ko-KR": "비밀의 계절"
+        "ko-KR": "비밀의 계절",
+        "pl-PL": {
+          "value": "Tajemna historia",
+          "sources": [
+            "https://www.empik.com/tajemna-historia-barwione-brzegi-tartt-donna%2Cp1669722623%2Cksiazka-p"
+          ]
+        }
       }
     },
     "Dornford Yates": {
@@ -38295,7 +38566,13 @@
         "zh-CN": "房间",
         "ar-AE": "الغرفة",
         "eo": "Ĉambro",
-        "ja-JP": "部屋"
+        "ja-JP": "部屋",
+        "pl-PL": {
+          "value": "Pokój",
+          "sources": [
+            "https://wydawnictwotrzecieoko.pl/produkt/pokoj-emma-donoghue/"
+          ]
+        }
       }
     },
     "Emma Salisbury": {
@@ -38589,7 +38866,13 @@
         "ar-AE": "غاتسبي العظيم",
         "eo": "La Granda Gatsby",
         "ja-JP": "華麗なるギャツビー",
-        "ko-KR": "위대한 개츠비"
+        "ko-KR": "위대한 개츠비",
+        "pl-PL": {
+          "value": "Wielki Gatsby",
+          "sources": [
+            "https://www.wydawnictwoznak.pl/ksiazka/Wielki-Gatsby/3727"
+          ]
+        }
       },
       "This Side of Paradise": {
         "de-DE": "Diese Seite des Paradieses",
@@ -38603,7 +38886,13 @@
         "ar-AE": "هذا الجانب من الجنة",
         "eo": "Tiu Flanko de Paradizo",
         "ja-JP": ">楽園のこちら側",
-        "ko-KR": "낙원의 이쪽"
+        "ko-KR": "낙원의 이쪽",
+        "pl-PL": {
+          "value": "Po tej stronie raju",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/81425/po-tej-stronie-raju"
+          ]
+        }
       }
     },
     "Fay Weldon": {
@@ -38947,7 +39236,13 @@
         "ar-AE": "الجريمة والعقاب",
         "eo": "Krimo kaj Puno",
         "ja-JP": "罪と罰",
-        "ko-KR": "죄와 벌"
+        "ko-KR": "죄와 벌",
+        "pl-PL": {
+          "value": "Zbrodnia i kara",
+          "sources": [
+            "https://www.wydawnictwosbm.pl/ksiazka/zbrodnia-i-kara/"
+          ]
+        }
       },
       "Notes from the Underground": {
         "de-DE": "Notizen aus dem Untergrund",
@@ -39089,7 +39384,13 @@
         "ar-AE": "100 سنة من العزلة",
         "es-ES": "100 años de soledad",
         "eo": "100 años de soledad",
-        "ja-JP": "百年の孤独"
+        "ja-JP": "百年の孤独",
+        "pl-PL": {
+          "value": "Sto lat samotności",
+          "sources": [
+            "https://www.kurtiak-ley.pl/garcia-marquez-gabriel-sto-lat-samotnosci/"
+          ]
+        }
       },
       "Chronicle of a Death Foretold": {
         "de-DE": "Chronik eines vorhergesagten Todes",
@@ -40506,7 +40807,13 @@
         "ar-AE": "مذكرات بريدجيت جونز",
         "eo": "La Taglibro de Bridget Jones",
         "ja-JP": "ブリジット・ジョーンズの日記",
-        "ko-KR": "브리짓 존스의 일기"
+        "ko-KR": "브리짓 존스의 일기",
+        "pl-PL": {
+          "value": "Dziennik Bridget Jones",
+          "sources": [
+            "https://nakanapie.pl/ksiazki/bridget-jones"
+          ]
+        }
       }
     },
     "Henning Mankell": {
@@ -40688,7 +40995,13 @@
         "ar-AE": "مدار السرطان",
         "eo": "Tropiko de Kankro",
         "ja-JP": "北回帰線",
-        "ko-KR": "북회귀선"
+        "ko-KR": "북회귀선",
+        "pl-PL": {
+          "value": "Zwrotnik Raka",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/75195/zwrotnik-raka"
+          ]
+        }
       }
     },
     "Herbert Asbury": {
@@ -41465,7 +41778,13 @@
         "ar-AE": "زمالة الخاتم",
         "eo": "La Kunularo de la Ringo",
         "ja-JP": "指輪の仲間",
-        "ko-KR": "반지 원정대"
+        "ko-KR": "반지 원정대",
+        "pl-PL": {
+          "value": "Drużyna Pierścienia",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/5247021/druzyna-pierscienia"
+          ]
+        }
       },
       "The Hobbit": {
         "de-DE": "Der Hobbit",
@@ -41478,7 +41797,13 @@
         "zh-CN": "《霍比特人》",
         "ar-AE": "الهوبيت",
         "eo": "La Hobito",
-        "ja-JP": "ホビットの冒険"
+        "ja-JP": "ホビットの冒険",
+        "pl-PL": {
+          "value": "Hobbit, czyli tam i z powrotem",
+          "sources": [
+            "https://www.bn.org.pl/download/document/1680176522.pdf"
+          ]
+        }
       }
     },
     "J.S. Fletcher": {
@@ -43929,7 +44254,13 @@
         "zh-CN": "环游世界八十天",
         "ar-AE": "حول العالم في ثمانين أيام",
         "eo": "Ĉirkaŭ la mondo en okdek tagoj",
-        "ja-JP": "80日間世界一周"
+        "ja-JP": "80日間世界一周",
+        "pl-PL": {
+          "value": "W osiemdziesiąt dni dookoła świata",
+          "sources": [
+            "https://wolnelektury.pl/media/book/pdf/w-80-dni-dookola-swiata.pdf"
+          ]
+        }
       },
       "Facing the Flag": {
         "de-DE": "Im Angesicht der Flagge",
@@ -45038,7 +45369,13 @@
         "ar-AE": "الحرب والسلام",
         "eo": "Milito kaj Paco",
         "ja-JP": "戦争と平和",
-        "ko-KR": "전쟁과 평화"
+        "ko-KR": "전쟁과 평화",
+        "pl-PL": {
+          "value": "Wojna i pokój",
+          "sources": [
+            "https://wydawnictwomg.pl/wojna-i-pokoj-czesc-1/"
+          ]
+        }
       }
     },
     "Leonardo Sciascia": {
@@ -45099,7 +45436,13 @@
         "ar-AE": "مغامرات أليس في بلاد العجائب",
         "eo": "La Aventuroj de Alicio en Mirlando",
         "ja-JP": "不思議の国のアリス",
-        "ko-KR": "이상한 나라의 앨리스"
+        "ko-KR": "이상한 나라의 앨리스",
+        "pl-PL": {
+          "value": "Alicja w Krainie Czarów",
+          "sources": [
+            "https://wolnelektury.pl/katalog/lektura/carroll-alicja-w-krainie-czarow/"
+          ]
+        }
       },
       "Crundle Castle": {
         "el-GR": "Καστλ Κραντλ",
@@ -45750,7 +46093,13 @@
         "zh-CN": "《强盗新娘》",
         "ar-AE": "العروس السارقة",
         "eo": "The Robber Bride",
-        "ja-JP": "強盗の花嫁"
+        "ja-JP": "強盗の花嫁",
+        "pl-PL": {
+          "value": "Zbójecka narzeczona",
+          "sources": [
+            "https://sklep.zysk.com.pl/zbojecka-narzeczona.html"
+          ]
+        }
       }
     },
     "Margaret Dickinson": {
@@ -46181,7 +46530,13 @@
         "zh-CN": "石榴汤",
         "ar-AE": "حساء الرمان",
         "eo": "Granada supo",
-        "ja-JP": "ザクロのスープ"
+        "ja-JP": "ザクロのスープ",
+        "pl-PL": {
+          "value": "Zupa z granatów",
+          "sources": [
+            "https://bn.org.pl/download/document/1467299264.pdf"
+          ]
+        }
       }
     },
     "Martin Amis": {
@@ -47708,7 +48063,13 @@
         "zh-CN": "我的休息与放松之年",
         "ar-AE": "عام الراحة والاسترخاء",
         "eo": "Mia Jaro de Ripozo kaj Malstreĉiĝo",
-        "ja-JP": "私の休息とリラクゼーションの年"
+        "ja-JP": "私の休息とリラクゼーションの年",
+        "pl-PL": {
+          "value": "Mój rok relaksu i odpoczynku",
+          "sources": [
+            "https://wydawnictwopauza.pl/produkt/moj-rok-relaksu-i-odpoczynku/"
+          ]
+        }
       }
     },
     "Oyinkan Braithwaite": {
@@ -47829,7 +48190,13 @@
         "zh-CN": "原罪",
         "ar-AE": "الخطيئة الأصلية",
         "eo": "Originala Peko",
-        "ja-JP": "原罪"
+        "ja-JP": "原罪",
+        "pl-PL": {
+          "value": "Grzech pierworodny",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/88129/grzech-pierworodny"
+          ]
+        }
       },
       "Shroud for a Nightingale": {
         "de-DE": "Leichentuch für eine Nachtigall",
@@ -47855,7 +48222,13 @@
         "zh-CN": "黑塔",
         "ar-AE": "الأسود البرج",
         "eo": "La Nigra Turo",
-        "ja-JP": "黒い塔"
+        "ja-JP": "黒い塔",
+        "pl-PL": {
+          "value": "Czarna wieża",
+          "sources": [
+            "https://www.tarnow-mbp.sowa.pl/index.php?001=KTk13099577&lang=en_GB&typ=record"
+          ]
+        }
       },
       "The Children of Men": {
         "de-DE": "Die Kinder der Menschen",
@@ -50750,7 +51123,13 @@
         "zh-CN": "《守夜人：第一卷》",
         "ar-AE": "المشاهدة الليلية: الكتاب الأول",
         "eo": "Nokta Gvatado: Libro Unu",
-        "ja-JP": "夜警: 第 1 巻"
+        "ja-JP": "夜警: 第 1 巻",
+        "pl-PL": {
+          "value": "Nocny patrol",
+          "sources": [
+            "https://czytam.pl/nocny-patrol-lukjanienko-siergiej-33459"
+          ]
+        }
       }
     },
     "Sergio De La Pava": {
@@ -50968,7 +51347,13 @@
         "ar-AE": "دراسة في اللون القرمزي",
         "eo": "Studo en Skarlata",
         "ja-JP": "スカーレットの研究",
-        "ko-KR": "주홍색 연구"
+        "ko-KR": "주홍색 연구",
+        "pl-PL": {
+          "value": "Studium w szkarłacie",
+          "sources": [
+            "https://www.wydawnictwoolesiejuk.pl/ksiazki/sherlock-holmes-studium-w-szkarlacie-a-study-in-scarlet-9788368132076/"
+          ]
+        }
       },
       "His Last Bow An Epilogue of Sherlock Holmes": {
         "de-DE": "Seine letzte Verbeugung Ein Epilog von Sherlock Holmes",
@@ -51034,7 +51419,13 @@
         "ar-AE": "مغامرات شيرلوك هولمز",
         "eo": "La Aventuroj de Ŝerloko Holmso",
         "ja-JP": "シャーロック・ホームズの冒険",
-        "ko-KR": "셜록 홈스의 모험"
+        "ko-KR": "셜록 홈스의 모험",
+        "pl-PL": {
+          "value": "Przygody Sherlocka Holmesa",
+          "sources": [
+            "https://wydawnictwowam.pl/node/48348"
+          ]
+        }
       },
       "The Empty House": {
         "de-DE": "Das leere Haus",
@@ -51143,7 +51534,13 @@
         "zh-CN": "《不羁女神》",
         "ar-AE": "الإلهة غير المحلية",
         "eo": "La Senhejma Diino",
-        "ja-JP": "非家庭的な女神"
+        "ja-JP": "非家庭的な女神",
+        "pl-PL": {
+          "value": "Pani mecenas ucieka",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/294432/pani-mecenas-ucieka"
+          ]
+        }
       },
       "Twenties Girl": {
         "de-DE": "Zwanzigerjahre-Mädchen",
@@ -52561,7 +52958,13 @@
         "zh-CN": "玫瑰之名",
         "ar-AE": "ال اسم الوردة",
         "eo": "La Nomo de la Rozo",
-        "ja-JP": "薔薇の名前"
+        "ja-JP": "薔薇の名前",
+        "pl-PL": {
+          "value": "Imię róży",
+          "sources": [
+            "https://www.wydawnictwoliterackie.pl/produkt/2344/imie-rozy"
+          ]
+        }
       }
     },
     "V.S. Pritchett": {
@@ -52676,7 +53079,13 @@
         "de-DE": "Les Misérables",
         "eo": "Les Misérables",
         "ja-JP": "レ・ミゼラブル",
-        "ko-KR": "레 미제라블"
+        "ko-KR": "레 미제라블",
+        "pl-PL": {
+          "value": "Nędznicy",
+          "sources": [
+            "https://wydawnictwomg.pl/nedznicy/"
+          ]
+        }
       },
       "The Toilers of the Sea": {
         "de-DE": "Die Werktätigen des Meeres",
@@ -53515,7 +53924,13 @@
         "it-IT": "Macbeth",
         "pt-PT": "Macbeth",
         "eo": "Macbeth",
-        "ja-JP": "マクベス"
+        "ja-JP": "マクベス",
+        "pl-PL": {
+          "value": "Makbet",
+          "sources": [
+            "https://wolnelektury.pl/katalog/lektura/makbet/"
+          ]
+        }
       },
       "Richard III": {
         "el-GR": "Ριχάρδος Γ΄",
@@ -53689,7 +54104,13 @@
         "zh-CN": "我们",
         "ar-AE": "نحن",
         "eo": "Ni",
-        "ja-JP": "私たちは"
+        "ja-JP": "私たちは",
+        "pl-PL": {
+          "value": "My",
+          "sources": [
+            "https://e-isbn.pl/IsbnWeb/onix/summary.html?record_id=7651724"
+          ]
+        }
       }
     },
     "Zadie Smith": {
