@@ -284,5 +284,27 @@
       "quote_time_case": "",
       "sfw": true
     }
+  ],
+  "ko-KR": [
+    {
+      "quote_first": "오류 ",
+      "quote_last": ": 인용문을 찾을 수 없습니다.",
+      "title": "인터넷 익스플로러",
+      "author": "1995-2022",
+      "id": "F-001",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "선장의 항해 일지:<br>아직 다음 시간의 인용문을 찾는 중입니다. ",
+      "quote_last": ".",
+      "title": "모비 딕",
+      "author": "에이해브 선장",
+      "id": "F-002",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
   ]
 }

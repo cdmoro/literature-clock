@@ -151,6 +151,7 @@ class AttributionLocalizationTest(unittest.TestCase):
     def test_high_priority_forms_generate_locally_and_keep_source_values(self):
         localizations = read_attribution_localizations(ROOT / 'quotes/attribution-localizations.json')
         cases = [
+            ('ko-KR', 'F. Scott Fitzgerald', 'The Great Gatsby', '위대한 개츠비', 'F. 스콧 피츠제럴드'),
             ('ja-JP', 'Thomas Hoover', 'Project Cyclops', 'サイクロプス計画', 'トーマス・フーバー'),
             ('zh-CN', 'Thomas Hoover', 'Project Cyclops', '独眼巨人计划', '托马斯·胡佛'),
             ('fr-FR', 'Ken Kesey', 'One Flew Over the Cuckoo’s Nest',

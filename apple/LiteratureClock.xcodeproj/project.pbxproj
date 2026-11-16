@@ -86,6 +86,7 @@
 		F10000000000000000000011 /* sync-catalogues.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "sync-catalogues.py"; sourceTree = "<group>"; };
 		F10000000000000000000012 /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
 		A00000000000000235 /* ja-JP */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ja-JP"; path = "ja-JP.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A00000000000000236 /* ko-KR */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ko-KR"; path = "ko-KR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +276,7 @@
 				eo,
 				"ar-AE",
 				"ja-JP",
+				"ko-KR",
 			);
 			mainGroup = A00000000000000000000012 /* Literature Clock */;
 			productRefGroup = A00000000000000000000013 /* Products */;
@@ -365,6 +367,7 @@
 				A00000000000000232 /* eo */,
 				A00000000000000233 /* ar-AE */,
 				A00000000000000235 /* ja-JP */,
+				A00000000000000236 /* ko-KR */,
 			);
 			name = Localizable.strings;
 			path = Shared/Strings;

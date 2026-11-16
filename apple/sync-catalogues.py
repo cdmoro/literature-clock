@@ -10,7 +10,8 @@ DESTINATION = ROOT / "apple" / "Shared" / "Catalogues"
 
 shutil.rmtree(DESTINATION, ignore_errors=True)
 DESTINATION.mkdir(parents=True)
-for locale_dir in sorted(path for path in SOURCE.iterdir() if path.is_dir()):
+for locale_dir in sorted(path for path in SOURCE.iterdir()
+                         if path.is_dir() and not path.name.endswith("-draft")):
     catalogue = {
         path.stem: json.loads(path.read_text(encoding="utf-8"))
         for path in sorted(locale_dir.glob("*.json"))

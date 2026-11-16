@@ -37,6 +37,85 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
                 tags = lambda text: Counter(re.findall(r'</?[^>]+>', text))
                 self.assertEqual(tags(row['Quote']), tags(source['Quote']))
 
+    def test_korean_catacombs_passage_preserves_the_noon_return(self):
+        rows = self.catalogues['ko-KR']
+        outbound, returning = rows['0500-013'], rows['1200-024']
+        self.assertEqual(outbound['Quote'], returning['Quote'])
+        self.assertEqual(outbound['Quote time'], '새벽 다섯 시')
+        self.assertEqual(returning['Quote time'], '정오')
+        self.assertIn('정오가 되어서야 지상으로 나오겠네', returning['Quote'])
+
+    def test_korean_tide_passage_keeps_all_four_stages(self):
+        rows = self.catalogues['ko-KR']
+        stages = {'0321-002': '3시 21분', '0933-001': '9시 33분', '1239-000': '12시 39분'}
+        passage = rows['0321-002']['Quote']
+        for identifier, highlight in stages.items():
+            with self.subTest(identifier=identifier):
+                self.assertEqual(rows[identifier]['Quote'], passage)
+                self.assertEqual(rows[identifier]['Quote time'], highlight)
+        self.assertIn('썰물의 중간은 7시 15분', passage)
+        self.assertIn('밀물의 중간은 12시 39분', passage)
+
+    def test_korean_reused_passage_preserves_both_times(self):
+        rows = self.catalogues['ko-KR']
+        first, second = (rows[identifier] for identifier in ('0954-002', '0958-000'))
+        self.assertEqual(first['Quote'], second['Quote'])
+        self.assertIn('10시 6분 전에', first['Quote'])
+        self.assertIn('10시 2분 전이었다', first['Quote'])
+        self.assertEqual(first['Quote time'], '10시 6분 전')
+        self.assertEqual(second['Quote time'], '10시 2분 전')
+
+    def test_korean_time_corrections_keep_source_precision(self):
+        rows = self.catalogues['ko-KR']
+        self.assertEqual(rows['0742-001']['Quote time'], '7시간 42분')
+        self.assertEqual(rows['0729-001']['Quote time'], '7시 30분이 되기 약 30초 전')
+        self.assertEqual(rows['1528-001']['Quote time'], '3시 30분이 다 됐네')
+        self.assertIn('5시 2분이 지나자', rows['1658-000']['Quote'])
+        self.assertIn('5시 2분 전에는', rows['1658-000']['Quote'])
+
+    def test_korean_times_preserve_hours_minutes_and_duration(self):
+        rows = self.catalogues['ko-KR']
+        highlights = {
+            '0008-000': '자정이 지난 지 8분',
+            '0136-000': '새벽 1시 36분쯤',
+            '0535-004': '5시 35분',
+            '1735-000': '5시 35분',
+            '0220-000': '2시 20분',
+            '0234-000': '2시 34분',
+            '0235-001': '2시 35분',
+            '0240-000': '2시 40분',
+            '0305-000': '3시 5분쯤',
+            '1436-001': '두 시 삼십육 분',
+            '1442-000': '2시 42분',
+            '1857-000': '일곱 시 3분 전',
+            '0744-001': '7시 44분',
+            '1558-001': '3시 58분',
+            '1942-003': '7시간 42분',
+            '2027-000': '8시 27분',
+        }
+        for identifier, expected in highlights.items():
+            with self.subTest(identifier=identifier):
+                self.assertEqual(rows[identifier]['Quote time'], expected)
+        self.assertIn('분당 132회, 131회, 130회', rows['1511-001']['Quote'])
+        self.assertEqual(rows['0606-000']['Quote'], rows['1806-000']['Quote'])
+        self.assertEqual(rows['1806-000']['Quote time'], '6시 6분')
+
+    def test_korean_distinguishes_clock_times_from_recording_offsets(self):
+        rows = self.catalogues['ko-KR']
+        self.assertEqual(rows['1053-003']['Quote time'], '10분 53초')
+        self.assertEqual(rows['1057-001']['Quote time'], '10분 57초')
+        self.assertEqual(rows['1504-002']['Quote time'], '15시 4분')
+        self.assertIn('16시 54분', rows['1654-003']['Quote time'])
+        self.assertIn('태어나려면 아직 400년은 더 남았는데', rows['1601-001']['Quote'])
+
+    def test_korean_train_passage_uses_departure_and_arrival_times(self):
+        rows = self.catalogues['ko-KR']
+        departure = rows['1722-000']
+        arrival = rows['1929-000']
+        self.assertEqual(departure['Quote'], arrival['Quote'])
+        self.assertEqual(departure['Quote time'], '17시 22분')
+        self.assertEqual(arrival['Quote time'], '19시 29분')
+
     def test_known_time_regressions_match_source_meaning(self):
         examples = {
             'de-DE': ['0130-003', '0330-002', '1930-010'],
@@ -209,6 +288,12 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
                         self.assertIn(localized[identifier], rows[identifier]['Quote'])
                         if identifier == '1430-008':
                             self.assertIn('釘', rows[identifier]['Quote'])
+                    elif locale == 'ko-KR':
+                        localized = {'1400-029': '레메디오스', '1900-026': '아우렐리아노 트리스테',
+                                     '0600-019': '타르데프스키', '1430-008': '트래블러'}
+                        self.assertIn(localized[identifier], rows[identifier]['Quote'])
+                        if identifier == '1430-008':
+                            self.assertIn('못을', rows[identifier]['Quote'])
                     elif locale == 'zh-CN':
                         # Chinese transliteration is legitimate; Traveler is retained as a name.
                         if identifier == '1430-008':

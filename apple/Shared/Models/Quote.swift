@@ -66,7 +66,7 @@ struct Quote: Decodable, Identifiable {
 
 enum ClockCatalogue {
     private static let logger = Logger(subsystem: "net.literatureclock.app.widget", category: "Catalogue")
-    static let locales = ["en-US", "en-GB", "es-ES", "fr-FR", "de-DE", "it-IT", "pt-PT", "el-GR", "eo", "ru-RU", "zh-CN", "ar-AE", "ja-JP"]
+    static let locales = ["en-US", "en-GB", "es-ES", "fr-FR", "de-DE", "it-IT", "pt-PT", "el-GR", "eo", "ru-RU", "zh-CN", "ar-AE", "ja-JP", "ko-KR"]
 
     static func quotes(at date: Date, locale: String) -> [Quote] {
         let catalogue = catalogue(for: locale)

@@ -7,6 +7,7 @@ import { effectiveFont, fontSupportsLocale } from './font-preferences';
 // Alternatives belong to the passage language, including unregistered draft
 // catalogues; the interface language can be different.
 
+const SYSTEM_FONT_LANGUAGES = new Set(['ar', 'ko']);
 const BASE_FONT_THEMES = new Set(['base', 'pink', 'green', 'orange', 'purple', 'blue', 'gray', 'pine']);
 
 export function getLocaleThemeFont(theme: string, locale: string) {
@@ -16,8 +17,8 @@ export function getLocaleThemeFont(theme: string, locale: string) {
     LOCALE_THEME_FONTS[BASE_FONT_THEMES.has(name) ? 'base' : name]?.[language] ||
     (language === 'ja' || language === 'zh' ? LOCALE_THEME_FONTS.base[language] : undefined);
   if (alternative) return alternative;
-  // Unassigned themes use the system Arabic face.
-  if (language === 'ar') return undefined;
+  // Use system fallback for scripts without an assigned theme face.
+  if (SYSTEM_FONT_LANGUAGES.has(language)) return undefined;
   const original = THEME_FONTS[name]?.[0] || 'Special Elite';
   if (fontSupportsLocale(original, locale) === false) {
     return ['terminal', 'retro'].includes(name) ? 'JetBrains Mono' : 'Noto Serif';
@@ -29,7 +30,7 @@ export function getLocaleThemeFont(theme: string, locale: string) {
 export function getDefaultFontName(theme: string, locale: string) {
   return (
     getLocaleThemeFont(theme, locale) ||
-    (locale.split('-')[0].toLowerCase() === 'ar'
+    (SYSTEM_FONT_LANGUAGES.has(locale.split('-')[0].toLowerCase())
       ? 'system-ui'
       : THEME_FONTS[theme.split('-')[0]]?.[0] || 'Special Elite')
   );
@@ -49,7 +50,11 @@ export function applyLocaleThemeFont(element: HTMLElement, locale = element.lang
   // Block inheritance when secondary reading content uses another language.
   element.style.setProperty(
     '--locale-quote-font-family',
-    locale.split('-')[0] === 'ar' && !font ? 'system-ui, sans-serif' : font ? `"${font}", monospace` : 'initial',
+    font
+      ? `"${font}", monospace`
+      : SYSTEM_FONT_LANGUAGES.has(locale.split('-')[0].toLowerCase())
+        ? 'system-ui, sans-serif'
+        : 'initial',
   );
   if (font) loadFontIfNotExists(font);
 }
