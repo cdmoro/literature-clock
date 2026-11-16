@@ -31970,7 +31970,13 @@
         "zh-CN": "以眼还眼",
         "ar-AE": "العين بالعين",
         "eo": "Okulo por Okulo",
-        "ja-JP": "目には目を"
+        "ja-JP": "目には目を",
+        "pl-PL": {
+          "value": "Oko za oko",
+          "sources": [
+            "https://ksiegarnia.pwn.pl/Oko-za-oko-101292057.html"
+          ]
+        }
       },
       "As the Crow Flies": {
         "de-DE": "Wie die Krähe fliegt",
@@ -32053,7 +32059,13 @@
         "de-DE": "Cat O’ Nine Tales",
         "eo": "Kato O' Nine Tales",
         "ja-JP": "キャット・オ・ナイン・テイルズ",
-        "ru-RU": "Кэт О’Девять Сказки"
+        "ru-RU": "Кэт О’Девять Сказки",
+        "pl-PL": {
+          "value": "Na kocią łapę",
+          "sources": [
+            "https://www.rebis.com.pl/files/general/REBIS-KATALOG-2016.pdf"
+          ]
+        }
       },
       "Cheap at Half the Price": {
         "de-DE": "Günstig zum halben Preis",
@@ -32149,7 +32161,13 @@
         "zh-CN": "正面赢",
         "ar-AE": "الرؤوس التي تفوز بها",
         "eo": "Kapoj Vi Venkas",
-        "ja-JP": "頭が勝ちます"
+        "ja-JP": "頭が勝ちます",
+        "pl-PL": {
+          "value": "I tak wygrasz",
+          "sources": [
+            "https://e-isbn.pl/IsbnWeb/onix/summary.html?record_id=1499569"
+          ]
+        }
       },
       "Hidden in Plain Sight": {
         "de-DE": "Versteckt in Sichtweite",
@@ -32186,7 +32204,13 @@
         },
         "de-DE": "Kane & Abel",
         "eo": "Kane & Abel",
-        "ja-JP": "ケインとアベル"
+        "ja-JP": "ケインとアベル",
+        "pl-PL": {
+          "value": "Kane i Abel",
+          "sources": [
+            "https://w.bibliotece.pl/1002201/Kane%2Bi%2BAbel"
+          ]
+        }
       },
       "Mightier Than the Sword": {
         "de-DE": "Mächtiger als das Schwert",
@@ -32648,7 +32672,13 @@
         "zh-CN": "舞舞舞",
         "ar-AE": "رقصة رقص الرقص",
         "eo": "Danco Danco Danco",
-        "ja-JP": "ダンス ダンス ダンス"
+        "ja-JP": "ダンス ダンス ダンス",
+        "pl-PL": {
+          "value": "Tańcz, tańcz, tańcz",
+          "sources": [
+            "https://ci.nii.ac.jp/ncid/BB19893150"
+          ]
+        }
       },
       "Hard-Boiled Wonderland and the End of the World": {
         "de-DE": "Hartgekochtes Wunderland und das Ende der Welt",
@@ -32700,7 +32730,13 @@
         "zh-CN": "《消失的大象》",
         "ar-AE": "يختفي الفيل",
         "eo": "La Elefanto Malaperas",
-        "ja-JP": "象が消える"
+        "ja-JP": "象が消える",
+        "pl-PL": {
+          "value": "Zniknięcie słonia",
+          "sources": [
+            "https://xn--szukamksiki-4kb16m.pl/SkNewWeb/record/1882/1664940"
+          ]
+        }
       },
       "The Wind-up Bird Chronicle": {
         "de-DE": "Die aufziehbare Vogelchronik",
@@ -32713,7 +32749,13 @@
         "zh-CN": "发条鸟年代记",
         "ar-AE": "سجل طائر الرياح",
         "eo": "La Kroniko de la Birdo de Finiĝo",
-        "ja-JP": "ねじまき鳥クロニクル"
+        "ja-JP": "ねじまき鳥クロニクル",
+        "pl-PL": {
+          "value": "Kronika ptaka nakręcacza",
+          "sources": [
+            "https://www.katalog.bibliotekabielany.waw.pl/katalog/detail.php?PozycjaOpisy=20180630234556061762"
+          ]
+        }
       },
       "What I Talk About When I Talk About Running": {
         "de-DE": "Worüber ich spreche, wenn ich über Laufen spreche",
@@ -32726,7 +32768,13 @@
         "zh-CN": "当我谈论跑步时，我谈论些什么",
         "ar-AE": "ما أتحدث عنه عندما أتحدث عن الجري",
         "eo": "Pri kio Mi Parolas Kiam Mi Parolas Pri Kurado",
-        "ja-JP": "ランニングについて語るときに私が語ること"
+        "ja-JP": "ランニングについて語るときに私が語ること",
+        "pl-PL": {
+          "value": "O czym mówię, kiedy mówię o bieganiu",
+          "sources": [
+            "https://www.festiwalbiegowy.pl/aktualnosci/o-czym-mowie-kiedy-mowie-o-bieganiu"
+          ]
+        }
       }
     },
     "Stephen King": {
@@ -32827,7 +32875,13 @@
         "zh-CN": "捕梦网",
         "ar-AE": "صائد الأحلام",
         "eo": "Dreamcatcher",
-        "ja-JP": "ドリームキャッチャー"
+        "ja-JP": "ドリームキャッチャー",
+        "pl-PL": {
+          "value": "Łowca snów",
+          "sources": [
+            "https://stephenking.pl/ksiazka/lowca-snow/"
+          ]
+        }
       },
       "From a Buick 8": {
         "de-DE": "Von einem Buick 8",
@@ -32840,7 +32894,13 @@
         "zh-CN": "出自《别克8》",
         "ar-AE": "من سيارة بويك 8",
         "eo": "De Buick 8",
-        "ja-JP": "ビュイック 8 より"
+        "ja-JP": "ビュイック 8 より",
+        "pl-PL": {
+          "value": "Buick 8",
+          "sources": [
+            "https://www.proszynski.pl/product/buick-8"
+          ]
+        }
       },
       "Full Dark, No Stars": {
         "de-DE": "Voll dunkel, keine Sterne",
@@ -32872,7 +32932,13 @@
         "zh-CN": "杰拉尔德的游戏",
         "ar-AE": "لعبة جيرالد",
         "eo": "La Ludo de Gerald",
-        "ja-JP": "ジェラルドのゲーム"
+        "ja-JP": "ジェラルドのゲーム",
+        "pl-PL": {
+          "value": "Gra Geralda",
+          "sources": [
+            "https://www.wydawnictwoalbatros.com/ksiazki/gra-geralda/"
+          ]
+        }
       },
       "If It Bleeds": {
         "de-DE": "Wenn es blutet",
@@ -32904,7 +32970,13 @@
         "zh-CN": "失眠",
         "ar-AE": "الأرق",
         "eo": "Sendormeco",
-        "ja-JP": "不眠症"
+        "ja-JP": "不眠症",
+        "pl-PL": {
+          "value": "Bezsenność",
+          "sources": [
+            "https://www.wydawnictwoalbatros.com/ksiazki/bezsennosc-2/"
+          ]
+        }
       },
       "It": {
         "de-DE": "Es",
@@ -32917,7 +32989,13 @@
         "ar-AE": "إنه",
         "it-IT": "It",
         "eo": "Ĝi",
-        "ja-JP": "それ"
+        "ja-JP": "それ",
+        "pl-PL": {
+          "value": "To",
+          "sources": [
+            "https://www.wydawnictwoalbatros.com/ksiazki/to-2/"
+          ]
+        }
       },
       "Joyland": {
         "el-GR": "Χώρα της Χαράς",
@@ -32944,7 +33022,13 @@
         "zh-CN": "撒冷镇",
         "ar-AE": "أرض سالم",
         "eo": "La Loto de Salem",
-        "ja-JP": "セーラムのロット"
+        "ja-JP": "セーラムのロット",
+        "pl-PL": {
+          "value": "Miasteczko Salem",
+          "sources": [
+            "https://stephenking.pl/ksiazka/miasteczko-salem-wersja-ilustrowana/"
+          ]
+        }
       },
       "Survivor Type": {
         "de-DE": "Überlebenstyp",
@@ -32970,7 +33054,13 @@
         "zh-CN": "《绿里奇迹》",
         "ar-AE": "الميل الأخضر",
         "eo": "La Verda Mejlo",
-        "ja-JP": "グリーンマイル"
+        "ja-JP": "グリーンマイル",
+        "pl-PL": {
+          "value": "Zielona mila",
+          "sources": [
+            "https://www.wydawnictwoalbatros.com/ksiazki/zielona-mila-duzym-drukiem/"
+          ]
+        }
       },
       "The Shining": {
         "de-DE": "Das Leuchtende",
@@ -33003,7 +33093,13 @@
         "zh-CN": "《末日逼近》",
         "ar-AE": "الحامل",
         "eo": "La Stando",
-        "ja-JP": "ザ・スタンド"
+        "ja-JP": "ザ・スタンド",
+        "pl-PL": {
+          "value": "Bastion",
+          "sources": [
+            "https://www.bn.org.pl/download/document/1430142838.pdf"
+          ]
+        }
       },
       "The Tommyknockers": {
         "de-DE": "Die Tommyknockers",
@@ -35195,7 +35291,13 @@
         "zh-CN": "上帝之锤",
         "ar-AE": "مطرقة الله",
         "eo": "La Martelo de Dio",
-        "ja-JP": "神の鉄槌"
+        "ja-JP": "神の鉄槌",
+        "pl-PL": {
+          "value": "Młot Boga",
+          "sources": [
+            "https://www.encyklopediafantastyki.pl/index.php?title=M%C5%82ot_Boga"
+          ]
+        }
       },
       "With My Own Eyes": {
         "de-DE": "Mit meinen eigenen Augen",
@@ -37907,7 +38009,13 @@
         "zh-CN": "《银河系漫游指南》",
         "ar-AE": "دليل Hitch-Hikers إلى المجرة",
         "eo": "Gvidisto de Petveturistoj al la Galaksio",
-        "ja-JP": "銀河ヒッチハイカー ガイド"
+        "ja-JP": "銀河ヒッチハイカー ガイド",
+        "pl-PL": {
+          "value": "Autostopem przez Galaktykę",
+          "sources": [
+            "https://www.bn.org.pl/download/document/1483522698.pdf"
+          ]
+        }
       },
       "Life, the Universe and Everything": {
         "de-DE": "Das Leben, das Universum und alles",
@@ -37920,7 +38028,13 @@
         "zh-CN": "《生命、宇宙及一切》",
         "ar-AE": "الحياة والكون وكل شيء",
         "eo": "Vivo, la Universo kaj Ĉio",
-        "ja-JP": "生命、宇宙、そしてすべて"
+        "ja-JP": "生命、宇宙、そしてすべて",
+        "pl-PL": {
+          "value": "Życie, wszechświat i cała reszta",
+          "sources": [
+            "https://www.bn.org.pl/download/document/1550557897.pdf"
+          ]
+        }
       },
       "So Long, and Thanks for All the Fish": {
         "de-DE": "Bis dann und vielen Dank für den ganzen Fisch",
@@ -37933,7 +38047,13 @@
         "zh-CN": "再见，感谢所有的鱼",
         "ar-AE": "طويلًا جدًا، شكرًا لجميع الأسماك",
         "eo": "Tiel Longe, kaj Dankon pro Ĉiuj Fiŝoj",
-        "ja-JP": "長い間、そしてすべての魚をありがとう"
+        "ja-JP": "長い間、そしてすべての魚をありがとう",
+        "pl-PL": {
+          "value": "Cześć, i dzięki za ryby",
+          "sources": [
+            "https://abc.uw.edu.pl/katalog/ksiazka/4961"
+          ]
+        }
       },
       "The Long Dark Tea-Time of the Soul": {
         "de-DE": "Die lange dunkle Teezeit der Seele",
@@ -43762,7 +43882,13 @@
         "zh-CN": "小鼓手",
         "ar-AE": "فتاة الطبال الصغيرة",
         "eo": "La Eta Tamburista Knabino",
-        "ja-JP": "太鼓打ちの少女"
+        "ja-JP": "太鼓打ちの少女",
+        "pl-PL": {
+          "value": "Mała doboszka",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/20620/mala-doboszka"
+          ]
+        }
       },
       "The Russia House": {
         "de-DE": "Das Russland-Haus",
@@ -43788,7 +43914,13 @@
         "zh-CN": "《巴拿马裁缝》",
         "ar-AE": "خياط بنما",
         "eo": "La Tajloro de Panamo",
-        "ja-JP": "パナマの仕立て屋"
+        "ja-JP": "パナマの仕立て屋",
+        "pl-PL": {
+          "value": "Krawiec z Panamy",
+          "sources": [
+            "https://www.bn.org.pl/download/document/1555054380.pdf"
+          ]
+        }
       }
     },
     "Jojo Moyes": {
@@ -47206,7 +47338,13 @@
         "zh-CN": "《火车大劫案》",
         "ar-AE": "سرقة القطار الكبرى",
         "eo": "La Granda Trajna Rabo",
-        "ja-JP": "大列車強盗"
+        "ja-JP": "大列車強盗",
+        "pl-PL": {
+          "value": "Wielki skok na pociąg",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/79205/wielki-skok-na-pociag"
+          ]
+        }
       }
     },
     "Michael Cunningham": {
@@ -48409,7 +48547,13 @@
         "zh-CN": "《人类之子》",
         "ar-AE": "أبناء البشر",
         "eo": "La Infanoj de Viroj",
-        "ja-JP": "ザ・チルドレン・オブ・メン"
+        "ja-JP": "ザ・チルドレン・オブ・メン",
+        "pl-PL": {
+          "value": "Ludzkie dzieci",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/5286/ludzkie-dzieci"
+          ]
+        }
       },
       "The Lighthouse": {
         "de-DE": "Der Leuchtturm",
