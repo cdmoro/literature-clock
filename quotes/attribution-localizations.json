@@ -1289,7 +1289,13 @@
       },
       "pt-PT": "Alexsander S. Pushkin",
       "ru-RU": "Александр С. Пушкин",
-      "zh-CN": "亚历山大·S·普希金"
+      "zh-CN": "亚历山大·S·普希金",
+      "pl-PL": {
+        "value": "Aleksander Puszkin",
+        "sources": [
+          "https://redmine.wolnelektury.pl/projects/wl-publikacje/wiki/Literatura_rosyjska"
+        ]
+      }
     },
     "Alfred Bester": {
       "ar-AE": {
@@ -2550,7 +2556,13 @@
       },
       "pt-PT": "Antoine de Saint Exupery",
       "ru-RU": "Антуан де Сент-Экзюпери",
-      "zh-CN": "安东尼·德圣埃克苏佩里"
+      "zh-CN": "安东尼·德圣埃克苏佩里",
+      "pl-PL": {
+        "value": "Antoine de Saint-Exupéry",
+        "sources": [
+          "https://wydawnictwowam.pl/node/47729"
+        ]
+      }
     },
     "Anton Pavlovich Chekhov": {
       "ar-AE": {
@@ -3372,7 +3384,13 @@
       },
       "pt-PT": "Baroness Orczy",
       "ru-RU": "Баронесса Орчи",
-      "zh-CN": "奥西男爵夫人"
+      "zh-CN": "奥西男爵夫人",
+      "pl-PL": {
+        "value": "Baronowa Orczy",
+        "sources": [
+          "https://pbl.ibl.poznan.pl/dostep/index.php?f=zapisy&p_tworcaid=16791&s=d_biezacy"
+        ]
+      }
     },
     "Barry Hines": {
       "ar-AE": {
@@ -7018,7 +7036,13 @@
       },
       "pt-PT": "Daniil Ivanovich Kharms",
       "ru-RU": "Даниил Иванович Хармс",
-      "zh-CN": "丹尼尔·伊万诺维奇·哈姆斯"
+      "zh-CN": "丹尼尔·伊万诺维奇·哈姆斯",
+      "pl-PL": {
+        "value": "Danił Charms",
+        "sources": [
+          "https://pbl.ibl.poznan.pl/dostep/index.php?f=zapisy&p_autorid=21321&s=d_biezacy"
+        ]
+      }
     },
     "Daphne du Maurier": {
       "ar-AE": {
@@ -31978,7 +32002,13 @@
         "zh-CN": "小心你的愿望",
         "ar-AE": "كن حذرًا مما تتمناه",
         "eo": "Atentu Kion Vi Deziras",
-        "ja-JP": "何を望むか気をつけて"
+        "ja-JP": "何を望むか気をつけて",
+        "pl-PL": {
+          "value": "Ostrożnie z marzeniami",
+          "sources": [
+            "https://www.rebis.com.pl/files/general/REBIS-KATALOG-2017.pdf"
+          ]
+        }
       },
       "Best Kept Secret": {
         "de-DE": "Bestgehütetes Geheimnis",
@@ -31991,7 +32021,13 @@
         "zh-CN": "《保守得最好的秘密》",
         "ar-AE": "أفضل سر محتفظ به",
         "eo": "Plej bone konservita sekreto",
-        "ja-JP": "極秘"
+        "ja-JP": "極秘",
+        "pl-PL": {
+          "value": "Sekret najpilniej strzeżony",
+          "sources": [
+            "https://www.bn.org.pl/download/document/1430142838.pdf"
+          ]
+        }
       },
       "Broken Routine": {
         "de-DE": "Gebrochene Routine",
@@ -32043,7 +32079,13 @@
         "zh-CN": "时辰已到",
         "ar-AE": "تأتي الساعة",
         "eo": "Venos la Horo",
-        "ja-JP": "時が来る"
+        "ja-JP": "時が来る",
+        "pl-PL": {
+          "value": "W godzinie próby",
+          "sources": [
+            "https://www.rebis.com.pl/files/general/REBIS-KATALOG-2017.pdf"
+          ]
+        }
       },
       "Dougie Mortimer’s Right Arm": {
         "de-DE": "Dougie Mortimers rechter Arm",
@@ -32069,7 +32111,13 @@
         "zh-CN": "虚假印象",
         "ar-AE": "انطباع كاذب",
         "eo": "Malvera Impreso",
-        "ja-JP": "偽りの印象"
+        "ja-JP": "偽りの印象",
+        "pl-PL": {
+          "value": "Fałszywe wrażenie",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/143765/falszywe-wrazenie"
+          ]
+        }
       },
       "First Among Equals": {
         "de-DE": "Erster unter Gleichen",
@@ -32082,7 +32130,13 @@
         "zh-CN": "《平起平坐》",
         "ar-AE": "الأول بين المتساويين",
         "eo": "Unua Inter Egaluloj",
-        "ja-JP": "同等の者の中では 1 位"
+        "ja-JP": "同等の者の中では 1 位",
+        "pl-PL": {
+          "value": "Pierwszy między równymi",
+          "sources": [
+            "https://www.proszynski.pl/product/pierwszy-miedzy-rownymi"
+          ]
+        }
       },
       "Heads You Win": {
         "de-DE": "Köpfe, die du gewinnst",
@@ -32108,7 +32162,13 @@
         "zh-CN": "隐藏在众目睽睽之下",
         "ar-AE": "مخفية على مرأى من الجميع",
         "eo": "Kaŝita en Klara Vido",
-        "ja-JP": "目に見えないところに隠された"
+        "ja-JP": "目に見えないところに隠された",
+        "pl-PL": {
+          "value": "Ukryte na widoku",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/4987429/ukryte-na-widoku"
+          ]
+        }
       },
       "Kane & Abel": {
         "el-GR": "Κέιν & Άμπελ",
@@ -32171,7 +32231,13 @@
         "zh-CN": "下一位",
         "ar-AE": "التالي في السطر",
         "eo": "Sekva en linio",
-        "ja-JP": "次の行"
+        "ja-JP": "次の行",
+        "pl-PL": {
+          "value": "W następnej kolejności",
+          "sources": [
+            "https://e-isbn.pl/IsbnWeb/onix/summary.html?record_id=10592651"
+          ]
+        }
       },
       "Not a Penny More, Not a Penny Less": {
         "de-DE": "Kein Penny mehr, kein Penny weniger",
@@ -32235,7 +32301,13 @@
         "zh-CN": "唯有时间才能证明",
         "ar-AE": "فقط الوقت سيفعل ذلك أخبر",
         "eo": "Nur Tempo Diros",
-        "ja-JP": "時だけが教えてくれる"
+        "ja-JP": "時だけが教えてくれる",
+        "pl-PL": {
+          "value": "Czas pokaże",
+          "sources": [
+            "https://www.rebis.com.pl/pl/products/czas-pokaze-9395.html"
+          ]
+        }
       },
       "Over My Dead Body": {
         "de-DE": "Über meiner Leiche",
@@ -32248,7 +32320,13 @@
         "zh-CN": "除非我死了",
         "ar-AE": "على جثتي",
         "eo": "Super Mia Mortinta Kadavro",
-        "ja-JP": "私の死体をめぐって"
+        "ja-JP": "私の死体をめぐって",
+        "pl-PL": {
+          "value": "Po moim trupie",
+          "sources": [
+            "https://www.bn.org.pl/download/document/1708687475.pdf"
+          ]
+        }
       },
       "Paths of Glory": {
         "de-DE": "Wege des Ruhms",
@@ -32447,7 +32525,13 @@
         "zh-CN": "视而不见",
         "ar-AE": "أعمى عين",
         "eo": "Blindu Okulon",
-        "ja-JP": "目をつぶって"
+        "ja-JP": "目をつぶって",
+        "pl-PL": {
+          "value": "Przymknięte oko sprawiedliwości",
+          "sources": [
+            "https://e-isbn.pl/IsbnWeb/onix/summary.html?record_id=7652166"
+          ]
+        }
       },
       "You’ll Never Live to Regret It": {
         "de-DE": "Sie werden es nie bereuen",
@@ -32526,7 +32610,13 @@
         "zh-CN": "寻羊冒险记",
         "ar-AE": "مطاردة خروف بري",
         "eo": "Sovaĝa Ŝafĉasado",
-        "ja-JP": "野生の羊を追って"
+        "ja-JP": "野生の羊を追って",
+        "pl-PL": {
+          "value": "Przygoda z owcą",
+          "sources": [
+            "https://www.katalog.bibliotekabielany.waw.pl/katalog/detail.php?PozycjaOpisy=20120602165444013245"
+          ]
+        }
       },
       "After Dark": {
         "de-DE": "Nach Einbruch der Dunkelheit",
@@ -32539,7 +32629,13 @@
         "zh-CN": "夜幕降临",
         "ar-AE": "بعد حلول الظلام",
         "eo": "Post Mallumo",
-        "ja-JP": "アフターダーク"
+        "ja-JP": "アフターダーク",
+        "pl-PL": {
+          "value": "Po zmierzchu",
+          "sources": [
+            "https://www.legimi.pl/ebook-po-zmierzchu-haruki-murakami%2Cb1448461.html"
+          ]
+        }
       },
       "Dance Dance Dance": {
         "de-DE": "Tanz Tanz Tanz",
@@ -32585,7 +32681,13 @@
         "zh-CN": "海边的卡夫卡",
         "ar-AE": "كافكا على الشاطئ",
         "eo": "Kafka sur la Marbordo",
-        "ja-JP": "海辺のカフカ"
+        "ja-JP": "海辺のカフカ",
+        "pl-PL": {
+          "value": "Kafka nad morzem",
+          "sources": [
+            "https://ci.nii.ac.jp/ncid/BB19893718"
+          ]
+        }
       },
       "The Elephant Vanishes": {
         "de-DE": "Der Elefant verschwindet",
@@ -33665,7 +33767,13 @@
         "zh-CN": "黑桃皇后",
         "ar-AE": "ملكة البستوني",
         "eo": "La Reĝino de Piko",
-        "ja-JP": "スペードの女王"
+        "ja-JP": "スペードの女王",
+        "pl-PL": {
+          "value": "Dama pikowa",
+          "sources": [
+            "https://redmine.wolnelektury.pl/projects/wl-publikacje/wiki/Literatura_rosyjska"
+          ]
+        }
       }
     },
     "Alfred Bester": {
@@ -34691,7 +34799,13 @@
         "zh-CN": "《时间旅行者的妻子》",
         "ar-AE": "زوجة المسافر عبر الزمن",
         "eo": "La Edzino de la Tempovojaĝanto",
-        "ja-JP": "タイムトラベラーの妻"
+        "ja-JP": "タイムトラベラーの妻",
+        "pl-PL": {
+          "value": "Miłość ponad czasem",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/5009737/zakleci-w-czasie"
+          ]
+        }
       }
     },
     "August Strindberg": {
@@ -34811,7 +34925,13 @@
         "zh-CN": "红花侠",
         "ar-AE": "البيمبرنيل القرمزي",
         "eo": "La Skarlata Pimperelo",
-        "ja-JP": "スカーレット・ピンパーネル"
+        "ja-JP": "スカーレット・ピンパーネル",
+        "pl-PL": {
+          "value": "Szkarłatny kwiat",
+          "sources": [
+            "https://pbl.ibl.poznan.pl/dostep/index.php?f=zapisy&p_tworcaid=16791&s=d_biezacy"
+          ]
+        }
       }
     },
     "Barry Hines": {
@@ -42239,7 +42359,13 @@
         "ar-AE": "يوليسيس",
         "de-DE": "Ulysses",
         "eo": "Ulysses",
-        "ja-JP": "ユリシーズ"
+        "ja-JP": "ユリシーズ",
+        "pl-PL": {
+          "value": "Ulisses",
+          "sources": [
+            "https://wydawnictwoznak.pl/ksiazka/Ulisses/681"
+          ]
+        }
       }
     },
     "James Pascoe": {
@@ -43604,7 +43730,13 @@
         "zh-CN": "史迈利的人们",
         "ar-AE": "Smiley’s People",
         "eo": "Homoj de Smiley",
-        "ja-JP": "スマイリーの人々"
+        "ja-JP": "スマイリーの人々",
+        "pl-PL": {
+          "value": "Ludzie Smileya",
+          "sources": [
+            "https://www.krakow-biblioteka.sowa.pl/index.php?lang=pl_PL&plnk=__isbn_978-83-8110-379-4&sort=byscore&typ=repl"
+          ]
+        }
       },
       "The Honourable Schoolboy": {
         "de-DE": "Der ehrenwerte Schuljunge",
@@ -43817,7 +43949,13 @@
         "zh-CN": "一切都被照亮了",
         "ar-AE": "كل شيء مضاء",
         "eo": "Ĉio estas Lumita",
-        "ja-JP": "すべてが照らされる"
+        "ja-JP": "すべてが照らされる",
+        "pl-PL": {
+          "value": "Wszystko jest iluminacją",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/4508075/wszystko-jest-iluminacja"
+          ]
+        }
       },
       "Extremely Loud and Incredibly Close": {
         "de-DE": "Extrem laut und unglaublich nah",
@@ -45405,7 +45543,13 @@
         "de-DE": "Ben-Hur",
         "pt-PT": "Ben-Hur",
         "eo": "Ben-Hur",
-        "ja-JP": "ベン・ハー"
+        "ja-JP": "ベン・ハー",
+        "pl-PL": {
+          "value": "Ben Hur",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/4849078/ben-hur"
+          ]
+        }
       }
     },
     "Lewis Anselm da Costa Ritchie": {
@@ -46754,7 +46898,13 @@
         "zh-CN": "午夜图书馆",
         "ar-AE": "مكتبة منتصف الليل",
         "eo": "La Nokta Biblioteko",
-        "ja-JP": "真夜中の図書館"
+        "ja-JP": "真夜中の図書館",
+        "pl-PL": {
+          "value": "Biblioteka o północy",
+          "sources": [
+            "https://xn--szukamksiki-4kb16m.pl/SkNewWeb/record/523002343/7685147?dummy=1&size=2"
+          ]
+        }
       },
       "The Radleys": {
         "de-DE": "Die Radleys",
@@ -47308,7 +47458,13 @@
         "es-ES": "Don Quijote de la Mancha",
         "eo": "Don Quijote de la Mancha",
         "ja-JP": "ドン・キホーテ・デ・ラ・マンチャ",
-        "ko-KR": "돈키호테"
+        "ko-KR": "돈키호테",
+        "pl-PL": {
+          "value": "Don Kichot z La Manchy",
+          "sources": [
+            "https://wolnelektury.pl/katalog/lektura/don-kichot-z-la-manchy/"
+          ]
+        }
       }
     },
     "Miha Mazzini": {
@@ -48112,7 +48268,13 @@
         "zh-CN": "《嗜血成性》",
         "ar-AE": "طعم الموت",
         "eo": "A Taste for Death",
-        "ja-JP": "死の味"
+        "ja-JP": "死の味",
+        "pl-PL": {
+          "value": "Przedsmak śmierci",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/204815/przedsmak-smierci"
+          ]
+        }
       },
       "Cover Her Face": {
         "de-DE": "Bedecke ihr Gesicht",
@@ -48125,7 +48287,13 @@
         "zh-CN": "遮住她的脸",
         "ar-AE": "غطي وجهها",
         "eo": "Kovru Ŝian Vizaĝon",
-        "ja-JP": "顔を覆う"
+        "ja-JP": "顔を覆う",
+        "pl-PL": {
+          "value": "Zakryjcie jej twarz",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/131880/zakryjcie-jej-twarz"
+          ]
+        }
       },
       "Death in Holy Orders": {
         "de-DE": "Tod in heiligen Weihen",
@@ -49797,7 +49965,13 @@
         "ar-AE": "التنفس الاصطناعي",
         "es-ES": "Respiración artificial",
         "eo": "Spirito artefarita",
-        "ja-JP": "人工呼吸器"
+        "ja-JP": "人工呼吸器",
+        "pl-PL": {
+          "value": "Sztuczne oddychanie",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/54319/sztuczne-oddychanie"
+          ]
+        }
       }
     },
     "Richard Christian Matheson": {
@@ -50245,7 +50419,13 @@
         "es-ES": "Munich",
         "fr-FR": "Munich",
         "eo": "Munkeno",
-        "ja-JP": "ミュンヘン"
+        "ja-JP": "ミュンヘン",
+        "pl-PL": {
+          "value": "Monachium",
+          "sources": [
+            "https://w.bibliotece.pl/r/3546310/report/"
+          ]
+        }
       }
     },
     "Robert J. Sawyer": {
@@ -53098,7 +53278,13 @@
         "zh-CN": "《海上的劳动者》",
         "ar-AE": "عمال البحر",
         "eo": "La Laborantoj de la Maro",
-        "ja-JP": "海の労働者たち"
+        "ja-JP": "海の労働者たち",
+        "pl-PL": {
+          "value": "Pracownicy morza",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/76663/pracownicy-morza"
+          ]
+        }
       }
     },
     "Virginia Woolf": {
