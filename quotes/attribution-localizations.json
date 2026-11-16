@@ -33453,7 +33453,13 @@
         "zh-CN": "东方快车谋杀案",
         "ar-AE": "جريمة قتل في قطار الشرق السريع",
         "eo": "Murdo ĉe la Orient Express",
-        "ja-JP": "オリエント急行殺人事件"
+        "ja-JP": "オリエント急行殺人事件",
+        "pl-PL": {
+          "value": "Morderstwo w Orient Expressie",
+          "sources": [
+            "https://www.ateneum.pl/pozycja.php?id=535362"
+          ]
+        }
       },
       "The ABC Murders": {
         "de-DE": "Die ABC-Morde",
@@ -33570,7 +33576,13 @@
         "zh-CN": "罗杰·艾克罗伊德谋杀案",
         "ar-AE": "مقتل روجر أكرويد",
         "eo": "La Murdo de Roger Ackroyd",
-        "ja-JP": "ロジャー・アクロイド殺害"
+        "ja-JP": "ロジャー・アクロイド殺害",
+        "pl-PL": {
+          "value": "Zabójstwo Rogera Ackroyda",
+          "sources": [
+            "https://www.proszynski.pl/product/zabojstwo-rogera-ackroyda"
+          ]
+        }
       },
       "The Plymouth Express": {
         "de-DE": "Der Plymouth Express",
@@ -33848,7 +33860,13 @@
         "zh-CN": "基督山伯爵",
         "ar-AE": "كونت مونتي كريستو",
         "eo": "La Grafo de Monte-Kristo",
-        "ja-JP": "モンテ・クリスト伯"
+        "ja-JP": "モンテ・クリスト伯",
+        "pl-PL": {
+          "value": "Hrabia Monte Christo",
+          "sources": [
+            "https://bn.org.pl/download/document/1335359278.pdf"
+          ]
+        }
       }
     },
     "Alexsander S. Pushkin": {
@@ -35644,7 +35662,13 @@
         "zh-CN": "《黎明踏浪号》",
         "ar-AE": "رحلة الفجر تريدر",
         "eo": "La Vojaĝo de la Tagiĝo-Paŝanto",
-        "ja-JP": "夜明けのトレッダー号の航海"
+        "ja-JP": "夜明けのトレッダー号の航海",
+        "pl-PL": {
+          "value": "Podróż „Wędrowca do Świtu”",
+          "sources": [
+            "https://katalog.bialystok.edu.pl/integro/1752000174438/lewis-c-s/podroz-wedrowca-do-switu?_lang=pl&bibFilter=175"
+          ]
+        }
       }
     },
     "Captain William Bligh": {
@@ -36241,7 +36265,13 @@
         "it-IT": "Jane Eyre",
         "pt-PT": "Jane Eyre",
         "ja-JP": "ジェーン・エア",
-        "ko-KR": "제인 에어"
+        "ko-KR": "제인 에어",
+        "pl-PL": {
+          "value": "Dziwne losy Jane Eyre",
+          "sources": [
+            "https://w.bibliotece.pl/5203454/Dziwne%2Blosy%2BJane%2BEyre"
+          ]
+        }
       },
       "The Professor": {
         "de-DE": "Der Professor",
@@ -38286,7 +38316,13 @@
         "zh-CN": "乌鸦",
         "ar-AE": "الغراب",
         "eo": "La Korvo",
-        "ja-JP": "レイヴン"
+        "ja-JP": "レイヴン",
+        "pl-PL": {
+          "value": "Kruk",
+          "sources": [
+            "https://fundacja.wolnelektury.pl/2026/10/29/wiersze-edgara-allana-poego-na-wolnych-lekturach/"
+          ]
+        }
       }
     },
     "Edgar Rice Burroughs": {
@@ -38988,7 +39024,13 @@
         "zh-CN": "《长夜漫漫路迢迢》",
         "ar-AE": "رحلة يوم طويل إلى داخل الليل",
         "eo": "Longa Taga Vojaĝo en Nokton",
-        "ja-JP": "夜への長い一日の旅"
+        "ja-JP": "夜への長い一日の旅",
+        "pl-PL": {
+          "value": "Zmierzch długiego dnia",
+          "sources": [
+            "https://repozytorium.ispan.pl/Content/59986/ALMANACH_SCENY_POLSKIEJ_1971-72.pdf"
+          ]
+        }
       }
     },
     "Evan Hunter and Ed McBain": {
@@ -42422,7 +42464,13 @@
         "ar-AE": "دبلن",
         "eo": "Dublinistoj",
         "ja-JP": "ダブリナーズ",
-        "ko-KR": "더블린 사람들"
+        "ko-KR": "더블린 사람들",
+        "pl-PL": {
+          "value": "Dublińczycy",
+          "sources": [
+            "https://www.ateneum.pl/pozycja.php?id=813672"
+          ]
+        }
       },
       "Finnegans Wake": {
         "es-ES": "Estela de Finnegans",
@@ -43069,7 +43117,13 @@
         "zh-CN": "血祭仪式",
         "ar-AE": "طقوس الدم",
         "eo": "Sangaj Ritoj",
-        "ja-JP": "血の儀式"
+        "ja-JP": "血の儀式",
+        "pl-PL": {
+          "value": "Krwawe rytuały",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/259720/krwawe-rytualy"
+          ]
+        }
       },
       "Death Masks": {
         "de-DE": "Totenmasken",
@@ -44238,7 +44292,13 @@
         "zh-CN": "秘密特工",
         "ar-AE": "السر العميل",
         "eo": "La Sekreta Agento",
-        "ja-JP": "秘密諜報員"
+        "ja-JP": "秘密諜報員",
+        "pl-PL": {
+          "value": "Tajny agent",
+          "sources": [
+            "https://pl.wikisource.org/wiki/Tajny_agent_%28t%C5%82um._Zag%C3%B3rska%29"
+          ]
+        }
       }
     },
     "Joseph Roth": {
@@ -46140,7 +46200,13 @@
         "zh-CN": "密室",
         "ar-AE": "الغرفة المغلقة",
         "eo": "La Ŝlosita Ĉambro",
-        "ja-JP": "鍵のかかった部屋"
+        "ja-JP": "鍵のかかった部屋",
+        "pl-PL": {
+          "value": "Zamknięty pokój",
+          "sources": [
+            "https://wip.pbp.poznan.pl/1236530/Zamkni%C4%99ty%2Bpok%C3%B3j"
+          ]
+        }
       }
     },
     "Malachi Whitaker": {
@@ -46330,7 +46396,13 @@
         "zh-CN": "《羚羊与秧鸡》",
         "ar-AE": "المها والكريك",
         "eo": "Oryx kaj Crake",
-        "ja-JP": "オリックスとクレイク"
+        "ja-JP": "オリックスとクレイク",
+        "pl-PL": {
+          "value": "Oryks i Derkacz",
+          "sources": [
+            "https://www.proszynski.pl/product/oryks-i-derkacz-2"
+          ]
+        }
       },
       "Stone Mattress": {
         "de-DE": "Steinmatratze",
@@ -46356,7 +46428,13 @@
         "zh-CN": "《心之所向》",
         "ar-AE": "القلب يذهب الأخير",
         "eo": "La Koro Laste Laste",
-        "ja-JP": "心は最後まで続く"
+        "ja-JP": "心は最後まで続く",
+        "pl-PL": {
+          "value": "Serce umiera ostatnie",
+          "sources": [
+            "https://e-isbn.pl/IsbnWeb/onix/summary.html?record_id=5902929"
+          ]
+        }
       },
       "The Robber Bride": {
         "de-DE": "Die Räuberbraut",
@@ -47312,7 +47390,13 @@
         "it-IT": "Jurassic Park",
         "eo": "Ĵurasa Parko",
         "ja-JP": "ジュラシック・パーク",
-        "ko-KR": "쥬라기 공원"
+        "ko-KR": "쥬라기 공원",
+        "pl-PL": {
+          "value": "Park Jurajski",
+          "sources": [
+            "https://w.bibliotece.pl/6810594/Park%2BJurajski"
+          ]
+        }
       },
       "The Andromeda Strain": {
         "de-DE": "Der Andromeda-Stamm",
@@ -48393,7 +48477,13 @@
         "zh-CN": "《正义的审判》",
         "ar-AE": "عدالة معينة",
         "eo": "A Certain Justice",
-        "ja-JP": "ある正義"
+        "ja-JP": "ある正義",
+        "pl-PL": {
+          "value": "Ułomna ręka sprawiedliwości",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/150297/ulomna-reka-sprawiedliwosci"
+          ]
+        }
       },
       "A Taste for Death": {
         "de-DE": "Ein Geschmack für den Tod",
@@ -48515,7 +48605,13 @@
         "zh-CN": "夜莺的裹尸布",
         "ar-AE": "كفن عندليب",
         "eo": "Sudotuko por Najtingalo",
-        "ja-JP": "ナイチンゲールの聖骸布"
+        "ja-JP": "ナイチンゲールの聖骸布",
+        "pl-PL": {
+          "value": "Całun dla pielęgniarki",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/31370/calun-dla-pielegniarki"
+          ]
+        }
       },
       "The Black Tower": {
         "de-DE": "Der Schwarze Turm",
@@ -50389,7 +50485,13 @@
         "zh-CN": "《女巫》",
         "ar-AE": "الساحرات",
         "eo": "La Sorĉistinoj",
-        "ja-JP": "魔女たち"
+        "ja-JP": "魔女たち",
+        "pl-PL": {
+          "value": "Wiedźmy",
+          "sources": [
+            "https://www.bn.org.pl/download/document/1715933347.pdf"
+          ]
+        }
       }
     },
     "Rob Buckman": {
@@ -50782,7 +50884,13 @@
         "ar-AE": "المواقع السبعة",
         "es-ES": "Los siete locos",
         "eo": "Los siete locos",
-        "ja-JP": "七人の狂人"
+        "ja-JP": "七人の狂人",
+        "pl-PL": {
+          "value": "Siedmiu szaleńców",
+          "sources": [
+            "https://lubimyczytac.pl/ksiazka/97684/siedmiu-szalencow"
+          ]
+        }
       }
     },
     "Roberto Bolaño": {
@@ -51359,7 +51467,13 @@
         "zh-CN": "《小陌生人》",
         "ar-AE": "الغريب الصغير",
         "eo": "La Malgranda Fremdulo",
-        "ja-JP": "リトル・ストレンジャー"
+        "ja-JP": "リトル・ストレンジャー",
+        "pl-PL": {
+          "value": "Ktoś we mnie",
+          "sources": [
+            "https://www.proszynski.pl/product/ktos-we-mnie"
+          ]
+        }
       }
     },
     "Sax Rohmer": {
@@ -51729,7 +51843,13 @@
         "zh-CN": "《斑点带子案》",
         "ar-AE": "مغامرة الفرقة المرقطة",
         "eo": "La Aventuro de la Makulita Grupo",
-        "ja-JP": "まだらのバンドの冒険"
+        "ja-JP": "まだらのバンドの冒険",
+        "pl-PL": {
+          "value": "Pstra wstęga",
+          "sources": [
+            "https://w.bibliotece.pl/4103184/Pstra%2Bwst%C4%99ga.%2BThe%2BAdventure%2Bof%2Bthe%2BSpeckled%2BBand"
+          ]
+        }
       },
       "The Adventures of Sherlock Holmes": {
         "de-DE": "Die Abenteuer des Sherlock Holmes",
