@@ -30,7 +30,7 @@ The shared catalogue files are generated; do not edit them manually.
 python3 apple/Shared/Strings/sync_strings.py
 ```
 
-This updates the 14 `Localizable.strings` resources used by the app and widget.
+This updates the 15 `Localizable.strings` resources used by the app and widget.
 
 ## Branch workflow
 
@@ -40,7 +40,7 @@ This updates the 14 `Localizable.strings` resources used by the app and widget.
 
 Select the **LiteratureClockMac** scheme in the same Xcode project, select **My Mac**, then Run. The native Mac app requires macOS 14 or later. It is separate from the screensaver and does not require an iPhone. Its widget extension is embedded automatically. Use the same signing team for `LiteratureClockMac` and `LiteratureClockMacWidgetExtension`.
 
-After running the signed app, Control-click the desktop, choose **Edit Widgets**, search for **Literature Clock**, and drag a widget onto the desktop. Small, medium, large and extra-large widgets use the shared design. Control-click a widget and select **Edit Literature Clock** to configure its languages and style independently. Korean and Japanese are available in both language selectors. To keep the quote in its selected language and show the original book title and author, enable **Show original author and title** in the app settings or in the widget editor. Clicking its quote opens the unified quote and sharing dialog with the full passage and book/author credit. Copy the quote, edit its style and attribution, or share it from that dialog. The small widget shows the time phrase and configured book/author credits. All widget sizes reserve their space for the quote and attribution; quote navigation is available in the app.
+After running the signed app, Control-click the desktop, choose **Edit Widgets**, search for **Literature Clock**, and drag a widget onto the desktop. Small, medium, large and extra-large widgets use the shared design. Control-click a widget and select **Edit Literature Clock** to configure its languages and style independently. Polish, Korean and Japanese are available in both language selectors. To keep the quote in its selected language and show the original book title and author, enable **Show original author and title** in the app settings or in the widget editor. Clicking its quote opens the unified quote and sharing dialog with the full passage and book/author credit. Copy the quote, edit its style and attribution, or share it from that dialog. The small widget shows the time phrase and configured book/author credits. All widget sizes reserve their space for the quote and attribution; quote navigation is available in the app.
 
 The app has a resizable clock window, the same settings available through its toolbar, and a native Settings window (`⌘,`). The Mac sharing editor keeps a large card preview beside Colour and Text tools, with the image format selector in the bottom action bar. Font chips preview each typeface directly. Copy and Share remain available below, and the close button dismisses the editor. Sharing uses the macOS share menu; copying text uses the Mac pasteboard. Special Elite is registered from the bundled font in both Mac processes.
 

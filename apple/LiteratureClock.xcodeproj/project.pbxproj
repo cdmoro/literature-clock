@@ -87,6 +87,7 @@
 		F10000000000000000000012 /* Version.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
 		A00000000000000235 /* ja-JP */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ja-JP"; path = "ja-JP.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A00000000000000236 /* ko-KR */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ko-KR"; path = "ko-KR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A00000000000000237 /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text; name = "pl-PL"; path = "pl-PL.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +278,7 @@
 				"ar-AE",
 				"ja-JP",
 				"ko-KR",
+				"pl-PL",
 			);
 			mainGroup = A00000000000000000000012 /* Literature Clock */;
 			productRefGroup = A00000000000000000000013 /* Products */;
@@ -368,6 +370,7 @@
 				A00000000000000233 /* ar-AE */,
 				A00000000000000235 /* ja-JP */,
 				A00000000000000236 /* ko-KR */,
+				A00000000000000237 /* pl-PL */,
 			);
 			name = Localizable.strings;
 			path = Shared/Strings;

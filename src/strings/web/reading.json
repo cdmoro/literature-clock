@@ -208,5 +208,20 @@
     "favoritesFull": "즐겨찾기가 가득 찼습니다(500개). 새로 저장하려면 하나를 삭제하세요.",
     "storageUnavailable": "이 기기에 변경 사항을 저장할 수 없습니다. 브라우저의 저장소 권한을 확인하세요.",
     "historyCleared": "기록을 지웠습니다"
+  },
+  "pl-PL": {
+    "copyLink": "Kopiuj link do cytatu",
+    "linkCopied": "Skopiowano link",
+    "linkFailed": "Nie udało się udostępnić linku. Spróbuj ponownie.",
+    "quoteUnavailable": "Cytat jest niedostępny w tym języku lub przy wybranym filtrze treści. Wyświetlono inny cytat.",
+    "pause": "Wstrzymaj zegar",
+    "resume": "Wróć do zegara",
+    "pausedAt": "Wstrzymano o",
+    "favoriteSaved": "Zapisano cytat",
+    "favoriteRemoved": "Usunięto z ulubionych",
+    "filteredLibrary": "Filtr treści ukrywa zapisane cytaty.",
+    "favoritesFull": "Lista ulubionych jest pełna (500). Usuń jeden cytat, aby zapisać następny.",
+    "storageUnavailable": "Nie udało się zapisać zmian na tym urządzeniu. Sprawdź ustawienia dostępu do pamięci przeglądarki.",
+    "historyCleared": "Wyczyszczono historię"
   }
 }

@@ -20,11 +20,12 @@ public static class Checks
         var app=new Application { ShutdownMode=ShutdownMode.OnExplicitShutdown };
         var data=new Catalogues();
         _ = new GlassEffect(); // Also validate the embedded compiled shader on software runners.
-        Assert(data.Locales.Length==14,"Expected all fourteen published native locales");
+        Assert(data.Locales.Length==15,"Expected all fifteen published native locales");
         Assert(Catalogues.Resolve("en-US",data.Locales)=="en-US","Exact locale resolution");
         Assert(Catalogues.Resolve("zh-Hant",data.Locales)=="zh-CN","Language fallback");
         Assert(Catalogues.Resolve("ja",data.Locales)=="ja-JP","Japanese language fallback");
         Assert(Catalogues.Resolve("ko",data.Locales)=="ko-KR","Korean language fallback");
+        Assert(Catalogues.Resolve("pl",data.Locales)=="pl-PL","Polish language fallback");
         Assert(Catalogues.Resolve("nl-NL",data.Locales)=="en-GB","Unsupported locale fallback");
         Assert(Catalogues.Index(3,10,0)!=Catalogues.Index(3,10,1),"Distinct monitor variants");
         Assert(GlassEffect.Radius(1,1920,1080)==0 && GlassEffect.Radius(.5,1920,1080)==28,"Glass corner fade");

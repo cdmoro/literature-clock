@@ -41,6 +41,8 @@ describe('resolveLocale', () => {
     ['ja', 'ja-JP'],
     ['ko', 'ko-KR'],
     ['ko-KR-u-hc-h23', 'ko-KR'],
+    ['pl', 'pl-PL'],
+    ['pl-PL-u-hc-h23', 'pl-PL'],
     ['JA_jp', 'ja-JP'],
     ['ja-JP-u-hc-h23', 'ja-JP'],
     ['zh', 'zh-CN'],

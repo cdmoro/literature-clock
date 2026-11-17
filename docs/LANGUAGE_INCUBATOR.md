@@ -75,11 +75,11 @@ Copy each ID exactly from the declared source and keep it attached to that same 
 
 To keep the translation focused and simple:
 
-- **CSV attribution fields (`Author`, `Title`): preserve the recorded source data.** Existing locale title values stay in the CSV, but do not treat machine-generated titles as approved display names. The generator resolves attribution from the source quote and uses reviewed locale forms in `quotes/attribution-localizations.json`.
-- **Localized attributions:** add recognized author forms and published book titles to that central catalogue independently. Include a source URL for each localized form; leave an entry absent until it can be verified. Missing forms use the canonical source value.
+- **CSV attribution fields:** the Google-translated locale CSV is the working file. First use its translated `Title` and `Author` values as rough candidates for `quotes/attribution-localizations.json`. After reviewing those candidates, restore the canonical source values in both CSV columns (`Title` and `Author`) across the locale file. `Time`, `Id`, `SFW` and `Source locale` also stay canonical; only `Quote` and `Quote time` are translated.
+- **Localized attributions:** provide a natural localized display title for every work in the central attribution catalogue. Use a verified Polish/local-language publication title when one can be established, and record a source URL for it. Otherwise add a clearly editorial translation without a source URL; do not imply it is a published edition. Treat translated author names more cautiously: use an established localized form only when verified; otherwise omit the author mapping so the canonical name is displayed. The generator applies these display forms to output catalogues while the locale CSV retains canonical attribution values.
 - **Passage and time phrase (`Quote`, `Quote time`): focus your translation work here.** Keep the source `Time` and `SFW` values unchanged as well.
 
-These rules apply whichever translation tool you choose. Translation tools can help with the passage, but they do not provide evidence for a published title or conventional author transcription.
+These rules apply whichever translation tool you choose. Translation tools can help with the passage and suggest attribution forms, but they do not establish a published title or conventional author form. For the attribution schema, verification and progress commands, see [the technical translation guide](../scripts/TRANSLATING.md#preserve-quote-identity-and-attribution).
 
 ## From an idea to a published language
 
@@ -114,7 +114,7 @@ Start with a pilot of 10–25 varied passages to check the language, time expres
 
 #### Option A: translate manually, with help when useful
 
-Open a draft in the administrator and translate it yourself, or paste the source passage into [Google Translate](https://translate.google.com/) to get a starting point. Read and edit the result before saving it. Keep the author unchanged, preferably keep the source book title in the CSV, and choose the exact words in the translated passage that express the time. A machine-generated title in a draft is not used as a published attribution; verified display forms belong in the central attribution catalogue.
+Open a draft in the administrator and translate it yourself, or paste the source passage into [Google Translate](https://translate.google.com/) to get a starting point. Read and edit the result before saving it. Choose the exact words in the translated passage that express the time. In a Google-translated CSV, use `Title` and `Author` as rough candidates for the central attribution catalogue. Review titles as published or editorial forms, and verify any localized author form; then restore canonical source values in both CSV columns throughout that same locale file.
 
 Work passage by passage so that text stays attached to the correct ID. Avoid pasting a raw CSV into a translation website and assuming it will preserve headers, separators and metadata. This approach works well for a small contribution and for fixing difficult passages after a larger automated run.
 
@@ -158,15 +158,18 @@ Use UTF-8, pipe-delimited CSV with the catalogue headers. Preserve every
 source Id exactly once and attached to its original passage. IDs are the only
 cross-language tracking key: never translate, renumber, regenerate or reformat
 them. Treat them as text and preserve leading zeros and punctuation.
-Keep Time, Id, Author, SFW and Source locale exactly unchanged. Keep Title unchanged too for
-this translation task. Translate only Quote and Quote time.
+Keep Time, Id, Title, Author, SFW and Source locale exactly unchanged in the final
+locale CSV. Translate only Quote and Quote time. You may first copy translated
+Title and Author candidates from this same working CSV into
+quotes/attribution-localizations.json; restore the canonical Title and Author
+values in the CSV after that review.
 Preserve intentional <br> and <em> formatting and
 use proper CSV quoting for embedded pipes, quotes and newlines.
 
 Make Quote time an exact substring of the translated Quote that expresses the
 same time as the source. Preserve approximate times; do not invent precision.
 If unsure, leave the time highlight empty and list the ID for human review.
-Do not invent published book titles or claim that wording is edition-verified.
+Do not claim an editorial translation is the title of a published edition. If a published localized title cannot be verified, add a natural editorial translation without a source URL in `quotes/attribution-localizations.json`.
 
 Keep all output unapproved: set Draft=true if including a Draft column.
 Do not silently skip, duplicate, summarize or truncate entries. Record completed
@@ -212,7 +215,7 @@ For each passage, compare the draft with its declared source and check:
 - **Meaning and voice:** preserve the passage's meaning and tone, without omissions or added details. Read it as prose, not just as a translated sentence.
 - **The time expression:** the highlighted words must appear exactly in the translated passage and mean the same time as the source. Watch for AM/PM, “quarter to”, “half past” and approximate times. Do not make an approximate source more precise.
 - **IDs:** verify that every ID is unchanged and still belongs to the same source passage. Never repair a mismatch by inventing or renumbering IDs.
-- **Book titles and names:** preserve attribution source values in the quote CSV. To display a localized author or book title, add its independently verified form to `quotes/attribution-localizations.json` with a source URL. A machine-translated title is not evidence of a published edition's title.
+- **Book titles and names:** preserve attribution source values in the quote CSV. Add a localized display title for each work to `quotes/attribution-localizations.json`: use the verified published title with a source URL when available, or a reviewed natural editorial translation with no source URL otherwise. Use a conventional localized author form when available; otherwise leave the author unmapped so the canonical name is displayed. Never present an editorial translation as a verified edition title.
 - **Formatting:** preserve intentional emphasis and line breaks.
 
 For example, a source phrase such as “a quarter to eight” means 7:45. A fluent translation that means 8:15 would still be wrong for the clock, even if its words are highlighted correctly.

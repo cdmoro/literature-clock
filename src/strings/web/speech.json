@@ -222,5 +222,21 @@
     "activationNeeded": "자동 읽기 설정이 저장되어 있습니다. 이번 방문에서 사용하려면 활성화하세요.",
     "blocked": "브라우저가 읽기를 차단했습니다. 읽기 활성화를 눌러 다시 시도하세요.",
     "noStart": "읽기가 시작되지 않았습니다. 음량과 사용 가능한 음성을 확인한 후 다시 시도하세요."
+  },
+  "pl-PL": {
+    "read": "Przeczytaj cytat na głos",
+    "stop": "Zatrzymaj czytanie",
+    "auto": "Czytaj cytat na początku każdej minuty",
+    "help": "Po otwarciu strony włącz tę opcję lub naciśnij przycisk czytania, aby uruchomić automatyczne czytanie. Czytanie zatrzyma się, gdy karta zostanie ukryta.",
+    "unsupported": "Ta przeglądarka nie obsługuje czytania na głos.",
+    "error": "Nie udało się przeczytać cytatu. Ponownie naciśnij przycisk czytania.",
+    "attribution": "Czytaj też tytuł książki i nazwisko autora",
+    "contentSection": "Treść",
+    "clockSection": "Zegar i wyświetlanie",
+    "speechSection": "Czytanie na głos",
+    "activate": "Włącz czytanie",
+    "activationNeeded": "Ustawienie automatycznego czytania jest zapisane. Włącz czytanie podczas tej wizyty.",
+    "blocked": "Przeglądarka zablokowała czytanie. Naciśnij „Włącz czytanie”, aby spróbować ponownie.",
+    "noStart": "Czytanie się nie rozpoczęło. Sprawdź głośność i dostępne głosy, a następnie spróbuj ponownie."
   }
 }
