@@ -80,8 +80,9 @@ overrides already solve the independent bibliographic duplication problem.
 ## Current pt-BR stage
 
 The CSV has been normalized with an explicit Draft status for every row.
-The 1,208 checked passages are now Draft=false; 2,432 passages remain Draft=true.
-The locale is enabled with reviewed passages only; pending passages remain excluded. The raw import and translated
+All 3,640 passages are now Draft=false at the user’s request. Editorial review
+remains complete for 1,208 passages; 2,432 still await review.
+The locale is enabled with the full catalogue, including passages awaiting review. The raw import and translated
 attribution candidates are preserved locally under `.translation-work/pt-BR/`.
 No imported author or title candidate has been accepted automatically.
 
@@ -96,10 +97,11 @@ unchanged passages. Review regional book exceptions by quote impact. Inherited
 coverage is currently 989 authors and 1,517 works, with eleven explicit work forms;
 this is fallback availability, not a completed regional bibliographic audit.
 The Brazilian interface is now integrated in Web, both screensavers and the Mac
-app/widget at the user's request. The regular pt-BR catalogue contains only the
-1,208 reviewed rows; the other 2,432 remain drafts. Minutes without
-an approved quotation use the existing translated fallback. Preview all rows
-with `?locale=pt-BR-draft` after `npm run generate-times`.
+app/widget at the user's request. The regular pt-BR catalogue now contains all
+3,640 published rows; 1,208 have been reviewed and 2,432 await editorial review.
+The catalogue covers 1,438 minutes. Minutes without a quotation use the existing
+translated fallback. The separate pt-BR-draft preview is no longer generated
+because there are no remaining Draft=true rows.
 
 
 
@@ -1080,3 +1082,19 @@ pass for all 3,640 rows in each Portuguese CSV, including drafts. Web data and
 Mac bundles are regenerated. Every approved passage matches its bundled text,
 and Brazilian approvals match the local review ledger exactly. The Brazilian
 bundle contains 1,208 quotes in 688 minutes, with no drafts. All changes remain local.
+
+
+## Full-catalogue publication decision
+
+At the user’s explicit request, clear Draft on all 2,432 remaining Brazilian
+passages so the regular locale includes all 3,640 rows. Publication status no
+longer indicates editorial approval. The review ledger and historical ID lists
+continue to identify the 1,208 actually reviewed passages; do not add the other
+IDs to that ledger merely because they are published. Earlier checkpoints above
+describe the draft status at those historical stages. Further review should use
+the review ledger rather than filtering CSV Draft=true.
+
+Validation after clearing draft status: all 3,640 Brazilian rows pass strict
+translation validation, 179 Python tests pass, and Web and Mac catalogues
+contain the same 3,640 passages across 1,438 minutes. The obsolete pt-BR-draft
+Web output is removed by generation. The editorial ledger still has 1,208 IDs.
