@@ -11,13 +11,13 @@ class ComponentOwnershipTests(unittest.TestCase):
             with self.subTest(name=name):
                 self.assertEqual(components_for_path(f"src/strings/web/{name}.json"), {"Web"})
 
-    def test_quotes_reach_both_screensavers_and_web(self):
-        self.assertEqual(components_for_path("quotes/quotes.es-ES.csv"), {"Web", "macOS", "Windows"})
-        self.assertEqual(components_for_path("quotes/attribution-localizations.json"), {"Web", "macOS", "Windows"})
-        self.assertEqual(components_for_path("scripts/generate_times.py"), {"Web", "macOS", "Windows"})
+    def test_quotes_reach_both_screensavers_web_and_macos_app(self):
+        self.assertEqual(components_for_path("quotes/quotes.es-ES.csv"), {"Web", "macOS", "Windows", "macOS app"})
+        self.assertEqual(components_for_path("quotes/attribution-localizations.json"), {"Web", "macOS", "Windows", "macOS app"})
+        self.assertEqual(components_for_path("scripts/generate_times.py"), {"Web", "macOS", "Windows", "macOS app"})
         self.assertEqual(components_for_path("screensavers/macos-native/build.py"), {"macOS", "Windows"})
-        self.assertEqual(components_for_path("scripts/validate_attributions.py"), {"Web", "macOS", "Windows"})
-        self.assertEqual(components_for_path("scripts/attribution_localizations.py"), {"Web", "macOS", "Windows"})
+        self.assertEqual(components_for_path("scripts/validate_attributions.py"), {"Web", "macOS", "Windows", "macOS app"})
+        self.assertEqual(components_for_path("scripts/attribution_localizations.py"), {"Web", "macOS", "Windows", "macOS app"})
         self.assertEqual(components_for_path("scripts/native_quote_catalogues.py"), {"macOS", "Windows"})
         self.assertEqual(components_for_path("scripts/attribution_priorities.py"), set())
 
@@ -65,7 +65,7 @@ class ComponentOwnershipTests(unittest.TestCase):
 
     def test_path_sets_are_unioned(self):
         self.assertEqual(changed_components(["src/strings/web/share.json", "quotes/quotes.es-ES.csv"]),
-                         {"Web", "macOS", "Windows"})
+                         {"Web", "macOS", "Windows", "macOS app"})
 
     def test_non_payload_documentation_has_no_component(self):
         self.assertEqual(components_for_path("screensavers/windows-native/README.md"), set())

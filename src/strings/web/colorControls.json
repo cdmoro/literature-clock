@@ -73,5 +73,10 @@
     "choose_color": "Wybierz własny kolor tego motywu",
     "reset_color": "Przywróć domyślny kolor tego motywu",
     "default_color": "Domyślny kolor"
+  },
+  "pt-BR": {
+    "choose_color": "Escolher uma cor personalizada para este tema",
+    "reset_color": "Restaurar a cor padrão deste tema",
+    "default_color": "Cor padrão"
   }
 }

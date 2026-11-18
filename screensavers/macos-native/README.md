@@ -2,7 +2,7 @@
 
 The native screen saver renders the clock with AppKit. It does not use a browser, WebKit or a local server. Quote catalogues, fonts, themes and patterns are bundled; the optional Photo background downloads images and, for NASA and Wikimedia Commons, search metadata.
 
-It supports the 15 quote locales, language rotation, bilingual display, light/dark/system appearance, themes, accent and custom colours, optional time and minute progress, passage filtering, and per-minute background patterns. Photo backgrounds work with the supported themes and can use Picsum, NASA or Wikimedia Commons. NASA and Commons topics are shared with the web app through `src/photo-providers.json`. Photos rotate automatically; the last successful image and its credit are saved for offline use.
+It supports the 16 quote locales, language rotation, bilingual display, light/dark/system appearance, themes, accent and custom colours, optional time and minute progress, passage filtering, and per-minute background patterns. Photo backgrounds work with the supported themes and can use Picsum, NASA or Wikimedia Commons. NASA and Commons topics are shared with the web app through `src/photo-providers.json`. Photos rotate automatically; the last successful image and its credit are saved for offline use.
 
 Quote attributions use the localized display forms by default. The behavior settings include **Show original author and title**, which switches each field to its canonical source form when that form is available.
 

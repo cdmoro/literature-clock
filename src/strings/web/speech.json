@@ -238,5 +238,21 @@
     "activationNeeded": "Ustawienie automatycznego czytania jest zapisane. Włącz czytanie podczas tej wizyty.",
     "blocked": "Przeglądarka zablokowała czytanie. Naciśnij „Włącz czytanie”, aby spróbować ponownie.",
     "noStart": "Czytanie się nie rozpoczęło. Sprawdź głośność i dostępne głosy, a następnie spróbuj ponownie."
+  },
+  "pt-BR": {
+    "read": "Ler a citação",
+    "stop": "Parar a leitura",
+    "auto": "Ler a citação no início de cada minuto",
+    "help": "Ative esta opção ou pressione Ler após abrir a página. A leitura é interrompida quando a aba fica oculta.",
+    "unsupported": "A leitura em voz alta não está disponível neste navegador.",
+    "error": "Não foi possível ler a citação. Tente novamente.",
+    "attribution": "Ler também o título do livro e o autor",
+    "contentSection": "Conteúdo",
+    "clockSection": "Relógio e exibição",
+    "speechSection": "Leitura em voz alta",
+    "activate": "Ativar leitura",
+    "activationNeeded": "A leitura automática está salva. Ative-a para esta visita.",
+    "blocked": "O navegador bloqueou a leitura. Pressione Ativar leitura.",
+    "noStart": "A leitura não começou. Verifique o volume e as vozes disponíveis e tente novamente."
   }
 }

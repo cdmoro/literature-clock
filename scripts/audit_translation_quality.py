@@ -55,6 +55,7 @@ NUMBERS['fr'].update({'une': 1, 'quart': 15, 'le quart': 15})
 NUMBERS['de'].update({'ein': 1, 'eine': 1, 'viertel': 15})
 NUMBERS['it'].update({'una': 1, 'un': 1, 'un quarto': 15})
 NUMBERS['pt'].update({'uma': 1, 'duas': 2, 'um quarto': 15, 'quarto': 15})
+NUMBERS['pt'].update({'quatorze': 14, 'dezesseis': 16, 'dezessete': 17, 'dezenove': 19})
 
 
 def number(value, lang):
@@ -95,7 +96,7 @@ def clock_phrase(phrase, lang):
         'fr': r' (?:du matin|du soir|de l’après-midi)$',
         'de': r' (?:morgens|abends|nachmittags|nachts)$',
         'it': r' (?:del mattino|di mattina|del pomeriggio|di sera)$',
-        'pt': r' (?:da manhã|da tarde|da noite)$',
+        'pt': r' (?:da manhã|da madrugada|da tarde|da noite)$',
     }
     text = re.sub(suffixes[lang], '', text)
     if lang == 'en':
@@ -115,6 +116,11 @@ def clock_phrase(phrase, lang):
                 return (number(hour_word, 'en') % 12) * 60 + minute
     if lang == 'de':
         text = re.sub(r' uhr$', '', text)
+    if lang == 'pt':
+        digital = re.fullmatch(r'(\d{1,2})h(?:(\d{2})(?:min(?:(\d{2})s)?)?)?', text)
+        if digital:
+            h, m, seconds = (int(value or 0) for value in digital.groups())
+            return (h % 12) * 60 + m if h < 24 and m < 60 and seconds < 60 else None
     numeric = re.fullmatch(r'(\d{1,2})[:.](\d{2})', text)
     if numeric:
         h, m = map(int, numeric.groups())
@@ -128,6 +134,13 @@ def clock_phrase(phrase, lang):
     def result(h, m, sign=1):
         return (h * 60 + sign * m) % 720 if h is not None and m is not None and 0 < h <= 24 and 0 <= m < 60 else None
 
+    def hour_number(value):
+        if lang == 'pt' and value in ('meia-noite', 'meio-dia'):
+            return 12
+        if lang == 'pt':
+            value = re.sub(r' horas?$', '', value)
+        return number(value, lang)
+
     patterns = {
         'en': [(r'(.+?)(?: minutes?)? (to|before|till|past|after|of) (.+)', 'relative'),
                (r'half[- ]past (.+)', 'half')],
@@ -137,7 +150,7 @@ def clock_phrase(phrase, lang):
         'es': [(r'(.+?) menos (.+)', 'minus'), (r'(.+?) y media', 'half'), (r'(.+?) y (.+)', 'plus')],
         'it': [(r'(.+?) meno (.+)', 'minus'), (r'(.+?) e mezz[ao]', 'half'), (r'(.+?) e (.+?)(?: minuti)?', 'plus')],
         'pt': [(r'(.+?)(?: minutos?)? (para as|para a|para o|para) (.+)', 'relative'),
-               (r'(.+?) e meia', 'half'), (r'(.+?) e (.+)', 'plus')],
+               (r'(.+?) e meia', 'half'), (r'(.+?)(?: horas?)? e (.+?)(?: minutos?)?', 'plus')],
     }
     for pattern, kind in patterns[lang]:
         match = re.fullmatch(pattern, text)
@@ -145,16 +158,16 @@ def clock_phrase(phrase, lang):
             continue
         parts = match.groups()
         if kind == 'half':
-            return result(number(parts[0], lang), 30, -1 if lang == 'de' else 1)
+            return result(hour_number(parts[0]), 30, -1 if lang == 'de' else 1)
         if kind == 'relative':
-            hour = 12 if lang == 'en' and parts[2] in ('midnight', 'noon') else number(parts[2], lang)
+            hour = 12 if lang == 'en' and parts[2] in ('midnight', 'noon') else hour_number(parts[2])
             parsed = result(hour, number(parts[0], lang),
                             1 if parts[1] in ('past', 'after', 'nach') else -1)
             if parsed is not None:
                 return parsed
             continue
         minute_text = re.sub(r'^et ', '', parts[1]) if lang == 'fr' else parts[1]
-        return result(number(parts[0], lang), number(minute_text, lang), -1 if kind == 'minus' else 1)
+        return result(hour_number(parts[0]), number(minute_text, lang), -1 if kind == 'minus' else 1)
     hour_text = re.sub(r' (?:heures?|uhr|horas?)$', '', text)
     hour = number(hour_text, lang)
     return result(hour, 0)
@@ -189,7 +202,7 @@ def explicit_period(phrase, lang):
         'fr': (r'\b(?:minuit|matin)\b', r'\b(?:midi|soir)\b'),
         'de': (r'\b(?:mitternacht|morgens)\b', r'\b(?:mittag|nachmittags|abends)\b'),
         'it': (r'\b(?:mezzanotte|mattino|mattina)\b', r'\b(?:mezzogiorno|pomeriggio|sera)\b'),
-        'pt': (r'\b(?:meia-noite|manhã)\b', r'\b(?:meio-dia|tarde)\b'),
+        'pt': (r'\b(?:meia-noite|manhã|madrugada)\b', r'\b(?:meio-dia|tarde)\b'),
     }
     periods = [i for i, pattern in enumerate(patterns.get(lang, ())) if re.search(pattern, phrase, re.I)]
     return periods[0] if len(periods) == 1 else None

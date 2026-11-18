@@ -223,5 +223,20 @@
     "favoritesFull": "Lista ulubionych jest pełna (500). Usuń jeden cytat, aby zapisać następny.",
     "storageUnavailable": "Nie udało się zapisać zmian na tym urządzeniu. Sprawdź ustawienia dostępu do pamięci przeglądarki.",
     "historyCleared": "Wyczyszczono historię"
+  },
+  "pt-BR": {
+    "copyLink": "Copiar link da citação",
+    "linkCopied": "Link copiado",
+    "linkFailed": "Não foi possível compartilhar o link. Tente novamente.",
+    "quoteUnavailable": "Esta citação não está disponível neste idioma ou com o filtro de conteúdo. Outra citação será exibida.",
+    "pause": "Pausar leitura",
+    "resume": "Voltar ao relógio",
+    "pausedAt": "Pausado às",
+    "favoriteSaved": "Citação salva",
+    "favoriteRemoved": "Favorito removido",
+    "filteredLibrary": "O filtro de conteúdo oculta as citações salvas.",
+    "favoritesFull": "Você atingiu 500 favoritos. Remova um para salvar outro.",
+    "storageUnavailable": "Não foi possível salvar as alterações. Verifique as permissões de armazenamento do navegador.",
+    "historyCleared": "Histórico limpo"
   }
 }

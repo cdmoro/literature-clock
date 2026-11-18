@@ -20,12 +20,16 @@ public static class Checks
         var app=new Application { ShutdownMode=ShutdownMode.OnExplicitShutdown };
         var data=new Catalogues();
         _ = new GlassEffect(); // Also validate the embedded compiled shader on software runners.
-        Assert(data.Locales.Length==15,"Expected all fifteen published native locales");
+        Assert(data.Locales.Length==16,"Expected all sixteen published native locales");
         Assert(Catalogues.Resolve("en-US",data.Locales)=="en-US","Exact locale resolution");
         Assert(Catalogues.Resolve("zh-Hant",data.Locales)=="zh-CN","Language fallback");
         Assert(Catalogues.Resolve("ja",data.Locales)=="ja-JP","Japanese language fallback");
         Assert(Catalogues.Resolve("ko",data.Locales)=="ko-KR","Korean language fallback");
         Assert(Catalogues.Resolve("pl",data.Locales)=="pl-PL","Polish language fallback");
+        Assert(Catalogues.Resolve("PT_br",data.Locales)=="pt-BR","Brazilian Portuguese exact locale");
+        Assert(Catalogues.Resolve("pt",data.Locales)=="pt-PT","Portuguese base locale");
+        Assert(Catalogues.Resolve("pt-AO",data.Locales)=="pt-PT","Portuguese regional fallback");
+        Assert(Catalogues.Resolve("en",data.Locales)=="en-GB","English base locale");
         Assert(Catalogues.Resolve("nl-NL",data.Locales)=="en-GB","Unsupported locale fallback");
         Assert(Catalogues.Index(3,10,0)!=Catalogues.Index(3,10,1),"Distinct monitor variants");
         Assert(GlassEffect.Radius(1,1920,1080)==0 && GlassEffect.Radius(.5,1920,1080)==28,"Glass corner fade");

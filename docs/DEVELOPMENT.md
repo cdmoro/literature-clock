@@ -24,7 +24,7 @@ The development server opens the clock in your browser.
 | --- | --- |
 | `npm run generate-times` | Generate quote JSON files from the CSV files |
 | `npm run validate-attributions` | Check localized author and work names against the source catalogues |
-| `npm run complete-attributions` | Require explicit attribution forms for every entity in every supported locale |
+| `npm run complete-attributions` | Require explicit or inherited attribution forms for every entity in every supported locale |
 | `npm run attribution-priorities` | Rank authors and works by the number of quotes they affect |
 | `npm run dev` | Start the local clock development server |
 | `npm run typecheck` | Check TypeScript types |
@@ -51,6 +51,12 @@ Every final quote CSV stores the source author's and book's canonical values in 
 ## Translation administrator
 
 To contribute a new language, start with the [language incubator guide](LANGUAGE_INCUBATOR.md).
+
+For regional variants, see [regional catalogue policy and the pt-BR review](PORTUGUESE_VARIANTS.md).
+Attributions resolve each field through an explicit editorial parent before the
+canonical source: `pt-BR → pt-PT → original`, `en-US → en-GB → original`.
+Only differing regional forms need entries; passage text and source declarations
+do not inherit through this attribution policy.
 
 Run `npm run admin` and open **http://127.0.0.1:5174** to create catalogues, translate batches, compare passages with the original, and edit or approve translations. This local application writes to the catalogue CSV files and is separate from the deployed clock.
 

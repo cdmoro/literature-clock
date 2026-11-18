@@ -53,9 +53,9 @@ def components_for_path(value: str) -> set[str]:
         "src/strings/types.ts": {"Web"},
         "src/photo-providers.json": SHARED,
         "screensavers/macos-native/build.py": {"macOS", "Windows"},
-        "scripts/generate_times.py": SHARED,
-        "scripts/validate_attributions.py": SHARED,
-        "scripts/attribution_localizations.py": SHARED,
+        "scripts/generate_times.py": SHARED | {"macOS app"},
+        "scripts/validate_attributions.py": SHARED | {"macOS app"},
+        "scripts/attribution_localizations.py": SHARED | {"macOS app"},
         "scripts/native_quote_catalogues.py": {"macOS", "Windows"},
     }
     if path in exact:
@@ -71,7 +71,7 @@ def components_for_path(value: str) -> set[str]:
     if path.startswith("src/strings/"):
         raise ValueError(f"Translation resource has no ownership mapping: {path}")
     if path.startswith("quotes/"):
-        return SHARED
+        return SHARED | {"macOS app"}
     if path.startswith(("screensavers/macos-native/Sources/", "screensavers/macos-native/Assets/")):
         return {"macOS", "Windows"} if "/Assets/" in path else {"macOS"}
     if path.startswith("screensavers/windows-native/"):

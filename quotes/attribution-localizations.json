@@ -31781,6 +31781,12 @@
           "sources": [
             "https://bn.org.pl/download/document/1774423396.pdf"
           ]
+        },
+        "pt-BR": {
+          "value": "Emma",
+          "sources": [
+            "https://www.companhiadasletras.com.br/livro/9788582851050/emma"
+          ]
         }
       },
       "Northanger Abbey": {
@@ -31849,9 +31855,9 @@
           ]
         },
         "pt-PT": {
-          "value": "O estranho caso do cachorro morto",
+          "value": "O estranho caso do cão morto",
           "sources": [
-            "https://loja.hamelyn.pt/livros-segunda-mao/o-estranho-caso-do-cao-morto-9789722330565"
+            "https://www.bertrand.pt/livro/o-estranho-caso-do-cao-morto-mark-haddon/24702773"
           ]
         },
         "zh-CN": {
@@ -31875,6 +31881,12 @@
           "value": "Dziwny przypadek psa nocną porą",
           "sources": [
             "https://www.britishcouncil.pl/o-nas/prasa/curious-incident-dog-night-time"
+          ]
+        },
+        "pt-BR": {
+          "value": "O estranho caso do cachorro morto",
+          "sources": [
+            "https://www.record.com.br/products/o-estranho-caso-do-cachorro-morto"
           ]
         }
       }
@@ -31912,6 +31924,12 @@
           "value": "Lot nad kukułczym gniazdem",
           "sources": [
             "https://abc.uw.edu.pl/katalog/ksiazka/7291"
+          ]
+        },
+        "pt-BR": {
+          "value": "Um estranho no ninho",
+          "sources": [
+            "https://www.record.com.br/products/um-estranho-no-ninho"
           ]
         }
       },
@@ -31977,6 +31995,12 @@
           "value": "Sprawa honoru",
           "sources": [
             "https://e-isbn.pl/IsbnWeb/onix/summary.html?record_id=7651747"
+          ]
+        },
+        "pt-BR": {
+          "value": "Um Caso de Honra",
+          "sources": [
+            "https://hemeroteca-pdf.bn.gov.br/325538/per325538_1988_02022.pdf"
           ]
         }
       },
@@ -32457,6 +32481,12 @@
           "sources": [
             "https://w.bibliotece.pl/10211/Czy%2Bpowiemy%2Bprezydentowi"
           ]
+        },
+        "pt-BR": {
+          "value": "Vamos contar ao presidente?",
+          "sources": [
+            "https://www.aabbportoalegre.com.br/biblioteca/detalhes/vamos-contar-ao-presidente/3379"
+          ]
         }
       },
       "Shoeshine Boy": {
@@ -32676,7 +32706,12 @@
       },
       "1Q84": {
         "es-ES": "1T84",
-        "pt-PT": "1T84",
+        "pt-PT": {
+          "value": "1Q84",
+          "sources": [
+            "https://static.fnac-static.com/multimedia/PT/pdf/9789724620534.pdf"
+          ]
+        },
         "ar-AE": "1Q84",
         "de-DE": "1Q84",
         "el-GR": "1Q84",
@@ -33226,6 +33261,12 @@
           "value": "Stukostrachy",
           "sources": [
             "https://stephenking.pl/ksiazka/stukostrachy/"
+          ]
+        },
+        "pt-BR": {
+          "value": "Os Estranhos",
+          "sources": [
+            "https://rima.im.ufrrj.br/jspui/bitstream/20.500.14407/7672/1/Correio_da_Lavoura_3816_Outubro_1990.pdf"
           ]
         }
       }
@@ -37933,7 +37974,12 @@
         "es-ES": "Broma infinita",
         "fr-FR": "Blague infini",
         "it-IT": "Scherzo infinito",
-        "pt-PT": "Brincadeira infinita",
+        "pt-PT": {
+          "value": "A Piada Infinita",
+          "sources": [
+            "https://www.quetzaleditores.pt/produtos/ficha/a-piada-infinita/32590563"
+          ]
+        },
         "ru-RU": "Бесконечная шутка",
         "zh-CN": "无尽的玩笑",
         "ar-AE": "النكتة اللانهائية",
@@ -37943,6 +37989,12 @@
           "value": "Niewyczerpany żart",
           "sources": [
             "https://www.bn.org.pl/download/document/1695806902.pdf"
+          ]
+        },
+        "pt-BR": {
+          "value": "Graça infinita",
+          "sources": [
+            "https://www.companhiadasletras.com.br/livro/9788535925043/graca-infinita"
           ]
         }
       },
@@ -38077,7 +38129,12 @@
         "es-ES": "Atlas de nubes",
         "fr-FR": "Atlas des nuages",
         "it-IT": "Atlante delle nuvole",
-        "pt-PT": "Atlas da Nuvem",
+        "pt-PT": {
+          "value": "Atlas das Nuvens",
+          "sources": [
+            "https://www.bertrand.pt/livro/atlas-das-nuvens-david-mitchell/196788"
+          ]
+        },
         "ru-RU": "Облачный атлас",
         "zh-CN": "云图",
         "ar-AE": "أطلس السحاب",
@@ -38088,6 +38145,12 @@
           "value": "Atlas chmur",
           "sources": [
             "https://www.ateneum.pl/pozycja.php?id=787838"
+          ]
+        },
+        "pt-BR": {
+          "value": "Atlas de nuvens",
+          "sources": [
+            "https://www.companhiadasletras.com.br/livro/9788535927580/atlas-de-nuvens"
           ]
         }
       },
@@ -43175,7 +43238,8 @@
         "ar-AE": "مطابخ الغرب الأوسط العظيم",
         "eo": "Kuirejoj de la Granda Mezokcidento",
         "ja-JP": "中西部の台所",
-        "pl-PL": "Kuchnie amerykańskiego Środkowego Zachodu"
+        "pl-PL": "Kuchnie amerykańskiego Środkowego Zachodu",
+        "pt-BR": "Cozinhas do Grande Meio-Oeste"
       }
     },
     "J. Storer Clouston": {
@@ -43403,6 +43467,12 @@
           "value": "Harry Potter i Książę Półkrwi",
           "sources": [
             "https://www.mediarodzina.pl/produkt/harry-potter-i-ksiaze-polkrwi-wyd-ilustrowane/"
+          ]
+        },
+        "pt-BR": {
+          "value": "Harry Potter e o Enigma do Príncipe",
+          "sources": [
+            "https://rocco.com.br/marca/harry-potter/"
           ]
         }
       },
@@ -54792,6 +54862,12 @@
           "sources": [
             "https://lubimyczytac.pl/ksiazka/294432/pani-mecenas-ucieka"
           ]
+        },
+        "pt-BR": {
+          "value": "Samantha Sweet, executiva do lar",
+          "sources": [
+            "https://www.record.com.br/products/samantha-sweet-executiva-do-lar"
+          ]
         }
       },
       "Twenties Girl": {
@@ -56652,7 +56728,12 @@
         "es-ES": "Sra. Dalloway",
         "fr-FR": "Mme Dalloway",
         "it-IT": "La signora Dalloway",
-        "pt-PT": "Sra.",
+        "pt-PT": {
+          "value": "Mrs. Dalloway",
+          "sources": [
+            "https://www.relogiodagua.pt/produto/mrs-dalloway/"
+          ]
+        },
         "ru-RU": "Миссис Дэллоуэй",
         "zh-CN": "《达洛维夫人》",
         "ar-AE": "السيدة. دالواي",
