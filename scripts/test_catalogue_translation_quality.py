@@ -26,6 +26,81 @@ class CatalogueTranslationQualityTest(unittest.TestCase):
             with self.subTest(locale=locale):
                 self.assertEqual(validate(self.sources, list(rows.values())), [])
 
+    def test_brazilian_import_preserves_highlights_markup_and_minutes_before_approval(self):
+        rows = self.catalogues['pt-BR']
+        # Draft import validation alone deliberately skips these text checks.
+        self.assertEqual(validate(self.sources, [{**row, 'Draft': 'false'} for row in rows.values()]), [])
+        for identifier, phrase in {
+            '1906-000': 'sete e seis da noite',
+            '1935-002': 'sete e trinta e cinco da noite',
+            '2312-000': 'onze e doze da noite',
+        }.items():
+            with self.subTest(identifier=identifier):
+                self.assertEqual(rows[identifier]['Quote time'], phrase)
+                self.assertEqual(clock_phrase(phrase, 'pt'),
+                                 clock_phrase(self.source_by_id[identifier]['Quote time'], 'en'))
+        self.assertIn('E experimente o Infermiterol. Tchau, tchau.”', rows['0200-010']['Quote'])
+        self.assertIn('Escovar os dentes e lavar o rosto', rows['0725-003']['Quote'])
+
+    def test_brazilian_review_preserves_midnight_seconds_and_repeated_passages(self):
+        rows = self.catalogues['pt-BR']
+        for identifier, phrase in {'0009-000': '0h09', '0024-000': '0h24',
+                                   '0052-000': '0h52', '0243-000': '2h43min12s da madrugada'}.items():
+            self.assertEqual(rows[identifier]['Quote time'], phrase)
+        self.assertIn('2h36min30s', rows['0236-001']['Quote'])
+        for first, second in [('0710-000', '0815-000'), ('0610-000', '0720-001'),
+                              ('0823-003', '0824-000')]:
+            self.assertEqual(rows[first]['Quote'], rows[second]['Quote'])
+        self.assertIn('Às 6h10, havia telefonado', rows['0720-001']['Quote'])
+        self.assertIn('chefe do Serviço Secreto', rows['0710-000']['Quote'])
+        self.assertIn('começou o noticiário', rows['2125-001']['Quote'])
+        self.assertIn('6h25 está atrasado para as 6h44', rows['0625-001']['Quote'])
+
+    def test_brazilian_second_pass_preserves_minutes_units_and_calendar_facts(self):
+        rows = self.catalogues['pt-BR']
+        self.assertEqual(clock_phrase(rows['1732-000']['Quote time'], 'pt'), 17 * 60 % 720 + 32)
+        self.assertEqual(rows['1508-001']['Quote time'], '15h08')
+        self.assertIn('15h08', rows['1459-002']['Quote'])
+        self.assertIn('uma milha quadrada e meia', rows['1102-000']['Quote'])
+        self.assertNotIn('1983', rows['0715-003']['Quote'])
+        self.assertIn('14 de fevereiro, Dia de São Valentim', rows['0651-000']['Quote'])
+        self.assertIn('New Street', rows['0602-000']['Quote'])
+        self.assertEqual(rows['0602-000']['Quote'], rows['0609-001']['Quote'])
+        self.assertEqual(rows['0025-000']['Quote'], rows['0055-000']['Quote'])
+        self.assertEqual(rows['0025-000']['Quote'], rows['1225-000']['Quote'])
+
+    def test_brazilian_ballard_diary_preserves_bedtimes_and_canonical_measurements(self):
+        rows = self.catalogues['pt-BR']
+        for first, second in [('0940-005', '1615-004'), ('1025-003', '1545-004'),
+                              ('1105-001', '1515-005'), ('0810-003', '1915-004'),
+                              ('0636-000', '1836-000')]:
+            self.assertEqual(rows[first]['Quote'], rows[second]['Quote'])
+        self.assertIn('Dormir às 20h00?', rows['0633-000']['Quote'])
+        for identifier, bedtime in {'1515-005': '15h15', '1545-004': '15h45',
+                                    '1615-004': '16h15', '1915-004': '19h15'}.items():
+            self.assertEqual(rows[identifier]['Quote time'], bedtime)
+        self.assertIn('blindagem de chumbo', rows['0940-005']['Quote'])
+        self.assertIn('530 cm', rows['1515-005']['Quote'])
+
+    def test_brazilian_short_passages_keep_minutes_names_and_idiomatic_meaning(self):
+        rows = self.catalogues['pt-BR']
+        for identifier, expected in {'0037-000': 37, '0038-001': 38, '0323-000': 203,
+                                     '0826-001': 506, '0919-000': 559,
+                                     '2224-000': 624, '2228-000': 628}.items():
+            self.assertEqual(clock_phrase(rows[identifier]['Quote time'], 'pt'), expected)
+        self.assertIn('Sra. Peters', rows['1050-001']['Quote'])
+        self.assertIn('Newsnight', rows['2215-001']['Quote'])
+        self.assertIn('revista Hello!', rows['2035-000']['Quote'])
+        self.assertIn('quero um favor', rows['0702-000']['Quote'])
+        self.assertIn('correspondência', rows['1000-017']['Quote'])
+        self.assertIn('refresco de laranja', rows['0207-000']['Quote'])
+        self.assertIn('mostrador luminoso', rows['0347-000']['Quote'])
+        self.assertEqual(rows['0112-001']['Quote'], rows['0128-000']['Quote'])
+        self.assertEqual(rows['0823-002']['Quote'], rows['0937-001']['Quote'])
+        self.assertEqual(rows['0823-002']['Quote'], rows['0940-004']['Quote'])
+        self.assertIn('nove e quarenta', rows['0823-002']['Quote'])
+        self.assertIn('duas e cinquenta e oito', rows['0927-002']['Quote'])
+
     def test_arabic_drafts_also_keep_visible_highlights_and_source_formatting(self):
         # Draft status must not hide the import's lost highlights and HTML.
         from collections import Counter

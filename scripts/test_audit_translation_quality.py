@@ -7,6 +7,21 @@ from audit_translation_quality import clock_phrase, explicit_period, passage_fin
 
 
 class TimePhraseTests(unittest.TestCase):
+    def test_portuguese_regional_words_and_digital_notation(self):
+        for phrase, minute in {
+            '0h18': 18, '2h': 120, '13h36': 96, '2h43min12s da madrugada': 163,
+            'duas e quatorze': 134, 'dezesseis e dezessete': 257,
+            'dezenove e dezasseis': 436, 'meia-noite e vinte e sete': 27,
+            'meio-dia e meia': 30, 'cinco para a meia-noite': 715,
+            'meia-noite e trinta e sete minutos': 37,
+            'uma hora e dezesseis minutos': 76, 'duas horas e meia': 150,
+        }.items():
+            with self.subTest(phrase=phrase):
+                self.assertEqual(clock_phrase(phrase, 'pt'), minute)
+        for phrase in ['25h00', '12h99', '2h43min99s', 'quase 2h30', '2h30 a 3h00']:
+            self.assertIsNone(clock_phrase(phrase, 'pt'))
+        self.assertEqual(explicit_period('2h da madrugada', 'pt'), 0)
+
     def test_english_spoken_and_military_clock_phrases(self):
         examples = {'two-twelve A.M.': 132, 'seven-nine': 429,
                     'eleven thirty two': 692, 'eight oh two': 482,

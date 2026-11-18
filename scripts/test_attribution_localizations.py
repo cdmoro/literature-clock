@@ -7,8 +7,9 @@ import unittest
 from pathlib import Path
 
 from generate_times import generate_catalogue, generate_catalogues
-from attribution_localizations import read_attribution_localizations, resolve_attribution
+from attribution_localizations import read_attribution_localizations, resolve_attribution, attribution_entry, attribution_locales
 from attribution_priorities import priorities
+from native_quote_catalogues import build_native_catalogues
 from validate_attributions import validate
 from validate_translation import ROOT
 
@@ -67,6 +68,91 @@ class AttributionLocalizationTest(unittest.TestCase):
                 'id', 'quote_time_case', 'quote_first', 'quote_last', 'title', 'author',
                 'title_original', 'author_original', 'sfw',
             })
+
+    def test_regional_attribution_fallback_is_independent_for_each_field(self):
+        catalog = {
+            'authors': {'Jane Austen': {'pt-PT': 'Autora base'}},
+            'works': {'Jane Austen': {'Pride and Prejudice': {
+                'pt-PT': 'Título base',
+                'pt-BR': {'value': 'Título brasileiro', 'sources': ['https://example.org/br']},
+            }}},
+        }
+        resolve = lambda locale: resolve_attribution(self.target, locale, {self.source['Id']: self.source}, catalog)
+        self.assertEqual(resolve('pt-BR'),
+                         ('Título brasileiro', 'Autora base', 'Pride and Prejudice', 'Jane Austen'))
+        del catalog['works']['Jane Austen']['Pride and Prejudice']['pt-BR']
+        self.assertEqual(resolve('pt-BR')[:2], ('Título base', 'Autora base'))
+        del catalog['works']['Jane Austen']['Pride and Prejudice']['pt-PT']
+        self.assertEqual(resolve('pt-BR')[:2], ('Pride and Prejudice', 'Autora base'))
+        catalog['authors']['Jane Austen'] = {'pt-BR': 'Autora brasileira'}
+        self.assertEqual(resolve('pt-BR')[:2], ('Pride and Prejudice', 'Autora brasileira'))
+        # Neither reverse inheritance nor arbitrary same-language matching.
+        self.assertEqual(resolve('pt-PT')[:2], ('Pride and Prejudice', 'Jane Austen'))
+        self.assertEqual(resolve('pt-AO')[:2], ('Pride and Prejudice', 'Jane Austen'))
+
+    def test_english_variant_uses_its_editorial_parent(self):
+        catalog = {'authors': {}, 'works': {'Jane Austen': {'Pride and Prejudice': {
+            'en-GB': 'British title', 'en-US': 'American title',
+        }}}}
+        resolve = lambda: resolve_attribution(self.target, 'en-US', {self.source['Id']: self.source}, catalog)
+        self.assertEqual(resolve()[0], 'American title')
+        del catalog['works']['Jane Austen']['Pride and Prejudice']['en-US']
+        self.assertEqual(resolve()[0], 'British title')
+        del catalog['works']['Jane Austen']['Pride and Prejudice']['en-GB']
+        self.assertEqual(resolve()[0], 'Pride and Prejudice')
+
+    def test_regional_coverage_and_priorities_include_inherited_forms(self):
+        catalog = {'authors': {'Jane Austen': {'pt-PT': 'Jane Austen'}},
+                   'works': {'Jane Austen': {'Pride and Prejudice': {'pt-PT': 'Orgulho e Preconceito'}}}}
+        errors, authors, works = validate(catalog, [self.source], {'pt-PT'})
+        self.assertEqual(errors, [])
+        self.assertIn('pt-BR', authors['Jane Austen'])
+        self.assertIn('pt-BR', works[('Jane Austen', 'Pride and Prejudice')])
+        self.assertEqual(priorities([self.source], catalog, 'pt-BR'), ([], []))
+        catalog['works']['Jane Austen']['Pride and Prejudice']['pt-BR'] = 'Título brasileiro'
+        self.assertEqual(validate(catalog, [self.source], {'pt-PT'})[0], [])
+        catalog['works']['Jane Austen']['Pride and Prejudice']['pt-AO'] = 'Unconfigured'
+        self.assertTrue(any('unsupported locale pt-AO' in error
+                            for error in validate(catalog, [self.source], {'pt-PT'})[0]))
+
+    def test_regional_draft_preview_and_native_payload_resolve_the_same_forms(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'quotes').mkdir()
+            (root / 'src/strings/common').mkdir(parents=True)
+            (root / 'src/strings/common/translations.json').write_text(
+                json.dumps({locale: {} for locale in ('en-GB', 'pt-PT', 'pt-BR')}))
+            source = {**self.target, 'Quote': 'At noon, she read.', 'Quote time': 'noon',
+                      'Author': 'Jane Austen', 'Title': 'Pride and Prejudice'}
+            catalog = {'authors': {'Jane Austen': {'pt-PT': 'Jane Austen'}},
+                       'works': {'Jane Austen': {'Pride and Prejudice': {
+                           'pt-PT': 'Título base', 'pt-BR': 'Título brasileiro'}}}}
+            (root / 'quotes/attribution-localizations.json').write_text(json.dumps(catalog))
+            for locale in ('en-GB', 'pt-PT', 'pt-BR'):
+                self.write_target(root / f'quotes/quotes.{locale}.csv', source)
+            generate_catalogue(root / 'quotes/quotes.pt-BR.csv', root / 'times',
+                               include_drafts=True, source_rows={source['Id']: source},
+                               localizations=catalog)
+            web = json.loads((root / 'times/pt-BR-draft/12_00.json').read_text())[0]
+            native = build_native_catalogues(root)['pt-BR']['12:00'][0]
+            for field in ('title', 'author', 'title_original', 'author_original'):
+                self.assertEqual(web[field], native[field])
+            self.assertEqual(web['title'], 'Título brasileiro')
+            self.assertEqual(web['author'], 'Jane Austen')
+
+    def test_brazilian_edition_exceptions_and_shared_corrected_titles(self):
+        catalog = read_attribution_localizations(ROOT / 'quotes/attribution-localizations.json')
+        for author, title, parent_title, brazilian_title in [
+            ('David Mitchell', 'Cloud Atlas', 'Atlas das Nuvens', 'Atlas de nuvens'),
+            ('David Foster Wallace', 'Infinite Jest', 'A Piada Infinita', 'Graça infinita'),
+        ]:
+            row = {'Id': 'test', 'Author': author, 'Title': title}
+            self.assertEqual(resolve_attribution(row, 'pt-PT', {}, catalog)[0], parent_title)
+            self.assertEqual(resolve_attribution(row, 'pt-BR', {}, catalog)[0], brazilian_title)
+        for author, title in [('Virginia Woolf', 'Mrs. Dalloway'), ('Haruki Murakami', '1Q84')]:
+            row = {'Id': 'test', 'Author': author, 'Title': title}
+            self.assertNotIn('pt-BR', catalog['works'][author][title])
+            self.assertEqual(resolve_attribution(row, 'pt-BR', {}, catalog)[0], title)
 
     def test_author_and_work_fallback_independently_to_original_source(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -178,7 +264,7 @@ class AttributionLocalizationTest(unittest.TestCase):
 
     def test_priority_works_cover_every_non_english_locale(self):
         localizations = read_attribution_localizations(ROOT / 'quotes/attribution-localizations.json')
-        locales = set(json.loads((ROOT / 'src/strings/common/translations.json').read_text())) - {'en-GB', 'en-US'}
+        locales = attribution_locales(json.loads((ROOT / 'src/strings/common/translations.json').read_text())) - {'en-GB', 'en-US'}
         for author, title in [
             ('Jane Austen', 'Pride and Prejudice'),
             ('Thomas Hoover', 'Project Cyclops'),
@@ -186,8 +272,8 @@ class AttributionLocalizationTest(unittest.TestCase):
             ('Ken Kesey', 'One Flew Over the Cuckoo’s Nest'),
         ]:
             with self.subTest(work=title):
-                mapped = set(localizations['works'][author][title])
-                self.assertEqual(mapped, locales)
+                forms = localizations['works'][author][title]
+                self.assertTrue(all(attribution_entry(forms, locale) is not None for locale in locales))
 
     def test_native_catalogue_builder_uses_the_same_localized_attributions(self):
         builders = []

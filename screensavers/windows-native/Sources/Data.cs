@@ -69,8 +69,13 @@ public sealed class Catalogues
     public static string Resolve(string name, string[] supported)
     {
         name = name.Replace('_', '-');
-        return supported.FirstOrDefault(x => x.Equals(name, StringComparison.OrdinalIgnoreCase))
-            ?? supported.FirstOrDefault(x => x.Split('-')[0].Equals(name.Split('-')[0], StringComparison.OrdinalIgnoreCase)) ?? "en-GB";
+        var exact = supported.FirstOrDefault(x => x.Equals(name, StringComparison.OrdinalIgnoreCase));
+        if (exact is not null) return exact;
+        var language = name.Split('-')[0];
+        // Regional variants must not change the default when resource order changes.
+        var dominant = language.ToLowerInvariant() switch { "en" => "en-GB", "pt" => "pt-PT", _ => null };
+        return supported.FirstOrDefault(x => x == dominant)
+            ?? supported.FirstOrDefault(x => x.Split('-')[0].Equals(language, StringComparison.OrdinalIgnoreCase)) ?? "en-GB";
     }
     public string Text(string key) => labels.GetValueOrDefault(SystemLocale)?.GetValueOrDefault(key) ?? labels["en-GB"].GetValueOrDefault(key) ?? key;
     public Dictionary<string, Quote[]> Get(string locale)

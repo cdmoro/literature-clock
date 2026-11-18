@@ -29,7 +29,23 @@ workflow path filters whenever bundle ownership changes.
 
 Every localized quote CSV retains canonical source `Author` and `Title`. When starting from a Google-translated CSV, first copy its translated `Title` and `Author` candidates into `quotes/attribution-localizations.json`. Review titles as verified publication titles (with a source URL) or natural editorial translations (without a source URL). Treat translated author names cautiously: add only an established localized form; otherwise omit the author mapping. Then restore the canonical source `Title` and `Author` values throughout that same locale CSV. Keep `Time`, `Id`, `SFW` and `Source locale` unchanged; only `Quote` and `Quote time` are translated. The generator resolves canonical attribution from the quote source and applies reviewed forms from the central catalogue to generated data. Use a plain string for an unsourced editorial form; add an object with `value` and `sources` for sourced forms. Generated JSON preserves canonical source values so readers can choose original attribution. Quote import and translation tools restore canonical metadata by ID. `SFW` must be the canonical CSV boolean `true` or `false`, shared by all translations of the same ID. The [language incubator guide](../docs/LANGUAGE_INCUBATOR.md#keep-the-connection-between-languages-intact) describes the full editorial review process.
 
-To check progress, run `npm run validate-attributions -- --locale ja-JP --show-missing`; to rank unresolved names by quote impact, run `npm run attribution-priorities -- --locale ja-JP`. `npm run complete-attributions` checks that every supported locale has an explicit form for every source author and work. The shared source forms are already English for this repository, so English locales use the canonical values by design.
+To check progress, run `npm run validate-attributions -- --locale ja-JP --show-missing`; to rank unresolved names by quote impact, run `npm run attribution-priorities -- --locale ja-JP`. `npm run complete-attributions` checks that every supported locale has an explicit or inherited form for every source author and work. The shared source forms are already English for this repository, so English locales use the canonical values by design.
+
+Regional attributions use explicit editorial parents in
+`scripts/attribution_localizations.py`: `pt-BR → pt-PT → original` and
+`en-US → en-GB → original`. Author and work resolve independently. Keep a
+regional entry only when its display form differs from the parent. Coverage,
+missing-form reports and priorities count inherited reviewed forms as available;
+the coverage report separates explicit and inherited counts. This measures
+display coverage, not verification of a published edition in the child region.
+Regional attribution exceptions can be reviewed before enabling their quote/UI
+locale, provided the configured parent is supported. An exact regional entry
+whose value equals the canonical title can deliberately override a translated
+parent form. There is no reverse or arbitrary same-language fallback.
+
+Quote CSVs still contain every source ID exactly once, including unchanged
+passages. Do not use attribution inheritance to supply missing quote rows or
+mark unreviewed passages as approved. See the [regional catalogue policy](../docs/PORTUGUESE_VARIANTS.md).
 
 ## Import a complete translation from Calibre or another tool
 

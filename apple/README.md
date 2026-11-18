@@ -30,7 +30,7 @@ The shared catalogue files are generated; do not edit them manually.
 python3 apple/Shared/Strings/sync_strings.py
 ```
 
-This updates the 15 `Localizable.strings` resources used by the app and widget.
+This updates the 16 `Localizable.strings` resources used by the app and widget.
 
 ## Branch workflow
 

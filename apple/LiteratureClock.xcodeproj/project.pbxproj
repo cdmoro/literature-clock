@@ -70,6 +70,7 @@
 		A00000000000000226 /* de-DE */ = {isa = PBXFileReference; lastKnownFileType = text; name = "de-DE"; path = "de-DE.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A00000000000000227 /* it-IT */ = {isa = PBXFileReference; lastKnownFileType = text; name = "it-IT"; path = "it-IT.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A00000000000000228 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A00000000000000238 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A00000000000000229 /* el-GR */ = {isa = PBXFileReference; lastKnownFileType = text; name = "el-GR"; path = "el-GR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A00000000000000230 /* zh-CN */ = {isa = PBXFileReference; lastKnownFileType = text; name = "zh-CN"; path = "zh-CN.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A00000000000000231 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ru-RU"; path = "ru-RU.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -271,6 +272,7 @@
 				"de-DE",
 				"it-IT",
 				"pt-PT",
+				"pt-BR",
 				"el-GR",
 				"zh-CN",
 				"ru-RU",
@@ -363,6 +365,7 @@
 				A00000000000000226 /* de-DE */,
 				A00000000000000227 /* it-IT */,
 				A00000000000000228 /* pt-PT */,
+				A00000000000000238 /* pt-BR */,
 				A00000000000000229 /* el-GR */,
 				A00000000000000230 /* zh-CN */,
 				A00000000000000231 /* ru-RU */,

@@ -4,6 +4,7 @@ import argparse
 from pathlib import Path
 
 from quote_sources import source_catalogue
+from attribution_localizations import attribution_locales, ATTRIBUTION_PARENTS
 from validate_translation import ROOT
 
 
@@ -21,6 +22,7 @@ def load_json(path):
 
 
 def validate(localizations, source_rows, supported_locales):
+    supported_locales = attribution_locales(supported_locales)
     errors = []
     authors = {row['Author'] for row in source_rows}
     works = {(row['Author'], row['Title']) for row in source_rows}
@@ -54,7 +56,9 @@ def validate(localizations, source_rows, supported_locales):
                     any(not isinstance(url, str) or not url.startswith('https://') for url in sources)):
                 errors.append(f'{label} ({locale}): sources must be an array of HTTPS sources')
             found.add(locale)
-        return found
+        # Coverage reflects usable reviewed forms, including editorial parents.
+        return {locale for locale in supported_locales
+                if locale in found or ATTRIBUTION_PARENTS.get(locale) in found}
 
     author_coverage = {}
     for source_name, forms in localizations['authors'].items():
@@ -78,10 +82,10 @@ def validate(localizations, source_rows, supported_locales):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--locale', help='Show exact coverage and unresolved source entities for one locale')
+    parser.add_argument('--locale', help='Show resolved coverage and unresolved source entities for one locale')
     parser.add_argument('--show-missing', action='store_true', help='List source-form entities for --locale')
     parser.add_argument('--require-complete', action='store_true',
-                        help='Fail if any supported locale lacks an explicit author or work form')
+                        help='Fail if any supported locale lacks an explicit or inherited author or work form')
     args = parser.parse_args()
     path = ROOT / 'quotes/attribution-localizations.json'
     translations = load_json(ROOT / 'src/strings/common/translations.json')
@@ -96,7 +100,8 @@ def main():
     if errors:
         raise SystemExit('\n'.join(errors))
 
-    if args.locale and args.locale not in translations:
+    supported = attribution_locales(translations)
+    if args.locale and args.locale not in supported:
         raise SystemExit(f'Unsupported locale: {args.locale}')
 
     author_count = len({row['Author'] for row in source_rows})
@@ -106,8 +111,15 @@ def main():
     for locale in locales:
         authors_done = sum(locale in values for values in author_coverage.values())
         works_done = sum(locale in values for values in work_coverage.values())
+        authors_explicit = sum(locale in forms for forms in localizations['authors'].values())
+        works_explicit = sum(locale in forms for titles in localizations['works'].values()
+                             for forms in titles.values())
         print(f'{locale}: {authors_done}/{author_count} authors and {works_done}/{work_count} works localized; '
               f'{author_count - authors_done} authors and {work_count - works_done} works use source forms.')
+        if locale in ATTRIBUTION_PARENTS:
+            print(f'  Explicit: {authors_explicit} authors, {works_explicit} works; '
+                  f'inherited from {ATTRIBUTION_PARENTS[locale]}: '
+                  f'{authors_done - authors_explicit} authors, {works_done - works_explicit} works.')
         if args.require_complete:
             missing = []
             if authors_done != author_count:
@@ -115,7 +127,7 @@ def main():
             if works_done != work_count:
                 missing.append(f'{work_count - works_done} works')
             if missing:
-                raise SystemExit(f'{locale}: incomplete explicit localization: {", ".join(missing)}')
+                raise SystemExit(f'{locale}: incomplete resolved localization: {", ".join(missing)}')
     if args.show_missing and not args.locale:
         parser.error('--show-missing requires --locale')
     if args.locale and args.show_missing:

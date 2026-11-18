@@ -86,5 +86,16 @@
     "visit": "Odwiedź",
     "source": "projekt open source",
     "contribute": ", aby zaproponować ulepszenia lub dodać cytat."
+  },
+  "pt-BR": {
+    "title": "Literature Clock — um relógio contado por citações de livros",
+    "description": "Literature Clock é um relógio online gratuito que mostra um trecho de livro mencionando a sua hora local, atualizado a cada minuto — em inglês, espanhol, português, francês, italiano, alemão, grego, chinês simplificado, japonês, coreano, polonês, russo, esperanto ou árabe.",
+    "features": "Personalize o relógio com temas claros ou escuros, fontes e cores próprias, um modo Zen sem distrações ou um protetor de tela que move a citação pela tela. Salve seus trechos favoritos, reveja as citações recentes e compartilhe ou baixe imagens — tudo fica salvo no seu navegador, sem precisar de uma conta.",
+    "project": "Sobre o projeto",
+    "credits": "Criado por Carlos Bonadeo, com base no trabalho de relógio literário de",
+    "and": "e",
+    "visit": "Visite o",
+    "source": "projeto de código aberto",
+    "contribute": "para sugerir melhorias ou contribuir com citações."
   }
 }

@@ -2,7 +2,7 @@
 import argparse
 from collections import Counter
 
-from attribution_localizations import read_attribution_localizations
+from attribution_localizations import read_attribution_localizations, attribution_entry
 from quote_sources import source_catalogue
 from validate_translation import ROOT
 
@@ -12,9 +12,9 @@ def priorities(rows, localizations, locale=None):
     authors = Counter(row['Author'] for row in rows)
     if locale:
         authors = Counter({author: count for author, count in authors.items()
-                           if locale not in localizations['authors'].get(author, {})})
+                           if attribution_entry(localizations['authors'].get(author, {}), locale) is None})
         works = Counter({work: count for work, count in works.items()
-                         if locale not in localizations['works'].get(work[0], {}).get(work[1], {})})
+                         if attribution_entry(localizations['works'].get(work[0], {}).get(work[1], {}), locale) is None})
     return authors.most_common(), works.most_common()
 
 

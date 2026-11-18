@@ -328,5 +328,27 @@
       "quote_time_case": "",
       "sfw": true
     }
+  ],
+  "pt-BR": [
+    {
+      "quote_first": "Erro ",
+      "quote_last": ": citação não encontrada.",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "F-001",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "Diário do capitão:<br>Ainda estamos procurando uma citação para ",
+      "quote_last": ".",
+      "title": "Moby Dick",
+      "author": "Capitão Ahab",
+      "id": "F-002",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
   ]
 }
