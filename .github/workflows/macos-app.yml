@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - 'apple/**'
+      - 'quotes/quote-details.json'
+      - 'scripts/generate_quote_details.py'
+      - 'src/strings/common/quote-details.json'
       - '.github/workflows/macos-app.yml'
   workflow_dispatch:
   workflow_call:
