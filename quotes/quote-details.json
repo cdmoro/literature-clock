@@ -44,7 +44,8 @@
       "en": "https://www.tyndale.com/authors/chris-walley/697"
     },
     "David Foster Wallace": {
-      "en": "https://www.penguinrandomhouse.com/authors/231447/david-foster-wallace/"
+      "en": "https://www.penguinrandomhouse.com/authors/231447/david-foster-wallace/",
+      "es": "https://es.wikipedia.org/wiki/David_Foster_Wallace"
     },
     "David Mitchell": {
       "en": "https://en.wikipedia.org/wiki/David_Mitchell_(author)",
@@ -1068,7 +1069,8 @@
       "en": "https://www.english-heritage.org.uk/visit/blue-plaques/angela-carter/"
     },
     "Marcel Proust": {
-      "fr": "https://catalogue.bnf.fr/ark%3A/12148/cb119207126.public"
+      "fr": "https://catalogue.bnf.fr/ark%3A/12148/cb119207126.public",
+      "es": "https://es.wikipedia.org/wiki/Marcel_Proust"
     },
     "Kate Atkinson": {
       "en": "https://www.kateatkinson.co.uk/about/"
@@ -1313,7 +1315,8 @@
     "Jeffrey Archer": {
       "Honor Among Thieves": {
         "about": {
-          "en": "https://jeffreyarcher.com/book/honour-among-thieves-by-jeffrey-archer/"
+          "en": "https://jeffreyarcher.com/book/honour-among-thieves-by-jeffrey-archer/",
+          "es": "https://www.casadellibro.com/libro-honor-entre-ladrones/9788425325717/436840"
         }
       },
       "Shall We Tell the President?": {
@@ -1416,6 +1419,9 @@
       "The Grass is Always Greener": {
         "read": {
           "en": "https://jeffreyarcher.com/extract/to-cut-a-long-story-short-free-story/"
+        },
+        "about": {
+          "en": "https://jeffreyarcher.com/book/to-cut-a-long-story-short-by-jeffrey-archer/"
         }
       },
       "Broken Routine": {
@@ -1585,21 +1591,24 @@
     "Henry Miller": {
       "Tropic of Cancer": {
         "about": {
-          "en": "https://www.penguin.co.uk/books/280164/tropic-of-cancer-by-henry-miller/9780141399133"
+          "en": "https://www.penguin.co.uk/books/280164/tropic-of-cancer-by-henry-miller/9780141399133",
+          "es": "https://es.wikipedia.org/wiki/Tr%C3%B3pico_de_C%C3%A1ncer_(novela)"
         }
       }
     },
     "David Foster Wallace": {
       "Infinite Jest": {
         "about": {
-          "en": "https://www.hachette.co.uk/titles/david-foster-wallace/infinite-jest/9780349121086/"
+          "en": "https://www.hachette.co.uk/titles/david-foster-wallace/infinite-jest/9780349121086/",
+          "es": "https://www.penguinlibros.com/es/literatura-contemporanea/36966-libro-la-broma-infinita-9788439732020"
         }
       }
     },
     "Sophie Kinsella": {
       "The Undomestic Goddess": {
         "about": {
-          "en": "https://www.sophiekinsella.co.uk/book/the-undomestic-goddess/"
+          "en": "https://www.sophiekinsella.co.uk/book/the-undomestic-goddess/",
+          "es": "https://www.casadellibro.com/libro-la-reina-de-la-casa/9788498380408/1093322"
         }
       }
     },
@@ -1719,6 +1728,11 @@
         "about": {
           "en": "https://obnb.uk/p10068362-innocent-blood",
           "es": "https://solardelbruto.es/71299-sangre-inocente.html"
+        }
+      },
+      "The Skull Beneath the Skin": {
+        "about": {
+          "en": "https://greeneheaton.co.uk/books/the-skull-beneath-the-skin"
         }
       }
     },
@@ -1878,6 +1892,15 @@
           "en": "https://en.wikisource.org/wiki/Around_the_World_in_Eighty_Days_(Towle)",
           "es": "https://es.wikisource.org/wiki/La_vuelta_al_mundo_en_ochenta_d%C3%ADas",
           "fr": "https://fr.wikisource.org/wiki/Le_Tour_du_monde_en_quatre-vingts_jours"
+        }
+      },
+      "Journey to the Center of the Earth": {
+        "about": {
+          "es": "https://es.wikipedia.org/wiki/Viaje_al_centro_de_la_Tierra"
+        },
+        "read": {
+          "en": "https://www.gutenberg.org/ebooks/19513",
+          "es": "https://www.cervantesvirtual.com/obra-visor/viaje-al-centro-de-la-tierra-1226310/html/"
         }
       }
     },
@@ -2254,6 +2277,11 @@
           "pl": "https://pl.wikipedia.org/wiki/Harry_Potter_i_Kamie%C5%84_Filozoficzny",
           "pt": "https://pt.wikipedia.org/wiki/Harry_Potter_e_a_Pedra_Filosofal"
         }
+      },
+      "Harry Potter and the Deathly Hallows": {
+        "about": {
+          "es": "https://es.wikipedia.org/wiki/Harry_Potter_y_las_reliquias_de_la_Muerte"
+        }
       }
     },
     "William Kent Krueger": {
@@ -2271,11 +2299,19 @@
         "about": {
           "en": "https://williamkentkrueger.com/cork-oconnor-series/iron-lake/"
         }
+      },
+      "Copper River": {
+        "about": {
+          "en": "https://williamkentkrueger.com/cork-oconnor-series/copper-river/"
+        }
       }
     },
     "Anton Pavlovich Chekhov": {
       "The Party and Other Stories": {
         "read": {
+          "en": "https://www.gutenberg.org/cache/epub/13413/pg13413-images.html"
+        },
+        "about": {
           "en": "https://www.gutenberg.org/ebooks/13413"
         }
       }
@@ -4019,10 +4055,23 @@
       "Swann’s Way": {
         "about": {
           "en": "https://wwnorton.co.uk/books/9780393919165-swann-s-way",
-          "es": "https://www.alianzaeditorial.es/libro/13-20/por-el-camino-de-swann-marcel-proust-9788413626208/"
+          "es": "https://es.wikipedia.org/wiki/Por_el_camino_de_Swann"
         },
         "read": {
-          "fr": "https://fr.wikisource.org/wiki/Du_c%C3%B4t%C3%A9_de_chez_Swann"
+          "fr": "https://fr.wikisource.org/wiki/Du_c%C3%B4t%C3%A9_de_chez_Swann",
+          "en": "https://www.gutenberg.org/ebooks/7178",
+          "es": "https://www.educ.ar/recursos/151958/por-el-camino-de-swann-de-marcel-proust"
+        }
+      },
+      "In Search of Lost Time: Swann’s Way": {
+        "about": {
+          "en": "https://wwnorton.co.uk/books/9780393919165-swann-s-way",
+          "es": "https://es.wikipedia.org/wiki/Por_el_camino_de_Swann"
+        },
+        "read": {
+          "fr": "https://fr.wikisource.org/wiki/Du_c%C3%B4t%C3%A9_de_chez_Swann",
+          "en": "https://www.gutenberg.org/ebooks/7178",
+          "es": "https://www.educ.ar/recursos/151958/por-el-camino-de-swann-de-marcel-proust"
         }
       }
     },
@@ -9079,6 +9128,24 @@
           "en": "https://www.phikappapsiarchive.com/wp-content/uploads/2012/03/2000-01_vol121_no1-4.pdf"
         }
       }
+    },
+    "William Shakespeare": {
+      "Hamlet": {
+        "about": {
+          "en": "https://en.wikipedia.org/wiki/Hamlet",
+          "es": "https://es.wikipedia.org/wiki/Hamlet"
+        },
+        "read": {
+          "es": "https://www.cervantesvirtual.com/obra/hamlet-tragedia--0/"
+        }
+      }
+    },
+    "Salman Rushdie": {
+      "Midnight’s Children": {
+        "about": {
+          "es": "https://es.wikipedia.org/wiki/Hijos_de_la_medianoche"
+        }
+      }
     }
   },
   "passages": {
@@ -9471,6 +9538,9 @@
     },
     "2228-001": {
       "en": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Hail%2C_California%21_%28IA_hailcalifornia00oliv%29.pdf"
+    },
+    "1900-018": {
+      "fr": "https://fr.wikisource.org/wiki/Page:Proust_-_Du_c%C3%B4t%C3%A9_de_chez_Swann.djvu/60"
     }
   }
 }

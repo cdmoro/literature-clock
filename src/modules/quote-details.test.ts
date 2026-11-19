@@ -74,7 +74,8 @@ test('keeps the selected quote and requests its exact source passage only when e
   openQuoteDetails(quote, button);
   store.set('active-quote', { ...quote, id: '0100-001', time: '01:00' }, false);
   const dialog = document.querySelector<HTMLDialogElement>('#quote-details')!;
-  expect(dialog.querySelector('#quote-details-title')?.textContent).toBe('Detalle de la cita · Hora 00:59');
+  expect(dialog.querySelector('#quote-details-title')?.textContent).toBe('Detalle de la cita');
+  expect(dialog.querySelector('.detail-metadata')?.textContent).toBe('Hora 00:59 · español (es-ES)');
   await vi.waitFor(() =>
     expect(dialog.querySelector('.detail-excerpt > details > summary')?.textContent).toBe('Cita original · francés (fr-FR)'),
   );
@@ -120,6 +121,8 @@ test('keeps the selected quote and requests its exact source passage only when e
     ok: true,
     json: async () => ({
       [nextQuote.id]: {
+        locale: 'pt-BR',
+        time: '01:00',
         author: {
           es: 'https://example.com/another-author',
           pt: 'https://example.com/author-pt',
@@ -146,10 +149,21 @@ test('keeps the selected quote and requests its exact source passage only when e
   store.set('ui-locale', 'pt-BR', false);
   openQuoteDetails({ ...nextQuote, locale: 'pt-PT' }, button);
   await vi.waitFor(() => {
-    expect(document.querySelector('#quote-details-title')?.textContent).toBe('Detalhes da citação · Hora 01:00');
+    expect(document.querySelector('#quote-details-title')?.textContent).toBe('Detalhes da citação');
+    expect(document.querySelector('.detail-metadata')?.textContent).toBe('Hora 01:00 · português (pt-PT)');
     expect([...document.querySelectorAll<HTMLAnchorElement>('.detail-links a')].map((link) => link.href)).toEqual([
       'https://example.com/author-br',
       'https://example.com/read-pt',
     ]);
   });
+  expect(document.querySelector('details.detail-source > summary')?.textContent).toBe('Citação original · português (pt-BR)');
+  expect(fetch).toHaveBeenCalledTimes(4);
+  document.querySelector<HTMLButtonElement>('#quote-details .dialog-close')!.click();
+
+  openQuoteDetails({ ...nextQuote, locale: 'pt-BR' }, button);
+  await vi.waitFor(() =>
+    expect(document.querySelector('.detail-source-note')?.textContent).toBe('Você já está lendo a citação de referência.'),
+  );
+  expect(document.querySelector('details.detail-source')).toBeNull();
+  expect(fetch).toHaveBeenCalledTimes(4);
 });

@@ -158,6 +158,7 @@
 "quoteMoreInformation" = "Per approfondire";
 "quotePassageSource" = "Leggi il brano";
 "quoteReadWork" = "Leggi l’opera integrale";
+"quoteSourceCurrent" = "Stai già leggendo la citazione di riferimento.";
 "quoteSourceText" = "Citazione originale";
 "quoteSourceUnavailable" = "Impossibile caricare il testo di riferimento.";
 "random" = "Lingua casuale";

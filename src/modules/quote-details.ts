@@ -41,6 +41,11 @@ function loadDetails(id: string) {
   return request;
 }
 
+function languageLabel(locale: string, names: Intl.DisplayNames) {
+  const language = new Intl.Locale(locale).language;
+  return `${names.of(language) || language} (${locale})`;
+}
+
 export function quoteDetailLabel() {
   return STRINGS[getBaseLocale(getInterfaceLocale())].quoteDetail;
 }
@@ -144,13 +149,7 @@ export function openQuoteDetails(quote: ResolvedQuote, trigger: HTMLButtonElemen
   const title = document.createElement('h2');
   title.id = 'quote-details-title';
   title.tabIndex = -1;
-  const titleTime = document.createElement('span');
-  titleTime.className = 'detail-heading-time';
-  const time = document.createElement('bdi');
-  time.textContent = quote.time;
-  const [timePrefix, timeSuffix] = labels.quoteDetailTime.split('{time}');
-  titleTime.append('· ', timePrefix, time, timeSuffix);
-  title.append(labels.quoteDetail, ' ', titleTime);
+  title.textContent = labels.quoteDetail;
   const close = document.createElement('button');
   close.type = 'button';
   close.className = 'dialog-close';
@@ -158,6 +157,14 @@ export function openQuoteDetails(quote: ResolvedQuote, trigger: HTMLButtonElemen
   close.setAttribute('aria-label', readingStrings().close);
   close.addEventListener('click', () => dialog.close());
   header.append(title, close);
+
+  const names = new Intl.DisplayNames([uiLocale], { type: 'language', languageDisplay: 'standard' });
+  const metadata = document.createElement('p');
+  metadata.className = 'detail-metadata';
+  const time = document.createElement('bdi');
+  time.textContent = quote.time;
+  const [timePrefix, timeSuffix] = labels.quoteDetailTime.split('{time}');
+  metadata.append(timePrefix, time, timeSuffix, ' · ', languageLabel(quote.locale, names));
 
   const excerpt = document.createElement('figure');
   excerpt.className = 'detail-excerpt';
@@ -170,7 +177,7 @@ export function openQuoteDetails(quote: ResolvedQuote, trigger: HTMLButtonElemen
   excerpt.append(excerptBody);
   const supplemental = document.createElement('div');
   const controller = new AbortController();
-  dialog.append(header, excerpt, supplemental);
+  dialog.append(header, metadata, excerpt, supplemental);
   document.body.append(dialog);
   closeDialogOnBackdropClick(dialog);
   dialog.addEventListener('keydown', (event) => {
@@ -193,52 +200,47 @@ export function openQuoteDetails(quote: ResolvedQuote, trigger: HTMLButtonElemen
       if (!details || !dialog.open) return;
       const sourceLocale = details.locale;
       const sourceTime = details.time;
-      if (sourceLocale && sourceTime) {
-        const names = new Intl.DisplayNames([uiLocale], { type: 'language', languageDisplay: 'standard' });
-        const languageName = names.of(sourceLocale.split('-')[0]) || sourceLocale;
-        const sourceLabel = `${labels.quoteSourceText} · ${languageName} (${sourceLocale})`;
-        if (sourceLocale === quote.locale) {
-          const note = document.createElement('p');
-          note.className = 'detail-source detail-original-label';
-          note.textContent = sourceLabel;
-          excerpt.append(note);
-        } else {
-          const disclosure = document.createElement('details');
-          disclosure.className = 'detail-source';
-          const summary = document.createElement('summary');
-          summary.textContent = sourceLabel;
-          const status = document.createElement('p');
-          status.className = 'detail-source-status';
-          status.setAttribute('role', 'status');
-          disclosure.append(summary, status);
-          let loading = false;
-          let loaded = false;
-          disclosure.addEventListener('toggle', async () => {
-            if (!disclosure.open || loading || loaded) return;
-            loading = true;
-            status.textContent = '…';
-            try {
-              const response = await fetch(`/times/${sourceLocale}/${sourceTime.replace(':', '_')}.json`, {
-                signal: controller.signal,
-              });
-              if (!response.ok) throw new Error('Missing source catalogue');
-              const original = ((await response.json()) as Quote[]).find(
-                (item) => item.id === quote.id && (!store.get('work') || item.sfw),
-              );
-              if (!original) throw new Error('Missing source passage');
-              if (dialog.open) {
-                disclosure.append(passage(original, sourceLocale), renderAttribution(original, sourceLocale));
-              }
-              status.remove();
-              loaded = true;
-            } catch {
-              if (dialog.open) status.textContent = labels.quoteSourceUnavailable;
-            } finally {
-              loading = false;
+      if (sourceLocale === quote.locale) {
+        const note = document.createElement('p');
+        note.className = 'detail-source detail-source-note';
+        note.textContent = labels.quoteSourceCurrent;
+        excerpt.append(note);
+      } else if (sourceLocale && sourceTime) {
+        const disclosure = document.createElement('details');
+        disclosure.className = 'detail-source';
+        const summary = document.createElement('summary');
+        summary.textContent = `${labels.quoteSourceText} · ${languageLabel(sourceLocale, names)}`;
+        const status = document.createElement('p');
+        status.className = 'detail-source-status';
+        status.setAttribute('role', 'status');
+        disclosure.append(summary, status);
+        let loading = false;
+        let loaded = false;
+        disclosure.addEventListener('toggle', async () => {
+          if (!disclosure.open || loading || loaded) return;
+          loading = true;
+          status.textContent = '…';
+          try {
+            const response = await fetch(`/times/${sourceLocale}/${sourceTime.replace(':', '_')}.json`, {
+              signal: controller.signal,
+            });
+            if (!response.ok) throw new Error('Missing source catalogue');
+            const original = ((await response.json()) as Quote[]).find(
+              (item) => item.id === quote.id && (!store.get('work') || item.sfw),
+            );
+            if (!original) throw new Error('Missing source passage');
+            if (dialog.open) {
+              disclosure.append(passage(original, sourceLocale), renderAttribution(original, sourceLocale));
             }
-          });
-          excerpt.append(disclosure);
-        }
+            status.remove();
+            loaded = true;
+          } catch {
+            if (dialog.open) status.textContent = labels.quoteSourceUnavailable;
+          } finally {
+            loading = false;
+          }
+        });
+        excerpt.append(disclosure);
       }
       const links = renderReferences(details, uiLocale, sourceLocale || quote.locale, labels);
       if (links) supplemental.append(links);

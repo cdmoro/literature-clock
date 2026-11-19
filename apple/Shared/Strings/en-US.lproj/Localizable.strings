@@ -158,6 +158,7 @@
 "quoteMoreInformation" = "Further reading";
 "quotePassageSource" = "Read the passage";
 "quoteReadWork" = "Read the full work";
+"quoteSourceCurrent" = "You’re already reading the source quote.";
 "quoteSourceText" = "Original quote";
 "quoteSourceUnavailable" = "Unable to load the source text.";
 "random" = "Random language";

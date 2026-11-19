@@ -158,6 +158,7 @@
 "quoteMoreInformation" = "Weiterlesen";
 "quotePassageSource" = "Die Textstelle lesen";
 "quoteReadWork" = "Das ganze Werk lesen";
+"quoteSourceCurrent" = "Du liest bereits das Zitat in der Quellfassung.";
 "quoteSourceText" = "Originalzitat";
 "quoteSourceUnavailable" = "Der Quelltext konnte nicht geladen werden.";
 "random" = "Zufällige Sprache";

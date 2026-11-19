@@ -158,6 +158,7 @@
 "quoteMoreInformation" = "Что ещё почитать";
 "quotePassageSource" = "Читать отрывок";
 "quoteReadWork" = "Читать произведение целиком";
+"quoteSourceCurrent" = "Вы уже читаете исходный вариант цитаты.";
 "quoteSourceText" = "Оригинал цитаты";
 "quoteSourceUnavailable" = "Не удалось загрузить исходный текст.";
 "random" = "Случайный язык";

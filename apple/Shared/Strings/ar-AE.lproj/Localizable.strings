@@ -158,6 +158,7 @@
 "quoteMoreInformation" = "للمزيد من القراءة";
 "quotePassageSource" = "اقرأ المقتطف";
 "quoteReadWork" = "اقرأ العمل كاملاً";
+"quoteSourceCurrent" = "أنت تقرأ الاقتباس المرجعي بالفعل.";
 "quoteSourceText" = "الاقتباس الأصلي";
 "quoteSourceUnavailable" = "تعذّر تحميل النص المرجعي.";
 "random" = "لغة عشوائية";

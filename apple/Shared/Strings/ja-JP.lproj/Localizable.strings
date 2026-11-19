@@ -158,6 +158,7 @@
 "quoteMoreInformation" = "あわせて読む";
 "quotePassageSource" = "抜粋箇所を読む";
 "quoteReadWork" = "作品の全文を読む";
+"quoteSourceCurrent" = "表示中の引用は引用元のテキストです。";
 "quoteSourceText" = "引用元のテキスト";
 "quoteSourceUnavailable" = "参照テキストを読み込めませんでした。";
 "random" = "ランダムな言語";

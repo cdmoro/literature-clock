@@ -158,6 +158,7 @@
 "quoteMoreInformation" = "延伸阅读";
 "quotePassageSource" = "阅读选段";
 "quoteReadWork" = "阅读全篇";
+"quoteSourceCurrent" = "你正在阅读参考引文。";
 "quoteSourceText" = "原文引文";
 "quoteSourceUnavailable" = "无法加载参考文本。";
 "random" = "随机语言";

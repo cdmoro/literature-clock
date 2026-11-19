@@ -188,6 +188,7 @@
 "quoteMoreInformation" = "Continue lendo";
 "quotePassageSource" = "Ler o trecho";
 "quoteReadWork" = "Ler a obra completa";
+"quoteSourceCurrent" = "Você já está lendo a citação de referência.";
 "quoteSourceText" = "Citação original";
 "quoteSourceUnavailable" = "Não foi possível carregar o texto de referência.";
 "random" = "Idioma aleatório";

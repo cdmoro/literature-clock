@@ -158,6 +158,7 @@
 "quoteMoreInformation" = "Dalsza lektura";
 "quotePassageSource" = "Przeczytaj fragment";
 "quoteReadWork" = "Przeczytaj cały utwór";
+"quoteSourceCurrent" = "Czytasz już cytat w wersji źródłowej.";
 "quoteSourceText" = "Cytat w oryginale";
 "quoteSourceUnavailable" = "Nie udało się wczytać tekstu źródłowego.";
 "random" = "Losowy język";

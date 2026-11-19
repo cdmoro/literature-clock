@@ -158,6 +158,7 @@
 "quoteMoreInformation" = "Περαιτέρω ανάγνωση";
 "quotePassageSource" = "Διαβάστε το απόσπασμα";
 "quoteReadWork" = "Διαβάστε ολόκληρο το έργο";
+"quoteSourceCurrent" = "Διαβάζετε ήδη το απόσπασμα αναφοράς.";
 "quoteSourceText" = "Πρωτότυπο απόσπασμα";
 "quoteSourceUnavailable" = "Δεν ήταν δυνατή η φόρτωση του κειμένου αναφοράς.";
 "random" = "Τυχαία γλώσσα";

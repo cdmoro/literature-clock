@@ -188,6 +188,7 @@
 "quoteMoreInformation" = "더 읽어 보기";
 "quotePassageSource" = "발췌 부분 읽기";
 "quoteReadWork" = "작품 전문 읽기";
+"quoteSourceCurrent" = "현재 표시된 인용문이 번역의 바탕이 된 텍스트입니다.";
 "quoteSourceText" = "인용문 원문";
 "quoteSourceUnavailable" = "번역의 바탕이 된 텍스트를 불러올 수 없습니다.";
 "random" = "무작위 언어";

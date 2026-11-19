@@ -665,18 +665,9 @@ private struct QuoteDetailView: View {
         let time = details?.time ?? ClockCatalogue.time(forQuoteID: quote.id, locale: destination.locale)
         VStack(alignment: .leading, spacing: 0) {
             HStack {
-                HStack(alignment: .firstTextBaseline, spacing: 8) {
-                    Text(text("quoteDetail"))
-                    if let time {
-                        let headingTime = text("quoteDetailTime").replacingOccurrences(of: "{time}", with: time)
-                        Text("· \(headingTime)")
-                            .monospacedDigit()
-                            .foregroundStyle(.secondary)
-                    }
-                }
-                .font(.headline)
-                .accessibilityElement(children: .combine)
-                .accessibilityAddTraits(.isHeader)
+                Text(text("quoteDetail"))
+                    .font(.headline)
+                    .accessibilityAddTraits(.isHeader)
                 Spacer()
                 Button {
                     dismiss()
@@ -691,7 +682,15 @@ private struct QuoteDetailView: View {
                 .keyboardShortcut(.cancelAction)
             }
             .padding(.horizontal, 28)
-            .padding(.vertical, 14)
+            .padding(.top, 14)
+
+            let language = languageLabel(destination.locale)
+            let timeLabel = time.map { text("quoteDetailTime").replacingOccurrences(of: "{time}", with: $0) }
+            Text(timeLabel.map { "\($0) · \(language)" } ?? language)
+                .font(.subheadline.monospacedDigit())
+                .foregroundStyle(.secondary)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, 28)
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 22) {
@@ -721,7 +720,8 @@ private struct QuoteDetailView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, 28)
-                .padding(.vertical, 22)
+                .padding(.top, 12)
+                .padding(.bottom, 22)
             }
 
             Divider()
@@ -741,13 +741,17 @@ private struct QuoteDetailView: View {
         .sheet(isPresented: $showingShare) { QuoteShareOptions(destination: destination) }
     }
 
-    private func originalFooter(source: String, quoteID: String) -> some View {
-        let language = Locale(identifier: source).language.languageCode?.identifier ?? source
+    private func languageLabel(_ locale: String) -> String {
+        let language = Locale(identifier: locale).language.languageCode?.identifier ?? locale
         let name = interfaceLocale.localizedString(forLanguageCode: language) ?? language
-        let label = "\(text("quoteSourceText")) · \(name) (\(source))"
-        return Group {
+        return "\(name) (\(locale))"
+    }
+
+    private func originalFooter(source: String, quoteID: String) -> some View {
+        Group {
             if source == destination.locale {
-                Text(label).foregroundStyle(.secondary)
+                Text("quoteSourceCurrent")
+                    .foregroundStyle(.secondary)
             } else {
                 DisclosureGroup(isExpanded: $showOriginal) {
                     if showOriginal {
@@ -763,7 +767,7 @@ private struct QuoteDetailView: View {
                         }
                     }
                 } label: {
-                    Text(label).fontWeight(.semibold)
+                    Text("\(text("quoteSourceText")) · \(languageLabel(source))").fontWeight(.semibold)
                 }
             }
         }
