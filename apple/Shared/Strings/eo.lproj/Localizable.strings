@@ -56,7 +56,6 @@
 "app_previous_quote" = "Antaŭa citaĵo";
 "app_project_website" = "Reta versio";
 "app_quote_copied" = "Citaĵo kopiita";
-"app_quote_detail_title" = "Detaloj de la citaĵo";
 "app_quote_font" = "Tiparo de citaĵoj";
 "app_quote_image_copied" = "Bildo kopiita";
 "app_quote_languages_title" = "Lingvoj de citaĵoj";
@@ -152,7 +151,15 @@
 "pt-BR" = "Português (pt-BR)";
 "pt-PT" = "Português (pt-PT)";
 "purple" = "Purpura";
+"quoteAboutAuthor" = "Pri la aŭtoro";
+"quoteAboutWork" = "Pri la verko";
 "quoteDetail" = "Detaloj de la citaĵo";
+"quoteDetailTime" = "Horo {time}";
+"quoteMoreInformation" = "Plia legaĵo";
+"quotePassageSource" = "Legi la eltiraĵon";
+"quoteReadWork" = "Legi la tutan verkon";
+"quoteSourceText" = "Originala citaĵo";
+"quoteSourceUnavailable" = "Ne eblis ŝargi la fontan tekston.";
 "random" = "Hazarda lingvo";
 "removeFavorite" = "Forigi el la ŝatataj";
 "report_error" = "Raporti eraron";

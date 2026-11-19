@@ -56,7 +56,6 @@
 "app_previous_quote" = "Cita anterior";
 "app_project_website" = "Versión web";
 "app_quote_copied" = "Cita copiada";
-"app_quote_detail_title" = "Detalle de la cita";
 "app_quote_font" = "Tipografía de las citas";
 "app_quote_image_copied" = "Imagen copiada";
 "app_quote_languages_title" = "Idiomas de las citas";
@@ -152,7 +151,15 @@
 "pt-BR" = "Português (pt-BR)";
 "pt-PT" = "Português (pt-PT)";
 "purple" = "Morado";
+"quoteAboutAuthor" = "Sobre el autor";
+"quoteAboutWork" = "Sobre la obra";
 "quoteDetail" = "Detalle de la cita";
+"quoteDetailTime" = "Hora {time}";
+"quoteMoreInformation" = "Seguir leyendo";
+"quotePassageSource" = "Leer el pasaje";
+"quoteReadWork" = "Leer la obra completa";
+"quoteSourceText" = "Cita original";
+"quoteSourceUnavailable" = "No se pudo cargar el texto de referencia.";
 "random" = "Lenguaje aleatorio";
 "removeFavorite" = "Quitar favorito";
 "report_error" = "Reportar error";

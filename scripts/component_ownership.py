@@ -38,6 +38,10 @@ def components_for_path(value: str) -> set[str]:
         return {"Web"}
     exact = {
         "scripts/attribution_priorities.py": set(),
+        "scripts/generate_quote_details.py": {"Web", "macOS app"},
+        "quotes/quote-details.json": {"Web", "macOS app"},
+        "apple/sync-catalogues.py": {"macOS app"},
+        "src/strings/common/quote-details.json": {"Web", "macOS app"},
         "src/strings/translations.json": SHARED,
         "src/strings/settings.json": SHARED,
         "src/strings/fallbackQuotes.json": SHARED,

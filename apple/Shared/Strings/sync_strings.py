@@ -24,6 +24,7 @@ def main() -> int:
         load_catalogue(STRING_DIR / "common/translations.json"),
         load_catalogue(STRING_DIR / "web/settings.json"),
         load_catalogue(STRING_DIR / "common/settings.json"),
+        load_catalogue(STRING_DIR / "common/quote-details.json"),
         load_catalogue(STRING_DIR / "macos-app/interface.json"),
     ]
     web_reading = load_catalogue(STRING_DIR / "web/reading.json")

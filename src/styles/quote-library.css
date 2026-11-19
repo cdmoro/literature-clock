@@ -1,4 +1,4 @@
-#quote-library {
+:is(#quote-library, #quote-details) {
   box-sizing: border-box;
   width: min(42rem, calc(100vw - 2rem));
   max-height: min(80dvh, 48rem);
@@ -14,11 +14,11 @@
   overflow: auto;
   box-shadow: 0 1rem 4rem #0005;
 }
-#quote-library::backdrop {
+:is(#quote-library, #quote-details)::backdrop {
   background: #0006;
   backdrop-filter: blur(4px);
 }
-#quote-library header,
+:is(#quote-library, #quote-details) header,
 #quote-library .saved-actions {
   display: flex;
   justify-content: space-between;
@@ -26,13 +26,39 @@
   gap: 0.75rem;
   flex-wrap: wrap;
 }
-#quote-library h2 {
+:is(#quote-library, #quote-details) h2 {
   margin: 0;
   font:
     600 1.2rem/1.4 system-ui,
     sans-serif;
 }
-#quote-library button {
+#quote-details {
+  --detail-serif: Georgia, 'Times New Roman', serif;
+  --detail-rule: color-mix(in srgb, currentColor 18%, transparent);
+  width: min(40rem, calc(100vw - 1.5rem));
+  max-height: min(calc(100dvh - 2rem), 50rem);
+  padding: clamp(1.15rem, 5vw, 2.5rem);
+  border-radius: 0.6rem;
+}
+
+#quote-details header {
+  flex-wrap: nowrap;
+  margin-block-end: 0.85rem;
+}
+
+#quote-details header .dialog-close {
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+}
+
+#quote-details .detail-heading-time {
+  font-variant-numeric: tabular-nums;
+  opacity: 0.75;
+  white-space: nowrap;
+}
+
+#quote-library button:not(.dialog-close) {
   font: inherit;
   min-height: 2.25rem;
   height: auto;
@@ -81,6 +107,18 @@
   font-size: 0.8rem;
 }
 
+#open-quote-details {
+  display: grid;
+  place-items: center;
+  padding-block: 0;
+}
+
+#open-quote-details svg {
+  width: 20px;
+  height: 20px;
+  transform: none;
+}
+
 #quote-position {
   justify-content: center;
   min-width: 3ch;
@@ -101,4 +139,125 @@
 
 #quote-navigation button:disabled svg {
   opacity: 0.3;
+}
+
+#quote-details .detail-excerpt {
+  margin: 0;
+  border: 1px solid var(--detail-rule);
+  border-radius: 0.45rem;
+}
+
+#quote-details .detail-excerpt-body {
+  padding: clamp(0.9rem, 3vw, 1.25rem);
+}
+
+#quote-details .detail-passage {
+  font: clamp(1.2rem, 3.7vw, 1.45rem) / 1.55 var(--detail-serif);
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+
+#quote-details .detail-time {
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+#quote-details .detail-attribution,
+#quote-details .detail-original-label {
+  opacity: 0.78;
+}
+
+#quote-details .detail-attribution {
+  font: 1rem / 1.45 var(--detail-serif);
+  margin: 0.75rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+#quote-details .detail-book {
+  font-style: italic;
+}
+
+#quote-details .detail-source {
+  margin: 0;
+  border-block-start: 1px solid var(--detail-rule);
+  border-end-start-radius: inherit;
+  border-end-end-radius: inherit;
+  background: color-mix(in srgb, currentColor 3%, transparent);
+}
+
+#quote-details .detail-original-label,
+#quote-details summary {
+  padding: 0.7rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+#quote-details summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#quote-details details[open] summary {
+  border-block-end: 1px solid var(--detail-rule);
+}
+
+#quote-details .detail-source :is(.detail-passage, .detail-attribution, .detail-source-status:not(:empty)) {
+  margin: 0.75rem 0.9rem;
+}
+
+#quote-details .detail-source .detail-passage {
+  font-size: 1.1rem;
+}
+
+#quote-details .detail-source-status:empty {
+  margin: 0;
+}
+
+#quote-details .detail-references {
+  margin-block-start: 1.15rem;
+}
+
+#quote-details .detail-references h3 {
+  margin: 0 0 0.25rem;
+  font: 600 1rem / 1.35 var(--detail-serif);
+}
+
+#quote-details .detail-links {
+  list-style: none;
+  margin: 0;
+  padding-inline-start: 0.125rem;
+}
+
+#quote-details .detail-links a {
+  display: inline-grid;
+  grid-template-columns: 0.875rem minmax(0, auto) 0.625rem;
+  align-items: baseline;
+  gap: 0.4rem;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: 1.625rem;
+  padding-block: 0.2rem;
+  color: inherit;
+  font-size: 0.825rem;
+  line-height: 1.45;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+#quote-details .detail-links a > svg {
+  width: 100%;
+  height: auto;
+  align-self: start;
+  margin-block-start: 0.15rem;
+  opacity: 0.65;
+}
+
+#quote-details .detail-links a > span {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 42%, transparent);
+  text-underline-offset: 0.2em;
+}
+
+#quote-details .detail-links a:is(:hover, :focus-visible) > span {
+  text-decoration-color: currentColor;
 }

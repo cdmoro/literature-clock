@@ -1,0 +1,178 @@
+{
+  "en-GB": {
+    "quoteDetail": "Quote detail",
+    "quoteDetailTime": "Time {time}",
+    "quoteSourceText": "Original quote",
+    "quoteAboutAuthor": "About the author",
+    "quoteAboutWork": "About the work",
+    "quoteReadWork": "Read the full work",
+    "quotePassageSource": "Read the passage",
+    "quoteSourceUnavailable": "Unable to load the source text.",
+    "quoteMoreInformation": "Further reading"
+  },
+  "en-US": {
+    "quoteDetail": "Quote detail",
+    "quoteDetailTime": "Time {time}",
+    "quoteSourceText": "Original quote",
+    "quoteAboutAuthor": "About the author",
+    "quoteAboutWork": "About the work",
+    "quoteReadWork": "Read the full work",
+    "quotePassageSource": "Read the passage",
+    "quoteSourceUnavailable": "Unable to load the source text.",
+    "quoteMoreInformation": "Further reading"
+  },
+  "es-ES": {
+    "quoteDetail": "Detalle de la cita",
+    "quoteDetailTime": "Hora {time}",
+    "quoteSourceText": "Cita original",
+    "quoteAboutAuthor": "Sobre el autor",
+    "quoteAboutWork": "Sobre la obra",
+    "quoteReadWork": "Leer la obra completa",
+    "quotePassageSource": "Leer el pasaje",
+    "quoteSourceUnavailable": "No se pudo cargar el texto de referencia.",
+    "quoteMoreInformation": "Seguir leyendo"
+  },
+  "pt-PT": {
+    "quoteDetail": "Detalhe da citação",
+    "quoteDetailTime": "Hora {time}",
+    "quoteSourceText": "Citação original",
+    "quoteAboutAuthor": "Sobre o autor",
+    "quoteAboutWork": "Sobre a obra",
+    "quoteReadWork": "Ler a obra completa",
+    "quotePassageSource": "Ler o excerto",
+    "quoteSourceUnavailable": "Não foi possível carregar o texto de referência.",
+    "quoteMoreInformation": "Continuar a ler"
+  },
+  "pt-BR": {
+    "quoteDetail": "Detalhes da citação",
+    "quoteDetailTime": "Hora {time}",
+    "quoteSourceText": "Citação original",
+    "quoteAboutAuthor": "Sobre o autor",
+    "quoteAboutWork": "Sobre a obra",
+    "quoteReadWork": "Ler a obra completa",
+    "quotePassageSource": "Ler o trecho",
+    "quoteSourceUnavailable": "Não foi possível carregar o texto de referência.",
+    "quoteMoreInformation": "Continue lendo"
+  },
+  "fr-FR": {
+    "quoteDetail": "Détail de la citation",
+    "quoteDetailTime": "Heure {time}",
+    "quoteSourceText": "Citation originale",
+    "quoteAboutAuthor": "À propos de l’auteur",
+    "quoteAboutWork": "À propos de l’œuvre",
+    "quoteReadWork": "Lire l’œuvre intégrale",
+    "quotePassageSource": "Lire l’extrait",
+    "quoteSourceUnavailable": "Impossible de charger le texte source.",
+    "quoteMoreInformation": "Pour aller plus loin"
+  },
+  "it-IT": {
+    "quoteDetail": "Dettaglio della citazione",
+    "quoteDetailTime": "Ora {time}",
+    "quoteSourceText": "Citazione originale",
+    "quoteAboutAuthor": "Informazioni sull’autore",
+    "quoteAboutWork": "Sull’opera",
+    "quoteReadWork": "Leggi l’opera integrale",
+    "quotePassageSource": "Leggi il brano",
+    "quoteSourceUnavailable": "Impossibile caricare il testo di riferimento.",
+    "quoteMoreInformation": "Per approfondire"
+  },
+  "de-DE": {
+    "quoteDetail": "Zitatdetails",
+    "quoteDetailTime": "Uhrzeit {time}",
+    "quoteSourceText": "Originalzitat",
+    "quoteAboutAuthor": "Über den Autor",
+    "quoteAboutWork": "Über das Werk",
+    "quoteReadWork": "Das ganze Werk lesen",
+    "quotePassageSource": "Die Textstelle lesen",
+    "quoteSourceUnavailable": "Der Quelltext konnte nicht geladen werden.",
+    "quoteMoreInformation": "Weiterlesen"
+  },
+  "el-GR": {
+    "quoteDetail": "Στοιχεία αποσπάσματος",
+    "quoteDetailTime": "Ώρα {time}",
+    "quoteSourceText": "Πρωτότυπο απόσπασμα",
+    "quoteAboutAuthor": "Σχετικά με τον συγγραφέα",
+    "quoteAboutWork": "Σχετικά με το έργο",
+    "quoteReadWork": "Διαβάστε ολόκληρο το έργο",
+    "quotePassageSource": "Διαβάστε το απόσπασμα",
+    "quoteSourceUnavailable": "Δεν ήταν δυνατή η φόρτωση του κειμένου αναφοράς.",
+    "quoteMoreInformation": "Περαιτέρω ανάγνωση"
+  },
+  "zh-CN": {
+    "quoteDetail": "引文详情",
+    "quoteDetailTime": "时间 {time}",
+    "quoteSourceText": "原文引文",
+    "quoteAboutAuthor": "关于作者",
+    "quoteAboutWork": "关于作品",
+    "quoteReadWork": "阅读全篇",
+    "quotePassageSource": "阅读选段",
+    "quoteSourceUnavailable": "无法加载参考文本。",
+    "quoteMoreInformation": "延伸阅读"
+  },
+  "ru-RU": {
+    "quoteDetail": "Сведения о цитате",
+    "quoteDetailTime": "Время {time}",
+    "quoteSourceText": "Оригинал цитаты",
+    "quoteAboutAuthor": "Об авторе",
+    "quoteAboutWork": "О произведении",
+    "quoteReadWork": "Читать произведение целиком",
+    "quotePassageSource": "Читать отрывок",
+    "quoteSourceUnavailable": "Не удалось загрузить исходный текст.",
+    "quoteMoreInformation": "Что ещё почитать"
+  },
+  "eo": {
+    "quoteDetail": "Detaloj de la citaĵo",
+    "quoteDetailTime": "Horo {time}",
+    "quoteSourceText": "Originala citaĵo",
+    "quoteAboutAuthor": "Pri la aŭtoro",
+    "quoteAboutWork": "Pri la verko",
+    "quoteReadWork": "Legi la tutan verkon",
+    "quotePassageSource": "Legi la eltiraĵon",
+    "quoteSourceUnavailable": "Ne eblis ŝargi la fontan tekston.",
+    "quoteMoreInformation": "Plia legaĵo"
+  },
+  "ar-AE": {
+    "quoteDetail": "تفاصيل الاقتباس",
+    "quoteDetailTime": "الوقت {time}",
+    "quoteSourceText": "الاقتباس الأصلي",
+    "quoteAboutAuthor": "عن المؤلف",
+    "quoteAboutWork": "عن العمل",
+    "quoteReadWork": "اقرأ العمل كاملاً",
+    "quotePassageSource": "اقرأ المقتطف",
+    "quoteSourceUnavailable": "تعذّر تحميل النص المرجعي.",
+    "quoteMoreInformation": "للمزيد من القراءة"
+  },
+  "ja-JP": {
+    "quoteDetail": "引用文の詳細",
+    "quoteDetailTime": "時刻 {time}",
+    "quoteSourceText": "引用元のテキスト",
+    "quoteAboutAuthor": "著者について",
+    "quoteAboutWork": "作品について",
+    "quoteReadWork": "作品の全文を読む",
+    "quotePassageSource": "抜粋箇所を読む",
+    "quoteSourceUnavailable": "参照テキストを読み込めませんでした。",
+    "quoteMoreInformation": "あわせて読む"
+  },
+  "ko-KR": {
+    "quoteDetail": "인용문 정보",
+    "quoteDetailTime": "시각 {time}",
+    "quoteSourceText": "인용문 원문",
+    "quoteAboutAuthor": "저자 소개",
+    "quoteAboutWork": "작품 소개",
+    "quoteReadWork": "작품 전문 읽기",
+    "quotePassageSource": "발췌 부분 읽기",
+    "quoteSourceUnavailable": "번역의 바탕이 된 텍스트를 불러올 수 없습니다.",
+    "quoteMoreInformation": "더 읽어 보기"
+  },
+  "pl-PL": {
+    "quoteDetail": "Informacje o cytacie",
+    "quoteDetailTime": "Godzina {time}",
+    "quoteSourceText": "Cytat w oryginale",
+    "quoteAboutAuthor": "O autorze",
+    "quoteAboutWork": "O utworze",
+    "quoteReadWork": "Przeczytaj cały utwór",
+    "quotePassageSource": "Przeczytaj fragment",
+    "quoteSourceUnavailable": "Nie udało się wczytać tekstu źródłowego.",
+    "quoteMoreInformation": "Dalsza lektura"
+  }
+}

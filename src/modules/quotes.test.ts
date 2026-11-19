@@ -219,3 +219,21 @@ it('renders only the time expression in fuzzy-clock mode', async () => {
   expect(quoteParagraph.textContent).toBe('noon');
   expect(quoteParagraph.querySelector('.time')?.textContent).toBe('noon');
 });
+
+it('keeps the visible quote unchanged at a minute tick while details are open', async () => {
+  await updateQuote({ time: '12:00' });
+  const original = active();
+  const pendingTick = updateQuote({ time: '12:01', minuteTick: true });
+  const details = document.createElement('dialog');
+  details.id = 'quote-details';
+  details.open = true;
+  document.body.append(details);
+  try {
+    await pendingTick;
+    expect(active()).toBe(original);
+    await updateQuote({ time: '12:02', minuteTick: true });
+    expect(active()).toBe(original);
+  } finally {
+    details.remove();
+  }
+});

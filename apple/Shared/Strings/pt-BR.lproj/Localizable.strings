@@ -86,7 +86,6 @@
 "app_previous_quote" = "Citação anterior";
 "app_project_website" = "Versão web";
 "app_quote_copied" = "Citação copiada";
-"app_quote_detail_title" = "Detalhe da citação";
 "app_quote_font" = "Fonte das citações";
 "app_quote_image_copied" = "Imagem copiada";
 "app_quote_languages_title" = "Idiomas das citações";
@@ -182,7 +181,15 @@
 "pt-BR" = "Português (pt-BR)";
 "pt-PT" = "Português (pt-PT)";
 "purple" = "Roxo";
+"quoteAboutAuthor" = "Sobre o autor";
+"quoteAboutWork" = "Sobre a obra";
 "quoteDetail" = "Detalhes da citação";
+"quoteDetailTime" = "Hora {time}";
+"quoteMoreInformation" = "Continue lendo";
+"quotePassageSource" = "Ler o trecho";
+"quoteReadWork" = "Ler a obra completa";
+"quoteSourceText" = "Citação original";
+"quoteSourceUnavailable" = "Não foi possível carregar o texto de referência.";
 "random" = "Idioma aleatório";
 "removeFavorite" = "Remover favorito";
 "report_error" = "Informar erro";

@@ -56,7 +56,6 @@
 "app_previous_quote" = "Previous quote";
 "app_project_website" = "Web version";
 "app_quote_copied" = "Quote copied";
-"app_quote_detail_title" = "Quote detail";
 "app_quote_font" = "Quote font";
 "app_quote_image_copied" = "Image copied";
 "app_quote_languages_title" = "Quote languages";
@@ -152,7 +151,15 @@
 "pt-BR" = "Português (pt-BR)";
 "pt-PT" = "Português (pt-PT)";
 "purple" = "Purple";
+"quoteAboutAuthor" = "About the author";
+"quoteAboutWork" = "About the work";
 "quoteDetail" = "Quote detail";
+"quoteDetailTime" = "Time {time}";
+"quoteMoreInformation" = "Further reading";
+"quotePassageSource" = "Read the passage";
+"quoteReadWork" = "Read the full work";
+"quoteSourceText" = "Original quote";
+"quoteSourceUnavailable" = "Unable to load the source text.";
 "random" = "Random language";
 "removeFavorite" = "Remove favorite";
 "report_error" = "Report error";

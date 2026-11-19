@@ -56,7 +56,6 @@
 "app_previous_quote" = "Citazione precedente";
 "app_project_website" = "Versione web";
 "app_quote_copied" = "Citazione copiata";
-"app_quote_detail_title" = "Dettaglio della citazione";
 "app_quote_font" = "Carattere delle citazioni";
 "app_quote_image_copied" = "Immagine copiata";
 "app_quote_languages_title" = "Lingue delle citazioni";
@@ -152,7 +151,15 @@
 "pt-BR" = "Português (pt-BR)";
 "pt-PT" = "Português (pt-PT)";
 "purple" = "Viola";
+"quoteAboutAuthor" = "Informazioni sull’autore";
+"quoteAboutWork" = "Sull’opera";
 "quoteDetail" = "Dettaglio della citazione";
+"quoteDetailTime" = "Ora {time}";
+"quoteMoreInformation" = "Per approfondire";
+"quotePassageSource" = "Leggi il brano";
+"quoteReadWork" = "Leggi l’opera integrale";
+"quoteSourceText" = "Citazione originale";
+"quoteSourceUnavailable" = "Impossibile caricare il testo di riferimento.";
 "random" = "Lingua casuale";
 "removeFavorite" = "Rimuovi dai preferiti";
 "report_error" = "Informare l'errore";

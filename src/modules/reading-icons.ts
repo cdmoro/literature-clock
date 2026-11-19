@@ -10,6 +10,12 @@ const paths = {
   next: '<path d="m10 6 6 6-6 6"/>',
   heart:
     '<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>',
+  book: '<path d="M5 19a2 2 0 0 1 2-2h12M5 19a2 2 0 0 0 2 2h12V3H7a2 2 0 0 0-2 2zM9 7h6"/>',
+  person: '<circle cx="12" cy="8" r="3"/><path d="M5 20v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/>',
+  'book-open': '<path d="M12 6C9 4 6 4 3 5v14c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1v14"/>',
+  document: '<path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6m-6 4h6"/>',
+  external: '<path d="M7 17 17 7M8 7h9v9"/>',
+  info: '<path fill="currentColor" fill-rule="evenodd" stroke="none" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-1 9h2v6h-2v-6Zm1-4.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Z"/>',
   history: '<path d="M3 11a9 9 0 1 1 2.6 7.4M3 4v7h7M12 7v5l3 2"/>',
   close: '<path d="m6 6 12 12M6 18 18 6"/>',
   'fuzzy-clock': '<circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/>',

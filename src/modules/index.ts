@@ -6,6 +6,7 @@ import { initAboutClock } from './about-clock';
 import { initSettingsDialog } from './settings-dialog';
 import { initStaticMode } from './static';
 import { initClock } from './clock';
+import { initQuoteDetails } from './quote-details';
 import { initQuoteLibrary } from './quote-library';
 import { initReadingControls } from './reading-controls';
 import { initCopy } from './copy';
@@ -32,6 +33,7 @@ const MODULES = [
   initStaticMode,
   initReadingControls,
   initQuoteLibrary,
+  initQuoteDetails,
   initSpeech,
   initClock,
   initCopy,

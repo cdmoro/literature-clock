@@ -2,6 +2,8 @@
 """Bundle one compact JSON file per published locale for the iOS and macOS apps."""
 import json
 import shutil
+import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -22,3 +24,8 @@ for locale_dir in sorted(path for path in SOURCE.iterdir()
         encoding="utf-8",
     )
     print(f"{locale_dir.name}: {len(catalogue)} minutes")
+
+subprocess.run([
+    sys.executable, str(ROOT / "scripts/generate_quote_details.py"),
+    str(DESTINATION / "_quote-details.json"),
+], check=True)

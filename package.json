@@ -1,6 +1,6 @@
 {
   "name": "literature-clock",
-  "version": "3.23.0",
+  "version": "3.24.0",
   "description": "A clock that tells the time using quotes from literature. Support for multiple languages, themes, and more!",
   "type": "module",
   "scripts": {
@@ -26,8 +26,8 @@
     "translate": "python3 scripts/translation_manager.py",
     "admin": "python3 scripts/translation_admin.py",
     "admin:build": "tsc -p admin/tsconfig.json && vite build --config admin/vite.config.mjs",
-    "prebuild": "node scripts/write-web-version.mjs",
-    "predev": "node scripts/write-web-version.mjs",
+    "prebuild": "node scripts/write-web-version.mjs && python3 scripts/generate_quote_details.py",
+    "predev": "node scripts/write-web-version.mjs && python3 scripts/generate_quote_details.py",
     "pretest": "node scripts/write-web-version.mjs",
     "pretest:ci": "node scripts/write-web-version.mjs",
     "pretypecheck": "node scripts/write-web-version.mjs"

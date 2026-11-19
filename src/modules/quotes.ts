@@ -130,6 +130,8 @@ export async function updateQuote({
   variantStep = 0,
   locale: requestedLocale,
 }: { time?: string; preserveQuote?: boolean; variantStep?: number; locale?: Locale; minuteTick?: boolean } = {}) {
+  const readingDetail = () => minuteTick && !!document.querySelector('#quote-details[open]');
+  if (readingDetail()) return;
   const request = ++latestRequest;
   cancelQuoteTransition();
   const testQuote = store.get('quote');
@@ -236,7 +238,7 @@ export async function updateQuote({
         }
       }
     },
-    () => request === latestRequest,
+    () => request === latestRequest && !readingDetail(),
   );
 
   if (request !== latestRequest) return;

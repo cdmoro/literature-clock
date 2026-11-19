@@ -1,6 +1,7 @@
 import { setTextLocale } from '../utils/text-direction';
 import { readingIcon } from './reading-icons';
 import { store } from '../store';
+import { quoteDetailLabel, openQuoteDetails } from './quote-details';
 import { getQuoteUrl } from './quote-links';
 import { readingStrings, showQuoteNotice } from './reading-ui';
 import { closeDialogOnBackdropClick } from '../utils/dialog';
@@ -175,7 +176,12 @@ export function initQuoteLibrary() {
         const next = list.children[Math.min(index, list.children.length - 1)];
         (next?.querySelector('button') || close).focus();
       });
-      actions.append(link, remove);
+      const detail = document.createElement('button');
+      detail.type = 'button';
+      detail.textContent = quoteDetailLabel();
+      detail.setAttribute('aria-haspopup', 'dialog');
+      detail.addEventListener('click', () => openQuoteDetails(quote, detail));
+      actions.append(link, remove, detail);
       item.append(text, attribution, actions);
       list.appendChild(item);
     }

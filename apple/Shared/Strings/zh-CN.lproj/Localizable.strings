@@ -56,7 +56,6 @@
 "app_previous_quote" = "上一条引文";
 "app_project_website" = "网页版";
 "app_quote_copied" = "已复制引文";
-"app_quote_detail_title" = "引文详情";
 "app_quote_font" = "引文字体";
 "app_quote_image_copied" = "图片已复制";
 "app_quote_languages_title" = "引文语言";
@@ -152,7 +151,15 @@
 "pt-BR" = "Português (pt-BR)";
 "pt-PT" = "Português (pt-PT)";
 "purple" = "紫色";
+"quoteAboutAuthor" = "关于作者";
+"quoteAboutWork" = "关于作品";
 "quoteDetail" = "引文详情";
+"quoteDetailTime" = "时间 {time}";
+"quoteMoreInformation" = "延伸阅读";
+"quotePassageSource" = "阅读选段";
+"quoteReadWork" = "阅读全篇";
+"quoteSourceText" = "原文引文";
+"quoteSourceUnavailable" = "无法加载参考文本。";
 "random" = "随机语言";
 "removeFavorite" = "取消收藏";
 "report_error" = "报告错误";

@@ -22,6 +22,7 @@ struct ClockHomeView: View {
     @AppStorage(ClockSettings.quoteRevisionKey, store: ClockSettings.defaults) private var quoteRevision = 0
     @AppStorage(ClockSettings.progressKey, store: ClockSettings.defaults) private var progressMode = "bottom"
     @State private var pausedQuoteDate: Date?
+    @State private var detailQuoteDate: Date?
     @State private var presentedSheet: ClockSheet?
     @State private var pendingSheet: ClockSheet?
     @StateObject private var quoteLibrary = QuoteLibrary.shared
@@ -42,7 +43,7 @@ struct ClockHomeView: View {
     var body: some View {
         TimelineView(.periodic(from: .now, by: 1)) { timeline in
             let _ = quoteRevision
-            let quoteDate = pausedQuoteDate ?? timeline.date
+            let quoteDate = pausedQuoteDate ?? detailQuoteDate ?? timeline.date
             let primaryLocale = ClockCatalogue.randomLocale(at: quoteDate, from: selectedLocales,
                 safeOnly: safeOnly)
             let allQuotes = ClockCatalogue.quotes(at: quoteDate, locale: primaryLocale)
@@ -120,6 +121,24 @@ struct ClockHomeView: View {
                                 .buttonStyle(.plain)
                                 .accessibilityLabel(Text("app_share_accessibility"))
                                 .help(Text("app_share_accessibility"))
+                            }
+                            if let quote, quote.id != "F-001" {
+                                Button {
+                                    detailQuoteDate = quoteDate
+                                    presentSheet(.quote(WidgetQuoteDestination(quote: quote, locale: primaryLocale, values: [
+                                        "palette": palette, "accent": customAccentHex, "font": quoteFont,
+                                        "highlight": highlight ? "1" : "0", "dark": isDark ? "1" : "0",
+                                        "attribution": visibleAttribution,
+                                        "originalAttribution": showOriginalAttribution ? "1" : "0"
+                                    ])))
+                                } label: {
+                                    Image(systemName: "info.circle.fill")
+                                        .font(.system(size: 24))
+                                        .frame(width: 44, height: 44)
+                                }
+                                .buttonStyle(.plain)
+                                .accessibilityLabel(Text("quoteDetail"))
+                                .help(Text("quoteDetail"))
                             }
                             Spacer()
                                 .frame(width: 12)
@@ -203,7 +222,9 @@ struct ClockHomeView: View {
         }
         .sheet(item: $presentedSheet, onDismiss: presentPendingSheet) { sheet in
             switch sheet {
-            case .quote(let destination), .share(let destination):
+            case .quote(let destination):
+                QuoteDetailView(destination: destination)
+            case .share(let destination):
                 QuoteShareOptions(destination: destination)
             }
         }
@@ -380,6 +401,7 @@ struct ClockHomeView: View {
     }
 
     private func presentPendingSheet() {
+        detailQuoteDate = nil
         guard let next = pendingSheet else { return }
         pendingSheet = nil
         presentedSheet = next
@@ -564,7 +586,7 @@ private struct QuoteLibraryView: View {
             }
         }
         .sheet(item: $selectedQuote) { item in
-            QuoteShareOptions(destination: WidgetQuoteDestination(
+            QuoteDetailView(destination: WidgetQuoteDestination(
                 quote: item.quote,
                 locale: item.locale,
                 values: [
@@ -612,6 +634,216 @@ private struct WidgetQuoteDestination: Identifiable {
         palette == "custom" ? ClockSettings.color(fromHex: accentHex) : ClockSettings.paletteAccent(palette)
     }
     var background: Color { ClockSettings.background(for: accent, dark: dark) }
+}
+
+private struct QuoteDetailMetadata: Decodable {
+    let locale: String?
+    let time: String?
+    let author: [String: URL]?
+    let work: [String: URL]?
+    let read: [String: URL]?
+    let passage: [String: URL]?
+
+    static let index: [String: Self] = {
+        guard let url = Bundle.main.url(forResource: "_quote-details", withExtension: "json", subdirectory: "Catalogues"),
+              let data = try? Data(contentsOf: url) else { return [:] }
+        return (try? JSONDecoder().decode([String: Self].self, from: data)) ?? [:]
+    }()
+}
+
+private struct QuoteDetailView: View {
+    @Environment(\.dismiss) private var dismiss
+    @Environment(\.locale) private var interfaceLocale
+    let destination: WidgetQuoteDestination
+    @State private var showOriginal = false
+    @State private var showingShare = false
+
+    private var details: QuoteDetailMetadata? { QuoteDetailMetadata.index[destination.quote.id] }
+
+    var body: some View {
+        let quote = destination.quote.displayingAttribution(original: destination.values["originalAttribution"] == "1")
+        let time = details?.time ?? ClockCatalogue.time(forQuoteID: quote.id, locale: destination.locale)
+        VStack(alignment: .leading, spacing: 0) {
+            HStack {
+                HStack(alignment: .firstTextBaseline, spacing: 8) {
+                    Text(text("quoteDetail"))
+                    if let time {
+                        let headingTime = text("quoteDetailTime").replacingOccurrences(of: "{time}", with: time)
+                        Text("· \(headingTime)")
+                            .monospacedDigit()
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                .font(.headline)
+                .accessibilityElement(children: .combine)
+                .accessibilityAddTraits(.isHeader)
+                Spacer()
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "xmark")
+                        .font(.subheadline.weight(.semibold))
+                        .frame(width: 32, height: 32)
+                        .contentShape(Circle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel(Text("close"))
+                .keyboardShortcut(.cancelAction)
+            }
+            .padding(.horizontal, 28)
+            .padding(.vertical, 14)
+
+            ScrollView {
+                VStack(alignment: .leading, spacing: 22) {
+                    VStack(alignment: .leading, spacing: 0) {
+                        attributedPassage(quote, locale: destination.locale)
+                            .padding(16)
+                        if let source = details?.locale {
+                            Divider()
+                            originalFooter(source: source, quoteID: quote.id)
+                        }
+                    }
+                    .clipShape(RoundedRectangle(cornerRadius: 7))
+                    .overlay(RoundedRectangle(cornerRadius: 7).strokeBorder(.primary.opacity(0.18)).allowsHitTesting(false))
+
+                    if let details, details.work != nil || details.author != nil || details.read != nil || details.passage != nil {
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text("quoteMoreInformation").font(.system(.subheadline, design: .serif).weight(.semibold))
+                                .accessibilityAddTraits(.isHeader)
+                            VStack(alignment: .leading, spacing: 0) {
+                                reference(details.passage, label: "quotePassageSource", icon: "doc.text")
+                                reference(details.work, label: "quoteAboutWork", icon: "book.closed")
+                                reference(details.author, label: "quoteAboutAuthor", icon: "person")
+                                reference(details.read, label: "quoteReadWork", icon: "book")
+                            }
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, 28)
+                .padding(.vertical, 22)
+            }
+
+            Divider()
+            HStack {
+                Spacer()
+                Button("app_copy_quote_text") {
+                    copyQuoteText(quote.text(for: Locale(identifier: destination.locale)))
+                }
+                Button("app_share_quote") { showingShare = true }
+            }
+            .padding(.horizontal, 28)
+            .padding(.vertical, 14)
+        }
+        #if os(macOS)
+        .frame(minWidth: 480, idealWidth: 580, minHeight: 380, idealHeight: 490)
+        #endif
+        .sheet(isPresented: $showingShare) { QuoteShareOptions(destination: destination) }
+    }
+
+    private func originalFooter(source: String, quoteID: String) -> some View {
+        let language = Locale(identifier: source).language.languageCode?.identifier ?? source
+        let name = interfaceLocale.localizedString(forLanguageCode: language) ?? language
+        let label = "\(text("quoteSourceText")) · \(name) (\(source))"
+        return Group {
+            if source == destination.locale {
+                Text(label).foregroundStyle(.secondary)
+            } else {
+                DisclosureGroup(isExpanded: $showOriginal) {
+                    if showOriginal {
+                        if let original = ClockCatalogue.quote(id: quoteID, locale: source) {
+                            VStack(alignment: .leading, spacing: 12) {
+                                Divider()
+                                attributedPassage(original, locale: source, size: .body)
+                            }
+                            .padding(.top, 8)
+                        } else {
+                            Text("quoteSourceUnavailable")
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                } label: {
+                    Text(label).fontWeight(.semibold)
+                }
+            }
+        }
+        .font(.subheadline)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 10)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(.primary.opacity(0.03))
+    }
+
+    private func attributedPassage(_ quote: Quote, locale: String, size: Font.TextStyle = .title2) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            passage(quote, locale: locale, size: size)
+            quoteAttributionText(quote, mode: "book-author")
+                .font(.system(.subheadline, design: .serif))
+                .foregroundStyle(.secondary)
+                .textSelection(.enabled)
+        }
+        .environment(\.layoutDirection, direction(locale))
+    }
+
+    private func passage(_ quote: Quote, locale: String, size: Font.TextStyle) -> some View {
+        let parts = CompactQuoteTime.display(quote.timeParts(), locale: locale)
+        return (Text(parts.before) + Text(parts.time).bold().foregroundColor(destination.accent) + Text(parts.after))
+            .font(.system(size, design: .serif))
+            .lineSpacing(5)
+            .textSelection(.enabled)
+            .multilineTextAlignment(.leading)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .environment(\.locale, Locale(identifier: locale))
+    }
+
+    private func text(_ key: String) -> String {
+        QuoteLibraryText.value(key, locale: interfaceLocale.identifier)
+    }
+
+    private func direction(_ locale: String) -> LayoutDirection {
+        Locale.Language(identifier: locale).characterDirection == .rightToLeft ? .rightToLeft : .leftToRight
+    }
+
+    @ViewBuilder
+    private func reference(_ links: [String: URL]?, label: String, icon: String) -> some View {
+        if let links {
+            let ui = interfaceLocale.identifier.replacingOccurrences(of: "_", with: "-")
+            let language = interfaceLocale.language.languageCode?.identifier ?? ui
+            let source = details?.locale ?? destination.locale
+            let sourceLanguage = Locale(identifier: source).language.languageCode?.identifier ?? source
+            let available = links.keys.sorted()
+            let candidates = [ui, language]
+                + available.filter { $0.hasPrefix("\(language)-") }
+                + [source, sourceLanguage]
+                + available.filter { $0.hasPrefix("\(sourceLanguage)-") }
+                + ["en"]
+                + available.filter { $0.hasPrefix("en-") }
+                + available
+            if let locale = candidates.first(where: { links[$0] != nil }), let url = links[locale], url.scheme == "https" {
+                let linkLanguage = Locale(identifier: locale).language.languageCode?.identifier ?? locale
+                let name = interfaceLocale.localizedString(forLanguageCode: linkLanguage) ?? linkLanguage
+                Link(destination: url) {
+                    HStack(alignment: .firstTextBaseline, spacing: 6) {
+                        Image(systemName: icon)
+                            .frame(width: 13)
+                            .foregroundStyle(.secondary)
+                            .accessibilityHidden(true)
+                        Text(linkLanguage == language ? text(label) : "\(text(label)) (\(name))")
+                            .underline()
+                            .multilineTextAlignment(.leading)
+                        Image(systemName: "arrow.up.right")
+                            .font(.system(size: 8))
+                            .foregroundStyle(.secondary)
+                            .accessibilityHidden(true)
+                    }
+                    .font(.footnote)
+                    .padding(.vertical, 3)
+                    .frame(minHeight: 24, alignment: .leading)
+                    .contentShape(Rectangle())
+                }
+            }
+        }
+    }
 }
 
 private struct QuoteShareOptions: View {
