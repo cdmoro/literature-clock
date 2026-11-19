@@ -86,7 +86,6 @@
 "app_previous_quote" = "이전 인용문";
 "app_project_website" = "웹 버전";
 "app_quote_copied" = "인용문을 복사했습니다";
-"app_quote_detail_title" = "인용문 정보";
 "app_quote_font" = "인용문 글꼴";
 "app_quote_image_copied" = "이미지를 복사했습니다";
 "app_quote_languages_title" = "인용문 언어";
@@ -182,7 +181,16 @@
 "pt-BR" = "Português (pt-BR)";
 "pt-PT" = "Português (pt-PT)";
 "purple" = "보라";
+"quoteAboutAuthor" = "저자 소개";
+"quoteAboutWork" = "작품 소개";
 "quoteDetail" = "인용문 정보";
+"quoteDetailTime" = "시각 {time}";
+"quoteMoreInformation" = "더 읽어 보기";
+"quotePassageSource" = "발췌 부분 읽기";
+"quoteReadWork" = "작품 전문 읽기";
+"quoteSourceCurrent" = "현재 표시된 인용문이 번역의 바탕이 된 텍스트입니다.";
+"quoteSourceText" = "인용문 원문";
+"quoteSourceUnavailable" = "번역의 바탕이 된 텍스트를 불러올 수 없습니다.";
 "random" = "무작위 언어";
 "removeFavorite" = "즐겨찾기에서 제거";
 "report_error" = "오류 신고";

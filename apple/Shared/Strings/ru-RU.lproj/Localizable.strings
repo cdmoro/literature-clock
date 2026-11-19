@@ -56,7 +56,6 @@
 "app_previous_quote" = "Предыдущая цитата";
 "app_project_website" = "Веб-версия";
 "app_quote_copied" = "Цитата скопирована";
-"app_quote_detail_title" = "Сведения о цитате";
 "app_quote_font" = "Шрифт цитат";
 "app_quote_image_copied" = "Изображение скопировано";
 "app_quote_languages_title" = "Языки цитат";
@@ -152,7 +151,16 @@
 "pt-BR" = "Português (pt-BR)";
 "pt-PT" = "Português (pt-PT)";
 "purple" = "Фиолетовая";
-"quoteDetail" = "Подробности цитаты";
+"quoteAboutAuthor" = "Об авторе";
+"quoteAboutWork" = "О произведении";
+"quoteDetail" = "Сведения о цитате";
+"quoteDetailTime" = "Время {time}";
+"quoteMoreInformation" = "Что ещё почитать";
+"quotePassageSource" = "Читать отрывок";
+"quoteReadWork" = "Читать произведение целиком";
+"quoteSourceCurrent" = "Вы уже читаете исходный вариант цитаты.";
+"quoteSourceText" = "Оригинал цитаты";
+"quoteSourceUnavailable" = "Не удалось загрузить исходный текст.";
 "random" = "Случайный язык";
 "removeFavorite" = "Удалить из избранного";
 "report_error" = "Сообщить об ошибке";

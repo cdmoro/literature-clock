@@ -23,6 +23,7 @@ afterEach(() => {
   vi.clearAllTimers();
   vi.useRealTimers();
   vi.restoreAllMocks();
+  document.body.replaceChildren();
 });
 
 describe('clock visibility', () => {
@@ -31,4 +32,14 @@ describe('clock visibility', () => {
     vi.advanceTimersByTime(60_000);
     expect(updateQuote).toHaveBeenCalledTimes(1);
   });
+});
+
+it('catches up to the current minute when quote details close', () => {
+  initClock();
+  const details = document.createElement('dialog');
+  details.id = 'quote-details';
+  document.body.append(details);
+  vi.setSystemTime(new Date('2026-10-07T17:03:00Z'));
+  details.dispatchEvent(new Event('close'));
+  expect(updateQuote).toHaveBeenLastCalledWith({ time: '17:03', minuteTick: true });
 });

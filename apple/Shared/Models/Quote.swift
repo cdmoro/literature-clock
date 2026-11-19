@@ -140,6 +140,11 @@ enum ClockCatalogue {
         catalogue(for: locale).values.lazy.flatMap { $0 }.first { $0.id == id }
     }
 
+    static func time(forQuoteID id: String, locale: String) -> String? {
+        let minute = catalogue(for: locale).first { entry in entry.value.contains { $0.id == id } }?.key
+        return minute?.replacingOccurrences(of: "_", with: ":")
+    }
+
     static func selectedLocales(_ stored: String, fallback: String) -> [String] {
         let selected = stored.split(separator: ",").map(String.init).filter { locales.contains($0) }
         return selected.isEmpty ? [locales.contains(fallback) ? fallback : "en-US"] : selected

@@ -56,7 +56,6 @@
 "app_previous_quote" = "Poprzedni cytat";
 "app_project_website" = "Wersja internetowa";
 "app_quote_copied" = "Skopiowano cytat";
-"app_quote_detail_title" = "Informacje o cytacie";
 "app_quote_font" = "Krój pisma cytatu";
 "app_quote_image_copied" = "Skopiowano obraz";
 "app_quote_languages_title" = "Języki cytatów";
@@ -152,7 +151,16 @@
 "pt-BR" = "Português (pt-BR)";
 "pt-PT" = "Português (pt-PT)";
 "purple" = "Fioletowy";
+"quoteAboutAuthor" = "O autorze";
+"quoteAboutWork" = "O utworze";
 "quoteDetail" = "Informacje o cytacie";
+"quoteDetailTime" = "Godzina {time}";
+"quoteMoreInformation" = "Dalsza lektura";
+"quotePassageSource" = "Przeczytaj fragment";
+"quoteReadWork" = "Przeczytaj cały utwór";
+"quoteSourceCurrent" = "Czytasz już cytat w wersji źródłowej.";
+"quoteSourceText" = "Cytat w oryginale";
+"quoteSourceUnavailable" = "Nie udało się wczytać tekstu źródłowego.";
 "random" = "Losowy język";
 "removeFavorite" = "Usuń z ulubionych";
 "report_error" = "Zgłoś błąd";

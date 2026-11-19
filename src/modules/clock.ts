@@ -47,6 +47,18 @@ export function initClock() {
   if (store.get('paused')) void updateQuote();
   void updateTime();
 
+  // The live time keeps updating while the reader is looking at a fixed passage.
+  document.addEventListener(
+    'close',
+    (event) => {
+      if (!(event.target instanceof HTMLDialogElement) || event.target.id !== 'quote-details' || store.get('paused'))
+        return;
+      const time = getLiveTime();
+      if (store.get('active-quote')?.time !== time) void updateQuote({ time, minuteTick: true });
+    },
+    true,
+  );
+
   if (!store.get('quote')) {
     let clockTimer: ReturnType<typeof setInterval> | undefined;
     let progressFrame: number | undefined;

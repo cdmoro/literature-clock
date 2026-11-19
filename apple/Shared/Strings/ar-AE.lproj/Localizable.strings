@@ -56,7 +56,6 @@
 "app_previous_quote" = "الاقتباس السابق";
 "app_project_website" = "نسخة الويب";
 "app_quote_copied" = "تم نسخ الاقتباس";
-"app_quote_detail_title" = "تفاصيل الاقتباس";
 "app_quote_font" = "خط الاقتباس";
 "app_quote_image_copied" = "تم نسخ الصورة";
 "app_quote_languages_title" = "لغات الاقتباسات";
@@ -152,7 +151,16 @@
 "pt-BR" = "Português (pt-BR)";
 "pt-PT" = "Português (pt-PT)";
 "purple" = "أرجواني";
+"quoteAboutAuthor" = "عن المؤلف";
+"quoteAboutWork" = "عن العمل";
 "quoteDetail" = "تفاصيل الاقتباس";
+"quoteDetailTime" = "الوقت {time}";
+"quoteMoreInformation" = "للمزيد من القراءة";
+"quotePassageSource" = "اقرأ المقتطف";
+"quoteReadWork" = "اقرأ العمل كاملاً";
+"quoteSourceCurrent" = "أنت تقرأ الاقتباس المرجعي بالفعل.";
+"quoteSourceText" = "الاقتباس الأصلي";
+"quoteSourceUnavailable" = "تعذّر تحميل النص المرجعي.";
 "random" = "لغة عشوائية";
 "removeFavorite" = "إزالة من المفضلة";
 "report_error" = "الإبلاغ عن خطأ";

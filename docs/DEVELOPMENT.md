@@ -79,3 +79,27 @@ See the [Apple apps guide](../apple/README.md) for building, catalogue synchroni
 UI strings are organized by artifact first and feature second: `src/strings/web/<feature>.json`, `src/strings/screensaver/<feature>.json`, and `src/strings/common/<feature>.json`. Web-only strings do not require screensaver version bumps; common strings are versioned for Web and both screensavers, while screensaver strings affect both native savers. The Web and common settings are split by key, and the Web runtime combines them without duplicating keys. Quote catalogues are shared by Web and both screensavers. Check `scripts/component_ownership.py` before adding or moving a translation resource. Unknown translation paths fail validation until their ownership is declared.
 
 The macOS app currently duplicates `common/settings.json` key `settings_attribution_position` in `apple/Shared/App/ClockHomeView.swift` (`WidgetQuoteDetail.detailTitle`); its 12 locale values match. This key has an additional `macOS app` ownership override until the app reads a shared catalogue directly.
+
+### Quote details
+
+The Web clock and the macOS app use the quote ID to look up the catalogue
+passage used as the translation reference. The reference language comes from
+the quote's declared source. It can be different from the language in which
+the work was first written.
+
+Edit `quotes/quote-details.json` to add optional HTTPS links by locale.
+Use canonical catalogue names for authors and works. Add background links
+under `about` and links to readable editions under `read`. Add a `passages`
+entry by quote ID only after verifying the passage in the linked edition.
+Language-only keys such as `es` serve regional variants without separate links.
+Each link prefers the interface language, then the quote's reference language,
+then English, then another available language. A link in a different language
+shows its language in parentheses.
+
+`npm run dev` and `npm run build` generate 24 Web indexes using the hour
+prefix of each stable quote ID. The browser loads each file when a matching
+quote detail opens and caches it for the current page. To refresh the Mac
+bundle after link-only changes, run
+`python3 scripts/generate_quote_details.py apple/Shared/Catalogues/_quote-details.json`.
+After quote catalogue changes, the usual `apple/sync-catalogues.py` workflow
+refreshes the index along with the bundled passages.
