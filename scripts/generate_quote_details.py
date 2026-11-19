@@ -91,7 +91,10 @@ def main():
         by_hour.get(identifier[:2], by_hour['00'])[identifier] = entry
     for hour, entries in by_hour.items():
         write_index(WEB_DIRECTORY / f'{hour}.json', entries)
-    (WEB_DIRECTORY / 'index.json').unlink(missing_ok=True)
+    try:
+        (WEB_DIRECTORY / 'index.json').unlink()
+    except FileNotFoundError:
+        pass
     print(f'{len(details)} quote details in {len(by_hour)} files → {WEB_DIRECTORY}')
 
 
