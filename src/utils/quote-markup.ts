@@ -29,7 +29,7 @@ const compactTime = new RegExp(
   'iu',
 );
 const leadingPunctuation = /(?:[«‹]\p{Zs}+|\p{P})+$/u;
-const trailingPunctuation = /^(?:\p{P}|\p{Zs}+[»›]|[\u00a0\u202f\u2009]+[!?:;])*/u;
+const trailingPunctuation = /^(?::\p{Nd}{2})?(?:\p{P}|\p{Zs}+[»›]|[\u00a0\u202f\u2009]+[!?:;])*/u;
 const frenchTrailingPunctuation = /^(?:\p{P}|\p{Zs}+[»›!?:;])*/u;
 
 function takeText(fragment: DocumentFragment | HTMLElement, length: number, fromEnd = false) {
