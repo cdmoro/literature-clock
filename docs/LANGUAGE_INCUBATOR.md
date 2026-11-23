@@ -75,8 +75,8 @@ Copy each ID exactly from the declared source and keep it attached to that same 
 
 To keep the translation focused and simple:
 
-- **CSV attribution fields:** the Google-translated locale CSV is the working file. First use its translated `Title` and `Author` values as rough candidates for `quotes/attribution-localizations.json`. After reviewing those candidates, restore the canonical source values in both CSV columns (`Title` and `Author`) across the locale file. `Time`, `Id`, `SFW` and `Source locale` also stay canonical; only `Quote` and `Quote time` are translated.
-- **Localized attributions:** provide a natural localized display title for every work in the central attribution catalogue. Use a verified Polish/local-language publication title when one can be established, and record a source URL for it. Otherwise add a clearly editorial translation without a source URL; do not imply it is a published edition. Treat translated author names more cautiously: use an established localized form only when verified; otherwise omit the author mapping so the canonical name is displayed. The generator applies these display forms to output catalogues while the locale CSV retains canonical attribution values.
+- **CSV attribution fields:** save the translated `Title` and `Author` values as candidates before restoring the canonical fields. `Time`, `Id`, `SFW` and `Source locale` also stay canonical; only `Quote` and `Quote time` are translated.
+- **Localized attributions:** use a verified publication title in the target language with a source URL when available, or a reviewed editorial translation without a URL. Add an established localized author form when verified. The generator uses the canonical name when no localized author form is available.
 - **Passage and time phrase (`Quote`, `Quote time`): focus your translation work here.** Keep the source `Time` and `SFW` values unchanged as well.
 
 These rules apply whichever translation tool you choose. Translation tools can help with the passage and suggest attribution forms, but they do not establish a published title or conventional author form. For the attribution schema, verification and progress commands, see [the technical translation guide](../scripts/TRANSLATING.md#preserve-quote-identity-and-attribution).
@@ -114,7 +114,7 @@ Start with a pilot of 10–25 varied passages to check the language, time expres
 
 #### Option A: translate manually, with help when useful
 
-Open a draft in the administrator and translate it yourself, or paste the source passage into [Google Translate](https://translate.google.com/) to get a starting point. Read and edit the result before saving it. Choose the exact words in the translated passage that express the time. In a Google-translated CSV, use `Title` and `Author` as rough candidates for the central attribution catalogue. Review titles as published or editorial forms, and verify any localized author form; then restore canonical source values in both CSV columns throughout that same locale file.
+Open a draft in the administrator and translate it yourself, or paste the source passage into [Google Translate](https://translate.google.com/) to get a starting point. Read and edit the result before saving it. Choose the exact words in the translated passage that express the time.
 
 Work passage by passage so that text stays attached to the correct ID. Avoid pasting a raw CSV into a translation website and assuming it will preserve headers, separators and metadata. This approach works well for a small contribution and for fixing difficult passages after a larger automated run.
 
@@ -159,10 +159,10 @@ source Id exactly once and attached to its original passage. IDs are the only
 cross-language tracking key: never translate, renumber, regenerate or reformat
 them. Treat them as text and preserve leading zeros and punctuation.
 Keep Time, Id, Title, Author, SFW and Source locale exactly unchanged in the final
-locale CSV. Translate only Quote and Quote time. You may first copy translated
-Title and Author candidates from this same working CSV into
-quotes/attribution-localizations.json; restore the canonical Title and Author
-values in the CSV after that review.
+locale CSV. Translate only Quote and Quote time. Save translated Title and
+Author candidates from the working CSV before restoring the canonical Title
+and Author values. Review the candidates before adding them to
+quotes/attribution-localizations.json.
 Preserve intentional <br> and <em> formatting and
 use proper CSV quoting for embedded pipes, quotes and newlines.
 
@@ -198,7 +198,7 @@ python3 scripts/validate_translation.py quotes/quotes.el-GR.csv
 npm run admin
 ```
 
-The output must be a new path. If you already created that catalogue in step 2, do not overwrite it or discard reviewed work; consult the [import workflow](../scripts/TRANSLATING.md#import-a-complete-translation-from-calibre-or-another-tool) and coordinate how to incorporate the external work. This importer is for complete catalogues, not partial batches. For small contributions, editing drafts in the administrator is the simpler route.
+The output must be a new path. Before importing a CSV with translated titles or authors, follow the [attribution first pass](#4-build-the-initial-attribution-list). If you already created that catalogue in step 2, do not overwrite it or discard reviewed work; consult the [import workflow](../scripts/TRANSLATING.md#import-a-complete-translation-from-calibre-or-another-tool) and coordinate how to incorporate the external work. This importer is for complete catalogues, not partial batches. For small contributions, editing drafts in the administrator is the simpler route.
 
 Importing or passing structural validation does not mean the language is ready. Open it in the administrator and review the drafts below.
 
@@ -208,14 +208,20 @@ Separate **drafting progress** from **review progress**. Producing an entire fir
 
 If several people are helping, agree on source IDs or time ranges in the issue so work does not overlap. Share small pull requests, note uncertain passages and resume with the next batch. Nobody needs to finish the whole language in one sitting—or alone.
 
-### 4. Review for meaning, language and time
+### 4. Build the initial attribution list
+
+Once the translated CSV parses and its IDs match the source, save a copy and extract its translated `Title` and `Author` values before import or normalization restores the canonical columns. Match each row to its declared source by ID. Group author candidates by canonical author and title candidates by canonical author and title. Keep occurrence counts and competing spellings so you can review the most-used forms first.
+
+Use this list to start attribution work before reading the passages. Keep unreviewed candidates in a working list. Add reviewed editorial titles, verified published titles and corroborated author forms to `quotes/attribution-localizations.json` when the locale is supported there. Refine the list alongside passage review as you find better editions or spellings.
+
+### 5. Review for meaning, language and time
 
 For each passage, compare the draft with its declared source and check:
 
 - **Meaning and voice:** preserve the passage's meaning and tone, without omissions or added details. Read it as prose, not just as a translated sentence.
 - **The time expression:** the highlighted words must appear exactly in the translated passage and mean the same time as the source. Watch for AM/PM, “quarter to”, “half past” and approximate times. Do not make an approximate source more precise.
 - **IDs:** verify that every ID is unchanged and still belongs to the same source passage. Never repair a mismatch by inventing or renumbering IDs.
-- **Book titles and names:** preserve attribution source values in the quote CSV. Add a localized display title for each work to `quotes/attribution-localizations.json`: use the verified published title with a source URL when available, or a reviewed natural editorial translation with no source URL otherwise. Use a conventional localized author form when available; otherwise leave the author unmapped so the canonical name is displayed. Never present an editorial translation as a verified edition title.
+- **Book titles and names:** refine the attribution list from step 4 as you spot inconsistencies or establish a better form. Keep source values in the quote CSV.
 - **Formatting:** preserve intentional emphasis and line breaks.
 
 For example, a source phrase such as “a quarter to eight” means 7:45. A fluent translation that means 8:15 would still be wrong for the clock, even if its words are highlighted correctly.
@@ -224,7 +230,7 @@ Approve a passage only when you've checked it. Leave uncertain entries as drafts
 
 The administrator saves edits to the catalogue and keeps local backups. Approval marks a row as reviewed; it does not publish a language.
 
-### 5. See it in the clock
+### 6. See it in the clock
 
 Use **Generate clock preview** in the administrator, then start the clock in another terminal:
 
@@ -238,7 +244,7 @@ Draft previews include pending and approved entries and show a draft notice. Unt
 
 A local preview stays on your computer. If draft data is committed and deployed, its URL is unlisted, **not private**. Previewing never enables the language in the selector.
 
-### 6. Share progress for review
+### 7. Share progress for review
 
 Submit your catalogue changes in a pull request and describe what you translated, what you reviewed and what still needs attention. You can share a reviewed batch while the rest of the catalogue remains in draft.
 
@@ -246,7 +252,7 @@ The administrator's **Create catalogue PR** action can prepare a pull request co
 
 Keep pending work marked as draft. A catalogue pull request does not merge itself or enable a new language, and your local backups and review workspace are not a shared collaboration service.
 
-### 7. Enable the completed language
+### 8. Enable the completed language
 
 Once the catalogue is complete and reviewed, coordinate a separate change to make it available in the clock. That includes translating the interface and fallback messages, registering the locale and adding it to the language selector.
 
