@@ -17,7 +17,7 @@ export const THEME_FONTS: Record<string, string[]> = {
 };
 
 export const LOCALE_THEME_FONTS: Record<string, Record<string, string>> = {
-  base: { ja: 'BIZ UDPGothic', ar: 'Marhey', ru: 'Pangolin', el: 'Sansation', zh: 'ZCOOL KuaiLe' },
+  base: { ja: 'BIZ UDPGothic', ar: 'Marhey', ru: 'Pangolin', el: 'Sansation', zh: 'ZCOOL KuaiLe', he: 'Noto Sans Hebrew' },
   retro: { ja: 'DotGothic16', ar: 'Handjet', ru: 'DotGothic16', el: 'Handjet', zh: 'ZCOOL QingKe HuangYou' },
   handwriting: { ja: 'Yuji Boku', ar: 'Amiri Quran', eo: 'Give You Glory', ru: 'Shantell Sans', el: 'Mansalva', zh: 'Long Cang' },
   subtle: { eo: 'Literata', ru: 'Literata' },

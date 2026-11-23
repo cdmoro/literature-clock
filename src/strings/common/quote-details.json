@@ -190,5 +190,17 @@
     "quotePassageSource": "Przeczytaj fragment",
     "quoteSourceUnavailable": "Nie udało się wczytać tekstu źródłowego.",
     "quoteMoreInformation": "Dalsza lektura"
+  },
+  "he-IL": {
+    "quoteDetail": "פרטי הציטוט",
+    "quoteDetailTime": "השעה {time}",
+    "quoteSourceText": "הציטוט המקורי",
+    "quoteSourceCurrent": "אתה כבר קורא את ציטוט המקור.",
+    "quoteAboutAuthor": "על המחבר",
+    "quoteAboutWork": "על העבודה",
+    "quoteReadWork": "קרא את העבודה המלאה",
+    "quotePassageSource": "קרא את הקטע",
+    "quoteSourceUnavailable": "לא ניתן לטעון את טקסט המקור.",
+    "quoteMoreInformation": "קריאה נוספת"
   }
 }

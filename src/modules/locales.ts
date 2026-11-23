@@ -26,6 +26,7 @@ export const DOMINANT_LOCALES: Record<string, Locale> = {
   ru: 'ru-RU',
   eo: 'eo',
   ar: 'ar-AE',
+  he: 'he-IL',
 } as const;
 
 const DRAFT_SUFFIX = '-draft';
@@ -157,6 +158,7 @@ export function translateStrings(locale: Locale) {
     'ru-RU': 'Время в цитатах из книг',
     eo: 'La horo per citaĵoj el libroj',
     'ar-AE': 'الوقت في اقتباسات من الكتب',
+    'he-IL': 'השעה בציטוטים מספרים',
   };
   const description = descriptions[getBaseLocale(locale)] || descriptions['en-GB'];
   document.title = `${time} - ${strings.document_title} — ${description}`;

@@ -25,6 +25,8 @@ public sealed class SettingsWindow : Window
     public SettingsWindow(Catalogues data,Preferences p)
     {
         this.data=data; original=p;
+        FlowDirection = new[]{"ar","he","fa","ur"}.Contains(data.SystemLocale.Split('-')[0],StringComparer.OrdinalIgnoreCase)
+            ? System.Windows.FlowDirection.RightToLeft : System.Windows.FlowDirection.LeftToRight;
         Title="Literature Clock"; Width=620; Height=680; MinWidth=480; MinHeight=500;
         WindowStartupLocation=WindowStartupLocation.CenterScreen;
         var contentPage=new StackPanel { Margin=new Thickness(24) };

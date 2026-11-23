@@ -78,5 +78,10 @@
     "choose_color": "Escolher uma cor personalizada para este tema",
     "reset_color": "Restaurar a cor padrão deste tema",
     "default_color": "Cor padrão"
+  },
+  "he-IL": {
+    "choose_color": "בחר צבע מותאם אישית לנושא זה",
+    "reset_color": "שחזר את צבע ברירת המחדל של ערכת נושא זה",
+    "default_color": "צבע ברירת מחדל"
   }
 }

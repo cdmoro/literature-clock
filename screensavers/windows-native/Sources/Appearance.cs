@@ -48,6 +48,7 @@ public static class Appearance
         key = (theme, language) switch
         {
             ("base", "ar") or ("book", "ar") => "marhey", ("base", "ru") => "pangolin", ("base", "el") or ("bohemian", "el") => "sansation",
+            (_, "he") => "notosanshebrew",
             ("book", "ru" or "el") => "literata", ("terminal", "ar") => "cascadiacode", ("terminal", "eo") => "lxgwwenkaimonotc", ("terminal", "ru") => "jetbrainsmono", ("terminal", "el") => "victormono",
             ("festive", "ar") => "playpensansarabic", ("festive", "eo") => "playwritear", ("festive", "ru") => "pacifico", ("festive", "el") => "comicrelief",
             ("bohemian", "ar") => "zain", ("photo", "ar") => "lalezar", ("photo", "ru") => "russoone", ("photo", "el") => "delagothicone",
@@ -71,6 +72,7 @@ public static class Appearance
     }
     static readonly Dictionary<string, string> FontFiles = new()
     {
+        ["notosanshebrew"]="NotoSansHebrew[wdth,wght].ttf",
         ["bizudpgothic"]="BIZUDPGothic-Regular.ttf",
         ["mochiypopone"]="MochiyPopOne-Regular.ttf",
         ["wdxllubrifontjpn"]="WDXLLubrifontJPN-Regular.ttf",

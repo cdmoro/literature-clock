@@ -637,10 +637,10 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         let passagePadding: CGFloat = usesPhoto ? 24 : 0
         let limit = min(bounds.height * 0.65, max(1, area.height - passagePadding * 2 - 4))
         let paragraph = NSMutableParagraphStyle()
-        paragraph.alignment = fuzzyClock ? .center : (quoteLocale.hasPrefix("ar") ? .right : .left)
+        paragraph.alignment = fuzzyClock ? .center : (ClockLocale.isRightToLeft(quoteLocale) ? .right : .left)
         paragraph.lineBreakMode = .byWordWrapping
         paragraph.lineHeightMultiple = theme == "book" ? 1.35 : theme == "festive" ? 1.25 : theme == "terminal" ? 1.15 : 1
-        paragraph.baseWritingDirection = quoteLocale.hasPrefix("ar") ? .rightToLeft : .natural
+        paragraph.baseWritingDirection = ClockLocale.isRightToLeft(quoteLocale) ? .rightToLeft : .natural
         let translation = bilingualContent()
         func passage(_ size: CGFloat) -> NSAttributedString {
             let result = NSMutableAttributedString()
@@ -648,7 +648,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 let fuzzy = fuzzyClock
                 let style = paragraph.mutableCopy() as! NSMutableParagraphStyle
                 style.alignment = fuzzy ? .center : (locale.hasPrefix("ar") ? .right : .left)
-                style.baseWritingDirection = locale.hasPrefix("ar") ? .rightToLeft : .natural
+                style.baseWritingDirection = ClockLocale.isRightToLeft(locale) ? .rightToLeft : .natural
                 style.paragraphSpacingBefore = gap
                 let font = quoteFont(size, locale: locale)
                 let parts = Self.displayedPassage(item, fallbackTime: lastMinute, fuzzy: fuzzy,
@@ -692,8 +692,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                     result.append(line)
                     result.append(NSAttributedString(string: "\n", attributes: [.paragraphStyle: separatorStyle, .font: NSFont.systemFont(ofSize: 1)]))
                     let headingStyle = NSMutableParagraphStyle()
-                    headingStyle.alignment = systemLocale.hasPrefix("ar") ? .right : .left
-                    headingStyle.baseWritingDirection = systemLocale.hasPrefix("ar") ? .rightToLeft : .natural
+                    headingStyle.alignment = ClockLocale.isRightToLeft(systemLocale) ? .right : .left
+                    headingStyle.baseWritingDirection = ClockLocale.isRightToLeft(systemLocale) ? .rightToLeft : .natural
                     headingStyle.paragraphSpacing = 8
                     let name = Locale(identifier: systemLocale).localizedString(forIdentifier: translation.locale) ?? translation.locale
                     result.append(NSAttributedString(string: name + "\n", attributes: [.font: NSFont.systemFont(ofSize: max(10, size * 0.35), weight: .medium), .foregroundColor: foreground.withAlphaComponent(0.75), .paragraphStyle: headingStyle]))
@@ -703,8 +703,8 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
                 append(translated, locale: translation.locale, size: size * 0.8, gap: 0)
             } else if let notice = translation.notice {
                 let style = paragraph.mutableCopy() as! NSMutableParagraphStyle
-                style.alignment = translation.locale.hasPrefix("ar") ? .right : .left
-                style.baseWritingDirection = translation.locale.hasPrefix("ar") ? .rightToLeft : .natural
+                style.alignment = ClockLocale.isRightToLeft(translation.locale) ? .right : .left
+                style.baseWritingDirection = ClockLocale.isRightToLeft(translation.locale) ? .rightToLeft : .natural
                 style.paragraphSpacingBefore = 24
                 result.append(NSAttributedString(string: "\n"))
                 result.append(NSAttributedString(string: notice, attributes: [.font: NSFont.systemFont(ofSize: size * 0.5), .foregroundColor: foreground.withAlphaComponent(0.75), .paragraphStyle: style]))

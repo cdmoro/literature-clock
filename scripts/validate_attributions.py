@@ -7,10 +7,6 @@ from quote_sources import source_catalogue
 from attribution_localizations import attribution_locales, ATTRIBUTION_PARENTS
 from validate_translation import ROOT
 
-# Allow reviewed names to be added during incubation without enabling the locale.
-DRAFT_ATTRIBUTION_LOCALES = {'he-IL'}
-
-
 def reject_duplicate_keys(pairs):
     result = {}
     for key, value in pairs:
@@ -25,7 +21,7 @@ def load_json(path):
 
 
 def validate(localizations, source_rows, supported_locales):
-    supported_locales = attribution_locales(supported_locales) | DRAFT_ATTRIBUTION_LOCALES
+    supported_locales = attribution_locales(supported_locales)
     errors = []
     authors = {row['Author'] for row in source_rows}
     works = {(row['Author'], row['Title']) for row in source_rows}
@@ -103,7 +99,7 @@ def main():
     if errors:
         raise SystemExit('\n'.join(errors))
 
-    supported = attribution_locales(translations) | DRAFT_ATTRIBUTION_LOCALES
+    supported = attribution_locales(translations)
     if args.locale and args.locale not in supported:
         raise SystemExit(f'Unsupported locale: {args.locale}')
 

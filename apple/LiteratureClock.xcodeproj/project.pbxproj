@@ -89,6 +89,7 @@
 		A00000000000000235 /* ja-JP */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ja-JP"; path = "ja-JP.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A00000000000000236 /* ko-KR */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ko-KR"; path = "ko-KR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A00000000000000237 /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text; name = "pl-PL"; path = "pl-PL.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A00000000000000239 /* he-IL */ = {isa = PBXFileReference; lastKnownFileType = text; name = "he-IL"; path = "he-IL.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +279,7 @@
 				"ru-RU",
 				eo,
 				"ar-AE",
+				"he-IL",
 				"ja-JP",
 				"ko-KR",
 				"pl-PL",
@@ -374,6 +376,7 @@
 				A00000000000000235 /* ja-JP */,
 				A00000000000000236 /* ko-KR */,
 				A00000000000000237 /* pl-PL */,
+				A00000000000000239 /* he-IL */,
 			);
 			name = Localizable.strings;
 			path = Shared/Strings;

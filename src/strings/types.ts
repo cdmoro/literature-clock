@@ -74,6 +74,7 @@ export type Translations = {
   'ru-RU': string;
   eo: string;
   'ar-AE': string;
+  'he-IL': string;
   settings_presets_title: string;
   settings_presets_help: string;
   settings_preset_christmas: string;

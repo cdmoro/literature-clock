@@ -350,5 +350,27 @@
       "quote_time_case": "",
       "sfw": true
     }
+  ],
+  "he-IL": [
+    {
+      "quote_first": "שגיאה ",
+      "quote_last": ": הציטוט לא נמצא.",
+      "title": "Internet Explorer",
+      "author": "1995-2022",
+      "id": "F-001",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    },
+    {
+      "quote_first": "יומן הקפטן:<br>אנחנו עדיין מחפשים ציטוט עבור ",
+      "quote_last": ".",
+      "title": "Moby Dick",
+      "author": "Captain Ahab",
+      "id": "F-002",
+      "time": "",
+      "quote_time_case": "",
+      "sfw": true
+    }
   ]
 }
