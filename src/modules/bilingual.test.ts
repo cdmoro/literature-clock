@@ -239,9 +239,10 @@ it('keeps language names in their usual forms in Hebrew selectors', async () => 
   store.set('translation-locale', 'it-IT');
   store.set('bilingual', true);
   expect(document.querySelector('#translation-locale option[value="it-IT"]')!.textContent).toBe('Italiano (it-IT)');
+  expect(document.querySelector('#translation-locale option[value="he-IL"]')!.textContent).toBe('עברית (he-IL)');
   await translationPanel();
   expect(document.querySelector('#clock-translation-locale option[value="en-GB"]')!.textContent).toBe('English (en-GB)');
-  expect(document.querySelector('#clock-translation-locale option[value="he-IL"]')!.textContent).toBe('Hebrew (he-IL)');
+  expect(document.querySelector('#clock-translation-locale option[value="he-IL"]')!.textContent).toBe('עברית (he-IL)');
 });
 
 it('changes translation from the clock and synchronizes settings without changing the primary quote', async () => {

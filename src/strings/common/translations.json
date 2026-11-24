@@ -98,7 +98,7 @@
     "previousQuote": "Previous quote from this minute",
     "pl-PL": "Polski (pl-PL)",
     "pt-BR": "Português (pt-BR)",
-    "he-IL": "Hebrew (he-IL)"
+    "he-IL": "עברית (he-IL)"
   },
   "en-US": {
     "about": "About",
@@ -199,7 +199,7 @@
     "previousQuote": "Previous quote from this minute",
     "pl-PL": "Polski (pl-PL)",
     "pt-BR": "Português (pt-BR)",
-    "he-IL": "Hebrew (he-IL)"
+    "he-IL": "עברית (he-IL)"
   },
   "es-ES": {
     "about": "Acerca de",
@@ -300,7 +300,7 @@
     "previousQuote": "Cita anterior de este minuto",
     "pl-PL": "Polski (pl-PL)",
     "pt-BR": "Português (pt-BR)",
-    "he-IL": "Hebrew (he-IL)"
+    "he-IL": "עברית (he-IL)"
   },
   "pt-PT": {
     "about": "Sobre",
@@ -401,7 +401,7 @@
     "previousQuote": "Citação anterior deste minuto",
     "pl-PL": "Polski (pl-PL)",
     "pt-BR": "Português (pt-BR)",
-    "he-IL": "Hebrew (he-IL)"
+    "he-IL": "עברית (he-IL)"
   },
   "fr-FR": {
     "about": "À propos",
@@ -502,7 +502,7 @@
     "previousQuote": "Citation précédente de cette minute",
     "pl-PL": "Polski (pl-PL)",
     "pt-BR": "Português (pt-BR)",
-    "he-IL": "Hebrew (he-IL)"
+    "he-IL": "עברית (he-IL)"
   },
   "it-IT": {
     "about": "Informazioni",
@@ -603,7 +603,7 @@
     "previousQuote": "Citazione precedente di questo minuto",
     "pl-PL": "Polski (pl-PL)",
     "pt-BR": "Português (pt-BR)",
-    "he-IL": "Hebrew (he-IL)"
+    "he-IL": "עברית (he-IL)"
   },
   "de-DE": {
     "about": "Über",
@@ -704,7 +704,7 @@
     "previousQuote": "Vorheriges Zitat dieser Minute",
     "pl-PL": "Polski (pl-PL)",
     "pt-BR": "Português (pt-BR)",
-    "he-IL": "Hebrew (he-IL)"
+    "he-IL": "עברית (he-IL)"
   },
   "el-GR": {
     "about": "Σχετικά",
@@ -805,7 +805,7 @@
     "previousQuote": "Προηγούμενο παράθεμα αυτού του λεπτού",
     "pl-PL": "Polski (pl-PL)",
     "pt-BR": "Português (pt-BR)",
-    "he-IL": "Hebrew (he-IL)"
+    "he-IL": "עברית (he-IL)"
   },
   "zh-CN": {
     "about": "关于",
@@ -906,7 +906,7 @@
     "previousQuote": "此分钟的上一条引文",
     "pl-PL": "Polski (pl-PL)",
     "pt-BR": "Português (pt-BR)",
-    "he-IL": "Hebrew (he-IL)"
+    "he-IL": "עברית (he-IL)"
   },
   "ru-RU": {
     "about": "О проекте",
@@ -1007,7 +1007,7 @@
     "previousQuote": "Предыдущая цитата этой минуты",
     "pl-PL": "Polski (pl-PL)",
     "pt-BR": "Português (pt-BR)",
-    "he-IL": "Hebrew (he-IL)"
+    "he-IL": "עברית (he-IL)"
   },
   "eo": {
     "about": "Pri la projekto",
@@ -1108,7 +1108,7 @@
     "previousQuote": "Antaŭa citaĵo de ĉi tiu minuto",
     "pl-PL": "Polski (pl-PL)",
     "pt-BR": "Português (pt-BR)",
-    "he-IL": "Hebrew (he-IL)"
+    "he-IL": "עברית (he-IL)"
   },
   "ar-AE": {
     "about": "حول",
@@ -1209,7 +1209,7 @@
     "previousQuote": "الاقتباس السابق لهذه الدقيقة",
     "pl-PL": "Polski (pl-PL)",
     "pt-BR": "Português (pt-BR)",
-    "he-IL": "Hebrew (he-IL)"
+    "he-IL": "עברית (he-IL)"
   },
   "ja-JP": {
     "about": "このサイトについて",
@@ -1310,7 +1310,7 @@
     "previousQuote": "同じ分の前の引用文",
     "pl-PL": "Polski (pl-PL)",
     "pt-BR": "Português (pt-BR)",
-    "he-IL": "Hebrew (he-IL)"
+    "he-IL": "עברית (he-IL)"
   },
   "ko-KR": {
     "about": "앱 정보",
@@ -1411,7 +1411,7 @@
     "previousQuote": "이 분의 이전 인용문",
     "pl-PL": "Polski (pl-PL)",
     "pt-BR": "Português (pt-BR)",
-    "he-IL": "Hebrew (he-IL)"
+    "he-IL": "עברית (he-IL)"
   },
   "pl-PL": {
     "about": "O aplikacji",
@@ -1512,7 +1512,7 @@
     "previousQuote": "Poprzedni cytat z tej minuty",
     "pl-PL": "Polski (pl-PL)",
     "pt-BR": "Português (pt-BR)",
-    "he-IL": "Hebrew (he-IL)"
+    "he-IL": "עברית (he-IL)"
   },
   "pt-BR": {
     "about": "Sobre",
@@ -1613,7 +1613,7 @@
     "previousQuote": "Citação anterior deste minuto",
     "pl-PL": "Polski (pl-PL)",
     "pt-BR": "Português (pt-BR)",
-    "he-IL": "Hebrew (he-IL)"
+    "he-IL": "עברית (he-IL)"
   },
   "he-IL": {
     "about": "אודות",
@@ -1714,6 +1714,6 @@
     "previousQuote": "ציטוט קודם מדקה זו",
     "pl-PL": "Polski (pl-PL)",
     "pt-BR": "Português (pt-BR)",
-    "he-IL": "Hebrew (he-IL)"
+    "he-IL": "עברית (he-IL)"
   }
 }
