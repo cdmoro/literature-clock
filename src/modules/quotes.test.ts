@@ -132,16 +132,19 @@ it('keeps localized attributions by default', async () => {
   expect(active().title).toBe('高慢と偏見');
 });
 
-it('sets Arabic attribution flow explicitly so title and author order with the passage direction', async () => {
-  state.locale = 'ar-AE';
+it.each(['ar-AE', 'he-IL'])('%s attribution follows the passage direction', async (locale) => {
+  state.locale = locale;
   vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => [{
-    ...first, title: 'ليلة الجنزالات', author: 'هانز هيلموت كيرست',
+    ...first,
+    title: locale === 'ar-AE' ? 'ليلة الجنزالات' : 'האביר מגווין',
+    author: locale === 'ar-AE' ? 'هانز هيلموت كيرست' : 'Charles James Lever',
   }] } as Response);
   await updateQuote();
   const cite = document.querySelector('#quote cite')!;
   expect(cite.getAttribute('dir')).toBe('rtl');
   expect([...cite.children].map((item) => item.textContent)).toEqual([
-    '— ', 'ليلة الجنزالات', ', ', 'هانز هيلموت كيرست',
+    '— ', locale === 'ar-AE' ? 'ليلة الجنزالات' : 'האביר מגווין', ', ',
+    locale === 'ar-AE' ? 'هانز هيلموت كيرست' : 'Charles James Lever',
   ]);
 });
 

@@ -243,10 +243,16 @@ export function initBilingual() {
     rubySwitch.setAttribute('aria-disabled', String(!rubySupported));
     menuSelect.setAttribute('aria-label', strings().bilingual_translate_quote);
     const menuNames = new Intl.DisplayNames([getBaseLocale(getInterfaceLocale())], { type: 'language' });
+    const untranslatedMenuNames = getBaseLocale(getInterfaceLocale()) === 'he-IL' ? getStrings('en-GB') : undefined;
     for (const option of [...menuSelect.options]) {
-      option.textContent = option.value
-        ? `${menuNames.of(option.value === 'zh-CN' ? 'zh-Hans' : option.value.split('-')[0])} (${option.value})`
-        : strings().bilingual_select_language;
+      if (!option.value) {
+        option.textContent = strings().bilingual_select_language;
+        continue;
+      }
+      const untranslatedName = untranslatedMenuNames?.[getBaseLocale(option.value as Locale)];
+      option.textContent =
+        untranslatedName ??
+        `${menuNames.of(option.value === 'zh-CN' ? 'zh-Hans' : option.value.split('-')[0])} (${option.value})`;
     }
     notice.textContent = strings().bilingual_language_notice;
     const labels = getStrings(getInterfaceLocale());

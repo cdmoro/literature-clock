@@ -313,7 +313,7 @@ public sealed class ClockSurface : Canvas
                 var title=p.ShowOriginalAttributions?item.title_original??item.title:item.title;
                 var author=p.ShowOriginalAttributions?item.author_original??item.author:item.author;
                 var attribution=!fuzzy && p.QuoteAttribution=="below"?p.HideTitle?author:string.Join(", ",new[]{title,author}.WhereNonEmpty()):"";
-                if(attribution.Length>0) passage.Children.Add(new TextBlock { Text=(p.Theme=="terminal"?"> ":"— ")+attribution,FontFamily=text.FontFamily,FontSize=fontSize*.55,TextWrapping=TextWrapping.Wrap,FlowDirection=flow,Foreground=Appearance.Brush(foreground,.8),Margin=new Thickness(0,p.Theme=="book"?(ActualWidth<=750?16:24):fontSize*.35,0,0),Effect=outlineActive?new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=12,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance }:null });
+                if(attribution.Length>0) passage.Children.Add(new TextBlock { Text=(p.Theme=="terminal"?"> ":"— ")+attribution,FontFamily=text.FontFamily,FontSize=fontSize*.55,TextWrapping=TextWrapping.Wrap,TextAlignment=flow==FlowDirection.RightToLeft?TextAlignment.Right:TextAlignment.Left,FlowDirection=flow,Foreground=Appearance.Brush(foreground,.8),Margin=new Thickness(0,p.Theme=="book"?(ActualWidth<=750?16:24):fontSize*.35,0,0),Effect=outlineActive?new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=12,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance }:null });
             }
         }
         Append(q,quoteLocale,size);
@@ -343,9 +343,9 @@ public sealed class ClockSurface : Canvas
     {
         try
         {
-            var displayName = CultureInfo.GetCultureInfo(locale).DisplayName;
-            var regionStart = displayName.IndexOf(" (", StringComparison.Ordinal);
-            var languageName = regionStart > 0 ? displayName[..regionStart] : displayName;
+            var culture = CultureInfo.GetCultureInfo(locale);
+            var languageName = culture.Parent.NativeName;
+            if (languageName.Length == 0) languageName = culture.NativeName;
             return locale.Contains('-') ? $"{languageName} ({locale})" : languageName;
         }
         catch(CultureNotFoundException) { return locale == "eo" ? "Esperanto" : locale; }

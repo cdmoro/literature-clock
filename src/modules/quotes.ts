@@ -1,5 +1,5 @@
 import { resolveBackground } from '../utils/background';
-import { setTextLocale } from '../utils/text-direction';
+import { setTextLocale, textDirection } from '../utils/text-direction';
 import { refreshDefaultFontLabel } from './font';
 import { applyLocaleThemeFont } from './locale-fonts';
 import { updateQuoteDescription } from './hide-book-title';
@@ -184,7 +184,7 @@ export async function updateQuote({
         }
 
           const cite = document.createElement('cite');
-          cite.dir = locale.startsWith('ar') ? 'rtl' : 'ltr';
+          cite.dir = textDirection(locale);
           for (const [id, text] of [
             ['hyphen', '— '],
             ['title', quote.title],

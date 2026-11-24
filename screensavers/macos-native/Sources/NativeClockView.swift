@@ -218,6 +218,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         (try? JSONDecoder().decode([String: [String: String]].self, from: Data(contentsOf: resources.appendingPathComponent("settings.json")))) ?? [:]
     }()
     func text(_ key: String) -> String { labels[systemLocale]?[key] ?? labels["en-GB"]?[key] ?? key }
+    func languageOptionName(_ locale: String) -> String { labels["en-GB"]?[locale] ?? locale }
     func menuValue(_ key: String) -> String? { (controls[key] as? NSPopUpButton)?.selectedItem?.representedObject as? String }
     override init?(frame: NSRect, isPreview: Bool) { super.init(frame: frame, isPreview: isPreview); setup() }
     required init?(coder: NSCoder) { super.init(coder: coder); setup() }
@@ -647,7 +648,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             func append(_ item: NativeQuote, locale: String, size: CGFloat, gap: CGFloat) {
                 let fuzzy = fuzzyClock
                 let style = paragraph.mutableCopy() as! NSMutableParagraphStyle
-                style.alignment = fuzzy ? .center : (locale.hasPrefix("ar") ? .right : .left)
+                style.alignment = fuzzy ? .center : (ClockLocale.isRightToLeft(locale) ? .right : .left)
                 style.baseWritingDirection = ClockLocale.isRightToLeft(locale) ? .rightToLeft : .natural
                 style.paragraphSpacingBefore = gap
                 let font = quoteFont(size, locale: locale)
@@ -916,9 +917,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
             column.alignment = .leading
             column.spacing = 8
             for (index, locale) in languages.enumerated() where index % 3 == columnIndex {
-                let languageCode = String(locale.split(separator: "-").first ?? Substring(locale))
-                let name = Locale(identifier: systemLocale).localizedString(forLanguageCode: languageCode) ?? locale
-                let title = locale.contains("-") ? "\(name) (\(locale))" : name
+                let title = languageOptionName(locale)
                 let check = NSButton(checkboxWithTitle: title, target: self, action: #selector(fontLanguageChanged))
                 check.state = selected.contains(locale) ? .on : .off
                 controls["quote-locale:" + locale] = check
@@ -939,7 +938,7 @@ final class NativeClockView: ScreenSaverView, NSTextFieldDelegate {
         bilingual.widthAnchor.constraint(equalToConstant: 180).isActive = true
         let translationMenu = NSPopUpButton()
         for locale in [""] + localeNames {
-            let name = locale.isEmpty ? text("bilingual_select_language") : Locale(identifier: systemLocale).localizedString(forIdentifier: locale) ?? locale
+            let name = locale.isEmpty ? text("bilingual_select_language") : languageOptionName(locale)
             let item = NSMenuItem(title: name, action: nil, keyEquivalent: "")
             item.representedObject = locale; translationMenu.menu?.addItem(item)
             if locale == (preferences.string(forKey: "translation-locale") ?? "") { translationMenu.select(item) }
