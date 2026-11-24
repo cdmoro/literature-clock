@@ -7,7 +7,6 @@ from quote_sources import source_catalogue
 from attribution_localizations import attribution_locales, ATTRIBUTION_PARENTS
 from validate_translation import ROOT
 
-
 def reject_duplicate_keys(pairs):
     result = {}
     for key, value in pairs:

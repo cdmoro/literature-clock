@@ -254,5 +254,21 @@
     "activationNeeded": "A leitura automática está salva. Ative-a para esta visita.",
     "blocked": "O navegador bloqueou a leitura. Pressione Ativar leitura.",
     "noStart": "A leitura não começou. Verifique o volume e as vozes disponíveis e tente novamente."
+  },
+  "he-IL": {
+    "read": "הקראת הציטוט",
+    "stop": "תפסיק לקרוא",
+    "auto": "קרא את הציטוט בתחילת כל דקה",
+    "help": "אפשר אפשרות זו או לחץ על קרא לאחר פתיחת הדף כדי להפעיל קריאה אוטומטית. הקריאה נעצרת כאשר הכרטיסייה מוסתרת.",
+    "unsupported": "קריאה בקול אינה זמינה בדפדפן זה.",
+    "error": "לא מצליח לקרוא את הציטוט הזה. נסה ללחוץ שוב על קרא.",
+    "attribution": "קרא גם את שם הספר והמחבר",
+    "contentSection": "תוכן",
+    "clockSection": "שעון ותצוגה",
+    "speechSection": "קרא בקול רם",
+    "activate": "הפעל קריאה",
+    "activationNeeded": "קריאה אוטומטית נשמרת. הפעל אותו עבור ביקור זה.",
+    "blocked": "הדפדפן חסם את הקריאה. לחץ על הפעל קריאה כדי לנסות שוב.",
+    "noStart": "הקריאה לא התחילה. בדוק את עוצמת הקול ואת הקולות הזמינים ולאחר מכן נסה שוב."
   }
 }

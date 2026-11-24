@@ -13,6 +13,7 @@ const BASE_FONT_THEMES = new Set(['base', 'pink', 'green', 'orange', 'purple', '
 export function getLocaleThemeFont(theme: string, locale: string) {
   const name = theme.split('-')[0];
   const language = locale.split('-')[0].toLowerCase();
+  if (language === 'he') return LOCALE_THEME_FONTS.base.he;
   const alternative =
     LOCALE_THEME_FONTS[BASE_FONT_THEMES.has(name) ? 'base' : name]?.[language] ||
     (language === 'ja' || language === 'zh' ? LOCALE_THEME_FONTS.base[language] : undefined);

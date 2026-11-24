@@ -283,10 +283,11 @@ public sealed class ClockSurface : Canvas
         void Append(Quote item,string language,double fontSize)
         {
             var fuzzy = p.FuzzyClock;
-            var flow=language.StartsWith("ar")?FlowDirection.RightToLeft:FlowDirection.LeftToRight;
+            var languageCode=language.Replace('_','-').Split('-')[0];
+            var flow=new[]{"ar","he","fa","ur"}.Contains(languageCode,StringComparer.OrdinalIgnoreCase)?FlowDirection.RightToLeft:FlowDirection.LeftToRight;
             var outlineActive=outlineForPhoto || outlineForPattern;
             var outlineRadius=12.0;
-            var text=new TextBlock { TextWrapping=TextWrapping.Wrap, TextAlignment=fuzzy?TextAlignment.Center:TextAlignment.Left, FontFamily=Appearance.Font(p.Theme,language,p.Font), FontSize=fontSize, Foreground=Appearance.Brush(foreground,p.Theme=="terminal"?.8:1), FlowDirection=flow, LineHeight=fontSize*Appearance.Font(p.Theme,language,p.Font).LineSpacing*(p.Theme=="book"?1.35:p.Theme=="festive"?1.25:p.Theme=="terminal"?1.15:1), LineStackingStrategy=LineStackingStrategy.BlockLineHeight };
+            var text=new TextBlock { TextWrapping=TextWrapping.Wrap, TextAlignment=fuzzy?TextAlignment.Center:flow==FlowDirection.RightToLeft?TextAlignment.Right:TextAlignment.Left, FontFamily=Appearance.Font(p.Theme,language,p.Font), FontSize=fontSize, Foreground=Appearance.Brush(foreground,p.Theme=="terminal"?.8:1), FlowDirection=flow, LineHeight=fontSize*Appearance.Font(p.Theme,language,p.Font).LineSpacing*(p.Theme=="book"?1.35:p.Theme=="festive"?1.25:p.Theme=="terminal"?1.15:1), LineStackingStrategy=LineStackingStrategy.BlockLineHeight };
             if(outlineActive) text.Effect=new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=outlineRadius,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance };
             var phrase = string.IsNullOrEmpty(item.time) ? quoteMinute : item.time;
             var parts = (Before: fuzzy ? "" : item.first, Time: phrase, After: fuzzy ? "" : item.last);
@@ -312,7 +313,7 @@ public sealed class ClockSurface : Canvas
                 var title=p.ShowOriginalAttributions?item.title_original??item.title:item.title;
                 var author=p.ShowOriginalAttributions?item.author_original??item.author:item.author;
                 var attribution=!fuzzy && p.QuoteAttribution=="below"?p.HideTitle?author:string.Join(", ",new[]{title,author}.WhereNonEmpty()):"";
-                if(attribution.Length>0) passage.Children.Add(new TextBlock { Text=(p.Theme=="terminal"?"> ":"— ")+attribution,FontFamily=text.FontFamily,FontSize=fontSize*.55,TextWrapping=TextWrapping.Wrap,FlowDirection=flow,Foreground=Appearance.Brush(foreground,.8),Margin=new Thickness(0,p.Theme=="book"?(ActualWidth<=750?16:24):fontSize*.35,0,0),Effect=outlineActive?new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=12,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance }:null });
+                if(attribution.Length>0) passage.Children.Add(new TextBlock { Text=(p.Theme=="terminal"?"> ":"— ")+attribution,FontFamily=text.FontFamily,FontSize=fontSize*.55,TextWrapping=TextWrapping.Wrap,TextAlignment=flow==FlowDirection.RightToLeft?TextAlignment.Right:TextAlignment.Left,FlowDirection=flow,Foreground=Appearance.Brush(foreground,.8),Margin=new Thickness(0,p.Theme=="book"?(ActualWidth<=750?16:24):fontSize*.35,0,0),Effect=outlineActive?new DropShadowEffect { Color=Appearance.Color(dark?"#1c1c1c":"#dfdfdf"),BlurRadius=12,ShadowDepth=0,Opacity=1,RenderingBias=RenderingBias.Performance }:null });
             }
         }
         Append(q,quoteLocale,size);
@@ -342,9 +343,9 @@ public sealed class ClockSurface : Canvas
     {
         try
         {
-            var displayName = CultureInfo.GetCultureInfo(locale).DisplayName;
-            var regionStart = displayName.IndexOf(" (", StringComparison.Ordinal);
-            var languageName = regionStart > 0 ? displayName[..regionStart] : displayName;
+            var culture = CultureInfo.GetCultureInfo(locale);
+            var languageName = culture.Parent.NativeName;
+            if (languageName.Length == 0) languageName = culture.NativeName;
             return locale.Contains('-') ? $"{languageName} ({locale})" : languageName;
         }
         catch(CultureNotFoundException) { return locale == "eo" ? "Esperanto" : locale; }

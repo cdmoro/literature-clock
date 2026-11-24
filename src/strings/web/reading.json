@@ -238,5 +238,20 @@
     "favoritesFull": "Você atingiu 500 favoritos. Remova um para salvar outro.",
     "storageUnavailable": "Não foi possível salvar as alterações. Verifique as permissões de armazenamento do navegador.",
     "historyCleared": "Histórico limpo"
+  },
+  "he-IL": {
+    "copyLink": "העתקת קישור לציטוט",
+    "linkCopied": "הקישור הועתק",
+    "linkFailed": "לא ניתן לשתף את הקישור. אנא נסה שוב.",
+    "quoteUnavailable": "ציטוט זה אינו זמין בשפה זו או עם מסנן התוכן שלך. מציג ציטוט נוסף.",
+    "pause": "השהה את הקריאה",
+    "resume": "חזרה לשעון חי",
+    "pausedAt": "הושהה ב",
+    "favoriteSaved": "הציטוט נשמר",
+    "favoriteRemoved": "הציטוט הוסר מהמועדפים",
+    "filteredLibrary": "ציטוטים שמורים מוסתרים על ידי מסנן התוכן שלך.",
+    "favoritesFull": "המועדפים שלך מלאים (500). הסר אחד כדי לשמור אחר.",
+    "storageUnavailable": "לא ניתן לשמור שינויים במכשיר זה. בדוק את הרשאות האחסון בדפדפן.",
+    "historyCleared": "ההיסטוריה נוקה"
   }
 }

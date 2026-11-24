@@ -97,7 +97,8 @@
     "noHistory": "No recent quotes. The last 100 quotes you view will appear here.",
     "previousQuote": "Previous quote from this minute",
     "pl-PL": "Polski (pl-PL)",
-    "pt-BR": "Português (pt-BR)"
+    "pt-BR": "Português (pt-BR)",
+    "he-IL": "עברית (he-IL)"
   },
   "en-US": {
     "about": "About",
@@ -197,7 +198,8 @@
     "noHistory": "No recent quotes. The last 100 quotes you view will appear here.",
     "previousQuote": "Previous quote from this minute",
     "pl-PL": "Polski (pl-PL)",
-    "pt-BR": "Português (pt-BR)"
+    "pt-BR": "Português (pt-BR)",
+    "he-IL": "עברית (he-IL)"
   },
   "es-ES": {
     "about": "Acerca de",
@@ -297,7 +299,8 @@
     "noHistory": "No hay citas recientes. Acá aparecerán las últimas 100 citas que veas.",
     "previousQuote": "Cita anterior de este minuto",
     "pl-PL": "Polski (pl-PL)",
-    "pt-BR": "Português (pt-BR)"
+    "pt-BR": "Português (pt-BR)",
+    "he-IL": "עברית (he-IL)"
   },
   "pt-PT": {
     "about": "Sobre",
@@ -397,7 +400,8 @@
     "noHistory": "Sem citações recentes. As últimas 100 citações vistas aparecerão aqui.",
     "previousQuote": "Citação anterior deste minuto",
     "pl-PL": "Polski (pl-PL)",
-    "pt-BR": "Português (pt-BR)"
+    "pt-BR": "Português (pt-BR)",
+    "he-IL": "עברית (he-IL)"
   },
   "fr-FR": {
     "about": "À propos",
@@ -497,7 +501,8 @@
     "noHistory": "Aucune citation récente. Les 100 dernières citations vues apparaîtront ici.",
     "previousQuote": "Citation précédente de cette minute",
     "pl-PL": "Polski (pl-PL)",
-    "pt-BR": "Português (pt-BR)"
+    "pt-BR": "Português (pt-BR)",
+    "he-IL": "עברית (he-IL)"
   },
   "it-IT": {
     "about": "Informazioni",
@@ -597,7 +602,8 @@
     "noHistory": "Nessuna citazione recente. Qui appariranno le ultime 100 citazioni visualizzate.",
     "previousQuote": "Citazione precedente di questo minuto",
     "pl-PL": "Polski (pl-PL)",
-    "pt-BR": "Português (pt-BR)"
+    "pt-BR": "Português (pt-BR)",
+    "he-IL": "עברית (he-IL)"
   },
   "de-DE": {
     "about": "Über",
@@ -697,7 +703,8 @@
     "noHistory": "Noch keine Zitate. Hier erscheinen die letzten 100 angesehenen Zitate.",
     "previousQuote": "Vorheriges Zitat dieser Minute",
     "pl-PL": "Polski (pl-PL)",
-    "pt-BR": "Português (pt-BR)"
+    "pt-BR": "Português (pt-BR)",
+    "he-IL": "עברית (he-IL)"
   },
   "el-GR": {
     "about": "Σχετικά",
@@ -797,7 +804,8 @@
     "noHistory": "Δεν υπάρχουν πρόσφατα παραθέματα. Εδώ θα εμφανίζονται τα τελευταία 100 παραθέματα που βλέπετε.",
     "previousQuote": "Προηγούμενο παράθεμα αυτού του λεπτού",
     "pl-PL": "Polski (pl-PL)",
-    "pt-BR": "Português (pt-BR)"
+    "pt-BR": "Português (pt-BR)",
+    "he-IL": "עברית (he-IL)"
   },
   "zh-CN": {
     "about": "关于",
@@ -897,7 +905,8 @@
     "noHistory": "暂无最近阅读记录。最近查看的100条引文将显示在这里。",
     "previousQuote": "此分钟的上一条引文",
     "pl-PL": "Polski (pl-PL)",
-    "pt-BR": "Português (pt-BR)"
+    "pt-BR": "Português (pt-BR)",
+    "he-IL": "עברית (he-IL)"
   },
   "ru-RU": {
     "about": "О проекте",
@@ -997,7 +1006,8 @@
     "noHistory": "Недавних цитат пока нет. Здесь появятся последние 100 просмотренных цитат.",
     "previousQuote": "Предыдущая цитата этой минуты",
     "pl-PL": "Polski (pl-PL)",
-    "pt-BR": "Português (pt-BR)"
+    "pt-BR": "Português (pt-BR)",
+    "he-IL": "עברית (he-IL)"
   },
   "eo": {
     "about": "Pri la projekto",
@@ -1097,7 +1107,8 @@
     "noHistory": "Neniu lastatempa citaĵo. La lastaj 100 citaĵoj, kiujn vi rigardas, aperos ĉi tie.",
     "previousQuote": "Antaŭa citaĵo de ĉi tiu minuto",
     "pl-PL": "Polski (pl-PL)",
-    "pt-BR": "Português (pt-BR)"
+    "pt-BR": "Português (pt-BR)",
+    "he-IL": "עברית (he-IL)"
   },
   "ar-AE": {
     "about": "حول",
@@ -1197,7 +1208,8 @@
     "noHistory": "لا توجد اقتباسات حديثة. ستظهر هنا آخر 100 اقتباس شاهدته.",
     "previousQuote": "الاقتباس السابق لهذه الدقيقة",
     "pl-PL": "Polski (pl-PL)",
-    "pt-BR": "Português (pt-BR)"
+    "pt-BR": "Português (pt-BR)",
+    "he-IL": "עברית (he-IL)"
   },
   "ja-JP": {
     "about": "このサイトについて",
@@ -1297,7 +1309,8 @@
     "noHistory": "最近見た引用文はありません。閲覧した最新100件がここに表示されます。",
     "previousQuote": "同じ分の前の引用文",
     "pl-PL": "Polski (pl-PL)",
-    "pt-BR": "Português (pt-BR)"
+    "pt-BR": "Português (pt-BR)",
+    "he-IL": "עברית (he-IL)"
   },
   "ko-KR": {
     "about": "앱 정보",
@@ -1397,7 +1410,8 @@
     "noHistory": "기록이 없습니다. 최근에 본 인용문이 최대 100개까지 여기에 표시됩니다.",
     "previousQuote": "이 분의 이전 인용문",
     "pl-PL": "Polski (pl-PL)",
-    "pt-BR": "Português (pt-BR)"
+    "pt-BR": "Português (pt-BR)",
+    "he-IL": "עברית (he-IL)"
   },
   "pl-PL": {
     "about": "O aplikacji",
@@ -1497,7 +1511,8 @@
     "noHistory": "Brak ostatnich cytatów. Pojawi się tu 100 ostatnio wyświetlonych cytatów.",
     "previousQuote": "Poprzedni cytat z tej minuty",
     "pl-PL": "Polski (pl-PL)",
-    "pt-BR": "Português (pt-BR)"
+    "pt-BR": "Português (pt-BR)",
+    "he-IL": "עברית (he-IL)"
   },
   "pt-BR": {
     "about": "Sobre",
@@ -1597,6 +1612,108 @@
     "noHistory": "Sem citações recentes. As últimas 100 citações vistas aparecerão aqui.",
     "previousQuote": "Citação anterior deste minuto",
     "pl-PL": "Polski (pl-PL)",
-    "pt-BR": "Português (pt-BR)"
+    "pt-BR": "Português (pt-BR)",
+    "he-IL": "עברית (he-IL)"
+  },
+  "he-IL": {
+    "about": "אודות",
+    "about_close": "סגירה",
+    "add_quote": "הוסף ציטוט",
+    "anaglyph": "Anaglyph",
+    "author": "מחבר",
+    "base": "בסיס",
+    "blue": "כחול",
+    "bohemian": "Bohemian",
+    "book": "עמוד הספר",
+    "color": "צבעים אקראיים",
+    "colors": "צבעים",
+    "copy_mode": "העתק",
+    "copy_mode_copied": "הציטוט הועתק!",
+    "copy_title": "העתק ללוח",
+    "dark": "כהה",
+    "de-DE": "Deutsch (de-DE)",
+    "default_font": "ברירת מחדל",
+    "document_title": "Literature Clock",
+    "download": "הורד",
+    "horizon": "Horizon",
+    "elegant": "אלגנטי",
+    "en-GB": "English (en-GB)",
+    "en-US": "English (en-US)",
+    "es-ES": "Español (es-ES)",
+    "exit_zen_title": "צא ממצב זן",
+    "transition": "מעבר",
+    "transition_none": "אין מעבר",
+    "transition_fade": "לדעוך",
+    "transition_slide": "החלקה עדינה",
+    "transition_blur": "טשטוש רך",
+    "transition_zoom": "זום עדין",
+    "fade_mode": "לדעוך",
+    "festive": "Festive",
+    "font": "גופן",
+    "fr-FR": "Français (fr-FR)",
+    "frame": "Frame",
+    "fullscreen_mode": "מצב מסך מלא",
+    "gray": "אפור",
+    "green": "ירוק",
+    "handwriting": "כתב יד",
+    "it-IT": "Italiano (it-IT)",
+    "kindle": "Kindle",
+    "language": "שפה",
+    "light": "בהיר",
+    "made_by": "נעשה על ידי",
+    "orange": "כתום",
+    "photo": "Photo",
+    "pink": "ורוד",
+    "poster": "Poster",
+    "progressbar_mode": "הצג את סרגל ההתקדמות",
+    "pt-PT": "Português (pt-PT)",
+    "purple": "סגול",
+    "random": "שפה אקראית",
+    "report_error": "דווח על שגיאה",
+    "retro": "Retro",
+    "screensaver_mode": "שומר מסך",
+    "share": "שתף",
+    "subtle": "עדין",
+    "system": "מערכת",
+    "terminal": "Terminal",
+    "theme": "נושא",
+    "themes": "ערכות נושא",
+    "time_mode": "הצג זמן",
+    "title": "כותרת",
+    "whatsapp": "וואטסאפ",
+    "work_mode": "עבודה",
+    "work_mode_title": "הצג רק בטוח עבור הצעות עבודה",
+    "zen_mode": "זן",
+    "zen_mode_title": "הסר את כל מה שמסיח את דעתך",
+    "zen_mode_hint": "מצב זן · הקש על Esc או הקש על האבנים כדי לצאת",
+    "el-GR": "Ελληνικά (el-GR)",
+    "zh-CN": "中文（简体） (zh-CN)",
+    "ru-RU": "Русский (ru-RU)",
+    "eo": "Esperanto (eo)",
+    "ar-AE": "العربية (ar-AE)",
+    "settings_presets_title": "הגדרות קבועות מראש",
+    "settings_presets_help": "החל מראה עונתי. אתה יכול להתאים כל הגדרה לאחר מכן.",
+    "settings_preset_christmas": "חג המולד",
+    "settings_preset_halloween": "ליל כל הקדושים",
+    "settings_pattern_valentine": "יום האהבה",
+    "settings_preset_valentine": "יום האהבה",
+    "pine": "ירוק אורן",
+    "ja-JP": "日本語 (ja-JP)",
+    "ko-KR": "한국어 (ko-KR)",
+    "nextQuote": "הציטוט הבא מהדקה הזו",
+    "myQuotes": "הציטוטים שלי",
+    "favorites": "מועדפים",
+    "saveFavorite": "שמור את המועדף",
+    "removeFavorite": "הסר מועדף",
+    "noFavorites": "עדיין אין מועדפים. שמרו ציטוט באמצעות כפתור הלב.",
+    "close": "סגור",
+    "openQuote": "פתיחת ציטוט",
+    "history": "לאחרונה",
+    "clearHistory": "נקה היסטוריה",
+    "noHistory": "אין ציטוטים אחרונים. 100 הציטוטים האחרונים שתראה יופיעו כאן.",
+    "previousQuote": "ציטוט קודם מדקה זו",
+    "pl-PL": "Polski (pl-PL)",
+    "pt-BR": "Português (pt-BR)",
+    "he-IL": "עברית (he-IL)"
   }
 }

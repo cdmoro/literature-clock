@@ -54,7 +54,13 @@
         "sources": []
       },
       "pt-PT": "Jane Austen",
-      "ko-KR": "제인 오스틴"
+      "ko-KR": "제인 오스틴",
+      "he-IL": {
+        "value": "ג'יין אוסטן",
+        "sources": [
+          "https://www.nli.org.il/he/books/NNL_ALEPH990017726210205171/NLI"
+        ]
+      }
     },
     "Mark Haddon": {
       "el-GR": {
@@ -101,7 +107,13 @@
       },
       "pt-PT": "Mark Haddon",
       "ru-RU": "Марк Хэддон",
-      "ko-KR": "마크 해던"
+      "ko-KR": "마크 해던",
+      "he-IL": {
+        "value": "מארק האדון",
+        "sources": [
+          "https://www.booknet.co.il/%D7%9E%D7%97%D7%91%D7%A8%D7%99%D7%9D/%D7%94%D7%90%D7%93%D7%95%D7%9F-%D7%9E%D7%90%D7%A8%D7%A7"
+        ]
+      }
     },
     "Jeffrey Archer": {
       "ja-JP": {
@@ -149,7 +161,13 @@
         "sources": []
       },
       "pt-PT": "Jeffrey Archer",
-      "ko-KR": "제프리 아처"
+      "ko-KR": "제프리 아처",
+      "he-IL": {
+        "value": "ג'פרי ארצ'ר",
+        "sources": [
+          "https://www.e-vrit.co.il/Author/3330/%D7%92_%D7%A4%D7%A8%D7%99_%D7%90%D7%A8%D7%A6_%D7%A8"
+        ]
+      }
     },
     "Stephen King": {
       "ja-JP": {
@@ -191,7 +209,13 @@
       },
       "pt-PT": "Stephen King",
       "ru-RU": "Стивен Кинг",
-      "ko-KR": "스티븐 킹"
+      "ko-KR": "스티븐 킹",
+      "he-IL": {
+        "value": "סטיבן קינג",
+        "sources": [
+          "https://www.modan.co.il/%D7%93%D7%95%D7%A7%D7%98%D7%95%D7%A8-%D7%A1%D7%9C%D7%99%D7%A4"
+        ]
+      }
     },
     "P.D. James": {
       "ja-JP": {
@@ -228,7 +252,13 @@
       "pt-PT": "P.D. James",
       "ru-RU": "П.Д. Джеймс",
       "zh-CN": "P.D.詹姆斯",
-      "ko-KR": "P. D. 제임스"
+      "ko-KR": "P. D. 제임스",
+      "he-IL": {
+        "value": "פ\"ד ג'יימס",
+        "sources": [
+          "https://www.am-oved.co.il/%D7%A8%D7%A6%D7%97_%D7%91%D7%91%D7%99%D7%AA_%D7%A0%D7%99%D7%99%D7%98%D7%99%D7%A0%D7%92%D7%99%D7%99%D7%9C?bsp=124572"
+        ]
+      }
     },
     "Haruki Murakami": {
       "ja-JP": {
@@ -270,7 +300,13 @@
       },
       "pt-PT": "Haruki Murakami",
       "ru-RU": "Харуки Мураками",
-      "ko-KR": "무라카미 하루키"
+      "ko-KR": "무라카미 하루키",
+      "he-IL": {
+        "value": "הרוקי מורקמי",
+        "sources": [
+          "https://www.simania.co.il/authorDetails.php?itemId=1002035"
+        ]
+      }
     },
     "Ken Kesey": {
       "ja-JP": {
@@ -318,7 +354,13 @@
         "sources": []
       },
       "pt-PT": "Ken Kesey",
-      "ko-KR": "켄 키지"
+      "ko-KR": "켄 키지",
+      "he-IL": {
+        "value": "קן קיזי",
+        "sources": [
+          "https://www.nli.org.il/he/books/NNL_ALEPH990026824070205171/NLI"
+        ]
+      }
     },
     "Thomas Hoover": {
       "el-GR": {
@@ -772,7 +814,13 @@
       "pt-PT": "Agatha Christie",
       "ru-RU": "Агата Кристи",
       "zh-CN": "阿加莎克里斯蒂",
-      "ko-KR": "애거사 크리스티"
+      "ko-KR": "애거사 크리스티",
+      "he-IL": {
+        "value": "אגתה כריסטי",
+        "sources": [
+          "https://www.nli.org.il/he/books/NNL_ALEPH990048764830205171/NLI"
+        ]
+      }
     },
     "Akhil Sharma": {
       "ar-AE": {
@@ -3119,7 +3167,13 @@
       },
       "pt-PT": "Audrey Niffenegger",
       "ru-RU": "Одри Ниффенеггер",
-      "zh-CN": "奥黛丽·尼芬格"
+      "zh-CN": "奥黛丽·尼芬格",
+      "he-IL": {
+        "value": "אודרי ניפנגר",
+        "sources": [
+          "https://e-vrit.co.il/author/6003/%D7%90%D7%95%D7%93%D7%A8%D7%99-%D7%A0%D7%99%D7%A4%D7%A0%D7%92%D7%A8?orderby=2"
+        ]
+      }
     },
     "August Strindberg": {
       "ar-AE": {
@@ -4010,7 +4064,13 @@
       },
       "pt-PT": "Bram Stoker",
       "ru-RU": "Брэм Стокер",
-      "zh-CN": "布拉姆·斯托克"
+      "zh-CN": "布拉姆·斯托克",
+      "he-IL": {
+        "value": "בראם סטוקר",
+        "sources": [
+          "https://www.e-vrit.co.il/author/14851/%D7%91%D7%A8%D7%90%D7%9D_%D7%A1%D7%98%D7%95%D7%A7%D7%A8?orderby=2"
+        ]
+      }
     },
     "Brandon Taylor": {
       "ar-AE": {
@@ -4487,7 +4547,13 @@
       "pt-PT": "C.S. Lewis",
       "ru-RU": "К.С. Льюис",
       "zh-CN": "C.S.刘易斯",
-      "ko-KR": "C. S. 루이스"
+      "ko-KR": "C. S. 루이스",
+      "he-IL": {
+        "value": "קלייב סטייפלס לואיס",
+        "sources": [
+          "https://www.e-vrit.co.il/Author/6115/%D7%A7%D7%9C%D7%99%D7%99%D7%91_%D7%A1%D7%98%D7%99%D7%99%D7%A4%D7%9C%D7%A1_%D7%9C%D7%95%D7%90%D7%99%D7%A1"
+        ]
+      }
     },
     "Captain William Bligh": {
       "ar-AE": {
@@ -5273,7 +5339,13 @@
       "pt-PT": "Charles Dickens",
       "ru-RU": "Чарльз Диккенс",
       "zh-CN": "查尔斯·狄更斯",
-      "ko-KR": "찰스 디킨스"
+      "ko-KR": "찰스 디킨스",
+      "he-IL": {
+        "value": "צ'רלס דיקנס",
+        "sources": [
+          "https://www.nli.org.il/he/books/NNL_ALEPH990037946840205171/NLI"
+        ]
+      }
     },
     "Charles James Lever": {
       "ar-AE": {
@@ -5545,7 +5617,13 @@
       },
       "pt-PT": "Charlotte Brontë",
       "ru-RU": "Шарлотта Бронте",
-      "zh-CN": ">夏洛特·勃朗特"
+      "zh-CN": ">夏洛特·勃朗特",
+      "he-IL": {
+        "value": "שרלוט ברונטה",
+        "sources": [
+          "https://www.e-vrit.co.il/product/493/%D7%92_%D7%99%D7%99%D7%9F_%D7%90%D7%99%D7%99%D7%A8"
+        ]
+      }
     },
     "Chris Cole": {
       "ar-AE": {
@@ -7390,7 +7468,13 @@
       "pt-PT": "David Foster Wallace",
       "ru-RU": "Дэвид Фостер Уоллес",
       "zh-CN": "大卫·福斯特·华莱士",
-      "ko-KR": "데이비드 포스터 월리스"
+      "ko-KR": "데이비드 포스터 월리스",
+      "he-IL": {
+        "value": "דיוויד פוסטר וואלאס",
+        "sources": [
+          "https://www.nli.org.il/he/a-topic/987007313735505171"
+        ]
+      }
     },
     "David Graham Phillips": {
       "ar-AE": {
@@ -7595,7 +7679,13 @@
       "pt-PT": "David Mitchell",
       "ru-RU": "Дэвид Митчелл",
       "zh-CN": "大卫·米切尔",
-      "ko-KR": "데이비드 미첼"
+      "ko-KR": "데이비드 미첼",
+      "he-IL": {
+        "value": "דיוויד מיטשל",
+        "sources": [
+          "https://next.simania.co.il/authorDetails.php?itemId=2574"
+        ]
+      }
     },
     "David Nobbs": {
       "ar-AE": {
@@ -7731,7 +7821,13 @@
       },
       "pt-PT": "Dean Koontz",
       "ru-RU": "Дин Кунц",
-      "zh-CN": "迪恩·孔茨"
+      "zh-CN": "迪恩·孔茨",
+      "he-IL": {
+        "value": "דין קונץ",
+        "sources": [
+          "https://next.simania.co.il/bookdetails.php?item_id=2348"
+        ]
+      }
     },
     "Deborah Harkness": {
       "ar-AE": {
@@ -8345,7 +8441,13 @@
       "pt-PT": "Douglas Adams",
       "ru-RU": "Дуглас Адамс",
       "zh-CN": "道格拉斯·亚当斯",
-      "ko-KR": "더글러스 애덤스"
+      "ko-KR": "더글러스 애덤스",
+      "he-IL": {
+        "value": "דאגלס אדמס",
+        "sources": [
+          "https://www.modan.co.il/%D7%93%D7%90%D7%92%D7%9C%D7%A1-%D7%90%D7%93%D7%9E%D7%A1"
+        ]
+      }
     },
     "Douglas Coupland": {
       "ar-AE": {
@@ -9730,7 +9832,13 @@
       "pt-PT": "Emma Donoghue",
       "ja-JP": "エマ・ドナヒュー",
       "ru-RU": "Эмма Донохью",
-      "zh-CN": "艾玛·多诺霍"
+      "zh-CN": "艾玛·多诺霍",
+      "he-IL": {
+        "value": "אמה דונהיו",
+        "sources": [
+          "https://ybook.co.il/products/3624260"
+        ]
+      }
     },
     "Emma Salisbury": {
       "ar-AE": {
@@ -10169,7 +10277,13 @@
       "ja-JP": "F.スコット・フィッツジェラルド",
       "ru-RU": "Ф. Скотт Фицджеральд",
       "zh-CN": "F.斯科特·菲茨杰拉德",
-      "ko-KR": "F. 스콧 피츠제럴드"
+      "ko-KR": "F. 스콧 피츠제럴드",
+      "he-IL": {
+        "value": "פ' סקוט פיצג'רלד",
+        "sources": [
+          "https://ybook.co.il/collections/%D7%90%D7%97%D7%95%D7%96%D7%AA-%D7%91%D7%99%D7%AA-%D7%A1%D7%A4%D7%A8%D7%99%D7%9D/products/6740152"
+        ]
+      }
     },
     "Fay Weldon": {
       "ar-AE": {
@@ -10678,6 +10792,12 @@
         "sources": [
           "https://www.wydawnictwosbm.pl/ksiazka/zbrodnia-i-kara/"
         ]
+      },
+      "he-IL": {
+        "value": "פיודור דוסטויבסקי",
+        "sources": [
+          "https://www.nli.org.il/he/a-topic/987007260514705171"
+        ]
       }
     },
     "Félicien de Saulcy": {
@@ -10865,7 +10985,13 @@
       "ja-JP": "ガブリエル・ガルシア・マルケス",
       "ru-RU": "Габриэль Гарсиа Маркес",
       "zh-CN": "加布里埃尔·加西亚·马尔克斯",
-      "ko-KR": "가브리엘 가르시아 마르케스"
+      "ko-KR": "가브리엘 가르시아 마르케스",
+      "he-IL": {
+        "value": "גבריאל גארסיה מארקס",
+        "sources": [
+          "https://www.nli.org.il/he/books/NNL_ALEPH990026982180205171/NLI"
+        ]
+      }
     },
     "Gail Carson Levine": {
       "ar-AE": {
@@ -11424,7 +11550,13 @@
       "ja-JP": "ジョージ・オーウェル",
       "ru-RU": "Джордж Оруэлл",
       "zh-CN": "乔治·奥威尔",
-      "ko-KR": "조지 오웰"
+      "ko-KR": "조지 오웰",
+      "he-IL": {
+        "value": "ג'ורג' אורוול",
+        "sources": [
+          "https://www.nli.org.il/he/a-topic/987007266258505171"
+        ]
+      }
     },
     "George and Weedon Grossmith": {
       "ar-AE": {
@@ -12075,7 +12207,13 @@
       "pt-PT": "Graham Greene",
       "ja-JP": "グラハム・グリーン",
       "ru-RU": "Грэм Грин",
-      "zh-CN": "格雷厄姆·格林"
+      "zh-CN": "格雷厄姆·格林",
+      "he-IL": {
+        "value": "גרהם גרין",
+        "sources": [
+          "https://www.nli.org.il/he/a-topic/987007262184305171"
+        ]
+      }
     },
     "Graham Hurley": {
       "ar-AE": {
@@ -12914,7 +13052,13 @@
       "ja-JP": "ヘレン・フィールディング",
       "ru-RU": "Хелен Филдинг",
       "zh-CN": "海伦·菲尔丁",
-      "ko-KR": "헬렌 필딩"
+      "ko-KR": "헬렌 필딩",
+      "he-IL": {
+        "value": "הלן פילדינג",
+        "sources": [
+          "https://www.booknet.co.il/%D7%9E%D7%97%D7%91%D7%A8%D7%99%D7%9D/%D7%A4%D7%99%D7%9C%D7%93%D7%99%D7%A0%D7%92-%D7%94%D7%9C%D7%9F"
+        ]
+      }
     },
     "Henning Mankell": {
       "ar-AE": {
@@ -13101,7 +13245,13 @@
       "ja-JP": "ヘンリーミラー",
       "ru-RU": "Генри Миллер",
       "zh-CN": "亨利·米勒",
-      "ko-KR": "헨리 밀러"
+      "ko-KR": "헨리 밀러",
+      "he-IL": {
+        "value": "הנרי מילר",
+        "sources": [
+          "https://www.nli.org.il/he/a-topic/987007265303705171"
+        ]
+      }
     },
     "Herbert Asbury": {
       "ar-AE": {
@@ -14094,7 +14244,13 @@
       "ja-JP": "JKローリング",
       "ru-RU": "Дж.К. Роулинг",
       "zh-CN": "J.K.罗琳",
-      "ko-KR": "J. K. 롤링"
+      "ko-KR": "J. K. 롤링",
+      "he-IL": {
+        "value": "ג'יי קיי רולינג",
+        "sources": [
+          "https://blog.nli.org.il/tag/%D7%94%D7%90%D7%A8%D7%99-%D7%A4%D7%95%D7%98%D7%A8/"
+        ]
+      }
     },
     "J.L. Carr": {
       "ar-AE": {
@@ -14778,7 +14934,13 @@
       "ja-JP": "ジェームズ・ジョイス",
       "ru-RU": "Джеймс Джойс",
       "zh-CN": "詹姆斯乔伊斯",
-      "ko-KR": "제임스 조이스"
+      "ko-KR": "제임스 조이스",
+      "he-IL": {
+        "value": "ג'יימס ג'ויס",
+        "sources": [
+          "https://www.nli.org.il/he/books/NNL_ALEPH990012103000205171/NLI"
+        ]
+      }
     },
     "James Pascoe": {
       "ar-AE": {
@@ -15429,7 +15591,13 @@
       "pt-PT": "Jerome K. Jerome",
       "ja-JP": "ジェローム・K・ジェローム",
       "ru-RU": "Джером К. Джером",
-      "zh-CN": "杰罗姆·K·杰罗姆"
+      "zh-CN": "杰罗姆·K·杰罗姆",
+      "he-IL": {
+        "value": "ג'רום ק' ג'רום",
+        "sources": [
+          "https://www.modan.co.il/%D7%A9%D7%9C%D7%95%D7%A9%D7%94-%D7%91%D7%A1%D7%99%D7%A8%D7%94-%D7%90%D7%97%D7%AA-%D7%94%D7%A1%D7%A4%D7%A8-%D7%94%D7%9E%D7%A2%D7%A8"
+        ]
+      }
     },
     "Jerome Weidman": {
       "ar-AE": {
@@ -17083,7 +17251,13 @@
       "pt-PT": "Jonathan Safran Foer",
       "ja-JP": "ジョナサン・サフラン・フォア",
       "ru-RU": "Джонатан Сафран Фоер",
-      "zh-CN": ">乔纳森·萨夫兰·福尔"
+      "zh-CN": ">乔纳森·萨夫兰·福尔",
+      "he-IL": {
+        "value": "ג'ונתן ספרן פויר",
+        "sources": [
+          "https://www.nli.org.il/he/books/NNL_ALEPH990025555580205171/NLI"
+        ]
+      }
     },
     "Jonathan Trigell": {
       "ar-AE": {
@@ -17612,7 +17786,13 @@
       "ru-RU": "Жюль Верн",
       "zh-CN": "儒勒·凡尔纳",
       "ko-KR": "쥘 베른",
-      "pl-PL": "Juliusz Verne"
+      "pl-PL": "Juliusz Verne",
+      "he-IL": {
+        "value": "ז'ול ורן",
+        "sources": [
+          "https://www.makorrishon.co.il/culture/books/article/317906"
+        ]
+      }
     },
     "Julia Kent": {
       "ar-AE": {
@@ -19227,7 +19407,13 @@
       "pt-PT": "Len Deighton",
       "ja-JP": "レン・デイトン",
       "ru-RU": "Лен Дейтон",
-      "zh-CN": "莱恩戴顿"
+      "zh-CN": "莱恩戴顿",
+      "he-IL": {
+        "value": "לן דייטון",
+        "sources": [
+          "https://bookholder.co.il/books/%D7%AA%D7%99%D7%A7-%D7%90%D7%99%D7%A4%D7%A7%D7%A8%D7%A1-%D7%A1%D7%95%D7%93%D7%99-%D7%91%D7%99%D7%95%D7%AA%D7%A8-5484"
+        ]
+      }
     },
     "Leo Tolstoy": {
       "ar-AE": {
@@ -19264,6 +19450,12 @@
         "value": "Lew Tołstoj",
         "sources": [
           "https://wydawnictwomg.pl/wojna-i-pokoj-czesc-1/"
+        ]
+      },
+      "he-IL": {
+        "value": "לב טולסטוי",
+        "sources": [
+          "https://www.nli.org.il/he/books/NNL_ALEPH990011199530205171/NLI"
         ]
       }
     },
@@ -19328,7 +19520,13 @@
       "ja-JP": "ルー・ウォレス",
       "ru-RU": "Лью Уоллес",
       "zh-CN": "卢·华莱士",
-      "ko-KR": "루 월리스"
+      "ko-KR": "루 월리스",
+      "he-IL": {
+        "value": "לו ואלס",
+        "sources": [
+          "https://www.nli.org.il/he/books/NNL_ALEPH990018052210205171/NLI"
+        ]
+      }
     },
     "Lewis Anselm da Costa Ritchie": {
       "ar-AE": {
@@ -20453,7 +20651,13 @@
       "ja-JP": "マーガレット・アトウッド",
       "ru-RU": "Маргарет Этвуд",
       "zh-CN": "玛格丽特·阿特伍德",
-      "ko-KR": "마거릿 애트우드"
+      "ko-KR": "마거릿 애트우드",
+      "he-IL": {
+        "value": "מרגרט אטווד",
+        "sources": [
+          "https://www.simania.co.il/bookdetails.php?item_id=8625"
+        ]
+      }
     },
     "Margaret Dickinson": {
       "ar-AE": {
@@ -21012,7 +21216,13 @@
       "pt-PT": "Marsha Mehran",
       "ja-JP": "マーシャ・メーラン",
       "ru-RU": "Марша Мехран",
-      "zh-CN": "玛莎·梅兰"
+      "zh-CN": "玛莎·梅兰",
+      "he-IL": {
+        "value": "מרשה מהראן",
+        "sources": [
+          "https://e.walla.co.il/item/1511298"
+        ]
+      }
     },
     "Martin Amis": {
       "ar-AE": {
@@ -21788,7 +21998,13 @@
       "ja-JP": "マイケル・クライトン",
       "ru-RU": "Майкл Крайтон",
       "zh-CN": "迈克尔·克莱顿",
-      "ko-KR": "마이클 크라이튼"
+      "ko-KR": "마이클 크라이튼",
+      "he-IL": {
+        "value": "מייקל קרייטון",
+        "sources": [
+          "https://www.nli.org.il/he/books/NNL_ALEPH990030246470205171/NLI"
+        ]
+      }
     },
     "Michael Cunningham": {
       "ar-AE": {
@@ -22254,7 +22470,13 @@
       "ja-JP": "ミゲル・デ・セルバンテス",
       "ru-RU": "Мигель де Сервантес",
       "zh-CN": "米格尔·德·塞万提斯",
-      "ko-KR": "미겔 데 세르반테스"
+      "ko-KR": "미겔 데 세르반테스",
+      "he-IL": {
+        "value": "מיגל דה סרוואנטס",
+        "sources": [
+          "https://www.nli.org.il/he/books/NNL_ALEPH990013182120205171/NLI"
+        ]
+      }
     },
     "Miha Mazzini": {
       "ar-AE": {
@@ -23595,7 +23817,13 @@
       "ja-JP": "オテッサ・モシュフェグ",
       "ru-RU": "Оттесса Мошфег",
       "zh-CN": "奥特莎·莫什菲",
-      "ko-KR": "오테사 모시페그"
+      "ko-KR": "오테사 모시페그",
+      "he-IL": {
+        "value": "אוטסה מושפג",
+        "sources": [
+          "https://www.am-oved.co.il/%D7%9E%D7%95%D7%A9%D7%A4%D7%92_%D7%90%D7%95%D7%98%D7%A1%D7%94"
+        ]
+      }
     },
     "Oyinkan Braithwaite": {
       "ar-AE": {
@@ -24997,7 +25225,13 @@
       "ja-JP": "レイ・ブラッドベリ",
       "ru-RU": "Рэй Брэдбери",
       "zh-CN": "雷·布拉德伯里",
-      "ko-KR": "레이 브래드버리"
+      "ko-KR": "레이 브래드버리",
+      "he-IL": {
+        "value": "ריי ברדבורי",
+        "sources": [
+          "https://www.e-vrit.co.il/author/6079/%D7%A8%D7%99%D7%99_%D7%91%D7%A8%D7%93%D7%91%D7%95%D7%A8%D7%99?orderby=2"
+        ]
+      }
     },
     "Ray Keating": {
       "ar-AE": {
@@ -25965,7 +26199,13 @@
       "pt-PT": "Robert Harris",
       "ja-JP": "ロバート・ハリス",
       "ru-RU": "Роберт Харрис",
-      "zh-CN": "罗伯特·哈里斯"
+      "zh-CN": "罗伯特·哈里斯",
+      "he-IL": {
+        "value": "רוברט האריס",
+        "sources": [
+          "https://www.nli.org.il/he/books/NNL_ALEPH990044010730205171/NLI"
+        ]
+      }
     },
     "Robert J. Sawyer": {
       "ar-AE": {
@@ -27835,7 +28075,13 @@
       "ja-JP": "アーサー・コナン・ドイル卿",
       "ru-RU": "Сэр Артур Конан Дойл",
       "zh-CN": "亚瑟柯南道尔爵士",
-      "ko-KR": "아서 코넌 도일"
+      "ko-KR": "아서 코넌 도일",
+      "he-IL": {
+        "value": "ארתור קונן דויל",
+        "sources": [
+          "https://www.nli.org.il/he/books/NNL_ALEPH990008492290205171/NLI"
+        ]
+      }
     },
     "Sir Hall Caine": {
       "ar-AE": {
@@ -27898,7 +28144,13 @@
       "ja-JP": "ソフィー・キンセラ",
       "ru-RU": "Софи Кинселла",
       "zh-CN": "苏菲金塞拉",
-      "ko-KR": "소피 킨셀라"
+      "ko-KR": "소피 킨셀라",
+      "he-IL": {
+        "value": "סופי קינסלה",
+        "sources": [
+          "https://www.modan.co.il/%D7%A1%D7%95%D7%A4%D7%99-%D7%A7%D7%99%D7%A0%D7%A1%D7%9C%D7%94"
+        ]
+      }
     },
     "Sophie McKenzie": {
       "ar-AE": {
@@ -28488,7 +28740,13 @@
       "ja-JP": "スティーブ・トルツ",
       "ru-RU": "Стив Тольц",
       "zh-CN": "史蒂夫·托尔茨",
-      "ko-KR": "스티브 톨츠"
+      "ko-KR": "스티브 톨츠",
+      "he-IL": {
+        "value": "סטיב טולץ",
+        "sources": [
+          "https://www.am-oved.co.il/%D7%98%D7%95%D7%9C%D7%A5-%D7%A1%D7%98%D7%99%D7%91"
+        ]
+      }
     },
     "Steven Galloway": {
       "ar-AE": {
@@ -30323,7 +30581,13 @@
       "ja-JP": "ヴィクター・ヒューゴ",
       "ru-RU": "Виктор Гюго",
       "zh-CN": "维克多·雨果",
-      "ko-KR": "빅토르 위고"
+      "ko-KR": "빅토르 위고",
+      "he-IL": {
+        "value": "ויקטור הוגו",
+        "sources": [
+          "https://www.clfb.org.il/heb/Portal/Book/?code=19571&l=1"
+        ]
+      }
     },
     "Virginia Woolf": {
       "ar-AE": {
@@ -30355,7 +30619,13 @@
       "ja-JP": "ヴァージニア・ウルフ",
       "ru-RU": "Вирджиния Вульф",
       "zh-CN": "弗吉尼亚·伍尔夫",
-      "ko-KR": "버지니아 울프"
+      "ko-KR": "버지니아 울프",
+      "he-IL": {
+        "value": "וירג'יניה וולף",
+        "sources": [
+          "https://www.e-vrit.co.il/author/412/%D7%95%D7%99%D7%A8%D7%92_%D7%99%D7%A0%D7%99%D7%94_%D7%95%D7%95%D7%9C%D7%A3?orderby=2"
+        ]
+      }
     },
     "Vladimir Nabokov": {
       "ar-AE": {
@@ -30671,7 +30941,13 @@
       "pt-PT": "Wilkie Collins",
       "ja-JP": "ウィルキー・コリンズ",
       "ru-RU": "Уилки Коллинз",
-      "zh-CN": "威尔基·柯林斯"
+      "zh-CN": "威尔基·柯林斯",
+      "he-IL": {
+        "value": "ווילקי קולינס",
+        "sources": [
+          "https://canada-akko.agronplus.org/title-details/?title_no=clVIRGpRVC80K3JkV1RtejBYTEhzUT09"
+        ]
+      }
     },
     "Will Self": {
       "ar-AE": {
@@ -31331,7 +31607,13 @@
       "ru-RU": "Уильям Шекспир",
       "zh-CN": "威廉·莎士比亚",
       "ko-KR": "윌리엄 셰익스피어",
-      "pl-PL": "William Szekspir"
+      "pl-PL": "William Szekspir",
+      "he-IL": {
+        "value": "ויליאם שקספיר",
+        "sources": [
+          "https://www.nli.org.il/he/books/NNL_ALEPH990013007250205171/NLI"
+        ]
+      }
     },
     "William Trevor": {
       "ar-AE": {
@@ -31762,6 +32044,12 @@
           "sources": [
             "https://www.proszynski.pl/product/duma-i-uprzedzenie-7"
           ]
+        },
+        "he-IL": {
+          "value": "גאווה ודעה קדומה",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990026092320205171/NLI"
+          ]
         }
       },
       "Emma": {
@@ -31888,6 +32176,12 @@
           "sources": [
             "https://www.record.com.br/products/o-estranho-caso-do-cachorro-morto"
           ]
+        },
+        "he-IL": {
+          "value": "המקרה המוזר של הכלב בשעת לילה",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990023785630205171/NLI"
+          ]
         }
       }
     },
@@ -31930,6 +32224,12 @@
           "value": "Um estranho no ninho",
           "sources": [
             "https://www.record.com.br/products/um-estranho-no-ninho"
+          ]
+        },
+        "he-IL": {
+          "value": "קן הקוקייה",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990026824070205171/NLI"
           ]
         }
       },
@@ -31977,6 +32277,12 @@
           "sources": [
             "https://lubimyczytac.pl/ksiazka/149960/zlodziejski-honor"
           ]
+        },
+        "he-IL": {
+          "value": "כבוד בין גנבים",
+          "sources": [
+            "https://rebooks.org.il/product/%D7%9B%D7%91%D7%95%D7%93-%D7%91%D7%99%D7%9F-%D7%92%D7%A0%D7%91%D7%99%D7%9D/"
+          ]
         }
       },
       "A Matter of Honor": {
@@ -32001,6 +32307,12 @@
           "value": "Um Caso de Honra",
           "sources": [
             "https://hemeroteca-pdf.bn.gov.br/325538/per325538_1988_02022.pdf"
+          ]
+        },
+        "he-IL": {
+          "value": "עניין של כבוד",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990010885100205171/NLI"
           ]
         }
       },
@@ -32039,6 +32351,12 @@
           "value": "Więzień urodzenia",
           "sources": [
             "https://lubimyczytac.pl/ksiazka/29984/wiezien-urodzenia"
+          ]
+        },
+        "he-IL": {
+          "value": "אסיר מלידה",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990026237650205171/NLI"
           ]
         }
       },
@@ -32097,6 +32415,12 @@
           "sources": [
             "https://www.rebis.com.pl/files/general/REBIS-KATALOG-2017.pdf"
           ]
+        },
+        "he-IL": {
+          "value": "היזהר במשאלותיך",
+          "sources": [
+            "https://www.modan.co.il/%D7%94%D7%99%D7%96%D7%94%D7%A8-%D7%91%D7%9E%D7%A9%D7%90%D7%9C%D7%95%D7%AA%D7%99%D7%9A?bsp=64000"
+          ]
         }
       },
       "Best Kept Secret": {
@@ -32115,6 +32439,12 @@
           "value": "Sekret najpilniej strzeżony",
           "sources": [
             "https://www.bn.org.pl/download/document/1430142838.pdf"
+          ]
+        },
+        "he-IL": {
+          "value": "סוד שמור",
+          "sources": [
+            "https://www.modan.co.il/%D7%A1%D7%95%D7%93-%D7%A9%D7%9E%D7%95%D7%A8?bsp=64000"
           ]
         }
       },
@@ -32182,6 +32512,12 @@
           "sources": [
             "https://www.rebis.com.pl/files/general/REBIS-KATALOG-2017.pdf"
           ]
+        },
+        "he-IL": {
+          "value": "בבוא השעה",
+          "sources": [
+            "https://www.steimatzky.co.il/011414603"
+          ]
         }
       },
       "Dougie Mortimer’s Right Arm": {
@@ -32214,6 +32550,12 @@
           "value": "Fałszywe wrażenie",
           "sources": [
             "https://lubimyczytac.pl/ksiazka/143765/falszywe-wrazenie"
+          ]
+        },
+        "he-IL": {
+          "value": "חשד מוטעה",
+          "sources": [
+            "https://www.steimatzky.co.il/011631683"
           ]
         }
       },
@@ -32252,6 +32594,12 @@
           "value": "I tak wygrasz",
           "sources": [
             "https://e-isbn.pl/IsbnWeb/onix/summary.html?record_id=1499569"
+          ]
+        },
+        "he-IL": {
+          "value": "עץ או פלי",
+          "sources": [
+            "https://www.modan.co.il/%D7%A2%D7%A5-%D7%90%D7%95-%D7%A4%D7%9C%D7%99"
           ]
         }
       },
@@ -32296,6 +32644,12 @@
           "sources": [
             "https://w.bibliotece.pl/1002201/Kane%2Bi%2BAbel"
           ]
+        },
+        "he-IL": {
+          "value": "קין והבל",
+          "sources": [
+            "https://www.modan.co.il/%D7%A7%D7%99%D7%9F-%D7%95%D7%94%D7%91%D7%9C"
+          ]
         }
       },
       "Mightier Than the Sword": {
@@ -32314,6 +32668,12 @@
           "value": "Potężniejszy od miecza",
           "sources": [
             "https://lubimyczytac.pl/ksiazka/263177/potezniejszy-od-miecza"
+          ]
+        },
+        "he-IL": {
+          "value": "חזק מחרב",
+          "sources": [
+            "https://www.modan.co.il/%D7%97%D7%96%D7%A7-%D7%9E%D7%97%D7%A8%D7%91"
           ]
         }
       },
@@ -32353,6 +32713,12 @@
           "sources": [
             "https://e-isbn.pl/IsbnWeb/onix/summary.html?record_id=10592651"
           ]
+        },
+        "he-IL": {
+          "value": "הבא בתור",
+          "sources": [
+            "https://kfaryona.agronplus.org/title-details/?title_no=UkZLeEhlSUF6Z3F5amJOSTQwbTVoQT09"
+          ]
         }
       },
       "Not a Penny More, Not a Penny Less": {
@@ -32372,6 +32738,12 @@
           "sources": [
             "https://www.proszynski.pl/product/co-do-grosza"
           ]
+        },
+        "he-IL": {
+          "value": "דין פרוטה",
+          "sources": [
+            "https://www.steimatzky.co.il/catalog/product/view/id/91575/s/600007757/"
+          ]
         }
       },
       "Nothing Ventured": {
@@ -32390,6 +32762,12 @@
           "value": "Nic bez ryzyka",
           "sources": [
             "https://e-isbn.pl/IsbnWeb/onix/summary.html?record_id=7651689"
+          ]
+        },
+        "he-IL": {
+          "value": "רק המעז",
+          "sources": [
+            "https://kfaryona.agronplus.org/title-details/?title_no=b0M5MFQ1Wm40L3RTc1U3Mk52ODd6QT09"
           ]
         }
       },
@@ -32423,6 +32801,12 @@
           "value": "Czas pokaże",
           "sources": [
             "https://www.rebis.com.pl/pl/products/czas-pokaze-9395.html"
+          ]
+        },
+        "he-IL": {
+          "value": "ימים יגידו",
+          "sources": [
+            "https://www.modan.co.il/%D7%99%D7%9E%D7%99%D7%9D-%D7%99%D7%92%D7%99%D7%93%D7%95"
           ]
         }
       },
@@ -32461,6 +32845,12 @@
           "value": "Ścieżki chwały",
           "sources": [
             "https://lubimyczytac.pl/ksiazka/52246/sciezki-chwaly"
+          ]
+        },
+        "he-IL": {
+          "value": "שבילי התהילה",
+          "sources": [
+            "https://www.modan.co.il/%D7%A9%D7%91%D7%99%D7%9C%D7%99-%D7%94%D7%AA%D7%94%D7%99%D7%9C%D7%94"
           ]
         }
       },
@@ -32519,6 +32909,12 @@
           "value": "Synowie fortuny",
           "sources": [
             "https://books.apple.com/pl/book/synowie-fortuny/id6760626603"
+          ]
+        },
+        "he-IL": {
+          "value": "בני מזל",
+          "sources": [
+            "https://www.modan.co.il/books/11/4/45/%D7%91%D7%A0%D7%99-%D7%9E%D7%96%D7%9C"
           ]
         }
       },
@@ -32595,6 +32991,12 @@
           "sources": [
             "https://lubimyczytac.pl/ksiazka/4839223/za-grzechy-ojca"
           ]
+        },
+        "he-IL": {
+          "value": "חטאי האב",
+          "sources": [
+            "https://ganrave.agronplus.org/title-details/?title_no=WXc4aXBVdFVGU3JQWXJVR0RLQkgrUT09"
+          ]
         }
       },
       "The Undiplomatic Diplomat": {
@@ -32628,6 +33030,12 @@
           "sources": [
             "https://www.katalog.bibliotekabielany.waw.pl/katalog/detail.php?PozycjaOpisy=20171010105629087145"
           ]
+        },
+        "he-IL": {
+          "value": "זה היה אדם",
+          "sources": [
+            "https://sdeboker.agronplus.org/title-details/?title_no=eTdYa0FpcWxFeitsMUcxQS9LSVdEUT09"
+          ]
         }
       },
       "Trial and Error": {
@@ -32660,6 +33068,12 @@
           "value": "Przymknięte oko sprawiedliwości",
           "sources": [
             "https://e-isbn.pl/IsbnWeb/onix/summary.html?record_id=7652166"
+          ]
+        },
+        "he-IL": {
+          "value": "העלמת עין",
+          "sources": [
+            "https://kfaryona.agronplus.org/title-details/?title_no=Z3kzWXFnVlJZSlFidnA4R3NRWm5lZz09"
           ]
         }
       },
@@ -32701,6 +33115,12 @@
           "value": "Ślepa wierzba i śpiąca kobieta",
           "sources": [
             "https://www.pl.emb-japan.go.jp/keizai/lista_publikacji.html"
+          ]
+        },
+        "he-IL": {
+          "value": "ערבה עיוורת, עלמה נמה",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990026375060205171/NLI"
           ]
         }
       },
@@ -32822,6 +33242,12 @@
           "sources": [
             "https://www.znak.com.pl/p/koniec-swiata-i-hard-boiled-wonderland-haruki-murakami-3736"
           ]
+        },
+        "he-IL": {
+          "value": "ארץ פלאות קשוחה וסוף העולם",
+          "sources": [
+            "https://www.modan.co.il/page_36530"
+          ]
         }
       },
       "Kafka on the Shore": {
@@ -32935,6 +33361,12 @@
           "sources": [
             "https://ateneum.net.pl/pozycja.php?id=715758"
           ]
+        },
+        "he-IL": {
+          "value": "דוקטור סליפ",
+          "sources": [
+            "https://www.modan.co.il/%D7%93%D7%95%D7%A7%D7%98%D7%95%D7%A8-%D7%A1%D7%9C%D7%99%D7%A4"
+          ]
         }
       },
       "11/22/63": {
@@ -32959,6 +33391,12 @@
           "sources": [
             "https://www.proszynski.pl/product/dallas-63-6"
           ]
+        },
+        "he-IL": {
+          "value": "22/11/63",
+          "sources": [
+            "https://www.modan.co.il/221163?bsp=64054"
+          ]
         }
       },
       "Billy Summers": {
@@ -32979,6 +33417,12 @@
           "sources": [
             "https://www.proszynski.pl/product/billy-summers"
           ]
+        },
+        "he-IL": {
+          "value": "בילי סאמרס",
+          "sources": [
+            "https://www.modan.co.il/Design/JScripts/%D7%91%D7%99%D7%9C%D7%99-%D7%A1%D7%90%D7%9E%D7%A8%D7%A1"
+          ]
         }
       },
       "Carrie": {
@@ -32997,6 +33441,12 @@
           "value": "Carrie",
           "sources": [
             "https://www.proszynski.pl/product/carrie-15"
+          ]
+        },
+        "he-IL": {
+          "value": "קארי",
+          "sources": [
+            "https://www.clfb.org.il/heb/Portal/Book/?Id=60690"
           ]
         }
       },
@@ -33054,6 +33504,12 @@
           "value": "Czarna bezgwiezdna noc",
           "sources": [
             "https://www.wydawnictwoalbatros.com/ksiazki/czarna-bezgwiezdna-noc-2/"
+          ]
+        },
+        "he-IL": {
+          "value": "אפלה מוחלטת, אין כוכבים",
+          "sources": [
+            "https://www.modan.co.il//%D7%90%D7%A4%D7%9C%D7%94-%D7%9E%D7%95%D7%97%D7%9C%D7%98%D7%AA-%D7%90%D7%99%D7%9F-%D7%9B%D7%95%D7%9B%D7%91%D7%99%D7%9D"
           ]
         }
       },
@@ -33131,6 +33587,12 @@
           "sources": [
             "https://www.wydawnictwoalbatros.com/ksiazki/to-2/"
           ]
+        },
+        "he-IL": {
+          "value": "זה",
+          "sources": [
+            "https://www.modan.co.il/books/11/8/61/%D7%96%D7%94-%D7%A2%D7%98%D7%99%D7%A4%D7%AA-%D7%94%D7%A1%D7%A8%D7%98"
+          ]
         }
       },
       "Joyland": {
@@ -33150,6 +33612,12 @@
           "value": "Joyland",
           "sources": [
             "https://www.proszynski.pl/product/joyland-5-2"
+          ]
+        },
+        "he-IL": {
+          "value": "יריד השעשועים",
+          "sources": [
+            "https://www.modan.co.il/%D7%99%D7%A8%D7%99%D7%93-%D7%94%D7%A9%D7%A2%D7%A9%D7%95%D7%A2%D7%99%D7%9D"
           ]
         }
       },
@@ -33203,6 +33671,12 @@
           "sources": [
             "https://www.wydawnictwoalbatros.com/ksiazki/zielona-mila-duzym-drukiem/"
           ]
+        },
+        "he-IL": {
+          "value": "גרין מייל",
+          "sources": [
+            "https://www.clfb.org.il/heb/Portal/Book/?Id=54041"
+          ]
         }
       },
       "The Shining": {
@@ -33222,6 +33696,12 @@
           "value": "Lśnienie",
           "sources": [
             "https://stephenking.pl/ksiazka/lsnienie/"
+          ]
+        },
+        "he-IL": {
+          "value": "הניצוץ",
+          "sources": [
+            "https://www.modan.co.il/84758/%D7%94%D7%A0%D7%99%D7%A6%D7%95%D7%A5-%D7%9E%D7%97%D7%95%D7%93%D7%A9?bsp=64054"
           ]
         }
       },
@@ -33285,7 +33765,8 @@
         "ar-AE": "مشروع سايكلوبس",
         "ja-JP": "サイクロプス計画",
         "ko-KR": "프로젝트 사이클롭스",
-        "pl-PL": "Projekt Cyklop"
+        "pl-PL": "Projekt Cyklop",
+        "he-IL": "פרויקט ציקלופ"
       },
       "Project Daedalus": {
         "de-DE": "Projekt Daedalus",
@@ -33606,6 +34087,12 @@
           "sources": [
             "https://www.proszynski.pl/product/i-nie-bylo-juz-nikogo"
           ]
+        },
+        "he-IL": {
+          "value": "ולא נותר אף אחד",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990048764830205171/NLI"
+          ]
         }
       },
       "Death on the Nile": {
@@ -33624,6 +34111,12 @@
           "value": "Śmierć na Nilu",
           "sources": [
             "https://www.proszynski.pl/product/smierc-na-nilu"
+          ]
+        },
+        "he-IL": {
+          "value": "מוות על הנילוס",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990050408770205171/NLI"
           ]
         }
       },
@@ -33662,6 +34155,12 @@
           "value": "Morderstwo w Orient Expressie",
           "sources": [
             "https://bn.org.pl/download/document/1648230310.pdf"
+          ]
+        },
+        "he-IL": {
+          "value": "רצח באוריינט אקספרס",
+          "sources": [
+            "https://www.clfb.org.il/heb/Portal/Book/?code=21805&l=1"
           ]
         }
       },
@@ -35332,6 +35831,12 @@
           "sources": [
             "https://lubimyczytac.pl/ksiazka/5009737/zakleci-w-czasie"
           ]
+        },
+        "he-IL": {
+          "value": "אשתו של הנוסע בזמן",
+          "sources": [
+            "https://www.clfb.org.il/heb/Portal/Book/?code=4169&l=1"
+          ]
         }
       }
     },
@@ -35845,6 +36350,12 @@
           "sources": [
             "https://wydawnictwoswiatksiazki.pl/tytul/drakula/"
           ]
+        },
+        "he-IL": {
+          "value": "דרקולה",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990009750450205171/NLI"
+          ]
         }
       }
     },
@@ -36150,6 +36661,12 @@
           "value": "Srebrne krzesło",
           "sources": [
             "https://bibliotekabialoleka.online/opac/detail.php?PozycjaOpisy=20080509223814002263"
+          ]
+        },
+        "he-IL": {
+          "value": "כס הכסף",
+          "sources": [
+            "https://ganrave.agronplus.org/title-details/?title_no=dkJNbWkzb3c0NHkrOXA0dzJFRW83dz09"
           ]
         }
       },
@@ -36852,6 +37369,12 @@
           "value": "Dziwne losy Jane Eyre",
           "sources": [
             "https://w.bibliotece.pl/5203454/Dziwne%2Blosy%2BJane%2BEyre"
+          ]
+        },
+        "he-IL": {
+          "value": "ג'יין אייר",
+          "sources": [
+            "https://www.e-vrit.co.il/product/493/%D7%92_%D7%99%D7%99%D7%9F_%D7%90%D7%99%D7%99%D7%A8"
           ]
         }
       },
@@ -37996,6 +38519,12 @@
           "sources": [
             "https://www.companhiadasletras.com.br/livro/9788535925043/graca-infinita"
           ]
+        },
+        "he-IL": {
+          "value": "מהתלה אינסופית",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH997012286500105171/NLI"
+          ]
         }
       },
       "Oblivion": {
@@ -38386,6 +38915,12 @@
           "value": "Opiekunowie",
           "sources": [
             "https://www.wydawnictwoalbatros.com/ksiazki/opiekunowie/"
+          ]
+        },
+        "he-IL": {
+          "value": "הרודפים",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990012122780205171/NLI"
           ]
         }
       }
@@ -38894,6 +39429,12 @@
           "sources": [
             "https://www.bn.org.pl/download/document/1483522698.pdf"
           ]
+        },
+        "he-IL": {
+          "value": "מדריך הטרמפיסט לגלקסיה",
+          "sources": [
+            "https://www.modan.co.il/%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%94%D7%98%D7%A8%D7%9E%D7%A4%D7%99%D7%A1%D7%98-%D7%9C%D7%92%D7%9C%D7%A7%D7%A1%D7%99%D7%94"
+          ]
         }
       },
       "Life, the Universe and Everything": {
@@ -38932,6 +39473,12 @@
           "sources": [
             "https://abc.uw.edu.pl/katalog/ksiazka/4961"
           ]
+        },
+        "he-IL": {
+          "value": "היו שלום ותודה על הדגים",
+          "sources": [
+            "https://www.modan.co.il/%D7%94%D7%99%D7%95-%D7%A9%D7%9C%D7%95%D7%9D-%D7%95%D7%AA%D7%95%D7%93%D7%94-%D7%A2%D7%9C-%D7%94%D7%93%D7%92%D7%99%D7%9D"
+          ]
         }
       },
       "The Long Dark Tea-Time of the Soul": {
@@ -38951,6 +39498,12 @@
           "value": "Długi mroczny podwieczorek dusz",
           "sources": [
             "https://lubimyczytac.pl/ksiazka/49465/dlugi-mroczny-podwieczorek-dusz"
+          ]
+        },
+        "he-IL": {
+          "value": "שעת התה הארוכה והאפלה של הנפש",
+          "sources": [
+            "https://www.modan.co.il/%D7%A9%D7%A2%D7%AA-%D7%94%D7%AA%D7%94-%D7%94%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%95%D7%94%D7%90%D7%A4%D7%9C%D7%94-%D7%A9%D7%9C-%D7%94%D7%A0%D7%A4%D7%A9?bsp=75008"
           ]
         }
       }
@@ -39806,6 +40359,12 @@
           "sources": [
             "https://wydawnictwotrzecieoko.pl/produkt/pokoj-emma-donoghue/"
           ]
+        },
+        "he-IL": {
+          "value": "חדר",
+          "sources": [
+            "https://ybook.co.il/products/3624260"
+          ]
         }
       }
     },
@@ -40164,6 +40723,12 @@
           "value": "Wielki Gatsby",
           "sources": [
             "https://www.wydawnictwoznak.pl/ksiazka/Wielki-Gatsby/3727"
+          ]
+        },
+        "he-IL": {
+          "value": "גטסבי הגדול",
+          "sources": [
+            "https://ybook.co.il/collections/%D7%90%D7%97%D7%95%D7%96%D7%AA-%D7%91%D7%99%D7%AA-%D7%A1%D7%A4%D7%A8%D7%99%D7%9D/products/6740152"
           ]
         }
       },
@@ -40586,6 +41151,12 @@
           "sources": [
             "https://www.wydawnictwosbm.pl/ksiazka/zbrodnia-i-kara/"
           ]
+        },
+        "he-IL": {
+          "value": "החטא ועונשו",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990011112980205171/NLI"
+          ]
         }
       },
       "Notes from the Underground": {
@@ -40762,6 +41333,12 @@
           "value": "Sto lat samotności",
           "sources": [
             "https://www.kurtiak-ley.pl/garcia-marquez-gabriel-sto-lat-samotnosci/"
+          ]
+        },
+        "he-IL": {
+          "value": "מאה שנים של בדידות",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990026982180205171/NLI"
           ]
         }
       },
@@ -41735,6 +42312,12 @@
           "sources": [
             "https://lubimyczytac.pl/ksiazka/137617/spokojny-amerykanin"
           ]
+        },
+        "he-IL": {
+          "value": "האמריקאי השקט",
+          "sources": [
+            "https://clfb.org.il/heb/Portal/Book/?code=6804&l=1"
+          ]
         }
       }
     },
@@ -42423,6 +43006,12 @@
           "sources": [
             "https://nakanapie.pl/ksiazki/bridget-jones"
           ]
+        },
+        "he-IL": {
+          "value": "יומנה של בריג'ט ג'ונס",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990018336340205171/NLI"
+          ]
         }
       }
     },
@@ -42652,6 +43241,12 @@
           "value": "Zwrotnik Raka",
           "sources": [
             "https://lubimyczytac.pl/ksiazka/75195/zwrotnik-raka"
+          ]
+        },
+        "he-IL": {
+          "value": "חוג הסרטן",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990010240570205171/NLI"
           ]
         }
       }
@@ -43520,6 +44115,12 @@
           "sources": [
             "https://mediarodzina.pl/produkt/harry-potter-i-kamien-filozoficzny/"
           ]
+        },
+        "he-IL": {
+          "value": "הארי פוטר ואבן החכמים",
+          "sources": [
+            "https://israelbooks.com/products/%D7%94%D7%90%D7%A8%D7%99-%D7%A4%D7%95%D7%98%D7%A8-%D7%95%D7%90%D7%91%D7%9F-%D7%94%D7%97%D7%9B%D7%9E%D7%99%D7%9D"
+          ]
         }
       }
     },
@@ -44084,6 +44685,12 @@
           "sources": [
             "https://wydawnictwoznak.pl/ksiazka/Ulisses/681"
           ]
+        },
+        "he-IL": {
+          "value": "יוליסס",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990012103000205171/NLI"
+          ]
         }
       }
     },
@@ -44624,6 +45231,12 @@
           "value": "Trzech panów w łódce (nie licząc psa)",
           "sources": [
             "https://www.biblioteka.waw.pl/polecane/trzech-panow-w-lodce-nie-liczac-psa"
+          ]
+        },
+        "he-IL": {
+          "value": "שלושה בסירה אחת",
+          "sources": [
+            "https://www.modan.co.il/%D7%A9%D7%9C%D7%95%D7%A9%D7%94-%D7%91%D7%A1%D7%99%D7%A8%D7%94-%D7%90%D7%97%D7%AA-%D7%94%D7%A1%D7%A4%D7%A8-%D7%94%D7%9E%D7%A2%D7%A8"
           ]
         }
       }
@@ -45979,6 +46592,12 @@
           "sources": [
             "https://bibliotekanauki.pl/articles/643713.pdf"
           ]
+        },
+        "he-IL": {
+          "value": "קרוב להפליא ורועש להחריד",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990025555580205171/NLI"
+          ]
         }
       }
     },
@@ -46481,6 +47100,12 @@
           "sources": [
             "https://wolnelektury.pl/media/book/pdf/w-80-dni-dookola-swiata.pdf"
           ]
+        },
+        "he-IL": {
+          "value": "סביב העולם בשמונים יום",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990036611940205171/NLI"
+          ]
         }
       },
       "Facing the Flag": {
@@ -46513,6 +47138,12 @@
           "value": "Podróż do wnętrza Ziemi",
           "sources": [
             "https://ksiegarnia.pwn.pl/Podroz-do-wnetrza-Ziemi%2C1063252771%2Cp.html"
+          ]
+        },
+        "he-IL": {
+          "value": "מסע אל בטן האדמה",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990040568410205171/NLI"
           ]
         }
       },
@@ -47755,7 +48386,13 @@
         "ar-AE": "ملف Ipcress",
         "eo": "La Ipcress Dosiero",
         "ja-JP": "Ipcress ファイル",
-        "pl-PL": "Akta IPCRESS"
+        "pl-PL": "Akta IPCRESS",
+        "he-IL": {
+          "value": "תיק איפקרס סודי ביותר",
+          "sources": [
+            "https://bookholder.co.il/books/%D7%AA%D7%99%D7%A7-%D7%90%D7%99%D7%A4%D7%A7%D7%A8%D7%A1-%D7%A1%D7%95%D7%93%D7%99-%D7%91%D7%99%D7%95%D7%AA%D7%A8-5484"
+          ]
+        }
       }
     },
     "Leo Tolstoy": {
@@ -47777,6 +48414,12 @@
           "sources": [
             "https://www.bn.org.pl/download/document/1763554855.pdf"
           ]
+        },
+        "he-IL": {
+          "value": "אנה קארנינה",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990017640480205171/NLI"
+          ]
         }
       },
       "War and Peace": {
@@ -47796,6 +48439,12 @@
           "value": "Wojna i pokój",
           "sources": [
             "https://wydawnictwomg.pl/wojna-i-pokoj-czesc-1/"
+          ]
+        },
+        "he-IL": {
+          "value": "מלחמה ושלום",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990011199530205171/NLI"
           ]
         }
       }
@@ -47833,6 +48482,12 @@
           "value": "Ben Hur",
           "sources": [
             "https://lubimyczytac.pl/ksiazka/4849078/ben-hur"
+          ]
+        },
+        "he-IL": {
+          "value": "בן חור",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990018052210205171/NLI"
           ]
         }
       }
@@ -48654,6 +49309,12 @@
           "sources": [
             "https://sklep.zysk.com.pl/zbojecka-narzeczona.html"
           ]
+        },
+        "he-IL": {
+          "value": "הכלה השודדת",
+          "sources": [
+            "https://www.simania.co.il/bookdetails.php?item_id=8625"
+          ]
         }
       }
     },
@@ -49141,6 +49802,12 @@
           "value": "Zupa z granatów",
           "sources": [
             "https://bn.org.pl/download/document/1467299264.pdf"
+          ]
+        },
+        "he-IL": {
+          "value": "מרק רימונים",
+          "sources": [
+            "https://e.walla.co.il/item/1511298"
           ]
         }
       }
@@ -49703,6 +50370,12 @@
           "sources": [
             "https://w.bibliotece.pl/6810594/Park%2BJurajski"
           ]
+        },
+        "he-IL": {
+          "value": "פארק היורה",
+          "sources": [
+            "https://www.clfb.org.il/heb/Portal/Book/?code=19885&l=1"
+          ]
         }
       },
       "The Andromeda Strain": {
@@ -50032,6 +50705,12 @@
           "value": "Don Kichot z La Manchy",
           "sources": [
             "https://wolnelektury.pl/katalog/lektura/don-kichot-z-la-manchy/"
+          ]
+        },
+        "he-IL": {
+          "value": "ההידאלגו החריף דון קיחוטה דה לה מאנצ'ה",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990013182120205171/NLI"
           ]
         }
       }
@@ -50884,6 +51563,12 @@
           "sources": [
             "https://wydawnictwopauza.pl/produkt/moj-rok-relaksu-i-odpoczynku/"
           ]
+        },
+        "he-IL": {
+          "value": "שנת המנוחה והמרגוע שלי",
+          "sources": [
+            "https://www.am-oved.co.il/%D7%A9%D7%A0%D7%AA_%D7%94%D7%9E%D7%A0%D7%95%D7%97%D7%94_%D7%95%D7%94%D7%9E%D7%A8%D7%92%D7%95%D7%A2_%D7%A9%D7%9C%D7%99?bsp=613058"
+          ]
         }
       }
     },
@@ -50978,7 +51663,13 @@
         "ar-AE": "الموت في القدس أوامر",
         "eo": "Morto en Sanktaj Ordoj",
         "ja-JP": "聖なる命令による死",
-        "pl-PL": "Śmierć w seminarium"
+        "pl-PL": "Śmierć w seminarium",
+        "he-IL": {
+          "value": "מוות בשורות הכנסייה",
+          "sources": [
+            "https://next.simania.co.il/bookdetails.php?item_id=41492"
+          ]
+        }
       },
       "Death of an Expert Witness": {
         "de-DE": "Tod eines Sachverständigen",
@@ -51049,6 +51740,12 @@
           "sources": [
             "https://lubimyczytac.pl/ksiazka/88129/grzech-pierworodny"
           ]
+        },
+        "he-IL": {
+          "value": "חטא קדמון",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990031598560205171/NLI"
+          ]
         }
       },
       "Shroud for a Nightingale": {
@@ -51067,6 +51764,12 @@
           "value": "Całun dla pielęgniarki",
           "sources": [
             "https://lubimyczytac.pl/ksiazka/31370/calun-dla-pielegniarki"
+          ]
+        },
+        "he-IL": {
+          "value": "רצח בבית נייטינגייל",
+          "sources": [
+            "https://www.am-oved.co.il/%D7%A8%D7%A6%D7%97_%D7%91%D7%91%D7%99%D7%AA_%D7%A0%D7%99%D7%99%D7%98%D7%99%D7%A0%D7%92%D7%99%D7%99%D7%9C?bsp=124572"
           ]
         }
       },
@@ -51120,7 +51823,13 @@
         "ar-AE": "المنارة",
         "eo": "La Lumturo",
         "ja-JP": "灯台",
-        "pl-PL": "Latarnia morska"
+        "pl-PL": "Latarnia morska",
+        "he-IL": {
+          "value": "המגדלור",
+          "sources": [
+            "https://www.steimatzky.co.il/015500107"
+          ]
+        }
       },
       "The Mistletoe Murder": {
         "de-DE": "Der Mistelmord",
@@ -51148,7 +51857,13 @@
         "ar-AE": "غرفة القتل",
         "eo": "La Murdĉambro",
         "ja-JP": "殺人室",
-        "pl-PL": "Pokój morderstwa"
+        "pl-PL": "Pokój morderstwa",
+        "he-IL": {
+          "value": "רצח במוזיאון",
+          "sources": [
+            "https://realbooks.co.il/books/%D7%A8%D7%A6%D7%97-%D7%91%D7%9E%D7%95%D7%96%D7%99%D7%90%D7%95%D7%9F"
+          ]
+        }
       },
       "The Murder of Santa Claus": {
         "de-DE": "Der Mord am Weihnachtsmann",
@@ -51176,7 +51891,13 @@
         "ar-AE": "المريض الخاص",
         "eo": "La Privata Paciento",
         "ja-JP": "民間患者",
-        "pl-PL": "Prywatna pacjentka"
+        "pl-PL": "Prywatna pacjentka",
+        "he-IL": {
+          "value": "מוות במעגל האבנים",
+          "sources": [
+            "https://www.text.org.il/index.php?book=1002038"
+          ]
+        }
       },
       "The Skull Beneath the Skin": {
         "de-DE": "Der Schädel unter der Haut",
@@ -53381,6 +54102,12 @@
           "sources": [
             "https://w.bibliotece.pl/r/3546310/report/"
           ]
+        },
+        "he-IL": {
+          "value": "מינכן",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990044010730205171/NLI"
+          ]
         }
       }
     },
@@ -54648,6 +55375,12 @@
           "sources": [
             "https://www.wydawnictwoolesiejuk.pl/ksiazki/sherlock-holmes-studium-w-szkarlacie-a-study-in-scarlet-9788368132076/"
           ]
+        },
+        "he-IL": {
+          "value": "חקירה בשני",
+          "sources": [
+            "https://www.polyglot-publishing.com/he/catalogue/a-study-in-scarlet-en-he"
+          ]
         }
       },
       "His Last Bow An Epilogue of Sherlock Holmes": {
@@ -54728,6 +55461,12 @@
           "sources": [
             "https://wydawnictwowam.pl/node/48348"
           ]
+        },
+        "he-IL": {
+          "value": "הרפתקאות שרלוק הולמס",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990008492290205171/NLI"
+          ]
         }
       },
       "The Empty House": {
@@ -54792,6 +55531,12 @@
           "value": "Znak czterech",
           "sources": [
             "https://www.znak.com.pl/p/znak-czterech-the-sign-of-the-four-wyd-dwujezyczne-arthur-conan-doyle-502633"
+          ]
+        },
+        "he-IL": {
+          "value": "אות הארבעה",
+          "sources": [
+            "https://www.polyglot-publishing.com/he/catalogue/the-sign-of-the-four-en-he"
           ]
         }
       },
@@ -54867,6 +55612,12 @@
           "value": "Samantha Sweet, executiva do lar",
           "sources": [
             "https://www.record.com.br/products/samantha-sweet-executiva-do-lar"
+          ]
+        },
+        "he-IL": {
+          "value": "הכי לא אשת חיל",
+          "sources": [
+            "https://sderot.agronplus.org/title-details/?title_no=ZXJMUUhEVHhoS3BCTGhNUGpGL0d3Zz09"
           ]
         }
       },
@@ -55195,7 +55946,13 @@
         "ar-AE": "جزء من كامل",
         "eo": "Frakcio de la Tuto",
         "ja-JP": "全編",
-        "pl-PL": "Ułamek całości"
+        "pl-PL": "Ułamek całości",
+        "he-IL": {
+          "value": "שבריר",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990031518490205171/NLI"
+          ]
+        }
       }
     },
     "Steven Galloway": {
@@ -56671,6 +57428,12 @@
           "sources": [
             "https://wydawnictwomg.pl/nedznicy/"
           ]
+        },
+        "he-IL": {
+          "value": "עלובי החיים",
+          "sources": [
+            "https://www.clfb.org.il/heb/Portal/Book/?code=19571&l=1"
+          ]
         }
       },
       "The Toilers of the Sea": {
@@ -56744,6 +57507,12 @@
           "value": "Pani Dalloway",
           "sources": [
             "https://www.biblioteka.waw.pl/polecane/pani-dalloway"
+          ]
+        },
+        "he-IL": {
+          "value": "מרת דאלווי",
+          "sources": [
+            "https://www.nli.org.il/he/books/NNL_ALEPH990052996870205171/NLI"
           ]
         }
       },
@@ -57018,6 +57787,12 @@
           "value": "Księżycowy kamień",
           "sources": [
             "https://sklep.zysk.com.pl/ksiezycowy-kamien.html"
+          ]
+        },
+        "he-IL": {
+          "value": "אבן הירח",
+          "sources": [
+            "https://canada-akko.agronplus.org/title-details/?title_no=clVIRGpRVC80K3JkV1RtejBYTEhzUT09"
           ]
         }
       },

@@ -2,7 +2,7 @@ import { describe, expect, test } from 'vitest';
 import { setTextLocale, textDirection } from './text-direction';
 
 describe('passage direction', () => {
-  test.each([['ar-AE', 'rtl'], ['ar-AE-draft', 'rtl'], ['AR', 'rtl'], ['en-GB', 'ltr'], ['eo', 'ltr']])(
+  test.each([['ar-AE', 'rtl'], ['ar-AE-draft', 'rtl'], ['AR', 'rtl'], ['he-IL', 'rtl'], ['he-IL-draft', 'rtl'], ['en-GB', 'ltr'], ['eo', 'ltr']])(
     '%s uses %s', (locale, direction) => expect(textDirection(locale)).toBe(direction),
   );
   test('switches direction and isolates a bilingual passage from its parent', () => {

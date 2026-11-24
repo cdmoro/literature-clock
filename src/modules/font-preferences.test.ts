@@ -30,6 +30,8 @@ test('every included family has explicit coverage, including Esperanto diacritic
   expect(fontSupportsLocale('Give You Glory', 'eo-draft')).toBe(true);
   expect(fontSupportsLocale('Special Elite', 'zh-CN')).toBe(false);
   expect(fontSupportsLocale('LXGW WenKai Mono TC', 'zh-CN')).toBe(true);
+  expect(fontSupportsLocale('Noto Sans Hebrew', 'he-IL')).toBe(true);
+  expect(fontSupportsLocale('Noto Sans Hebrew', 'en-GB')).toBe(false);
   expect(fontSupportsLocale('Lora', 'zh-CN')).toBeUndefined();
   expect(fontSupportsLocale('constructor', 'eo')).toBeUndefined();
   for (const alternatives of Object.values(LOCALE_THEME_FONTS)) {
@@ -79,6 +81,7 @@ test('automatic theme fonts fall back when the original lacks the language alpha
   expect(getLocaleThemeFont('base-light', 'de-DE')).toBe('Noto Serif');
   expect(getLocaleThemeFont('retro-dark', 'ru-RU')).toBe('DotGothic16');
   expect(getLocaleThemeFont('book-dark', 'el-GR')).toBe('Noto Serif');
+  expect(getLocaleThemeFont('handwriting-dark', 'he-IL')).toBe('Noto Sans Hebrew');
 });
 
 test('an initial automatic font does not pin unchosen languages to their startup default', () => {

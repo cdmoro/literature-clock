@@ -8,8 +8,11 @@ enum ClockLocale {
         let language = normalized.split(separator: "-").first.map(String.init) ?? ""
         let dominant = ["en": "en-GB", "es": "es-ES", "fr": "fr-FR", "it": "it-IT",
                         "pt": "pt-PT", "de": "de-DE", "el": "el-GR", "zh": "zh-CN",
-                        "ru": "ru-RU", "eo": "eo", "ar": "ar-AE", "ja": "ja-JP", "ko": "ko-KR", "pl": "pl-PL"]
+                        "ru": "ru-RU", "eo": "eo", "ar": "ar-AE", "he": "he-IL", "ja": "ja-JP", "ko": "ko-KR", "pl": "pl-PL"]
         if let match = dominant[language], supported.contains(match) { return match }
         return "en-GB"
+    }
+    static func isRightToLeft(_ identifier: String) -> Bool {
+        ["ar", "he", "fa", "ur"].contains(identifier.replacingOccurrences(of: "_", with: "-").split(separator: "-").first.map(String.init)?.lowercased() ?? "")
     }
 }

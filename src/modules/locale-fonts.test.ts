@@ -25,6 +25,17 @@ test('Greek draft passages use the base alternative in both variants and colour 
   document.documentElement.style.removeProperty('--override-quote-font-family');
 });
 
+test('Hebrew passages use the bundled Hebrew font independently in every theme', () => {
+  const quote = document.createElement('blockquote');
+  quote.lang = 'he-IL';
+  for (const theme of ['base', 'retro', 'book', 'terminal', 'festive', 'photo']) {
+    document.documentElement.dataset.theme = `${theme}-dark`;
+    applyLocaleThemeFont(quote);
+    expect(quote.style.getPropertyValue('--locale-quote-font-family')).toContain('Noto Sans Hebrew');
+  }
+  expect(loadFontIfNotExists).toHaveBeenCalledWith('Noto Sans Hebrew');
+});
+
 test('theme and quote language changes clear stale alternatives', () => {
   document.body.innerHTML = '<blockquote id="quote" lang="el-GR"></blockquote>';
   const quote = document.getElementById('quote')!;

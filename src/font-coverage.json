@@ -263,5 +263,10 @@
     "languages": ["ja"],
     "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/zenmarugothic/ZenMaruGothic-Regular.ttf",
     "sha256": "a0c0b53543e0993ae2225e629c833f3d51495ad31720694ff112ce4ce11111ef"
+  },
+  "Noto Sans Hebrew": {
+    "languages": ["he"],
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanshebrew/NotoSansHebrew%5Bwdth%2Cwght%5D.ttf",
+    "sha256": "7ef36a2c3593758cdb622e1bdef4f84523e92fbc3ccc667438dd80ff54c2de88"
   }
 }

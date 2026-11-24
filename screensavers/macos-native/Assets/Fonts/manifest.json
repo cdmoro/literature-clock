@@ -311,6 +311,16 @@
       "path": "zenmarugothic/OFL.txt",
       "source": "https://raw.githubusercontent.com/google/fonts/5e8a3ba899557829a76cfdac30fa512bda91d7ca/ofl/zenmarugothic/OFL.txt",
       "sha256": "2a20cf7ce1909d8ee1e949095d340f7d7656705f7c810a2d6faf56800ad0cb3d"
+    },
+    {
+      "path": "notosanshebrew/NotoSansHebrew[wdth,wght].ttf",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanshebrew/NotoSansHebrew%5Bwdth%2Cwght%5D.ttf",
+      "sha256": "7ef36a2c3593758cdb622e1bdef4f84523e92fbc3ccc667438dd80ff54c2de88"
+    },
+    {
+      "path": "notosanshebrew/OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanshebrew/OFL.txt",
+      "sha256": "9b9fe028b5ba74d231659a1bbaf0ed09b11e759d1ca6a070999e16d151616b47"
     }
   ]
 }

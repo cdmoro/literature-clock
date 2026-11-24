@@ -35,7 +35,7 @@ enum ClockWidgetAttribution: String, AppEnum {
 enum ClockWidgetLanguage: String, AppEnum {
     case englishUS = "en-US", englishGB = "en-GB", spanish = "es-ES", french = "fr-FR"
     case german = "de-DE", italian = "it-IT", portuguese = "pt-PT", greek = "el-GR"
-    case esperanto = "eo", russian = "ru-RU", chinese = "zh-CN", arabic = "ar-AE", japanese = "ja-JP"
+    case esperanto = "eo", russian = "ru-RU", chinese = "zh-CN", arabic = "ar-AE", hebrew = "he-IL", japanese = "ja-JP"
     case korean = "ko-KR"
     case polish = "pl-PL"
     case portugueseBrazil = "pt-BR"
@@ -45,7 +45,7 @@ enum ClockWidgetLanguage: String, AppEnum {
         .spanish: "Español (España)", .french: "Français (France)", .german: "Deutsch (Deutschland)",
         .italian: "Italiano (Italia)", .portuguese: "Português (Portugal)", .portugueseBrazil: "Português (Brasil)", .greek: "Ελληνικά (Ελλάδα)",
         .esperanto: "Esperanto", .russian: "Русский (Россия)", .chinese: "中文（中国大陆）",
-        .arabic: "العربية (الإمارات العربية المتحدة)", .japanese: "日本語 (日本)", .korean: "한국어 (대한민국)",
+        .arabic: "العربية (الإمارات العربية المتحدة)", .hebrew: "עברית (ישראל)", .japanese: "日本語 (日本)", .korean: "한국어 (대한민국)",
         .polish: "Polski (Polska)"
     ]
 
@@ -68,6 +68,7 @@ enum ClockWidgetLanguage: String, AppEnum {
             case "ru": return .russian
             case "zh": return .chinese
             case "ar": return .arabic
+            case "he": return .hebrew
             case "ja": return .japanese
             case "ko": return .korean
             case "pl": return .polish

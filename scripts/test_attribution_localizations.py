@@ -317,6 +317,15 @@ class AttributionLocalizationTest(unittest.TestCase):
         errors, _, _ = validate(localizations, [self.source], {'ja-JP'})
         self.assertEqual(errors, [])
 
+    def test_hebrew_attribution_is_supported_when_the_locale_is_enabled(self):
+        localizations = {
+            'authors': {'Jane Austen': {'he-IL': 'ג׳יין אוסטן'}},
+            'works': {},
+        }
+        errors, author_coverage, _ = validate(localizations, [self.source], {'ja-JP', 'he-IL'})
+        self.assertEqual(errors, [])
+        self.assertEqual(author_coverage['Jane Austen'], {'he-IL'})
+
     def test_plain_string_and_sourced_object_are_both_valid_and_resolve(self):
         forms = [
             'ジェイン・オースティン',

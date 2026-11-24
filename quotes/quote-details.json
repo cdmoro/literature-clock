@@ -6,7 +6,8 @@
     },
     "Mark Haddon": {
       "en": "https://en.wikipedia.org/wiki/Mark_Haddon",
-      "es": "https://es.wikipedia.org/wiki/Mark_Haddon"
+      "es": "https://es.wikipedia.org/wiki/Mark_Haddon",
+      "he": "https://www.booknet.co.il/%D7%9E%D7%97%D7%91%D7%A8%D7%99%D7%9D/%D7%94%D7%90%D7%93%D7%95%D7%9F-%D7%9E%D7%90%D7%A8%D7%A7"
     },
     "Sir Arthur Conan Doyle": {
       "en": "https://en.wikipedia.org/wiki/Arthur_Conan_Doyle",
@@ -22,7 +23,8 @@
       "pt": "https://pt.wikipedia.org/wiki/Arthur_Conan_Doyle",
       "ru": "https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D0%B9%D0%BB%2C_%D0%90%D1%80%D1%82%D1%83%D1%80_%D0%9A%D0%BE%D0%BD%D0%B0%D0%BD",
       "zh": "https://zh.wikipedia.org/wiki/%E9%98%BF%E7%91%9F%C2%B7%E6%9F%AF%E5%8D%97%C2%B7%E9%81%93%E5%B0%94",
-      "ar": "https://ar.wikipedia.org/wiki/%D8%A2%D8%B1%D8%AB%D8%B1_%D9%83%D9%88%D9%86%D8%A7%D9%86_%D8%AF%D9%88%D9%8A%D9%84"
+      "ar": "https://ar.wikipedia.org/wiki/%D8%A2%D8%B1%D8%AB%D8%B1_%D9%83%D9%88%D9%86%D8%A7%D9%86_%D8%AF%D9%88%D9%8A%D9%84",
+      "he": "https://www.e-vrit.co.il/author/6017/%D7%A1%D7%A8_%D7%90%D7%A8%D7%AA%D7%95%D7%A8_%D7%A7%D7%95%D7%A0%D7%9F_%D7%93%D7%95%D7%99%D7%9C?orderby=2"
     },
     "Agatha Christie": {
       "en": "https://www.agathachristie.com/en/about-christie",
@@ -45,7 +47,8 @@
     },
     "David Foster Wallace": {
       "en": "https://www.penguinrandomhouse.com/authors/231447/david-foster-wallace/",
-      "es": "https://es.wikipedia.org/wiki/David_Foster_Wallace"
+      "es": "https://es.wikipedia.org/wiki/David_Foster_Wallace",
+      "he": "https://www.nli.org.il/he/a-topic/987007313735505171"
     },
     "David Mitchell": {
       "en": "https://en.wikipedia.org/wiki/David_Mitchell_(author)",
@@ -61,7 +64,8 @@
       "pl": "https://pl.wikipedia.org/wiki/David_Mitchell_(pisarz)",
       "pt": "https://pt.wikipedia.org/wiki/David_Mitchell_(escritor)",
       "ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D1%82%D1%87%D0%B5%D0%BB%D0%BB%2C_%D0%94%D1%8D%D0%B2%D0%B8%D0%B4_(%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D0%B5%D0%BB%D1%8C)",
-      "zh": "https://zh.wikipedia.org/wiki/%E5%A4%A7%E5%8D%AB%C2%B7%E7%B1%B3%E5%88%87%E5%B0%94_(%E4%BD%9C%E5%AE%B6)"
+      "zh": "https://zh.wikipedia.org/wiki/%E5%A4%A7%E5%8D%AB%C2%B7%E7%B1%B3%E5%88%87%E5%B0%94_(%E4%BD%9C%E5%AE%B6)",
+      "he": "https://next.simania.co.il/authorDetails.php?itemId=2574"
     },
     "F. Scott Fitzgerald": {
       "en": "https://en.wikipedia.org/wiki/F._Scott_Fitzgerald",
@@ -82,11 +86,13 @@
     "Haruki Murakami": {
       "en": "https://www.penguin.co.uk/authors/173739/haruki-murakami",
       "es": "https://es.wikipedia.org/wiki/Haruki_Murakami",
-      "ja": "https://ja.wikipedia.org/wiki/%E6%9D%91%E4%B8%8A%E6%98%A5%E6%A8%B9"
+      "ja": "https://ja.wikipedia.org/wiki/%E6%9D%91%E4%B8%8A%E6%98%A5%E6%A8%B9",
+      "he": "https://www.simania.co.il/authorDetails.php?itemId=1002035"
     },
     "Helen Fielding": {
       "en": "https://en.wikipedia.org/wiki/Helen_Fielding",
-      "es": "https://es.wikipedia.org/wiki/Helen_Fielding"
+      "es": "https://es.wikipedia.org/wiki/Helen_Fielding",
+      "he": "https://www.booknet.co.il/%D7%9E%D7%97%D7%91%D7%A8%D7%99%D7%9D/%D7%A4%D7%99%D7%9C%D7%93%D7%99%D7%A0%D7%92-%D7%94%D7%9C%D7%9F"
     },
     "J. Ryan Stradal": {
       "en": "https://www.penguinrandomhouse.com/authors/275451/j-ryan-stradal/"
@@ -104,7 +110,8 @@
       "pl": "https://pl.wikipedia.org/wiki/Jeffrey_Archer",
       "pt": "https://pt.wikipedia.org/wiki/Jeffrey_Archer",
       "ru": "https://ru.wikipedia.org/wiki/%D0%90%D1%80%D1%87%D0%B5%D1%80%2C_%D0%94%D0%B6%D0%B5%D1%84%D1%84%D1%80%D0%B8",
-      "zh": "https://zh.wikipedia.org/wiki/%E6%9D%B0%E5%BC%97%E9%87%8C%C2%B7%E9%98%BF%E5%BD%BB"
+      "zh": "https://zh.wikipedia.org/wiki/%E6%9D%B0%E5%BC%97%E9%87%8C%C2%B7%E9%98%BF%E5%BD%BB",
+      "he": "https://www.e-vrit.co.il/Author/3330/%D7%92_%D7%A4%D7%A8%D7%99_%D7%90%D7%A8%D7%A6_%D7%A8"
     },
     "Ken Kesey": {
       "en": "https://en.wikipedia.org/wiki/Ken_Kesey",
@@ -170,10 +177,12 @@
       "pt": "https://pt.wikipedia.org/wiki/Stephen_King",
       "ru": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D0%BD%D0%B3%2C_%D0%A1%D1%82%D0%B8%D0%B2%D0%B5%D0%BD",
       "zh": "https://zh.wikipedia.org/wiki/%E6%96%AF%E8%92%82%E8%8A%AC%C2%B7%E9%87%91",
-      "ar": "https://ar.wikipedia.org/wiki/%D8%B3%D8%AA%D9%8A%D9%81%D9%86_%D9%83%D9%8A%D9%86%D8%BA"
+      "ar": "https://ar.wikipedia.org/wiki/%D8%B3%D8%AA%D9%8A%D9%81%D9%86_%D9%83%D9%8A%D9%86%D8%BA",
+      "he": "https://www.modan.co.il/84758/%D7%A1%D7%98%D7%99%D7%91%D7%9F-%D7%A7%D7%99%D7%A0%D7%92"
     },
     "Steve Toltz": {
-      "en": "https://www.penguin.co.uk/authors/32711/steve-toltz"
+      "en": "https://www.penguin.co.uk/authors/32711/steve-toltz",
+      "he": "https://www.am-oved.co.il/%D7%98%D7%95%D7%9C%D7%A5-%D7%A1%D7%98%D7%99%D7%91"
     },
     "Thomas Hoover": {
       "en": "https://www.thomashoover.info/"
@@ -183,12 +192,14 @@
     },
     "Henry Miller": {
       "en": "https://en.wikipedia.org/wiki/Henry_Miller",
-      "es": "https://es.wikipedia.org/wiki/Henry_Miller"
+      "es": "https://es.wikipedia.org/wiki/Henry_Miller",
+      "he": "https://www.nli.org.il/he/a-topic/987007265303705171"
     },
     "Jules Verne": {
       "en": "https://en.wikipedia.org/wiki/Jules_Verne",
       "es": "https://es.wikipedia.org/wiki/Jules_Verne",
-      "fr": "https://fr.wikipedia.org/wiki/Jules_Verne"
+      "fr": "https://fr.wikipedia.org/wiki/Jules_Verne",
+      "he": "https://www.makorrishon.co.il/culture/books/article/317906"
     },
     "Margaret Atwood": {
       "en": "https://margaretatwood.ca/biography/",
@@ -196,11 +207,13 @@
     },
     "Ottessa Moshfegh": {
       "en": "https://en.wikipedia.org/wiki/Ottessa_Moshfegh",
-      "es": "https://es.wikipedia.org/wiki/Ottessa_Moshfegh"
+      "es": "https://es.wikipedia.org/wiki/Ottessa_Moshfegh",
+      "he": "https://www.am-oved.co.il/%D7%9E%D7%95%D7%A9%D7%A4%D7%92_%D7%90%D7%95%D7%98%D7%A1%D7%94"
     },
     "Sophie Kinsella": {
       "en": "https://en.wikipedia.org/wiki/Sophie_Kinsella",
-      "es": "https://es.wikipedia.org/wiki/Sophie_Kinsella"
+      "es": "https://es.wikipedia.org/wiki/Sophie_Kinsella",
+      "he": "https://www.modan.co.il/%D7%A1%D7%95%D7%A4%D7%99-%D7%A7%D7%99%D7%A0%D7%A1%D7%9C%D7%94"
     },
     "Jim Butcher": {
       "en": "https://en.wikipedia.org/wiki/Jim_Butcher",
@@ -212,7 +225,8 @@
     },
     "Douglas Adams": {
       "en": "https://en.wikipedia.org/wiki/Douglas_Adams",
-      "es": "https://es.wikipedia.org/wiki/Douglas_Adams"
+      "es": "https://es.wikipedia.org/wiki/Douglas_Adams",
+      "he": "https://www.modan.co.il/%D7%93%D7%90%D7%92%D7%9C%D7%A1-%D7%90%D7%93%D7%9E%D7%A1"
     },
     "Leo Tolstoy": {
       "en": "https://en.wikipedia.org/wiki/Leo_Tolstoy",
@@ -220,7 +234,8 @@
     },
     "C.S. Lewis": {
       "en": "https://en.wikipedia.org/wiki/C._S._Lewis",
-      "es": "https://es.wikipedia.org/wiki/C._S._Lewis"
+      "es": "https://es.wikipedia.org/wiki/C._S._Lewis",
+      "he": "https://www.e-vrit.co.il/Author/6115/%D7%A7%D7%9C%D7%99%D7%99%D7%91_%D7%A1%D7%98%D7%99%D7%99%D7%A4%D7%9C%D7%A1_%D7%9C%D7%95%D7%90%D7%99%D7%A1"
     },
     "J.G. Ballard": {
       "en": "https://en.wikipedia.org/wiki/J._G._Ballard",
@@ -232,7 +247,8 @@
     },
     "Ray Bradbury": {
       "en": "https://en.wikipedia.org/wiki/Ray_Bradbury",
-      "es": "https://es.wikipedia.org/wiki/Ray_Bradbury"
+      "es": "https://es.wikipedia.org/wiki/Ray_Bradbury",
+      "he": "https://www.e-vrit.co.il/author/6079/%D7%A8%D7%99%D7%99_%D7%91%D7%A8%D7%93%D7%91%D7%95%D7%A8%D7%99?orderby=2"
     },
     "Emma Donoghue": {
       "en": "https://en.wikipedia.org/wiki/Emma_Donoghue",
@@ -305,7 +321,8 @@
     },
     "Virginia Woolf": {
       "en": "https://en.wikipedia.org/wiki/Virginia_Woolf",
-      "es": "https://es.wikipedia.org/wiki/Virginia_Woolf"
+      "es": "https://es.wikipedia.org/wiki/Virginia_Woolf",
+      "he": "https://www.e-vrit.co.il/author/412/%D7%95%D7%99%D7%A8%D7%92_%D7%99%D7%A0%D7%99%D7%94_%D7%95%D7%95%D7%9C%D7%A3?orderby=2"
     },
     "Terry Pratchett": {
       "en": "https://en.wikipedia.org/wiki/Terry_Pratchett",
@@ -313,7 +330,8 @@
     },
     "Graham Greene": {
       "en": "https://en.wikipedia.org/wiki/Graham_Greene",
-      "es": "https://es.wikipedia.org/wiki/Graham_Greene"
+      "es": "https://es.wikipedia.org/wiki/Graham_Greene",
+      "he": "https://www.nli.org.il/he/a-topic/987007262184305171"
     },
     "Jonathan Safran Foer": {
       "en": "https://en.wikipedia.org/wiki/Jonathan_Safran_Foer",
@@ -334,7 +352,8 @@
       "es": "https://es.wikipedia.org/wiki/Fi%C3%B3dor_Dostoyevski",
       "de": "https://de.wikipedia.org/wiki/Fjodor_Michailowitsch_Dostojewski",
       "it": "https://www.treccani.it/enciclopedia/fedor-dostoevskij_%28Storia-della-civilt%C3%A0-europea-a-cura-di-Umberto-Eco%29/",
-      "ja": "https://www.shinchosha.co.jp/writer/133/"
+      "ja": "https://www.shinchosha.co.jp/writer/133/",
+      "he": "https://www.nli.org.il/he/a-topic/987007260514705171"
     },
     "Anton Pavlovich Chekhov": {
       "en": "https://en.wikipedia.org/wiki/Anton_Chekhov",
@@ -366,7 +385,8 @@
     },
     "Bram Stoker": {
       "en": "https://www.bramstokerestate.com/life/biography",
-      "es": "https://es.wikipedia.org/wiki/Bram_Stoker"
+      "es": "https://es.wikipedia.org/wiki/Bram_Stoker",
+      "he": "https://www.e-vrit.co.il/author/14851/%D7%91%D7%A8%D7%90%D7%9D_%D7%A1%D7%98%D7%95%D7%A7%D7%A8?orderby=2"
     },
     "Jerome K. Jerome": {
       "en": "https://en.wikipedia.org/wiki/Jerome_K._Jerome",
@@ -374,7 +394,8 @@
     },
     "George Orwell": {
       "en": "https://en.wikipedia.org/wiki/George_Orwell",
-      "es": "https://es.wikipedia.org/wiki/George_Orwell"
+      "es": "https://es.wikipedia.org/wiki/George_Orwell",
+      "he": "https://www.nli.org.il/he/a-topic/987007266258505171"
     },
     "Dorothy L. Sayers": {
       "en": "https://en.wikipedia.org/wiki/Dorothy_L._Sayers",
@@ -406,7 +427,8 @@
     },
     "Audrey Niffenegger": {
       "en": "https://en.wikipedia.org/wiki/Audrey_Niffenegger",
-      "es": "https://es.wikipedia.org/wiki/Audrey_Niffenegger"
+      "es": "https://es.wikipedia.org/wiki/Audrey_Niffenegger",
+      "he": "https://e-vrit.co.il/author/6003/%D7%90%D7%95%D7%93%D7%A8%D7%99-%D7%A0%D7%99%D7%A4%D7%A0%D7%92%D7%A8?orderby=2"
     },
     "Matt Haig": {
       "en": "https://canongate.co.uk/contributors/7819-matt-haig/",
@@ -1206,7 +1228,8 @@
       "Pride and Prejudice": {
         "about": {
           "en": "https://en.wikipedia.org/wiki/Pride_and_Prejudice",
-          "es": "https://es.wikipedia.org/wiki/Orgullo_y_prejuicio"
+          "es": "https://es.wikipedia.org/wiki/Orgullo_y_prejuicio",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990026092320205171/NLI"
         },
         "read": {
           "en": "https://www.gutenberg.org/ebooks/1342"
@@ -1249,7 +1272,8 @@
           "ko": "https://ko.wikipedia.org/wiki/%ED%95%9C%EB%B0%A4%EC%A4%91%EC%97%90_%EA%B0%9C%EC%97%90%EA%B2%8C_%EC%9D%BC%EC%96%B4%EB%82%9C_%EC%9D%98%EB%AC%B8%EC%9D%98_%EC%82%AC%EA%B1%B4",
           "pl": "https://pl.wikipedia.org/wiki/Dziwny_przypadek_psa_nocn%C4%85_por%C4%85",
           "ru": "https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%B3%D0%B0%D0%B4%D0%BE%D1%87%D0%BD%D0%BE%D0%B5_%D0%BD%D0%BE%D1%87%D0%BD%D0%BE%D0%B5_%D1%83%D0%B1%D0%B8%D0%B9%D1%81%D1%82%D0%B2%D0%BE_%D1%81%D0%BE%D0%B1%D0%B0%D0%BA%D0%B8",
-          "zh": "https://zh.wikipedia.org/wiki/%E6%B7%B1%E5%A4%9C%E5%B0%8F%E7%8B%97%E7%A5%9E%E7%A7%98%E4%B9%A0%E9%A2%98"
+          "zh": "https://zh.wikipedia.org/wiki/%E6%B7%B1%E5%A4%9C%E5%B0%8F%E7%8B%97%E7%A5%9E%E7%A7%98%E4%B9%A0%E9%A2%98",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990023785630205171/NLI"
         }
       }
     },
@@ -1257,7 +1281,8 @@
       "The Adventures of Sherlock Holmes": {
         "about": {
           "en": "https://en.wikipedia.org/wiki/The_Adventures_of_Sherlock_Holmes",
-          "es": "https://es.wikipedia.org/wiki/Las_aventuras_de_Sherlock_Holmes"
+          "es": "https://es.wikipedia.org/wiki/Las_aventuras_de_Sherlock_Holmes",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990008492290205171/NLI"
         },
         "read": {
           "en": "https://en.wikisource.org/wiki/The_Adventures_of_Sherlock_Holmes"
@@ -1266,7 +1291,8 @@
       "A Study in Scarlet": {
         "about": {
           "en": "https://www.gutenberg.org/ebooks/244",
-          "es": "https://es.wikipedia.org/wiki/Estudio_en_escarlata"
+          "es": "https://es.wikipedia.org/wiki/Estudio_en_escarlata",
+          "he": "https://www.polyglot-publishing.com/he/catalogue/a-study-in-scarlet-en-he"
         },
         "read": {
           "en": "https://www.gutenberg.org/ebooks/244",
@@ -1278,7 +1304,8 @@
           "en": "https://www.gutenberg.org/ebooks/2097",
           "es": "https://es.wikipedia.org/wiki/El_signo_de_los_cuatro",
           "fr": "https://fr.wikipedia.org/wiki/Le_Signe_des_quatre",
-          "de": "https://de.wikipedia.org/wiki/Das_Zeichen_der_Vier"
+          "de": "https://de.wikipedia.org/wiki/Das_Zeichen_der_Vier",
+          "he": "https://www.polyglot-publishing.com/he/catalogue/the-sign-of-the-four-en-he"
         },
         "read": {
           "en": "https://en.wikisource.org/wiki/The_Sign_of_Four",
@@ -1316,7 +1343,8 @@
       "Honor Among Thieves": {
         "about": {
           "en": "https://jeffreyarcher.com/book/honour-among-thieves-by-jeffrey-archer/",
-          "es": "https://www.casadellibro.com/libro-honor-entre-ladrones/9788425325717/436840"
+          "es": "https://www.casadellibro.com/libro-honor-entre-ladrones/9788425325717/436840",
+          "he": "https://rebooks.org.il/product/%D7%9B%D7%91%D7%95%D7%93-%D7%91%D7%99%D7%9F-%D7%92%D7%A0%D7%91%D7%99%D7%9D/"
         }
       },
       "Shall We Tell the President?": {
@@ -1327,32 +1355,38 @@
       },
       "Be Careful What You Wish For": {
         "about": {
-          "en": "https://jeffreyarcher.com/book/be-careful-what-you-wish-for/"
+          "en": "https://jeffreyarcher.com/book/be-careful-what-you-wish-for/",
+          "he": "https://www.modan.co.il/%D7%94%D7%99%D7%96%D7%94%D7%A8-%D7%91%D7%9E%D7%A9%D7%90%D7%9C%D7%95%D7%AA%D7%99%D7%9A?bsp=64000"
         }
       },
       "The Sins of the Father": {
         "about": {
-          "en": "https://jeffreyarcher.com/book/the-sins-of-the-father/"
+          "en": "https://jeffreyarcher.com/book/the-sins-of-the-father/",
+          "he": "https://ganrave.agronplus.org/title-details/?title_no=WXc4aXBVdFVGU3JQWXJVR0RLQkgrUT09"
         }
       },
       "This Was a Man": {
         "about": {
-          "en": "https://jeffreyarcher.co.uk/book/this-was-a-man/"
+          "en": "https://jeffreyarcher.co.uk/book/this-was-a-man/",
+          "he": "https://sdeboker.agronplus.org/title-details/?title_no=eTdYa0FpcWxFeitsMUcxQS9LSVdEUT09"
         }
       },
       "Not a Penny More, Not a Penny Less": {
         "about": {
-          "en": "https://jeffreyarcher.com/book/not-a-penny-more-not-a-penny-less-by-jeffrey-archer/"
+          "en": "https://jeffreyarcher.com/book/not-a-penny-more-not-a-penny-less-by-jeffrey-archer/",
+          "he": "https://www.steimatzky.co.il/catalog/product/view/id/91575/s/600007757/"
         }
       },
       "Nothing Ventured": {
         "about": {
-          "en": "https://jeffreyarcher.com/book/nothing-ventured/"
+          "en": "https://jeffreyarcher.com/book/nothing-ventured/",
+          "he": "https://kfaryona.agronplus.org/title-details/?title_no=b0M5MFQ1Wm40L3RTc1U3Mk52ODd6QT09"
         }
       },
       "A Matter of Honor": {
         "about": {
-          "en": "https://jeffreyarcher.co.uk/book/a-matter-of-honour/"
+          "en": "https://jeffreyarcher.co.uk/book/a-matter-of-honour/",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990010885100205171/NLI"
         }
       },
       "As the Crow Flies": {
@@ -1362,52 +1396,62 @@
       },
       "Sons of Fortune": {
         "about": {
-          "en": "https://jeffreyarcher.com/book/sons-of-fortune-by-jeffrey-archer/"
+          "en": "https://jeffreyarcher.com/book/sons-of-fortune-by-jeffrey-archer/",
+          "he": "https://www.modan.co.il/books/11/4/45/%D7%91%D7%A0%D7%99-%D7%9E%D7%96%D7%9C"
         }
       },
       "Paths of Glory": {
         "about": {
-          "en": "https://jeffreyarcher.com/book/paths-of-glory-by-jeffrey-archer/"
+          "en": "https://jeffreyarcher.com/book/paths-of-glory-by-jeffrey-archer/",
+          "he": "https://www.modan.co.il/%D7%A9%D7%91%D7%99%D7%9C%D7%99-%D7%94%D7%AA%D7%94%D7%99%D7%9C%D7%94"
         }
       },
       "A Prisoner of Birth": {
         "about": {
-          "en": "https://jeffreyarcher.com/book/a-prisoner-of-birth-by-jeffrey-archer/"
+          "en": "https://jeffreyarcher.com/book/a-prisoner-of-birth-by-jeffrey-archer/",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990026237650205171/NLI"
         }
       },
       "Mightier Than the Sword": {
         "about": {
-          "en": "https://jeffreyarcher.com/book/mightier-than-the-sword/"
+          "en": "https://jeffreyarcher.com/book/mightier-than-the-sword/",
+          "he": "https://www.modan.co.il/%D7%97%D7%96%D7%A7-%D7%9E%D7%97%D7%A8%D7%91"
         }
       },
       "False Impression": {
         "about": {
-          "en": "https://jeffreyarcher.com/book/false-impression-by-jeffrey-archer/"
+          "en": "https://jeffreyarcher.com/book/false-impression-by-jeffrey-archer/",
+          "he": "https://www.steimatzky.co.il/011631683"
         }
       },
       "Best Kept Secret": {
         "about": {
-          "en": "https://jeffreyarcher.com/book/best-kept-secret/"
+          "en": "https://jeffreyarcher.com/book/best-kept-secret/",
+          "he": "https://www.modan.co.il/%D7%A1%D7%95%D7%93-%D7%A9%D7%9E%D7%95%D7%A8?bsp=64000"
         }
       },
       "Next in Line": {
         "about": {
-          "en": "https://jeffreyarcher.com/book/next-in-line/"
+          "en": "https://jeffreyarcher.com/book/next-in-line/",
+          "he": "https://kfaryona.agronplus.org/title-details/?title_no=UkZLeEhlSUF6Z3F5amJOSTQwbTVoQT09"
         }
       },
       "Cometh the Hour": {
         "about": {
-          "en": "https://jeffreyarcher.com/book/cometh-the-hour/"
+          "en": "https://jeffreyarcher.com/book/cometh-the-hour/",
+          "he": "https://www.steimatzky.co.il/011414603"
         }
       },
       "Turn a Blind Eye": {
         "about": {
-          "en": "https://jeffreyarcher.com/book/turn-a-blind-eye/"
+          "en": "https://jeffreyarcher.com/book/turn-a-blind-eye/",
+          "he": "https://kfaryona.agronplus.org/title-details/?title_no=Z3kzWXFnVlJZSlFidnA4R3NRWm5lZz09"
         }
       },
       "Heads You Win": {
         "about": {
-          "en": "https://jeffreyarcher.com/book/heads-you-win-by-jeffrey-archer/"
+          "en": "https://jeffreyarcher.com/book/heads-you-win-by-jeffrey-archer/",
+          "he": "https://www.modan.co.il/%D7%A2%D7%A5-%D7%90%D7%95-%D7%A4%D7%9C%D7%99"
         }
       },
       "Over My Dead Body": {
@@ -1432,7 +1476,13 @@
       "Only Time Will Tell": {
         "about": {
           "en": "https://jeffreyarcher.com/book/only-time-will-tell/",
-          "es": "https://books.apple.com/es/book/solo-el-tiempo-lo-dir%C3%A1/id1559571241"
+          "es": "https://books.apple.com/es/book/solo-el-tiempo-lo-dir%C3%A1/id1559571241",
+          "he": "https://www.modan.co.il/%D7%99%D7%9E%D7%99%D7%9D-%D7%99%D7%92%D7%99%D7%93%D7%95"
+        }
+      },
+      "Kane & Abel": {
+        "about": {
+          "he": "https://www.modan.co.il/%D7%A7%D7%99%D7%9F-%D7%95%D7%94%D7%91%D7%9C"
         }
       }
     },
@@ -1448,7 +1498,8 @@
           "pl": "https://pl.wikipedia.org/wiki/Lot_nad_kuku%C5%82czym_gniazdem_(powie%C5%9B%C4%87)",
           "pt": "https://pt.wikipedia.org/wiki/One_Flew_Over_the_Cuckoo%27s_Nest_(romance)",
           "ru": "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%BB%D0%B5%D1%82%D0%B0%D1%8F_%D0%BD%D0%B0%D0%B4_%D0%B3%D0%BD%D0%B5%D0%B7%D0%B4%D0%BE%D0%BC_%D0%BA%D1%83%D0%BA%D1%83%D1%88%D0%BA%D0%B8",
-          "zh": "https://zh.wikipedia.org/wiki/%E9%A3%9E%E8%B6%8A%E7%96%AF%E4%BA%BA%E9%99%A2_(%E5%B0%8F%E8%AF%B4)"
+          "zh": "https://zh.wikipedia.org/wiki/%E9%A3%9E%E8%B6%8A%E7%96%AF%E4%BA%BA%E9%99%A2_(%E5%B0%8F%E8%AF%B4)",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990026824070205171/NLI"
         }
       }
     },
@@ -1461,13 +1512,15 @@
           "fr": "https://fr.wikipedia.org/wiki/Saules_aveugles%2C_femme_endormie",
           "it": "https://it.wikipedia.org/wiki/I_salici_ciechi_e_la_donna_addormentata",
           "ja": "https://ja.wikipedia.org/wiki/%E3%82%81%E3%81%8F%E3%82%89%E3%82%84%E3%81%AA%E3%81%8E%E3%81%A8%E7%9C%A0%E3%82%8B%E5%A5%B3_(%E7%9F%AD%E7%B7%A8%E5%B0%8F%E8%AA%AC%E9%9B%86)",
-          "pl": "https://pl.wikipedia.org/wiki/%C5%9Alepa_wierzba_i_%C5%9Bpi%C4%85ca_kobieta"
+          "pl": "https://pl.wikipedia.org/wiki/%C5%9Alepa_wierzba_i_%C5%9Bpi%C4%85ca_kobieta",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990026375060205171/NLI"
         }
       },
       "Hard-Boiled Wonderland and the End of the World": {
         "about": {
           "en": "https://www.penguin.co.uk/books/357549/hard-boiled-wonderland-and-the-end-of-the-world-by-murakami-haruki/9780099448785",
-          "es": "https://es.wikipedia.org/wiki/El_fin_del_mundo_y_un_despiadado_pa%C3%ADs_de_las_maravillas"
+          "es": "https://es.wikipedia.org/wiki/El_fin_del_mundo_y_un_despiadado_pa%C3%ADs_de_las_maravillas",
+          "he": "https://www.modan.co.il/page_36530"
         }
       },
       "1Q84": {
@@ -1514,7 +1567,8 @@
       "Bridget Jones’s Diary": {
         "about": {
           "en": "https://www.panmacmillan.com/authors/helen-fielding/bridget-joness-diary/9781447288930",
-          "es": "https://www.planetadelibros.com/libro-el-diario-de-bridget-jones/115365"
+          "es": "https://www.planetadelibros.com/libro-el-diario-de-bridget-jones/115365",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990018336340205171/NLI"
         }
       }
     },
@@ -1522,7 +1576,8 @@
       "A Fraction of the Whole": {
         "about": {
           "en": "https://thebookerprizes.com/the-booker-library/books/a-fraction-of-the-whole",
-          "es": "https://bibliotecas.maldonado.gub.uy/index.php?id=33727&lvl=notice_display"
+          "es": "https://bibliotecas.maldonado.gub.uy/index.php?id=33727&lvl=notice_display",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990031518490205171/NLI"
         }
       }
     },
@@ -1540,7 +1595,8 @@
           "pl": "https://pl.wikipedia.org/wiki/Doktor_Sen",
           "pt": "https://pt.wikipedia.org/wiki/Doutor_Sono",
           "ru": "https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D0%BA%D1%82%D0%BE%D1%80_%D0%A1%D0%BE%D0%BD",
-          "zh": "https://zh.wikipedia.org/wiki/%E5%AE%89%E7%9C%A0%E9%86%AB%E7%94%9F"
+          "zh": "https://zh.wikipedia.org/wiki/%E5%AE%89%E7%9C%A0%E9%86%AB%E7%94%9F",
+          "he": "https://www.modan.co.il/%D7%93%D7%95%D7%A7%D7%98%D7%95%D7%A8-%D7%A1%D7%9C%D7%99%D7%A4"
         }
       },
       "The Tommyknockers": {
@@ -1551,12 +1607,14 @@
       },
       "Billy Summers": {
         "about": {
-          "en": "https://stephenking.com/works/novel/billy-summers.html"
+          "en": "https://stephenking.com/works/novel/billy-summers.html",
+          "he": "https://www.modan.co.il/Design/JScripts/%D7%91%D7%99%D7%9C%D7%99-%D7%A1%D7%90%D7%9E%D7%A8%D7%A1"
         }
       },
       "Full Dark, No Stars": {
         "about": {
-          "en": "https://stephenking.com/works/collection/full-dark-no-stars.html"
+          "en": "https://stephenking.com/works/collection/full-dark-no-stars.html",
+          "he": "https://www.modan.co.il//%D7%90%D7%A4%D7%9C%D7%94-%D7%9E%D7%95%D7%97%D7%9C%D7%98%D7%AA-%D7%90%D7%99%D7%9F-%D7%9B%D7%95%D7%9B%D7%91%D7%99%D7%9D"
         }
       },
       "If It Bleeds": {
@@ -1567,24 +1625,38 @@
       "Joyland": {
         "about": {
           "en": "https://stephenking.com/works/novel/joyland.html",
-          "es": "https://books.apple.com/es/book/joyland/id876951915"
+          "es": "https://books.apple.com/es/book/joyland/id876951915",
+          "he": "https://www.modan.co.il/%D7%99%D7%A8%D7%99%D7%93-%D7%94%D7%A9%D7%A2%D7%A9%D7%95%D7%A2%D7%99%D7%9D"
         }
       },
       "11/22/63": {
         "about": {
-          "en": "https://stephenking.com/works/novel/11-22-63.html"
+          "en": "https://stephenking.com/works/novel/11-22-63.html",
+          "he": "https://www.modan.co.il/221163?bsp=64054"
         }
       },
       "It": {
         "about": {
           "en": "https://stephenking.com/works/novel/it.html",
-          "es": "https://www.penguinlibros.com/es/novela-negra-misterio-y-thriller/635072-libro-it-edicion-especial-cantos-tintados-9788466394697"
+          "es": "https://www.penguinlibros.com/es/novela-negra-misterio-y-thriller/635072-libro-it-edicion-especial-cantos-tintados-9788466394697",
+          "he": "https://www.modan.co.il/books/11/8/61/%D7%96%D7%94-%D7%A2%D7%98%D7%99%D7%A4%D7%AA-%D7%94%D7%A1%D7%A8%D7%98"
         }
       },
       "Carrie": {
         "about": {
           "en": "https://stephenking.com/works/novel/carrie.html",
-          "es": "https://www.penguinlibros.com/es/novela-negra-misterio-y-thriller/350290-libro-carrie-9788401035777"
+          "es": "https://www.penguinlibros.com/es/novela-negra-misterio-y-thriller/350290-libro-carrie-9788401035777",
+          "he": "https://www.clfb.org.il/heb/Portal/Book/?Id=60690"
+        }
+      },
+      "The Green Mile": {
+        "about": {
+          "he": "https://www.clfb.org.il/heb/Portal/Book/?Id=54041"
+        }
+      },
+      "The Shining": {
+        "about": {
+          "he": "https://www.modan.co.il/84758/%D7%94%D7%A0%D7%99%D7%A6%D7%95%D7%A5-%D7%9E%D7%97%D7%95%D7%93%D7%A9?bsp=64054"
         }
       }
     },
@@ -1592,7 +1664,8 @@
       "Tropic of Cancer": {
         "about": {
           "en": "https://www.penguin.co.uk/books/280164/tropic-of-cancer-by-henry-miller/9780141399133",
-          "es": "https://es.wikipedia.org/wiki/Tr%C3%B3pico_de_C%C3%A1ncer_(novela)"
+          "es": "https://es.wikipedia.org/wiki/Tr%C3%B3pico_de_C%C3%A1ncer_(novela)",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990010240570205171/NLI"
         }
       }
     },
@@ -1600,7 +1673,8 @@
       "Infinite Jest": {
         "about": {
           "en": "https://www.hachette.co.uk/titles/david-foster-wallace/infinite-jest/9780349121086/",
-          "es": "https://www.penguinlibros.com/es/literatura-contemporanea/36966-libro-la-broma-infinita-9788439732020"
+          "es": "https://www.penguinlibros.com/es/literatura-contemporanea/36966-libro-la-broma-infinita-9788439732020",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH997012286500105171/NLI"
         }
       }
     },
@@ -1608,7 +1682,8 @@
       "The Undomestic Goddess": {
         "about": {
           "en": "https://www.sophiekinsella.co.uk/book/the-undomestic-goddess/",
-          "es": "https://www.casadellibro.com/libro-la-reina-de-la-casa/9788498380408/1093322"
+          "es": "https://www.casadellibro.com/libro-la-reina-de-la-casa/9788498380408/1093322",
+          "he": "https://sderot.agronplus.org/title-details/?title_no=ZXJMUUhEVHhoS3BCTGhNUGpGL0d3Zz09"
         }
       }
     },
@@ -1616,7 +1691,8 @@
       "The Great Gatsby": {
         "about": {
           "en": "https://en.wikipedia.org/wiki/The_Great_Gatsby",
-          "es": "https://es.wikipedia.org/wiki/El_gran_Gatsby"
+          "es": "https://es.wikipedia.org/wiki/El_gran_Gatsby",
+          "he": "https://ybook.co.il/collections/%D7%90%D7%97%D7%95%D7%96%D7%AA-%D7%91%D7%99%D7%AA-%D7%A1%D7%A4%D7%A8%D7%99%D7%9D/products/6740152"
         },
         "read": {
           "en": "https://www.gutenberg.org/ebooks/64317"
@@ -1636,7 +1712,8 @@
       "My Year of Rest and Relaxation": {
         "about": {
           "en": "https://www.penguinrandomhouse.com/books/561517/my-year-of-rest-and-relaxation-by-ottessa-moshfegh/",
-          "es": "https://www.penguinlibros.com/es/literatura-contemporanea/7028-libro-mi-ano-de-descanso-y-relajacion-9788420434896"
+          "es": "https://www.penguinlibros.com/es/literatura-contemporanea/7028-libro-mi-ano-de-descanso-y-relajacion-9788420434896",
+          "he": "https://www.am-oved.co.il/%D7%A9%D7%A0%D7%AA_%D7%94%D7%9E%D7%A0%D7%95%D7%97%D7%94_%D7%95%D7%94%D7%9E%D7%A8%D7%92%D7%95%D7%A2_%D7%A9%D7%9C%D7%99?bsp=613058"
         }
       }
     },
@@ -1644,34 +1721,50 @@
       "And Then There Were None": {
         "about": {
           "en": "https://www.agathachristie.com/en/stories/and-then-there-were-none",
-          "es": "https://www.planetadelibros.com/libro-y-no-quedo-ninguno/354268"
+          "es": "https://www.planetadelibros.com/libro-y-no-quedo-ninguno/354268",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990048764830205171/NLI"
+        }
+      },
+      "Death on the Nile": {
+        "about": {
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990050408770205171/NLI"
+        }
+      },
+      "Murder on the Orient Express": {
+        "about": {
+          "he": "https://www.clfb.org.il/heb/Portal/Book/?code=21805&l=1"
         }
       }
     },
     "P.D. James": {
       "Original Sin": {
         "about": {
-          "en": "https://pdjames.co.uk/book/original-sin/"
+          "en": "https://pdjames.co.uk/book/original-sin/",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990031598560205171/NLI"
         }
       },
       "Shroud for a Nightingale": {
         "about": {
-          "en": "https://pdjames.co.uk/book/shroud-for-a-nightingale/"
+          "en": "https://pdjames.co.uk/book/shroud-for-a-nightingale/",
+          "he": "https://www.am-oved.co.il/%D7%A8%D7%A6%D7%97_%D7%91%D7%91%D7%99%D7%AA_%D7%A0%D7%99%D7%99%D7%98%D7%99%D7%A0%D7%92%D7%99%D7%99%D7%9C?bsp=124572"
         }
       },
       "The Private Patient": {
         "about": {
-          "en": "https://greeneheaton.co.uk/books/the-private-patient"
+          "en": "https://greeneheaton.co.uk/books/the-private-patient",
+          "he": "https://www.text.org.il/index.php?book=1002038"
         }
       },
       "The Lighthouse": {
         "about": {
-          "en": "https://pdjames.co.uk/book/the-lighthouse/"
+          "en": "https://pdjames.co.uk/book/the-lighthouse/",
+          "he": "https://www.steimatzky.co.il/015500107"
         }
       },
       "The Murder Room": {
         "about": {
-          "en": "https://pdjames.co.uk/book/the-murder-room/"
+          "en": "https://pdjames.co.uk/book/the-murder-room/",
+          "he": "https://realbooks.co.il/books/%D7%A8%D7%A6%D7%97-%D7%91%D7%9E%D7%95%D7%96%D7%99%D7%90%D7%95%D7%9F"
         }
       },
       "A Certain Justice": {
@@ -1686,7 +1779,8 @@
       },
       "Death in Holy Orders": {
         "about": {
-          "en": "https://pdjames.co.uk/book/death-in-holy-orders/"
+          "en": "https://pdjames.co.uk/book/death-in-holy-orders/",
+          "he": "https://next.simania.co.il/bookdetails.php?item_id=41492"
         }
       },
       "Devices and Desires": {
@@ -1758,7 +1852,8 @@
           "pl": "https://pl.wikipedia.org/wiki/Park_Jurajski_(powie%C5%9B%C4%87)",
           "pt": "https://pt.wikipedia.org/wiki/Jurassic_Park_(romance)",
           "ru": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%BA_%D1%8E%D1%80%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BF%D0%B5%D1%80%D0%B8%D0%BE%D0%B4%D0%B0_(%D1%80%D0%BE%D0%BC%D0%B0%D0%BD)",
-          "zh": "https://zh.wikipedia.org/wiki/%E4%BE%8F%E7%BE%85%E7%B4%80%E5%85%AC%E5%9C%92_(%E5%B0%8F%E8%AA%AA)"
+          "zh": "https://zh.wikipedia.org/wiki/%E4%BE%8F%E7%BE%85%E7%B4%80%E5%85%AC%E5%9C%92_(%E5%B0%8F%E8%AA%AA)",
+          "he": "https://www.clfb.org.il/heb/Portal/Book/?code=19885&l=1"
         }
       },
       "The Great Train Robbery": {
@@ -1780,14 +1875,16 @@
       "Room": {
         "about": {
           "en": "https://thebookerprizes.com/the-booker-library/books/room",
-          "es": "https://www.penguinrandomhouse.com/books/579324/la-habitacion--room-by-emma-donoghue/"
+          "es": "https://www.penguinrandomhouse.com/books/579324/la-habitacion--room-by-emma-donoghue/",
+          "he": "https://ybook.co.il/products/3624260"
         }
       }
     },
     "Marsha Mehran": {
       "Pomegranate Soup": {
         "about": {
-          "en": "https://www.penguinrandomhouse.com/books/112958/pomegranate-soup-by-marsha-mehran/9780307431639/"
+          "en": "https://www.penguinrandomhouse.com/books/112958/pomegranate-soup-by-marsha-mehran/9780307431639/",
+          "he": "https://e.walla.co.il/item/1511298"
         }
       }
     },
@@ -1795,7 +1892,8 @@
       "Don Quijote de la Mancha": {
         "about": {
           "es": "https://cvc.cervantes.es/literatura/clasicos/quijote/default.htm",
-          "en": "https://www.gutenberg.org/ebooks/996"
+          "en": "https://www.gutenberg.org/ebooks/996",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990013182120205171/NLI"
         },
         "read": {
           "es": "https://cvc.cervantes.es/literatura/clasicos/quijote/edicion/",
@@ -1850,7 +1948,8 @@
       "Munich": {
         "about": {
           "en": "https://www.penguin.co.uk/books/434239/munich-by-harris-robert/9781784751852",
-          "es": "https://www.penguinlibros.com/es/novela-negra-misterio-y-thriller/29555-libro-munich-9788425356728"
+          "es": "https://www.penguinlibros.com/es/novela-negra-misterio-y-thriller/29555-libro-munich-9788425356728",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990044010730205171/NLI"
         }
       }
     },
@@ -1873,7 +1972,8 @@
         "about": {
           "en": "https://en.wikipedia.org/wiki/Les_Mis%C3%A9rables",
           "es": "https://es.wikipedia.org/wiki/Los_miserables",
-          "fr": "https://fr.wikipedia.org/wiki/Les_Mis%C3%A9rables"
+          "fr": "https://fr.wikipedia.org/wiki/Les_Mis%C3%A9rables",
+          "he": "https://www.clfb.org.il/heb/Portal/Book/?code=19571&l=1"
         },
         "read": {
           "en": "https://www.gutenberg.org/ebooks/135",
@@ -1886,7 +1986,8 @@
         "about": {
           "en": "https://en.wikipedia.org/wiki/Around_the_World_in_Eighty_Days",
           "es": "https://es.wikipedia.org/wiki/La_vuelta_al_mundo_en_ochenta_d%C3%ADas",
-          "fr": "https://fr.wikipedia.org/wiki/Le_Tour_du_monde_en_quatre-vingts_jours"
+          "fr": "https://fr.wikipedia.org/wiki/Le_Tour_du_monde_en_quatre-vingts_jours",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990036611940205171/NLI"
         },
         "read": {
           "en": "https://en.wikisource.org/wiki/Around_the_World_in_Eighty_Days_(Towle)",
@@ -1896,7 +1997,8 @@
       },
       "Journey to the Center of the Earth": {
         "about": {
-          "es": "https://es.wikipedia.org/wiki/Viaje_al_centro_de_la_Tierra"
+          "es": "https://es.wikipedia.org/wiki/Viaje_al_centro_de_la_Tierra",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990040568410205171/NLI"
         },
         "read": {
           "en": "https://www.gutenberg.org/ebooks/19513",
@@ -1908,7 +2010,8 @@
       "Ulysses": {
         "about": {
           "en": "https://en.wikipedia.org/wiki/Ulysses_(novel)",
-          "es": "https://es.wikipedia.org/wiki/Ulises_(novela)"
+          "es": "https://es.wikipedia.org/wiki/Ulises_(novela)",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990012103000205171/NLI"
         },
         "read": {
           "en": "https://www.gutenberg.org/ebooks/4300"
@@ -1948,14 +2051,16 @@
     "Jonathan Safran Foer": {
       "Extremely Loud and Incredibly Close": {
         "about": {
-          "en": "https://www.penguin.co.uk/books/54608/extremely-loud-and-incredibly-close-by-foer-jonathan-safran/9780141012698"
+          "en": "https://www.penguin.co.uk/books/54608/extremely-loud-and-incredibly-close-by-foer-jonathan-safran/9780141012698",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990025555580205171/NLI"
         }
       }
     },
     "Margaret Atwood": {
       "The Robber Bride": {
         "about": {
-          "en": "https://www.hachette.co.uk/titles/margaret-atwood/the-robber-bride/9781853817229/"
+          "en": "https://www.hachette.co.uk/titles/margaret-atwood/the-robber-bride/9781853817229/",
+          "he": "https://www.simania.co.il/bookdetails.php?item_id=8625"
         }
       },
       "Life Before Man": {
@@ -1975,7 +2080,8 @@
       "Jane Eyre": {
         "about": {
           "en": "https://www.english.ox.ac.uk/ten-minute-book-club/bronte-jane-eyre",
-          "es": "https://es.wikipedia.org/wiki/Jane_Eyre"
+          "es": "https://es.wikipedia.org/wiki/Jane_Eyre",
+          "he": "https://www.e-vrit.co.il/product/493/%D7%92_%D7%99%D7%99%D7%9F_%D7%90%D7%99%D7%99%D7%A8"
         },
         "read": {
           "en": "https://www.gutenberg.org/ebooks/1260"
@@ -1993,7 +2099,8 @@
       "100 años de soledad": {
         "about": {
           "en": "https://en.wikipedia.org/wiki/One_Hundred_Years_of_Solitude",
-          "es": "https://www.penguinlibros.com/es/literatura-contemporanea/35974-libro-cien-anos-de-soledad-9788497592208"
+          "es": "https://www.penguinlibros.com/es/literatura-contemporanea/35974-libro-cien-anos-de-soledad-9788497592208",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990026982180205171/NLI"
         }
       }
     },
@@ -2011,7 +2118,8 @@
       "Three Men in a Boat": {
         "about": {
           "en": "https://digital.library.upenn.edu/webbin/gutbook/lookup?num=308",
-          "fr": "https://fr.wikipedia.org/wiki/Trois_hommes_dans_un_bateau"
+          "fr": "https://fr.wikipedia.org/wiki/Trois_hommes_dans_un_bateau",
+          "he": "https://www.modan.co.il/%D7%A9%D7%9C%D7%95%D7%A9%D7%94-%D7%91%D7%A1%D7%99%D7%A8%D7%94-%D7%90%D7%97%D7%AA-%D7%94%D7%A1%D7%A4%D7%A8-%D7%94%D7%9E%D7%A2%D7%A8"
         },
         "read": {
           "en": "https://www.gutenberg.org/files/308/308-h/308-h.htm",
@@ -2034,7 +2142,8 @@
           "fr": "https://fr.wikipedia.org/wiki/Guerre_et_Paix",
           "pt": "https://pt.wikipedia.org/wiki/Guerra_e_Paz",
           "de": "https://de.wikipedia.org/wiki/Krieg_und_Frieden",
-          "ru": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%B9%D0%BD%D0%B0_%D0%B8_%D0%BC%D0%B8%D1%80"
+          "ru": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%B9%D0%BD%D0%B0_%D0%B8_%D0%BC%D0%B8%D1%80",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990011199530205171/NLI"
         },
         "read": {
           "en": "https://www.gutenberg.org/files/2600/2600-h/2600-h.htm",
@@ -2048,7 +2157,8 @@
           "fr": "https://fr.wikipedia.org/wiki/Anna_Kar%C3%A9nine",
           "pt": "https://pt.wikipedia.org/wiki/Anna_Karenina",
           "de": "https://de.wikipedia.org/wiki/Anna_Karenina",
-          "ru": "https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%BD%D0%B0_%D0%9A%D0%B0%D1%80%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0"
+          "ru": "https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%BD%D0%B0_%D0%9A%D0%B0%D1%80%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990017640480205171/NLI"
         },
         "read": {
           "en": "https://www.gutenberg.org/ebooks/1399",
@@ -2063,7 +2173,8 @@
           "es": "https://es.wikipedia.org/wiki/Dr%C3%A1cula",
           "fr": "https://fr.wikipedia.org/wiki/Dracula",
           "pt": "https://pt.wikipedia.org/wiki/Dr%C3%A1cula",
-          "de": "https://de.wikipedia.org/wiki/Dracula_(Roman)"
+          "de": "https://de.wikipedia.org/wiki/Dracula_(Roman)",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990009750450205171/NLI"
         },
         "read": {
           "en": "https://www.gutenberg.org/ebooks/345"
@@ -2076,7 +2187,8 @@
           "en": "https://harpercollinschildrensbooks.co.uk/products/the-silver-chair-the-chronicles-of-narnia-book-6-c-s-lewis-9780008752095/",
           "es": "https://es.wikipedia.org/wiki/La_silla_de_plata",
           "fr": "https://fr.wikipedia.org/wiki/Le_Fauteuil_d%27argent",
-          "de": "https://de.wikipedia.org/wiki/Der_silberne_Sessel"
+          "de": "https://de.wikipedia.org/wiki/Der_silberne_Sessel",
+          "he": "https://ganrave.agronplus.org/title-details/?title_no=dkJNbWkzb3c0NHkrOXA0dzJFRW83dz09"
         }
       }
     },
@@ -2090,7 +2202,8 @@
     "Dean Koontz": {
       "Watchers": {
         "about": {
-          "en": "https://www.deankoontz.com/book/watchers/"
+          "en": "https://www.deankoontz.com/book/watchers/",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990012122780205171/NLI"
         }
       }
     },
@@ -2098,7 +2211,8 @@
       "The Quiet American": {
         "about": {
           "en": "https://www.penguin.co.uk/books/355456/the-quiet-american-by-greene-graham/9780099478393",
-          "es": "https://es.wikipedia.org/wiki/El_americano_impasible"
+          "es": "https://es.wikipedia.org/wiki/El_americano_impasible",
+          "he": "https://clfb.org.il/heb/Portal/Book/?code=6804&l=1"
         }
       }
     },
@@ -2113,19 +2227,27 @@
       "So Long, and Thanks for All the Fish": {
         "about": {
           "en": "https://www.panmacmillan.com/authors/douglas-adams/so-long-and-thanks-for-all-the-fish/9781529034554",
-          "es": "https://es.wikipedia.org/wiki/Hasta_luego%2C_y_gracias_por_el_pescado"
+          "es": "https://es.wikipedia.org/wiki/Hasta_luego%2C_y_gracias_por_el_pescado",
+          "he": "https://www.modan.co.il/%D7%94%D7%99%D7%95-%D7%A9%D7%9C%D7%95%D7%9D-%D7%95%D7%AA%D7%95%D7%93%D7%94-%D7%A2%D7%9C-%D7%94%D7%93%D7%92%D7%99%D7%9D"
         }
       },
       "The Long Dark Tea-Time of the Soul": {
         "about": {
-          "en": "https://www.panmacmillan.com/authors/douglas-adams/the-long-dark-tea-time-of-the-soul/9781529034592"
+          "en": "https://www.panmacmillan.com/authors/douglas-adams/the-long-dark-tea-time-of-the-soul/9781529034592",
+          "he": "https://www.modan.co.il/%D7%A9%D7%A2%D7%AA-%D7%94%D7%AA%D7%94-%D7%94%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%95%D7%94%D7%90%D7%A4%D7%9C%D7%94-%D7%A9%D7%9C-%D7%94%D7%A0%D7%A4%D7%A9?bsp=75008"
+        }
+      },
+      "Hitch-Hikers Guide to the Galaxy": {
+        "about": {
+          "he": "https://www.modan.co.il/%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%94%D7%98%D7%A8%D7%9E%D7%A4%D7%99%D7%A1%D7%98-%D7%9C%D7%92%D7%9C%D7%A7%D7%A1%D7%99%D7%94"
         }
       }
     },
     "Len Deighton": {
       "The Ipcress File": {
         "about": {
-          "en": "https://groveatlantic.com/book/the-ipcress-file/"
+          "en": "https://groveatlantic.com/book/the-ipcress-file/",
+          "he": "https://bookholder.co.il/books/%D7%AA%D7%99%D7%A7-%D7%90%D7%99%D7%A4%D7%A7%D7%A8%D7%A1-%D7%A1%D7%95%D7%93%D7%99-%D7%91%D7%99%D7%95%D7%AA%D7%A8-5484"
         }
       }
     },
@@ -2155,7 +2277,8 @@
         "about": {
           "en": "https://harlequin.com/products/the-time-travelers-wife",
           "es": "https://es.wikipedia.org/wiki/La_mujer_del_viajero_en_el_tiempo",
-          "fr": "https://fr.wikipedia.org/wiki/Le_Temps_n%27est_rien"
+          "fr": "https://fr.wikipedia.org/wiki/Le_Temps_n%27est_rien",
+          "he": "https://www.clfb.org.il/heb/Portal/Book/?code=4169&l=1"
         }
       }
     },
@@ -2178,7 +2301,8 @@
           "pl": "https://pl.wikipedia.org/wiki/Zbrodnia_i_kara",
           "pt": "https://pt.wikipedia.org/wiki/Crime_e_Castigo",
           "ru": "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B5%D1%81%D1%82%D1%83%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B8_%D0%BD%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B8%D0%B5",
-          "zh": "https://zh.wikipedia.org/wiki/%E7%BD%AA%E8%88%87%E7%BD%B0"
+          "zh": "https://zh.wikipedia.org/wiki/%E7%BD%AA%E8%88%87%E7%BD%B0",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990011112980205171/NLI"
         },
         "read": {
           "en": "https://www.gutenberg.org/ebooks/2554",
@@ -2191,7 +2315,8 @@
         "about": {
           "en": "https://en.wikipedia.org/wiki/Mrs_Dalloway",
           "es": "https://es.wikipedia.org/wiki/La_se%C3%B1ora_Dalloway",
-          "fr": "https://fr.wikipedia.org/wiki/Mrs_Dalloway"
+          "fr": "https://fr.wikipedia.org/wiki/Mrs_Dalloway",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990052996870205171/NLI"
         },
         "read": {
           "en": "https://www.gutenberg.org/ebooks/71865"
@@ -2203,7 +2328,8 @@
         "about": {
           "en": "https://en.wikipedia.org/wiki/Ben-Hur%3A_A_Tale_of_the_Christ",
           "es": "https://es.wikipedia.org/wiki/Ben-Hur_%28novela%29",
-          "fr": "https://fr.wikipedia.org/wiki/Ben-Hur_%28roman%29"
+          "fr": "https://fr.wikipedia.org/wiki/Ben-Hur_%28roman%29",
+          "he": "https://www.nli.org.il/he/books/NNL_ALEPH990018052210205171/NLI"
         },
         "read": {
           "en": "https://www.gutenberg.org/ebooks/2145"
@@ -2222,7 +2348,8 @@
         "about": {
           "en": "https://en.wikipedia.org/wiki/The_Moonstone",
           "es": "https://es.wikipedia.org/wiki/La_piedra_lunar",
-          "fr": "https://fr.wikipedia.org/wiki/La_Pierre_de_lune_%28roman_de_Wilkie_Collins%29"
+          "fr": "https://fr.wikipedia.org/wiki/La_Pierre_de_lune_%28roman_de_Wilkie_Collins%29",
+          "he": "https://canada-akko.agronplus.org/title-details/?title_no=clVIRGpRVC80K3JkV1RtejBYTEhzUT09"
         },
         "read": {
           "en": "https://en.wikisource.org/wiki/The_Moonstone",
@@ -2275,7 +2402,8 @@
           "it": "https://it.wikipedia.org/wiki/Harry_Potter_e_la_pietra_filosofale",
           "ja": "https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%AA%E3%83%BC%E3%83%BB%E3%83%9D%E3%83%83%E3%82%BF%E3%83%BC%E3%81%A8%E8%B3%A2%E8%80%85%E3%81%AE%E7%9F%B3",
           "pl": "https://pl.wikipedia.org/wiki/Harry_Potter_i_Kamie%C5%84_Filozoficzny",
-          "pt": "https://pt.wikipedia.org/wiki/Harry_Potter_e_a_Pedra_Filosofal"
+          "pt": "https://pt.wikipedia.org/wiki/Harry_Potter_e_a_Pedra_Filosofal",
+          "he": "https://israelbooks.com/products/%D7%94%D7%90%D7%A8%D7%99-%D7%A4%D7%95%D7%98%D7%A8-%D7%95%D7%90%D7%91%D7%9F-%D7%94%D7%97%D7%9B%D7%9E%D7%99%D7%9D"
         }
       },
       "Harry Potter and the Deathly Hallows": {
