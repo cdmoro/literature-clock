@@ -48,6 +48,19 @@ describe('compact quote times', () => {
     expect(highlight?.textContent).toBe('6:55 PM');
   });
 
+  it('groups adjacent seconds and punctuation with a compact highlighted time', () => {
+    const { passage, group, highlight } = render(
+      'Bien, dijiste. Tu voz fue tranquilizadora. ',
+      '19:11',
+      ':00, decía el reloj. Colgué el teléfono.',
+      'es-ES',
+    );
+    expect(passage.textContent).toBe('Bien, dijiste. Tu voz fue tranquilizadora. 19:11:00, decía el reloj. Colgué el teléfono.');
+    expect(group?.textContent).toBe('19:11:00,');
+    expect(group?.contains(highlight)).toBe(true);
+    expect(highlight?.textContent).toBe('19:11');
+  });
+
   it('preserves inline markup and keeps forced line breaks outside the group', () => {
     const { passage, group, highlight } = render(
       'She said:<br><em>« </em>',
